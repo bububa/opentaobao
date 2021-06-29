@@ -1,0 +1,198 @@
+{
+	"name": "alibaba.icbu.rfq.recommend",
+	"apiChineseName": "rfq推荐",
+	"description": "rfq推荐",
+	"requestParams": [
+		{
+			"name": "query_dto",
+			"type": "QueryDto",
+			"description": "入参数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "推荐数量",
+					"required": true
+				},
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前页面数",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小",
+					"required": true
+				},
+				{
+					"name": "site",
+					"type": "String",
+					"description": "系统参数qn-homepage",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "系统参数U_P_I",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "系统信息",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "返回系统代码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "RecommendReturnDto",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pagination",
+							"type": "PageView",
+							"description": "返回结果统计",
+							"required": true,
+							"subParams": [
+								{
+									"name": "current",
+									"type": "Number",
+									"description": "当前页面",
+									"required": true
+								},
+								{
+									"name": "page_size",
+									"type": "Number",
+									"description": "页面大小",
+									"required": true
+								},
+								{
+									"name": "total_item",
+									"type": "Number",
+									"description": "推荐数量",
+									"required": true
+								},
+								{
+									"name": "total_pages",
+									"type": "Number",
+									"description": "总页数",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "rfq_list",
+							"type": "RecommendRfqDto[]",
+							"description": "返回推荐RFQ",
+							"required": true,
+							"subParams": [
+								{
+									"name": "country",
+									"type": "String",
+									"description": "国家全称",
+									"required": true
+								},
+								{
+									"name": "country_simple",
+									"type": "String",
+									"description": "国家简称",
+									"required": true
+								},
+								{
+									"name": "date_post",
+									"type": "Number",
+									"description": "发布时间戳",
+									"required": true
+								},
+								{
+									"name": "date_post_str",
+									"type": "String",
+									"description": "发布时间",
+									"required": true
+								},
+								{
+									"name": "detail",
+									"type": "String",
+									"description": "RFQ详情",
+									"required": true
+								},
+								{
+									"name": "has_read",
+									"type": "Boolean",
+									"description": "是否有读过",
+									"required": true
+								},
+								{
+									"name": "have_image",
+									"type": "Boolean",
+									"description": "是否有图片",
+									"required": true
+								},
+								{
+									"name": "image_url",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								},
+								{
+									"name": "left_count",
+									"type": "Number",
+									"description": "剩余报价数",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "rfq_id",
+									"type": "String",
+									"description": "rfqID",
+									"required": true
+								},
+								{
+									"name": "subject",
+									"type": "String",
+									"description": "RFQ标题",
+									"required": true
+								},
+								{
+									"name": "quantity_unit",
+									"type": "String",
+									"description": "数量单位",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

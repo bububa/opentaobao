@@ -1,0 +1,43 @@
+{
+	"name": "taobao.omniorder.dtd.consume",
+	"apiChineseName": "门店自送对码进行核销",
+	"description": "该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。",
+	"requestParams": [
+		{
+			"name": "param_door2door_consume_request",
+			"type": "Door2doorConsumeRequest",
+			"description": "核销信息",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "核销码",
+					"required": true
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "淘宝主订单ID",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码，为0表示成功，非0表示失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误西溪"
+		}
+	]
+}

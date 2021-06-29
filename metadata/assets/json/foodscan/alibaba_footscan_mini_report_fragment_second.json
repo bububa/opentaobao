@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.footscan.mini.report.fragment.second",
+	"apiChineseName": "第二只脚生成报告接口",
+	"description": "第二只脚生成报告接口",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "平台分配的token",
+			"required": true
+		},
+		{
+			"name": "req_data",
+			"type": "FilePackageBasicReq",
+			"description": "请求数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "scan_id",
+					"type": "String",
+					"description": "脚型报告的唯一标识",
+					"required": true
+				},
+				{
+					"name": "file_name1",
+					"type": "String",
+					"description": "第一张图片的文件名",
+					"required": true
+				},
+				{
+					"name": "file_name2",
+					"type": "String",
+					"description": "第二张图片的文件名",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1左脚 2右脚",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户唯一标识，可以是淘宝用户ID",
+					"required": true
+				},
+				{
+					"name": "file_name3",
+					"type": "String",
+					"description": "第三张图片的文件名",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回i数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "scan_id",
+							"type": "String",
+							"description": "扫描ID",
+							"required": true
+						},
+						{
+							"name": "is_zero",
+							"type": "Boolean",
+							"description": "测量结果为0",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

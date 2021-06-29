@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.remnantbill.upload",
+	"apiChineseName": "零头出入库单据上传",
+	"description": "零头出入库单据上传",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "零头入库：106；零头出库：210",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "String",
+			"description": "单据时间:yyyy-MM-dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "from_ref_user_id",
+			"type": "String",
+			"description": "发货企业ID",
+			"required": true
+		},
+		{
+			"name": "to_ref_user_id",
+			"type": "String",
+			"description": "收货企业ID",
+			"required": true
+		},
+		{
+			"name": "ass_ref_ent_id",
+			"type": "String",
+			"description": "委托企业ID"
+		},
+		{
+			"name": "dis_ref_ent_id",
+			"type": "String",
+			"description": "配送企业ID"
+		},
+		{
+			"name": "drug_ent_base_info_id",
+			"type": "String",
+			"description": "药品ID",
+			"required": true
+		},
+		{
+			"name": "produce_date",
+			"type": "String",
+			"description": "生产日期：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "expire_date",
+			"type": "String",
+			"description": "有效期:yyyyMMdd",
+			"required": true
+		},
+		{
+			"name": "produce_batch_no",
+			"type": "String",
+			"description": "生产批次",
+			"required": true
+		},
+		{
+			"name": "input_amount",
+			"type": "String",
+			"description": "药品数量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_status",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

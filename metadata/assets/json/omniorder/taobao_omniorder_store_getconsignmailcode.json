@@ -1,0 +1,209 @@
+{
+	"name": "taobao.omniorder.store.getconsignmailcode",
+	"apiChineseName": "全渠道门店物流菜鸟裹裹取号",
+	"description": "用于ISV获取全渠道门店物流订单菜鸟裹裹门店的物流快递取号",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "sender_contact",
+			"type": "String",
+			"description": "发件人联系电话，如空则表示使用门店信息中的电话号码"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "淘宝(TB)、天猫(TM)、京东(JD)、当当(DD)、拍拍(PP)、易讯(YX)、ebay(EBAY)、QQ网购(QQ)      、亚马逊(AMAZON)、苏宁(SN)、国美(GM)、唯品会(WPH)、聚美(JM)、乐蜂(LF)、蘑菇街(MGJ)      、聚尚(JS)、拍鞋(PX)、银泰(YT)、1号店(YHD)、凡客(VANCL)、邮乐(YL)、优购(YG)、阿里      巴巴(1688)、其他(OTHERS)",
+			"required": true
+		},
+		{
+			"name": "trades",
+			"type": "TradeOrderInfoDto[]",
+			"description": "订单信息，目前一次请求只支持一个主订单",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "main_order_id",
+					"type": "String",
+					"description": "主订单ID",
+					"required": true
+				},
+				{
+					"name": "sub_orders",
+					"type": "TradeOrderDetailDto[]",
+					"description": "子订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "items",
+							"type": "TradeItemInfoDto[]",
+							"description": "商品信息，非淘及散件必填，淘系订单以订单在淘宝系统内容为准",
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "商品单价，单位为分"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "volumn",
+									"type": "Number",
+									"description": "体积，单位为升"
+								},
+								{
+									"name": "weight",
+									"type": "Number",
+									"description": "重量，单位为克"
+								}
+							]
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子订单ID，如果是单一订单，则主订单ID和子订单ID均填入同一值",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "receiver",
+			"type": "ReceiverDto",
+			"description": "收件人信息",
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "收件人详细地址",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "district_name",
+					"type": "String",
+					"description": "区县"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收件人手机号，该字段与收件人电话二者必填至少其一"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "收件人电话"
+				},
+				{
+					"name": "pro_name",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人姓名",
+					"required": true
+				},
+				{
+					"name": "street_name",
+					"type": "String",
+					"description": "街道"
+				}
+			]
+		},
+		{
+			"name": "sdt_extend_info_d_t_o",
+			"type": "SdtExtendInfoDto",
+			"description": "扩展信息",
+			"subParams": [
+				{
+					"name": "waybill_print_address",
+					"type": "String",
+					"description": "电子面单上打印的发件地址"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "GetStoreConsignCodeResponse",
+					"description": "发货信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "面单号",
+							"required": true
+						},
+						{
+							"name": "package_id",
+							"type": "String",
+							"description": "包裹Id, 后续发货需要使用",
+							"required": true
+						},
+						{
+							"name": "print_data",
+							"type": "String",
+							"description": "打印机内容",
+							"required": true
+						},
+						{
+							"name": "tag_code",
+							"type": "String",
+							"description": "菜鸟生成的标签号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				}
+			]
+		}
+	]
+}

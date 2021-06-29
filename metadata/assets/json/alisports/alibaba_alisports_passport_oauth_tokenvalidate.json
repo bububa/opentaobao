@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.alisports.passport.oauth.tokenvalidate",
+	"apiChineseName": "阿里体育会员系统--获取登录信息接口",
+	"description": "阿里体育会员系统--获取登录信息接口",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "登录时返回给前端的token",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用的appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "参数加密之后的串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		},
+		{
+			"name": "alisp_data",
+			"type": "Json",
+			"description": "alisp_data"
+		}
+	]
+}

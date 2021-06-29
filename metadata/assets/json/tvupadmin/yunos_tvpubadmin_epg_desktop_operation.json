@@ -1,0 +1,32 @@
+{
+	"name": "yunos.tvpubadmin.epg.desktop.operation",
+	"apiChineseName": "影视桌面运营通用接口",
+	"description": "影视桌面运营通用接口",
+	"requestParams": [
+		{
+			"name": "entity_type",
+			"type": "String",
+			"description": "操作对象实体",
+			"required": true
+		},
+		{
+			"name": "action_type",
+			"type": "String",
+			"description": "操作类型",
+			"required": true
+		},
+		{
+			"name": "parameter",
+			"type": "String",
+			"description": "具体入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "具体返回结果"
+		}
+	]
+}

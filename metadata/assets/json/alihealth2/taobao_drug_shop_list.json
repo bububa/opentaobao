@@ -1,0 +1,133 @@
+{
+	"name": "taobao.drug.shop.list",
+	"apiChineseName": "查询卖家外卖店列表",
+	"description": "查询卖家外卖店列表",
+	"requestParams": [
+		{
+			"name": "keywords",
+			"type": "String",
+			"description": "查询关键字"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "店铺状态，歇业：0，营业：1，所有：-1"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true,
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
+			"required": true,
+			"maxValue": 20,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TakeoutShopPage",
+			"description": "数据结果集",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数"
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数"
+				},
+				{
+					"name": "prev_page",
+					"type": "Number",
+					"description": "上一页页码"
+				},
+				{
+					"name": "next_page",
+					"type": "Number",
+					"description": "下一页页码"
+				},
+				{
+					"name": "takeout_summary_infos",
+					"type": "TakeoutShopSummaryInfo[]",
+					"description": "店铺信息列表",
+					"subParams": [
+						{
+							"name": "sub_name",
+							"type": "String",
+							"description": "店铺分店名"
+						},
+						{
+							"name": "shopid",
+							"type": "Number",
+							"description": "外卖店铺id"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "外卖店铺名称"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "店铺地址"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话号码"
+						},
+						{
+							"name": "wait_confirm",
+							"type": "Number",
+							"description": "等待确认配送的订单笔数"
+						},
+						{
+							"name": "digital_wait_confirm",
+							"type": "Number",
+							"description": "等待确认的兑换券的订单笔数"
+						},
+						{
+							"name": "wait_refund",
+							"type": "Number",
+							"description": "等待退款的订单笔数"
+						},
+						{
+							"name": "is_open",
+							"type": "Number",
+							"description": "店铺营业状态，歇业：0，营业：1"
+						},
+						{
+							"name": "shopoutid",
+							"type": "String",
+							"description": "店铺与ISV的关联ID"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,88 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.forecast.raw.upload",
+	"apiChineseName": "17-供应商预测（原料-二级物料）回传接口",
+	"description": "供应商预测（原料-二级物料）回传接口",
+	"requestParams": [
+		{
+			"name": "supplier_forecast_raw_request",
+			"type": "SupplierForecastRawRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "ip地址"
+				},
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "appkey"
+				},
+				{
+					"name": "supplier_forecast_raw_param_d_t_o_list",
+					"type": "SupplierForecastRawParamDto[]",
+					"description": "数据对象列表",
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户"
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值"
+						},
+						{
+							"name": "forecast",
+							"type": "String",
+							"description": "计划量"
+						},
+						{
+							"name": "location_code",
+							"type": "String",
+							"description": "地点 - 二级物料供应商code"
+						},
+						{
+							"name": "prd_id",
+							"type": "String",
+							"description": "二级物料-物料编码"
+						},
+						{
+							"name": "location_code_to",
+							"type": "String",
+							"description": "地点 - 成品供应商仓库\u0026二级物料中央仓"
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果msg"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果code"
+		}
+	]
+}

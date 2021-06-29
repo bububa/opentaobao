@@ -1,0 +1,487 @@
+{
+	"name": "alitrip.btrip.open.supplychain.train.trade",
+	"apiChineseName": "商旅火车票交易流水接口",
+	"description": "商旅火车票交易流水接口",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenApiZzdSearchRq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "thirdpart_corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "结算结束时间"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "第三方用户ID"
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅审批单号"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "第三方交易id"
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "结算开始时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HisvResultSupport",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "trade_list",
+					"type": "OpenApiZzdTrainOrderRs[]",
+					"description": "出参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "service_fee",
+							"type": "Number",
+							"description": "tmc收取的服务费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_service_fee",
+							"type": "Number",
+							"description": "tmc收取的退订服务费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退票费（分），退票退回的钱",
+							"required": true
+						},
+						{
+							"name": "personal_amount",
+							"type": "Number",
+							"description": "个人支付（分），当pay_type是个人支付时有值",
+							"required": true
+						},
+						{
+							"name": "corp_amount",
+							"type": "Number",
+							"description": "企业支付（分），当pay_type是企业支付时有值",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "总结算金额（分）",
+							"required": true
+						},
+						{
+							"name": "settle_type",
+							"type": "Number",
+							"description": "结算方式:1个人支付，2企业现付，3预存，4月结",
+							"required": true
+						},
+						{
+							"name": "pay_type",
+							"type": "Number",
+							"description": "支付类型,0:企业支付，1:个人支付",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "订单状态改变时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态：-1, \"订单初始化,此状态订单对用户不可见\" 0, \"待支付\" 1, \"出票中\" 2, \"已关闭\" 3, \"有改签单\" 4, \"有退票单\" 5, \"出票完成\" 6, \"退票申请中\" 7, \"改签申请中\" 9, \"出票失败\" 10, \"改签失败\" 11, \"退票失败\";",
+							"required": true
+						},
+						{
+							"name": "apply_title",
+							"type": "String",
+							"description": "申请单标题",
+							"required": true
+						},
+						{
+							"name": "third_part_apply_id",
+							"type": "String",
+							"description": "第三方申请单id",
+							"required": true
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅审批单id",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "部门名称",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户名称",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户ID",
+							"required": true
+						},
+						{
+							"name": "thirdpart_corp_id",
+							"type": "String",
+							"description": "第三方企业ID",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "商旅企业ID",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "trade_action",
+							"type": "Number",
+							"description": "资金流向:1:支出，2:收入",
+							"required": true
+						},
+						{
+							"name": "trade_type",
+							"type": "Number",
+							"description": "费用类型 1预定成功2退票成功3改签成功4差额退款6线下退票改签退款7火车票服务费8火车票赔付9火车票改签服务费10出票失败退款",
+							"required": true
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "第三方交易ID",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "货币种类",
+							"required": true
+						},
+						{
+							"name": "settlement_batch_no",
+							"type": "String",
+							"description": "结算批次：该订单结算时间",
+							"required": true
+						},
+						{
+							"name": "travel_standard_amount",
+							"type": "Number",
+							"description": "差标（分）",
+							"required": true
+						},
+						{
+							"name": "invoice_id",
+							"type": "String",
+							"description": "商旅发票ID",
+							"required": true
+						},
+						{
+							"name": "invoice_title",
+							"type": "String",
+							"description": "发票抬头",
+							"required": true
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "项目编号",
+							"required": true
+						},
+						{
+							"name": "project_title",
+							"type": "String",
+							"description": "项目名称",
+							"required": true
+						},
+						{
+							"name": "thirdpart_itinerary_id",
+							"type": "String",
+							"description": "第三方行程单号",
+							"required": true
+						},
+						{
+							"name": "itinerary_no",
+							"type": "String",
+							"description": "商旅行程单号",
+							"required": true
+						},
+						{
+							"name": "cost_center_list",
+							"type": "CostCenterDo[]",
+							"description": "成本中心信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cost_center_id",
+									"type": "Number",
+									"description": "商旅成本中心ID",
+									"required": true
+								},
+								{
+									"name": "cost_center_title",
+									"type": "String",
+									"description": "成本中心名称",
+									"required": true
+								},
+								{
+									"name": "cost_center_number",
+									"type": "String",
+									"description": "成本中心编号",
+									"required": true
+								},
+								{
+									"name": "third_cost_center_id",
+									"type": "String",
+									"description": "第三方成本中心ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "client_info_dos",
+							"type": "ClientInfoDo[]",
+							"description": "用户信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "第三方用户ID",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "用户名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "change_fee",
+							"type": "Number",
+							"description": "改签费（分），改签补的差价",
+							"required": true
+						},
+						{
+							"name": "change_service_fee",
+							"type": "Number",
+							"description": "tmc收取的改签服务费（分）",
+							"required": true
+						},
+						{
+							"name": "ticket_count",
+							"type": "Number",
+							"description": "票数",
+							"required": true
+						},
+						{
+							"name": "passenger_count",
+							"type": "Number",
+							"description": "乘客人数",
+							"required": true
+						},
+						{
+							"name": "btrip_train_open_ticket_do_list",
+							"type": "BtripTrainOpenTicketDo[]",
+							"description": "票信息，老火车票的票信息为空",
+							"required": true,
+							"subParams": [
+								{
+									"name": "train_no",
+									"type": "String",
+									"description": "车次号",
+									"required": true
+								},
+								{
+									"name": "is_changed",
+									"type": "Boolean",
+									"description": "是否退改",
+									"required": true
+								},
+								{
+									"name": "train_type",
+									"type": "String",
+									"description": "车次类型",
+									"required": true
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发时间",
+									"required": true
+								},
+								{
+									"name": "arr_time",
+									"type": "Date",
+									"description": "到达时间",
+									"required": true
+								},
+								{
+									"name": "run_time",
+									"type": "String",
+									"description": "运行时长",
+									"required": true
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市",
+									"required": true
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市",
+									"required": true
+								},
+								{
+									"name": "dep_station",
+									"type": "String",
+									"description": "出发车站",
+									"required": true
+								},
+								{
+									"name": "arr_station",
+									"type": "String",
+									"description": "到达车站",
+									"required": true
+								},
+								{
+									"name": "seat",
+									"type": "String",
+									"description": "坐席",
+									"required": true
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价（分）",
+									"required": true
+								},
+								{
+									"name": "service_fee",
+									"type": "Number",
+									"description": "tmc收取的服务费（分）",
+									"required": true
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘客名字",
+									"required": true
+								},
+								{
+									"name": "origin_ticket_price",
+									"type": "Number",
+									"description": "原票价（分）",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "change_charge_fee",
+							"type": "Number",
+							"description": "12306收取的改签手续费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_charge_fee",
+							"type": "Number",
+							"description": "12306收取的退票手续费（分）",
+							"required": true
+						},
+						{
+							"name": "is_changed",
+							"type": "Boolean",
+							"description": "是否是改签流水",
+							"required": true
+						},
+						{
+							"name": "is_refund",
+							"type": "Boolean",
+							"description": "是否是退票流水",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

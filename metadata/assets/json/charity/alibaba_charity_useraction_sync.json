@@ -1,0 +1,115 @@
+{
+	"name": "alibaba.charity.useraction.sync",
+	"apiChineseName": "用户公益行为同步",
+	"description": "外部公益活动，用户公益行为同步",
+	"requestParams": [
+		{
+			"name": "channel_user_action_dto",
+			"type": "ChannelUserActionDto",
+			"description": "用户公益行为",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "event_id",
+					"type": "String",
+					"description": "唯一的动作ID,渠道范围内唯一，幂等控制",
+					"required": true
+				},
+				{
+					"name": "tb_user_id",
+					"type": "Number",
+					"description": "淘宝ID",
+					"required": true
+				},
+				{
+					"name": "timestamp_long",
+					"type": "Number",
+					"description": "做公益当时的时间戳"
+				},
+				{
+					"name": "charity_type_sub_code",
+					"type": "String",
+					"description": "公益类型子代码"
+				},
+				{
+					"name": "fore_reg_activity",
+					"type": "Boolean",
+					"description": "是否强制报名活动，默认false"
+				},
+				{
+					"name": "features_map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "feeling",
+					"type": "String",
+					"description": "公益感言"
+				},
+				{
+					"name": "charity_timestamp",
+					"type": "Date",
+					"description": "做公益当时的时间",
+					"required": true
+				},
+				{
+					"name": "ori_content",
+					"type": "String",
+					"description": "原生公益行为内容，JSON"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ThreehoursResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "UserActionSyncResult",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "event_id",
+							"type": "String",
+							"description": "唯一的事件ID",
+							"required": true
+						},
+						{
+							"name": "charity_hours",
+							"type": "String",
+							"description": "本次同步获得的公益时",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

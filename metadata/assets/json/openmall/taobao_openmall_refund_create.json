@@ -1,0 +1,61 @@
+{
+	"name": "taobao.openmall.refund.create",
+	"apiChineseName": "创建OpenMall退款单",
+	"description": "创建OpenMall退款单\n如存在未完结的退款单，则返回该退款单ID",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "分销者联盟身份",
+			"required": true
+		},
+		{
+			"name": "goods_status",
+			"type": "String",
+			"description": "货品状态，可选值 BUYER_NOT_RECEIVED（买家未收到货）、BUYER_RECEIVED（买家已收到货）、UNSHIPPED（未发货）",
+			"required": true
+		},
+		{
+			"name": "refund_desc",
+			"type": "String",
+			"description": "买家的退货描述",
+			"required": true
+		},
+		{
+			"name": "refund_fee",
+			"type": "Number",
+			"description": "退款金额，分",
+			"required": true
+		},
+		{
+			"name": "refund_reason",
+			"type": "String",
+			"description": "退款类别，可选值OTHER_REASON（其他）、SEVEN_DAYS_WITHOUT_REASON（7天无理由，不退邮费）",
+			"required": true
+		},
+		{
+			"name": "refund_type",
+			"type": "String",
+			"description": "退款类型，可选值refund（仅退款）、return_and_refund（退款退货）",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款ID"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "退款单状态"
+		}
+	]
+}

@@ -1,0 +1,87 @@
+{
+	"name": "cainiao.global.handover.cancel",
+	"apiChineseName": "取消交接单",
+	"description": "提供给ISV通过该接口取消交接单",
+	"requestParams": [
+		{
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "top_user_key",
+					"type": "String",
+					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
+				}
+			]
+		},
+		{
+			"name": "tracking_number",
+			"type": "String",
+			"description": "要取消的交接物运单号，即大包运单号"
+		},
+		{
+			"name": "handover_order_id",
+			"type": "Number",
+			"description": "要取消的交接单id"
+		},
+		{
+			"name": "handover_content_id",
+			"type": "Number",
+			"description": "要取消的交接物id，即大包id"
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
+			"required": true
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "OpenHandoverCancelResponse",
+					"description": "响应数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "result",
+							"type": "Boolean",
+							"description": "取消结果",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求处理是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

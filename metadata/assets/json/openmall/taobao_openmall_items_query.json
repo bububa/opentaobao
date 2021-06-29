@@ -1,0 +1,116 @@
+{
+	"name": "taobao.openmall.items.query",
+	"apiChineseName": "批量获取商品列表",
+	"description": "批量获取对联盟开放的商品列表。",
+	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "String",
+			"description": "已废弃，请勿使用"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页，默认：1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20，1~100"
+		},
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "当不输入渠道商时，展示全网公有商品池；当输入渠道商的淘宝Nick时，展示该渠道私有供给商品列表"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "TopItemVo[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态：上架（1）、下架（0）",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "String",
+							"description": "商品成本价，精确到2位小数，单位：元。如：200.07，表示200元7分。",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "库存",
+							"required": true
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "商品类目",
+							"required": true
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "商品主图",
+							"required": true
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "商品所在省份",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "商品所在城市",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

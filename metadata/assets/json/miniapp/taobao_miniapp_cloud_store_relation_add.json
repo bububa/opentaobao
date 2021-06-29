@@ -1,0 +1,48 @@
+{
+	"name": "taobao.miniapp.cloud.store.relation.add",
+	"apiChineseName": "云存储添加",
+	"description": "用于用户上传文件之后回写云存储的关联关系",
+	"requestParams": [
+		{
+			"name": "env",
+			"type": "String",
+			"description": "环境 test/online",
+			"required": true
+		},
+		{
+			"name": "file_type",
+			"type": "String",
+			"description": "文件类型 image/audio/video/font/other",
+			"required": true
+		},
+		{
+			"name": "special_id",
+			"type": "String",
+			"description": "上传平台返回的文件唯一ID",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "上传平台返回的文件url，部分文件类型无固定url，非必填"
+		},
+		{
+			"name": "cloud_path",
+			"type": "String",
+			"description": "文件路径",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "文件真实url"
+		},
+		{
+			"name": "file_id",
+			"type": "String",
+			"description": "云存储文件唯一ID"
+		}
+	]
+}

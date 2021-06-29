@@ -1,0 +1,58 @@
+{
+	"name": "taobao.trade.drug.refuseorder",
+	"apiChineseName": "阿里健康020拒单",
+	"description": "阿里健康020拒单",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		},
+		{
+			"name": "refuse_reason",
+			"type": "String",
+			"description": "拒单原因",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "LifeResultDo",
+			"description": "life的返回值",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是不是成功！",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "ret_code",
+					"type": "String",
+					"description": "1代表成功！",
+					"required": true
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "描述信息",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "RT",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,106 @@
+{
+	"name": "taobao.rhino.supplychain.outbound.pickingcomplete",
+	"apiChineseName": "【WMS005】接收成衣捡配完成通知",
+	"description": "接收成衣捡配完成通知,WMS005",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "PickingCompleteMsg",
+			"description": "捡配完成消息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "factory_id",
+					"type": "Number",
+					"description": "货主编号company"
+				},
+				{
+					"name": "sap_invoice_id",
+					"type": "String",
+					"description": "SAP交货单号torder_code"
+				},
+				{
+					"name": "outbound_date",
+					"type": "Date",
+					"description": "仓库出库单完成时间shipment_confirm_time"
+				},
+				{
+					"name": "wms_invoice_id",
+					"type": "String",
+					"description": "出库单编码shipment_id"
+				},
+				{
+					"name": "ware_house_id",
+					"type": "Number",
+					"description": "仓库编码"
+				},
+				{
+					"name": "waybills",
+					"type": "ClothingOutboundWaybill[]",
+					"description": "运货单信息package_infos",
+					"subParams": [
+						{
+							"name": "outbound_items",
+							"type": "ClothingSkuDto[]",
+							"description": "每个运货单sku明细items",
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "发货数量item_count"
+								},
+								{
+									"name": "style_name",
+									"type": "String",
+									"description": "成衣物料名称ItemName"
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "成衣sku编码Item"
+								},
+								{
+									"name": "rfid",
+									"type": "String",
+									"description": "成衣rfid编码"
+								}
+							]
+						},
+						{
+							"name": "express_company",
+							"type": "String",
+							"description": "快递公司编码tms_code"
+						},
+						{
+							"name": "express_id",
+							"type": "String",
+							"description": "快递编号tms_order_code"
+						}
+					]
+				},
+				{
+					"name": "outbound_type",
+					"type": "Number",
+					"description": "出库单单据类型，1-正常出库2-手工出库"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

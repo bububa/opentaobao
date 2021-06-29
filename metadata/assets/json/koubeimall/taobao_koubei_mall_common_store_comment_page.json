@@ -1,0 +1,235 @@
+{
+	"name": "taobao.koubei.mall.common.store.comment.page",
+	"apiChineseName": "分页查询门店评论详情信息",
+	"description": "查询口碑综合体内的门店评论信息",
+	"requestParams": [
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "mall_id",
+			"type": "String",
+			"description": "商圈ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "查询起始值，默认为0",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页查询量，默认为20，最大数值20",
+			"required": true,
+			"maxValue": 20
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "口碑城市编码（示例：杭州市330100）",
+			"maxLength": 32
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "纬度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "经度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端设备描述(中、英文均可)",
+			"maxLength": 9
+		},
+		{
+			"name": "app_version",
+			"type": "String",
+			"description": "支付宝/口碑/淘宝app版本号",
+			"maxLength": 32
+		},
+		{
+			"name": "display_channel",
+			"type": "String",
+			"description": "展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）",
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "API请求全链路追踪ID",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PageResult",
+					"description": "API返回的分页模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "comment_info",
+							"type": "CommentInfoDto",
+							"description": "门店评论信息dto",
+							"required": true,
+							"subParams": [
+								{
+									"name": "image_count",
+									"type": "Number",
+									"description": "带图的评论数",
+									"required": true
+								},
+								{
+									"name": "total_comments",
+									"type": "Number",
+									"description": "总评论数",
+									"required": true
+								},
+								{
+									"name": "avg_score",
+									"type": "String",
+									"description": "平均分",
+									"required": true
+								},
+								{
+									"name": "detail_info_list",
+									"type": "CommentDetailInfo[]",
+									"description": "评论详情信息list",
+									"required": true,
+									"subParams": [
+										{
+											"name": "comment_image_list",
+											"type": "String[]",
+											"description": "图片列表",
+											"required": true
+										},
+										{
+											"name": "comment_score",
+											"type": "Number",
+											"description": "评分",
+											"required": true
+										},
+										{
+											"name": "comment_content",
+											"type": "String",
+											"description": "评论内容",
+											"required": true
+										},
+										{
+											"name": "comment_time",
+											"type": "String",
+											"description": "评价时间",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "comment_tag_list",
+									"type": "CommentTag[]",
+									"description": "评论标签list",
+									"required": true,
+									"subParams": [
+										{
+											"name": "emotion",
+											"type": "Number",
+											"description": "情感标示（1：正向 -1：负向）",
+											"required": true
+										},
+										{
+											"name": "tag_count",
+											"type": "Number",
+											"description": "标签数量",
+											"required": true
+										},
+										{
+											"name": "tag_content",
+											"type": "String",
+											"description": "标签内容",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "has_more",
+							"type": "Boolean",
+							"description": "是否有更多商品",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页查询长度",
+							"required": true
+						},
+						{
+							"name": "next_start",
+							"type": "Number",
+							"description": "下一页开始",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误信息可读性描述",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息描述",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

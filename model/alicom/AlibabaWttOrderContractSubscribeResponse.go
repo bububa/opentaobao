@@ -19,7 +19,9 @@ type AlibabaWttOrderContractSubscribeAPIResponse struct {
 
 type AlibabaWttOrderContractSubscribeResponse struct {
     XMLName xml.Name `xml:"alibaba_wtt_order_contract_subscribe_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 合约产生陈宫
     

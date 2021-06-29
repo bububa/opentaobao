@@ -1,0 +1,180 @@
+{
+	"name": "alibaba.seller.vendor.order.detail",
+	"apiChineseName": "国际站服务市场订单详情接口",
+	"description": "国际站服务市场订单列表接口",
+	"requestParams": [
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "订单编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "接口返回对象",
+			"subParams": [
+				{
+					"name": "dto",
+					"type": "OpenTradeDetailDto",
+					"description": "接口返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "buyer_ali_id",
+							"type": "Number",
+							"description": "阿里id",
+							"required": true
+						},
+						{
+							"name": "buyer_name",
+							"type": "String",
+							"description": "购买人",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司名称",
+							"required": true
+						},
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "联系电话",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "订单货币类型",
+							"required": true
+						},
+						{
+							"name": "current_status",
+							"type": "String",
+							"description": "当前状态",
+							"required": true
+						},
+						{
+							"name": "fire_time",
+							"type": "Date",
+							"description": "状态更新时间",
+							"required": true
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "订单编号",
+							"required": true
+						},
+						{
+							"name": "order_title",
+							"type": "String",
+							"description": "订单标题",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "订单类型",
+							"required": true
+						},
+						{
+							"name": "pay_channel",
+							"type": "String",
+							"description": "支付通道",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "refund_price",
+							"type": "String",
+							"description": "退款金额",
+							"required": true
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "服务编码",
+							"required": true
+						},
+						{
+							"name": "service_name",
+							"type": "String",
+							"description": "服务名称",
+							"required": true
+						},
+						{
+							"name": "service_score",
+							"type": "Number",
+							"description": "服务评分",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "规格编码",
+							"required": true
+						},
+						{
+							"name": "sku_value",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "transaction_price",
+							"type": "String",
+							"description": "成交价格",
+							"required": true
+						},
+						{
+							"name": "transaction_unit_price",
+							"type": "String",
+							"description": "成交单价",
+							"required": true
+						},
+						{
+							"name": "buyer_login_id",
+							"type": "String",
+							"description": "购买者登陆账号",
+							"required": true
+						},
+						{
+							"name": "service_category_id",
+							"type": "Number",
+							"description": "服务分类id",
+							"required": true
+						},
+						{
+							"name": "service_category",
+							"type": "String",
+							"description": "服务分类名称",
+							"required": true
+						},
+						{
+							"name": "service_sku_label",
+							"type": "String",
+							"description": "用户购买sku",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

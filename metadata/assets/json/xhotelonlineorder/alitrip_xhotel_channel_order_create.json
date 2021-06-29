@@ -1,0 +1,287 @@
+{
+	"name": "alitrip.xhotel.channel.order.create",
+	"apiChineseName": "渠道分销创建订单接口",
+	"description": "创建订单接口服务（如菲住等其他渠道分销提供）",
+	"requestParams": [
+		{
+			"name": "out_source_order_create_req",
+			"type": "OutSourceOrderCreateReq",
+			"description": "创建订单参数",
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "酒店hid"
+				},
+				{
+					"name": "room_number",
+					"type": "Number",
+					"description": "房间数"
+				},
+				{
+					"name": "create_app_key",
+					"type": "String",
+					"description": "下单来源信息"
+				},
+				{
+					"name": "tag_jsqr",
+					"type": "Number",
+					"description": "是否即时确认订单,1表示是"
+				},
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "gid"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "rid"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "预订的标题"
+				},
+				{
+					"name": "rp_id",
+					"type": "Number",
+					"description": "rpid"
+				},
+				{
+					"name": "out_user_id",
+					"type": "String",
+					"description": "外部渠道用户id，钉钉必传"
+				},
+				{
+					"name": "rate_id",
+					"type": "Number",
+					"description": "rate id"
+				},
+				{
+					"name": "srid",
+					"type": "Number",
+					"description": "srid"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家id"
+				},
+				{
+					"name": "item_iid",
+					"type": "Number",
+					"description": "宝贝id"
+				},
+				{
+					"name": "out_source",
+					"type": "String",
+					"description": "外部渠道 钉钉 欢行 ..."
+				},
+				{
+					"name": "is_direct_order",
+					"type": "Boolean",
+					"description": "是否直连订单"
+				},
+				{
+					"name": "late_arrive_time",
+					"type": "Date",
+					"description": "最晚到店时间"
+				},
+				{
+					"name": "checkout",
+					"type": "Date",
+					"description": "离店日期"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人姓名"
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "房型名称"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "ttid",
+					"type": "String",
+					"description": "ttid信息"
+				},
+				{
+					"name": "hotel_name",
+					"type": "String",
+					"description": "酒店名称"
+				},
+				{
+					"name": "guest_info_list",
+					"type": "GuestInfo[]",
+					"description": "入住人信息",
+					"subParams": [
+						{
+							"name": "person_pos",
+							"type": "String",
+							"description": "入住人在这个房间的序号（从1开始）"
+						},
+						{
+							"name": "room_pos",
+							"type": "String",
+							"description": "房间序号（从1开始）"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "入住人姓名"
+						}
+					]
+				},
+				{
+					"name": "check_in",
+					"type": "Date",
+					"description": "入住日期"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号，幂等性保障"
+				},
+				{
+					"name": "total_room_price",
+					"type": "Number",
+					"description": "总价  单位 分"
+				},
+				{
+					"name": "daily_price_info_list",
+					"type": "DailyPriceInfo[]",
+					"description": "日历价格",
+					"subParams": [
+						{
+							"name": "break_fast_count",
+							"type": "Number",
+							"description": "日历早餐"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "日历价格"
+						},
+						{
+							"name": "day",
+							"type": "Date",
+							"description": "日历日期"
+						},
+						{
+							"name": "base_price",
+							"type": "Number",
+							"description": "如果是低价加价商品，此价格是底价。如果是非底价商品且为会员商品，则为会员结算价"
+						}
+					]
+				},
+				{
+					"name": "attributes",
+					"description": "一些扩展属性"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "cancel_policy",
+					"type": "CancelPolicy",
+					"description": "取消政策",
+					"subParams": [
+						{
+							"name": "cancel_policy_type",
+							"type": "Number",
+							"description": "取消类型，1:免费取消,2:不可取消,4:从入住时间前推小时前百分比扣款,5:从入住时间前推小时前百分比扣款,6:提前多少小时退款，扣取几晚房费,9:从入住时间前推小时前退订扣款金额"
+						}
+					]
+				},
+				{
+					"name": "inventory_type_flag",
+					"type": "Number",
+					"description": "库存类型,0 rate普通库存 1 room普通库存 2 rate协议保留房 3 rate普通保留房"
+				},
+				{
+					"name": "cancel_policy_desc",
+					"type": "String",
+					"description": "取消政策描述"
+				},
+				{
+					"name": "platform_promotion",
+					"type": "Number",
+					"description": "平台促销"
+				},
+				{
+					"name": "seller_promotion",
+					"type": "Number",
+					"description": "卖家促销"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HbsResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "OutSourceOrderCreateRes",
+					"description": "泛型结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "飞猪酒店订单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_msg4_dev",
+					"type": "String",
+					"description": "给开发用的错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "extend_info",
+					"type": "Json",
+					"description": "响应扩展信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

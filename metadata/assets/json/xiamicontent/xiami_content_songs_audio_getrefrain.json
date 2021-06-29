@@ -1,0 +1,128 @@
+{
+	"name": "xiami.content.songs.audio.getrefrain",
+	"apiChineseName": "获取副歌信息",
+	"description": "获取歌曲音频副歌",
+	"requestParams": [
+		{
+			"name": "song_ids",
+			"type": "Number[]",
+			"description": "歌曲ID",
+			"required": true,
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "请求结果信息",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "result message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "result code",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "audios",
+			"type": "SongAudiosDto []",
+			"description": "音频信息",
+			"subParams": [
+				{
+					"name": "song_id",
+					"type": "Number",
+					"description": "歌曲ID",
+					"required": true
+				},
+				{
+					"name": "audios",
+					"type": "AudioDto[]",
+					"description": "音频信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "audio_id",
+							"type": "Number",
+							"description": "音频ID",
+							"required": true
+						},
+						{
+							"name": "duration",
+							"type": "Number",
+							"description": "音频时长（单位：毫秒）",
+							"required": true
+						},
+						{
+							"name": "listen_url",
+							"type": "String",
+							"description": "音频地址 带有标准的CDN签名",
+							"required": true
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小(单位: 字节)",
+							"required": true
+						},
+						{
+							"name": "format",
+							"type": "String",
+							"description": "音频格式:mp3|m4a|wav",
+							"required": true
+						},
+						{
+							"name": "rate",
+							"type": "Number",
+							"description": "码率: 32|64|128|192|320|\u003e320 的整数值",
+							"required": true
+						},
+						{
+							"name": "quality",
+							"type": "Number",
+							"description": "品质:1(无损)|2(320k)|3(192k)|4(128k)|5(32k)|6(副歌)|7(64k)|8(128kAAC)|9(192kAAC)|10(256kAAC)|15(MQA)",
+							"required": true
+						},
+						{
+							"name": "sample_rate",
+							"type": "Number",
+							"description": "采样率",
+							"required": true
+						},
+						{
+							"name": "bits",
+							"type": "Number",
+							"description": "位信息",
+							"required": true
+						},
+						{
+							"name": "expire",
+							"type": "Number",
+							"description": "过期时间(unix timestamp)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "refrain_end_time",
+					"type": "Number",
+					"description": "副歌片段结束时间（单位:毫秒）",
+					"required": true
+				},
+				{
+					"name": "refrain_start_time",
+					"type": "Number",
+					"description": "副歌片段开始时间（单位:毫秒）",
+					"required": true
+				}
+			]
+		}
+	]
+}

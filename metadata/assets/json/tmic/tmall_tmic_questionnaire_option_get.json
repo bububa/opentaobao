@@ -1,0 +1,151 @@
+{
+	"name": "tmall.tmic.questionnaire.option.get",
+	"apiChineseName": "获取单题选项",
+	"description": "根据具体题号，获取当前题目的选项列表",
+	"requestParams": [
+		{
+			"name": "hash_code",
+			"type": "String",
+			"description": "问卷唯一编码，从问卷信息接口应答中获取",
+			"required": true
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "问卷版本号，从问卷信息接口的应答中获取",
+			"required": true
+		},
+		{
+			"name": "record_id",
+			"type": "Number",
+			"description": "问卷填答id，从问卷信息接口的应答中获取",
+			"required": true
+		},
+		{
+			"name": "biz",
+			"type": "String",
+			"description": "业务参数，区分问卷分组投放，1024表示分组投放id，fav表示用户动作类型为收藏"
+		},
+		{
+			"name": "question_code",
+			"type": "String",
+			"description": "问题编码，问卷中的问题的唯一编码，从问卷信息接口的应答中获取",
+			"required": true
+		},
+		{
+			"name": "extra_parameters",
+			"type": "Json",
+			"description": "业务扩展参数"
+		},
+		{
+			"name": "open_user_id",
+			"type": "String",
+			"description": "openId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenOptionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "record_id",
+					"type": "Number",
+					"description": "问卷记录id，用于区别不同的回答记录，在提交回答的时候作为请求参数",
+					"required": true
+				},
+				{
+					"name": "has_next_question",
+					"type": "Boolean",
+					"description": "是否还有下一题",
+					"required": true
+				},
+				{
+					"name": "biz_err_info",
+					"type": "String",
+					"description": "业务错误提示",
+					"required": true
+				},
+				{
+					"name": "biz_err_code",
+					"type": "String",
+					"description": "业务错误编码",
+					"required": true
+				},
+				{
+					"name": "question",
+					"type": "QuestionBo",
+					"description": "某一问题对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "此问题唯一编码",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "问题类型，1-单选，2-多选，3-单行文本，4-多行文本",
+							"required": true
+						},
+						{
+							"name": "options",
+							"type": "OptionBo",
+							"description": "该问题下选项对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "has_other",
+									"type": "Boolean",
+									"description": "是否还有其他选项",
+									"required": true
+								},
+								{
+									"name": "items",
+									"type": "ItemBo[]",
+									"description": "选项具体值",
+									"required": true,
+									"subParams": [
+										{
+											"name": "img",
+											"type": "String",
+											"description": "选项所对应的图片cdn地址",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "String",
+											"description": "该选项的唯一编码",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "该选项的说明",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务是否调用成功",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "问卷版本号",
+					"required": true
+				}
+			]
+		}
+	]
+}

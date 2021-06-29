@@ -1,0 +1,165 @@
+{
+	"name": "alibaba.alihouse.newhome.video.sync",
+	"apiChineseName": "视频草稿信息同步",
+	"description": "接收视频信息记录",
+	"requestParams": [
+		{
+			"name": "video",
+			"type": "VideoDraftDto",
+			"description": "草稿对下",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sub_column",
+					"type": "String",
+					"description": "二级栏目名称"
+				},
+				{
+					"name": "top_column",
+					"type": "String",
+					"description": "一级栏目名称"
+				},
+				{
+					"name": "video_source",
+					"type": "String",
+					"description": "视频来源"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "视频标题"
+				},
+				{
+					"name": "video_type",
+					"type": "Number",
+					"description": "视频类型",
+					"required": true
+				},
+				{
+					"name": "outer_video_id",
+					"type": "String",
+					"description": "外部视频id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "original",
+					"type": "Number",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "菜鸟城市id",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "String",
+					"description": "发布时间",
+					"required": true
+				},
+				{
+					"name": "cover_image",
+					"type": "String",
+					"description": "封面图"
+				},
+				{
+					"name": "img_info",
+					"type": "String",
+					"description": "图片信息"
+				},
+				{
+					"name": "video_url",
+					"type": "String",
+					"description": "视频下载地址",
+					"required": true
+				},
+				{
+					"name": "video_format",
+					"type": "Number",
+					"description": "视频格式"
+				},
+				{
+					"name": "compere_id",
+					"type": "Number",
+					"description": "主播id"
+				},
+				{
+					"name": "compere_name",
+					"type": "String",
+					"description": "主播名称"
+				},
+				{
+					"name": "compere_head_url",
+					"type": "String",
+					"description": "主播头像"
+				},
+				{
+					"name": "video_length",
+					"type": "Number",
+					"description": "视频长度"
+				},
+				{
+					"name": "resolution",
+					"type": "Number",
+					"description": "分辨率"
+				},
+				{
+					"name": "author",
+					"type": "String",
+					"description": "作者"
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "1测试数据 0正常数据",
+					"required": true
+				},
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "视频介绍"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,31 @@
+package aedropshiper
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+Dropshipper查找商品信息接口 APIResponse
+aliexpress.postproduct.redefining.findaeproductbyidfordropshipper
+
+提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用
+*/
+type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperAPIResponse struct {
+    model.CommonResponse
+    AliexpressPostproductRedefiningFindaeproductbyidfordropshipperResponse
+}
+
+type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperResponse struct {
+    XMLName xml.Name `xml:"aliexpress_postproduct_redefining_findaeproductbyidfordropshipper_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // result
+    
+    Result   *AeopFindProductResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

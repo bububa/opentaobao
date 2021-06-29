@@ -1,0 +1,121 @@
+{
+	"name": "tmall.car.xcar.synchronize.car.line.data",
+	"apiChineseName": "我的爱卡车型配置数据",
+	"description": "同步我的爱卡车系配置数据到天猫汽车",
+	"requestParams": [
+		{
+			"name": "param_x_car_sys_line_d_t_o",
+			"type": "XCarSysLineDto",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_pid",
+					"type": "Number",
+					"description": "品牌属性id",
+					"required": true
+				},
+				{
+					"name": "brand_vid",
+					"type": "Number",
+					"description": "品牌值id",
+					"required": true
+				},
+				{
+					"name": "car_line_max_decline",
+					"type": "String",
+					"description": "最高降幅"
+				},
+				{
+					"name": "line_pid",
+					"type": "Number",
+					"description": "车系属性id",
+					"required": true
+				},
+				{
+					"name": "line_rank",
+					"type": "String",
+					"description": "车系保养排名",
+					"required": true
+				},
+				{
+					"name": "line_vid",
+					"type": "Number",
+					"description": "车系值id",
+					"required": true
+				},
+				{
+					"name": "local_ref_price_range",
+					"type": "String",
+					"description": "本地参考价范围"
+				},
+				{
+					"name": "manu_gui_price_range",
+					"type": "String",
+					"description": "厂商指导价范围"
+				},
+				{
+					"name": "pic",
+					"type": "String",
+					"description": "车系封面图"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态0.无效 1有效",
+					"required": true
+				},
+				{
+					"name": "year_curing",
+					"type": "String",
+					"description": "年均养护"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultVo",
+			"description": "返回对象总体信息",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "接口请求时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息描述",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "接口正常时返回的数据",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否正常",
+					"required": true
+				}
+			]
+		}
+	]
+}

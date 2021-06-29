@@ -1,0 +1,28 @@
+{
+	"name": "aliexpress.solution.schema.product.instance.post",
+	"apiChineseName": "aliexpress.solution.schema.product.instance.post",
+	"description": "Upload product based on json schema instance.QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.",
+	"requestParams": [
+		{
+			"name": "product_instance_request",
+			"type": "String",
+			"description": "Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456\u0026docType=2",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PostItemResponseDto",
+			"description": "result of the product posting",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product id",
+					"required": true
+				}
+			]
+		}
+	]
+}

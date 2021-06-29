@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.ele.enterprise.ordernew.getrefundinfo",
+	"apiChineseName": "退单和申诉",
+	"description": "退单和申诉",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "饿了么订单ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_data",
+			"type": "StandardOrderTrackingInfoDto",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "show_button",
+					"type": "Number",
+					"description": "1表示展示按钮，0表示不展示按钮",
+					"required": true
+				},
+				{
+					"name": "button_code",
+					"type": "Number",
+					"description": "按钮状态，和button_text一一对应，当show_button为0，button_code也为0，此时button_text为空（参考附录）",
+					"required": true
+				},
+				{
+					"name": "button_text",
+					"type": "String",
+					"description": "按钮文字",
+					"required": true
+				},
+				{
+					"name": "button_url",
+					"type": "String",
+					"description": "按钮 url",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

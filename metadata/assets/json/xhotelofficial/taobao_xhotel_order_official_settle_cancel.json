@@ -1,0 +1,39 @@
+{
+	"name": "taobao.xhotel.order.official.settle.cancel",
+	"apiChineseName": "官网信用住取消结账",
+	"description": "用于官网信用住取消结账",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "阿里旅行订单号，淘宝订单号或外部订单号二选一必填"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "取消结账的原因"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "外部订单号，和tid二选一必填"
+		},
+		{
+			"name": "notify_url",
+			"type": "String",
+			"description": "暂时无意义，无需传入"
+		},
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "请求流水号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回信息"
+		}
+	]
+}

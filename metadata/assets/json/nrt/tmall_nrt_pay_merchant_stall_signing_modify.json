@@ -1,0 +1,128 @@
+{
+	"name": "tmall.nrt.pay.merchant.stall.signing.modify",
+	"apiChineseName": "三级商户进件修改",
+	"description": "三级商户进件修改",
+	"requestParams": [
+		{
+			"name": "req",
+			"type": "StallSigningReqDto",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "ip_role_id",
+					"type": "String",
+					"description": "对应卖场的smid"
+				},
+				{
+					"name": "shop_name",
+					"type": "String",
+					"description": "摊位名称"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "摊位id"
+				},
+				{
+					"name": "biz_cards",
+					"type": "SettleCardInfoDto[]",
+					"description": "银行卡信息",
+					"subParams": [
+						{
+							"name": "account_branch_name",
+							"type": "String",
+							"description": "开户支行名"
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "银行卡号"
+						},
+						{
+							"name": "account_type",
+							"type": "String",
+							"description": "卡类型"
+						},
+						{
+							"name": "account_inst_name",
+							"type": "String",
+							"description": "银行名称"
+						},
+						{
+							"name": "account_inst_city",
+							"type": "String",
+							"description": "开户行所在地-市"
+						},
+						{
+							"name": "account_inst_province",
+							"type": "String",
+							"description": "开户行所在地-省"
+						},
+						{
+							"name": "account_inst_id",
+							"type": "String",
+							"description": "开户行简称缩写"
+						},
+						{
+							"name": "account_holder_name",
+							"type": "String",
+							"description": "卡户名"
+						},
+						{
+							"name": "usage_type",
+							"type": "String",
+							"description": "账号使用类型"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "StallSigningRespDto",
+					"description": "系统自动生成",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "申请单id",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "摊位/门店id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

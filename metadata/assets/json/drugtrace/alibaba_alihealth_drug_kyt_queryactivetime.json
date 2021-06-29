@@ -1,0 +1,85 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.queryactivetime",
+	"apiChineseName": "药品激活状态同步",
+	"description": "根据赋码资源（CodeVersion + resCode）获得最新激活时间\n应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱",
+	"requestParams": [
+		{
+			"name": "bureau_name",
+			"type": "String",
+			"description": "社保局(所属地市名称)",
+			"required": true
+		},
+		{
+			"name": "terminal_name",
+			"type": "String",
+			"description": "请求终端名称",
+			"required": true
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型：1005100-零售，1005200-医疗",
+			"required": true
+		},
+		{
+			"name": "invocation",
+			"type": "String",
+			"description": "调用方式：formal-正式、test-测试",
+			"required": true
+		},
+		{
+			"name": "res_prod_code_list",
+			"type": "String[]",
+			"description": "码段的数组",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "CodeActiveStatusDto[]",
+					"description": "码激活状态DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "active_time",
+							"type": "Number",
+							"description": "最后激活时间，到毫秒时间timeMills方式",
+							"required": true
+						},
+						{
+							"name": "res_prod_code",
+							"type": "String",
+							"description": "码段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

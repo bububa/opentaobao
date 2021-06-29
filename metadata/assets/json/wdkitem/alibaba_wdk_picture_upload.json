@@ -1,0 +1,130 @@
+{
+	"name": "alibaba.wdk.picture.upload",
+	"apiChineseName": "图片上传接口",
+	"description": "上传图片",
+	"requestParams": [
+		{
+			"name": "picture_category_id",
+			"type": "Number",
+			"description": "图片分类ID，设置具体某个分类ID或设置0上传到默认分类，只能传入一个分类",
+			"required": true
+		},
+		{
+			"name": "img",
+			"type": "byte[]",
+			"description": "图片二进制文件流,不能为空,允许png、jpg、gif图片格式,3M以内",
+			"required": true
+		},
+		{
+			"name": "img_input_title",
+			"type": "String",
+			"description": "包括后缀名的图片标题,不能为空，如Bule.jpg,有些卖家希望图片上传后取图片文件的默认名"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "图片标题,如果为空,传的图片标题就取去掉后缀名的image_input_title,超过50字符长度会截取50字符,重名会在标题末尾加\"(1)\";标题末尾已经有\"(数字)\"了，则数字加1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "apiresult",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "PictureDo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "picture_id",
+							"type": "Number",
+							"description": "图片ID",
+							"required": true
+						},
+						{
+							"name": "picture_category_id",
+							"type": "Number",
+							"description": "图片分类ID",
+							"required": true
+						},
+						{
+							"name": "picture_path",
+							"type": "String",
+							"description": "返回的是相对路劲",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "图片标题",
+							"required": true
+						},
+						{
+							"name": "sizes",
+							"type": "Number",
+							"description": "图片大小,bite单位",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "String",
+							"description": "图片是否删除的标记",
+							"required": true
+						},
+						{
+							"name": "created",
+							"type": "String",
+							"description": "图片的创建时间",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "String",
+							"description": "图片的修改时间",
+							"required": true
+						},
+						{
+							"name": "pixel",
+							"type": "String",
+							"description": "图片相素,格式:长x宽，如450x150",
+							"required": true
+						},
+						{
+							"name": "full_url",
+							"type": "String",
+							"description": "完整的路劲",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误原因",
+					"required": true
+				}
+			]
+		}
+	]
+}

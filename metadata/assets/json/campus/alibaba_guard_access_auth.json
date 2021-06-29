@@ -1,0 +1,130 @@
+{
+	"name": "alibaba.guard.access.auth",
+	"apiChineseName": "鉴权",
+	"description": "刷卡鉴权",
+	"requestParams": [
+		{
+			"name": "param_identify_auth_d_t_o",
+			"type": "IdentifyAuthDto",
+			"description": "请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "app_code",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "device_id",
+					"required": true
+				},
+				{
+					"name": "identif_auth_type_enum",
+					"type": "String",
+					"description": "鉴权类型",
+					"required": true
+				},
+				{
+					"name": "app_sign",
+					"type": "String",
+					"description": "app_sigin",
+					"required": true
+				},
+				{
+					"name": "time_stamp",
+					"type": "Number",
+					"description": "时间",
+					"required": true
+				},
+				{
+					"name": "voucher_d_t_o_list",
+					"type": "VoucherDto[]",
+					"description": "凭证",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_voucher_type_enum",
+							"type": "String",
+							"description": "凭证类型",
+							"required": true
+						},
+						{
+							"name": "voucher_no",
+							"type": "String",
+							"description": "卡号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "IdentifyAuthResultDto",
+					"description": "内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "业务id",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "鉴权结果码",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "鉴权结果消息",
+							"required": true
+						},
+						{
+							"name": "error_msg_en",
+							"type": "String",
+							"description": "鉴权结果消息英文",
+							"required": true
+						},
+						{
+							"name": "event_trace_id",
+							"type": "String",
+							"description": "业务流水id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "接口请求响应码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否请求成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

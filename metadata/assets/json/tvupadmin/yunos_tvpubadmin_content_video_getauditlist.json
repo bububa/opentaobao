@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.video.getauditlist",
+	"apiChineseName": "迎客松视频审核记录查询",
+	"description": "迎客松视频审核记录查询",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "视频审核列表，json格式"
+		}
+	]
+}

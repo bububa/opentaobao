@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.alihealth.drug.download.entlist",
+	"apiChineseName": "企业下载列表",
+	"description": "获取企业的下载文件列表",
+	"requestParams": [
+		{
+			"name": "app_key_n",
+			"type": "String",
+			"description": "appKey"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "DataEntTaskDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "file_info_list",
+							"type": "Json[]",
+							"description": "fileInfoList",
+							"required": true
+						},
+						{
+							"name": "file_num",
+							"type": "Number",
+							"description": "fileNum",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

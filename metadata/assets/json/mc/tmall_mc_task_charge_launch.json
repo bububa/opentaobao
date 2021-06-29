@@ -1,0 +1,42 @@
+{
+	"name": "tmall.mc.task.charge.launch",
+	"apiChineseName": "云码充电宝投放链路",
+	"description": "云码充电宝投放链路，用于判断用户是否有匹配的投放计划",
+	"requestParams": [
+		{
+			"name": "outer_code",
+			"type": "String",
+			"description": "外部设备编码",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "String",
+			"description": "渠道ID",
+			"required": true
+		},
+		{
+			"name": "alipay_open_id",
+			"type": "String",
+			"description": "支付宝openID",
+			"required": true
+		},
+		{
+			"name": "url_id",
+			"type": "String",
+			"description": "urlID"
+		},
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "服务商附加url参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "入会页url"
+		}
+	]
+}

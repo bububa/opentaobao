@@ -68,4 +68,24 @@ type ServiceTradeOrder struct {
     Attributes   string `json:"attributes,omitempty" xml:"attributes,omitempty"`
     
 
+    // 服务的售卖价
+    
+    B2bPriceUnit   int64 `json:"b2b_price_unit,omitempty" xml:"b2b_price_unit,omitempty"`
+    
+
+    // 主订单号
+    
+    ParentOrderId   int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
+    
+
+    // 商家编码
+    
+    OuterIdP   string `json:"outer_id_p,omitempty" xml:"outer_id_p,omitempty"`
+    
+
+    // 商品价格
+    
+    Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
+    
+
 }

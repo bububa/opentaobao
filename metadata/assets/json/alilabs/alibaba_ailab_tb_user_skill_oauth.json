@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.ailab.tb.user.skill.oauth",
+	"apiChineseName": "用户技能 Oauth 授权（淘宝 openId）",
+	"description": "定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息",
+	"requestParams": [
+		{
+			"name": "taobao_id",
+			"type": "String",
+			"description": "taobao open id",
+			"required": true
+		},
+		{
+			"name": "expire_in",
+			"type": "Number",
+			"description": "access token 过期时间，单位：秒",
+			"required": true
+		},
+		{
+			"name": "oauth_access_token",
+			"type": "String",
+			"description": "access token",
+			"required": true
+		},
+		{
+			"name": "refresh_token",
+			"type": "String",
+			"description": "refresh token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "返回码，200 代表成功"
+		}
+	]
+}

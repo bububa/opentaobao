@@ -1,0 +1,338 @@
+{
+	"name": "taobao.omniorder.store.consigned",
+	"apiChineseName": "Pos端门店发货",
+	"description": "ISV Pos端门店发货，通知星盘",
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "跟踪Id"
+		},
+		{
+			"name": "sender_id",
+			"type": "Number",
+			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址"
+		},
+		{
+			"name": "ins_receiver_to",
+			"type": "JzReceiverDto",
+			"description": "家装物流-安装收货人信息,如果为空,则取默认收货人信息",
+			"subParams": [
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				}
+			]
+		},
+		{
+			"name": "sub_order_list",
+			"type": "StoreConsignedResult[]",
+			"description": "子订单列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "attributes",
+					"description": "扩展字段"
+				},
+				{
+					"name": "sub_oid",
+					"type": "Number",
+					"description": "子订单Id"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "0表示无系统异常"
+				},
+				{
+					"name": "logistic_company",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "logistic_company_code",
+					"type": "String",
+					"description": "物流公司code，如果id和code都填入，以code为准。点点送：DISTRIBUTOR_12006531；门店自送：DISTRIBUTOR_12709653；如果是菜鸟配送，code和company可以为空"
+				},
+				{
+					"name": "logistic_id",
+					"type": "String",
+					"description": "物流公司id"
+				},
+				{
+					"name": "logistic_no",
+					"type": "String",
+					"description": "物流单号"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "异常描述"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作者"
+				},
+				{
+					"name": "package_id",
+					"type": "Number",
+					"description": "速店通packageId"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "店铺Id, 可能是门店或者电商仓"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "store_type",
+					"type": "String",
+					"description": "店铺类型, 门店(Store)或者电商仓(Warehouse)"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单Id"
+				}
+			]
+		},
+		{
+			"name": "jz_top_args",
+			"type": "JzTopArgsDto",
+			"description": "家装物流-发货参数",
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号,用快递或商家自有发货时,必填"
+				},
+				{
+					"name": "package_volume",
+					"type": "String",
+					"description": "包裹体积"
+				},
+				{
+					"name": "package_remark",
+					"type": "String",
+					"description": "包裹备注"
+				},
+				{
+					"name": "zy_company",
+					"type": "String",
+					"description": "自有物流公司名称"
+				},
+				{
+					"name": "package_weight",
+					"type": "String",
+					"description": "包裹重量"
+				},
+				{
+					"name": "zy_consign_time",
+					"type": "String",
+					"description": "自有物流发货时间,时间不能早于当前时间"
+				},
+				{
+					"name": "zy_phone_number",
+					"type": "String",
+					"description": "自有物流公司电话"
+				},
+				{
+					"name": "package_number",
+					"type": "String",
+					"description": "包裹数量"
+				}
+			]
+		},
+		{
+			"name": "ins_tp_dto",
+			"type": "TpDto",
+			"description": "家装物流-安装公司信息,需要安装时,才填写",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公司编码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "公司名称"
+				}
+			]
+		},
+		{
+			"name": "jz_receiver_to",
+			"type": "JzReceiverDto",
+			"description": "家装物流-家装收货人信息,如果为空,则取默认收货信息",
+			"subParams": [
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				}
+			]
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝交易主订单ID",
+			"required": true
+		},
+		{
+			"name": "report_timestamp",
+			"type": "Number",
+			"description": "ISV系统上报时间",
+			"required": true
+		},
+		{
+			"name": "lg_tp_dto",
+			"type": "TpDto",
+			"description": "家装物流-物流公司信息",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公司编码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "公司名称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误内容"
+		},
+		{
+			"name": "data",
+			"type": "StoreConsignedResponse",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "mailNo",
+					"required": true
+				},
+				{
+					"name": "short_id",
+					"type": "String",
+					"description": "shortId",
+					"required": true
+				},
+				{
+					"name": "got_code",
+					"type": "String",
+					"description": "gotCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.edit",
+	"apiChineseName": "编辑专题",
+	"description": "编辑专题",
+	"requestParams": [
+		{
+			"name": "topic_json",
+			"type": "String",
+			"description": "待编辑专题"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "retCode",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

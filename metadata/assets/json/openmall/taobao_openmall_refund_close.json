@@ -1,0 +1,26 @@
+{
+	"name": "taobao.openmall.refund.close",
+	"apiChineseName": "关闭OpenMall退款单",
+	"description": "关闭OpenMall退款单",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否关闭成功"
+		}
+	]
+}

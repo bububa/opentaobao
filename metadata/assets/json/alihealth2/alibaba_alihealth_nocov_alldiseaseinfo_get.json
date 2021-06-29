@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.alihealth.nocov.alldiseaseinfo.get",
+	"apiChineseName": "获取全国疫情统计数据",
+	"description": "获取全国疫情统计数据",
+	"requestParams": [
+		{
+			"name": "province",
+			"type": "String",
+			"description": "省的"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "城市code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回全国疫情的统计数据"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "biz_err_code",
+			"type": "String",
+			"description": "errCode"
+		},
+		{
+			"name": "biz_err_message",
+			"type": "String",
+			"description": "errMessage"
+		}
+	]
+}

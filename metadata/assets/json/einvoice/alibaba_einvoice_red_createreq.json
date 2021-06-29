@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.einvoice.red.createreq",
+	"apiChineseName": "发票冲红接口",
+	"description": "发票冲红接口，通过蓝票流水号或者发票号码+发票代码进行冲红",
+	"requestParams": [
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销售方税号",
+			"required": true
+		},
+		{
+			"name": "blue_serial_no",
+			"type": "String",
+			"description": "蓝票流水号，优先级高于发票代码+发票号码",
+			"maxLength": 20
+		},
+		{
+			"name": "red_serial_no",
+			"type": "String",
+			"description": "红票流水号",
+			"required": true,
+			"maxLength": 20
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "蓝票发票代码",
+			"maxLength": 16
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "蓝票发票号码",
+			"maxLength": 12
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "是否冲红成功"
+		}
+	]
+}

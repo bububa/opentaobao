@@ -60,7 +60,7 @@ type InventoryReportRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
     // 备注

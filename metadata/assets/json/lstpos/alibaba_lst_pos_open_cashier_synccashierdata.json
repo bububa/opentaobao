@@ -1,0 +1,253 @@
+{
+	"name": "alibaba.lst.pos.open.cashier.synccashierdata",
+	"apiChineseName": "收银快照同步接口(最多10条订单信息)",
+	"description": "收银快照同步接口(最多10条订单信息)",
+	"requestParams": [
+		{
+			"name": "cashier_flow_d_t_o_list",
+			"type": "CashierFlowDto[]",
+			"description": "订单对象列表",
+			"required": true,
+			"maxListSize": 10,
+			"subParams": [
+				{
+					"name": "cashier_goods_detail_d_t_o_list",
+					"type": "CashierGoodsDetailDto[]",
+					"description": "收银商品快照对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "商品条码，可能有无码商品"
+						},
+						{
+							"name": "goods_cost_price",
+							"type": "Number",
+							"description": "商品进货价 单位:分"
+						},
+						{
+							"name": "goods_actual_price",
+							"type": "Number",
+							"description": "商品销售价(折后)，单位:分",
+							"required": true
+						},
+						{
+							"name": "goods_origin_price",
+							"type": "Number",
+							"description": "商品原价(折前)，单位:分",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "String",
+							"description": "商品数量",
+							"required": true
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "isv_goods_id",
+							"type": "String",
+							"description": "ISV商品Id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pay_status",
+					"type": "String",
+					"description": "支付状态 请求失败:requestFail 支付失败:payFail 支付超时:payTimeOut 支付成功:paySuccess",
+					"required": true
+				},
+				{
+					"name": "pay_type",
+					"type": "String",
+					"description": "支付方式 支付宝:alipay 微信:wechat 现金:cashPay 其他:other",
+					"required": true
+				},
+				{
+					"name": "total_actual_price",
+					"type": "Number",
+					"description": "结算单总价(实收)，单位:分",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "结算单总价(应收)，单位:分",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "最后修改 精确到毫秒"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间 精确到毫秒",
+					"required": true
+				},
+				{
+					"name": "isv_trade_flow_num",
+					"type": "String",
+					"description": "isv订单流水号",
+					"required": true
+				},
+				{
+					"name": "original_trade_flow_num",
+					"type": "String",
+					"description": "关联lst原始订单号:主要是退款订单关联原始订单号使用"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "订单类型 0: 交易订单快照  1:退款订单快照  缺省为0"
+				},
+				{
+					"name": "device_type",
+					"type": "Number",
+					"description": "数据来源的设备类型   0：pos，1：自动售货机，9999：其它  缺省值：0"
+				},
+				{
+					"name": "hardware_id",
+					"type": "String",
+					"description": "设备物理硬件ID（自身保证唯一性）"
+				},
+				{
+					"name": "cashier_pay_detail_d_t_o_list",
+					"type": "CashierPayDetailDto[]",
+					"description": "收银支付明细列表对象",
+					"subParams": [
+						{
+							"name": "desc_info",
+							"type": "String",
+							"description": "备注信息"
+						},
+						{
+							"name": "pay_account",
+							"type": "String",
+							"description": "买家支付/退款账号Id 若payType=alipay ,需要传递 买家的支付宝用户id；其它支付方式可不传"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "创建时间 精确到毫秒"
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "支付状态    请求失败:requestFail    支付失败:payFail  支付超时:payTimeOut    支付成功:paySuccess  退款成功:refundSuccess 退款失败:refundFail"
+						},
+						{
+							"name": "pay_amount",
+							"type": "Number",
+							"description": "支付金额 单位：分 缺省值:0"
+						},
+						{
+							"name": "pay_type",
+							"type": "String",
+							"description": "支付类型 支付宝:alipay  微信:wechat 现金:cashPay， 其它:other"
+						},
+						{
+							"name": "pay_flow_num",
+							"type": "String",
+							"description": "支付流水号  正向支付:支付流水号; 逆向支付:退款流水号;"
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型  正向支付(支付)：0  缺省为：0   逆向支付(退款)：1"
+						}
+					]
+				},
+				{
+					"name": "brand",
+					"type": "String",
+					"description": "设备品牌"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "设备型号"
+				}
+			]
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "门店对应的主账号id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "ErrorResult[]",
+					"description": "单个订单处理结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "单个订单错误消息",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "单个订单错误码",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "单个订单isv业务处理关键字值",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "单个订单处理结果标示  true：成功 false：失败",
+							"required": true
+						},
+						{
+							"name": "data",
+							"type": "Json",
+							"description": "业务处理数据",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功与否标示 true：成功 false：失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

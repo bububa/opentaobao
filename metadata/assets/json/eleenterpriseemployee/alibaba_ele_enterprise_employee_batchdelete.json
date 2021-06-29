@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.ele.enterprise.employee.batchdelete",
+	"apiChineseName": "批量删除员工",
+	"description": "批量删除员工",
+	"requestParams": [
+		{
+			"name": "employee_nos",
+			"type": "String[]",
+			"description": "员工工号",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_data",
+			"type": "EnterpriseData",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "error_msgs",
+					"type": "ErrorMsg[]",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "req_body",
+							"type": "String",
+							"description": "请求报文",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "失败原因",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

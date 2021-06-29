@@ -1,0 +1,196 @@
+{
+	"name": "alibaba.alisports.datacenter.datasync.sportsdatas",
+	"apiChineseName": "阿里体育运动数据同步统一接口",
+	"description": "给单方提供同步运动数据到阿里体育的接口",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户阿里体育id",
+			"required": true,
+			"maxLength": 30
+		},
+		{
+			"name": "sports_cat1_id",
+			"type": "Number",
+			"description": "运动一级分类",
+			"required": true
+		},
+		{
+			"name": "sports_cat2_id",
+			"type": "Number",
+			"description": "运动二级分类"
+		},
+		{
+			"name": "sports_cat3_id",
+			"type": "String",
+			"description": "运动三级分类"
+		},
+		{
+			"name": "sports_start_time",
+			"type": "Number",
+			"description": "运动开始时间，单位：毫秒",
+			"required": true
+		},
+		{
+			"name": "sports_end_time",
+			"type": "Number",
+			"description": "运动结束时间，单位：毫秒",
+			"required": true
+		},
+		{
+			"name": "timezone",
+			"type": "Number",
+			"description": "时区"
+		},
+		{
+			"name": "min_heartrate",
+			"type": "Number",
+			"description": "最小心率"
+		},
+		{
+			"name": "max_heartrate",
+			"type": "Number",
+			"description": "最大心率"
+		},
+		{
+			"name": "avg_heartrate",
+			"type": "Number",
+			"description": "平均心率"
+		},
+		{
+			"name": "speed",
+			"type": "String",
+			"description": "速度，单位：千米/小时"
+		},
+		{
+			"name": "action_count",
+			"type": "String",
+			"description": "动作计数，如：步数、滑水次数"
+		},
+		{
+			"name": "path",
+			"type": "String",
+			"description": "路径"
+		},
+		{
+			"name": "sub_channel",
+			"type": "String",
+			"description": "数据原始来源"
+		},
+		{
+			"name": "mileage",
+			"type": "Number",
+			"description": "里程，单位：米"
+		},
+		{
+			"name": "climb",
+			"type": "Number",
+			"description": "爬高，单位：米"
+		},
+		{
+			"name": "duration_time",
+			"type": "Number",
+			"description": "运动持续时间，单位：毫秒",
+			"required": true
+		},
+		{
+			"name": "start_point",
+			"type": "String",
+			"description": "开始位置，格式：经度,维度"
+		},
+		{
+			"name": "result_other",
+			"type": "String",
+			"description": "预留字段"
+		},
+		{
+			"name": "max_speed",
+			"type": "String",
+			"description": "最大速度，单位：千米/小时"
+		},
+		{
+			"name": "end_point",
+			"type": "String",
+			"description": "结束位置,格式[经度,纬度]"
+		},
+		{
+			"name": "stage",
+			"type": "String",
+			"description": "过程数据Json"
+		},
+		{
+			"name": "power_frequency",
+			"type": "Number",
+			"description": "频率"
+		},
+		{
+			"name": "calorie",
+			"type": "String",
+			"description": "消耗卡路里，单位：千卡"
+		},
+		{
+			"name": "path_data_url",
+			"type": "String",
+			"description": "路径节点数据下载地址"
+		},
+		{
+			"name": "stage_data_url",
+			"type": "String",
+			"description": "过程数据下载地址"
+		},
+		{
+			"name": "data_type",
+			"type": "Number",
+			"description": "数据类型：0.普通数据 1.赛事数据"
+		},
+		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型"
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备型号(厂商)"
+		},
+		{
+			"name": "device_name",
+			"type": "String",
+			"description": "设备名称"
+		},
+		{
+			"name": "message_id",
+			"type": "String",
+			"description": "三方数据唯一码"
+		},
+		{
+			"name": "version",
+			"type": "String",
+			"description": "版本号",
+			"maxLength": 5
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rs_msg",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "rs_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "rs_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "rs_model",
+			"type": "Boolean",
+			"description": "返回值"
+		}
+	]
+}

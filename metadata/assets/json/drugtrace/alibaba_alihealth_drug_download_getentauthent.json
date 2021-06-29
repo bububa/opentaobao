@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.alihealth.drug.download.getentauthent",
+	"apiChineseName": "获取授权企业列表",
+	"description": "D2D数据落地获取授权企业列表",
+	"requestParams": [
+		{
+			"name": "auth_begin_date",
+			"type": "String",
+			"description": "授权开始时间"
+		},
+		{
+			"name": "auth_end_date",
+			"type": "String",
+			"description": "授权结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "auth_list",
+					"type": "Model[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "auth_ref_ent_id",
+							"type": "String",
+							"description": "企业ID",
+							"required": true
+						},
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "授权企业ID",
+							"required": true
+						},
+						{
+							"name": "auth_date",
+							"type": "String",
+							"description": "授权日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "issuccess",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

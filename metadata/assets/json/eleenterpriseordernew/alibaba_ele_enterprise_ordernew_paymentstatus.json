@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.ele.enterprise.ordernew.paymentstatus",
+	"apiChineseName": "设置订单支付",
+	"description": "设置订单支付成功",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "pay_serial_number",
+			"type": "String",
+			"description": "支付流水号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

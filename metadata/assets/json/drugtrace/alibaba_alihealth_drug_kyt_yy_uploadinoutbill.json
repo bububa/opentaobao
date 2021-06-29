@@ -1,0 +1,156 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.yy.uploadinoutbill",
+	"apiChineseName": "医院出入库信息上传",
+	"description": "医院上传出入库信息，包括采购入库（102），退货入库（103），供应入库（107）,退货出库（202），销毁出库（205），抽检出库（206）， 供应出库（209）, \n不包括对个人的零售出库，疫苗接种，领药出库。",
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编码",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据时间",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "Number",
+			"description": "单据类型【102代表采购入库】",
+			"required": true
+		},
+		{
+			"name": "physic_type",
+			"type": "Number",
+			"description": "药品类型【3普药2特药】",
+			"required": true
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "上传企业的单位编码",
+			"required": true
+		},
+		{
+			"name": "agent_ref_user_id",
+			"type": "String",
+			"description": "代理企业REF标识"
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货企业entId",
+			"required": true
+		},
+		{
+			"name": "to_user_id",
+			"type": "String",
+			"description": "收货企业entId",
+			"required": true
+		},
+		{
+			"name": "dest_user_id",
+			"type": "String",
+			"description": "直调企业标识"
+		},
+		{
+			"name": "oper_ic_code",
+			"type": "String",
+			"description": "单据提交者（appkey编号）",
+			"required": true
+		},
+		{
+			"name": "oper_ic_name",
+			"type": "String",
+			"description": "单据提交者姓名",
+			"required": true
+		},
+		{
+			"name": "client_type",
+			"type": "String",
+			"description": "客户端类型[必须填2]",
+			"required": true
+		},
+		{
+			"name": "return_reason_code",
+			"type": "String",
+			"description": "退货原因代码[退货入出库时填写]"
+		},
+		{
+			"name": "return_reason_des",
+			"type": "String",
+			"description": "退货原因描述[退货入出库时填写]"
+		},
+		{
+			"name": "cancel_reason_code",
+			"type": "String",
+			"description": "注销原因代码【销毁出库时填写】"
+		},
+		{
+			"name": "cancel_reason_des",
+			"type": "String",
+			"description": "注销原因描述【销毁出库时填写】"
+		},
+		{
+			"name": "executer_name",
+			"type": "String",
+			"description": "执行人姓名【销毁出库时填写】"
+		},
+		{
+			"name": "executer_code",
+			"type": "String",
+			"description": "执行人证件号【销毁出库时填写】"
+		},
+		{
+			"name": "superviser_name",
+			"type": "String",
+			"description": "监督人姓名【销毁出库时填写】"
+		},
+		{
+			"name": "superviser_code",
+			"type": "String",
+			"description": "监督人证件号【销毁出库时填写】"
+		},
+		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID[企业自已系统的药品ID]"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"required": true,
+			"maxListSize": 800
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码(BILL_DECODE_ERROR 单据转码失败  BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 false 失败)"
+		}
+	]
+}

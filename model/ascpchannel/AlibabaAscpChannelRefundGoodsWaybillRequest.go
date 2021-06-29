@@ -1,0 +1,51 @@
+package ascpchannel
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+淘外分销退货回传物流单号 APIRequest
+alibaba.ascp.channel.refund.goods.waybill
+
+淘外分销退货回传物流单号
+*/
+type AlibabaAscpChannelRefundGoodsWaybillRequest struct {
+    model.Params
+
+    // 请求
+    refundWayBillReq   *ExternalRefundGoodsWaybillRequest 
+
+}
+
+func NewAlibabaAscpChannelRefundGoodsWaybillRequest() *AlibabaAscpChannelRefundGoodsWaybillRequest{
+    return &AlibabaAscpChannelRefundGoodsWaybillRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiMethodName() string {
+    return "alibaba.ascp.channel.refund.goods.waybill"
+}
+
+func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *AlibabaAscpChannelRefundGoodsWaybillRequest) SetRefundWayBillReq(refundWayBillReq *ExternalRefundGoodsWaybillRequest) error {
+    r.refundWayBillReq = refundWayBillReq
+    r.Set("refund_way_bill_req", refundWayBillReq)
+    return nil
+}
+
+func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetRefundWayBillReq() *ExternalRefundGoodsWaybillRequest {
+    return r.refundWayBillReq
+}
+

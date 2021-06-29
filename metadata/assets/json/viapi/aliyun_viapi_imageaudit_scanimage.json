@@ -1,0 +1,292 @@
+{
+	"name": "aliyun.viapi.imageaudit.scanimage",
+	"apiChineseName": "绿网-内容安全",
+	"description": "绿网-内容安全技术是基于阿里云视觉分析技术和深度识别技术，并经过在阿里经济体内和云上客户的多领域、多场景的广泛应用和不断优化，可提供风险和治理领域的图像识别、定位、检索等全面服务能力，不仅可以降低色情、涉恐、涉政、广告、垃圾信息等违规风险，而且能大幅度降低人工审核成本。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "tasks",
+			"type": "Task[]",
+			"description": "系统自动生成",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "data_id",
+					"type": "String",
+					"description": "数据ID"
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "待检测图像的URL。支持HTTP和HTTPS协议。当前仅支持上海地域的OSS链接"
+				},
+				{
+					"name": "image_time",
+					"type": "Number",
+					"description": "图片创建或编辑时间"
+				},
+				{
+					"name": "interval",
+					"type": "Number",
+					"description": "截帧频率"
+				},
+				{
+					"name": "max_frames",
+					"type": "Number",
+					"description": "最大截帧数量"
+				}
+			]
+		},
+		{
+			"name": "scenes",
+			"type": "String[]",
+			"description": "场景列表",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data_list",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Result[]",
+					"description": "图片检测结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data_id",
+							"type": "String",
+							"description": "数据ID",
+							"required": true
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "任务ID",
+							"required": true
+						},
+						{
+							"name": "image_url",
+							"type": "String",
+							"description": "图像的URL",
+							"required": true
+						},
+						{
+							"name": "sub_results",
+							"type": "SubResult[]",
+							"description": "单张图片的检测结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "suggestion",
+									"type": "String",
+									"description": "建议您执行的操作，取值范围： pass：图片正常，无需进行其余操作；或者未识别出目标对象 review：检测结果不确定，需要进行人工审核；或者识别出目标对象 block：图片违规，建议执行进一步操作（如直接删除或做限制处理）",
+									"required": true
+								},
+								{
+									"name": "rate",
+									"type": "Number",
+									"description": "相似概率",
+									"required": true
+								},
+								{
+									"name": "label",
+									"type": "String",
+									"description": "检测结果的分类，与具体的scene对应。取值范围参见scene和label说明。",
+									"required": true
+								},
+								{
+									"name": "scene",
+									"type": "String",
+									"description": "图片检测场景，和调用请求中的场景（scenes）对应",
+									"required": true
+								},
+								{
+									"name": "ocr_data_list",
+									"type": "String[]",
+									"description": "识别到的图片中的完整文字信息。 说明 默认不返回，如需返回请通过工单联系我们",
+									"required": true
+								},
+								{
+									"name": "frames",
+									"type": "Frame[]",
+									"description": "如果待检测图片因为过长被截断，该参数返回截断后的每一帧图像的临时访问地址，供您参考。具体结构描述见Frame",
+									"required": true,
+									"subParams": [
+										{
+											"name": "rate",
+											"type": "Number",
+											"description": "置信度，仅作参考，不建议使用",
+											"required": true
+										},
+										{
+											"name": "u_r_l",
+											"type": "String",
+											"description": "被截断的图片的临时访问url，地址有效期是5分钟",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "hint_words_info_list",
+									"type": "HintWordsInfo[]",
+									"description": "图片中含有广告时，返回图片中广告文字命中的风险关键词信息。格式为数组，具体结构描述见HintWordsInfo。 说明 仅适用于ad场景。 示例值： \"hintWordsInfo\":[{\"context\":\"敏感词\"}]",
+									"required": true,
+									"subParams": [
+										{
+											"name": "context",
+											"type": "String",
+											"description": "图片中文字命中的风险关键词内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "program_code_data_list",
+									"type": "ProgramCodeData[]",
+									"description": "图片中含有小程序码时，返回小程序码的位置信息，具体结构描述见ProgramCodeData。说明 仅适用于qrcode场景，且已通过工单联系我们开通了小程序码识别",
+									"required": true,
+									"subParams": [
+										{
+											"name": "x",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，小程序码区域左上角到y轴距离",
+											"required": true
+										},
+										{
+											"name": "y",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，小程序码区域左上角到x轴距离",
+											"required": true
+										},
+										{
+											"name": "width",
+											"type": "Number",
+											"description": "小程序码区域宽度",
+											"required": true
+										},
+										{
+											"name": "height",
+											"type": "Number",
+											"description": "小程序码区域高度",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "logo_data_list",
+									"type": "LogoData[]",
+									"description": "图片中含有logo时，返回识别出来的logo信息，具体结构描述见LogoData。 说明 仅适用于logo场景",
+									"required": true,
+									"subParams": [
+										{
+											"name": "type",
+											"type": "String",
+											"description": "识别出的logo类型，取值为TV （台标）",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "识别出的logo名称",
+											"required": true
+										},
+										{
+											"name": "x",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，logo区域左上角到y轴距离。",
+											"required": true
+										},
+										{
+											"name": "y",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，logo区域左上角到x轴距离。",
+											"required": true
+										},
+										{
+											"name": "width",
+											"type": "Number",
+											"description": "logo区域宽度",
+											"required": true
+										},
+										{
+											"name": "height",
+											"type": "Number",
+											"description": "logo区域高度",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "sface_data_list",
+									"type": "SfaceData[]",
+									"description": "图片中包含暴恐识涉政内容时，返回识别出来的暴恐涉政信息，具体结构描述见SfaceData。 说明 仅适用于terrorism和sface场景。关于该参数在sface场景中的具体内容，请参见敏感人脸检测",
+									"required": true,
+									"subParams": [
+										{
+											"name": "faces",
+											"type": "Face[]",
+											"description": "识别出的人脸信息，具体结构描述见face",
+											"required": true,
+											"subParams": [
+												{
+													"name": "id",
+													"type": "String",
+													"description": "人脸Id",
+													"required": true
+												},
+												{
+													"name": "rate",
+													"type": "Number",
+													"description": "相似概率",
+													"required": true
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "相似人物的名称",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "heihght",
+											"type": "Number",
+											"description": "人脸区域高度",
+											"required": true
+										},
+										{
+											"name": "width",
+											"type": "Number",
+											"description": "人脸区域宽度",
+											"required": true
+										},
+										{
+											"name": "y",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，人脸区域左上角到x轴距离",
+											"required": true
+										},
+										{
+											"name": "x",
+											"type": "Number",
+											"description": "以图片左上角为坐标原点，人脸区域左上角到y轴距离",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

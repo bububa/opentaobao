@@ -15,7 +15,7 @@ type StockOutCreateRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenStockoutCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

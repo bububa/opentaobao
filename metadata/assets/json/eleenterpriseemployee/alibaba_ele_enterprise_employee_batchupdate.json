@@ -1,0 +1,102 @@
+{
+	"name": "alibaba.ele.enterprise.employee.batchupdate",
+	"apiChineseName": "批量新增更新员工",
+	"description": "批量新增更新员工",
+	"requestParams": [
+		{
+			"name": "enterprise_datas",
+			"type": "EmployeeInfoDto[]",
+			"description": "批量员工信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "dept_name",
+					"type": "String",
+					"description": "部门"
+				},
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "cost_center",
+					"type": "CostCenter",
+					"description": "成本中心",
+					"subParams": [
+						{
+							"name": "delete_item_ids",
+							"type": "String[]",
+							"description": "删除成本中心列表"
+						},
+						{
+							"name": "add_item_ids",
+							"type": "String[]",
+							"description": "新增成本中心列表"
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "employee_no",
+					"type": "String",
+					"description": "工号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "enterprise_data",
+			"type": "EnterpriseData",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "error_msgs",
+					"type": "ErrorMsg[]",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "req_body",
+							"type": "String",
+							"description": "请求报文",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "失败原因",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

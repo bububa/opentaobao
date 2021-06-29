@@ -1,0 +1,350 @@
+{
+	"name": "alitrip.travel.bookinfo.query",
+	"apiChineseName": "飞猪度假-订单二次预约查询接口",
+	"description": "飞猪度假订单二次预约详情查询接口",
+	"requestParams": [
+		{
+			"name": "bookinfo_id",
+			"type": "Number",
+			"description": "预定信息id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTripBookInfoResult",
+			"description": "交易预定结果对象",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Module",
+					"description": "交易预定详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "end_period",
+							"type": "Date",
+							"description": "时段结束时间",
+							"required": true
+						},
+						{
+							"name": "sub_tc_order_id",
+							"type": "Number",
+							"description": "TC子订单号",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "付款时间",
+							"required": true
+						},
+						{
+							"name": "book_num",
+							"type": "Number",
+							"description": "预约次数",
+							"required": true
+						},
+						{
+							"name": "start_period",
+							"type": "Date",
+							"description": "时段开始时间",
+							"required": true
+						},
+						{
+							"name": "book_order_id",
+							"type": "Number",
+							"description": "预约订单ID",
+							"required": true
+						},
+						{
+							"name": "modify_time",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "book_cell_remark",
+							"type": "String",
+							"description": "预约单项备注",
+							"required": true
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "买家申请时间",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "booked_travel_time",
+							"type": "Date",
+							"description": "预约出发日期",
+							"required": true
+						},
+						{
+							"name": "order_create_time",
+							"type": "Date",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "travel_ins_appy_id",
+							"type": "String",
+							"description": "预约记录对应的保险保单数据记录ID",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "book_info_id",
+							"type": "Number",
+							"description": "预约ID(主键)",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "tc_order_id",
+							"type": "Number",
+							"description": "TC主订单号",
+							"required": true
+						},
+						{
+							"name": "process_time",
+							"type": "Date",
+							"description": "卖家审批时间",
+							"required": true
+						},
+						{
+							"name": "book_cell_name",
+							"type": "String",
+							"description": "预约单项名称（子套餐名称）",
+							"required": true
+						},
+						{
+							"name": "booked_travel_return_time",
+							"type": "Date",
+							"description": "预约返程时间",
+							"required": true
+						},
+						{
+							"name": "book_cell_id",
+							"type": "Number",
+							"description": "预约单项ID（子套餐ID）",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称",
+							"required": true
+						},
+						{
+							"name": "book_status",
+							"type": "Number",
+							"description": "申请状态",
+							"required": true
+						},
+						{
+							"name": "only_upate_book_id",
+							"type": "Boolean",
+							"description": "是否仅更新bookId字段",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "traveller_infos",
+							"type": "TravellerInfos[]",
+							"description": "出行人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "issued_date",
+									"type": "Date",
+									"description": "证件签发日期",
+									"required": true
+								},
+								{
+									"name": "last_name",
+									"type": "String",
+									"description": "拼音姓",
+									"required": true
+								},
+								{
+									"name": "biz_type",
+									"type": "String",
+									"description": "1： 出行管理 2： 二次预约 4： 二次确认 8:   电子合同 16：电子凭证 32：自定义出行人 64：门票",
+									"required": true
+								},
+								{
+									"name": "book_info_id",
+									"type": "Number",
+									"description": "预约ID",
+									"required": true
+								},
+								{
+									"name": "sub_tc_order_id",
+									"type": "String",
+									"description": "子订单ID",
+									"required": true
+								},
+								{
+									"name": "tc_order_id",
+									"type": "String",
+									"description": "子订单ID",
+									"required": true
+								},
+								{
+									"name": "credentials_type",
+									"type": "Number",
+									"description": "证件类型",
+									"required": true
+								},
+								{
+									"name": "traveller_name",
+									"type": "String",
+									"description": "出行人姓名",
+									"required": true
+								},
+								{
+									"name": "buyer_remark",
+									"type": "String",
+									"description": "买家备注",
+									"required": true
+								},
+								{
+									"name": "modify_time",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "person_type",
+									"type": "String",
+									"description": "类型 出行人（签署人）为0或空，联系人为1",
+									"required": true
+								},
+								{
+									"name": "sku",
+									"type": "String",
+									"description": "sku",
+									"required": true
+								},
+								{
+									"name": "credentials_code",
+									"type": "String",
+									"description": "证件号码",
+									"required": true
+								},
+								{
+									"name": "sub_tc_order_ids",
+									"type": "String",
+									"description": "根据子订单ID列表查询",
+									"required": true
+								},
+								{
+									"name": "traveller_name_pinyin",
+									"type": "String",
+									"description": "姓名的拼音，格式为：xing/ming,中间以“/”分隔",
+									"required": true
+								},
+								{
+									"name": "terminal_type",
+									"type": "String",
+									"description": "用户是通过哪个终端填写",
+									"required": true
+								},
+								{
+									"name": "first_name",
+									"type": "String",
+									"description": "拼音名",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "nationality",
+									"type": "String",
+									"description": "国籍",
+									"required": true
+								},
+								{
+									"name": "only_upate_book_id",
+									"type": "Boolean",
+									"description": "是否仅更新bookId字段",
+									"required": true
+								},
+								{
+									"name": "create_time",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "issued_country",
+									"type": "String",
+									"description": "证件签发国",
+									"required": true
+								},
+								{
+									"name": "telphone",
+									"type": "String",
+									"description": "电话",
+									"required": true
+								},
+								{
+									"name": "traveller_json",
+									"type": "String",
+									"description": "自定义出行人的时候的json格式",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "features",
+							"type": "String",
+							"description": "扩展属性（json结构，其中outerIdSKU=商家编码）",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

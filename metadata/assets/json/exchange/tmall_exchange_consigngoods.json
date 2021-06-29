@@ -1,0 +1,97 @@
+{
+	"name": "tmall.exchange.consigngoods",
+	"apiChineseName": "卖家发货",
+	"description": "卖家发货",
+	"requestParams": [
+		{
+			"name": "dispute_id",
+			"type": "Number",
+			"description": "换货单号ID",
+			"required": true
+		},
+		{
+			"name": "logistics_no",
+			"type": "String",
+			"description": "卖家发货的物流单号",
+			"required": true
+		},
+		{
+			"name": "logistics_type",
+			"type": "Number",
+			"description": "卖家发货的物流类型，100表示平邮，200表示快递",
+			"required": true
+		},
+		{
+			"name": "logistics_company_name",
+			"type": "String",
+			"description": "卖家发货的快递公司",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "返回字段",
+			"required": true,
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RefundBaseResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "exchange",
+					"required": true,
+					"subParams": [
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "modified",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "status",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "bizOrderId",
+							"required": true
+						},
+						{
+							"name": "dispute_id",
+							"type": "String",
+							"description": "disputeId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.ihome.ctom.case.mainpic.update",
+	"apiChineseName": "方案渲染图修改",
+	"description": "用于在门店工作台里的编辑器保存方案，由三维家后端调用阿里后端，保存方案信息\n此接口只允许ihome业务使用，用于门店的编辑功能，只允许广东三维家信息科技有限公司一家公司调用，不适用于其他业务。",
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "32位字符串"
+		},
+		{
+			"name": "case_id",
+			"type": "String",
+			"description": "方案id",
+			"required": true
+		},
+		{
+			"name": "pic_url",
+			"type": "String",
+			"description": "图片的地址",
+			"required": true
+		},
+		{
+			"name": "pic_type",
+			"type": "String",
+			"description": "图片类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "具体错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "case的url地址",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,319 @@
+{
+	"name": "alibaba.einvoice.core.inv.upload",
+	"apiChineseName": "发票中台-发票结果回传",
+	"description": "发票回传接口适用于以下场景：\n① 阿里发票平台向ISV提交原始发票申请，ISV开具发票成功后，基于申请ID(apply_id)回传发票至阿里发票平台进行归集与交付。\n② 直接回传发票给阿里发票平台，进行归集，并交付给业务前台和用户。",
+	"requestParams": [
+		{
+			"name": "sum_tax",
+			"type": "String",
+			"description": "合计税额，格式为2位小数。  当开红票时，该字段为负数"
+		},
+		{
+			"name": "payee_phone",
+			"type": "String",
+			"description": "销方联系电话。"
+		},
+		{
+			"name": "platform_tid",
+			"type": "String",
+			"description": "业务平台发票申请对应的订单号。  用于source=upload时区分业务平台订单号。  source=apply时可空"
+		},
+		{
+			"name": "sum_price",
+			"type": "String",
+			"description": "合计金额（不含税），格式为2位小数。  当开红票时，该字段为负数"
+		},
+		{
+			"name": "invoice_amount",
+			"type": "String",
+			"description": "合计含税金额（开票金额），格式为2位小数。  当开红票时，该字段为负数。"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "发票来源，可选值：  apply: 间连模式，服务商基于申请开具的发票；async：直连开票模式，ISV回传开票结果；upload：直接回传，进行归集与交付的发票；",
+			"required": true
+		},
+		{
+			"name": "invoice_file_type",
+			"type": "String",
+			"description": "发票板式文件类型。可选值：  PDF, OFD。  电票时必传。"
+		},
+		{
+			"name": "payee_receiver",
+			"type": "String",
+			"description": "收款人"
+		},
+		{
+			"name": "red_notice_no",
+			"type": "String",
+			"description": "红字通知单号"
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销方税务登记证号。由大写字母或数字组成，长度要求15~20位。"
+		},
+		{
+			"name": "receive_mobile",
+			"type": "String",
+			"description": "购方手机号码，用于收票"
+		},
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "发票申请ID, 由阿里发票平台生成。  source=apply时 必填。"
+		},
+		{
+			"name": "payee_name",
+			"type": "String",
+			"description": "销方名称"
+		},
+		{
+			"name": "qr_code",
+			"type": "String",
+			"description": "二维码"
+		},
+		{
+			"name": "levy_type",
+			"type": "String",
+			"description": "征税方式，0普通征收，1减按征收，2差额征收"
+		},
+		{
+			"name": "invoice_type",
+			"type": "String",
+			"description": "发票(开票)类型，可选值：  blue: 蓝票  red: 红票"
+		},
+		{
+			"name": "payer_name",
+			"type": "String",
+			"description": "购方抬头"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码"
+		},
+		{
+			"name": "invoice_memo",
+			"type": "String",
+			"description": "发票备注，会显示在票面"
+		},
+		{
+			"name": "payer_email",
+			"type": "String",
+			"description": "购方电子邮箱，需满足邮箱格式。  格式要求：\\\\w+([-+.]\\\\w+)*@\\\\w+([-.]\\\\w+)*\\\\.\\\\w+([-.]\\\\w+)*"
+		},
+		{
+			"name": "anti_fake_code",
+			"type": "String",
+			"description": "发票防伪码/密码"
+		},
+		{
+			"name": "payer_bank_account_id",
+			"type": "String",
+			"description": "购方银行账号， 专票必填。"
+		},
+		{
+			"name": "payer_bank_name",
+			"type": "String",
+			"description": "购方开户行名称，  专票必填。"
+		},
+		{
+			"name": "payee_bank_account_id",
+			"type": "String",
+			"description": "销方银行账号"
+		},
+		{
+			"name": "payee_checker",
+			"type": "String",
+			"description": "复核人"
+		},
+		{
+			"name": "payer_phone",
+			"type": "String",
+			"description": "购方联系电话，  专票必填。"
+		},
+		{
+			"name": "normal_invoice_code",
+			"type": "String",
+			"description": "原发票代码(开红票时必须)"
+		},
+		{
+			"name": "device_no",
+			"type": "String",
+			"description": "开票分机号/机器编号"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "开票日期，格式 yyyy-MM-dd"
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码"
+		},
+		{
+			"name": "check_code",
+			"type": "String",
+			"description": "校验码"
+		},
+		{
+			"name": "payee_address",
+			"type": "String",
+			"description": "销方地址。"
+		},
+		{
+			"name": "normal_invoice_no",
+			"type": "String",
+			"description": "原发票号码(开红票时必须)"
+		},
+		{
+			"name": "payer_address",
+			"type": "String",
+			"description": "购方地址，  专票必填。"
+		},
+		{
+			"name": "payee_bank_name",
+			"type": "String",
+			"description": "销方开户行名称。"
+		},
+		{
+			"name": "invoice_items",
+			"type": "InvoiceResultItemDto[]",
+			"description": "发票明细。source=apply时必填，其他source可为空",
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "row_type",
+					"type": "Number",
+					"description": "发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。  比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0"
+				},
+				{
+					"name": "tax_rate",
+					"type": "String",
+					"description": "税率。格式为2位小数，如：0.00, 0.03, 0.13等等"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "发票项目名称（或商品名称）"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "单位。折扣行不能传，非折扣行必传"
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "含税总金额 (等于sum_price和tax之和)，  单位：元，格式为2位小数，精度2位小数"
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "数量，最多6位小数。  折扣行此参数不能传，非折扣行必传。存在则需\u003e0"
+				},
+				{
+					"name": "sum_price",
+					"type": "String",
+					"description": "不含税总金额，格式为2位小数  单位：元，精度2位小数"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "单价（不含税），格式为2位小数。最大支持6位小数，不足2位小数时需转化为2位小数格式。折扣行此参数不能传，非折扣行必传"
+				},
+				{
+					"name": "zero_rate_flag",
+					"type": "String",
+					"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率"
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "规格型号"
+				},
+				{
+					"name": "tax",
+					"type": "String",
+					"description": "税额， 格式为2位小数"
+				},
+				{
+					"name": "item_no",
+					"type": "String",
+					"description": "发票项目编号（或商品编号）"
+				}
+			]
+		},
+		{
+			"name": "payee_operator",
+			"type": "String",
+			"description": "开票人"
+		},
+		{
+			"name": "invoice_file_data",
+			"type": "byte[]",
+			"description": "发票板式文件数据，字节数据。  电票时必传。"
+		},
+		{
+			"name": "payer_register_no",
+			"type": "String",
+			"description": "购方税务登记证号，由大写字母或数字组成，长度要求15~20位。  开企业抬头时必填， 专票必填。"
+		},
+		{
+			"name": "invoice_kind",
+			"type": "Number",
+			"description": "开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票"
+		},
+		{
+			"name": "business_type",
+			"type": "Number",
+			"description": "抬头类型。可选值：  0：个人  1：企业"
+		},
+		{
+			"name": "special_flag",
+			"type": "String",
+			"description": "特殊票种标识，可选值：  02: 农产品收购票"
+		},
+		{
+			"name": "platform_code",
+			"type": "String",
+			"description": "业务平台Code, 由发票中台分配。  用于source=upload时标识需交付发票的业务平台。  source=apply时可空"
+		},
+		{
+			"name": "platform_user_id",
+			"type": "String",
+			"description": "业务平台uid",
+			"maxLength": 32
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "开票失败错误信息，  开票失败(create_result=fail)时必填。"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "开票失败错误码，  开票失败(create_result=fail)时必填。"
+		},
+		{
+			"name": "create_result",
+			"type": "String",
+			"description": "开票结果，枚举值：  success: 发票开具成功；  fail: 开票失败；  source=async时必填，传实际的开票结果。其他source可不传，默认为success"
+		},
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "开票流水号/序列号，唯一标志一笔开票请求，由于阿里发票中台生成。  source=async时必填，其他source可为空"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

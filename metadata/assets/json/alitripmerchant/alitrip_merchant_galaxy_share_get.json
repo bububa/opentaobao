@@ -1,0 +1,60 @@
+{
+	"name": "alitrip.merchant.galaxy.share.get",
+	"apiChineseName": "星河-获取小程序分享文案和图片",
+	"description": "获取 雅高微信小程序分享素材文案和图片。",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "ShareMaterialVo",
+					"description": "返回分享素材",
+					"required": true,
+					"subParams": [
+						{
+							"name": "text",
+							"type": "String",
+							"description": "分享的文案",
+							"required": true
+						},
+						{
+							"name": "picture",
+							"type": "String",
+							"description": "分享的图片",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"name": "taobao.cloudbridge.caseinvest.execute",
+	"apiChineseName": "红盾云桥案件协查服务",
+	"description": "通过API接口直接提供政府部门录入及查询函件服务",
+	"requestParams": [
+		{
+			"name": "api_name",
+			"type": "String",
+			"description": "方法名称"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "方法参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "接口调用是否成功，1：成功；2：失败",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data值，JSON数据，可转换成对应的结果",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

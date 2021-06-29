@@ -1,0 +1,119 @@
+{
+	"name": "tmall.trend.style.produceinfo.upload",
+	"apiChineseName": "款式生产信息同步API",
+	"description": "款式生产信息同步至平台",
+	"requestParams": [
+		{
+			"name": "style_produce_info_bo_list",
+			"type": "StyleProduceInfoBO[]",
+			"description": "款式生产信息列表，单次同步最对1000条",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "sync_purpose",
+					"type": "String",
+					"description": "款式生产信息同步目的，枚举，INSERT(\"新增\"), UPDATE(\"更新\"), OFFLINE(\"下线\");",
+					"required": true
+				},
+				{
+					"name": "produce_price_range",
+					"type": "String",
+					"description": "生产价格区间"
+				},
+				{
+					"name": "minimal_oder",
+					"type": "Number",
+					"description": "最小起订量"
+				},
+				{
+					"name": "contact_info",
+					"type": "String",
+					"description": "生产商联系方式"
+				},
+				{
+					"name": "style_serial_number",
+					"type": "String",
+					"description": "款式编号，业务唯一",
+					"required": true
+				},
+				{
+					"name": "producer_name",
+					"type": "String",
+					"description": "生产商名称"
+				},
+				{
+					"name": "can_make_sample",
+					"type": "Boolean",
+					"description": "是否支持打样，true--支持，false--不支持",
+					"required": true
+				},
+				{
+					"name": "craft_source_file",
+					"type": "String",
+					"description": "工艺源文件地址"
+				},
+				{
+					"name": "design_cad_source_file",
+					"type": "String",
+					"description": "CAD源文件，设计必须",
+					"required": true
+				},
+				{
+					"name": "produce_cycle",
+					"type": "String",
+					"description": "生产周期，单位天"
+				},
+				{
+					"name": "maximum_oder",
+					"type": "Number",
+					"description": "最大订单量"
+				},
+				{
+					"name": "make_sample_price",
+					"type": "String",
+					"description": "打样价格，单位元"
+				},
+				{
+					"name": "tax_id",
+					"type": "String",
+					"description": "生产商税务编号"
+				},
+				{
+					"name": "produce_cad_source_file",
+					"type": "String",
+					"description": "CAD源文件，生产必须",
+					"required": true
+				},
+				{
+					"name": "bom",
+					"type": "String",
+					"description": "生产Bom清单，json字符串",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "resp_error_code",
+			"type": "Number",
+			"description": "错误码,1001-系统错误，1002-请求参数错误，1003-业务处理错误，1004-数据权限错误"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "同步款式生产信息处理结果描述"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述信息"
+		}
+	]
+}

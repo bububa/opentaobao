@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.video.submitauditresult",
+	"apiChineseName": "迎客松提交视频审核结果",
+	"description": "迎客松提交视频审核结果",
+	"requestParams": [
+		{
+			"name": "license_audit_result",
+			"type": "String",
+			"description": "审核结果，json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

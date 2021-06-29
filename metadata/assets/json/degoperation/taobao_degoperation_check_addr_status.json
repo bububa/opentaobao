@@ -1,0 +1,52 @@
+{
+	"name": "taobao.degoperation.check.addr.status",
+	"apiChineseName": "地址",
+	"description": "激励",
+	"requestParams": [
+		{
+			"name": "sequence_no",
+			"type": "Number",
+			"description": "奖品唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "updateAddress=是否填写了收货地址",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

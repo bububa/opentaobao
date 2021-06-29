@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.child.nodeitem.offline",
+	"apiChineseName": "少儿大厅类目内容下线接口",
+	"description": "少儿大厅类目内容下线接口",
+	"requestParams": [
+		{
+			"name": "content_id",
+			"type": "Number",
+			"description": "类目内容ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "执行结果"
+		}
+	]
+}

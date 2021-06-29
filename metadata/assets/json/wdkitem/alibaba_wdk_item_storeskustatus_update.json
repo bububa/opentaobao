@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.wdk.item.storeskustatus.update",
+	"apiChineseName": "修改门店商品状态",
+	"description": "五道口商品 修改门店商品状态",
+	"requestParams": [
+		{
+			"name": "bean",
+			"type": "UpdateStoreSkuLifeStatusRequestBean",
+			"description": "bean",
+			"subParams": [
+				{
+					"name": "org_code",
+					"type": "String",
+					"description": "机构编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店编码",
+					"required": true
+				},
+				{
+					"name": "life_status",
+					"type": "String",
+					"description": "商品状态",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

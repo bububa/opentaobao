@@ -19,7 +19,9 @@ type TaobaoAntifraudRiskuserGetAPIResponse struct {
 
 type TaobaoAntifraudRiskuserGetResponse struct {
     XMLName xml.Name `xml:"antifraud_riskuser_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 服务调用成功时, 返回的系统流水号
     

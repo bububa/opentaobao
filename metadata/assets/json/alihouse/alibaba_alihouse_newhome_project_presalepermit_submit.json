@@ -1,0 +1,137 @@
+{
+	"name": "alibaba.alihouse.newhome.project.presalepermit.submit",
+	"apiChineseName": "提交预售证",
+	"description": "提交楼盘预售证信息",
+	"requestParams": [
+		{
+			"name": "pre_sale_permit_dto",
+			"type": "ProjectPreSalePermitDto",
+			"description": "预售证对象",
+			"subParams": [
+				{
+					"name": "publicity_time",
+					"type": "String",
+					"description": "公示时间"
+				},
+				{
+					"name": "total_price_range",
+					"type": "String",
+					"description": "总价区间"
+				},
+				{
+					"name": "unit_price_range",
+					"type": "String",
+					"description": "单价区间"
+				},
+				{
+					"name": "average_price",
+					"type": "String",
+					"description": "均价分"
+				},
+				{
+					"name": "registration_end_time",
+					"type": "Date",
+					"description": "登记结束时间"
+				},
+				{
+					"name": "registration_start_time",
+					"type": "Date",
+					"description": "登记开始时间"
+				},
+				{
+					"name": "proposed_sale_price",
+					"type": "String",
+					"description": "住宅拟售价格(分)"
+				},
+				{
+					"name": "sales_area",
+					"type": "Number",
+					"description": "销售面积"
+				},
+				{
+					"name": "sales_sets",
+					"type": "Number",
+					"description": "销售套数"
+				},
+				{
+					"name": "service_life",
+					"type": "String",
+					"description": "使用年限"
+				},
+				{
+					"name": "pre_sale_position",
+					"type": "String",
+					"description": "预售部位"
+				},
+				{
+					"name": "land_housing_use",
+					"type": "String",
+					"description": "房屋/土地用途"
+				},
+				{
+					"name": "permitted_sales_area",
+					"type": "String",
+					"description": "准许销售面积"
+				},
+				{
+					"name": "certification_date",
+					"type": "Date",
+					"description": "发证日期"
+				},
+				{
+					"name": "pre_sale_license_number",
+					"type": "String",
+					"description": "预售证编号"
+				},
+				{
+					"name": "outer_permit_id",
+					"type": "String",
+					"description": "外部预售证id"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘ID"
+				},
+				{
+					"name": "pre_sale_build",
+					"type": "String",
+					"description": "预售楼幢"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"name": "alitrip.merchant.galaxy.member.token",
+	"apiChineseName": "星河-校验token",
+	"description": "校验或者刷新token",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "访问携带toekn"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功还是失败",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "token",
+					"required": true
+				}
+			]
+		}
+	]
+}

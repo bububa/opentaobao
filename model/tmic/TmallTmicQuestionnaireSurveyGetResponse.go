@@ -1,0 +1,31 @@
+package tmic
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+天猫新品创新中心问卷数据获取 APIResponse
+tmall.tmic.questionnaire.survey.get
+
+天猫新品创新中心问卷数据获取
+*/
+type TmallTmicQuestionnaireSurveyGetAPIResponse struct {
+    model.CommonResponse
+    TmallTmicQuestionnaireSurveyGetResponse
+}
+
+type TmallTmicQuestionnaireSurveyGetResponse struct {
+    XMLName xml.Name `xml:"tmall_tmic_questionnaire_survey_get_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // result
+    
+    Result   *TmallTmicQuestionnaireSurveyGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

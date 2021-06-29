@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.order.logistics.tracking.get",
+	"apiChineseName": "阿里巴巴订单物流轨迹查询",
+	"description": "阿里巴巴订单物流轨迹查询",
+	"requestParams": [
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "order id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tracking_list",
+			"type": "LogisticsTracking []",
+			"description": "logistics  tracking List",
+			"subParams": [
+				{
+					"name": "carrier",
+					"type": "String",
+					"description": "carrier",
+					"required": true
+				},
+				{
+					"name": "current_event_code",
+					"type": "String",
+					"description": "The latest logistics event code",
+					"required": true
+				},
+				{
+					"name": "event_list",
+					"type": "TrackingEvent[]",
+					"description": "event list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "event_code",
+							"type": "String",
+							"description": "event code",
+							"required": true
+						},
+						{
+							"name": "event_location",
+							"type": "String",
+							"description": "event location",
+							"required": true
+						},
+						{
+							"name": "event_name",
+							"type": "String",
+							"description": "event name",
+							"required": true
+						},
+						{
+							"name": "event_time",
+							"type": "String",
+							"description": "event time",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "tracking_number",
+					"type": "String",
+					"description": "tracking number",
+					"required": true
+				}
+			]
+		}
+	]
+}

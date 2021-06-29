@@ -1,0 +1,95 @@
+{
+	"name": "alibaba.nlife.b2c.tradestatus.drive",
+	"apiChineseName": "b2c订单状态驱动",
+	"description": "用于驱动零售+订单状态",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "零售门店在零售+平台的ID",
+			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "APP:是指线上销售应用，POS:是指现场收银应用",
+			"required": true
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "对零售+为外部订单号，对业务方为订单号"
+		},
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "零售+平台订单号，和out_trade_no不能同时为空"
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "接口类型：CONFIRM（收货）DELIVER（发货）"
+		},
+		{
+			"name": "logistics_info",
+			"type": "LogisticsInfo",
+			"description": "货流信息",
+			"subParams": [
+				{
+					"name": "receiver",
+					"type": "String",
+					"description": "收货人"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "收货地址"
+				},
+				{
+					"name": "phone_no",
+					"type": "String",
+					"description": "收货人联系电话"
+				},
+				{
+					"name": "logistics_info_details",
+					"type": "LogisticsInfoDetail[]",
+					"description": "货流详细信息",
+					"subParams": [
+						{
+							"name": "goods_ids",
+							"type": "String[]",
+							"description": "商品列表：[“货码:数量”]，码可以是条形码(sku级别)也可以是零售加唯一码(货级别)、零售+ itemId+\"_\"+skuId，唯一码数量一定是1"
+						},
+						{
+							"name": "logistics_no",
+							"type": "String",
+							"description": "物流单号"
+						},
+						{
+							"name": "logistics_company",
+							"type": "String",
+							"description": "物流公司名"
+						},
+						{
+							"name": "deliver_time",
+							"type": "String",
+							"description": "发货时间"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数 JSON格式"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "描述"
+		}
+	]
+}

@@ -1,0 +1,142 @@
+{
+	"name": "alibaba.lst.pos.open.inventory.syncinventorydata",
+	"apiChineseName": "商品库存修改同步接口(最多20条库存信息)",
+	"description": "商品库存修改同步接口(最多20条库存信息)",
+	"requestParams": [
+		{
+			"name": "inventory_d_t_o_list",
+			"type": "InventoryDto[]",
+			"description": "库存对象列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "操作类型 STOCKTAKING-清点，盘点(set重置);STOCKENTERING-入库(加);STOCKOUTPU-出库(减);STOCK_SET-直接(set重置)",
+					"required": true
+				},
+				{
+					"name": "trans_quantity",
+					"type": "String",
+					"description": "变更库存传值为正数",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "最后修改 精确到毫秒"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间 精确到毫秒",
+					"required": true
+				},
+				{
+					"name": "isv_goods_id",
+					"type": "String",
+					"description": "ISV商品Id",
+					"required": true
+				},
+				{
+					"name": "isv_inventory_id",
+					"type": "String",
+					"description": "isv库存Id主键",
+					"required": true
+				},
+				{
+					"name": "device_type",
+					"type": "Number",
+					"description": "数据来源的设备类型   0：pos，1：自动售货机，-1：其它  缺省值：0"
+				},
+				{
+					"name": "hardware_id",
+					"type": "String",
+					"description": "设备物理硬件ID（自身保证唯一性）"
+				},
+				{
+					"name": "brand",
+					"type": "String",
+					"description": "设备品牌"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "设备型号"
+				}
+			]
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "门店对应的主账号id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "ErrorResult[]",
+					"description": "接口具体返回的业务数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "单个库存操作错误码",
+							"required": true
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "单个库存操作错误消息",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "单个库存操作标志 true：成功 fasle：失败",
+							"required": true
+						},
+						{
+							"name": "data",
+							"type": "Json",
+							"description": "单个库存处理数据对象",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "单个库存isv库存业务主键",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功 true:调用成功 false:调用失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

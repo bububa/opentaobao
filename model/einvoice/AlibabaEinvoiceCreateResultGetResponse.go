@@ -1,0 +1,31 @@
+package einvoice
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+ERP开票结果获取 APIResponse
+alibaba.einvoice.create.result.get
+
+ERP开票结果获取
+*/
+type AlibabaEinvoiceCreateResultGetAPIResponse struct {
+    model.CommonResponse
+    AlibabaEinvoiceCreateResultGetResponse
+}
+
+type AlibabaEinvoiceCreateResultGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_einvoice_create_result_get_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 开票返回结果数据列表
+    
+    InvoiceResultList   []InvoiceResult `json:"invoice_result_list,omitempty" xml:"invoice_result_list>invoice_result,omitempty"`
+    
+    
+}

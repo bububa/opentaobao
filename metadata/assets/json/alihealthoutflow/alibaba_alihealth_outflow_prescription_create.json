@@ -1,0 +1,331 @@
+{
+	"name": "alibaba.alihealth.outflow.prescription.create",
+	"apiChineseName": "处方外流-创建处方",
+	"description": "阿里健康-处方外流-对外提供保存处方功能",
+	"requestParams": [
+		{
+			"name": "create_request",
+			"type": "PrescriptionOutflowUpdateRequest",
+			"description": "保存处方入参",
+			"subParams": [
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名(非空)"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "操作人或患者手机号-用于接收核销码短信(非空)"
+				},
+				{
+					"name": "alipay_user_id",
+					"type": "String",
+					"description": "操作人支付宝userId(可空)"
+				},
+				{
+					"name": "age",
+					"type": "String",
+					"description": "患者年龄(非空)"
+				},
+				{
+					"name": "sex",
+					"type": "String",
+					"description": "患者性别(非空)"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "患者现住址(可空)"
+				},
+				{
+					"name": "visit_id",
+					"type": "String",
+					"description": "就诊号(可空)"
+				},
+				{
+					"name": "visit_type",
+					"type": "String",
+					"description": "就诊类型（首诊、复诊）(可空)"
+				},
+				{
+					"name": "detp_id",
+					"type": "String",
+					"description": "就诊科室id(可空)"
+				},
+				{
+					"name": "dept_name",
+					"type": "String",
+					"description": "就诊科室名称(非空)"
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "就诊医生id(可空)"
+				},
+				{
+					"name": "doctor_name",
+					"type": "String",
+					"description": "就诊医生姓名(非空)"
+				},
+				{
+					"name": "patient_id",
+					"type": "String",
+					"description": "患者id(可空)"
+				},
+				{
+					"name": "visit_time",
+					"type": "String",
+					"description": "就诊时间(可空)"
+				},
+				{
+					"name": "main_tell",
+					"type": "String",
+					"description": "主诉(可空)"
+				},
+				{
+					"name": "problem_now",
+					"type": "String",
+					"description": "现病史(可空)"
+				},
+				{
+					"name": "body_check",
+					"type": "String",
+					"description": "一般检查(可空)"
+				},
+				{
+					"name": "doctor_advice",
+					"type": "String",
+					"description": "医生嘱言(可空)"
+				},
+				{
+					"name": "diagnoses",
+					"type": "Diagnose[]",
+					"description": "诊断(非空)",
+					"subParams": [
+						{
+							"name": "diagnose_code",
+							"type": "String",
+							"description": "诊断编码-his(his、icd10二选一)"
+						},
+						{
+							"name": "diagnose_name",
+							"type": "String",
+							"description": "诊断编码-his(his、icd10二选一)"
+						},
+						{
+							"name": "icd_name",
+							"type": "String",
+							"description": "icd9/icd10名称(his、icd10二选一) - 纳里必传"
+						},
+						{
+							"name": "icd_code",
+							"type": "String",
+							"description": "icd9/icd10编码(his、icd10二选一) - 纳里必传"
+						}
+					]
+				},
+				{
+					"name": "drugs",
+					"type": "Drugs[]",
+					"description": "药品",
+					"subParams": [
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格(非空)"
+						},
+						{
+							"name": "total",
+							"type": "String",
+							"description": "数量(非空)"
+						},
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品名称(可空)"
+						},
+						{
+							"name": "day",
+							"type": "String",
+							"description": "天数(可空)"
+						},
+						{
+							"name": "frequency",
+							"type": "String",
+							"description": "频次(非空)"
+						},
+						{
+							"name": "note",
+							"type": "String",
+							"description": "说明(可空)"
+						},
+						{
+							"name": "dose",
+							"type": "String",
+							"description": "用量(非空)"
+						},
+						{
+							"name": "drug_common_name",
+							"type": "String",
+							"description": "药品通用名(非空)"
+						},
+						{
+							"name": "dose_unit",
+							"type": "String",
+							"description": "用量单位(非空)"
+						},
+						{
+							"name": "total_unit",
+							"type": "String",
+							"description": "总量单位(可空)"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "单价-元(可空)"
+						},
+						{
+							"name": "total_price",
+							"type": "String",
+							"description": "总价-元(可空)"
+						},
+						{
+							"name": "dose_usage",
+							"type": "String",
+							"description": "用法(非空)"
+						},
+						{
+							"name": "drug_id",
+							"type": "String",
+							"description": "药品id(drug_id、spuid二选一)"
+						},
+						{
+							"name": "produce_id",
+							"type": "String",
+							"description": "产地id(可空)"
+						},
+						{
+							"name": "spuid",
+							"type": "String",
+							"description": "spuid (drug_id、spuid二选一) - 纳里必传"
+						}
+					]
+				},
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方编号(非空)"
+				},
+				{
+					"name": "rx_type",
+					"type": "String",
+					"description": "处方类型(可空) COMMON-普通处方（默认） CHILDREN-儿童处方"
+				},
+				{
+					"name": "drug_type",
+					"type": "String",
+					"description": "药品类型(可空)WEST-西药（默认） TCM-草药"
+				},
+				{
+					"name": "fee_type",
+					"type": "String",
+					"description": "费用类型(可空)OWN_EXPENSE-自费（默认）MEDICAL_INSURANCE-医保"
+				},
+				{
+					"name": "card_number",
+					"type": "String",
+					"description": "处方流转医保备案编号(医保支付时必填)"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道、医院(非空)"
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "浙江省平台(可空)"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性JSON"
+				},
+				{
+					"name": "id_card",
+					"type": "String",
+					"description": "身份证号(可空)"
+				},
+				{
+					"name": "archives_type",
+					"type": "String",
+					"description": "医院档案类型(可空)VISIT_CARD就诊卡、ID_CARD身份证、MEDICAL_INSURANCE医保卡、MEDICAL_INSURANCE_ELECTRONIC_VOUCHER医保电子凭证、HOSPITAL_MEDICAL_ID医院病历号"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "处方来源(可空)INTERNET_HOSPITAL_PRESCRIPTION互联网医院处方外配、DEPART_PRESCRIPTION门诊处方外配、CONSUMABLES_ADVICE耗材医嘱流转"
+				},
+				{
+					"name": "template",
+					"type": "String",
+					"description": "模板(可空)INTERNET_HOSPITAL_PRESCRIPTION互联网医院处方笺、ELECTRONIC_PRESCRIPTION电子处方笺、DOCTOR_ADVICE医嘱单"
+				},
+				{
+					"name": "archives_id",
+					"type": "String",
+					"description": "患者就医医院的档案/卡号ID"
+				},
+				{
+					"name": "patient_type",
+					"type": "String",
+					"description": "患者类型(可空)：OWN_EXPENSE-自费、PROVINCE_MEDICAL_INSURANCE-省医保、CITY_MEDICAL_INSURANCE-市医保、BUSINESS_INSURANCE-商保"
+				},
+				{
+					"name": "patient_insured_region",
+					"type": "String",
+					"description": "患者参保地(可空)：杭州市本级、衢州市本级、浙江省本级、。。。。"
+				},
+				{
+					"name": "insurance_settlement_region",
+					"type": "String",
+					"description": "医保结算发生地(可空)：医保中心代码（行政区域代码）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

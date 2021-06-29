@@ -1,0 +1,24 @@
+{
+	"name": "alibaba.it.esl.sendled",
+	"apiChineseName": "厂测LED控制",
+	"description": "针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试",
+	"requestParams": [
+		{
+			"name": "mac_ap",
+			"type": "String",
+			"description": "mac"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "0、1、2、3：关蓝绿红"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "Can not find Corresponding AP MAC with ESL"
+		}
+	]
+}

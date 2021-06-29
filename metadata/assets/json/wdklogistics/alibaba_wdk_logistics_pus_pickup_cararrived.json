@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.wdk.logistics.pus.pickup.cararrived",
+	"apiChineseName": "自提业务-车辆到达上报车牌号",
+	"description": "自提业务-汽车自提,车辆到达上报车牌号",
+	"requestParams": [
+		{
+			"name": "station_code",
+			"type": "String",
+			"description": "自提点",
+			"required": true
+		},
+		{
+			"name": "car_num",
+			"type": "String",
+			"description": "车牌号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "LogisticsResult",
+			"description": "result根结点",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "Data[]",
+					"description": "内容节点",
+					"required": true,
+					"subParams": [
+						{
+							"name": "station_code",
+							"type": "String",
+							"description": "自提点code",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "脱敏订单号",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "接口服务查询结果描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

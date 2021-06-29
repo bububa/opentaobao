@@ -1,0 +1,21 @@
+{
+	"name": "alibaba.scbp.showcase.deleteproduct",
+	"apiChineseName": "批量删除橱窗商品",
+	"description": "批量删除橱窗商品",
+	"requestParams": [
+		{
+			"name": "window_id_list",
+			"type": "Number[]",
+			"description": "橱窗idList",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "result"
+		}
+	]
+}

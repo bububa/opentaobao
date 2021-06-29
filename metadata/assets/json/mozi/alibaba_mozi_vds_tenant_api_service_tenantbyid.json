@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.mozi.vds.tenant.api.service.tenantbyid",
+	"apiChineseName": "按租户ID查询租户信息",
+	"description": "按租户ID查询租户信息",
+	"requestParams": [
+		{
+			"name": "par0",
+			"type": "GetTenantByIdRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "GetTenantByIdResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "responseMessage",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "responseCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Tenant",
+					"description": "data数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tenant_full_code",
+							"type": "String",
+							"description": "租户完整code,格式：命名空间+$+code",
+							"required": true
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "租户id",
+							"required": true
+						},
+						{
+							"name": "tenant_name",
+							"type": "String",
+							"description": "租户名称",
+							"required": true
+						},
+						{
+							"name": "tenant_description",
+							"type": "String",
+							"description": "租户描述",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "创建者",
+							"required": true
+						},
+						{
+							"name": "modifier",
+							"type": "String",
+							"description": "修改者",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

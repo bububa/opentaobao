@@ -1,0 +1,54 @@
+{
+	"name": "yunos.tvpubadmin.device.yks.skill.add",
+	"apiChineseName": "添加技能",
+	"description": "添加技能",
+	"requestParams": [
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "技能id"
+		},
+		{
+			"name": "bot_id",
+			"type": "Number",
+			"description": "设备id"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "技能名称"
+		},
+		{
+			"name": "icon_image_url",
+			"type": "String",
+			"description": "图片地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "Json",
+					"description": "返回数据",
+					"required": true
+				}
+			]
+		}
+	]
+}

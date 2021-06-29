@@ -1,0 +1,49 @@
+{
+	"name": "taobao.alitrip.it.fare.get",
+	"apiChineseName": "【国际机票自有政策】单条查询",
+	"description": "通过此接口可以查询单条政策的详情，可以根据fareId或outId查询，用户outId查询时，如果outId不唯一，只返回最新添加的一条数据",
+	"requestParams": [
+		{
+			"name": "extendAttributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		},
+		{
+			"name": "fareId",
+			"type": "Number",
+			"description": "运价id，单条新增成功时返回运价id，fareId和outId必填一个，fareId优先"
+		},
+		{
+			"name": "outId",
+			"type": "String",
+			"description": "外部id，为新增时请求参数中的外部政策id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		},
+		{
+			"name": "fare_id",
+			"type": "Number",
+			"description": "运价id"
+		},
+		{
+			"name": "fare_json",
+			"type": "String",
+			"description": "自有政策json序列化后字符串，具体属性和addow或addrt接口的请求参数一致，如：{\"ticketingAirline\":\"CA\",\"saleAirline\":\"CA\",\"addressOption\":\"城市\",\"tripType\":\"直达\",\"originLand\":\"SHA,BJS\",\"destination\":\"HKG,SHA\",\"cabin\":\"N\",\"restrictFlightNo\":\"\",\"excludeFlightNo\":\"\",\"validDate4Dep\":\"2015-05-30~2015-11-30\",\"flightDateRestrict4Dep\":\"12\",\"saleDate\":\"2015-05-30~2015-11-30\",\"adultPassengerIdentity\":\"普通\",\"ticketPrice\":2000,\"childPrice\":\"1980\",\"returnPoint\":1.0,\"adjustMoney\":0,\"refundRule\":\"收取80000元退票费\",\"reissueRule\":\"收取20%改期费\",\"noshowRule\":\"起飞前不得退票，不得改期\",\"luggageRule\":\"逾重行李费用为每公斤100元\"}"
+		},
+		{
+			"name": "fare_type",
+			"type": "Number",
+			"description": "运价类型，1单程 2往返"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "0：未发布 1：已发布 2：已过期"
+		}
+	]
+}

@@ -1,0 +1,73 @@
+{
+	"name": "alitrip.tripvp.agent.order.search",
+	"apiChineseName": "【国际机票】查询辅营订单列表",
+	"description": "【国际机票】查询辅营订单列表",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商ID",
+			"required": true
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "辅营创建开始时间",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页码",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "辅营创建结束时间",
+			"required": true
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "订单状态，1-待支付 2-支付成功 3-\t辅营出货成功 4-订单取消"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页行数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页码CurrentPage"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否有下一页"
+		},
+		{
+			"name": "order_vos",
+			"type": "VirProOrderVo []",
+			"description": "辅营订单列表",
+			"subParams": [
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "bookTime",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "辅营订单号",
+					"required": true
+				}
+			]
+		}
+	]
+}

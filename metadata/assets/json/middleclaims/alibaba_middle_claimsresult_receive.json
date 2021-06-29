@@ -1,0 +1,116 @@
+{
+	"name": "alibaba.middle.claimsresult.receive",
+	"apiChineseName": "国际化中台服务域接收理赔结果",
+	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔结果的处理后，将该结果返回至服务域",
+	"requestParams": [
+		{
+			"name": "claims_result_d_t_o",
+			"type": "ClaimsResultDto",
+			"description": "理赔结果实体",
+			"subParams": [
+				{
+					"name": "service_work_order_id",
+					"type": "Number",
+					"description": "服务工单ID",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单号"
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子订单号",
+					"required": true
+				},
+				{
+					"name": "report_no",
+					"type": "String",
+					"description": "报案号"
+				},
+				{
+					"name": "take_goods_status",
+					"type": "String",
+					"description": "收货状态"
+				},
+				{
+					"name": "claims_result",
+					"type": "Boolean",
+					"description": "理赔结果"
+				},
+				{
+					"name": "claims_result_desc",
+					"type": "String",
+					"description": "理赔拒绝原因"
+				},
+				{
+					"name": "claim_amount",
+					"type": "Number",
+					"description": "理赔金额"
+				},
+				{
+					"name": "claim_currency",
+					"type": "String",
+					"description": "理赔币种"
+				},
+				{
+					"name": "compensation_ratio",
+					"type": "String",
+					"description": "赔付比例"
+				},
+				{
+					"name": "package_status",
+					"type": "String",
+					"description": "包裹状态"
+				},
+				{
+					"name": "extension_map",
+					"type": "Extensionmap",
+					"description": "预留扩展Map",
+					"subParams": [
+						{
+							"name": "extension_map",
+							"type": "String",
+							"description": "预留扩展Map1"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统调用结果",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务结果",
+					"required": true
+				},
+				{
+					"name": "repeated",
+					"type": "Boolean",
+					"description": "是否重复",
+					"required": true
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否重试",
+					"required": true
+				}
+			]
+		}
+	]
+}

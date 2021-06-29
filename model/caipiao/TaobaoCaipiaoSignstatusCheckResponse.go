@@ -19,7 +19,9 @@ type TaobaoCaipiaoSignstatusCheckAPIResponse struct {
 
 type TaobaoCaipiaoSignstatusCheckResponse struct {
     XMLName xml.Name `xml:"caipiao_signstatus_check_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 是否签署了支付宝代扣协议
     

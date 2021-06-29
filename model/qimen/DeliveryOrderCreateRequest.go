@@ -15,7 +15,7 @@ type DeliveryOrderCreateRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenDeliveryorderCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

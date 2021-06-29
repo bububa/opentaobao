@@ -1,0 +1,57 @@
+{
+	"name": "aliexpress.solution.seller.category.tree.query",
+	"apiChineseName": "aliexpress.solution.seller.category.tree.query",
+	"description": "API for seller to query the category tree. Support only displaying the categories which seller have permissions to publish products.",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "parent category ID. To obtain the root categories, setting the category_id = 0",
+			"required": true
+		},
+		{
+			"name": "filter_no_permission",
+			"type": "Boolean",
+			"description": "filter the categories which seller does not have permission",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "children_category_list",
+			"type": "CategoryInfo []",
+			"description": "children category list under category_id",
+			"subParams": [
+				{
+					"name": "children_category_id",
+					"type": "Number",
+					"description": "category id",
+					"required": true
+				},
+				{
+					"name": "is_leaf_category",
+					"type": "Boolean",
+					"description": "whether the category is leaf or not",
+					"required": true
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "level of the categories. As for root categories, the level is 1",
+					"required": true
+				},
+				{
+					"name": "multi_language_names",
+					"type": "Json",
+					"description": "multi langauge names of the categories",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "whether success or not"
+		}
+	]
+}

@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.dropshipping.order.pay",
+	"apiChineseName": "alibaba dropshipping 支付代扣",
+	"description": "alibaba dropshipping 支付代扣",
+	"requestParams": [
+		{
+			"name": "param_order_pay_request",
+			"type": "OrderPayRequest",
+			"description": "request model",
+			"required": true,
+			"subParams": [
+				{
+					"name": "accept_language",
+					"type": "String",
+					"description": "HTTP request Header \"accept-language\"",
+					"required": true
+				},
+				{
+					"name": "is_pc",
+					"type": "Boolean",
+					"description": "is PC ? true/false, current only support pc",
+					"required": true
+				},
+				{
+					"name": "isv_drop_shipper_registration_time",
+					"type": "Number",
+					"description": "The time stamp of the buyer's first registration as dropper",
+					"required": true
+				},
+				{
+					"name": "order_id_list",
+					"type": "Number[]",
+					"description": "Order numbers to be paid，max size is  10",
+					"required": true
+				},
+				{
+					"name": "screen_resolution",
+					"type": "String",
+					"description": "Screen resolution of the device used by the buyer",
+					"required": true
+				},
+				{
+					"name": "user_agent",
+					"type": "String",
+					"description": "HTTP request header \"User-Agent\"",
+					"required": true
+				},
+				{
+					"name": "user_ip",
+					"type": "String",
+					"description": "Buyer's IP",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "CashierPayResponse",
+			"description": "response model",
+			"subParams": [
+				{
+					"name": "pay_url",
+					"type": "String",
+					"description": "Payment url",
+					"required": true
+				},
+				{
+					"name": "reason_code",
+					"type": "String",
+					"description": "Payment failed reason code",
+					"required": true
+				},
+				{
+					"name": "reason_message",
+					"type": "String",
+					"description": "Payment failed reason message",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "UNPAY Unpaid order \u003cbr /\u003e PAYING The order is being paid and it needs to wait for about 1 minute,\u003cbr /\u003e PAY_SUCCESS Order payment is successful,\u003cbr /\u003e PAY_FAILED Order payment failed",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "Number",
+					"description": "order id",
+					"required": true
+				}
+			]
+		}
+	]
+}

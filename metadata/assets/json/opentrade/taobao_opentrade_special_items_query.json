@@ -1,0 +1,20 @@
+{
+	"name": "taobao.opentrade.special.items.query",
+	"apiChineseName": "专属下单获取商品绑定信息",
+	"description": "专属下单获取商品绑定信息",
+	"requestParams": [
+		{
+			"name": "miniapp_id",
+			"type": "Number",
+			"description": "绑定专属下单场景的C端小程序ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "items",
+			"type": "Number []",
+			"description": "已绑定的商品ID列表"
+		}
+	]
+}

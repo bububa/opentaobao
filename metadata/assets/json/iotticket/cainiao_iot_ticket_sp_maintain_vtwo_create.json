@@ -1,0 +1,129 @@
+{
+	"name": "cainiao.iot.ticket.sp.maintain.vtwo.create",
+	"apiChineseName": "服务商制定维修费方案",
+	"description": "服务商制定维修费方案",
+	"requestParams": [
+		{
+			"name": "make_maintain_plan_top_request",
+			"type": "MakeMaintainPlanV2TopRequest",
+			"description": "维修方案",
+			"required": true,
+			"subParams": [
+				{
+					"name": "iot_maintain_plan_item_list",
+					"type": "IotMaintainPlanItemTopRequest[]",
+					"description": "维修项",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "设备编码（需要映射）"
+						},
+						{
+							"name": "pay_role",
+							"type": "String",
+							"description": "付款角色：merchant-商家记账；customer-客户支付"
+						}
+					]
+				},
+				{
+					"name": "problem_type_list",
+					"type": "String[]",
+					"description": "问题列表（需要映射）"
+				},
+				{
+					"name": "other_fee",
+					"type": "String",
+					"description": "其它费用"
+				},
+				{
+					"name": "problem_cause_list",
+					"type": "String[]",
+					"description": "问题原因（需要映射）"
+				},
+				{
+					"name": "operator_phone",
+					"type": "String",
+					"description": "操作人联系方式"
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人姓名"
+				},
+				{
+					"name": "sp_code",
+					"type": "String",
+					"description": "服务商编码"
+				},
+				{
+					"name": "feature",
+					"description": "扩展属性"
+				},
+				{
+					"name": "event_type_list",
+					"type": "String[]",
+					"description": "事件类型（需要映射）"
+				},
+				{
+					"name": "fee_remark",
+					"type": "String",
+					"description": "费用描述"
+				},
+				{
+					"name": "warranty_type",
+					"type": "String",
+					"description": "保内保外（需要映射）"
+				},
+				{
+					"name": "pay_picture_url",
+					"type": "String",
+					"description": "支付图片二维码"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人Id"
+				},
+				{
+					"name": "labor_expense",
+					"type": "String",
+					"description": "人工费用"
+				},
+				{
+					"name": "ticket_id",
+					"type": "Number",
+					"description": "工单Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "异常描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

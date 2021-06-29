@@ -1,0 +1,54 @@
+{
+	"name": "taobao.alitrip.ie.agent.order.hk",
+	"apiChineseName": "【国际机票】手工预定回填PNR",
+	"description": "代理商通过手工预定PNR，并回填。",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商ID"
+		},
+		{
+			"name": "write_back_pnr_v_o",
+			"type": "IeWriteBackPnrVO",
+			"description": "回填pnr信息",
+			"subParams": [
+				{
+					"name": "book_pnr_vos",
+					"type": "IeBookPnrVo[]",
+					"description": "预定订单pnr信息",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "pnr id"
+						},
+						{
+							"name": "pnr_type",
+							"type": "String",
+							"description": "pnr类型"
+						},
+						{
+							"name": "pnr_no",
+							"type": "String",
+							"description": "pnr值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "book_order_id",
+					"type": "Number",
+					"description": "预定订单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hk_success",
+			"type": "Boolean",
+			"description": "是否回填成功true：成功 false:失败"
+		}
+	]
+}

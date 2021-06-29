@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.seaking.task.report",
+	"apiChineseName": "跳转任务发布成功商品ID回传",
+	"description": "跳转任务发布成功商品ID回传",
+	"requestParams": [
+		{
+			"name": "report_detail",
+			"type": "TaskDetailReportDto[]",
+			"description": "上报数据详情",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "idx",
+					"type": "Number",
+					"description": "子任务编号，不填则表示更新所有子任务"
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "商品所在平台（ae/lazada)）",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "Number",
+					"description": "任务id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "task_type",
+			"type": "String",
+			"description": "任务类型(title/image)",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		},
+		{
+			"name": "token_from",
+			"type": "String",
+			"description": "token来源站点",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "系统自动生成"
+		}
+	]
+}

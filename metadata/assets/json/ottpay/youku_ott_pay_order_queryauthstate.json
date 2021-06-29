@@ -1,0 +1,78 @@
+{
+	"name": "youku.ott.pay.order.queryauthstate",
+	"apiChineseName": "查询连包签约状态",
+	"description": "查询CP用户连包商品签约状态",
+	"requestParams": [
+		{
+			"name": "original_cp_order_no",
+			"type": "String",
+			"description": "原始签约订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "TvOrderResultDTO",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cp_order_no",
+							"type": "String",
+							"description": "默认空",
+							"required": true
+						},
+						{
+							"name": "qcode_url",
+							"type": "String",
+							"description": "默认空",
+							"required": true
+						},
+						{
+							"name": "version_code",
+							"type": "String",
+							"description": "默认空",
+							"required": true
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "默认空",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "验证信息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

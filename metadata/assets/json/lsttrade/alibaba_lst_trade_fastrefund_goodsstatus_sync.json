@@ -1,0 +1,29 @@
+{
+	"name": "alibaba.lst.trade.fastrefund.goodsstatus.sync",
+	"apiChineseName": "卖家退款单商品状态同步",
+	"description": "卖家退款单商品状态同步",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单id"
+		},
+		{
+			"name": "refund_id",
+			"type": "String",
+			"description": "退款单id"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "未发货，枚举类型：UNSEND"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true表示成功，false表示失败"
+		}
+	]
+}

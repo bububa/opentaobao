@@ -1,0 +1,123 @@
+{
+	"name": "taobao.xhotel.intl.rate.update",
+	"apiChineseName": "不落库商家推送更新酒店rate",
+	"description": "商家主动推送不落库商品的酒店信息",
+	"requestParams": [
+		{
+			"name": "update_rate_param",
+			"type": "UpdateRateParam",
+			"description": "rate更新参数",
+			"subParams": [
+				{
+					"name": "update_rate_d_o_list",
+					"type": "UpdateRateDo[]",
+					"description": "rate更新列表",
+					"subParams": [
+						{
+							"name": "check_date_d_o_list",
+							"type": "CheckDateDo[]",
+							"description": "入离日期",
+							"subParams": [
+								{
+									"name": "check_out",
+									"type": "Date",
+									"description": "入住时间",
+									"required": true
+								},
+								{
+									"name": "check_in",
+									"type": "Date",
+									"description": "离店时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "out_hid",
+							"type": "String",
+							"description": "酒店id",
+							"required": true
+						},
+						{
+							"name": "adults",
+							"type": "Number",
+							"description": "成人数"
+						},
+						{
+							"name": "children",
+							"type": "Number",
+							"description": "儿童数"
+						},
+						{
+							"name": "ages",
+							"type": "String",
+							"description": "儿童年龄，多个儿童年龄用竖线分割：4|5，默认儿童年龄为5岁"
+						}
+					]
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "过期时间"
+				},
+				{
+					"name": "supplier",
+					"type": "String",
+					"description": "供应商",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "total_results",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "sub_error_msg",
+					"type": "String",
+					"description": "sub_error_msg",
+					"required": true
+				},
+				{
+					"name": "sub_error_code",
+					"type": "String",
+					"description": "sub_error_code",
+					"required": true
+				},
+				{
+					"name": "detail_msg_info",
+					"type": "String",
+					"description": "detail_msg_info",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

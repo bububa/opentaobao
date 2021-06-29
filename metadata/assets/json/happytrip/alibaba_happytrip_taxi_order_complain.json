@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.happytrip.taxi.order.complain",
+	"apiChineseName": "用户投诉",
+	"description": "一个订单只能投诉一次，不可重复投诉\n\n投诉选项\n0\t其他原因；\n1\t司机原因导致行程被取消；\n2\t服务态度恶劣；\t\n3\t未坐车产生费用；\t\n4\t额外收取不合理费用；\n5\t路不熟多产生费用；\t\n6\t提前计费；\n7\t未及时结束计费；\t\n8\t司机绕路；\t\n9\t司机迟到；\t\n10\t司机爽约或拒载；\t\n11\t骚扰乘客；\t\n12\t危险驾驶；\t\n13\t不是订单显示车辆或司机；",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "投诉选项 0\t其他原因； 1\t司机原因导致行程被取消； 2\t服务态度恶劣；\t 3\t未坐车产生费用；\t 4\t额外收取不合理费用； 5\t路不熟多产生费用；\t 6\t提前计费； 7\t未及时结束计费；\t 8\t司机绕路；\t 9\t司机迟到；\t 10\t司机爽约或拒载；\t 11\t骚扰乘客；\t 12\t危险驾驶；\t 13\t不是订单显示车辆或司机；",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "投诉选项外的其他投诉内容,不能多于40个汉字"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "该用户的真实号码"
+		},
+		{
+			"name": "time",
+			"type": "Number",
+			"description": "投诉时间（毫秒）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "Struct",
+			"description": "投诉结果",
+			"subParams": [
+				{
+					"name": "case_id",
+					"type": "String",
+					"description": "供应商工单号",
+					"required": true
+				}
+			]
+		}
+	]
+}

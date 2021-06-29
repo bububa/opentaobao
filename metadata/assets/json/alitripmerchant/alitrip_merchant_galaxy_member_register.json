@@ -1,0 +1,108 @@
+{
+	"name": "alitrip.merchant.galaxy.member.register",
+	"apiChineseName": "星河-微信小程序会员注册",
+	"description": "星河产品=微信小程序注册雅高会员服务",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "member_param",
+			"type": "MemberParam",
+			"description": "注册入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "last_name",
+					"type": "String",
+					"description": "用户英文姓",
+					"required": true
+				},
+				{
+					"name": "first_name",
+					"type": "String",
+					"description": "用户英文名",
+					"required": true
+				},
+				{
+					"name": "civility",
+					"type": "String",
+					"description": "称呼",
+					"required": true
+				},
+				{
+					"name": "phone_pre",
+					"type": "String",
+					"description": "用户手机号前缀",
+					"required": true
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "用户语言",
+					"required": true
+				},
+				{
+					"name": "accepted_tand_c",
+					"type": "Boolean",
+					"description": "是否接受协议",
+					"required": true
+				},
+				{
+					"name": "phone_num",
+					"type": "String",
+					"description": "用户手机号",
+					"required": true
+				},
+				{
+					"name": "subscription",
+					"type": "Boolean",
+					"description": "是否接受消息推送",
+					"required": true
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "用户邮箱",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功还是失败",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "register_result",
+					"type": "Boolean",
+					"description": "是否注册成功",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

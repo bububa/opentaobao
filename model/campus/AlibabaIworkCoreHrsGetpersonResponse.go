@@ -1,0 +1,31 @@
+package campus
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+获取神鲸用户基本信息 APIResponse
+alibaba.iwork.core.hrs.getperson
+
+神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询
+*/
+type AlibabaIworkCoreHrsGetpersonAPIResponse struct {
+    model.CommonResponse
+    AlibabaIworkCoreHrsGetpersonResponse
+}
+
+type AlibabaIworkCoreHrsGetpersonResponse struct {
+    XMLName xml.Name `xml:"alibaba_iwork_core_hrs_getperson_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // result
+    
+    Result   *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

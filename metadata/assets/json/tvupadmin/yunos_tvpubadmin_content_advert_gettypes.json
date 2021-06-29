@@ -1,0 +1,12 @@
+{
+	"name": "yunos.tvpubadmin.content.advert.gettypes",
+	"apiChineseName": "获取广告位类型",
+	"description": "获取广告位类型",
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "Map\u003cInteger, String\u003e json格式"
+		}
+	]
+}

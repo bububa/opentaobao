@@ -1,0 +1,40 @@
+{
+	"name": "taobao.qimen.tag.items.query",
+	"apiChineseName": "打标结果查询-标维度",
+	"description": "调用该接口，查询打了某个标的商品列表。说明：该接口调用后，返回值的时间较长，建议不要经常调用。",
+	"requestParams": [
+		{
+			"name": "tag_type",
+			"type": "String",
+			"description": "打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填",
+			"required": true
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注，string（500）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "flag"
+		},
+		{
+			"name": "item_ids",
+			"type": "Number []",
+			"description": "itemIds"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "tag_type",
+			"type": "String",
+			"description": "tagType"
+		}
+	]
+}

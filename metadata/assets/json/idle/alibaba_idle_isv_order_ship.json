@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.idle.isv.order.ship",
+	"apiChineseName": "闲鱼无忧购服务商发货",
+	"description": "闲鱼无忧购业务入仓模式下服务商订单发货的接口",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "String",
+			"description": "订单号",
+			"required": true
+		},
+		{
+			"name": "logistics_company",
+			"type": "String",
+			"description": "物流公司",
+			"required": true
+		},
+		{
+			"name": "ship_mail_no",
+			"type": "String",
+			"description": "运单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "请求结果，是否成功"
+		},
+		{
+			"name": "result_err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_module",
+			"type": "Boolean",
+			"description": "业务逻辑结果，暂时不用"
+		},
+		{
+			"name": "result_err_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

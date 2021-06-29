@@ -1,0 +1,97 @@
+{
+	"name": "taobao.alitrip.ie.agent.refund.new.multiplerefunds",
+	"apiChineseName": "补退接口",
+	"description": "1. 补退接口， 可以进行多次退款",
+	"requestParams": [
+		{
+			"name": "param_refund_order_multiple_refunds_rq",
+			"type": "RefundOrderMultipleRefundsRq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商ID"
+				},
+				{
+					"name": "passenger_multiple_refunds_params",
+					"type": "PassengerMultipleRefundsParam[]",
+					"description": "乘机人补退参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_money",
+							"type": "Number",
+							"description": "补退金额(单位:分)",
+							"required": true
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘机人姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "refund_order_id",
+					"type": "Number",
+					"description": "退票申请单ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RefundOrderMultipleRefundsRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "api_error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "api_error_msg",
+					"type": "String",
+					"description": "错误文案",
+					"required": true
+				},
+				{
+					"name": "err_trace",
+					"type": "String",
+					"description": "错误详情",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "失败",
+					"required": true
+				},
+				{
+					"name": "host_name",
+					"type": "String",
+					"description": "hostName",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "refund_ticket_id",
+					"type": "Number",
+					"description": "refundTicketId",
+					"required": true
+				}
+			]
+		}
+	]
+}

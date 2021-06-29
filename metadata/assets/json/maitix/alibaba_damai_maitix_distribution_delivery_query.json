@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.damai.maitix.distribution.delivery.query",
+	"apiChineseName": "查询分销物流单",
+	"description": "渠道查询物流订单",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "String",
+			"description": "主订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "OpenApiDeliveryOrderDto",
+					"description": "订单内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "delivery_company_id",
+							"type": "Number",
+							"description": "快递公司ID",
+							"required": true
+						},
+						{
+							"name": "delivery_company_name",
+							"type": "String",
+							"description": "快递公司名称",
+							"required": true
+						},
+						{
+							"name": "sign_time",
+							"type": "Date",
+							"description": "签收时间",
+							"required": true
+						},
+						{
+							"name": "delivery_time",
+							"type": "Date",
+							"description": "发货时间",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "String",
+							"description": "主订单号",
+							"required": true
+						},
+						{
+							"name": "delivery_status",
+							"type": "Number",
+							"description": "物流状态，1-发货，2-签收",
+							"required": true
+						},
+						{
+							"name": "waybill_no",
+							"type": "String",
+							"description": "物流单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

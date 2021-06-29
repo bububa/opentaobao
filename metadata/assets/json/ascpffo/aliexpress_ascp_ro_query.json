@@ -1,0 +1,182 @@
+{
+	"name": "aliexpress.ascp.ro.query",
+	"apiChineseName": "AliExpress退供单查询API",
+	"description": "AE仓发商家单个退供单查询接口",
+	"requestParams": [
+		{
+			"name": "return_order_query",
+			"type": "ReturnOrderQueryDto",
+			"description": "dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "return_order_no",
+					"type": "String",
+					"description": "退供单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "ErpReturnOrderDto",
+					"description": "DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "单据创建人",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "单据创建时间戳",
+							"required": true
+						},
+						{
+							"name": "gmt_outbound",
+							"type": "Number",
+							"description": "出库时间戳",
+							"required": true
+						},
+						{
+							"name": "inventory_type_desc",
+							"type": "String",
+							"description": "库存类型描述",
+							"required": true
+						},
+						{
+							"name": "lbx_no",
+							"type": "String",
+							"description": "物流单号",
+							"required": true
+						},
+						{
+							"name": "return_order_no",
+							"type": "String",
+							"description": "退供单号",
+							"required": true
+						},
+						{
+							"name": "return_reason_desc",
+							"type": "String",
+							"description": "退供原因",
+							"required": true
+						},
+						{
+							"name": "return_type_desc",
+							"type": "String",
+							"description": "退供类型",
+							"required": true
+						},
+						{
+							"name": "sku_count",
+							"type": "Number",
+							"description": "退供SKU数量",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态编码",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "仓名称",
+							"required": true
+						},
+						{
+							"name": "supplier_id",
+							"type": "Number",
+							"description": "供应商Id",
+							"required": true
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "退供总金额,单位分",
+							"required": true
+						},
+						{
+							"name": "total_quantity",
+							"type": "Number",
+							"description": "退供总数量",
+							"required": true
+						},
+						{
+							"name": "total_return_amount",
+							"type": "String",
+							"description": "实际退供总金额，单位分",
+							"required": true
+						},
+						{
+							"name": "total_return_quantity",
+							"type": "Number",
+							"description": "实际退供数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,74 @@
+{
+	"name": "tmall.fans.arena.push",
+	"apiChineseName": "消息推送",
+	"description": "超级擂台消息推送",
+	"requestParams": [
+		{
+			"name": "push_list",
+			"type": "PushMessageParamDo[]",
+			"description": "推送列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名"
+				},
+				{
+					"name": "message_type",
+					"type": "String",
+					"description": "消息类型"
+				},
+				{
+					"name": "mix_nick",
+					"type": "String",
+					"description": "mixnick"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FansResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Boolean[]",
+					"description": "推送成功列表",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "无意义",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功失败",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "失败message",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "失败错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

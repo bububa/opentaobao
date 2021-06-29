@@ -1,0 +1,73 @@
+{
+	"name": "alibaba.alihealth.alidoc.drug.store.add",
+	"apiChineseName": "gsk新增药店",
+	"description": "GSK上传药店信息",
+	"requestParams": [
+		{
+			"name": "drug_store_add_top_request",
+			"type": "DrugStoreAddTopRequest",
+			"description": "新增药店",
+			"required": true,
+			"subParams": [
+				{
+					"name": "drug_store_address",
+					"type": "String",
+					"description": "药店地址",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "维度",
+					"required": true
+				},
+				{
+					"name": "drug_strore_phone",
+					"type": "String",
+					"description": "电话"
+				},
+				{
+					"name": "medicare_label",
+					"type": "Number",
+					"description": "医保标签",
+					"required": true
+				},
+				{
+					"name": "drug_store_code",
+					"type": "String",
+					"description": "药店编码",
+					"required": true
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"name": "drug_store_name",
+					"type": "String",
+					"description": "药店名称",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "error_kode",
+			"type": "String",
+			"description": "errCode"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "errMessage"
+		}
+	]
+}

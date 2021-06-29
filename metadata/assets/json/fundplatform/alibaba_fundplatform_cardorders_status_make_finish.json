@@ -1,0 +1,28 @@
+{
+	"name": "alibaba.fundplatform.cardorders.status.make.finish",
+	"apiChineseName": "制卡商通知制卡完成",
+	"description": "当制卡完成后，制卡商需要调用该接口，通知我们制卡已完成。",
+	"requestParams": [
+		{
+			"name": "card_order_id",
+			"type": "Number",
+			"description": "子制卡单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CardMakingInformResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

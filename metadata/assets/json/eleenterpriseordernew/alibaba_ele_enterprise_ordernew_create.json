@@ -1,0 +1,199 @@
+{
+	"name": "alibaba.ele.enterprise.ordernew.create",
+	"apiChineseName": "创建订单",
+	"description": "创建订单",
+	"requestParams": [
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "订单来源地址经度",
+			"required": true
+		},
+		{
+			"name": "erestaurant_id",
+			"type": "String",
+			"description": "餐厅Id",
+			"required": true
+		},
+		{
+			"name": "coupon_sn",
+			"type": "String",
+			"description": "使用的券号"
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "订单备注信息"
+		},
+		{
+			"name": "phones",
+			"type": "String",
+			"description": "电话号码，主要号码必须是手机号；多个手机号以逗号分隔",
+			"required": true
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "订单来源IP地址",
+			"required": true
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "订单来源地址纬度",
+			"required": true
+		},
+		{
+			"name": "cart_id",
+			"type": "String",
+			"description": "购物车Id（创建购物车返回的购物车id）",
+			"required": true
+		},
+		{
+			"name": "tp_order_id",
+			"type": "String",
+			"description": "第三方订单Id（需保证唯一）",
+			"required": true
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "送餐地址",
+			"required": true
+		},
+		{
+			"name": "consignee",
+			"type": "String",
+			"description": "收餐人姓名",
+			"required": true
+		},
+		{
+			"name": "deliver_time",
+			"type": "String",
+			"description": "暂时不用传（忽略此字段）"
+		},
+		{
+			"name": "invoice_number",
+			"type": "String",
+			"description": "纳税人识别号"
+		},
+		{
+			"name": "invoice",
+			"type": "String",
+			"description": "发票抬头（个人发票请填写个人），不传表示不要发票"
+		},
+		{
+			"name": "invoice_type",
+			"type": "Number",
+			"description": "发票类型（发票类型, 1: 个人, 2: 企业; 空为兼容数据, 由商户判断发票类型）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_data",
+			"type": "EnterpriseData",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "deliver_time",
+					"type": "String",
+					"description": "预定送达时间",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "送餐地址",
+					"required": true
+				},
+				{
+					"name": "consignee",
+					"type": "String",
+					"description": "收餐人姓名",
+					"required": true
+				},
+				{
+					"name": "original_price",
+					"type": "Number",
+					"description": "菜价加上配送费和打包费的价格",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "饿了么订单Id",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "订单总价",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "订单备注",
+					"required": true
+				},
+				{
+					"name": "phone_list",
+					"type": "String[]",
+					"description": "电话号码",
+					"required": true
+				},
+				{
+					"name": "only_restaurant_code",
+					"type": "String",
+					"description": "餐厅唯一码",
+					"required": true
+				},
+				{
+					"name": "created_at",
+					"type": "String",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "restaurant_name",
+					"type": "String",
+					"description": "餐厅名称",
+					"required": true
+				},
+				{
+					"name": "erestaurant_id",
+					"type": "String",
+					"description": "长餐厅Id",
+					"required": true
+				},
+				{
+					"name": "deliver_fee",
+					"type": "String",
+					"description": "送达费用",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "订单状态码",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.damai.mev.open.pushvenue",
+	"apiChineseName": "大麦换验平台-第三方对外开放-场馆接口pushVenue",
+	"description": "开放接口推送场馆",
+	"requestParams": [
+		{
+			"name": "push_venue_param",
+			"type": "ThirdVenuePushOpenParam",
+			"description": "入参pushVenueParam",
+			"subParams": [
+				{
+					"name": "push_time",
+					"type": "Date",
+					"description": "数据推送时间"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥，监权使用"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "商户id"
+				},
+				{
+					"name": "venue_id",
+					"type": "Number",
+					"description": "场馆id"
+				},
+				{
+					"name": "venue_name",
+					"type": "String",
+					"description": "场馆名称"
+				},
+				{
+					"name": "venue_address",
+					"type": "String",
+					"description": "场馆地址"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "出参",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

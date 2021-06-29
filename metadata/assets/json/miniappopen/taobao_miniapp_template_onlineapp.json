@@ -1,0 +1,108 @@
+{
+	"name": "taobao.miniapp.template.onlineapp",
+	"apiChineseName": "上线实例化应用",
+	"description": "将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。",
+	"requestParams": [
+		{
+			"name": "clients",
+			"type": "String[]",
+			"description": "要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "小程序app_id",
+			"required": true
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板id",
+			"required": true
+		},
+		{
+			"name": "template_version",
+			"type": "String",
+			"description": "模板版本",
+			"required": true
+		},
+		{
+			"name": "app_version",
+			"type": "String",
+			"description": "待上线的预览版本号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "online_results",
+			"type": "MiniappInstanceAppOnlineDto []",
+			"description": "分端上线结果",
+			"subParams": [
+				{
+					"name": "client",
+					"type": "String",
+					"description": "端信息",
+					"required": true
+				},
+				{
+					"name": "fail_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "app_info",
+			"type": "MiniAppEntityTemplateDto",
+			"description": "基本信息",
+			"subParams": [
+				{
+					"name": "app_description",
+					"type": "String",
+					"description": "小程序描述",
+					"required": true
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "小程序名称",
+					"required": true
+				},
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "小程序app_id",
+					"required": true
+				},
+				{
+					"name": "app_icon",
+					"type": "String",
+					"description": "小程序icon",
+					"required": true
+				},
+				{
+					"name": "online_url",
+					"type": "String",
+					"description": "线上正式版本的链接，所有消费者可访问。",
+					"required": true
+				}
+			]
+		}
+	]
+}

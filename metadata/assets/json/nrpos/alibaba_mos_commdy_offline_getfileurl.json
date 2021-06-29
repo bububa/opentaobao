@@ -1,0 +1,85 @@
+{
+	"name": "alibaba.mos.commdy.offline.getfileurl",
+	"apiChineseName": "去前置机pos商品离线文件下载地址查询接口",
+	"description": "去前置机-pos查询离线文件下载地址接口",
+	"requestParams": [
+		{
+			"name": "file_keys",
+			"type": "String[]",
+			"description": "离线文件名称",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "headers",
+					"type": "Json",
+					"description": "返回头",
+					"required": true
+				},
+				{
+					"name": "mapping_code",
+					"type": "String",
+					"description": "null",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "OfflineFileDto[]",
+					"description": "返回结果合集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "file_key",
+							"type": "String",
+							"description": "文件名称",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "文件下载地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "http请求返回码",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "null",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "业务返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "业务返回信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

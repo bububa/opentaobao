@@ -1,0 +1,70 @@
+{
+	"name": "alitrip.btrip.project.modify",
+	"apiChineseName": "变更项目",
+	"description": "变更项目",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenProjectRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "项目代码"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "project_name",
+					"type": "String",
+					"description": "项目名",
+					"required": true
+				},
+				{
+					"name": "third_part_cost_center_id",
+					"type": "String",
+					"description": "第三方成本中心id"
+				},
+				{
+					"name": "third_part_id",
+					"type": "String",
+					"description": "第三方项目id",
+					"required": true
+				},
+				{
+					"name": "third_part_invoice_id",
+					"type": "String",
+					"description": "第三方发票id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

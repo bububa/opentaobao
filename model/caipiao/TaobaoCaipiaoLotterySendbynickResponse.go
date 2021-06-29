@@ -19,7 +19,9 @@ type TaobaoCaipiaoLotterySendbynickAPIResponse struct {
 
 type TaobaoCaipiaoLotterySendbynickResponse struct {
     XMLName xml.Name `xml:"caipiao_lottery_sendbynick_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 赠送是否成功，成功为true, 否则为false
     

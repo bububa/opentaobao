@@ -1,0 +1,40 @@
+{
+	"name": "yunos.osupdate.model.search",
+	"apiChineseName": "机型检索",
+	"description": "机型检索",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "Number",
+			"description": "应用ID",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model_list",
+			"type": "DeviceEntryDTO []",
+			"description": "机型列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				}
+			]
+		}
+	]
+}

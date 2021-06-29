@@ -1,0 +1,544 @@
+{
+	"name": "alibaba.mos.goods.searchcspu",
+	"apiChineseName": "cspu查询",
+	"description": "商品信息查询（仅用于商品上传数据验证，不能用于商品下载，有限流）",
+	"requestParams": [
+		{
+			"name": "param_cspu_criteria",
+			"type": "CspuCriteria",
+			"description": "组合查询对象",
+			"subParams": [
+				{
+					"name": "art_nos",
+					"type": "String[]",
+					"description": "货号"
+				},
+				{
+					"name": "barcodes",
+					"type": "String[]",
+					"description": "条码列表"
+				},
+				{
+					"name": "brand_ids",
+					"type": "String[]",
+					"description": "品牌id列表"
+				},
+				{
+					"name": "cat_ids",
+					"type": "String[]",
+					"description": "类目"
+				},
+				{
+					"name": "create_date_end",
+					"type": "Date",
+					"description": "按创建时间查询结束条件"
+				},
+				{
+					"name": "create_date_start",
+					"type": "Date",
+					"description": "按创建时间查询开始条件"
+				},
+				{
+					"name": "cspu_ids",
+					"type": "String[]",
+					"description": "cspu编码"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "模糊查询"
+				},
+				{
+					"name": "property_value_ids",
+					"type": "String[]",
+					"description": "属性值id列表"
+				},
+				{
+					"name": "spu_ids",
+					"type": "String[]",
+					"description": "spuId列表"
+				},
+				{
+					"name": "style_no",
+					"type": "String",
+					"description": "款号"
+				}
+			]
+		},
+		{
+			"name": "param_paginator",
+			"type": "Paginator",
+			"description": "分页参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页显示多少条记录"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "PagedList",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "Cspudto[]",
+					"description": "数据结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "art_no",
+							"type": "String",
+							"description": "货号",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "created",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "creator_id",
+							"type": "String",
+							"description": "创建人唯一标识",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "唯一标识",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "商品级别",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "modifier_id",
+							"type": "String",
+							"description": "修改人唯一标识",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "外部商品Id",
+							"required": true
+						},
+						{
+							"name": "properties",
+							"type": "PropertyDto[]",
+							"description": "商品属性",
+							"required": true,
+							"subParams": [
+								{
+									"name": "img_url",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								},
+								{
+									"name": "order",
+									"type": "Number",
+									"description": "排序值",
+									"required": true
+								},
+								{
+									"name": "property_type",
+									"type": "String",
+									"description": "属性类型：sale, nonCritical, critical",
+									"required": true
+								},
+								{
+									"name": "p_name",
+									"type": "String",
+									"description": "属性名称，如：颜色",
+									"required": true
+								},
+								{
+									"name": "v_name",
+									"type": "String",
+									"description": "属性值名称",
+									"required": true
+								},
+								{
+									"name": "p_alias",
+									"type": "String",
+									"description": "属性别名",
+									"required": true
+								},
+								{
+									"name": "p_custom_name",
+									"type": "String",
+									"description": "自定义属性名称",
+									"required": true
+								},
+								{
+									"name": "p_id",
+									"type": "String",
+									"description": "属性ID",
+									"required": true
+								},
+								{
+									"name": "v_alias",
+									"type": "String",
+									"description": "属性别名",
+									"required": true
+								},
+								{
+									"name": "v_custom_name",
+									"type": "String",
+									"description": "自定义属性值名称",
+									"required": true
+								},
+								{
+									"name": "v_id",
+									"type": "String",
+									"description": "属性值Id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "spu",
+							"type": "Spudto",
+							"description": "spu",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode_str",
+									"type": "String",
+									"description": "条码信息",
+									"required": true
+								},
+								{
+									"name": "brand_id",
+									"type": "String",
+									"description": "品牌唯一标识",
+									"required": true
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称",
+									"required": true
+								},
+								{
+									"name": "cat_name",
+									"type": "String",
+									"description": "类目名称",
+									"required": true
+								},
+								{
+									"name": "cid",
+									"type": "String",
+									"description": "类目唯一标识",
+									"required": true
+								},
+								{
+									"name": "created",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "唯一标识",
+									"required": true
+								},
+								{
+									"name": "is_new",
+									"type": "Boolean",
+									"description": "是否新品,默认true",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "商品级别:1.天猫，2.线上，3.单品，4.原始",
+									"required": true
+								},
+								{
+									"name": "material",
+									"type": "String",
+									"description": "透明素材图",
+									"required": true
+								},
+								{
+									"name": "mdesc",
+									"type": "String",
+									"description": "m站产品描述",
+									"required": true
+								},
+								{
+									"name": "modified",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "pc_desc",
+									"type": "String",
+									"description": "pc端产品描述",
+									"required": true
+								},
+								{
+									"name": "pic_url",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "吊牌价,单位:元",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "String",
+									"description": "产品唯一标识",
+									"required": true
+								},
+								{
+									"name": "product_imgs",
+									"type": "ProductImgDto[]",
+									"description": "商品图片集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "唯一标识",
+											"required": true
+										},
+										{
+											"name": "position",
+											"type": "Number",
+											"description": "排序值",
+											"required": true
+										},
+										{
+											"name": "url",
+											"type": "String",
+											"description": "图片绝对地址",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "props",
+									"type": "PropertyDto[]",
+									"description": "属性",
+									"required": true,
+									"subParams": [
+										{
+											"name": "img_url",
+											"type": "String",
+											"description": "图片地址",
+											"required": true
+										},
+										{
+											"name": "order",
+											"type": "Number",
+											"description": "排序值",
+											"required": true
+										},
+										{
+											"name": "property_type",
+											"type": "String",
+											"description": "属性类型:销售属性(sale),非关键属性(nonCritical), 关键属性(critical)",
+											"required": true
+										},
+										{
+											"name": "p_name",
+											"type": "String",
+											"description": "属性名称",
+											"required": true
+										},
+										{
+											"name": "v_name",
+											"type": "String",
+											"description": "属性值名称，如：36",
+											"required": true
+										},
+										{
+											"name": "p_alias",
+											"type": "String",
+											"description": "属性别名",
+											"required": true
+										},
+										{
+											"name": "p_custom_name",
+											"type": "String",
+											"description": "自定义属性名称",
+											"required": true
+										},
+										{
+											"name": "p_id",
+											"type": "String",
+											"description": "属性Id",
+											"required": true
+										},
+										{
+											"name": "v_alias",
+											"type": "String",
+											"description": "属性别名",
+											"required": true
+										},
+										{
+											"name": "v_custom_name",
+											"type": "String",
+											"description": "自定义属性值名称",
+											"required": true
+										},
+										{
+											"name": "v_id",
+											"type": "String",
+											"description": "属性值Id",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "rate_num",
+									"type": "Number",
+									"description": "产品评分次数",
+									"required": true
+								},
+								{
+									"name": "sell_pt",
+									"type": "String",
+									"description": "产品卖点描述，长度限制在20个汉字",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "产品状态：删除(-1),正常(1)",
+									"required": true
+								},
+								{
+									"name": "style_no",
+									"type": "String",
+									"description": "款号",
+									"required": true
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "子标题",
+									"required": true
+								},
+								{
+									"name": "tags",
+									"type": "Json",
+									"description": "扩展属性",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "产品名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "standard",
+							"type": "Boolean",
+							"description": "是否标准产品",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "当前状态:删除(-1),正常(1）",
+							"required": true
+						},
+						{
+							"name": "style_no",
+							"type": "String",
+							"description": "款号",
+							"required": true
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "子标题",
+							"required": true
+						},
+						{
+							"name": "tag_price",
+							"type": "String",
+							"description": "吊牌价,单位:元",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题",
+							"required": true
+						},
+						{
+							"name": "user_type",
+							"type": "String",
+							"description": "userType",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页获取多少条记录",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录数",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				}
+			]
+		}
+	]
+}

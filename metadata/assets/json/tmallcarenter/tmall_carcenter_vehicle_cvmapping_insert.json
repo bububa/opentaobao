@@ -1,0 +1,67 @@
+{
+	"name": "tmall.carcenter.vehicle.cvmapping.insert",
+	"apiChineseName": "EPC车辆版本信息与底盘信息库关系绑定",
+	"description": "EPC车辆版本信息与底盘信息库关系绑定",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态"
+		},
+		{
+			"name": "supplier_version_cid",
+			"type": "String",
+			"description": "版本ID"
+		},
+		{
+			"name": "supplier_chassis_cid",
+			"type": "String",
+			"description": "底盘ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "gmtCurrentTime",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Json",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "costTime",
+					"required": true
+				}
+			]
+		}
+	]
+}

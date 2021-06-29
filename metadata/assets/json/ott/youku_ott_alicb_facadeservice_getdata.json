@@ -1,0 +1,38 @@
+{
+	"name": "youku.ott.alicb.facadeservice.getdata",
+	"apiChineseName": "影视SDK获取设备能力值",
+	"description": "影视SDK获取设备能力值",
+	"requestParams": [
+		{
+			"name": "service_list",
+			"type": "String[]",
+			"description": "能力维度",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备唯一标识",
+			"required": true
+		},
+		{
+			"name": "property_map_json",
+			"type": "String",
+			"description": "属性MAP JSON串",
+			"required": true
+		},
+		{
+			"name": "extra_info_map",
+			"type": "Json",
+			"description": "扩展属性"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Json",
+			"description": "设备能力JSON"
+		}
+	]
+}

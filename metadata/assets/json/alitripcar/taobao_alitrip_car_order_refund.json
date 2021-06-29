@@ -1,0 +1,61 @@
+{
+	"name": "taobao.alitrip.car.order.refund",
+	"apiChineseName": "用户投诉达成一致后给用户退款",
+	"description": "用户投诉后，供应商客服与客户沟通达成一致后通知飞猪给客户退款。退款金额以接口回调金额为准。",
+	"requestParams": [
+		{
+			"name": "param_order_refund",
+			"type": "OrderRefund",
+			"description": "退款对象",
+			"subParams": [
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退款金额(单位：分)"
+				},
+				{
+					"name": "original_price",
+					"type": "String",
+					"description": "订单原始金额(单位：分)"
+				},
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商订单id"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "飞猪订单id"
+				},
+				{
+					"name": "agent_uniq_key",
+					"type": "String",
+					"description": "商家退款唯一标识(密等对账使用)"
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "供应商编号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果对象"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		}
+	]
+}

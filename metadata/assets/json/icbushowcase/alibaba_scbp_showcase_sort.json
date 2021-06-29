@@ -1,0 +1,32 @@
+{
+	"name": "alibaba.scbp.showcase.sort",
+	"apiChineseName": "橱窗顺序变更",
+	"description": "橱窗顺序变更",
+	"requestParams": [
+		{
+			"name": "window_id",
+			"type": "Number",
+			"description": "要移动的橱窗id",
+			"required": true
+		},
+		{
+			"name": "source_order",
+			"type": "Number",
+			"description": "当前位置（从1开始）",
+			"required": true
+		},
+		{
+			"name": "target_order",
+			"type": "Number",
+			"description": "目标位置（从1开始）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否更新成功"
+		}
+	]
+}

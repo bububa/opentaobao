@@ -1,0 +1,66 @@
+{
+	"name": "alitrip.btrip.city.car.apply.approve",
+	"apiChineseName": "三方市内用车申请单审批",
+	"description": "三方市内用车申请单审批",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "CityCarApplyApproveRq",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "审批时间"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "审批备注"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "审批结果：1-同意，2-拒绝",
+					"required": true
+				},
+				{
+					"name": "third_part_apply_id",
+					"type": "String",
+					"description": "第三方审批单ID",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "审批的第三方员工ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "审批是否成功"
+		}
+	]
+}

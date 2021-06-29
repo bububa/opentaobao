@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.health.vaccin.notice.order.cancel",
+	"apiChineseName": "福州疫苗取消预约",
+	"description": "福州疫苗用户取消预约接口",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝用户id",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "预约id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果集"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

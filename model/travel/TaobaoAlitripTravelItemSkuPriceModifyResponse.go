@@ -19,7 +19,9 @@ type TaobaoAlitripTravelItemSkuPriceModifyAPIResponse struct {
 
 type TaobaoAlitripTravelItemSkuPriceModifyResponse struct {
     XMLName xml.Name `xml:"alitrip_travel_item_sku_price_modify_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 日期级别日历价格库存增量维护
     

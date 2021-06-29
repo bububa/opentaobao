@@ -1,0 +1,221 @@
+{
+	"name": "alibaba.ailabs.aligenie.openvideo.push",
+	"apiChineseName": "天猫精灵内容库视频分集数据推送接口",
+	"description": "天猫精灵内容库视频分集数据推送接口",
+	"requestParams": [
+		{
+			"name": "videos",
+			"type": "RawSingleVideo[]",
+			"description": "待推送的视频数据",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "release_time",
+					"type": "Number",
+					"description": "发布时间，unix时间戳，单位毫秒"
+				},
+				{
+					"name": "tag_ids",
+					"type": "Number[]",
+					"description": "系统标签ID，取值参见文档说明"
+				},
+				{
+					"name": "charge_type",
+					"type": "Number",
+					"description": "付费类型 0-免费、1-VIP免费、2-单点、3-用券",
+					"required": true
+				},
+				{
+					"name": "album_id",
+					"type": "String",
+					"description": "所属视频集ID"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "视频描述信息"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言"
+				},
+				{
+					"name": "like_count",
+					"type": "Number",
+					"description": "点赞数"
+				},
+				{
+					"name": "actor_name",
+					"type": "String[]",
+					"description": "演员"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "视频标题",
+					"required": true
+				},
+				{
+					"name": "play_url",
+					"description": "播放链接，Map，key为support_definition的值"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "视频时长，单位:秒",
+					"required": true
+				},
+				{
+					"name": "is_exclusive",
+					"type": "Number",
+					"description": "是否独播 0-非独播 1-独播"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "子标题"
+				},
+				{
+					"name": "valid_end_time",
+					"type": "Number",
+					"description": "失效时间,unix时间戳,单位:毫秒,为空则永不失效"
+				},
+				{
+					"name": "director_name",
+					"type": "String[]",
+					"description": "导演"
+				},
+				{
+					"name": "alias",
+					"type": "String[]",
+					"description": "别名"
+				},
+				{
+					"name": "id",
+					"type": "String",
+					"description": "视频ID,不同的专辑间也要保证唯一",
+					"required": true
+				},
+				{
+					"name": "forward_count",
+					"type": "Number",
+					"description": "转发量"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区域"
+				},
+				{
+					"name": "v_cover_url",
+					"type": "String",
+					"description": "视频封面(竖图296 * 440，根据搜索规则，提供竖图用户搜索时可优先搜索到此内容)"
+				},
+				{
+					"name": "common_cate_id",
+					"type": "Number",
+					"description": "系统类目ID，取值范围见文档"
+				},
+				{
+					"name": "valid_start_time",
+					"type": "Number",
+					"description": "生效时间,unix时间戳,单位:毫秒,为空则立即生效"
+				},
+				{
+					"name": "support_definition",
+					"type": "String[]",
+					"description": "支撑的分辨率",
+					"required": true
+				},
+				{
+					"name": "producer_name",
+					"type": "String[]",
+					"description": "出品人"
+				},
+				{
+					"name": "collect_count",
+					"type": "Number",
+					"description": "收藏量"
+				},
+				{
+					"name": "oupgc_type",
+					"type": "String",
+					"description": "视频来源类型，PGC/UGC/OGC",
+					"required": true
+				},
+				{
+					"name": "comment_count",
+					"type": "Number",
+					"description": "评论量"
+				},
+				{
+					"name": "cover_url",
+					"type": "String",
+					"description": "视频封面(横图，图片尺寸是295 * 167)",
+					"required": true
+				},
+				{
+					"name": "play_count",
+					"type": "Number",
+					"description": "播放量"
+				},
+				{
+					"name": "uploader_name",
+					"type": "String[]",
+					"description": "上传者名称"
+				},
+				{
+					"name": "order_index",
+					"type": "Number",
+					"description": "视频在所属视频集中的排序号"
+				},
+				{
+					"name": "content_score",
+					"type": "Number",
+					"description": "内容质量评分"
+				},
+				{
+					"name": "operation",
+					"type": "String",
+					"description": "操作类型ADD/DELETE/UPDATE",
+					"required": true
+				},
+				{
+					"name": "suggest_max_price",
+					"type": "Number",
+					"description": "建议最高零售价(单位:分)"
+				},
+				{
+					"name": "suggest_min_price",
+					"type": "Number",
+					"description": "建议最低零售价(单位:分)"
+				},
+				{
+					"name": "cost_price",
+					"type": "Number",
+					"description": "成本价(单位:分)"
+				},
+				{
+					"name": "audition_second",
+					"type": "Number",
+					"description": "试看秒数，若支持试看填1，否则填0",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "状态码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "描述"
+		}
+	]
+}

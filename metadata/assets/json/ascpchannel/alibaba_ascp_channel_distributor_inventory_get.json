@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.ascp.channel.distributor.inventory.get",
+	"apiChineseName": "链渠道中心淘外库存查询",
+	"description": "此api为淘外分销的渠道产品库存查询标准api，淘外分销商专用",
+	"requestParams": [
+		{
+			"name": "inventory_request",
+			"type": "ChannelInventoryQuery",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "产品ID"
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道"
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "skuId"
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "默认不需传"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "一级渠道"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "调用链路ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "ChannelInventoryDto[]",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "库存数量",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "sub_channel_code",
+							"type": "String",
+							"description": "二级渠道",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "市场",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

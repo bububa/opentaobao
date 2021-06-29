@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.ailabs.iot.device.list.update.notify",
+	"apiChineseName": "设备列表更新通知",
+	"description": "用于人工智能实验室IoT合作厂商上报三方接入IoT设备列表更新时的通知",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户OAuth授权后的token",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "String",
+			"description": "厂商在天猫精灵开放平台申请的技能id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "更新类型 1：设备更新 2：场景更新"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "附加信息",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "Number",
+					"description": "请求响应码，200代表成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "设备列表更新通知是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

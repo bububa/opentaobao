@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.drug.code.code.check.hospital",
+	"apiChineseName": "码核查状态同步-医院",
+	"description": "码核查状态同步-医院",
+	"requestParams": [
+		{
+			"name": "auth_ref_ent_id",
+			"type": "String",
+			"description": "认证企业refEntId",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业refEntId",
+			"required": true
+		},
+		{
+			"name": "bureau_name",
+			"type": "String",
+			"description": "城市名"
+		},
+		{
+			"name": "terminal_name",
+			"type": "String",
+			"description": "终端名称"
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型"
+		},
+		{
+			"name": "c_type",
+			"type": "String",
+			"description": "核销类型",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String[]",
+			"description": "码列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "成功失败结果",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "成功失败编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "成功失败描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

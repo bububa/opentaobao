@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.alihealth.mdeer.science.synarticle",
+	"apiChineseName": "医知鹿文章同步【保存/更新】",
+	"description": "文章同步【保存/更新】",
+	"requestParams": [
+		{
+			"name": "syn_article_info",
+			"type": "SynArticleInfo",
+			"description": "同步文章对象",
+			"subParams": [
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "作者电话"
+				},
+				{
+					"name": "author_introduction",
+					"type": "String",
+					"description": "作者简介"
+				},
+				{
+					"name": "author_department",
+					"type": "String",
+					"description": "作者科室"
+				},
+				{
+					"name": "author_level",
+					"type": "String",
+					"description": "作者级别"
+				},
+				{
+					"name": "hospital_level",
+					"type": "String",
+					"description": "医院级别"
+				},
+				{
+					"name": "hospital_name",
+					"type": "String",
+					"description": "医院名称",
+					"required": true
+				},
+				{
+					"name": "portrait_url",
+					"type": "String",
+					"description": "作者头图"
+				},
+				{
+					"name": "author_name",
+					"type": "String",
+					"description": "文章作者名称",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "文章正文",
+					"required": true
+				},
+				{
+					"name": "original_article_url",
+					"type": "String",
+					"description": "原文链接"
+				},
+				{
+					"name": "title_image",
+					"type": "String",
+					"description": "文章头图"
+				},
+				{
+					"name": "article_abstract",
+					"type": "String",
+					"description": "文章摘要"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "文章标题",
+					"required": true
+				},
+				{
+					"name": "article_id",
+					"type": "Number",
+					"description": "文章ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "信息code"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "返回值"
+		}
+	]
+}

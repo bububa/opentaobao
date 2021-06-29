@@ -1,0 +1,97 @@
+{
+	"name": "alitrip.ship.return.notify",
+	"apiChineseName": "船票退票退款回填接口",
+	"description": "此接口为接入商调用飞猪接口回填退票状态，飞猪平台给用户进行退票退款。飞猪平台保证数据幂等。",
+	"requestParams": [
+		{
+			"name": "confirm_refund_r_q",
+			"type": "ShipAgentConfirmRefundRq",
+			"description": "退票请求入参",
+			"subParams": [
+				{
+					"name": "agent_ext_attr",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家订单id",
+					"required": true
+				},
+				{
+					"name": "agent_refund_amount",
+					"type": "Number",
+					"description": "退款金额(分)",
+					"required": true
+				},
+				{
+					"name": "agent_refund_trans_id",
+					"type": "String",
+					"description": "退款资金号唯一ID"
+				},
+				{
+					"name": "agent_return_mode",
+					"type": "String",
+					"description": "offline:线下退票;online:线上退票"
+				},
+				{
+					"name": "agent_return_ticket_code",
+					"type": "Number",
+					"description": "退票结果编码,(退票失败时必填,参考标准错误码)",
+					"required": true
+				},
+				{
+					"name": "agent_return_ticket_status",
+					"type": "Number",
+					"description": "商家退票状态;1-成功,2-失败",
+					"required": true
+				},
+				{
+					"name": "agent_return_ticket_type",
+					"type": "Number",
+					"description": "商家退票类型;0-按票退,1-按单退",
+					"required": true
+				},
+				{
+					"name": "agent_return_time",
+					"type": "Date",
+					"description": "退票时间"
+				},
+				{
+					"name": "agent_ticket_id",
+					"type": "String",
+					"description": "按票的维度进行退票时，商家票号或者乘客Id必填一个,按单退填写订单号"
+				},
+				{
+					"name": "alitrip_order_id",
+					"type": "Number",
+					"description": "飞猪订单号",
+					"required": true
+				},
+				{
+					"name": "passenger_id",
+					"type": "String",
+					"description": "乘客Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "ret_success",
+			"type": "Boolean",
+			"description": "结果"
+		}
+	]
+}

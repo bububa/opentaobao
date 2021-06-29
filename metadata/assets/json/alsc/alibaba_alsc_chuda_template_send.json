@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.alsc.chuda.template.send",
+	"apiChineseName": "本地生活触达模板消息发送接口",
+	"description": "允许三方小程序通过该api发送本地生活触达消息",
+	"requestParams": [
+		{
+			"name": "notify_request",
+			"type": "TemplateNotifyRequest",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户OpenId",
+					"required": true
+				},
+				{
+					"name": "appid",
+					"type": "String",
+					"description": "小程序appid",
+					"required": true
+				},
+				{
+					"name": "notify_id",
+					"type": "String",
+					"description": "消息主体码",
+					"required": true
+				},
+				{
+					"name": "biz_tag",
+					"type": "String",
+					"description": "业务标签"
+				},
+				{
+					"name": "template_args",
+					"description": "模板变量数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_obj",
+			"type": "Number",
+			"description": "msgId"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "发送是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果码，200表示成功"
+		},
+		{
+			"name": "result_desc",
+			"type": "String",
+			"description": "描述信息"
+		}
+	]
+}

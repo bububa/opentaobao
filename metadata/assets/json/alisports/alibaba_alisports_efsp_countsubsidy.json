@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.alisports.efsp.countsubsidy",
+	"apiChineseName": "计算补助金额",
+	"description": "计算补助金额",
+	"requestParams": [
+		{
+			"name": "sum_amount",
+			"type": "Number",
+			"description": "订单金额",
+			"required": true
+		},
+		{
+			"name": "gym_id",
+			"type": "String",
+			"description": "健身房ID",
+			"required": true
+		},
+		{
+			"name": "enterprise_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "alipayId",
+			"required": true
+		},
+		{
+			"name": "district_code",
+			"type": "String",
+			"description": "健身房所在省市",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TrilateralResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "SubsidyAmountVo",
+					"description": "返回alipayId以及补助金额",
+					"required": true,
+					"subParams": [
+						{
+							"name": "subsidy_amount",
+							"type": "Number",
+							"description": "补助金额",
+							"required": true
+						},
+						{
+							"name": "alipay_id",
+							"type": "String",
+							"description": "用户的支付宝ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

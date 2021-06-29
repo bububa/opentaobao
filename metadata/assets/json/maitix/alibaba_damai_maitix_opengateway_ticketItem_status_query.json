@@ -1,0 +1,91 @@
+{
+	"name": "alibaba.damai.maitix.opengateway.ticketItem.status.query",
+	"apiChineseName": "分销状态查询接口queryTicketItemStatusByTicketItemId",
+	"description": "queryTicketItemStatusByTicketItemId",
+	"requestParams": [
+		{
+			"name": "dis_ticket_item_status_query_param",
+			"type": "DisTicketItemStatusQueryDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "ticket_item_id_list",
+					"type": "Number[]",
+					"description": "票品id列表",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "参数errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "参数errorMsg",
+					"required": true
+				},
+				{
+					"name": "ext_map",
+					"type": "Json",
+					"description": "参数extMap",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "参数success",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "DisTicketItemStatusDto[]",
+					"description": "系统自动生成",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_status",
+							"type": "Number",
+							"description": "票品子状态",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "票品状态",
+							"required": true
+						},
+						{
+							"name": "ticket_item_id",
+							"type": "Number",
+							"description": "票品id",
+							"required": true
+						},
+						{
+							"name": "perform_id",
+							"type": "Number",
+							"description": "场次id",
+							"required": true
+						},
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

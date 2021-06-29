@@ -1,0 +1,216 @@
+{
+	"name": "alibaba.ailabs.aligenie.videoalbum.push",
+	"apiChineseName": "天猫精灵内容库视频合辑数据推送接口",
+	"description": "三方内容合作厂商可将视频辑数据通过此接口推送至天猫精灵内容库接入中，供天猫精灵使用",
+	"requestParams": [
+		{
+			"name": "param1",
+			"type": "RawVideoAlbum[]",
+			"description": "视频合辑数据",
+			"required": true,
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "tag_ids",
+					"type": "Number[]",
+					"description": "标签ID，具体取值范围参见文档说明"
+				},
+				{
+					"name": "charge_type",
+					"type": "Number",
+					"description": "付费类型 0-免费、1-VIP免费、2-整本专辑售卖",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言"
+				},
+				{
+					"name": "like_count",
+					"type": "Number",
+					"description": "点赞数"
+				},
+				{
+					"name": "actor_name",
+					"type": "String[]",
+					"description": "演员名称"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题（若需显示集数，请填写：第X集：视频名称；如第一集：天猫精灵）",
+					"required": true
+				},
+				{
+					"name": "play_order",
+					"type": "Number",
+					"description": "播放顺序0-顺序，1-倒序"
+				},
+				{
+					"name": "total_episode",
+					"type": "Number",
+					"description": "包含视频总集数"
+				},
+				{
+					"name": "is_exclusive",
+					"type": "Number",
+					"description": "是否独播 0-非独播 1-独播"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "子标题"
+				},
+				{
+					"name": "valid_end_time",
+					"type": "Number",
+					"description": "失效时间,unix时间戳,单位:毫秒,为空则永不失效"
+				},
+				{
+					"name": "director_name",
+					"type": "String[]",
+					"description": "导演名称"
+				},
+				{
+					"name": "alias",
+					"type": "String[]",
+					"description": "别名"
+				},
+				{
+					"name": "id",
+					"type": "String",
+					"description": "三方视频辑ID",
+					"required": true
+				},
+				{
+					"name": "forward_count",
+					"type": "Number",
+					"description": "转发量"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区域"
+				},
+				{
+					"name": "v_cover_url",
+					"type": "String",
+					"description": "专辑封面(竖图296 * 440，根据搜索规则，提供竖图用户搜索时可优先搜索到此内容)",
+					"required": true
+				},
+				{
+					"name": "common_cate_id",
+					"type": "Number",
+					"description": "类目ID，参见相关文档说明",
+					"required": true
+				},
+				{
+					"name": "valid_start_time",
+					"type": "Number",
+					"description": "生效时间,unix时间戳,单位:毫秒,为空则立即生效"
+				},
+				{
+					"name": "producer_name",
+					"type": "String[]",
+					"description": "出品方"
+				},
+				{
+					"name": "collect_count",
+					"type": "Number",
+					"description": "收藏量"
+				},
+				{
+					"name": "is_finished",
+					"type": "Number",
+					"description": "是否完结，0-否，1-是，默认0"
+				},
+				{
+					"name": "oupgc_type",
+					"type": "String",
+					"description": "视频来源类型，PGC/UGC/OGC",
+					"required": true
+				},
+				{
+					"name": "comment_count",
+					"type": "Number",
+					"description": "评论量"
+				},
+				{
+					"name": "cover_url",
+					"type": "String",
+					"description": "专辑封面(横图，图片尺寸是295 * 167)",
+					"required": true
+				},
+				{
+					"name": "play_count",
+					"type": "Number",
+					"description": "播放量"
+				},
+				{
+					"name": "uploader_name",
+					"type": "String[]",
+					"description": "上传者名称"
+				},
+				{
+					"name": "content_score",
+					"type": "String",
+					"description": "评分"
+				},
+				{
+					"name": "operation",
+					"type": "String",
+					"description": "操作类型 ADD/UPDATE/DELETE",
+					"required": true
+				},
+				{
+					"name": "suggest_max_price",
+					"type": "Number",
+					"description": "建议最高零售价(单位:分)"
+				},
+				{
+					"name": "suggest_min_price",
+					"type": "Number",
+					"description": "建议最低零售价(单位:分)"
+				},
+				{
+					"name": "cost_price",
+					"type": "Number",
+					"description": "成本价(单位:分)"
+				},
+				{
+					"name": "audition_num",
+					"type": "Number",
+					"description": "试看数(表示前N个视频支持试看)"
+				},
+				{
+					"name": "update_index",
+					"type": "Number",
+					"description": "更新到第几集，如果是未完结状态此字段必填"
+				},
+				{
+					"name": "release_time",
+					"type": "Number",
+					"description": "发布时间,unix时间戳,单位:毫秒"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "状态码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "描述"
+		}
+	]
+}

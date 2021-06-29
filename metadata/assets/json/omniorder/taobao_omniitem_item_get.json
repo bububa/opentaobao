@@ -1,0 +1,230 @@
+{
+	"name": "taobao.omniitem.item.get",
+	"apiChineseName": "获取全渠道门店商品",
+	"description": "通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页单页大小"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "可选，指定获取的商品id"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "可选，指定获取的商品外部id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "LightItemDo[]",
+					"description": "返回查询到的商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "商品所属商家id",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品淘系id",
+							"required": true
+						},
+						{
+							"name": "operator",
+							"type": "String",
+							"description": "操作人",
+							"required": true
+						},
+						{
+							"name": "cat_id",
+							"type": "Number",
+							"description": "商品叶子类目，参见taobao.omniitem.category.get接口返回值",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "subtitle",
+							"type": "String",
+							"description": "商品卖点",
+							"required": true
+						},
+						{
+							"name": "store_ids",
+							"type": "Number[]",
+							"description": "关联门店id",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "吊牌价",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "商品描述",
+							"required": true
+						},
+						{
+							"name": "skus",
+							"type": "ItemLightPublishSkuDto[]",
+							"description": "sku信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "淘系skuId",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "sku吊牌价",
+									"required": true
+								},
+								{
+									"name": "pretium",
+									"type": "String",
+									"description": "sku销售价",
+									"required": true
+								},
+								{
+									"name": "sku_outer_id",
+									"type": "String",
+									"description": "sku商家编码",
+									"required": true
+								},
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "sku条形码",
+									"required": true
+								},
+								{
+									"name": "custom_code",
+									"type": "String",
+									"description": "customCode",
+									"required": true
+								},
+								{
+									"name": "sku_images",
+									"type": "String[]",
+									"description": "skuImages",
+									"required": true
+								},
+								{
+									"name": "sale_props",
+									"type": "ItemLightPublishSalePropDto[]",
+									"description": "sku销售属性列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "pid",
+											"type": "Number",
+											"description": "销售属性pid，参见taobao.omniitem.category.get接口返回值",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "销售属性值",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "extend_attr",
+									"type": "String",
+									"description": "sku扩展字段",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pretium",
+							"type": "String",
+							"description": "销售价",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条形码",
+							"required": true
+						},
+						{
+							"name": "images",
+							"type": "ItemLightPublishImageDto[]",
+							"description": "商品图片，最少1张，最多5张",
+							"required": true,
+							"subParams": [
+								{
+									"name": "url",
+									"type": "String",
+									"description": "图片空间URL",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "extend_attr",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

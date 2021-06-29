@@ -1,0 +1,98 @@
+{
+	"name": "taobao.feedflow.item.adgroup.adzone.page",
+	"apiChineseName": "信息流单元下查看绑定资源位",
+	"description": "信息流单元下查看绑定资源位",
+	"requestParams": [
+		{
+			"name": "adzone_bind_query",
+			"type": "AdzoneBindQueryDto",
+			"description": "查询条件",
+			"required": true,
+			"subParams": [
+				{
+					"name": "adzone_id_list",
+					"type": "Number[]",
+					"description": "广告位id列表"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "单元id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页条件"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "分页条件"
+				},
+				{
+					"name": "adzone_name",
+					"type": "String",
+					"description": "广告位名称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "广告位总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				},
+				{
+					"name": "adzone_bind_list",
+					"type": "AdzoneBindDto[]",
+					"description": "广告位列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "adzone_id",
+							"type": "Number",
+							"description": "广告位id",
+							"required": true
+						},
+						{
+							"name": "adzone_name",
+							"type": "String",
+							"description": "广告位名称",
+							"required": true
+						},
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "溢价比例",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

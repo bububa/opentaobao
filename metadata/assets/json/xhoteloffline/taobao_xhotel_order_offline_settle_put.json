@@ -1,0 +1,140 @@
+{
+	"name": "taobao.xhotel.order.offline.settle.put",
+	"apiChineseName": "线下信用住结账专用接口",
+	"description": "线下信用住结账专用接口",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单id,必须填写"
+		},
+		{
+			"name": "total_room_fee",
+			"type": "Number",
+			"description": "房费总额(必须大于0)",
+			"required": true
+		},
+		{
+			"name": "other_fee",
+			"type": "Number",
+			"description": "杂费总额(不能为负数)",
+			"required": true
+		},
+		{
+			"name": "other_fee_detail",
+			"type": "String",
+			"description": "杂费明细,如果otherFee\u003e0则该字段必须设置,并和杂费金额相吻合"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "商家订单号"
+		},
+		{
+			"name": "room_no",
+			"type": "String",
+			"description": "入住房间号"
+		},
+		{
+			"name": "daily_price_info",
+			"type": "String",
+			"description": "每日房价,json格式,如果房价和在阿里旅行下单时发生了变化，必须设置该字段.用于更新阿里旅行端的房价信息,涉及到对用户的优惠信息处理等环节(多间房的时候dailyPriceInfo留空)"
+		},
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "实际离店日期，用于校验总房费收取",
+			"required": true
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "room_settle_info_list",
+			"type": "RoomSettleInfo[]",
+			"description": "房间明细列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "room_no",
+					"type": "String",
+					"description": "房间号"
+				},
+				{
+					"name": "room_fee",
+					"type": "Number",
+					"description": "房间费（大于零）"
+				},
+				{
+					"name": "room_other_fee",
+					"type": "Number",
+					"description": "房间杂费（不能为负数）"
+				},
+				{
+					"name": "room_other_fee_detail",
+					"type": "String",
+					"description": "房间杂费明细 （当房间杂费存在时候，此值不能空。格式与原有杂费格式otherFeeDetail的格式相同）eg;{\"洗衣费\":5000,\"水吧\":10000,\"优惠\":1000}"
+				},
+				{
+					"name": "room_check_in",
+					"type": "Date",
+					"description": "房间check in 时间"
+				},
+				{
+					"name": "room_check_out",
+					"type": "Date",
+					"description": "房间check out时间"
+				},
+				{
+					"name": "daily_price_info",
+					"type": "String",
+					"description": "日历价格（每个房间的日历价格，多间房结账必填）"
+				},
+				{
+					"name": "room_status",
+					"type": "String",
+					"description": "房间状态；1:未入住（担保且需扣款）；2:取消成功（卖家取消；担保noshow且双方协商一致不扣款）；3:已入住"
+				}
+			]
+		},
+		{
+			"name": "contain_guarantee",
+			"type": "Number",
+			"description": "此金额是否包含担保金 0：默认值无意义；1：包含；2：不包含（多间房结账必须传入）"
+		},
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "结账请求流水号"
+		},
+		{
+			"name": "notify_url",
+			"type": "String",
+			"description": "请求结果通知地址（暂时无效，无需传入）"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "应收金额,大于0时，直接按照此金额扣款，忽略房费和杂费金额(单位分)"
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "商家酒店编码"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回描述"
+		}
+	]
+}

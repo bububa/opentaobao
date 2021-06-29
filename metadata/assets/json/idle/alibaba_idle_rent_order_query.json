@@ -1,0 +1,207 @@
+{
+	"name": "alibaba.idle.rent.order.query",
+	"apiChineseName": "查询订单",
+	"description": "查询订单信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "RentalOrderDto",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "buyer_address",
+							"type": "UserAddressDto",
+							"description": "买家地址",
+							"required": true,
+							"subParams": [
+								{
+									"name": "prov",
+									"type": "String",
+									"description": "买家所在省",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "买家所在城市",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "买家所在区",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "买家姓名",
+									"required": true
+								},
+								{
+									"name": "phone_no",
+									"type": "String",
+									"description": "买家电话号码",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "买家详细地址",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "buyer_id",
+							"type": "String",
+							"description": "买家id",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "RentalOrderItemDto[]",
+							"description": "订单商品信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品id",
+									"required": true
+								},
+								{
+									"name": "sku_d_t_o",
+									"type": "ItemSkuDto",
+									"description": "sku信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "prop_list",
+											"type": "ItemPvPairDto[]",
+											"description": "sku属性信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "value_text",
+													"type": "String",
+													"description": "属性值",
+													"required": true
+												},
+												{
+													"name": "prop_text",
+													"type": "String",
+													"description": "属性",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "库存数量",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "sku id",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "price",
+									"type": "PriceDto",
+									"description": "价格信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "star",
+											"type": "String",
+											"description": "星级",
+											"required": true
+										},
+										{
+											"name": "deposit",
+											"type": "Number",
+											"description": "押金，单位分",
+											"required": true
+										},
+										{
+											"name": "settle_price_per_day",
+											"type": "Number",
+											"description": "日结算价格，单位分",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "reserved_package_time",
+							"type": "String",
+							"description": "预约时间",
+							"required": true
+						},
+						{
+							"name": "buyer_member_expire_date",
+							"type": "Date",
+							"description": "用户会员卡到期时间",
+							"required": true
+						},
+						{
+							"name": "postage",
+							"type": "Number",
+							"description": "邮费，单位分",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

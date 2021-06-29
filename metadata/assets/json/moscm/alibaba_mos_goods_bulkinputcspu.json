@@ -1,0 +1,364 @@
+{
+	"name": "alibaba.mos.goods.bulkinputcspu",
+	"apiChineseName": "批量录入商品信息",
+	"description": "用于商品信息的批量导入到银泰商品中台",
+	"requestParams": [
+		{
+			"name": "cspu_input_dto_list",
+			"type": "CspuInputDto[]",
+			"description": "录入商品信息列表（最大列表长度：20）",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "art_no",
+					"type": "String",
+					"description": "货号"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "商品条码",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "源id（供应商自己的唯一标识）",
+					"required": true
+				},
+				{
+					"name": "properties",
+					"type": "PropertyDto[]",
+					"description": "销售属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "p_alias",
+							"type": "String",
+							"description": "属性别名"
+						},
+						{
+							"name": "p_custom_name",
+							"type": "String",
+							"description": "自定义属性名称"
+						},
+						{
+							"name": "p_id",
+							"type": "String",
+							"description": "对应天猫属性Id"
+						},
+						{
+							"name": "p_name",
+							"type": "String",
+							"description": "对应天猫属性名称",
+							"required": true
+						},
+						{
+							"name": "v_alias",
+							"type": "String",
+							"description": "属性值别名"
+						},
+						{
+							"name": "v_custom_name",
+							"type": "String",
+							"description": "自定义value名称（优先展示此字段）"
+						},
+						{
+							"name": "v_id",
+							"type": "String",
+							"description": "对应天猫属性Id"
+						},
+						{
+							"name": "v_name",
+							"type": "String",
+							"description": "对应天猫属性值名称（v_custom_name不传时展示此字段）",
+							"required": true
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "花色图片"
+						},
+						{
+							"name": "order",
+							"type": "Number",
+							"description": "顺序"
+						},
+						{
+							"name": "property_type",
+							"type": "String",
+							"description": "属性类型（sale, nonCritical, critical, tmallItem）"
+						}
+					]
+				},
+				{
+					"name": "spu_input_dto",
+					"type": "SpuInputDto",
+					"description": "标准商品信息（款）",
+					"required": true,
+					"subParams": [
+						{
+							"name": "barcode_str",
+							"type": "String",
+							"description": "产品条码信息"
+						},
+						{
+							"name": "brand_id",
+							"type": "String",
+							"description": "银泰品牌Id",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称"
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "商品类目名称"
+						},
+						{
+							"name": "cid",
+							"type": "String",
+							"description": "商品类目ID.必须是叶子类目ID"
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "SPU ID"
+						},
+						{
+							"name": "is_new",
+							"type": "Boolean",
+							"description": "是否新品默认是true"
+						},
+						{
+							"name": "material",
+							"type": "String",
+							"description": "透明素材图"
+						},
+						{
+							"name": "mdesc",
+							"type": "String",
+							"description": "已废弃"
+						},
+						{
+							"name": "pc_desc",
+							"type": "String",
+							"description": "已废弃"
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "产品的主图片地址.(绝对地址,格式:http://host/image_path)"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "吊牌价.单位为元.",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品ID"
+						},
+						{
+							"name": "product_imgs",
+							"type": "ProductImgDto[]",
+							"description": "产品的子图片.目前最多支持50张。",
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "图片ID"
+								},
+								{
+									"name": "position",
+									"type": "Number",
+									"description": "排序"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "url地址（以http或https开头的绝对路径）"
+								}
+							]
+						},
+						{
+							"name": "props",
+							"type": "PropertyDto[]",
+							"description": "产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性",
+							"subParams": [
+								{
+									"name": "p_alias",
+									"type": "String",
+									"description": "属性别名"
+								},
+								{
+									"name": "p_custom_name",
+									"type": "String",
+									"description": "自定义属性名称"
+								},
+								{
+									"name": "p_id",
+									"type": "String",
+									"description": "对应天猫属性Id"
+								},
+								{
+									"name": "p_name",
+									"type": "String",
+									"description": "属性名称"
+								},
+								{
+									"name": "v_alias",
+									"type": "String",
+									"description": "属性值别名"
+								},
+								{
+									"name": "v_custom_name",
+									"type": "String",
+									"description": "自定义value名称"
+								},
+								{
+									"name": "v_id",
+									"type": "String",
+									"description": "对应天猫属性值id"
+								},
+								{
+									"name": "v_name",
+									"type": "String",
+									"description": "属性值名称"
+								},
+								{
+									"name": "img_url",
+									"type": "String",
+									"description": "花色图片"
+								},
+								{
+									"name": "order",
+									"type": "Number",
+									"description": "顺序"
+								},
+								{
+									"name": "property_type",
+									"type": "String",
+									"description": "属性类型（sale, nonCritical, critical, tmallItem）"
+								}
+							]
+						},
+						{
+							"name": "sell_pt",
+							"type": "String",
+							"description": "产品卖点描述，长度限制20个汉字"
+						},
+						{
+							"name": "style_no",
+							"type": "String",
+							"description": "款号"
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "子标题"
+						},
+						{
+							"name": "tags",
+							"description": "brand是银泰品牌Id，colorName（颜色名称）、colorCode(颜色编码)、sizeCode(尺码编码)、sizeName(尺码名称):商品销售属性，标签一些在属性里找不到id的属性存放在这里"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "产品名称"
+						},
+						{
+							"name": "tmall_brand_id",
+							"type": "String",
+							"description": "天猫品牌Id"
+						},
+						{
+							"name": "desc_pic_list",
+							"type": "String[]",
+							"description": "详情图（最大列表长度：60）"
+						},
+						{
+							"name": "tmall_item_id",
+							"type": "Number",
+							"description": "天猫ItemId"
+						}
+					]
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "子标题"
+				},
+				{
+					"name": "tag_price",
+					"type": "String",
+					"description": "吊牌价",
+					"required": true
+				},
+				{
+					"name": "tags",
+					"description": "brand是银泰品牌Id，colorName（颜色名称）、colorCode(颜色编码)、sizeCode(尺码编码)、sizeName(尺码名称):商品销售属性，标签一些在属性里找不到id的属性存放在这里",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "产品名称",
+					"required": true
+				},
+				{
+					"name": "tmall_sku_id",
+					"type": "Number",
+					"description": "天猫Sku"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "BulkInputCspuResult",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "cspu_result_list",
+					"type": "InputCspuResult[]",
+					"description": "录入结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cspu_id",
+							"type": "String",
+							"description": "中台商品id",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "供应商商品id",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否录入成功，true：成功 false：失败",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

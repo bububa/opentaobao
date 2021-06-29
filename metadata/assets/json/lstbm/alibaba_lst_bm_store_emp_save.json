@@ -1,0 +1,24 @@
+{
+	"name": "alibaba.lst.bm.store.emp.save",
+	"apiChineseName": "保存品牌商自有门店和内部业代之间的关系",
+	"description": "保存品牌商自有门店和内部业代之间的关系",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店id标识"
+		},
+		{
+			"name": "bm_emp_id",
+			"type": "String",
+			"description": "员工id标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true表示执行成功，false表示执行失败"
+		}
+	]
+}

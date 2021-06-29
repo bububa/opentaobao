@@ -6,6 +6,237 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2021-06-29
+
+### Added
+
+- Show api info which is not exists in package.json during download metadata. 
+- 酒店商品API.
+- 酒店在线预订API.
+- 酒店官网信用住API.
+- 酒店线下信用住API.
+- 全渠道API.
+- 国际机票政策API.
+- 国际机票订单API.
+- 国内机票订单API.
+- 度假&门票-交易管理API.
+- 阿里体育API.
+- 电子发票.
+- 阿里翻译API.
+- 国际站数据管.
+- tmall-carcenter.
+- 阿里妈妈广告中心API.
+- Yunos Account API.
+- 菜鸟裹裹API.
+- 度假-签证管理API.
+- 菜鸟农村物流.
+- 体检机构API.
+- 1688推客API.
+- 商户API.
+- 桌面API.
+- 电动车API.
+- 新零售API.
+- SCM API.
+- 百川-ctg.
+- 汇金API.
+- 数娱媒资输出.
+- 商旅API.
+- 零售plus.
+- 天猫门店API.
+- AILAB图像算法API.
+- 天猫供应.
+- 欢行开发平台API.
+- 跨境API.
+- 迎客松牌照审核接口.
+- IoTI API.
+- 淘宝卡券平台.
+- 智慧门店.
+- 淘宝定制行业API.
+- 闲鱼.
+- 库存API.
+- aliExpress.
+- YunOS-广告.
+- 司法开放平台.
+- 全球速卖通.
+- 阿里健康追溯码.
+- 会员中心API.
+- 阿里健康-会员管理.
+- 品效API.
+- 小蜜API.
+- 大麦票务云分销API.
+- 天猫精灵开放API.
+- ICBU卖家API.
+- 智慧园区API.
+- 酒店会员API.
+- 大麦API.
+- 换货API.
+- 商家营销中心API.
+- ICBU－物流.
+- ICBU－RFQ.
+- ICBU－信保.
+- 飞猪POI数据API.
+- 飞猪行政区划API.
+- 零售终端API.
+- 手淘用户增.
+- ALiOS应用中心.
+- b2b认证平台api.
+- 企业运营平台-集团财.
+- 零售通智能POS开放.
+- 阿里巴巴供应链平台API.
+- 天猫新零售.
+- 酒店团购套餐API.
+- 阿里影业云智API.
+- 渠道中心API.
+- 阿里健康-疫苗API.
+- 教育账号 API.
+- 用户增长.
+- AE-供应链.
+- 互动吧API.
+- 飞猪机票前台类目.
+- 平台治理API.
+- 天猫超市前台API.
+- 虾米开放平台.
+- 阿里健康医生.
+- 飞猪酒店标准库.
+- AE-Dropshipper.
+- 银泰scm-openapi.
+- 信息平台-采购.
+- 零售通自动售货机.
+- 淘宝小程序API.
+- ott支付.
+- 天猫汽车.
+- ALIOS广告平台.
+- 业务平台新零售.
+- 大麦第三方商家接入API.
+- ICBU商品api.
+- 神鲸应用API.
+- 阿里影业灯塔.
+- 激励API.
+- 优酷-媒资.
+- 优酷网盟.
+- 阿里健康API.
+- 新制造API.
+- 零售通小店智能设备.
+- 医知鹿-视频.
+- 五道口商品API.
+- 零售通订单履行.
+- 天猫线下大屏.
+- AE-Oversea-Solution.
+- 阿里精灵基础能力接口.
+- 阿里健康新零售.
+- 闲鱼发布.
+- 飞猪酒店签约中心.
+- 人工智能实验室开放平台API.
+- 天猫新品创新中心API.
+- MOZI账号API.
+- 亲橙里westcrmAPI.
+- ICBU-橱.
+- 云码API.
+- HOMEAI.
+- MOZI权限API.
+- 飞猪商家平台.
+- 新零售POS.
+- 资质共享API.
+- 业务平台事业部-税务平台API.
+- MOZI 租户.
+- 公益三小时公共.
+- 脚模API.
+- 阿里健康处方药平台.
+- 优酷播控幻影API.
+- miniapp开放API.
+- 天天特价.
+- iHome API.
+- 信息流API.
+- 淘宝C2M.
+- 新零售供应链API.
+- AliOS支付API.
+- 菜鸟控制塔API.
+- 小程序API.
+- 菜鸟末端商业.
+- 阿里健康挂号号源直连.
+- AE-UserOpen-Recommend.
+- Efficient Tools.
+- Data Reports.
+- Promotion Creatives.
+- 菜鸟国际出口.
+- 全域会员通.
+- 交易猫API.
+- 影城自运营开放Api.
+- 商家应用.
+- 国际火车票API.
+- 天猫校园API.
+- 消息API.
+- 菜鸟发货工作台API.
+- 五道口-物流-自提API.
+- 企业订餐员工API.
+- 船票API.
+- 飞猪-综合交通api.
+- 企业订餐店铺接口.
+- 新零售开放API.
+- 企业订餐购物车API.
+- 企业订餐优惠券API.
+- 阿里健康算法.
+- 企业订餐订单API.
+- 云游戏API.
+- 国际虚拟API.
+- 交易开放.
+- 本地生活商户基础API.
+- 消息amp通道.
+- 口碑综合体API.
+- IoT售后解决方案API.
+- OpenMall-API.
+- 视觉开放API(viapi).
+- 曲库开放平台歌曲API.
+- 阿里健康三方机构.
+- 阿里健康-检测检验-预约.
+- 天猫精灵供应链网关API.
+- 曲库开放平台TraceAPI.
+- 飞猪发票.
+- 互动开放API.
+- 同城零售全渠道.
+- 天猫好房工具API.
+- 五棱镜任务API.
+- 闲鱼兼职.
+- 聚石塔隐私号.
+- 零售通商品API.
+- 零售通交易API.
+- 零售通门店API.
+- 零售通履单API.
+- 零售通仓储API.
+- 零售通结算API.
+- 零售通营销API.
+- AE任务开放平台.
+- 本地生活内容API.
+- 天猫新品平台API.
+- 国际化中台服务域保险.
+- 阿里健康-健康证.
+- 隐私保护API.
+- ICBU-DropShipping.
+- 曲库开放平台艺人API.
+- 周期购API.
+- 闲鱼已验货.
+- 阿信-交易API.
+- 飞猪商业化API.
+- 阿信-基础数据.
+- 阿里健康公益线API.
+- 海南离岛对外API.
+
+### Changed
+
+- Update metadata/package.json, add more APIs.
+- Sort API list in README.
+- Add "Map", "MapResult", "BizParam", "ModelList", "MtopResult", "T", "E" into metadata/conflict_models.json.
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+- apiName may contains special characters, replace '-' to '_' before convert to className.
+- Fixed duplicate RequestId in response model.
+- Fixed wrong API doc link in README.
+
 ## [1.1.2] - 2021-06-28
 
 ### Added

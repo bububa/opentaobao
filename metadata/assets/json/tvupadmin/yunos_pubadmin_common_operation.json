@@ -1,0 +1,32 @@
+{
+	"name": "yunos.pubadmin.common.operation",
+	"apiChineseName": "内部迎客松通用服务",
+	"description": "内部迎客松通用服务",
+	"requestParams": [
+		{
+			"name": "parameter",
+			"type": "String",
+			"description": "入参json串",
+			"required": true
+		},
+		{
+			"name": "interface_name",
+			"type": "String",
+			"description": "接口名",
+			"required": true
+		},
+		{
+			"name": "method_name",
+			"type": "String",
+			"description": "方法名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "接口返回结果"
+		}
+	]
+}

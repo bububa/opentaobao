@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.inventor.qty.get",
+	"apiChineseName": "10-同步库存现有量",
+	"description": "同步库存现有量",
+	"requestParams": [
+		{
+			"name": "request_extend_json",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "IbpInventoryQuantityDto[]",
+					"description": "对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存量",
+							"required": true
+						},
+						{
+							"name": "location_code",
+							"type": "String",
+							"description": "地点code",
+							"required": true
+						},
+						{
+							"name": "materiel_code",
+							"type": "String",
+							"description": "物料code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.idle.consignment.spu.statistics",
+	"apiChineseName": "闲鱼帮卖同步服务商交易统计信息",
+	"description": "闲鱼帮卖同步服务商交易统计信息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SpuStatistics",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间（预留）"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "数据状态：1（可用）2（不可用）"
+				},
+				{
+					"name": "scene_type",
+					"type": "String",
+					"description": "场景：3C（3C行业）、BULKS（大件）"
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "spuId",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "预留字段"
+				},
+				{
+					"name": "descr",
+					"type": "String",
+					"description": "该spu"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间（预留）"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号（预留）"
+				},
+				{
+					"name": "spu_data",
+					"type": "String",
+					"description": "结构数据，涉及金额的数据单位为分，精确到元"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

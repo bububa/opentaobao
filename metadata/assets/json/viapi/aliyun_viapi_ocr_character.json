@@ -1,0 +1,102 @@
+{
+	"name": "aliyun.viapi.ocr.character",
+	"apiChineseName": "通用文字识别",
+	"description": "获取通用的文字信息。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "待检测图片链接",
+			"required": true
+		},
+		{
+			"name": "image_type",
+			"type": "Number",
+			"description": "图片类型, ,取范围[0:ImageURL, 1:ImageContent]"
+		},
+		{
+			"name": "min_height",
+			"type": "Number",
+			"description": "图片中文字的最小高度，单位像素",
+			"required": true
+		},
+		{
+			"name": "output_probability",
+			"type": "Boolean",
+			"description": "是否输出文字框的概率,取值范围[true:是, false:否]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Result[]",
+					"description": "返回识别信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "text_rectangle",
+							"type": "TextRectangle",
+							"description": "文字区域",
+							"required": true,
+							"subParams": [
+								{
+									"name": "left",
+									"type": "Number",
+									"description": "文字区域左上角x坐标",
+									"required": true
+								},
+								{
+									"name": "angle",
+									"type": "Number",
+									"description": "文字区域角度，角度范围[0, 360]",
+									"required": true
+								},
+								{
+									"name": "top",
+									"type": "Number",
+									"description": "文字区域左上角y坐标",
+									"required": true
+								},
+								{
+									"name": "height",
+									"type": "Number",
+									"description": "文字区域高度",
+									"required": true
+								},
+								{
+									"name": "width",
+									"type": "Number",
+									"description": "文字区域宽度",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "probability",
+							"type": "Number",
+							"description": "文字区域概率，概率值的范围为[0, 1]",
+							"required": true
+						},
+						{
+							"name": "text",
+							"type": "String",
+							"description": "文字内容",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,163 @@
+{
+	"name": "taobao.sungari.dispose.submit",
+	"apiChineseName": "商品商家处置提交任务",
+	"description": "商品商家处置信息接口，提供政府部门发送处置信息给阿里",
+	"requestParams": [
+		{
+			"name": "info",
+			"type": "DisposeInfoDo",
+			"description": "平台处置信息入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "api_type",
+					"type": "Number",
+					"description": "处置类型，1:商品处置  2：经营者处置",
+					"required": true
+				},
+				{
+					"name": "check_number",
+					"type": "String",
+					"description": "抽检报告编号"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "处置函单位名称",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "String",
+					"description": "处置函录入时间",
+					"required": true
+				},
+				{
+					"name": "dispose_content",
+					"type": "String",
+					"description": "处置对象内容",
+					"required": true
+				},
+				{
+					"name": "dispose_type",
+					"type": "Number",
+					"description": "处置对象类型，1:订单号  2：商品ID  3:商家会员账号 4：全网排查关键字",
+					"required": true
+				},
+				{
+					"name": "doc_name",
+					"type": "String",
+					"description": "处置函件文号",
+					"required": true
+				},
+				{
+					"name": "licence_no",
+					"type": "String",
+					"description": "资质证件号（执照）"
+				},
+				{
+					"name": "link_man",
+					"type": "String",
+					"description": "处置函联系人",
+					"required": true
+				},
+				{
+					"name": "oss_key",
+					"type": "String",
+					"description": "处置函件Oss中的key"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "处置函联系人电话",
+					"required": true
+				},
+				{
+					"name": "platform_type",
+					"type": "Number",
+					"description": "处置函件接收平台，1:淘宝  2：天猫  3:1688",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "处置原因",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注信息"
+				},
+				{
+					"name": "source_address",
+					"type": "String",
+					"description": "原始函单位地址",
+					"required": true
+				},
+				{
+					"name": "source_company_name",
+					"type": "String",
+					"description": "原始函单位名称",
+					"required": true
+				},
+				{
+					"name": "source_link_man",
+					"type": "String",
+					"description": "原始函联系人",
+					"required": true
+				},
+				{
+					"name": "source_oss_key",
+					"type": "String",
+					"description": "原始函件Oss中的key"
+				},
+				{
+					"name": "source_phone",
+					"type": "String",
+					"description": "原始函联系人电话",
+					"required": true
+				},
+				{
+					"name": "source_post_code",
+					"type": "String",
+					"description": "原始函单位邮编",
+					"required": true
+				},
+				{
+					"name": "source_time",
+					"type": "String",
+					"description": "原始函接收时间",
+					"required": true
+				},
+				{
+					"name": "oss_key_url",
+					"type": "String",
+					"description": "函件url链接"
+				},
+				{
+					"name": "source_oss_key_url",
+					"type": "String",
+					"description": "原始函链接"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resule_code",
+			"type": "Number",
+			"description": "服务是否调用成功，1：成功 2：失败 11：重复提交 其他：失败"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回的ID"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "提示信息"
+		}
+	]
+}

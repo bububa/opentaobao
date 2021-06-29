@@ -1,0 +1,95 @@
+{
+	"name": "taobao.alitrip.it.fare.batchdelete",
+	"apiChineseName": "【国际机票自有政策】批量删除",
+	"description": "批量删除自有政策，单次删除最大5万，大于5万时候提示失败，需要缩小删除条件。此接口同步返回任务id，异步执行操作。每个接入方最多同时只能有10个处理中的任务，超过后直接返回失败。",
+	"requestParams": [
+		{
+			"name": "airline",
+			"type": "String",
+			"description": "航空公司"
+		},
+		{
+			"name": "arrCity",
+			"type": "String",
+			"description": "到达城市 可传多个 AND关系"
+		},
+		{
+			"name": "cabin",
+			"type": "String",
+			"description": "舱位 可传多个 或者的关系"
+		},
+		{
+			"name": "canRt",
+			"type": "Boolean",
+			"description": "是否能够混舱"
+		},
+		{
+			"name": "depCity",
+			"type": "String",
+			"description": "到达城市 可传多个 AND关系"
+		},
+		{
+			"name": "endModifyDate",
+			"type": "Date",
+			"description": "最晚修改时间"
+		},
+		{
+			"name": "fileCode",
+			"type": "String",
+			"description": "文件编号"
+		},
+		{
+			"name": "operateSource",
+			"type": "String",
+			"description": "维护方式，可选值（UI：后台界面录入；EXCEL：后台excel批量导入；API：top接口添加）"
+		},
+		{
+			"name": "outId",
+			"type": "String",
+			"description": "外部政策id"
+		},
+		{
+			"name": "startModifyDate",
+			"type": "Date",
+			"description": "最早修改时间"
+		},
+		{
+			"name": "startRestrictGoDate",
+			"type": "Date",
+			"description": "去程适用开始日期"
+		},
+		{
+			"name": "endRestrictGoDate",
+			"type": "Date",
+			"description": "去程适用结束日期"
+		},
+		{
+			"name": "fareType",
+			"type": "Number",
+			"description": "运价类型，1单程 2往返"
+		},
+		{
+			"name": "statusList",
+			"type": "Number[]",
+			"description": "0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据",
+			"maxListSize": 20
+		},
+		{
+			"name": "extendAttributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id，可以根据任务id调用querytask查询执行结果"
+		},
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		}
+	]
+}

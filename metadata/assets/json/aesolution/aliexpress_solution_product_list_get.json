@@ -1,0 +1,256 @@
+{
+	"name": "aliexpress.solution.product.list.get",
+	"apiChineseName": "Get product list",
+	"description": "Get product list",
+	"requestParams": [
+		{
+			"name": "aeop_a_e_product_list_query",
+			"type": "ItemListQuery",
+			"description": "request parameters to query",
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "Current page of products to be needed. The default page is page 1."
+				},
+				{
+					"name": "excepted_product_ids",
+					"type": "Number[]",
+					"description": "Product Ids which needs to be excluded"
+				},
+				{
+					"name": "off_line_time",
+					"type": "Number",
+					"description": "Search field by expiration date. For example, if the value for expiration date is 3, it means to query products to be offline within 3 days."
+				},
+				{
+					"name": "owner_member_id",
+					"type": "String",
+					"description": "Login ID of product owner"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "Number of products to be queried at each page. The input value must be less than 100, the default value of which is 20."
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product id"
+				},
+				{
+					"name": "product_status_type",
+					"type": "String",
+					"description": "onSelling\tProduct operation status. Currently, it is divided into 4 types with the following input parameters respectively: onSelling; offline; auditing; and editingRequired.",
+					"required": true
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "Fuzzy search field by product subject. It only supports half-width numbers in English with a length not more than 128."
+				},
+				{
+					"name": "ws_display",
+					"type": "String",
+					"description": "Reasons for product offline: expire_offline; user_offline; violate_offline; punish_offline; and degrade_offline."
+				},
+				{
+					"name": "have_national_quote",
+					"type": "String",
+					"description": "Whether having national quotation. \"y\" for yes, \"n\" for no."
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "Search field by product groups. Enter product group id (groupId)."
+				},
+				{
+					"name": "gmt_create_start",
+					"type": "Date",
+					"description": "Search for products created after a specific time, format: yyyy-MM-dd hh:mm:ss"
+				},
+				{
+					"name": "gmt_create_end",
+					"type": "Date",
+					"description": "Search for products created before a specific time，yyyy-MM-dd hh:mm:ss"
+				},
+				{
+					"name": "gmt_modified_start",
+					"type": "Date",
+					"description": "Search for product modified after a specific time，yyyy-MM-dd hh:mm:ss"
+				},
+				{
+					"name": "gmt_modified_end",
+					"type": "Date",
+					"description": "Search for products modified before a specific time，yyyy-MM-dd hh:mm:ss"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "merchant sku code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemListResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "error message",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "error code",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "total page",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success or not",
+					"required": true
+				},
+				{
+					"name": "product_count",
+					"type": "Number",
+					"description": "products total count",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "error msg",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "current page",
+					"required": true
+				},
+				{
+					"name": "aeop_a_e_product_display_d_t_o_list",
+					"type": "ItemDisplayDto[]",
+					"description": "product list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ws_offline_date",
+							"type": "Date",
+							"description": "product offline time",
+							"required": true
+						},
+						{
+							"name": "ws_display",
+							"type": "String",
+							"description": "product offline reason",
+							"required": true
+						},
+						{
+							"name": "subject",
+							"type": "String",
+							"description": "product tite",
+							"required": true
+						},
+						{
+							"name": "src",
+							"type": "String",
+							"description": "product src",
+							"required": true
+						},
+						{
+							"name": "product_min_price",
+							"type": "String",
+							"description": "min price among all skus of the product",
+							"required": true
+						},
+						{
+							"name": "product_max_price",
+							"type": "String",
+							"description": "max price among all skus of the product",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "product id",
+							"required": true
+						},
+						{
+							"name": "owner_member_seq",
+							"type": "Number",
+							"description": "seller member seq",
+							"required": true
+						},
+						{
+							"name": "owner_member_id",
+							"type": "String",
+							"description": "seller login id",
+							"required": true
+						},
+						{
+							"name": "image_u_r_ls",
+							"type": "String",
+							"description": "product image urls",
+							"required": true
+						},
+						{
+							"name": "group_id",
+							"type": "Number",
+							"description": "group id",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "time that product was modifed",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "time that product was created",
+							"required": true
+						},
+						{
+							"name": "freight_template_id",
+							"type": "Number",
+							"description": "freight template id",
+							"required": true
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "currency code",
+							"required": true
+						},
+						{
+							"name": "coupon_start_date",
+							"type": "Date",
+							"description": "Coupon start date, GMT+8",
+							"required": true
+						},
+						{
+							"name": "coupon_end_date",
+							"type": "Date",
+							"description": "Coupon end date, GMT+8",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

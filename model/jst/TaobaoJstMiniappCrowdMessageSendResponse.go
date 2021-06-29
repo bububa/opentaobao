@@ -19,7 +19,9 @@ type TaobaoJstMiniappCrowdMessageSendAPIResponse struct {
 
 type TaobaoJstMiniappCrowdMessageSendResponse struct {
     XMLName xml.Name `xml:"jst_miniapp_crowd_message_send_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 发送的短信条数
     

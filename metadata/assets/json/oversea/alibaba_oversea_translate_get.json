@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.oversea.translate.get",
+	"apiChineseName": "获取文本翻译信息",
+	"description": "根据传入的文本信息，获取其目标语言的翻译结果",
+	"requestParams": [
+		{
+			"name": "text",
+			"type": "String",
+			"description": "待翻译文本",
+			"required": true
+		},
+		{
+			"name": "source_lang",
+			"type": "String",
+			"description": "源语种英文",
+			"required": true
+		},
+		{
+			"name": "target_lang",
+			"type": "String",
+			"description": "目标语种中文",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SimpleTransResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "translated_text",
+					"type": "String",
+					"description": "translatedText",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "String",
+					"description": "statusCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

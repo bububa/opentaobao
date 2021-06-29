@@ -1,0 +1,94 @@
+{
+	"name": "taobao.alitrip.axin.trans.fund.update",
+	"apiChineseName": "修改资金单接口",
+	"description": "阿信供销平台-修改资金单接口",
+	"requestParams": [
+		{
+			"name": "axin_fund_update_d_t_o",
+			"type": "AxinFundUpdateDto",
+			"description": "更新资金单接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "req_version",
+					"type": "String",
+					"description": "请求版本号，用于幂等校验",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "alipay_order_id",
+					"type": "String",
+					"description": "支付宝交易号",
+					"required": true
+				},
+				{
+					"name": "fund_id",
+					"type": "Number",
+					"description": "资金单ID",
+					"required": true
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "订单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "成功数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

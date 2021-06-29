@@ -1,0 +1,176 @@
+{
+	"name": "aliexpress.ascp.po.query",
+	"apiChineseName": "AliExpress采购单查询API",
+	"description": "AE仓发业务采购单查询",
+	"requestParams": [
+		{
+			"name": "purchase_order_query",
+			"type": "PurchaseOrderQueryDto",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "行业账套编码",
+					"required": true
+				},
+				{
+					"name": "purchase_order_no",
+					"type": "String",
+					"description": "采购单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "ErpPurchaseOrderDto",
+					"description": "采购单DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "actual_inbound_time",
+							"type": "Number",
+							"description": "入库完结时间",
+							"required": true
+						},
+						{
+							"name": "appoint_order_no",
+							"type": "String",
+							"description": "预约单号",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "采购单创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_expiration",
+							"type": "Number",
+							"description": "采购单失效时间",
+							"required": true
+						},
+						{
+							"name": "lbx_no",
+							"type": "String",
+							"description": "物流单号",
+							"required": true
+						},
+						{
+							"name": "pre_arrive_time",
+							"type": "Number",
+							"description": "预计到仓时间",
+							"required": true
+						},
+						{
+							"name": "purchase_order_no",
+							"type": "String",
+							"description": "采购单号",
+							"required": true
+						},
+						{
+							"name": "received_quantity",
+							"type": "Number",
+							"description": "收货数量",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "单据状态",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "仓名称",
+							"required": true
+						},
+						{
+							"name": "supplier_id",
+							"type": "Number",
+							"description": "供应商Id",
+							"required": true
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "采购单总金额",
+							"required": true
+						},
+						{
+							"name": "total_quantity",
+							"type": "Number",
+							"description": "采购单总数量",
+							"required": true
+						},
+						{
+							"name": "total_sku_count",
+							"type": "Number",
+							"description": "采购单SKU数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

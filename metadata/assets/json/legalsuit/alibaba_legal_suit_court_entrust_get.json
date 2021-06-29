@@ -1,0 +1,144 @@
+{
+	"name": "alibaba.legal.suit.court.entrust.get",
+	"apiChineseName": "委托开庭服务查询",
+	"description": "查询委托开庭信息",
+	"requestParams": [
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托ID"
+		},
+		{
+			"name": "suit_id",
+			"type": "Number",
+			"description": "案件ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "CourtEntrustModel",
+					"description": "返回的结构结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "entrust_order_number",
+							"type": "Number",
+							"description": "委托订单号",
+							"required": true
+						},
+						{
+							"name": "entrust_time",
+							"type": "Date",
+							"description": "委托时间",
+							"required": true
+						},
+						{
+							"name": "entrust_name",
+							"type": "String",
+							"description": "委托名字",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "原因",
+							"required": true
+						},
+						{
+							"name": "entrust_type",
+							"type": "String",
+							"description": "委托类型",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商code",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "entrusting_party",
+							"type": "String",
+							"description": "委托方名称",
+							"required": true
+						},
+						{
+							"name": "attachment_count",
+							"type": "Number",
+							"description": "附件数量",
+							"required": true
+						},
+						{
+							"name": "firm_business_lic_num",
+							"type": "String",
+							"description": "律所执业编号",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "attachment_list",
+							"type": "FileModel[]",
+							"description": "附件列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "文件名",
+									"required": true
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "文件key",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "objective",
+							"type": "String",
+							"description": "目标",
+							"required": true
+						},
+						{
+							"name": "suggest",
+							"type": "String",
+							"description": "委托建议",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

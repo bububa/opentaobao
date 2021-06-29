@@ -1,0 +1,202 @@
+{
+	"name": "alibaba.ailabs.aligenie.opencontent.push",
+	"apiChineseName": "天猫精灵内容接入标准接口",
+	"description": "第三方内容接入天猫精灵内容库，供相关技能使用",
+	"requestParams": [
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "在Aligenie开放平台创建的技能的ID",
+			"required": true
+		},
+		{
+			"name": "contents",
+			"type": "BatchContent",
+			"description": "详细内容列表",
+			"required": true,
+			"subParams": [
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目ID，具体参见开放平台类目相关描述",
+					"required": true
+				},
+				{
+					"name": "open_contents",
+					"type": "OpenContent[]",
+					"description": "内容信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "album_raw_id",
+							"type": "Number",
+							"description": "内容在原平台所属专辑或分类的id"
+						},
+						{
+							"name": "tags",
+							"type": "String[]",
+							"description": "内容标签"
+						},
+						{
+							"name": "raw_id",
+							"type": "Number",
+							"description": "内容在原平台的id，当只推送专辑信息时，此值可填0",
+							"required": true
+						},
+						{
+							"name": "image_url",
+							"type": "ImageUrl",
+							"description": "封面图片信息",
+							"subParams": [
+								{
+									"name": "mediam",
+									"type": "String",
+									"description": "中图链接(具体大小范围暂无标准，接入方自定)"
+								},
+								{
+									"name": "small",
+									"type": "String",
+									"description": "小图链接(具体大小范围暂无标准，接入方自定)"
+								},
+								{
+									"name": "large",
+									"type": "String",
+									"description": "大图链接(具体大小范围暂无标准，接入方自定)"
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "album_title",
+							"type": "String",
+							"description": "内容所属专辑或分类名称/标题,这里如果专辑标题是空则不同步专辑信息"
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "其他扩展字段，不同类型内容有不同要求，具体请参加详细说明文档extend_info字段部分"
+						},
+						{
+							"name": "operation",
+							"type": "String",
+							"description": "操作方式，支持新增和删除操作(ADD/DELETE)",
+							"required": true
+						},
+						{
+							"name": "author",
+							"type": "Author",
+							"description": "作者信息",
+							"subParams": [
+								{
+									"name": "content_author",
+									"type": "String",
+									"description": "内容作者，对应音乐为作词、作曲人，对应小说故事为原著作者"
+								},
+								{
+									"name": "voice_author",
+									"type": "String",
+									"description": "主播，演唱者，演播者"
+								}
+							]
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "内容标题或者名称，最长150个字符"
+						},
+						{
+							"name": "duration",
+							"type": "Number",
+							"description": "播放时长(单位：秒)",
+							"required": true
+						},
+						{
+							"name": "play_count",
+							"type": "Number",
+							"description": "内容在原平台播放次数",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "内容描述信息(限长500)"
+						},
+						{
+							"name": "release_time",
+							"type": "Number",
+							"description": "内容发布时间，1970年1月1日至当前的秒数(unix时间戳)",
+							"required": true
+						},
+						{
+							"name": "play_urls",
+							"type": "PlayUrl[]",
+							"description": "播放链接",
+							"subParams": [
+								{
+									"name": "bitrate",
+									"type": "Number",
+									"description": "码率"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "可播放链接"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "节目音视频类型，目前支持audio及video两种类型"
+								}
+							]
+						},
+						{
+							"name": "album_description",
+							"type": "String",
+							"description": "内容所属专辑或分类描述信息"
+						},
+						{
+							"name": "sort_num",
+							"type": "Number",
+							"description": "在有所属专辑/分类的场景下，标识此音频在专辑/分类下的顺序值，从1开始"
+						},
+						{
+							"name": "description_type",
+							"type": "String",
+							"description": "描述类型,如果描述是TTS类型会做TTS处理"
+						},
+						{
+							"name": "hot_score",
+							"type": "Number",
+							"description": "三方热度分1~5"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "retMsg",
+					"required": true
+				},
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "retCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse struct {
 
 type TaobaoAlitripTravelBaseinfoCruiseGetResponse struct {
     XMLName xml.Name `xml:"alitrip_travel_baseinfo_cruise_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 邮轮类目扩展信息的json格式字符串
     

@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.alihealth.lab.item.store.relation.sync",
+	"apiChineseName": "检验检测业务，isv项目门店关系同步",
+	"description": "阿里健康检验检测业务，isv检验检测项目门店关系同步到健康，支持检验检测项目门店关系的增加和删除",
+	"requestParams": [
+		{
+			"name": "isv_relation_status",
+			"type": "String",
+			"description": "EFFECTIVE 有效，INVALID 无效",
+			"required": true
+		},
+		{
+			"name": "isv_store_codes",
+			"type": "String[]",
+			"description": "isv门店编码",
+			"required": true,
+			"maxListSize": 999
+		},
+		{
+			"name": "isv_item_code",
+			"type": "String",
+			"description": "检验检测项目isv侧编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "result_status",
+			"type": "String",
+			"description": "SUCCESS - 成功，FAIL - 失败，UNKNOWN - 未知或处理中"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "可读的错误码"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.westcrm.member.message.handle",
+	"apiChineseName": "处理Usc会员消息接口",
+	"description": "处理Usc会员消息接口",
+	"requestParams": [
+		{
+			"name": "message_type",
+			"type": "String",
+			"description": "消息类型"
+		},
+		{
+			"name": "message_content",
+			"type": "String",
+			"description": "消息内容"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

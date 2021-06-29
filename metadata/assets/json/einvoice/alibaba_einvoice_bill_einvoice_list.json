@@ -1,0 +1,139 @@
+{
+	"name": "alibaba.einvoice.bill.einvoice.list",
+	"apiChineseName": "扫码开票列表",
+	"description": "扫码开票列表，包括用户扫二维码开票和结算单同步前的开票数据",
+	"requestParams": [
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "结算单同步的ERP平台系统"
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "收款方税号",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单ID",
+			"required": true
+		},
+		{
+			"name": "einvoice_type",
+			"type": "Number[]",
+			"description": "开票状态：0=未开票，1=开票中，3=开蓝成功，4=开蓝失败。不填获取全部",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "ResultList[]",
+					"description": "返回结果具体信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "payee_register_no",
+							"type": "String",
+							"description": "付款方税号",
+							"required": true
+						},
+						{
+							"name": "platform",
+							"type": "String",
+							"description": "付款方平台",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "sum_price",
+							"type": "String",
+							"description": "开票金额",
+							"required": true
+						},
+						{
+							"name": "invoice_items",
+							"type": "InvoiceItems[]",
+							"description": "开票明细列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "价税合计",
+									"required": true
+								},
+								{
+									"name": "specification",
+									"type": "String",
+									"description": "规格型号",
+									"required": true
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "seri_no",
+							"type": "String",
+							"description": "seriNo",
+							"required": true
+						},
+						{
+							"name": "invoice_status",
+							"type": "Number",
+							"description": "invoiceStatus",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "ret_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

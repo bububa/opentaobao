@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.einvoice.paper.invalid",
+	"apiChineseName": "纸票作废接口",
+	"description": "作废一张已开具的纸票，开票日期在当月，产生逆向时作废即可，开票日期跨月则冲红蓝票",
+	"requestParams": [
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码，空白作废时必填"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码，空白作废时必填"
+		},
+		{
+			"name": "invalid_operator",
+			"type": "String",
+			"description": "作废操作人",
+			"required": true
+		},
+		{
+			"name": "invalid_type",
+			"type": "Number",
+			"description": "作废类型, 0=空白发票(有残缺 的纸张发票，不能做为有效报销)作废, 1=已开发票作废",
+			"required": true
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销售方纳税人识别号",
+			"required": true
+		},
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "开票流水号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功，操作结果tmc异步返回alibaba_invoice_PaperOpsReturn"
+		}
+	]
+}

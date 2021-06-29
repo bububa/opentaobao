@@ -1,0 +1,128 @@
+{
+	"name": "tmall.fans.cashpool.create",
+	"apiChineseName": "创建资金池",
+	"description": "商家创建资金池接口",
+	"requestParams": [
+		{
+			"name": "create_cash_pool_param_do",
+			"type": "CreateCashPoolParamDo",
+			"description": "创建资奖池输入对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "use_end_time",
+					"type": "Date",
+					"description": "红包使用开始时间",
+					"required": true
+				},
+				{
+					"name": "use_start_time",
+					"type": "Date",
+					"description": "红包使用结束时间",
+					"required": true
+				},
+				{
+					"name": "cash_value",
+					"type": "Number",
+					"description": "奖金池总额度",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "奖金池标题",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "奖金池描述",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "活动id"
+				},
+				{
+					"name": "activity_url",
+					"type": "String",
+					"description": "活动url"
+				},
+				{
+					"name": "draw_time",
+					"type": "Date",
+					"description": "开奖时间"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "begin_qa_time",
+					"type": "Date",
+					"description": "开始答题时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fans_result",
+			"type": "FansResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "CashPoolVo",
+					"description": "返回data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pay_url",
+							"type": "String",
+							"description": "付款url",
+							"required": true
+						},
+						{
+							"name": "cash_pool_id",
+							"type": "Number",
+							"description": "奖金池id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "无用",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功失败标识",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

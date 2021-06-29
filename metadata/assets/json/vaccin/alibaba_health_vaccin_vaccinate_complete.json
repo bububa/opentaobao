@@ -1,0 +1,99 @@
+{
+	"name": "alibaba.health.vaccin.vaccinate.complete",
+	"apiChineseName": "接种完成反馈接口",
+	"description": "ISV 将用户完成接种的疫苗同步给免疫规划中心",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝用户 ID",
+			"required": true
+		},
+		{
+			"name": "isv_user_id",
+			"type": "String",
+			"description": "ISV 侧用户 ID"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单 ID"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "接种人姓名",
+			"required": true
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "联系电话"
+		},
+		{
+			"name": "vaccinate_date",
+			"type": "String",
+			"description": "接种日期",
+			"required": true
+		},
+		{
+			"name": "vaccinate_time",
+			"type": "String",
+			"description": "接种时间"
+		},
+		{
+			"name": "vaccine_list",
+			"type": "VaccineInfo[]",
+			"description": "接种的疫苗信息",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "vaccine_name",
+					"type": "String",
+					"description": "疫苗名称",
+					"required": true
+				},
+				{
+					"name": "vaccine_code",
+					"type": "String",
+					"description": "疫苗编码",
+					"required": true
+				},
+				{
+					"name": "the_times",
+					"type": "Number",
+					"description": "疫苗针次"
+				},
+				{
+					"name": "vaccine_gb_code",
+					"type": "String",
+					"description": "阿里健康疫苗编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "数据结果实体"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功执行"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息描述"
+		}
+	]
+}

@@ -1,0 +1,119 @@
+{
+	"name": "alitrip.btrip.employee.query",
+	"apiChineseName": "企业员工查询",
+	"description": "企业员工查询",
+	"requestParams": [
+		{
+			"name": "param_open_employee_query_request",
+			"type": "OpenEmployeeQueryRequest",
+			"description": "入参对象。",
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页的最大数据记录数量；默认10，该值要求大于0且小于等于1000。"
+				},
+				{
+					"name": "page_token",
+					"type": "String",
+					"description": "游标分页的游标值，用来标记当前分页的开始位置，第一次请求不填表示从头开始遍历；分页查询还有更多数据项时会同时返回下一页起始游标值page_token，遍历下一页时用该page_token获取查询结果。"
+				},
+				{
+					"name": "third_part_corp_id",
+					"type": "String",
+					"description": "第三方企业id。",
+					"required": true
+				},
+				{
+					"name": "third_part_job_no",
+					"type": "String",
+					"description": "第三方员工工号。"
+				},
+				{
+					"name": "modified_time_greater_or_equal_than",
+					"type": "String",
+					"description": "员工更新时间大于等于值，该值格式yyyy-MM-dd HH:mm:ss。"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtmsResult",
+			"description": "结果对象。",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "PagingResult",
+					"description": "分页结果对象。",
+					"required": true,
+					"subParams": [
+						{
+							"name": "has_more",
+							"type": "Boolean",
+							"description": "是否还有更多数据项。",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "OpenEmployeeInfo[]",
+							"description": "员工数组。",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "员工昵称。",
+									"required": true
+								},
+								{
+									"name": "third_part_user_id",
+									"type": "String",
+									"description": "第三方员工ID。",
+									"required": true
+								},
+								{
+									"name": "third_part_job_no",
+									"type": "String",
+									"description": "第三方员工工号。",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_token",
+							"type": "String",
+							"description": "游标分页下一页游标page_token值，当has_more为true时，会同时返回新的page_token，否则不返回page_token。",
+							"required": true
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "本次请求条件下的数据项总量。",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果码；0：成功，非0：失败。",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果描述。",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功。",
+					"required": true
+				}
+			]
+		}
+	]
+}

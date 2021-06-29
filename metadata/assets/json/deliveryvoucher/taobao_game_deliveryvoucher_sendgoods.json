@@ -1,0 +1,127 @@
+{
+	"name": "taobao.game.deliveryvoucher.sendgoods",
+	"apiChineseName": "提货券发货接口",
+	"description": "提货券发券接口：同步券和订单的关联信息",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "SendVoucherRequest",
+			"description": "发券参数",
+			"subParams": [
+				{
+					"name": "operate_date",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "流水号:唯一，幂等性判断",
+					"required": true
+				},
+				{
+					"name": "provider",
+					"type": "String",
+					"description": "第三方服务商标识：top appkey",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单id",
+					"required": true
+				},
+				{
+					"name": "voucher_infos",
+					"type": "DeliveryVoucherInfoDTO[]",
+					"description": "券信息,券信息,最多100条券记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "vouchers",
+							"type": "DeliveryVoucherDTO[]",
+							"description": "券信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "券ID",
+									"required": true
+								},
+								{
+									"name": "no",
+									"type": "String",
+									"description": "券号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人电话"
+				},
+				{
+					"name": "receiver",
+					"type": "String",
+					"description": "收件人"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "收件人地址"
+				},
+				{
+					"name": "logistics_code",
+					"type": "String",
+					"description": "物流公司编码",
+					"required": true
+				},
+				{
+					"name": "logistics_no",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				},
+				{
+					"name": "logistics_name",
+					"type": "String",
+					"description": "物流名称",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

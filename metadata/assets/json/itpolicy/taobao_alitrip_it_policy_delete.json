@@ -1,0 +1,29 @@
+{
+	"name": "taobao.alitrip.it.policy.delete",
+	"apiChineseName": "【国际机票销售规则】单条删除",
+	"description": "销售规则删除接口，可以根据taobaoId或outId删除，根据outId删除时，如果outId不唯一，返回失败",
+	"requestParams": [
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "接入方产品id"
+		},
+		{
+			"name": "taobao_id",
+			"type": "Number",
+			"description": "淘宝政策id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	]
+}

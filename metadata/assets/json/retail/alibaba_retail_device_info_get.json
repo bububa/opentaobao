@@ -1,0 +1,29 @@
+{
+	"name": "alibaba.retail.device.info.get",
+	"apiChineseName": "贩卖机设备信息获取",
+	"description": "贩卖机设备信息获取",
+	"requestParams": [
+		{
+			"name": "device_uuid",
+			"type": "String",
+			"description": "外部设备ID"
+		},
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "阿里设备编码"
+		},
+		{
+			"name": "device_sn",
+			"type": "String",
+			"description": "阿里设备物理ID（32位）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "是否成功"
+		}
+	]
+}

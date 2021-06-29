@@ -1,0 +1,264 @@
+{
+	"name": "alibaba.ascp.channel.sales.order.create",
+	"apiChineseName": "供应链渠道销售单创建接口",
+	"description": "阿里巴巴供应链渠道销售订单创建接口",
+	"requestParams": [
+		{
+			"name": "create_order_request",
+			"type": "ExternalCreateSalesOrderRequest",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "currency_type",
+					"type": "String",
+					"description": "币种"
+				},
+				{
+					"name": "out_sub_orders",
+					"type": "ExternalCreateSubSalesOrderRequest[]",
+					"description": "子订单列表",
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "out_sku_id",
+							"type": "String",
+							"description": "外部前端sku id"
+						},
+						{
+							"name": "out_item_id",
+							"type": "String",
+							"description": "外部前端宝贝id"
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "产品skuId"
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品id",
+							"required": true
+						},
+						{
+							"name": "out_sub_order_no",
+							"type": "String",
+							"description": "外部子订单号, 外部一定要设置,如果外部没有,则设置为outOrderNo+productId+productSkuId"
+						}
+					]
+				},
+				{
+					"name": "receiver",
+					"type": "ExternalReceiverRequest",
+					"description": "收货人信息",
+					"subParams": [
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "收货人名称",
+							"required": true
+						},
+						{
+							"name": "province_code",
+							"type": "Number",
+							"description": "省对应编码"
+						},
+						{
+							"name": "city_code",
+							"type": "Number",
+							"description": "市对应编码"
+						},
+						{
+							"name": "street_code",
+							"type": "Number",
+							"description": "街道对应编码"
+						},
+						{
+							"name": "area_code",
+							"type": "Number",
+							"description": "区对应编码"
+						},
+						{
+							"name": "street_name",
+							"type": "String",
+							"description": "街道对应名称"
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "收货人手机号",
+							"required": true
+						},
+						{
+							"name": "post",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "市对应的名称"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "收货人 固定电话"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区对应名称"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货人地址",
+							"required": true
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省对应的名称"
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "区域编码"
+						}
+					]
+				},
+				{
+					"name": "sender",
+					"type": "ExternalSenderRequest",
+					"description": "发货人",
+					"subParams": [
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "发货人 手机号"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "发货人名称"
+						}
+					]
+				},
+				{
+					"name": "sales_mode",
+					"type": "String",
+					"description": "经销、代销、寄售",
+					"required": true
+				},
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道",
+					"required": true
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "授权渠道(市场)",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "create_order_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "返回值主体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_order_list",
+							"type": "Suborders[]",
+							"description": "子单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "out_sku_id",
+									"type": "String",
+									"description": "外部skuId",
+									"required": true
+								},
+								{
+									"name": "out_item_id",
+									"type": "String",
+									"description": "外部itemId",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuId",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "产品id",
+									"required": true
+								},
+								{
+									"name": "out_sub_order_no",
+									"type": "String",
+									"description": "外部子订单号",
+									"required": true
+								},
+								{
+									"name": "sub_sale_order_no",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sale_order_no",
+							"type": "String",
+							"description": "渠道订单号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

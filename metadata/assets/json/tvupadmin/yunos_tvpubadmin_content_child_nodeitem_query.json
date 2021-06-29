@@ -1,0 +1,132 @@
+{
+	"name": "yunos.tvpubadmin.content.child.nodeitem.query",
+	"apiChineseName": "查询少儿大厅类目内容",
+	"description": "查询少儿大厅类目内容信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "主键ID"
+		},
+		{
+			"name": "node_id",
+			"type": "Number",
+			"description": "类目ID"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "内容名称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "单页数量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "page_vo",
+			"type": "PageVo",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "record_list",
+					"type": "ChildNodeContentVo[]",
+					"description": "内容列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "内容名称",
+							"required": true
+						},
+						{
+							"name": "picurl",
+							"type": "String",
+							"description": "图片地址",
+							"required": true
+						},
+						{
+							"name": "node_id",
+							"type": "Number",
+							"description": "所属类目ID",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "内容业务类型",
+							"required": true
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "排序",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

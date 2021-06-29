@@ -1,0 +1,84 @@
+{
+	"name": "taobao.omniorder.store.deliverconfig.update",
+	"apiChineseName": "修改门店发货配置内容",
+	"description": "修改门店发货配置内容",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "store_deliver_config",
+			"type": "StoreDeliverConfig",
+			"description": "卖家发货配置",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "working_time",
+					"type": "String",
+					"description": "接单时间段，格式为 \"09:00-12:00\", \"\" 表示一直开启",
+					"required": true
+				},
+				{
+					"name": "priority",
+					"type": "Number",
+					"description": "优先级，取值范围为0-10,0最大，10最小",
+					"required": true
+				},
+				{
+					"name": "deliver_threshold",
+					"type": "Number",
+					"description": "每日接单阈值",
+					"required": true
+				},
+				{
+					"name": "activity",
+					"type": "Boolean",
+					"description": "是否是活动期"
+				},
+				{
+					"name": "activity_start_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "dispatch_time_range",
+					"type": "String",
+					"description": "派单时间，格式为：[{\"startTime\":\"08:40\",\"endTime\":\"12:20\"},{\"startTime\":\"18:00\",\"endTime\":\"22:00\"}]",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回素材id"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			]
+		}
+	]
+}

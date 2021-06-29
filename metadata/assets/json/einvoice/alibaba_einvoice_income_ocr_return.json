@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.einvoice.income.ocr.return",
+	"apiChineseName": "服务商回传发票ocr的结果",
+	"description": "服务商回传发票ocr的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的ocr回传",
+	"requestParams": [
+		{
+			"name": "checksum",
+			"type": "String",
+			"description": "校验码，ocr结果为普票，success=true并且invoiceKind=1时必填"
+		},
+		{
+			"name": "error_code",
+			"type": "String",
+			"description": "错误码，success=false是必填"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误消息，success=false是必填"
+		},
+		{
+			"name": "image_data",
+			"type": "byte[]",
+			"description": "发票ocr影像文件，type=1时必填"
+		},
+		{
+			"name": "image_id",
+			"type": "String",
+			"description": "发票ocr影像编号，type=1时必填"
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码，success=true时必填"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "开票日期，格式为yyyy-MM-dd，success=true时必填"
+		},
+		{
+			"name": "invoice_kind",
+			"type": "Number",
+			"description": "发票种类，1=普票，2=专票，success=true时必填"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码，success=true时必填"
+		},
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "开票请求标识，扫描驱动回传type=1时填批次号",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "ocr结果，true=成功，false=失败",
+			"required": true
+		},
+		{
+			"name": "sum_price",
+			"type": "String",
+			"description": "不含税金额，ocr结果为专票，success=true并且invoiceKind=2时必填"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "请求类型，0=阿里主动发起的cor，1=扫描驱动服务商主动回传ocr结果",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用结果，true=成功，false=失败，subCode以isp开头时需要服务商重试"
+		}
+	]
+}

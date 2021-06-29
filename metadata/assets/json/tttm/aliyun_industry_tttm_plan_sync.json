@@ -1,0 +1,93 @@
+{
+	"name": "aliyun.industry.tttm.plan.sync",
+	"apiChineseName": "天天特卖生产计划单同步",
+	"description": "ERP系统向天天特卖同步生产计划单的数据",
+	"requestParams": [
+		{
+			"name": "sync_plan",
+			"type": "SyncPlanDto",
+			"description": "计划单",
+			"subParams": [
+				{
+					"name": "sync_work_d_t_os",
+					"type": "WorkSyncDto[]",
+					"description": "工单",
+					"subParams": [
+						{
+							"name": "work_id",
+							"type": "String",
+							"description": "工单ID"
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货品"
+						},
+						{
+							"name": "plan_num",
+							"type": "String",
+							"description": "计划产量"
+						},
+						{
+							"name": "produce_links",
+							"type": "String[]",
+							"description": "生产节点"
+						},
+						{
+							"name": "produce_status",
+							"type": "Number",
+							"description": "生产状态"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "工单开始"
+						},
+						{
+							"name": "finish_time",
+							"type": "Date",
+							"description": "工单结束"
+						}
+					]
+				},
+				{
+					"name": "finish_time",
+					"type": "Date",
+					"description": "计划完成"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "plan_id",
+					"type": "String",
+					"description": "计划单id"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "计划开始"
+				},
+				{
+					"name": "contact_tel",
+					"type": "String",
+					"description": "联系人电话"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "状态"
+		}
+	]
+}

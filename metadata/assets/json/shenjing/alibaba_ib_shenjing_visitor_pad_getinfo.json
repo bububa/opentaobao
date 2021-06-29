@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.ib.shenjing.visitor.pad.getinfo",
+	"apiChineseName": "获取OSS上传参数",
+	"description": "PAD 端获取OSS上传参数，向OSS服务器上传图片。",
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "响应对象"
+		},
+		{
+			"name": "content",
+			"type": "PostObjectPolicyVo",
+			"description": "返回状态码",
+			"subParams": [
+				{
+					"name": "accessid",
+					"type": "String",
+					"description": "阿里云RAM账号的accessId",
+					"required": true
+				},
+				{
+					"name": "policy",
+					"type": "String",
+					"description": "加密过的上传策略",
+					"required": true
+				},
+				{
+					"name": "signature",
+					"type": "String",
+					"description": "上传策略签名",
+					"required": true
+				},
+				{
+					"name": "dir",
+					"type": "String",
+					"description": "文件上传目录",
+					"required": true
+				},
+				{
+					"name": "expire",
+					"type": "String",
+					"description": "上传策略有效时间",
+					"required": true
+				},
+				{
+					"name": "host",
+					"type": "String",
+					"description": "oss的bucket访问路径",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "放回中文提示"
+		},
+		{
+			"name": "result_request_id",
+			"type": "String",
+			"description": "request_id"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

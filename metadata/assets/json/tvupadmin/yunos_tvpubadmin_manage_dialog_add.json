@@ -1,0 +1,51 @@
+{
+	"name": "yunos.tvpubadmin.manage.dialog.add",
+	"apiChineseName": "新增全局弹窗",
+	"description": "新增全局弹窗",
+	"requestParams": [
+		{
+			"name": "dialog_json",
+			"type": "String",
+			"description": "新增的全局弹窗json"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "retCode",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,126 @@
+{
+	"name": "yunos.osupdate.appversion.update",
+	"apiChineseName": "应用升级任务更新",
+	"description": "应用升级任务更新",
+	"requestParams": [
+		{
+			"name": "app_version",
+			"type": "TvAppVersion",
+			"description": "应用版本升级信息",
+			"subParams": [
+				{
+					"name": "version_code",
+					"type": "Number",
+					"description": "应用版本号"
+				},
+				{
+					"name": "restart_type",
+					"type": "String",
+					"description": "重启类型"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "系统版本号"
+				},
+				{
+					"name": "device_adapter_list",
+					"type": "DeviceAdapterDto[]",
+					"description": "适配机型列表",
+					"subParams": [
+						{
+							"name": "real_type_id",
+							"type": "Number",
+							"description": "机型真实类型ID"
+						},
+						{
+							"name": "minimum_system_version",
+							"type": "String",
+							"description": "最小系统版本"
+						},
+						{
+							"name": "highest_system_version",
+							"type": "String",
+							"description": "最大系统版本"
+						},
+						{
+							"name": "brand_id",
+							"type": "Number",
+							"description": "品牌ID"
+						},
+						{
+							"name": "model_id",
+							"type": "Number",
+							"description": "设备ID"
+						},
+						{
+							"name": "real_type_name",
+							"type": "String",
+							"description": "类型名称"
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称"
+						},
+						{
+							"name": "model_name",
+							"type": "String",
+							"description": "设备名称"
+						}
+					]
+				},
+				{
+					"name": "download_path",
+					"type": "String",
+					"description": "下载地址"
+				},
+				{
+					"name": "release_note",
+					"type": "String",
+					"description": "发布说明"
+				},
+				{
+					"name": "app",
+					"type": "AppDto",
+					"description": "应用信息",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "应用ID"
+						}
+					]
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "任务状态"
+				},
+				{
+					"name": "app_zip_type",
+					"type": "String",
+					"description": "升级包类型"
+				},
+				{
+					"name": "need_restart",
+					"type": "String",
+					"description": "是否需要重启"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

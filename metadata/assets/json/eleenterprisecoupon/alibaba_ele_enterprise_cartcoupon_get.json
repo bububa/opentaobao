@@ -1,0 +1,233 @@
+{
+	"name": "alibaba.ele.enterprise.cartcoupon.get",
+	"apiChineseName": "获取下单可用的优惠券",
+	"description": "获取下单可用的优惠券",
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		},
+		{
+			"name": "cart_id",
+			"type": "String",
+			"description": "购物车id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_datas",
+			"type": "MyCouponsResDto",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "group_multi",
+					"type": "Boolean",
+					"description": "是否可选择多张券",
+					"required": true
+				},
+				{
+					"name": "groups",
+					"type": "CartCouponDto[]",
+					"description": "券的明细数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "红包的SN或者券的ID",
+							"required": true
+						},
+						{
+							"name": "promotion_type",
+							"type": "Number",
+							"description": "类型：红包=1，券=2",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "券的张数，默认是1，ET时表示使用的张数",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "券的展示状态  1：券可用可选中  2：券可用但是不可选中  3：券不可用，不可选中",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "券名称",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "优惠类型为立减时表示立减金额, 优惠类型为特价券时，表示特价金额",
+							"required": true
+						},
+						{
+							"name": "threshold",
+							"type": "String",
+							"description": "使用门槛",
+							"required": true
+						},
+						{
+							"name": "stock_count_available",
+							"type": "Number",
+							"description": "券可使用张数",
+							"required": true
+						},
+						{
+							"name": "stock_count_left",
+							"type": "String",
+							"description": "券剩余张数",
+							"required": true
+						},
+						{
+							"name": "descriptions",
+							"type": "String[]",
+							"description": "券描述信息",
+							"required": true
+						},
+						{
+							"name": "unavailable_reasons",
+							"type": "String[]",
+							"description": "券不可用原因列表，该字段仅在购物车场景有效",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "selected_quantity",
+					"type": "Number",
+					"description": "已选择券的总数量",
+					"required": true
+				},
+				{
+					"name": "selected_total_price",
+					"type": "String",
+					"description": "已选择券的总价，包含溢出与裁剪之后的总价值",
+					"required": true
+				},
+				{
+					"name": "recommends",
+					"type": "CartCouponDto[]",
+					"description": "推荐券",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "红包的SN或者券的ID",
+							"required": true
+						},
+						{
+							"name": "promotion_type",
+							"type": "Number",
+							"description": "类型：红包=1，券=2",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "券的张数，默认是1，ET时表示使用的张数",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "券的展示状态  1：券可用可选中  2：券可用但是不可选中  3：券不可用，不可选中",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "券名称",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "优惠类型为立减时表示立减金额, 优惠类型为特价券时，表示特价金额",
+							"required": true
+						},
+						{
+							"name": "threshold",
+							"type": "String",
+							"description": "使用门槛",
+							"required": true
+						},
+						{
+							"name": "stock_count_available",
+							"type": "Number",
+							"description": "券可使用张数",
+							"required": true
+						},
+						{
+							"name": "stock_count_left",
+							"type": "Number",
+							"description": "券剩余张数",
+							"required": true
+						},
+						{
+							"name": "descriptions",
+							"type": "String[]",
+							"description": "券描述信息",
+							"required": true
+						},
+						{
+							"name": "unavailable_reasons",
+							"type": "String[]",
+							"description": "券不可用原因列表，该字段仅在购物车场景有效",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "recommends_quantity",
+					"type": "Number",
+					"description": "选出最优券的数量",
+					"required": true
+				},
+				{
+					"name": "recommends_total_price",
+					"type": "String",
+					"description": "选出最优券的总价",
+					"required": true
+				},
+				{
+					"name": "selected_legal_status",
+					"type": "Boolean",
+					"description": "已选择的券是不是可以有效组合选中",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "已选择券不可以组合选中时的提示性文案",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

@@ -1,0 +1,177 @@
+{
+	"name": "alibaba.campus.space.group.getlistbycampusandtype",
+	"apiChineseName": "根据园区id及TypeId获取空间分组",
+	"description": "根据园区id及TypeId获取空间分组\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getListByCampusAndType",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				},
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "\"\""
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "SpaceGroupQuery",
+			"description": "查询参数封装",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页限制"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "type_id",
+					"type": "Number",
+					"description": "类别ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID"
+				},
+				{
+					"name": "type_code",
+					"type": "String",
+					"description": "类型编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "ApiReturnningWrap[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "version",
+							"type": "String",
+							"description": "version",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "last_update_time",
+							"type": "Date",
+							"description": "lastUpdateTime",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "typeId",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code",
+							"required": true
+						},
+						{
+							"name": "space_type",
+							"type": "String",
+							"description": "spaceType",
+							"required": true
+						},
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "typeName",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "typeCode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

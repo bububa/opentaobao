@@ -1,0 +1,44 @@
+{
+	"name": "taobao.openmall.refund.submit",
+	"apiChineseName": "提交OpenMall退款单物流",
+	"description": "提交OpenMall退款单物流",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		},
+		{
+			"name": "logistics_company_code",
+			"type": "String",
+			"description": "物流公司编码",
+			"required": true
+		},
+		{
+			"name": "logistics_company_name",
+			"type": "String",
+			"description": "物流公司名称",
+			"required": true
+		},
+		{
+			"name": "logistics_no",
+			"type": "String",
+			"description": "快递单号",
+			"required": true
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "提交物流单成功"
+		}
+	]
+}

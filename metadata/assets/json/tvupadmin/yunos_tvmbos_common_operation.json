@@ -1,0 +1,32 @@
+{
+	"name": "yunos.tvmbos.common.operation",
+	"apiChineseName": "应用中心通用服务接口",
+	"description": "应用中心相关接口的代理",
+	"requestParams": [
+		{
+			"name": "interface_name",
+			"type": "String",
+			"description": "接口名",
+			"required": true
+		},
+		{
+			"name": "method_name",
+			"type": "String",
+			"description": "方法名",
+			"required": true
+		},
+		{
+			"name": "parameter",
+			"type": "String",
+			"description": "入参，json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "接口返回结果"
+		}
+	]
+}

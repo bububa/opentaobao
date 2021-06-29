@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.examination.stock.query",
+	"apiChineseName": "体检机构对接_体检套餐库存查询",
+	"description": "体检机构对接_体检套餐库存查询",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户唯一码"
+		},
+		{
+			"name": "hospital_id",
+			"type": "String",
+			"description": "分院ID"
+		},
+		{
+			"name": "package_id",
+			"type": "String",
+			"description": "套餐id"
+		},
+		{
+			"name": "time_from",
+			"type": "String",
+			"description": "开始日期"
+		},
+		{
+			"name": "time_to",
+			"type": "String",
+			"description": "结束日期"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "storage_list",
+			"type": "Storage []",
+			"description": "门店库存列表",
+			"subParams": [
+				{
+					"name": "used_num",
+					"type": "String",
+					"description": "已经使用的数量",
+					"required": true
+				},
+				{
+					"name": "str_regdate",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "max_num",
+					"type": "String",
+					"description": "可使用的最大数",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态,目前仅瑞慈使用,瑞慈状态:00:正常 01:已满 02:机构休息 03: 预约截止",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "返回结果编码"
+		},
+		{
+			"name": "time_sharing_enable",
+			"type": "Boolean",
+			"description": "是否支持分时能力"
+		}
+	]
+}

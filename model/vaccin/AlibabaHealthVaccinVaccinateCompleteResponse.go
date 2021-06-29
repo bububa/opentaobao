@@ -1,0 +1,46 @@
+package vaccin
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+接种完成反馈接口 APIResponse
+alibaba.health.vaccin.vaccinate.complete
+
+ISV 将用户完成接种的疫苗同步给免疫规划中心
+*/
+type AlibabaHealthVaccinVaccinateCompleteAPIResponse struct {
+    model.CommonResponse
+    AlibabaHealthVaccinVaccinateCompleteResponse
+}
+
+type AlibabaHealthVaccinVaccinateCompleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_health_vaccin_vaccinate_complete_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 数据结果实体
+    
+    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
+
+    
+    // 是否成功执行
+    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 错误码
+    
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+
+    
+    // 错误信息描述
+    
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+
+    
+}

@@ -1,0 +1,172 @@
+{
+	"name": "taobao.feedflow.item.campaign.page",
+	"apiChineseName": "批量查询计划列表",
+	"description": "批量查询计划列表",
+	"requestParams": [
+		{
+			"name": "campaign_query",
+			"type": "CampaignQueryDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "campaign_name",
+					"type": "String",
+					"description": "计划名称"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "起始位置"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "状态列表"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "CampaignDTo[]",
+					"description": "计划列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划id",
+							"required": true
+						},
+						{
+							"name": "campaign_name",
+							"type": "String",
+							"description": "计划名称",
+							"required": true
+						},
+						{
+							"name": "day_budget",
+							"type": "Number",
+							"description": "日预算金额，单位分",
+							"required": true
+						},
+						{
+							"name": "launch_area_list",
+							"type": "LaunchAreaDto[]",
+							"description": "投放地域",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "Number",
+									"description": "地域编码",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "地域名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "launch_time",
+							"type": "LaunchTimeDto",
+							"description": "投放时间",
+							"required": true,
+							"subParams": [
+								{
+									"name": "begin_time",
+									"type": "Date",
+									"description": "开始时间",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "结束时间",
+									"required": true
+								},
+								{
+									"name": "launch_forever",
+									"type": "Boolean",
+									"description": "是否永远投放",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "PAUSE(\"投放暂停\"),START(\"投放开始\"), TERMINATE(\"投放停止\"),ABNORMAL(投放异常\"),WAIT(\"投放等待中\"),DELETE(\"删除\")",
+							"required": true
+						},
+						{
+							"name": "launch_period_list",
+							"type": "LaunchPeriodDto[]",
+							"description": "折扣时间",
+							"required": true,
+							"subParams": [
+								{
+									"name": "time_span_list",
+									"type": "TimeSpanDto[]",
+									"description": "时间",
+									"required": true,
+									"subParams": [
+										{
+											"name": "discount",
+											"type": "Number",
+											"description": "折扣率",
+											"required": true
+										},
+										{
+											"name": "time",
+											"type": "String",
+											"description": "折扣时间",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "符合条件的计划数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

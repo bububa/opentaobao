@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.damai.mev.open.pushstand",
+	"apiChineseName": "大麦换验平台-第三方对外开放-看台接口pushStand",
+	"description": "pushStand",
+	"requestParams": [
+		{
+			"name": "push_stand_param",
+			"type": "ThirdStandPushOpenParam",
+			"description": "入参pushStandParam",
+			"subParams": [
+				{
+					"name": "perform_id",
+					"type": "Number",
+					"description": "场次id"
+				},
+				{
+					"name": "push_time",
+					"type": "Date",
+					"description": "推送时间"
+				},
+				{
+					"name": "stand_id",
+					"type": "Number",
+					"description": "看台id"
+				},
+				{
+					"name": "stand_name",
+					"type": "String",
+					"description": "看台名称"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "系统id"
+				},
+				{
+					"name": "venue_id",
+					"type": "Number",
+					"description": "场馆id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

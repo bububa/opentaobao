@@ -1,0 +1,32 @@
+{
+	"name": "yunos.tvpubadmin.content.show.setexemptaudit",
+	"apiChineseName": "迎客松节目设置免审开关",
+	"description": "迎客松节目设置免审开关",
+	"requestParams": [
+		{
+			"name": "show_long_id",
+			"type": "Number",
+			"description": "节目longid",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照id：1CIBN，2WASU",
+			"required": true
+		},
+		{
+			"name": "exempt_audit",
+			"type": "Number",
+			"description": "牌照免审：1-开启节目免审，2-关闭节目免审",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "设置免审"
+		}
+	]
+}

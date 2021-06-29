@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.alihealth.medical.item.publish",
+	"apiChineseName": "三方入驻-开通服务",
+	"description": "三方入驻-开通服务",
+	"requestParams": [
+		{
+			"name": "request1",
+			"type": "ItemPublishRequest",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "doctor_uuid",
+					"type": "String",
+					"description": "医生id",
+					"required": true
+				},
+				{
+					"name": "net_hospital_id",
+					"type": "String",
+					"description": "互联网医院id",
+					"required": true
+				},
+				{
+					"name": "category_code",
+					"type": "String",
+					"description": "商品类目code",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "价格，单位：分",
+					"required": true
+				},
+				{
+					"name": "stock_limit",
+					"type": "Number",
+					"description": "每日库存上限",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result1",
+			"type": "ServiceResult",
+			"description": "系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "ItemInfoVo",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

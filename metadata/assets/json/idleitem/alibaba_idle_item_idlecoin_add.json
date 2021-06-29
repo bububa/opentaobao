@@ -1,0 +1,208 @@
+{
+	"name": "alibaba.idle.item.idlecoin.add",
+	"apiChineseName": "免费送商品发送",
+	"description": "免费送商品发布",
+	"requestParams": [
+		{
+			"name": "idle_coin_item_param",
+			"type": "IdleCoinItemApiDto",
+			"description": "免费送商品数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称",
+					"required": true
+				},
+				{
+					"name": "video_id",
+					"type": "String",
+					"description": "视频Id"
+				},
+				{
+					"name": "cate_id",
+					"type": "Number",
+					"description": "类目",
+					"required": true
+				},
+				{
+					"name": "video_cover_id",
+					"type": "Number",
+					"description": "视频封面图ID"
+				},
+				{
+					"name": "idle_coin_type",
+					"type": "Number",
+					"description": "免费送类型",
+					"required": true
+				},
+				{
+					"name": "bid_reserve_price",
+					"type": "Number",
+					"description": "起拍价"
+				},
+				{
+					"name": "bid_interval",
+					"type": "Number",
+					"description": "持续时间"
+				},
+				{
+					"name": "buynow_reserve_price",
+					"type": "Number",
+					"description": "一口价的价格"
+				},
+				{
+					"name": "image_ids",
+					"type": "Number[]",
+					"description": "图片ID",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "库存数量"
+				},
+				{
+					"name": "stuff_status",
+					"type": "Number",
+					"description": "新旧程度"
+				},
+				{
+					"name": "address_dto",
+					"type": "RentAddressDto",
+					"description": "地址信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "full_addr",
+							"type": "String",
+							"description": "详细地址"
+						}
+					]
+				},
+				{
+					"name": "post_price",
+					"type": "Number",
+					"description": "运费"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "扫描码"
+				},
+				{
+					"name": "barcode_name",
+					"type": "String",
+					"description": "扫描码商品名称"
+				},
+				{
+					"name": "extra_info",
+					"type": "Extrainfo",
+					"description": "扩展信息",
+					"subParams": [
+						{
+							"name": "extra2",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra3",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra4",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra5",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra6",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra7",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra8",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra9",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "extra10",
+							"type": "String",
+							"description": "扩展信息"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "IdleResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

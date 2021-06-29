@@ -1,0 +1,91 @@
+{
+	"name": "alitrip.btrip.invoice.setting.rule",
+	"apiChineseName": "发票规则设置",
+	"description": "发票规则设置",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenInvoiceRuleRq",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "all_employe",
+					"type": "Boolean",
+					"description": "是否适用所有员工",
+					"required": true
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "entities",
+					"type": "Entity[]",
+					"description": "all_employe为true时非必传，否则必传",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "实体id，all_employe为false时，entities里元素的id必传"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "实体名，all_employe为false时，entities里元素的name必传"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "1：员工，all_employe为false时，entities里元素的type必传"
+						}
+					]
+				},
+				{
+					"name": "third_part_id",
+					"type": "String",
+					"description": "第三方发票id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenInvoiceRuleRs",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "add_num",
+					"type": "Number",
+					"description": "新增数",
+					"required": true
+				},
+				{
+					"name": "remove_num",
+					"type": "Number",
+					"description": "删除数",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

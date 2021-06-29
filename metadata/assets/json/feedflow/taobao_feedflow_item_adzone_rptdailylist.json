@@ -1,0 +1,265 @@
+{
+	"name": "taobao.feedflow.item.adzone.rptdailylist",
+	"apiChineseName": "资源包分日数据查询",
+	"description": "资源包分日数据查询",
+	"requestParams": [
+		{
+			"name": "rpt_query_d_t_o",
+			"type": "RptQueryDto",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "查询开始日期",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "单元id",
+					"required": true
+				},
+				{
+					"name": "adzone_id",
+					"type": "Number",
+					"description": "资源位id",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "查询结束日期",
+					"required": true
+				},
+				{
+					"name": "effect",
+					"type": "Number",
+					"description": "归因周期（合法值：3、7、15、30）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "rpt_list",
+					"type": "RptResultDto[]",
+					"description": "报表信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "charge",
+							"type": "String",
+							"description": "消耗",
+							"required": true
+						},
+						{
+							"name": "ad_pv",
+							"type": "Number",
+							"description": "有效展现",
+							"required": true
+						},
+						{
+							"name": "click",
+							"type": "Number",
+							"description": "有效点击数",
+							"required": true
+						},
+						{
+							"name": "ecpm",
+							"type": "String",
+							"description": "千次展现成本",
+							"required": true
+						},
+						{
+							"name": "ecpc",
+							"type": "String",
+							"description": "点击单价",
+							"required": true
+						},
+						{
+							"name": "inshop_pv",
+							"type": "Number",
+							"description": "引导访问量",
+							"required": true
+						},
+						{
+							"name": "inshop_uv",
+							"type": "Number",
+							"description": "引导进店人数",
+							"required": true
+						},
+						{
+							"name": "inshop_uv_rate",
+							"type": "String",
+							"description": "进店比例",
+							"required": true
+						},
+						{
+							"name": "deep_inshop_num",
+							"type": "Number",
+							"description": "深度进店次数",
+							"required": true
+						},
+						{
+							"name": "avg_access_time",
+							"type": "String",
+							"description": "平均访问时长",
+							"required": true
+						},
+						{
+							"name": "avg_access_page_num",
+							"type": "String",
+							"description": "平均访问页面数",
+							"required": true
+						},
+						{
+							"name": "follow_number",
+							"type": "Number",
+							"description": "粉丝关注量",
+							"required": true
+						},
+						{
+							"name": "add_new_uv",
+							"type": "Number",
+							"description": "新客获取量",
+							"required": true
+						},
+						{
+							"name": "add_new_uv_rate",
+							"type": "String",
+							"description": "新客获取率",
+							"required": true
+						},
+						{
+							"name": "new_f_charge",
+							"type": "String",
+							"description": "拉新消耗",
+							"required": true
+						},
+						{
+							"name": "inshop_item_col_num",
+							"type": "Number",
+							"description": "收藏宝贝数",
+							"required": true
+						},
+						{
+							"name": "cart_num",
+							"type": "Number",
+							"description": "加购物车数",
+							"required": true
+						},
+						{
+							"name": "gmv_inshop_num",
+							"type": "Number",
+							"description": "拍下订单量",
+							"required": true
+						},
+						{
+							"name": "gmv_inshop_amt",
+							"type": "String",
+							"description": "拍下订单金额",
+							"required": true
+						},
+						{
+							"name": "alipay_in_shop_num",
+							"type": "Number",
+							"description": "成交订单数",
+							"required": true
+						},
+						{
+							"name": "alipay_inshop_amt",
+							"type": "String",
+							"description": "成交订单金额",
+							"required": true
+						},
+						{
+							"name": "icvr",
+							"type": "String",
+							"description": "展现转化率",
+							"required": true
+						},
+						{
+							"name": "cvr",
+							"type": "String",
+							"description": "点击转化率",
+							"required": true
+						},
+						{
+							"name": "roi",
+							"type": "String",
+							"description": "投资回报率",
+							"required": true
+						},
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划id",
+							"required": true
+						},
+						{
+							"name": "campaign_name",
+							"type": "String",
+							"description": "计划名称",
+							"required": true
+						},
+						{
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "单元id",
+							"required": true
+						},
+						{
+							"name": "adgroup_name",
+							"type": "String",
+							"description": "单元名称",
+							"required": true
+						},
+						{
+							"name": "adzone_id",
+							"type": "Number",
+							"description": "资源位id",
+							"required": true
+						},
+						{
+							"name": "adzone_name",
+							"type": "String",
+							"description": "资源位名称",
+							"required": true
+						},
+						{
+							"name": "log_date",
+							"type": "Date",
+							"description": "记录日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

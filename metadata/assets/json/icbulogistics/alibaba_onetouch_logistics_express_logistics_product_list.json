@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.onetouch.logistics.express.logistics.product.list",
+	"apiChineseName": "查询物流运力列表",
+	"description": "查询物流产品\u0026揽收仓库列表",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息提示",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "LogisticsProductDto[]",
+					"description": "列表对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓库名称",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "产品名称",
+							"required": true
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "产品编码",
+							"required": true
+						},
+						{
+							"name": "pickup",
+							"type": "Boolean",
+							"description": "是否上门揽收",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

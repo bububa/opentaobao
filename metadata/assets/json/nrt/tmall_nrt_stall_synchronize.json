@@ -1,0 +1,210 @@
+{
+	"name": "tmall.nrt.stall.synchronize",
+	"apiChineseName": "摊位信息同步",
+	"description": "摊位信息同步",
+	"requestParams": [
+		{
+			"name": "stall",
+			"type": "NrtStoreDTO",
+			"description": "参数对象",
+			"subParams": [
+				{
+					"name": "stall_code",
+					"type": "String",
+					"description": "摊位编号"
+				},
+				{
+					"name": "district_code",
+					"type": "Number",
+					"description": "区编码"
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "市编码"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务标识"
+				},
+				{
+					"name": "short_address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "租赁结束时间"
+				},
+				{
+					"name": "op_type",
+					"type": "String",
+					"description": "操作类型"
+				},
+				{
+					"name": "pic",
+					"type": "String",
+					"description": "主图地址"
+				},
+				{
+					"name": "agency_code",
+					"type": "String",
+					"description": "经销商编码"
+				},
+				{
+					"name": "business_time",
+					"type": "String",
+					"description": "营业时间"
+				},
+				{
+					"name": "business_brandids",
+					"type": "String",
+					"description": "经营品牌编号"
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市名"
+				},
+				{
+					"name": "stall_deptid",
+					"type": "String",
+					"description": "摊位部门Id"
+				},
+				{
+					"name": "mall_code",
+					"type": "String",
+					"description": "卖场编码"
+				},
+				{
+					"name": "brand_series",
+					"type": "String",
+					"description": "品牌系列"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "幂等id"
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "租赁开始时间"
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "district_name",
+					"type": "String",
+					"description": "区名称"
+				},
+				{
+					"name": "province_code",
+					"type": "Number",
+					"description": "省编码"
+				},
+				{
+					"name": "contract",
+					"type": "String",
+					"description": "联系电话"
+				},
+				{
+					"name": "business_brandnames",
+					"type": "String",
+					"description": "经营品牌名称"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
+				},
+				{
+					"name": "stall_name",
+					"type": "String",
+					"description": "摊位名称"
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "主营品类"
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省名称"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "主营品牌Id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "主营品牌名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "摊位状态"
+				},
+				{
+					"name": "mall_depid",
+					"type": "String",
+					"description": "卖场部门Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tmall_nrt_stall_synchronize",
+			"type": "ResultDO",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "NrtStoreDto",
+					"description": "参数对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "stall_id",
+							"type": "Number",
+							"description": "摊位Id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

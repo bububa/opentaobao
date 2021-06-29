@@ -1,0 +1,89 @@
+{
+	"name": "alibaba.campus.space.unit.getlistmapbygroupid",
+	"apiChineseName": "新增查询多个分组ID各自相关的空间单元信息",
+	"description": "新增查询多个分组ID各自相关的空间单元信息\nHSF接口名称：\tcom.alibaba.campus.api.space.service.top.SpaceUnitApiTopService\nHSF方法名称：\tgetListMapByGroupIds",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "用户环境",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "\"\""
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "SpaceUnitQuery",
+			"description": "查询封装",
+			"required": true,
+			"subParams": [
+				{
+					"name": "ids",
+					"type": "Number[]",
+					"description": "分组ID集合"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MapResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "Json",
+					"description": "content",
+					"required": true
+				}
+			]
+		}
+	]
+}

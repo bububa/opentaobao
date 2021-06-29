@@ -1,0 +1,2223 @@
+{
+	"name": "aliexpress.solution.order.info.get",
+	"apiChineseName": "get order detail info",
+	"description": "get order detail info",
+	"requestParams": [
+		{
+			"name": "param1",
+			"type": "OrderDetailQuery",
+			"description": "param",
+			"subParams": [
+				{
+					"name": "ext_info_bit_flag",
+					"type": "Number",
+					"description": "It defines which details to be returned. Convert the number into binary format, for example, 16 to 10000. Only the last 5 bits take effects, starting from the end, 1st bit is for issue information, 2nd bit is for loan information, 3rd bit is for logistics information, 4th bit is for buyer information and 5th bit is for refund information. If any bit is 1, it means to return the corresponding information, for example, 3 wich is 00011, means to return issue information and logistics information. Leaving this field blank means return all information."
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "Order id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "error message",
+					"required": true
+				},
+				{
+					"name": "time_stamp",
+					"type": "Date",
+					"description": "time stamp",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "GlobalAeopTpOrderDetailDto",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "buyer_info",
+							"type": "GlobalAeopTpPersonDto",
+							"description": "buyer info",
+							"required": true,
+							"subParams": [
+								{
+									"name": "login_id",
+									"type": "String",
+									"description": "login ID",
+									"required": true
+								},
+								{
+									"name": "last_name",
+									"type": "String",
+									"description": "last name",
+									"required": true
+								},
+								{
+									"name": "first_name",
+									"type": "String",
+									"description": "first name",
+									"required": true
+								},
+								{
+									"name": "country",
+									"type": "String",
+									"description": "country/region",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "modified time, it's US pacific time",
+							"required": true
+						},
+						{
+							"name": "receipt_address",
+							"type": "GlobalAeopTpAddressDto",
+							"description": "receipt address",
+							"required": true,
+							"subParams": [
+								{
+									"name": "fax_area",
+									"type": "String",
+									"description": "Fax area code",
+									"required": true
+								},
+								{
+									"name": "zip",
+									"type": "String",
+									"description": "Postal code",
+									"required": true
+								},
+								{
+									"name": "fax_country",
+									"type": "String",
+									"description": "Fax country/region code",
+									"required": true
+								},
+								{
+									"name": "address2",
+									"type": "String",
+									"description": "address 2",
+									"required": true
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "detail address",
+									"required": true
+								},
+								{
+									"name": "country",
+									"type": "String",
+									"description": "country/region",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "city",
+									"required": true
+								},
+								{
+									"name": "fax_number",
+									"type": "String",
+									"description": "fax number",
+									"required": true
+								},
+								{
+									"name": "phone_number",
+									"type": "String",
+									"description": "phone number",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "address 1",
+									"required": true
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "province",
+									"required": true
+								},
+								{
+									"name": "phone_area",
+									"type": "String",
+									"description": "Phone area code",
+									"required": true
+								},
+								{
+									"name": "phone_country",
+									"type": "String",
+									"description": "Phone country/region code",
+									"required": true
+								},
+								{
+									"name": "contact_person",
+									"type": "String",
+									"description": "Recipient",
+									"required": true
+								},
+								{
+									"name": "mobile_no",
+									"type": "String",
+									"description": "mobile phone number",
+									"required": true
+								},
+								{
+									"name": "localized_address",
+									"type": "String",
+									"description": "localized address, currently only used in Russia",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_trade_end",
+							"type": "String",
+							"description": "Order end time",
+							"required": true
+						},
+						{
+							"name": "is_phone",
+							"type": "Boolean",
+							"description": "phone order or not",
+							"required": true
+						},
+						{
+							"name": "buyerloginid",
+							"type": "String",
+							"description": "buyer login id",
+							"required": true
+						},
+						{
+							"name": "logistics_amount",
+							"type": "GlobalMoneyStr",
+							"description": "logistics amount",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "Cent",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "Currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount",
+									"required": true
+								},
+								{
+									"name": "cent_factor",
+									"type": "Number",
+									"description": "The factor to the smallest currency unit",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true,
+									"subParams": [
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "The default minimum accuracy of the currency",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "Numeric code of the currency",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "Symbol of the currency",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "Display name of the currency",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "buyer memo",
+							"required": true
+						},
+						{
+							"name": "logisitcs_escrow_fee_rate",
+							"type": "String",
+							"description": "logisitcs escrow fee rate(Deprecated)",
+							"required": true
+						},
+						{
+							"name": "order_msg_list",
+							"type": "GlobalAeopTpOrderMsgDto[]",
+							"description": "Order Message list(deprecated)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "order id",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "order creation time",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "String",
+									"description": "order modification time",
+									"required": true
+								},
+								{
+									"name": "business_order_id",
+									"type": "Number",
+									"description": "business order id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "message status",
+									"required": true
+								},
+								{
+									"name": "content",
+									"type": "String",
+									"description": "meesage content",
+									"required": true
+								},
+								{
+									"name": "poster",
+									"type": "String",
+									"description": "message sender ( buyer; seller)",
+									"required": true
+								},
+								{
+									"name": "sender_login_id",
+									"type": "String",
+									"description": "sender login ID",
+									"required": true
+								},
+								{
+									"name": "sender_seq",
+									"type": "Number",
+									"description": "sender account seq",
+									"required": true
+								},
+								{
+									"name": "sender_admin_seq",
+									"type": "Number",
+									"description": "sender admin account seq",
+									"required": true
+								},
+								{
+									"name": "sender_first_name",
+									"type": "String",
+									"description": "sender first name",
+									"required": true
+								},
+								{
+									"name": "sender_last_name",
+									"type": "String",
+									"description": "send last name",
+									"required": true
+								},
+								{
+									"name": "receiver_login_id",
+									"type": "String",
+									"description": "receiver ID",
+									"required": true
+								},
+								{
+									"name": "receiver_seq",
+									"type": "Number",
+									"description": "receiver account seq",
+									"required": true
+								},
+								{
+									"name": "receiver_admin_seq",
+									"type": "Number",
+									"description": "receiver admin account seq",
+									"required": true
+								},
+								{
+									"name": "receiver_first_name",
+									"type": "String",
+									"description": "receiver first name",
+									"required": true
+								},
+								{
+									"name": "receiver_last_name",
+									"type": "String",
+									"description": "receiver last name",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "child_order_ext_info_list",
+							"type": "GlobalAeopTpOrderProductInfoDto[]",
+							"description": "child order ext info list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "product quantity",
+									"required": true
+								},
+								{
+									"name": "unit_price",
+									"type": "GlobalMoneyStr",
+									"description": "product unit price",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "sku",
+									"type": "String",
+									"description": "product SKU details",
+									"required": true
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "product name",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "product id",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "String",
+									"description": "Leaf category Id of the product",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "issue_info",
+							"type": "GlobalAeopTpIssueInfoDto",
+							"description": "issue info",
+							"required": true,
+							"subParams": [
+								{
+									"name": "issue_model",
+									"type": "String",
+									"description": "Issue model",
+									"required": true
+								},
+								{
+									"name": "issue_status",
+									"type": "String",
+									"description": "Issue status",
+									"required": true
+								},
+								{
+									"name": "issue_time",
+									"type": "String",
+									"description": "issue creation time",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "refund_info",
+							"type": "GlobalAeopTpRefundInfoDto",
+							"description": "refund info",
+							"required": true,
+							"subParams": [
+								{
+									"name": "refund_reason",
+									"type": "String",
+									"description": "refund reason",
+									"required": true
+								},
+								{
+									"name": "refund_status",
+									"type": "String",
+									"description": "refund status: wait_refund, refund_ok, refund_cancel,  close,  refund_frozen",
+									"required": true
+								},
+								{
+									"name": "refund_coupon_amt",
+									"type": "GlobalMoneyStr",
+									"description": "refund coupon amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "refund_cash_amt",
+									"type": "GlobalMoneyStr",
+									"description": "refund cash amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "refund_type",
+									"type": "String",
+									"description": "refund type",
+									"required": true
+								},
+								{
+									"name": "refund_time",
+									"type": "String",
+									"description": "refund time",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "settlement_currency",
+							"type": "String",
+							"description": "Payment settlement currency",
+							"required": true
+						},
+						{
+							"name": "logistic_info_list",
+							"type": "GlobalAeopTpLogisticInfoDto[]",
+							"description": "logistics info",
+							"required": true,
+							"subParams": [
+								{
+									"name": "logistics_no",
+									"type": "String",
+									"description": "logistics tracking number",
+									"required": true
+								},
+								{
+									"name": "have_tracking_info",
+									"type": "Boolean",
+									"description": "to get logistics tracking information",
+									"required": true
+								},
+								{
+									"name": "recv_status_desc",
+									"type": "String",
+									"description": "un-receive reason,such as Country does not match",
+									"required": true
+								},
+								{
+									"name": "logistics_service_name",
+									"type": "String",
+									"description": "logistics service show name",
+									"required": true
+								},
+								{
+									"name": "ship_order_id",
+									"type": "Number",
+									"description": "ship order id",
+									"required": true
+								},
+								{
+									"name": "gmt_send",
+									"type": "String",
+									"description": "send time",
+									"required": true
+								},
+								{
+									"name": "gmt_received",
+									"type": "String",
+									"description": "received time",
+									"required": true
+								},
+								{
+									"name": "logistics_type_code",
+									"type": "String",
+									"description": "logistics service name key",
+									"required": true
+								},
+								{
+									"name": "receive_status",
+									"type": "String",
+									"description": "receive status。(default:initial value; received:; not_received; suspected_received)",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_amount_by_settlement_cur",
+							"type": "String",
+							"description": "order pay amount(settlemet currency)",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "order ID",
+							"required": true
+						},
+						{
+							"name": "frozen_status",
+							"type": "String",
+							"description": "frozen status",
+							"required": true
+						},
+						{
+							"name": "issue_status",
+							"type": "String",
+							"description": "issue status",
+							"required": true
+						},
+						{
+							"name": "logistics_status",
+							"type": "String",
+							"description": "logistics status：NO_LOGISTICS 、 WAIT_SELLER_SEND_GOODS, SELLER_SEND_PART_GOODS, SELLER_SEND_GOODS, BUYER_ACCEPT_GOODS,NO_LOGISTICS",
+							"required": true
+						},
+						{
+							"name": "order_amount",
+							"type": "GlobalMoneyStr",
+							"description": "order amount",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "Cent",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "Currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount",
+									"required": true
+								},
+								{
+									"name": "cent_factor",
+									"type": "Number",
+									"description": "The factor to the smallest currency unit",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true,
+									"subParams": [
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "The default minimum accuracy of the currency",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "Numeric code of the currency",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "Symbol of the currency",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "Display name of the currency",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "seller_signer_fullname",
+							"type": "String",
+							"description": "Seller full name",
+							"required": true
+						},
+						{
+							"name": "over_time_left",
+							"type": "String",
+							"description": "Current status expiration date",
+							"required": true
+						},
+						{
+							"name": "order_end_reason",
+							"type": "String",
+							"description": "order end reason",
+							"required": true
+						},
+						{
+							"name": "init_oder_amount",
+							"type": "GlobalMoneyStr",
+							"description": "order amount",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "Cent",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "Currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount",
+									"required": true
+								},
+								{
+									"name": "cent_factor",
+									"type": "Number",
+									"description": "The factor to the smallest currency unit",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true,
+									"subParams": [
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "The default minimum accuracy of the currency",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "Numeric code of the currency",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "Symbol of the currency",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "Display name of the currency",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "opr_log_dto_list",
+							"type": "GlobalAeopTpOperationLogDto[]",
+							"description": "operation details list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "String",
+									"description": "order modification time",
+									"required": true
+								},
+								{
+									"name": "memo",
+									"type": "String",
+									"description": "buyer memo",
+									"required": true
+								},
+								{
+									"name": "action_type",
+									"type": "String",
+									"description": "action type",
+									"required": true
+								},
+								{
+									"name": "child_order_id",
+									"type": "Number",
+									"description": "child order ID",
+									"required": true
+								},
+								{
+									"name": "operator",
+									"type": "String",
+									"description": "operator",
+									"required": true
+								},
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "order ID",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "order creation time",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "child_order_list",
+							"type": "GlobalAeopTpChildOrderDto[]",
+							"description": "child order list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "snapshot_id",
+									"type": "String",
+									"description": "snapshot ID",
+									"required": true
+								},
+								{
+									"name": "lot_num",
+									"type": "Number",
+									"description": "How many products in one piece or lot",
+									"required": true
+								},
+								{
+									"name": "logistics_amount",
+									"type": "GlobalMoneyStr",
+									"description": "logistics amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "amount_str",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "goods_prepare_time",
+									"type": "Number",
+									"description": "goods prepare days",
+									"required": true
+								},
+								{
+									"name": "product_attributes",
+									"type": "String",
+									"description": "Extended attributes of product",
+									"required": true
+								},
+								{
+									"name": "buyer_memo",
+									"type": "String",
+									"description": "buyer memo",
+									"required": true
+								},
+								{
+									"name": "refund_info",
+									"type": "GlobalAeopTpRefundInfoDto",
+									"description": "refund info",
+									"required": true,
+									"subParams": [
+										{
+											"name": "refund_reason",
+											"type": "String",
+											"description": "refund reason",
+											"required": true
+										},
+										{
+											"name": "refund_status",
+											"type": "String",
+											"description": "refund status: wait_refund, refund_ok, refund_cancel, close, refund_frozen",
+											"required": true
+										},
+										{
+											"name": "refund_coupon_amt",
+											"type": "GlobalMoneyStr",
+											"description": "refund coupon amount",
+											"required": true,
+											"subParams": [
+												{
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
+													"required": true,
+													"subParams": [
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "currency_code",
+															"type": "String",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "symbol",
+															"type": "String",
+															"description": "Symbol of the currency",
+															"required": true
+														},
+														{
+															"name": "display_name",
+															"type": "String",
+															"description": "Display name of the currency",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "Cent",
+													"required": true
+												},
+												{
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "amount_str",
+													"type": "String",
+													"description": "Amount",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "refund_cash_amt",
+											"type": "GlobalMoneyStr",
+											"description": "refund cash amount",
+											"required": true,
+											"subParams": [
+												{
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
+													"required": true,
+													"subParams": [
+														{
+															"name": "display_name",
+															"type": "String",
+															"description": "Display name of the currency",
+															"required": true
+														},
+														{
+															"name": "symbol",
+															"type": "String",
+															"description": "Symbol of the currency",
+															"required": true
+														},
+														{
+															"name": "currency_code",
+															"type": "String",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "amount_str",
+													"type": "String",
+													"description": "Amount",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "Cent",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "refund_type",
+											"type": "String",
+											"description": "refund type",
+											"required": true
+										},
+										{
+											"name": "refund_time",
+											"type": "String",
+											"description": "refund time",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "product_unit",
+									"type": "String",
+									"description": "product_unit",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "order ID",
+									"required": true
+								},
+								{
+									"name": "logistics_type",
+									"type": "String",
+									"description": "logistics type",
+									"required": true
+								},
+								{
+									"name": "frozen_status",
+									"type": "String",
+									"description": "frozen status（NO_FROZEN; IN_FROZEN）",
+									"required": true
+								},
+								{
+									"name": "issue_status",
+									"type": "String",
+									"description": "issue status",
+									"required": true
+								},
+								{
+									"name": "order_sort_id",
+									"type": "Number",
+									"description": "order sort id",
+									"required": true
+								},
+								{
+									"name": "afflicate_fee_rate",
+									"type": "String",
+									"description": "affiliate fee rate",
+									"required": true
+								},
+								{
+									"name": "init_order_amt",
+									"type": "GlobalMoneyStr",
+									"description": "order amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "child_issue_info",
+									"type": "GlobalAeopTpIssueInfoDto",
+									"description": "child issue info",
+									"required": true,
+									"subParams": [
+										{
+											"name": "issue_time",
+											"type": "String",
+											"description": "issue creation time",
+											"required": true
+										},
+										{
+											"name": "issue_status",
+											"type": "String",
+											"description": "issue status: processing, canceled_issue, finish",
+											"required": true
+										},
+										{
+											"name": "issue_model",
+											"type": "String",
+											"description": "issue model",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "logistics_service_name",
+									"type": "String",
+									"description": "logistics service name",
+									"required": true
+								},
+								{
+									"name": "loan_info",
+									"type": "GlobalAeopTpLoanInfoDto",
+									"description": "order loan info",
+									"required": true,
+									"subParams": [
+										{
+											"name": "loan_amount",
+											"type": "GlobalMoneyStr",
+											"description": "loan amount",
+											"required": true,
+											"subParams": [
+												{
+													"name": "currency",
+													"type": "Currency",
+													"description": "Currency description",
+													"required": true,
+													"subParams": [
+														{
+															"name": "display_name",
+															"type": "String",
+															"description": "Display name of the currency",
+															"required": true
+														},
+														{
+															"name": "symbol",
+															"type": "String",
+															"description": "Symbol of the currency",
+															"required": true
+														},
+														{
+															"name": "currency_code",
+															"type": "String",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "amount_str",
+													"type": "String",
+													"description": "Amount",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "Cent",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "loan_time",
+											"type": "String",
+											"description": "loan time",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "product_snap_url",
+									"type": "String",
+									"description": "product snapshot Url",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "Order Status：PLACE_ORDER_SUCCESS;  IN_CANCEL;  WAIT_SELLER_SEND_GOODS;  SELLER_PART_SEND_GOODS;  WAIT_BUYER_ACCEPT_GOODS;  FUND_PROCESSING; IN_ISSUE;  IN_FROZEN;  WAIT_SELLER_EXAMINE_MONEY;  RISK_CONTROL.",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "SKU code",
+									"required": true
+								},
+								{
+									"name": "send_goods_operator",
+									"type": "String",
+									"description": "SELLER_SEND_GOODS\" or \"WAREHOUSE_SEND_GOODS\"",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "product ID",
+									"required": true
+								},
+								{
+									"name": "product_count",
+									"type": "Number",
+									"description": "product quantity",
+									"required": true
+								},
+								{
+									"name": "fund_status",
+									"type": "String",
+									"description": "fund status (NOT_PAY；PAY_SUCCESS)",
+									"required": true
+								},
+								{
+									"name": "escrow_fee_rate",
+									"type": "String",
+									"description": "escrow fee rate",
+									"required": true
+								},
+								{
+									"name": "product_img_url",
+									"type": "String",
+									"description": "product image Url",
+									"required": true
+								},
+								{
+									"name": "child_order_id",
+									"type": "String",
+									"description": "child order ID",
+									"required": true
+								},
+								{
+									"name": "product_price",
+									"type": "GlobalMoneyStr",
+									"description": "product price",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "product name",
+									"required": true
+								},
+								{
+									"name": "snapshot_small_photo_path",
+									"type": "String",
+									"description": "snapshot small photo path",
+									"required": true
+								},
+								{
+									"name": "product_standard",
+									"type": "String",
+									"description": "Product specifications",
+									"required": true
+								},
+								{
+									"name": "logistics_warehouse_type",
+									"type": "String",
+									"description": "cainiaoInternationalWarehouse",
+									"required": true
+								},
+								{
+									"name": "child_order_discount_info",
+									"type": "GlobalMoneyStr",
+									"description": "discount amount of child order",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "child_order_adjust_amount",
+									"type": "GlobalMoneyStr",
+									"description": "An amount to adjust the product price on, for example, if the seller wants to give buyer a personal discount by the \"Adjust price\"  button in order management backend.",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "cent",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "child_order_discount_detail_list",
+									"type": "GlobalAeopTpSaleDiscountInfo[]",
+									"description": "discount detail list for each child order",
+									"required": true,
+									"subParams": [
+										{
+											"name": "discount_detail",
+											"type": "GlobalMoneyStr",
+											"description": "discount detail",
+											"required": true,
+											"subParams": [
+												{
+													"name": "currency",
+													"type": "Currency",
+													"description": "currency details",
+													"required": true,
+													"subParams": [
+														{
+															"name": "default_fraction_digits",
+															"type": "Number",
+															"description": "The default minimum accuracy of the currency",
+															"required": true
+														},
+														{
+															"name": "numeric_code",
+															"type": "Number",
+															"description": "Numeric code of the currency",
+															"required": true
+														},
+														{
+															"name": "currency_code",
+															"type": "String",
+															"description": "Currency code",
+															"required": true
+														},
+														{
+															"name": "symbol",
+															"type": "String",
+															"description": "Symbol of the currency",
+															"required": true
+														},
+														{
+															"name": "display_name",
+															"type": "String",
+															"description": "Display name of the currency",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "cent_factor",
+													"type": "Number",
+													"description": "The factor to the smallest currency unit",
+													"required": true
+												},
+												{
+													"name": "amount",
+													"type": "String",
+													"description": "Amount",
+													"required": true
+												},
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "cent",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "currency code",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "promotion_owner",
+											"type": "String",
+											"description": "Promotion owner, can be Seller, Platform or Mix.",
+											"required": true
+										},
+										{
+											"name": "promotion_type",
+											"type": "String",
+											"description": "promotion type",
+											"required": true
+										},
+										{
+											"name": "promotion_id",
+											"type": "String",
+											"description": "promotion ID",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "order creation time",
+							"required": true
+						},
+						{
+							"name": "seller_operator_login_id",
+							"type": "String",
+							"description": "seller operator login ID",
+							"required": true
+						},
+						{
+							"name": "payment_type",
+							"type": "String",
+							"description": "payment type",
+							"required": true
+						},
+						{
+							"name": "loan_info",
+							"type": "GlobalAeopTpLoanInfoDto",
+							"description": "loan info",
+							"required": true,
+							"subParams": [
+								{
+									"name": "loan_amount",
+									"type": "GlobalMoneyStr",
+									"description": "loan amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cent",
+											"type": "Number",
+											"description": "Cent",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "Amount",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "cent_factor",
+											"type": "Number",
+											"description": "The factor to the smallest currency unit",
+											"required": true
+										},
+										{
+											"name": "currency",
+											"type": "Currency",
+											"description": "Currency description",
+											"required": true,
+											"subParams": [
+												{
+													"name": "display_name",
+													"type": "String",
+													"description": "Display name of the currency",
+													"required": true
+												},
+												{
+													"name": "symbol",
+													"type": "String",
+													"description": "Symbol of the currency",
+													"required": true
+												},
+												{
+													"name": "currency_code",
+													"type": "String",
+													"description": "Currency code",
+													"required": true
+												},
+												{
+													"name": "numeric_code",
+													"type": "Number",
+													"description": "Numeric code of the currency",
+													"required": true
+												},
+												{
+													"name": "default_fraction_digits",
+													"type": "Number",
+													"description": "The default minimum accuracy of the currency",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "loan_time",
+									"type": "String",
+									"description": "loan time",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "Order Status：PLACE_ORDER_SUCCESS;  IN_CANCEL;  WAIT_SELLER_SEND_GOODS;  SELLER_PART_SEND_GOODS;  WAIT_BUYER_ACCEPT_GOODS;  FUND_PROCESSING; IN_ISSUE;  IN_FROZEN;  WAIT_SELLER_EXAMINE_MONEY;  RISK_CONTROL.",
+							"required": true
+						},
+						{
+							"name": "buyer_signer_fullname",
+							"type": "String",
+							"description": "buyer full name",
+							"required": true
+						},
+						{
+							"name": "gmt_pay_success",
+							"type": "String",
+							"description": "successful payment time",
+							"required": true
+						},
+						{
+							"name": "loan_status",
+							"type": "String",
+							"description": "loan status",
+							"required": true
+						},
+						{
+							"name": "seller_operator_aliidloginid",
+							"type": "String",
+							"description": "seller operator ali login id",
+							"required": true
+						},
+						{
+							"name": "fund_status",
+							"type": "String",
+							"description": "fund status",
+							"required": true
+						},
+						{
+							"name": "escrow_fee",
+							"type": "GlobalMoneyStr",
+							"description": "escrow fee (deprecated)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "Cent",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "Currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount",
+									"required": true
+								},
+								{
+									"name": "cent_factor",
+									"type": "Number",
+									"description": "The factor to the smallest currency unit",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true,
+									"subParams": [
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "The default minimum accuracy of the currency",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "Numeric code of the currency",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "Symbol of the currency",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "Display name of the currency",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "cpf_number",
+							"type": "String",
+							"description": "cpf  number of order",
+							"required": true
+						},
+						{
+							"name": "offline_pickup_type",
+							"type": "String",
+							"description": "pick-up type of order",
+							"required": true
+						},
+						{
+							"name": "order_discount_info",
+							"type": "GlobalMoneyStr",
+							"description": "Order discount total amount (sum of the platform and seller discounts)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "Currency description",
+									"required": true,
+									"subParams": [
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "Display name of the currency",
+											"required": true
+										},
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "Symbol of the currency",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "Currency code",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "Numeric code of the currency",
+											"required": true
+										},
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "The default minimum accuracy of the currency",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "cent_factor",
+									"type": "Number",
+									"description": "The factor to the smallest currency unit",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "Amount",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "currency code",
+									"required": true
+								},
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "Cent",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "offline_pickup_point_code",
+							"type": "String",
+							"description": "pickup point code of the specific order",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

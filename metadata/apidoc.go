@@ -53,7 +53,7 @@ func (d ApiDoc) Filename() string {
 }
 
 func (d ApiDoc) Title() string {
-	name := strings.Title(d.Name)
+	name := strings.Title(strings.ReplaceAll(d.Name, "-", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 
@@ -77,6 +77,9 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 	}
 	for idx, p := range d.ResponseParams {
 		tpl.ResponseParams[idx] = p.TplParam(tpl.Name)
+		if tpl.ResponseParams[idx].Name == "RequestId" {
+			tpl.HasRequestId = true
+		}
 	}
 	return tpl
 }

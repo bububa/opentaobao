@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.device.apkinfo",
+	"apiChineseName": "获取停开服apk信息",
+	"description": "获取停开服apk信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "apkid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "DicControlApkDO",
+			"description": "object"
+		}
+	]
+}

@@ -1,0 +1,122 @@
+{
+	"name": "aliexpress.ascp.fro.item.query",
+	"apiChineseName": "AliExpress销退单明细查询API",
+	"description": "AE履约销退单明细查询API",
+	"requestParams": [
+		{
+			"name": "fulfillment_reverse_order_item_query",
+			"type": "FulfillmentReverseOrderItemQueryDto",
+			"description": "dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "fulfillment_order_no",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "dto",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品Id",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "货品条码",
+							"required": true
+						},
+						{
+							"name": "plan_qty",
+							"type": "String",
+							"description": "申请退货数量",
+							"required": true
+						},
+						{
+							"name": "order_line_price",
+							"type": "String",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "return_normal_qty",
+							"type": "String",
+							"description": "仓库实收正品",
+							"required": true
+						},
+						{
+							"name": "return_scrap_qty",
+							"type": "String",
+							"description": "仓库实收残品",
+							"required": true
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓名称",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.nlife.b2c.member.discountrule.get",
+	"apiChineseName": "会员抵扣规则",
+	"description": "获取企业会员抵扣规则",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "card_no",
+			"type": "String",
+			"description": "会员在ISV处的编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "业务成功与否 true/false"
+		},
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "错误码，当result为false时设置"
+		},
+		{
+			"name": "err_msg",
+			"type": "String",
+			"description": "错误信息，当result为false时设置"
+		},
+		{
+			"name": "discount_rule",
+			"type": "DiscountRule",
+			"description": "抵扣规则",
+			"subParams": [
+				{
+					"name": "points_value",
+					"type": "String",
+					"description": "抵扣人民币1分钱所需要的积分数量，比如10积分一分钱",
+					"required": true
+				},
+				{
+					"name": "deduction_limit",
+					"type": "Number",
+					"description": "百分比，抵扣上限。15代表积分最多能抵扣订单总额的15%",
+					"required": true
+				},
+				{
+					"name": "money_limit",
+					"type": "Number",
+					"description": "金额上限，单位人民币分",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "discount_memos",
+			"type": "DiscountMemo []",
+			"description": "结构化的文案",
+			"subParams": [
+				{
+					"name": "memo_id",
+					"type": "String",
+					"description": "文案编号",
+					"required": true
+				},
+				{
+					"name": "memo_desc",
+					"type": "String",
+					"description": "文案描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

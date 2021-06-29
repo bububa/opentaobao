@@ -1,0 +1,171 @@
+{
+	"name": "cainiao.cntec.shopkeeper.supply.statistics.query",
+	"apiChineseName": "团购业务供货商查询门店统计数据",
+	"description": "查询门店售卖商品统计数据",
+	"requestParams": [
+		{
+			"name": "query_activity_dto",
+			"type": "QueryActivityDto",
+			"description": "查询参数",
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "page",
+					"type": "Boolean",
+					"description": "是否分页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "trace_id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "ActivityStatisticsDto[]",
+					"description": "门店统计结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inventory_coefficient",
+							"type": "String",
+							"description": "箱规",
+							"required": true
+						},
+						{
+							"name": "totoal_price",
+							"type": "String",
+							"description": "总价",
+							"required": true
+						},
+						{
+							"name": "buy_amount",
+							"type": "String",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "单价",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "station_name",
+							"type": "String",
+							"description": "驿站名称",
+							"required": true
+						},
+						{
+							"name": "station_id",
+							"type": "String",
+							"description": "驿站id",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店id",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "predict_arrival_time",
+							"type": "Date",
+							"description": "预计到货时间",
+							"required": true
+						},
+						{
+							"name": "mkt_activity_type",
+							"type": "String",
+							"description": "营销活动",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				}
+			]
+		}
+	]
+}

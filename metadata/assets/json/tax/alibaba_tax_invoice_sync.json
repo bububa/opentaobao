@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.tax.invoice.sync",
+	"apiChineseName": "第三方开票回调API",
+	"description": "该接口只提供给俄罗斯供应商开具发票使用，请勿申请。",
+	"requestParams": [
+		{
+			"name": "param_json",
+			"type": "String",
+			"description": "回调发票信息，请求参数详情见链接：https://yuque.antfin-inc.com/tax/biw99l/uestb7",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ThirdPartyInvoiceCallBackResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "value_list",
+					"type": "ResultItem[]",
+					"description": "具体明细列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "correctness",
+							"type": "Boolean",
+							"description": "每一项成功失败",
+							"required": true
+						},
+						{
+							"name": "error_description",
+							"type": "String",
+							"description": "每一项具体异常信息",
+							"required": true
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "每一项的请求id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

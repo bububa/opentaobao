@@ -1,0 +1,713 @@
+{
+	"name": "alibaba.alihouse.newhome.project.submit",
+	"apiChineseName": "提交楼盘信息",
+	"description": "提交楼盘信息",
+	"requestParams": [
+		{
+			"name": "ebbas_project_dto",
+			"type": "EbbasProjectDto",
+			"description": "楼盘对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "e_code",
+					"type": "String",
+					"description": "楼盘ecode",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "1-EBBAS 2-开发商 3-ETC 默认2",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1-新房楼盘 2-小区  默认1-新房",
+					"required": true
+				},
+				{
+					"name": "project_name",
+					"type": "String",
+					"description": "楼盘名称",
+					"required": true
+				},
+				{
+					"name": "record_name",
+					"type": "String",
+					"description": "备案名"
+				},
+				{
+					"name": "alias_names",
+					"type": "String[]",
+					"description": "楼盘别名"
+				},
+				{
+					"name": "highlights",
+					"type": "String",
+					"description": "楼盘亮点",
+					"required": true
+				},
+				{
+					"name": "tag_codes",
+					"type": "Number[]",
+					"description": "标签码",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "楼盘总价(万元/套)"
+				},
+				{
+					"name": "total_price_unit",
+					"type": "String",
+					"description": "楼盘总价单位"
+				},
+				{
+					"name": "avg_price",
+					"type": "String",
+					"description": "楼盘均价(元/㎡)"
+				},
+				{
+					"name": "avg_price_unit",
+					"type": "String",
+					"description": "楼盘均价单位"
+				},
+				{
+					"name": "show_price",
+					"type": "String",
+					"description": "楼盘展示价（元）"
+				},
+				{
+					"name": "estate_types",
+					"type": "Number[]",
+					"description": "物业类型,多选",
+					"required": true
+				},
+				{
+					"name": "property_rights_years_codes",
+					"type": "Number[]",
+					"description": "产权年限码"
+				},
+				{
+					"name": "building_area",
+					"type": "String",
+					"description": "平均建筑面积"
+				},
+				{
+					"name": "project_detail_address",
+					"type": "String",
+					"description": "楼盘详细地址",
+					"required": true
+				},
+				{
+					"name": "map_location_detail_address",
+					"type": "String",
+					"description": "地图定位-详细地址"
+				},
+				{
+					"name": "map_location_longitude",
+					"type": "String",
+					"description": "地图定位-经度",
+					"required": true
+				},
+				{
+					"name": "map_location_latitude",
+					"type": "String",
+					"description": "地图定位-纬度",
+					"required": true
+				},
+				{
+					"name": "developer_full_name",
+					"type": "String",
+					"description": "开发商全称",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌商名称"
+				},
+				{
+					"name": "developer_sales_office_address",
+					"type": "String",
+					"description": "售楼处地址"
+				},
+				{
+					"name": "developer_opening_time",
+					"type": "String",
+					"description": "开盘时间(yyyy-MM)"
+				},
+				{
+					"name": "developer_due_time",
+					"type": "String",
+					"description": "交付时间(yyyy-MM)"
+				},
+				{
+					"name": "phone_no",
+					"type": "String",
+					"description": "联系人座机"
+				},
+				{
+					"name": "telephone",
+					"type": "String",
+					"description": "联系人手机"
+				},
+				{
+					"name": "main_phone",
+					"type": "String",
+					"description": "400主机电话"
+				},
+				{
+					"name": "sub_phone",
+					"type": "String",
+					"description": "400分机电话"
+				},
+				{
+					"name": "community_area",
+					"type": "String",
+					"description": "小区概况-占地面积(平米)"
+				},
+				{
+					"name": "community_volume_rate",
+					"type": "String",
+					"description": "小区概况-容积率"
+				},
+				{
+					"name": "community_greening_rate",
+					"type": "String",
+					"description": "小区概况-绿化率"
+				},
+				{
+					"name": "parking_radio",
+					"type": "String",
+					"description": "车位比例"
+				},
+				{
+					"name": "community_planning_building",
+					"type": "Number",
+					"description": "小区概况-规划楼栋"
+				},
+				{
+					"name": "community_planning_households",
+					"type": "Number",
+					"description": "小区概况-规划户数"
+				},
+				{
+					"name": "community_estate_company",
+					"type": "String",
+					"description": "小区概况-物业公司"
+				},
+				{
+					"name": "community_estate_expenses",
+					"type": "String",
+					"description": "小区概况-物业费用"
+				},
+				{
+					"name": "community_heating_type_desc",
+					"type": "String",
+					"description": "供暖方式描述"
+				},
+				{
+					"name": "community_water_type_desc",
+					"type": "String",
+					"description": "供水方式描述"
+				},
+				{
+					"name": "community_power_type_desc",
+					"type": "String",
+					"description": "供电方式描述"
+				},
+				{
+					"name": "overall_introduction",
+					"type": "String",
+					"description": "楼盘整体介绍"
+				},
+				{
+					"name": "submit_reason",
+					"type": "String",
+					"description": "此次修改的原因"
+				},
+				{
+					"name": "country_name",
+					"type": "String",
+					"description": "国家",
+					"required": true
+				},
+				{
+					"name": "prov",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区",
+					"required": true
+				},
+				{
+					"name": "street_name",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "country_id",
+					"type": "Number",
+					"description": "国家编码",
+					"required": true
+				},
+				{
+					"name": "prov_id",
+					"type": "Number",
+					"description": "省编码",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "市编码",
+					"required": true
+				},
+				{
+					"name": "area_id",
+					"type": "Number",
+					"description": "区编码",
+					"required": true
+				},
+				{
+					"name": "street_id",
+					"type": "Number",
+					"description": "街道编码"
+				},
+				{
+					"name": "loop_line",
+					"type": "String",
+					"description": "环线"
+				},
+				{
+					"name": "building_categorys",
+					"type": "Number[]",
+					"description": "建筑类别"
+				},
+				{
+					"name": "building_types",
+					"type": "Number[]",
+					"description": "建筑类型",
+					"required": true
+				},
+				{
+					"name": "house_types",
+					"type": "Number[]",
+					"description": "房屋类型",
+					"required": true
+				},
+				{
+					"name": "traffic_description",
+					"type": "String",
+					"description": "交通状况描述"
+				},
+				{
+					"name": "floor_description",
+					"type": "String",
+					"description": "楼层分布描述"
+				},
+				{
+					"name": "peripheral_business",
+					"type": "String[]",
+					"description": "周边商业"
+				},
+				{
+					"name": "surrounding_landscape",
+					"type": "String[]",
+					"description": "周边景观"
+				},
+				{
+					"name": "surrounding_parks",
+					"type": "String[]",
+					"description": "周边公园"
+				},
+				{
+					"name": "surrounding_hospitals",
+					"type": "String[]",
+					"description": "周边医院"
+				},
+				{
+					"name": "surrounding_schools",
+					"type": "String[]",
+					"description": "周边学校"
+				},
+				{
+					"name": "surrounding_traffic",
+					"type": "String[]",
+					"description": "周边交通"
+				},
+				{
+					"name": "surrounding_restaurant",
+					"type": "String[]",
+					"description": "周边餐饮"
+				},
+				{
+					"name": "surrounding_banks",
+					"type": "String[]",
+					"description": "周边银行"
+				},
+				{
+					"name": "project_feature_description",
+					"type": "String",
+					"description": "项目特色描述"
+				},
+				{
+					"name": "project_schedule_description",
+					"type": "String",
+					"description": "工程进度描述"
+				},
+				{
+					"name": "sales_progress_description",
+					"type": "String",
+					"description": "销售进度描述"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开工时间"
+				},
+				{
+					"name": "completion_time",
+					"type": "String",
+					"description": "竣工时间"
+				},
+				{
+					"name": "house_acquisition_rate",
+					"type": "String",
+					"description": "得房率"
+				},
+				{
+					"name": "investors",
+					"type": "String[]",
+					"description": "投资商"
+				},
+				{
+					"name": "payment_method",
+					"type": "String",
+					"description": "付款方式"
+				},
+				{
+					"name": "down_payment_ratio",
+					"type": "String",
+					"description": "首付比例"
+				},
+				{
+					"name": "parking_fee",
+					"type": "String",
+					"description": "车位费"
+				},
+				{
+					"name": "parking_number",
+					"type": "Number",
+					"description": "车位数"
+				},
+				{
+					"name": "overground_parking_number",
+					"type": "Number",
+					"description": "地上车位数"
+				},
+				{
+					"name": "underground_parking_number",
+					"type": "Number",
+					"description": "地下车位数"
+				},
+				{
+					"name": "garage_configuration_description",
+					"type": "String",
+					"description": "车库配置描述"
+				},
+				{
+					"name": "gas_supply_description",
+					"type": "String",
+					"description": "供气描述"
+				},
+				{
+					"name": "main_house_type_description",
+					"type": "String",
+					"description": "主力户型描述"
+				},
+				{
+					"name": "diversion_people_vehicles",
+					"type": "String",
+					"description": "人车分流"
+				},
+				{
+					"name": "phone_area_code",
+					"type": "String",
+					"description": "电话区号"
+				},
+				{
+					"name": "real_estate_certificate",
+					"type": "String",
+					"description": "不动产权证"
+				},
+				{
+					"name": "stages",
+					"type": "String",
+					"description": "分期"
+				},
+				{
+					"name": "fencing",
+					"type": "String",
+					"description": "围栏数据"
+				},
+				{
+					"name": "architecture_age",
+					"type": "String",
+					"description": "建筑年代"
+				},
+				{
+					"name": "pinyin",
+					"type": "String",
+					"description": "小区拼音首字母"
+				},
+				{
+					"name": "full_pinyin",
+					"type": "String",
+					"description": "小区名拼音"
+				},
+				{
+					"name": "pre_sale_permit",
+					"type": "String",
+					"description": "预售证"
+				},
+				{
+					"name": "internal_matching",
+					"type": "String",
+					"description": "小区内部配套"
+				},
+				{
+					"name": "other_facilities",
+					"type": "String",
+					"description": "其他配套"
+				},
+				{
+					"name": "buisness_id",
+					"type": "String",
+					"description": "商圈ID"
+				},
+				{
+					"name": "module_id",
+					"type": "String",
+					"description": "板块ID"
+				},
+				{
+					"name": "project_sales_status",
+					"type": "Number",
+					"description": "楼盘销售状态",
+					"required": true
+				},
+				{
+					"name": "direct_sale",
+					"type": "String",
+					"description": "营销方式"
+				},
+				{
+					"name": "layouts",
+					"type": "SyncProjectLayoutDto[]",
+					"description": "户型对象列表",
+					"subParams": [
+						{
+							"name": "room",
+							"type": "String",
+							"description": "室",
+							"required": true
+						},
+						{
+							"name": "hall",
+							"type": "String",
+							"description": "厅",
+							"required": true
+						},
+						{
+							"name": "bathroom",
+							"type": "String",
+							"description": "卫",
+							"required": true
+						},
+						{
+							"name": "construction_area",
+							"type": "String",
+							"description": "建筑面积",
+							"required": true
+						},
+						{
+							"name": "inside_area",
+							"type": "String",
+							"description": "套内面积"
+						},
+						{
+							"name": "total_price",
+							"type": "String",
+							"description": "户型总价"
+						},
+						{
+							"name": "avg_price",
+							"type": "String",
+							"description": "户型均价"
+						},
+						{
+							"name": "outer_layout_id",
+							"type": "String",
+							"description": "户型外部id(唯一)",
+							"required": true
+						},
+						{
+							"name": "layout_name",
+							"type": "String",
+							"description": "户型名称",
+							"required": true
+						},
+						{
+							"name": "orientation",
+							"type": "Number",
+							"description": "朝向",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述"
+						}
+					]
+				},
+				{
+					"name": "pictures",
+					"type": "ProjectPictureDto[]",
+					"description": "图片对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "outer_picture_id",
+							"type": "String",
+							"description": "图片外部id(唯一)",
+							"required": true
+						},
+						{
+							"name": "order_tag",
+							"type": "Number",
+							"description": "图片顺序"
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "图片类型",
+							"required": true
+						},
+						{
+							"name": "pic_data",
+							"type": "String",
+							"description": "图片全路径",
+							"required": true
+						},
+						{
+							"name": "pic_name",
+							"type": "String",
+							"description": "图片名称"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "outer_layout_id",
+							"type": "String",
+							"description": "外部户型ID"
+						}
+					]
+				},
+				{
+					"name": "is_test",
+					"type": "Boolean",
+					"description": "是否为测试楼盘 true-是测试楼盘",
+					"required": true
+				},
+				{
+					"name": "decoration_standard_codes",
+					"type": "Number[]",
+					"description": "装修类型，参见枚举",
+					"required": true
+				},
+				{
+					"name": "parking_number_desc",
+					"type": "String",
+					"description": "车位总数描述"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果体",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "EbbasProjectSubmitVO",
+					"description": "接口返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "楼盘code",
+							"required": true
+						},
+						{
+							"name": "e_code",
+							"type": "String",
+							"description": "楼盘e码",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

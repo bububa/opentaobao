@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.campus.acl.new.removerole",
+	"apiChineseName": "删除角色",
+	"description": "删除角色",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "应用key",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "role_id",
+			"type": "Number",
+			"description": "角色主键id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "{}",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "接口内容",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

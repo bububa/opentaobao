@@ -1,0 +1,29 @@
+{
+	"name": "aliexpress.solution.feed.invalidate",
+	"apiChineseName": "aliexpress.solution.feed.invalidate",
+	"description": "Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation.",
+	"requestParams": [
+		{
+			"name": "job_id_list",
+			"type": "String",
+			"description": "job id separated by ;  No more than 100 job Ids could be passed in one request."
+		}
+	],
+	"responseParams": [
+		{
+			"name": "successful_list",
+			"type": "Number []",
+			"description": "successful list"
+		},
+		{
+			"name": "no_need_invalidation_list",
+			"type": "Number []",
+			"description": "no need to be invalidated jobs. Usually caused by that the job is being or has already been executed."
+		},
+		{
+			"name": "failed_list",
+			"type": "Number []",
+			"description": "failed list"
+		}
+	]
+}

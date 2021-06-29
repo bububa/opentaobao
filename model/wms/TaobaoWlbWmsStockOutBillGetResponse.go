@@ -19,7 +19,9 @@ type TaobaoWlbWmsStockOutBillGetAPIResponse struct {
 
 type TaobaoWlbWmsStockOutBillGetResponse struct {
     XMLName xml.Name `xml:"wlb_wms_stock_out_bill_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 出库信息
     

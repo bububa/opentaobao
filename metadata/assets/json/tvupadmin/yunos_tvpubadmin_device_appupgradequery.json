@@ -1,0 +1,149 @@
+{
+	"name": "yunos.tvpubadmin.device.appupgradequery",
+	"apiChineseName": "应用升级查询",
+	"description": "应用升级查询",
+	"requestParams": [
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "审核状态"
+		},
+		{
+			"name": "day_range",
+			"type": "Number",
+			"description": "时间范围",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "数据大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object_list",
+			"type": "PaginationDO",
+			"description": "具体的数据结构",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "AppVersionAuditDO[]",
+					"description": "内容列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键ID",
+							"required": true
+						},
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "应用名",
+							"required": true
+						},
+						{
+							"name": "app_package_name",
+							"type": "String",
+							"description": "引用包名",
+							"required": true
+						},
+						{
+							"name": "version_name",
+							"type": "String",
+							"description": "版本名",
+							"required": true
+						},
+						{
+							"name": "version_code",
+							"type": "String",
+							"description": "版本号",
+							"required": true
+						},
+						{
+							"name": "release_note",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "download_url",
+							"type": "String",
+							"description": "下载地址",
+							"required": true
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "包大小",
+							"required": true
+						},
+						{
+							"name": "audit_status",
+							"type": "String",
+							"description": "审核状态",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modify",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "gmt_audit",
+							"type": "Date",
+							"description": "审核时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

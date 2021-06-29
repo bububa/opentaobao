@@ -19,7 +19,9 @@ type TaobaoTaotvVideoPlaylistPageAPIResponse struct {
 
 type TaobaoTaotvVideoPlaylistPageResponse struct {
     XMLName xml.Name `xml:"taotv_video_playlist_page_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 接口返回model
     

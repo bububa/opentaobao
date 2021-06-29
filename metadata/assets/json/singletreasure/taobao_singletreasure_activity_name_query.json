@@ -1,0 +1,72 @@
+{
+	"name": "taobao.singletreasure.activity.name.query",
+	"apiChineseName": "查询官方的活动名称接口",
+	"description": "查询官方的活动名称列表接口",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "请求返回描述信息",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "ActivityNameCategoryDto[]",
+					"description": "data结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "text",
+							"type": "String",
+							"description": "活动描述   1:日常活动  2:官方活动",
+							"required": true
+						},
+						{
+							"name": "value",
+							"type": "Number",
+							"description": "活动value",
+							"required": true
+						},
+						{
+							"name": "list",
+							"type": "ActivityNameInfoDto[]",
+							"description": "名称列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "category",
+									"type": "String",
+									"description": "类目",
+									"required": true
+								},
+								{
+									"name": "name_list",
+									"type": "String[]",
+									"description": "活动名称的列表",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "请求返回码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

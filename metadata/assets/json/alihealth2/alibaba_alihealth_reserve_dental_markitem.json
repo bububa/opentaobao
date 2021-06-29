@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.alihealth.reserve.dental.markitem",
+	"apiChineseName": "标记商品是否可预约",
+	"description": "标记商品是否可预约",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "平台商品id",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "是否可预约，1.可预约 0.不可预约",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"name": "alitrip.btrip.invoice.setting.delete",
+	"apiChineseName": "发票删除",
+	"description": "发票删除",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenInvoiceDeleteRq",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "third_part_id",
+					"type": "String",
+					"description": "第三方发票id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

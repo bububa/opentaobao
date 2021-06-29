@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.tuike.offer.zhitoken",
+	"apiChineseName": "生成阿里口令",
+	"description": "推荐链接生产吱口令",
+	"requestParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "主标题"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "主要内容"
+		},
+		{
+			"name": "icon_link",
+			"type": "String",
+			"description": "图标链接，可以为空"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "SHORT/MEDIUM/LONG"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "start_time",
+			"type": "Number",
+			"description": "生效时间，可以为空"
+		},
+		{
+			"name": "left_btn_text",
+			"type": "String",
+			"description": "左按钮文案，可以为空，默认为\"取消\""
+		},
+		{
+			"name": "left_btn_link",
+			"type": "String",
+			"description": "左按钮链接，可以为空"
+		},
+		{
+			"name": "right_btn_text",
+			"type": "String",
+			"description": "右按钮文案，可以为空，默认为\"确定\""
+		},
+		{
+			"name": "right_btn_link",
+			"type": "String",
+			"description": "右按钮链接"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "headers",
+					"type": "Json",
+					"description": "headers",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "bizExtMap",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

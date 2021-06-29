@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.fundplatform.cardorders.info.query.by.cardno",
+	"apiChineseName": "通过卡号查询卡信息",
+	"description": "该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息",
+	"requestParams": [
+		{
+			"name": "parameters",
+			"type": "CardMakingInfoQueryRequest",
+			"description": "请求结构体",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页，从1开始",
+					"required": true
+				},
+				{
+					"name": "signture",
+					"type": "String",
+					"description": "签名 将参数进行拼接，拼接格式：“pageSize==currentPage==cardNo1=cardNo2=cardNo3”，再使用RSA2048进行加密后，填入密文。",
+					"required": true
+				},
+				{
+					"name": "card_nos",
+					"type": "String[]",
+					"description": "卡号列表",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CardMakingInfoQueryResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "card_making_infos",
+					"type": "Json[]",
+					"description": "卡信息列表",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,85 @@
+{
+	"name": "taobao.alitrip.travel.normalvisa.storeuser",
+	"apiChineseName": "代填办理人信息",
+	"description": "卖家代填买家填写办理人信息",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "normal_visa_user_unit_list",
+			"type": "NormalVisaUserUnit[]",
+			"description": "列表：签证人信息列表",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "last_name",
+					"type": "String",
+					"description": "姓",
+					"required": true
+				},
+				{
+					"name": "passport_number",
+					"type": "String",
+					"description": "护照号",
+					"required": true
+				},
+				{
+					"name": "first_name",
+					"type": "String",
+					"description": "名",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果：包含results数组代表成功",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Number[]",
+					"description": "结果：数字数组",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "结果数",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否包含下一个",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

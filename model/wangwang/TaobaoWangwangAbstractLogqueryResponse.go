@@ -19,7 +19,9 @@ type TaobaoWangwangAbstractLogqueryAPIResponse struct {
 
 type TaobaoWangwangAbstractLogqueryResponse struct {
     XMLName xml.Name `xml:"wangwang_abstract_logquery_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 0或-1，表示错误或正确，错误时有错误信息.<br/>为-1时就只有error_msg字段是有效的。
     

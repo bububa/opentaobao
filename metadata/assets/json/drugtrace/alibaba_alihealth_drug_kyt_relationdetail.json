@@ -1,0 +1,286 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.relationdetail",
+	"apiChineseName": "关联关系处理详情",
+	"description": "关联关系处理详情",
+	"requestParams": [
+		{
+			"name": "code_active_info_id",
+			"type": "String",
+			"description": "码激活文件上传信息标识",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "client_type",
+			"type": "String",
+			"description": "客户端ID【默认写2】",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "CodeRelationDetailDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code_relation_detail_list",
+							"type": "CodeRelationDetailListDo[]",
+							"description": "关系详情列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pkg_spec",
+									"type": "String",
+									"description": "包装规格= 数量+ 制剂单位/包装单位",
+									"required": true
+								},
+								{
+									"name": "batch_num",
+									"type": "String",
+									"description": "制剂数量",
+									"required": true
+								},
+								{
+									"name": "duty_man",
+									"type": "String",
+									"description": "生产负责人",
+									"required": true
+								},
+								{
+									"name": "active_count",
+									"type": "String",
+									"description": "激活数量(激活总量)",
+									"required": true
+								},
+								{
+									"name": "other_num",
+									"type": "String",
+									"description": "最大包装数量",
+									"required": true
+								},
+								{
+									"name": "small_num",
+									"type": "String",
+									"description": "小码数量",
+									"required": true
+								},
+								{
+									"name": "produce_line",
+									"type": "String",
+									"description": "生产线",
+									"required": true
+								},
+								{
+									"name": "produce_factory",
+									"type": "String",
+									"description": "生产车间",
+									"required": true
+								},
+								{
+									"name": "pkg_ratio",
+									"type": "String",
+									"description": "包装比例信息",
+									"required": true
+								},
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期",
+									"required": true
+								},
+								{
+									"name": "exprie_date",
+									"type": "String",
+									"description": "有效期至",
+									"required": true
+								},
+								{
+									"name": "produce_batch_no",
+									"type": "String",
+									"description": "生产批次号",
+									"required": true
+								},
+								{
+									"name": "drug_id",
+									"type": "String",
+									"description": "药品商品基本信息标识",
+									"required": true
+								},
+								{
+									"name": "code_active_info_id",
+									"type": "String",
+									"description": "关联关系文件信息标识",
+									"required": true
+								},
+								{
+									"name": "code_active_info_list_id",
+									"type": "String",
+									"description": "药品激活信息标识",
+									"required": true
+								},
+								{
+									"name": "pkg_unit_desc",
+									"type": "String",
+									"description": "包装单位",
+									"required": true
+								},
+								{
+									"name": "prepn_unit_desc",
+									"type": "String",
+									"description": "制剂单位",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "code_relation_detail_info",
+							"type": "CodeRelationDetailInfoDo",
+							"description": "文件信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "process_date",
+									"type": "String",
+									"description": "处理日期",
+									"required": true
+								},
+								{
+									"name": "relation_type",
+									"type": "String",
+									"description": "关联模式[2 后关联]",
+									"required": true
+								},
+								{
+									"name": "note",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								},
+								{
+									"name": "process_flag",
+									"type": "String",
+									"description": "处理状态[1.待处理  3.处理成功 4.处理失败 ]",
+									"required": true
+								},
+								{
+									"name": "user_cert",
+									"type": "String",
+									"description": "上传者证书号",
+									"required": true
+								},
+								{
+									"name": "oper_ic_name",
+									"type": "String",
+									"description": "操作者姓名",
+									"required": true
+								},
+								{
+									"name": "oper_ic_code",
+									"type": "String",
+									"description": "操作者编号",
+									"required": true
+								},
+								{
+									"name": "file_name",
+									"type": "String",
+									"description": "关联关系文件名",
+									"required": true
+								},
+								{
+									"name": "upload_flag",
+									"type": "String",
+									"description": "上传状态",
+									"required": true
+								},
+								{
+									"name": "crt_date",
+									"type": "String",
+									"description": "上传日期",
+									"required": true
+								},
+								{
+									"name": "active_date",
+									"type": "String",
+									"description": "建立日期",
+									"required": true
+								},
+								{
+									"name": "other_num",
+									"type": "String",
+									"description": "最大包装数量",
+									"required": true
+								},
+								{
+									"name": "small_num",
+									"type": "String",
+									"description": "小码数量",
+									"required": true
+								},
+								{
+									"name": "active_count",
+									"type": "String",
+									"description": "激活数量(激活总量)",
+									"required": true
+								},
+								{
+									"name": "active_method",
+									"type": "String",
+									"description": "激活方式",
+									"required": true
+								},
+								{
+									"name": "apply_seq_no",
+									"type": "String",
+									"description": "追溯码申请单",
+									"required": true
+								},
+								{
+									"name": "code_active_info_id",
+									"type": "String",
+									"description": "码激活文件上传信息标识",
+									"required": true
+								},
+								{
+									"name": "ent_id",
+									"type": "String",
+									"description": "企业id",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,341 @@
+{
+	"name": "alitrip.merchant.galaxy.hotel.list.search",
+	"apiChineseName": "星河-酒店列表页搜索",
+	"description": "星河产品=酒店列表页搜索",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "list_search_param",
+			"type": "ListSearchParam",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "price_max",
+					"type": "Number",
+					"description": "最高价格"
+				},
+				{
+					"name": "adult_num",
+					"type": "Number",
+					"description": "成人数",
+					"required": true
+				},
+				{
+					"name": "child_num",
+					"type": "Number",
+					"description": "儿童数",
+					"required": true
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "偏移量"
+				},
+				{
+					"name": "star",
+					"type": "String",
+					"description": "星级筛选"
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市编码，默认上海",
+					"required": true
+				},
+				{
+					"name": "member_level",
+					"type": "String",
+					"description": "会员等级"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "dir",
+					"type": "Number",
+					"description": "升降序 0降序 1升序"
+				},
+				{
+					"name": "children_ages",
+					"type": "String",
+					"description": "儿童年龄"
+				},
+				{
+					"name": "price_min",
+					"type": "Number",
+					"description": "最低价格"
+				},
+				{
+					"name": "check_in",
+					"type": "String",
+					"description": "入店时间",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "check_out",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "brand",
+					"type": "String",
+					"description": "品牌编码"
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "用户登录信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageableResponse",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "当前页的数量",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页的数量",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "total_page_num",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				},
+				{
+					"name": "contents",
+					"type": "HotelListSearchDto[]",
+					"description": "返回类型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名字",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址详情",
+							"required": true
+						},
+						{
+							"name": "position_type",
+							"type": "Number",
+							"description": "经纬度类型 0-高德 1-google",
+							"required": true
+						},
+						{
+							"name": "hotel_facility_list",
+							"type": "String[]",
+							"description": "酒店设施",
+							"required": true
+						},
+						{
+							"name": "star",
+							"type": "String",
+							"description": "酒店星级",
+							"required": true
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "标准库id",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "picture_url",
+							"type": "String",
+							"description": "图片头图",
+							"required": true
+						},
+						{
+							"name": "name_cn",
+							"type": "String",
+							"description": "酒店中文名",
+							"required": true
+						},
+						{
+							"name": "hotel_id",
+							"type": "String",
+							"description": "酒店id",
+							"required": true
+						},
+						{
+							"name": "domestic",
+							"type": "String",
+							"description": "国内外 0国内 1国外",
+							"required": true
+						},
+						{
+							"name": "fun_facility_list",
+							"type": "String[]",
+							"description": "娱乐设施",
+							"required": true
+						},
+						{
+							"name": "brand_url",
+							"type": "String",
+							"description": "品牌头图",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "酒店商品的最低价格",
+							"required": true
+						},
+						{
+							"name": "hotel_service_list",
+							"type": "String[]",
+							"description": "酒店服务",
+							"required": true
+						},
+						{
+							"name": "city_cn",
+							"type": "String",
+							"description": "城市中文名",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "酒店id",
+							"required": true
+						},
+						{
+							"name": "facility_list",
+							"type": "FacilityDto[]",
+							"description": "设施icon",
+							"required": true,
+							"subParams": [
+								{
+									"name": "icon",
+									"type": "String",
+									"description": "设施图片",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "设施名字",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "设施id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "country_cn",
+							"type": "String",
+							"description": "国家中文名",
+							"required": true
+						},
+						{
+							"name": "room_name_cn",
+							"type": "String",
+							"description": "最低价格房型名",
+							"required": true
+						},
+						{
+							"name": "full",
+							"type": "Boolean",
+							"description": "是否满房 0未满房1满房",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌code",
+							"required": true
+						},
+						{
+							"name": "hot",
+							"type": "Number",
+							"description": "是否热门",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

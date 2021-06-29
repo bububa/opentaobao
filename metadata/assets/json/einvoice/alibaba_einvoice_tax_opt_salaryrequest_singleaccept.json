@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.einvoice.tax.opt.salaryrequest.singleaccept",
+	"apiChineseName": "单明细发薪受理",
+	"description": "单明细发薪受理",
+	"requestParams": [
+		{
+			"name": "param_tax_optimization_single_detail_salary_payment_access_d_t_o",
+			"type": "TaxOptimizationSingleDetailSalaryPaymentAccessDto",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "apply_amount",
+					"type": "Number",
+					"description": "发薪金额",
+					"required": true
+				},
+				{
+					"name": "business_time",
+					"type": "Date",
+					"description": "业务提交时间",
+					"required": true
+				},
+				{
+					"name": "contractor_code",
+					"type": "String",
+					"description": "承包商编码",
+					"required": true
+				},
+				{
+					"name": "detail_id",
+					"type": "String",
+					"description": "发薪流水id",
+					"required": true
+				},
+				{
+					"name": "employer_code",
+					"type": "String",
+					"description": "业务方编码",
+					"required": true
+				},
+				{
+					"name": "identification_in_belonging_employer",
+					"type": "String",
+					"description": "用户在业务方的userid",
+					"required": true
+				},
+				{
+					"name": "salary_remark",
+					"type": "String",
+					"description": "业务自定义发薪备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaxOptimizationSingleDetailPaymentAccessResultDto",
+			"description": "返回结果类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "服务返回结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

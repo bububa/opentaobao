@@ -10,7 +10,7 @@ type PageDto struct {
 
     // 结果集
     
-    DataList   []T `json:"data_list,omitempty" xml:"data_list,omitempty"`
+    DataList   []AlitripAgentFlightSellModifyListT `json:"data_list,omitempty" xml:"data_list,omitempty"`
     
 
     // 成功标识

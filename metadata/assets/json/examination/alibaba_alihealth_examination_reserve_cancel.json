@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.cancel",
+	"apiChineseName": "体检机构对接_预约取消",
+	"description": "体检机构对接_体检取消",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户唯一码"
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约唯一标识"
+		},
+		{
+			"name": "reserve_date",
+			"type": "String",
+			"description": "预约时间"
+		},
+		{
+			"name": "package_code",
+			"type": "String",
+			"description": "体检套餐编码"
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "店铺ID"
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "体检机构预约唯一标识码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "200:取消成功，状态变为已取消;800:取消失败，状态变为取消预约中；700：取消失败状态从取消预约中变为已到检；600取消失败，状态从取消预约中变为已预约"
+		},
+		{
+			"name": "revision_info",
+			"type": "RevisionInfo",
+			"description": "返回状态码不是600或者700时，不需要返回此字段",
+			"subParams": [
+				{
+					"name": "reserve_date",
+					"type": "String",
+					"description": "返回状态码600和700 需要此值",
+					"required": true
+				},
+				{
+					"name": "uniq_reserve_code",
+					"type": "String",
+					"description": "返回状态码600和700 需要此值",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果描述"
+		}
+	]
+}

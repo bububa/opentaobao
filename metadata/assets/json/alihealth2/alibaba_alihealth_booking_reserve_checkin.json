@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.alihealth.booking.reserve.checkin",
+	"apiChineseName": "确认到店",
+	"description": "消费医疗统一预约平台，ISV 确认到店",
+	"requestParams": [
+		{
+			"name": "check_in",
+			"type": "IsvReserveRequest",
+			"description": "check_in",
+			"subParams": [
+				{
+					"name": "reserve_id",
+					"type": "Number",
+					"description": "预约单ID"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msg_info",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msg_code",
+					"required": true
+				}
+			]
+		}
+	]
+}

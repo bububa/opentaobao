@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.westcrm.user.consumer.get",
+	"apiChineseName": "获取指定用户的消费总额",
+	"description": "获取指定用户的消费总额",
+	"requestParams": [
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "ib_user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "time_begin",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "time_end",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "UserConsumerVo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "orders",
+							"type": "OrderVo[]",
+							"description": "订单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_pay",
+									"type": "String",
+									"description": "账单金额",
+									"required": true
+								},
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "账单id",
+									"required": true
+								},
+								{
+									"name": "order_time",
+									"type": "String",
+									"description": "消费时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_pay",
+							"type": "String",
+							"description": "消费总额",
+							"required": true
+						},
+						{
+							"name": "ib_user_id",
+							"type": "Number",
+							"description": "用户id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

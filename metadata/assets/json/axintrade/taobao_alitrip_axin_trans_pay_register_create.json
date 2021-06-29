@@ -1,0 +1,247 @@
+{
+	"name": "taobao.alitrip.axin.trans.pay.register.create",
+	"apiChineseName": "提交支付服务开通",
+	"description": "阿信供销平台-提交支付服务开通接口",
+	"requestParams": [
+		{
+			"name": "create_d_t_o",
+			"type": "AxinPayRegisterCreateDto",
+			"description": "提交支付服务开通接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "legal_cert_type",
+					"type": "String",
+					"description": "法人身份证",
+					"required": true
+				},
+				{
+					"name": "sites",
+					"type": "AxinPayRegisterSiteInfo[]",
+					"description": "站点信息",
+					"subParams": [
+						{
+							"name": "site_url",
+							"type": "String",
+							"description": "站点地址"
+						},
+						{
+							"name": "site_name",
+							"type": "String",
+							"description": "网站名称"
+						},
+						{
+							"name": "site_type",
+							"type": "String",
+							"description": "网站：01APP : 02服务窗:03公众号:04其他:05支付宝小程序:06"
+						}
+					]
+				},
+				{
+					"name": "alipay_logon_id",
+					"type": "String",
+					"description": "结算支付宝账号",
+					"required": true
+				},
+				{
+					"name": "service",
+					"type": "String[]",
+					"description": "商户使用服务",
+					"required": true
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人名字"
+				},
+				{
+					"name": "service_phone",
+					"type": "String",
+					"description": "客服电话"
+				},
+				{
+					"name": "business_address",
+					"type": "AxinPayRegisterAddress",
+					"description": "营业地址",
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "district_code",
+							"type": "String",
+							"description": "区县编码"
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市code"
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省code"
+						},
+						{
+							"name": "country_code",
+							"type": "String",
+							"description": "国家code"
+						}
+					]
+				},
+				{
+					"name": "legal_cert_front_image",
+					"type": "String",
+					"description": "法人身份证反面url",
+					"required": true
+				},
+				{
+					"name": "legal_cert_no",
+					"type": "String",
+					"description": "法人身份证件号",
+					"required": true
+				},
+				{
+					"name": "legal_name",
+					"type": "String",
+					"description": "法人名称",
+					"required": true
+				},
+				{
+					"name": "cert_image",
+					"type": "String",
+					"description": "商户证件图片url",
+					"required": true
+				},
+				{
+					"name": "cert_type",
+					"type": "String",
+					"description": "商户证件类型",
+					"required": true
+				},
+				{
+					"name": "cert_no",
+					"type": "String",
+					"description": "商户证件编号",
+					"required": true
+				},
+				{
+					"name": "mcc",
+					"type": "String",
+					"description": "商户类别码mcc"
+				},
+				{
+					"name": "merchant_type",
+					"type": "String",
+					"description": "商户类型",
+					"required": true
+				},
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "商户别名"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商户名称",
+					"required": true
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "商户编号",
+					"required": true
+				},
+				{
+					"name": "legal_cert_back_image",
+					"type": "String",
+					"description": "法人身份证反面url",
+					"required": true
+				},
+				{
+					"name": "qualifications",
+					"type": "AxinPayRegisterQualification[]",
+					"description": "行业资格证",
+					"subParams": [
+						{
+							"name": "image_id",
+							"type": "String",
+							"description": "行业资格证图片ID"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型"
+						}
+					]
+				},
+				{
+					"name": "binding_alipay_logon_id",
+					"type": "String",
+					"description": "支付宝签约账号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "描述信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "AxinPayRegisterCreateResDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_order_id",
+							"type": "String",
+							"description": "支付宝返回的申请单号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

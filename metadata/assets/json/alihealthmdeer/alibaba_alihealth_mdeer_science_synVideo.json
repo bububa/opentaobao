@@ -1,0 +1,101 @@
+{
+	"name": "alibaba.alihealth.mdeer.science.synVideo",
+	"apiChineseName": "视频同步【保存/更新】",
+	"description": "视频同步【保存/更新】",
+	"requestParams": [
+		{
+			"name": "syn_video_info",
+			"type": "SynVideoInfo",
+			"description": "视频信息实体",
+			"subParams": [
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "作者电话"
+				},
+				{
+					"name": "author_introduction",
+					"type": "String",
+					"description": "作者简介"
+				},
+				{
+					"name": "author_department",
+					"type": "String",
+					"description": "作者科室"
+				},
+				{
+					"name": "author_level",
+					"type": "String",
+					"description": "作者级别"
+				},
+				{
+					"name": "hospital_level",
+					"type": "String",
+					"description": "医院级别"
+				},
+				{
+					"name": "hospital_name",
+					"type": "String",
+					"description": "医院名称"
+				},
+				{
+					"name": "portrait_url",
+					"type": "String",
+					"description": "作者头像"
+				},
+				{
+					"name": "author_name",
+					"type": "String",
+					"description": "作者名称"
+				},
+				{
+					"name": "original_url",
+					"type": "String",
+					"description": "视频原链接"
+				},
+				{
+					"name": "video_introduction",
+					"type": "String",
+					"description": "视频简介"
+				},
+				{
+					"name": "video_file_url",
+					"type": "String",
+					"description": "视频文件地址"
+				},
+				{
+					"name": "preview_url",
+					"type": "String",
+					"description": "视频预览图"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "视频标题"
+				},
+				{
+					"name": "video_id",
+					"type": "Number",
+					"description": "视频ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "调用结果描述"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用结果code"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

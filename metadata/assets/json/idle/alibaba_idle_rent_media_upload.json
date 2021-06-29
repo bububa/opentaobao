@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.idle.rent.media.upload",
+	"apiChineseName": "闲鱼多媒体上传接口",
+	"description": "上传多媒体信息，包括图片、视频（暂不支持）",
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "byte[]",
+			"description": "多媒体字节数组",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "文件名",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "0-表示图片，1-表示视频（暂不支持）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "响应数据",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "媒体文件id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

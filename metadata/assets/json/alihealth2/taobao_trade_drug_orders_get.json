@@ -1,0 +1,238 @@
+{
+	"name": "taobao.trade.drug.orders.get",
+	"apiChineseName": "阿里健康获取某一药店全部订单",
+	"description": "阿里健康获取某一药店全部订单",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "外卖分店ID",
+			"required": true
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键字"
+		},
+		{
+			"name": "is_all_shop",
+			"type": "Boolean",
+			"description": "true-查询仅按商家维度  false-查询按商家下所属店铺维度",
+			"required": true
+		},
+		{
+			"name": "is_all_order",
+			"type": "Boolean",
+			"description": "true 仅有支付宝订单,false 包括所有类型订单(货到付款,支付券等)",
+			"required": true
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "（必填字段）订单状态 待确认订单2 , 退款中订单4 , 已发货12 关闭20 交易成功21"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "返回记录数，超过20按20条返回数据",
+			"required": true,
+			"maxValue": 20,
+			"minValue": 1
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"maxLength": 200
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "查询到的订单列表对象",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "Result[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "start_delivery_time",
+							"type": "String",
+							"description": "送达时间要求_起始",
+							"required": true
+						},
+						{
+							"name": "user_address",
+							"type": "UserAddress",
+							"description": "用户地址对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "联系电话",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "送货地址",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "买家姓名",
+									"required": true
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "手机号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "goods_list",
+							"type": "OrderGoods[]",
+							"description": "下单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "real_price",
+									"type": "String",
+									"description": "外卖商品实际购买价格",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "外卖商品购买数量",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "外卖商品名称",
+									"required": true
+								},
+								{
+									"name": "goods_code",
+									"type": "String",
+									"description": "外卖商品外部ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "分店ID",
+							"required": true
+						},
+						{
+							"name": "pay_account",
+							"type": "String",
+							"description": "买家支付宝账号",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "送货地址",
+							"required": true
+						},
+						{
+							"name": "delivery_pay",
+							"type": "String",
+							"description": "配送费",
+							"required": true
+						},
+						{
+							"name": "end_delivery_time",
+							"type": "String",
+							"description": "送达时间要求_结束",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "买家ID",
+							"required": true
+						},
+						{
+							"name": "total_pay",
+							"type": "String",
+							"description": "总支付金额",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "store_contact_phone",
+							"type": "String",
+							"description": "店铺联系电话",
+							"required": true
+						},
+						{
+							"name": "note",
+							"type": "String",
+							"description": "用户下单时的备注信息",
+							"required": true
+						},
+						{
+							"name": "from",
+							"type": "Number",
+							"description": "用户下单方式(PC/APP)",
+							"required": true
+						},
+						{
+							"name": "alipay_stream_id",
+							"type": "String",
+							"description": "支付宝流水号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_size",
+					"type": "Number",
+					"description": "返回记录数",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录数",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "taobao.alitrip.buyer.get",
+	"apiChineseName": "敏感信息查询",
+	"description": "针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。",
+	"requestParams": [
+		{
+			"name": "request_axb",
+			"type": "RequestAxbDo",
+			"description": "敏感信息查询请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "req_content",
+					"type": "Number",
+					"description": "请求内容：0手机号",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型：0国内机票,1国际机票",
+					"required": true
+				},
+				{
+					"name": "contact_no",
+					"type": "String",
+					"description": "商家联系号码,多个号码以“,”分割；传证件号时为乘机人姓名",
+					"required": true
+				},
+				{
+					"name": "purpose",
+					"type": "String",
+					"description": "用途",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "请求内容，如阿里小号"
+		},
+		{
+			"name": "expires",
+			"type": "Date",
+			"description": "有效期"
+		}
+	]
+}

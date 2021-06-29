@@ -1,0 +1,47 @@
+{
+	"name": "alitrip.btrip.open.cost.center.transfer",
+	"apiChineseName": "商旅成本中心转换为外部成本中心",
+	"description": "商旅成本中心转换为外部成本中心",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterTransferRq",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id"
+				},
+				{
+					"name": "cost_center_id",
+					"type": "Number",
+					"description": "商旅成本中心id"
+				},
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

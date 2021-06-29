@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.mydata.overview.date.get",
+	"apiChineseName": "我的效果-获取数据周期",
+	"description": "获取数据管家我的效果API可以使用的数据周期",
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "DateRange []",
+			"description": "我的效果可选数据周期列表",
+			"subParams": [
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "数据周期结束日期（含）",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "数据周期开始日期（含）",
+					"required": true
+				}
+			]
+		}
+	]
+}

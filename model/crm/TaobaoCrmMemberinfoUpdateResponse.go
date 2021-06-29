@@ -19,7 +19,9 @@ type TaobaoCrmMemberinfoUpdateAPIResponse struct {
 
 type TaobaoCrmMemberinfoUpdateResponse struct {
     XMLName xml.Name `xml:"crm_memberinfo_update_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 会员信息修改是否成功
     

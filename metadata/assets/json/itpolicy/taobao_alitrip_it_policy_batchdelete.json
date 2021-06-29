@@ -1,0 +1,50 @@
+{
+	"name": "taobao.alitrip.it.policy.batchdelete",
+	"apiChineseName": "【国际机票销售规则】批量删除",
+	"description": "批量删除销售规则，单次删除最大5万，大于5万时候提示失败，需要缩小删除条件。此接口同步返回任务id，异步执行操作。每个接入方最多同时只能有10个处理中的任务，超过后直接返回失败。",
+	"requestParams": [
+		{
+			"name": "airline",
+			"type": "String",
+			"description": "航司二字码，完整匹配"
+		},
+		{
+			"name": "arr_city",
+			"type": "String",
+			"description": "到达，，完整匹配"
+		},
+		{
+			"name": "cabin",
+			"type": "String",
+			"description": "舱位，，完整匹配"
+		},
+		{
+			"name": "dep_city",
+			"type": "String",
+			"description": "出发，，完整匹配"
+		},
+		{
+			"name": "policy_id",
+			"type": "String",
+			"description": "产品id，，完整匹配"
+		},
+		{
+			"name": "status_list",
+			"type": "Number[]",
+			"description": "0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id"
+		},
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	]
+}

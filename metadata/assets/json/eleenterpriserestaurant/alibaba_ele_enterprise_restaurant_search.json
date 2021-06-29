@@ -1,0 +1,286 @@
+{
+	"name": "alibaba.ele.enterprise.restaurant.search",
+	"apiChineseName": "餐厅列表",
+	"description": "餐厅列表",
+	"requestParams": [
+		{
+			"name": "geo",
+			"type": "String",
+			"description": "longitude和latitude用英文逗号分隔",
+			"required": true
+		},
+		{
+			"name": "rank_id",
+			"type": "String",
+			"description": "首次查询无需传入，后续需要传入前次返回"
+		},
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "查询起始位置，默认为0。如果传的是10，那么餐厅会从第11个开始返回"
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "查询数量，默认是10，最大50"
+		},
+		{
+			"name": "cost_to",
+			"type": "Number",
+			"description": "人均消费金额上限，需要高于costFrom，不传表示不限"
+		},
+		{
+			"name": "cost_from",
+			"type": "Number",
+			"description": "人均消费金额下限，最低为0，不传表示不限"
+		},
+		{
+			"name": "insurance",
+			"type": "Number",
+			"description": "是否支持食安保（0-不限，1-支持食安保）不传表示不限"
+		},
+		{
+			"name": "invoice",
+			"type": "Number",
+			"description": "是否可开发票（0-不限，1-可开发票）不传表示不限"
+		},
+		{
+			"name": "is_premium",
+			"type": "Number",
+			"description": "是否品牌商家（0-不限，1-品牌商家）不传表示不限"
+		},
+		{
+			"name": "new_restaurant",
+			"type": "Number",
+			"description": "是否新店（0-不限，1-新店）不传表示不限"
+		},
+		{
+			"name": "delivery_mode",
+			"type": "Number",
+			"description": "配送方式（0-不限， 1-蜂鸟专送）不传表示不限"
+		},
+		{
+			"name": "order_by",
+			"type": "Number",
+			"description": "排序选项（1-默认排序（热门）， 2-评价星级由高到低， 3-起送价由低到高， 4-销量由高到低， 5-送餐速度由快到慢， 6-餐厅距离由近到远， 7-订单量由高到低）"
+		},
+		{
+			"name": "category_ids",
+			"type": "Number[]",
+			"description": "餐厅分类ids",
+			"maxListSize": 20
+		},
+		{
+			"name": "is_bookable",
+			"type": "String",
+			"description": "是否筛选支持预定 0:不需要 1:需要（不传该字段则不筛选）"
+		},
+		{
+			"name": "cross_day_booking",
+			"type": "String",
+			"description": "是否支持跨天预定 1:需要（不传该字段则不筛选）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_data",
+			"type": "EnterpriseData",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "rank_id",
+					"type": "String",
+					"description": "排序id",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "DataList[]",
+					"description": "数据列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "distance",
+							"type": "String",
+							"description": "距离（米）",
+							"required": true
+						},
+						{
+							"name": "is_insurance",
+							"type": "Number",
+							"description": "是否支持食安保：0，否；1，是",
+							"required": true
+						},
+						{
+							"name": "rating",
+							"type": "String",
+							"description": "店铺综合评分",
+							"required": true
+						},
+						{
+							"name": "only_restaurant_code",
+							"type": "String",
+							"description": "餐厅唯一码",
+							"required": true
+						},
+						{
+							"name": "is_new",
+							"type": "Number",
+							"description": "是否新店：0,否；1,是",
+							"required": true
+						},
+						{
+							"name": "promotion_info",
+							"type": "String",
+							"description": "促销信息或者商家公告",
+							"required": true
+						},
+						{
+							"name": "recent_order_num",
+							"type": "Number",
+							"description": "最近一个月订单量",
+							"required": true
+						},
+						{
+							"name": "agent_fee",
+							"type": "String",
+							"description": "配送费",
+							"required": true
+						},
+						{
+							"name": "deliver_spent",
+							"type": "Number",
+							"description": "平均送餐时间",
+							"required": true
+						},
+						{
+							"name": "is_open",
+							"type": "Number",
+							"description": "0.关店 1.营业",
+							"required": true
+						},
+						{
+							"name": "is_dist_rst",
+							"type": "Number",
+							"description": "是否蜂鸟专送餐厅",
+							"required": true
+						},
+						{
+							"name": "restaurant_name",
+							"type": "String",
+							"description": "餐厅名称",
+							"required": true
+						},
+						{
+							"name": "activities",
+							"type": "Activite[]",
+							"description": "活动, 参考餐厅活动",
+							"required": true,
+							"subParams": [
+								{
+									"name": "detail_type",
+									"type": "Number",
+									"description": "见附录【活动信息detail_type值】",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "活动名称",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "餐厅描述",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "活动ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "image_url",
+							"type": "String",
+							"description": "餐厅",
+							"required": true
+						},
+						{
+							"name": "deliver_amount",
+							"type": "String",
+							"description": "起送价",
+							"required": true
+						},
+						{
+							"name": "erestaurant_id",
+							"type": "String",
+							"description": "餐厅ID",
+							"required": true
+						},
+						{
+							"name": "invoice",
+							"type": "Number",
+							"description": "是否支持开发票: 0，否;1, 是",
+							"required": true
+						},
+						{
+							"name": "is_premium",
+							"type": "Number",
+							"description": "是否品牌店：0，否；1，是",
+							"required": true
+						},
+						{
+							"name": "average_cost",
+							"type": "String",
+							"description": "人均消费金额（元）",
+							"required": true
+						},
+						{
+							"name": "is_bookable",
+							"type": "Number",
+							"description": "是否支持预定. 0 不支持预定, 1 支持预定",
+							"required": true
+						},
+						{
+							"name": "serial_number",
+							"type": "String",
+							"description": "水印序列号",
+							"required": true
+						},
+						{
+							"name": "total_status",
+							"type": "Number",
+							"description": "餐厅整体营业状态：1 餐厅营业中，2餐厅关闭，3 餐厅网路不稳定，4 餐厅休息中，5 直接说预定，6 只接受电话预定，7 餐厅休假中",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否有下页",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

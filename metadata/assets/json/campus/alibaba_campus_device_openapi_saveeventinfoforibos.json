@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.campus.device.openapi.saveeventinfoforibos",
+	"apiChineseName": "saveeventinfoforibos",
+	"description": "IBos的事件信息上报与反馈的处理接口",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "EventInfoApiDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "rule_instance_code",
+					"type": "String",
+					"description": "规则实例code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "IBos报警事件状态上报",
+					"required": true
+				},
+				{
+					"name": "event_time",
+					"type": "Date",
+					"description": "事件时间",
+					"required": true
+				},
+				{
+					"name": "event_type_code",
+					"type": "String",
+					"description": "事件类型code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "request_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "request_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

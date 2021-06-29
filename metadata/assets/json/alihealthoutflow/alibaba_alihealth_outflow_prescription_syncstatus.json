@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.alihealth.outflow.prescription.syncstatus",
+	"apiChineseName": "处方外流-处方状态同步",
+	"description": "阿里健康-处方外流-对外提供同步处方状态功能",
+	"requestParams": [
+		{
+			"name": "sync_status_request",
+			"type": "SyncPrescriptionStatusRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "阿里将康处方号(非空)"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "处方状态"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

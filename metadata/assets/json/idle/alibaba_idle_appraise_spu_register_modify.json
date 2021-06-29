@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.idle.appraise.spu.register.modify",
+	"apiChineseName": "验货宝服务商spu挂载",
+	"description": "闲鱼接收回收商spu模板挂载信息",
+	"requestParams": [
+		{
+			"name": "idle_appraise_spu_register4_top_dto",
+			"type": "IdleAppraiseSpuRegister4TopDTO",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "action_type",
+					"type": "Number",
+					"description": "操作类型，0新增，-1删除。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。",
+					"required": true
+				},
+				{
+					"name": "appraise_scene",
+					"type": "Number",
+					"description": "验货类型，1新品，2二手",
+					"required": true
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "brandId"
+				},
+				{
+					"name": "cate_id",
+					"type": "String",
+					"description": "类目Id",
+					"required": true
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "spuId"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否挂载成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Number",
+					"description": "spu挂载信息后台状态，0在线，-1删除，1测试中。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。",
+					"required": true
+				}
+			]
+		}
+	]
+}

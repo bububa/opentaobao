@@ -1,0 +1,120 @@
+{
+	"name": "taobao.place.store.extend.update",
+	"apiChineseName": "商户门店拓展信息更新接口",
+	"description": "更新商户门店拓展信息（tags、attribute、bizAtrribute）更新接口",
+	"requestParams": [
+		{
+			"name": "param_update_store_extend_d_t_o",
+			"type": "UpdateStoreExtendDto",
+			"description": "更新数据",
+			"subParams": [
+				{
+					"name": "add_tags",
+					"type": "Number[]",
+					"description": "需要添加的TAGS"
+				},
+				{
+					"name": "attribute_key",
+					"type": "String",
+					"description": "需要修改的attribute对应的key"
+				},
+				{
+					"name": "attribute_value",
+					"type": "String",
+					"description": "需要修改的attribute对应的value"
+				},
+				{
+					"name": "biz_attribute_key",
+					"type": "String",
+					"description": "需要修改的bizAttribute对应的key"
+				},
+				{
+					"name": "biz_attribute_value",
+					"type": "String",
+					"description": "需要修改的bizAttribute对应的value"
+				},
+				{
+					"name": "remove_tags",
+					"type": "Number[]",
+					"description": "需要删除的TAGS"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "failured",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "full_error_msg",
+					"type": "String",
+					"description": "完整错误信息",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "Models",
+					"description": "模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "是否为空",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pri_key",
+					"type": "String",
+					"description": "关键主键",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

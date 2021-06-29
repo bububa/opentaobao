@@ -1,0 +1,63 @@
+{
+	"name": "taobao.place.storerelatesub.add",
+	"apiChineseName": "门店和子门店关系新增",
+	"description": "门店和子门店关系新增",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店Id"
+		},
+		{
+			"name": "sub_store_ids",
+			"type": "Number[]",
+			"description": "子门店Id",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "other",
+					"type": "Json",
+					"description": "其他信息",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "Json[]",
+					"description": "结果列表",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.pictures.dengta.ims.douyin.account.changed",
+	"apiChineseName": "接收发生变化的抖音帐号",
+	"description": "接收发生变化的抖音帐号",
+	"requestParams": [
+		{
+			"name": "account_ids",
+			"type": "String",
+			"description": "天下秀账号ID列表，多个用逗号分隔",
+			"required": true
+		},
+		{
+			"name": "account_type",
+			"type": "Number",
+			"description": "3=抖音，1-微博 2-微信",
+			"required": true
+		},
+		{
+			"name": "change_type",
+			"type": "Number",
+			"description": "1  下架 2  账号变更（包括账号上架）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "GeneralResult",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求标识",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

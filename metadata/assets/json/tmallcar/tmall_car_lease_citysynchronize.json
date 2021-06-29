@@ -1,0 +1,97 @@
+{
+	"name": "tmall.car.lease.citysynchronize",
+	"apiChineseName": "天猫开新车租后分期城市信息同步",
+	"description": "天猫开新车租后分期城市信息同步",
+	"requestParams": [
+		{
+			"name": "param_area_dto",
+			"type": "AreaDto",
+			"description": "地址信息",
+			"subParams": [
+				{
+					"name": "company_adress",
+					"type": "String",
+					"description": "公司详细地址",
+					"required": true
+				},
+				{
+					"name": "company_email",
+					"type": "String",
+					"description": "公司email",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称",
+					"required": true
+				},
+				{
+					"name": "company_phone",
+					"type": "String",
+					"description": "电话"
+				},
+				{
+					"name": "division_id",
+					"type": "Number",
+					"description": "行政区域地址,菜鸟地址库2级或者3级地址"
+				},
+				{
+					"name": "division_name",
+					"type": "String",
+					"description": "行政区名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态:1正常,2删除"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultVo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "costTime",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "gmtCurrentTime",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

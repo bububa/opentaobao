@@ -1,0 +1,38 @@
+{
+	"name": "yunos.osupdate.deviceservice.searchmodels",
+	"apiChineseName": "根据关键词检索设备型号",
+	"description": "根据关键词检索设备型号",
+	"requestParams": [
+		{
+			"name": "parent_id",
+			"type": "Number",
+			"description": "设备父ID"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "关键词"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model_list",
+			"type": "DeviceEntryDTO []",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				}
+			]
+		}
+	]
+}

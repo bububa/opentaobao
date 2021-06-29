@@ -19,7 +19,9 @@ type TaobaoItemSkuPriceUpdateAPIResponse struct {
 
 type TaobaoItemSkuPriceUpdateResponse struct {
     XMLName xml.Name `xml:"item_sku_price_update_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品SKU信息（只包含num_iid和modified）
     

@@ -1,0 +1,126 @@
+{
+	"name": "alibaba.alihealth.drug.code.kyt.yq.querycode",
+	"apiChineseName": "查询追溯码对应的药品信息（疫情）",
+	"description": "通过追溯码码得到 药品名称、包装规格、剂型、剂型规格”、有效期至等信息。",
+	"requestParams": [
+		{
+			"name": "code_list",
+			"type": "String[]",
+			"description": "追溯码",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "terminal_name",
+			"type": "String",
+			"description": "调用零售药店名称",
+			"required": true
+		},
+		{
+			"name": "bureau_id",
+			"type": "String",
+			"description": "门店所属的行政区域ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "CodeDrugInfoDTO[]",
+					"description": "内层大对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "追溯码",
+							"required": true
+						},
+						{
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDto",
+							"description": "码生产信息对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "produce_info_list",
+									"type": "ProduceInfoList[]",
+									"description": "生产信息列表对象",
+									"required": true,
+									"subParams": [
+										{
+											"name": "expire_date",
+											"type": "String",
+											"description": "有效期至",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDto",
+							"description": "药品基本信息对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pkg_spec_crit",
+									"type": "String",
+									"description": "包装规格",
+									"required": true
+								},
+								{
+									"name": "physic_name",
+									"type": "String",
+									"description": "药品名称",
+									"required": true
+								},
+								{
+									"name": "prepn_type_desc",
+									"type": "String",
+									"description": "制剂规格描述",
+									"required": true
+								},
+								{
+									"name": "prepn_spec",
+									"type": "String",
+									"description": "制剂规格",
+									"required": true
+								},
+								{
+									"name": "exprie",
+									"type": "String",
+									"description": "有效期",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "接口调用标识：true/false",
+					"required": true
+				}
+			]
+		}
+	]
+}

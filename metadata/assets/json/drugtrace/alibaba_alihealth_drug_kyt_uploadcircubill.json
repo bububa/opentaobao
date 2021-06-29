@@ -1,0 +1,185 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.uploadcircubill",
+	"apiChineseName": "生产批发单据上传",
+	"description": "生产批发单据上传（非零售企业使用），包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。",
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号【同一个企业不能上传相同单据号】",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据时间（扫码时间）",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "Number",
+			"description": "单据类型【102代表采购入库,201代表销售出库，其它单据类型详见文档】",
+			"required": true
+		},
+		{
+			"name": "physic_type",
+			"type": "Number",
+			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药",
+			"required": true
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "货主企业（单据的所有者，上传人）【注意：该入参是ref_ent_id，不是ent_id】",
+			"required": true
+		},
+		{
+			"name": "agent_ref_user_id",
+			"type": "String",
+			"description": "第三方物流代理企业【注意：该入参是ref_ent_id，不是ent_id】，该字段兼容之前接口逻辑，后期将不允许使用，不要填值。"
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货企业【注意：该入参是ent_id,并不是ref_ent_id】",
+			"required": true
+		},
+		{
+			"name": "to_user_id",
+			"type": "String",
+			"description": "收货企业【注意：该入参是ent_id,并不是ref_ent_id】",
+			"required": true
+		},
+		{
+			"name": "dest_user_id",
+			"type": "String",
+			"description": "直调企业【注意：该入参是ent_id,并不是ref_ent_id】"
+		},
+		{
+			"name": "oper_ic_code",
+			"type": "String",
+			"description": "操作人标识（appkey编号）",
+			"required": true
+		},
+		{
+			"name": "oper_ic_name",
+			"type": "String",
+			"description": "单据提交者姓名"
+		},
+		{
+			"name": "file_content",
+			"type": "String",
+			"description": "单据文件体【bas64字符串】，看对接文档中的代码示例，示例中有相应说明。",
+			"required": true
+		},
+		{
+			"name": "upload_file_name",
+			"type": "String",
+			"description": "单据名称",
+			"required": true
+		},
+		{
+			"name": "client_type",
+			"type": "String",
+			"description": "客户端类型【暂定都写2】",
+			"required": true
+		},
+		{
+			"name": "qu_receivable",
+			"type": "Number",
+			"description": "（协同平台数据合规）应收货总数量"
+		},
+		{
+			"name": "xt_is_check",
+			"type": "String",
+			"description": "（协同平台数据合规）是否验证，0：未通过验证，1：已验证"
+		},
+		{
+			"name": "xt_check_code",
+			"type": "String",
+			"description": "（协同平台数据合规）未验证通过原因【验证未通过时填写】"
+		},
+		{
+			"name": "xt_check_code_desc",
+			"type": "String",
+			"description": "（协同平台数据合规）未验证通过原因描述【验证未通过时填写】"
+		},
+		{
+			"name": "drug_list_json",
+			"type": "String",
+			"description": "（协同平台数据合规）药品列表Json：\"codeCount\":         药品数量 \"commDrugId\":     国家药品唯一标识 \"exprieDate\":         生产日期 \"physicInfo\":          药品信息 \"pkgSpec\":           包状规格 \"prepnCount\":       制剂数量 \"produceBatchNo\":生产批次 \"produceDate\":      生产日期"
+		},
+		{
+			"name": "ass_ref_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）单据委托企业refEntId"
+		},
+		{
+			"name": "dis_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】"
+		},
+		{
+			"name": "dis_ref_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】"
+		},
+		{
+			"name": "to_person",
+			"type": "String",
+			"description": "（协同平台数据合规）收货人【必选】"
+		},
+		{
+			"name": "from_person",
+			"type": "String",
+			"description": "（协同平台数据合规）发货人【必选】"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "（协同平台数据合规）订货单编号【可选】"
+		},
+		{
+			"name": "from_bill_code",
+			"type": "String",
+			"description": "（协同平台数据合规）发货单编号【必选】"
+		},
+		{
+			"name": "to_address",
+			"type": "String",
+			"description": "（协同平台数据合规）收货地址【必选】"
+		},
+		{
+			"name": "from_address",
+			"type": "String",
+			"description": "（协同平台数据合规）发货地址【必选】"
+		},
+		{
+			"name": "ass_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）单据委托企业entId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 ,false失败)"
+		}
+	]
+}

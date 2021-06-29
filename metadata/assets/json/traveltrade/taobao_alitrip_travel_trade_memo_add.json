@@ -1,0 +1,43 @@
+{
+	"name": "taobao.alitrip.travel.trade.memo.add",
+	"apiChineseName": "添加一笔交易备注",
+	"description": "对一笔交易添加备注",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易ID",
+			"required": true
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "交易备注。最大长度: 1000个字节",
+			"required": true
+		},
+		{
+			"name": "flag",
+			"type": "Number",
+			"description": "交易备注旗帜，可选值为：0(灰色), 1(红色), 2(黄色), 3(绿色), 4(蓝色), 5(粉红色)，默认值为0"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "memo_add",
+			"type": "MemoCreate",
+			"description": "交易添加备注返回值",
+			"subParams": [
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "备注添加时间"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易ID"
+				}
+			]
+		}
+	]
+}

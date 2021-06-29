@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.ailab.user.profile.get",
+	"apiChineseName": "查询用户信息",
+	"description": "提供天猫精灵用户头像、昵称的查询接口，供本田车载天猫精灵使用",
+	"requestParams": [
+		{
+			"name": "open_uid",
+			"type": "String",
+			"description": "open uid",
+			"required": true
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "client id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口model",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "BasicUserInfo",
+					"description": "数据model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "avatar_url",
+							"type": "String",
+							"description": "头像 url",
+							"required": true
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "Number",
+					"description": "200 成功，其他 失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

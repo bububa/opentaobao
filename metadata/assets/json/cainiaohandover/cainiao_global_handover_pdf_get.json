@@ -1,0 +1,75 @@
+{
+	"name": "cainiao.global.handover.pdf.get",
+	"apiChineseName": "获取面单PDF文件数据",
+	"description": "返回指定大包面单的PDF文件数据",
+	"requestParams": [
+		{
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "top_user_key",
+					"type": "String",
+					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
+				}
+			]
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
+			"required": true
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言"
+		},
+		{
+			"name": "handover_content_id",
+			"type": "Number",
+			"description": "大包编号id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "打印数据类型，1：面单、4：发货标签、512：交接清单"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求处理是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "通过国际订单号获取的body内容用base64转码后生成运单标签的pdf字节流。",
+					"required": true
+				}
+			]
+		}
+	]
+}

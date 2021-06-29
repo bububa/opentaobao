@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.mos.goods.inventory.getinventorys",
+	"apiChineseName": "可售库存查询",
+	"description": "查询商品的可售、在库和占库数量",
+	"requestParams": [
+		{
+			"name": "param_virtual_inventory_query_dto",
+			"type": "VirtualInventoryQueryDto",
+			"description": "查询对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "银泰专柜号"
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "外部专柜号（在供应商系统中的专柜号，两个专柜号必须至少传一个，如果都传一counter_id为准）"
+				},
+				{
+					"name": "out_ids",
+					"type": "String[]",
+					"description": "外部商品id（最大列表长度：50）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "datas",
+			"type": "VirtualInventoryDto []",
+			"description": "返回的数据",
+			"subParams": [
+				{
+					"name": "available_quantity",
+					"type": "String",
+					"description": "可售库存数量",
+					"required": true
+				},
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "银泰专柜号",
+					"required": true
+				},
+				{
+					"name": "occupy_qty",
+					"type": "String",
+					"description": "占库数量",
+					"required": true
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "外部专柜号",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "外部商品id",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "在库数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

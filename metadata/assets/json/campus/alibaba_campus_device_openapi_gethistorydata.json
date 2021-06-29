@@ -1,0 +1,191 @@
+{
+	"name": "alibaba.campus.device.openapi.gethistorydata",
+	"apiChineseName": "查询设备历史数据",
+	"description": "查询历史数据的接口",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "query",
+			"type": "DeviceDataApiQuery",
+			"description": "历史数据查询对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页大小(最大500)",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "启始时间(防止接口超时,建议不要传入时间跨度过大,如查询一个月内的数据)",
+					"required": true
+				},
+				{
+					"name": "property_code",
+					"type": "String",
+					"description": "参数点code(详细请查阅‘平台技术’下‘设备详细信息开发文档’。)",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "终止时间",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "设备id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "历史数据返回信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "分页大小",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "DeviceDataApiDto[]",
+							"description": "历史数据集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "device_id",
+									"type": "String",
+									"description": "设备id",
+									"required": true
+								},
+								{
+									"name": "device_code",
+									"type": "String",
+									"description": "设备code",
+									"required": true
+								},
+								{
+									"name": "property_code",
+									"type": "String",
+									"description": "参数点code",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "历史数据值",
+									"required": true
+								},
+								{
+									"name": "timestamp",
+									"type": "Number",
+									"description": "时间戳",
+									"required": true
+								},
+								{
+									"name": "value_type",
+									"type": "Number",
+									"description": "值类型id",
+									"required": true
+								},
+								{
+									"name": "value_type_name",
+									"type": "String",
+									"description": "值类型名称",
+									"required": true
+								},
+								{
+									"name": "unit_id",
+									"type": "Number",
+									"description": "单位id",
+									"required": true
+								},
+								{
+									"name": "unit_code",
+									"type": "String",
+									"description": "单位编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

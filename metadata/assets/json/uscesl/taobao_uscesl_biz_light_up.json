@@ -1,0 +1,76 @@
+{
+	"name": "taobao.uscesl.biz.light.up",
+	"apiChineseName": "价签LED等点亮",
+	"description": "价签LED等点亮",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家编号",
+			"required": true
+		},
+		{
+			"name": "esl_bar_code",
+			"type": "String",
+			"description": "价签条码",
+			"required": true
+		},
+		{
+			"name": "led_color",
+			"type": "String",
+			"description": "亮灯颜色，绿：值为2；红：值为4",
+			"required": true
+		},
+		{
+			"name": "light_up_time",
+			"type": "Number",
+			"description": "亮灯时长，单位：秒，最大长度3600秒",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "返回执行码，\u003e=0表示成功",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "target",
+					"type": "String",
+					"description": "执行结果true或者false",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "String",
+					"description": "true或者false",
+					"required": true
+				}
+			]
+		}
+	]
+}

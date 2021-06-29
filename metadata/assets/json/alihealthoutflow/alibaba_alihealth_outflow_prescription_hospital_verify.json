@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.alihealth.outflow.prescription.hospital.verify",
+	"apiChineseName": "处方同步至医院返回校验结果",
+	"description": "处方同步至医院返回校验结果",
+	"requestParams": [
+		{
+			"name": "update_request",
+			"type": "PrescriptionOutflowUpdateRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方号(非空)"
+				},
+				{
+					"name": "sync_his_result",
+					"type": "Boolean",
+					"description": "同步his结果(非空)"
+				},
+				{
+					"name": "sync_his_err_msg",
+					"type": "String",
+					"description": "同步his错误信息(可空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

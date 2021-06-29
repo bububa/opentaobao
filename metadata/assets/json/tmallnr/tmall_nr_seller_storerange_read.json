@@ -1,0 +1,100 @@
+{
+	"name": "tmall.nr.seller.storerange.read",
+	"apiChineseName": "门店服务范围读取",
+	"description": "读取卖家所属门店的服务范围",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "给ISV用sellerid，ISV可能对接其他seller，有可能和登录不是同一个sellerid",
+			"required": true
+		},
+		{
+			"name": "biz_identity",
+			"type": "String",
+			"description": "业务身份，此api非必填"
+		},
+		{
+			"name": "store_ids",
+			"type": "Number[]",
+			"description": "门店id",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "NrResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "result_datas",
+					"type": "ResultData[]",
+					"description": "系统自动生成",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id",
+							"required": true
+						},
+						{
+							"name": "ranges",
+							"type": "NrServiceRangeResponseDto[]",
+							"description": "服务范围，支持多服务范围返回",
+							"required": true,
+							"subParams": [
+								{
+									"name": "points",
+									"type": "Points[]",
+									"description": "围栏数据",
+									"required": true,
+									"subParams": [
+										{
+											"name": "lat",
+											"type": "String",
+											"description": "维度",
+											"required": true
+										},
+										{
+											"name": "lng",
+											"type": "String",
+											"description": "经度",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,118 @@
+{
+	"name": "alibaba.member.identity.signfinish",
+	"apiChineseName": "签约确认",
+	"description": "签约确认",
+	"requestParams": [
+		{
+			"name": "sign_finish",
+			"type": "SignIdentityFinishRequest",
+			"description": "签约确认信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "time_stamp",
+					"type": "Number",
+					"description": "时间戳",
+					"required": true
+				},
+				{
+					"name": "identity_template_id",
+					"type": "String",
+					"description": "付费会员模板id",
+					"required": true
+				},
+				{
+					"name": "outer_member_id",
+					"type": "String",
+					"description": "外部会员ID，识别商家会员的唯一身份标识",
+					"required": true
+				},
+				{
+					"name": "send_suc",
+					"type": "Boolean",
+					"description": "处理结果，成功还是失败",
+					"required": true
+				},
+				{
+					"name": "identity_model",
+					"type": "IdentityModel",
+					"description": "付费会员时间信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "open_merchant_id",
+					"type": "String",
+					"description": "对外开放的merchantId",
+					"required": true
+				},
+				{
+					"name": "order_model",
+					"type": "OrderModel",
+					"description": "签约单据信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "单据类型",
+							"required": true
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "单据号",
+							"required": true
+						},
+						{
+							"name": "order_identity_end_time",
+							"type": "String",
+							"description": "该单据对应付费会员开始时间",
+							"required": true
+						},
+						{
+							"name": "order_identity_start_time",
+							"type": "String",
+							"description": "该单据对应付费会员结束时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code，返回码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message，返回信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

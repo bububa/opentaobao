@@ -1,0 +1,199 @@
+{
+	"name": "yunos.tvpubadmin.device.osupgradequery",
+	"apiChineseName": "系统升级查询",
+	"description": "系统升级查询",
+	"requestParams": [
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "审核状态"
+		},
+		{
+			"name": "day_range",
+			"type": "Number",
+			"description": "时间范围",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "数据大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object_list",
+			"type": "PaginationDO",
+			"description": "信息结构",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "OsVersionAuditDO[]",
+					"description": "内容列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键ID",
+							"required": true
+						},
+						{
+							"name": "model_name",
+							"type": "String",
+							"description": "内部设备型号",
+							"required": true
+						},
+						{
+							"name": "real_type_name",
+							"type": "String",
+							"description": "设备型号",
+							"required": true
+						},
+						{
+							"name": "version",
+							"type": "String",
+							"description": "版本",
+							"required": true
+						},
+						{
+							"name": "release_note",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "audit_status",
+							"type": "String",
+							"description": "审核状态",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modify",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "gmt_audit",
+							"type": "Date",
+							"description": "审核时间",
+							"required": true
+						},
+						{
+							"name": "os_rom_list",
+							"type": "OsRomDO[]",
+							"description": "升级包列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "主键ID",
+									"required": true
+								},
+								{
+									"name": "version_id",
+									"type": "Number",
+									"description": "版本",
+									"required": true
+								},
+								{
+									"name": "base_version_id",
+									"type": "Number",
+									"description": "基础版本",
+									"required": true
+								},
+								{
+									"name": "download_path",
+									"type": "String",
+									"description": "下载地址",
+									"required": true
+								},
+								{
+									"name": "downloadmd5",
+									"type": "String",
+									"description": "下载MD5",
+									"required": true
+								},
+								{
+									"name": "size",
+									"type": "String",
+									"description": "大小",
+									"required": true
+								},
+								{
+									"name": "splitnum",
+									"type": "Number",
+									"description": "分片数",
+									"required": true
+								},
+								{
+									"name": "is_delete",
+									"type": "String",
+									"description": "删除标识",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modify",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

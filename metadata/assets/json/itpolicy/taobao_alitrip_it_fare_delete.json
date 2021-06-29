@@ -1,0 +1,29 @@
+{
+	"name": "taobao.alitrip.it.fare.delete",
+	"apiChineseName": "【国际机票自有政策】单条删除",
+	"description": "自有政策删除接口，可以根据fareId或outId删除，根据outId删除时，如果outId不唯一，返回失败",
+	"requestParams": [
+		{
+			"name": "extendAttributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		},
+		{
+			"name": "fareId",
+			"type": "Number",
+			"description": "运价id，单条新增成功时返回运价id，fareId和outId必填一个，fareId优先"
+		},
+		{
+			"name": "outId",
+			"type": "String",
+			"description": "外部id，为新增时请求参数中的外部政策id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "json格式的字符串，扩展属性，预留"
+		}
+	]
+}

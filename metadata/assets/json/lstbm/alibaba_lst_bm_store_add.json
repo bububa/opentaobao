@@ -1,0 +1,94 @@
+{
+	"name": "alibaba.lst.bm.store.add",
+	"apiChineseName": "导入品牌商自有门店",
+	"description": "导入品牌商自有门店",
+	"requestParams": [
+		{
+			"name": "open_store_dto",
+			"type": "LstTopOpenStoreDto",
+			"description": "门店数据模型",
+			"required": true,
+			"subParams": [
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "店主的手机号",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "门店名称，最大长度512字符",
+					"required": true
+				},
+				{
+					"name": "second_category",
+					"type": "String",
+					"description": "企业自定义的门店二级类别，最大长度512字符"
+				},
+				{
+					"name": "primary_category",
+					"type": "String",
+					"description": "企业自定义的门店一级类别，最大长度512字符"
+				},
+				{
+					"name": "license_owner",
+					"type": "String",
+					"description": "营业执照上的经营者名称，最大长度256字符"
+				},
+				{
+					"name": "addr",
+					"type": "String",
+					"description": "详细地址，最大长度512字符",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区",
+					"required": true
+				},
+				{
+					"name": "license_no",
+					"type": "String",
+					"description": "营业执照编号，最大长度256字符"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "店主姓名，最大长度256字符",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "区县内的街道"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "企业自定义门店id，最大长度128字符"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true表示执行成功，false表示执行失败"
+		}
+	]
+}

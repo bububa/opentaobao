@@ -1,0 +1,291 @@
+{
+	"name": "alibaba.pur.supplier.invoicecreate",
+	"apiChineseName": "preInvoice创建",
+	"description": "preInvoice创建",
+	"requestParams": [
+		{
+			"name": "invoice",
+			"type": "SupplierPreInvoiceInfoVO",
+			"description": "预发票头信息",
+			"subParams": [
+				{
+					"name": "invoice_item_list",
+					"type": "SupplierPreInvoiceItem[]",
+					"description": "预发票行信息",
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "发票行总金额"
+						},
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格型号"
+						},
+						{
+							"name": "line_close_reason",
+							"type": "String",
+							"description": "关闭原因"
+						},
+						{
+							"name": "line_status",
+							"type": "String",
+							"description": "行状态"
+						},
+						{
+							"name": "source_kp_line_no",
+							"type": "String",
+							"description": "关联开票单行号"
+						},
+						{
+							"name": "source_kp_no",
+							"type": "String",
+							"description": "关联开票单单号"
+						},
+						{
+							"name": "line_remark",
+							"type": "String",
+							"description": "应付发票行备注"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						},
+						{
+							"name": "tax_code",
+							"type": "String",
+							"description": "税码"
+						},
+						{
+							"name": "tax_amount",
+							"type": "String",
+							"description": "发票行税额"
+						},
+						{
+							"name": "invoice_line_quantity",
+							"type": "String",
+							"description": "发票行数量"
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "货物或服务名称"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货物或服务id"
+						},
+						{
+							"name": "source_inventory",
+							"type": "String",
+							"description": "匹配入库id"
+						},
+						{
+							"name": "source_rt_line_no",
+							"type": "String",
+							"description": "匹配接收行编号"
+						},
+						{
+							"name": "source_rt_no",
+							"type": "String",
+							"description": "匹配接收行编号"
+						},
+						{
+							"name": "source_po_line_no",
+							"type": "String",
+							"description": "匹配订单行编号"
+						},
+						{
+							"name": "source_po_no",
+							"type": "String",
+							"description": "匹配订单头编号"
+						},
+						{
+							"name": "line_no",
+							"type": "String",
+							"description": "应付发票行编号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "应付发票状态"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "应付发票备注"
+				},
+				{
+					"name": "drawer",
+					"type": "String",
+					"description": "开票人"
+				},
+				{
+					"name": "reviewer",
+					"type": "String",
+					"description": "复核人"
+				},
+				{
+					"name": "payee",
+					"type": "String",
+					"description": "收款人"
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "币种"
+				},
+				{
+					"name": "attachment",
+					"type": "byte[]",
+					"description": "发票附件"
+				},
+				{
+					"name": "close_reason",
+					"type": "String",
+					"description": "关闭原因"
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "价税合计"
+				},
+				{
+					"name": "tax_amount",
+					"type": "String",
+					"description": "税额合计"
+				},
+				{
+					"name": "invoice_seller_account_no",
+					"type": "String",
+					"description": "卖方账户"
+				},
+				{
+					"name": "invoice_seller_bank_no",
+					"type": "String",
+					"description": "卖方开户行"
+				},
+				{
+					"name": "invoice_seller_phone",
+					"type": "String",
+					"description": "卖方电话"
+				},
+				{
+					"name": "invoice_seller_address",
+					"type": "String",
+					"description": "卖方地址"
+				},
+				{
+					"name": "invoice_seller_tax_code",
+					"type": "String",
+					"description": "纳税人识别号"
+				},
+				{
+					"name": "invoice_seller_name",
+					"type": "String",
+					"description": "开票方抬头"
+				},
+				{
+					"name": "invoice_buyer_account_no",
+					"type": "String",
+					"description": "购买方账户"
+				},
+				{
+					"name": "invoice_buyer_bank_no",
+					"type": "String",
+					"description": "购买方开户行"
+				},
+				{
+					"name": "invoice_buyer_phone",
+					"type": "String",
+					"description": "购买方电话"
+				},
+				{
+					"name": "invoice_buyer_address",
+					"type": "String",
+					"description": "购买方地址"
+				},
+				{
+					"name": "invoice_buyer_tax_code",
+					"type": "String",
+					"description": "纳税人识别号"
+				},
+				{
+					"name": "invoice_buyer_name",
+					"type": "String",
+					"description": "开票方抬头"
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票类型"
+				},
+				{
+					"name": "invoice_code",
+					"type": "String",
+					"description": "发票代码"
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票号码"
+				},
+				{
+					"name": "day_after_invoicing",
+					"type": "Date",
+					"description": "开票日期"
+				},
+				{
+					"name": "demander_purchase_org_code",
+					"type": "String",
+					"description": "采购组织"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "供应商ou代码",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称",
+					"required": true
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				}
+			]
+		}
+	]
+}

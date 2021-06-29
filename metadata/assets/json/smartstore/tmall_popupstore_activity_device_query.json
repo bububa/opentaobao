@@ -1,0 +1,192 @@
+{
+	"name": "tmall.popupstore.activity.device.query",
+	"apiChineseName": "根据活动id查询活动相关快闪店及设备信息",
+	"description": "查询某一活动的deviceCode的部署情况",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "ISV的活动ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_dto",
+			"type": "ResultDto",
+			"description": "出参对象",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "结果数据条数",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Result",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "seller_names",
+							"type": "String",
+							"description": "参与活动的品牌名，逗号分割",
+							"required": true
+						},
+						{
+							"name": "activity_end_time",
+							"type": "String",
+							"description": "活动结束时间",
+							"required": true
+						},
+						{
+							"name": "activity_status",
+							"type": "Number",
+							"description": "活动状态",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "activity_start_time",
+							"type": "String",
+							"description": "活动开始时间",
+							"required": true
+						},
+						{
+							"name": "store_list",
+							"type": "Storelist[]",
+							"description": "门店列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "need_device_code_list",
+									"type": "Needdevicecodelist[]",
+									"description": "需要的设备code列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "device_name",
+											"type": "String",
+											"description": "设备名称",
+											"required": true
+										},
+										{
+											"name": "device_type",
+											"type": "String",
+											"description": "设备类型",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "mall_introduce",
+									"type": "String",
+									"description": "商场介绍",
+									"required": true
+								},
+								{
+									"name": "mall_province",
+									"type": "String",
+									"description": "商场所在省份",
+									"required": true
+								},
+								{
+									"name": "store_name",
+									"type": "String",
+									"description": "门店名称",
+									"required": true
+								},
+								{
+									"name": "store_address",
+									"type": "String",
+									"description": "门店地址",
+									"required": true
+								},
+								{
+									"name": "mall_address",
+									"type": "String",
+									"description": "商场地址",
+									"required": true
+								},
+								{
+									"name": "mall_area",
+									"type": "String",
+									"description": "商场所在区",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "Number",
+									"description": "门店id",
+									"required": true
+								},
+								{
+									"name": "mall_city",
+									"type": "String",
+									"description": "商场所在城市",
+									"required": true
+								},
+								{
+									"name": "app_key",
+									"type": "String",
+									"description": "isv appKey",
+									"required": true
+								},
+								{
+									"name": "mall_name",
+									"type": "String",
+									"description": "商场名称",
+									"required": true
+								},
+								{
+									"name": "has_device_code_list",
+									"type": "Hasdevicecodelist[]",
+									"description": "已有的设备code列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "device_name",
+											"type": "String",
+											"description": "设备名称",
+											"required": true
+										},
+										{
+											"name": "device_type",
+											"type": "String",
+											"description": "设备类型",
+											"required": true
+										},
+										{
+											"name": "device_code",
+											"type": "String",
+											"description": "设备code",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

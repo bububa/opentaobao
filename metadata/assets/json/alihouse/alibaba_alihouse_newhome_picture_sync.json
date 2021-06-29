@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.alihouse.newhome.picture.sync",
+	"apiChineseName": "图片数据同步",
+	"description": "图片数据同步",
+	"requestParams": [
+		{
+			"name": "project_picture_data",
+			"type": "ProjectPictureDto",
+			"description": "数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "is_deleted",
+					"type": "String",
+					"description": "是否删除 1 是 0 否"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "说明描述"
+				},
+				{
+					"name": "pic_data",
+					"type": "String",
+					"description": "图片全路径",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "图片分类",
+					"required": true
+				},
+				{
+					"name": "order_tag",
+					"type": "Number",
+					"description": "图片排序值"
+				},
+				{
+					"name": "outer_layout_id",
+					"type": "String",
+					"description": "外部户型ID"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘ID",
+					"required": true
+				},
+				{
+					"name": "outer_picture_id",
+					"type": "String",
+					"description": "图片唯一ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "图片外部ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "yunos.tvpubadmin.diccontroltask.getinfo",
+	"apiChineseName": "获取停开服任务详情",
+	"description": "获取停开服任务详情",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "任务ID",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "DicControlTaskDO",
+			"description": "object"
+		}
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"name": "alibaba.alihealth.lab.item.sync",
+	"apiChineseName": "阿里健康检验检测商品发布",
+	"description": "iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU",
+	"requestParams": [
+		{
+			"name": "isv_item_code",
+			"type": "String",
+			"description": "检验检测项目isv侧编码",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "检验检测项目名称"
+		},
+		{
+			"name": "cost_price",
+			"type": "Number",
+			"description": "采购价，单位分"
+		},
+		{
+			"name": "gender_restriction",
+			"type": "String",
+			"description": "性别限制 MALE  FEMALE"
+		},
+		{
+			"name": "marital_status_restriction",
+			"type": "String",
+			"description": "婚否状态限制 MARRIED UNMARRIED"
+		},
+		{
+			"name": "extra_attributes",
+			"type": "String",
+			"description": "额外的属性"
+		},
+		{
+			"name": "report_generation_time_duration",
+			"type": "Number",
+			"description": "报告产出预计需要的时长，单位毫秒"
+		},
+		{
+			"name": "sub_items",
+			"type": "LabSubItemBrief[]",
+			"description": "打包的子项目",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "子项目名称"
+				},
+				{
+					"name": "isv_item_code",
+					"type": "String",
+					"description": "子项目isv侧编码"
+				}
+			]
+		},
+		{
+			"name": "isv_item_status",
+			"type": "String",
+			"description": "EFFECTIVE 项目有效， INVALID 项目无效",
+			"required": true
+		},
+		{
+			"name": "related_isv_store_codes",
+			"type": "String[]",
+			"description": "项目关联的门店",
+			"maxListSize": 999
+		},
+		{
+			"name": "intro",
+			"type": "String",
+			"description": "项目介绍"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "result_status",
+			"type": "String",
+			"description": "SUCCESS - 成功，FAIL - 失败，UNKNOWN - 未知或参数异常"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "可读的结果码（错误码）"
+		}
+	]
+}

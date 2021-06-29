@@ -1,0 +1,130 @@
+{
+	"name": "alibaba.global.virtual.sendcode",
+	"apiChineseName": "国际虚拟商品发码服务",
+	"description": "global virtual send code service",
+	"requestParams": [
+		{
+			"name": "trade_order_line_id",
+			"type": "Number",
+			"description": "trade order id",
+			"required": true
+		},
+		{
+			"name": "code_list",
+			"type": "VirtualCertificateDo[]",
+			"description": "code list",
+			"required": true,
+			"maxListSize": 30,
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "modified time",
+					"required": true
+				},
+				{
+					"name": "file",
+					"type": "String",
+					"description": "provide download file"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code info",
+					"required": true
+				},
+				{
+					"name": "order_track_id",
+					"type": "String",
+					"description": "track order id"
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "code start effective time",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "remark info"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "primary key"
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "code end effective time",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "create time",
+					"required": true
+				},
+				{
+					"name": "trade_order_line_id",
+					"type": "Number",
+					"description": "trade order id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "result describe",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "request result",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "send code result",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "error code",
+					"required": true,
+					"subParams": [
+						{
+							"name": "key",
+							"type": "String",
+							"description": "error code key",
+							"required": true
+						},
+						{
+							"name": "display_message",
+							"type": "String",
+							"description": "error code display message",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "repeated",
+					"type": "Boolean",
+					"description": "request is repeated",
+					"required": true
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "request need retry",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,440 @@
+{
+	"name": "alibaba.damai.maitix.project.distribution.querylist",
+	"apiChineseName": "分销项目列表查询（已过时，不推荐使用）",
+	"description": "分销项目列表查询接口（已过时，不推荐使用）",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "ext_map",
+					"type": "Json",
+					"description": "扩展信息",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "ProjectInfoDto[]",
+					"description": "项目信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city",
+							"type": "IdNameDto",
+							"description": "演出城市",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "城市id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "城市名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "classify_code",
+							"type": "String",
+							"description": "项目大类编码",
+							"required": true
+						},
+						{
+							"name": "classify_name",
+							"type": "String",
+							"description": "项目大类名称",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "IdNameDto",
+							"description": "国家",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "国家id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "国家名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "introduce",
+							"type": "String",
+							"description": "项目介绍",
+							"required": true
+						},
+						{
+							"name": "is_has_seat",
+							"type": "byte",
+							"description": "是否有座： 0=无座 1=有座",
+							"required": true
+						},
+						{
+							"name": "perform_info_list",
+							"type": "PerformInfoDto[]",
+							"description": "场次",
+							"required": true,
+							"subParams": [
+								{
+									"name": "change_reason",
+									"type": "String",
+									"description": "延改期原因",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "演出结束时间",
+									"required": true
+								},
+								{
+									"name": "is_change_perform_time",
+									"type": "Number",
+									"description": "是否修改了场次时间 0或null：否 1：是",
+									"required": true
+								},
+								{
+									"name": "perform_id",
+									"type": "Number",
+									"description": "场次ID",
+									"required": true
+								},
+								{
+									"name": "perform_name",
+									"type": "String",
+									"description": "场次名称",
+									"required": true
+								},
+								{
+									"name": "perform_setting",
+									"type": "PerformSettingDto",
+									"description": "场次设置",
+									"required": true,
+									"subParams": [
+										{
+											"name": "card_type",
+											"type": "Json",
+											"description": "证件类型(\"身份证\"-\"id_card\",\"护照\"-\"passport\",\"港澳居民来往内地通行证\"-\"hk_macao_pass\",\"台湾居民来往大陆通行证\"-\"taiwan_compatriot_card\",\"士兵／军官\"-\"soldier_officer_card\")",
+											"required": true
+										},
+										{
+											"name": "is_one_order_one_card",
+											"type": "Number",
+											"description": "一单一证 0：不是，1：是",
+											"required": true
+										},
+										{
+											"name": "is_one_ticket_one_card",
+											"type": "Number",
+											"description": "一票一证 0：不是，1：是",
+											"required": true
+										},
+										{
+											"name": "is_real_name_enter",
+											"type": "Number",
+											"description": "是否实名制入场 0：不是，1：是",
+											"required": true
+										},
+										{
+											"name": "issue_enter_modes_list",
+											"type": "Number[]",
+											"description": "入场方式 1纸质票入场 2电子票入场",
+											"required": true
+										},
+										{
+											"name": "issue_ticket_modes_list",
+											"type": "Number[]",
+											"description": "出票方式 1纸质票 2静态二维码电子票 3动态二维码电子票 4身份证电子票 5 短信码电子票",
+											"required": true
+										},
+										{
+											"name": "perform_id",
+											"type": "Number",
+											"description": "场次id",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "perform_status",
+									"type": "Number",
+									"description": "场次状态(0：创建中 10：已创建 20：待销售 30：销售中 40：场次取消 50：场次结束)",
+									"required": true
+								},
+								{
+									"name": "perform_type",
+									"type": "byte",
+									"description": "场次类型(1 单场次，2 多次通票，3 单次通票)",
+									"required": true
+								},
+								{
+									"name": "price_info_list",
+									"type": "PriceInfoDto[]",
+									"description": "价格",
+									"required": true,
+									"subParams": [
+										{
+											"name": "max_stock",
+											"type": "Number",
+											"description": "售卖最大库存数量",
+											"required": true
+										},
+										{
+											"name": "perform_id",
+											"type": "Number",
+											"description": "场次ID",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Money",
+											"description": "票价",
+											"required": true,
+											"subParams": [
+												{
+													"name": "cent",
+													"type": "Number",
+													"description": "票价 单位：分",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "price_id",
+											"type": "Number",
+											"description": "价格ID",
+											"required": true
+										},
+										{
+											"name": "price_name",
+											"type": "String",
+											"description": "价格名称",
+											"required": true
+										},
+										{
+											"name": "price_type",
+											"type": "byte",
+											"description": "票品的类型 0普通单票 1套票",
+											"required": true
+										},
+										{
+											"name": "project_id",
+											"type": "Number",
+											"description": "项目id",
+											"required": true
+										},
+										{
+											"name": "able_sell",
+											"type": "Boolean",
+											"description": "是否可售 true可售 false不可售",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								},
+								{
+									"name": "reserve_seat",
+									"type": "byte",
+									"description": "是否对号入座 0：不对号入座 1：对号入座 2：对区入座",
+									"required": true
+								},
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "演出开始时间",
+									"required": true
+								},
+								{
+									"name": "sub_perform_list",
+									"type": "Json[]",
+									"description": "子场次列表",
+									"required": true
+								},
+								{
+									"name": "weekly_list",
+									"type": "byte[][]",
+									"description": "场次有效期规则 每周周几可以",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "poster_url",
+							"type": "String",
+							"description": "项目海报图片地址",
+							"required": true
+						},
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目ID",
+							"required": true
+						},
+						{
+							"name": "project_name",
+							"type": "String",
+							"description": "项目名称",
+							"required": true
+						},
+						{
+							"name": "project_status",
+							"type": "Number",
+							"description": "项目状态，0：创建中 10：已创建 20：待销售 30：销售中 40：项目取消 50：项目结束",
+							"required": true
+						},
+						{
+							"name": "project_type",
+							"type": "byte",
+							"description": "项目类型 0:普通项目 1:预售项目 2:先付先抢-先付项目 3:先付先抢-先抢项目 4:搭售项目 5:超级票",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "IdNameDto",
+							"description": "省",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "省id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "省名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "sub_classify_code",
+							"type": "String",
+							"description": "项目子类编码",
+							"required": true
+						},
+						{
+							"name": "sub_classify_name",
+							"type": "String",
+							"description": "项目子类名称",
+							"required": true
+						},
+						{
+							"name": "third_classify_code",
+							"type": "String",
+							"description": "项目三级分类编码",
+							"required": true
+						},
+						{
+							"name": "third_classify_name",
+							"type": "String",
+							"description": "项目三级分类名称",
+							"required": true
+						},
+						{
+							"name": "ticket_agency_fee",
+							"type": "String",
+							"description": "票务代理费（单位：百分比）",
+							"required": true
+						},
+						{
+							"name": "trader_id_list",
+							"type": "Number[]",
+							"description": "主办方ID",
+							"required": true
+						},
+						{
+							"name": "trader_name_list",
+							"type": "String[]",
+							"description": "主办方名称",
+							"required": true
+						},
+						{
+							"name": "venue",
+							"type": "VenueDTO",
+							"description": "场馆",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "场馆id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "场馆名称",
+									"required": true
+								},
+								{
+									"name": "lng",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "lat",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "venue_address",
+									"type": "String",
+									"description": "场馆地址",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回是否成功 true成功 false失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

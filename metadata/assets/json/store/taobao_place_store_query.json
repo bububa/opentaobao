@@ -1,0 +1,365 @@
+{
+	"name": "taobao.place.store.query",
+	"apiChineseName": "门店信息查询接口",
+	"description": "根据用户授权信息，获取用户的门店公开信息",
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务code，用于区分业务"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "业务外部id"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "FullStoreTopDto",
+					"description": "返回结果：true成功；false失败",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "业务身份",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名字",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID",
+							"required": true
+						},
+						{
+							"name": "belong",
+							"type": "Number",
+							"description": "父级别门店id",
+							"required": true
+						},
+						{
+							"name": "biz_outer_id",
+							"type": "String",
+							"description": "业务外部id",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "subname",
+							"type": "String",
+							"description": "分店名",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "门店类型",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "门店的商家id",
+							"required": true
+						},
+						{
+							"name": "authen_status",
+							"type": "Number",
+							"description": "审核状态",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "门店所属商户名称",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "门店描述",
+							"required": true
+						},
+						{
+							"name": "logo",
+							"type": "String",
+							"description": "门店LOGO",
+							"required": true
+						},
+						{
+							"name": "outer_code",
+							"type": "String",
+							"description": "门店外部编码",
+							"required": true
+						},
+						{
+							"name": "poi_info",
+							"type": "PoiInfoDto",
+							"description": "位置地址信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "address_alias",
+									"type": "String",
+									"description": "地址别名",
+									"required": true
+								},
+								{
+									"name": "address_en",
+									"type": "String",
+									"description": "英文地址",
+									"required": true
+								},
+								{
+									"name": "address_local",
+									"type": "String",
+									"description": "当地语言地址",
+									"required": true
+								},
+								{
+									"name": "bunk",
+									"type": "String",
+									"description": "铺位号",
+									"required": true
+								},
+								{
+									"name": "business_area",
+									"type": "String",
+									"description": "营业面积",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "Number",
+									"description": "市",
+									"required": true
+								},
+								{
+									"name": "city_int",
+									"type": "Number",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "市名",
+									"required": true
+								},
+								{
+									"name": "continent",
+									"type": "Number",
+									"description": "洲",
+									"required": true
+								},
+								{
+									"name": "continent_name",
+									"type": "String",
+									"description": "洲名",
+									"required": true
+								},
+								{
+									"name": "country",
+									"type": "Number",
+									"description": "国家",
+									"required": true
+								},
+								{
+									"name": "country_name",
+									"type": "String",
+									"description": "国家名",
+									"required": true
+								},
+								{
+									"name": "district",
+									"type": "Number",
+									"description": "区域",
+									"required": true
+								},
+								{
+									"name": "district_int",
+									"type": "Number",
+									"description": "区域",
+									"required": true
+								},
+								{
+									"name": "district_name",
+									"type": "String",
+									"description": "区域名",
+									"required": true
+								},
+								{
+									"name": "division_type",
+									"type": "Number",
+									"description": "行政区code类型",
+									"required": true
+								},
+								{
+									"name": "floor",
+									"type": "String",
+									"description": "楼层",
+									"required": true
+								},
+								{
+									"name": "full_address",
+									"type": "String",
+									"description": "楼层名",
+									"required": true
+								},
+								{
+									"name": "post_code",
+									"type": "String",
+									"description": "邮政编码",
+									"required": true
+								},
+								{
+									"name": "posx",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "posy",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "prov",
+									"type": "Number",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "prov_int",
+									"type": "Number",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "prov_name",
+									"type": "String",
+									"description": "省名",
+									"required": true
+								},
+								{
+									"name": "town",
+									"type": "Number",
+									"description": "街道",
+									"required": true
+								},
+								{
+									"name": "town_int",
+									"type": "Number",
+									"description": "街道",
+									"required": true
+								},
+								{
+									"name": "town_name",
+									"type": "String",
+									"description": "街道名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "店铺id",
+							"required": true
+						},
+						{
+							"name": "standard_category_id",
+							"type": "Number",
+							"description": "标准类目ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "门店状态",
+							"required": true
+						},
+						{
+							"name": "store_type",
+							"type": "String",
+							"description": "门店类型",
+							"required": true
+						},
+						{
+							"name": "tags",
+							"type": "Number[]",
+							"description": "业务TAGS",
+							"required": true
+						},
+						{
+							"name": "pic",
+							"type": "String",
+							"description": "门店主图，仅存一张，tfs格式",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "个数",
+					"required": true
+				}
+			]
+		}
+	]
+}

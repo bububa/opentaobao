@@ -1,0 +1,150 @@
+{
+	"name": "aliyun.industry.tttm.order.query",
+	"apiChineseName": "天天特卖数字工厂订单获取",
+	"description": "获取阿里云数字工厂内天天特卖业务的订单",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单号",
+			"required": true
+		},
+		{
+			"name": "external_id",
+			"type": "String",
+			"description": "外部采购单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderDto",
+			"description": "订单",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "订单总金额",
+					"required": true
+				},
+				{
+					"name": "contract_type",
+					"type": "Number",
+					"description": "合同类型",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注",
+					"required": true
+				},
+				{
+					"name": "order_product_list",
+					"type": "OrderProductDto[]",
+					"description": "下单货品",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "货品价格",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "货品数量",
+							"required": true
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_time",
+					"type": "Date",
+					"description": "下单时间",
+					"required": true
+				},
+				{
+					"name": "produce_status",
+					"type": "Number",
+					"description": "生产状态",
+					"required": true
+				},
+				{
+					"name": "order_products",
+					"type": "String",
+					"description": "订单商品列表",
+					"required": true
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "采购单号",
+					"required": true
+				},
+				{
+					"name": "due_time",
+					"type": "Date",
+					"description": "交付时间",
+					"required": true
+				},
+				{
+					"name": "annexes",
+					"type": "Json",
+					"description": "附件列表",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "订单总数",
+					"required": true
+				},
+				{
+					"name": "biz_source",
+					"type": "Number",
+					"description": "业务来源",
+					"required": true
+				},
+				{
+					"name": "annexes_json",
+					"type": "String",
+					"description": "附件列表",
+					"required": true
+				},
+				{
+					"name": "working_type",
+					"type": "Number",
+					"description": "加工类型",
+					"required": true
+				}
+			]
+		}
+	]
+}

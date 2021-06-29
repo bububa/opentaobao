@@ -1,0 +1,26 @@
+{
+	"name": "yunos.tvpubadmin.content.tableaudit.offlinelauncheritem",
+	"apiChineseName": "运营位管理-联盟一体机下线运营位内容",
+	"description": "运营位管理-联盟一体机下线运营位内容",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "元数据主键id",
+			"required": true
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "联盟：TV_OTT,一体机：TV_ALLINONE",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "下线桌面坑位内容（用于联盟、一体机）"
+		}
+	]
+}

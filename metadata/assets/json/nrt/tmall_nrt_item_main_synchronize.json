@@ -1,0 +1,214 @@
+{
+	"name": "tmall.nrt.item.main.synchronize",
+	"apiChineseName": "家装新零售主商品同步至阿里",
+	"description": "同步红星美凯龙存量商品到阿里",
+	"requestParams": [
+		{
+			"name": "booth_id",
+			"type": "String",
+			"description": "摊位id",
+			"required": true
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "叶子类目id",
+			"required": true
+		},
+		{
+			"name": "props",
+			"type": "CategoryPropDto[]",
+			"description": "类目属性",
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "property_id",
+					"type": "Number",
+					"description": "属性id",
+					"required": true
+				},
+				{
+					"name": "property_name",
+					"type": "String",
+					"description": "属性名"
+				},
+				{
+					"name": "value_id",
+					"type": "Number",
+					"description": "属性值ID"
+				},
+				{
+					"name": "value_text",
+					"type": "String",
+					"description": "属性值名称"
+				}
+			]
+		},
+		{
+			"name": "dealer_code",
+			"type": "String",
+			"description": "经销商编码",
+			"required": true
+		},
+		{
+			"name": "mall_id",
+			"type": "String",
+			"description": "卖场id",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商家编码"
+		},
+		{
+			"name": "outer_props",
+			"type": "MacallineItemExtDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "brand_series_id",
+					"type": "String",
+					"description": "品牌系列ID"
+				},
+				{
+					"name": "brand_series_name",
+					"type": "String",
+					"description": "品牌系列名称"
+				},
+				{
+					"name": "charge_unit",
+					"type": "String",
+					"description": "计价单位"
+				},
+				{
+					"name": "grade",
+					"type": "Number",
+					"description": "等级"
+				},
+				{
+					"name": "label_price_type",
+					"type": "Number",
+					"description": "标签价格类型"
+				},
+				{
+					"name": "original_location",
+					"type": "LocationDto",
+					"description": "产地",
+					"subParams": [
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市名"
+						},
+						{
+							"name": "city_id",
+							"type": "Number",
+							"description": "城市ID"
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "省份名"
+						},
+						{
+							"name": "prov_id",
+							"type": "Number",
+							"description": "省份ID"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型，1：国内，2：国外"
+						}
+					]
+				},
+				{
+					"name": "price_type",
+					"type": "Number",
+					"description": "价格类型"
+				},
+				{
+					"name": "pricer",
+					"type": "String",
+					"description": "物价员"
+				},
+				{
+					"name": "secondary_steel",
+					"type": "String",
+					"description": "辅材"
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "规格"
+				},
+				{
+					"name": "specification_unit",
+					"type": "String",
+					"description": "规格单位"
+				},
+				{
+					"name": "substrate",
+					"type": "String",
+					"description": "基材"
+				},
+				{
+					"name": "support_return_goods",
+					"type": "Boolean",
+					"description": "是否支持退换货"
+				},
+				{
+					"name": "veneer",
+					"type": "String",
+					"description": "饰面"
+				}
+			]
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "价格"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "商品名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tmall_nrt_item_main_synchronize",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "NrtItemSyncResultDto",
+					"description": "返回值",
+					"required": true,
+					"subParams": [
+						{
+							"name": "s_item_id",
+							"type": "Number",
+							"description": "摊位商品ID",
+							"required": true
+						},
+						{
+							"name": "m_item_id",
+							"type": "Number",
+							"description": "主商品ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

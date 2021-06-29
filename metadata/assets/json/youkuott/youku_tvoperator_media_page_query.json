@@ -1,0 +1,221 @@
+{
+	"name": "youku.tvoperator.media.page.query",
+	"apiChineseName": "运营商全量媒资分页查询",
+	"description": "分页获取渠道全量媒资",
+	"requestParams": [
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "系统信息（和服务提供方确认)"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "从第一页开始"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小"
+		},
+		{
+			"name": "program_id",
+			"type": "Number",
+			"description": "节目programId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功 true:成功 false:不成功"
+		},
+		{
+			"name": "model",
+			"type": "Model",
+			"description": "数据信息",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页号",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "数据列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "genre_list",
+							"type": "String[]",
+							"description": "分类列表",
+							"required": true
+						},
+						{
+							"name": "youku_tags",
+							"type": "String",
+							"description": "优酷标签",
+							"required": true
+						},
+						{
+							"name": "score",
+							"type": "String",
+							"description": "分数",
+							"required": true
+						},
+						{
+							"name": "show_subtitle",
+							"type": "String",
+							"description": "子标题",
+							"required": true
+						},
+						{
+							"name": "episode_last",
+							"type": "Number",
+							"description": "更新集数",
+							"required": true
+						},
+						{
+							"name": "director_list",
+							"type": "String[]",
+							"description": "导演",
+							"required": true
+						},
+						{
+							"name": "show_banner_url",
+							"type": "String",
+							"description": "节目banner",
+							"required": true
+						},
+						{
+							"name": "performer_list",
+							"type": "String[]",
+							"description": "演员",
+							"required": true
+						},
+						{
+							"name": "show_category_name",
+							"type": "String",
+							"description": "分类名称",
+							"required": true
+						},
+						{
+							"name": "show_vthumb_url",
+							"type": "String",
+							"description": "纵向海报",
+							"required": true
+						},
+						{
+							"name": "show_desc",
+							"type": "String",
+							"description": "节目描述",
+							"required": true
+						},
+						{
+							"name": "paid",
+							"type": "Number",
+							"description": "是否收费，0=免费，1=收费",
+							"required": true
+						},
+						{
+							"name": "release_date",
+							"type": "Number",
+							"description": "发行日期",
+							"required": true
+						},
+						{
+							"name": "area_list",
+							"type": "String[]",
+							"description": "节目国家地区列表",
+							"required": true
+						},
+						{
+							"name": "show_name",
+							"type": "String",
+							"description": "节目名称",
+							"required": true
+						},
+						{
+							"name": "episode_total",
+							"type": "Number",
+							"description": "总集数",
+							"required": true
+						},
+						{
+							"name": "show_id",
+							"type": "String",
+							"description": "节目id",
+							"required": true
+						},
+						{
+							"name": "play_set",
+							"type": "Number",
+							"description": "码流二进制组合",
+							"required": true
+						},
+						{
+							"name": "seconds",
+							"type": "Number",
+							"description": "时长",
+							"required": true
+						},
+						{
+							"name": "show_thumb_url",
+							"type": "String",
+							"description": "横版海报",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Number",
+							"description": "媒资最后修改时间",
+							"required": true
+						},
+						{
+							"name": "vmac_state",
+							"type": "Number",
+							"description": "上线下状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

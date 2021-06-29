@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.lst.trade.seller.warehouse.query",
+	"apiChineseName": "供应商-本云商家-仓库查询接口",
+	"description": "查询本地云仓商家的仓库",
+	"requestParams": [
+		{
+			"name": "warehouse_query_param",
+			"type": "WarehouseQueryParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页最大记录数",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页最大记录数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "content_list",
+					"type": "Content[]",
+					"description": "记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_type",
+							"type": "String",
+							"description": "实仓：cainiao，商家仓：customer",
+							"required": true
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓库名称",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓库code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

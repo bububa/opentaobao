@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.alihealth.algo.medication.safety.get",
+	"apiChineseName": "合理用药api",
+	"description": "合理用药规则引擎服务",
+	"requestParams": [
+		{
+			"name": "param_solution_request_top_support",
+			"type": "SolutionRequestTopSupport",
+			"description": "业务请求对象",
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "业务应用标识"
+				},
+				{
+					"name": "params",
+					"description": "业务参数"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SolutionResultTopSupport",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "String[]",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

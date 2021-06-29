@@ -1,0 +1,150 @@
+{
+	"name": "alitrip.btip.cost.center.query",
+	"apiChineseName": "查询外部成本中心",
+	"description": "查询外部成本中心",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterQueryRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id，不填写的时候user_id必填"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id，不填的时候thirdpart_id必填"
+				},
+				{
+					"name": "need_org_entity",
+					"type": "Boolean",
+					"description": "是否需要展示成员信息，当成本中心为部分人员适用的时候有返回"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "成本中心名称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "cost_center_list",
+					"type": "OpenCostCenterQueryRs[]",
+					"description": "返回值对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "商旅成本中心id",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "企业id",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "成本中心名称",
+							"required": true
+						},
+						{
+							"name": "number",
+							"type": "String",
+							"description": "成本中心编号",
+							"required": true
+						},
+						{
+							"name": "thirdpart_id",
+							"type": "String",
+							"description": "第三方成本中心id",
+							"required": true
+						},
+						{
+							"name": "scope",
+							"type": "Number",
+							"description": "适用范围: 1全员，2部分员工",
+							"required": true
+						},
+						{
+							"name": "entity_list",
+							"type": "OpenOrgEntityDo[]",
+							"description": "绑定人员信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "用户/部门/角色名称",
+									"required": true
+								},
+								{
+									"name": "entity_id",
+									"type": "String",
+									"description": "用户/部门/角色id",
+									"required": true
+								},
+								{
+									"name": "entity_type",
+									"type": "String",
+									"description": "人员类型：1用户，2部门，3角色",
+									"required": true
+								},
+								{
+									"name": "corp_id",
+									"type": "String",
+									"description": "企业id",
+									"required": true
+								},
+								{
+									"name": "user_num",
+									"type": "Number",
+									"description": "角色/部门下面员工人数",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

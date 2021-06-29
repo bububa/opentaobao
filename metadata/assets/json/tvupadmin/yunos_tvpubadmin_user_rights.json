@@ -1,0 +1,108 @@
+{
+	"name": "yunos.tvpubadmin.user.rights",
+	"apiChineseName": "获取用户权益",
+	"description": "获取用户权益",
+	"requestParams": [
+		{
+			"name": "uid",
+			"type": "Number",
+			"description": "用户ID",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码值",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页行数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "PaginationDO",
+			"description": "object",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码值",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "UserRightsDO[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "uid",
+							"type": "Number",
+							"description": "用户ID",
+							"required": true
+						},
+						{
+							"name": "renewal_support",
+							"type": "Boolean",
+							"description": "是否连续包月",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_end",
+							"type": "Date",
+							"description": "权益截止时间",
+							"required": true
+						},
+						{
+							"name": "gmt_start",
+							"type": "Date",
+							"description": "权益开始时间",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "权益类型",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "权益ID",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

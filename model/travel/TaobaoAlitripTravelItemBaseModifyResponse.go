@@ -19,7 +19,9 @@ type TaobaoAlitripTravelItemBaseModifyAPIResponse struct {
 
 type TaobaoAlitripTravelItemBaseModifyResponse struct {
     XMLName xml.Name `xml:"alitrip_travel_item_base_modify_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品修改结果
     

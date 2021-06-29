@@ -1,0 +1,112 @@
+{
+	"name": "alibaba.mozi.vds.tenant.api.service.pagesubadmins",
+	"apiChineseName": "分页查询租户子管理员",
+	"description": "分页查询租户子管理员",
+	"requestParams": [
+		{
+			"name": "par0",
+			"type": "PageTenantSubAdminsRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "return_total_size",
+					"type": "Boolean",
+					"description": "是否返回总数量"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页数"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户id",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "一页的条目"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageTenantSubAdminsResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "TenantAdmin[]",
+					"description": "data数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "employee_code",
+							"type": "String",
+							"description": "人员code",
+							"required": true
+						},
+						{
+							"name": "primary",
+							"type": "Boolean",
+							"description": "是否为管理员",
+							"required": true
+						},
+						{
+							"name": "employee_name",
+							"type": "String",
+							"description": "人员名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页的条目数",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页数",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "responseMessage",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "responseCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"name": "alitrip.btrip.open.cost.center.modify",
+	"apiChineseName": "修改成本中心",
+	"description": "修改成本中心",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterModifyRq",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "alipay_no",
+					"type": "String",
+					"description": "绑定支付宝账号"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "number",
+					"type": "String",
+					"description": "成本中心编号"
+				},
+				{
+					"name": "scope",
+					"type": "Number",
+					"description": "适用范围: 1全员，2部分员工",
+					"required": true
+				},
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "成本中心名称",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

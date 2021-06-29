@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.qrcode.activate",
+	"apiChineseName": "扫码激活设备",
+	"description": "三方带屏设备显示二维码（从天猫精灵云获取），使用三方APP扫码，将扫码到的安全code，通过TOP接口请求天猫精灵云，精灵云解析安全code的数据并激活对应的设备。",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "OAUTH authcode码"
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "产品终端ID"
+		},
+		{
+			"name": "taobao_user_openid",
+			"type": "String",
+			"description": "淘宝授权ID"
+		},
+		{
+			"name": "ext_info",
+			"type": "String",
+			"description": "扩展数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SCanQrCodeResultVo",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "天猫精灵设备ID",
+					"required": true
+				},
+				{
+					"name": "user_open_id",
+					"type": "String",
+					"description": "天猫精灵用户ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "结果消息"
+		}
+	]
+}

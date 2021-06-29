@@ -1,0 +1,182 @@
+{
+	"name": "alibaba.happytrip.taxi.price.get",
+	"apiChineseName": "获取价格预估信息",
+	"description": "打车价格预估",
+	"requestParams": [
+		{
+			"name": "flat",
+			"type": "String",
+			"description": "出发地纬度",
+			"required": true
+		},
+		{
+			"name": "flng",
+			"type": "String",
+			"description": "出发地经度",
+			"required": true
+		},
+		{
+			"name": "tlat",
+			"type": "String",
+			"description": "目的地纬度",
+			"required": true
+		},
+		{
+			"name": "tlng",
+			"type": "String",
+			"description": "目的地经度",
+			"required": true
+		},
+		{
+			"name": "map_type",
+			"type": "String",
+			"description": "地图类型:amap：高德，默认高德地图"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "出发城市id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "0:实时单 1:预约单",
+			"required": true
+		},
+		{
+			"name": "departure_time",
+			"type": "String",
+			"description": "预约单必须传（格式例如：2015-06-16 12:00:09）"
+		},
+		{
+			"name": "cost_center",
+			"type": "String",
+			"description": "成本中心代码，用于区分不同的分账账号"
+		},
+		{
+			"name": "require_level",
+			"type": "String",
+			"description": "供应商车型代码"
+		},
+		{
+			"name": "carpool_type",
+			"type": "Number",
+			"description": "0：不拼车 1:允许拼车，默认不拼车"
+		},
+		{
+			"name": "passenger_number",
+			"type": "Number",
+			"description": "乘车人数"
+		},
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "用户唯一标识"
+		},
+		{
+			"name": "passenger_phone",
+			"type": "String",
+			"description": "乘客手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误代码"
+		},
+		{
+			"name": "data",
+			"type": "PriceModel []",
+			"description": "价格预估模型",
+			"subParams": [
+				{
+					"name": "start_price",
+					"type": "String",
+					"description": "起步价格 单位：元",
+					"required": true
+				},
+				{
+					"name": "normal_unit_price",
+					"type": "String",
+					"description": "每公里单价 单位：元",
+					"required": true
+				},
+				{
+					"name": "dynamic_price",
+					"type": "String",
+					"description": "动调溢价 单位：元",
+					"required": true
+				},
+				{
+					"name": "price_tip",
+					"type": "String",
+					"description": "价格提示",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "总价格(包含dynamic_price) 单位：元，如果有折扣，这里为折扣后价格，如果没有折扣这里和original_price保持一致；允许拼车时为拼成一口价",
+					"required": true
+				},
+				{
+					"name": "dynamic_md5",
+					"type": "String",
+					"description": "动态调价md5，用于锁定订单创建时的价格",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "供应商的车型名称",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "供应商的车型代码",
+					"required": true
+				},
+				{
+					"name": "original_price",
+					"type": "String",
+					"description": "原始价格，折扣优惠前的价格；允许拼车时为未拼成一口价",
+					"required": true
+				},
+				{
+					"name": "line_type",
+					"type": "Number",
+					"description": "线路类型，为空或0，表示普通线路；1，表示专线",
+					"required": true
+				},
+				{
+					"name": "line_info",
+					"type": "LineInfo",
+					"description": "线路信息，线路为专线时不为空",
+					"required": true,
+					"subParams": [
+						{
+							"name": "from_location_name",
+							"type": "String",
+							"description": "出发位置名称",
+							"required": true
+						},
+						{
+							"name": "to_location_name",
+							"type": "String",
+							"description": "目的位置名称",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误消息"
+		}
+	]
+}

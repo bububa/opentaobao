@@ -1,0 +1,28 @@
+{
+	"name": "yunos.osupdate.osfota.publish",
+	"apiChineseName": "系统升级发布",
+	"description": "发布osupdate系统升级任务",
+	"requestParams": [
+		{
+			"name": "publish_json",
+			"type": "String",
+			"description": "入参json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否操作成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

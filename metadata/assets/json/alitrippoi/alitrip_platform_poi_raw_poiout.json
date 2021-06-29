@@ -1,0 +1,158 @@
+{
+	"name": "alitrip.platform.poi.raw.poiout",
+	"apiChineseName": "飞猪poi输出",
+	"description": "输出指定城市poi指定信息",
+	"requestParams": [
+		{
+			"name": "fliggy_poi_out_param",
+			"type": "FliggyPoiOutParam",
+			"description": "查询参数",
+			"subParams": [
+				{
+					"name": "start_data",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "city_names",
+					"type": "String[]",
+					"description": "选择城市名"
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "城市码可不填"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "开始页数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "total_records",
+					"type": "Number",
+					"description": "总数(不可用)",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "Data[]",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "poi_id",
+							"type": "Number",
+							"description": "poiId",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "poi名字",
+							"required": true
+						},
+						{
+							"name": "name_en",
+							"type": "String",
+							"description": "poi英文名",
+							"required": true
+						},
+						{
+							"name": "first_category",
+							"type": "Number",
+							"description": "类目",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "lon",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "open_time",
+							"type": "String",
+							"description": "开放时间",
+							"required": true
+						},
+						{
+							"name": "division_tree_id",
+							"type": "String",
+							"description": "行政区划树",
+							"required": true
+						},
+						{
+							"name": "division_tree_name",
+							"type": "String",
+							"description": "行政区划树名",
+							"required": true
+						},
+						{
+							"name": "source_id",
+							"type": "String",
+							"description": "外源id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Json",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"name": "alibaba.lst.logistics.sendinfo.query",
+	"apiChineseName": "供应商-异云-查询主订单包含的物流单",
+	"description": "查询主订单包含的物流单",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "LstLogisticsInfoQuery",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "主订单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content_list",
+					"type": "Content[]",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "运单编号",
+							"required": true
+						},
+						{
+							"name": "logistics_id",
+							"type": "String",
+							"description": "物流编号",
+							"required": true
+						},
+						{
+							"name": "cp_company_code",
+							"type": "String",
+							"description": "物流公司code",
+							"required": true
+						},
+						{
+							"name": "cp_company_name",
+							"type": "String",
+							"description": "物流公司name",
+							"required": true
+						},
+						{
+							"name": "sub_order_id_list",
+							"type": "Number[]",
+							"description": "子订单列表",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

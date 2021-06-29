@@ -19,7 +19,9 @@ type AlibabaAliqinFlowWalletCheckBalanceAPIResponse struct {
 
 type AlibabaAliqinFlowWalletCheckBalanceResponse struct {
     XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_check_balance_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 余额是否大于校验值，大于返回true，小于返回false
     

@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.feedback.oem.upload",
+	"apiChineseName": "14-供应商反馈（OEM）同步接口",
+	"description": "供应商反馈（OEM）同步接口",
+	"requestParams": [
+		{
+			"name": "request_extend_json",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "参数msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "参数code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "SupplierFeedbackDto[]",
+					"description": "返回对象list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键值日期",
+							"required": true
+						},
+						{
+							"name": "commit_qty",
+							"type": "String",
+							"description": "承诺反馈数量",
+							"required": true
+						},
+						{
+							"name": "loc_id",
+							"type": "String",
+							"description": "地点",
+							"required": true
+						},
+						{
+							"name": "prd_id",
+							"type": "String",
+							"description": "物料号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

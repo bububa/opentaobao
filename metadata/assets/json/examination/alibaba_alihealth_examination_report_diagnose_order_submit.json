@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.alihealth.examination.report.diagnose.order.submit",
+	"apiChineseName": "体检报告人工解读订单",
+	"description": "体检报告人工解读订单信息推送给ISV，进行人工解读",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单ID"
+		},
+		{
+			"name": "mobile_phone",
+			"type": "String",
+			"description": "手机号码，显示后四位"
+		},
+		{
+			"name": "id_card_no",
+			"type": "String",
+			"description": "证件号，显示前1，后1"
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"description": "性别"
+		},
+		{
+			"name": "report_url",
+			"type": "String",
+			"description": "报告地址"
+		},
+		{
+			"name": "question",
+			"type": "String",
+			"description": "主诉问题"
+		},
+		{
+			"name": "patient_name",
+			"type": "String",
+			"description": "咨询人名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "请求状态"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "order_info",
+			"type": "OrderInfo",
+			"description": "三方订单信息",
+			"subParams": [
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单ID",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "im_url",
+					"type": "String",
+					"description": "聊天地址，用户之间进行隔离",
+					"required": true
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生ID",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

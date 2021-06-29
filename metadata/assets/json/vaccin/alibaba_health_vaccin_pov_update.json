@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.health.vaccin.pov.update",
+	"apiChineseName": "新增/变更接种点信息",
+	"description": "ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种时可提供接种点详情。",
+	"requestParams": [
+		{
+			"name": "telephone",
+			"type": "String",
+			"description": "接种点联系电话",
+			"required": true
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "接种点具体地址",
+			"required": true
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "接种点介绍"
+		},
+		{
+			"name": "pov_no",
+			"type": "String",
+			"description": "接种点编码",
+			"required": true
+		},
+		{
+			"name": "pov_name",
+			"type": "String",
+			"description": "接种点名称",
+			"required": true
+		},
+		{
+			"name": "business_time",
+			"type": "String",
+			"description": "服务时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "返回数据详情"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功执行"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

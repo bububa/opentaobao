@@ -1,0 +1,50 @@
+{
+	"name": "cainiao.consignplatform.order.cancel",
+	"apiChineseName": "菜鸟发货工作台取消包裹以及订单",
+	"description": "菜鸟发货工作台，商家或者isv通过api取消包裹、回收单号，如果是裹裹运力会取消小件员上门。最后删除订单信息。",
+	"requestParams": [
+		{
+			"name": "cancel_request",
+			"type": "OrderCancelRequest",
+			"description": "取消参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单id",
+					"required": true
+				},
+				{
+					"name": "sub_outer_order_ids",
+					"type": "String[]",
+					"description": "外部订单id列表",
+					"required": true
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "订单来源",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "失败信息"
+		},
+		{
+			"name": "fail_message",
+			"type": "String",
+			"description": "失败code"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "取消是否成功"
+		}
+	]
+}

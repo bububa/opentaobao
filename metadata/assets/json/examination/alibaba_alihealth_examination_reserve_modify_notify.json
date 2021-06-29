@@ -1,0 +1,120 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.modify.notify",
+	"apiChineseName": "通知改期结果",
+	"description": "体检状态为改期中，服务上通知健康是否改期成功",
+	"requestParams": [
+		{
+			"name": "old_reserve_date",
+			"type": "String",
+			"description": "旧的预约日期",
+			"required": true
+		},
+		{
+			"name": "package_code",
+			"type": "String",
+			"description": "套餐编码"
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "健康预约凭证",
+			"required": true
+		},
+		{
+			"name": "new_reserve_date",
+			"type": "String",
+			"description": "新的预约日期",
+			"required": true
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "服务商预约凭证",
+			"required": true
+		},
+		{
+			"name": "goods_code",
+			"type": "String",
+			"description": "商品编码"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "门店编码"
+		},
+		{
+			"name": "pass",
+			"type": "Boolean",
+			"description": "true:同意修改；false:拒绝修改",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "拒绝修改的时候需要传递拒绝原因"
+		},
+		{
+			"name": "new_reserve_time_start",
+			"type": "String",
+			"description": "新的预约时间段开始时间"
+		},
+		{
+			"name": "new_reserve_time_end",
+			"type": "String",
+			"description": "新的预约时间段结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ModifyResultResponse",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "结果",
+							"required": true
+						},
+						{
+							"name": "response_code",
+							"type": "String",
+							"description": "结果",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "鹰眼id",
+					"required": true
+				}
+			]
+		}
+	]
+}

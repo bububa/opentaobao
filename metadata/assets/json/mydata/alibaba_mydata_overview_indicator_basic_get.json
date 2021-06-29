@@ -1,0 +1,97 @@
+{
+	"name": "alibaba.mydata.overview.indicator.basic.get",
+	"apiChineseName": "我的效果-获取公司询盘流量行业表现",
+	"description": "获取公司询盘流量行业表现",
+	"requestParams": [
+		{
+			"name": "date_range",
+			"type": "DateRange",
+			"description": "要查询的数据周期",
+			"required": true,
+			"subParams": [
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "数据周期结束时间（含）",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "数据周期开始时间（含）",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "industry",
+			"type": "Industry",
+			"description": "要查询的行业信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "industry_desc",
+					"type": "String",
+					"description": "行业描述"
+				},
+				{
+					"name": "industry_id",
+					"type": "Number",
+					"description": "行业ID",
+					"required": true
+				},
+				{
+					"name": "main_category",
+					"type": "Boolean",
+					"description": "是否主营行业",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CompanyIndicators",
+			"description": "公司询盘流量指标",
+			"subParams": [
+				{
+					"name": "clk",
+					"type": "Number",
+					"description": "点击",
+					"required": true
+				},
+				{
+					"name": "clk_rate",
+					"type": "String",
+					"description": "点击率",
+					"required": true
+				},
+				{
+					"name": "fb",
+					"type": "Number",
+					"description": "反馈（询盘）",
+					"required": true
+				},
+				{
+					"name": "imps",
+					"type": "Number",
+					"description": "曝光",
+					"required": true
+				},
+				{
+					"name": "reply",
+					"type": "String",
+					"description": "最近30天询盘一次回复率",
+					"required": true
+				},
+				{
+					"name": "visitor",
+					"type": "Number",
+					"description": "访客",
+					"required": true
+				}
+			]
+		}
+	]
+}

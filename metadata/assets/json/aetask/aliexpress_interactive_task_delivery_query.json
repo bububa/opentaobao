@@ -1,0 +1,250 @@
+{
+	"name": "aliexpress.interactive.task.delivery.query",
+	"apiChineseName": "AE互动任务投放",
+	"description": "将内部配置好的任务，如浏览商品，店铺投放给外部ISV",
+	"requestParams": [
+		{
+			"name": "request_dto",
+			"type": "QueryDeliveryRequestDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "pre_display",
+					"type": "Number",
+					"description": "0:不展示预热 1：展示预热"
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "投放场景id",
+					"required": true
+				},
+				{
+					"name": "ttid",
+					"type": "String",
+					"description": "用户版本信息",
+					"required": true
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家",
+					"required": true
+				},
+				{
+					"name": "project_app_key",
+					"type": "String",
+					"description": "准入key",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Result []",
+			"description": "服务返回接口",
+			"subParams": [
+				{
+					"name": "date_begin",
+					"type": "String",
+					"description": "响应时间戳",
+					"required": true
+				},
+				{
+					"name": "pre_display",
+					"type": "Boolean",
+					"description": "预热展示标识",
+					"required": true
+				},
+				{
+					"name": "security_level",
+					"type": "String",
+					"description": "风险等级",
+					"required": true
+				},
+				{
+					"name": "order_delivery",
+					"type": "Number",
+					"description": "展示排序",
+					"required": true
+				},
+				{
+					"name": "materials",
+					"type": "Materials[]",
+					"description": "物料集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "material_url_type",
+							"type": "String",
+							"description": "物料类型：shop/item/url",
+							"required": true
+						},
+						{
+							"name": "material_url",
+							"type": "String",
+							"description": "物料url",
+							"required": true
+						},
+						{
+							"name": "un_issue_record",
+							"type": "String",
+							"description": "未兑换记录",
+							"required": true
+						},
+						{
+							"name": "interest_num",
+							"type": "Number",
+							"description": "利益点",
+							"required": true
+						},
+						{
+							"name": "detail_ids",
+							"type": "String",
+							"description": "扩展待用",
+							"required": true
+						},
+						{
+							"name": "browse_zero_flag",
+							"type": "Boolean",
+							"description": "是否原地跳转",
+							"required": true
+						},
+						{
+							"name": "idempotent_id",
+							"type": "String",
+							"description": "幂等id",
+							"required": true
+						},
+						{
+							"name": "icon4_un_finish",
+							"type": "String",
+							"description": "未完成图标",
+							"required": true
+						},
+						{
+							"name": "task_instance_id",
+							"type": "Number",
+							"description": "参与记录id",
+							"required": true
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "任务类型：0浏览",
+							"required": true
+						},
+						{
+							"name": "instance_status",
+							"type": "Number",
+							"description": "任务状态",
+							"required": true
+						},
+						{
+							"name": "icon4_finished",
+							"type": "String",
+							"description": "完成图标",
+							"required": true
+						},
+						{
+							"name": "behavior_config",
+							"type": "String",
+							"description": "配置项",
+							"required": true
+						},
+						{
+							"name": "trace",
+							"type": "String",
+							"description": "算法打点标志",
+							"required": true
+						},
+						{
+							"name": "order_group",
+							"type": "Number",
+							"description": "分组排序",
+							"required": true
+						},
+						{
+							"name": "times_joined",
+							"type": "Number",
+							"description": "已参与次数",
+							"required": true
+						},
+						{
+							"name": "material_config_id",
+							"type": "Number",
+							"description": "物料id",
+							"required": true
+						},
+						{
+							"name": "main_title",
+							"type": "String",
+							"description": "主标题",
+							"required": true
+						},
+						{
+							"name": "second_title",
+							"type": "String",
+							"description": "副标题",
+							"required": true
+						},
+						{
+							"name": "icon_url",
+							"type": "String",
+							"description": "图标",
+							"required": true
+						},
+						{
+							"name": "times_limit",
+							"type": "Number",
+							"description": "可玩次数",
+							"required": true
+						},
+						{
+							"name": "task_id",
+							"type": "Number",
+							"description": "任务id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "分组id",
+					"required": true
+				},
+				{
+					"name": "date_end",
+					"type": "Number",
+					"description": "结束时间",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

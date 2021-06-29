@@ -1,0 +1,134 @@
+{
+	"name": "alibaba.alihealth.outflow.verify",
+	"apiChineseName": "处方外流药店通过核销码核销处方",
+	"description": "处方外流药店通过核销码核销处方",
+	"requestParams": [
+		{
+			"name": "prescription_verify_request",
+			"type": "PrescriptionVerifyRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "verify_code",
+					"type": "String",
+					"description": "核销码（必选）"
+				},
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方号（必选）"
+				},
+				{
+					"name": "pharmacist_name",
+					"type": "String",
+					"description": "药师名字（必选）"
+				},
+				{
+					"name": "drug_store_code",
+					"type": "String",
+					"description": "药店id（必选）"
+				},
+				{
+					"name": "drug_store_name",
+					"type": "String",
+					"description": "药店名字（必选）"
+				},
+				{
+					"name": "if_confirm",
+					"type": "Boolean",
+					"description": "是否核销（必选）"
+				},
+				{
+					"name": "out_settlement",
+					"type": "String",
+					"description": "结算id（必选）"
+				},
+				{
+					"name": "drug_list",
+					"type": "DrugDTO[]",
+					"description": "药品信息（必选）",
+					"subParams": [
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品名字（必选）"
+						},
+						{
+							"name": "drug_code",
+							"type": "String",
+							"description": "药品编码（必选）"
+						},
+						{
+							"name": "count",
+							"type": "String",
+							"description": "药品数量（必选）"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "核销药品单价"
+						}
+					]
+				},
+				{
+					"name": "verification_amount",
+					"type": "String",
+					"description": "核销金额（必选）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "PrescriptionOutflowConfirmResponse",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "备注说明",
+							"required": true
+						},
+						{
+							"name": "result",
+							"type": "Boolean",
+							"description": "返回成功或者失败",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "处方url地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

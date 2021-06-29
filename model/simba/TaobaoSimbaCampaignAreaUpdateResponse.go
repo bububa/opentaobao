@@ -19,7 +19,9 @@ type TaobaoSimbaCampaignAreaUpdateAPIResponse struct {
 
 type TaobaoSimbaCampaignAreaUpdateResponse struct {
     XMLName xml.Name `xml:"simba_campaign_area_update_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 修改后的推广计划投放地域
     

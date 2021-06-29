@@ -1,0 +1,109 @@
+{
+	"name": "alibaba.ascp.aic.supplier.aicinventory.channel.inventory.query",
+	"apiChineseName": "供应商直发-商家仓库存查询服务",
+	"description": "提供商家基于货品、供应商、仓，查询ascp 实时商家仓库存查询数据。",
+	"requestParams": [
+		{
+			"name": "merchant_inventory_query_request",
+			"type": "MerchantInventoryQuery",
+			"description": "商家仓库存查询请求参数",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应链中台供应商id",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "供应链中台商家仓code",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "供应链中台物流货主id",
+					"required": true
+				},
+				{
+					"name": "sc_item_ids",
+					"type": "Number[]",
+					"description": "供应链货主id list 单次\u003c=20",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "merchant_inventory_query_response",
+			"type": "ResultWrapper",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "datas",
+					"type": "Datas[]",
+					"description": "响应数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "1-良品 101 -在库残次",
+							"required": true
+						},
+						{
+							"name": "lock_quantity",
+							"type": "String",
+							"description": "占用库存",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "总库存",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "供应链中台货品ID",
+							"required": true
+						},
+						{
+							"name": "source_user_id",
+							"type": "Number",
+							"description": "供应链中台货主ID",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "供应链中台货仓code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

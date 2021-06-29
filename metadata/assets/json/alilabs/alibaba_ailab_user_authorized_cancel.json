@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.ailab.user.authorized.cancel",
+	"apiChineseName": "取消账号授权",
+	"description": "三方用户取消授权给天猫精灵用户",
+	"requestParams": [
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "三方用户的唯一ID"
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "开放平台申请的schema"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "返回码"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "错误中文描述"
+		}
+	]
+}

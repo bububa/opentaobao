@@ -1,0 +1,29 @@
+{
+	"name": "yunos.tvpubadmin.diccontroltask.update",
+	"apiChineseName": "停开服任务状态变更",
+	"description": "停开服任务状态变更",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "任务ID"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "任务状态"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

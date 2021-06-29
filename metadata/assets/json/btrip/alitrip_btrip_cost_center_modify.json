@@ -1,0 +1,76 @@
+{
+	"name": "alitrip.btrip.cost.center.modify",
+	"apiChineseName": "修改外部成本中心",
+	"description": "修改外部成本中心，设置成员，设置支付宝账号，设置名称，编号等",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterModifyRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "alipay_no",
+					"type": "String",
+					"description": "绑定支付宝账号"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "成本中心名称",
+					"required": true
+				},
+				{
+					"name": "scope",
+					"type": "Number",
+					"description": "适用范围: 1全员，2部分员工",
+					"required": true
+				},
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id",
+					"required": true
+				},
+				{
+					"name": "number",
+					"type": "String",
+					"description": "成本中心编号"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

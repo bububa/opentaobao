@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.report",
+	"apiChineseName": "体检机构对接_体检报告查询",
+	"description": "体检机构对接_体检报告获取",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户唯一码",
+			"required": true
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约唯一标识"
+		},
+		{
+			"name": "check_no",
+			"type": "String",
+			"description": "到检唯一标识"
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "体检机构预约唯一标识码"
+		},
+		{
+			"name": "search_no",
+			"type": "String",
+			"description": "查询报告卡号"
+		},
+		{
+			"name": "search_pwd",
+			"type": "String",
+			"description": "查询报告密码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "返回结果编码"
+		},
+		{
+			"name": "report_data",
+			"type": "String",
+			"description": "文件数据流"
+		}
+	]
+}

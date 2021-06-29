@@ -1,0 +1,63 @@
+{
+	"name": "taobao.alitrip.ie.agent.refund.agree",
+	"apiChineseName": "同意退票",
+	"description": "卖家同意买家退票申请",
+	"requestParams": [
+		{
+			"name": "refund_money",
+			"type": "Number",
+			"description": "退款金额",
+			"required": true
+		},
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "申请单id",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "agent_answer",
+			"type": "String",
+			"description": "回复信息",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AgreeRefundTicketRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "apiErrorMsg",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "apiErrorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

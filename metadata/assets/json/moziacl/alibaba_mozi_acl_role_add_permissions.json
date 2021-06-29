@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.mozi.acl.role.add.permissions",
+	"apiChineseName": "角色添加功能权限",
+	"description": "往角色中添加一批功能权限",
+	"requestParams": [
+		{
+			"name": "add_permissions_to_role",
+			"type": "AddPermissionToRoleRequest",
+			"description": "角色添加功能权限请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "principal_param",
+					"type": "BucPrincipalParam",
+					"description": "操作主体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "操作人所在租户"
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "操作人userId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "target_app_name",
+					"type": "String",
+					"description": "角色所在应用name(应用唯一code)"
+				},
+				{
+					"name": "apply_reason",
+					"type": "String",
+					"description": "操作原因"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求参数扩展字段"
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "角色name(角色唯一code，在ACL中全局唯一)",
+					"required": true
+				},
+				{
+					"name": "permission_names",
+					"type": "String[]",
+					"description": "要添加的权限name列表(功能权限唯一code，在ACL中全局唯一)",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AddPermissionToRoleResult",
+			"description": "角色移除功能权限结果对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回数据，这个接口返回数据为空",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否处理成功，若成功则返回true",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求唯一id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "响应结果message，若处理失败则返回失败原因",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "扩展字段，与入参扩展字段值相同",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应code",
+					"required": true
+				}
+			]
+		}
+	]
+}

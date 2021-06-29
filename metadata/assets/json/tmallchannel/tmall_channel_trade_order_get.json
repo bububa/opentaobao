@@ -1,0 +1,222 @@
+{
+	"name": "tmall.channel.trade.order.get",
+	"apiChineseName": "通过主采购单号查询采购单",
+	"description": "通过主采购单号查询采购单",
+	"requestParams": [
+		{
+			"name": "main_purchase_order_no",
+			"type": "Number",
+			"description": "主采购单ID",
+			"required": true
+		},
+		{
+			"name": "is_include_sub_order",
+			"type": "Boolean",
+			"description": "是否包含子采购单"
+		},
+		{
+			"name": "is_include_main_order",
+			"type": "Boolean",
+			"description": "是否包含主采购单（针对特殊业务）"
+		},
+		{
+			"name": "is_include_logistics",
+			"type": "Boolean",
+			"description": "是否包含物流信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "main_purchase_order_no",
+			"type": "Number",
+			"description": "主采购单号"
+		},
+		{
+			"name": "channel_purchase_apply_order_no",
+			"type": "String",
+			"description": "申请单单号"
+		},
+		{
+			"name": "distributor_nick",
+			"type": "String",
+			"description": "分销商淘宝nick"
+		},
+		{
+			"name": "buyer_taobao_nick",
+			"type": "String",
+			"description": "买家淘宝nick"
+		},
+		{
+			"name": "trade_type",
+			"type": "Number",
+			"description": "交易类型"
+		},
+		{
+			"name": "pay_type",
+			"type": "Number",
+			"description": "付款类型"
+		},
+		{
+			"name": "channel",
+			"type": "Number",
+			"description": "渠道编码"
+		},
+		{
+			"name": "post_fee",
+			"type": "Number",
+			"description": "改价后的最新邮费"
+		},
+		{
+			"name": "pay_status",
+			"type": "Number",
+			"description": "主采购单支付状态"
+		},
+		{
+			"name": "logistics_status",
+			"type": "Number",
+			"description": "主采购单物流状态"
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "交易状态"
+		},
+		{
+			"name": "create_time",
+			"type": "Date",
+			"description": "记录创建时间"
+		},
+		{
+			"name": "modified_time",
+			"type": "Date",
+			"description": "记录修改时间"
+		},
+		{
+			"name": "pay_time",
+			"type": "Date",
+			"description": "付款时间"
+		},
+		{
+			"name": "sub_order_list",
+			"type": "TopChannelSubPurchaseOrderDto []",
+			"description": "子采购单列表",
+			"subParams": [
+				{
+					"name": "sub_purchase_order_no",
+					"type": "Number",
+					"description": "子采购单单号",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				},
+				{
+					"name": "sku",
+					"type": "String",
+					"description": "sku信息",
+					"required": true
+				},
+				{
+					"name": "product_number",
+					"type": "String",
+					"description": "产品编码",
+					"required": true
+				},
+				{
+					"name": "product_title",
+					"type": "String",
+					"description": "产品标题",
+					"required": true
+				},
+				{
+					"name": "product_price",
+					"type": "Number",
+					"description": "产品价格",
+					"required": true
+				},
+				{
+					"name": "buy_amount",
+					"type": "Number",
+					"description": "购买数量",
+					"required": true
+				},
+				{
+					"name": "pay_status",
+					"type": "Number",
+					"description": "支付状态",
+					"required": true
+				},
+				{
+					"name": "logistics_status",
+					"type": "Number",
+					"description": "子采购单的物流状态",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "交易完成时间",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "channel_logistics_order",
+			"type": "TopChannelLogisticsOrderDto",
+			"description": "物流单信息",
+			"subParams": [
+				{
+					"name": "logistics_order_no",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				},
+				{
+					"name": "logistics_company_code",
+					"type": "String",
+					"description": "物流公司编号",
+					"required": true
+				},
+				{
+					"name": "logistics_company_name",
+					"type": "String",
+					"description": "物流公司名称",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "解析描述"
+		},
+		{
+			"name": "top_purchase_pay_order",
+			"type": "TopPurchasePayOrderDto",
+			"description": "支付信息",
+			"subParams": [
+				{
+					"name": "pay_order_id",
+					"type": "String",
+					"description": "支付流水编号",
+					"required": true
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "支付金额",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.dutyfree.stock.query",
+	"apiChineseName": "对外库存查询接口",
+	"description": "对外部服务提供库存查询接口",
+	"requestParams": [
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "StockResultDto",
+					"description": "具体库存信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "stock",
+							"type": "Number",
+							"description": "库存",
+							"required": true
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条形码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

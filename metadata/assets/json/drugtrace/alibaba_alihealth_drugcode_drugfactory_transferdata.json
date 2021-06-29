@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.transferdata",
+	"apiChineseName": "药厂传输数据",
+	"description": "药厂传输数据",
+	"requestParams": [
+		{
+			"name": "timestamp_yl",
+			"type": "Number",
+			"description": "时间戳(毫秒级别)",
+			"required": true
+		},
+		{
+			"name": "sign_value",
+			"type": "String",
+			"description": "签名值",
+			"required": true
+		},
+		{
+			"name": "cipher_text",
+			"type": "String",
+			"description": "密文",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否验签成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "操作说明"
+		}
+	]
+}

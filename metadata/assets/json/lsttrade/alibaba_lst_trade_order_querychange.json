@@ -1,0 +1,122 @@
+{
+	"name": "alibaba.lst.trade.order.querychange",
+	"apiChineseName": "订单id批量查询（品牌商视角）",
+	"description": "根据品牌和时间段查询有变更记录的订单id",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "LstOrderQuery",
+			"description": "入参包装类",
+			"required": true,
+			"subParams": [
+				{
+					"name": "gmt_create_begin",
+					"type": "Date",
+					"description": "开始时间，支持查询最近一年到最近一小时，[begin,end)，最大半小时",
+					"required": true
+				},
+				{
+					"name": "gmt_create_end",
+					"type": "Date",
+					"description": "结束时间，参考开始时间",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码，从1开始",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PagedResultDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "content_list",
+					"type": "TopOrderChange2BrandownerDto[]",
+					"description": "返回实体包装类",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "退款单id",
+							"required": true
+						},
+						{
+							"name": "new_created",
+							"type": "Boolean",
+							"description": "是否新建，包括订单新建和退款单新建",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "FORWARD_ORDER 正向订单表示正常购买流程,REVERSE_ORDER 逆向订单表示退款流程",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "主订单id",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子订单id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总记录条数",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功 true:调用成功 false:调用失败",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页最大记录数",
+					"required": true
+				}
+			]
+		}
+	]
+}

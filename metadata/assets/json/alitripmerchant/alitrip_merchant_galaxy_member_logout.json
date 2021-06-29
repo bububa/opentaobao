@@ -1,0 +1,52 @@
+{
+	"name": "alitrip.merchant.galaxy.member.logout",
+	"apiChineseName": "星河-用户登出",
+	"description": "星河=微信小程序用户登出",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户信息",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "登出是否成功",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

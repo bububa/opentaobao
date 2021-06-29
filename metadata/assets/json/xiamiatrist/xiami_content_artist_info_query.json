@@ -1,0 +1,152 @@
+{
+	"name": "xiami.content.artist.info.query",
+	"apiChineseName": "搜索艺人列表",
+	"description": "根据查询条件，搜索相关艺人列表",
+	"requestParams": [
+		{
+			"name": "gender",
+			"type": "Number",
+			"description": "性别：1男性 2女性 3乐队"
+		},
+		{
+			"name": "language",
+			"type": "Number",
+			"description": "语种：1华语 2日本 3韩国 4欧美 5其他"
+		},
+		{
+			"name": "genre",
+			"type": "Number",
+			"description": "流派: 1嘻哈(说唱),2流行，3摇滚，4布鲁斯，5爵士，6雷鬼，7世界音乐，8拉丁，9电子，10节奏布鲁斯，11实验，12轻音乐，13新世纪，14舞台 / 银幕 / 娱乐      * 15唱作人，16民谣，18金属，19中国特色，20乡村，21古典，22儿童，23有声书，24动漫，25朋克"
+		},
+		{
+			"name": "page_req",
+			"type": "PagingVo",
+			"description": "分页信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页展示数",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "artist_page",
+			"type": "Page",
+			"description": "返回的艺人分页信息",
+			"subParams": [
+				{
+					"name": "artists",
+					"type": "ArtistDto[]",
+					"description": "艺人信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区",
+							"required": true
+						},
+						{
+							"name": "gender",
+							"type": "String",
+							"description": "性别",
+							"required": true
+						},
+						{
+							"name": "alias",
+							"type": "String",
+							"description": "别名",
+							"required": true
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名",
+							"required": true
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人头像",
+							"required": true
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "满足条件的总数",
+					"required": true
+				},
+				{
+					"name": "paging",
+					"type": "Paging",
+					"description": "分页信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pages",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页展示数",
+							"required": true
+						},
+						{
+							"name": "page",
+							"type": "Number",
+							"description": "当前页码",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "执行结果",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

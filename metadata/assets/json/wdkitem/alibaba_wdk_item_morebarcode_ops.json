@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.wdk.item.morebarcode.ops",
+	"apiChineseName": "商品一品多码维护操作",
+	"description": "商品一品多码维护操作",
+	"requestParams": [
+		{
+			"name": "update_more_bar_code_request_bean",
+			"type": "UpdateMoreBarCodeRequestBean",
+			"description": "bean",
+			"required": true,
+			"subParams": [
+				{
+					"name": "org_code",
+					"type": "String",
+					"description": "机构编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "bar_code_bo_list",
+					"type": "Barcodebolist[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "barcode",
+							"required": true
+						},
+						{
+							"name": "spu_spec",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,228 @@
+{
+	"name": "alibaba.tax.invoice.sync.ledger",
+	"apiChineseName": "同步底账数据",
+	"description": "接收第三方服务（如：票易通）同步过来的底账发票数据",
+	"requestParams": [
+		{
+			"name": "param_sync_ledger_invoice_request",
+			"type": "SyncLedgerInvoiceRequest",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "金额",
+					"required": true
+				},
+				{
+					"name": "certify_date",
+					"type": "Date",
+					"description": "认证时间"
+				},
+				{
+					"name": "certify_flag",
+					"type": "String",
+					"description": "认证标识"
+				},
+				{
+					"name": "check_sum",
+					"type": "String",
+					"description": "校验码"
+				},
+				{
+					"name": "cipher_text",
+					"type": "String",
+					"description": "密码区"
+				},
+				{
+					"name": "excluding_tax_amount",
+					"type": "String",
+					"description": "不含税金额",
+					"required": true
+				},
+				{
+					"name": "input_invoice_line_d_t_o_list",
+					"type": "InputInvoiceLineLedgerDto[]",
+					"description": "发票行",
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "总金额"
+						},
+						{
+							"name": "excluding_tax_amount",
+							"type": "String",
+							"description": "不含税金额"
+						},
+						{
+							"name": "goods_desc",
+							"type": "String",
+							"description": "货物名称"
+						},
+						{
+							"name": "model",
+							"type": "String",
+							"description": "规格型号"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量"
+						},
+						{
+							"name": "quantity_unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "tax_amount",
+							"type": "String",
+							"description": "不含税金额"
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率"
+						}
+					]
+				},
+				{
+					"name": "invoice_code",
+					"type": "String",
+					"description": "发票代码",
+					"required": true
+				},
+				{
+					"name": "invoice_date",
+					"type": "Date",
+					"description": "开票日期",
+					"required": true
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票号码",
+					"required": true
+				},
+				{
+					"name": "invoice_status",
+					"type": "String",
+					"description": "发票状态"
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票类型",
+					"required": true
+				},
+				{
+					"name": "machine_code",
+					"type": "String",
+					"description": "机器编码"
+				},
+				{
+					"name": "purchaser_bank_info",
+					"type": "String",
+					"description": "购方银行信息"
+				},
+				{
+					"name": "purchaser_contact_info",
+					"type": "String",
+					"description": "购方联系方式"
+				},
+				{
+					"name": "purchaser_name",
+					"type": "String",
+					"description": "购方名称"
+				},
+				{
+					"name": "purchaser_tax_no",
+					"type": "String",
+					"description": "购方税号",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "seller_bank_info",
+					"type": "String",
+					"description": "销方银行信息"
+				},
+				{
+					"name": "seller_contact_info",
+					"type": "String",
+					"description": "销方联系人信息"
+				},
+				{
+					"name": "seller_name",
+					"type": "String",
+					"description": "销方名称",
+					"required": true
+				},
+				{
+					"name": "seller_tax_no",
+					"type": "String",
+					"description": "销方税号",
+					"required": true
+				},
+				{
+					"name": "tax_amount",
+					"type": "String",
+					"description": "税额",
+					"required": true
+				},
+				{
+					"name": "tax_period",
+					"type": "String",
+					"description": "所属期"
+				},
+				{
+					"name": "check_certify_time",
+					"type": "Date",
+					"description": "勾选时间"
+				},
+				{
+					"name": "check_certify_status",
+					"type": "String",
+					"description": "勾选状态"
+				},
+				{
+					"name": "effective_tax_amount",
+					"type": "String",
+					"description": "有效税额"
+				},
+				{
+					"name": "tax_deduct_fag",
+					"type": "String",
+					"description": "认证方式标识"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "响应编码"
+		},
+		{
+			"name": "response_msg",
+			"type": "String",
+			"description": "异常消息"
+		},
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "true/false"
+		}
+	]
+}

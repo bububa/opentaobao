@@ -1,0 +1,102 @@
+{
+	"name": "alibaba.mos.delivery.send",
+	"apiChineseName": "发货",
+	"description": "订单发货填写快递单",
+	"requestParams": [
+		{
+			"name": "delivery_dto",
+			"type": "DeliveryDto",
+			"description": "发货信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "承运公司名称",
+					"required": true
+				},
+				{
+					"name": "order_number",
+					"type": "String",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "company_code",
+					"type": "String",
+					"description": "承运公司编码",
+					"required": true
+				},
+				{
+					"name": "outbound_date",
+					"type": "Date",
+					"description": "出库时间"
+				},
+				{
+					"name": "waybill_number",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "ship_items",
+					"type": "ShipItemDto[]",
+					"description": "商品明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品sku",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "唯一标识",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "sub_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "sub_code",
+					"type": "String",
+					"description": "编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

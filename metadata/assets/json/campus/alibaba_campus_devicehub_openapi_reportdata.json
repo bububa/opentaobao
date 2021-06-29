@@ -1,0 +1,94 @@
+{
+	"name": "alibaba.campus.devicehub.openapi.reportdata",
+	"apiChineseName": "设备数据上报",
+	"description": "设备数据上报",
+	"requestParams": [
+		{
+			"name": "device_event_data",
+			"type": "DeviceReportEventDTO",
+			"description": "自动生成",
+			"subParams": [
+				{
+					"name": "id_type",
+					"type": "Number",
+					"description": "0:设备中心UUID ，1：外部id"
+				},
+				{
+					"name": "data",
+					"type": "null[]",
+					"description": "数据"
+				},
+				{
+					"name": "trans_id",
+					"type": "String",
+					"description": "消息唯一id"
+				},
+				{
+					"name": "event_time",
+					"type": "Number",
+					"description": "消息时间戳"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源系统"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "消息版本"
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "自动生成",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "error_ext_info",
+					"type": "Json",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

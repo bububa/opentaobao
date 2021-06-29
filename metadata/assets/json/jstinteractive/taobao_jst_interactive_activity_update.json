@@ -1,0 +1,35 @@
+{
+	"name": "taobao.jst.interactive.activity.update",
+	"apiChineseName": "互动任务活动修改接口",
+	"description": "互动任务活动修改接口",
+	"requestParams": [
+		{
+			"name": "mini_app_id",
+			"type": "String",
+			"description": "小程序id",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "活动状态，0=无效，1=有效，status设为0即代表删除此活动，需创建新的活动"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "修改结果"
+		}
+	]
+}

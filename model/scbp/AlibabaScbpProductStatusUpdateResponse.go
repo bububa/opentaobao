@@ -19,7 +19,9 @@ type AlibabaScbpProductStatusUpdateAPIResponse struct {
 
 type AlibabaScbpProductStatusUpdateResponse struct {
     XMLName xml.Name `xml:"alibaba_scbp_product_status_update_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 实际修改的产品数
     

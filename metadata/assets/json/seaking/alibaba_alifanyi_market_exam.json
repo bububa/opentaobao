@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.alifanyi.market.exam",
+	"apiChineseName": "通过考试用户",
+	"description": "企业或组织购买软件服务后可参与阿里翻译在线系统的考试认证，接口返回该企业或组织认证通过的用户",
+	"requestParams": [
+		{
+			"name": "report_query_api_d_t_o",
+			"type": "ReportQueryApiDto",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "query_date",
+					"type": "String",
+					"description": "请求日期",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页size",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResMsgClientDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "Data[]",
+					"description": "考试结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "score",
+							"type": "String",
+							"description": "考试分数",
+							"required": true
+						},
+						{
+							"name": "exam_paper_id",
+							"type": "String",
+							"description": "考卷id",
+							"required": true
+						},
+						{
+							"name": "exam_paper_name",
+							"type": "String",
+							"description": "考卷名称",
+							"required": true
+						},
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "开放id",
+							"required": true
+						},
+						{
+							"name": "pass_time",
+							"type": "Date",
+							"description": "通过考试时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "biz_error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

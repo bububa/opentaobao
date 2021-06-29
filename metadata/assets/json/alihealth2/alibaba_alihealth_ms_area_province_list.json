@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.ms.area.province.list",
+	"apiChineseName": "疫苗预约省份列表查询",
+	"description": "微信小程序疫苗预约省份列表查询",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "division_list",
+					"type": "DivisionDto[]",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "division_name",
+							"type": "String",
+							"description": "divisionName",
+							"required": true
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "divisionId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

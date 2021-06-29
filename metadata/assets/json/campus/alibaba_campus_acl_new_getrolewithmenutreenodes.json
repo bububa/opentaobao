@@ -1,0 +1,177 @@
+{
+	"name": "alibaba.campus.acl.new.getrolewithmenutreenodes",
+	"apiChineseName": "根据角色id查询权限",
+	"description": "根据角色id查询权限",
+	"requestParams": [
+		{
+			"name": "role_id",
+			"type": "Number",
+			"description": "角色id",
+			"required": true
+		},
+		{
+			"name": "all_permission",
+			"type": "Boolean",
+			"description": "是否查询全部类型权限"
+		},
+		{
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "appKey",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "SysRolePermissionsVo",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "role_key",
+							"type": "String",
+							"description": "角色key",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "app_key",
+							"type": "String",
+							"description": "appKey",
+							"required": true
+						},
+						{
+							"name": "dept_id",
+							"type": "String",
+							"description": "1",
+							"required": true
+						},
+						{
+							"name": "dept_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "role_name",
+							"type": "String",
+							"description": "角色名称",
+							"required": true
+						},
+						{
+							"name": "role_type",
+							"type": "String",
+							"description": "角色类型",
+							"required": true
+						},
+						{
+							"name": "role_desc",
+							"type": "String",
+							"description": "角色描述",
+							"required": true
+						},
+						{
+							"name": "permissions",
+							"type": "TreeNodeDto[]",
+							"description": "permissions",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "权限id",
+									"required": true
+								},
+								{
+									"name": "pid",
+									"type": "String",
+									"description": "父id",
+									"required": true
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "url",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "权限名称",
+									"required": true
+								},
+								{
+									"name": "node_type",
+									"type": "String",
+									"description": "节点类型",
+									"required": true
+								},
+								{
+									"name": "data_type",
+									"type": "String",
+									"description": "权限类型",
+									"required": true
+								},
+								{
+									"name": "datas",
+									"type": "Json[]",
+									"description": "data",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

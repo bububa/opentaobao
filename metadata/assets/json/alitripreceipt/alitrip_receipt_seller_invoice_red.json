@@ -1,0 +1,115 @@
+{
+	"name": "alitrip.receipt.seller.invoice.red",
+	"apiChineseName": "飞猪发票冲红",
+	"description": "飞猪发票创建",
+	"requestParams": [
+		{
+			"name": "red_receipt_param",
+			"type": "RedReceiptParam",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "receipt_title_type",
+					"type": "Number",
+					"description": "发票抬头类型,0:企业;1:个人"
+				},
+				{
+					"name": "receipt_memo",
+					"type": "String",
+					"description": "发票备注"
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商商家id"
+				},
+				{
+					"name": "receiver",
+					"type": "String",
+					"description": "接收人"
+				},
+				{
+					"name": "receive_mail",
+					"type": "String",
+					"description": "发票邮箱"
+				},
+				{
+					"name": "origin_receipt_number",
+					"type": "String",
+					"description": "原始发票号(冲红)"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "企业名称"
+				},
+				{
+					"name": "agent_order_no",
+					"type": "String",
+					"description": "代理商订单号"
+				},
+				{
+					"name": "receipt_content",
+					"type": "String",
+					"description": "发票内容"
+				},
+				{
+					"name": "receive_bank_name",
+					"type": "String",
+					"description": "接收人开户行名称"
+				},
+				{
+					"name": "receive_bank_account",
+					"type": "String",
+					"description": "接收人开户行账号"
+				},
+				{
+					"name": "origin_tp_order_id",
+					"type": "Number",
+					"description": "原始订单号"
+				},
+				{
+					"name": "receipt_amount",
+					"type": "Number",
+					"description": "发票金额(分)"
+				},
+				{
+					"name": "ext_map",
+					"description": "扩展参数"
+				},
+				{
+					"name": "receipt_title",
+					"type": "String",
+					"description": "发票抬头"
+				},
+				{
+					"name": "company_tax_no",
+					"type": "String",
+					"description": "企业税号"
+				},
+				{
+					"name": "receive_mobile",
+					"type": "String",
+					"description": "接收人手机号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

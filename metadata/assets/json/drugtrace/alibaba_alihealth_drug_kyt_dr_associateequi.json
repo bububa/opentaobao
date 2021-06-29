@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.associateequi",
+	"apiChineseName": "疫苗单据与设备绑定",
+	"description": "疫苗单据与设备绑定",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业refentid",
+			"required": true
+		},
+		{
+			"name": "bill_codes",
+			"type": "String",
+			"description": "单据编号，多个用逗号分隔",
+			"required": true
+		},
+		{
+			"name": "va_equipment_id",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

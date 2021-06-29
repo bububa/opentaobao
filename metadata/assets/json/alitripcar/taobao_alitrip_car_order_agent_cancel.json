@@ -1,0 +1,56 @@
+{
+	"name": "taobao.alitrip.car.order.agent.cancel",
+	"apiChineseName": "司机或客服取消订单",
+	"description": "司机或客服取消订单后通知飞猪订单取消",
+	"requestParams": [
+		{
+			"name": "param_order_cancel",
+			"type": "OrderCancel",
+			"description": "取消对象",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "飞猪订单id"
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "服务商ID 平台分配"
+				},
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商订单id"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因"
+				},
+				{
+					"name": "cancel_category",
+					"type": "Number",
+					"description": "取消类别(14:司机取消订单 15:商家客服取消订单)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果对象"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		}
+	]
+}

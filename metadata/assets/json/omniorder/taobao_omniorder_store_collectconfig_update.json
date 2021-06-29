@@ -1,0 +1,72 @@
+{
+	"name": "taobao.omniorder.store.collectconfig.update",
+	"apiChineseName": "门店自提配置修改",
+	"description": "修改门店自提配置内容",
+	"requestParams": [
+		{
+			"name": "store_collect_config",
+			"type": "StoreCollectConfig",
+			"description": "门店自提配置",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_end_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "working_time",
+					"type": "String",
+					"description": "接单时间段，格式为 \"09:00-12:00\", \"\" 表示一直开启",
+					"required": true
+				},
+				{
+					"name": "collect_threshold",
+					"type": "Number",
+					"description": "每日接单阈值",
+					"required": true
+				},
+				{
+					"name": "activity",
+					"type": "Boolean",
+					"description": "是否是活动期"
+				},
+				{
+					"name": "activity_start_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				}
+			]
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回素材id"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			]
+		}
+	]
+}

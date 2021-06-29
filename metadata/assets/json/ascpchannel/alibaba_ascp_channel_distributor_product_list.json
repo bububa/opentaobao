@@ -1,0 +1,114 @@
+{
+	"name": "alibaba.ascp.channel.distributor.product.list",
+	"apiChineseName": "供应链渠道中心淘外分销品批量查询(分销商专用)",
+	"description": "此api为淘外分销的品批量查询标准api，淘外分销商专用",
+	"requestParams": [
+		{
+			"name": "product_list_request",
+			"type": "Productlistrequest",
+			"description": "列表请求",
+			"subParams": [
+				{
+					"name": "sales_mode",
+					"type": "String[]",
+					"description": "经营模式"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道编码",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_list_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回值对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "返回值总数",
+							"required": true
+						},
+						{
+							"name": "products",
+							"type": "Products[]",
+							"description": "产品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sales_modes",
+									"type": "String[]",
+									"description": "经营模式",
+									"required": true
+								},
+								{
+									"name": "pictures",
+									"type": "String[]",
+									"description": "图片",
+									"required": true
+								},
+								{
+									"name": "product_title",
+									"type": "String",
+									"description": "产品标题",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "String",
+									"description": "产品id",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

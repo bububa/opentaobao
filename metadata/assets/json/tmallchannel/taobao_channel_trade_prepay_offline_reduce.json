@@ -1,0 +1,115 @@
+{
+	"name": "taobao.channel.trade.prepay.offline.reduce",
+	"apiChineseName": "渠道分销供应商上传线下流水预存款（减少）",
+	"description": "渠道分销供应商上传线下流水预存款（减少）",
+	"requestParams": [
+		{
+			"name": "offline_reduce_prepay_param",
+			"type": "TopOfflineReducePrepayDto",
+			"description": "减少流水",
+			"required": true,
+			"subParams": [
+				{
+					"name": "flow_type",
+					"type": "Number",
+					"description": "资金流水类型：1.纸质承兑； 2.电子承兑；3.现金；4.优惠返点；5.奖励",
+					"required": true
+				},
+				{
+					"name": "offline_prepay_detail_type",
+					"type": "Number",
+					"description": "线下流水类型 1票据作废 2线下使用",
+					"required": true
+				},
+				{
+					"name": "ticket_money",
+					"type": "Number",
+					"description": "金额，单位分（必须为负数）",
+					"required": true
+				},
+				{
+					"name": "receiver_account_num",
+					"type": "String",
+					"description": "收款人账号"
+				},
+				{
+					"name": "outer_pay_id",
+					"type": "String",
+					"description": "外部系统支付流水Id，用于商家上传流水时去重(外部保证唯一）",
+					"required": true
+				},
+				{
+					"name": "dist_nick",
+					"type": "String",
+					"description": "销商淘宝nick",
+					"required": true
+				},
+				{
+					"name": "drawer_full_name",
+					"type": "String",
+					"description": "出票人全称"
+				},
+				{
+					"name": "pay_bank_num",
+					"type": "String",
+					"description": "付款行行号"
+				},
+				{
+					"name": "drawer_account_num",
+					"type": "String",
+					"description": "出票人账号"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间"
+				},
+				{
+					"name": "ticket_issue_date",
+					"type": "Date",
+					"description": "出票日期"
+				},
+				{
+					"name": "receiver_bank_full_name",
+					"type": "String",
+					"description": "收款开户银行"
+				},
+				{
+					"name": "ticket_id",
+					"type": "String",
+					"description": "承兑票据号"
+				},
+				{
+					"name": "accept_date",
+					"type": "Date",
+					"description": "汇票到期日期"
+				},
+				{
+					"name": "receiver_full_name",
+					"type": "String",
+					"description": "收款人全称"
+				},
+				{
+					"name": "pay_bank_full_name",
+					"type": "String",
+					"description": "付款行全称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultTopDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

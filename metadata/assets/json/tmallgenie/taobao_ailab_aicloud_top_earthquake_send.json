@@ -1,0 +1,58 @@
+{
+	"name": "taobao.ailab.aicloud.top.earthquake.send",
+	"apiChineseName": "地震局发送地震消息",
+	"description": "地震局发送地震消息给天猫精灵，天猫精灵根据地震消息判断发送地震消息给危险区域用户",
+	"requestParams": [
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展占位字段"
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "nonce_str",
+			"type": "String",
+			"description": "随机值",
+			"required": true
+		},
+		{
+			"name": "timestamp_str",
+			"type": "String",
+			"description": "时间戳",
+			"required": true
+		},
+		{
+			"name": "earthquake_info",
+			"type": "String",
+			"description": "地震信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "响应结果"
+		},
+		{
+			"name": "extend_info",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "响应错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "响应错误码"
+		}
+	]
+}

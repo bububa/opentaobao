@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.seller.coupon.auth.verify",
+	"apiChineseName": "优惠券校验",
+	"description": "优惠券校验",
+	"requestParams": [
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务代码",
+			"required": true
+		},
+		{
+			"name": "coupon_seq_number",
+			"type": "String",
+			"description": "卡券验证码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "获取是否验证成功",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否正常返回",
+					"required": true
+				},
+				{
+					"name": "dto",
+					"type": "Boolean",
+					"description": "是否验证通过",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "exec_description",
+					"type": "String",
+					"description": "验证失败结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

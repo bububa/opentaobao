@@ -1,0 +1,57 @@
+{
+	"name": "taobao.omniorder.store.reallocate",
+	"apiChineseName": "rellocate",
+	"description": "门店发货提供改派接口",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单号",
+			"required": true
+		},
+		{
+			"name": "sub_order_ids",
+			"type": "Number[]",
+			"description": "子订单号",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店Id"
+		},
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "电商仓code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

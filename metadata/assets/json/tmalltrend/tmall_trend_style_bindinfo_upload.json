@@ -1,0 +1,56 @@
+{
+	"name": "tmall.trend.style.bindinfo.upload",
+	"apiChineseName": "趋势词\u0026款式绑定信息同步API",
+	"description": "趋势词\u0026款式(服饰行业)绑定信息同步至平台",
+	"requestParams": [
+		{
+			"name": "trend_style_bind_info_bo_list",
+			"type": "TrendStyleBindInfoBO[]",
+			"description": "趋势词\u0026款式绑定信息列表，一次最多1000条",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "trend_word_info_list",
+					"type": "null[]",
+					"description": "款式关联趋势词信息列表，趋势词信息：趋势词id+叶子类目id，单个款式最多关联3个趋势词",
+					"required": true
+				},
+				{
+					"name": "sync_purpose",
+					"type": "String",
+					"description": "同步操作目的，枚举，INSERT(\"新增\"),     UPDATE(\"更新\"),     OFFLINE(\"下线\");",
+					"required": true
+				},
+				{
+					"name": "style_serial_number",
+					"type": "String",
+					"description": "款式编号，业务唯一",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "resp_error_code",
+			"type": "Number",
+			"description": "错误码,1001-系统错误，1002-请求参数错误，1003-业务处理错误，1004-数据权限错误"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "趋势词\u0026款式关联信息同步处理结果描述"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.lst.speaker.configure.adjustvolume",
+	"apiChineseName": "音箱音量调节",
+	"description": "音箱音量调节",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "volume",
+			"type": "String",
+			"description": "音量直",
+			"required": true
+		},
+		{
+			"name": "value_type",
+			"type": "String",
+			"description": "音量类型，val:固定值, percent:百分比",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果标识"
+		},
+		{
+			"name": "erro_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "erro_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

@@ -1,0 +1,135 @@
+{
+	"name": "yunos.tvpubadmin.data.query",
+	"apiChineseName": "魔盒统计数据查询接口",
+	"description": "用于华数查询魔盒上的一些用户统计数据",
+	"requestParams": [
+		{
+			"name": "table_name",
+			"type": "String",
+			"description": "表名",
+			"required": true
+		},
+		{
+			"name": "columns",
+			"type": "String",
+			"description": "列名"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "UUID",
+			"required": true
+		},
+		{
+			"name": "data_type_id",
+			"type": "Number",
+			"description": "数据类型",
+			"required": true
+		},
+		{
+			"name": "date",
+			"type": "String",
+			"description": "日期",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页个数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DfPageResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "code_name",
+					"type": "String",
+					"description": "codeName",
+					"required": true
+				},
+				{
+					"name": "detail_message",
+					"type": "String",
+					"description": "detailMessage",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "pageNo",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "pageSize",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "resultCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "totalPage",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "Json[]",
+					"description": "value",
+					"required": true
+				}
+			]
+		}
+	]
+}

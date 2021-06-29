@@ -1,0 +1,109 @@
+{
+	"name": "alibaba.einvoice.tax.opt.salaryresult.query",
+	"apiChineseName": "查询发薪结果",
+	"description": "查询发薪结果",
+	"requestParams": [
+		{
+			"name": "detail_id_list",
+			"type": "String[]",
+			"description": "发薪流水号",
+			"required": true,
+			"maxListSize": 999
+		},
+		{
+			"name": "employer_code",
+			"type": "String",
+			"description": "业务方编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaxOptimizationSalaryPayResultQueryResultDto",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "salary_detail_list",
+					"type": "SalaryDetailDto[]",
+					"description": "结果列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "account_date",
+							"type": "String",
+							"description": "账期",
+							"required": true
+						},
+						{
+							"name": "apply_amount",
+							"type": "Number",
+							"description": "发薪金额",
+							"required": true
+						},
+						{
+							"name": "asset_symbol",
+							"type": "String",
+							"description": "收款账号",
+							"required": true
+						},
+						{
+							"name": "asset_type",
+							"type": "String",
+							"description": "账号类型",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "业务时间",
+							"required": true
+						},
+						{
+							"name": "detail_id",
+							"type": "String",
+							"description": "明细流水号",
+							"required": true
+						},
+						{
+							"name": "employer_code",
+							"type": "String",
+							"description": "业务编码",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "发薪失败原因",
+							"required": true
+						},
+						{
+							"name": "identification_in_belonging_employer",
+							"type": "String",
+							"description": "用户在业务方平台上的userid",
+							"required": true
+						},
+						{
+							"name": "process_time",
+							"type": "Date",
+							"description": "执行时间",
+							"required": true
+						},
+						{
+							"name": "salary_amount",
+							"type": "Number",
+							"description": "已发金额",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "发薪状态",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

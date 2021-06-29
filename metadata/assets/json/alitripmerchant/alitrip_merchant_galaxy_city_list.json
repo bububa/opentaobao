@@ -1,0 +1,167 @@
+{
+	"name": "alitrip.merchant.galaxy.city.list",
+	"apiChineseName": "星河-酒店城市列表展示",
+	"description": "雅高酒店城市列表展示，并且首字母列出酒店城市",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "domestic",
+			"type": "Number",
+			"description": "0国内 1国外"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "AddressListSearchDto",
+					"description": "返回城市列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city_list",
+							"type": "AddressLetterDto[]",
+							"description": "城市列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address_list",
+									"type": "AddressSearchDto[]",
+									"description": "字母分类列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "domestic",
+											"type": "Number",
+											"description": "0国内1国外",
+											"required": true
+										},
+										{
+											"name": "city_url",
+											"type": "String",
+											"description": "城市图片url",
+											"required": true
+										},
+										{
+											"name": "city_py_head",
+											"type": "String",
+											"description": "城市拼音首字母",
+											"required": true
+										},
+										{
+											"name": "city_code",
+											"type": "Number",
+											"description": "城市编码",
+											"required": true
+										},
+										{
+											"name": "country_code",
+											"type": "Number",
+											"description": "国家编码",
+											"required": true
+										},
+										{
+											"name": "city_cn",
+											"type": "String",
+											"description": "城市",
+											"required": true
+										},
+										{
+											"name": "country_cn",
+											"type": "String",
+											"description": "国家",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "letter",
+									"type": "String",
+									"description": "字母",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "hot_city_list",
+							"type": "AddressSearchDto[]",
+							"description": "热门城市",
+							"required": true,
+							"subParams": [
+								{
+									"name": "domestic",
+									"type": "Number",
+									"description": "0国内1国外",
+									"required": true
+								},
+								{
+									"name": "city_url",
+									"type": "String",
+									"description": "城市图片url",
+									"required": true
+								},
+								{
+									"name": "city_py_head",
+									"type": "String",
+									"description": "城市拼音首字母",
+									"required": true
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市编码",
+									"required": true
+								},
+								{
+									"name": "country_code",
+									"type": "Number",
+									"description": "国家编码",
+									"required": true
+								},
+								{
+									"name": "city_cn",
+									"type": "String",
+									"description": "城市",
+									"required": true
+								},
+								{
+									"name": "country_cn",
+									"type": "String",
+									"description": "国家",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

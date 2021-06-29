@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.alihealth.drugcode.center.receive.bound.status",
+	"apiChineseName": "接收中央随机化系统和临床研究机构的绑定确认状态",
+	"description": "临床用药试验-接收中央随机化系统和临床研究机构的绑定确认状态",
+	"requestParams": [
+		{
+			"name": "project_id",
+			"type": "Number",
+			"description": "项目id",
+			"required": true
+		},
+		{
+			"name": "hospital_ref_ent_id",
+			"type": "String",
+			"description": "临床研究机构id",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态 4:绑定成功 5:绑定失败",
+			"required": true
+		},
+		{
+			"name": "center_random_sys_id",
+			"type": "String",
+			"description": "中央随机化系统id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "返回结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用结果码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "提示信息"
+		}
+	]
+}

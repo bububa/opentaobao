@@ -1,0 +1,596 @@
+{
+	"name": "aliexpress.solution.order.get",
+	"apiChineseName": "get order list",
+	"description": "Get Order List from AliExpress",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OrderQuery",
+			"description": "param",
+			"subParams": [
+				{
+					"name": "create_date_end",
+					"type": "String",
+					"description": "create date end time.It's US pacific time"
+				},
+				{
+					"name": "create_date_start",
+					"type": "String",
+					"description": "create date start time.It's US pacific time"
+				},
+				{
+					"name": "modified_date_start",
+					"type": "String",
+					"description": "modified date start time.It's US pacific time"
+				},
+				{
+					"name": "order_status_list",
+					"type": "String[]",
+					"description": "Query order information in multiple order status. For specific order status, see order_status description."
+				},
+				{
+					"name": "buyer_login_id",
+					"type": "String",
+					"description": "buyer login id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "Number of pages per page",
+					"required": true
+				},
+				{
+					"name": "modified_date_end",
+					"type": "String",
+					"description": "modified date end time.It's US pacific time"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "the current page",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "Order status: PLACE_ORDER_SUCCESS: Waiting for buyer to pay; IN_CANCEL: Buyer request cancellation; WAIT_SELLER_SEND_GOODS: Waiting for your shipment; SELLER_PART_SEND_GOODS: Partial delivery; WAIT_BUYER_ACCEPT_GOODS: Waiting for buyer to receive goods; FUND_PROCESSING: Buyers agree, funds processing; IN_ISSUE : Orders in disputes; IN_FROZEN: Orders in freeze; WAIT_SELLER_EXAMINE_MONEY: Waiting for your confirmation amount; RISK_CONTROL: Orders are in 24 hours of risk control, starting 24 hours after the buyer's online payment is completed. The above status query can be separately queried separately, and the order status information is not included in the order status. (FINISH, closed order status) FINISH: The completed order needs to be queried separately."
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PaginationResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "error massage",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "total count(SC order is not include the result）",
+					"required": true
+				},
+				{
+					"name": "target_list",
+					"type": "OrderDto[]",
+					"description": "target list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "timeout_left_time",
+							"type": "Number",
+							"description": "The remain time of the current status (negative number indicates the timeout period)",
+							"required": true
+						},
+						{
+							"name": "seller_signer_fullname",
+							"type": "String",
+							"description": "seller fuller name",
+							"required": true
+						},
+						{
+							"name": "seller_operator_login_id",
+							"type": "String",
+							"description": "seller operator login id",
+							"required": true
+						},
+						{
+							"name": "seller_login_id",
+							"type": "String",
+							"description": "seller login id",
+							"required": true
+						},
+						{
+							"name": "product_list",
+							"type": "OrderProductDto[]",
+							"description": "product list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total_product_amount",
+									"type": "SimpleMoney",
+									"description": "total product amount",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "amount",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "son_order_status",
+									"type": "String",
+									"description": "child order status",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "sku code",
+									"required": true
+								},
+								{
+									"name": "show_status",
+									"type": "String",
+									"description": "order show status",
+									"required": true
+								},
+								{
+									"name": "send_goods_time",
+									"type": "String",
+									"description": "Last delivery time",
+									"required": true
+								},
+								{
+									"name": "send_goods_operator",
+									"type": "String",
+									"description": "Shipper type. \"SELLER_SEND_GOODS\": seller shipping; \"WAREHOUSE_SEND_GOODS\": warehouse delivery",
+									"required": true
+								},
+								{
+									"name": "product_unit_price",
+									"type": "SimpleMoney",
+									"description": "product unit price",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "amount",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "product_unit",
+									"type": "String",
+									"description": "product unit",
+									"required": true
+								},
+								{
+									"name": "product_standard",
+									"type": "String",
+									"description": "product standard",
+									"required": true
+								},
+								{
+									"name": "product_snap_url",
+									"type": "String",
+									"description": "product snap Url",
+									"required": true
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "product name",
+									"required": true
+								},
+								{
+									"name": "product_img_url",
+									"type": "String",
+									"description": "product main image url",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "product id",
+									"required": true
+								},
+								{
+									"name": "product_count",
+									"type": "Number",
+									"description": "product count",
+									"required": true
+								},
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "order ID",
+									"required": true
+								},
+								{
+									"name": "money_back3x",
+									"type": "Boolean",
+									"description": "fake one compensate three flag",
+									"required": true
+								},
+								{
+									"name": "memo",
+									"type": "String",
+									"description": "buyer memo",
+									"required": true
+								},
+								{
+									"name": "logistics_type",
+									"type": "String",
+									"description": "logistics service name( key)",
+									"required": true
+								},
+								{
+									"name": "logistics_service_name",
+									"type": "String",
+									"description": "logistics service show name",
+									"required": true
+								},
+								{
+									"name": "logistics_amount",
+									"type": "SimpleMoney",
+									"description": "Logistics amount(sub-orders have no shipping costs, please ignore)",
+									"required": true,
+									"subParams": [
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "currency code",
+											"required": true
+										},
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "amount",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "issue_status",
+									"type": "String",
+									"description": "issue status (NO_ISSUE; IN_ISSUE; END_ISSUE)",
+									"required": true
+								},
+								{
+									"name": "issue_mode",
+									"type": "String",
+									"description": "issue mode",
+									"required": true
+								},
+								{
+									"name": "goods_prepare_time",
+									"type": "Number",
+									"description": "goods prepare days",
+									"required": true
+								},
+								{
+									"name": "fund_status",
+									"type": "String",
+									"description": "fund status (NOT_PAY; PAY_SUCCESS; WAIT_SELLER_CHECK)",
+									"required": true
+								},
+								{
+									"name": "freight_commit_day",
+									"type": "String",
+									"description": "Limited time",
+									"required": true
+								},
+								{
+									"name": "escrow_fee_rate",
+									"type": "String",
+									"description": "escrow fee rate",
+									"required": true
+								},
+								{
+									"name": "delivery_time",
+									"type": "String",
+									"description": "delivery time",
+									"required": true
+								},
+								{
+									"name": "child_id",
+									"type": "Number",
+									"description": "child order id",
+									"required": true
+								},
+								{
+									"name": "can_submit_issue",
+									"type": "Boolean",
+									"description": "Whether child orders can submit disputes",
+									"required": true
+								},
+								{
+									"name": "buyer_signer_last_name",
+									"type": "String",
+									"description": "buyer last name",
+									"required": true
+								},
+								{
+									"name": "buyer_signer_first_name",
+									"type": "String",
+									"description": "buyer first name",
+									"required": true
+								},
+								{
+									"name": "afflicate_fee_rate",
+									"type": "String",
+									"description": "afflicate fee rate",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "phone",
+							"type": "Boolean",
+							"description": "Whether mobile phone orders",
+							"required": true
+						},
+						{
+							"name": "payment_type",
+							"type": "String",
+							"description": "pay type: migs: Credit card payments go through the RMB channel; migs: 102MasterCard pays and takes the RMB channel; migs101:Visa Pay and take the RMB channel; pp101: PayPal; mb: MoneyBooker channel; tt101: Bank Transfer payment; wu101: West Union payment; wp101: Visa pays for the US dollar channel; wp102: Mastercard to pay for the US dollar channel; qw101: QIWI payment; cybs101: Visa takes the payment of the CYBS channel; cybs102: Mastercard to pay for CYBS channels; wm101: WebMoney payment; ebanx101: Brazilian Beloto payment;",
+							"required": true
+						},
+						{
+							"name": "pay_amount",
+							"type": "SimpleMoney",
+							"description": "pay amount",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "amount",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "order status",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "order ID",
+							"required": true
+						},
+						{
+							"name": "order_detail_url",
+							"type": "String",
+							"description": "order detail url",
+							"required": true
+						},
+						{
+							"name": "logistics_status",
+							"type": "String",
+							"description": "logistics status。logistics status。(WAIT_SELLER_SEND_GOODS: Waiting for seller to ship; SELLER_SEND_PART_GOODS: Partial delivery by seller; SELLER_SEND_GOODS: Seller has shipped; BUYER_ACCEPT_GOODS: Buyer has confirmed receipt; NO_LOGISTICS: No logistics transfer)",
+							"required": true
+						},
+						{
+							"name": "logisitcs_escrow_fee_rate",
+							"type": "String",
+							"description": "logistics escrow fee rate",
+							"required": true
+						},
+						{
+							"name": "loan_amount",
+							"type": "SimpleMoney",
+							"description": "loan amount details",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "amount",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "left_send_good_min",
+							"type": "String",
+							"description": "Remaining delivery time (minute)",
+							"required": true
+						},
+						{
+							"name": "left_send_good_hour",
+							"type": "String",
+							"description": "Remaining delivery time (hour）",
+							"required": true
+						},
+						{
+							"name": "left_send_good_day",
+							"type": "String",
+							"description": "Remaining delivery time (days)",
+							"required": true
+						},
+						{
+							"name": "issue_status",
+							"type": "String",
+							"description": "issue status (NO_ISSUE; IN_ISSUE; END_ISSUE)",
+							"required": true
+						},
+						{
+							"name": "has_request_loan",
+							"type": "Boolean",
+							"description": "Have you requested a loan?",
+							"required": true
+						},
+						{
+							"name": "gmt_update",
+							"type": "String",
+							"description": "Last order update time",
+							"required": true
+						},
+						{
+							"name": "gmt_send_goods_time",
+							"type": "String",
+							"description": "Last order delivery time",
+							"required": true
+						},
+						{
+							"name": "gmt_pay_time",
+							"type": "String",
+							"description": "order pay time (The gmtPaysuccess field has the same meaning in the order details.)it's US Pacific time",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "order create time,it's US Pacific time",
+							"required": true
+						},
+						{
+							"name": "fund_status",
+							"type": "String",
+							"description": "fund status (NOT_PAY; PAY_SUCCESS; WAIT_SELLER_CHECK)",
+							"required": true
+						},
+						{
+							"name": "frozen_status",
+							"type": "String",
+							"description": "frozen status。(NO_FROZEN:no frozen; IN_FROZEN:in frozen)",
+							"required": true
+						},
+						{
+							"name": "escrow_fee_rate",
+							"type": "Number",
+							"description": "escrow fee rate",
+							"required": true
+						},
+						{
+							"name": "escrow_fee",
+							"type": "SimpleMoney",
+							"description": "escrow fee",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "currency code",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "amount",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "end_reason",
+							"type": "String",
+							"description": "order finished reason",
+							"required": true
+						},
+						{
+							"name": "buyer_signer_fullname",
+							"type": "String",
+							"description": "buyer full name",
+							"required": true
+						},
+						{
+							"name": "buyer_login_id",
+							"type": "String",
+							"description": "buyer login id",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "order type。（AE_COMMON:common type,AE_TRIAL:trial type;AE_RECHARGE:recharge order)",
+							"required": true
+						},
+						{
+							"name": "offline_pickup_type",
+							"type": "String",
+							"description": "pickup type of order",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "the number of each page",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error code",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "current page",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "total page",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success or not",
+					"required": true
+				},
+				{
+					"name": "time_stamp",
+					"type": "Date",
+					"description": "timeStamp",
+					"required": true
+				}
+			]
+		}
+	]
+}

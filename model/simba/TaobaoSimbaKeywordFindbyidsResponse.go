@@ -19,7 +19,9 @@ type TaobaoSimbaKeywordFindbyidsAPIResponse struct {
 
 type TaobaoSimbaKeywordFindbyidsResponse struct {
     XMLName xml.Name `xml:"simba_keyword_findbyids_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 整体的返回值
     

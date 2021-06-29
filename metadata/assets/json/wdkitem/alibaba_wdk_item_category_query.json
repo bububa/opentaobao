@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.wdk.item.category.query",
+	"apiChineseName": "类目查询接口",
+	"description": "类目查询接口",
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "查询关键词，不填查全部"
+		},
+		{
+			"name": "root_category_code",
+			"type": "String",
+			"description": "从哪个类目开始查，不填从根类目开始查"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "result",
+					"required": true
+				}
+			]
+		}
+	]
+}

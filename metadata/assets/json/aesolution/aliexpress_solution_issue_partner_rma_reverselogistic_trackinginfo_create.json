@@ -1,0 +1,57 @@
+{
+	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
+	"description": "Receives information about reverse logistics tracking info",
+	"requestParams": [
+		{
+			"name": "logistics_order_creation_request",
+			"type": "LogisticOrderCreationForRmaRequest",
+			"description": "Logistic's order creation request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "dispute_id",
+					"type": "Number",
+					"description": "The dispute Id",
+					"required": true
+				},
+				{
+					"name": "tracking_code",
+					"type": "String",
+					"description": "Carrier tracking code. Tracking code or Shipping code must be provided",
+					"required": true
+				},
+				{
+					"name": "order_date",
+					"type": "Date",
+					"description": "Order date. PST time",
+					"required": true
+				},
+				{
+					"name": "logistic_reason",
+					"type": "String",
+					"description": "Values: PRODUCT_CUSTOMER_GATHERING,PRODUCT_RETURN_CUSTOMER,PRODUCT_RETURN_WAREHOUSE,PRODUCT_RETURN_SUPPLIER",
+					"required": true
+				},
+				{
+					"name": "carrier_name",
+					"type": "String",
+					"description": "Carrier name",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code_error",
+			"type": "String",
+			"description": "Error code. 0 value is no error."
+		},
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "Error description"
+		}
+	]
+}

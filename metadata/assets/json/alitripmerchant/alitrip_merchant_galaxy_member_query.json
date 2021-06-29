@@ -1,0 +1,166 @@
+{
+	"name": "alitrip.merchant.galaxy.member.query",
+	"apiChineseName": "星河-获取登录用户的信息",
+	"description": "获取登录用户的信息",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "toekn",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "MemberDto",
+					"description": "用户信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "member_base_info",
+							"type": "MemberBaseInfoDto",
+							"description": "用户基本信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "first_name",
+									"type": "String",
+									"description": "用户英文姓",
+									"required": true
+								},
+								{
+									"name": "last_name",
+									"type": "String",
+									"description": "用户英文名",
+									"required": true
+								},
+								{
+									"name": "civility",
+									"type": "String",
+									"description": "称呼",
+									"required": true
+								},
+								{
+									"name": "language",
+									"type": "String",
+									"description": "语言",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "phone_num",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "wechat_avatar_url",
+							"type": "String",
+							"description": "微信头像",
+							"required": true
+						},
+						{
+							"name": "wechat_nick_name",
+							"type": "String",
+							"description": "微信昵称",
+							"required": true
+						},
+						{
+							"name": "is_member",
+							"type": "Boolean",
+							"description": "是否是会员",
+							"required": true
+						},
+						{
+							"name": "phone_pri",
+							"type": "String",
+							"description": "手机前缀",
+							"required": true
+						},
+						{
+							"name": "card_base_info",
+							"type": "CardBaseInfoDto",
+							"description": "会员卡信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "card_tier",
+									"type": "String",
+									"description": "会员等级",
+									"required": true
+								},
+								{
+									"name": "card_number",
+									"type": "String",
+									"description": "会员卡号",
+									"required": true
+								},
+								{
+									"name": "card_type",
+									"type": "String",
+									"description": "会员卡类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						},
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token",
+							"required": true
+						},
+						{
+							"name": "tenant_user_id",
+							"type": "String",
+							"description": "用户id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "返回日期毫秒值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

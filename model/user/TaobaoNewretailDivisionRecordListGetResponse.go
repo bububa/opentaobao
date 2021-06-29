@@ -19,7 +19,9 @@ type TaobaoNewretailDivisionRecordListGetAPIResponse struct {
 
 type TaobaoNewretailDivisionRecordListGetResponse struct {
     XMLName xml.Name `xml:"newretail_division_record_list_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 是否有上一页
     
@@ -38,7 +40,7 @@ type TaobaoNewretailDivisionRecordListGetResponse struct {
     
     // 数据列表
     
-    DataList   []T `json:"data_list,omitempty" xml:"data_list>t,omitempty"`
+    DataList   []TaobaoNewretailDivisionRecordListGetT `json:"data_list,omitempty" xml:"data_list>taobao_newretail_division_record_list_get_t,omitempty"`
     
     
     // 是否有下一页

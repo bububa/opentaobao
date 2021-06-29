@@ -1,0 +1,51 @@
+{
+	"name": "tmall.nrt.simpleitem.query",
+	"apiChineseName": "简易商品查询接口",
+	"description": "为居然之家和阿里的合资公司 homeStyler提供简易的商品信息查询 包含商品名称  图片 状态\n\n后续合资公司服务会迁移到内网 暂时过渡用",
+	"requestParams": [
+		{
+			"name": "ids",
+			"type": "Number[]",
+			"description": "商品编码数组",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "返回结果"
+		},
+		{
+			"name": "models",
+			"type": "Model []",
+			"description": "对象",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0,1是正常状态",
+					"required": true
+				},
+				{
+					"name": "item_pic",
+					"type": "String",
+					"description": "商品主图",
+					"required": true
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

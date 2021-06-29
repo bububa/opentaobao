@@ -1,0 +1,145 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.destbill.list",
+	"apiChineseName": "直调单据查询",
+	"description": "为药企提供直调单据查询功能",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID"
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间，格式yyyy-MM-dd"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间，格式yyyy-MM-dd"
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号"
+		},
+		{
+			"name": "approval_status",
+			"type": "String",
+			"description": "审核状态，1：未审核；2：审核通过；3：审核失败"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回result",
+			"subParams": [
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "接口返回model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "drug_type",
+							"type": "String",
+							"description": "药品类型",
+							"required": true
+						},
+						{
+							"name": "from_user_name",
+							"type": "String",
+							"description": "发货单位",
+							"required": true
+						},
+						{
+							"name": "ass_ref_ent_id",
+							"type": "String",
+							"description": "委托企业ref_ent_id",
+							"required": true
+						},
+						{
+							"name": "dest_ent_name",
+							"type": "String",
+							"description": "直调收货企业",
+							"required": true
+						},
+						{
+							"name": "ass_ent_name",
+							"type": "String",
+							"description": "委托企业名称",
+							"required": true
+						},
+						{
+							"name": "dis_ref_ent_id",
+							"type": "String",
+							"description": "配送企业ref_ent_id",
+							"required": true
+						},
+						{
+							"name": "bill_id",
+							"type": "String",
+							"description": "单据ID",
+							"required": true
+						},
+						{
+							"name": "ass_ent_id",
+							"type": "String",
+							"description": "委托企业ent_id",
+							"required": true
+						},
+						{
+							"name": "dis_ent_id",
+							"type": "String",
+							"description": "配送企业ent_id",
+							"required": true
+						},
+						{
+							"name": "to_user_name",
+							"type": "String",
+							"description": "收货企业名称",
+							"required": true
+						},
+						{
+							"name": "dis_ent_name",
+							"type": "String",
+							"description": "配送企业名称",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "审核状态，1：未审核；2：审核通过；3：审核失败",
+							"required": true
+						},
+						{
+							"name": "bill_code",
+							"type": "String",
+							"description": "单据编号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

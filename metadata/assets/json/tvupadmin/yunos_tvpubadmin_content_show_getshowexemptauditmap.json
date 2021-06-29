@@ -1,0 +1,24 @@
+{
+	"name": "yunos.tvpubadmin.content.show.getshowexemptauditmap",
+	"apiChineseName": "迎客松批量查询节目某个牌照的免审状态",
+	"description": "迎客松批量查询节目某个牌照的免审状态",
+	"requestParams": [
+		{
+			"name": "show_long_ids",
+			"type": "String",
+			"description": "节目longid"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Json",
+			"description": "object"
+		}
+	]
+}

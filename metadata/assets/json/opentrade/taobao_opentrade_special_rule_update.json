@@ -1,0 +1,41 @@
+{
+	"name": "taobao.opentrade.special.rule.update",
+	"apiChineseName": "专属下单更新限购规则",
+	"description": "对于专属下单的交易场景更新限购规则",
+	"requestParams": [
+		{
+			"name": "limit_num",
+			"type": "Number",
+			"description": "最大限购数量",
+			"required": true
+		},
+		{
+			"name": "item_ids",
+			"type": "Number[]",
+			"description": "商品id列表",
+			"required": true,
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemResultDto []",
+			"description": "更新失败的商品列表",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "失败商品id",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "失败原因",
+					"required": true
+				}
+			]
+		}
+	]
+}

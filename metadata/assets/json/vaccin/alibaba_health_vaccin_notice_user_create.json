@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.health.vaccin.notice.user.create",
+	"apiChineseName": "支付宝医疗健康疫苗用户创建",
+	"description": "支付宝医疗健康疫苗用户创建",
+	"requestParams": [
+		{
+			"name": "ali_pay_user_id",
+			"type": "String",
+			"description": "支付宝用户id",
+			"required": true
+		},
+		{
+			"name": "outer_user_id",
+			"type": "String",
+			"description": "外部渠道用户id"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "用户电话号码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果集"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

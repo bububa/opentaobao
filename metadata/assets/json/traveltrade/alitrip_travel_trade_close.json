@@ -1,0 +1,31 @@
+{
+	"name": "alitrip.travel.trade.close",
+	"apiChineseName": "飞猪度假-订单关闭接口（快速退款）",
+	"description": "卖家关单（快速退款接口），不支持二次预约商品的订单",
+	"requestParams": [
+		{
+			"name": "close_reason",
+			"type": "String",
+			"description": "交易关闭原因",
+			"required": true
+		},
+		{
+			"name": "sub_order_id",
+			"type": "Number",
+			"description": "子订单编号",
+			"required": true
+		},
+		{
+			"name": "reason_desc",
+			"type": "String",
+			"description": "订单关闭原因描述"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "Boolean",
+			"description": "交易关闭是否成功"
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.ai.user.quick.token.bind",
+	"apiChineseName": "人工智能实验室精灵用户绑定第三方Token接口",
+	"description": "人工智能实验室精灵用户绑定第三方Token接口",
+	"requestParams": [
+		{
+			"name": "access_token_value",
+			"type": "String",
+			"description": "Oauth协议访问令牌",
+			"required": true
+		},
+		{
+			"name": "expired_time",
+			"type": "Number",
+			"description": "令牌有效期（秒）",
+			"required": true
+		},
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "第三方用户账号唯一ID",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "String",
+			"description": "技能ID",
+			"required": true
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "账号隔离属性",
+			"required": true
+		},
+		{
+			"name": "refresh_token",
+			"type": "String",
+			"description": "Oauth协议刷新令牌",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "statusCode"
+		}
+	]
+}

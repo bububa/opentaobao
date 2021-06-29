@@ -1,0 +1,163 @@
+{
+	"name": "alibaba.lst.shiporder.query",
+	"apiChineseName": "零售通发货单查询",
+	"description": "通过该接口可以查询零售通运保保发货单，并处理相关业务流程。",
+	"requestParams": [
+		{
+			"name": "source",
+			"type": "String",
+			"description": "零售通"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "订单",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "LstThirdPartMainShipOrderDto",
+					"description": "发货单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "details",
+							"type": "LstThirdPartDetailShipOrderDto[]",
+							"description": "货品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sale_quantity",
+									"type": "Number",
+									"description": "销售数量",
+									"required": true
+								},
+								{
+									"name": "sku_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "sku_spec",
+									"type": "String",
+									"description": "规格",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "条码",
+									"required": true
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "load_quantity",
+									"type": "Number",
+									"description": "装车数量",
+									"required": true
+								},
+								{
+									"name": "sign_quantity",
+									"type": "Number",
+									"description": "签收数量",
+									"required": true
+								},
+								{
+									"name": "detail_order_id",
+									"type": "String",
+									"description": "明细订单ID",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "子发货单状态",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sign_time",
+							"type": "Date",
+							"description": "签收时间",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "发货单状态：NEW ---\u003e新建，LOAD_WAIT---\u003e待装车，LOAD_SUCCESS---\u003e已装车，SIGN_SUCCESS---\u003e签收，SIGN_PART_SUCCESS---\u003e部分签收，SIGN_FAILED---\u003e拒签，CANCEL---\u003e取消",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单ID",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "发货单更新时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "发货单生成时间",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "发货单ID",
+							"required": true
+						},
+						{
+							"name": "load_time",
+							"type": "Date",
+							"description": "装车时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,146 @@
+{
+	"name": "alibaba.it.cloudlive.getagentconfig",
+	"apiChineseName": "线上巡店Agent获取配置",
+	"description": "线上巡店应用，外部Agent设备获取设备配置信息，根据配置信息链接mqtt，跟云端进行进一步的消息通信。",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "String",
+			"description": "agent标识信息"
+		},
+		{
+			"name": "time_stamp",
+			"type": "Number",
+			"description": "时间戳"
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "签名"
+		},
+		{
+			"name": "agent_ip",
+			"type": "String",
+			"description": "设备所在IP地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_content",
+			"type": "AgentConfigResponse",
+			"description": "消息内容",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "ConfigResult",
+					"description": "消息体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "agent_id",
+							"type": "String",
+							"description": "agent标识",
+							"required": true
+						},
+						{
+							"name": "client_id",
+							"type": "String",
+							"description": "连接客户端id",
+							"required": true
+						},
+						{
+							"name": "keep_alive",
+							"type": "Number",
+							"description": "是否保活",
+							"required": true
+						},
+						{
+							"name": "signature",
+							"type": "String",
+							"description": "签名",
+							"required": true
+						},
+						{
+							"name": "ipcs",
+							"type": "String[]",
+							"description": "IPC列表",
+							"required": true
+						},
+						{
+							"name": "max_stream_number",
+							"type": "Number",
+							"description": "最大推流数量",
+							"required": true
+						},
+						{
+							"name": "mqtt_up_topic",
+							"type": "String",
+							"description": "上报消息topic",
+							"required": true
+						},
+						{
+							"name": "channel_type",
+							"type": "String",
+							"description": "通道类型",
+							"required": true
+						},
+						{
+							"name": "broker_url",
+							"type": "String",
+							"description": "broker代理地址",
+							"required": true
+						},
+						{
+							"name": "report_interval",
+							"type": "Number",
+							"description": "上报时间间隔",
+							"required": true
+						},
+						{
+							"name": "mqtt_down_topic",
+							"type": "String",
+							"description": "下发消息topic",
+							"required": true
+						},
+						{
+							"name": "access_key",
+							"type": "String",
+							"description": "访问accesskey",
+							"required": true
+						},
+						{
+							"name": "cpu_upper_limit",
+							"type": "String",
+							"description": "CPU上线",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "method",
+					"type": "String",
+					"description": "调用方法",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "返回编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

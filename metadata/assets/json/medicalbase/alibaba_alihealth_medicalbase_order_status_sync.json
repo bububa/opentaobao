@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.medicalbase.order.status.sync",
+	"apiChineseName": "号源直连订单状态同步接口",
+	"description": "互联网医院isv批量通过接口批量导入",
+	"requestParams": [
+		{
+			"name": "orderl_sync_d_t_o",
+			"type": "OrderlSyncDto",
+			"description": "订单信息",
+			"subParams": [
+				{
+					"name": "alipay_id",
+					"type": "String",
+					"description": "登录用户支付宝ID",
+					"required": true
+				},
+				{
+					"name": "hos_org_no",
+					"type": "String",
+					"description": "医院唯一标识",
+					"required": true
+				},
+				{
+					"name": "hos_distinct_code",
+					"type": "String",
+					"description": "院区编码"
+				},
+				{
+					"name": "reservation_id",
+					"type": "String",
+					"description": "预约ID",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "失败原因"
+				},
+				{
+					"name": "order_pass",
+					"type": "String",
+					"description": "取号密码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "isvId",
+					"required": true
+				}
+			]
+		}
+	]
+}

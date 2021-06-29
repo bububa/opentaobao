@@ -1,0 +1,112 @@
+{
+	"name": "taobao.xhotel.room.update",
+	"apiChineseName": "房型库存推送接口（全量推送）",
+	"description": "此接口用于更新一个酒店商品，根据传入的gid更新商品信息，该商品必须为对应的发布者才能执行更新操作。如果对应的商品在酒店系统中不存在，则会返回错误提示。",
+	"requestParams": [
+		{
+			"name": "gid",
+			"type": "Number",
+			"description": "废弃，使用out_rid"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "废弃，宝贝名称展示在店铺里",
+			"maxLength": 60
+		},
+		{
+			"name": "guide",
+			"type": "String",
+			"description": "废弃，房型购买须知展示在PC购物路径",
+			"maxLength": 600
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "废弃，宝贝描述展示在宝贝详情页面",
+			"maxLength": 50000
+		},
+		{
+			"name": "pic",
+			"type": "byte[]",
+			"description": "废弃，宝贝图片，没有默认使用标准酒店房型图片",
+			"maxLength": 512000
+		},
+		{
+			"name": "has_receipt",
+			"type": "Boolean",
+			"description": "废弃，房型是否提供发票"
+		},
+		{
+			"name": "receipt_type",
+			"type": "String",
+			"description": "废弃，房型发票类型。A,B。分别代表： A:酒店住宿发票,B:其他"
+		},
+		{
+			"name": "receipt_other_type_desc",
+			"type": "String",
+			"description": "废弃，房型发票类型为其他时的发票描述,不能超过30个字",
+			"maxLength": 30
+		},
+		{
+			"name": "receipt_info",
+			"type": "String",
+			"description": "废弃，房型发票说明，不能超过100个字",
+			"maxLength": 100
+		},
+		{
+			"name": "inventory",
+			"type": "String",
+			"description": "房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{\"date\":2011-01-28,\"quota\":10,\"al_quota\":2,\"sp_quota\":3}]"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请",
+			"maxLength": 50
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "卖家房型ID",
+			"maxLength": 50
+		},
+		{
+			"name": "room_switch_cal",
+			"type": "String",
+			"description": "房型库存开关。 1，开；2，关"
+		},
+		{
+			"name": "superbook_end_time",
+			"type": "String",
+			"description": "超预定库存截止时间"
+		},
+		{
+			"name": "superbook_start_time",
+			"type": "String",
+			"description": "超预定库存开始时间"
+		},
+		{
+			"name": "allotment_end_time",
+			"type": "String",
+			"description": "保留房库存截止时间"
+		},
+		{
+			"name": "allotment_start_time",
+			"type": "String",
+			"description": "保留房库存截止时间"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "宝贝状态,1上架。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gid",
+			"type": "Number",
+			"description": "gid酒店商品id"
+		}
+	]
+}

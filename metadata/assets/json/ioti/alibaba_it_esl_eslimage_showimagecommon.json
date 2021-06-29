@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.it.esl.eslimage.showimagecommon",
+	"apiChineseName": "对混合云提供的刷图接口",
+	"description": "混合云使用，提供给isv和我们混合云环境部署的应用刷图",
+	"requestParams": [
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "ma地址"
+		},
+		{
+			"name": "content2",
+			"type": "String",
+			"description": "图片的base64编码,图片要和价签大小一致"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "图片2的base64编码,图片要和价签大小一致"
+		},
+		{
+			"name": "is_compress",
+			"type": "String",
+			"description": "是否压缩，默认不传，字符串：yes，no"
+		},
+		{
+			"name": "is_manual",
+			"type": "String",
+			"description": "是否手动刷图，默认不传，字符串：true，false"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resultmsg",
+			"type": "String",
+			"description": "resultmsg"
+		}
+	]
+}

@@ -1,0 +1,109 @@
+{
+	"name": "aliyun.viapi.facebody.recognizeface",
+	"apiChineseName": "人脸属性识别",
+	"description": "输入图片之后，在人脸检测定位返回结果的基础上，识别各个检测人脸的四种属性，返回性别（男/女）、年龄、表情（笑/不笑）、眼镜（戴/不戴）；并可返回人脸的1024维深度学习特征。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "待检测图片链接"
+		},
+		{
+			"name": "image_type",
+			"type": "Number",
+			"description": "图片类型, ,取值范围[0:ImageURL, 1:ImageContent]"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "face_rectangles",
+					"type": "Number[]",
+					"description": "返回人脸矩形框，分别是[left, top, width, height], 如有多个人脸，则依次顺延，返回矩形框。如有两个人脸则返回[left1, top1, width1, height1, left2, top2, width2, height2]",
+					"required": true
+				},
+				{
+					"name": "dense_feature_length",
+					"type": "Number",
+					"description": "人脸识别返回特征维度，目前固定为1024",
+					"required": true
+				},
+				{
+					"name": "pose_list",
+					"type": "String[]",
+					"description": "返回人脸姿态[yaw, pitch, roll]， yaw为左右角度，取值[-90, 90]，pitch为上下角度，取值[-90, 90]， roll为平面旋转角度，取值[-180, 180]，如有多个人脸，则依次顺延",
+					"required": true
+				},
+				{
+					"name": "pupils",
+					"type": "String[]",
+					"description": "左右两个瞳孔的中心点坐标和半径，每个人脸6个浮点数，顺序是[left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radis]",
+					"required": true
+				},
+				{
+					"name": "gender_list",
+					"type": "Number[]",
+					"description": "0： 女性，1： 男性，如有多个人脸，则依次返回性别",
+					"required": true
+				},
+				{
+					"name": "dense_features",
+					"type": "String[]",
+					"description": "人脸识别返回特征；如有多个人脸，则依次顺延，返回特征",
+					"required": true
+				},
+				{
+					"name": "face_probability_list",
+					"type": "Number[]",
+					"description": "返回人脸概率, 0-1之间，如有多个人脸，则依次顺延。如有两个人脸则返回[face_prob1, face_prob2]",
+					"required": true
+				},
+				{
+					"name": "landmark_count",
+					"type": "Number",
+					"description": "特征点数目，目前固定为105点(顺序：眉毛24点，眼睛32点，鼻子6点，嘴巴34点，外轮廓9点)",
+					"required": true
+				},
+				{
+					"name": "age_list",
+					"type": "Number[]",
+					"description": "年龄0-100，如有多个人脸，依次返回年龄",
+					"required": true
+				},
+				{
+					"name": "glasses",
+					"type": "Number[]",
+					"description": "是否佩戴眼镜，0：无眼镜，1：有眼镜",
+					"required": true
+				},
+				{
+					"name": "landmarks",
+					"type": "String[]",
+					"description": "特征点定位结果，每个人脸返回一组特征点位置，表示方式为（x0, y0, x1, y1, ……）；如有多个人脸，则依次顺延，返回定位浮点数",
+					"required": true
+				},
+				{
+					"name": "expressions",
+					"type": "Number[]",
+					"description": "2种表情，0：中性，1：微笑",
+					"required": true
+				},
+				{
+					"name": "face_count",
+					"type": "Number",
+					"description": "检测出来的人脸个数",
+					"required": true
+				}
+			]
+		}
+	]
+}

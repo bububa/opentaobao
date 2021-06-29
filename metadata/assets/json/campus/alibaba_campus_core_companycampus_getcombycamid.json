@@ -1,0 +1,161 @@
+{
+	"name": "alibaba.campus.core.companycampus.getcombycamid",
+	"apiChineseName": "根据园区ID获取运营公司信息",
+	"description": "根据园区ID获取运营公司信息",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "WorkBenchContext",
+			"subParams": [
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id"
+				},
+				{
+					"name": "app_code",
+					"type": "Number",
+					"description": "应用编号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "CompanyDto[]",
+					"description": "内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区ID",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "公司联系电话",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "公司状态",
+							"required": true
+						},
+						{
+							"name": "is_default",
+							"type": "Boolean",
+							"description": "是否默认公司",
+							"required": true
+						},
+						{
+							"name": "short_name",
+							"type": "String",
+							"description": "公司简称",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "公司名称",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "公司ID",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "公司ID",
+							"required": true
+						},
+						{
+							"name": "is_wuye",
+							"type": "Boolean",
+							"description": "是否物业公司",
+							"required": true
+						},
+						{
+							"name": "hr_sign_company_id",
+							"type": "String",
+							"description": "签约主体公司id",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "corpId",
+							"required": true
+						},
+						{
+							"name": "company_code",
+							"type": "String",
+							"description": "公司编号",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "公司人数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id,TOP自带不用关注",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否请求成功",
+					"required": true
+				},
+				{
+					"name": "error_ext_info",
+					"type": "Json",
+					"description": "错误详细信息",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

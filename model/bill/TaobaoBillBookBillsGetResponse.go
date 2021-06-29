@@ -19,7 +19,9 @@ type TaobaoBillBookBillsGetAPIResponse struct {
 
 type TaobaoBillBookBillsGetResponse struct {
     XMLName xml.Name `xml:"bill_book_bills_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 是否有下一页
     

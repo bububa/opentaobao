@@ -1,0 +1,34 @@
+{
+	"name": "taobao.sebp.isv.user.sign",
+	"apiChineseName": "淘小铺三方签约同步",
+	"description": "同步淘小铺三方服务签约信息",
+	"requestParams": [
+		{
+			"name": "user_name",
+			"type": "String",
+			"description": "淘宝账号"
+		},
+		{
+			"name": "identity",
+			"type": "String",
+			"description": "身份证"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "到期日期"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "签约日期"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

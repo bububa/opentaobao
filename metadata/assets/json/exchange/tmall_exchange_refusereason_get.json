@@ -1,0 +1,78 @@
+{
+	"name": "tmall.exchange.refusereason.get",
+	"apiChineseName": "获取拒绝换货原因列表",
+	"description": "获取拒绝换货原因列表",
+	"requestParams": [
+		{
+			"name": "dispute_id",
+			"type": "Number",
+			"description": "换货单号ID",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "返回字段",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "dispute_type",
+			"type": "Number",
+			"description": "换货申请类型：0-任意类型；1-售中；2-售后"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Reason[]",
+					"description": "拒绝原因列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "reason_id",
+							"type": "Number",
+							"description": "拒绝原因ID",
+							"required": true
+						},
+						{
+							"name": "reason_text",
+							"type": "String",
+							"description": "拒绝原因内容",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "拒绝原因总数",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

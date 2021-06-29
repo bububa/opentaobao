@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.alihouse.newhome.line.sync",
+	"apiChineseName": "环线数据同步",
+	"description": "环线数据同步",
+	"requestParams": [
+		{
+			"name": "base_loop_line_dto",
+			"type": "BaseLoopLineDto",
+			"description": "环线入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "loop_line_name",
+					"type": "String",
+					"description": "环线名称",
+					"required": true
+				},
+				{
+					"name": "loop_line_fence",
+					"type": "String",
+					"description": "环线电子围栏"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID",
+					"required": true
+				},
+				{
+					"name": "number",
+					"type": "Number",
+					"description": "序号",
+					"required": true
+				},
+				{
+					"name": "loop_line_id",
+					"type": "Number",
+					"description": "环线ID",
+					"required": true
+				},
+				{
+					"name": "outer_line_id",
+					"type": "String",
+					"description": "外部ID - 唯一"
+				},
+				{
+					"name": "is_deleted",
+					"type": "String",
+					"description": "是否删除 1 是 0 否"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "外部ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

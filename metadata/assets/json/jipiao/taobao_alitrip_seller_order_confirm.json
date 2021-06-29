@@ -1,0 +1,65 @@
+{
+	"name": "taobao.alitrip.seller.order.confirm",
+	"apiChineseName": "代理商确认机票订单接口",
+	"description": "此接口用于代理商确认机票订单。",
+	"requestParams": [
+		{
+			"name": "trip_confirm_order_param",
+			"type": "TripConfirmOrderParam",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "confirm",
+					"type": "String",
+					"description": "确认项：官网投放卖家确认订单参数为orderConfirmHk",
+					"required": true
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "对于此订单的描述。"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TripOrderConfirmResultVo",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "is_order_success",
+					"type": "Boolean",
+					"description": "订单是否成功",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "返回结果，此接口无值",
+					"required": true
+				}
+			]
+		}
+	]
+}

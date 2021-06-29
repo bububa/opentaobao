@@ -1,0 +1,80 @@
+{
+	"name": "taobao.alitrip.travel.normalvisa.getcompany",
+	"apiChineseName": "获取物流公司信息",
+	"description": "获取物流公司信息",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "Boolean",
+			"description": "true：取5个重要的物流公司 false：取所有的物流公司",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果，有返回代表成功",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "LogisticsCompanyInfo[]",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "logistics_company_unit_top_v_o_list",
+							"type": "LogisticsCompanyUnitTopVo[]",
+							"description": "物流公司列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "company_name",
+									"type": "String",
+									"description": "物流公司名",
+									"required": true
+								},
+								{
+									"name": "company_code",
+									"type": "String",
+									"description": "物流公司代码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "结果数",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否包含下一个",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,123 @@
+{
+	"name": "alibaba.alihealth.medical.doctor.msg.send",
+	"apiChineseName": "三方医生消息写入",
+	"description": "三方机构医生端发送消息同步写入阿里健康IM",
+	"requestParams": [
+		{
+			"name": "inquiry",
+			"type": "OuterMsgPullRequest",
+			"description": "request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "content",
+					"type": "OuterMsgContent",
+					"description": "内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "text",
+							"type": "String",
+							"description": "文本"
+						},
+						{
+							"name": "radio",
+							"type": "String",
+							"description": "音频"
+						},
+						{
+							"name": "radio_time",
+							"type": "Number",
+							"description": "音频时长"
+						},
+						{
+							"name": "diagnose",
+							"type": "String",
+							"description": "诊断"
+						},
+						{
+							"name": "advice",
+							"type": "String",
+							"description": "建议"
+						},
+						{
+							"name": "send_time",
+							"type": "Number",
+							"description": "发送时间戳"
+						},
+						{
+							"name": "pic",
+							"type": "String[]",
+							"description": "图片"
+						}
+					]
+				},
+				{
+					"name": "content_type",
+					"type": "Number",
+					"description": "消息内容类型  1-文本，2-图片，3-音频，31-医嘱小结",
+					"required": true
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "会话id",
+					"required": true
+				},
+				{
+					"name": "doctor_uuid",
+					"type": "String",
+					"description": "外部医生id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "OuterMsgPullVo",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "record_id",
+							"type": "String",
+							"description": "消息id",
+							"required": true
+						},
+						{
+							"name": "session_id",
+							"type": "String",
+							"description": "会话id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

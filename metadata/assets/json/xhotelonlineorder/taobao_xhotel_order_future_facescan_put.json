@@ -1,0 +1,70 @@
+{
+	"name": "taobao.xhotel.order.future.facescan.put",
+	"apiChineseName": "未来酒店扫脸信息上传",
+	"description": "未来酒店扫脸信息上传服务，用于悉尔等厂商的扫脸设备对接",
+	"requestParams": [
+		{
+			"name": "face_scan_param",
+			"type": "FaceScanParam",
+			"description": "扫脸参数",
+			"subParams": [
+				{
+					"name": "guest_name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "certificate_num",
+					"type": "String",
+					"description": "证件号",
+					"required": true
+				},
+				{
+					"name": "certificate_type",
+					"type": "Number",
+					"description": "证件类型：20：身份证",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备id",
+					"required": true
+				},
+				{
+					"name": "device_firm",
+					"type": "String",
+					"description": "设备厂商名，下划线隔开，字母小写"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否更新失败。返回true表示更新成功。否则请读取错误码与错误描述",
+					"required": true
+				},
+				{
+					"name": "errormsg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "errorcode",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

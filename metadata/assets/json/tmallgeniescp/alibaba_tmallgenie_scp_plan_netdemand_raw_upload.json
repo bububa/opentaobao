@@ -1,0 +1,73 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.netdemand.raw.upload",
+	"apiChineseName": "二级物料净需求回传(TL+1)",
+	"description": "二级物料净需求回传(TL+1)",
+	"requestParams": [
+		{
+			"name": "net_demand_raw_request",
+			"type": "NetDemandRawRequest",
+			"description": "对象",
+			"subParams": [
+				{
+					"name": "net_demand_d_t_os",
+					"type": "NetDemandRawDto[]",
+					"description": "对象",
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户"
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值"
+						},
+						{
+							"name": "locid",
+							"type": "String",
+							"description": "地点"
+						},
+						{
+							"name": "net_demand_raw",
+							"type": "Number",
+							"description": "二级物料净需求"
+						},
+						{
+							"name": "material_code",
+							"type": "String",
+							"description": "二级物料-物料编码"
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码"
+		}
+	]
+}

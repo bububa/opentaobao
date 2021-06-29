@@ -1,0 +1,52 @@
+{
+	"name": "taobao.jst.interactive.activity.query",
+	"apiChineseName": "互动任务活动查询接口",
+	"description": "互动任务活动查询接口",
+	"requestParams": [
+		{
+			"name": "mini_app_id",
+			"type": "String",
+			"description": "小程序id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "activity_list",
+			"type": "Activity []",
+			"description": "活动列表，只返回有效的活动",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "活动状态，0=无效，1=有效",
+					"required": true
+				}
+			]
+		}
+	]
+}

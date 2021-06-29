@@ -1,0 +1,87 @@
+{
+	"name": "alitrip.btrip.invoice.setting.modify",
+	"apiChineseName": "发票变更",
+	"description": "发票变更",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenInvoiceModifyAndNewRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "注册地址"
+				},
+				{
+					"name": "bank_no",
+					"type": "String",
+					"description": "银行账号"
+				},
+				{
+					"name": "bank_name",
+					"type": "String",
+					"description": "开户行"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "tax_no",
+					"type": "String",
+					"description": "税号",
+					"required": true
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "公司电话"
+				},
+				{
+					"name": "third_part_id",
+					"type": "String",
+					"description": "第三方发票id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "发票抬头",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型，1:增值税普通发票,2:增值税专用发票",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

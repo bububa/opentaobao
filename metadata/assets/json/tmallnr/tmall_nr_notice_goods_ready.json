@@ -1,0 +1,81 @@
+{
+	"name": "tmall.nr.notice.goods.ready",
+	"apiChineseName": "同步天猫配送人员信息",
+	"description": "接收商家的配送人员信息，和第三公司信息及提货码",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "NrZqsGoodsReadyReqDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "performer_name",
+					"type": "String",
+					"description": "配送人员姓名"
+				},
+				{
+					"name": "performer_phone",
+					"type": "String",
+					"description": "配送人员电话号码"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家的sellerId"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "可选参数，编码"
+				},
+				{
+					"name": "outer_got_code",
+					"type": "String",
+					"description": "提货码"
+				},
+				{
+					"name": "dealer_name",
+					"type": "String",
+					"description": "经销商的姓名"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "淘宝交易订单号"
+				},
+				{
+					"name": "dealer_phone",
+					"type": "String",
+					"description": "经销商的电话"
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "业务标识dds，zqs等"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_data",
+			"type": "Boolean",
+			"description": "resultData"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "errorMessage"
+		},
+		{
+			"name": "error_code2",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "isSuccess"
+		}
+	]
+}

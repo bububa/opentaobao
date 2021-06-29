@@ -19,7 +19,9 @@ type TaobaoWirelessXcodeCreateAPIResponse struct {
 
 type TaobaoWirelessXcodeCreateResponse struct {
     XMLName xml.Name `xml:"wireless_xcode_create_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 创建二维码/短连接 返回信息
     

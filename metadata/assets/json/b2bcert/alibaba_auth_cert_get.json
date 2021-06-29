@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.auth.cert.get",
+	"apiChineseName": "获取证书数据",
+	"description": "获取证书数据",
+	"requestParams": [
+		{
+			"name": "provider",
+			"type": "String",
+			"description": "认证商",
+			"required": true
+		},
+		{
+			"name": "receive_info",
+			"type": "String",
+			"description": "证书数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

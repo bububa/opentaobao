@@ -19,7 +19,9 @@ type TaobaoKoubeiSaasBaseOperationConfigSyncAPIResponse struct {
 
 type TaobaoKoubeiSaasBaseOperationConfigSyncResponse struct {
     XMLName xml.Name `xml:"koubei_saas_base_operation_config_sync_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 异常信息
     

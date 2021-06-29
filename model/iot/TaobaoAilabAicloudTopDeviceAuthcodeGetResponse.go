@@ -19,7 +19,9 @@ type TaobaoAilabAicloudTopDeviceAuthcodeGetAPIResponse struct {
 
 type TaobaoAilabAicloudTopDeviceAuthcodeGetResponse struct {
     XMLName xml.Name `xml:"ailab_aicloud_top_device_authcode_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 设备授权码，后续流程中所述的auth code
     

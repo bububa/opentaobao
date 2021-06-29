@@ -1,0 +1,136 @@
+{
+	"name": "alibaba.onetouch.logistics.express.address.division.list",
+	"apiChineseName": "四级地址库-区域",
+	"description": "四级地址库-区",
+	"requestParams": [
+		{
+			"name": "param_query",
+			"type": "AddressQueryDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id",
+					"required": true
+				},
+				{
+					"name": "with_children",
+					"type": "Boolean",
+					"description": "是否包含子节点",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "返回结果描述",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "RegionEntity",
+					"description": "列表对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pinyin",
+							"type": "String",
+							"description": "节点名称拼音",
+							"required": true
+						},
+						{
+							"name": "parent_id",
+							"type": "Number",
+							"description": "上级节点ID",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "层级",
+							"required": true
+						},
+						{
+							"name": "zip",
+							"type": "String",
+							"description": "邮编",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "childrens",
+							"type": "Division[]",
+							"description": "子节点列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pinyin",
+									"type": "String",
+									"description": "节点名称拼音",
+									"required": true
+								},
+								{
+									"name": "parent_id",
+									"type": "Number",
+									"description": "上级节点ID",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "中文名称",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "层级",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "节点id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "节点名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回结果编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

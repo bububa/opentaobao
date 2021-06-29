@@ -1,0 +1,172 @@
+{
+	"name": "alibaba.campus.device.historydata.get",
+	"apiChineseName": "设备历史数据批量获取",
+	"description": "设备历史数据批量获取",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "workbench",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id，可不填"
+				},
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "eagleEye"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id"
+				}
+			]
+		},
+		{
+			"name": "query",
+			"type": "DeviceHistoryBatchQuery",
+			"description": "查询条件",
+			"subParams": [
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "历史数据查询开始时间",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "历史数据查询结束时间",
+					"required": true
+				},
+				{
+					"name": "kind_code",
+					"type": "String",
+					"description": "设备模板code",
+					"required": true
+				},
+				{
+					"name": "interval_minutes",
+					"type": "Number",
+					"description": "历史数据查询间隔（min）",
+					"required": true
+				},
+				{
+					"name": "property_code",
+					"type": "String",
+					"description": "设备属性code",
+					"required": true
+				},
+				{
+					"name": "device_uuid_list",
+					"type": "String[]",
+					"description": "设备列表",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "String",
+					"description": "设备所属园区id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "device_data_list",
+					"type": "DeviceHistoryBatchApiDto[]",
+					"description": "设备历史数据内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "property_code",
+							"type": "String",
+							"description": "设备参数code",
+							"required": true
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "String",
+							"description": "当前设备查询结果状态",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "当前查询错误信息",
+							"required": true
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "当前查询错误编码",
+							"required": true
+						},
+						{
+							"name": "device_interval_value",
+							"type": "Json",
+							"description": "当前设备运行参数时间切片历史数据",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "返回结果总攻条数",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询是否成功",
+					"required": true
+				},
+				{
+					"name": "error_ext_info",
+					"type": "Json",
+					"description": "额外报错信息",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

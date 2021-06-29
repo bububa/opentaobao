@@ -19,7 +19,9 @@ type CainiaoCloudprintClientinfoPutAPIResponse struct {
 
 type CainiaoCloudprintClientinfoPutResponse struct {
     XMLName xml.Name `xml:"cainiao_cloudprint_clientinfo_put_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // result
     

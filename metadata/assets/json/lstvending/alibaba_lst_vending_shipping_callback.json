@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.lst.vending.shipping.callback",
+	"apiChineseName": "售货机出货回传接口",
+	"description": "零售通自动售货机商品出货回传接口，同步商品出库最新状态。",
+	"requestParams": [
+		{
+			"name": "equipment_code",
+			"type": "String",
+			"description": "厂商设备编码",
+			"required": true
+		},
+		{
+			"name": "trade_flow_no",
+			"type": "String",
+			"description": "交易流水号",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "处理结果代码",
+			"required": true
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "处理结果代码描述"
+		},
+		{
+			"name": "time",
+			"type": "Date",
+			"description": "出货时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.perfect.performance.item.query",
+	"apiChineseName": "商品完美履约信息查询",
+	"description": "同城零售商品完美履约信息查询",
+	"requestParams": [
+		{
+			"name": "item_perfect_performance_query_req",
+			"type": "ItemPerfectPerformanceQueryReq",
+			"description": "查询入参",
+			"subParams": [
+				{
+					"name": "item_tmall_id",
+					"type": "String",
+					"description": "天猫商品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "ItemPerfectPerformanceQueryResp",
+			"description": "返回的数据实体",
+			"subParams": [
+				{
+					"name": "is_tc_item",
+					"type": "Boolean",
+					"description": "是否完美履约商品",
+					"required": true
+				},
+				{
+					"name": "item_outer_id",
+					"type": "String",
+					"description": "商家商品id",
+					"required": true
+				},
+				{
+					"name": "item_tmall_id",
+					"type": "String",
+					"description": "天猫商品id",
+					"required": true
+				},
+				{
+					"name": "tc_store_list",
+					"type": "TcStoreList[]",
+					"description": "完美履约门店列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

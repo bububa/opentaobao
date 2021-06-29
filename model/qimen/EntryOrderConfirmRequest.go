@@ -15,7 +15,7 @@ type EntryOrderConfirmRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenEntryorderConfirmMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

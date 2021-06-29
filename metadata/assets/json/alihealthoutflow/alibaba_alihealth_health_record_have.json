@@ -1,0 +1,91 @@
+{
+	"name": "alibaba.alihealth.health.record.have",
+	"apiChineseName": "判断用户的慢健康健康档案是否建设完成",
+	"description": "判断用户的慢健康健康档案是否建设完成",
+	"requestParams": [
+		{
+			"name": "request1",
+			"type": "HaveRecordRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "disease_code",
+					"type": "String",
+					"description": "疾病编码:(糖尿病:1)",
+					"required": true
+				},
+				{
+					"name": "public_id",
+					"type": "String",
+					"description": "生活号渠道编码：（ 控糖家园:2019112569406507）",
+					"required": true
+				},
+				{
+					"name": "alipay_user_id",
+					"type": "String",
+					"description": "支付宝id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result1",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "HaveRecordResponse",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "update_time",
+							"type": "String",
+							"description": "档案修改时间",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "档案创建时间",
+							"required": true
+						},
+						{
+							"name": "valid_status",
+							"type": "Boolean",
+							"description": "是否有效",
+							"required": true
+						},
+						{
+							"name": "exist_status",
+							"type": "Boolean",
+							"description": "是否存在",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+	"name": "alitrip.ship.order.notify",
+	"apiChineseName": "订单信息回填(出票回调)",
+	"description": "此接口为接入商调用飞猪旅行接口回填票号、密码(验证码)等订单信息。接口根据alitripOrderId幂等。若第一次调用失败，后续调用仍然可以回填票号、密码(验证码)成功。第一次调用成功后，后续调用会直接返回第一次的调用结果，不会再产生更新操作。多张票同时出票回填时，保证原子性，只允许全部成功或者全部失败，不能存在部分成功或者失败",
+	"requestParams": [
+		{
+			"name": "confirm_book_r_q",
+			"type": "ShipAgentConfirmBookRq",
+			"description": "出票入参",
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家订单id",
+					"required": true
+				},
+				{
+					"name": "alitrip_order_id",
+					"type": "String",
+					"description": "飞猪订单id",
+					"required": true
+				},
+				{
+					"name": "fetch_tickets_address",
+					"type": "String",
+					"description": "取票地址信息"
+				},
+				{
+					"name": "fetch_tickets_number",
+					"type": "String",
+					"description": "取票号"
+				},
+				{
+					"name": "fetch_tickets_pwd",
+					"type": "String",
+					"description": "取票密码"
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "淘宝订单Id"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "取票短信内容"
+				},
+				{
+					"name": "order_attr",
+					"description": "扩展属性"
+				},
+				{
+					"name": "passenger_list",
+					"type": "ShipAgentConfirmBookPassengerInfo[]",
+					"description": "乘客列表",
+					"subParams": [
+						{
+							"name": "passenger_cert_no",
+							"type": "String",
+							"description": "乘客证件号"
+						},
+						{
+							"name": "passenger_cert_type",
+							"type": "String",
+							"description": "乘客证件类型"
+						},
+						{
+							"name": "passenger_id",
+							"type": "String",
+							"description": "乘客id"
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "ticket_list",
+							"type": "ShipAgentConfirmBookTicketInfo[]",
+							"description": "票信息",
+							"subParams": [
+								{
+									"name": "e_ticket_no",
+									"type": "String",
+									"description": "电子票号"
+								},
+								{
+									"name": "ticket_desc",
+									"type": "String",
+									"description": "票描述"
+								},
+								{
+									"name": "ticket_id",
+									"type": "String",
+									"description": "票Id",
+									"required": true
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价格(分)",
+									"required": true
+								},
+								{
+									"name": "ticket_pwd",
+									"type": "String",
+									"description": "取票密码"
+								},
+								{
+									"name": "ticket_seat_no",
+									"type": "String",
+									"description": "座位号"
+								},
+								{
+									"name": "ticket_status",
+									"type": "String",
+									"description": "票状态：1-出票中2-已出票3-无票4-退票中5-已退票6-退票失败"
+								},
+								{
+									"name": "ticket_sub_type",
+									"type": "String",
+									"description": "子票种类型11-去程;12-往返;21普通门票；31酒店"
+								},
+								{
+									"name": "ticket_title",
+									"type": "String",
+									"description": "票标题"
+								},
+								{
+									"name": "ticket_type",
+									"type": "String",
+									"description": "票种类别1-船票;2-门票;3-酒店;4-其他",
+									"required": true
+								},
+								{
+									"name": "ext_attr",
+									"description": "扩展属性数据"
+								},
+								{
+									"name": "expire_time",
+									"type": "Date",
+									"description": "过期时间"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "出票结果",
+					"required": true
+				},
+				{
+					"name": "ticket_count",
+					"type": "Number",
+					"description": "票数"
+				},
+				{
+					"name": "ticket_wicket",
+					"type": "String",
+					"description": "检票口"
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "总价"
+				},
+				{
+					"name": "failed_code",
+					"type": "String",
+					"description": "出票失败错误码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "ret_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

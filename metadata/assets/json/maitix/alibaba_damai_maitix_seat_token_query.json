@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.damai.maitix.seat.token.query",
+	"apiChineseName": "分销商选座获取qtoken",
+	"description": "选座分销，分销商查询token",
+	"requestParams": [
+		{
+			"name": "perform_id",
+			"type": "Number",
+			"description": "场次ID-必填",
+			"required": true
+		},
+		{
+			"name": "project_id",
+			"type": "Number",
+			"description": "项目ID-必填",
+			"required": true
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "必填-选座结束跳转回去的url,这是渠道方自己的url地址,用于接收选座后的座位信息参数",
+			"required": true
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "会话ID，保证一次选座会话,建议使用 appKey+随机串 生成 ；注意：同一个场次下的会话ID不能重复",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "token",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

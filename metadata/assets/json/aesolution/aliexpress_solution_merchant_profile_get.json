@@ -1,0 +1,42 @@
+{
+	"name": "aliexpress.solution.merchant.profile.get",
+	"apiChineseName": "aliexpress.solution.merchant.profile.get",
+	"description": "API for oversea sellers to obtain the normal information, e.g. store id, registration country code.",
+	"responseParams": [
+		{
+			"name": "country_code",
+			"type": "String",
+			"description": "country code which the merchant chose when registered"
+		},
+		{
+			"name": "product_posting_forbidden",
+			"type": "Boolean",
+			"description": "Indicate whether the mechant could post product or not. FALSE means the merchant could normally post product."
+		},
+		{
+			"name": "merchant_login_id",
+			"type": "String",
+			"description": "merchant login id of Aliexpress"
+		},
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "shop id"
+		},
+		{
+			"name": "shop_name",
+			"type": "String",
+			"description": "shop name"
+		},
+		{
+			"name": "shop_type",
+			"type": "String",
+			"description": "shop type"
+		},
+		{
+			"name": "shop_url",
+			"type": "String",
+			"description": "shop url"
+		}
+	]
+}

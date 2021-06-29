@@ -19,7 +19,9 @@ type TaobaoWlbImportsVasIdentityResultAPIResponse struct {
 
 type TaobaoWlbImportsVasIdentityResultResponse struct {
     XMLName xml.Name `xml:"wlb_imports_vas_identity_result_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回出参数结果
     

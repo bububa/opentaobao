@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.ascp.presalespackage.consign",
+	"apiChineseName": "预售预包尾款推单发货",
+	"description": "预售预包尾款发货后推单处理",
+	"requestParams": [
+		{
+			"name": "request_params",
+			"type": "Requestparams",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "金额",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ErpPresaleFinalPayResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "服务调用成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,153 @@
+{
+	"name": "alibaba.ele.enterprise.cartnew.save",
+	"apiChineseName": "新版创建购物车",
+	"description": "新版创建购物车",
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "用户11位手机号",
+			"required": true
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "用户所在纬度",
+			"required": true
+		},
+		{
+			"name": "food",
+			"type": "String",
+			"description": "[[{\\\"id\\\": 1526467414,\\\"new_specs\\\": [{\\\"name\\\": \\\"规格\\\",\\\"value\\\": \\\"那么大鲜柠特饮(雪碧) 660ml\\\"}],\\\"attrs\\\": [{\\\"name\\\": \\\"可选小食\\\",\\\"value\\\": \\\"金黄脆薯格\\\"}],\\\"quantity\\\": 2}]]",
+			"required": true
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "用户所在经度",
+			"required": true
+		},
+		{
+			"name": "erestaurant_id",
+			"type": "String",
+			"description": "餐厅id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "状态消息"
+		},
+		{
+			"name": "enterprise_datas",
+			"type": "EnterpriseData",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "购物车id",
+					"required": true
+				},
+				{
+					"name": "original_total",
+					"type": "String",
+					"description": "购物车优惠前总金额",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "String",
+					"description": "购物车金额",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "Number",
+					"description": "创建购物车时间戳(10位秒时间)",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "extras",
+					"type": "CartExtraDto[]",
+					"description": "额外信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "费用",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "费用名称",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "费用id",
+							"required": true
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "订单项目分类",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "service_fee_explanation",
+					"type": "String",
+					"description": "费用说明",
+					"required": true
+				},
+				{
+					"name": "deliver_amount",
+					"type": "String",
+					"description": "起送价",
+					"required": true
+				},
+				{
+					"name": "groups",
+					"type": "Json[]",
+					"description": "购物车篮子（用户一次下单可以有多个篮子，如果第三方没这概念，可以全部放在同一个group里面），group里面是食物",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

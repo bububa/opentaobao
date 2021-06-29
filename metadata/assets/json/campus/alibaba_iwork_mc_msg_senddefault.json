@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.iwork.mc.msg.senddefault",
+	"apiChineseName": "给注册用户发送消息",
+	"description": "给神鲸注册用户发送对应操作结果的消息",
+	"requestParams": [
+		{
+			"name": "message_event",
+			"type": "DefaultMessageEvent",
+			"description": "消息对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "msg_key",
+					"type": "String",
+					"description": "消息ID(唯一ID)",
+					"required": true
+				},
+				{
+					"name": "event_time_millis",
+					"type": "Number",
+					"description": "时间戳",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "receiver",
+					"type": "Number",
+					"description": "接收人用户ID",
+					"required": true
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "消息事件",
+					"required": true
+				},
+				{
+					"name": "event_type",
+					"type": "String",
+					"description": "消息类型",
+					"required": true
+				},
+				{
+					"name": "json_data",
+					"type": "String",
+					"description": "消息参数",
+					"required": true
+				},
+				{
+					"name": "resource_id",
+					"type": "String",
+					"description": "资源ID"
+				},
+				{
+					"name": "resource_url",
+					"type": "String",
+					"description": "资源URL"
+				},
+				{
+					"name": "sender",
+					"type": "Number",
+					"description": "发送人",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

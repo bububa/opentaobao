@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.seaking.servicepack",
+	"apiChineseName": "获取海王用户权限包",
+	"description": "获取海王用户权限包",
+	"requestParams": [
+		{
+			"name": "identify_type",
+			"type": "String",
+			"description": "验证类型",
+			"required": true
+		},
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "验证类型下的唯一id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_pack_list",
+			"type": "Result []",
+			"description": "权限包列表",
+			"subParams": [
+				{
+					"name": "validate_to",
+					"type": "Date",
+					"description": "到期时间",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "权限包名称",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "权限包id",
+					"required": true
+				}
+			]
+		}
+	]
+}

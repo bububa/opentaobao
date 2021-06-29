@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.fpm.file.upload",
+	"apiChineseName": "结算单文件上传",
+	"description": "结算单文件上传",
+	"requestParams": [
+		{
+			"name": "biz_dto",
+			"type": "FileUploadRequestDto",
+			"description": "实体",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "应用代码(必填)",
+					"required": true
+				},
+				{
+					"name": "outer_system_sign_str",
+					"type": "String",
+					"description": "签名字符串",
+					"required": true
+				},
+				{
+					"name": "outer_system_encrypt_str",
+					"type": "String",
+					"description": "加密字符串",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错信信息",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "FileUploadReponseDto",
+					"description": "returnValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "outer_system_encrypt_str",
+							"type": "String",
+							"description": "outerSystemEncryptStr",
+							"required": true
+						},
+						{
+							"name": "outer_system_sign_str",
+							"type": "String",
+							"description": "outerSystemSignStr",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

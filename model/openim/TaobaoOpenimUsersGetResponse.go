@@ -19,7 +19,9 @@ type TaobaoOpenimUsersGetAPIResponse struct {
 
 type TaobaoOpenimUsersGetResponse struct {
     XMLName xml.Name `xml:"openim_users_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 获取的用户信息列表
     

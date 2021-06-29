@@ -1,0 +1,39 @@
+{
+	"name": "taobao.tmallgenie.hotelwelcome",
+	"apiChineseName": "酒店欢迎词推送",
+	"description": "推送欢迎词，让天猫精灵播放",
+	"requestParams": [
+		{
+			"name": "room_no",
+			"type": "String",
+			"description": "房间号"
+		},
+		{
+			"name": "hotel_id",
+			"type": "Number",
+			"description": "酒店ID"
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板ID"
+		},
+		{
+			"name": "template_variable",
+			"type": "Json",
+			"description": "模板变量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "statusCode"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

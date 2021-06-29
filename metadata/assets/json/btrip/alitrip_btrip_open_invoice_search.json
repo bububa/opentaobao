@@ -1,0 +1,72 @@
+{
+	"name": "alitrip.btrip.open.invoice.search",
+	"apiChineseName": "差旅申请用户搜索可用发票列表",
+	"description": "差旅申请用户搜索可用发票列表",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenInvoiceRq",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "发票抬头关键词"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "第三方用户id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "2：商旅开放平台"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "invoice_list",
+			"type": "OpenInvoiceDo []",
+			"description": "发票列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "商旅发票id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "发票抬头",
+					"required": true
+				},
+				{
+					"name": "third_part_invoice_id",
+					"type": "String",
+					"description": "第三方发票id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

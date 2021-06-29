@@ -1,0 +1,93 @@
+{
+	"name": "alibaba.health.vaccin.notice.user.bind",
+	"apiChineseName": "支付宝疫苗绑定接种人",
+	"description": "支付宝疫苗绑定接种人",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝ID",
+			"required": true
+		},
+		{
+			"name": "bind_users",
+			"type": "AlipayVaccineUserBindDto[]",
+			"description": "绑定人信息list",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "reserve_date",
+					"type": "String",
+					"description": "预约日期：2019-02-08 严格按照"
+				},
+				{
+					"name": "age_type",
+					"type": "String",
+					"description": "年龄类型(1-宝宝2-成人)"
+				},
+				{
+					"name": "pov_no",
+					"type": "String",
+					"description": "接种点编码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "绑定人姓名"
+				},
+				{
+					"name": "isv_user_id",
+					"type": "String",
+					"description": "ISV 侧接种人 ID"
+				},
+				{
+					"name": "pov_name",
+					"type": "String",
+					"description": "接种点名称"
+				},
+				{
+					"name": "birthday",
+					"type": "String",
+					"description": "接种人出生日期"
+				}
+			]
+		},
+		{
+			"name": "outer_user_id",
+			"type": "String",
+			"description": "ISV 侧用户 ID"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "联系电话"
+		},
+		{
+			"name": "app_channel",
+			"type": "String",
+			"description": "用户来源：alipay或yl"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "执行是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

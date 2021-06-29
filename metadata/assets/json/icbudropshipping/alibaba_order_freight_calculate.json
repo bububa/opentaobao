@@ -1,0 +1,191 @@
+{
+	"name": "alibaba.order.freight.calculate",
+	"apiChineseName": "阿里巴巴下单场景运费方案计算",
+	"description": "icbu开展 drop shipping 业务，阿里巴巴下单场景运费方案计算\nalibaba Create order scenario freight calculation",
+	"requestParams": [
+		{
+			"name": "param_multi_freight_template_request",
+			"type": "MultiFreightTemplateRequest",
+			"description": "{}",
+			"required": true,
+			"subParams": [
+				{
+					"name": "e_company_id",
+					"type": "String",
+					"description": "Get from alibaba.dropshipping.product.get",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "AddressInfoDto",
+					"description": "Shipping address",
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "Shipping address"
+						},
+						{
+							"name": "city",
+							"type": "DivisionInfoDto",
+							"description": "City",
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "City Code"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "City Name"
+								}
+							]
+						},
+						{
+							"name": "country",
+							"type": "DivisionInfoDto",
+							"description": "Country",
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "Country Code"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "Country Name"
+								}
+							]
+						},
+						{
+							"name": "province",
+							"type": "DivisionInfoDto",
+							"description": "province",
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "province code"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "province name"
+								}
+							]
+						},
+						{
+							"name": "zip",
+							"type": "String",
+							"description": "If any, please send it to us to make the freight more accurate."
+						}
+					]
+				},
+				{
+					"name": "destination_country",
+					"type": "String",
+					"description": "Destination Country",
+					"required": true
+				},
+				{
+					"name": "logistics_product_list",
+					"type": "LogisticsProduct[]",
+					"description": "Product List",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "Product Id",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "quantity",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "Sku ID"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "LogisticsSolution []",
+			"description": "Logistics Solution List",
+			"subParams": [
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "delivery time (days)",
+					"required": true
+				},
+				{
+					"name": "destination_country",
+					"type": "String",
+					"description": "destination country",
+					"required": true
+				},
+				{
+					"name": "dispatch_country",
+					"type": "String",
+					"description": "dispatch country",
+					"required": true
+				},
+				{
+					"name": "fee",
+					"type": "Price",
+					"description": "shipping fee",
+					"required": true,
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "amount",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "currency",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "shipping type",
+					"required": true
+				},
+				{
+					"name": "trade_term",
+					"type": "String",
+					"description": "trade term",
+					"required": true
+				},
+				{
+					"name": "vendor_code",
+					"type": "String",
+					"description": "vendor code",
+					"required": true
+				},
+				{
+					"name": "vendor_name",
+					"type": "String",
+					"description": "vendor name",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.examination.servicearea.check",
+	"apiChineseName": "体检机构对接_上门检测服务范围查询",
+	"description": "体检机构对接_上门检测服务范围查询",
+	"requestParams": [
+		{
+			"name": "package_code",
+			"type": "String",
+			"description": "机构套餐编码",
+			"required": true
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "上门检测地址"
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "上门检测地址纬度",
+			"required": true
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "上门检测地址经度",
+			"required": true
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "省份名称（高德）"
+		},
+		{
+			"name": "province_code",
+			"type": "String",
+			"description": "省份编码（高德adcode）"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市名称（高德）"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "城市编码（高德adcode）"
+		},
+		{
+			"name": "district",
+			"type": "String",
+			"description": "区域名称（高德）"
+		},
+		{
+			"name": "district_code",
+			"type": "String",
+			"description": "区域编码（高德adcode）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "校验结果：校验成功、校验失败"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "校验结果编码，校验成功200、校验失败400"
+		}
+	]
+}

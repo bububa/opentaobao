@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.mozi.vds.tenant.api.service.removeadmin",
+	"apiChineseName": "删除租户管理员服务",
+	"description": "删除租户管理员top服务",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "RemoveTenantAdminsRequest",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "employee_codes",
+					"type": "String[]",
+					"description": "人员Code列表",
+					"required": true
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户Id",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求元数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RemoveTenantAdminsResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回消息",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回元数据",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回Code",
+					"required": true
+				}
+			]
+		}
+	]
+}

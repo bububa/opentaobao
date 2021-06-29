@@ -1,0 +1,91 @@
+{
+	"name": "aliexpress.affiliate.link.generate",
+	"apiChineseName": "联盟推广链接生成",
+	"description": "AE联盟推广链接生成接口",
+	"requestParams": [
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "API请求签名"
+		},
+		{
+			"name": "promotion_link_type",
+			"type": "Number",
+			"description": "转换的链接类型：0代表普通Link，1代表Search Link，2代表 hot link",
+			"required": true
+		},
+		{
+			"name": "source_values",
+			"type": "String",
+			"description": "原始链接或者值",
+			"required": true
+		},
+		{
+			"name": "tracking_id",
+			"type": "String",
+			"description": "推广者原始trackingID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "resp_code",
+					"type": "Number",
+					"description": "返回结果状态码",
+					"required": true
+				},
+				{
+					"name": "resp_msg",
+					"type": "String",
+					"description": "返回结果状态描述",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "PromotionLinkResultDto",
+					"description": "返回结果明细信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "promotion_links",
+							"type": "PromotionLink[]",
+							"description": "推广链接列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "promotion_link",
+									"type": "String",
+									"description": "推广链接",
+									"required": true
+								},
+								{
+									"name": "source_value",
+									"type": "String",
+									"description": "原始链接或者值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_result_count",
+							"type": "Number",
+							"description": "返回总量",
+							"required": true
+						},
+						{
+							"name": "tracking_id",
+							"type": "String",
+							"description": "推广者TrackingId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

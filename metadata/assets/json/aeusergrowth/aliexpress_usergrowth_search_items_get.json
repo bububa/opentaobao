@@ -1,0 +1,188 @@
+{
+	"name": "aliexpress.usergrowth.search.items.get",
+	"apiChineseName": "第三方平台搜索AE商品",
+	"description": "第三方平台的搜索服务   获取AE商品list",
+	"requestParams": [
+		{
+			"name": "keywords",
+			"type": "String",
+			"description": "user input keypods",
+			"required": true
+		},
+		{
+			"name": "tracking_id",
+			"type": "String",
+			"description": "Third party tracking_id"
+		},
+		{
+			"name": "currency_code",
+			"type": "String",
+			"description": "currency code"
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "language"
+		},
+		{
+			"name": "page_size",
+			"type": "String",
+			"description": "page size"
+		},
+		{
+			"name": "page_index",
+			"type": "String",
+			"description": "page index"
+		},
+		{
+			"name": "country_code",
+			"type": "String",
+			"description": "ship to country"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "response model",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "Result,The product  are located at the top,maybe null  when success = false",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "product id",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "String",
+							"description": "sale price , return  local price",
+							"required": true
+						},
+						{
+							"name": "photo",
+							"type": "String",
+							"description": "product photo url",
+							"required": true
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "shop name",
+							"required": true
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "product name",
+							"required": true
+						},
+						{
+							"name": "shop_domain",
+							"type": "String",
+							"description": "store url",
+							"required": true
+						},
+						{
+							"name": "detail_url",
+							"type": "String",
+							"description": "product detail Url",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "shopId",
+							"required": true
+						},
+						{
+							"name": "sub_category",
+							"type": "String",
+							"description": "sub category",
+							"required": true
+						},
+						{
+							"name": "rating_count",
+							"type": "Number",
+							"description": "rating count",
+							"required": true
+						},
+						{
+							"name": "photo_height",
+							"type": "Number",
+							"description": "photo height",
+							"required": true
+						},
+						{
+							"name": "shop_rating",
+							"type": "String",
+							"description": "shop rating",
+							"required": true
+						},
+						{
+							"name": "rating_value",
+							"type": "String",
+							"description": "rating",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "product category",
+							"required": true
+						},
+						{
+							"name": "photo_width",
+							"type": "Number",
+							"description": "photo width",
+							"required": true
+						},
+						{
+							"name": "free_shipping",
+							"type": "Boolean",
+							"description": "delivery freeShipping",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success is used to determine whether invoke service success",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "other extend message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "Code is used to determine whether the result is correct",
+					"required": true
+				},
+				{
+					"name": "ext",
+					"type": "Ext",
+					"description": "extend param",
+					"required": true,
+					"subParams": [
+						{
+							"name": "search_page_link",
+							"type": "String",
+							"description": "search page link",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

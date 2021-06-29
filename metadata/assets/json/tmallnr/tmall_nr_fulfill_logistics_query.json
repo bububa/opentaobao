@@ -1,0 +1,164 @@
+{
+	"name": "tmall.nr.fulfill.logistics.query",
+	"apiChineseName": "定时送和极速达配送物流信息查询",
+	"description": "发布定时送\u0026极速达物流信息查询服务",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "交易主订单号"
+		},
+		{
+			"name": "biz_identity",
+			"type": "String",
+			"description": "业务标识，dss标识定时送业务；jsd表示极速达业务"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "NrTimingFulfillDetailQueryRespDto",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "nr_delivery_brief_status_d_t_o",
+							"type": "NrDeliveryBriefStatusDto",
+							"description": "当前状态",
+							"required": true,
+							"subParams": [
+								{
+									"name": "logistics_time",
+									"type": "String",
+									"description": "状态产生时间",
+									"required": true
+								},
+								{
+									"name": "fail_code",
+									"type": "String",
+									"description": "取件失败的code",
+									"required": true
+								},
+								{
+									"name": "fail_reason",
+									"type": "String",
+									"description": "取件失败的原因",
+									"required": true
+								},
+								{
+									"name": "deliverer_phone",
+									"type": "String",
+									"description": "快递员电话",
+									"required": true
+								},
+								{
+									"name": "deliverer_name",
+									"type": "String",
+									"description": "快递员姓名",
+									"required": true
+								},
+								{
+									"name": "sp_name",
+									"type": "String",
+									"description": "服务商的cp",
+									"required": true
+								},
+								{
+									"name": "logistics_status_name",
+									"type": "String",
+									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]",
+									"required": true
+								},
+								{
+									"name": "logistics_status",
+									"type": "String",
+									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "nr_delivery_brief_status_d_t_os",
+							"type": "NrDeliveryBriefStatusDto[]",
+							"description": "历史状态",
+							"required": true,
+							"subParams": [
+								{
+									"name": "logistics_status",
+									"type": "String",
+									"description": "包含[CREATE,GRASP,GOT,DELIVERYED]",
+									"required": true
+								},
+								{
+									"name": "logistics_status_name",
+									"type": "String",
+									"description": "logisticsStatusName状态的说明包含[下单,接单,取件,妥投,拒收，取消]",
+									"required": true
+								},
+								{
+									"name": "sp_name",
+									"type": "String",
+									"description": "spName",
+									"required": true
+								},
+								{
+									"name": "deliverer_name",
+									"type": "String",
+									"description": "delivererName",
+									"required": true
+								},
+								{
+									"name": "deliverer_phone",
+									"type": "String",
+									"description": "delivererPhone",
+									"required": true
+								},
+								{
+									"name": "fail_reason",
+									"type": "String",
+									"description": "failReason",
+									"required": true
+								},
+								{
+									"name": "fail_code",
+									"type": "String",
+									"description": "failCode",
+									"required": true
+								},
+								{
+									"name": "logistics_time",
+									"type": "String",
+									"description": "logisticsTime",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "isSuccess",
+					"required": true
+				}
+			]
+		}
+	]
+}

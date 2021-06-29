@@ -1,0 +1,111 @@
+{
+	"name": "alibaba.idle.appraise.order.perform",
+	"apiChineseName": "闲鱼验货担保服务商订单履约V1",
+	"description": "闲鱼验货担保业务中,外部服务商作为鉴定方 需要驱动交易节点变化",
+	"requestParams": [
+		{
+			"name": "appraise_order_syn_dto",
+			"type": "AppraiseOrderSynDto",
+			"description": "AppraiseOrderSynDto",
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "biz_order_id",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "(主状态,子状态,状态说明)示例如下： (\"1\", \"1\", \"买家拍下未付款\") (\"2\", \"1\", \"买家拍下已付款\") (\"3\", \"1\", \"卖家已发货\") 等，详情参考对接文档",
+					"required": true
+				},
+				{
+					"name": "order_sub_status",
+					"type": "String",
+					"description": "见order_status字段说明",
+					"required": true
+				},
+				{
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "根据订单状态不同，传递不同的内容",
+					"subParams": [
+						{
+							"name": "conclusion1",
+							"type": "String",
+							"description": "结构化一级结论枚举值 新品：'CERTIFIED_FLAW'：真货有瑕疵；'CERTIFIED_NO_FLAW'：真货无瑕疵；'FAKE'：假货。 二手：'CERTIFIED_FLAW'：真货有瑕疵；'FAKE'：假货 主状态为4 ac已收货后，服务商调用履约接口传入"
+						},
+						{
+							"name": "conclusion2",
+							"type": "String",
+							"description": "结构化二级结论枚举值 新品：无需该字段 二手：'SELLER_FAULT'：卖家责任；'SELLER_NO_FAULT'：卖家无责 主状态为4 ac已收货后，服务商调用履约接口传入"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "成色，奢侈品类需要填写\" example=\"99新\"。主状态为4 ac已收货后，服务商调用履约接口传入"
+						},
+						{
+							"name": "report_url",
+							"type": "String",
+							"description": "鉴定报告URL地址。主状态为4 ac已收货后，服务商调用履约接口传入"
+						},
+						{
+							"name": "summary",
+							"type": "String",
+							"description": "验货结论，真假、有无瑕疵等。主状态为4 ac已收货后，服务商调用履约接口传入"
+						},
+						{
+							"name": "ac2seller_mail_no",
+							"type": "String",
+							"description": "逆向流程发货给卖家的单号。买家发货后的任意一个逆向状态 服务商调用履约接口传入"
+						},
+						{
+							"name": "ac2buyer_mail_no",
+							"type": "String",
+							"description": "发货给买家的单号。主状态为6 买家确认购买，服务商调用履约接口传入"
+						},
+						{
+							"name": "idle_appraise_checkpoints_result",
+							"type": "String",
+							"description": "验货项结论。keyId表示验货项Id，比如1001可能代表内存，valueId指出验货值的id，比如1可能代表存储64G的id，consistent代表实际此值是否为真。关于keyId、valueId的取值由其他对接文档给出"
+						},
+						{
+							"name": "refuse_reason_code",
+							"type": "String",
+							"description": "拒绝识别场景原因枚举值"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

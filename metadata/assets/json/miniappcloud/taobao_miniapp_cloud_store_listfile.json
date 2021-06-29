@@ -1,0 +1,52 @@
+{
+	"name": "taobao.miniapp.cloud.store.listfile",
+	"apiChineseName": "云存储根据文件名反查地址",
+	"description": "云存储中，根据文件名反查地址",
+	"requestParams": [
+		{
+			"name": "env",
+			"type": "String",
+			"description": "环境(online/test)",
+			"required": true
+		},
+		{
+			"name": "file_path",
+			"type": "String",
+			"description": "文件全路径名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "files",
+			"type": "File []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "文件地址",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "文件查询错误信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "文件查询返回结果，1-成功，0-失败",
+					"required": true
+				},
+				{
+					"name": "file_id",
+					"type": "String",
+					"description": "文件id",
+					"required": true
+				}
+			]
+		}
+	]
+}

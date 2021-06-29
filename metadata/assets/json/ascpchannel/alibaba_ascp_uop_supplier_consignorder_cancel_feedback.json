@@ -1,0 +1,69 @@
+{
+	"name": "alibaba.ascp.uop.supplier.consignorder.cancel.feedback",
+	"apiChineseName": "商家仓wms取消发货反馈回告服务",
+	"description": "履约单纬度通知商家仓wms取消发货结果反馈回告服务",
+	"requestParams": [
+		{
+			"name": "consignorder_cancel_feedback_request",
+			"type": "Consignordercancelfeedbackrequest",
+			"description": "取消发货反馈回告请求",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "biz_order_code",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				},
+				{
+					"name": "biz_time",
+					"type": "Date",
+					"description": "业务时间"
+				},
+				{
+					"name": "cancel_result",
+					"type": "Boolean",
+					"description": "是否取消成功,true成功/false失败",
+					"required": true
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消失败原因"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consignorder_cancel_feedback_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

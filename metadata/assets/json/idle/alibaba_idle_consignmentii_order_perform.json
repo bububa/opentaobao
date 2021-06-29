@@ -1,0 +1,138 @@
+{
+	"name": "alibaba.idle.consignmentii.order.perform",
+	"apiChineseName": "寄卖V2订单履约",
+	"description": "寄卖V2订单履约，服务商同步订单信息，驱动交易流转",
+	"requestParams": [
+		{
+			"name": "consignment_v2_order_syn_dto",
+			"type": "ConsignmentV2OrderSynDto",
+			"description": "同步参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "不同的状态传递不同参数",
+					"subParams": [
+						{
+							"name": "pay_order_id",
+							"type": "String",
+							"description": "服务商付款订单号"
+						},
+						{
+							"name": "confirm_fee",
+							"type": "String",
+							"description": "最终成交价(分)"
+						},
+						{
+							"name": "seller_2_ac_mail_no",
+							"type": "String",
+							"description": "上门取件订单号"
+						},
+						{
+							"name": "reference_recycle_price",
+							"type": "String",
+							"description": "参考回收价(分)"
+						},
+						{
+							"name": "refund_mail_no",
+							"type": "String",
+							"description": "逆向退给卖家运单号"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "成色"
+						},
+						{
+							"name": "report_url",
+							"type": "String",
+							"description": "质检报告url"
+						},
+						{
+							"name": "summary",
+							"type": "String",
+							"description": "质检简要结论"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "服务商发布的商品id"
+						},
+						{
+							"name": "seller_receipt_address_id",
+							"type": "String",
+							"description": "卖家逆向收货地址id"
+						},
+						{
+							"name": "service_fee",
+							"type": "String",
+							"description": "正向服务费，单位分"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "上门取件运单号"
+						},
+						{
+							"name": "max_deal_amt",
+							"type": "String",
+							"description": "寄卖估价区间，分号分隔上下限"
+						}
+					]
+				},
+				{
+					"name": "order_sub_status",
+					"type": "String",
+					"description": "订单子状态",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单主状态",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "闲鱼订单号",
+					"required": true
+				},
+				{
+					"name": "env",
+					"type": "String",
+					"description": "下单环境",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"name": "taobao.brand.startshop.rpt.creative.get",
+	"apiChineseName": "明星店铺创意报表数据查询",
+	"description": "获取明星店铺广告creative分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
+	"requestParams": [
+		{
+			"name": "traffic_type",
+			"type": "String",
+			"description": "流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "String",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "String",
+			"description": "每页条数"
+		},
+		{
+			"name": "effect",
+			"type": "String",
+			"description": "转化周期,默认15, 3,7,15"
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始日期(最多查询1个月的数据)"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "截至日期(最晚到昨天)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_param",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "campaign_rpt_list",
+			"type": "Result []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量",
+					"required": true
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量",
+					"required": true
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "花费(元)",
+					"required": true
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "千次展现成本",
+					"required": true
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "点击单价",
+					"required": true
+				},
+				{
+					"name": "favitemtotal",
+					"type": "Number",
+					"description": "宝贝收藏数",
+					"required": true
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "Number",
+					"description": "展示成交笔数",
+					"required": true
+				},
+				{
+					"name": "favshoptotal",
+					"type": "Number",
+					"description": "店铺收藏数",
+					"required": true
+				},
+				{
+					"name": "carttotal",
+					"type": "Number",
+					"description": "宝贝加购数",
+					"required": true
+				},
+				{
+					"name": "transactiontotal",
+					"type": "String",
+					"description": "展示成交金额",
+					"required": true
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "展示回报率",
+					"required": true
+				},
+				{
+					"name": "cvr",
+					"type": "String",
+					"description": "展示转化率",
+					"required": true
+				},
+				{
+					"name": "click_transactionshipping",
+					"type": "Number",
+					"description": "点击成交笔数",
+					"required": true
+				},
+				{
+					"name": "click_transactiontotal",
+					"type": "String",
+					"description": "点击成交金额",
+					"required": true
+				},
+				{
+					"name": "click_roi",
+					"type": "String",
+					"description": "点击回报率",
+					"required": true
+				},
+				{
+					"name": "click_cvr",
+					"type": "String",
+					"description": "点击转化率",
+					"required": true
+				},
+				{
+					"name": "click_uv",
+					"type": "Number",
+					"description": "点击访客数",
+					"required": true
+				},
+				{
+					"name": "uv",
+					"type": "Number",
+					"description": "触达访客数",
+					"required": true
+				},
+				{
+					"name": "uv_new",
+					"type": "Number",
+					"description": "触达新访客数",
+					"required": true
+				},
+				{
+					"name": "campaigntitle",
+					"type": "String",
+					"description": "推广计划名称",
+					"required": true
+				},
+				{
+					"name": "campaignid",
+					"type": "Number",
+					"description": "推广计划id",
+					"required": true
+				},
+				{
+					"name": "adgroupid",
+					"type": "Number",
+					"description": "推广组id",
+					"required": true
+				},
+				{
+					"name": "adgrouptitle",
+					"type": "String",
+					"description": "推广组名称",
+					"required": true
+				},
+				{
+					"name": "creativetitle",
+					"type": "String",
+					"description": "创意名称",
+					"required": true
+				},
+				{
+					"name": "creativeid",
+					"type": "Number",
+					"description": "创意id",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,180 @@
+{
+	"name": "taobao.singletreasure.activity.query",
+	"apiChineseName": "查询活动列表接口",
+	"description": "查询活动列表接口",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "PageQueryDto",
+			"description": "查询对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页码,最大为50",
+					"required": true
+				},
+				{
+					"name": "page_number",
+					"type": "Number",
+					"description": "页数，从1开始",
+					"required": true
+				},
+				{
+					"name": "query",
+					"type": "ActivityInfoListQueryDto",
+					"description": "查询条件请求体",
+					"subParams": [
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "活动 id"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "活动名称"
+						},
+						{
+							"name": "activity_status",
+							"type": "Number",
+							"description": "活动状态  删除：-1；暂停：0；未开始：1；进行中：2；已结束：3"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "ActivityInfo[]",
+					"description": "查询结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "free_post",
+							"type": "Boolean",
+							"description": "是否包邮",
+							"required": true
+						},
+						{
+							"name": "created_time",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "活动结束时间",
+							"required": true
+						},
+						{
+							"name": "exclude_areas",
+							"type": "String",
+							"description": "不包邮地区",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "活动开始时间",
+							"required": true
+						},
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "套餐 id",
+							"required": true
+						},
+						{
+							"name": "discount_type",
+							"type": "Number",
+							"description": "折扣类型，1 为促销价，2 为打折，4 为减钱",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "套餐描述",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家 id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "套餐名称",
+							"required": true
+						},
+						{
+							"name": "crowd_id",
+							"type": "String",
+							"description": "活动对应生效的人群 id",
+							"required": true
+						},
+						{
+							"name": "promotion_level",
+							"type": "Number",
+							"description": "优惠类型，3 为 SKU 级优惠类型，1 为商品级优惠类型",
+							"required": true
+						},
+						{
+							"name": "activity_status",
+							"type": "Number",
+							"description": "活动状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统执行是否成功",
+					"required": true
+				},
+				{
+					"name": "page_number",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "返回结果个数",
+					"required": true
+				}
+			]
+		}
+	]
+}

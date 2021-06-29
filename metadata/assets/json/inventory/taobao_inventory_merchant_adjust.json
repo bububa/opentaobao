@@ -1,0 +1,134 @@
+{
+	"name": "taobao.inventory.merchant.adjust",
+	"apiChineseName": "货品库存商家端调整",
+	"description": "货品库存商家端调整 ，入库，出库，盘点",
+	"requestParams": [
+		{
+			"name": "inventory_check",
+			"type": "InventoryCheckDto",
+			"description": "调整库存对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "check_mode",
+					"type": "Number",
+					"description": "1:全量更新   2: 出入库盘盈盘亏",
+					"required": true
+				},
+				{
+					"name": "inv_store_type",
+					"type": "Number",
+					"description": "2： 仓库类型   6：门店类型",
+					"required": true
+				},
+				{
+					"name": "detail_list",
+					"type": "InventoryCheckDetailDto[]",
+					"description": "调整明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inv_biz_code",
+							"type": "String",
+							"description": "如果是门店类型,则为必填。 ONLINE_INVENTORY  线上可售库存，  SHARE_INVENTORY 线下可售库存"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "调整数量，正数盘盈，负数盘亏",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "若为货品仓库存，则此处是货品ID 若为商品直接设置仓库存，则此处是商品ID， 若商品带SKU，还需要补充skuId",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "每个货品的调整子单据号，作为业务调整依据，处理时会根据此单据号作幂",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "调整商品对应的SKUID，如果商品为货品，则为0"
+						}
+					]
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库code或者门店id",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "调整单据号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "adjust_results",
+					"type": "InventoryCheckResultDto[]",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "每个子调整单据是否成功",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "每个货品的调整子单据号，作为业务调整依据，处理时会幂等",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "如果是失败，可能是部分失败。如果是成功，则全部成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

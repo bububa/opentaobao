@@ -20,7 +20,9 @@ type TaobaoItemsCustomGetAPIResponse struct {
 
 type TaobaoItemsCustomGetResponse struct {
     XMLName xml.Name `xml:"items_custom_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品列表，具体返回字段以fields决定
     

@@ -1,0 +1,204 @@
+{
+	"name": "alibaba.lst.vending.equipment.query",
+	"apiChineseName": "自动售卖机设备信息查询",
+	"description": "为零售通品牌商提供已租赁的设备信息查询。",
+	"requestParams": [
+		{
+			"name": "open_equipment_query",
+			"type": "OpenEquipmentQuery",
+			"description": "设备查询条件",
+			"subParams": [
+				{
+					"name": "gmt_modified_range",
+					"type": "Range",
+					"description": "修改时间",
+					"subParams": [
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "开始时间"
+						}
+					]
+				},
+				{
+					"name": "page_rows",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "页数",
+					"required": true
+				},
+				{
+					"name": "gmt_create_range",
+					"type": "Range",
+					"description": "创建时间",
+					"subParams": [
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "开始时间"
+						}
+					]
+				},
+				{
+					"name": "sort_param_list",
+					"type": "SortParam[]",
+					"description": "排序条件",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sort_field_name",
+							"type": "String",
+							"description": "排序字段名称：gmt_create创建时间、gmt_modified修改时间、id主键",
+							"required": true
+						},
+						{
+							"name": "sort_order",
+							"type": "String",
+							"description": "排序方式：asc、desc"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "OpenEquipmentDto[]",
+					"description": "设备信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省份代码",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市代码",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "area_code",
+							"type": "String",
+							"description": "地区代码",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商代码",
+							"required": true
+						},
+						{
+							"name": "model_name",
+							"type": "String",
+							"description": "型号名称",
+							"required": true
+						},
+						{
+							"name": "equipment_code",
+							"type": "String",
+							"description": "设备代码",
+							"required": true
+						},
+						{
+							"name": "enabled_time",
+							"type": "Date",
+							"description": "设备激活时间",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "设备ID",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "设备状态：1未激活，2已激活，3已回收（转租）",
+							"required": true
+						},
+						{
+							"name": "recovered_time",
+							"type": "Date",
+							"description": "设备回收（转租）时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行异常",
+					"required": true
+				}
+			]
+		}
+	]
+}

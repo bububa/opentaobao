@@ -20,7 +20,9 @@ type TaobaoAlitripTravelItemShelveAPIResponse struct {
 
 type TaobaoAlitripTravelItemShelveResponse struct {
     XMLName xml.Name `xml:"alitrip_travel_item_shelve_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品上下架操作是否成功
     

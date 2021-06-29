@@ -1,0 +1,19 @@
+{
+	"name": "yunos.tvpubadmin.manage.dialog.list",
+	"apiChineseName": "分页获取弹窗列表",
+	"description": "分页获取弹窗配置列表",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询的query参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

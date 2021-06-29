@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.health.vaccin.notice.timebucket.remind",
+	"apiChineseName": "疫苗预约时间段提醒",
+	"description": "疫苗预约时间段提醒",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "432421",
+			"required": true
+		},
+		{
+			"name": "vaccine_name",
+			"type": "String",
+			"description": "疫苗名称"
+		},
+		{
+			"name": "reserve_date",
+			"type": "String",
+			"description": "预约日期：2019-02-08 严格按照",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "接种人姓名"
+		},
+		{
+			"name": "the_times",
+			"type": "String",
+			"description": "针次"
+		},
+		{
+			"name": "pov_store_name",
+			"type": "String",
+			"description": "接种点名称（通知方）"
+		},
+		{
+			"name": "reserve_time",
+			"type": "String",
+			"description": "可预约时段"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "用户授权的手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "执行是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

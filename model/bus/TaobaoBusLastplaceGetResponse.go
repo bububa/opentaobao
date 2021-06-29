@@ -19,7 +19,9 @@ type TaobaoBusLastplaceGetAPIResponse struct {
 
 type TaobaoBusLastplaceGetResponse struct {
     XMLName xml.Name `xml:"bus_lastplace_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 目的地返回结果
     

@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.damai.maitix.order.directrefund",
+	"apiChineseName": "大麦-直接退票",
+	"description": "大麦-退票",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "MoaRefundAuditParam",
+			"description": "退票入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "大麦订单号",
+					"required": true
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退票原因：0=出错票，1=客人退票，2=其它原因",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MxResult",
+			"description": "退票返回对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "true:退票成功，false:退票失败",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "结果code，0代表成功，负数代表异常情况",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功，true:成功，false:失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,140 @@
+{
+	"name": "alitrip.platform.poi.raw.poioutbypoiids",
+	"apiChineseName": "根据poiId输出飞猪poi数据",
+	"description": "根据poiId输出飞猪poi数据",
+	"requestParams": [
+		{
+			"name": "fliggy_poiid_param",
+			"type": "FliggyPoiIdParam",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "poi_ids",
+					"type": "String[]",
+					"description": "需要查询的poiid",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "datas",
+					"type": "Data[]",
+					"description": "返回poi详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "source_id",
+							"type": "String",
+							"description": "poiId",
+							"required": true
+						},
+						{
+							"name": "division_tree_name",
+							"type": "String",
+							"description": "行政区划树名",
+							"required": true
+						},
+						{
+							"name": "division_tree_id",
+							"type": "String",
+							"description": "行政区划树",
+							"required": true
+						},
+						{
+							"name": "open_time",
+							"type": "String",
+							"description": "开放时间",
+							"required": true
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "lon",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "first_category",
+							"type": "Number",
+							"description": "类目",
+							"required": true
+						},
+						{
+							"name": "name_en",
+							"type": "String",
+							"description": "poi英文名",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "poi名称",
+							"required": true
+						},
+						{
+							"name": "poi_id",
+							"type": "Number",
+							"description": "poiId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "total_records",
+					"type": "Number",
+					"description": "总数(不可用)",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

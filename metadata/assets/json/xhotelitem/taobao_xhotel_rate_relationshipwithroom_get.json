@@ -1,0 +1,30 @@
+{
+	"name": "taobao.xhotel.rate.relationshipwithroom.get",
+	"apiChineseName": "查询rpId",
+	"description": "某个卖家根据rpId查询所有的gid，可分页，不填分页信息则默认显示第一页。",
+	"requestParams": [
+		{
+			"name": "rp_id",
+			"type": "Number",
+			"description": "rpId",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gids",
+			"type": "String []",
+			"description": "返回值"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "根据条件所查询的所有结果的总数量"
+		}
+	]
+}

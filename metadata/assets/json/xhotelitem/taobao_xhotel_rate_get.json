@@ -1,0 +1,119 @@
+{
+	"name": "taobao.xhotel.rate.get",
+	"apiChineseName": "酒店产品库rate查询",
+	"description": "酒店产品库rate查询",
+	"requestParams": [
+		{
+			"name": "gid",
+			"type": "Number",
+			"description": "gid酒店商品id"
+		},
+		{
+			"name": "rpid",
+			"type": "Number",
+			"description": "酒店RPID"
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "卖家房型ID, 这是卖家自己系统中的房型ID 注意：需要按照规则组合",
+			"maxLength": 128
+		},
+		{
+			"name": "rateplan_code",
+			"type": "String",
+			"description": "卖家自己系统的Code，简称RateCode",
+			"maxLength": 128
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "用于标示该宝贝的售卖渠道信息，允许同一个卖家酒店房型在淘宝系统发布多个售卖渠道的宝贝的价格。",
+			"maxLength": 50
+		},
+		{
+			"name": "rate_id",
+			"type": "Number",
+			"description": "RateID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rate",
+			"type": "Rate",
+			"description": "rate",
+			"subParams": [
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "酒店商品id"
+				},
+				{
+					"name": "rpid",
+					"type": "Number",
+					"description": "酒店RPID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称"
+				},
+				{
+					"name": "add_bed",
+					"type": "Number",
+					"description": "额外服务-是否可以加床，1：不可以，2：可以"
+				},
+				{
+					"name": "add_bed_price",
+					"type": "Number",
+					"description": "额外服务-加床价格"
+				},
+				{
+					"name": "currency_code",
+					"type": "Number",
+					"description": "币种（仅支持CNY）"
+				},
+				{
+					"name": "shijia_tag",
+					"type": "Number",
+					"description": "实价有房标签（RP支付类型为全额支付）"
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "inventory_price",
+					"type": "String",
+					"description": "价格和库存信息。\u003cbr/\u003eA:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。\u003cbr/\u003eB:date  日期必须为 T---T+90 日内的日期（T为当天），且不能重复\u003cbr/\u003eC:price 价格 int类型 取值范围1-99999999 单位为分\u003cbr/\u003eD:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)"
+				},
+				{
+					"name": "jishiqueren_tag",
+					"type": "Number",
+					"description": "即时确认状态，表示此rate预订后是否可以直接发货。可取范围：0,1。可以为空"
+				},
+				{
+					"name": "use_room_inventory",
+					"type": "Boolean",
+					"description": "是否使用RoomInventory库存   仅当Rate上使用时有意义"
+				},
+				{
+					"name": "inv_price_with_switch",
+					"type": "String",
+					"description": "invPriceWithSwitch"
+				},
+				{
+					"name": "tag_json",
+					"type": "String",
+					"description": "rate 维度下特殊标签含义 json: {\"ebk-tail-room-Rate\":1}, key:ebk-tail-room-Rate 表示rate维度ebk尾房标"
+				}
+			]
+		}
+	]
+}

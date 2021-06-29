@@ -1,0 +1,85 @@
+{
+	"name": "taobao.opentrade.special.users.query",
+	"apiChineseName": "专属下单标记信息查询",
+	"description": "专属下单标记信息查询",
+	"requestParams": [
+		{
+			"name": "open_user_ids",
+			"type": "String[]",
+			"description": "用户openId列表，多个以逗号(,)分割",
+			"maxListSize": 999
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数，每页大小",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "商品SKU ID，不存在传0"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "用户状态"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "分页参数，当前页，以0开始",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总记录数"
+		},
+		{
+			"name": "results",
+			"type": "MarkUserInfo []",
+			"description": "标记用户数据",
+			"subParams": [
+				{
+					"name": "user_open_id",
+					"type": "String",
+					"description": "用户openId",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "商品SKU ID",
+					"required": true
+				},
+				{
+					"name": "quality",
+					"type": "Number",
+					"description": "专属下单商品数量",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "用户状态",
+					"required": true
+				}
+			]
+		}
+	]
+}

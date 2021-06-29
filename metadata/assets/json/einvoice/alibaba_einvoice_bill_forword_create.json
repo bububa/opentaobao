@@ -1,0 +1,137 @@
+{
+	"name": "alibaba.einvoice.bill.forword.create",
+	"apiChineseName": "扫码开票结算单同步前开发票",
+	"description": "扫码开票结算单同步前开发票，会将数据同步到结算单中",
+	"requestParams": [
+		{
+			"name": "invoice_items",
+			"type": "BillItemDO[]",
+			"description": "发票商品明细",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "价税合计",
+					"required": true
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "规格型号,可选"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "商品单位"
+				}
+			]
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "结算单订单ID",
+			"required": true
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "收款方税号",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "调用平台，用以区分不同的订单ID，不填默认为default"
+		},
+		{
+			"name": "seri_no",
+			"type": "String",
+			"description": "开票流水号，若不填则系统默认生成"
+		},
+		{
+			"name": "shop_name",
+			"type": "String",
+			"description": "店铺名称"
+		},
+		{
+			"name": "sum_price",
+			"type": "String",
+			"description": "开票金额，和明细累计总金额需相同",
+			"required": true
+		},
+		{
+			"name": "payer_address",
+			"type": "String",
+			"description": "付款方地址"
+		},
+		{
+			"name": "payer_bankaccount",
+			"type": "String",
+			"description": "付款方银行账户"
+		},
+		{
+			"name": "payer_email",
+			"type": "String",
+			"description": "付款方开票邮件通知邮箱"
+		},
+		{
+			"name": "payer_name",
+			"type": "String",
+			"description": "付款方发票抬头",
+			"required": true
+		},
+		{
+			"name": "payer_phone",
+			"type": "String",
+			"description": "企业电话"
+		},
+		{
+			"name": "payer_register_no",
+			"type": "String",
+			"description": "付款方税号",
+			"required": true
+		},
+		{
+			"name": "phone_number",
+			"type": "String",
+			"description": "个人电话，接收发票通知",
+			"required": true
+		},
+		{
+			"name": "business_type",
+			"type": "Number",
+			"description": "企业或个人抬头发票，0=个人，1=企业。默认=1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "errorMessage"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result"
+		}
+	]
+}

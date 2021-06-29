@@ -55,7 +55,7 @@ type StoreProcessCreateRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenStoreprocessCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

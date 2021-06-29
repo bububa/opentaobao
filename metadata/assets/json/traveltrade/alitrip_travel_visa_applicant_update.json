@@ -1,0 +1,271 @@
+{
+	"name": "alitrip.travel.visa.applicant.update",
+	"apiChineseName": "飞猪度假-普通签证-申请人进度推进接口",
+	"description": "普通签证订单的申请人进度推进接口，用于商家代用户填写申请人基本信息 或 推进单个申请人的签证进度。",
+	"requestParams": [
+		{
+			"name": "sub_order_id",
+			"type": "String",
+			"description": "必填，子订单id",
+			"required": true
+		},
+		{
+			"name": "oper_type",
+			"type": "Number",
+			"description": "必填，操作类型。1-上传新申请人基本信息（商家代填申请人），2-更新已有申请人基本信息，3-更新已有申请人的签证进度，4-商家代传申请人信息和材料(使馆直连订单)",
+			"required": true
+		},
+		{
+			"name": "applicant_infos",
+			"type": "NormalVisaApplicantInfo[]",
+			"description": "特殊必填，申请人基本信息（证件号，姓名，手机号）列表。当operType为1或2或4时必填",
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "String",
+					"description": "可选，申请人ID。更新申请人基本信息时必填，新增申请人信息时不用填"
+				},
+				{
+					"name": "surname",
+					"type": "String",
+					"description": "姓，新增申请人时必填"
+				},
+				{
+					"name": "given_name",
+					"type": "String",
+					"description": "名，新增申请人时必填"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号，新增申请人时必填"
+				},
+				{
+					"name": "cert_no",
+					"type": "String",
+					"description": "证件号（护照、入台证等），新增申请人时必填"
+				},
+				{
+					"name": "user_type",
+					"type": "Number",
+					"description": "办理人身份类型(8-在职人员,9-自由职业,10-在校学生,11-退休人员,12-学龄年儿童,13-所有申请者,14-单个成年人,15-随行直系亲属,16-在读学生)"
+				},
+				{
+					"name": "apply_name_cn",
+					"type": "String",
+					"description": "办理人中文全名"
+				}
+			]
+		},
+		{
+			"name": "applicant_op",
+			"type": "NormalVisaApplicantOperation",
+			"description": "特殊必填，签证申请人进度推进操作（目前只支持对单个申请人状态进行推进）。当operType为3时必填",
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "String",
+					"description": "必填，申请人ID"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "必填，申请人状态推进，本次操作需要推进到的目标状态。具体状态值枚举及推进流程详见：https://open.alitrip.com/docs/doc.htm?spm=a21tt.7629140.0.0.fYvMkZ\u0026docType=1\u0026articleId=108046\u0026previewCode=9D5F931C2254C7B3FE16B8DB7F9CECB4"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "可选，备注"
+				},
+				{
+					"name": "logistics_info",
+					"type": "NormalVisaLogisticsInfo",
+					"description": "特殊必填，上传该申请人 签证结果寄回物流信息。当status值为1013（已寄回结果）时，必填",
+					"subParams": [
+						{
+							"name": "post_number",
+							"type": "String",
+							"description": "必填，物流号"
+						},
+						{
+							"name": "post_company_code",
+							"type": "String",
+							"description": "必填，物流公司编码"
+						},
+						{
+							"name": "post_company_name",
+							"type": "String",
+							"description": "必填，物流公司名称"
+						},
+						{
+							"name": "concat_phone",
+							"type": "String",
+							"description": "选填，物流联系人手机号(顺丰物流需要)"
+						}
+					]
+				},
+				{
+					"name": "eta_info",
+					"type": "NormalVisaEtaInfo",
+					"description": "特殊必填，上传该申请人 电子签结果。当该签证为电子签证且status值为1006（已收到签证结果）时 必填",
+					"subParams": [
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "必填，电子签pdf文件名称。具体的pdf文件字节流信息请设置到父级参数的 fileBytes字段！！！"
+						}
+					]
+				},
+				{
+					"name": "appointment_info",
+					"type": "NormalVisaAppointmentInfo",
+					"description": "特殊必填，上传该申请人 预约面试信息。当status值为1007（已预约面试）时 必填",
+					"subParams": [
+						{
+							"name": "book_file_name",
+							"type": "String",
+							"description": "必填，预约面试信pdf文件名称。具体的pdf文件字节流信息请设置到父级参数的 fileBytes字段！！！"
+						},
+						{
+							"name": "book_time",
+							"type": "String",
+							"description": "必填，预约时间，格式：yyyy-MM-dd hh:mm:ss"
+						},
+						{
+							"name": "book_place",
+							"type": "String",
+							"description": "必填，预约地点"
+						}
+					]
+				},
+				{
+					"name": "need_modify_doc_types",
+					"type": "Number[]",
+					"description": "签证需补充材料，0:护照，1:证件照，2:申请表，3:身份证，4:户口本，5:暂住证，6:在职收入证明，7:营业执照，8:组织机构代码证，9:结婚证，10:个人信息处理同意书，11:退休证，12:保险订单，13:在读证明，14:机票预订证明，15:酒店预订证明，16:财力证明，17:房产证，18:汽车驾驶证，19:社保缴纳记录，20:学校准假证明，21:儿童出生医学证明，22:未成年人亲属关系证明，23:其他材料，24:银行存款证明，25:学生证，26:其他材料2，27:其他材料3，28:居住证，29:车辆登记证，34:保险声明，36:出行同意书，38:职业证明，39:以往申根签证页"
+				},
+				{
+					"name": "applicant_form_data_json",
+					"type": "String",
+					"description": "代填申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大)"
+				}
+			]
+		},
+		{
+			"name": "file_bytes",
+			"type": "byte[]",
+			"description": "特殊必填，pdf文件字节流。用于上传电子签pdf结果 或者 预约面试信pdf文件。"
+		},
+		{
+			"name": "photo_bytes",
+			"type": "byte[]",
+			"description": "特殊必填，文件字节流，用于上传证件照，必须和photoType同时传"
+		},
+		{
+			"name": "photo_type",
+			"type": "String",
+			"description": "证件照文件类型"
+		},
+		{
+			"name": "passport_bytes",
+			"type": "byte[]",
+			"description": "特殊必填，文件字节流，用于上传护照，必须和passportType同时传"
+		},
+		{
+			"name": "passport_type",
+			"type": "String",
+			"description": "护照文件类型"
+		},
+		{
+			"name": "hotel_booking_form_type",
+			"type": "String",
+			"description": "酒店预订文件类型"
+		},
+		{
+			"name": "hotel_booking_form_bytes",
+			"type": "byte[]",
+			"description": "特殊必填，文件字节流，用于上传酒店预订，必须和hotelBookingFormType同时传"
+		},
+		{
+			"name": "flight_booking_form_type",
+			"type": "String",
+			"description": "机票预订文件类型"
+		},
+		{
+			"name": "flight_booking_form_bytes",
+			"type": "byte[]",
+			"description": "特殊必填，文件字节流，用于上传机票预订，必须和flightBookingFormType同时传"
+		},
+		{
+			"name": "document_infos",
+			"type": "NormalVisaDocumentInfo[]",
+			"description": "特殊必填，更多材料",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "doc_type",
+					"type": "Number",
+					"description": "文档编号，0:护照，1:证件照，2:申请表，3:身份证，4:户口本，5:暂住证，6:在职收入证明，7:营业执照，8:组织机构代码证，9:结婚证，10:个人信息处理同意书，11:退休证，12:保险订单，13:在读证明，14:机票预订证明，15:酒店预订证明，16:财力证明，17:房产证，18:汽车驾驶证，19:社保缴纳记录，20:学校准假证明，21:儿童出生医学证明，22:未成年人亲属关系证明，23:其他材料，24:银行存款证明，25:学生证，26:其他材料2，27:其他材料3，28:居住证，29:车辆登记证，34:保险声明，36:出行同意书，38:职业证明，39:以往申根签证页"
+				},
+				{
+					"name": "file_type",
+					"type": "String",
+					"description": "文件类型"
+				},
+				{
+					"name": "file_content",
+					"type": "String",
+					"description": "base64编码的文件内容"
+				},
+				{
+					"name": "sub_document_infos",
+					"type": "NormalVisaSubDocumentInfo[]",
+					"description": "特殊必填，上传子材料，如上传护照封面",
+					"subParams": [
+						{
+							"name": "doc_type",
+							"type": "Number",
+							"description": "子材料文档编号，10001:护照封面，10002:护照首页，11401:去程机票，11402:返程机票"
+						},
+						{
+							"name": "file_type",
+							"type": "String",
+							"description": "文件类型"
+						},
+						{
+							"name": "file_content",
+							"type": "String",
+							"description": "base64编码的文件内容"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_result",
+			"type": "Boolean",
+			"description": "申请人状态更新是否成功"
+		},
+		{
+			"name": "applicants",
+			"type": "NormalVisaApplicantInfo []",
+			"description": "该订单上已经上传的申请人列表信息",
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "String",
+					"description": "申请人id",
+					"required": true
+				},
+				{
+					"name": "cert_no",
+					"type": "String",
+					"description": "申请人护照号",
+					"required": true
+				}
+			]
+		}
+	]
+}

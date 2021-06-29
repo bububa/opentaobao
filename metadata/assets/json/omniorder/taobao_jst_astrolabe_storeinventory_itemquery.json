@@ -1,0 +1,129 @@
+{
+	"name": "taobao.jst.astrolabe.storeinventory.itemquery",
+	"apiChineseName": "库存查询接口",
+	"description": "查询门店或电商仓库存，该接口一次可以同时查询多个门店或电商仓的多个商品的多种类型的库存",
+	"requestParams": [
+		{
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "warehouse_id",
+					"type": "String",
+					"description": "门店ID(商户中心) 或 电商仓ID"
+				},
+				{
+					"name": "warehouse_type",
+					"type": "String",
+					"description": "库存来源"
+				},
+				{
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存",
+					"subParams": [
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "商品的SKU编码"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "ISV系统中商品编码"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "淘宝前端商品id"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应标示"
+		},
+		{
+			"name": "qimen_code",
+			"type": "String",
+			"description": "响应编码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "stores",
+			"type": "Store []",
+			"description": "门店列表",
+			"subParams": [
+				{
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "淘宝前端商品id",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "ISV系统中商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品的SKU编码",
+							"required": true
+						},
+						{
+							"name": "quantity_details",
+							"type": "QuantityDetail[]",
+							"description": "库存量详情列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "inventory_type",
+									"type": "String",
+									"description": "库存类型",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存数量",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "warehouse_id",
+					"type": "String",
+					"description": "门店ID(商户中心) 或 电商仓ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_type",
+					"type": "String",
+					"description": "库存来源",
+					"required": true
+				}
+			]
+		}
+	]
+}

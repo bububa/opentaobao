@@ -1,0 +1,42 @@
+{
+	"name": "taobao.xhotel.order.alipayface.extend",
+	"apiChineseName": "信用住订单延住接口",
+	"description": "信用住订单延住接口，用于将已有的信用住支付订单checkOut和订单金额等更新",
+	"requestParams": [
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "延住后的离店日期(最多总共入住天数不能超过9间夜)",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "阿里旅行订单id,和outOrderId必须至少传入一个"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "卖家系统订单号,和tid必须至少传入一个"
+		},
+		{
+			"name": "extend_fee",
+			"type": "Number",
+			"description": "延住房费,注意不包含原有的房费金额,单位为分",
+			"required": true
+		},
+		{
+			"name": "extend_daily_price_info",
+			"type": "String",
+			"description": "延住日期段的每日房价信息,注意不包括原有的日期房价",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "出参成功"
+		}
+	]
+}

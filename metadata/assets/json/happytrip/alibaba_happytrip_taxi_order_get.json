@@ -1,0 +1,440 @@
+{
+	"name": "alibaba.happytrip.taxi.order.get",
+	"apiChineseName": "订单详情",
+	"description": "获取订单状态及详情",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "OrderGetResult",
+			"description": "订单获取结果",
+			"subParams": [
+				{
+					"name": "price",
+					"type": "CostInfo",
+					"description": "费用信息，如果订单有折扣，这里为折后价格，如果没有折扣，这里和original_price保持一致",
+					"required": true,
+					"subParams": [
+						{
+							"name": "detail",
+							"type": "CostDetailInfo[]",
+							"description": "费用明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "费用金额",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "费用类型名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "费用类型，如果不需要显示直接设为null，为0也会显示出来。discount_fee:折扣金额;refund_price：退款;empty_fee：远途费或超出套餐部分远途费; highway_fee：高速费;  bridge_fee：路桥费; low_speed_fee：低速费或超出套餐低速费;  night_fee：夜间费用或超出套餐部分夜间费; normal_fee：正常行驶费用或超出套餐部分行驶距离费; other_fee：其他费用;  park_fee：停车费; start_price：起步价格;  tip_fee：加价费用;  limit_fee：车最低消费; combo_fee：套餐费用;  normal_time_fee：快车时长费;  cancel_fee：违约费; dynamic_price：动态调价费用;  wait_fee：等候费; clear_fee：清洁费; cross_city_fee：跨城费",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_price",
+							"type": "String",
+							"description": "总费用，折后金额",
+							"required": true
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "原价，如果订单有折扣这里为折扣前的价格，如果没有折扣和total_price字段保持一致",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态码",
+							"required": true
+						},
+						{
+							"name": "sub_status",
+							"type": "Number",
+							"description": "订单详细状态码",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "订单类型(0:实时、1:预约)",
+							"required": true
+						},
+						{
+							"name": "passenger_phone",
+							"type": "String",
+							"description": "乘车人手机号",
+							"required": true
+						},
+						{
+							"name": "driver_name",
+							"type": "String",
+							"description": "司机称呼",
+							"required": true
+						},
+						{
+							"name": "driver_phone",
+							"type": "String",
+							"description": "号码保护中间号（如无号码保护，为司机真实手机号）",
+							"required": true
+						},
+						{
+							"name": "driver_phone_real",
+							"type": "String",
+							"description": "司机真实手机号",
+							"required": true
+						},
+						{
+							"name": "driver_num",
+							"type": "Number",
+							"description": "已通知司机数量",
+							"required": true
+						},
+						{
+							"name": "driver_car_type",
+							"type": "String",
+							"description": "司机车型",
+							"required": true
+						},
+						{
+							"name": "driver_card",
+							"type": "String",
+							"description": "司机车牌",
+							"required": true
+						},
+						{
+							"name": "driver_avatar",
+							"type": "String",
+							"description": "司机头像",
+							"required": true
+						},
+						{
+							"name": "driver_level",
+							"type": "String",
+							"description": "司机星级",
+							"required": true
+						},
+						{
+							"name": "driver_order_count",
+							"type": "Number",
+							"description": "司机抢单数",
+							"required": true
+						},
+						{
+							"name": "dlng",
+							"type": "String",
+							"description": "司机当前实时经度",
+							"required": true
+						},
+						{
+							"name": "dlat",
+							"type": "String",
+							"description": "司机当前实时纬度",
+							"required": true
+						},
+						{
+							"name": "clng",
+							"type": "String",
+							"description": "乘客发单时位置经度",
+							"required": true
+						},
+						{
+							"name": "clat",
+							"type": "String",
+							"description": "乘客发单时位置维度",
+							"required": true
+						},
+						{
+							"name": "flng",
+							"type": "String",
+							"description": "出发经度",
+							"required": true
+						},
+						{
+							"name": "flat",
+							"type": "String",
+							"description": "出发维度",
+							"required": true
+						},
+						{
+							"name": "tlng",
+							"type": "String",
+							"description": "目的地经度",
+							"required": true
+						},
+						{
+							"name": "tlat",
+							"type": "String",
+							"description": "目的地维度",
+							"required": true
+						},
+						{
+							"name": "extra_info",
+							"type": "String",
+							"description": "扩展信息",
+							"required": true
+						},
+						{
+							"name": "start_name",
+							"type": "String",
+							"description": "出发地名称",
+							"required": true
+						},
+						{
+							"name": "start_address",
+							"type": "String",
+							"description": "出发地详细地址",
+							"required": true
+						},
+						{
+							"name": "end_name",
+							"type": "String",
+							"description": "目的地名称",
+							"required": true
+						},
+						{
+							"name": "end_address",
+							"type": "String",
+							"description": "目的地详细地址",
+							"required": true
+						},
+						{
+							"name": "departure_time",
+							"type": "String",
+							"description": "出发时间",
+							"required": true
+						},
+						{
+							"name": "order_time",
+							"type": "String",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "strive_time",
+							"type": "String",
+							"description": "司机接单时间",
+							"required": true
+						},
+						{
+							"name": "reach_time",
+							"type": "String",
+							"description": "司机到达时间",
+							"required": true
+						},
+						{
+							"name": "begin_charge_time",
+							"type": "String",
+							"description": "开始计价时间",
+							"required": true
+						},
+						{
+							"name": "finish_time",
+							"type": "String",
+							"description": "行程结束时间",
+							"required": true
+						},
+						{
+							"name": "delay_time_start",
+							"type": "String",
+							"description": "迟到计费时间",
+							"required": true
+						},
+						{
+							"name": "normal_distance",
+							"type": "String",
+							"description": "实际行驶公里数",
+							"required": true
+						},
+						{
+							"name": "normal_time",
+							"type": "Number",
+							"description": "实际行驶时长（分钟）",
+							"required": true
+						},
+						{
+							"name": "require_level",
+							"type": "String",
+							"description": "车型代码",
+							"required": true
+						},
+						{
+							"name": "strive_level",
+							"type": "String",
+							"description": "实际车型代码",
+							"required": true
+						},
+						{
+							"name": "driver_car_color",
+							"type": "String",
+							"description": "汽车的颜色",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注，如取消原因",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "carpool",
+					"type": "CarpoolInfo",
+					"description": "拼车信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "carpool_flag",
+							"type": "Number",
+							"description": "0: 未拼成 1:拼成",
+							"required": true
+						},
+						{
+							"name": "carpool_order_id",
+							"type": "String",
+							"description": "拼车单id",
+							"required": true
+						},
+						{
+							"name": "passenger_orders",
+							"type": "PassengerOrderInfo[]",
+							"description": "乘客订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "订单id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "订单状态码",
+									"required": true
+								},
+								{
+									"name": "sub_status",
+									"type": "String",
+									"description": "订单详细状态码",
+									"required": true
+								},
+								{
+									"name": "passenger_number",
+									"type": "Number",
+									"description": "乘客人数",
+									"required": true
+								},
+								{
+									"name": "flng",
+									"type": "String",
+									"description": "出发地经度",
+									"required": true
+								},
+								{
+									"name": "flat",
+									"type": "String",
+									"description": "出发地纬度",
+									"required": true
+								},
+								{
+									"name": "tlng",
+									"type": "String",
+									"description": "目的地经度",
+									"required": true
+								},
+								{
+									"name": "tlat",
+									"type": "String",
+									"description": "目的地纬度",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "reassign_info",
+					"type": "ReassignInfo",
+					"description": "订单改派信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pre_order_id",
+							"type": "String",
+							"description": "改派前订单id，即此订单由哪个订单id改派而生成（当值为空时，表示该订单不是因为改派而生成的）",
+							"required": true
+						},
+						{
+							"name": "next_order_id",
+							"type": "String",
+							"description": "改派后订单id，即由于订单改派而产生的订单id（当值为空时，表示当前订单未被改派而产生新订单）",
+							"required": true
+						},
+						{
+							"name": "init_order_id",
+							"type": "String",
+							"description": "第一个被改派的订单id",
+							"required": true
+						},
+						{
+							"name": "latest_order_id",
+							"type": "String",
+							"description": "最新被指派的订单id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

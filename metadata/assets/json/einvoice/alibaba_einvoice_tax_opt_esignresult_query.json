@@ -1,0 +1,116 @@
+{
+	"name": "alibaba.einvoice.tax.opt.esignresult.query",
+	"apiChineseName": "查询用户签约税优结果",
+	"description": "查询用户是否已经签约",
+	"requestParams": [
+		{
+			"name": "employer_code",
+			"type": "String",
+			"description": "业务方编码"
+		},
+		{
+			"name": "identification_in_belonging_employer",
+			"type": "String",
+			"description": "用户在业务方平台的userid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "AgreementInfoDto []",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "agreement_type",
+					"type": "String",
+					"description": "协议类型",
+					"required": true
+				},
+				{
+					"name": "asset_symbol",
+					"type": "String",
+					"description": "资产符号",
+					"required": true
+				},
+				{
+					"name": "employer_code",
+					"type": "String",
+					"description": "业务方编码",
+					"required": true
+				},
+				{
+					"name": "sign_time",
+					"type": "String",
+					"description": "签约时间",
+					"required": true
+				},
+				{
+					"name": "agreement_url",
+					"type": "String",
+					"description": "合同链接",
+					"required": true
+				},
+				{
+					"name": "contractor_code",
+					"type": "String",
+					"description": "供应商编码",
+					"required": true
+				},
+				{
+					"name": "contractor_name",
+					"type": "String",
+					"description": "供应商名称",
+					"required": true
+				},
+				{
+					"name": "asset_type",
+					"type": "String",
+					"description": "资产类型",
+					"required": true
+				},
+				{
+					"name": "apply_dutiable_mode_enum",
+					"type": "String",
+					"description": "报税类型",
+					"required": true
+				},
+				{
+					"name": "pay_salary_mode_enum",
+					"type": "String",
+					"description": "发薪模式",
+					"required": true
+				},
+				{
+					"name": "tax_optimization_mode",
+					"type": "String",
+					"description": "税优模式",
+					"required": true
+				},
+				{
+					"name": "termination_time",
+					"type": "String",
+					"description": "解约时间",
+					"required": true
+				},
+				{
+					"name": "identification_in_belonging_employer",
+					"type": "String",
+					"description": "用户在业务方平台的userid",
+					"required": true
+				},
+				{
+					"name": "extend_field",
+					"type": "String",
+					"description": "扩展信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "签约状态",
+					"required": true
+				}
+			]
+		}
+	]
+}

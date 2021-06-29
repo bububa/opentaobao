@@ -1,0 +1,46 @@
+{
+	"name": "yunos.tvpubadmin.device.yks.skill.delete",
+	"apiChineseName": "技能删除",
+	"description": "删除技能",
+	"requestParams": [
+		{
+			"name": "bot_skill_rel_id",
+			"type": "Number",
+			"description": "bot与技能关系表id",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "技能id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "Json",
+					"description": "返回数据",
+					"required": true
+				}
+			]
+		}
+	]
+}

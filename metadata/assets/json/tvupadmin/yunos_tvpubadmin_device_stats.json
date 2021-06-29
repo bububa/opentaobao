@@ -1,0 +1,70 @@
+{
+	"name": "yunos.tvpubadmin.device.stats",
+	"apiChineseName": "获取设备统计数据",
+	"description": "获取设备统计数据",
+	"requestParams": [
+		{
+			"name": "factory_name",
+			"type": "String",
+			"description": "厂商名称",
+			"required": true
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备型号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "StatsDeviceInfoDO",
+			"description": "object",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "factory_name",
+					"type": "String",
+					"description": "factoryName",
+					"required": true
+				},
+				{
+					"name": "device_model",
+					"type": "String",
+					"description": "deviceModel",
+					"required": true
+				},
+				{
+					"name": "user_active_total",
+					"type": "Number",
+					"description": "userActiveTotal",
+					"required": true
+				},
+				{
+					"name": "user_sign_daily",
+					"type": "Number",
+					"description": "userSignDaily",
+					"required": true
+				},
+				{
+					"name": "stats_date_str",
+					"type": "String",
+					"description": "statsDateStr",
+					"required": true
+				},
+				{
+					"name": "stats_date",
+					"type": "Date",
+					"description": "statsDate",
+					"required": true
+				}
+			]
+		}
+	]
+}

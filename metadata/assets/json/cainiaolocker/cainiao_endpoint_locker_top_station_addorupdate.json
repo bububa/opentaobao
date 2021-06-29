@@ -1,0 +1,137 @@
+{
+	"name": "cainiao.endpoint.locker.top.station.addorupdate",
+	"apiChineseName": "增加更新代收点",
+	"description": "新增或者修改代收点相关信息",
+	"requestParams": [
+		{
+			"name": "station_info",
+			"type": "StationInfo",
+			"description": "站点信息",
+			"subParams": [
+				{
+					"name": "zip",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0-上线，1-下线",
+					"required": true
+				},
+				{
+					"name": "housing_estate",
+					"type": "String",
+					"description": "小区"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "站点照片url"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份",
+					"required": true
+				},
+				{
+					"name": "coord_type",
+					"type": "String",
+					"description": "坐标类型，MARS-火星坐标（高德坐标），BAIDU-百度坐标,GPS-GPS坐标"
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区县",
+					"required": true
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "站点服务能力描述"
+				},
+				{
+					"name": "station_type",
+					"type": "Number",
+					"description": "站点类型：100-代收点",
+					"required": true
+				},
+				{
+					"name": "contact",
+					"type": "String",
+					"description": "站点联系方式",
+					"required": true
+				},
+				{
+					"name": "station_lng",
+					"type": "String",
+					"description": "站点经度"
+				},
+				{
+					"name": "station_addr",
+					"type": "String",
+					"description": "站点详细地址"
+				},
+				{
+					"name": "station_id",
+					"type": "String",
+					"description": "站点id"
+				},
+				{
+					"name": "station_name",
+					"type": "String",
+					"description": "站点名字"
+				},
+				{
+					"name": "station_no",
+					"type": "String",
+					"description": "站点编码"
+				},
+				{
+					"name": "station_lat",
+					"type": "String",
+					"description": "站点纬度"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码，见白皮书",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "本次调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.wdk.item.memberprice.update",
+	"apiChineseName": "商品售价会员价修改",
+	"description": "商品售价会员价修改",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "sku_price",
+			"type": "Number",
+			"description": "售价，单位分，售价会员价至少填一个"
+		},
+		{
+			"name": "sku_member_price",
+			"type": "Number",
+			"description": "会员价，单位分"
+		},
+		{
+			"name": "clean_sku_member_price",
+			"type": "Boolean",
+			"description": "是否清空会员价"
+		},
+		{
+			"name": "time_stamp",
+			"type": "Number",
+			"description": "时间戳"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

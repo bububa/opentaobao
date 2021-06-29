@@ -1,0 +1,408 @@
+{
+	"name": "alibaba.lst.trade.seller.order.fundbill.list.query",
+	"apiChineseName": "结算明细数据查询（卖家视角）",
+	"description": "提供For供应商的结算接口，以交易账单维度提供开放数据，满足供应商自动化结算的诉求",
+	"requestParams": [
+		{
+			"name": "size",
+			"type": "Number",
+			"description": "每页最大主订单数，注意：返回的content_list数据按照子订单维度展开",
+			"required": true
+		},
+		{
+			"name": "bill_date",
+			"type": "String",
+			"description": "账单日期，格式：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PagedResultDto",
+			"description": "包装类",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总记录数，请求参数page大于实际值时，total返回0",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页最大主订单数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息，success为false时生效",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码，success为false时生效",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "content_list",
+					"type": "LstFundBillOrderDto[]",
+					"description": "子订单包装类，按照子订单维度展开",
+					"required": true,
+					"subParams": [
+						{
+							"name": "main_order_id",
+							"type": "String",
+							"description": "主订单id",
+							"required": true
+						},
+						{
+							"name": "total_settle_amt_hy",
+							"type": "String",
+							"description": "结算总金额(含佣)",
+							"required": true
+						},
+						{
+							"name": "total_settle_amt",
+							"type": "String",
+							"description": "结算总金额(扣佣)",
+							"required": true
+						},
+						{
+							"name": "total_item_amt",
+							"type": "String",
+							"description": "销售总金额",
+							"required": true
+						},
+						{
+							"name": "carriage",
+							"type": "String",
+							"description": "运费",
+							"required": true
+						},
+						{
+							"name": "refund_carriage",
+							"type": "String",
+							"description": "退款运费",
+							"required": true
+						},
+						{
+							"name": "deal_type",
+							"type": "String",
+							"description": "交易方式",
+							"required": true
+						},
+						{
+							"name": "alipay_fee",
+							"type": "String",
+							"description": "支付宝入账金额",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "订单创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_shipped",
+							"type": "String",
+							"description": "订单发货时间",
+							"required": true
+						},
+						{
+							"name": "gmt_confirmed",
+							"type": "String",
+							"description": "确认收货时间",
+							"required": true
+						},
+						{
+							"name": "gmt_completed",
+							"type": "String",
+							"description": "订单完成时间",
+							"required": true
+						},
+						{
+							"name": "gmt_settled",
+							"type": "String",
+							"description": "订单结算时间",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "子订单id",
+							"required": true
+						},
+						{
+							"name": "cspu_name",
+							"type": "String",
+							"description": "产品名称",
+							"required": true
+						},
+						{
+							"name": "cspu_id",
+							"type": "String",
+							"description": "cspuId",
+							"required": true
+						},
+						{
+							"name": "sku",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条形码",
+							"required": true
+						},
+						{
+							"name": "warehouse_type",
+							"type": "String",
+							"description": "仓库类型",
+							"required": true
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓库名称",
+							"required": true
+						},
+						{
+							"name": "settle_amt",
+							"type": "String",
+							"description": "结算金额",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "销售单价",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "销售数量",
+							"required": true
+						},
+						{
+							"name": "item_amt",
+							"type": "String",
+							"description": "销售金额",
+							"required": true
+						},
+						{
+							"name": "item_commission_amt",
+							"type": "String",
+							"description": "商品佣金",
+							"required": true
+						},
+						{
+							"name": "carriage_commission_amt",
+							"type": "String",
+							"description": "物流佣金",
+							"required": true
+						},
+						{
+							"name": "wyg_commission_amt",
+							"type": "String",
+							"description": "无忧购佣金",
+							"required": true
+						},
+						{
+							"name": "jrfw_commission_amt",
+							"type": "String",
+							"description": "金融技术服务佣金",
+							"required": true
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "退款单号",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "订单退款状态",
+							"required": true
+						},
+						{
+							"name": "refund_quantity",
+							"type": "Number",
+							"description": "退货数量",
+							"required": true
+						},
+						{
+							"name": "refund_amt",
+							"type": "String",
+							"description": "货款退款金额",
+							"required": true
+						},
+						{
+							"name": "discount_amt",
+							"type": "String",
+							"description": "优惠金额",
+							"required": true
+						},
+						{
+							"name": "mk_zphg",
+							"type": "String",
+							"description": "赠品换购",
+							"required": true
+						},
+						{
+							"name": "mk_shop_mj",
+							"type": "String",
+							"description": "店铺满减",
+							"required": true
+						},
+						{
+							"name": "mk_shop_by",
+							"type": "String",
+							"description": "店铺包邮",
+							"required": true
+						},
+						{
+							"name": "mk_dpyh",
+							"type": "String",
+							"description": "单品优惠",
+							"required": true
+						},
+						{
+							"name": "mk_xscx",
+							"type": "String",
+							"description": "限时促销",
+							"required": true
+						},
+						{
+							"name": "mk_purchase_coupon",
+							"type": "String",
+							"description": "采购券",
+							"required": true
+						},
+						{
+							"name": "mk_brand_coupon",
+							"type": "String",
+							"description": "品牌券",
+							"required": true
+						},
+						{
+							"name": "mk_kdmj",
+							"type": "String",
+							"description": "跨店满减",
+							"required": true
+						},
+						{
+							"name": "mk_kdmz",
+							"type": "String",
+							"description": "跨店满赠",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称",
+							"required": true
+						},
+						{
+							"name": "leads_name",
+							"type": "String",
+							"description": "小店名称",
+							"required": true
+						},
+						{
+							"name": "leads_id",
+							"type": "String",
+							"description": "小店id",
+							"required": true
+						},
+						{
+							"name": "logistics_prov",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "logistics_city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "logistics_area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "self_offer",
+							"type": "String",
+							"description": "是否自有商品",
+							"required": true
+						},
+						{
+							"name": "delivery_name",
+							"type": "String",
+							"description": "配送商信息",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "商家id",
+							"required": true
+						},
+						{
+							"name": "seller_name",
+							"type": "String",
+							"description": "商家名称",
+							"required": true
+						},
+						{
+							"name": "item_commission_rate",
+							"type": "String",
+							"description": "商品佣金费率",
+							"required": true
+						},
+						{
+							"name": "post_commission_rate",
+							"type": "String",
+							"description": "物流佣金费率",
+							"required": true
+						},
+						{
+							"name": "item_commission_refund_amt",
+							"type": "String",
+							"description": "商品佣金退佣金额",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,87 @@
+{
+	"name": "cainiao.iot.ticket.sp.cancle",
+	"apiChineseName": "Iot售后服务商取消工单",
+	"description": "IoT售后服务商取消接单",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "AcceptTicketTopRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "feature",
+					"description": "扩展信息"
+				},
+				{
+					"name": "operator_phone",
+					"type": "String",
+					"description": "操作人联系方式",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人编码",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "sp_code",
+					"type": "String",
+					"description": "服务商唯一编码",
+					"required": true
+				},
+				{
+					"name": "ticket_id",
+					"type": "Number",
+					"description": "工单Id",
+					"required": true
+				},
+				{
+					"name": "comment",
+					"type": "String",
+					"description": "取消工单备注"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因（需要映射）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "异常描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

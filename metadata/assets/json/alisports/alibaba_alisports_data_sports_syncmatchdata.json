@@ -1,0 +1,158 @@
+{
+	"name": "alibaba.alisports.data.sports.syncmatchdata",
+	"apiChineseName": "阿里体育数据中心用户比赛数据同步接口",
+	"description": "阿里体育数据中心用户比赛数据同步接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "score",
+			"type": "String",
+			"description": "成绩(比赛用时)",
+			"required": true
+		},
+		{
+			"name": "match_group",
+			"type": "Number",
+			"description": "组别 1001半程马拉松  1002全程马拉松",
+			"required": true
+		},
+		{
+			"name": "country",
+			"type": "String",
+			"description": "国家"
+		},
+		{
+			"name": "birthday",
+			"type": "String",
+			"description": "出生日期 格式：Y-m-d"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号"
+		},
+		{
+			"name": "card_id",
+			"type": "String",
+			"description": "证件ID",
+			"required": true
+		},
+		{
+			"name": "card_type",
+			"type": "Number",
+			"description": "证件类型 1身份证 2军官证 4护照 8台胞证 16港澳通行证 32未设置  64 其他",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "类型：1专业 2业余",
+			"required": true
+		},
+		{
+			"name": "gender",
+			"type": "Number",
+			"description": "性别 0未知 1男 2女",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "姓名",
+			"required": true
+		},
+		{
+			"name": "ranking",
+			"type": "Number",
+			"description": "排名"
+		},
+		{
+			"name": "match",
+			"type": "String",
+			"description": "比赛名（展示用）",
+			"required": true
+		},
+		{
+			"name": "match_type",
+			"type": "Number",
+			"description": "比赛类型 1马拉松",
+			"required": true
+		},
+		{
+			"name": "num",
+			"type": "String",
+			"description": "参赛号",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id"
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "接口签名",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "match_time",
+			"type": "String",
+			"description": "比赛日期 格式：Y-m-d",
+			"required": true
+		},
+		{
+			"name": "gunshot_score",
+			"type": "String",
+			"description": "枪声成绩"
+		},
+		{
+			"name": "gunshot_ranking",
+			"type": "Number",
+			"description": "枪声排名"
+		},
+		{
+			"name": "speed",
+			"type": "String",
+			"description": "平均配速"
+		},
+		{
+			"name": "project",
+			"type": "String",
+			"description": "展示用，比如：男子半程马拉松"
+		},
+		{
+			"name": "sub_score",
+			"type": "String",
+			"description": "比如马拉松 5KM 10KM 15KM分段成绩，json key-\u003evalue 格式"
+		},
+		{
+			"name": "sub_point",
+			"type": "String",
+			"description": "比如马拉松 5KM 10KM 15KM分段时间点，json key-\u003evalue 格式"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "响应码"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "响应信息"
+		}
+	]
+}

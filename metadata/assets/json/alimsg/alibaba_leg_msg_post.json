@@ -1,0 +1,114 @@
+{
+	"name": "alibaba.leg.msg.post",
+	"apiChineseName": "集团法务消息发送",
+	"description": "消息发送能力",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "应用标识",
+			"required": true
+		},
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "认证的code",
+			"required": true
+		},
+		{
+			"name": "message_definition_code",
+			"type": "String",
+			"description": "消息定义code",
+			"required": true
+		},
+		{
+			"name": "receiver_type",
+			"type": "String",
+			"description": "接收人类型",
+			"required": true
+		},
+		{
+			"name": "receivers",
+			"type": "String",
+			"description": "接收人数组",
+			"required": true
+		},
+		{
+			"name": "message_body_list_str",
+			"type": "String",
+			"description": "发送的渠道类型数组",
+			"required": true
+		},
+		{
+			"name": "business_id",
+			"type": "String",
+			"description": "业务id"
+		},
+		{
+			"name": "business_type",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "message_params",
+			"type": "String",
+			"description": "模版里定义的变量"
+		},
+		{
+			"name": "corp_id",
+			"type": "String",
+			"description": "三方租户id"
+		},
+		{
+			"name": "send_time",
+			"type": "String",
+			"description": "发送时间"
+		},
+		{
+			"name": "expand_params_map_str",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "SendTemplateMsgResponse",
+					"description": "内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "message_trace_id",
+							"type": "String",
+							"description": "32位的uuid,用来追踪一条消息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

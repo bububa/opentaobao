@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.fundplatform.account.charge.notify",
+	"apiChineseName": "账户充值成功通知",
+	"description": "通知外部业务方充值成功",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "在资金平台中账户ID",
+					"required": true
+				},
+				{
+					"name": "sub_biz_type",
+					"type": "Number",
+					"description": "资金平台分配的业务类型",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "充值金额，单位分",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "回传充值时传入的outBizId",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户在淘宝中userId",
+					"required": true
+				},
+				{
+					"name": "own_sign",
+					"type": "String",
+					"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "处理消息"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "处理错误码"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "处理结果"
+		}
+	]
+}

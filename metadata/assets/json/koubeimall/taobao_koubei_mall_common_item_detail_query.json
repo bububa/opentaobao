@@ -1,0 +1,468 @@
+{
+	"name": "taobao.koubei.mall.common.item.detail.query",
+	"apiChineseName": "查询商品详情信息",
+	"description": "查询口碑综合体内商品详情信息",
+	"requestParams": [
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "mall_id",
+			"type": "String",
+			"description": "商圈ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "商品ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "口碑城市编码（示例：杭州市330100）",
+			"maxLength": 32
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "经度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "纬度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "display_channel",
+			"type": "String",
+			"description": "展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）",
+			"maxLength": 32
+		},
+		{
+			"name": "app_version",
+			"type": "String",
+			"description": "支付宝/口碑/淘宝app版本号",
+			"maxLength": 32
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端设备描述(中、英文均可)",
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "API请求全链路追踪ID",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ItemDetailResult",
+					"description": "商品详情返回结果模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_detail",
+							"type": "ItemDetailDto",
+							"description": "商品详情信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_rule",
+									"type": "ItemRule",
+									"description": "商品使用规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "rule_list",
+											"type": "String[]",
+											"description": "规则列表",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "item_buy_notes",
+									"type": "ItemBuyNotes",
+									"description": "购买须知",
+									"required": true,
+									"subParams": [
+										{
+											"name": "notes_title",
+											"type": "String",
+											"description": "购买须知标题",
+											"required": true
+										},
+										{
+											"name": "buy_notes_detail_list",
+											"type": "ItemBuyNotesDetail[]",
+											"description": "列表",
+											"required": true,
+											"subParams": [
+												{
+													"name": "notes_detail_title",
+													"type": "String",
+													"description": "须知标题",
+													"required": true
+												},
+												{
+													"name": "notes_details",
+													"type": "String[]",
+													"description": "须知明细",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "item_group_detail_list",
+									"type": "ItemGroupContent[]",
+									"description": "详情内容",
+									"required": true,
+									"subParams": [
+										{
+											"name": "group_name",
+											"type": "String",
+											"description": "组名",
+											"required": true
+										},
+										{
+											"name": "content_group_detail_list",
+											"type": "ItemGroupContentDetail[]",
+											"description": "详情组列表",
+											"required": true,
+											"subParams": [
+												{
+													"name": "content_amount",
+													"type": "String",
+													"description": "金额",
+													"required": true
+												},
+												{
+													"name": "unit",
+													"type": "String",
+													"description": "单位，份，杯",
+													"required": true
+												},
+												{
+													"name": "spec",
+													"type": "String",
+													"description": "规格",
+													"required": true
+												},
+												{
+													"name": "content_count",
+													"type": "Number",
+													"description": "份数",
+													"required": true
+												},
+												{
+													"name": "content_name",
+													"type": "String",
+													"description": "名称，eg：红酒",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "item_image_detail_list",
+									"type": "ItemImageDetail[]",
+									"description": "图文详情",
+									"required": true,
+									"subParams": [
+										{
+											"name": "image_describe",
+											"type": "String",
+											"description": "描述",
+											"required": true
+										},
+										{
+											"name": "image_title",
+											"type": "String",
+											"description": "标题",
+											"required": true
+										},
+										{
+											"name": "item_images",
+											"type": "String[]",
+											"description": "图片列表",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "item_services",
+									"type": "ItemServices",
+									"description": "商品服务",
+									"required": true,
+									"subParams": [
+										{
+											"name": "service_name_list",
+											"type": "String[]",
+											"description": "服务名称列表",
+											"required": true
+										},
+										{
+											"name": "services_detail_list",
+											"type": "ItemServicesDetail[]",
+											"description": "服务明细，点击弹层显示",
+											"required": true,
+											"subParams": [
+												{
+													"name": "service_details",
+													"type": "String[]",
+													"description": "服务明细列表",
+													"required": true
+												},
+												{
+													"name": "service_name",
+													"type": "String",
+													"description": "服务名称",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "service_code_list",
+											"type": "String[]",
+											"description": "服务列表",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "memo_list",
+									"type": "String[]",
+									"description": "补充说明",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_info",
+							"type": "ItemDto",
+							"description": "商品基础信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_type",
+									"type": "String",
+									"description": "商品类型，包含：TICKET_VOUCHER（购买类卡券类商品），DISH（菜品），BOOK_ITEM（预定类型）",
+									"required": true
+								},
+								{
+									"name": "sub_item_type",
+									"type": "String",
+									"description": "商品子类型，包含：TRADE_VOUCHER（套餐购买类商品），VOUCHER_BUY（购买代金券），VOUCHER_PACKAGE（劵包）",
+									"required": true
+								},
+								{
+									"name": "original_price",
+									"type": "String",
+									"description": "商品原价",
+									"required": true
+								},
+								{
+									"name": "memo",
+									"type": "String",
+									"description": "商家备注",
+									"required": true
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "商品折扣",
+									"required": true
+								},
+								{
+									"name": "sell_price",
+									"type": "String",
+									"description": "商品售卖价格",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "商品所属门店ID",
+									"required": true
+								},
+								{
+									"name": "sold_quantity",
+									"type": "String",
+									"description": "商品总销量",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "buy_limit",
+									"type": "Number",
+									"description": "聚合最小限购份数，包括每天限购和售卖周期限购,-1表示不限购",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "商品描述/副标题",
+									"required": true
+								},
+								{
+									"name": "item_image_list",
+									"type": "ItemImage[]",
+									"description": "图片相册",
+									"required": true,
+									"subParams": [
+										{
+											"name": "image_name",
+											"type": "String",
+											"description": "图片名称",
+											"required": true
+										},
+										{
+											"name": "image_url",
+											"type": "String",
+											"description": "图片链接",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "item_cover",
+									"type": "String",
+									"description": "商品主图/封面图",
+									"required": true
+								},
+								{
+									"name": "item_detail_url",
+									"type": "String",
+									"description": "商品详情链接，根据入参display_channel信息，获取对应端小程序链接，默认支付宝小程序链接",
+									"required": true
+								},
+								{
+									"name": "saved_money",
+									"type": "String",
+									"description": "节省X元，originalPrice - salesPrice",
+									"required": true
+								},
+								{
+									"name": "saved_money_info",
+									"type": "String",
+									"description": "描述：节省X元",
+									"required": true
+								},
+								{
+									"name": "sales_info",
+									"type": "String",
+									"description": "销量 “已售xxx份”，销量大于9999：\"已售XX万份\"",
+									"required": true
+								},
+								{
+									"name": "sellable_quantity",
+									"type": "String",
+									"description": "商品可售库存",
+									"required": true
+								},
+								{
+									"name": "item_store",
+									"type": "ItemStoreDto",
+									"description": "商品所属门店信息模型",
+									"required": true,
+									"subParams": [
+										{
+											"name": "store_logo",
+											"type": "String",
+											"description": "门店LOGO",
+											"required": true
+										},
+										{
+											"name": "store_name",
+											"type": "String",
+											"description": "门店名称",
+											"required": true
+										},
+										{
+											"name": "store_id",
+											"type": "String",
+											"description": "门店ID",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息，success=false时，返回相关错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误信息可读性描述",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息描述",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

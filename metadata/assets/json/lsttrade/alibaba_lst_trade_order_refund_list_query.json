@@ -1,0 +1,181 @@
+{
+	"name": "alibaba.lst.trade.order.refund.list.query",
+	"apiChineseName": "查询退款单列表(卖家视角)",
+	"description": "查询退款单列表(卖家视角)",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "TopLstSupplierOrderRefundQuery",
+			"description": "输入参数",
+			"subParams": [
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "1:售中退款，2:售后退款；0:所有退款单"
+				},
+				{
+					"name": "apply_end_time",
+					"type": "Date",
+					"description": "退款申请时间（起始）"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单Id"
+				},
+				{
+					"name": "current_page_num",
+					"type": "Number",
+					"description": "查询页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小"
+				},
+				{
+					"name": "refund_status",
+					"type": "String",
+					"description": "退款状态，等待卖家同意(\"waitselleragree\"), 退款成功(\"refundsuccess\"), 退款关闭(\"refundclose\"), 待买家修改(\"waitbuyermodify\"), 等待买家退货(\"waitbuyersend\"), 等待卖家确认收货(\"waitsellerreceive\");"
+				},
+				{
+					"name": "buyer_user_id",
+					"type": "Number",
+					"description": "买家userid"
+				},
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款单id"
+				},
+				{
+					"name": "apply_start_time",
+					"type": "Date",
+					"description": "退款申请时间(截止)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "总数"
+		},
+		{
+			"name": "size",
+			"type": "Number",
+			"description": "每页数量"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "content_list",
+			"type": "Content []",
+			"description": "列表数据",
+			"subParams": [
+				{
+					"name": "refund_count",
+					"type": "Number",
+					"description": "退款数量",
+					"required": true
+				},
+				{
+					"name": "discription",
+					"type": "String",
+					"description": "退款描述",
+					"required": true
+				},
+				{
+					"name": "apply_reason",
+					"type": "String",
+					"description": "退款原因",
+					"required": true
+				},
+				{
+					"name": "freight",
+					"type": "Number",
+					"description": "运费，单位分",
+					"required": true
+				},
+				{
+					"name": "refund_status",
+					"type": "String",
+					"description": "退款状态，等待卖家同意(\"waitselleragree\"), 退款成功(\"refundsuccess\"), 退款关闭(\"refundclose\"), 待买家修改(\"waitbuyermodify\"), 等待买家退货(\"waitbuyersend\"), 等待卖家确认收货(\"waitsellerreceive\");",
+					"required": true
+				},
+				{
+					"name": "sub_orders",
+					"type": "SubOrders[]",
+					"description": "子单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_count",
+							"type": "Number",
+							"description": "退款数量",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子单ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "gmt_completed",
+					"type": "Date",
+					"description": "退款完成时间",
+					"required": true
+				},
+				{
+					"name": "buyer_login_id",
+					"type": "String",
+					"description": "买家的loginId",
+					"required": true
+				},
+				{
+					"name": "warehouse_type",
+					"type": "String",
+					"description": "仓库类型",
+					"required": true
+				},
+				{
+					"name": "gmt_apply",
+					"type": "Date",
+					"description": "申请退款时间",
+					"required": true
+				},
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款单ID",
+					"required": true
+				},
+				{
+					"name": "refund_payment",
+					"type": "Number",
+					"description": "退款金额，单位分",
+					"required": true
+				},
+				{
+					"name": "buyer_shop_name",
+					"type": "String",
+					"description": "店铺名称",
+					"required": true
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "主订单id",
+					"required": true
+				}
+			]
+		}
+	]
+}

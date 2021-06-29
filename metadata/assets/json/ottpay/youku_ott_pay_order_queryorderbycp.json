@@ -1,0 +1,51 @@
+{
+	"name": "youku.ott.pay.order.queryorderbycp",
+	"apiChineseName": "订单查询接口(cp订单号查询)",
+	"description": "给商户服务端查询订单状态",
+	"requestParams": [
+		{
+			"name": "cp_order_no",
+			"type": "String",
+			"description": "cp订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "TvOrderQueryResultDTO",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "status_desc",
+					"type": "String",
+					"description": "statusDesc",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "status",
+					"required": true
+				},
+				{
+					"name": "cp_order_no",
+					"type": "String",
+					"description": "cpOrderNo",
+					"required": true
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "orderNo",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "price",
+					"required": true
+				}
+			]
+		}
+	]
+}

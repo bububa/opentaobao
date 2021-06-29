@@ -1,0 +1,51 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.contentdelete",
+	"apiChineseName": "删除专题下内容",
+	"description": "删除专题下内容信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "节目id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "retCode",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "String",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

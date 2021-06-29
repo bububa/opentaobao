@@ -1,0 +1,168 @@
+{
+	"name": "taobao.feedflow.item.adgroup.add",
+	"apiChineseName": "信息流增加单元",
+	"description": "信息流增加单元",
+	"requestParams": [
+		{
+			"name": "adgroup",
+			"type": "AdgroupDto",
+			"description": "单元信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "adgroup_name",
+					"type": "String",
+					"description": "单元名称",
+					"required": true
+				},
+				{
+					"name": "adzone_list",
+					"type": "AdzoneBindDto[]",
+					"description": "资源类位表",
+					"subParams": [
+						{
+							"name": "adzone_id",
+							"type": "Number",
+							"description": "资源位id"
+						},
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "溢价"
+						}
+					]
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "crowd_list",
+					"type": "CrowdDto[]",
+					"description": "定向人群",
+					"required": true,
+					"subParams": [
+						{
+							"name": "crowd_desc",
+							"type": "String",
+							"description": "人群描述"
+						},
+						{
+							"name": "crowd_name",
+							"type": "String",
+							"description": "人群名称"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "人群出价，单位：分",
+							"required": true
+						},
+						{
+							"name": "target_label",
+							"type": "LabelDto",
+							"description": "定向",
+							"subParams": [
+								{
+									"name": "label_id",
+									"type": "Number",
+									"description": "标签id，可通过标签接口获取",
+									"required": true
+								},
+								{
+									"name": "label_value",
+									"type": "String",
+									"description": "标签值，可通过标签接口获取",
+									"required": true
+								},
+								{
+									"name": "options",
+									"type": "OptionDto[]",
+									"description": "选项结构",
+									"required": true,
+									"subParams": [
+										{
+											"name": "option_value",
+											"type": "String",
+											"description": "标签值",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "target_id",
+									"type": "Number",
+									"description": "定向id，可通过标签接口获取",
+									"required": true
+								},
+								{
+									"name": "target_type",
+									"type": "String",
+									"description": "定向类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "intelligent_bid",
+					"type": "IntelligentBidDto",
+					"description": "智能调价",
+					"subParams": [
+						{
+							"name": "open",
+							"type": "Boolean",
+							"description": "是否打开"
+						},
+						{
+							"name": "scope_percent",
+							"type": "Number",
+							"description": "溢价范围"
+						},
+						{
+							"name": "strategy",
+							"type": "Number",
+							"description": "人群策略 1:促进进店 2:促进成交"
+						}
+					]
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "单元id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

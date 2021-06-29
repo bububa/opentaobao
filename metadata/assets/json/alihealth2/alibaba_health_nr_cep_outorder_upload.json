@@ -1,0 +1,141 @@
+{
+	"name": "alibaba.health.nr.cep.outorder.upload",
+	"apiChineseName": "线上订单收货验收单、出入库单据生成接口",
+	"description": "线上订单收货验收单、出入库单据生成接口",
+	"requestParams": [
+		{
+			"name": "top_war_out_dto",
+			"type": "TopWarOutDTO",
+			"description": "出库单对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "bill_no",
+					"type": "String",
+					"description": "出库单号",
+					"required": true
+				},
+				{
+					"name": "biz_date",
+					"type": "Date",
+					"description": "单据日期",
+					"required": true
+				},
+				{
+					"name": "cep_order_id",
+					"type": "Number",
+					"description": "孔雀翎O2O订单ID",
+					"required": true
+				},
+				{
+					"name": "goods_list",
+					"type": "TopGoodsDTO[]",
+					"description": "商品",
+					"required": true,
+					"subParams": [
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名"
+						},
+						{
+							"name": "goods_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "goods_spec",
+							"type": "String",
+							"description": "商品规格"
+						},
+						{
+							"name": "pack_unit_name",
+							"type": "String",
+							"description": "包装"
+						},
+						{
+							"name": "pack_qty",
+							"type": "Number",
+							"description": "包装数"
+						},
+						{
+							"name": "lot_no",
+							"type": "String",
+							"description": "批号",
+							"required": true
+						},
+						{
+							"name": "product_date",
+							"type": "Date",
+							"description": "生产日期",
+							"required": true
+						},
+						{
+							"name": "validity_date",
+							"type": "Date",
+							"description": "有效期",
+							"required": true
+						},
+						{
+							"name": "receive_qty",
+							"type": "Number",
+							"description": "收到数量",
+							"required": true
+						},
+						{
+							"name": "unit_price_str",
+							"type": "String",
+							"description": "单价",
+							"required": true
+						},
+						{
+							"name": "amount_money",
+							"type": "Number",
+							"description": "金额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "tb_seller_id",
+					"type": "Number",
+					"description": "淘宝sellerId"
+				},
+				{
+					"name": "cube_id",
+					"type": "Number",
+					"description": "魔方ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResponseResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "issuccess",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

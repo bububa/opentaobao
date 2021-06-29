@@ -1,0 +1,86 @@
+{
+	"name": "alibaba.idle.pay.plan.create",
+	"apiChineseName": "创建代扣计划",
+	"description": "闲鱼平台代扣能力：\n1、用户和闲鱼签约代扣协议 服务商通过直付通产品挂载成为闲鱼二级商户 来完成用户和服务商的结算\n2、创建代扣计划",
+	"requestParams": [
+		{
+			"name": "agreement_pay_plan_param",
+			"type": "AgreementPayPlanParam",
+			"description": "业务入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "订单代扣总金额（单位分）",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "商户订单号（唯一建）",
+					"required": true
+				},
+				{
+					"name": "plans",
+					"type": "Number[]",
+					"description": "需要拆分的扣款计划,注意只能拆一次只能支持5个 例如[10000,2300]",
+					"required": true
+				},
+				{
+					"name": "pay_biz_code",
+					"type": "String",
+					"description": "R1:闲鱼回收代扣（V1版本）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Serializable",
+					"description": "服务出参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "商户订单号（唯一建）",
+							"required": true
+						},
+						{
+							"name": "plan_ids",
+							"type": "String[]",
+							"description": "代扣计划列表",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

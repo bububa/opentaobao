@@ -1,0 +1,310 @@
+{
+	"name": "alibaba.idle.isv.item.query",
+	"apiChineseName": "服务商闲鱼商品查询",
+	"description": "服务商ISV闲鱼商品查询",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "IdleItemBaseApiDo",
+			"description": "商品查询参数",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "闲鱼商品Id",
+					"required": true
+				},
+				{
+					"name": "need_sku",
+					"type": "Boolean",
+					"description": "是否需要sku信息(不需要的业务场景，不要设置为true，会增加查询耗时)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "返回结果result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "IdleItemApiDo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "类目Id",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "商品描述(长度\u003c=5000)",
+							"required": true
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "行政区划Id(城市编码)，最小行政单位code，若是地区级别，则为地区级别的id；否则为城市级别的id(long型，6位)",
+							"required": true
+						},
+						{
+							"name": "img_urls",
+							"type": "String[]",
+							"description": "图片链接",
+							"required": true
+						},
+						{
+							"name": "inspect_report",
+							"type": "String",
+							"description": "[废弃中]验货报告, 此字段后续会废弃；如需使用参见: inspected_data.inspect_report",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品Id（long型）",
+							"required": true
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "商品原价, 单位：元(最大99999999)",
+							"required": true
+						},
+						{
+							"name": "reserve_price",
+							"type": "String",
+							"description": "商品售价, 单位：元(最大99999999)",
+							"required": true
+						},
+						{
+							"name": "sp_biz_type",
+							"type": "String",
+							"description": "1\t服务商商品业务分类，手机:1, 潮品:2, 家电:3, 乐器:8, 3C数码:9, 奢品:16, 母婴:17, 美妆:18, 文玩/珠宝:19, 潮玩:20, 家居:21",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态，可选值为0（表示上架），-2（表示下架），-1（表示删除），99（其他）",
+							"required": true
+						},
+						{
+							"name": "stuff_status",
+							"type": "Number",
+							"description": "商品新旧程度, 值为0-100的整数，例如100代表全新，95代表95新",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "trade_type",
+							"type": "Number",
+							"description": "交易方式, 仅在线交易: 0,仅线下交易: 1,线上OR线下交易: 2（int型，1位）",
+							"required": true
+						},
+						{
+							"name": "transport_fee",
+							"type": "String",
+							"description": "邮费, 单位：元(最大99999999)",
+							"required": true
+						},
+						{
+							"name": "ware_house_city",
+							"type": "String",
+							"description": "[废弃中]已验货入仓城市(此字段后续会废弃；如需使用参见: inspected_data.ware_house_city)",
+							"required": true
+						},
+						{
+							"name": "ware_house_time",
+							"type": "Number",
+							"description": "[废弃中]已验货入仓时间(此字段后续会废弃；如需使用参见: inspected_data.ware_house_time)",
+							"required": true
+						},
+						{
+							"name": "item_tags",
+							"type": "String[]",
+							"description": "商品业务标签，不可修改",
+							"required": true
+						},
+						{
+							"name": "channel_cat_id",
+							"type": "String",
+							"description": "渠道类目id，不可修改",
+							"required": true
+						},
+						{
+							"name": "pv_list",
+							"type": "IdleNewPubValueDo[]",
+							"description": "属性的键值对信息，包括品牌、型号、内存大小（手机）等",
+							"required": true,
+							"subParams": [
+								{
+									"name": "property_id",
+									"type": "String",
+									"description": "属性id",
+									"required": true
+								},
+								{
+									"name": "property_name",
+									"type": "String",
+									"description": "属性名称",
+									"required": true
+								},
+								{
+									"name": "channel_cat_id",
+									"type": "String",
+									"description": "渠道类目id",
+									"required": true
+								},
+								{
+									"name": "value_id",
+									"type": "String",
+									"description": "值id",
+									"required": true
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "值名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_biz_type",
+							"type": "Number",
+							"description": "业务模式 0不入仓，1入仓，2寄卖",
+							"required": true
+						},
+						{
+							"name": "item_sku_list",
+							"type": "IdleItemApiSkuDo[]",
+							"description": "sku列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuId",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格，单位分",
+									"required": true
+								},
+								{
+									"name": "property_list",
+									"type": "IdleItemApiPvPairDo[]",
+									"description": "销售属性列表(最多2个销售属性,每一个的属性值个数为2～10)",
+									"required": true,
+									"subParams": [
+										{
+											"name": "property_text",
+											"type": "String",
+											"description": "属性名文本",
+											"required": true
+										},
+										{
+											"name": "value_text",
+											"type": "String",
+											"description": "属性值文本",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "inspected_data",
+							"type": "IdleItemApiInspectedDo",
+							"description": "已验货业务数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "inspect_report",
+									"type": "String",
+									"description": "验货报告url链接(长度\u003c=300)",
+									"required": true
+								},
+								{
+									"name": "ware_house_city",
+									"type": "String",
+									"description": "已验货入仓城市，入仓模式必填，不可修改",
+									"required": true
+								},
+								{
+									"name": "ware_house_time",
+									"type": "Number",
+									"description": "已验货入仓时间，入仓模式必填，时间戳，单位秒，不可修改",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "book_data",
+							"type": "IdleItemApiBookDo",
+							"description": "图书业务数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "图书ISBN码",
+									"required": true
+								},
+								{
+									"name": "barcode_name",
+									"type": "String",
+									"description": "图书ISBN码对应的书名等信息",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "商品库存",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

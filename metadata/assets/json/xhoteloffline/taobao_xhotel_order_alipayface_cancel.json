@@ -1,0 +1,39 @@
+{
+	"name": "taobao.xhotel.order.alipayface.cancel",
+	"apiChineseName": "线下信用住订单取消",
+	"description": "提供给卖家进行线下信用住的订单取消。此接口仅仅支持线下信用住订单的取消",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单ID，必选"
+		},
+		{
+			"name": "reason_text",
+			"type": "String",
+			"description": "原因描述"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "外部订单号"
+		},
+		{
+			"name": "notify_url",
+			"type": "String",
+			"description": "预留后续用"
+		},
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "请求流水号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回描述"
+		}
+	]
+}

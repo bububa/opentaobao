@@ -1,0 +1,117 @@
+{
+	"name": "taobao.feedflow.item.campaign.add",
+	"apiChineseName": "信息流增加推广计划",
+	"description": "信息流增加推广计划",
+	"requestParams": [
+		{
+			"name": "campaign",
+			"type": "CampaignDto",
+			"description": "计划信息",
+			"subParams": [
+				{
+					"name": "campaign_name",
+					"type": "String",
+					"description": "计划名称",
+					"required": true
+				},
+				{
+					"name": "launch_period_list",
+					"type": "LaunchPeriodDTO[]",
+					"description": "打折范围",
+					"subParams": [
+						{
+							"name": "time_span_list",
+							"type": "TimeSpanDto[]",
+							"description": "时间",
+							"subParams": [
+								{
+									"name": "discount",
+									"type": "Number",
+									"description": "折扣率"
+								},
+								{
+									"name": "time",
+									"type": "String",
+									"description": "时间"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "launch_time",
+					"type": "LaunchTimeDto",
+					"description": "投放时间",
+					"required": true,
+					"subParams": [
+						{
+							"name": "launch_forever",
+							"type": "Boolean",
+							"description": "是否永远生效"
+						},
+						{
+							"name": "begin_time",
+							"type": "Date",
+							"description": "开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						}
+					]
+				},
+				{
+					"name": "launch_area_list",
+					"type": "LaunchAreaDTO[]",
+					"description": "推广地域",
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "地址code"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "地址名称"
+						}
+					]
+				},
+				{
+					"name": "day_budget",
+					"type": "Number",
+					"description": "每日预算，单位为分",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

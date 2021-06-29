@@ -1,0 +1,69 @@
+{
+	"name": "alitrip.uppc.member.gain",
+	"apiChineseName": "航司权益数据回流",
+	"description": "航司权益数据回流",
+	"requestParams": [
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "请求唯一标识",
+			"required": true
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "查询成功",
+			"required": true
+		},
+		{
+			"name": "response_json",
+			"type": "String",
+			"description": "权益截止时间（扩展字段）",
+			"required": true
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDO",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "是否回流成功",
+					"required": true
+				},
+				{
+					"name": "msg_for_client",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行回流成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

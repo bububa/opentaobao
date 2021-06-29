@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.current.rawpo.get",
+	"apiChineseName": "二级物料-PO数据同步",
+	"description": "二级物料-PO数据同步（WO-W[TL])",
+	"requestParams": [
+		{
+			"name": "param_request",
+			"type": "AbstractRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "IbpPurchaseOrderDto[]",
+					"description": "返回对象封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "plan_quantity",
+							"type": "Number",
+							"description": "计划数量",
+							"required": true
+						},
+						{
+							"name": "materiel_code",
+							"type": "String",
+							"description": "二级物料-物料编码",
+							"required": true
+						},
+						{
+							"name": "location_code",
+							"type": "String",
+							"description": "二级物料-供应商loc",
+							"required": true
+						},
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值",
+							"required": true
+						},
+						{
+							"name": "location_code_to",
+							"type": "String",
+							"description": "二级物料-分仓目的仓code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

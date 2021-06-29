@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.alihealth.tracecodeplatform.code.entscan",
+	"apiChineseName": "药品商家扫码",
+	"description": "药品商家扫描药品监管码，只有该商家的药才返回",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "药监码",
+			"required": true
+		},
+		{
+			"name": "service_flag",
+			"type": "String",
+			"description": "不同企业有不同的标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "DrugInfoDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expiry_date",
+							"type": "String",
+							"description": "药品过期日期",
+							"required": true
+						},
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品通用名",
+							"required": true
+						},
+						{
+							"name": "production_batch",
+							"type": "String",
+							"description": "生产批号",
+							"required": true
+						},
+						{
+							"name": "specifications",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "pkg_spec",
+							"type": "String",
+							"description": "包装",
+							"required": true
+						},
+						{
+							"name": "prepn_type",
+							"type": "String",
+							"description": "剂型",
+							"required": true
+						},
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "生产企业名称",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "药监码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				}
+			]
+		}
+	]
+}

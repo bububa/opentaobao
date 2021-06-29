@@ -1,0 +1,442 @@
+{
+	"name": "alibaba.einvoice.prod.apply",
+	"apiChineseName": "提交发票申请",
+	"description": "提交开票申请，如果商户授权自动开票则自动转开票，否则等待商户审核。",
+	"requestParams": [
+		{
+			"name": "param_invoice_apply_dto",
+			"type": "InvoiceApplyDto",
+			"description": "申请开票请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "apply_amount",
+					"type": "String",
+					"description": "合计实付金额（申请开票的总金额，含税），格式为2位小数。开红票时传正数。需满足公式：开票总金额(invoiceAmount) = 各项明细的交易金额(amount)之和 - 各项明细的优惠金额(discount)之和",
+					"required": true
+				},
+				{
+					"name": "apply_source",
+					"type": "String",
+					"description": "请求来源：order: 下单"
+				},
+				{
+					"name": "auto_create_invoice",
+					"type": "Boolean",
+					"description": "当前申请单是否自动开票。当业务前台传入了该字段时，以前台传入的值为准。当前台未传值时，中台会读取商户在中台维护的自动开票配置。true: 申请单会自动转开票请求，调用税控进行开票。false: 申请单数据会在中台落地，状态为申请中。不会发起开票请求。适用于商户需要人工审核之后，再确认开票的场景。"
+				},
+				{
+					"name": "business_type",
+					"type": "Number",
+					"description": "抬头类型。可选值：0：个人1：企业；当apply_mode=pre_apply_url时可选"
+				},
+				{
+					"name": "invoice_items",
+					"type": "InvoiceApplyItemsDto[]",
+					"description": "开票明细",
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "交易金额（含税）=?单价*数量。单位：元，格式为2位小数，精度2位小数。开红票时传正数。"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "优惠金额（含税）可为0,交易金额-优惠金额=实付金额。单位：元，格式为2位小数，精度2位小数。开红票时传正数。"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID.当商户配置了按照商品ID匹配税编的税编规则时，该字段可用于税编规则匹配"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称/货物名称"
+						},
+						{
+							"name": "item_no",
+							"type": "String",
+							"description": "发票项目编号（或商品编号）业务前台未传值中台会做税编规则匹配。业务前台有传值则优先取前台传入的值。"
+						},
+						{
+							"name": "item_type",
+							"type": "String",
+							"description": "商品类型名称，如新零售、餐饮等等。当商户配置了按照类型匹配税编的税编规则时，该字段可用于税编规则匹配"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量，最多6位小数"
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格型号"
+						},
+						{
+							"name": "tax_price",
+							"type": "String",
+							"description": "单价（含税），格式为2位小数。最大支持6位小数，不足2位小数时需转化为2位小数格式。"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率。格式为2位小数，业务前台未传值中台会做税编规则匹配。业务前台有传值则优先取前台传入的值。"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "zero_rate_flag",
+							"type": "String",
+							"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率"
+						},
+						{
+							"name": "biz_memo",
+							"type": "String",
+							"description": "开票明细备注"
+						}
+					]
+				},
+				{
+					"name": "invoice_kind",
+					"type": "Number",
+					"description": "开票发票类型可选值：0: 电票1：纸质普票2：纸质专票",
+					"required": true
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票(开票)类型，可选值：blue: 蓝票red: 红票",
+					"required": true
+				},
+				{
+					"name": "levy_type",
+					"type": "Number",
+					"description": "征税方式，0普通征收，1减按征收，2差额征收"
+				},
+				{
+					"name": "normal_invoice_code",
+					"type": "String",
+					"description": "原发票代码(开红票时使用)"
+				},
+				{
+					"name": "normal_invoice_no",
+					"type": "String",
+					"description": "原发票号码(开红票时使用)"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部业务方发起开票申请的唯一幂等ID,?由调用平台生成。只能由字母和数字组成。",
+					"required": true
+				},
+				{
+					"name": "payer_address",
+					"type": "String",
+					"description": "购方地址，专票必填。"
+				},
+				{
+					"name": "payer_bank_account_id",
+					"type": "String",
+					"description": "购方银行账号，专票必填。"
+				},
+				{
+					"name": "payer_bank_name",
+					"type": "String",
+					"description": "购方开户行名称，专票必填。"
+				},
+				{
+					"name": "payer_email",
+					"type": "String",
+					"description": "购方电子邮箱，需满足邮箱格式。  格式要求：\\\\w+([-+.]\\\\w+)*@\\\\w+([-.]\\\\w+)*\\\\.\\\\w+([-.]\\\\w+)*"
+				},
+				{
+					"name": "payer_logistics_info",
+					"type": "PayerLogisticsInfoDto",
+					"description": "购方收票物流信息，用于纸票场景。",
+					"subParams": [
+						{
+							"name": "contact_addr",
+							"type": "String",
+							"description": "收件人地址"
+						},
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "收件人电话"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "收件人姓名"
+						}
+					]
+				},
+				{
+					"name": "payer_memo",
+					"type": "String",
+					"description": "购方开票备注。不会显示在票面"
+				},
+				{
+					"name": "payer_name",
+					"type": "String",
+					"description": "购方抬头；当apply_mode=pre_apply_url时可选"
+				},
+				{
+					"name": "payer_phone",
+					"type": "String",
+					"description": "购方联系电话，专票必填。"
+				},
+				{
+					"name": "payer_register_no",
+					"type": "String",
+					"description": "购方方税务登记证号，由大写字母或数字组成，长度要求15~20位。开企业抬头时必填，专票必填。"
+				},
+				{
+					"name": "payer_uid",
+					"type": "String",
+					"description": "购方UID"
+				},
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "购方联系电话，专票必填。"
+				},
+				{
+					"name": "platform_biz_flag",
+					"type": "String",
+					"description": "业务前台的业务标记。提供给业务前台打上特殊的业务标识，解决前台一些特殊场景，中台不关心该字段的业务含义。"
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "请求来源平台Code, 由发票中台分配",
+					"required": true
+				},
+				{
+					"name": "platform_tid",
+					"type": "String",
+					"description": "业务平台发票申请对应的订单号。",
+					"required": true
+				},
+				{
+					"name": "platform_user_id",
+					"type": "String",
+					"description": "业务平台商户ID/用户ID",
+					"required": true
+				},
+				{
+					"name": "red_notice_no",
+					"type": "String",
+					"description": "红字通知单号，专票冲红时需要，商家跟税局申请"
+				},
+				{
+					"name": "source_flag",
+					"type": "String",
+					"description": "来源标识"
+				},
+				{
+					"name": "special_flag",
+					"type": "String",
+					"description": "特殊票种标识，可选值：02: 农产品收购票"
+				},
+				{
+					"name": "trade_time",
+					"type": "Date",
+					"description": "交易时间"
+				},
+				{
+					"name": "source_platform_code",
+					"type": "String",
+					"description": "业务来源平台, 由发票中台分配"
+				},
+				{
+					"name": "payee_register_no",
+					"type": "String",
+					"description": "销方税务登记证号，长度要求15~20位。  传了此参数，则阿里发票平台会使用传入的销方税号进行开票。  未传则阿里发票平台会自动选择商户入驻的税号进行开票。"
+				},
+				{
+					"name": "apply_mode",
+					"type": "String",
+					"description": "发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。"
+				},
+				{
+					"name": "create_inv_payee_info",
+					"type": "InvoiceCreatePayeeInfoDto",
+					"description": "请求开票的销方信息。 传了此参数，则使用传入的销方信息进行开票。 未传则会以商户维护在阿里发票平台的销方信息为准。 业务前台请根据商户在哪维护销方信息进行选择，推荐后者。",
+					"subParams": [
+						{
+							"name": "payee_address",
+							"type": "String",
+							"description": "销方地址，销方电话加地址不超出100字符"
+						},
+						{
+							"name": "payee_bank_account_id",
+							"type": "String",
+							"description": "销方银行帐号"
+						},
+						{
+							"name": "payee_bank_name",
+							"type": "String",
+							"description": "销方开户行名称，开户行账号加名称不超出100字符"
+						},
+						{
+							"name": "payee_checker",
+							"type": "String",
+							"description": "复核人"
+						},
+						{
+							"name": "payee_name",
+							"type": "String",
+							"description": "销方名称，公司名"
+						},
+						{
+							"name": "payee_operator",
+							"type": "String",
+							"description": "开票人"
+						},
+						{
+							"name": "payee_phone",
+							"type": "String",
+							"description": "销方电话"
+						},
+						{
+							"name": "payee_receiver",
+							"type": "String",
+							"description": "收款人"
+						},
+						{
+							"name": "payee_register_no",
+							"type": "String",
+							"description": "销方税务登记证号"
+						}
+					]
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "指定的开票税控设备ID 传了此参数，则使用传入的设备ID进行开票。 未传则会使用商户维护在阿里发票平台的默认设备开票。 业务前台请根据商户在哪维护税控设备进行选择，推荐后者。"
+				},
+				{
+					"name": "invoice_memo",
+					"type": "String",
+					"description": "发票备注，会显示在票面"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "apply_result_dto",
+					"type": "InvoiceApplyResultDto",
+					"description": "申请结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "String",
+							"description": "中台发票申请ID，由中台生成。字母或数字组成",
+							"required": true
+						},
+						{
+							"name": "apply_status",
+							"type": "String",
+							"description": "申请状态，可选值：  applying: 申请中，初始状态；  cancelled: 申请已取消；  confirmed: 商户已确认，待开/录入发票；  craeting_inv: 开票中，待发票结果回传；  inv_failed: 开票失败；  inv_success: 开票成功；  inv_part_success: 部分成功（拆单场景下存在。举例：发票申请拆单之后有10张票，其中有1张开票成功时，此时申请状态即为inv_part_success，当10张票全部成功申请状态则为inv_success）",
+							"required": true
+						},
+						{
+							"name": "apply_url",
+							"type": "String",
+							"description": "生成的发票申请页面URL, 用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  当apply_mode=create_apply_url 时必须返回。",
+							"required": true
+						},
+						{
+							"name": "create_inv_result_list",
+							"type": "InvoiceCreateSimpleResultDto[]",
+							"description": "开票结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "biz_error_code",
+									"type": "String",
+									"description": "错误码",
+									"required": true
+								},
+								{
+									"name": "biz_error_msg",
+									"type": "String",
+									"description": "错误描述",
+									"required": true
+								},
+								{
+									"name": "create_status",
+									"type": "String",
+									"description": "开票状态",
+									"required": true
+								},
+								{
+									"name": "error_type",
+									"type": "String",
+									"description": "错误类型",
+									"required": true
+								},
+								{
+									"name": "invoice_amount",
+									"type": "String",
+									"description": "实际开票金额",
+									"required": true
+								},
+								{
+									"name": "payee_name",
+									"type": "String",
+									"description": "销售方名称",
+									"required": true
+								},
+								{
+									"name": "payee_register_no",
+									"type": "String",
+									"description": "销方税号",
+									"required": true
+								},
+								{
+									"name": "product_code",
+									"type": "String",
+									"description": "税控产品",
+									"required": true
+								},
+								{
+									"name": "single_serial_no",
+									"type": "String",
+									"description": "单张票序列号",
+									"required": true
+								},
+								{
+									"name": "sum_price",
+									"type": "String",
+									"description": "合计金额（不含税）",
+									"required": true
+								},
+								{
+									"name": "sum_tax",
+									"type": "String",
+									"description": "合计税额，格式为2位小数",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

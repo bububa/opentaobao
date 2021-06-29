@@ -1,0 +1,30 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.getencrptypk",
+	"apiChineseName": "获取加密公钥",
+	"description": "获取服务端给药厂用来加密的公钥",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "公钥证书"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "操作说明"
+		}
+	]
+}

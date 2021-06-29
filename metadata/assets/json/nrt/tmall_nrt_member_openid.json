@@ -1,0 +1,62 @@
+{
+	"name": "tmall.nrt.member.openid",
+	"apiChineseName": "根据会员手机查询openId",
+	"description": "根据会员手机查询openId",
+	"requestParams": [
+		{
+			"name": "nrt_member_dto",
+			"type": "NrtMemberDTO",
+			"description": "会员DTO",
+			"required": true,
+			"subParams": [
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "MemberSynResponse",
+					"description": "返回的业务数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "加密后的taoId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

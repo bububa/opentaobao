@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.ailabs.aligenie.skill.message.push",
+	"apiChineseName": "天猫精灵消息推送标准接口",
+	"description": "用于AliGenie技能开发者在技能内主动向音响推送消息的标准服务接口，只有订阅过该消息的用户才能收到消息；",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "要推送的消息内容",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "智能应用平台创建的技能id",
+			"required": true
+		},
+		{
+			"name": "account_type",
+			"type": "String",
+			"description": "接收方的用户Id，从技能WebHook中取得的userOpenId"
+		},
+		{
+			"name": "push_type",
+			"type": "String",
+			"description": "消息推送的方式，和技能中申请的权限相关，可选值为TO_USER，TO_APP_BOX，BROADCAST",
+			"required": true
+		},
+		{
+			"name": "test",
+			"type": "Boolean",
+			"description": "是否是测试消息"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "TO_USER时必填，接收方的用户Id，从技能WebHook中取得的userOpenId"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送"
+		},
+		{
+			"name": "auth_account_type",
+			"type": "String",
+			"description": "鉴权用户类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "push_error_code",
+			"type": "String",
+			"description": "消息推送错误码"
+		},
+		{
+			"name": "push_error_msg",
+			"type": "String",
+			"description": "消息推送错误信息"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "消息推送是否成功"
+		},
+		{
+			"name": "push_result",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		}
+	]
+}

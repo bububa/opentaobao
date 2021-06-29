@@ -1,0 +1,138 @@
+{
+	"name": "tmall.aliauto.service.receipt.get",
+	"apiChineseName": "isv查询服务工单详情",
+	"description": "isv查询服务工单详情",
+	"requestParams": [
+		{
+			"name": "receipt_id",
+			"type": "Number",
+			"description": "工单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回的执行状态吗",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ServiceReceiptInfo4IsvDto",
+					"description": "返回的数据实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "具体地址",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "county",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "古荡街道",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "消费者名称",
+							"required": true
+						},
+						{
+							"name": "receipt_id",
+							"type": "Number",
+							"description": "工单号",
+							"required": true
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌",
+							"required": true
+						},
+						{
+							"name": "choose_problems",
+							"type": "String",
+							"description": "选择问题列表，多个问题以英文逗号分隔",
+							"required": true
+						},
+						{
+							"name": "problem_desc_pics",
+							"type": "String",
+							"description": "问题描述图片列表，多个图片以英文逗号分隔",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "用户备注",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "工单状态： SUBMIT:预约成功，待服务 CANCEL:已取消 FINISH:服务已完成",
+							"required": true
+						},
+						{
+							"name": "extension",
+							"type": "Json",
+							"description": "工单附加信息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

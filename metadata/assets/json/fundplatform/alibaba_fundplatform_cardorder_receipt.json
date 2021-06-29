@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.fundplatform.cardorder.receipt",
+	"apiChineseName": "通知确认收货",
+	"description": "告知卡商这一批储值卡已经被用户确认收货",
+	"requestParams": [
+		{
+			"name": "card_order_id",
+			"type": "Number",
+			"description": "通知制卡成功的子卡子单号",
+			"required": true
+		},
+		{
+			"name": "own_sign",
+			"type": "String",
+			"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "错误详情"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误CODE"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.storageupload",
+	"apiChineseName": "疫苗存储温度上传",
+	"description": "疫苗存储温度上传",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业RefEntid，是指该单据的所有者。         如企业A上传了一个出库单，您为A的单据上传运输温度，那么此时RefEntid即为A的ID。         若您本企业上传了一个单据，您为这个单据上传温度，此时RefEntid即为您本企业的ID。",
+			"required": true
+		},
+		{
+			"name": "equipment_code",
+			"type": "String",
+			"description": "设备编号",
+			"required": true
+		},
+		{
+			"name": "equipment_name",
+			"type": "String",
+			"description": "设备名称"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "温度信息",
+			"required": true
+		},
+		{
+			"name": "agent_ref_ent_id",
+			"type": "String",
+			"description": "代上传的企业agent_ref_ent_id，特指“代上传温度”的企业。         如企业A上传了一个出库单，您代为A的单据上传运输温度，那么此时Agent_RefEntid即为您的ID。         若您本企业上传了一个单据，您本企业为这个单据上传温度，不存在“代上传”概念，此时agent_ref_ent_id即为空。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,215 @@
+{
+	"name": "alibaba.einvoice.income.verify.return",
+	"apiChineseName": "服务商回传发票查验的结果",
+	"description": "服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传",
+	"requestParams": [
+		{
+			"name": "checksum",
+			"type": "String",
+			"description": "校验码，success=true时必填"
+		},
+		{
+			"name": "error_code",
+			"type": "String",
+			"description": "错误码，success=false时必填"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息，success=false时必填"
+		},
+		{
+			"name": "image_id",
+			"type": "String",
+			"description": "发票影像编号，type=1时必填"
+		},
+		{
+			"name": "invoice_amount",
+			"type": "String",
+			"description": "价税合计金额，success=true时必填，invoiceAmount=sumPrice+sumTax"
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码，success=true时必填"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "开票日期，格式为yyyy-MM-dd，success=true时必填"
+		},
+		{
+			"name": "invoice_items",
+			"type": "InvoiceItem[]",
+			"description": "发票明细",
+			"maxListSize": 10000,
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "商品价税合计金额，amount=sumPrice+tax"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "货物劳务名称"
+				},
+				{
+					"name": "item_no",
+					"type": "String",
+					"description": "税收分类编码"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品单价"
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "商品数量"
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "商品规格型号"
+				},
+				{
+					"name": "sum_price",
+					"type": "String",
+					"description": "商品不含税金额"
+				},
+				{
+					"name": "tax",
+					"type": "String",
+					"description": "商品税额"
+				},
+				{
+					"name": "tax_rate",
+					"type": "String",
+					"description": "商品税率"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "商品单位"
+				},
+				{
+					"name": "zero_rate_flag",
+					"type": "String",
+					"description": "0税率标识，0=出口零税率，1=免税，2=不征收，3=普通零税率，success=true并且taxRate=0时必填"
+				}
+			]
+		},
+		{
+			"name": "invoice_memo",
+			"type": "String",
+			"description": "发票备注"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码，success=true时必填"
+		},
+		{
+			"name": "machine_no",
+			"type": "String",
+			"description": "机器编号"
+		},
+		{
+			"name": "payee_address_phone",
+			"type": "String",
+			"description": "销售方地址电话"
+		},
+		{
+			"name": "payee_bank_account",
+			"type": "String",
+			"description": "销售方银行及账号"
+		},
+		{
+			"name": "payee_checker",
+			"type": "String",
+			"description": "复核人"
+		},
+		{
+			"name": "payee_name",
+			"type": "String",
+			"description": "销售方名称，success=true时必填"
+		},
+		{
+			"name": "payee_operator",
+			"type": "String",
+			"description": "开票人"
+		},
+		{
+			"name": "payee_receiver",
+			"type": "String",
+			"description": "收款人"
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销售方纳税人识别号，success=true时必填"
+		},
+		{
+			"name": "payer_address_phone",
+			"type": "String",
+			"description": "购买方地址电话"
+		},
+		{
+			"name": "payer_bank_account",
+			"type": "String",
+			"description": "购买方银行及账号"
+		},
+		{
+			"name": "payer_name",
+			"type": "String",
+			"description": "购买方名称，即发票抬头，success=true时必填"
+		},
+		{
+			"name": "payer_register_no",
+			"type": "String",
+			"description": "购买方纳税人识别号"
+		},
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "开票请求标识，扫描驱动回传type=1时填批次号",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "查验结果，true=成功，false=失败",
+			"required": true
+		},
+		{
+			"name": "sum_price",
+			"type": "String",
+			"description": "发票不含税金额，success=true时必填"
+		},
+		{
+			"name": "sum_tax",
+			"type": "String",
+			"description": "发票税额，success=true时必填"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "请求类型，0=阿里主动发起的查验，1=扫描驱动服务商主动回传查验结果",
+			"required": true
+		},
+		{
+			"name": "invoice_status",
+			"type": "Number",
+			"description": "发票状态，0=无效（作废），1=有效"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用结果，true=成功，false=失败，subCode以isp开头时需要服务商重试"
+		}
+	]
+}

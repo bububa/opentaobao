@@ -1,0 +1,136 @@
+{
+	"name": "taobao.place.store.relation.query",
+	"apiChineseName": "门店关系查询",
+	"description": "查询门店关系",
+	"requestParams": [
+		{
+			"name": "param_store_relation_simple_query",
+			"type": "StoreRelationSimpleQuery",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型"
+				},
+				{
+					"name": "outer_id",
+					"type": "Number",
+					"description": "外部关联业务id"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条目数（最大值100）"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "other",
+					"type": "Other",
+					"description": "其它信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "是否为空",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_list",
+					"type": "StoreRelationSimpleDo[]",
+					"description": "业务结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "业务id",
+							"required": true
+						},
+						{
+							"name": "relation_id",
+							"type": "Number",
+							"description": "关系id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "业务关系状态",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "条目数（已废弃）",
+					"required": true
+				}
+			]
+		}
+	]
+}

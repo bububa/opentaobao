@@ -98,4 +98,9 @@ type MasterTradeOrder struct {
     OuterIdP   string `json:"outer_id_p,omitempty" xml:"outer_id_p,omitempty"`
     
 
+    // 主订单号
+    
+    ParentOrderId   int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
+    
+
 }

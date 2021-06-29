@@ -1,0 +1,119 @@
+{
+	"name": "taobao.omniitem.sku.get",
+	"apiChineseName": "获取全渠道门店商品sku",
+	"description": "通过skuId或者skuOutId查询全渠道门店商品sku信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "skuId"
+		},
+		{
+			"name": "sku_outer_id",
+			"type": "String",
+			"description": "sku商家编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "ItemLightPublishSkuDto[]",
+					"description": "返回查询到的sku列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "sku吊牌价",
+							"required": true
+						},
+						{
+							"name": "pretium",
+							"type": "String",
+							"description": "sku销售价",
+							"required": true
+						},
+						{
+							"name": "sku_outer_id",
+							"type": "String",
+							"description": "sku商家编码",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "sku条形码",
+							"required": true
+						},
+						{
+							"name": "custom_code",
+							"type": "String",
+							"description": "customCode",
+							"required": true
+						},
+						{
+							"name": "sku_images",
+							"type": "String[]",
+							"description": "sku关联图片url列表",
+							"required": true
+						},
+						{
+							"name": "sale_props",
+							"type": "ItemLightPublishSalePropDto[]",
+							"description": "sku销售属性列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pid",
+									"type": "Number",
+									"description": "销售属性pid，参见taobao.omniitem.category.get接口返回值",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "销售属性值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "extend_attr",
+							"type": "String",
+							"description": "sku扩展字段",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

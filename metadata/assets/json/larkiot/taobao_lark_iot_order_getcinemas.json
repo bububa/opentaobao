@@ -1,0 +1,77 @@
+{
+	"name": "taobao.lark.iot.order.getcinemas",
+	"apiChineseName": "获取iot渠道开放的影院",
+	"description": "iot渠道拉取有权限访问的影院",
+	"requestParams": [
+		{
+			"name": "channel_code",
+			"type": "String",
+			"description": "渠道编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "BizListResult",
+			"description": "有权限的影院列表",
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务码",
+					"required": true
+				},
+				{
+					"name": "biz_msg",
+					"type": "String",
+					"description": "业务信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "访问结果",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "CinemaIotResponse[]",
+					"description": "影院列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cinema_link_id",
+							"type": "String",
+							"description": "影院内码",
+							"required": true
+						},
+						{
+							"name": "cinema_name",
+							"type": "String",
+							"description": "影院名称",
+							"required": true
+						},
+						{
+							"name": "cinema_id",
+							"type": "String",
+							"description": "影院国家编码",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市编码",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

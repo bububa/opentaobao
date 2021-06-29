@@ -19,7 +19,9 @@ type TmallProductUpdateSchemaGetAPIResponse struct {
 
 type TmallProductUpdateSchemaGetResponse struct {
     XMLName xml.Name `xml:"tmall_product_update_schema_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 参数产品ID对产品的更新规则
     

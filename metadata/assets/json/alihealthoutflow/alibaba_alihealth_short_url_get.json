@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.short.url.get",
+	"apiChineseName": "支付宝短链跳转三方h5通用接口",
+	"description": "支付宝短链跳转三方h5通用接口",
+	"requestParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "三方h5",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "String[]",
+			"description": "参数替换列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				}
+			]
+		}
+	]
+}

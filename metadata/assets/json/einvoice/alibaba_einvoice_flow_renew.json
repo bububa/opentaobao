@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.einvoice.flow.renew",
+	"apiChineseName": "工单(入驻、加盘、续约)续约",
+	"description": "工单(含入驻、加盘、续约工单)续约能力开放",
+	"requestParams": [
+		{
+			"name": "invoice_flow_renew_dto",
+			"type": "InvoiceFlowRenewDto",
+			"description": "续约请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部幂等ID",
+					"required": true
+				},
+				{
+					"name": "parent_flow_id",
+					"type": "String",
+					"description": "被续约工单ID",
+					"required": true
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "请求来源平台code,由中台生成",
+					"required": true
+				},
+				{
+					"name": "service_valid_days",
+					"type": "Number",
+					"description": "服务的有效天数，单位为天",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "invoice_flow_renew_result",
+					"type": "InvoiceFlowRenewResultDto",
+					"description": "续约返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "flow_id",
+							"type": "String",
+							"description": "续约工单ID",
+							"required": true
+						},
+						{
+							"name": "serv_end_time",
+							"type": "String",
+							"description": "续约单结束时间",
+							"required": true
+						},
+						{
+							"name": "serv_start_time",
+							"type": "String",
+							"description": "续约单开始时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

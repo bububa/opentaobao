@@ -1,0 +1,800 @@
+{
+	"name": "alitrip.tuan.hotel.item.info.get",
+	"apiChineseName": "宝贝信息查询接口",
+	"description": "商家查询发布的宝贝详情信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_info",
+			"type": "TuanItemSellParamVO",
+			"description": "宝贝基本信息",
+			"subParams": [
+				{
+					"name": "gift",
+					"type": "String",
+					"description": "免费赠品",
+					"required": true
+				},
+				{
+					"name": "appoint_explain",
+					"type": "String",
+					"description": "预约说明，字数限制200",
+					"required": true
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "PC端图片地址",
+					"required": true
+				},
+				{
+					"name": "sec_kills",
+					"type": "String[]",
+					"description": "秒杀商品平台：web-电脑，wap-手机",
+					"required": true
+				},
+				{
+					"name": "during_end_date",
+					"type": "String",
+					"description": "当前开始到哪天结束",
+					"required": true
+				},
+				{
+					"name": "unavailable_dates",
+					"type": "String",
+					"description": "不可用日期（范围）",
+					"required": true
+				},
+				{
+					"name": "effective_days",
+					"type": "Number",
+					"description": "购买成功后有效天数",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "若为酒店客房优惠券类目则显示价格，其他类目则显示第一条sku的价格",
+					"required": true
+				},
+				{
+					"name": "begin_hour",
+					"type": "String",
+					"description": "售卖时间小时，售卖时间类型1时返回",
+					"required": true
+				},
+				{
+					"name": "confirm_time",
+					"type": "String",
+					"description": "确认时间，可选字段：2,6,9,18.确认类型为2时返回",
+					"required": true
+				},
+				{
+					"name": "promoted_status",
+					"type": "Number",
+					"description": "橱窗推荐：0-不推荐，1-推荐",
+					"required": true
+				},
+				{
+					"name": "begin_min",
+					"type": "String",
+					"description": "售卖时间分钟，售卖时间类型1返回",
+					"required": true
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目ID：国内酒店套餐-201189402；国际酒店套餐-201188002；酒店餐饮美食-201214101；酒店服务-201214201；酒店客房优惠券-201214301",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "宝贝ID",
+					"required": true
+				},
+				{
+					"name": "down_shelf_hour",
+					"type": "String",
+					"description": "自动下架时间小时",
+					"required": true
+				},
+				{
+					"name": "advance_days",
+					"type": "Number",
+					"description": "提前预约天数，数值范围为（0，1，2，3，5，7，15，30），0代表无需设置",
+					"required": true
+				},
+				{
+					"name": "breakfast",
+					"type": "Number",
+					"description": "0-无早餐，1-单份早餐，2-两份早餐，3-三份早餐，4-多份早餐。若为酒店服务或酒店餐饮美食与早餐类型无关类目，此处为-1",
+					"required": true
+				},
+				{
+					"name": "main_video_pic_url",
+					"type": "String",
+					"description": "主图视频封面图和缩略图",
+					"required": true
+				},
+				{
+					"name": "refund",
+					"type": "Number",
+					"description": "支持过期退款比率",
+					"required": true
+				},
+				{
+					"name": "night_count",
+					"type": "Number",
+					"description": "第一条sku的间夜",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "orig_price",
+					"type": "String",
+					"description": "若为酒店客房优惠券类目则显示价格，其他类目则显示第一条sku的原价",
+					"required": true
+				},
+				{
+					"name": "shop_categories_id_list",
+					"type": "String[]",
+					"description": "商家店铺类目",
+					"required": true
+				},
+				{
+					"name": "sub_stock_at_buy",
+					"type": "Number",
+					"description": "拍下减库存，0-否，1-是",
+					"required": true
+				},
+				{
+					"name": "end_available_date",
+					"type": "String",
+					"description": "预约时段结束日期，预约时段类型为1返回",
+					"required": true
+				},
+				{
+					"name": "effective_date_type",
+					"type": "Number",
+					"description": "预约时段类型：1-开始-结束日期，2-购买成功到哪天，3-购买成功多少天内",
+					"required": true
+				},
+				{
+					"name": "fee_include",
+					"type": "String",
+					"description": "费用包含",
+					"required": true
+				},
+				{
+					"name": "prov",
+					"type": "String",
+					"description": "省份",
+					"required": true
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称",
+					"required": true
+				},
+				{
+					"name": "wangpu_detail",
+					"type": "String",
+					"description": "旺铺详情",
+					"required": true
+				},
+				{
+					"name": "wireless_pic_urls",
+					"type": "String[]",
+					"description": "无线端图片地址",
+					"required": true
+				},
+				{
+					"name": "sub2_title",
+					"type": "String",
+					"description": "亮点2",
+					"required": true
+				},
+				{
+					"name": "end_effective_date",
+					"type": "String",
+					"description": "预约时段结束日期，预约时段类型为1返回",
+					"required": true
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "C卖家有效。酒店代订服务-671582076,酒店住宿服务-2773361951",
+					"required": true
+				},
+				{
+					"name": "unavailable_weeks",
+					"type": "String",
+					"description": "星期几不可入住",
+					"required": true
+				},
+				{
+					"name": "sub3_title",
+					"type": "String",
+					"description": "亮点3",
+					"required": true
+				},
+				{
+					"name": "store_seller_id",
+					"type": "String",
+					"description": "店铺卖家ID",
+					"required": true
+				},
+				{
+					"name": "begin_type",
+					"type": "Number",
+					"description": "售卖时间类型：0-立刻,1-设定时间,2-放入仓库",
+					"required": true
+				},
+				{
+					"name": "sub4_title",
+					"type": "String",
+					"description": "亮点4",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家ID",
+					"required": true
+				},
+				{
+					"name": "etc",
+					"type": "Number",
+					"description": "是否电子凭证",
+					"required": true
+				},
+				{
+					"name": "start_effective_date",
+					"type": "String",
+					"description": "预约时段开始日期，预约时段类型为1时返回",
+					"required": true
+				},
+				{
+					"name": "down_shelf_min",
+					"type": "String",
+					"description": "自动下架时间分钟",
+					"required": true
+				},
+				{
+					"name": "confirm_type",
+					"type": "String",
+					"description": "确认类型，1-即时确认，2-二次确认，日历库存下返回",
+					"required": true
+				},
+				{
+					"name": "wl_description",
+					"type": "String",
+					"description": "无线端宝贝描述",
+					"required": true
+				},
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "库存类型，1-普通库存，5-日历库存",
+					"required": true
+				},
+				{
+					"name": "auto_refund",
+					"type": "Number",
+					"description": "支持过期退款比率",
+					"required": true
+				},
+				{
+					"name": "store_seller_nick",
+					"type": "String",
+					"description": "门店卖家昵称",
+					"required": true
+				},
+				{
+					"name": "breakfast_desc",
+					"type": "String",
+					"description": "早餐描述",
+					"required": true
+				},
+				{
+					"name": "auction_point",
+					"type": "Number",
+					"description": "拍卖点，对C卖家有效",
+					"required": true
+				},
+				{
+					"name": "contain_elements",
+					"type": "String[]",
+					"description": "包含元素",
+					"required": true
+				},
+				{
+					"name": "option_promoted",
+					"type": "Number",
+					"description": "参与会员打折 0-不参与，1-参与",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "PC端宝贝描述",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "sub1_title",
+					"type": "String",
+					"description": "亮点1",
+					"required": true
+				},
+				{
+					"name": "start_available_date",
+					"type": "String",
+					"description": "可入住日期开始",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "酒店客房优惠券类目下的代金券数量",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "若为酒店客房优惠券类目则显示库存，其他类目则显示第一条sku的库存",
+					"required": true
+				},
+				{
+					"name": "fee_exclude",
+					"type": "String",
+					"description": "费用包含",
+					"required": true
+				},
+				{
+					"name": "invoice_explain",
+					"type": "String",
+					"description": "发票说明",
+					"required": true
+				},
+				{
+					"name": "profit_rate",
+					"type": "String",
+					"description": "分润比例（推广费比例）",
+					"required": true
+				},
+				{
+					"name": "down_shelf_date",
+					"type": "String",
+					"description": "自动下架时间日期",
+					"required": true
+				},
+				{
+					"name": "additional_pay",
+					"type": "String",
+					"description": "附加费用",
+					"required": true
+				},
+				{
+					"name": "begin_date",
+					"type": "String",
+					"description": "售卖时间日期，售卖时间类型1返回",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "invoice",
+					"type": "Number",
+					"description": "是否有发票 0-没有，1-店铺提供，2-卖家提供",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "tuan_item_sku_list",
+			"type": "TopTuanItemSkuVOList []",
+			"description": "sku列表",
+			"subParams": [
+				{
+					"name": "night_count",
+					"type": "Number",
+					"description": "套餐间夜",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "套餐库存",
+					"required": true
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "宝贝标题",
+					"required": true
+				},
+				{
+					"name": "orig_price",
+					"type": "String",
+					"description": "套餐原价",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "宝贝ID",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家ID",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "套餐价格",
+					"required": true
+				},
+				{
+					"name": "people_count",
+					"type": "Number",
+					"description": "套餐人数",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "套餐名称",
+					"required": true
+				},
+				{
+					"name": "calendar_info",
+					"type": "TopSkuCalendarInfo",
+					"description": "日历库存信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "end",
+							"type": "String",
+							"description": "日历库存范围结束日期",
+							"required": true
+						},
+						{
+							"name": "diffs",
+							"type": "TopSkuDailyInfo[]",
+							"description": "日历库存价格信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "d",
+									"type": "String",
+									"description": "日期",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格",
+									"required": true
+								},
+								{
+									"name": "stock",
+									"type": "Number",
+									"description": "库存",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "begin",
+							"type": "String",
+							"description": "日历库存范围开始日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "skuId",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "tuan_eticket_package",
+			"type": "TuanEticketPackageVo",
+			"description": "电子核销库信息，日历库存和国际套餐暂不支持电子凭证，则无数值返回",
+			"subParams": [
+				{
+					"name": "pass_merchant_user_name",
+					"type": "String",
+					"description": "核销放行码商名称",
+					"required": true
+				},
+				{
+					"name": "is_money_to_store",
+					"type": "Number",
+					"description": "门店分账是否支持资金到门店：0不支持，1支持",
+					"required": true
+				},
+				{
+					"name": "bill_type",
+					"type": "Number",
+					"description": "分账方式 0-不分账，1-门店分账 2-宝贝分账",
+					"required": true
+				},
+				{
+					"name": "send_merchant_user_name",
+					"type": "String",
+					"description": "核销帐号名称",
+					"required": true
+				},
+				{
+					"name": "is_sub_account",
+					"type": "Number",
+					"description": "宝贝分账是否支持子账号核销",
+					"required": true
+				},
+				{
+					"name": "online",
+					"type": "Number",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "send_merchant_user_id",
+					"type": "Number",
+					"description": "核销帐号id。电子凭证下，返回。关于发行码商和核销放行的说明 淘宝：0 阿里旅行代金券：2395482105 第三方码商（浙江深大：1077204890、孟宽测试：112414636、子畵码商：436160339、银科环企：2811880569）",
+					"required": true
+				},
+				{
+					"name": "multiple_times",
+					"type": "Number",
+					"description": "是否分次预约，0-否，1-是",
+					"required": true
+				},
+				{
+					"name": "bill_infos",
+					"type": "String",
+					"description": "宝贝分账信息，宝贝分账必填。分账多个账号之间以逗号隔开。数据格式（名称:比例数值或金额:类型",
+					"required": true
+				},
+				{
+					"name": "pass_merchant_user_id",
+					"type": "Number",
+					"description": "核销放行码商id",
+					"required": true
+				},
+				{
+					"name": "bill_type_desc",
+					"type": "String",
+					"description": "分账描述",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "stores",
+			"type": "TopStoreVO []",
+			"description": "关联门店列表",
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "物理酒店ID",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID",
+					"required": true
+				},
+				{
+					"name": "bill_infos",
+					"type": "String",
+					"description": "门店分账下的分账信息，数据格式（淘宝账户名称:比例或者金额:分账方式（1-按照比例的方式进行分账，2-按照固定金额的方式进行分账））",
+					"required": true
+				},
+				{
+					"name": "bill_descs",
+					"type": "String",
+					"description": "分账描述",
+					"required": true
+				},
+				{
+					"name": "write_off_accounts",
+					"type": "String",
+					"description": "核销账号",
+					"required": true
+				},
+				{
+					"name": "room_types",
+					"type": "TopRoomTypeVO[]",
+					"description": "房型列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "房型名称",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "房型ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "酒店名称",
+					"required": true
+				},
+				{
+					"name": "appoint_phones",
+					"type": "TopAppointPhoneVO[]",
+					"description": "联系电话列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mobil",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "fix",
+							"type": "String",
+							"description": "固话号码",
+							"required": true
+						},
+						{
+							"name": "p400",
+							"type": "String",
+							"description": "p400",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型固话或手机",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "related_poi_detail_v_o_list",
+			"type": "RelatedPoiDetailVo []",
+			"description": "关联POI列表",
+			"subParams": [
+				{
+					"name": "poi_name",
+					"type": "String",
+					"description": "POI名称",
+					"required": true
+				},
+				{
+					"name": "poi_id",
+					"type": "Number",
+					"description": "POI ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "tuan_item_relate_gift_list",
+			"type": "TuanItemRelateGiftVO []",
+			"description": "关联礼包列表",
+			"subParams": [
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "数量",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类别：1-温泉；2-滑雪；3-门票；4-美食；5-下午茶；6-SPA；7-礼包；8-亲子；9-交通；10-代金券；999-用户自定义",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "宝贝ID",
+					"required": true
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "单位",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

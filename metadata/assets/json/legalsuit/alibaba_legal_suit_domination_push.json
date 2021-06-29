@@ -1,0 +1,203 @@
+{
+	"name": "alibaba.legal.suit.domination.push",
+	"apiChineseName": "更新或者保存管辖信息",
+	"description": "ISV推送管辖信息到诉讼平台",
+	"requestParams": [
+		{
+			"name": "domination_dissent_model",
+			"type": "DominationDissentModel",
+			"description": "管辖信息",
+			"subParams": [
+				{
+					"name": "domination_dissent_ruling_count",
+					"type": "Number",
+					"description": "裁定书附件数量"
+				},
+				{
+					"name": "domination_dissent_ruling_list",
+					"type": "FileModel[]",
+					"description": "裁定书附件",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "裁定书附件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "裁定书附件ID"
+						}
+					]
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "管辖异议结果"
+				},
+				{
+					"name": "express_num",
+					"type": "String",
+					"description": "快递编号"
+				},
+				{
+					"name": "express_company",
+					"type": "String",
+					"description": "快递公司"
+				},
+				{
+					"name": "judge",
+					"type": "String",
+					"description": "法官"
+				},
+				{
+					"name": "is_court",
+					"type": "String",
+					"description": "是否开庭"
+				},
+				{
+					"name": "feedback_attachment_count",
+					"type": "Number",
+					"description": "反馈附件的个数"
+				},
+				{
+					"name": "feedback_attachment_list",
+					"type": "FileModel[]",
+					"description": "反馈附件",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "反馈附件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "反馈附件ID"
+						}
+					]
+				},
+				{
+					"name": "feedback_content",
+					"type": "String",
+					"description": "反馈内容"
+				},
+				{
+					"name": "feedback_id",
+					"type": "Number",
+					"description": "反馈ID"
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "更新时间"
+				},
+				{
+					"name": "updater",
+					"type": "String",
+					"description": "更新人员"
+				},
+				{
+					"name": "calling_time",
+					"type": "Date",
+					"description": "调用时间"
+				},
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件ID"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托ID"
+				},
+				{
+					"name": "domination_id",
+					"type": "Number",
+					"description": "管辖ID"
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商code"
+				},
+				{
+					"name": "application_count",
+					"type": "Number",
+					"description": "管辖文书数量"
+				},
+				{
+					"name": "application_attachment_list",
+					"type": "FileModel[]",
+					"description": "管辖文书",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "文书名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "文书ID"
+						}
+					]
+				},
+				{
+					"name": "domination_process",
+					"type": "String",
+					"description": "管辖程序名称"
+				},
+				{
+					"name": "court_time",
+					"type": "Date",
+					"description": "开庭日期"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "操作类型，这里只能更新"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "Number",
+					"description": "管辖ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,209 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.vaequipment.list",
+	"apiChineseName": "获取企业冷链设备信息",
+	"description": "获取企业冷链设备信息",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "操作企业ID （appkey授权）",
+			"required": true
+		},
+		{
+			"name": "target_ref_ent_id",
+			"type": "String",
+			"description": "目标企业ID",
+			"required": true
+		},
+		{
+			"name": "equipment_code_or_name",
+			"type": "String",
+			"description": "设备编号或名称"
+		},
+		{
+			"name": "equipment_type",
+			"type": "String",
+			"description": "设备类型"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "设备状态，1：正常；0：停止"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示数量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "list",
+							"type": "Result[]",
+							"description": "查询列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "mod_date",
+									"type": "String",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "设备地址",
+									"required": true
+								},
+								{
+									"name": "comments",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								},
+								{
+									"name": "equipment_code",
+									"type": "String",
+									"description": "设备编号",
+									"required": true
+								},
+								{
+									"name": "crt_date",
+									"type": "String",
+									"description": "记录时间",
+									"required": true
+								},
+								{
+									"name": "equipment_type",
+									"type": "String",
+									"description": "设备类型",
+									"required": true
+								},
+								{
+									"name": "associated_status",
+									"type": "String",
+									"description": "关联状态",
+									"required": true
+								},
+								{
+									"name": "probe",
+									"type": "String",
+									"description": "关联探头",
+									"required": true
+								},
+								{
+									"name": "mod_ic_code",
+									"type": "String",
+									"description": "记录修改人",
+									"required": true
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								},
+								{
+									"name": "dict_region_d_t_o",
+									"type": "String",
+									"description": "地区",
+									"required": true
+								},
+								{
+									"name": "crt_ic_code",
+									"type": "String",
+									"description": "记录创建人",
+									"required": true
+								},
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "所属企业",
+									"required": true
+								},
+								{
+									"name": "equipment_name",
+									"type": "String",
+									"description": "设备名称",
+									"required": true
+								},
+								{
+									"name": "va_equipment_id",
+									"type": "String",
+									"description": "设备主键",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "设备状态",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pages",
+							"type": "Number",
+							"description": "页数",
+							"required": true
+						},
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页显示数量",
+							"required": true
+						},
+						{
+							"name": "page",
+							"type": "Number",
+							"description": "页码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

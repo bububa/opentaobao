@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.einvoice.paper.return",
+	"apiChineseName": "纸质发票结果回传",
+	"description": "纸质发票结果回传",
+	"requestParams": [
+		{
+			"name": "ciphertext",
+			"type": "String",
+			"description": "发票密文，密码区的字符串"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "发票日期"
+		},
+		{
+			"name": "anti_fake_code",
+			"type": "String",
+			"description": "防伪码"
+		},
+		{
+			"name": "device_no",
+			"type": "String",
+			"description": "税控设备编号(新版电子发票有)"
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码"
+		},
+		{
+			"name": "create_result",
+			"type": "String",
+			"description": "开票结果\"success\"或者\"fail\"",
+			"required": true
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "开票请求的唯一索引",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "服务端接收开票回传数据的结果"
+		}
+	]
+}

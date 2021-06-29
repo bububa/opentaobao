@@ -1,0 +1,197 @@
+{
+	"name": "taobao.feedflow.item.crowd.page",
+	"apiChineseName": "分页查询单品单元下人群列表",
+	"description": "分页查询单品单元下人群列表",
+	"requestParams": [
+		{
+			"name": "crowd_query",
+			"type": "CrowdQueryDto",
+			"description": "查询条件",
+			"required": true,
+			"subParams": [
+				{
+					"name": "target_type_list",
+					"type": "String[]",
+					"description": "定向类型"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "单元id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页条件"
+				},
+				{
+					"name": "crowd_id",
+					"type": "Number",
+					"description": "人群id"
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "人群状态"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "分页条件"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "crowds",
+					"type": "CrowdDto[]",
+					"description": "人群列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "crowd_id",
+							"type": "Number",
+							"description": "人群id",
+							"required": true
+						},
+						{
+							"name": "crowd_name",
+							"type": "String",
+							"description": "人群名称",
+							"required": true
+						},
+						{
+							"name": "crowd_desc",
+							"type": "String",
+							"description": "人群描述",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "人群出价，单位：分",
+							"required": true
+						},
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划id",
+							"required": true
+						},
+						{
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "单元id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "人群状态",
+							"required": true
+						},
+						{
+							"name": "target_label",
+							"type": "LabelDto",
+							"description": "标签结构",
+							"required": true,
+							"subParams": [
+								{
+									"name": "label_id",
+									"type": "Number",
+									"description": "标签id",
+									"required": true
+								},
+								{
+									"name": "target_id",
+									"type": "Number",
+									"description": "定向id",
+									"required": true
+								},
+								{
+									"name": "target_type",
+									"type": "String",
+									"description": "定向类型",
+									"required": true
+								},
+								{
+									"name": "label_name",
+									"type": "String",
+									"description": "标签名称",
+									"required": true
+								},
+								{
+									"name": "label_desc",
+									"type": "String",
+									"description": "标签描述",
+									"required": true
+								},
+								{
+									"name": "label_value",
+									"type": "String",
+									"description": "标签值",
+									"required": true
+								},
+								{
+									"name": "options",
+									"type": "OptionDto[]",
+									"description": "选项结构",
+									"required": true,
+									"subParams": [
+										{
+											"name": "option_name",
+											"type": "String",
+											"description": "选项名称",
+											"required": true
+										},
+										{
+											"name": "option_value",
+											"type": "String",
+											"description": "选项值",
+											"required": true
+										},
+										{
+											"name": "option_desc",
+											"type": "String",
+											"description": "选项描述",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

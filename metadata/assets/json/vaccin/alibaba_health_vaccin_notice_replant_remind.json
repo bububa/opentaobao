@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.health.vaccin.notice.replant.remind",
+	"apiChineseName": "支付宝疫苗补种提醒信息",
+	"description": "支付宝疫苗补种提醒",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝ID",
+			"required": true
+		},
+		{
+			"name": "the_times",
+			"type": "String",
+			"description": "针次"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "预约id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "执行是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

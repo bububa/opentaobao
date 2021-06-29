@@ -1,0 +1,81 @@
+{
+	"name": "alibaba.alihealth.pw.applynode.update",
+	"apiChineseName": "申请节点变更回调",
+	"description": "基金会回调阿里健康更新药品援助申请单的状态",
+	"requestParams": [
+		{
+			"name": "body",
+			"type": "AuditRollbackRo",
+			"description": "回调入参",
+			"subParams": [
+				{
+					"name": "receipt_date",
+					"type": "String",
+					"description": "打款日期"
+				},
+				{
+					"name": "user_unique_code",
+					"type": "String",
+					"description": "唯一编码"
+				},
+				{
+					"name": "apply_audit_time",
+					"type": "String",
+					"description": "审核时间"
+				},
+				{
+					"name": "check_remark",
+					"type": "String",
+					"description": "xxx"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "跳转url"
+				},
+				{
+					"name": "apply_audit_status",
+					"type": "String",
+					"description": "审核状态"
+				},
+				{
+					"name": "project_third_id",
+					"type": "String",
+					"description": "申请项目"
+				},
+				{
+					"name": "receipt_money",
+					"type": "String",
+					"description": "收款金额"
+				},
+				{
+					"name": "hospitals_desc",
+					"type": "null[]",
+					"description": "医院列表"
+				},
+				{
+					"name": "receipt_name",
+					"type": "String",
+					"description": "收款人"
+				},
+				{
+					"name": "receipt_account",
+					"type": "String",
+					"description": "收款账户"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pap_code",
+			"type": "String",
+			"description": "pap项目状态码"
+		},
+		{
+			"name": "pap_message",
+			"type": "String",
+			"description": "pap项目状态描述"
+		}
+	]
+}

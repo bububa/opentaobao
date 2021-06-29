@@ -1,0 +1,83 @@
+{
+	"name": "alitrip.hotel.hstdf.shotel.exnotmatchroom",
+	"apiChineseName": "导出一个hid下所有未匹配rid的接口",
+	"description": "导出一个卖家hid下所有未匹配的rid信息，包括rid，名称、英文名称、床型、窗型、面积、对外系统id",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "卖家酒店hid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultSet",
+			"description": "top返回结果",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "RoomTypePo[]",
+					"description": "返回列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部系统id",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "卖家未匹配房型的面积",
+							"required": true
+						},
+						{
+							"name": "bed_type",
+							"type": "String",
+							"description": "卖家未匹配房型的床型",
+							"required": true
+						},
+						{
+							"name": "name_e",
+							"type": "String",
+							"description": "卖家未匹配房型英文名称",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "卖家未匹配房型名称",
+							"required": true
+						},
+						{
+							"name": "rid",
+							"type": "Number",
+							"description": "卖家未匹配rid",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error_code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "error_msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

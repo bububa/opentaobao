@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.idle.user.permit",
+	"apiChineseName": "用户appkey授权",
+	"description": "用于记录登录用户与服务商的绑定关系，用于业务数据分发和授权校验",
+	"requestParams": [
+		{
+			"name": "param_user_grant_request",
+			"type": "UserGrantRequest",
+			"description": "授权请求",
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "当前用户的所属业务类型编码 inspectedFRC：已验货非入仓",
+					"required": true
+				},
+				{
+					"name": "scene_type",
+					"type": "String",
+					"description": "场景码，标识品类。22:虚拟卡券/账号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "授权结果",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

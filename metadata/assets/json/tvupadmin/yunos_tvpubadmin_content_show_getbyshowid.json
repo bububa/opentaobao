@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.show.getbyshowid",
+	"apiChineseName": "迎客松根据节目id获取节目元数据",
+	"description": "迎客松根据节目id获取节目元数据",
+	"requestParams": [
+		{
+			"name": "show_id",
+			"type": "String",
+			"description": "节目字符串id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "节目元数据"
+		}
+	]
+}

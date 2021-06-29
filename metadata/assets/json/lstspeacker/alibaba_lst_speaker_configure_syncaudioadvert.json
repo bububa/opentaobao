@@ -1,0 +1,114 @@
+{
+	"name": "alibaba.lst.speaker.configure.syncaudioadvert",
+	"apiChineseName": "同步广告",
+	"description": "如意音箱广告同步",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "speaker_config_param4_sync_audio_advert",
+			"type": "SpeakerConfigParam4SyncAudioAdvert",
+			"description": "音频参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "advert_list",
+					"type": "SpeakerConfigAudioAdvert[]",
+					"description": "广告列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "广告ID",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单ID",
+							"required": true
+						},
+						{
+							"name": "play_schedule_time",
+							"type": "Number",
+							"description": "播放时间戳",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "md5",
+							"type": "String",
+							"description": "md5",
+							"required": true
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "文件大小kb",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "播放时长",
+							"required": true
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价元"
+						},
+						{
+							"name": "advert_discount_ratio",
+							"type": "String",
+							"description": "折扣率"
+						},
+						{
+							"name": "store_discount_ratio",
+							"type": "String",
+							"description": "门店折扣率"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "广告地址",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果标识"
+		},
+		{
+			"name": "erro_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "erro_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

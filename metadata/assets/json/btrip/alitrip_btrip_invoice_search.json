@@ -1,0 +1,69 @@
+{
+	"name": "alitrip.btrip.invoice.search",
+	"apiChineseName": "根据发票抬头搜索发票",
+	"description": "用户根据发票抬头搜索发票信息",
+	"requestParams": [
+		{
+			"name": "corp_id",
+			"type": "String",
+			"description": "企业id"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户id"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "发票抬头"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "invoice",
+					"type": "OpenInvoiceDo",
+					"description": "module",
+					"required": true,
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "title",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "resultMsg",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "resultCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

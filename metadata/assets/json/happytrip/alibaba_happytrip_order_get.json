@@ -1,0 +1,1072 @@
+{
+	"name": "alibaba.happytrip.order.get",
+	"apiChineseName": "获取欢行统一订单模型",
+	"description": "通过订单id获取欢行统一订单模型数据",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "contacts",
+			"type": "ContactDto []",
+			"description": "订单联系人列表",
+			"subParams": [
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "联系人国家码",
+					"required": true
+				},
+				{
+					"name": "default_flag",
+					"type": "Number",
+					"description": "是否默认联系人0不是，1是",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "联系人姓名",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "relation_id",
+					"type": "Number",
+					"description": "常用联系人ID",
+					"required": true
+				},
+				{
+					"name": "upc_id",
+					"type": "Number",
+					"description": "联系人的常用联系人id对应航旅常用联系人应用upc中的id,用于信息回流upc",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "hotel_books",
+			"type": "HotelBookDto []",
+			"description": "机票预订信息列表",
+			"subParams": [
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "创建者",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "所属订单id",
+					"required": true
+				},
+				{
+					"name": "resource_hotel_id",
+					"type": "Number",
+					"description": "酒店资源id",
+					"required": true
+				},
+				{
+					"name": "resource_id",
+					"type": "String",
+					"description": "外系统订单号",
+					"required": true
+				},
+				{
+					"name": "resource_main_id",
+					"type": "Number",
+					"description": "资源表id",
+					"required": true
+				},
+				{
+					"name": "room_no",
+					"type": "String",
+					"description": "房间号",
+					"required": true
+				},
+				{
+					"name": "tourist_id",
+					"type": "Number",
+					"description": "出行人id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "hotel_resources",
+			"type": "ResourceHotelDto []",
+			"description": "酒店资源详情",
+			"subParams": [
+				{
+					"name": "check_in",
+					"type": "Date",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "check_out",
+					"type": "Date",
+					"description": "离开时间",
+					"required": true
+				},
+				{
+					"name": "city_chinese_name",
+					"type": "String",
+					"description": "城市中文名称",
+					"required": true
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市Code",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市名称",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家",
+					"required": true
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "hotel_address",
+					"type": "String",
+					"description": "酒店地址",
+					"required": true
+				},
+				{
+					"name": "hotel_chinese_name",
+					"type": "String",
+					"description": "酒店中文名称",
+					"required": true
+				},
+				{
+					"name": "hotel_english_name",
+					"type": "String",
+					"description": "酒店英文名称",
+					"required": true
+				},
+				{
+					"name": "hotel_id",
+					"type": "Number",
+					"description": "酒店ID",
+					"required": true
+				},
+				{
+					"name": "hotel_name",
+					"type": "String",
+					"description": "酒店名称",
+					"required": true
+				},
+				{
+					"name": "hotel_tel",
+					"type": "String",
+					"description": "酒店电话",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "酒店GPS位置纬度",
+					"required": true
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "酒店GPS位置经度",
+					"required": true
+				},
+				{
+					"name": "nights",
+					"type": "Number",
+					"description": "入住几晚",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "所属订单id",
+					"required": true
+				},
+				{
+					"name": "out_hotel_id",
+					"type": "String",
+					"description": "外部酒店id",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省或州",
+					"required": true
+				},
+				{
+					"name": "resource_id",
+					"type": "String",
+					"description": "外系统订单号",
+					"required": true
+				},
+				{
+					"name": "resource_main_id",
+					"type": "Number",
+					"description": "资源表主键",
+					"required": true
+				},
+				{
+					"name": "room_count",
+					"type": "String",
+					"description": "房间数量",
+					"required": true
+				},
+				{
+					"name": "room_type_id",
+					"type": "String",
+					"description": "房型id",
+					"required": true
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "房名名称",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "order_extends_info",
+			"type": "OrderExtendsDto",
+			"description": "订单扩展信息",
+			"subParams": [
+				{
+					"name": "agent_fail",
+					"type": "String",
+					"description": "供应商拒绝原因",
+					"required": true
+				},
+				{
+					"name": "buyer_fail",
+					"type": "String",
+					"description": "买家拒绝原因",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "errors_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "所属订单id",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "拒绝选择最低价的原因",
+					"required": true
+				},
+				{
+					"name": "trip_purpose",
+					"type": "String",
+					"description": "旅行目的",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "order_info",
+			"type": "OrderDto",
+			"description": "订单基本信息",
+			"subParams": [
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "航旅交易号",
+					"required": true
+				},
+				{
+					"name": "b2g_flag",
+					"type": "Number",
+					"description": "是否B2G的标记位0不是 1是",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "订单业务类型，各个业务自定义使用",
+					"required": true
+				},
+				{
+					"name": "biz_type_desc",
+					"type": "String",
+					"description": "订单业务类型，各个业务自定义使用",
+					"required": true
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "外系统下单时间",
+					"required": true
+				},
+				{
+					"name": "buyer_user_id",
+					"type": "String",
+					"description": "购买人用户id",
+					"required": true
+				},
+				{
+					"name": "buyer_user_memo",
+					"type": "String",
+					"description": "获取购买人欢行ID的异常信息",
+					"required": true
+				},
+				{
+					"name": "buyer_user_name",
+					"type": "String",
+					"description": "购买人姓名",
+					"required": true
+				},
+				{
+					"name": "close_time",
+					"type": "Date",
+					"description": "订单预计关闭时间",
+					"required": true
+				},
+				{
+					"name": "current_status",
+					"type": "String",
+					"description": "订单当前状态  -1, \"未知状态\"  1, \"预定中\"  2, \"已取消\"  3, \"待付款\"  4, \"已付款\"  5, \"已删除\"  6, \"已完成\"  7, \"已关闭\"  8, \"已预订\"  9, \"已变更\"  10, \"预定失败\"",
+					"required": true
+				},
+				{
+					"name": "current_status_desc",
+					"type": "String",
+					"description": "订单当前状态描述 （参考current_status）",
+					"required": true
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "订单过期时间",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "issue_time",
+					"type": "Date",
+					"description": "系统出票时间",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注",
+					"required": true
+				},
+				{
+					"name": "online_flag",
+					"type": "Number",
+					"description": "线上线下标记0线下 1线上",
+					"required": true
+				},
+				{
+					"name": "order_class_id",
+					"type": "Number",
+					"description": "订单一级类型 (一级类型，一级类型描述，二级类型，二级类型描述)  (-1, \"未知\", -1, \"未知\")  (4, \"机票\", 24, \"飞猪国内机票\")  (4, \"机票\", 47, \"飞猪国际机票\")  (4, \"机票\", 48, \"飞猪国际询价单机票\")  (4, \"机票\", 49, \"GT国际机票\")  (5, \"酒店\", 14, \"飞猪国内酒店\")  (5, \"酒店\", 34, \"HRS国际酒店\")  (6, \"用车\", 23, \"国内用车\")",
+					"required": true
+				},
+				{
+					"name": "order_class_name",
+					"type": "String",
+					"description": "订单一级类型描述 定义参考一级类型",
+					"required": true
+				},
+				{
+					"name": "order_class_second_id",
+					"type": "Number",
+					"description": "订单二级类型 定义参考一级类型",
+					"required": true
+				},
+				{
+					"name": "order_class_second_name",
+					"type": "String",
+					"description": "订单二级类型描述 定义参考一级类型",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外系统订单号",
+					"required": true
+				},
+				{
+					"name": "out_order_status",
+					"type": "String",
+					"description": "外系统订单号状态",
+					"required": true
+				},
+				{
+					"name": "out_order_status_desc",
+					"type": "String",
+					"description": "外系统订单号状态描述",
+					"required": true
+				},
+				{
+					"name": "pay_status",
+					"type": "String",
+					"description": "支付状态  -1, \"未知状态\"  1, \"未付款\"  2, \"待付款\"  3, \"已付款\"  4, \"支付超时\"",
+					"required": true
+				},
+				{
+					"name": "pay_status_desc",
+					"type": "String",
+					"description": "支付状态描述",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "pay_type",
+					"type": "String",
+					"description": "支付类型",
+					"required": true
+				},
+				{
+					"name": "plan_time",
+					"type": "Date",
+					"description": "计划时间",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "订单来源",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "订单总价",
+					"required": true
+				},
+				{
+					"name": "total_price_currency_code",
+					"type": "String",
+					"description": "总金额货币代码",
+					"required": true
+				},
+				{
+					"name": "total_price_decimal_places",
+					"type": "String",
+					"description": "总金额小数点位数",
+					"required": true
+				},
+				{
+					"name": "valid_flag",
+					"type": "Number",
+					"description": "是否有效订单0无效，1有效",
+					"required": true
+				},
+				{
+					"name": "outer_travel_head_id",
+					"type": "String",
+					"description": "关联的差旅申请单的数据同步关联id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "resources",
+			"type": "ResourceMainDto []",
+			"description": "订单资源列表",
+			"subParams": [
+				{
+					"name": "adult_cost",
+					"type": "String",
+					"description": "成人成本价",
+					"required": true
+				},
+				{
+					"name": "adult_count",
+					"type": "Number",
+					"description": "成人数",
+					"required": true
+				},
+				{
+					"name": "adult_price",
+					"type": "String",
+					"description": "成人单价",
+					"required": true
+				},
+				{
+					"name": "agency_id",
+					"type": "String",
+					"description": "代理商ID",
+					"required": true
+				},
+				{
+					"name": "agency_name",
+					"type": "String",
+					"description": "代理商名称",
+					"required": true
+				},
+				{
+					"name": "agency_order_id",
+					"type": "String",
+					"description": "代理商订单号",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "交易号",
+					"required": true
+				},
+				{
+					"name": "b2g_flag",
+					"type": "Number",
+					"description": "是否b2g 0不是 1是",
+					"required": true
+				},
+				{
+					"name": "back_city_code",
+					"type": "String",
+					"description": "返回城市code",
+					"required": true
+				},
+				{
+					"name": "back_city_name",
+					"type": "String",
+					"description": "返回城市名",
+					"required": true
+				},
+				{
+					"name": "back_time",
+					"type": "Date",
+					"description": "返回时间",
+					"required": true
+				},
+				{
+					"name": "base_amount",
+					"type": "String",
+					"description": "基础价格",
+					"required": true
+				},
+				{
+					"name": "base_amount_currency_code",
+					"type": "String",
+					"description": "基础价格货币代码",
+					"required": true
+				},
+				{
+					"name": "base_amount_decimal_places",
+					"type": "String",
+					"description": "基础价格小数点位数",
+					"required": true
+				},
+				{
+					"name": "book_city_code",
+					"type": "String",
+					"description": "资源预定城市code",
+					"required": true
+				},
+				{
+					"name": "book_city_name",
+					"type": "String",
+					"description": "资源预定城市名",
+					"required": true
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "资源预定时间",
+					"required": true
+				},
+				{
+					"name": "contract_flag",
+					"type": "Number",
+					"description": "是否合约 0非合约 1合约",
+					"required": true
+				},
+				{
+					"name": "contract_price",
+					"type": "String",
+					"description": "合约价格",
+					"required": true
+				},
+				{
+					"name": "end_addr",
+					"type": "String",
+					"description": "结束地址",
+					"required": true
+				},
+				{
+					"name": "end_city_code",
+					"type": "String",
+					"description": "结束城市code",
+					"required": true
+				},
+				{
+					"name": "end_city_name",
+					"type": "String",
+					"description": "结束城市名",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "结束时间",
+					"required": true
+				},
+				{
+					"name": "end_latitude",
+					"type": "String",
+					"description": "结束地纬度",
+					"required": true
+				},
+				{
+					"name": "end_longitude",
+					"type": "String",
+					"description": "结束地经度",
+					"required": true
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "资源失效时间",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "lower_amount",
+					"type": "String",
+					"description": "最低价",
+					"required": true
+				},
+				{
+					"name": "lower_amount_currency_code",
+					"type": "String",
+					"description": "最低价货币代码",
+					"required": true
+				},
+				{
+					"name": "lower_amount_decimal_places",
+					"type": "String",
+					"description": "最低价小数点位数",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "plan_time",
+					"type": "Date",
+					"description": "计划时间",
+					"required": true
+				},
+				{
+					"name": "pnr",
+					"type": "String",
+					"description": "飞猪询价单PNR",
+					"required": true
+				},
+				{
+					"name": "pnr_expire_time",
+					"type": "Date",
+					"description": "PNR失效时间",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "说明描述",
+					"required": true
+				},
+				{
+					"name": "reason_code",
+					"type": "String",
+					"description": "说明Code",
+					"required": true
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因",
+					"required": true
+				},
+				{
+					"name": "refund_status",
+					"type": "String",
+					"description": "退款状态",
+					"required": true
+				},
+				{
+					"name": "refund_type",
+					"type": "String",
+					"description": "退款类型",
+					"required": true
+				},
+				{
+					"name": "resource_id",
+					"type": "String",
+					"description": "资源ID，只有打包类订单才有resourceId，例如GT机票订单，内部还有火车，酒店等，单品类可以存外系统订单号或者不存",
+					"required": true
+				},
+				{
+					"name": "resource_name",
+					"type": "String",
+					"description": "资源名称",
+					"required": true
+				},
+				{
+					"name": "resource_status",
+					"type": "String",
+					"description": "资源状态",
+					"required": true
+				},
+				{
+					"name": "resource_status_desc",
+					"type": "String",
+					"description": "资源状态描述",
+					"required": true
+				},
+				{
+					"name": "resource_type",
+					"type": "Number",
+					"description": "资源类型  -1, \"未知资源类型\"  100110, \"飞猪机票国内直订\"  100210, \"飞猪机票国际直订\"  100211, \"飞猪机票国际询价单\"  101110, \"飞猪酒店国内直订\"  110210, \"GT机票国际直订\"  110211, \"GT机票国际酒店\"  110212, \"GT机票国际火车\"  110213, \"GT机票国际用车\"  121210, \"HRS酒店国际酒店直订\"  132110, \"滴滴国内预约用车\"  142110, \"曹操国内预约用车\"  152110, \"快滴国内预约用车\"",
+					"required": true
+				},
+				{
+					"name": "rule",
+					"type": "String",
+					"description": "通用规则字段，比如机票退改签等",
+					"required": true
+				},
+				{
+					"name": "seat_price",
+					"type": "String",
+					"description": "座位金额",
+					"required": true
+				},
+				{
+					"name": "seat_price_currency_code",
+					"type": "String",
+					"description": "座位金额货币代码",
+					"required": true
+				},
+				{
+					"name": "seat_price_decimal_places",
+					"type": "String",
+					"description": "座位金额小数点位数",
+					"required": true
+				},
+				{
+					"name": "start_addr",
+					"type": "String",
+					"description": "起始地址",
+					"required": true
+				},
+				{
+					"name": "start_city_code",
+					"type": "String",
+					"description": "起始城市code",
+					"required": true
+				},
+				{
+					"name": "start_city_name",
+					"type": "String",
+					"description": "起始城市名",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "起始时间",
+					"required": true
+				},
+				{
+					"name": "start_latitude",
+					"type": "String",
+					"description": "起始地纬度",
+					"required": true
+				},
+				{
+					"name": "start_longitude",
+					"type": "String",
+					"description": "起始地经度",
+					"required": true
+				},
+				{
+					"name": "submit_time",
+					"type": "Date",
+					"description": "资源提交时间",
+					"required": true
+				},
+				{
+					"name": "tax_amount",
+					"type": "String",
+					"description": "税收金额（机票国内基建费）",
+					"required": true
+				},
+				{
+					"name": "tax_amount_currency_code",
+					"type": "String",
+					"description": "税收金额货币代码",
+					"required": true
+				},
+				{
+					"name": "tax_amount_decimal_places",
+					"type": "String",
+					"description": "税收金额小数点位数",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "资源总价（是否包含税看业务）",
+					"required": true
+				},
+				{
+					"name": "total_amount_currency_code",
+					"type": "String",
+					"description": "总金额货币代码",
+					"required": true
+				},
+				{
+					"name": "total_amount_decimal_places",
+					"type": "String",
+					"description": "总金额小数点位数",
+					"required": true
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "资源更新时间",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "tourists",
+			"type": "TouristDto []",
+			"description": "订单出行人列表",
+			"subParams": [
+				{
+					"name": "cert_nation",
+					"type": "String",
+					"description": "证件签发国",
+					"required": true
+				},
+				{
+					"name": "first_name",
+					"type": "String",
+					"description": "姓",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "last_name",
+					"type": "String",
+					"description": "名",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "出行人姓名",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "sex",
+					"type": "Number",
+					"description": "1男，2女",
+					"required": true
+				},
+				{
+					"name": "tourist_type",
+					"type": "Number",
+					"description": "成人0，儿童1，婴儿2",
+					"required": true
+				},
+				{
+					"name": "travel_business_type",
+					"type": "Number",
+					"description": "出行人0，同行人1，外部人员2",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				}
+			]
+		}
+	]
+}

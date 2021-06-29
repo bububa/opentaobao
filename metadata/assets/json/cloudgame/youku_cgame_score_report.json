@@ -1,0 +1,67 @@
+{
+	"name": "youku.cgame.score.report",
+	"apiChineseName": "云游戏战绩上传",
+	"description": "云游戏战绩上传API",
+	"requestParams": [
+		{
+			"name": "score_report_dto",
+			"type": "ScoreReportDto",
+			"description": "战绩上传Dto",
+			"subParams": [
+				{
+					"name": "score",
+					"type": "String",
+					"description": "游戏结果"
+				},
+				{
+					"name": "game_session_id",
+					"type": "String",
+					"description": "SDK传入的gameSessionId",
+					"required": true
+				},
+				{
+					"name": "overwrite_method",
+					"type": "Number",
+					"description": "1 - 保存最佳战绩     2 - 强制更新战绩"
+				},
+				{
+					"name": "mix_user_id",
+					"type": "String",
+					"description": "SDK传入的云游戏混合用户ID",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "全局唯一uuid, 用于幂等校验"
+				},
+				{
+					"name": "ext_info",
+					"description": "扩展信息JSON串"
+				},
+				{
+					"name": "report_timestamp",
+					"type": "Number",
+					"description": "上报时间戳"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果码"
+		},
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "返回消息体"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回消息"
+		}
+	]
+}

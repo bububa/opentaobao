@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.code.active",
+	"apiChineseName": "上传激活码的文件",
+	"description": "上传商品的激活码文件，存到系统中",
+	"requestParams": [
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名"
+		},
+		{
+			"name": "product_info_id",
+			"type": "Number",
+			"description": "商品编号",
+			"required": true
+		},
+		{
+			"name": "file_content",
+			"type": "String",
+			"description": "文件内容，十六进制编码",
+			"required": true
+		},
+		{
+			"name": "correlation_type",
+			"type": "Number",
+			"description": "关联类型，0:无关联，1:前关联，2:后关联",
+			"required": true
+		},
+		{
+			"name": "correlation_ratio",
+			"type": "String",
+			"description": "关联比例"
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "语言标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

@@ -1,0 +1,144 @@
+{
+	"name": "taobao.openmall.trade.render",
+	"apiChineseName": "渲染订单价格",
+	"description": "请求渲染订单价格",
+	"requestParams": [
+		{
+			"name": "param_top_trade_create_d_o",
+			"type": "TopTradeCreateDo",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "收货人地址",
+					"required": true
+				},
+				{
+					"name": "buyer_channel",
+					"type": "String",
+					"description": "买家来源渠道，可选值 WeiXin（微信渠道）,DouYin（抖音渠道），KuaiShou（快手渠道），Other（其他）",
+					"required": true
+				},
+				{
+					"name": "buyer_channel_id",
+					"type": "String",
+					"description": "买家来源渠道对应ID，例如微信的openId",
+					"required": true
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "买家手机号",
+					"required": true
+				},
+				{
+					"name": "distributor",
+					"type": "String",
+					"description": "媒体渠道，代表分销者的身份，签约协议支付的淘宝账号",
+					"required": true
+				},
+				{
+					"name": "divisioncode",
+					"type": "String",
+					"description": "收货地址的区域码，具体获取方式参考API:http://open.taobao.com/api.htm?docId=59\u0026docType=2，一般为6位数字。也可以使用Openmall Api来解析收货地址( taobao.openmall.trade.address.parse)获取区域码",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收货人手机号",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "收货人姓名",
+					"required": true
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品的id",
+					"required": true
+				},
+				{
+					"name": "nums",
+					"type": "Number",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "收货人的电话号码"
+				},
+				{
+					"name": "postcode",
+					"type": "String",
+					"description": "收货地址的邮编，空或者6位数字的邮编"
+				},
+				{
+					"name": "sku_iids",
+					"type": "Number",
+					"description": "商品SKUID，无sku商品传0",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "area_id",
+					"type": "Number",
+					"description": "发货地址对应的areaid",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "location",
+					"type": "String",
+					"description": "发货地址",
+					"required": true
+				},
+				{
+					"name": "posts",
+					"type": "PostDo[]",
+					"description": "运费列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "运费金额，运费0为包邮",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "发货方式 快递，EMS等",
+							"required": true
+						},
+						{
+							"name": "shipping_type",
+							"type": "String",
+							"description": "物流方式，可选值  ems, post, express",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "taobao.openmall.refund.image.upload",
+	"apiChineseName": "OpenMall退款图片上传",
+	"description": "OpenMall退款图片上传",
+	"requestParams": [
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "上传图片，必须为jpg或png格式，建议小于2M",
+			"required": true
+		},
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "渠道商Nick",
+			"required": true
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "该图片归属的退款单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "图片上传对应Token，用于提交留言接口"
+		}
+	]
+}

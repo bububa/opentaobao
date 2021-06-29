@@ -1,0 +1,55 @@
+{
+	"name": "taobao.feedflow.item.adgroup.creative.add.bind",
+	"apiChineseName": "信息流新增并且绑定创意",
+	"description": "信息流新增并且绑定创意",
+	"requestParams": [
+		{
+			"name": "creative_bind_list",
+			"type": "CreativeBindDto[]",
+			"description": "新增绑定的创意，一次最多2个",
+			"required": true,
+			"maxListSize": 2,
+			"subParams": [
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "创意图片地址",
+					"required": true
+				},
+				{
+					"name": "creative_name",
+					"type": "String",
+					"description": "创意名称，同时会展现给客户",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "单元id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

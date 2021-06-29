@@ -43,4 +43,14 @@ type ServiceProvider struct {
     WorkerId   int64 `json:"worker_id,omitempty" xml:"worker_id,omitempty"`
     
 
+    // isv服务商
+    
+    IsvTpId   int64 `json:"isv_tp_id,omitempty" xml:"isv_tp_id,omitempty"`
+    
+
+    // isv服务商
+    
+    IsvTpName   string `json:"isv_tp_name,omitempty" xml:"isv_tp_name,omitempty"`
+    
+
 }

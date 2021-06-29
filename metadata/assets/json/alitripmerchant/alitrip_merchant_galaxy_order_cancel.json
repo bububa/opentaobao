@@ -1,0 +1,60 @@
+{
+	"name": "alitrip.merchant.galaxy.order.cancel",
+	"apiChineseName": "星河-取消预订",
+	"description": "雅高酒店用户使用该接口，取消酒店预订",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录标识"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单编号"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "退款原因"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果成功判断",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

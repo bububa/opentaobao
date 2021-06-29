@@ -19,7 +19,9 @@ type AlibabaIcbuProductBatchUpdateDisplayAPIResponse struct {
 
 type AlibabaIcbuProductBatchUpdateDisplayResponse struct {
     XMLName xml.Name `xml:"alibaba_icbu_product_batch_update_display_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 只有出错才会显示，唯一标识这次请求
     

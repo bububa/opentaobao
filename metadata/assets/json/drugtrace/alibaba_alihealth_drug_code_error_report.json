@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.alihealth.drug.code.error.report",
+	"apiChineseName": "码信息错误上报",
+	"description": "提供码信息错误上报功能，用于数据校对",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "field_name",
+			"type": "String",
+			"description": "有问题的字段名称",
+			"required": true
+		},
+		{
+			"name": "code_value",
+			"type": "String",
+			"description": "通过码获得的问题字段值",
+			"required": true
+		},
+		{
+			"name": "source_value",
+			"type": "String",
+			"description": "平台获得/期望的问题字段值",
+			"required": true
+		},
+		{
+			"name": "err_msg",
+			"type": "String",
+			"description": "错误信息描述"
+		},
+		{
+			"name": "reporter",
+			"type": "String",
+			"description": "上报人员",
+			"required": true
+		},
+		{
+			"name": "reporter_email",
+			"type": "String",
+			"description": "上报人员邮箱"
+		},
+		{
+			"name": "reporter_mobile",
+			"type": "String",
+			"description": "上报人员手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回结果code"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "接口调用状态"
+		}
+	]
+}

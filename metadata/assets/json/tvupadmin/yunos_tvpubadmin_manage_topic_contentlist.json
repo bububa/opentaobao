@@ -1,0 +1,19 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.contentlist",
+	"apiChineseName": "查看专题内容列表",
+	"description": "查看专题内容列表",
+	"requestParams": [
+		{
+			"name": "program_query",
+			"type": "String",
+			"description": "节目查询参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

@@ -1,0 +1,215 @@
+{
+	"name": "cainiao.global.solution.inquiry",
+	"apiChineseName": "解决方案询盘",
+	"description": "根据交易单号查询可用的解决方案",
+	"requestParams": [
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言，zh_CN中文、en_US:英文、ru_RU俄语"
+		},
+		{
+			"name": "trade_order_param",
+			"type": "OpenTradeOrderParam",
+			"description": "交易单参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "交易单ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "seller_info_param",
+			"type": "OpenSellerInfoParam",
+			"description": "商家信息",
+			"required": true
+		},
+		{
+			"name": "package_params",
+			"type": "OpenPackageParam[]",
+			"description": "包裹参数",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "包裹长度，单位毫米"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "包裹宽度，单位毫米"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "包裹高度，单位毫米"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "包裹重量，单位克"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "error_info",
+			"type": "ErrorInfo",
+			"description": "错误信息",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result",
+			"type": "OpenSolutionInquiryResponse",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "usable_solution_list",
+					"type": "OpenSolutionDto[]",
+					"description": "可用的解决方案列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "timing_list",
+							"type": "OpenTimingDto[]",
+							"description": "时效信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "display_text",
+									"type": "String",
+									"description": "展示文案",
+									"required": true
+								},
+								{
+									"name": "slowest_timing",
+									"type": "Number",
+									"description": "最慢时效",
+									"required": true
+								},
+								{
+									"name": "fast_timing",
+									"type": "Number",
+									"description": "最快时效",
+									"required": true
+								},
+								{
+									"name": "timing_type",
+									"type": "String",
+									"description": "时效类型，ESTIMATE：预估时效，PROMISE：承诺时效",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "fee_list",
+							"type": "OpenFeeDto[]",
+							"description": "费用列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "总费用",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "fee_type",
+									"type": "String",
+									"description": "费用类型，POST_ESTIMATED_COST：预估费用",
+									"required": true
+								},
+								{
+									"name": "fee_detail_list",
+									"type": "OpenFeeDetailDto[]",
+									"description": "费用详细列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "paid_fee",
+											"type": "Number",
+											"description": "已支付费用",
+											"required": true
+										},
+										{
+											"name": "paid_fee_currency",
+											"type": "String",
+											"description": "已支付费用币种",
+											"required": true
+										},
+										{
+											"name": "fee",
+											"type": "Number",
+											"description": "应支付费用",
+											"required": true
+										},
+										{
+											"name": "fee_currency",
+											"type": "String",
+											"description": "应支付费用币种",
+											"required": true
+										},
+										{
+											"name": "fee_detail_type",
+											"type": "String",
+											"description": "详细费用类型，normal_delivery_fee：配送费，sms_service_fee",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "recommend_index",
+							"type": "Number",
+							"description": "推荐指数",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "解决方案code",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "解决方案名称",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

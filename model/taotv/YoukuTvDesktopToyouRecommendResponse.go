@@ -19,7 +19,9 @@ type YoukuTvDesktopToyouRecommendAPIResponse struct {
 
 type YoukuTvDesktopToyouRecommendResponse struct {
     XMLName xml.Name `xml:"youku_tv_desktop_toyou_recommend_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 响应的结果列表
     

@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.uploadinsign",
+	"apiChineseName": "仓库批量扫码回传接口",
+	"description": "连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。",
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号（小于20位字符串，唯一）",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据生成时间",
+			"required": true
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "码上放心平台企业编码（仓库所有者）",
+			"required": true
+		},
+		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓库名称（企业自定义）"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"required": true,
+			"maxListSize": 4000
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码(BILL_DECODE_ERROR 单据转码失败 BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 false 失败)"
+		}
+	]
+}

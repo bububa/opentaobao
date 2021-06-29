@@ -1,0 +1,103 @@
+{
+	"name": "alibaba.lst.vending.order.update",
+	"apiChineseName": "自动售货机订单物流信息回传",
+	"description": "零售通与设备供应商进行订单对接，通过此接口回流订单物流信息。",
+	"requestParams": [
+		{
+			"name": "vending_order_d_t_o",
+			"type": "VendingOrderDto",
+			"description": "零售通设备订单",
+			"required": true,
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "修改时间"
+				},
+				{
+					"name": "tracking_no",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "shipping_contact",
+					"type": "String",
+					"description": "快递联系人",
+					"required": true
+				},
+				{
+					"name": "isv_order_no",
+					"type": "String",
+					"description": "供应商订单号",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "零售通订单号",
+					"required": true
+				},
+				{
+					"name": "shipped_equipment_list",
+					"type": "VendingShippedEquipmentDto[]",
+					"description": "发货清单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_item_id",
+							"type": "Number",
+							"description": "设备型号清单ID",
+							"required": true
+						},
+						{
+							"name": "equipment_code",
+							"type": "String",
+							"description": "供应商设备唯一编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间"
+				},
+				{
+					"name": "delivery_time",
+					"type": "Number",
+					"description": "发货时间",
+					"required": true
+				},
+				{
+					"name": "shipping_contact_tel",
+					"type": "String",
+					"description": "快递联系电话",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		},
+		{
+			"name": "error_no",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "是否执行了更新操作"
+		}
+	]
+}

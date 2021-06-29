@@ -1,0 +1,192 @@
+{
+	"name": "alibaba.alihealth.medicalbase.hospital.sync",
+	"apiChineseName": "互联网医院批量导入接口",
+	"description": "互联网医院isv批量通过接口批量导入",
+	"requestParams": [
+		{
+			"name": "is_auth",
+			"type": "String",
+			"description": "是否需要用户授权",
+			"required": true
+		},
+		{
+			"name": "lat",
+			"type": "String",
+			"description": "主院区纬度",
+			"required": true
+		},
+		{
+			"name": "lon",
+			"type": "String",
+			"description": "主院区经度",
+			"required": true
+		},
+		{
+			"name": "hos_address",
+			"type": "String",
+			"description": "主院区地址",
+			"required": true
+		},
+		{
+			"name": "telephone",
+			"type": "String",
+			"description": "主院区的联系电话"
+		},
+		{
+			"name": "region_name",
+			"type": "String",
+			"description": "院区名称",
+			"required": true
+		},
+		{
+			"name": "is_public",
+			"type": "String",
+			"description": "是否公立医院（Y／N）",
+			"required": true
+		},
+		{
+			"name": "service_info",
+			"type": "String",
+			"description": "标签"
+		},
+		{
+			"name": "special",
+			"type": "String",
+			"description": "自定义科室"
+		},
+		{
+			"name": "service_window_url",
+			"type": "String",
+			"description": "生活号或者服务窗url"
+		},
+		{
+			"name": "description_url",
+			"type": "String",
+			"description": "医院简介url"
+		},
+		{
+			"name": "is_insurance",
+			"type": "String",
+			"description": "是否支持医保（Y/N）"
+		},
+		{
+			"name": "grade",
+			"type": "String",
+			"description": "医院等级",
+			"required": true
+		},
+		{
+			"name": "category",
+			"type": "String",
+			"description": "综合(general)、专科（special）",
+			"required": true
+		},
+		{
+			"name": "short_name",
+			"type": "String",
+			"description": "医院简称"
+		},
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "医院pid"
+		},
+		{
+			"name": "unify_code",
+			"type": "String",
+			"description": "机构编码"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "所在城市code",
+			"required": true
+		},
+		{
+			"name": "hos_name",
+			"type": "String",
+			"description": "营业执照上的医院全称",
+			"required": true
+		},
+		{
+			"name": "company_name",
+			"type": "String",
+			"description": "公司名称",
+			"required": true
+		},
+		{
+			"name": "ali_interface_man",
+			"type": "String",
+			"description": "支付宝BD的姓名",
+			"required": true
+		},
+		{
+			"name": "email",
+			"type": "String",
+			"description": "邮箱地址",
+			"required": true
+		},
+		{
+			"name": "technical_man",
+			"type": "String",
+			"description": "联系人",
+			"required": true
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "联系手机",
+			"required": true
+		},
+		{
+			"name": "hos_type",
+			"type": "String",
+			"description": "单医院（main）／ 平台（platform）",
+			"required": true
+		},
+		{
+			"name": "functions",
+			"type": "String",
+			"description": "服务项列表",
+			"required": true
+		},
+		{
+			"name": "isv_hos_code",
+			"type": "String",
+			"description": "isv库里面的hosCode",
+			"required": true
+		},
+		{
+			"name": "delivery_channel",
+			"type": "String",
+			"description": "投放阵地alipay aliyy uc quark"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "isvId",
+					"required": true
+				}
+			]
+		}
+	]
+}

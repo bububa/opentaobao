@@ -1,0 +1,85 @@
+{
+	"name": "taobao.opentrade.activity.query",
+	"apiChineseName": "查询尖货活动信息",
+	"description": "尖货交易活动信息配置，查询尖货活动信息",
+	"requestParams": [
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "活动结束时间"
+		},
+		{
+			"name": "activity_name",
+			"type": "String",
+			"description": "活动名称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "分页序号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总条数"
+		},
+		{
+			"name": "results",
+			"type": "McSceneActivityDto []",
+			"description": "活动信息记录",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "item_ids",
+					"type": "String",
+					"description": "活动关联的商品列表，使用逗号(,)分割",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "创建活动的appkey",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "排队活动ID",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "最近修改时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "活动结束时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

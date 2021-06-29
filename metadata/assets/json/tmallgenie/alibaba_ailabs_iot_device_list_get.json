@@ -1,0 +1,120 @@
+{
+	"name": "alibaba.ailabs.iot.device.list.get",
+	"apiChineseName": "获取iot设备列表",
+	"description": "通过此接口获取用户名下的iot设备列表",
+	"requestParams": [
+		{
+			"name": "user_open_id",
+			"type": "String",
+			"description": "用户open id",
+			"required": true
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "client id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "ret_values",
+					"type": "RetValue[]",
+					"description": "返回值list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_icon",
+							"type": "String",
+							"description": "设备图片",
+							"required": true
+						},
+						{
+							"name": "device_model",
+							"type": "String",
+							"description": "型号",
+							"required": true
+						},
+						{
+							"name": "device_alias",
+							"type": "String",
+							"description": "别名",
+							"required": true
+						},
+						{
+							"name": "orgin_device_category",
+							"type": "String",
+							"description": "原本设备类型",
+							"required": true
+						},
+						{
+							"name": "device_properties",
+							"type": "String",
+							"description": "可控制的属性",
+							"required": true
+						},
+						{
+							"name": "particular_model",
+							"type": "String",
+							"description": "详细型号",
+							"required": true
+						},
+						{
+							"name": "device_category_en",
+							"type": "String",
+							"description": "设备类型英文",
+							"required": true
+						},
+						{
+							"name": "device_category",
+							"type": "String",
+							"description": "设备类型中文",
+							"required": true
+						},
+						{
+							"name": "device_brand",
+							"type": "String",
+							"description": "品牌",
+							"required": true
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "device_zone",
+							"type": "String",
+							"description": "位置",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

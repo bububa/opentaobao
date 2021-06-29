@@ -1,0 +1,96 @@
+{
+	"name": "taobao.miniapp.template.instantiate",
+	"apiChineseName": "构建实例化应用",
+	"description": "实例化saas化的小程序",
+	"requestParams": [
+		{
+			"name": "clients",
+			"type": "String[]",
+			"description": "投放端,目前可投放： taobao(淘宝),tmall(天猫)，taobao为必填，需要模板在这些端上已经发布上线",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "描述长度(9~200)",
+			"required": true
+		},
+		{
+			"name": "ext_json",
+			"type": "String",
+			"description": "扩展信息，JSON格式。",
+			"required": true
+		},
+		{
+			"name": "icon",
+			"type": "String",
+			"description": "小程序icon",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "小程序名称按平台规则自动生成，该字段仅做兜底使用。"
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板id",
+			"required": true
+		},
+		{
+			"name": "template_version",
+			"type": "String",
+			"description": "模板版本",
+			"required": true
+		},
+		{
+			"name": "alias",
+			"type": "String",
+			"description": "小程序简称【1-16】字符，可重名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "appkey",
+			"type": "String",
+			"description": "appkey"
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "小程序app_id"
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "小程序名称按平台规则自动生成。在授权弹窗标题、「关于」页面展示名称。"
+		},
+		{
+			"name": "app_description",
+			"type": "String",
+			"description": "小程序描述"
+		},
+		{
+			"name": "app_icon",
+			"type": "String",
+			"description": "小程序icon"
+		},
+		{
+			"name": "pre_view_url",
+			"type": "String",
+			"description": "当前新生成的预览版本的链接，仅当前商家有权限预览。"
+		},
+		{
+			"name": "app_version",
+			"type": "String",
+			"description": "当前新生成的预览版本号"
+		},
+		{
+			"name": "app_alias",
+			"type": "String",
+			"description": "小程序简称。在小程序Loading动画、首页标题、「更多」菜单标题上优先展示简称。"
+		}
+	]
+}

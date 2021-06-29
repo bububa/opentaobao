@@ -19,7 +19,9 @@ type CainiaoGuoguoCpBackupAssigncourierbyidAPIResponse struct {
 
 type CainiaoGuoguoCpBackupAssigncourierbyidResponse struct {
     XMLName xml.Name `xml:"cainiao_guoguo_cp_backup_assigncourierbyid_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 指派/改派是否成功
     

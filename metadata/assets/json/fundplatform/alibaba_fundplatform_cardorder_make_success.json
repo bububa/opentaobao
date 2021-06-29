@@ -1,0 +1,50 @@
+{
+	"name": "alibaba.fundplatform.cardorder.make.success",
+	"apiChineseName": "通知制卡成功",
+	"description": "当外部业务方调用资金平台异步制卡接口后，资金平台制卡成功后通知异步通知业务方",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "制卡单号",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "制卡时传入的外部订单号",
+					"required": true
+				},
+				{
+					"name": "own_sign",
+					"type": "String",
+					"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "错误详情"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误CODE"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		}
+	]
+}

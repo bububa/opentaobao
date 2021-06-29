@@ -1,0 +1,220 @@
+{
+	"name": "alibaba.nlife.store.items.get",
+	"apiChineseName": "获取门店的商品列表(在售|已下架|全部)",
+	"description": "利用该接口可以获取到零售+商品服务中符合条件的商品列表，包括在售的、已下架的或者是所有状态的商品。",
+	"requestParams": [
+		{
+			"name": "store_id_type",
+			"type": "String",
+			"description": "门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ;  门店设备号-STORE_DEVICE",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID/设备号",
+			"required": true
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "商品类目ID"
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "商品状态: ON_SALE-在售 ; OFF_SALE-已下架 ; ALL-全部"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "商品类型: STORE_GOODS-经销/现货 ; SUPPLIER_GOODS-代销/网直供 ; TAOKE-淘宝客 ; ALL-全部商品"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "商品名称(支持模糊查询)"
+		},
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "查询开始时间"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "查询结束时间"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页的页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页时每页的数量"
+		},
+		{
+			"name": "item_type",
+			"type": "Number",
+			"description": "商品的来源：0-从零售加采购的商品；1-商户线下导入的商品"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到符合条件的结果总数"
+		},
+		{
+			"name": "item_list",
+			"type": "RetailItemTopDO []",
+			"description": "具体的商品信息列表",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "store_id_type",
+					"type": "String",
+					"description": "门店ID类型:零售+门店、商户中心门店、门店设备号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店ID",
+					"required": true
+				},
+				{
+					"name": "cid",
+					"type": "Number",
+					"description": "cid",
+					"required": true
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "类目名称",
+					"required": true
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌ID",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "条码",
+					"required": true
+				},
+				{
+					"name": "goods_no",
+					"type": "String",
+					"description": "货号/款号",
+					"required": true
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品库存",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格(单位:元,最多保留2位小数)",
+					"required": true
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "主图",
+					"required": true
+				},
+				{
+					"name": "images",
+					"type": "String",
+					"description": "商品图片列表",
+					"required": true
+				},
+				{
+					"name": "support_wzg",
+					"type": "Boolean",
+					"description": "是否支持网直供",
+					"required": true
+				},
+				{
+					"name": "support_taoke",
+					"type": "Boolean",
+					"description": "是否支持淘客",
+					"required": true
+				},
+				{
+					"name": "detail_url",
+					"type": "String",
+					"description": "商品url",
+					"required": true
+				},
+				{
+					"name": "props",
+					"type": "String",
+					"description": "商品属性 格式：pid:vid;pid:vid",
+					"required": true
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "0-线上商品，从零售加采购的；1-线下商品，商户自己导入的",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应商的ID",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商的名称",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "succes",
+			"type": "Boolean",
+			"description": "true-查询成功;false-查询失败"
+		}
+	]
+}

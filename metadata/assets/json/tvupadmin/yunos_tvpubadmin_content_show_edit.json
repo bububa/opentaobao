@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.show.edit",
+	"apiChineseName": "媒资节目信息修改",
+	"description": "供迎客松修改媒资节目信息",
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "请求入参，JSON格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "返回结果"
+		}
+	]
+}

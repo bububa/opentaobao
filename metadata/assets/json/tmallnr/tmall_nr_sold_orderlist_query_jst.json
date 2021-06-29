@@ -1,0 +1,275 @@
+{
+	"name": "tmall.nr.sold.orderlist.query.jst",
+	"apiChineseName": "已入塔商家查询订单列表",
+	"description": "该服务用于已入聚石塔的商家，获取订单列表信息；",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "NrTimingOrderSoldQueryReqDto",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "end_created",
+					"type": "Date",
+					"description": "要查询的订单创建结束时间，开始时间和结束时间之间最多相隔72小时"
+				},
+				{
+					"name": "start_created",
+					"type": "Date",
+					"description": "要查询的订单创建开始时间"
+				},
+				{
+					"name": "brand_seller_id",
+					"type": "Number",
+					"description": "要查询订单数据的商家的sellerID"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小--当前限制了20"
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "业务标识，dss标识定时送业务；jsd表示极速达业务"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NewRetailResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "NrTimingOrderSoldQueryRespDto",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "trade_order_detail_d_t_os",
+							"type": "TradeOrderDetailDto[]",
+							"description": "主订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_d_t_os",
+									"type": "NrOrderDto[]",
+									"description": "子订单列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "order_id",
+											"type": "Number",
+											"description": "子订单号",
+											"required": true
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "title",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "itemId",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "skuId",
+											"required": true
+										},
+										{
+											"name": "num",
+											"type": "Number",
+											"description": "数量",
+											"required": true
+										},
+										{
+											"name": "refund_status",
+											"type": "String",
+											"description": "退款状态可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意)，WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货)，WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货)，SELLER_REFUSE_BUYER(卖家拒绝退款)，CLOSED(退款关闭)，SUCCESS(退款成功)",
+											"required": true
+										},
+										{
+											"name": "seller_nick",
+											"type": "String",
+											"description": "商家昵称",
+											"required": true
+										},
+										{
+											"name": "buyer_nick",
+											"type": "String",
+											"description": "买家昵称",
+											"required": true
+										},
+										{
+											"name": "create_time",
+											"type": "Date",
+											"description": "createTime",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "pay_time",
+									"type": "String",
+									"description": "付款时间",
+									"required": true
+								},
+								{
+									"name": "receiver_name",
+									"type": "String",
+									"description": "收货人",
+									"required": true
+								},
+								{
+									"name": "receiver_mobile",
+									"type": "String",
+									"description": "手机号码",
+									"required": true
+								},
+								{
+									"name": "receiver_phone",
+									"type": "String",
+									"description": "电话号码",
+									"required": true
+								},
+								{
+									"name": "receiver_province",
+									"type": "String",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "receiver_city",
+									"type": "String",
+									"description": "市",
+									"required": true
+								},
+								{
+									"name": "receiver_district",
+									"type": "String",
+									"description": "区",
+									"required": true
+								},
+								{
+									"name": "receiver_town",
+									"type": "String",
+									"description": "镇",
+									"required": true
+								},
+								{
+									"name": "receiver_address",
+									"type": "String",
+									"description": "收货地址",
+									"required": true
+								},
+								{
+									"name": "appoint_start_time",
+									"type": "String",
+									"description": "预约开始时间",
+									"required": true
+								},
+								{
+									"name": "appoint_end_time",
+									"type": "String",
+									"description": "预约结束时间",
+									"required": true
+								},
+								{
+									"name": "store_code",
+									"type": "String",
+									"description": "门店编码",
+									"required": true
+								},
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "商家昵称",
+									"required": true
+								},
+								{
+									"name": "buyer_nick",
+									"type": "String",
+									"description": "买家昵称",
+									"required": true
+								},
+								{
+									"name": "create_time",
+									"type": "String",
+									"description": "订单创建时间",
+									"required": true
+								},
+								{
+									"name": "order_id",
+									"type": "String",
+									"description": "子订单编号",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "可选值:TRADE_NO_CREATE_PAY(没有创建支付宝交易)，WAIT_BUYER_PAY(等待买家付款)，SELLER_CONSIGNED_PART(卖家部分发货)，WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)，WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)，TRADE_BUYER_SIGNED(买家已签收,货到付款专用)，TRADE_FINISHED(交易成功)，TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)，TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)，PAY_PENDING(国际信用卡支付付款确认中) * WAIT_PRE_AUTH_CONFIRM(0元购合约中)，PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
+									"required": true
+								},
+								{
+									"name": "post_fee",
+									"type": "String",
+									"description": "邮费单位分",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页码",
+							"required": true
+						},
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Boolean",
+					"description": "successFlag",
+					"required": true
+				}
+			]
+		}
+	]
+}

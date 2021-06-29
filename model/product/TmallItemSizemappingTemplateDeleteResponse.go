@@ -19,7 +19,9 @@ type TmallItemSizemappingTemplateDeleteAPIResponse struct {
 
 type TmallItemSizemappingTemplateDeleteResponse struct {
     XMLName xml.Name `xml:"tmall_item_sizemapping_template_delete_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 尺码表模板ID
     

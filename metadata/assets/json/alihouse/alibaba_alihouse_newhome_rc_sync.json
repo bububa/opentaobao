@@ -1,0 +1,175 @@
+{
+	"name": "alibaba.alihouse.newhome.rc.sync",
+	"apiChineseName": "阿里房产图文草稿信息同步",
+	"description": "接收图文草稿信息",
+	"requestParams": [
+		{
+			"name": "rc",
+			"type": "RichContentDraftDto",
+			"description": "图文内容",
+			"subParams": [
+				{
+					"name": "outer_rich_content_id",
+					"type": "String",
+					"description": "外部富文本id",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "String",
+					"description": "菜鸟城市id",
+					"required": true
+				},
+				{
+					"name": "outer_ids",
+					"type": "String",
+					"description": "楼盘外部id 多个,分割"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "资讯标题",
+					"required": true
+				},
+				{
+					"name": "short_title",
+					"type": "String",
+					"description": "资讯短标题",
+					"required": true
+				},
+				{
+					"name": "tags",
+					"type": "String[]",
+					"description": "标签",
+					"required": true
+				},
+				{
+					"name": "column_name",
+					"type": "String",
+					"description": "栏目名称"
+				},
+				{
+					"name": "author",
+					"type": "String",
+					"description": "作者"
+				},
+				{
+					"name": "original",
+					"type": "Number",
+					"description": "是否原创 1 原创 0 非原创",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "String",
+					"description": "发布时间 yyyy-MM-dd HH:mm:ss格式",
+					"required": true
+				},
+				{
+					"name": "cover_images",
+					"type": "String",
+					"description": "封面图"
+				},
+				{
+					"name": "keywords",
+					"type": "String[]",
+					"description": "关键字",
+					"required": true
+				},
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "摘要"
+				},
+				{
+					"name": "source_rich_content",
+					"type": "String",
+					"description": "富文本内容",
+					"required": true
+				},
+				{
+					"name": "project_cards",
+					"type": "ProjectCardDataDTO[]",
+					"description": "楼盘卡片映射",
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "楼盘外部id",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "卡片占位符",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "video_mappings",
+					"type": "VideoDataDTO[]",
+					"description": "视频映射",
+					"subParams": [
+						{
+							"name": "video_url",
+							"type": "String",
+							"description": "视频下载链接",
+							"required": true
+						},
+						{
+							"name": "cover_image",
+							"type": "String",
+							"description": "视频封面"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "外部视频id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "1 测试数据 0 正常数据",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id",
+					"required": true
+				}
+			]
+		}
+	]
+}

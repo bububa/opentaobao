@@ -1,0 +1,122 @@
+{
+	"name": "alibaba.scs.image.matte",
+	"apiChineseName": "阿里妈妈智能创意平台在线抠图",
+	"description": "该API对外输出一个在线抠图(Deep Image Matting)接口，合作方可以通过该接口利用深度学习抠图算法从图片中抠出目标对象(比如商品或者人物轮廓)",
+	"requestParams": [
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "资源位ID，接入前由智能创意平台分配",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "服务名称，可选值: scs",
+			"required": true
+		},
+		{
+			"name": "scenes",
+			"type": "String",
+			"description": "场景名称，可选值: image_cutout",
+			"required": true
+		},
+		{
+			"name": "ob_ext",
+			"type": "String",
+			"description": "抠图上下文信息，json字符串格式，json中matting_type字段可选值: external_matting，url: 需要抠图的目标图片url",
+			"required": true
+		},
+		{
+			"name": "sessionid",
+			"type": "String",
+			"description": "32位uuid",
+			"required": true
+		},
+		{
+			"name": "ts",
+			"type": "String",
+			"description": "当前秒级时间戳",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "data_list",
+			"type": "Array []",
+			"description": "分组数据",
+			"subParams": [
+				{
+					"name": "datas",
+					"type": "Array[]",
+					"description": "组内数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "image",
+							"type": "String",
+							"description": "图片URL",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID(调用方暂不用关心)",
+							"required": true
+						},
+						{
+							"name": "crt_id",
+							"type": "String",
+							"description": "创意ID(调用方暂不用关心)",
+							"required": true
+						},
+						{
+							"name": "template_id",
+							"type": "Number",
+							"description": "模板ID(调用方暂不用关心)",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题(调用方暂不用关心)",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展信息(即抠图结果，fg字段即BASE64编码的图片二进制数据)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "group_id",
+					"type": "String",
+					"description": "组号(调用方暂不用关心)",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误提示信息"
+		},
+		{
+			"name": "session_id",
+			"type": "String",
+			"description": "会话ID"
+		},
+		{
+			"name": "bucketid",
+			"type": "String",
+			"description": "桶号ID (调用方暂不用关心)"
+		}
+	]
+}

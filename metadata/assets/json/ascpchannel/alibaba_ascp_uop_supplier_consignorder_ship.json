@@ -1,0 +1,216 @@
+{
+	"name": "alibaba.ascp.uop.supplier.consignorder.ship",
+	"apiChineseName": "履约单商家仓发货结果回传服务",
+	"description": "ERP通过该接口通知商家仓声明销售订单出库信息,支持履约单纬度全部发货的回传（目前不支持分批回传)",
+	"requestParams": [
+		{
+			"name": "consignorder_ship_request",
+			"type": "Consignordershiprequest",
+			"description": "发货回传请求模型",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "外部业务号，幂等控制使用",
+					"required": true
+				},
+				{
+					"name": "biz_order_code",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				},
+				{
+					"name": "order_items",
+					"type": "Orderitems[]",
+					"description": "履约子单明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_order_code",
+							"type": "String",
+							"description": "履约子单号",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品ID"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "货品实发数量",
+							"required": true
+						},
+						{
+							"name": "lack_quantity",
+							"type": "Number",
+							"description": "货品缺发数量"
+						}
+					]
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "发货仓编码"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "发货仓名称"
+				},
+				{
+					"name": "tms_orders",
+					"type": "Tmsorders[]",
+					"description": "包裹列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tms_order_code",
+							"type": "String",
+							"description": "运单号",
+							"required": true
+						},
+						{
+							"name": "tms_service_code",
+							"type": "String",
+							"description": "快递公司code.调用 taobao.logistics.companies.get 获取",
+							"required": true
+						},
+						{
+							"name": "tms_service_name",
+							"type": "String",
+							"description": "快递公司名称"
+						},
+						{
+							"name": "tms_items",
+							"type": "Tmsitems[]",
+							"description": "包裹明细列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sub_order_code",
+									"type": "String",
+									"description": "履约子单号",
+									"required": true
+								},
+								{
+									"name": "sc_item_id",
+									"type": "String",
+									"description": "货品ID"
+								},
+								{
+									"name": "item_quantity",
+									"type": "Number",
+									"description": "货品实发数量",
+									"required": true
+								},
+								{
+									"name": "lack_quantity",
+									"type": "Number",
+									"description": "货品缺发数量"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "发件人信息",
+					"subParams": [
+						{
+							"name": "sender_zip_code",
+							"type": "String",
+							"description": "发件方邮编"
+						},
+						{
+							"name": "sender_country",
+							"type": "String",
+							"description": "发件方国家"
+						},
+						{
+							"name": "sender_province",
+							"type": "String",
+							"description": "发件方省份"
+						},
+						{
+							"name": "sender_city",
+							"type": "String",
+							"description": "发件方城市"
+						},
+						{
+							"name": "sender_area",
+							"type": "String",
+							"description": "发件方区县"
+						},
+						{
+							"name": "sender_town",
+							"type": "String",
+							"description": "发件方镇村"
+						},
+						{
+							"name": "sender_address",
+							"type": "String",
+							"description": "发件方地址"
+						},
+						{
+							"name": "sender_name",
+							"type": "String",
+							"description": "发件方名称"
+						},
+						{
+							"name": "sender_mobile",
+							"type": "String",
+							"description": "发件方手机"
+						},
+						{
+							"name": "sender_phone",
+							"type": "String",
+							"description": "发件方电话"
+						}
+					]
+				},
+				{
+					"name": "whole_sheet_consigned",
+					"type": "Boolean",
+					"description": "是否整单发货,目前只支持履约单整单发货回传"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consignorder_ship_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

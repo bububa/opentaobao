@@ -19,7 +19,9 @@ type TaobaoAlitripCarOrderCompleteAPIResponse struct {
 
 type TaobaoAlitripCarOrderCompleteResponse struct {
     XMLName xml.Name `xml:"alitrip_car_order_complete_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 错误码
     

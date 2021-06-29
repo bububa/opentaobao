@@ -19,7 +19,9 @@ type TaobaoSubusersGetAPIResponse struct {
 
 type TaobaoSubusersGetResponse struct {
     XMLName xml.Name `xml:"subusers_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 子账号基本信息
     

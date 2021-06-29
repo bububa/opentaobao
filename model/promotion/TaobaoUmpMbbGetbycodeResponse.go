@@ -19,7 +19,9 @@ type TaobaoUmpMbbGetbycodeAPIResponse struct {
 
 type TaobaoUmpMbbGetbycodeResponse struct {
     XMLName xml.Name `xml:"ump_mbb_getbycode_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 营销积木块的内容，通过ump sdk来进行处理
     

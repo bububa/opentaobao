@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.seaking.titlerewrite.submit",
+	"apiChineseName": "提交标题改写任务",
+	"description": "提交标题改写任务",
+	"requestParams": [
+		{
+			"name": "title_rewrite_detail_list",
+			"type": "TitleRewriteDetailDto[]",
+			"description": "任务详情列表",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "target_lang",
+					"type": "String",
+					"description": "目标语种"
+				},
+				{
+					"name": "source_lang",
+					"type": "String",
+					"description": "源语种"
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "商品所在平台（ae/lazada）"
+				},
+				{
+					"name": "idx",
+					"type": "Number",
+					"description": "子任务编号，从1开始，必须连续",
+					"required": true
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "商品图片"
+				}
+			]
+		},
+		{
+			"name": "token_from",
+			"type": "String",
+			"description": "token来源站点",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id"
+		}
+	]
+}

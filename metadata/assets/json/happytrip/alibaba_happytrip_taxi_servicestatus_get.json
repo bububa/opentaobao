@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.happytrip.taxi.servicestatus.get",
+	"apiChineseName": "供应商服务开通状态",
+	"description": "获取服务供应商在每个地区的服务开通状态、支持的车型等",
+	"requestParams": [
+		{
+			"name": "cost_center",
+			"type": "String",
+			"description": "成本中心代码，用于区分不同的分账账号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "ServiceStatusModel",
+			"description": "供应商服务状态数据",
+			"subParams": [
+				{
+					"name": "cities",
+					"type": "CityServiceStatus[]",
+					"description": "供应商服务在各地区的支持状态",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city_id",
+							"type": "String",
+							"description": "供应商的城市id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "城市名称",
+							"required": true
+						},
+						{
+							"name": "support_service_levels",
+							"type": "String[]",
+							"description": "支持的车型代码列表",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误代码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误消息"
+		}
+	]
+}

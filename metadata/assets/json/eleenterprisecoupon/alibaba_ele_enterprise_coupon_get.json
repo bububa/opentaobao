@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.ele.enterprise.coupon.get",
+	"apiChineseName": "获取用户优惠券",
+	"description": "获取用户优惠券",
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_datas",
+			"type": "MyCouponsResDto []",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "优惠券名称",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "优惠券金额",
+					"required": true
+				},
+				{
+					"name": "descriptions",
+					"type": "String[]",
+					"description": "限制条件",
+					"required": true
+				},
+				{
+					"name": "threshold",
+					"type": "String",
+					"description": "优惠券门槛金额",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.ibizapi.brand.subscribe",
+	"apiChineseName": "关注品牌号",
+	"description": "关注品牌号服务",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否关注"
+		}
+	]
+}

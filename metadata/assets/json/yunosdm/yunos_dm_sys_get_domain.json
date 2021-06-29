@@ -1,0 +1,32 @@
+{
+	"name": "yunos.dm.sys.get.domain",
+	"apiChineseName": "获取动态域名",
+	"description": "返回alios ucp后端域名",
+	"requestParams": [
+		{
+			"name": "make",
+			"type": "String",
+			"description": "制造商",
+			"required": true
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "设备类型",
+			"required": true
+		},
+		{
+			"name": "sn",
+			"type": "String",
+			"description": "序列号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "obj"
+		}
+	]
+}

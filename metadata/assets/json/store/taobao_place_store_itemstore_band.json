@@ -1,0 +1,82 @@
+{
+	"name": "taobao.place.store.itemstore.band",
+	"apiChineseName": "门店商品关联绑定接口",
+	"description": "商品和多个门店关系绑定接口",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		},
+		{
+			"name": "store_ids",
+			"type": "Number[]",
+			"description": "门店id",
+			"maxListSize": 999
+		},
+		{
+			"name": "action_type",
+			"type": "String",
+			"description": "操作类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "other",
+					"type": "Other",
+					"description": "其它信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "是否为空",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_list",
+					"type": "Number[]",
+					"description": "失败的门店id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总条目数",
+					"required": true
+				}
+			]
+		}
+	]
+}

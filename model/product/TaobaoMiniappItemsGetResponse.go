@@ -19,7 +19,9 @@ type TaobaoMiniappItemsGetAPIResponse struct {
 
 type TaobaoMiniappItemsGetResponse struct {
     XMLName xml.Name `xml:"miniapp_items_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // Item(商品)结构
     

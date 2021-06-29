@@ -1,0 +1,47 @@
+{
+	"name": "tmall.brand.item.coupon.protect",
+	"apiChineseName": "全域新品店铺优惠券免除",
+	"description": "全域新品店铺优惠券免除申请打标接口",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "天猫商品id",
+			"required": true
+		},
+		{
+			"name": "protection_period",
+			"type": "String",
+			"description": "店铺优惠券新品保护期档次:PERIOD_0D(\"0天\"),     PERIOD_7D(\"7天\"),     PERIOD_14D(\"14天\"),     PERIOD_21D(\"21天\")",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "天猫品牌id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "resp_success",
+			"type": "Boolean",
+			"description": "店铺优惠券保护期设置是否成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "resp_error_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

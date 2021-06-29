@@ -1,0 +1,41 @@
+{
+	"name": "taobao.feedflow.item.adgroup.adzone.unbind",
+	"apiChineseName": "信息流单元内解绑资源位",
+	"description": "信息流单元内解绑资源位",
+	"requestParams": [
+		{
+			"name": "adzone_id_list",
+			"type": "Number[]",
+			"description": "广告位id",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "单元id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,407 @@
+{
+	"name": "tmall.nrt.item.get",
+	"apiChineseName": "家装新零售商品信息查询",
+	"description": "查询新零售商品信息",
+	"requestParams": [
+		{
+			"name": "booth_id",
+			"type": "Number",
+			"description": "城市站id"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tmall_nrt_item_get",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "TopHomeItemDto",
+					"description": "是否成功",
+					"required": true,
+					"subParams": [
+						{
+							"name": "features",
+							"type": "Json",
+							"description": "features",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态",
+							"required": true
+						},
+						{
+							"name": "booth_id",
+							"type": "String",
+							"description": "摊位ID",
+							"required": true
+						},
+						{
+							"name": "c_id",
+							"type": "Number",
+							"description": "叶子类目ID",
+							"required": true
+						},
+						{
+							"name": "c_props",
+							"type": "CategoryPropDto[]",
+							"description": "类目属性",
+							"required": true,
+							"subParams": [
+								{
+									"name": "property_id",
+									"type": "Number",
+									"description": "属性ID",
+									"required": true
+								},
+								{
+									"name": "property_name",
+									"type": "String",
+									"description": "属性名",
+									"required": true
+								},
+								{
+									"name": "value_id",
+									"type": "Number",
+									"description": "值ID",
+									"required": true
+								},
+								{
+									"name": "value_text",
+									"type": "String",
+									"description": "值名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "dealer_code",
+							"type": "String",
+							"description": "经销商编码",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "ext",
+							"type": "MacallineItemExtDto",
+							"description": "系统自动生成",
+							"required": true,
+							"subParams": [
+								{
+									"name": "brand_series_id",
+									"type": "String",
+									"description": "品牌系列ID",
+									"required": true
+								},
+								{
+									"name": "brand_series_name",
+									"type": "String",
+									"description": "品牌系列名称",
+									"required": true
+								},
+								{
+									"name": "charge_unit",
+									"type": "String",
+									"description": "计价单位",
+									"required": true
+								},
+								{
+									"name": "grade",
+									"type": "Number",
+									"description": "等级",
+									"required": true
+								},
+								{
+									"name": "label_price_type",
+									"type": "Number",
+									"description": "标签价格类型",
+									"required": true
+								},
+								{
+									"name": "original_location",
+									"type": "LocationDto",
+									"description": "产地",
+									"required": true,
+									"subParams": [
+										{
+											"name": "city",
+											"type": "String",
+											"description": "城市名",
+											"required": true
+										},
+										{
+											"name": "city_id",
+											"type": "Number",
+											"description": "城市ID",
+											"required": true
+										},
+										{
+											"name": "prov",
+											"type": "String",
+											"description": "省份名",
+											"required": true
+										},
+										{
+											"name": "prov_id",
+											"type": "Number",
+											"description": "省份ID",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "类型，1：国内，2：国外",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "price_type",
+									"type": "Number",
+									"description": "价格类型，1：明码实价，2：明码议价",
+									"required": true
+								},
+								{
+									"name": "pricer",
+									"type": "String",
+									"description": "物价员",
+									"required": true
+								},
+								{
+									"name": "secondary_steel",
+									"type": "String",
+									"description": "辅材",
+									"required": true
+								},
+								{
+									"name": "specification",
+									"type": "String",
+									"description": "规格",
+									"required": true
+								},
+								{
+									"name": "specification_unit",
+									"type": "String",
+									"description": "规格单位",
+									"required": true
+								},
+								{
+									"name": "substrate",
+									"type": "String",
+									"description": "基材",
+									"required": true
+								},
+								{
+									"name": "support_return_goods",
+									"type": "Boolean",
+									"description": "是否支持退换货",
+									"required": true
+								},
+								{
+									"name": "veneer",
+									"type": "String",
+									"description": "饰面",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "images",
+							"type": "ItemImageDto[]",
+							"description": "图片信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "position",
+									"type": "Number",
+									"description": "图片次序",
+									"required": true
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "商品类型，1：主商品，2：摊位商品，3：城市站商品",
+							"required": true
+						},
+						{
+							"name": "main_item_id",
+							"type": "Number",
+							"description": "主商品ID",
+							"required": true
+						},
+						{
+							"name": "mall_id",
+							"type": "String",
+							"description": "卖场ID",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "skus",
+							"type": "SkuDto[]",
+							"description": "SKU",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "条码",
+									"required": true
+								},
+								{
+									"name": "create_time",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "商家编码",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格",
+									"required": true
+								},
+								{
+									"name": "properties",
+									"type": "CategoryPropDto[]",
+									"description": "SKU属性",
+									"required": true,
+									"subParams": [
+										{
+											"name": "property_id",
+											"type": "Number",
+											"description": "属性ID",
+											"required": true
+										},
+										{
+											"name": "property_name",
+											"type": "String",
+											"description": "属性名",
+											"required": true
+										},
+										{
+											"name": "value_id",
+											"type": "Number",
+											"description": "值ID",
+											"required": true
+										},
+										{
+											"name": "value_text",
+											"type": "String",
+											"description": "值名称",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "SKU ID",
+									"required": true
+								},
+								{
+									"name": "update_time",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "update_time",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

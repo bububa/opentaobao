@@ -1,0 +1,308 @@
+{
+	"name": "tmall.txcs.finance.bill.check",
+	"apiChineseName": "天猫超市外部商家财务账单对账",
+	"description": "提供天猫超市外部合作商家财务账单对账",
+	"requestParams": [
+		{
+			"name": "statement_bill_fee_detail_query",
+			"type": "StatementBillFeeDetailQuery",
+			"description": "查询参数",
+			"subParams": [
+				{
+					"name": "settlement_company_code",
+					"type": "String",
+					"description": "结算公司编码"
+				},
+				{
+					"name": "statement_bill_code",
+					"type": "String",
+					"description": "账单编码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码"
+				}
+			]
+		},
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "门店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AccessBaseResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "WebPageData",
+					"description": "具体内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pagination",
+							"type": "Pagination",
+							"description": "页码信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "总数",
+									"required": true
+								},
+								{
+									"name": "page_size",
+									"type": "Number",
+									"description": "单页个数",
+									"required": true
+								},
+								{
+									"name": "current_page",
+									"type": "Number",
+									"description": "当前页码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "list",
+							"type": "WebPageDataList[]",
+							"description": "结果数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "statement_bill_code",
+									"type": "String",
+									"description": "对账单号",
+									"required": true
+								},
+								{
+									"name": "shop_code",
+									"type": "String",
+									"description": "店仓编码",
+									"required": true
+								},
+								{
+									"name": "item_quantity",
+									"type": "String",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "source_type_desc",
+									"type": "String",
+									"description": "来源单据描述",
+									"required": true
+								},
+								{
+									"name": "biz_bill_code",
+									"type": "String",
+									"description": "业务单据编码",
+									"required": true
+								},
+								{
+									"name": "settle_way_desc",
+									"type": "String",
+									"description": "结算方式描述",
+									"required": true
+								},
+								{
+									"name": "shop_name",
+									"type": "String",
+									"description": "店仓名称",
+									"required": true
+								},
+								{
+									"name": "biz_order_code",
+									"type": "String",
+									"description": "业务订单编号",
+									"required": true
+								},
+								{
+									"name": "biz_ext_attr",
+									"type": "BizExtAttr",
+									"description": "扩展信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "summary_id",
+											"type": "String",
+											"description": "汇总编码",
+											"required": true
+										},
+										{
+											"name": "bill_create_time",
+											"type": "String",
+											"description": "账单创建时间",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "leaf_cat_id",
+									"type": "Number",
+									"description": "叶子类目编码",
+									"required": true
+								},
+								{
+									"name": "contract_version",
+									"type": "String",
+									"description": "合同版本号",
+									"required": true
+								},
+								{
+									"name": "biz_time",
+									"type": "Number",
+									"description": "业务时间",
+									"required": true
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "税率",
+									"required": true
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位",
+									"required": true
+								},
+								{
+									"name": "source_type",
+									"type": "String",
+									"description": "来源单据类型",
+									"required": true
+								},
+								{
+									"name": "fee_code",
+									"type": "String",
+									"description": "费用编码",
+									"required": true
+								},
+								{
+									"name": "fee_name",
+									"type": "String",
+									"description": "费用名称",
+									"required": true
+								},
+								{
+									"name": "untax_amount",
+									"type": "String",
+									"description": "未税金额",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "Currency",
+									"description": "币种",
+									"required": true,
+									"subParams": [
+										{
+											"name": "symbol",
+											"type": "String",
+											"description": "符号",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "显示中文",
+											"required": true
+										},
+										{
+											"name": "default_fraction_digits",
+											"type": "Number",
+											"description": "默认位数",
+											"required": true
+										},
+										{
+											"name": "currency_code",
+											"type": "String",
+											"description": "显示英文",
+											"required": true
+										},
+										{
+											"name": "numeric_code",
+											"type": "Number",
+											"description": "货币编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "settlement_amount",
+									"type": "String",
+									"description": "结算金额",
+									"required": true
+								},
+								{
+									"name": "tax_amount",
+									"type": "String",
+									"description": "税额",
+									"required": true
+								},
+								{
+									"name": "contract_code",
+									"type": "String",
+									"description": "合同编码",
+									"required": true
+								},
+								{
+									"name": "settle_way",
+									"type": "Number",
+									"description": "结算方式描述",
+									"required": true
+								},
+								{
+									"name": "biz_code",
+									"type": "String",
+									"description": "业务编码",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

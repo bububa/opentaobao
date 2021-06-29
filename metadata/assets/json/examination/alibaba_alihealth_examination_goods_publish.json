@@ -1,0 +1,211 @@
+{
+	"name": "alibaba.alihealth.examination.goods.publish",
+	"apiChineseName": "体检机构对接_商品发布／更新",
+	"description": "体检机构对接_商品发布／更新",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "String",
+			"description": "商品id，机构保证全局唯一",
+			"required": true,
+			"maxLength": 100
+		},
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "商品名称",
+			"required": true,
+			"maxLength": 100
+		},
+		{
+			"name": "package_list",
+			"type": "Package[]",
+			"description": "套餐列表",
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别（0：男，1：女，2：通用）",
+					"required": true
+				},
+				{
+					"name": "contract_price",
+					"type": "String",
+					"description": "售卖价（单位分）（数值需要大于100，且大于settlement_price字段的数值），精确到分，民营商品必需要，并且一个商品组下面的所有套餐售卖价必须一样",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "Item[]",
+					"description": "体检项列表",
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "体检标题",
+							"required": true
+						},
+						{
+							"name": "detail",
+							"type": "String",
+							"description": "体检项描述"
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "子标题"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "体检项编码"
+						},
+						{
+							"name": "item_group_code",
+							"type": "String",
+							"description": "体检组编码"
+						},
+						{
+							"name": "item_group_weight",
+							"type": "String",
+							"description": "体检组显示权重"
+						}
+					]
+				},
+				{
+					"name": "settlement_price",
+					"type": "String",
+					"description": "结算价（单位分）（数值需要大于100），精确到分",
+					"required": true
+				},
+				{
+					"name": "package_code",
+					"type": "String",
+					"description": "套餐代码，机构保证全局唯一",
+					"required": true
+				},
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "套餐名称（必填！！！）"
+				},
+				{
+					"name": "package_detail",
+					"type": "String",
+					"description": "套餐详情"
+				},
+				{
+					"name": "marital_status",
+					"type": "String",
+					"description": "婚否（0：未婚，1：已婚，2：通用）",
+					"required": true
+				},
+				{
+					"name": "labels",
+					"type": "String[]",
+					"description": "入职体检,父母体检,女性体检,男性体检,儿童体检,婚前孕前,肿瘤筛查,深度体检,核酸检测,专项检查,白领体检,特价体检,证件体检,皮肤检测,健康证；多个逗号分隔"
+				},
+				{
+					"name": "feature_item",
+					"type": "String[]",
+					"description": "三高检测,肿瘤筛查,前列腺检查,宫颈癌筛查,妇科检查,乳腺检查,甲状腺检查,心脑血管检查,胸肺部检查,肝胆检查,专项检查,基因检测,脱发检测,毛囊检测,毛发检测,胃部疾病筛查,肠道疾病筛查,脊椎检测；多个逗号分隔"
+				},
+				{
+					"name": "detail_image",
+					"type": "String",
+					"description": "http://123123.jpg"
+				},
+				{
+					"name": "list_image",
+					"type": "String",
+					"description": "http://123123.jpg"
+				},
+				{
+					"name": "mark_price",
+					"type": "String",
+					"description": "市场价（单位分）民营平台商品必需要，并且一个商品组下面的所有套餐市场价必须一样"
+				},
+				{
+					"name": "service_types",
+					"type": "String[]",
+					"description": "服务类型 ：ONSITE_SERVICE（到店检测）, DOOR_TO_DOOR_SERVICE（上门检测） ; 多种服务类型用逗号分隔"
+				},
+				{
+					"name": "info_image",
+					"type": "String",
+					"description": "http://123123.jpg"
+				}
+			]
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "操作类型: publish=发布，update=更新",
+			"required": true
+		},
+		{
+			"name": "goods_desc",
+			"type": "String",
+			"description": "最多200个字，界面对应商品详情页描述"
+		},
+		{
+			"name": "target_group",
+			"type": "String",
+			"description": "最多256个字，界面对应列表文字"
+		},
+		{
+			"name": "label",
+			"type": "String",
+			"description": "联调中正式上线前标签给B；联调后正式上线后标签给C"
+		},
+		{
+			"name": "category_id",
+			"type": "String",
+			"description": "商品类目，1：体检 ，2：核酸，4 ：健康证"
+		},
+		{
+			"name": "mode",
+			"type": "String",
+			"description": "0自营商品，1平台商品"
+		},
+		{
+			"name": "backend_category_id",
+			"type": "Number",
+			"description": "类目ID，填入叶子类目ID，儿童体检: 20210204000004, 中青年体检: 20210204000005, 老年体检: 20210204000006, 证件体检（含入职）: 20210204000007, 核酸检测（到店服务）: 20210204000008, 专科服务（不包含核酸检测）: 20210204000009, 上门检测: 202102040000010, 上门护理: 202102040000011, 上门体检 202102040000012"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "详细错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "结果数据，通常为空",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行成功标示",
+					"required": true
+				}
+			]
+		}
+	]
+}

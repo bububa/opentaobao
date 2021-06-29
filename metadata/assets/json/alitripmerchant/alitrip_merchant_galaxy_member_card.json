@@ -1,0 +1,109 @@
+{
+	"name": "alitrip.merchant.galaxy.member.card",
+	"apiChineseName": "星河-获取会员卡信息",
+	"description": "星河=根据会员等级获取会员的权益",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户信息",
+			"required": true
+		},
+		{
+			"name": "fliggy_level",
+			"type": "String",
+			"description": "飞猪等级",
+			"required": true
+		},
+		{
+			"name": "card_type",
+			"type": "String",
+			"description": "卡类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "MemberCardDto",
+					"description": "返回参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "member_rights",
+							"type": "MemberRights[]",
+							"description": "会员权益",
+							"required": true,
+							"subParams": [
+								{
+									"name": "member_right_icon",
+									"type": "String",
+									"description": "权益图标",
+									"required": true
+								},
+								{
+									"name": "member_right_desc",
+									"type": "String",
+									"description": "权益描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "会员卡ID",
+							"required": true
+						},
+						{
+							"name": "fliggy_level",
+							"type": "String",
+							"description": "飞猪等级",
+							"required": true
+						},
+						{
+							"name": "member_card_pic",
+							"type": "String",
+							"description": "会员卡图片地址",
+							"required": true
+						},
+						{
+							"name": "hotel_level",
+							"type": "String",
+							"description": "酒店等级",
+							"required": true
+						},
+						{
+							"name": "card_name",
+							"type": "String",
+							"description": "权益描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

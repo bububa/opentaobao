@@ -1,0 +1,117 @@
+{
+	"name": "alibaba.alihealth.lab.store.sync",
+	"apiChineseName": "阿里健康检验检测业务，isv门店同步到健康",
+	"description": "阿里健康检验检测业务，isv门店同步到健康。支持门店的上线、下线操作",
+	"requestParams": [
+		{
+			"name": "isv_store_status",
+			"type": "String",
+			"description": "EFFECTIVE 生效，INVALID 失效",
+			"required": true
+		},
+		{
+			"name": "reserve_notice",
+			"type": "String",
+			"description": "预约须知"
+		},
+		{
+			"name": "support_online_report",
+			"type": "Boolean",
+			"description": "支持在线报告"
+		},
+		{
+			"name": "store_type_desc",
+			"type": "String",
+			"description": "门店类型描述"
+		},
+		{
+			"name": "social_credit_code",
+			"type": "String",
+			"description": "企业社会征信号"
+		},
+		{
+			"name": "license_no",
+			"type": "String",
+			"description": "营业执照编号"
+		},
+		{
+			"name": "license_name",
+			"type": "String",
+			"description": "营业执照名称"
+		},
+		{
+			"name": "store_routes_desc",
+			"type": "String",
+			"description": "门店交通路线"
+		},
+		{
+			"name": "work_time_desc",
+			"type": "String",
+			"description": "营业时间描述"
+		},
+		{
+			"name": "store_phone",
+			"type": "String",
+			"description": "门店电话号码"
+		},
+		{
+			"name": "store_intro",
+			"type": "String",
+			"description": "门店介绍"
+		},
+		{
+			"name": "longitude",
+			"type": "BigDecimal",
+			"description": "经度"
+		},
+		{
+			"name": "latitude",
+			"type": "BigDecimal",
+			"description": "纬度"
+		},
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市编码"
+		},
+		{
+			"name": "store_address",
+			"type": "String",
+			"description": "门店地址"
+		},
+		{
+			"name": "isv_store_code",
+			"type": "String",
+			"description": "isv门店编码",
+			"required": true
+		},
+		{
+			"name": "store_name",
+			"type": "String",
+			"description": "门店名称"
+		},
+		{
+			"name": "allowed_tb_item_category_ids",
+			"type": "Number[]",
+			"description": "支持的淘宝商品类目ID，阿里医院场景",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "result_status",
+			"type": "String",
+			"description": "SUCCESS - 成功，FAIL - 失败，UNKNOWN - 未知"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "可读的错误码"
+		}
+	]
+}

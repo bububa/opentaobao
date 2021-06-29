@@ -1,0 +1,43 @@
+{
+	"name": "taobao.uscesl.biz.esl.bind",
+	"apiChineseName": "电子价签绑定接口",
+	"description": "电子价签商品绑定接口",
+	"requestParams": [
+		{
+			"name": "esl_bar_code",
+			"type": "String",
+			"description": "价签条码",
+			"required": true
+		},
+		{
+			"name": "item_bar_code",
+			"type": "String",
+			"description": "商品条码",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店storeId",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家ID",
+			"required": true
+		},
+		{
+			"name": "extend_info",
+			"type": "Json",
+			"description": "额外扩展信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "成功与否看result.success，返回true或者false"
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoWlbOrderdetailDateGetAPIResponse struct {
 
 type TaobaoWlbOrderdetailDateGetResponse struct {
     XMLName xml.Name `xml:"wlb_orderdetail_date_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 物流宝订单，并且包含订单详情
     

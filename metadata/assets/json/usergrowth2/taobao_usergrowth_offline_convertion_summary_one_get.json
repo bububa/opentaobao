@@ -1,0 +1,150 @@
+{
+	"name": "taobao.usergrowth.offline.convertion.summary.one.get",
+	"apiChineseName": "手淘用增 线下业务 转化t+1汇总数据",
+	"description": "淘系用户增长团队-线下拉新业务，对线下渠道提供mapi，目的是为了给有开发能力的渠道提供返数功能，方便渠道对手下的推广者结算（t+1汇总）",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "OfflineMapiQuery",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总条数"
+				},
+				{
+					"name": "end_date",
+					"type": "Number",
+					"description": "截止日期",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "String",
+					"description": "任务ID",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "String",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "Number",
+					"description": "开始日期",
+					"required": true
+				},
+				{
+					"name": "promoter_code",
+					"type": "String",
+					"description": "推广码code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "跟踪id"
+		},
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "总条数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页多少条记录"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "1"
+		},
+		{
+			"name": "list",
+			"type": "OfflineConvertionSummaryT1Dto []",
+			"description": "集合",
+			"subParams": [
+				{
+					"name": "register_user_cnt_t1",
+					"type": "Number",
+					"description": "结算新登数",
+					"required": true
+				},
+				{
+					"name": "purchase_user_cnt",
+					"type": "Number",
+					"description": "购买首购数",
+					"required": true
+				},
+				{
+					"name": "task_name",
+					"type": "String",
+					"description": "任务名称",
+					"required": true
+				},
+				{
+					"name": "company",
+					"type": "String",
+					"description": "渠道名称",
+					"required": true
+				},
+				{
+					"name": "register_user_cnt",
+					"type": "Number",
+					"description": "归因新登数",
+					"required": true
+				},
+				{
+					"name": "purchase_user_cnt_t1",
+					"type": "Number",
+					"description": "结算首购数",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "String",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "String",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "ds",
+					"type": "Number",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "promoter_code",
+					"type": "String",
+					"description": "推广码code",
+					"required": true
+				}
+			]
+		}
+	]
+}

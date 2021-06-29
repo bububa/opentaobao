@@ -1,0 +1,31 @@
+{
+	"name": "alibaba.alihealth.drug.updatebarcode.bytraccode",
+	"apiChineseName": "根据追溯码修改69码",
+	"description": "根据追溯码修改69码",
+	"requestParams": [
+		{
+			"name": "trace_code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "69码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		}
+	]
+}

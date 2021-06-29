@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.fmhealth.weight.lossplan.syncweightdata",
+	"apiChineseName": "薄荷同步三方记录",
+	"description": "用于三方薄荷同步数据到健康会员",
+	"requestParams": [
+		{
+			"name": "tp_user_id",
+			"type": "Number",
+			"description": "阿里健康id",
+			"required": true
+		},
+		{
+			"name": "weight",
+			"type": "String",
+			"description": "记录体重",
+			"required": true
+		},
+		{
+			"name": "record_date",
+			"type": "String",
+			"description": "记录日期",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

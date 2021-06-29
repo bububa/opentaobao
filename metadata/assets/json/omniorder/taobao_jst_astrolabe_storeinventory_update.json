@@ -1,0 +1,117 @@
+{
+	"name": "taobao.jst.astrolabe.storeinventory.update",
+	"apiChineseName": "后端商品库存增量更新接口",
+	"description": "增量更新门店或电商仓库存，该接口一次可以同时增量更新多个门店的多个商品的非确定性库存",
+	"requestParams": [
+		{
+			"name": "operation_time",
+			"type": "String",
+			"description": "操作时间",
+			"required": true
+		},
+		{
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表",
+					"subParams": [
+						{
+							"name": "bill_num",
+							"type": "String",
+							"description": "单据流水号，用于幂等操作",
+							"required": true
+						},
+						{
+							"name": "bill_type",
+							"type": "String",
+							"description": "单据类型",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "淘宝后端商品id",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "ISV系统中商品编码"
+						},
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "库存类型",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "对应类型的库存数量（正数",
+							"required": true
+						},
+						{
+							"name": "final_quantity",
+							"type": "Number",
+							"description": "调整后库存数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "warehouse_id",
+					"type": "String",
+					"description": "门店ID（商户中心） 或 电商仓ID",
+					"required": true
+				},
+				{
+					"name": "warehouse_type",
+					"type": "String",
+					"description": "库存来源的类型",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应标示"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "响应标签"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "error_descriptions",
+			"type": "Error []",
+			"description": "错误信息列表",
+			"subParams": [
+				{
+					"name": "description",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "failed_bill_num",
+					"type": "String",
+					"description": "处理失败的流水号",
+					"required": true
+				}
+			]
+		}
+	]
+}

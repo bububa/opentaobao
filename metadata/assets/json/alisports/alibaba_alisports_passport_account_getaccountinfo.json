@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.alisports.passport.account.getaccountinfo",
+	"apiChineseName": "获取会员信息",
+	"description": "获取阿里体育会员信息",
+	"requestParams": [
+		{
+			"name": "need_detail",
+			"type": "Number",
+			"description": "是否获取详情0否1是 默认0"
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "当前时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "业务appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "业务加密参数",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "查询类型：1.用户的阿里体育id, 4.用户通过登录生成的sso_token",
+			"required": true
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "要查询的值",
+			"required": true
+		},
+		{
+			"name": "ext_info_type",
+			"type": "String",
+			"description": "决定返回值是否包含扩展字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "状态码 200表示操作成功"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "提示信息"
+		},
+		{
+			"name": "alisp_data",
+			"type": "Json",
+			"description": "返回值"
+		}
+	]
+}

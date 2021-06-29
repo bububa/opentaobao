@@ -1,0 +1,150 @@
+{
+	"name": "yunos.tvpubadmin.content.child.recoitem.query",
+	"apiChineseName": "查询少儿大厅推荐内容列表",
+	"description": "查询少儿大厅推荐内容列表",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "主键ID"
+		},
+		{
+			"name": "node_id",
+			"type": "Number",
+			"description": "所属类目ID"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "名称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "单页数量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageVo",
+			"description": "搜索结果",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "record_list",
+					"type": "ChildRecItemVo[]",
+					"description": "内容列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "自增ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "版本",
+							"required": true
+						},
+						{
+							"name": "node_id",
+							"type": "Number",
+							"description": "所属类目",
+							"required": true
+						},
+						{
+							"name": "layout_id",
+							"type": "Number",
+							"description": "布局ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态：1-上线，0-下线",
+							"required": true
+						},
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "排序",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展数据",
+							"required": true
+						},
+						{
+							"name": "rule_id",
+							"type": "Number",
+							"description": "主题ID",
+							"required": true
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "图片链接",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

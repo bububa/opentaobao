@@ -1,0 +1,77 @@
+{
+	"name": "alitrip.travel.bookinfos.search",
+	"apiChineseName": "飞猪度假-订单预定信息列表搜索接口",
+	"description": "查询订单预定信息列表",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小，最大支持的页面大小为100。如查询旅行购订单，则最大支持的页面大小为30"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "apply_time_end",
+			"type": "Date",
+			"description": "申请时间_结束，精确到分钟",
+			"required": true
+		},
+		{
+			"name": "apply_time_start",
+			"type": "Date",
+			"description": "申请时间_开始，精确到分钟",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总数"
+		},
+		{
+			"name": "order_book_info_list",
+			"type": "FirstResult []",
+			"description": "订单及预约id映射列表",
+			"subParams": [
+				{
+					"name": "book_order_id",
+					"type": "Number",
+					"description": "预约订单ID",
+					"required": true
+				},
+				{
+					"name": "sub_tc_order_id",
+					"type": "Number",
+					"description": "TC子订单号",
+					"required": true
+				},
+				{
+					"name": "book_info_id",
+					"type": "Number",
+					"description": "预约ID(主键)",
+					"required": true
+				},
+				{
+					"name": "tc_order_id",
+					"type": "Number",
+					"description": "TC主订单号",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "true或false"
+		}
+	]
+}

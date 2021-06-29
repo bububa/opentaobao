@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.alihouse.newhome.project.phone.submit",
+	"apiChineseName": "提交楼盘电话",
+	"description": "提交楼盘电话",
+	"requestParams": [
+		{
+			"name": "project_phone_dto",
+			"type": "ProjectPhoneDto",
+			"description": "楼盘电话",
+			"subParams": [
+				{
+					"name": "sub_phone",
+					"type": "String",
+					"description": "分机号"
+				},
+				{
+					"name": "main_phone",
+					"type": "String",
+					"description": "主号码"
+				},
+				{
+					"name": "phone_type",
+					"type": "String",
+					"description": "1-楼盘  2-小区  3-房源  4-VR"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

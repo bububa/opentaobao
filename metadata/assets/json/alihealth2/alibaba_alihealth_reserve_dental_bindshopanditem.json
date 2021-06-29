@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.alihealth.reserve.dental.bindshopanditem",
+	"apiChineseName": "绑定门店信息，商品信息",
+	"description": "绑定门店信息，商品信息",
+	"requestParams": [
+		{
+			"name": "bind_list",
+			"type": "BindDTO[]",
+			"description": "bind_list",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "sp_store_id",
+					"type": "String",
+					"description": "sp(服务商)门店ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "天猫门店ID",
+					"required": true
+				},
+				{
+					"name": "sp_item_id",
+					"type": "String",
+					"description": "sp(服务商)商品ID",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "天猫商品ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

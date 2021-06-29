@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.ailab.user.open.uid.get",
+	"apiChineseName": "access token 获取精灵用户 id",
+	"description": "access token 获取精灵用户 id",
+	"requestParams": [
+		{
+			"name": "skill_access_token",
+			"type": "String",
+			"description": "access token",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "skill id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "详细信息"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "user id"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "状态码，200 成功，其他失败"
+		}
+	]
+}

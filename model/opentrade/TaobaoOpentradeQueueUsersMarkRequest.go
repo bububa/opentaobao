@@ -1,0 +1,116 @@
+package opentrade
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+尖货交易可购买用户标记 APIRequest
+taobao.opentrade.queue.users.mark
+
+尖货交易用户标记信息回传，根据openId标记用户可购买商品
+*/
+type TaobaoOpentradeQueueUsersMarkRequest struct {
+    model.Params
+
+    // 用户状态，可任意传入，后续查询返回
+    status   string 
+
+    // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
+    activityId   string 
+
+    // 排队商品SKU ID，不存在传0
+    skuId   int64 
+
+    // 排队商品ID
+    itemId   int64 
+
+    // 本次待标记的用户列表，多个以逗号(,)分割，最大20个
+    openUserIds   []string 
+
+    // 是否目标用户，传入true后，用户可购买商品
+    hit   bool 
+
+}
+
+func NewTaobaoOpentradeQueueUsersMarkRequest() *TaobaoOpentradeQueueUsersMarkRequest{
+    return &TaobaoOpentradeQueueUsersMarkRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetApiMethodName() string {
+    return "taobao.opentrade.queue.users.mark"
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetStatus(status string) error {
+    r.status = status
+    r.Set("status", status)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetStatus() string {
+    return r.status
+}
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetActivityId(activityId string) error {
+    r.activityId = activityId
+    r.Set("activity_id", activityId)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetActivityId() string {
+    return r.activityId
+}
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetSkuId(skuId int64) error {
+    r.skuId = skuId
+    r.Set("sku_id", skuId)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetSkuId() int64 {
+    return r.skuId
+}
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetItemId(itemId int64) error {
+    r.itemId = itemId
+    r.Set("item_id", itemId)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetItemId() int64 {
+    return r.itemId
+}
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetOpenUserIds(openUserIds []string) error {
+    r.openUserIds = openUserIds
+    r.Set("open_user_ids", openUserIds)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetOpenUserIds() []string {
+    return r.openUserIds
+}
+
+func (r *TaobaoOpentradeQueueUsersMarkRequest) SetHit(hit bool) error {
+    r.hit = hit
+    r.Set("hit", hit)
+    return nil
+}
+
+func (r TaobaoOpentradeQueueUsersMarkRequest) GetHit() bool {
+    return r.hit
+}
+

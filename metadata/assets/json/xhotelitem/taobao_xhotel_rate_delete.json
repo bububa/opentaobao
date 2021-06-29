@@ -1,0 +1,49 @@
+{
+	"name": "taobao.xhotel.rate.delete",
+	"apiChineseName": "rate删除接口",
+	"description": "酒店产品库rate删除",
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不用填写，使用须申请"
+		},
+		{
+			"name": "rateplan_code",
+			"type": "String",
+			"description": "商家价格政策编码"
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "商家房型ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "rateid_gid_rpid",
+					"type": "String",
+					"description": "rateid-房型id-房价id",
+					"required": true
+				}
+			]
+		}
+	]
+}

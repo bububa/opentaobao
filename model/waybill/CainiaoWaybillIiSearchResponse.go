@@ -19,7 +19,9 @@ type CainiaoWaybillIiSearchAPIResponse struct {
 
 type CainiaoWaybillIiSearchResponse struct {
     XMLName xml.Name `xml:"cainiao_waybill_ii_search_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // CP网点信息及对应的商家的发货信息
     

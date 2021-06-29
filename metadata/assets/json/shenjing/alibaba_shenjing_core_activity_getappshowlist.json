@@ -1,0 +1,206 @@
+{
+	"name": "alibaba.shenjing.core.activity.getappshowlist",
+	"apiChineseName": "获取神鲸活动列表",
+	"description": "获取神鲸活动列表",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "验权对象",
+			"subParams": [
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "授权的appCode"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID"
+				},
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "系统ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区Id"
+				}
+			]
+		},
+		{
+			"name": "timestamp1",
+			"type": "Number",
+			"description": "时间戳"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "size",
+			"type": "Number",
+			"description": "一页行数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回的结果对象",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "返回内容(分页对象)",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "分页总数",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "一页行数",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "分页总数",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "T[]",
+							"description": "活动列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "full_adress",
+									"type": "String",
+									"description": "获取地址",
+									"required": true
+								},
+								{
+									"name": "act_detail_url",
+									"type": "String",
+									"description": "活动详情的URL地址",
+									"required": true
+								},
+								{
+									"name": "content",
+									"type": "String",
+									"description": "活动的内容",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "发布状态  \"draft\":\"草稿\",\"wait\":\"待发布\",  \"underway\":\"进行中\",  \"over\":\"已结束\",  \"insertingcoil\":\"已下线\"",
+									"required": true
+								},
+								{
+									"name": "view_end_time",
+									"type": "Date",
+									"description": "活动展示结束时间",
+									"required": true
+								},
+								{
+									"name": "view_start_time",
+									"type": "Date",
+									"description": "活动展示开始时间",
+									"required": true
+								},
+								{
+									"name": "act_end_time",
+									"type": "Date",
+									"description": "活动结束时间",
+									"required": true
+								},
+								{
+									"name": "act_start_time",
+									"type": "Date",
+									"description": "活动开始时间",
+									"required": true
+								},
+								{
+									"name": "wy_company_id",
+									"type": "Number",
+									"description": "物业公司ID",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "活动主键ID",
+									"required": true
+								},
+								{
+									"name": "images",
+									"type": "String",
+									"description": "宣传图片多个,分隔",
+									"required": true
+								},
+								{
+									"name": "timestamp",
+									"type": "Number",
+									"description": "活动创建的时间戳",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "活动名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "一页行数",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标示",
+					"required": true
+				}
+			]
+		}
+	]
+}

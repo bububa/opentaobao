@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.ms.area.district.list",
+	"apiChineseName": "疫苗预约地市信息查询",
+	"description": "微信小程序疫苗预约地市信息查询",
+	"requestParams": [
+		{
+			"name": "division_id",
+			"type": "Number",
+			"description": "省份ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "division_list",
+					"type": "DivisionDto[]",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "child_division_list",
+							"type": "DivisionDto[]",
+							"description": "childDivision",
+							"required": true,
+							"subParams": [
+								{
+									"name": "division_name",
+									"type": "String",
+									"description": "divisionName",
+									"required": true
+								},
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "divisionId",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "divisionId",
+							"required": true
+						},
+						{
+							"name": "division_name",
+							"type": "String",
+							"description": "divisionName",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

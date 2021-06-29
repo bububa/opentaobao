@@ -1,0 +1,21 @@
+{
+	"name": "alibaba.scbp.showcase.addproduct",
+	"apiChineseName": "批量添加橱窗商品",
+	"description": "批量添加商品到橱窗",
+	"requestParams": [
+		{
+			"name": "product_id_list",
+			"type": "Number[]",
+			"description": "需要添加的产品ids",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否添加成功"
+		}
+	]
+}

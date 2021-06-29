@@ -1,0 +1,133 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.billcheck",
+	"apiChineseName": "疫苗追溯验证",
+	"description": "各级疾控在入库完成后，需要做追溯信息验证",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "调用企业ID"
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型",
+			"required": true
+		},
+		{
+			"name": "ower_ref_ent_id",
+			"type": "String",
+			"description": "单据企业refEntId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "bill_time",
+							"type": "Date",
+							"description": "单据日期",
+							"required": true
+						},
+						{
+							"name": "bill_type",
+							"type": "Number",
+							"description": "单据类型",
+							"required": true
+						},
+						{
+							"name": "matched_count",
+							"type": "Number",
+							"description": "追溯验证数量",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "收发货企业名称",
+							"required": true
+						},
+						{
+							"name": "matched_rate_show",
+							"type": "String",
+							"description": "验证率",
+							"required": true
+						},
+						{
+							"name": "bill_code",
+							"type": "String",
+							"description": "单据编号",
+							"required": true
+						},
+						{
+							"name": "detail_info_list",
+							"type": "DetailInfoList[]",
+							"description": "码验证信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "produce_batch_no",
+									"type": "String",
+									"description": "批次编号",
+									"required": true
+								},
+								{
+									"name": "drug_info",
+									"type": "String",
+									"description": "药品信息",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "追溯码",
+									"required": true
+								},
+								{
+									"name": "code_is_matched",
+									"type": "String",
+									"description": "验证状态， 1 已验证 ； 其他是未验证",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "服务返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "服务返回信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

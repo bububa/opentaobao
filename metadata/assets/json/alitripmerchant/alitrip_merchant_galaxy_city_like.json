@@ -1,0 +1,101 @@
+{
+	"name": "alitrip.merchant.galaxy.city.like",
+	"apiChineseName": "星河-酒店城市模糊查询",
+	"description": "根据城市模糊查询，雅高酒店所在城市的城市信息",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "商家租户id",
+			"required": true
+		},
+		{
+			"name": "city_name",
+			"type": "String",
+			"description": "城市模糊",
+			"required": true
+		},
+		{
+			"name": "domestic",
+			"type": "Number",
+			"description": "0国内1国外"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "contents",
+					"type": "AddressSearchDto[]",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "domestic",
+							"type": "Number",
+							"description": "0国内1国外",
+							"required": true
+						},
+						{
+							"name": "city_url",
+							"type": "String",
+							"description": "城市图片url",
+							"required": true
+						},
+						{
+							"name": "city_py_head",
+							"type": "String",
+							"description": "城市拼音首字母",
+							"required": true
+						},
+						{
+							"name": "country_code",
+							"type": "Number",
+							"description": "国家编码",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "Number",
+							"description": "城市编码",
+							"required": true
+						},
+						{
+							"name": "city_cn",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "country_cn",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

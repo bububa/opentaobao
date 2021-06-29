@@ -1,0 +1,63 @@
+{
+	"name": "taobao.feedflow.item.creative.delete",
+	"apiChineseName": "信息流删除创意",
+	"description": "信息流删除创意",
+	"requestParams": [
+		{
+			"name": "creative_id_list",
+			"type": "Number[]",
+			"description": "创意id列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对下",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				},
+				{
+					"name": "error_list",
+					"type": "ErrorInfoDto[]",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "失败原因",
+							"required": true
+						},
+						{
+							"name": "error_object_list",
+							"type": "ErrorObjectDto[]",
+							"description": "该原因失败对象列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "creative_id",
+									"type": "Number",
+									"description": "创意id",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

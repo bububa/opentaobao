@@ -22,7 +22,9 @@ type AlitripTicketSkusUploadAPIResponse struct {
 
 type AlitripTicketSkusUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_ticket_skus_upload_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 价格库存同步结果
     

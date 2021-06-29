@@ -1,0 +1,252 @@
+{
+	"name": "alitrip.btrip.corpop.apply.add",
+	"apiChineseName": "【商旅】isv添加审批单",
+	"description": "【商旅】isv添加审批单",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenApiApplyRq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "thirdpart_apply_id",
+					"type": "String",
+					"description": "外部申请单id",
+					"required": true
+				},
+				{
+					"name": "thirdpart_business_id",
+					"type": "String",
+					"description": "用户展示的外部审批单id信息"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "corp_name",
+					"type": "String",
+					"description": "企业名称"
+				},
+				{
+					"name": "depart_id",
+					"type": "String",
+					"description": "部门id，如果不传，会根据user相关信息去获取对应的部门信息，如果传的是错误的部门信息，后面无法做部门的费用归属；部门ID只能是数字"
+				},
+				{
+					"name": "depart_name",
+					"type": "String",
+					"description": "部门名称"
+				},
+				{
+					"name": "itinerary_list",
+					"type": "OpenItineraryInfo[]",
+					"description": "行程列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "arr_city",
+							"type": "String",
+							"description": "到达城市",
+							"required": true
+						},
+						{
+							"name": "arr_city_code",
+							"type": "String",
+							"description": "到达城市编码"
+						},
+						{
+							"name": "arr_date",
+							"type": "Date",
+							"description": "到达日期",
+							"required": true
+						},
+						{
+							"name": "cost_center_id",
+							"type": "Number",
+							"description": "商旅成本中心id，和第三方成本中心id二者选择其一即可"
+						},
+						{
+							"name": "dep_city",
+							"type": "String",
+							"description": "出发城市",
+							"required": true
+						},
+						{
+							"name": "dep_city_code",
+							"type": "String",
+							"description": "出发城市编码"
+						},
+						{
+							"name": "dep_date",
+							"type": "Date",
+							"description": "出发日期",
+							"required": true
+						},
+						{
+							"name": "invoice_id",
+							"type": "Number",
+							"description": "商旅发票id，和第三方发票Id二者选择其一即可"
+						},
+						{
+							"name": "itinerary_id",
+							"type": "String",
+							"description": "行程id",
+							"required": true
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "项目编号"
+						},
+						{
+							"name": "project_title",
+							"type": "String",
+							"description": "项目名称"
+						},
+						{
+							"name": "thirdpart_cost_center_id",
+							"type": "String",
+							"description": "第三方成本中心id，和商旅成本中心id二者选择其一即可"
+						},
+						{
+							"name": "traffic_type",
+							"type": "Number",
+							"description": "交通方式：0飞机, 1,火车, 2汽车, 3其他",
+							"required": true
+						},
+						{
+							"name": "trip_way",
+							"type": "Number",
+							"description": "行程类型：0单程，1往返",
+							"required": true
+						},
+						{
+							"name": "third_part_invoice_id",
+							"type": "String",
+							"description": "第三方发票id，和商旅发票id二者选择其一即可"
+						}
+					]
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "审批单状态，不传入默认为0：0审批中，1同意，2拒绝"
+				},
+				{
+					"name": "traveler_list",
+					"type": "OpenUserInfo[]",
+					"description": "出行人列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "第三方用户id",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "用户名称"
+						}
+					]
+				},
+				{
+					"name": "trip_cause",
+					"type": "String",
+					"description": "出差事由",
+					"required": true
+				},
+				{
+					"name": "trip_day",
+					"type": "Number",
+					"description": "出差天数"
+				},
+				{
+					"name": "trip_title",
+					"type": "String",
+					"description": "申请单标题",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "申请人Id（第三方用户id）",
+					"required": true
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "用户名称，如果要传必须传真实姓名，如果不传则会以系统当前维护userId对应的名称进行预订"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "1 老版本 2 isv对外版本"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1：代提交 2：本人提交 注意：当申请单为代提交时，申请单提交人自己无法为自己下单"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HisvResult",
+			"description": "出参数",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "OpenApiApplyRs",
+					"description": "结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅申请单id",
+							"required": true
+						},
+						{
+							"name": "thirdpart_apply_id",
+							"type": "String",
+							"description": "外部申请单id",
+							"required": true
+						},
+						{
+							"name": "thirdpart_business_id",
+							"type": "String",
+							"description": "第三方业务id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

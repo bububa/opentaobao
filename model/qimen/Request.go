@@ -15,7 +15,7 @@ type Request struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenCombineitemQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
     // 奇门仓储字段

@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.fundplatform.account.charge",
+	"apiChineseName": "资金平台余额账户充值",
+	"description": "资金平台余额账户充值【创建账户\u0026返回付款URL】",
+	"requestParams": [
+		{
+			"name": "param_long",
+			"type": "Number",
+			"description": "用户ID",
+			"required": true
+		},
+		{
+			"name": "param_charge_request",
+			"type": "ChargeRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "充值金额，单位分",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述信息"
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "幂等字段,最多32位,必须保证同一请求幂等号唯一。不同请求幂等号不同",
+					"required": true
+				},
+				{
+					"name": "sub_biz_type",
+					"type": "Number",
+					"description": "业务类型,由资金平台分配,一般为9位数字",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID,两个userId请保持一致",
+					"required": true
+				},
+				{
+					"name": "payer_alipay_email",
+					"type": "String",
+					"description": "付款支付宝账户email",
+					"required": true
+				},
+				{
+					"name": "payer_alipay_no",
+					"type": "String",
+					"description": "付款支付宝账户编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSupport",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "AccountChargeResponse",
+					"description": "出参对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "account_id",
+							"type": "Number",
+							"description": "充值的账户ID",
+							"required": true
+						},
+						{
+							"name": "pay_url",
+							"type": "String",
+							"description": "充值URL",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

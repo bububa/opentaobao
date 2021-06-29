@@ -1,0 +1,150 @@
+{
+	"name": "alibaba.onetouch.logistics.express.order.detail.get",
+	"apiChineseName": "订单详细信息(面单及仓库信息)",
+	"description": "订单详细信息(面单及仓库信息)",
+	"requestParams": [
+		{
+			"name": "param_query",
+			"type": "LogisticsOrderQueryDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_number",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回结果编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "OrderDetailDto",
+					"description": "结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse",
+							"type": "WarehouseDto",
+							"description": "仓库信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "description",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								},
+								{
+									"name": "working_time",
+									"type": "String",
+									"description": "工作时间",
+									"required": true
+								},
+								{
+									"name": "contact_phone",
+									"type": "String",
+									"description": "联系电话",
+									"required": true
+								},
+								{
+									"name": "contact_person",
+									"type": "String",
+									"description": "联系人",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "仓库名称",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "仓库编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条码Base64",
+							"required": true
+						},
+						{
+							"name": "order_number",
+							"type": "String",
+							"description": "物流订单号",
+							"required": true
+						},
+						{
+							"name": "pickup_info",
+							"type": "PickupInfoDto",
+							"description": "上门揽收信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "can_pickup",
+									"type": "Boolean",
+									"description": "能否上门揽收",
+									"required": true
+								},
+								{
+									"name": "pickup_type",
+									"type": "String",
+									"description": "上门揽收类型，warehouse_free_pickup：仓库免费上门揽收，warehouse_paid_pickup：仓库收费上门揽收，provider_paid_pickup：服务商收费上门揽收",
+									"required": true
+								},
+								{
+									"name": "pickup_type_name",
+									"type": "String",
+									"description": "上门揽收类型名称",
+									"required": true
+								},
+								{
+									"name": "service_provider",
+									"type": "String",
+									"description": "上门揽收服务商",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "返回结果描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

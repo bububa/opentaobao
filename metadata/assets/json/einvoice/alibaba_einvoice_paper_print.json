@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.einvoice.paper.print",
+	"apiChineseName": "纸票打印接口",
+	"description": "打印一张已开具成功的纸票",
+	"requestParams": [
+		{
+			"name": "dialog_setting_flag",
+			"type": "Number",
+			"description": "打印框设置，0=不弹打印设置框，1=弹出打印设置框",
+			"required": true
+		},
+		{
+			"name": "force_print",
+			"type": "Boolean",
+			"description": "是否强制打印，一般发票只能打印一次，但是因为打印机发票号码与待打印发票号码不一致，导致打印错误，需要重新打印",
+			"required": true
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销售方纳税人识别号",
+			"required": true
+		},
+		{
+			"name": "print_flag",
+			"type": "Number",
+			"description": "打印标记，0=打印发票；1=打印清单。发票明细超过8行时会生成清单页，需要打印清单。",
+			"required": true
+		},
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "开票流水号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用结果，打印结果tmc消息alibaba_invoice_PaperOpsReturn异步通知"
+		}
+	]
+}

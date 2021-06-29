@@ -1,0 +1,50 @@
+{
+	"name": "tmall.mc.record.order.sync",
+	"apiChineseName": "订单信息同步",
+	"description": "订单信息同步(零售云接口)",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "origin_price",
+			"type": "Number",
+			"description": "原价",
+			"required": true
+		},
+		{
+			"name": "pay_price",
+			"type": "Number",
+			"description": "实付价",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "用户openId",
+			"required": true
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "核销结果",
+			"required": true
+		},
+		{
+			"name": "version",
+			"type": "String",
+			"description": "云码版本号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "同步成功"
+		}
+	]
+}

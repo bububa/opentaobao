@@ -1,0 +1,133 @@
+{
+	"name": "alitrip.hotel.alliance.settle.order.syn",
+	"apiChineseName": "菲住联盟分账成功订单同步",
+	"description": "用于菲住联盟分账成功订单同步",
+	"requestParams": [
+		{
+			"name": "order_info",
+			"type": "AllianceSettleOrderInfo",
+			"description": "订单信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称",
+					"required": true
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "订单渠道来源"
+				},
+				{
+					"name": "settle_status",
+					"type": "Number",
+					"description": "分账状态",
+					"required": true
+				},
+				{
+					"name": "other_fee",
+					"type": "Number",
+					"description": "杂费（单位：分）",
+					"required": true
+				},
+				{
+					"name": "settle_amount",
+					"type": "Number",
+					"description": "分账金额（单位：分）",
+					"required": true
+				},
+				{
+					"name": "settle_date",
+					"type": "Date",
+					"description": "分账日期",
+					"required": true
+				},
+				{
+					"name": "seller_commission",
+					"type": "Number",
+					"description": "卖家佣金金额（单位：分）",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "飞猪订单号",
+					"required": true
+				},
+				{
+					"name": "intercept_amount",
+					"type": "Number",
+					"description": "分账拦截金额（单位：分）"
+				},
+				{
+					"name": "settle_rate",
+					"type": "String",
+					"description": "分账费率",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家Id",
+					"required": true
+				},
+				{
+					"name": "base_mode",
+					"type": "Number",
+					"description": "是否底价订单"
+				},
+				{
+					"name": "nights",
+					"type": "Number",
+					"description": "订单有效间夜",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "房费（单位：分）"
+				},
+				{
+					"name": "base_price",
+					"type": "Number",
+					"description": "底价金额（单位：分）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回的结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否同步订单信息成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否服务调用成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

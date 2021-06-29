@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.ailab.user.authorized.query",
+	"apiChineseName": "查询授权状态接口",
+	"description": "查询三方用户授权状态",
+	"requestParams": [
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "开放平台申请的schema"
+		},
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "三方用户的唯一ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "200 成功，其他失败"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否已授权"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

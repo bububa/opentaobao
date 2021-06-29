@@ -1,0 +1,118 @@
+{
+	"name": "cainiao.global.handover.parcel.query",
+	"apiChineseName": "获取交接单小包信息",
+	"description": "提供给ISV通过该接口查询小包信息",
+	"requestParams": [
+		{
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "top_user_key",
+					"type": "String",
+					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
+				}
+			]
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "小包的物流订单号,和小包的国际运单号参数任选其一即可"
+		},
+		{
+			"name": "tracking_number",
+			"type": "String",
+			"description": "小包的国际运单号，和小包的物流订单号参数任选其一即可"
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求处理是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "OpenParcelOrderQueryResponse",
+					"description": "响应数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "handover_warehouse_code",
+							"type": "String",
+							"description": "交接仓编码，快递揽收场景,大包交接目的地国际分拨",
+							"required": true
+						},
+						{
+							"name": "handover_warehouse_name",
+							"type": "String",
+							"description": "交接仓名称，快递揽收场景,大包交接目的地国际分拨",
+							"required": true
+						},
+						{
+							"name": "has_been_handover",
+							"type": "Boolean",
+							"description": "该小包是否已经组包",
+							"required": true
+						},
+						{
+							"name": "handover_order_id",
+							"type": "Number",
+							"description": "关联的交接单ID",
+							"required": true
+						},
+						{
+							"name": "handover_content_code",
+							"type": "String",
+							"description": "关联的大包的编码",
+							"required": true
+						},
+						{
+							"name": "handover_content_id",
+							"type": "Number",
+							"description": "关联的大包ID",
+							"required": true
+						},
+						{
+							"name": "can_create_handover",
+							"type": "Boolean",
+							"description": "是否能组包",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

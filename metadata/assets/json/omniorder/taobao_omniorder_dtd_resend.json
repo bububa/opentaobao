@@ -1,0 +1,25 @@
+{
+	"name": "taobao.omniorder.dtd.resend",
+	"apiChineseName": "门店自送重发码",
+	"description": "该接口触发对门店自送发码短信进行重发，码内容不变，接受码的手机号也不变。每个码限制每日重发一次，总共重发5次",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝主订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码，为0表示成功，非0表示失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

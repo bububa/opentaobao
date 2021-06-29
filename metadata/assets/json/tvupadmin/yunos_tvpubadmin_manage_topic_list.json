@@ -1,0 +1,19 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.list",
+	"apiChineseName": "专题内容操作列表",
+	"description": "获取外部可操作编辑的专题列表",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询条件"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

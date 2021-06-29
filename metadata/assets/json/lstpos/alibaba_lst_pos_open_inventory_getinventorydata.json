@@ -1,0 +1,103 @@
+{
+	"name": "alibaba.lst.pos.open.inventory.getinventorydata",
+	"apiChineseName": "商品库存只读接口(最多20条库存信息)",
+	"description": "商品库存只读接口(最多20条库存信息)",
+	"requestParams": [
+		{
+			"name": "isv_goods_id_list",
+			"type": "String[]",
+			"description": "ISV商品Id列表",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "门店主账号Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "接口返回结果对象",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息描述",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "InventoryDto[]",
+					"description": "接口具体返回的业务数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "实时库存(库存实时结果(出参))",
+							"required": true
+						},
+						{
+							"name": "isv_goods_id",
+							"type": "String",
+							"description": "ISV商品Id",
+							"required": true
+						},
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "零售通商品Id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "最后修改 精确到毫秒",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "门店对应的主账号id",
+							"required": true
+						},
+						{
+							"name": "delete_flag",
+							"type": "String",
+							"description": "库存删除标志(出参) ON:删除库存(库存删除后，售卖不维护库存值)   OFF:不删除库存（售卖需要维护库存值）(缺省值)",
+							"required": true
+						},
+						{
+							"name": "device_type",
+							"type": "Number",
+							"description": "数据来源的设备类型   0：pos，1：自动售货机，-1：其它  缺省值：0",
+							"required": true
+						},
+						{
+							"name": "hardware_id",
+							"type": "String",
+							"description": "设备物理硬件ID（自身保证唯一性）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "业务错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功 true:调用成功 false:调用失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

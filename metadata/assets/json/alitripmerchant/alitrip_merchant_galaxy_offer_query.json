@@ -1,0 +1,267 @@
+{
+	"name": "alitrip.merchant.galaxy.offer.query",
+	"apiChineseName": "星河-offer查询",
+	"description": "根据offer的ID查询offer信息",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "offer_ids",
+			"type": "String",
+			"description": "offer活动ID",
+			"required": true
+		},
+		{
+			"name": "offer_channel",
+			"type": "String",
+			"description": "渠道来源"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功还是失败",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "offers",
+					"type": "OfferDetailsDto[]",
+					"description": "offer列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "offer_id",
+							"type": "Number",
+							"description": "offerId",
+							"required": true
+						},
+						{
+							"name": "offer_name",
+							"type": "String",
+							"description": "offer名称",
+							"required": true
+						},
+						{
+							"name": "subtitle",
+							"type": "String",
+							"description": "子标题",
+							"required": true
+						},
+						{
+							"name": "from_price_unit",
+							"type": "String",
+							"description": "起价单位",
+							"required": true
+						},
+						{
+							"name": "offer_image_small",
+							"type": "String",
+							"description": "小图",
+							"required": true
+						},
+						{
+							"name": "offer_image_big",
+							"type": "String",
+							"description": "大图",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "offer_redirect_url",
+							"type": "String",
+							"description": "offer跳转url",
+							"required": true
+						},
+						{
+							"name": "join_brands",
+							"type": "JoinBrandDto[]",
+							"description": "关联品牌",
+							"required": true,
+							"subParams": [
+								{
+									"name": "brand_logo",
+									"type": "String",
+									"description": "品牌logo",
+									"required": true
+								},
+								{
+									"name": "logo_redirect_url",
+									"type": "String",
+									"description": "品牌跳转url",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "from_price_amount",
+							"type": "String",
+							"description": "起价",
+							"required": true
+						},
+						{
+							"name": "time_zone",
+							"type": "String",
+							"description": "时区",
+							"required": true
+						},
+						{
+							"name": "offer_type",
+							"type": "String",
+							"description": "offer类型",
+							"required": true
+						},
+						{
+							"name": "book_start_date",
+							"type": "String",
+							"description": "预定开始时间",
+							"required": true
+						},
+						{
+							"name": "book_end_date",
+							"type": "String",
+							"description": "预定结束时间",
+							"required": true
+						},
+						{
+							"name": "cl_end_date",
+							"type": "String",
+							"description": "入住开始时间",
+							"required": true
+						},
+						{
+							"name": "cl_start_date",
+							"type": "String",
+							"description": "入住结束时间",
+							"required": true
+						},
+						{
+							"name": "sub_type",
+							"type": "String",
+							"description": "子类型",
+							"required": true
+						},
+						{
+							"name": "offer_image_wireless",
+							"type": "String[]",
+							"description": "无线端图片",
+							"required": true
+						},
+						{
+							"name": "hotel_content_list",
+							"type": "HotelContentDto[]",
+							"description": "酒店数据集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "hotel_id",
+									"type": "String",
+									"description": "酒店id",
+									"required": true
+								},
+								{
+									"name": "hotel_intro",
+									"type": "String",
+									"description": "酒店信息",
+									"required": true
+								},
+								{
+									"name": "hotel_phone",
+									"type": "String",
+									"description": "酒店电话",
+									"required": true
+								},
+								{
+									"name": "picture_url",
+									"type": "String",
+									"description": "图片",
+									"required": true
+								},
+								{
+									"name": "position_type",
+									"type": "byte",
+									"description": "地图",
+									"required": true
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名称",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准id",
+									"required": true
+								},
+								{
+									"name": "city_cn",
+									"type": "String",
+									"description": "城市名称",
+									"required": true
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市code",
+									"required": true
+								},
+								{
+									"name": "city_py_head",
+									"type": "String",
+									"description": "城市名称首字母",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

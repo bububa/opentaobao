@@ -1,0 +1,70 @@
+{
+	"name": "taobao.alitrip.axin.trans.pay.sign.check",
+	"apiChineseName": "阿信支付宝验签服务",
+	"description": "阿信支付宝验签服务",
+	"requestParams": [
+		{
+			"name": "axin_pay_check_sign_dto",
+			"type": "AxinPayCheckSignDto",
+			"description": "验签对象",
+			"subParams": [
+				{
+					"name": "biz_scene",
+					"type": "String",
+					"description": "业务场景"
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "验签数据",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "验签结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "验签异常code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

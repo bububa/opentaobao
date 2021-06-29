@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.tuike.offer.get",
+	"apiChineseName": "推广商品查询接口",
+	"description": "查询1688推客平台卖家推广中的商品信息",
+	"requestParams": [
+		{
+			"name": "isv_code",
+			"type": "String",
+			"description": "标识调用方",
+			"required": true
+		},
+		{
+			"name": "query_string",
+			"type": "String",
+			"description": "搜索查询参数(json)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaOfferSearchResult",
+			"description": "查询结果模型",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "查询总记录数",
+					"required": true
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "当前条数",
+					"required": true
+				},
+				{
+					"name": "errors",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "请求状态",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "Json[]",
+					"description": "数据",
+					"required": true
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				}
+			]
+		}
+	]
+}

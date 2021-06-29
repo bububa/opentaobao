@@ -1,0 +1,155 @@
+{
+	"name": "alibaba.einvoice.bill.sync",
+	"apiChineseName": "结算单同步",
+	"description": "电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票",
+	"requestParams": [
+		{
+			"name": "invoice_items",
+			"type": "BillItemDo[]",
+			"description": "结算商品单明细列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "价税合计，小数点后2两位",
+					"required": true
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "规格型号,可选"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "商品单位"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "row_type",
+					"type": "Number",
+					"description": "1 折扣行 2被折扣行 0普通行"
+				}
+			]
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "结算单同步操作：=1插入，=2更新，=3废弃删除",
+			"required": true
+		},
+		{
+			"name": "order_date",
+			"type": "Date",
+			"description": "结算单订单日期",
+			"required": true
+		},
+		{
+			"name": "shop_name",
+			"type": "String",
+			"description": "店铺名称，与后台店铺名称保持一致",
+			"required": true
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "税务登记证号",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "结算单订单ID",
+			"required": true
+		},
+		{
+			"name": "sum_price",
+			"type": "String",
+			"description": "结算单总价格，小数点后2两位",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "调用平台，用于区分同一个税号下多个店铺来源[\"TB:淘宝\",\"ALIPAY:支付宝\",\"TM:天猫\",\"JD:京东\",\"DD:当当\",\"PP:拍拍\",\"YX:易讯\",\"EBAY:ebay\",\"QQ:QQ网购\",\"AMAZON:亚马逊\",\"SN:苏宁\",\"GM:国美\",\"WPH:唯品会\",\"JM:聚美\",\"LF:乐蜂\",\"MGJ:蘑菇街\",\"JS:聚尚\",\"PX:拍鞋\",\"YT:银泰\",\"YHD:1号店\",\"VANCL:凡客\",\"YL:邮乐\",\"YG:优购\",\"1688:阿里巴巴\",\"POS:POS门店\",\"ELEME:饿了么\",\"OTHER:其他\"]",
+			"required": true
+		},
+		{
+			"name": "qrcode",
+			"type": "QrCodeDo",
+			"description": "生成二维码参数，若不需要生成二维码，则不填",
+			"subParams": [
+				{
+					"name": "qr_type",
+					"type": "Number",
+					"description": "二维码返回数据类型：1=二维码背后的URL，2=二维码图片CDN URL，3=二维码二进制数据流"
+				},
+				{
+					"name": "qr_logo",
+					"type": "String",
+					"description": "二维码logo"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "二维码宽度"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "二维码高度"
+				}
+			]
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "品牌名称，不填默认=shop_name"
+		},
+		{
+			"name": "invoice_price",
+			"type": "String",
+			"description": "结算单可开票总金额（不填=sumPrice），小数点后2两位"
+		},
+		{
+			"name": "shop_platform",
+			"type": "String",
+			"description": "开票店铺的平台，默认等于platform"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "插入操作返回二维码"
+		},
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

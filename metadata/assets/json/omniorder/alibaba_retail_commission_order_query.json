@@ -1,0 +1,196 @@
+{
+	"name": "alibaba.retail.commission.order.query",
+	"apiChineseName": "分销订单查询",
+	"description": "查询商家的分销订单",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码，默认第一页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认每页十条"
+		},
+		{
+			"name": "end_pay_time",
+			"type": "String",
+			"description": "查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "start_pay_time",
+			"type": "String",
+			"description": "查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "分页结果",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "页码，请求的值",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页大小，请求的值",
+					"required": true
+				},
+				{
+					"name": "order_list",
+					"type": "OrderDto[]",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "main",
+							"type": "Number",
+							"description": "1-父订单，0-子订单",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "旗舰店id",
+							"required": true
+						},
+						{
+							"name": "pay_order_id",
+							"type": "Number",
+							"description": "支付订单id",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "消费者nick",
+							"required": true
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "支付状态：1 - 未冻结/未付款 -\u003e等待买家付款 2 - 已冻结/已付款 -\u003e等待卖家发货 4 - 已退款 -\u003e交易关闭 6 - 已转交易 -\u003e 交易成功 7 - 没有创建外部交易(支付宝交易) 8 - 交易被淘宝关闭 9 - 不可付款",
+							"required": true
+						},
+						{
+							"name": "logistics_status",
+							"type": "Number",
+							"description": "物流状态：1 - 未发货 -\u003e 等待卖家发货, 2 - 已发货 -\u003e 等待买家确认收货, 3 - 已收货 -\u003e 交易成功, 4 - 已经退货 -\u003e 交易失败, 5 - 部分收货 -\u003e 交易成功, 6 - 部分发货中, 8 - 还未创建物流订单, 9 - 配货中,目前周期购已经使用到",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "旗舰店名称",
+							"required": true
+						},
+						{
+							"name": "auction_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "auction_price",
+							"type": "Number",
+							"description": "单件商品价格，单位分",
+							"required": true
+						},
+						{
+							"name": "buy_amount",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "adjust_fee",
+							"type": "Number",
+							"description": "商品的卖出金额调整，金额增加时为正数，金额减少时为负数，单位是分，不带小数。 如果是对整个订单的金额调整，会保存在主订单上，否则保存在子订单里",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "系统对商品作的减价，始终为正数，单位是分",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态：1 买家已经申请退款，等待卖家同意 2 卖家已经同意退款，等待买家退货 3 买家已经退货，等待卖家确认收货 4 退款关闭 5 退款成功 6 卖家拒绝退款 9 没有申请退款,对主定单和子订单都有效 10 有活动退款，申请退款后，只对主定单有效 只有一笔订单的情况，主定单的退款状态可能为1,2,3,6,10 11退款结束，只对父订单有效",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "到目前为止生效的退款，单位是分,父订单的退款等于各个子订单退款的和",
+							"required": true
+						},
+						{
+							"name": "actual_pay_fee",
+							"type": "Number",
+							"description": "实付金额，单位是分",
+							"required": true
+						},
+						{
+							"name": "detail_order_list",
+							"type": "Json[]",
+							"description": "子订单，属性与主订单相同",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页多少条记录",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码，200-成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

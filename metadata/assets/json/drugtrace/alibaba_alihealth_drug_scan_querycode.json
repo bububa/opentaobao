@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.alihealth.drug.scan.querycode",
+	"apiChineseName": "查询药监码对应的有效期和包装规格",
+	"description": "查询药监码对应的有效期和包装规格",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "溯源码",
+			"required": true
+		},
+		{
+			"name": "webchat_id",
+			"type": "String",
+			"description": "用户标识id",
+			"required": true
+		},
+		{
+			"name": "province_code",
+			"type": "String",
+			"description": "省编码"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "市编码"
+		},
+		{
+			"name": "area_code",
+			"type": "String",
+			"description": "区编码"
+		},
+		{
+			"name": "scan_time",
+			"type": "Date",
+			"description": "扫码日期",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "DrugScanLog",
+					"description": "返回模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pkg_spec",
+							"type": "String",
+							"description": "包装规格",
+							"required": true
+						},
+						{
+							"name": "expiry_date",
+							"type": "String",
+							"description": "有效期",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "溯源码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

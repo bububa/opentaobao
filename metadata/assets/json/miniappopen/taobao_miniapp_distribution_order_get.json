@@ -1,0 +1,90 @@
+{
+	"name": "taobao.miniapp.distribution.order.get",
+	"apiChineseName": "小程序投放-查询小程序投放计划信息",
+	"description": "服务商可通过该API，读取自己开发的小程序对应的投放计划的相关信息",
+	"requestParams": [
+		{
+			"name": "order_id_request",
+			"type": "DistributionOrderQueryByIdOpenRequest",
+			"description": "查询入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id_list",
+					"type": "Number[]",
+					"description": "投放计划的id列表",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "DistributionOrderOpenBizDto []",
+			"description": "投放计划列表的详细信息",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "唯一标识的id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名字",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间，订购期有效的情况无该返回值",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间，订购期有效的投放计划无该返回值",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "byte",
+					"description": "状态，0:未开始， 1：进行中，2/3:已结束，其他为平台状态",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "投放的小程序url",
+					"required": true
+				},
+				{
+					"name": "app_id",
+					"type": "Number",
+					"description": "小程序id",
+					"required": true
+				},
+				{
+					"name": "time_type",
+					"type": "byte",
+					"description": "时效类型.0: 商家自定义时效，1：订购期内有效",
+					"required": true
+				},
+				{
+					"name": "widget_id",
+					"type": "Number",
+					"description": "关联的小部件id",
+					"required": true
+				},
+				{
+					"name": "widget_version",
+					"type": "String",
+					"description": "关联的小部件版本号",
+					"required": true
+				}
+			]
+		}
+	]
+}

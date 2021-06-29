@@ -1,0 +1,132 @@
+{
+	"name": "aliexpress.logistics.buyer.freight.calculate",
+	"apiChineseName": "提供给买家使用的运费计算接口",
+	"description": "提供给买家使用的运费计算接口",
+	"requestParams": [
+		{
+			"name": "param_aeop_freight_calculate_for_buyer_d_t_o",
+			"type": "AeopFreightCalculateForBuyerDto",
+			"description": "运费计算请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市编码"
+				},
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "国家编码",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "product_num",
+					"type": "Number",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "province_code",
+					"type": "String",
+					"description": "省份编码"
+				},
+				{
+					"name": "send_goods_country_code",
+					"type": "String",
+					"description": "发货国家",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格"
+				},
+				{
+					"name": "price_currency",
+					"type": "String",
+					"description": "商品价格币种"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AeopFreightCalculateResultListResponseForBuyer",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "aeop_freight_calculate_result_for_buyer_d_t_o_list",
+					"type": "AeopFreightCalculateResultForBuyerDto[]",
+					"description": "aeopFreightCalculateResultForBuyerDTOList",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "Number",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "estimated_delivery_time",
+							"type": "String",
+							"description": "预估运达时效",
+							"required": true
+						},
+						{
+							"name": "freight",
+							"type": "Money",
+							"description": "运费",
+							"required": true,
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "BigDecimal",
+									"description": "amount",
+									"required": true
+								},
+								{
+									"name": "cent",
+									"type": "Number",
+									"description": "cent",
+									"required": true
+								},
+								{
+									"name": "currency_code",
+									"type": "String",
+									"description": "currencyCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "service_name",
+							"type": "String",
+							"description": "serviceName",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

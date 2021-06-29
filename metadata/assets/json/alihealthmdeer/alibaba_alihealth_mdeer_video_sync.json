@@ -1,0 +1,139 @@
+{
+	"name": "alibaba.alihealth.mdeer.video.sync",
+	"apiChineseName": "合作伙伴视频同步给医知鹿接口",
+	"description": "合伙做伴内容同步接口，用来视频同步",
+	"requestParams": [
+		{
+			"name": "partner_portrait_url",
+			"type": "String",
+			"description": "合作方头像url"
+		},
+		{
+			"name": "phone_number",
+			"type": "String",
+			"description": "作者电话"
+		},
+		{
+			"name": "author_introduction",
+			"type": "String",
+			"description": "作者简介"
+		},
+		{
+			"name": "author_department",
+			"type": "String",
+			"description": "作者科室"
+		},
+		{
+			"name": "author_level",
+			"type": "String",
+			"description": "作者级别"
+		},
+		{
+			"name": "hospital_level",
+			"type": "String",
+			"description": "医院级别"
+		},
+		{
+			"name": "hospital_name",
+			"type": "String",
+			"description": "医院名称"
+		},
+		{
+			"name": "portrait_url",
+			"type": "String",
+			"description": "作者头像"
+		},
+		{
+			"name": "author_name",
+			"type": "String",
+			"description": "作者名称"
+		},
+		{
+			"name": "author_id",
+			"type": "String",
+			"description": "作者id"
+		},
+		{
+			"name": "partner_homepage",
+			"type": "String",
+			"description": "合作方主页"
+		},
+		{
+			"name": "partner_name",
+			"type": "String",
+			"description": "合作方名称"
+		},
+		{
+			"name": "release_date",
+			"type": "String",
+			"description": "发布日期"
+		},
+		{
+			"name": "video_file_url",
+			"type": "String",
+			"description": "视频文件url"
+		},
+		{
+			"name": "video_mobile_url",
+			"type": "String",
+			"description": "视频落地页"
+		},
+		{
+			"name": "video_introduction",
+			"type": "String",
+			"description": "视频简介"
+		},
+		{
+			"name": "video_length",
+			"type": "String",
+			"description": "视频长度"
+		},
+		{
+			"name": "disease",
+			"type": "String",
+			"description": "视频所述疾病"
+		},
+		{
+			"name": "priview_url",
+			"type": "String",
+			"description": "预览图url"
+		},
+		{
+			"name": "video_title",
+			"type": "String",
+			"description": "视频标题"
+		},
+		{
+			"name": "video_id",
+			"type": "String",
+			"description": "视频id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				}
+			]
+		}
+	]
+}

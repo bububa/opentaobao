@@ -1,0 +1,55 @@
+{
+	"name": "xiami.api.song.listenfile.get",
+	"apiChineseName": "获取歌曲试听文件",
+	"description": "获取歌曲试听文件",
+	"requestParams": [
+		{
+			"name": "song_ids",
+			"type": "Number[]",
+			"description": "歌曲id",
+			"required": true,
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "song_play_info_list",
+			"type": "SongPlayInfoDo []",
+			"description": "歌曲试听文件列表",
+			"subParams": [
+				{
+					"name": "listen_file_list",
+					"type": "ListenFileDo[]",
+					"description": "试听文件列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expire",
+							"type": "Number",
+							"description": "超时时间",
+							"required": true
+						},
+						{
+							"name": "listen_file",
+							"type": "String",
+							"description": "试听文件地址",
+							"required": true
+						},
+						{
+							"name": "quality",
+							"type": "String",
+							"description": "歌曲品质，l为低品质，h为高品质，s为无损",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "song_id",
+					"type": "Number",
+					"description": "歌曲id",
+					"required": true
+				}
+			]
+		}
+	]
+}

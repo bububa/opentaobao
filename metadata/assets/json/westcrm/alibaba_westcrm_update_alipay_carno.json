@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.westcrm.update.alipay.carno",
+	"apiChineseName": "更新支付宝业务卡号",
+	"description": "更新支付宝业务卡号",
+	"requestParams": [
+		{
+			"name": "mall_id",
+			"type": "Number",
+			"description": "商场id"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "用户id"
+		},
+		{
+			"name": "alipay_card_no",
+			"type": "String",
+			"description": "2088102011918821"
+		},
+		{
+			"name": "westcrm_app_key",
+			"type": "String",
+			"description": "appkey"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "返回修改结果"
+		}
+	]
+}

@@ -1,0 +1,175 @@
+{
+	"name": "taobao.xhotel.item.selection.seller.stat.summary",
+	"apiChineseName": "商家数据-选品整体概况",
+	"description": "商家数据-选品整体概况",
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "vendor 默认为all"
+		},
+		{
+			"name": "date",
+			"type": "String",
+			"description": "日期  默认为昨天"
+		},
+		{
+			"name": "hid",
+			"type": "String",
+			"description": "hid  默认为all"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "supplier 默认为all"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "外部酒店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResult",
+			"description": "返回参数",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "接口信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "SellerStatSummaryResult",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "avg_rate_score",
+							"type": "String",
+							"description": "rate平均分",
+							"required": true
+						},
+						{
+							"name": "exposed_percent",
+							"type": "String",
+							"description": "曝光率",
+							"required": true
+						},
+						{
+							"name": "supplier_param",
+							"type": "String",
+							"description": "supplier参数",
+							"required": true
+						},
+						{
+							"name": "shid_total_amount",
+							"type": "String",
+							"description": "标准酒店维度曝光总数",
+							"required": true
+						},
+						{
+							"name": "hid_param",
+							"type": "String",
+							"description": "hid参数",
+							"required": true
+						},
+						{
+							"name": "min_rate_score",
+							"type": "String",
+							"description": "rate最低分",
+							"required": true
+						},
+						{
+							"name": "unsale_reseason_info",
+							"type": "String",
+							"description": "不可售情况",
+							"required": true
+						},
+						{
+							"name": "max_rate_score",
+							"type": "String",
+							"description": "rate最高分",
+							"required": true
+						},
+						{
+							"name": "selection_message_info",
+							"type": "String",
+							"description": "选品情况",
+							"required": true
+						},
+						{
+							"name": "date_param",
+							"type": "String",
+							"description": "日期",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "商品总数",
+							"required": true
+						},
+						{
+							"name": "vendor_param",
+							"type": "String",
+							"description": "vendor参数",
+							"required": true
+						},
+						{
+							"name": "exposed_amount",
+							"type": "String",
+							"description": "曝光总数",
+							"required": true
+						},
+						{
+							"name": "selection_message_info_json",
+							"type": "String",
+							"description": "选品情况",
+							"required": true
+						},
+						{
+							"name": "unsale_reason_info_json",
+							"type": "String",
+							"description": "不可售情况",
+							"required": true
+						},
+						{
+							"name": "seller_id_param",
+							"type": "String",
+							"description": "sellerId参数",
+							"required": true
+						},
+						{
+							"name": "can_sale_amount",
+							"type": "String",
+							"description": "可售商品数量",
+							"required": true
+						},
+						{
+							"name": "selected_amount",
+							"type": "String",
+							"description": "选品保留商品数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

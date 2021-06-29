@@ -1,0 +1,139 @@
+{
+	"name": "alibaba.alisports.efsp.getuserinfo",
+	"apiChineseName": "获取用户详细信息",
+	"description": "阿里体育-体育健身-获取用户详细信息",
+	"requestParams": [
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "支付宝ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TrilateralResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "异常CODE",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "异常MSG",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "CheckEfspUserVo",
+					"description": "用户信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gym_list",
+							"type": "String",
+							"description": "健身房IDS",
+							"required": true
+						},
+						{
+							"name": "surplus_amount",
+							"type": "Number",
+							"description": "剩余补助",
+							"required": true
+						},
+						{
+							"name": "is_efsp",
+							"type": "Boolean",
+							"description": "是否企业健身用户",
+							"required": true
+						},
+						{
+							"name": "enterprise_name",
+							"type": "String",
+							"description": "公司名称",
+							"required": true
+						},
+						{
+							"name": "enterprise_id",
+							"type": "String",
+							"description": "公司code",
+							"required": true
+						},
+						{
+							"name": "rule",
+							"type": "RuleVo",
+							"description": "规则信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "subsidy_method",
+									"type": "Number",
+									"description": "补助方式",
+									"required": true
+								},
+								{
+									"name": "subsidy_upper",
+									"type": "Number",
+									"description": "补助上限",
+									"required": true
+								},
+								{
+									"name": "once_subsidy_limit_type",
+									"type": "Number",
+									"description": "每人每次补助限制类型",
+									"required": true
+								},
+								{
+									"name": "once_subsidy_upper",
+									"type": "Number",
+									"description": "每人每次补助上限",
+									"required": true
+								},
+								{
+									"name": "whole_subsidy_limit_type",
+									"type": "Number",
+									"description": "公司补助限制类型",
+									"required": true
+								},
+								{
+									"name": "whole_subsidy_upper",
+									"type": "Number",
+									"description": "公司补助上限",
+									"required": true
+								},
+								{
+									"name": "subsidy_limit_type",
+									"type": "Number",
+									"description": "每人每月补助限制类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gym_ids_not_select",
+							"type": "String",
+							"description": "健身房黑名单",
+							"required": true
+						},
+						{
+							"name": "city_codes",
+							"type": "String",
+							"description": "健身房地区白名单",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

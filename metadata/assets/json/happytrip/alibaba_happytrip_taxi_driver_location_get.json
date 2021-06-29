@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.happytrip.taxi.driver.location.get",
+	"apiChineseName": "司机位置",
+	"description": "获取司机实时位置",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "供应商订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "Struct",
+			"description": "司机位置",
+			"subParams": [
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度",
+					"required": true
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"name": "direction",
+					"type": "String",
+					"description": "司机方向，正北为0度，顺时针方向",
+					"required": true
+				},
+				{
+					"name": "speed",
+					"type": "String",
+					"description": "车速，正数表示向前，负数表示向后，单位是 m/s",
+					"required": true
+				},
+				{
+					"name": "update_time",
+					"type": "String",
+					"description": "更新时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

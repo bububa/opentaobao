@@ -1,0 +1,125 @@
+{
+	"name": "taobao.feedflow.item.item.page",
+	"apiChineseName": "信息流查看商品列表",
+	"description": "信息流查看商品列表",
+	"requestParams": [
+		{
+			"name": "item_query",
+			"type": "ItemQueryDto",
+			"description": "查询条件",
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页页码，不得超过20"
+				},
+				{
+					"name": "item_id_list",
+					"type": "Number[]",
+					"description": "商品id列表"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "商品总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "ItemDto[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "link_url",
+							"type": "String",
+							"description": "商品落地页",
+							"required": true
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "商品主图",
+							"required": true
+						},
+						{
+							"name": "is_access_allowed",
+							"type": "Boolean",
+							"description": "是否可以使用，false不可以进行广告投放",
+							"required": true
+						},
+						{
+							"name": "access_allowed_info",
+							"type": "AccessAllowedDto",
+							"description": "不可以使用的原因",
+							"required": true,
+							"subParams": [
+								{
+									"name": "is_access_allowed",
+									"type": "Boolean",
+									"description": "是否可以使用，false不可以进行广告投放",
+									"required": true
+								},
+								{
+									"name": "reason",
+									"type": "String",
+									"description": "不可以使用的原因",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

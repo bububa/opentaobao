@@ -1,0 +1,64 @@
+{
+	"name": "aliyun.viapi.imageseg.segmenthead",
+	"apiChineseName": "头像分割",
+	"description": "输入一张图片，对图中人头区域进行抠图解析，输出人头png透明图。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "待检测图片链接"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "elements",
+					"type": "Elements[]",
+					"description": "人体检测框的集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "x",
+							"type": "Number",
+							"description": "x坐标",
+							"required": true
+						},
+						{
+							"name": "y",
+							"type": "Number",
+							"description": "y坐标",
+							"required": true
+						},
+						{
+							"name": "image_u_r_l",
+							"type": "String",
+							"description": "抠图结果（png透明图）有效期半个小时",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "高度",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "宽度",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

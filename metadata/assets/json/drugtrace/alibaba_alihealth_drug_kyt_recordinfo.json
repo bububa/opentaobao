@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.recordinfo",
+	"apiChineseName": "快易通健康检查",
+	"description": "快易通健康检查",
+	"requestParams": [
+		{
+			"name": "service_name",
+			"type": "String",
+			"description": "服务名",
+			"required": true
+		},
+		{
+			"name": "service_type",
+			"type": "String",
+			"description": "类型",
+			"required": true
+		},
+		{
+			"name": "input_param",
+			"type": "String",
+			"description": "输入参数"
+		},
+		{
+			"name": "other_param",
+			"type": "String",
+			"description": "其他参数"
+		},
+		{
+			"name": "log_level",
+			"type": "String",
+			"description": "级别",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "对象"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回值"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否响应成功"
+		}
+	]
+}

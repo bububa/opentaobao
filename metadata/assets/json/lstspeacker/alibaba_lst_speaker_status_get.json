@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.lst.speaker.status.get",
+	"apiChineseName": "音箱设备在线状态",
+	"description": "音箱设备在线状态查询",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "SpeakerOnLineStatus",
+					"description": "状态对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "状态吗",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "状态名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "erro_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "erro_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

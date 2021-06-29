@@ -1,0 +1,230 @@
+{
+	"name": "alibaba.lst.vending.cargospace.save",
+	"apiChineseName": "自动售卖机货道数据回流",
+	"description": "自动售卖机货道数据回流接口，ISV通过调用此接口上传售卖机货道信息。",
+	"requestParams": [
+		{
+			"name": "cargo_space_d_t_o_list",
+			"type": "VendingCargoSpaceDto[]",
+			"description": "货道信息",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "修改时间"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "货道商品数量",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "discount_price",
+					"type": "Number",
+					"description": "商品折扣价"
+				},
+				{
+					"name": "external_goods_id",
+					"type": "String",
+					"description": "外部商品ID",
+					"required": true
+				},
+				{
+					"name": "cargo_road_no",
+					"type": "Number",
+					"description": "货道编号，从1开始",
+					"required": true
+				},
+				{
+					"name": "equipment_code",
+					"type": "String",
+					"description": "厂商设备唯一编码",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "货道类型：1普通货道，2VIP货道",
+					"required": true
+				},
+				{
+					"name": "shelf_no",
+					"type": "Number",
+					"description": "货架编号，从1开始",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "商品单价，单位：分",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "货道状态：1正常，2故障"
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "厂商货道ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MultiResultDto",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "VendingCargoSpaceDto[]",
+					"description": "执行成功结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Number",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "goods_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商编码",
+							"required": true
+						},
+						{
+							"name": "discount_price",
+							"type": "Number",
+							"description": "折扣价",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "货道ID",
+							"required": true
+						},
+						{
+							"name": "external_goods_id",
+							"type": "String",
+							"description": "外部商品ID",
+							"required": true
+						},
+						{
+							"name": "cargo_road_no",
+							"type": "Number",
+							"description": "货道编号，从1开始",
+							"required": true
+						},
+						{
+							"name": "equipment_code",
+							"type": "String",
+							"description": "厂商设备唯一编码",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "货道类型：1普通货道，2VIP货道",
+							"required": true
+						},
+						{
+							"name": "shelf_no",
+							"type": "Number",
+							"description": "货架编号，从1开始",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "商品单价，单位：分",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "货道商品数量",
+							"required": true
+						},
+						{
+							"name": "external_id",
+							"type": "String",
+							"description": "厂商设备ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_list",
+					"type": "ResultDto[]",
+					"description": "执行失败结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "记录唯一标识",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

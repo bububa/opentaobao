@@ -19,7 +19,9 @@ type AlibabaWtOrderExchangePartnerChecktbuserAPIResponse struct {
 
 type AlibabaWtOrderExchangePartnerChecktbuserResponse struct {
     XMLName xml.Name `xml:"alibaba_wt_order_exchange_partner_checktbuser_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回值，通过model的值true或者false来判断
     

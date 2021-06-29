@@ -1,0 +1,105 @@
+{
+	"name": "taobao.xhotel.multiplerate.update",
+	"apiChineseName": "复杂价格推送接口（全量更新）",
+	"description": "酒店产品库复杂rate（多人价，连住价等）更新\n同时完全涵盖taobao.xhotel.rate.update的功能",
+	"requestParams": [
+		{
+			"name": "gid",
+			"type": "Number",
+			"description": "废弃，使用out_rid"
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "卖家房型ID"
+		},
+		{
+			"name": "rpid",
+			"type": "Number",
+			"description": "废弃，使用rate_plan_code"
+		},
+		{
+			"name": "rate_plan_code",
+			"type": "String",
+			"description": "卖家自己系统的房价code"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "废弃"
+		},
+		{
+			"name": "occupancy",
+			"type": "Number",
+			"description": "入住人数(范围1~10)",
+			"required": true
+		},
+		{
+			"name": "lengthofstay",
+			"type": "Number",
+			"description": "连住天数(范围1~5)",
+			"required": true
+		},
+		{
+			"name": "inventory_price",
+			"type": "String",
+			"description": "价格和库存信息。 A:use_room_inventory:是否使用房型共享库存，可选值 true false ,false时：使用房价专有库存，此时要求价格和库存必填。 B:date 日期必须为 T---T+180 日内的日期（T为当天），且不能重复 C:price 价格 int类型 取值范围1-99999999 单位为分 D:quota 库存 int 类型 取值范围 0-999（数量库存） 60000(状态库存关) 61000(状态库存开) tax为税费，addBed为加床价，addPerson为加人价1,若连住大于1，price请推送总价"
+		},
+		{
+			"name": "rate_switch_cal",
+			"type": "String",
+			"description": "价格开关 date：开关状态控制的那一天；rate_status：开关状态(0，关闭；1，打开); checkin_status：入住开关(0，关闭；1，打开)；checkout_status：离店开关 (0，关闭；1，打开)"
+		},
+		{
+			"name": "currency_code",
+			"type": "String",
+			"description": "币种.CNY为人民币"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "价格状态。0为不可售；1为可售，默认可售"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请"
+		},
+		{
+			"name": "childnum",
+			"type": "Number",
+			"description": "儿童人数",
+			"maxValue": 10,
+			"minValue": 1
+		},
+		{
+			"name": "infantnum",
+			"type": "Number",
+			"description": "婴儿人数",
+			"maxValue": 10,
+			"minValue": 1
+		},
+		{
+			"name": "lock_end_time",
+			"type": "String",
+			"description": "锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）"
+		},
+		{
+			"name": "lock_start_time",
+			"type": "String",
+			"description": "锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）"
+		},
+		{
+			"name": "online_booking_binding_info",
+			"type": "String",
+			"description": "在线预约关联关系推送，priceRuleNumber：加价规则序号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gid_and_rpid_occupancy_lengthofstay",
+			"type": "String",
+			"description": "gid-rpid-occupancy-lengthofstay\u003cbr/\u003e商品ID-房价ID-入住人数-连住天数"
+		}
+	]
+}

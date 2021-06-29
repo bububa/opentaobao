@@ -1,0 +1,83 @@
+{
+	"name": "taobao.alitrip.seller.refund.search",
+	"apiChineseName": "【机票代理商】退票申请单列表",
+	"description": "查询退票申请单列表",
+	"requestParams": [
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "申请单状态（如果为空查询所有状态，1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "errorCode",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "errorMsg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "ReturnTicketDo[]",
+					"description": "ReturnTicketDo",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "申请单ID",
+							"required": true
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请时间",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "申请单状态（1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

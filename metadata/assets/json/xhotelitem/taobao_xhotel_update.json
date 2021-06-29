@@ -1,0 +1,644 @@
+{
+	"name": "taobao.xhotel.update",
+	"apiChineseName": "酒店更新接口（ID不存在自动新增）",
+	"description": "酒店更新接口",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "（已废弃）请使用outer_id来标识要修改的酒店"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "酒店名称；（新增酒店时为必须）,国内酒店请传中文名称",
+			"maxLength": 128
+		},
+		{
+			"name": "used_name",
+			"type": "String",
+			"description": "酒店曾用名",
+			"maxLength": 60
+		},
+		{
+			"name": "domestic",
+			"type": "Number",
+			"description": "是否国内酒店。0:国内;1:国外"
+		},
+		{
+			"name": "country",
+			"type": "String",
+			"description": "domestic为true时，固定China； domestic为false时，必须传定义的海外国家编码值。参见：http://kezhan.trip.taobao.com/countrys.html",
+			"maxLength": 30
+		},
+		{
+			"name": "province",
+			"type": "Number",
+			"description": "省份编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时默认为0"
+		},
+		{
+			"name": "city",
+			"type": "Number",
+			"description": "城市编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；（新增酒店时为必须）"
+		},
+		{
+			"name": "district",
+			"type": "Number",
+			"description": "区域（县级市）编码。参见：http://hotel.alitrip.com/area.htm?tbpm=3"
+		},
+		{
+			"name": "business",
+			"type": "String",
+			"description": "商业区（圈）长度不超过20字",
+			"maxLength": 20
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "酒店地址。长度不能超过255",
+			"required": true,
+			"maxLength": 255
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "经度",
+			"maxLength": 10
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "纬度",
+			"maxLength": 10
+		},
+		{
+			"name": "position_type",
+			"type": "String",
+			"description": "坐标类型，现在支持：G – GoogleB – 百度A – 高德M – MapbarL – 灵图"
+		},
+		{
+			"name": "tel",
+			"type": "String",
+			"description": "酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
+			"required": true,
+			"maxLength": 30
+		},
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "不要使用",
+			"maxLength": 500
+		},
+		{
+			"name": "shid",
+			"type": "Number",
+			"description": "该字段只有确定的时候，才允许填入。用于标示和淘宝酒店的匹配关系。目前尚未启动该字段。"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "必传，酒店标识，商家酒店ID",
+			"maxLength": 64
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般情况不用，需申请使用",
+			"maxLength": 64
+		},
+		{
+			"name": "star",
+			"type": "String",
+			"description": "酒店档次，星级。取值范围为1,1.5,2,2.5,3,3.5,4,4.5,5",
+			"maxLength": 3
+		},
+		{
+			"name": "opening_time",
+			"type": "String",
+			"description": "开业时间，格式为2015-01-01"
+		},
+		{
+			"name": "decorate_time",
+			"type": "String",
+			"description": "装修时间，格式为2015-10-01"
+		},
+		{
+			"name": "floors",
+			"type": "String",
+			"description": "楼层信息"
+		},
+		{
+			"name": "rooms",
+			"type": "Number",
+			"description": "房间数 0~9999之内的数字"
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "酒店描述"
+		},
+		{
+			"name": "hotel_facilities",
+			"type": "String",
+			"description": "酒店设施。json格式示例值：{\"free Wi-Fi in all rooms\":\"true\",\"massage\":\"true\",\"meetingRoom\":\"true\"}目前支持维护的设施枚举有：free Wi-Fi in all rooms 所有房间设有免费无线网络;meetingRoom 会议室;massage  按摩室;fitnessClub 健身房;bar 酒吧;cafe 咖啡厅;frontDeskSafe 前台贵重物品保险柜wifi 无线上网公共区域;casino 娱乐场/棋牌室;restaurant 餐厅;smoking area 吸烟区;Business Facilities 商务设施"
+		},
+		{
+			"name": "service",
+			"type": "String",
+			"description": "酒店基础服务。json格式示例值：{\"receiveForeignGuests\":\"true\",\"morningCall\":\"true\",\"breakfast\":\"true\"}目前支持维护的设施枚举有：receiveForeignGuests 接待外宾;morningCall 叫醒服务; breakfast  早餐服务; airportShuttle 接机服务; luggageClaim 行李寄存; rentCar 租车; HourRoomService24 24小时客房服务; airportTransfer 酒店/机场接送; dryCleaning 干洗; expressCheckInCheckOut 快速入住/退房登记; custodyServices 保管服务"
+		},
+		{
+			"name": "room_facilities",
+			"type": "String",
+			"description": "房间的基础设施。json格式示例值：{\"bathtub\":\"true\",\"bathPub\":\"true\"}目前支持维护的设施枚举有：bathtub 独立卫浴;bathPub 公共卫浴"
+		},
+		{
+			"name": "pics",
+			"type": "String",
+			"description": "酒店图片只支持远程图片，格式如下：[{\"url\":\"http://123.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"},{\"url\":\"http://456.jpg\",\"ismain\":\"true\",\"type\":\"公共区域\",\"attribute\":\"全景图\"},{\"url\":\"http://789.jpg\",\"ismain\":\"false\",\"type\":\"大堂\",\"attribute\":\"普通图\"}] 其中url是远程图片的访问地址，main是否为主图（主图只能有一个）,attribute表示图片属性，取值范围只能是：[普通图, 平面图, 全景图] ,type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]，图片数量最多10张。要求：无logo、水印、边框、人物，不模糊、重复、歪斜，房间图清晰，图片尺寸不小于300*225，不小于5M"
+		},
+		{
+			"name": "brand",
+			"type": "String",
+			"description": "酒店品牌。取值为数字。枚举如下（只给出top30，如果不满足，请联系去啊接口人）： ruJia(\"1\", \"rujiakuaijie\", \"如家快捷\", 1), qiTian(\"2\", \"7 days\", \"7天连锁\", 1), hanTing(\"3\", \"Hanting Inns \u0026 Hotels\", \"汉庭酒店\", 1), geLinHaoTai(\"4\", \"Green Tree Inn\", \"格林豪泰\", 1), jinJiang(\"5\", \"Jinjiang Inn\", \"锦江之星\", 1), su8(\"6\", \"Super 8\", \"速8\", 1), moTai(\"7\", \"Motel\", \"莫泰\", 1), zhouji(\"8\", \"InterContinental\", \"洲际\", 4), budint(\"9\", \"Pod Inn\", \"布丁\", 1), jiuJiu(\"10\", \"jiujiuliansuo\", \"99连锁\", 1), piaoHome(\"11\", \"Piao Home Inn\", \"飘HOME\", 1), juzi(\"12\", \"Orange Hotels\", \"桔子酒店\", 1), yibai(\"13\", \"yibai\", \"易佰\", 1), weiyena(\"14\",\"weiyena\",\"维也纳\",2), huangguanjiari(\"15\", \"huangguanjiari\", \"皇冠假日\", 4), xidawu(\"16\", \"xidawu\", \"喜达屋\", 3), chengshiBJ(\"17\", \"chengshibianjie\", \"城市便捷\", 1), shagnKeYou(\"18\", \"shagnkeyou\", \"尚客优\", 1), jinjiang(\"19\", \"jinjiang\", \"锦江酒店\", 3), wendemu(\"20\", \"Hawthorn Suites\", \"温德姆\", 4), yibisi(\"21\", \"Ibis Hotels\", \"宜必思\", 1), wanhao(\"22\", \"JM Hoteles\", \"万豪\", 4), yijia365(\"23\", \"yijia365\", \"驿家365\", 1), shoulv(\"24\", \"shoulvjituan\", \"首旅建国\", 3), kaiyuan(\"25\", \"New Century Hotel\", \"开元大酒店\", 4), yagao(\"26\", \"yagao\", \"雅高\", 3), daisi(\"27\", \"daisi\", \"戴斯\", 3), jinling(\"28\", \"jinlingliansuo\", \"金陵\", 4), xianggelila(\"29\", \"Shangri-La City Hotels\", \"香格里拉\", 4), xierdun(\"30\", \"Hilton\", \"希尔顿\", 4)"
+		},
+		{
+			"name": "postal_code",
+			"type": "String",
+			"description": "邮编",
+			"maxLength": 20
+		},
+		{
+			"name": "hotel_policies",
+			"type": "String",
+			"description": "酒店入住政策(针对国际酒店，儿童及加床信息)格式：{\"children_age_from\":\"2\",\"children_age_to\":\"3\",\"children_stay_free\":\"True\",\"infant_age\":\"1\",\"min_guest_age\":\"4\"}"
+		},
+		{
+			"name": "booking_notice",
+			"type": "String",
+			"description": "预订须知。json字段描述：hotelInMountaintop 酒店位于山顶 1在山顶、0不在；needBoat 酒店需要坐船前往 1需要、0不需要；酒店位于景区内 1在景区、0不在；extraBed 加床收费；extraCharge 额外收费；arrivalTime 到店时间；extend 其他补充项",
+			"maxLength": 2000
+		},
+		{
+			"name": "status",
+			"type": "byte",
+			"description": "酒店状态 0:正常，-1:删除，-2:停售"
+		},
+		{
+			"name": "credit_card_types",
+			"type": "String",
+			"description": "逗号分隔的字符串 1visa；2万事达卡；3美国运通卡；4发现卡；5大来卡；6JCB卡；7银联卡"
+		},
+		{
+			"name": "orbit_track",
+			"type": "String",
+			"description": "扩展信息的JSON。 orbitTrack 业务字段是指从飞猪到酒店说经过平台名以及方式的一个数组，按顺序，从飞猪，再经过若干平台，最后到酒店， platform是指定当前平台名，ways 是指通过哪种方式到该平台 其中，飞猪到下一个平台里, ways 字段只能是【直连】、【人工】两个方式之一； 从最后一个平台到酒店的ways字段只能是【电话】、【传真】、【人工】、【系统】之一； 第一个 飞猪平台 和 最后具体酒店是至少得填的"
+		},
+		{
+			"name": "name_e",
+			"type": "String",
+			"description": "卖家酒店英文名称"
+		},
+		{
+			"name": "tag_json",
+			"type": "String",
+			"description": "打标去标使用的 tagJson 字段"
+		},
+		{
+			"name": "ali_nick",
+			"type": "String",
+			"description": "旺旺昵称"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "供应商标识，如果确实需要修改原来的供应商标识才需要填写，否则不需要填写，请谨慎使用。"
+		},
+		{
+			"name": "settlement_currency",
+			"type": "String",
+			"description": "结算流程中的结算币种，如需对接请联系飞猪技术支持，请谨慎使用"
+		},
+		{
+			"name": "standard_booking_notice",
+			"type": "String",
+			"description": "资源方酒店预订须知,参考文档https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=108891"
+		},
+		{
+			"name": "standard_hotel_facilities",
+			"type": "String",
+			"description": "资源方酒店设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=108891"
+		},
+		{
+			"name": "standard_hotel_service",
+			"type": "String",
+			"description": "资源方酒店服务,参考文档https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=108891"
+		},
+		{
+			"name": "standard_room_facilities",
+			"type": "String",
+			"description": "资源方房型设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=108891"
+		},
+		{
+			"name": "standard_amuse_facilities",
+			"type": "String",
+			"description": "资源方娱乐设施,参考文档https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=108891"
+		},
+		{
+			"name": "hotel_type",
+			"type": "Number",
+			"description": "0:酒店；1:客栈"
+		},
+		{
+			"name": "service_type",
+			"type": "Number",
+			"description": "0:可以接待外宾；1:仅内宾"
+		},
+		{
+			"name": "coordinate_system",
+			"type": "String",
+			"description": "标识坐标系类型。WGS84，表示地球坐标系 ；GCJ02，表示火星坐标系"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "xhotel",
+			"type": "XHotel",
+			"description": "酒店信息",
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "酒店ID"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "酒店状态：\u003cbr/\u003e0: 正常;-2:停售；-1：删除"
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "未通过时的拒绝原因等。"
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "s_hotel",
+					"type": "SHotel",
+					"description": "淘宝标准酒店信息",
+					"subParams": [
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "酒店ID"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name"
+						},
+						{
+							"name": "used_name",
+							"type": "String",
+							"description": "used_name"
+						},
+						{
+							"name": "domestic",
+							"type": "Number",
+							"description": "0:国内;1:国外"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家编码"
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "省份编码"
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "城市编码"
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "区域编码"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "酒店地址"
+						},
+						{
+							"name": "level",
+							"type": "String",
+							"description": "酒店级别"
+						},
+						{
+							"name": "business",
+							"type": "String",
+							"description": "business"
+						},
+						{
+							"name": "position_type",
+							"type": "Number",
+							"description": "position_type"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "longitude"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "latitude"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "酒店电话"
+						},
+						{
+							"name": "fax",
+							"type": "String",
+							"description": "传真"
+						},
+						{
+							"name": "opening_time",
+							"type": "String",
+							"description": "开业年份"
+						},
+						{
+							"name": "decorate_time",
+							"type": "String",
+							"description": "装修年份"
+						},
+						{
+							"name": "storeys",
+							"type": "String",
+							"description": "楼层数"
+						},
+						{
+							"name": "rooms",
+							"type": "Number",
+							"description": "房间数"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "酒店介绍"
+						},
+						{
+							"name": "service",
+							"type": "String",
+							"description": "交通距离与设施服务。JSON格式。"
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "酒店图片url"
+						},
+						{
+							"name": "extend",
+							"type": "String",
+							"description": "扩展信息的JSON"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态:0：待系统匹配1：已系统匹配，匹配成功，待卖家确认2：已系统匹配，匹配失败，待人工匹配3：已人工匹配，匹配成功，待卖家确认4：已人工匹配，匹配失败5：卖家已确认，确认\u0026ldquo;YES\u0026rdquo;6：卖家已确认，确认\u0026ldquo;NO\u0026rdquo;7：停售"
+						},
+						{
+							"name": "created_time",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "brand"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "酒店类型"
+						},
+						{
+							"name": "hotel_facilities",
+							"type": "String",
+							"description": "酒店设施"
+						},
+						{
+							"name": "room_facilities",
+							"type": "String",
+							"description": "房间设施"
+						},
+						{
+							"name": "city_tag",
+							"type": "String",
+							"description": "地区标签"
+						},
+						{
+							"name": "postal_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "fee",
+							"type": "String",
+							"description": "杂费"
+						},
+						{
+							"name": "srid",
+							"type": "Number",
+							"description": "srid"
+						},
+						{
+							"name": "pics",
+							"type": "String",
+							"description": "pics"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "area"
+						},
+						{
+							"name": "facility",
+							"type": "String",
+							"description": "facility"
+						},
+						{
+							"name": "floor",
+							"type": "String",
+							"description": "floor"
+						},
+						{
+							"name": "max_occupancy",
+							"type": "Number",
+							"description": "maxOccupancy"
+						},
+						{
+							"name": "add_bed",
+							"type": "Number",
+							"description": "addBed"
+						},
+						{
+							"name": "bed",
+							"type": "String",
+							"description": "bed"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "gmtCreate"
+						},
+						{
+							"name": "network_service",
+							"type": "String",
+							"description": "networkService"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "gmtModified"
+						},
+						{
+							"name": "window_type",
+							"type": "String",
+							"description": "windowType"
+						},
+						{
+							"name": "name_e",
+							"type": "String",
+							"description": "标准酒店英文名"
+						},
+						{
+							"name": "is_kezhan",
+							"type": "Number",
+							"description": "0：酒店 1：客栈"
+						}
+					]
+				},
+				{
+					"name": "match_status",
+					"type": "Number",
+					"description": "hotel匹配状态: \u003cbr/\u003e0：待系统匹配 1：已系统匹配，匹配成功，待卖家确认 2：已系统匹配，匹配失败，待人工匹配 3：已人工匹配，匹配成功，待卖家确认 4：已人工匹配，匹配失败 5：卖家已确认，确认“YES” 6：卖家已确认，确认“NO” 7:已系统匹配，但是匹配重复，待人工确认"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "卖家自己系统的id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "酒店名称"
+				},
+				{
+					"name": "used_name",
+					"type": "String",
+					"description": "曾用名"
+				},
+				{
+					"name": "domestic",
+					"type": "Number",
+					"description": "0:国内;1:国外"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家编码"
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "省份编码"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "城市编码"
+				},
+				{
+					"name": "district",
+					"type": "Number",
+					"description": "地区编码"
+				},
+				{
+					"name": "business",
+					"type": "String",
+					"description": "商圈信息"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "酒店地址"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "position_type",
+					"type": "String",
+					"description": "坐标类型"
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "酒店电话"
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "credit_card_types",
+					"type": "String",
+					"description": "逗号分隔的字符串 1visa；2万事达卡；3美国运通卡；4发现卡；5大来卡；6JCB卡；7银联卡"
+				},
+				{
+					"name": "name_e",
+					"type": "String",
+					"description": "卖家酒店英文名称"
+				},
+				{
+					"name": "service_type",
+					"type": "Number",
+					"description": "0:可以接待外宾；1:仅内宾"
+				},
+				{
+					"name": "hotel_type",
+					"type": "Number",
+					"description": "0:酒店；1:客栈"
+				}
+			]
+		}
+	]
+}

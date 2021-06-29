@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.iwork.mc.msg.sendmobile",
+	"apiChineseName": "发送消息给手机用户",
+	"description": "给手机用户发送对应操作结果的消息",
+	"requestParams": [
+		{
+			"name": "mobile_receiver_message_event",
+			"type": "MobileReceiverMessageEvent",
+			"description": "消息对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "msg_key",
+					"type": "String",
+					"description": "消息key",
+					"required": true
+				},
+				{
+					"name": "event_time_millis",
+					"type": "Number",
+					"description": "时间戳",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "消息事件",
+					"required": true
+				},
+				{
+					"name": "mobile_receiver",
+					"type": "String",
+					"description": "接收人手机号",
+					"required": true
+				},
+				{
+					"name": "event_type",
+					"type": "String",
+					"description": "消息类型",
+					"required": true
+				},
+				{
+					"name": "json_data",
+					"type": "String",
+					"description": "消息内容",
+					"required": true
+				},
+				{
+					"name": "resource_id",
+					"type": "String",
+					"description": "资源ID"
+				},
+				{
+					"name": "resource_url",
+					"type": "String",
+					"description": "资源URL"
+				},
+				{
+					"name": "sender",
+					"type": "Number",
+					"description": "发送者",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

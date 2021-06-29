@@ -1,0 +1,92 @@
+{
+	"name": "tmall.nrt.easyhomemember.syn",
+	"apiChineseName": "会员信息同",
+	"description": "居然之家将会员信息同步到零售中台 包含基本的会员信息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ExternalMemberDTO",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "busi_type_id",
+					"type": "String",
+					"description": "业态编号",
+					"required": true
+				},
+				{
+					"name": "tao_id",
+					"type": "String",
+					"description": "淘宝昵称 关注过品牌号的会员，有淘宝昵称"
+				},
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "new_addr",
+					"type": "String",
+					"description": "地址\t地址包含省、市、区、街道、详细地址，仅发最新的一条含有地址的联系信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "level_name",
+					"type": "String",
+					"description": "会员等级"
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "member_id",
+					"type": "String",
+					"description": "会员ID",
+					"required": true
+				},
+				{
+					"name": "op_type",
+					"type": "String",
+					"description": "操作类型 基础类型 new?、update、delete、query"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDO",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "succ",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

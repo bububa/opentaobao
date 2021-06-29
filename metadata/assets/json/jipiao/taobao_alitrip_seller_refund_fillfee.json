@@ -1,0 +1,42 @@
+{
+	"name": "taobao.alitrip.seller.refund.fillfee",
+	"apiChineseName": "机票代理商】回填手续费",
+	"description": "回填手续费",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "申请单ID",
+			"required": true
+		},
+		{
+			"name": "fee_price_map",
+			"type": "Json",
+			"description": "费对于关系，格式：{apply_fee_id:123,value:费用,金额单位分}",
+			"required": true
+		},
+		{
+			"name": "modify_fee",
+			"type": "Json",
+			"description": "改签费用，格式：{detail_id:123,value:费用,金额单位分}"
+		},
+		{
+			"name": "ticket_price_map",
+			"type": "Json",
+			"description": "票价信息，格式：{apply_fee_id：123,value:费用,金额单位分}",
+			"required": true
+		},
+		{
+			"name": "upgrade_fee",
+			"type": "Json",
+			"description": "升舱费用，格式：{detail_id:123,value:费用,金额单位分}"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "结果"
+		}
+	]
+}

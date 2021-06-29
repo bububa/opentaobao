@@ -1,0 +1,140 @@
+{
+	"name": "taobao.trade.drug.order.get",
+	"apiChineseName": "查看订单详情",
+	"description": "商家查看订单详情",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "TakeoutThirdOrder",
+					"description": "TakeoutThirdOrder订单数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "actual_pay_fee",
+							"type": "Number",
+							"description": "实际支付金额",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "店铺id",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "faild_reason",
+							"type": "String",
+							"description": "订单失败原因",
+							"required": true
+						},
+						{
+							"name": "goods_list",
+							"type": "GoodsList[]",
+							"description": "订单商品",
+							"required": true,
+							"subParams": [
+								{
+									"name": "real_price",
+									"type": "String",
+									"description": "实际价格",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "goods_code",
+									"type": "String",
+									"description": "商品外部编码",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "is_promotion",
+									"type": "Boolean",
+									"description": "是否是优惠商品",
+									"required": true
+								},
+								{
+									"name": "promotion_status",
+									"type": "Number",
+									"description": "0 未优惠 1 已优惠",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "promotion_type",
+									"type": "Number",
+									"description": "优惠类型",
+									"required": true
+								},
+								{
+									"name": "promotion_name",
+									"type": "String",
+									"description": "优惠名称",
+									"required": true
+								},
+								{
+									"name": "promotion",
+									"type": "Boolean",
+									"description": "是否是优惠商品",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

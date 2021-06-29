@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.report.nofify",
+	"apiChineseName": "服务商主动通知体检报告",
+	"description": "服务商主动回传用户的体检报告数据",
+	"requestParams": [
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "服务商预约凭证",
+			"required": true
+		},
+		{
+			"name": "check_no",
+			"type": "String",
+			"description": "服务商到检编号"
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "健康预约凭证",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "报告通知类型，传1即可",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "pdf文件的二进制base64编码字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "eagle_eye_trace_id",
+			"type": "String",
+			"description": "11"
+		},
+		{
+			"name": "data",
+			"type": "ReserveReportResponse",
+			"description": "返回数据对象",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "11",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "11",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.fundplatform.account.query.info",
+	"apiChineseName": "查询账户信息",
+	"description": "外部查询资金平台用户账户信息",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "Number",
+			"description": "账户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSupport",
+			"description": "出参对象",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "FundAccountResponse",
+					"description": "账户信息对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "account_id",
+							"type": "Number",
+							"description": "账户ID",
+							"required": true
+						},
+						{
+							"name": "balance_amount",
+							"type": "Number",
+							"description": "可用余额",
+							"required": true
+						},
+						{
+							"name": "freeze_amount",
+							"type": "Number",
+							"description": "冻结金额",
+							"required": true
+						},
+						{
+							"name": "out_biz_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "byte",
+							"description": "状态，1:正常,2:禁用",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "账户名称",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "用户ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

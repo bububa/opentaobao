@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.uploadb2cbill",
+	"apiChineseName": "快易通零售B2C",
+	"description": "快易通零售B2C单据上传",
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据号【20位以内的唯一编码，可以使用16位UUID】",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据时间【一般情况下写当前时间】",
+			"required": true
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "oper_ic_code",
+			"type": "String",
+			"description": "操作人"
+		},
+		{
+			"name": "master_order",
+			"type": "String",
+			"description": "主订单"
+		},
+		{
+			"name": "lbx_order",
+			"type": "String",
+			"description": "lbx号"
+		},
+		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"required": true,
+			"maxListSize": 2000
+		},
+		{
+			"name": "order_source",
+			"type": "String",
+			"description": "订单来源"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "调用结果值"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "调用结果描述"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

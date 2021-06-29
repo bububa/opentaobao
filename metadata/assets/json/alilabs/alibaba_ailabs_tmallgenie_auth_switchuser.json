@@ -1,0 +1,100 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.switchuser",
+	"apiChineseName": "切换用户",
+	"description": "设备切换授权用户",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "client_id"
+		},
+		{
+			"name": "new_user_open_id",
+			"type": "String",
+			"description": "目标用户openId"
+		},
+		{
+			"name": "old_user_open_id",
+			"type": "String",
+			"description": "当前拥有设备权限的用户openId"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "扩展信息",
+					"required": true
+				},
+				{
+					"name": "register_info_v_o",
+					"type": "RegisterInfoVo",
+					"description": "注册结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_open_id",
+							"type": "String",
+							"description": "用户openId",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "设备uuid",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "device_token_v_o",
+					"type": "DeviceTokenVo",
+					"description": "授权结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "access_expires_in",
+							"type": "Number",
+							"description": "accessToken超时时间,单位为秒",
+							"required": true
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "state",
+							"required": true
+						},
+						{
+							"name": "refresh_token",
+							"type": "String",
+							"description": "refresh_token",
+							"required": true
+						},
+						{
+							"name": "access_token",
+							"type": "String",
+							"description": "acces_token",
+							"required": true
+						},
+						{
+							"name": "refresh_expires_in",
+							"type": "Number",
+							"description": "refreshToken超时时间,单位为秒",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

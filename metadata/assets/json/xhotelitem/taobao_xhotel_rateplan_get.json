@@ -1,0 +1,353 @@
+{
+	"name": "taobao.xhotel.rateplan.get",
+	"apiChineseName": "价格计划rateplan查询",
+	"description": "酒店产品库rateplan查询",
+	"requestParams": [
+		{
+			"name": "rpid",
+			"type": "Number",
+			"description": "废弃，使用rateplan_code"
+		},
+		{
+			"name": "rateplan_code",
+			"type": "String",
+			"description": "卖家自己系统的Code，简称RateCode",
+			"maxLength": 64
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不填写，使用须申请",
+			"maxLength": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rateplan",
+			"type": "RatePlan",
+			"description": "rateplan",
+			"subParams": [
+				{
+					"name": "effective_time",
+					"type": "Date",
+					"description": "rateplan生效开始时间"
+				},
+				{
+					"name": "deadline_time",
+					"type": "Date",
+					"description": "rateplan生效截止时间"
+				},
+				{
+					"name": "rpid",
+					"type": "Number",
+					"description": "rateplan_id"
+				},
+				{
+					"name": "rateplan_code",
+					"type": "String",
+					"description": "卖家自己系统的Code，简称RateCode"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "RP名称"
+				},
+				{
+					"name": "payment_type",
+					"type": "Number",
+					"description": "支付类型 可选值 1：预付 5：前台面付"
+				},
+				{
+					"name": "breakfast_count",
+					"type": "Number",
+					"description": "早餐数量"
+				},
+				{
+					"name": "fee_breakfast_count",
+					"type": "Number",
+					"description": "另加早餐数量"
+				},
+				{
+					"name": "fee_breakfast_amount",
+					"type": "Number",
+					"description": "另加早餐金额"
+				},
+				{
+					"name": "fee_gov_tax_amount",
+					"type": "Number",
+					"description": "额外服务-政府税-金额（1-9999）"
+				},
+				{
+					"name": "fee_gov_tax_percent",
+					"type": "Number",
+					"description": "额外服务-政府税-百分比（0%-99%）"
+				},
+				{
+					"name": "fee_service_amount",
+					"type": "Number",
+					"description": "额外服务-服务费-金额（0-9999）"
+				},
+				{
+					"name": "fee_service_percent",
+					"type": "Number",
+					"description": "额外服务-服务费-百分比（0%-99%）"
+				},
+				{
+					"name": "extend_fee",
+					"type": "String",
+					"description": "额外服务的扩展，是一段JSON"
+				},
+				{
+					"name": "min_days",
+					"type": "Number",
+					"description": "最小入住天数（1-365）"
+				},
+				{
+					"name": "max_days",
+					"type": "Number",
+					"description": "最大入住天数（1-365）"
+				},
+				{
+					"name": "min_amount",
+					"type": "Number",
+					"description": "首日入住房间数（1-99）"
+				},
+				{
+					"name": "min_adv_hours",
+					"type": "Number",
+					"description": "最小提前预订小时按入住时间的23:59:59(一般认为24点)来计算"
+				},
+				{
+					"name": "max_adv_hours",
+					"type": "Number",
+					"description": "最大提前预订小时按入住时间的23:59:59(一般认为24点)来计算"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "每日生效时间默认00:00:00。生效时间＜结束时间"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "每日结束时间默认24:00:00。生效时间＜结束时间"
+				},
+				{
+					"name": "cancel_policy",
+					"type": "String",
+					"description": "退订政策"
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "extend"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态"
+				},
+				{
+					"name": "extend_info1",
+					"type": "String",
+					"description": "扩展字段1"
+				},
+				{
+					"name": "extend_info2",
+					"type": "String",
+					"description": "扩展字段2"
+				},
+				{
+					"name": "extend_info3",
+					"type": "String",
+					"description": "扩展字段3"
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "english_name",
+					"type": "String",
+					"description": "英文名称"
+				},
+				{
+					"name": "guarantee_type",
+					"type": "Number",
+					"description": "担保类型，只支持： 0 无担保 1 首晚担保"
+				},
+				{
+					"name": "guarantee_start_time",
+					"type": "String",
+					"description": "每日开始担保时间"
+				},
+				{
+					"name": "member_level",
+					"type": "String",
+					"description": "会员等级。支持多个等级\u0026quot;,\u0026quot;分隔"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "销售渠道，目前制定一了一种A-集团协议"
+				},
+				{
+					"name": "occupancy",
+					"type": "Number",
+					"description": "入住人数"
+				},
+				{
+					"name": "first_stay",
+					"type": "Number",
+					"description": "是否是首住优惠rp。1代表是"
+				},
+				{
+					"name": "agreement",
+					"type": "Number",
+					"description": "是否是协议价。1代表是"
+				},
+				{
+					"name": "start_time_daily",
+					"type": "String",
+					"description": "每日生效开始时间（仅时分秒有效）"
+				},
+				{
+					"name": "can_checkin_start",
+					"type": "String",
+					"description": "可入住的最早时间（小时房相关字段）"
+				},
+				{
+					"name": "can_checkin_end",
+					"type": "String",
+					"description": "可入住的最晚时间（小时房相关字段）"
+				},
+				{
+					"name": "hourage",
+					"type": "String",
+					"description": "入住的开始跨度（小时房相关字段）"
+				},
+				{
+					"name": "rp_type",
+					"type": "String",
+					"description": "rateplan类型 1为小时房"
+				},
+				{
+					"name": "guarantee_mode",
+					"type": "Number",
+					"description": "guarantee_mode"
+				},
+				{
+					"name": "allotment_release_time",
+					"type": "String",
+					"description": "allotmentReleaseTime"
+				},
+				{
+					"name": "pack_room_flag",
+					"type": "Number",
+					"description": "packRoomFlag"
+				},
+				{
+					"name": "bottom_price_flag",
+					"type": "Number",
+					"description": "bottomPriceFlag"
+				},
+				{
+					"name": "is_student",
+					"type": "Number",
+					"description": "isStudent"
+				},
+				{
+					"name": "invoice_content",
+					"type": "String",
+					"description": "invoiceContent"
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "source"
+				},
+				{
+					"name": "tag_json",
+					"type": "String",
+					"description": "rate 维度下特殊标签含义 json: {\u0026quot;ebk-tail-room-Rate\u0026quot;:1}, key:ebk-tail-room-Rate 表示rate维度ebk尾房标"
+				},
+				{
+					"name": "sell_gid",
+					"type": "Number",
+					"description": "sell 端特殊RP 对应的 gid"
+				},
+				{
+					"name": "end_time_daily",
+					"type": "Date",
+					"description": "每日生效结束时间（仅时分秒有效）"
+				},
+				{
+					"name": "parent_rpid",
+					"type": "Number",
+					"description": "父rpid"
+				},
+				{
+					"name": "common_allot_release_time",
+					"type": "String",
+					"description": "普通保留房提前确认时间"
+				},
+				{
+					"name": "company_assist",
+					"type": "Number",
+					"description": "companyAssist"
+				},
+				{
+					"name": "hotel_company_mapping_d_o_s",
+					"type": "String",
+					"description": "hotelCompanyMappingDOS"
+				},
+				{
+					"name": "cal_breakfast_str",
+					"type": "String",
+					"description": "日历化造成信息"
+				},
+				{
+					"name": "cal_guarantee_str",
+					"type": "String",
+					"description": "日历化担保"
+				},
+				{
+					"name": "cal_change_rule_str",
+					"type": "String",
+					"description": "日历化退改信息"
+				},
+				{
+					"name": "can_checkout_end",
+					"type": "String",
+					"description": "可离店的最晚时间（小时房相关字段）"
+				},
+				{
+					"name": "member_discount_cal",
+					"type": "String",
+					"description": "会员价加价规则。c:表示折扣百分比,例子92,意为会员价92折,s:标识起始日期,e:表示截止日期，t:表示加价类型，0:代表折扣。会员价=售价*c/100"
+				},
+				{
+					"name": "mem_disc_flag",
+					"type": "Number",
+					"description": "会员价支持标识,1表示支持会员价规则"
+				},
+				{
+					"name": "benefits",
+					"type": "String",
+					"description": "酒+X特色"
+				},
+				{
+					"name": "activity_type",
+					"type": "String",
+					"description": "活动类型: 1通兑,2秒杀,3尾房,4超级房券"
+				}
+			]
+		}
+	]
+}

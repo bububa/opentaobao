@@ -1,0 +1,31 @@
+package tmallchannel
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+渠道分销供应商上传线下流水预存款（增加） APIResponse
+taobao.channel.trade.prepay.offline.add
+
+渠道分销供应商上传线下流水预存款（增加）
+*/
+type TaobaoChannelTradePrepayOfflineAddAPIResponse struct {
+    model.CommonResponse
+    TaobaoChannelTradePrepayOfflineAddResponse
+}
+
+type TaobaoChannelTradePrepayOfflineAddResponse struct {
+    XMLName xml.Name `xml:"channel_trade_prepay_offline_add_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // result
+    
+    Result   *ResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

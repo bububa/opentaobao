@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.advert.manageschedule",
+	"apiChineseName": "广告牌照管控修改",
+	"description": "广告牌照管控修改",
+	"requestParams": [
+		{
+			"name": "req",
+			"type": "String",
+			"description": "管理参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Number",
+			"description": "管理广告排期"
+		}
+	]
+}

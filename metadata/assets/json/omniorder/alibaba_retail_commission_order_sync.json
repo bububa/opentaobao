@@ -1,0 +1,143 @@
+{
+	"name": "alibaba.retail.commission.order.sync",
+	"apiChineseName": "分佣数据传输",
+	"description": "同步分佣结果",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "UniverseOrderVo",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "employee_id",
+					"type": "Number",
+					"description": "导购id"
+				},
+				{
+					"name": "commission_money",
+					"type": "Number",
+					"description": "分佣金额，单位分"
+				},
+				{
+					"name": "order_pay_time",
+					"type": "String",
+					"description": "订单支付时间：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "订单类型： 1-线上 2-线下门店 3-云店 4-其他"
+				},
+				{
+					"name": "order_source",
+					"type": "Number",
+					"description": "订单渠道：1-天猫旗舰店  2-门店pos  3-云店  4-京东 5-微信商城 6-官网 7-美团 999-其他",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "Number",
+					"description": "消费者id"
+				},
+				{
+					"name": "order_create_time",
+					"type": "String",
+					"description": "订单创建时间：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "guide_work_id",
+					"type": "String",
+					"description": "导购工号"
+				},
+				{
+					"name": "order_end_time",
+					"type": "String",
+					"description": "订单结束时间：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "guide_phone",
+					"type": "String",
+					"description": "导购手机号"
+				},
+				{
+					"name": "auction_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "消费者nick"
+				},
+				{
+					"name": "order_money",
+					"type": "Number",
+					"description": "订单金额，单位分"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "子订单id"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单id"
+				},
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "订单状态 0：支付（默认） 1：发货 2：确认收货"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "描述订单的唯一值，如订单id、加密后的订单id等，用于订单幂等去重",
+					"required": true
+				},
+				{
+					"name": "commission_ratio",
+					"type": "Number",
+					"description": "当前订单的分佣比例。如1%，则填1"
+				},
+				{
+					"name": "order_goods_time",
+					"type": "String",
+					"description": "订单发货时间：yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "guide_sales",
+					"type": "Number",
+					"description": "订单发生时的销售额，单位分"
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "消费者手机号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "返回的数据实体"
+		},
+		{
+			"name": "s_code",
+			"type": "String",
+			"description": "返回的执行状态吗"
+		},
+		{
+			"name": "s_success",
+			"type": "Boolean",
+			"description": "是否执行成功"
+		}
+	]
+}

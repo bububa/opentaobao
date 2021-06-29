@@ -1,0 +1,242 @@
+{
+	"name": "taobao.alitrip.axin.trans.fund.add",
+	"apiChineseName": "创建资金单接口",
+	"description": "创建资金单",
+	"requestParams": [
+		{
+			"name": "axin_fund_create_d_t_o",
+			"type": "AxinFundCreateDto",
+			"description": "创建资金单接口入参",
+			"subParams": [
+				{
+					"name": "payer_alipay_id",
+					"type": "String",
+					"description": "支付方支付宝账号id"
+				},
+				{
+					"name": "payer_account",
+					"type": "String",
+					"description": "支付方账号",
+					"required": true
+				},
+				{
+					"name": "payer_nick",
+					"type": "String",
+					"description": "支付方昵称"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				},
+				{
+					"name": "pay_type",
+					"type": "Number",
+					"description": "付款方式",
+					"required": true
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "收付款账号类型",
+					"required": true
+				},
+				{
+					"name": "receiver_alipay_id",
+					"type": "String",
+					"description": "收款方支付宝账号id"
+				},
+				{
+					"name": "receiver_account",
+					"type": "String",
+					"description": "收款方账号",
+					"required": true
+				},
+				{
+					"name": "receiver_nick",
+					"type": "String",
+					"description": "收款方昵称"
+				},
+				{
+					"name": "smid",
+					"type": "String",
+					"description": "二级商户smid",
+					"required": true
+				},
+				{
+					"name": "pay_fund_id",
+					"type": "Number",
+					"description": "正向资金单ID，仅在逆向资金单上使用"
+				},
+				{
+					"name": "trade_type",
+					"type": "String",
+					"description": "交易方式",
+					"required": true
+				},
+				{
+					"name": "req_version",
+					"type": "String",
+					"description": "请求版本号，用于幂等校验",
+					"required": true
+				},
+				{
+					"name": "trade_source",
+					"type": "Number",
+					"description": "付款来源，默认105直付通",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性，json格式"
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "付款金额总额，单位分",
+					"required": true
+				},
+				{
+					"name": "notify_url",
+					"type": "String",
+					"description": "支付宝回调地址",
+					"required": true
+				},
+				{
+					"name": "ext_user_info",
+					"type": "ExtUserInfoDto",
+					"description": "买家实名信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ext_user_cert_no",
+							"type": "String",
+							"description": "指定买家支付宝实名证件号",
+							"required": true
+						},
+						{
+							"name": "ext_user_cert_type",
+							"type": "String",
+							"description": "指定买家支付宝实名证件类型",
+							"required": true
+						},
+						{
+							"name": "ext_user_name",
+							"type": "String",
+							"description": "指定买家支付宝实名姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "商品标题、交易标题、订单关键字等",
+					"required": true
+				},
+				{
+					"name": "trade_channel",
+					"type": "Number",
+					"description": "交易渠道,1-借记,2-贷记"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "接口提示信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "AxinFundCreateResDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "fund_id",
+							"type": "String",
+							"description": "资金单ID",
+							"required": true
+						},
+						{
+							"name": "app_id",
+							"type": "String",
+							"description": "阿信支付宝账号appID",
+							"required": true
+						},
+						{
+							"name": "alipay_body",
+							"type": "String",
+							"description": "支付宝返回的拼接串",
+							"required": true
+						},
+						{
+							"name": "merchant_order_no",
+							"type": "String",
+							"description": "商户原始订单号，最大长度限制32位",
+							"required": true
+						},
+						{
+							"name": "out_trade_no",
+							"type": "String",
+							"description": "商户订单号，由商家自定义",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "String",
+							"description": "收款支付宝账号对应的支付宝唯一用户号",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "该笔订单的资金总额，单位为RMB-Yuan",
+							"required": true
+						},
+						{
+							"name": "trade_no",
+							"type": "String",
+							"description": "该交易在支付宝系统中的交易流水号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

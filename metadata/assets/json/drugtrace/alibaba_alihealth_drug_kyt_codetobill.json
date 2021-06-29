@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.codetobill",
+	"apiChineseName": "通过追溯码查单据",
+	"description": "通过追溯码查单据",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "CodeToBill",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "追溯码",
+							"required": true
+						},
+						{
+							"name": "bill_identity_list",
+							"type": "BillIdentity[]",
+							"description": "codeToBill列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "bill_id",
+									"type": "Number",
+									"description": "单据iD",
+									"required": true
+								},
+								{
+									"name": "bill_type",
+									"type": "String",
+									"description": "单据类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "调用编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "调用结果",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

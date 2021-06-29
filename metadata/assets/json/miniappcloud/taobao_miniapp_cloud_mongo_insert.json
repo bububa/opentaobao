@@ -1,0 +1,31 @@
+{
+	"name": "taobao.miniapp.cloud.mongo.insert",
+	"apiChineseName": "MongoDB插入单条数据",
+	"description": "向商家应用云中插入一条记录，用于外部数据同步到应用中",
+	"requestParams": [
+		{
+			"name": "record",
+			"type": "Json",
+			"description": "待插入的数据，JSON格式",
+			"required": true
+		},
+		{
+			"name": "collection",
+			"type": "String",
+			"description": "MongoDB表名",
+			"required": true
+		},
+		{
+			"name": "env",
+			"type": "String",
+			"description": "要操作的环境，默认是测试环境"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "id",
+			"type": "String",
+			"description": "返回的数据ID，在表中为_id字段"
+		}
+	]
+}

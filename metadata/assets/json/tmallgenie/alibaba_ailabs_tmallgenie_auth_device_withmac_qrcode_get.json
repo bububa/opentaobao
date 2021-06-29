@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.withmac.qrcode.get",
+	"apiChineseName": "根据mac查询设备的安全二维码",
+	"description": "根据mac查询二维码详细信息",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "产品ID"
+		},
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "设备mac地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "二维码数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

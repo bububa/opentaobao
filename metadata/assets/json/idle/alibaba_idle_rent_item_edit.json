@@ -1,0 +1,265 @@
+{
+	"name": "alibaba.idle.rent.item.edit",
+	"apiChineseName": "租赁商品编辑",
+	"description": "发布闲鱼租赁商品",
+	"requestParams": [
+		{
+			"name": "param_rent_item_d_t_o",
+			"type": "RentItemDto",
+			"description": "商品信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "要更新的商品id",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态，可选值为0（表示上架），-2（表示下架），不填默认为0"
+				},
+				{
+					"name": "address",
+					"type": "AddressDto",
+					"description": "地址信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "省",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目id",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "至少5个字符",
+					"required": true
+				},
+				{
+					"name": "featured_tags",
+					"type": "String[]",
+					"description": "标签"
+				},
+				{
+					"name": "item_sku_list",
+					"type": "ItemSkuDto[]",
+					"description": "sku",
+					"subParams": [
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "sku价格，单位分，有sku时必填"
+						},
+						{
+							"name": "prop_list",
+							"type": "ItemPvPairDto[]",
+							"description": "sku属性，有sku时必填且不可为空",
+							"subParams": [
+								{
+									"name": "prop_text",
+									"type": "String",
+									"description": "sku属性名，有sku属性信息时不可为空"
+								},
+								{
+									"name": "value_text",
+									"type": "String",
+									"description": "sku属性值名称，有sku属性信息时不可为空"
+								}
+							]
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "sku库存，有sku时必填"
+						}
+					]
+				},
+				{
+					"name": "media",
+					"type": "MediaDto",
+					"description": "商品图片",
+					"required": true,
+					"subParams": [
+						{
+							"name": "images",
+							"type": "ImageInfoDto[]",
+							"description": "商品主图列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "图片id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "prop_images",
+							"type": "ImageInfoDto[]",
+							"description": "商品详情图片列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "图片id",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "price_info",
+					"type": "PriceDto",
+					"description": "价格信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "deposit",
+							"type": "Number",
+							"description": "押金",
+							"required": true
+						},
+						{
+							"name": "original_price",
+							"type": "Number",
+							"description": "市场价",
+							"required": true
+						},
+						{
+							"name": "reserve_price",
+							"type": "Number",
+							"description": "买断价",
+							"required": true
+						},
+						{
+							"name": "settle_price_per_day",
+							"type": "Number",
+							"description": "日结算价格，单位分",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "prop_pairs",
+					"type": "ItemPvPairDto[]",
+					"description": "类目属性对",
+					"subParams": [
+						{
+							"name": "prop_text",
+							"type": "String",
+							"description": "类目属性名称，有类目属性信息必填"
+						},
+						{
+							"name": "value_text",
+							"type": "String",
+							"description": "类目属性值名称，有类目属性信息必填"
+						}
+					]
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "库存，无sku信息时必选"
+				},
+				{
+					"name": "standard_equipments",
+					"type": "EquipmentDto[]",
+					"description": "标配信息",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "标配名称"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "标配值，多为数量"
+						}
+					]
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题，最少一个5个字符",
+					"required": true
+				},
+				{
+					"name": "used_level",
+					"type": "Number",
+					"description": "新旧程度，10表示全新，9表示九成新"
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "物流模板id",
+					"required": true
+				},
+				{
+					"name": "free_postage",
+					"type": "Boolean",
+					"description": "true表示包邮，false表示不包邮"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否更新成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

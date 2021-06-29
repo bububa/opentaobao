@@ -1,0 +1,47 @@
+{
+	"name": "youku.mediaapi.video.snapshot.get",
+	"apiChineseName": "根据视频ID查询视频缩微图",
+	"description": "根据视频ID查询视频缩微图",
+	"requestParams": [
+		{
+			"name": "vid",
+			"type": "String",
+			"description": "视频id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "是否成功 true:成功  false:失败（top成功标志）"
+		},
+		{
+			"name": "model_list",
+			"type": "Struct []",
+			"description": "数据",
+			"subParams": [
+				{
+					"name": "domain_name",
+					"type": "String",
+					"description": "图片域名"
+				},
+				{
+					"name": "thumb_id_list",
+					"type": "String[]",
+					"description": "图片url列表"
+				},
+				{
+					"name": "sectiontime",
+					"type": "Number",
+					"description": "毫秒"
+				}
+			]
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		}
+	]
+}

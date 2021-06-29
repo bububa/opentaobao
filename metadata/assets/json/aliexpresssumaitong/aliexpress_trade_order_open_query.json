@@ -1,0 +1,114 @@
+{
+	"name": "aliexpress.trade.order.open.query",
+	"apiChineseName": "Aliexpress开放平台订单查询",
+	"description": "Aliexpress开放平台订单信息查询",
+	"requestParams": [
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "买家用户id"
+		},
+		{
+			"name": "order_ids",
+			"type": "Number[]",
+			"description": "订单号",
+			"maxListSize": 999
+		},
+		{
+			"name": "out_ids",
+			"type": "String[]",
+			"description": "外部订单号",
+			"maxListSize": 999
+		},
+		{
+			"name": "open_app_key",
+			"type": "String",
+			"description": "小程序appId"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderQueryResponse",
+			"description": "订单查询接口返回值",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误提示信息",
+					"required": true
+				},
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extra_params",
+							"type": "ExtraMap",
+							"description": "订单扩展字段",
+							"required": true,
+							"subParams": [
+								{
+									"name": "payment_id",
+									"type": "String",
+									"description": "支付收单号",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "order_lines",
+							"type": "OrderLine[]",
+							"description": "子订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "extra_params",
+									"description": "子订单扩展字段",
+									"required": true
+								},
+								{
+									"name": "order_line_id",
+									"type": "Number",
+									"description": "子订单号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

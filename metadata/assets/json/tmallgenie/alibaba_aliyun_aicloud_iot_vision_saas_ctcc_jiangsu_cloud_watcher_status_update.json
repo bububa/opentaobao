@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.cloud.watcher.status.update",
+	"apiChineseName": "天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新",
+	"description": "天猫精灵 IoT 视频 SaaS 服务-江苏电信-云回看开通状态更新",
+	"requestParams": [
+		{
+			"name": "ctei",
+			"type": "String",
+			"description": "设备唯一标识符",
+			"required": true
+		},
+		{
+			"name": "dev_type",
+			"type": "String",
+			"description": "设备对应的产品类型",
+			"required": true
+		},
+		{
+			"name": "seq_id",
+			"type": "String",
+			"description": "一次请求的唯一标识符",
+			"required": true
+		},
+		{
+			"name": "user_account",
+			"type": "String",
+			"description": "设备所属用户的账号信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rsp_code",
+			"type": "Number",
+			"description": "错误码。200 表示成功"
+		},
+		{
+			"name": "seq_id",
+			"type": "String",
+			"description": "一次请求的唯一标识符，和请求中的 seq_id 对齐"
+		},
+		{
+			"name": "rsp_msg",
+			"type": "String",
+			"description": "错误信息。success 表示成功"
+		}
+	]
+}

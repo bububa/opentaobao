@@ -1,0 +1,244 @@
+{
+	"name": "taobao.alitrip.seller.modify.list",
+	"apiChineseName": "【机票代理商订单】改签订单列表",
+	"description": "提供机票代理商查询改签订单列表",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "申请单ID"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "淘宝订单号"
+		},
+		{
+			"name": "apply_date_end",
+			"type": "Date",
+			"description": "改签发起时间的查询结束日期 和 更新时间必选其一"
+		},
+		{
+			"name": "apply_date_start",
+			"type": "Date",
+			"description": "改签发起时间的查询开始日期 和 更新时间必选其一"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "fly_date_end",
+			"type": "Date",
+			"description": "乘客起飞时间的查询结束日期"
+		},
+		{
+			"name": "fly_date_start",
+			"type": "Date",
+			"description": "乘客起飞时间的查询开始日期"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款"
+		},
+		{
+			"name": "modify_date_end",
+			"type": "Date",
+			"description": "记录修改结束时间  和 改签发起时间必选其一"
+		},
+		{
+			"name": "modify_date_start",
+			"type": "Date",
+			"description": "记录修改起始时间 和 改签发起时间必选其一"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_list",
+			"type": "SyncOrderDo []",
+			"description": "改签订单列表",
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "申请单id",
+					"required": true
+				},
+				{
+					"name": "cabin",
+					"type": "String",
+					"description": "改签后的舱位",
+					"required": true
+				},
+				{
+					"name": "last_cabin",
+					"type": "String",
+					"description": "改签前的舱位",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "改签备注信息",
+					"required": true
+				},
+				{
+					"name": "modify_after_flight",
+					"type": "Flight",
+					"description": "改签后航班信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "air_line_code",
+							"type": "String",
+							"description": "改签后航空公司二字码",
+							"required": true
+						},
+						{
+							"name": "arr_airport",
+							"type": "String",
+							"description": "改签后到达机场三字码",
+							"required": true
+						},
+						{
+							"name": "dep_airport",
+							"type": "String",
+							"description": "改签后出发机场三字码",
+							"required": true
+						},
+						{
+							"name": "dep_date",
+							"type": "String",
+							"description": "改签后出发时间",
+							"required": true
+						},
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "改签后航班号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "modify_before_flight",
+					"type": "Flight",
+					"description": "改签前航班信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "air_line_code",
+							"type": "String",
+							"description": "改签后航空公司二字码",
+							"required": true
+						},
+						{
+							"name": "arr_airport",
+							"type": "String",
+							"description": "改签前出发机场三字码",
+							"required": true
+						},
+						{
+							"name": "dep_airport",
+							"type": "String",
+							"description": "改签前到达机场三字码",
+							"required": true
+						},
+						{
+							"name": "dep_date",
+							"type": "String",
+							"description": "改签后到达时间",
+							"required": true
+						},
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "改签后航班号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "passenger",
+					"type": "Passenger",
+					"description": "乘客信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "birthday",
+							"type": "String",
+							"description": "乘客生日",
+							"required": true
+						},
+						{
+							"name": "cert_num",
+							"type": "String",
+							"description": "乘客证件号码",
+							"required": true
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名",
+							"required": true
+						},
+						{
+							"name": "pnr",
+							"type": "String",
+							"description": "改签前的pnr",
+							"required": true
+						},
+						{
+							"name": "ticket_no",
+							"type": "String",
+							"description": "改签后的票号",
+							"required": true
+						},
+						{
+							"name": "old_ticket_no",
+							"type": "String",
+							"description": "改签前的票号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "modify_fee",
+					"type": "Number",
+					"description": "改签费(单位分)",
+					"required": true
+				},
+				{
+					"name": "upgrade_fee",
+					"type": "Number",
+					"description": "升舱费(单位分)",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "申请单状态。1：初始状态，2：已改签成功，3：已拒绝，4：未付款（已回填退票费），5：已付款",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_item",
+			"type": "Number",
+			"description": "查出总记录数"
+		}
+	]
+}

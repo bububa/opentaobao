@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.alihealth.drugcode.applycert",
+	"apiChineseName": "申请证书为对接方",
+	"description": "申请证书 为对接方(当前是药厂和中心化系统)",
+	"requestParams": [
+		{
+			"name": "serial_num",
+			"type": "String",
+			"description": "设备唯一标识编号",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业Id",
+			"required": true
+		},
+		{
+			"name": "ent_name",
+			"type": "String",
+			"description": "企业名称",
+			"required": true
+		},
+		{
+			"name": "csr",
+			"type": "String",
+			"description": "证书签名请求",
+			"required": true
+		},
+		{
+			"name": "cert_lost_flag",
+			"type": "Boolean",
+			"description": "证书丢失时的操作类型 (true：证书丢失)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "SysCertDto",
+					"description": "证书信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cert_sn",
+							"type": "String",
+							"description": "证书序列号",
+							"required": true
+						},
+						{
+							"name": "cert",
+							"type": "String",
+							"description": "证书公钥",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

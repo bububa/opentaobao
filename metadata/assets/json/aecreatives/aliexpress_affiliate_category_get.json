@@ -1,0 +1,73 @@
+{
+	"name": "aliexpress.affiliate.category.get",
+	"apiChineseName": "AE流量推广类目信息获取API",
+	"description": "获取AE流量推广类目的API",
+	"requestParams": [
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "请求安全签名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "ResponseResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "resp_code",
+					"type": "Number",
+					"description": "返回状态码",
+					"required": true
+				},
+				{
+					"name": "resp_msg",
+					"type": "String",
+					"description": "返回状态描述",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Result",
+					"description": "返回记录结果列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "categories",
+							"type": "Category[]",
+							"description": "类目信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "category_id",
+									"type": "Number",
+									"description": "类目ID",
+									"required": true
+								},
+								{
+									"name": "category_name",
+									"type": "String",
+									"description": "类目名称",
+									"required": true
+								},
+								{
+									"name": "parent_category_id",
+									"type": "Number",
+									"description": "父类目ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_result_count",
+							"type": "Number",
+							"description": "返回结果数量",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

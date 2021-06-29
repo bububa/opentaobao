@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.medical.hospital.sync",
+	"apiChineseName": "阿里将康支付宝挂号数据医院回传接口",
+	"description": "阿里将康支付宝挂号数据医院回传接口",
+	"requestParams": [
+		{
+			"name": "save_request",
+			"type": "CommonRequest4Top",
+			"description": "top保存入参",
+			"subParams": [
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "hosNo:渠道医院ID,hosName:医院名称,status:医院状态"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

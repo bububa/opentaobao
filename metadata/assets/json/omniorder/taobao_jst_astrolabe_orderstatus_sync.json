@@ -1,0 +1,56 @@
+{
+	"name": "taobao.jst.astrolabe.orderstatus.sync",
+	"apiChineseName": "线下门店派单以及单据相关操作接口",
+	"description": "针对ERP系统部署在门店的商家，将派单状态回流到星盘",
+	"requestParams": [
+		{
+			"name": "sub_order_ids",
+			"type": "Number[]",
+			"description": "子订单Id",
+			"maxListSize": 20
+		},
+		{
+			"name": "action_time",
+			"type": "Date",
+			"description": "事件发生时间"
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "操作人"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "订单状态"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "目标门店的商户中心门店编码"
+		},
+		{
+			"name": "parent_order_code",
+			"type": "Number",
+			"description": "交易订单",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

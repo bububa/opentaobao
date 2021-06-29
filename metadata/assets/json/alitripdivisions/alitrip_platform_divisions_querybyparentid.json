@@ -1,0 +1,152 @@
+{
+	"name": "alitrip.platform.divisions.querybyparentid",
+	"apiChineseName": "根据父节点id查询下级行政区划数据",
+	"description": "根据行政区划id查询下一层级行政区划数据",
+	"requestParams": [
+		{
+			"name": "param_long",
+			"type": "Number",
+			"description": "行政区划父id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "http status code",
+					"required": true
+				},
+				{
+					"name": "mapping_code",
+					"type": "String",
+					"description": "mapping code",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "TrdiDivisionBasicListVo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "list",
+							"type": "TrdiDivisionBasicVo[]",
+							"description": "model",
+							"required": true,
+							"subParams": [
+								{
+									"name": "country_code2",
+									"type": "String",
+									"description": "国家码",
+									"required": true
+								},
+								{
+									"name": "country_name",
+									"type": "String",
+									"description": "国家名称",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "行政区划id",
+									"required": true
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称",
+									"required": true
+								},
+								{
+									"name": "name_abbr",
+									"type": "String",
+									"description": "简称",
+									"required": true
+								},
+								{
+									"name": "name_en",
+									"type": "String",
+									"description": "英文名称",
+									"required": true
+								},
+								{
+									"name": "parent_id",
+									"type": "Number",
+									"description": "父节点id",
+									"required": true
+								},
+								{
+									"name": "pinyin",
+									"type": "String",
+									"description": "拼音",
+									"required": true
+								},
+								{
+									"name": "py",
+									"type": "String",
+									"description": "简拼",
+									"required": true
+								},
+								{
+									"name": "tree_id",
+									"type": "String",
+									"description": "层级树id",
+									"required": true
+								},
+								{
+									"name": "tree_name",
+									"type": "String",
+									"description": "层级树名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

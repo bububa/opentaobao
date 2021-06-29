@@ -1,0 +1,116 @@
+{
+	"name": "tmall.nr.inventory.initial",
+	"apiChineseName": "门店库存初始化前后端商品绑定",
+	"description": "用于门店业务的商品的初始化，前端商品和后端商品绑定，走后端库存模式",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "NrStoreInvItemInitialReqDto",
+			"description": "请求入参",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "如果是品牌商家填写商家的sellerID，如果是零售商需要填写品牌商的sellerID，但是需要平台授权；",
+					"required": true
+				},
+				{
+					"name": "operation_time",
+					"type": "String",
+					"description": "操作时间"
+				},
+				{
+					"name": "stores",
+					"type": "StoreDto[]",
+					"description": "门店信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_type",
+							"type": "String",
+							"description": "库存来源的类型；STORE表示门店",
+							"required": true
+						},
+						{
+							"name": "warehouse_id",
+							"type": "String",
+							"description": "门店对应的storeID值",
+							"required": true
+						},
+						{
+							"name": "store_inventories",
+							"type": "StoreInvetoryDto[]",
+							"description": "门店商品，最大列表长度：20",
+							"subParams": [
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "商家的外部商品编码，写入值。"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "sku号"
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "天猫商品id"
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "天猫后端商品id"
+								},
+								{
+									"name": "bill_num",
+									"type": "String",
+									"description": "单据流水号，用于幂等操作",
+									"required": true
+								},
+								{
+									"name": "inventory_type",
+									"type": "String",
+									"description": "CERTAINTY 表示确定性库存",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存数量"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作者"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_data",
+			"type": "Boolean",
+			"description": "初始化成功"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息提示"
+		},
+		{
+			"name": "error_code2",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "isSuccess"
+		}
+	]
+}

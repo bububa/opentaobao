@@ -1,0 +1,255 @@
+{
+	"name": "alibaba.ele.enterprise.ordernew.get",
+	"apiChineseName": "查询订单详情",
+	"description": "查询订单详情",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "饿了么订单ID",
+			"required": true
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "电话号码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_data",
+			"type": "StandardOrderTrackingInfoDto",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "address_info",
+					"type": "AddressInfo",
+					"description": "地址信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收货人姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "b_no",
+					"type": "String",
+					"description": "第三方业务订单编号",
+					"required": true
+				},
+				{
+					"name": "serial_number",
+					"type": "String",
+					"description": "序列号（无业务含义）",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "饿了么订单Id",
+					"required": true
+				},
+				{
+					"name": "ent_fee",
+					"type": "String",
+					"description": "企业支付费用",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "订单备注说明",
+					"required": true
+				},
+				{
+					"name": "restaurant_info",
+					"type": "RestaurantInfo",
+					"description": "餐厅信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "restaurant_tel",
+							"type": "String",
+							"description": "餐厅电话",
+							"required": true
+						},
+						{
+							"name": "restaurant_address",
+							"type": "String",
+							"description": "餐厅地址",
+							"required": true
+						},
+						{
+							"name": "restaurant_name",
+							"type": "String",
+							"description": "餐厅名称",
+							"required": true
+						},
+						{
+							"name": "only_restaurant_code",
+							"type": "String",
+							"description": "餐厅唯一码",
+							"required": true
+						},
+						{
+							"name": "erestaurant_id",
+							"type": "String",
+							"description": "餐厅ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "created_at",
+					"type": "Number",
+					"description": "下单时间（秒）",
+					"required": true
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "优惠后订单金额",
+					"required": true
+				},
+				{
+					"name": "foods_infos",
+					"type": "FoodsInfo[]",
+					"description": "餐品",
+					"required": true,
+					"subParams": [
+						{
+							"name": "food_name",
+							"type": "String",
+							"description": "餐品名称",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "餐品价格",
+							"required": true
+						},
+						{
+							"name": "food_id",
+							"type": "Number",
+							"description": "餐品id",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "餐品数量",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "规格Id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_extras",
+					"type": "OrderExtra[]",
+					"description": "订单杂项费用",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "费用",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "费用项名称",
+							"required": true
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "订单项目分类（参考附录）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "cost_center_name",
+					"type": "String",
+					"description": "成本中心名称",
+					"required": true
+				},
+				{
+					"name": "tax_fee",
+					"type": "String",
+					"description": "税点费用",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "订单状态（参考附录）",
+					"required": true
+				},
+				{
+					"name": "receive_plan_time",
+					"type": "String",
+					"description": "预订时间",
+					"required": true
+				},
+				{
+					"name": "employee_fee",
+					"type": "String",
+					"description": "员工支付金额",
+					"required": true
+				},
+				{
+					"name": "delivery_date",
+					"type": "Number",
+					"description": "配送日期",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

@@ -1,0 +1,475 @@
+{
+	"name": "alibaba.damai.maitix.order.distribution.create",
+	"apiChineseName": "大麦-新分销下单",
+	"description": "createDistributionOrder",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "MoaOrderParam",
+			"description": "下单参数param",
+			"required": true,
+			"subParams": [
+				{
+					"name": "project_id",
+					"type": "Number",
+					"description": "项目ID-必填",
+					"required": true
+				},
+				{
+					"name": "perform_id",
+					"type": "Number",
+					"description": "场次ID-必填",
+					"required": true
+				},
+				{
+					"name": "third_order_no",
+					"type": "String",
+					"description": "外部订单号，即分销方订单号，最长不超过32位-必填",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "订单总价-必填",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "必填-支付金额"
+				},
+				{
+					"name": "ticket_mode",
+					"type": "Number",
+					"description": "必填-出票方式 1=纸质票 2=身份证电子票 3=二维码电子票 4=短信电子票",
+					"required": true
+				},
+				{
+					"name": "buy_type",
+					"type": "Number",
+					"description": "必填-购票类型 1=自助选座 2=系统购买 非选座类，全部为2"
+				},
+				{
+					"name": "deliver_address",
+					"type": "String",
+					"description": "配送地址,有条件必填,如果是快递票则必填"
+				},
+				{
+					"name": "delivery_type",
+					"type": "Number",
+					"description": "必填-取票方式： 1，无纸化；2，快递票；3，自助换票；4，门店自取。1和3为电子票，2和4为纸质票。"
+				},
+				{
+					"name": "operator_login_id",
+					"type": "String",
+					"description": "必填-操作人登录账号，可以在大麦分销后台查询"
+				},
+				{
+					"name": "pay_type",
+					"type": "Number",
+					"description": "必填，随便填一个就行,支付方式 1：现金，2：支付宝，3：微信，5：银行卡"
+				},
+				{
+					"name": "real_ticket_buyer_name",
+					"type": "String",
+					"description": "必填-购票人姓名"
+				},
+				{
+					"name": "real_ticket_buyer_id_card_no",
+					"type": "String",
+					"description": "购票人证件号,如果是一单一证的项目必填"
+				},
+				{
+					"name": "real_ticket_buyer_id_card_type",
+					"type": "Number",
+					"description": "购票人证件类型，1：身份证，2：护照；3：港澳通行证，4：台胞证，5：士兵/军官-如果是一单一证的项目必填"
+				},
+				{
+					"name": "real_ticket_buyer_phone",
+					"type": "String",
+					"description": "必填-购票人电话"
+				},
+				{
+					"name": "real_ticket_buyer_phone_country_code",
+					"type": "String",
+					"description": "必填-购票人电话国家代码"
+				},
+				{
+					"name": "auto_select_seats",
+					"type": "Boolean",
+					"description": "必填-是否系统自动选座，无座项目都是true.有座项目通过h5选座就填false.否则true"
+				},
+				{
+					"name": "seat_props",
+					"type": "MoaTicketInfo[]",
+					"description": "座位参数，必填，一张票就要有一个这个对象,如果一个套票由两张票组成。这个也就是2个对象,票品id是套票的id.",
+					"required": true,
+					"subParams": [
+						{
+							"name": "combine_id",
+							"type": "Number",
+							"description": "套票组ID，表示某几个座位是一套.机选可不填。h5选座的话就传third_combine_joint_ticket_id的值"
+						},
+						{
+							"name": "external_sub_order_no",
+							"type": "String",
+							"description": "外部子订单号，分销方子订单号，可不填"
+						},
+						{
+							"name": "real_ticket_owner_id_card_no",
+							"type": "String",
+							"description": "票的实际持有人证件号，一票一证必填"
+						},
+						{
+							"name": "real_ticket_owner_id_card_type",
+							"type": "Number",
+							"description": "证件类型 1身份证 2护照 3港澳通行证 4台胞证 5士兵/军官，一票一证必填"
+						},
+						{
+							"name": "real_ticket_owner_name",
+							"type": "String",
+							"description": "票的实际持有人姓名，一票一证必填"
+						},
+						{
+							"name": "real_ticket_owner_phone",
+							"type": "String",
+							"description": "票的实际持有人电话，一票一证必填"
+						},
+						{
+							"name": "real_ticket_owner_phone_country_code",
+							"type": "String",
+							"description": "票的实际持有人电话国家代码，一票一证必填"
+						},
+						{
+							"name": "seat_id",
+							"type": "Number",
+							"description": "座位ID，有座选座项目必填。"
+						},
+						{
+							"name": "ticket_item_id",
+							"type": "Number",
+							"description": "票品ID,如果是套票就是套票的票品id.有的地方也叫price_id。必填",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "ticket_items",
+					"type": "MoaTicketItemSpec[]",
+					"description": "下单票品信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "is_package",
+							"type": "Number",
+							"description": "是否套票 1=套票 0=普通票-必填"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "票价，单位分，必填"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量， 如果是套票,则是套票的套数(不等于实际票单数量)-必填"
+						},
+						{
+							"name": "ticket_item_id",
+							"type": "Number",
+							"description": "票品ID,如果是套票就是套票的票品id-必填"
+						}
+					]
+				},
+				{
+					"name": "contact_info",
+					"type": "MoaOrderContactInfo",
+					"description": "联系人-必填",
+					"subParams": [
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名-必填"
+						},
+						{
+							"name": "country_code",
+							"type": "String",
+							"description": "联系人国家码-必填"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "联系人email"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "联系人手机号-必填"
+						}
+					]
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注-可选"
+				},
+				{
+					"name": "timeout_minutes",
+					"type": "Number",
+					"description": "超时取消时间,单位分种"
+				},
+				{
+					"name": "fare_price",
+					"type": "Number",
+					"description": "运费-如果是快递票，必填"
+				},
+				{
+					"name": "address_info",
+					"type": "MoaAddressInfo",
+					"description": "区域地址-如果是快递票必填",
+					"subParams": [
+						{
+							"name": "country_id",
+							"type": "Number",
+							"description": "国家ID，目前只支持中国，传1-如果是快递票必填"
+						},
+						{
+							"name": "province_id",
+							"type": "Number",
+							"description": "省ID，国标-如果是快递票必填"
+						},
+						{
+							"name": "city_id",
+							"type": "Number",
+							"description": "市ID，国标，快递票该字段必须填"
+						},
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "区域ID，国标-如果是快递票必填"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MxResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "状态信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "LockTicketResponse",
+					"description": "返回结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "总价",
+							"required": true
+						},
+						{
+							"name": "express_fee",
+							"type": "Number",
+							"description": "快递费",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "大麦订单号",
+							"required": true
+						},
+						{
+							"name": "sub_order_dtos",
+							"type": "LockTicketSubOrderDto[]",
+							"description": "子订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "external_sub_order_no",
+									"type": "String",
+									"description": "外部子订单号，透传返回",
+									"required": true
+								},
+								{
+									"name": "origin_price",
+									"type": "Number",
+									"description": "商品原价，单位分",
+									"required": true
+								},
+								{
+									"name": "real_price",
+									"type": "Number",
+									"description": "商品实际价，单位分",
+									"required": true
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "大麦子订单号",
+									"required": true
+								},
+								{
+									"name": "sub_order_seat_dto",
+									"type": "LockTicketSubOrderSeatDto",
+									"description": "子订单座位信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "project_id",
+											"type": "Number",
+											"description": "项目ID",
+											"required": true
+										},
+										{
+											"name": "project_name",
+											"type": "String",
+											"description": "项目名称",
+											"required": true
+										},
+										{
+											"name": "perform_id",
+											"type": "Number",
+											"description": "场次ID",
+											"required": true
+										},
+										{
+											"name": "perform_name",
+											"type": "String",
+											"description": "场次名称",
+											"required": true
+										},
+										{
+											"name": "price_id",
+											"type": "Number",
+											"description": "票品ID",
+											"required": true
+										},
+										{
+											"name": "price_name",
+											"type": "String",
+											"description": "票品名称",
+											"required": true
+										},
+										{
+											"name": "entry",
+											"type": "String",
+											"description": "入场口",
+											"required": true
+										},
+										{
+											"name": "stand_id",
+											"type": "Number",
+											"description": "看台ID",
+											"required": true
+										},
+										{
+											"name": "stand_name",
+											"type": "String",
+											"description": "看台名称",
+											"required": true
+										},
+										{
+											"name": "seat_floor_id",
+											"type": "Number",
+											"description": "楼层ID",
+											"required": true
+										},
+										{
+											"name": "seat_floor_name",
+											"type": "String",
+											"description": "楼层名称",
+											"required": true
+										},
+										{
+											"name": "seat_area_id",
+											"type": "Number",
+											"description": "区域ID",
+											"required": true
+										},
+										{
+											"name": "seat_area_name",
+											"type": "String",
+											"description": "区域名称",
+											"required": true
+										},
+										{
+											"name": "seat_group",
+											"type": "Number",
+											"description": "座位分组，0:无座 1:有座",
+											"required": true
+										},
+										{
+											"name": "combine_id",
+											"type": "String",
+											"description": "套票ID",
+											"required": true
+										},
+										{
+											"name": "seat_id",
+											"type": "Number",
+											"description": "座位ID",
+											"required": true
+										},
+										{
+											"name": "seat_name",
+											"type": "String",
+											"description": "座位名称",
+											"required": true
+										},
+										{
+											"name": "seat_row_id",
+											"type": "Number",
+											"description": "座位排ID",
+											"required": true
+										},
+										{
+											"name": "seat_row_name",
+											"type": "String",
+											"description": "座位排名称",
+											"required": true
+										},
+										{
+											"name": "seat_type",
+											"type": "byte",
+											"description": "座位类型",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "voucher_id",
+									"type": "Number",
+									"description": "票单ID",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "下单是否成功。成功为true。否则为false",
+					"required": true
+				}
+			]
+		}
+	]
+}

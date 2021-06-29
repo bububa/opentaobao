@@ -1,0 +1,94 @@
+{
+	"name": "taobao.omniorder.store.accpeted",
+	"apiChineseName": "Pos端门店接单接口",
+	"description": "ISV Pos端门店接单，通知星盘",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝交易主订单ID",
+			"required": true
+		},
+		{
+			"name": "sub_order_list",
+			"type": "StoreAcceptedResult[]",
+			"description": "子订单列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单Id",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"description": "扩展字段"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作者"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "store_type",
+					"type": "String",
+					"description": "店铺类型, 门店或者电商仓",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "店铺Id, 可能是门店或者电商仓",
+					"required": true
+				},
+				{
+					"name": "sub_oid",
+					"type": "Number",
+					"description": "子订单Id",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "异常描述"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "0表示无系统异常",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "report_timestamp",
+			"type": "Number",
+			"description": "ISV系统上报时间",
+			"required": true
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "跟踪Id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误内容"
+		}
+	]
+}

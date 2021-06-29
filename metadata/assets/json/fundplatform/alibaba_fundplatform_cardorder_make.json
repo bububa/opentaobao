@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.fundplatform.cardorder.make",
+	"apiChineseName": "通知制卡商制卡",
+	"description": "该接口由内部定义，外部制卡商实现。当需要制卡商进行制卡操作时，将会调用该接口。",
+	"requestParams": [
+		{
+			"name": "logistics_info",
+			"type": "Struct",
+			"description": "物流信息",
+			"subParams": [
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件人邮编",
+					"required": true
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件人地址",
+					"required": true
+				},
+				{
+					"name": "receiver_number",
+					"type": "String",
+					"description": "收件人联系方式",
+					"required": true
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人名称",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "card_product_infos",
+			"type": "Struct[]",
+			"description": "卡模板信息列表",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "template_no",
+					"type": "String",
+					"description": "卡模板编号",
+					"required": true
+				},
+				{
+					"name": "picture_url",
+					"type": "String",
+					"description": "卡外观图片地址"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "当前卡模板制卡数量",
+					"required": true
+				},
+				{
+					"name": "par_value",
+					"type": "String",
+					"description": "卡面额，单元分",
+					"required": true
+				},
+				{
+					"name": "card_name",
+					"type": "String",
+					"description": "该模板生成的卡名称",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "card_order_id",
+			"type": "Number",
+			"description": "子制卡单ID",
+			"required": true
+		},
+		{
+			"name": "own_sign",
+			"type": "String",
+			"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"description": "返回结构体",
+			"subParams": [
+				{
+					"name": "making_card_no",
+					"type": "String",
+					"description": "若制卡请求接收成功，返回制卡商内部对应此订单的编号。目前未实际使用，可以随意填写",
+					"required": true
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "错误详情",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误CODE",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

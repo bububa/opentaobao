@@ -19,7 +19,9 @@ type TaobaoAlitripTotoroAuxproductPushAPIResponse struct {
 
 type TaobaoAlitripTotoroAuxproductPushResponse struct {
     XMLName xml.Name `xml:"alitrip_totoro_auxproduct_push_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 操作日志id，商家可通过该id在后台查看本次操作的具体结果
     

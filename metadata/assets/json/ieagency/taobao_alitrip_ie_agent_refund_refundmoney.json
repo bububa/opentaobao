@@ -1,0 +1,45 @@
+{
+	"name": "taobao.alitrip.ie.agent.refund.refundmoney",
+	"apiChineseName": "确认退款",
+	"description": "卖家进行退款操作",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "退票申请单id",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RefundMoneyNoPasswordRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "apiErrorMsg",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "apiErrorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

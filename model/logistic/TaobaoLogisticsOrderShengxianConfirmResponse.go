@@ -19,7 +19,9 @@ type TaobaoLogisticsOrderShengxianConfirmAPIResponse struct {
 
 type TaobaoLogisticsOrderShengxianConfirmResponse struct {
     XMLName xml.Name `xml:"logistics_order_shengxian_confirm_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 是否成功
     

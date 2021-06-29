@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.lst.speaker.configure.setpaytime",
+	"apiChineseName": "音箱播放配置",
+	"description": "音箱播放配置",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "play_start_time",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "play_end_time",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "is_only_play_advert",
+			"type": "Boolean",
+			"description": "是否播放广告",
+			"required": true
+		},
+		{
+			"name": "is_set_play_time",
+			"type": "Boolean",
+			"description": "是否设置播放时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果标识"
+		},
+		{
+			"name": "erro_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "erro_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

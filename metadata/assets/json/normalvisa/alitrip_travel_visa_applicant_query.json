@@ -1,0 +1,76 @@
+{
+	"name": "alitrip.travel.visa.applicant.query",
+	"apiChineseName": "签证申请人查询接口",
+	"description": "签证申请人查询接口，商家可根据条件查询申请人id，用于签证办理",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "QueryApplicantParam",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小，默认20，最大支持的页面大小为500。"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页，默认第一页"
+				},
+				{
+					"name": "query_type",
+					"type": "Number",
+					"description": "查询类型，默认为1。1-按用户提交材料时间查询（仅查询状态为1003的申请人）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "QueryVisaApplicantResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "applicant_info_list",
+					"type": "VisaApplicantInfo[]",
+					"description": "申请人信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_tc_order_id",
+							"type": "Number",
+							"description": "子订单号",
+							"required": true
+						},
+						{
+							"name": "apply_id",
+							"type": "String",
+							"description": "申请人id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_applicants_count",
+					"type": "Number",
+					"description": "总申请人数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

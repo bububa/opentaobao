@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.alisports.passport.parter.synccard",
+	"apiChineseName": "阿里体育-卡信息同步接口",
+	"description": "运享通修改卡号的时候，通知更新到阿里体育和支付宝卡包中",
+	"requestParams": [
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "用户的id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "类型：1.修改，2.删除",
+			"required": true
+		},
+		{
+			"name": "old_card_num",
+			"type": "String",
+			"description": "用户的老卡号(修改或删除之前的卡号)",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名字符串",
+			"required": true
+		},
+		{
+			"name": "center_num",
+			"type": "String",
+			"description": "改卡的中心id，如果卡号唯一则不需要传"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "200标识成功，其他的code为失败"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "正确或错误的信息"
+		},
+		{
+			"name": "alisp_data",
+			"type": "String",
+			"description": "返回数据"
+		}
+	]
+}

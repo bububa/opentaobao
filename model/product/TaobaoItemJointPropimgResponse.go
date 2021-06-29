@@ -19,7 +19,9 @@ type TaobaoItemJointPropimgAPIResponse struct {
 
 type TaobaoItemJointPropimgResponse struct {
     XMLName xml.Name `xml:"item_joint_propimg_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 属性图片对象信息
     

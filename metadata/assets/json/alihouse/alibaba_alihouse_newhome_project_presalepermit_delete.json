@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.alihouse.newhome.project.presalepermit.delete",
+	"apiChineseName": "删除楼盘预售证",
+	"description": "删除楼盘预售证信息",
+	"requestParams": [
+		{
+			"name": "outer_permit_id",
+			"type": "String",
+			"description": "外部顾问ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

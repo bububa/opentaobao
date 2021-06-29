@@ -1,0 +1,191 @@
+{
+	"name": "tmall.nr.order.logis.info",
+	"apiChineseName": "区域零售订单获取取件码",
+	"description": "区域零售订单获取取件码，方便商家系统接入，获取取件码打印信息进行打印。",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家ID",
+			"required": true
+		},
+		{
+			"name": "main_order_ids",
+			"type": "Number[]",
+			"description": "主订单号",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "来源标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NewRetailResult",
+			"description": "返回结果实体",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "NrFetchCodeQueryRespDto",
+					"description": "返回数据实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "nr_fetch_code_d_t_o_list",
+							"type": "NrFetchCodeDto[]",
+							"description": "实体信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "main_order_id",
+									"type": "Number",
+									"description": "主订单号",
+									"required": true
+								},
+								{
+									"name": "consign_company_name",
+									"type": "String",
+									"description": "发货公司名称",
+									"required": true
+								},
+								{
+									"name": "biz_type",
+									"type": "String",
+									"description": "业务标识（fn/cn）",
+									"required": true
+								},
+								{
+									"name": "consign_company_code",
+									"type": "String",
+									"description": "发货公司编码",
+									"required": true
+								},
+								{
+									"name": "printdata",
+									"type": "String",
+									"description": "打印内容",
+									"required": true
+								},
+								{
+									"name": "short_id",
+									"type": "Number",
+									"description": "对货码",
+									"required": true
+								},
+								{
+									"name": "fetch_code",
+									"type": "String",
+									"description": "取件码",
+									"required": true
+								},
+								{
+									"name": "face_sheet_id",
+									"type": "String",
+									"description": "面单号",
+									"required": true
+								},
+								{
+									"name": "tag_no",
+									"type": "String",
+									"description": "菜鸟生成的标签号",
+									"required": true
+								},
+								{
+									"name": "cp_out_id",
+									"type": "String",
+									"description": "物流cp内部的ID号",
+									"required": true
+								},
+								{
+									"name": "receive_phone",
+									"type": "String",
+									"description": "收货人的手机号",
+									"required": true
+								},
+								{
+									"name": "receive_addr",
+									"type": "String",
+									"description": "收货地址",
+									"required": true
+								},
+								{
+									"name": "receive_name",
+									"type": "String",
+									"description": "收货人名称",
+									"required": true
+								},
+								{
+									"name": "send_province",
+									"type": "String",
+									"description": "发货省份",
+									"required": true
+								},
+								{
+									"name": "send_city",
+									"type": "String",
+									"description": "发货城市",
+									"required": true
+								},
+								{
+									"name": "send_addr",
+									"type": "String",
+									"description": "发货详细地址",
+									"required": true
+								},
+								{
+									"name": "write_off_code",
+									"type": "String",
+									"description": "核销码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "err_msg",
+							"type": "Errmsg",
+							"description": "返回的订单错误信息映射",
+							"required": true,
+							"subParams": [
+								{
+									"name": "key",
+									"type": "Number",
+									"description": "订单号",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "错误编码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "服务错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "服务错误编码",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.wdk.item.brand.query",
+	"apiChineseName": "品牌信息查询",
+	"description": "品牌信息查询",
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "查询关键词，不填则查询全部"
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "起始位置"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "一页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "result",
+					"required": true
+				}
+			]
+		}
+	]
+}

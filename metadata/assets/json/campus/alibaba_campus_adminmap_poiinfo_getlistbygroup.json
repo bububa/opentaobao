@@ -1,0 +1,256 @@
+{
+	"name": "alibaba.campus.adminmap.poiinfo.getlistbygroup",
+	"apiChineseName": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
+	"description": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "上下文",
+			"subParams": [
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "app编码",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "query",
+			"type": "SpaceUnitQuery",
+			"description": "查询对象",
+			"subParams": [
+				{
+					"name": "group_code",
+					"type": "String",
+					"description": "分组编码",
+					"required": true
+				},
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "10",
+					"required": true
+				},
+				{
+					"name": "type_code",
+					"type": "String",
+					"description": "类型编码"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "分组id"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "type_id",
+					"type": "Number",
+					"description": "类型id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "PoiInfo[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "geo_floor_id",
+							"type": "Number",
+							"description": "高德楼层id",
+							"required": true
+						},
+						{
+							"name": "ft_id",
+							"type": "String",
+							"description": "ftId",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "空间单元名称",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "campus_code",
+							"type": "String",
+							"description": "园区编码",
+							"required": true
+						},
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "类型名称",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "楼层id",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "面积",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高度",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "category",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "类型编码",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "类型id",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "楼宇id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "楼宇名称",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "businessId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"name": "alibaba.campus.space.attr.setattr",
+	"apiChineseName": "新增业务属性实例接口",
+	"description": "新增业务属性实例接口",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "园区编码"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "list",
+			"type": "TypeAttrInstanceRequest[]",
+			"description": "业务属性实例集合",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "space_id",
+					"type": "Number",
+					"description": "空间单元或空间分组id",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "值",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "空间单元：1，空间分组：2",
+					"required": true
+				},
+				{
+					"name": "attr_code",
+					"type": "String",
+					"description": "业务属性code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

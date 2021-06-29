@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.campus.acl.grantpermiitemstouser",
+	"apiChineseName": "给人直接授权",
+	"description": "给人直接授权",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id不填统一默认生成SYS_000"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "emp_id",
+			"type": "String",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "priv",
+			"type": "PermissionReq[]",
+			"description": "权限",
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "priv_key",
+					"type": "String",
+					"description": "权限key",
+					"required": true
+				},
+				{
+					"name": "effective_time",
+					"type": "Date",
+					"description": "生效时间"
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "过期时间"
+				}
+			]
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id(不填默认appCode)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

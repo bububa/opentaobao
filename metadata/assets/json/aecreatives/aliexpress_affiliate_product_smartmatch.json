@@ -1,0 +1,375 @@
+{
+	"name": "aliexpress.affiliate.product.smartmatch",
+	"apiChineseName": "联盟物料智能推荐api",
+	"description": "联盟物料算法智能推荐",
+	"requestParams": [
+		{
+			"name": "app",
+			"type": "String",
+			"description": "接入APP信息"
+		},
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "请求签名"
+		},
+		{
+			"name": "device",
+			"type": "String",
+			"description": "设备信息"
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "adid或者idfa",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "返回字段列表"
+		},
+		{
+			"name": "keywords",
+			"type": "String",
+			"description": "关键词"
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "商品ID"
+		},
+		{
+			"name": "site",
+			"type": "String",
+			"description": "站点信息"
+		},
+		{
+			"name": "target_currency",
+			"type": "String",
+			"description": "目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW"
+		},
+		{
+			"name": "target_language",
+			"type": "String",
+			"description": "目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN"
+		},
+		{
+			"name": "tracking_id",
+			"type": "String",
+			"description": "trackingId"
+		},
+		{
+			"name": "user",
+			"type": "String",
+			"description": "用户信息"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "请求页数"
+		},
+		{
+			"name": "country",
+			"type": "String",
+			"description": "商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "resp_code",
+					"type": "Number",
+					"description": "返回结果状态码",
+					"required": true
+				},
+				{
+					"name": "resp_msg",
+					"type": "String",
+					"description": "返回结果状态描述",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TrafficProductResultDto",
+					"description": "返回结果状态倾向",
+					"required": true,
+					"subParams": [
+						{
+							"name": "current_page_no",
+							"type": "Number",
+							"description": "当前返回页数",
+							"required": true
+						},
+						{
+							"name": "current_record_count",
+							"type": "Number",
+							"description": "当前返回数量",
+							"required": true
+						},
+						{
+							"name": "products",
+							"type": "Product[]",
+							"description": "返回商品详情",
+							"required": true,
+							"subParams": [
+								{
+									"name": "app_sale_price",
+									"type": "String",
+									"description": "app专享售价",
+									"required": true
+								},
+								{
+									"name": "commission_rate",
+									"type": "String",
+									"description": "佣金率",
+									"required": true
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "折扣比例",
+									"required": true
+								},
+								{
+									"name": "first_level_category_id",
+									"type": "Number",
+									"description": "一级类目ID",
+									"required": true
+								},
+								{
+									"name": "first_level_category_name",
+									"type": "String",
+									"description": "一级类目名称",
+									"required": true
+								},
+								{
+									"name": "lastest_volume",
+									"type": "Number",
+									"description": "近期销量",
+									"required": true
+								},
+								{
+									"name": "hot_product_commission_rate",
+									"type": "String",
+									"description": "爆品佣金率",
+									"required": true
+								},
+								{
+									"name": "original_price",
+									"type": "String",
+									"description": "商品原始报价",
+									"required": true
+								},
+								{
+									"name": "platform_product_type",
+									"type": "String",
+									"description": "平台商品类型：ALL,PLAZA,TMALL",
+									"required": true
+								},
+								{
+									"name": "product_detail_url",
+									"type": "String",
+									"description": "商品访问地址",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "product_main_image_url",
+									"type": "String",
+									"description": "商品主图地址",
+									"required": true
+								},
+								{
+									"name": "product_small_image_urls",
+									"type": "String[]",
+									"description": "商品小图地址列表",
+									"required": true
+								},
+								{
+									"name": "product_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "product_video_url",
+									"type": "String",
+									"description": "商品视频地址",
+									"required": true
+								},
+								{
+									"name": "promotion_link",
+									"type": "String",
+									"description": "推广链接",
+									"required": true
+								},
+								{
+									"name": "sale_price",
+									"type": "String",
+									"description": "商品售价",
+									"required": true
+								},
+								{
+									"name": "second_level_category_id",
+									"type": "Number",
+									"description": "商品二级类目ID",
+									"required": true
+								},
+								{
+									"name": "second_level_category_name",
+									"type": "String",
+									"description": "商品二级类目名称",
+									"required": true
+								},
+								{
+									"name": "shop_id",
+									"type": "Number",
+									"description": "店铺ID",
+									"required": true
+								},
+								{
+									"name": "shop_url",
+									"type": "String",
+									"description": "店铺地址",
+									"required": true
+								},
+								{
+									"name": "target_app_sale_price",
+									"type": "String",
+									"description": "按目标币种转换后的APP专享价",
+									"required": true
+								},
+								{
+									"name": "target_original_price",
+									"type": "String",
+									"description": "按目标币种转换后的原始价格",
+									"required": true
+								},
+								{
+									"name": "target_sale_price",
+									"type": "String",
+									"description": "按目标币种转换后的售价",
+									"required": true
+								},
+								{
+									"name": "evaluate_rate",
+									"type": "String",
+									"description": "好评率",
+									"required": true
+								},
+								{
+									"name": "original_price_currency",
+									"type": "String",
+									"description": "原始售价币种",
+									"required": true
+								},
+								{
+									"name": "target_original_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的原始价格币种",
+									"required": true
+								},
+								{
+									"name": "sale_price_currency",
+									"type": "String",
+									"description": "商品售价币种",
+									"required": true
+								},
+								{
+									"name": "target_sale_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的售价币种",
+									"required": true
+								},
+								{
+									"name": "app_sale_price_currency",
+									"type": "String",
+									"description": "app专享售价币种",
+									"required": true
+								},
+								{
+									"name": "target_app_sale_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的APP专享价币种",
+									"required": true
+								},
+								{
+									"name": "relevant_market_commission_rate",
+									"type": "String",
+									"description": "JV佣金率",
+									"required": true
+								},
+								{
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "promo_code",
+											"type": "String",
+											"description": "专属绑定PID的code码",
+											"required": true
+										},
+										{
+											"name": "code_campaigntype",
+											"type": "String",
+											"description": "优惠方式 1 满减，2 满折",
+											"required": true
+										},
+										{
+											"name": "code_value",
+											"type": "String",
+											"description": "面额",
+											"required": true
+										},
+										{
+											"name": "code_availabletime_start",
+											"type": "String",
+											"description": "code使用有效期的开始时间",
+											"required": true
+										},
+										{
+											"name": "code_availabletime_end",
+											"type": "String",
+											"description": "code使用有效期的结束时间",
+											"required": true
+										},
+										{
+											"name": "code_mini_spend",
+											"type": "String",
+											"description": "最低使用门槛",
+											"required": true
+										},
+										{
+											"name": "code_quantity",
+											"type": "String",
+											"description": "code剩余可使用的数量",
+											"required": true
+										},
+										{
+											"name": "code_promotionurl",
+											"type": "String",
+											"description": "品code合一url",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

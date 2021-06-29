@@ -19,7 +19,9 @@ type TaobaoEticketMerchantMaSendAPIResponse struct {
 
 type TaobaoEticketMerchantMaSendResponse struct {
     XMLName xml.Name `xml:"eticket_merchant_ma_send_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 回复参数
     

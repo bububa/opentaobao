@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.ihome.ctom.postsale.onsite.sync",
+	"apiChineseName": "售后上门信息同步",
+	"description": "用于三维家同步售后单上门人员和时间信息",
+	"requestParams": [
+		{
+			"name": "delivery_phone",
+			"type": "String",
+			"description": "预约后展示给客户的员工联系方式",
+			"required": true
+		},
+		{
+			"name": "unit_id",
+			"type": "String",
+			"description": "提交部门ID（预约的操作人所属部门）"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "time",
+			"type": "Number",
+			"description": "预约事件发生时间",
+			"required": true
+		},
+		{
+			"name": "service_id",
+			"type": "String",
+			"description": "服务ID",
+			"required": true
+		},
+		{
+			"name": "delivery_date",
+			"type": "Number",
+			"description": "预约目标时间",
+			"required": true
+		},
+		{
+			"name": "operator_id",
+			"type": "String",
+			"description": "具体操作人ID（预约人）"
+		},
+		{
+			"name": "delivery_name",
+			"type": "String",
+			"description": "联系人员名字",
+			"required": true
+		},
+		{
+			"name": "post_sales_id",
+			"type": "String",
+			"description": "售后单ID",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "配送、安装或上门",
+			"required": true
+		},
+		{
+			"name": "additional_order_id",
+			"type": "String",
+			"description": "三维家补单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true"
+		}
+	]
+}

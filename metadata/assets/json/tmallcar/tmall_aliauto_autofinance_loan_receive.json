@@ -1,0 +1,122 @@
+{
+	"name": "tmall.aliauto.autofinance.loan.receive",
+	"apiChineseName": "接收放款结果通知",
+	"description": "天猫汽车的金融业务场景中，需要接收外部ISV对用户支用放款的通知结果",
+	"requestParams": [
+		{
+			"name": "loan_receive_dto",
+			"type": "LoanReceiveDto",
+			"description": "接收外部金融结构的放款结果通知参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "loan_type",
+					"type": "String",
+					"description": "放贷类型"
+				},
+				{
+					"name": "capital_name",
+					"type": "String",
+					"description": "金融服务商名称"
+				},
+				{
+					"name": "capital_code",
+					"type": "String",
+					"description": "金融服务商编码"
+				},
+				{
+					"name": "payment_method",
+					"type": "String",
+					"description": "还款方式"
+				},
+				{
+					"name": "loan_rate",
+					"type": "String",
+					"description": "放贷利率"
+				},
+				{
+					"name": "loan_term",
+					"type": "Number",
+					"description": "放贷期数"
+				},
+				{
+					"name": "loan_term_unit",
+					"type": "String",
+					"description": "放贷期数单位:DAY-按天计算;MONTH-按月计算;YEAR-按年计算"
+				},
+				{
+					"name": "loan_amount",
+					"type": "Number",
+					"description": "最终放贷额度(单位分)"
+				},
+				{
+					"name": "loan_time",
+					"type": "String",
+					"description": "最终放款到门店的时间"
+				},
+				{
+					"name": "loan_id",
+					"type": "String",
+					"description": "金融机构放贷内部单号"
+				},
+				{
+					"name": "loan_result",
+					"type": "String",
+					"description": "放贷结果"
+				},
+				{
+					"name": "credit_id",
+					"type": "String",
+					"description": "金融机构的授信申请内部单号"
+				},
+				{
+					"name": "tmall_biz_no",
+					"type": "String",
+					"description": "天猫汽车侧业务单号"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务类型"
+				},
+				{
+					"name": "request_time",
+					"type": "String",
+					"description": "请求时间"
+				},
+				{
+					"name": "extension_field02",
+					"type": "String",
+					"description": "扩展字段1"
+				},
+				{
+					"name": "extension_field01",
+					"type": "String",
+					"description": "扩展字段2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succes",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "eror_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "eror_message",
+			"type": "String",
+			"description": "错误信息描述"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "业务结果说明"
+		}
+	]
+}

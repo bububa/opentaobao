@@ -1,0 +1,50 @@
+{
+	"name": "alibaba.alihealth.drug.download.fileacceptret",
+	"apiChineseName": "企业上传回执",
+	"description": "拿到企业下载回执，将企业已下载的和未下载成功的条目都相应的改变状态",
+	"requestParams": [
+		{
+			"name": "app_key_n",
+			"type": "String",
+			"description": "appKey"
+		},
+		{
+			"name": "file_result_json",
+			"type": "String",
+			"description": "fileResultJson"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataEntTaskResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.lst.speaker.file.upload",
+	"apiChineseName": "如意音箱音频文件长传",
+	"description": "如意音箱音频文件长传",
+	"requestParams": [
+		{
+			"name": "file_bytes",
+			"type": "byte[]",
+			"description": "数据流"
+		},
+		{
+			"name": "file_type",
+			"type": "String",
+			"description": "文件类型,audio:音频，advert:广告",
+			"required": true
+		},
+		{
+			"name": "file_id",
+			"type": "String",
+			"description": "文件ID",
+			"required": true
+		},
+		{
+			"name": "md5",
+			"type": "String",
+			"description": "md5直",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "SpeakerFileDto",
+					"description": "SpeakerFileDto",
+					"required": true,
+					"subParams": [
+						{
+							"name": "md5",
+							"type": "String",
+							"description": "md5",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "url",
+							"required": true
+						},
+						{
+							"name": "file_id",
+							"type": "String",
+							"description": "fileId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "erro_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "erro_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

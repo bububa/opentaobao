@@ -1,0 +1,307 @@
+{
+	"name": "alibaba.damai.maitix.eticket.distribution.query",
+	"apiChineseName": "分销电子票查询接口",
+	"description": "分销电子票查询接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "EticketQueryParam",
+			"description": "入参param",
+			"required": true,
+			"subParams": [
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "主分销单Id 必传",
+					"required": true
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子分销单Id 可传可不传"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误msg",
+					"required": true
+				},
+				{
+					"name": "ext_map",
+					"type": "Json",
+					"description": "参数extMap",
+					"required": true
+				},
+				{
+					"name": "model_arr_list",
+					"type": "EticketDto[]",
+					"description": "电子票对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "batch_code",
+							"type": "Number",
+							"description": "票池批次号",
+							"required": true
+						},
+						{
+							"name": "certificate_no",
+							"type": "String",
+							"description": "证件号",
+							"required": true
+						},
+						{
+							"name": "certificate_type",
+							"type": "String",
+							"description": "证件类型 1:身份证; 2: 护照; 3:港澳居民来往内地通行证; 4:台湾居民来往大陆通行证; 5:士兵/军官证",
+							"required": true
+						},
+						{
+							"name": "combine_id",
+							"type": "Number",
+							"description": "套票分组Id",
+							"required": true
+						},
+						{
+							"name": "customer_name",
+							"type": "String",
+							"description": "客户姓名",
+							"required": true
+						},
+						{
+							"name": "entry_type",
+							"type": "String",
+							"description": "入场方式 1 - 电子票 2 - 纸质票 3- 电子票+纸质票",
+							"required": true
+						},
+						{
+							"name": "exchange_code",
+							"type": "String",
+							"description": "换票码",
+							"required": true
+						},
+						{
+							"name": "exchange_ticket_method",
+							"type": "String",
+							"description": "换票方式：1：电子票；2：纸质票",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "楼层Id",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "full_seat_name",
+							"type": "String",
+							"description": "楼区排座",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "主分销单号",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "子分销单Id",
+							"required": true
+						},
+						{
+							"name": "perform_id",
+							"type": "Number",
+							"description": "场次ID",
+							"required": true
+						},
+						{
+							"name": "perform_time",
+							"type": "Date",
+							"description": "演出时间",
+							"required": true
+						},
+						{
+							"name": "phone_country_code",
+							"type": "String",
+							"description": "联系电话的国家区号",
+							"required": true
+						},
+						{
+							"name": "phone_number",
+							"type": "String",
+							"description": "联系电话",
+							"required": true
+						},
+						{
+							"name": "print_status",
+							"type": "String",
+							"description": "打印状态 ：1、未打印 2、已打印",
+							"required": true
+						},
+						{
+							"name": "product_source",
+							"type": "Number",
+							"description": "项目来源: ：1票务云；2直连（第三方）",
+							"required": true
+						},
+						{
+							"name": "project_id",
+							"type": "Number",
+							"description": "项目ID",
+							"required": true
+						},
+						{
+							"name": "project_name",
+							"type": "String",
+							"description": "参数projectName",
+							"required": true
+						},
+						{
+							"name": "qr_code",
+							"type": "String",
+							"description": "二维码原值",
+							"required": true
+						},
+						{
+							"name": "qr_code_type",
+							"type": "String",
+							"description": "二维码类型 1、静态二维码 2、动态二维码3-身份证电子票，4-换票码，5-静态码+换票码，如果是4或5，需要展示给用户exchange_code的原值",
+							"required": true
+						},
+						{
+							"name": "reserve_seat",
+							"type": "String",
+							"description": "是否对号入座（入座方式）0=不对号入座 1=对号入座 2=对区入座",
+							"required": true
+						},
+						{
+							"name": "seat_col",
+							"type": "String",
+							"description": "座位：号",
+							"required": true
+						},
+						{
+							"name": "seat_id",
+							"type": "Number",
+							"description": "座位id",
+							"required": true
+						},
+						{
+							"name": "seat_row",
+							"type": "String",
+							"description": "座位：排",
+							"required": true
+						},
+						{
+							"name": "service_phone",
+							"type": "String",
+							"description": "服务电话",
+							"required": true
+						},
+						{
+							"name": "source_system",
+							"type": "Number",
+							"description": "来源系统1 B端，2 C端 默认C端",
+							"required": true
+						},
+						{
+							"name": "source_ticket_item_price",
+							"type": "Number",
+							"description": "原价格",
+							"required": true
+						},
+						{
+							"name": "stand_name",
+							"type": "String",
+							"description": "看台名称",
+							"required": true
+						},
+						{
+							"name": "stand_portal",
+							"type": "String",
+							"description": "看台入场口",
+							"required": true
+						},
+						{
+							"name": "supplier_id",
+							"type": "Number",
+							"description": "项目的代理商家Id",
+							"required": true
+						},
+						{
+							"name": "ticket_item_name",
+							"type": "String",
+							"description": "票品名称",
+							"required": true
+						},
+						{
+							"name": "ticket_item_price",
+							"type": "Number",
+							"description": "普通票品价格",
+							"required": true
+						},
+						{
+							"name": "ticket_itemid",
+							"type": "Number",
+							"description": "票品Id",
+							"required": true
+						},
+						{
+							"name": "validate_status",
+							"type": "String",
+							"description": "验票状态 1:未验; 2:已验",
+							"required": true
+						},
+						{
+							"name": "venue_id",
+							"type": "Number",
+							"description": "场馆id",
+							"required": true
+						},
+						{
+							"name": "venue_name",
+							"type": "String",
+							"description": "场馆名称",
+							"required": true
+						},
+						{
+							"name": "voucher_id",
+							"type": "Number",
+							"description": "票单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回结果 true false",
+					"required": true
+				}
+			]
+		}
+	]
+}

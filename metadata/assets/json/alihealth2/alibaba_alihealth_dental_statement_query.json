@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.alihealth.dental.statement.query",
+	"apiChineseName": "ISV查询对账单",
+	"description": "ISV查询对账单",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单ID"
+		},
+		{
+			"name": "statement_time",
+			"type": "String",
+			"description": "结算周期，单位月"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "statement_detail_vos",
+					"type": "StatementDetailVo[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "订单ID",
+							"required": true
+						},
+						{
+							"name": "settlement_price",
+							"type": "String",
+							"description": "结算价，单位分",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "String",
+							"description": "成本，单位分",
+							"required": true
+						},
+						{
+							"name": "profit_price",
+							"type": "String",
+							"description": "利润，单位分",
+							"required": true
+						},
+						{
+							"name": "consume_status",
+							"type": "Number",
+							"description": "核销状态 0 未核销 1已核销",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

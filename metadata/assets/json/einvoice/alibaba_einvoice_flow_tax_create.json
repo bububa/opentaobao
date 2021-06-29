@@ -1,0 +1,177 @@
+{
+	"name": "alibaba.einvoice.flow.tax.create",
+	"apiChineseName": "创建税控开通工单",
+	"description": "商户在业务前台订购税控产品后，调用阿里发票此接口，提交税号的入驻开通工单。此接口返回为工单的提交结果，非真正入驻结果。开通结果会在商户完成设备的部署安装 入驻完成后，由阿里发票通过消息异步通知到业务前台。",
+	"requestParams": [
+		{
+			"name": "invoice_tax_flow_create_dto",
+			"type": "InvoiceTaxFlowCreateDto",
+			"description": "工单请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "invoice_company",
+					"type": "InvoiceCompanyDto",
+					"description": "企业税务信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "企业所在区"
+						},
+						{
+							"name": "bank_account_id",
+							"type": "String",
+							"description": "开户行账号，注意：开户行账号与名称必须拆开2个字段"
+						},
+						{
+							"name": "bank_name",
+							"type": "String",
+							"description": "开户行名称，开户行账号加名称不超出100字符注意：开户行账号与名称必须拆开2个字段"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "企业所在城市。  请提交完整的城市名称，正确示例：杭州市，错误示例：杭州"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "company_type",
+							"type": "Number",
+							"description": "企业类型，可选值：  一般纳税人：1;  小规模纳税人：2;  起征点以下纳税人：3;"
+						},
+						{
+							"name": "default_item_name",
+							"type": "String",
+							"description": "默认商品名称"
+						},
+						{
+							"name": "default_tax_code",
+							"type": "String",
+							"description": "默认税收分类编码"
+						},
+						{
+							"name": "default_tax_rate",
+							"type": "String",
+							"description": "税率，格式为小数"
+						},
+						{
+							"name": "detailed_address",
+							"type": "String",
+							"description": "企业地址"
+						},
+						{
+							"name": "invoice_phone",
+							"type": "String",
+							"description": "企业电话"
+						},
+						{
+							"name": "payee_checker",
+							"type": "String",
+							"description": "复核人"
+						},
+						{
+							"name": "payee_operator",
+							"type": "String",
+							"description": "默认开票人"
+						},
+						{
+							"name": "payee_receiver",
+							"type": "String",
+							"description": "收款人"
+						},
+						{
+							"name": "payee_register_no",
+							"type": "String",
+							"description": "销方纳税人识别号",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "企业所在省/直辖市"
+						},
+						{
+							"name": "zero_tax_rate_flag",
+							"type": "String",
+							"description": "0税率标识，只有税率为0的情况才有值，0=出口零税率，1=免税，2=不征收，3=普通零税率"
+						}
+					]
+				},
+				{
+					"name": "invoice_contact",
+					"type": "InvoiceContactDto",
+					"description": "联系人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "contact_addr",
+							"type": "String",
+							"description": "联系人地址"
+						},
+						{
+							"name": "contact_mail",
+							"type": "String",
+							"description": "联系人邮件"
+						},
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "联系人电话",
+							"required": true
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部业务方创建税控开通工单的唯一幂等ID（即：相同outer_id 会被视为同一个请求，被幂等处理）, 由业务方自己生成。  只能由字母数字组成",
+					"required": true
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "业务平台code, 由阿里发票小二分配",
+					"required": true
+				},
+				{
+					"name": "platform_user_id",
+					"type": "String",
+					"description": "业务平台商户ID",
+					"required": true
+				},
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "税控产品，产品码由中台定义。",
+					"required": true
+				},
+				{
+					"name": "service_valid_days",
+					"type": "Number",
+					"description": "服务的有效天数，单位为天。  阿里发票服务周期计算规则为：服务起始时间=部署完成时的系统时间，服务截止时间=服务起始时间+serviceValidDays",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "flow_id",
+			"type": "String",
+			"description": "工单ID，发票中台生成"
+		}
+	]
+}

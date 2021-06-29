@@ -1,0 +1,52 @@
+{
+	"name": "taobao.alitrip.seller.refund.refusereturn",
+	"apiChineseName": "【机票代理商】拒绝退票",
+	"description": "拒绝退票",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "申请单ID",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "拒绝理由",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "errorCode",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "errorMsg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "处理结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

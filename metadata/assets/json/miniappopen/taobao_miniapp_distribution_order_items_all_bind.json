@@ -1,0 +1,34 @@
+{
+	"name": "taobao.miniapp.distribution.order.items.all.bind",
+	"apiChineseName": "小程序投放-基于投放计划绑定/解绑全店商品",
+	"description": "提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。该接口对应的能力是全店投放，该能力的使用，需要联系平台运营进行人工申请，申请通过以后方可调用成功。",
+	"requestParams": [
+		{
+			"name": "all_item_bind_request",
+			"type": "DistributionOrderBindTargetEntityOpenRequestV2",
+			"description": "绑定/解绑的入参信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "绑定/解绑的投放计划id",
+					"required": true
+				},
+				{
+					"name": "add_bind",
+					"type": "Boolean",
+					"description": "true:绑定； false: 解绑",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否绑定/解绑成功"
+		}
+	]
+}

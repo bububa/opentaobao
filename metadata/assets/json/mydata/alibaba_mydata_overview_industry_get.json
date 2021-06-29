@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.mydata.overview.industry.get",
+	"apiChineseName": "我的效果-获取Top行业列表",
+	"description": "获取数据管家我的效果API可以使用的行业",
+	"requestParams": [
+		{
+			"name": "date_range",
+			"type": "DateRange",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "数据周期结束时间（含）",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "数据周期开始时间（含）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "Industry []",
+			"description": "供应商Top行业列表",
+			"subParams": [
+				{
+					"name": "industry_desc",
+					"type": "String",
+					"description": "行业描述",
+					"required": true
+				},
+				{
+					"name": "industry_id",
+					"type": "Number",
+					"description": "行业ID",
+					"required": true
+				},
+				{
+					"name": "main_category",
+					"type": "Boolean",
+					"description": "是否主营行业",
+					"required": true
+				}
+			]
+		}
+	]
+}

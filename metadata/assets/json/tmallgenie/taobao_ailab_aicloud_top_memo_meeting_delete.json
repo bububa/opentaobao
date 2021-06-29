@@ -1,0 +1,210 @@
+{
+	"name": "taobao.ailab.aicloud.top.memo.meeting.delete",
+	"apiChineseName": "天猫精灵会议删除",
+	"description": "天猫精灵会议删除",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "schema",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "企业用户ID",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "手持设备ID"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息json段，用于存放APP类型，APP版本等等信息。"
+		},
+		{
+			"name": "memo_id",
+			"type": "Number",
+			"description": "会议ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "服务的结果封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "附加信息，典型应用场景是对失败调用进行简述，方便调用方定位问题",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "Number",
+					"description": "调用返回码",
+					"required": true
+				},
+				{
+					"name": "meeting",
+					"type": "Meeting",
+					"description": "服务的实际返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "memo_id",
+							"type": "Number",
+							"description": "memo_ID",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "memo状态",
+							"required": true
+						},
+						{
+							"name": "expected_start_time",
+							"type": "Date",
+							"description": "会议预计开始时间",
+							"required": true
+						},
+						{
+							"name": "expected_end_time",
+							"type": "Date",
+							"description": "会议预计结束时间",
+							"required": true
+						},
+						{
+							"name": "expected_remind_time",
+							"type": "Date",
+							"description": "期望提醒时间",
+							"required": true
+						},
+						{
+							"name": "location",
+							"type": "String",
+							"description": "会议地点",
+							"required": true
+						},
+						{
+							"name": "organizer",
+							"type": "String",
+							"description": "会议组织者",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "会议内容",
+							"required": true
+						},
+						{
+							"name": "topic",
+							"type": "String",
+							"description": "会议主题",
+							"required": true
+						},
+						{
+							"name": "music_url",
+							"type": "String",
+							"description": "铃声Url",
+							"required": true
+						},
+						{
+							"name": "required_participants",
+							"type": "String[]",
+							"description": "会议必选参与人员",
+							"required": true
+						},
+						{
+							"name": "optional_participants",
+							"type": "String[]",
+							"description": "会议可选参与人员",
+							"required": true
+						},
+						{
+							"name": "alert_ways",
+							"type": "Json[]",
+							"description": "提醒方式，如APP，音箱等，如果有多个，用逗号分隔",
+							"required": true
+						},
+						{
+							"name": "schedule_info",
+							"type": "ScheduleInfo",
+							"description": "调度信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "day_of_xs",
+									"type": "Number[]",
+									"description": "DayOfWeek/DayOfMonth",
+									"required": true
+								},
+								{
+									"name": "frequency",
+									"type": "Json",
+									"description": "调度频率",
+									"required": true
+								},
+								{
+									"name": "repeat",
+									"type": "Json",
+									"description": "调度周期",
+									"required": true
+								},
+								{
+									"name": "end_date",
+									"type": "Date",
+									"description": "调度结束时间",
+									"required": true
+								},
+								{
+									"name": "interval",
+									"type": "Number",
+									"description": "调度间隔",
+									"required": true
+								},
+								{
+									"name": "time",
+									"type": "Date",
+									"description": "调度时间点",
+									"required": true
+								},
+								{
+									"name": "start_date",
+									"type": "Date",
+									"description": "调度开始时间",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

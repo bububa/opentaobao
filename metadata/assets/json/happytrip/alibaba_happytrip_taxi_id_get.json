@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.happytrip.taxi.id.get",
+	"apiChineseName": "获取请求id",
+	"description": "获取订单号",
+	"requestParams": [
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "用户唯一标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "GetIdResult",
+			"description": "id获取结果",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "返回的id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

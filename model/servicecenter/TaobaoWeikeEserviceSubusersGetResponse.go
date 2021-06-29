@@ -19,7 +19,9 @@ type TaobaoWeikeEserviceSubusersGetAPIResponse struct {
 
 type TaobaoWeikeEserviceSubusersGetResponse struct {
     XMLName xml.Name `xml:"weike_eservice_subusers_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商家子账号查询结果
     

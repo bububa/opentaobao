@@ -1,0 +1,122 @@
+{
+	"name": "tmall.channel.trade.applyorder.get",
+	"apiChineseName": "查询采购申请单详情",
+	"description": "通过采购申请单ID获取单据详情",
+	"requestParams": [
+		{
+			"name": "channel_purchase_apply_order_no",
+			"type": "String",
+			"description": "采购申请单单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "channel_purchase_apply_order_no",
+			"type": "String",
+			"description": "申请单单号"
+		},
+		{
+			"name": "channel",
+			"type": "Number",
+			"description": "渠道 : com.tmall.usc.support.common.channelcenter.channel.enums.Channel"
+		},
+		{
+			"name": "distributor_nick",
+			"type": "String",
+			"description": "分销商名称"
+		},
+		{
+			"name": "audit_status",
+			"type": "Number",
+			"description": "审核状态 : com.tmall.usc.support.common.channelcenter.trade.enums.AuditStatus"
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "申请单状态 : com.tmall.usc.support.common.channelcenter.trade.enums.apply.ChannelPurchaseApplyOrderStatus"
+		},
+		{
+			"name": "trade_type",
+			"type": "Number",
+			"description": "交易类型: com.tmall.usc.support.common.channelcenter.trade.enums.TradeType"
+		},
+		{
+			"name": "audit_desc",
+			"type": "String",
+			"description": "审核描述"
+		},
+		{
+			"name": "cancel_desc",
+			"type": "String",
+			"description": "撤回的描述"
+		},
+		{
+			"name": "apply_create_time",
+			"type": "Date",
+			"description": "审核创建时间"
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "解析详情"
+		},
+		{
+			"name": "apply_order_detail",
+			"type": "TopChannelApplyOrderDetailDto",
+			"description": "申请单详情",
+			"subParams": [
+				{
+					"name": "apply_order_relate_item_list",
+					"type": "TopChannelApplyOrderRelateItemDto[]",
+					"description": "申请单的宝贝详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "货品ID",
+							"required": true
+						},
+						{
+							"name": "product_sku_id",
+							"type": "Number",
+							"description": "货品的skuId",
+							"required": true
+						},
+						{
+							"name": "buy_quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "purchase_price",
+							"type": "Number",
+							"description": "采购价",
+							"required": true
+						},
+						{
+							"name": "b2c_actual_pay_fee",
+							"type": "Number",
+							"description": "b2c的实付款",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "整单价格（包括邮费，单位分）",
+					"required": true
+				},
+				{
+					"name": "total_post_fee",
+					"type": "Number",
+					"description": "整单邮费",
+					"required": true
+				}
+			]
+		}
+	]
+}

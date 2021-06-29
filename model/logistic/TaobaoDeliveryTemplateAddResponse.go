@@ -19,7 +19,9 @@ type TaobaoDeliveryTemplateAddAPIResponse struct {
 
 type TaobaoDeliveryTemplateAddResponse struct {
     XMLName xml.Name `xml:"delivery_template_add_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 模板对象
     

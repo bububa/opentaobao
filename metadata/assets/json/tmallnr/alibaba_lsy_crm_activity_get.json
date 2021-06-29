@@ -1,0 +1,156 @@
+{
+	"name": "alibaba.lsy.crm.activity.get",
+	"apiChineseName": "私域导购查询活动详情",
+	"description": "私域导购查询活动详情",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "guider_id",
+			"type": "Number",
+			"description": "导购员id",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "摊位id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "NrtCrmActivityDetailDto",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status_str",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "end_time_str",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "start_time_str",
+							"type": "String",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "guider_customer_num",
+							"type": "Number",
+							"description": "留资人数",
+							"required": true
+						},
+						{
+							"name": "total_customer_num",
+							"type": "Number",
+							"description": "总留资人数",
+							"required": true
+						},
+						{
+							"name": "total_uv",
+							"type": "Number",
+							"description": "总uv",
+							"required": true
+						},
+						{
+							"name": "total_pv",
+							"type": "Number",
+							"description": "总pv",
+							"required": true
+						},
+						{
+							"name": "rule",
+							"type": "String",
+							"description": "规则",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "摊位名称",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "摊位id",
+							"required": true
+						},
+						{
+							"name": "guider_id",
+							"type": "Number",
+							"description": "导购员员工id",
+							"required": true
+						},
+						{
+							"name": "guider_name",
+							"type": "String",
+							"description": "导购员名称",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "活动标题",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "活动ID",
+							"required": true
+						},
+						{
+							"name": "store_address",
+							"type": "String",
+							"description": "摊位地址",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "100:已发布，-100:失效，200:已结束",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

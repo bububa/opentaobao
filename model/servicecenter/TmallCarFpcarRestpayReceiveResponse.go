@@ -19,7 +19,9 @@ type TmallCarFpcarRestpayReceiveAPIResponse struct {
 
 type TmallCarFpcarRestpayReceiveResponse struct {
     XMLName xml.Name `xml:"tmall_car_fpcar_restpay_receive_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 是否成功
     

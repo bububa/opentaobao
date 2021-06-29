@@ -1,0 +1,425 @@
+{
+	"name": "taobao.xhotel.bnbowner.add",
+	"apiChineseName": "民宿房东信息添加",
+	"description": "添加和更新民宿房东的信息",
+	"requestParams": [
+		{
+			"name": "add_owner_param",
+			"type": "AddOwnerParam",
+			"description": "添加房东信息的对象",
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "房东Id，供货商自己库中的房东Id",
+					"required": true
+				},
+				{
+					"name": "vendor",
+					"type": "String",
+					"description": "对接系统商名称：可为空不要乱填，需要申请后使用"
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "房东昵称",
+					"required": true
+				},
+				{
+					"name": "avatar_url",
+					"type": "String",
+					"description": "房东头像地址",
+					"required": true
+				},
+				{
+					"name": "owner_type",
+					"type": "Number",
+					"description": "房东类型，枚举 1.个人房东；2.商户经营；3.其他",
+					"required": true
+				},
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别，M-男性,F-女性，U-未知"
+				},
+				{
+					"name": "birthday",
+					"type": "Date",
+					"description": "房东的生日（年-月-日 00:00:00）"
+				},
+				{
+					"name": "qualification",
+					"type": "Number",
+					"description": "学历 1:小学,2:初中,3:高中,4:本科,5:硕士,6:博士,7:博士后,0:其他"
+				},
+				{
+					"name": "profession",
+					"type": "String",
+					"description": "职业"
+				},
+				{
+					"name": "constellation",
+					"type": "Number",
+					"description": "星座 -1:错误，未知, 0:白羊,1:金牛,2:双子,3:巨蟹,4:狮子,5:处女,6:天秤,7:天蝎,8:射手,9:摩羯,10:水瓶,11:双鱼"
+				},
+				{
+					"name": "blood_type",
+					"type": "Number",
+					"description": "房东血型，0:未知,1:A型,2:B型,3:AB型,4:O型"
+				},
+				{
+					"name": "hobbies",
+					"type": "String",
+					"description": "爱好，用英文逗号分割 如\"游泳,爬山\""
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "房东介绍，长度限制2048个字符"
+				},
+				{
+					"name": "story",
+					"type": "String",
+					"description": "房东故事，json串，可以传图片和文本： {\"pics\":[\"\"],\"content\":\"\"}"
+				},
+				{
+					"name": "telephone",
+					"type": "String",
+					"description": "固定电话。移动电话号码与固定电话号码二者必须填一个"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "移动电话号码。移动电话号码与固定电话号码二者必须填一个"
+				},
+				{
+					"name": "real_contact",
+					"type": "String",
+					"description": "房东的真实联系方式，不能填第三方转接号码",
+					"required": true
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国内固定传\"China\"；国外必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm"
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "房东所在城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；"
+				},
+				{
+					"name": "license_type",
+					"type": "Number",
+					"description": "经营资质执照类型 ，1 身份证(默认)、2 护照、3 营业执照",
+					"required": true
+				},
+				{
+					"name": "license_name",
+					"type": "String",
+					"description": "经营资质执照类型对应的名称，执照类型1（身份证）：身份证姓名；执照类型2（护照）：护照姓名；执照类型3（营业执照）：企业名称"
+				},
+				{
+					"name": "license_no",
+					"type": "String",
+					"description": "经营资质执照类型对应的编码，执照类型1（身份证）：身份证号；执照类型2（护照）：护照号；执照类型3（营业执照）：营业执照编号"
+				},
+				{
+					"name": "validate",
+					"type": "Number",
+					"description": "实名验证方式，认证情况:1:身份验证,2:头像验证,4:手机验证,8:邮箱验证,可以二进制叠加,二进制各位代表含义",
+					"required": true
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "实名认证姓名"
+				},
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "身份证号"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "房东等级评分，0-100，房东等级越高越优秀"
+				},
+				{
+					"name": "labels",
+					"type": "String",
+					"description": "房东标签，英文逗号分割，如\"超赞,有爱\""
+				},
+				{
+					"name": "avg_confirm_time",
+					"type": "Number",
+					"description": "订单平均确认时长（单位分钟，要求大于0）"
+				},
+				{
+					"name": "confirm_rate",
+					"type": "Number",
+					"description": "订单接单率 0-100，百分比分子"
+				},
+				{
+					"name": "response_rate",
+					"type": "Number",
+					"description": "回复率，0-100，百分比分子，数字越大回复率越高"
+				},
+				{
+					"name": "positive_feedback",
+					"type": "Number",
+					"description": "好评率，0-100，百分比分子，数字越大好评率越高"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "是否出错",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "first_result",
+					"type": "AddOwnerParam",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "房东Id，供货商自己库中的房东Id",
+							"required": true
+						},
+						{
+							"name": "vendor",
+							"type": "String",
+							"description": "对接系统商名称：可为空不要乱填，需要申请后使用",
+							"required": true
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称",
+							"required": true
+						},
+						{
+							"name": "avatar_url",
+							"type": "String",
+							"description": "房东头像地址",
+							"required": true
+						},
+						{
+							"name": "owner_type",
+							"type": "Number",
+							"description": "房东类型，枚举 1.个人房东；2.商户经营；3.其他",
+							"required": true
+						},
+						{
+							"name": "gender",
+							"type": "String",
+							"description": "性别，M-男性,F-女性，U-未知",
+							"required": true
+						},
+						{
+							"name": "birthday",
+							"type": "Date",
+							"description": "房东的生日（年-月-日 00:00:00）",
+							"required": true
+						},
+						{
+							"name": "qualification",
+							"type": "Number",
+							"description": "学历 1:小学,2:初中,3:高中,4:本科,5:硕士,6:博士,7:博士后,0:其他",
+							"required": true
+						},
+						{
+							"name": "profession",
+							"type": "String",
+							"description": "职业",
+							"required": true
+						},
+						{
+							"name": "constellation",
+							"type": "Number",
+							"description": "星座 -1:错误，未知, 0:白羊,1:金牛,2:双子,3:巨蟹,4:狮子,5:处女,6:天秤,7:天蝎,8:射手,9:摩羯,10:水瓶,11:双鱼",
+							"required": true
+						},
+						{
+							"name": "blood_type",
+							"type": "Number",
+							"description": "房东血型，0:未知,1:A型,2:B型,3:AB型,4:O型",
+							"required": true
+						},
+						{
+							"name": "hobbies",
+							"type": "String",
+							"description": "爱好，用英文逗号分割 如\"游泳,爬山\"",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "房东介绍，长度限制2048个字符",
+							"required": true
+						},
+						{
+							"name": "story",
+							"type": "String",
+							"description": "房东故事",
+							"required": true
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "固定电话",
+							"required": true
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "移动电话",
+							"required": true
+						},
+						{
+							"name": "real_contact",
+							"type": "String",
+							"description": "房东的真实联系方式，不能填第三方转接号码",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国内固定传\"China\"；国外必须传定义的海外国家编码值。参见：http://hotel.alitrip.com/area.htm",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "省份编码。选填，不填入的时候已city字段为准.参见：http://hotel.alitrip.com/area.htm",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "房东所在城市编码。参见：http://hotel.alitrip.com/area.htm，domestic为false时，输入对应国家的海外城市编码，可调用海外城市查询接口获取；",
+							"required": true
+						},
+						{
+							"name": "license_type",
+							"type": "Number",
+							"description": "经营资质执照类型 ，1 身份证(默认)、2 护照、3 营业执照",
+							"required": true
+						},
+						{
+							"name": "license_name",
+							"type": "String",
+							"description": "经营资质执照类型对应的名称，执照类型1（身份证）：身份证姓名；执照类型2（护照）：护照姓名；执照类型3（营业执照）：企业名称",
+							"required": true
+						},
+						{
+							"name": "license_no",
+							"type": "String",
+							"description": "经营资质执照类型对应的编码，执照类型1（身份证）：身份证号；执照类型2（护照）：护照号；执照类型3（营业执照）：营业执照编号",
+							"required": true
+						},
+						{
+							"name": "validate",
+							"type": "Number",
+							"description": "实名验证方式，认证情况:1:身份验证,2:头像验证,4:手机验证,8:邮箱验证,可以二进制叠加,二进制各位代表含义",
+							"required": true
+						},
+						{
+							"name": "real_name",
+							"type": "String",
+							"description": "实名认证姓名",
+							"required": true
+						},
+						{
+							"name": "id_number",
+							"type": "String",
+							"description": "身份证号",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "房东等级评分，0-100，房东等级越高越优秀",
+							"required": true
+						},
+						{
+							"name": "labels",
+							"type": "String",
+							"description": "房东标签，英文逗号分割，如\"超赞,有爱\"",
+							"required": true
+						},
+						{
+							"name": "avg_confirm_time",
+							"type": "Number",
+							"description": "订单平均确认时长（单位分钟，要求大于0）",
+							"required": true
+						},
+						{
+							"name": "confirm_rate",
+							"type": "Number",
+							"description": "订单接单率 0-100，百分比分子",
+							"required": true
+						},
+						{
+							"name": "response_rate",
+							"type": "Number",
+							"description": "回复率，0-100，百分比分子，数字越大回复率越高",
+							"required": true
+						},
+						{
+							"name": "positive_feedback",
+							"type": "Number",
+							"description": "好评率，0-100，百分比分子，数字越大好评率越高",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

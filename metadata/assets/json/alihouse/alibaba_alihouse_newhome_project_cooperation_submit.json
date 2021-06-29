@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.alihouse.newhome.project.cooperation.submit",
+	"apiChineseName": "提交KA合作楼盘",
+	"description": "提交KA合作楼盘",
+	"requestParams": [
+		{
+			"name": "project_cooperation_dto",
+			"type": "ProjectCooperationDto",
+			"description": "ka合作对象",
+			"subParams": [
+				{
+					"name": "cooperation_end_time",
+					"type": "Date",
+					"description": "合作开始时间"
+				},
+				{
+					"name": "cooperation_begin_time",
+					"type": "Date",
+					"description": "合作结束时间"
+				},
+				{
+					"name": "ka_project_mid",
+					"type": "String",
+					"description": "KA楼盘ID"
+				},
+				{
+					"name": "outer_cooperation_id",
+					"type": "String",
+					"description": "流水号"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘ID"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态 0-无效 1-有效"
+				},
+				{
+					"name": "is_priority",
+					"type": "Number",
+					"description": "是否优先展示 0-否 1-是"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

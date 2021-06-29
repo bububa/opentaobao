@@ -1,0 +1,343 @@
+{
+	"name": "alibaba.legal.suit.court.after.push",
+	"apiChineseName": "更新或者新增庭后信息",
+	"description": "供外部ISV供应商 推送庭后信息给集团诉讼",
+	"requestParams": [
+		{
+			"name": "after_court_info_model",
+			"type": "AfterCourtInfoModel",
+			"description": "庭后信息",
+			"subParams": [
+				{
+					"name": "prediction_result",
+					"type": "String",
+					"description": "预测结果"
+				},
+				{
+					"name": "communication_date",
+					"type": "Date",
+					"description": "交流时间"
+				},
+				{
+					"name": "attachment_count",
+					"type": "Number",
+					"description": "附件数量"
+				},
+				{
+					"name": "attachment_list",
+					"type": "FileModel[]",
+					"description": "附件列表",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "附件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "附件key"
+						}
+					]
+				},
+				{
+					"name": "party_list",
+					"type": "FileModel[]",
+					"description": "与当事人沟通内容",
+					"subParams": [
+						{
+							"name": "submit_date",
+							"type": "Date",
+							"description": "沟通时间"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "沟通结果"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "沟通内容"
+						},
+						{
+							"name": "intro",
+							"type": "String",
+							"description": "沟通方"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "沟通方式"
+						}
+					]
+				},
+				{
+					"name": "courts_list",
+					"type": "FileModel[]",
+					"description": "与法院沟通内容",
+					"subParams": [
+						{
+							"name": "submit_date",
+							"type": "Date",
+							"description": "沟通时间"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "沟通结果"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "沟通内容"
+						},
+						{
+							"name": "intro",
+							"type": "String",
+							"description": "沟通方"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "沟通方式"
+						}
+					]
+				},
+				{
+					"name": "non_evidence_list",
+					"type": "AfterCourtDetailModel[]",
+					"description": "非证据材料",
+					"subParams": [
+						{
+							"name": "non_evi_attachment_list",
+							"type": "FileModel[]",
+							"description": "附件",
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "附件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "附件key"
+								}
+							]
+						},
+						{
+							"name": "non_evi_attachment_count",
+							"type": "Number",
+							"description": "附件数量"
+						},
+						{
+							"name": "submit_date",
+							"type": "Date",
+							"description": "提交时间"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "质证情况"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "证明目的"
+						},
+						{
+							"name": "intro",
+							"type": "String",
+							"description": "材料简介"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "材料名称"
+						}
+					]
+				},
+				{
+					"name": "evidence_list",
+					"type": "AfterCourtDetailModel[]",
+					"description": "证据材料",
+					"subParams": [
+						{
+							"name": "evi_attachment_list",
+							"type": "FileModel[]",
+							"description": "附件",
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "附件名称"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "附件key"
+								}
+							]
+						},
+						{
+							"name": "evi_attachment_count",
+							"type": "Number",
+							"description": "附件数量"
+						},
+						{
+							"name": "submit_date",
+							"type": "Date",
+							"description": "提交时间"
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "质证情况"
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "证明目的"
+						},
+						{
+							"name": "intro",
+							"type": "String",
+							"description": "材料简介"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "材料名称"
+						}
+					]
+				},
+				{
+					"name": "feedback_attachment_list",
+					"type": "FileModel[]",
+					"description": "反馈附件",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "附件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "附件key"
+						}
+					]
+				},
+				{
+					"name": "feedback_attachment_count",
+					"type": "Number",
+					"description": "附件数量"
+				},
+				{
+					"name": "feedback_content",
+					"type": "String",
+					"description": "反馈内容"
+				},
+				{
+					"name": "feedback_id",
+					"type": "Number",
+					"description": "反馈id"
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "更新时间"
+				},
+				{
+					"name": "updater",
+					"type": "String",
+					"description": "更新人"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "founder",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "沟通总结"
+				},
+				{
+					"name": "agent_word",
+					"type": "String",
+					"description": "代理词要点"
+				},
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件id"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托id"
+				},
+				{
+					"name": "calling_time",
+					"type": "Date",
+					"description": "调用时间"
+				},
+				{
+					"name": "after_court_id",
+					"type": "Number",
+					"description": "庭后信息ID,更新时不能为空"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "操作类型"
+				},
+				{
+					"name": "discription",
+					"type": "String",
+					"description": "备注（主诉）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Number",
+					"description": "庭后id",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

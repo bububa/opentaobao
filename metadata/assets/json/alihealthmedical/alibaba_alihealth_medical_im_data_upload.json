@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.medical.im.data.upload",
+	"apiChineseName": "三方IM图片音频消息上传",
+	"description": "三方IM图片音频消息上传",
+	"requestParams": [
+		{
+			"name": "upload_data_request",
+			"type": "UploadDataRequest",
+			"description": "request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "文件类型名",
+					"required": true
+				},
+				{
+					"name": "doctor_uuid",
+					"type": "String",
+					"description": "医生外部id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "file",
+			"type": "byte[]",
+			"description": "文件字节流",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "UploadImageResponse",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "object_key",
+							"type": "String",
+							"description": "文件key值",
+							"required": true
+						},
+						{
+							"name": "full_url",
+							"type": "String",
+							"description": "url",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.idle.apprize.order.fulfillment",
+	"apiChineseName": "鉴定担保资金订单履约",
+	"description": "服务商针对自己的服务订单进行履约",
+	"requestParams": [
+		{
+			"name": "action",
+			"type": "String",
+			"description": "deal：服务商收取费用、refund：退款给付款方",
+			"required": true
+		},
+		{
+			"name": "work_card_id",
+			"type": "Number",
+			"description": "天猫服务工单Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alipay_order_id",
+			"type": "String",
+			"description": "支付宝流水订单号"
+		}
+	]
+}

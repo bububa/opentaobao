@@ -19,7 +19,9 @@ type TaobaoOpenimChatlogsGetAPIResponse struct {
 
 type TaobaoOpenimChatlogsGetResponse struct {
     XMLName xml.Name `xml:"openim_chatlogs_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 聊天记录查询结果
     

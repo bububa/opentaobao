@@ -1,0 +1,294 @@
+{
+	"name": "alibaba.idle.recycle.order.show",
+	"apiChineseName": "闲鱼回收订单查询V1.1",
+	"description": "查询回收订单",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Serializable",
+					"description": "订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "app_key",
+							"type": "String",
+							"description": "回收商appkey",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "回收订单状态",
+							"required": true
+						},
+						{
+							"name": "buyer_id",
+							"type": "Number",
+							"description": "买家id,已脱敏处理返回0",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家nick",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id,已脱敏处理返回0",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家nick",
+							"required": true
+						},
+						{
+							"name": "seller_alipay_user_id",
+							"type": "String",
+							"description": "卖家支付宝id,用于回收商支付宝打款",
+							"required": true
+						},
+						{
+							"name": "seller_alipay_account",
+							"type": "String",
+							"description": "卖家支付宝账号,已脱敏",
+							"required": true
+						},
+						{
+							"name": "credit_pay",
+							"type": "Boolean",
+							"description": "是否信用预付订单",
+							"required": true
+						},
+						{
+							"name": "credit_pay_amount",
+							"type": "Number",
+							"description": "信用预付金额,单位分",
+							"required": true
+						},
+						{
+							"name": "apprize_amount",
+							"type": "Number",
+							"description": "估价金额,单位分",
+							"required": true
+						},
+						{
+							"name": "seller_address",
+							"type": "String",
+							"description": "卖家收货地址",
+							"required": true
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家手机号码",
+							"required": true
+						},
+						{
+							"name": "ship_type",
+							"type": "String",
+							"description": "取件类型 1：顺风 2：上门取件",
+							"required": true
+						},
+						{
+							"name": "ship_time",
+							"type": "String",
+							"description": "取件时间",
+							"required": true
+						},
+						{
+							"name": "seller_real_name",
+							"type": "String",
+							"description": "卖家姓名",
+							"required": true
+						},
+						{
+							"name": "zfb_dk",
+							"type": "Boolean",
+							"description": "是否支付宝签约",
+							"required": true
+						},
+						{
+							"name": "zfb_dk_code",
+							"type": "String",
+							"description": "支付宝签约code",
+							"required": true
+						},
+						{
+							"name": "apprize_id",
+							"type": "String",
+							"description": "估价id",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "村",
+							"required": true
+						},
+						{
+							"name": "zm_score",
+							"type": "String",
+							"description": "芝麻分",
+							"required": true
+						},
+						{
+							"name": "coupon_id",
+							"type": "String",
+							"description": "未来的卡券id",
+							"required": true
+						},
+						{
+							"name": "coupon_fee",
+							"type": "String",
+							"description": "加价券金额",
+							"required": true
+						},
+						{
+							"name": "coupon_rule",
+							"type": "String",
+							"description": "卡券规则",
+							"required": true
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "回收渠道",
+							"required": true
+						},
+						{
+							"name": "rate_grade",
+							"type": "String",
+							"description": "1 好评,0 默认中评",
+							"required": true
+						},
+						{
+							"name": "rate_content",
+							"type": "String",
+							"description": "评价内容",
+							"required": true
+						},
+						{
+							"name": "close_reason",
+							"type": "String",
+							"description": "卖家关闭订单原因",
+							"required": true
+						},
+						{
+							"name": "buyer_close_reason",
+							"type": "String",
+							"description": "买家关闭订单原因",
+							"required": true
+						},
+						{
+							"name": "refund_reason",
+							"type": "String",
+							"description": "卖家申请退回原因",
+							"required": true
+						},
+						{
+							"name": "env",
+							"type": "String",
+							"description": "onlien:线上环境  pre：测试环境",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "订单创建时间",
+							"required": true
+						},
+						{
+							"name": "zm_level",
+							"type": "String",
+							"description": "600以下为Z5，600-649为Z4，650-699为Z3，700-749为Z2，750及以上为Z1",
+							"required": true
+						},
+						{
+							"name": "idle_pay_type",
+							"type": "String",
+							"description": "1:支付宝现金 2：天猫红包",
+							"required": true
+						},
+						{
+							"name": "channel_data",
+							"type": "String",
+							"description": "渠道内的业务数据json格式 比如 ship=1 服装类的不需要发货,weight=5-15 代表服装5-15kg, userLevel=vip 代表免议价用户,sellerRealPhone 淘宝账号绑定的手机号",
+							"required": true
+						},
+						{
+							"name": "dk_type",
+							"type": "String",
+							"description": "代扣类型： xydk:闲鱼代扣，shdk：商户代扣，原有代扣的方式。空值默认shdk",
+							"required": true
+						},
+						{
+							"name": "scene_type",
+							"type": "String",
+							"description": "回收场景",
+							"required": true
+						},
+						{
+							"name": "spu_id",
+							"type": "String",
+							"description": "spuid",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

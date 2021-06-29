@@ -1,0 +1,20 @@
+{
+	"name": "taobao.alitrip.seller.refund.confirmreturn",
+	"apiChineseName": "【机票代理商】确认退票",
+	"description": "确认退票",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "退票申请单",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

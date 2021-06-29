@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.iot.device.corpus.get",
+	"apiChineseName": "IoT设备支持语料获取",
+	"description": "ISV通过该接口获取天猫精灵IoT设备支持控制或查询的语料",
+	"requestParams": [
+		{
+			"name": "user_open_id",
+			"type": "String",
+			"description": "天猫精灵开放用户id"
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "天猫精灵开放的client id"
+		},
+		{
+			"name": "dev_id",
+			"type": "String",
+			"description": "iot设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_values",
+			"type": "DeviceCorpusTopDto []",
+			"description": "返回结构体",
+			"subParams": [
+				{
+					"name": "corpus_list",
+					"type": "String[]",
+					"description": "操作语料",
+					"required": true
+				},
+				{
+					"name": "function_name",
+					"type": "String",
+					"description": "支持的操作类型",
+					"required": true
+				}
+			]
+		}
+	]
+}

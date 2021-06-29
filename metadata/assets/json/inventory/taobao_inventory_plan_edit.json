@@ -1,0 +1,185 @@
+{
+	"name": "taobao.inventory.plan.edit",
+	"apiChineseName": "设置计划库存",
+	"description": "初始化计划库存，或者编辑已经存在的计划库存",
+	"requestParams": [
+		{
+			"name": "plan_top",
+			"type": "PlanTopDto",
+			"description": "计划库存设置入参",
+			"subParams": [
+				{
+					"name": "plan_instance_list",
+					"type": "PlanInstanceTopDto[]",
+					"description": "计划详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "promise_list",
+							"type": "PromiseList[]",
+							"description": "服务承诺信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "delivery_time",
+									"type": "String",
+									"description": "服务时效信息，发货时间比如2020-01-26；相对时间比如3，代表付款后3天内发货",
+									"required": true
+								},
+								{
+									"name": "delivery_type",
+									"type": "Number",
+									"description": "发货时间类型，0-绝对时间，1-相对时间",
+									"required": true
+								},
+								{
+									"name": "perform_store",
+									"type": "String",
+									"description": "履约仓code",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "quantity_op_type",
+							"type": "Number",
+							"description": "设置的库存类型，0-全量覆盖，1-增量处理",
+							"required": true
+						},
+						{
+							"name": "relation_list",
+							"type": "RelationList[]",
+							"description": "计划库存生效的宝贝范围。对于品的后端货品情况下，才有可能设置，设置后在这个范围的宝贝才能使用计划库存。也可以不设置，代表后端货品关联的所有宝贝都生效。",
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "生效的前端宝贝id"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "生效的前端宝贝的skuid"
+								}
+							]
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "计划库存销售开始时间，年月日时分秒",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "计划库存销售结束时间，年月日时分秒",
+							"required": true
+						},
+						{
+							"name": "strategy",
+							"type": "Strategy",
+							"description": "销售策略",
+							"required": true,
+							"subParams": [
+								{
+									"name": "comb_support",
+									"type": "Boolean",
+									"description": "组合货品情况下，是否支持部分子品现货部分子品计划库存可以进行组合。如果不设置，则都是现货库存，或者都是计划库存才能进行组合"
+								},
+								{
+									"name": "rule_type",
+									"type": "Number",
+									"description": "具体的销售策略，1-先现货库存，后计划库存；2-仅计划库存",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "setting_quantity",
+							"type": "Number",
+							"description": "设置的库存值",
+							"required": true
+						},
+						{
+							"name": "plan_order_id",
+							"type": "String",
+							"description": "外部商家系统单据号，用于生成计划库存的业务来源",
+							"required": true
+						},
+						{
+							"name": "operate_code",
+							"type": "String",
+							"description": "操作码，用于幂等验证",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "品id，前端宝贝id，或者后端货品id",
+					"required": true
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "品的类型，1-前端宝贝，2-后端货品",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "设置计划的品的skuid。对于货品，是0.",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BatchResult",
+			"description": "批量返回结果",
+			"subParams": [
+				{
+					"name": "success_result_map",
+					"type": "Json",
+					"description": "成功列表",
+					"required": true
+				},
+				{
+					"name": "error_result_map",
+					"type": "Json",
+					"description": "失败列表",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "有一个失败，则整体是失败",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "结果描述",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "结果id",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "结果码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

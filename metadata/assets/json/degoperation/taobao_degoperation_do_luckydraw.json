@@ -1,0 +1,81 @@
+{
+	"name": "taobao.degoperation.do.luckydraw",
+	"apiChineseName": "激励抽奖",
+	"description": "激励平台抽奖接口。用户可以通过接口完成抽奖功能",
+	"requestParams": [
+		{
+			"name": "deg_app_key",
+			"type": "String",
+			"description": "后台活动配置appkey",
+			"required": true
+		},
+		{
+			"name": "deg_event_key",
+			"type": "String",
+			"description": "后台活动配置eventkey",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "前端标识",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid",
+			"required": true
+		},
+		{
+			"name": "param_sign",
+			"type": "String",
+			"description": "参数校验"
+		},
+		{
+			"name": "deg_access_token",
+			"type": "String",
+			"description": "传参信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BonusResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "accessAmount=剩余抽奖次数，activityId=活动id，activityName=活动名称， amount=中奖个数， awardId=奖品id， empty=业务参数为空， fullDesc=奖品完整描述，groupCode=分组编码，groupDesc=分组描述， hyperlinkDesc=超链文案， hyperlinkUrl=超链url，iconUrl=奖品图片URL，name=奖品名称， price=奖品价格， priority=奖品等级，priorityName=奖品等级中文显示， recordId=记录主键id，sequenceNo=奖品唯一标识，serialNumber=加密串，对外流水号，simpleDesc=简单描述，type=奖品类型，typeName=奖品类型中文显示，unit=单位， lucky=是否中奖， totalAmount=总的抽奖次数，",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "是否错误",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,64 @@
+{
+	"name": "taobao.uscesl.biz.ap.activate",
+	"apiChineseName": "激活AP价签通讯模块",
+	"description": "激活AP价签通讯模块",
+	"requestParams": [
+		{
+			"name": "ap_mac",
+			"type": "String",
+			"description": "AP的mac地址",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "成功与否看result.success，返回true或者false",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "业务true或false",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "1标识成功,其他失败",
+					"required": true
+				},
+				{
+					"name": "target",
+					"type": "Boolean",
+					"description": "请求true或false",
+					"required": true
+				}
+			]
+		}
+	]
+}

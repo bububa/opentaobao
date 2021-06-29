@@ -19,7 +19,9 @@ type TaobaoWlbWmsReturnBillGetAPIResponse struct {
 
 type TaobaoWlbWmsReturnBillGetResponse struct {
     XMLName xml.Name `xml:"wlb_wms_return_bill_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 回退订单信息
     

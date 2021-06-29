@@ -1,0 +1,275 @@
+{
+	"name": "taobao.alitrip.ie.agent.order.search",
+	"apiChineseName": "【国际机票】订单列表查询",
+	"description": "根据指定条件查询国际机票订单列表",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商ID"
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "订单起始日期"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页码"
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "订单结束日期"
+		},
+		{
+			"name": "order_status",
+			"type": "String",
+			"description": "订单状态（只能传入一个状态，不支持多个一起传）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "fare_source",
+			"type": "Number",
+			"description": "0:自有运价;3:公布运价;9:大卖家API;11私有库存"
+		},
+		{
+			"name": "resource_code",
+			"type": "String",
+			"description": "供应渠道/资源码"
+		},
+		{
+			"name": "office_no",
+			"type": "String",
+			"description": "officeNo"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "base_order_vos",
+			"type": "IeBaseOrderVo []",
+			"description": "订单列表",
+			"subParams": [
+				{
+					"name": "arr_airport",
+					"type": "String",
+					"description": "达到机场",
+					"required": true
+				},
+				{
+					"name": "flight_nos",
+					"type": "String",
+					"description": "全部航班号",
+					"required": true
+				},
+				{
+					"name": "trade_order_id",
+					"type": "Number",
+					"description": "交易订单id",
+					"required": true
+				},
+				{
+					"name": "gmt_create_time",
+					"type": "Date",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "success_time",
+					"type": "Date",
+					"description": "订单成功时间",
+					"required": true
+				},
+				{
+					"name": "total_service_price",
+					"type": "Number",
+					"description": "总价",
+					"required": true
+				},
+				{
+					"name": "inbound_dep_time",
+					"type": "Date",
+					"description": "回程出发日期",
+					"required": true
+				},
+				{
+					"name": "credit_status",
+					"type": "String",
+					"description": "信用状态",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "inbound_arr_time",
+					"type": "Date",
+					"description": "回程到达时间",
+					"required": true
+				},
+				{
+					"name": "pay2_agent_time",
+					"type": "Date",
+					"description": "转交易时间",
+					"required": true
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "预定hk时间",
+					"required": true
+				},
+				{
+					"name": "commission_status",
+					"type": "String",
+					"description": "佣金状态",
+					"required": true
+				},
+				{
+					"name": "total_ticket_price",
+					"type": "Number",
+					"description": "总票价",
+					"required": true
+				},
+				{
+					"name": "total_activity_remit_price",
+					"type": "Number",
+					"description": "活动金额",
+					"required": true
+				},
+				{
+					"name": "total_tax_price",
+					"type": "Number",
+					"description": "总税费",
+					"required": true
+				},
+				{
+					"name": "outbound_dep_time",
+					"type": "Date",
+					"description": "出发时间",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "订单总价",
+					"required": true
+				},
+				{
+					"name": "total_redpackage",
+					"type": "Number",
+					"description": "红包价格",
+					"required": true
+				},
+				{
+					"name": "dep_airport",
+					"type": "String",
+					"description": "出发机场",
+					"required": true
+				},
+				{
+					"name": "commission_price",
+					"type": "Number",
+					"description": "佣金金额",
+					"required": true
+				},
+				{
+					"name": "trip_type",
+					"type": "String",
+					"description": "航程类型(OneWay:单程,RoundTrip:往返,MultiCity:多程)",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "close_time",
+					"type": "Date",
+					"description": "订单关闭时间",
+					"required": true
+				},
+				{
+					"name": "pay_status",
+					"type": "String",
+					"description": "支付状态",
+					"required": true
+				},
+				{
+					"name": "close_type",
+					"type": "String",
+					"description": "关闭类型",
+					"required": true
+				},
+				{
+					"name": "passenger_count",
+					"type": "Number",
+					"description": "乘机人数量",
+					"required": true
+				},
+				{
+					"name": "est_commission_price",
+					"type": "Number",
+					"description": "预计佣金金额",
+					"required": true
+				},
+				{
+					"name": "close_reason",
+					"type": "String",
+					"description": "关闭原因",
+					"required": true
+				},
+				{
+					"name": "outbound_arr_time",
+					"type": "Date",
+					"description": "出发到达日期",
+					"required": true
+				},
+				{
+					"name": "origin_total_price",
+					"type": "Number",
+					"description": "订单初始总价",
+					"required": true
+				},
+				{
+					"name": "gold_medal_order",
+					"type": "Boolean",
+					"description": "金牌订单",
+					"required": true
+				},
+				{
+					"name": "speed_ticket_order",
+					"type": "Boolean",
+					"description": "极速出票订单：true:是, false:否",
+					"required": true
+				},
+				{
+					"name": "product_tags",
+					"type": "String[]",
+					"description": "产品标签：student:学生票、nationality：国籍票、group：小团票、gold：金牌机票、card：宝贝机票、common：年龄票、speed：极速机票、age：限年龄票、delay：延时出票",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "query_success",
+			"type": "Boolean",
+			"description": "请求成功标识"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否可以翻页查询"
+		}
+	]
+}

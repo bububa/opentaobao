@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.adm.ott.query",
+	"apiChineseName": "优酷OTT端广告素材查询",
+	"description": "查询广告素材",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询参数json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "返回数据详情，json格式"
+		}
+	]
+}

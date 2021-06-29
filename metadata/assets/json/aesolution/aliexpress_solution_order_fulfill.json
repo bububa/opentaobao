@@ -1,0 +1,56 @@
+{
+	"name": "aliexpress.solution.order.fulfill",
+	"apiChineseName": "fulfill order",
+	"description": "fulfill order for seller",
+	"requestParams": [
+		{
+			"name": "service_name",
+			"type": "String",
+			"description": "Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120\u0026page=1\u0026toread=1#tpc for the detailed list of logistics services supported by the platform.)",
+			"required": true
+		},
+		{
+			"name": "tracking_website",
+			"type": "String",
+			"description": "When serviceName=other, fill in the corresponding tracking website."
+		},
+		{
+			"name": "out_ref",
+			"type": "String",
+			"description": "order ID for delivery by the user",
+			"required": true
+		},
+		{
+			"name": "send_type",
+			"type": "String",
+			"description": "Status including: all shipments (all), part of the delivery (part)",
+			"required": true
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "Remarks (only in English, and the length is limited to 512 characters)"
+		},
+		{
+			"name": "logistics_no",
+			"type": "String",
+			"description": "logistics number",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "object",
+			"subParams": [
+				{
+					"name": "result_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.idle.recycle.spu.template.modify",
+	"apiChineseName": "闲鱼接收回收商spu模板挂载信息",
+	"description": "闲鱼接收回收商spu模板挂载信息",
+	"requestParams": [
+		{
+			"name": "recycle_spu_template",
+			"type": "RecycleSpuTemplate",
+			"description": "回收商挂载模版信息",
+			"subParams": [
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "spuId"
+				},
+				{
+					"name": "action_type",
+					"type": "Number",
+					"description": "闲鱼端的spu变化，0新增，1删除，2修改名字"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "可选， 回收V1版本：3C数码\"3C\"，奢侈品\"LUXURIES\"，大件\"BULKS\"，车\"CAR\",母婴\"BABY\"，办公设备\"OFFICE\"，美妆\"MAKEUP\"，服装\"CLOTHING\"，低残值\"LOWVALUE\"，虚拟卡券\"VIRTUAL\" 回收V2版本：3C数码\"3C_NEW\"，奢侈品\"LUXURIES_NEW\"，大件\"BULKS_NEW\"，黄金\"GOLD_NEW\""
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RecycleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "spu_status",
+					"type": "Number",
+					"description": "闲鱼后台spu状态，0为在线，1为待测试，需要测试完成后再次挂载，-1为已删除（置为无效）",
+					"required": true
+				}
+			]
+		}
+	]
+}

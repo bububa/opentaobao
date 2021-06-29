@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.alihouse.newhome.project.query",
+	"apiChineseName": "查询楼盘相关信息",
+	"description": "根据outerid查询楼盘相关信息",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部楼盘/小区id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "EbbasItemDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "online_status",
+							"type": "byte",
+							"description": "楼盘上下架状态",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.show.getbyshowlongid",
+	"apiChineseName": "迎客松根据节目longid获取节目元数据",
+	"description": "迎客松根据节目longid获取节目元数据",
+	"requestParams": [
+		{
+			"name": "show_long_id",
+			"type": "Number",
+			"description": "节目longid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "节目元数据信息"
+		}
+	]
+}

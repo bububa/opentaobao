@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.campus.acl.new.deleteuserrole",
+	"apiChineseName": "删除管理员",
+	"description": "删除管理员",
+	"requestParams": [
+		{
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "应用",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户账号",
+			"required": true
+		},
+		{
+			"name": "role_ids",
+			"type": "Number[]",
+			"description": "角色id",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "是否删除成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

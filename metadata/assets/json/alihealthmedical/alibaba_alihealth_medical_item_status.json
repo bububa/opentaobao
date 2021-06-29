@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.medical.item.status",
+	"apiChineseName": "商品上下架",
+	"description": "医生通三方机构平台进行服务商品上下架操作",
+	"requestParams": [
+		{
+			"name": "shelfrequest",
+			"type": "ThirdAgencyUpDownShelfRequest",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "doctor_uuid",
+					"type": "String",
+					"description": "医生外部id",
+					"required": true
+				},
+				{
+					"name": "net_hospital_id",
+					"type": "String",
+					"description": "互联网医院id",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "上下架状态：0上架，-1下架",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shelfresult",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

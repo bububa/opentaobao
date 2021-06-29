@@ -1,0 +1,170 @@
+{
+	"name": "taobao.ailab.aicloud.top.skils.list.new",
+	"apiChineseName": "获取产品下挂载的技能列表",
+	"description": "星空平台提供的获取产品下挂载的技能列表新接口",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "query",
+			"type": "String",
+			"description": "query(模糊匹配skillName)"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "type(1000代表内容技能，3000代表自定义技能，4000代表官方技能)"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "pageNo"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "pageSize"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "PageResult",
+					"description": "retValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页数量",
+							"required": true
+						},
+						{
+							"name": "page_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "result_list",
+							"type": "DeviceSkillDetailInfo[]",
+							"description": "结果集",
+							"required": true,
+							"subParams": [
+								{
+									"name": "skill_id",
+									"type": "Number",
+									"description": "技能Id",
+									"required": true
+								},
+								{
+									"name": "invocation_name",
+									"type": "String",
+									"description": "唤醒词",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "技能名称",
+									"required": true
+								},
+								{
+									"name": "service_providers",
+									"type": "ServiceProvider[]",
+									"description": "提供商集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "icon",
+											"type": "String",
+											"description": "图片地址",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "提供商名",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "类别",
+									"required": true
+								},
+								{
+									"name": "icoin_image_url",
+									"type": "String",
+									"description": "技能图片地址",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "技能描述信息",
+									"required": true
+								},
+								{
+									"name": "sample",
+									"type": "String",
+									"description": "典型例句(多个，以\\t分隔)",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

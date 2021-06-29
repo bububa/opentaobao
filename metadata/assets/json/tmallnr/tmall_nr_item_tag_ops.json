@@ -1,0 +1,96 @@
+{
+	"name": "tmall.nr.item.tag.ops",
+	"apiChineseName": "区域零售商品打标去标",
+	"description": "参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存",
+	"requestParams": [
+		{
+			"name": "tag_req_d_t_o",
+			"type": "TagReqDto",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "商品标操作类型，1:打标，2:去标",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "item_ids",
+					"type": "String[]",
+					"description": "商品编码列表",
+					"required": true
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "业务身份标识,dss定时送;FN蜂鸟,CN菜鸟"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "信息追踪串,用于后续排查问题,以及与外部厂商对账等场景下使用"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NewRetailResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "TagRespDto",
+					"description": "请求结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "fail_ids",
+							"type": "Number[]",
+							"description": "失败商品编码",
+							"required": true
+						},
+						{
+							"name": "descs",
+							"type": "String[]",
+							"description": "失败描述",
+							"required": true
+						},
+						{
+							"name": "success_ids",
+							"type": "Number[]",
+							"description": "成功商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Boolean",
+					"description": "成功或者失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

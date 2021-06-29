@@ -1,0 +1,163 @@
+{
+	"name": "taobao.xhotel.order.alipayface.create",
+	"apiChineseName": "信用住支付创建接口",
+	"description": "用于创建一笔信用住支付，主要应用场景是线下信用住",
+	"requestParams": [
+		{
+			"name": "total_fee",
+			"type": "Number",
+			"description": "总房费,单位为分",
+			"required": true
+		},
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "离店日期(最多允许9天)",
+			"required": true
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "发布到阿里旅行的酒店编码",
+			"required": true
+		},
+		{
+			"name": "check_in",
+			"type": "Date",
+			"description": "入住日期",
+			"required": true
+		},
+		{
+			"name": "daily_price_info",
+			"type": "String",
+			"description": "每日房价,json格式"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "商家系统的订单号，必须全局唯一，重复会按照相同订单处理",
+			"required": true
+		},
+		{
+			"name": "room_quantity",
+			"type": "Number",
+			"description": "预定的房间数量",
+			"required": true
+		},
+		{
+			"name": "guests",
+			"type": "Guest[]",
+			"description": "入住人信息, 注意必须有且只有一个设置为主入住人, 用于信用住结算扣款. 对于java版本的SDK可以使用setGuests(List \u0026lt Guest \u0026gt guests)赋值; 对于.net等其他版本SDK可以通过将List \u0026lt Guest\u0026gt结构数据转为json串赋值.",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "is_main",
+					"type": "Boolean",
+					"description": "是否主入住人，该入住人会参与信用住结算扣款，多个入住人时必须有且仅有一个该字段设置为true",
+					"required": true
+				},
+				{
+					"name": "encrypt_type",
+					"type": "Number",
+					"description": "加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;  1: SHA-1不可逆加密,  阿里旅行方面无法解析到具体信息, 只用于做信息匹配.注意加密后生成40字节长度的字符串"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名, 如果加密方式设置为1, 传入加密后的姓名",
+					"required": true
+				},
+				{
+					"name": "id_type",
+					"type": "Number",
+					"description": "证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证"
+				},
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "证件号, 如果加密方式设置为1, 传入加密后的证件号",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号, 如果加密方式设置为1, 传入加密后的手机号"
+				}
+			]
+		},
+		{
+			"name": "alipay_number",
+			"type": "String",
+			"description": "扫描用户支付宝得到的串号, 该字段不为空时会采用串号对应的支付宝账号进行信用住结算"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "订单渠道信息,可以留空"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "不清楚请留空, 用于和outHid共同定位一个酒店",
+			"maxLength": 50
+		},
+		{
+			"name": "roomtype_name",
+			"type": "String",
+			"description": "房型名称"
+		},
+		{
+			"name": "rateplan_name",
+			"type": "String",
+			"description": "rateplan名称(不清楚可以留空)"
+		},
+		{
+			"name": "self_checkin",
+			"type": "Boolean",
+			"description": "是否为自助入住模式下创建订单，是：true,否：false"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "阿里旅行生成的订单id，该字段很重要，后续结账等操作都要使用tid"
+		},
+		{
+			"name": "guarantee_amout",
+			"type": "Number",
+			"description": "阿里旅行为该笔订单提供的最大杂费(不含房费)担保金额,单位为分. 注意该金额指客人除了房费以外可消费的金额上限"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "酒店订单号, 和入参中传入一致"
+		},
+		{
+			"name": "main_id_number",
+			"type": "String",
+			"description": "用于当传入多个入住人时, 将阿里旅行最终用于结算的入住人信息回传"
+		},
+		{
+			"name": "alitrip_discount",
+			"type": "Number",
+			"description": "阿里旅行平台提供的优惠金额,单位为分"
+		},
+		{
+			"name": "seller_discount",
+			"type": "Number",
+			"description": "商家自身提供给该订单的优惠金额，单位为分"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "用于签约和扣款的买家淘宝账号"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "阿里旅行生成的备注信息,用于提示用户一些注意事宜. 请将该字段的信息打印到客人的入住单上. 如果为空代表没有阿里旅行方面的特殊备注"
+		}
+	]
+}

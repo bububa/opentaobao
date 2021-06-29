@@ -1,0 +1,82 @@
+{
+	"name": "alitrip.btrip.corpop.apply.approve",
+	"apiChineseName": "【商旅】更新审批单状态",
+	"description": "【商旅】更新审批单状态",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenApiUpdateApplyRq",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "thirdpart_apply_id",
+					"type": "String",
+					"description": "外部申请单id",
+					"required": true
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "note",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "1已同意 2已拒绝 3已转交 4已取消",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "审批人id（第三方用户Id）",
+					"required": true
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "审批人名字"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "1、老版本2、isv对外版本",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "String",
+			"description": "传参"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "0"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "成功"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功标识"
+		}
+	]
+}

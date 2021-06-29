@@ -1,0 +1,162 @@
+{
+	"name": "aliexpress.ascp.po.item.query",
+	"apiChineseName": "AliExpress采购单明细查询API",
+	"description": "AE 供应链仓发 采购单明细查询",
+	"requestParams": [
+		{
+			"name": "purchase_order_item_query",
+			"type": "PurchaseOrderItemQueryDto",
+			"description": "demo",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "purchase_order_no",
+					"type": "String",
+					"description": "采购单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "demo",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "ErpPurchaseOrderItemDto[]",
+					"description": "明细列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "no_tax_purchase_amount_dec",
+							"type": "String",
+							"description": "未税采购金额，单位元",
+							"required": true
+						},
+						{
+							"name": "purchase_amount_dec",
+							"type": "String",
+							"description": "含税采购金额，单位元",
+							"required": true
+						},
+						{
+							"name": "no_tax_purchase_price_dec",
+							"type": "String",
+							"description": "未税采购单价，单位元",
+							"required": true
+						},
+						{
+							"name": "purchase_price_dec",
+							"type": "String",
+							"description": "含税采购单价，单位元",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率",
+							"required": true
+						},
+						{
+							"name": "received_defective_qty",
+							"type": "Number",
+							"description": "实收残品数量",
+							"required": true
+						},
+						{
+							"name": "received_normal_qty",
+							"type": "Number",
+							"description": "实收正品数量",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "采购数量",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "purchase_order_no",
+							"type": "String",
+							"description": "采购单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "明细总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

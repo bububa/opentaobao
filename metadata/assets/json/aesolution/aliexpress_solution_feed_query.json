@@ -1,0 +1,48 @@
+{
+	"name": "aliexpress.solution.feed.query",
+	"apiChineseName": "aliexpress.solution.feed.query",
+	"description": "API for query the execution result of feed.",
+	"requestParams": [
+		{
+			"name": "job_id",
+			"type": "Number",
+			"description": "job id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "job_id",
+			"type": "Number",
+			"description": "job id"
+		},
+		{
+			"name": "success_item_count",
+			"type": "Number",
+			"description": "Count of successful items after executed under this job"
+		},
+		{
+			"name": "result_list",
+			"type": "SingleItemResponseDto []",
+			"description": "Result list after all the item_content,which were previously submitted through API:aliexpress.solution.feed.submit, have been executed , including both successful and unsuccessful items.",
+			"subParams": [
+				{
+					"name": "item_execution_result",
+					"type": "String",
+					"description": "Execution result of each item",
+					"required": true
+				},
+				{
+					"name": "item_content_id",
+					"type": "String",
+					"description": "Corresponding to the item_content_id defined by the seller when invoking the API: aliexpress.solution.feed.submit",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_item_count",
+			"type": "Number",
+			"description": "Count of total items under this job"
+		}
+	]
+}

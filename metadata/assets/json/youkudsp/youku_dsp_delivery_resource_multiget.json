@@ -1,0 +1,139 @@
+{
+	"name": "youku.dsp.delivery.resource.multiget",
+	"apiChineseName": "优酷实时批量获取可投放设备资源",
+	"description": "优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取",
+	"requestParams": [
+		{
+			"name": "channel_id",
+			"type": "Number",
+			"description": "渠道id",
+			"required": true
+		},
+		{
+			"name": "sub_channel_id",
+			"type": "Number",
+			"description": "子渠道id"
+		},
+		{
+			"name": "device_ids",
+			"type": "String",
+			"description": "设备id串(md5加密)，多个设备逗号隔开",
+			"required": true
+		},
+		{
+			"name": "device_id_type",
+			"type": "String",
+			"description": "设备类型imei或者idfa",
+			"required": true
+		},
+		{
+			"name": "delivery_type",
+			"type": "String",
+			"description": "投放类型push或者feed",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "models",
+			"type": "DeliveryList []",
+			"description": "素材列表",
+			"subParams": [
+				{
+					"name": "delivery_type",
+					"type": "String",
+					"description": "投放类型push或者feed",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "resource",
+					"type": "Map",
+					"description": "素材信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "imgs",
+							"type": "String",
+							"description": "图片json",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题",
+							"required": true
+						},
+						{
+							"name": "text",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "deeplink_url",
+							"type": "String",
+							"description": "换端地址",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "投放类型",
+							"required": true
+						},
+						{
+							"name": "destination_url",
+							"type": "String",
+							"description": "h5地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "device_id_type",
+					"type": "String",
+					"description": "设备类型imei或者idfa",
+					"required": true
+				},
+				{
+					"name": "sub_channel_id",
+					"type": "Number",
+					"description": "子渠道id",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备id(md5加密)",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "extra_info",
+			"type": "Json",
+			"description": "额外信息"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "success_flag",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

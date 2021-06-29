@@ -1,0 +1,30 @@
+{
+	"name": "tmall.nrt.stall.payratio.synchronize",
+	"apiChineseName": "同步摊位收银比例",
+	"description": "ISV同步摊位收银比例到阿里",
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务编码",
+			"required": true
+		},
+		{
+			"name": "contract_code",
+			"type": "String",
+			"description": "合同编号"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "摊位编码",
+			"required": true
+		},
+		{
+			"name": "pay_ratio",
+			"type": "String",
+			"description": "收银比例",
+			"required": true
+		}
+	]
+}

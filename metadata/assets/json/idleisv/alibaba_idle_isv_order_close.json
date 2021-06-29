@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.idle.isv.order.close",
+	"apiChineseName": "服务商闲鱼卖家主动关闭订单",
+	"description": "供外部服务商 isv 提供卖家主动关闭交易订单的功能",
+	"requestParams": [
+		{
+			"name": "isv_appraise_isv_order_close_dto",
+			"type": "AppraiseIsvOrderCloseDto",
+			"description": "输入参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "close_reason",
+					"type": "String",
+					"description": "关闭订单原因",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "关闭成功返回标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

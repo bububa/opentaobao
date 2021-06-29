@@ -19,7 +19,9 @@ type CainiaoCntecItemChangeMessageAPIResponse struct {
 
 type CainiaoCntecItemChangeMessageResponse struct {
     XMLName xml.Name `xml:"cainiao_cntec_item_change_message_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 调用返回的result结构体
     

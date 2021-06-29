@@ -1,0 +1,113 @@
+{
+	"name": "alitrip.btrip.corpop.user.sync",
+	"apiChineseName": "外部人员同步",
+	"description": "同步外部平台用户信息至商旅内部",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "BtripUserSyncRq",
+			"description": "人员同步请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "user_list",
+					"type": "UserSyncRq[]",
+					"description": "人员列表，最大长度5000",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "第三方人员ID",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "姓名",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "手机号（除政府企业、特殊企业外，均为必填;如有特殊需求，请先联系商旅）"
+						},
+						{
+							"name": "depart_id",
+							"type": "Number",
+							"description": "商旅部门ID"
+						},
+						{
+							"name": "leave_status",
+							"type": "Number",
+							"description": "是否离职（0 否 1是）"
+						},
+						{
+							"name": "position_level",
+							"type": "String",
+							"description": "职级"
+						},
+						{
+							"name": "position",
+							"type": "String",
+							"description": "职位"
+						},
+						{
+							"name": "real_name_en",
+							"type": "String",
+							"description": "英文姓名请用\"/\"分隔，中间不能含有空格。顺序：姓/名(last_name/first_name))"
+						},
+						{
+							"name": "job_no",
+							"type": "String",
+							"description": "工号"
+						},
+						{
+							"name": "third_depart_id",
+							"type": "String",
+							"description": "第三方部门ID"
+						},
+						{
+							"name": "third_depart_id_list",
+							"type": "String[]",
+							"description": "部门列表，depart_id | third_depart_id | third_depart_id_list只传其一，优先级为third_depart_id_list \u003e third_depart_id \u003e depart_id"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "返回错误用户信息"
+		},
+		{
+			"name": "success_flag",
+			"type": "Boolean",
+			"description": "成功标示"
+		}
+	]
+}

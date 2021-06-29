@@ -1,0 +1,131 @@
+{
+	"name": "tmall.brand.item.upload",
+	"apiChineseName": "天猫品牌新品同步API",
+	"description": "支撑天猫品牌将各渠道新品信息同步至平台",
+	"requestParams": [
+		{
+			"name": "item_list",
+			"type": "TmallBrandChannelNewItem[]",
+			"description": "需要同步的商品列表",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "channel_quantity",
+					"type": "Number",
+					"description": "商品sku在渠道的库存"
+				},
+				{
+					"name": "channel_item_id",
+					"type": "Number",
+					"description": "渠道商品id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "天猫品牌名称",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "发售渠道名称",
+					"required": true
+				},
+				{
+					"name": "channel_sku_id",
+					"type": "Number",
+					"description": "渠道商品skuId"
+				},
+				{
+					"name": "channel_publish_time",
+					"type": "Date",
+					"description": "在渠道的发售时间",
+					"required": true
+				},
+				{
+					"name": "tmall_same",
+					"type": "Boolean",
+					"description": "是否天猫同款",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "天猫商品id",
+					"required": true
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "天猫商品名称",
+					"required": true
+				},
+				{
+					"name": "channel_item_name",
+					"type": "String",
+					"description": "渠道商品名称"
+				},
+				{
+					"name": "channel_item_picts",
+					"type": "String[]",
+					"description": "商品sku在渠道的图片"
+				},
+				{
+					"name": "channel_properties",
+					"type": "String",
+					"description": "商品sku在渠道对应的属性对，格式为k1:v1;k2:v2"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "天猫品牌id",
+					"required": true
+				},
+				{
+					"name": "channel_item_price",
+					"type": "String",
+					"description": "商品sku在渠道的发售价格"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "barcode码"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "天猫商品skuId"
+				},
+				{
+					"name": "channel_publish_area",
+					"type": "String",
+					"description": "渠道的发售区域",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "resp_error_code",
+			"type": "Number",
+			"description": "请求参数错误"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

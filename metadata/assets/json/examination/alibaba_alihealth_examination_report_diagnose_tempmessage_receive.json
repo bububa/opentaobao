@@ -1,0 +1,97 @@
+{
+	"name": "alibaba.alihealth.examination.report.diagnose.tempmessage.receive",
+	"apiChineseName": "导医通报告解读临时消息接收",
+	"description": "导医通报告解读临时消息接收",
+	"requestParams": [
+		{
+			"name": "report_diagnose_im_message_request",
+			"type": "ReportDiagnoseImMessageRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "message_media_url",
+					"type": "String",
+					"description": "消息媒体url"
+				},
+				{
+					"name": "message_content",
+					"type": "String",
+					"description": "消息文字内容"
+				},
+				{
+					"name": "send_time",
+					"type": "String",
+					"description": "发送时间"
+				},
+				{
+					"name": "message_type",
+					"type": "String",
+					"description": "消息类型"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "接收者名字"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发送者名字"
+				},
+				{
+					"name": "receiver_id",
+					"type": "String",
+					"description": "接收者ID"
+				},
+				{
+					"name": "sender_id",
+					"type": "String",
+					"description": "发送者ID"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID"
+				},
+				{
+					"name": "seq_no",
+					"type": "String",
+					"description": "顺序号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错信信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "调用返回",
+					"required": true
+				}
+			]
+		}
+	]
+}

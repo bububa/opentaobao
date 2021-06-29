@@ -1,0 +1,253 @@
+{
+	"name": "alitrip.hotel.single.info.get",
+	"apiChineseName": "获取单体酒店信息",
+	"description": "用于给到未来酒店读取与飞猪酒店合作的单体酒店信息，开展单体联盟业务",
+	"requestParams": [
+		{
+			"name": "query_hotel_info_param",
+			"type": "QueryHotelInfoParam",
+			"description": "查询酒店信息query参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "飞猪卖家酒店id",
+					"required": true
+				},
+				{
+					"name": "ahid",
+					"type": "Number",
+					"description": "单体联盟飞猪卖家酒店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回Result",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "AllianceHotelInfo",
+					"description": "酒店参数实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inviter",
+							"type": "String",
+							"description": "邀约人",
+							"required": true
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "酒店联系人电话",
+							"required": true
+						},
+						{
+							"name": "hid",
+							"type": "Number",
+							"description": "卖家酒店id",
+							"required": true
+						},
+						{
+							"name": "contract_start",
+							"type": "Date",
+							"description": "合同签署开始时间",
+							"required": true
+						},
+						{
+							"name": "partner_id",
+							"type": "Number",
+							"description": "合作商Id",
+							"required": true
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "标准酒店Id",
+							"required": true
+						},
+						{
+							"name": "fee",
+							"type": "String",
+							"description": "底价比率值",
+							"required": true
+						},
+						{
+							"name": "account_name",
+							"type": "String",
+							"description": "结算账号户名",
+							"required": true
+						},
+						{
+							"name": "hotel_name",
+							"type": "String",
+							"description": "酒店名称",
+							"required": true
+						},
+						{
+							"name": "account_opening_bank",
+							"type": "String",
+							"description": "开户行名称",
+							"required": true
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "酒店联系人姓名",
+							"required": true
+						},
+						{
+							"name": "fee_type",
+							"type": "Number",
+							"description": "费率类型",
+							"required": true
+						},
+						{
+							"name": "pay_type",
+							"type": "Number",
+							"description": "结算类型0:个人支付宝 1:企业支付宝 3:对公银行卡",
+							"required": true
+						},
+						{
+							"name": "alipay_account",
+							"type": "String",
+							"description": "支付宝账号",
+							"required": true
+						},
+						{
+							"name": "is_valid",
+							"type": "Number",
+							"description": "是否生效 0:失效 1:生效",
+							"required": true
+						},
+						{
+							"name": "ahid",
+							"type": "Number",
+							"description": "单体联盟新生成的卖家酒店Id",
+							"required": true
+						},
+						{
+							"name": "bank_account",
+							"type": "String",
+							"description": "银行卡账号",
+							"required": true
+						},
+						{
+							"name": "contract_end",
+							"type": "Date",
+							"description": "合同结束时间",
+							"required": true
+						},
+						{
+							"name": "contact_email",
+							"type": "String",
+							"description": "酒店联系邮箱",
+							"required": true
+						},
+						{
+							"name": "bank_province",
+							"type": "String",
+							"description": "银行省份",
+							"required": true
+						},
+						{
+							"name": "bank_city",
+							"type": "String",
+							"description": "银行城市",
+							"required": true
+						},
+						{
+							"name": "main_account",
+							"type": "String",
+							"description": "酒店签约主账号",
+							"required": true
+						},
+						{
+							"name": "account_bank",
+							"type": "String",
+							"description": "开户银行",
+							"required": true
+						},
+						{
+							"name": "tpl_id",
+							"type": "Number",
+							"description": "合同号",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家Id",
+							"required": true
+						},
+						{
+							"name": "is_new_valid",
+							"type": "Number",
+							"description": "是否菲住酒店有效",
+							"required": true
+						},
+						{
+							"name": "new_fee",
+							"type": "String",
+							"description": "新费率",
+							"required": true
+						},
+						{
+							"name": "new_fee_type",
+							"type": "Number",
+							"description": "新费率类型",
+							"required": true
+						},
+						{
+							"name": "is_transfer",
+							"type": "Number",
+							"description": "是否迁移成功",
+							"required": true
+						},
+						{
+							"name": "main_tpl_id",
+							"type": "Number",
+							"description": "主合同id",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "营业执照公司名称",
+							"required": true
+						},
+						{
+							"name": "alipay_account_id",
+							"type": "String",
+							"description": "支付宝帐号ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误Id",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

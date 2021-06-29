@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.alihouse.newhome.metro.sync",
+	"apiChineseName": "地铁数据同步",
+	"description": "地铁数据同步",
+	"requestParams": [
+		{
+			"name": "base_metro_line_dto",
+			"type": "BaseMetroLineDto",
+			"description": "地铁入参数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "business_district",
+					"type": "String",
+					"description": "所属商圈"
+				},
+				{
+					"name": "site_code",
+					"type": "String",
+					"description": "站点编号",
+					"required": true
+				},
+				{
+					"name": "line_code",
+					"type": "String",
+					"description": "线路编号",
+					"required": true
+				},
+				{
+					"name": "area_id",
+					"type": "Number",
+					"description": "站所属区域",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市代码",
+					"required": true
+				},
+				{
+					"name": "metro_line",
+					"type": "String",
+					"description": "地铁站所属线路",
+					"required": true
+				},
+				{
+					"name": "metro_name",
+					"type": "String",
+					"description": "地铁站名称",
+					"required": true
+				},
+				{
+					"name": "metro_code",
+					"type": "String",
+					"description": "地铁站代码",
+					"required": true
+				},
+				{
+					"name": "outer_metro_id",
+					"type": "String",
+					"description": "外部ID -- 唯一",
+					"required": true
+				},
+				{
+					"name": "gaode_latitude",
+					"type": "String",
+					"description": "高德中心纬度坐标"
+				},
+				{
+					"name": "gaode_longitude",
+					"type": "String",
+					"description": "高德中心经度坐标"
+				},
+				{
+					"name": "is_deleted",
+					"type": "String",
+					"description": "是否删除 0 否 1是（默认0）"
+				},
+				{
+					"name": "exit_poi",
+					"type": "String",
+					"description": "站点出口经纬度"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "外部ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

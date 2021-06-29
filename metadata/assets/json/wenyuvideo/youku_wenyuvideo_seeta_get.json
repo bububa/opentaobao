@@ -1,0 +1,86 @@
+{
+	"name": "youku.wenyuvideo.seeta.get",
+	"apiChineseName": "只看TA",
+	"description": "只看Ta对外输出",
+	"requestParams": [
+		{
+			"name": "video_str_id",
+			"type": "String",
+			"description": "视频字符串形式id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "values",
+					"type": "Model[]",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "logos",
+							"type": "Json[]",
+							"description": "logo数组",
+							"required": true
+						},
+						{
+							"name": "names",
+							"type": "Json[]",
+							"description": "名字数组",
+							"required": true
+						},
+						{
+							"name": "segments",
+							"type": "Segments[]",
+							"description": "片段数组",
+							"required": true,
+							"subParams": [
+								{
+									"name": "from",
+									"type": "Number",
+									"description": "开始时间点",
+									"required": true
+								},
+								{
+									"name": "to",
+									"type": "Number",
+									"description": "结束时间点",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "结果代码",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

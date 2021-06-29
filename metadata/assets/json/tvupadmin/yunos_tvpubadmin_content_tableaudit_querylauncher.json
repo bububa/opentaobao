@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.tableaudit.querylauncher",
+	"apiChineseName": "运营位管控-查询联盟一体机运营位元数据列表",
+	"description": "运营位管控-查询联盟一体机运营位元数据列表",
+	"requestParams": [
+		{
+			"name": "table_audit_query",
+			"type": "String",
+			"description": "桌面坑位审核查询条件,json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "查询桌面坑位内容列表（用于联盟、一体机）"
+		}
+	]
+}

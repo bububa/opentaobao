@@ -1,0 +1,49 @@
+{
+	"name": "taobao.xhotel.delete",
+	"apiChineseName": "删除酒店接口",
+	"description": "删除飞猪酒店数据接口",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "酒店id，传参方式  hid   或者   outer_id+vendor"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "酒店vendor"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "酒店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "删除结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "是否出错",
+					"required": true
+				}
+			]
+		}
+	]
+}

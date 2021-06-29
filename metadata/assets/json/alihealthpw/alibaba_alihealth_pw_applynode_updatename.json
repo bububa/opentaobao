@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.alihealth.pw.applynode.updatename",
+	"apiChineseName": "回调变更患者姓名",
+	"description": "回调变更患者姓名",
+	"requestParams": [
+		{
+			"name": "body",
+			"type": "ModifyNameRo",
+			"description": "回调入参",
+			"subParams": [
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名"
+				},
+				{
+					"name": "modify_time",
+					"type": "String",
+					"description": "修改时间"
+				},
+				{
+					"name": "user_unique_code",
+					"type": "String",
+					"description": "用户唯一编码"
+				},
+				{
+					"name": "project_third_id",
+					"type": "String",
+					"description": "三方项目id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pap_code",
+			"type": "String",
+			"description": "pap项目状态码"
+		},
+		{
+			"name": "pap_message",
+			"type": "String",
+			"description": "pap项目状态描述"
+		}
+	]
+}

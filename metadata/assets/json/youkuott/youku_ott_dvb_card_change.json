@@ -1,0 +1,36 @@
+{
+	"name": "youku.ott.dvb.card.change",
+	"apiChineseName": "dvb ca卡替换",
+	"description": "dvb 更换ca卡",
+	"requestParams": [
+		{
+			"name": "old_card_id",
+			"type": "String",
+			"description": "老卡id",
+			"required": true
+		},
+		{
+			"name": "new_card_id",
+			"type": "String",
+			"description": "新卡id",
+			"required": true
+		},
+		{
+			"name": "cable_company_code",
+			"type": "String",
+			"description": "广电公司code(目前没用）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功 true:成功 false:失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		}
+	]
+}

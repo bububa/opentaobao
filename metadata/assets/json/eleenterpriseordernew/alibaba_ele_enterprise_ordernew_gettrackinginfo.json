@@ -1,0 +1,101 @@
+{
+	"name": "alibaba.ele.enterprise.ordernew.gettrackinginfo",
+	"apiChineseName": "订单配送信息跟踪",
+	"description": "订单配送信息跟踪",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "饿了么订单ID",
+			"required": true
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "用户手机号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_data",
+			"type": "EnterpriseData",
+			"description": "返回信息",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "饿了么订单ID",
+					"required": true
+				},
+				{
+					"name": "deliveryman_info",
+					"type": "DeliverymanInfoDto",
+					"description": "配送员信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "配送员姓名",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "配送员电话",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "state_code",
+					"type": "String",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "last_updated_at",
+					"type": "String",
+					"description": "最近更新时间",
+					"required": true
+				},
+				{
+					"name": "tracking_info",
+					"type": "TrackingInfoDto",
+					"description": "地址信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

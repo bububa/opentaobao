@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.damai.mev.open.pushproject",
+	"apiChineseName": "大麦换验平台-第三方对外开放-项目接口pushProject",
+	"description": "pushProject",
+	"requestParams": [
+		{
+			"name": "push_project_param",
+			"type": "ThirdProjectPushOpenParam",
+			"description": "入参pushProjectParam",
+			"subParams": [
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id"
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "图片url"
+				},
+				{
+					"name": "project_id",
+					"type": "Number",
+					"description": "项目id"
+				},
+				{
+					"name": "project_name",
+					"type": "String",
+					"description": "项目名称"
+				},
+				{
+					"name": "push_time",
+					"type": "Date",
+					"description": "推送时间"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "系统id"
+				},
+				{
+					"name": "venue_id",
+					"type": "Number",
+					"description": "场馆id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

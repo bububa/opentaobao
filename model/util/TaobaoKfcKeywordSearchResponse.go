@@ -19,7 +19,9 @@ type TaobaoKfcKeywordSearchAPIResponse struct {
 
 type TaobaoKfcKeywordSearchResponse struct {
     XMLName xml.Name `xml:"kfc_keyword_search_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // KFC 关键词过滤匹配结果
     

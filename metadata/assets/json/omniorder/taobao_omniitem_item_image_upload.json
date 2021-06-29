@@ -1,0 +1,167 @@
+{
+	"name": "taobao.omniitem.item.image.upload",
+	"apiChineseName": "全渠道商品上传图片",
+	"description": "全渠道商品上传图片",
+	"requestParams": [
+		{
+			"name": "img",
+			"type": "byte[]",
+			"description": "商品图片信息，允许png、jpg、gif图片格式,3M以内",
+			"required": true
+		},
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID，若填入商品ID则以商品ID为准，否则以outerId/barCode为准"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商品outerId"
+		},
+		{
+			"name": "major",
+			"type": "Boolean",
+			"description": "是否为主图"
+		},
+		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片顺序"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码，0表示成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ItemImageUploadResult",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "img_id",
+							"type": "Number",
+							"description": "imgId",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "itemId",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "url",
+							"required": true
+						},
+						{
+							"name": "duplicate_infos",
+							"type": "ItemSkuDuplicateInfo[]",
+							"description": "duplicateInfos",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "barcode",
+									"required": true
+								},
+								{
+									"name": "duplicate_details",
+									"type": "ItemSkuDuplicateDetail[]",
+									"description": "重复商品详情，如果重复商品过多，目前只展示部分",
+									"required": true,
+									"subParams": [
+										{
+											"name": "barcode",
+											"type": "String",
+											"description": "barcode",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "itemId",
+											"required": true
+										},
+										{
+											"name": "outer_id",
+											"type": "String",
+											"description": "outerId",
+											"required": true
+										},
+										{
+											"name": "sku_barcode",
+											"type": "String",
+											"description": "skuBarcode",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "skuId",
+											"required": true
+										},
+										{
+											"name": "sku_outer_id",
+											"type": "String",
+											"description": "skuOuterId",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "duplicate_size",
+									"type": "Number",
+									"description": "重复商品数量",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "outerId",
+									"required": true
+								},
+								{
+									"name": "sku_barcode",
+									"type": "String",
+									"description": "skuBarcode",
+									"required": true
+								},
+								{
+									"name": "sku_outer_id",
+									"type": "String",
+									"description": "skuOuterId",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

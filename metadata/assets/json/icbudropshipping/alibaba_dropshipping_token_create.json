@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.dropshipping.token.create",
+	"apiChineseName": "国际站dropshipping 选品token 创建",
+	"description": "国际站dropshipping 选品token 创建，用于让买家有权限访问我们指定的 商品场馆",
+	"responseParams": [
+		{
+			"name": "ecology_token",
+			"type": "String",
+			"description": "ecology_token"
+		}
+	]
+}

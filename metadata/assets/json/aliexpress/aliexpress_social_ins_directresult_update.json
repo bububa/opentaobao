@@ -1,0 +1,53 @@
+{
+	"name": "aliexpress.social.ins.directresult.update",
+	"apiChineseName": "ISV更新INS私信发送的结果",
+	"description": "ISV更新INS私信发送的结果",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "回调id,在获取图片时会返回",
+			"required": true
+		},
+		{
+			"name": "receive_ins_id",
+			"type": "String",
+			"description": "接受消息人INS_ID，也就是查询图片时的request_ins_id",
+			"required": true
+		},
+		{
+			"name": "sender_ins_id",
+			"type": "String",
+			"description": "ISV发送私信人的INS_ID",
+			"required": true
+		},
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "1.成功，2.失败。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "更新是否成功"
+		},
+		{
+			"name": "successs",
+			"type": "Boolean",
+			"description": "此次调用是否成功"
+		},
+		{
+			"name": "error_codee",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

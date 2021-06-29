@@ -1,0 +1,223 @@
+{
+	"name": "alibaba.legal.suit.court.before.push",
+	"apiChineseName": "更新或保存庭前信息",
+	"description": "更新或者保存庭前信息",
+	"requestParams": [
+		{
+			"name": "before_court_model",
+			"type": "BeforeCourtModel",
+			"description": "庭前信息",
+			"subParams": [
+				{
+					"name": "attachment_count",
+					"type": "Number",
+					"description": "附件个数"
+				},
+				{
+					"name": "risk_predict",
+					"type": "String",
+					"description": "诉讼风险"
+				},
+				{
+					"name": "main_point",
+					"type": "String",
+					"description": "我方抗辩思路"
+				},
+				{
+					"name": "our_questions",
+					"type": "String",
+					"description": "我方观点"
+				},
+				{
+					"name": "court_questions",
+					"type": "String",
+					"description": "法庭观点"
+				},
+				{
+					"name": "their_questions",
+					"type": "String",
+					"description": "对方观点"
+				},
+				{
+					"name": "our_attitude",
+					"type": "String",
+					"description": "初步考虑对策"
+				},
+				{
+					"name": "feedback_content",
+					"type": "String",
+					"description": "反馈内容"
+				},
+				{
+					"name": "feedback_id",
+					"type": "Number",
+					"description": "反馈ID"
+				},
+				{
+					"name": "updater",
+					"type": "String",
+					"description": "更新人"
+				},
+				{
+					"name": "founder",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商code"
+				},
+				{
+					"name": "defendant_estimate",
+					"type": "String",
+					"description": "对方主张"
+				},
+				{
+					"name": "calling_time",
+					"type": "Date",
+					"description": "调用时间"
+				},
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件ID"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托ID"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "操作类型"
+				},
+				{
+					"name": "feedback_attachment_list",
+					"type": "FileModel[]",
+					"description": "反馈附件信息",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "文件key"
+						}
+					]
+				},
+				{
+					"name": "attachment_list",
+					"type": "FileModel[]",
+					"description": "庭前附件信息",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "文件名称"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "文件key"
+						}
+					]
+				},
+				{
+					"name": "communicate_list",
+					"type": "CommunicateModel[]",
+					"description": "庭前沟通",
+					"subParams": [
+						{
+							"name": "communicate_aim",
+							"type": "String",
+							"description": "沟通背景、沟通目的"
+						},
+						{
+							"name": "contact",
+							"type": "String",
+							"description": "联系方式"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "人员姓名"
+						},
+						{
+							"name": "communicate_type",
+							"type": "String",
+							"description": "沟通方式"
+						},
+						{
+							"name": "unit_name",
+							"type": "String",
+							"description": "单位名称"
+						},
+						{
+							"name": "department",
+							"type": "String",
+							"description": "机构信息"
+						},
+						{
+							"name": "communicate_time",
+							"type": "Date",
+							"description": "沟通时间"
+						},
+						{
+							"name": "communicate_content",
+							"type": "String",
+							"description": "沟通内容"
+						},
+						{
+							"name": "next",
+							"type": "String",
+							"description": "下一步动作"
+						}
+					]
+				},
+				{
+					"name": "before_court_id",
+					"type": "Number",
+					"description": "庭前ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Number",
+					"description": "保存成功的数据ID",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoOpenuidGetBytradeAPIResponse struct {
 
 type TaobaoOpenuidGetBytradeResponse struct {
     XMLName xml.Name `xml:"openuid_get_bytrade_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 当前交易tid对应买家的openuid
     

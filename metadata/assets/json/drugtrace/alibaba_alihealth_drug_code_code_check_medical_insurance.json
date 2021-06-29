@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.alihealth.drug.code.code.check.medical.insurance",
+	"apiChineseName": "码核查状态同步-医保",
+	"description": "服务描述\n核查平台在进行医保单据鉴证核查时，会记录单据中所有提交的追溯码信息；单据中的\n追溯码包含所有正常和异常的数据；\n此接口，针对正式鉴核的单据中提交的有效的、正常状态的追溯码，提供可由核查平台\n发起，按单据鉴核时间顺序组织，向码上放心平台同步每笔单据核销的码状态信息；\n入参采用数组方式提供，一次同步最多支持100条记录",
+	"requestParams": [
+		{
+			"name": "bureau_name",
+			"type": "String",
+			"description": "行政区域"
+		},
+		{
+			"name": "terminal_id",
+			"type": "String",
+			"description": "终端id",
+			"required": true
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型（1005100-零售药店；1005200-医疗机构）",
+			"required": true
+		},
+		{
+			"name": "c_type",
+			"type": "String",
+			"description": "核销类型(1012100：核销；1012900：退库)",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String[]",
+			"description": "码列表",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "terminal_ent_id",
+			"type": "String",
+			"description": "平台返回的终端id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "成功失败结果",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "成功失败编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "成功失败描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

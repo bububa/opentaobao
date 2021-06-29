@@ -1,0 +1,24 @@
+{
+	"name": "youku.ott.iot.devicelist.change",
+	"apiChineseName": "iot设备列表变化接口",
+	"description": "iot设备列表变化接口",
+	"requestParams": [
+		{
+			"name": "change_info",
+			"type": "String",
+			"description": "变更信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功"
+		}
+	]
+}

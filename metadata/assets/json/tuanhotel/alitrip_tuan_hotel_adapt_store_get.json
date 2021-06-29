@@ -1,0 +1,203 @@
+{
+	"name": "alitrip.tuan.hotel.adapt.store.get",
+	"apiChineseName": "酒店团购套餐关联适用门店",
+	"description": "输入shid，返回关联门店详情信息",
+	"requestParams": [
+		{
+			"name": "shid_list",
+			"type": "Number[]",
+			"description": "标准酒店ID列表,逗号分割。与hid_list二者只能选一",
+			"maxListSize": 20
+		},
+		{
+			"name": "hid_list",
+			"type": "Number[]",
+			"description": "物理酒店ID列表，逗号分割。与shid_list二者只能选一",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_detail_list",
+			"type": "StoreDetailVoList []",
+			"description": "关联门店列表",
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "String",
+					"description": "物理酒店ID",
+					"required": true
+				},
+				{
+					"name": "bill_descs",
+					"type": "String",
+					"description": "分账描述",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址",
+					"required": true
+				},
+				{
+					"name": "write_off_accounts",
+					"type": "String",
+					"description": "核销账户",
+					"required": true
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店ID",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名字",
+					"required": true
+				},
+				{
+					"name": "appoint_phone_list",
+					"type": "AppointPhoneVoList[]",
+					"description": "联系电话列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ext",
+							"type": "String",
+							"description": "ext",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区",
+							"required": true
+						},
+						{
+							"name": "mobil",
+							"type": "String",
+							"description": "手机",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "fix",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "p400",
+							"type": "String",
+							"description": "p400",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "固话或者移动电话",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "bill_infos",
+					"type": "String",
+					"description": "分账信息",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "room_type_list",
+					"type": "RoomTypeVoList[]",
+					"description": "房型列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "network_service",
+							"type": "String",
+							"description": "是否无线上网",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "面积",
+							"required": true
+						},
+						{
+							"name": "standard",
+							"type": "Boolean",
+							"description": "是否标准",
+							"required": true
+						},
+						{
+							"name": "bed",
+							"type": "String",
+							"description": "床型",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "max_occupancy",
+							"type": "String",
+							"description": "最多可入住人数",
+							"required": true
+						},
+						{
+							"name": "floor",
+							"type": "String",
+							"description": "楼层",
+							"required": true
+						},
+						{
+							"name": "rid",
+							"type": "String",
+							"description": "rId",
+							"required": true
+						},
+						{
+							"name": "facility",
+							"type": "String",
+							"description": "设施",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

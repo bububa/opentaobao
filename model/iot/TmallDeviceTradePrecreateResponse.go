@@ -22,7 +22,9 @@ type TmallDeviceTradePrecreateAPIResponse struct {
 
 type TmallDeviceTradePrecreateResponse struct {
     XMLName xml.Name `xml:"tmall_device_trade_precreate_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 链接有效结束时间
     

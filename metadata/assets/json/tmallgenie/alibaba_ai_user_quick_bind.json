@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.ai.user.quick.bind",
+	"apiChineseName": "精灵用户绑定第三方账号信息",
+	"description": "人工智能实验室精灵用户绑定第三方账号信息接口，开放给Iot厂商做为厂商上送第三方账号信息的接口",
+	"requestParams": [
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "交易流水号（唯一即可，不参与业务运算）"
+		},
+		{
+			"name": "ext_user_type",
+			"type": "String",
+			"description": "第三方用户类型"
+		},
+		{
+			"name": "ext_user_id",
+			"type": "String",
+			"description": "第三用户ID"
+		},
+		{
+			"name": "req_time",
+			"type": "String",
+			"description": "请求时间"
+		},
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "商户的用户的唯一ID"
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "开放平台申请的schema"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "交易结果描述（例如： 交易成功、交易失败）"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "交易结果码（200：成功、其他：失败）"
+		},
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "扩展字段，无用"
+		},
+		{
+			"name": "message_detail",
+			"type": "String",
+			"description": "交易结果详细描述（例如：用户已经存在，交易失败）"
+		}
+	]
+}

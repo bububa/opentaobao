@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.happytrip.taxi.order.complaint.get",
+	"apiChineseName": "投诉详情",
+	"description": "获取投诉处理进度详情",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "供应商订单号",
+			"required": true
+		},
+		{
+			"name": "case_id",
+			"type": "String",
+			"description": "供应商工单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "Struct",
+			"description": "投诉详情获取结果",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "供应商订单号",
+					"required": true
+				},
+				{
+					"name": "case_id",
+					"type": "String",
+					"description": "供应商工单号",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "处理状态，0：处理中，1：处理完成",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "处理结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

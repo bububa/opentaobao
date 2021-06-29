@@ -1,0 +1,32 @@
+{
+	"name": "taobao.uscesl.biz.esl.info.get",
+	"apiChineseName": "价签设备信息查询接口",
+	"description": "价签设备信息查询接口",
+	"requestParams": [
+		{
+			"name": "esl_bar_code",
+			"type": "String",
+			"description": "价签条码",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店storeId",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result.sucess表示是否成功，target是设备信息"
+		}
+	]
+}

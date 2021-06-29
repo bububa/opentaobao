@@ -1,0 +1,52 @@
+{
+	"name": "tmall.fans.cashpool.checkpay",
+	"apiChineseName": "检查资金池付款状态",
+	"description": "检查资金池付款状态",
+	"requestParams": [
+		{
+			"name": "cash_pool_list",
+			"type": "Number[]",
+			"description": "资金池列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fans_result",
+			"type": "FansResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Boolean[]",
+					"description": "返回列表",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "无意义",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用成功或失败",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误message",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

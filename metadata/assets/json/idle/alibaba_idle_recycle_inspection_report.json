@@ -1,0 +1,91 @@
+{
+	"name": "alibaba.idle.recycle.inspection.report",
+	"apiChineseName": "鉴定报告",
+	"description": "回收商鉴定报告",
+	"requestParams": [
+		{
+			"name": "inspection_report",
+			"type": "InspectionReport",
+			"description": "鉴定报告",
+			"subParams": [
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "report",
+					"type": "String",
+					"description": "鉴定报告"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单，orderId优先，与quote_id任选其一"
+				},
+				{
+					"name": "degree",
+					"type": "String",
+					"description": "成色"
+				},
+				{
+					"name": "quote_id",
+					"type": "String",
+					"description": "估价id,与order_id任选其一，orderId优先"
+				},
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "对此商品的质检描述"
+				},
+				{
+					"name": "explanation",
+					"type": "String",
+					"description": "特别说明，Json串,一个字符串存储特别说明的文字描述,一个字符串列表存储上传的图片url:json形式:"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RecycleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

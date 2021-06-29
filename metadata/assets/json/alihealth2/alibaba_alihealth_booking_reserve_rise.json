@@ -1,0 +1,154 @@
+{
+	"name": "alibaba.alihealth.booking.reserve.rise",
+	"apiChineseName": "ISV 新增/修改复诊预约信息",
+	"description": "ISV 新增/修改复诊预约信息",
+	"requestParams": [
+		{
+			"name": "rise_request",
+			"type": "IsvRiseReserveRequest",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "id_type",
+					"type": "Number",
+					"description": "证件类型 0身份证 1护照"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "支付宝订单ID"
+				},
+				{
+					"name": "sex",
+					"type": "Number",
+					"description": "性别 0男1女"
+				},
+				{
+					"name": "sp_store_name",
+					"type": "String",
+					"description": "ISV门店名称",
+					"required": true
+				},
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "证件号码"
+				},
+				{
+					"name": "sp_item_name",
+					"type": "String",
+					"description": "ISV项目名称，多个项目英文逗号分割"
+				},
+				{
+					"name": "sp_item_id",
+					"type": "String",
+					"description": "ISV项目ID,多个项目英文逗号分割"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "用户号码",
+					"required": true
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户姓名",
+					"required": true
+				},
+				{
+					"name": "sp_store_id",
+					"type": "String",
+					"description": "ISV门店ID",
+					"required": true
+				},
+				{
+					"name": "reserve_time",
+					"type": "String",
+					"description": "预约时间",
+					"required": true
+				},
+				{
+					"name": "is_married",
+					"type": "Number",
+					"description": "是否结婚 0未婚1结婚"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "支付宝标品ID"
+				},
+				{
+					"name": "sp_reserve_id",
+					"type": "String",
+					"description": "ISV复诊/升单ID",
+					"required": true
+				},
+				{
+					"name": "first_reserve_id",
+					"type": "Number",
+					"description": "支付宝初诊ID"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "userId"
+				},
+				{
+					"name": "department_name",
+					"type": "String",
+					"description": "科室名称"
+				},
+				{
+					"name": "op_type",
+					"type": "Number",
+					"description": "0 新增 1 修改",
+					"required": true
+				},
+				{
+					"name": "doctor_name",
+					"type": "String",
+					"description": "医生名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "修改状态 2 待就诊 4 已就诊"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "阿里健康预约ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msg_info",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msg_code",
+					"required": true
+				}
+			]
+		}
+	]
+}

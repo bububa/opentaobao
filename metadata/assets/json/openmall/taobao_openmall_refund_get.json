@@ -1,0 +1,181 @@
+{
+	"name": "taobao.openmall.refund.get",
+	"apiChineseName": "获取OpenMall退款单详情",
+	"description": "获取OpenMall退款单详情",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "渠道商身份",
+			"required": true
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款单ID",
+			"required": true,
+			"minValue": 10000
+		}
+	],
+	"responseParams": [
+		{
+			"name": "refund",
+			"type": "TopRefundVo",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "good_status",
+					"type": "String",
+					"description": "货物状态。可选值BUYER_NOT_RECEIVED (买家未收到货) BUYER_RECEIVED (买家已收到货) BUYER_RETURNED_GOODS (买家已退货)",
+					"required": true
+				},
+				{
+					"name": "has_good_return",
+					"type": "Boolean",
+					"description": "买家是否需要退货。可选值:true(是),false(否)",
+					"required": true
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "更新时间",
+					"required": true
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "实付金额。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+					"required": true
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+					"required": true
+				},
+				{
+					"name": "refund_id",
+					"type": "Number",
+					"description": "退款单ID",
+					"required": true
+				},
+				{
+					"name": "refund_phase",
+					"type": "String",
+					"description": "退款阶段，可选值：onsale/aftersale",
+					"required": true
+				},
+				{
+					"name": "refund_remind_timeout",
+					"type": "RefundRemindTimeout",
+					"description": "退款超时结构",
+					"required": true,
+					"subParams": [
+						{
+							"name": "exist_timeout",
+							"type": "Boolean",
+							"description": "是否存在超时。可选值:true(是),false(否)",
+							"required": true
+						},
+						{
+							"name": "timeout",
+							"type": "Date",
+							"description": "超时时间。格式:yyyy-MM-dd HH:mm:ss",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "创建交易时的物流方式。 可选值：ems, express, post, free",
+					"required": true
+				},
+				{
+					"name": "sku",
+					"type": "String",
+					"description": "商品SKU信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "退款状态。可选值WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)",
+					"required": true
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "交易总金额",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "卖家退货地址",
+					"required": true
+				},
+				{
+					"name": "sid",
+					"type": "String",
+					"description": "退货运单号",
+					"required": true
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "物流公司名称",
+					"required": true
+				},
+				{
+					"name": "post_code",
+					"type": "String",
+					"description": "退货邮编",
+					"required": true
+				},
+				{
+					"name": "fix_phone",
+					"type": "String",
+					"description": "退货时收货人电话",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "退货时收货人手机号",
+					"required": true
+				},
+				{
+					"name": "consignee_full_name",
+					"type": "String",
+					"description": "退货时收货人姓名",
+					"required": true
+				},
+				{
+					"name": "closed_by_seller_ship",
+					"type": "Boolean",
+					"description": "当该退款单为 未发货仅退款 申请时，因卖家坚持发货而导致关单的情况下，该字段值为true；其余条件为空或false",
+					"required": true
+				}
+			]
+		}
+	]
+}

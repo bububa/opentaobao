@@ -1,0 +1,393 @@
+{
+	"name": "aliexpress.affiliate.image.search",
+	"apiChineseName": "图搜",
+	"description": "图片搜索接口",
+	"requestParams": [
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "API signature",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "请求字段"
+		},
+		{
+			"name": "image_file_bytes",
+			"type": "byte[]",
+			"description": "图片文件字节数组，最大不超过 100 KB",
+			"required": true
+		},
+		{
+			"name": "img_cid",
+			"type": "String",
+			"description": "图片类目倾向，不填则为最佳匹配。0 - 服装；3 - 包；4 - 鞋子；88888888 - 其他类目"
+		},
+		{
+			"name": "media_user_id",
+			"type": "String",
+			"description": "媒体用户唯一识别号"
+		},
+		{
+			"name": "product_cnt",
+			"type": "Number",
+			"description": "搜索结果数量，最高 50"
+		},
+		{
+			"name": "shpt_to",
+			"type": "String",
+			"description": "ship-to 国家"
+		},
+		{
+			"name": "sort",
+			"type": "String",
+			"description": "排序方式:SALE_PRICE_ASC, SALE_PRICE_DESC,LAST_VOLUME_ASC, LAST_VOLUME_DESC"
+		},
+		{
+			"name": "target_currency",
+			"type": "String",
+			"description": "目标币种:USD, GBP, CAD, EUR, UAH, MXN,TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW"
+		},
+		{
+			"name": "target_language",
+			"type": "String",
+			"description": "目标语言:en,ru,pt,es,fr,id,it,th,ja,ar,vi,tr,de,he,ko,nl,pl,mx,cl,iw,in"
+		},
+		{
+			"name": "tracking_id",
+			"type": "String",
+			"description": "媒体 trackingid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回结果状态码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "TrafficImageSearchResultDto",
+					"description": "图搜结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "products",
+							"type": "Product[]",
+							"description": "图搜结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sale_price",
+									"type": "String",
+									"description": "商品售价",
+									"required": true
+								},
+								{
+									"name": "sale_price_currency",
+									"type": "String",
+									"description": "商品售价币种",
+									"required": true
+								},
+								{
+									"name": "original_price",
+									"type": "String",
+									"description": "商品原价",
+									"required": true
+								},
+								{
+									"name": "original_price_currency",
+									"type": "String",
+									"description": "商品原价币种",
+									"required": true
+								},
+								{
+									"name": "app_sale_price",
+									"type": "String",
+									"description": "app专享价",
+									"required": true
+								},
+								{
+									"name": "app_sale_price_currency",
+									"type": "String",
+									"description": "app专享价币种",
+									"required": true
+								},
+								{
+									"name": "target_sale_price",
+									"type": "String",
+									"description": "按目标币种转换后的商品售价",
+									"required": true
+								},
+								{
+									"name": "target_sale_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的商品售价币种",
+									"required": true
+								},
+								{
+									"name": "target_original_price",
+									"type": "String",
+									"description": "按目标币种转换后的商品原价",
+									"required": true
+								},
+								{
+									"name": "target_original_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的商品原价币种",
+									"required": true
+								},
+								{
+									"name": "target_app_sale_price",
+									"type": "String",
+									"description": "按目标币种转换后的app专享价",
+									"required": true
+								},
+								{
+									"name": "target_app_sale_price_currency",
+									"type": "String",
+									"description": "按目标币种转换后的app专享价币种",
+									"required": true
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "折扣比例",
+									"required": true
+								},
+								{
+									"name": "evaluate_rate",
+									"type": "String",
+									"description": "商品好评率",
+									"required": true
+								},
+								{
+									"name": "first_level_category_id",
+									"type": "String",
+									"description": "一级类目 ID",
+									"required": true
+								},
+								{
+									"name": "first_level_category_name",
+									"type": "String",
+									"description": "一级类目名称",
+									"required": true
+								},
+								{
+									"name": "second_level_category_id",
+									"type": "String",
+									"description": "二级类目 ID",
+									"required": true
+								},
+								{
+									"name": "second_level_category_name",
+									"type": "String",
+									"description": "二级类目名称",
+									"required": true
+								},
+								{
+									"name": "lastest_volume",
+									"type": "String",
+									"description": "近期销量",
+									"required": true
+								},
+								{
+									"name": "product_detail_url",
+									"type": "String",
+									"description": "商品访问地址",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "String",
+									"description": "商品 ID",
+									"required": true
+								},
+								{
+									"name": "product_main_image_url",
+									"type": "String",
+									"description": "商品主图地址",
+									"required": true
+								},
+								{
+									"name": "product_small_image_urls",
+									"type": "String[]",
+									"description": "商品小图地址列表",
+									"required": true
+								},
+								{
+									"name": "shop_id",
+									"type": "Number",
+									"description": "店铺 ID",
+									"required": true
+								},
+								{
+									"name": "shop_url",
+									"type": "String",
+									"description": "店铺地址",
+									"required": true
+								},
+								{
+									"name": "promotion_link",
+									"type": "String",
+									"description": "推广链接地址",
+									"required": true
+								},
+								{
+									"name": "commision_rate",
+									"type": "String",
+									"description": "佣金率",
+									"required": true
+								},
+								{
+									"name": "hot_product_commission_rate",
+									"type": "String",
+									"description": "爆品佣金率",
+									"required": true
+								},
+								{
+									"name": "platform_product_type",
+									"type": "String",
+									"description": "平台商家类型",
+									"required": true
+								},
+								{
+									"name": "relevant_market_commission_rate",
+									"type": "String",
+									"description": "JV 佣金率",
+									"required": true
+								},
+								{
+									"name": "promo_code_info",
+									"type": "PromoCodeDto",
+									"description": "code",
+									"required": true,
+									"subParams": [
+										{
+											"name": "promo_code",
+											"type": "String",
+											"description": "商品最优code码",
+											"required": true
+										},
+										{
+											"name": "code_campaigntype",
+											"type": "String",
+											"description": "优惠方式 0 满减，1 满折",
+											"required": true
+										},
+										{
+											"name": "code_value",
+											"type": "String",
+											"description": "code面额（满减或满折），若为满减则值为入参时选择的币种+绝对值，若为满折则值为绝对值百分比",
+											"required": true
+										},
+										{
+											"name": "code_availabletime_start",
+											"type": "String",
+											"description": "code使用有效期的开始时间",
+											"required": true
+										},
+										{
+											"name": "code_availabletime_end",
+											"type": "String",
+											"description": "code使用有效期的结束时间",
+											"required": true
+										},
+										{
+											"name": "code_mini_spend",
+											"type": "String",
+											"description": "code最低使用门槛，0 为不限制",
+											"required": true
+										},
+										{
+											"name": "code_quantity",
+											"type": "String",
+											"description": "code剩余可使用的数量",
+											"required": true
+										},
+										{
+											"name": "code_promotionurl",
+											"type": "String",
+											"description": "品code合一url",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "product_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "product_video_url",
+									"type": "String",
+									"description": "商品介绍视频",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_record_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "region",
+							"type": "ProductImgRegionDto",
+							"description": "图片识别的坐标",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pos_top_left_x",
+									"type": "String",
+									"description": "图片识别的坐标 pos_top_left_x",
+									"required": true
+								},
+								{
+									"name": "pos_top_left_y",
+									"type": "String",
+									"description": "图片识别的坐标 pos_top_left_y",
+									"required": true
+								},
+								{
+									"name": "pos_bottom_right_x",
+									"type": "String",
+									"description": "图片识别的坐标 pos_bottom_right_x",
+									"required": true
+								},
+								{
+									"name": "pos_bottom_right_y",
+									"type": "String",
+									"description": "图片识别的坐标 pos_bottom_right_y",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "默认描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

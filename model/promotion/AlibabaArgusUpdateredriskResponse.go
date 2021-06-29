@@ -19,7 +19,9 @@ type AlibabaArgusUpdateredriskAPIResponse struct {
 
 type AlibabaArgusUpdateredriskResponse struct {
     XMLName xml.Name `xml:"alibaba_argus_updateredrisk_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 结果是否成功
     

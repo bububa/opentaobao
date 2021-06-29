@@ -1,0 +1,120 @@
+{
+	"name": "taobao.xhotel.commoninvoice.list.vtwo",
+	"apiChineseName": "用户常用发票信息查询接口",
+	"description": "获取用户常用发票信息接口",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功标记",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "CommonInvoiceInfo[]",
+					"description": "常用发票信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "value_added_info",
+							"type": "ValueAddedInfo",
+							"description": "专票信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "电话",
+									"required": true
+								},
+								{
+									"name": "register_addr",
+									"type": "String",
+									"description": "注册地址",
+									"required": true
+								},
+								{
+									"name": "account_no",
+									"type": "String",
+									"description": "银行账号",
+									"required": true
+								},
+								{
+									"name": "opening_bank",
+									"type": "String",
+									"description": "开户行",
+									"required": true
+								},
+								{
+									"name": "tax_no",
+									"type": "String",
+									"description": "税号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "invoice_type",
+							"type": "Number",
+							"description": "发票类型（1:普通发票；2：增值税专用发票）",
+							"required": true
+						},
+						{
+							"name": "invoice_attr",
+							"type": "Number",
+							"description": "发票属性 （0：公司；1：个人）",
+							"required": true
+						},
+						{
+							"name": "company_title",
+							"type": "String",
+							"description": "发票抬头",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "淘宝用户id",
+							"required": true
+						},
+						{
+							"name": "invoice_id",
+							"type": "Number",
+							"description": "发票id",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "个人email",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "个人手机号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

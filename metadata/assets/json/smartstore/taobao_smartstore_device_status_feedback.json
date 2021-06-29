@@ -1,0 +1,32 @@
+{
+	"name": "taobao.smartstore.device.status.feedback",
+	"apiChineseName": "设备在线状态回流",
+	"description": "智能硬件设备状态回流",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "ONLINE_WITH_CONTENT(\"ONLINE_WITH_CONTENT\", \"设备在线\"), OFFLINE(\"OFFLINE\", \"设备断线\");",
+			"required": true
+		},
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "status_time",
+			"type": "Date",
+			"description": "当前状态的时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "是否成功"
+		}
+	]
+}

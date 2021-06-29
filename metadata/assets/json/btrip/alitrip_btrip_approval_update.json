@@ -1,0 +1,81 @@
+{
+	"name": "alitrip.btrip.approval.update",
+	"apiChineseName": "更新审批单",
+	"description": "更新审批单",
+	"requestParams": [
+		{
+			"name": "approve_apply_request",
+			"type": "OpenApproveApplyRq",
+			"description": "审批请求对象",
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "String",
+					"description": "审批单id",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "1已同意 2已拒绝 3已转交 4已取消",
+					"required": true
+				},
+				{
+					"name": "note",
+					"type": "String",
+					"description": "审批批注"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				},
+				{
+					"name": "approval_user_name",
+					"type": "String",
+					"description": "审批人姓名"
+				},
+				{
+					"name": "approval_user_id",
+					"type": "String",
+					"description": "审批人id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

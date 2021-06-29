@@ -1,0 +1,105 @@
+{
+	"name": "taobao.jst.astrolabe.storeinventory.initial",
+	"apiChineseName": "后端商品库存初始化",
+	"description": "初始化电商仓或门店库存，该接口一次可以初始化多个门店(或电商仓)的多个商品的多种类型库存。此接口只能使用一次，后续所有的库存变动都需走增量库存同步接口。",
+	"requestParams": [
+		{
+			"name": "operation_time",
+			"type": "String",
+			"description": "操作时间",
+			"required": true
+		},
+		{
+			"name": "stores",
+			"type": "Store[]",
+			"description": "门店列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "warehouse_type",
+					"type": "String",
+					"description": "库存来源的类型",
+					"required": true
+				},
+				{
+					"name": "warehouse_id",
+					"type": "String",
+					"description": "门店ID(商户中心)或 电商仓ID",
+					"required": true
+				},
+				{
+					"name": "store_inventories",
+					"type": "StoreInventory[]",
+					"description": "门店库存列表",
+					"subParams": [
+						{
+							"name": "bill_num",
+							"type": "String",
+							"description": "单据流水号，用于幂等操作",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "淘宝后端商品id",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "ISV系统中商品编码"
+						},
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "库存类型",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "对应类型的库存数量（正数）",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "响应标签"
+		},
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应标示"
+		},
+		{
+			"name": "error_descriptions",
+			"type": "Error []",
+			"description": "错误信息列表",
+			"subParams": [
+				{
+					"name": "descrpition",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "failed_bill_num",
+					"type": "String",
+					"description": "处理失败的流水号（有多个时，用逗号分隔）",
+					"required": true
+				}
+			]
+		}
+	]
+}

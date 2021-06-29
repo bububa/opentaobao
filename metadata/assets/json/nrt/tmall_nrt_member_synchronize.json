@@ -1,0 +1,119 @@
+{
+	"name": "tmall.nrt.member.synchronize",
+	"apiChineseName": "新零售会员同步接口",
+	"description": "新零售会员上翻接口，商家的会员信息同步至阿里侧",
+	"requestParams": [
+		{
+			"name": "nrt_member_dto",
+			"type": "NrtMemberDTO",
+			"description": "会员DTO",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_member_id",
+					"type": "String",
+					"description": "外部会员ID",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "同步时间",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务code",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "淘宝ID"
+				},
+				{
+					"name": "op_type",
+					"type": "String",
+					"description": "操作类型",
+					"required": true
+				},
+				{
+					"name": "level_name",
+					"type": "String",
+					"description": "会员等级",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "会员名称"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "幂等ID"
+				},
+				{
+					"name": "addr",
+					"type": "String",
+					"description": "会员地址"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态 1:正常 0:冻结"
+				},
+				{
+					"name": "tao_nick",
+					"type": "String",
+					"description": "淘宝nick"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "MemberSynResponse",
+			"description": "是否成功",
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务code",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "加密后的taoId",
+					"required": true
+				},
+				{
+					"name": "out_member_id",
+					"type": "String",
+					"description": "外部会员ID",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "sellerid",
+					"required": true
+				}
+			]
+		}
+	]
+}

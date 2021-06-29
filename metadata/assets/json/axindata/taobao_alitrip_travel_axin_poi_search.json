@@ -1,0 +1,102 @@
+{
+	"name": "taobao.alitrip.travel.axin.poi.search",
+	"apiChineseName": "景点poi搜索-阿信",
+	"description": "给阿信提供景点poi搜索",
+	"requestParams": [
+		{
+			"name": "key_word",
+			"type": "String",
+			"description": "搜索关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "PoiVo[]",
+					"description": "列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "poi_id",
+							"type": "Number",
+							"description": "poiId",
+							"required": true
+						},
+						{
+							"name": "poi_name_en",
+							"type": "String",
+							"description": "poi英文名",
+							"required": true
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": "poi名称",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称",
+							"required": true
+						},
+						{
+							"name": "city_id",
+							"type": "String",
+							"description": "城市id",
+							"required": true
+						},
+						{
+							"name": "country_name",
+							"type": "String",
+							"description": "国家名称",
+							"required": true
+						},
+						{
+							"name": "country_id",
+							"type": "String",
+							"description": "国家id",
+							"required": true
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份名称",
+							"required": true
+						},
+						{
+							"name": "province_id",
+							"type": "String",
+							"description": "省份id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

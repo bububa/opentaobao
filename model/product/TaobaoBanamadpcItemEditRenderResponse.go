@@ -19,7 +19,9 @@ type TaobaoBanamadpcItemEditRenderAPIResponse struct {
 
 type TaobaoBanamadpcItemEditRenderResponse struct {
     XMLName xml.Name `xml:"banamadpc_item_edit_render_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 无
     

@@ -1,0 +1,93 @@
+{
+	"name": "taobao.xhotel.fastinvoice.complete",
+	"apiChineseName": "极速开票开票请求完成",
+	"description": "极速开票开票请求回传,用于更新航信开票请求数据",
+	"requestParams": [
+		{
+			"name": "invoice_info_param",
+			"type": "InvoiceInfoParam",
+			"description": "无",
+			"required": true,
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id 唯一值(同极速开票开票请求回传request_id值)",
+					"required": true
+				},
+				{
+					"name": "tax_num",
+					"type": "String",
+					"description": "酒店开票点税号",
+					"required": true
+				},
+				{
+					"name": "invoice_room_price",
+					"type": "Number",
+					"description": "实际房费(分)",
+					"required": true
+				},
+				{
+					"name": "invoice_other_price",
+					"type": "Number",
+					"description": "实际杂费(分)",
+					"required": true
+				},
+				{
+					"name": "invoice_type",
+					"type": "Number",
+					"description": "发票类型（1:普通发票；2：增值税专用发票）"
+				},
+				{
+					"name": "value_added_info",
+					"type": "ValueAddedInfo",
+					"description": "专票信息",
+					"subParams": [
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "电话"
+						},
+						{
+							"name": "register_addr",
+							"type": "String",
+							"description": "注册地址"
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "银行账号"
+						},
+						{
+							"name": "opening_bank",
+							"type": "String",
+							"description": "开户行"
+						},
+						{
+							"name": "tax_no",
+							"type": "String",
+							"description": "增值税发票税号"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

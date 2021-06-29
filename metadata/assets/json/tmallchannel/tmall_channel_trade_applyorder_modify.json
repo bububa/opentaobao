@@ -1,0 +1,73 @@
+{
+	"name": "tmall.channel.trade.applyorder.modify",
+	"apiChineseName": "供应商修改申请单",
+	"description": "上游供应商修改申请单, 目前只允许修改价格+件数且sku数量必须完全一致",
+	"requestParams": [
+		{
+			"name": "channel_purchase_apply_order_no",
+			"type": "String",
+			"description": "采购申请单号",
+			"required": true
+		},
+		{
+			"name": "apply_order_relate_item_modify_param_list",
+			"type": "TopChannelApplyOrderRelateItemModifyParam[]",
+			"description": "修改关联的的宝贝信息",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "purchase_price",
+					"type": "Number",
+					"description": "采购价",
+					"required": true
+				},
+				{
+					"name": "buy_quantity",
+					"type": "Number",
+					"description": "购买数量",
+					"required": true
+				},
+				{
+					"name": "product_sku_id",
+					"type": "Number",
+					"description": "对应货品的skuId",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "对应的货品ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

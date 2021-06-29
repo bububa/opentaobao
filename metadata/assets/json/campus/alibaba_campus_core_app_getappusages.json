@@ -1,0 +1,213 @@
+{
+	"name": "alibaba.campus.core.app.getappusages",
+	"apiChineseName": "根据应用ID获得应用所在的园区",
+	"description": "传入应用的id,  获得用户授权的园区",
+	"requestParams": [
+		{
+			"name": "appid",
+			"type": "Number",
+			"description": "应用id",
+			"required": true
+		},
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "WorkBenchContext",
+			"subParams": [
+				{
+					"name": "security_code",
+					"type": "String",
+					"description": "securityCode"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "userId"
+				},
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "appCode"
+				},
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "campusCode"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "userName"
+				},
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "eagleEyeTraceId"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "companyId"
+				},
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "systemId"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "campusId"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "ip"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content_list",
+					"type": "T[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "应用使用关系id",
+							"required": true
+						},
+						{
+							"name": "app_id",
+							"type": "Number",
+							"description": "应用id",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "应用名称",
+							"required": true
+						},
+						{
+							"name": "icon",
+							"type": "String",
+							"description": "应用图标",
+							"required": true
+						},
+						{
+							"name": "admin_url",
+							"type": "String",
+							"description": "后台管理url",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "前台url",
+							"required": true
+						},
+						{
+							"name": "open_mode",
+							"type": "String",
+							"description": "应用打开模式",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "is_charge",
+							"type": "Boolean",
+							"description": "是否收费类应用",
+							"required": true
+						},
+						{
+							"name": "app_key",
+							"type": "String",
+							"description": "应用key",
+							"required": true
+						},
+						{
+							"name": "app_order",
+							"type": "Number",
+							"description": "app排序",
+							"required": true
+						},
+						{
+							"name": "notify_url",
+							"type": "String",
+							"description": "notifyUrl",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_ext_info",
+					"type": "Json",
+					"description": "errorExtInfo",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

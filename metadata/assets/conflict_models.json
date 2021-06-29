@@ -13,5 +13,12 @@
     "Struct",
     "MapData",
     "Results",
-    "RpcResult"
+    "RpcResult",
+    "Map",
+    "MapResult",
+    "BizParam",
+    "ModelList",
+    "MtopResult",
+    "T",
+    "E"
 ]

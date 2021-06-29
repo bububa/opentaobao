@@ -1,0 +1,257 @@
+{
+	"name": "alibaba.alihealth.outflow.getbyverifycode",
+	"apiChineseName": "处方外流药店通过核销码获取处方",
+	"description": "阿里健康对合作药店提供通过核销码查看处方的功能",
+	"requestParams": [
+		{
+			"name": "prescription_get_by_verify_request",
+			"type": "PrescriptionGetByVerifyRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "drug_store_code",
+					"type": "String",
+					"description": "药店编码（必选）"
+				},
+				{
+					"name": "verify_code",
+					"type": "String",
+					"description": "核销码（必选）"
+				},
+				{
+					"name": "drug_store_name",
+					"type": "String",
+					"description": "药店名称（必选）"
+				},
+				{
+					"name": "pharmacist_name",
+					"type": "String",
+					"description": "药师姓名（必选）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PrescriptionMoreDataResponse",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "expired_time",
+							"type": "Date",
+							"description": "过期时间",
+							"required": true
+						},
+						{
+							"name": "fee_type",
+							"type": "String",
+							"description": "费用类别",
+							"required": true
+						},
+						{
+							"name": "drug_list",
+							"type": "DrugDTO[]",
+							"description": "药品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "dose_unit",
+									"type": "String",
+									"description": "用药单位",
+									"required": true
+								},
+								{
+									"name": "drug_name",
+									"type": "String",
+									"description": "药品名称",
+									"required": true
+								},
+								{
+									"name": "total",
+									"type": "String",
+									"description": "总量",
+									"required": true
+								},
+								{
+									"name": "dose",
+									"type": "String",
+									"description": "用药数量",
+									"required": true
+								},
+								{
+									"name": "frequency",
+									"type": "String",
+									"description": "his频次编码",
+									"required": true
+								},
+								{
+									"name": "dose_usage_advice",
+									"type": "String",
+									"description": "用法用量+医嘱",
+									"required": true
+								},
+								{
+									"name": "manufactures",
+									"type": "String",
+									"description": "药品厂家",
+									"required": true
+								},
+								{
+									"name": "spec",
+									"type": "String",
+									"description": "规格",
+									"required": true
+								},
+								{
+									"name": "prod_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "drug_code",
+									"type": "String",
+									"description": "药品编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "rx_type",
+							"type": "String",
+							"description": "处方类型",
+							"required": true
+						},
+						{
+							"name": "send_prescription_time",
+							"type": "Date",
+							"description": "处方发送时间",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "平台code",
+							"required": true
+						},
+						{
+							"name": "rx_no",
+							"type": "String",
+							"description": "处方号",
+							"required": true
+						},
+						{
+							"name": "drug_type",
+							"type": "String",
+							"description": "药品类别",
+							"required": true
+						},
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "服务类别",
+							"required": true
+						},
+						{
+							"name": "diagnose_name",
+							"type": "String",
+							"description": "诊断",
+							"required": true
+						},
+						{
+							"name": "sex",
+							"type": "String",
+							"description": "性别",
+							"required": true
+						},
+						{
+							"name": "age",
+							"type": "String",
+							"description": "年龄",
+							"required": true
+						},
+						{
+							"name": "doctor_name",
+							"type": "String",
+							"description": "医生姓名",
+							"required": true
+						},
+						{
+							"name": "hospital_name",
+							"type": "String",
+							"description": "医院名字",
+							"required": true
+						},
+						{
+							"name": "rx_count",
+							"type": "String",
+							"description": "药品数量",
+							"required": true
+						},
+						{
+							"name": "card_number",
+							"type": "String",
+							"description": "外配处方备案号",
+							"required": true
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "患者电话",
+							"required": true
+						},
+						{
+							"name": "patient_name",
+							"type": "String",
+							"description": "患者姓名",
+							"required": true
+						},
+						{
+							"name": "rx_image_url",
+							"type": "String",
+							"description": "图片地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

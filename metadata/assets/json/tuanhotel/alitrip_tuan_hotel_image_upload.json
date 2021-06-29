@@ -1,0 +1,75 @@
+{
+	"name": "alitrip.tuan.hotel.image.upload",
+	"apiChineseName": "图片上传接口",
+	"description": "用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址",
+	"requestParams": [
+		{
+			"name": "image_info_list",
+			"type": "ImageInfoVOList[]",
+			"description": "上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M",
+			"required": true,
+			"maxListSize": 5,
+			"subParams": [
+				{
+					"name": "image_uid",
+					"type": "String",
+					"description": "图片ID",
+					"required": true
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片URL地址",
+					"required": true
+				},
+				{
+					"name": "is_phone",
+					"type": "Boolean",
+					"description": "false"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "image_path_result_list",
+			"type": "ImagePathResultVoList []",
+			"description": "上传图片结果返回列表",
+			"subParams": [
+				{
+					"name": "image_path",
+					"type": "String",
+					"description": "在图片中心的地址路径",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "image_uid",
+					"type": "String",
+					"description": "图片id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "上传操作错误码"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "上传操作是否成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "上传操作异常信息"
+		}
+	]
+}

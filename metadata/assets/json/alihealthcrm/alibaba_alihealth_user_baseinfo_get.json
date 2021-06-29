@@ -1,0 +1,120 @@
+{
+	"name": "alibaba.alihealth.user.baseinfo.get",
+	"apiChineseName": "获取用户基础信息",
+	"description": "获取用户基础信息",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "三方服务商",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sports_status",
+							"type": "Number",
+							"description": "运动状态",
+							"required": true
+						},
+						{
+							"name": "birthday",
+							"type": "String",
+							"description": "生日",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "体重",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "身高",
+							"required": true
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "性别",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "用户id",
+							"required": true
+						},
+						{
+							"name": "head_url",
+							"type": "String",
+							"description": "用户头像信息",
+							"required": true
+						},
+						{
+							"name": "health_target",
+							"type": "String",
+							"description": "养生目标",
+							"required": true
+						},
+						{
+							"name": "body_status",
+							"type": "String",
+							"description": "体质状况",
+							"required": true
+						},
+						{
+							"name": "health_qa",
+							"type": "String",
+							"description": "健康问答",
+							"required": true
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "加密手机号串",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.ascp.uop.taobao.waybill.querycp",
+	"apiChineseName": "查询电子面单开放的CP列表",
+	"description": "查询电子面单开放的CP列表",
+	"requestParams": [
+		{
+			"name": "query_cp_request",
+			"type": "Querycprequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "query_cp_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data[]",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "label",
+							"type": "String",
+							"description": "承运商描述",
+							"required": true
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "承运商code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

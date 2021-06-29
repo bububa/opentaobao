@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.ailabs.iot.cloud.device.report",
+	"apiChineseName": "天猫精灵云云接入设备状态、事件上报接口",
+	"description": "承接天猫精灵云云接入设备的状态、事件上报",
+	"requestParams": [
+		{
+			"name": "cloud_report_param",
+			"type": "CloudReportParam",
+			"description": "上报总入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "payload",
+					"type": "String",
+					"description": "设备状态或者事件Map组成的Json字符串",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备id",
+					"required": true
+				},
+				{
+					"name": "user_access_token",
+					"type": "String",
+					"description": "用户accessToken"
+				},
+				{
+					"name": "open_user_id",
+					"type": "String",
+					"description": "天猫精灵授权给厂商的userId"
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "账号类型（1：token 2：openUserId）",
+					"required": true
+				},
+				{
+					"name": "skill_id",
+					"type": "Number",
+					"description": "技能id",
+					"required": true
+				},
+				{
+					"name": "time_stamp",
+					"type": "Number",
+					"description": "上报时间戳(毫秒)",
+					"required": true
+				},
+				{
+					"name": "message_id",
+					"type": "String",
+					"description": "消息id，问题定位用",
+					"required": true
+				},
+				{
+					"name": "payload_version",
+					"type": "Number",
+					"description": "协议版本（原有协议版本为1，新版协议为2）",
+					"required": true
+				},
+				{
+					"name": "report_type",
+					"type": "Number",
+					"description": "上报类型，1：属性上报 2：在离线上报 3：事件上报",
+					"required": true
+				},
+				{
+					"name": "extension",
+					"description": "保留业务字段"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_value",
+			"type": "Boolean",
+			"description": "返回值，是否上报成功"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.einvoice.income.certificate.return",
+	"apiChineseName": "服务商回传进项认证结果",
+	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",
+	"requestParams": [
+		{
+			"name": "error_code",
+			"type": "String",
+			"description": "错误码，success=false时必填"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息，success=false时必填"
+		},
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "请求标识",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "认证结果，true=成功，false=失败",
+			"required": true
+		},
+		{
+			"name": "step",
+			"type": "Number",
+			"description": "认证步骤，1=勾选，2=汇总，3=确认",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口是否调用成功"
+		}
+	]
+}

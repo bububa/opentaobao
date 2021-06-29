@@ -1,0 +1,148 @@
+{
+	"name": "alibaba.ascp.channel.distributor.price.get",
+	"apiChineseName": "链渠道中心淘外分销价格查询(分销商专用)",
+	"description": "此api为淘外分销的渠道产品价格查询标准api，淘外分销商专用",
+	"requestParams": [
+		{
+			"name": "price_request",
+			"type": "Pricerequest",
+			"description": "价格入参",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "产品ID",
+					"required": true
+				},
+				{
+					"name": "price_type",
+					"type": "String",
+					"description": "价格类型"
+				},
+				{
+					"name": "sales_mode",
+					"type": "String",
+					"description": "经营模式"
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道code"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "市场code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "TopDistributorPriceResult",
+					"description": "价格数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "product_price",
+							"type": "TopChannelPriceDetail",
+							"description": "产品价格详情",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency_price_value",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格值",
+									"required": true
+								},
+								{
+									"name": "extend_price",
+									"type": "Json",
+									"description": "扩展价格",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sku_prices",
+							"type": "TopChannelSkuPrice[]",
+							"description": "sku价格详情",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_price",
+									"type": "SkuPrice",
+									"description": "sku价格",
+									"required": true,
+									"subParams": [
+										{
+											"name": "extend_price",
+											"type": "Json",
+											"description": "扩展价格",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "价格值",
+											"required": true
+										},
+										{
+											"name": "currency_price_value",
+											"type": "String",
+											"description": "币种",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "skuId",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "cainiao.global.logistics.carrier.querylist",
+	"apiChineseName": "实际承运商查询",
+	"description": "查询出所有的实际承运商",
+	"requestParams": [
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言(暂不支持，保留入参)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DubboResult",
+			"description": "1",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回数据是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "AeopActualCarrierResponse",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "courier_list",
+							"type": "Courierlist[]",
+							"description": "实际承运商",
+							"required": true,
+							"subParams": [
+								{
+									"name": "courier_name",
+									"type": "String",
+									"description": "承运商名字",
+									"required": true
+								},
+								{
+									"name": "courier_code",
+									"type": "String",
+									"description": "承运商code",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

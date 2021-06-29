@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.damai.mev.open.deleteproject",
+	"apiChineseName": "大麦换验平台-第三方对外开放-项目接口deleteProject",
+	"description": "deleteProject",
+	"requestParams": [
+		{
+			"name": "delete_project_param",
+			"type": "ProjectIdOpenParam",
+			"description": "入参deleteProjectParam",
+			"subParams": [
+				{
+					"name": "project_id",
+					"type": "Number",
+					"description": "项目id"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "系统id"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

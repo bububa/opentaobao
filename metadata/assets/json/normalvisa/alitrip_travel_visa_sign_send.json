@@ -1,0 +1,66 @@
+{
+	"name": "alitrip.travel.visa.sign.send",
+	"apiChineseName": "签证批量申请人送签接口",
+	"description": "签证批量申请人送签接口，用于商家批量送签。",
+	"requestParams": [
+		{
+			"name": "nation_id",
+			"type": "Number",
+			"description": "国家id。目前只支持越南，越南国家id:27027",
+			"required": true
+		},
+		{
+			"name": "sign_type",
+			"type": "Number",
+			"description": "送签类型：1-非加急，2-加急，默认非加急",
+			"required": true
+		},
+		{
+			"name": "apply_ids",
+			"type": "String[]",
+			"description": "申请人ids",
+			"required": true,
+			"maxListSize": 500
+		}
+	],
+	"responseParams": [
+		{
+			"name": "batch_infos",
+			"type": "BatchInfo []",
+			"description": "批次信息",
+			"subParams": [
+				{
+					"name": "batch_id",
+					"type": "String",
+					"description": "批次id",
+					"required": true
+				},
+				{
+					"name": "apply_ids",
+					"type": "String[]",
+					"description": "每批次的申请人id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "fail_infos",
+			"type": "SendSignFailInfo []",
+			"description": "失败信息",
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "String",
+					"description": "申请人id",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

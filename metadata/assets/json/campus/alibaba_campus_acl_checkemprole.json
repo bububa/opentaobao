@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.campus.acl.checkemprole",
+	"apiChineseName": "校验用户是否有该角色",
+	"description": "校验用户是否有该权限",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id不填默认为SYS_000"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "员工账号",
+			"required": true
+		},
+		{
+			"name": "item_key",
+			"type": "String",
+			"description": "角色id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

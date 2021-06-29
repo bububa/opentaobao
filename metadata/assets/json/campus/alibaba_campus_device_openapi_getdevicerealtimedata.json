@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.campus.device.openapi.getdevicerealtimedata",
+	"apiChineseName": "获取指定设备下指定参数的实时值",
+	"description": "获取指定设备下指定参数的实时值",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid",
+			"required": true
+		},
+		{
+			"name": "property_code",
+			"type": "String",
+			"description": "参数code,如灯亮度参数为brightness;参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’[根据设备类型查看该设备所拥有的采集类参数]。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回查询结果",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "RunDataDto",
+					"description": "实时信息对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "property_code",
+							"type": "String",
+							"description": "参数code",
+							"required": true
+						},
+						{
+							"name": "property_name",
+							"type": "String",
+							"description": "参数名称",
+							"required": true
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "实时参数值",
+							"required": true
+						},
+						{
+							"name": "property_kind",
+							"type": "Number",
+							"description": "参数在数据字典所属分类，如30600，代表character",
+							"required": true
+						},
+						{
+							"name": "unit_code",
+							"type": "String",
+							"description": "单位编码",
+							"required": true
+						},
+						{
+							"name": "ref_device_id",
+							"type": "String",
+							"description": "被关联物理设备编码",
+							"required": true
+						},
+						{
+							"name": "ref_property_code",
+							"type": "String",
+							"description": "被关联参数点属性",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

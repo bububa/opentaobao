@@ -1,0 +1,39 @@
+{
+	"name": "yunos.tvpubadmin.common.file.upload",
+	"apiChineseName": "文件上传API",
+	"description": "文件上传服务",
+	"requestParams": [
+		{
+			"name": "bytes",
+			"type": "byte[]",
+			"description": "文件字节流"
+		},
+		{
+			"name": "original_filename",
+			"type": "String",
+			"description": "原文件名"
+		},
+		{
+			"name": "size",
+			"type": "String",
+			"description": "文件大小"
+		},
+		{
+			"name": "content_type",
+			"type": "String",
+			"description": "文件类型"
+		},
+		{
+			"name": "upload_path",
+			"type": "String",
+			"description": "上传地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "上传后的文件地址"
+		}
+	]
+}

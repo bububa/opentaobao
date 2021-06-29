@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.ctom.consensus.demand.upload",
+	"apiChineseName": "22-C2M共识需求回传接口",
+	"description": "C2M 共识需求回传接口",
+	"requestParams": [
+		{
+			"name": "c2_m_consensus_demand_request",
+			"type": "C2MConsensusDemandRequest",
+			"description": "对象",
+			"subParams": [
+				{
+					"name": "c2_m_consensus_demand_param_d_t_o_list",
+					"type": "C2MConsensusDemandParamDto[]",
+					"description": "对象",
+					"subParams": [
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值"
+						},
+						{
+							"name": "c2m_consensus_demand",
+							"type": "String",
+							"description": "c2m需求数量"
+						},
+						{
+							"name": "cust_id",
+							"type": "String",
+							"description": "渠道ID"
+						},
+						{
+							"name": "prd_id",
+							"type": "String",
+							"description": "物料ID"
+						},
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户"
+						},
+						{
+							"name": "c2m_quantity",
+							"type": "String",
+							"description": "c2m分配数量"
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果msg"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果code"
+		}
+	]
+}

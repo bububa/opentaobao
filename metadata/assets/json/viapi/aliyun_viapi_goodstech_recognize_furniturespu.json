@@ -1,0 +1,59 @@
+{
+	"name": "aliyun.viapi.goodstech.recognize.furniturespu",
+	"apiChineseName": "家居SPU识别",
+	"description": "对输入的家居模型图进行分类，目前类别数可达70类。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "待检测图片链接"
+		},
+		{
+			"name": "x_length",
+			"type": "String",
+			"description": "模型x方向的尺寸，单位cm，默认值100"
+		},
+		{
+			"name": "y_length",
+			"type": "String",
+			"description": "模型y方向的尺寸，单位cm，默认值100"
+		},
+		{
+			"name": "z_length",
+			"type": "String",
+			"description": "模型z方向的尺寸，单位cm，默认值100"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "predprobability",
+					"type": "String",
+					"description": "预测的类目中文名称",
+					"required": true
+				},
+				{
+					"name": "predcate",
+					"type": "String",
+					"description": "预测的类目名称ID",
+					"required": true
+				},
+				{
+					"name": "predcateid",
+					"type": "String",
+					"description": "预测的类目置信概率",
+					"required": true
+				}
+			]
+		}
+	]
+}

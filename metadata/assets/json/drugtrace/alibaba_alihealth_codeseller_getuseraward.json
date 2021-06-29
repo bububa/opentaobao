@@ -1,0 +1,35 @@
+{
+	"name": "alibaba.alihealth.codeseller.getuseraward",
+	"apiChineseName": "贩卖机扫码查询领奖状态",
+	"description": "贩卖机扫码查询领奖状态",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否领取奖品 true:已领取 false:未领取 null:未知"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "状态值"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "响应标识"
+		}
+	]
+}

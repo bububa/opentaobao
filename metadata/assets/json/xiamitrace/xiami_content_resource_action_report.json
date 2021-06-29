@@ -1,0 +1,76 @@
+{
+	"name": "xiami.content.resource.action.report",
+	"apiChineseName": "曲库开放平台内容行为上报接口",
+	"description": "合作方对接入的曲库开放内容上报行为日志",
+	"requestParams": [
+		{
+			"name": "resource_id",
+			"type": "String",
+			"description": "资源ID",
+			"required": true
+		},
+		{
+			"name": "num",
+			"type": "Number",
+			"description": "行为数量"
+		},
+		{
+			"name": "resource_type",
+			"type": "String",
+			"description": "资源类型（可枚举）: song(歌曲)",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "行为类型（可枚举）：LISTEN（主动试听）、PASSIVE_LISTEN（被动试听）",
+			"required": true
+		},
+		{
+			"name": "from_id",
+			"type": "String",
+			"description": "来源id，如歌单id"
+		},
+		{
+			"name": "from_type",
+			"type": "Number",
+			"description": "1推荐2歌单3标签"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "用户id"
+		},
+		{
+			"name": "utdid",
+			"type": "String",
+			"description": "用户设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "上报结果: true(成功), false(失败)"
+		},
+		{
+			"name": "result_code",
+			"type": "ResultCode",
+			"description": "返回结果码",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "result message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "result code",
+					"required": true
+				}
+			]
+		}
+	]
+}

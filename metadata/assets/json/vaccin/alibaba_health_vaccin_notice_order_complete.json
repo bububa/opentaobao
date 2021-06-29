@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.health.vaccin.notice.order.complete",
+	"apiChineseName": "疫苗接种完成(带支付宝提醒)",
+	"description": "用户到店完成接种,ISV感知通知阿里健康完成接种,并通知用户!",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝唯一标识"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "在ISV预约单唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "执行是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		}
+	]
+}

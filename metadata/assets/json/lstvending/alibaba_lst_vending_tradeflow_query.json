@@ -1,0 +1,341 @@
+{
+	"name": "alibaba.lst.vending.tradeflow.query",
+	"apiChineseName": "自动售卖机交易流水查询",
+	"description": "零售通自动售卖机交易流水查询接口，品牌商通过此接口同步商品交易数据。",
+	"requestParams": [
+		{
+			"name": "open_trade_flow_query",
+			"type": "OpenTradeFlowQuery",
+			"description": "交易流水查询条件",
+			"required": true,
+			"subParams": [
+				{
+					"name": "gmt_modified_range",
+					"type": "Range",
+					"description": "修改时间",
+					"subParams": [
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "开始时间"
+						}
+					]
+				},
+				{
+					"name": "page_rows",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				},
+				{
+					"name": "sort_param_list",
+					"type": "SortParam[]",
+					"description": "排序条件",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sort_field_name",
+							"type": "String",
+							"description": "排序字段名称：gmt_create创建时间、gmt_modified修改时间、id主键",
+							"required": true
+						},
+						{
+							"name": "sort_order",
+							"type": "String",
+							"description": "排序方式：asc、desc"
+						}
+					]
+				},
+				{
+					"name": "equipment_id",
+					"type": "Number",
+					"description": "设备ID",
+					"required": true
+				},
+				{
+					"name": "gmt_create_range",
+					"type": "Range",
+					"description": "创建时间",
+					"subParams": [
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "开始时间"
+						}
+					]
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "VendingTradeFlowDto[]",
+					"description": "交易流水记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Number",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "trade_type",
+							"type": "Number",
+							"description": "交易类型：1购买，2退款",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "设备厂商编码",
+							"required": true
+						},
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "折扣",
+							"required": true
+						},
+						{
+							"name": "trade_flow_no",
+							"type": "String",
+							"description": "外部系统交易流水号",
+							"required": true
+						},
+						{
+							"name": "payment_trade_flow_no",
+							"type": "String",
+							"description": "外部系统正向交易流水号",
+							"required": true
+						},
+						{
+							"name": "equipment_code",
+							"type": "String",
+							"description": "设备编码",
+							"required": true
+						},
+						{
+							"name": "goods_detail_d_t_o_list",
+							"type": "VendingTradeGoodsDetailDto[]",
+							"description": "商品清单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gmt_modified",
+									"type": "Number",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Number",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "trade_flow_no",
+									"type": "String",
+									"description": "外部系统交易流水号",
+									"required": true
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "商品分类",
+									"required": true
+								},
+								{
+									"name": "cargo_road_no",
+									"type": "Number",
+									"description": "货道编码",
+									"required": true
+								},
+								{
+									"name": "total_amount",
+									"type": "Number",
+									"description": "商品总金额",
+									"required": true
+								},
+								{
+									"name": "goods_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "actual_amount",
+									"type": "Number",
+									"description": "商品实际金额",
+									"required": true
+								},
+								{
+									"name": "shelf_no",
+									"type": "Number",
+									"description": "货架编码",
+									"required": true
+								},
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "商品条码",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "商品单价",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "交易总金额",
+							"required": true
+						},
+						{
+							"name": "equipment_id",
+							"type": "Number",
+							"description": "设备ID",
+							"required": true
+						},
+						{
+							"name": "commission",
+							"type": "Number",
+							"description": "佣金金额",
+							"required": true
+						},
+						{
+							"name": "actual_amount",
+							"type": "Number",
+							"description": "实际总金额",
+							"required": true
+						},
+						{
+							"name": "payment_d_t_o_list",
+							"type": "VendingTradePaymentDto[]",
+							"description": "支付明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pay_amount",
+									"type": "Number",
+									"description": "支付金额",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Number",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "trade_flow_no",
+									"type": "String",
+									"description": "外部系统交易流水号",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Number",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "支付状态：1待付款，2已付款",
+									"required": true
+								},
+								{
+									"name": "payment_user_id",
+									"type": "String",
+									"description": "外部系统支付用户ID，比如：支付宝PID",
+									"required": true
+								},
+								{
+									"name": "payment_flow_no",
+									"type": "String",
+									"description": "外部系统支付流水号",
+									"required": true
+								},
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "支付类型：1扣款，2退款",
+									"required": true
+								},
+								{
+									"name": "commission",
+									"type": "Number",
+									"description": "分佣佣金",
+									"required": true
+								},
+								{
+									"name": "pay_channel",
+									"type": "Number",
+									"description": "支付通道：1现金，2支付宝，3微信，255其他",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否异常",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoSimbaRptCampadgroupeffectGetAPIResponse struct {
 
 type TaobaoSimbaRptCampadgroupeffectGetResponse struct {
     XMLName xml.Name `xml:"simba_rpt_campadgroupeffect_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 推广计划下推广组的效果数据列表
     

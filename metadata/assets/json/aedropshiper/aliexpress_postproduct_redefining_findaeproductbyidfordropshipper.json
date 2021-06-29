@@ -1,0 +1,489 @@
+{
+	"name": "aliexpress.postproduct.redefining.findaeproductbyidfordropshipper",
+	"apiChineseName": "Dropshipper查找商品信息接口",
+	"description": "提供给Dropshipper的通过商品ID查找商品信息的接口，只有特定买家可以使用",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "local_country",
+			"type": "String",
+			"description": "国家"
+		},
+		{
+			"name": "local_language",
+			"type": "String",
+			"description": "语言"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AeopFindProductResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "aeop_ae_product_s_k_us",
+					"type": "AeopAeProductSku[]",
+					"description": "商品的SKU信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_stock",
+							"type": "Boolean",
+							"description": "Sku库存,数据格式有货true，无货false；至少有一条sku记录是有货的。",
+							"required": true
+						},
+						{
+							"name": "sku_price",
+							"type": "String",
+							"description": "Sku价格。取值范围:0.01-100000;单位:美元。 如:200.07，表示:200美元7分。需要在正确的价格区间内。",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "Sku商家编码。 格式:半角英数字,长度20,不包含空格大于号和小于号。如果用户只填写零售价（productprice）和商品编码，需要完整生成一条SKU记录提交，否则商品编码无法保存。系统会认为只提交了零售价，而没有SKU，导致商品编辑未保存。",
+							"required": true
+						},
+						{
+							"name": "ipm_sku_stock",
+							"type": "Number",
+							"description": "SKU实际可售库存属性ipmSkuStock，该属性值的合理取值范围为0~999999，如该商品有SKU时，请确保至少有一个SKU是有货状态，也就是ipmSkuStock取值是1~999999，在整个商品纬度库存值的取值范围是1~999999。 如果同时设置了skuStock属性，那么系统以ipmSkuStock属性为优先；如果没有设置ipmSkuStock属性，那么系统会根据skuStock属性进行设置库存，true表示999，false表示0。",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "SKU ID",
+							"required": true
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "产品的货币单位。美元: USD, 卢布: RUB",
+							"required": true
+						},
+						{
+							"name": "aeop_s_k_u_propertys",
+							"type": "AeopSkuProperty[]",
+							"description": "Sku属性对象list，允许1-3个sku属性对象，按sku属性顺序排放。sku属性从类目属性接口getAttributesResultByCateId获取。该项值输入sku属性，不能输入普通类目属性。注意，sku属性是有顺序的，必须按照顺序存放。",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_property_id",
+									"type": "Number",
+									"description": "skuPropertyId",
+									"required": true
+								},
+								{
+									"name": "sku_image",
+									"type": "String",
+									"description": "skuImage",
+									"required": true
+								},
+								{
+									"name": "property_value_id_long",
+									"type": "Number",
+									"description": "自定义id",
+									"required": true
+								},
+								{
+									"name": "property_value_definition_name",
+									"type": "String",
+									"description": "自定义名",
+									"required": true
+								},
+								{
+									"name": "sku_property_value",
+									"type": "String",
+									"description": "属性值",
+									"required": true
+								},
+								{
+									"name": "sku_property_name",
+									"type": "String",
+									"description": "属性名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条形码",
+							"required": true
+						},
+						{
+							"name": "offer_sale_price",
+							"type": "String",
+							"description": "sku折扣价格",
+							"required": true
+						},
+						{
+							"name": "offer_bulk_sale_price",
+							"type": "String",
+							"description": "sku批量折扣价",
+							"required": true
+						},
+						{
+							"name": "sku_bulk_order",
+							"type": "Number",
+							"description": "最少起批的数量",
+							"required": true
+						},
+						{
+							"name": "s_k_u_available_stock",
+							"type": "Number",
+							"description": "sku库存",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "detail",
+					"type": "String",
+					"description": "商品详描",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "product_unit",
+					"type": "Number",
+					"description": "产品的单位",
+					"required": true
+				},
+				{
+					"name": "ws_offline_date",
+					"type": "Date",
+					"description": "产品的下架日期",
+					"required": true
+				},
+				{
+					"name": "ws_display",
+					"type": "String",
+					"description": "产品的下架原因",
+					"required": true
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "产品所在类目的ID",
+					"required": true
+				},
+				{
+					"name": "aeop_a_e_multimedia",
+					"type": "AeopAeMultimedia",
+					"description": "商品多媒体信息，该属性主要包含商品的视频列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "aeop_a_e_videos",
+							"type": "AeopAeVideo[]",
+							"description": "多媒体信息。",
+							"required": true,
+							"subParams": [
+								{
+									"name": "poster_url",
+									"type": "String",
+									"description": "视频封面图片的URL",
+									"required": true
+								},
+								{
+									"name": "media_type",
+									"type": "String",
+									"description": "视频的类型",
+									"required": true
+								},
+								{
+									"name": "media_status",
+									"type": "String",
+									"description": "视频的状态",
+									"required": true
+								},
+								{
+									"name": "media_id",
+									"type": "Number",
+									"description": "视频ID",
+									"required": true
+								},
+								{
+									"name": "ali_member_id",
+									"type": "Number",
+									"description": "卖家主账户ID",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "owner_member_id",
+					"type": "String",
+					"description": "商品拥有者的login_id",
+					"required": true
+				},
+				{
+					"name": "product_status_type",
+					"type": "String",
+					"description": "产品的状态",
+					"required": true
+				},
+				{
+					"name": "aeop_ae_product_propertys",
+					"type": "AeopAeProductProperty[]",
+					"description": "商品的类目属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "attr_value_unit",
+							"type": "String",
+							"description": "属性单位",
+							"required": true
+						},
+						{
+							"name": "attr_value_start",
+							"type": "String",
+							"description": "区间属性开始值",
+							"required": true
+						},
+						{
+							"name": "attr_value_id",
+							"type": "Number",
+							"description": "属性值ID",
+							"required": true
+						},
+						{
+							"name": "attr_value_end",
+							"type": "String",
+							"description": "区间属性结束值",
+							"required": true
+						},
+						{
+							"name": "attr_value",
+							"type": "String",
+							"description": "属性值",
+							"required": true
+						},
+						{
+							"name": "attr_name_id",
+							"type": "Number",
+							"description": "属性Id",
+							"required": true
+						},
+						{
+							"name": "attr_name",
+							"type": "String",
+							"description": "属性名字",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "gross_weight",
+					"type": "String",
+					"description": "产品的毛重",
+					"required": true
+				},
+				{
+					"name": "delivery_time",
+					"type": "Number",
+					"description": "商品的备货期",
+					"required": true
+				},
+				{
+					"name": "ws_valid_num",
+					"type": "Number",
+					"description": "产品的有效期",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "package_type",
+					"type": "Boolean",
+					"description": "包装类型",
+					"required": true
+				},
+				{
+					"name": "aeop_national_quote_configuration",
+					"type": "AeopNationalQuoteConfiguration",
+					"description": "商品分国家报价的配置",
+					"required": true,
+					"subParams": [
+						{
+							"name": "configuration_type",
+							"type": "String",
+							"description": "分国家定价规则类型[percentage：基于基准价格按比例配置]",
+							"required": true
+						},
+						{
+							"name": "configuration_data",
+							"type": "String",
+							"description": "jsonArray格式的分国家定价规则数据。 1)基于基准价格按比例配置的数据格式：[{\"shiptoCountry\":\"US\",\"percentage\":\"5\"},{\"shiptoCountry\":\"RU\",\"percentage\":\"-2\"}] 其中shiptoCountry：ISO两位的国家编码（目前支持11个国家：RU,US,CA,ES,FR,UK,NL,IL,BR,CL,AU）， percentage：相对于基准价的调价比例（百分比整数，支持负数，当前限制\u003e=-30 \u0026\u0026 \u003c=100）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "产品的标题",
+					"required": true
+				},
+				{
+					"name": "base_unit",
+					"type": "Number",
+					"description": "自定义计重的基本产品件数",
+					"required": true
+				},
+				{
+					"name": "package_length",
+					"type": "Number",
+					"description": "产品的长度",
+					"required": true
+				},
+				{
+					"name": "mobile_detail",
+					"type": "String",
+					"description": "无线详描",
+					"required": true
+				},
+				{
+					"name": "package_height",
+					"type": "Number",
+					"description": "产品的高度",
+					"required": true
+				},
+				{
+					"name": "package_width",
+					"type": "Number",
+					"description": "产品的宽度",
+					"required": true
+				},
+				{
+					"name": "currency_code",
+					"type": "String",
+					"description": "产品的货币单位。美元: USD, 卢布: RUB",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "产品创建时间",
+					"required": true
+				},
+				{
+					"name": "image_u_r_ls",
+					"type": "String",
+					"description": "产品的主图列表",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "product_price",
+					"type": "String",
+					"description": "单品产品的价格。",
+					"required": true
+				},
+				{
+					"name": "item_offer_site_sale_price",
+					"type": "String",
+					"description": "网站折扣后价格",
+					"required": true
+				},
+				{
+					"name": "total_available_stock",
+					"type": "Number",
+					"description": "库存",
+					"required": true
+				},
+				{
+					"name": "store_info",
+					"type": "AeopStoreInfo",
+					"description": "店铺信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "communication_rating",
+							"type": "String",
+							"description": "卖家服务，1-5星",
+							"required": true
+						},
+						{
+							"name": "item_as_descriped_rating",
+							"type": "String",
+							"description": "商品描述，1-5星",
+							"required": true
+						},
+						{
+							"name": "shipping_speed_rating",
+							"type": "String",
+							"description": "物流，1-5星",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "店铺ID",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "店铺名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "evaluation_count",
+					"type": "Number",
+					"description": "评价数",
+					"required": true
+				},
+				{
+					"name": "avg_evaluation_rating",
+					"type": "String",
+					"description": "平均评价星级，1-5星",
+					"required": true
+				},
+				{
+					"name": "order_count",
+					"type": "Number",
+					"description": "订单数",
+					"required": true
+				}
+			]
+		}
+	]
+}

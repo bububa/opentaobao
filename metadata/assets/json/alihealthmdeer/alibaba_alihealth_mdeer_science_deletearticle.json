@@ -1,0 +1,30 @@
+{
+	"name": "alibaba.alihealth.mdeer.science.deletearticle",
+	"apiChineseName": "文章删除",
+	"description": "三方同步文章删除",
+	"requestParams": [
+		{
+			"name": "article_id",
+			"type": "Number",
+			"description": "文章ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "是否删除成功"
+		}
+	]
+}

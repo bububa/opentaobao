@@ -1,0 +1,38 @@
+{
+	"name": "taobao.jst.interactive.activity.create",
+	"apiChineseName": "互动任务活动创建接口",
+	"description": "调用活动创建接口为小程序创建互动任务活动，任务列表仅在活动期间内返回",
+	"requestParams": [
+		{
+			"name": "mini_app_id",
+			"type": "String",
+			"description": "小程序id",
+			"required": true
+		},
+		{
+			"name": "activity_name",
+			"type": "String",
+			"description": "活动名称",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id"
+		}
+	]
+}

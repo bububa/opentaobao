@@ -1,0 +1,86 @@
+{
+	"name": "alibaba.einvoice.amount.check",
+	"apiChineseName": "开票量核对接口",
+	"description": "跟开票服务商核对历史开票量，用来对账",
+	"requestParams": [
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "税号",
+			"required": true
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开票日期开始时间",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "开票日期结束时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "einvoice_amount_check_result_list",
+			"type": "EinvoiceAmountCheckResult []",
+			"description": "开票量查询结果",
+			"subParams": [
+				{
+					"name": "payee_register_no",
+					"type": "String",
+					"description": "税号",
+					"required": true
+				},
+				{
+					"name": "invoice_date",
+					"type": "String",
+					"description": "开票日期",
+					"required": true
+				},
+				{
+					"name": "invoice_count",
+					"type": "Number",
+					"description": "开票量",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "开票含税总金额",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "开票不含税总金额",
+					"required": true
+				},
+				{
+					"name": "total_tax",
+					"type": "String",
+					"description": "开票总税额",
+					"required": true
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票类型，蓝票=blue，红票=red",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "查询结果的数量"
+		}
+	]
+}

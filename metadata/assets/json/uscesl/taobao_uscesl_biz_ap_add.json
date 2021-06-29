@@ -1,0 +1,61 @@
+{
+	"name": "taobao.uscesl.biz.ap.add",
+	"apiChineseName": "新增价签通讯AP设备",
+	"description": "根据门店和ap的MAC地址新增",
+	"requestParams": [
+		{
+			"name": "ap_mac",
+			"type": "String",
+			"description": "AP MAC地址"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "价签系统门店ID"
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "本次执行返回code",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "业务错误code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行成功或失败",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "业务错误文案",
+					"required": true
+				},
+				{
+					"name": "target",
+					"type": "Boolean",
+					"description": "返回本次执行成功或失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

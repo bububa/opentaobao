@@ -19,7 +19,9 @@ type TaobaoDegUserGamegiftQueryAPIResponse struct {
 
 type TaobaoDegUserGamegiftQueryResponse struct {
     XMLName xml.Name `xml:"deg_user_gamegift_query_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 礼包信息
     

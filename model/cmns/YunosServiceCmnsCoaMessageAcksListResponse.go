@@ -19,7 +19,9 @@ type YunosServiceCmnsCoaMessageAcksListAPIResponse struct {
 
 type YunosServiceCmnsCoaMessageAcksListResponse struct {
     XMLName xml.Name `xml:"yunos_service_cmns_coa_message_acks_list_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 分页结果对象
     

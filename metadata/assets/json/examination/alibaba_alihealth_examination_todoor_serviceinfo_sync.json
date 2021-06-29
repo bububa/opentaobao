@@ -1,0 +1,132 @@
+{
+	"name": "alibaba.alihealth.examination.todoor.serviceinfo.sync",
+	"apiChineseName": "上门检测服务信息同步",
+	"description": "isv同步上门检测服务信息给健康",
+	"requestParams": [
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "服务商预约凭证",
+			"required": true
+		},
+		{
+			"name": "medical_practitioner_info",
+			"type": "MedicalPractitionerInfo",
+			"description": "从业者信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别(MALE-男;FEMALE-女;)"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "从业者手机号"
+				},
+				{
+					"name": "outer_practitioner_id",
+					"type": "String",
+					"description": "外部系统从业者id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "从业者姓名"
+				},
+				{
+					"name": "certifications_url",
+					"type": "String",
+					"description": "从业者资质证书图片链接"
+				},
+				{
+					"name": "practice_agency_name",
+					"type": "String",
+					"description": "执业机构名称"
+				},
+				{
+					"name": "practice_agency_province",
+					"type": "String",
+					"description": "执业机构所在省份"
+				},
+				{
+					"name": "practice_agency_province_code",
+					"type": "String",
+					"description": "执业机构所在省份Code"
+				}
+			]
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "健康预约凭证",
+			"required": true
+		},
+		{
+			"name": "event",
+			"type": "String",
+			"description": "事件(ASSIGNED_PRACTITONER:已分配医护人员、PRACTITONER_GO_OUT:医护人员已出发、PRACTITONER_HOME:医护人员已到家、PRACTITONER_CHECKED:医护人员检查完成)、CHANGE_PRACTITONER(变更医护人员)",
+			"required": true
+		},
+		{
+			"name": "event_occur_time",
+			"type": "String",
+			"description": "事件发生时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "结果",
+							"required": true
+						},
+						{
+							"name": "response_code",
+							"type": "String",
+							"description": "结果",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "追踪id",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

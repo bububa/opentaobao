@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.ailabs.aligenie.skill.entity.import",
+	"apiChineseName": "实体动态更新",
+	"description": "根据用户上传的实体信息，进行制定技能实体的动态变更",
+	"requestParams": [
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "技能Id",
+			"required": true
+		},
+		{
+			"name": "append",
+			"type": "Boolean",
+			"description": "是否增量更新，true为增量，否则上传数据中没有的实体值将被删除"
+		},
+		{
+			"name": "test",
+			"type": "Boolean",
+			"description": "测试，目前没有此功能，此参数无效"
+		},
+		{
+			"name": "file_data",
+			"type": "byte[]",
+			"description": "文件内容",
+			"required": true
+		},
+		{
+			"name": "entity_name",
+			"type": "String",
+			"description": "要更新的实体名",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "固定值，ISV"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "ret_value",
+					"type": "SimpleTextImportResult",
+					"description": "实体更新结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "num_exist",
+							"type": "Number",
+							"description": "已存在或重复的实体数",
+							"required": true
+						},
+						{
+							"name": "num_failed",
+							"type": "Number",
+							"description": "上传失败的实体数",
+							"required": true
+						},
+						{
+							"name": "num_successful",
+							"type": "Number",
+							"description": "上传成功的实体数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "服务返回错误码",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "服务返回错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

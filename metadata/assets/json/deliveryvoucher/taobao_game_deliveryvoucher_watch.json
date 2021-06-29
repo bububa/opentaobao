@@ -1,0 +1,94 @@
+{
+	"name": "taobao.game.deliveryvoucher.watch",
+	"apiChineseName": "监控预约数据",
+	"description": "监控预约数据",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WatchAppointmentRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "可扩展字段"
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "流水号:唯一，幂等性判断",
+					"required": true
+				},
+				{
+					"name": "operation_time",
+					"type": "String",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "provider",
+					"type": "String",
+					"description": "第三方服务商标识 top appkey",
+					"required": true
+				},
+				{
+					"name": "date",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "数据类型0：初始化，1：修改，2：每天同步\t必填",
+					"required": true
+				},
+				{
+					"name": "current_capacity",
+					"type": "Number",
+					"description": "当前预约容量上限，type为0和1是必填"
+				},
+				{
+					"name": "merchant_name",
+					"type": "String",
+					"description": "商家名称",
+					"required": true
+				},
+				{
+					"name": "merchant_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "previous_capacity",
+					"type": "Number",
+					"description": "修改前预约容量上限\ttype为0和1是必填"
+				},
+				{
+					"name": "actual_appointment",
+					"type": "Number",
+					"description": "最终预约数量\ttype为2必填"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "isSuccess"
+		}
+	]
+}

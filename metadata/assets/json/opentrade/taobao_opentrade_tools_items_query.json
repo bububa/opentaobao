@@ -1,0 +1,20 @@
+{
+	"name": "taobao.opentrade.tools.items.query",
+	"apiChineseName": "交易开放获取商品绑定信息",
+	"description": "交易开放获取商品绑定信息",
+	"requestParams": [
+		{
+			"name": "miniapp_id",
+			"type": "Number",
+			"description": "交易开放C端小程序ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_ids",
+			"type": "Number []",
+			"description": "已绑定的商品ID列表"
+		}
+	]
+}

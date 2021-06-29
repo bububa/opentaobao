@@ -1,0 +1,140 @@
+{
+	"name": "taobao.openmall.trade.create",
+	"apiChineseName": "创建订单",
+	"description": "创建Openmall订单",
+	"requestParams": [
+		{
+			"name": "param_top_trade_create_d_o",
+			"type": "TopTradeCreateDo",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "收货地址的收件人地址",
+					"required": true
+				},
+				{
+					"name": "buyer_channel",
+					"type": "String",
+					"description": "买家来源渠道，可选值 WeiXin（微信渠道），DouYin（抖音）， KuaiShou （快手），Other（其他）",
+					"required": true
+				},
+				{
+					"name": "buyer_channel_id",
+					"type": "String",
+					"description": "买家来源渠道对应ID，例如微信的openId",
+					"required": true
+				},
+				{
+					"name": "buyer_memo",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "买家手机号",
+					"required": true
+				},
+				{
+					"name": "distributor",
+					"type": "String",
+					"description": "媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick",
+					"required": true
+				},
+				{
+					"name": "divisioncode",
+					"type": "String",
+					"description": "收货地址的区域码，从taobao.areas.get接口获取区域码，文档地址：https://open.taobao.com/api.htm?spm=a219a.7386653.0.0.77e7669aoxOfiV\u0026source=search\u0026docId=59\u0026docType=2",
+					"required": true
+				},
+				{
+					"name": "expect_order_fee",
+					"type": "String",
+					"description": "计划采购金额（单位元），如最终订单成交价与期望金额不同则直接关单采购失败，计算方式：运费+商品成本价",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收货地址的手机号码",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "收货地址的收件人姓名",
+					"required": true
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品的id",
+					"required": true
+				},
+				{
+					"name": "nums",
+					"type": "Number",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "订单的外部订单号，用来防止重复提交。需要以TOP：  appkey_（如：100000_） 开头，最长32位",
+					"required": true
+				},
+				{
+					"name": "outer_order_fee",
+					"type": "String",
+					"description": "外部订单交易金额（单位元），即消费者在渠道的实付金额",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "收货地址的电话号码"
+				},
+				{
+					"name": "postcode",
+					"type": "String",
+					"description": "收货地址的邮编，为空或者6位数字的邮编"
+				},
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "创建交易时的物流方式。 具体的值从 taobao.openmall.trade.render 接口获取，邮费0说明为包邮",
+					"required": true
+				},
+				{
+					"name": "sku_iids",
+					"type": "Number",
+					"description": "商品对应的SKUID，无SKU商品传0",
+					"required": true
+				},
+				{
+					"name": "need_erp_hold",
+					"type": "Boolean",
+					"description": "创建订单传入true的时候，订单支付后会进入半小时的hold单（订单状态为：PAID_FORBID_CONSIGN），此时订单不会发货，用户可以调用Openmall地址修改接口修改订单收货地址，半小时结束后订单自动结束hold单进入发货流程订单状态为（WAIT_SELLER_SEND_GOODS）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "淘宝交易单号",
+					"required": true
+				}
+			]
+		}
+	]
+}

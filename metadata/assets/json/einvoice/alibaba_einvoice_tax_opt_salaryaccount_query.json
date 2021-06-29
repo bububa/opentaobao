@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.einvoice.tax.opt.salaryaccount.query",
+	"apiChineseName": "查询用户的发薪账号",
+	"description": "查询用户的发薪账号状态",
+	"requestParams": [
+		{
+			"name": "param_tax_optimization_query_pay_salary_account_d_t_o",
+			"type": "TaxOptimizationQueryPaySalaryAccountDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "contractor_code",
+					"type": "String",
+					"description": "承包商编码",
+					"required": true
+				},
+				{
+					"name": "employer_code",
+					"type": "String",
+					"description": "业务方编码",
+					"required": true
+				},
+				{
+					"name": "identification_in_belonging_employer",
+					"type": "String",
+					"description": "用户在业务方平台的userid",
+					"required": true
+				},
+				{
+					"name": "tax_optimization_mode",
+					"type": "String",
+					"description": "税优模式",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaxOptimizationQueryAlipayAccountResultDto",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "account_type_enum",
+					"type": "Number",
+					"description": "账号类型",
+					"required": true
+				},
+				{
+					"name": "can_pay",
+					"type": "Boolean",
+					"description": "是否正常发薪",
+					"required": true
+				},
+				{
+					"name": "cert_type_enum",
+					"type": "String",
+					"description": "认证类型",
+					"required": true
+				},
+				{
+					"name": "certified",
+					"type": "Boolean",
+					"description": "是否实人认证",
+					"required": true
+				},
+				{
+					"name": "enable_status_enum",
+					"type": "String",
+					"description": "账号状态",
+					"required": true
+				},
+				{
+					"name": "pay_salary_alipay_account",
+					"type": "String",
+					"description": "发薪账号",
+					"required": true
+				}
+			]
+		}
+	]
+}

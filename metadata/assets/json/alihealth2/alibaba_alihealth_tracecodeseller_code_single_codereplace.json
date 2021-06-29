@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.code.single.codereplace",
+	"apiChineseName": "非药单码替换",
+	"description": "提供非药追溯码单码替换功能",
+	"requestParams": [
+		{
+			"name": "ent_info_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "new_code",
+			"type": "String",
+			"description": "新码",
+			"required": true
+		},
+		{
+			"name": "old_code",
+			"type": "String",
+			"description": "老码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "操作说明"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
+		}
+	]
+}

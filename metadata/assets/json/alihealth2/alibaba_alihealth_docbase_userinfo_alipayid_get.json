@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.docbase.userinfo.alipayid.get",
+	"apiChineseName": "根据健康ID获取支付宝ID",
+	"description": "根据健康ID获取支付宝ID",
+	"requestParams": [
+		{
+			"name": "alihealth_user_id",
+			"type": "String",
+			"description": "阿里健康ID",
+			"required": true
+		},
+		{
+			"name": "app_channel",
+			"type": "String",
+			"description": "渠道alipay taobao uc gaode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

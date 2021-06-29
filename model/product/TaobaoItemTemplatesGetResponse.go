@@ -19,7 +19,9 @@ type TaobaoItemTemplatesGetAPIResponse struct {
 
 type TaobaoItemTemplatesGetResponse struct {
     XMLName xml.Name `xml:"item_templates_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回宝贝模板对象。包含模板id，模板name，还有模板的类别（0表示外店，1表示内店）
     

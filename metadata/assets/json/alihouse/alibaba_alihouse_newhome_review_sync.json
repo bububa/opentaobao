@@ -1,0 +1,165 @@
+{
+	"name": "alibaba.alihouse.newhome.review.sync",
+	"apiChineseName": "天猫好房楼盘评测同步",
+	"description": "接受楼盘测评图文信息",
+	"requestParams": [
+		{
+			"name": "review",
+			"type": "ProjectReviewDraftDto",
+			"description": "测评草稿信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘id",
+					"required": true
+				},
+				{
+					"name": "outer_review_id",
+					"type": "String",
+					"description": "外部测评id",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "菜鸟城市id",
+					"required": true
+				},
+				{
+					"name": "district_desc",
+					"type": "String",
+					"description": "区域描述",
+					"required": true
+				},
+				{
+					"name": "block_desc",
+					"type": "String",
+					"description": "板块描述",
+					"required": true
+				},
+				{
+					"name": "subway_desc",
+					"type": "String",
+					"description": "轨道交通"
+				},
+				{
+					"name": "main_road",
+					"type": "String",
+					"description": "自驾道路",
+					"required": true
+				},
+				{
+					"name": "edu_source",
+					"type": "String",
+					"description": "教育配套",
+					"required": true
+				},
+				{
+					"name": "medical_source",
+					"type": "String",
+					"description": "医疗配套",
+					"required": true
+				},
+				{
+					"name": "other_source",
+					"type": "String",
+					"description": "其他配套",
+					"required": true
+				},
+				{
+					"name": "now_price",
+					"type": "String",
+					"description": "价格现状",
+					"required": true
+				},
+				{
+					"name": "potential_price",
+					"type": "String",
+					"description": "价格潜力",
+					"required": true
+				},
+				{
+					"name": "house_type_analysis",
+					"type": "String",
+					"description": "户型分析",
+					"required": true
+				},
+				{
+					"name": "model_house",
+					"type": "String",
+					"description": "样板房细节"
+				},
+				{
+					"name": "public_traffic",
+					"type": "String",
+					"description": "公共交通",
+					"required": true
+				},
+				{
+					"name": "lights",
+					"type": "String",
+					"description": "亮点",
+					"required": true
+				},
+				{
+					"name": "defect",
+					"type": "String",
+					"description": "项目不足"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态 1有效0 无效",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "String",
+					"description": "发布时间 时间格式 yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "is_test",
+					"type": "Number",
+					"description": "1测试数据 0正常数据",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回素材id",
+					"required": true
+				}
+			]
+		}
+	]
+}

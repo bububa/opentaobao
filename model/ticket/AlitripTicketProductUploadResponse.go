@@ -20,7 +20,9 @@ type AlitripTicketProductUploadAPIResponse struct {
 
 type AlitripTicketProductUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_ticket_product_upload_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 门票商品发布、编辑结果
     

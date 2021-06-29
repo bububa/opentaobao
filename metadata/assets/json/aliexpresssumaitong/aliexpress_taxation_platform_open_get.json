@@ -1,0 +1,94 @@
+{
+	"name": "aliexpress.taxation.platform.open.get",
+	"apiChineseName": "平台固定参数获取",
+	"description": "Aliexpress开放平台固定参数获取",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResponseDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "PlatformParameterDto",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "发货人/平台公司名称",
+							"required": true
+						},
+						{
+							"name": "contactor_name",
+							"type": "String",
+							"description": "发货人/平台联系人姓名",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "发货人/平台国家",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "发货人/平台详细地址",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "发货人/平台城市",
+							"required": true
+						},
+						{
+							"name": "country_code",
+							"type": "String",
+							"description": "ISO国家编码",
+							"required": true
+						},
+						{
+							"name": "contact_number",
+							"type": "String",
+							"description": "发货人/平台电话",
+							"required": true
+						},
+						{
+							"name": "email_address",
+							"type": "String",
+							"description": "发货人/平台邮箱",
+							"required": true
+						},
+						{
+							"name": "ioss_number",
+							"type": "String",
+							"description": "IOSS 平台税号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "succeeded",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

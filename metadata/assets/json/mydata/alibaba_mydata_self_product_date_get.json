@@ -1,0 +1,24 @@
+{
+	"name": "alibaba.mydata.self.product.date.get",
+	"apiChineseName": "获取客户产品相关表现数据的可用时间范围",
+	"description": "获取客户产品相关表现数据的可用时间范围",
+	"requestParams": [
+		{
+			"name": "statistics_type",
+			"type": "String",
+			"description": "统计周期类型，可以为\"day\"，\"week\"，\"month\""
+		}
+	],
+	"responseParams": [
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "endDate"
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "startDate"
+		}
+	]
+}

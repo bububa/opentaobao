@@ -1,0 +1,215 @@
+{
+	"name": "alibaba.pur.product.sync",
+	"apiChineseName": "同步产品",
+	"description": "同步产品",
+	"requestParams": [
+		{
+			"name": "access_product_dtos",
+			"type": "AccessProductDto[]",
+			"description": "产品对象",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "source_category_name",
+					"type": "String",
+					"description": "分类名称",
+					"required": true
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户",
+					"required": true
+				},
+				{
+					"name": "catalog_category_id",
+					"type": "Number",
+					"description": "品类ID"
+				},
+				{
+					"name": "source_value",
+					"type": "String",
+					"description": "来源值（产品ID）",
+					"required": true
+				},
+				{
+					"name": "source_type",
+					"type": "String",
+					"description": "子类型"
+				},
+				{
+					"name": "img_url_list",
+					"type": "String[]",
+					"description": "图片列表"
+				},
+				{
+					"name": "buyer_work_no",
+					"type": "String",
+					"description": "采购员"
+				},
+				{
+					"name": "data_source",
+					"type": "String",
+					"description": "来源",
+					"required": true
+				},
+				{
+					"name": "purchase_channel",
+					"type": "String",
+					"description": "采购通道 CATALOG, EXTERNAL,QUOTATION_SETTLEMENT, VIRTUAL_PR",
+					"required": true
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "计价方式 AMOUNT QUANTITY BOTH",
+					"required": true
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "采购类别"
+				},
+				{
+					"name": "category_code",
+					"type": "String",
+					"description": "采购编码"
+				},
+				{
+					"name": "recommendation",
+					"type": "String",
+					"description": "产品详情"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌ID"
+				},
+				{
+					"name": "source_info",
+					"type": "String",
+					"description": "额外信息"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "计价单位",
+					"required": true
+				},
+				{
+					"name": "product_desc",
+					"type": "String",
+					"description": "产品描述"
+				},
+				{
+					"name": "category_use_id",
+					"type": "Number",
+					"description": "采购用途"
+				},
+				{
+					"name": "img_storage_type",
+					"type": "String",
+					"description": "图片存储方式"
+				},
+				{
+					"name": "source_category_id",
+					"type": "Number",
+					"description": "外部分类",
+					"required": true
+				},
+				{
+					"name": "product_attr_value_list",
+					"type": "AccessProductAttrValueDto[]",
+					"description": "产品属性",
+					"subParams": [
+						{
+							"name": "attr_en_name",
+							"type": "String",
+							"description": "属性Key英文值"
+						},
+						{
+							"name": "attr_name",
+							"type": "String",
+							"description": "属性Key中文值"
+						},
+						{
+							"name": "attr_en_value_name_list",
+							"type": "String[]",
+							"description": "属性Value值英文"
+						},
+						{
+							"name": "attr_value_name_list",
+							"type": "String[]",
+							"description": "属性Value值中文"
+						},
+						{
+							"name": "attr_desc",
+							"type": "String",
+							"description": "属性描述"
+						},
+						{
+							"name": "is_key",
+							"type": "String",
+							"description": "是否关键属性y/n"
+						}
+					]
+				},
+				{
+					"name": "front_category_id",
+					"type": "Number",
+					"description": "前台类目"
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "产品名称",
+					"required": true
+				},
+				{
+					"name": "mall_url",
+					"type": "String",
+					"description": "产品跳转链接"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回提示信息",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "String",
+					"description": "返回值",
+					"required": true
+				}
+			]
+		}
+	]
+}

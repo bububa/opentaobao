@@ -1,0 +1,160 @@
+{
+	"name": "alibaba.campus.space.type.getbycode",
+	"apiChineseName": "根据类别编码查询类别",
+	"description": "根据类别编码查询类别\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getByCode",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "查询条件封装",
+			"subParams": [
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "园区编码"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "type_code",
+			"type": "String",
+			"description": "空间类别编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "PoiType",
+					"description": "内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "类别名称",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "类别编码",
+							"required": true
+						},
+						{
+							"name": "big_type_code",
+							"type": "String",
+							"description": "大类编码",
+							"required": true
+						},
+						{
+							"name": "big_type_name",
+							"type": "String",
+							"description": "大类名称",
+							"required": true
+						},
+						{
+							"name": "big_type_id",
+							"type": "Number",
+							"description": "大类ID",
+							"required": true
+						},
+						{
+							"name": "pid",
+							"type": "Number",
+							"description": "父类id",
+							"required": true
+						},
+						{
+							"name": "classify",
+							"type": "String",
+							"description": "类别的实际名称,空间或分组",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "编码",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "POI类型分类",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "type_en_name",
+							"type": "String",
+							"description": "英文名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

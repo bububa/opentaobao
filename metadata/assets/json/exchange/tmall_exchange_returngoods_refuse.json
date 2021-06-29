@@ -1,0 +1,88 @@
+{
+	"name": "tmall.exchange.returngoods.refuse",
+	"apiChineseName": "卖家拒绝确认收货",
+	"description": "卖家拒绝买家换货申请",
+	"requestParams": [
+		{
+			"name": "leave_message_pics",
+			"type": "byte[]",
+			"description": "凭证图片"
+		},
+		{
+			"name": "leave_message",
+			"type": "String",
+			"description": "留言说明"
+		},
+		{
+			"name": "dispute_id",
+			"type": "Number",
+			"description": "换货单号ID",
+			"required": true
+		},
+		{
+			"name": "seller_refuse_reason_id",
+			"type": "Number",
+			"description": "拒绝原因ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ExchangeBaseResponse",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回结果说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回结果码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功调用",
+					"required": true
+				},
+				{
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "换货单号基本信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "当前换货状态",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "换货流程最新修改时间",
+							"required": true
+						},
+						{
+							"name": "dispute_id",
+							"type": "String",
+							"description": "换货单号ID",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "正向交易单号ID",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

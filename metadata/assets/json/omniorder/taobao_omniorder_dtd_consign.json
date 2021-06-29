@@ -1,0 +1,30 @@
+{
+	"name": "taobao.omniorder.dtd.consign",
+	"apiChineseName": "门店自送发货",
+	"description": "该接口触发门店自送发货，推进淘系订单状态为发货，为消费者发送核销码短信，并将物流信息写入订单",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝订单主订单号",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "发货对应的商户中心门店ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码，为0表示成功，非0表示失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

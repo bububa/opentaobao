@@ -19,7 +19,9 @@ type TaobaoTrainAgentBookordersGetVtwoAPIResponse struct {
 
 type TaobaoTrainAgentBookordersGetVtwoResponse struct {
     XMLName xml.Name `xml:"train_agent_bookorders_get_vtwo_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 待处理订单总数
     

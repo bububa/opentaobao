@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.westcrm.shop.list.get",
+	"apiChineseName": "获取商圈商户信息列表",
+	"description": "获取商圈商户信息列表",
+	"requestParams": [
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息",
+					"required": true
+				},
+				{
+					"name": "shop_list",
+					"type": "ShopListVo[]",
+					"description": "商店列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tags",
+							"type": "ThirdTagsVo",
+							"description": "目标客群结构体",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tags_age_list",
+									"type": "Json[]",
+									"description": "目标客群年龄",
+									"required": true
+								},
+								{
+									"name": "tags_money_list",
+									"type": "Json[]",
+									"description": "目标客群收入",
+									"required": true
+								},
+								{
+									"name": "tags_grader_list",
+									"type": "Json[]",
+									"description": "目标客群等级",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "shop_type",
+							"type": "String",
+							"description": "商铺类型",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "商铺ID",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "String",
+							"description": "商圈id",
+							"required": true
+						},
+						{
+							"name": "type_level1",
+							"type": "String",
+							"description": "一级业态",
+							"required": true
+						},
+						{
+							"name": "type_level2",
+							"type": "String",
+							"description": "二级业态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

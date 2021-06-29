@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.ascp.channel.refund.goods.waybill",
+	"apiChineseName": "淘外分销退货回传物流单号",
+	"description": "淘外分销退货回传物流单号",
+	"requestParams": [
+		{
+			"name": "refund_way_bill_req",
+			"type": "ExternalRefundGoodsWaybillRequest",
+			"description": "请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_refund_no",
+					"type": "String",
+					"description": "外部退款单号",
+					"required": true
+				},
+				{
+					"name": "refund_no",
+					"type": "String",
+					"description": "退款单号",
+					"required": true
+				},
+				{
+					"name": "logistics_company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "logistics_company_code",
+					"type": "String",
+					"description": "物流公司编码"
+				},
+				{
+					"name": "logistics_waybill_no",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

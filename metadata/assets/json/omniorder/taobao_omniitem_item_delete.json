@@ -1,0 +1,285 @@
+{
+	"name": "taobao.omniitem.item.delete",
+	"apiChineseName": "全渠道商品删除",
+	"description": "全渠道商品删除，能够对门店商品库商品进行删除动作",
+	"requestParams": [
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID，若填入则以该字段为准，否则以outerId+barcode为准"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商品outerId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码，0表示成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ItemDeleteResult",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_light_publish_d_t_o",
+							"type": "ItemLightPublishDto",
+							"description": "itemLightPublishDTO",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "商品条形码",
+									"required": true
+								},
+								{
+									"name": "cat_id",
+									"type": "Number",
+									"description": "叶子类目ID",
+									"required": true
+								},
+								{
+									"name": "extend_attr",
+									"type": "String",
+									"description": "extendAttr",
+									"required": true
+								},
+								{
+									"name": "images",
+									"type": "ItemLightPublishImageDto[]",
+									"description": "images",
+									"required": true,
+									"subParams": [
+										{
+											"name": "url",
+											"type": "String",
+											"description": "图片url",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "itemId",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "outerId",
+									"required": true
+								},
+								{
+									"name": "pretium",
+									"type": "String",
+									"description": "销售价",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "吊牌价",
+									"required": true
+								},
+								{
+									"name": "skus",
+									"type": "ItemLightPublishSkuDto[]",
+									"description": "skus",
+									"required": true,
+									"subParams": [
+										{
+											"name": "barcode",
+											"type": "String",
+											"description": "sku条形码",
+											"required": true
+										},
+										{
+											"name": "extend_attr",
+											"type": "String",
+											"description": "sku扩展字段",
+											"required": true
+										},
+										{
+											"name": "pretium",
+											"type": "String",
+											"description": "sku销售价",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "sku吊牌价",
+											"required": true
+										},
+										{
+											"name": "sale_props_d_t_os",
+											"type": "ItemLightPublishSalePropDto[]",
+											"description": "salePropsDTO",
+											"required": true,
+											"subParams": [
+												{
+													"name": "pid",
+													"type": "Number",
+													"description": "pid",
+													"required": true
+												},
+												{
+													"name": "value",
+													"type": "String",
+													"description": "value",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "sku_images",
+											"type": "String[]",
+											"description": "sku图片",
+											"required": true
+										},
+										{
+											"name": "sku_outer_id",
+											"type": "String",
+											"description": "skuOuterId",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "subtitle",
+									"type": "String",
+									"description": "副标题",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "Number",
+									"description": "卖家ID",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "商品描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "duplicate_infos",
+							"type": "ItemSkuDuplicateInfo[]",
+							"description": "重复商品信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "barcode",
+									"required": true
+								},
+								{
+									"name": "duplicate_details",
+									"type": "ItemSkuDuplicateDetail[]",
+									"description": "重复商品详情列表，如果重复商品过多，目前只展示部分",
+									"required": true,
+									"subParams": [
+										{
+											"name": "barcode",
+											"type": "String",
+											"description": "barcode",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "itemId",
+											"required": true
+										},
+										{
+											"name": "outer_id",
+											"type": "String",
+											"description": "outerId",
+											"required": true
+										},
+										{
+											"name": "sku_barcode",
+											"type": "String",
+											"description": "skuBarcode",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "skuId",
+											"required": true
+										},
+										{
+											"name": "sku_outer_id",
+											"type": "String",
+											"description": "skuOuterId",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "duplicate_size",
+									"type": "Number",
+									"description": "重复商品数量",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "outerId",
+									"required": true
+								},
+								{
+									"name": "sku_barcode",
+									"type": "String",
+									"description": "skuBarcode",
+									"required": true
+								},
+								{
+									"name": "sku_outer_id",
+									"type": "String",
+									"description": "skuOuterId",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

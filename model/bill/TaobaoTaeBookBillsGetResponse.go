@@ -19,7 +19,9 @@ type TaobaoTaeBookBillsGetAPIResponse struct {
 
 type TaobaoTaeBookBillsGetResponse struct {
     XMLName xml.Name `xml:"tae_book_bills_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 虚拟账户账单列表
     

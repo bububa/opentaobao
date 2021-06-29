@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.iwork.core.hrs.getperson",
+	"apiChineseName": "获取神鲸用户基本信息",
+	"description": "神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "用户ACCOUNT_ID"
+		},
+		{
+			"name": "person_id",
+			"type": "Number",
+			"description": "用户ID"
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "应用ID"
+		},
+		{
+			"name": "operator_id",
+			"type": "String",
+			"description": "操作人ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Json",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

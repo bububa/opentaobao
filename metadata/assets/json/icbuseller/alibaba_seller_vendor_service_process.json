@@ -1,0 +1,371 @@
+{
+	"name": "alibaba.seller.vendor.service.process",
+	"apiChineseName": "服务商客户关联信息",
+	"description": "服务商客户关联信息",
+	"requestParams": [
+		{
+			"name": "order_num",
+			"type": "String",
+			"description": "order_num"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "exec_description",
+					"type": "String",
+					"description": "异常说明",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "VendorMerchantRecordBaseDto[]",
+					"description": "返回集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "nrts6060",
+							"type": "String",
+							"description": "定制力是否双60",
+							"required": true
+						},
+						{
+							"name": "road",
+							"type": "String",
+							"description": "赛道，RTS/询盘",
+							"required": true
+						},
+						{
+							"name": "is_video",
+							"type": "String",
+							"description": "是否至少发布了1个良好的且非aliwood且非段灯片的视频",
+							"required": true
+						},
+						{
+							"name": "is_rfq",
+							"type": "String",
+							"description": "是否至少发布了1个有效报价RFQ",
+							"required": true
+						},
+						{
+							"name": "win_prod_ratio_std001",
+							"type": "String",
+							"description": "历史截至当日橱窗商品使用率",
+							"required": true
+						},
+						{
+							"name": "is_crd_scrty",
+							"type": "String",
+							"description": "是否信保亮灯Y/N",
+							"required": true
+						},
+						{
+							"name": "pc_online_hour_rate",
+							"type": "String",
+							"description": "月PC在线时长达标率",
+							"required": true
+						},
+						{
+							"name": "stay_hour_pc_m",
+							"type": "String",
+							"description": "近30天PC/MA在线时长(小时)",
+							"required": true
+						},
+						{
+							"name": "pc_online_day_rate",
+							"type": "String",
+							"description": "月pc在线天数达标率",
+							"required": true
+						},
+						{
+							"name": "active_day_pc_m",
+							"type": "Number",
+							"description": "近30天PC/MA活跃天数",
+							"required": true
+						},
+						{
+							"name": "active_mbr_rate",
+							"type": "String",
+							"description": "月活跃子账号达标率",
+							"required": true
+						},
+						{
+							"name": "active_mbr_m",
+							"type": "Number",
+							"description": "近30天活跃子账号数",
+							"required": true
+						},
+						{
+							"name": "mc_rate",
+							"type": "String",
+							"description": "月mc达标率",
+							"required": true
+						},
+						{
+							"name": "kw_rate",
+							"type": "String",
+							"description": "关键词达标率",
+							"required": true
+						},
+						{
+							"name": "kw200_rate",
+							"type": "String",
+							"description": "k200比率，关键词除以200的比率",
+							"required": true
+						},
+						{
+							"name": "prod_video_cnt",
+							"type": "Number",
+							"description": "视频数量",
+							"required": true
+						},
+						{
+							"name": "is_tort_brand",
+							"type": "String",
+							"description": "是否有侵权品牌Y/N",
+							"required": true
+						},
+						{
+							"name": "have_price_prod",
+							"type": "String",
+							"description": "是否有价格不合理产品Y/N",
+							"required": true
+						},
+						{
+							"name": "have_repeat_prod",
+							"type": "String",
+							"description": "是否有重复铺货产品Y/N",
+							"required": true
+						},
+						{
+							"name": "rts_prod_cnt",
+							"type": "Number",
+							"description": "RTS商品数",
+							"required": true
+						},
+						{
+							"name": "good_prod_rate",
+							"type": "String",
+							"description": "实力优品达标率",
+							"required": true
+						},
+						{
+							"name": "good_prod_cnt",
+							"type": "Number",
+							"description": "实力优品数",
+							"required": true
+						},
+						{
+							"name": "potential_prod_rate",
+							"type": "String",
+							"description": "潜力品达标率",
+							"required": true
+						},
+						{
+							"name": "potential_prod_cnt",
+							"type": "Number",
+							"description": "潜力品数",
+							"required": true
+						},
+						{
+							"name": "prod_blue",
+							"type": "Number",
+							"description": "蓝海品数",
+							"required": true
+						},
+						{
+							"name": "prod45",
+							"type": "Number",
+							"description": "4.5分及以上商品数",
+							"required": true
+						},
+						{
+							"name": "prod40",
+							"type": "Number",
+							"description": "4.0分及以上商品数",
+							"required": true
+						},
+						{
+							"name": "p1504_rate",
+							"type": "String",
+							"description": "p150且4分达标率",
+							"required": true
+						},
+						{
+							"name": "p304_rate",
+							"type": "String",
+							"description": "p30且4分达标率",
+							"required": true
+						},
+						{
+							"name": "prod_cnt",
+							"type": "Number",
+							"description": "有效商品数",
+							"required": true
+						},
+						{
+							"name": "is_comp_dec",
+							"type": "String",
+							"description": "店铺是否装修，页面最晚修改时间和旺铺创建时间差",
+							"required": true
+						},
+						{
+							"name": "agency_prod_cnt",
+							"type": "Number",
+							"description": "服务商发品数",
+							"required": true
+						},
+						{
+							"name": "tradesuccess_time",
+							"type": "Date",
+							"description": "订单完成时间",
+							"required": true
+						},
+						{
+							"name": "delivered_time",
+							"type": "Date",
+							"description": "进入交付时间",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "current_status",
+							"type": "String",
+							"description": "交易单当前状态",
+							"required": true
+						},
+						{
+							"name": "ord_num",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "service_name",
+							"type": "String",
+							"description": "服务名称",
+							"required": true
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "服务编码",
+							"required": true
+						},
+						{
+							"name": "vendor_code",
+							"type": "String",
+							"description": "服务商编码",
+							"required": true
+						},
+						{
+							"name": "vendor_comp_name",
+							"type": "String",
+							"description": "服务商公司名",
+							"required": true
+						},
+						{
+							"name": "main_cate_lv2_desc",
+							"type": "String",
+							"description": "主营二级类目描述",
+							"required": true
+						},
+						{
+							"name": "main_cate_lv2_std001",
+							"type": "Number",
+							"description": "主营二级类目ID",
+							"required": true
+						},
+						{
+							"name": "main_cate_lv1_desc",
+							"type": "String",
+							"description": "主营一级类目描述",
+							"required": true
+						},
+						{
+							"name": "main_cate_lv1_std001",
+							"type": "Number",
+							"description": "主营一级类目ID",
+							"required": true
+						},
+						{
+							"name": "admin_mbr_id",
+							"type": "String",
+							"description": "会员主账号id",
+							"required": true
+						},
+						{
+							"name": "dw_ins_time",
+							"type": "Date",
+							"description": "系统入库时间",
+							"required": true
+						},
+						{
+							"name": "stat_date",
+							"type": "String",
+							"description": "统计日期",
+							"required": true
+						},
+						{
+							"name": "rts6060",
+							"type": "String",
+							"description": "RTS力是否双60",
+							"required": true
+						},
+						{
+							"name": "level_star_page",
+							"type": "Number",
+							"description": "当月星等级",
+							"required": true
+						},
+						{
+							"name": "level_star",
+							"type": "Number",
+							"description": "预测下月星等级",
+							"required": true
+						},
+						{
+							"name": "is_comp_exp_ok",
+							"type": "String",
+							"description": "最近7天店铺日均搜索曝光是否正常Y/N",
+							"required": true
+						},
+						{
+							"name": "is_kw_exp_ok",
+							"type": "String",
+							"description": "关键词曝光是否正常Y/N",
+							"required": true
+						},
+						{
+							"name": "is_star_lower_risk",
+							"type": "String",
+							"description": "是否有降星风险Y/N",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

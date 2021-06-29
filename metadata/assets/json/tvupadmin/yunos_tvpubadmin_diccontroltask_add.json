@@ -1,0 +1,66 @@
+{
+	"name": "yunos.tvpubadmin.diccontroltask.add",
+	"apiChineseName": "新增停开服任务",
+	"description": "新增停开服任务",
+	"requestParams": [
+		{
+			"name": "task",
+			"type": "DicControlTaskDO",
+			"description": "任务信息",
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "任务类型",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作者",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "任务描述",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "任务名称",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "uuid"
+				},
+				{
+					"name": "apk_id",
+					"type": "Number",
+					"description": "apk id"
+				},
+				{
+					"name": "devices",
+					"type": "String",
+					"description": "设备型号"
+				},
+				{
+					"name": "license",
+					"type": "Number",
+					"description": "牌照方",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

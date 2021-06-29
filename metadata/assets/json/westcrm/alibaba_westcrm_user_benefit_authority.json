@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.westcrm.user.benefit.authority",
+	"apiChineseName": "获取指定用户是否含有会员权益配置菜单权限",
+	"description": "获取指定用户是否含有会员权益配置菜单权限",
+	"requestParams": [
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区ID"
+		},
+		{
+			"name": "ib_user_id",
+			"type": "Number",
+			"description": "当前用户id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

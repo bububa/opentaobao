@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.einvoice.merchant.bindcompany",
+	"apiChineseName": "发票中台-跨平台绑定已入驻税号与商户",
+	"description": "税号在阿里发票平台入驻成功后，允许业务方通过本接口跨业务平台绑定入驻税号和业务平台商户，绑定成功后该商户可以使用该税号的盘进行开票。绑定成功后，可以使用同平台授权、取消授权税号适用商户接口来变更税号和商户关系。",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "业务方发起首次绑定门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。",
+			"required": true,
+			"maxLength": 20
+		},
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "业务平台商户ID",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "activation_code",
+			"type": "String",
+			"description": "激活码",
+			"required": true,
+			"maxLength": 8
+		},
+		{
+			"name": "platform_code",
+			"type": "String",
+			"description": "业务平台code, 由阿里发票分配",
+			"required": true,
+			"maxLength": 8
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "税务登记号",
+			"required": true,
+			"maxLength": 20
+		},
+		{
+			"name": "merchant_name",
+			"type": "String",
+			"description": "业务平台门店名称",
+			"required": true,
+			"maxLength": 100
+		},
+		{
+			"name": "source_platform_code",
+			"type": "String",
+			"description": "税号已入驻的原业务平台code",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tax_token",
+			"type": "String",
+			"description": "token，此token用于税号适用门店新增和删除接口，需要业务方保存"
+		}
+	]
+}

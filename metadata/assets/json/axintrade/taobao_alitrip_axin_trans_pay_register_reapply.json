@@ -1,0 +1,241 @@
+{
+	"name": "taobao.alitrip.axin.trans.pay.register.reapply",
+	"apiChineseName": "阿信支付入驻重新申请",
+	"description": "阿信支付入驻重新申请\n用于支付平台驳回，商户提交时的业务场景",
+	"requestParams": [
+		{
+			"name": "axin_pay_register_create_d_t_o",
+			"type": "AxinPayRegisterCreateDto",
+			"description": "阿信支付入驻重新申请参数",
+			"subParams": [
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "商户别名"
+				},
+				{
+					"name": "alipay_logon_id",
+					"type": "String",
+					"description": "支付结算账号",
+					"required": true
+				},
+				{
+					"name": "binding_alipay_logon_id",
+					"type": "String",
+					"description": "支付签约账号"
+				},
+				{
+					"name": "business_address",
+					"type": "AxinPayRegisterAddress",
+					"description": "地址",
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市code"
+						},
+						{
+							"name": "country_code",
+							"type": "String",
+							"description": "国家code"
+						},
+						{
+							"name": "district_code",
+							"type": "String",
+							"description": "区code"
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省code"
+						}
+					]
+				},
+				{
+					"name": "cert_image",
+					"type": "String",
+					"description": "证件照片"
+				},
+				{
+					"name": "cert_no",
+					"type": "String",
+					"description": "证件号"
+				},
+				{
+					"name": "cert_type",
+					"type": "String",
+					"description": "证件类型"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人姓名"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "商户号",
+					"required": true
+				},
+				{
+					"name": "legal_cert_back_image",
+					"type": "String",
+					"description": "法人证件照反面"
+				},
+				{
+					"name": "legal_cert_front_image",
+					"type": "String",
+					"description": "法人证件照正面"
+				},
+				{
+					"name": "legal_cert_no",
+					"type": "String",
+					"description": "法人证件号"
+				},
+				{
+					"name": "legal_cert_type",
+					"type": "String",
+					"description": "法人证件类型"
+				},
+				{
+					"name": "legal_name",
+					"type": "String",
+					"description": "法人姓名"
+				},
+				{
+					"name": "mcc",
+					"type": "String",
+					"description": "mcc"
+				},
+				{
+					"name": "merchant_type",
+					"type": "String",
+					"description": "商户类型"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商户姓名"
+				},
+				{
+					"name": "qualifications",
+					"type": "AxinPayRegisterQualification[]",
+					"description": "行业资格证",
+					"subParams": [
+						{
+							"name": "image_id",
+							"type": "String",
+							"description": "照片id"
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "证类型"
+						}
+					]
+				},
+				{
+					"name": "service",
+					"type": "String[]",
+					"description": "服务"
+				},
+				{
+					"name": "service_phone",
+					"type": "String",
+					"description": "客服电话"
+				},
+				{
+					"name": "sites",
+					"type": "AxinPayRegisterSiteInfo[]",
+					"description": "站点信息",
+					"subParams": [
+						{
+							"name": "site_name",
+							"type": "String",
+							"description": "站点名称"
+						},
+						{
+							"name": "site_type",
+							"type": "String",
+							"description": "站点类型"
+						},
+						{
+							"name": "site_url",
+							"type": "String",
+							"description": "站点url"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "AxinPayRegisterCreateResDto",
+					"description": "结果数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_order_id",
+							"type": "String",
+							"description": "支付入驻域申请单记录id",
+							"required": true
+						},
+						{
+							"name": "pay_register_order_no",
+							"type": "String",
+							"description": "支付平台申请单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,98 @@
+{
+	"name": "alitrip.btrip.cost.center.entity.delete",
+	"apiChineseName": "删除外部成本中心人员信息",
+	"description": "删除外部成本中心人员信息",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterDeleteEntityRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "del_all",
+					"type": "Boolean",
+					"description": "是否全部删除"
+				},
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id",
+					"required": true
+				},
+				{
+					"name": "entity_list",
+					"type": "OpenOrgEntityDo[]",
+					"description": "删除的成员信息列表,del_all为true时可不填",
+					"subParams": [
+						{
+							"name": "entity_type",
+							"type": "String",
+							"description": "人员类型:1员工，2部门，3角色",
+							"required": true
+						},
+						{
+							"name": "entity_id",
+							"type": "String",
+							"description": "员工/部门/角色id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "OpenCostCenterDeleteEntityRs",
+					"description": "结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "selected_user_num",
+							"type": "Number",
+							"description": "该成本中心下员工总数",
+							"required": true
+						},
+						{
+							"name": "remove_num",
+							"type": "Number",
+							"description": "增加的人员信息条数",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

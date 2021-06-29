@@ -1,0 +1,362 @@
+{
+	"name": "alibaba.campus.space.group.getlist",
+	"apiChineseName": "多条件查询空间分组信息",
+	"description": "多条件查询空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getList",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "查询条件封装",
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				},
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "SpaceGroupQuery",
+			"description": "查询参数封装",
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页限制"
+				},
+				{
+					"name": "ids",
+					"type": "Number[]",
+					"description": "分组ID集合"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "分组ID"
+				},
+				{
+					"name": "floor_id",
+					"type": "Number",
+					"description": "楼层ID"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID"
+				},
+				{
+					"name": "type_id",
+					"type": "Number",
+					"description": "类别ID"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID",
+					"required": true
+				},
+				{
+					"name": "building_id",
+					"type": "Number",
+					"description": "楼宇ID"
+				},
+				{
+					"name": "type_code",
+					"type": "String",
+					"description": "类型编码"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "空间分组编码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "分组名称"
+				},
+				{
+					"name": "name_or_code",
+					"type": "String",
+					"description": "分组名称或者code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "SpaceGroup[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "buildingName",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "buildingId",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "big_type_name",
+							"type": "String",
+							"description": "空间分组大类别",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "空间分组类别",
+							"required": true
+						},
+						{
+							"name": "big_type_id",
+							"type": "Number",
+							"description": "空间分组大类别",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "typeName",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "campusName",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "空间分组类别",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "campusId",
+							"required": true
+						},
+						{
+							"name": "modifier",
+							"type": "String",
+							"description": "modifier",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "creator",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "floorName",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "floorId",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "description",
+							"required": true
+						},
+						{
+							"name": "type_wrap",
+							"type": "PoiTypeWrap",
+							"description": "空间类型包装",
+							"required": true,
+							"subParams": [
+								{
+									"name": "is_delete",
+									"type": "Boolean",
+									"description": "isDelete",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "description",
+									"required": true
+								},
+								{
+									"name": "full_name",
+									"type": "String",
+									"description": "fullName",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "code",
+									"required": true
+								},
+								{
+									"name": "second_type_name",
+									"type": "String",
+									"description": "secondTypeName",
+									"required": true
+								},
+								{
+									"name": "second_type_code",
+									"type": "String",
+									"description": "secondTypeCode",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								},
+								{
+									"name": "second_type_id",
+									"type": "Number",
+									"description": "secondTypeId",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "gmtModified",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "gmtCreate",
+									"required": true
+								},
+								{
+									"name": "modifier",
+									"type": "String",
+									"description": "modifier",
+									"required": true
+								},
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "creator",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "isDelete",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

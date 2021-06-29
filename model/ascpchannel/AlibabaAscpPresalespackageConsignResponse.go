@@ -1,0 +1,31 @@
+package ascpchannel
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+预售预包尾款推单发货 APIResponse
+alibaba.ascp.presalespackage.consign
+
+预售预包尾款发货后推单处理
+*/
+type AlibabaAscpPresalespackageConsignAPIResponse struct {
+    model.CommonResponse
+    AlibabaAscpPresalespackageConsignResponse
+}
+
+type AlibabaAscpPresalespackageConsignResponse struct {
+    XMLName xml.Name `xml:"alibaba_ascp_presalespackage_consign_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 系统自动生成
+    
+    Result   *ErpPresaleFinalPayResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

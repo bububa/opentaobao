@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.alihealth.drug.wxinfo.upload",
+	"apiChineseName": "小程序数据回传",
+	"description": "小程序数据回传",
+	"requestParams": [
+		{
+			"name": "user_info",
+			"type": "String",
+			"description": "用户信息"
+		},
+		{
+			"name": "shop_info",
+			"type": "String",
+			"description": "店铺名称"
+		},
+		{
+			"name": "saler_info",
+			"type": "String",
+			"description": "售货员信息"
+		},
+		{
+			"name": "isv_channel",
+			"type": "String",
+			"description": "渠道"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

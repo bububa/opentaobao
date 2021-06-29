@@ -1,0 +1,138 @@
+{
+	"name": "alibaba.ascp.uop.supplier.waybill.query",
+	"apiChineseName": "ERP调用打印面单取号接口",
+	"description": "ERP调用打印面单取号接口",
+	"requestParams": [
+		{
+			"name": "waybill_query_request",
+			"type": "Waybillqueryrequest",
+			"description": "查询面单请求参数",
+			"subParams": [
+				{
+					"name": "consign_lp_order_codes",
+					"type": "Consignlpordercodes[]",
+					"description": "发货LP单号列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "consign_lp_order_code",
+							"type": "String",
+							"description": "发货LP单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人id"
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "配送公司Code",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "物流服务编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "waybill_query_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data[]",
+					"description": "data对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "invoke_id",
+							"type": "String",
+							"description": "请求唯一id",
+							"required": true
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "面单号",
+							"required": true
+						},
+						{
+							"name": "parent_waybill_code",
+							"type": "String",
+							"description": "母面单号",
+							"required": true
+						},
+						{
+							"name": "print_data",
+							"type": "String",
+							"description": "加密面单信息(json字符串)",
+							"required": true
+						},
+						{
+							"name": "template_u_r_l",
+							"type": "String",
+							"description": "模版url",
+							"required": true
+						},
+						{
+							"name": "signature",
+							"type": "String",
+							"description": "签名",
+							"required": true
+						},
+						{
+							"name": "lg_order_code",
+							"type": "String",
+							"description": "物流单号",
+							"required": true
+						},
+						{
+							"name": "package_id",
+							"type": "String",
+							"description": "包裹号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "alibaba.alihealth.tracecodesearc.getinfomation.vivo",
+	"apiChineseName": "获取vivo banner",
+	"description": "获取vivo banner  url",
+	"requestParams": [
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "bannerURL"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "操作说明"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
+		}
+	]
+}

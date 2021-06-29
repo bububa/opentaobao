@@ -1,0 +1,119 @@
+{
+	"name": "alibaba.idle.recycle.order.fulfillment",
+	"apiChineseName": "闲鱼回收订单履约V1",
+	"description": "外部回收商针对自有回收订单的履行",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "RecycleOrderSynDto",
+			"description": "订单同步入参",
+			"subParams": [
+				{
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "属性入参",
+					"subParams": [
+						{
+							"name": "confirm_fee",
+							"type": "String",
+							"description": "order_status=3时候填写 代表质检后的最终价格单位分,注意如果质检后商品无价值也不能填0,需要至少填写1分钱, order_status=5时候填写 代表最终成交时的价格单位分"
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "order_status=103时候填写 关闭原因"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "order_status=2或者101 时候填写快递公司运单号"
+						},
+						{
+							"name": "rate_grade",
+							"type": "String",
+							"description": "order_status=7时候填写 1：好评 2：中评"
+						},
+						{
+							"name": "rate_content",
+							"type": "String",
+							"description": "order_status=7时候填写"
+						},
+						{
+							"name": "arrearage_fee",
+							"type": "String",
+							"description": "order_status=104时填写卖家还欠费金额单位分"
+						},
+						{
+							"name": "agreement_no",
+							"type": "String",
+							"description": "order_status=1时传递支付宝的签约号"
+						},
+						{
+							"name": "alipay_user_id",
+							"type": "String",
+							"description": "order_status=1时传递,支付宝用户id"
+						},
+						{
+							"name": "arrearage_link",
+							"type": "String",
+							"description": "order_status=104时传递用户还款链接"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "业务定义的数量,order_status=5时候传递"
+						},
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝交易号，在支付预付款和尾款时分别提供相应打款的交易号"
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名，上门回收填写,order_status=1"
+						},
+						{
+							"name": "contact_mobile",
+							"type": "String",
+							"description": "联系人电话，上门回收填写,order_status=1"
+						}
+					]
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "1:置订单可见 2:已上门取件    3:已质检      4:卖家确认交易完成      5:回收商确认交易完成      6:卖家订单已评价      7:回收商订单已评价  8:信用预付订单打款 101:货物已退回  103:回收商关闭订单  104:支付宝代扣失败 105:支付宝代扣成 106:支付宝代扣逾期",
+					"required": true
+				},
+				{
+					"name": "partner_key",
+					"type": "String",
+					"description": "回收商在top上申请的appkey",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

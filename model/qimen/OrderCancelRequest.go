@@ -35,7 +35,7 @@ type OrderCancelRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenOrderCancelMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

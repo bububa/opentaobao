@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.refresh",
+	"apiChineseName": "刷新token",
+	"description": "通过此接口刷新天猫精灵授权token",
+	"requestParams": [
+		{
+			"name": "refresh_token_request",
+			"type": "TopRefreshReqDto",
+			"description": "refresh_token_request",
+			"subParams": [
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "clientId"
+				},
+				{
+					"name": "scope",
+					"type": "String",
+					"description": "只支持“basic”"
+				},
+				{
+					"name": "grant_type",
+					"type": "String",
+					"description": "只支持“refresh_token”"
+				},
+				{
+					"name": "refresh_token",
+					"type": "String",
+					"description": "refreshToken"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "access_expires_in",
+			"type": "Number",
+			"description": "access token过期时间，相对时间，单位为秒"
+		},
+		{
+			"name": "access_token",
+			"type": "String",
+			"description": "access_token"
+		},
+		{
+			"name": "refresh_expires_in",
+			"type": "Number",
+			"description": "refresh token过期时间，相对时间，单位为秒"
+		},
+		{
+			"name": "refresh_token",
+			"type": "String",
+			"description": "refresh_token"
+		}
+	]
+}

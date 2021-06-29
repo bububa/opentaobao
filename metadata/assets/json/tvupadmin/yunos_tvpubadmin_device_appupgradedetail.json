@@ -1,0 +1,105 @@
+{
+	"name": "yunos.tvpubadmin.device.appupgradedetail",
+	"apiChineseName": "获取应用升级详情",
+	"description": "获取应用升级详情",
+	"requestParams": [
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "应用升级的ID"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "AppVersionAuditDo",
+			"description": "应用列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键ID",
+					"required": true
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "应用名",
+					"required": true
+				},
+				{
+					"name": "app_package_name",
+					"type": "String",
+					"description": "应用包名",
+					"required": true
+				},
+				{
+					"name": "version_name",
+					"type": "String",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "version_code",
+					"type": "String",
+					"description": "版本Code",
+					"required": true
+				},
+				{
+					"name": "release_note",
+					"type": "String",
+					"description": "发布说明",
+					"required": true
+				},
+				{
+					"name": "download_url",
+					"type": "String",
+					"description": "下载地址",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "String",
+					"description": "安装包大小",
+					"required": true
+				},
+				{
+					"name": "audit_status",
+					"type": "String",
+					"description": "审核状态",
+					"required": true
+				},
+				{
+					"name": "status_desc",
+					"type": "String",
+					"description": "审核意见",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modify",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "gmt_audit",
+					"type": "Date",
+					"description": "审核时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

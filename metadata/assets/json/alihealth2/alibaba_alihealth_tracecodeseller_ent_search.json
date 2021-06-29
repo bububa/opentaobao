@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.ent.search",
+	"apiChineseName": "查询商家信息",
+	"description": "查询商家信息",
+	"requestParams": [
+		{
+			"name": "skey_code",
+			"type": "String",
+			"description": "appkey",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商家名称",
+			"required": true
+		},
+		{
+			"name": "tb_user_id",
+			"type": "String",
+			"description": "淘宝名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "Json[]",
+					"description": "返回json字符串，包含商家的省、市、县、和id",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "成功、失败编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "成功失败信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

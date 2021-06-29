@@ -1,0 +1,28 @@
+{
+	"name": "yunos.osupdate.appversion.publish",
+	"apiChineseName": "发布应用升级",
+	"description": "发布应用升级任务",
+	"requestParams": [
+		{
+			"name": "publish_json",
+			"type": "String",
+			"description": "发布应用升级入参json",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

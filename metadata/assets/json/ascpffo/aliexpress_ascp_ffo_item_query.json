@@ -1,0 +1,128 @@
+{
+	"name": "aliexpress.ascp.ffo.item.query",
+	"apiChineseName": "AliExpress发货单明细分页查询API",
+	"description": "AE履约发货单明细分页查询",
+	"requestParams": [
+		{
+			"name": "fulfillment_forward_order_item_query",
+			"type": "FulfillmentForwardOrderItemQueryDto",
+			"description": "DTO",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "fulfillment_order_no",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "dto",
+					"required": true,
+					"subParams": [
+						{
+							"name": "aic_inventory",
+							"type": "String",
+							"description": "库存数量",
+							"required": true
+						},
+						{
+							"name": "sku_actual_paid_amount",
+							"type": "String",
+							"description": "货品实际支付金额",
+							"required": true
+						},
+						{
+							"name": "sku_discount_amount",
+							"type": "String",
+							"description": "货品优惠金额",
+							"required": true
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "SKU单价",
+							"required": true
+						},
+						{
+							"name": "order_line_qty",
+							"type": "String",
+							"description": "发货数量",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "货品条码",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "SKUid",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.alihealth.examination.agreement.list",
+	"apiChineseName": "isv协议获取",
+	"description": "isv协议获取",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "isv传递过来的门店code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "返回结果编码"
+		},
+		{
+			"name": "response_message",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "agreement",
+			"type": "Agreement",
+			"description": "返回的json格式数据",
+			"subParams": [
+				{
+					"name": "type",
+					"type": "String",
+					"description": "1代表图片2代表文件",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "二级制base64编码1",
+					"required": true
+				}
+			]
+		}
+	]
+}

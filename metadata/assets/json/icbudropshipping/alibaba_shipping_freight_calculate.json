@@ -1,0 +1,109 @@
+{
+	"name": "alibaba.shipping.freight.calculate",
+	"apiChineseName": "阿里巴巴商品运费计算查询接口",
+	"description": "阿里巴巴商品运费计算查询接口",
+	"requestParams": [
+		{
+			"name": "param_freight_template_request",
+			"type": "FreightTemplateRequest",
+			"description": "{}",
+			"required": true,
+			"subParams": [
+				{
+					"name": "destination_country",
+					"type": "String",
+					"description": "destination country  ISO 3166-2",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product id",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "quantity",
+					"required": true
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "destination zip code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "values",
+			"type": "Value []",
+			"description": "pojo",
+			"subParams": [
+				{
+					"name": "shipping_type",
+					"type": "String",
+					"description": "shipping type",
+					"required": true
+				},
+				{
+					"name": "trade_term",
+					"type": "String",
+					"description": "trade term",
+					"required": true
+				},
+				{
+					"name": "destination_country",
+					"type": "String",
+					"description": "destination country",
+					"required": true
+				},
+				{
+					"name": "vendor_code",
+					"type": "String",
+					"description": "vendor code",
+					"required": true
+				},
+				{
+					"name": "vendor_name",
+					"type": "String",
+					"description": "vendor name",
+					"required": true
+				},
+				{
+					"name": "fee",
+					"type": "Price",
+					"description": "shipping fee",
+					"required": true,
+					"subParams": [
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "currency",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "amount",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "dispatch_country",
+					"type": "String",
+					"description": "dispatch country",
+					"required": true
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "delivery time (days)",
+					"required": true
+				}
+			]
+		}
+	]
+}

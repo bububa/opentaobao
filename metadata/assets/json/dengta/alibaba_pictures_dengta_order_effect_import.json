@@ -1,0 +1,161 @@
+{
+	"name": "alibaba.pictures.dengta.order.effect.import",
+	"apiChineseName": "天下秀订单数据导入",
+	"description": "提供接口给天下秀，天下秀订单数据效果生成时回流到灯塔系统",
+	"requestParams": [
+		{
+			"name": "ims_order_id",
+			"type": "String",
+			"description": "微博订单id",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "微博链接"
+		},
+		{
+			"name": "reads_count",
+			"type": "Number",
+			"description": "阅读数"
+		},
+		{
+			"name": "reposts_count",
+			"type": "Number",
+			"description": "转发数"
+		},
+		{
+			"name": "comments_count",
+			"type": "Number",
+			"description": "评论数"
+		},
+		{
+			"name": "attitudes_count",
+			"type": "Number",
+			"description": "点赞数"
+		},
+		{
+			"name": "weibo_nick",
+			"type": "String",
+			"description": "微博昵称"
+		},
+		{
+			"name": "followers_count",
+			"type": "Number",
+			"description": "粉丝数"
+		},
+		{
+			"name": "nodes_top",
+			"type": "String",
+			"description": "传播关键节点"
+		},
+		{
+			"name": "key_path",
+			"type": "String",
+			"description": "关键路径"
+		},
+		{
+			"name": "weibo_source",
+			"type": "String",
+			"description": "微博来源"
+		},
+		{
+			"name": "verified_type",
+			"type": "String",
+			"description": "类型分布"
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"description": "性别分布"
+		},
+		{
+			"name": "fans_count",
+			"type": "String",
+			"description": "粉丝分布"
+		},
+		{
+			"name": "location",
+			"type": "String",
+			"description": "地域分布"
+		},
+		{
+			"name": "graph",
+			"type": "String",
+			"description": "关系图"
+		},
+		{
+			"name": "words",
+			"type": "String",
+			"description": "关键词云"
+		},
+		{
+			"name": "repost_num_per_hour",
+			"type": "String",
+			"description": "每小时转发量"
+		},
+		{
+			"name": "attitudes_num_per_hour",
+			"type": "String",
+			"description": "点赞量每小时趋势图"
+		},
+		{
+			"name": "is_success",
+			"type": "Number",
+			"description": "是否成功",
+			"required": true
+		},
+		{
+			"name": "fail_reason",
+			"type": "String",
+			"description": "失败原因"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiGeneralResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "链路id",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "ReturnMessage",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cust",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "dev",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

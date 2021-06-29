@@ -1,0 +1,158 @@
+{
+	"name": "alibaba.alisports.datacenter.datasync.fatscaledata",
+	"apiChineseName": "阿里体育接入体脂秤数据",
+	"description": "阿里体育数据中心接入体脂秤数据",
+	"requestParams": [
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "Number",
+			"description": "测量时间，秒级别时间戳",
+			"required": true,
+			"maxLength": 10
+		},
+		{
+			"name": "age",
+			"type": "Number",
+			"description": "年龄",
+			"maxValue": 100,
+			"minValue": 0
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "身高，单位cm",
+			"maxValue": 250,
+			"minValue": 0
+		},
+		{
+			"name": "weight",
+			"type": "BigDecimal",
+			"description": "体重，单位kg"
+		},
+		{
+			"name": "bmi",
+			"type": "BigDecimal",
+			"description": "bmi"
+		},
+		{
+			"name": "basal_metabolic_rate",
+			"type": "BigDecimal",
+			"description": "基础代谢率,单位卡"
+		},
+		{
+			"name": "fat_free_mass",
+			"type": "BigDecimal",
+			"description": "去脂体重，单位kg"
+		},
+		{
+			"name": "body_fat_rate",
+			"type": "BigDecimal",
+			"description": "体脂率，百分比12.4%，传12.4"
+		},
+		{
+			"name": "fat_mass",
+			"type": "BigDecimal",
+			"description": "脂肪重量，单位kg"
+		},
+		{
+			"name": "subcutaneous_fat_rate",
+			"type": "BigDecimal",
+			"description": "皮下脂肪率，百分比"
+		},
+		{
+			"name": "visceral_fat_index",
+			"type": "BigDecimal",
+			"description": "内脏脂肪率，百分比"
+		},
+		{
+			"name": "muscle_rate",
+			"type": "BigDecimal",
+			"description": "肌肉率，百分比"
+		},
+		{
+			"name": "muscle_mass",
+			"type": "BigDecimal",
+			"description": "肌肉重量，单位kg"
+		},
+		{
+			"name": "skeletal_muscle_rate",
+			"type": "BigDecimal",
+			"description": "骨骼肌率，百分比"
+		},
+		{
+			"name": "moisture_rate",
+			"type": "BigDecimal",
+			"description": "水分率，百分比"
+		},
+		{
+			"name": "protein_rate",
+			"type": "BigDecimal",
+			"description": "蛋白质率，百分比"
+		},
+		{
+			"name": "bone_mass",
+			"type": "BigDecimal",
+			"description": "骨量，单位kg"
+		},
+		{
+			"name": "weight_index",
+			"type": "Number",
+			"description": "体重指数"
+		},
+		{
+			"name": "body_age",
+			"type": "Number",
+			"description": "身体年龄",
+			"maxValue": 100,
+			"minValue": 0
+		},
+		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型：1.体脂秤，2智能手表，3智能手环"
+		},
+		{
+			"name": "device_name",
+			"type": "String",
+			"description": "设备名称"
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备编号"
+		},
+		{
+			"name": "message_id",
+			"type": "String",
+			"description": "三方唯一id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rs_msg",
+			"type": "String",
+			"description": "返回消息"
+		},
+		{
+			"name": "rs_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "返回对象"
+		}
+	]
+}

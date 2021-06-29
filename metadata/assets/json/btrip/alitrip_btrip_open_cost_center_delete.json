@@ -1,0 +1,43 @@
+{
+	"name": "alitrip.btrip.open.cost.center.delete",
+	"apiChineseName": "删除成本中心",
+	"description": "删除成本中心",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenCostCenterDeleteRq",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "thirdpart_id",
+					"type": "String",
+					"description": "第三方成本中心id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

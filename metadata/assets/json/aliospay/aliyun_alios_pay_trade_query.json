@@ -1,0 +1,102 @@
+{
+	"name": "aliyun.alios.pay.trade.query",
+	"apiChineseName": "查询支付结果接口",
+	"description": "商户用来查询支付结果接口",
+	"requestParams": [
+		{
+			"name": "query_trade_request",
+			"type": "QueryTradeRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
+					"required": true
+				},
+				{
+					"name": "lang",
+					"type": "String",
+					"description": "语言,en表示英文，zh表示中文",
+					"required": true
+				},
+				{
+					"name": "time",
+					"type": "String",
+					"description": "发送请求的时间戳",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "业务订单号"
+				},
+				{
+					"name": "pay_order_id",
+					"type": "String",
+					"description": "alios支付订单id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "aliospay_response",
+			"type": "AliOSPayResponse",
+			"description": "响应参数",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id，不可重复，服务端会根据此参数防重放",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "QueryTradeResponse",
+					"description": "业务数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "payment_time",
+							"type": "Number",
+							"description": "交易支付时间，未进行支付无值，时间戳",
+							"required": true
+						},
+						{
+							"name": "receipt_amount",
+							"type": "Number",
+							"description": "实收金额，单位分",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "订单总金额，单位分",
+							"required": true
+						},
+						{
+							"name": "pay_result",
+							"type": "String",
+							"description": "支付结果状态,取值为:INIT初始，WAIT_BUYER_PAY : 等待用户付款。TRADE_SUCCESS:支付已经成功。 TRADE_CLOSED:未付款交易超时关闭，或支付完成后全额退款。TRADE_FINISHED交易结束，不可退款",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

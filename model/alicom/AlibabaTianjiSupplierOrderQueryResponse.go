@@ -19,7 +19,9 @@ type AlibabaTianjiSupplierOrderQueryAPIResponse struct {
 
 type AlibabaTianjiSupplierOrderQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_tianji_supplier_order_query_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 分销订单信息
     

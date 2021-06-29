@@ -19,6 +19,13 @@ var pkgBytes []byte
 var conflictModelsBytes []byte
 
 var PkgsConfig []PkgConfig
+
+type PkgConfigSlice []PkgConfig
+
+func (p PkgConfigSlice) Len() int           { return len(p) }
+func (p PkgConfigSlice) Less(i, j int) bool { return p[i].Id < p[j].Id }
+func (p PkgConfigSlice) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
 var ConflictModels []string
 
 func init() {

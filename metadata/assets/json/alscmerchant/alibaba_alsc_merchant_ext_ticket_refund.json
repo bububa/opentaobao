@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.alsc.merchant.ext.ticket.refund",
+	"apiChineseName": "口碑凭证售后退",
+	"description": "口碑凭证售后退",
+	"requestParams": [
+		{
+			"name": "trans_id",
+			"type": "String",
+			"description": "券核销流水号，针对该次核销发起售后退操作",
+			"required": true,
+			"maxLength": 60
+		},
+		{
+			"name": "ticket_request_id",
+			"type": "String",
+			"description": "外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "ticket_code",
+			"type": "String",
+			"description": "凭证码，包括内部凭证码和外部凭证码，内部凭证码为12位，纯数字，且唯一不重复",
+			"required": true,
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ticket_request_id",
+			"type": "String",
+			"description": "外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务返回code"
+		}
+	]
+}

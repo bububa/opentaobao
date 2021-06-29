@@ -19,7 +19,9 @@ type TaobaoPromotionCouponSnsSendAPIResponse struct {
 
 type TaobaoPromotionCouponSnsSendResponse struct {
     XMLName xml.Name `xml:"promotion_coupon_sns_send_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 没有发送成功的买家
     

@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.health.vaccin.notice.order.sign",
+	"apiChineseName": "福州疫苗签到成功通知",
+	"description": "福州疫苗用户签到成功记录",
+	"requestParams": [
+		{
+			"name": "alipay_user_id",
+			"type": "String",
+			"description": "支付宝用户id",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "预约id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果集"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

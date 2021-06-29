@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.outflow.prescription.update",
+	"apiChineseName": "处方外流-修改处方",
+	"description": "阿里健康-处方外流-对外提供处方修改功能",
+	"requestParams": [
+		{
+			"name": "update_request",
+			"type": "PrescriptionOutflowUpdateRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方号(非空)"
+				},
+				{
+					"name": "fee_type",
+					"type": "String",
+					"description": "费用类型(非空)（MEDICAL_INSURANCE、OWN_EXPENSE）"
+				},
+				{
+					"name": "card_number",
+					"type": "String",
+					"description": "外配单号（可空)(医保支付时必填)"
+				},
+				{
+					"name": "sync_his_result",
+					"type": "Boolean",
+					"description": "同步his结果(非空)"
+				},
+				{
+					"name": "sync_his_err_msg",
+					"type": "String",
+					"description": "同步his错误信息(可空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

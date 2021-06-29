@@ -1,0 +1,83 @@
+{
+	"name": "alitrip.rail.ir.service.get",
+	"apiChineseName": "国际火车票仓位坐席查询",
+	"description": "国际火车票标准仓位坐席查询",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "6代表境外火车票"
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "modules",
+					"type": "Modules[]",
+					"description": "仓位坐席数组",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型，6代表境外火车票",
+							"required": true
+						},
+						{
+							"name": "seat_code",
+							"type": "String",
+							"description": "坐席code",
+							"required": true
+						},
+						{
+							"name": "seat_name",
+							"type": "String",
+							"description": "坐席名称",
+							"required": true
+						},
+						{
+							"name": "seat_detail",
+							"type": "String",
+							"description": "坐席详情",
+							"required": true
+						},
+						{
+							"name": "seat_image",
+							"type": "String",
+							"description": "坐席图片",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

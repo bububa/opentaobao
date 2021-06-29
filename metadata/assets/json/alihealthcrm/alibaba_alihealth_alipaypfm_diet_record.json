@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.alipaypfm.diet.record",
+	"apiChineseName": "用户每日摄入卡路里总量回传接口",
+	"description": "用户每日摄入卡路里总量回传接口",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户健康ID",
+			"required": true
+		},
+		{
+			"name": "date",
+			"type": "String",
+			"description": "记录日期，format：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "energy",
+			"type": "Number",
+			"description": "累积摄入卡路里",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作码说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				}
+			]
+		}
+	]
+}

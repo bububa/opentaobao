@@ -1,0 +1,258 @@
+{
+	"name": "youku.ott.playservice.getplayurl",
+	"apiChineseName": "获取播放串地址",
+	"description": "获取播放串地址服务",
+	"requestParams": [
+		{
+			"name": "yktk",
+			"type": "String",
+			"description": "优酷账号登录态"
+		},
+		{
+			"name": "havana_token",
+			"type": "String",
+			"description": "账号登录态"
+		},
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "系统信息",
+			"required": true
+		},
+		{
+			"name": "video_id",
+			"type": "Number",
+			"description": "视频ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PlayUrlV2Vo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "ytid",
+					"type": "Number",
+					"description": "ytid",
+					"required": true
+				},
+				{
+					"name": "hls_content",
+					"type": "String",
+					"description": "hlsContent",
+					"required": true
+				},
+				{
+					"name": "hls_content_url",
+					"type": "String",
+					"description": "hlsContentUrl",
+					"required": true
+				},
+				{
+					"name": "dash_content",
+					"type": "String",
+					"description": "dashContent",
+					"required": true
+				},
+				{
+					"name": "drm_token",
+					"type": "String",
+					"description": "drmToken",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "duration",
+					"required": true
+				},
+				{
+					"name": "program_id",
+					"type": "Number",
+					"description": "programId",
+					"required": true
+				},
+				{
+					"name": "product_type",
+					"type": "Number",
+					"description": "productType",
+					"required": true
+				},
+				{
+					"name": "source_info",
+					"type": "SourceInfo",
+					"description": "sourceInfo",
+					"required": true,
+					"subParams": [
+						{
+							"name": "v1080",
+							"type": "String",
+							"description": "v1080",
+							"required": true
+						},
+						{
+							"name": "v720",
+							"type": "String",
+							"description": "v720",
+							"required": true
+						},
+						{
+							"name": "v480",
+							"type": "String",
+							"description": "v480",
+							"required": true
+						},
+						{
+							"name": "v320",
+							"type": "String",
+							"description": "v320",
+							"required": true
+						},
+						{
+							"name": "v240",
+							"type": "String",
+							"description": "v240",
+							"required": true
+						},
+						{
+							"name": "v_blueray4k",
+							"type": "String",
+							"description": "vBlueray4k",
+							"required": true
+						},
+						{
+							"name": "hls_content_url",
+							"type": "String",
+							"description": "hlsContentUrl",
+							"required": true
+						},
+						{
+							"name": "v2160tv",
+							"type": "String",
+							"description": "v2160tv",
+							"required": true
+						},
+						{
+							"name": "v1080tv",
+							"type": "String",
+							"description": "v1080tv",
+							"required": true
+						},
+						{
+							"name": "v720tv",
+							"type": "String",
+							"description": "v720tv",
+							"required": true
+						},
+						{
+							"name": "v480tv",
+							"type": "String",
+							"description": "v480tv",
+							"required": true
+						},
+						{
+							"name": "v320tv",
+							"type": "String",
+							"description": "v320tv",
+							"required": true
+						},
+						{
+							"name": "v240tv",
+							"type": "String",
+							"description": "v240tv",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_dns",
+					"type": "HttpDns",
+					"description": "httpDns",
+					"required": true,
+					"subParams": [
+						{
+							"name": "method",
+							"type": "String",
+							"description": "method",
+							"required": true
+						},
+						{
+							"name": "tv_host",
+							"type": "String",
+							"description": "tvHost",
+							"required": true
+						},
+						{
+							"name": "dns_address",
+							"type": "String",
+							"description": "dnsAddress",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "trial",
+					"type": "Boolean",
+					"description": "trial",
+					"required": true
+				},
+				{
+					"name": "token_valid",
+					"type": "Boolean",
+					"description": "tokenValid",
+					"required": true
+				},
+				{
+					"name": "free",
+					"type": "Boolean",
+					"description": "free",
+					"required": true
+				},
+				{
+					"name": "over_device_limit",
+					"type": "Boolean",
+					"description": "overDeviceLimit",
+					"required": true
+				},
+				{
+					"name": "live",
+					"type": "Boolean",
+					"description": "live",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "片头",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "片尾",
+					"required": true
+				},
+				{
+					"name": "vr",
+					"type": "Boolean",
+					"description": "vr",
+					"required": true
+				}
+			]
+		}
+	]
+}

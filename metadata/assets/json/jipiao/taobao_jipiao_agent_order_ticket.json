@@ -1,0 +1,37 @@
+{
+	"name": "taobao.jipiao.agent.order.ticket",
+	"apiChineseName": "【机票代理商订单】订单回填票号/成功订单",
+	"description": "淘宝机票代理商回填票号/成功订单",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "淘宝系统订单id",
+			"required": true
+		},
+		{
+			"name": "success_info",
+			"type": "String[]",
+			"description": "成功订单参数：列表元素结构为——\u003cbr/\u003e1.航班号（注：是订单里的航班号，非实际承运航班号）;\u003cbr/\u003e2.旧乘机人姓名;\u003cbr/\u003e3.新乘机人姓名;\u003cbr/\u003e4.票号 （乘机人、航段对应的票号）\u003cbr/\u003e说明：\u003cbr/\u003e1.往返订单，2段航班对应1个票号的，需要2条success_info记录，分别对应去程、回程；\u003cbr/\u003e2.有时用户输入的乘机人姓名输入错误或者有生僻字，代理商必须输入新的名字以保证验真通过；即旧乘机人姓名和新乘机人姓名不需要变化时可以相同",
+			"required": true,
+			"maxListSize": 18
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回操作成功失败信息"
+		},
+		{
+			"name": "is_ticket_success",
+			"type": "Boolean",
+			"description": "返回回填票号操作成功失败信息"
+		},
+		{
+			"name": "is_order_success",
+			"type": "Boolean",
+			"description": "返回接口调用完成后，整个订单是否成功"
+		}
+	]
+}

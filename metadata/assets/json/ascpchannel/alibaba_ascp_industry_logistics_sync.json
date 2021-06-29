@@ -1,0 +1,152 @@
+{
+	"name": "alibaba.ascp.industry.logistics.sync",
+	"apiChineseName": "物流状态同步",
+	"description": "履约物流状态同步",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "LogisticsSyncSellerRequest",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "delivery_phone",
+					"type": "String",
+					"description": "快递业务员联系方式，手机号码或电话。"
+				},
+				{
+					"name": "event_create_time",
+					"type": "Date",
+					"description": "流转节点发生时间"
+				},
+				{
+					"name": "rider_predict_arrive_store_time",
+					"type": "Date",
+					"description": "预计骑手到达时间"
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "主订单号"
+				},
+				{
+					"name": "delivery_user_type",
+					"type": "Number",
+					"description": "运力类型，0: 第三方快递员, 1:商家自动"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "流转节点的当前城市"
+				},
+				{
+					"name": "mail_cp",
+					"type": "String",
+					"description": "操作人类型:1寄件人,3客服小二,4快递员,5CP,6收件人,100系统"
+				},
+				{
+					"name": "plan_date",
+					"type": "String",
+					"description": "配送日期，周期送业务必传"
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "快递单号。各个快递公司的运单号格式不同。"
+				},
+				{
+					"name": "zqs_sync",
+					"type": "Boolean",
+					"description": "是否为周期送"
+				},
+				{
+					"name": "delivery_user_name",
+					"type": "String",
+					"description": "快递员的姓名"
+				},
+				{
+					"name": "sequence_no",
+					"type": "Number",
+					"description": "配送序号"
+				},
+				{
+					"name": "sub_biz_order_id",
+					"type": "Number",
+					"description": "子订单号"
+				},
+				{
+					"name": "cancel_reason_code",
+					"type": "String",
+					"description": "取消配送编号"
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "业务类型（oneHour:一小时达,zqs:周期送,dss:定时送，周期送业务:zqs）如果自配送传入：other"
+				},
+				{
+					"name": "facility_name",
+					"type": "String",
+					"description": "站点名称"
+				},
+				{
+					"name": "mail_cp_name",
+					"type": "String",
+					"description": "快递公司名称，自配送传入：其他"
+				},
+				{
+					"name": "event",
+					"type": "Number",
+					"description": "事件编码,10:已下发等待接单,20:骑手已接单，待提货,40:揽收,999:妥投,50:拒收,-999:取消"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "流转节点发生时间"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "流转节点的详细地址及操作描述"
+				},
+				{
+					"name": "event_oper_type",
+					"type": "Number",
+					"description": "操作人类型:1寄件人,3客服小二,4快递员,5CP,6收件人,100系统"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "数据内容",
+					"required": true
+				}
+			]
+		}
+	]
+}

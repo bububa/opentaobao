@@ -1,0 +1,51 @@
+package xhotelitem
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+民宿房东信息添加 APIRequest
+taobao.xhotel.bnbowner.add
+
+添加和更新民宿房东的信息
+*/
+type TaobaoXhotelBnbownerAddRequest struct {
+    model.Params
+
+    // 添加房东信息的对象
+    addOwnerParam   *AddOwnerParam 
+
+}
+
+func NewTaobaoXhotelBnbownerAddRequest() *TaobaoXhotelBnbownerAddRequest{
+    return &TaobaoXhotelBnbownerAddRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r TaobaoXhotelBnbownerAddRequest) GetApiMethodName() string {
+    return "taobao.xhotel.bnbowner.add"
+}
+
+func (r TaobaoXhotelBnbownerAddRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *TaobaoXhotelBnbownerAddRequest) SetAddOwnerParam(addOwnerParam *AddOwnerParam) error {
+    r.addOwnerParam = addOwnerParam
+    r.Set("add_owner_param", addOwnerParam)
+    return nil
+}
+
+func (r TaobaoXhotelBnbownerAddRequest) GetAddOwnerParam() *AddOwnerParam {
+    return r.addOwnerParam
+}
+

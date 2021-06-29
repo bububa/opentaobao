@@ -29,7 +29,9 @@ type TaobaoCaipiaoMarketingPutAPIResponse struct {
 
 type TaobaoCaipiaoMarketingPutResponse struct {
     XMLName xml.Name `xml:"caipiao_marketing_put_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 业务操作结果,true成功/false失败
     

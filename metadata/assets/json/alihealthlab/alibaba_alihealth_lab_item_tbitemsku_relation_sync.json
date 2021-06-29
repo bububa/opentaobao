@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.alihealth.lab.item.tbitemsku.relation.sync",
+	"apiChineseName": "阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步",
+	"description": "阿里健康检验检测业务，检验检测项目淘宝商品SKU关系同步",
+	"requestParams": [
+		{
+			"name": "isv_relation_status",
+			"type": "String",
+			"description": "EFFECTIVE 有效，INVALID 无效",
+			"required": true
+		},
+		{
+			"name": "tb_sku_id",
+			"type": "Number",
+			"description": "关联的淘宝商品SKU id，在商品没有sku的情况下传0",
+			"required": true
+		},
+		{
+			"name": "tb_item_id",
+			"type": "Number",
+			"description": "关联的淘宝商品 id",
+			"required": true
+		},
+		{
+			"name": "isv_item_code",
+			"type": "String",
+			"description": "检验检测项目isv侧code",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "可读的错误码"
+		},
+		{
+			"name": "result_status",
+			"type": "String",
+			"description": "SUCCESS - 成功，FAIL失败，UNKNOWN - 未知或处理中"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

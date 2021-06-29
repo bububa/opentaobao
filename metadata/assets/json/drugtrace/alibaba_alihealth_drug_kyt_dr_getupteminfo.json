@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.getupteminfo",
+	"apiChineseName": "获取上游温度信息（疫苗）",
+	"description": "根据追溯码及企业ID获取上游运输及存储温度信息（疫苗）",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "list",
+							"type": "VaTemperatureBillResultDTO[]",
+							"description": "返回结果列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "min_value",
+									"type": "String",
+									"description": "最小温度值",
+									"required": true
+								},
+								{
+									"name": "equipment_code",
+									"type": "String",
+									"description": "设备编号",
+									"required": true
+								},
+								{
+									"name": "max_value",
+									"type": "String",
+									"description": "最大温度值",
+									"required": true
+								},
+								{
+									"name": "upload_ent_name",
+									"type": "String",
+									"description": "上传企业名称",
+									"required": true
+								},
+								{
+									"name": "equipment_name",
+									"type": "String",
+									"description": "设备名称",
+									"required": true
+								},
+								{
+									"name": "bill_code",
+									"type": "String",
+									"description": "单据编号",
+									"required": true
+								},
+								{
+									"name": "time",
+									"type": "String",
+									"description": "时间",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "温度类型：存储温度/运输温度u",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

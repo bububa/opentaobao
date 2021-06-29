@@ -19,7 +19,9 @@ type TaobaoAppleNewuserSignNotifyAPIResponse struct {
 
 type TaobaoAppleNewuserSignNotifyResponse struct {
     XMLName xml.Name `xml:"apple_newuser_sign_notify_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 处理结果说明
     

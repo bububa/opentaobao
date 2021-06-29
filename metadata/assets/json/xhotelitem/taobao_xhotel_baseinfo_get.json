@@ -1,0 +1,784 @@
+{
+	"name": "taobao.xhotel.baseinfo.get",
+	"apiChineseName": "酒店基础信息查询接口",
+	"description": "酒店基础信息(酒店/房型/房价定义)查询接口， 包括 酒店房型可售, 以及 hid 下 的标准房型列表",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "淘宝酒店ID"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "推荐使用卖家系统中的酒店ID。",
+			"maxLength": 64
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "用于标示该酒店发布的渠道信息",
+			"maxLength": 50
+		},
+		{
+			"name": "is_need_rate_plan",
+			"type": "Boolean",
+			"description": "是否需要房价基本信息（false为不需要），默认为需要"
+		},
+		{
+			"name": "is_need_room_type",
+			"type": "Boolean",
+			"description": "是否需要房型基本信息（false为不需要），默认为需要"
+		},
+		{
+			"name": "need_s_room_type_list",
+			"type": "Boolean",
+			"description": "是否需要 根据 hid 查询 标准房型列表"
+		},
+		{
+			"name": "need_hotel_dynamic_info",
+			"type": "Boolean",
+			"description": "是否需要酒店房型可售详情"
+		},
+		{
+			"name": "json_hotel_seller_inv_query",
+			"type": "String",
+			"description": "在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "xhotel_base_info",
+					"type": "XHotelBaseInfo",
+					"description": "酒店基础信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "room_type_list",
+							"type": "RoomType[]",
+							"description": "房型基础信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房型名称",
+									"required": true
+								},
+								{
+									"name": "rid",
+									"type": "Number",
+									"description": "阿里房型id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "byte",
+									"description": "房型状态。0:正常，-1:删除，-2:停售",
+									"required": true
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "系统商，一般不填写，使用须申请",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "商家房型ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "rate_plan_list",
+							"type": "RatePlan[]",
+							"description": "房价基础信息(需要新增rp时绑定酒店)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "系统商，一般不填写，使用须申请",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房价名称",
+									"required": true
+								},
+								{
+									"name": "rate_plan_code",
+									"type": "String",
+									"description": "卖家自己系统的Code，简称RateCode",
+									"required": true
+								},
+								{
+									"name": "rate_plan_id",
+									"type": "Number",
+									"description": "阿里房价id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "1：开启2：关闭。",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "hotel",
+							"type": "Hotel",
+							"description": "卖家酒店对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "hid",
+									"type": "Number",
+									"description": "酒店ID",
+									"required": true
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "酒店修改备注",
+									"required": true
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "酒店电话。格式：国家代码（最长6位）#区号（最长4位）#电话（最长20位）。国家代码提示：中国大陆0086、香港00852、澳门00853、台湾00886",
+									"required": true
+								},
+								{
+									"name": "hotel_facilities",
+									"type": "String",
+									"description": "酒店设施。json格式",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "酒店类型",
+									"required": true
+								},
+								{
+									"name": "ext",
+									"type": "String",
+									"description": "扩展信息",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "Number",
+									"description": "城市编码",
+									"required": true
+								},
+								{
+									"name": "postal_code",
+									"type": "String",
+									"description": "邮编",
+									"required": true
+								},
+								{
+									"name": "floors",
+									"type": "String",
+									"description": "楼层信息",
+									"required": true
+								},
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "卖家名称",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "酒店中文描述",
+									"required": true
+								},
+								{
+									"name": "province",
+									"type": "Number",
+									"description": "省份编码",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "data_confirm",
+									"type": "Number",
+									"description": "匹配是否人工确认",
+									"required": true
+								},
+								{
+									"name": "rooms",
+									"type": "Number",
+									"description": "房间数",
+									"required": true
+								},
+								{
+									"name": "currency_code_name",
+									"type": "String",
+									"description": "货币类型（编码,字母编码）",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "酒店状态",
+									"required": true
+								},
+								{
+									"name": "en_desc",
+									"type": "String",
+									"description": "酒店英文描述",
+									"required": true
+								},
+								{
+									"name": "country",
+									"type": "String",
+									"description": "domestic=0时，固定China； domestic=1时，是海外国家编码值",
+									"required": true
+								},
+								{
+									"name": "hotel_policies",
+									"type": "String",
+									"description": "酒店入住政策",
+									"required": true
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "oper_xiaoer_name",
+									"type": "String",
+									"description": "操作人信息",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "酒店外部ID",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "酒店修改时间",
+									"required": true
+								},
+								{
+									"name": "down_shelf_type",
+									"type": "Number",
+									"description": "酒店下架类型",
+									"required": true
+								},
+								{
+									"name": "en_addr",
+									"type": "String",
+									"description": "酒店英文地址",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店ID",
+									"required": true
+								},
+								{
+									"name": "business",
+									"type": "String",
+									"description": "商圈",
+									"required": true
+								},
+								{
+									"name": "used_name",
+									"type": "String",
+									"description": "酒店曾用名",
+									"required": true
+								},
+								{
+									"name": "pics",
+									"type": "String",
+									"description": "酒店图片信息",
+									"required": true
+								},
+								{
+									"name": "room_facilities",
+									"type": "String",
+									"description": "房间设施",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名",
+									"required": true
+								},
+								{
+									"name": "position_type",
+									"type": "String",
+									"description": "坐标类型，现在支持：G : Google:B : 百度;A : 高德;M : Mapbar;L : 灵图",
+									"required": true
+								},
+								{
+									"name": "billing_process_type",
+									"type": "Number",
+									"description": "酒店支付结算类型",
+									"required": true
+								},
+								{
+									"name": "district",
+									"type": "Number",
+									"description": "地区编码",
+									"required": true
+								},
+								{
+									"name": "name_e",
+									"type": "String",
+									"description": "酒店名称(英文)",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "酒店创建时间",
+									"required": true
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "酒店的销售渠道",
+									"required": true
+								},
+								{
+									"name": "extend",
+									"type": "String",
+									"description": "扩展信息",
+									"required": true
+								},
+								{
+									"name": "star",
+									"type": "String",
+									"description": "酒店星级",
+									"required": true
+								},
+								{
+									"name": "booking_notice",
+									"type": "String",
+									"description": "预订须知",
+									"required": true
+								},
+								{
+									"name": "domestic",
+									"type": "Number",
+									"description": "是否国外。",
+									"required": true
+								},
+								{
+									"name": "decorate_time",
+									"type": "String",
+									"description": "装修时间",
+									"required": true
+								},
+								{
+									"name": "source",
+									"type": "Number",
+									"description": "来源",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "酒店地址",
+									"required": true
+								},
+								{
+									"name": "seller_id",
+									"type": "Number",
+									"description": "卖家ID",
+									"required": true
+								},
+								{
+									"name": "match_status",
+									"type": "Number",
+									"description": "匹配状态",
+									"required": true
+								},
+								{
+									"name": "service",
+									"type": "String",
+									"description": "酒店服务",
+									"required": true
+								},
+								{
+									"name": "brand",
+									"type": "String",
+									"description": "品牌",
+									"required": true
+								},
+								{
+									"name": "kzzy_tag",
+									"type": "Number",
+									"description": "判断该酒店是不是对应的卖家直营",
+									"required": true
+								},
+								{
+									"name": "opening_time",
+									"type": "String",
+									"description": "开业时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "s_room_type_list",
+							"type": "Sroomtypelist[]",
+							"description": "标准房型列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "window_type",
+									"type": "String",
+									"description": "窗型",
+									"required": true
+								},
+								{
+									"name": "pics_info",
+									"type": "String",
+									"description": "酒店图片结构化信息",
+									"required": true
+								},
+								{
+									"name": "network_service",
+									"type": "String",
+									"description": "宽带服务",
+									"required": true
+								},
+								{
+									"name": "last_modify",
+									"type": "String",
+									"description": "最后变更人",
+									"required": true
+								},
+								{
+									"name": "include_types",
+									"type": "String",
+									"description": "includeTypes",
+									"required": true
+								},
+								{
+									"name": "auditor",
+									"type": "String",
+									"description": "创建人",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店ID",
+									"required": true
+								},
+								{
+									"name": "original_pics",
+									"type": "String",
+									"description": "房型原始图片",
+									"required": true
+								},
+								{
+									"name": "version",
+									"type": "Number",
+									"description": "版本号",
+									"required": true
+								},
+								{
+									"name": "srid",
+									"type": "Number",
+									"description": "标准房型ID",
+									"required": true
+								},
+								{
+									"name": "pics",
+									"type": "String",
+									"description": "房型图片",
+									"required": true
+								},
+								{
+									"name": "pics_ext",
+									"type": "String",
+									"description": "图片扩展字段",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "面积",
+									"required": true
+								},
+								{
+									"name": "facility",
+									"type": "String",
+									"description": "设施",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "标准房型名称",
+									"required": true
+								},
+								{
+									"name": "properties_d_os",
+									"type": "String",
+									"description": "propertiesDOs",
+									"required": true
+								},
+								{
+									"name": "add_bed",
+									"type": "Number",
+									"description": "是否可加床",
+									"required": true
+								},
+								{
+									"name": "name_e",
+									"type": "String",
+									"description": "标准房型的英文名",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态",
+									"required": true
+								},
+								{
+									"name": "extend",
+									"type": "String",
+									"description": "扩展信息",
+									"required": true
+								},
+								{
+									"name": "bed",
+									"type": "String",
+									"description": "床型",
+									"required": true
+								},
+								{
+									"name": "transfer_pics",
+									"type": "String",
+									"description": "transferPics",
+									"required": true
+								},
+								{
+									"name": "floor",
+									"type": "String",
+									"description": "楼层",
+									"required": true
+								},
+								{
+									"name": "source",
+									"type": "Number",
+									"description": "来源",
+									"required": true
+								},
+								{
+									"name": "bed_list",
+									"type": "String",
+									"description": "bedList",
+									"required": true
+								},
+								{
+									"name": "max_occupancy",
+									"type": "Number",
+									"description": "最大入住人数",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "外部id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_hotel_dynamic_info",
+							"type": "Number",
+							"description": "酒店房型可售详情查询总数",
+							"required": true
+						},
+						{
+							"name": "hotel_dynamic_info_list",
+							"type": "Hoteldynamicinfo[]",
+							"description": "酒店房型可售详情查",
+							"required": true,
+							"subParams": [
+								{
+									"name": "unsale_reason",
+									"type": "String",
+									"description": "不可售原因",
+									"required": true
+								},
+								{
+									"name": "hid",
+									"type": "Number",
+									"description": "酒店hid",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "酒店状态",
+									"required": true
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "酒店的销售渠道",
+									"required": true
+								},
+								{
+									"name": "ks_heathy_room_num",
+									"type": "Number",
+									"description": "可售健康房型数",
+									"required": true
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "电话",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店ID",
+									"required": true
+								},
+								{
+									"name": "city_str",
+									"type": "String",
+									"description": "城市名称",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "Number",
+									"description": "城市编码",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								},
+								{
+									"name": "room_nun",
+									"type": "Number",
+									"description": "房型数",
+									"required": true
+								},
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "卖家昵称",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "ks_room_num",
+									"type": "Number",
+									"description": "可售房型数",
+									"required": true
+								},
+								{
+									"name": "seller_id",
+									"type": "Number",
+									"description": "卖家ID",
+									"required": true
+								},
+								{
+									"name": "unsale_type",
+									"type": "Number",
+									"description": "不可售原因",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名字",
+									"required": true
+								},
+								{
+									"name": "calculate_date",
+									"type": "String",
+									"description": "分析日期",
+									"required": true
+								},
+								{
+									"name": "data_confirm",
+									"type": "Number",
+									"description": "酒店匹配",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "酒店外部ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "tag_json",
+							"type": "String",
+							"description": "酒店维度特殊标签含义, json: {\"pure-direct-hotel\":0,\"direct-manual-order-hotel\":1,\"ebk-direct-hotel\":0,\"non-direct-hotel\":1,\"allow-dingding-business-travel-hotel\":1,\"willing-dingding-bussiness-travel-hotel\":0,\"calendar-room-package-hotel\":1,\"dijiajiajia-hotel\":0,\"ebk-number-of-confirm-room-hotel\":1} , key含义: pure-direct-hotel 表示纯直连酒店, direct-manual-order-hotel 和 ebk-direct-hotel 和 non-direct-hotel 这三个key对应value都是0 . direct-manual-order-hotel 表示 人工承接失败订单的酒店标签。如果某个直连酒店打了该标签，那么直连下单失败以后，允许人工承接订单，由人工跟进 . ebk-direct-hotel 表示 ebk直连酒店标。如果某个酒店打了该标签，那么这个酒店下允许通过ebk发布直连rp . non-direct-hotel 表示 卖家非直连酒店标签。如果某个酒店打了该标签，那么该酒店下单不会走直连交易。 allow-dingding-business-travel-hotel 表示 允许进入阿里商旅渠道（钉钉）售卖信用住的单体酒店 willing-dingding-bussiness-travel-hotel 表示 已签协议愿意加入阿里商旅渠道售卖信用住的单体酒店 . calendar-room-package-hotel 表示 酒店可以参加日历房套餐活动包括创建，修改，删除活动信息（高星集团GMV项目） dijiajiajia-hotel 表示 底价加价酒店权限标。只有打了该标的酒店才允许维护底价加价规则和包房rp . ebk-number-of-confirm-room-hotel 表示ebk确认订单，是否要输入外部确认号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

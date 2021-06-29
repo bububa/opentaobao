@@ -1,0 +1,61 @@
+{
+	"name": "taobao.xhotel.multiplerate.delete",
+	"apiChineseName": "复杂价格删除",
+	"description": "酒店产品库rate删除",
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "渠道，和推送房价所使用的渠道保持一致"
+		},
+		{
+			"name": "rateplan_code",
+			"type": "String",
+			"description": "商家价格政策编码",
+			"required": true
+		},
+		{
+			"name": "out_rid",
+			"type": "String",
+			"description": "商家房型编码",
+			"required": true
+		},
+		{
+			"name": "occupancy",
+			"type": "Number",
+			"description": "连住天数"
+		},
+		{
+			"name": "lengthofstay",
+			"type": "Number",
+			"description": "入住人数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "out_rid_rateplan_code_occupancy_lengthofstay",
+					"type": "String",
+					"description": "房型编码_房价编码_入住人数_连住天数",
+					"required": true
+				}
+			]
+		}
+	]
+}

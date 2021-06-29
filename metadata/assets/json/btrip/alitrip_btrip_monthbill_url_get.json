@@ -1,0 +1,68 @@
+{
+	"name": "alitrip.btrip.monthbill.url.get",
+	"apiChineseName": "月账单数据查询",
+	"description": "月账单数据查询",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenAccountRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "bill_month",
+					"type": "String",
+					"description": "对账单月份，不传取最新对账单"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "OpenAccountRs []",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "账期结束时间",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "账期开始时间",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "json数据下载链接，通过HttpClient 获取 并GBK格式解析，链接五分钟有效期",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

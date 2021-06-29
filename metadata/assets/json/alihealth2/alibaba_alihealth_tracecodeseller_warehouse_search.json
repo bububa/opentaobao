@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.warehouse.search",
+	"apiChineseName": "查询仓库api",
+	"description": "查询仓库api",
+	"requestParams": [
+		{
+			"name": "appkey",
+			"type": "String",
+			"description": "身份认证",
+			"required": true
+		},
+		{
+			"name": "ent_info_id",
+			"type": "Number",
+			"description": "商家id",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "第几页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页多少条",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "PageInfoDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "totalNum",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "Result[]",
+							"description": "result",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								},
+								{
+									"name": "detail",
+									"type": "String",
+									"description": "detail",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "code",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page",
+							"type": "Number",
+							"description": "page",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "pageSize",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

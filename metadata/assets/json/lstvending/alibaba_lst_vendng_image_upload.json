@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.lst.vendng.image.upload",
+	"apiChineseName": "售货机商品图片上传",
+	"description": "零售通自动售货机商品图片上传接口，主要为ISV厂商提供图片同步的通道，从而建立统一的商品图片库。",
+	"requestParams": [
+		{
+			"name": "img_bytes",
+			"type": "byte[]",
+			"description": "图片文件字节数组",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "VendingImageDto",
+					"description": "图片上传信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "img_path_id",
+							"type": "String",
+							"description": "图片唯一标识",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "图片访问地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否处理成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

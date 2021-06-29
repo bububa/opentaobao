@@ -1,0 +1,44 @@
+{
+	"name": "alitrip.hotel.hstdf.shotel.matchshotelself",
+	"apiChineseName": "自主匹配标准酒店以及卖家酒店",
+	"description": "商家通过指定的标准酒店id和卖家酒店id进行匹配",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "HotelMatchParam",
+			"description": "HotelMatchParam",
+			"required": true,
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "卖家酒店id",
+					"required": true
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "errormsg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

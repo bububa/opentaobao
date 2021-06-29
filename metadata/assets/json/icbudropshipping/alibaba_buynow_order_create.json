@@ -1,0 +1,233 @@
+{
+	"name": "alibaba.buynow.order.create",
+	"apiChineseName": "阿里巴巴买家buynow下单接口",
+	"description": "阿里巴巴买家下单接口",
+	"requestParams": [
+		{
+			"name": "param_order_create_request",
+			"type": "OrderCreateRequest",
+			"description": "Order creation parameter",
+			"required": true,
+			"subParams": [
+				{
+					"name": "channel_refer_id",
+					"type": "String",
+					"description": "Provide the order number corresponding to the 3rd party ISV",
+					"required": true
+				},
+				{
+					"name": "logistics_detail",
+					"type": "LogisticsDetail",
+					"description": "Logistics details",
+					"required": true,
+					"subParams": [
+						{
+							"name": "carrier_code",
+							"type": "String",
+							"description": "For BuyNow orders, use the value shown in the vendorCode field from the shipping cost template API; non-BuyNow orders don’t need to provide this information.    alibaba.shipping.freight.calculate  's vender_code",
+							"required": true
+						},
+						{
+							"name": "shipment_address",
+							"type": "Address",
+							"description": "shipment address",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address",
+									"type": "String",
+									"description": "Specific address",
+									"required": true
+								},
+								{
+									"name": "alternate_address",
+									"type": "String",
+									"description": "Secondary address"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "Name of the city where the order is completed"
+								},
+								{
+									"name": "city_code",
+									"type": "String",
+									"description": "City abbreviation"
+								},
+								{
+									"name": "contact_person",
+									"type": "String",
+									"description": "Name of contact person",
+									"required": true
+								},
+								{
+									"name": "country",
+									"type": "String",
+									"description": "Country name",
+									"required": true
+								},
+								{
+									"name": "country_code",
+									"type": "String",
+									"description": "Country code，ISO3166 standard and has two letters.",
+									"required": true
+								},
+								{
+									"name": "fax",
+									"type": "Phone",
+									"description": "Fax",
+									"subParams": [
+										{
+											"name": "area",
+											"type": "String",
+											"description": "fax area"
+										},
+										{
+											"name": "country",
+											"type": "String",
+											"description": "fax country"
+										},
+										{
+											"name": "number",
+											"type": "String",
+											"description": "fax number"
+										}
+									]
+								},
+								{
+									"name": "port",
+									"type": "String",
+									"description": "Port name"
+								},
+								{
+									"name": "port_code",
+									"type": "String",
+									"description": "Port code"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "Name of state/province"
+								},
+								{
+									"name": "province_code",
+									"type": "String",
+									"description": "Province/state abbreviation"
+								},
+								{
+									"name": "telephone",
+									"type": "Phone",
+									"description": "telephone",
+									"subParams": [
+										{
+											"name": "area",
+											"type": "String",
+											"description": "telephone area"
+										},
+										{
+											"name": "country",
+											"type": "String",
+											"description": "telephone country"
+										},
+										{
+											"name": "number",
+											"type": "String",
+											"description": "telephone number"
+										}
+									]
+								},
+								{
+									"name": "zip",
+									"type": "String",
+									"description": "zip"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "payment_detail",
+					"type": "PaymentDetail",
+					"description": "Payment details",
+					"required": true,
+					"subParams": [
+						{
+							"name": "shipment_fee",
+							"type": "String",
+							"description": "shipment fee",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "total amount",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "product_list",
+					"type": "TradeEcologyOrderCreateProduct[]",
+					"description": "Product list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "product id",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "quantity",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "sku id"
+						},
+						{
+							"name": "unit_price_str",
+							"type": "String",
+							"description": "unit price",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "Put the order number provided by the 3rd party platform and the name of the 3rd party platform. For example, if the order number is for a transaction made on Shopify, put “Shopify” and the order number. \u003cbr /\u003e  Platform Names can be case ignored:\u003cbr /\u003e Shopify,CommerceHQ,WooCommerce,GrooveKart,BigCommerce"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "order remark"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "OrderCreateResponse",
+			"description": "Response",
+			"subParams": [
+				{
+					"name": "pay_url",
+					"type": "String",
+					"description": "pay url",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "order number",
+					"required": true
+				}
+			]
+		}
+	]
+}

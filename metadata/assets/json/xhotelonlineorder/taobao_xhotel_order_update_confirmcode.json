@@ -1,0 +1,49 @@
+{
+	"name": "taobao.xhotel.order.update.confirmcode",
+	"apiChineseName": "推送及更新订单确认号",
+	"description": "商家拿到订单确认号后，异步推送给飞猪或更新给飞猪。订单确认号用于到店查无时的紧急查单依据。",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "UpdateOrderConfirmCodeParam",
+			"description": "系统入参",
+			"subParams": [
+				{
+					"name": "pms_res_id",
+					"type": "String",
+					"description": "PMS确认号",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "飞猪订单号",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "商家系统订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "操作结果,成功返回success"
+		},
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "是否操作成功"
+		}
+	]
+}

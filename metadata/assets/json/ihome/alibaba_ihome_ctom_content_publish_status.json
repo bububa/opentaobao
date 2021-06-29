@@ -1,0 +1,93 @@
+{
+	"name": "alibaba.ihome.ctom.content.publish.status",
+	"apiChineseName": "实拍图发布审核状态查询API",
+	"description": "实拍图发布审核状态查询API",
+	"requestParams": [
+		{
+			"name": "id_list",
+			"type": "Number[]",
+			"description": "要查询投稿状态的ID列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "StatusResult",
+					"description": "result对象根节点",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status_list",
+							"type": "ContentStatus[]",
+							"description": "状态list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "refuse_reason",
+									"type": "String",
+									"description": "拒绝原因",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "审核状态",
+									"required": true
+								},
+								{
+									"name": "content_id",
+									"type": "Number",
+									"description": "内容ID",
+									"required": true
+								},
+								{
+									"name": "sample_id",
+									"type": "Number",
+									"description": "场景ID",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题",
+									"required": true
+								},
+								{
+									"name": "img",
+									"type": "String",
+									"description": "图片",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用状态",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

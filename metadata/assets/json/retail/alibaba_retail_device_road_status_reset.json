@@ -1,0 +1,35 @@
+{
+	"name": "alibaba.retail.device.road.status.reset",
+	"apiChineseName": "贩卖机货道解锁",
+	"description": "贩卖机货道解锁",
+	"requestParams": [
+		{
+			"name": "device_uuid",
+			"type": "String",
+			"description": "设备外部编码"
+		},
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "阿里设备编码"
+		},
+		{
+			"name": "device_sn",
+			"type": "String",
+			"description": "阿里设备物理编码"
+		},
+		{
+			"name": "road_no_list",
+			"type": "String[]",
+			"description": "货道编码",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

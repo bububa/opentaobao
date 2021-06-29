@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.lsy.crm.activity.update",
+	"apiChineseName": "ISV活动修改",
+	"description": "ISV活动修改",
+	"requestParams": [
+		{
+			"name": "nrt_update_activity_req",
+			"type": "NrtUpdateActivityReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "page_id",
+					"type": "Number",
+					"description": "页面ID",
+					"required": true
+				},
+				{
+					"name": "employee_id",
+					"type": "Number",
+					"description": "员工ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

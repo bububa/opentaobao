@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.withshort.qrcode.get",
+	"apiChineseName": "根据安全简码查询二维码详细信息",
+	"description": "根据安全简码查询二维码详细信息",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "产品ID"
+		},
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "授权码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "二维码数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "结果描述"
+		}
+	]
+}

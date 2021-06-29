@@ -1,0 +1,126 @@
+{
+	"name": "alibaba.ele.enterprise.coupon.send",
+	"apiChineseName": "发放优惠券",
+	"description": "发放优惠券",
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "固定值，申请获取",
+			"required": true
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "纬度",
+			"required": true
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "经度",
+			"required": true
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "客户端IP地址",
+			"required": true
+		},
+		{
+			"name": "user_agent",
+			"type": "String",
+			"description": "客户端User-Agent信息",
+			"required": true
+		},
+		{
+			"name": "batch_no",
+			"type": "String",
+			"description": "批次,同一个批次号只会发券一次，后续用同一个批次号的请求会返回上次发的券(幂等)",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_datas",
+			"type": "MyCouponsResDto []",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "优惠券金额",
+					"required": true
+				},
+				{
+					"name": "threshold",
+					"type": "String",
+					"description": "优惠券门槛金额",
+					"required": true
+				},
+				{
+					"name": "sn",
+					"type": "String",
+					"description": "券ID",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "券名称",
+					"required": true
+				},
+				{
+					"name": "begin_date_time",
+					"type": "String",
+					"description": "券生效日期时间",
+					"required": true
+				},
+				{
+					"name": "end_date_time",
+					"type": "String",
+					"description": "券失效日期时间",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "condition",
+					"type": "String",
+					"description": "券使用条件",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

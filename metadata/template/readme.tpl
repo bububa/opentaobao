@@ -5,7 +5,8 @@
 ```sh
 make tools
 ```
-* 在bin目录下会生成downloader和generator两个可执行文件 
+- 在bin目录下会生成downloader和generator两个可执行文件 
+- 因为使用embed特性，编译downloder和generator需要golang版本>= 1.16
 
 
 ## 下载淘宝开放平台ApiMetadata
@@ -80,9 +81,13 @@ func main() {
 AlibabaWdkFinanceOrderBackflow API中的ApiResult会被重命名为AlibabaWdkFinanceOrderBackflowApiResult
 - 也可增加对应的patch文件修改字段的Type。generator在生成API时会先查找对应的API有没有patch，如果有patch则使用patch文件替换metadata文件
 
+### 缺少特定API
+对于无法通过downloader下载的API metaddata, 可以参照已下载metadata文件在patch目录自行添加相应的metadata, generator会生成相应的API。
 
 ## API 列表
+| 淘宝API分类 | 对应SDK package |
+| ---------- | ---------- |
 {{ range $v := .Pkgs }}
-- [x] [{{ $v.Name }}]({{ $v.Link }}), [github.com/bububa/opentaobao/api/{{ $v.Pkg }}](https://pkg.go.dev/github.com/bububa/opentaobao/api/{{ $v.Pkg }})
+| [x] [{{ $v.Name }}]({{ $v.Link }}) | [github.com/bububa/opentaobao/api/{{ $v.Pkg }}](https://pkg.go.dev/github.com/bububa/opentaobao/api/{{ $v.Pkg }}) |
 {{ end  }}
 

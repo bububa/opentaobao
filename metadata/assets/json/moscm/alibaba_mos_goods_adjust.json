@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.mos.goods.adjust",
+	"apiChineseName": "调整库存",
+	"description": "库存调整接口",
+	"requestParams": [
+		{
+			"name": "param_isv_stock_adjust_request_d_t_o",
+			"type": "IsvStockAdjustRequestDto",
+			"description": "库存调整入参",
+			"subParams": [
+				{
+					"name": "inbound_items",
+					"type": "IsvInboundRequestItemDto[]",
+					"description": "入库项（最大列表长度：20）",
+					"subParams": [
+						{
+							"name": "location_id",
+							"type": "String",
+							"description": "库位编号"
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "外部id"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "获取或设置货物数量计量单位"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价"
+						}
+					]
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "外部单号"
+				},
+				{
+					"name": "outbound_items",
+					"type": "IsvOutboundRequestItemDto[]",
+					"description": "出库项（最大列表长度：20）",
+					"subParams": [
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "外部id"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量"
+						}
+					]
+				},
+				{
+					"name": "remarks",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "专柜Id"
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "外部专柜Id（两个专柜id字段至少填写一个，如果同时填写，已counter_id为准）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "库存调整单号",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回生成的单据号",
+					"required": true
+				}
+			]
+		}
+	]
+}

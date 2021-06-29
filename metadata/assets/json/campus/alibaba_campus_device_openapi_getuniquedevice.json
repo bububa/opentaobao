@@ -1,0 +1,275 @@
+{
+	"name": "alibaba.campus.device.openapi.getuniquedevice",
+	"apiChineseName": "根据设备uuid获取设备信息",
+	"description": "根据设备uuid获取设备信息",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "所属公司"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "所属园区Id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备序列号uuid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "DeviceStandardApiDto",
+					"description": "设备基础信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "设备code",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "楼宇id",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "楼宇名称",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "楼层id",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "template_code",
+							"type": "String",
+							"description": "模板code",
+							"required": true
+						},
+						{
+							"name": "last_update_time",
+							"type": "Date",
+							"description": "最后更新时间",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "设备uuid",
+							"required": true
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "be_run",
+							"type": "Boolean",
+							"description": "设备是否运行",
+							"required": true
+						},
+						{
+							"name": "template_id",
+							"type": "Number",
+							"description": "模板id",
+							"required": true
+						},
+						{
+							"name": "version",
+							"type": "String",
+							"description": "版本信息",
+							"required": true
+						},
+						{
+							"name": "be_logic",
+							"type": "Boolean",
+							"description": "是否是逻辑设备",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "space_id",
+							"type": "Number",
+							"description": "空间单元id",
+							"required": true
+						},
+						{
+							"name": "space_name",
+							"type": "String",
+							"description": "空间单元名称",
+							"required": true
+						},
+						{
+							"name": "template_name",
+							"type": "String",
+							"description": "模板名称",
+							"required": true
+						},
+						{
+							"name": "meta_point_datas",
+							"type": "MeatDataApiDto[]",
+							"description": "设备参数信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "参数code",
+									"required": true
+								},
+								{
+									"name": "alarm",
+									"type": "Boolean",
+									"description": "是否报警值",
+									"required": true
+								},
+								{
+									"name": "mapping_point",
+									"type": "String",
+									"description": "地图映射",
+									"required": true
+								},
+								{
+									"name": "data_type",
+									"type": "String",
+									"description": "数据类型",
+									"required": true
+								},
+								{
+									"name": "ref_device_id",
+									"type": "String",
+									"description": "被关联设备uuid",
+									"required": true
+								},
+								{
+									"name": "ref_property_code",
+									"type": "String",
+									"description": "被关联属性code",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "nickname",
+							"type": "String",
+							"description": "设备别名",
+							"required": true
+						},
+						{
+							"name": "tag_info_list",
+							"type": "TagInfoApiDto[]",
+							"description": "设备标签列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tag_name",
+									"type": "String",
+									"description": "标签名称",
+									"required": true
+								},
+								{
+									"name": "system_tag",
+									"type": "Boolean",
+									"description": "是否系统标签",
+									"required": true
+								},
+								{
+									"name": "tag_desc",
+									"type": "String",
+									"description": "标签描述",
+									"required": true
+								},
+								{
+									"name": "tag_type_name",
+									"type": "String",
+									"description": "标签类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.filedownload",
+	"apiChineseName": "处理失败单据下载",
+	"description": "处理失败单据下载",
+	"requestParams": [
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "企业ID"
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "文件地址"
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型"
+		},
+		{
+			"name": "bill_queue_id",
+			"type": "String",
+			"description": "单据队列ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "文件内容"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回结果编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "返回是否成功"
+		}
+	]
+}

@@ -1,0 +1,124 @@
+{
+	"name": "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo",
+	"apiChineseName": "上传用户实时位置",
+	"description": "上传用户实时位置\nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：insertActualUserLocationInfo",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "环境参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "UserLocationInfo",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "identity_type",
+					"type": "Number",
+					"description": "1代表传入的是userId,2代表mac地址,3代表支付宝id"
+				},
+				{
+					"name": "geo_floor_id",
+					"type": "Number",
+					"description": "地图楼层id",
+					"required": true
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "数据来源(1代表wifi,2代表蓝牙)",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户Id"
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度",
+					"required": true
+				},
+				{
+					"name": "identity",
+					"type": "String",
+					"description": "用户身份信息(可能是mac地址或者支付宝id或者其他,也可以为空)"
+				},
+				{
+					"name": "geometry_type",
+					"type": "Number",
+					"description": "经纬度类型1代表GPS,2代表mercator;",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

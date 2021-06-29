@@ -19,7 +19,9 @@ type TaobaoTraderateImprImprwordsGetAPIResponse struct {
 
 type TaobaoTraderateImprImprwordsGetResponse struct {
     XMLName xml.Name `xml:"traderate_impr_imprwords_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回类目下所有大家印象的标签
     

@@ -19,7 +19,9 @@ type TaobaoTbkDgMaterialOptionalAPIResponse struct {
 
 type TaobaoTbkDgMaterialOptionalResponse struct {
     XMLName xml.Name `xml:"tbk_dg_material_optional_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 搜索到符合条件的结果总数
     

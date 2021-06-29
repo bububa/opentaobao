@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.campus.acl.getrolebyempid",
+	"apiChineseName": "根据用户查询角色",
+	"description": "根据用户查询角色",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id",
+			"required": true
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "用户id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "RoleVo[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "role_id",
+							"type": "String",
+							"description": "角色id",
+							"required": true
+						},
+						{
+							"name": "role_name",
+							"type": "String",
+							"description": "角色名称",
+							"required": true
+						},
+						{
+							"name": "role_type",
+							"type": "String",
+							"description": "角色类型(admin代表人员类型,device代表设备类型的角色)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "接口错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

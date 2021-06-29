@@ -1,0 +1,140 @@
+{
+	"name": "alibaba.mozi.fusion.update.employee.account",
+	"apiChineseName": "更新人员和账号属性",
+	"description": "更新人员和账号基本属性",
+	"requestParams": [
+		{
+			"name": "employee_account",
+			"type": "UpdateTenantEmployeeAndAccountRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "employee_name",
+					"type": "String",
+					"description": "员工姓名",
+					"required": true
+				},
+				{
+					"name": "certificate_code",
+					"type": "String",
+					"description": "证件号码"
+				},
+				{
+					"name": "employee_base_properties",
+					"type": "EmployeeBaseProperties",
+					"description": "员工基本属性",
+					"subParams": [
+						{
+							"name": "cell_phone_area_code",
+							"type": "String",
+							"description": "手机区号"
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称"
+						},
+						{
+							"name": "avatar",
+							"type": "String",
+							"description": "头像地址"
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "cell_phone",
+							"type": "String",
+							"description": "机号码"
+						},
+						{
+							"name": "employee_number",
+							"type": "String",
+							"description": "工号"
+						}
+					]
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求附加消息"
+				},
+				{
+					"name": "employee_code",
+					"type": "String",
+					"description": "员工CODE",
+					"required": true
+				},
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "账号ID",
+					"required": true
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "certificate_type",
+					"type": "String",
+					"description": "证件类型"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UpdateTenantEmployeeAndAccountResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回结果成功还是失败",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的UUID",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回状态描述",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回附加信息",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回的状态码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,164 @@
+{
+	"name": "alibaba.campus.space.floor.getbyid",
+	"apiChineseName": "根据id获取楼层",
+	"description": "根据id获取楼层",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "环境上下文",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "楼层id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Floor",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "所属公司id",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "楼层编码",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "楼宇id",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "楼宇名称",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "order_no",
+							"type": "Number",
+							"description": "排序号",
+							"required": true
+						},
+						{
+							"name": "height_str",
+							"type": "String",
+							"description": "高度",
+							"required": true
+						},
+						{
+							"name": "area_str",
+							"type": "String",
+							"description": "面积",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态,1为启用,0位停用",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "geo_floor_id",
+							"type": "Number",
+							"description": "地图楼层id",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误等级",
+					"required": true
+				}
+			]
+		}
+	]
+}

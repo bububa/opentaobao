@@ -1,0 +1,193 @@
+{
+	"name": "tmall.txcs.finance.invoice.input",
+	"apiChineseName": "供应商发票录入",
+	"description": "提供天猫超市外部合作商家财务：供应商发票录入",
+	"requestParams": [
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "invoice_input_d_t_o1",
+			"type": "InvoiceInputDto[]",
+			"description": "发票内容",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "settlement_company_code",
+					"type": "String",
+					"description": "结算公司",
+					"required": true
+				},
+				{
+					"name": "invoice_date",
+					"type": "String",
+					"description": "发票日期",
+					"required": true
+				},
+				{
+					"name": "invoice_code",
+					"type": "String",
+					"description": "发品编号",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人员",
+					"required": true
+				},
+				{
+					"name": "tax_rate",
+					"type": "String",
+					"description": "税率",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "总金额",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "invoice_type",
+					"type": "String",
+					"description": "发票类型",
+					"required": true
+				},
+				{
+					"name": "untax_amount",
+					"type": "String",
+					"description": "税率",
+					"required": true
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "币种",
+					"required": true
+				},
+				{
+					"name": "invoice_no",
+					"type": "String",
+					"description": "发票编码",
+					"required": true
+				},
+				{
+					"name": "tax_amount",
+					"type": "String",
+					"description": "税票金额",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人员ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AccessBaseResult",
+			"description": "返回内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用状态",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误原因",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "BatchOperateResultDto",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "fail_list",
+							"type": "InvoiceInputResultDto[]",
+							"description": "失败列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "msg",
+									"type": "String",
+									"description": "失败原因",
+									"required": true
+								},
+								{
+									"name": "invoice_code",
+									"type": "String",
+									"description": "发票代码",
+									"required": true
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "发票号码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "success_list",
+							"type": "InvoiceInputResultDto[]",
+							"description": "成功列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "msg",
+									"type": "String",
+									"description": "原因",
+									"required": true
+								},
+								{
+									"name": "invoice_code",
+									"type": "String",
+									"description": "发票代码",
+									"required": true
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "发票号码",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

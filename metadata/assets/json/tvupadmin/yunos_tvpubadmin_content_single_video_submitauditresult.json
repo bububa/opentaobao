@@ -1,0 +1,42 @@
+{
+	"name": "yunos.tvpubadmin.content.single.video.submitauditresult",
+	"apiChineseName": "单视频审核提交审核结果",
+	"description": "单视频审核提交审核结果",
+	"requestParams": [
+		{
+			"name": "auditor",
+			"type": "String",
+			"description": "审核人"
+		},
+		{
+			"name": "license_state",
+			"type": "Number",
+			"description": "审核状态：1未提审，2审核中，3通过，4不通过，5已下线",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "audit_comment",
+			"type": "String",
+			"description": "备注说明"
+		},
+		{
+			"name": "video_audit_id",
+			"type": "Number",
+			"description": "视频审核ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

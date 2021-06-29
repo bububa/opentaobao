@@ -1,0 +1,159 @@
+{
+	"name": "alibaba.pur.basket.merge",
+	"apiChineseName": "合并购物车",
+	"description": "采购商城接入第三方商家合并购物车接口服务",
+	"requestParams": [
+		{
+			"name": "param_mall_merge_cart_request_d_t_o",
+			"type": "MallMergeCartRequestDto",
+			"description": "合并购物车入参",
+			"subParams": [
+				{
+					"name": "app_code",
+					"type": "String",
+					"description": "外部平台标识",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "MallItemDto[]",
+					"description": "合并的商品行",
+					"subParams": [
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "商品预览图"
+						},
+						{
+							"name": "item_description",
+							"type": "String",
+							"description": "商品描述"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "mall_category_id",
+							"type": "String",
+							"description": "外部品类id",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuid",
+							"required": true
+						},
+						{
+							"name": "sub_pur_req_id",
+							"type": "String",
+							"description": "外部订单行id",
+							"required": true
+						},
+						{
+							"name": "supplier_id",
+							"type": "String",
+							"description": "供应商id",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率",
+							"required": true
+						},
+						{
+							"name": "unit_price",
+							"type": "String",
+							"description": "单价",
+							"required": true
+						},
+						{
+							"name": "uom",
+							"type": "String",
+							"description": "计价单位",
+							"required": true
+						},
+						{
+							"name": "contract_code",
+							"type": "String",
+							"description": "合同单号"
+						},
+						{
+							"name": "item_url",
+							"type": "String",
+							"description": "产品详情链接",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "外部订单标识",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户加密id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "redirect_url",
+					"type": "String",
+					"description": "https://",
+					"required": true
+				}
+			]
+		}
+	]
+}

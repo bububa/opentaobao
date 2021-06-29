@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.einvoice.unitorder.check",
+	"apiChineseName": "服务商订购单上传核对",
+	"description": "开票服务商回传收到的订购单用于电子发票平台核对",
+	"requestParams": [
+		{
+			"name": "orders",
+			"type": "SimpleUnitOrder[]",
+			"description": "订购单列表",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订购单号",
+					"required": true
+				},
+				{
+					"name": "tax_disk_no",
+					"type": "String",
+					"description": "税盘编号"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态-0:待部署,1:部署,2:变更,3:释放",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "begin",
+			"type": "Date",
+			"description": "开始时间,来自于查询消息",
+			"required": true
+		},
+		{
+			"name": "end",
+			"type": "Date",
+			"description": "结束时间,来自于查询消息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "上传结果"
+		}
+	]
+}

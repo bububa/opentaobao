@@ -1,0 +1,151 @@
+{
+	"name": "youku.mirage.query.permission",
+	"apiChineseName": "优酷播控查询是否可播API",
+	"description": "根据节目ID或者VID查询视频或者节目是否可以播放",
+	"requestParams": [
+		{
+			"name": "permission_request_dto",
+			"type": "PermissionRequestDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "display_scene",
+					"type": "String",
+					"description": "播放场景"
+				},
+				{
+					"name": "pid",
+					"type": "String",
+					"description": "pid"
+				},
+				{
+					"name": "need_display_config",
+					"type": "Boolean",
+					"description": "需要展示形式配置"
+				},
+				{
+					"name": "need_drm_config",
+					"type": "Boolean",
+					"description": "需要同步返回drm配置信息"
+				},
+				{
+					"name": "client_drm_ability",
+					"type": "String",
+					"description": "端对drm的能力"
+				},
+				{
+					"name": "app_version",
+					"type": "String",
+					"description": "app 版本"
+				},
+				{
+					"name": "is_from_apple",
+					"type": "Boolean",
+					"description": "苹果"
+				},
+				{
+					"name": "user_identity",
+					"type": "String",
+					"description": "用户身份"
+				},
+				{
+					"name": "ccode",
+					"type": "String",
+					"description": "ccode"
+				},
+				{
+					"name": "ytid",
+					"type": "String",
+					"description": "ytid"
+				},
+				{
+					"name": "user_ip",
+					"type": "String",
+					"description": "用户ip"
+				},
+				{
+					"name": "ua",
+					"type": "String",
+					"description": "用户简化版userAgent"
+				},
+				{
+					"name": "user_agent",
+					"type": "String",
+					"description": "用户完整userAgent"
+				},
+				{
+					"name": "device_type",
+					"type": "String",
+					"description": "设备类型"
+				},
+				{
+					"name": "dma_code",
+					"type": "String",
+					"description": "运营商"
+				},
+				{
+					"name": "area_code",
+					"type": "String",
+					"description": "地区码"
+				},
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "国家码"
+				},
+				{
+					"name": "site",
+					"type": "String",
+					"description": "网站"
+				},
+				{
+					"name": "resource_ids",
+					"type": "String[]",
+					"description": "资源id"
+				},
+				{
+					"name": "resource_type",
+					"type": "String",
+					"description": "资源类型"
+				},
+				{
+					"name": "caller",
+					"type": "String",
+					"description": "调用方"
+				},
+				{
+					"name": "signature",
+					"type": "String",
+					"description": "签名"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp",
+			"type": "PermissionResponseDto",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误内容",
+					"required": true
+				},
+				{
+					"name": "permissions",
+					"type": "Json",
+					"description": "该值为MAP类型，KEY=视频或者节目ID；VALUE中包含两个值resourceId视频或者节目ID(String类型)，以及access该视频或者节目是否可播（Boolean）结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

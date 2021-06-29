@@ -1,0 +1,186 @@
+{
+	"name": "cainiao.global.handover.content.query",
+	"apiChineseName": "查询大包详情",
+	"description": "查询大包详情",
+	"requestParams": [
+		{
+			"name": "user_info",
+			"type": "UserInfoDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "top_user_key",
+					"type": "String",
+					"description": "每个商家在ISV系统的唯一标识，一般为商家ISV账号的id"
+				}
+			]
+		},
+		{
+			"name": "tracking_number",
+			"type": "String",
+			"description": "交接物运单号，和交接物物流订单编码参数任选其一即可"
+		},
+		{
+			"name": "client",
+			"type": "String",
+			"description": "客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称",
+			"required": true
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "交接物物流订单编码,和交接物运单号参数可以任选其一即可"
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "多语言"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResult",
+			"description": "请求响应",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "OpenHandoverContentDetailResponse",
+					"description": "大包详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "交接物状态",
+							"required": true
+						},
+						{
+							"name": "parcel_order_list",
+							"type": "OpenParcelOrderDto[]",
+							"description": "大包关联的小包列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "status",
+									"type": "String",
+									"description": "小包状态code",
+									"required": true
+								},
+								{
+									"name": "exception_code",
+									"type": "String",
+									"description": "小包异常码",
+									"required": true
+								},
+								{
+									"name": "order_code",
+									"type": "String",
+									"description": "小包物流订单编码",
+									"required": true
+								},
+								{
+									"name": "status_name",
+									"type": "String",
+									"description": "小包状态名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "estimate_weight",
+							"type": "String",
+							"description": "预估重量",
+							"required": true
+						},
+						{
+							"name": "actual_weight",
+							"type": "String",
+							"description": "实际重量",
+							"required": true
+						},
+						{
+							"name": "weight_unit",
+							"type": "String",
+							"description": "重量单位",
+							"required": true
+						},
+						{
+							"name": "estimate_fee",
+							"type": "String",
+							"description": "预估费用",
+							"required": true
+						},
+						{
+							"name": "actual_fee",
+							"type": "String",
+							"description": "实际费用",
+							"required": true
+						},
+						{
+							"name": "fee_currency",
+							"type": "String",
+							"description": "费用币种",
+							"required": true
+						},
+						{
+							"name": "fee_unit",
+							"type": "String",
+							"description": "费用单位",
+							"required": true
+						},
+						{
+							"name": "tracking_number",
+							"type": "String",
+							"description": "交接物运单号",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "交接物物流订单编号",
+							"required": true
+						},
+						{
+							"name": "status_name",
+							"type": "String",
+							"description": "交接物状态",
+							"required": true
+						},
+						{
+							"name": "handover_order_status",
+							"type": "String",
+							"description": "交接物关联的交接单状态code",
+							"required": true
+						},
+						{
+							"name": "handover_order_status_name",
+							"type": "String",
+							"description": "交接物关联的交接单状态名称",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

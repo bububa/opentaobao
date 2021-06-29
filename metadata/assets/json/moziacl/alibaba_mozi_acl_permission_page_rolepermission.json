@@ -1,0 +1,231 @@
+{
+	"name": "alibaba.mozi.acl.permission.page.rolepermission",
+	"apiChineseName": "分页查询角色下包含的权限列表",
+	"description": "根据传入的角色name，分页查询该角色包含的权限列表",
+	"requestParams": [
+		{
+			"name": "page_role_permisions",
+			"type": "PageRolePermissionRequest",
+			"description": "分页查询角色下包含的权限列表",
+			"required": true,
+			"subParams": [
+				{
+					"name": "return_total_size",
+					"type": "Boolean",
+					"description": "是否返回数据总数量"
+				},
+				{
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "操作人userId"
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "操作人所在的租户",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "target_app_name",
+					"type": "String",
+					"description": "角色所在的应用app name"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页返回数量"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求扩展字段"
+				},
+				{
+					"name": "fuzzy_name",
+					"type": "String",
+					"description": "角色下权限模糊匹配，如果传了，则将按照此模糊字段匹配角色下的权限"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "查询第几页"
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "要查询的角色name",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageRolePermissionResult",
+			"description": "查询角色下权限列表结果对象",
+			"subParams": [
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "角色下权限总数量",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "PermissionEntity[]",
+					"description": "角色下的权限列表数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "permission_description",
+							"type": "String",
+							"description": "权限描述",
+							"required": true
+						},
+						{
+							"name": "permission_owner_id_list",
+							"type": "String[]",
+							"description": "权限归属人userId列表",
+							"required": true
+						},
+						{
+							"name": "max_expire_date",
+							"type": "String",
+							"description": "最大过期时间",
+							"required": true
+						},
+						{
+							"name": "risk_level",
+							"type": "String",
+							"description": "风险等级",
+							"required": true
+						},
+						{
+							"name": "permission_title_e_n",
+							"type": "String",
+							"description": "权限英文名",
+							"required": true
+						},
+						{
+							"name": "permission_title",
+							"type": "String",
+							"description": "权限中文名",
+							"required": true
+						},
+						{
+							"name": "permission_name",
+							"type": "String",
+							"description": "权限code",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "public_attri",
+							"type": "String",
+							"description": "公开申请策略",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "BucUser",
+							"description": "创建人",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "Number",
+									"description": "创建人userId",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "creat_time",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "revoke_rule",
+							"type": "String",
+							"description": "回收规则",
+							"required": true
+						},
+						{
+							"name": "is_active",
+							"type": "Boolean",
+							"description": "是否可用",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否处理成功，成功则返回true",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求唯一id",
+					"required": true
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "要查询的角色name",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "响应message，若失败则返回失败原因",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "扩展字段，与入参扩展字段值相同",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应code",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.campus.device.openapi.operatedevice",
+	"apiChineseName": "根据uuid操作设备",
+	"description": "根据uuid操作设备",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "所属公司"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "所属园区Id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备序列号uuid",
+			"required": true
+		},
+		{
+			"name": "property_code",
+			"type": "String",
+			"description": "参数code,如灯亮度参数为brightness;设备的开关switchstate。参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’。",
+			"required": true
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "设置的参数值.如灯亮度为0~255.0表示关;设备开关,值使用on或off。[请按照‘设备详细信息开发文档’传入正确的参数值类型]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "下达操作设备的命令是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

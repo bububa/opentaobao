@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.getcode",
+	"apiChineseName": "获取token",
+	"description": "获取天猫精灵authCode",
+	"requestParams": [
+		{
+			"name": "auth_param",
+			"type": "TopAuthReqDto",
+			"description": "授权参数",
+			"subParams": [
+				{
+					"name": "response_type",
+					"type": "String",
+					"description": "二维码授权 只支持qrcode"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "天猫精灵分配的clientId"
+				},
+				{
+					"name": "scope",
+					"type": "String",
+					"description": "OAUTH2 scope 只支持basic"
+				},
+				{
+					"name": "state",
+					"type": "String",
+					"description": "OAUTH2 state 随意填写"
+				}
+			]
+		},
+		{
+			"name": "device_param",
+			"type": "TopDeviceReqDto",
+			"description": "设备参数",
+			"subParams": [
+				{
+					"name": "device_signature",
+					"type": "String",
+					"description": "设备签名"
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "三方设备id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "授权码 json 串，包含授权码和二维码URL"
+		}
+	]
+}

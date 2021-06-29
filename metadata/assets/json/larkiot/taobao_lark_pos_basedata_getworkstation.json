@@ -1,0 +1,24 @@
+{
+	"name": "taobao.lark.pos.basedata.getworkstation",
+	"apiChineseName": "根据影城id工作站和macId获取工作站",
+	"description": "获取单独工作站",
+	"requestParams": [
+		{
+			"name": "cinema_link_id",
+			"type": "String",
+			"description": "影城cinemaLinkId"
+		},
+		{
+			"name": "pos_code",
+			"type": "String",
+			"description": "终端编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "响应结果"
+		}
+	]
+}

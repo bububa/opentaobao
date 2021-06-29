@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihouse.newhome.project.line",
+	"apiChineseName": "楼盘上下架",
+	"description": "上下架楼盘",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "byte",
+			"description": "0-下架 1-上架",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

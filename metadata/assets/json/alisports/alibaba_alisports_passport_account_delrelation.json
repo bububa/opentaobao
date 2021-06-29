@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.alisports.passport.account.delrelation",
+	"apiChineseName": "阿里体育会员系统--取消三方关联接口",
+	"description": "阿里体育会员系统--取消三方关联接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "业务appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "调用时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名字符串",
+			"required": true
+		},
+		{
+			"name": "app_uid",
+			"type": "String",
+			"description": "合作方用户ID",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育会员id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		},
+		{
+			"name": "alisp_data",
+			"type": "String",
+			"description": "alisp_data"
+		}
+	]
+}

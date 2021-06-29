@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.icbu.rfq.read",
+	"apiChineseName": "是否已读RFQ",
+	"description": "是否已读RFQ",
+	"requestParams": [
+		{
+			"name": "rfq_id_list",
+			"type": "String[]",
+			"description": "查询RFQID列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "操作结果对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,222 @@
+{
+	"name": "tmall.store.order.create",
+	"apiChineseName": "门店订单创建api",
+	"description": "门店订单创建api",
+	"requestParams": [
+		{
+			"name": "app_info",
+			"type": "AppInfo",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "系统自动生成"
+				}
+			]
+		},
+		{
+			"name": "create_order_request",
+			"type": "CreateOrderRequest",
+			"description": "创建订单请求",
+			"subParams": [
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "门店编码"
+				},
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表",
+					"subParams": [
+						{
+							"name": "buyer_id",
+							"type": "Number",
+							"description": "买家id"
+						},
+						{
+							"name": "store_order_id",
+							"type": "Number",
+							"description": "门店订单id"
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店id"
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单id"
+						},
+						{
+							"name": "origin_price",
+							"type": "Number",
+							"description": "原价"
+						},
+						{
+							"name": "item_list",
+							"type": "ItemLineDTO[]",
+							"description": "商品信息",
+							"subParams": [
+								{
+									"name": "out_line_id",
+									"type": "String",
+									"description": "百安居id"
+								},
+								{
+									"name": "store_order_line_id",
+									"type": "Number",
+									"description": "门店商品行id"
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品id"
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuId"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格"
+								},
+								{
+									"name": "buy_amount",
+									"type": "Number",
+									"description": "购买数量"
+								},
+								{
+									"name": "pay_fee",
+									"type": "Number",
+									"description": "实际付款价格"
+								},
+								{
+									"name": "out_sku_id",
+									"type": "String",
+									"description": "外部skuId"
+								},
+								{
+									"name": "service_list",
+									"type": "ServiceItemLineDTO[]",
+									"description": "服务子订单",
+									"subParams": [
+										{
+											"name": "service_id",
+											"type": "Number",
+											"description": "服务子订单id"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "购买数量"
+										},
+										{
+											"name": "service_spu_code",
+											"type": "String",
+											"description": "服务商品编码"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "delivery_address",
+							"type": "DeliveryAddressDTO",
+							"description": "地址信息",
+							"subParams": [
+								{
+									"name": "full_name",
+									"type": "String",
+									"description": "收货人姓名"
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道地址"
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省"
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "手机号"
+								}
+							]
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "订单实付价格"
+						},
+						{
+							"name": "shipping_type",
+							"type": "String",
+							"description": "提货类型"
+						}
+					]
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "用户手机号码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "detail_results",
+			"type": "Detailresults []",
+			"description": "detailResults",
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "outOrderId",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				}
+			]
+		}
+	]
+}

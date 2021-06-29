@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.alihouse.newhome.project.dynamic.submit",
+	"apiChineseName": "提交楼盘快讯",
+	"description": "提交楼盘快讯",
+	"requestParams": [
+		{
+			"name": "project_dynamics",
+			"type": "ProjectDynamicDto[]",
+			"description": "楼盘动态列表",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘ID",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "快讯标题",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "快讯正文",
+					"required": true
+				},
+				{
+					"name": "outer_dynamic_id",
+					"type": "String",
+					"description": "外部快讯ID"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市ID"
+				},
+				{
+					"name": "project_tags",
+					"type": "String[]",
+					"description": "楼盘标签"
+				},
+				{
+					"name": "publish_time",
+					"type": "Date",
+					"description": "发布时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态 0-无效 1-有效"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回对象",
+					"required": true
+				}
+			]
+		}
+	]
+}

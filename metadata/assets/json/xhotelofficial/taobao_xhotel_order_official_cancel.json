@@ -1,0 +1,39 @@
+{
+	"name": "taobao.xhotel.order.official.cancel",
+	"apiChineseName": "官网信用住订单取消",
+	"description": "官网信用住订单取消",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单号,必选"
+		},
+		{
+			"name": "reason_text",
+			"type": "String",
+			"description": "原因描述"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "外部订单号"
+		},
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "请求流水号（必须传入）"
+		},
+		{
+			"name": "notify_url",
+			"type": "String",
+			"description": "暂无意义，无需传入"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回提示信息"
+		}
+	]
+}

@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"text/template"
 
 	"github.com/bububa/opentaobao/metadata"
@@ -110,7 +111,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 			continue
 		}
 		if apiPkg.Link == "" {
-			apiPkg.Link = fmt.Sprintf(metadata.DOC_URL, doc.Id, "")
+			apiPkg.Link = fmt.Sprintf(metadata.DOC_LINK, doc.Id)
 		}
 		// log.Printf("%+v\n", doc)
 		// log.Printf("%+v\n", doc.ApiTpl())
@@ -273,8 +274,10 @@ func genReadme(pkgs []ApiPkg) error {
 		return err
 	}
 	defer fd.Close()
+	slice := ApiPkgSlice(pkgs)
+	sort.Sort(slice)
 	tmpl.Execute(fd, map[string][]ApiPkg{
-		"Pkgs": pkgs,
+		"Pkgs": slice,
 	})
 	return nil
 }

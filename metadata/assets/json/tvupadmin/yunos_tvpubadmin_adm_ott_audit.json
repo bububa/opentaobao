@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.adm.ott.audit",
+	"apiChineseName": "优酷OTT广告素材审核",
+	"description": "审核优酷OTT端广告素材",
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "广告审核内容，json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "返回的操作结果"
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"name": "aliyun.unimkt.task.charge.launch",
+	"apiChineseName": "云码权益查询",
+	"description": "云码线上流量投放链路，用于判断用户是否有匹配的投放计划",
+	"requestParams": [
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "服务商附加url参数"
+		},
+		{
+			"name": "url_id",
+			"type": "String",
+			"description": "urlID"
+		},
+		{
+			"name": "alipay_open_id",
+			"type": "String",
+			"description": "支付宝openID"
+		},
+		{
+			"name": "channel_id",
+			"type": "String",
+			"description": "渠道ID",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "淘宝ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "task_success",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "task_error_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "任务结果"
+		}
+	]
+}

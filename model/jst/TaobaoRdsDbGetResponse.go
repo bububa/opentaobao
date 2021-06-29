@@ -19,7 +19,9 @@ type TaobaoRdsDbGetAPIResponse struct {
 
 type TaobaoRdsDbGetResponse struct {
     XMLName xml.Name `xml:"rds_db_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 数据库查询返回数据结构
     

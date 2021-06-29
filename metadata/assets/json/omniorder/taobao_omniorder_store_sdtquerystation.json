@@ -1,0 +1,98 @@
+{
+	"name": "taobao.omniorder.store.sdtquerystation",
+	"apiChineseName": "速店通查询站点信息",
+	"description": "速店通查询站点信息",
+	"requestParams": [
+		{
+			"name": "param_long2",
+			"type": "Number",
+			"description": "取号时返回的packageId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "SdtQueryPackageResponse",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "stations",
+							"type": "SdtStationDto[]",
+							"description": "站点信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "action_time",
+									"type": "Date",
+									"description": "站点操作时间",
+									"required": true
+								},
+								{
+									"name": "cp_code",
+									"type": "String",
+									"description": "快递公司cpcode",
+									"required": true
+								},
+								{
+									"name": "cp_name",
+									"type": "String",
+									"description": "快递公司名称",
+									"required": true
+								},
+								{
+									"name": "station_code",
+									"type": "String",
+									"description": "站点code",
+									"required": true
+								},
+								{
+									"name": "station_contact",
+									"type": "String",
+									"description": "站点联系方式",
+									"required": true
+								},
+								{
+									"name": "station_master",
+									"type": "String",
+									"description": "站点负责人",
+									"required": true
+								},
+								{
+									"name": "station_name",
+									"type": "String",
+									"description": "站点名",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "站点类别（推荐站点、派送站点、揽收站点）",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,136 @@
+{
+	"name": "alibaba.pur.supplier.porespcreate",
+	"apiChineseName": "po反馈创建",
+	"description": "PO反馈接口",
+	"requestParams": [
+		{
+			"name": "po_response",
+			"type": "SupplierPoResponseDO[]",
+			"description": "PO反馈信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "反馈状态",
+					"required": true
+				},
+				{
+					"name": "po_no",
+					"type": "String",
+					"description": "po头编号"
+				},
+				{
+					"name": "po_line_num",
+					"type": "String",
+					"description": "po行编号"
+				},
+				{
+					"name": "procurement_method",
+					"type": "String",
+					"description": "购买方式"
+				},
+				{
+					"name": "delay_reason",
+					"type": "String",
+					"description": "延误原因"
+				},
+				{
+					"name": "delivery_amount",
+					"type": "String",
+					"description": "发货金额"
+				},
+				{
+					"name": "capacity_record_no",
+					"type": "String",
+					"description": "产能计划代码"
+				},
+				{
+					"name": "response_type",
+					"type": "String",
+					"description": "反馈类型",
+					"required": true
+				},
+				{
+					"name": "estimated_arrival_date",
+					"type": "Date",
+					"description": "预计到货日期"
+				},
+				{
+					"name": "production_period",
+					"type": "String",
+					"description": "生产周期"
+				},
+				{
+					"name": "demander_purchase_org_code",
+					"type": "String",
+					"description": "采购组织"
+				},
+				{
+					"name": "delivery_qty",
+					"type": "String",
+					"description": "发货数量"
+				},
+				{
+					"name": "actual_arrival_date",
+					"type": "Date",
+					"description": "实际发货日期"
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商编码",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称"
+				},
+				{
+					"name": "project_code",
+					"type": "String",
+					"description": "项目代码"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "供应商ou代码",
+					"required": true
+				},
+				{
+					"name": "delivery_batch_no",
+					"type": "String",
+					"description": "发货批次号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "内容",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

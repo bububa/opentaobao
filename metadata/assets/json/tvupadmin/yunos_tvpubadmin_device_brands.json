@@ -1,0 +1,40 @@
+{
+	"name": "yunos.tvpubadmin.device.brands",
+	"apiChineseName": "获取终端类型下品牌列表",
+	"description": "获取终端类型下品牌列表",
+	"requestParams": [
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "list",
+			"type": "BrandDO []",
+			"description": "object",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "brandId",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "brandName",
+					"required": true
+				}
+			]
+		}
+	]
+}

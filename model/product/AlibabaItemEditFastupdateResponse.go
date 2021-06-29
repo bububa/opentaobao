@@ -21,7 +21,9 @@ type AlibabaItemEditFastupdateAPIResponse struct {
 
 type AlibabaItemEditFastupdateResponse struct {
     XMLName xml.Name `xml:"alibaba_item_edit_fastupdate_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品更新时间
     

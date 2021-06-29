@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.transferblind",
+	"apiChineseName": "传输盲底文件",
+	"description": "临床用药试验-传输盲底文件",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id"
+		},
+		{
+			"name": "sign_value",
+			"type": "String",
+			"description": "签名值"
+		},
+		{
+			"name": "cipher_text",
+			"type": "String",
+			"description": "密文"
+		},
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "调用结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "操作码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "操作说明"
+		}
+	]
+}

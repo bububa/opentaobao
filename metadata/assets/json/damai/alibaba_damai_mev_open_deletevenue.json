@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.damai.mev.open.deletevenue",
+	"apiChineseName": "大麦换验平台-第三方对外开放-场馆接口deleteVenue",
+	"description": "开放接口，删除场馆",
+	"requestParams": [
+		{
+			"name": "delete_venue_param",
+			"type": "VenueIdOpenParam",
+			"description": "入参deleteVenueParam",
+			"subParams": [
+				{
+					"name": "cp_id",
+					"type": "Number",
+					"description": "商家id"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "推送接口返回的id"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作员"
+				},
+				{
+					"name": "operator_id",
+					"type": "Number",
+					"description": "操作员id"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "商家id"
+				},
+				{
+					"name": "venue_id",
+					"type": "Number",
+					"description": "场馆id"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商家密钥，监权使用"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误内容",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

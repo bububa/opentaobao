@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.retail.vending.price.whitelist.add",
+	"apiChineseName": "贩卖机价格修改白名单",
+	"description": "贩卖机价格修改白名单",
+	"requestParams": [
+		{
+			"name": "valid_starts",
+			"type": "Date",
+			"description": "生效时间",
+			"required": true
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "淘宝用户ID"
+		},
+		{
+			"name": "device_code_list",
+			"type": "String[]",
+			"description": "设备编码 device_code_list, device_uuid_list 二选一必填",
+			"maxListSize": 20
+		},
+		{
+			"name": "device_uuid_list",
+			"type": "String[]",
+			"description": "外部设备编码   device_code_list, device_uuid_list 二选一必填",
+			"maxListSize": 20
+		},
+		{
+			"name": "valid_ends",
+			"type": "Date",
+			"description": "生效结束时间",
+			"required": true
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "条码",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "min_price",
+			"type": "String",
+			"description": "允许修改的最低价"
+		},
+		{
+			"name": "all_device",
+			"type": "Boolean",
+			"description": "是否生效到所有设备"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

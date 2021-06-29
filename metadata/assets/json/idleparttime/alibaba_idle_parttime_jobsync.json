@@ -1,0 +1,187 @@
+{
+	"name": "alibaba.idle.parttime.jobsync",
+	"apiChineseName": "兼职岗位同步",
+	"description": "服务商同步岗位信息给闲鱼",
+	"requestParams": [
+		{
+			"name": "job_list",
+			"type": "PartTimeJob[]",
+			"description": "岗位列表",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "location",
+					"type": "String",
+					"description": "工作地点",
+					"required": true
+				},
+				{
+					"name": "royalties",
+					"type": "String",
+					"description": "津贴",
+					"required": true
+				},
+				{
+					"name": "pay_way",
+					"type": "String",
+					"description": "支付方式, 支付宝/微信/现金等",
+					"required": true
+				},
+				{
+					"name": "job_description",
+					"type": "String",
+					"description": "工作描述",
+					"required": true
+				},
+				{
+					"name": "recruit_count",
+					"type": "Number",
+					"description": "招聘人数",
+					"required": true
+				},
+				{
+					"name": "job_title",
+					"type": "String",
+					"description": "岗位名称: 该兼职岗位的名称",
+					"required": true
+				},
+				{
+					"name": "company",
+					"type": "String",
+					"description": "招聘公司",
+					"required": true
+				},
+				{
+					"name": "work_duration",
+					"type": "String",
+					"description": "工作时长",
+					"required": true
+				},
+				{
+					"name": "job_type",
+					"type": "String",
+					"description": "岗位种类: 该兼职信息的性质",
+					"required": true
+				},
+				{
+					"name": "work_time",
+					"type": "String",
+					"description": "工作时间",
+					"required": true
+				},
+				{
+					"name": "job_item_title",
+					"type": "String",
+					"description": "商品标题: 职位在 Feed 流中展示的标题,",
+					"required": true
+				},
+				{
+					"name": "salary",
+					"type": "String",
+					"description": "工资",
+					"required": true
+				},
+				{
+					"name": "job_id",
+					"type": "Number",
+					"description": "岗位id",
+					"required": true
+				},
+				{
+					"name": "company_description",
+					"type": "String",
+					"description": "招聘公司描述",
+					"required": true
+				},
+				{
+					"name": "company_logo",
+					"type": "String",
+					"description": "企业logo, 是一个图片的URL",
+					"required": true
+				},
+				{
+					"name": "job_requirements",
+					"type": "PartTimeRequireSchema[]",
+					"description": "岗位具体的要求和要求的类型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "description",
+							"type": "String",
+							"description": "要求",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型, 1:文本 2: 图片",
+							"required": true
+						},
+						{
+							"name": "requirement",
+							"type": "String",
+							"description": "要求描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "gps",
+					"type": "String",
+					"description": "工作点点的经纬度",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "String",
+					"description": "岗位类目",
+					"required": true
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人手机号码",
+					"required": true
+				},
+				{
+					"name": "is_add",
+					"type": "Number",
+					"description": "岗位是否新增, 0: 是 1: 否",
+					"required": true
+				},
+				{
+					"name": "show_cancel",
+					"type": "Number",
+					"description": "是否显示\"取消报名\" 0: 显示 1: 不显示",
+					"required": true
+				},
+				{
+					"name": "contact_merchant",
+					"type": "Number",
+					"description": "是否可以主动联系商家, 0: 可以, 1: 不可以",
+					"required": true
+				},
+				{
+					"name": "publish_gps",
+					"type": "String",
+					"description": "发布岗位的经纬度",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "sync_time",
+			"type": "Number",
+			"description": "同步数据的时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		}
+	]
+}

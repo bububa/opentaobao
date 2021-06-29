@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.alihealth.reserve.dental.modifyrestime",
+	"apiChineseName": "修改预约时间",
+	"description": "修改预约时间",
+	"requestParams": [
+		{
+			"name": "reserve_id",
+			"type": "Number",
+			"description": "预约单ID"
+		},
+		{
+			"name": "reserve_time",
+			"type": "String",
+			"description": "预约时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

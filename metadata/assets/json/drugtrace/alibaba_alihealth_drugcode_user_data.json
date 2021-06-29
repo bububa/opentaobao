@@ -1,0 +1,107 @@
+{
+	"name": "alibaba.alihealth.drugcode.user.data",
+	"apiChineseName": "西安杨森同步用户行为接口",
+	"description": "西安杨森同步用户行为接口",
+	"requestParams": [
+		{
+			"name": "list",
+			"type": "HaoxinqingDataDto[]",
+			"description": "用户信息",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "number",
+					"type": "Number",
+					"description": "数量"
+				},
+				{
+					"name": "bussiness_type",
+					"type": "Number",
+					"description": "业务类型， 1。咨询类  、2。购药类"
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "支付时间"
+				},
+				{
+					"name": "drug_name",
+					"type": "String",
+					"description": "药品名称"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户ID"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "用于唯一建，同一条信息uuid一样则更新"
+				}
+			]
+		},
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID，用户区分 appkey下不同企业数据隔离的"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "headers",
+					"type": "Json",
+					"description": "无",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 成功  false 不成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "无",
+					"required": true
+				},
+				{
+					"name": "mapping_code",
+					"type": "String",
+					"description": "无",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "无",
+					"required": true
+				}
+			]
+		}
+	]
+}

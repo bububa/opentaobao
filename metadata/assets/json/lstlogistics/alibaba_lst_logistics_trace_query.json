@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.lst.logistics.trace.query",
+	"apiChineseName": "供应商-异云-查询运单物流追踪信息",
+	"description": "查询LP单物流追踪信息",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "LstLogisticsTraceQuery",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "logistics_id",
+					"type": "String",
+					"description": "物流编号",
+					"required": true
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "主订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content_list",
+					"type": "Content[]",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "time",
+							"type": "Date",
+							"description": "时间",
+							"required": true
+						},
+						{
+							"name": "standerd_desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

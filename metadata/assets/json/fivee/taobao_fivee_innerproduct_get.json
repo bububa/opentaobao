@@ -1,0 +1,286 @@
+{
+	"name": "taobao.fivee.innerproduct.get",
+	"apiChineseName": "国产商品资质查询",
+	"description": "资质共享平台，国产商品查询",
+	"requestParams": [
+		{
+			"name": "param_bucode",
+			"type": "String",
+			"description": "bu身份标识",
+			"required": true
+		},
+		{
+			"name": "param_barcode",
+			"type": "String",
+			"description": "条形码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "InnerProduct",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "auth_code",
+							"type": "String",
+							"description": "批次或备案证书编号",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条形码",
+							"required": true
+						},
+						{
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "certification_body",
+									"type": "String",
+									"description": "认证机构",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "编码",
+									"required": true
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "到期日期",
+									"required": true
+								},
+								{
+									"name": "effective_date",
+									"type": "Date",
+									"description": "生效日期",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "证照名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "urls",
+									"type": "String[]",
+									"description": "下载地址列表",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "produce_companies",
+							"type": "Company[]",
+							"description": "生产商",
+							"required": true,
+							"subParams": [
+								{
+									"name": "established_date",
+									"type": "String",
+									"description": "成立时间",
+									"required": true
+								},
+								{
+									"name": "licences",
+									"type": "Licence[]",
+									"description": "证照信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "certification_body",
+											"type": "String",
+											"description": "认证机构",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "String",
+											"description": "编码",
+											"required": true
+										},
+										{
+											"name": "due_date",
+											"type": "Date",
+											"description": "到期日期",
+											"required": true
+										},
+										{
+											"name": "effective_date",
+											"type": "Date",
+											"description": "生效日期",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "证照名称",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "类型",
+											"required": true
+										},
+										{
+											"name": "urls",
+											"type": "String[]",
+											"description": "下载地址列表",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "生产商名称",
+									"required": true
+								},
+								{
+									"name": "registered_capital",
+									"type": "String",
+									"description": "注册资本",
+									"required": true
+								},
+								{
+									"name": "unique_code",
+									"type": "String",
+									"description": "统一社会信用代码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "provider_companies",
+							"type": "Company[]",
+							"description": "供应商信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "established_date",
+									"type": "String",
+									"description": "成立时间",
+									"required": true
+								},
+								{
+									"name": "licences",
+									"type": "Licence[]",
+									"description": "证照信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "certification_body",
+											"type": "String",
+											"description": "认证机构",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "String",
+											"description": "编码",
+											"required": true
+										},
+										{
+											"name": "due_date",
+											"type": "Date",
+											"description": "到期日期",
+											"required": true
+										},
+										{
+											"name": "effective_date",
+											"type": "Date",
+											"description": "生效日期",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "名称",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "类型",
+											"required": true
+										},
+										{
+											"name": "urls",
+											"type": "String[]",
+											"description": "下载地址列表",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称",
+									"required": true
+								},
+								{
+									"name": "registered_capital",
+									"type": "String",
+									"description": "注册资本",
+									"required": true
+								},
+								{
+									"name": "unique_code",
+									"type": "String",
+									"description": "统一社会信用代码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

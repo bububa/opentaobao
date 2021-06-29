@@ -19,7 +19,9 @@ type TaobaoWangwangAbstractInitializeAPIResponse struct {
 
 type TaobaoWangwangAbstractInitializeResponse struct {
     XMLName xml.Name `xml:"wangwang_abstract_initialize_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 0或-1表示成功或失败
     

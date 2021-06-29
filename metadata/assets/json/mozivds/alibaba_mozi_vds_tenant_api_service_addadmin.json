@@ -1,0 +1,81 @@
+{
+	"name": "alibaba.mozi.vds.tenant.api.service.addadmin",
+	"apiChineseName": "新建租户管理员",
+	"description": "新建租户管理员\nalibaba.mozi.vds.tenant.api.service.addadmin",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "AddTenantAdminsRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "employee_codes",
+					"type": "String[]",
+					"description": "人员code",
+					"required": true
+				},
+				{
+					"name": "primary_admin",
+					"type": "Boolean",
+					"description": "是否主管理员"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户Id",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求元数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AddTenantAdminsResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回msg",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回data",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回Code",
+					"required": true
+				}
+			]
+		}
+	]
+}

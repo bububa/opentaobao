@@ -1,0 +1,262 @@
+{
+	"name": "taobao.alitrip.seller.refund.get",
+	"apiChineseName": "【机票代理商】退票申请单详情",
+	"description": "查询退票申请单详情",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "申请单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "errorCode",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "errorMsg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "ReturnTicketDetail",
+					"description": "申请单详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "申请单ID",
+							"required": true
+						},
+						{
+							"name": "apply_reason_type",
+							"type": "Number",
+							"description": "退票原因",
+							"required": true
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "退票申请时间",
+							"required": true
+						},
+						{
+							"name": "first_process_time",
+							"type": "Date",
+							"description": "退票成功时间",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "pay_success_time",
+							"type": "Date",
+							"description": "退款成功时间",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "申退原因",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款手续费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_money",
+							"type": "Number",
+							"description": "退款金额（退给买家的钱）（分）",
+							"required": true
+						},
+						{
+							"name": "return_apply_passenge",
+							"type": "ReturnApplyPassenge[]",
+							"description": "人的费用信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "人ID",
+									"required": true
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘机人姓名",
+									"required": true
+								},
+								{
+									"name": "passenger_type",
+									"type": "Number",
+									"description": "乘机人类型",
+									"required": true
+								},
+								{
+									"name": "refund_fee",
+									"type": "Number",
+									"description": "退款手续费",
+									"required": true
+								},
+								{
+									"name": "refund_money",
+									"type": "Number",
+									"description": "退款金额",
+									"required": true
+								},
+								{
+									"name": "return_ticket_segment",
+									"type": "ReturnTicketSegment[]",
+									"description": "退款航段信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "arr_airport_code",
+											"type": "String",
+											"description": "到达机场三字码",
+											"required": true
+										},
+										{
+											"name": "arr_city",
+											"type": "String",
+											"description": "到达城市",
+											"required": true
+										},
+										{
+											"name": "build_fee",
+											"type": "Number",
+											"description": "单个航段机场建设费用（分）",
+											"required": true
+										},
+										{
+											"name": "dep_airport_code",
+											"type": "String",
+											"description": "出发机场三字码",
+											"required": true
+										},
+										{
+											"name": "dep_city",
+											"type": "String",
+											"description": "出发城市",
+											"required": true
+										},
+										{
+											"name": "flight_no",
+											"type": "String",
+											"description": "航班号",
+											"required": true
+										},
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "航段ID",
+											"required": true
+										},
+										{
+											"name": "oil_tax",
+											"type": "Number",
+											"description": "单个航段机场建燃油费用",
+											"required": true
+										},
+										{
+											"name": "refund_modify_fee",
+											"type": "Number",
+											"description": "改签手续费(分)",
+											"required": true
+										},
+										{
+											"name": "refund_upgrade_fee",
+											"type": "Number",
+											"description": "升舱手续费（分）",
+											"required": true
+										},
+										{
+											"name": "suspend",
+											"type": "Boolean",
+											"description": "票状态是否挂起",
+											"required": true
+										},
+										{
+											"name": "ticket_no",
+											"type": "String",
+											"description": "票号信息",
+											"required": true
+										},
+										{
+											"name": "trip_type",
+											"type": "Number",
+											"description": "去程0 回程1",
+											"required": true
+										},
+										{
+											"name": "dep_time",
+											"type": "Date",
+											"description": "起飞时间",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票价信息(分)",
+									"required": true
+								},
+								{
+									"name": "discount_ticket_price",
+									"type": "Number",
+									"description": "优惠后票面价",
+									"required": true
+								},
+								{
+									"name": "voucher_price",
+									"type": "Number",
+									"description": "优惠券金额",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "申请单状态（1初始 2接受 3确认 4失败 5买家处理 6卖家处理 7等待小二回填 8退款成功）",
+							"required": true
+						},
+						{
+							"name": "credit_money",
+							"type": "Number",
+							"description": "creditMoney",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

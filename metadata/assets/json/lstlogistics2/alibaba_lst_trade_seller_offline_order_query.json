@@ -1,0 +1,178 @@
+{
+	"name": "alibaba.lst.trade.seller.offline.order.query",
+	"apiChineseName": "供应商-线下订单-查询接口",
+	"description": "供应商线下订单数据上传后查询物流状态",
+	"requestParams": [
+		{
+			"name": "offline_order_query_param",
+			"type": "LstOfflineOrderQueryParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主订单号",
+					"required": true
+				},
+				{
+					"name": "buyer_mobile",
+					"type": "String",
+					"description": "买家手机号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "Content",
+					"description": "主订单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pick_time",
+							"type": "Date",
+							"description": "揽收时间",
+							"required": true
+						},
+						{
+							"name": "sign_time",
+							"type": "Date",
+							"description": "签收时间",
+							"required": true
+						},
+						{
+							"name": "supplier_user_id",
+							"type": "Number",
+							"description": "供应商userId",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外单主订单号",
+							"required": true
+						},
+						{
+							"name": "vehicle_info",
+							"type": "String",
+							"description": "车辆信息",
+							"required": true
+						},
+						{
+							"name": "driver_mobile",
+							"type": "String",
+							"description": "司机手机号",
+							"required": true
+						},
+						{
+							"name": "driver_name",
+							"type": "String",
+							"description": "司机",
+							"required": true
+						},
+						{
+							"name": "sub_orders",
+							"type": "SubOrders[]",
+							"description": "子订单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "out_item_code",
+									"type": "String",
+									"description": "外部商品编码",
+									"required": true
+								},
+								{
+									"name": "item_bar_code",
+									"type": "String",
+									"description": "商品条码",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "lst_sub_order_id",
+									"type": "String",
+									"description": "零售通子订单号",
+									"required": true
+								},
+								{
+									"name": "item_quantity",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "pick_quantity",
+									"type": "Number",
+									"description": "揽收数量",
+									"required": true
+								},
+								{
+									"name": "out_sub_order_id",
+									"type": "String",
+									"description": "外部子订单号",
+									"required": true
+								},
+								{
+									"name": "sign_quantity",
+									"type": "Number",
+									"description": "签收数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "lst_order_id",
+							"type": "Number",
+							"description": "零售通订单id",
+							"required": true
+						},
+						{
+							"name": "ship_status",
+							"type": "String",
+							"description": "* 发货单状态 * NEW          ---\u003e 新建 * LOAD_WAIT    ---\u003e 待装车 * LOAD_SUCCESS  ---\u003e 已装车 * SIGN_SUCCESS  ---\u003e 签收、部分签收 * SIGN_FAILED   ---\u003e 拒签 * CANCEL        ---\u003e 取消",
+							"required": true
+						},
+						{
+							"name": "out_bound_time",
+							"type": "Date",
+							"description": "出库时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoPromotionmiscItemActivityListGetAPIResponse struct {
 
 type TaobaoPromotionmiscItemActivityListGetResponse struct {
     XMLName xml.Name `xml:"promotionmisc_item_activity_list_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 只包含活动的主要信息，如activity_id，name，description，start_time，end_time，participate_range。优惠的其他详细信息，请通过taobao.promotionmisc.item.activity.get获取。
     

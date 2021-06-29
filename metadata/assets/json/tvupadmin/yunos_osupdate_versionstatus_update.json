@@ -1,0 +1,26 @@
+{
+	"name": "yunos.osupdate.versionstatus.update",
+	"apiChineseName": "更新应用升级状态",
+	"description": "更新应用升级状态",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "升级任务ID",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "状态值",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

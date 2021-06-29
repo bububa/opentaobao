@@ -1,0 +1,53 @@
+{
+	"name": "yunos.appstore.apps.get",
+	"apiChineseName": "根据包名列表获取应用信息列表",
+	"description": "根据包名列表获取应用信息列表",
+	"requestParams": [
+		{
+			"name": "pkgs",
+			"type": "String[]",
+			"description": "应用包名列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "app_info_list",
+			"type": "AppInfo []",
+			"description": "应用信息列表",
+			"subParams": [
+				{
+					"name": "icon",
+					"type": "String",
+					"description": "应用icon",
+					"required": true
+				},
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "应用包名",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "应用名称",
+					"required": true
+				},
+				{
+					"name": "version_code",
+					"type": "Number",
+					"description": "应用版本号",
+					"required": true
+				},
+				{
+					"name": "version_name",
+					"type": "String",
+					"description": "应用版本名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,224 @@
+{
+	"name": "taobao.inventory.plan.query",
+	"apiChineseName": "计划库存查询",
+	"description": "计划库存查询",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "InvUnifyPlanTopQuerys",
+			"description": "计划库存查询入参",
+			"subParams": [
+				{
+					"name": "plan_query_list",
+					"type": "InvUnifyPlanTopQuery[]",
+					"description": "查询入参",
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品或者货品的id，计划建在哪，就用哪个id"
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuid。如果是货品，则skuid是0"
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "item_id的类型，1是前端宝贝，2是后端货品"
+						},
+						{
+							"name": "plan_order_id",
+							"type": "String",
+							"description": "生成计划库存的外部单据号"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "PlanInvTopDto",
+					"description": "返回的对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "plan_instance_inv_list",
+							"type": "PlanInstanceInvResultDto[]",
+							"description": "实例列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "品id",
+									"required": true
+								},
+								{
+									"name": "item_type",
+									"type": "Number",
+									"description": "品类型，1是前端宝贝，2是后端货品",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "skuid",
+									"required": true
+								},
+								{
+									"name": "sellable_quantity",
+									"type": "Number",
+									"description": "当前计划的实时剩余可售数量",
+									"required": true
+								},
+								{
+									"name": "withholding_quantity",
+									"type": "Number",
+									"description": "当前计划的实时预扣数量",
+									"required": true
+								},
+								{
+									"name": "occupy_quantity",
+									"type": "Number",
+									"description": "当前计划的实时占用数量",
+									"required": true
+								},
+								{
+									"name": "start_time",
+									"type": "String",
+									"description": "计划的开始销售时间",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "String",
+									"description": "计划的结束销售时间",
+									"required": true
+								},
+								{
+									"name": "strategy",
+									"type": "StrategyRuleTopDto",
+									"description": "策略",
+									"required": true,
+									"subParams": [
+										{
+											"name": "rule_type",
+											"type": "Number",
+											"description": "1，代表先现货后计划库存；2代表仅卖计划库存",
+											"required": true
+										},
+										{
+											"name": "comb_support",
+											"type": "Boolean",
+											"description": "是否支持组合情况下，一部分子品用现货，一部分子品用计划库存。true代表支持，空或者false代表  子品都要同类型的库存才能组合起来",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "plan_order_id",
+									"type": "String",
+									"description": "生成计划库存的外部单据号",
+									"required": true
+								},
+								{
+									"name": "plan_instance_id",
+									"type": "Number",
+									"description": "计划id，平台内为planOrderId生成的计划id",
+									"required": true
+								},
+								{
+									"name": "setting_quantity",
+									"type": "Number",
+									"description": "最后一次全量设置的计划库存值。如果是增量编辑库存，settingQuantity不会变。这个值仅做参考，主要看前面的实时剩余可售数量sellable_quantity",
+									"required": true
+								},
+								{
+									"name": "promise_list",
+									"type": "PlanPromiseTopDto[]",
+									"description": "计划的履约仓信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "perform_store",
+											"type": "String",
+											"description": "仓code",
+											"required": true
+										},
+										{
+											"name": "delivery_time",
+											"type": "String",
+											"description": "履约时间，如绝对时间 2021-03-11 ，或者相对时间 2",
+											"required": true
+										},
+										{
+											"name": "delivery_type",
+											"type": "Number",
+											"description": "履约时间类型，0 是绝对时间，年月日；1是相对时间",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "relation_list",
+									"type": "PlanItemRelationTopDto[]",
+									"description": "计划生效的前端宝贝列表，如果是货品关联的所有前端都生效，则这个对象是空",
+									"required": true,
+									"subParams": [
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "计划生效的itemid",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "计划生效的skuid",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回结果码",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "结果code",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "结果id",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "结果message",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

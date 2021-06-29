@@ -1,0 +1,251 @@
+{
+	"name": "aliexpress.affiliate.order.get",
+	"apiChineseName": "AE流量订单详情获取API",
+	"description": "联盟推广订单效果获取API",
+	"requestParams": [
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "安全签名"
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "返回的字段列表"
+		},
+		{
+			"name": "order_ids",
+			"type": "String",
+			"description": "订单ID列表，以逗号分隔，当前只支持子订单ID查询"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "resp_code",
+					"type": "Number",
+					"description": "返回结果状态码",
+					"required": true
+				},
+				{
+					"name": "resp_msg",
+					"type": "String",
+					"description": "返回状态描述信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TrafficOrderResultDto",
+					"description": "返回结果明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "current_record_count",
+							"type": "Number",
+							"description": "当前页记录条数",
+							"required": true
+						},
+						{
+							"name": "orders",
+							"type": "Order[]",
+							"description": "订单内容明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "commission_rate",
+									"type": "String",
+									"description": "佣金率",
+									"required": true
+								},
+								{
+									"name": "created_time",
+									"type": "String",
+									"description": "订单创建时间",
+									"required": true
+								},
+								{
+									"name": "customer_parameters",
+									"type": "String",
+									"description": "自定义参数(JSON格式）",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态:Payment Completed,Buyer Confirmed Receipt",
+									"required": true
+								},
+								{
+									"name": "estimated_finished_commission",
+									"type": "Number",
+									"description": "订单完成时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "estimated_paid_commission",
+									"type": "Number",
+									"description": "订单支付时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "finished_amount",
+									"type": "Number",
+									"description": "订单完成金额",
+									"required": true
+								},
+								{
+									"name": "finished_time",
+									"type": "String",
+									"description": "订单完成时间",
+									"required": true
+								},
+								{
+									"name": "is_new_buyer",
+									"type": "String",
+									"description": "是否新买家",
+									"required": true
+								},
+								{
+									"name": "product_count",
+									"type": "Number",
+									"description": "下单商品数量",
+									"required": true
+								},
+								{
+									"name": "product_detail_url",
+									"type": "String",
+									"description": "商品DetailUrl",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "product_main_image_url",
+									"type": "String",
+									"description": "商品主图Url",
+									"required": true
+								},
+								{
+									"name": "product_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "new_buyer_bonus_commission",
+									"type": "Number",
+									"description": "新买家奖励佣金",
+									"required": true
+								},
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "订单ID",
+									"required": true
+								},
+								{
+									"name": "order_number",
+									"type": "Number",
+									"description": "子订单ID:已废弃，请使用sub_order_id",
+									"required": true
+								},
+								{
+									"name": "paid_amount",
+									"type": "Number",
+									"description": "订单支付完成金额",
+									"required": true
+								},
+								{
+									"name": "paid_time",
+									"type": "String",
+									"description": "订单支付完成时间",
+									"required": true
+								},
+								{
+									"name": "parent_order_number",
+									"type": "Number",
+									"description": "父订单ID:已废弃，请使用order_id",
+									"required": true
+								},
+								{
+									"name": "settled_currency",
+									"type": "String",
+									"description": "推广者结算币种",
+									"required": true
+								},
+								{
+									"name": "ship_to_country",
+									"type": "String",
+									"description": "订单物流国家",
+									"required": true
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单ID",
+									"required": true
+								},
+								{
+									"name": "tracking_id",
+									"type": "String",
+									"description": "trackId",
+									"required": true
+								},
+								{
+									"name": "is_hot_product",
+									"type": "String",
+									"description": "是否爆品订单:Y 或者N",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "Number",
+									"description": "所属类目ID",
+									"required": true
+								},
+								{
+									"name": "effect_detail_status",
+									"type": "String",
+									"description": "FullRefund：全额退款，Antispam：风控拦截",
+									"required": true
+								},
+								{
+									"name": "estimated_incentive_finished_commission",
+									"type": "Number",
+									"description": "激励订单完成时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "estimated_incentive_paid_commission",
+									"type": "Number",
+									"description": "激励订单支付时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "incentive_commission_rate",
+									"type": "String",
+									"description": "激励佣金率",
+									"required": true
+								},
+								{
+									"name": "is_affiliate_product",
+									"type": "String",
+									"description": "是否为联盟商品：N/Y",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

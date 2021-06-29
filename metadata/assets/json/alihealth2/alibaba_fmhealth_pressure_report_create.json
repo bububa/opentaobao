@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.fmhealth.pressure.report.create",
+	"apiChineseName": "血压报告接口",
+	"description": "生成用户血压测量报告",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "report_type",
+			"type": "String",
+			"description": "报告类型",
+			"required": true
+		},
+		{
+			"name": "report_data",
+			"type": "String",
+			"description": "报告内容",
+			"required": true
+		},
+		{
+			"name": "report_period",
+			"type": "String",
+			"description": "报告周期",
+			"required": true
+		},
+		{
+			"name": "report_time",
+			"type": "String",
+			"description": "报告时间",
+			"required": true
+		},
+		{
+			"name": "report_period_days",
+			"type": "String",
+			"description": "报告周期天数",
+			"required": true
+		},
+		{
+			"name": "report_source",
+			"type": "String",
+			"description": "数据来源",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_code",
+			"type": "Number",
+			"description": "msgCode"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "data"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

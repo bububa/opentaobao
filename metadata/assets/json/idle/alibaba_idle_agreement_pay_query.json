@@ -1,0 +1,153 @@
+{
+	"name": "alibaba.idle.agreement.pay.query",
+	"apiChineseName": "代扣详情查询",
+	"description": "查询代扣结果",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "AgreementPayBillQueryParam",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "pay_biz_code",
+					"type": "String",
+					"description": "业务编码：R1:回收",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "err_code",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Serializable",
+					"description": "账单查询结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "总金额",
+							"required": true
+						},
+						{
+							"name": "pay_biz_code",
+							"type": "String",
+							"description": "业务编码：R1:回收",
+							"required": true
+						},
+						{
+							"name": "pay_status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "pay_details",
+							"type": "SubPayBillDto[]",
+							"description": "明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "金额",
+									"required": true
+								},
+								{
+									"name": "create_time",
+									"type": "String",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "pay_time",
+									"type": "String",
+									"description": "支付时间",
+									"required": true
+								},
+								{
+									"name": "err_code",
+									"type": "String",
+									"description": "代扣错误码",
+									"required": true
+								},
+								{
+									"name": "pay_status_desc",
+									"type": "String",
+									"description": "支付状态描述",
+									"required": true
+								},
+								{
+									"name": "err_msg",
+									"type": "String",
+									"description": "代扣错误信息",
+									"required": true
+								},
+								{
+									"name": "plan_id",
+									"type": "String",
+									"description": "计划id",
+									"required": true
+								},
+								{
+									"name": "pay_status",
+									"type": "String",
+									"description": "支付状态",
+									"required": true
+								},
+								{
+									"name": "alipay_trade_no",
+									"type": "String",
+									"description": "支付宝流水号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_status",
+							"type": "String",
+							"description": "INIT:初始状态;PARTIAL_SUCCESSED:支付部分成功;SUCCESSED:支付成功;FAILED:支付失败",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

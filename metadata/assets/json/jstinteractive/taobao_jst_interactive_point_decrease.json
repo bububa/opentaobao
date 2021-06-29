@@ -1,0 +1,31 @@
+{
+	"name": "taobao.jst.interactive.point.decrease",
+	"apiChineseName": "互动积分扣减接口",
+	"description": "扣减用户的互动积分",
+	"requestParams": [
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "扣减的积分值",
+			"required": true
+		},
+		{
+			"name": "operate_code",
+			"type": "String",
+			"description": "幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "用户积分总额"
+		}
+	]
+}

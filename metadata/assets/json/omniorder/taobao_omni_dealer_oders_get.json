@@ -1,0 +1,344 @@
+{
+	"name": "taobao.omni.dealer.oders.get",
+	"apiChineseName": "获取单笔全渠道经销商订单的详细信息",
+	"description": "全渠道经销商获取单笔订单的详细信息",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "订单",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "discount_fee",
+					"type": "Number",
+					"description": "优惠金额，单位：分",
+					"required": true
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家呢称",
+					"required": true
+				},
+				{
+					"name": "receiver_prov",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单ID",
+					"required": true
+				},
+				{
+					"name": "refund_status",
+					"type": "String",
+					"description": "退款状态；可选值:WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意), WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货),  WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货),  SELLER_REFUSE_BUYER(卖家拒绝退款),  CLOSED(退款关闭),  SUCCESS(退款成功)",
+					"required": true
+				},
+				{
+					"name": "expect_end",
+					"type": "String",
+					"description": "多级时效预约单结束预约时间",
+					"required": true
+				},
+				{
+					"name": "sub_orders",
+					"type": "SubOrders[]",
+					"description": "子订单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "子单修改时间",
+							"required": true
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "商品购买数量",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态；可选值:WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意), WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货),  WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货),  SELLER_REFUSE_BUYER(卖家拒绝退款),  CLOSED(退款关闭),  SUCCESS(退款成功)",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "子单创建时间",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子订单ID",
+							"required": true
+						},
+						{
+							"name": "auction_price",
+							"type": "Number",
+							"description": "商品价格，单位：分",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "sku id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态，可选值：WAIT_BUYER_PAY(等待买家付款),  WAIT_SELLER_SEND_GOODS(等待卖家发货),  SELLER_CONSIGNED_PART(卖家部分发货),  WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货]),  TRADE_BUYER_SIGNED(买家已签收（货到付款专用）),  TRADE_FINISHED(交易成功),  TRADE_CLOSED(交易关闭),  TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭),  TRADE_NO_CREATE_PAY(没有创建外部交易（支付宝交易）)",
+							"required": true
+						},
+						{
+							"name": "actual_fee",
+							"type": "Number",
+							"description": "实收金额，单位：分",
+							"required": true
+						},
+						{
+							"name": "dealer_sc_item_id",
+							"type": "String",
+							"description": "经销商的货品ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "fulfillment_type",
+					"type": "String",
+					"description": "门店履约类型，可选值：PICKED_UP_IN_STORES(门店自提), STORE_DELIVERY(门店发货)",
+					"required": true
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "consign_time",
+					"type": "String",
+					"description": "发货时间",
+					"required": true
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收货人的电话号码",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家ID",
+					"required": true
+				},
+				{
+					"name": "adjust_fee",
+					"type": "Number",
+					"description": "手工调整金额，单位：分",
+					"required": true
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "镇",
+					"required": true
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家呢称",
+					"required": true
+				},
+				{
+					"name": "dealer_seller_id",
+					"type": "Number",
+					"description": "经销商卖家ID",
+					"required": true
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人姓名",
+					"required": true
+				},
+				{
+					"name": "post_fee",
+					"type": "Number",
+					"description": "邮费单位分",
+					"required": true
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "手机",
+					"required": true
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "区/县",
+					"required": true
+				},
+				{
+					"name": "aging_type",
+					"type": "String",
+					"description": "时效类型，可选值：NONE(无时效), APPOINTMENT_AGING(预约配送), HOUR_AGING(小时达), DAY_0_AGING(当日达), DAY_1_AGING(次日达), DAY_2_AGING(隔日达)",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收货地址",
+					"required": true
+				},
+				{
+					"name": "buyer_message",
+					"type": "String",
+					"description": "买家留言",
+					"required": true
+				},
+				{
+					"name": "total_fee",
+					"type": "Number",
+					"description": "总金额，单价×数量，不包含运费和折扣，单位：分",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "expect_start",
+					"type": "String",
+					"description": "多级时效预约单开始预约时间",
+					"required": true
+				},
+				{
+					"name": "seller_memo",
+					"type": "String",
+					"description": "卖家备注",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间 。格式:yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "buyer_memo",
+					"type": "String",
+					"description": "买家备注",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单状态，可选值：WAIT_BUYER_PAY(等待买家付款),  WAIT_SELLER_SEND_GOODS(等待卖家发货),  SELLER_CONSIGNED_PART(卖家部分发货),  WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货]),  TRADE_BUYER_SIGNED(买家已签收（货到付款专用）),  TRADE_FINISHED(交易成功),  TRADE_CLOSED(交易关闭),  TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭),  TRADE_NO_CREATE_PAY(没有创建外部交易（支付宝交易）)",
+					"required": true
+				},
+				{
+					"name": "actual_total_fee",
+					"type": "Number",
+					"description": "买家实际支付给卖家的金额，单位：分",
+					"required": true
+				},
+				{
+					"name": "fulfillment_store_id",
+					"type": "Number",
+					"description": "履约门店ID",
+					"required": true
+				},
+				{
+					"name": "fulfillment_store_out_id",
+					"type": "String",
+					"description": "履约门店的商家门店编码",
+					"required": true
+				},
+				{
+					"name": "expand_card_info",
+					"type": "ExpandCardInfo",
+					"description": "购物金信息输出",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expand_price_used",
+							"type": "Number",
+							"description": "用卡订单使用本金，用卡的订单才有输出，单位：分",
+							"required": true
+						},
+						{
+							"name": "basic_price_used",
+							"type": "Number",
+							"description": "用卡订单使用权益金，用卡的订单才有输出，单位：分",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

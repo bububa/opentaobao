@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.contentedit",
+	"apiChineseName": "专题关联内容编辑",
+	"description": "编辑专题关联的内容",
+	"requestParams": [
+		{
+			"name": "content_json",
+			"type": "String",
+			"description": "入参，json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "操作返回结果"
+		}
+	]
+}

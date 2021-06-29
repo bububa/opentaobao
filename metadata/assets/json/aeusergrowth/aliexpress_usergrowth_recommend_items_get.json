@@ -1,0 +1,173 @@
+{
+	"name": "aliexpress.usergrowth.recommend.items.get",
+	"apiChineseName": "第三方平台推荐商品",
+	"description": "第三方平台的推荐AE商品   场景：skin 、底部推荐等",
+	"requestParams": [
+		{
+			"name": "tracking_id",
+			"type": "String",
+			"description": "third party trackingId"
+		},
+		{
+			"name": "currency_code",
+			"type": "String",
+			"description": "currency Code"
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "language"
+		},
+		{
+			"name": "user_type_code",
+			"type": "String",
+			"description": "user type"
+		},
+		{
+			"name": "page_index",
+			"type": "String",
+			"description": "page index,start from 1"
+		},
+		{
+			"name": "page_size",
+			"type": "String",
+			"description": "page size"
+		},
+		{
+			"name": "country_code",
+			"type": "String",
+			"description": "country code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "response model",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "Result itemList,The product are located at the top,maybe null when success = false",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "product id",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "String",
+							"description": "sale price,will return local pirce",
+							"required": true
+						},
+						{
+							"name": "photo",
+							"type": "String",
+							"description": "product photo url",
+							"required": true
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "shop name",
+							"required": true
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "product name",
+							"required": true
+						},
+						{
+							"name": "shop_domain",
+							"type": "String",
+							"description": "store url",
+							"required": true
+						},
+						{
+							"name": "detail_url",
+							"type": "String",
+							"description": "detailUrl",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "shopId",
+							"required": true
+						},
+						{
+							"name": "sub_category",
+							"type": "String",
+							"description": "sub category",
+							"required": true
+						},
+						{
+							"name": "rating_count",
+							"type": "Number",
+							"description": "rating count",
+							"required": true
+						},
+						{
+							"name": "photo_height",
+							"type": "Number",
+							"description": "photo height",
+							"required": true
+						},
+						{
+							"name": "shop_rating",
+							"type": "String",
+							"description": "shop rating",
+							"required": true
+						},
+						{
+							"name": "free_shipping",
+							"type": "Boolean",
+							"description": "delivery freeShipping",
+							"required": true
+						},
+						{
+							"name": "rating_value",
+							"type": "String",
+							"description": "product rating",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "category Name",
+							"required": true
+						},
+						{
+							"name": "photo_width",
+							"type": "Number",
+							"description": "photo width",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success is used to determine whether invoke service success",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "other extend message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "Code is used to determine whether the result is correct",
+					"required": true
+				}
+			]
+		}
+	]
+}

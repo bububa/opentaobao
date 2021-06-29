@@ -19,7 +19,9 @@ type TaobaoLogisticsAddressReachablebatchGetAPIResponse struct {
 
 type TaobaoLogisticsAddressReachablebatchGetResponse struct {
     XMLName xml.Name `xml:"logistics_address_reachablebatch_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 物流是否可达结果列表
     

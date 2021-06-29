@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.gettoken",
+	"apiChineseName": "设备授权",
+	"description": "获取设备授权码",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "clientId"
+		},
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "授权码"
+		},
+		{
+			"name": "grant_type",
+			"type": "String",
+			"description": "授权类型，只支持authorization_code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "register_result",
+			"type": "RegisterInfoVo",
+			"description": "设备注册结果",
+			"subParams": [
+				{
+					"name": "user_open_id",
+					"type": "String",
+					"description": "用户开放id",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "设备uuid",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "auth_result",
+			"type": "DeviceTokenVo",
+			"description": "授权结果",
+			"subParams": [
+				{
+					"name": "access_expires_in",
+					"type": "Number",
+					"description": "accessToken超时时间，单位为秒",
+					"required": true
+				},
+				{
+					"name": "access_token",
+					"type": "String",
+					"description": "accessToken",
+					"required": true
+				},
+				{
+					"name": "refresh_expires_in",
+					"type": "Number",
+					"description": "refreshToken超时时间，单位为秒",
+					"required": true
+				},
+				{
+					"name": "refresh_token",
+					"type": "String",
+					"description": "refreshToken",
+					"required": true
+				}
+			]
+		}
+	]
+}

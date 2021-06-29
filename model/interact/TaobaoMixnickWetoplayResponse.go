@@ -19,7 +19,9 @@ type TaobaoMixnickWetoplayAPIResponse struct {
 
 type TaobaoMixnickWetoplayResponse struct {
     XMLName xml.Name `xml:"mixnick_wetoplay_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 微淘转互动混淆nick
     

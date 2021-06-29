@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.updatebillinfo",
+	"apiChineseName": "零售端平台单据更新",
+	"description": "零售端平台单据更新",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID"
+		},
+		{
+			"name": "ent_id",
+			"type": "String",
+			"description": "企业ID"
+		},
+		{
+			"name": "ic_code",
+			"type": "String",
+			"description": "操作人编码"
+		},
+		{
+			"name": "bill_id",
+			"type": "String",
+			"description": "单据ID"
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型"
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编码"
+		},
+		{
+			"name": "partner_id_send",
+			"type": "String",
+			"description": "发货单位ID"
+		},
+		{
+			"name": "partner_id_recv",
+			"type": "String",
+			"description": "收货单信ID"
+		},
+		{
+			"name": "note",
+			"type": "String",
+			"description": "详情"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "返回是否成功"
+		}
+	]
+}

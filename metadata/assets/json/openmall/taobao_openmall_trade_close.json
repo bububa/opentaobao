@@ -1,0 +1,40 @@
+{
+	"name": "taobao.openmall.trade.close",
+	"apiChineseName": "关闭订单",
+	"description": "关闭订单",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "分销者信息",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "关单原因",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "淘宝交易ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.campus.acl.getmenubyempid",
+	"apiChineseName": "查询用户的菜单",
+	"description": "查询用户的菜单",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "账户id",
+			"required": true
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "TreeNode[]",
+					"description": "菜单内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "菜单主键id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "菜单名称",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "菜单链接",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "菜单级别",
+							"required": true
+						},
+						{
+							"name": "menu_id",
+							"type": "String",
+							"description": "菜单层级路劲",
+							"required": true
+						},
+						{
+							"name": "menu_order",
+							"type": "Number",
+							"description": "菜单排序字段",
+							"required": true
+						},
+						{
+							"name": "childs",
+							"type": "Json[]",
+							"description": "childs",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

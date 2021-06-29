@@ -19,7 +19,9 @@ type AlibabaMarketingLotteryActivityUnbindAPIResponse struct {
 
 type AlibabaMarketingLotteryActivityUnbindResponse struct {
     XMLName xml.Name `xml:"alibaba_marketing_lottery_activity_unbind_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 解绑成功
     

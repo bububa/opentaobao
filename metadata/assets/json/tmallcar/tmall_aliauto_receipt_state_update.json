@@ -1,0 +1,50 @@
+{
+	"name": "tmall.aliauto.receipt.state.update",
+	"apiChineseName": "服务工单状态更新",
+	"description": "二轮车服务工单状态更新",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "FINISH:服务完成"
+		},
+		{
+			"name": "receipt_id",
+			"type": "Number",
+			"description": "服务工单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回的执行状态吗",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回的数据实体",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

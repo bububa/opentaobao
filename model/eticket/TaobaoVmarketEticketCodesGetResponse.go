@@ -19,7 +19,9 @@ type TaobaoVmarketEticketCodesGetAPIResponse struct {
 
 type TaobaoVmarketEticketCodesGetResponse struct {
     XMLName xml.Name `xml:"vmarket_eticket_codes_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 记录总数
     

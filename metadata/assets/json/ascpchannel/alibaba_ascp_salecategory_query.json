@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.ascp.salecategory.query",
+	"apiChineseName": "货品品类查询",
+	"description": "根据货品ID查询对应销售品类ID",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number[]",
+			"description": "货品ID",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data_list",
+			"type": "SalecategoryQueryResponse []",
+			"description": "货品查询结构化对象",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "货品ID",
+					"required": true
+				},
+				{
+					"name": "item_salecategory",
+					"type": "Number",
+					"description": "货品品类ID",
+					"required": true
+				},
+				{
+					"name": "item_salecategory_name",
+					"type": "String",
+					"description": "货品品类名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

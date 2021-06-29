@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.member.sync",
+	"apiChineseName": "会员信息同步",
+	"description": "会员信息同步",
+	"requestParams": [
+		{
+			"name": "sync_member",
+			"type": "SyncMemberDto",
+			"description": "会员同步信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "birthday",
+					"type": "String",
+					"description": "生日，格式yyyy-mm-dd"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市"
+				},
+				{
+					"name": "sex",
+					"type": "String",
+					"description": "性别，F 女，M 男"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号，海外手机格式 1-993333",
+					"required": true
+				},
+				{
+					"name": "outer_member_id",
+					"type": "String",
+					"description": "外部会员ID，识别商家会员的唯一身份标识",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户ID"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
+				},
+				{
+					"name": "open_merchant_id",
+					"type": "String",
+					"description": "对外开放的merchantId",
+					"required": true
+				},
+				{
+					"name": "level_point",
+					"type": "Number",
+					"description": "等级积分"
+				},
+				{
+					"name": "user_site",
+					"type": "String",
+					"description": "用户站点，淘宝 taobao，饿了么 eleme，支付宝 alipay"
+				},
+				{
+					"name": "level_num",
+					"type": "Number",
+					"description": "等级",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份"
+				},
+				{
+					"name": "outer_card_no",
+					"type": "String",
+					"description": "外部会员卡号"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "consume_point",
+					"type": "Number",
+					"description": "消费积分",
+					"required": true
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code，返回码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message，返回信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

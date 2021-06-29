@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.tableaudit.querychilddesktop",
+	"apiChineseName": "迎客松查看小酷宝桌面坑位元数据列表",
+	"description": "迎客松查看小酷宝桌面坑位元数据列表",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "小酷宝桌面坑位查询参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

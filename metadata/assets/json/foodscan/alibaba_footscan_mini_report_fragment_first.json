@@ -1,0 +1,164 @@
+{
+	"name": "alibaba.footscan.mini.report.fragment.first",
+	"apiChineseName": "第一只脚生成报告接口",
+	"description": "第一只脚生成报告接口",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "平台分配的token",
+			"required": true
+		},
+		{
+			"name": "req_data",
+			"type": "FilePackageRequest",
+			"description": "请求数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "relation_type",
+					"type": "Number",
+					"description": "用户关系类型0/本人 1/爱人 2/父母 3/朋友 4/子女 99/他人"
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "1男2女",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市名称"
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "淘宝的nickName"
+				},
+				{
+					"name": "role_id",
+					"type": "String",
+					"description": "角色ID"
+				},
+				{
+					"name": "district_adcode",
+					"type": "String",
+					"description": "区域编码"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1左脚 2右脚",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户唯一标识，可以是淘宝用户Id",
+					"required": true
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "设备系统平台"
+				},
+				{
+					"name": "mobile_brand",
+					"type": "String",
+					"description": "设备品牌"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份名称"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "前8位是日期，后10位是随机字符串",
+					"required": true
+				},
+				{
+					"name": "city_adcode",
+					"type": "String",
+					"description": "城市代码"
+				},
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "国家代码"
+				},
+				{
+					"name": "mobile_model",
+					"type": "String",
+					"description": "手机型号"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区域名称"
+				},
+				{
+					"name": "file_name1",
+					"type": "String",
+					"description": "第一张图片的文件名",
+					"required": true
+				},
+				{
+					"name": "file_name2",
+					"type": "String",
+					"description": "第二张图片的文件名",
+					"required": true
+				},
+				{
+					"name": "file_name3",
+					"type": "String",
+					"description": "第三张图片的文件名",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回i数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "scan_id",
+							"type": "String",
+							"description": "扫描ID",
+							"required": true
+						},
+						{
+							"name": "is_zero",
+							"type": "Boolean",
+							"description": "测量结果为0",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

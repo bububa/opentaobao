@@ -1,0 +1,137 @@
+{
+	"name": "alibaba.ceres.supplier.po.query",
+	"apiChineseName": "采购供应商订单查询接口",
+	"description": "采购供应商订单查询接口",
+	"requestParams": [
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "订单创建日期开始时间",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "订单创建日期结束时间",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "订单状态"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回消息体",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "Value[]",
+					"description": "返回单据消息体List",
+					"required": true,
+					"subParams": [
+						{
+							"name": "po_no",
+							"type": "String",
+							"description": "订单编号",
+							"required": true
+						},
+						{
+							"name": "effect_time",
+							"type": "Date",
+							"description": "订单生效时间",
+							"required": true
+						},
+						{
+							"name": "contract_no",
+							"type": "String",
+							"description": "合同编号",
+							"required": true
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "订单金额",
+							"required": true
+						},
+						{
+							"name": "deliver_amount",
+							"type": "String",
+							"description": "已发货金额",
+							"required": true
+						},
+						{
+							"name": "receive_amount",
+							"type": "String",
+							"description": "已接收金额",
+							"required": true
+						},
+						{
+							"name": "bill_amount",
+							"type": "String",
+							"description": "已开票金额",
+							"required": true
+						},
+						{
+							"name": "to_pay_amount",
+							"type": "String",
+							"description": "已满足付款金额",
+							"required": true
+						},
+						{
+							"name": "payment_amount",
+							"type": "String",
+							"description": "已付款金额",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "begin_date",
+							"type": "String",
+							"description": "开始日期",
+							"required": true
+						},
+						{
+							"name": "end_date",
+							"type": "String",
+							"description": "结束日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否查询成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

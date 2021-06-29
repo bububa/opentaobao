@@ -1,0 +1,89 @@
+{
+	"name": "alibaba.middle.claimsbill.receive",
+	"apiChineseName": "国际化中台服务域接收理赔账单",
+	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔打款的处理后，将该打款结果返回至服务域",
+	"requestParams": [
+		{
+			"name": "claims_bill_dto",
+			"type": "ClaimsBillDto",
+			"description": "理赔账单实体",
+			"subParams": [
+				{
+					"name": "service_work_order_id",
+					"type": "Number",
+					"description": "服务工单ID"
+				},
+				{
+					"name": "report_no",
+					"type": "String",
+					"description": "报案号"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "金额"
+				},
+				{
+					"name": "amount_currency",
+					"type": "String",
+					"description": "币种"
+				},
+				{
+					"name": "payee",
+					"type": "String",
+					"description": "收款账户"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间"
+				},
+				{
+					"name": "extension_map",
+					"type": "Extensionmap",
+					"description": "预留扩展Map",
+					"subParams": [
+						{
+							"name": "extension_map_fir",
+							"type": "String",
+							"description": "预留扩展Map1"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果实体类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统调用结果",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务结果",
+					"required": true
+				},
+				{
+					"name": "repeated",
+					"type": "Boolean",
+					"description": "是否重复",
+					"required": true
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否重试",
+					"required": true
+				}
+			]
+		}
+	]
+}

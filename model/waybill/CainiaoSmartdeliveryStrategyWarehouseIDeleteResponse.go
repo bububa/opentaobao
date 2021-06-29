@@ -19,7 +19,9 @@ type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse struct {
 
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse struct {
     XMLName xml.Name `xml:"cainiao_smartdelivery_strategy_warehouse_i_delete_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // data
     

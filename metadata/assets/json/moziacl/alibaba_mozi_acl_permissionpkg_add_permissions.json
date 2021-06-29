@@ -1,0 +1,101 @@
+{
+	"name": "alibaba.mozi.acl.permissionpkg.add.permissions",
+	"apiChineseName": "权限套餐添加权限",
+	"description": "此接口的功能为：将一批应用下的权限添加到该应用下的权限套餐中",
+	"requestParams": [
+		{
+			"name": "parameters",
+			"type": "UpdatePermissionsToPermissionPackageRequest",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "请求主体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tenant_name",
+							"type": "String",
+							"description": "租户名称，不需要填"
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "租户id",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "账号id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "权限套餐唯一标识",
+					"required": true
+				},
+				{
+					"name": "permission_names",
+					"type": "String[]",
+					"description": "权限唯一标识列表",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求扩展字段，返回数据中扩展字段值与此相同"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UpdatePermissionsToPermissionPackageResult",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回data，此接口此字段返回值为空",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求唯一id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "响应message",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "扩展字段，值与入参扩展字段相同",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应code",
+					"required": true
+				}
+			]
+		}
+	]
+}

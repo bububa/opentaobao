@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.mozi.acl.role.remove",
+	"apiChineseName": "删除角色",
+	"description": "根据传入的角色code、租户id，删除租户内对应的角色",
+	"requestParams": [
+		{
+			"name": "delete_roles_request",
+			"type": "DeleteRolesRequest",
+			"description": "删除角色请求对象",
+			"subParams": [
+				{
+					"name": "names",
+					"type": "String[]",
+					"description": "要删除的角色code列表"
+				},
+				{
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"subParams": [
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "租户id"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "应用管理员accountId"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "无值"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否操作成功,true代表操作成功"
+		},
+		{
+			"name": "mozi_request_id",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "response_message",
+			"type": "String",
+			"description": "如果success不为true，则自此段返回详细的错误信息"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "如果success为true，则返回0，否则此段返回详细的错误code"
+		}
+	]
+}

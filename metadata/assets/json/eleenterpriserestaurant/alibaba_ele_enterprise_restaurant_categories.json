@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.ele.enterprise.restaurant.categories",
+	"apiChineseName": "餐厅分类",
+	"description": "餐厅分类",
+	"responseParams": [
+		{
+			"name": "enterprise_datas",
+			"type": "EnterpriseData []",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "1-餐饮，2-新零售，目前只返回餐饮类目",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "类目id",
+					"required": true
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父级类目id，目前只返回一级类目id，都为0。预留字段，用于今后扩展",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

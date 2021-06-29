@@ -1,0 +1,163 @@
+{
+	"name": "alibaba.it.ap.address.get",
+	"apiChineseName": "getApAddressByMacNew",
+	"description": "根据ap 的mac地址查询ap的结构化位置信息",
+	"requestParams": [
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "签名"
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "语言"
+		},
+		{
+			"name": "app_key_internal",
+			"type": "String",
+			"description": "分配的ak"
+		},
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "ap的mac"
+		},
+		{
+			"name": "timestamp_internal",
+			"type": "Number",
+			"description": "当前时间戳，毫秒"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "ApAddressInfo",
+					"description": "返回的位置结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mac",
+							"type": "String",
+							"description": "ap mac",
+							"required": true
+						},
+						{
+							"name": "ap_name",
+							"type": "String",
+							"description": "ap的名称",
+							"required": true
+						},
+						{
+							"name": "ap_group",
+							"type": "String",
+							"description": "ap所在组名",
+							"required": true
+						},
+						{
+							"name": "ap_nation_name",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "ap_province_name",
+							"type": "String",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "ap_city_name",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "ap_area_name",
+							"type": "String",
+							"description": "区域",
+							"required": true
+						},
+						{
+							"name": "ap_campus_name",
+							"type": "String",
+							"description": "园区/门店",
+							"required": true
+						},
+						{
+							"name": "ap_building_name",
+							"type": "String",
+							"description": "楼栋",
+							"required": true
+						},
+						{
+							"name": "ap_floor",
+							"type": "String",
+							"description": "楼层",
+							"required": true
+						},
+						{
+							"name": "ap_unit_name",
+							"type": "String",
+							"description": "空间单元名称",
+							"required": true
+						},
+						{
+							"name": "ap_unit_id",
+							"type": "Number",
+							"description": "空间单元id",
+							"required": true
+						},
+						{
+							"name": "direction",
+							"type": "String",
+							"description": "方位",
+							"required": true
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "language",
+							"type": "String",
+							"description": "语言",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回的错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回的错误message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

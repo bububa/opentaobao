@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.code.relation.codeantiactive",
+	"apiChineseName": "解除码的关联关系",
+	"description": "解除码的关联关系",
+	"requestParams": [
+		{
+			"name": "top_code",
+			"type": "String",
+			"description": "顶层码",
+			"required": true
+		},
+		{
+			"name": "tb_user_id",
+			"type": "String",
+			"description": "淘宝名",
+			"required": true
+		},
+		{
+			"name": "ent_info_id",
+			"type": "Number",
+			"description": "企业id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "成功失败标记"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "成功失败信息编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "成功失败信息"
+		}
+	]
+}

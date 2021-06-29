@@ -1,0 +1,217 @@
+{
+	"name": "alibaba.campus.space.floor.getbybuildingid",
+	"apiChineseName": "根据楼宇ID获取楼层",
+	"description": "根据楼宇ID获取楼层\nHSF接口名称：com.alibaba.campus.api.space.service.top.FloorApiTopService\nHSF方法名称：getFloorList",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "\"\""
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID"
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "FloorQuery",
+			"description": "楼宇iD封装",
+			"required": true,
+			"subParams": [
+				{
+					"name": "building_id",
+					"type": "Number",
+					"description": "楼宇ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "Floor[]",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_no",
+							"type": "Number",
+							"description": "orderNo",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "description",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "buildingName",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "buildingId",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "campusName",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "campusId",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "companyId",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "楼层编码",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "modifier",
+							"type": "String",
+							"description": "modifier",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "creator",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "isDelete",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "是否启用",
+							"required": true
+						},
+						{
+							"name": "geo_floor_id",
+							"type": "Number",
+							"description": "地图楼层id",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "面积",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,91 @@
+{
+	"name": "alibaba.mos.goods.setprice",
+	"apiChineseName": "价格变更接口",
+	"description": "价格变更接口，供供应商修改价格时使用。",
+	"requestParams": [
+		{
+			"name": "price_dto_list",
+			"type": "PriceDto[]",
+			"description": "价格变更对象列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "专柜id(counter_id和out_counter_id必填一个，如果都填以counter_id为准)"
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "外部专柜id(经过配置后，可以传供应自己的专柜id)"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "供应商商品Id",
+					"required": true
+				},
+				{
+					"name": "standard_price",
+					"type": "String",
+					"description": "商品标准价",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data_s",
+			"type": "PriceResult []",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "如果出错，返回错误信息",
+					"required": true
+				},
+				{
+					"name": "price_dto",
+					"type": "PriceDto",
+					"description": "价格对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "counter_id",
+							"type": "String",
+							"description": "专柜id",
+							"required": true
+						},
+						{
+							"name": "out_counter_id",
+							"type": "String",
+							"description": "外部专柜id",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "外部商品id",
+							"required": true
+						},
+						{
+							"name": "standard_price",
+							"type": "String",
+							"description": "商品标准价",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "单挑成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

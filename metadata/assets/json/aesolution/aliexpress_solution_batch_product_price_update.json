@@ -1,0 +1,148 @@
+{
+	"name": "aliexpress.solution.batch.product.price.update",
+	"apiChineseName": "aliexpress.solution.batch.product.price.update",
+	"description": "batch product price update operation for oversea sellers",
+	"requestParams": [
+		{
+			"name": "mutiple_product_update_list",
+			"type": "SynchronizeProductRequestDto[]",
+			"description": "The product list, in which the price needs to be updated. Maximum length:20",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product id",
+					"required": true
+				},
+				{
+					"name": "multiple_sku_update_list",
+					"type": "SynchronizeSkuRequestDto[]",
+					"description": "The sku list, in which the inventory needs to be updated within the same product id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "price",
+							"type": "String",
+							"description": "price of an sku",
+							"required": true
+						},
+						{
+							"name": "discount_price",
+							"type": "String",
+							"description": "discount_price of an sku. If not set, the discount_price will be erased."
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "multi_country_price_configuration",
+					"type": "MultiCountryPriceConfigurationDto",
+					"description": "multi country price configuration",
+					"subParams": [
+						{
+							"name": "price_type",
+							"type": "String",
+							"description": "Currently supporting only absolute. Please test carefully before uploading products."
+						},
+						{
+							"name": "country_price_list",
+							"type": "SingleCountryPriceDto[]",
+							"description": "Price list for different countries",
+							"subParams": [
+								{
+									"name": "ship_to_country",
+									"type": "String",
+									"description": "Currently supporting RU US CA ES FR UK NL IL BR CL AU UA BY JP TH SG KR ID MY PH VN IT DE SA AE PL TR"
+								},
+								{
+									"name": "sku_price_by_country_list",
+									"type": "SingleSkuPriceByCountryDto[]",
+									"description": "Sku price list under the same ship_to_country",
+									"subParams": [
+										{
+											"name": "sku_code",
+											"type": "String",
+											"description": "sku_code, must existed in  multiple_sku_update_list"
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "Value of price configuration. If the price of a specific country is set, it must be greater than or equal to 70% of the original sku price in multiple_sku_update_list"
+										},
+										{
+											"name": "discount_price",
+											"type": "String",
+											"description": "Value of discount_price for each country"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_error_code",
+			"type": "String",
+			"description": "When success equals false, indicating the error code"
+		},
+		{
+			"name": "update_error_message",
+			"type": "String",
+			"description": "When success equals false, indicating the error message"
+		},
+		{
+			"name": "update_success",
+			"type": "Boolean",
+			"description": "Indicates the update result is successful or not. Only all the products in mutiple_product_update_list have been updated successfully will make the success to be true, otherwise false."
+		},
+		{
+			"name": "update_failed_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update failed list",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error code",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "error message",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product oid",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "update_successful_list",
+			"type": "SynchronizeProductResponseDto []",
+			"description": "update successful list",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "product id",
+					"required": true
+				}
+			]
+		}
+	]
+}

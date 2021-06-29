@@ -1,0 +1,405 @@
+{
+	"name": "yunos.admarket.ad.bid",
+	"apiChineseName": "广告竞价服务",
+	"description": "广告竞价服务",
+	"requestParams": [
+		{
+			"name": "bid_request",
+			"type": "BidRequest",
+			"description": "竞价请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_info",
+					"type": "AppInfo",
+					"description": "应用信息",
+					"subParams": [
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "ssp的app名称"
+						},
+						{
+							"name": "pkg",
+							"type": "String",
+							"description": "ssp的app包名"
+						},
+						{
+							"name": "version_code",
+							"type": "Number",
+							"description": "app版本号"
+						},
+						{
+							"name": "version_name",
+							"type": "String",
+							"description": "app版本名"
+						}
+					]
+				},
+				{
+					"name": "sdk_info",
+					"type": "SdkInfo",
+					"description": "sdk信息",
+					"subParams": [
+						{
+							"name": "version_name",
+							"type": "String",
+							"description": "sdk版本名"
+						},
+						{
+							"name": "version_code",
+							"type": "Number",
+							"description": "sdk版本号"
+						}
+					]
+				},
+				{
+					"name": "device_info",
+					"type": "DeviceInfo",
+					"description": "设备信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "model",
+							"type": "String",
+							"description": "机型"
+						},
+						{
+							"name": "os_version",
+							"type": "String",
+							"description": "操作系统版本"
+						},
+						{
+							"name": "screen_width",
+							"type": "Number",
+							"description": "屏幕分辨率宽度"
+						},
+						{
+							"name": "device_type",
+							"type": "String",
+							"description": "设备类型(OFFLINE_MACHINE/PHONE等)",
+							"required": true
+						},
+						{
+							"name": "vendor",
+							"type": "String",
+							"description": "厂商名称"
+						},
+						{
+							"name": "os_type",
+							"type": "String",
+							"description": "操作系统类型(ANDROID/ALIOS/WINDOWS/IOS)",
+							"required": true
+						},
+						{
+							"name": "client_type",
+							"type": "String",
+							"description": "客户端类型(MULTIPORT_SDK/PHONE_SDK)",
+							"required": true
+						},
+						{
+							"name": "screen_height",
+							"type": "Number",
+							"description": "分辨率高"
+						},
+						{
+							"name": "screen_type",
+							"type": "String",
+							"description": "屏幕类型(VENDING_MACHINE)"
+						}
+					]
+				},
+				{
+					"name": "udid",
+					"type": "Udid",
+					"description": "设备id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "imei",
+							"type": "String",
+							"description": "imei"
+						},
+						{
+							"name": "mac",
+							"type": "String",
+							"description": "mac"
+						},
+						{
+							"name": "android_id",
+							"type": "String",
+							"description": "andorid设备id"
+						},
+						{
+							"name": "umid_token",
+							"type": "String",
+							"description": "umidToken"
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid"
+						},
+						{
+							"name": "serial_num",
+							"type": "String",
+							"description": "设备序列号"
+						},
+						{
+							"name": "sim_sn",
+							"type": "String",
+							"description": "sim序列号"
+						},
+						{
+							"name": "imsi",
+							"type": "String",
+							"description": "设备序列号"
+						},
+						{
+							"name": "utdid",
+							"type": "String",
+							"description": "utdid"
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id"
+						}
+					]
+				},
+				{
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "用户id"
+						},
+						{
+							"name": "info",
+							"description": "补充信息"
+						}
+					]
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "network",
+					"type": "Network",
+					"description": "网络信息",
+					"subParams": [
+						{
+							"name": "cellular_id",
+							"type": "String",
+							"description": "基站id"
+						},
+						{
+							"name": "operator_type",
+							"type": "String",
+							"description": "运营商(UNKNOWN_OPERATOR/CHINA_MOBILE/CHINA_TELECOM/CHINA_UNICOM/OTHER_OPERATOR)"
+						},
+						{
+							"name": "connection_type",
+							"type": "String",
+							"description": "网络类型(CONNECTION_UNKNOWN/CELL_UNKNOWN/CELL_2G/CELL_3G/CELL_4G/CELL_5G/WIFI/ETHERNET/NEW_TYPE)"
+						},
+						{
+							"name": "ip",
+							"type": "String",
+							"description": "ip地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "版本号",
+					"required": true
+				},
+				{
+					"name": "location",
+					"type": "Location",
+					"description": "定位信息",
+					"subParams": [
+						{
+							"name": "coordinate_type",
+							"type": "String",
+							"description": "定位类型(WGS84/GCJ02/BD09)"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度"
+						}
+					]
+				},
+				{
+					"name": "ad_slots",
+					"type": "AdSlot[]",
+					"description": "广告位列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ad_slot_id",
+							"type": "String",
+							"description": "广告位id"
+						},
+						{
+							"name": "query",
+							"description": "查询条件"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "个数"
+						}
+					]
+				},
+				{
+					"name": "batch_id",
+					"type": "String",
+					"description": "批次id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "id",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "result",
+			"type": "BidResponse",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "ad_slots",
+					"type": "AdSlots[]",
+					"description": "广告位列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ad_slot_id",
+							"type": "String",
+							"description": "广告位id",
+							"required": true
+						},
+						{
+							"name": "ads",
+							"type": "Ad[]",
+							"description": "广告集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "template_id",
+									"type": "String",
+									"description": "广告模板id",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格",
+									"required": true
+								},
+								{
+									"name": "adm",
+									"type": "String",
+									"description": "物料",
+									"required": true
+								},
+								{
+									"name": "target",
+									"type": "Target",
+									"description": "广告目标对象",
+									"required": true,
+									"subParams": [
+										{
+											"name": "target_type",
+											"type": "String",
+											"description": "广告目标类型",
+											"required": true
+										},
+										{
+											"name": "target_value",
+											"type": "String",
+											"description": "广告目标值",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "monitor",
+									"type": "Monitor",
+									"description": "监控对象",
+									"required": true,
+									"subParams": [
+										{
+											"name": "view_url_list",
+											"type": "String[]",
+											"description": "曝光地址",
+											"required": true
+										},
+										{
+											"name": "end_play_url_list",
+											"type": "String[]",
+											"description": "结束播放地址",
+											"required": true
+										},
+										{
+											"name": "start_play_url_list",
+											"type": "String[]",
+											"description": "开始播放地址",
+											"required": true
+										},
+										{
+											"name": "click_url_list",
+											"type": "String[]",
+											"description": "点击地址",
+											"required": true
+										},
+										{
+											"name": "event_url_list",
+											"type": "String[]",
+											"description": "事件上报地址",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "响应码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否操作成功"
+		}
+	]
+}

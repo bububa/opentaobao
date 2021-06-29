@@ -1,0 +1,214 @@
+{
+	"name": "alibaba.campus.acl.new.pageuserrole",
+	"apiChineseName": "分页查询管理员",
+	"description": "新增用户和角色的关系",
+	"requestParams": [
+		{
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "appkey",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "users_role_query_param",
+			"type": "UsersRoleQueryParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "role_key",
+					"type": "String",
+					"description": "角色key"
+				},
+				{
+					"name": "app_keys",
+					"type": "String[]",
+					"description": "多应用"
+				},
+				{
+					"name": "return_not_effective",
+					"type": "Boolean",
+					"description": "是否支持有效期"
+				},
+				{
+					"name": "user_ids",
+					"type": "String[]",
+					"description": "用户账号"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "role_name",
+					"type": "String",
+					"description": "角色名称"
+				},
+				{
+					"name": "return_all_user_role",
+					"type": "Boolean",
+					"description": "true,返回用户拥有的所有角色；false 只返回roleId, roleName,roleType,roleKey过滤出来的角色"
+				},
+				{
+					"name": "role_id",
+					"type": "Number",
+					"description": "角色主键id"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "dept_id",
+					"type": "String",
+					"description": "园区id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总计数",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "UserRolesDto[]",
+							"description": "返回内容",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户账号",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "用户名称",
+									"required": true
+								},
+								{
+									"name": "role_list",
+									"type": "SysRoleDto[]",
+									"description": "roleList",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "String",
+											"description": "角色id",
+											"required": true
+										},
+										{
+											"name": "app_key",
+											"type": "String",
+											"description": "appKey",
+											"required": true
+										},
+										{
+											"name": "tenant",
+											"type": "String",
+											"description": "租户",
+											"required": true
+										},
+										{
+											"name": "role_name",
+											"type": "String",
+											"description": "角色名称",
+											"required": true
+										},
+										{
+											"name": "role_desc",
+											"type": "String",
+											"description": "角色描述",
+											"required": true
+										},
+										{
+											"name": "role_key",
+											"type": "String",
+											"description": "角色key",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页码",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

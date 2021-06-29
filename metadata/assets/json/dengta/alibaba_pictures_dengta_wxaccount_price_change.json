@@ -1,0 +1,111 @@
+{
+	"name": "alibaba.pictures.dengta.wxaccount.price.change",
+	"apiChineseName": "微信公众号价格变化通知",
+	"description": "微信公众号推广价格变更通知接口",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "id",
+			"required": true
+		},
+		{
+			"name": "change_time",
+			"type": "String",
+			"description": "变更时间",
+			"required": true
+		},
+		{
+			"name": "single",
+			"type": "String",
+			"description": "单图文"
+		},
+		{
+			"name": "other",
+			"type": "String",
+			"description": "多图文第三条及以后"
+		},
+		{
+			"name": "second",
+			"type": "String",
+			"description": "多图文第二条"
+		},
+		{
+			"name": "first",
+			"type": "String",
+			"description": "多图文第一条"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "账号id"
+		},
+		{
+			"name": "first_ali",
+			"type": "String",
+			"description": "多图文第一条 折后价"
+		},
+		{
+			"name": "second_ali",
+			"type": "String",
+			"description": "多图文第二条 折后价"
+		},
+		{
+			"name": "single_ali",
+			"type": "String",
+			"description": "单图文 折后价"
+		},
+		{
+			"name": "other_ali",
+			"type": "String",
+			"description": "多图文第三条及以后 折后价"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiGeneralResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "ReturnMessage",
+					"description": "message",
+					"required": true,
+					"subParams": [
+						{
+							"name": "dev",
+							"type": "String",
+							"description": "dev",
+							"required": true
+						},
+						{
+							"name": "cust",
+							"type": "String",
+							"description": "cust",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "value",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

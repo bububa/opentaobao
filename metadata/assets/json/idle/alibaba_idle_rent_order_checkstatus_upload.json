@@ -1,0 +1,81 @@
+{
+	"name": "alibaba.idle.rent.order.checkstatus.upload",
+	"apiChineseName": "上传验收结果",
+	"description": "上传验收结果",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "check_result",
+			"type": "CheckResultDto",
+			"description": "校验结果",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "extra_code",
+					"type": "String",
+					"description": "不通过错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否通过",
+					"required": true
+				},
+				{
+					"name": "extra_message",
+					"type": "String",
+					"description": "不通过详细信息"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "sku id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

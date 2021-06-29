@@ -1,0 +1,31 @@
+package alihealth2
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+正大鸡蛋激活追溯码 APIResponse
+alibaba.alihealth.tracecodeplatform.code.active
+
+用于正大鸡蛋激活追溯码
+*/
+type AlibabaAlihealthTracecodeplatformCodeActiveAPIResponse struct {
+    model.CommonResponse
+    AlibabaAlihealthTracecodeplatformCodeActiveResponse
+}
+
+type AlibabaAlihealthTracecodeplatformCodeActiveResponse struct {
+    XMLName xml.Name `xml:"alibaba_alihealth_tracecodeplatform_code_active_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 返回结果
+    
+    Result   *AlibabaAlihealthTracecodeplatformCodeActiveResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

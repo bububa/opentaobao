@@ -1,0 +1,134 @@
+{
+	"name": "tmall.carcenter.vehicle.chasis.insert",
+	"apiChineseName": "EPC车型底盘压缩库新增接口",
+	"description": "EPC车型底盘压缩库新增接口",
+	"requestParams": [
+		{
+			"name": "dto",
+			"type": "ChasisVehicleInfoOriginalDto",
+			"description": "底盘压缩库入参",
+			"subParams": [
+				{
+					"name": "replacement",
+					"type": "String",
+					"description": "换代"
+				},
+				{
+					"name": "end_year",
+					"type": "Number",
+					"description": "停产年份"
+				},
+				{
+					"name": "origin",
+					"type": "String",
+					"description": "产地"
+				},
+				{
+					"name": "productive_year",
+					"type": "Number",
+					"description": "生产年份"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌"
+				},
+				{
+					"name": "max_power",
+					"type": "String",
+					"description": "最大功率"
+				},
+				{
+					"name": "manufacture_name",
+					"type": "String",
+					"description": "厂家"
+				},
+				{
+					"name": "engine_no",
+					"type": "String",
+					"description": "发动机型号"
+				},
+				{
+					"name": "model_name",
+					"type": "String",
+					"description": "车型"
+				},
+				{
+					"name": "fuel_type",
+					"type": "String",
+					"description": "燃料类型"
+				},
+				{
+					"name": "displacement",
+					"type": "String",
+					"description": "排量"
+				},
+				{
+					"name": "drive_model",
+					"type": "String",
+					"description": "驱动方式"
+				},
+				{
+					"name": "chasis_cid",
+					"type": "String",
+					"description": "底盘ID"
+				},
+				{
+					"name": "chassis_num",
+					"type": "String",
+					"description": "底盘号"
+				},
+				{
+					"name": "line_name",
+					"type": "String",
+					"description": "车系"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "gmtCurrentTime",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Json",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "costTime",
+					"required": true
+				}
+			]
+		}
+	]
+}

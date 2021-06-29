@@ -1,0 +1,144 @@
+{
+	"name": "aliexpress.ascp.ro.item.query",
+	"apiChineseName": "AliExpress退供单明细查询API",
+	"description": "AE仓发 单个退供单明细查询",
+	"requestParams": [
+		{
+			"name": "return_order_item_query",
+			"type": "ReturnOrderItemQueryDto",
+			"description": "dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "return_order_no",
+					"type": "String",
+					"description": "退供单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "dto",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "dto",
+					"required": true,
+					"subParams": [
+						{
+							"name": "return_order_no",
+							"type": "String",
+							"description": "退供单号",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品Id",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "退供数量",
+							"required": true
+						},
+						{
+							"name": "return_quantity",
+							"type": "Number",
+							"description": "实际退供数量",
+							"required": true
+						},
+						{
+							"name": "inventory_type_desc",
+							"type": "String",
+							"description": "库存类型",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率",
+							"required": true
+						},
+						{
+							"name": "return_price",
+							"type": "String",
+							"description": "含税退供价，单位分",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "明细总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

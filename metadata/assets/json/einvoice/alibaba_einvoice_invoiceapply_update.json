@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.einvoice.invoiceapply.update",
+	"apiChineseName": "商家开票申请单状态回传",
+	"description": "开票服务商更新商家开票申请单状态",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "申请单id"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "申请单状态：1：待确认，2：开票中，3：拒绝开票，4：发票已发出，0：完成开票"
+		},
+		{
+			"name": "ex_info",
+			"type": "String",
+			"description": "扩展信息,目前用于回传文本及物流消息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "更新结果"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "totalCount"
+		}
+	]
+}

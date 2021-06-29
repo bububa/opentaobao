@@ -1,0 +1,51 @@
+package jipiao
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+敏感信息查询 APIRequest
+taobao.alitrip.buyer.get
+
+针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。
+*/
+type TaobaoAlitripBuyerGetRequest struct {
+    model.Params
+
+    // 敏感信息查询请求参数
+    requestAxb   *RequestAxbDo 
+
+}
+
+func NewTaobaoAlitripBuyerGetRequest() *TaobaoAlitripBuyerGetRequest{
+    return &TaobaoAlitripBuyerGetRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r TaobaoAlitripBuyerGetRequest) GetApiMethodName() string {
+    return "taobao.alitrip.buyer.get"
+}
+
+func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *TaobaoAlitripBuyerGetRequest) SetRequestAxb(requestAxb *RequestAxbDo) error {
+    r.requestAxb = requestAxb
+    r.Set("request_axb", requestAxb)
+    return nil
+}
+
+func (r TaobaoAlitripBuyerGetRequest) GetRequestAxb() *RequestAxbDo {
+    return r.requestAxb
+}
+

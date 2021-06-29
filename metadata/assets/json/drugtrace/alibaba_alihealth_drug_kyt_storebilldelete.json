@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.storebilldelete",
+	"apiChineseName": "零售端单据删除",
+	"description": "零售端单据删除",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "ic_code",
+			"type": "String",
+			"description": "操作人编码",
+			"required": true
+		},
+		{
+			"name": "bill_id",
+			"type": "String",
+			"description": "单据ID",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "String",
+			"description": "单据类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "结果说明"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用信息编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "调用信息描述"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "返回结果"
+		}
+	]
+}

@@ -19,7 +19,9 @@ type TaobaoAppleCardActiveApplyNotifyAPIResponse struct {
 
 type TaobaoAppleCardActiveApplyNotifyResponse struct {
     XMLName xml.Name `xml:"apple_card_active_apply_notify_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 错误码
     

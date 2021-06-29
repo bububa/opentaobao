@@ -1,0 +1,98 @@
+{
+	"name": "taobao.alitrip.ie.agent.ticket.issue",
+	"apiChineseName": "【国际机票】手工出票",
+	"description": "代理商手工出票，并回填票号",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id"
+		},
+		{
+			"name": "issue_ticket_v_o",
+			"type": "IeIssueTicketVO",
+			"description": "出票信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "update_pnr_vos",
+					"type": "IeBookPnrVo[]",
+					"description": "预定订单pnr信息",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "pnr id"
+						},
+						{
+							"name": "pnr_type",
+							"type": "String",
+							"description": "pnr类型"
+						},
+						{
+							"name": "pnr_no",
+							"type": "String",
+							"description": "pnr值"
+						}
+					]
+				},
+				{
+					"name": "passenger_ticket_vos",
+					"type": "IePassengerTicketVO[]",
+					"description": "乘机人票信息",
+					"subParams": [
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘机人姓名（英文）"
+						},
+						{
+							"name": "cert_no",
+							"type": "String",
+							"description": "证件号码",
+							"required": true
+						},
+						{
+							"name": "ticket_nos",
+							"type": "String[]",
+							"description": "票号"
+						},
+						{
+							"name": "cpnr",
+							"type": "String",
+							"description": "代理人pnr"
+						},
+						{
+							"name": "bpnr",
+							"type": "String",
+							"description": "航空公司pnr"
+						},
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "出票渠道，可以填1E、1A、1S、1G、官网、其他"
+						}
+					]
+				},
+				{
+					"name": "book_order_id",
+					"type": "Number",
+					"description": "预定订单id",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "订单备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ticket_success",
+			"type": "Boolean",
+			"description": "回填票号是否成功，true:成功,false：失败"
+		}
+	]
+}

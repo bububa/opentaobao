@@ -1,0 +1,99 @@
+{
+	"name": "taobao.alitrip.axin.trans.pay.register.audit",
+	"apiChineseName": "阿信支付入驻审核通知",
+	"description": "阿信支付入驻审核通知",
+	"requestParams": [
+		{
+			"name": "axin_pay_register_audit_dto",
+			"type": "AxinPayRegisterAuditDto",
+			"description": "支付入驻审核对象",
+			"subParams": [
+				{
+					"name": "audit_result",
+					"type": "Boolean",
+					"description": "审核结果"
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "商户code"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "pay_platform_apply_order",
+					"type": "String",
+					"description": "支付平台入驻申请单号"
+				},
+				{
+					"name": "pay_register_order_no",
+					"type": "String",
+					"description": "支付入驻域申请单号"
+				},
+				{
+					"name": "reject_reason_code",
+					"type": "String",
+					"description": "拒绝原因code"
+				},
+				{
+					"name": "reject_reason_desc",
+					"type": "String",
+					"description": "拒绝原因描述"
+				},
+				{
+					"name": "pay_merchant_code",
+					"type": "String",
+					"description": "支付平台商家编码,smid"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否处理审核结果成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "信息提示",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

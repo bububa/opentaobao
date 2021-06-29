@@ -1,0 +1,453 @@
+{
+	"name": "alibaba.alihealth.drug.upload.extinfo",
+	"apiChineseName": "中药饮片及器械对接",
+	"description": "中药饮片及器械对接",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID",
+			"required": true
+		},
+		{
+			"name": "batch_no",
+			"type": "String",
+			"description": "批次",
+			"required": true
+		},
+		{
+			"name": "ext_info_dto",
+			"type": "ExtInfoDto",
+			"description": "扩展信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "produce_info_dto",
+					"type": "ProduceInfoDto",
+					"description": "生产信息模块",
+					"subParams": [
+						{
+							"name": "produce_batch_no",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "produce_date",
+							"type": "String",
+							"description": "生产日期yyyy-MM-dd"
+						}
+					]
+				},
+				{
+					"name": "seedlings_base_info_dto",
+					"type": "SeedlingsBaseInfoDto",
+					"description": "种源与基地信息",
+					"subParams": [
+						{
+							"name": "base_pictures",
+							"type": "String[]",
+							"description": "基地图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "variety",
+							"type": "String",
+							"description": "品种"
+						},
+						{
+							"name": "breeding_site",
+							"type": "String",
+							"description": "繁殖部位"
+						},
+						{
+							"name": "seedling_source",
+							"type": "String",
+							"description": "种苗来源"
+						},
+						{
+							"name": "geographic_location",
+							"type": "String",
+							"description": "地理区位"
+						},
+						{
+							"name": "base_area",
+							"type": "String",
+							"description": "基地面积"
+						},
+						{
+							"name": "base_location",
+							"type": "String",
+							"description": "基地位置"
+						},
+						{
+							"name": "base_name",
+							"type": "String",
+							"description": "基地名称"
+						},
+						{
+							"name": "base_certification",
+							"type": "RichTextDto",
+							"description": "基地认证（文字+图片）图片建议尺寸：height: 310px;width: 670px;",
+							"subParams": [
+								{
+									"name": "pictures",
+									"type": "String[]",
+									"description": "图片"
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "文字"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "pieces_detection_dto",
+					"type": "PiecesDetectionDto",
+					"description": "饮片检验信息",
+					"subParams": [
+						{
+							"name": "pesticides_detection",
+							"type": "String",
+							"description": "农药残留检测"
+						},
+						{
+							"name": "pieces_harm_detection",
+							"type": "String",
+							"description": "重金属及有害元素检测"
+						},
+						{
+							"name": "aflatoxin_detection",
+							"type": "String",
+							"description": "黄曲霉毒素检测"
+						},
+						{
+							"name": "exec_standard",
+							"type": "String",
+							"description": "饮片执行标准"
+						},
+						{
+							"name": "pieces_pictures",
+							"type": "String[]",
+							"description": "饮片图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "inspection_report_pictures",
+							"type": "String[]",
+							"description": "饮片检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						}
+					]
+				},
+				{
+					"name": "materials_detection_dto",
+					"type": "MaterialsDetectionDto",
+					"description": "药材检验信息",
+					"subParams": [
+						{
+							"name": "pesticides_detection",
+							"type": "String",
+							"description": "农药残留检测"
+						},
+						{
+							"name": "pieces_harm_detection",
+							"type": "String",
+							"description": "重金属及有害元素检测"
+						},
+						{
+							"name": "aflatoxin_detection",
+							"type": "String",
+							"description": "黄曲霉毒素检测"
+						},
+						{
+							"name": "exec_standard",
+							"type": "String",
+							"description": "药材执行标准"
+						},
+						{
+							"name": "materials_batch_no",
+							"type": "String",
+							"description": "药材批号"
+						},
+						{
+							"name": "materials_pictures",
+							"type": "String[]",
+							"description": "药材图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "inspection_report_pictures",
+							"type": "String[]",
+							"description": "药材检验报告书（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						}
+					]
+				},
+				{
+					"name": "purchase_info_dto",
+					"type": "PurchaseInfoDto",
+					"description": "采购管理",
+					"subParams": [
+						{
+							"name": "purchase_date",
+							"type": "String",
+							"description": "采购日期yyyy-MM-dd"
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称"
+						},
+						{
+							"name": "purchase_num",
+							"type": "String",
+							"description": "采购数量"
+						},
+						{
+							"name": "materials_batch_no",
+							"type": "String",
+							"description": "药材批号"
+						},
+						{
+							"name": "purchase_pictures",
+							"type": "String[]",
+							"description": "采购管理图片（上传图片）"
+						}
+					]
+				},
+				{
+					"name": "process_info_dto",
+					"type": "ProcessInfoDto",
+					"description": "产地初加工管理",
+					"subParams": [
+						{
+							"name": "harvest_date",
+							"type": "String",
+							"description": "采收日期yyyy-MM-dd"
+						},
+						{
+							"name": "harvest_position",
+							"type": "String",
+							"description": "采收部位"
+						},
+						{
+							"name": "harvest_num",
+							"type": "String",
+							"description": "采收数量"
+						},
+						{
+							"name": "process_method",
+							"type": "String",
+							"description": "初加工方法"
+						},
+						{
+							"name": "process_machine",
+							"type": "String",
+							"description": "初加工设备"
+						},
+						{
+							"name": "harvest_pictures",
+							"type": "String[]",
+							"description": "产地初加工管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "harvested_plot",
+							"type": "String",
+							"description": "采收地块"
+						}
+					]
+				},
+				{
+					"name": "pieces_produce_info_dto",
+					"type": "PiecesProduceInfoDto",
+					"description": "生产管理",
+					"subParams": [
+						{
+							"name": "production_start_date",
+							"type": "String",
+							"description": "生产开始日期yyyy-MM-dd"
+						},
+						{
+							"name": "package_spec",
+							"type": "String",
+							"description": "包装规格"
+						},
+						{
+							"name": "production_process",
+							"type": "String",
+							"description": "生产工艺"
+						},
+						{
+							"name": "production_sum",
+							"type": "String",
+							"description": "生产数量"
+						},
+						{
+							"name": "production_end_date",
+							"type": "String",
+							"description": "生产结束日期yyyy-MM-dd"
+						},
+						{
+							"name": "packing_material",
+							"type": "String",
+							"description": "包装材质"
+						},
+						{
+							"name": "production_pictures",
+							"type": "String[]",
+							"description": "生产管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						}
+					]
+				},
+				{
+					"name": "warehouse_info_dto",
+					"type": "WarehouseInfoDto",
+					"description": "存储管理",
+					"subParams": [
+						{
+							"name": "warehouse_location",
+							"type": "String",
+							"description": "仓库位置"
+						},
+						{
+							"name": "inbound_date",
+							"type": "String",
+							"description": "入库日期yyyy-MM-dd"
+						},
+						{
+							"name": "inbound_sum",
+							"type": "String",
+							"description": "入库数量"
+						},
+						{
+							"name": "storage_conditions",
+							"type": "String",
+							"description": "保管条件"
+						},
+						{
+							"name": "maintenance_cycle",
+							"type": "String",
+							"description": "养护周期"
+						},
+						{
+							"name": "storage_pictures",
+							"type": "String[]",
+							"description": "存储管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "outbound_sum",
+							"type": "String",
+							"description": "出库数量"
+						},
+						{
+							"name": "outbound_date",
+							"type": "String",
+							"description": "出库日期yyyy-MM-dd"
+						}
+					]
+				},
+				{
+					"name": "planting_info_dto",
+					"type": "PlantingInfoDto",
+					"description": "种植管理",
+					"subParams": [
+						{
+							"name": "planting_area",
+							"type": "String",
+							"description": "种植面积"
+						},
+						{
+							"name": "planting_date",
+							"type": "String",
+							"description": "种植时间yyyy-MM-dd"
+						},
+						{
+							"name": "pesticide_use",
+							"type": "String",
+							"description": "农药使用"
+						},
+						{
+							"name": "biological_regulator",
+							"type": "String",
+							"description": "生物调节剂"
+						},
+						{
+							"name": "soil_type",
+							"type": "String",
+							"description": "土壤类型"
+						},
+						{
+							"name": "planting_pictures",
+							"type": "String[]",
+							"description": "种植管理图片（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "cultivation_mode",
+							"type": "String",
+							"description": "栽培模式"
+						}
+					]
+				},
+				{
+					"name": "ent_info_dto",
+					"type": "EntInfoDto",
+					"description": "企业信息",
+					"subParams": [
+						{
+							"name": "ent_contact",
+							"type": "String",
+							"description": "联系方式"
+						},
+						{
+							"name": "ent_qualification_pictures",
+							"type": "String[]",
+							"description": "企业资质（上传图片）图片建议尺寸：height: 310px;width: 670px;"
+						},
+						{
+							"name": "ent_introduction",
+							"type": "String",
+							"description": "企业介绍"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "编码值",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口响应是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "中文解释",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "业务处理是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

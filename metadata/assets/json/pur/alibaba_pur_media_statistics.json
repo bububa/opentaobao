@@ -1,0 +1,233 @@
+{
+	"name": "alibaba.pur.media.statistics",
+	"apiChineseName": "新媒体统计信息",
+	"description": "清博同步新媒体的统计信息给到采购平台",
+	"requestParams": [
+		{
+			"name": "media_statistics_d_t_o",
+			"type": "MediaStatisticsDto[]",
+			"description": "新媒体统计对象",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "文章摘要"
+				},
+				{
+					"name": "rowno",
+					"type": "String",
+					"description": "榜单排名"
+				},
+				{
+					"name": "top_avg_likenum",
+					"type": "String",
+					"description": "头条点赞数"
+				},
+				{
+					"name": "result_month",
+					"type": "String",
+					"description": "榜单所属月份"
+				},
+				{
+					"name": "rowno_up",
+					"type": "String",
+					"description": "榜单排名变化"
+				},
+				{
+					"name": "avg_comments_num",
+					"type": "String",
+					"description": "平均评论数"
+				},
+				{
+					"name": "ci_up",
+					"type": "String",
+					"description": "榜单指数变化"
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "品类名称"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "文章标题"
+				},
+				{
+					"name": "read_num",
+					"type": "String",
+					"description": "阅读数"
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "昵称"
+				},
+				{
+					"name": "avg_reposts_num",
+					"type": "String",
+					"description": "平均转发数"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称"
+				},
+				{
+					"name": "second_avg_likenum",
+					"type": "String",
+					"description": "次条点赞数"
+				},
+				{
+					"name": "copyright_proportion",
+					"type": "String",
+					"description": "原创比例"
+				},
+				{
+					"name": "post_time",
+					"type": "String",
+					"description": "发布时间"
+				},
+				{
+					"name": "top_avg_readnum",
+					"type": "String",
+					"description": "头条阅读数"
+				},
+				{
+					"name": "reposts_num",
+					"type": "String",
+					"description": "转发数"
+				},
+				{
+					"name": "url_times",
+					"type": "String",
+					"description": "发布次数"
+				},
+				{
+					"name": "category_id",
+					"type": "String",
+					"description": "品类ID"
+				},
+				{
+					"name": "comments_num",
+					"type": "String",
+					"description": "评论数"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "文章地址"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "文章正文"
+				},
+				{
+					"name": "other_avg_readnum",
+					"type": "String",
+					"description": "3-N条阅读数"
+				},
+				{
+					"name": "url_num_more_tenw",
+					"type": "String",
+					"description": "超过10w的文章数"
+				},
+				{
+					"name": "like_num",
+					"type": "String",
+					"description": "好看数"
+				},
+				{
+					"name": "second_avg_readnum",
+					"type": "String",
+					"description": "次条阅读数"
+				},
+				{
+					"name": "ci",
+					"type": "String",
+					"description": "榜单指数"
+				},
+				{
+					"name": "avg_like_num",
+					"type": "String",
+					"description": "平均点赞数"
+				},
+				{
+					"name": "copyright_url_num",
+					"type": "String",
+					"description": "原创发布数"
+				},
+				{
+					"name": "url_num",
+					"type": "String",
+					"description": "发布文章数"
+				},
+				{
+					"name": "types_rowno",
+					"type": "String",
+					"description": "榜单分类排名"
+				},
+				{
+					"name": "avg_read_num",
+					"type": "String",
+					"description": "平均阅读数"
+				},
+				{
+					"name": "article_type",
+					"type": "String",
+					"description": "文章类型"
+				},
+				{
+					"name": "board_type",
+					"type": "String",
+					"description": "榜单类型"
+				},
+				{
+					"name": "statistic_time",
+					"type": "String",
+					"description": "统计时间"
+				},
+				{
+					"name": "post_type",
+					"type": "String",
+					"description": "发布类型"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "获取url的出参",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Json",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

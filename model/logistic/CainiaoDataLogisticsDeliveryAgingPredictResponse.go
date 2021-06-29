@@ -23,7 +23,9 @@ type CainiaoDataLogisticsDeliveryAgingPredictAPIResponse struct {
 
 type CainiaoDataLogisticsDeliveryAgingPredictResponse struct {
     XMLName xml.Name `xml:"cainiao_data_logistics_delivery_aging_predict_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 列表类型返回
     

@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.alihealth.booking.reserve.cancel",
+	"apiChineseName": "取消预约",
+	"description": "消费医疗统一预约平台，ISV取消预约",
+	"requestParams": [
+		{
+			"name": "cancel",
+			"type": "IsvReserveRequest",
+			"description": "cancel",
+			"subParams": [
+				{
+					"name": "reserve_id",
+					"type": "Number",
+					"description": "预约单ID"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID"
+				},
+				{
+					"name": "sp_reserve_id",
+					"type": "String",
+					"description": "isv 预约单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msg_info",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msg_code",
+					"required": true
+				}
+			]
+		}
+	]
+}

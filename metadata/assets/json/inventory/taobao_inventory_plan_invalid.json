@@ -1,0 +1,100 @@
+{
+	"name": "taobao.inventory.plan.invalid",
+	"apiChineseName": "失效计划库存",
+	"description": "计划库存的失效服务",
+	"requestParams": [
+		{
+			"name": "plan_stop_top",
+			"type": "PlanStopTopDto",
+			"description": "计划库存失效入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "品id，前端宝贝id，或者后端货品id",
+					"required": true
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "品的类型，1-前端宝贝，2-后端货品",
+					"required": true
+				},
+				{
+					"name": "plan_detail_list",
+					"type": "PlanStopDetailTopDto[]",
+					"description": "要失效的计划库存的详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "plan_order_id",
+							"type": "String",
+							"description": "外部商家系统单据号，用于生成计划库存的业务来源",
+							"required": true
+						},
+						{
+							"name": "operate_code",
+							"type": "String",
+							"description": "操作码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "设置计划的品的skuid。对于货品，是0.",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BatchResult",
+			"description": "批量返回结果",
+			"subParams": [
+				{
+					"name": "success_result_map",
+					"type": "Json",
+					"description": "成功的结果",
+					"required": true
+				},
+				{
+					"name": "error_result_map",
+					"type": "Json",
+					"description": "失败的结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "有一个失败，整体失败",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "结果码",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "结果id",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "结果描述",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

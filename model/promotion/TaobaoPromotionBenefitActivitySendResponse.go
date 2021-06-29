@@ -19,7 +19,9 @@ type TaobaoPromotionBenefitActivitySendAPIResponse struct {
 
 type TaobaoPromotionBenefitActivitySendResponse struct {
     XMLName xml.Name `xml:"promotion_benefit_activity_send_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 接口调用是否成功
     

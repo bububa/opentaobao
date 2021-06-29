@@ -1,0 +1,88 @@
+{
+	"name": "alibaba.alihouse.newhome.base.label.submit",
+	"apiChineseName": "提交标签库",
+	"description": "提交标签库",
+	"requestParams": [
+		{
+			"name": "labels",
+			"type": "BaseLabelDto[]",
+			"description": "标签列表",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "parent_business",
+					"type": "String",
+					"description": "父级业务"
+				},
+				{
+					"name": "business",
+					"type": "String",
+					"description": "业务"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "分类"
+				},
+				{
+					"name": "label_id",
+					"type": "String",
+					"description": "标签ID"
+				},
+				{
+					"name": "label_name",
+					"type": "String",
+					"description": "标签名称"
+				},
+				{
+					"name": "type_id",
+					"type": "String",
+					"description": "类型ID"
+				},
+				{
+					"name": "business_id",
+					"type": "String",
+					"description": "业务ID"
+				},
+				{
+					"name": "parent_business_id",
+					"type": "String",
+					"description": "父级业务ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

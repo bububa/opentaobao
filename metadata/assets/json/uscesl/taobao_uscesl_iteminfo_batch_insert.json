@@ -1,0 +1,232 @@
+{
+	"name": "taobao.uscesl.iteminfo.batch.insert",
+	"apiChineseName": "按商家批量写入商品接口",
+	"description": "【电子价签】支持按照商家-门店维度批量写入商品数据",
+	"requestParams": [
+		{
+			"name": "item_list",
+			"type": "ItemChangeBo[]",
+			"description": "商品信息集合，限制500",
+			"required": true,
+			"maxListSize": 500,
+			"subParams": [
+				{
+					"name": "source_code",
+					"type": "String",
+					"description": "溯源码URL"
+				},
+				{
+					"name": "price_unit",
+					"type": "String",
+					"description": "销售单位",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌"
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "品类"
+				},
+				{
+					"name": "rank",
+					"type": "String",
+					"description": "等级"
+				},
+				{
+					"name": "suggest_price",
+					"type": "String",
+					"description": "(建议)零售价，单位分，整数"
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "库存sku id"
+				},
+				{
+					"name": "energy_efficiency",
+					"type": "String",
+					"description": "能效"
+				},
+				{
+					"name": "promotion_start",
+					"type": "Date",
+					"description": "优惠开始时间"
+				},
+				{
+					"name": "forest_second_cat_id",
+					"type": "String",
+					"description": "淘系二级商品类目ID"
+				},
+				{
+					"name": "customize_feature_c",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_d",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_e",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_f",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_g",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_h",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_i",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_j",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "item_qr_code",
+					"type": "String",
+					"description": "二维码图片URL"
+				},
+				{
+					"name": "if_promotion",
+					"type": "Boolean",
+					"description": "是否优惠"
+				},
+				{
+					"name": "promotion_end",
+					"type": "Date",
+					"description": "优惠结束时间"
+				},
+				{
+					"name": "extra_attribute",
+					"description": "额外扩展信息"
+				},
+				{
+					"name": "original_price",
+					"type": "String",
+					"description": "原价，分，整数"
+				},
+				{
+					"name": "positon_code",
+					"type": "String",
+					"description": "货架位"
+				},
+				{
+					"name": "customize_feature_b",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "customize_feature_a",
+					"type": "String",
+					"description": "自定义扩展属性"
+				},
+				{
+					"name": "model_num",
+					"type": "String",
+					"description": "型号"
+				},
+				{
+					"name": "sale_spec",
+					"type": "String",
+					"description": "规格"
+				},
+				{
+					"name": "acction_price",
+					"type": "String",
+					"description": "实际销售价格，分，整数"
+				},
+				{
+					"name": "item_bar_code",
+					"type": "String",
+					"description": "商品条码",
+					"required": true
+				},
+				{
+					"name": "member_price",
+					"type": "String",
+					"description": "会员价格，分，整数"
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "promotion_text",
+					"type": "String",
+					"description": "优惠文案"
+				},
+				{
+					"name": "item_status",
+					"type": "Number",
+					"description": "商品状态"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "forest_first_cat_id",
+					"type": "String",
+					"description": "一级商品类目id"
+				},
+				{
+					"name": "short_title",
+					"type": "String",
+					"description": "商品短标题"
+				},
+				{
+					"name": "if_source_code",
+					"type": "Boolean",
+					"description": "是否溯源"
+				},
+				{
+					"name": "production_place",
+					"type": "String",
+					"description": "产地"
+				}
+			]
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家KEY",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

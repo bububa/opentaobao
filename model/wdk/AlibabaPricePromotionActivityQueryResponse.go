@@ -19,7 +19,9 @@ type AlibabaPricePromotionActivityQueryAPIResponse struct {
 
 type AlibabaPricePromotionActivityQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_price_promotion_activity_query_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 接口调用是否成功
     

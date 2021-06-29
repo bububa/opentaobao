@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.footscan.mini.query.mobilereport",
+	"apiChineseName": "根据scanId查询报告",
+	"description": "根据scanId查询报告",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "平台分配的token",
+			"required": true
+		},
+		{
+			"name": "scan_id",
+			"type": "String",
+			"description": "扫描ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回i数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "right_zhiwei",
+							"type": "String",
+							"description": "右脚趾围",
+							"required": true
+						},
+						{
+							"name": "right_fuwei",
+							"type": "String",
+							"description": "右脚跗围",
+							"required": true
+						},
+						{
+							"name": "right_width",
+							"type": "String",
+							"description": "右脚宽",
+							"required": true
+						},
+						{
+							"name": "right_length",
+							"type": "String",
+							"description": "右脚长",
+							"required": true
+						},
+						{
+							"name": "left_zhiwei",
+							"type": "String",
+							"description": "左脚趾围",
+							"required": true
+						},
+						{
+							"name": "left_fuwei",
+							"type": "String",
+							"description": "左脚跗围",
+							"required": true
+						},
+						{
+							"name": "left_width",
+							"type": "String",
+							"description": "左脚宽",
+							"required": true
+						},
+						{
+							"name": "left_length",
+							"type": "String",
+							"description": "左脚长",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

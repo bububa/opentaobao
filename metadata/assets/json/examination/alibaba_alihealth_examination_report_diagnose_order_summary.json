@@ -1,0 +1,143 @@
+{
+	"name": "alibaba.alihealth.examination.report.diagnose.order.summary",
+	"apiChineseName": "体检报告人工解读总结回传",
+	"description": "记录体检报告人工解读总结",
+	"requestParams": [
+		{
+			"name": "report_order_summary_request",
+			"type": "ReportOrderSummaryRequest",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "report_diagnose_message_list",
+					"type": "Reportdiagnosemessagelist[]",
+					"description": "咨询聊天记录",
+					"subParams": [
+						{
+							"name": "send_time",
+							"type": "String",
+							"description": "发送时间"
+						},
+						{
+							"name": "message_media_url",
+							"type": "String",
+							"description": "消息媒体链接"
+						},
+						{
+							"name": "message_type",
+							"type": "String",
+							"description": "消息类型"
+						},
+						{
+							"name": "message_content",
+							"type": "String",
+							"description": "消息文字内容"
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "接收者名称"
+						},
+						{
+							"name": "receiver_id",
+							"type": "String",
+							"description": "接收者ID"
+						},
+						{
+							"name": "sender_name",
+							"type": "String",
+							"description": "发送者名称"
+						},
+						{
+							"name": "sender_id",
+							"type": "String",
+							"description": "发送者ID"
+						},
+						{
+							"name": "seq_no",
+							"type": "String",
+							"description": "序列号"
+						}
+					]
+				},
+				{
+					"name": "abnormal_item_list",
+					"type": "Abnormalitemlist[]",
+					"description": "异常项指标",
+					"subParams": [
+						{
+							"name": "item_detail",
+							"type": "String",
+							"description": "异常项指标名称"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "异常项指标详情"
+						}
+					]
+				},
+				{
+					"name": "re_inspect_item",
+					"type": "String",
+					"description": "建议复查项目"
+				},
+				{
+					"name": "re_inspect_department",
+					"type": "String",
+					"description": "建议复查科室"
+				},
+				{
+					"name": "re_inspect_diseases",
+					"type": "String",
+					"description": "建议复查疾病"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部报告解读ID",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "报告解读ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

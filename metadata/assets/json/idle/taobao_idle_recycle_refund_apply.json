@@ -1,0 +1,84 @@
+{
+	"name": "taobao.idle.recycle.refund.apply",
+	"apiChineseName": "闲鱼回收交易退款申请V2",
+	"description": "回收商买家申请退款",
+	"requestParams": [
+		{
+			"name": "refund_apply",
+			"type": "RecycleRefundTopRequest",
+			"description": "退款申请",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "申请仅退款"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "IdleTopResult",
+			"description": "退款申请结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "RefundBaseDto",
+					"description": "申请结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态",
+							"required": true
+						},
+						{
+							"name": "refund_status_desc",
+							"type": "String",
+							"description": "退款状态描述",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额/分",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

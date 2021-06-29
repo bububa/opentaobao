@@ -1,0 +1,92 @@
+{
+	"name": "yunos.admarket.material.audit",
+	"apiChineseName": "广告平台创意审核",
+	"description": "用于厂商上报广告平台审核结果",
+	"requestParams": [
+		{
+			"name": "ssp_material_audit_result",
+			"type": "SspMaterialAuditResult",
+			"description": "创意审核结果",
+			"required": true,
+			"subParams": [
+				{
+					"name": "reason",
+					"description": "原因"
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "创意id",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "审核结果",
+					"required": true
+				},
+				{
+					"name": "exclude_devices",
+					"type": "ExcludeDevice[]",
+					"description": "排除设备",
+					"subParams": [
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "排他开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "排他结束时间"
+						},
+						{
+							"name": "device_ids",
+							"type": "String[]",
+							"description": "排他设备id"
+						}
+					]
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Json",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "返回状态码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

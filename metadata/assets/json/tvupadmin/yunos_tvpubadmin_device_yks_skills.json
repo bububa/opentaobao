@@ -1,0 +1,129 @@
+{
+	"name": "yunos.tvpubadmin.device.yks.skills",
+	"apiChineseName": "根据设备id获取技能列表",
+	"description": "根据设备id获取技能列表",
+	"requestParams": [
+		{
+			"name": "bot_id",
+			"type": "Number",
+			"description": "设备id"
+		},
+		{
+			"name": "delet_token",
+			"type": "Number",
+			"description": "1234"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页单位"
+		},
+		{
+			"name": "skill_id",
+			"type": "Number",
+			"description": "技能id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "错误吗",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "PageResult",
+					"description": "技能信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "results",
+							"type": "SkillSimpleView[]",
+							"description": "技能列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "skill_id",
+									"type": "Number",
+									"description": "技能id",
+									"required": true
+								},
+								{
+									"name": "image",
+									"type": "String",
+									"description": "图片地址",
+									"required": true
+								},
+								{
+									"name": "bot_skill_id",
+									"type": "Number",
+									"description": "bot技能关系表id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "技能名称",
+									"required": true
+								},
+								{
+									"name": "is_online",
+									"type": "Number",
+									"description": "是否在线",
+									"required": true
+								},
+								{
+									"name": "delete_token",
+									"type": "Number",
+									"description": "上下架",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页单位",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

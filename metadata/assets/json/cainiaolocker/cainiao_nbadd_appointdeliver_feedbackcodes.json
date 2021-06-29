@@ -1,0 +1,41 @@
+{
+	"name": "cainiao.nbadd.appointdeliver.feedbackcodes",
+	"apiChineseName": "服务质量反馈编码列表",
+	"description": "服务质量反馈编码列表，建议获取数据后缓存在本地，定时刷新即可",
+	"responseParams": [
+		{
+			"name": "result_desc",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "result_list",
+			"type": "FeedbackCodeDto []",
+			"description": "返回的具体数据",
+			"subParams": [
+				{
+					"name": "feedback_code",
+					"type": "String",
+					"description": "异常反馈编码",
+					"required": true
+				},
+				{
+					"name": "feedback_desc",
+					"type": "String",
+					"description": "异常反馈编码描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

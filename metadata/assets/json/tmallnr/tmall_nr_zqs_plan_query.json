@@ -1,0 +1,136 @@
+{
+	"name": "tmall.nr.zqs.plan.query",
+	"apiChineseName": "周期送配送明细查询",
+	"description": "周期送配送明细查询",
+	"requestParams": [
+		{
+			"name": "detail_order_id",
+			"type": "Number",
+			"description": "交易子订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "NrZqsPlanRespDto",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "plan_list",
+							"type": "NrZqsPlanDetailInfoDto[]",
+							"description": "planList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sequence_no",
+									"type": "Number",
+									"description": "配送期号",
+									"required": true
+								},
+								{
+									"name": "plan_date",
+									"type": "String",
+									"description": "计划配送时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "num_per_cycle",
+							"type": "Number",
+							"description": "每次配送件数",
+							"required": true
+						},
+						{
+							"name": "pause_ahead_days",
+							"type": "Number",
+							"description": "暂停/退款提前告知的天数",
+							"required": true
+						},
+						{
+							"name": "send_start_time",
+							"type": "String",
+							"description": "配送时间范围，起送时间，只取时分，HH:mm格式",
+							"required": true
+						},
+						{
+							"name": "send_end_time",
+							"type": "String",
+							"description": "配送时间范围，结束时间，只取时分，HH:mm格式",
+							"required": true
+						},
+						{
+							"name": "cycle_days",
+							"type": "Number",
+							"description": "每次配送的周期天数（在cycleType为1时生效，其它时候为空），1表示每天送，2表示隔1天送",
+							"required": true
+						},
+						{
+							"name": "cycle_type",
+							"type": "Number",
+							"description": "配送频率类型:1-隔N天送，2-周末送，3-工作日送",
+							"required": true
+						},
+						{
+							"name": "start_refund_date",
+							"type": "String",
+							"description": "退款开始时间，注意，这个时间当天如果有配送还是会配送的，第二天开始之后的配送会取消",
+							"required": true
+						},
+						{
+							"name": "pause_infos",
+							"type": "NrZqsPauseInfoDto[]",
+							"description": "pauseInfos",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pause_start_day",
+									"type": "String",
+									"description": "暂停开始时间，包含该天",
+									"required": true
+								},
+								{
+									"name": "pause_end_day",
+									"type": "String",
+									"description": "暂停结束时间，包含该天",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "week_day",
+							"type": "Number",
+							"description": "每周几送，在cycle_type=4时生效，其它时候为空， 1表示周日，2表示周一...7表示周六（以周日为每周的第一天）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

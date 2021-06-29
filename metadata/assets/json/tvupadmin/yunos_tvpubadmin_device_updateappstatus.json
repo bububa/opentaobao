@@ -1,0 +1,35 @@
+{
+	"name": "yunos.tvpubadmin.device.updateappstatus",
+	"apiChineseName": "更新应用版本审核状态",
+	"description": "更新应用版本审核状态",
+	"requestParams": [
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "应用ID"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "审核状态"
+		},
+		{
+			"name": "audit_comment",
+			"type": "String",
+			"description": "审核意见"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

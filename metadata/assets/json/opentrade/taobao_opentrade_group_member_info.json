@@ -1,0 +1,34 @@
+{
+	"name": "taobao.opentrade.group.member.info",
+	"apiChineseName": "组团购获取用户参团信息",
+	"description": "组团购场景下，获取用户参团信息",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "团id",
+			"required": true
+		},
+		{
+			"name": "open_user_id",
+			"type": "String",
+			"description": "用户openId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RopGroupMemberInfo",
+			"description": "参团信息",
+			"subParams": [
+				{
+					"name": "pay_status",
+					"type": "Number",
+					"description": "1-未付款，2-已付款，4-已退款，6-交易成功，8-交易关闭",
+					"required": true
+				}
+			]
+		}
+	]
+}

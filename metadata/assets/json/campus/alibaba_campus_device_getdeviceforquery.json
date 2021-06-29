@@ -1,0 +1,137 @@
+{
+	"name": "alibaba.campus.device.getdeviceforquery",
+	"apiChineseName": "下发设备的分页接口(无需AOP控制)",
+	"description": "下发设备的分页接口(发布在TOP上，connect调用，无需AOP控制)",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "DeviceApiQuery",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id"
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "模糊查询关键字"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "设备模板code"
+				},
+				{
+					"name": "campus_id_list",
+					"type": "Number[]",
+					"description": "园区id集合"
+				}
+			]
+		},
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "平台统一参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "可选参数"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "可选参数",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "分页对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "页面大小",
+							"required": true
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "Json[]",
+							"description": "分页结果集合",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

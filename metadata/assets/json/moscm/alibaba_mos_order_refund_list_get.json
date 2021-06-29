@@ -1,0 +1,326 @@
+{
+	"name": "alibaba.mos.order.refund.list.get",
+	"apiChineseName": "批量查询交易退货信息",
+	"description": "批量查询多个退货单的退货明细",
+	"requestParams": [
+		{
+			"name": "rma_criteria",
+			"type": "RmaCriteria",
+			"description": "退换货查询条件",
+			"subParams": [
+				{
+					"name": "order_number",
+					"type": "String",
+					"description": "订单号"
+				},
+				{
+					"name": "rma_numbers",
+					"type": "String[]",
+					"description": "退换货单据号"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "单据创建时间范围：结束时间"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "单据创建时间范围：开始时间"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "单据类型，可选值：退货(\"GOODRETURN\"),换货(\"GOODEXCHANGE\"),仅退款（\"RETURN\"）"
+				},
+				{
+					"name": "status",
+					"type": "String[]",
+					"description": "单据状态，可选值：已创建(\"CREATED\"),已收货同意退款(\"INBOUND\"),已收货不同意退款(\"NOTINBOUND\"),已退款(\"REFUNDED\"),已完成(\"COMPLETED),已作废(\"Obsolete\")"
+				},
+				{
+					"name": "out_counter_id",
+					"type": "String",
+					"description": "供应商专柜Id"
+				},
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "银泰专柜Id"
+				}
+			]
+		},
+		{
+			"name": "paginator",
+			"type": "Paginator",
+			"description": "分页信息",
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页，从1开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页取多少条，每次最多20"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "PagedList",
+					"description": "结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "list",
+							"type": "RmaDTO[]",
+							"description": "列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "express_no",
+									"type": "String",
+									"description": "快递单号",
+									"required": true
+								},
+								{
+									"name": "express_name",
+									"type": "String",
+									"description": "快递公司名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "单据类型，可选值：GOODRETURN（退货）, GOODEXCHANGE（换货）,仅退款（\"RETURN\"）;",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "单据状态，可选值：CREATED(\"已创建\"),  INBOUND(\"已收货同意退款\"),  NOTINBOUND(\"已收货不同意退款\"),REFUNDED(\"已退款\"),COMPLETED(\"已完成\"),Obsolete(\"已作废\");",
+									"required": true
+								},
+								{
+									"name": "last_updated",
+									"type": "Date",
+									"description": "最后更新时间",
+									"required": true
+								},
+								{
+									"name": "refund_date",
+									"type": "Date",
+									"description": "退款时间",
+									"required": true
+								},
+								{
+									"name": "date_created",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "退/换货原因详情",
+									"required": true
+								},
+								{
+									"name": "reason",
+									"type": "String",
+									"description": "退/换货原因",
+									"required": true
+								},
+								{
+									"name": "return_the_way",
+									"type": "String",
+									"description": "商品寄回方式，可选值：RETURNTOSTORE（到店退）, EXPRESSDELIVERY(邮寄退)",
+									"required": true
+								},
+								{
+									"name": "rma_items",
+									"type": "RmaItemDto[]",
+									"description": "商品明细",
+									"required": true,
+									"subParams": [
+										{
+											"name": "product_type",
+											"type": "String",
+											"description": "商品类型,可选值：普通商品(NORMAL),赠品(GIFT)",
+											"required": true
+										},
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "退/换货原因详情",
+											"required": true
+										},
+										{
+											"name": "reason",
+											"type": "String",
+											"description": "退/换货原因",
+											"required": true
+										},
+										{
+											"name": "discount",
+											"type": "String",
+											"description": "折扣金额，单位:元",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "售价，单位:元",
+											"required": true
+										},
+										{
+											"name": "quantity",
+											"type": "String",
+											"description": "数量",
+											"required": true
+										},
+										{
+											"name": "properties",
+											"type": "String",
+											"description": "商品属性",
+											"required": true
+										},
+										{
+											"name": "title",
+											"type": "String",
+											"description": "商品标题",
+											"required": true
+										},
+										{
+											"name": "out_id",
+											"type": "String",
+											"description": "外部商品Id",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "String",
+											"description": "商品Id",
+											"required": true
+										},
+										{
+											"name": "actual_amount",
+											"type": "String",
+											"description": "实付金额，单位:元",
+											"required": true
+										},
+										{
+											"name": "disc_code",
+											"type": "String",
+											"description": "唯一码（仅限西有使用）",
+											"required": true
+										},
+										{
+											"name": "settlement_code",
+											"type": "String",
+											"description": "商品编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "freight",
+									"type": "String",
+									"description": "运费，单位:元",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "金额，单位:元",
+									"required": true
+								},
+								{
+									"name": "order_number",
+									"type": "String",
+									"description": "订单号",
+									"required": true
+								},
+								{
+									"name": "rma_number",
+									"type": "String",
+									"description": "单据号",
+									"required": true
+								},
+								{
+									"name": "refunds",
+									"type": "String",
+									"description": "退款资金信息",
+									"required": true
+								},
+								{
+									"name": "out_counter_id",
+									"type": "String",
+									"description": "供应商专柜Id",
+									"required": true
+								},
+								{
+									"name": "counter_id",
+									"type": "String",
+									"description": "银泰专柜Id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "取多少条",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "sub_msg",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

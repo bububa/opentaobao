@@ -19,7 +19,9 @@ type AlitripItemAddSchemaGetAPIResponse struct {
 
 type AlitripItemAddSchemaGetResponse struct {
     XMLName xml.Name `xml:"alitrip_item_add_schema_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // schema模板数据
     

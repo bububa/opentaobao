@@ -1,0 +1,86 @@
+{
+	"name": "alitrip.car.invoice.confirm",
+	"apiChineseName": "发票确认接口",
+	"description": "飞猪发票回调接口",
+	"requestParams": [
+		{
+			"name": "receipt_do",
+			"type": "ReceiptDo",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "receipt_amount",
+					"type": "Number",
+					"description": "发票金额，单位分"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "业务类型编号（1：?国内机票，2：国际机票，3：火车票，4：汽车票，5：酒店，6：门票度假，7：打车，8：用车，9：套餐，10：欧铁，11：辅营，12：辅营保险）"
+				},
+				{
+					"name": "fail_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "fail_reason",
+					"type": "String",
+					"description": "失败原因.status为0时必填"
+				},
+				{
+					"name": "receipt_url",
+					"type": "String",
+					"description": "发票链接.status为1时需要填"
+				},
+				{
+					"name": "receipt_date_time",
+					"type": "Date",
+					"description": "开票时间"
+				},
+				{
+					"name": "receipt_number",
+					"type": "String",
+					"description": "发票流水号。成功时必填"
+				},
+				{
+					"name": "receipt_status",
+					"type": "Number",
+					"description": "发票状态1成功0失败-1取消订单"
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "供应商编号"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "飞猪订单号"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "供应商订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果对象"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		}
+	]
+}

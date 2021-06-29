@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.icbu.rfq.myequity",
+	"apiChineseName": "我的权益",
+	"description": "查询供应商权益接口",
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "请求返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "EquityPackageDto",
+					"description": "我的权益信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "equity_count",
+							"type": "Number",
+							"description": "剩余权益",
+							"required": true
+						},
+						{
+							"name": "expired_date",
+							"type": "String",
+							"description": "过期时间",
+							"required": true
+						},
+						{
+							"name": "score",
+							"type": "Number",
+							"description": "市场表现分",
+							"required": true
+						},
+						{
+							"name": "beat_supplier_percent",
+							"type": "String",
+							"description": "击败其他供应商百分比",
+							"required": true
+						},
+						{
+							"name": "statistic_start_date",
+							"type": "String",
+							"description": "市场表现分统计开始时间",
+							"required": true
+						},
+						{
+							"name": "statistic_end_date",
+							"type": "String",
+							"description": "市场表现分统计结束时间",
+							"required": true
+						},
+						{
+							"name": "top_service_count",
+							"type": "Number",
+							"description": "剩余置顶报价权益",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

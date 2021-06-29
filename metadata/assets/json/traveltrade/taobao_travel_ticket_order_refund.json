@@ -1,0 +1,31 @@
+{
+	"name": "taobao.travel.ticket.order.refund",
+	"apiChineseName": "飞猪门票退票结果通知",
+	"description": "门票系统商通过TOP接口通知飞猪门票是否退票成功，以及退票数量。",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "下单时订单ID",
+			"required": true
+		},
+		{
+			"name": "refund_status",
+			"type": "Number",
+			"description": "退票结果；1: 退票成功；2: 退票失败",
+			"required": true
+		},
+		{
+			"name": "refund_failure_reason",
+			"type": "String",
+			"description": "退票失败理由"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功返回isSuccess为true"
+		}
+	]
+}

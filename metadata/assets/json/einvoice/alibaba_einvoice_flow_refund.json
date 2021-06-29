@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.einvoice.flow.refund",
+	"apiChineseName": "退订工单(入驻、加盘、续约)",
+	"description": "电子发票工单系统，工单退订能力开放",
+	"requestParams": [
+		{
+			"name": "invoice_flow_refund",
+			"type": "InvoiceFlowRefundDto",
+			"description": "退订请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "退款备注信息"
+				},
+				{
+					"name": "flow_id",
+					"type": "String",
+					"description": "工单id(入驻、续约、加盘)",
+					"required": true
+				},
+				{
+					"name": "platform_code",
+					"type": "String",
+					"description": "业务平台码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "返回参数",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

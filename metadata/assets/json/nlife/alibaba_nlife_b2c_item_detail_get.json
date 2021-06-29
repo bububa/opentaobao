@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.nlife.b2c.item.detail.get",
+	"apiChineseName": "b2c码详情查询",
+	"description": "根据零售+平台生成的唯一码获取对应详情",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "商家入驻门店在零售+平台的ID",
+			"required": true
+		},
+		{
+			"name": "unique_code",
+			"type": "String",
+			"description": "零售+平台生成的唯一码或条码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pic_url",
+			"type": "String",
+			"description": "商品图片链接(线下商品无)"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "商品出售价格"
+		},
+		{
+			"name": "org_price",
+			"type": "String",
+			"description": "商品原价"
+		},
+		{
+			"name": "detail_url",
+			"type": "String",
+			"description": "商品在天猫上的详情页链接(线下商品无"
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "商品ItemId"
+		},
+		{
+			"name": "sku_id",
+			"type": "String",
+			"description": "商品SkuId"
+		},
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "sku级别"
+		},
+		{
+			"name": "unique_code",
+			"type": "String",
+			"description": "零售+平台生成的商品唯一码或条码"
+		},
+		{
+			"name": "brand_id",
+			"type": "String",
+			"description": "入驻天猫的品牌ID(线下商品无"
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "入驻天猫的品牌名称(线下商品无)"
+		},
+		{
+			"name": "supplier_id",
+			"type": "String",
+			"description": "供应商ID"
+		},
+		{
+			"name": "supplier_name",
+			"type": "String",
+			"description": "供应商名称"
+		},
+		{
+			"name": "goods_no",
+			"type": "String",
+			"description": "商品级别"
+		},
+		{
+			"name": "code_changeable",
+			"type": "Boolean",
+			"description": "结算码是否可变"
+		},
+		{
+			"name": "settle_code",
+			"type": "String",
+			"description": "结算码"
+		},
+		{
+			"name": "property",
+			"type": "String",
+			"description": "销售属性"
+		},
+		{
+			"name": "cat_id",
+			"type": "String",
+			"description": "叶子类目ID"
+		},
+		{
+			"name": "cat_name",
+			"type": "String",
+			"description": "叶子类目名称"
+		},
+		{
+			"name": "current_inventory",
+			"type": "String",
+			"description": "当前sku库存"
+		}
+	]
+}

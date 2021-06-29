@@ -15,7 +15,7 @@ type OrderProcessReportRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenOrderprocessReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
     // 备注

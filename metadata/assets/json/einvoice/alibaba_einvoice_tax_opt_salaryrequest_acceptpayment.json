@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.einvoice.tax.opt.salaryrequest.acceptpayment",
+	"apiChineseName": "受理发薪",
+	"description": "发薪受理接口",
+	"requestParams": [
+		{
+			"name": "param_tax_optimization_salary_payment_access_req_d_t_o",
+			"type": "TaxOptimizationSalaryPaymentAccessReqDto",
+			"description": "请求入参",
+			"subParams": [
+				{
+					"name": "account_date",
+					"type": "String",
+					"description": "账期"
+				},
+				{
+					"name": "apply_amount",
+					"type": "String",
+					"description": "发薪金额"
+				},
+				{
+					"name": "business_time",
+					"type": "Date",
+					"description": "业务时间"
+				},
+				{
+					"name": "detail_id_list",
+					"type": "String[]",
+					"description": "发薪明细列表"
+				},
+				{
+					"name": "employer_code",
+					"type": "String",
+					"description": "业务方编码",
+					"required": true
+				},
+				{
+					"name": "identification_in_belonging_employer",
+					"type": "String",
+					"description": "用户在业务方平台的userid"
+				},
+				{
+					"name": "pay_salary_mode",
+					"type": "String",
+					"description": "发薪模式",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaxOptimizationSalaryPaymentAccessResultDto",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "fail_count",
+					"type": "Number",
+					"description": "失败的个数",
+					"required": true
+				},
+				{
+					"name": "processing_count",
+					"type": "Number",
+					"description": "正在处理的个数",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "发薪状态",
+					"required": true
+				},
+				{
+					"name": "success_count",
+					"type": "Number",
+					"description": "成功的个数",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总的发薪个数",
+					"required": true
+				}
+			]
+		}
+	]
+}

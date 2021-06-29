@@ -1,0 +1,210 @@
+{
+	"name": "alibaba.campus.device.openapi.gettemplatelist",
+	"apiChineseName": "查询设备模板",
+	"description": "查询设备模板信息",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "TemplateApiQuery",
+			"description": "设备模板查询对象",
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页大小,限制limit\u003c=500"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "设备模板编码"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "模糊查询模板编码或名称"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "设备模板名称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "设备模板集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "分页大小",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "TemplateApiDto[]",
+							"description": "模板集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "模板id",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "模板编码",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "模板名称",
+									"required": true
+								},
+								{
+									"name": "property_list",
+									"type": "PropertyApiDto[]",
+									"description": "参数点集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "参数点id",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "参数点名称",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "String",
+											"description": "参数点编码",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "参数点类型id",
+											"required": true
+										},
+										{
+											"name": "type_name",
+											"type": "String",
+											"description": "参数点类型名称",
+											"required": true
+										},
+										{
+											"name": "alarm",
+											"type": "Boolean",
+											"description": "是否报警类参数",
+											"required": true
+										},
+										{
+											"name": "value_type",
+											"type": "Number",
+											"description": "值类型id",
+											"required": true
+										},
+										{
+											"name": "value_type_name",
+											"type": "String",
+											"description": "值类型名称",
+											"required": true
+										},
+										{
+											"name": "property_kind",
+											"type": "Number",
+											"description": "元数据id",
+											"required": true
+										},
+										{
+											"name": "property_kind_code",
+											"type": "String",
+											"description": "元数据编码",
+											"required": true
+										},
+										{
+											"name": "control_enum_value",
+											"type": "String",
+											"description": "控制类参数枚举值",
+											"required": true
+										},
+										{
+											"name": "unit_id",
+											"type": "Number",
+											"description": "单位id",
+											"required": true
+										},
+										{
+											"name": "unit_code",
+											"type": "String",
+											"description": "单位编码",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

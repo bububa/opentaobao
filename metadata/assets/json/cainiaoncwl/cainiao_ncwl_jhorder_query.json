@@ -1,0 +1,274 @@
+{
+	"name": "cainiao.ncwl.jhorder.query",
+	"apiChineseName": "农村物流集货单查询接口",
+	"description": "提供给接入商家，查询农村物流集货单",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "JhRequest",
+			"description": "1",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "集单完成时间，查询起点"
+				},
+				{
+					"name": "area_info",
+					"type": "JhAreaInfo",
+					"description": "1",
+					"subParams": [
+						{
+							"name": "provice",
+							"type": "String",
+							"description": "可以指定某个省的集货单"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "可以指定某个省市的集货单"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "可以指定省市区的集货单"
+						}
+					]
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "通常指定已集货状态；指定状态查询，不指定返回所有；CONSOLIDATED 已集货;CONSIGNED 已发货;INBOUND 县仓入库;LACK 缺货LACK"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "查询第几页，起点1"
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "淘宝item_id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "一页查询多少数据，最大100"
+				},
+				{
+					"name": "order_code_list",
+					"type": "String",
+					"description": "可以指定集货号查询，此时其他条件忽略；最大指定5条，逗号分隔；"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "集单完成时间，查询尾点；尾点有起点不能超过7天；起点不能是一年以前；"
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "淘宝skuId"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总结果记录数"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "翻页查询当前返回页数；指定集货号时无效；"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "jh_order_list",
+			"type": "JhOrder []",
+			"description": "查询获得的集货单列表",
+			"subParams": [
+				{
+					"name": "begin_time",
+					"type": "Date",
+					"description": "此集货单集货开始时间",
+					"required": true
+				},
+				{
+					"name": "finish_time",
+					"type": "Date",
+					"description": "此集货单集货停止时间",
+					"required": true
+				},
+				{
+					"name": "item_info_list",
+					"type": "JhItemInfo[]",
+					"description": "此集货单商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "outer_item_id",
+							"type": "String",
+							"description": "外部编号，即商家商品编号",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "tb_item_id",
+							"type": "Number",
+							"description": "淘系商品号",
+							"required": true
+						},
+						{
+							"name": "tb_sku_id",
+							"type": "Number",
+							"description": "淘系skuid",
+							"required": true
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "体积，单位，立方分米",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重量，单位，克",
+							"required": true
+						},
+						{
+							"name": "pacakge_rule",
+							"type": "String",
+							"description": "预留字段，活动报名时候配置的，根据包装与包含了几个售卖单位；商家内部有维护，以公司内部为准；",
+							"required": true
+						},
+						{
+							"name": "sell_rule",
+							"type": "String",
+							"description": "预留字段，售卖1件相当于几个东西；如果销售商品售卖规则与商家内部规则一致，可以不使用这个字段；",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "jh_receiver_info",
+					"type": "JhReceiverInfo",
+					"description": "收货信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货城市",
+							"required": true
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "收货县或者区",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货省",
+							"required": true
+						},
+						{
+							"name": "receiver_address",
+							"type": "String",
+							"description": "收货明细地址",
+							"required": true
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "收货手机号",
+							"required": true
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收货姓名",
+							"required": true
+						},
+						{
+							"name": "receiver_phone",
+							"type": "String",
+							"description": "收货电话",
+							"required": true
+						},
+						{
+							"name": "receiver_zip",
+							"type": "String",
+							"description": "收货邮编",
+							"required": true
+						},
+						{
+							"name": "street",
+							"type": "String",
+							"description": "收货镇或者街区",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "集货单号",
+					"required": true
+				},
+				{
+					"name": "original_order",
+					"type": "String",
+					"description": "补货原主单号",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "集货单状态，CONSOLIDATED 已集货;CONSIGNED 已发货;INBOUND 县仓入库;LACK 缺货LACK",
+					"required": true
+				},
+				{
+					"name": "jh_fee",
+					"type": "JhFee",
+					"description": "预留字段，本集包费用，单位分",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_logistic_fee",
+							"type": "Number",
+							"description": "预留字段，总计金额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "replenish_flag",
+					"type": "Boolean",
+					"description": "是否是补货",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,263 @@
+{
+	"name": "taobao.fivee.innerproduct.publish",
+	"apiChineseName": "国产商品发布",
+	"description": "资质共享平台国产商品发布",
+	"requestParams": [
+		{
+			"name": "param_bucode",
+			"type": "String",
+			"description": "bu身份标识",
+			"required": true
+		},
+		{
+			"name": "param_inner_product",
+			"type": "InnerProduct",
+			"description": "国产商品",
+			"required": true,
+			"subParams": [
+				{
+					"name": "auth_code",
+					"type": "String",
+					"description": "批次或备案证书编号"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "条形码",
+					"required": true
+				},
+				{
+					"name": "licences",
+					"type": "Licence[]",
+					"description": "证照信息",
+					"subParams": [
+						{
+							"name": "certification_body",
+							"type": "String",
+							"description": "认证机构"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "编码",
+							"required": true
+						},
+						{
+							"name": "due_date",
+							"type": "Date",
+							"description": "到期日期"
+						},
+						{
+							"name": "effective_date",
+							"type": "Date",
+							"description": "生效日期"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "证照名称",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型",
+							"required": true
+						},
+						{
+							"name": "urls",
+							"type": "String[]",
+							"description": "下载地址列表"
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称",
+					"required": true
+				},
+				{
+					"name": "produce_companies",
+					"type": "Company[]",
+					"description": "生产商信息",
+					"subParams": [
+						{
+							"name": "established_date",
+							"type": "Date",
+							"description": "成立时间"
+						},
+						{
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息",
+							"subParams": [
+								{
+									"name": "certification_body",
+									"type": "String",
+									"description": "认证机构"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "编码",
+									"required": true
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "到期日期",
+									"required": true
+								},
+								{
+									"name": "effective_date",
+									"type": "Date",
+									"description": "生效日期",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "证照名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "urls",
+									"type": "String[]",
+									"description": "下载地址列表"
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "registered_capital",
+							"type": "String",
+							"description": "注册资本"
+						},
+						{
+							"name": "unique_code",
+							"type": "String",
+							"description": "统一社会信用代码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "provider_companies",
+					"type": "Company[]",
+					"description": "供应商信息",
+					"subParams": [
+						{
+							"name": "established_date",
+							"type": "Date",
+							"description": "成立时间"
+						},
+						{
+							"name": "licences",
+							"type": "Licence[]",
+							"description": "证照信息",
+							"subParams": [
+								{
+									"name": "certification_body",
+									"type": "String",
+									"description": "认证机构"
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "编码",
+									"required": true
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "到期日期"
+								},
+								{
+									"name": "effective_date",
+									"type": "Date",
+									"description": "生效日期"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "证照名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "urls",
+									"type": "String[]",
+									"description": "下载地址列表"
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "registered_capital",
+							"type": "String",
+							"description": "注册资本"
+						},
+						{
+							"name": "unique_code",
+							"type": "String",
+							"description": "统一社会信用代码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "inner_code",
+					"type": "String",
+					"description": "各业务方内部编号（例如RT的内部货号）"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "业务方备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code_t",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回素材id"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "success_t",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

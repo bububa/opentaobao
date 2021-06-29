@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.idle.recycle.order.perform",
+	"apiChineseName": "回收订单履约V2",
+	"description": "闲鱼回收业务中,外部服务商作为买家 需要驱动交易节点变化",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "RecycleOrderSynDto",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "attribute",
+					"type": "Attribute",
+					"description": "拓展属性",
+					"subParams": [
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "order_status=103时候填写 关闭原因"
+						},
+						{
+							"name": "confirm_fee",
+							"type": "String",
+							"description": "order_status=3时候填写 代表质检后的最终价格单位分,注意如果质检后商品无价值也不能填0,需要至少填写1分钱"
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "order_status=2时候填写快递公司运单号"
+						},
+						{
+							"name": "rate_grade",
+							"type": "String",
+							"description": "order_status=7时候填写 1：好评 2：中评"
+						},
+						{
+							"name": "rate_content",
+							"type": "String",
+							"description": "order_status=7时候填写"
+						}
+					]
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "交易订单号",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "2:已上门取件 3:已质检 4:卖家确认交易完成 6:卖家订单已评价 7:回收商订单已评价 9:回收商主动付款（预留节点,解决服务商资金压力\u0026黑名单策略） 103:回收商关闭订单（关闭未付款订单） 105:信用订单用户线下还款后需要订正芝麻履约单状态为已取消",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "成功"
+		}
+	]
+}

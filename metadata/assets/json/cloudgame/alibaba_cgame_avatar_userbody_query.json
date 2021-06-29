@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.cgame.avatar.userbody.query",
+	"apiChineseName": "用户Avatar body查询",
+	"description": "Avatar用户body数据查询",
+	"requestParams": [
+		{
+			"name": "mix_user_id",
+			"type": "String",
+			"description": "查询数据所属用户的mixUserId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "响应数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "trace_id",
+							"type": "String",
+							"description": "body traceID",
+							"required": true
+						},
+						{
+							"name": "face_data_json",
+							"type": "String",
+							"description": "脸部数据",
+							"required": true
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "性别， 1-male, 2-female",
+							"required": true
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "请求唯一标识ID",
+							"required": true
+						},
+						{
+							"name": "mix_user_id",
+							"type": "String",
+							"description": "用户mixUserId",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展数据",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				}
+			]
+		}
+	]
+}

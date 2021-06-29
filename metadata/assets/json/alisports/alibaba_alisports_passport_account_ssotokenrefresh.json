@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.alisports.passport.account.ssotokenrefresh",
+	"apiChineseName": "sso_token刷新",
+	"description": "sso_token刷新",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "当前时间戳[精确到秒,10位]",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "secret",
+			"type": "String",
+			"description": "登录成功返回的access_token(access_token是TOP保留关键字，只能改名，望谅解)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_data",
+			"type": "AlispData",
+			"description": "alisp_data",
+			"subParams": [
+				{
+					"name": "sso_token",
+					"type": "String",
+					"description": "sso_token",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "alisp_code",
+			"type": "String",
+			"description": "状态码 200表示操作成功"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "提示信息"
+		}
+	]
+}

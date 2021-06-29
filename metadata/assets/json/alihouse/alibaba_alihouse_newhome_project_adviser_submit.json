@@ -1,0 +1,138 @@
+{
+	"name": "alibaba.alihouse.newhome.project.adviser.submit",
+	"apiChineseName": "提交楼盘顾问",
+	"description": "提交楼盘顾问",
+	"requestParams": [
+		{
+			"name": "advisers",
+			"type": "ProjectAdviserDto[]",
+			"description": "顾问列表",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "sort",
+					"type": "Number",
+					"description": "排序"
+				},
+				{
+					"name": "outer_company_id",
+					"type": "String",
+					"description": "公司ID"
+				},
+				{
+					"name": "outer_shop_id",
+					"type": "String",
+					"description": "门店ID"
+				},
+				{
+					"name": "shop_name",
+					"type": "String",
+					"description": "门店名称"
+				},
+				{
+					"name": "company_short_name",
+					"type": "String",
+					"description": "公司简称"
+				},
+				{
+					"name": "tags",
+					"type": "String[]",
+					"description": "中文标签"
+				},
+				{
+					"name": "work_year",
+					"type": "Number",
+					"description": "工作年限"
+				},
+				{
+					"name": "company",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态：0无效，1有效"
+				},
+				{
+					"name": "role",
+					"type": "Number",
+					"description": "默认0，1内场顾问，2外场分销"
+				},
+				{
+					"name": "sub_phone",
+					"type": "String",
+					"description": "400分机号/虚拟号"
+				},
+				{
+					"name": "main_phone",
+					"type": "String",
+					"description": "主机号"
+				},
+				{
+					"name": "head_url",
+					"type": "String",
+					"description": "头像图片"
+				},
+				{
+					"name": "adviser_user_name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型 1-置业顾问 2-小区专家 3-经纪人"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部楼盘ID"
+				},
+				{
+					"name": "outer_consultant_id",
+					"type": "String",
+					"description": "顾问id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回素材id",
+					"required": true
+				}
+			]
+		}
+	]
+}

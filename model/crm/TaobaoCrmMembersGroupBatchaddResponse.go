@@ -19,7 +19,9 @@ type TaobaoCrmMembersGroupBatchaddAPIResponse struct {
 
 type TaobaoCrmMembersGroupBatchaddResponse struct {
     XMLName xml.Name `xml:"crm_members_group_batchadd_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 添加操作是否成功
     

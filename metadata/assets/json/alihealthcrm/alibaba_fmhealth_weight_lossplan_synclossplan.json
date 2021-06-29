@@ -1,0 +1,103 @@
+{
+	"name": "alibaba.fmhealth.weight.lossplan.synclossplan",
+	"apiChineseName": "减重计划--同步减重计划",
+	"description": "减重计划--三方同步用户初始化减重计划给我们",
+	"requestParams": [
+		{
+			"name": "tp_user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "gender",
+			"type": "Number",
+			"description": "性别0女 1男",
+			"required": true
+		},
+		{
+			"name": "birthday",
+			"type": "String",
+			"description": "生日",
+			"required": true
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "身高170 即一米七",
+			"required": true
+		},
+		{
+			"name": "weight",
+			"type": "String",
+			"description": "当前体重（今天的体重），单位kg",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "0创建减肥计划调用；1修改调用；",
+			"required": true
+		},
+		{
+			"name": "body_age",
+			"type": "Number",
+			"description": "体年龄",
+			"required": true
+		},
+		{
+			"name": "finish_date",
+			"type": "String",
+			"description": "完成时间"
+		},
+		{
+			"name": "loss_per_week",
+			"type": "String",
+			"description": "每周减重"
+		},
+		{
+			"name": "weight_goal",
+			"type": "String",
+			"description": "目标体重"
+		},
+		{
+			"name": "loss_level",
+			"type": "Number",
+			"description": "减重类型0保持 1减肥",
+			"required": true
+		},
+		{
+			"name": "total_calorie",
+			"type": "Number",
+			"description": "每日可以摄入的标准总量",
+			"required": true
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "减重计划开始时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

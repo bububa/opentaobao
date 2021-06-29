@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.ib.shenjing.visitor.pad.getqrcodelink",
+	"apiChineseName": "pad获取二维码",
+	"description": "pad获取二维码链接。扫码录入人脸。",
+	"requestParams": [
+		{
+			"name": "term_id",
+			"type": "String",
+			"description": "终端id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "内容"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result_level",
+			"type": "String",
+			"description": "等级"
+		},
+		{
+			"name": "result_request_id",
+			"type": "String",
+			"description": "request_id"
+		}
+	]
+}

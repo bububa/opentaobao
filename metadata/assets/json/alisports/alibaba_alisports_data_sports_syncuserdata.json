@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.alisports.data.sports.syncuserdata",
+	"apiChineseName": "阿里体育数据中心用户个人信息同步接口",
+	"description": "阿里体育数据中心用户个人信息同步接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "metabolize",
+			"type": "String",
+			"description": "基础代谢率"
+		},
+		{
+			"name": "protein",
+			"type": "String",
+			"description": "蛋白质含量"
+		},
+		{
+			"name": "bone",
+			"type": "String",
+			"description": "骨量"
+		},
+		{
+			"name": "water",
+			"type": "String",
+			"description": "水分率"
+		},
+		{
+			"name": "muscle",
+			"type": "String",
+			"description": "肌肉率"
+		},
+		{
+			"name": "fat",
+			"type": "String",
+			"description": "体脂率"
+		},
+		{
+			"name": "heart_rate",
+			"type": "Number",
+			"description": "静息心率，单位：次/每分"
+		},
+		{
+			"name": "weight",
+			"type": "String",
+			"description": "体重，单位kg"
+		},
+		{
+			"name": "height",
+			"type": "String",
+			"description": "身高，单位m"
+		},
+		{
+			"name": "age",
+			"type": "Number",
+			"description": "年龄"
+		},
+		{
+			"name": "data_id",
+			"type": "String",
+			"description": "三方主键id，唯一标识数据",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "接口签名",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "日期 格式：y-m-d h:i:s",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		}
+	]
+}

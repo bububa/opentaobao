@@ -1,0 +1,96 @@
+{
+	"name": "taobao.opentrade.queue.query",
+	"apiChineseName": "尖货交易排队信息查询",
+	"description": "尖货交易排队信息查询",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "排队用户状态，新用户为NEW"
+		},
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "排队商品SKU ID，不存在传0"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "排队商品ID",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数，每页大小",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "分页参数，当前页，以0开始",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "String",
+			"description": "总记录数"
+		},
+		{
+			"name": "results",
+			"type": "McUserDto []",
+			"description": "返回的排队用户数据",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "用户状态",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "排队活动ID",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"type": "String",
+					"description": "排队传入的扩展信息",
+					"required": true
+				},
+				{
+					"name": "quality",
+					"type": "Number",
+					"description": "排队商品数量",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "排队商品SKU ID",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "排队商品ID",
+					"required": true
+				},
+				{
+					"name": "user_open_id",
+					"type": "String",
+					"description": "用户openId",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"name": "taobao.omniitem.category.get",
+	"apiChineseName": "全渠道商品轻发布类目信息",
+	"description": "全渠道商品轻发布类目信息",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "全渠道商品类目ID，不填表示获取所有全渠道商品类目信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "OmniItemCategoryDto[]",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "类目名称",
+							"required": true
+						},
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "类目cid",
+							"required": true
+						},
+						{
+							"name": "props",
+							"type": "OmniItemCategoryPropDto[]",
+							"description": "props",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "销售属性名称",
+									"required": true
+								},
+								{
+									"name": "pid",
+									"type": "Number",
+									"description": "pid",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

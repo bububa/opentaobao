@@ -1,0 +1,217 @@
+{
+	"name": "alibaba.campus.space.getbyids",
+	"apiChineseName": "根据ids和类型查询空间列表",
+	"description": "根据ids和类型查询空间列表",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "上下文",
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "query",
+			"type": "SpaceIdsQuery",
+			"description": "查询条件",
+			"subParams": [
+				{
+					"name": "space_type",
+					"type": "String",
+					"description": "building/floor",
+					"required": true
+				},
+				{
+					"name": "ids",
+					"type": "Number[]",
+					"description": "ids",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "外卖订单查询结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "contents",
+					"type": "Content[]",
+					"description": "空间实体列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "面积",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "order_no",
+							"type": "Number",
+							"description": "排序号",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code",
+							"required": true
+						},
+						{
+							"name": "space_type",
+							"type": "String",
+							"description": "类型",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名称",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "modifier",
+							"type": "String",
+							"description": "修改人",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "geo_floor_id",
+							"type": "Number",
+							"description": "地图楼层id",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "楼宇id",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "楼层id",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "楼宇名称",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "公司id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

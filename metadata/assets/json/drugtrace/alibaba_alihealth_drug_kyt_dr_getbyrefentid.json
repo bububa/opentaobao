@@ -1,0 +1,162 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.dr.getbyrefentid",
+	"apiChineseName": "多融通过一个企业唯一标识查询企业详细信息",
+	"description": "根据企业唯一标识查看企业详细信息",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "接口调用企业的唯一标识（接口调用者）",
+			"required": true
+		},
+		{
+			"name": "dest_ref_ent_id",
+			"type": "String",
+			"description": "准备要查询的企业唯一标识（返回该唯一标识企业的详细信息）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "PUserEntInfoDto",
+					"description": "返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ent_id",
+							"type": "String",
+							"description": "企业id",
+							"required": true
+						},
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "企业唯一标识",
+							"required": true
+						},
+						{
+							"name": "is_network",
+							"type": "String",
+							"description": "是否入网",
+							"required": true
+						},
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "direct_manage",
+							"type": "String",
+							"description": "所属管理机构",
+							"required": true
+						},
+						{
+							"name": "legal_org_flag",
+							"type": "String",
+							"description": "是否法人",
+							"required": true
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "机构代码",
+							"required": true
+						},
+						{
+							"name": "reg_region_code",
+							"type": "String",
+							"description": "注册地编码",
+							"required": true
+						},
+						{
+							"name": "reg_region_detail",
+							"type": "String",
+							"description": "注册地明细",
+							"required": true
+						},
+						{
+							"name": "dict_region_code",
+							"type": "String",
+							"description": "所在地编码",
+							"required": true
+						},
+						{
+							"name": "dict_region_detail",
+							"type": "String",
+							"description": "所在地明细",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态1.使用中0.已废除",
+							"required": true
+						},
+						{
+							"name": "user_role_type_str",
+							"type": "String",
+							"description": "企业类型",
+							"required": true
+						},
+						{
+							"name": "user_role_type",
+							"type": "String",
+							"description": "企业类型编码",
+							"required": true
+						},
+						{
+							"name": "ent_org_type",
+							"type": "String",
+							"description": "企业机构详细类别",
+							"required": true
+						},
+						{
+							"name": "prov_name",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "县",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否响应成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,167 @@
+{
+	"name": "alibaba.ascp.aic.supplier.aicinventory.publish",
+	"apiChineseName": "商家仓操作aic库存发布服务",
+	"description": "商家调用这个接口来发布增加库存数据",
+	"requestParams": [
+		{
+			"name": "aic_inventory_publish_request",
+			"type": "Aicinventorypublishrequest",
+			"description": "库存发布请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "inventory_main_operation",
+					"type": "Inventorymainoperation[]",
+					"description": "库存发布请求参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "detail_operation_list",
+							"type": "Detailoperationlist[]",
+							"description": "子单操作明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item",
+									"type": "Item",
+									"description": "货品信息",
+									"subParams": [
+										{
+											"name": "sc_item_id",
+											"type": "Number",
+											"description": "后端货品 ID"
+										},
+										{
+											"name": "outer_id",
+											"type": "String",
+											"description": "商家编码字段"
+										}
+									]
+								},
+								{
+									"name": "location",
+									"type": "Location",
+									"description": "位置信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "store_code",
+											"type": "String",
+											"description": "仓库编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "detail_order",
+									"type": "Detailorder",
+									"description": "操作子单",
+									"required": true,
+									"subParams": [
+										{
+											"name": "operation_detail_order_id",
+											"type": "String",
+											"description": "实际操作子单id(例如:ICP子单,,UDP子单)",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "inventory_line_list",
+									"type": "Inventorylinelist[]",
+									"description": "库存行操作明细",
+									"required": true,
+									"subParams": [
+										{
+											"name": "inventory_line",
+											"type": "Inventoryline",
+											"description": "在库库存操作行对象",
+											"required": true,
+											"subParams": [
+												{
+													"name": "quantity",
+													"type": "Number",
+													"description": "库存数量",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "additional_info",
+									"type": "Additionalinfo",
+									"description": "附加信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "attribute",
+											"type": "Attribute",
+											"description": "附加熟悉字段",
+											"required": true,
+											"subParams": [
+												{
+													"name": "supplier_id",
+													"type": "String",
+													"description": "供应商id",
+													"required": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "main_order",
+							"type": "Mainorder",
+							"description": "操作主单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "operation_order_id",
+									"type": "String",
+									"description": "操作id",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "Number",
+									"description": "商家Uic_id",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "aic_inventory_publish_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误原因",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "alibaba.lst.branddatashare.suppliers.list.query",
+	"apiChineseName": "品牌数据授权的供应商列表",
+	"description": "品牌商查询品牌数据授权的供应商列表",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "LstBmSupplierQuery",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content_list",
+			"type": "Content []",
+			"description": "返回值列表",
+			"subParams": [
+				{
+					"name": "brand_name_list",
+					"type": "String[]",
+					"description": "品牌名称列表",
+					"required": true
+				},
+				{
+					"name": "supplier_member_id",
+					"type": "String",
+					"description": "供应商memberId",
+					"required": true
+				}
+			]
+		}
+	]
+}

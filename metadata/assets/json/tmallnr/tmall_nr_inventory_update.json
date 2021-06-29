@@ -1,0 +1,176 @@
+{
+	"name": "tmall.nr.inventory.update",
+	"apiChineseName": "门店业务同步库存",
+	"description": "用于商家每日同步更新门店库存",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "NrInventoryUpdateReqDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "check_mode",
+					"type": "Number",
+					"description": "1表示全量，2表示增量"
+				},
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "商家的sellerID，如果是零售商需要给品牌的sellerId"
+				},
+				{
+					"name": "detail_list",
+					"type": "NrInventoryCheckDetailDto[]",
+					"description": "更新库存的列表值",
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量"
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "商家的商品编码"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "淘宝后端商品的id号"
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "幂等值"
+						}
+					]
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "定时送dss，jsd极速达"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "幂等值"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "门店编号"
+				},
+				{
+					"name": "store_type",
+					"type": "Number",
+					"description": "默认为6：门店库存，2：电商库存"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "InventoryUpdateRespDto",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success_inventorys",
+							"type": "NrInventoryCheckDetailDto[]",
+							"description": "返回成功的库存记录数",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "商家商品编码",
+									"required": true
+								},
+								{
+									"name": "sub_order_id",
+									"type": "String",
+									"description": "幂等值",
+									"required": true
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "后端商品的Id号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "fail_inventorys",
+							"type": "NrInventoryCheckDetailDto[]",
+							"description": "失败的库存更新记录",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sub_order_id",
+									"type": "String",
+									"description": "幂等值",
+									"required": true
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "后端商品的Id号",
+									"required": true
+								},
+								{
+									"name": "sc_item_code",
+									"type": "String",
+									"description": "商家商品编码",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "更新错误信息提示",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "更新错误code",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "废弃，请使用succ",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

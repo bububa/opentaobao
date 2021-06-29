@@ -1,0 +1,118 @@
+{
+	"name": "alibaba.alihouse.newhome.region.sync",
+	"apiChineseName": "城区数据同步",
+	"description": "城区数据同步",
+	"requestParams": [
+		{
+			"name": "base_region_dto",
+			"type": "BaseRegionDto",
+			"description": "城区数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "fencing",
+					"type": "String",
+					"description": "高德围栏",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称全称",
+					"required": true
+				},
+				{
+					"name": "gaode_latitude",
+					"type": "String",
+					"description": "高德中心纬度",
+					"required": true
+				},
+				{
+					"name": "gaode_longitude",
+					"type": "String",
+					"description": "高德中心经度",
+					"required": true
+				},
+				{
+					"name": "name_simple",
+					"type": "String",
+					"description": "名称简称",
+					"required": true
+				},
+				{
+					"name": "name_pinyin",
+					"type": "String",
+					"description": "名称拼音全字母",
+					"required": true
+				},
+				{
+					"name": "name_pinyin_simple",
+					"type": "String",
+					"description": "名称拼音首字母",
+					"required": true
+				},
+				{
+					"name": "region_type",
+					"type": "String",
+					"description": "区域类型",
+					"required": true
+				},
+				{
+					"name": "region_id",
+					"type": "Number",
+					"description": "区域代码",
+					"required": true
+				},
+				{
+					"name": "outer_region_id",
+					"type": "String",
+					"description": "外部城区ID -- 唯一",
+					"required": true
+				},
+				{
+					"name": "is_deleted",
+					"type": "String",
+					"description": "1或0 1删除 0不删"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父级ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回外部ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

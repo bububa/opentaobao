@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.seaking.feedback",
+	"apiChineseName": "API服务发布成功商品ID回传",
+	"description": "API服务发布成功商品ID回传，用于跟进商品id后续的使用情况",
+	"requestParams": [
+		{
+			"name": "invoke_api_name",
+			"type": "String",
+			"description": "api 接口名字"
+		},
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "商品投放平台"
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "商品id"
+		},
+		{
+			"name": "sub_identifier",
+			"type": "String",
+			"description": "店铺id(ae为cn开头的店铺id, lazada为邮箱)"
+		},
+		{
+			"name": "sub_identifier_type",
+			"type": "String",
+			"description": "店铺所在平台"
+		},
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "erp名称"
+		},
+		{
+			"name": "identifier_type",
+			"type": "String",
+			"description": "erp用户id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

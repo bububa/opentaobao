@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.cfda.xtpt.app.accept.info",
+	"apiChineseName": "协同平台数据下行接口",
+	"description": "协同平台数据下行接口",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "接入系统唯一标识，由协同平台分配"
+		},
+		{
+			"name": "process_id",
+			"type": "String",
+			"description": "传输流水号（uuid)"
+		},
+		{
+			"name": "event_id",
+			"type": "String",
+			"description": "事件编号（uuid）",
+			"required": true
+		},
+		{
+			"name": "event_type",
+			"type": "String",
+			"description": "事件类型，10：基础信息数据子集 ； 20：应用信息数据子集"
+		},
+		{
+			"name": "sub_type",
+			"type": "String",
+			"description": "事件子类型",
+			"required": true
+		},
+		{
+			"name": "usc_id",
+			"type": "String",
+			"description": "统一社会信用代码"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "文件内容 zip压缩+base64转码",
+			"required": true
+		},
+		{
+			"name": "tiemstamp",
+			"type": "String",
+			"description": "时间戳，yyyy-MM-dd HH:mm:ss"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "结果信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

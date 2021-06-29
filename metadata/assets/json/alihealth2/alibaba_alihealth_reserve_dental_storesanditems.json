@@ -1,0 +1,93 @@
+{
+	"name": "alibaba.alihealth.reserve.dental.storesanditems",
+	"apiChineseName": "查询商户门店，商品列表",
+	"description": "查询商户门店，商品列表",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码，每页100个门店，超过100个门店分页请求"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否正常",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "DentalSellerDto",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_list",
+							"type": "DentalStoreDto[]",
+							"description": "storeList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_list",
+									"type": "DentalItemDto[]",
+									"description": "itemList",
+									"required": true,
+									"subParams": [
+										{
+											"name": "item_name",
+											"type": "String",
+											"description": "itemName",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "itemId",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "store_name",
+									"type": "String",
+									"description": "storeName",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "Number",
+									"description": "storeId",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "seller_name",
+							"type": "String",
+							"description": "sellerName",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

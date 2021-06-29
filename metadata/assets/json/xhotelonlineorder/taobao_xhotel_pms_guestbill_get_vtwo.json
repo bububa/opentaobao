@@ -1,0 +1,231 @@
+{
+	"name": "taobao.xhotel.pms.guestbill.get.vtwo",
+	"apiChineseName": "客人PMS账单信息查询",
+	"description": "从pms获取客人账单信息",
+	"requestParams": [
+		{
+			"name": "tax_num",
+			"type": "String",
+			"description": "开票点税号"
+		},
+		{
+			"name": "short_id_num",
+			"type": "String",
+			"description": "身份证后4位"
+		},
+		{
+			"name": "room_num",
+			"type": "String",
+			"description": "房间号"
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "请求id (32位唯一值)"
+		},
+		{
+			"name": "user_channel",
+			"type": "Number",
+			"description": "用户渠道(0:未知,1:淘宝)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "OrderBillInfo[]",
+					"description": "账单列表中涉及到的金额费用单位均为分",
+					"required": true,
+					"subParams": [
+						{
+							"name": "no_checkout_price",
+							"type": "Number",
+							"description": "未结账房费",
+							"required": true
+						},
+						{
+							"name": "checkout_price",
+							"type": "Number",
+							"description": "已结账房费",
+							"required": true
+						},
+						{
+							"name": "checkout_total_fee",
+							"type": "Number",
+							"description": "已结账总费用",
+							"required": true
+						},
+						{
+							"name": "no_checkout_total_fee",
+							"type": "Number",
+							"description": "未结账总费用",
+							"required": true
+						},
+						{
+							"name": "check_out_date",
+							"type": "String",
+							"description": "离店日期",
+							"required": true
+						},
+						{
+							"name": "check_in_date",
+							"type": "String",
+							"description": "入住日期",
+							"required": true
+						},
+						{
+							"name": "room_no",
+							"type": "String",
+							"description": "房间号",
+							"required": true
+						},
+						{
+							"name": "id_number",
+							"type": "String",
+							"description": "完整的身份证号",
+							"required": true
+						},
+						{
+							"name": "guest_name",
+							"type": "String",
+							"description": "客人姓名",
+							"required": true
+						},
+						{
+							"name": "hotel_code",
+							"type": "String",
+							"description": "外部酒店代码",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "淘宝订单号",
+							"required": true
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "请求id (同入参)",
+							"required": true
+						},
+						{
+							"name": "no_checkout_other_fee",
+							"type": "Number",
+							"description": "未结账杂费",
+							"required": true
+						},
+						{
+							"name": "checkout_other_fee",
+							"type": "Number",
+							"description": "已结账杂费",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "other_fee_detail",
+							"type": "OtherFeeDetail",
+							"description": "杂费明细列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "other_fee_infos",
+									"type": "OtherFeeInfo[]",
+									"description": "无",
+									"required": true,
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "杂费名称",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "杂费金额",
+											"required": true
+										},
+										{
+											"name": "checkout",
+											"type": "Number",
+											"description": "结账状态(1:结账,0:未结账)",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "daily_room_fee",
+							"type": "DailyRoomFee",
+							"description": "每日房费类表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "daily_prices",
+									"type": "DailyPrice[]",
+									"description": "无",
+									"required": true,
+									"subParams": [
+										{
+											"name": "checkout",
+											"type": "Number",
+											"description": "结账状态(1:结账,0:未结账)",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "每日实际房费",
+											"required": true
+										},
+										{
+											"name": "date",
+											"type": "Date",
+											"description": "日期",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

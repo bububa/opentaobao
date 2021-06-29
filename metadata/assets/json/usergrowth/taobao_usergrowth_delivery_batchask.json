@@ -1,0 +1,68 @@
+{
+	"name": "taobao.usergrowth.delivery.batchask",
+	"apiChineseName": "广告投放批量询问",
+	"description": "提供给媒体在曝光广告前调用， 返回是否曝光以及报价",
+	"requestParams": [
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道标识，向淘宝技术申请",
+			"required": true
+		},
+		{
+			"name": "adid",
+			"type": "String",
+			"description": "广告id，淘宝和媒体协商",
+			"required": true
+		},
+		{
+			"name": "idfa_md5",
+			"type": "String",
+			"description": "idfa的md5值， 32位小写， 多个使用,分隔， 最多支持20个"
+		},
+		{
+			"name": "imei_md5",
+			"type": "String",
+			"description": "imei的md5值， 32位小写， 多个之间使用,分隔， 最多支持20个"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "AskResult []",
+			"description": "返回值， 每个目标用户对应一个接口，具体参见示例",
+			"subParams": [
+				{
+					"name": "smart_bid",
+					"type": "String",
+					"description": "智能出价信息",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "追踪id",
+					"required": true
+				},
+				{
+					"name": "idfa_md5",
+					"type": "String",
+					"description": "idfa的md5值， 32位小写",
+					"required": true
+				},
+				{
+					"name": "imei_md5",
+					"type": "String",
+					"description": "imei的md5值， 32位小写",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "任务类型， 1： 拉新；2：促活",
+					"required": true
+				}
+			]
+		}
+	]
+}

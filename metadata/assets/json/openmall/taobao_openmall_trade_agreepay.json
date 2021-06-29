@@ -1,0 +1,26 @@
+{
+	"name": "taobao.openmall.trade.agreepay",
+	"apiChineseName": "openmall订单支付",
+	"description": "openmall订单支付",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝交易单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

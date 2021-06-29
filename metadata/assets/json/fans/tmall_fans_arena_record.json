@@ -1,0 +1,61 @@
+{
+	"name": "tmall.fans.arena.record",
+	"apiChineseName": "记录完成擂台的用户",
+	"description": "记录完成擂台的用户和完成分数",
+	"requestParams": [
+		{
+			"name": "cash_pool_id",
+			"type": "Number",
+			"description": "资金池id"
+		},
+		{
+			"name": "score",
+			"type": "Number",
+			"description": "用户得分"
+		},
+		{
+			"name": "mix_nick",
+			"type": "String",
+			"description": "mixnick"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fans_result",
+			"type": "FansResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Boolean[]",
+					"description": "记录结果是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "返回总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误message",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

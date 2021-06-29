@@ -1,0 +1,74 @@
+{
+	"name": "aliyun.industry.tttm.items.sync",
+	"apiChineseName": "天天特卖商品信息同步",
+	"description": "天天特卖商品信息同步",
+	"requestParams": [
+		{
+			"name": "sync_items",
+			"type": "ItemInfoDto[]",
+			"description": "商品信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "商品ID"
+				},
+				{
+					"name": "product_info_d_t_os",
+					"type": "ProductInfoDto[]",
+					"description": "货品信息",
+					"subParams": [
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货品编码"
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "货品名称"
+						},
+						{
+							"name": "product_status",
+							"type": "Number",
+							"description": "货品状态"
+						},
+						{
+							"name": "set_amount",
+							"type": "Number",
+							"description": "套餐数量"
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "总库存"
+						},
+						{
+							"name": "increment_amount",
+							"type": "Number",
+							"description": "增量库存"
+						},
+						{
+							"name": "increment_type",
+							"type": "Number",
+							"description": "出入库"
+						}
+					]
+				},
+				{
+					"name": "sku_id",
+					"type": "String",
+					"description": "skuId"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "成功失败标识"
+		}
+	]
+}

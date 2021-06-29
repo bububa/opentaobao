@@ -1,0 +1,73 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.netdemand.upload",
+	"apiChineseName": "23-Net Demand净需求回传",
+	"description": "Net Demand净需求回传",
+	"requestParams": [
+		{
+			"name": "net_demand_request",
+			"type": "NetDemandRequest",
+			"description": "对象",
+			"subParams": [
+				{
+					"name": "net_demand_d_t_os",
+					"type": "NetDemandDto[]",
+					"description": "对象",
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户"
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值"
+						},
+						{
+							"name": "net_demand",
+							"type": "Number",
+							"description": "净需求值"
+						},
+						{
+							"name": "locid",
+							"type": "String",
+							"description": "地点"
+						},
+						{
+							"name": "prdid",
+							"type": "String",
+							"description": "物料号"
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码"
+		}
+	]
+}

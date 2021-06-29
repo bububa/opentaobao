@@ -1,0 +1,96 @@
+{
+	"name": "tmall.aliauto.meta.receive",
+	"apiChineseName": "汽车说明书元数据上传",
+	"description": "天猫汽车对外提供的汽车资源元数据上传接口",
+	"requestParams": [
+		{
+			"name": "command",
+			"type": "ResourceMetaCommand",
+			"description": "元数据参数集",
+			"subParams": [
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "摘要"
+				},
+				{
+					"name": "resource_id",
+					"type": "Number",
+					"description": "资源id"
+				},
+				{
+					"name": "out_series_id",
+					"type": "Number",
+					"description": "外部车系id"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "分组id"
+				},
+				{
+					"name": "out_model_id",
+					"type": "Number",
+					"description": "外部车型id"
+				},
+				{
+					"name": "extension_field",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "from_source",
+					"type": "String",
+					"description": "来源"
+				},
+				{
+					"name": "resource_type",
+					"type": "String",
+					"description": "资源类型"
+				},
+				{
+					"name": "resource_options",
+					"description": "资源附属信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

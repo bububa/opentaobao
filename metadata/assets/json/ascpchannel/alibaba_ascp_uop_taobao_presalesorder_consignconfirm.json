@@ -1,0 +1,148 @@
+{
+	"name": "alibaba.ascp.uop.taobao.presalesorder.consignconfirm",
+	"apiChineseName": "预售商家仓出库",
+	"description": "预售商家仓出库",
+	"requestParams": [
+		{
+			"name": "presales_order_consign_confirm_request",
+			"type": "Presalesorderconsignconfirmrequest",
+			"description": "预售订单商家仓出库对象",
+			"subParams": [
+				{
+					"name": "presales_order",
+					"type": "Presalesorder",
+					"description": "预售订单信息",
+					"subParams": [
+						{
+							"name": "packages",
+							"type": "Packages[]",
+							"description": "包裹信息",
+							"subParams": [
+								{
+									"name": "logistics_code",
+									"type": "String",
+									"description": "物流公司编码"
+								},
+								{
+									"name": "express_code",
+									"type": "String",
+									"description": "运单号",
+									"required": true
+								},
+								{
+									"name": "package_code",
+									"type": "String",
+									"description": "包裹编号"
+								},
+								{
+									"name": "length",
+									"type": "String",
+									"description": "包裹长度 (厘米)"
+								},
+								{
+									"name": "width",
+									"type": "String",
+									"description": "包裹宽度 (厘米)"
+								},
+								{
+									"name": "height",
+									"type": "String",
+									"description": "包裹高度 (厘米)"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "包裹重量 (千克)",
+									"required": true
+								},
+								{
+									"name": "volume",
+									"type": "String",
+									"description": "包裹体积 (升, L)"
+								},
+								{
+									"name": "items",
+									"type": "Items[]",
+									"description": "商品信息",
+									"subParams": [
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "商品编码"
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "商品仓储系统编码"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "包裹内该商品的数量",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "order_confirm_time",
+							"type": "String",
+							"description": "订单完成时间"
+						},
+						{
+							"name": "presales_order_id",
+							"type": "String",
+							"description": "菜鸟订单号",
+							"required": true
+						},
+						{
+							"name": "presales_order_code",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "发货仓code",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "扩展属性(JSON格式)"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "presales_order_consign_confirm_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

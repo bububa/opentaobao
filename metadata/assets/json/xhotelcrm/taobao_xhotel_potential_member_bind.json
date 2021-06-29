@@ -1,0 +1,81 @@
+{
+	"name": "taobao.xhotel.potential.member.bind",
+	"apiChineseName": "飞猪酒店商家会员绑定",
+	"description": "支持互通商家发起会员绑定",
+	"requestParams": [
+		{
+			"name": "first_name",
+			"type": "String",
+			"description": "名"
+		},
+		{
+			"name": "last_name",
+			"type": "String",
+			"description": "姓"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "电话",
+			"required": true
+		},
+		{
+			"name": "email",
+			"type": "String",
+			"description": "邮箱"
+		},
+		{
+			"name": "card_no",
+			"type": "String",
+			"description": "卡号",
+			"required": true
+		},
+		{
+			"name": "grade",
+			"type": "String",
+			"description": "等级(V1,V2,V3)"
+		},
+		{
+			"name": "register_date",
+			"type": "Date",
+			"description": "注册时间"
+		},
+		{
+			"name": "from_date",
+			"type": "Date",
+			"description": "生效时间"
+		},
+		{
+			"name": "to_date",
+			"type": "Date",
+			"description": "截止时间"
+		},
+		{
+			"name": "sex",
+			"type": "String",
+			"description": "性别(M,F,U-未知)"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市"
+		},
+		{
+			"name": "age",
+			"type": "Number",
+			"description": "年龄"
+		},
+		{
+			"name": "native_place",
+			"type": "String",
+			"description": "籍贯"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "添加操作是否成功"
+		}
+	]
+}

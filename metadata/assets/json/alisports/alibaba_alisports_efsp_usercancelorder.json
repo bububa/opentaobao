@@ -1,0 +1,50 @@
+{
+	"name": "alibaba.alisports.efsp.usercancelorder",
+	"apiChineseName": "用户取消订单",
+	"description": "用户取消订单",
+	"requestParams": [
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "订单编号"
+		},
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "用户支付宝ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TrilateralResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "取消成功",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

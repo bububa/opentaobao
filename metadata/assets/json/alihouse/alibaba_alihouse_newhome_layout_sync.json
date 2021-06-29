@@ -1,0 +1,126 @@
+{
+	"name": "alibaba.alihouse.newhome.layout.sync",
+	"apiChineseName": "房通户型数据同步",
+	"description": "房通户型数据同步",
+	"requestParams": [
+		{
+			"name": "sync_project_layout_data",
+			"type": "SyncProjectLayoutDto",
+			"description": "数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "layout_images",
+					"type": "String",
+					"description": "户型图片多张以英文逗号隔开"
+				},
+				{
+					"name": "avg_price",
+					"type": "String",
+					"description": "户型均价"
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "户型总价"
+				},
+				{
+					"name": "inside_area",
+					"type": "String",
+					"description": "室内面积"
+				},
+				{
+					"name": "construction_area",
+					"type": "String",
+					"description": "建筑面积",
+					"required": true
+				},
+				{
+					"name": "bathroom",
+					"type": "String",
+					"description": "卫数量",
+					"required": true
+				},
+				{
+					"name": "hall",
+					"type": "String",
+					"description": "厅数量",
+					"required": true
+				},
+				{
+					"name": "room",
+					"type": "String",
+					"description": "室数量",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "楼盘ID",
+					"required": true
+				},
+				{
+					"name": "outer_layout_id",
+					"type": "String",
+					"description": "户型外部唯一ID",
+					"required": true
+				},
+				{
+					"name": "layout_name",
+					"type": "String",
+					"description": "户型名称",
+					"required": true
+				},
+				{
+					"name": "orientation",
+					"type": "Number",
+					"description": "朝向",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述说明"
+				},
+				{
+					"name": "is_deleted",
+					"type": "String",
+					"description": "是否删除 1 是 0 否"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回户型ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"name": "taobao.opentrade.queue.users.mark",
+	"apiChineseName": "尖货交易可购买用户标记",
+	"description": "尖货交易用户标记信息回传，根据openId标记用户可购买商品",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "用户状态，可任意传入，后续查询返回",
+			"required": true
+		},
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "排队商品SKU ID，不存在传0",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "排队商品ID",
+			"required": true
+		},
+		{
+			"name": "open_user_ids",
+			"type": "String[]",
+			"description": "本次待标记的用户列表，多个以逗号(,)分割，最大20个",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "hit",
+			"type": "Boolean",
+			"description": "是否目标用户，传入true后，用户可购买商品",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "标记成功的用户数"
+		}
+	]
+}

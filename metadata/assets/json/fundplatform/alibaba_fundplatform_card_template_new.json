@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.fundplatform.card.template.new",
+	"apiChineseName": "新增实体卡模板",
+	"description": "该接口由制卡商实现，当新增一个实体卡模板的时候，需要调用该接口，通知制卡商同步新增卡模板信息。",
+	"requestParams": [
+		{
+			"name": "template_no",
+			"type": "String",
+			"description": "卡模板编号",
+			"required": true
+		},
+		{
+			"name": "card_name",
+			"type": "String",
+			"description": "该模板生成的卡名称",
+			"required": true
+		},
+		{
+			"name": "par_value",
+			"type": "String",
+			"description": "卡面额，单元分",
+			"required": true
+		},
+		{
+			"name": "picture_url",
+			"type": "String",
+			"description": "卡外观图片地址"
+		},
+		{
+			"name": "is_test",
+			"type": "Boolean",
+			"description": "是否为测试卡模板，true表示是，如果是测试卡模板则请求制卡时无需真正去制作实体卡",
+			"required": true
+		},
+		{
+			"name": "own_sign",
+			"type": "String",
+			"description": "环境变量值，该字段为枚举值：daily（日常），pre（预发），online（线上）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "错误详情"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误CODE"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		}
+	]
+}

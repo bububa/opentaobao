@@ -1,0 +1,62 @@
+{
+	"name": "tmall.car.lease.contractdownload",
+	"apiChineseName": "天猫开新车租后合同下载",
+	"description": "天猫开新车租后合同下载",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "天猫开新车订单id"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "续租协议： 1， 全款购车协议： 2，分期购买协议：3， 分期购买车辆资产验收协议：4，分期购买车辆抵押：5， 分期购买融资租赁合同：6"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultVo",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "objectbytes",
+					"type": "byte[]",
+					"description": "合同pdf字节码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

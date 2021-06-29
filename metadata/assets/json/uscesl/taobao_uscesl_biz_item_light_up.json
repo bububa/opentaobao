@@ -1,0 +1,91 @@
+{
+	"name": "taobao.uscesl.biz.item.light.up",
+	"apiChineseName": "商品条码亮灯API",
+	"description": "亮灯API",
+	"requestParams": [
+		{
+			"name": "item_bar_code",
+			"type": "String",
+			"description": "商品条码"
+		},
+		{
+			"name": "led_color",
+			"type": "String",
+			"description": "亮灯颜色，绿：值为2；红：值为4"
+		},
+		{
+			"name": "light_up_time",
+			"type": "Number",
+			"description": "亮灯时长，单位：秒，最大长度3600秒"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店编号"
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家编号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "Json",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "业务错误码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				},
+				{
+					"name": "target",
+					"type": "LightResultInfoBo",
+					"description": "true或false",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success_count",
+							"type": "Number",
+							"description": "成功数量",
+							"required": true
+						},
+						{
+							"name": "fail_count",
+							"type": "Number",
+							"description": "失败数量",
+							"required": true
+						},
+						{
+							"name": "notify_message",
+							"type": "String",
+							"description": "通知消息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

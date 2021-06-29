@@ -1,0 +1,526 @@
+{
+	"name": "alibaba.kbalgo.alscpois.get",
+	"apiChineseName": "百度批量获取本地poi接口",
+	"description": "接口用于百度方获取本地生活poi数据，分页获取。",
+	"requestParams": [
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "第几页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页的数量。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AlscPoiToBaiduResult",
+			"description": "返回结果根节点。",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "poi总量",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "PoiToBaiduData[]",
+					"description": "datas",
+					"required": true,
+					"subParams": [
+						{
+							"name": "poi_id",
+							"type": "String",
+							"description": "poiid",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "Content",
+							"description": "poi明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "home_product",
+									"type": "HomeProduct",
+									"description": "到家信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "base_info",
+											"type": "BaseInfo",
+											"description": "到家基本信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "shop_promotion",
+													"type": "String",
+													"description": "是否有优惠",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "product_infos",
+											"type": "ProductInfo[]",
+											"description": "商品信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "schema",
+													"type": "Schema",
+													"description": "schema",
+													"required": true,
+													"subParams": [
+														{
+															"name": "url",
+															"type": "String",
+															"description": "url",
+															"required": true
+														},
+														{
+															"name": "type",
+															"type": "String",
+															"description": "页面类型",
+															"required": true
+														},
+														{
+															"name": "lbs",
+															"type": "String",
+															"description": "lbs信息",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "ext",
+													"type": "String",
+													"description": "ext",
+													"required": true
+												},
+												{
+													"name": "gmt_start",
+													"type": "String",
+													"description": "开始时间",
+													"required": true
+												},
+												{
+													"name": "image_url",
+													"type": "String",
+													"description": "图片链接",
+													"required": true
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "价格",
+													"required": true
+												},
+												{
+													"name": "sales_num",
+													"type": "String",
+													"description": "销量",
+													"required": true
+												},
+												{
+													"name": "description",
+													"type": "String",
+													"description": "描述",
+													"required": true
+												},
+												{
+													"name": "origin_price",
+													"type": "String",
+													"description": "原价",
+													"required": true
+												},
+												{
+													"name": "gmt_end",
+													"type": "String",
+													"description": "结束时间",
+													"required": true
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "商品标题",
+													"required": true
+												},
+												{
+													"name": "product_id",
+													"type": "String",
+													"description": "商品id",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "poi",
+									"type": "Poi",
+									"description": "Poi",
+									"required": true,
+									"subParams": [
+										{
+											"name": "poi_address",
+											"type": "String",
+											"description": "POI地址(不包含城市，行政区，商圈)]]",
+											"required": true
+										},
+										{
+											"name": "poi_name",
+											"type": "String",
+											"description": "poi名称",
+											"required": true
+										},
+										{
+											"name": "app_key",
+											"type": "String",
+											"description": "app_key",
+											"required": true
+										},
+										{
+											"name": "phone",
+											"type": "String",
+											"description": "电话",
+											"required": true
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "城市",
+											"required": true
+										},
+										{
+											"name": "shop_business",
+											"type": "String",
+											"description": "营业时间",
+											"required": true
+										},
+										{
+											"name": "app_schema",
+											"type": "String",
+											"description": "固定的",
+											"required": true
+										},
+										{
+											"name": "latitude",
+											"type": "String",
+											"description": "latitude",
+											"required": true
+										},
+										{
+											"name": "county",
+											"type": "String",
+											"description": "county",
+											"required": true
+										},
+										{
+											"name": "labels",
+											"type": "Label[]",
+											"description": "poi的标签",
+											"required": true,
+											"subParams": [
+												{
+													"name": "schema",
+													"type": "Schema",
+													"description": "链接",
+													"required": true,
+													"subParams": [
+														{
+															"name": "type",
+															"type": "String",
+															"description": "类别",
+															"required": true
+														},
+														{
+															"name": "url",
+															"type": "String",
+															"description": "url",
+															"required": true
+														},
+														{
+															"name": "lbs",
+															"type": "String",
+															"description": "lbs信息",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "delivery",
+													"type": "Delivery",
+													"description": "Delivery",
+													"required": true,
+													"subParams": [
+														{
+															"name": "min",
+															"type": "String",
+															"description": "分",
+															"required": true
+														},
+														{
+															"name": "step_min",
+															"type": "String",
+															"description": "step_min",
+															"required": true
+														},
+														{
+															"name": "step_base",
+															"type": "String",
+															"description": "step_base",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "label_description",
+													"type": "String",
+													"description": "是否外卖",
+													"required": true
+												},
+												{
+													"name": "label_type",
+													"type": "String",
+													"description": "标签类型",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "poi_id",
+											"type": "String",
+											"description": "L1DXZ0001M3",
+											"required": true
+										},
+										{
+											"name": "longitude",
+											"type": "String",
+											"description": "longitude",
+											"required": true
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省份",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shop_product",
+									"type": "ShopProduct",
+									"description": "到店信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "product_infos",
+											"type": "ProductInfo[]",
+											"description": "Product_info",
+											"required": true,
+											"subParams": [
+												{
+													"name": "schema",
+													"type": "Schema",
+													"description": "schema",
+													"required": true,
+													"subParams": [
+														{
+															"name": "url",
+															"type": "String",
+															"description": "到店url",
+															"required": true
+														},
+														{
+															"name": "type",
+															"type": "String",
+															"description": "类别",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "ext",
+													"type": "String",
+													"description": "ext",
+													"required": true
+												},
+												{
+													"name": "gmt_start",
+													"type": "String",
+													"description": "开始时间",
+													"required": true
+												},
+												{
+													"name": "image_url",
+													"type": "String",
+													"description": "图片url",
+													"required": true
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "加个",
+													"required": true
+												},
+												{
+													"name": "sales_num",
+													"type": "String",
+													"description": "销量",
+													"required": true
+												},
+												{
+													"name": "description",
+													"type": "String",
+													"description": "描述",
+													"required": true
+												},
+												{
+													"name": "origin_price",
+													"type": "String",
+													"description": "原价",
+													"required": true
+												},
+												{
+													"name": "gmt_end",
+													"type": "String",
+													"description": "结束时间",
+													"required": true
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "商品标题",
+													"required": true
+												},
+												{
+													"name": "product_id",
+													"type": "String",
+													"description": "商品id",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "coupon_infos",
+											"type": "CouponInfo[]",
+											"description": "优惠券信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "schema",
+													"type": "Schema",
+													"description": "schema",
+													"required": true,
+													"subParams": [
+														{
+															"name": "url",
+															"type": "String",
+															"description": "url",
+															"required": true
+														},
+														{
+															"name": "type",
+															"type": "String",
+															"description": "页面类别",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "ext",
+													"type": "String",
+													"description": "ext",
+													"required": true
+												},
+												{
+													"name": "gmt_start",
+													"type": "String",
+													"description": "开始时间",
+													"required": true
+												},
+												{
+													"name": "image_url",
+													"type": "String",
+													"description": "图片url",
+													"required": true
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "价格",
+													"required": true
+												},
+												{
+													"name": "sales_num",
+													"type": "String",
+													"description": "销量",
+													"required": true
+												},
+												{
+													"name": "description",
+													"type": "String",
+													"description": "描述",
+													"required": true
+												},
+												{
+													"name": "origin_price",
+													"type": "String",
+													"description": "原价",
+													"required": true
+												},
+												{
+													"name": "gmt_end",
+													"type": "String",
+													"description": "结束时间",
+													"required": true
+												},
+												{
+													"name": "title",
+													"type": "String",
+													"description": "商品标题",
+													"required": true
+												},
+												{
+													"name": "product_id",
+													"type": "String",
+													"description": "商品id",
+													"required": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "dt",
+							"type": "String",
+							"description": "数据日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "附加信息或错误信息",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态码：0-success，1-fail",
+					"required": true
+				}
+			]
+		}
+	]
+}

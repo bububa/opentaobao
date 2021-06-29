@@ -1,0 +1,24 @@
+{
+	"name": "alitrip.platform.divisions.getdivisionbyname",
+	"apiChineseName": "根据中文名称与行政区划级别查询行政区划数据",
+	"description": "根据中文名称与行政区划级别查询行政区划数据",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "行政区划名称"
+		},
+		{
+			"name": "level",
+			"type": "Number",
+			"description": "行政区划级别ALL(0, \"全部\"),  \tCONTINENT(1, \"大洲\"),  \tCOUNTRY(2, \"国家\"),  \tPROVINCE(3, \"省份\"),  \tCITY(4, \"城市\"),  \tDISTRICT(5, \"区县\"),  \tSTREET(6, \"街道\")"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Json []",
+			"description": "result"
+		}
+	]
+}

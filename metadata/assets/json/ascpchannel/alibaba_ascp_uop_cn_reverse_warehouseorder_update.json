@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.ascp.uop.cn.reverse.warehouseorder.update",
+	"apiChineseName": "供应链中台逆向入库单修改服务",
+	"description": "供应链中台逆向入库单修改服务",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "逆向入库单号",
+			"required": true
+		},
+		{
+			"name": "refunded",
+			"type": "Boolean",
+			"description": "是否已经退款",
+			"required": true
+		},
+		{
+			"name": "refund_reason",
+			"type": "String",
+			"description": "退款原因",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_reverse_warehouse_order_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

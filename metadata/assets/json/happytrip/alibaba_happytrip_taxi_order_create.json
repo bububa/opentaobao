@@ -1,0 +1,319 @@
+{
+	"name": "alibaba.happytrip.taxi.order.create",
+	"apiChineseName": "用户叫车",
+	"description": "用户根据需要发起叫车请求，在发起请求之前必须事先获得order id.",
+	"requestParams": [
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "用户唯一标识"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "请求id 获取请参见",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "叫车车型，0(实时)；1(预约)",
+			"required": true
+		},
+		{
+			"name": "passenger_phone",
+			"type": "String",
+			"description": "乘客手机号"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "出发地城市",
+			"required": true
+		},
+		{
+			"name": "flat",
+			"type": "String",
+			"description": "出发地纬度",
+			"required": true
+		},
+		{
+			"name": "flng",
+			"type": "String",
+			"description": "出发地经度",
+			"required": true
+		},
+		{
+			"name": "start_name",
+			"type": "String",
+			"description": "出发地名称(最多50个字)",
+			"required": true
+		},
+		{
+			"name": "start_address",
+			"type": "String",
+			"description": "出发地详细地址(最多100个字)"
+		},
+		{
+			"name": "tlat",
+			"type": "String",
+			"description": "目的地纬度"
+		},
+		{
+			"name": "tlng",
+			"type": "String",
+			"description": "目的地经度"
+		},
+		{
+			"name": "end_name",
+			"type": "String",
+			"description": "目的地名称(最多50个字)"
+		},
+		{
+			"name": "end_address",
+			"type": "String",
+			"description": "目的地详细地址(最多100个字)"
+		},
+		{
+			"name": "clat",
+			"type": "String",
+			"description": "当前位置纬度"
+		},
+		{
+			"name": "clng",
+			"type": "String",
+			"description": "当前位置经度"
+		},
+		{
+			"name": "departure_time",
+			"type": "String",
+			"description": "出发时间，不传表示现在用车（例如：2015-06-16 12:00:09）"
+		},
+		{
+			"name": "require_level",
+			"type": "String",
+			"description": "车型代码",
+			"required": true
+		},
+		{
+			"name": "app_time",
+			"type": "String",
+			"description": "客户端时间（例如：2015-06-16 12:00:09）",
+			"required": true
+		},
+		{
+			"name": "map_type",
+			"type": "String",
+			"description": "地图类型:amap：高德，默认高德地图"
+		},
+		{
+			"name": "sms_policy",
+			"type": "Number",
+			"description": "发送短信策略(0,为叫车人和乘车人都发送，1，乘车人发送叫车人不发，2乘车人不发叫车人发，3乘车人和叫车人都不发)"
+		},
+		{
+			"name": "extra_info",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "dynamic_md5",
+			"type": "String",
+			"description": "价格md5,通过 预估价接口获得",
+			"required": true
+		},
+		{
+			"name": "cost_center",
+			"type": "String",
+			"description": "成本中心代码，用于区分不同的分账账号"
+		},
+		{
+			"name": "line_type",
+			"type": "Number",
+			"description": "线路类型，0或空表示普通线路；1，表示一口价路线"
+		},
+		{
+			"name": "carpool_type",
+			"type": "Number",
+			"description": "0：不拼车 1:允许拼车，默认不拼车"
+		},
+		{
+			"name": "passenger_number",
+			"type": "Number",
+			"description": "乘车人数，允许拼车时该参数不为空"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "OrderCreateResult",
+			"description": "订单创建结果",
+			"subParams": [
+				{
+					"name": "order",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "订单类型",
+							"required": true
+						},
+						{
+							"name": "call_phone",
+							"type": "String",
+							"description": "叫车人手机号",
+							"required": true
+						},
+						{
+							"name": "passenger_phone",
+							"type": "String",
+							"description": "乘车人手机号",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "flat",
+							"type": "String",
+							"description": "出发地纬度",
+							"required": true
+						},
+						{
+							"name": "flng",
+							"type": "String",
+							"description": "出发地经度",
+							"required": true
+						},
+						{
+							"name": "tlat",
+							"type": "String",
+							"description": "目的地纬度",
+							"required": true
+						},
+						{
+							"name": "tlng",
+							"type": "String",
+							"description": "目的地经度",
+							"required": true
+						},
+						{
+							"name": "clat",
+							"type": "String",
+							"description": "当前纬度",
+							"required": true
+						},
+						{
+							"name": "clng",
+							"type": "String",
+							"description": "当前经度",
+							"required": true
+						},
+						{
+							"name": "start_name",
+							"type": "String",
+							"description": "出发地名称",
+							"required": true
+						},
+						{
+							"name": "start_address",
+							"type": "String",
+							"description": "出发地地址",
+							"required": true
+						},
+						{
+							"name": "end_name",
+							"type": "String",
+							"description": "目的地名称",
+							"required": true
+						},
+						{
+							"name": "end_address",
+							"type": "String",
+							"description": "目的地地址",
+							"required": true
+						},
+						{
+							"name": "extra_info",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "departure_time",
+							"type": "String",
+							"description": "出发时间",
+							"required": true
+						},
+						{
+							"name": "order_time",
+							"type": "String",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "require_level",
+							"type": "String",
+							"description": "所需车型代码",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "cost_center",
+							"type": "String",
+							"description": "成本中心代码，用于区分不同的分账账号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "price",
+					"type": "PriceInfo",
+					"description": "价格信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "estimate",
+							"type": "String",
+							"description": "预估车费",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

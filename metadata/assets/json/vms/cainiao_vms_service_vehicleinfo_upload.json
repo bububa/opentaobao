@@ -1,0 +1,70 @@
+{
+	"name": "cainiao.vms.service.vehicleinfo.upload",
+	"apiChineseName": "新能源车--外部车辆信息回传",
+	"description": "新能源车--外部车辆信息回传",
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备号",
+			"required": true
+		},
+		{
+			"name": "provider_name",
+			"type": "String",
+			"description": "厂家标识",
+			"required": true
+		},
+		{
+			"name": "data_source",
+			"type": "String",
+			"description": "数据源标识",
+			"required": true
+		},
+		{
+			"name": "protocol_version",
+			"type": "String",
+			"description": "协议版本标识",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "上传的信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AppBaseResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,127 @@
+{
+	"name": "tmall.nrt.newcoupon.send",
+	"apiChineseName": "券发放接口",
+	"description": "券发放接口",
+	"requestParams": [
+		{
+			"name": "nrt_coupon_send_dto",
+			"type": "NrtCouponSendDto",
+			"description": "发券dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "加密后淘系ID",
+					"required": true
+				},
+				{
+					"name": "coupon_type",
+					"type": "Number",
+					"description": "券类型，247：品类券，276：门店券，357：门店通用券",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务code",
+					"required": true
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "{\"key\",\"value\"}"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "券code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "SendCouponResponse",
+					"description": "发券结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "面额",
+							"required": true
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "门槛",
+							"required": true
+						},
+						{
+							"name": "coupon_name",
+							"type": "String",
+							"description": "券名称",
+							"required": true
+						},
+						{
+							"name": "coupon_template_id",
+							"type": "Number",
+							"description": "券模板ID",
+							"required": true
+						},
+						{
+							"name": "coupon_instance_id",
+							"type": "Number",
+							"description": "券实例ID",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Number",
+							"description": "开始时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

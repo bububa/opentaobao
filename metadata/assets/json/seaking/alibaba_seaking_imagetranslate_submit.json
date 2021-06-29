@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.seaking.imagetranslate.submit",
+	"apiChineseName": "提交图片翻译任务",
+	"description": "提交图片翻译任务",
+	"requestParams": [
+		{
+			"name": "token_from",
+			"type": "String",
+			"description": "token来源站点",
+			"required": true
+		},
+		{
+			"name": "image_translate_detail_list",
+			"type": "ImageTranslateDetailDto[]",
+			"description": "子任务列表",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "target_lang",
+					"type": "String",
+					"description": "目标语种"
+				},
+				{
+					"name": "source_lang",
+					"type": "String",
+					"description": "源语种"
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片url"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "商品所在平台（ae/lazada)）"
+				},
+				{
+					"name": "idx",
+					"type": "Number",
+					"description": "子任务编号，从1开始，必须连续",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id"
+		}
+	]
+}

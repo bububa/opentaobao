@@ -1,0 +1,1186 @@
+{
+	"name": "taobao.car.vehicleinfo.register",
+	"apiChineseName": "全量车型导入",
+	"description": "全量车型导入",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "FullInfoCarModelDTO[]",
+			"description": "参数集合",
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "abs",
+					"type": "String",
+					"description": "ABS防抱死"
+				},
+				{
+					"name": "ac",
+					"type": "String",
+					"description": "空调"
+				},
+				{
+					"name": "ac_zone_control",
+					"type": "String",
+					"description": "温度分区控制"
+				},
+				{
+					"name": "acc",
+					"type": "String",
+					"description": "自适应巡航"
+				},
+				{
+					"name": "acceleration",
+					"type": "String",
+					"description": "加速时间（0-100Km/h）"
+				},
+				{
+					"name": "access_angle",
+					"type": "String",
+					"description": "离去角"
+				},
+				{
+					"name": "active_brake",
+					"type": "String",
+					"description": "主动刹车"
+				},
+				{
+					"name": "active_steering",
+					"type": "String",
+					"description": "主动转向系统"
+				},
+				{
+					"name": "adaptive_headlamp",
+					"type": "String",
+					"description": "自动头灯"
+				},
+				{
+					"name": "air_suspension",
+					"type": "String",
+					"description": "空气悬挂"
+				},
+				{
+					"name": "ambientes_lamp",
+					"type": "String",
+					"description": "车内氛围灯"
+				},
+				{
+					"name": "anti_pinch_glass",
+					"type": "String",
+					"description": "车窗防夹手功能"
+				},
+				{
+					"name": "asr",
+					"type": "String",
+					"description": "牵引力控制（ASR/TCS/TRC等）"
+				},
+				{
+					"name": "auto_ac",
+					"type": "String",
+					"description": "自动空调"
+				},
+				{
+					"name": "auto_dimming_inside_mirror",
+					"type": "String",
+					"description": "后视镜自动防眩目"
+				},
+				{
+					"name": "automatic_varking",
+					"type": "String",
+					"description": "自动泊车入位"
+				},
+				{
+					"name": "blis",
+					"type": "String",
+					"description": "nightVision"
+				},
+				{
+					"name": "bluetooth",
+					"type": "String",
+					"description": "蓝牙车载电话"
+				},
+				{
+					"name": "body_structure",
+					"type": "String",
+					"description": "车体结构"
+				},
+				{
+					"name": "body_type",
+					"type": "String",
+					"description": "车身型式"
+				},
+				{
+					"name": "bore",
+					"type": "String",
+					"description": "缸径"
+				},
+				{
+					"name": "brand_code",
+					"type": "String",
+					"description": "品牌代码"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "calash",
+					"type": "String",
+					"description": "车篷型式"
+				},
+				{
+					"name": "catalyst",
+					"type": "String",
+					"description": "三元催化器"
+				},
+				{
+					"name": "central_locking",
+					"type": "String",
+					"description": "中控锁"
+				},
+				{
+					"name": "chassis_cid",
+					"type": "String",
+					"description": "压缩底盘id"
+				},
+				{
+					"name": "chassis_code",
+					"type": "String",
+					"description": "底盘号"
+				},
+				{
+					"name": "combined_fuel_consumption",
+					"type": "String",
+					"description": "工信部综合油耗（L/100KM）"
+				},
+				{
+					"name": "compression_ratio",
+					"type": "String",
+					"description": "压缩比"
+				},
+				{
+					"name": "cooling_method",
+					"type": "String",
+					"description": "冷却方式"
+				},
+				{
+					"name": "corner_headlamp",
+					"type": "String",
+					"description": "转向头灯"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国别"
+				},
+				{
+					"name": "cruise_control",
+					"type": "String",
+					"description": "定速巡航"
+				},
+				{
+					"name": "curb_weight",
+					"type": "String",
+					"description": "整备质量（kg）"
+				},
+				{
+					"name": "cylinder_arrangement",
+					"type": "String",
+					"description": "气缸排列形式"
+				},
+				{
+					"name": "cylinder_block",
+					"type": "String",
+					"description": "缸体材料"
+				},
+				{
+					"name": "cylinder_head",
+					"type": "String",
+					"description": "缸盖材料"
+				},
+				{
+					"name": "cylinder_volume",
+					"type": "String",
+					"description": "气缸容积"
+				},
+				{
+					"name": "cylinders",
+					"type": "String",
+					"description": "气缸数（个）"
+				},
+				{
+					"name": "daytime_running_lamp",
+					"type": "String",
+					"description": "日间行车灯"
+				},
+				{
+					"name": "departure_angle",
+					"type": "String",
+					"description": "接近角"
+				},
+				{
+					"name": "dipped_lights",
+					"type": "String",
+					"description": "近光灯"
+				},
+				{
+					"name": "displacement",
+					"type": "String",
+					"description": "排量"
+				},
+				{
+					"name": "doors",
+					"type": "String",
+					"description": "车门数"
+				},
+				{
+					"name": "drive_mode",
+					"type": "String",
+					"description": "驱动方式"
+				},
+				{
+					"name": "drive_model",
+					"type": "String",
+					"description": "驱动形式"
+				},
+				{
+					"name": "driver_airbag",
+					"type": "String",
+					"description": "驾驶座安全气囊"
+				},
+				{
+					"name": "driver_seat_power_adjustable",
+					"type": "String",
+					"description": "驾驶座座椅电动调节"
+				},
+				{
+					"name": "eba",
+					"type": "String",
+					"description": "刹车辅助（EBA/BAS/BA等）"
+				},
+				{
+					"name": "ebd",
+					"type": "String",
+					"description": "制动力分配（EBD/CBC等）"
+				},
+				{
+					"name": "electric_adjustable_steering_wheel",
+					"type": "String",
+					"description": "方向盘电动调节"
+				},
+				{
+					"name": "electric_suction_door",
+					"type": "String",
+					"description": "电动吸合门"
+				},
+				{
+					"name": "electrically_adjustable_outside_mirror",
+					"type": "String",
+					"description": "后视镜电动调节"
+				},
+				{
+					"name": "emission_standard",
+					"type": "String",
+					"description": "排放标准"
+				},
+				{
+					"name": "engine_antitheft",
+					"type": "String",
+					"description": "发动机电子防盗"
+				},
+				{
+					"name": "engine_description",
+					"type": "String",
+					"description": "发动机描述"
+				},
+				{
+					"name": "engine_knowhow",
+					"type": "String",
+					"description": "发动机特有技术"
+				},
+				{
+					"name": "engine_location",
+					"type": "String",
+					"description": "发动机位置"
+				},
+				{
+					"name": "engine_manufacturer",
+					"type": "String",
+					"description": "发动机生产厂家"
+				},
+				{
+					"name": "engine_model",
+					"type": "String",
+					"description": "发动机型号"
+				},
+				{
+					"name": "entertainment_connector",
+					"type": "String",
+					"description": "外接音源接口（AUX/USB/iPod等）"
+				},
+				{
+					"name": "epb",
+					"type": "String",
+					"description": "自动驻车上坡辅助"
+				},
+				{
+					"name": "esp",
+					"type": "String",
+					"description": "车身稳定控制（ESP/DSC/VSC等）"
+				},
+				{
+					"name": "front_brake",
+					"type": "String",
+					"description": "前制动器类型"
+				},
+				{
+					"name": "front_center_armrest",
+					"type": "String",
+					"description": "前座中央扶手"
+				},
+				{
+					"name": "front_curtain_airbag",
+					"type": "String",
+					"description": "前排头部气囊（气帘）"
+				},
+				{
+					"name": "front_fog_lamp",
+					"type": "String",
+					"description": "前雾灯"
+				},
+				{
+					"name": "front_power_window",
+					"type": "String",
+					"description": "前电动车窗"
+				},
+				{
+					"name": "front_rim",
+					"type": "String",
+					"description": "前轮毂规格"
+				},
+				{
+					"name": "front_seat_heater",
+					"type": "String",
+					"description": "前排座椅加热"
+				},
+				{
+					"name": "front_side_airbag",
+					"type": "String",
+					"description": "前排侧气囊"
+				},
+				{
+					"name": "front_suspension",
+					"type": "String",
+					"description": "前悬挂类型"
+				},
+				{
+					"name": "front_track",
+					"type": "String",
+					"description": "前轮距（mm）"
+				},
+				{
+					"name": "front_tyre",
+					"type": "String",
+					"description": "前轮胎规格"
+				},
+				{
+					"name": "fuel_grade",
+					"type": "String",
+					"description": "燃油标号"
+				},
+				{
+					"name": "fuel_injection",
+					"type": "String",
+					"description": "供油方式"
+				},
+				{
+					"name": "fuel_tank_capacity",
+					"type": "String",
+					"description": "油箱容积（L）"
+				},
+				{
+					"name": "fuel_type",
+					"type": "String",
+					"description": "燃油类型"
+				},
+				{
+					"name": "gear_number",
+					"type": "String",
+					"description": "档位数"
+				},
+				{
+					"name": "generation",
+					"type": "String",
+					"description": "代数"
+				},
+				{
+					"name": "gps",
+					"type": "String",
+					"description": "GPS导航"
+				},
+				{
+					"name": "guiding_price",
+					"type": "String",
+					"description": "指导价格(万元)"
+				},
+				{
+					"name": "hdc",
+					"type": "String",
+					"description": "陡坡缓降"
+				},
+				{
+					"name": "headlamp_washer",
+					"type": "String",
+					"description": "大灯清洗装置"
+				},
+				{
+					"name": "heated_outside_mirror",
+					"type": "String",
+					"description": "后视镜加热"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "高度（mm）"
+				},
+				{
+					"name": "height_adjustable_headlamp",
+					"type": "String",
+					"description": "大灯高度可调"
+				},
+				{
+					"name": "height_adjustable_seat",
+					"type": "String",
+					"description": "座椅高低调节"
+				},
+				{
+					"name": "height_adjustable_steering_wheel",
+					"type": "String",
+					"description": "方向盘上下调节"
+				},
+				{
+					"name": "hid_headlamp",
+					"type": "String",
+					"description": "氙气大灯"
+				},
+				{
+					"name": "high_beam",
+					"type": "String",
+					"description": "远光灯"
+				},
+				{
+					"name": "horsepower",
+					"type": "String",
+					"description": "最大马力（PS）"
+				},
+				{
+					"name": "hud",
+					"type": "String",
+					"description": "HUD抬头数字显示"
+				},
+				{
+					"name": "idling_year",
+					"type": "String",
+					"description": "停产年份"
+				},
+				{
+					"name": "induction",
+					"type": "String",
+					"description": "进气形式"
+				},
+				{
+					"name": "inside_mirror_with_memory",
+					"type": "String",
+					"description": "后视镜记忆"
+				},
+				{
+					"name": "insulated_glass",
+					"type": "String",
+					"description": "隔热玻璃"
+				},
+				{
+					"name": "intelligent_stop_start",
+					"type": "String",
+					"description": "发动机启停技术"
+				},
+				{
+					"name": "interactive_information_services",
+					"type": "String",
+					"description": "定位互动服务"
+				},
+				{
+					"name": "internal_hard_disk",
+					"type": "String",
+					"description": "内置硬盘"
+				},
+				{
+					"name": "is_commercial",
+					"description": "是否商用车"
+				},
+				{
+					"name": "is_foreign",
+					"description": "是否海外车"
+				},
+				{
+					"name": "isofix",
+					"type": "String",
+					"description": "ISOFIX儿童座椅接口"
+				},
+				{
+					"name": "keyless_entry",
+					"type": "String",
+					"description": "无钥匙进入系统"
+				},
+				{
+					"name": "keyless_go",
+					"type": "String",
+					"description": "无钥匙启动系统"
+				},
+				{
+					"name": "knee_airbag",
+					"type": "String",
+					"description": "膝部气囊"
+				},
+				{
+					"name": "latch",
+					"type": "String",
+					"description": "LATCH座椅接口"
+				},
+				{
+					"name": "lcd_screen",
+					"type": "String",
+					"description": "中控台彩色大屏"
+				},
+				{
+					"name": "leather_seat",
+					"type": "String",
+					"description": "真皮座椅"
+				},
+				{
+					"name": "leather_steering_wheel",
+					"type": "String",
+					"description": "真皮方向盘"
+				},
+				{
+					"name": "led_headlamp",
+					"type": "String",
+					"description": "LED大灯"
+				},
+				{
+					"name": "length",
+					"type": "String",
+					"description": "长度（mm）"
+				},
+				{
+					"name": "length_adjustable_steering_wheel",
+					"type": "String",
+					"description": "方向盘前后调节"
+				},
+				{
+					"name": "line_name",
+					"type": "String",
+					"description": "车系"
+				},
+				{
+					"name": "listing_month",
+					"type": "String",
+					"description": "上市月份"
+				},
+				{
+					"name": "listing_year",
+					"type": "String",
+					"description": "上市年份"
+				},
+				{
+					"name": "luggage_place",
+					"type": "String",
+					"description": "行李厢容积（L）"
+				},
+				{
+					"name": "lumber_support_adjustable",
+					"type": "String",
+					"description": "腰部支撑调节"
+				},
+				{
+					"name": "ly_id",
+					"type": "String",
+					"description": "力洋id",
+					"required": true
+				},
+				{
+					"name": "man_machine_interactive_system",
+					"type": "String",
+					"description": "人机交互系统"
+				},
+				{
+					"name": "manufacture_name",
+					"type": "String",
+					"description": "厂家名称"
+				},
+				{
+					"name": "manufacturers_code",
+					"type": "String",
+					"description": "厂家代码"
+				},
+				{
+					"name": "max_loading",
+					"type": "String",
+					"description": "最大载重质量（kg）"
+				},
+				{
+					"name": "max_speed",
+					"type": "String",
+					"description": "最高车速（km/h）"
+				},
+				{
+					"name": "memory_seat",
+					"type": "String",
+					"description": "电动座椅记忆"
+				},
+				{
+					"name": "min_ground_clearance",
+					"type": "String",
+					"description": "最小离地间隙（mm）"
+				},
+				{
+					"name": "min_turning_radius",
+					"type": "String",
+					"description": "最小转弯半径"
+				},
+				{
+					"name": "model_code",
+					"type": "String",
+					"description": "工信部车型代码"
+				},
+				{
+					"name": "model_name",
+					"type": "String",
+					"description": "车型"
+				},
+				{
+					"name": "models_code",
+					"type": "String",
+					"description": "车型代码"
+				},
+				{
+					"name": "mp3",
+					"type": "String",
+					"description": "音频支持MP3"
+				},
+				{
+					"name": "multi_disc_cd",
+					"type": "String",
+					"description": "多碟CD"
+				},
+				{
+					"name": "multi_disc_dvd",
+					"type": "String",
+					"description": "多碟DVD"
+				},
+				{
+					"name": "multifunction_steering_wheel",
+					"type": "String",
+					"description": "多功能方向盘"
+				},
+				{
+					"name": "night_vision",
+					"type": "String",
+					"description": "夜视系统"
+				},
+				{
+					"name": "overall_rear_seats_fold_down",
+					"type": "String",
+					"description": "后排座椅整体放倒"
+				},
+				{
+					"name": "panoramic_camera",
+					"type": "String",
+					"description": "全景摄像头"
+				},
+				{
+					"name": "panoramic_sunroof",
+					"type": "String",
+					"description": "全景天窗"
+				},
+				{
+					"name": "parking_assist",
+					"type": "String",
+					"description": "泊车辅助"
+				},
+				{
+					"name": "parking_brake",
+					"type": "String",
+					"description": "驻车制动类型"
+				},
+				{
+					"name": "passenger_airbag",
+					"type": "String",
+					"description": "副驾驶安全气囊"
+				},
+				{
+					"name": "passenger_seat_power_adjustable",
+					"type": "String",
+					"description": "副驾驶座座椅电动调节"
+				},
+				{
+					"name": "pollen_filter",
+					"type": "String",
+					"description": "空气调节/花粉过滤"
+				},
+				{
+					"name": "power_fold_outside_mirror",
+					"type": "String",
+					"description": "后视镜电动折叠"
+				},
+				{
+					"name": "power_kw",
+					"type": "String",
+					"description": "最大功率（kW）"
+				},
+				{
+					"name": "power_rpm",
+					"type": "String",
+					"description": "最大功率转速（rpm）"
+				},
+				{
+					"name": "power_steering",
+					"type": "String",
+					"description": "助力类型"
+				},
+				{
+					"name": "power_tailgate",
+					"type": "String",
+					"description": "电动后备箱"
+				},
+				{
+					"name": "produced_year",
+					"type": "String",
+					"description": "生产年份"
+				},
+				{
+					"name": "production_status",
+					"type": "String",
+					"description": "生产状态"
+				},
+				{
+					"name": "rain_sensing_wipers",
+					"type": "String",
+					"description": "感应雨刷"
+				},
+				{
+					"name": "rear_ac",
+					"type": "String",
+					"description": "后排独立空调"
+				},
+				{
+					"name": "rear_back_window_glass_blind",
+					"type": "String",
+					"description": "后风挡遮阳帘"
+				},
+				{
+					"name": "rear_brake",
+					"type": "String",
+					"description": "后制动器类型"
+				},
+				{
+					"name": "rear_center_armrest",
+					"type": "String",
+					"description": "后座中央扶手"
+				},
+				{
+					"name": "rear_cup_holder",
+					"type": "String",
+					"description": "后排杯架"
+				},
+				{
+					"name": "rear_curtain_airbag",
+					"type": "String",
+					"description": "后排头部气囊（气帘）"
+				},
+				{
+					"name": "rear_entertainment_screen",
+					"type": "String",
+					"description": "后排液晶屏"
+				},
+				{
+					"name": "rear_parking_aid",
+					"type": "String",
+					"description": "倒车雷达"
+				},
+				{
+					"name": "rear_power_window",
+					"type": "String",
+					"description": "后电动车窗"
+				},
+				{
+					"name": "rear_rim",
+					"type": "String",
+					"description": "后轮毂规格"
+				},
+				{
+					"name": "rear_seat_heater",
+					"type": "String",
+					"description": "后排座椅加热"
+				},
+				{
+					"name": "rear_seat_power_adjustable",
+					"type": "String",
+					"description": "后排座椅电动调节"
+				},
+				{
+					"name": "rear_seats_proportion_fold_down",
+					"type": "String",
+					"description": "后排座椅比例放倒"
+				},
+				{
+					"name": "rear_side_airbag",
+					"type": "String",
+					"description": "后排侧气囊"
+				},
+				{
+					"name": "rear_side_window_glass_blind",
+					"type": "String",
+					"description": "后排侧遮阳帘"
+				},
+				{
+					"name": "rear_suspension",
+					"type": "String",
+					"description": "后悬挂类型"
+				},
+				{
+					"name": "rear_track",
+					"type": "String",
+					"description": "后轮距（mm）"
+				},
+				{
+					"name": "rear_tyre",
+					"type": "String",
+					"description": "后轮胎规格"
+				},
+				{
+					"name": "rear_vent",
+					"type": "String",
+					"description": "后座出风口"
+				},
+				{
+					"name": "rear_view_camera",
+					"type": "String",
+					"description": "倒车视频影像"
+				},
+				{
+					"name": "rear_wiper",
+					"type": "String",
+					"description": "后雨刷"
+				},
+				{
+					"name": "refrigerator",
+					"type": "String",
+					"description": "车载冰箱"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "remote_control",
+					"type": "String",
+					"description": "遥控钥匙"
+				},
+				{
+					"name": "rims_material",
+					"type": "String",
+					"description": "轮毂材料"
+				},
+				{
+					"name": "roof_type",
+					"type": "String",
+					"description": "车顶型式"
+				},
+				{
+					"name": "run_flat_tyre",
+					"type": "String",
+					"description": "零胎压继续行驶"
+				},
+				{
+					"name": "sales_name",
+					"type": "String",
+					"description": "销售名称"
+				},
+				{
+					"name": "sales_status",
+					"type": "String",
+					"description": "销售状态"
+				},
+				{
+					"name": "sales_version",
+					"type": "String",
+					"description": "销售版本"
+				},
+				{
+					"name": "sales_year",
+					"type": "String",
+					"description": "年款"
+				},
+				{
+					"name": "seat_massage",
+					"type": "String",
+					"description": "座椅按摩"
+				},
+				{
+					"name": "seat_ventilation",
+					"type": "String",
+					"description": "座椅通风"
+				},
+				{
+					"name": "seatbelt_warning_lamp",
+					"type": "String",
+					"description": "安全带未系提示"
+				},
+				{
+					"name": "seats",
+					"type": "String",
+					"description": "座位数（个）"
+				},
+				{
+					"name": "second_row_backrest_adjustable",
+					"type": "String",
+					"description": "第二排靠背角度调节"
+				},
+				{
+					"name": "second_row_seat_position_adjustable",
+					"type": "String",
+					"description": "第二排座椅移动"
+				},
+				{
+					"name": "series_code",
+					"type": "String",
+					"description": "车系代码"
+				},
+				{
+					"name": "shoulder_support_adjustable",
+					"type": "String",
+					"description": "肩部支撑调节"
+				},
+				{
+					"name": "single_disc_cd",
+					"type": "String",
+					"description": "单碟CD"
+				},
+				{
+					"name": "single_disc_dvd",
+					"type": "String",
+					"description": "单碟DVD"
+				},
+				{
+					"name": "spare_wheel",
+					"type": "String",
+					"description": "备胎规格"
+				},
+				{
+					"name": "speaker_number",
+					"type": "String",
+					"description": "扬声器数量"
+				},
+				{
+					"name": "splitview",
+					"type": "String",
+					"description": "中控液晶屏分屏显示"
+				},
+				{
+					"name": "sport_body_dress_up_kits",
+					"type": "String",
+					"description": "运动外观套件"
+				},
+				{
+					"name": "sport_seat",
+					"type": "String",
+					"description": "运动座椅"
+				},
+				{
+					"name": "steering",
+					"type": "String",
+					"description": "转向机形式"
+				},
+				{
+					"name": "steering_wheel_with_shift",
+					"type": "String",
+					"description": "方向盘换挡"
+				},
+				{
+					"name": "stroke",
+					"type": "String",
+					"description": "冲程"
+				},
+				{
+					"name": "suburb_fuel_consumption",
+					"type": "String",
+					"description": "市郊工况油耗（L/100KM）"
+				},
+				{
+					"name": "sunroof",
+					"type": "String",
+					"description": "电动天窗"
+				},
+				{
+					"name": "sunvisor_mirror",
+					"type": "String",
+					"description": "遮阳板化妆镜"
+				},
+				{
+					"name": "telematics",
+					"type": "String",
+					"description": "车载信息服务"
+				},
+				{
+					"name": "third_row_seat",
+					"type": "String",
+					"description": "第三排座椅"
+				},
+				{
+					"name": "tire_pressure_monitor",
+					"type": "String",
+					"description": "胎压监测装置"
+				},
+				{
+					"name": "torque_nm",
+					"type": "String",
+					"description": "最大扭矩（N·m）"
+				},
+				{
+					"name": "torque_rpm",
+					"type": "String",
+					"description": "最大扭矩转速（rpm）"
+				},
+				{
+					"name": "transmission_configuration",
+					"type": "String",
+					"description": "变速器配置"
+				},
+				{
+					"name": "transmission_description",
+					"type": "String",
+					"description": "变速器描述"
+				},
+				{
+					"name": "transmission_model",
+					"type": "String",
+					"description": "变速器型号"
+				},
+				{
+					"name": "transmission_type",
+					"type": "String",
+					"description": "变速器类型"
+				},
+				{
+					"name": "trip_computer",
+					"type": "String",
+					"description": "行车电脑显示屏"
+				},
+				{
+					"name": "urban_fuel_consumption",
+					"type": "String",
+					"description": "市区工况油耗（L/100KM）"
+				},
+				{
+					"name": "valve_system",
+					"type": "String",
+					"description": "配气机构"
+				},
+				{
+					"name": "valves_per_cylinder",
+					"type": "String",
+					"description": "每缸气门数（个）"
+				},
+				{
+					"name": "variable_steering_ratio",
+					"type": "String",
+					"description": "可变转向比"
+				},
+				{
+					"name": "variable_suspension",
+					"type": "String",
+					"description": "可变悬挂"
+				},
+				{
+					"name": "vehicle_color",
+					"type": "String",
+					"description": "车身颜色"
+				},
+				{
+					"name": "vehicle_size",
+					"type": "String",
+					"description": "车辆级别"
+				},
+				{
+					"name": "vehicle_tv",
+					"type": "String",
+					"description": "车载电视"
+				},
+				{
+					"name": "vehicle_type",
+					"type": "String",
+					"description": "车辆类型"
+				},
+				{
+					"name": "vehicle_vttributes",
+					"type": "String",
+					"description": "厂家类型（国产,合资,进口）"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "版本"
+				},
+				{
+					"name": "version_cid",
+					"type": "String",
+					"description": "压缩版本id"
+				},
+				{
+					"name": "virtual_multi_disc_cd",
+					"type": "String",
+					"description": "虚拟多碟CD"
+				},
+				{
+					"name": "warranty_period",
+					"type": "String",
+					"description": "整车质保"
+				},
+				{
+					"name": "wheelbase",
+					"type": "String",
+					"description": "轴距（mm）"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": "宽度（mm）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "返回素材id"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

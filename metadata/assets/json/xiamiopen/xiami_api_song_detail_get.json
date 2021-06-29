@@ -1,0 +1,197 @@
+{
+	"name": "xiami.api.song.detail.get",
+	"apiChineseName": "获取歌曲详情",
+	"description": "获取歌曲详情",
+	"requestParams": [
+		{
+			"name": "song_ids",
+			"type": "Number[]",
+			"description": "歌曲id",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "song_detail_list",
+			"type": "SongDetailDo []",
+			"description": "歌曲信息",
+			"subParams": [
+				{
+					"name": "mv_id",
+					"type": "String",
+					"description": "mvId",
+					"required": true
+				},
+				{
+					"name": "album",
+					"type": "AlbumDo",
+					"description": "专辑信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "专辑名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "album_id",
+					"type": "Number",
+					"description": "专辑id",
+					"required": true
+				},
+				{
+					"name": "album_logo",
+					"type": "String",
+					"description": "专辑logo",
+					"required": true
+				},
+				{
+					"name": "arrangement",
+					"type": "String",
+					"description": "编曲",
+					"required": true
+				},
+				{
+					"name": "artist",
+					"type": "ArtistDo",
+					"description": "artistDO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alias",
+							"type": "String",
+							"description": "艺人别名",
+							"required": true
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人logo",
+							"required": true
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名",
+							"required": true
+						},
+						{
+							"name": "musician",
+							"type": "Boolean",
+							"description": "是否音乐人",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "artist_id",
+					"type": "Number",
+					"description": "艺人id",
+					"required": true
+				},
+				{
+					"name": "cd_serial",
+					"type": "Number",
+					"description": "cd序号",
+					"required": true
+				},
+				{
+					"name": "composer",
+					"type": "String",
+					"description": "作词",
+					"required": true
+				},
+				{
+					"name": "singers",
+					"type": "ArtistDo[]",
+					"description": "演唱者",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alias",
+							"type": "String",
+							"description": "别名",
+							"required": true
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人id",
+							"required": true
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人logo",
+							"required": true
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名",
+							"required": true
+						},
+						{
+							"name": "musician",
+							"type": "Boolean",
+							"description": "是否音乐人",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "song_id",
+					"type": "Number",
+					"description": "歌曲id",
+					"required": true
+				},
+				{
+					"name": "song_name",
+					"type": "String",
+					"description": "歌曲名",
+					"required": true
+				},
+				{
+					"name": "songwriters",
+					"type": "String",
+					"description": "作曲",
+					"required": true
+				},
+				{
+					"name": "track",
+					"type": "Number",
+					"description": "序号",
+					"required": true
+				},
+				{
+					"name": "lyric_file",
+					"type": "String",
+					"description": "歌词文件地址",
+					"required": true
+				},
+				{
+					"name": "lyric_type",
+					"type": "Number",
+					"description": "歌词类型",
+					"required": true
+				},
+				{
+					"name": "purview_info",
+					"type": "String",
+					"description": "版权信息",
+					"required": true
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "歌曲时长",
+					"required": true
+				}
+			]
+		}
+	]
+}

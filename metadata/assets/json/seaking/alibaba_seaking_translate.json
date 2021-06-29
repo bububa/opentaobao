@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.seaking.translate",
+	"apiChineseName": "MT定制接口",
+	"description": "MT定制接口",
+	"requestParams": [
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "定制用户id",
+			"required": true
+		},
+		{
+			"name": "target_lang",
+			"type": "String",
+			"description": "目标语种",
+			"required": true
+		},
+		{
+			"name": "source_lang",
+			"type": "String",
+			"description": "源语种",
+			"required": true
+		},
+		{
+			"name": "source_text",
+			"type": "String",
+			"description": "原文",
+			"required": true
+		},
+		{
+			"name": "source_format",
+			"type": "String",
+			"description": "原文格式(text/html)",
+			"required": true
+		},
+		{
+			"name": "identifier_type",
+			"type": "String",
+			"description": "定制用户类型",
+			"required": true
+		},
+		{
+			"name": "field_type",
+			"type": "String",
+			"description": "原文类型(title: 标题/offer: 详描/message: 消息)",
+			"required": true
+		},
+		{
+			"name": "extra",
+			"type": "Extra",
+			"description": "扩展信息",
+			"subParams": [
+				{
+					"name": "sub_identify_type",
+					"type": "String",
+					"description": "店铺所在平台"
+				},
+				{
+					"name": "sub_identifier",
+					"type": "String",
+					"description": "店铺id"
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "商品所在平台"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "译文"
+		}
+	]
+}

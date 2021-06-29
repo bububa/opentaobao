@@ -1,0 +1,113 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.state",
+	"apiChineseName": "体检机构对接_体检状态查询",
+	"description": "体检机构对接_体检状态查询",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户唯一码"
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约唯一标识"
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "体检机构预约唯一标识码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "cooperation_order_info",
+			"type": "CooperationOrderInfo",
+			"description": "预约信息",
+			"subParams": [
+				{
+					"name": "check_no",
+					"type": "String",
+					"description": "机构checkNo",
+					"required": true
+				},
+				{
+					"name": "cert_number",
+					"type": "String",
+					"description": "证件号",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话号码",
+					"required": true
+				},
+				{
+					"name": "married",
+					"type": "String",
+					"description": "婚否(0-未婚; 1-已婚)",
+					"required": true
+				},
+				{
+					"name": "cert_type",
+					"type": "String",
+					"description": "证件类型(0-身份证; 1-护照; 2-军官证)",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "体检人姓名",
+					"required": true
+				},
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别(0-男;1-女;)",
+					"required": true
+				},
+				{
+					"name": "check_date",
+					"type": "String",
+					"description": "体检日期",
+					"required": true
+				},
+				{
+					"name": "reportstatus",
+					"type": "String",
+					"description": "体检状态：未到检(exam_not), 已到检(exam_done)，已取消（exam_cancel）(新增)； 上门服务中还需以下两种状态：预约确认中（reserve_confirming），预约拒绝（reserve_rejected）；",
+					"required": true
+				},
+				{
+					"name": "uniq_reserve_code",
+					"type": "String",
+					"description": "机构的预约唯一码",
+					"required": true
+				},
+				{
+					"name": "reserve_number",
+					"type": "String",
+					"description": "阿里健康预约唯一标识",
+					"required": true
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "预约拒绝原因，在预约拒绝后才需赋值（仅上门服务中使用）",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "返回结果编码"
+		}
+	]
+}

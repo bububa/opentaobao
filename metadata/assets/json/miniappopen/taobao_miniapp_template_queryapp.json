@@ -1,0 +1,128 @@
+{
+	"name": "taobao.miniapp.template.queryapp",
+	"apiChineseName": "查询实例化应用版本",
+	"description": "根据模板id和商家信息，查询实例化小程序版本查询",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小，最大50，按照小程序Id倒序",
+			"required": true
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板id",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "分页号,\u003e=1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "all_version_infos",
+			"type": "MiniappInstanceAppAllVersionsDto []",
+			"description": "所有版本信息",
+			"subParams": [
+				{
+					"name": "app_info",
+					"type": "MiniAppEntityTemplateDto",
+					"description": "小程序信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "app_id",
+							"type": "String",
+							"description": "小程序app_id",
+							"required": true
+						},
+						{
+							"name": "app_icon",
+							"type": "String",
+							"description": "小程序icon",
+							"required": true
+						},
+						{
+							"name": "app_description",
+							"type": "String",
+							"description": "小程序描述",
+							"required": true
+						},
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "小程序名称",
+							"required": true
+						},
+						{
+							"name": "appkey",
+							"type": "String",
+							"description": "appkey",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "app_version_list",
+					"type": "MiniAppInstanceVersionDto[]",
+					"description": "数据可能延迟，查不到隔会儿再查。",
+					"required": true,
+					"subParams": [
+						{
+							"name": "app_version",
+							"type": "String",
+							"description": "小程序版本号",
+							"required": true
+						},
+						{
+							"name": "client",
+							"type": "String",
+							"description": "发布端",
+							"required": true
+						},
+						{
+							"name": "app_id",
+							"type": "String",
+							"description": "小程序app_id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "版本状态",
+							"required": true
+						},
+						{
+							"name": "template_id",
+							"type": "String",
+							"description": "模板id",
+							"required": true
+						},
+						{
+							"name": "template_version",
+							"type": "String",
+							"description": "模板版本",
+							"required": true
+						},
+						{
+							"name": "ext_json",
+							"type": "String",
+							"description": "扩展信息",
+							"required": true
+						},
+						{
+							"name": "app_url",
+							"type": "String",
+							"description": "版本链接。上线状态为线上地址，预览状态为预览地址，下线状态为空。",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

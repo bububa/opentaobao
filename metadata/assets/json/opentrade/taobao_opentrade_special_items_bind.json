@@ -1,0 +1,47 @@
+{
+	"name": "taobao.opentrade.special.items.bind",
+	"apiChineseName": "专属下单场景商品绑定",
+	"description": "专属下单场景商品绑定",
+	"requestParams": [
+		{
+			"name": "miniapp_id",
+			"type": "Number",
+			"description": "绑定专属下单场景的C端小程序ID",
+			"required": true
+		},
+		{
+			"name": "item_ids",
+			"type": "Number[]",
+			"description": "本次待绑定的商品ID列表",
+			"required": true,
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "ItemBindResult []",
+			"description": "绑定返回结构",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "绑定异常时的错误信息",
+					"required": true
+				},
+				{
+					"name": "bind_ok",
+					"type": "Boolean",
+					"description": "是否绑定成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"name": "taobao.miniapp.cloud.mongo.update",
+	"apiChineseName": "更新MongoDB中的数据",
+	"description": "更新MongoDB中的数据",
+	"requestParams": [
+		{
+			"name": "collection",
+			"type": "String",
+			"description": "MongoDB表名",
+			"required": true
+		},
+		{
+			"name": "filter",
+			"type": "Json",
+			"description": "更新条件",
+			"required": true
+		},
+		{
+			"name": "record",
+			"type": "Json",
+			"description": "待写入的数据",
+			"required": true
+		},
+		{
+			"name": "env",
+			"type": "String",
+			"description": "要操作的环境，默认是测试环境"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "更新的记录数"
+		}
+	]
+}

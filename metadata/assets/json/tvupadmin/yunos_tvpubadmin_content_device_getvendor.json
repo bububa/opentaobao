@@ -1,0 +1,26 @@
+{
+	"name": "yunos.tvpubadmin.content.device.getvendor",
+	"apiChineseName": "查询设备Vendor信息",
+	"description": "查询设备Vendor信息",
+	"requestParams": [
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "license",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "brand_id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "list"
+		}
+	]
+}

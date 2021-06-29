@@ -1,0 +1,52 @@
+{
+	"name": "taobao.travel.ticket.order.verify",
+	"apiChineseName": "飞猪门票核销通知",
+	"description": "系统商通过TOP接口调用通知飞猪门票核销情况",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "下单订单ID"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "外部订单ID"
+		},
+		{
+			"name": "voucher_infos",
+			"type": "VoucherInfoDto[]",
+			"description": "使用凭证信息",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "confirm_code",
+					"type": "String",
+					"description": "用户短信会收到的确认号"
+				},
+				{
+					"name": "used_quantity",
+					"type": "Number",
+					"description": "凭证使用次数"
+				},
+				{
+					"name": "used_date",
+					"type": "String",
+					"description": "凭证使用时间，格式:yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		},
+		{
+			"name": "write_off_type",
+			"type": "Number",
+			"description": "供应商核销回调类型：0表示使用本次核销数量（常规），1表示使用总核销数量（已使用+本次）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "正确返回true"
+		}
+	]
+}

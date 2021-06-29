@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.lsy.crm.customer.add",
+	"apiChineseName": "私域导购添加活动留资入口",
+	"description": "私域导购添加活动留资入口",
+	"requestParams": [
+		{
+			"name": "req_dto",
+			"type": "NrtCrmCreateCustomerReq",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份：居然/红星"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "会员openId",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "摊位id",
+					"required": true
+				},
+				{
+					"name": "guider_id",
+					"type": "Number",
+					"description": "导购员id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误提示码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

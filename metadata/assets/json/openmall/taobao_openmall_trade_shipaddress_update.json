@@ -1,0 +1,79 @@
+{
+	"name": "taobao.openmall.trade.shipaddress.update",
+	"apiChineseName": "Openmall订单收货地址修改",
+	"description": "Openmall订单收货地址修改",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick",
+			"required": true
+		},
+		{
+			"name": "receiver_address",
+			"type": "String",
+			"description": "收货地址。最大长度为228个字节。",
+			"required": true,
+			"maxLength": 228
+		},
+		{
+			"name": "receiver_city",
+			"type": "String",
+			"description": "城市。最大长度为32个字节。如：杭州",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "receiver_district",
+			"type": "String",
+			"description": "区/县。最大长度为32个字节。如：西湖区",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "receiver_mobile",
+			"type": "String",
+			"description": "移动电话。最大长度为11个字节。",
+			"required": true,
+			"maxLength": 11
+		},
+		{
+			"name": "receiver_name",
+			"type": "String",
+			"description": "收货人全名。最大长度为50个字节。",
+			"required": true,
+			"maxLength": 50
+		},
+		{
+			"name": "receiver_phone",
+			"type": "String",
+			"description": "固定电话。最大长度为30个字节。",
+			"maxLength": 30
+		},
+		{
+			"name": "receiver_state",
+			"type": "String",
+			"description": "省份。最大长度为32个字节。如：浙江",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "receiver_zip",
+			"type": "String",
+			"description": "6位数字的邮编"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tid",
+			"type": "String",
+			"description": "订单号"
+		}
+	]
+}

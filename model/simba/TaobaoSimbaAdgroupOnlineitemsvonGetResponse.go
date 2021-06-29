@@ -19,7 +19,9 @@ type TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse struct {
 
 type TaobaoSimbaAdgroupOnlineitemsvonGetResponse struct {
     XMLName xml.Name `xml:"simba_adgroup_onlineitemsvon_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 带分页的淘宝商品
     

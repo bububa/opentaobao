@@ -1,0 +1,66 @@
+{
+	"name": "taobao.ailab.aicloud.top.message.push.unicast",
+	"apiChineseName": "天猫精灵消息中心单播推送消息接口",
+	"description": "天猫精灵运营平台消息能力开放广播接口，主要开放给b端用户，用户可调用接口进行广播推送，将消息推送到天猫精灵设备或者天猫精灵APP中。",
+	"requestParams": [
+		{
+			"name": "message_unicast_request",
+			"type": "MessageUnicastRequest",
+			"description": "消息推送单播请求体",
+			"subParams": [
+				{
+					"name": "push_context",
+					"description": "推送上下文信息"
+				},
+				{
+					"name": "send_target",
+					"type": "MessageSendTarget",
+					"description": "消息发送目标",
+					"subParams": [
+						{
+							"name": "target_type",
+							"type": "String",
+							"description": "消息发送用户标识类型"
+						},
+						{
+							"name": "target_identity",
+							"type": "String",
+							"description": "消息发送用户标识id"
+						}
+					]
+				},
+				{
+					"name": "message_template_id",
+					"type": "String",
+					"description": "消息模板id"
+				},
+				{
+					"name": "message_entity_id",
+					"type": "String",
+					"description": "消息号id"
+				},
+				{
+					"name": "place_holder",
+					"description": "模板占位符"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "本次调用trace"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "调用结果code 0:成功 非0：失败"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "调用结果描述"
+		}
+	]
+}

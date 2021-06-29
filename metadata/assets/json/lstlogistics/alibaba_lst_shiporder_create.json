@@ -1,0 +1,187 @@
+{
+	"name": "alibaba.lst.shiporder.create",
+	"apiChineseName": "零售通发货单创建",
+	"description": "通过该接口可以创建零售通运保保发货单，并处理相关业务流程。",
+	"requestParams": [
+		{
+			"name": "ship_order",
+			"type": "LstThirdPartMainShipOrderCreateDto",
+			"description": "创建发货单入参",
+			"subParams": [
+				{
+					"name": "receiver_district",
+					"type": "String",
+					"description": "区",
+					"required": true
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "Number",
+					"description": "收货人手机号",
+					"required": true
+				},
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "buyer_message",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "详细地址",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "店铺名称",
+					"required": true
+				},
+				{
+					"name": "order_create_time",
+					"type": "Date",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "details",
+					"type": "LstThirdPartDetailShipOrderCreateDto[]",
+					"description": "货品明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sale_quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "sku_price",
+							"type": "Number",
+							"description": "单价，单位为分",
+							"required": true
+						},
+						{
+							"name": "sku_brand",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "sku_spec",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "sku_unit",
+							"type": "String",
+							"description": "销售单位",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "国标条码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "货品实付金额，单位为分",
+							"required": true
+						},
+						{
+							"name": "detail_order_id",
+							"type": "String",
+							"description": "订单明细id，可用来标注唯一的订单明细行。当其他无法唯一标识的时候，可用此字段。"
+						}
+					]
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "订单实付金额，单位为分",
+					"required": true
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收货人姓名",
+					"required": true
+				},
+				{
+					"name": "receiver_zip",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单ID，幂等key",
+					"required": true
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "电话"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Number",
+					"description": "发货单ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

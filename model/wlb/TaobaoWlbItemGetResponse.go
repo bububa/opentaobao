@@ -19,7 +19,9 @@ type TaobaoWlbItemGetAPIResponse struct {
 
 type TaobaoWlbItemGetResponse struct {
     XMLName xml.Name `xml:"wlb_item_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 商品信息
     

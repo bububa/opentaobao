@@ -1,0 +1,145 @@
+{
+	"name": "taobao.jst.interactive.task.query",
+	"apiChineseName": "互动任务列表查询接口",
+	"description": "查询用户的互动任务列表",
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "data",
+			"type": "InteractiveTaskQueryResponse",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "task_list",
+					"type": "InteractiveTask[]",
+					"description": "任务列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "material",
+							"type": "Material",
+							"description": "任务列表素材",
+							"required": true,
+							"subParams": [
+								{
+									"name": "accept_btn",
+									"type": "String",
+									"description": "待完成按钮文案",
+									"required": true
+								},
+								{
+									"name": "duration",
+									"type": "Number",
+									"description": "浏览任务需要多少秒才能完成",
+									"required": true
+								},
+								{
+									"name": "action_type",
+									"type": "String",
+									"description": "任务列表动作类型，VISIT=浏览",
+									"required": true
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "任务列表副标题",
+									"required": true
+								},
+								{
+									"name": "icon",
+									"type": "String",
+									"description": "任务列表图标链接",
+									"required": true
+								},
+								{
+									"name": "action",
+									"type": "String",
+									"description": "任务列表动作，比如浏览的店铺地址链接",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "任务列表标题",
+									"required": true
+								},
+								{
+									"name": "init_btn",
+									"type": "String",
+									"description": "待领取按钮文案",
+									"required": true
+								},
+								{
+									"name": "award_btn",
+									"type": "String",
+									"description": "待领取按钮文案",
+									"required": true
+								},
+								{
+									"name": "complete_btn",
+									"type": "String",
+									"description": "已完成按钮文案",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "in_progress",
+							"type": "Boolean",
+							"description": "当前任务是否在进行中，默认为true。直播任务中的false代表当前不在直播时间段，不返回action字段，前端应屏蔽跳转",
+							"required": true
+						},
+						{
+							"name": "progress",
+							"type": "Progress",
+							"description": "任务列表进度",
+							"required": true,
+							"subParams": [
+								{
+									"name": "max_times",
+									"type": "Number",
+									"description": "任务的完成最大上限次数",
+									"required": true
+								},
+								{
+									"name": "times",
+									"type": "Number",
+									"description": "用户已完成的任务次数",
+									"required": true
+								},
+								{
+									"name": "need_times",
+									"type": "Number",
+									"description": "用户还需要完成的任务次数，needTimes=maxTimes-times",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "任务ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "任务状态，INIT=初始化完成，待领取；ACCEPTED=已领取 正在做；AWARDING=领奖中；CURRENT_COMPLETE=本次任务完成；COMPLETE=已完成",
+							"required": true
+						},
+						{
+							"name": "task_type",
+							"type": "Number",
+							"description": "任务类型，1=商品详情页，2=直播间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

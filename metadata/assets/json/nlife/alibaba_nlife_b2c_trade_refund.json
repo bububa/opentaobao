@@ -1,0 +1,114 @@
+{
+	"name": "alibaba.nlife.b2c.trade.refund",
+	"apiChineseName": "零售+请求退款",
+	"description": "零售+平台请求退款接口，在零售+平台不会有资金流变动，只是订单状态的更新",
+	"requestParams": [
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "零售+平台订单号，和out_trade_no不能同时为空",
+			"maxLength": 64
+		},
+		{
+			"name": "out_request_no",
+			"type": "String",
+			"description": "外部请求号",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "refund_bill_list",
+			"type": "FundBill[]",
+			"description": "退款资金列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "资金渠道的id，1. type=CASH：为空； 2. type=UNIONPAY：银联退款流水号； 3. type=ALIPAY：支付宝退款单号； 4. type=WECHAT_PAY：微信退款单号； 5. type=PROMOTION：零售+平台中的优惠id。6. type=CUSTOM_PROMOTION：7. type=CUSTOM_PREPAY_CARD；8. type=OFFLINE_PREPAY_CARD； 9. type=MOLING 为空"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "资金渠道类型，1. CASH：现金支付； 2. UNIONPAY：银联刷卡支付； 3. ALIPAY：支付宝支付； 4. WECHAT_PAY：微信支付； 5. PROMOTION: 零售+平台的优惠； 6. CUSTOM_PROMOTION：零售商自有优惠； 7. CUSTOM_PREPAY_CARD：ISV储值卡；8. OFFLINE_PREPAY_CARD: 线下储值卡（无ISV交互逻辑） 9. MOLING：支付时抹零",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "String",
+					"description": "用户ID"
+				},
+				{
+					"name": "buyer_id_type",
+					"type": "String",
+					"description": "用户类型，TAOBAO_OPENID\t经阿里百川淘宝登录获取到的用户id ALIPAY_OPENID\t经蚂蚁金服开放平台支付宝App登录获取到的用户id WECHAT_OPENID\t经微信开放平台微信App登录获取到的用户id PHONE_NUMBER\t通过手机号登录 APP_USERID\t商户自有的用户id ANONYMOUS_USER\t匿名用户",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "资金渠道的名称。 1. type=CASH：现金支付； 2. type=UNIONPAY：银联刷卡支付； 3. type=ALIPAY：支付宝支付； 4. type=WECHAT_PAY：微信支付； 5. type=PROMOTION: 零售+平台的优惠名称； 6. type=CUSTOM_PROMOTION：零售商自有优惠名称； 7. type=CUSTOM_PREPAY_CARD：ISV储值卡；8. type=OFFLINE_PREPAY_CARD：线下储值卡； 9. type=MOLING：抹零；",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "金额/优惠抵扣金额，单位：分",
+					"required": true
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "货币种类，CNY",
+					"required": true
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "扩展参数，JSON格式"
+				},
+				{
+					"name": "attachment",
+					"type": "String",
+					"description": "透传参数，格式自定，查询时原样返回"
+				}
+			]
+		},
+		{
+			"name": "refund_goods_list",
+			"type": "String[]",
+			"description": "所退货物的ID列表,逗号分隔商品组，冒号分隔商品和退货数量，支持三种方式退。 条码模式：barcode1:3,barcode2:2 表示barcode1退3件，barcode2退2件。 item_sku模式:itemId1_skuId1:3,itemId2_skuId2:2 表示itemId1_skuId1这个商品退3件，itemId2_skuId2这个商品退2件。 唯一码模式：uniqeueCodeA:1,uniqeueCodeA:1,因唯一码指定到唯一一件商品，退货数量都是1。",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "外部订单号，和trade_no不能同时为空",
+			"maxLength": 64
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "零售+门店ID"
+		},
+		{
+			"name": "refund_points",
+			"type": "Number",
+			"description": "退积分,ISV自行算好"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gmt_refund",
+			"type": "Date",
+			"description": "退款时间"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	]
+}

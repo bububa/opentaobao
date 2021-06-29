@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.ailabs.aligenie.device.unbind",
+	"apiChineseName": "设备解绑操作接口",
+	"description": "让开发者能根据设备ID进行解绑操作的接口",
+	"requestParams": [
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离字符串",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "欲解绑的设备ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "解绑是否成功"
+		}
+	]
+}

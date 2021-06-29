@@ -1,0 +1,137 @@
+{
+	"name": "alibaba.campus.acl.queryallemppermiitem",
+	"apiChineseName": "查询员工全部权限(包括角色下面的权限)",
+	"description": "查询员工全部权限(包括角色下面的权限)",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id不填默认SYS_000"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "用户账号",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "每页多少条"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "每页多少条",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "PermissionVo[]",
+							"description": "items",
+							"required": true,
+							"subParams": [
+								{
+									"name": "priv_key",
+									"type": "String",
+									"description": "权限健",
+									"required": true
+								},
+								{
+									"name": "priv_vaue",
+									"type": "String",
+									"description": "权限值",
+									"required": true
+								},
+								{
+									"name": "expire_time",
+									"type": "Date",
+									"description": "过期时间",
+									"required": true
+								},
+								{
+									"name": "effective_time",
+									"type": "Date",
+									"description": "开始时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页码",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

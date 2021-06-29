@@ -39,6 +39,9 @@ func Download(dir string, specificPkg string) error {
 		cfg, found := pkgConfigMp[catelogTree.Id]
 		if !found {
 			log.Printf("[ERR] %d: %s, missing pkg config\n", catelogTree.Id, catelogTree.Name)
+			for _, catelog := range catelogTree.CatelogList {
+				log.Printf("[SKIP] %d: %s->%s\n", catelogTree.Id, catelogTree.Name, catelog.Name)
+			}
 			continue
 		}
 		if specificPkg != "" && cfg.Name != specificPkg {

@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.alihealth.pregnancy.taginfo.addrank",
+	"apiChineseName": "点击标签后排序接口",
+	"description": "备孕管理--点击标签后排序接口",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "tag_code",
+			"type": "String",
+			"description": "标签编码，例如备孕标签为5122",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				}
+			]
+		}
+	]
+}

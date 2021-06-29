@@ -1,0 +1,119 @@
+{
+	"name": "alibaba.lsy.crm.activity.store.getstorelist",
+	"apiChineseName": "ISV查询门店",
+	"description": "ISV查询门店",
+	"requestParams": [
+		{
+			"name": "query_store_req",
+			"type": "NrtQueryStoreReq",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据条数，最大100条"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "page_result_d_o",
+			"type": "PageResultDo",
+			"description": "返回结果集",
+			"subParams": [
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "数据总数目",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "NrtStoreDto[]",
+					"description": "门店集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "short_address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				},
+				{
+					"name": "total_page_num",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				}
+			]
+		}
+	]
+}

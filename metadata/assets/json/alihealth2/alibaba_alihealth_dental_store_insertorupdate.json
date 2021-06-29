@@ -1,0 +1,174 @@
+{
+	"name": "alibaba.alihealth.dental.store.insertorupdate",
+	"apiChineseName": "ISV新增/修改口腔门店",
+	"description": "ISV新增/修改口腔门店",
+	"requestParams": [
+		{
+			"name": "store",
+			"type": "DentalOuterStoreRequest",
+			"description": "门店",
+			"subParams": [
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "门店主图"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "门店名称"
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市码"
+				},
+				{
+					"name": "store_desc",
+					"type": "String",
+					"description": "门店描述"
+				},
+				{
+					"name": "license_name",
+					"type": "String",
+					"description": "医疗执业许可证名称"
+				},
+				{
+					"name": "store_phone",
+					"type": "String",
+					"description": "门店号码"
+				},
+				{
+					"name": "point_x",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "license_no",
+					"type": "String",
+					"description": "营业执照号"
+				},
+				{
+					"name": "point_y",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "门店地址"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "外部门店code"
+				},
+				{
+					"name": "key_words",
+					"type": "String",
+					"description": "关键字"
+				},
+				{
+					"name": "work_time",
+					"type": "String",
+					"description": "营业时间"
+				},
+				{
+					"name": "routes",
+					"type": "String",
+					"description": "交通路线"
+				},
+				{
+					"name": "sign_pic",
+					"type": "String",
+					"description": "标记图片"
+				},
+				{
+					"name": "license_pics",
+					"type": "String[]",
+					"description": "营业执照图片"
+				},
+				{
+					"name": "medical_pics",
+					"type": "String[]",
+					"description": "医疗执业许可证图片"
+				},
+				{
+					"name": "store_pics",
+					"type": "String[]",
+					"description": "门店图片"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "StoreAuditVo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID",
+							"required": true
+						},
+						{
+							"name": "store_audit_id",
+							"type": "Number",
+							"description": "门店审核ID",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "审核原因",
+							"required": true
+						},
+						{
+							"name": "check_status",
+							"type": "Number",
+							"description": "审核状态码",
+							"required": true
+						},
+						{
+							"name": "check_status_string",
+							"type": "String",
+							"description": "审核状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msg_code",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msg_info",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				}
+			]
+		}
+	]
+}

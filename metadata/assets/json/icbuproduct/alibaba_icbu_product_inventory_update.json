@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.icbu.product.inventory.update",
+	"apiChineseName": "icbu商品库存更新",
+	"description": "更新库存信息",
+	"requestParams": [
+		{
+			"name": "request_param",
+			"type": "ProductInventoryRequest",
+			"description": "更新请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "inventory_list",
+					"type": "InventoryDto[]",
+					"description": "待更新的库存列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "待更新库存的SKUid,如果没有skuId,设置成-1",
+							"required": true
+						},
+						{
+							"name": "inventory_code",
+							"type": "String",
+							"description": "库存的仓编码,根据商品查询返回的仓编码进行设置,不同的客户类型,仓编码会不一样",
+							"required": true
+						},
+						{
+							"name": "inventory",
+							"type": "Number",
+							"description": "库存变动值",
+							"required": true
+						},
+						{
+							"name": "operate",
+							"type": "String",
+							"description": "操作类型，加库存或者减库存,加库存:plus,减库存:sub",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "库存更新是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "接口更新失败时错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "失败错误码",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "接口失败时的追踪id",
+					"required": true
+				}
+			]
+		}
+	]
+}

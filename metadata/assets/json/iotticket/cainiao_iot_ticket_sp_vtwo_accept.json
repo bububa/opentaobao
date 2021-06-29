@@ -1,0 +1,130 @@
+{
+	"name": "cainiao.iot.ticket.sp.vtwo.accept",
+	"apiChineseName": "IoT售后服务商确认接单",
+	"description": "IoT售后服务商确认接单",
+	"requestParams": [
+		{
+			"name": "accept_ticket_top_request",
+			"type": "AcceptTicketV2TopRequest",
+			"description": "受理接口请求参数",
+			"subParams": [
+				{
+					"name": "maintenance_mode_code",
+					"type": "String",
+					"description": "维修方案 depot_repair:寄回维修;parts_replacement:配件更换;onsite_repair:上门维修;remote_solution:远程解决;transfer_to_customer_service:转单给菜鸟",
+					"required": true
+				},
+				{
+					"name": "onsite_staff_id",
+					"type": "String",
+					"description": "上门人员Id"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人名称"
+				},
+				{
+					"name": "onsite_address",
+					"type": "String",
+					"description": "上门地址"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "operator_phone",
+					"type": "String",
+					"description": "操作人手机号",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "onsite_staff_name",
+					"type": "String",
+					"description": "上门人员名称"
+				},
+				{
+					"name": "onsite_time",
+					"type": "Date",
+					"description": "上门时间"
+				},
+				{
+					"name": "sp_code",
+					"type": "String",
+					"description": "服务商编码",
+					"required": true
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件地址"
+				},
+				{
+					"name": "onsite_staff_phone",
+					"type": "String",
+					"description": "上门人联系方式"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人联系方式"
+				},
+				{
+					"name": "feature",
+					"description": "扩展字段"
+				},
+				{
+					"name": "solution_remark",
+					"type": "String",
+					"description": "远程解决方式 1:不想修了;2:已经修好了;3:费用太贵;4:其他原因"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人Id",
+					"required": true
+				},
+				{
+					"name": "ticket_id",
+					"type": "Number",
+					"description": "工单Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "异常描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

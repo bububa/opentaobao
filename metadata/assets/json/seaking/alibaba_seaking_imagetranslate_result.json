@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.seaking.imagetranslate.result",
+	"apiChineseName": "获取图片翻译任务结果",
+	"description": "获取图片翻译任务结果",
+	"requestParams": [
+		{
+			"name": "token_from",
+			"type": "String",
+			"description": "token来源站点",
+			"required": true
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaskResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "finished_count",
+					"type": "Number",
+					"description": "完成的任务数",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总计任务数",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "任务状态",
+					"required": true
+				},
+				{
+					"name": "task_result_detail_list",
+					"type": "TaskResultDetailDto[]",
+					"description": "子任务列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "result",
+							"type": "String",
+							"description": "图片翻译结果",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "子任务状态",
+							"required": true
+						},
+						{
+							"name": "idx",
+							"type": "Number",
+							"description": "子任务编号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

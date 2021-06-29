@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.alihealth.store.certificate.create",
+	"apiChineseName": "仓库换证审批",
+	"description": "仓库侧换证发起审批",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库code"
+		},
+		{
+			"name": "audit_type",
+			"type": "String",
+			"description": "审批业务类型"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "审批内容"
+		},
+		{
+			"name": "biz_no",
+			"type": "String",
+			"description": "业务单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "Boolean",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "创建审批流是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

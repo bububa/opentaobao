@@ -1,0 +1,45 @@
+{
+	"name": "taobao.market.picture.getuserpictures",
+	"apiChineseName": "读取用户上传图片",
+	"description": "商家通过用户信息，获取用户上传的",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "suc",
+					"type": "Boolean",
+					"description": "suc",
+					"required": true
+				}
+			]
+		}
+	]
+}

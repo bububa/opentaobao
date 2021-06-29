@@ -1,0 +1,32 @@
+{
+	"name": "taobao.uscesl.biz.store.insert",
+	"apiChineseName": "新增电子价签商家门店接口",
+	"description": "新增电子价签商家门店接口",
+	"requestParams": [
+		{
+			"name": "store_name",
+			"type": "String",
+			"description": "门店名称",
+			"required": true
+		},
+		{
+			"name": "store_out_id",
+			"type": "String",
+			"description": "门店外部ID，要保持同一商家下的唯一性",
+			"required": true
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家标识key",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

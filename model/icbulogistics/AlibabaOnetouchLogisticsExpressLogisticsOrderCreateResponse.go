@@ -1,0 +1,31 @@
+package icbulogistics
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+快递下单 APIResponse
+alibaba.onetouch.logistics.express.logistics.order.create
+
+快递下单
+*/
+type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateAPIResponse struct {
+    model.CommonResponse
+    AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResponse
+}
+
+type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_onetouch_logistics_express_logistics_order_create_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 接口返回model
+    
+    Result   *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

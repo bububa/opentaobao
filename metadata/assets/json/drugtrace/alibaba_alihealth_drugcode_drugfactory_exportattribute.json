@@ -1,0 +1,252 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.exportattribute",
+	"apiChineseName": "导出所有项目的药物属性和药品信息",
+	"description": "导出所有项目的药物属性和药品信息",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "TrialProjectInfoDto",
+					"description": "导出的项目和药物属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "project_and_attribute_dto_list",
+							"type": "TrialProjectAndAttributeDto[]",
+							"description": "项目和药物属性",
+							"required": true,
+							"subParams": [
+								{
+									"name": "trial_project_name",
+									"type": "String",
+									"description": "项目名称",
+									"required": true
+								},
+								{
+									"name": "trial_project_no",
+									"type": "String",
+									"description": "项目编号",
+									"required": true
+								},
+								{
+									"name": "first_attr_dto_list",
+									"type": "FirstAttrDto[]",
+									"description": "一级药物属性",
+									"required": true,
+									"subParams": [
+										{
+											"name": "first_attribute_name",
+											"type": "String",
+											"description": "一级药物属性名称",
+											"required": true
+										},
+										{
+											"name": "first_attribute_no",
+											"type": "String",
+											"description": "一级药物属性编号",
+											"required": true
+										},
+										{
+											"name": "secondary_attr_dto_list",
+											"type": "SecondaryAttrDto[]",
+											"description": "二级药物属性信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "secondary_attribute_name",
+													"type": "String",
+													"description": "二级药物属性名称",
+													"required": true
+												},
+												{
+													"name": "secondary_attribute_no",
+													"type": "String",
+													"description": "二级药物属性编号",
+													"required": true
+												},
+												{
+													"name": "secondary_attr_desc",
+													"type": "String",
+													"description": "二级药物属性描述",
+													"required": true
+												},
+												{
+													"name": "drug_ent_base_info_id",
+													"type": "String",
+													"description": "药品id",
+													"required": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "drug_dto_list",
+							"type": "SubType[]",
+							"description": "药品信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "drug_ent_base_info_id",
+									"type": "String",
+									"description": "药品id",
+									"required": true
+								},
+								{
+									"name": "authorized_no",
+									"type": "String",
+									"description": "批准文号",
+									"required": true
+								},
+								{
+									"name": "pack_unit",
+									"type": "String",
+									"description": "包装单位",
+									"required": true
+								},
+								{
+									"name": "package_spec",
+									"type": "String",
+									"description": "包装规格",
+									"required": true
+								},
+								{
+									"name": "physic_detail_type",
+									"type": "String",
+									"description": "药品详细类型",
+									"required": true
+								},
+								{
+									"name": "physic_expiry",
+									"type": "String",
+									"description": "有效期",
+									"required": true
+								},
+								{
+									"name": "physic_expiry_unit",
+									"type": "String",
+									"description": "有效期单位",
+									"required": true
+								},
+								{
+									"name": "physic_info",
+									"type": "String",
+									"description": "药品信息",
+									"required": true
+								},
+								{
+									"name": "physic_type",
+									"type": "String",
+									"description": "药品类型",
+									"required": true
+								},
+								{
+									"name": "pkg_num",
+									"type": "String",
+									"description": "包装数量",
+									"required": true
+								},
+								{
+									"name": "prepn_unit",
+									"type": "String",
+									"description": "制剂单位",
+									"required": true
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "药品名称",
+									"required": true
+								},
+								{
+									"name": "res_prod_codes",
+									"type": "ResProdCodes",
+									"description": "资源码信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "res_code_list",
+											"type": "ResCode[]",
+											"description": "资源码",
+											"required": true,
+											"subParams": [
+												{
+													"name": "value",
+													"type": "String",
+													"description": "资源码值",
+													"required": true
+												},
+												{
+													"name": "code_level",
+													"type": "String",
+													"description": "码级别",
+													"required": true
+												},
+												{
+													"name": "code_version",
+													"type": "String",
+													"description": "码头",
+													"required": true
+												},
+												{
+													"name": "pkg_ratio",
+													"type": "String",
+													"description": "包装比例",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "spec",
+									"type": "String",
+									"description": "制剂规格",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "type_no",
+									"type": "String",
+									"description": "子类编码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "提示码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

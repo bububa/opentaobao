@@ -1,0 +1,129 @@
+{
+	"name": "alibaba.lst.speaker.configure.syncaudio",
+	"apiChineseName": "音频同步",
+	"description": "音频同步",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "speaker_config_param4_sync_audio",
+			"type": "SpeakerConfigParam4SyncAudio",
+			"description": "参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "audio_info",
+					"type": "SpeakerConfigAudioInfo",
+					"description": "音频集信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "音频集名称",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "音频集开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "音频集结束时间",
+							"required": true
+						},
+						{
+							"name": "describes",
+							"type": "String",
+							"description": "描述"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "音频封面"
+						}
+					]
+				},
+				{
+					"name": "audio_list",
+					"type": "SpeakerConfigAudioList[]",
+					"description": "音频列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "音频名称",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "音频播放时间秒",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "音频播放地址",
+							"required": true
+						},
+						{
+							"name": "md5",
+							"type": "String",
+							"description": "音频md5",
+							"required": true
+						},
+						{
+							"name": "play_pos",
+							"type": "Number",
+							"description": "音频播放顺序",
+							"required": true
+						},
+						{
+							"name": "play_start_date_time",
+							"type": "Number",
+							"description": "音频播放开始时间",
+							"required": true
+						},
+						{
+							"name": "play_end_date_time",
+							"type": "Number",
+							"description": "音频播放结束时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果标识"
+		},
+		{
+			"name": "erro_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "erro_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

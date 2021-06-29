@@ -1,0 +1,72 @@
+{
+	"name": "taobao.idle.recycle.refund.cancleapply",
+	"apiChineseName": "闲鱼回收取消退款申请V2",
+	"description": "回收商的回收订单取消退款申请",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "IdleTopResult",
+			"description": "撤销申请结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "RefundBaseDto",
+					"description": "撤销退款结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态",
+							"required": true
+						},
+						{
+							"name": "refund_status_desc",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "String",
+							"description": "退款金额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

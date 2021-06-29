@@ -1,0 +1,61 @@
+{
+	"name": "alitrip.tuan.hotel.relate.poi.get",
+	"apiChineseName": "酒店团购关联POI",
+	"description": "查询酒店团购关联POI",
+	"requestParams": [
+		{
+			"name": "keywords",
+			"type": "String",
+			"description": "关键字",
+			"required": true
+		},
+		{
+			"name": "division_id",
+			"type": "Number",
+			"description": "行政区ID",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目ID：国内酒店套餐-201189402；国际酒店套餐-201188002；酒店餐饮美食-201214101；酒店服务-201214201；酒店客房优惠券-201214301",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "related_poi_detail_list",
+			"type": "RelatedPoiDetailVoList []",
+			"description": "关联POI列表",
+			"subParams": [
+				{
+					"name": "poi_name",
+					"type": "String",
+					"description": "中文名称",
+					"required": true
+				},
+				{
+					"name": "poi_id",
+					"type": "Number",
+					"description": "poiId",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

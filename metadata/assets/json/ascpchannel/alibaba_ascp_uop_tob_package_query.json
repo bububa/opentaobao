@@ -1,0 +1,157 @@
+{
+	"name": "alibaba.ascp.uop.tob.package.query",
+	"apiChineseName": "B2B包裹查询接口",
+	"description": "供应链中台TOB包裹查询接口",
+	"requestParams": [
+		{
+			"name": "package_query_request",
+			"type": "Packagequeryrequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "wlb_order_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "package_query_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data[]",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "package_dto",
+							"type": "Packagedto",
+							"description": "包裹信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "store_code",
+									"type": "String",
+									"description": "发货仓code",
+									"required": true
+								},
+								{
+									"name": "out_biz_id",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								},
+								{
+									"name": "order_code",
+									"type": "String",
+									"description": "订单号",
+									"required": true
+								},
+								{
+									"name": "consign_lg_order_code",
+									"type": "String",
+									"description": "发货LP单号",
+									"required": true
+								},
+								{
+									"name": "tms_res_code",
+									"type": "String",
+									"description": "配送公司code",
+									"required": true
+								},
+								{
+									"name": "package_code",
+									"type": "String",
+									"description": "包裹号",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "包裹状态",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "package_item_dtos",
+							"type": "Packageitemdtos[]",
+							"description": "包裹明细列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "package_id",
+									"type": "Number",
+									"description": "包裹号",
+									"required": true
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "货品id",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "item_quantity",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "package_item_sign_info_dto_list",
+									"type": "Packageitemsigninfodtolist[]",
+									"description": "包裹明细签收信息列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "item_quantity",
+											"type": "Number",
+											"description": "商品数量",
+											"required": true
+										},
+										{
+											"name": "status",
+											"type": "String",
+											"description": "签收状态",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

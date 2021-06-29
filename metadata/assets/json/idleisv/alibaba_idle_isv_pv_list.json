@@ -1,0 +1,142 @@
+{
+	"name": "alibaba.idle.isv.pv.list",
+	"apiChineseName": "闲鱼已验货pv查询",
+	"description": "根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择",
+	"requestParams": [
+		{
+			"name": "channel_cat_id",
+			"type": "String",
+			"description": "闲鱼渠道类目的id"
+		},
+		{
+			"name": "brand_model_info",
+			"type": "IdleNewPubValueDo[]",
+			"description": "系统自动生成",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "value_id",
+					"type": "String",
+					"description": "值的id"
+				},
+				{
+					"name": "value_name",
+					"type": "String",
+					"description": "值的名称"
+				},
+				{
+					"name": "property_name",
+					"type": "String",
+					"description": "属性的名称"
+				},
+				{
+					"name": "channel_cat_id",
+					"type": "String",
+					"description": "渠道类目id"
+				},
+				{
+					"name": "property_id",
+					"type": "String",
+					"description": "属性的id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "property_list",
+					"type": "IdleNewPubPropertyValueDo[]",
+					"description": "品牌/型号两级属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "values_list",
+							"type": "IdleNewPubValueDo[]",
+							"description": "属性下所有的值",
+							"required": true,
+							"subParams": [
+								{
+									"name": "value_id",
+									"type": "String",
+									"description": "值的id，保存时需回传",
+									"required": true
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "值的名称，显示。保存时需回传",
+									"required": true
+								},
+								{
+									"name": "property_name",
+									"type": "String",
+									"description": "属性的名称，保存时需回传",
+									"required": true
+								},
+								{
+									"name": "channel_cat_id",
+									"type": "String",
+									"description": "渠道类目id，保存时需回传",
+									"required": true
+								},
+								{
+									"name": "property_id",
+									"type": "String",
+									"description": "属性的key，保存时需回传",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "property_name",
+							"type": "String",
+							"description": "属性的名称，显示",
+							"required": true
+						},
+						{
+							"name": "is_multiple",
+							"type": "Boolean",
+							"description": "是否多选",
+							"required": true
+						},
+						{
+							"name": "input_word",
+							"type": "String",
+							"description": "输入提示文本",
+							"required": true
+						},
+						{
+							"name": "property_id",
+							"type": "String",
+							"description": "属性的key",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

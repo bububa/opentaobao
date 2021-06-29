@@ -1,0 +1,34 @@
+{
+	"name": "taobao.openmall.trade.confirm",
+	"apiChineseName": "确认收货",
+	"description": "确认订单收货",
+	"requestParams": [
+		{
+			"name": "distributor",
+			"type": "String",
+			"description": "分销者信息",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopTradeResultVo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "淘宝交易单ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

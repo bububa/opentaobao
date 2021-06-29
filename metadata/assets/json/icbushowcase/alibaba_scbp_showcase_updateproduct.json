@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.scbp.showcase.updateproduct",
+	"apiChineseName": "替换橱窗商品",
+	"description": "替换橱窗商品",
+	"requestParams": [
+		{
+			"name": "window_id",
+			"type": "Number",
+			"description": "橱窗id",
+			"required": true
+		},
+		{
+			"name": "new_product_id",
+			"type": "Number",
+			"description": "新的商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否修改成功"
+		}
+	]
+}

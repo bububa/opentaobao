@@ -1,0 +1,223 @@
+{
+	"name": "alitrip.merchant.galaxy.order.list.query",
+	"apiChineseName": "星河-订单列表查询",
+	"description": "为C端用户提供酒店预订订单列表查询服务，包括订单支付状态、订单日期",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户标识",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户token",
+			"required": true
+		},
+		{
+			"name": "order_status",
+			"type": "String",
+			"description": "订单状态"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "入住时间"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "入住时间"
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页数"
+		},
+		{
+			"name": "row",
+			"type": "Number",
+			"description": "每页行数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "order_dtos",
+					"type": "OrderDto[]",
+					"description": "查询结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "bed_name",
+							"type": "String",
+							"description": "床型名称",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "pay_remain_time",
+							"type": "Number",
+							"description": "支付剩余时间",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "用户支付总价",
+							"required": true
+						},
+						{
+							"name": "book_date",
+							"type": "String",
+							"description": "预订日期",
+							"required": true
+						},
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "入住人姓名",
+							"required": true
+						},
+						{
+							"name": "check_out_date",
+							"type": "String",
+							"description": "离店时间",
+							"required": true
+						},
+						{
+							"name": "check_in_date",
+							"type": "String",
+							"description": "入住时间",
+							"required": true
+						},
+						{
+							"name": "room_number",
+							"type": "Number",
+							"description": "房间数量",
+							"required": true
+						},
+						{
+							"name": "room_name",
+							"type": "String",
+							"description": "房型名称",
+							"required": true
+						},
+						{
+							"name": "hotel_name",
+							"type": "String",
+							"description": "酒店名称",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "room_photo_url",
+							"type": "String",
+							"description": "房型照片",
+							"required": true
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "酒店房型id",
+							"required": true
+						},
+						{
+							"name": "hotel_id",
+							"type": "String",
+							"description": "酒店外部id",
+							"required": true
+						},
+						{
+							"name": "adult_number",
+							"type": "Number",
+							"description": "成人数量",
+							"required": true
+						},
+						{
+							"name": "children_number",
+							"type": "Number",
+							"description": "儿童数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页的数量",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "当前页的数量",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "total_page_num",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "结果总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

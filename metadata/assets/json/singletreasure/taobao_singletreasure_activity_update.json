@@ -1,0 +1,89 @@
+{
+	"name": "taobao.singletreasure.activity.update",
+	"apiChineseName": "修改活动接口",
+	"description": "修改活动接口",
+	"requestParams": [
+		{
+			"name": "activity_info",
+			"type": "ActivityInfoCreateDto",
+			"description": "系统入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动的Id",
+					"required": true
+				},
+				{
+					"name": "free_post",
+					"type": "Boolean",
+					"description": "是否包邮"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "crowd_id",
+					"type": "String",
+					"description": "人群 id"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间"
+				},
+				{
+					"name": "exclude_areas",
+					"type": "String",
+					"description": "不包邮地区"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "套餐编辑是否成功",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.idle.spu.register.modify",
+	"apiChineseName": "服务商spu挂载接口",
+	"description": "闲鱼服务商通过此接口进行spu挂载，指明自己支持对该spu的服务(回收、验货等)",
+	"requestParams": [
+		{
+			"name": "idle_spu_register4_top_dto",
+			"type": "IdleSpuRegister4TopDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "action_type",
+					"type": "Number",
+					"description": "操作类型，0新增，-1删除。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。",
+					"required": true
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "业务场景编码, 如YHB_3C、RECYCLE_PHONE，具体值由挂载spu文档给出",
+					"required": true
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "spuId 具体值由挂载spu文档给出",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否挂载成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Number",
+					"description": "spu挂载信息后台状态，0在线，-1删除，1测试中。当spu第一次挂载时，会进入1测试中状态。服务商联调通过后，需要再次挂载，actionType还传0，挂载信息状态会变成0已上线。",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,284 @@
+{
+	"name": "alibaba.campus.space.unit.getspaceunitwithattr",
+	"apiChineseName": "空间单元id查业务属性实例",
+	"description": "空间单元id查业务属性实例",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "操作用户上下文",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "园区编码"
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "space_unit_id",
+			"type": "Number",
+			"description": "空间单元id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "PoiInfo",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "空间单元uuid",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "空间单元名",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "园区名",
+							"required": true
+						},
+						{
+							"name": "campus_code",
+							"type": "String",
+							"description": "园区编码",
+							"required": true
+						},
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "类型名",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "楼层id",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "Number",
+							"description": "空间种类，1室内，2室外，3 逻辑, 4 虚拟",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "空间单元id",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "类型编码",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "类型id",
+							"required": true
+						},
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "园区id",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "SpaceUnit的code映射到PoiInfo的BusinessId",
+							"required": true
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "楼宇id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "公司id",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "楼宇名",
+							"required": true
+						},
+						{
+							"name": "attrs",
+							"type": "TypeAttrInstance[]",
+							"description": "业务属性",
+							"required": true,
+							"subParams": [
+								{
+									"name": "type_attr_ref_id",
+									"type": "Number",
+									"description": "业务属性id",
+									"required": true
+								},
+								{
+									"name": "attr_name",
+									"type": "String",
+									"description": "业务属性名",
+									"required": true
+								},
+								{
+									"name": "attr_code",
+									"type": "String",
+									"description": "业务属性编码",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "值",
+									"required": true
+								},
+								{
+									"name": "uuid",
+									"type": "String",
+									"description": "属性实例的uuid",
+									"required": true
+								},
+								{
+									"name": "value_type",
+									"type": "String",
+									"description": "值类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "ft_id",
+							"type": "String",
+							"description": "地图图元id",
+							"required": true
+						},
+						{
+							"name": "geo_floor_id",
+							"type": "Number",
+							"description": "地图楼层id",
+							"required": true
+						},
+						{
+							"name": "central",
+							"type": "Point",
+							"description": "中心点坐标",
+							"required": true,
+							"subParams": [
+								{
+									"name": "lng",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "lat",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "areaStr",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "heightStr",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

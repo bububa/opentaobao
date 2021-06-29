@@ -1,0 +1,17 @@
+{
+	"name": "alibaba.scbp.showcase.status",
+	"apiChineseName": "橱窗状态",
+	"description": "查询橱窗状态，如总数、可用数量",
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "全部橱窗数"
+		},
+		{
+			"name": "current_count",
+			"type": "Number",
+			"description": "当前已用的橱窗数"
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "taobao.uscesl.biz.brand.insert",
+	"apiChineseName": "新增电子价签商家",
+	"description": "一个电子价签业务身份下新增商家接口",
+	"requestParams": [
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "商家名称",
+			"required": true
+		},
+		{
+			"name": "brand_out_code",
+			"type": "String",
+			"description": "商家外部编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

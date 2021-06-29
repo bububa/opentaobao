@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.idle.isv.media.upload",
+	"apiChineseName": "闲鱼服务商-图片上传",
+	"description": "供外部服务商ISV进行闲鱼商品发布时上传商品所需图片",
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "byte[]",
+			"description": "多媒体字节数组",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "文件名",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "0-表示图片，1-表示视频（暂不支持）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "响应数据",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "媒体文件id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.westcrm.job.status.update",
+	"apiChineseName": "更新工单状态",
+	"description": "更新工单处理状态",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "crm_complaint_id",
+			"type": "Number",
+			"description": "反馈id",
+			"required": true
+		},
+		{
+			"name": "reply_content",
+			"type": "String",
+			"description": "回复内容"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

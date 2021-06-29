@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.interact.retail.saveshelflocation",
+	"apiChineseName": "保存地理位置和货架关系",
+	"description": "保存地理位置和货架关系",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "门店code"
+		},
+		{
+			"name": "shelf_no",
+			"type": "String",
+			"description": "货架编号"
+		},
+		{
+			"name": "lng",
+			"type": "String",
+			"description": "经度"
+		},
+		{
+			"name": "lat",
+			"type": "String",
+			"description": "纬度"
+		},
+		{
+			"name": "poi_id",
+			"type": "String",
+			"description": "POI"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "保存结果",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Json",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "warning_infos",
+					"type": "Json[]",
+					"description": "warningInfos",
+					"required": true
+				},
+				{
+					"name": "error_infos",
+					"type": "Json[]",
+					"description": "errorInfos",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Json",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

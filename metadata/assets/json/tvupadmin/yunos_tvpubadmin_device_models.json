@@ -1,0 +1,32 @@
+{
+	"name": "yunos.tvpubadmin.device.models",
+	"apiChineseName": "获取品牌下设备列表",
+	"description": "获取品牌下设备列表",
+	"requestParams": [
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端类型",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID",
+			"required": true
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model_list",
+			"type": "String []",
+			"description": "object"
+		}
+	]
+}

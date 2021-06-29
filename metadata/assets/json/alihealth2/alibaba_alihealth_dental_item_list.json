@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.alihealth.dental.item.list",
+	"apiChineseName": "ISV获取口腔标品列表",
+	"description": "ISV获取口腔标品列表",
+	"requestParams": [
+		{
+			"name": "need_test_item",
+			"type": "Boolean",
+			"description": "是否需要测试商品"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "goods",
+					"type": "NormalGoodsVo[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "标品ID",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "标品名称",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "String",
+							"description": "成本价，单位元",
+							"required": true
+						},
+						{
+							"name": "sold_price",
+							"type": "String",
+							"description": "售价，单位元",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "200",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				}
+			]
+		}
+	]
+}

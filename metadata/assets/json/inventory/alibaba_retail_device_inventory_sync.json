@@ -1,0 +1,93 @@
+{
+	"name": "alibaba.retail.device.inventory.sync",
+	"apiChineseName": "库存同步接口",
+	"description": "商库存同步接口",
+	"requestParams": [
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备Id",
+			"required": true
+		},
+		{
+			"name": "inventory_dtos",
+			"type": "InventorySyncDTO[]",
+			"description": "系统自动生成",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "item_amount",
+					"type": "Number",
+					"description": "库存数量",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "device_option",
+			"type": "InventorySyncOption",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "biz_name",
+					"type": "String",
+					"description": "业务"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "sub_error_code",
+							"type": "String",
+							"description": "subErrorCode",
+							"required": true
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "errorMessage",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

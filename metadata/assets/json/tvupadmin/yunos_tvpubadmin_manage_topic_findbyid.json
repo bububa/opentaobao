@@ -1,0 +1,19 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.findbyid",
+	"apiChineseName": "根据id获取专题信息",
+	"description": "根据id获取专题信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "专题id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

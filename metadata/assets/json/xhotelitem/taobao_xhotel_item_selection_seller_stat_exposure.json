@@ -1,0 +1,99 @@
+{
+	"name": "taobao.xhotel.item.selection.seller.stat.exposure",
+	"apiChineseName": "选品曝光趋势",
+	"description": "用于提供给商家获取选品曝光趋势",
+	"requestParams": [
+		{
+			"name": "date",
+			"type": "String",
+			"description": "日期 默认为昨天"
+		},
+		{
+			"name": "hid",
+			"type": "String",
+			"description": "hid  默认为all"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "默认为all"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "默认为all"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "酒店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Module",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "seller_stat_exposure_element_list",
+							"type": "SellerStatExposureElementList[]",
+							"description": "返回结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "stat_date",
+									"type": "String",
+									"description": "日期",
+									"required": true
+								},
+								{
+									"name": "exposed_percent",
+									"type": "String",
+									"description": "曝光率",
+									"required": true
+								},
+								{
+									"name": "shid_total_amount",
+									"type": "String",
+									"description": "shid维度访问量",
+									"required": true
+								},
+								{
+									"name": "exposed_amount",
+									"type": "String",
+									"description": "对应商品曝光数量",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "接口信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

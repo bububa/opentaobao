@@ -1,0 +1,238 @@
+{
+	"name": "alibaba.alihealth.drugtrace.top.yljg.listupout.detail",
+	"apiChineseName": "上游出库单单据明细查询",
+	"description": "查询上游出库单明细(带追溯码信息)",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编码",
+			"required": true
+		},
+		{
+			"name": "from_ref_user_id",
+			"type": "String",
+			"description": "发货企业renEntId",
+			"required": true
+		},
+		{
+			"name": "to_ref_user_id",
+			"type": "String",
+			"description": "收货企业refEntId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "BillUpOutDetailDto",
+					"description": "最外层对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "bill_code",
+							"type": "String",
+							"description": "单据编码",
+							"required": true
+						},
+						{
+							"name": "bill_type_name",
+							"type": "String",
+							"description": "单据类型描述",
+							"required": true
+						},
+						{
+							"name": "bill_type",
+							"type": "String",
+							"description": "单据类型",
+							"required": true
+						},
+						{
+							"name": "ent_send_name",
+							"type": "String",
+							"description": "发货企业名称",
+							"required": true
+						},
+						{
+							"name": "ent_send_id",
+							"type": "String",
+							"description": "发货企业的ref_ent_id",
+							"required": true
+						},
+						{
+							"name": "ent_recv_name",
+							"type": "String",
+							"description": "收货企业名称",
+							"required": true
+						},
+						{
+							"name": "ent_recv_id",
+							"type": "String",
+							"description": "收货企业ref_ent_id",
+							"required": true
+						},
+						{
+							"name": "store_out_date",
+							"type": "String",
+							"description": "单据日期",
+							"required": true
+						},
+						{
+							"name": "update_date",
+							"type": "String",
+							"description": "最后更新时间",
+							"required": true
+						},
+						{
+							"name": "drug_infos_dto_list",
+							"type": "DrugInfosDto[]",
+							"description": "药品信息数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "produce_date",
+									"type": "String",
+									"description": "生产日期",
+									"required": true
+								},
+								{
+									"name": "product_ent_name",
+									"type": "String",
+									"description": "生产企业名称",
+									"required": true
+								},
+								{
+									"name": "package_spec",
+									"type": "String",
+									"description": "产品包装规格",
+									"required": true
+								},
+								{
+									"name": "prod_name",
+									"type": "String",
+									"description": "药品商品名",
+									"required": true
+								},
+								{
+									"name": "prepn_spec",
+									"type": "String",
+									"description": "制剂规格",
+									"required": true
+								},
+								{
+									"name": "prepn_unit",
+									"type": "String",
+									"description": "制剂单位编码",
+									"required": true
+								},
+								{
+									"name": "produce_batch_no",
+									"type": "String",
+									"description": "批次号",
+									"required": true
+								},
+								{
+									"name": "prod_seq_no",
+									"type": "String",
+									"description": "药品标识",
+									"required": true
+								},
+								{
+									"name": "drug_ent_base_info_id",
+									"type": "String",
+									"description": "药品标识",
+									"required": true
+								},
+								{
+									"name": "valid_end_date",
+									"type": "String",
+									"description": "有效期至",
+									"required": true
+								},
+								{
+									"name": "least_pkg_amount",
+									"type": "String",
+									"description": "按最小包装单位统计数量",
+									"required": true
+								},
+								{
+									"name": "least_prepn_amount",
+									"type": "String",
+									"description": "按最小制剂单位统计数量",
+									"required": true
+								},
+								{
+									"name": "code_info_list_dto_list",
+									"type": "CodeInfoListDto[]",
+									"description": "码信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "prepn_spec",
+											"type": "String",
+											"description": "制剂规格",
+											"required": true
+										},
+										{
+											"name": "prepn_amount",
+											"type": "String",
+											"description": "最小制剂数量",
+											"required": true
+										},
+										{
+											"name": "pkg_amount",
+											"type": "String",
+											"description": "最小包装数量",
+											"required": true
+										},
+										{
+											"name": "code_level",
+											"type": "String",
+											"description": "监管码级别",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "String",
+											"description": "监管码",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "提示信息编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "提示信息内容",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

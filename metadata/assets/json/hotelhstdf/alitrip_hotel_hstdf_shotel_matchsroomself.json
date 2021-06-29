@@ -1,0 +1,43 @@
+{
+	"name": "alitrip.hotel.hstdf.shotel.matchsroomself",
+	"apiChineseName": "匹配标准房型以及卖家房型",
+	"description": "匹配卖家房型以及标准房型，返回匹配结果",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "SroomTypeMatchParam",
+			"description": "SroomTypeMatchParam",
+			"subParams": [
+				{
+					"name": "srid",
+					"type": "Number",
+					"description": "标准房型id",
+					"required": true
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "卖家房型id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "error_code"
+		},
+		{
+			"name": "errormsg",
+			"type": "String",
+			"description": "error_msg"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

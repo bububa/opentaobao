@@ -1,0 +1,87 @@
+{
+	"name": "taobao.usergrowth.dhh.delivery.batchask",
+	"apiChineseName": "广告曝光前判定批量接口V2",
+	"description": "广告曝光前判定批量接口V2",
+	"requestParams": [
+		{
+			"name": "oaid_md5",
+			"type": "String",
+			"description": "md5加密后的oaid列表， 32位小写， 多个使用,分隔， 最多支持20个"
+		},
+		{
+			"name": "idfa_md5",
+			"type": "String",
+			"description": "md5加密后的oaid列表， 32位小写， 多个使用,分隔， 最多支持20个"
+		},
+		{
+			"name": "imei_md5",
+			"type": "String",
+			"description": "md5加密后的imei列表， 32位小写， 多个使用,分隔， 最多支持20个"
+		},
+		{
+			"name": "advertising_space_id",
+			"type": "String",
+			"description": "巨浪广告位id,在巨浪平台申请",
+			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "巨浪渠道id,在巨浪平台申请",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BatchAskResultV2",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "errcode",
+					"type": "Number",
+					"description": "错误码， 0： 成功；1：限流；2：服务不可用",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "BatchAskResultItem[]",
+					"description": "匹配的设备与其任务信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "task_id_list",
+							"type": "String[]",
+							"description": "在巨浪平台可投放的任务ID列表",
+							"required": true
+						},
+						{
+							"name": "oaid_md5",
+							"type": "String",
+							"description": "oaid的md5值， 32位小写",
+							"required": true
+						},
+						{
+							"name": "idfa_md5",
+							"type": "String",
+							"description": "idfa的md5值， 32位小写",
+							"required": true
+						},
+						{
+							"name": "imei_md5",
+							"type": "String",
+							"description": "imei的md5值， 32位小写",
+							"required": true
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "该设备要做的大航海的任务id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

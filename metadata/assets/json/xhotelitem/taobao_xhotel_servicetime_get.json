@@ -1,0 +1,186 @@
+{
+	"name": "taobao.xhotel.servicetime.get",
+	"apiChineseName": "查询实体对应的服务时间数据",
+	"description": "通过实体来获取对应的服务时间数据",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "酒店id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "results",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "totalResults",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "hasNext",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "exception",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "warn_message",
+					"type": "String",
+					"description": "warnMessage",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "first_results",
+					"type": "ServiceTimeDataDo[]",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "supplier",
+							"type": "String",
+							"description": "supplier",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家nick",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id",
+							"required": true
+						},
+						{
+							"name": "business_type",
+							"type": "String",
+							"description": "业务类型：1卖家；2supplier;3酒店",
+							"required": true
+						},
+						{
+							"name": "business_id",
+							"type": "Number",
+							"description": "业务id",
+							"required": true
+						},
+						{
+							"name": "time_zone_name",
+							"type": "String",
+							"description": "timeZoneName",
+							"required": true
+						},
+						{
+							"name": "order_confirm_type",
+							"type": "Number",
+							"description": "1: 当日订单, 2:次日及以后订单",
+							"required": true
+						},
+						{
+							"name": "display_item_in_nonworking_time",
+							"type": "Number",
+							"description": "是否在非工作时间显示商品 1:显示, 2:不显示",
+							"required": true
+						},
+						{
+							"name": "friday_confirm_local_time",
+							"type": "String",
+							"description": "周五服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "monday_confirm_local_time",
+							"type": "String",
+							"description": "周一服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "tuesday_confirm_local_time",
+							"type": "String",
+							"description": "周二服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "wednesday_confirm_local_time",
+							"type": "String",
+							"description": "周三服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "saturday_confirm_local_time",
+							"type": "String",
+							"description": "周六服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "operator",
+							"type": "String",
+							"description": "operator",
+							"required": true
+						},
+						{
+							"name": "sunday_confirm_local_time",
+							"type": "String",
+							"description": "周日服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "thursday_confirm_local_time",
+							"type": "String",
+							"description": "周四服务时间（当地时间）",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Json",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Json",
+							"description": "最后修改时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

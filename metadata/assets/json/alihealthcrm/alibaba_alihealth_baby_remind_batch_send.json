@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.alihealth.baby.remind.batch.send",
+	"apiChineseName": "批量发送母婴提醒",
+	"description": "批量发送母婴提醒",
+	"requestParams": [
+		{
+			"name": "batch_remind_requests",
+			"type": "BatchRemindRequestDto[]",
+			"description": "批量发送提醒",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "baby_id",
+					"type": "Number",
+					"description": "提醒宝宝ID",
+					"required": true
+				},
+				{
+					"name": "params",
+					"type": "String",
+					"description": "模板参数，可选,|分割"
+				},
+				{
+					"name": "tp_user_id",
+					"type": "Number",
+					"description": "用户健康ID",
+					"required": true
+				},
+				{
+					"name": "visit_url",
+					"type": "String",
+					"description": "访问跳转链接"
+				}
+			]
+		},
+		{
+			"name": "remind_type",
+			"type": "Number",
+			"description": "提醒类型：1-每日任务，2-疫苗提醒，3-产检提醒",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "发送结果",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

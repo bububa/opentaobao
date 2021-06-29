@@ -1,0 +1,102 @@
+{
+	"name": "taobao.omniitem.classify.store.query",
+	"apiChineseName": "根据门店查分类信息",
+	"description": "根据门店查分类信息",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "商户的门店ID",
+			"required": true
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "Classify[]",
+					"description": "业务数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "classify_id",
+							"type": "Number",
+							"description": "分类ID",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "商户ID",
+							"required": true
+						},
+						{
+							"name": "inner_name",
+							"type": "String",
+							"description": "内部名称",
+							"required": true
+						},
+						{
+							"name": "display_name",
+							"type": "String",
+							"description": "展示名称",
+							"required": true
+						},
+						{
+							"name": "link_store",
+							"type": "Number",
+							"description": "关联的门店数",
+							"required": true
+						},
+						{
+							"name": "show_offline",
+							"type": "Boolean",
+							"description": "是否在线上展示",
+							"required": true
+						},
+						{
+							"name": "show_online",
+							"type": "Boolean",
+							"description": "是否在线下展示",
+							"required": true
+						},
+						{
+							"name": "link_item",
+							"type": "Number",
+							"description": "关联的商品数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				}
+			]
+		}
+	]
+}

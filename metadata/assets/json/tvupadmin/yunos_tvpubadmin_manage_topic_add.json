@@ -1,0 +1,51 @@
+{
+	"name": "yunos.tvpubadmin.manage.topic.add",
+	"apiChineseName": "新增专题",
+	"description": "专题新增",
+	"requestParams": [
+		{
+			"name": "topic_json",
+			"type": "String",
+			"description": "新增topic的json信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "retCode",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "String",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,477 @@
+{
+	"name": "taobao.jipiao.agent.order.bdetail",
+	"apiChineseName": "【机票代理商订单】采购订单详情",
+	"description": "根据淘宝系统订单号获取订单详情信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回操作成功失败信息"
+		},
+		{
+			"name": "orders",
+			"type": "TripOrder []",
+			"description": "机票订单的详情列表，当前支持返回一个订单",
+			"subParams": [
+				{
+					"name": "base_info",
+					"type": "TripBaseInfo",
+					"description": "订单基础信息",
+					"subParams": [
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "淘宝机票订单id"
+						},
+						{
+							"name": "trip_type",
+							"type": "Number",
+							"description": "航程类型：0，单程；1，往返；"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态定义==\u003e 0:未付款;(注：支持保险分润时，订单已付款，保险未付款也为0)1:处理中;2:确定出票;3:预定成功;4:预定失败;5:处理中超时失效;6:支付超时失效;7:买家取消"
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "订单支付状态==\u003e 0:未付款;1:已付款，冻结买家定金;2:付款给卖家;3:解冻定金给买家;4:已扣佣;5:交易关闭;6:确认可支付;7:确认不可支付"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "订单创建时间"
+						},
+						{
+							"name": "modify_time",
+							"type": "Date",
+							"description": "订单表最近一次修改时间"
+						},
+						{
+							"name": "pay_latest_time",
+							"type": "Date",
+							"description": "订单最晚支付时间"
+						},
+						{
+							"name": "total_price",
+							"type": "Number",
+							"description": "总金额，所有乘机人加机建燃油，单位：分"
+						},
+						{
+							"name": "commission",
+							"type": "String",
+							"description": "佣金，单位：分"
+						},
+						{
+							"name": "relation_name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "relation_mobile",
+							"type": "String",
+							"description": "联系人手机号"
+						},
+						{
+							"name": "relation_phone_bak",
+							"type": "String",
+							"description": "联系人备用电话"
+						},
+						{
+							"name": "relation_email",
+							"type": "String",
+							"description": "联系人邮箱"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝交易号"
+						},
+						{
+							"name": "insure_promotion",
+							"type": "Boolean",
+							"description": "是否保险分润订单，有一个乘机人支持分润即为 True"
+						},
+						{
+							"name": "force_insure",
+							"type": "Boolean",
+							"description": "是否强制保险订单，有一张票为强制保险即为true"
+						}
+					]
+				},
+				{
+					"name": "flight_infos",
+					"type": "TripFlightInfo[]",
+					"description": "订单航班信息（包含航班乘机人）",
+					"subParams": [
+						{
+							"name": "flight_id",
+							"type": "Number",
+							"description": "淘宝机票平台航班id"
+						},
+						{
+							"name": "segment_type",
+							"type": "Number",
+							"description": "航段类型：0，去程；1，回程"
+						},
+						{
+							"name": "segment_number",
+							"type": "Number",
+							"description": "去程或回程第几段航班，0，第1段；1，第2段航班"
+						},
+						{
+							"name": "airline_code",
+							"type": "String",
+							"description": "航班航空公司二字码"
+						},
+						{
+							"name": "flight_no",
+							"type": "String",
+							"description": "航班号"
+						},
+						{
+							"name": "carrier",
+							"type": "String",
+							"description": "航班实际承运航班号"
+						},
+						{
+							"name": "flight_type",
+							"type": "String",
+							"description": "航班机型"
+						},
+						{
+							"name": "dep_city_code",
+							"type": "String",
+							"description": "航班出发城市三字码"
+						},
+						{
+							"name": "arr_city_code",
+							"type": "String",
+							"description": "航班到达城市三字码"
+						},
+						{
+							"name": "dep_airport_code",
+							"type": "String",
+							"description": "航班出发机场三字码"
+						},
+						{
+							"name": "arr_airport_code",
+							"type": "String",
+							"description": "航班到达机场三字码"
+						},
+						{
+							"name": "dep_time",
+							"type": "String",
+							"description": "航班起飞时间，格式yyyy-mm-dd hh:mm:ss"
+						},
+						{
+							"name": "arr_time",
+							"type": "String",
+							"description": "航班到达时间，格式yyyy-mm-dd hh:mm:ss"
+						},
+						{
+							"name": "ticket_price",
+							"type": "Number",
+							"description": "当前航段票面价格，单位：分"
+						},
+						{
+							"name": "passengers",
+							"type": "TripFlightPassenger[]",
+							"description": "乘机人信息列表",
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "乘机人姓名"
+								},
+								{
+									"name": "cert_type",
+									"type": "Number",
+									"description": "乘机人证件类型：0，身份证；1，护照；3，军人证；4，回乡证；5，台胞证；6，港澳台胞；10，警官证；11，士兵证件"
+								},
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "乘机人证件号码"
+								},
+								{
+									"name": "passenger_type",
+									"type": "Number",
+									"description": "乘机人类型：0，成人；1，儿童；"
+								},
+								{
+									"name": "birthday",
+									"type": "String",
+									"description": "乘机人生日：yyyy-mm-dd"
+								},
+								{
+									"name": "trip_card_no",
+									"type": "String",
+									"description": "常旅客卡号"
+								},
+								{
+									"name": "pnr",
+									"type": "String",
+									"description": "PNR信息"
+								},
+								{
+									"name": "ticket_no",
+									"type": "String",
+									"description": "票号"
+								},
+								{
+									"name": "extra",
+									"type": "String",
+									"description": "扩展字段"
+								},
+								{
+									"name": "policy_id",
+									"type": "Number",
+									"description": "政策id，淘宝系统政策唯一键"
+								},
+								{
+									"name": "policy_type",
+									"type": "Number",
+									"description": "机票政策类型：0，默认；1，自定义"
+								},
+								{
+									"name": "memo",
+									"type": "String",
+									"description": "备注信息，政策中的备注信息"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "销售价格，单位：分"
+								},
+								{
+									"name": "fee",
+									"type": "Number",
+									"description": "航班机建费，单位：分"
+								},
+								{
+									"name": "tax",
+									"type": "Number",
+									"description": "航班燃油税，单位：分"
+								},
+								{
+									"name": "cabin_code",
+									"type": "String",
+									"description": "航班舱位代码"
+								},
+								{
+									"name": "cabin_class",
+									"type": "Number",
+									"description": "舱位等级：0，头等舱(F)；1，商务舱(C)；2，经济舱(Y)"
+								},
+								{
+									"name": "tuigaiqian",
+									"type": "String",
+									"description": "退改签"
+								},
+								{
+									"name": "ei",
+									"type": "String",
+									"description": "ei项"
+								},
+								{
+									"name": "insure_promotion_price",
+									"type": "Number",
+									"description": "当前乘机人的保险分润金额，单位：分"
+								},
+								{
+									"name": "force_insure_price",
+									"type": "Number",
+									"description": "强制保险金额，单位：分"
+								}
+							]
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "special_rule",
+							"type": "String",
+							"description": "特殊说明"
+						}
+					]
+				},
+				{
+					"name": "itinerary",
+					"type": "Itinerary",
+					"description": "订单行程单信息",
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "行程单类型：6，快递"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收件人姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "收件人手机号"
+						},
+						{
+							"name": "mobile_bak",
+							"type": "String",
+							"description": "收件人备用手机号"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "收件人地址"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "行程单价格，单位：分"
+						},
+						{
+							"name": "company_code",
+							"type": "String",
+							"description": "物流公司代码"
+						},
+						{
+							"name": "express_code",
+							"type": "String",
+							"description": "邮寄单号"
+						},
+						{
+							"name": "itinerary_no",
+							"type": "String",
+							"description": "行程单号"
+						},
+						{
+							"name": "send_date",
+							"type": "String",
+							"description": "邮寄时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "行程单订单的状态 0：未付款 1：已付款 2：转交易成功 3：已邮寄 4：已取消"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "alipay_trade_no",
+							"type": "String",
+							"description": "支付宝交易号"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "淘宝主键id"
+						}
+					]
+				},
+				{
+					"name": "corp_info",
+					"type": "CorpInfo",
+					"description": "订单行政购票信息",
+					"subParams": [
+						{
+							"name": "apply_name",
+							"type": "String",
+							"description": "申请人姓名"
+						},
+						{
+							"name": "apply_no",
+							"type": "String",
+							"description": "申请人工号"
+						},
+						{
+							"name": "form_no",
+							"type": "String",
+							"description": "BPM的fromNO"
+						},
+						{
+							"name": "trip_person_no",
+							"type": "String",
+							"description": "出差人工号"
+						},
+						{
+							"name": "trip_person_name",
+							"type": "String",
+							"description": "出差人姓名"
+						},
+						{
+							"name": "work_space",
+							"type": "String",
+							"description": "工作地点"
+						},
+						{
+							"name": "cost_center_code",
+							"type": "String",
+							"description": "成本中心代码"
+						},
+						{
+							"name": "cost_center",
+							"type": "String",
+							"description": "成本中心"
+						},
+						{
+							"name": "form_status",
+							"type": "String",
+							"description": "单据状态代码"
+						},
+						{
+							"name": "receipts_status",
+							"type": "String",
+							"description": "单据状态描述"
+						},
+						{
+							"name": "cost_ou",
+							"type": "String",
+							"description": "费用归属OU的CODE"
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请时间"
+						},
+						{
+							"name": "corpration_id",
+							"type": "String",
+							"description": "集团id"
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段"
+						}
+					]
+				},
+				{
+					"name": "extra",
+					"type": "String",
+					"description": "扩展字段"
+				}
+			]
+		}
+	]
+}

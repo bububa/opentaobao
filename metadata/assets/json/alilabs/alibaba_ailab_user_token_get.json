@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.ailab.user.token.get",
+	"apiChineseName": "三方账号获取 token",
+	"description": "inside 设备的三方 app，通过 extId、schema 生成 token",
+	"requestParams": [
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "三方用户的唯一ID"
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "开放平台申请的schema"
+		},
+		{
+			"name": "call_back_url",
+			"type": "String",
+			"description": "用户点击同意授权，则会有授权结果：success/fail，此结果通过 callBackUrl 回调给三方 如果授权账号重复授权给已授权的淘宝账号，幂等返回成功 url 的调用是 表单 post 的方式， request body success example: merchantUserId=xxx\u0026result=success request body fail example: merchantUserId=xxx\u0026result=fail"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "statusCode"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "随机 uuid，token 在5分钟后失效，token 在授权成功后失效；建议每次调用 api 获取最新 token"
+		}
+	]
+}

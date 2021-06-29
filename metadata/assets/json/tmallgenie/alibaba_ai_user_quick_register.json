@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.ai.user.quick.register",
+	"apiChineseName": "精灵用户注册申请",
+	"description": "人工智能实验室精灵用户注册申请接口，开放给Iot厂商做厂商会员数据上报",
+	"requestParams": [
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "请求交易流水号（唯一即可，不参与业务运算）",
+			"required": true
+		},
+		{
+			"name": "req_time",
+			"type": "String",
+			"description": "请求时间",
+			"required": true
+		},
+		{
+			"name": "merchant_user_id",
+			"type": "String",
+			"description": "商户的用户的唯一ID",
+			"required": true
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "扩展对象，保留字段"
+		},
+		{
+			"name": "message_detail",
+			"type": "String",
+			"description": "结果详细描述"
+		}
+	]
+}

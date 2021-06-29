@@ -1,0 +1,296 @@
+{
+	"name": "alibaba.ceres.supplier.po.querydetail",
+	"apiChineseName": "采购供应商订单明细查询接口",
+	"description": "采购供应商订单明细查询接口",
+	"requestParams": [
+		{
+			"name": "po_no",
+			"type": "String",
+			"description": "订单编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SupplierPoDetailDto",
+			"description": "返回消息体",
+			"subParams": [
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称",
+					"required": true
+				},
+				{
+					"name": "po_no",
+					"type": "String",
+					"description": "订单编号",
+					"required": true
+				},
+				{
+					"name": "supplier_contact",
+					"type": "String",
+					"description": "联系人",
+					"required": true
+				},
+				{
+					"name": "supplier_mobile",
+					"type": "String",
+					"description": "联系人电话",
+					"required": true
+				},
+				{
+					"name": "effect_time",
+					"type": "Date",
+					"description": "订单生效日期",
+					"required": true
+				},
+				{
+					"name": "ou_name",
+					"type": "String",
+					"description": "需方",
+					"required": true
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "需方(代号)",
+					"required": true
+				},
+				{
+					"name": "contract_no",
+					"type": "String",
+					"description": "合同编号",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "采购员姓名",
+					"required": true
+				},
+				{
+					"name": "buy_mobile",
+					"type": "String",
+					"description": "采购员电话",
+					"required": true
+				},
+				{
+					"name": "pr_no",
+					"type": "String",
+					"description": "PR单号",
+					"required": true
+				},
+				{
+					"name": "comments",
+					"type": "String",
+					"description": "注意事项",
+					"required": true
+				},
+				{
+					"name": "po_line_list",
+					"type": "Polinelist[]",
+					"description": "订单行列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "物品名称",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "uom",
+							"type": "String",
+							"description": "单位",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率",
+							"required": true
+						},
+						{
+							"name": "is_wht_related",
+							"type": "String",
+							"description": "是否涉及预提所得税",
+							"required": true
+						},
+						{
+							"name": "tax_price",
+							"type": "String",
+							"description": "含税单价",
+							"required": true
+						},
+						{
+							"name": "currency_code",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "tax_amount",
+							"type": "String",
+							"description": "含税总价",
+							"required": true
+						},
+						{
+							"name": "delivery_location",
+							"type": "String",
+							"description": "收货地址",
+							"required": true
+						},
+						{
+							"name": "need_by_date",
+							"type": "String",
+							"description": "期望交付日期",
+							"required": true
+						},
+						{
+							"name": "need_by_date_end",
+							"type": "String",
+							"description": "期望交付日期",
+							"required": true
+						},
+						{
+							"name": "receiver",
+							"type": "String",
+							"description": "收货人",
+							"required": true
+						},
+						{
+							"name": "receiver_phone",
+							"type": "String",
+							"description": "收货人电话",
+							"required": true
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "收货人手机",
+							"required": true
+						},
+						{
+							"name": "line_num",
+							"type": "Number",
+							"description": "lineNum",
+							"required": true
+						},
+						{
+							"name": "additional_info",
+							"type": "String",
+							"description": "additionalInfo",
+							"required": true
+						},
+						{
+							"name": "exchange_rate",
+							"type": "String",
+							"description": "订单行商品报价币种和订单头币种之间的汇率",
+							"required": true
+						},
+						{
+							"name": "goods_currency_code",
+							"type": "String",
+							"description": "订单行商品报价币种",
+							"required": true
+						},
+						{
+							"name": "item_list",
+							"type": "Polinestructureitemdtolist[]",
+							"description": "BOM节点列表，节点之间使用父节点id维护层级关系",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "节点id",
+									"required": true
+								},
+								{
+									"name": "parent_id",
+									"type": "Number",
+									"description": "父节点id，为空则表示该节点是根节点",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "节点名称",
+									"required": true
+								},
+								{
+									"name": "cost_type",
+									"type": "String",
+									"description": "ITEM_PRICE：物料价格，BOM_COST：BOM COST，OTHER_COST_TOTAL：其他费用小计，PROFIT_COST：利润，OEM_COST：代工费用，MAINTENANCE_COST：维保费用，LOGISTICS_COST：物流费用，INSTALLATION_COST：上架安装费用，TARIFF_TAX：关税税费，SALES_TAX：销售税税费，VAT_TAX：增值税税费",
+									"required": true
+								},
+								{
+									"name": "charge_unit",
+									"type": "String",
+									"description": "计价单位",
+									"required": true
+								},
+								{
+									"name": "unit_price",
+									"type": "String",
+									"description": "单价",
+									"required": true
+								},
+								{
+									"name": "unit_currency",
+									"type": "String",
+									"description": "单价币种",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "金额",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "金额币种",
+									"required": true
+								},
+								{
+									"name": "exchange_rate",
+									"type": "String",
+									"description": "汇率",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "expense_param",
+									"type": "String",
+									"description": "参数",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

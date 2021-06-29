@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.alisports.data.sports.syncsleepdata",
+	"apiChineseName": "阿里体育数据中心用户睡眠数据同步接口",
+	"description": "阿里体育数据中心用户睡眠数据同步接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "stime",
+			"type": "String",
+			"description": "入睡时间，格式：y-m-d h:i:s",
+			"required": true
+		},
+		{
+			"name": "sober_time",
+			"type": "String",
+			"description": "清醒时间，单位：小时"
+		},
+		{
+			"name": "shallow_time",
+			"type": "String",
+			"description": "浅度睡眠时间，单位：小时"
+		},
+		{
+			"name": "deep_time",
+			"type": "String",
+			"description": "深度睡眠时间，单位：小时"
+		},
+		{
+			"name": "all_time",
+			"type": "String",
+			"description": "睡眠总时间，单位：小时",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "接口签名",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "etime",
+			"type": "String",
+			"description": "醒来时间，格式：y-m-d h:i:s",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.health.vaccin.notice.announcement.publish",
+	"apiChineseName": "支付宝疫苗POV公告通知",
+	"description": "支付宝疫苗POV发布公告提醒信息",
+	"requestParams": [
+		{
+			"name": "pov_no",
+			"type": "String",
+			"description": "接种点编码（通知方）",
+			"required": true
+		},
+		{
+			"name": "notice_title",
+			"type": "String",
+			"description": "公告标题"
+		},
+		{
+			"name": "notice_content",
+			"type": "String",
+			"description": "公告内容",
+			"required": true
+		},
+		{
+			"name": "notice_type",
+			"type": "String",
+			"description": "0:所有类型人群,1：宝宝、2：成人",
+			"required": true
+		},
+		{
+			"name": "notice_time",
+			"type": "String",
+			"description": "公告发布时间"
+		},
+		{
+			"name": "alipay_user_ids",
+			"type": "String[]",
+			"description": "需要接受公告的用户ID，默认是所有用户都可以看到",
+			"maxListSize": 999
+		},
+		{
+			"name": "pov_name",
+			"type": "String",
+			"description": "接种点名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "执行是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

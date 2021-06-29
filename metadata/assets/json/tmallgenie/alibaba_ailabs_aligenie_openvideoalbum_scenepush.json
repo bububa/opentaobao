@@ -1,0 +1,220 @@
+{
+	"name": "alibaba.ailabs.aligenie.openvideoalbum.scenepush",
+	"apiChineseName": "视频专辑场景接入接口",
+	"description": "视频专辑场景接入接口",
+	"requestParams": [
+		{
+			"name": "scene_type",
+			"type": "Number",
+			"description": "接入场景 0 无应用 1 挂靠应用"
+		},
+		{
+			"name": "scene_value",
+			"type": "String",
+			"description": "如果场景是1 此处为应用id"
+		},
+		{
+			"name": "param_list",
+			"type": "RawVideoAlbum[]",
+			"description": "视频合辑数据",
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "v_cover_url",
+					"type": "String",
+					"description": "专辑封面(竖图296 * 440，根据搜索规则，提供竖图用户搜索时可优先搜索到此内容)",
+					"required": true
+				},
+				{
+					"name": "actor_name",
+					"type": "String[]",
+					"description": "演员名称"
+				},
+				{
+					"name": "alias",
+					"type": "String[]",
+					"description": "别名"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区域"
+				},
+				{
+					"name": "audition_num",
+					"type": "Number",
+					"description": "试看数(表示前N个视频支持试看)"
+				},
+				{
+					"name": "charge_type",
+					"type": "Number",
+					"description": "付费类型 0-免费、1-VIP免费、2-整本专辑售卖"
+				},
+				{
+					"name": "collect_count",
+					"type": "Number",
+					"description": "收藏量"
+				},
+				{
+					"name": "comment_count",
+					"type": "Number",
+					"description": "评论量"
+				},
+				{
+					"name": "common_cate_id",
+					"type": "Number",
+					"description": "类目ID，参见相关文档说明"
+				},
+				{
+					"name": "content_score",
+					"type": "String",
+					"description": "评分"
+				},
+				{
+					"name": "cost_price",
+					"type": "Number",
+					"description": "成本价(单位:分)"
+				},
+				{
+					"name": "cover_url",
+					"type": "String",
+					"description": "专辑封面(横图，图片尺寸是295 * 167)"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "director_name",
+					"type": "String[]",
+					"description": "导演名称"
+				},
+				{
+					"name": "extend_info",
+					"description": "扩展字段"
+				},
+				{
+					"name": "forward_count",
+					"type": "Number",
+					"description": "转发量"
+				},
+				{
+					"name": "id",
+					"type": "String",
+					"description": "三方视频辑ID",
+					"required": true
+				},
+				{
+					"name": "is_exclusive",
+					"type": "Number",
+					"description": "是否独播 0-非独播 1-独播"
+				},
+				{
+					"name": "is_finished",
+					"type": "Number",
+					"description": "是否完结，0-否，1-是，默认0"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言"
+				},
+				{
+					"name": "like_count",
+					"type": "Number",
+					"description": "点赞数"
+				},
+				{
+					"name": "operation",
+					"type": "String",
+					"description": "操作类型 ADD/UPDATE/DELETE"
+				},
+				{
+					"name": "oupgc_type",
+					"type": "String",
+					"description": "视频来源类型，PGC/UGC/OGC",
+					"required": true
+				},
+				{
+					"name": "play_count",
+					"type": "Number",
+					"description": "播放量"
+				},
+				{
+					"name": "play_order",
+					"type": "Number",
+					"description": "播放顺序0-顺序，1-倒序"
+				},
+				{
+					"name": "producer_name",
+					"type": "String[]",
+					"description": "上传者名称"
+				},
+				{
+					"name": "release_time",
+					"type": "Number",
+					"description": "发布时间,unix时间戳,单位:毫秒"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "子标题"
+				},
+				{
+					"name": "suggest_max_price",
+					"type": "Number",
+					"description": "建议最高零售价(单位:分)"
+				},
+				{
+					"name": "suggest_min_price",
+					"type": "Number",
+					"description": "建议最低零售价(单位:分)"
+				},
+				{
+					"name": "tag_ids",
+					"type": "Number[]",
+					"description": "标签ID，具体取值范围参见文档说明"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题（若需显示集数，请填写：第X集：视频名称；如第一集：天猫精灵）",
+					"required": true
+				},
+				{
+					"name": "total_episode",
+					"type": "Number",
+					"description": "包含视频总集数"
+				},
+				{
+					"name": "uploader_name",
+					"type": "String[]",
+					"description": "上传者名称"
+				},
+				{
+					"name": "valid_end_time",
+					"type": "Number",
+					"description": "失效时间,unix时间戳,单位:毫秒,为空则永不失效"
+				},
+				{
+					"name": "valid_start_time",
+					"type": "Number",
+					"description": "生效时间,unix时间戳,单位:毫秒,为空则立即生效"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "状态码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "描述"
+		}
+	]
+}

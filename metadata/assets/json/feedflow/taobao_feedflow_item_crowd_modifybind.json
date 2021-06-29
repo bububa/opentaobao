@@ -1,0 +1,59 @@
+{
+	"name": "taobao.feedflow.item.crowd.modifybind",
+	"apiChineseName": "修改人群出价或状态",
+	"description": "修改人群出价或状态",
+	"requestParams": [
+		{
+			"name": "crowds",
+			"type": "CrowdDto[]",
+			"description": "人群信息",
+			"required": true,
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "出价，单位：分"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "人群状态"
+				},
+				{
+					"name": "crowd_id",
+					"type": "Number",
+					"description": "人群id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "单元id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功,true-成功，false-失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

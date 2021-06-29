@@ -15,7 +15,7 @@ type WaveNumReportRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenWavenumReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

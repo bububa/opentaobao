@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.outflow.frequency.saveorupdate",
+	"apiChineseName": "处方外流-药品频次同步接口",
+	"description": "处方外流-药品频次同步接口",
+	"requestParams": [
+		{
+			"name": "frequency_request",
+			"type": "FrequencyRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "freq_times",
+					"type": "String",
+					"description": "用药频次（非空）"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态1：正常 0：停用（非空）"
+				},
+				{
+					"name": "his_frequency_name",
+					"type": "String",
+					"description": "频次名称（非空）"
+				},
+				{
+					"name": "his_frequency_code",
+					"type": "String",
+					"description": "频次编码（非空）"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道类型（非空）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回数据对象",
+					"required": true
+				}
+			]
+		}
+	]
+}

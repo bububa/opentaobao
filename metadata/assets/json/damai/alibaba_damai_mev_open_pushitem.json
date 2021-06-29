@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.damai.mev.open.pushitem",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票品接口pushItem",
+	"description": "开放接口 推送票品",
+	"requestParams": [
+		{
+			"name": "push_item_param",
+			"type": "PushTicketItemPushOpenParam",
+			"description": "入参pushItemParam",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "票品id"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "票品名称"
+				},
+				{
+					"name": "item_price",
+					"type": "Number",
+					"description": "票品价格"
+				},
+				{
+					"name": "perform_id",
+					"type": "Number",
+					"description": "场次id"
+				},
+				{
+					"name": "push_time",
+					"type": "Date",
+					"description": "推送时间"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "商户id"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "票品描述"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

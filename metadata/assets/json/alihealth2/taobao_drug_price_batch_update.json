@@ -1,0 +1,46 @@
+{
+	"name": "taobao.drug.price.batch.update",
+	"apiChineseName": "商家批量更新宝贝价格",
+	"description": "商家批量更新宝贝价格",
+	"requestParams": [
+		{
+			"name": "out_store_id",
+			"type": "String",
+			"description": "外部店铺ID",
+			"required": true
+		},
+		{
+			"name": "out_item_id_price_map",
+			"type": "Json",
+			"description": "商品ID和价格",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编号",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求的接口是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

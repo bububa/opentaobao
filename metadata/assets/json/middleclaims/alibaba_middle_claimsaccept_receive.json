@@ -1,0 +1,151 @@
+{
+	"name": "alibaba.middle.claimsaccept.receive",
+	"apiChineseName": "国际化中台服务域接收保险公司理赔受理结果",
+	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔受理结果的处理后，将该结果返回至服务域",
+	"requestParams": [
+		{
+			"name": "claims_accept_dto",
+			"type": "ClaimsAcceptDto",
+			"description": "理赔受理结果实体类",
+			"subParams": [
+				{
+					"name": "service_work_order_id",
+					"type": "Number",
+					"description": "服务工单ID"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单ID"
+				},
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子订单ID"
+				},
+				{
+					"name": "claim_accept_result",
+					"type": "Boolean",
+					"description": "理赔受理结果"
+				},
+				{
+					"name": "claims_accept_result_desc",
+					"type": "String",
+					"description": "理赔受理拒绝原因"
+				},
+				{
+					"name": "report_no",
+					"type": "String",
+					"description": "报案号"
+				},
+				{
+					"name": "policy_no",
+					"type": "String",
+					"description": "保单号"
+				},
+				{
+					"name": "extension_map",
+					"type": "Extensionmap",
+					"description": "预留扩展Map",
+					"subParams": [
+						{
+							"name": "extension_map_fir",
+							"type": "String",
+							"description": "预留扩展值1"
+						},
+						{
+							"name": "extension_map_sec",
+							"type": "String",
+							"description": "预留扩展值2"
+						},
+						{
+							"name": "extension_map_thi",
+							"type": "String",
+							"description": "预留扩展值3"
+						}
+					]
+				},
+				{
+					"name": "delivery_address_dto",
+					"type": "DeliveryAddressDto",
+					"description": "保险退货仓库地址实体类",
+					"subParams": [
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收货人姓名"
+						},
+						{
+							"name": "receiver_mobile_phone",
+							"type": "String",
+							"description": "收货人手机号码"
+						},
+						{
+							"name": "country_name",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区域"
+						},
+						{
+							"name": "post_code",
+							"type": "String",
+							"description": "邮政编码"
+						},
+						{
+							"name": "receiver_address_detail",
+							"type": "String",
+							"description": "具体地址"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统调用结果",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "业务结果",
+					"required": true
+				},
+				{
+					"name": "repeated",
+					"type": "Boolean",
+					"description": "是否重复",
+					"required": true
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否重试",
+					"required": true
+				}
+			]
+		}
+	]
+}

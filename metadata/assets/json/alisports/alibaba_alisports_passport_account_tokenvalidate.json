@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.alisports.passport.account.tokenvalidate",
+	"apiChineseName": "阿里体育会员系统帐号登录注册token验证接口",
+	"description": "阿里体育会员系统帐号登录注册token验证接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "业务方appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		},
+		{
+			"name": "user_type",
+			"type": "Number",
+			"description": "注册用户类型"
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳",
+			"required": true
+		},
+		{
+			"name": "secret",
+			"type": "String",
+			"description": "一键登录参数"
+		},
+		{
+			"name": "ext_info",
+			"type": "String",
+			"description": "json字符串，传入扩展字段"
+		},
+		{
+			"name": "mtop_appkey",
+			"type": "String",
+			"description": "选填，调用百川登录接口的appkey，百川登录时，需要传此字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "返回状态码"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "返回状态信息"
+		},
+		{
+			"name": "alisp_data",
+			"type": "String",
+			"description": "返回数据结果",
+			"subParams": [
+				{
+					"name": "secret",
+					"type": "String",
+					"description": "secret",
+					"required": true
+				}
+			]
+		}
+	]
+}

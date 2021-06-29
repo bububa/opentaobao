@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.alihealth.tracecodeplatform.code.active",
+	"apiChineseName": "正大鸡蛋激活追溯码",
+	"description": "用于正大鸡蛋激活追溯码",
+	"requestParams": [
+		{
+			"name": "file_info",
+			"type": "String",
+			"description": "文件信息（对文件内容16进制编码）",
+			"required": true
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "回调url"
+		},
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名"
+		},
+		{
+			"name": "prod_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "状态代码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "状态信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用状态",
+					"required": true
+				}
+			]
+		}
+	]
+}

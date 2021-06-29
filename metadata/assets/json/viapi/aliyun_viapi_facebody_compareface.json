@@ -1,0 +1,60 @@
+{
+	"name": "aliyun.viapi.facebody.compareface",
+	"apiChineseName": "人脸比对1：1",
+	"description": "基于输入的两张图片，人脸比对服务可检测两张图片中的人脸，并挑选两张图片的最大人脸进行比较，判断是否是同一人；人脸比对服务还返回了这两个人脸的矩形框、比对的置信度，以及不同误识率的置信度阈值。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url_a",
+			"type": "String",
+			"description": "图片url地址(http/https)"
+		},
+		{
+			"name": "image_url_b",
+			"type": "String",
+			"description": "图片url地址(http/https)"
+		},
+		{
+			"name": "image_type",
+			"type": "Number",
+			"description": "图片类型, ,取值范围[0:图片URL, 1:图片Base64数据]"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "thresholds",
+					"type": "Number[]",
+					"description": "误识率在10e-3,10e-4,10e-5时对应的置信度分类阈值",
+					"required": true
+				},
+				{
+					"name": "confidence",
+					"type": "String",
+					"description": "两张图片中最大人脸属于同一个人的置信度：0-100，如某张图片中没有人脸，返回置信度为0",
+					"required": true
+				},
+				{
+					"name": "rect_a_list",
+					"type": "Number[]",
+					"description": "图片1最大人脸矩形框(left, top, width, height)，如图片中没有人脸，返回矩形框数值均为0",
+					"required": true
+				},
+				{
+					"name": "rect_b_list",
+					"type": "Number[]",
+					"description": "图片2最大人脸矩形框(left, top, width, height)，如图片中没有人脸，返回矩形框数值均为0",
+					"required": true
+				}
+			]
+		}
+	]
+}

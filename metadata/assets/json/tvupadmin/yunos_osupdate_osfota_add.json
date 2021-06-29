@@ -1,0 +1,28 @@
+{
+	"name": "yunos.osupdate.osfota.add",
+	"apiChineseName": "添加系统升级任务",
+	"description": "添加osupdate系统升级任务",
+	"requestParams": [
+		{
+			"name": "os_fota_json",
+			"type": "String",
+			"description": "系统升级任务json格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否操作成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

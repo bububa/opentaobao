@@ -1,0 +1,54 @@
+{
+	"name": "taobao.ailab.aicloud.top.music.search",
+	"apiChineseName": "对外音乐搜索服务",
+	"description": "供厂商获取音乐列表",
+	"requestParams": [
+		{
+			"name": "bot_id",
+			"type": "Number",
+			"description": "botId值"
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "筛选条件，目前只支持name、type和style"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "Json[]",
+					"description": "返回item列表",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

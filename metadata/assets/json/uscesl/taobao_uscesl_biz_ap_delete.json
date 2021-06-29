@@ -1,0 +1,61 @@
+{
+	"name": "taobao.uscesl.biz.ap.delete",
+	"apiChineseName": "删除价签AP设备",
+	"description": "删除价签AP设备",
+	"requestParams": [
+		{
+			"name": "ap_mac",
+			"type": "String",
+			"description": "ap的MAC地址"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID"
+		},
+		{
+			"name": "biz_brand_key",
+			"type": "String",
+			"description": "商家CODE"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "成功与否看result.success，返回true或者false",
+			"subParams": [
+				{
+					"name": "target",
+					"type": "Boolean",
+					"description": "返回执行对象",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "business_code",
+					"type": "String",
+					"description": "业务执行返回码",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				}
+			]
+		}
+	]
+}

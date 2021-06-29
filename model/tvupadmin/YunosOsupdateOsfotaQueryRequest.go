@@ -1,0 +1,77 @@
+package tvupadmin
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+系统升级分页查询 APIRequest
+yunos.osupdate.osfota.query
+
+分页查询osoupdate系统升级列表
+*/
+type YunosOsupdateOsfotaQueryRequest struct {
+    model.Params
+
+    // 设备型号ID
+    modleId   int64 
+
+    // 页码
+    page   int64 
+
+    // 每页数量
+    pageSize   int64 
+
+}
+
+func NewYunosOsupdateOsfotaQueryRequest() *YunosOsupdateOsfotaQueryRequest{
+    return &YunosOsupdateOsfotaQueryRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r YunosOsupdateOsfotaQueryRequest) GetApiMethodName() string {
+    return "yunos.osupdate.osfota.query"
+}
+
+func (r YunosOsupdateOsfotaQueryRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *YunosOsupdateOsfotaQueryRequest) SetModleId(modleId int64) error {
+    r.modleId = modleId
+    r.Set("modle_id", modleId)
+    return nil
+}
+
+func (r YunosOsupdateOsfotaQueryRequest) GetModleId() int64 {
+    return r.modleId
+}
+
+func (r *YunosOsupdateOsfotaQueryRequest) SetPage(page int64) error {
+    r.page = page
+    r.Set("page", page)
+    return nil
+}
+
+func (r YunosOsupdateOsfotaQueryRequest) GetPage() int64 {
+    return r.page
+}
+
+func (r *YunosOsupdateOsfotaQueryRequest) SetPageSize(pageSize int64) error {
+    r.pageSize = pageSize
+    r.Set("page_size", pageSize)
+    return nil
+}
+
+func (r YunosOsupdateOsfotaQueryRequest) GetPageSize() int64 {
+    return r.pageSize
+}
+

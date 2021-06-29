@@ -1,0 +1,20 @@
+{
+	"name": "aliexpress.solution.schema.product.full.update",
+	"apiChineseName": "aliexpress.solution.schema.product.full.update",
+	"description": "Schema interface for product full update. QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.",
+	"requestParams": [
+		{
+			"name": "schema_full_update_request",
+			"type": "String",
+			"description": "Product full update request. To learn how to generate the content, please refer to https://developers.aliexpress.com/en/doc.htm?docId=109760\u0026docType=1.  Be aware that the aliexpress_product_id field should be replaced by the product ID belonged to the seller.",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "Product id that has been updated."
+		}
+	]
+}

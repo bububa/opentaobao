@@ -1,0 +1,123 @@
+{
+	"name": "alibaba.alihealth.drugcode.scan",
+	"apiChineseName": "查询扫码信息",
+	"description": "查询扫码信息",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "20位码",
+			"required": true
+		},
+		{
+			"name": "query_app_name",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "用户ip"
+		},
+		{
+			"name": "device_utdid",
+			"type": "String",
+			"description": "设备标识"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "DrugInfoDto",
+					"description": "返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "20位码",
+							"required": true
+						},
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品通用名",
+							"required": true
+						},
+						{
+							"name": "specifications",
+							"type": "String",
+							"description": "制剂规格",
+							"required": true
+						},
+						{
+							"name": "sub_ret_code",
+							"type": "String",
+							"description": "11：没有申请过此码 12：后四位检验不对 13：没激活过",
+							"required": true
+						},
+						{
+							"name": "ret_code",
+							"type": "String",
+							"description": "状态码   0:正常  -1：未知异常  1：有原因的异常 见subretcode",
+							"required": true
+						},
+						{
+							"name": "prepn_type",
+							"type": "String",
+							"description": "剂型",
+							"required": true
+						},
+						{
+							"name": "pkg_spec",
+							"type": "String",
+							"description": "包装规格",
+							"required": true
+						},
+						{
+							"name": "query_total_count",
+							"type": "Number",
+							"description": "查询次数(用户维度)",
+							"required": true
+						},
+						{
+							"name": "production_batch",
+							"type": "String",
+							"description": "批次",
+							"required": true
+						},
+						{
+							"name": "query_count",
+							"type": "String",
+							"description": "扫码次数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				}
+			]
+		}
+	]
+}

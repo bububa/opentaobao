@@ -1,0 +1,274 @@
+{
+	"name": "aliexpress.affiliate.order.listbyindex",
+	"apiChineseName": "AE联盟推广者订单查询接口-按游标索引查询",
+	"description": "AE联盟推广者订单按游标查询接口",
+	"requestParams": [
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "start_query_index_id",
+			"type": "String",
+			"description": "查询索引开始值：若不传，则只能查第一页"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "订单状态:Payment Completed,Buyer Confirmed Receipt",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数"
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "返回的字段信息"
+		},
+		{
+			"name": "app_signature",
+			"type": "String",
+			"description": "安全签名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "ResponseDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "resp_code",
+					"type": "Number",
+					"description": "返回结果状态码",
+					"required": true
+				},
+				{
+					"name": "resp_msg",
+					"type": "String",
+					"description": "返回状态描述信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TrafficOrderResultDto",
+					"description": "返回结果明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "current_record_count",
+							"type": "Number",
+							"description": "当前页记录条数",
+							"required": true
+						},
+						{
+							"name": "orders",
+							"type": "Order[]",
+							"description": "订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_id",
+									"type": "Number",
+									"description": "订单ID",
+									"required": true
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单ID",
+									"required": true
+								},
+								{
+									"name": "tracking_id",
+									"type": "String",
+									"description": "trackingId",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "Number",
+									"description": "类目ID",
+									"required": true
+								},
+								{
+									"name": "is_hot_product",
+									"type": "String",
+									"description": "是否爆品:Y或者N",
+									"required": true
+								},
+								{
+									"name": "effect_detail_status",
+									"type": "String",
+									"description": "FullRefund:订单全额退款，Antispam: 订单作弊",
+									"required": true
+								},
+								{
+									"name": "incentive_commission_rate",
+									"type": "String",
+									"description": "激励佣金率",
+									"required": true
+								},
+								{
+									"name": "estimated_incentive_paid_commission",
+									"type": "Number",
+									"description": "激励订单支付时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "estimated_incentive_finished_commission",
+									"type": "Number",
+									"description": "激励订单完成时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "is_affiliate_product",
+									"type": "String",
+									"description": "是否为联盟商品:Y或者N",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态:Payment Completed,Buyer Confirmed Receipt",
+									"required": true
+								},
+								{
+									"name": "created_time",
+									"type": "String",
+									"description": "订单创建时间",
+									"required": true
+								},
+								{
+									"name": "commission_rate",
+									"type": "String",
+									"description": "佣金率",
+									"required": true
+								},
+								{
+									"name": "paid_amount",
+									"type": "Number",
+									"description": "订单支付完成金额",
+									"required": true
+								},
+								{
+									"name": "paid_time",
+									"type": "String",
+									"description": "订单支付完成时间",
+									"required": true
+								},
+								{
+									"name": "estimated_paid_commission",
+									"type": "Number",
+									"description": "订单支付时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "finished_amount",
+									"type": "Number",
+									"description": "订单完成金额",
+									"required": true
+								},
+								{
+									"name": "finished_time",
+									"type": "String",
+									"description": "订单完成时间",
+									"required": true
+								},
+								{
+									"name": "estimated_finished_commission",
+									"type": "Number",
+									"description": "订单完成时的预计佣金",
+									"required": true
+								},
+								{
+									"name": "is_new_buyer",
+									"type": "String",
+									"description": "是否新买家",
+									"required": true
+								},
+								{
+									"name": "settled_currency",
+									"type": "String",
+									"description": "推广者结算币种",
+									"required": true
+								},
+								{
+									"name": "custom_parameters",
+									"type": "String",
+									"description": "自定义参数(JSON格式）",
+									"required": true
+								},
+								{
+									"name": "new_buyer_bonus_commission",
+									"type": "Number",
+									"description": "新买家奖励佣金",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "product_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "product_detail_url",
+									"type": "String",
+									"description": "商品DetailUrl",
+									"required": true
+								},
+								{
+									"name": "product_main_image_url",
+									"type": "String",
+									"description": "商品主图Url",
+									"required": true
+								},
+								{
+									"name": "product_count",
+									"type": "Number",
+									"description": "下单商品数量",
+									"required": true
+								},
+								{
+									"name": "ship_to_country",
+									"type": "String",
+									"description": "物流国家",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "max_query_index_id",
+							"type": "String",
+							"description": "当前返回记录的最大游标ID",
+							"required": true
+						},
+						{
+							"name": "min_query_index_id",
+							"type": "String",
+							"description": "当前返回记录的最小游标ID",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

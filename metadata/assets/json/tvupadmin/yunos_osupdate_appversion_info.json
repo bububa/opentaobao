@@ -1,0 +1,176 @@
+{
+	"name": "yunos.osupdate.appversion.info",
+	"apiChineseName": "获取应用升级详情",
+	"description": "获取应用升级详情",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "升级任务ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "TvAppVersion",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "app",
+					"type": "AppDto",
+					"description": "app",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "package_name",
+							"type": "String",
+							"description": "packageName",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "app_zip_type",
+					"type": "String",
+					"description": "appZipType",
+					"required": true
+				},
+				{
+					"name": "device_adapter_list",
+					"type": "DeviceAdapterDto[]",
+					"description": "deviceAdapterList",
+					"required": true,
+					"subParams": [
+						{
+							"name": "brand_id",
+							"type": "Number",
+							"description": "brandId",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "brandName",
+							"required": true
+						},
+						{
+							"name": "highest_system_version",
+							"type": "String",
+							"description": "highestSystemVersion",
+							"required": true
+						},
+						{
+							"name": "minimum_system_version",
+							"type": "String",
+							"description": "minimumSystemVersion",
+							"required": true
+						},
+						{
+							"name": "model_id",
+							"type": "Number",
+							"description": "modelId",
+							"required": true
+						},
+						{
+							"name": "model_name",
+							"type": "String",
+							"description": "modelName",
+							"required": true
+						},
+						{
+							"name": "real_type_id",
+							"type": "Number",
+							"description": "realTypeId",
+							"required": true
+						},
+						{
+							"name": "real_type_name",
+							"type": "String",
+							"description": "realTypeName",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "download_path",
+					"type": "String",
+					"description": "downloadPath",
+					"required": true
+				},
+				{
+					"name": "downloadmd5",
+					"type": "String",
+					"description": "downloadmd5",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modify",
+					"type": "Date",
+					"description": "gmtModify",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "need_restart",
+					"type": "String",
+					"description": "needRestart",
+					"required": true
+				},
+				{
+					"name": "release_note",
+					"type": "String",
+					"description": "releaseNote",
+					"required": true
+				},
+				{
+					"name": "size",
+					"type": "String",
+					"description": "size",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "status",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "version",
+					"required": true
+				},
+				{
+					"name": "version_code",
+					"type": "Number",
+					"description": "versionCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

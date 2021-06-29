@@ -1,0 +1,79 @@
+{
+	"name": "taobao.xhotel.item.selection.seller.stat.hotshid",
+	"apiChineseName": "供应链选品热销标准酒店覆盖情况",
+	"description": "供应链选品热销标准酒店覆盖情况",
+	"requestParams": [
+		{
+			"name": "date",
+			"type": "String",
+			"description": "日期  默认为昨天"
+		},
+		{
+			"name": "hid",
+			"type": "String",
+			"description": "酒店id  默认all"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "vendor  默认all"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "supplier  默认all"
+		},
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "酒店编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Module",
+					"description": "返回结构",
+					"required": true,
+					"subParams": [
+						{
+							"name": "covered_hid_amount",
+							"type": "String",
+							"description": "热销标准酒店中卖家覆盖的数量",
+							"required": true
+						},
+						{
+							"name": "can_sale_hid_amount",
+							"type": "String",
+							"description": "热销标准酒店中卖家可售的酒店数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

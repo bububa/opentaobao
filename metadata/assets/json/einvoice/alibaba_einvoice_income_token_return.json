@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.einvoice.income.token.return",
+	"apiChineseName": "服务商回传税号token",
+	"description": "服务商回传税号token，用来勾选抵扣认证",
+	"requestParams": [
+		{
+			"name": "area",
+			"type": "String",
+			"description": "税局所在区域，success=true时必填"
+		},
+		{
+			"name": "error_code",
+			"type": "String",
+			"description": "错误码，success=false时必填"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息，success=false时必填"
+		},
+		{
+			"name": "expire_time",
+			"type": "String",
+			"description": "token过期时间，success=true时必填"
+		},
+		{
+			"name": "payee_name",
+			"type": "String",
+			"description": "销售方企业名称，success=true时必填"
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销售方纳税人识别号，success=true时必填"
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "token是否获取成功，true=成功， false=失败",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token，success=true时必填"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "result接口是否调用成功"
+		}
+	]
+}

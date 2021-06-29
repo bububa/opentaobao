@@ -1,0 +1,69 @@
+{
+	"name": "alibaba.visitor.getidsbyqrcode",
+	"apiChineseName": "根据访客二维码查访客行程id",
+	"description": "根据支付宝阿里访客小程序的动态二维码查询来访行程id",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id"
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "date",
+			"type": "Date",
+			"description": "来访时间",
+			"required": true
+		},
+		{
+			"name": "qr_code",
+			"type": "String",
+			"description": "二维码字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "contents",
+					"type": "Json[]",
+					"description": "内容",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				}
+			]
+		}
+	]
+}

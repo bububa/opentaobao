@@ -1,0 +1,128 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.channel.search",
+	"apiChineseName": "查询渠道商api",
+	"description": "查询渠道商api",
+	"requestParams": [
+		{
+			"name": "skey_code",
+			"type": "String",
+			"description": "身份认证",
+			"required": true
+		},
+		{
+			"name": "ent_info_id",
+			"type": "Number",
+			"description": "商家id",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "第几页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页几条",
+			"required": true
+		},
+		{
+			"name": "out_in_type",
+			"type": "Number",
+			"description": "0 出库 2 入库",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "PageInfo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "totalNum",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "Result[]",
+							"description": "result",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area_desc",
+									"type": "String",
+									"description": "区县",
+									"required": true
+								},
+								{
+									"name": "city_desc",
+									"type": "String",
+									"description": "cityDesc",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "userName",
+									"required": true
+								},
+								{
+									"name": "merchant_id",
+									"type": "String",
+									"description": "城市",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "自定义编码",
+									"required": true
+								},
+								{
+									"name": "prov_desc",
+									"type": "String",
+									"description": "自定义编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page",
+							"type": "Number",
+							"description": "page",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "pageSize",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				}
+			]
+		}
+	]
+}

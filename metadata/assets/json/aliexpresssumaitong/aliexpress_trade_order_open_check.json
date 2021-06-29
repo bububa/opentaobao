@@ -1,0 +1,140 @@
+{
+	"name": "aliexpress.trade.order.open.check",
+	"apiChineseName": "Aliexpress开放平台下单前置检查",
+	"description": "Aliexpress开放平台下单前通过下单入参获取token",
+	"requestParams": [
+		{
+			"name": "param_pre_create_order_request",
+			"type": "PreCreateOrderRequest",
+			"description": "预下单入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Price",
+							"description": "商品价格",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "item_price",
+									"type": "String",
+									"description": "价格，单位分",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "param_client_info",
+			"type": "ClientInfo",
+			"description": "客户端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "open_app_id",
+					"type": "String",
+					"description": "小程序appId",
+					"required": true
+				},
+				{
+					"name": "open_biz_code",
+					"type": "String",
+					"description": "客户端业务码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PreCheckResponse",
+			"description": "预下单返回值",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "错误码",
+					"required": true,
+					"subParams": [
+						{
+							"name": "display_message",
+							"type": "String",
+							"description": "错误展示信息",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "错误码key",
+							"required": true
+						},
+						{
+							"name": "log_message",
+							"type": "String",
+							"description": "错误详情",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "request_trace",
+					"type": "String",
+					"description": "请求traceId",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "返回的token",
+					"required": true
+				}
+			]
+		}
+	]
+}

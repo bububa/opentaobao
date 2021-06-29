@@ -1,0 +1,78 @@
+{
+	"name": "alitrip.rail.ir.carrier.get",
+	"apiChineseName": "国际火车票铁路承运公司查询",
+	"description": "国际火车票提供给代理商用于查询标准铁路承运公司carrier信息，用于代理商自己的carrier与飞猪平台的carrier做映射",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "商家id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RailCarrierRs",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "RailCarrierRS[]",
+					"description": "铁路运营公司列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "铁路运营公司Code",
+							"required": true
+						},
+						{
+							"name": "logo",
+							"type": "String",
+							"description": "铁路运营公司Logo",
+							"required": true
+						},
+						{
+							"name": "cn_name",
+							"type": "String",
+							"description": "铁路运营公司中文名",
+							"required": true
+						},
+						{
+							"name": "en_name",
+							"type": "String",
+							"description": "铁路运营公司英文名",
+							"required": true
+						},
+						{
+							"name": "rail_way_code",
+							"type": "String",
+							"description": "关联or归属铁路局编码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.drug.code.kyt.yy.applycode",
+	"apiChineseName": "医院药品子码申请接口",
+	"description": "根据父码及所属企业ID生成子码信息",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID（ref_ent_id)",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "父码",
+			"required": true
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "申请数量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "父子码关系对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "children_code_list",
+							"type": "String[]",
+							"description": "子码",
+							"required": true
+						},
+						{
+							"name": "parent_code",
+							"type": "String",
+							"description": "父码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码",
+					"required": true
+				}
+			]
+		}
+	]
+}

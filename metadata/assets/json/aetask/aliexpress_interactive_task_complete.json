@@ -1,0 +1,64 @@
+{
+	"name": "aliexpress.interactive.task.complete",
+	"apiChineseName": "任务完成接口",
+	"description": "用户完成任务",
+	"requestParams": [
+		{
+			"name": "task_instance_id",
+			"type": "Number",
+			"description": "任务实例id",
+			"required": true
+		},
+		{
+			"name": "project_app_key",
+			"type": "String",
+			"description": "appkey",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

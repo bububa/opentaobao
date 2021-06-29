@@ -1,0 +1,107 @@
+{
+	"name": "alibaba.campus.acl.grantpermiitemtorole",
+	"apiChineseName": "权限赋予角色",
+	"description": "权限赋予角色",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司ID,不填统一初始化SYS_000"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区ID",
+			"required": true
+		},
+		{
+			"name": "role",
+			"type": "RoleReq",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "role_id",
+					"type": "String",
+					"description": "角色id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "priv",
+			"type": "PermissionReq[]",
+			"description": "系统自动生成",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "priv_key",
+					"type": "String",
+					"description": "权限key",
+					"required": true
+				},
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "过期时间"
+				},
+				{
+					"name": "effective_time",
+					"type": "Date",
+					"description": "生效开始时间"
+				}
+			]
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "操作人id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "接口返回结果",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

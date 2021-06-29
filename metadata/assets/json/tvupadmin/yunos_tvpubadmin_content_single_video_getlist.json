@@ -1,0 +1,83 @@
+{
+	"name": "yunos.tvpubadmin.content.single.video.getlist",
+	"apiChineseName": "单视频审核获取视频列表",
+	"description": "牌照方在审核单视频时获取单视频列表接口",
+	"requestParams": [
+		{
+			"name": "ext_type",
+			"type": "Number",
+			"description": "视频外部来源类型: 1:YOUKU, 2:MONGO_TV, 3:TAOTVMEDIA, 4:GOLIVE"
+		},
+		{
+			"name": "license_state",
+			"type": "Number",
+			"description": "审核状态：1未提审，2审核中，3通过，4不通过，5已下线"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "单页数量",
+			"required": true
+		},
+		{
+			"name": "gmt_end",
+			"type": "String",
+			"description": "查询时间范围，结束时间"
+		},
+		{
+			"name": "ext_video_str_id",
+			"type": "String",
+			"description": "视频id"
+		},
+		{
+			"name": "license_state_list",
+			"type": "Number[]",
+			"description": "查询多个审核状态",
+			"maxListSize": 20
+		},
+		{
+			"name": "date_type",
+			"type": "Number",
+			"description": "时间类型：1-licenseSubmitTime, 2-licenseAuditTime, 3-youkuPublishTime"
+		},
+		{
+			"name": "category",
+			"type": "Number",
+			"description": "主分类"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "gmt_start",
+			"type": "String",
+			"description": "查询时间范围，开始时间"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "video_title_like",
+			"type": "String",
+			"description": "视屏名称"
+		},
+		{
+			"name": "priority",
+			"type": "Number",
+			"description": "审核优先级，紧急4，高3，中2，低1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "object"
+		}
+	]
+}

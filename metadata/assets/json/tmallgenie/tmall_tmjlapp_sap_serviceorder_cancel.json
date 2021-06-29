@@ -1,0 +1,49 @@
+{
+	"name": "tmall.tmjlapp.sap.serviceorder.cancel",
+	"apiChineseName": "取消售后服务单",
+	"description": "SAP跟天猫精灵app接口对接，用户在app取消sap售后服务工单",
+	"requestParams": [
+		{
+			"name": "cancel_request",
+			"type": "Dtcancelrequest",
+			"description": "取消服务单请求",
+			"subParams": [
+				{
+					"name": "zfwdh",
+					"type": "String",
+					"description": "服务单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "cancel_response",
+			"type": "Dtcancelresponse",
+			"description": "取消服务单返回",
+			"subParams": [
+				{
+					"name": "return_message",
+					"type": "Dtreturnmessage",
+					"description": "返回消息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type",
+							"type": "String",
+							"description": "标识",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "消息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

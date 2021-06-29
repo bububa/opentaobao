@@ -1,0 +1,244 @@
+{
+	"name": "alibaba.alihealth.rx.prescription.detail",
+	"apiChineseName": "处方详情",
+	"description": "获取处方结构化信息",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "RxPrescriptionQuery",
+			"description": "查询参数",
+			"subParams": [
+				{
+					"name": "biz_order_ids",
+					"type": "String",
+					"description": "订单号多个以逗号分开"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data_list",
+			"type": "RxPrescriptionTopDto []",
+			"description": "数据集",
+			"subParams": [
+				{
+					"name": "drug_list",
+					"type": "RxDrugTopDto[]",
+					"description": "药品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "drug_usage_list",
+							"type": "RxDrugUsageTopDto[]",
+							"description": "药品用法用量",
+							"required": true,
+							"subParams": [
+								{
+									"name": "dose_value",
+									"type": "String",
+									"description": "每次用量",
+									"required": true
+								},
+								{
+									"name": "frequency",
+									"type": "String",
+									"description": "频次",
+									"required": true
+								},
+								{
+									"name": "frequency_value",
+									"type": "String",
+									"description": "频次值",
+									"required": true
+								},
+								{
+									"name": "frequency_unit",
+									"type": "String",
+									"description": "频次值单位",
+									"required": true
+								},
+								{
+									"name": "days",
+									"type": "String",
+									"description": "天数",
+									"required": true
+								},
+								{
+									"name": "drug_usage",
+									"type": "String",
+									"description": "用法",
+									"required": true
+								},
+								{
+									"name": "measure_unit",
+									"type": "String",
+									"description": "用法用量单位",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "dose_from",
+							"type": "String",
+							"description": "剂型",
+							"required": true
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品名称",
+							"required": true
+						},
+						{
+							"name": "drug_id",
+							"type": "String",
+							"description": "药品Id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "patient_diagnostic",
+					"type": "RxPatientDiagnosticTopDto",
+					"description": "患者问诊信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "diagnose_list",
+							"type": "RxDiagnoseTopDto[]",
+							"description": "诊断list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "icdCode名称",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "icdCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "allergy_history",
+							"type": "String",
+							"description": "过敏史",
+							"required": true
+						},
+						{
+							"name": "pregnancy",
+							"type": "String",
+							"description": "妊娠哺乳",
+							"required": true
+						},
+						{
+							"name": "renal_function",
+							"type": "String",
+							"description": "肾功能",
+							"required": true
+						},
+						{
+							"name": "liver_function",
+							"type": "String",
+							"description": "肝功能",
+							"required": true
+						},
+						{
+							"name": "medical_history",
+							"type": "String",
+							"description": "过往病史",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "patient",
+					"type": "RxPatientTopDto",
+					"description": "患者信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sex",
+							"type": "String",
+							"description": "性别",
+							"required": true
+						},
+						{
+							"name": "age",
+							"type": "Number",
+							"description": "年龄",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名",
+							"required": true
+						},
+						{
+							"name": "id_card",
+							"type": "String",
+							"description": "身份证号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "处方图片url",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "String",
+					"description": "处方创建时间",
+					"required": true
+				},
+				{
+					"name": "rx_id",
+					"type": "String",
+					"description": "处方id",
+					"required": true
+				},
+				{
+					"name": "doctor",
+					"type": "RxDoctorTopDto",
+					"description": "医生信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "doctor_name",
+							"type": "String",
+							"description": "医生姓名",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "医生部门",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

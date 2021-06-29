@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.zqs.fulfill.complete",
+	"apiChineseName": "周期购履约完成接口",
+	"description": "周期购履约完成接口",
+	"requestParams": [
+		{
+			"name": "sequence_no",
+			"type": "Number",
+			"description": "第几期"
+		},
+		{
+			"name": "main_biz_order_id",
+			"type": "Number",
+			"description": "交易单号"
+		},
+		{
+			"name": "sub_biz_order_id",
+			"type": "Number",
+			"description": "交易子单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "异常描述"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "异常code"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "执行结果"
+		}
+	]
+}

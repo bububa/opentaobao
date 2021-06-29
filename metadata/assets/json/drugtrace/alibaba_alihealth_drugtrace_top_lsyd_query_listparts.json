@@ -1,0 +1,220 @@
+{
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.listparts",
+	"apiChineseName": "往来单位查询",
+	"description": "查询往来单位列表",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业唯一标识",
+			"required": true
+		},
+		{
+			"name": "ent_name",
+			"type": "String",
+			"description": "企业名称"
+		},
+		{
+			"name": "ref_partner_id",
+			"type": "String",
+			"description": "企业自定义编号"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Page",
+					"description": "返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_num",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "result_list",
+							"type": "PEntParDto[]",
+							"description": "返回列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "partner_name",
+									"type": "String",
+									"description": "往来单位名称",
+									"required": true
+								},
+								{
+									"name": "partner_id",
+									"type": "String",
+									"description": "往来单位自定义编码",
+									"required": true
+								},
+								{
+									"name": "ent_id",
+									"type": "String",
+									"description": "企业id（查询企业自已的）",
+									"required": true
+								},
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "查询企业的唯一标识（查询企业自已的）",
+									"required": true
+								},
+								{
+									"name": "ent_prov_code",
+									"type": "String",
+									"description": "往来单位企业所在省编码",
+									"required": true
+								},
+								{
+									"name": "prov_name",
+									"type": "String",
+									"description": "所在省",
+									"required": true
+								},
+								{
+									"name": "area_name",
+									"type": "String",
+									"description": "所在市",
+									"required": true
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "所在县",
+									"required": true
+								},
+								{
+									"name": "is_network",
+									"type": "String",
+									"description": "是不是入网企业[1代表入网企业，其它为非入网]",
+									"required": true
+								},
+								{
+									"name": "partner_capital_name",
+									"type": "String",
+									"description": "拼音缩写",
+									"required": true
+								},
+								{
+									"name": "partner_type",
+									"type": "String",
+									"description": "类型",
+									"required": true
+								},
+								{
+									"name": "partner_ent_id",
+									"type": "String",
+									"description": "往来单位企业id【单据上传时的收发货企业填的就这个字段】",
+									"required": true
+								},
+								{
+									"name": "last_mod_date",
+									"type": "String",
+									"description": "最近修改日期",
+									"required": true
+								},
+								{
+									"name": "crt_date",
+									"type": "String",
+									"description": "创建日期",
+									"required": true
+								},
+								{
+									"name": "crt_ic_name",
+									"type": "String",
+									"description": "创建IC名称",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态",
+									"required": true
+								},
+								{
+									"name": "mod_ic_name",
+									"type": "String",
+									"description": "修改IC名称",
+									"required": true
+								},
+								{
+									"name": "partner_level",
+									"type": "String",
+									"description": "级别",
+									"required": true
+								},
+								{
+									"name": "mod_ic_code",
+									"type": "String",
+									"description": "修改IC码",
+									"required": true
+								},
+								{
+									"name": "p_ent_par_id",
+									"type": "String",
+									"description": "合作ID",
+									"required": true
+								},
+								{
+									"name": "crt_ic_code",
+									"type": "String",
+									"description": "创建IC码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否响应成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,283 @@
+{
+	"name": "alibaba.ele.enterprise.restaurant.multispecmenu",
+	"apiChineseName": "查询餐厅菜单",
+	"description": "查询餐厅菜单",
+	"requestParams": [
+		{
+			"name": "erestaurant_id",
+			"type": "String",
+			"description": "餐厅ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_datas",
+			"type": "EnterpriseData []",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "only_restaurant_code",
+					"type": "String",
+					"description": "餐厅唯一码",
+					"required": true
+				},
+				{
+					"name": "erestaurant_id",
+					"type": "String",
+					"description": "餐厅ID",
+					"required": true
+				},
+				{
+					"name": "foods",
+					"type": "Food[]",
+					"description": "食物信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "specfoods",
+							"type": "Specfood[]",
+							"description": "食物信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "specs",
+									"type": "Spec[]",
+									"description": "规格信息（示例为多规格例子，否则为 []）",
+									"required": true,
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "姓名",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "值",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "food_name",
+									"type": "String",
+									"description": "名字",
+									"required": true
+								},
+								{
+									"name": "original_price",
+									"type": "String",
+									"description": "原价, 如果没有绑定活动, 该字段为空",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "当前价格, 如果美食活动, 此价格是优惠后的价格",
+									"required": true
+								},
+								{
+									"name": "food_id",
+									"type": "String",
+									"description": "食物id",
+									"required": true
+								},
+								{
+									"name": "is_essential",
+									"type": "Boolean",
+									"description": "是否必点, 必点分类下只要点一个 food 就好了, 如果必点商品售完, 不需要必点",
+									"required": true
+								},
+								{
+									"name": "stock",
+									"type": "Number",
+									"description": "库存",
+									"required": true
+								},
+								{
+									"name": "sold_out",
+									"type": "Boolean",
+									"description": "是否售完",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "商品规格id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "activity",
+							"type": "Activity",
+							"description": "活动",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "活动名字",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "food_id",
+							"type": "String",
+							"description": "餐品id",
+							"required": true
+						},
+						{
+							"name": "rating",
+							"type": "String",
+							"description": "评分",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "specifications",
+							"type": "Specification[]",
+							"description": "规格信息, 例如: [{“name”: “规格”, “values”: [“不辣”, “中辣”, “大辣” ]}, …]",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "特别说明",
+									"required": true
+								},
+								{
+									"name": "values",
+									"type": "String[]",
+									"description": "规格说明",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "tips",
+							"type": "String",
+							"description": "概况说明, 例: “2评价 月售6份”",
+							"required": true
+						},
+						{
+							"name": "attrs",
+							"type": "Attr[]",
+							"description": "属性信息, 次要的规格信息, 不决定价格, 例如: [{“name”: “甜度”, “values”: [“加糖”, “不加糖”]}, …]",
+							"required": true,
+							"subParams": [
+								{
+									"name": "values",
+									"type": "String[]",
+									"description": "值",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "month_sales",
+							"type": "Number",
+							"description": "月售份数",
+							"required": true
+						},
+						{
+							"name": "image_url",
+							"type": "String",
+							"description": "图片地址",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名字",
+							"required": true
+						},
+						{
+							"name": "min_purchase",
+							"type": "Number",
+							"description": "最少起购分数, 默认: 1",
+							"required": true
+						},
+						{
+							"name": "satisfy_rate",
+							"type": "Number",
+							"description": "好评率",
+							"required": true
+						},
+						{
+							"name": "is_essential",
+							"type": "Boolean",
+							"description": "是否必点菜品",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "分类名",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "is_activity",
+					"type": "Boolean",
+					"description": "是否为活动商品",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "分类 id",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "分类类型. 1: 普通分类 2: 热销榜 3: 优惠分类 4: 必点分类 5: 非必点分类",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

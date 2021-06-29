@@ -1,0 +1,291 @@
+{
+	"name": "alibaba.perfect.performance.localitem.publish",
+	"apiChineseName": "同城购定制化发品",
+	"description": "同城购业务定制化发品接口，同城购业务线专用",
+	"requestParams": [
+		{
+			"name": "param_perfect_performance_item_publish_req",
+			"type": "PerfectPerformanceItemPublishReq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "describe_info",
+					"type": "PerfectItemDescribeInfoDto",
+					"description": "商品描述信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "description",
+							"type": "String",
+							"description": "详情描述",
+							"required": true
+						},
+						{
+							"name": "item_pictures",
+							"type": "String[]",
+							"description": "商品图片",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "item_base_info",
+					"type": "PerfectItemBaseInfoDto",
+					"description": "商品基本信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_barcode",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "item_outer_id",
+							"type": "String",
+							"description": "商品外部编码"
+						},
+						{
+							"name": "item_pretium",
+							"type": "String",
+							"description": "商品吊牌价"
+						},
+						{
+							"name": "item_price",
+							"type": "String",
+							"description": "商品价格",
+							"required": true
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "item_size",
+							"type": "String",
+							"description": "商品体积"
+						},
+						{
+							"name": "item_weight",
+							"type": "String",
+							"description": "商品重量"
+						},
+						{
+							"name": "sale_channel_key",
+							"type": "String",
+							"description": "销售渠道",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "item_sku_infos",
+					"type": "PerfectItemSkuInfoDto[]",
+					"description": "商品sku列表",
+					"subParams": [
+						{
+							"name": "sale_properties",
+							"type": "PerfectSalePropertyDto[]",
+							"description": "sku销售属性",
+							"subParams": [
+								{
+									"name": "sale_property_key",
+									"type": "String",
+									"description": "属性key",
+									"required": true
+								},
+								{
+									"name": "sale_property_value",
+									"type": "String",
+									"description": "自定义属性值"
+								}
+							]
+						},
+						{
+							"name": "sc_product_info",
+							"type": "PerfectScProductInfoDto",
+							"description": "sku关联货品",
+							"subParams": [
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "货品编码",
+									"required": true
+								},
+								{
+									"name": "product_id",
+									"type": "Number",
+									"description": "货品ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sku_barcode",
+							"type": "String",
+							"description": "sku条码"
+						},
+						{
+							"name": "sku_outer_id",
+							"type": "String",
+							"description": "sku外部编码",
+							"required": true
+						},
+						{
+							"name": "sku_pretium",
+							"type": "String",
+							"description": "sku吊牌价"
+						},
+						{
+							"name": "sku_price",
+							"type": "String",
+							"description": "sku价格",
+							"required": true
+						},
+						{
+							"name": "sku_quantity",
+							"type": "Number",
+							"description": "sku数量"
+						}
+					]
+				},
+				{
+					"name": "item_trade_info",
+					"type": "PerfectItemTradeInfoDto",
+					"description": "商品交易信息",
+					"subParams": [
+						{
+							"name": "has_invoice",
+							"type": "Boolean",
+							"description": "是否提供发票"
+						},
+						{
+							"name": "sell_promise",
+							"type": "Boolean",
+							"description": "是否支持退换货承诺"
+						},
+						{
+							"name": "sub_stock_at_buy",
+							"type": "Boolean",
+							"description": "是否拍下减库存"
+						},
+						{
+							"name": "support7_day",
+							"type": "Boolean",
+							"description": "是否支持7天无理由"
+						},
+						{
+							"name": "warrant",
+							"type": "Boolean",
+							"description": "是否保修"
+						}
+					]
+				},
+				{
+					"name": "logistics_info",
+					"type": "PerfectItemLogisticsInfoDto",
+					"description": "商品物流信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市编码,默认北京"
+						},
+						{
+							"name": "postage_template_code",
+							"type": "String",
+							"description": "运费模板ID",
+							"required": true
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省份编码,默认北京"
+						},
+						{
+							"name": "store_group_code",
+							"type": "String",
+							"description": "门店库ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "product_info",
+					"type": "PerfectItemProductInfoDto",
+					"description": "产品信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌ID",
+							"required": true
+						},
+						{
+							"name": "category_code",
+							"type": "String",
+							"description": "叶子类目ID",
+							"required": true
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回的执行状态吗",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PerfectPerformanceItemPublishResp",
+					"description": "返回的数据实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

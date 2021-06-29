@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.blindfiledellog",
+	"apiChineseName": "接收盲底文件删除日志",
+	"description": "临床用药试验-接收盲底文件删除日志",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "药厂企业id",
+			"required": true
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "操作人",
+			"required": true
+		},
+		{
+			"name": "blind_file_delete_time",
+			"type": "Date",
+			"description": "盲底文件删除时间",
+			"required": true
+		},
+		{
+			"name": "blind_file_names",
+			"type": "String",
+			"description": "盲底文件名称，多个盲底文件用,分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "删除日志同步结果"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "调用结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "调用结果信息"
+		}
+	]
+}

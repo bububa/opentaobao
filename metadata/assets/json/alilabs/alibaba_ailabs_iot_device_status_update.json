@@ -1,0 +1,152 @@
+{
+	"name": "alibaba.ailabs.iot.device.status.update",
+	"apiChineseName": "ailabs iot 设备状态更新",
+	"description": "用于人工智能实验室IoT合作厂商上报三方接入IoT设备状态更新时的设备状态上报",
+	"requestParams": [
+		{
+			"name": "device_status_d_t_o",
+			"type": "DeviceStatusDto",
+			"description": "入参设备信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "payload",
+					"type": "Payload",
+					"description": "payload",
+					"required": true,
+					"subParams": [
+						{
+							"name": "token",
+							"type": "String",
+							"description": "用户token，云云接入设备必填"
+						},
+						{
+							"name": "device_info_list",
+							"type": "DeviceInfo[]",
+							"description": "设备信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "dev_id",
+									"type": "String",
+									"description": "设备唯一id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Status",
+									"description": "设备状态Map，key和value均为String",
+									"required": true,
+									"subParams": [
+										{
+											"name": "powerstate",
+											"type": "String",
+											"description": "开关状态"
+										},
+										{
+											"name": "mode",
+											"type": "String",
+											"description": "模式"
+										},
+										{
+											"name": "temperature",
+											"type": "String",
+											"description": "温度"
+										},
+										{
+											"name": "brightness",
+											"type": "String",
+											"description": "亮度"
+										},
+										{
+											"name": "windspeed",
+											"type": "String",
+											"description": "风速"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "skill_id",
+							"type": "String",
+							"description": "云云对接的技能id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "设备接入类型，1: 表示零配  2：表示 云云",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "header",
+					"type": "IotCommonHeader",
+					"description": "header",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pay_load_version",
+							"type": "Number",
+							"description": "payLoadVersion",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "message_id",
+							"type": "String",
+							"description": "messageId，区分请求使用",
+							"required": true
+						},
+						{
+							"name": "namespace",
+							"type": "String",
+							"description": "namespace",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "设备状态更新是否成功",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "附加信息",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "Number",
+					"description": "请求响应码，200代表成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "设备状态是否更新成功",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常",
+					"required": true
+				}
+			]
+		}
+	]
+}

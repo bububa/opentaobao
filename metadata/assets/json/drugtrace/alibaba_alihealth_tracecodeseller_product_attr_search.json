@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.product.attr.search",
+	"apiChineseName": "根据商品id获取商品属性",
+	"description": "根据商品id获取商品属性",
+	"requestParams": [
+		{
+			"name": "ent_info_id",
+			"type": "Number",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "trac_user_product_info_id",
+			"type": "Number",
+			"description": "货品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "ProducePreAttributeDto",
+					"description": "外层对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "attr_info_list",
+							"type": "Attrinfolist[]",
+							"description": "货品属性对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "trac_user_product_info_id",
+									"type": "String",
+									"description": "货品id",
+									"required": true
+								},
+								{
+									"name": "attr_name",
+									"type": "String",
+									"description": "属性名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "default_produce_pre_attribute_en",
+							"type": "String",
+							"description": "属性规则-英文",
+							"required": true
+						},
+						{
+							"name": "default_produce_pre_attribute",
+							"type": "String",
+							"description": "属性规则-中文",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

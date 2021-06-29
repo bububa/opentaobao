@@ -19,7 +19,9 @@ type TaobaoWlbOrderCancelAPIResponse struct {
 
 type TaobaoWlbOrderCancelResponse struct {
     XMLName xml.Name `xml:"wlb_order_cancel_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 修改时间，只有在取消成功的情况下，才可以做
     

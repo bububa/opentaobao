@@ -1,0 +1,220 @@
+{
+	"name": "alitrip.merchant.galaxy.order.validate",
+	"apiChineseName": "星河-订单试单接口",
+	"description": "根据用户选择酒店房型、入住人数、预订时间参数，获取是否可预订及价格变化信息",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "validate_order_param",
+			"type": "ValidateOrderParam",
+			"description": "试单参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "rate_id",
+					"type": "Number",
+					"description": "价格编号",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "String",
+					"description": "总价格",
+					"required": true
+				},
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "宝贝id",
+					"required": true
+				},
+				{
+					"name": "payment_type",
+					"type": "Number",
+					"description": "支付类型",
+					"required": true
+				},
+				{
+					"name": "customer_numbers",
+					"type": "Number",
+					"description": "入住人数",
+					"required": true
+				},
+				{
+					"name": "room_num",
+					"type": "Number",
+					"description": "房间数量",
+					"required": true
+				},
+				{
+					"name": "check_out_date",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "check_in_date",
+					"type": "String",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "rp_id",
+					"type": "Number",
+					"description": "价格id",
+					"required": true
+				},
+				{
+					"name": "out_room_id",
+					"type": "Number",
+					"description": "飞猪外部房型id",
+					"required": true
+				},
+				{
+					"name": "hotel_id",
+					"type": "String",
+					"description": "外部酒店id",
+					"required": true
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "内部酒店id",
+					"required": true
+				},
+				{
+					"name": "guest_by_room_dtos",
+					"type": "GuestByRoomDto[]",
+					"description": "房间类型",
+					"subParams": [
+						{
+							"name": "contact_first_name",
+							"type": "String",
+							"description": "联系人姓"
+						},
+						{
+							"name": "contact_last_name",
+							"type": "String",
+							"description": "联系人名"
+						},
+						{
+							"name": "roomer_number",
+							"type": "Number",
+							"description": "当前房间的总人数"
+						},
+						{
+							"name": "adult_roomer_number",
+							"type": "Number",
+							"description": "成人数"
+						},
+						{
+							"name": "child_roomer_number",
+							"type": "String",
+							"description": "儿童数"
+						},
+						{
+							"name": "child_ages",
+							"type": "Number[]",
+							"description": "儿童年龄数组"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "ValidateOrderVo",
+					"description": "试单结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_amount",
+							"type": "String",
+							"description": "实际需要支付金额，含税",
+							"required": true
+						},
+						{
+							"name": "total_tax",
+							"type": "String",
+							"description": "总税价",
+							"required": true
+						},
+						{
+							"name": "amount_changed_display",
+							"type": "String",
+							"description": "价格变化描述",
+							"required": true
+						},
+						{
+							"name": "is_amount_changed",
+							"type": "Boolean",
+							"description": "价格发生变化",
+							"required": true
+						},
+						{
+							"name": "daily_price_list",
+							"type": "DailyPrice[]",
+							"description": "每日价格",
+							"required": true,
+							"subParams": [
+								{
+									"name": "really_price",
+									"type": "String",
+									"description": "当日价格",
+									"required": true
+								},
+								{
+									"name": "date",
+									"type": "String",
+									"description": "日期",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

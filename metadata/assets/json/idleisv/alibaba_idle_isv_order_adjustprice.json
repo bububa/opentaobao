@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.idle.isv.order.adjustprice",
+	"apiChineseName": "闲鱼服务商订单价格修改接口",
+	"description": "闲鱼用户通过授权的服务商修改订单价格和邮费",
+	"requestParams": [
+		{
+			"name": "param_adjust_order_price",
+			"type": "IsvAdjustOrderPriceDto",
+			"description": "输入参数",
+			"subParams": [
+				{
+					"name": "new_price_fee",
+					"type": "Number",
+					"description": "最新价格，单位分；必选，金额\u003e0",
+					"required": true
+				},
+				{
+					"name": "new_transport_fee",
+					"type": "Number",
+					"description": "最新邮费，单位分；必选，金额\u003e=0",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "修改成功返回标示",
+					"required": true
+				}
+			]
+		}
+	]
+}

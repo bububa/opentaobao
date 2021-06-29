@@ -1,0 +1,290 @@
+{
+	"name": "alitrip.merchant.galaxy.order.book",
+	"apiChineseName": "星河-订单预订接口",
+	"description": "为星河酒店解决方案的C端用户提供酒店预订能力",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登录token",
+			"required": true
+		},
+		{
+			"name": "order_param",
+			"type": "CreateOrderParam",
+			"description": "预订参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "breakfast_name",
+					"type": "String",
+					"description": "早餐名称"
+				},
+				{
+					"name": "out_room_id",
+					"type": "Number",
+					"description": "外部outRoomId",
+					"required": true
+				},
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "宝贝ID",
+					"required": true
+				},
+				{
+					"name": "room_number",
+					"type": "Number",
+					"description": "预订酒店房间数"
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准静态信息库酒店id",
+					"required": true
+				},
+				{
+					"name": "member_level",
+					"type": "String",
+					"description": "会员可见等级"
+				},
+				{
+					"name": "hotel_id",
+					"type": "String",
+					"description": "外部酒店id",
+					"required": true
+				},
+				{
+					"name": "children_number",
+					"type": "Number",
+					"description": "儿童数量"
+				},
+				{
+					"name": "rp_id",
+					"type": "Number",
+					"description": "内部rpId",
+					"required": true
+				},
+				{
+					"name": "person_number",
+					"type": "Number",
+					"description": "成人数量"
+				},
+				{
+					"name": "hotel_name",
+					"type": "String",
+					"description": "酒店名称",
+					"required": true
+				},
+				{
+					"name": "check_in_date",
+					"type": "String",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "adult_number",
+					"type": "Number",
+					"description": "成人数量"
+				},
+				{
+					"name": "room_id",
+					"type": "Number",
+					"description": "房间Id",
+					"required": true
+				},
+				{
+					"name": "rate_id",
+					"type": "Number",
+					"description": "价格id",
+					"required": true
+				},
+				{
+					"name": "payment_type",
+					"type": "Number",
+					"description": "支付类型",
+					"required": true
+				},
+				{
+					"name": "payment_channel",
+					"type": "String",
+					"description": "支付渠道",
+					"required": true
+				},
+				{
+					"name": "customer_phone",
+					"type": "String",
+					"description": "入住人电话",
+					"required": true
+				},
+				{
+					"name": "check_out_date",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "customer_first_name",
+					"type": "String",
+					"description": "入住人名"
+				},
+				{
+					"name": "customer_email",
+					"type": "String",
+					"description": "入住人邮箱"
+				},
+				{
+					"name": "customer_last_name",
+					"type": "String",
+					"description": "入住人姓"
+				},
+				{
+					"name": "rp_name",
+					"type": "String",
+					"description": "价格名称"
+				},
+				{
+					"name": "guest_by_room_dtos",
+					"type": "GuestByRoomDto[]",
+					"description": "多房间参数",
+					"subParams": [
+						{
+							"name": "contact_first_name",
+							"type": "String",
+							"description": "入住人名"
+						},
+						{
+							"name": "contact_last_name",
+							"type": "String",
+							"description": "入住人姓"
+						},
+						{
+							"name": "roomer_number",
+							"type": "Number",
+							"description": "当前房间的总人数"
+						},
+						{
+							"name": "adult_roomer_number",
+							"type": "Number",
+							"description": "成人数"
+						},
+						{
+							"name": "child_roomer_number",
+							"type": "Number",
+							"description": "儿童数"
+						},
+						{
+							"name": "child_ages",
+							"type": "Number[]",
+							"description": "儿童年龄数组"
+						}
+					]
+				},
+				{
+					"name": "offer_source_channel",
+					"type": "String",
+					"description": "活动标识字段"
+				}
+			]
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "订单编号"
+		},
+		{
+			"name": "source_query",
+			"type": "String",
+			"description": "广告追踪信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "PayParamResult",
+					"description": "预订返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pay_sign",
+							"type": "String",
+							"description": "签名",
+							"required": true
+						},
+						{
+							"name": "sign_type",
+							"type": "String",
+							"description": "签名方式",
+							"required": true
+						},
+						{
+							"name": "package_str",
+							"type": "String",
+							"description": "数据包",
+							"required": true
+						},
+						{
+							"name": "nonce_str",
+							"type": "String",
+							"description": "随机字符串",
+							"required": true
+						},
+						{
+							"name": "time_stamp",
+							"type": "String",
+							"description": "时间戳",
+							"required": true
+						},
+						{
+							"name": "app_id",
+							"type": "String",
+							"description": "小程序id",
+							"required": true
+						},
+						{
+							"name": "book_result",
+							"type": "Boolean",
+							"description": "预订结果",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "订单编号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

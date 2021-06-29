@@ -1,0 +1,107 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.history.po.get",
+	"apiChineseName": "【已废除】11-同步历史所有的po单",
+	"description": "同步历史po单",
+	"requestParams": [
+		{
+			"name": "request_extend_json",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "IbpPurchaseOrderDto[]",
+					"description": "对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "week_n_o",
+							"type": "String",
+							"description": "计划周",
+							"required": true
+						},
+						{
+							"name": "production_quantity",
+							"type": "Number",
+							"description": "生产实绩数量",
+							"required": true
+						},
+						{
+							"name": "urgent_plan_quantity",
+							"type": "Number",
+							"description": "紧急的计划数量",
+							"required": true
+						},
+						{
+							"name": "normal_plan_quantity",
+							"type": "Number",
+							"description": "普通的计划数量",
+							"required": true
+						},
+						{
+							"name": "plan_quantity",
+							"type": "Number",
+							"description": "计划数量",
+							"required": true
+						},
+						{
+							"name": "materiel_code",
+							"type": "String",
+							"description": "物料编码",
+							"required": true
+						},
+						{
+							"name": "location_code",
+							"type": "String",
+							"description": "地点编码",
+							"required": true
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键日期值",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

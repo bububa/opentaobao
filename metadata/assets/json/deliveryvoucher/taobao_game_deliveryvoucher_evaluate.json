@@ -1,0 +1,112 @@
+{
+	"name": "taobao.game.deliveryvoucher.evaluate",
+	"apiChineseName": "卡券评价回传",
+	"description": "卡券ISV回传商品评价",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "VoucherEvaluateRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "evaluate_content",
+					"type": "String",
+					"description": "评价内容",
+					"required": true
+				},
+				{
+					"name": "evaluate_time",
+					"type": "Date",
+					"description": "评价时间",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主交易订单号",
+					"required": true
+				},
+				{
+					"name": "evaluate_score",
+					"type": "Number",
+					"description": "评价分数 1：失望；2：不满；3：一般；4：满意；5：惊喜",
+					"required": true
+				},
+				{
+					"name": "voucher_infos",
+					"type": "DeliveryVoucherInfoDTO[]",
+					"description": "券信息，券信息,最多20条券记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "vouchers",
+							"type": "DeliveryVoucherDTO[]",
+							"description": "券信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "券ID",
+									"required": true
+								},
+								{
+									"name": "no",
+									"type": "String",
+									"description": "券号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "可扩展字段"
+				},
+				{
+					"name": "operate_date",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "流水号:唯一，幂等性判断",
+					"required": true
+				},
+				{
+					"name": "provider",
+					"type": "String",
+					"description": "第三方服务商标识,top appkey",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误原因"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作状态"
+		}
+	]
+}

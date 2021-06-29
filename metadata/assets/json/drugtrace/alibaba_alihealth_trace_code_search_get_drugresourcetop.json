@@ -1,0 +1,134 @@
+{
+	"name": "alibaba.alihealth.trace.code.search.get.drugresourcetop",
+	"apiChineseName": "根据码获取码信息",
+	"description": "根据码获取码信息",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "追溯码",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "校验值",
+			"required": true
+		},
+		{
+			"name": "query_app_name",
+			"type": "String",
+			"description": "查询app名称"
+		},
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "客户端ip"
+		},
+		{
+			"name": "tb_user_id",
+			"type": "Number",
+			"description": "用户id"
+		},
+		{
+			"name": "device_utdid",
+			"type": "String",
+			"description": "设备号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "DrugInfoDto",
+					"description": "最外层对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "is_sale",
+							"type": "String",
+							"description": "是否销售",
+							"required": true
+						},
+						{
+							"name": "sale_time",
+							"type": "String",
+							"description": "销售时间",
+							"required": true
+						},
+						{
+							"name": "drug_name",
+							"type": "String",
+							"description": "药品名称",
+							"required": true
+						},
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "生产企业名称",
+							"required": true
+						},
+						{
+							"name": "expiry_date",
+							"type": "String",
+							"description": "有效期至",
+							"required": true
+						},
+						{
+							"name": "first_query",
+							"type": "String",
+							"description": "第一次查询时间",
+							"required": true
+						},
+						{
+							"name": "production_date",
+							"type": "String",
+							"description": "生产日期",
+							"required": true
+						},
+						{
+							"name": "sale_ent",
+							"type": "String",
+							"description": "销售企业",
+							"required": true
+						},
+						{
+							"name": "pkg_spec",
+							"type": "String",
+							"description": "包装规格",
+							"required": true
+						},
+						{
+							"name": "code_status",
+							"type": "String",
+							"description": "追溯码状态",
+							"required": true
+						},
+						{
+							"name": "query_count",
+							"type": "String",
+							"description": "码查询次数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

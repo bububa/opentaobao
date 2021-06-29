@@ -1,0 +1,56 @@
+{
+	"name": "tmall.ascp.pricing.scm.tof",
+	"apiChineseName": "TOF\u0026SCM营销域对接-成本录入设置",
+	"description": "TOF\u0026SCM营销域对接-成本录入设置",
+	"requestParams": [
+		{
+			"name": "costs",
+			"type": "ItemSkuCost[]",
+			"description": "成本价集合",
+			"required": true,
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "skuid",
+					"type": "Number",
+					"description": "skuId",
+					"required": true
+				},
+				{
+					"name": "itemid",
+					"type": "Number",
+					"description": "itemId",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "Number",
+					"description": "成本 分为单位",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回错误提示"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "成功"
+		},
+		{
+			"name": "reasons_for_part_succ_list",
+			"type": "Json []",
+			"description": "reasonsForPartSucc"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "成功"
+		}
+	]
+}

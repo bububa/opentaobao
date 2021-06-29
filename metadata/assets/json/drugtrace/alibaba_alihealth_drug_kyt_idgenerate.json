@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.idgenerate",
+	"apiChineseName": "终端(医疗机构|零售药店)ID生成接口",
+	"description": "终端(医疗机构|零售药店)ID生成接口",
+	"requestParams": [
+		{
+			"name": "region_code",
+			"type": "String",
+			"description": "行政区（省市区）",
+			"required": true
+		},
+		{
+			"name": "terminal_name",
+			"type": "String",
+			"description": "零售药店、医疗机构名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回的ID"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回的编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回的结果"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "返回的结果"
+		}
+	]
+}

@@ -1,0 +1,197 @@
+{
+	"name": "alibaba.alihealth.examination.hospital.publish",
+	"apiChineseName": "体检机构对接_门店发布／更新",
+	"description": "第三方B端有新的门店发布，或者老的门店更新的时候，使用这个接口",
+	"requestParams": [
+		{
+			"name": "detail",
+			"type": "String",
+			"description": "门店简介"
+		},
+		{
+			"name": "tel",
+			"type": "String",
+			"description": "门店联系电话",
+			"required": true
+		},
+		{
+			"name": "city_name",
+			"type": "String",
+			"description": "门店所属城市",
+			"required": true
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "门店城市code（国标）",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "操作类型: publish=发布，update=更新",
+			"required": true
+		},
+		{
+			"name": "key_word",
+			"type": "String",
+			"description": "医院等级，三甲、",
+			"required": true
+		},
+		{
+			"name": "exam_notice",
+			"type": "String",
+			"description": "“须知”使用下面note_category字段"
+		},
+		{
+			"name": "point_x",
+			"type": "String",
+			"description": "门店位置经度高德 坐标系",
+			"required": true
+		},
+		{
+			"name": "point_y",
+			"type": "String",
+			"description": "门店位置纬度高德 坐标系",
+			"required": true
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "门店地址",
+			"required": true
+		},
+		{
+			"name": "work_time",
+			"type": "String",
+			"description": "工作时间",
+			"required": true
+		},
+		{
+			"name": "hospital_name",
+			"type": "String",
+			"description": "门店名称",
+			"required": true
+		},
+		{
+			"name": "hospital_code",
+			"type": "String",
+			"description": "门店code，机构保证唯一",
+			"required": true
+		},
+		{
+			"name": "routes",
+			"type": "String",
+			"description": "交通线路，通过\\r\\n 进行换行"
+		},
+		{
+			"name": "logo",
+			"type": "String",
+			"description": "http://images.aliyun.com/image?id=123"
+		},
+		{
+			"name": "online_report",
+			"type": "Number",
+			"description": "是否支持在线报告。0:不支持;1:支持"
+		},
+		{
+			"name": "social_credit_code",
+			"type": "String",
+			"description": "社会统一信用代码"
+		},
+		{
+			"name": "report_way",
+			"type": "String",
+			"description": "线下报告获取说明（必填）"
+		},
+		{
+			"name": "report_way_online",
+			"type": "String",
+			"description": "线上体检报告几天出具（如果有电子报告必填）"
+		},
+		{
+			"name": "env_imgs_url",
+			"type": "String",
+			"description": "环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）"
+		},
+		{
+			"name": "special_tags_code",
+			"type": "String",
+			"description": "免费停车场,绿色VIP通道,免费早餐,3天出报告,1V1导检,接待引导,独家签约,专家会诊,当天出报告；多个逗号分隔"
+		},
+		{
+			"name": "notify",
+			"type": "String",
+			"description": "通知信息"
+		},
+		{
+			"name": "note_category",
+			"type": "String",
+			"description": "不同种类的预约须知；"
+		},
+		{
+			"name": "mode",
+			"type": "String",
+			"description": "经营模式 0自营模式、1平台模式"
+		},
+		{
+			"name": "agreement",
+			"type": "String",
+			"description": "门店与医院协议"
+		},
+		{
+			"name": "business_license",
+			"type": "String",
+			"description": "营业执照"
+		},
+		{
+			"name": "medical_license",
+			"type": "String",
+			"description": "医疗经营许可"
+		},
+		{
+			"name": "category",
+			"type": "String",
+			"description": "类目:1=体检；2=核酸；3=上门；4=健康证；多个类目以逗号分割"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "eagle_eye_trace_id",
+					"type": "String",
+					"description": "eagleEyeTraceId",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success，true表示成功，false表示失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

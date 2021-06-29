@@ -1,0 +1,84 @@
+{
+	"name": "aliexpress.solution.feed.list.get",
+	"apiChineseName": "aliexpress.solution.feed.list.get",
+	"description": "API to query the feed list belonged to a seller",
+	"requestParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "current page"
+		},
+		{
+			"name": "feed_type",
+			"type": "String",
+			"description": "feed type"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "page size"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "status of the job, currently there are 3 types: FINISH, PROCESSING, QUEUEING"
+		},
+		{
+			"name": "submitted_time_end",
+			"type": "String",
+			"description": "Search for feeds submitted before a specific time, format: yyyy-MM-dd hh:mm:ss. Timezone:America/Los_Angeles"
+		},
+		{
+			"name": "submitted_time_start",
+			"type": "String",
+			"description": "Search for feeds submitted after a specific time, format: yyyy-MM-dd hh:mm:ss  .Timezone:America/Los_Angeles"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "current page"
+		},
+		{
+			"name": "job_list",
+			"type": "BatchOperationJobDto []",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "The status of the feed",
+					"required": true
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "feed type",
+					"required": true
+				},
+				{
+					"name": "job_id",
+					"type": "Number",
+					"description": "job id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "page size"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "total count of jobs submitted for this seller"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "total page based on the total_count and page_size"
+		}
+	]
+}

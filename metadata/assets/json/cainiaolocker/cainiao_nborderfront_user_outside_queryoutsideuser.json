@@ -1,0 +1,89 @@
+{
+	"name": "cainiao.nborderfront.user.outside.queryoutsideuser",
+	"apiChineseName": "查询外部小件员休息",
+	"description": "采用SPI方式查询外部公司的小件员信息",
+	"requestParams": [
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "cpcode",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "cp_user_id",
+			"type": "String",
+			"description": "cp小件员ID",
+			"required": true,
+			"maxLength": 64
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_code",
+			"type": "String",
+			"description": "返回错误编码"
+		},
+		{
+			"name": "user_info",
+			"type": "Struct",
+			"description": "userInfo",
+			"subParams": [
+				{
+					"name": "cp_user_id",
+					"type": "String",
+					"description": "cpUserId",
+					"required": true
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "cpCode",
+					"required": true
+				},
+				{
+					"name": "work_station_name",
+					"type": "String",
+					"description": "站点名称",
+					"required": true
+				},
+				{
+					"name": "work_station_code",
+					"type": "String",
+					"description": "站点编码",
+					"required": true
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "户名",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "杭州",
+					"required": true
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "321000",
+					"required": true
+				}
+			]
+		}
+	]
+}

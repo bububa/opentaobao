@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.status.get",
+	"apiChineseName": "设备状态查询",
+	"description": "提供给天猫精灵定制机厂商 查询设备在线状态值",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "给产品分配的唯一ID（22位）"
+		},
+		{
+			"name": "user_open_id",
+			"type": "String",
+			"description": "精灵用户的唯一外部ID"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "精灵设备的唯一ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口对象封装",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Result",
+					"description": "接口返回model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_ip",
+							"type": "String",
+							"description": "IP地址",
+							"required": true
+						},
+						{
+							"name": "extensions",
+							"type": "String",
+							"description": "扩展返回，保留使用",
+							"required": true
+						},
+						{
+							"name": "online_status",
+							"type": "String",
+							"description": "在线状态（0：离线，1：在线）",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "设备ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "状态码（200：成功，其他：失败）",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

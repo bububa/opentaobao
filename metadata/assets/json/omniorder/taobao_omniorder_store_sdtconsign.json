@@ -1,0 +1,79 @@
+{
+	"name": "taobao.omniorder.store.sdtconsign",
+	"apiChineseName": "通知菜鸟裹裹发货",
+	"description": "ISV取完单号后通知菜鸟裹裹发货",
+	"requestParams": [
+		{
+			"name": "package_id",
+			"type": "String",
+			"description": "取号接口返回的包裹id",
+			"required": true
+		},
+		{
+			"name": "tag_code",
+			"type": "String",
+			"description": "发货标签号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "异常信息"
+		},
+		{
+			"name": "data",
+			"type": "SdtConsignResponse",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "接单公司",
+					"required": true
+				},
+				{
+					"name": "dot_name",
+					"type": "String",
+					"description": "接单网点",
+					"required": true
+				},
+				{
+					"name": "delivery_user_phone",
+					"type": "String",
+					"description": "接单小件员电话",
+					"required": true
+				},
+				{
+					"name": "delivery_user_name",
+					"type": "String",
+					"description": "接单小件员姓名",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "商家id",
+					"required": true
+				},
+				{
+					"name": "package_id",
+					"type": "Number",
+					"description": "包裹id",
+					"required": true
+				},
+				{
+					"name": "lp_code_list",
+					"type": "String",
+					"description": "物流订单号list",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "异常码 0 为正常，否则异常"
+		}
+	]
+}

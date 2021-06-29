@@ -1,0 +1,249 @@
+{
+	"name": "alibaba.mozi.buc.account.pageall",
+	"apiChineseName": "查询租户内内所有账号",
+	"description": "查询租户内内所有账号",
+	"requestParams": [
+		{
+			"name": "page_all",
+			"type": "PageAllAccountsRequest",
+			"description": "查询租户内所有人员和账号",
+			"subParams": [
+				{
+					"name": "return_total_size",
+					"type": "Boolean",
+					"description": "是否返回总数"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "account_type",
+					"type": "String",
+					"description": "账号类型，21 钉钉 11 淘宝"
+				},
+				{
+					"name": "available",
+					"type": "String",
+					"description": "是否可用 T可用 F不可用，不填是全部"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页的大小"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "附加信息"
+				},
+				{
+					"name": "hr_status",
+					"type": "String",
+					"description": "是否在职 A在职 I离职，不填是全部"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "当前页号"
+				},
+				{
+					"name": "active_level",
+					"type": "Number",
+					"description": "0表示未激活，1表示激活，不填是全部"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态，0表示正常，5是离职回收，104是冻结，不填是全部"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageAllAccountsResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "返回的记录总数",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "T[]",
+					"description": "返回的数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "账号ID",
+							"required": true
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "租户ID",
+							"required": true
+						},
+						{
+							"name": "account",
+							"type": "String",
+							"description": "账号名",
+							"required": true
+						},
+						{
+							"name": "namespace",
+							"type": "String",
+							"description": "账号平台",
+							"required": true
+						},
+						{
+							"name": "refer_id",
+							"type": "String",
+							"description": "三方账号ID",
+							"required": true
+						},
+						{
+							"name": "refer_account",
+							"type": "String",
+							"description": "三方账号名",
+							"required": true
+						},
+						{
+							"name": "site_language",
+							"type": "String",
+							"description": "站点语言ZH_CN，EN",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态 0表示正常",
+							"required": true
+						},
+						{
+							"name": "account_type",
+							"type": "String",
+							"description": "账号类型",
+							"required": true
+						},
+						{
+							"name": "mainland",
+							"type": "String",
+							"description": "是否是大陆Y表示是，N不是",
+							"required": true
+						},
+						{
+							"name": "available",
+							"type": "String",
+							"description": "是否可用",
+							"required": true
+						},
+						{
+							"name": "active_level",
+							"type": "Number",
+							"description": "是否激活",
+							"required": true
+						},
+						{
+							"name": "hr_status",
+							"type": "String",
+							"description": "是否在职",
+							"required": true
+						},
+						{
+							"name": "nick_name_cn",
+							"type": "String",
+							"description": "昵称",
+							"required": true
+						},
+						{
+							"name": "name_en",
+							"type": "String",
+							"description": "英文全名",
+							"required": true
+						},
+						{
+							"name": "name_cn",
+							"type": "String",
+							"description": "中文全名",
+							"required": true
+						},
+						{
+							"name": "last_name",
+							"type": "String",
+							"description": "中文全名",
+							"required": true
+						},
+						{
+							"name": "first_name",
+							"type": "String",
+							"description": "英文全名",
+							"required": true
+						},
+						{
+							"name": "emp_id",
+							"type": "String",
+							"description": "工号",
+							"required": true
+						},
+						{
+							"name": "avatar",
+							"type": "String",
+							"description": "头像",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的序列化",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页多少条数据",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前第几页",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回的状态消息",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回附加值",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				}
+			]
+		}
+	]
+}

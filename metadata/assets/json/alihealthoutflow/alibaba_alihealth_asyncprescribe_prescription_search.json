@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.alihealth.asyncprescribe.prescription.search",
+	"apiChineseName": "异步开方处方查询",
+	"description": "异步开方处方查询",
+	"requestParams": [
+		{
+			"name": "search_request",
+			"type": "AsyncPrescribeSearchRequest",
+			"description": "查询入参",
+			"subParams": [
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "开方结束时间"
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "开方开始时间"
+				},
+				{
+					"name": "hospital_id",
+					"type": "String",
+					"description": "医院id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页多少条"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "AsyncPrescribeSearchResponse",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "rx_nos",
+							"type": "String[]",
+							"description": "处方号列表",
+							"required": true
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "第几页",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页多少条",
+							"required": true
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总数量",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Number",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "结束时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

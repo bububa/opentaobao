@@ -1,0 +1,261 @@
+{
+	"name": "taobao.koubei.mall.common.mall.auth.page",
+	"apiChineseName": "分页查询已授权的商圈列表信息",
+	"description": "分页查询口碑已授权商圈的列表信息",
+	"requestParams": [
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "身份ID，识别合作方身份（可联系口碑综合体业务获取）",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "分页查询起始值，默认为0",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页查询量，默认10（建议查询值为10的倍数，最大不超过30）",
+			"required": true,
+			"maxValue": 30
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "经度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "纬度（终端设备地理位置）",
+			"maxLength": 32
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "口碑城市编码（示例：杭州市330100）",
+			"maxLength": 32
+		},
+		{
+			"name": "app_version",
+			"type": "String",
+			"description": "支付宝/口碑/淘宝app版本号",
+			"maxLength": 32
+		},
+		{
+			"name": "terminal_type",
+			"type": "String",
+			"description": "终端设备描述(中、英文均可)",
+			"maxLength": 32
+		},
+		{
+			"name": "display_channel",
+			"type": "String",
+			"description": "展示渠道：ALIPAY_APP KOUBEI_APP TAOBAO_APP（默认ALIPAY_APP）",
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "API接口返回的result模型",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "API请求全链路追踪ID",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PageResult",
+					"description": "API返回的data模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mall_info_list",
+							"type": "MallDTO[]",
+							"description": "已授权商圈列表data模型",
+							"required": true,
+							"subParams": [
+								{
+									"name": "mall_logo",
+									"type": "String",
+									"description": "商圈LOGO",
+									"required": true
+								},
+								{
+									"name": "mall_name",
+									"type": "String",
+									"description": "商圈名称",
+									"required": true
+								},
+								{
+									"name": "contact_info",
+									"type": "String",
+									"description": "商圈联系方式，多个电话用英文\",\"分隔符（包含手机、座机电话）",
+									"required": true
+								},
+								{
+									"name": "mall_cover",
+									"type": "String",
+									"description": "商圈封面",
+									"required": true
+								},
+								{
+									"name": "mall_id",
+									"type": "String",
+									"description": "商圈ID",
+									"required": true
+								},
+								{
+									"name": "district_info",
+									"type": "DistrictInfo",
+									"description": "地理位置信息模型",
+									"required": true,
+									"subParams": [
+										{
+											"name": "district_code",
+											"type": "String",
+											"description": "区域编码",
+											"required": true
+										},
+										{
+											"name": "address",
+											"type": "String",
+											"description": "地址信息",
+											"required": true
+										},
+										{
+											"name": "district_name",
+											"type": "String",
+											"description": "区域名称",
+											"required": true
+										},
+										{
+											"name": "city_name",
+											"type": "String",
+											"description": "城市名称",
+											"required": true
+										},
+										{
+											"name": "city_code",
+											"type": "String",
+											"description": "城市编码",
+											"required": true
+										},
+										{
+											"name": "province_code",
+											"type": "String",
+											"description": "省份编码",
+											"required": true
+										},
+										{
+											"name": "latitude",
+											"type": "String",
+											"description": "纬度",
+											"required": true
+										},
+										{
+											"name": "province_name",
+											"type": "String",
+											"description": "省份名称",
+											"required": true
+										},
+										{
+											"name": "longitude",
+											"type": "String",
+											"description": "经度",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "mall_home_page_url",
+									"type": "String",
+									"description": "商圈主页小程序URL，根据入参参数display_channel信息，获取对应端小程序URL，默认支付宝小程序链接",
+									"required": true
+								},
+								{
+									"name": "business_time",
+									"type": "String",
+									"description": "营业时间",
+									"required": true
+								},
+								{
+									"name": "category_name",
+									"type": "String",
+									"description": "商圈类目，包含：购物中心、步行街、特色街区、火车站、百货、机场等",
+									"required": true
+								},
+								{
+									"name": "mall_label",
+									"type": "String",
+									"description": "商圈标签，多个标签用英文\",\"分隔符",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "has_more",
+							"type": "Boolean",
+							"description": "是否有更多信息",
+							"required": true
+						},
+						{
+							"name": "next_start",
+							"type": "Number",
+							"description": "下一页起始值",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页长度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误信息，success=false时，返回相关错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误信息可读性描述",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息描述",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -20,7 +20,9 @@ type TaobaoTbkSpreadGetAPIResponse struct {
 
 type TaobaoTbkSpreadGetResponse struct {
     XMLName xml.Name `xml:"tbk_spread_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 传播形式对象列表
     

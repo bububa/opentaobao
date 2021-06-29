@@ -19,7 +19,9 @@ type TmallProductSpecGetAPIResponse struct {
 
 type TmallProductSpecGetResponse struct {
     XMLName xml.Name `xml:"tmall_product_spec_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回的产品规格信息，注意，这个产品规格信息可能是等待审核的，不一定可用。根据状态判断1：表示审核通过<br/>3：表示等待审核。
     

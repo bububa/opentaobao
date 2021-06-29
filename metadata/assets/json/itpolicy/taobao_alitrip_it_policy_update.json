@@ -1,0 +1,424 @@
+{
+	"name": "taobao.alitrip.it.policy.update",
+	"apiChineseName": "【国际机票销售规则】单条更新",
+	"description": "销售规则更新接口，可以根据taobaoId或outId修改，outId不唯一时，不能用outId修改。",
+	"requestParams": [
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "out_id",
+			"type": "String",
+			"description": "接入方产品id"
+		},
+		{
+			"name": "taobao_id",
+			"type": "Number",
+			"description": "淘宝政策id"
+		},
+		{
+			"name": "top_policy_do",
+			"type": "TopPolicyDo",
+			"description": "国际机票销售规则",
+			"subParams": [
+				{
+					"name": "policy_id",
+					"type": "String",
+					"description": "产品编号，内容可空，支持字母和数字,最多50个字符"
+				},
+				{
+					"name": "rt_commission_formula",
+					"type": "String",
+					"description": "1/2RT计算方式，空：表示取严，可录入各取各或者取严，表示1/2RT佣金计算方式是各取各或者取严。"
+				},
+				{
+					"name": "airline",
+					"type": "String",
+					"description": "航空公司，航空公司两字码，如CA",
+					"required": true
+				},
+				{
+					"name": "transfer_type",
+					"type": "String",
+					"description": "中转类型（是否直达），空：表示不限，即直达中转都适用，可选：直达、中转"
+				},
+				{
+					"name": "travel_type",
+					"type": "String",
+					"description": "航程种类，可选：单程、往返、空为不限"
+				},
+				{
+					"name": "dep_cities",
+					"type": "String",
+					"description": "始发地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
+				},
+				{
+					"name": "arr_cities",
+					"type": "String",
+					"description": "目的地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
+				},
+				{
+					"name": "exclude_dep_cities",
+					"type": "String",
+					"description": "例外始发地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
+				},
+				{
+					"name": "exclude_arr_cities",
+					"type": "String",
+					"description": "例外目的地，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
+				},
+				{
+					"name": "is_support_rt",
+					"type": "String",
+					"description": "是否允许1/2RT组合销售规则，允许、不允许空表示：不允许"
+				},
+				{
+					"name": "transfer_cities",
+					"type": "String",
+					"description": "中转点，空表示所有航线都适用可录入格式：1) 城市三代如SHA,NYC,SEL2) 国家二代如CN,US,KR3) TC区代码如TC1,TC2,TC34) 为空表示不限制允许1.2.3. 混合录入，可录入多个用，隔开表示多个最多允许录入100个多个用,分隔.可输入单个区域和多个城市,支持区域和城市同时输入，以自定义区域表为准，输入自定义名称，系统存入对应城市三字码集合最多输入100个城市"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注信息，销售规则备注,最多300个字符"
+				},
+				{
+					"name": "sale_date",
+					"type": "String",
+					"description": "销售日期，必填项；销售日期只能输入一段;日期对为左右都是闭区间格式：可支持2013-01-01或2013/01/01格式输入；范围用~表示",
+					"required": true
+				},
+				{
+					"name": "dep_date",
+					"type": "String",
+					"description": "去程旅行日期，必填项；支持添加多对日期多段用,分隔；可支持2013-01-01或2013/01/01格式输入；范围用~表示",
+					"required": true
+				},
+				{
+					"name": "ret_date",
+					"type": "String",
+					"description": "回程旅行日期，非必填，支持添加多对日期多段用,分隔；可支持2013-01-01或2013/01/01格式输入；范围用~表示"
+				},
+				{
+					"name": "cabin_restrict_type",
+					"type": "String",
+					"description": "适用/例外舱位，可选：适用、例外，如果舱位有值，则必须输入适用或例外"
+				},
+				{
+					"name": "cabin_restrict",
+					"type": "String",
+					"description": "舱位，空表示所有舱位都适用多个用,分隔"
+				},
+				{
+					"name": "service_level",
+					"type": "String",
+					"description": "服务等级，默认值空：表示所有服务等级适用头等公务超值经济经济可多选，用,分隔"
+				},
+				{
+					"name": "fare_basis_allowed",
+					"type": "String",
+					"description": "适用fareBasis，空表示所有都适用支持数字字母组合支持多个,支持通配符%不限制长度的通配符,只 支持首或末位一个%"
+				},
+				{
+					"name": "fare_basis_forbidden",
+					"type": "String",
+					"description": "例外fareBasis，空表示所有都适用支持数字字母组合支持多个,支持通配符%不限制长度的通配符,只 支持首或末位一个%"
+				},
+				{
+					"name": "flight_restrict",
+					"type": "String",
+					"description": "适用航班，同一航段之间用，隔开表示或的关系；不同航段之间用/隔开。                       1 CA001-999,CA3000-3999  表示CA001至999以及3000至3999之间航班号的航班2 MU  表示所有MU开头的航班 3 CA(LH\\AZ) 表示CA开头的实际承运人为LH或AZ的航班4 CA(*)   表示CA代码共享航班/CA开头的实际承运人为其他航空公司的航班5 CA(CA)   表示CA自营航班/CA实际承运航班；6 CA(OZ)001-999 表示CA开头航班号为001-999之间且实际承运人为OZ的航班；7 为空表示无限制"
+				},
+				{
+					"name": "code_sharing_type",
+					"type": "String",
+					"description": "代码共享适用类型，空：不允许代码共享;可以选值：仅限同集团代码共享适用、代码共享适用、不允许代码共享、"
+				},
+				{
+					"name": "passenger_type",
+					"type": "String",
+					"description": "成人身份，1.不得为空2.可选：普通/学生 3多个使用,分隔"
+				},
+				{
+					"name": "fare_source",
+					"type": "String",
+					"description": "运价来源，空：表示平台运价; 此处为单选,输入平台运价，表示平台运价，不同的接入方可选值不一样"
+				},
+				{
+					"name": "fare_type",
+					"type": "String",
+					"description": "可适用运价渠道，空：表示都适用  运价来源为:平台运价时，此处选项为：私有运价, 公布运价。以上选项若多个用,分隔"
+				},
+				{
+					"name": "allow_price_range",
+					"type": "String",
+					"description": "价格区间，空表示默认值为0-999999默认为正整型上限必须大于下限"
+				},
+				{
+					"name": "office_no",
+					"type": "String",
+					"description": "预定OFFICE，空表示默认优先级最高OFFICE，可输入OFFICE，校验必须为配置中存在的OFFICE"
+				},
+				{
+					"name": "sale_retention",
+					"type": "String",
+					"description": "返点，可输入负值范围-100至100之间，可保留2位小数与留钱固定金额二选一必输"
+				},
+				{
+					"name": "sale_rebase",
+					"type": "String",
+					"description": "留钱，返点和留钱至少二选一"
+				},
+				{
+					"name": "child_sale_retention",
+					"type": "String",
+					"description": "儿童返点，非必输;可输入负值;范围-100至100之间，可保留2位小数"
+				},
+				{
+					"name": "child_sale_rebase",
+					"type": "String",
+					"description": "儿童留钱，非必输;为整型;支持负数;单位元"
+				},
+				{
+					"name": "refund_rule",
+					"type": "String",
+					"description": "退票规定，非必输长度小于300字符请同时录入 退票规定、改签规定和行李额规定"
+				},
+				{
+					"name": "reissue_rule",
+					"type": "String",
+					"description": "改签规定，非必输长度小于300字符请同时录入 退票规定、改签规定和行李额规定"
+				},
+				{
+					"name": "noshow_rule",
+					"type": "String",
+					"description": "误机罚金说明，非必输长度小于300字符只在退票规定不为空时才会生效"
+				},
+				{
+					"name": "luggage_rule",
+					"type": "String",
+					"description": "行李额规定，非必输长度小于300字符。全部未使用可否退票，部分未使用可否退票，去程可否改期，回程可否改期，noshow是否有限制，与行李规定，必须全部为空或全部非空 金牌产品该项必须为空"
+				},
+				{
+					"name": "buy_ticket_notice",
+					"type": "String",
+					"description": "购票须知，非必输长度小于300字符只在退票规定不为空时才会生效"
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "商品类型，非必输；默认为普通可填写为金牌，普通或极速出票。如果没有相应产品权限，则无法投放"
+				},
+				{
+					"name": "is_allow_union_airline",
+					"type": "String",
+					"description": "不同航司联运，非必输；可输入允许或不允许，空表示不允许"
+				},
+				{
+					"name": "channel_id_desc",
+					"type": "String",
+					"description": "渠道名称，非必输，不同的接入方可选值不一样"
+				},
+				{
+					"name": "extend_attributes",
+					"type": "String",
+					"description": "扩展字段，预留"
+				},
+				{
+					"name": "is_can_all_refund",
+					"type": "String",
+					"description": "全部未使用可否退票，可输入:是，否 。金牌产品该项必须为空"
+				},
+				{
+					"name": "refund_fee_all_unused",
+					"type": "String",
+					"description": "【全部未使用可否退票】为是时，此项为必填项。 可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时；退票手续费1000；飞机起飞后不予改期（输入*）； 或 10%-72-30%-48-50%-0-*，表示72小时前退票手续费为票面价的10%；48小时到72小时，退票手续费为票面价的30%；飞机起飞不足48小时；退票手续费为票面价的50%；飞机起飞后不予退票（输入*）；"
+				},
+				{
+					"name": "refund_currency_all_unused",
+					"type": "String",
+					"description": "全部未使用退票币种，只能录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "refund_fee_type_all_unused",
+					"type": "String",
+					"description": "全部未使用退票费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
+				},
+				{
+					"name": "is_can_part_refund",
+					"type": "String",
+					"description": "部分未使用可否退票，可输入：是，否 。金牌产品该项必须为空"
+				},
+				{
+					"name": "refund_fee_part_unused",
+					"type": "String",
+					"description": "部分未使用退票费用,格式同【全部未使用退票费用】，【部分未使用可否退票】为是时，此项为必填项"
+				},
+				{
+					"name": "refund_currency_part_unused",
+					"type": "String",
+					"description": "部分未使用退票币种，可录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "refund_fee_type_part_unused",
+					"type": "String",
+					"description": "部分未使用退票费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
+				},
+				{
+					"name": "can_dep_change",
+					"type": "String",
+					"description": "去程可否改期，可输入是或否 。金牌产品该项必须为空"
+				},
+				{
+					"name": "dep_change_fee",
+					"type": "String",
+					"description": "去程改期费用，格式说明参考【全程未使用退票费用】，注意，改期费用不能录入百分比，【去程可否改期】为是时为必填项"
+				},
+				{
+					"name": "dep_change_currency",
+					"type": "String",
+					"description": "去程改期币种，可录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "dep_change_fee_type",
+					"type": "String",
+					"description": "去程改期费用收取方式,按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
+				},
+				{
+					"name": "can_ret_change",
+					"type": "String",
+					"description": "回程可否改期，可输入是或否 。金牌产品该项必须为空"
+				},
+				{
+					"name": "ret_change_fee",
+					"type": "String",
+					"description": "回程改期费用，格式同【去程改期费用】，【回程可否改期】为是时为必填"
+				},
+				{
+					"name": "ret_change_currency",
+					"type": "String",
+					"description": "回程改期币种，可录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "ret_change_fee_type",
+					"type": "String",
+					"description": "回程改期费用收取方式，按每个航段收还是全程收(0:全程, 1：每个航段，默认值：全程)"
+				},
+				{
+					"name": "noshow_restrict",
+					"type": "String",
+					"description": "NOSHOW是否有限制，可输入是或否 。金牌产品该项必须为空"
+				},
+				{
+					"name": "noshow_time_restrict",
+					"type": "String",
+					"description": "NOSHOW时限,只能录入整数，【NOSHOW是否有限制】为是时，此项为必填项"
+				},
+				{
+					"name": "noshow_time_restrict_unit",
+					"type": "String",
+					"description": "NOSHOW时限单位(小时/天, 默认为小时)"
+				},
+				{
+					"name": "noshow_rule_type",
+					"type": "String",
+					"description": "NOSHOW规则，可录入多个，多个用逗号分隔。可录入不可退票、不可改期，不可退票,不可改期"
+				},
+				{
+					"name": "noshow_fee",
+					"type": "String",
+					"description": "NOSHOW金额，只能录入整数或百分比，【NOSHOW是否有限制】为是,【NOSHOW规则】不是不可退票,不可改期时，此项为必填项"
+				},
+				{
+					"name": "noshow_currency",
+					"type": "String",
+					"description": "NOSHOW币种,可录入币种三字码，默认值CNY"
+				},
+				{
+					"name": "vip_code",
+					"type": "String",
+					"description": "开票大客户编码，最大长度50"
+				},
+				{
+					"name": "gv2_child_rule",
+					"type": "String",
+					"description": "是否适用小团，可选值是或否"
+				},
+				{
+					"name": "nationality",
+					"type": "String",
+					"description": "国籍限制，可输入国家二字码，多个用逗号分隔，最多不超过20个"
+				},
+				{
+					"name": "exclude_nationality",
+					"type": "String",
+					"description": "除外国籍限制，可输入国家二字码，多个用逗号分隔，最多不超过20个"
+				},
+				{
+					"name": "passenger_age",
+					"type": "String",
+					"description": "年龄限制，格式为1-99,1-或者-99"
+				},
+				{
+					"name": "presale_period",
+					"type": "String",
+					"description": "提前销售天数限制"
+				},
+				{
+					"name": "receipts",
+					"type": "String",
+					"description": "必填项 赋值范围:电子行程单,旅行发票,差额行程单发票,等额行程单"
+				},
+				{
+					"name": "can_oj",
+					"type": "String",
+					"description": "是否支持缺口, 赋值范围:不支持缺口,只支持缺口,不限"
+				},
+				{
+					"name": "default_od_deny",
+					"type": "String",
+					"description": "例外航线,默认销售规则, 格式为xxx-xxx,xxx-xxx ，英文逗号分开，区域类型与例外始发地的一致"
+				},
+				{
+					"name": "airline_code_sharing",
+					"type": "String",
+					"description": "航司代码共享范围 airline_code_sharing : 格式 KA(CX/CX),CA(CZ)  英文逗号分开，/ 分隔内部，航司二字码表示"
+				},
+				{
+					"name": "child_change_fee_in_unused",
+					"type": "String",
+					"description": "儿童回程改期费用，格式同成人，【回程可否改期】为是时为必填"
+				},
+				{
+					"name": "child_change_fee_out_unused",
+					"type": "String",
+					"description": "儿童去程改期费用，格式同成人，格式说明参考【全程未使用退票费用】，注意，改期费用不能录入百分比，【去程可否改期】为是时为必填项"
+				},
+				{
+					"name": "child_refund_fee_part_unused",
+					"type": "String",
+					"description": "儿童部分未使用退票费用，格式同成人，【部分未使用可否退票】为是时，此项为必填项"
+				},
+				{
+					"name": "child_refund_fee_all_unused",
+					"type": "String",
+					"description": "儿童全部未使用退票费用，格式同成人，【全部未使用可否退票】为是时，此项为必填项。 可输入格式如：200-72-300-48-1000-0-*，表示72小时前退票手续费200；48小时到72小时，退票手续费300；飞机起飞不足48小时；退票手续费1000；飞机起飞后不予改期（输入*）； 或 10%-72-30%-48-50%-0-*，表示72小时前退票手续费为票面价的10%；48小时到72小时，退票手续费为票面价的30%；飞机起飞不足48小时；退票手续费为票面价的50%；飞机起飞后不予退票（输入*）；"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_id",
+			"type": "Number",
+			"description": "淘宝政策id"
+		},
+		{
+			"name": "extend_attributes",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	]
+}

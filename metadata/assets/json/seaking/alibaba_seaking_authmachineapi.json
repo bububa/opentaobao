@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.seaking.authmachineapi",
+	"apiChineseName": "机翻Api授权",
+	"description": "机翻Api授权",
+	"requestParams": [
+		{
+			"name": "identify_type",
+			"type": "String",
+			"description": "erp名称",
+			"required": true
+		},
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "erp用户id",
+			"required": true
+		},
+		{
+			"name": "sub_identify_type",
+			"type": "String",
+			"description": "店铺所在平台"
+		},
+		{
+			"name": "sub_identifier",
+			"type": "String",
+			"description": "店铺id(ae为cn开头的店铺id, lazada为邮箱)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

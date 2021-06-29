@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.alisports.passport.account.ssotokenvalidate",
+	"apiChineseName": "sso_token验证",
+	"description": "sso_token验证",
+	"requestParams": [
+		{
+			"name": "sso_token",
+			"type": "String",
+			"description": "sso_token",
+			"required": true
+		},
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用APPKEY",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "当前时间戳[精确到秒，10位]",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "状态码 200表示操作成功"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "提示信息"
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户ID"
+		},
+		{
+			"name": "appuid",
+			"type": "String",
+			"description": "第三方用户ID"
+		}
+	]
+}

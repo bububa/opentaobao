@@ -1,0 +1,748 @@
+{
+	"name": "alitrip.travel.trade.query",
+	"apiChineseName": "飞猪度假-订单详情查询接口",
+	"description": "飞猪度假订单详情查询接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "主订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTripOrderResult",
+			"description": "交易主订单详情",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单id",
+					"required": true
+				},
+				{
+					"name": "order_id_string",
+					"type": "String",
+					"description": "string类型订单id",
+					"required": true
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "订单修改时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "主订单状态。交易状态。可选值: TRADE_NO_CREATE_PAY(没有创建支付宝交易)；WAIT_BUYER_PAY(等待买家付款)；SELLER_CONSIGNED_PART(卖家部分发货)；WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)；WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)；TRADE_FINISHED(交易成功)；TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)；TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)；PAY_PENDING(国际信用卡支付付款确认中);",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "交易类型列表，fixed(一口价);auction(拍卖);guarantee_trade(一口价、拍卖);auto_delivery(自动发货);cod(货到付款);external_trade(统一外部交易);instant_trade(即时交易);b2c_cod(大商家货到付款);nopaid(即时到帐);eticket(电子凭证订单);step(分阶段付款)",
+					"required": true
+				},
+				{
+					"name": "pay_info",
+					"type": "PayInfo",
+					"description": "主订单支付信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alipay_no",
+							"type": "String",
+							"description": "支付宝交易号",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "系统优惠金额（如打折，VIP，满就送等），精确到2位小数，单位：分。",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "订单付款时间",
+							"required": true
+						},
+						{
+							"name": "received_payment",
+							"type": "Number",
+							"description": "卖家实际收到的支付宝打款金额（由于子订单可以部分确认收货，这个金额会随着子订单的确认收货而不断增加，交易成功后等于买家实付款减去退款金额）。精确到2位小数;单位:分",
+							"required": true
+						},
+						{
+							"name": "step_paid_fee",
+							"type": "Number",
+							"description": "分阶段付款的已付金额",
+							"required": true
+						},
+						{
+							"name": "step_trade_status",
+							"type": "String",
+							"description": "分阶段付款的订单状态，目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "seller_info",
+					"type": "SellerInfo",
+					"description": "卖家信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "seller_can_rate",
+							"type": "Boolean",
+							"description": "卖家是否可以对订单进行评价",
+							"required": true
+						},
+						{
+							"name": "seller_email",
+							"type": "String",
+							"description": "卖家邮件地址",
+							"required": true
+						},
+						{
+							"name": "seller_flag",
+							"type": "Number",
+							"description": "卖家备注旗帜（与淘宝网上订单的卖家备注旗帜对应，只有卖家才能查看该字段）红、黄、绿、蓝、紫 分别对应 1、2、3、4、5",
+							"required": true
+						},
+						{
+							"name": "seller_memo",
+							"type": "String",
+							"description": "卖家备注",
+							"required": true
+						},
+						{
+							"name": "seller_name",
+							"type": "String",
+							"description": "卖家姓名",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称",
+							"required": true
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家联系方式",
+							"required": true
+						},
+						{
+							"name": "seller_rate",
+							"type": "Boolean",
+							"description": "卖家是否已评价。可选值:true(已评价),false(未评价)",
+							"required": true
+						},
+						{
+							"name": "seller_shop",
+							"type": "String",
+							"description": "卖家店铺名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "buyer_info",
+					"type": "BuyerInfo",
+					"description": "买家信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "buyer_email",
+							"type": "String",
+							"description": "买家邮件地址",
+							"required": true
+						},
+						{
+							"name": "buyer_message",
+							"type": "String",
+							"description": "买家留言",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称",
+							"required": true
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "买家联系方式",
+							"required": true
+						},
+						{
+							"name": "buyer_rate",
+							"type": "Boolean",
+							"description": "买家是否已评价",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "promotion_details",
+					"type": "PromotionDetail[]",
+					"description": "主、子订单优惠信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount_fee",
+							"type": "String",
+							"description": "优惠金额（免运费、限时打折时为空）,单位：分",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "交易的主订单或子订单号",
+							"required": true
+						},
+						{
+							"name": "promotion_desc",
+							"type": "String",
+							"description": "优惠活动的描述",
+							"required": true
+						},
+						{
+							"name": "promotion_id",
+							"type": "String",
+							"description": "优惠id，(由营销工具id、优惠活动id和优惠详情id组成，结构为：营销工具id-优惠活动id_优惠详情id，如mjs-123024_211143）",
+							"required": true
+						},
+						{
+							"name": "promotion_name",
+							"type": "String",
+							"description": "优惠信息的名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_orders",
+					"type": "SubOrderInfo[]",
+					"description": "主订单包含的各个子订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "adjust_fee",
+							"type": "Number",
+							"description": "卖家手工调整金额，单位：分",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "订单所属业务类型。0-未知，1-度假（自由行，跟团游），2-普通签证，3-门票，4-wifi，7-当地玩乐，9-邮轮，10-用车，12-电话卡，17-流量充值，18-港澳签注，20-旅行租赁",
+							"required": true
+						},
+						{
+							"name": "buy_item_info",
+							"type": "BuyItemInfo",
+							"description": "购买的商品信息（商品、sku信息，单价、数量、出行日期等信息）",
+							"required": true,
+							"subParams": [
+								{
+									"name": "category_ext_infos",
+									"type": "String",
+									"description": "商品类目相关的扩展信息（不再推荐使用，建议使用category_ext_infos_json替代）。KV对形式，多个KV对以英文封号分隔，k1:v1;k2:v2。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107548",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "Number",
+									"description": "商品所属叶子类目id",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品id",
+									"required": true
+								},
+								{
+									"name": "item_title",
+									"type": "String",
+									"description": "商品标题",
+									"required": true
+								},
+								{
+									"name": "num",
+									"type": "Number",
+									"description": "购买的数量",
+									"required": true
+								},
+								{
+									"name": "out_product_id",
+									"type": "String",
+									"description": "商家自定义的商品编码",
+									"required": true
+								},
+								{
+									"name": "out_sku_id",
+									"type": "String",
+									"description": "sku_id对应的商家自定义sku编码（即商品上套餐的外部商家编码）",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "商品价格",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "用户所购买的商品上sku的id",
+									"required": true
+								},
+								{
+									"name": "sku_properties",
+									"type": "String",
+									"description": "用户所购买的Sku信息。包含商品套餐名称（对于门票商品即指票种），出游人群信息等",
+									"required": true
+								},
+								{
+									"name": "trip_end_date",
+									"type": "Date",
+									"description": "出行结束日期，如果没有出行结束日期，则该值为空。（对于wifi/电话卡商品 指激活/租用结束日期；对于流量充值商品 指结束使用日期）",
+									"required": true
+								},
+								{
+									"name": "trip_start_date",
+									"type": "Date",
+									"description": "出行开始日期。（对于wifi/电话卡商品 指激活/租用日期；对于门票商品 指入园日期；对于流量充值商品 指开始使用日期）",
+									"required": true
+								},
+								{
+									"name": "item_image",
+									"type": "String",
+									"description": "商品图片",
+									"required": true
+								},
+								{
+									"name": "category_ext_infos_json",
+									"type": "String",
+									"description": "商品类目相关的扩展信息，JSON格式。各类目支持的枚举key详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107548",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "contactor",
+							"type": "TravellerInfo",
+							"description": "联系人/取件人信息。通用联系人信息，没有配置度假出行人模板的商品订单（如wifi电话卡等类目），从这里获取联系人或取件人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "extend_attributes_json",
+									"type": "String",
+									"description": "预留，暂时无用",
+									"required": true
+								},
+								{
+									"name": "birthday",
+									"type": "String",
+									"description": "出生日期，格式yyyy-mm-dd",
+									"required": true
+								},
+								{
+									"name": "credential_no",
+									"type": "String",
+									"description": "证件号码",
+									"required": true
+								},
+								{
+									"name": "credential_type",
+									"type": "Number",
+									"description": "证件类型。0:身份证 1:护照 2:学生证3:军官证 4:回乡证 5:台胞证 6:港澳通行证 10:警官证 11:士兵证 12:台湾通行证",
+									"required": true
+								},
+								{
+									"name": "email",
+									"type": "String",
+									"description": "联系电子邮箱",
+									"required": true
+								},
+								{
+									"name": "extend_attributes",
+									"type": "String",
+									"description": "预留，KV对形式，商家自定义的个性化出行人信息。目前支持的Key列表如下：overseaPhoneNumber（国外手机号），emergencyPhoneNumber（紧急联系方式），memo（备注）",
+									"required": true
+								},
+								{
+									"name": "issue_country",
+									"type": "String",
+									"description": "证件签发国",
+									"required": true
+								},
+								{
+									"name": "issue_place",
+									"type": "String",
+									"description": "证件签发地",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "name_pinyin",
+									"type": "String",
+									"description": "姓名（拼音）",
+									"required": true
+								},
+								{
+									"name": "nationality",
+									"type": "String",
+									"description": "国籍",
+									"required": true
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "联系电话",
+									"required": true
+								},
+								{
+									"name": "post_address",
+									"type": "String",
+									"description": "具体收件地址（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "post_area",
+									"type": "String",
+									"description": "收件区域",
+									"required": true
+								},
+								{
+									"name": "post_city",
+									"type": "String",
+									"description": "收件市（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "post_province",
+									"type": "String",
+									"description": "收件省（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "sex",
+									"type": "Number",
+									"description": "性别。0-男，1-女",
+									"required": true
+								},
+								{
+									"name": "valid_date",
+									"type": "String",
+									"description": "证件有效期",
+									"required": true
+								},
+								{
+									"name": "surname_pinyin",
+									"type": "String",
+									"description": "姓（拼音）",
+									"required": true
+								},
+								{
+									"name": "given_name_pinyin",
+									"type": "String",
+									"description": "名（拼音）",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "子订单优惠金额（如打折，VIP，满就送等），不包含带资优惠（如红包、旅行券）。单位：分",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "子订单交易结束时间。交易成功时间(更新交易状态为成功的同时更新)/确认收货时间或者交易关闭时间",
+							"required": true
+						},
+						{
+							"name": "expire_time",
+							"type": "Date",
+							"description": "子订单超时自动关单（卖家未能及时发货）时间",
+							"required": true
+						},
+						{
+							"name": "extend_attributes",
+							"type": "String",
+							"description": "子订单扩展属性。KV对结构。每个KV对间使用分号隔开。如：k1:v1;k2:v2",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "Number",
+							"description": "订单类型。1、普通订单，2、二次确认订单，3、二次预约订单",
+							"required": true
+						},
+						{
+							"name": "payment",
+							"type": "Number",
+							"description": "买家实付金额。单位：分",
+							"required": true
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "子订单退款编号。如果子订单没有发生退款，则该值为空",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意);WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货);WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货);SELLER_REFUSE_BUYER(卖家拒绝退款);CLOSED(退款关闭);SUCCESS(退款成功)",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "子订单状态",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子订单id",
+							"required": true
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单优惠金额），大于等于payment，因为可能包含了带资优惠（如红包、旅行券）。单位：分",
+							"required": true
+						},
+						{
+							"name": "travellers",
+							"type": "TravellerInfo[]",
+							"description": "出行人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "birthday",
+									"type": "String",
+									"description": "出生日期，格式yyyy-mm-dd",
+									"required": true
+								},
+								{
+									"name": "credential_no",
+									"type": "String",
+									"description": "证件号码",
+									"required": true
+								},
+								{
+									"name": "credential_type",
+									"type": "Number",
+									"description": "证件类型。0:身份证 1:护照 2:学生证3:军官证 4:回乡证 5:台胞证 6:港澳通行证 10:警官证 11:士兵证 12:台湾通行证",
+									"required": true
+								},
+								{
+									"name": "email",
+									"type": "String",
+									"description": "联系电子邮箱",
+									"required": true
+								},
+								{
+									"name": "extend_attributes",
+									"type": "String",
+									"description": "商家自定义的个性化出行人信息，KV对形式（不再推荐使用，建议使用extend_attributes_json替代）。支持的key列表详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107550",
+									"required": true
+								},
+								{
+									"name": "issue_country",
+									"type": "String",
+									"description": "证件签发国",
+									"required": true
+								},
+								{
+									"name": "issue_place",
+									"type": "String",
+									"description": "证件签发地",
+									"required": true
+								},
+								{
+									"name": "name_pinyin",
+									"type": "String",
+									"description": "姓名（拼音）",
+									"required": true
+								},
+								{
+									"name": "nationality",
+									"type": "String",
+									"description": "国籍",
+									"required": true
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "联系电话",
+									"required": true
+								},
+								{
+									"name": "post_address",
+									"type": "String",
+									"description": "具体收件地址（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "post_area",
+									"type": "String",
+									"description": "收件区域",
+									"required": true
+								},
+								{
+									"name": "post_city",
+									"type": "String",
+									"description": "收件市（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "post_province",
+									"type": "String",
+									"description": "收件省（对于需要物流的实物商品）",
+									"required": true
+								},
+								{
+									"name": "sex",
+									"type": "Number",
+									"description": "性别。0-男，1-女",
+									"required": true
+								},
+								{
+									"name": "valid_date",
+									"type": "String",
+									"description": "证件有效期",
+									"required": true
+								},
+								{
+									"name": "surname_pinyin",
+									"type": "String",
+									"description": "姓（拼音）",
+									"required": true
+								},
+								{
+									"name": "given_name_pinyin",
+									"type": "String",
+									"description": "名（拼音）",
+									"required": true
+								},
+								{
+									"name": "extend_attributes_json",
+									"type": "String",
+									"description": "商家自定义的个性化出行人信息，JSON格式。支持的key列表详见：https://open.alitrip.com/docs/doc.htm?docType=1\u0026articleId=107550",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sub_order_id_string",
+							"type": "String",
+							"description": "string类型子订单id",
+							"required": true
+						},
+						{
+							"name": "process_time",
+							"type": "String",
+							"description": "订单处理时间 精确到秒",
+							"required": true
+						},
+						{
+							"name": "confirm_status",
+							"type": "Number",
+							"description": "二次确认状态，1、待商家确认 2、确认不通过 3、确认通过 4、过期未确认 5、买家申请退款成功 6、票号验证",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "order_with_depo",
+					"type": "Boolean",
+					"description": "该笔订单是否押金合并支付订单（即该主订单是否已包含押金订单金额）",
+					"required": true
+				},
+				{
+					"name": "post_fee",
+					"type": "Number",
+					"description": "订单邮费，需要邮寄的实体商品才有",
+					"required": true
+				},
+				{
+					"name": "score_details",
+					"type": "ScoreDetail[]",
+					"description": "评价对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "content",
+							"type": "String",
+							"description": "评价内容",
+							"required": true
+						},
+						{
+							"name": "score",
+							"type": "String",
+							"description": "评价分数",
+							"required": true
+						},
+						{
+							"name": "dimension_name",
+							"type": "String",
+							"description": "评价维度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因",
+					"required": true
+				},
+				{
+					"name": "rate_content",
+					"type": "String",
+					"description": "评价xxxx",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.channel.get",
+	"apiChineseName": "5-IBP同步渠道接口",
+	"description": "IBP同步渠道接口",
+	"requestParams": [
+		{
+			"name": "request_extend_json",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "IbpChannelDto[]",
+					"description": "数据对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "channel_name",
+							"type": "String",
+							"description": "渠道名称",
+							"required": true
+						},
+						{
+							"name": "channel_id",
+							"type": "String",
+							"description": "渠道ID",
+							"required": true
+						},
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

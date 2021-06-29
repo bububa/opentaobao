@@ -1,0 +1,82 @@
+{
+	"name": "tmall.nr.fulfill.cancel",
+	"apiChineseName": "取消上门揽件",
+	"description": "新零售门店业务取消上门揽件",
+	"requestParams": [
+		{
+			"name": "req",
+			"type": "NrCancelFulfillReqDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "cancel_oper_user_name",
+					"type": "String",
+					"description": "操作取消人员姓名"
+				},
+				{
+					"name": "cancel_oper_user_id",
+					"type": "Number",
+					"description": "操作取消人员ID号"
+				},
+				{
+					"name": "cancel_reason_code",
+					"type": "Number",
+					"description": "取消的对应编码"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "淘宝商家的sellerID"
+				},
+				{
+					"name": "cancel_oper_type",
+					"type": "Number",
+					"description": "取消类型。操作人类型:1寄件人,3客服小二,4快递员, 5CP, 6收件人,8门店取消,100系统"
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "淘宝交易的主订单号"
+				},
+				{
+					"name": "cancel_reason",
+					"type": "String",
+					"description": "取消原因的说明"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Boolean",
+					"description": "取消是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code2",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "isSuccess",
+					"required": true
+				}
+			]
+		}
+	]
+}

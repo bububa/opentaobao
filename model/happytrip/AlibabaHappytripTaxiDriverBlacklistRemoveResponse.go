@@ -1,0 +1,36 @@
+package happytrip
+
+import (
+    "encoding/xml"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+移除司机黑名单 APIResponse
+alibaba.happytrip.taxi.driver.blacklist.remove
+
+移除司机黑名单
+*/
+type AlibabaHappytripTaxiDriverBlacklistRemoveAPIResponse struct {
+    model.CommonResponse
+    AlibabaHappytripTaxiDriverBlacklistRemoveResponse
+}
+
+type AlibabaHappytripTaxiDriverBlacklistRemoveResponse struct {
+    XMLName xml.Name `xml:"alibaba_happytrip_taxi_driver_blacklist_remove_response"`
+    
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
+
+    // 错误代码
+    
+    Errno   string `json:"errno,omitempty" xml:"errno,omitempty"`
+
+    
+    // 错误描述
+    
+    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+
+    
+}

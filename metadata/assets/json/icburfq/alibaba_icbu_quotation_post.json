@@ -1,0 +1,186 @@
+{
+	"name": "alibaba.icbu.quotation.post",
+	"apiChineseName": "供应商提交报价",
+	"description": "供应商对RFQ进行报价",
+	"requestParams": [
+		{
+			"name": "md5key",
+			"type": "String",
+			"description": "验证"
+		},
+		{
+			"name": "dto",
+			"type": "RfqQuotationRemoteDto",
+			"description": "报价DTO",
+			"subParams": [
+				{
+					"name": "details",
+					"type": "String",
+					"description": "给买家留言",
+					"required": true
+				},
+				{
+					"name": "annex_files_str",
+					"type": "String",
+					"description": "附件file_str,请通过调用alibaba.icbu.annex.upload结果作为入参"
+				},
+				{
+					"name": "sample",
+					"type": "RfqQuotationPriceRemoteDTO",
+					"description": "样本",
+					"subParams": [
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "estimated_date",
+							"type": "String",
+							"description": "预计时间"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "样品运费支付方"
+						},
+						{
+							"name": "is_free",
+							"type": "String",
+							"description": "是否是免费"
+						},
+						{
+							"name": "is_support",
+							"type": "String",
+							"description": "是否提供样本"
+						}
+					]
+				},
+				{
+					"name": "price_list",
+					"type": "PriceList[]",
+					"description": "报价列表",
+					"subParams": [
+						{
+							"name": "port",
+							"type": "String",
+							"description": "目的港",
+							"required": true
+						},
+						{
+							"name": "shipping_terms",
+							"type": "String",
+							"description": "发运条件",
+							"required": true
+						},
+						{
+							"name": "image_str",
+							"type": "String",
+							"description": "图片image_str,请通过调用alibaba.icbu.annex.upload结果作为入参如果是都个附件通过\\r\\n分割"
+						},
+						{
+							"name": "model_num",
+							"type": "String",
+							"description": "产品编号"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "产品名称",
+							"required": true
+						},
+						{
+							"name": "fob_price",
+							"type": "String",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "quantity_unit",
+							"type": "String",
+							"description": "数量单位",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "fob_price_unit",
+							"type": "String",
+							"description": "价格单位",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "rfq_id",
+					"type": "String",
+					"description": "RFQID",
+					"required": true
+				},
+				{
+					"name": "payment_terms",
+					"type": "String",
+					"description": "付费条款",
+					"required": true
+				},
+				{
+					"name": "expiry_date",
+					"type": "Date",
+					"description": "过期时间",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RfqRemoteServiceResult",
+			"description": "请求返回结果信息",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "RfqQuotationRemoteDto",
+					"description": "返回结果信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "报价ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_type",
+					"type": "Json",
+					"description": "错误类型",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

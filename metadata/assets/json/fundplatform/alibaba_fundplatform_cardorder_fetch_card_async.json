@@ -1,0 +1,100 @@
+{
+	"name": "alibaba.fundplatform.cardorder.fetch.card.async",
+	"apiChineseName": "异步批量生成储值卡",
+	"description": "外部业务方异步批量生成储值卡的接口。同步只返回接受成功，异步会通知制卡成功",
+	"requestParams": [
+		{
+			"name": "param_card_fetch_async_request",
+			"type": "CardFetchAsyncRequest",
+			"description": "入参复杂对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "active",
+					"type": "Boolean",
+					"description": "是否储值卡同步激活，默认为true",
+					"required": true
+				},
+				{
+					"name": "buy_entity_type",
+					"type": "String",
+					"description": "购买主体类型 company 公司|person  个人"
+				},
+				{
+					"name": "card_fetch_details",
+					"type": "CardFetchDetailDto[]",
+					"description": "制卡详情",
+					"subParams": [
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "制卡数量",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "售价,单位为分。不填写则使用模板上配置的默认售价"
+						},
+						{
+							"name": "template_no",
+							"type": "String",
+							"description": "制卡模板号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "幂等字段，请保证唯一性,不要超过32位",
+					"required": true
+				},
+				{
+					"name": "sale_mode",
+					"type": "String",
+					"description": "售卖方式 online 线上|offline 线下"
+				},
+				{
+					"name": "subiz_type",
+					"type": "Number",
+					"description": "业务类型，由资金平台分配",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "购买方在淘宝的用户ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CardFetchAsyncResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -19,7 +19,9 @@ type YunosServiceCmnsCoaPushAPIResponse struct {
 
 type YunosServiceCmnsCoaPushResponse struct {
     XMLName xml.Name `xml:"yunos_service_cmns_coa_push_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 200:消息发送成功
     

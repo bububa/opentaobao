@@ -19,7 +19,9 @@ type AlibabaNewretailPurchasePriceDeleteAPIResponse struct {
 
 type AlibabaNewretailPurchasePriceDeleteResponse struct {
     XMLName xml.Name `xml:"alibaba_newretail_purchase_price_delete_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 拆单结果对象
     

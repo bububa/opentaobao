@@ -1,0 +1,67 @@
+{
+	"name": "taobao.place.storegroup.update",
+	"apiChineseName": "门店库修改基本信息",
+	"description": "门店库修改基本信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "库id"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "库名称"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "库备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "other",
+					"type": "Json",
+					"description": "其他信息",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "结果总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "Json[]",
+					"description": "结果列表",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

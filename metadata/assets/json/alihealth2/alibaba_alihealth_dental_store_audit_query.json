@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.alihealth.dental.store.audit.query",
+	"apiChineseName": "ISV查询门店审核状态",
+	"description": "ISV查询门店审核状态",
+	"requestParams": [
+		{
+			"name": "store_audit_ids",
+			"type": "Number[]",
+			"description": "审核ID列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "store_audit_vo_list",
+					"type": "StoreAuditVo[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店ID",
+							"required": true
+						},
+						{
+							"name": "check_status_string",
+							"type": "String",
+							"description": "审核状态",
+							"required": true
+						},
+						{
+							"name": "check_status",
+							"type": "Number",
+							"description": "审核状态码",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "审核原因",
+							"required": true
+						},
+						{
+							"name": "store_audit_id",
+							"type": "Number",
+							"description": "门店审核ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msg_code",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msg_info",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,110 @@
+{
+	"name": "tmall.exchange.agree",
+	"apiChineseName": "卖家同意换货申请",
+	"description": "卖家同意换货申请",
+	"requestParams": [
+		{
+			"name": "post",
+			"type": "String",
+			"description": "邮政编码"
+		},
+		{
+			"name": "leave_message_pics",
+			"type": "byte[]",
+			"description": "上传图片举证"
+		},
+		{
+			"name": "leave_message",
+			"type": "String",
+			"description": "卖家留言"
+		},
+		{
+			"name": "address_id",
+			"type": "Number",
+			"description": "收货地址id，如需获取请调用该top接口：taobao.logistics.address.search，对应属性为contact_id",
+			"required": true
+		},
+		{
+			"name": "complete_address",
+			"type": "String",
+			"description": "详细收货地址"
+		},
+		{
+			"name": "dispute_id",
+			"type": "Number",
+			"description": "换货单号ID",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "返回字段。当前支持的有 dispute_id, bizorder_id, modified, status",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "收货人手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ExchangeBaseResponse",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回结果说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回结果码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功调用",
+					"required": true
+				},
+				{
+					"name": "exchange",
+					"type": "Exchange",
+					"description": "换货单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "换货单状态",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "dispute_id",
+							"type": "String",
+							"description": "换货单号ID",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "正向交易单号ID",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

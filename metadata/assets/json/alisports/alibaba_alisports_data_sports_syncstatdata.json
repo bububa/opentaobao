@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.alisports.data.sports.syncstatdata",
+	"apiChineseName": "阿里体育数据中心用户当天累积数据同步接口",
+	"description": "阿里体育数据中心用户当天累积数据同步接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "steps",
+			"type": "String",
+			"description": "运动步数",
+			"required": true
+		},
+		{
+			"name": "calorie",
+			"type": "String",
+			"description": "消耗卡路里 单位：卡",
+			"required": true
+		},
+		{
+			"name": "distance",
+			"type": "String",
+			"description": "运动距离 单位：米",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "日期 格式：y-m-d h:i:s",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型：1手环"
+		},
+		{
+			"name": "device_name",
+			"type": "String",
+			"description": "设备名"
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备型号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		}
+	]
+}

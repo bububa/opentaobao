@@ -1,0 +1,86 @@
+{
+	"name": "taobao.jst.interactive.assets.config",
+	"apiChineseName": "任务素材配置接口",
+	"description": "任务素材配置接口",
+	"requestParams": [
+		{
+			"name": "assets_config_list",
+			"type": "AssetsConfig[]",
+			"description": "[]",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "accept_btn",
+					"type": "String",
+					"description": "做任务按钮，默认值【去完成】"
+				},
+				{
+					"name": "award_btn",
+					"type": "String",
+					"description": "待领奖按钮，默认值【领取奖励】"
+				},
+				{
+					"name": "complete_btn",
+					"type": "String",
+					"description": "任务完成按钮，默认值【已完成】"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "任务描述，默认值为title"
+				},
+				{
+					"name": "icon",
+					"type": "String",
+					"description": "任务图标，图片大小80x80",
+					"required": true
+				},
+				{
+					"name": "init_btn",
+					"type": "String",
+					"description": "领取任务按钮，默认值【领取任务】"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id，必须为授权店铺的商品，配置商品浏览任务时必填"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "任务副标题，默认值为title"
+				},
+				{
+					"name": "task_id",
+					"type": "String",
+					"description": "任务id",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "任务标题",
+					"required": true
+				},
+				{
+					"name": "video_id",
+					"type": "Number",
+					"description": "直播间id，必须为授权店铺的直播间，配置直播观看任务时必填"
+				}
+			]
+		},
+		{
+			"name": "mini_app_id",
+			"type": "String",
+			"description": "小程序id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

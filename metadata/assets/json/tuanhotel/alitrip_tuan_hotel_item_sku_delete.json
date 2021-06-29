@@ -1,0 +1,78 @@
+{
+	"name": "alitrip.tuan.hotel.item.sku.delete",
+	"apiChineseName": "酒店团购套餐商品SKU删除",
+	"description": "商户对发布的宝贝套餐价格库存信息进行删除",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝ID",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "宝贝所属类目",
+			"required": true
+		},
+		{
+			"name": "item_deleted_sku_id_list",
+			"type": "Number[]",
+			"description": "要删除的skuId列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "宝贝ID"
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家ID"
+		},
+		{
+			"name": "top_item_sku_base_info_list",
+			"type": "TopItemSkuBaseInfoList []",
+			"description": "sku列表",
+			"subParams": [
+				{
+					"name": "sku_name",
+					"type": "String",
+					"description": "sku名称",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "skuId",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "操作状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

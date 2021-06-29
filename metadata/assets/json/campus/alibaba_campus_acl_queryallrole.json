@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.campus.acl.queryallrole",
+	"apiChineseName": "查询全部角色",
+	"description": "查询全部园区",
+	"requestParams": [
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id不填统一SYS_000"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id",
+			"required": true
+		},
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "role_name",
+			"type": "String",
+			"description": "角色名称"
+		},
+		{
+			"name": "role_type",
+			"type": "String",
+			"description": "角色类型"
+		},
+		{
+			"name": "role_id",
+			"type": "String",
+			"description": "角色id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CollectionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "Json[]",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"name": "taobao.miniapp.distribution.order.items.bind",
+	"apiChineseName": "小程序投放-基于投放计划绑定/解绑商品",
+	"description": "提供给使用了投放插件的服务商，可以调用该API实现帮助商家更新已创建的投放单中的绑定商品信息。",
+	"requestParams": [
+		{
+			"name": "target_entity_list",
+			"type": "String[]",
+			"description": "商品id列表",
+			"required": true,
+			"maxListSize": 200
+		},
+		{
+			"name": "add_bind",
+			"type": "Boolean",
+			"description": "true表示新增绑定，false表示解绑",
+			"required": true
+		},
+		{
+			"name": "distribute_id",
+			"type": "Number",
+			"description": "投放计划标识id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "DistributionOrderBindTargetEntityOpenResultDTO",
+			"description": "绑定的结果",
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "绑定的目标url",
+					"required": true
+				},
+				{
+					"name": "scene_name",
+					"type": "String",
+					"description": "绑定投放的场景",
+					"required": true
+				},
+				{
+					"name": "bind_result_list",
+					"type": "DistributionOrderBindBaseDto[]",
+					"description": "商品列表的绑定结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "target_entity_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "fail_msg",
+							"type": "String",
+							"description": "失败的原因",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "绑定是否成功",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "distribute_id",
+					"type": "Number",
+					"description": "绑定的投放计划id",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,119 @@
+{
+	"name": "alibaba.it.ap.address.set",
+	"apiChineseName": "setApAddressNew",
+	"description": "该接口可为ISV系统提供 ap位置信息维护的功能",
+	"requestParams": [
+		{
+			"name": "ap_city_name",
+			"type": "String",
+			"description": "城市"
+		},
+		{
+			"name": "lng",
+			"type": "String",
+			"description": "经度"
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		},
+		{
+			"name": "ap_campus_name",
+			"type": "String",
+			"description": "园区/门店"
+		},
+		{
+			"name": "ap_area_name",
+			"type": "String",
+			"description": "区域"
+		},
+		{
+			"name": "ap_province_name",
+			"type": "String",
+			"description": "省份"
+		},
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "ap mac地址",
+			"required": true
+		},
+		{
+			"name": "ap_unit_name",
+			"type": "String",
+			"description": "ap空间单元名称"
+		},
+		{
+			"name": "ap_floor",
+			"type": "String",
+			"description": "楼层"
+		},
+		{
+			"name": "ap_building_name",
+			"type": "String",
+			"description": "楼栋"
+		},
+		{
+			"name": "app_key_internal",
+			"type": "String",
+			"description": "分配的内部ak",
+			"required": true
+		},
+		{
+			"name": "ap_nation_name",
+			"type": "String",
+			"description": "国家"
+		},
+		{
+			"name": "lat",
+			"type": "String",
+			"description": "纬度"
+		},
+		{
+			"name": "direction",
+			"type": "String",
+			"description": "方位"
+		},
+		{
+			"name": "timestamp_internal",
+			"type": "Number",
+			"description": "时间戳，毫秒",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回内容",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回的错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "返回的message",
+					"required": true
+				}
+			]
+		}
+	]
+}

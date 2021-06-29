@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.alihealth.alidoc.drug.store.update",
+	"apiChineseName": "更新药店",
+	"description": "药店信息更新接口",
+	"requestParams": [
+		{
+			"name": "drug_store_update_top_request",
+			"type": "DrugStoreUpdateTopRequest",
+			"description": "更新对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "drug_store_code",
+					"type": "String",
+					"description": "药店编码",
+					"required": true
+				},
+				{
+					"name": "drug_store_name",
+					"type": "String",
+					"description": "药店名称"
+				},
+				{
+					"name": "drug_store_address",
+					"type": "String",
+					"description": "药店地址"
+				},
+				{
+					"name": "drug_strore_phone",
+					"type": "String",
+					"description": "电话"
+				},
+				{
+					"name": "medicare_label",
+					"description": "1-支持医保，0-不支持医保"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "status",
+					"description": "状态，1-启动，0-封存"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "errMessage"
+		},
+		{
+			"name": "err_kode",
+			"type": "String",
+			"description": "errCode"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

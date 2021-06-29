@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.alihealth.examination.report.diagnose.order.status",
+	"apiChineseName": "报告解读订单状态更新",
+	"description": "报告解读订单状态更新",
+	"requestParams": [
+		{
+			"name": "report_order_status_request",
+			"type": "ReportOrderStatusRequest",
+			"description": "参数对象",
+			"subParams": [
+				{
+					"name": "note",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单状态，10=待接诊，20=已关闭，30=问诊中，60=已结束",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单ID",
+					"required": true
+				},
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "业务流程执行结果",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

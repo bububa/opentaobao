@@ -1,0 +1,311 @@
+{
+	"name": "alibaba.campus.device.openapi.getsimpledevicelist",
+	"apiChineseName": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
+	"description": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
+	"requestParams": [
+		{
+			"name": "work_bench_context",
+			"type": "WorkBenchContext",
+			"description": "请求发送端信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "所属公司"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "所属园区Id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "query",
+			"type": "DeviceApiQuery",
+			"description": "多条件查询对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "分页大小，默认值100。单次最多查询500条记录"
+				},
+				{
+					"name": "floor_id_list",
+					"type": "Number[]",
+					"description": "楼层id集合"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "模板code,具体设备模板code信息请查阅‘平台技术’下‘设备详细信息开发文档’。"
+				},
+				{
+					"name": "space_id",
+					"type": "Number",
+					"description": "空间单元id"
+				},
+				{
+					"name": "campus_id_list",
+					"type": "Number[]",
+					"description": "园区id集合"
+				},
+				{
+					"name": "building_id_list",
+					"type": "Number[]",
+					"description": "楼宇id集合"
+				},
+				{
+					"name": "template_code_list",
+					"type": "String[]",
+					"description": "模板code集合,具体设备模板code信息请查阅‘平台技术’下‘设备详细信息开发文档’。[生成参考文档该字段入参是数组，有误。入参类型请使用java.lang.List类型]"
+				},
+				{
+					"name": "floor_id",
+					"type": "Number",
+					"description": "楼层id"
+				},
+				{
+					"name": "be_run",
+					"type": "Boolean",
+					"description": "是否启用"
+				},
+				{
+					"name": "run_status",
+					"type": "Number",
+					"description": "0-\u003e在线 1-\u003e离线 2-\u003e故障"
+				},
+				{
+					"name": "tag_name",
+					"type": "String",
+					"description": "根据标签名称精确查询"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "space_id_list",
+					"type": "Number[]",
+					"description": "空间单元id集合[生成参考文档该字段入参是数组，有误。入参类型请使用java.lang.List类型]"
+				},
+				{
+					"name": "uuid_list",
+					"type": "String[]",
+					"description": "设备uuid集合[生成参考文档该字段入参是数组，有误。入参类型请使用java.lang.List类型]"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id"
+				},
+				{
+					"name": "building_id",
+					"type": "Number",
+					"description": "楼宇id"
+				},
+				{
+					"name": "name_or_code",
+					"type": "String",
+					"description": "模糊查询设备名称或编码"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "根据设备code精确匹配"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "设备分页集合数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "分页大小",
+							"required": true
+						},
+						{
+							"name": "result_list",
+							"type": "DeviceStandardApiDto[]",
+							"description": "分页集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "设备code",
+									"required": true
+								},
+								{
+									"name": "campus_name",
+									"type": "String",
+									"description": "园区名称",
+									"required": true
+								},
+								{
+									"name": "campus_id",
+									"type": "Number",
+									"description": "园区id",
+									"required": true
+								},
+								{
+									"name": "building_id",
+									"type": "Number",
+									"description": "楼宇id",
+									"required": true
+								},
+								{
+									"name": "building_name",
+									"type": "String",
+									"description": "楼宇名称",
+									"required": true
+								},
+								{
+									"name": "floor_id",
+									"type": "Number",
+									"description": "楼层id",
+									"required": true
+								},
+								{
+									"name": "floor_name",
+									"type": "String",
+									"description": "楼层名称",
+									"required": true
+								},
+								{
+									"name": "space_id",
+									"type": "Number",
+									"description": "空间单元id",
+									"required": true
+								},
+								{
+									"name": "space_name",
+									"type": "String",
+									"description": "空间单元名称",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "be_logic",
+									"type": "Boolean",
+									"description": "是否逻辑设备",
+									"required": true
+								},
+								{
+									"name": "template_code",
+									"type": "String",
+									"description": "设备模板编码",
+									"required": true
+								},
+								{
+									"name": "uuid",
+									"type": "String",
+									"description": "uuid",
+									"required": true
+								},
+								{
+									"name": "device_id",
+									"type": "String",
+									"description": "设备id",
+									"required": true
+								},
+								{
+									"name": "be_run",
+									"type": "String",
+									"description": "是否启用",
+									"required": true
+								},
+								{
+									"name": "template_id",
+									"type": "Number",
+									"description": "设备模板id",
+									"required": true
+								},
+								{
+									"name": "nickname",
+									"type": "String",
+									"description": "设备别名",
+									"required": true
+								},
+								{
+									"name": "run_status",
+									"type": "Number",
+									"description": "设备运行状态。0-\u003e在线 1-\u003e离线 2-\u003e故障",
+									"required": true
+								},
+								{
+									"name": "company_id",
+									"type": "Number",
+									"description": "公司id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "currentPage",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

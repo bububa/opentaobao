@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.htorder.hotel.sync.config",
+	"apiChineseName": "同步配置信息",
+	"description": "同步配置信息",
+	"requestParams": [
+		{
+			"name": "data_entity",
+			"type": "HotelMessageConfigDto",
+			"description": "配置信息",
+			"subParams": [
+				{
+					"name": "segments",
+					"type": "null[]",
+					"description": "配置信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "err_no",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "stack_trace",
+			"type": "String",
+			"description": "栈信息"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "成功OR失败"
+		},
+		{
+			"name": "err_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

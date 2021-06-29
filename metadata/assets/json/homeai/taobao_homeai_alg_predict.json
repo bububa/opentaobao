@@ -1,0 +1,118 @@
+{
+	"name": "taobao.homeai.alg.predict",
+	"apiChineseName": "硬装预测接口",
+	"description": "居然之家硬装预测服务",
+	"requestParams": [
+		{
+			"name": "from_case",
+			"type": "String",
+			"description": "来源房间json",
+			"required": true
+		},
+		{
+			"name": "to_case",
+			"type": "String",
+			"description": "我的家房间json",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "FeatureWallSuggestionDto",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "design_id",
+							"type": "String",
+							"description": "designid",
+							"required": true
+						},
+						{
+							"name": "feature_walls",
+							"type": "FeatureWallDto[]",
+							"description": "墙位置",
+							"required": true,
+							"subParams": [
+								{
+									"name": "bounding_box",
+									"type": "BoundingBoxDto",
+									"description": "包围盒",
+									"required": true,
+									"subParams": [
+										{
+											"name": "x_len",
+											"type": "String",
+											"description": "x",
+											"required": true
+										},
+										{
+											"name": "y_len",
+											"type": "String",
+											"description": "y",
+											"required": true
+										},
+										{
+											"name": "z_len",
+											"type": "String",
+											"description": "z",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "fronts",
+									"type": "String[]",
+									"description": "方向四元数",
+									"required": true
+								},
+								{
+									"name": "pos",
+									"type": "String[]",
+									"description": "坐标",
+									"required": true
+								},
+								{
+									"name": "room",
+									"type": "String",
+									"description": "roomid",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "硬装类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "errormsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

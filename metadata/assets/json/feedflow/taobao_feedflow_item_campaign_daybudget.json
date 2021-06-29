@@ -1,0 +1,32 @@
+{
+	"name": "taobao.feedflow.item.campaign.daybudget",
+	"apiChineseName": "获取当日投放日预算总额",
+	"description": "获取当日投放日预算总额",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "预算总额",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

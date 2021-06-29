@@ -1,0 +1,93 @@
+{
+	"name": "cainiao.iot.ticket.sp.mail.sign.upload",
+	"apiChineseName": "IoT售后服务商签收客户邮寄设备附件上传",
+	"description": "IoT售后服务商签收客户邮寄设备附件上传",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "UploadSignVoucherRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "feature",
+					"description": "扩展信息"
+				},
+				{
+					"name": "operator_phone",
+					"type": "String",
+					"description": "操作人联系方式",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人编码",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "sp_code",
+					"type": "String",
+					"description": "服务商唯一编码",
+					"required": true
+				},
+				{
+					"name": "ticket_id",
+					"type": "Number",
+					"description": "工单Id",
+					"required": true
+				},
+				{
+					"name": "comment",
+					"type": "String",
+					"description": "备注",
+					"required": true
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "邮件编码",
+					"required": true
+				},
+				{
+					"name": "sign_proofs",
+					"type": "String[]",
+					"description": "快递签收凭证"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "异常描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

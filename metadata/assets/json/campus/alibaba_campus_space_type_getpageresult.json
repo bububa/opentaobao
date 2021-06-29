@@ -1,0 +1,235 @@
+{
+	"name": "alibaba.campus.space.type.getpageresult",
+	"apiChineseName": "分页查询空间类别接口",
+	"description": "分页查询空间类别接口\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getPageResult",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "环境参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id"
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "SpaceTypeQuery",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "top_level_id",
+					"type": "Number",
+					"description": "大类id"
+				},
+				{
+					"name": "pid",
+					"type": "Number",
+					"description": "中类id"
+				},
+				{
+					"name": "group_top_level_id",
+					"type": "Number",
+					"description": "分组大类id"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "小类id"
+				},
+				{
+					"name": "category",
+					"type": "Number",
+					"description": "类别，室内，室外，逻辑"
+				},
+				{
+					"name": "start_row",
+					"type": "Number",
+					"description": "起始行"
+				},
+				{
+					"name": "space_top_level_id",
+					"type": "Number",
+					"description": "空间大类id"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码"
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "模糊查询key"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Page",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "total",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "Number",
+							"description": "limit",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "PoiTypeWrap[]",
+							"description": "result",
+							"required": true,
+							"subParams": [
+								{
+									"name": "classify",
+									"type": "String",
+									"description": "类别的实际名称,空间或分组",
+									"required": true
+								},
+								{
+									"name": "is_delete",
+									"type": "Boolean",
+									"description": "是否删除",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述",
+									"required": true
+								},
+								{
+									"name": "full_name",
+									"type": "String",
+									"description": "全名",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "小类名称",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "小类编码",
+									"required": true
+								},
+								{
+									"name": "second_type_name",
+									"type": "String",
+									"description": "中类名称",
+									"required": true
+								},
+								{
+									"name": "second_type_code",
+									"type": "String",
+									"description": "中类编码",
+									"required": true
+								},
+								{
+									"name": "second_type_id",
+									"type": "Number",
+									"description": "中类id",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

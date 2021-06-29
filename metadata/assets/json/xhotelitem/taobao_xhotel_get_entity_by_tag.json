@@ -1,0 +1,70 @@
+{
+	"name": "taobao.xhotel.get.entity.by.tag",
+	"apiChineseName": "根据标签查询实体",
+	"description": "根据标签查询实体",
+	"requestParams": [
+		{
+			"name": "tag",
+			"type": "Number",
+			"description": "标签"
+		},
+		{
+			"name": "token_str",
+			"type": "String",
+			"description": "查询token，\u0008填入上一页查询的返回结果，只能按顺序单线程查询"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tag_query_result",
+			"type": "TagQueryResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "tag_entity_do_list",
+					"type": "TagEntityDoList[]",
+					"description": "列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "entity_id",
+							"type": "Number",
+							"description": "实体id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "token_str",
+					"type": "String",
+					"description": "token",
+					"required": true
+				},
+				{
+					"name": "spent_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

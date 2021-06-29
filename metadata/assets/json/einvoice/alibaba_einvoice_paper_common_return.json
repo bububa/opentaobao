@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.einvoice.paper.common.return",
+	"apiChineseName": "纸票通用回传接口",
+	"description": "纸票通用回传接口（打印回传、注册回传等），只返回成功or失败",
+	"requestParams": [
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "请求索引",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "回传结果",
+			"required": true
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "错误码，success=false时必填"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "错误信息，success=false时必填"
+		},
+		{
+			"name": "ext_props",
+			"type": "String",
+			"description": "扩展信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "回传接收结果"
+		}
+	]
+}

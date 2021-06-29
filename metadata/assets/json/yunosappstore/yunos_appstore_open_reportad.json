@@ -1,0 +1,50 @@
+{
+	"name": "yunos.appstore.open.reportad",
+	"apiChineseName": "外投广告上报接口",
+	"description": "外投广告回流上报接口",
+	"requestParams": [
+		{
+			"name": "trace_ids",
+			"type": "String[]",
+			"description": "广告跟踪id列表",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "time",
+			"type": "Number",
+			"description": "事件时间，当前毫秒数",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "Number",
+			"description": "事件类型：0 代表曝光事件；1 代表点击下载事件；2 代表下载完成事件；3 代表安装完成事件",
+			"required": true
+		},
+		{
+			"name": "client_ver_code",
+			"type": "Number",
+			"description": "客户端版本号",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "客户端设备标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rc",
+			"type": "Number",
+			"description": "响应码"
+		},
+		{
+			"name": "rm",
+			"type": "String",
+			"description": "响应消息"
+		}
+	]
+}

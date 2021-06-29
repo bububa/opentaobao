@@ -1,0 +1,41 @@
+{
+	"name": "yunos.tvpubadmin.content.child.rootnode.get",
+	"apiChineseName": "获取少儿大厅根类目接口",
+	"description": "通过此接口可获取少儿大厅根类目列表",
+	"requestParams": [
+		{
+			"name": "need_home_page",
+			"type": "Boolean",
+			"description": "是否需要首页目录"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "child_node_vo_list",
+			"type": "ChildNodeVo []",
+			"description": "类目列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "显示名称"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父类目ID"
+				},
+				{
+					"name": "parent_name",
+					"type": "String",
+					"description": "父类目名称"
+				}
+			]
+		}
+	]
+}

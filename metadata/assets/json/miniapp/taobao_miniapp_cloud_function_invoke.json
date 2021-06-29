@@ -1,0 +1,42 @@
+{
+	"name": "taobao.miniapp.cloud.function.invoke",
+	"apiChineseName": "外部触发云函数",
+	"description": "用户isv从外部触发聚石塔云函数的执行。",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "云函数名称",
+			"required": true
+		},
+		{
+			"name": "handler",
+			"type": "String",
+			"description": "指定云函数的handler",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "调用云函数时的传参（JSON格式）"
+		},
+		{
+			"name": "env",
+			"type": "String",
+			"description": "云环境",
+			"required": true
+		},
+		{
+			"name": "exts",
+			"type": "String",
+			"description": "扩展协议参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回参数，长度限制8个字符，超出部分会被截断"
+		}
+	]
+}

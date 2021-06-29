@@ -1,0 +1,101 @@
+{
+	"name": "youku.wenyuvideo.persion.search",
+	"apiChineseName": "根据人物名称查询人物列表",
+	"description": "根据人物名称查询人物列表",
+	"requestParams": [
+		{
+			"name": "person_name",
+			"type": "String",
+			"description": "人物名字，搜索规则是完全匹配，即只返回同名人物列表"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "PersonDo",
+					"description": "人物列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "人物ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "人物名字",
+							"required": true
+						},
+						{
+							"name": "thumb_url",
+							"type": "String",
+							"description": "图片",
+							"required": true
+						},
+						{
+							"name": "thumb_url_lg",
+							"type": "String",
+							"description": "300*300人物头像",
+							"required": true
+						},
+						{
+							"name": "poster_url",
+							"type": "String",
+							"description": "人物海报",
+							"required": true
+						},
+						{
+							"name": "poster_url_h",
+							"type": "String",
+							"description": "人物写真",
+							"required": true
+						},
+						{
+							"name": "person_desc",
+							"type": "String",
+							"description": "简介",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "HTTP请求状态",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "业务扩展数据",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "业务错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "业务错误提示",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

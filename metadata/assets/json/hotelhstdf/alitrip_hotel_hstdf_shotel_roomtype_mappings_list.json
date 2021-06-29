@@ -1,0 +1,148 @@
+{
+	"name": "alitrip.hotel.hstdf.shotel.roomtype.mappings.list",
+	"apiChineseName": "根据HID获取所有卖家房型匹配关系",
+	"description": "根据HID获取所有卖家房型匹配关系",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "HID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultSet",
+			"description": "top返回结果",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Results[]",
+					"description": "返回列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "matched",
+							"type": "Boolean",
+							"description": "是否匹配",
+							"required": true
+						},
+						{
+							"name": "room_type",
+							"type": "RoomTypePo",
+							"description": "卖家房型",
+							"required": true,
+							"subParams": [
+								{
+									"name": "rid",
+									"type": "Number",
+									"description": "rid",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房型名称",
+									"required": true
+								},
+								{
+									"name": "name_e",
+									"type": "String",
+									"description": "房型英文名称",
+									"required": true
+								},
+								{
+									"name": "bed_type",
+									"type": "String",
+									"description": "床型",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "面积",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "outer_id",
+									"required": true
+								},
+								{
+									"name": "window_type",
+									"type": "Number",
+									"description": "窗型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "std_room_type",
+							"type": "SroomTypePo",
+							"description": "标准房型",
+							"required": true,
+							"subParams": [
+								{
+									"name": "srid",
+									"type": "Number",
+									"description": "srid",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房型名称",
+									"required": true
+								},
+								{
+									"name": "name_e",
+									"type": "String",
+									"description": "房型英文名称",
+									"required": true
+								},
+								{
+									"name": "bed_type",
+									"type": "String",
+									"description": "床型",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "面积",
+									"required": true
+								},
+								{
+									"name": "window_type",
+									"type": "Number",
+									"description": "窗型，0:无窗,1:有窗,2:部分有窗,3:暗窗,4:部分暗窗",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

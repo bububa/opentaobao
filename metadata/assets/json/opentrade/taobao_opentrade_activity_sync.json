@@ -1,0 +1,75 @@
+{
+	"name": "taobao.opentrade.activity.sync",
+	"apiChineseName": "尖货交易活动信息同步",
+	"description": "尖货交易活动信息配置，创建或更新活动信息\n在活动时间开始前，所有用户（包括标记可购买的用户），无法购买商品；\n在活动时间内，标记可购买的用户可在小程序中跳转下单页，完成购买；\n在活动结束后，对限购不再限制，平台开放购买，用户可在小程序内、商品详情、购物车下单购买；",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "活动开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "活动结束时间（全流程结束时间，非排队结束时间）",
+			"required": true
+		},
+		{
+			"name": "activity_name",
+			"type": "String",
+			"description": "活动名称",
+			"required": true
+		},
+		{
+			"name": "item_id_list",
+			"type": "Number[]",
+			"description": "活动关联的商品列表，使用逗号(,)分割",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "活动开始时间"
+		},
+		{
+			"name": "item_ids",
+			"type": "String",
+			"description": "活动关联的商品列表，使用逗号(,)分割"
+		},
+		{
+			"name": "activity_name",
+			"type": "String",
+			"description": "活动名称"
+		},
+		{
+			"name": "appkey",
+			"type": "String",
+			"description": "创建活动的appkey"
+		},
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "排队活动ID"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "String",
+			"description": "最近修改时间"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "活动结束时间"
+		}
+	]
+}

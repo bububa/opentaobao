@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.ele.enterprise.restaurant.checkaddress",
+	"apiChineseName": "检查地址是否在餐厅配送范围内",
+	"description": "检查地址是否在餐厅配送范围内",
+	"requestParams": [
+		{
+			"name": "erestaurant_id",
+			"type": "String",
+			"description": "餐厅Id"
+		},
+		{
+			"name": "addresses",
+			"type": "String",
+			"description": "[{\"longitude\": 1, \"latitude\": 2}], json 字符串, 每个元素是 一个 dict{longitude, latitude, …} 其他字段原样返回"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "enterprise_datas",
+			"type": "EnterpriseData []",
+			"description": "返回值信息",
+			"subParams": [
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "餐厅维度",
+					"required": true
+				},
+				{
+					"name": "is_deliverable",
+					"type": "Boolean",
+					"description": "是否可配送",
+					"required": true
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "餐厅精度",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "enterprise_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "enterprise_msg",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "enterprise_requestid",
+			"type": "String",
+			"description": "请求id"
+		}
+	]
+}

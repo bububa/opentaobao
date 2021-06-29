@@ -1,0 +1,244 @@
+{
+	"name": "alibaba.ailabs.aligenie.opencontent.scenepush",
+	"apiChineseName": "音频场景接入接口",
+	"description": "天猫精灵音频挂靠场景接入",
+	"requestParams": [
+		{
+			"name": "scene_type",
+			"type": "Number",
+			"description": "0 无场景接入  1 关联应用接入"
+		},
+		{
+			"name": "scene_value",
+			"type": "String",
+			"description": "如果关联应用此字段为应用id"
+		},
+		{
+			"name": "batch_content",
+			"type": "BatchContent",
+			"description": "详细内容列表",
+			"subParams": [
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目ID，具体参见开放平台类目相关描述",
+					"required": true
+				},
+				{
+					"name": "open_contents",
+					"type": "OpenContent[]",
+					"description": "内容信息",
+					"subParams": [
+						{
+							"name": "album_description",
+							"type": "String",
+							"description": "内容所属专辑或分类描述信息"
+						},
+						{
+							"name": "album_raw_id",
+							"type": "Number",
+							"description": "内容在原平台所属专辑或分类的id"
+						},
+						{
+							"name": "album_title",
+							"type": "String",
+							"description": "内容所属专辑或分类名称/标题,这里如果专辑标题是空则不同步专辑信息"
+						},
+						{
+							"name": "author",
+							"type": "Author",
+							"description": "作者信息",
+							"subParams": [
+								{
+									"name": "content_author",
+									"type": "String",
+									"description": "内容作者，对应音乐为作词、作曲人，对应小说故事为原著作者"
+								},
+								{
+									"name": "voice_author",
+									"type": "String",
+									"description": "主播，演唱者，演播者"
+								}
+							]
+						},
+						{
+							"name": "charge_type",
+							"type": "Number",
+							"description": "0-免费、1-单篇售卖，2-专辑售卖，3-商业化一期类型",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "内容描述信息(限长500)"
+						},
+						{
+							"name": "description_type",
+							"type": "String",
+							"description": "描述类型,如果描述是TTS类型会做TTS处理"
+						},
+						{
+							"name": "duration",
+							"type": "Number",
+							"description": "时长(单位:秒)",
+							"required": true
+						},
+						{
+							"name": "extend_info",
+							"type": "String",
+							"description": "其他扩展字段，不同类型内容有不同要求，具体请参加详细说明文档extend_info字段部分"
+						},
+						{
+							"name": "image_url",
+							"type": "ImageUrl",
+							"description": "封面图片信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "large",
+									"type": "String",
+									"description": "大图链接(具体大小范围暂无标准，接入方自定)"
+								},
+								{
+									"name": "medium",
+									"type": "String",
+									"description": "中图链接(具体大小范围暂无标准，接入方自定)"
+								},
+								{
+									"name": "small",
+									"type": "String",
+									"description": "小图链接(具体大小范围暂无标准，接入方自定)"
+								},
+								{
+									"name": "img",
+									"type": "String",
+									"description": "如果不知道放那个就传默认图片"
+								}
+							]
+						},
+						{
+							"name": "operation",
+							"type": "String",
+							"description": "操作方式，支持新增和删除操作(ADD/DELETE)",
+							"required": true
+						},
+						{
+							"name": "play_count",
+							"type": "Number",
+							"description": "内容在原平台播放次数",
+							"required": true
+						},
+						{
+							"name": "play_order",
+							"type": "Number",
+							"description": "播放顺序 0 正序 1 倒序",
+							"required": true
+						},
+						{
+							"name": "play_urls",
+							"type": "PlayUrl[]",
+							"description": "播放链接",
+							"subParams": [
+								{
+									"name": "bitrate",
+									"type": "Number",
+									"description": "码率"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "节目音视频类型，目前支持audio及video两种类型"
+								},
+								{
+									"name": "url",
+									"type": "String",
+									"description": "可播放链接"
+								}
+							]
+						},
+						{
+							"name": "product_desc",
+							"type": "String",
+							"description": "产品描述信息"
+						},
+						{
+							"name": "raw_id",
+							"type": "Number",
+							"description": "内容在原平台的id，当只推送专辑信息时，此值可填0",
+							"required": true
+						},
+						{
+							"name": "release_time",
+							"type": "Number",
+							"description": "内容发布时间，1970年1月1日至当前的秒数(unix时间戳)",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "sort_num",
+							"type": "Number",
+							"description": "在有所属专辑/分类的场景下，标识此音频在专辑/分类下的顺序值，从1开始"
+						},
+						{
+							"name": "tag_ids",
+							"type": "Number[]",
+							"description": "标签id见智能应用平台"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "内容标题"
+						},
+						{
+							"name": "vip_free",
+							"type": "Boolean",
+							"description": "是否vip付费",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "Number",
+							"description": "成本价(单位分)，没有明确区分就成本最高最低传一样的值"
+						},
+						{
+							"name": "suggest_min_price",
+							"type": "Number",
+							"description": "最小建议零售价(单位分)，没有明确区分就成本最高最低传一样的值"
+						},
+						{
+							"name": "suggest_max_price",
+							"type": "Number",
+							"description": "最大建议零售价(单位分)，没有明确区分就成本最高最低传一样的值"
+						},
+						{
+							"name": "is_album_audition",
+							"type": "Boolean",
+							"description": "专辑是否支持试听,默认为false"
+						},
+						{
+							"name": "is_audition",
+							"type": "Boolean",
+							"description": "内容分集是否支持试听,默认为false"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "返回信息"
+		}
+	]
+}

@@ -1,0 +1,143 @@
+{
+	"name": "alibaba.damai.mev.open.pushfaceelement",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票面元素接口pushFaceElement",
+	"description": "pushFaceElement",
+	"requestParams": [
+		{
+			"name": "push_face_element_param_list",
+			"type": "ThirdFaceElementPushOpenParam[]",
+			"description": "入参pushFaceElementParamList",
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "data_type",
+					"type": "Number",
+					"description": "变量类型"
+				},
+				{
+					"name": "date_format",
+					"type": "String",
+					"description": "日期格式"
+				},
+				{
+					"name": "element_type",
+					"type": "Number",
+					"description": "元素类型"
+				},
+				{
+					"name": "ext_name",
+					"type": "String",
+					"description": "扩展字段名称"
+				},
+				{
+					"name": "ext_type",
+					"type": "String",
+					"description": "扩展字段类型"
+				},
+				{
+					"name": "face_id",
+					"type": "Number",
+					"description": "票面id"
+				},
+				{
+					"name": "font",
+					"type": "String",
+					"description": "字体"
+				},
+				{
+					"name": "font_orientation",
+					"type": "Number",
+					"description": "字体朝向"
+				},
+				{
+					"name": "font_shape",
+					"type": "Number",
+					"description": "字体形状"
+				},
+				{
+					"name": "font_size",
+					"type": "Number",
+					"description": "字号"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "元素高度"
+				},
+				{
+					"name": "horizontal_coordinate",
+					"type": "Number",
+					"description": "横坐标"
+				},
+				{
+					"name": "push_time",
+					"type": "Date",
+					"description": "推送时间"
+				},
+				{
+					"name": "static_pic_url",
+					"type": "String",
+					"description": "图片url"
+				},
+				{
+					"name": "static_text_content",
+					"type": "String",
+					"description": "图片内容"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "系统id"
+				},
+				{
+					"name": "vertical_coordinate",
+					"type": "Number",
+					"description": "纵坐标"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "元素宽度"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

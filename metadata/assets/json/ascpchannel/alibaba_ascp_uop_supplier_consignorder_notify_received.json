@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.ascp.uop.supplier.consignorder.notify.received",
+	"apiChineseName": "商家仓物流发货推单接单回告",
+	"description": "ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单信息",
+	"requestParams": [
+		{
+			"name": "supplier_id",
+			"type": "String",
+			"description": "qimen.alibaba.ascp.uop.consignorder.notify报文中的supplierId字段值",
+			"required": true
+		},
+		{
+			"name": "biz_order_code",
+			"type": "String",
+			"description": "qimen.alibaba.ascp.uop.consignorder.notify报文中bizOrderCode履约单号",
+			"required": true
+		},
+		{
+			"name": "biz_time",
+			"type": "Date",
+			"description": "业务请求时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consignorder_notify_received_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

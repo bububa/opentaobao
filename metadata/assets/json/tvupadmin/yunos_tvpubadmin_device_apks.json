@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.device.apks",
+	"apiChineseName": "获取停开服apk列表",
+	"description": "获取停开服apk列表",
+	"requestParams": [
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "apk_list",
+			"type": "DicControlApkDO []",
+			"description": "object"
+		}
+	]
+}

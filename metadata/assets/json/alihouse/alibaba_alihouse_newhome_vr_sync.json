@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.alihouse.newhome.vr.sync",
+	"apiChineseName": "VR关系数据同步",
+	"description": "对接易居VR关系数据迁移",
+	"requestParams": [
+		{
+			"name": "extracted_code",
+			"type": "String",
+			"description": "VR提取码"
+		},
+		{
+			"name": "layout_info_id",
+			"type": "String",
+			"description": "户型ID"
+		},
+		{
+			"name": "is_valid",
+			"type": "String",
+			"description": "是否生效"
+		},
+		{
+			"name": "cover_image",
+			"type": "String",
+			"description": "封面图"
+		},
+		{
+			"name": "vr_url",
+			"type": "String",
+			"description": "vr展示链接"
+		},
+		{
+			"name": "marking_layout_img",
+			"type": "String",
+			"description": "营销户型图"
+		},
+		{
+			"name": "is_single_layout",
+			"type": "Number",
+			"description": "是否是单层 1 是 0 否"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "户型ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

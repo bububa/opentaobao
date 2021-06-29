@@ -1,0 +1,159 @@
+{
+	"name": "tmall.car.xcar.synchronize.car.model.data",
+	"apiChineseName": "爱车车型数据同步",
+	"description": "爱车汽车车型数据同步到天猫",
+	"requestParams": [
+		{
+			"name": "param_x_car_sys_model_d_t_o",
+			"type": "XCarSysModelDto",
+			"description": "传入对象描述",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_pid",
+					"type": "Number",
+					"description": "品牌pid",
+					"required": true
+				},
+				{
+					"name": "brand_vid",
+					"type": "Number",
+					"description": "品牌vid",
+					"required": true
+				},
+				{
+					"name": "car_model_maximum_decline",
+					"type": "String",
+					"description": "车型最高降幅"
+				},
+				{
+					"name": "fuel_cost",
+					"type": "String",
+					"description": "燃油费用"
+				},
+				{
+					"name": "insurance_free",
+					"type": "String",
+					"description": "保险费用"
+				},
+				{
+					"name": "keep_car_free",
+					"type": "String",
+					"description": "养车费用"
+				},
+				{
+					"name": "line_pid",
+					"type": "Number",
+					"description": "车系属性id",
+					"required": true
+				},
+				{
+					"name": "line_vid",
+					"type": "Number",
+					"description": "车系值id",
+					"required": true
+				},
+				{
+					"name": "local_ref_price_range",
+					"type": "String",
+					"description": "本地参考价"
+				},
+				{
+					"name": "maintain_cost",
+					"type": "String",
+					"description": "保养费用"
+				},
+				{
+					"name": "manu_gui_price",
+					"type": "String",
+					"description": "厂商指导价"
+				},
+				{
+					"name": "media_config",
+					"type": "String",
+					"description": "媒体库，超大json"
+				},
+				{
+					"name": "model_pid",
+					"type": "Number",
+					"description": "型号属性id",
+					"required": true
+				},
+				{
+					"name": "model_vid",
+					"type": "Number",
+					"description": "型号值id",
+					"required": true
+				},
+				{
+					"name": "new_car_model",
+					"type": "Number",
+					"description": "1.新车上市 0.非新车上市"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态0.无效 1有效",
+					"required": true
+				},
+				{
+					"name": "year_pid",
+					"type": "Number",
+					"description": "年款属性id",
+					"required": true
+				},
+				{
+					"name": "year_vid",
+					"type": "Number",
+					"description": "年款值id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultVo",
+			"description": "返回对象描述",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "调用时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "接口处理结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否正常",
+					"required": true
+				}
+			]
+		}
+	]
+}

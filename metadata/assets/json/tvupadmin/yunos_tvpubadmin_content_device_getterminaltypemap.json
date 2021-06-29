@@ -1,0 +1,12 @@
+{
+	"name": "yunos.tvpubadmin.content.device.getterminaltypemap",
+	"apiChineseName": "获取终端类型表",
+	"description": "获取终端类型表",
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "map"
+		}
+	]
+}

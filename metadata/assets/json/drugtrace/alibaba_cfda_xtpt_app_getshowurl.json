@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.cfda.xtpt.app.getshowurl",
+	"apiChineseName": "协同平台码查询页面url",
+	"description": "协同平台码查询页面url",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "http_status_code",
+			"type": "Number",
+			"description": "状态"
+		}
+	]
+}

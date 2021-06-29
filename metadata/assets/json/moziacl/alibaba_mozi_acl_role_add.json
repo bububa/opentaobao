@@ -1,0 +1,173 @@
+{
+	"name": "alibaba.mozi.acl.role.add",
+	"apiChineseName": "新增一个角色",
+	"description": "新增一个角色",
+	"requestParams": [
+		{
+			"name": "create_role_request",
+			"type": "CreateRoleRequest",
+			"description": "创建角色请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "target_app_name",
+					"type": "String",
+					"description": "角色归属的应用name，不传则以appKey对应的应用为准"
+				},
+				{
+					"name": "add_permission_names",
+					"type": "String[]",
+					"description": "角色包含的权限name列表"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "角色描述",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "角色中文名称",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "角色类型，重点注意：如果创建租户内角色，则必须填“Realm_Role”，ISV开发者创建应用侧角色，则可不填"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "请求扩展字段"
+				},
+				{
+					"name": "data_permission_json_str",
+					"type": "String",
+					"description": "角色包含的数据权限，以json传入"
+				},
+				{
+					"name": "title_e_n",
+					"type": "String",
+					"description": "角色英文名称",
+					"required": true
+				},
+				{
+					"name": "is_data",
+					"type": "Boolean",
+					"description": "是否数据权限，角色没有挂载数据权限，则为false"
+				},
+				{
+					"name": "rule_type",
+					"type": "String",
+					"description": "角色审批规则类型(random、self 两种类型)"
+				},
+				{
+					"name": "public_attri",
+					"type": "String",
+					"description": "角色申请规则(1表示公开可申请，2表示公开不可申请、3表示不公开)"
+				},
+				{
+					"name": "assign_level",
+					"type": "String",
+					"description": "风险等级：L表示低风险，M表示中风，H表示高风险"
+				},
+				{
+					"name": "principal_param",
+					"type": "BucUserPrincipalParam",
+					"description": "操作主体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "操作主体所在的租户Id",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "操作人的userId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "operator_user_id",
+					"type": "Number",
+					"description": "操作人的userId"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "角色唯一code，在ACL中全局唯一",
+					"required": true
+				},
+				{
+					"name": "owner_user_id",
+					"type": "Number",
+					"description": "角色归属人userId"
+				},
+				{
+					"name": "revoke_rule",
+					"type": "String",
+					"description": "角色回收策略(REVOKE代表用户所在部门发生变化时，该用户的权限将被回收，RESERVE代表用户所在部门发生变化时，该用户的权限将被保留，TRANSFER_REVOKE代表个人主动转岗时回收 - 只在小二主动申请转岗时回收本权限)",
+					"required": true
+				},
+				{
+					"name": "approver_user_ids",
+					"type": "Number[]",
+					"description": "角色审批人userId列表"
+				},
+				{
+					"name": "extention_map",
+					"description": "扩展字段"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CreateRoleResult",
+			"description": "创建角色结果对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "创建角色返回data，此处无数据返回",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功，若成功则为true",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求唯一id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "响应message，若失败则返回失败原因",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "扩展字段，与入参扩展字段值相同",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应code",
+					"required": true
+				}
+			]
+		}
+	]
+}

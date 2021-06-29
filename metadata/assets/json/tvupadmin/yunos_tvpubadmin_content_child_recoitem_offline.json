@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.child.recoitem.offline",
+	"apiChineseName": "下线少儿推荐内容接口",
+	"description": "下线少儿推荐内容接口",
+	"requestParams": [
+		{
+			"name": "rec_item_id",
+			"type": "Number",
+			"description": "推荐内容ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "下线操作结果"
+		}
+	]
+}

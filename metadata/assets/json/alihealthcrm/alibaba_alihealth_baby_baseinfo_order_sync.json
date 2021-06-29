@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.alihealth.baby.baseinfo.order.sync",
+	"apiChineseName": "alibaba.alihealth.baby.baseinfo.order.sync",
+	"description": "育学园将订单信息回传给我们",
+	"requestParams": [
+		{
+			"name": "tp_user_id",
+			"type": "Number",
+			"description": "健康id",
+			"required": true
+		},
+		{
+			"name": "commodity_id",
+			"type": "String",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "commodity_name",
+			"type": "String",
+			"description": "商品名称",
+			"required": true
+		},
+		{
+			"name": "amount",
+			"type": "BigDecimal",
+			"description": "价钱",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态，1是已支付，2是已退款",
+			"required": true
+		},
+		{
+			"name": "order_time",
+			"type": "String",
+			"description": "订单时间",
+			"required": true
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_msg",
+			"type": "String",
+			"description": "操作提示"
+		},
+		{
+			"name": "return_code",
+			"type": "Number",
+			"description": "操作码"
+		}
+	]
+}

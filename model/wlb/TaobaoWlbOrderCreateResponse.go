@@ -19,7 +19,9 @@ type TaobaoWlbOrderCreateAPIResponse struct {
 
 type TaobaoWlbOrderCreateResponse struct {
     XMLName xml.Name `xml:"wlb_order_create_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 物流宝订单创建成功后，返回物流宝的订单编号；如果订单创建失败，该字段为空。
     

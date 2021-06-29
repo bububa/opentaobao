@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.wdk.item.merchantsku.create",
+	"apiChineseName": "商家商品信息新建",
+	"description": "商家商品信息新建",
+	"requestParams": [
+		{
+			"name": "params",
+			"type": "String",
+			"description": "新建商品参数，是个json字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

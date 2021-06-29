@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.idle.rent.item.sku.update",
+	"apiChineseName": "更新/增加sku信息",
+	"description": "更新/增加sku信息",
+	"requestParams": [
+		{
+			"name": "sku",
+			"type": "ItemSkuDto",
+			"description": "sku信息，更新后skuId保持不变",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "库存, 库存为0不会删除sku",
+					"required": true
+				},
+				{
+					"name": "prop_list",
+					"type": "ItemPvPairDto[]",
+					"description": "属性列表",
+					"subParams": [
+						{
+							"name": "prop_text",
+							"type": "String",
+							"description": "属性名"
+						},
+						{
+							"name": "value_text",
+							"type": "String",
+							"description": "属性值"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

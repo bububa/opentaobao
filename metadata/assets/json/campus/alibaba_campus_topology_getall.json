@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.campus.topology.getall",
+	"apiChineseName": "获取管理园区的规则拓扑接口",
+	"description": "获取所属园区的所有规则拓扑图",
+	"requestParams": [
+		{
+			"name": "campus_id",
+			"type": "Number",
+			"description": "园区id",
+			"required": true
+		},
+		{
+			"name": "company_id",
+			"type": "Number",
+			"description": "公司id"
+		},
+		{
+			"name": "system_id",
+			"type": "String",
+			"description": "系统id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "content_list",
+					"type": "Json[]",
+					"description": "规则列表数据",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "错误级别",
+					"required": true
+				},
+				{
+					"name": "error_ext_info",
+					"type": "Json",
+					"description": "错误扩展信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

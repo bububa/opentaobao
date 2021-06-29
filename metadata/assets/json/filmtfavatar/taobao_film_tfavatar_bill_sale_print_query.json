@@ -1,0 +1,94 @@
+{
+	"name": "taobao.film.tfavatar.bill.sale.print.query",
+	"apiChineseName": "获取影院卖品账单-核销账单",
+	"description": "获取影院卖品账单-核销账单\n返回值data属于加密字段, 并非大字段.",
+	"requestParams": [
+		{
+			"name": "open_app_key",
+			"type": "String",
+			"description": "自运营开放平台APPKEY",
+			"required": true
+		},
+		{
+			"name": "cinema_id",
+			"type": "Number",
+			"description": "影院ID",
+			"required": true
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "included_order_status",
+			"type": "String[]",
+			"description": "包含的订单状态, 默认不填",
+			"maxListSize": 20
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "offset 下标, 从0开始"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "ReturnValue",
+					"description": "返回参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": "加密数据 包含: 淘宝订单号,系统商订单号,影院ID,影院名称,售票类型,支付时间,退款时间,改签时间,场次时间,影片名,类型,影厅,是否会员卡订单(票类),张数,影院实结金额,实结票款,原始结算价,回传售票系统价格,最低限价,影院总补贴,影城卡补贴,自促立减补贴,自促代金券补贴,自促影城卡首单补贴,平台票补,影城服务费,退改签手续费,活动成本总金额,会员赠票,联合促销金额,满赠卡编号,折扣卡编号,备注,是否后结算",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数据数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

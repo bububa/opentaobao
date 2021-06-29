@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.bill.rootcode.get",
+	"apiChineseName": "获取最外层包装码",
+	"description": "获取最外层包装码",
+	"requestParams": [
+		{
+			"name": "app_code",
+			"type": "String",
+			"description": "用户身份认证"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "最外层码"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		}
+	]
+}

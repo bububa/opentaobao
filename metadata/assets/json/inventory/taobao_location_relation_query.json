@@ -1,0 +1,100 @@
+{
+	"name": "taobao.location.relation.query",
+	"apiChineseName": "地点关联关系查询",
+	"description": "地点关联关系查询 \n门店和仓库关联关系查询",
+	"requestParams": [
+		{
+			"name": "location_relation",
+			"type": "LocationRelationDto",
+			"description": "关系查询",
+			"required": true,
+			"subParams": [
+				{
+					"name": "target_inv_store_type",
+					"type": "Number",
+					"description": "实体类型 2：仓库  6：门店 （target,sorce 二选一填写，都填写报错）"
+				},
+				{
+					"name": "target_store_code",
+					"type": "String",
+					"description": "实体code"
+				},
+				{
+					"name": "source_inv_store_type",
+					"type": "Number",
+					"description": "实体类型 2：仓库  6：门店"
+				},
+				{
+					"name": "source_store_code",
+					"type": "String",
+					"description": "实体code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "location_relation_list",
+					"type": "LocationRelationDto[]",
+					"description": "地点关系",
+					"required": true,
+					"subParams": [
+						{
+							"name": "target_store_code",
+							"type": "String",
+							"description": "实体code",
+							"required": true
+						},
+						{
+							"name": "source_inv_store_type",
+							"type": "Number",
+							"description": "实体类型 2：仓库  6：门店",
+							"required": true
+						},
+						{
+							"name": "source_store_code",
+							"type": "String",
+							"description": "实体code",
+							"required": true
+						},
+						{
+							"name": "target_inv_store_type",
+							"type": "Number",
+							"description": "实体类型 2：仓库  6：门店",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态 0 正常  -1 删除",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

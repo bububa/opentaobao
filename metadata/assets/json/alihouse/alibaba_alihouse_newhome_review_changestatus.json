@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihouse.newhome.review.changestatus",
+	"apiChineseName": "楼盘测评草稿状态同步",
+	"description": "楼盘测评草稿状态更新",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部测评id",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "0 失效 1 有效",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败信息",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "更新结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -15,7 +15,7 @@ type EntryOrderCreateRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenEntryorderCreateMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

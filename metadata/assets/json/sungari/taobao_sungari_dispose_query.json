@@ -1,0 +1,85 @@
+{
+	"name": "taobao.sungari.dispose.query",
+	"apiChineseName": "商品商家处置结果查询",
+	"description": "红盾云桥同政府合作，将线下寄函的商品商家处置转为线上处理",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "String[]",
+			"description": "查询的key列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "服务是否调用成功，1：成功 2：失败 11：重复提交 其他：失败",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "DisposeResultVo[]",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "finish_time",
+							"type": "String",
+							"description": "完成时间",
+							"required": true
+						},
+						{
+							"name": "result",
+							"type": "String",
+							"description": "结果描述",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态描述",
+							"required": true
+						},
+						{
+							"name": "reply_key",
+							"type": "String",
+							"description": "回复函保存的ossKey，需要自行下载",
+							"required": true
+						},
+						{
+							"name": "create_person",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "reply_url",
+							"type": "String",
+							"description": "回复函链接",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

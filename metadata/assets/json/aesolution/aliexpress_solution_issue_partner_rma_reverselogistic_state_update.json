@@ -1,0 +1,58 @@
+{
+	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.state.update",
+	"description": "Updates the reverse logistics state for after sales services",
+	"requestParams": [
+		{
+			"name": "logistic_order_state_update_request",
+			"type": "LogisticOrderStateUpdateRequest",
+			"description": "Logistic order state update request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "rma_logistic_order_state",
+					"type": "RmaLogisticOrderState",
+					"description": "Logistic order state information",
+					"required": true,
+					"subParams": [
+						{
+							"name": "state_date",
+							"type": "Date",
+							"description": "State date. PST time",
+							"required": true
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "values CANCELLED, PRODUCT_CAPTURED, INCIDENT, PRODUCT_DELIVERED",
+							"required": true
+						},
+						{
+							"name": "order_state_detail",
+							"type": "String",
+							"description": "Logistic order detail"
+						}
+					]
+				},
+				{
+					"name": "tracking_code",
+					"type": "String",
+					"description": "Tracking code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code_error",
+			"type": "String",
+			"description": "Error code. 0 value is no error."
+		},
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "Error description"
+		}
+	]
+}

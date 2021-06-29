@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.idle.order.dummy.send",
+	"apiChineseName": "闲鱼无需物流发货",
+	"description": "适用于电子卡券等虚拟商品不需要物流的商品发货。",
+	"requestParams": [
+		{
+			"name": "param_order_dummy_send_request",
+			"type": "OrderDummySendRequest",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "需要虚拟发货的订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否发货成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

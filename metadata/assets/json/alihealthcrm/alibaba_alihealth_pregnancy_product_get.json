@@ -1,0 +1,122 @@
+{
+	"name": "alibaba.alihealth.pregnancy.product.get",
+	"apiChineseName": "备孕首页获取达人配置商品",
+	"description": "备孕首页获取达人配置商品",
+	"requestParams": [
+		{
+			"name": "scene_id",
+			"type": "Number",
+			"description": "tab页对应id",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "起始页码，大于0",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "查询内容主题",
+					"required": true,
+					"subParams": [
+						{
+							"name": "contents",
+							"type": "Contents[]",
+							"description": "文章列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "title",
+									"type": "String",
+									"description": "文章标题",
+									"required": true
+								},
+								{
+									"name": "tags",
+									"type": "String",
+									"description": "文章标签",
+									"required": true
+								},
+								{
+									"name": "photo_url",
+									"type": "String",
+									"description": "图片",
+									"required": true
+								},
+								{
+									"name": "content",
+									"type": "String",
+									"description": "内容",
+									"required": true
+								},
+								{
+									"name": "link_url",
+									"type": "String",
+									"description": "链接",
+									"required": true
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "商品计数",
+									"required": true
+								},
+								{
+									"name": "items",
+									"type": "Json[]",
+									"description": "商品列表",
+									"required": true
+								},
+								{
+									"name": "publish_time",
+									"type": "String",
+									"description": "publishTime",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_page",
+							"type": "String",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "String",
+							"description": "总条数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作代码",
+					"required": true
+				}
+			]
+		}
+	]
+}

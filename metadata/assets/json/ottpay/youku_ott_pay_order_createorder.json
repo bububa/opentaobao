@@ -1,0 +1,85 @@
+{
+	"name": "youku.ott.pay.order.createorder",
+	"apiChineseName": "创建订单",
+	"description": "ottpay创建订单",
+	"requestParams": [
+		{
+			"name": "buyer",
+			"type": "String",
+			"description": "下单账号， cp账号"
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "商品id"
+		},
+		{
+			"name": "product_name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "cp订单号"
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "价格， 单位：分"
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "回调接口"
+		},
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "订单无关的其他参数,如埋点统计的utdid, mac地址等"
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "订单类型，1为连续包月类型"
+		},
+		{
+			"name": "real_price",
+			"type": "String",
+			"description": "连续包月实际参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "TvOrderResultDTO",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "orderNo",
+					"required": true
+				},
+				{
+					"name": "cp_order_no",
+					"type": "String",
+					"description": "cpOrderNo",
+					"required": true
+				},
+				{
+					"name": "qcode_url",
+					"type": "String",
+					"description": "qcodeUrl",
+					"required": true
+				}
+			]
+		}
+	]
+}

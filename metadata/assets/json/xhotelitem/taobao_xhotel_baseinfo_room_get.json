@@ -1,0 +1,123 @@
+{
+	"name": "taobao.xhotel.baseinfo.room.get",
+	"apiChineseName": "酒店房型与房价查询",
+	"description": "根据outHid/hid获取酒店的房型和价格信息",
+	"requestParams": [
+		{
+			"name": "out_hid",
+			"type": "String",
+			"description": "卖家系统中的酒店ID。",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "用于标示该酒店发布的渠道信息"
+		},
+		{
+			"name": "is_need_rate_plan",
+			"type": "Boolean",
+			"description": "是否需要房价基本信息（false为不需要），默认为需要"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "xhotel_base_info",
+					"type": "XHotelInfoWithRoom",
+					"description": "酒店基础信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "room_type_list",
+							"type": "RoomType[]",
+							"description": "房型基础信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "rate_plan_list",
+									"type": "RatepPlan[]",
+									"description": "房价列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "系统商",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "房价名称",
+											"required": true
+										},
+										{
+											"name": "status",
+											"type": "Number",
+											"description": "1：开启2：关闭。",
+											"required": true
+										},
+										{
+											"name": "rate_plan_code",
+											"type": "String",
+											"description": "ratePlanCode",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "系统商",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房型名称",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "房型状态。0:正常，-1:删除，-2:停售",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "outerId",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

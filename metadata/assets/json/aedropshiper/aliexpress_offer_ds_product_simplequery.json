@@ -1,0 +1,132 @@
+{
+	"name": "aliexpress.offer.ds.product.simplequery",
+	"apiChineseName": "Dropshipper查询单个商品的简易信息",
+	"description": "提供给Dropshipper的通过商品ID查找商品简易信息（包括SKU-价格/库存、产品状态等）的接口，只有特定买家可以使用",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "local_country",
+			"type": "String",
+			"description": "国家"
+		},
+		{
+			"name": "local_language",
+			"type": "String",
+			"description": "语言"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_offer_site_sale_price",
+			"type": "String",
+			"description": "网站折扣后价格"
+		},
+		{
+			"name": "total_available_stock",
+			"type": "Number",
+			"description": "库存"
+		},
+		{
+			"name": "aeop_ae_product_s_k_us",
+			"type": "AeopAeProductSku []",
+			"description": "商品的SKU信息",
+			"subParams": [
+				{
+					"name": "aeop_s_k_u_property_list",
+					"type": "AeopSkuProperty[]",
+					"description": "SKU属性对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_property_id",
+							"type": "Number",
+							"description": "SKU属性ID",
+							"required": true
+						},
+						{
+							"name": "sku_image",
+							"type": "String",
+							"description": "SKU图片地址",
+							"required": true
+						},
+						{
+							"name": "property_value_id",
+							"type": "Number",
+							"description": "SKU属性值ID",
+							"required": true
+						},
+						{
+							"name": "property_value_definition_name",
+							"type": "String",
+							"description": "属性值自定义名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "s_k_u_available_stock",
+					"type": "Number",
+					"description": "sku库存",
+					"required": true
+				},
+				{
+					"name": "sku_stock",
+					"type": "Boolean",
+					"description": "Sku库存,数据格式有货true，无货false；至少有一条sku记录是有货的。",
+					"required": true
+				},
+				{
+					"name": "sku_price",
+					"type": "String",
+					"description": "Sku价格。取值范围:0.01-100000;单位:美元。 如:200.07，表示:200美元7分。需要在正确的价格区间内。",
+					"required": true
+				},
+				{
+					"name": "ipm_sku_stock",
+					"type": "Number",
+					"description": "SKU实际可售库存属性ipmSkuStock，该属性值的合理取值范围为0~999999，如该商品有SKU时，请确保至少有一个SKU是有货状态，也就是ipmSkuStock取值是1~999999，在整个商品纬度库存值的取值范围是1~999999。 如果同时设置了skuStock属性，那么系统以ipmSkuStock属性为优先；如果没有设置ipmSkuStock属性，那么系统会根据skuStock属性进行设置库存，true表示999，false表示0。",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "String",
+					"description": "SKU ID",
+					"required": true
+				},
+				{
+					"name": "currency_code",
+					"type": "String",
+					"description": "产品的货币单位。美元: USD, 卢布: RUB",
+					"required": true
+				},
+				{
+					"name": "offer_sale_price",
+					"type": "String",
+					"description": "sku折扣价格",
+					"required": true
+				},
+				{
+					"name": "offer_bulk_sale_price",
+					"type": "String",
+					"description": "sku批量折扣价",
+					"required": true
+				},
+				{
+					"name": "sku_bulk_order",
+					"type": "Number",
+					"description": "最少起批的数量",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "product_status_type",
+			"type": "String",
+			"description": "产品的状态"
+		}
+	]
+}

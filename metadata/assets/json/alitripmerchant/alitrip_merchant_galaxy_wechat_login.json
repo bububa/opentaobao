@@ -1,0 +1,156 @@
+{
+	"name": "alitrip.merchant.galaxy.wechat.login",
+	"apiChineseName": "星河-用户使用微信登陆",
+	"description": "星河产品=用户微信小程序登陆",
+	"requestParams": [
+		{
+			"name": "tenant_key",
+			"type": "String",
+			"description": "租户身份信息",
+			"required": true
+		},
+		{
+			"name": "login_param",
+			"type": "LoginParam",
+			"description": "微信小程序登陆请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "info_iv",
+					"type": "String",
+					"description": "用户信息初始化向量",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "微信认证code",
+					"required": true
+				},
+				{
+					"name": "encrypted_phone",
+					"type": "String",
+					"description": "加密的手机信息",
+					"required": true
+				},
+				{
+					"name": "signature",
+					"type": "String",
+					"description": "验签数据完整签名",
+					"required": true
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "用户ip",
+					"required": true
+				},
+				{
+					"name": "encrypted_info",
+					"type": "String",
+					"description": "用户信息的加密数据",
+					"required": true
+				},
+				{
+					"name": "phone_iv",
+					"type": "String",
+					"description": "解密用户手机号的初始化向量",
+					"required": true
+				},
+				{
+					"name": "raw_data",
+					"type": "String",
+					"description": "用户的基本信息",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "用户注册来源",
+					"required": true
+				},
+				{
+					"name": "old_version",
+					"type": "Boolean",
+					"description": "是否是老版本",
+					"required": true
+				},
+				{
+					"name": "new_userinfo",
+					"type": "NewUserInfo",
+					"description": "新版本用户信息",
+					"subParams": [
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "gender",
+							"type": "Number",
+							"description": "性别"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "avatar_url",
+							"type": "String",
+							"description": "头像"
+						},
+						{
+							"name": "nick_name",
+							"type": "String",
+							"description": "昵称"
+						},
+						{
+							"name": "language",
+							"type": "String",
+							"description": "语言"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "默认描述",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "token",
+					"type": "String",
+					"description": "token",
+					"required": true
+				}
+			]
+		}
+	]
+}

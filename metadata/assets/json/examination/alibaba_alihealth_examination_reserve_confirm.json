@@ -1,0 +1,212 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.confirm",
+	"apiChineseName": "体检机构对接_体检套餐预定确认",
+	"description": "向体检机构确认用户购买的体检套餐信息",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户唯一码"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "体检人姓名"
+		},
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约唯一标识"
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"description": "性别(0-男;1-女;)"
+		},
+		{
+			"name": "birthday",
+			"type": "String",
+			"description": "出生日期"
+		},
+		{
+			"name": "reserve_date",
+			"type": "String",
+			"description": "预约时间"
+		},
+		{
+			"name": "package_code",
+			"type": "String",
+			"description": "体检套餐编码"
+		},
+		{
+			"name": "married",
+			"type": "String",
+			"description": "婚否(0-未婚; 1-已婚)"
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "店铺ID"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "电话号码"
+		},
+		{
+			"name": "cert_type",
+			"type": "String",
+			"description": "证件类型(0-身份证; 1-护照; 2-军官证)"
+		},
+		{
+			"name": "cert_number",
+			"type": "String",
+			"description": "证件号"
+		},
+		{
+			"name": "company",
+			"type": "String",
+			"description": "所属公司"
+		},
+		{
+			"name": "department",
+			"type": "String",
+			"description": "所属部门"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "报告邮寄地址"
+		},
+		{
+			"name": "add_items",
+			"type": "AddItem[]",
+			"description": "加项列表",
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号，isv需要进行校验版本号是否过期，判断加项信息是否已更改，健康未同步"
+				},
+				{
+					"name": "isv_item_id",
+					"type": "String",
+					"description": "加项id"
+				}
+			]
+		},
+		{
+			"name": "add_packs",
+			"type": "AddPack[]",
+			"description": "加项包列表",
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "isv_pack_id",
+					"type": "String",
+					"description": "加项包id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号，isv需要进行校验版本号是否过期，判断加项包信息是否已更改，健康未同步"
+				}
+			]
+		},
+		{
+			"name": "hava_report",
+			"type": "String",
+			"description": "0没报告1有报告"
+		},
+		{
+			"name": "employee_number",
+			"type": "String",
+			"description": "员工号"
+		},
+		{
+			"name": "service_type",
+			"type": "String",
+			"description": "服务类型，ONSITE_SERVICE（到店检测）、DOOR_TO_DOOR_SERVICE（上门检测）"
+		},
+		{
+			"name": "service_address",
+			"type": "AddAddress",
+			"description": "上门服务的上门地址",
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "用户的上门地址"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "上门地址纬度（高德系）"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "上门地址经度（高德系）"
+				},
+				{
+					"name": "district_code",
+					"type": "String",
+					"description": "区域编码（高德标准）"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区域名称（高德标准）"
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市编码（高德标准）"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市名称（高德标准）"
+				},
+				{
+					"name": "province_code",
+					"type": "String",
+					"description": "省份编码（高德标准）"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份名称（高德标准）"
+				}
+			]
+		},
+		{
+			"name": "reserve_time_start",
+			"type": "String",
+			"description": "预约时间段开始"
+		},
+		{
+			"name": "reserve_time_end",
+			"type": "String",
+			"description": "预约时间段截止"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果描述"
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "体检机构预约唯一标识码"
+		},
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "返回结果编码"
+		}
+	]
+}

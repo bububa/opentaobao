@@ -1,0 +1,89 @@
+{
+	"name": "alibaba.ascp.uop.supplier.consignorder.outofstock.callback",
+	"apiChineseName": "履约单纬度的仓缺货回告服务",
+	"description": "商家仓履约单纬度的仓缺货回告接口",
+	"requestParams": [
+		{
+			"name": "consignorder_outofstock_callback_request",
+			"type": "Consignorderoutofstockcallbackrequest",
+			"description": "缺货回告请求模型",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "供应商id",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "外部业务号",
+					"required": true
+				},
+				{
+					"name": "biz_order_code",
+					"type": "String",
+					"description": "履约单号",
+					"required": true
+				},
+				{
+					"name": "out_of_stock_items",
+					"type": "Outofstockitems[]",
+					"description": "缺货明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_order_code",
+							"type": "String",
+							"description": "履约子单号",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品ID"
+						},
+						{
+							"name": "lack_quantity",
+							"type": "Number",
+							"description": "货品缺货数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "out_of_stock_reason",
+					"type": "String",
+					"description": "缺货原因"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consignorder_outofstock_callback_response",
+			"type": "ResultWrapper",
+			"description": "返回值包装,result为返回具体消息内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

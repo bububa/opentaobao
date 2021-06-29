@@ -1,0 +1,91 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.bom.upload",
+	"apiChineseName": "计划BOM同步",
+	"description": "计划BOM同步",
+	"requestParams": [
+		{
+			"name": "pbom_request",
+			"type": "AbstractRequest",
+			"description": "对象",
+			"subParams": [
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "data_list",
+			"type": "BomDto []",
+			"description": "对象列表",
+			"subParams": [
+				{
+					"name": "location_code",
+					"type": "String",
+					"description": "地点编码(成品供应商code)",
+					"required": true
+				},
+				{
+					"name": "extend_json",
+					"type": "String",
+					"description": "扩展参数",
+					"required": true
+				},
+				{
+					"name": "tenant",
+					"type": "String",
+					"description": "租户",
+					"required": true
+				},
+				{
+					"name": "raw_code",
+					"type": "String",
+					"description": "二级物料-物料编码",
+					"required": true
+				},
+				{
+					"name": "source_id",
+					"type": "String",
+					"description": "sourceId",
+					"required": true
+				},
+				{
+					"name": "prd_id",
+					"type": "String",
+					"description": "成品-物料编码",
+					"required": true
+				},
+				{
+					"name": "source_item_id",
+					"type": "String",
+					"description": "二级物料-行项目ID (10\\20\\30\\40\\50)",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "二级物料-数量 (保留2位小数的数字)",
+					"required": true
+				}
+			]
+		}
+	]
+}

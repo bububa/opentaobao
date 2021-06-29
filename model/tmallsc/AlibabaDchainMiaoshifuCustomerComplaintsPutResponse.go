@@ -19,7 +19,9 @@ type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse struct {
 
 type AlibabaDchainMiaoshifuCustomerComplaintsPutResponse struct {
     XMLName xml.Name `xml:"alibaba_dchain_miaoshifu_customer_complaints_put_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 对外展示的错误信息
     

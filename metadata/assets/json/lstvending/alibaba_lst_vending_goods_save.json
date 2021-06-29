@@ -1,0 +1,227 @@
+{
+	"name": "alibaba.lst.vending.goods.save",
+	"apiChineseName": "自动售卖机商品回传",
+	"description": "零售通自动售卖机商品数据回流。",
+	"requestParams": [
+		{
+			"name": "goods_d_t_o_list",
+			"type": "VendingGoodsDto[]",
+			"description": "商品信息",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Number",
+					"description": "修改时间"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态：1上架，2下架，3删除"
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "商品条码",
+					"required": true
+				},
+				{
+					"name": "external_id",
+					"type": "String",
+					"description": "121212133",
+					"required": true
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "计量单位，如：个、件、包"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "String",
+					"description": "商品分类",
+					"required": true
+				},
+				{
+					"name": "equipment_code",
+					"type": "String",
+					"description": "厂商设备唯一编码",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "商品建议零售价",
+					"required": true
+				},
+				{
+					"name": "img_path_id",
+					"type": "String",
+					"description": "商品图片ID"
+				},
+				{
+					"name": "img_data",
+					"type": "byte[][]",
+					"description": "商品图片内容字节数组"
+				},
+				{
+					"name": "shelf_no_list",
+					"type": "Number[]",
+					"description": "建议摆放的货架层数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MultiResultDto",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "VendingGoodsDto[]",
+					"description": "执行成功结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "gmt_modified",
+							"type": "Number",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Number",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态：1上架，2下架，3删除",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品条码",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商编码",
+							"required": true
+						},
+						{
+							"name": "external_id",
+							"type": "String",
+							"description": "外部系统商品ID",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "计量单位，如：个、件、包",
+							"required": true
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "商品分类",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "equipment_code",
+							"type": "String",
+							"description": "设备编码",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "商品建议零售价",
+							"required": true
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "商品图片访问地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否异常",
+					"required": true
+				},
+				{
+					"name": "error_list",
+					"type": "ResultDto[]",
+					"description": "执行失败结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "记录唯一值",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

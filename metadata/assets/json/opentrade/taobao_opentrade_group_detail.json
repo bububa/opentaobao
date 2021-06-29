@@ -1,0 +1,116 @@
+{
+	"name": "taobao.opentrade.group.detail",
+	"apiChineseName": "组团购场景查询团详情",
+	"description": "组团购场景下，查询团详情",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "团id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "GroupDetailResponse",
+			"description": "团信息",
+			"subParams": [
+				{
+					"name": "joined",
+					"type": "Number",
+					"description": "已参团人数",
+					"required": true
+				},
+				{
+					"name": "goal",
+					"type": "Number",
+					"description": "成团目标数",
+					"required": true
+				},
+				{
+					"name": "group_type",
+					"type": "Number",
+					"description": "组团类型，0 拼团 1 团购",
+					"required": true
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "团id",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "leader",
+					"type": "RopGroupMemberInfo",
+					"description": "团长信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "nick",
+							"type": "String",
+							"description": "用户昵称",
+							"required": true
+						},
+						{
+							"name": "avatar",
+							"type": "String",
+							"description": "用户头像",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "members",
+					"type": "RopGroupMemberInfo[]",
+					"description": "团员信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "nick",
+							"type": "String",
+							"description": "用户昵称",
+							"required": true
+						},
+						{
+							"name": "avatar",
+							"type": "String",
+							"description": "用户头像",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "done",
+					"type": "Boolean",
+					"description": "是否成团",
+					"required": true
+				},
+				{
+					"name": "expiration",
+					"type": "Date",
+					"description": "成团有效截止日期",
+					"required": true
+				},
+				{
+					"name": "payed",
+					"type": "Number",
+					"description": "下单付款人数",
+					"required": true
+				},
+				{
+					"name": "group_activity_id",
+					"type": "Number",
+					"description": "组团活动id",
+					"required": true
+				}
+			]
+		}
+	]
+}

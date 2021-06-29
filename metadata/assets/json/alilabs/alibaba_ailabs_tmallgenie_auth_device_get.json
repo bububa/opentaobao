@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.get",
+	"apiChineseName": "获取设备详情",
+	"description": "通过此接口获取设备详情",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "客户id",
+			"required": true
+		},
+		{
+			"name": "user_open_id",
+			"type": "String",
+			"description": "用户开放id",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "device_info",
+			"type": "Result",
+			"description": "设备信息",
+			"subParams": [
+				{
+					"name": "extensions",
+					"type": "String",
+					"description": "拓展信息",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "设备名",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备三方唯一id",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "设备uuid",
+					"required": true
+				}
+			]
+		}
+	]
+}

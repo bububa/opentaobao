@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.retail.electronic.certificate.confirm",
+	"apiChineseName": "确认核销接口",
+	"description": "确认核销接口",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "Number",
+			"description": "核销码"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "warning_infos",
+					"type": "Json[]",
+					"description": "warningInfos",
+					"required": true
+				},
+				{
+					"name": "error_infos",
+					"type": "Json[]",
+					"description": "errorInfos",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

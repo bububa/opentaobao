@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.happytrip.taxi.provider.account.balance",
+	"apiChineseName": "供应商渠道余额",
+	"description": "查询不同供应商不同渠道账户余额",
+	"requestParams": [
+		{
+			"name": "cost_center",
+			"type": "String",
+			"description": "成本中心代码，用于区分不同的分账账号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "数据",
+			"subParams": [
+				{
+					"name": "balance",
+					"type": "Number",
+					"description": "可用额度(单位：分)（余额+信用额度）表示可以支撑使用的金额",
+					"required": true
+				},
+				{
+					"name": "management",
+					"type": "Managers[]",
+					"description": "管理员列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "联系方式",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "联系人名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "usage_month",
+					"type": "Number",
+					"description": "本月已用金额",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

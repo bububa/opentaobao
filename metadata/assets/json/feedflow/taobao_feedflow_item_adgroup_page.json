@@ -1,0 +1,135 @@
+{
+	"name": "taobao.feedflow.item.adgroup.page",
+	"apiChineseName": "查询单元列表",
+	"description": "通过计划id查询单元信息",
+	"requestParams": [
+		{
+			"name": "adgroup_query",
+			"type": "AdgroupQueryDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "adgroup_id_list",
+					"type": "Number[]",
+					"description": "单元id列表"
+				},
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id列表"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "分页起始位置"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "PAUSE(\"投放暂停\"),START(\"投放开始\"),ERMINATE(\"投放停止\")"
+				},
+				{
+					"name": "adgroup_name",
+					"type": "String",
+					"description": "单元名称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "AdgroupDTo[]",
+					"description": "返回数据结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "intelligent_bid",
+							"type": "IntelligentBidDto",
+							"description": "智能出价信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "open",
+									"type": "Boolean",
+									"description": "是否打开",
+									"required": true
+								},
+								{
+									"name": "scope_percent",
+									"type": "Number",
+									"description": "溢价",
+									"required": true
+								},
+								{
+									"name": "strategy",
+									"type": "Number",
+									"description": "策略",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "单元id",
+							"required": true
+						},
+						{
+							"name": "adgroup_name",
+							"type": "String",
+							"description": "单元名称",
+							"required": true
+						},
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "计划ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "条数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

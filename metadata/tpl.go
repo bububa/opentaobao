@@ -15,6 +15,7 @@ type ApiTpl struct {
 	IsMultipart    bool
 	RequestParams  []TplParam
 	ResponseParams []TplParam
+	HasRequestId   bool
 }
 
 type TplModel struct {

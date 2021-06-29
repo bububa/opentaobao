@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.onetouch.logistics.express.address.province.list",
+	"apiChineseName": "四级地址库-省",
+	"description": "四级地址库-省",
+	"requestParams": [
+		{
+			"name": "param_query",
+			"type": "AddressQueryDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "国家code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "返回结果描述",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "RegionEntity[]",
+					"description": "列表对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "节点ID",
+							"required": true
+						},
+						{
+							"name": "pinyin",
+							"type": "String",
+							"description": "节点名称拼音",
+							"required": true
+						},
+						{
+							"name": "parent_id",
+							"type": "Number",
+							"description": "上级节点ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "中文名称",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "层级",
+							"required": true
+						},
+						{
+							"name": "parent_name",
+							"type": "String",
+							"description": "上级节点名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "返回结果编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

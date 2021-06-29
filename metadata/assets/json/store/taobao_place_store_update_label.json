@@ -1,0 +1,117 @@
+{
+	"name": "taobao.place.store.update.label",
+	"apiChineseName": "商户门店标签更新接口",
+	"description": "更新商户门店标签（服务、权益、标签）接口",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店id"
+		},
+		{
+			"name": "label_id_list",
+			"type": "Number[]",
+			"description": "标签id",
+			"maxListSize": 999
+		},
+		{
+			"name": "business_code",
+			"type": "String",
+			"description": "行业code"
+		},
+		{
+			"name": "label_type",
+			"type": "String",
+			"description": "标签类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UpdateResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "成功数量",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "failured",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "failured_list",
+					"type": "Number[]",
+					"description": "失败的标签id集合",
+					"required": true
+				},
+				{
+					"name": "full_error_msg",
+					"type": "String",
+					"description": "完整错误信息",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "Models",
+					"description": "模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "是否为空",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pri_key",
+					"type": "String",
+					"description": "关键主键",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否请求成功",
+					"required": true
+				},
+				{
+					"name": "success_list",
+					"type": "Number[]",
+					"description": "成功的标签id集合",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "请求更新的总数量(已废弃)",
+					"required": true
+				}
+			]
+		}
+	]
+}

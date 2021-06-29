@@ -1,0 +1,138 @@
+{
+	"name": "alibaba.fundplatform.account.jour.query.info",
+	"apiChineseName": "查询账户流水信息",
+	"description": "外部查询账户流水信息",
+	"requestParams": [
+		{
+			"name": "param_fund_account_journal_query_req",
+			"type": "FundAccountJournalQueryReq",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "账户ID",
+					"required": true
+				},
+				{
+					"name": "create_begin_time",
+					"type": "Date",
+					"description": "流水创建开始时间，前闭后开"
+				},
+				{
+					"name": "create_end_time",
+					"type": "Date",
+					"description": "流水创建结束时间，前闭后开"
+				},
+				{
+					"name": "current_page_no",
+					"type": "Number",
+					"description": "当前页，从1开始",
+					"required": true
+				},
+				{
+					"name": "journal_types",
+					"type": "String[]",
+					"description": "查询流水类型枚举，为空代表所有类型FUND_ACCOUNT_IN 充值     FUND_ACCOUNT_OUT 提现     FUND_ACCOUNT_DEDUCT 扣款     FUND_ACCOUNT_FREEZE 冻结     FUND_ACCOUNT_UNFREEZE 解冻"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小，[1,1000]",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSupport",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "FundAccountJournalResponse",
+					"description": "module",
+					"required": true,
+					"subParams": [
+						{
+							"name": "journal_list",
+							"type": "FundAccountJournalDto[]",
+							"description": "流水列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "account_id",
+									"type": "Number",
+									"description": "账户ID",
+									"required": true
+								},
+								{
+									"name": "deal_amount",
+									"type": "Number",
+									"description": "操作金额",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "描述",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "最后修改时间",
+									"required": true
+								},
+								{
+									"name": "journal_type",
+									"type": "String",
+									"description": "流水类型：FUND_ACCOUNT_IN 充值 FUND_ACCOUNT_OUT 提现 FUND_ACCOUNT_DEDUCT 扣款 FUND_ACCOUNT_FREEZE 冻结 FUND_ACCOUNT_UNFREEZE 解冻",
+									"required": true
+								},
+								{
+									"name": "out_biz_id",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "Number",
+									"description": "用户ID",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,105 @@
+{
+	"name": "taobao.omniorder.allocatedinfo.sync",
+	"apiChineseName": "分单结果同步给星盘",
+	"description": "ISV分单完成，将分单结果同步给星盘",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝交易主订单ID",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "分单状态，如： 等待中(Waiting)，已分单(Allocated)，分单失败(AllocateFail)",
+			"required": true
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "分单结果消息, 如果status为AllocateFail, 则表示失败的理由."
+		},
+		{
+			"name": "report_timestamp",
+			"type": "Number",
+			"description": "1231243213213",
+			"required": true
+		},
+		{
+			"name": "sub_order_list",
+			"type": "StoreAllocatedResult[]",
+			"description": "门店的分单列表",
+			"required": true,
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "0表示无系统异常",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "异常描述"
+				},
+				{
+					"name": "sub_oid",
+					"type": "Number",
+					"description": "子订单Id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "店铺Id, 可能是门店或者电商仓",
+					"required": true
+				},
+				{
+					"name": "store_type",
+					"type": "String",
+					"description": "店铺类型, 门店(Store)或者电商仓(Warehouse)",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单分单状态, 可选值: Waiting(仍在派单中) Allocated(派单成功) AllocateFail(派单失败)",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单Id"
+				},
+				{
+					"name": "attributes",
+					"description": "扩展字段"
+				}
+			]
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "跟踪Id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误内容"
+		}
+	]
+}

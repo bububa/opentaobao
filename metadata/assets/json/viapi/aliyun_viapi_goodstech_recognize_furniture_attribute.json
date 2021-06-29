@@ -1,0 +1,45 @@
+{
+	"name": "aliyun.viapi.goodstech.recognize.furniture.attribute",
+	"apiChineseName": "家居属性识别",
+	"description": "识别输入的家居模型图的风格，目前支持16种风格识别。(参数图片/链接必须通过以下方式获取: https://help.aliyun.com/document_detail/155645.html )",
+	"requestParams": [
+		{
+			"name": "image_url",
+			"type": "String",
+			"description": "待检测图片链接",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "predstyle",
+					"type": "String",
+					"description": "预测的风格名称ID",
+					"required": true
+				},
+				{
+					"name": "predprobability",
+					"type": "String",
+					"description": "预测的风格置信概率",
+					"required": true
+				},
+				{
+					"name": "predstyleid",
+					"type": "String",
+					"description": "预测的风格中文名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

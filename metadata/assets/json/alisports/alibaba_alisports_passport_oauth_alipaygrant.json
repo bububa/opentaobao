@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.alisports.passport.oauth.alipaygrant",
+	"apiChineseName": "阿里体育会员系统-支付宝授权接口",
+	"description": "开放给乐心运动使用的支付宝授权接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "阿里体育分配的用户appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "请求接口的时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名字符串",
+			"required": true
+		},
+		{
+			"name": "auth_code",
+			"type": "String",
+			"description": "调用支付宝登录sdk返回的code",
+			"required": true
+		},
+		{
+			"name": "partner_mode",
+			"type": "String",
+			"description": "固定为rich_sports",
+			"required": true
+		},
+		{
+			"name": "appid",
+			"type": "String",
+			"description": "支付宝的appid",
+			"required": true
+		},
+		{
+			"name": "app_uid",
+			"type": "String",
+			"description": "合作方的userid，即用户唯一的id标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "返回状态码，200标识成功"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "alisp_data",
+			"type": "AlispData",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "avatar_url",
+					"type": "String",
+					"description": "头像",
+					"required": true
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "昵称",
+					"required": true
+				},
+				{
+					"name": "sso_token",
+					"type": "String",
+					"description": "阿里体育返回的ssotoken，用于后续ssotoken验证",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号，需要找阿里体育申请并且配置白名单返回",
+					"required": true
+				},
+				{
+					"name": "access_token",
+					"type": "String",
+					"description": "7天有效期，用来换取ssotoken",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"name": "alibaba.member.checkmerchant",
+	"apiChineseName": "校验商家身份",
+	"description": "校验商家身份",
+	"requestParams": [
+		{
+			"name": "open_merchant_id",
+			"type": "String",
+			"description": "混淆后的商家id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		}
+	]
+}

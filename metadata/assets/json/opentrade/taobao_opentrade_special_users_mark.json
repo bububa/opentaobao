@@ -1,0 +1,50 @@
+{
+	"name": "taobao.opentrade.special.users.mark",
+	"apiChineseName": "专属下单可购买用户标记",
+	"description": "对于专属下单的交易场景，根据openid标记用户可购买商品",
+	"requestParams": [
+		{
+			"name": "hit",
+			"type": "Boolean",
+			"description": "是否目标用户，传入true后，用户可购买商品",
+			"required": true
+		},
+		{
+			"name": "open_user_ids",
+			"type": "String[]",
+			"description": "本次待标记的用户列表，多个以逗号(,)分割，最大20个",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "商品SKU ID，不存在传0",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "用户状态，可任意传入，后续查询返回",
+			"required": true
+		},
+		{
+			"name": "limit_num",
+			"type": "Number",
+			"description": "单次购买最大限购数量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "标记成功的用户数"
+		}
+	]
+}

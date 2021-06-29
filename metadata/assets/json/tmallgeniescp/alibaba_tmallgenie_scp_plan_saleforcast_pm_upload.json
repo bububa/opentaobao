@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.saleforcast.pm.upload",
+	"apiChineseName": "18-销售预测数量（产管）回传接口",
+	"description": "销售预测数量（产管）回传接口",
+	"requestParams": [
+		{
+			"name": "sales_forecast_request",
+			"type": "SalesForecastRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "sales_forecast_param_d_t_o_list",
+					"type": "SalesForecastParamDto[]",
+					"description": "入参List",
+					"subParams": [
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						},
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "日期",
+							"required": true
+						},
+						{
+							"name": "sales_forecast_qty_pm",
+							"type": "String",
+							"description": "产管-提报预测数量"
+						},
+						{
+							"name": "cust_id",
+							"type": "String",
+							"description": "渠道",
+							"required": true
+						},
+						{
+							"name": "prd_id",
+							"type": "String",
+							"description": "物料号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回描述"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码"
+		}
+	]
+}

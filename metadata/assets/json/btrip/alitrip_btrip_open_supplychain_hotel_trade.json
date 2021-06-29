@@ -1,0 +1,447 @@
+{
+	"name": "alitrip.btrip.open.supplychain.hotel.trade",
+	"apiChineseName": "【商旅】酒店交易查询流水接口",
+	"description": "【商旅】酒店交易查询流水接口——杭州市政府",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenApiZzdSearchRq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "thirdpart_corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "结算结束时间"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "第三方用户ID"
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅审批单号"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易流水号"
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "结算开始时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HisvResultSupport",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "trade_list",
+					"type": "OpenApiZzdHotelOrderRs[]",
+					"description": "出参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态：1, \"等待确认\";2, \"等待付款\"; 3, \"预订成功\";4, \"申请退款\";5, \"退款成功\";6, \"已关闭\";0,\"点击详情查看状态\";7, \"结账成功\"; 8, \"支付成功\";",
+							"required": true
+						},
+						{
+							"name": "service_fee",
+							"type": "Number",
+							"description": "服务费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_service_fee",
+							"type": "Number",
+							"description": "退订服务费（分）",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退票费（分）",
+							"required": true
+						},
+						{
+							"name": "personal_amount",
+							"type": "Number",
+							"description": "个人支付（分），当pay_type是个人支付或混合支付时有值",
+							"required": true
+						},
+						{
+							"name": "corp_amount",
+							"type": "Number",
+							"description": "企业支付（分），当pay_type是企业支付或混合支付时有值",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "总结算金额（分）",
+							"required": true
+						},
+						{
+							"name": "settle_type",
+							"type": "Number",
+							"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存",
+							"required": true
+						},
+						{
+							"name": "pay_type",
+							"type": "Number",
+							"description": "支付类型,0:企业支付，1:个人支付,2.混合支付",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "订单状态改变时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "apply_title",
+							"type": "String",
+							"description": "申请单标题",
+							"required": true
+						},
+						{
+							"name": "third_part_apply_id",
+							"type": "String",
+							"description": "第三方申请单id",
+							"required": true
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅审批单id",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "部门名称",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户名称",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户ID",
+							"required": true
+						},
+						{
+							"name": "thirdpart_corp_id",
+							"type": "String",
+							"description": "第三方企业ID",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "商旅企业ID",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单号",
+							"required": true
+						},
+						{
+							"name": "trade_action",
+							"type": "Number",
+							"description": "资金流向:1:支出，2:收入",
+							"required": true
+						},
+						{
+							"name": "trade_type",
+							"type": "Number",
+							"description": "交易类型：1:酒店费用，2,：\"酒店订单服务费\"，101:酒店退款'，102,：\"酒店赔付\"",
+							"required": true
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "第三方交易ID",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "货币种类",
+							"required": true
+						},
+						{
+							"name": "approver",
+							"type": "String",
+							"description": "审批人名称，多个/分开",
+							"required": true
+						},
+						{
+							"name": "settlement_batch_no",
+							"type": "String",
+							"description": "结算批次（该订单结算时间）",
+							"required": true
+						},
+						{
+							"name": "travel_standard_amount",
+							"type": "Number",
+							"description": "差标",
+							"required": true
+						},
+						{
+							"name": "invoice_id",
+							"type": "String",
+							"description": "商旅发票ID",
+							"required": true
+						},
+						{
+							"name": "invoice_title",
+							"type": "String",
+							"description": "发票抬头",
+							"required": true
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "项目编号",
+							"required": true
+						},
+						{
+							"name": "project_title",
+							"type": "String",
+							"description": "项目名称",
+							"required": true
+						},
+						{
+							"name": "thirdpart_itinerary_id",
+							"type": "String",
+							"description": "第三方行程单号",
+							"required": true
+						},
+						{
+							"name": "itinerary_no",
+							"type": "String",
+							"description": "商旅行程单号",
+							"required": true
+						},
+						{
+							"name": "cost_center_list",
+							"type": "CostCenterDo[]",
+							"description": "成本中心信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cost_center_id",
+									"type": "Number",
+									"description": "商旅成本中心ID",
+									"required": true
+								},
+								{
+									"name": "cost_center_title",
+									"type": "String",
+									"description": "成本中心名称",
+									"required": true
+								},
+								{
+									"name": "cost_center_number",
+									"type": "String",
+									"description": "成本中心编号",
+									"required": true
+								},
+								{
+									"name": "third_cost_center_id",
+									"type": "String",
+									"description": "第三方成本中心ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "client_info_dos",
+							"type": "ClientInfoDo[]",
+							"description": "用户信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "第三方用户ID",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "用户名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "订单类型：1：全额支付、5：到店支付、6：信用住',",
+							"required": true
+						},
+						{
+							"name": "check_in_date",
+							"type": "String",
+							"description": "入住时间",
+							"required": true
+						},
+						{
+							"name": "check_out_date",
+							"type": "String",
+							"description": "离店时间",
+							"required": true
+						},
+						{
+							"name": "hotel_info_do",
+							"type": "HotelInfoDo",
+							"description": "酒店信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店中文名",
+									"required": true
+								},
+								{
+									"name": "hotel_tel",
+									"type": "String",
+									"description": "酒店联系方式",
+									"required": true
+								},
+								{
+									"name": "hotel_address",
+									"type": "String",
+									"description": "酒店地址",
+									"required": true
+								},
+								{
+									"name": "hotel_city_code",
+									"type": "String",
+									"description": "所在城市code",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市名称",
+									"required": true
+								},
+								{
+									"name": "star_rating",
+									"type": "String",
+									"description": "酒店星级",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "room_info_do",
+							"type": "RoomInfoDo",
+							"description": "房间信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "room_name",
+									"type": "String",
+									"description": "房间名称",
+									"required": true
+								},
+								{
+									"name": "room_price",
+									"type": "Number",
+									"description": "房间价格（分）",
+									"required": true
+								},
+								{
+									"name": "room_num",
+									"type": "Number",
+									"description": "房间数量",
+									"required": true
+								},
+								{
+									"name": "night_number",
+									"type": "Number",
+									"description": "总间夜",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "货币种类",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

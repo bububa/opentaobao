@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.alihealth.dental.store.invisible.consume.update",
+	"apiChineseName": "门店无隐形消费签约",
+	"description": "门店无隐形消费签约",
+	"requestParams": [
+		{
+			"name": "store",
+			"type": "DentalOuterStoreNicRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "expire_time",
+					"type": "Date",
+					"description": "失效时间"
+				},
+				{
+					"name": "sign_time",
+					"type": "Date",
+					"description": "签约时间"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "签约状态(0 未签约，1 已签约)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

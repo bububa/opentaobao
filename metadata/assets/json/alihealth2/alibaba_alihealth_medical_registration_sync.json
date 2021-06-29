@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alihealth.medical.registration.sync",
+	"apiChineseName": "阿里健康支付宝挂号记录回传接口",
+	"description": "阿里健康支付宝挂号记录回传接口",
+	"requestParams": [
+		{
+			"name": "save_request",
+			"type": "CommonRequest4Top",
+			"description": "接口入参",
+			"subParams": [
+				{
+					"name": "biz_content",
+					"type": "String",
+					"description": "业务数据json"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

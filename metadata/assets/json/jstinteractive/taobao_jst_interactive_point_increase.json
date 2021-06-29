@@ -1,0 +1,31 @@
+{
+	"name": "taobao.jst.interactive.point.increase",
+	"apiChineseName": "互动积分发放接口",
+	"description": "向用户发放互动积分",
+	"requestParams": [
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "发放的积分值",
+			"required": true
+		},
+		{
+			"name": "operate_code",
+			"type": "String",
+			"description": "幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "用户积分总额"
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.mozi.fusion.dimission.employee.account",
+	"apiChineseName": "人员离职",
+	"description": "人员离职并且回收账号",
+	"requestParams": [
+		{
+			"name": "dimission.employee",
+			"type": "RemoveTenantEmployeeAndAccountRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "附加属性"
+				},
+				{
+					"name": "employee_code",
+					"type": "String",
+					"description": "人员CODE",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人"
+				},
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "账号ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RemoveTenantEmployeeAndAccountResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回状态描述",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回附加信息",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回的状态码",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的UUID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

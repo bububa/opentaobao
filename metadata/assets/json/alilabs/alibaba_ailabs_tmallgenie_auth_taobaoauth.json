@@ -1,0 +1,103 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.taobaoauth",
+	"apiChineseName": "天猫精灵淘宝登录授权绑定接口",
+	"description": "厂商获取用户淘宝授权之后，通过此接口获取天猫精灵授权，并绑定一台设备",
+	"requestParams": [
+		{
+			"name": "auth_param",
+			"type": "TopAuthReqDto",
+			"description": "授权信息",
+			"subParams": [
+				{
+					"name": "response_type",
+					"type": "String",
+					"description": "目前只支持“code”"
+				},
+				{
+					"name": "client_id",
+					"type": "String",
+					"description": "客户id，此id为天猫精灵的产品id，与淘宝登录的client_id不同"
+				},
+				{
+					"name": "scope",
+					"type": "String",
+					"description": "目前只支持“basic”"
+				},
+				{
+					"name": "state",
+					"type": "String",
+					"description": "state"
+				}
+			]
+		},
+		{
+			"name": "device_param",
+			"type": "TopDeviceReqDto",
+			"description": "设备信息",
+			"subParams": [
+				{
+					"name": "device_signature",
+					"type": "String",
+					"description": "设备签名，用于校验设备有效性，对于部分client_id是必填的"
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "Device Serial Number，三方传入的设备唯一标识"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "register_result",
+			"type": "RegisterInfoVo",
+			"description": "注册结果",
+			"subParams": [
+				{
+					"name": "user_open_id",
+					"type": "String",
+					"description": "用户开放ID，这个id标识您的天猫精灵用户",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "天猫精灵设备UUID，用户需要保存这个id，后续的设备相关接口调用都会使用设备uuid",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "auth_result",
+			"type": "DeviceTokenVo",
+			"description": "授权结果",
+			"subParams": [
+				{
+					"name": "access_expires_in",
+					"type": "Number",
+					"description": "token过期时间，相对时间，单位为秒",
+					"required": true
+				},
+				{
+					"name": "access_token",
+					"type": "String",
+					"description": "acces_token",
+					"required": true
+				},
+				{
+					"name": "refresh_expires_in",
+					"type": "Number",
+					"description": "token过期时间，相对时间，单位为秒",
+					"required": true
+				},
+				{
+					"name": "refresh_token",
+					"type": "String",
+					"description": "refresh_token",
+					"required": true
+				}
+			]
+		}
+	]
+}

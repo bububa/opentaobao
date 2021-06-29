@@ -1,0 +1,94 @@
+{
+	"name": "alitrip.btrip.supplychain.flight.city",
+	"apiChineseName": "机场数据查询",
+	"description": "机场数据查询",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenSuggestRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业id",
+					"required": true
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "搜索关键字",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "0国内机场，2国内机场+临近机场，3国际机场"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "商旅开放平台传2"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SuggestRs",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "cities",
+					"type": "CityVo[]",
+					"description": "城市列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "三字码",
+							"required": true
+						},
+						{
+							"name": "distance",
+							"type": "Number",
+							"description": "与搜索城市距离，单位千米，只在邻近机场推荐有值",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "城市名称",
+							"required": true
+						},
+						{
+							"name": "travel_name",
+							"type": "String",
+							"description": "邻近机场城市，只在邻近机场推荐有值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "nearby",
+					"type": "Boolean",
+					"description": "是否为邻近城市",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "结果码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

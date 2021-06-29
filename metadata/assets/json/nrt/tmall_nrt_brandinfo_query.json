@@ -1,0 +1,12 @@
+{
+	"name": "tmall.nrt.brandinfo.query",
+	"apiChineseName": "品牌数据查询",
+	"description": "商家获取自己旗舰店授权的品牌id列表",
+	"responseParams": [
+		{
+			"name": "datas",
+			"type": "Json []",
+			"description": "品牌id"
+		}
+	]
+}

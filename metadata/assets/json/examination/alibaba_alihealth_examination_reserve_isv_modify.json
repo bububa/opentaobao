@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.alihealth.examination.reserve.isv.modify",
+	"apiChineseName": "ISV调TOP主动发起改期信息",
+	"description": "体检机构对接_ISV发起体检套餐改期",
+	"requestParams": [
+		{
+			"name": "reserve_number",
+			"type": "String",
+			"description": "阿里健康预约唯一标识",
+			"required": true
+		},
+		{
+			"name": "uniq_reserve_code",
+			"type": "String",
+			"description": "体检机构预约唯一标识码",
+			"required": true
+		},
+		{
+			"name": "reserve_date",
+			"type": "String",
+			"description": "修改后预约预约日期，格式：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "reserve_time_start",
+			"type": "String",
+			"description": "修改后预约时间段开始时间 HH:mm:ss"
+		},
+		{
+			"name": "reserve_time_end",
+			"type": "String",
+			"description": "修改后预约时间段结束时间 HH:mm:ss"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode"
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success"
+				}
+			]
+		}
+	]
+}

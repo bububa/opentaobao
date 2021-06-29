@@ -1,0 +1,70 @@
+{
+	"name": "taobao.alitrip.travel.normalvisa.uploadfile",
+	"apiChineseName": "上传电子签证",
+	"description": "上传电子签证",
+	"requestParams": [
+		{
+			"name": "file_bytes",
+			"type": "byte[]",
+			"description": "文件",
+			"required": true
+		},
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名：注意文件名请保证和上传的文件一直",
+			"required": true
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果：包含results则代表成功保存",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Boolean[]",
+					"description": "结果列表",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "数量",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否包含下一个",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

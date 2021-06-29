@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.icbu.annex.upload",
+	"apiChineseName": "上传附件获取附件files_str",
+	"description": "上传附件获取附件files_str",
+	"requestParams": [
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名",
+			"required": true
+		},
+		{
+			"name": "file_input_stream_bytes",
+			"type": "byte[]",
+			"description": "文件字节流",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "来源",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_type",
+			"type": "String",
+			"description": "返回错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "文件file_str"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

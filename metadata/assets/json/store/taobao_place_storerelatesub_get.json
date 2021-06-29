@@ -1,0 +1,134 @@
+{
+	"name": "taobao.place.storerelatesub.get",
+	"apiChineseName": "门店和子门店关系查找",
+	"description": "门店和子门店关系查找",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店Id"
+		},
+		{
+			"name": "query",
+			"type": "String",
+			"description": "查询语句"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBatchResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "other",
+					"type": "Json",
+					"description": "其他信息",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "结果总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "T[]",
+					"description": "结果列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店Id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "sub_name",
+							"type": "String",
+							"description": "门店分名称",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "prov_name",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "district_name",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "prov_code",
+							"type": "Number",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "Number",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "district_code",
+							"type": "Number",
+							"description": "区",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

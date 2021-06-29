@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.alihealth.alipaypfm.order.sync",
+	"apiChineseName": "订单数据回传接口",
+	"description": "订单数据回传接口，各个isv通过我们渠道产生订单需要回传进行统计",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "user_id"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id"
+		},
+		{
+			"name": "order_price",
+			"type": "String",
+			"description": "订单价格"
+		},
+		{
+			"name": "order_status",
+			"type": "String",
+			"description": "订单状态"
+		},
+		{
+			"name": "ext_param",
+			"type": "String",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "操作说明",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "操作码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

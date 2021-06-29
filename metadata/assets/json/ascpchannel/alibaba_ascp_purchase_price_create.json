@@ -1,0 +1,117 @@
+{
+	"name": "alibaba.ascp.purchase.price.create",
+	"apiChineseName": "ascp采购价写入接口",
+	"description": "供应链平台采购价创建或修改接口",
+	"requestParams": [
+		{
+			"name": "create_request",
+			"type": "Request",
+			"description": "采购价创建/更新请求",
+			"subParams": [
+				{
+					"name": "supplier_id",
+					"type": "String",
+					"description": "二级供应商id",
+					"required": true
+				},
+				{
+					"name": "price_type",
+					"type": "Number",
+					"description": "价格类型1-基准价，2-区间价",
+					"required": true
+				},
+				{
+					"name": "price_deadline_date",
+					"type": "String",
+					"description": "失效时间（区间采购价必须）"
+				},
+				{
+					"name": "store_code_sets",
+					"type": "String[]",
+					"description": "供应链仓code"
+				},
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "货品id",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "price_start_date",
+					"type": "String",
+					"description": "生效时间（区间采购价必须）"
+				},
+				{
+					"name": "tenant_id",
+					"type": "String",
+					"description": "租户ID，请填写商家编码",
+					"required": true
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "默认根据合同；币种，USD-美元，CNY-人民币，RUB-卢布，JPY-日元，EUR-欧元，GBP-英镑，HKD-港币，NZD-新西兰元，SGD-新加坡元，AUD-澳元，KRW-韩元，THB-泰铢，"
+				},
+				{
+					"name": "transport_type",
+					"type": "Number",
+					"description": "运输方式，1-水路运输，2-航空运输，3-铁路运输，4-公路运输，0-其他"
+				},
+				{
+					"name": "trade_type",
+					"type": "Number",
+					"description": "贸易类型,1-EXW(跨境工厂交货价交易),2-CIF(跨境到岸价交易),3-FCA(跨境货交承运人交易),4-FOB(跨境离岸价交易),5-CFR(跨境目的港交货价交易),6-DDU(跨境到仓不含税价格交易),7-日本境内贸易,9-国内一般贸易交易,11-FAS,12-CNF,13-CPT,14-CIP,15-DDP,16-DAT,17-DAP"
+				},
+				{
+					"name": "port_of_destination",
+					"type": "String",
+					"description": "目的港代码"
+				},
+				{
+					"name": "port_of_loading",
+					"type": "String",
+					"description": "起运港代码"
+				},
+				{
+					"name": "purchase_price",
+					"type": "String",
+					"description": "采购价（含税）（单位：元)",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultWrapper",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误文案",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true-接口处理成功，false-接口处理失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

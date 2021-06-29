@@ -1,0 +1,433 @@
+{
+	"name": "alibaba.ascp.industry.uop.supplier.consignoder",
+	"apiChineseName": "商家推单",
+	"description": "商家推单",
+	"requestParams": [
+		{
+			"name": "erp_normal_consign_order_request",
+			"type": "Erpnormalconsignorderrequest",
+			"description": "发货主单信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "delivery_order_code",
+					"type": "String",
+					"description": "发货单号（Erp单号）",
+					"required": true
+				},
+				{
+					"name": "shop_nick",
+					"type": "String",
+					"description": "店铺名称",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "店铺id",
+					"required": true
+				},
+				{
+					"name": "lp_service_type",
+					"type": "Number",
+					"description": "物流订单服务类型 1:末端送装/2:干线加送装/3:仓干配",
+					"required": true
+				},
+				{
+					"name": "end_service_type",
+					"type": "Number",
+					"description": "末端服务类型 1:配送 2:自提",
+					"required": true
+				},
+				{
+					"name": "source_platform_code",
+					"type": "String",
+					"description": "订单来源平台编码,TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、PDD=拼多多、RRSLJ=日日顺乐家、MSJ=美食杰、UGO=优品购、OTHER=其他"
+				},
+				{
+					"name": "receiver_info",
+					"type": "Receiverinfo",
+					"description": "收件人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "receiver_zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "receiver_country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "receiver_province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "receiver_city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "receiver_area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "receive_town",
+							"type": "String",
+							"description": "村镇",
+							"required": true
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收件人",
+							"required": true
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "receiver_phone",
+							"type": "String",
+							"description": "固定电话"
+						},
+						{
+							"name": "receiver_company_name",
+							"type": "String",
+							"description": "公司名称"
+						},
+						{
+							"name": "receiver_email",
+							"type": "String",
+							"description": "邮箱"
+						},
+						{
+							"name": "receiver_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sender_info",
+					"type": "Senderinfo",
+					"description": "发件人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sender_zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "sender_country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "sender_province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "sender_city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "sender_area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "sender_town",
+							"type": "String",
+							"description": "村镇",
+							"required": true
+						},
+						{
+							"name": "sender_name",
+							"type": "String",
+							"description": "发件人",
+							"required": true
+						},
+						{
+							"name": "sender_mobile",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "sender_phone",
+							"type": "String",
+							"description": "固定电话"
+						},
+						{
+							"name": "sender_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "refunder_info",
+					"type": "Refunderinfo",
+					"description": "退货人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refunder_country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "refunder_province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "refunder_city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "refunder_area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "refunder_town",
+							"type": "String",
+							"description": "村镇",
+							"required": true
+						},
+						{
+							"name": "refunder_name",
+							"type": "String",
+							"description": "退货人",
+							"required": true
+						},
+						{
+							"name": "refunder_mobile",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "refunder_phone",
+							"type": "String",
+							"description": "固定电话"
+						},
+						{
+							"name": "refunder_zip_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "refunder_detail_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "logistics_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "logistics_code",
+					"type": "String",
+					"description": "物流公司编码，SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通 、ZTO=中通 (ZTO) 、HTKY=百世汇通、UC=优速、STO=申通、TTKDEX=天天快递 、QFKD=全峰、FAST=快捷、POSTB=邮政小包 、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、OTHER=其他"
+				},
+				{
+					"name": "express_code",
+					"type": "String",
+					"description": "干线运单号",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "delivery_time",
+					"type": "String",
+					"description": "发货时间 格式 yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段JSON串 twoStageTms:是否二段单 0 否 ,1 是"
+				},
+				{
+					"name": "pick_up_info",
+					"type": "Pickupinfo",
+					"description": "集货信息",
+					"subParams": [
+						{
+							"name": "is_completed",
+							"type": "String",
+							"description": "集货是否完成 Y 是,N 否"
+						},
+						{
+							"name": "is_canceled",
+							"type": "String",
+							"description": "集货是否取消 Y 是,N 否"
+						},
+						{
+							"name": "pick_up_nos",
+							"type": "String",
+							"description": "集货发货单号列表（用,分隔）"
+						}
+					]
+				},
+				{
+					"name": "consign_order_item_list",
+					"type": "Consignorderitemlist[]",
+					"description": "发货子单信息",
+					"subParams": [
+						{
+							"name": "order_source_code",
+							"type": "String",
+							"description": "交易主单号",
+							"required": true
+						},
+						{
+							"name": "sub_source_code",
+							"type": "String",
+							"description": "交易子单号",
+							"required": true
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "货品名称(货品为商家实际发货货品信息)",
+							"required": true
+						},
+						{
+							"name": "goods_volume",
+							"type": "String",
+							"description": "货品体积(m3)",
+							"required": true
+						},
+						{
+							"name": "goods_weight",
+							"type": "String",
+							"description": "货品重量(kg)"
+						},
+						{
+							"name": "package_detail_list",
+							"type": "Packagedetaillist[]",
+							"description": "包件明细( 包件为包裹信息)",
+							"subParams": [
+								{
+									"name": "package_volume",
+									"type": "String",
+									"description": "包件体积(m3)"
+								},
+								{
+									"name": "package_weight",
+									"type": "String",
+									"description": "包件重量(kg)"
+								},
+								{
+									"name": "package_name",
+									"type": "String",
+									"description": "包件名称"
+								},
+								{
+									"name": "feature",
+									"type": "String",
+									"description": "扩展字段JSON串"
+								}
+							]
+						},
+						{
+							"name": "install_type",
+							"type": "String",
+							"description": "安装类型 1:整装 2:拆装",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称(商品为店铺销售宝贝信息)"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "package_qty",
+							"type": "Number",
+							"description": "包件数量",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "String",
+							"description": "扩展字段JSON串"
+						},
+						{
+							"name": "goods_qty",
+							"type": "Number",
+							"description": "货品数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人"
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "操作时间 格式 yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "商家推送天猫信息后，由天猫回传的字段",
+			"subParams": [
+				{
+					"name": "express_code",
+					"type": "String",
+					"description": "送装物流单号",
+					"required": true
+				}
+			]
+		}
+	]
+}

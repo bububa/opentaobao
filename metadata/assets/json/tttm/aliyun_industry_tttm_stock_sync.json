@@ -1,0 +1,105 @@
+{
+	"name": "aliyun.industry.tttm.stock.sync",
+	"apiChineseName": "天天特卖库存同步接口",
+	"description": "天天特卖库存同步接口",
+	"requestParams": [
+		{
+			"name": "sync_stock",
+			"type": "StockInfoDto",
+			"description": "库存",
+			"subParams": [
+				{
+					"name": "factory_depot",
+					"type": "ProductInfoDto[]",
+					"description": "工厂仓",
+					"subParams": [
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货品编码"
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "货品名称"
+						},
+						{
+							"name": "product_status",
+							"type": "Number",
+							"description": "货品状态"
+						},
+						{
+							"name": "set_amount",
+							"type": "Number",
+							"description": "套餐数量"
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "总库存"
+						},
+						{
+							"name": "increment_amount",
+							"type": "Number",
+							"description": "增量库存"
+						},
+						{
+							"name": "increment_type",
+							"type": "Number",
+							"description": "出入库"
+						}
+					]
+				},
+				{
+					"name": "shop_depot",
+					"type": "ProductInfoDto[]",
+					"description": "电商仓",
+					"subParams": [
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "货品编码"
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "货品名称"
+						},
+						{
+							"name": "product_status",
+							"type": "Number",
+							"description": "货品状态"
+						},
+						{
+							"name": "set_amount",
+							"type": "Number",
+							"description": "套餐数量"
+						},
+						{
+							"name": "total_amount",
+							"type": "Number",
+							"description": "总库存"
+						},
+						{
+							"name": "increment_amount",
+							"type": "Number",
+							"description": "增量库存"
+						},
+						{
+							"name": "increment_type",
+							"type": "Number",
+							"description": "出入库"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "成功失败标识"
+		}
+	]
+}

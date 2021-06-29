@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.wdk.item.merchantsku.update",
+	"apiChineseName": "商家商品修改",
+	"description": "商家商品修改",
+	"requestParams": [
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "String",
+			"description": "参数json",
+			"required": true
+		},
+		{
+			"name": "org_code",
+			"type": "String",
+			"description": "机构编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "result",
+					"required": true
+				}
+			]
+		}
+	]
+}

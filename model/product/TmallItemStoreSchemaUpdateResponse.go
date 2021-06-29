@@ -19,7 +19,9 @@ type TmallItemStoreSchemaUpdateAPIResponse struct {
 
 type TmallItemStoreSchemaUpdateResponse struct {
     XMLName xml.Name `xml:"tmall_item_store_schema_update_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 无
     

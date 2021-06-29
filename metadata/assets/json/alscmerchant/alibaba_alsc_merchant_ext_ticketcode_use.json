@@ -1,0 +1,202 @@
+{
+	"name": "alibaba.alsc.merchant.ext.ticketcode.use",
+	"apiChineseName": "外部核销服务",
+	"description": "外部核销服务",
+	"requestParams": [
+		{
+			"name": "use_request",
+			"type": "ExternalTicketUseRequest",
+			"description": "外部券使用请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "特殊可选 核销份数，次卡业务必填、非次卡业务选填， 非次卡场景表示核销同一订单下的同类凭证的个数"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "特殊可选 口碑订单号，使用外部凭证码核销时必填"
+				},
+				{
+					"name": "code_type",
+					"type": "String",
+					"description": "特殊可选 凭证码类型,INTERNAL_CODE(内部凭证码),EXTERNAL_CODE(外部凭证码),默认INTERNAL_CODE,外部券场景必填"
+				},
+				{
+					"name": "ticket_request_id",
+					"type": "String",
+					"description": "外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "口碑门店id"
+				},
+				{
+					"name": "shop_type",
+					"type": "String",
+					"description": "门店id类型,INTERNAL_SHOP(内部店铺id),EXTERNAL_SHOP(外部店铺id),默认INTERNAL_SHOP"
+				},
+				{
+					"name": "ticket_code",
+					"type": "String",
+					"description": "凭证码，包括内部凭证码和外部凭证码，内部凭证码为12位，纯数字，且唯一不重复",
+					"required": true
+				},
+				{
+					"name": "gmt_biz",
+					"type": "Date",
+					"description": "业务发生时间，默认为接口调用时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "凭证码所属的订单id"
+		},
+		{
+			"name": "original_price",
+			"type": "String",
+			"description": "用户购买时商品的原价，单位为元，精确到小数点后两位"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "该字段用于描述本次返回中的业务属性，现有：BIZ_ALREADY_SUCCESS（幂等业务码）"
+		},
+		{
+			"name": "current_price",
+			"type": "String",
+			"description": "用户购买时商品的现价，单位为元，精确到小数点后两位"
+		},
+		{
+			"name": "discount_amount",
+			"type": "String",
+			"description": "商家优惠金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家优惠金额"
+		},
+		{
+			"name": "invoice_amount",
+			"type": "String",
+			"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总开票金额"
+		},
+		{
+			"name": "use_shop_id",
+			"type": "String",
+			"description": "券核销门店ID"
+		},
+		{
+			"name": "item_alias",
+			"type": "String",
+			"description": "凭证对应商品别名，在口碑商品创建时候设置"
+		},
+		{
+			"name": "use_shop_name",
+			"type": "String",
+			"description": "券核销门店名称"
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "口碑商品ID"
+		},
+		{
+			"name": "receipt_amount",
+			"type": "String",
+			"description": "商家实收金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总商家实收金额"
+		},
+		{
+			"name": "item_name",
+			"type": "String",
+			"description": "用户购买时商品的名称"
+		},
+		{
+			"name": "ticket_trans_id",
+			"type": "String",
+			"description": "核销流水号"
+		},
+		{
+			"name": "use_date",
+			"type": "String",
+			"description": "券核销时间"
+		},
+		{
+			"name": "voucher_id",
+			"type": "String",
+			"description": "凭证码对应的凭证资产id"
+		},
+		{
+			"name": "ticket_request_id",
+			"type": "String",
+			"description": "外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）"
+		},
+		{
+			"name": "buyer_pay_amount",
+			"type": "String",
+			"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总实际支付金额"
+		},
+		{
+			"name": "ticket_use_details",
+			"type": "MerchantTicketUseDetail []",
+			"description": "非次卡一次性核销多份场景，被核销的凭证明细信息",
+			"subParams": [
+				{
+					"name": "ticket_trans_id",
+					"type": "String",
+					"description": "券核销流水号",
+					"required": true
+				},
+				{
+					"name": "ticket_code",
+					"type": "String",
+					"description": "核销的券码",
+					"required": true
+				},
+				{
+					"name": "buyer_pay_amount",
+					"type": "String",
+					"description": "用户购买券的时候实际支付的金额，单位为元，精确到小数点后两位",
+					"required": true
+				},
+				{
+					"name": "receipt_amount",
+					"type": "String",
+					"description": "商家实收金额，单位为元，精确到小数点后两位",
+					"required": true
+				},
+				{
+					"name": "discount_amount",
+					"type": "String",
+					"description": "商家优惠金额，单位为元，精确到小数点后两位",
+					"required": true
+				},
+				{
+					"name": "merchant_subsidy_amount",
+					"type": "String",
+					"description": "口碑补贴金额，单位为元，精确到小数点后两位",
+					"required": true
+				},
+				{
+					"name": "invoice_amount",
+					"type": "String",
+					"description": "交易中可给用户开具发票的金额，单位为元，精确到小数点后两位",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "merchant_subsidy_amount",
+			"type": "String",
+			"description": "口碑补贴金额，单位为元，精确到小数点后两位，一次性核销多份券场景，返回总口碑补贴金额"
+		},
+		{
+			"name": "ticket_code",
+			"type": "String",
+			"description": "12位的券码，券码为纯数字，且唯一不重复"
+		}
+	]
+}

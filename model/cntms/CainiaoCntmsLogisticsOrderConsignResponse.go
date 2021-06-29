@@ -19,7 +19,9 @@ type CainiaoCntmsLogisticsOrderConsignAPIResponse struct {
 
 type CainiaoCntmsLogisticsOrderConsignResponse struct {
     XMLName xml.Name `xml:"cainiao_cntms_logistics_order_consign_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 物流单号
     

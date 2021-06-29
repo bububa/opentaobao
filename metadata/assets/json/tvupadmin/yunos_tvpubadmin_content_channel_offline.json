@@ -1,0 +1,20 @@
+{
+	"name": "yunos.tvpubadmin.content.channel.offline",
+	"apiChineseName": "迎客松影视频道下线",
+	"description": "迎客松影视频道下线",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "下线影视频道结果"
+		}
+	]
+}

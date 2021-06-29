@@ -1,0 +1,111 @@
+{
+	"name": "alibaba.ailabs.iot.device.control.notify",
+	"apiChineseName": "天猫精灵IoT异步控制回调接口",
+	"description": "用于天猫精灵IoT云云接入控制结果的异步回调",
+	"requestParams": [
+		{
+			"name": "notify_control_params",
+			"type": "NotifyVehicleControlParams",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "payload",
+					"type": "Payload",
+					"description": "标准控制协议中的payload",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码，出错时返回"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息，出错时返回"
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "header",
+					"type": "IotCommonHeader",
+					"description": "标准控制协议中的header",
+					"required": true,
+					"subParams": [
+						{
+							"name": "namespace",
+							"type": "String",
+							"description": "标准控制协议中的namespace",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "标准控制协议中的name",
+							"required": true
+						},
+						{
+							"name": "message_id",
+							"type": "String",
+							"description": "标准控制协议中的messageId",
+							"required": true
+						},
+						{
+							"name": "pay_load_version",
+							"type": "Number",
+							"description": "标准控制协议中的payLoadVersion",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "exceptions",
+					"type": "IotCommonDeviceProperty[]",
+					"description": "标准查询协议中的exceptions，异常检测项，如果有则返回，没有则不返回",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "异常检测项名称"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "异常检测项值"
+						}
+					]
+				},
+				{
+					"name": "properties",
+					"type": "IotCommonDeviceProperty[]",
+					"description": "标准查询协议中的properties，异常检测项，如果有则返回，没有则不返回",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "查询的属性名称"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "查询的属性值"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_value",
+			"type": "Boolean",
+			"description": "是否通知成功"
+		}
+	]
+}

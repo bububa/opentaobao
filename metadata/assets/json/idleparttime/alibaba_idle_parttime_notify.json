@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.idle.parttime.notify",
+	"apiChineseName": "兼职通知接口",
+	"description": "服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "实时同步类型, 0: 岗位状态, 1: 录取状态",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "岗位: 0关闭 ; 录取: 0不录取, 1录取",
+			"required": true
+		},
+		{
+			"name": "job_id",
+			"type": "Number",
+			"description": "岗位id",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id"
+		},
+		{
+			"name": "sync_time",
+			"type": "Number",
+			"description": "同步时间",
+			"required": true
+		},
+		{
+			"name": "apply_id",
+			"type": "Number",
+			"description": "报名id"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "通知消息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "响应是否成功"
+		}
+	]
+}

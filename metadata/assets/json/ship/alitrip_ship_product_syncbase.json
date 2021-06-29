@@ -1,0 +1,22 @@
+{
+	"name": "alitrip.ship.product.syncbase",
+	"apiChineseName": "基础信息修改回调",
+	"description": "基础信息修改回调",
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功"
+		}
+	]
+}

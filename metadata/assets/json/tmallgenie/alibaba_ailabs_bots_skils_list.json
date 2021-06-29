@@ -1,0 +1,146 @@
+{
+	"name": "alibaba.ailabs.bots.skils.list",
+	"apiChineseName": "对外设备获取技能列表",
+	"description": "获取ai开放平台技能列表",
+	"requestParams": [
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页单位"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "{        \"skillId\": 209,        \"invocationName\": \"中文先生\",        \"name\": \"测试34\",        \"serviceProviders\": [          {            \"icon\": \"//arplatform.alicdn.com/images/3/1498910818259.png\",            \"name\": \"provider1\",          }        ],        \"botId\": 10,        \"iconImgUrl\": \"//arplatform.alicdn.com/images/244/1501764397807.png\",        \"longDesc\": \"中文先生是学中文的好帮手。查中文、查成语、听故事样样行。\"      }",
+			"subParams": [
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "ret_values",
+					"type": "BotSkillsRelInfo",
+					"description": "[     {       \"skillId\": 123,       \"invocationName\": \"来个鸟叫\",       \"name\": \"t2\",       \"serviceProviders\": null,       \"botId\": 10,       \"class\": \"com.alibaba.ai.platform.biz.domain.BotSkillsRelInfo\",       \"iconImgUrl\": \"//arplatform.alicdn.com/images/90/1499945738188.png\",       \"longDesc\": \"2劳动节粉丝撒 uv 那 v 那女 i 啊恶女怕任何 v 去 u 却认为起恢复健康IE肌肤 i 啊viu 话题 uv青海湖去任何欺骗 v额往日 u 问啊好热v 好\"     }   ]",
+					"required": true,
+					"subParams": [
+						{
+							"name": "results",
+							"type": "BotSkillsRelInfo[]",
+							"description": "结果集",
+							"required": true,
+							"subParams": [
+								{
+									"name": "samples",
+									"type": "String",
+									"description": "典型语句",
+									"required": true
+								},
+								{
+									"name": "long_desc",
+									"type": "String",
+									"description": "长描述",
+									"required": true
+								},
+								{
+									"name": "icon_img_url",
+									"type": "String",
+									"description": "技能图片地址",
+									"required": true
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "类别",
+									"required": true
+								},
+								{
+									"name": "service_providers",
+									"type": "ServiceProvider[]",
+									"description": "提供商集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "提供商",
+											"required": true
+										},
+										{
+											"name": "icon",
+											"type": "String",
+											"description": "图片地址",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "bot_id",
+									"type": "Number",
+									"description": "应用id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "技能名称",
+									"required": true
+								},
+								{
+									"name": "invocation_name",
+									"type": "String",
+									"description": "唤醒词",
+									"required": true
+								},
+								{
+									"name": "skill_id",
+									"type": "Number",
+									"description": "技能Id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页单位",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

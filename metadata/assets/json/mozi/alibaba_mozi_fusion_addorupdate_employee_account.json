@@ -1,0 +1,145 @@
+{
+	"name": "alibaba.mozi.fusion.addorupdate.employee.account",
+	"apiChineseName": "添加人员和账号复合接口",
+	"description": "添加人员和账号复合接口",
+	"requestParams": [
+		{
+			"name": "employee_account",
+			"type": "AddOrUpdateTenantEmployeeAndAccountRequest",
+			"description": "人员账号",
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "request_meta_data",
+					"description": "附加属性"
+				},
+				{
+					"name": "nickname",
+					"type": "String",
+					"description": "昵称"
+				},
+				{
+					"name": "employee_code",
+					"type": "String",
+					"description": "人员唯一编码，租户独一无二，比如工号",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "namespace",
+					"type": "String",
+					"description": "账号的所属公司，找BUC同学配置",
+					"required": true
+				},
+				{
+					"name": "employee_name",
+					"type": "String",
+					"description": "人员姓名",
+					"required": true
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "account",
+					"type": "String",
+					"description": "账号名",
+					"required": true
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "站点语言，中文ZH_CN,英文 EN"
+				},
+				{
+					"name": "sec_mobile_area_code",
+					"type": "String",
+					"description": "手机国家码"
+				},
+				{
+					"name": "refer_id",
+					"type": "String",
+					"description": "账号ID或者名字，能独一无二表示一个账号",
+					"required": true
+				},
+				{
+					"name": "sec_mobile",
+					"type": "String",
+					"description": "手机号码"
+				},
+				{
+					"name": "identity_card_num",
+					"type": "String",
+					"description": "身份证号码"
+				},
+				{
+					"name": "employee_number",
+					"type": "String",
+					"description": "员工工号"
+				},
+				{
+					"name": "avatar",
+					"type": "String",
+					"description": "头像URL地址"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AddOrUpdateTenantEmployeeAndAccountResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回状态描述",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回附加信息",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回的状态码",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的UUID",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回的人员和账号的绑定对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.campus.acl.new.listuserbymenu",
+	"apiChineseName": "查询菜单下的人员",
+	"description": "查询拥有菜单权限的用户",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "acl应用",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "menu_url",
+			"type": "String",
+			"description": "/workbench/space/application",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "Json[]",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

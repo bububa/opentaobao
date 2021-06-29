@@ -1,0 +1,81 @@
+{
+	"name": "cainiao.endpoint.locker.top.order.withhold",
+	"apiChineseName": "代扣支付",
+	"description": "提供代扣，允许有一笔欠款。",
+	"requestParams": [
+		{
+			"name": "company_code",
+			"type": "String",
+			"description": "柜子公司编码",
+			"required": true
+		},
+		{
+			"name": "gui_id",
+			"type": "String",
+			"description": "柜子id",
+			"required": true
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "订单类型(0-取件业务，1-寄件业务，2-派样业务)",
+			"required": true
+		},
+		{
+			"name": "open_user_id",
+			"type": "String",
+			"description": "开放用户id",
+			"required": true
+		},
+		{
+			"name": "total_fee",
+			"type": "Number",
+			"description": "代扣金额（全额），单位：分",
+			"required": true
+		},
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "柜子订单编码",
+			"required": true
+		},
+		{
+			"name": "mail_no",
+			"type": "String",
+			"description": "运单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

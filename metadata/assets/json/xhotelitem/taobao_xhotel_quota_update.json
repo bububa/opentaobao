@@ -1,0 +1,64 @@
+{
+	"name": "taobao.xhotel.quota.update",
+	"apiChineseName": "库存更新接口",
+	"description": "库存更新接口",
+	"requestParams": [
+		{
+			"name": "quota_type",
+			"type": "Number",
+			"description": "库存类型,0: 普通库存, 1: 普通保留房库存, 2:协议保留房库存",
+			"required": true
+		},
+		{
+			"name": "use_room_inventory",
+			"type": "Boolean",
+			"description": "是否使用room库存,true使用，false不使用"
+		},
+		{
+			"name": "gid",
+			"type": "Number",
+			"description": "room的gid"
+		},
+		{
+			"name": "quota",
+			"type": "Number",
+			"description": "增减的值",
+			"required": true
+		},
+		{
+			"name": "quota_num_type",
+			"type": "Number",
+			"description": "数量类型, 2:增加房量,3:减少房量",
+			"required": true
+		},
+		{
+			"name": "dates",
+			"type": "Date[]",
+			"description": "修改日期列表",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "rate_id",
+			"type": "Number",
+			"description": "rate的id, rate库存时必填"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "warn_message",
+			"type": "String",
+			"description": "更新失败补充描述消息"
+		},
+		{
+			"name": "biz_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "biz_error_msg",
+			"type": "String",
+			"description": "更新失败错误信息"
+		}
+	]
+}

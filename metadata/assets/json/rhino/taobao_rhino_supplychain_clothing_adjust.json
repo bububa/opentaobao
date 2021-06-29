@@ -1,0 +1,81 @@
+{
+	"name": "taobao.rhino.supplychain.clothing.adjust",
+	"apiChineseName": "同步成衣仓盘点数据",
+	"description": "同步成衣仓盘点数据",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "MaterialInventoryAdjustDto",
+			"description": "库存盘点对象",
+			"subParams": [
+				{
+					"name": "factory_id",
+					"type": "Number",
+					"description": "工厂ID，货主编码"
+				},
+				{
+					"name": "material_name",
+					"type": "String",
+					"description": "物料名称"
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "物料ID，货品编码"
+				},
+				{
+					"name": "inventory_type",
+					"type": "String",
+					"description": "库存状态(1:正品;2:次品;3:赠品)"
+				},
+				{
+					"name": "adjust_type",
+					"type": "String",
+					"description": "调整标示(1:增加库存;2:减少库存)"
+				},
+				{
+					"name": "adjust_serial_no",
+					"type": "String",
+					"description": "讯息ID"
+				},
+				{
+					"name": "warehouse_id",
+					"type": "Number",
+					"description": "仓库ID，仓库编码"
+				},
+				{
+					"name": "adjust_reason",
+					"type": "String",
+					"description": "盘点原因"
+				},
+				{
+					"name": "adjust_amount",
+					"type": "Number",
+					"description": "盘点数量"
+				},
+				{
+					"name": "adjust_date",
+					"type": "Date",
+					"description": "盘点日期"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

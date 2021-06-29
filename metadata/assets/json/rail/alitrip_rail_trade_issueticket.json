@@ -1,0 +1,57 @@
+{
+	"name": "alitrip.rail.trade.issueticket",
+	"apiChineseName": "德铁出票成功接口",
+	"description": "出票成功回调接口",
+	"requestParams": [
+		{
+			"name": "agent_order_id",
+			"type": "String",
+			"description": "代理商订单号",
+			"required": true
+		},
+		{
+			"name": "tp_order_id",
+			"type": "Number",
+			"description": "平台订单号",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		},
+		{
+			"name": "ticket_no",
+			"type": "String",
+			"description": "pnr票号有则填，无则空"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "成功失败",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

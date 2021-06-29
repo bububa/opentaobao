@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.jym.requirement.orders.operation.notify",
+	"apiChineseName": "交易猫需求订单操作接口",
+	"description": "交易猫需求订单操作接口",
+	"requestParams": [
+		{
+			"name": "operation",
+			"type": "Number",
+			"description": "需求订单操作",
+			"required": true
+		},
+		{
+			"name": "reqmnt_order_id",
+			"type": "String",
+			"description": "需求订单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_dto",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "业务数据",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "state_code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "extra_err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

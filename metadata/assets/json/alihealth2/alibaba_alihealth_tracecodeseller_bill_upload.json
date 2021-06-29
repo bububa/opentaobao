@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.tracecodeseller.bill.upload",
+	"apiChineseName": "上传入出库单api",
+	"description": "上传入出库单api",
+	"requestParams": [
+		{
+			"name": "skey_code",
+			"type": "String",
+			"description": "身份认证",
+			"required": true
+		},
+		{
+			"name": "ent_info_id",
+			"type": "Number",
+			"description": "商家id",
+			"required": true
+		},
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编号",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "出入库类型",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "出入库时间 精确到 年 月 日 时 分 秒",
+			"required": true
+		},
+		{
+			"name": "warehouse_id",
+			"type": "Number",
+			"description": "自己仓库id",
+			"required": true
+		},
+		{
+			"name": "ent_merchant_id",
+			"type": "Number",
+			"description": "渠道商id",
+			"required": true
+		},
+		{
+			"name": "code_info",
+			"type": "String",
+			"description": "把txt格式的文件转成16进制的字符串，txt文件是每个码一行",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "model"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		}
+	]
+}

@@ -1,0 +1,77 @@
+package tmalltrend
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+全域新品店铺优惠券免除 APIRequest
+tmall.brand.item.coupon.protect
+
+全域新品店铺优惠券免除申请打标接口
+*/
+type TmallBrandItemCouponProtectRequest struct {
+    model.Params
+
+    // 天猫商品id
+    itemId   int64 
+
+    // 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
+    protectionPeriod   string 
+
+    // 天猫品牌id
+    brandId   int64 
+
+}
+
+func NewTmallBrandItemCouponProtectRequest() *TmallBrandItemCouponProtectRequest{
+    return &TmallBrandItemCouponProtectRequest{
+        Params: model.NewParams(),
+    }
+}
+
+func (r TmallBrandItemCouponProtectRequest) GetApiMethodName() string {
+    return "tmall.brand.item.coupon.protect"
+}
+
+func (r TmallBrandItemCouponProtectRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+
+
+func (r *TmallBrandItemCouponProtectRequest) SetItemId(itemId int64) error {
+    r.itemId = itemId
+    r.Set("item_id", itemId)
+    return nil
+}
+
+func (r TmallBrandItemCouponProtectRequest) GetItemId() int64 {
+    return r.itemId
+}
+
+func (r *TmallBrandItemCouponProtectRequest) SetProtectionPeriod(protectionPeriod string) error {
+    r.protectionPeriod = protectionPeriod
+    r.Set("protection_period", protectionPeriod)
+    return nil
+}
+
+func (r TmallBrandItemCouponProtectRequest) GetProtectionPeriod() string {
+    return r.protectionPeriod
+}
+
+func (r *TmallBrandItemCouponProtectRequest) SetBrandId(brandId int64) error {
+    r.brandId = brandId
+    r.Set("brand_id", brandId)
+    return nil
+}
+
+func (r TmallBrandItemCouponProtectRequest) GetBrandId() int64 {
+    return r.brandId
+}
+

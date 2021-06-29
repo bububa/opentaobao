@@ -1,0 +1,240 @@
+{
+	"name": "tmall.tmic.questionnaire.survey.get",
+	"apiChineseName": "天猫新品创新中心问卷数据获取",
+	"description": "天猫新品创新中心问卷数据获取",
+	"requestParams": [
+		{
+			"name": "hash_code",
+			"type": "String",
+			"description": "问卷hashCode，问卷对外唯一编码",
+			"required": true
+		},
+		{
+			"name": "biz",
+			"type": "String",
+			"description": "biz业务参数，1024表示投放id，下划线分隔，fav表示收藏行为的英文"
+		},
+		{
+			"name": "open_user_id",
+			"type": "String",
+			"description": "open_id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "record_id",
+					"type": "Number",
+					"description": "问卷记录id，用于区别不同的回答记录，在提交回答的时候作为请求参数",
+					"required": true
+				},
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "问卷相关的logo地址",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "问卷标题",
+					"required": true
+				},
+				{
+					"name": "question_list",
+					"type": "QuestionBo[]",
+					"description": "问题列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_number",
+							"type": "Number",
+							"description": "问题排序字段",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "问题编码，在一份问卷中唯一，在提交答案时作为请求参数",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "问卷描述",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "问题类型，1-单选，2-多选，3-单行文本，4-多行文本",
+							"required": true
+						},
+						{
+							"name": "tip",
+							"type": "String",
+							"description": "问卷提示",
+							"required": true
+						},
+						{
+							"name": "err_tip",
+							"type": "String",
+							"description": "错误提示",
+							"required": true
+						},
+						{
+							"name": "required",
+							"type": "Boolean",
+							"description": "该题是否必答，true-必答，false-选答",
+							"required": true
+						},
+						{
+							"name": "option_limit",
+							"type": "Number",
+							"description": "选项最大个数，5表示最多5个选项",
+							"required": true
+						},
+						{
+							"name": "placeholder",
+							"type": "String",
+							"description": "文本控件占位符",
+							"required": true
+						},
+						{
+							"name": "option_bo",
+							"type": "OptionBo",
+							"description": "optionBO",
+							"required": true,
+							"subParams": [
+								{
+									"name": "option_item_bo_list",
+									"type": "OptionItemBo[]",
+									"description": "optionItemBOList",
+									"required": true,
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "value",
+											"required": true
+										},
+										{
+											"name": "tip",
+											"type": "String",
+											"description": "tip",
+											"required": true
+										},
+										{
+											"name": "supplement",
+											"type": "Boolean",
+											"description": "supplement",
+											"required": true
+										},
+										{
+											"name": "exclusion",
+											"type": "Boolean",
+											"description": "exclusion",
+											"required": true
+										},
+										{
+											"name": "random_group_number",
+											"type": "Number",
+											"description": "randomGroupNumber",
+											"required": true
+										},
+										{
+											"name": "end",
+											"type": "Boolean",
+											"description": "end",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "sub_question_b_o",
+							"type": "SubQuestionBo",
+							"description": "子问题",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sub_question_item_b_o_list",
+									"type": "SubQuestionItemBo[]",
+									"description": "子问题列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "description",
+											"type": "String",
+											"description": "描述",
+											"required": true
+										},
+										{
+											"name": "random_group_number",
+											"type": "Number",
+											"description": "随机组号",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "biz_error_info",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "问卷描述",
+					"required": true
+				},
+				{
+					"name": "question_count",
+					"type": "Number",
+					"description": "问题数量",
+					"required": true
+				},
+				{
+					"name": "biz_error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "问卷版本号",
+					"required": true
+				}
+			]
+		}
+	]
+}

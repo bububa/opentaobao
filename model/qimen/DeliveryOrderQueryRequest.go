@@ -40,7 +40,7 @@ type DeliveryOrderQueryRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenDeliveryorderQueryMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
     // 备注

@@ -19,7 +19,9 @@ type AlibabaMjPresaleSettlementStatisticsAPIResponse struct {
 
 type AlibabaMjPresaleSettlementStatisticsResponse struct {
     XMLName xml.Name `xml:"alibaba_mj_presale_settlement_statistics_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // data
     

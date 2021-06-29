@@ -1,0 +1,58 @@
+{
+	"name": "taobao.message.send",
+	"apiChineseName": "消息发送",
+	"description": "消息发送接口",
+	"requestParams": [
+		{
+			"name": "send_message_req",
+			"type": "SendMessageReq",
+			"description": "消息发送相关参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "target_id",
+					"type": "String",
+					"description": "接受者ID，如果是群，则是群ID。如果是用户，则是uid。",
+					"required": true
+				},
+				{
+					"name": "template_instance_id",
+					"type": "String",
+					"description": "选用的模板ID",
+					"required": true
+				},
+				{
+					"name": "template_data",
+					"description": "模板渲染参数",
+					"required": true
+				},
+				{
+					"name": "action_url_params",
+					"description": "跳转的目标链接参数，如：page=xxxx"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

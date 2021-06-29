@@ -1,0 +1,155 @@
+{
+	"name": "alibaba.lst.nicetuan.order.save",
+	"apiChineseName": "十荟团订单同步至零售通",
+	"description": "十荟团订单同步至零售通，十荟团单向写到零售通",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "NicetuanMainOrderParam",
+			"description": "订单数据",
+			"subParams": [
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "购买用户微信呢称"
+				},
+				{
+					"name": "rebate_amount_total",
+					"type": "String",
+					"description": "订单佣金总金额"
+				},
+				{
+					"name": "recipient",
+					"type": "String",
+					"description": "子订单佣金金额"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "父订单号"
+				},
+				{
+					"name": "amount_total",
+					"type": "String",
+					"description": "订单总金额"
+				},
+				{
+					"name": "nicetuan_child_order_list",
+					"type": "NicetuanChildOrder[]",
+					"description": "子单",
+					"subParams": [
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "规格名称"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "子订单订单金额"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "rebate_amount",
+							"type": "String",
+							"description": "子订单佣金金额"
+						},
+						{
+							"name": "lst_yn",
+							"type": "String",
+							"description": "是否零售通商品"
+						},
+						{
+							"name": "merchandise_cover_image",
+							"type": "String",
+							"description": "商品图片"
+						},
+						{
+							"name": "delivery_day",
+							"type": "String",
+							"description": "预计发货日期"
+						},
+						{
+							"name": "sub_order_code",
+							"type": "String",
+							"description": "子订单号"
+						},
+						{
+							"name": "merchandise_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuID"
+						}
+					]
+				},
+				{
+					"name": "avatar",
+					"type": "String",
+					"description": "购买用户微信头像"
+				},
+				{
+					"name": "nice_tuan_partner_id",
+					"type": "String",
+					"description": "父订单"
+				},
+				{
+					"name": "partner_avatar",
+					"type": "String",
+					"description": "团长微信头像"
+				},
+				{
+					"name": "order_day",
+					"type": "String",
+					"description": "下单日期"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HsfResultVo",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回msg",
+					"required": true
+				},
+				{
+					"name": "result_status",
+					"type": "Boolean",
+					"description": "返回状态",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "内容",
+					"required": true
+				}
+			]
+		}
+	]
+}

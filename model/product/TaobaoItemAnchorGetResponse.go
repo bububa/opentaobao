@@ -19,7 +19,9 @@ type TaobaoItemAnchorGetAPIResponse struct {
 
 type TaobaoItemAnchorGetResponse struct {
     XMLName xml.Name `xml:"item_anchor_get_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 返回的宝贝描述模板结果数目
     

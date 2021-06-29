@@ -1,0 +1,187 @@
+{
+	"name": "aliexpress.trade.buy.placeorder",
+	"apiChineseName": "AE下单API",
+	"description": "A006_INVALID_ACCOUNT_INFO",
+	"requestParams": [
+		{
+			"name": "param_place_order_request4_open_api_d_t_o",
+			"type": "PlaceOrderRequest4OpenApiDto",
+			"description": "下单具体参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "logistics_address",
+					"type": "MaillingAddressRequestDto",
+					"description": "物流地址信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址信息",
+							"required": true
+						},
+						{
+							"name": "address2",
+							"type": "String",
+							"description": "地址扩展信息"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "contact_person",
+							"type": "String",
+							"description": "联系人"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "cpf",
+							"type": "String",
+							"description": "cpf税号"
+						},
+						{
+							"name": "full_name",
+							"type": "String",
+							"description": "收货人全称"
+						},
+						{
+							"name": "locale",
+							"type": "String",
+							"description": "国际化locale"
+						},
+						{
+							"name": "mobile_no",
+							"type": "String",
+							"description": "电话号码"
+						},
+						{
+							"name": "passport_no",
+							"type": "String",
+							"description": "护照号"
+						},
+						{
+							"name": "passport_no_date",
+							"type": "String",
+							"description": "护照日期"
+						},
+						{
+							"name": "passport_organization",
+							"type": "String",
+							"description": "护照签发机构"
+						},
+						{
+							"name": "phone_country",
+							"type": "String",
+							"description": "电话所在国家区号"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "tax_number",
+							"type": "String",
+							"description": "税号"
+						},
+						{
+							"name": "zip",
+							"type": "String",
+							"description": "邮政编码"
+						},
+						{
+							"name": "rut_no",
+							"type": "String",
+							"description": "智利税号"
+						},
+						{
+							"name": "foreigner_passport_no",
+							"type": "String",
+							"description": "外籍税号(韩国外籍须填登陆证号或者护照号)"
+						},
+						{
+							"name": "is_foreigner",
+							"type": "String",
+							"description": "是否是外籍"
+						}
+					]
+				},
+				{
+					"name": "product_items",
+					"type": "ProductBaseItem[]",
+					"description": "商品属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_count",
+							"type": "Number",
+							"description": "商品数量",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "sku_attr",
+							"type": "String",
+							"description": "商品sku"
+						},
+						{
+							"name": "logistics_service_name",
+							"type": "String",
+							"description": "物流服务名称"
+						},
+						{
+							"name": "order_memo",
+							"type": "String",
+							"description": "用户留言"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PlaceOrderRes4OpenApiDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "order_list",
+					"type": "Number[]",
+					"description": "orderList",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

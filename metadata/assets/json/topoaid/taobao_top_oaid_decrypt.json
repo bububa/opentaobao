@@ -1,0 +1,109 @@
+{
+	"name": "taobao.top.oaid.decrypt",
+	"apiChineseName": "OAID解密",
+	"description": "解码OAID(Open Addressee ID)，返回收件人信息。",
+	"requestParams": [
+		{
+			"name": "query_list",
+			"type": "ReceiverQuery[]",
+			"description": "解密请求列表，最多支持20个。",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "交易订单ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "receiver_list",
+			"type": "Receiver []",
+			"description": "收件人列表",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "收件人的姓名",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "收件人的手机号",
+					"required": true
+				},
+				{
+					"name": "address_detail",
+					"type": "String",
+					"description": "收件人的详细地址",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "收件人的电话号码",
+					"required": true
+				},
+				{
+					"name": "oaid",
+					"type": "String",
+					"description": "收件人ID (Open Addressee ID)，长度在128个字符之内。",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "交易编号",
+					"required": true
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "收货人街道地址",
+					"required": true
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "收货人的所在地区",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "收货人的所在城市",
+					"required": true
+				},
+				{
+					"name": "state",
+					"type": "String",
+					"description": "收货人的所在省份",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "收货人国籍",
+					"required": true
+				},
+				{
+					"name": "matched",
+					"type": "Boolean",
+					"description": "oaid是否和tid当前的oaid匹配。true：匹配，false：不匹配。当不匹配时，建议通过taobao.trade.fullinfo.get获取最新的oaid。",
+					"required": true
+				}
+			]
+		}
+	]
+}

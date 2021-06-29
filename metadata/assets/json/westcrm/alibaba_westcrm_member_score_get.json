@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.westcrm.member.score.get",
+	"apiChineseName": "获取会员某时间段积分",
+	"description": "获取会员某时间段积分",
+	"requestParams": [
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "requestId"
+		},
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "支付宝id"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "调用结果",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "MemberScoreVo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "score",
+							"type": "Number",
+							"description": "积分",
+							"required": true
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "requestId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "参数code",
+					"required": true
+				}
+			]
+		}
+	]
+}

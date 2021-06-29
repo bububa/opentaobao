@@ -1,0 +1,89 @@
+{
+	"name": "alibaba.damai.maitix.distribution.delivery.calculate",
+	"apiChineseName": "计算渠道用户下单快递费",
+	"description": "计算渠道用户下单快递费",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "OpenApiPostFeeParam",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "address",
+					"type": "AddressDto",
+					"description": "地址国标",
+					"subParams": [
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "区域国标ID-可以不填"
+						},
+						{
+							"name": "city_id",
+							"type": "Number",
+							"description": "城市国标ID-必填",
+							"required": true
+						},
+						{
+							"name": "province_id",
+							"type": "Number",
+							"description": "省国标ID-可以不填"
+						},
+						{
+							"name": "country_id",
+							"type": "Number",
+							"description": "国家国标ID-可以不填"
+						}
+					]
+				},
+				{
+					"name": "project_id",
+					"type": "Number",
+					"description": "项目ID-必填",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "OpenApiPostFeeDto",
+					"description": "业务对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "post_fee",
+							"type": "Number",
+							"description": "运费金额，单位分",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

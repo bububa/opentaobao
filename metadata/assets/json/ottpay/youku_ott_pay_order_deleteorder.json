@@ -1,0 +1,80 @@
+{
+	"name": "youku.ott.pay.order.deleteorder",
+	"apiChineseName": "退订应用中心支付订单",
+	"description": "应用中心sdk连续包月退订接口",
+	"requestParams": [
+		{
+			"name": "buyer",
+			"type": "String",
+			"description": "下单账号， cp账号"
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "商品id"
+		},
+		{
+			"name": "product_name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "cp订单号"
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "回调地址"
+		},
+		{
+			"name": "extra",
+			"type": "String",
+			"description": "订单无关的其他参数,如埋点统计的utdid, mac地址等"
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "订单类型，1为连续包月类型,2为取消连续包月"
+		},
+		{
+			"name": "original_order_no",
+			"type": "String",
+			"description": "连续包月原始订单"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "TvOrderResultDto",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "qcode_url",
+					"type": "String",
+					"description": "qcodeUrl",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "出错信息",
+					"required": true
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "cp发起删除的订单号",
+					"required": true
+				},
+				{
+					"name": "cp_order_no",
+					"type": "String",
+					"description": "cp连续包月原始订单号",
+					"required": true
+				}
+			]
+		}
+	]
+}

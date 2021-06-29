@@ -1,0 +1,106 @@
+{
+	"name": "yunos.tvpubadmin.device.tvid",
+	"apiChineseName": "查询终端信息",
+	"description": "通过UUID查询终端信息",
+	"requestParams": [
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备的UUID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "DeviceInfoDo",
+			"description": "object",
+			"subParams": [
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "uuid",
+					"required": true
+				},
+				{
+					"name": "tvid",
+					"type": "String",
+					"description": "tvid",
+					"required": true
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "brandId",
+					"required": true
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "brandName",
+					"required": true
+				},
+				{
+					"name": "device_model",
+					"type": "String",
+					"description": "deviceModel",
+					"required": true
+				},
+				{
+					"name": "terminal_type",
+					"type": "String",
+					"description": "terminalType",
+					"required": true
+				},
+				{
+					"name": "eth_mac",
+					"type": "String",
+					"description": "ethMac",
+					"required": true
+				},
+				{
+					"name": "wlan_mac",
+					"type": "String",
+					"description": "wlanMac",
+					"required": true
+				},
+				{
+					"name": "active_time",
+					"type": "Date",
+					"description": "activeTime",
+					"required": true
+				},
+				{
+					"name": "user_active_time",
+					"type": "Date",
+					"description": "userActiveTime",
+					"required": true
+				},
+				{
+					"name": "last_login_time",
+					"type": "Date",
+					"description": "lastLoginTime",
+					"required": true
+				},
+				{
+					"name": "created_at",
+					"type": "Date",
+					"description": "createdAt",
+					"required": true
+				},
+				{
+					"name": "updated_at",
+					"type": "Date",
+					"description": "updatedAt",
+					"required": true
+				},
+				{
+					"name": "system_version",
+					"type": "String",
+					"description": "systemVersion",
+					"required": true
+				}
+			]
+		}
+	]
+}

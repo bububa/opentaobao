@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.idle.isv.spu.search",
+	"apiChineseName": "spu搜索接口",
+	"description": "搜索的品牌和型号，供服务商进行选择",
+	"requestParams": [
+		{
+			"name": "channel_cat_id",
+			"type": "String",
+			"description": "闲鱼渠道类目的id"
+		},
+		{
+			"name": "search_text",
+			"type": "String",
+			"description": "搜索的文本"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "spu_list",
+					"type": "SpuPVDo[]",
+					"description": "候选的品牌型号列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "brand_model_list",
+							"type": "IdleNewPubValueDo[]",
+							"description": "品牌和型号信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "value_id",
+									"type": "String",
+									"description": "品牌或型号的value",
+									"required": true
+								},
+								{
+									"name": "value_name",
+									"type": "String",
+									"description": "品牌或型号的value名",
+									"required": true
+								},
+								{
+									"name": "property_name",
+									"type": "String",
+									"description": "品牌或型号的属性名",
+									"required": true
+								},
+								{
+									"name": "channel_cat_id",
+									"type": "String",
+									"description": "闲鱼渠道类目id",
+									"required": true
+								},
+								{
+									"name": "property_id",
+									"type": "String",
+									"description": "品牌或型号的属性id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "spu_title",
+							"type": "String",
+							"description": "品牌型号的显示值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

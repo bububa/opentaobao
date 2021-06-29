@@ -1,0 +1,30 @@
+{
+	"name": "alibaba.cloudgame.user.mixuserid.check",
+	"apiChineseName": "云游戏混淆用户ID校验",
+	"description": "验证混淆用户ID是否合法",
+	"requestParams": [
+		{
+			"name": "mix_user_id",
+			"type": "String",
+			"description": "云游戏混淆用户ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "是否有效"
+		},
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "返回码描述"
+		}
+	]
+}

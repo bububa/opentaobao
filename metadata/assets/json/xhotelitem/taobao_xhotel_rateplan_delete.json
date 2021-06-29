@@ -1,0 +1,55 @@
+{
+	"name": "taobao.xhotel.rateplan.delete",
+	"apiChineseName": "价格计划rateplan删除",
+	"description": "酒店产品库rateplan删除，同时删除级联的rate，请谨慎使用",
+	"requestParams": [
+		{
+			"name": "rp_id",
+			"type": "Number",
+			"description": "ratepland标识"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商，一般不用填写，使用须申请"
+		},
+		{
+			"name": "rateplan_code",
+			"type": "String",
+			"description": "商家价格政策编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "rpid",
+					"type": "String",
+					"description": "房价id",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "results",
+					"required": true
+				}
+			]
+		}
+	]
+}

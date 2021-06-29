@@ -1,0 +1,212 @@
+{
+	"name": "aliexpress.ascp.item.query",
+	"apiChineseName": "AliExpress货品查询查询API",
+	"description": "AE货品查询API",
+	"requestParams": [
+		{
+			"name": "sc_item_query",
+			"type": "ScItemQueryDto",
+			"description": "DTO",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "sc_item_code",
+					"type": "String",
+					"description": "货品编码"
+				},
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "货品Id"
+				},
+				{
+					"name": "whc_barcode",
+					"type": "String",
+					"description": "货品条码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "DTO",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "customs_unit_price",
+							"type": "String",
+							"description": "货品声明价值",
+							"required": true
+						},
+						{
+							"name": "t_weight",
+							"type": "String",
+							"description": "皮重",
+							"required": true
+						},
+						{
+							"name": "n_weight",
+							"type": "String",
+							"description": "净重",
+							"required": true
+						},
+						{
+							"name": "g_weight",
+							"type": "String",
+							"description": "毛重",
+							"required": true
+						},
+						{
+							"name": "package_material",
+							"type": "String",
+							"description": "包装材料",
+							"required": true
+						},
+						{
+							"name": "color",
+							"type": "String",
+							"description": "颜色",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "高",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "宽",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "长度",
+							"required": true
+						},
+						{
+							"name": "whc_bar_code",
+							"type": "String",
+							"description": "货品条码",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "货品编码",
+							"required": true
+						},
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "类目名称",
+							"required": true
+						},
+						{
+							"name": "category_id",
+							"type": "Number",
+							"description": "类目Id",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称",
+							"required": true
+						},
+						{
+							"name": "brand_id",
+							"type": "Number",
+							"description": "品牌Id",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "货品名称",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "货品Id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "查询结果总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

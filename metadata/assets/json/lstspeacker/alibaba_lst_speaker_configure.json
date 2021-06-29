@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.lst.speaker.configure",
+	"apiChineseName": "零售通音箱配置通用泛化调用接口",
+	"description": "零售通音箱配置通用泛化调用接口，包括内容、音量、音频等内容",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备编码",
+			"required": true
+		},
+		{
+			"name": "command",
+			"type": "String",
+			"description": "命令类型setPayTime,adjustVolume，syncAudio，syncAudioAdvert",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "String",
+			"description": "数据体，根据命令不同而不同",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "执行结果"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "执行结果标识"
+		},
+		{
+			"name": "erro_message",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "erro_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "cainiao.nbadd.appointdeliver.getconsigninfo",
+	"apiChineseName": "获取支持定时派送服务发货信息",
+	"description": "获取支持定时派送服务发货信息",
+	"requestParams": [
+		{
+			"name": "trade_order_id",
+			"type": "Number",
+			"description": "淘宝交易订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功，正常情况下都会成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "result_desc",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "result",
+			"type": "ConsignSupportInfoDTO",
+			"description": "发货信息",
+			"subParams": [
+				{
+					"name": "support_cp_list",
+					"type": "String[]",
+					"description": "支持CP的code列表",
+					"required": true
+				}
+			]
+		}
+	]
+}

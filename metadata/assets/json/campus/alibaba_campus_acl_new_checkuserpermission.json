@@ -1,0 +1,100 @@
+{
+	"name": "alibaba.campus.acl.new.checkuserpermission",
+	"apiChineseName": "校验用户是否有权限",
+	"description": "校验用户是否有权限",
+	"requestParams": [
+		{
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "应用id",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司id",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "check_user_permission_param",
+			"type": "CheckUserPermissionParam",
+			"description": "接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "hierarchical_check_permission_group",
+					"type": "Boolean",
+					"description": "是否关联校验权限组下的权限"
+				},
+				{
+					"name": "permission_key",
+					"type": "String",
+					"description": "权限key",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户账号",
+					"required": true
+				},
+				{
+					"name": "hierarchical_check_role_permission_group",
+					"type": "Boolean",
+					"description": "是否关联角色和权限组下的权限校验"
+				},
+				{
+					"name": "hierarchical_obtain_menu_permission",
+					"type": "Boolean",
+					"description": "是否用户拥有菜单，就认为用户级联拥有菜单下的权限"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "Boolean",
+					"description": "接口返回结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

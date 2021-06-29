@@ -1,0 +1,118 @@
+{
+	"name": "taobao.rhino.supplychain.inbound.confirm",
+	"apiChineseName": "WMS003成衣入库确认",
+	"description": "【WMS003】【同步成衣入库完成信息】",
+	"requestParams": [
+		{
+			"name": "clothing_inbound_confirm",
+			"type": "ClothingInboundConfirmDto",
+			"description": "入库单确认对象",
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "入库数量"
+				},
+				{
+					"name": "factory_id",
+					"type": "Number",
+					"description": "工厂ID，对应WMS002：Company"
+				},
+				{
+					"name": "inbound_id",
+					"type": "Number",
+					"description": "入库单号，对应WMS002：ReceiptId"
+				},
+				{
+					"name": "warehouse_id",
+					"type": "Number",
+					"description": "仓库ID，对应WMS002：WareHouse"
+				},
+				{
+					"name": "inbound_date",
+					"type": "Date",
+					"description": "入库完成时间"
+				},
+				{
+					"name": "material_desc",
+					"type": "String",
+					"description": "物料描述，对应WMS002：ItemName"
+				},
+				{
+					"name": "material_id",
+					"type": "Number",
+					"description": "物料ID，对应WMS002：Item"
+				},
+				{
+					"name": "ec_order_code",
+					"type": "String",
+					"description": "电商平台订单号orderCode"
+				},
+				{
+					"name": "sku_b_o",
+					"type": "SkuBo",
+					"description": "sku 信息",
+					"subParams": [
+						{
+							"name": "style_id",
+							"type": "String",
+							"description": "款式id"
+						},
+						{
+							"name": "technology_version",
+							"type": "String",
+							"description": "工艺版本id"
+						},
+						{
+							"name": "color_id",
+							"type": "Number",
+							"description": "颜色id"
+						},
+						{
+							"name": "size_id",
+							"type": "Number",
+							"description": "尺码id"
+						}
+					]
+				},
+				{
+					"name": "inbound_type",
+					"type": "Number",
+					"description": "入库单类型"
+				},
+				{
+					"name": "mes_order_id",
+					"type": "String",
+					"description": "生产订单号"
+				},
+				{
+					"name": "rfid",
+					"type": "String",
+					"description": "成衣rfid编码"
+				},
+				{
+					"name": "desired_id",
+					"type": "String",
+					"description": "toC订单Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

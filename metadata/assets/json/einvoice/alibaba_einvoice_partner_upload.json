@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.einvoice.partner.upload",
+	"apiChineseName": "服务商发票上传接口（非授权）",
+	"description": "服务商发票上传接口（非授权）",
+	"requestParams": [
+		{
+			"name": "normal_invoice_no",
+			"type": "String",
+			"description": "原蓝票发票号码",
+			"required": true
+		},
+		{
+			"name": "normal_invoice_code",
+			"type": "String",
+			"description": "原蓝票发票代码",
+			"required": true
+		},
+		{
+			"name": "payee_register_no",
+			"type": "String",
+			"description": "销方税号",
+			"required": true
+		},
+		{
+			"name": "invoice_file_data",
+			"type": "byte[]",
+			"description": "发票数据，upload_type=0且invoiceKind=0电子发票时必填"
+		},
+		{
+			"name": "invoice_no",
+			"type": "String",
+			"description": "发票号码，upload_type=0时必填"
+		},
+		{
+			"name": "invoice_code",
+			"type": "String",
+			"description": "发票代码，upload_type=0时必填"
+		},
+		{
+			"name": "invoice_date",
+			"type": "String",
+			"description": "开票日期，upload_type=0时必填"
+		},
+		{
+			"name": "cipher_text",
+			"type": "String",
+			"description": "密码区"
+		},
+		{
+			"name": "device_no",
+			"type": "String",
+			"description": "机器编号"
+		},
+		{
+			"name": "anti_fake_code",
+			"type": "String",
+			"description": "校验码"
+		},
+		{
+			"name": "file_data_type",
+			"type": "String",
+			"description": "发票类型，upload_type=0且invoiceKind=0电子发票时必填，暂时只支持pdf"
+		},
+		{
+			"name": "req_index",
+			"type": "String",
+			"description": "原蓝票的reqIndex",
+			"required": true
+		},
+		{
+			"name": "invoice_kind",
+			"type": "Number",
+			"description": "发票种类，0=电子发票，1=纸质普票，2=纸质专票",
+			"required": true
+		},
+		{
+			"name": "upload_type",
+			"type": "Number",
+			"description": "上传的类型，0=冲红上传，1=作废上传",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "上传结果"
+		}
+	]
+}

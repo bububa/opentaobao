@@ -1,0 +1,128 @@
+{
+	"name": "alibaba.htorder.hotel.sync.booking",
+	"apiChineseName": "未来酒店亲橙客栈预订信息同步",
+	"description": "未来酒店亲橙客栈预订信息同步",
+	"requestParams": [
+		{
+			"name": "data_entity",
+			"type": "SyncHotelBookingDataRequestDto",
+			"description": "预订信息数据",
+			"subParams": [
+				{
+					"name": "segments",
+					"type": "null[]",
+					"description": "预订信息数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "SyncHotelBookingDataResponseDto",
+					"description": "每个订单的信息发送结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "segments",
+							"type": "HotelMessageSendSegment[]",
+							"description": "消息发送结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "checkin",
+									"type": "Date",
+									"description": "入住日期",
+									"required": true
+								},
+								{
+									"name": "checkout",
+									"type": "Date",
+									"description": "离店日期",
+									"required": true
+								},
+								{
+									"name": "fee_begin_time",
+									"type": "Date",
+									"description": "实际入住日期",
+									"required": true
+								},
+								{
+									"name": "fee_finish_time",
+									"type": "Date",
+									"description": "实际离店日期",
+									"required": true
+								},
+								{
+									"name": "message_type",
+									"type": "String",
+									"description": "消息类型",
+									"required": true
+								},
+								{
+									"name": "out_order_id",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								},
+								{
+									"name": "result",
+									"type": "String",
+									"description": "消息结果",
+									"required": true
+								},
+								{
+									"name": "room_type_name",
+									"type": "String",
+									"description": "房型",
+									"required": true
+								},
+								{
+									"name": "supplier_code",
+									"type": "String",
+									"description": "供应商CODE",
+									"required": true
+								},
+								{
+									"name": "parameters",
+									"type": "Json",
+									"description": "消息体参数容器",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_no",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "stack_trace",
+					"type": "String",
+					"description": "栈信息",
+					"required": true
+				},
+				{
+					"name": "err_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+	"name": "taobao.smartstore.device.shelf.feedback",
+	"apiChineseName": "智能硬件云货架数据回流",
+	"description": "智慧门店云货架设备回流\n规则：\n1. 回流的设备属于当前授权的用户\n2. 回流的设备属于当前应用添加",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "硬件CODE",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "本次操作结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "本次操作开始时间",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "操作，枚举值：ACTION枚举值： ITEM_CLICK（商品点击时必须设置ITEM_ID） RECEIVE_COUPONS（领取优惠券时必须设置COUPON_ID） BUY_CLICK（点击购买） SHARE_CLICK（点击分享）",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "商品ID，action为item_click必填"
+		},
+		{
+			"name": "coupon_id",
+			"type": "String",
+			"description": "\"例如官方领取优惠券链接里的activityId： https://taoquan.taobao.com/coupon/unify_apply.htm?sellerId=2649119619\u0026activityId=9d390579777e41a981b54aa4d6154f5e\""
+		},
+		{
+			"name": "outer_user",
+			"type": "String",
+			"description": "硬件识别的用户标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "回流结果"
+		}
+	]
+}

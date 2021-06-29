@@ -1,0 +1,259 @@
+{
+	"name": "tmall.carcenter.vehicleinfo.register",
+	"apiChineseName": "车型数据更新",
+	"description": "基本车型信息维护",
+	"requestParams": [
+		{
+			"name": "vehicle_info",
+			"type": "OriginVehicleInfoDto",
+			"description": "车型数据对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sales_name",
+					"type": "String",
+					"description": "销售名称",
+					"required": true
+				},
+				{
+					"name": "productive_year",
+					"type": "Number",
+					"description": "生产年份",
+					"required": true
+				},
+				{
+					"name": "manufacture_type",
+					"type": "String",
+					"description": "厂家类型(国产,合资,进口)",
+					"required": true
+				},
+				{
+					"name": "rear_tyre",
+					"type": "String",
+					"description": "后轮胎规格"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称",
+					"required": true
+				},
+				{
+					"name": "chassis_cid",
+					"type": "String",
+					"description": "底盘压缩ID",
+					"required": true
+				},
+				{
+					"name": "release_year",
+					"type": "Number",
+					"description": "上市年份",
+					"required": true
+				},
+				{
+					"name": "manufacture_name",
+					"type": "String",
+					"description": "厂家名称",
+					"required": true
+				},
+				{
+					"name": "sales_year",
+					"type": "Number",
+					"description": "销售年款",
+					"required": true
+				},
+				{
+					"name": "front_tyre",
+					"type": "String",
+					"description": "前轮胎规格"
+				},
+				{
+					"name": "displacement",
+					"type": "String",
+					"description": "排量",
+					"required": true
+				},
+				{
+					"name": "sales_status",
+					"type": "String",
+					"description": "销售状态",
+					"required": true
+				},
+				{
+					"name": "line_name",
+					"type": "String",
+					"description": "车系",
+					"required": true
+				},
+				{
+					"name": "emmission",
+					"type": "String",
+					"description": "排放标准"
+				},
+				{
+					"name": "productive_status",
+					"type": "String",
+					"description": "生产状态",
+					"required": true
+				},
+				{
+					"name": "end_year",
+					"type": "Number",
+					"description": "停产年份"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态(状态,0:删除,1:新增,2:修改)",
+					"required": true
+				},
+				{
+					"name": "engine_model",
+					"type": "String",
+					"description": "发动起型号",
+					"required": true
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "扩展信息(json串)"
+				},
+				{
+					"name": "max_power",
+					"type": "String",
+					"description": "最大功率(KW)"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国别",
+					"required": true
+				},
+				{
+					"name": "sales_edition",
+					"type": "String",
+					"description": "销售版本"
+				},
+				{
+					"name": "version_cid",
+					"type": "String",
+					"description": "版本压缩id",
+					"required": true
+				},
+				{
+					"name": "vehicle_info_id",
+					"type": "String",
+					"description": "车型id(主键字段,代表唯一一条数据)",
+					"required": true
+				},
+				{
+					"name": "vehicle_level",
+					"type": "String",
+					"description": "车辆级别",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "官方指导价(万元)"
+				},
+				{
+					"name": "model_name",
+					"type": "String",
+					"description": "车型",
+					"required": true
+				},
+				{
+					"name": "release_month",
+					"type": "Number",
+					"description": "上市月份"
+				},
+				{
+					"name": "fuel_type",
+					"type": "String",
+					"description": "燃油类型",
+					"required": true
+				},
+				{
+					"name": "transmission_type",
+					"type": "String",
+					"description": "变速箱类型",
+					"required": true
+				},
+				{
+					"name": "drive_model",
+					"type": "String",
+					"description": "驱动方式",
+					"required": true
+				},
+				{
+					"name": "chassis_num",
+					"type": "String",
+					"description": "代号/底盘型号"
+				},
+				{
+					"name": "body_model",
+					"type": "String",
+					"description": "车身类型",
+					"required": true
+				},
+				{
+					"name": "vehicle_type",
+					"type": "String",
+					"description": "车辆类型",
+					"required": true
+				},
+				{
+					"name": "generation_num",
+					"type": "String",
+					"description": "代数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "gmtCurrentTime",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "object",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "costTime",
+					"required": true
+				}
+			]
+		}
+	]
+}

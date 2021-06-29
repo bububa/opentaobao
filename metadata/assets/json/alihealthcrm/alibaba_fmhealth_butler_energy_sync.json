@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.fmhealth.butler.energy.sync",
+	"apiChineseName": "同步用户消耗能量",
+	"description": "同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "阿里用户id",
+			"required": true
+		},
+		{
+			"name": "value",
+			"type": "BigDecimal",
+			"description": "每日已消耗能量",
+			"required": true
+		},
+		{
+			"name": "energy_type",
+			"type": "String",
+			"description": "“S”- s点 “CAL”- 卡路里",
+			"required": true
+		},
+		{
+			"name": "target",
+			"type": "BigDecimal",
+			"description": "每日可消耗能量",
+			"required": true
+		},
+		{
+			"name": "sport",
+			"type": "BigDecimal",
+			"description": "每日运动消耗能量值",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "服务结果编码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "服务结果编码说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

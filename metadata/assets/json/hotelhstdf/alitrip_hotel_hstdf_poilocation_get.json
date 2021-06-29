@@ -1,0 +1,208 @@
+{
+	"name": "alitrip.hotel.hstdf.poilocation.get",
+	"apiChineseName": "根据平台城市id分页查询poi location",
+	"description": "根据平台城市id分页查询poi location",
+	"requestParams": [
+		{
+			"name": "param_get_by_trdi_division_id_param",
+			"type": "GetByTrdiDivisionIdParam",
+			"description": "参数封装",
+			"subParams": [
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "第一页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页取100条"
+				},
+				{
+					"name": "trdi_division_id",
+					"type": "Number",
+					"description": "平台区划id，北京市"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopStdResultSet",
+			"description": "top返回结果",
+			"subParams": [
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "当前分页之后是否还有数据，true--有，可继续查询",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module_list",
+					"type": "HotelPOI[]",
+					"description": "结果集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "所在城市id",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "暂不使用",
+							"required": true
+						},
+						{
+							"name": "hot",
+							"type": "Number",
+							"description": "热度",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "poi location纬度",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "poi locaiton经度",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "中文名",
+							"required": true
+						},
+						{
+							"name": "order_index",
+							"type": "Number",
+							"description": "分组内排序",
+							"required": true
+						},
+						{
+							"name": "parent_id",
+							"type": "Number",
+							"description": "父id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型，3--地铁线路,4--地铁站,20--考点,5--景点,6--机场,7--火车站,8--汽车站,9--医院,10--大学,11--热点搜索,12--城市,13--办公区",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "所在国家英文名",
+							"required": true
+						},
+						{
+							"name": "country_code",
+							"type": "Number",
+							"description": "所在国家id",
+							"required": true
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "所在区县id",
+							"required": true
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "能精确到的最低层级区划id，优先区县，次选城市",
+							"required": true
+						},
+						{
+							"name": "division_tree",
+							"type": "String",
+							"description": "行政区划树，冗余字段，不一定有值",
+							"required": true
+						},
+						{
+							"name": "domestic",
+							"type": "Number",
+							"description": "国内外，0-国内，1--国外",
+							"required": true
+						},
+						{
+							"name": "en_name",
+							"type": "String",
+							"description": "英文名",
+							"required": true
+						},
+						{
+							"name": "position_type",
+							"type": "Number",
+							"description": "经纬度服务商，0--高德，一般用于国内，1- - 谷歌，一般用于国际",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "所在省份id，北京直辖市",
+							"required": true
+						},
+						{
+							"name": "time_zone_id",
+							"type": "String",
+							"description": "时区，冗余字段，不一定有值",
+							"required": true
+						},
+						{
+							"name": "trdi_division_id",
+							"type": "Number",
+							"description": "最精确的行政区划对应的平台id",
+							"required": true
+						},
+						{
+							"name": "search_percent",
+							"type": "String",
+							"description": "搜索热度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "暂不使用",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "请求失败时的错误信息，一般success=false时有值",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "当前查询条件下的数据总数；判断是否需要继续查询时，可以使用已请求数据量对比该值，但建议对结果集合进行判空，为空即停止",
+					"required": true
+				}
+			]
+		}
+	]
+}

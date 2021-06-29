@@ -1,0 +1,193 @@
+{
+	"name": "taobao.xhotel.order.statement.get",
+	"apiChineseName": "查询账单信息",
+	"description": "阿里根据此接口定义输出订单账务明细，结账状态发生变化时阿里需推送账单信息。系统商可实时调用该接口来查询订单的详情",
+	"requestParams": [
+		{
+			"name": "order_tids",
+			"type": "String",
+			"description": "要查询的tid列表，逗号分隔,列表查询;当此值不为空时候，其余参数忽略。最多单次20条。"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "查询条数，最大支持500条"
+		},
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "数据查询开始下标"
+		},
+		{
+			"name": "date_type",
+			"type": "Number",
+			"description": "0：check_in, 1：check_out,2：分账时间"
+		},
+		{
+			"name": "to",
+			"type": "Date",
+			"description": "查询结束时间"
+		},
+		{
+			"name": "from",
+			"type": "Date",
+			"description": "查询开始时间"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝订单号"
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "外部酒店编码"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商vendor"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "StatementOrder []",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "淘宝订单ID",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "外部订单ID",
+					"required": true
+				},
+				{
+					"name": "taobao_commission",
+					"type": "String",
+					"description": "淘宝佣金",
+					"required": true
+				},
+				{
+					"name": "trade_status",
+					"type": "String",
+					"description": "交易状态（暂无值）",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "支付宝交易号",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "总房费（分）",
+					"required": true
+				},
+				{
+					"name": "commission_total",
+					"type": "String",
+					"description": "扣除佣金后， 1.\t集团入账=买家实际支付(房费+杂费-卖家优惠)； 2.\t门店实际入账=买",
+					"required": true
+				},
+				{
+					"name": "hotel_commission",
+					"type": "String",
+					"description": "集团与门店佣金",
+					"required": true
+				},
+				{
+					"name": "seller_promotion",
+					"type": "String",
+					"description": "卖家优惠（分）",
+					"required": true
+				},
+				{
+					"name": "promotion_detail",
+					"type": "String",
+					"description": "卖家优惠明细（暂无值）",
+					"required": true
+				},
+				{
+					"name": "other_fee",
+					"type": "String",
+					"description": "杂费总额",
+					"required": true
+				},
+				{
+					"name": "settle_date",
+					"type": "String",
+					"description": "结算日期",
+					"required": true
+				},
+				{
+					"name": "room_sum_nights",
+					"type": "Number",
+					"description": "入住天数",
+					"required": true
+				},
+				{
+					"name": "settle_status",
+					"type": "String",
+					"description": "分账状态 (0, \"未分账\"),(1, \"分账成功\"),(3, \"分账失败\"), (2, \"无需分账\"),(4,\"预处理成功\");",
+					"required": true
+				},
+				{
+					"name": "check_in",
+					"type": "String",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "check_out",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "account_type",
+					"type": "String",
+					"description": "门店收款账户(1：支付宝；2：银行卡)",
+					"required": true
+				},
+				{
+					"name": "pay_type",
+					"type": "String",
+					"description": "支付类型(1:预付；5:面付;7：在线预约;601:线上信用住；602：扫码信用住；603：身份证线下信用住；604：官网信用住)",
+					"required": true
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "实际的房型名称",
+					"required": true
+				},
+				{
+					"name": "transaction_fee",
+					"type": "String",
+					"description": "交易手续费",
+					"required": true
+				},
+				{
+					"name": "hotel_name",
+					"type": "String",
+					"description": "酒店名称",
+					"required": true
+				},
+				{
+					"name": "tax_and_fee",
+					"type": "String",
+					"description": "税和费，单位分",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,289 @@
+{
+	"name": "alibaba.campus.space.group.getbyid",
+	"apiChineseName": "根据分组ID查询相关的空间分组信息",
+	"description": "根据分组ID查询相关的空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getById",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WorkBenchContext",
+			"description": "用户环境",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campus_code",
+					"type": "String",
+					"description": "\"\""
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "\"\""
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区ID"
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "Number",
+			"description": "分组ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PojoResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "SpaceGroup",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "campus_id",
+							"type": "Number",
+							"description": "campusId",
+							"required": true
+						},
+						{
+							"name": "campus_name",
+							"type": "String",
+							"description": "campusName",
+							"required": true
+						},
+						{
+							"name": "type_id",
+							"type": "Number",
+							"description": "typeId",
+							"required": true
+						},
+						{
+							"name": "type_name",
+							"type": "String",
+							"description": "typeName",
+							"required": true
+						},
+						{
+							"name": "type_code",
+							"type": "String",
+							"description": "typeCode",
+							"required": true
+						},
+						{
+							"name": "big_type_id",
+							"type": "Number",
+							"description": "bigTypeId",
+							"required": true
+						},
+						{
+							"name": "big_type_name",
+							"type": "String",
+							"description": "bigTypeName",
+							"required": true
+						},
+						{
+							"name": "building_id",
+							"type": "Number",
+							"description": "buildingId",
+							"required": true
+						},
+						{
+							"name": "building_name",
+							"type": "String",
+							"description": "buildingName",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "description",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "Number",
+							"description": "floorId",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "floorName",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "modifier",
+							"type": "String",
+							"description": "modifier",
+							"required": true
+						},
+						{
+							"name": "creator",
+							"type": "String",
+							"description": "creator",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "type_wrap",
+							"type": "PoiTypeWrap",
+							"description": "typeWrap",
+							"required": true,
+							"subParams": [
+								{
+									"name": "is_delete",
+									"type": "Boolean",
+									"description": "isDelete",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "description",
+									"required": true
+								},
+								{
+									"name": "full_name",
+									"type": "String",
+									"description": "fullName",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "分类名称",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "分类编码",
+									"required": true
+								},
+								{
+									"name": "second_type_name",
+									"type": "String",
+									"description": "大类名称",
+									"required": true
+								},
+								{
+									"name": "second_type_code",
+									"type": "String",
+									"description": "大类编码",
+									"required": true
+								},
+								{
+									"name": "second_type_id",
+									"type": "Number",
+									"description": "大类ID",
+									"required": true
+								},
+								{
+									"name": "modifier",
+									"type": "String",
+									"description": "modifier",
+									"required": true
+								},
+								{
+									"name": "creator",
+									"type": "String",
+									"description": "creator",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "gmtModified",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "gmtCreate",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "is_delete",
+							"type": "Boolean",
+							"description": "isDelete",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_level",
+					"type": "String",
+					"description": "errorLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

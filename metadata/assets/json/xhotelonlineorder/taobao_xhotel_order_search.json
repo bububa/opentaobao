@@ -1,0 +1,230 @@
+{
+	"name": "taobao.xhotel.order.search",
+	"apiChineseName": "酒店产品库订单查询",
+	"description": "酒店产品库订单查询功能，查询90天内的订单",
+	"requestParams": [
+		{
+			"name": "order_ids",
+			"type": "String",
+			"description": "酒店订单oids列表，多个oid用英文逗号隔开，一次不超过20个。"
+		},
+		{
+			"name": "created_end",
+			"type": "Date",
+			"description": "订单创建时间查询结束时间，格式为：yyyy-MM-dd HH:mm:ss。不能早于created_start或者间隔不能大于30",
+			"required": true
+		},
+		{
+			"name": "created_start",
+			"type": "Date",
+			"description": "订单创建时间查询起始时间，格式为：yyyy-MM-dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页页码。取值范围，大于零的整数，默认值1，即返回第一页的数据。页面大小为20"
+		},
+		{
+			"name": "order_tids",
+			"type": "String",
+			"description": "酒店订单tids列表，多个tid用英文逗号隔开，一次不超过20个。oids和tids都传的情况下默认使用tids"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "系统商标识"
+		},
+		{
+			"name": "out_oids",
+			"type": "String",
+			"description": "外部订单号out_oids列表，多个oid用英文逗号隔开，一次不超过20个。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hotel_orders",
+			"type": "XHotelOrder []",
+			"description": "订单信息",
+			"subParams": [
+				{
+					"name": "oid",
+					"type": "Number",
+					"description": "酒店订单id"
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "酒店id"
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "房型id"
+				},
+				{
+					"name": "gid",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "rpid",
+					"type": "Number",
+					"description": "RatePlan 中的 rpid"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "tid"
+				},
+				{
+					"name": "room_number",
+					"type": "Number",
+					"description": "房间数"
+				},
+				{
+					"name": "nights",
+					"type": "Number",
+					"description": "天数"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "支付类型 可选值 1：预付 5：前台面付"
+				},
+				{
+					"name": "checkin_date",
+					"type": "Date",
+					"description": "入住时间"
+				},
+				{
+					"name": "checkout_date",
+					"type": "Date",
+					"description": "离店时间"
+				},
+				{
+					"name": "total_room_price",
+					"type": "Number",
+					"description": "总房价（分）"
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "实付款（分）"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家淘宝账号"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家淘宝账号"
+				},
+				{
+					"name": "trade_status",
+					"type": "String",
+					"description": "交易状态。 WAIT_BUYER_PAY:预订中/等待买家付款, WAIT_SELLER_SEND_GOODS:预订中/等待卖家发货(确认), TRADE_CLOSED:结束/预订失败/交易关闭, TRADE_FINISHED:结束/交易成功, TRADE_NO_CREATE_PAY:结束/预订失败/没有创建支付宝交易, TRADE_CLOSED_BY_TAOBAO:结束/预订失败/预订被卖家关闭, TRADE_SUCCESS:交易中/预订成功/卖家已确认, TRADE_CHECKIN:交易中/预定成功/买家入住, TRADE_CHECKOUT:交易中/预定成功/买家离店, TRADE_SETTLEING:交易中/预定成功/结账中, TRADE_SETTLE_SUCCESS:结束/预定成功/结账成功"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人姓名"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系人电话"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "订单修改时间"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "付款时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "guests",
+					"type": "XOrderGuest[]",
+					"description": "入住人信息",
+					"subParams": [
+						{
+							"name": "room_pos",
+							"type": "Number",
+							"description": "房间序号"
+						},
+						{
+							"name": "person_pos",
+							"type": "Number",
+							"description": "入住人序号"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "入住人姓名"
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "买家留言"
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "支付宝交易号，28位字符"
+				},
+				{
+					"name": "out_oid",
+					"type": "String",
+					"description": "合作方订单号,最长250个字符"
+				},
+				{
+					"name": "arrive_early",
+					"type": "Date",
+					"description": "买家最早到达时间"
+				},
+				{
+					"name": "arrive_late",
+					"type": "Date",
+					"description": "买家最晚到达时间"
+				},
+				{
+					"name": "prices",
+					"type": "Number[]",
+					"description": "下单时每间夜的价格（分）"
+				},
+				{
+					"name": "logistics_status",
+					"type": "String",
+					"description": "logisticsStatus"
+				},
+				{
+					"name": "refund_status",
+					"type": "String",
+					"description": "预付订单使用，1买家已经申请退款，等待卖家同意，2卖家已经同意退款，等待买家退货，3买家已经退货，等待卖家确认收货，4退款关闭，5退款成功，6卖家拒绝退款，7没有申请退款"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "符合条件的结果总数"
+		}
+	]
+}

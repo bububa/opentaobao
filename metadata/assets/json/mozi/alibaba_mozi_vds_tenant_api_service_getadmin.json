@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.mozi.vds.tenant.api.service.getadmin",
+	"apiChineseName": "获取员工租户管理员信息（查询员工是否为租户管理员）",
+	"description": "获取员工租户管理员信息（查询员工是否为租户管理员）",
+	"requestParams": [
+		{
+			"name": "par0",
+			"type": "GetEmployeeTenantAdminInfoRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "employee_code",
+					"type": "String",
+					"description": "人员code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "GetEmployeeTenantAdminInfoResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "admin",
+					"type": "Boolean",
+					"description": "是否是管理员",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "responseMessage",
+					"required": true
+				},
+				{
+					"name": "primary",
+					"type": "Boolean",
+					"description": "是否主管理员",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "responseCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

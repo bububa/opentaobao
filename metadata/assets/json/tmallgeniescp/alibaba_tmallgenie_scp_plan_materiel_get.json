@@ -1,0 +1,131 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.materiel.get",
+	"apiChineseName": "1-IBP同步物料接口",
+	"description": "IBP同步物料接口",
+	"requestParams": [
+		{
+			"name": "request_extend_json",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回对象封装",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "IbpMaterielDto[]",
+					"description": "对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "level6",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "level5",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "level4",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "level3",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "level2",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "level1",
+							"type": "String",
+							"description": "层级的code",
+							"required": true
+						},
+						{
+							"name": "plm_status",
+							"type": "String",
+							"description": "PLM状态：1. EOP（停止生产） 2. NPI（新品） 3. RUN（正在使用产品）4. EOL（退市品）",
+							"required": true
+						},
+						{
+							"name": "unit_desc",
+							"type": "String",
+							"description": "单位描述：写死个",
+							"required": true
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位：写死PC",
+							"required": true
+						},
+						{
+							"name": "materiel_type",
+							"type": "String",
+							"description": "1. FIN（成品） 2.RAW（原料）",
+							"required": true
+						},
+						{
+							"name": "materiel_name",
+							"type": "String",
+							"description": "物料名称",
+							"required": true
+						},
+						{
+							"name": "materiel_code",
+							"type": "String",
+							"description": "物料编码",
+							"required": true
+						},
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

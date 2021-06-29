@@ -1,0 +1,47 @@
+{
+	"name": "taobao.feedflow.item.adgroup.delete",
+	"apiChineseName": "根据单元id删除单元",
+	"description": "根据单元id删除单元",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "adgroup_id_list",
+			"type": "Number[]",
+			"description": "单元id列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "删除结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

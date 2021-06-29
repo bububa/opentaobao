@@ -1,0 +1,133 @@
+{
+	"name": "alibaba.footscan.mini.report.list",
+	"apiChineseName": "查询报告列表",
+	"description": "查询报告列表",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "平台分配的token"
+		},
+		{
+			"name": "req_data",
+			"type": "TobFeetModelMobileReportRequest",
+			"description": "请求数据",
+			"subParams": [
+				{
+					"name": "relation_type",
+					"type": "Number",
+					"description": "2020-05-20 00:00:00"
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "1男2女"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "第几页"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户唯一标识，可以是淘宝用户ID"
+				},
+				{
+					"name": "nick_name",
+					"type": "String",
+					"description": "淘宝昵称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "page_num",
+							"type": "Number",
+							"description": "页码",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页长",
+							"required": true
+						},
+						{
+							"name": "list",
+							"type": "FeetModelMobileReportVo[]",
+							"description": "列表数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "scan_id",
+									"type": "String",
+									"description": "扫描ID",
+									"required": true
+								},
+								{
+									"name": "foot_length",
+									"type": "String",
+									"description": "脚长",
+									"required": true
+								},
+								{
+									"name": "foot_width",
+									"type": "String",
+									"description": "脚宽",
+									"required": true
+								},
+								{
+									"name": "gender",
+									"type": "Number",
+									"description": "性别  1：男 2：女",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

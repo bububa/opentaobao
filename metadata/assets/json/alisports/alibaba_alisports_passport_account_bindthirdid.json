@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.alisports.passport.account.bindthirdid",
+	"apiChineseName": "阿里体育三方ID绑定接口",
+	"description": "阿里体育三方ID绑定接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "业务方appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "接口签名",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户ID",
+			"required": true
+		},
+		{
+			"name": "app_uid",
+			"type": "String",
+			"description": "三方ID",
+			"required": true
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "String",
+			"description": "接口响应码"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "描述"
+		}
+	]
+}

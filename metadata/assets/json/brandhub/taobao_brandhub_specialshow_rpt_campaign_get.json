@@ -1,0 +1,102 @@
+{
+	"name": "taobao.brandhub.specialshow.rpt.campaign.get",
+	"apiChineseName": "品牌号品牌特秀计划报表数据查询",
+	"description": "获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",
+	"requestParams": [
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始时间(最多可查询最近90天)",
+			"required": true
+		},
+		{
+			"name": "solution_id",
+			"type": "String",
+			"description": "指定计划id"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "截至时间(最晚到昨天)",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "String",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "String",
+			"description": "每页条数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_param",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "campaign_rpt_list",
+			"type": "Result []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "solution_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "solution_name",
+					"type": "String",
+					"description": "计划名称",
+					"required": true
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "展现",
+					"required": true
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "点击",
+					"required": true
+				},
+				{
+					"name": "uv",
+					"type": "String",
+					"description": "访客数",
+					"required": true
+				},
+				{
+					"name": "click_uv",
+					"type": "String",
+					"description": "点击访客数",
+					"required": true
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率",
+					"required": true
+				},
+				{
+					"name": "uv_ctr",
+					"type": "String",
+					"description": "访客点击率",
+					"required": true
+				}
+			]
+		}
+	]
+}

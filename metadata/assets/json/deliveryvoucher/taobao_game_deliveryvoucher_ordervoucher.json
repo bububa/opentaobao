@@ -1,0 +1,127 @@
+{
+	"name": "taobao.game.deliveryvoucher.ordervoucher",
+	"apiChineseName": "预约接口",
+	"description": "提货券发券接口：同步券和订单的关联信息",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OrderVoucherRequest",
+			"description": "发券参数",
+			"subParams": [
+				{
+					"name": "operate_date",
+					"type": "Date",
+					"description": "操作时间",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "流水号:唯一，幂等性判断",
+					"required": true
+				},
+				{
+					"name": "provider",
+					"type": "String",
+					"description": "第三方服务商标识：top appkey",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "主订单id",
+					"required": true
+				},
+				{
+					"name": "voucher_infos",
+					"type": "DeliveryVoucherInfoDTO[]",
+					"description": "券信息,券信息,最多100条券记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "vouchers",
+							"type": "DeliveryVoucherDTO[]",
+							"description": "券信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "券ID",
+									"required": true
+								},
+								{
+									"name": "no",
+									"type": "String",
+									"description": "券号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "appointment_time",
+					"type": "Date",
+					"description": "预约时间",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "out_order_type",
+					"type": "Number",
+					"description": "1:物流发货 2：自提",
+					"required": true
+				},
+				{
+					"name": "terminal_address",
+					"type": "String",
+					"description": "自提方式必传"
+				},
+				{
+					"name": "terminal_phone",
+					"type": "String",
+					"description": "自提方式必传"
+				},
+				{
+					"name": "terminal_name",
+					"type": "String",
+					"description": "自提方式必传"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

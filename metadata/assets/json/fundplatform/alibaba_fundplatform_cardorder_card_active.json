@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.fundplatform.cardorder.card.active",
+	"apiChineseName": "储值卡激活",
+	"description": "储值卡接货接口，可以通过外部订单号或者卡号进行批量激活。如果储值卡已经被激活过仍然幂等返回成功。资金平台保证批量激活时一定全部成功或全部失败。\n如果批量激活储值卡时，如果部分储值卡处于已激活，部分储值卡处于未激活，则会返回失败",
+	"requestParams": [
+		{
+			"name": "param_card_active_request",
+			"type": "CardActiveRequest",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "card_nos",
+					"type": "String[]",
+					"description": "需要激活的卡号。卡号与外部订单号不可以同时为空。"
+				},
+				{
+					"name": "fetch_out_biz_id",
+					"type": "String",
+					"description": "在制卡时传入的外部订单号,卡号与外部订单号不可以同时为空"
+				},
+				{
+					"name": "opt_user_id",
+					"type": "Number",
+					"description": "操作人ID，用于后续追踪",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "当前激活操作的幂等号，请保证不重复",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CardActiveResponse",
+			"description": "出参对象",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否处理成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

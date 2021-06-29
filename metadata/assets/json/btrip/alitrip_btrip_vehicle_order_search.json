@@ -1,0 +1,411 @@
+{
+	"name": "alitrip.btrip.vehicle.order.search",
+	"apiChineseName": "用车订单查询接口",
+	"description": "企业获取商旅用车订单数据",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenSearchRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "创建开始时间"
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "商旅审批单id"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数，从1开始"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量，默认10，最大50"
+				},
+				{
+					"name": "depart_id",
+					"type": "String",
+					"description": "部门id"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "创建结束时间"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				},
+				{
+					"name": "update_end_time",
+					"type": "Date",
+					"description": "更新开始时间"
+				},
+				{
+					"name": "update_start_time",
+					"type": "Date",
+					"description": "更新结束时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "vehicle_order_list",
+					"type": "OpenVehicleOrderRs[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "business_category",
+							"type": "String",
+							"description": "用车原因：TRAVEL: 差旅, TRAFFIC: 市内交通, WORK: 加班, OTHER: 其它",
+							"required": true
+						},
+						{
+							"name": "car_license",
+							"type": "String",
+							"description": "车牌号",
+							"required": true
+						},
+						{
+							"name": "service_type",
+							"type": "Number",
+							"description": "打车服务类型 1:出租车, 2:专车, 3:快车",
+							"required": true
+						},
+						{
+							"name": "travel_distance",
+							"type": "String",
+							"description": "行驶公里数",
+							"required": true
+						},
+						{
+							"name": "cancel_time",
+							"type": "Date",
+							"description": "取消时间",
+							"required": true
+						},
+						{
+							"name": "driver_confirm_time",
+							"type": "Date",
+							"description": "司机到达目的地时间",
+							"required": true
+						},
+						{
+							"name": "taken_time",
+							"type": "Date",
+							"description": "乘客上车时间",
+							"required": true
+						},
+						{
+							"name": "publish_time",
+							"type": "Date",
+							"description": "乘客发布用车时间",
+							"required": true
+						},
+						{
+							"name": "estimate_price",
+							"type": "String",
+							"description": "订单预估价格",
+							"required": true
+						},
+						{
+							"name": "car_info",
+							"type": "String",
+							"description": "车辆类型",
+							"required": true
+						},
+						{
+							"name": "car_level",
+							"type": "Number",
+							"description": "类型级别：1经济型、2舒适型、3豪华型",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "0:初始状态 1:创建失败 2: 派单成功 3：派单失败 4: 已退款 5: 已支付 6: 取消成功 7: 冻结账户失败 8： 已超时",
+							"required": true
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "打车事由",
+							"required": true
+						},
+						{
+							"name": "to_city_name",
+							"type": "String",
+							"description": "目的城市",
+							"required": true
+						},
+						{
+							"name": "from_city_name",
+							"type": "String",
+							"description": "出发城市",
+							"required": true
+						},
+						{
+							"name": "to_address",
+							"type": "String",
+							"description": "目的地",
+							"required": true
+						},
+						{
+							"name": "from_address",
+							"type": "String",
+							"description": "出发地",
+							"required": true
+						},
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "商旅系统审批单id",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "部门名称",
+							"required": true
+						},
+						{
+							"name": "depart_id",
+							"type": "String",
+							"description": "部门id",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "预定人id",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "预定人名称",
+							"required": true
+						},
+						{
+							"name": "corp_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "企业id",
+							"required": true
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客名称",
+							"required": true
+						},
+						{
+							"name": "cost_center_name",
+							"type": "String",
+							"description": "成本中心名称",
+							"required": true
+						},
+						{
+							"name": "cost_center_id",
+							"type": "Number",
+							"description": "商旅成本中心id",
+							"required": true
+						},
+						{
+							"name": "real_to_city_name",
+							"type": "String",
+							"description": "实际到达城市",
+							"required": true
+						},
+						{
+							"name": "real_from_city_name",
+							"type": "String",
+							"description": "实际出发城市",
+							"required": true
+						},
+						{
+							"name": "price_info_list",
+							"type": "OpenPriceInfo[]",
+							"description": "价目详情列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "结算方式:1：个人现付，2:企业现付,4:企业月结，8、企业预存",
+									"required": true
+								},
+								{
+									"name": "category",
+									"type": "String",
+									"description": "交易类型：用车支付, 服务费, 用车取消后收费, 用车退款, 用车赔付",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "资金流向:1:支出，2:收入",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "String",
+									"description": "价格",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "流水创建时间",
+									"required": true
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘车人，多个用‘,’分割",
+									"required": true
+								},
+								{
+									"name": "trade_id",
+									"type": "String",
+									"description": "订单流水号ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "project_title",
+							"type": "String",
+							"description": "项目名称",
+							"required": true
+						},
+						{
+							"name": "project_code",
+							"type": "String",
+							"description": "项目标号",
+							"required": true
+						},
+						{
+							"name": "invoice_title",
+							"type": "String",
+							"description": "发票抬头",
+							"required": true
+						},
+						{
+							"name": "invoice_id",
+							"type": "Number",
+							"description": "商旅发票id",
+							"required": true
+						},
+						{
+							"name": "cost_center_number",
+							"type": "String",
+							"description": "成本中心编号",
+							"required": true
+						},
+						{
+							"name": "apply_show_id",
+							"type": "String",
+							"description": "商旅审批单展示id(非审批api对接企业)",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "订单创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "订单更新时间",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "thirdpart_itinerary_id",
+							"type": "String",
+							"description": "第三方行程id",
+							"required": true
+						},
+						{
+							"name": "user_affiliate_list",
+							"type": "OpenUserAffiliateDo[]",
+							"description": "出行人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "出行人ID",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "出行人名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "返回码",
+					"required": true
+				}
+			]
+		}
+	]
+}

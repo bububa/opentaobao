@@ -35,7 +35,7 @@ type ItemSynRequest struct {
 
     // 扩展属性
     
-    ExtendProps   *Map `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
+    ExtendProps   *TaobaoQimenSingleitemSynchronizeMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
     
 
 }

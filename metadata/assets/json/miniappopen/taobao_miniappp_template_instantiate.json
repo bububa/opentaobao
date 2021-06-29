@@ -1,0 +1,127 @@
+{
+	"name": "taobao.miniappp.template.instantiate",
+	"apiChineseName": "（已废弃）构建实例化应用",
+	"description": "实例化saas化的小程序",
+	"requestParams": [
+		{
+			"name": "clients",
+			"type": "String[]",
+			"description": "投放端,目前可投放： taobao(淘宝),tmall(天猫)",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "描述长度(9~200)",
+			"required": true
+		},
+		{
+			"name": "ext_json",
+			"type": "String",
+			"description": "schemadata, json字符串",
+			"required": true
+		},
+		{
+			"name": "icon",
+			"type": "String",
+			"description": "小程序icon",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "小程序名称",
+			"required": true
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "模板id",
+			"required": true
+		},
+		{
+			"name": "template_version",
+			"type": "String",
+			"description": "模板版本",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "MiniAppEntityDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "appkey",
+							"type": "String",
+							"description": "appkey",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "小程序appId",
+							"required": true
+						},
+						{
+							"name": "app_name",
+							"type": "String",
+							"description": "小程序名称",
+							"required": true
+						},
+						{
+							"name": "app_description",
+							"type": "String",
+							"description": "小程序描述",
+							"required": true
+						},
+						{
+							"name": "app_icon",
+							"type": "String",
+							"description": "icon",
+							"required": true
+						},
+						{
+							"name": "online_version",
+							"type": "String",
+							"description": "当前版本",
+							"required": true
+						},
+						{
+							"name": "online_code",
+							"type": "String",
+							"description": "线上码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

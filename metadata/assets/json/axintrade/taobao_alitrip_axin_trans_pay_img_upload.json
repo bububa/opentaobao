@@ -1,0 +1,86 @@
+{
+	"name": "taobao.alitrip.axin.trans.pay.img.upload",
+	"apiChineseName": "上传图片到支付宝图片空间接口",
+	"description": "阿信供销平台-上传图片到支付宝图片空间接口",
+	"requestParams": [
+		{
+			"name": "axin_pay_img_upload_d_t_o",
+			"type": "AxinPayImgUploadDto",
+			"description": "上传图片到支付宝图片空间接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "image_type",
+					"type": "String",
+					"description": "图片类型",
+					"required": true
+				},
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "文件名",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "img_contents",
+			"type": "byte[]",
+			"description": "图片字节流",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "need_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "info_msg",
+					"type": "String",
+					"description": "提示信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "AxinPayImgUploadResDTO",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "img_id",
+							"type": "String",
+							"description": "图片id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

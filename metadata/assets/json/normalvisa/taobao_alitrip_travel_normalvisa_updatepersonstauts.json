@@ -1,0 +1,115 @@
+{
+	"name": "taobao.alitrip.travel.normalvisa.updatepersonstauts",
+	"apiChineseName": "更新签证办理进度",
+	"description": "更新签证办理进度",
+	"requestParams": [
+		{
+			"name": "normal_visa_update_unit_list",
+			"type": "NormalVisaUpdateUnit[]",
+			"description": "更新信息",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "book_time",
+					"type": "String",
+					"description": "预约时间"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态：无办理人信息（1001），办理人已填写（1002），已收到资料（1003），已审核完成（1004），已送签（1005），结果已返回（1006），已预约面试（1007  ），处理中（1008），买家已填写反馈信息（1009），已中止办理（1010）",
+					"required": true
+				},
+				{
+					"name": "post_number",
+					"type": "String",
+					"description": "物流单号"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "person_visa_id",
+					"type": "Number",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "book_place",
+					"type": "String",
+					"description": "预约地点"
+				},
+				{
+					"name": "post_company_code",
+					"type": "String",
+					"description": "物流公司编码"
+				},
+				{
+					"name": "post_company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				}
+			]
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "结果：包含result更新成功",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Boolean[]",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "结果数",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否包含下一个",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "异常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.einvoice.tax.opt.salarybill.commitbill",
+	"apiChineseName": "提交发薪账单",
+	"description": "提交发薪账单",
+	"requestParams": [
+		{
+			"name": "param_tax_optimization_salary_bill_commit_req_d_t_o",
+			"type": "TaxOptimizationSalaryBillCommitReqDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "account_date",
+					"type": "String",
+					"description": "账期"
+				},
+				{
+					"name": "close_account_date",
+					"type": "Boolean",
+					"description": "是否关闭账期"
+				},
+				{
+					"name": "contractor_applied_dutiable_amount",
+					"description": "发薪isv对应的发薪额度"
+				},
+				{
+					"name": "detail_list",
+					"type": "TaxOptimizationSalaryDetailInfoDto[]",
+					"description": "发薪明细",
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "明细金额"
+						},
+						{
+							"name": "contractor_code",
+							"type": "String",
+							"description": "承包商编码"
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "detail_id",
+							"type": "String",
+							"description": "明细id"
+						},
+						{
+							"name": "identification_in_belonging_employer",
+							"type": "String",
+							"description": "用户在业务平台的userid"
+						}
+					]
+				},
+				{
+					"name": "employer_code",
+					"type": "String",
+					"description": "业务方编码"
+				},
+				{
+					"name": "start_account_date",
+					"type": "Boolean",
+					"description": "是否开启账单"
+				},
+				{
+					"name": "total_detail_count",
+					"type": "Number",
+					"description": "总账单明细数"
+				}
+			]
+		}
+	]
+}

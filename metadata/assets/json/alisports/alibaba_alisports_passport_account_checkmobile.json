@@ -1,0 +1,95 @@
+{
+	"name": "alibaba.alisports.passport.account.checkmobile",
+	"apiChineseName": "阿里体育会员系统--手机号验证接口",
+	"description": "验证三方用户的手机号，获取对应的阿里体育会员id",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "业务appkey",
+			"required": true
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "调用时间戳",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "签名字符串",
+			"required": true
+		},
+		{
+			"name": "app_uid",
+			"type": "String",
+			"description": "合作方用户ID",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户呢称"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		},
+		{
+			"name": "gender",
+			"type": "String",
+			"description": "性别 0未设置 1男 2女 3保密"
+		},
+		{
+			"name": "birthday",
+			"type": "String",
+			"description": "生日"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		},
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_data",
+			"type": "AlispData",
+			"description": "alisp_data",
+			"subParams": [
+				{
+					"name": "sso_token",
+					"type": "String",
+					"description": "sso_token",
+					"required": true
+				},
+				{
+					"name": "aliuid",
+					"type": "String",
+					"description": "aliuid",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "type",
+					"required": true
+				},
+				{
+					"name": "access_token",
+					"type": "String",
+					"description": "access_token",
+					"required": true
+				}
+			]
+		}
+	]
+}

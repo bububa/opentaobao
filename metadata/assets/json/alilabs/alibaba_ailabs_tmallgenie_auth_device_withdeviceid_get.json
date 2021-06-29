@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get",
+	"apiChineseName": "根据三方ID查询设备注册激活信息",
+	"description": "根据三方ID查询设备注册激活信息",
+	"requestParams": [
+		{
+			"name": "client_id",
+			"type": "String",
+			"description": "设备产品ID"
+		},
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "mac地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Result",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_open_id",
+							"type": "String",
+							"description": "用户安全ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "设备名称",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "天猫精灵设备唯一ID",
+							"required": true
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备Mac地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				}
+			]
+		}
+	]
+}

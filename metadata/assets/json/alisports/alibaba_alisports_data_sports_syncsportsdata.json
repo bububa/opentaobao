@@ -1,0 +1,185 @@
+{
+	"name": "alibaba.alisports.data.sports.syncsportsdata",
+	"apiChineseName": "阿里体育数据中心用户运动数据同步接口",
+	"description": "阿里体育数据中心用户运动数据同步接口",
+	"requestParams": [
+		{
+			"name": "alisp_app_key",
+			"type": "String",
+			"description": "应用appkey",
+			"required": true
+		},
+		{
+			"name": "max_speed",
+			"type": "String",
+			"description": "最高速度 单位：米/每分"
+		},
+		{
+			"name": "aver_heartrate",
+			"type": "Number",
+			"description": "平均心率 单位：次/每分"
+		},
+		{
+			"name": "max_heartrate",
+			"type": "Number",
+			"description": "最高心率 单位：次/每分"
+		},
+		{
+			"name": "min_heartrate",
+			"type": "Number",
+			"description": "最低心率 单位：次/每分"
+		},
+		{
+			"name": "trail",
+			"type": "String",
+			"description": "运动轨迹，有序的经纬度集合，json格式 例：[[1,2],[3,4]] [1,2]是一个坐标点，1是经度 2是纬度（有就传，阿里体育较依赖此字段）"
+		},
+		{
+			"name": "stime",
+			"type": "String",
+			"description": "运动开始时间（如果不区分开始结束，两个时间值相同;格式：Y-m-d H:i:s）"
+		},
+		{
+			"name": "etime",
+			"type": "String",
+			"description": "运动结束时间（如果不区分开始结束，两个时间值相同;格式：Y-m-d H:i:s）"
+		},
+		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型 :1.手环;2.手表;3.跑步机;4.智能运动鞋;5.耳机;6.智能运动鞋;7.智能运动Bra8.智能单车;9.智能跳绳10.智能背心11.脚环"
+		},
+		{
+			"name": "device_name",
+			"type": "String",
+			"description": "设备名（展示会用到）"
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备型号"
+		},
+		{
+			"name": "aver_speed",
+			"type": "String",
+			"description": "平均速度 单位：米/每分"
+		},
+		{
+			"name": "sub_unit",
+			"type": "Number",
+			"description": "二级运动量单位 定义：1.爬楼层数(跑步、健走、健身、登山);2.划水次数(游泳)"
+		},
+		{
+			"name": "sub_num",
+			"type": "String",
+			"description": "二级运动量"
+		},
+		{
+			"name": "alisp_time",
+			"type": "String",
+			"description": "时间戳精确到秒",
+			"required": true
+		},
+		{
+			"name": "alisp_sign",
+			"type": "String",
+			"description": "接口签名",
+			"required": true
+		},
+		{
+			"name": "aliuid",
+			"type": "String",
+			"description": "阿里体育用户id",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "业务来源二级分类（中英文）"
+		},
+		{
+			"name": "data_id",
+			"type": "String",
+			"description": "三方运动数据主键id（数据唯一标记，去重使用）",
+			"required": true
+		},
+		{
+			"name": "sports_class",
+			"type": "Number",
+			"description": "运动类型一级分类 定义：1-跑步;2-健走;3-骑行;4-游泳;5-健身;6-篮球;7-足球;8-羽毛球;9-排球;10-乒乓球;11-瑜伽;12-电竞;13-登山;16-椭圆机;19-健身操;20-太极;",
+			"required": true
+		},
+		{
+			"name": "sports_type",
+			"type": "Number",
+			"description": "运动类型二级分类 定义： 1001-室内跑步;1002-室外跑步;2001-室内健走;2002-室外健走;3001-室内骑行;3002-室外骑行;4001-室内游泳;4002-户外游泳"
+		},
+		{
+			"name": "num",
+			"type": "String",
+			"description": "运动量"
+		},
+		{
+			"name": "unit",
+			"type": "Number",
+			"description": "运动量单位 1.步数(跑步、健走、椭圆机、登山);2.趟数(游泳);3.平均踏频(骑行);"
+		},
+		{
+			"name": "calorie",
+			"type": "String",
+			"description": "运动消耗卡路里 单位：卡"
+		},
+		{
+			"name": "match",
+			"type": "String",
+			"description": "所属赛事（有就传，阿里体育较依赖此字段）"
+		},
+		{
+			"name": "distance",
+			"type": "String",
+			"description": "运动距离 单位:米（有就传，阿里体育较依赖此字段）"
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "运动时长 单位:秒（有就传，阿里体育较依赖此字段）"
+		},
+		{
+			"name": "country",
+			"type": "String",
+			"description": "国家(中英文/运动发生地点，如有就传)"
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "省份(中英文/运动发生地点，如有就传)"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市(中英文/运动发生地点，如有就传)"
+		},
+		{
+			"name": "start_point",
+			"type": "String",
+			"description": "开始运动地点经纬度，格式：1,2 (1为经度，2为纬度)"
+		},
+		{
+			"name": "end_point",
+			"type": "String",
+			"description": "结束运动地点经纬度，格式：1,2 (1为经度，2为纬度)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "alisp_code",
+			"type": "Number",
+			"description": "alisp_code"
+		},
+		{
+			"name": "alisp_msg",
+			"type": "String",
+			"description": "alisp_msg"
+		}
+	]
+}

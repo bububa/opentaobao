@@ -1,0 +1,68 @@
+{
+	"name": "alibaba.tmallgenie.scp.plan.mouthfour.upload",
+	"apiChineseName": "21-M+4PR 回传接口接口",
+	"description": "M+4 PR 回传接口",
+	"requestParams": [
+		{
+			"name": "month_four_pr_request",
+			"type": "MonthFourPrRequest",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "month_four_pr_param_d_t_o_s",
+					"type": "MonthFourPrParamDto[]",
+					"description": "请求参数",
+					"subParams": [
+						{
+							"name": "key_figure_date",
+							"type": "Date",
+							"description": "关键值日期"
+						},
+						{
+							"name": "pr_qty",
+							"type": "String",
+							"description": "PR数量"
+						},
+						{
+							"name": "production_line",
+							"type": "String",
+							"description": "产品线"
+						},
+						{
+							"name": "extend_json",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "tenant",
+							"type": "String",
+							"description": "租户"
+						}
+					]
+				},
+				{
+					"name": "request_extend_json",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果msg"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一ID"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果code"
+		}
+	]
+}

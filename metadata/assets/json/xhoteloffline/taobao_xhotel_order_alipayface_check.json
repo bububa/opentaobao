@@ -1,0 +1,82 @@
+{
+	"name": "taobao.xhotel.order.alipayface.check",
+	"apiChineseName": "线下信用住买家资格校验接口",
+	"description": "接口用于校验买家是否具有使用酒店信用住的资格",
+	"requestParams": [
+		{
+			"name": "total_fee",
+			"type": "Number",
+			"description": "总的收费金额，单位为分",
+			"required": true
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "参数必填，发布到阿里旅行的酒店编码"
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "证件号, 如果加密方式设置为1, 传入加密后的证件号",
+			"required": true
+		},
+		{
+			"name": "encrypt_type",
+			"type": "Number",
+			"description": "加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;  1: SHA-1不可逆加密,  阿里旅行方面无法解析到具体信息, 只用于做信息匹配.注意加密后生成40字节长度的字符串"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "验证类型.可以不设置. 默认0-信用住下单资格校验;1-已经创建的信用住订单,入住人在checkIn时的资格复审"
+		},
+		{
+			"name": "id_type",
+			"type": "Number",
+			"description": "证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "不清楚请留空, 用于和outHid共同定位一个酒店",
+			"maxLength": 50
+		},
+		{
+			"name": "guest_name",
+			"type": "String",
+			"description": "入住人姓名"
+		},
+		{
+			"name": "mobile_no",
+			"type": "String",
+			"description": "客人手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "当match_condition=false时该字段有意义,用于说明用户不符合信用住条件的原因, 主要有如下几种返回:1. 该用户尚未签约线下信用住, 请先扫码签约; 2.该用户尚未签约, 暂不支持使用线下信用住, 请使用现金或其他方式结账; 3. 该用户支付宝账号存在风险, 暂不支持使用线下信用住, 请使用现金或其他方式结账; 4.该用户当前信用额度不足, 无法支付此房费, 请使用现金或其他方式结账"
+		},
+		{
+			"name": "action",
+			"type": "Number",
+			"description": "当match_condition=false时该字段有意义,用于标示当用户不符合条件时,应该进行的下一步动作. 0或者空: 代表没有下一步动作, 接入方此时可以直接不提示用户走任何线下信用住的流程和文案等; 1: 提示用户进行扫码签约,此时可以把reason字段展示到前台,或者自己定义提示文案"
+		},
+		{
+			"name": "match_condition",
+			"type": "Boolean",
+			"description": "是否符合信用住条件"
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "入参信息回传, 用于校验的证件号码"
+		},
+		{
+			"name": "exist_alipay_order",
+			"type": "Boolean",
+			"description": "existAlipayOrder"
+		}
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"name": "alitrip.hotel.alliance.hid.get",
+	"apiChineseName": "获取联盟hid",
+	"description": "获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询",
+	"requestParams": [
+		{
+			"name": "alliance_info_request",
+			"type": "AllianceInfoRequest",
+			"description": "查询入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "query_day",
+					"type": "String",
+					"description": "要查询的日期，格式yyyymmdd"
+				},
+				{
+					"name": "sign_type",
+					"type": "Number",
+					"description": "签约类型-0:融合；1:直签。"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hms_top_result_set",
+			"type": "HmsTopResultSet",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "AllianceInfoResult",
+					"description": "返回module",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alliance_hids",
+							"type": "Number[]",
+							"description": "菲住hid列表",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

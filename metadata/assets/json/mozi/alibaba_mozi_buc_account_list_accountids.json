@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.mozi.buc.account.list.accountids",
+	"apiChineseName": "根据一批账号ID查询账号列表",
+	"description": "根据一批账号ID查询账号列表",
+	"requestParams": [
+		{
+			"name": "list_account_ids",
+			"type": "ListAccountsByAccountIdsRequest",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户ID",
+					"required": true
+				},
+				{
+					"name": "account_ids",
+					"type": "Number[]",
+					"description": "账号ID列表",
+					"required": true
+				},
+				{
+					"name": "available",
+					"type": "String",
+					"description": "账号是否可用"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "附加信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListAccountsByAccountIdsResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回的数据",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求的序列化",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "返回的状态消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "返回的附件信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

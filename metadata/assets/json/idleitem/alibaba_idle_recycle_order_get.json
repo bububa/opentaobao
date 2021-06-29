@@ -1,0 +1,278 @@
+{
+	"name": "alibaba.idle.recycle.order.get",
+	"apiChineseName": "闲鱼回收订单查询V2",
+	"description": "闲鱼回收业务中,外部回收商作为交易上买家,闲鱼用户下单后,需要回收商主动拉取交易订单",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "RecycleOrderTo",
+			"description": "订单信息",
+			"subParams": [
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "回收商appkey",
+					"required": true
+				},
+				{
+					"name": "apprize_amount",
+					"type": "Number",
+					"description": "估价金额,单位分",
+					"required": true
+				},
+				{
+					"name": "apprize_id",
+					"type": "String",
+					"description": "估价Id",
+					"required": true
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "交易订单号",
+					"required": true
+				},
+				{
+					"name": "buyer_close_reason",
+					"type": "String",
+					"description": "回收商取消订单原因",
+					"required": true
+				},
+				{
+					"name": "seller_close_reason",
+					"type": "String",
+					"description": "用户取消订单原因",
+					"required": true
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "回收商买家账号",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道信息",
+					"required": true
+				},
+				{
+					"name": "channel_data",
+					"type": "String",
+					"description": "渠道内的业务数据json格式 比如 ship=1 服装类的不需要发货,weight=5-15 代表服装5-15kg, userLevel=vip 代表免议价用户,sellerRealPhone 淘宝账号绑定的手机号",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "村",
+					"required": true
+				},
+				{
+					"name": "coupon_fee",
+					"type": "String",
+					"description": "加价券金额,单位分",
+					"required": true
+				},
+				{
+					"name": "coupon_id",
+					"type": "String",
+					"description": "加价券Id（预留）",
+					"required": true
+				},
+				{
+					"name": "coupon_rule",
+					"type": "String",
+					"description": "加价券规则（预留）",
+					"required": true
+				},
+				{
+					"name": "credit_pay",
+					"type": "Boolean",
+					"description": "true：是信用预付订单，false：普通订单",
+					"required": true
+				},
+				{
+					"name": "credit_pay_amount",
+					"type": "Number",
+					"description": "信用预付金额,单位分",
+					"required": true
+				},
+				{
+					"name": "env",
+					"type": "String",
+					"description": "onlien:线上环境 pre：测试环境",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "idle_pay_type",
+					"type": "String",
+					"description": "1:现金支付",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "回收订单状态：1:订单创建 2:已上门取件 3:已质检 4:卖家确认交易完成 6:卖家订单已评价 7:回收商订单已评价 100:卖家申请退回 101:货物已退回 102:卖家关闭订单",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "rate_content",
+					"type": "String",
+					"description": "卖家评价内容",
+					"required": true
+				},
+				{
+					"name": "rate_grade",
+					"type": "String",
+					"description": "卖家评价等级",
+					"required": true
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "卖家申请退回原因",
+					"required": true
+				},
+				{
+					"name": "seller_address",
+					"type": "String",
+					"description": "卖家收货地址",
+					"required": true
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家淘宝nick",
+					"required": true
+				},
+				{
+					"name": "seller_phone",
+					"type": "String",
+					"description": "卖家联系号码",
+					"required": true
+				},
+				{
+					"name": "seller_real_name",
+					"type": "String",
+					"description": "卖家真实姓名",
+					"required": true
+				},
+				{
+					"name": "ship_time",
+					"type": "String",
+					"description": "上门取件时间",
+					"required": true
+				},
+				{
+					"name": "ship_type",
+					"type": "String",
+					"description": "取件类型",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道",
+					"required": true
+				},
+				{
+					"name": "pay_status",
+					"type": "String",
+					"description": "支付状态 1：未付款  2：已付款",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "下单后付款时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "订单完结时间",
+					"required": true
+				},
+				{
+					"name": "recovery_pay_id",
+					"type": "String",
+					"description": "追缴单流水Id",
+					"required": true
+				},
+				{
+					"name": "recovery_pay_time",
+					"type": "String",
+					"description": "追缴成功时间",
+					"required": true
+				},
+				{
+					"name": "makeup_pay_id",
+					"type": "String",
+					"description": "少补单流水Id",
+					"required": true
+				},
+				{
+					"name": "makeup_pay_time",
+					"type": "String",
+					"description": "少补成功时间",
+					"required": true
+				},
+				{
+					"name": "main_pay_id",
+					"type": "String",
+					"description": "主订单支付流水Id",
+					"required": true
+				},
+				{
+					"name": "qa_amount",
+					"type": "Number",
+					"description": "质检金额,单位分",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "失败时候错误信息"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

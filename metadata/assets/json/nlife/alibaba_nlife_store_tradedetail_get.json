@@ -1,0 +1,132 @@
+{
+	"name": "alibaba.nlife.store.tradedetail.get",
+	"apiChineseName": "查询采购单详情信息",
+	"description": "根据集团id和采购单号，查询采购单的详情信息",
+	"requestParams": [
+		{
+			"name": "procurement_no",
+			"type": "String",
+			"description": "集团采购单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "ProcurementDetailResponseDo",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "procurement_no",
+					"type": "String",
+					"description": "采购单号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "收货门店id",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "收货门店名称",
+					"required": true
+				},
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应商ID",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称",
+					"required": true
+				},
+				{
+					"name": "agreement_no",
+					"type": "String",
+					"description": "合同编号",
+					"required": true
+				},
+				{
+					"name": "agreement_name",
+					"type": "String",
+					"description": "合同名称",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "采购单状态:1-待提交; 2-待审核; 3-已驳回; 4-待发货; 5-已发货; 6-提交确认; 7-已签收; 8-已完结; 9-已删除; 10-已到货; 11-待供应商确认差异; 12-采购单已生效; 13-已失效",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "pricing_model",
+					"type": "Number",
+					"description": "结算计价模式:1-扣点模式;2-采购价模式",
+					"required": true
+				},
+				{
+					"name": "po_item_list",
+					"type": "Poitemlist[]",
+					"description": "poItemList",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品itemId",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "商品skuId",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "采购数量",
+							"required": true
+						},
+						{
+							"name": "po_price",
+							"type": "Number",
+							"description": "采购价-单位:分",
+							"required": true
+						},
+						{
+							"name": "retail_price",
+							"type": "Number",
+							"description": "零售价-单位:分",
+							"required": true
+						},
+						{
+							"name": "share_ratio",
+							"type": "String",
+							"description": "扣点-百分数换算成double的值",
+							"required": true
+						},
+						{
+							"name": "activity_share_ratio",
+							"type": "String",
+							"description": "活动扣点-百分数换算成double的值",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

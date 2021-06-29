@@ -1,0 +1,139 @@
+{
+	"name": "aliexpress.feed.post.publish",
+	"apiChineseName": "同步帖子",
+	"description": "站外平台同步帖子至AE FEED域",
+	"requestParams": [
+		{
+			"name": "offsite_publish_post_entity",
+			"type": "OffsitePublishPostEntity",
+			"description": "站外导入内容请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "帖子的summary"
+				},
+				{
+					"name": "image_infos",
+					"type": "OffsitePostImageVO[]",
+					"description": "图片列表，类型为1时不可为空",
+					"subParams": [
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "图片高度"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "图片宽度"
+						},
+						{
+							"name": "image_url",
+							"type": "String",
+							"description": "图片链接"
+						}
+					]
+				},
+				{
+					"name": "post_type",
+					"type": "String",
+					"description": "帖子类型：1-图文，2-视频",
+					"required": true
+				},
+				{
+					"name": "product_ids",
+					"type": "Number[]",
+					"description": "商品id"
+				},
+				{
+					"name": "video_info",
+					"type": "OffsitePostVideoVO",
+					"description": "视频参数，类型为2时不可为空",
+					"subParams": [
+						{
+							"name": "cover_url",
+							"type": "String",
+							"description": "视频封面，与视频尺寸要一致"
+						},
+						{
+							"name": "video_url",
+							"type": "String",
+							"description": "视频地址"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "视频宽度"
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "视频高度"
+						}
+					]
+				},
+				{
+					"name": "origin",
+					"type": "String",
+					"description": "帖子来源，import-第三方导入，接入前请咨询API负责人",
+					"required": true
+				},
+				{
+					"name": "lang",
+					"type": "String",
+					"description": "语言地区"
+				},
+				{
+					"name": "extends_info",
+					"type": "String",
+					"description": "帖子拓展信息，垂类，形式等，介入前请咨询API负责人"
+				},
+				{
+					"name": "hashtag",
+					"type": "String[]",
+					"description": "帖子话题"
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "币种"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "成功返回结果，json字符串",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否请求成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"name": "taobao.singletreasure.activity.item.delete",
+	"apiChineseName": "删除单品优惠接口",
+	"description": "删除单品优惠接口",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "请求返回信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ItemProcessErrorResultDto",
+					"description": "返回所有的处理错误的信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "活动Id",
+							"required": true
+						},
+						{
+							"name": "sku_id_map",
+							"type": "Json",
+							"description": "处理失败的item和sku: map结构为:itemId: skuId-错误信息,所有返回的外层key是itemId，里面的key是skuId，商品级别的skuId为-1",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "请求返回码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

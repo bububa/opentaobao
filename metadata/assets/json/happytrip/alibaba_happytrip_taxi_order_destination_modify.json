@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.happytrip.taxi.order.destination.modify",
+	"apiChineseName": "修改目的地",
+	"description": "通知ISV修改订单信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "tlng",
+			"type": "String",
+			"description": "目的地经度",
+			"required": true
+		},
+		{
+			"name": "tlat",
+			"type": "String",
+			"description": "目的地纬度",
+			"required": true
+		},
+		{
+			"name": "end_name",
+			"type": "String",
+			"description": "目的地名称(最多50个字)",
+			"required": true
+		},
+		{
+			"name": "end_address",
+			"type": "String",
+			"description": "目的地详细地址(最多100个字)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误代码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

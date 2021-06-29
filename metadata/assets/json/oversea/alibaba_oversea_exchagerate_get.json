@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.oversea.exchagerate.get",
+	"apiChineseName": "汇率信息获取",
+	"description": "提供外部汇率查询接口",
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "base_code",
+			"type": "String",
+			"description": "原始币种",
+			"required": true
+		},
+		{
+			"name": "target_code",
+			"type": "String",
+			"description": "目标币种",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "查询结果描述",
+			"subParams": [
+				{
+					"name": "exchange_rate",
+					"type": "String",
+					"description": "查到的税率信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询结果是否成功",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

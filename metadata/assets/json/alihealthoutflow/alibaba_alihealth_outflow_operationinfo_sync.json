@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.alihealth.outflow.operationinfo.sync",
+	"apiChineseName": "处方外流-操作信息同步",
+	"description": "阿里健康-处方外流-对外提供同步操作信息功能",
+	"requestParams": [
+		{
+			"name": "sync_operation_info_request",
+			"type": "SyncOperationInfoRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "操作时间(非空)"
+				},
+				{
+					"name": "authorization_id",
+					"type": "String",
+					"description": "授权id(非空)"
+				},
+				{
+					"name": "hospital_id",
+					"type": "String",
+					"description": "医院id(非空)"
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道(非空)（ALIPAY：支付宝）"
+				},
+				{
+					"name": "patient_id",
+					"type": "String",
+					"description": "患者id(非空)"
+				},
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "操作类型(非空)（ENTER_HOME_PAGE:进入首页）"
+				},
+				{
+					"name": "patient_name",
+					"type": "String",
+					"description": "患者姓名(非空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "ServiceResult",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回数据对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

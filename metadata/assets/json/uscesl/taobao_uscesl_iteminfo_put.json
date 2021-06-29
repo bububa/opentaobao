@@ -1,0 +1,200 @@
+{
+	"name": "taobao.uscesl.iteminfo.put",
+	"apiChineseName": "电子价签显示用商品信息写入",
+	"description": "用于电子价签上显示的商品信息的写入，包含价格及促销信息",
+	"requestParams": [
+		{
+			"name": "model_num",
+			"type": "String",
+			"description": "型号"
+		},
+		{
+			"name": "price_unit",
+			"type": "String",
+			"description": "价格单位",
+			"required": true
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "品牌名"
+		},
+		{
+			"name": "sale_spec",
+			"type": "String",
+			"description": "销售规格"
+		},
+		{
+			"name": "category_name",
+			"type": "String",
+			"description": "分类"
+		},
+		{
+			"name": "rank",
+			"type": "String",
+			"description": "等级"
+		},
+		{
+			"name": "item_change_status",
+			"type": "String",
+			"description": "商品变更状态"
+		},
+		{
+			"name": "acction_price",
+			"type": "String",
+			"description": "实际销售价格，单位：分",
+			"required": true
+		},
+		{
+			"name": "energy_efficiency",
+			"type": "String",
+			"description": "能效"
+		},
+		{
+			"name": "sku_id",
+			"type": "String",
+			"description": "商品skuId"
+		},
+		{
+			"name": "promotion_start",
+			"type": "Date",
+			"description": "促销开始时间:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "item_bar_code",
+			"type": "String",
+			"description": "商品条码",
+			"required": true
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "商品名称",
+			"required": true
+		},
+		{
+			"name": "promotion_text",
+			"type": "String",
+			"description": "促销文案"
+		},
+		{
+			"name": "customize_feature_c",
+			"type": "String",
+			"description": "扩展属性C"
+		},
+		{
+			"name": "customize_feature_d",
+			"type": "String",
+			"description": "扩展属性D"
+		},
+		{
+			"name": "customize_feature_e",
+			"type": "String",
+			"description": "扩展属性E"
+		},
+		{
+			"name": "customize_feature_f",
+			"type": "String",
+			"description": "扩展属性F"
+		},
+		{
+			"name": "customize_feature_g",
+			"type": "String",
+			"description": "扩展属性G"
+		},
+		{
+			"name": "customize_feature_h",
+			"type": "String",
+			"description": "扩展属性H"
+		},
+		{
+			"name": "customize_feature_i",
+			"type": "String",
+			"description": "扩展属性I"
+		},
+		{
+			"name": "customize_feature_j",
+			"type": "String",
+			"description": "扩展属性J"
+		},
+		{
+			"name": "item_qr_code",
+			"type": "String",
+			"description": "二维码"
+		},
+		{
+			"name": "item_status",
+			"type": "Number",
+			"description": "商品状态0:在售 1:售罄"
+		},
+		{
+			"name": "if_promotion",
+			"type": "Boolean",
+			"description": "促销状态0:非促销 1:促销"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "promotion_end",
+			"type": "Date",
+			"description": "促销结束时间:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "promotion_reason",
+			"type": "String",
+			"description": "促销原因"
+		},
+		{
+			"name": "original_price",
+			"type": "String",
+			"description": "商品原价"
+		},
+		{
+			"name": "short_title",
+			"type": "String",
+			"description": "商品简称"
+		},
+		{
+			"name": "customize_feature_b",
+			"type": "String",
+			"description": "扩展属性B"
+		},
+		{
+			"name": "production_place",
+			"type": "String",
+			"description": "产地"
+		},
+		{
+			"name": "customize_feature_a",
+			"type": "String",
+			"description": "扩展属性A"
+		},
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "target",
+			"type": "Boolean",
+			"description": "target"
+		},
+		{
+			"name": "return_code",
+			"type": "Number",
+			"description": "returnCode"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "taobao.omniorder.store.switchstatus.get",
+	"apiChineseName": "switchstatus.get",
+	"description": "查询门店发货、门店自提状态",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回素材id"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code"
+				}
+			]
+		}
+	]
+}

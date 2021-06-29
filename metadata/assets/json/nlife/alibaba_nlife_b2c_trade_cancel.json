@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.nlife.b2c.trade.cancel",
+	"apiChineseName": "零售+平台取消订单",
+	"description": "零售+平台取消订单接口",
+	"requestParams": [
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "零售+平台订单号，和out_trade_no不能同时为空",
+			"maxLength": 64
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "外部订单号，和trade_no不能同时为空",
+			"maxLength": 64
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "零售+门店号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gmt_cancel",
+			"type": "Date",
+			"description": "订单取消时间"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数JSON"
+		}
+	]
+}

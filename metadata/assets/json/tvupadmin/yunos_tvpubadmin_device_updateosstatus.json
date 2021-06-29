@@ -1,0 +1,35 @@
+{
+	"name": "yunos.tvpubadmin.device.updateosstatus",
+	"apiChineseName": "更新系统版本审核状态",
+	"description": "更新系统版本审核状态",
+	"requestParams": [
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "升级ID"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "审核状态"
+		},
+		{
+			"name": "audit_comment",
+			"type": "String",
+			"description": "审核意见"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "Boolean",
+			"description": "object"
+		}
+	]
+}

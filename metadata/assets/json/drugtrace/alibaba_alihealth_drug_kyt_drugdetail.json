@@ -1,0 +1,276 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.drugdetail",
+	"apiChineseName": "查询药品详细信息",
+	"description": "查询药品详细信息",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业ID",
+			"required": true
+		},
+		{
+			"name": "drug_ent_base_info_id",
+			"type": "String",
+			"description": "药品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "ResDrugDetailInfoDto",
+					"description": "返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pkg_unit_desc",
+							"type": "String",
+							"description": "包装单位描述",
+							"required": true
+						},
+						{
+							"name": "approval_licence_expiry",
+							"type": "String",
+							"description": "批准文号有效期至",
+							"required": true
+						},
+						{
+							"name": "exprie_unit",
+							"type": "String",
+							"description": "有效期单位(详见码表) 1:日，2：月，3：年",
+							"required": true
+						},
+						{
+							"name": "physic_detail_type",
+							"type": "String",
+							"description": "药品详细类型",
+							"required": true
+						},
+						{
+							"name": "pkg_spec",
+							"type": "String",
+							"description": "包装规格",
+							"required": true
+						},
+						{
+							"name": "ent_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "drug_base_info_id",
+							"type": "String",
+							"description": "药品基本信息id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态 1正常,0停用",
+							"required": true
+						},
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "企业唯一标识",
+							"required": true
+						},
+						{
+							"name": "physic_type_desc",
+							"type": "String",
+							"description": "药品类型描叙（普通药品）",
+							"required": true
+						},
+						{
+							"name": "pkg_num",
+							"type": "String",
+							"description": "包装数量",
+							"required": true
+						},
+						{
+							"name": "crt_date",
+							"type": "String",
+							"description": "创建时间(为企业提供数据)",
+							"required": true
+						},
+						{
+							"name": "ent_id",
+							"type": "String",
+							"description": "企业ID",
+							"required": true
+						},
+						{
+							"name": "prepn_unit_desc",
+							"type": "String",
+							"description": "制剂单位类型描述",
+							"required": true
+						},
+						{
+							"name": "ann_code_amt",
+							"type": "String",
+							"description": "年赋码量",
+							"required": true
+						},
+						{
+							"name": "drug_approval_info_id",
+							"type": "String",
+							"description": "药品批准文号ID(药品目录)",
+							"required": true
+						},
+						{
+							"name": "sdc_code",
+							"type": "String",
+							"description": "药品本位码",
+							"required": true
+						},
+						{
+							"name": "exprie_life",
+							"type": "String",
+							"description": "药品有效期数(月/年)",
+							"required": true
+						},
+						{
+							"name": "prod_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "physic_type",
+							"type": "String",
+							"description": "药品类型(详见码表) 1：特殊药品原料药，2：特殊药品制剂，3：普通药品，9：未分类",
+							"required": true
+						},
+						{
+							"name": "reg_region_detail",
+							"type": "String",
+							"description": "生产企业详细地址",
+							"required": true
+						},
+						{
+							"name": "physic_nat_code",
+							"type": "String",
+							"description": "申请码标识:1未申请,2已申请",
+							"required": true
+						},
+						{
+							"name": "drug_ent_base_info_id",
+							"type": "String",
+							"description": "药品ID",
+							"required": true
+						},
+						{
+							"name": "prepn_unit",
+							"type": "String",
+							"description": "制剂单位类型(详见码表)",
+							"required": true
+						},
+						{
+							"name": "prepn_spec",
+							"type": "String",
+							"description": "制剂规格",
+							"required": true
+						},
+						{
+							"name": "prepn_type",
+							"type": "String",
+							"description": "剂型(制剂类型)",
+							"required": true
+						},
+						{
+							"name": "drug_ent_base_id",
+							"type": "String",
+							"description": "企业药品ID",
+							"required": true
+						},
+						{
+							"name": "prepn_type_desc",
+							"type": "String",
+							"description": "剂型描述",
+							"required": true
+						},
+						{
+							"name": "physic_name",
+							"type": "String",
+							"description": "药品通用名称",
+							"required": true
+						},
+						{
+							"name": "pkg_unit",
+							"type": "String",
+							"description": "包装单位",
+							"required": true
+						},
+						{
+							"name": "pkg_spec_crit",
+							"type": "String",
+							"description": "包装规格常规",
+							"required": true
+						},
+						{
+							"name": "authorizer_flag",
+							"type": "String",
+							"description": "是否授权0未授权,1已授权",
+							"required": true
+						},
+						{
+							"name": "mod_date",
+							"type": "String",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "approval_licence_no",
+							"type": "String",
+							"description": "批准文号",
+							"required": true
+						},
+						{
+							"name": "physic_info",
+							"type": "String",
+							"description": "药品信息",
+							"required": true
+						},
+						{
+							"name": "prod_code",
+							"type": "String",
+							"description": "药品自类编码",
+							"required": true
+						},
+						{
+							"name": "approval_licence_type",
+							"type": "String",
+							"description": "批准文号类型",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "是否响应成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

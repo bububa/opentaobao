@@ -1,0 +1,44 @@
+{
+	"name": "alitrip.ship.product.syncnunber",
+	"apiChineseName": "船票班次变更回调",
+	"description": "船票班次变更回调",
+	"requestParams": [
+		{
+			"name": "city_name",
+			"type": "String",
+			"description": "出发城市"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "出发城市code"
+		},
+		{
+			"name": "from_station_name",
+			"type": "String",
+			"description": "出发港口"
+		},
+		{
+			"name": "from_station_code",
+			"type": "String",
+			"description": "出发港口编号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "成功状态"
+		}
+	]
+}

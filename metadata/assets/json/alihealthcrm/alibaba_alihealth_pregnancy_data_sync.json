@@ -1,0 +1,60 @@
+{
+	"name": "alibaba.alihealth.pregnancy.data.sync",
+	"apiChineseName": "四类数据同步",
+	"description": "经期调整；基础体温；排卵试纸；B超测排数据同步",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "Number",
+			"description": "三方id",
+			"required": true
+		},
+		{
+			"name": "event_type",
+			"type": "Number",
+			"description": "4经期调整；1基础体温；2排卵试纸；3 B超测排",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "四类数据定制化详情"
+		},
+		{
+			"name": "measure_date",
+			"type": "Number",
+			"description": "测量日期",
+			"required": true
+		},
+		{
+			"name": "operation_type",
+			"type": "Number",
+			"description": "0-新增 1-修改 2-删除",
+			"required": true
+		},
+		{
+			"name": "period_msg",
+			"type": "String",
+			"description": "经期数据json串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

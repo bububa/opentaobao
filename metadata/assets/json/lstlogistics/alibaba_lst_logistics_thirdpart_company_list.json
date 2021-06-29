@@ -1,0 +1,33 @@
+{
+	"name": "alibaba.lst.logistics.thirdpart.company.list",
+	"apiChineseName": "供应商-异云-第三方物流公司列表",
+	"description": "异地云仓发货时，需填写的第三方物流公司列表",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "LstLogisticsCompanyQuery",
+			"description": "入参"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content_list",
+			"type": "Content []",
+			"description": "返回内容",
+			"subParams": [
+				{
+					"name": "cp_company_code",
+					"type": "String",
+					"description": "公司code",
+					"required": true
+				},
+				{
+					"name": "cp_company_name",
+					"type": "String",
+					"description": "公司名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

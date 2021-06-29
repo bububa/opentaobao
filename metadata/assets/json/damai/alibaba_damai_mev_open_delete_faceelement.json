@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.damai.mev.open.delete.faceelement",
+	"apiChineseName": "大麦换验平台-第三方对外开放-票面元素接口deleteFaceElement",
+	"description": "deleteFaceElement",
+	"requestParams": [
+		{
+			"name": "delete_face_element_param",
+			"type": "FaceElementIdOpenParam",
+			"description": "入参deleteFaceElementParam",
+			"subParams": [
+				{
+					"name": "face_id",
+					"type": "Number",
+					"description": "票面id"
+				},
+				{
+					"name": "system_id",
+					"type": "Number",
+					"description": "系统id"
+				},
+				{
+					"name": "supplier_secret",
+					"type": "String",
+					"description": "商户密钥"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

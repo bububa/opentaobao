@@ -1,0 +1,63 @@
+{
+	"name": "yunos.account.callapi",
+	"apiChineseName": "调用YunOS账号开放API",
+	"description": "YunOS账号客户端对外开放的api通过top暴露",
+	"requestParams": [
+		{
+			"name": "version",
+			"type": "String",
+			"description": "API版本号"
+		},
+		{
+			"name": "api",
+			"type": "String",
+			"description": "调用的API名称",
+			"required": true
+		},
+		{
+			"name": "time_stamp",
+			"type": "String",
+			"description": "时间戳，精确到秒；账号服务端会校验该值与服务器当前时间戳的差值，超过一定范围则拒绝请求",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "业务参数",
+			"required": true
+		},
+		{
+			"name": "auth_sign",
+			"type": "String",
+			"description": "应用签名的MD5值",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AccountResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "status",
+					"required": true
+				}
+			]
+		}
+	]
+}

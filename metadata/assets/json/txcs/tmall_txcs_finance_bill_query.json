@@ -1,0 +1,150 @@
+{
+	"name": "tmall.txcs.finance.bill.query",
+	"apiChineseName": "天猫超市外部商家财务账单信息查询",
+	"description": "提供天猫超市外部合作商家财务账单对账",
+	"requestParams": [
+		{
+			"name": "statement_bill_query",
+			"type": "StatementBillQuery",
+			"description": "对账单号",
+			"subParams": [
+				{
+					"name": "statement_bill_code",
+					"type": "String",
+					"description": "对账单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "StatementBillDto",
+					"description": "创建的互动实例",
+					"required": true,
+					"subParams": [
+						{
+							"name": "settlement_company_code",
+							"type": "String",
+							"description": "结算主体编码",
+							"required": true
+						},
+						{
+							"name": "operate_type_desc",
+							"type": "String",
+							"description": "经营属性描述",
+							"required": true
+						},
+						{
+							"name": "operate_type",
+							"type": "String",
+							"description": "经营属性",
+							"required": true
+						},
+						{
+							"name": "business_partner_name",
+							"type": "String",
+							"description": "供应商名称",
+							"required": true
+						},
+						{
+							"name": "business_partner_code",
+							"type": "String",
+							"description": "供应商编码",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "statement_bill_code",
+							"type": "String",
+							"description": "对账单号",
+							"required": true
+						},
+						{
+							"name": "settlement_company_name",
+							"type": "String",
+							"description": "结算主体名称",
+							"required": true
+						},
+						{
+							"name": "bill_day",
+							"type": "String",
+							"description": "账单日",
+							"required": true
+						},
+						{
+							"name": "bill_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "bill_status_desc",
+							"type": "String",
+							"description": "订单状态描述",
+							"required": true
+						},
+						{
+							"name": "settlement_total_amount",
+							"type": "String",
+							"description": "应结算总金额",
+							"required": true
+						},
+						{
+							"name": "invoice_total_amount",
+							"type": "String",
+							"description": "应开票总金额",
+							"required": true
+						},
+						{
+							"name": "settle_perid_desc",
+							"type": "String",
+							"description": "结算周期描述",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "服务标识",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "biz_exception",
+					"type": "Boolean",
+					"description": "服务标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

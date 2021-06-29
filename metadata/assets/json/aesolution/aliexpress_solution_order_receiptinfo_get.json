@@ -1,0 +1,130 @@
+{
+	"name": "aliexpress.solution.order.receiptinfo.get",
+	"apiChineseName": "Get Order Receipt Info",
+	"description": "Get Order Receipt Info, Support multi stores requirements for Turkey sellers.",
+	"requestParams": [
+		{
+			"name": "param1",
+			"type": "SingleOrderQuery",
+			"description": "query param",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "order ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderAddressDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "country_name",
+					"type": "String",
+					"description": "English country/region name",
+					"required": true
+				},
+				{
+					"name": "mobile_no",
+					"type": "String",
+					"description": "mobile number",
+					"required": true
+				},
+				{
+					"name": "contact_person",
+					"type": "String",
+					"description": "Recipient",
+					"required": true
+				},
+				{
+					"name": "phone_country",
+					"type": "String",
+					"description": "Phone country/region code",
+					"required": true
+				},
+				{
+					"name": "phone_area",
+					"type": "String",
+					"description": "Phone area code",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "province",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "address 1",
+					"required": true
+				},
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "phone number",
+					"required": true
+				},
+				{
+					"name": "fax_number",
+					"type": "String",
+					"description": "Fax number",
+					"required": true
+				},
+				{
+					"name": "detail_address",
+					"type": "String",
+					"description": "Street detailed address",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "city",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "country/region",
+					"required": true
+				},
+				{
+					"name": "address2",
+					"type": "String",
+					"description": "address 2",
+					"required": true
+				},
+				{
+					"name": "fax_country",
+					"type": "String",
+					"description": "Fax country/region code",
+					"required": true
+				},
+				{
+					"name": "zip",
+					"type": "String",
+					"description": "Postal code",
+					"required": true
+				},
+				{
+					"name": "fax_area",
+					"type": "String",
+					"description": "Fax area code",
+					"required": true
+				},
+				{
+					"name": "localized_address",
+					"type": "String",
+					"description": "localized address, currently for buyer whose address is in Russia.",
+					"required": true
+				}
+			]
+		}
+	]
+}

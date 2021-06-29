@@ -1,0 +1,19 @@
+{
+	"name": "alibaba.it.esl.eslimage.sendimage",
+	"apiChineseName": "下发厂测初始化图片",
+	"description": "工厂对生产出的电子价签进行全流程功能测试，能将出场图片通过ESL系统初始化到电子价签中",
+	"requestParams": [
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "价签地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resultmsg",
+			"type": "String",
+			"description": "resultmsg"
+		}
+	]
+}

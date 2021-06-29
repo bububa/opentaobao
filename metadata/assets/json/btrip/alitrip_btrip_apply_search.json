@@ -1,0 +1,318 @@
+{
+	"name": "alitrip.btrip.apply.search",
+	"apiChineseName": "搜索审批单",
+	"description": "外部企业调用获取本企业审批单列表数据",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "OpenSearchRq",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页数，从1开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页返回数量，默认10，最多50"
+				},
+				{
+					"name": "depart_id",
+					"type": "String",
+					"description": "部门id"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "企业id",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户id"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "更新时间大于等于此时间的审批单"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtriphomeResultSupport",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "apply_list",
+					"type": "OpenApplyRs[]",
+					"description": "module",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "审批单id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "thirdpart_id",
+							"type": "String",
+							"description": "第三方审批单id,如果非第三方审批单则为空",
+							"required": true
+						},
+						{
+							"name": "corp_id",
+							"type": "String",
+							"description": "企业id",
+							"required": true
+						},
+						{
+							"name": "corp_name",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "用户id",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "用户名称",
+							"required": true
+						},
+						{
+							"name": "depart_id",
+							"type": "String",
+							"description": "部门id",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "部门名称",
+							"required": true
+						},
+						{
+							"name": "trip_day",
+							"type": "Number",
+							"description": "出差天数",
+							"required": true
+						},
+						{
+							"name": "trip_cause",
+							"type": "String",
+							"description": "出差原因",
+							"required": true
+						},
+						{
+							"name": "trip_title",
+							"type": "String",
+							"description": "出差标题",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "审批单状态：0申请 1同意 2拒绝 3转交 4取消 5修改已同意 6撤销已同意 7修改审批中 8已同意(修改被拒绝) 9撤销审批中 10已同意(撤销被拒绝) 11已同意(修改被取消) 12已同意(撤销被取消)",
+							"required": true
+						},
+						{
+							"name": "itinerary_list",
+							"type": "OpenItineraryInfo[]",
+							"description": "行程单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "trip_way",
+									"type": "Number",
+									"description": "行程方式：0单程 1往返",
+									"required": true
+								},
+								{
+									"name": "itinerary_id",
+									"type": "String",
+									"description": "行程单唯一id",
+									"required": true
+								},
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "交通方式：0飞机 1火车 2汽车 3其他",
+									"required": true
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市",
+									"required": true
+								},
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市",
+									"required": true
+								},
+								{
+									"name": "cost_center_name",
+									"type": "String",
+									"description": "成本中心名称",
+									"required": true
+								},
+								{
+									"name": "invoice_name",
+									"type": "String",
+									"description": "发票抬头",
+									"required": true
+								},
+								{
+									"name": "dep_date",
+									"type": "Date",
+									"description": "2017-05-01 00:00:00",
+									"required": true
+								},
+								{
+									"name": "arr_date",
+									"type": "Date",
+									"description": "2017-05-01 00:00:00",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "traveler_list",
+							"type": "OpenUserInfo[]",
+							"description": "出行人列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "用户名称",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "用户id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "approver_list",
+							"type": "OpenApproverInfo[]",
+							"description": "审批人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "审批人状态：0审批中 1已同意 2已拒绝 3已转交，4已取消 5已终止 6发起审批 7评论",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "审批人名称",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "审批人id",
+									"required": true
+								},
+								{
+									"name": "note",
+									"type": "String",
+									"description": "审批意见",
+									"required": true
+								},
+								{
+									"name": "operate_time",
+									"type": "Date",
+									"description": "操作时间",
+									"required": true
+								},
+								{
+									"name": "order",
+									"type": "Number",
+									"description": "审批人顺序",
+									"required": true
+								},
+								{
+									"name": "status_desc",
+									"type": "String",
+									"description": "审批人状态描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "apply_show_id",
+							"type": "String",
+							"description": "审批展示id",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "审批单状态描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

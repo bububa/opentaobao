@@ -1,0 +1,133 @@
+{
+	"name": "tmall.nr.fulfill.logistics.consign",
+	"apiChineseName": "同城配门店备货通知",
+	"description": "同城配业务备货通知，商家告诉平台门店的货已经准备好，可以发货了；",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "NrStoreGoodsReadyReqDto",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "performer_name",
+					"type": "String",
+					"description": "配送人员的姓名"
+				},
+				{
+					"name": "performer_phone",
+					"type": "String",
+					"description": "配送人员的电话"
+				},
+				{
+					"name": "company_order_no",
+					"type": "String",
+					"description": "发货编码"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "发货公司"
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "交易主订单号",
+					"required": true
+				},
+				{
+					"name": "biz_identity",
+					"type": "String",
+					"description": "业务标识，dss标识定时送业务；jsd表示极速达业务"
+				},
+				{
+					"name": "company_code",
+					"type": "String",
+					"description": "发货公司编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "NrStoreGoodsReadyRespDto",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "got_code",
+							"type": "String",
+							"description": "取件码",
+							"required": true
+						},
+						{
+							"name": "short_id",
+							"type": "String",
+							"description": "根据门店+sellerId按日期生成从1到N的数据",
+							"required": true
+						},
+						{
+							"name": "ma_code",
+							"type": "String",
+							"description": "核销码",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "主订单号",
+							"required": true
+						},
+						{
+							"name": "company_order_no",
+							"type": "String",
+							"description": "发货单号",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "发货公司",
+							"required": true
+						},
+						{
+							"name": "cancel_code",
+							"type": "String",
+							"description": "取消码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "废弃，请使用succ判断是否成功",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

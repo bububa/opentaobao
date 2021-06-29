@@ -1,0 +1,84 @@
+{
+	"name": "tmall.txcs.finance.bill.confirm",
+	"apiChineseName": "供应商账单确认",
+	"description": "提供天猫超市外部合作商家：财务账单对账",
+	"requestParams": [
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "statement_bill_confirm_d_t_o",
+			"type": "StatementBillConfirmDto",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "settlement_company_code",
+					"type": "String",
+					"description": "结算公司编码",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "幂等ID",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人ID",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "statement_bill_codes",
+					"type": "String[]",
+					"description": "账单code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AccessBaseResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "具体内容",
+					"required": true
+				}
+			]
+		}
+	]
+}

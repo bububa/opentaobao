@@ -1,0 +1,90 @@
+{
+	"name": "aliyun.industry.tttm.produce.sync",
+	"apiChineseName": "天天特卖生产进度同步",
+	"description": "天天特卖生产进度同步",
+	"requestParams": [
+		{
+			"name": "sync_plan",
+			"type": "SyncPlanDto",
+			"description": "计划单",
+			"subParams": [
+				{
+					"name": "sync_work_d_t_os",
+					"type": "WorkSyncDto[]",
+					"description": "工单",
+					"subParams": [
+						{
+							"name": "work_id",
+							"type": "String",
+							"description": "工单ID"
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "产品编码"
+						},
+						{
+							"name": "sync_produce_d_t_os",
+							"type": "ProduceSyncDto[]",
+							"description": "生产进度",
+							"subParams": [
+								{
+									"name": "link_sort",
+									"type": "Number",
+									"description": "顺序"
+								},
+								{
+									"name": "produce_link",
+									"type": "String",
+									"description": "生产节点"
+								},
+								{
+									"name": "produce_num",
+									"type": "Number",
+									"description": "产量"
+								},
+								{
+									"name": "defective_num",
+									"type": "Number",
+									"description": "次品量"
+								},
+								{
+									"name": "produce_status",
+									"type": "Number",
+									"description": "生产状态"
+								},
+								{
+									"name": "submit_time",
+									"type": "Date",
+									"description": "提交时间"
+								},
+								{
+									"name": "finish_time",
+									"type": "Date",
+									"description": "实际时间"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID"
+				},
+				{
+					"name": "plan_id",
+					"type": "String",
+					"description": "计划单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "状态"
+		}
+	]
+}

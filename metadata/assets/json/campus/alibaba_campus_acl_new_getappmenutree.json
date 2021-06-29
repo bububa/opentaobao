@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.campus.acl.new.getappmenutree",
+	"apiChineseName": "查询应用下的菜单树",
+	"description": "查询应用下的菜单树",
+	"requestParams": [
+		{
+			"name": "workbenchcontext",
+			"type": "WorkBenchContext",
+			"description": "系统入参",
+			"subParams": [
+				{
+					"name": "system_id",
+					"type": "String",
+					"description": "应用id",
+					"required": true
+				},
+				{
+					"name": "campus_id",
+					"type": "Number",
+					"description": "园区id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "withpermission",
+			"type": "Boolean",
+			"description": "是否关联查询出菜单下的权限"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ListResult",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "contents",
+					"type": "Json[]",
+					"description": "content",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录数",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

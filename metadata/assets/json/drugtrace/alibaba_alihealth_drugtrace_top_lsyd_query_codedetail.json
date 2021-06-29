@@ -1,0 +1,197 @@
+{
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.codedetail",
+	"apiChineseName": "根据码查询码信息",
+	"description": "服务描述\n此接口，针对有码药品，提供可通过追溯码获取该药品的基础信息和生产状况信息。\n核查平台优先过滤非8开头的，长度非20位数字的码信息。",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业唯一标识（或appkey）",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String[]",
+			"description": "码列表",
+			"required": true,
+			"maxListSize": 1000
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "最外层结果",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "CodeFullInfoDto[]",
+					"description": "内层大对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "package_level",
+							"type": "String",
+							"description": "码包装层级",
+							"required": true
+						},
+						{
+							"name": "code_produce_info_d_t_o",
+							"type": "CodeProduceInfoDto",
+							"description": "码生产信息对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "produce_info_list",
+									"type": "ProduceInfoDto[]",
+									"description": "生产信息集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "batch_no",
+											"type": "String",
+											"description": "批次号",
+											"required": true
+										},
+										{
+											"name": "expire_date",
+											"type": "String",
+											"description": "有效期至",
+											"required": true
+										},
+										{
+											"name": "pkg_amount",
+											"type": "String",
+											"description": "最小包装数量",
+											"required": true
+										},
+										{
+											"name": "produce_date_str",
+											"type": "String",
+											"description": "生产日期",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "drug_ent_base_d_t_o",
+							"type": "DrugEntBaseDto",
+							"description": "药品基本信息对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "physic_name",
+									"type": "String",
+									"description": "药品名称",
+									"required": true
+								},
+								{
+									"name": "physic_type_desc",
+									"type": "String",
+									"description": "药品类型描述",
+									"required": true
+								},
+								{
+									"name": "pkg_spec_crit",
+									"type": "String",
+									"description": "包装规格",
+									"required": true
+								},
+								{
+									"name": "prepn_spec",
+									"type": "String",
+									"description": "制剂规格",
+									"required": true
+								},
+								{
+									"name": "prepn_type_desc",
+									"type": "String",
+									"description": "剂型描述",
+									"required": true
+								},
+								{
+									"name": "approval_licence_no",
+									"type": "String",
+									"description": "批准文号",
+									"required": true
+								},
+								{
+									"name": "drug_ent_base_info_id",
+									"type": "String",
+									"description": "药品id",
+									"required": true
+								},
+								{
+									"name": "exprie",
+									"type": "String",
+									"description": "有效期",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "p_user_ent_d_t_o",
+							"type": "PUserEntDto",
+							"description": "企业信息对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "ent_name",
+									"type": "String",
+									"description": "企业名称",
+									"required": true
+								},
+								{
+									"name": "ref_ent_id",
+									"type": "String",
+									"description": "企业id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "追溯码",
+							"required": true
+						},
+						{
+							"name": "code_status_type_d_t_o",
+							"type": "CodeStatusTypeDto",
+							"description": "码对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code_status",
+									"type": "String",
+									"description": "码状态（A:已激活;I:已核注;O:已核注;C:已注销;E:码不存在）",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息提示内容",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "查询成功失败标记",
+					"required": true
+				}
+			]
+		}
+	]
+}

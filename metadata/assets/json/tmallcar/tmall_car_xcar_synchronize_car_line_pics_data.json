@@ -1,0 +1,112 @@
+{
+	"name": "tmall.car.xcar.synchronize.car.line.pics.data",
+	"apiChineseName": "爱卡车系图片数据接入",
+	"description": "爱卡车系图片数据同步天猫汽车",
+	"requestParams": [
+		{
+			"name": "param_x_car_sys_line_pics_d_t_o",
+			"type": "XCarSysLinePicsDto",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_pid",
+					"type": "Number",
+					"description": "品牌属性id",
+					"required": true
+				},
+				{
+					"name": "brand_vid",
+					"type": "Number",
+					"description": "品牌值id",
+					"required": true
+				},
+				{
+					"name": "color_name",
+					"type": "String",
+					"description": "具体颜色名称，除整体外观外，其他不区分颜色，此值为空，比如 黑色"
+				},
+				{
+					"name": "color_value",
+					"type": "String",
+					"description": "具体颜色色值，除整体外观外，其他不区分颜色，所以没有色值 比如 FFFF000FFF"
+				},
+				{
+					"name": "line_pid",
+					"type": "Number",
+					"description": "车系属性id",
+					"required": true
+				},
+				{
+					"name": "line_vid",
+					"type": "Number",
+					"description": "车系值id",
+					"required": true
+				},
+				{
+					"name": "pics",
+					"type": "String",
+					"description": "图片列表List\u003cURL\u003e，最多100张,json格式 比如： [\"www.baoud.com\",\"www.alibb.com\",\"www.accww.com\"]",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态0.无效 1有效",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "type(整体外观1、细节外观2、控件座椅3、中控区4、其他5)",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultVo",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "执行时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "接口正常时，返回对象",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否正常",
+					"required": true
+				}
+			]
+		}
+	]
+}

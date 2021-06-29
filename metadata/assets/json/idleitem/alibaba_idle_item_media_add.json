@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.idle.item.media.add",
+	"apiChineseName": "图片上传",
+	"description": "上传图片",
+	"requestParams": [
+		{
+			"name": "media_data",
+			"type": "byte[]",
+			"description": "多媒体文件字节流，图片\u003c5M,视频\u003c8M",
+			"required": true
+		},
+		{
+			"name": "media_type",
+			"type": "Number",
+			"description": "类型：0 - 图片 ，仅支持图片",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "废弃，不用再输入"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "EasyResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "上传成功的文件id",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.einvoice.income.agent.check",
+	"apiChineseName": "agent注册校验",
+	"description": "agent注册是，需要交易用户填写的agentId是否有效",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "String",
+			"description": "阿里发票平台分配的agentId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		}
+	]
+}

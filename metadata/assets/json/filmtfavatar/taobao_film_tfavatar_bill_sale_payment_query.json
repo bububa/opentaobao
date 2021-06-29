@@ -1,0 +1,94 @@
+{
+	"name": "taobao.film.tfavatar.bill.sale.payment.query",
+	"apiChineseName": "获取影院卖品账单--支付账单",
+	"description": "获取影院卖品账单--支付账单",
+	"requestParams": [
+		{
+			"name": "open_app_key",
+			"type": "String",
+			"description": "自运营开放平台APPKEY",
+			"required": true
+		},
+		{
+			"name": "cinema_id",
+			"type": "Number",
+			"description": "影院ID",
+			"required": true
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "included_order_status",
+			"type": "String[]",
+			"description": "包含的订单状态, 默认不填",
+			"maxListSize": 20
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "offset 下标, 从0开始"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "ReturnValue",
+					"description": "返回参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": "数据: 包含: 淘宝订单ID,系统商订单号,付款时间,核销时间,影院ID,影院名称,卖品名称,卖品内容,卖品来源,卖品结算单价,卖品数量,实际结算金额,卖品结算总价,影院卖品补贴,订单状态,退款状态,会员卡标识,备注,是否后结算,",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数据数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

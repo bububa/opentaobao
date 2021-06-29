@@ -1,0 +1,117 @@
+{
+	"name": "aliyun.viapi.imageaudit.scantext",
+	"apiChineseName": "文字内容审核",
+	"description": "结合行为、内容，采用多维度、多模型、多检测手段，识别文本中的垃圾内容，规避色情、广告、灌水、渉政、辱骂等内容风险。\n注意：如果返回结果里面的results为空，也代表指定类型检测通过。",
+	"requestParams": [
+		{
+			"name": "tasks",
+			"type": "Task[]",
+			"description": "指定检测对象，JSON数组中的每个元素是一个文件检测任务结构体（Task表）。最多支持10个元素，即对10张文本进行检测。每个元素的具体结构描述见Task。",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "content",
+					"type": "String",
+					"description": "待检测的内容",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "labels",
+			"type": "Label[]",
+			"description": "指定文本检测的应用场景，可选值包括：  spam：含垃圾信息 politics： 涉政 abuse：辱骂 porn：智能鉴黄 terrorism：暴恐识别 flood：灌水 contraband：违禁 ad：文案违规识别 说明 支持多场景（Labels）一起检测，对一张文本同时进行鉴黄和暴恐识别，计费时也将按照两个场景计费。",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "label",
+					"type": "String",
+					"description": "可选值包括：  spam：含垃圾信息 politics： 涉政 abuse：辱骂 porn：智能鉴黄 terrorism：暴恐识别 flood：灌水 contraband：违禁 ad：文本违规识别",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taobao_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "elements",
+					"type": "Element[]",
+					"description": "检测结果各个子元素",
+					"required": true,
+					"subParams": [
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "任务Id",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "Result[]",
+							"description": "单个文本的检测结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "suggestion",
+									"type": "String",
+									"description": "建议用户执行的操作，取值范围：  pass：文本正常 review：需要人工审核 block：文本违规，可以直接删除或者做限制处理",
+									"required": true
+								},
+								{
+									"name": "details",
+									"type": "Detail[]",
+									"description": "单个文本的检测结果",
+									"required": true,
+									"subParams": [
+										{
+											"name": "label",
+											"type": "String",
+											"description": "文本命中风险的分类",
+											"required": true
+										},
+										{
+											"name": "contexts",
+											"type": "Context[]",
+											"description": "命中该风险的上下文信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "context",
+													"type": "String",
+													"description": "检测文本命中的风险内容上下文内容",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "rate",
+									"type": "Number",
+									"description": "结果为该分类的概率，取值范围为[0.00-100.00]。值越高，表示越有可能属于该分类。  说明 分值仅供参考，您需要关注label和suggestion内容",
+									"required": true
+								},
+								{
+									"name": "label",
+									"type": "String",
+									"description": "检测结果的分类",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

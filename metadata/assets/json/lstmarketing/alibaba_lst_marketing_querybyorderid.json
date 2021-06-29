@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.lst.marketing.querybyorderid",
+	"apiChineseName": "根据订单查询营销信息",
+	"description": "根据订单查询营销信息",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单"
+		},
+		{
+			"name": "sub_order_id",
+			"type": "Number",
+			"description": "子订单"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "LstTopOrderDto",
+					"description": "订单实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "子订单id",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "Number",
+							"description": "主订单id",
+							"required": true
+						},
+						{
+							"name": "promotion_dto_list",
+							"type": "Promotiondtolist[]",
+							"description": "营销活动列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "discount_fee",
+									"type": "Number",
+									"description": "优惠金额，分为单位",
+									"required": true
+								},
+								{
+									"name": "activity_id",
+									"type": "String",
+									"description": "活动id",
+									"required": true
+								},
+								{
+									"name": "activity_name",
+									"type": "String",
+									"description": "活动名称",
+									"required": true
+								},
+								{
+									"name": "promotion_type_name",
+									"type": "String",
+									"description": "营销类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

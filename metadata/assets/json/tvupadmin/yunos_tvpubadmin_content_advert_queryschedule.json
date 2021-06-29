@@ -1,0 +1,129 @@
+{
+	"name": "yunos.tvpubadmin.content.advert.queryschedule",
+	"apiChineseName": "广告牌照管控查询",
+	"description": "广告牌照管控查询",
+	"requestParams": [
+		{
+			"name": "range",
+			"type": "Number",
+			"description": "查询范围: 1-牌照，4-uuid",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页，页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页，单页数量",
+			"required": true
+		},
+		{
+			"name": "gmt_start",
+			"type": "Date",
+			"description": "日期"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "uuid"
+		},
+		{
+			"name": "license",
+			"type": "Number",
+			"description": "牌照方，1-华数，7-CIBN",
+			"required": true
+		},
+		{
+			"name": "sity_type",
+			"type": "Number",
+			"description": "广告类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "PaginationDO",
+			"description": "具体数据信息",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数量",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "AdvertScheduleDO[]",
+					"description": "内容列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "range",
+							"type": "Number",
+							"description": "查询类型",
+							"required": true
+						},
+						{
+							"name": "bcp_id",
+							"type": "Number",
+							"description": "播控ID",
+							"required": true
+						},
+						{
+							"name": "device_model",
+							"type": "String",
+							"description": "设备型号",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "UUID",
+							"required": true
+						},
+						{
+							"name": "site_type",
+							"type": "Number",
+							"description": "广告类型",
+							"required": true
+						},
+						{
+							"name": "start",
+							"type": "Date",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

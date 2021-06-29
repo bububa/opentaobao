@@ -1,0 +1,21 @@
+package tmallgenie
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/tmallgenie"
+)
+
+/* 
+视频单集场景接入API 
+alibaba.ailabs.aligenie.openvideo.scenepush
+
+视频单集场景接入API
+*/
+func AlibabaAilabsAligenieOpenvideoScenepush(clt *core.SDKClient, req *tmallgenie.AlibabaAilabsAligenieOpenvideoScenepushRequest, session string) (*tmallgenie.AlibabaAilabsAligenieOpenvideoScenepushAPIResponse, error) {
+    var resp tmallgenie.AlibabaAilabsAligenieOpenvideoScenepushAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return &resp, nil
+}

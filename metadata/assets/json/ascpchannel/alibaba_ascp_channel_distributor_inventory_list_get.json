@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.ascp.channel.distributor.inventory.list.get",
+	"apiChineseName": "批量查询渠道库存",
+	"description": "淘外分销批量查询渠道产品的库存",
+	"requestParams": [
+		{
+			"name": "inventory_request",
+			"type": "BatchChannelInventoryQuery",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "product_ids",
+					"type": "String[]",
+					"description": "产品Id",
+					"required": true
+				},
+				{
+					"name": "sub_channel_code",
+					"type": "String",
+					"description": "二级渠道"
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "默认不传"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "一级渠道"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "调用链路ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "ChannelInventoryDto[]",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "库存数量",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "sub_channel_code",
+							"type": "String",
+							"description": "二级渠道",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "一级渠道",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

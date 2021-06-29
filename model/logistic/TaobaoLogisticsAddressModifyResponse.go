@@ -19,7 +19,9 @@ type TaobaoLogisticsAddressModifyAPIResponse struct {
 
 type TaobaoLogisticsAddressModifyResponse struct {
     XMLName xml.Name `xml:"logistics_address_modify_response"`
+    
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    
 
     // 只返回修改时间modify_date
     

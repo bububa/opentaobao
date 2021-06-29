@@ -1,0 +1,323 @@
+{
+	"name": "alibaba.alihealth.asyncprescribe.prescription.detail",
+	"apiChineseName": "异步开方处方详情",
+	"description": "异步开方处方查询",
+	"requestParams": [
+		{
+			"name": "detail_request",
+			"type": "AsyncPrescribeDetailRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "rx_no",
+					"type": "String",
+					"description": "处方号"
+				},
+				{
+					"name": "hospital_id",
+					"type": "String",
+					"description": "医院id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PrescriptionDetailVo",
+					"description": "返回数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "patient_age",
+							"type": "String",
+							"description": "患者年龄",
+							"required": true
+						},
+						{
+							"name": "patient_tel",
+							"type": "String",
+							"description": "患者电话",
+							"required": true
+						},
+						{
+							"name": "audit_pharmacist_name",
+							"type": "String",
+							"description": "审核药师姓名",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "科室名",
+							"required": true
+						},
+						{
+							"name": "id_card",
+							"type": "String",
+							"description": "省份证",
+							"required": true
+						},
+						{
+							"name": "prescription_audit_time",
+							"type": "Number",
+							"description": "处方审核时间",
+							"required": true
+						},
+						{
+							"name": "prescription_pic_url",
+							"type": "String",
+							"description": "处方图地址",
+							"required": true
+						},
+						{
+							"name": "prescription_create_time",
+							"type": "Number",
+							"description": "处开具时间",
+							"required": true
+						},
+						{
+							"name": "gan_gong_detail",
+							"type": "String",
+							"description": "肝功能",
+							"required": true
+						},
+						{
+							"name": "taobao_order_no",
+							"type": "String",
+							"description": "淘宝订单号",
+							"required": true
+						},
+						{
+							"name": "patient_name",
+							"type": "String",
+							"description": "患者姓名",
+							"required": true
+						},
+						{
+							"name": "dispensing_pharmacist_name",
+							"type": "String",
+							"description": "配药药师姓名",
+							"required": true
+						},
+						{
+							"name": "revisit_pic_url_list",
+							"type": "String[]",
+							"description": "病历报告单",
+							"required": true
+						},
+						{
+							"name": "patient_sex",
+							"type": "String",
+							"description": "患者性别",
+							"required": true
+						},
+						{
+							"name": "end_receive_time",
+							"type": "Number",
+							"description": "接诊结束时间",
+							"required": true
+						},
+						{
+							"name": "hospital_name",
+							"type": "String",
+							"description": "医院名",
+							"required": true
+						},
+						{
+							"name": "shen_gong_detail",
+							"type": "String",
+							"description": "肾功能",
+							"required": true
+						},
+						{
+							"name": "rx_no",
+							"type": "String",
+							"description": "处方号",
+							"required": true
+						},
+						{
+							"name": "disease_record_id",
+							"type": "String",
+							"description": "病历号",
+							"required": true
+						},
+						{
+							"name": "drug_list",
+							"type": "DrugDto[]",
+							"description": "药品",
+							"required": true,
+							"subParams": [
+								{
+									"name": "spec",
+									"type": "String",
+									"description": "规格",
+									"required": true
+								},
+								{
+									"name": "total",
+									"type": "String",
+									"description": "总量",
+									"required": true
+								},
+								{
+									"name": "common_drug_name",
+									"type": "String",
+									"description": "药品通用名",
+									"required": true
+								},
+								{
+									"name": "drug_name",
+									"type": "String",
+									"description": "药品名",
+									"required": true
+								},
+								{
+									"name": "drug_usage_list",
+									"type": "DrugUsageVo[]",
+									"description": "用法用量",
+									"required": true,
+									"subParams": [
+										{
+											"name": "measure_unit",
+											"type": "String",
+											"description": "每次用量单位",
+											"required": true
+										},
+										{
+											"name": "drug_usage",
+											"type": "String",
+											"description": "用法",
+											"required": true
+										},
+										{
+											"name": "days",
+											"type": "String",
+											"description": "天数",
+											"required": true
+										},
+										{
+											"name": "frequency_unit",
+											"type": "String",
+											"description": "频次值单位",
+											"required": true
+										},
+										{
+											"name": "frequency_value",
+											"type": "String",
+											"description": "频次值",
+											"required": true
+										},
+										{
+											"name": "frequency",
+											"type": "String",
+											"description": "频次",
+											"required": true
+										},
+										{
+											"name": "dose_value",
+											"type": "String",
+											"description": "每次你用量",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "dose_form",
+									"type": "String",
+									"description": "剂型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "guo_min_detail",
+							"type": "String",
+							"description": "过敏",
+							"required": true
+						},
+						{
+							"name": "start_receive_time",
+							"type": "Number",
+							"description": "开始接诊时间",
+							"required": true
+						},
+						{
+							"name": "diagnose_list",
+							"type": "DiagnoseVo[]",
+							"description": "诊断",
+							"required": true,
+							"subParams": [
+								{
+									"name": "diagnose_code",
+									"type": "String",
+									"description": "诊断编码",
+									"required": true
+								},
+								{
+									"name": "diagnose_name",
+									"type": "String",
+									"description": "诊断名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "effective_time",
+							"type": "String",
+							"description": "处方药有效期（小时）",
+							"required": true
+						},
+						{
+							"name": "doctor_name",
+							"type": "String",
+							"description": "医生姓名",
+							"required": true
+						},
+						{
+							"name": "hospital_id",
+							"type": "String",
+							"description": "医院id",
+							"required": true
+						},
+						{
+							"name": "problem_history",
+							"type": "String",
+							"description": "既往史",
+							"required": true
+						},
+						{
+							"name": "patient_birthday",
+							"type": "String",
+							"description": "出生年月日",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

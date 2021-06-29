@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.seaking.aititlegenerate",
+	"apiChineseName": "标题智能优化",
+	"description": "标题智能优化",
+	"requestParams": [
+		{
+			"name": "identifier",
+			"type": "String",
+			"description": "erp用户id",
+			"required": true
+		},
+		{
+			"name": "extra",
+			"type": "Extra",
+			"description": "扩展信息",
+			"subParams": [
+				{
+					"name": "sub_identifier",
+					"type": "String",
+					"description": "店铺所在平台"
+				},
+				{
+					"name": "sub_identify_type",
+					"type": "String",
+					"description": "店铺id"
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "商品id"
+				},
+				{
+					"name": "platform",
+					"type": "String",
+					"description": "商品所在平台"
+				}
+			]
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "语种",
+			"required": true
+		},
+		{
+			"name": "attributes",
+			"type": "Json",
+			"description": "商品属性",
+			"required": true
+		},
+		{
+			"name": "identifier_type",
+			"type": "String",
+			"description": "调用来源(erp名称)",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "标题",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "商品所在平台（ae/icbu）",
+			"required": true
+		},
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "类目id,没有的时候传-1",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "Json []",
+			"description": "智能生成的标题列表"
+		}
+	]
+}

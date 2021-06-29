@@ -1,0 +1,193 @@
+{
+	"name": "alibaba.idle.rent.item.query",
+	"apiChineseName": "查询租赁商品信息",
+	"description": "查询租赁商品信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "used_level",
+							"type": "Number",
+							"description": "新旧水平",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "AddressDto",
+							"description": "地址信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市",
+									"required": true
+								},
+								{
+									"name": "prov",
+									"type": "String",
+									"description": "省",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题",
+							"required": true
+						},
+						{
+							"name": "item_sku_list",
+							"type": "ItemSkuDto[]",
+							"description": "商品sku信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存",
+									"required": true
+								},
+								{
+									"name": "prop_list",
+									"type": "ItemPvPairDto[]",
+									"description": "sku属性列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "value_text",
+											"type": "String",
+											"description": "属性值",
+											"required": true
+										},
+										{
+											"name": "prop_text",
+											"type": "String",
+											"description": "属性",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "sku id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "price_info",
+							"type": "PriceDto",
+							"description": "价格信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "reserve_price",
+									"type": "Number",
+									"description": "买断价，单位分",
+									"required": true
+								},
+								{
+									"name": "original_price",
+									"type": "Number",
+									"description": "市场价，单位分",
+									"required": true
+								},
+								{
+									"name": "star",
+									"type": "String",
+									"description": "星级",
+									"required": true
+								},
+								{
+									"name": "deposit",
+									"type": "Number",
+									"description": "押金，单位分",
+									"required": true
+								},
+								{
+									"name": "settle_price_per_day",
+									"type": "Number",
+									"description": "日结算价格，单位分",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "商品状态",
+							"required": true
+						},
+						{
+							"name": "template_id",
+							"type": "Number",
+							"description": "运费模板id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "数据是否可用",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

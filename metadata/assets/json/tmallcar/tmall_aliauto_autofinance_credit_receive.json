@@ -1,0 +1,95 @@
+{
+	"name": "tmall.aliauto.autofinance.credit.receive",
+	"apiChineseName": "接收授信结果通知",
+	"description": "天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.",
+	"requestParams": [
+		{
+			"name": "credit_receive_dto",
+			"type": "CreditReceiveDto",
+			"description": "授信通知描述",
+			"required": true,
+			"subParams": [
+				{
+					"name": "extension_field02",
+					"type": "String",
+					"description": "扩展字段2"
+				},
+				{
+					"name": "extension_field01",
+					"type": "String",
+					"description": "扩展字段1"
+				},
+				{
+					"name": "capital_name",
+					"type": "String",
+					"description": "金融服务商名称"
+				},
+				{
+					"name": "capital_code",
+					"type": "String",
+					"description": "金融服务商编码"
+				},
+				{
+					"name": "fail_reason",
+					"type": "String",
+					"description": "授信未通过原因描述"
+				},
+				{
+					"name": "credit_amount",
+					"type": "Number",
+					"description": "如果授信通过了,要有授信额度(单位分)"
+				},
+				{
+					"name": "credit_id",
+					"type": "String",
+					"description": "金融机构的授信申请内部单号"
+				},
+				{
+					"name": "credit_result",
+					"type": "String",
+					"description": "授信结果",
+					"required": true
+				},
+				{
+					"name": "tmall_biz_no",
+					"type": "String",
+					"description": "天猫业务单号",
+					"required": true
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "request_time",
+					"type": "String",
+					"description": "请求时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succes",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "业务结果说明"
+		},
+		{
+			"name": "eror_message",
+			"type": "String",
+			"description": "错误信息描述"
+		},
+		{
+			"name": "eror_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

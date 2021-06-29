@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.alihealth.drug.kyt.querycodeactive",
+	"apiChineseName": "查询码是否激活",
+	"description": "查询码是否激活",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业",
+			"required": true
+		},
+		{
+			"name": "codes",
+			"type": "String[]",
+			"description": "码",
+			"required": true,
+			"maxListSize": 4000
+		}
+	],
+	"responseParams": [
+		{
+			"name": "models",
+			"type": "String []",
+			"description": "未激活的码"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "错误码(BILL_DECODE_ERROR 单据转码失败 2.BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 ,false失败)"
+		}
+	]
+}

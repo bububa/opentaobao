@@ -1,0 +1,100 @@
+{
+	"name": "alibaba.mozi.acl.grant.grantrole",
+	"apiChineseName": "将一个角色授予一个账号",
+	"description": "根据入参，将入参中的角色授权给入参的某个账户，调用此接口后，该账户就会被授予该角色",
+	"requestParams": [
+		{
+			"name": "grant_roles_request",
+			"type": "GrantRolesRequest",
+			"description": "整体入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "调用接口授角色的原因",
+					"required": true
+				},
+				{
+					"name": "target_app_name",
+					"type": "String",
+					"description": "目标应用名"
+				},
+				{
+					"name": "request_meta_data",
+					"description": "扩展参数"
+				},
+				{
+					"name": "principal",
+					"type": "BucUserPrincipalParam",
+					"description": "授角色主体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "授予角色的账号所在的租户Id",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "授予角色的账号id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "expire_date",
+					"type": "Date",
+					"description": "授予角色的过期时间"
+				},
+				{
+					"name": "role_names",
+					"type": "String[]",
+					"description": "授予的角色的code列表",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "GrantRolesResult",
+			"description": "给账号授予角色结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功，成功则为true，否则为false",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "response_message",
+					"type": "String",
+					"description": "响应信息，若失败，则返回失败信息",
+					"required": true
+				},
+				{
+					"name": "response_meta_data",
+					"type": "Json",
+					"description": "扩展字段，与入参扩展字段值相同",
+					"required": true
+				},
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "响应code",
+					"required": true
+				}
+			]
+		}
+	]
+}

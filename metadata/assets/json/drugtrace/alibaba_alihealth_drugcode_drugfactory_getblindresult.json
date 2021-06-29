@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alihealth.drugcode.drugfactory.getblindresult",
+	"apiChineseName": "获取盲底文件处理结果",
+	"description": "获取盲底文件处理结果",
+	"requestParams": [
+		{
+			"name": "ref_ent_id",
+			"type": "String",
+			"description": "企业id",
+			"required": true
+		},
+		{
+			"name": "blind_file_name",
+			"type": "String",
+			"description": "盲底文件名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultModel",
+			"description": "和三方交互最外层model对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "BlindFileProcessResultDto",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ref_ent_id",
+							"type": "String",
+							"description": "企业名称",
+							"required": true
+						},
+						{
+							"name": "blind_file_name",
+							"type": "String",
+							"description": "文件名称",
+							"required": true
+						},
+						{
+							"name": "process_status",
+							"type": "String",
+							"description": "处理状态 (0:处理成功,1:处理失败,2:正在处理,3:待处理)",
+							"required": true
+						},
+						{
+							"name": "fail_reason",
+							"type": "String",
+							"description": "失败原因",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "调用结果",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "调用结果信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,231 @@
+{
+	"name": "alibaba.alihealth.drugtrace.top.lsyd.uploadinoutbill",
+	"apiChineseName": "出入库单据上传",
+	"description": "零售企业上传出入库信息，包括101, \"生产入库\"；102, \"采购入库\"；103, \"退货入库\"；104, \"调拨入库\"；106, \"零头入库\"；107, \"供应入库\"；108, \"召回入库\"；110,\"赠品入库\"；111,\"盘盈入库\"；112,\"报废入库\"；113,\"其他入库\"\n201, \"销售出库\"；202, \"退货出库\"；203, \"调拨出库\"；204, \"返工出库\"；205, \"销毁出库\"；206, \"抽检出库\"；207, \"直调出库\"；208, \"生产出库\"；209, \"供应出库\"；211, \"召回出库\"；212,\"赠品出库\"；214,\"盘亏出库\"；215,\"损坏出库\"；216,\"报废出库\"；217,\"其他出库\"；237, \"直调退货\"。\n不包括对个人的零售出库，疫苗接种，领药出库。",
+	"requestParams": [
+		{
+			"name": "bill_code",
+			"type": "String",
+			"description": "单据编码（每个单据号只能上传一次）",
+			"required": true
+		},
+		{
+			"name": "bill_time",
+			"type": "Date",
+			"description": "单据时间",
+			"required": true
+		},
+		{
+			"name": "bill_type",
+			"type": "Number",
+			"description": "单据类型【102代表采购入库】",
+			"required": true
+		},
+		{
+			"name": "physic_type",
+			"type": "Number",
+			"description": "药品类型【3普药2特药】89开头的码定义为特药，其它码定义成普药",
+			"required": true
+		},
+		{
+			"name": "ref_user_id",
+			"type": "String",
+			"description": "上传单据企业的单位编码【注意：该入参是ref_ent_id，不是ent_id】",
+			"required": true
+		},
+		{
+			"name": "agent_ref_user_id",
+			"type": "String",
+			"description": "代理企业【注意：该入参是ref_ent_id，不是ent_id】，该字段兼容之前接口逻辑，后期将不允许使用，不要填值。"
+		},
+		{
+			"name": "from_user_id",
+			"type": "String",
+			"description": "发货企业entId",
+			"required": true
+		},
+		{
+			"name": "to_user_id",
+			"type": "String",
+			"description": "收货企业entId",
+			"required": true
+		},
+		{
+			"name": "dest_user_id",
+			"type": "String",
+			"description": "直调企业标识"
+		},
+		{
+			"name": "oper_ic_code",
+			"type": "String",
+			"description": "单据提交者（appkey编号）",
+			"required": true
+		},
+		{
+			"name": "oper_ic_name",
+			"type": "String",
+			"description": "单据提交者姓名",
+			"required": true
+		},
+		{
+			"name": "client_type",
+			"type": "String",
+			"description": "客户端类型[必须填2]",
+			"required": true
+		},
+		{
+			"name": "return_reason_code",
+			"type": "String",
+			"description": "退货原因代码[退货入出库时填写]"
+		},
+		{
+			"name": "return_reason_des",
+			"type": "String",
+			"description": "退货原因描述[退货入出库时填写]"
+		},
+		{
+			"name": "cancel_reason_code",
+			"type": "String",
+			"description": "注销原因代码【销毁出库时填写】"
+		},
+		{
+			"name": "cancel_reason_des",
+			"type": "String",
+			"description": "注销原因描述【销毁出库时填写】"
+		},
+		{
+			"name": "executer_name",
+			"type": "String",
+			"description": "执行人姓名【销毁出库时填写】"
+		},
+		{
+			"name": "executer_code",
+			"type": "String",
+			"description": "执行人证件号【销毁出库时填写】"
+		},
+		{
+			"name": "superviser_name",
+			"type": "String",
+			"description": "监督人姓名【销毁出库时填写】"
+		},
+		{
+			"name": "superviser_code",
+			"type": "String",
+			"description": "监督人证件号【销毁出库时填写】"
+		},
+		{
+			"name": "warehouse_id",
+			"type": "String",
+			"description": "仓号"
+		},
+		{
+			"name": "drug_id",
+			"type": "String",
+			"description": "药品ID[企业自已系统的药品ID]"
+		},
+		{
+			"name": "trace_codes",
+			"type": "String[]",
+			"description": "追溯码[多个时用逗号分开]",
+			"required": true,
+			"maxListSize": 800
+		},
+		{
+			"name": "from_address",
+			"type": "String",
+			"description": "（协同平台数据合规）发货地址【必选】"
+		},
+		{
+			"name": "to_address",
+			"type": "String",
+			"description": "（协同平台数据合规）收货地址【必选】"
+		},
+		{
+			"name": "from_bill_code",
+			"type": "String",
+			"description": "（协同平台数据合规）发货单编号【必选】"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "（协同平台数据合规）订货单编号【可选】"
+		},
+		{
+			"name": "from_person",
+			"type": "String",
+			"description": "（协同平台数据合规）发货人【必选】"
+		},
+		{
+			"name": "to_person",
+			"type": "String",
+			"description": "（协同平台数据合规）收货人【必选】"
+		},
+		{
+			"name": "dis_ref_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）药品配送企业【出库单，收货方为医疗机构时填写】"
+		},
+		{
+			"name": "dis_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）药品配送企业entId【出库单，收货方为医疗机构时填写】"
+		},
+		{
+			"name": "qu_receivable",
+			"type": "Number",
+			"description": "（协同平台数据合规）应收货总数量【必选】"
+		},
+		{
+			"name": "xt_is_check",
+			"type": "String",
+			"description": "（协同平台数据合规）是否验证，0：未通过验证，1：已验证"
+		},
+		{
+			"name": "xt_check_code",
+			"type": "String",
+			"description": "（协同平台数据合规）未验证通过原因【验证未通过时填写】"
+		},
+		{
+			"name": "xt_check_code_desc",
+			"type": "String",
+			"description": "（协同平台数据合规）未验证通过原因描述【验证未通过时填写】"
+		},
+		{
+			"name": "drug_list_json",
+			"type": "String",
+			"description": "（协同平台数据合规）药品列表Json：\"codeCount\": 药品数量 \"commDrugId\": 国家药品唯一标识 \"exprieDate\": 生产日期 \"physicInfo\": 药品信息 \"pkgSpec\": 包状规格 \"prepnCount\": 制剂数量 \"produceBatchNo\":生产批次 \"produceDate\": 生产日期"
+		},
+		{
+			"name": "ass_ref_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）单据委托企业refEntId【疫苗药品出库单填写】"
+		},
+		{
+			"name": "ass_ent_id",
+			"type": "String",
+			"description": "（协同平台数据合规）单据委托企业entId【疫苗药品出库单填写】"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回值"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码(BILL_DECODE_ERROR 单据转码失败  BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "是否成功(true 成功 false 失败)"
+		}
+	]
+}

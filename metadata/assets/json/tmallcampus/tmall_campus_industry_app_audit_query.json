@@ -1,0 +1,66 @@
+{
+	"name": "tmall.campus.industry.app.audit.query",
+	"apiChineseName": "天猫校园查询学生认证信息",
+	"description": "天猫校园查询学生认证信息",
+	"requestParams": [
+		{
+			"name": "source",
+			"type": "String",
+			"description": "调用来源",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "fail",
+					"type": "Boolean",
+					"description": "调用失败",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "CollegeAuditStatusResponse",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "audit_name",
+							"type": "String",
+							"description": "认证状态描述;一共四种状态audit_name和audit_code对应关系如下：1.认证是学生 audit_pass;2.认证非学生 audit_no_pass;3.审核中 audit_wait;4.未认证 audit_no_record;",
+							"required": true
+						},
+						{
+							"name": "audit_code",
+							"type": "String",
+							"description": "认证状态编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				}
+			]
+		}
+	]
+}

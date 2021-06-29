@@ -1,0 +1,294 @@
+{
+	"name": "alitrip.btrip.city.car.apply.query",
+	"apiChineseName": "三方市内用车申请单查询",
+	"description": "三方市内用车申请单查询",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "CityCarApplyQueryRq",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				},
+				{
+					"name": "created_end_at",
+					"type": "Date",
+					"description": "审批单创建时间小于值"
+				},
+				{
+					"name": "created_start_at",
+					"type": "Date",
+					"description": "审批单创建时间大于等于值"
+				},
+				{
+					"name": "page_number",
+					"type": "Number",
+					"description": "页码，要求大于等于1，默认1"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据量，要求大于等于1，默认20"
+				},
+				{
+					"name": "third_part_apply_id",
+					"type": "String",
+					"description": "三方审批单ID"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "三方员工ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BtripApplyResult",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "apply_list",
+					"type": "OpenApplyRs[]",
+					"description": "审批单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "approver_list",
+							"type": "OpenApproverInfo[]",
+							"description": "审批人列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "note",
+									"type": "String",
+									"description": "审批备注",
+									"required": true
+								},
+								{
+									"name": "operate_time",
+									"type": "Date",
+									"description": "审批时间",
+									"required": true
+								},
+								{
+									"name": "order",
+									"type": "Number",
+									"description": "审批人排序对比值",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "审批状态枚举：审批状态：0-审批中，1-已同意，2-已拒绝",
+									"required": true
+								},
+								{
+									"name": "status_desc",
+									"type": "String",
+									"description": "审批状态描述",
+									"required": true
+								},
+								{
+									"name": "user_id",
+									"type": "String",
+									"description": "审批员工ID",
+									"required": true
+								},
+								{
+									"name": "user_name",
+									"type": "String",
+									"description": "审批员工名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "depart_id",
+							"type": "String",
+							"description": "员工所在部门ID",
+							"required": true
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "员工所在部门名",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "最近修改时间",
+							"required": true
+						},
+						{
+							"name": "itinerary_list",
+							"type": "OpenItineraryInfo[]",
+							"description": "审批单关联的行程",
+							"required": true,
+							"subParams": [
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "目的地城市",
+									"required": true
+								},
+								{
+									"name": "arr_city_code",
+									"type": "String",
+									"description": "目的地城市三字码",
+									"required": true
+								},
+								{
+									"name": "arr_date",
+									"type": "Date",
+									"description": "到达目的地城市时间",
+									"required": true
+								},
+								{
+									"name": "cost_center_id",
+									"type": "Number",
+									"description": "商旅内部成本中心ID",
+									"required": true
+								},
+								{
+									"name": "cost_center_name",
+									"type": "String",
+									"description": "成本中心名称",
+									"required": true
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市",
+									"required": true
+								},
+								{
+									"name": "dep_city_code",
+									"type": "String",
+									"description": "出发城市三字码",
+									"required": true
+								},
+								{
+									"name": "dep_date",
+									"type": "Date",
+									"description": "出发时间",
+									"required": true
+								},
+								{
+									"name": "invoice_id",
+									"type": "Number",
+									"description": "商旅内部发票抬头ID",
+									"required": true
+								},
+								{
+									"name": "invoice_name",
+									"type": "String",
+									"description": "发票抬头名称",
+									"required": true
+								},
+								{
+									"name": "itinerary_id",
+									"type": "String",
+									"description": "商旅内部行程单ID",
+									"required": true
+								},
+								{
+									"name": "project_code",
+									"type": "String",
+									"description": "项目code",
+									"required": true
+								},
+								{
+									"name": "project_title",
+									"type": "String",
+									"description": "项目名称",
+									"required": true
+								},
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "交通方式：4-市内交通",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "审批单状态：0-申请，1-同意，2-拒绝",
+							"required": true
+						},
+						{
+							"name": "status_desc",
+							"type": "String",
+							"description": "审批单状态：0-申请，1-同意，2-拒绝",
+							"required": true
+						},
+						{
+							"name": "thirdpart_id",
+							"type": "String",
+							"description": "三方审批单ID",
+							"required": true
+						},
+						{
+							"name": "trip_cause",
+							"type": "String",
+							"description": "申请事由",
+							"required": true
+						},
+						{
+							"name": "trip_title",
+							"type": "String",
+							"description": "审批单标题",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "发起审批员工ID",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "发起审批员工名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

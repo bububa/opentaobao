@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.happytrip.taxi.driver.blacklist.add",
+	"apiChineseName": "添加司机黑名单",
+	"description": "实现用户1对1永久拉黑司机，如果不支持永久拉黑，则在自动解禁黑名单司机时需回调通知欢行",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "供应商单号",
+			"required": true
+		},
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "用户唯一标识",
+			"required": true
+		},
+		{
+			"name": "driver_id",
+			"type": "String",
+			"description": "司机唯一标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "String",
+			"description": "错误代码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

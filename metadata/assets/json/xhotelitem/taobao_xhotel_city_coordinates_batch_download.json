@@ -1,0 +1,57 @@
+{
+	"name": "taobao.xhotel.city.coordinates.batch.download",
+	"apiChineseName": "下载飞猪国际城市结果",
+	"description": "给国际酒店供应商提供计算对应飞猪城市的服务，免去城市名称匹配流程，加快对接流程",
+	"requestParams": [
+		{
+			"name": "batch_id",
+			"type": "Number",
+			"description": "上传的经纬度批次号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "coordinate_list",
+			"type": "Coordinate []",
+			"description": "经纬度计算结果列表",
+			"subParams": [
+				{
+					"name": "batch_id",
+					"type": "Number",
+					"description": "批次号",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部经纬度标识id，可以是酒店或城市的id",
+					"required": true
+				},
+				{
+					"name": "country",
+					"type": "Number",
+					"description": "飞猪国家编码",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "飞猪城市编码",
+					"required": true
+				},
+				{
+					"name": "city_cn_name",
+					"type": "String",
+					"description": "飞猪城市中文名称",
+					"required": true
+				},
+				{
+					"name": "city_en_name",
+					"type": "String",
+					"description": "飞猪城市英文名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

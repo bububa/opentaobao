@@ -1,0 +1,86 @@
+{
+	"name": "alitrip.travel.visa.applicant.import",
+	"apiChineseName": "签证申请人导入",
+	"description": "签证线下申请人导入接口。供商家将线下的签证申请人信息导入，进行签证线上化办理",
+	"requestParams": [
+		{
+			"name": "nation_id",
+			"type": "Number",
+			"description": "国家id。目前支持越南(27027)",
+			"required": true
+		},
+		{
+			"name": "photo_file",
+			"type": "byte[]",
+			"description": "证件照文件字节流",
+			"required": true
+		},
+		{
+			"name": "outer_apply_id",
+			"type": "String",
+			"description": "外部商家申请人id",
+			"required": true
+		},
+		{
+			"name": "passport_file_type",
+			"type": "String",
+			"description": "护照文件类型",
+			"required": true
+		},
+		{
+			"name": "passport_file",
+			"type": "byte[]",
+			"description": "护照文件字节流",
+			"required": true
+		},
+		{
+			"name": "photo_file_type",
+			"type": "String",
+			"description": "证件照文件类型",
+			"required": true
+		},
+		{
+			"name": "form_data_json",
+			"type": "String",
+			"description": "申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大);3.daibanTypeId(代办类型):1(越南一个月单次入境),2(越南一个月多次入境),3(越南三个月单次入境),4(越南三个月多次入境)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "outer_apply_id",
+			"type": "String",
+			"description": "外部商家申请人id"
+		},
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "申请人id"
+		},
+		{
+			"name": "last_name_pinyin",
+			"type": "String",
+			"description": "拼音姓"
+		},
+		{
+			"name": "first_name_pinyin",
+			"type": "String",
+			"description": "拼音名"
+		},
+		{
+			"name": "passport_number",
+			"type": "String",
+			"description": "护照号"
+		},
+		{
+			"name": "error_type",
+			"type": "Number",
+			"description": "错误类型:1-数据重复，2-数据错误"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

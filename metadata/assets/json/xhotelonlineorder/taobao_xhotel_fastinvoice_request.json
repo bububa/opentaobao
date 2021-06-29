@@ -1,0 +1,139 @@
+{
+	"name": "taobao.xhotel.fastinvoice.request",
+	"apiChineseName": "极速开票开票请求回传",
+	"description": "极速开票开票请求回传,用于记录航信开票请求数据",
+	"requestParams": [
+		{
+			"name": "invoice_info_param",
+			"type": "InvoiceInfoParam",
+			"description": "无",
+			"required": true,
+			"subParams": [
+				{
+					"name": "post_type",
+					"type": "Number",
+					"description": "领取方式（      0：前台自取  3: 送至房间）",
+					"required": true
+				},
+				{
+					"name": "short_id_number",
+					"type": "String",
+					"description": "身份证后4位",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id (32位唯一值)",
+					"required": true
+				},
+				{
+					"name": "plan_invoice_room_price",
+					"type": "Number",
+					"description": "预计开票房费金额(分)",
+					"required": true
+				},
+				{
+					"name": "company_title",
+					"type": "String",
+					"description": "公司抬头",
+					"required": true
+				},
+				{
+					"name": "room_num",
+					"type": "String",
+					"description": "房间号",
+					"required": true
+				},
+				{
+					"name": "invoice_type",
+					"type": "Number",
+					"description": "发票类型（1:普通发票；2：增值税专用发票）",
+					"required": true
+				},
+				{
+					"name": "want_time",
+					"type": "String",
+					"description": "需要发票时间(格式yyyy-MM-dd HH:mm:ss)",
+					"required": true
+				},
+				{
+					"name": "plan_invoice_other_price",
+					"type": "Number",
+					"description": "预计开票杂费金额(分)",
+					"required": true
+				},
+				{
+					"name": "tax_num",
+					"type": "String",
+					"description": "酒店开票点税号",
+					"required": true
+				},
+				{
+					"name": "user_channel",
+					"type": "Number",
+					"description": "用户渠道(0:未知,1:淘宝)"
+				},
+				{
+					"name": "out_order_num",
+					"type": "String",
+					"description": "酒店外部订单号(从查询pms账单接口中获取)"
+				},
+				{
+					"name": "value_added_info",
+					"type": "ValueAddedInfo",
+					"description": "专票信息",
+					"subParams": [
+						{
+							"name": "register_addr",
+							"type": "String",
+							"description": "注册地址"
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "银行账号"
+						},
+						{
+							"name": "opening_bank",
+							"type": "String",
+							"description": "开户行"
+						},
+						{
+							"name": "tax_no",
+							"type": "String",
+							"description": "增值税发票税号"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "电话"
+						}
+					]
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户名"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

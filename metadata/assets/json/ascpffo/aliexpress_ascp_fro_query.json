@@ -1,0 +1,172 @@
+{
+	"name": "aliexpress.ascp.fro.query",
+	"apiChineseName": "AliExpress销退单查询API",
+	"description": "AE履约销退单查询接口",
+	"requestParams": [
+		{
+			"name": "fulfillment_reverse_order_query",
+			"type": "FulfillmentReverseOrderQueryDto",
+			"description": "dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "账套编码",
+					"required": true
+				},
+				{
+					"name": "customer_order_number_list",
+					"type": "String[]",
+					"description": "用户订单号列表"
+				},
+				{
+					"name": "fulfillment_order_no",
+					"type": "String",
+					"description": "履约单号"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageQueryResult",
+			"description": "DTO",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "trade_order_no",
+							"type": "String",
+							"description": "用户订单号",
+							"required": true
+						},
+						{
+							"name": "fulfillment_order_no",
+							"type": "String",
+							"description": "履约单号",
+							"required": true
+						},
+						{
+							"name": "original_lbx_no",
+							"type": "String",
+							"description": "原物流单号",
+							"required": true
+						},
+						{
+							"name": "lbx_no",
+							"type": "String",
+							"description": "物流单号",
+							"required": true
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收货人姓名",
+							"required": true
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "收货人手机",
+							"required": true
+						},
+						{
+							"name": "shipping_provider_name",
+							"type": "String",
+							"description": "物流公司",
+							"required": true
+						},
+						{
+							"name": "tracking_number",
+							"type": "String",
+							"description": "运单号",
+							"required": true
+						},
+						{
+							"name": "return_order_create_time",
+							"type": "Number",
+							"description": "退货下单时间戳",
+							"required": true
+						},
+						{
+							"name": "return_order_inbound_time",
+							"type": "Number",
+							"description": "退货入库时间戳",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "String",
+							"description": "退货类型",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "查询结果总数",
+					"required": true
+				}
+			]
+		}
+	]
+}

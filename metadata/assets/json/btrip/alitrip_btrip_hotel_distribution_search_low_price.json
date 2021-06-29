@@ -1,0 +1,132 @@
+{
+	"name": "alitrip.btrip.hotel.distribution.search.low.price",
+	"apiChineseName": "商旅酒店api分销-酒店最低价",
+	"description": "商旅酒店api分销-酒店最低价",
+	"requestParams": [
+		{
+			"name": "param_hotel_search_list_r_q",
+			"type": "HotelSearchListRq",
+			"description": "列表最低价入参",
+			"subParams": [
+				{
+					"name": "check_in",
+					"type": "String",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "check_out",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "city_code",
+					"type": "String",
+					"description": "城市code",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市名称",
+					"required": true
+				},
+				{
+					"name": "sub_channel",
+					"type": "String",
+					"description": "子渠道",
+					"required": true
+				},
+				{
+					"name": "order",
+					"type": "Number",
+					"description": "排序方式，0-默认|1-销量|2-价格|3-距离|4-好评"
+				},
+				{
+					"name": "dir",
+					"type": "Number",
+					"description": "排序方向，1-升序 or 0-降序"
+				},
+				{
+					"name": "shids",
+					"type": "String",
+					"description": "酒店id，多个用英文逗号分隔符"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HisvResult",
+			"description": "返回出参",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "HotelSearchListRs",
+					"description": "返回出参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "hotels",
+							"type": "HotelListDto[]",
+							"description": "酒店列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "low_price",
+									"type": "Number",
+									"description": "最低价，单位分",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名称",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "酒店标准ID",
+									"required": true
+								},
+								{
+									"name": "supplier_code",
+									"type": "String",
+									"description": "供应商code",
+									"required": true
+								},
+								{
+									"name": "supplier_name",
+									"type": "String",
+									"description": "供应商名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "酒店数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "返回状态",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

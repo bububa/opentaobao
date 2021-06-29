@@ -1,0 +1,362 @@
+{
+	"name": "tmall.servicecenter.workcard.querybyseller",
+	"apiChineseName": "工单查询接口（面向商家）",
+	"description": "查询工单",
+	"requestParams": [
+		{
+			"name": "service_store_id",
+			"type": "Number",
+			"description": "门店/网点id"
+		},
+		{
+			"name": "identify_code",
+			"type": "String",
+			"description": "核销码"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "gmt_create_start",
+			"type": "Date",
+			"description": "工单创建开始时间"
+		},
+		{
+			"name": "gmt_create_end",
+			"type": "Date",
+			"description": "工单创建结束时间，必须与工单创建开始时间一起传入，且间隔不超过15分钟"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "淘宝交易订单号。主订单或子订单均可"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "PagedResult",
+					"description": "分页数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data_list",
+							"type": "Workcard[]",
+							"description": "工单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gmt_sign_in",
+									"type": "Date",
+									"description": "签到时间",
+									"required": true
+								},
+								{
+									"name": "used_service_count",
+									"type": "Number",
+									"description": "已使用的次数",
+									"required": true
+								},
+								{
+									"name": "service_trade_order",
+									"type": "ServiceTradeOrder",
+									"description": "服务订单数据",
+									"required": true,
+									"subParams": [
+										{
+											"name": "outer_id_sku",
+											"type": "String",
+											"description": "服务商品的商家编码",
+											"required": true
+										},
+										{
+											"name": "sku_desc",
+											"type": "String",
+											"description": "服务商品的sku描述",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "服务商品的sku id",
+											"required": true
+										},
+										{
+											"name": "order_id",
+											"type": "Number",
+											"description": "订单id",
+											"required": true
+										},
+										{
+											"name": "buy_amount",
+											"type": "Number",
+											"description": "购买数量",
+											"required": true
+										},
+										{
+											"name": "b2b_price_unit",
+											"type": "Number",
+											"description": "服务的售卖价",
+											"required": true
+										},
+										{
+											"name": "parent_order_id",
+											"type": "Number",
+											"description": "主订单号",
+											"required": true
+										},
+										{
+											"name": "outer_id_p",
+											"type": "String",
+											"description": "商家编码",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "商品价格",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "gmt_reserve_end",
+									"type": "Date",
+									"description": "预约结束时间",
+									"required": true
+								},
+								{
+									"name": "service_count",
+									"type": "Number",
+									"description": "工单服务总次数",
+									"required": true
+								},
+								{
+									"name": "status_code",
+									"type": "String",
+									"description": "工单状态编码",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "工单id",
+									"required": true
+								},
+								{
+									"name": "left_service_count",
+									"type": "Number",
+									"description": "剩余次数",
+									"required": true
+								},
+								{
+									"name": "parent_biz_order_id",
+									"type": "Number",
+									"description": "主订单号",
+									"required": true
+								},
+								{
+									"name": "service_provider",
+									"type": "ServiceProvider",
+									"description": "服务提供者",
+									"required": true,
+									"subParams": [
+										{
+											"name": "tp_nick",
+											"type": "String",
+											"description": "服务商昵称",
+											"required": true
+										},
+										{
+											"name": "tp_id",
+											"type": "Number",
+											"description": "服务商id",
+											"required": true
+										},
+										{
+											"name": "isv_tp_id",
+											"type": "Number",
+											"description": "isv服务商",
+											"required": true
+										},
+										{
+											"name": "isv_tp_name",
+											"type": "String",
+											"description": "isv服务商",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "gmt_identify",
+									"type": "Date",
+									"description": "核销时间",
+									"required": true
+								},
+								{
+									"name": "gmt_reserve_start",
+									"type": "Date",
+									"description": "预约时间开始",
+									"required": true
+								},
+								{
+									"name": "master_trade_order",
+									"type": "MasterTradeOrder",
+									"description": "实物订单信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "outer_id_sku",
+											"type": "String",
+											"description": "商家编码",
+											"required": true
+										},
+										{
+											"name": "sku_desc",
+											"type": "String",
+											"description": "sku描述",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "sku id",
+											"required": true
+										},
+										{
+											"name": "order_id",
+											"type": "Number",
+											"description": "订单id",
+											"required": true
+										},
+										{
+											"name": "buy_amount",
+											"type": "Number",
+											"description": "购买数量",
+											"required": true
+										},
+										{
+											"name": "outer_id_p",
+											"type": "String",
+											"description": "商品编码",
+											"required": true
+										},
+										{
+											"name": "parent_order_id",
+											"type": "Number",
+											"description": "主订单号",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "商品价格",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "service_definition",
+									"type": "ServiceDefinition",
+									"description": "服务定义",
+									"required": true,
+									"subParams": [
+										{
+											"name": "biz_code",
+											"type": "String",
+											"description": "业务类型",
+											"required": true
+										},
+										{
+											"name": "service_code",
+											"type": "String",
+											"description": "服务类型",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "buyer_expect_date",
+									"type": "Date",
+									"description": "买家期望服务时间",
+									"required": true
+								},
+								{
+									"name": "sequence",
+									"type": "Number",
+									"description": "核销/工单完结请求中直接带回该字段",
+									"required": true
+								},
+								{
+									"name": "sp_service_order_id",
+									"type": "Number",
+									"description": "服务单id",
+									"required": true
+								},
+								{
+									"name": "gmt_assign_worker",
+									"type": "Date",
+									"description": "分配工人时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_page_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

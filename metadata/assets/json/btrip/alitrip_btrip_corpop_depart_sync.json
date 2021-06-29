@@ -1,0 +1,82 @@
+{
+	"name": "alitrip.btrip.corpop.depart.sync",
+	"apiChineseName": "外部部门同步",
+	"description": "同步外部平台部门信息至商旅内部",
+	"requestParams": [
+		{
+			"name": "rq",
+			"type": "BtripDepartSyncRq",
+			"description": "同步部门请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "depart_list",
+					"type": "DepartSyncRq[]",
+					"description": "部门列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "部门状态"
+						},
+						{
+							"name": "depart_pid",
+							"type": "Number",
+							"description": "上一版本第三方部门父部门ID（和third_depart_pid字段只传一个即可）"
+						},
+						{
+							"name": "depart_name",
+							"type": "String",
+							"description": "部门名称",
+							"required": true
+						},
+						{
+							"name": "depart_id",
+							"type": "Number",
+							"description": "上一版本第三方部门ID（和third_depart_id只传一个即可）"
+						},
+						{
+							"name": "third_depart_id",
+							"type": "String",
+							"description": "新版本第三方部门ID（和depart_id只传一个即可）"
+						},
+						{
+							"name": "third_depart_pid",
+							"type": "String",
+							"description": "新版本第三方部门父ID（和depart_pid只传一个即可）"
+						}
+					]
+				},
+				{
+					"name": "corp_id",
+					"type": "String",
+					"description": "第三方企业ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "导入失败原因以及导入失败部门信息"
+		},
+		{
+			"name": "success_flag",
+			"type": "Boolean",
+			"description": "正确"
+		}
+	]
+}

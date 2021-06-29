@@ -1,0 +1,58 @@
+{
+	"name": "aliexpress.solution.issue.partner.rma.state.update",
+	"apiChineseName": "aliexpress.solution.issue.partner.rma.state.update",
+	"description": "Receive changes in state updates for RMAs orders from after sales partners",
+	"requestParams": [
+		{
+			"name": "rma_state_update_request",
+			"type": "RmaStateUpdateRequest",
+			"description": "RMA's order state update request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "rma_state",
+					"type": "RmaState",
+					"description": "RMA's state information",
+					"required": true,
+					"subParams": [
+						{
+							"name": "state_date",
+							"type": "Date",
+							"description": "Order data. PST time",
+							"required": true
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "Values: CANCELLED, PRODUCT_COLLECTED, PRODUCT_RECEIVED, PRODUCT_SCREENING, WAITING_AE_ACTION, COMPLETED, CANCELLED_LOGISTICS_ISSUE, CANCELLED_LOGISTICS_ISSUE_RETRIES",
+							"required": true
+						},
+						{
+							"name": "state_detail",
+							"type": "String",
+							"description": "Detail of the state changed"
+						}
+					]
+				},
+				{
+					"name": "rma_id",
+					"type": "String",
+					"description": "RMA's ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code_error",
+			"type": "String",
+			"description": "error code. 0 means no error"
+		},
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "error description"
+		}
+	]
+}

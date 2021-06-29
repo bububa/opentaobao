@@ -1,0 +1,87 @@
+{
+	"name": "yunos.miniapp.activity.call",
+	"apiChineseName": "调用活动接口",
+	"description": "用于小程序调用活动接口",
+	"requestParams": [
+		{
+			"name": "options",
+			"type": "Options",
+			"description": "请求选项",
+			"subParams": [
+				{
+					"name": "source",
+					"type": "String",
+					"description": "请求来源"
+				},
+				{
+					"name": "step",
+					"type": "String",
+					"description": "活动步骤"
+				}
+			]
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id"
+		},
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "活动id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "返回code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TopActivityResult",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "detail",
+							"type": "String",
+							"description": "详细信息",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "String",
+							"description": "成功与否",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "活动状态",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

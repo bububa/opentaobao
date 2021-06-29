@@ -1,0 +1,19 @@
+{
+	"name": "taobao.omniorder.print.sale.judge",
+	"apiChineseName": "导购员判断",
+	"description": "用于判断当前子账号是否导购员",
+	"requestParams": [
+		{
+			"name": "sub_uid",
+			"type": "Number",
+			"description": "用户子账号ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "data"
+		}
+	]
+}

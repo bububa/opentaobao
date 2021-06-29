@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.alihealth.pregnancy.posts.data",
+	"apiChineseName": "发回帖子信息同步",
+	"description": "发回帖子信息同步",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "event_type",
+			"type": "Number",
+			"description": "事件类型 0发帖 1回帖",
+			"required": true
+		},
+		{
+			"name": "main_id",
+			"type": "Number",
+			"description": "主贴id",
+			"required": true
+		},
+		{
+			"name": "reply_id",
+			"type": "Number",
+			"description": "回帖id"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "标题",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "内容",
+			"required": true
+		},
+		{
+			"name": "pic_url",
+			"type": "String",
+			"description": "图片url"
+		},
+		{
+			"name": "date",
+			"type": "Number",
+			"description": "发帖时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		}
+	]
+}

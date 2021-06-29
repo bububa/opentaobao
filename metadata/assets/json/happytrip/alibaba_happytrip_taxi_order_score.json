@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.happytrip.taxi.order.score",
+	"apiChineseName": "订单打分和评价",
+	"description": "对司机进行评分，只有订单结束后，才能进行。",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "level",
+			"type": "Number",
+			"description": "司机评分 星级(1-5)",
+			"required": true
+		},
+		{
+			"name": "comment",
+			"type": "String",
+			"description": "司机评价最多40个汉字"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errno",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}
