@@ -1,4 +1,7 @@
 package hotel
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // RoomTypeInfo 
 type RoomTypeInfo struct {

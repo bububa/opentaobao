@@ -44,8 +44,6 @@ type TaobaoItemPriceUpdateRequest struct {
     _increment   float64
     // 商品图片。类型:JPG,GIF;最大长度:500k
     _image   []*model.File
-    // 
-    _   
     // 商品新旧程度。可选值:new（全新）,unused（闲置）,second（二手）。
     _stuffStatus   string
     // 商品的积分返点比例。如：5 表示返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
@@ -315,18 +313,6 @@ func (r *TaobaoItemPriceUpdateRequest) SetImage(_image []*model.File) error {
 // Image Getter
 func (r TaobaoItemPriceUpdateRequest) GetImage() []*model.File {
     return r._image
-}
-//  Setter
-// 
-func (r *TaobaoItemPriceUpdateRequest) Set(_ ) error {
-    r._ = _
-    r.Set("", _)
-    return nil
-}
-
-//  Getter
-func (r TaobaoItemPriceUpdateRequest) Get()  {
-    return r._
 }
 // StuffStatus Setter
 // 商品新旧程度。可选值:new（全新）,unused（闲置）,second（二手）。

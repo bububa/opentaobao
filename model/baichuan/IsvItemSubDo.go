@@ -1,4 +1,7 @@
 package baichuan
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // IsvItemSubDo 
 type IsvItemSubDo struct {

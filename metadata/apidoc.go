@@ -66,30 +66,32 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 		ResponseKey:    fmt.Sprintf("%s_response", strings.TrimPrefix(snakeName, "taobao_")),
 		ChineseName:    d.ChineseName,
 		Desc:           clearDesc(d.Description, false),
-		RequestParams:  make([]TplParam, len(d.RequestParams)),
-		ResponseParams: make([]TplParam, len(d.ResponseParams)),
+		RequestParams:  make([]TplParam, 0, len(d.RequestParams)),
+		ResponseParams: make([]TplParam, 0, len(d.ResponseParams)),
 	}
 	reqParamMp := make(map[string]struct{}, len(d.RequestParams))
-	for idx, p := range d.RequestParams {
+	for _, p := range d.RequestParams {
 		if _, found := reqParamMp[p.Name]; found {
 			continue
 		}
 		reqParamMp[p.Name] = struct{}{}
-		tpl.RequestParams[idx] = p.TplParam(tpl.Name)
-		if !tpl.IsMultipart && tpl.RequestParams[idx].IsMultipart() {
+		param := p.TplParam(tpl.Name)
+		tpl.RequestParams = append(tpl.RequestParams, param)
+		if !tpl.IsMultipart && param.IsMultipart() {
 			tpl.IsMultipart = true
 		}
 	}
 	respParamMp := make(map[string]struct{}, len(d.ResponseParams))
-	for idx, p := range d.ResponseParams {
+	for _, p := range d.ResponseParams {
 		if _, found := respParamMp[p.Name]; found {
 			continue
 		}
 		respParamMp[p.Name] = struct{}{}
-		tpl.ResponseParams[idx] = p.TplParam(tpl.Name)
-		if tpl.ResponseParams[idx].Name == "RequestId" {
+		param := p.TplParam(tpl.Name)
+		if param.Name == "RequestId" {
 			tpl.HasRequestId = true
 		}
+		tpl.ResponseParams = append(tpl.ResponseParams, param)
 	}
 	return tpl
 }

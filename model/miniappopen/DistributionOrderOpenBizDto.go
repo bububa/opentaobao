@@ -1,4 +1,7 @@
 package miniappopen
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // DistributionOrderOpenBizDto 
 type DistributionOrderOpenBizDto struct {

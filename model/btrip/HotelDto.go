@@ -1,4 +1,7 @@
 package btrip
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // HotelDto 
 type HotelDto struct {

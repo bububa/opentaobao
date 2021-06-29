@@ -1,4 +1,7 @@
 package alihouse
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // EbbasItemDto 
 type EbbasItemDto struct {

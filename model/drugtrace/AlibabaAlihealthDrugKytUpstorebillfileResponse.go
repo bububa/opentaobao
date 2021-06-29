@@ -30,12 +30,4 @@ type AlibabaAlihealthDrugKytUpstorebillfileResponse struct {
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 返回接口
     ResponseSuccess   bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
-    // 
-        `json:",omitempty" xml:",omitempty"`
-    // 
-        `json:",omitempty" xml:",omitempty"`
-    // 
-        `json:",omitempty" xml:",omitempty"`
-    // 
-        `json:",omitempty" xml:",omitempty"`
 }

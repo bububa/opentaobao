@@ -24,6 +24,4 @@ type AlibabaSecurityJaqRpCloudRphitResponse struct {
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
     Data   string `json:"data,omitempty" xml:"data,omitempty"`
-    // 
-        `json:",omitempty" xml:",omitempty"`
 }

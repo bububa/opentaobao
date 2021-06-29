@@ -1,4 +1,7 @@
 package fundplatform
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // FundAccountResponse 
 type FundAccountResponse struct {

@@ -70,8 +70,6 @@ type TaobaoWlbOrderCreateRequest struct {
     _attributes   string
     // 备注
     _remark   string
-    // 
-    _   
 }
 
 // 初始化TaobaoWlbOrderCreateRequest对象
@@ -429,16 +427,4 @@ func (r *TaobaoWlbOrderCreateRequest) SetRemark(_remark string) error {
 // Remark Getter
 func (r TaobaoWlbOrderCreateRequest) GetRemark() string {
     return r._remark
-}
-//  Setter
-// 
-func (r *TaobaoWlbOrderCreateRequest) Set(_ ) error {
-    r._ = _
-    r.Set("", _)
-    return nil
-}
-
-//  Getter
-func (r TaobaoWlbOrderCreateRequest) Get()  {
-    return r._
 }

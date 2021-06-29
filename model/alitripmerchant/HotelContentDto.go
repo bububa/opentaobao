@@ -1,4 +1,7 @@
 package alitripmerchant
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // HotelContentDto 
 type HotelContentDto struct {

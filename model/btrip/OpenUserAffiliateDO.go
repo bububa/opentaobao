@@ -1,9 +1,9 @@
 package btrip
 
-// OpenUserAffiliateDO 
-type OpenUserAffiliateDO struct {
-    // 乘车人ID
+// OpenUserAffiliateDo 
+type OpenUserAffiliateDo struct {
+    // 出行人ID
     UserId   string `json:"user_id,omitempty" xml:"user_id,omitempty"`
-    // 乘车人名称
+    // 出行人名称
     UserName   string `json:"user_name,omitempty" xml:"user_name,omitempty"`
 }

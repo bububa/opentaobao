@@ -1,4 +1,7 @@
 package maitix
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // LockTicketSubOrderSeatDto 
 type LockTicketSubOrderSeatDto struct {
