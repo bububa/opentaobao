@@ -1,7 +1,7 @@
 package wdk
 
-// SkuQueryDO 
-type SkuQueryDO struct {
+// SkuQueryDo 
+type SkuQueryDo struct {
     // 门店或DC编码,如果填写了渠道店id，该字段会被忽略
     OuCode   string `json:"ou_code,omitempty" xml:"ou_code,omitempty"`
     // 渠道店id

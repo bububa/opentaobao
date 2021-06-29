@@ -20,5 +20,7 @@
     "ModelList",
     "MtopResult",
     "T",
-    "E"
+    "E",
+    "HmResult",
+    "HMResult"
 ]
