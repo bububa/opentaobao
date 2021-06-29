@@ -23,23 +23,23 @@ type AlitripTravelVisaApplicantUpdateRequest struct {
     // 特殊必填，签证申请人进度推进操作（目前只支持对单个申请人状态进行推进）。当operType为3时必填
     _applicantOp   *NormalVisaApplicantOperation
     // 特殊必填，pdf文件字节流。用于上传电子签pdf结果 或者 预约面试信pdf文件。
-    _fileBytes   []*model.File
+    _fileBytes   *model.File
     // 特殊必填，文件字节流，用于上传证件照，必须和photoType同时传
-    _photoBytes   []*model.File
+    _photoBytes   *model.File
     // 证件照文件类型
     _photoType   string
     // 特殊必填，文件字节流，用于上传护照，必须和passportType同时传
-    _passportBytes   []*model.File
+    _passportBytes   *model.File
     // 护照文件类型
     _passportType   string
     // 酒店预订文件类型
     _hotelBookingFormType   string
     // 特殊必填，文件字节流，用于上传酒店预订，必须和hotelBookingFormType同时传
-    _hotelBookingFormBytes   []*model.File
+    _hotelBookingFormBytes   *model.File
     // 机票预订文件类型
     _flightBookingFormType   string
     // 特殊必填，文件字节流，用于上传机票预订，必须和flightBookingFormType同时传
-    _flightBookingFormBytes   []*model.File
+    _flightBookingFormBytes   *model.File
     // 特殊必填，更多材料
     _documentInfos   []NormalVisaDocumentInfo
 }
@@ -114,26 +114,26 @@ func (r AlitripTravelVisaApplicantUpdateRequest) GetApplicantOp() *NormalVisaApp
 }
 // FileBytes Setter
 // 特殊必填，pdf文件字节流。用于上传电子签pdf结果 或者 预约面试信pdf文件。
-func (r *AlitripTravelVisaApplicantUpdateRequest) SetFileBytes(_fileBytes []*model.File) error {
+func (r *AlitripTravelVisaApplicantUpdateRequest) SetFileBytes(_fileBytes *model.File) error {
     r._fileBytes = _fileBytes
     r.Set("file_bytes", _fileBytes)
     return nil
 }
 
 // FileBytes Getter
-func (r AlitripTravelVisaApplicantUpdateRequest) GetFileBytes() []*model.File {
+func (r AlitripTravelVisaApplicantUpdateRequest) GetFileBytes() *model.File {
     return r._fileBytes
 }
 // PhotoBytes Setter
 // 特殊必填，文件字节流，用于上传证件照，必须和photoType同时传
-func (r *AlitripTravelVisaApplicantUpdateRequest) SetPhotoBytes(_photoBytes []*model.File) error {
+func (r *AlitripTravelVisaApplicantUpdateRequest) SetPhotoBytes(_photoBytes *model.File) error {
     r._photoBytes = _photoBytes
     r.Set("photo_bytes", _photoBytes)
     return nil
 }
 
 // PhotoBytes Getter
-func (r AlitripTravelVisaApplicantUpdateRequest) GetPhotoBytes() []*model.File {
+func (r AlitripTravelVisaApplicantUpdateRequest) GetPhotoBytes() *model.File {
     return r._photoBytes
 }
 // PhotoType Setter
@@ -150,14 +150,14 @@ func (r AlitripTravelVisaApplicantUpdateRequest) GetPhotoType() string {
 }
 // PassportBytes Setter
 // 特殊必填，文件字节流，用于上传护照，必须和passportType同时传
-func (r *AlitripTravelVisaApplicantUpdateRequest) SetPassportBytes(_passportBytes []*model.File) error {
+func (r *AlitripTravelVisaApplicantUpdateRequest) SetPassportBytes(_passportBytes *model.File) error {
     r._passportBytes = _passportBytes
     r.Set("passport_bytes", _passportBytes)
     return nil
 }
 
 // PassportBytes Getter
-func (r AlitripTravelVisaApplicantUpdateRequest) GetPassportBytes() []*model.File {
+func (r AlitripTravelVisaApplicantUpdateRequest) GetPassportBytes() *model.File {
     return r._passportBytes
 }
 // PassportType Setter
@@ -186,14 +186,14 @@ func (r AlitripTravelVisaApplicantUpdateRequest) GetHotelBookingFormType() strin
 }
 // HotelBookingFormBytes Setter
 // 特殊必填，文件字节流，用于上传酒店预订，必须和hotelBookingFormType同时传
-func (r *AlitripTravelVisaApplicantUpdateRequest) SetHotelBookingFormBytes(_hotelBookingFormBytes []*model.File) error {
+func (r *AlitripTravelVisaApplicantUpdateRequest) SetHotelBookingFormBytes(_hotelBookingFormBytes *model.File) error {
     r._hotelBookingFormBytes = _hotelBookingFormBytes
     r.Set("hotel_booking_form_bytes", _hotelBookingFormBytes)
     return nil
 }
 
 // HotelBookingFormBytes Getter
-func (r AlitripTravelVisaApplicantUpdateRequest) GetHotelBookingFormBytes() []*model.File {
+func (r AlitripTravelVisaApplicantUpdateRequest) GetHotelBookingFormBytes() *model.File {
     return r._hotelBookingFormBytes
 }
 // FlightBookingFormType Setter
@@ -210,14 +210,14 @@ func (r AlitripTravelVisaApplicantUpdateRequest) GetFlightBookingFormType() stri
 }
 // FlightBookingFormBytes Setter
 // 特殊必填，文件字节流，用于上传机票预订，必须和flightBookingFormType同时传
-func (r *AlitripTravelVisaApplicantUpdateRequest) SetFlightBookingFormBytes(_flightBookingFormBytes []*model.File) error {
+func (r *AlitripTravelVisaApplicantUpdateRequest) SetFlightBookingFormBytes(_flightBookingFormBytes *model.File) error {
     r._flightBookingFormBytes = _flightBookingFormBytes
     r.Set("flight_booking_form_bytes", _flightBookingFormBytes)
     return nil
 }
 
 // FlightBookingFormBytes Getter
-func (r AlitripTravelVisaApplicantUpdateRequest) GetFlightBookingFormBytes() []*model.File {
+func (r AlitripTravelVisaApplicantUpdateRequest) GetFlightBookingFormBytes() *model.File {
     return r._flightBookingFormBytes
 }
 // DocumentInfos Setter

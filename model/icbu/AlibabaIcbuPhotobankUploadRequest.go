@@ -19,7 +19,7 @@ type AlibabaIcbuPhotobankUploadRequest struct {
     // 上传图片所在分组
     _groupId   string
     // 图片字节数组
-    _imageBytes   []*model.File
+    _imageBytes   *model.File
     // 扩展参数信息,如ICVID
     _extraContext   string
 }
@@ -70,14 +70,14 @@ func (r AlibabaIcbuPhotobankUploadRequest) GetGroupId() string {
 }
 // ImageBytes Setter
 // 图片字节数组
-func (r *AlibabaIcbuPhotobankUploadRequest) SetImageBytes(_imageBytes []*model.File) error {
+func (r *AlibabaIcbuPhotobankUploadRequest) SetImageBytes(_imageBytes *model.File) error {
     r._imageBytes = _imageBytes
     r.Set("image_bytes", _imageBytes)
     return nil
 }
 
 // ImageBytes Getter
-func (r AlibabaIcbuPhotobankUploadRequest) GetImageBytes() []*model.File {
+func (r AlibabaIcbuPhotobankUploadRequest) GetImageBytes() *model.File {
     return r._imageBytes
 }
 // ExtraContext Setter

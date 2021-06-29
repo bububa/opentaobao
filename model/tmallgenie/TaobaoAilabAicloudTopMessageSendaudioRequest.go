@@ -23,7 +23,7 @@ type TaobaoAilabAicloudTopMessageSendaudioRequest struct {
     // 扩展信息，用于存放APP类型等
     _ext   string
     // 语音的二进制
-    _message   []*model.File
+    _message   *model.File
 }
 
 // 初始化TaobaoAilabAicloudTopMessageSendaudioRequest对象
@@ -96,13 +96,13 @@ func (r TaobaoAilabAicloudTopMessageSendaudioRequest) GetExt() string {
 }
 // Message Setter
 // 语音的二进制
-func (r *TaobaoAilabAicloudTopMessageSendaudioRequest) SetMessage(_message []*model.File) error {
+func (r *TaobaoAilabAicloudTopMessageSendaudioRequest) SetMessage(_message *model.File) error {
     r._message = _message
     r.Set("message", _message)
     return nil
 }
 
 // Message Getter
-func (r TaobaoAilabAicloudTopMessageSendaudioRequest) GetMessage() []*model.File {
+func (r TaobaoAilabAicloudTopMessageSendaudioRequest) GetMessage() *model.File {
     return r._message
 }

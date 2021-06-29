@@ -31,7 +31,7 @@ type TaobaoProductAddRequest struct {
     // 产品市场价.精确到2位小数;单位为元.如：200.07
     _price   string
     // 产品主图片.最大1M,目前仅支持GIF,JPG.
-    _image   []*model.File
+    _image   *model.File
     // 产品名称,最大30个字符.
     _name   string
     // 产品描述.最大不超过25000个字符
@@ -162,14 +162,14 @@ func (r TaobaoProductAddRequest) GetPrice() string {
 }
 // Image Setter
 // 产品主图片.最大1M,目前仅支持GIF,JPG.
-func (r *TaobaoProductAddRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoProductAddRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoProductAddRequest) GetImage() []*model.File {
+func (r TaobaoProductAddRequest) GetImage() *model.File {
     return r._image
 }
 // Name Setter

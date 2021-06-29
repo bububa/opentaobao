@@ -84,7 +84,7 @@ func MergeModels(models []TplModel) []TplModel {
 	for _, model := range models {
 		model := model
 		if m, found := mp[model.Name]; found {
-			keys := make(map[string]struct{}, len(m.Params))
+			keys := make(map[string]struct{})
 			for _, param := range m.Params {
 				keys[param.Name] = struct{}{}
 			}

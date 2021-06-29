@@ -19,7 +19,7 @@ type AlibabaAlihealthDrugKytSaveentRequest struct {
     // 新增企业信息
     _addEntReq   *AddEntReqDTO
     // 图片数据流。图片大小务必控制在2M以内
-    _licPictureByte   []*model.File
+    _licPictureByte   *model.File
 }
 
 // 初始化AlibabaAlihealthDrugKytSaveentRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaAlihealthDrugKytSaveentRequest) GetAddEntReq() *AddEntReqDTO {
 }
 // LicPictureByte Setter
 // 图片数据流。图片大小务必控制在2M以内
-func (r *AlibabaAlihealthDrugKytSaveentRequest) SetLicPictureByte(_licPictureByte []*model.File) error {
+func (r *AlibabaAlihealthDrugKytSaveentRequest) SetLicPictureByte(_licPictureByte *model.File) error {
     r._licPictureByte = _licPictureByte
     r.Set("lic_picture_byte", _licPictureByte)
     return nil
 }
 
 // LicPictureByte Getter
-func (r AlibabaAlihealthDrugKytSaveentRequest) GetLicPictureByte() []*model.File {
+func (r AlibabaAlihealthDrugKytSaveentRequest) GetLicPictureByte() *model.File {
     return r._licPictureByte
 }

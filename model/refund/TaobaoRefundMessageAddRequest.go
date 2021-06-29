@@ -19,7 +19,7 @@ type TaobaoRefundMessageAddRequest struct {
     // 留言内容。最大长度: 400个字节
     _content   string
     // 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
-    _image   []*model.File
+    _image   *model.File
 }
 
 // 初始化TaobaoRefundMessageAddRequest对象
@@ -68,13 +68,13 @@ func (r TaobaoRefundMessageAddRequest) GetContent() string {
 }
 // Image Setter
 // 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
-func (r *TaobaoRefundMessageAddRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoRefundMessageAddRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoRefundMessageAddRequest) GetImage() []*model.File {
+func (r TaobaoRefundMessageAddRequest) GetImage() *model.File {
     return r._image
 }

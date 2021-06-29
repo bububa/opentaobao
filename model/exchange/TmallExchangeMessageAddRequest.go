@@ -19,7 +19,7 @@ type TmallExchangeMessageAddRequest struct {
     // 换货单号ID
     _disputeId   int64
     // 凭证图片列表
-    _messagePics   []*model.File
+    _messagePics   *model.File
     // 返回字段。目前支持id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
     _fields   []string
 }
@@ -70,14 +70,14 @@ func (r TmallExchangeMessageAddRequest) GetDisputeId() int64 {
 }
 // MessagePics Setter
 // 凭证图片列表
-func (r *TmallExchangeMessageAddRequest) SetMessagePics(_messagePics []*model.File) error {
+func (r *TmallExchangeMessageAddRequest) SetMessagePics(_messagePics *model.File) error {
     r._messagePics = _messagePics
     r.Set("message_pics", _messagePics)
     return nil
 }
 
 // MessagePics Getter
-func (r TmallExchangeMessageAddRequest) GetMessagePics() []*model.File {
+func (r TmallExchangeMessageAddRequest) GetMessagePics() *model.File {
     return r._messagePics
 }
 // Fields Setter

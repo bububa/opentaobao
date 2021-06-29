@@ -17,7 +17,7 @@ type TmallExchangeAgreeRequest struct {
     // 邮政编码
     _post   string
     // 上传图片举证
-    _leaveMessagePics   []*model.File
+    _leaveMessagePics   *model.File
     // 卖家留言
     _leaveMessage   string
     // 收货地址id，如需获取请调用该top接口：taobao.logistics.address.search，对应属性为contact_id
@@ -66,14 +66,14 @@ func (r TmallExchangeAgreeRequest) GetPost() string {
 }
 // LeaveMessagePics Setter
 // 上传图片举证
-func (r *TmallExchangeAgreeRequest) SetLeaveMessagePics(_leaveMessagePics []*model.File) error {
+func (r *TmallExchangeAgreeRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
     r._leaveMessagePics = _leaveMessagePics
     r.Set("leave_message_pics", _leaveMessagePics)
     return nil
 }
 
 // LeaveMessagePics Getter
-func (r TmallExchangeAgreeRequest) GetLeaveMessagePics() []*model.File {
+func (r TmallExchangeAgreeRequest) GetLeaveMessagePics() *model.File {
     return r._leaveMessagePics
 }
 // LeaveMessage Setter

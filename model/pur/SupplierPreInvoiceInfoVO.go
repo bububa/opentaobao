@@ -20,7 +20,7 @@ type SupplierPreInvoiceInfoVO struct {
     // 币种
     Currency   string `json:"currency,omitempty" xml:"currency,omitempty"`
     // 发票附件
-    Attachment   []*model.File `json:"attachment,omitempty" xml:"attachment>*model.File,omitempty"`
+    Attachment   *model.File `json:"attachment,omitempty" xml:"attachment,omitempty"`
     // 关闭原因
     CloseReason   string `json:"close_reason,omitempty" xml:"close_reason,omitempty"`
     // 价税合计

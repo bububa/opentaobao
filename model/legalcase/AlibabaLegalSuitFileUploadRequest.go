@@ -15,7 +15,7 @@ alibaba.legal.suit.file.upload
 type AlibabaLegalSuitFileUploadRequest struct {
     model.Params
     // 文件
-    _file   []*model.File
+    _file   *model.File
     // 时间搓
     _timeStamp   int64
     // 文件名称
@@ -48,14 +48,14 @@ func (r AlibabaLegalSuitFileUploadRequest) GetApiParams() url.Values {
 }
 // File Setter
 // 文件
-func (r *AlibabaLegalSuitFileUploadRequest) SetFile(_file []*model.File) error {
+func (r *AlibabaLegalSuitFileUploadRequest) SetFile(_file *model.File) error {
     r._file = _file
     r.Set("file", _file)
     return nil
 }
 
 // File Getter
-func (r AlibabaLegalSuitFileUploadRequest) GetFile() []*model.File {
+func (r AlibabaLegalSuitFileUploadRequest) GetFile() *model.File {
     return r._file
 }
 // TimeStamp Setter

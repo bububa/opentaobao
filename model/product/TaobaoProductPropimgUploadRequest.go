@@ -21,7 +21,7 @@ type TaobaoProductPropimgUploadRequest struct {
     // 属性串.目前仅支持颜色属性.调用taobao.itemprops.get获取类目属性,取得颜色属性pid,再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串;
     _props   string
     // 图片内容.图片最大为2M,只支持JPG,GIF.
-    _image   []*model.File
+    _image   *model.File
     // 图片序号
     _position   int64
 }
@@ -84,14 +84,14 @@ func (r TaobaoProductPropimgUploadRequest) GetProps() string {
 }
 // Image Setter
 // 图片内容.图片最大为2M,只支持JPG,GIF.
-func (r *TaobaoProductPropimgUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoProductPropimgUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoProductPropimgUploadRequest) GetImage() []*model.File {
+func (r TaobaoProductPropimgUploadRequest) GetImage() *model.File {
     return r._image
 }
 // Position Setter

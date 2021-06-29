@@ -15,7 +15,7 @@ OpenMall退款图片上传
 type TaobaoOpenmallRefundImageUploadRequest struct {
     model.Params
     // 上传图片，必须为jpg或png格式，建议小于2M
-    _image   []*model.File
+    _image   *model.File
     // 渠道商Nick
     _distributor   string
     // 该图片归属的退款单ID
@@ -44,14 +44,14 @@ func (r TaobaoOpenmallRefundImageUploadRequest) GetApiParams() url.Values {
 }
 // Image Setter
 // 上传图片，必须为jpg或png格式，建议小于2M
-func (r *TaobaoOpenmallRefundImageUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoOpenmallRefundImageUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoOpenmallRefundImageUploadRequest) GetImage() []*model.File {
+func (r TaobaoOpenmallRefundImageUploadRequest) GetImage() *model.File {
     return r._image
 }
 // Distributor Setter

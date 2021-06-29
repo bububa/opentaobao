@@ -19,7 +19,7 @@ type TaobaoItemPropimgUploadRequest struct {
     // 属性列表。调用taobao.itemprops.get获取类目属性，属性必须是颜色属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid。
     _properties   string
     // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-    _image   []*model.File
+    _image   *model.File
     // 属性图片ID。如果是新增不需要填写
     _id   int64
     // 图片位置
@@ -72,14 +72,14 @@ func (r TaobaoItemPropimgUploadRequest) GetProperties() string {
 }
 // Image Setter
 // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-func (r *TaobaoItemPropimgUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoItemPropimgUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoItemPropimgUploadRequest) GetImage() []*model.File {
+func (r TaobaoItemPropimgUploadRequest) GetImage() *model.File {
     return r._image
 }
 // Id Setter

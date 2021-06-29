@@ -15,7 +15,7 @@ alibaba.idle.isv.media.upload
 type AlibabaIdleIsvMediaUploadRequest struct {
     model.Params
     // 多媒体字节数组
-    _data   []*model.File
+    _data   *model.File
     // 文件名
     _name   string
     // 0-表示图片，1-表示视频（暂不支持）
@@ -44,14 +44,14 @@ func (r AlibabaIdleIsvMediaUploadRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 多媒体字节数组
-func (r *AlibabaIdleIsvMediaUploadRequest) SetData(_data []*model.File) error {
+func (r *AlibabaIdleIsvMediaUploadRequest) SetData(_data *model.File) error {
     r._data = _data
     r.Set("data", _data)
     return nil
 }
 
 // Data Getter
-func (r AlibabaIdleIsvMediaUploadRequest) GetData() []*model.File {
+func (r AlibabaIdleIsvMediaUploadRequest) GetData() *model.File {
     return r._data
 }
 // Name Setter

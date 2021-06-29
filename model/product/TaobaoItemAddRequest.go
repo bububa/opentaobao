@@ -138,7 +138,7 @@ type TaobaoItemAddRequest struct {
     // 加价(降价)幅度。如果为0，代表系统代理幅度。对于增价拍和荷兰拍来说是加价幅度，对于降价拍来说是降价幅度。
     _increment   float64
     // 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
-    _image   []*model.File
+    _image   *model.File
     // 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
     _postageId   int64
     // 商品的积分返点比例。如:5,表示:返点比例0.5%. 注意：返点比例必须是>0的整数，而且最大是90,即为9%.B商家在发布非虚拟商品时，返点必须是 5的倍数，即0.5%的倍数。其它是1的倍数，即0.1%的倍数。无名良品商家发布商品时，复用该字段记录积分宝返点比例，返点必须是对应类目的返点步长的整数倍，默认是5，即0.5%。注意此时该字段值依旧必须是>0的整数，最高值不超过500，即50%
@@ -997,14 +997,14 @@ func (r TaobaoItemAddRequest) GetIncrement() float64 {
 }
 // Image Setter
 // 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
-func (r *TaobaoItemAddRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoItemAddRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoItemAddRequest) GetImage() []*model.File {
+func (r TaobaoItemAddRequest) GetImage() *model.File {
     return r._image
 }
 // PostageId Setter

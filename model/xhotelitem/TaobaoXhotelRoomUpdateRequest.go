@@ -23,7 +23,7 @@ type TaobaoXhotelRoomUpdateRequest struct {
     // 废弃，宝贝描述展示在宝贝详情页面
     _desc   string
     // 废弃，宝贝图片，没有默认使用标准酒店房型图片
-    _pic   []*model.File
+    _pic   *model.File
     // 废弃，房型是否提供发票
     _hasReceipt   bool
     // 废弃，房型发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
@@ -122,14 +122,14 @@ func (r TaobaoXhotelRoomUpdateRequest) GetDesc() string {
 }
 // Pic Setter
 // 废弃，宝贝图片，没有默认使用标准酒店房型图片
-func (r *TaobaoXhotelRoomUpdateRequest) SetPic(_pic []*model.File) error {
+func (r *TaobaoXhotelRoomUpdateRequest) SetPic(_pic *model.File) error {
     r._pic = _pic
     r.Set("pic", _pic)
     return nil
 }
 
 // Pic Getter
-func (r TaobaoXhotelRoomUpdateRequest) GetPic() []*model.File {
+func (r TaobaoXhotelRoomUpdateRequest) GetPic() *model.File {
     return r._pic
 }
 // HasReceipt Setter

@@ -21,7 +21,7 @@ type AlibabaEinvoicePartnerUploadRequest struct {
     // 销方税号
     _payeeRegisterNo   string
     // 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-    _invoiceFileData   []*model.File
+    _invoiceFileData   *model.File
     // 发票号码，upload_type=0时必填
     _invoiceNo   string
     // 发票代码，upload_type=0时必填
@@ -102,14 +102,14 @@ func (r AlibabaEinvoicePartnerUploadRequest) GetPayeeRegisterNo() string {
 }
 // InvoiceFileData Setter
 // 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceFileData(_invoiceFileData []*model.File) error {
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
     r._invoiceFileData = _invoiceFileData
     r.Set("invoice_file_data", _invoiceFileData)
     return nil
 }
 
 // InvoiceFileData Getter
-func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceFileData() []*model.File {
+func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceFileData() *model.File {
     return r._invoiceFileData
 }
 // InvoiceNo Setter

@@ -19,7 +19,7 @@ type TaobaoProductImgUploadRequest struct {
     // 产品ID.Product的id
     _productId   int64
     // 图片内容.图片最大为500K,只支持JPG,GIF格式.
-    _image   []*model.File
+    _image   *model.File
     // 图片序号
     _position   int64
     // 是否将该图片设为主图.可选值:true,false;默认值:false.
@@ -72,14 +72,14 @@ func (r TaobaoProductImgUploadRequest) GetProductId() int64 {
 }
 // Image Setter
 // 图片内容.图片最大为500K,只支持JPG,GIF格式.
-func (r *TaobaoProductImgUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoProductImgUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoProductImgUploadRequest) GetImage() []*model.File {
+func (r TaobaoProductImgUploadRequest) GetImage() *model.File {
     return r._image
 }
 // Position Setter

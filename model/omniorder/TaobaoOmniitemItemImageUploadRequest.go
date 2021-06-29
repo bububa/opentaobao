@@ -15,7 +15,7 @@ taobao.omniitem.item.image.upload
 type TaobaoOmniitemItemImageUploadRequest struct {
     model.Params
     // 商品图片信息，允许png、jpg、gif图片格式,3M以内
-    _img   []*model.File
+    _img   *model.File
     // 条形码
     _barCode   string
     // 商品ID，若填入商品ID则以商品ID为准，否则以outerId/barCode为准
@@ -50,14 +50,14 @@ func (r TaobaoOmniitemItemImageUploadRequest) GetApiParams() url.Values {
 }
 // Img Setter
 // 商品图片信息，允许png、jpg、gif图片格式,3M以内
-func (r *TaobaoOmniitemItemImageUploadRequest) SetImg(_img []*model.File) error {
+func (r *TaobaoOmniitemItemImageUploadRequest) SetImg(_img *model.File) error {
     r._img = _img
     r.Set("img", _img)
     return nil
 }
 
 // Img Getter
-func (r TaobaoOmniitemItemImageUploadRequest) GetImg() []*model.File {
+func (r TaobaoOmniitemItemImageUploadRequest) GetImg() *model.File {
     return r._img
 }
 // BarCode Setter

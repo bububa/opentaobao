@@ -19,15 +19,15 @@ type TaobaoTmcMessageProduceRequest struct {
     // 消息类型
     _topic   string
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。
-    _mediaContent   []*model.File
+    _mediaContent   *model.File
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    _mediaContent2   []*model.File
+    _mediaContent2   *model.File
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    _mediaContent3   []*model.File
+    _mediaContent3   *model.File
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    _mediaContent4   []*model.File
+    _mediaContent4   *model.File
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    _mediaContent5   []*model.File
+    _mediaContent5   *model.File
     // 目标分组，一般为default
     _targetGroup   string
 }
@@ -78,62 +78,62 @@ func (r TaobaoTmcMessageProduceRequest) GetTopic() string {
 }
 // MediaContent Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent(_mediaContent []*model.File) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent(_mediaContent *model.File) error {
     r._mediaContent = _mediaContent
     r.Set("media_content", _mediaContent)
     return nil
 }
 
 // MediaContent Getter
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent() []*model.File {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent() *model.File {
     return r._mediaContent
 }
 // MediaContent2 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent2(_mediaContent2 []*model.File) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent2(_mediaContent2 *model.File) error {
     r._mediaContent2 = _mediaContent2
     r.Set("media_content2", _mediaContent2)
     return nil
 }
 
 // MediaContent2 Getter
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent2() []*model.File {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent2() *model.File {
     return r._mediaContent2
 }
 // MediaContent3 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent3(_mediaContent3 []*model.File) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent3(_mediaContent3 *model.File) error {
     r._mediaContent3 = _mediaContent3
     r.Set("media_content3", _mediaContent3)
     return nil
 }
 
 // MediaContent3 Getter
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent3() []*model.File {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent3() *model.File {
     return r._mediaContent3
 }
 // MediaContent4 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent4(_mediaContent4 []*model.File) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent4(_mediaContent4 *model.File) error {
     r._mediaContent4 = _mediaContent4
     r.Set("media_content4", _mediaContent4)
     return nil
 }
 
 // MediaContent4 Getter
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent4() []*model.File {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent4() *model.File {
     return r._mediaContent4
 }
 // MediaContent5 Setter
 // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent5(_mediaContent5 []*model.File) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent5(_mediaContent5 *model.File) error {
     r._mediaContent5 = _mediaContent5
     r.Set("media_content5", _mediaContent5)
     return nil
 }
 
 // MediaContent5 Getter
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent5() []*model.File {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent5() *model.File {
     return r._mediaContent5
 }
 // TargetGroup Setter

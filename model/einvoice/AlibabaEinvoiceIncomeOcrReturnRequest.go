@@ -21,7 +21,7 @@ type AlibabaEinvoiceIncomeOcrReturnRequest struct {
     // 错误消息，success=false是必填
     _errorMessage   string
     // 发票ocr影像文件，type=1时必填
-    _imageData   []*model.File
+    _imageData   *model.File
     // 发票ocr影像编号，type=1时必填
     _imageId   string
     // 发票代码，success=true时必填
@@ -100,14 +100,14 @@ func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetErrorMessage() string {
 }
 // ImageData Setter
 // 发票ocr影像文件，type=1时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageData(_imageData []*model.File) error {
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageData(_imageData *model.File) error {
     r._imageData = _imageData
     r.Set("image_data", _imageData)
     return nil
 }
 
 // ImageData Getter
-func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetImageData() []*model.File {
+func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetImageData() *model.File {
     return r._imageData
 }
 // ImageId Setter

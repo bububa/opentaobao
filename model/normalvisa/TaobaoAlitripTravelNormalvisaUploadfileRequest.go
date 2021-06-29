@@ -15,7 +15,7 @@ taobao.alitrip.travel.normalvisa.uploadfile
 type TaobaoAlitripTravelNormalvisaUploadfileRequest struct {
     model.Params
     // 文件
-    _fileBytes   []*model.File
+    _fileBytes   *model.File
     // 文件名：注意文件名请保证和上传的文件一直
     _fileName   string
     // 订单id
@@ -44,14 +44,14 @@ func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetApiParams() url.Value
 }
 // FileBytes Setter
 // 文件
-func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileBytes(_fileBytes []*model.File) error {
+func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileBytes(_fileBytes *model.File) error {
     r._fileBytes = _fileBytes
     r.Set("file_bytes", _fileBytes)
     return nil
 }
 
 // FileBytes Getter
-func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetFileBytes() []*model.File {
+func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetFileBytes() *model.File {
     return r._fileBytes
 }
 // FileName Setter

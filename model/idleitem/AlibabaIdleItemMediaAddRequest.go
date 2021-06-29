@@ -15,7 +15,7 @@ alibaba.idle.item.media.add
 type AlibabaIdleItemMediaAddRequest struct {
     model.Params
     // 多媒体文件字节流，图片<5M,视频<8M
-    _mediaData   []*model.File
+    _mediaData   *model.File
     // 类型：0 - 图片 ，仅支持图片
     _mediaType   int64
     // 废弃，不用再输入
@@ -44,14 +44,14 @@ func (r AlibabaIdleItemMediaAddRequest) GetApiParams() url.Values {
 }
 // MediaData Setter
 // 多媒体文件字节流，图片<5M,视频<8M
-func (r *AlibabaIdleItemMediaAddRequest) SetMediaData(_mediaData []*model.File) error {
+func (r *AlibabaIdleItemMediaAddRequest) SetMediaData(_mediaData *model.File) error {
     r._mediaData = _mediaData
     r.Set("media_data", _mediaData)
     return nil
 }
 
 // MediaData Getter
-func (r AlibabaIdleItemMediaAddRequest) GetMediaData() []*model.File {
+func (r AlibabaIdleItemMediaAddRequest) GetMediaData() *model.File {
     return r._mediaData
 }
 // MediaType Setter

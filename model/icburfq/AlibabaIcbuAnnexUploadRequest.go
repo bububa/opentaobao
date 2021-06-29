@@ -17,7 +17,7 @@ type AlibabaIcbuAnnexUploadRequest struct {
     // 文件名
     _fileName   string
     // 文件字节流
-    _fileInputStreamBytes   []*model.File
+    _fileInputStreamBytes   *model.File
     // 来源
     _source   string
 }
@@ -56,14 +56,14 @@ func (r AlibabaIcbuAnnexUploadRequest) GetFileName() string {
 }
 // FileInputStreamBytes Setter
 // 文件字节流
-func (r *AlibabaIcbuAnnexUploadRequest) SetFileInputStreamBytes(_fileInputStreamBytes []*model.File) error {
+func (r *AlibabaIcbuAnnexUploadRequest) SetFileInputStreamBytes(_fileInputStreamBytes *model.File) error {
     r._fileInputStreamBytes = _fileInputStreamBytes
     r.Set("file_input_stream_bytes", _fileInputStreamBytes)
     return nil
 }
 
 // FileInputStreamBytes Getter
-func (r AlibabaIcbuAnnexUploadRequest) GetFileInputStreamBytes() []*model.File {
+func (r AlibabaIcbuAnnexUploadRequest) GetFileInputStreamBytes() *model.File {
     return r._fileInputStreamBytes
 }
 // Source Setter

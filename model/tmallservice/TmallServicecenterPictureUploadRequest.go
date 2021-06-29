@@ -15,7 +15,7 @@ tmall.servicecenter.picture.upload
 type TmallServicecenterPictureUploadRequest struct {
     model.Params
     // 图片文件二进制流
-    _img   []*model.File
+    _img   *model.File
     // 图片全称包括扩展名。目前支持 jpg jpeg png
     _pictureName   string
     // true返回Https地址
@@ -44,14 +44,14 @@ func (r TmallServicecenterPictureUploadRequest) GetApiParams() url.Values {
 }
 // Img Setter
 // 图片文件二进制流
-func (r *TmallServicecenterPictureUploadRequest) SetImg(_img []*model.File) error {
+func (r *TmallServicecenterPictureUploadRequest) SetImg(_img *model.File) error {
     r._img = _img
     r.Set("img", _img)
     return nil
 }
 
 // Img Getter
-func (r TmallServicecenterPictureUploadRequest) GetImg() []*model.File {
+func (r TmallServicecenterPictureUploadRequest) GetImg() *model.File {
     return r._img
 }
 // PictureName Setter

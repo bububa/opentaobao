@@ -19,7 +19,7 @@ type AliexpressAffiliateImageSearchRequest struct {
     // 请求字段
     _fields   string
     // 图片文件字节数组，最大不超过 100 KB
-    _imageFileBytes   []*model.File
+    _imageFileBytes   *model.File
     // 图片类目倾向，不填则为最佳匹配。0 - 服装；3 - 包；4 - 鞋子；88888888 - 其他类目
     _imgCid   string
     // 媒体用户唯一识别号
@@ -84,14 +84,14 @@ func (r AliexpressAffiliateImageSearchRequest) GetFields() string {
 }
 // ImageFileBytes Setter
 // 图片文件字节数组，最大不超过 100 KB
-func (r *AliexpressAffiliateImageSearchRequest) SetImageFileBytes(_imageFileBytes []*model.File) error {
+func (r *AliexpressAffiliateImageSearchRequest) SetImageFileBytes(_imageFileBytes *model.File) error {
     r._imageFileBytes = _imageFileBytes
     r.Set("image_file_bytes", _imageFileBytes)
     return nil
 }
 
 // ImageFileBytes Getter
-func (r AliexpressAffiliateImageSearchRequest) GetImageFileBytes() []*model.File {
+func (r AliexpressAffiliateImageSearchRequest) GetImageFileBytes() *model.File {
     return r._imageFileBytes
 }
 // ImgCid Setter

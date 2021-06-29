@@ -15,7 +15,7 @@ alibaba.ai.ar.tmjl.app.detect
 type AlibabaAiArTmjlAppDetectRequest struct {
     model.Params
     // 原始图像数据
-    _imgData   []*model.File
+    _imgData   *model.File
     // 最多返回的结果数，默认为1
     _num   int64
     // 本地已cache的target，多个target间以|||分隔
@@ -48,14 +48,14 @@ func (r AlibabaAiArTmjlAppDetectRequest) GetApiParams() url.Values {
 }
 // ImgData Setter
 // 原始图像数据
-func (r *AlibabaAiArTmjlAppDetectRequest) SetImgData(_imgData []*model.File) error {
+func (r *AlibabaAiArTmjlAppDetectRequest) SetImgData(_imgData *model.File) error {
     r._imgData = _imgData
     r.Set("img_data", _imgData)
     return nil
 }
 
 // ImgData Getter
-func (r AlibabaAiArTmjlAppDetectRequest) GetImgData() []*model.File {
+func (r AlibabaAiArTmjlAppDetectRequest) GetImgData() *model.File {
     return r._imgData
 }
 // Num Setter

@@ -17,7 +17,7 @@ type AlibabaGspSupplyImageUploadRequest struct {
     // 图片名称
     _fileName   string
     // 图片文件流，像素宽度不小于500，不大于2000，像素长度不小于500，不大于2000
-    _fileContent   []*model.File
+    _fileContent   *model.File
 }
 
 // 初始化AlibabaGspSupplyImageUploadRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaGspSupplyImageUploadRequest) GetFileName() string {
 }
 // FileContent Setter
 // 图片文件流，像素宽度不小于500，不大于2000，像素长度不小于500，不大于2000
-func (r *AlibabaGspSupplyImageUploadRequest) SetFileContent(_fileContent []*model.File) error {
+func (r *AlibabaGspSupplyImageUploadRequest) SetFileContent(_fileContent *model.File) error {
     r._fileContent = _fileContent
     r.Set("file_content", _fileContent)
     return nil
 }
 
 // FileContent Getter
-func (r AlibabaGspSupplyImageUploadRequest) GetFileContent() []*model.File {
+func (r AlibabaGspSupplyImageUploadRequest) GetFileContent() *model.File {
     return r._fileContent
 }

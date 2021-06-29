@@ -25,7 +25,7 @@ type TaobaoItemImgUploadRequest struct {
     // 图片序号
     _position   int64
     // 商品图片内容类型:JPG;最大:3M 。支持的文件类型：jpg,jpeg,png
-    _image   []*model.File
+    _image   *model.File
     // 是否将该图片设为主图,可选值:true,false;默认值:false(非主图)
     _isMajor   bool
     // 是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图
@@ -90,14 +90,14 @@ func (r TaobaoItemImgUploadRequest) GetPosition() int64 {
 }
 // Image Setter
 // 商品图片内容类型:JPG;最大:3M 。支持的文件类型：jpg,jpeg,png
-func (r *TaobaoItemImgUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoItemImgUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoItemImgUploadRequest) GetImage() []*model.File {
+func (r TaobaoItemImgUploadRequest) GetImage() *model.File {
     return r._image
 }
 // IsMajor Setter

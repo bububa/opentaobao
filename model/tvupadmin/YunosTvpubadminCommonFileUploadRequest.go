@@ -15,7 +15,7 @@ yunos.tvpubadmin.common.file.upload
 type YunosTvpubadminCommonFileUploadRequest struct {
     model.Params
     // 文件字节流
-    _bytes   []*model.File
+    _bytes   *model.File
     // 原文件名
     _originalFilename   string
     // 文件大小
@@ -48,14 +48,14 @@ func (r YunosTvpubadminCommonFileUploadRequest) GetApiParams() url.Values {
 }
 // Bytes Setter
 // 文件字节流
-func (r *YunosTvpubadminCommonFileUploadRequest) SetBytes(_bytes []*model.File) error {
+func (r *YunosTvpubadminCommonFileUploadRequest) SetBytes(_bytes *model.File) error {
     r._bytes = _bytes
     r.Set("bytes", _bytes)
     return nil
 }
 
 // Bytes Getter
-func (r YunosTvpubadminCommonFileUploadRequest) GetBytes() []*model.File {
+func (r YunosTvpubadminCommonFileUploadRequest) GetBytes() *model.File {
     return r._bytes
 }
 // OriginalFilename Setter

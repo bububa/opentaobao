@@ -17,7 +17,7 @@ type TaobaoAlitripAxinTransPayImgUploadRequest struct {
     // 上传图片到支付宝图片空间接口入参
     _axinPayImgUploadDTO   *AxinPayImgUploadDTO
     // 图片字节流
-    _imgContents   []*model.File
+    _imgContents   *model.File
 }
 
 // 初始化TaobaoAlitripAxinTransPayImgUploadRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetAxinPayImgUploadDTO() *Axi
 }
 // ImgContents Setter
 // 图片字节流
-func (r *TaobaoAlitripAxinTransPayImgUploadRequest) SetImgContents(_imgContents []*model.File) error {
+func (r *TaobaoAlitripAxinTransPayImgUploadRequest) SetImgContents(_imgContents *model.File) error {
     r._imgContents = _imgContents
     r.Set("img_contents", _imgContents)
     return nil
 }
 
 // ImgContents Getter
-func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetImgContents() []*model.File {
+func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetImgContents() *model.File {
     return r._imgContents
 }

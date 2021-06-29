@@ -18,5 +18,5 @@ type ResultVo struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 合同pdf字节码
-    Objectbytes   []*model.File `json:"objectbytes,omitempty" xml:"objectbytes>*model.File,omitempty"`
+    Objectbytes   *model.File `json:"objectbytes,omitempty" xml:"objectbytes,omitempty"`
 }

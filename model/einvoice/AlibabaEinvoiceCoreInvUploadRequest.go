@@ -91,7 +91,7 @@ type AlibabaEinvoiceCoreInvUploadRequest struct {
     // 开票人
     _payeeOperator   string
     // 发票板式文件数据，字节数据。  电票时必传。
-    _invoiceFileData   []*model.File
+    _invoiceFileData   *model.File
     // 购方税务登记证号，由大写字母或数字组成，长度要求15~20位。  开企业抬头时必填， 专票必填。
     _payerRegisterNo   string
     // 开票发票类型  可选值：  0: 电票  1：纸质普票  2：纸质专票
@@ -580,14 +580,14 @@ func (r AlibabaEinvoiceCoreInvUploadRequest) GetPayeeOperator() string {
 }
 // InvoiceFileData Setter
 // 发票板式文件数据，字节数据。  电票时必传。
-func (r *AlibabaEinvoiceCoreInvUploadRequest) SetInvoiceFileData(_invoiceFileData []*model.File) error {
+func (r *AlibabaEinvoiceCoreInvUploadRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
     r._invoiceFileData = _invoiceFileData
     r.Set("invoice_file_data", _invoiceFileData)
     return nil
 }
 
 // InvoiceFileData Getter
-func (r AlibabaEinvoiceCoreInvUploadRequest) GetInvoiceFileData() []*model.File {
+func (r AlibabaEinvoiceCoreInvUploadRequest) GetInvoiceFileData() *model.File {
     return r._invoiceFileData
 }
 // PayerRegisterNo Setter

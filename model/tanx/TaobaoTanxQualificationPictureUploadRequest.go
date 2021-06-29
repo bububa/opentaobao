@@ -21,7 +21,7 @@ type TaobaoTanxQualificationPictureUploadRequest struct {
     // 1970年到现在的时间，毫秒
     _signTime   int64
     // File文件getByte后的二进制数组
-    _fileByte   []*model.File
+    _fileByte   *model.File
 }
 
 // 初始化TaobaoTanxQualificationPictureUploadRequest对象
@@ -82,13 +82,13 @@ func (r TaobaoTanxQualificationPictureUploadRequest) GetSignTime() int64 {
 }
 // FileByte Setter
 // File文件getByte后的二进制数组
-func (r *TaobaoTanxQualificationPictureUploadRequest) SetFileByte(_fileByte []*model.File) error {
+func (r *TaobaoTanxQualificationPictureUploadRequest) SetFileByte(_fileByte *model.File) error {
     r._fileByte = _fileByte
     r.Set("file_byte", _fileByte)
     return nil
 }
 
 // FileByte Getter
-func (r TaobaoTanxQualificationPictureUploadRequest) GetFileByte() []*model.File {
+func (r TaobaoTanxQualificationPictureUploadRequest) GetFileByte() *model.File {
     return r._fileByte
 }

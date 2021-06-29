@@ -17,7 +17,7 @@ type TaobaoTradeVoucherUploadRequest struct {
     // 上传文件的名称
     _fileName   string
     // 文件
-    _fileData   []*model.File
+    _fileData   *model.File
     // 该笔订单的卖家Nick
     _sellerNick   string
     // 该笔订单的买家Nick（混淆nick）
@@ -58,14 +58,14 @@ func (r TaobaoTradeVoucherUploadRequest) GetFileName() string {
 }
 // FileData Setter
 // 文件
-func (r *TaobaoTradeVoucherUploadRequest) SetFileData(_fileData []*model.File) error {
+func (r *TaobaoTradeVoucherUploadRequest) SetFileData(_fileData *model.File) error {
     r._fileData = _fileData
     r.Set("file_data", _fileData)
     return nil
 }
 
 // FileData Getter
-func (r TaobaoTradeVoucherUploadRequest) GetFileData() []*model.File {
+func (r TaobaoTradeVoucherUploadRequest) GetFileData() *model.File {
     return r._fileData
 }
 // SellerNick Setter

@@ -15,7 +15,7 @@ taobao.baike.import.zhubao.picture
 type TaobaoBaikeImportZhubaoPictureRequest struct {
     model.Params
     // 图片二进制数据
-    _picture   []*model.File
+    _picture   *model.File
 }
 
 // 初始化TaobaoBaikeImportZhubaoPictureRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaikeImportZhubaoPictureRequest) GetApiParams() url.Values {
 }
 // Picture Setter
 // 图片二进制数据
-func (r *TaobaoBaikeImportZhubaoPictureRequest) SetPicture(_picture []*model.File) error {
+func (r *TaobaoBaikeImportZhubaoPictureRequest) SetPicture(_picture *model.File) error {
     r._picture = _picture
     r.Set("picture", _picture)
     return nil
 }
 
 // Picture Getter
-func (r TaobaoBaikeImportZhubaoPictureRequest) GetPicture() []*model.File {
+func (r TaobaoBaikeImportZhubaoPictureRequest) GetPicture() *model.File {
     return r._picture
 }

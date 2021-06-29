@@ -12,7 +12,7 @@ type TmallCarContractDownloadResult struct {
     // 错误信息
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 返回的合同二进制文件
-    Objects   []*model.File `json:"objects,omitempty" xml:"objects>*model.File,omitempty"`
+    Objects   *model.File `json:"objects,omitempty" xml:"objects,omitempty"`
     // 成功与否
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 消耗时间

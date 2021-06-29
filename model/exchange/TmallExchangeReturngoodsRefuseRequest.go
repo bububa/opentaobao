@@ -15,7 +15,7 @@ tmall.exchange.returngoods.refuse
 type TmallExchangeReturngoodsRefuseRequest struct {
     model.Params
     // 凭证图片
-    _leaveMessagePics   []*model.File
+    _leaveMessagePics   *model.File
     // 留言说明
     _leaveMessage   string
     // 换货单号ID
@@ -46,14 +46,14 @@ func (r TmallExchangeReturngoodsRefuseRequest) GetApiParams() url.Values {
 }
 // LeaveMessagePics Setter
 // 凭证图片
-func (r *TmallExchangeReturngoodsRefuseRequest) SetLeaveMessagePics(_leaveMessagePics []*model.File) error {
+func (r *TmallExchangeReturngoodsRefuseRequest) SetLeaveMessagePics(_leaveMessagePics *model.File) error {
     r._leaveMessagePics = _leaveMessagePics
     r.Set("leave_message_pics", _leaveMessagePics)
     return nil
 }
 
 // LeaveMessagePics Getter
-func (r TmallExchangeReturngoodsRefuseRequest) GetLeaveMessagePics() []*model.File {
+func (r TmallExchangeReturngoodsRefuseRequest) GetLeaveMessagePics() *model.File {
     return r._leaveMessagePics
 }
 // LeaveMessage Setter

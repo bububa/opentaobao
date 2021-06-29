@@ -19,7 +19,7 @@ type TaobaoFenxiaoProductImageUploadRequest struct {
     // 产品主图图片空间相对路径或绝对路径
     _picPath   string
     // 产品图片
-    _image   []*model.File
+    _image   *model.File
     // 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
     _position   int64
     // properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
@@ -72,14 +72,14 @@ func (r TaobaoFenxiaoProductImageUploadRequest) GetPicPath() string {
 }
 // Image Setter
 // 产品图片
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoFenxiaoProductImageUploadRequest) GetImage() []*model.File {
+func (r TaobaoFenxiaoProductImageUploadRequest) GetImage() *model.File {
     return r._image
 }
 // Position Setter

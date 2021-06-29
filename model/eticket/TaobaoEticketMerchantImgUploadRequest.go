@@ -15,7 +15,7 @@ taobao.eticket.merchant.img.upload
 type TaobaoEticketMerchantImgUploadRequest struct {
     model.Params
     // 二维码图片
-    _imgBytes   []*model.File
+    _imgBytes   *model.File
 }
 
 // 初始化TaobaoEticketMerchantImgUploadRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoEticketMerchantImgUploadRequest) GetApiParams() url.Values {
 }
 // ImgBytes Setter
 // 二维码图片
-func (r *TaobaoEticketMerchantImgUploadRequest) SetImgBytes(_imgBytes []*model.File) error {
+func (r *TaobaoEticketMerchantImgUploadRequest) SetImgBytes(_imgBytes *model.File) error {
     r._imgBytes = _imgBytes
     r.Set("img_bytes", _imgBytes)
     return nil
 }
 
 // ImgBytes Getter
-func (r TaobaoEticketMerchantImgUploadRequest) GetImgBytes() []*model.File {
+func (r TaobaoEticketMerchantImgUploadRequest) GetImgBytes() *model.File {
     return r._imgBytes
 }

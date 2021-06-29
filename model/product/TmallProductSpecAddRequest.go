@@ -31,7 +31,7 @@ type TmallProductSpecAddRequest struct {
     // 产品基础色，数据格式为：pid:vid:rvid1,rvid2,rvid3;pid:vid:rvid1
     _changeProp   string
     // 产品图片
-    _image   []*model.File
+    _image   *model.File
     // 产品二维码
     _barcode   string
     // 产品货号
@@ -158,14 +158,14 @@ func (r TmallProductSpecAddRequest) GetChangeProp() string {
 }
 // Image Setter
 // 产品图片
-func (r *TmallProductSpecAddRequest) SetImage(_image []*model.File) error {
+func (r *TmallProductSpecAddRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TmallProductSpecAddRequest) GetImage() []*model.File {
+func (r TmallProductSpecAddRequest) GetImage() *model.File {
     return r._image
 }
 // Barcode Setter

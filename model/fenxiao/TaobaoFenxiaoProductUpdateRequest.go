@@ -73,7 +73,7 @@ type TaobaoFenxiaoProductUpdateRequest struct {
     // 产品主图图片空间相对路径或绝对路径
     _picPath   string
     // 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数
-    _image   []*model.File
+    _image   *model.File
     // 产品属性
     _properties   string
     // 属性别名
@@ -460,14 +460,14 @@ func (r TaobaoFenxiaoProductUpdateRequest) GetPicPath() string {
 }
 // Image Setter
 // 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数
-func (r *TaobaoFenxiaoProductUpdateRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoFenxiaoProductUpdateRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoFenxiaoProductUpdateRequest) GetImage() []*model.File {
+func (r TaobaoFenxiaoProductUpdateRequest) GetImage() *model.File {
     return r._image
 }
 // Properties Setter

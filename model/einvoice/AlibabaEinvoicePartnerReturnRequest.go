@@ -33,7 +33,7 @@ type AlibabaEinvoicePartnerReturnRequest struct {
     // 发票日期
     _invoiceDate   string
     // 发票文件PDF内容，PDF的byte[]字段串。
-    _invoiceFileData   []*model.File
+    _invoiceFileData   *model.File
     // 流水号
     _serialNo   string
     // 防伪码
@@ -186,14 +186,14 @@ func (r AlibabaEinvoicePartnerReturnRequest) GetInvoiceDate() string {
 }
 // InvoiceFileData Setter
 // 发票文件PDF内容，PDF的byte[]字段串。
-func (r *AlibabaEinvoicePartnerReturnRequest) SetInvoiceFileData(_invoiceFileData []*model.File) error {
+func (r *AlibabaEinvoicePartnerReturnRequest) SetInvoiceFileData(_invoiceFileData *model.File) error {
     r._invoiceFileData = _invoiceFileData
     r.Set("invoice_file_data", _invoiceFileData)
     return nil
 }
 
 // InvoiceFileData Getter
-func (r AlibabaEinvoicePartnerReturnRequest) GetInvoiceFileData() []*model.File {
+func (r AlibabaEinvoicePartnerReturnRequest) GetInvoiceFileData() *model.File {
     return r._invoiceFileData
 }
 // SerialNo Setter

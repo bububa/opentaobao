@@ -15,7 +15,7 @@ alibaba.lst.speaker.file.upload
 type AlibabaLstSpeakerFileUploadRequest struct {
     model.Params
     // 数据流
-    _fileBytes   []*model.File
+    _fileBytes   *model.File
     // 文件类型,audio:音频，advert:广告
     _fileType   string
     // 文件ID
@@ -46,14 +46,14 @@ func (r AlibabaLstSpeakerFileUploadRequest) GetApiParams() url.Values {
 }
 // FileBytes Setter
 // 数据流
-func (r *AlibabaLstSpeakerFileUploadRequest) SetFileBytes(_fileBytes []*model.File) error {
+func (r *AlibabaLstSpeakerFileUploadRequest) SetFileBytes(_fileBytes *model.File) error {
     r._fileBytes = _fileBytes
     r.Set("file_bytes", _fileBytes)
     return nil
 }
 
 // FileBytes Getter
-func (r AlibabaLstSpeakerFileUploadRequest) GetFileBytes() []*model.File {
+func (r AlibabaLstSpeakerFileUploadRequest) GetFileBytes() *model.File {
     return r._fileBytes
 }
 // FileType Setter

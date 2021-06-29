@@ -18,7 +18,8 @@ const (
 	FIELD_LIST_PARAM_TYPE ApiParamType = "Field List"
 	BOOLEAN_PARAM_TYPE    ApiParamType = "Boolean"
 	PRICE_PARAM_TYPE      ApiParamType = "Price"
-	BYTES_PARAM_TYPE      ApiParamType = "byte"
+	BYTE_PARAM_TYPE       ApiParamType = "byte"
+	BYTES_PARAM_TYPE      ApiParamType = "byte[]"
 	JSON_PARAM_TYPE       ApiParamType = "Json"
 	RESULT_PARAM_TYPE     ApiParamType = "Result"
 	UNKNOWN_PARAM_TYPE    ApiParamType = ""
@@ -133,7 +134,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		param.Type = "float64"
 	case FIELD_LIST_PARAM_TYPE:
 		param.Type = "[]string"
-	case BYTES_PARAM_TYPE:
+	case BYTES_PARAM_TYPE, BYTE_PARAM_TYPE:
 		param.Type = "*model.File"
 	case JSON_PARAM_TYPE:
 		param.Type = "string"
@@ -156,8 +157,14 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		if len(p.SubParams) == 0 {
 			log.Printf("[WRN] name:%s, type:%s\n", p.Name, paramType)
 		} else {
+			keys := make(map[string]struct{}, len(p.SubParams))
 			for _, par := range p.SubParams {
-				param.Obj = append(param.Obj, par.TplParam(apiName))
+				subPar := par.TplParam(apiName)
+				if _, found := keys[subPar.Name]; found {
+					continue
+				}
+				keys[subPar.Name] = struct{}{}
+				param.Obj = append(param.Obj, subPar)
 			}
 		}
 		param.IsObject = true

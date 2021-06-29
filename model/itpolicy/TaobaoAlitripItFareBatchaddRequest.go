@@ -17,7 +17,7 @@ type TaobaoAlitripItFareBatchaddRequest struct {
     // 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
     _addType   int64
     // 文本zip压缩后的数据字节流
-    _bytes   []*model.File
+    _bytes   *model.File
     // 数据格式类型，1 淘宝 2 携程
     _dataType   int64
     // json格式的字符串，扩展属性，预留
@@ -58,14 +58,14 @@ func (r TaobaoAlitripItFareBatchaddRequest) GetAddType() int64 {
 }
 // Bytes Setter
 // 文本zip压缩后的数据字节流
-func (r *TaobaoAlitripItFareBatchaddRequest) SetBytes(_bytes []*model.File) error {
+func (r *TaobaoAlitripItFareBatchaddRequest) SetBytes(_bytes *model.File) error {
     r._bytes = _bytes
     r.Set("bytes", _bytes)
     return nil
 }
 
 // Bytes Getter
-func (r TaobaoAlitripItFareBatchaddRequest) GetBytes() []*model.File {
+func (r TaobaoAlitripItFareBatchaddRequest) GetBytes() *model.File {
     return r._bytes
 }
 // DataType Setter

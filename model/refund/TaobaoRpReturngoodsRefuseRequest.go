@@ -21,7 +21,7 @@ type TaobaoRpReturngoodsRefuseRequest struct {
     // 退款版本号
     _refundVersion   int64
     // 拒绝退货凭证图片，必须图片格式，大小不能超过5M
-    _refuseProof   []*model.File
+    _refuseProof   *model.File
     // 拒绝原因编号，会提供拒绝原因列表供选择
     _refuseReasonId   int64
 }
@@ -84,14 +84,14 @@ func (r TaobaoRpReturngoodsRefuseRequest) GetRefundVersion() int64 {
 }
 // RefuseProof Setter
 // 拒绝退货凭证图片，必须图片格式，大小不能超过5M
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseProof(_refuseProof []*model.File) error {
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseProof(_refuseProof *model.File) error {
     r._refuseProof = _refuseProof
     r.Set("refuse_proof", _refuseProof)
     return nil
 }
 
 // RefuseProof Getter
-func (r TaobaoRpReturngoodsRefuseRequest) GetRefuseProof() []*model.File {
+func (r TaobaoRpReturngoodsRefuseRequest) GetRefuseProof() *model.File {
     return r._refuseProof
 }
 // RefuseReasonId Setter

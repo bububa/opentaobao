@@ -21,7 +21,7 @@ type AlibabaAilabsAligenieSkillEntityImportRequest struct {
     // 测试，目前没有此功能，此参数无效
     _test   bool
     // 文件内容
-    _fileData   []*model.File
+    _fileData   *model.File
     // 要更新的实体名
     _entityName   string
     // 固定值，ISV
@@ -86,14 +86,14 @@ func (r AlibabaAilabsAligenieSkillEntityImportRequest) GetTest() bool {
 }
 // FileData Setter
 // 文件内容
-func (r *AlibabaAilabsAligenieSkillEntityImportRequest) SetFileData(_fileData []*model.File) error {
+func (r *AlibabaAilabsAligenieSkillEntityImportRequest) SetFileData(_fileData *model.File) error {
     r._fileData = _fileData
     r.Set("file_data", _fileData)
     return nil
 }
 
 // FileData Getter
-func (r AlibabaAilabsAligenieSkillEntityImportRequest) GetFileData() []*model.File {
+func (r AlibabaAilabsAligenieSkillEntityImportRequest) GetFileData() *model.File {
     return r._fileData
 }
 // EntityName Setter

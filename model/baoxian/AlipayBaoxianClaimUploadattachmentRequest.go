@@ -23,7 +23,7 @@ type AlipayBaoxianClaimUploadattachmentRequest struct {
     // 文件名,必须带后缀名。例如：test.png,test.doc,test.pdf
     _attachmentKey   string
     // 文件字节数组
-    _attachmentByte   []*model.File
+    _attachmentByte   *model.File
     // 是否base格式的字节数组
     _base64Bytes   bool
     // 保单外部业务单号
@@ -102,14 +102,14 @@ func (r AlipayBaoxianClaimUploadattachmentRequest) GetAttachmentKey() string {
 }
 // AttachmentByte Setter
 // 文件字节数组
-func (r *AlipayBaoxianClaimUploadattachmentRequest) SetAttachmentByte(_attachmentByte []*model.File) error {
+func (r *AlipayBaoxianClaimUploadattachmentRequest) SetAttachmentByte(_attachmentByte *model.File) error {
     r._attachmentByte = _attachmentByte
     r.Set("attachment_byte", _attachmentByte)
     return nil
 }
 
 // AttachmentByte Getter
-func (r AlipayBaoxianClaimUploadattachmentRequest) GetAttachmentByte() []*model.File {
+func (r AlipayBaoxianClaimUploadattachmentRequest) GetAttachmentByte() *model.File {
     return r._attachmentByte
 }
 // Base64Bytes Setter

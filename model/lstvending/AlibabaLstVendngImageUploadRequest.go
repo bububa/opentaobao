@@ -15,7 +15,7 @@ alibaba.lst.vendng.image.upload
 type AlibabaLstVendngImageUploadRequest struct {
     model.Params
     // 图片文件字节数组
-    _imgBytes   []*model.File
+    _imgBytes   *model.File
 }
 
 // 初始化AlibabaLstVendngImageUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendngImageUploadRequest) GetApiParams() url.Values {
 }
 // ImgBytes Setter
 // 图片文件字节数组
-func (r *AlibabaLstVendngImageUploadRequest) SetImgBytes(_imgBytes []*model.File) error {
+func (r *AlibabaLstVendngImageUploadRequest) SetImgBytes(_imgBytes *model.File) error {
     r._imgBytes = _imgBytes
     r.Set("img_bytes", _imgBytes)
     return nil
 }
 
 // ImgBytes Getter
-func (r AlibabaLstVendngImageUploadRequest) GetImgBytes() []*model.File {
+func (r AlibabaLstVendngImageUploadRequest) GetImgBytes() *model.File {
     return r._imgBytes
 }

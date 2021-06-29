@@ -26,8 +26,6 @@ type InventoryReportRequest struct {
     Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
     // 扩展属性
     ExtendProps   *TaobaoQimenInventoryReportMap `json:"extendProps,omitempty" xml:"extendProps,omitempty"`
-    // 备注
-    Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 变动类型：CHECK=盘点 ADJUST=调整
     AdjustType   string `json:"adjustType,omitempty" xml:"adjustType,omitempty"`
 }

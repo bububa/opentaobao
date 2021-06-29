@@ -17,7 +17,7 @@ type AlibabaAlihealthMedicalImDataUploadRequest struct {
     // request
     _uploadDataRequest   *UploadDataRequest
     // 文件字节流
-    _file   []*model.File
+    _file   *model.File
 }
 
 // 初始化AlibabaAlihealthMedicalImDataUploadRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaAlihealthMedicalImDataUploadRequest) GetUploadDataRequest() *Uplo
 }
 // File Setter
 // 文件字节流
-func (r *AlibabaAlihealthMedicalImDataUploadRequest) SetFile(_file []*model.File) error {
+func (r *AlibabaAlihealthMedicalImDataUploadRequest) SetFile(_file *model.File) error {
     r._file = _file
     r.Set("file", _file)
     return nil
 }
 
 // File Getter
-func (r AlibabaAlihealthMedicalImDataUploadRequest) GetFile() []*model.File {
+func (r AlibabaAlihealthMedicalImDataUploadRequest) GetFile() *model.File {
     return r._file
 }

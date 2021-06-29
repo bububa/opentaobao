@@ -19,7 +19,7 @@ type TaobaoRefundRefuseRequest struct {
     // 拒绝退款时的说明信息，长度2-200
     _refuseMessage   string
     // 拒绝退款时的退款凭证，一般是卖家拒绝退款时使用的发货凭证，最大长度130000字节，支持的图片格式：GIF, JPG, PNG。天猫退款为必填项。
-    _refuseProof   []*model.File
+    _refuseProof   *model.File
     // 可选值为：售中：onsale，售后：aftersale，天猫退款为必填项。
     _refundPhase   string
     // 退款版本号，天猫退款为必填项。
@@ -74,14 +74,14 @@ func (r TaobaoRefundRefuseRequest) GetRefuseMessage() string {
 }
 // RefuseProof Setter
 // 拒绝退款时的退款凭证，一般是卖家拒绝退款时使用的发货凭证，最大长度130000字节，支持的图片格式：GIF, JPG, PNG。天猫退款为必填项。
-func (r *TaobaoRefundRefuseRequest) SetRefuseProof(_refuseProof []*model.File) error {
+func (r *TaobaoRefundRefuseRequest) SetRefuseProof(_refuseProof *model.File) error {
     r._refuseProof = _refuseProof
     r.Set("refuse_proof", _refuseProof)
     return nil
 }
 
 // RefuseProof Getter
-func (r TaobaoRefundRefuseRequest) GetRefuseProof() []*model.File {
+func (r TaobaoRefundRefuseRequest) GetRefuseProof() *model.File {
     return r._refuseProof
 }
 // RefundPhase Setter

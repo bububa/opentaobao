@@ -17,7 +17,7 @@ type TaobaoVmarketEticketQrcodeUploadRequest struct {
     // 码商ID
     _codeMerchantId   int64
     // 上传的图片byte[]  小于300K，图片尺寸400*400以内
-    _imgBytes   []*model.File
+    _imgBytes   *model.File
 }
 
 // 初始化TaobaoVmarketEticketQrcodeUploadRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoVmarketEticketQrcodeUploadRequest) GetCodeMerchantId() int64 {
 }
 // ImgBytes Setter
 // 上传的图片byte[]  小于300K，图片尺寸400*400以内
-func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetImgBytes(_imgBytes []*model.File) error {
+func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetImgBytes(_imgBytes *model.File) error {
     r._imgBytes = _imgBytes
     r.Set("img_bytes", _imgBytes)
     return nil
 }
 
 // ImgBytes Getter
-func (r TaobaoVmarketEticketQrcodeUploadRequest) GetImgBytes() []*model.File {
+func (r TaobaoVmarketEticketQrcodeUploadRequest) GetImgBytes() *model.File {
     return r._imgBytes
 }

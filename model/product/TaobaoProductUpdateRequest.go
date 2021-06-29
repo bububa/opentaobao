@@ -27,7 +27,7 @@ type TaobaoProductUpdateRequest struct {
     // 产品描述.最大不超过25000个字符
     _desc   string
     // 产品主图.最大500K,目前仅支持GIF,JPG
-    _image   []*model.File
+    _image   *model.File
     // 产品名称.最大不超过30个字符
     _name   string
     // 是否是主图
@@ -130,14 +130,14 @@ func (r TaobaoProductUpdateRequest) GetDesc() string {
 }
 // Image Setter
 // 产品主图.最大500K,目前仅支持GIF,JPG
-func (r *TaobaoProductUpdateRequest) SetImage(_image []*model.File) error {
+func (r *TaobaoProductUpdateRequest) SetImage(_image *model.File) error {
     r._image = _image
     r.Set("image", _image)
     return nil
 }
 
 // Image Getter
-func (r TaobaoProductUpdateRequest) GetImage() []*model.File {
+func (r TaobaoProductUpdateRequest) GetImage() *model.File {
     return r._image
 }
 // Name Setter
