@@ -15,9 +15,9 @@ taobao.alitrip.ie.agent.order.get
 type TaobaoAlitripIeAgentOrderGetRequest struct {
     model.Params
     // 代理商ID
-    agentId   int64
+    _agentId   int64
     // 交易订单ID
-    tradeOrderId   int64
+    _tradeOrderId   int64
 }
 
 // 初始化TaobaoAlitripIeAgentOrderGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripIeAgentOrderGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商ID
-func (r *TaobaoAlitripIeAgentOrderGetRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentOrderGetRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentOrderGetRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // TradeOrderId Setter
 // 交易订单ID
-func (r *TaobaoAlitripIeAgentOrderGetRequest) SetTradeOrderId(tradeOrderId int64) error {
-    r.tradeOrderId = tradeOrderId
-    r.Set("trade_order_id", tradeOrderId)
+func (r *TaobaoAlitripIeAgentOrderGetRequest) SetTradeOrderId(_tradeOrderId int64) error {
+    r._tradeOrderId = _tradeOrderId
+    r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
 func (r TaobaoAlitripIeAgentOrderGetRequest) GetTradeOrderId() int64 {
-    return r.tradeOrderId
+    return r._tradeOrderId
 }

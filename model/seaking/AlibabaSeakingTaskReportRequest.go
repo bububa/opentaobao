@@ -15,13 +15,13 @@ alibaba.seaking.task.report
 type AlibabaSeakingTaskReportRequest struct {
     model.Params
     // 上报数据详情
-    reportDetail   []TaskDetailReportDto
+    _reportDetail   []TaskDetailReportDto
     // 任务类型(title/image)
-    taskType   string
+    _taskType   string
     // 用户token
-    token   string
+    _token   string
     // token来源站点
-    tokenFrom   string
+    _tokenFrom   string
 }
 
 // 初始化AlibabaSeakingTaskReportRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaSeakingTaskReportRequest) GetApiParams() url.Values {
 }
 // ReportDetail Setter
 // 上报数据详情
-func (r *AlibabaSeakingTaskReportRequest) SetReportDetail(reportDetail []TaskDetailReportDto) error {
-    r.reportDetail = reportDetail
-    r.Set("report_detail", reportDetail)
+func (r *AlibabaSeakingTaskReportRequest) SetReportDetail(_reportDetail []TaskDetailReportDto) error {
+    r._reportDetail = _reportDetail
+    r.Set("report_detail", _reportDetail)
     return nil
 }
 
 // ReportDetail Getter
 func (r AlibabaSeakingTaskReportRequest) GetReportDetail() []TaskDetailReportDto {
-    return r.reportDetail
+    return r._reportDetail
 }
 // TaskType Setter
 // 任务类型(title/image)
-func (r *AlibabaSeakingTaskReportRequest) SetTaskType(taskType string) error {
-    r.taskType = taskType
-    r.Set("task_type", taskType)
+func (r *AlibabaSeakingTaskReportRequest) SetTaskType(_taskType string) error {
+    r._taskType = _taskType
+    r.Set("task_type", _taskType)
     return nil
 }
 
 // TaskType Getter
 func (r AlibabaSeakingTaskReportRequest) GetTaskType() string {
-    return r.taskType
+    return r._taskType
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingTaskReportRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaSeakingTaskReportRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaSeakingTaskReportRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingTaskReportRequest) SetTokenFrom(tokenFrom string) error {
-    r.tokenFrom = tokenFrom
-    r.Set("token_from", tokenFrom)
+func (r *AlibabaSeakingTaskReportRequest) SetTokenFrom(_tokenFrom string) error {
+    r._tokenFrom = _tokenFrom
+    r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
 func (r AlibabaSeakingTaskReportRequest) GetTokenFrom() string {
-    return r.tokenFrom
+    return r._tokenFrom
 }

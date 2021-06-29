@@ -15,7 +15,7 @@ alibaba.interact.media.artwork
 type AlibabaInteractMediaArtworkRequest struct {
     model.Params
     // 系统自动生成
-    id   string
+    _id   string
 }
 
 // 初始化AlibabaInteractMediaArtworkRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractMediaArtworkRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractMediaArtworkRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaInteractMediaArtworkRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaInteractMediaArtworkRequest) GetId() string {
-    return r.id
+    return r._id
 }

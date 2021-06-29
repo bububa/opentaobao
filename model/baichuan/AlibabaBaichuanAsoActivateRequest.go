@@ -15,13 +15,13 @@ alibaba.baichuan.aso.activate
 type AlibabaBaichuanAsoActivateRequest struct {
     model.Params
     // 来源
-    source   string
+    _source   string
     // 1-tmail,2-taobao
-    appId   string
+    _appId   string
     // 1-android,2-ios
-    appOs   int64
+    _appOs   int64
     // 设备信息，ios为idfa ，android 为imei + imsi
-    deviceInfo   *AsoDeviceInfoDo
+    _deviceInfo   *AsoDeviceInfoDo
 }
 
 // 初始化AlibabaBaichuanAsoActivateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaBaichuanAsoActivateRequest) GetApiParams() url.Values {
 }
 // Source Setter
 // 来源
-func (r *AlibabaBaichuanAsoActivateRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaBaichuanAsoActivateRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaBaichuanAsoActivateRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // AppId Setter
 // 1-tmail,2-taobao
-func (r *AlibabaBaichuanAsoActivateRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaBaichuanAsoActivateRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaBaichuanAsoActivateRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // AppOs Setter
 // 1-android,2-ios
-func (r *AlibabaBaichuanAsoActivateRequest) SetAppOs(appOs int64) error {
-    r.appOs = appOs
-    r.Set("app_os", appOs)
+func (r *AlibabaBaichuanAsoActivateRequest) SetAppOs(_appOs int64) error {
+    r._appOs = _appOs
+    r.Set("app_os", _appOs)
     return nil
 }
 
 // AppOs Getter
 func (r AlibabaBaichuanAsoActivateRequest) GetAppOs() int64 {
-    return r.appOs
+    return r._appOs
 }
 // DeviceInfo Setter
 // 设备信息，ios为idfa ，android 为imei + imsi
-func (r *AlibabaBaichuanAsoActivateRequest) SetDeviceInfo(deviceInfo *AsoDeviceInfoDo) error {
-    r.deviceInfo = deviceInfo
-    r.Set("device_info", deviceInfo)
+func (r *AlibabaBaichuanAsoActivateRequest) SetDeviceInfo(_deviceInfo *AsoDeviceInfoDo) error {
+    r._deviceInfo = _deviceInfo
+    r.Set("device_info", _deviceInfo)
     return nil
 }
 
 // DeviceInfo Getter
 func (r AlibabaBaichuanAsoActivateRequest) GetDeviceInfo() *AsoDeviceInfoDo {
-    return r.deviceInfo
+    return r._deviceInfo
 }

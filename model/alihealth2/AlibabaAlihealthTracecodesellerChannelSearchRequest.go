@@ -15,15 +15,15 @@ alibaba.alihealth.tracecodeseller.channel.search
 type AlibabaAlihealthTracecodesellerChannelSearchRequest struct {
     model.Params
     // 身份认证
-    skeyCode   string
+    _skeyCode   string
     // 商家id
-    entInfoId   int64
+    _entInfoId   int64
     // 第几页
-    page   int64
+    _page   int64
     // 每页几条
-    pageSize   int64
+    _pageSize   int64
     // 0 出库 2 入库
-    outInType   int64
+    _outInType   int64
 }
 
 // 初始化AlibabaAlihealthTracecodesellerChannelSearchRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetApiParams() url.
 }
 // SkeyCode Setter
 // 身份认证
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetSkeyCode(skeyCode string) error {
-    r.skeyCode = skeyCode
-    r.Set("skey_code", skeyCode)
+func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetSkeyCode(_skeyCode string) error {
+    r._skeyCode = _skeyCode
+    r.Set("skey_code", _skeyCode)
     return nil
 }
 
 // SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetSkeyCode() string {
-    return r.skeyCode
+    return r._skeyCode
 }
 // EntInfoId Setter
 // 商家id
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetEntInfoId(entInfoId int64) error {
-    r.entInfoId = entInfoId
-    r.Set("ent_info_id", entInfoId)
+func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetEntInfoId(_entInfoId int64) error {
+    r._entInfoId = _entInfoId
+    r.Set("ent_info_id", _entInfoId)
     return nil
 }
 
 // EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetEntInfoId() int64 {
-    return r.entInfoId
+    return r._entInfoId
 }
 // Page Setter
 // 第几页
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // PageSize Setter
 // 每页几条
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // OutInType Setter
 // 0 出库 2 入库
-func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetOutInType(outInType int64) error {
-    r.outInType = outInType
-    r.Set("out_in_type", outInType)
+func (r *AlibabaAlihealthTracecodesellerChannelSearchRequest) SetOutInType(_outInType int64) error {
+    r._outInType = _outInType
+    r.Set("out_in_type", _outInType)
     return nil
 }
 
 // OutInType Getter
 func (r AlibabaAlihealthTracecodesellerChannelSearchRequest) GetOutInType() int64 {
-    return r.outInType
+    return r._outInType
 }

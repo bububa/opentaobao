@@ -15,7 +15,7 @@ alibaba.ib.campus.tmi.query
 type AlibabaIbCampusTmiQueryRequest struct {
     model.Params
     // 查询参数
-    accountQueryReqDto   *AccountQueryReqDto
+    _accountQueryReqDto   *AccountQueryReqDto
 }
 
 // 初始化AlibabaIbCampusTmiQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIbCampusTmiQueryRequest) GetApiParams() url.Values {
 }
 // AccountQueryReqDto Setter
 // 查询参数
-func (r *AlibabaIbCampusTmiQueryRequest) SetAccountQueryReqDto(accountQueryReqDto *AccountQueryReqDto) error {
-    r.accountQueryReqDto = accountQueryReqDto
-    r.Set("account_query_req_dto", accountQueryReqDto)
+func (r *AlibabaIbCampusTmiQueryRequest) SetAccountQueryReqDto(_accountQueryReqDto *AccountQueryReqDto) error {
+    r._accountQueryReqDto = _accountQueryReqDto
+    r.Set("account_query_req_dto", _accountQueryReqDto)
     return nil
 }
 
 // AccountQueryReqDto Getter
 func (r AlibabaIbCampusTmiQueryRequest) GetAccountQueryReqDto() *AccountQueryReqDto {
-    return r.accountQueryReqDto
+    return r._accountQueryReqDto
 }

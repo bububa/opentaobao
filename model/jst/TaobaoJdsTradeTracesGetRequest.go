@@ -15,7 +15,7 @@ taobao.jds.trade.traces.get
 type TaobaoJdsTradeTracesGetRequest struct {
     model.Params
     // 淘宝的订单tid
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoJdsTradeTracesGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJdsTradeTracesGetRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝的订单tid
-func (r *TaobaoJdsTradeTracesGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoJdsTradeTracesGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoJdsTradeTracesGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.tableaudit.querymetaitem
 type YunosTvpubadminContentTableauditQuerymetaitemRequest struct {
     model.Params
     // 查询条件，json格式
-    tableAuditQueryBo   string
+    _tableAuditQueryBo   string
 }
 
 // 初始化YunosTvpubadminContentTableauditQuerymetaitemRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetApiParams() url
 }
 // TableAuditQueryBo Setter
 // 查询条件，json格式
-func (r *YunosTvpubadminContentTableauditQuerymetaitemRequest) SetTableAuditQueryBo(tableAuditQueryBo string) error {
-    r.tableAuditQueryBo = tableAuditQueryBo
-    r.Set("table_audit_query_bo", tableAuditQueryBo)
+func (r *YunosTvpubadminContentTableauditQuerymetaitemRequest) SetTableAuditQueryBo(_tableAuditQueryBo string) error {
+    r._tableAuditQueryBo = _tableAuditQueryBo
+    r.Set("table_audit_query_bo", _tableAuditQueryBo)
     return nil
 }
 
 // TableAuditQueryBo Getter
 func (r YunosTvpubadminContentTableauditQuerymetaitemRequest) GetTableAuditQueryBo() string {
-    return r.tableAuditQueryBo
+    return r._tableAuditQueryBo
 }

@@ -15,17 +15,17 @@ alibaba.alihealth.drug.scan.querycode
 type AlibabaAlihealthDrugScanQuerycodeRequest struct {
     model.Params
     // 溯源码
-    code   string
+    _code   string
     // 用户标识id
-    webchatId   string
+    _webchatId   string
     // 省编码
-    provinceCode   string
+    _provinceCode   string
     // 市编码
-    cityCode   string
+    _cityCode   string
     // 区编码
-    areaCode   string
+    _areaCode   string
     // 扫码日期
-    scanTime   string
+    _scanTime   string
 }
 
 // 初始化AlibabaAlihealthDrugScanQuerycodeRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 溯源码
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // WebchatId Setter
 // 用户标识id
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetWebchatId(webchatId string) error {
-    r.webchatId = webchatId
-    r.Set("webchat_id", webchatId)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetWebchatId(_webchatId string) error {
+    r._webchatId = _webchatId
+    r.Set("webchat_id", _webchatId)
     return nil
 }
 
 // WebchatId Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetWebchatId() string {
-    return r.webchatId
+    return r._webchatId
 }
 // ProvinceCode Setter
 // 省编码
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetProvinceCode(provinceCode string) error {
-    r.provinceCode = provinceCode
-    r.Set("province_code", provinceCode)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetProvinceCode(_provinceCode string) error {
+    r._provinceCode = _provinceCode
+    r.Set("province_code", _provinceCode)
     return nil
 }
 
 // ProvinceCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetProvinceCode() string {
-    return r.provinceCode
+    return r._provinceCode
 }
 // CityCode Setter
 // 市编码
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetCityCode(cityCode string) error {
-    r.cityCode = cityCode
-    r.Set("city_code", cityCode)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetCityCode(_cityCode string) error {
+    r._cityCode = _cityCode
+    r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetCityCode() string {
-    return r.cityCode
+    return r._cityCode
 }
 // AreaCode Setter
 // 区编码
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetAreaCode(areaCode string) error {
-    r.areaCode = areaCode
-    r.Set("area_code", areaCode)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetAreaCode(_areaCode string) error {
+    r._areaCode = _areaCode
+    r.Set("area_code", _areaCode)
     return nil
 }
 
 // AreaCode Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetAreaCode() string {
-    return r.areaCode
+    return r._areaCode
 }
 // ScanTime Setter
 // 扫码日期
-func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetScanTime(scanTime string) error {
-    r.scanTime = scanTime
-    r.Set("scan_time", scanTime)
+func (r *AlibabaAlihealthDrugScanQuerycodeRequest) SetScanTime(_scanTime string) error {
+    r._scanTime = _scanTime
+    r.Set("scan_time", _scanTime)
     return nil
 }
 
 // ScanTime Getter
 func (r AlibabaAlihealthDrugScanQuerycodeRequest) GetScanTime() string {
-    return r.scanTime
+    return r._scanTime
 }

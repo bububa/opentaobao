@@ -16,7 +16,7 @@ taobao.tbk.spread.get
 type TaobaoTbkSpreadGetRequest struct {
     model.Params
     // 请求列表，内部包含多个url
-    requests   []TbkSpreadRequest
+    _requests   []TbkSpreadRequest
 }
 
 // 初始化TaobaoTbkSpreadGetRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoTbkSpreadGetRequest) GetApiParams() url.Values {
 }
 // Requests Setter
 // 请求列表，内部包含多个url
-func (r *TaobaoTbkSpreadGetRequest) SetRequests(requests []TbkSpreadRequest) error {
-    r.requests = requests
-    r.Set("requests", requests)
+func (r *TaobaoTbkSpreadGetRequest) SetRequests(_requests []TbkSpreadRequest) error {
+    r._requests = _requests
+    r.Set("requests", _requests)
     return nil
 }
 
 // Requests Getter
 func (r TaobaoTbkSpreadGetRequest) GetRequests() []TbkSpreadRequest {
-    return r.requests
+    return r._requests
 }

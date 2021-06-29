@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.provider.member.query
 type AlitripMerchantGalaxyProviderMemberQueryRequest struct {
     model.Params
     // 租户id
-    tenantKey   string
+    _tenantKey   string
     // 查询参数
-    queryMemberParam   *QueryMemberParam
+    _queryMemberParam   *QueryMemberParam
 }
 
 // 初始化AlitripMerchantGalaxyProviderMemberQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyProviderMemberQueryRequest) GetApiParams() url.Valu
 }
 // TenantKey Setter
 // 租户id
-func (r *AlitripMerchantGalaxyProviderMemberQueryRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyProviderMemberQueryRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyProviderMemberQueryRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // QueryMemberParam Setter
 // 查询参数
-func (r *AlitripMerchantGalaxyProviderMemberQueryRequest) SetQueryMemberParam(queryMemberParam *QueryMemberParam) error {
-    r.queryMemberParam = queryMemberParam
-    r.Set("query_member_param", queryMemberParam)
+func (r *AlitripMerchantGalaxyProviderMemberQueryRequest) SetQueryMemberParam(_queryMemberParam *QueryMemberParam) error {
+    r._queryMemberParam = _queryMemberParam
+    r.Set("query_member_param", _queryMemberParam)
     return nil
 }
 
 // QueryMemberParam Getter
 func (r AlitripMerchantGalaxyProviderMemberQueryRequest) GetQueryMemberParam() *QueryMemberParam {
-    return r.queryMemberParam
+    return r._queryMemberParam
 }

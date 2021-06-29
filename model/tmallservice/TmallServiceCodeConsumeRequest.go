@@ -15,11 +15,11 @@ tmall.service.code.consume
 type TmallServiceCodeConsumeRequest struct {
     model.Params
     // 核销码
-    consumeCode   string
+    _consumeCode   string
     // 核销帐号
-    operatorNick   string
+    _operatorNick   string
     // 门店id
-    shopId   string
+    _shopId   string
 }
 
 // 初始化TmallServiceCodeConsumeRequest对象
@@ -44,37 +44,37 @@ func (r TmallServiceCodeConsumeRequest) GetApiParams() url.Values {
 }
 // ConsumeCode Setter
 // 核销码
-func (r *TmallServiceCodeConsumeRequest) SetConsumeCode(consumeCode string) error {
-    r.consumeCode = consumeCode
-    r.Set("consume_code", consumeCode)
+func (r *TmallServiceCodeConsumeRequest) SetConsumeCode(_consumeCode string) error {
+    r._consumeCode = _consumeCode
+    r.Set("consume_code", _consumeCode)
     return nil
 }
 
 // ConsumeCode Getter
 func (r TmallServiceCodeConsumeRequest) GetConsumeCode() string {
-    return r.consumeCode
+    return r._consumeCode
 }
 // OperatorNick Setter
 // 核销帐号
-func (r *TmallServiceCodeConsumeRequest) SetOperatorNick(operatorNick string) error {
-    r.operatorNick = operatorNick
-    r.Set("operator_nick", operatorNick)
+func (r *TmallServiceCodeConsumeRequest) SetOperatorNick(_operatorNick string) error {
+    r._operatorNick = _operatorNick
+    r.Set("operator_nick", _operatorNick)
     return nil
 }
 
 // OperatorNick Getter
 func (r TmallServiceCodeConsumeRequest) GetOperatorNick() string {
-    return r.operatorNick
+    return r._operatorNick
 }
 // ShopId Setter
 // 门店id
-func (r *TmallServiceCodeConsumeRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TmallServiceCodeConsumeRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TmallServiceCodeConsumeRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }

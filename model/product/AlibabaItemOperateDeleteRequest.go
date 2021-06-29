@@ -15,7 +15,7 @@ alibaba.item.operate.delete
 type AlibabaItemOperateDeleteRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化AlibabaItemOperateDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaItemOperateDeleteRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemOperateDeleteRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaItemOperateDeleteRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaItemOperateDeleteRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

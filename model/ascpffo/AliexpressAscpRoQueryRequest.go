@@ -15,7 +15,7 @@ AE仓发商家单个退供单查询接口
 type AliexpressAscpRoQueryRequest struct {
     model.Params
     // dto
-    returnOrderQuery   *ReturnOrderQueryDto
+    _returnOrderQuery   *ReturnOrderQueryDto
 }
 
 // 初始化AliexpressAscpRoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpRoQueryRequest) GetApiParams() url.Values {
 }
 // ReturnOrderQuery Setter
 // dto
-func (r *AliexpressAscpRoQueryRequest) SetReturnOrderQuery(returnOrderQuery *ReturnOrderQueryDto) error {
-    r.returnOrderQuery = returnOrderQuery
-    r.Set("return_order_query", returnOrderQuery)
+func (r *AliexpressAscpRoQueryRequest) SetReturnOrderQuery(_returnOrderQuery *ReturnOrderQueryDto) error {
+    r._returnOrderQuery = _returnOrderQuery
+    r.Set("return_order_query", _returnOrderQuery)
     return nil
 }
 
 // ReturnOrderQuery Getter
 func (r AliexpressAscpRoQueryRequest) GetReturnOrderQuery() *ReturnOrderQueryDto {
-    return r.returnOrderQuery
+    return r._returnOrderQuery
 }

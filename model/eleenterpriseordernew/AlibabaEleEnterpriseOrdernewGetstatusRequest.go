@@ -15,7 +15,7 @@ alibaba.ele.enterprise.ordernew.getstatus
 type AlibabaEleEnterpriseOrdernewGetstatusRequest struct {
     model.Params
     // 订单号
-    elemeOrderId   string
+    _elemeOrderId   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewGetstatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetApiParams() url.Values 
 }
 // ElemeOrderId Setter
 // 订单号
-func (r *AlibabaEleEnterpriseOrdernewGetstatusRequest) SetElemeOrderId(elemeOrderId string) error {
-    r.elemeOrderId = elemeOrderId
-    r.Set("eleme_order_id", elemeOrderId)
+func (r *AlibabaEleEnterpriseOrdernewGetstatusRequest) SetElemeOrderId(_elemeOrderId string) error {
+    r._elemeOrderId = _elemeOrderId
+    r.Set("eleme_order_id", _elemeOrderId)
     return nil
 }
 
 // ElemeOrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetElemeOrderId() string {
-    return r.elemeOrderId
+    return r._elemeOrderId
 }

@@ -15,9 +15,9 @@ tmall.txcs.finance.bill.check
 type TmallTxcsFinanceBillCheckRequest struct {
     model.Params
     // 查询参数
-    statementBillFeeDetailQuery   *StatementBillFeeDetailQuery
+    _statementBillFeeDetailQuery   *StatementBillFeeDetailQuery
     // 门店编码
-    ouCode   string
+    _ouCode   string
 }
 
 // 初始化TmallTxcsFinanceBillCheckRequest对象
@@ -42,25 +42,25 @@ func (r TmallTxcsFinanceBillCheckRequest) GetApiParams() url.Values {
 }
 // StatementBillFeeDetailQuery Setter
 // 查询参数
-func (r *TmallTxcsFinanceBillCheckRequest) SetStatementBillFeeDetailQuery(statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
-    r.statementBillFeeDetailQuery = statementBillFeeDetailQuery
-    r.Set("statement_bill_fee_detail_query", statementBillFeeDetailQuery)
+func (r *TmallTxcsFinanceBillCheckRequest) SetStatementBillFeeDetailQuery(_statementBillFeeDetailQuery *StatementBillFeeDetailQuery) error {
+    r._statementBillFeeDetailQuery = _statementBillFeeDetailQuery
+    r.Set("statement_bill_fee_detail_query", _statementBillFeeDetailQuery)
     return nil
 }
 
 // StatementBillFeeDetailQuery Getter
 func (r TmallTxcsFinanceBillCheckRequest) GetStatementBillFeeDetailQuery() *StatementBillFeeDetailQuery {
-    return r.statementBillFeeDetailQuery
+    return r._statementBillFeeDetailQuery
 }
 // OuCode Setter
 // 门店编码
-func (r *TmallTxcsFinanceBillCheckRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *TmallTxcsFinanceBillCheckRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r TmallTxcsFinanceBillCheckRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }

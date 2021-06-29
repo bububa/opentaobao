@@ -15,7 +15,7 @@ alibaba.mos.oc.trade.syncbanksale
 type AlibabaMosOcTradeSyncbanksaleRequest struct {
     model.Params
     // pos云闪付、银行卡销售数据
-    posBankSaleInfoDto   *PosBankSaleInfoDto
+    _posBankSaleInfoDto   *PosBankSaleInfoDto
 }
 
 // 初始化AlibabaMosOcTradeSyncbanksaleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosOcTradeSyncbanksaleRequest) GetApiParams() url.Values {
 }
 // PosBankSaleInfoDto Setter
 // pos云闪付、银行卡销售数据
-func (r *AlibabaMosOcTradeSyncbanksaleRequest) SetPosBankSaleInfoDto(posBankSaleInfoDto *PosBankSaleInfoDto) error {
-    r.posBankSaleInfoDto = posBankSaleInfoDto
-    r.Set("pos_bank_sale_info_dto", posBankSaleInfoDto)
+func (r *AlibabaMosOcTradeSyncbanksaleRequest) SetPosBankSaleInfoDto(_posBankSaleInfoDto *PosBankSaleInfoDto) error {
+    r._posBankSaleInfoDto = _posBankSaleInfoDto
+    r.Set("pos_bank_sale_info_dto", _posBankSaleInfoDto)
     return nil
 }
 
 // PosBankSaleInfoDto Getter
 func (r AlibabaMosOcTradeSyncbanksaleRequest) GetPosBankSaleInfoDto() *PosBankSaleInfoDto {
-    return r.posBankSaleInfoDto
+    return r._posBankSaleInfoDto
 }

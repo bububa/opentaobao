@@ -15,13 +15,13 @@ alibaba.seaking.imagerecognize
 type AlibabaSeakingImagerecognizeRequest struct {
     model.Params
     // 扩展信息
-    extra   *Extra
+    _extra   *Extra
     // erp用户id
-    identifier   string
+    _identifier   string
     // 调用来源(erp名称)
-    identifierType   string
+    _identifierType   string
     // 图片url
-    url   string
+    _url   string
 }
 
 // 初始化AlibabaSeakingImagerecognizeRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaSeakingImagerecognizeRequest) GetApiParams() url.Values {
 }
 // Extra Setter
 // 扩展信息
-func (r *AlibabaSeakingImagerecognizeRequest) SetExtra(extra *Extra) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *AlibabaSeakingImagerecognizeRequest) SetExtra(_extra *Extra) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r AlibabaSeakingImagerecognizeRequest) GetExtra() *Extra {
-    return r.extra
+    return r._extra
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifier(identifier string) error {
-    r.identifier = identifier
-    r.Set("identifier", identifier)
+func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifier(_identifier string) error {
+    r._identifier = _identifier
+    r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
 func (r AlibabaSeakingImagerecognizeRequest) GetIdentifier() string {
-    return r.identifier
+    return r._identifier
 }
 // IdentifierType Setter
 // 调用来源(erp名称)
-func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifierType(identifierType string) error {
-    r.identifierType = identifierType
-    r.Set("identifier_type", identifierType)
+func (r *AlibabaSeakingImagerecognizeRequest) SetIdentifierType(_identifierType string) error {
+    r._identifierType = _identifierType
+    r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
 func (r AlibabaSeakingImagerecognizeRequest) GetIdentifierType() string {
-    return r.identifierType
+    return r._identifierType
 }
 // Url Setter
 // 图片url
-func (r *AlibabaSeakingImagerecognizeRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *AlibabaSeakingImagerecognizeRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r AlibabaSeakingImagerecognizeRequest) GetUrl() string {
-    return r.url
+    return r._url
 }

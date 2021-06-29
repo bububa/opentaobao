@@ -15,15 +15,15 @@ taobao.rp.returngoods.refuse
 type TaobaoRpReturngoodsRefuseRequest struct {
     model.Params
     // 退款编号
-    refundId   int64
+    _refundId   int64
     // 退款服务状态，售后或者售中
-    refundPhase   string
+    _refundPhase   string
     // 退款版本号
-    refundVersion   int64
+    _refundVersion   int64
     // 拒绝退货凭证图片，必须图片格式，大小不能超过5M
-    refuseProof   []*model.File
+    _refuseProof   []*model.File
     // 拒绝原因编号，会提供拒绝原因列表供选择
-    refuseReasonId   int64
+    _refuseReasonId   int64
 }
 
 // 初始化TaobaoRpReturngoodsRefuseRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoRpReturngoodsRefuseRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款编号
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoRpReturngoodsRefuseRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // RefundPhase Setter
 // 退款服务状态，售后或者售中
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundPhase(refundPhase string) error {
-    r.refundPhase = refundPhase
-    r.Set("refund_phase", refundPhase)
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundPhase(_refundPhase string) error {
+    r._refundPhase = _refundPhase
+    r.Set("refund_phase", _refundPhase)
     return nil
 }
 
 // RefundPhase Getter
 func (r TaobaoRpReturngoodsRefuseRequest) GetRefundPhase() string {
-    return r.refundPhase
+    return r._refundPhase
 }
 // RefundVersion Setter
 // 退款版本号
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundVersion(refundVersion int64) error {
-    r.refundVersion = refundVersion
-    r.Set("refund_version", refundVersion)
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefundVersion(_refundVersion int64) error {
+    r._refundVersion = _refundVersion
+    r.Set("refund_version", _refundVersion)
     return nil
 }
 
 // RefundVersion Getter
 func (r TaobaoRpReturngoodsRefuseRequest) GetRefundVersion() int64 {
-    return r.refundVersion
+    return r._refundVersion
 }
 // RefuseProof Setter
 // 拒绝退货凭证图片，必须图片格式，大小不能超过5M
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseProof(refuseProof []*model.File) error {
-    r.refuseProof = refuseProof
-    r.Set("refuse_proof", refuseProof)
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseProof(_refuseProof []*model.File) error {
+    r._refuseProof = _refuseProof
+    r.Set("refuse_proof", _refuseProof)
     return nil
 }
 
 // RefuseProof Getter
 func (r TaobaoRpReturngoodsRefuseRequest) GetRefuseProof() []*model.File {
-    return r.refuseProof
+    return r._refuseProof
 }
 // RefuseReasonId Setter
 // 拒绝原因编号，会提供拒绝原因列表供选择
-func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseReasonId(refuseReasonId int64) error {
-    r.refuseReasonId = refuseReasonId
-    r.Set("refuse_reason_id", refuseReasonId)
+func (r *TaobaoRpReturngoodsRefuseRequest) SetRefuseReasonId(_refuseReasonId int64) error {
+    r._refuseReasonId = _refuseReasonId
+    r.Set("refuse_reason_id", _refuseReasonId)
     return nil
 }
 
 // RefuseReasonId Getter
 func (r TaobaoRpReturngoodsRefuseRequest) GetRefuseReasonId() int64 {
-    return r.refuseReasonId
+    return r._refuseReasonId
 }

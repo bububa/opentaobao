@@ -15,11 +15,11 @@ taobao.xhotel.rateplan.delete
 type TaobaoXhotelRateplanDeleteRequest struct {
     model.Params
     // ratepland标识
-    rpId   int64
+    _rpId   int64
     // 系统商，一般不用填写，使用须申请
-    vendor   string
+    _vendor   string
     // 商家价格政策编码
-    rateplanCode   string
+    _rateplanCode   string
 }
 
 // 初始化TaobaoXhotelRateplanDeleteRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelRateplanDeleteRequest) GetApiParams() url.Values {
 }
 // RpId Setter
 // ratepland标识
-func (r *TaobaoXhotelRateplanDeleteRequest) SetRpId(rpId int64) error {
-    r.rpId = rpId
-    r.Set("rp_id", rpId)
+func (r *TaobaoXhotelRateplanDeleteRequest) SetRpId(_rpId int64) error {
+    r._rpId = _rpId
+    r.Set("rp_id", _rpId)
     return nil
 }
 
 // RpId Getter
 func (r TaobaoXhotelRateplanDeleteRequest) GetRpId() int64 {
-    return r.rpId
+    return r._rpId
 }
 // Vendor Setter
 // 系统商，一般不用填写，使用须申请
-func (r *TaobaoXhotelRateplanDeleteRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRateplanDeleteRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRateplanDeleteRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // RateplanCode Setter
 // 商家价格政策编码
-func (r *TaobaoXhotelRateplanDeleteRequest) SetRateplanCode(rateplanCode string) error {
-    r.rateplanCode = rateplanCode
-    r.Set("rateplan_code", rateplanCode)
+func (r *TaobaoXhotelRateplanDeleteRequest) SetRateplanCode(_rateplanCode string) error {
+    r._rateplanCode = _rateplanCode
+    r.Set("rateplan_code", _rateplanCode)
     return nil
 }
 
 // RateplanCode Getter
 func (r TaobaoXhotelRateplanDeleteRequest) GetRateplanCode() string {
-    return r.rateplanCode
+    return r._rateplanCode
 }

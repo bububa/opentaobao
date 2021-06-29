@@ -15,7 +15,7 @@ alibaba.xiami.api.radio.myself.get
 type AlibabaXiamiApiRadioMyselfGetRequest struct {
     model.Params
     // 歌曲数量
-    limit   int64
+    _limit   int64
 }
 
 // 初始化AlibabaXiamiApiRadioMyselfGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiRadioMyselfGetRequest) GetApiParams() url.Values {
 }
 // Limit Setter
 // 歌曲数量
-func (r *AlibabaXiamiApiRadioMyselfGetRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *AlibabaXiamiApiRadioMyselfGetRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r AlibabaXiamiApiRadioMyselfGetRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }

@@ -15,7 +15,7 @@ cainiao.cboss.workplatform.logistics.iscainiaoorder
 type CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest struct {
     model.Params
     // 交易单号
-    tradeId   string
+    _tradeId   string
 }
 
 // 初始化CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetApiParams() u
 }
 // TradeId Setter
 // 交易单号
-func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) SetTradeId(tradeId string) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) SetTradeId(_tradeId string) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r CainiaoCbossWorkplatformLogisticsIscainiaoorderRequest) GetTradeId() string {
-    return r.tradeId
+    return r._tradeId
 }

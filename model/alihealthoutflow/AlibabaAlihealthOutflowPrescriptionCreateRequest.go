@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.prescription.create
 type AlibabaAlihealthOutflowPrescriptionCreateRequest struct {
     model.Params
     // 保存处方入参
-    createRequest   *PrescriptionOutflowUpdateRequest
+    _createRequest   *PrescriptionOutflowUpdateRequest
 }
 
 // 初始化AlibabaAlihealthOutflowPrescriptionCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetApiParams() url.Val
 }
 // CreateRequest Setter
 // 保存处方入参
-func (r *AlibabaAlihealthOutflowPrescriptionCreateRequest) SetCreateRequest(createRequest *PrescriptionOutflowUpdateRequest) error {
-    r.createRequest = createRequest
-    r.Set("create_request", createRequest)
+func (r *AlibabaAlihealthOutflowPrescriptionCreateRequest) SetCreateRequest(_createRequest *PrescriptionOutflowUpdateRequest) error {
+    r._createRequest = _createRequest
+    r.Set("create_request", _createRequest)
     return nil
 }
 
 // CreateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionCreateRequest) GetCreateRequest() *PrescriptionOutflowUpdateRequest {
-    return r.createRequest
+    return r._createRequest
 }

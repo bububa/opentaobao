@@ -15,7 +15,7 @@ API的功能是校验用户是否登录，ISV调用接口的时候，通过此�
 type AlibabaInteractUserIsloginRequest struct {
     model.Params
     // 用户nick
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化AlibabaInteractUserIsloginRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractUserIsloginRequest) GetApiParams() url.Values {
 }
 // BuyerNick Setter
 // 用户nick
-func (r *AlibabaInteractUserIsloginRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *AlibabaInteractUserIsloginRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r AlibabaInteractUserIsloginRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

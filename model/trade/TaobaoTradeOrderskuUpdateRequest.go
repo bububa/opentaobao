@@ -15,11 +15,11 @@ taobao.trade.ordersku.update
 type TaobaoTradeOrderskuUpdateRequest struct {
     model.Params
     // 子订单编号（对于单笔订单的交易可以传交易编号）。
-    oid   int64
+    _oid   int64
     // 销售属性编号，可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
-    skuId   int64
+    _skuId   int64
     // 销售属性组合串，格式：p1:v1;p2:v2，如：1627207:28329;20509:28314。可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
-    skuProps   string
+    _skuProps   string
 }
 
 // 初始化TaobaoTradeOrderskuUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTradeOrderskuUpdateRequest) GetApiParams() url.Values {
 }
 // Oid Setter
 // 子订单编号（对于单笔订单的交易可以传交易编号）。
-func (r *TaobaoTradeOrderskuUpdateRequest) SetOid(oid int64) error {
-    r.oid = oid
-    r.Set("oid", oid)
+func (r *TaobaoTradeOrderskuUpdateRequest) SetOid(_oid int64) error {
+    r._oid = _oid
+    r.Set("oid", _oid)
     return nil
 }
 
 // Oid Getter
 func (r TaobaoTradeOrderskuUpdateRequest) GetOid() int64 {
-    return r.oid
+    return r._oid
 }
 // SkuId Setter
 // 销售属性编号，可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
-func (r *TaobaoTradeOrderskuUpdateRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoTradeOrderskuUpdateRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoTradeOrderskuUpdateRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // SkuProps Setter
 // 销售属性组合串，格式：p1:v1;p2:v2，如：1627207:28329;20509:28314。可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。
-func (r *TaobaoTradeOrderskuUpdateRequest) SetSkuProps(skuProps string) error {
-    r.skuProps = skuProps
-    r.Set("sku_props", skuProps)
+func (r *TaobaoTradeOrderskuUpdateRequest) SetSkuProps(_skuProps string) error {
+    r._skuProps = _skuProps
+    r.Set("sku_props", _skuProps)
     return nil
 }
 
 // SkuProps Getter
 func (r TaobaoTradeOrderskuUpdateRequest) GetSkuProps() string {
-    return r.skuProps
+    return r._skuProps
 }

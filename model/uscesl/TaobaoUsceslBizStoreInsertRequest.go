@@ -15,11 +15,11 @@ taobao.uscesl.biz.store.insert
 type TaobaoUsceslBizStoreInsertRequest struct {
     model.Params
     // 门店名称
-    storeName   string
+    _storeName   string
     // 门店外部ID，要保持同一商家下的唯一性
-    storeOutId   string
+    _storeOutId   string
     // 商家标识key
-    bizBrandKey   string
+    _bizBrandKey   string
 }
 
 // 初始化TaobaoUsceslBizStoreInsertRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoUsceslBizStoreInsertRequest) GetApiParams() url.Values {
 }
 // StoreName Setter
 // 门店名称
-func (r *TaobaoUsceslBizStoreInsertRequest) SetStoreName(storeName string) error {
-    r.storeName = storeName
-    r.Set("store_name", storeName)
+func (r *TaobaoUsceslBizStoreInsertRequest) SetStoreName(_storeName string) error {
+    r._storeName = _storeName
+    r.Set("store_name", _storeName)
     return nil
 }
 
 // StoreName Getter
 func (r TaobaoUsceslBizStoreInsertRequest) GetStoreName() string {
-    return r.storeName
+    return r._storeName
 }
 // StoreOutId Setter
 // 门店外部ID，要保持同一商家下的唯一性
-func (r *TaobaoUsceslBizStoreInsertRequest) SetStoreOutId(storeOutId string) error {
-    r.storeOutId = storeOutId
-    r.Set("store_out_id", storeOutId)
+func (r *TaobaoUsceslBizStoreInsertRequest) SetStoreOutId(_storeOutId string) error {
+    r._storeOutId = _storeOutId
+    r.Set("store_out_id", _storeOutId)
     return nil
 }
 
 // StoreOutId Getter
 func (r TaobaoUsceslBizStoreInsertRequest) GetStoreOutId() string {
-    return r.storeOutId
+    return r._storeOutId
 }
 // BizBrandKey Setter
 // 商家标识key
-func (r *TaobaoUsceslBizStoreInsertRequest) SetBizBrandKey(bizBrandKey string) error {
-    r.bizBrandKey = bizBrandKey
-    r.Set("biz_brand_key", bizBrandKey)
+func (r *TaobaoUsceslBizStoreInsertRequest) SetBizBrandKey(_bizBrandKey string) error {
+    r._bizBrandKey = _bizBrandKey
+    r.Set("biz_brand_key", _bizBrandKey)
     return nil
 }
 
 // BizBrandKey Getter
 func (r TaobaoUsceslBizStoreInsertRequest) GetBizBrandKey() string {
-    return r.bizBrandKey
+    return r._bizBrandKey
 }

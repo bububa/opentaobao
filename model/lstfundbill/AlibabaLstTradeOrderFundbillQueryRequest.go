@@ -15,13 +15,13 @@ alibaba.lst.trade.order.fundbill.query
 type AlibabaLstTradeOrderFundbillQueryRequest struct {
     model.Params
     // 每页最大记录数
-    size   int64
+    _size   int64
     // 账单日期，格式：yyyy-MM-dd
-    billDate   string
+    _billDate   string
     // 页码
-    page   int64
+    _page   int64
     // 为true时,返回相应的商品详细信息，item_id和unit
-    needItemDetail   bool
+    _needItemDetail   bool
 }
 
 // 初始化AlibabaLstTradeOrderFundbillQueryRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaLstTradeOrderFundbillQueryRequest) GetApiParams() url.Values {
 }
 // Size Setter
 // 每页最大记录数
-func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetSize(size int64) error {
-    r.size = size
-    r.Set("size", size)
+func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetSize(_size int64) error {
+    r._size = _size
+    r.Set("size", _size)
     return nil
 }
 
 // Size Getter
 func (r AlibabaLstTradeOrderFundbillQueryRequest) GetSize() int64 {
-    return r.size
+    return r._size
 }
 // BillDate Setter
 // 账单日期，格式：yyyy-MM-dd
-func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetBillDate(billDate string) error {
-    r.billDate = billDate
-    r.Set("bill_date", billDate)
+func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetBillDate(_billDate string) error {
+    r._billDate = _billDate
+    r.Set("bill_date", _billDate)
     return nil
 }
 
 // BillDate Getter
 func (r AlibabaLstTradeOrderFundbillQueryRequest) GetBillDate() string {
-    return r.billDate
+    return r._billDate
 }
 // Page Setter
 // 页码
-func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaLstTradeOrderFundbillQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // NeedItemDetail Setter
 // 为true时,返回相应的商品详细信息，item_id和unit
-func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetNeedItemDetail(needItemDetail bool) error {
-    r.needItemDetail = needItemDetail
-    r.Set("need_item_detail", needItemDetail)
+func (r *AlibabaLstTradeOrderFundbillQueryRequest) SetNeedItemDetail(_needItemDetail bool) error {
+    r._needItemDetail = _needItemDetail
+    r.Set("need_item_detail", _needItemDetail)
     return nil
 }
 
 // NeedItemDetail Getter
 func (r AlibabaLstTradeOrderFundbillQueryRequest) GetNeedItemDetail() bool {
-    return r.needItemDetail
+    return r._needItemDetail
 }

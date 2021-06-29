@@ -15,17 +15,17 @@ taobao.alitrip.it.policy.batchdelete
 type TaobaoAlitripItPolicyBatchdeleteRequest struct {
     model.Params
     // 航司二字码，完整匹配
-    airline   string
+    _airline   string
     // 到达，，完整匹配
-    arrCity   string
+    _arrCity   string
     // 舱位，，完整匹配
-    cabin   string
+    _cabin   string
     // 出发，，完整匹配
-    depCity   string
+    _depCity   string
     // 产品id，，完整匹配
-    policyId   string
+    _policyId   string
     // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-    statusList   []int64
+    _statusList   []int64
 }
 
 // 初始化TaobaoAlitripItPolicyBatchdeleteRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetApiParams() url.Values {
 }
 // Airline Setter
 // 航司二字码，完整匹配
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetAirline(airline string) error {
-    r.airline = airline
-    r.Set("airline", airline)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetAirline(_airline string) error {
+    r._airline = _airline
+    r.Set("airline", _airline)
     return nil
 }
 
 // Airline Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetAirline() string {
-    return r.airline
+    return r._airline
 }
 // ArrCity Setter
 // 到达，，完整匹配
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetArrCity(arrCity string) error {
-    r.arrCity = arrCity
-    r.Set("arr_city", arrCity)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetArrCity(_arrCity string) error {
+    r._arrCity = _arrCity
+    r.Set("arr_city", _arrCity)
     return nil
 }
 
 // ArrCity Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetArrCity() string {
-    return r.arrCity
+    return r._arrCity
 }
 // Cabin Setter
 // 舱位，，完整匹配
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetCabin(cabin string) error {
-    r.cabin = cabin
-    r.Set("cabin", cabin)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetCabin(_cabin string) error {
+    r._cabin = _cabin
+    r.Set("cabin", _cabin)
     return nil
 }
 
 // Cabin Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetCabin() string {
-    return r.cabin
+    return r._cabin
 }
 // DepCity Setter
 // 出发，，完整匹配
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetDepCity(depCity string) error {
-    r.depCity = depCity
-    r.Set("dep_city", depCity)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetDepCity(_depCity string) error {
+    r._depCity = _depCity
+    r.Set("dep_city", _depCity)
     return nil
 }
 
 // DepCity Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetDepCity() string {
-    return r.depCity
+    return r._depCity
 }
 // PolicyId Setter
 // 产品id，，完整匹配
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetPolicyId(policyId string) error {
-    r.policyId = policyId
-    r.Set("policy_id", policyId)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetPolicyId(_policyId string) error {
+    r._policyId = _policyId
+    r.Set("policy_id", _policyId)
     return nil
 }
 
 // PolicyId Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetPolicyId() string {
-    return r.policyId
+    return r._policyId
 }
 // StatusList Setter
 // 0：未发布 1：已发布 2：已过期。不传的话，默认只能删除未发布和已过期的数据
-func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetStatusList(statusList []int64) error {
-    r.statusList = statusList
-    r.Set("status_list", statusList)
+func (r *TaobaoAlitripItPolicyBatchdeleteRequest) SetStatusList(_statusList []int64) error {
+    r._statusList = _statusList
+    r.Set("status_list", _statusList)
     return nil
 }
 
 // StatusList Getter
 func (r TaobaoAlitripItPolicyBatchdeleteRequest) GetStatusList() []int64 {
-    return r.statusList
+    return r._statusList
 }

@@ -15,9 +15,9 @@ taobao.simba.keywordscat.qscore.get
 type TaobaoSimbaKeywordscatQscoreGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广组Id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSimbaKeywordscatQscoreGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaKeywordscatQscoreGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaKeywordscatQscoreGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaKeywordscatQscoreGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaKeywordscatQscoreGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaKeywordscatQscoreGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaKeywordscatQscoreGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaKeywordscatQscoreGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

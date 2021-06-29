@@ -15,7 +15,7 @@ alibaba.einvoice.flow.renew
 type AlibabaEinvoiceFlowRenewRequest struct {
     model.Params
     // 续约请求参数
-    invoiceFlowRenewDto   *InvoiceFlowRenewDto
+    _invoiceFlowRenewDto   *InvoiceFlowRenewDto
 }
 
 // 初始化AlibabaEinvoiceFlowRenewRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceFlowRenewRequest) GetApiParams() url.Values {
 }
 // InvoiceFlowRenewDto Setter
 // 续约请求参数
-func (r *AlibabaEinvoiceFlowRenewRequest) SetInvoiceFlowRenewDto(invoiceFlowRenewDto *InvoiceFlowRenewDto) error {
-    r.invoiceFlowRenewDto = invoiceFlowRenewDto
-    r.Set("invoice_flow_renew_dto", invoiceFlowRenewDto)
+func (r *AlibabaEinvoiceFlowRenewRequest) SetInvoiceFlowRenewDto(_invoiceFlowRenewDto *InvoiceFlowRenewDto) error {
+    r._invoiceFlowRenewDto = _invoiceFlowRenewDto
+    r.Set("invoice_flow_renew_dto", _invoiceFlowRenewDto)
     return nil
 }
 
 // InvoiceFlowRenewDto Getter
 func (r AlibabaEinvoiceFlowRenewRequest) GetInvoiceFlowRenewDto() *InvoiceFlowRenewDto {
-    return r.invoiceFlowRenewDto
+    return r._invoiceFlowRenewDto
 }

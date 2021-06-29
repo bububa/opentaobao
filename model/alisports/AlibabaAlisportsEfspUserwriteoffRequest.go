@@ -15,15 +15,15 @@ alibaba.alisports.efsp.userwriteoff
 type AlibabaAlisportsEfspUserwriteoffRequest struct {
     model.Params
     // 订单编号
-    orderNo   string
+    _orderNo   string
     // 订单金额
-    sumAmount   int64
+    _sumAmount   int64
     // 健身房Id
-    gymId   string
+    _gymId   string
     // 用户支付宝ID
-    alipayId   string
+    _alipayId   string
     // 补助金额
-    subsidyAmount   int64
+    _subsidyAmount   int64
 }
 
 // 初始化AlibabaAlisportsEfspUserwriteoffRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlisportsEfspUserwriteoffRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单编号
-func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r AlibabaAlisportsEfspUserwriteoffRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // SumAmount Setter
 // 订单金额
-func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetSumAmount(sumAmount int64) error {
-    r.sumAmount = sumAmount
-    r.Set("sum_amount", sumAmount)
+func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetSumAmount(_sumAmount int64) error {
+    r._sumAmount = _sumAmount
+    r.Set("sum_amount", _sumAmount)
     return nil
 }
 
 // SumAmount Getter
 func (r AlibabaAlisportsEfspUserwriteoffRequest) GetSumAmount() int64 {
-    return r.sumAmount
+    return r._sumAmount
 }
 // GymId Setter
 // 健身房Id
-func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetGymId(gymId string) error {
-    r.gymId = gymId
-    r.Set("gym_id", gymId)
+func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetGymId(_gymId string) error {
+    r._gymId = _gymId
+    r.Set("gym_id", _gymId)
     return nil
 }
 
 // GymId Getter
 func (r AlibabaAlisportsEfspUserwriteoffRequest) GetGymId() string {
-    return r.gymId
+    return r._gymId
 }
 // AlipayId Setter
 // 用户支付宝ID
-func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaAlisportsEfspUserwriteoffRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }
 // SubsidyAmount Setter
 // 补助金额
-func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetSubsidyAmount(subsidyAmount int64) error {
-    r.subsidyAmount = subsidyAmount
-    r.Set("subsidy_amount", subsidyAmount)
+func (r *AlibabaAlisportsEfspUserwriteoffRequest) SetSubsidyAmount(_subsidyAmount int64) error {
+    r._subsidyAmount = _subsidyAmount
+    r.Set("subsidy_amount", _subsidyAmount)
     return nil
 }
 
 // SubsidyAmount Getter
 func (r AlibabaAlisportsEfspUserwriteoffRequest) GetSubsidyAmount() int64 {
-    return r.subsidyAmount
+    return r._subsidyAmount
 }

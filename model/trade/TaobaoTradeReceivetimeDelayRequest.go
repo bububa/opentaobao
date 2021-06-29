@@ -15,9 +15,9 @@ taobao.trade.receivetime.delay
 type TaobaoTradeReceivetimeDelayRequest struct {
     model.Params
     // 主订单号
-    tid   int64
+    _tid   int64
     // 延长收货的天数，可选值为：3, 5, 7, 10。
-    days   int64
+    _days   int64
 }
 
 // 初始化TaobaoTradeReceivetimeDelayRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTradeReceivetimeDelayRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 主订单号
-func (r *TaobaoTradeReceivetimeDelayRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeReceivetimeDelayRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeReceivetimeDelayRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // Days Setter
 // 延长收货的天数，可选值为：3, 5, 7, 10。
-func (r *TaobaoTradeReceivetimeDelayRequest) SetDays(days int64) error {
-    r.days = days
-    r.Set("days", days)
+func (r *TaobaoTradeReceivetimeDelayRequest) SetDays(_days int64) error {
+    r._days = _days
+    r.Set("days", _days)
     return nil
 }
 
 // Days Getter
 func (r TaobaoTradeReceivetimeDelayRequest) GetDays() int64 {
-    return r.days
+    return r._days
 }

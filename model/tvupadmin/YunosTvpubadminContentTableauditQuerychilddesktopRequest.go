@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.tableaudit.querychilddesktop
 type YunosTvpubadminContentTableauditQuerychilddesktopRequest struct {
     model.Params
     // 小酷宝桌面坑位查询参数
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminContentTableauditQuerychilddesktopRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiParams()
 }
 // Query Setter
 // 小酷宝桌面坑位查询参数
-func (r *YunosTvpubadminContentTableauditQuerychilddesktopRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminContentTableauditQuerychilddesktopRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

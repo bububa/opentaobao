@@ -15,7 +15,7 @@ cainiao.cloudprint.customares.get
 type CainiaoCloudprintCustomaresGetRequest struct {
     model.Params
     // 用户使用的标准模板id
-    templateId   int64
+    _templateId   int64
 }
 
 // 初始化CainiaoCloudprintCustomaresGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintCustomaresGetRequest) GetApiParams() url.Values {
 }
 // TemplateId Setter
 // 用户使用的标准模板id
-func (r *CainiaoCloudprintCustomaresGetRequest) SetTemplateId(templateId int64) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *CainiaoCloudprintCustomaresGetRequest) SetTemplateId(_templateId int64) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r CainiaoCloudprintCustomaresGetRequest) GetTemplateId() int64 {
-    return r.templateId
+    return r._templateId
 }

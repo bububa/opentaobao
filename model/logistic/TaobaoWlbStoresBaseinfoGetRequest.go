@@ -15,7 +15,7 @@ taobao.wlb.stores.baseinfo.get
 type TaobaoWlbStoresBaseinfoGetRequest struct {
     model.Params
     // 0.商家仓库.1.菜鸟仓库.2全部被划分的仓库
-    type   int64
+    _type   int64
 }
 
 // 初始化TaobaoWlbStoresBaseinfoGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbStoresBaseinfoGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 0.商家仓库.1.菜鸟仓库.2全部被划分的仓库
-func (r *TaobaoWlbStoresBaseinfoGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoWlbStoresBaseinfoGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoWlbStoresBaseinfoGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

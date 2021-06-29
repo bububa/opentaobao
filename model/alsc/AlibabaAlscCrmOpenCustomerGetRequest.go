@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.customer.get
 type AlibabaAlscCrmOpenCustomerGetRequest struct {
     model.Params
     // 入参
-    paramCustomerGetOpenReq   *CustomerGetOpenReq
+    _paramCustomerGetOpenReq   *CustomerGetOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenCustomerGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiParams() url.Values {
 }
 // ParamCustomerGetOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenCustomerGetRequest) SetParamCustomerGetOpenReq(paramCustomerGetOpenReq *CustomerGetOpenReq) error {
-    r.paramCustomerGetOpenReq = paramCustomerGetOpenReq
-    r.Set("param_customer_get_open_req", paramCustomerGetOpenReq)
+func (r *AlibabaAlscCrmOpenCustomerGetRequest) SetParamCustomerGetOpenReq(_paramCustomerGetOpenReq *CustomerGetOpenReq) error {
+    r._paramCustomerGetOpenReq = _paramCustomerGetOpenReq
+    r.Set("param_customer_get_open_req", _paramCustomerGetOpenReq)
     return nil
 }
 
 // ParamCustomerGetOpenReq Getter
 func (r AlibabaAlscCrmOpenCustomerGetRequest) GetParamCustomerGetOpenReq() *CustomerGetOpenReq {
-    return r.paramCustomerGetOpenReq
+    return r._paramCustomerGetOpenReq
 }

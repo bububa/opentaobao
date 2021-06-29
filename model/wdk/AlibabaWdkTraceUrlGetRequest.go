@@ -15,11 +15,11 @@ alibaba.wdk.trace.url.get
 type AlibabaWdkTraceUrlGetRequest struct {
     model.Params
     // 所属门店code
-    shopId   string
+    _shopId   string
     // 来源编码
-    sourceCode   string
+    _sourceCode   string
     // barCode 或者skuCode
-    scanCode   string
+    _scanCode   string
 }
 
 // 初始化AlibabaWdkTraceUrlGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkTraceUrlGetRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 所属门店code
-func (r *AlibabaWdkTraceUrlGetRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkTraceUrlGetRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkTraceUrlGetRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // SourceCode Setter
 // 来源编码
-func (r *AlibabaWdkTraceUrlGetRequest) SetSourceCode(sourceCode string) error {
-    r.sourceCode = sourceCode
-    r.Set("source_code", sourceCode)
+func (r *AlibabaWdkTraceUrlGetRequest) SetSourceCode(_sourceCode string) error {
+    r._sourceCode = _sourceCode
+    r.Set("source_code", _sourceCode)
     return nil
 }
 
 // SourceCode Getter
 func (r AlibabaWdkTraceUrlGetRequest) GetSourceCode() string {
-    return r.sourceCode
+    return r._sourceCode
 }
 // ScanCode Setter
 // barCode 或者skuCode
-func (r *AlibabaWdkTraceUrlGetRequest) SetScanCode(scanCode string) error {
-    r.scanCode = scanCode
-    r.Set("scan_code", scanCode)
+func (r *AlibabaWdkTraceUrlGetRequest) SetScanCode(_scanCode string) error {
+    r._scanCode = _scanCode
+    r.Set("scan_code", _scanCode)
     return nil
 }
 
 // ScanCode Getter
 func (r AlibabaWdkTraceUrlGetRequest) GetScanCode() string {
-    return r.scanCode
+    return r._scanCode
 }

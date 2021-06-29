@@ -15,9 +15,9 @@ alibaba.servicecenter.fulfiltask.create
 type AlibabaServicecenterFulfiltaskCreateRequest struct {
     model.Params
     // 工单id列表
-    workcardIds   []int64
+    _workcardIds   []int64
     // 外部单号
-    outerId   string
+    _outerId   string
 }
 
 // 初始化AlibabaServicecenterFulfiltaskCreateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaServicecenterFulfiltaskCreateRequest) GetApiParams() url.Values {
 }
 // WorkcardIds Setter
 // 工单id列表
-func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetWorkcardIds(workcardIds []int64) error {
-    r.workcardIds = workcardIds
-    r.Set("workcard_ids", workcardIds)
+func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetWorkcardIds(_workcardIds []int64) error {
+    r._workcardIds = _workcardIds
+    r.Set("workcard_ids", _workcardIds)
     return nil
 }
 
 // WorkcardIds Getter
 func (r AlibabaServicecenterFulfiltaskCreateRequest) GetWorkcardIds() []int64 {
-    return r.workcardIds
+    return r._workcardIds
 }
 // OuterId Setter
 // 外部单号
-func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaServicecenterFulfiltaskCreateRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }

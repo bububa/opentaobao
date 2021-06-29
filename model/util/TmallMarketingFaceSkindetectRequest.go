@@ -15,13 +15,13 @@ tmall.marketing.face.skindetect
 type TmallMarketingFaceSkindetectRequest struct {
     model.Params
     // 图片的base64（必须以base64,开头）
-    image   string
+    _image   string
     // isv标识
-    source   string
+    _source   string
     // 前置摄像头1，后置摄像头0
-    frontCamera   string
+    _frontCamera   string
     // 混淆nick
-    mixnick   string
+    _mixnick   string
 }
 
 // 初始化TmallMarketingFaceSkindetectRequest对象
@@ -46,49 +46,49 @@ func (r TmallMarketingFaceSkindetectRequest) GetApiParams() url.Values {
 }
 // Image Setter
 // 图片的base64（必须以base64,开头）
-func (r *TmallMarketingFaceSkindetectRequest) SetImage(image string) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TmallMarketingFaceSkindetectRequest) SetImage(_image string) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TmallMarketingFaceSkindetectRequest) GetImage() string {
-    return r.image
+    return r._image
 }
 // Source Setter
 // isv标识
-func (r *TmallMarketingFaceSkindetectRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *TmallMarketingFaceSkindetectRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r TmallMarketingFaceSkindetectRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // FrontCamera Setter
 // 前置摄像头1，后置摄像头0
-func (r *TmallMarketingFaceSkindetectRequest) SetFrontCamera(frontCamera string) error {
-    r.frontCamera = frontCamera
-    r.Set("front_camera", frontCamera)
+func (r *TmallMarketingFaceSkindetectRequest) SetFrontCamera(_frontCamera string) error {
+    r._frontCamera = _frontCamera
+    r.Set("front_camera", _frontCamera)
     return nil
 }
 
 // FrontCamera Getter
 func (r TmallMarketingFaceSkindetectRequest) GetFrontCamera() string {
-    return r.frontCamera
+    return r._frontCamera
 }
 // Mixnick Setter
 // 混淆nick
-func (r *TmallMarketingFaceSkindetectRequest) SetMixnick(mixnick string) error {
-    r.mixnick = mixnick
-    r.Set("mixnick", mixnick)
+func (r *TmallMarketingFaceSkindetectRequest) SetMixnick(_mixnick string) error {
+    r._mixnick = _mixnick
+    r.Set("mixnick", _mixnick)
     return nil
 }
 
 // Mixnick Getter
 func (r TmallMarketingFaceSkindetectRequest) GetMixnick() string {
-    return r.mixnick
+    return r._mixnick
 }

@@ -15,7 +15,7 @@ taobao.qimen.deliveryorder.create
 type TaobaoQimenDeliveryorderCreateRequest struct {
     model.Params
     // 
-    request   *DeliveryOrderCreateRequest
+    _request   *DeliveryOrderCreateRequest
 }
 
 // 初始化TaobaoQimenDeliveryorderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenDeliveryorderCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenDeliveryorderCreateRequest) SetRequest(request *DeliveryOrderCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenDeliveryorderCreateRequest) SetRequest(_request *DeliveryOrderCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenDeliveryorderCreateRequest) GetRequest() *DeliveryOrderCreateRequest {
-    return r.request
+    return r._request
 }

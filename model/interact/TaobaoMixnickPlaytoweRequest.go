@@ -15,7 +15,7 @@ taobao.mixnick.playtowe
 type TaobaoMixnickPlaytoweRequest struct {
     model.Params
     // 用户的混淆nick
-    mixMix   string
+    _mixMix   string
 }
 
 // 初始化TaobaoMixnickPlaytoweRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMixnickPlaytoweRequest) GetApiParams() url.Values {
 }
 // MixMix Setter
 // 用户的混淆nick
-func (r *TaobaoMixnickPlaytoweRequest) SetMixMix(mixMix string) error {
-    r.mixMix = mixMix
-    r.Set("mix_mix", mixMix)
+func (r *TaobaoMixnickPlaytoweRequest) SetMixMix(_mixMix string) error {
+    r._mixMix = _mixMix
+    r.Set("mix_mix", _mixMix)
     return nil
 }
 
 // MixMix Getter
 func (r TaobaoMixnickPlaytoweRequest) GetMixMix() string {
-    return r.mixMix
+    return r._mixMix
 }

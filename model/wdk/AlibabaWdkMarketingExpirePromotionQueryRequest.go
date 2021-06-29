@@ -15,9 +15,9 @@ alibaba.wdk.marketing.expire.promotion.query
 type AlibabaWdkMarketingExpirePromotionQueryRequest struct {
     model.Params
     // 店铺id
-    shopId   string
+    _shopId   string
     // 商品skucode
-    skuCode   string
+    _skuCode   string
 }
 
 // 初始化AlibabaWdkMarketingExpirePromotionQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetApiParams() url.Value
 }
 // ShopId Setter
 // 店铺id
-func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // SkuCode Setter
 // 商品skucode
-func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkMarketingExpirePromotionQueryRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkMarketingExpirePromotionQueryRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }

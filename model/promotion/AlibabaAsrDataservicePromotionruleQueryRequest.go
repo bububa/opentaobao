@@ -15,9 +15,9 @@ alibaba.asr.dataservice.promotionrule.query
 type AlibabaAsrDataservicePromotionruleQueryRequest struct {
     model.Params
     // 当前页
-    pageNo   int64
+    _pageNo   int64
     // 每页数量
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaAsrDataservicePromotionruleQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetApiParams() url.Value
 }
 // PageNo Setter
 // 当前页
-func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页数量
-func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAsrDataservicePromotionruleQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAsrDataservicePromotionruleQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

@@ -15,7 +15,7 @@ aliyun.viapi.goodstech.recognize.furniture.attribute
 type AliyunViapiGoodstechRecognizeFurnitureAttributeRequest struct {
     model.Params
     // 待检测图片链接
-    imageUrl   string
+    _imageUrl   string
 }
 
 // 初始化AliyunViapiGoodstechRecognizeFurnitureAttributeRequest对象
@@ -40,13 +40,13 @@ func (r AliyunViapiGoodstechRecognizeFurnitureAttributeRequest) GetApiParams() u
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AliyunViapiGoodstechRecognizeFurnitureAttributeRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AliyunViapiGoodstechRecognizeFurnitureAttributeRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }

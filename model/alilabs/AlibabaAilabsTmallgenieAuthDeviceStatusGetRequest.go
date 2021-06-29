@@ -15,11 +15,11 @@ alibaba.ailabs.tmallgenie.auth.device.status.get
 type AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest struct {
     model.Params
     // 给产品分配的唯一ID（22位）
-    clientId   string
+    _clientId   string
     // 精灵用户的唯一外部ID
-    userOpenId   string
+    _userOpenId   string
     // 精灵设备的唯一ID
-    uuid   string
+    _uuid   string
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetApiParams() url.Va
 }
 // ClientId Setter
 // 给产品分配的唯一ID（22位）
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // UserOpenId Setter
 // 精灵用户的唯一外部ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUserOpenId(userOpenId string) error {
-    r.userOpenId = userOpenId
-    r.Set("user_open_id", userOpenId)
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUserOpenId(_userOpenId string) error {
+    r._userOpenId = _userOpenId
+    r.Set("user_open_id", _userOpenId)
     return nil
 }
 
 // UserOpenId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetUserOpenId() string {
-    return r.userOpenId
+    return r._userOpenId
 }
 // Uuid Setter
 // 精灵设备的唯一ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceStatusGetRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

@@ -15,9 +15,9 @@ tmall.msf.identify.status.query
 type TmallMsfIdentifyStatusQueryRequest struct {
     model.Params
     // 天猫订单号
-    orderId   int64
+    _orderId   int64
     // 服务类型，0 家装的送货上门并安装 1 单向安装 2 建材的送货上门 3 建材的安装
-    serviceType   int64
+    _serviceType   int64
 }
 
 // 初始化TmallMsfIdentifyStatusQueryRequest对象
@@ -42,25 +42,25 @@ func (r TmallMsfIdentifyStatusQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫订单号
-func (r *TmallMsfIdentifyStatusQueryRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallMsfIdentifyStatusQueryRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallMsfIdentifyStatusQueryRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // ServiceType Setter
 // 服务类型，0 家装的送货上门并安装 1 单向安装 2 建材的送货上门 3 建材的安装
-func (r *TmallMsfIdentifyStatusQueryRequest) SetServiceType(serviceType int64) error {
-    r.serviceType = serviceType
-    r.Set("service_type", serviceType)
+func (r *TmallMsfIdentifyStatusQueryRequest) SetServiceType(_serviceType int64) error {
+    r._serviceType = _serviceType
+    r.Set("service_type", _serviceType)
     return nil
 }
 
 // ServiceType Getter
 func (r TmallMsfIdentifyStatusQueryRequest) GetServiceType() int64 {
-    return r.serviceType
+    return r._serviceType
 }

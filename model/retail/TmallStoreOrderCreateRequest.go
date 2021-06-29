@@ -15,9 +15,9 @@ tmall.store.order.create
 type TmallStoreOrderCreateRequest struct {
     model.Params
     // 系统自动生成
-    appInfo   *AppInfo
+    _appInfo   *AppInfo
     // 创建订单请求
-    createOrderRequest   *CreateOrderRequest
+    _createOrderRequest   *CreateOrderRequest
 }
 
 // 初始化TmallStoreOrderCreateRequest对象
@@ -42,25 +42,25 @@ func (r TmallStoreOrderCreateRequest) GetApiParams() url.Values {
 }
 // AppInfo Setter
 // 系统自动生成
-func (r *TmallStoreOrderCreateRequest) SetAppInfo(appInfo *AppInfo) error {
-    r.appInfo = appInfo
-    r.Set("app_info", appInfo)
+func (r *TmallStoreOrderCreateRequest) SetAppInfo(_appInfo *AppInfo) error {
+    r._appInfo = _appInfo
+    r.Set("app_info", _appInfo)
     return nil
 }
 
 // AppInfo Getter
 func (r TmallStoreOrderCreateRequest) GetAppInfo() *AppInfo {
-    return r.appInfo
+    return r._appInfo
 }
 // CreateOrderRequest Setter
 // 创建订单请求
-func (r *TmallStoreOrderCreateRequest) SetCreateOrderRequest(createOrderRequest *CreateOrderRequest) error {
-    r.createOrderRequest = createOrderRequest
-    r.Set("create_order_request", createOrderRequest)
+func (r *TmallStoreOrderCreateRequest) SetCreateOrderRequest(_createOrderRequest *CreateOrderRequest) error {
+    r._createOrderRequest = _createOrderRequest
+    r.Set("create_order_request", _createOrderRequest)
     return nil
 }
 
 // CreateOrderRequest Getter
 func (r TmallStoreOrderCreateRequest) GetCreateOrderRequest() *CreateOrderRequest {
-    return r.createOrderRequest
+    return r._createOrderRequest
 }

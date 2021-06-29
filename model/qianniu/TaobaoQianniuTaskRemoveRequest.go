@@ -15,7 +15,7 @@ taobao.qianniu.task.remove
 type TaobaoQianniuTaskRemoveRequest struct {
     model.Params
     // 对于发起人删除一个任务，请使用这个字段，同时清除所有处理人。
-    metadataId   int64
+    _metadataId   int64
 }
 
 // 初始化TaobaoQianniuTaskRemoveRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQianniuTaskRemoveRequest) GetApiParams() url.Values {
 }
 // MetadataId Setter
 // 对于发起人删除一个任务，请使用这个字段，同时清除所有处理人。
-func (r *TaobaoQianniuTaskRemoveRequest) SetMetadataId(metadataId int64) error {
-    r.metadataId = metadataId
-    r.Set("metadata_id", metadataId)
+func (r *TaobaoQianniuTaskRemoveRequest) SetMetadataId(_metadataId int64) error {
+    r._metadataId = _metadataId
+    r.Set("metadata_id", _metadataId)
     return nil
 }
 
 // MetadataId Getter
 func (r TaobaoQianniuTaskRemoveRequest) GetMetadataId() int64 {
-    return r.metadataId
+    return r._metadataId
 }

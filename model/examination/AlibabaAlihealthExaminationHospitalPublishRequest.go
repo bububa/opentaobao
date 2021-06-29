@@ -15,61 +15,61 @@ alibaba.alihealth.examination.hospital.publish
 type AlibabaAlihealthExaminationHospitalPublishRequest struct {
     model.Params
     // 门店简介
-    detail   string
+    _detail   string
     // 门店联系电话
-    tel   string
+    _tel   string
     // 门店所属城市
-    cityName   string
+    _cityName   string
     // 门店城市code（国标）
-    cityCode   string
+    _cityCode   string
     // 操作类型: publish=发布，update=更新
-    type   string
+    _type   string
     // 医院等级，三甲、
-    keyWord   string
+    _keyWord   string
     // “须知”使用下面note_category字段
-    examNotice   string
+    _examNotice   string
     // 门店位置经度高德 坐标系
-    pointX   string
+    _pointX   string
     // 门店位置纬度高德 坐标系
-    pointY   string
+    _pointY   string
     // 门店地址
-    address   string
+    _address   string
     // 工作时间
-    workTime   string
+    _workTime   string
     // 门店名称
-    hospitalName   string
+    _hospitalName   string
     // 门店code，机构保证唯一
-    hospitalCode   string
+    _hospitalCode   string
     // 交通线路，通过\r\n 进行换行
-    routes   string
+    _routes   string
     // http://images.aliyun.com/image?id=123
-    logo   string
+    _logo   string
     // 是否支持在线报告。0:不支持;1:支持
-    onlineReport   int64
+    _onlineReport   int64
     // 社会统一信用代码
-    socialCreditCode   string
+    _socialCreditCode   string
     // 线下报告获取说明（必填）
-    reportWay   string
+    _reportWay   string
     // 线上体检报告几天出具（如果有电子报告必填）
-    reportWayOnline   string
+    _reportWayOnline   string
     // 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）
-    envImgsUrl   string
+    _envImgsUrl   string
     // 免费停车场,绿色VIP通道,免费早餐,3天出报告,1V1导检,接待引导,独家签约,专家会诊,当天出报告；多个逗号分隔
-    specialTagsCode   string
+    _specialTagsCode   string
     // 通知信息
-    notify   string
+    _notify   string
     // 不同种类的预约须知；
-    noteCategory   string
+    _noteCategory   string
     // 经营模式 0自营模式、1平台模式
-    mode   string
+    _mode   string
     // 门店与医院协议
-    agreement   string
+    _agreement   string
     // 营业执照
-    businessLicense   string
+    _businessLicense   string
     // 医疗经营许可
-    medicalLicense   string
+    _medicalLicense   string
     // 类目:1=体检；2=核酸；3=上门；4=健康证；多个类目以逗号分割
-    category   string
+    _category   string
 }
 
 // 初始化AlibabaAlihealthExaminationHospitalPublishRequest对象
@@ -94,337 +94,337 @@ func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetApiParams() url.Va
 }
 // Detail Setter
 // 门店简介
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetDetail(detail string) error {
-    r.detail = detail
-    r.Set("detail", detail)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetDetail(_detail string) error {
+    r._detail = _detail
+    r.Set("detail", _detail)
     return nil
 }
 
 // Detail Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetDetail() string {
-    return r.detail
+    return r._detail
 }
 // Tel Setter
 // 门店联系电话
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetTel(tel string) error {
-    r.tel = tel
-    r.Set("tel", tel)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetTel(_tel string) error {
+    r._tel = _tel
+    r.Set("tel", _tel)
     return nil
 }
 
 // Tel Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetTel() string {
-    return r.tel
+    return r._tel
 }
 // CityName Setter
 // 门店所属城市
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCityName(cityName string) error {
-    r.cityName = cityName
-    r.Set("city_name", cityName)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCityName(_cityName string) error {
+    r._cityName = _cityName
+    r.Set("city_name", _cityName)
     return nil
 }
 
 // CityName Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetCityName() string {
-    return r.cityName
+    return r._cityName
 }
 // CityCode Setter
 // 门店城市code（国标）
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCityCode(cityCode string) error {
-    r.cityCode = cityCode
-    r.Set("city_code", cityCode)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCityCode(_cityCode string) error {
+    r._cityCode = _cityCode
+    r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetCityCode() string {
-    return r.cityCode
+    return r._cityCode
 }
 // Type Setter
 // 操作类型: publish=发布，update=更新
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // KeyWord Setter
 // 医院等级，三甲、
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetKeyWord(keyWord string) error {
-    r.keyWord = keyWord
-    r.Set("key_word", keyWord)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetKeyWord(_keyWord string) error {
+    r._keyWord = _keyWord
+    r.Set("key_word", _keyWord)
     return nil
 }
 
 // KeyWord Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetKeyWord() string {
-    return r.keyWord
+    return r._keyWord
 }
 // ExamNotice Setter
 // “须知”使用下面note_category字段
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetExamNotice(examNotice string) error {
-    r.examNotice = examNotice
-    r.Set("exam_notice", examNotice)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetExamNotice(_examNotice string) error {
+    r._examNotice = _examNotice
+    r.Set("exam_notice", _examNotice)
     return nil
 }
 
 // ExamNotice Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetExamNotice() string {
-    return r.examNotice
+    return r._examNotice
 }
 // PointX Setter
 // 门店位置经度高德 坐标系
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetPointX(pointX string) error {
-    r.pointX = pointX
-    r.Set("point_x", pointX)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetPointX(_pointX string) error {
+    r._pointX = _pointX
+    r.Set("point_x", _pointX)
     return nil
 }
 
 // PointX Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetPointX() string {
-    return r.pointX
+    return r._pointX
 }
 // PointY Setter
 // 门店位置纬度高德 坐标系
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetPointY(pointY string) error {
-    r.pointY = pointY
-    r.Set("point_y", pointY)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetPointY(_pointY string) error {
+    r._pointY = _pointY
+    r.Set("point_y", _pointY)
     return nil
 }
 
 // PointY Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetPointY() string {
-    return r.pointY
+    return r._pointY
 }
 // Address Setter
 // 门店地址
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // WorkTime Setter
 // 工作时间
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetWorkTime(workTime string) error {
-    r.workTime = workTime
-    r.Set("work_time", workTime)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetWorkTime(_workTime string) error {
+    r._workTime = _workTime
+    r.Set("work_time", _workTime)
     return nil
 }
 
 // WorkTime Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetWorkTime() string {
-    return r.workTime
+    return r._workTime
 }
 // HospitalName Setter
 // 门店名称
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetHospitalName(hospitalName string) error {
-    r.hospitalName = hospitalName
-    r.Set("hospital_name", hospitalName)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetHospitalName(_hospitalName string) error {
+    r._hospitalName = _hospitalName
+    r.Set("hospital_name", _hospitalName)
     return nil
 }
 
 // HospitalName Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetHospitalName() string {
-    return r.hospitalName
+    return r._hospitalName
 }
 // HospitalCode Setter
 // 门店code，机构保证唯一
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetHospitalCode(hospitalCode string) error {
-    r.hospitalCode = hospitalCode
-    r.Set("hospital_code", hospitalCode)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetHospitalCode(_hospitalCode string) error {
+    r._hospitalCode = _hospitalCode
+    r.Set("hospital_code", _hospitalCode)
     return nil
 }
 
 // HospitalCode Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetHospitalCode() string {
-    return r.hospitalCode
+    return r._hospitalCode
 }
 // Routes Setter
 // 交通线路，通过\r\n 进行换行
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetRoutes(routes string) error {
-    r.routes = routes
-    r.Set("routes", routes)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetRoutes(_routes string) error {
+    r._routes = _routes
+    r.Set("routes", _routes)
     return nil
 }
 
 // Routes Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetRoutes() string {
-    return r.routes
+    return r._routes
 }
 // Logo Setter
 // http://images.aliyun.com/image?id=123
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetLogo(logo string) error {
-    r.logo = logo
-    r.Set("logo", logo)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetLogo(_logo string) error {
+    r._logo = _logo
+    r.Set("logo", _logo)
     return nil
 }
 
 // Logo Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetLogo() string {
-    return r.logo
+    return r._logo
 }
 // OnlineReport Setter
 // 是否支持在线报告。0:不支持;1:支持
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetOnlineReport(onlineReport int64) error {
-    r.onlineReport = onlineReport
-    r.Set("online_report", onlineReport)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetOnlineReport(_onlineReport int64) error {
+    r._onlineReport = _onlineReport
+    r.Set("online_report", _onlineReport)
     return nil
 }
 
 // OnlineReport Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetOnlineReport() int64 {
-    return r.onlineReport
+    return r._onlineReport
 }
 // SocialCreditCode Setter
 // 社会统一信用代码
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetSocialCreditCode(socialCreditCode string) error {
-    r.socialCreditCode = socialCreditCode
-    r.Set("social_credit_code", socialCreditCode)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetSocialCreditCode(_socialCreditCode string) error {
+    r._socialCreditCode = _socialCreditCode
+    r.Set("social_credit_code", _socialCreditCode)
     return nil
 }
 
 // SocialCreditCode Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetSocialCreditCode() string {
-    return r.socialCreditCode
+    return r._socialCreditCode
 }
 // ReportWay Setter
 // 线下报告获取说明（必填）
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetReportWay(reportWay string) error {
-    r.reportWay = reportWay
-    r.Set("report_way", reportWay)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetReportWay(_reportWay string) error {
+    r._reportWay = _reportWay
+    r.Set("report_way", _reportWay)
     return nil
 }
 
 // ReportWay Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetReportWay() string {
-    return r.reportWay
+    return r._reportWay
 }
 // ReportWayOnline Setter
 // 线上体检报告几天出具（如果有电子报告必填）
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetReportWayOnline(reportWayOnline string) error {
-    r.reportWayOnline = reportWayOnline
-    r.Set("report_way_online", reportWayOnline)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetReportWayOnline(_reportWayOnline string) error {
+    r._reportWayOnline = _reportWayOnline
+    r.Set("report_way_online", _reportWayOnline)
     return nil
 }
 
 // ReportWayOnline Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetReportWayOnline() string {
-    return r.reportWayOnline
+    return r._reportWayOnline
 }
 // EnvImgsUrl Setter
 // 环境图片(json字符串数组)，第一张是头图；（传图前先找运营同学要图片规范，别瞎传）
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetEnvImgsUrl(envImgsUrl string) error {
-    r.envImgsUrl = envImgsUrl
-    r.Set("env_imgs_url", envImgsUrl)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetEnvImgsUrl(_envImgsUrl string) error {
+    r._envImgsUrl = _envImgsUrl
+    r.Set("env_imgs_url", _envImgsUrl)
     return nil
 }
 
 // EnvImgsUrl Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetEnvImgsUrl() string {
-    return r.envImgsUrl
+    return r._envImgsUrl
 }
 // SpecialTagsCode Setter
 // 免费停车场,绿色VIP通道,免费早餐,3天出报告,1V1导检,接待引导,独家签约,专家会诊,当天出报告；多个逗号分隔
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetSpecialTagsCode(specialTagsCode string) error {
-    r.specialTagsCode = specialTagsCode
-    r.Set("special_tags_code", specialTagsCode)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetSpecialTagsCode(_specialTagsCode string) error {
+    r._specialTagsCode = _specialTagsCode
+    r.Set("special_tags_code", _specialTagsCode)
     return nil
 }
 
 // SpecialTagsCode Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetSpecialTagsCode() string {
-    return r.specialTagsCode
+    return r._specialTagsCode
 }
 // Notify Setter
 // 通知信息
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetNotify(notify string) error {
-    r.notify = notify
-    r.Set("notify", notify)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetNotify(_notify string) error {
+    r._notify = _notify
+    r.Set("notify", _notify)
     return nil
 }
 
 // Notify Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetNotify() string {
-    return r.notify
+    return r._notify
 }
 // NoteCategory Setter
 // 不同种类的预约须知；
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetNoteCategory(noteCategory string) error {
-    r.noteCategory = noteCategory
-    r.Set("note_category", noteCategory)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetNoteCategory(_noteCategory string) error {
+    r._noteCategory = _noteCategory
+    r.Set("note_category", _noteCategory)
     return nil
 }
 
 // NoteCategory Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetNoteCategory() string {
-    return r.noteCategory
+    return r._noteCategory
 }
 // Mode Setter
 // 经营模式 0自营模式、1平台模式
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetMode(mode string) error {
-    r.mode = mode
-    r.Set("mode", mode)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetMode(_mode string) error {
+    r._mode = _mode
+    r.Set("mode", _mode)
     return nil
 }
 
 // Mode Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetMode() string {
-    return r.mode
+    return r._mode
 }
 // Agreement Setter
 // 门店与医院协议
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetAgreement(agreement string) error {
-    r.agreement = agreement
-    r.Set("agreement", agreement)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetAgreement(_agreement string) error {
+    r._agreement = _agreement
+    r.Set("agreement", _agreement)
     return nil
 }
 
 // Agreement Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetAgreement() string {
-    return r.agreement
+    return r._agreement
 }
 // BusinessLicense Setter
 // 营业执照
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetBusinessLicense(businessLicense string) error {
-    r.businessLicense = businessLicense
-    r.Set("business_license", businessLicense)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetBusinessLicense(_businessLicense string) error {
+    r._businessLicense = _businessLicense
+    r.Set("business_license", _businessLicense)
     return nil
 }
 
 // BusinessLicense Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetBusinessLicense() string {
-    return r.businessLicense
+    return r._businessLicense
 }
 // MedicalLicense Setter
 // 医疗经营许可
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetMedicalLicense(medicalLicense string) error {
-    r.medicalLicense = medicalLicense
-    r.Set("medical_license", medicalLicense)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetMedicalLicense(_medicalLicense string) error {
+    r._medicalLicense = _medicalLicense
+    r.Set("medical_license", _medicalLicense)
     return nil
 }
 
 // MedicalLicense Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetMedicalLicense() string {
-    return r.medicalLicense
+    return r._medicalLicense
 }
 // Category Setter
 // 类目:1=体检；2=核酸；3=上门；4=健康证；多个类目以逗号分割
-func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCategory(category string) error {
-    r.category = category
-    r.Set("category", category)
+func (r *AlibabaAlihealthExaminationHospitalPublishRequest) SetCategory(_category string) error {
+    r._category = _category
+    r.Set("category", _category)
     return nil
 }
 
 // Category Getter
 func (r AlibabaAlihealthExaminationHospitalPublishRequest) GetCategory() string {
-    return r.category
+    return r._category
 }

@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.material.purchase.attr.get
 type AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest struct {
     model.Params
     // 扩展字段
-    requestExtendJson   string
+    _requestExtendJson   string
 }
 
 // 初始化AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetApiParams() u
 }
 // RequestExtendJson Setter
 // 扩展字段
-func (r *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) SetRequestExtendJson(requestExtendJson string) error {
-    r.requestExtendJson = requestExtendJson
-    r.Set("request_extend_json", requestExtendJson)
+func (r *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+    r._requestExtendJson = _requestExtendJson
+    r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetRequestExtendJson() string {
-    return r.requestExtendJson
+    return r._requestExtendJson
 }

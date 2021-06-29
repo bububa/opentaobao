@@ -15,7 +15,7 @@ taobao.logistics.online.cancel
 type TaobaoLogisticsOnlineCancelRequest struct {
     model.Params
     // 淘宝交易ID
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoLogisticsOnlineCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLogisticsOnlineCancelRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易ID
-func (r *TaobaoLogisticsOnlineCancelRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoLogisticsOnlineCancelRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoLogisticsOnlineCancelRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

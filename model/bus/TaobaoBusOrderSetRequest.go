@@ -15,7 +15,7 @@ taobao.bus.order.set
 type TaobaoBusOrderSetRequest struct {
     model.Params
     // 下单参数
-    paramB2BCreateOrderRQ   *B2BCreateOrderRq
+    _paramB2BCreateOrderRQ   *B2BCreateOrderRq
 }
 
 // 初始化TaobaoBusOrderSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusOrderSetRequest) GetApiParams() url.Values {
 }
 // ParamB2BCreateOrderRQ Setter
 // 下单参数
-func (r *TaobaoBusOrderSetRequest) SetParamB2BCreateOrderRQ(paramB2BCreateOrderRQ *B2BCreateOrderRq) error {
-    r.paramB2BCreateOrderRQ = paramB2BCreateOrderRQ
-    r.Set("param_b2_b_create_order_r_q", paramB2BCreateOrderRQ)
+func (r *TaobaoBusOrderSetRequest) SetParamB2BCreateOrderRQ(_paramB2BCreateOrderRQ *B2BCreateOrderRq) error {
+    r._paramB2BCreateOrderRQ = _paramB2BCreateOrderRQ
+    r.Set("param_b2_b_create_order_r_q", _paramB2BCreateOrderRQ)
     return nil
 }
 
 // ParamB2BCreateOrderRQ Getter
 func (r TaobaoBusOrderSetRequest) GetParamB2BCreateOrderRQ() *B2BCreateOrderRq {
-    return r.paramB2BCreateOrderRQ
+    return r._paramB2BCreateOrderRQ
 }

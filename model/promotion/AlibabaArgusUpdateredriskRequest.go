@@ -15,7 +15,7 @@ alibaba.argus.updateredrisk
 type AlibabaArgusUpdateredriskRequest struct {
     model.Params
     // 红线价格参数
-    redRiskUpdateFactor   *RedRiskUpdateFactor
+    _redRiskUpdateFactor   *RedRiskUpdateFactor
 }
 
 // 初始化AlibabaArgusUpdateredriskRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaArgusUpdateredriskRequest) GetApiParams() url.Values {
 }
 // RedRiskUpdateFactor Setter
 // 红线价格参数
-func (r *AlibabaArgusUpdateredriskRequest) SetRedRiskUpdateFactor(redRiskUpdateFactor *RedRiskUpdateFactor) error {
-    r.redRiskUpdateFactor = redRiskUpdateFactor
-    r.Set("red_risk_update_factor", redRiskUpdateFactor)
+func (r *AlibabaArgusUpdateredriskRequest) SetRedRiskUpdateFactor(_redRiskUpdateFactor *RedRiskUpdateFactor) error {
+    r._redRiskUpdateFactor = _redRiskUpdateFactor
+    r.Set("red_risk_update_factor", _redRiskUpdateFactor)
     return nil
 }
 
 // RedRiskUpdateFactor Getter
 func (r AlibabaArgusUpdateredriskRequest) GetRedRiskUpdateFactor() *RedRiskUpdateFactor {
-    return r.redRiskUpdateFactor
+    return r._redRiskUpdateFactor
 }

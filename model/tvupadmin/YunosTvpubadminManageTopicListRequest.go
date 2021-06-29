@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.list
 type YunosTvpubadminManageTopicListRequest struct {
     model.Params
     // 查询条件
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminManageTopicListRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicListRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询条件
-func (r *YunosTvpubadminManageTopicListRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminManageTopicListRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminManageTopicListRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.open
 type AlibabaAlscCrmCardOpenRequest struct {
     model.Params
     // 开卡参数
-    paramOpenCardStandardOpenReq   *OpenCardStandardOpenReq
+    _paramOpenCardStandardOpenReq   *OpenCardStandardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardOpenRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardOpenRequest) GetApiParams() url.Values {
 }
 // ParamOpenCardStandardOpenReq Setter
 // 开卡参数
-func (r *AlibabaAlscCrmCardOpenRequest) SetParamOpenCardStandardOpenReq(paramOpenCardStandardOpenReq *OpenCardStandardOpenReq) error {
-    r.paramOpenCardStandardOpenReq = paramOpenCardStandardOpenReq
-    r.Set("param_open_card_standard_open_req", paramOpenCardStandardOpenReq)
+func (r *AlibabaAlscCrmCardOpenRequest) SetParamOpenCardStandardOpenReq(_paramOpenCardStandardOpenReq *OpenCardStandardOpenReq) error {
+    r._paramOpenCardStandardOpenReq = _paramOpenCardStandardOpenReq
+    r.Set("param_open_card_standard_open_req", _paramOpenCardStandardOpenReq)
     return nil
 }
 
 // ParamOpenCardStandardOpenReq Getter
 func (r AlibabaAlscCrmCardOpenRequest) GetParamOpenCardStandardOpenReq() *OpenCardStandardOpenReq {
-    return r.paramOpenCardStandardOpenReq
+    return r._paramOpenCardStandardOpenReq
 }

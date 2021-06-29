@@ -15,9 +15,9 @@ alibaba.campus.device.openapi.getsimpledevice
 type AlibabaCampusDeviceOpenapiGetsimpledeviceRequest struct {
     model.Params
     // 请求发送端信息
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // 设备uuid
-    uuid   string
+    _uuid   string
 }
 
 // 初始化AlibabaCampusDeviceOpenapiGetsimpledeviceRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) GetApiParams() url.Val
 }
 // WorkBenchContext Setter
 // 请求发送端信息
-func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // Uuid Setter
 // 设备uuid
-func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaCampusDeviceOpenapiGetsimpledeviceRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

@@ -15,13 +15,13 @@ alibaba.mos.orderqs.misbigpos.order.query
 type AlibabaMosOrderqsMisbigposOrderQueryRequest struct {
     model.Params
     // 外部门店号
-    storeNo   string
+    _storeNo   string
     // 基本信息获取参数
-    queryBaseData   bool
+    _queryBaseData   bool
     // 小票号
-    receiptNo   string
+    _receiptNo   string
     // 券扩展数据获取
-    queryCouponExtern   bool
+    _queryCouponExtern   bool
 }
 
 // 初始化AlibabaMosOrderqsMisbigposOrderQueryRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaMosOrderqsMisbigposOrderQueryRequest) GetApiParams() url.Values {
 }
 // StoreNo Setter
 // 外部门店号
-func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMosOrderqsMisbigposOrderQueryRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }
 // QueryBaseData Setter
 // 基本信息获取参数
-func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetQueryBaseData(queryBaseData bool) error {
-    r.queryBaseData = queryBaseData
-    r.Set("query_base_data", queryBaseData)
+func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetQueryBaseData(_queryBaseData bool) error {
+    r._queryBaseData = _queryBaseData
+    r.Set("query_base_data", _queryBaseData)
     return nil
 }
 
 // QueryBaseData Getter
 func (r AlibabaMosOrderqsMisbigposOrderQueryRequest) GetQueryBaseData() bool {
-    return r.queryBaseData
+    return r._queryBaseData
 }
 // ReceiptNo Setter
 // 小票号
-func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetReceiptNo(receiptNo string) error {
-    r.receiptNo = receiptNo
-    r.Set("receipt_no", receiptNo)
+func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetReceiptNo(_receiptNo string) error {
+    r._receiptNo = _receiptNo
+    r.Set("receipt_no", _receiptNo)
     return nil
 }
 
 // ReceiptNo Getter
 func (r AlibabaMosOrderqsMisbigposOrderQueryRequest) GetReceiptNo() string {
-    return r.receiptNo
+    return r._receiptNo
 }
 // QueryCouponExtern Setter
 // 券扩展数据获取
-func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetQueryCouponExtern(queryCouponExtern bool) error {
-    r.queryCouponExtern = queryCouponExtern
-    r.Set("query_coupon_extern", queryCouponExtern)
+func (r *AlibabaMosOrderqsMisbigposOrderQueryRequest) SetQueryCouponExtern(_queryCouponExtern bool) error {
+    r._queryCouponExtern = _queryCouponExtern
+    r.Set("query_coupon_extern", _queryCouponExtern)
     return nil
 }
 
 // QueryCouponExtern Getter
 func (r AlibabaMosOrderqsMisbigposOrderQueryRequest) GetQueryCouponExtern() bool {
-    return r.queryCouponExtern
+    return r._queryCouponExtern
 }

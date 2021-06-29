@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.chkpntbypay
 type AlibabaAlscCrmPointChkpntbypayRequest struct {
     model.Params
     // 入参
-    paramConsumePointByPayOpenReq   *ConsumePointByPayOpenReq
+    _paramConsumePointByPayOpenReq   *ConsumePointByPayOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointChkpntbypayRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointChkpntbypayRequest) GetApiParams() url.Values {
 }
 // ParamConsumePointByPayOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointChkpntbypayRequest) SetParamConsumePointByPayOpenReq(paramConsumePointByPayOpenReq *ConsumePointByPayOpenReq) error {
-    r.paramConsumePointByPayOpenReq = paramConsumePointByPayOpenReq
-    r.Set("param_consume_point_by_pay_open_req", paramConsumePointByPayOpenReq)
+func (r *AlibabaAlscCrmPointChkpntbypayRequest) SetParamConsumePointByPayOpenReq(_paramConsumePointByPayOpenReq *ConsumePointByPayOpenReq) error {
+    r._paramConsumePointByPayOpenReq = _paramConsumePointByPayOpenReq
+    r.Set("param_consume_point_by_pay_open_req", _paramConsumePointByPayOpenReq)
     return nil
 }
 
 // ParamConsumePointByPayOpenReq Getter
 func (r AlibabaAlscCrmPointChkpntbypayRequest) GetParamConsumePointByPayOpenReq() *ConsumePointByPayOpenReq {
-    return r.paramConsumePointByPayOpenReq
+    return r._paramConsumePointByPayOpenReq
 }

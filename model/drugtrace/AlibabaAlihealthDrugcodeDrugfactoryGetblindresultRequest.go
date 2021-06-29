@@ -15,9 +15,9 @@ alibaba.alihealth.drugcode.drugfactory.getblindresult
 type AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest struct {
     model.Params
     // 企业id
-    refEntId   string
+    _refEntId   string
     // 盲底文件名称
-    blindFileName   string
+    _blindFileName   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) GetApiParams()
 }
 // RefEntId Setter
 // 企业id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BlindFileName Setter
 // 盲底文件名称
-func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) SetBlindFileName(blindFileName string) error {
-    r.blindFileName = blindFileName
-    r.Set("blind_file_name", blindFileName)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) SetBlindFileName(_blindFileName string) error {
+    r._blindFileName = _blindFileName
+    r.Set("blind_file_name", _blindFileName)
     return nil
 }
 
 // BlindFileName Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetblindresultRequest) GetBlindFileName() string {
-    return r.blindFileName
+    return r._blindFileName
 }

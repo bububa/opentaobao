@@ -15,11 +15,11 @@ yunos.tvpubadmin.epg.desktop.operation
 type YunosTvpubadminEpgDesktopOperationRequest struct {
     model.Params
     // 操作对象实体
-    entityType   string
+    _entityType   string
     // 操作类型
-    actionType   string
+    _actionType   string
     // 具体入参
-    parameter   string
+    _parameter   string
 }
 
 // 初始化YunosTvpubadminEpgDesktopOperationRequest对象
@@ -44,37 +44,37 @@ func (r YunosTvpubadminEpgDesktopOperationRequest) GetApiParams() url.Values {
 }
 // EntityType Setter
 // 操作对象实体
-func (r *YunosTvpubadminEpgDesktopOperationRequest) SetEntityType(entityType string) error {
-    r.entityType = entityType
-    r.Set("entity_type", entityType)
+func (r *YunosTvpubadminEpgDesktopOperationRequest) SetEntityType(_entityType string) error {
+    r._entityType = _entityType
+    r.Set("entity_type", _entityType)
     return nil
 }
 
 // EntityType Getter
 func (r YunosTvpubadminEpgDesktopOperationRequest) GetEntityType() string {
-    return r.entityType
+    return r._entityType
 }
 // ActionType Setter
 // 操作类型
-func (r *YunosTvpubadminEpgDesktopOperationRequest) SetActionType(actionType string) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *YunosTvpubadminEpgDesktopOperationRequest) SetActionType(_actionType string) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r YunosTvpubadminEpgDesktopOperationRequest) GetActionType() string {
-    return r.actionType
+    return r._actionType
 }
 // Parameter Setter
 // 具体入参
-func (r *YunosTvpubadminEpgDesktopOperationRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *YunosTvpubadminEpgDesktopOperationRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r YunosTvpubadminEpgDesktopOperationRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }

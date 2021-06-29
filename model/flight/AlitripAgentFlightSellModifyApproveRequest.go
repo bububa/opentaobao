@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.modify.approve
 type AlitripAgentFlightSellModifyApproveRequest struct {
     model.Params
     // 入参对象
-    param   *ModifyApproveRequestDto
+    _param   *ModifyApproveRequestDto
 }
 
 // 初始化AlitripAgentFlightSellModifyApproveRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellModifyApproveRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlitripAgentFlightSellModifyApproveRequest) SetParam(param *ModifyApproveRequestDto) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlitripAgentFlightSellModifyApproveRequest) SetParam(_param *ModifyApproveRequestDto) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlitripAgentFlightSellModifyApproveRequest) GetParam() *ModifyApproveRequestDto {
-    return r.param
+    return r._param
 }

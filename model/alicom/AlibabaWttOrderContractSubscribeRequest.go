@@ -15,7 +15,7 @@ alibaba.wtt.order.contract.subscribe
 type AlibabaWttOrderContractSubscribeRequest struct {
     model.Params
     // 分销商合约生产
-    distributionOrderModel   *DistributionOrderModel
+    _distributionOrderModel   *DistributionOrderModel
 }
 
 // 初始化AlibabaWttOrderContractSubscribeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWttOrderContractSubscribeRequest) GetApiParams() url.Values {
 }
 // DistributionOrderModel Setter
 // 分销商合约生产
-func (r *AlibabaWttOrderContractSubscribeRequest) SetDistributionOrderModel(distributionOrderModel *DistributionOrderModel) error {
-    r.distributionOrderModel = distributionOrderModel
-    r.Set("distribution_order_model", distributionOrderModel)
+func (r *AlibabaWttOrderContractSubscribeRequest) SetDistributionOrderModel(_distributionOrderModel *DistributionOrderModel) error {
+    r._distributionOrderModel = _distributionOrderModel
+    r.Set("distribution_order_model", _distributionOrderModel)
     return nil
 }
 
 // DistributionOrderModel Getter
 func (r AlibabaWttOrderContractSubscribeRequest) GetDistributionOrderModel() *DistributionOrderModel {
-    return r.distributionOrderModel
+    return r._distributionOrderModel
 }

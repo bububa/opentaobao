@@ -15,7 +15,7 @@ ERP调用奇门的接口,批量同步商品信息给WMS
 type TaobaoQimenItemsSynchronizeRequest struct {
     model.Params
     // 
-    request   *ItemsSynchronizeRequest
+    _request   *ItemsSynchronizeRequest
 }
 
 // 初始化TaobaoQimenItemsSynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenItemsSynchronizeRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenItemsSynchronizeRequest) SetRequest(request *ItemsSynchronizeRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenItemsSynchronizeRequest) SetRequest(_request *ItemsSynchronizeRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenItemsSynchronizeRequest) GetRequest() *ItemsSynchronizeRequest {
-    return r.request
+    return r._request
 }

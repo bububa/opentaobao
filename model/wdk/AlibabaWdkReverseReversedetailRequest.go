@@ -15,7 +15,7 @@ alibaba.wdk.reverse.reversedetail
 type AlibabaWdkReverseReversedetailRequest struct {
     model.Params
     // 退款单id
-    reverseId   string
+    _reverseId   string
 }
 
 // 初始化AlibabaWdkReverseReversedetailRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkReverseReversedetailRequest) GetApiParams() url.Values {
 }
 // ReverseId Setter
 // 退款单id
-func (r *AlibabaWdkReverseReversedetailRequest) SetReverseId(reverseId string) error {
-    r.reverseId = reverseId
-    r.Set("reverse_id", reverseId)
+func (r *AlibabaWdkReverseReversedetailRequest) SetReverseId(_reverseId string) error {
+    r._reverseId = _reverseId
+    r.Set("reverse_id", _reverseId)
     return nil
 }
 
 // ReverseId Getter
 func (r AlibabaWdkReverseReversedetailRequest) GetReverseId() string {
-    return r.reverseId
+    return r._reverseId
 }

@@ -15,9 +15,9 @@ taobao.simba.rtrpt.cust.get
 type TaobaoSimbaRtrptCustGetRequest struct {
     model.Params
     // 昵称
-    nick   string
+    _nick   string
     // 日期，格式yyyy-mm-dd
-    theDate   string
+    _theDate   string
 }
 
 // 初始化TaobaoSimbaRtrptCustGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaRtrptCustGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaRtrptCustGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaRtrptCustGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaRtrptCustGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptCustGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaRtrptCustGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaRtrptCustGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }

@@ -15,7 +15,7 @@ alibaba.ifp.fulfill.warehouse.token.query
 type AlibabaIfpFulfillWarehouseTokenQueryRequest struct {
     model.Params
     // 入参
-    packageQueryDTO   *PackageQueryDto
+    _packageQueryDTO   *PackageQueryDto
 }
 
 // 初始化AlibabaIfpFulfillWarehouseTokenQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIfpFulfillWarehouseTokenQueryRequest) GetApiParams() url.Values {
 }
 // PackageQueryDTO Setter
 // 入参
-func (r *AlibabaIfpFulfillWarehouseTokenQueryRequest) SetPackageQueryDTO(packageQueryDTO *PackageQueryDto) error {
-    r.packageQueryDTO = packageQueryDTO
-    r.Set("package_query_d_t_o", packageQueryDTO)
+func (r *AlibabaIfpFulfillWarehouseTokenQueryRequest) SetPackageQueryDTO(_packageQueryDTO *PackageQueryDto) error {
+    r._packageQueryDTO = _packageQueryDTO
+    r.Set("package_query_d_t_o", _packageQueryDTO)
     return nil
 }
 
 // PackageQueryDTO Getter
 func (r AlibabaIfpFulfillWarehouseTokenQueryRequest) GetPackageQueryDTO() *PackageQueryDto {
-    return r.packageQueryDTO
+    return r._packageQueryDTO
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.medical.registration.sync
 type AlibabaAlihealthMedicalRegistrationSyncRequest struct {
     model.Params
     // 接口入参
-    saveRequest   *CommonRequest4Top
+    _saveRequest   *CommonRequest4Top
 }
 
 // 初始化AlibabaAlihealthMedicalRegistrationSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalRegistrationSyncRequest) GetApiParams() url.Value
 }
 // SaveRequest Setter
 // 接口入参
-func (r *AlibabaAlihealthMedicalRegistrationSyncRequest) SetSaveRequest(saveRequest *CommonRequest4Top) error {
-    r.saveRequest = saveRequest
-    r.Set("save_request", saveRequest)
+func (r *AlibabaAlihealthMedicalRegistrationSyncRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+    r._saveRequest = _saveRequest
+    r.Set("save_request", _saveRequest)
     return nil
 }
 
 // SaveRequest Getter
 func (r AlibabaAlihealthMedicalRegistrationSyncRequest) GetSaveRequest() *CommonRequest4Top {
-    return r.saveRequest
+    return r._saveRequest
 }

@@ -15,15 +15,15 @@ yunos.tvpubadmin.common.file.upload
 type YunosTvpubadminCommonFileUploadRequest struct {
     model.Params
     // 文件字节流
-    bytes   []*model.File
+    _bytes   []*model.File
     // 原文件名
-    originalFilename   string
+    _originalFilename   string
     // 文件大小
-    size   string
+    _size   string
     // 文件类型
-    contentType   string
+    _contentType   string
     // 上传地址
-    uploadPath   string
+    _uploadPath   string
 }
 
 // 初始化YunosTvpubadminCommonFileUploadRequest对象
@@ -48,61 +48,61 @@ func (r YunosTvpubadminCommonFileUploadRequest) GetApiParams() url.Values {
 }
 // Bytes Setter
 // 文件字节流
-func (r *YunosTvpubadminCommonFileUploadRequest) SetBytes(bytes []*model.File) error {
-    r.bytes = bytes
-    r.Set("bytes", bytes)
+func (r *YunosTvpubadminCommonFileUploadRequest) SetBytes(_bytes []*model.File) error {
+    r._bytes = _bytes
+    r.Set("bytes", _bytes)
     return nil
 }
 
 // Bytes Getter
 func (r YunosTvpubadminCommonFileUploadRequest) GetBytes() []*model.File {
-    return r.bytes
+    return r._bytes
 }
 // OriginalFilename Setter
 // 原文件名
-func (r *YunosTvpubadminCommonFileUploadRequest) SetOriginalFilename(originalFilename string) error {
-    r.originalFilename = originalFilename
-    r.Set("original_filename", originalFilename)
+func (r *YunosTvpubadminCommonFileUploadRequest) SetOriginalFilename(_originalFilename string) error {
+    r._originalFilename = _originalFilename
+    r.Set("original_filename", _originalFilename)
     return nil
 }
 
 // OriginalFilename Getter
 func (r YunosTvpubadminCommonFileUploadRequest) GetOriginalFilename() string {
-    return r.originalFilename
+    return r._originalFilename
 }
 // Size Setter
 // 文件大小
-func (r *YunosTvpubadminCommonFileUploadRequest) SetSize(size string) error {
-    r.size = size
-    r.Set("size", size)
+func (r *YunosTvpubadminCommonFileUploadRequest) SetSize(_size string) error {
+    r._size = _size
+    r.Set("size", _size)
     return nil
 }
 
 // Size Getter
 func (r YunosTvpubadminCommonFileUploadRequest) GetSize() string {
-    return r.size
+    return r._size
 }
 // ContentType Setter
 // 文件类型
-func (r *YunosTvpubadminCommonFileUploadRequest) SetContentType(contentType string) error {
-    r.contentType = contentType
-    r.Set("content_type", contentType)
+func (r *YunosTvpubadminCommonFileUploadRequest) SetContentType(_contentType string) error {
+    r._contentType = _contentType
+    r.Set("content_type", _contentType)
     return nil
 }
 
 // ContentType Getter
 func (r YunosTvpubadminCommonFileUploadRequest) GetContentType() string {
-    return r.contentType
+    return r._contentType
 }
 // UploadPath Setter
 // 上传地址
-func (r *YunosTvpubadminCommonFileUploadRequest) SetUploadPath(uploadPath string) error {
-    r.uploadPath = uploadPath
-    r.Set("upload_path", uploadPath)
+func (r *YunosTvpubadminCommonFileUploadRequest) SetUploadPath(_uploadPath string) error {
+    r._uploadPath = _uploadPath
+    r.Set("upload_path", _uploadPath)
     return nil
 }
 
 // UploadPath Getter
 func (r YunosTvpubadminCommonFileUploadRequest) GetUploadPath() string {
-    return r.uploadPath
+    return r._uploadPath
 }

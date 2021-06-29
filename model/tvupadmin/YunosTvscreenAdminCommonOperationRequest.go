@@ -15,11 +15,11 @@ yunos.tvscreen.admin.common.operation
 type YunosTvscreenAdminCommonOperationRequest struct {
     model.Params
     // 参数数组
-    parameters   string
+    _parameters   string
     // 方法名
-    methodName   string
+    _methodName   string
     // 接口名称
-    interfaceName   string
+    _interfaceName   string
 }
 
 // 初始化YunosTvscreenAdminCommonOperationRequest对象
@@ -44,37 +44,37 @@ func (r YunosTvscreenAdminCommonOperationRequest) GetApiParams() url.Values {
 }
 // Parameters Setter
 // 参数数组
-func (r *YunosTvscreenAdminCommonOperationRequest) SetParameters(parameters string) error {
-    r.parameters = parameters
-    r.Set("parameters", parameters)
+func (r *YunosTvscreenAdminCommonOperationRequest) SetParameters(_parameters string) error {
+    r._parameters = _parameters
+    r.Set("parameters", _parameters)
     return nil
 }
 
 // Parameters Getter
 func (r YunosTvscreenAdminCommonOperationRequest) GetParameters() string {
-    return r.parameters
+    return r._parameters
 }
 // MethodName Setter
 // 方法名
-func (r *YunosTvscreenAdminCommonOperationRequest) SetMethodName(methodName string) error {
-    r.methodName = methodName
-    r.Set("method_name", methodName)
+func (r *YunosTvscreenAdminCommonOperationRequest) SetMethodName(_methodName string) error {
+    r._methodName = _methodName
+    r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
 func (r YunosTvscreenAdminCommonOperationRequest) GetMethodName() string {
-    return r.methodName
+    return r._methodName
 }
 // InterfaceName Setter
 // 接口名称
-func (r *YunosTvscreenAdminCommonOperationRequest) SetInterfaceName(interfaceName string) error {
-    r.interfaceName = interfaceName
-    r.Set("interface_name", interfaceName)
+func (r *YunosTvscreenAdminCommonOperationRequest) SetInterfaceName(_interfaceName string) error {
+    r._interfaceName = _interfaceName
+    r.Set("interface_name", _interfaceName)
     return nil
 }
 
 // InterfaceName Getter
 func (r YunosTvscreenAdminCommonOperationRequest) GetInterfaceName() string {
-    return r.interfaceName
+    return r._interfaceName
 }

@@ -15,9 +15,9 @@ taobao.uscesl.biz.brand.insert
 type TaobaoUsceslBizBrandInsertRequest struct {
     model.Params
     // 商家名称
-    brandName   string
+    _brandName   string
     // 商家外部编号
-    brandOutCode   string
+    _brandOutCode   string
 }
 
 // 初始化TaobaoUsceslBizBrandInsertRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUsceslBizBrandInsertRequest) GetApiParams() url.Values {
 }
 // BrandName Setter
 // 商家名称
-func (r *TaobaoUsceslBizBrandInsertRequest) SetBrandName(brandName string) error {
-    r.brandName = brandName
-    r.Set("brand_name", brandName)
+func (r *TaobaoUsceslBizBrandInsertRequest) SetBrandName(_brandName string) error {
+    r._brandName = _brandName
+    r.Set("brand_name", _brandName)
     return nil
 }
 
 // BrandName Getter
 func (r TaobaoUsceslBizBrandInsertRequest) GetBrandName() string {
-    return r.brandName
+    return r._brandName
 }
 // BrandOutCode Setter
 // 商家外部编号
-func (r *TaobaoUsceslBizBrandInsertRequest) SetBrandOutCode(brandOutCode string) error {
-    r.brandOutCode = brandOutCode
-    r.Set("brand_out_code", brandOutCode)
+func (r *TaobaoUsceslBizBrandInsertRequest) SetBrandOutCode(_brandOutCode string) error {
+    r._brandOutCode = _brandOutCode
+    r.Set("brand_out_code", _brandOutCode)
     return nil
 }
 
 // BrandOutCode Getter
 func (r TaobaoUsceslBizBrandInsertRequest) GetBrandOutCode() string {
-    return r.brandOutCode
+    return r._brandOutCode
 }

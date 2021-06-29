@@ -15,9 +15,9 @@ tmall.txcs.finance.invoice.input
 type TmallTxcsFinanceInvoiceInputRequest struct {
     model.Params
     // 门店ID
-    ouCode   string
+    _ouCode   string
     // 发票内容
-    invoiceInputDTO1   []InvoiceInputDto
+    _invoiceInputDTO1   []InvoiceInputDto
 }
 
 // 初始化TmallTxcsFinanceInvoiceInputRequest对象
@@ -42,25 +42,25 @@ func (r TmallTxcsFinanceInvoiceInputRequest) GetApiParams() url.Values {
 }
 // OuCode Setter
 // 门店ID
-func (r *TmallTxcsFinanceInvoiceInputRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *TmallTxcsFinanceInvoiceInputRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r TmallTxcsFinanceInvoiceInputRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }
 // InvoiceInputDTO1 Setter
 // 发票内容
-func (r *TmallTxcsFinanceInvoiceInputRequest) SetInvoiceInputDTO1(invoiceInputDTO1 []InvoiceInputDto) error {
-    r.invoiceInputDTO1 = invoiceInputDTO1
-    r.Set("invoice_input_d_t_o1", invoiceInputDTO1)
+func (r *TmallTxcsFinanceInvoiceInputRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDto) error {
+    r._invoiceInputDTO1 = _invoiceInputDTO1
+    r.Set("invoice_input_d_t_o1", _invoiceInputDTO1)
     return nil
 }
 
 // InvoiceInputDTO1 Getter
 func (r TmallTxcsFinanceInvoiceInputRequest) GetInvoiceInputDTO1() []InvoiceInputDto {
-    return r.invoiceInputDTO1
+    return r._invoiceInputDTO1
 }

@@ -15,7 +15,7 @@ alibaba.ele.enterprise.restaurant.multispecmenu
 type AlibabaEleEnterpriseRestaurantMultispecmenuRequest struct {
     model.Params
     // 餐厅ID
-    erestaurantId   string
+    _erestaurantId   string
 }
 
 // 初始化AlibabaEleEnterpriseRestaurantMultispecmenuRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetApiParams() url.V
 }
 // ErestaurantId Setter
 // 餐厅ID
-func (r *AlibabaEleEnterpriseRestaurantMultispecmenuRequest) SetErestaurantId(erestaurantId string) error {
-    r.erestaurantId = erestaurantId
-    r.Set("erestaurant_id", erestaurantId)
+func (r *AlibabaEleEnterpriseRestaurantMultispecmenuRequest) SetErestaurantId(_erestaurantId string) error {
+    r._erestaurantId = _erestaurantId
+    r.Set("erestaurant_id", _erestaurantId)
     return nil
 }
 
 // ErestaurantId Getter
 func (r AlibabaEleEnterpriseRestaurantMultispecmenuRequest) GetErestaurantId() string {
-    return r.erestaurantId
+    return r._erestaurantId
 }

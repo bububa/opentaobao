@@ -15,13 +15,13 @@ alibaba.wdk.marketing.open.darunfa.activity.sku.sync
 type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest struct {
     model.Params
     // 淘鲜达活动商品信息
-    activitySkuList   []DrfTxdActivitySkuBo
+    _activitySkuList   []DrfTxdActivitySkuBo
     // 数据版本Id
-    versionId   int64
+    _versionId   int64
     // 大润发活动Id
-    activityId   string
+    _activityId   string
     // 活动对应的门店Id
-    shopId   string
+    _shopId   string
 }
 
 // 初始化AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) GetApiParams() url
 }
 // ActivitySkuList Setter
 // 淘鲜达活动商品信息
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetActivitySkuList(activitySkuList []DrfTxdActivitySkuBo) error {
-    r.activitySkuList = activitySkuList
-    r.Set("activity_sku_list", activitySkuList)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetActivitySkuList(_activitySkuList []DrfTxdActivitySkuBo) error {
+    r._activitySkuList = _activitySkuList
+    r.Set("activity_sku_list", _activitySkuList)
     return nil
 }
 
 // ActivitySkuList Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) GetActivitySkuList() []DrfTxdActivitySkuBo {
-    return r.activitySkuList
+    return r._activitySkuList
 }
 // VersionId Setter
 // 数据版本Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetVersionId(versionId int64) error {
-    r.versionId = versionId
-    r.Set("version_id", versionId)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetVersionId(_versionId int64) error {
+    r._versionId = _versionId
+    r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) GetVersionId() int64 {
-    return r.versionId
+    return r._versionId
 }
 // ActivityId Setter
 // 大润发活动Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetActivityId(activityId string) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetActivityId(_activityId string) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) GetActivityId() string {
-    return r.activityId
+    return r._activityId
 }
 // ShopId Setter
 // 活动对应的门店Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySkuSyncRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }

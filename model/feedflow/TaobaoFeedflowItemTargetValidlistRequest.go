@@ -15,7 +15,7 @@ taobao.feedflow.item.target.validlist
 type TaobaoFeedflowItemTargetValidlistRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
 }
 
 // 初始化TaobaoFeedflowItemTargetValidlistRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemTargetValidlistRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoFeedflowItemTargetValidlistRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoFeedflowItemTargetValidlistRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoFeedflowItemTargetValidlistRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }

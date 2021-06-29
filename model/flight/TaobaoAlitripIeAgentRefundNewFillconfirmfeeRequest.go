@@ -15,7 +15,7 @@ taobao.alitrip.ie.agent.refund.new.fillconfirmfee
 type TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest struct {
     model.Params
     // 请求
-    paramRefundOrderFillConfirmFeeRq   *RefundOrderFillConfirmFeeRq
+    _paramRefundOrderFillConfirmFeeRq   *RefundOrderFillConfirmFeeRq
 }
 
 // 初始化TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest) GetApiParams() url.V
 }
 // ParamRefundOrderFillConfirmFeeRq Setter
 // 请求
-func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest) SetParamRefundOrderFillConfirmFeeRq(paramRefundOrderFillConfirmFeeRq *RefundOrderFillConfirmFeeRq) error {
-    r.paramRefundOrderFillConfirmFeeRq = paramRefundOrderFillConfirmFeeRq
-    r.Set("param_refund_order_fill_confirm_fee_rq", paramRefundOrderFillConfirmFeeRq)
+func (r *TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest) SetParamRefundOrderFillConfirmFeeRq(_paramRefundOrderFillConfirmFeeRq *RefundOrderFillConfirmFeeRq) error {
+    r._paramRefundOrderFillConfirmFeeRq = _paramRefundOrderFillConfirmFeeRq
+    r.Set("param_refund_order_fill_confirm_fee_rq", _paramRefundOrderFillConfirmFeeRq)
     return nil
 }
 
 // ParamRefundOrderFillConfirmFeeRq Getter
 func (r TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest) GetParamRefundOrderFillConfirmFeeRq() *RefundOrderFillConfirmFeeRq {
-    return r.paramRefundOrderFillConfirmFeeRq
+    return r._paramRefundOrderFillConfirmFeeRq
 }

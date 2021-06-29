@@ -15,7 +15,7 @@ tmall.servicecenter.worker.querypage
 type TmallServicecenterWorkerQuerypageRequest struct {
     model.Params
     // 页码
-    pageIndex   int64
+    _pageIndex   int64
 }
 
 // 初始化TmallServicecenterWorkerQuerypageRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerQuerypageRequest) GetApiParams() url.Values {
 }
 // PageIndex Setter
 // 页码
-func (r *TmallServicecenterWorkerQuerypageRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TmallServicecenterWorkerQuerypageRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TmallServicecenterWorkerQuerypageRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }

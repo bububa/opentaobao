@@ -15,13 +15,13 @@ alibaba.aliqin.axb.vendor.exception.no.sync
 type AlibabaAliqinAxbVendorExceptionNoSyncRequest struct {
     model.Params
     // 异常的中间号码
-    secretNo   string
+    _secretNo   string
     // 异常的原因
-    exceptionMsg   string
+    _exceptionMsg   string
     // 0-异常状态 1-可恢复正常使用
-    status   int64
+    _status   int64
     // 供应商KEY
-    vendorKey   string
+    _vendorKey   string
 }
 
 // 初始化AlibabaAliqinAxbVendorExceptionNoSyncRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinAxbVendorExceptionNoSyncRequest) GetApiParams() url.Values 
 }
 // SecretNo Setter
 // 异常的中间号码
-func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetSecretNo(secretNo string) error {
-    r.secretNo = secretNo
-    r.Set("secret_no", secretNo)
+func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetSecretNo(_secretNo string) error {
+    r._secretNo = _secretNo
+    r.Set("secret_no", _secretNo)
     return nil
 }
 
 // SecretNo Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncRequest) GetSecretNo() string {
-    return r.secretNo
+    return r._secretNo
 }
 // ExceptionMsg Setter
 // 异常的原因
-func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetExceptionMsg(exceptionMsg string) error {
-    r.exceptionMsg = exceptionMsg
-    r.Set("exception_msg", exceptionMsg)
+func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetExceptionMsg(_exceptionMsg string) error {
+    r._exceptionMsg = _exceptionMsg
+    r.Set("exception_msg", _exceptionMsg)
     return nil
 }
 
 // ExceptionMsg Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncRequest) GetExceptionMsg() string {
-    return r.exceptionMsg
+    return r._exceptionMsg
 }
 // Status Setter
 // 0-异常状态 1-可恢复正常使用
-func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // VendorKey Setter
 // 供应商KEY
-func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetVendorKey(vendorKey string) error {
-    r.vendorKey = vendorKey
-    r.Set("vendor_key", vendorKey)
+func (r *AlibabaAliqinAxbVendorExceptionNoSyncRequest) SetVendorKey(_vendorKey string) error {
+    r._vendorKey = _vendorKey
+    r.Set("vendor_key", _vendorKey)
     return nil
 }
 
 // VendorKey Getter
 func (r AlibabaAliqinAxbVendorExceptionNoSyncRequest) GetVendorKey() string {
-    return r.vendorKey
+    return r._vendorKey
 }

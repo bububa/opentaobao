@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.contentdelete
 type YunosTvpubadminManageTopicContentdeleteRequest struct {
     model.Params
     // 节目id
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosTvpubadminManageTopicContentdeleteRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicContentdeleteRequest) GetApiParams() url.Value
 }
 // Id Setter
 // 节目id
-func (r *YunosTvpubadminManageTopicContentdeleteRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminManageTopicContentdeleteRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminManageTopicContentdeleteRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

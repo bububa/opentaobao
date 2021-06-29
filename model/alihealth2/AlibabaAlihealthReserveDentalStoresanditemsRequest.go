@@ -15,7 +15,7 @@ alibaba.alihealth.reserve.dental.storesanditems
 type AlibabaAlihealthReserveDentalStoresanditemsRequest struct {
     model.Params
     // 页码，每页100个门店，超过100个门店分页请求
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化AlibabaAlihealthReserveDentalStoresanditemsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiParams() url.V
 }
 // PageNo Setter
 // 页码，每页100个门店，超过100个门店分页请求
-func (r *AlibabaAlihealthReserveDentalStoresanditemsRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AlibabaAlihealthReserveDentalStoresanditemsRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

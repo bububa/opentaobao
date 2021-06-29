@@ -15,7 +15,7 @@ alibaba.ascm.settlement.invoice.synchronization.im
 type AlibabaAscmSettlementInvoiceSynchronizationImRequest struct {
     model.Params
     // im invoice xml
-    xmlDataSlot   string
+    _xmlDataSlot   string
 }
 
 // 初始化AlibabaAscmSettlementInvoiceSynchronizationImRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscmSettlementInvoiceSynchronizationImRequest) GetApiParams() url
 }
 // XmlDataSlot Setter
 // im invoice xml
-func (r *AlibabaAscmSettlementInvoiceSynchronizationImRequest) SetXmlDataSlot(xmlDataSlot string) error {
-    r.xmlDataSlot = xmlDataSlot
-    r.Set("xml_data_slot", xmlDataSlot)
+func (r *AlibabaAscmSettlementInvoiceSynchronizationImRequest) SetXmlDataSlot(_xmlDataSlot string) error {
+    r._xmlDataSlot = _xmlDataSlot
+    r.Set("xml_data_slot", _xmlDataSlot)
     return nil
 }
 
 // XmlDataSlot Getter
 func (r AlibabaAscmSettlementInvoiceSynchronizationImRequest) GetXmlDataSlot() string {
-    return r.xmlDataSlot
+    return r._xmlDataSlot
 }

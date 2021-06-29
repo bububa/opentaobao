@@ -15,7 +15,7 @@ GSK上传药店信息
 type AlibabaAlihealthAlidocDrugStoreAddRequest struct {
     model.Params
     // 新增药店
-    drugStoreAddTopRequest   *DrugStoreAddTopRequest
+    _drugStoreAddTopRequest   *DrugStoreAddTopRequest
 }
 
 // 初始化AlibabaAlihealthAlidocDrugStoreAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetApiParams() url.Values {
 }
 // DrugStoreAddTopRequest Setter
 // 新增药店
-func (r *AlibabaAlihealthAlidocDrugStoreAddRequest) SetDrugStoreAddTopRequest(drugStoreAddTopRequest *DrugStoreAddTopRequest) error {
-    r.drugStoreAddTopRequest = drugStoreAddTopRequest
-    r.Set("drug_store_add_top_request", drugStoreAddTopRequest)
+func (r *AlibabaAlihealthAlidocDrugStoreAddRequest) SetDrugStoreAddTopRequest(_drugStoreAddTopRequest *DrugStoreAddTopRequest) error {
+    r._drugStoreAddTopRequest = _drugStoreAddTopRequest
+    r.Set("drug_store_add_top_request", _drugStoreAddTopRequest)
     return nil
 }
 
 // DrugStoreAddTopRequest Getter
 func (r AlibabaAlihealthAlidocDrugStoreAddRequest) GetDrugStoreAddTopRequest() *DrugStoreAddTopRequest {
-    return r.drugStoreAddTopRequest
+    return r._drugStoreAddTopRequest
 }

@@ -15,7 +15,7 @@ IBP同步渠道接口
 type AlibabaTmallgenieScpPlanChannelGetRequest struct {
     model.Params
     // 扩展参数
-    requestExtendJson   string
+    _requestExtendJson   string
 }
 
 // 初始化AlibabaTmallgenieScpPlanChannelGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanChannelGetRequest) GetApiParams() url.Values {
 }
 // RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpPlanChannelGetRequest) SetRequestExtendJson(requestExtendJson string) error {
-    r.requestExtendJson = requestExtendJson
-    r.Set("request_extend_json", requestExtendJson)
+func (r *AlibabaTmallgenieScpPlanChannelGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+    r._requestExtendJson = _requestExtendJson
+    r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanChannelGetRequest) GetRequestExtendJson() string {
-    return r.requestExtendJson
+    return r._requestExtendJson
 }

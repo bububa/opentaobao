@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.modify.backfill
 type AlitripAgentFlightSellModifyBackfillRequest struct {
     model.Params
     // 入参
-    param   *ModifyBackFillRequestDto
+    _param   *ModifyBackFillRequestDto
 }
 
 // 初始化AlitripAgentFlightSellModifyBackfillRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellModifyBackfillRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlitripAgentFlightSellModifyBackfillRequest) SetParam(param *ModifyBackFillRequestDto) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlitripAgentFlightSellModifyBackfillRequest) SetParam(_param *ModifyBackFillRequestDto) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlitripAgentFlightSellModifyBackfillRequest) GetParam() *ModifyBackFillRequestDto {
-    return r.param
+    return r._param
 }

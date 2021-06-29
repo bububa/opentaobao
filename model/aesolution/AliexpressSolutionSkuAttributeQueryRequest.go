@@ -15,7 +15,7 @@ Query the sku attribute information belonged to a specific category, customized 
 type AliexpressSolutionSkuAttributeQueryRequest struct {
     model.Params
     // input parameters
-    querySkuAttributeInfoRequest   *SkuAttributeInfoQueryRequest
+    _querySkuAttributeInfoRequest   *SkuAttributeInfoQueryRequest
 }
 
 // 初始化AliexpressSolutionSkuAttributeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionSkuAttributeQueryRequest) GetApiParams() url.Values {
 }
 // QuerySkuAttributeInfoRequest Setter
 // input parameters
-func (r *AliexpressSolutionSkuAttributeQueryRequest) SetQuerySkuAttributeInfoRequest(querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
-    r.querySkuAttributeInfoRequest = querySkuAttributeInfoRequest
-    r.Set("query_sku_attribute_info_request", querySkuAttributeInfoRequest)
+func (r *AliexpressSolutionSkuAttributeQueryRequest) SetQuerySkuAttributeInfoRequest(_querySkuAttributeInfoRequest *SkuAttributeInfoQueryRequest) error {
+    r._querySkuAttributeInfoRequest = _querySkuAttributeInfoRequest
+    r.Set("query_sku_attribute_info_request", _querySkuAttributeInfoRequest)
     return nil
 }
 
 // QuerySkuAttributeInfoRequest Getter
 func (r AliexpressSolutionSkuAttributeQueryRequest) GetQuerySkuAttributeInfoRequest() *SkuAttributeInfoQueryRequest {
-    return r.querySkuAttributeInfoRequest
+    return r._querySkuAttributeInfoRequest
 }

@@ -15,13 +15,13 @@ tmall.supplychain.channel.product.price.get
 type TmallSupplychainChannelProductPriceGetRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
     // 区域价、指导价
-    priceType   int64
+    _priceType   int64
     // SKU ID
-    skuId   int64
+    _skuId   int64
     // 渠道ID（台湾市场/供销平台/大农业…..）
-    channelCode   int64
+    _channelCode   int64
 }
 
 // 初始化TmallSupplychainChannelProductPriceGetRequest对象
@@ -46,49 +46,49 @@ func (r TmallSupplychainChannelProductPriceGetRequest) GetApiParams() url.Values
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductPriceGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductPriceGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductPriceGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // PriceType Setter
 // 区域价、指导价
-func (r *TmallSupplychainChannelProductPriceGetRequest) SetPriceType(priceType int64) error {
-    r.priceType = priceType
-    r.Set("price_type", priceType)
+func (r *TmallSupplychainChannelProductPriceGetRequest) SetPriceType(_priceType int64) error {
+    r._priceType = _priceType
+    r.Set("price_type", _priceType)
     return nil
 }
 
 // PriceType Getter
 func (r TmallSupplychainChannelProductPriceGetRequest) GetPriceType() int64 {
-    return r.priceType
+    return r._priceType
 }
 // SkuId Setter
 // SKU ID
-func (r *TmallSupplychainChannelProductPriceGetRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TmallSupplychainChannelProductPriceGetRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TmallSupplychainChannelProductPriceGetRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // ChannelCode Setter
 // 渠道ID（台湾市场/供销平台/大农业…..）
-func (r *TmallSupplychainChannelProductPriceGetRequest) SetChannelCode(channelCode int64) error {
-    r.channelCode = channelCode
-    r.Set("channel_code", channelCode)
+func (r *TmallSupplychainChannelProductPriceGetRequest) SetChannelCode(_channelCode int64) error {
+    r._channelCode = _channelCode
+    r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
 func (r TmallSupplychainChannelProductPriceGetRequest) GetChannelCode() int64 {
-    return r.channelCode
+    return r._channelCode
 }

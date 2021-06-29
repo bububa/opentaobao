@@ -15,7 +15,7 @@ taobao.wireless.share.tpwd.query
 type TaobaoWirelessShareTpwdQueryRequest struct {
     model.Params
     // 淘口令
-    passwordContent   string
+    _passwordContent   string
 }
 
 // 初始化TaobaoWirelessShareTpwdQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWirelessShareTpwdQueryRequest) GetApiParams() url.Values {
 }
 // PasswordContent Setter
 // 淘口令
-func (r *TaobaoWirelessShareTpwdQueryRequest) SetPasswordContent(passwordContent string) error {
-    r.passwordContent = passwordContent
-    r.Set("password_content", passwordContent)
+func (r *TaobaoWirelessShareTpwdQueryRequest) SetPasswordContent(_passwordContent string) error {
+    r._passwordContent = _passwordContent
+    r.Set("password_content", _passwordContent)
     return nil
 }
 
 // PasswordContent Getter
 func (r TaobaoWirelessShareTpwdQueryRequest) GetPasswordContent() string {
-    return r.passwordContent
+    return r._passwordContent
 }

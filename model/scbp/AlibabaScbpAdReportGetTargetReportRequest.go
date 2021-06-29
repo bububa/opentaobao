@@ -15,9 +15,9 @@ alibaba.scbp.ad.report.get.target.report
 type AlibabaScbpAdReportGetTargetReportRequest struct {
     model.Params
     // 请求参数
-    targetReportOperation   *TargetReportOperationDto
+    _targetReportOperation   *TargetReportOperationDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdReportGetTargetReportRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdReportGetTargetReportRequest) GetApiParams() url.Values {
 }
 // TargetReportOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdReportGetTargetReportRequest) SetTargetReportOperation(targetReportOperation *TargetReportOperationDto) error {
-    r.targetReportOperation = targetReportOperation
-    r.Set("target_report_operation", targetReportOperation)
+func (r *AlibabaScbpAdReportGetTargetReportRequest) SetTargetReportOperation(_targetReportOperation *TargetReportOperationDto) error {
+    r._targetReportOperation = _targetReportOperation
+    r.Set("target_report_operation", _targetReportOperation)
     return nil
 }
 
 // TargetReportOperation Getter
 func (r AlibabaScbpAdReportGetTargetReportRequest) GetTargetReportOperation() *TargetReportOperationDto {
-    return r.targetReportOperation
+    return r._targetReportOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdReportGetTargetReportRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdReportGetTargetReportRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdReportGetTargetReportRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

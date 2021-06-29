@@ -15,13 +15,13 @@ alibaba.alihealth.drug.kyt.filedownload
 type AlibabaAlihealthDrugKytFiledownloadRequest struct {
     model.Params
     // 企业ID
-    refUserId   string
+    _refUserId   string
     // 文件地址
-    url   string
+    _url   string
     // 单据类型
-    billType   string
+    _billType   string
     // 单据队列ID
-    billQueueId   string
+    _billQueueId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytFiledownloadRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugKytFiledownloadRequest) GetApiParams() url.Values {
 }
 // RefUserId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetRefUserId(refUserId string) error {
-    r.refUserId = refUserId
-    r.Set("ref_user_id", refUserId)
+func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetRefUserId(_refUserId string) error {
+    r._refUserId = _refUserId
+    r.Set("ref_user_id", _refUserId)
     return nil
 }
 
 // RefUserId Getter
 func (r AlibabaAlihealthDrugKytFiledownloadRequest) GetRefUserId() string {
-    return r.refUserId
+    return r._refUserId
 }
 // Url Setter
 // 文件地址
-func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r AlibabaAlihealthDrugKytFiledownloadRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugKytFiledownloadRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }
 // BillQueueId Setter
 // 单据队列ID
-func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetBillQueueId(billQueueId string) error {
-    r.billQueueId = billQueueId
-    r.Set("bill_queue_id", billQueueId)
+func (r *AlibabaAlihealthDrugKytFiledownloadRequest) SetBillQueueId(_billQueueId string) error {
+    r._billQueueId = _billQueueId
+    r.Set("bill_queue_id", _billQueueId)
     return nil
 }
 
 // BillQueueId Getter
 func (r AlibabaAlihealthDrugKytFiledownloadRequest) GetBillQueueId() string {
-    return r.billQueueId
+    return r._billQueueId
 }

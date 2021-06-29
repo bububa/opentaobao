@@ -15,13 +15,13 @@ alibaba.alihealth.drugcode.center.receive.bound.status
 type AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest struct {
     model.Params
     // 项目id
-    projectId   int64
+    _projectId   int64
     // 临床研究机构id
-    hospitalRefEntId   string
+    _hospitalRefEntId   string
     // 状态 4:绑定成功 5:绑定失败
-    status   int64
+    _status   int64
     // 中央随机化系统id
-    centerRandomSysId   string
+    _centerRandomSysId   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) GetApiParams() 
 }
 // ProjectId Setter
 // 项目id
-func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetProjectId(projectId int64) error {
-    r.projectId = projectId
-    r.Set("project_id", projectId)
+func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetProjectId(_projectId int64) error {
+    r._projectId = _projectId
+    r.Set("project_id", _projectId)
     return nil
 }
 
 // ProjectId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) GetProjectId() int64 {
-    return r.projectId
+    return r._projectId
 }
 // HospitalRefEntId Setter
 // 临床研究机构id
-func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetHospitalRefEntId(hospitalRefEntId string) error {
-    r.hospitalRefEntId = hospitalRefEntId
-    r.Set("hospital_ref_ent_id", hospitalRefEntId)
+func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetHospitalRefEntId(_hospitalRefEntId string) error {
+    r._hospitalRefEntId = _hospitalRefEntId
+    r.Set("hospital_ref_ent_id", _hospitalRefEntId)
     return nil
 }
 
 // HospitalRefEntId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) GetHospitalRefEntId() string {
-    return r.hospitalRefEntId
+    return r._hospitalRefEntId
 }
 // Status Setter
 // 状态 4:绑定成功 5:绑定失败
-func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // CenterRandomSysId Setter
 // 中央随机化系统id
-func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetCenterRandomSysId(centerRandomSysId string) error {
-    r.centerRandomSysId = centerRandomSysId
-    r.Set("center_random_sys_id", centerRandomSysId)
+func (r *AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) SetCenterRandomSysId(_centerRandomSysId string) error {
+    r._centerRandomSysId = _centerRandomSysId
+    r.Set("center_random_sys_id", _centerRandomSysId)
     return nil
 }
 
 // CenterRandomSysId Getter
 func (r AlibabaAlihealthDrugcodeCenterReceiveBoundStatusRequest) GetCenterRandomSysId() string {
-    return r.centerRandomSysId
+    return r._centerRandomSysId
 }

@@ -15,7 +15,7 @@ alibaba.damai.maitix.order.query
 type AlibabaDamaiMaitixOrderQueryRequest struct {
     model.Params
     // 分销单查询入参
-    param   *MoaOrderQueryParam
+    _param   *MoaOrderQueryParam
 }
 
 // 初始化AlibabaDamaiMaitixOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 分销单查询入参
-func (r *AlibabaDamaiMaitixOrderQueryRequest) SetParam(param *MoaOrderQueryParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixOrderQueryRequest) SetParam(_param *MoaOrderQueryParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixOrderQueryRequest) GetParam() *MoaOrderQueryParam {
-    return r.param
+    return r._param
 }

@@ -15,9 +15,9 @@ taobao.qimen.trade.users.get
 type TaobaoQimenTradeUsersGetRequest struct {
     model.Params
     // 每页的数量
-    pageIndex   int64
+    _pageIndex   int64
     // 页数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoQimenTradeUsersGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQimenTradeUsersGetRequest) GetApiParams() url.Values {
 }
 // PageIndex Setter
 // 每页的数量
-func (r *TaobaoQimenTradeUsersGetRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoQimenTradeUsersGetRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoQimenTradeUsersGetRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 页数
-func (r *TaobaoQimenTradeUsersGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoQimenTradeUsersGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoQimenTradeUsersGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

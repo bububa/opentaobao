@@ -15,13 +15,13 @@ taobao.ailab.aicloud.top.feedlist.get
 type TaobaoAilabAicloudTopFeedlistGetRequest struct {
     model.Params
     // 用户信息
-    param0   *OpenBaseInfo
+    _param0   *OpenBaseInfo
     // 设备id
-    param1   string
+    _param1   string
     // 最后一条对话的key
-    param2   string
+    _param2   string
     // 单页的条目数，注意，是String类型！
-    param3   string
+    _param3   string
 }
 
 // 初始化TaobaoAilabAicloudTopFeedlistGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudTopFeedlistGetRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 用户信息
-func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam0(param0 *OpenBaseInfo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam0(_param0 *OpenBaseInfo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetRequest) GetParam0() *OpenBaseInfo {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam1(param1 string) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam1(_param1 string) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetRequest) GetParam1() string {
-    return r.param1
+    return r._param1
 }
 // Param2 Setter
 // 最后一条对话的key
-func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam2(param2 string) error {
-    r.param2 = param2
-    r.Set("param2", param2)
+func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam2(_param2 string) error {
+    r._param2 = _param2
+    r.Set("param2", _param2)
     return nil
 }
 
 // Param2 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetRequest) GetParam2() string {
-    return r.param2
+    return r._param2
 }
 // Param3 Setter
 // 单页的条目数，注意，是String类型！
-func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam3(param3 string) error {
-    r.param3 = param3
-    r.Set("param3", param3)
+func (r *TaobaoAilabAicloudTopFeedlistGetRequest) SetParam3(_param3 string) error {
+    r._param3 = _param3
+    r.Set("param3", _param3)
     return nil
 }
 
 // Param3 Getter
 func (r TaobaoAilabAicloudTopFeedlistGetRequest) GetParam3() string {
-    return r.param3
+    return r._param3
 }

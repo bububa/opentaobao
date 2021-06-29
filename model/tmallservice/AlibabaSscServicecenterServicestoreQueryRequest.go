@@ -15,7 +15,7 @@ alibaba.ssc.servicecenter.servicestore.query
 type AlibabaSscServicecenterServicestoreQueryRequest struct {
     model.Params
     // 天猫id
-    id   int64
+    _id   int64
 }
 
 // 初始化AlibabaSscServicecenterServicestoreQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSscServicecenterServicestoreQueryRequest) GetApiParams() url.Valu
 }
 // Id Setter
 // 天猫id
-func (r *AlibabaSscServicecenterServicestoreQueryRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaSscServicecenterServicestoreQueryRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaSscServicecenterServicestoreQueryRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

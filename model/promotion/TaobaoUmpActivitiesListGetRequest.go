@@ -15,7 +15,7 @@ taobao.ump.activities.list.get
 type TaobaoUmpActivitiesListGetRequest struct {
     model.Params
     // 营销活动id列表。
-    ids   []int64
+    _ids   []int64
 }
 
 // 初始化TaobaoUmpActivitiesListGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpActivitiesListGetRequest) GetApiParams() url.Values {
 }
 // Ids Setter
 // 营销活动id列表。
-func (r *TaobaoUmpActivitiesListGetRequest) SetIds(ids []int64) error {
-    r.ids = ids
-    r.Set("ids", ids)
+func (r *TaobaoUmpActivitiesListGetRequest) SetIds(_ids []int64) error {
+    r._ids = _ids
+    r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
 func (r TaobaoUmpActivitiesListGetRequest) GetIds() []int64 {
-    return r.ids
+    return r._ids
 }

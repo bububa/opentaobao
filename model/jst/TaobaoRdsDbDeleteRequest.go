@@ -15,9 +15,9 @@ taobao.rds.db.delete
 type TaobaoRdsDbDeleteRequest struct {
     model.Params
     // rds的实例名
-    instanceName   string
+    _instanceName   string
     // 数据库的name，可以通过 taobao.rds.db.get 获取
-    dbName   string
+    _dbName   string
 }
 
 // 初始化TaobaoRdsDbDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoRdsDbDeleteRequest) GetApiParams() url.Values {
 }
 // InstanceName Setter
 // rds的实例名
-func (r *TaobaoRdsDbDeleteRequest) SetInstanceName(instanceName string) error {
-    r.instanceName = instanceName
-    r.Set("instance_name", instanceName)
+func (r *TaobaoRdsDbDeleteRequest) SetInstanceName(_instanceName string) error {
+    r._instanceName = _instanceName
+    r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
 func (r TaobaoRdsDbDeleteRequest) GetInstanceName() string {
-    return r.instanceName
+    return r._instanceName
 }
 // DbName Setter
 // 数据库的name，可以通过 taobao.rds.db.get 获取
-func (r *TaobaoRdsDbDeleteRequest) SetDbName(dbName string) error {
-    r.dbName = dbName
-    r.Set("db_name", dbName)
+func (r *TaobaoRdsDbDeleteRequest) SetDbName(_dbName string) error {
+    r._dbName = _dbName
+    r.Set("db_name", _dbName)
     return nil
 }
 
 // DbName Getter
 func (r TaobaoRdsDbDeleteRequest) GetDbName() string {
-    return r.dbName
+    return r._dbName
 }

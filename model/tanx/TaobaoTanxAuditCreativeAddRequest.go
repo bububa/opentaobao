@@ -15,13 +15,13 @@ taobao.tanx.audit.creative.add
 type TaobaoTanxAuditCreativeAddRequest struct {
     model.Params
     // DSP的memberId
-    memberId   int64
+    _memberId   int64
     // dsp用户身份认证的TOKEN
-    token   string
+    _token   string
     // 当前时间戳，1970-01-01后的秒数
-    signTime   int64
+    _signTime   int64
     // 预审核创意对象
-    creative   *CreativeParamDTO
+    _creative   *CreativeParamDTO
 }
 
 // 初始化TaobaoTanxAuditCreativeAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTanxAuditCreativeAddRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // DSP的memberId
-func (r *TaobaoTanxAuditCreativeAddRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxAuditCreativeAddRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxAuditCreativeAddRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp用户身份认证的TOKEN
-func (r *TaobaoTanxAuditCreativeAddRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxAuditCreativeAddRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxAuditCreativeAddRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
-func (r *TaobaoTanxAuditCreativeAddRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxAuditCreativeAddRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxAuditCreativeAddRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // Creative Setter
 // 预审核创意对象
-func (r *TaobaoTanxAuditCreativeAddRequest) SetCreative(creative *CreativeParamDTO) error {
-    r.creative = creative
-    r.Set("creative", creative)
+func (r *TaobaoTanxAuditCreativeAddRequest) SetCreative(_creative *CreativeParamDTO) error {
+    r._creative = _creative
+    r.Set("creative", _creative)
     return nil
 }
 
 // Creative Getter
 func (r TaobaoTanxAuditCreativeAddRequest) GetCreative() *CreativeParamDTO {
-    return r.creative
+    return r._creative
 }

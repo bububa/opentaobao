@@ -15,17 +15,17 @@ alibaba.wdk.item.memberprice.update
 type AlibabaWdkItemMemberpriceUpdateRequest struct {
     model.Params
     // 门店ID
-    storeId   string
+    _storeId   string
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 售价，单位分，售价会员价至少填一个
-    skuPrice   int64
+    _skuPrice   int64
     // 会员价，单位分
-    skuMemberPrice   int64
+    _skuMemberPrice   int64
     // 是否清空会员价
-    cleanSkuMemberPrice   bool
+    _cleanSkuMemberPrice   bool
     // 时间戳
-    timeStamp   int64
+    _timeStamp   int64
 }
 
 // 初始化AlibabaWdkItemMemberpriceUpdateRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaWdkItemMemberpriceUpdateRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // SkuPrice Setter
 // 售价，单位分，售价会员价至少填一个
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuPrice(skuPrice int64) error {
-    r.skuPrice = skuPrice
-    r.Set("sku_price", skuPrice)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuPrice(_skuPrice int64) error {
+    r._skuPrice = _skuPrice
+    r.Set("sku_price", _skuPrice)
     return nil
 }
 
 // SkuPrice Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetSkuPrice() int64 {
-    return r.skuPrice
+    return r._skuPrice
 }
 // SkuMemberPrice Setter
 // 会员价，单位分
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuMemberPrice(skuMemberPrice int64) error {
-    r.skuMemberPrice = skuMemberPrice
-    r.Set("sku_member_price", skuMemberPrice)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetSkuMemberPrice(_skuMemberPrice int64) error {
+    r._skuMemberPrice = _skuMemberPrice
+    r.Set("sku_member_price", _skuMemberPrice)
     return nil
 }
 
 // SkuMemberPrice Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetSkuMemberPrice() int64 {
-    return r.skuMemberPrice
+    return r._skuMemberPrice
 }
 // CleanSkuMemberPrice Setter
 // 是否清空会员价
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetCleanSkuMemberPrice(cleanSkuMemberPrice bool) error {
-    r.cleanSkuMemberPrice = cleanSkuMemberPrice
-    r.Set("clean_sku_member_price", cleanSkuMemberPrice)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetCleanSkuMemberPrice(_cleanSkuMemberPrice bool) error {
+    r._cleanSkuMemberPrice = _cleanSkuMemberPrice
+    r.Set("clean_sku_member_price", _cleanSkuMemberPrice)
     return nil
 }
 
 // CleanSkuMemberPrice Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetCleanSkuMemberPrice() bool {
-    return r.cleanSkuMemberPrice
+    return r._cleanSkuMemberPrice
 }
 // TimeStamp Setter
 // 时间戳
-func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetTimeStamp(timeStamp int64) error {
-    r.timeStamp = timeStamp
-    r.Set("time_stamp", timeStamp)
+func (r *AlibabaWdkItemMemberpriceUpdateRequest) SetTimeStamp(_timeStamp int64) error {
+    r._timeStamp = _timeStamp
+    r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
 func (r AlibabaWdkItemMemberpriceUpdateRequest) GetTimeStamp() int64 {
-    return r.timeStamp
+    return r._timeStamp
 }

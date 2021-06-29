@@ -15,9 +15,9 @@ alibaba.einvoice.tax.opt.esignresult.query
 type AlibabaEinvoiceTaxOptEsignresultQueryRequest struct {
     model.Params
     // 业务方编码
-    employerCode   string
+    _employerCode   string
     // 用户在业务方平台的userid
-    identificationInBelongingEmployer   string
+    _identificationInBelongingEmployer   string
 }
 
 // 初始化AlibabaEinvoiceTaxOptEsignresultQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetApiParams() url.Values 
 }
 // EmployerCode Setter
 // 业务方编码
-func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetEmployerCode(employerCode string) error {
-    r.employerCode = employerCode
-    r.Set("employer_code", employerCode)
+func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetEmployerCode(_employerCode string) error {
+    r._employerCode = _employerCode
+    r.Set("employer_code", _employerCode)
     return nil
 }
 
 // EmployerCode Getter
 func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetEmployerCode() string {
-    return r.employerCode
+    return r._employerCode
 }
 // IdentificationInBelongingEmployer Setter
 // 用户在业务方平台的userid
-func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetIdentificationInBelongingEmployer(identificationInBelongingEmployer string) error {
-    r.identificationInBelongingEmployer = identificationInBelongingEmployer
-    r.Set("identification_in_belonging_employer", identificationInBelongingEmployer)
+func (r *AlibabaEinvoiceTaxOptEsignresultQueryRequest) SetIdentificationInBelongingEmployer(_identificationInBelongingEmployer string) error {
+    r._identificationInBelongingEmployer = _identificationInBelongingEmployer
+    r.Set("identification_in_belonging_employer", _identificationInBelongingEmployer)
     return nil
 }
 
 // IdentificationInBelongingEmployer Getter
 func (r AlibabaEinvoiceTaxOptEsignresultQueryRequest) GetIdentificationInBelongingEmployer() string {
-    return r.identificationInBelongingEmployer
+    return r._identificationInBelongingEmployer
 }

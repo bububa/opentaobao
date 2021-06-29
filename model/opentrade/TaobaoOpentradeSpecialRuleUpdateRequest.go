@@ -15,9 +15,9 @@ taobao.opentrade.special.rule.update
 type TaobaoOpentradeSpecialRuleUpdateRequest struct {
     model.Params
     // 最大限购数量
-    limitNum   int64
+    _limitNum   int64
     // 商品id列表
-    itemIds   []int64
+    _itemIds   []int64
 }
 
 // 初始化TaobaoOpentradeSpecialRuleUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpentradeSpecialRuleUpdateRequest) GetApiParams() url.Values {
 }
 // LimitNum Setter
 // 最大限购数量
-func (r *TaobaoOpentradeSpecialRuleUpdateRequest) SetLimitNum(limitNum int64) error {
-    r.limitNum = limitNum
-    r.Set("limit_num", limitNum)
+func (r *TaobaoOpentradeSpecialRuleUpdateRequest) SetLimitNum(_limitNum int64) error {
+    r._limitNum = _limitNum
+    r.Set("limit_num", _limitNum)
     return nil
 }
 
 // LimitNum Getter
 func (r TaobaoOpentradeSpecialRuleUpdateRequest) GetLimitNum() int64 {
-    return r.limitNum
+    return r._limitNum
 }
 // ItemIds Setter
 // 商品id列表
-func (r *TaobaoOpentradeSpecialRuleUpdateRequest) SetItemIds(itemIds []int64) error {
-    r.itemIds = itemIds
-    r.Set("item_ids", itemIds)
+func (r *TaobaoOpentradeSpecialRuleUpdateRequest) SetItemIds(_itemIds []int64) error {
+    r._itemIds = _itemIds
+    r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
 func (r TaobaoOpentradeSpecialRuleUpdateRequest) GetItemIds() []int64 {
-    return r.itemIds
+    return r._itemIds
 }

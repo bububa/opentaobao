@@ -15,7 +15,7 @@ alibaba.lst.logistics.thirdpart.company.list
 type AlibabaLstLogisticsThirdpartCompanyListRequest struct {
     model.Params
     // 入参
-    query   *LstLogisticsCompanyQuery
+    _query   *LstLogisticsCompanyQuery
 }
 
 // 初始化AlibabaLstLogisticsThirdpartCompanyListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsThirdpartCompanyListRequest) GetApiParams() url.Value
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstLogisticsThirdpartCompanyListRequest) SetQuery(query *LstLogisticsCompanyQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstLogisticsThirdpartCompanyListRequest) SetQuery(_query *LstLogisticsCompanyQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstLogisticsThirdpartCompanyListRequest) GetQuery() *LstLogisticsCompanyQuery {
-    return r.query
+    return r._query
 }

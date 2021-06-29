@@ -15,7 +15,7 @@ alibaba.wdk.merchant.routing.register
 type AlibabaWdkMerchantRoutingRegisterRequest struct {
     model.Params
     // 接口入参
-    merchantRoutingInfoRegister   *MerchantRoutingInfoRegisterDo
+    _merchantRoutingInfoRegister   *MerchantRoutingInfoRegisterDo
 }
 
 // 初始化AlibabaWdkMerchantRoutingRegisterRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMerchantRoutingRegisterRequest) GetApiParams() url.Values {
 }
 // MerchantRoutingInfoRegister Setter
 // 接口入参
-func (r *AlibabaWdkMerchantRoutingRegisterRequest) SetMerchantRoutingInfoRegister(merchantRoutingInfoRegister *MerchantRoutingInfoRegisterDo) error {
-    r.merchantRoutingInfoRegister = merchantRoutingInfoRegister
-    r.Set("merchant_routing_info_register", merchantRoutingInfoRegister)
+func (r *AlibabaWdkMerchantRoutingRegisterRequest) SetMerchantRoutingInfoRegister(_merchantRoutingInfoRegister *MerchantRoutingInfoRegisterDo) error {
+    r._merchantRoutingInfoRegister = _merchantRoutingInfoRegister
+    r.Set("merchant_routing_info_register", _merchantRoutingInfoRegister)
     return nil
 }
 
 // MerchantRoutingInfoRegister Getter
 func (r AlibabaWdkMerchantRoutingRegisterRequest) GetMerchantRoutingInfoRegister() *MerchantRoutingInfoRegisterDo {
-    return r.merchantRoutingInfoRegister
+    return r._merchantRoutingInfoRegister
 }

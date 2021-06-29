@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.refund.complete
 type AlibabaTclsAelophyMerchantChannelRefundCompleteRequest struct {
     model.Params
     // 请求对象
-    refundCompleteInfo   *RefundCompleteInfo
+    _refundCompleteInfo   *RefundCompleteInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelRefundCompleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetApiParams() u
 }
 // RefundCompleteInfo Setter
 // 请求对象
-func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) SetRefundCompleteInfo(refundCompleteInfo *RefundCompleteInfo) error {
-    r.refundCompleteInfo = refundCompleteInfo
-    r.Set("refund_complete_info", refundCompleteInfo)
+func (r *AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) SetRefundCompleteInfo(_refundCompleteInfo *RefundCompleteInfo) error {
+    r._refundCompleteInfo = _refundCompleteInfo
+    r.Set("refund_complete_info", _refundCompleteInfo)
     return nil
 }
 
 // RefundCompleteInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCompleteRequest) GetRefundCompleteInfo() *RefundCompleteInfo {
-    return r.refundCompleteInfo
+    return r._refundCompleteInfo
 }

@@ -15,7 +15,7 @@ alibaba.wdk.series.sku.add
 type AlibabaWdkSeriesSkuAddRequest struct {
     model.Params
     // 系列品添加商品请求
-    seriesSkus   *SeriesSkuRequest
+    _seriesSkus   *SeriesSkuRequest
 }
 
 // 初始化AlibabaWdkSeriesSkuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesSkuAddRequest) GetApiParams() url.Values {
 }
 // SeriesSkus Setter
 // 系列品添加商品请求
-func (r *AlibabaWdkSeriesSkuAddRequest) SetSeriesSkus(seriesSkus *SeriesSkuRequest) error {
-    r.seriesSkus = seriesSkus
-    r.Set("series_skus", seriesSkus)
+func (r *AlibabaWdkSeriesSkuAddRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+    r._seriesSkus = _seriesSkus
+    r.Set("series_skus", _seriesSkus)
     return nil
 }
 
 // SeriesSkus Getter
 func (r AlibabaWdkSeriesSkuAddRequest) GetSeriesSkus() *SeriesSkuRequest {
-    return r.seriesSkus
+    return r._seriesSkus
 }

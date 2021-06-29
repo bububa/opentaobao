@@ -15,15 +15,15 @@ alibaba.happytrip.taxi.order.destination.modify
 type AlibabaHappytripTaxiOrderDestinationModifyRequest struct {
     model.Params
     // 订单id
-    orderId   string
+    _orderId   string
     // 目的地经度
-    tlng   string
+    _tlng   string
     // 目的地纬度
-    tlat   string
+    _tlat   string
     // 目的地名称(最多50个字)
-    endName   string
+    _endName   string
     // 目的地详细地址(最多100个字)
-    endAddress   string
+    _endAddress   string
 }
 
 // 初始化AlibabaHappytripTaxiOrderDestinationModifyRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetApiParams() url.Va
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Tlng Setter
 // 目的地经度
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlng(tlng string) error {
-    r.tlng = tlng
-    r.Set("tlng", tlng)
+func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlng(_tlng string) error {
+    r._tlng = _tlng
+    r.Set("tlng", _tlng)
     return nil
 }
 
 // Tlng Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetTlng() string {
-    return r.tlng
+    return r._tlng
 }
 // Tlat Setter
 // 目的地纬度
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlat(tlat string) error {
-    r.tlat = tlat
-    r.Set("tlat", tlat)
+func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetTlat(_tlat string) error {
+    r._tlat = _tlat
+    r.Set("tlat", _tlat)
     return nil
 }
 
 // Tlat Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetTlat() string {
-    return r.tlat
+    return r._tlat
 }
 // EndName Setter
 // 目的地名称(最多50个字)
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndName(endName string) error {
-    r.endName = endName
-    r.Set("end_name", endName)
+func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndName(_endName string) error {
+    r._endName = _endName
+    r.Set("end_name", _endName)
     return nil
 }
 
 // EndName Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetEndName() string {
-    return r.endName
+    return r._endName
 }
 // EndAddress Setter
 // 目的地详细地址(最多100个字)
-func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndAddress(endAddress string) error {
-    r.endAddress = endAddress
-    r.Set("end_address", endAddress)
+func (r *AlibabaHappytripTaxiOrderDestinationModifyRequest) SetEndAddress(_endAddress string) error {
+    r._endAddress = _endAddress
+    r.Set("end_address", _endAddress)
     return nil
 }
 
 // EndAddress Getter
 func (r AlibabaHappytripTaxiOrderDestinationModifyRequest) GetEndAddress() string {
-    return r.endAddress
+    return r._endAddress
 }

@@ -15,9 +15,9 @@ tmall.traceplatform.ccic.tracecode.check
 type TmallTraceplatformCcicTracecodeCheckRequest struct {
     model.Params
     // 15为溯源短码，必选
-    shortTracecode   string
+    _shortTracecode   string
     // 6位暗码，必选
-    hideCode   string
+    _hideCode   string
 }
 
 // 初始化TmallTraceplatformCcicTracecodeCheckRequest对象
@@ -42,25 +42,25 @@ func (r TmallTraceplatformCcicTracecodeCheckRequest) GetApiParams() url.Values {
 }
 // ShortTracecode Setter
 // 15为溯源短码，必选
-func (r *TmallTraceplatformCcicTracecodeCheckRequest) SetShortTracecode(shortTracecode string) error {
-    r.shortTracecode = shortTracecode
-    r.Set("short_tracecode", shortTracecode)
+func (r *TmallTraceplatformCcicTracecodeCheckRequest) SetShortTracecode(_shortTracecode string) error {
+    r._shortTracecode = _shortTracecode
+    r.Set("short_tracecode", _shortTracecode)
     return nil
 }
 
 // ShortTracecode Getter
 func (r TmallTraceplatformCcicTracecodeCheckRequest) GetShortTracecode() string {
-    return r.shortTracecode
+    return r._shortTracecode
 }
 // HideCode Setter
 // 6位暗码，必选
-func (r *TmallTraceplatformCcicTracecodeCheckRequest) SetHideCode(hideCode string) error {
-    r.hideCode = hideCode
-    r.Set("hide_code", hideCode)
+func (r *TmallTraceplatformCcicTracecodeCheckRequest) SetHideCode(_hideCode string) error {
+    r._hideCode = _hideCode
+    r.Set("hide_code", _hideCode)
     return nil
 }
 
 // HideCode Getter
 func (r TmallTraceplatformCcicTracecodeCheckRequest) GetHideCode() string {
-    return r.hideCode
+    return r._hideCode
 }

@@ -15,7 +15,7 @@ taobao.qt.report.delete
 type TaobaoQtReportDeleteRequest struct {
     model.Params
     // 一个质检服务唯一标识质量检验单的编号
-    qtCode   string
+    _qtCode   string
 }
 
 // 初始化TaobaoQtReportDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQtReportDeleteRequest) GetApiParams() url.Values {
 }
 // QtCode Setter
 // 一个质检服务唯一标识质量检验单的编号
-func (r *TaobaoQtReportDeleteRequest) SetQtCode(qtCode string) error {
-    r.qtCode = qtCode
-    r.Set("qt_code", qtCode)
+func (r *TaobaoQtReportDeleteRequest) SetQtCode(_qtCode string) error {
+    r._qtCode = _qtCode
+    r.Set("qt_code", _qtCode)
     return nil
 }
 
 // QtCode Getter
 func (r TaobaoQtReportDeleteRequest) GetQtCode() string {
-    return r.qtCode
+    return r._qtCode
 }

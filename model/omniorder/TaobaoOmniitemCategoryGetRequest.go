@@ -15,7 +15,7 @@ taobao.omniitem.category.get
 type TaobaoOmniitemCategoryGetRequest struct {
     model.Params
     // 全渠道商品类目ID，不填表示获取所有全渠道商品类目信息
-    categoryId   int64
+    _categoryId   int64
 }
 
 // 初始化TaobaoOmniitemCategoryGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniitemCategoryGetRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 全渠道商品类目ID，不填表示获取所有全渠道商品类目信息
-func (r *TaobaoOmniitemCategoryGetRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TaobaoOmniitemCategoryGetRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TaobaoOmniitemCategoryGetRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }

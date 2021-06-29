@@ -15,13 +15,13 @@ alibaba.dt.tmllcar.leadsinfo
 type AlibabaDtTmllcarLeadsinfoRequest struct {
     model.Params
     // shopcode
-    shopCode   string
+    _shopCode   string
     // app_name
-    appName   string
+    _appName   string
     // name
-    name   string
+    _name   string
     // pssword
-    password   string
+    _password   string
 }
 
 // 初始化AlibabaDtTmllcarLeadsinfoRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaDtTmllcarLeadsinfoRequest) GetApiParams() url.Values {
 }
 // ShopCode Setter
 // shopcode
-func (r *AlibabaDtTmllcarLeadsinfoRequest) SetShopCode(shopCode string) error {
-    r.shopCode = shopCode
-    r.Set("shop_code", shopCode)
+func (r *AlibabaDtTmllcarLeadsinfoRequest) SetShopCode(_shopCode string) error {
+    r._shopCode = _shopCode
+    r.Set("shop_code", _shopCode)
     return nil
 }
 
 // ShopCode Getter
 func (r AlibabaDtTmllcarLeadsinfoRequest) GetShopCode() string {
-    return r.shopCode
+    return r._shopCode
 }
 // AppName Setter
 // app_name
-func (r *AlibabaDtTmllcarLeadsinfoRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaDtTmllcarLeadsinfoRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaDtTmllcarLeadsinfoRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // Name Setter
 // name
-func (r *AlibabaDtTmllcarLeadsinfoRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaDtTmllcarLeadsinfoRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaDtTmllcarLeadsinfoRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Password Setter
 // pssword
-func (r *AlibabaDtTmllcarLeadsinfoRequest) SetPassword(password string) error {
-    r.password = password
-    r.Set("password", password)
+func (r *AlibabaDtTmllcarLeadsinfoRequest) SetPassword(_password string) error {
+    r._password = _password
+    r.Set("password", _password)
     return nil
 }
 
 // Password Getter
 func (r AlibabaDtTmllcarLeadsinfoRequest) GetPassword() string {
-    return r.password
+    return r._password
 }

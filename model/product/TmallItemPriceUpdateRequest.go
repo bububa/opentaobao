@@ -15,13 +15,13 @@ tmall.item.price.update
 type TmallItemPriceUpdateRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 被更新商品价格
-    itemPrice   float64
+    _itemPrice   float64
     // 更新SKU价格时候的SKU价格对象；如果没有SKU或者不更新SKU价格，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！
-    skuPrices   []UpdateSkuPrice
+    _skuPrices   []UpdateSkuPrice
     // 商品价格更新时候的可选参数
-    options   *UpdateItemPriceOption
+    _options   *UpdateItemPriceOption
 }
 
 // 初始化TmallItemPriceUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TmallItemPriceUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TmallItemPriceUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemPriceUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemPriceUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // ItemPrice Setter
 // 被更新商品价格
-func (r *TmallItemPriceUpdateRequest) SetItemPrice(itemPrice float64) error {
-    r.itemPrice = itemPrice
-    r.Set("item_price", itemPrice)
+func (r *TmallItemPriceUpdateRequest) SetItemPrice(_itemPrice float64) error {
+    r._itemPrice = _itemPrice
+    r.Set("item_price", _itemPrice)
     return nil
 }
 
 // ItemPrice Getter
 func (r TmallItemPriceUpdateRequest) GetItemPrice() float64 {
-    return r.itemPrice
+    return r._itemPrice
 }
 // SkuPrices Setter
 // 更新SKU价格时候的SKU价格对象；如果没有SKU或者不更新SKU价格，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！
-func (r *TmallItemPriceUpdateRequest) SetSkuPrices(skuPrices []UpdateSkuPrice) error {
-    r.skuPrices = skuPrices
-    r.Set("sku_prices", skuPrices)
+func (r *TmallItemPriceUpdateRequest) SetSkuPrices(_skuPrices []UpdateSkuPrice) error {
+    r._skuPrices = _skuPrices
+    r.Set("sku_prices", _skuPrices)
     return nil
 }
 
 // SkuPrices Getter
 func (r TmallItemPriceUpdateRequest) GetSkuPrices() []UpdateSkuPrice {
-    return r.skuPrices
+    return r._skuPrices
 }
 // Options Setter
 // 商品价格更新时候的可选参数
-func (r *TmallItemPriceUpdateRequest) SetOptions(options *UpdateItemPriceOption) error {
-    r.options = options
-    r.Set("options", options)
+func (r *TmallItemPriceUpdateRequest) SetOptions(_options *UpdateItemPriceOption) error {
+    r._options = _options
+    r.Set("options", _options)
     return nil
 }
 
 // Options Getter
 func (r TmallItemPriceUpdateRequest) GetOptions() *UpdateItemPriceOption {
-    return r.options
+    return r._options
 }

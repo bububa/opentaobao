@@ -15,7 +15,7 @@ alibaba.alsc.crm.marketing.issue.voucher
 type AlibabaAlscCrmMarketingIssueVoucherRequest struct {
     model.Params
     // 参数
-    paramIssueVoucherReq   *IssueVoucherReq
+    _paramIssueVoucherReq   *IssueVoucherReq
 }
 
 // 初始化AlibabaAlscCrmMarketingIssueVoucherRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmMarketingIssueVoucherRequest) GetApiParams() url.Values {
 }
 // ParamIssueVoucherReq Setter
 // 参数
-func (r *AlibabaAlscCrmMarketingIssueVoucherRequest) SetParamIssueVoucherReq(paramIssueVoucherReq *IssueVoucherReq) error {
-    r.paramIssueVoucherReq = paramIssueVoucherReq
-    r.Set("param_issue_voucher_req", paramIssueVoucherReq)
+func (r *AlibabaAlscCrmMarketingIssueVoucherRequest) SetParamIssueVoucherReq(_paramIssueVoucherReq *IssueVoucherReq) error {
+    r._paramIssueVoucherReq = _paramIssueVoucherReq
+    r.Set("param_issue_voucher_req", _paramIssueVoucherReq)
     return nil
 }
 
 // ParamIssueVoucherReq Getter
 func (r AlibabaAlscCrmMarketingIssueVoucherRequest) GetParamIssueVoucherReq() *IssueVoucherReq {
-    return r.paramIssueVoucherReq
+    return r._paramIssueVoucherReq
 }

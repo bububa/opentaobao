@@ -15,7 +15,7 @@ taobao.alitrip.ie.agent.refund.new.multiplerefunds
 type TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest struct {
     model.Params
     // 请求参数
-    paramRefundOrderMultipleRefundsRq   *RefundOrderMultipleRefundsRq
+    _paramRefundOrderMultipleRefundsRq   *RefundOrderMultipleRefundsRq
 }
 
 // 初始化TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest) GetApiParams() url.
 }
 // ParamRefundOrderMultipleRefundsRq Setter
 // 请求参数
-func (r *TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest) SetParamRefundOrderMultipleRefundsRq(paramRefundOrderMultipleRefundsRq *RefundOrderMultipleRefundsRq) error {
-    r.paramRefundOrderMultipleRefundsRq = paramRefundOrderMultipleRefundsRq
-    r.Set("param_refund_order_multiple_refunds_rq", paramRefundOrderMultipleRefundsRq)
+func (r *TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest) SetParamRefundOrderMultipleRefundsRq(_paramRefundOrderMultipleRefundsRq *RefundOrderMultipleRefundsRq) error {
+    r._paramRefundOrderMultipleRefundsRq = _paramRefundOrderMultipleRefundsRq
+    r.Set("param_refund_order_multiple_refunds_rq", _paramRefundOrderMultipleRefundsRq)
     return nil
 }
 
 // ParamRefundOrderMultipleRefundsRq Getter
 func (r TaobaoAlitripIeAgentRefundNewMultiplerefundsRequest) GetParamRefundOrderMultipleRefundsRq() *RefundOrderMultipleRefundsRq {
-    return r.paramRefundOrderMultipleRefundsRq
+    return r._paramRefundOrderMultipleRefundsRq
 }

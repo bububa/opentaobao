@@ -15,7 +15,7 @@ taobao.qimen.items.tag.query
 type TaobaoQimenItemsTagQueryRequest struct {
     model.Params
     // 线上淘宝商品ID，long，必填
-    itemIds   []int64
+    _itemIds   []int64
 }
 
 // 初始化TaobaoQimenItemsTagQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenItemsTagQueryRequest) GetApiParams() url.Values {
 }
 // ItemIds Setter
 // 线上淘宝商品ID，long，必填
-func (r *TaobaoQimenItemsTagQueryRequest) SetItemIds(itemIds []int64) error {
-    r.itemIds = itemIds
-    r.Set("item_ids", itemIds)
+func (r *TaobaoQimenItemsTagQueryRequest) SetItemIds(_itemIds []int64) error {
+    r._itemIds = _itemIds
+    r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
 func (r TaobaoQimenItemsTagQueryRequest) GetItemIds() []int64 {
-    return r.itemIds
+    return r._itemIds
 }

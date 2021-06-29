@@ -15,11 +15,11 @@ tmall.msf.receive
 type TmallMsfReceiveRequest struct {
     model.Params
     // 1
-    shopId   string
+    _shopId   string
     // 1
-    bizType   string
+    _bizType   string
     // 1
-    code   string
+    _code   string
 }
 
 // 初始化TmallMsfReceiveRequest对象
@@ -44,37 +44,37 @@ func (r TmallMsfReceiveRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 1
-func (r *TmallMsfReceiveRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TmallMsfReceiveRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TmallMsfReceiveRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // BizType Setter
 // 1
-func (r *TmallMsfReceiveRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallMsfReceiveRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallMsfReceiveRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // Code Setter
 // 1
-func (r *TmallMsfReceiveRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TmallMsfReceiveRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TmallMsfReceiveRequest) GetCode() string {
-    return r.code
+    return r._code
 }

@@ -15,9 +15,9 @@ alibaba.jym.requirement.orders.operation.notify
 type AlibabaJymRequirementOrdersOperationNotifyRequest struct {
     model.Params
     // 需求订单操作
-    operation   int64
+    _operation   int64
     // 需求订单id
-    reqmntOrderId   string
+    _reqmntOrderId   string
 }
 
 // 初始化AlibabaJymRequirementOrdersOperationNotifyRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaJymRequirementOrdersOperationNotifyRequest) GetApiParams() url.Va
 }
 // Operation Setter
 // 需求订单操作
-func (r *AlibabaJymRequirementOrdersOperationNotifyRequest) SetOperation(operation int64) error {
-    r.operation = operation
-    r.Set("operation", operation)
+func (r *AlibabaJymRequirementOrdersOperationNotifyRequest) SetOperation(_operation int64) error {
+    r._operation = _operation
+    r.Set("operation", _operation)
     return nil
 }
 
 // Operation Getter
 func (r AlibabaJymRequirementOrdersOperationNotifyRequest) GetOperation() int64 {
-    return r.operation
+    return r._operation
 }
 // ReqmntOrderId Setter
 // 需求订单id
-func (r *AlibabaJymRequirementOrdersOperationNotifyRequest) SetReqmntOrderId(reqmntOrderId string) error {
-    r.reqmntOrderId = reqmntOrderId
-    r.Set("reqmnt_order_id", reqmntOrderId)
+func (r *AlibabaJymRequirementOrdersOperationNotifyRequest) SetReqmntOrderId(_reqmntOrderId string) error {
+    r._reqmntOrderId = _reqmntOrderId
+    r.Set("reqmnt_order_id", _reqmntOrderId)
     return nil
 }
 
 // ReqmntOrderId Getter
 func (r AlibabaJymRequirementOrdersOperationNotifyRequest) GetReqmntOrderId() string {
-    return r.reqmntOrderId
+    return r._reqmntOrderId
 }

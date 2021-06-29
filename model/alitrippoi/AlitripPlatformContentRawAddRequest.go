@@ -15,7 +15,7 @@ alitrip.platform.content.raw.add
 type AlitripPlatformContentRawAddRequest struct {
     model.Params
     // 写入入参
-    fliggyContentRequest   *FliggyContentRequest
+    _fliggyContentRequest   *FliggyContentRequest
 }
 
 // 初始化AlitripPlatformContentRawAddRequest对象
@@ -40,13 +40,13 @@ func (r AlitripPlatformContentRawAddRequest) GetApiParams() url.Values {
 }
 // FliggyContentRequest Setter
 // 写入入参
-func (r *AlitripPlatformContentRawAddRequest) SetFliggyContentRequest(fliggyContentRequest *FliggyContentRequest) error {
-    r.fliggyContentRequest = fliggyContentRequest
-    r.Set("fliggy_content_request", fliggyContentRequest)
+func (r *AlitripPlatformContentRawAddRequest) SetFliggyContentRequest(_fliggyContentRequest *FliggyContentRequest) error {
+    r._fliggyContentRequest = _fliggyContentRequest
+    r.Set("fliggy_content_request", _fliggyContentRequest)
     return nil
 }
 
 // FliggyContentRequest Getter
 func (r AlitripPlatformContentRawAddRequest) GetFliggyContentRequest() *FliggyContentRequest {
-    return r.fliggyContentRequest
+    return r._fliggyContentRequest
 }

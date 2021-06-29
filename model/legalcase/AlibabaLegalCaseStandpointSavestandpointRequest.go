@@ -15,15 +15,15 @@ alibaba.legal.case.standpoint.savestandpoint
 type AlibabaLegalCaseStandpointSavestandpointRequest struct {
     model.Params
     // 答辩口径
-    defenseCaliber   string
+    _defenseCaliber   string
     // 口径描述
-    standpointDesc   string
+    _standpointDesc   string
     // 案件id
-    suitId   int64
+    _suitId   int64
     // 委托id
-    entrustId   int64
+    _entrustId   int64
     // 提交人
-    submitPeople   string
+    _submitPeople   string
 }
 
 // 初始化AlibabaLegalCaseStandpointSavestandpointRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetApiParams() url.Valu
 }
 // DefenseCaliber Setter
 // 答辩口径
-func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetDefenseCaliber(defenseCaliber string) error {
-    r.defenseCaliber = defenseCaliber
-    r.Set("defense_caliber", defenseCaliber)
+func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetDefenseCaliber(_defenseCaliber string) error {
+    r._defenseCaliber = _defenseCaliber
+    r.Set("defense_caliber", _defenseCaliber)
     return nil
 }
 
 // DefenseCaliber Getter
 func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetDefenseCaliber() string {
-    return r.defenseCaliber
+    return r._defenseCaliber
 }
 // StandpointDesc Setter
 // 口径描述
-func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetStandpointDesc(standpointDesc string) error {
-    r.standpointDesc = standpointDesc
-    r.Set("standpoint_desc", standpointDesc)
+func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetStandpointDesc(_standpointDesc string) error {
+    r._standpointDesc = _standpointDesc
+    r.Set("standpoint_desc", _standpointDesc)
     return nil
 }
 
 // StandpointDesc Getter
 func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetStandpointDesc() string {
-    return r.standpointDesc
+    return r._standpointDesc
 }
 // SuitId Setter
 // 案件id
-func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetSuitId(suitId int64) error {
-    r.suitId = suitId
-    r.Set("suit_id", suitId)
+func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetSuitId(_suitId int64) error {
+    r._suitId = _suitId
+    r.Set("suit_id", _suitId)
     return nil
 }
 
 // SuitId Getter
 func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetSuitId() int64 {
-    return r.suitId
+    return r._suitId
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // SubmitPeople Setter
 // 提交人
-func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetSubmitPeople(submitPeople string) error {
-    r.submitPeople = submitPeople
-    r.Set("submit_people", submitPeople)
+func (r *AlibabaLegalCaseStandpointSavestandpointRequest) SetSubmitPeople(_submitPeople string) error {
+    r._submitPeople = _submitPeople
+    r.Set("submit_people", _submitPeople)
     return nil
 }
 
 // SubmitPeople Getter
 func (r AlibabaLegalCaseStandpointSavestandpointRequest) GetSubmitPeople() string {
-    return r.submitPeople
+    return r._submitPeople
 }

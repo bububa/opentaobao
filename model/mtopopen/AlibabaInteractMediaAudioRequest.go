@@ -15,7 +15,7 @@ alibaba.interact.media.audio
 type AlibabaInteractMediaAudioRequest struct {
     model.Params
     // 系统自动生成
-    id   string
+    _id   string
 }
 
 // 初始化AlibabaInteractMediaAudioRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractMediaAudioRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractMediaAudioRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaInteractMediaAudioRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaInteractMediaAudioRequest) GetId() string {
-    return r.id
+    return r._id
 }

@@ -15,7 +15,7 @@ cainiao.cboss.workplatform.biztype.querybyid
 type CainiaoCbossWorkplatformBiztypeQuerybyidRequest struct {
     model.Params
     // 业务类型id
-    bizTypeId   string
+    _bizTypeId   string
 }
 
 // 初始化CainiaoCbossWorkplatformBiztypeQuerybyidRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiParams() url.Valu
 }
 // BizTypeId Setter
 // 业务类型id
-func (r *CainiaoCbossWorkplatformBiztypeQuerybyidRequest) SetBizTypeId(bizTypeId string) error {
-    r.bizTypeId = bizTypeId
-    r.Set("biz_type_id", bizTypeId)
+func (r *CainiaoCbossWorkplatformBiztypeQuerybyidRequest) SetBizTypeId(_bizTypeId string) error {
+    r._bizTypeId = _bizTypeId
+    r.Set("biz_type_id", _bizTypeId)
     return nil
 }
 
 // BizTypeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetBizTypeId() string {
-    return r.bizTypeId
+    return r._bizTypeId
 }

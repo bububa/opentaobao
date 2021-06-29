@@ -15,11 +15,11 @@ OpenMall退款图片上传
 type TaobaoOpenmallRefundImageUploadRequest struct {
     model.Params
     // 上传图片，必须为jpg或png格式，建议小于2M
-    image   []*model.File
+    _image   []*model.File
     // 渠道商Nick
-    distributor   string
+    _distributor   string
     // 该图片归属的退款单ID
-    refundId   int64
+    _refundId   int64
 }
 
 // 初始化TaobaoOpenmallRefundImageUploadRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenmallRefundImageUploadRequest) GetApiParams() url.Values {
 }
 // Image Setter
 // 上传图片，必须为jpg或png格式，建议小于2M
-func (r *TaobaoOpenmallRefundImageUploadRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoOpenmallRefundImageUploadRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoOpenmallRefundImageUploadRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Distributor Setter
 // 渠道商Nick
-func (r *TaobaoOpenmallRefundImageUploadRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallRefundImageUploadRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallRefundImageUploadRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // RefundId Setter
 // 该图片归属的退款单ID
-func (r *TaobaoOpenmallRefundImageUploadRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoOpenmallRefundImageUploadRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoOpenmallRefundImageUploadRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }

@@ -15,15 +15,15 @@ aliyun.unimkt.task.charge.launch
 type AliyunUnimktTaskChargeLaunchRequest struct {
     model.Params
     // 服务商附加url参数
-    extra   string
+    _extra   string
     // urlID
-    urlId   string
+    _urlId   string
     // 支付宝openID
-    alipayOpenId   string
+    _alipayOpenId   string
     // 渠道ID
-    channelId   string
+    _channelId   string
     // 淘宝ID
-    userId   string
+    _userId   string
 }
 
 // 初始化AliyunUnimktTaskChargeLaunchRequest对象
@@ -48,61 +48,61 @@ func (r AliyunUnimktTaskChargeLaunchRequest) GetApiParams() url.Values {
 }
 // Extra Setter
 // 服务商附加url参数
-func (r *AliyunUnimktTaskChargeLaunchRequest) SetExtra(extra string) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *AliyunUnimktTaskChargeLaunchRequest) SetExtra(_extra string) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r AliyunUnimktTaskChargeLaunchRequest) GetExtra() string {
-    return r.extra
+    return r._extra
 }
 // UrlId Setter
 // urlID
-func (r *AliyunUnimktTaskChargeLaunchRequest) SetUrlId(urlId string) error {
-    r.urlId = urlId
-    r.Set("url_id", urlId)
+func (r *AliyunUnimktTaskChargeLaunchRequest) SetUrlId(_urlId string) error {
+    r._urlId = _urlId
+    r.Set("url_id", _urlId)
     return nil
 }
 
 // UrlId Getter
 func (r AliyunUnimktTaskChargeLaunchRequest) GetUrlId() string {
-    return r.urlId
+    return r._urlId
 }
 // AlipayOpenId Setter
 // 支付宝openID
-func (r *AliyunUnimktTaskChargeLaunchRequest) SetAlipayOpenId(alipayOpenId string) error {
-    r.alipayOpenId = alipayOpenId
-    r.Set("alipay_open_id", alipayOpenId)
+func (r *AliyunUnimktTaskChargeLaunchRequest) SetAlipayOpenId(_alipayOpenId string) error {
+    r._alipayOpenId = _alipayOpenId
+    r.Set("alipay_open_id", _alipayOpenId)
     return nil
 }
 
 // AlipayOpenId Getter
 func (r AliyunUnimktTaskChargeLaunchRequest) GetAlipayOpenId() string {
-    return r.alipayOpenId
+    return r._alipayOpenId
 }
 // ChannelId Setter
 // 渠道ID
-func (r *AliyunUnimktTaskChargeLaunchRequest) SetChannelId(channelId string) error {
-    r.channelId = channelId
-    r.Set("channel_id", channelId)
+func (r *AliyunUnimktTaskChargeLaunchRequest) SetChannelId(_channelId string) error {
+    r._channelId = _channelId
+    r.Set("channel_id", _channelId)
     return nil
 }
 
 // ChannelId Getter
 func (r AliyunUnimktTaskChargeLaunchRequest) GetChannelId() string {
-    return r.channelId
+    return r._channelId
 }
 // UserId Setter
 // 淘宝ID
-func (r *AliyunUnimktTaskChargeLaunchRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AliyunUnimktTaskChargeLaunchRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AliyunUnimktTaskChargeLaunchRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }

@@ -15,9 +15,9 @@ tmall.mc.device.circle.check
 type TmallMcDeviceCircleCheckRequest struct {
     model.Params
     // 外部设备编码
-    outerCode   string
+    _outerCode   string
     // 渠道编码
-    channelId   string
+    _channelId   string
 }
 
 // 初始化TmallMcDeviceCircleCheckRequest对象
@@ -42,25 +42,25 @@ func (r TmallMcDeviceCircleCheckRequest) GetApiParams() url.Values {
 }
 // OuterCode Setter
 // 外部设备编码
-func (r *TmallMcDeviceCircleCheckRequest) SetOuterCode(outerCode string) error {
-    r.outerCode = outerCode
-    r.Set("outer_code", outerCode)
+func (r *TmallMcDeviceCircleCheckRequest) SetOuterCode(_outerCode string) error {
+    r._outerCode = _outerCode
+    r.Set("outer_code", _outerCode)
     return nil
 }
 
 // OuterCode Getter
 func (r TmallMcDeviceCircleCheckRequest) GetOuterCode() string {
-    return r.outerCode
+    return r._outerCode
 }
 // ChannelId Setter
 // 渠道编码
-func (r *TmallMcDeviceCircleCheckRequest) SetChannelId(channelId string) error {
-    r.channelId = channelId
-    r.Set("channel_id", channelId)
+func (r *TmallMcDeviceCircleCheckRequest) SetChannelId(_channelId string) error {
+    r._channelId = _channelId
+    r.Set("channel_id", _channelId)
     return nil
 }
 
 // ChannelId Getter
 func (r TmallMcDeviceCircleCheckRequest) GetChannelId() string {
-    return r.channelId
+    return r._channelId
 }

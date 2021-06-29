@@ -15,7 +15,7 @@ tmall.item.simpleschema.add
 type TmallItemSimpleschemaAddRequest struct {
     model.Params
     // 根据tmall.item.add.simpleschema.get生成的商品发布规则入参数据
-    schemaXmlFields   string
+    _schemaXmlFields   string
 }
 
 // 初始化TmallItemSimpleschemaAddRequest对象
@@ -40,13 +40,13 @@ func (r TmallItemSimpleschemaAddRequest) GetApiParams() url.Values {
 }
 // SchemaXmlFields Setter
 // 根据tmall.item.add.simpleschema.get生成的商品发布规则入参数据
-func (r *TmallItemSimpleschemaAddRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *TmallItemSimpleschemaAddRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r TmallItemSimpleschemaAddRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }

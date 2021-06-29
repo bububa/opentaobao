@@ -15,11 +15,11 @@ alibaba.nlife.b2c.trade.cancel
 type AlibabaNlifeB2cTradeCancelRequest struct {
     model.Params
     // 零售+平台订单号，和out_trade_no不能同时为空
-    tradeNo   string
+    _tradeNo   string
     // 外部订单号，和trade_no不能同时为空
-    outTradeNo   string
+    _outTradeNo   string
     // 零售+门店号
-    storeId   string
+    _storeId   string
 }
 
 // 初始化AlibabaNlifeB2cTradeCancelRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaNlifeB2cTradeCancelRequest) GetApiParams() url.Values {
 }
 // TradeNo Setter
 // 零售+平台订单号，和out_trade_no不能同时为空
-func (r *AlibabaNlifeB2cTradeCancelRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *AlibabaNlifeB2cTradeCancelRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r AlibabaNlifeB2cTradeCancelRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // OutTradeNo Setter
 // 外部订单号，和trade_no不能同时为空
-func (r *AlibabaNlifeB2cTradeCancelRequest) SetOutTradeNo(outTradeNo string) error {
-    r.outTradeNo = outTradeNo
-    r.Set("out_trade_no", outTradeNo)
+func (r *AlibabaNlifeB2cTradeCancelRequest) SetOutTradeNo(_outTradeNo string) error {
+    r._outTradeNo = _outTradeNo
+    r.Set("out_trade_no", _outTradeNo)
     return nil
 }
 
 // OutTradeNo Getter
 func (r AlibabaNlifeB2cTradeCancelRequest) GetOutTradeNo() string {
-    return r.outTradeNo
+    return r._outTradeNo
 }
 // StoreId Setter
 // 零售+门店号
-func (r *AlibabaNlifeB2cTradeCancelRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeB2cTradeCancelRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeB2cTradeCancelRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }

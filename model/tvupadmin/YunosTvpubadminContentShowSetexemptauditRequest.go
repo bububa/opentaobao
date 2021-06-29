@@ -15,11 +15,11 @@ yunos.tvpubadmin.content.show.setexemptaudit
 type YunosTvpubadminContentShowSetexemptauditRequest struct {
     model.Params
     // 节目longid
-    showLongId   int64
+    _showLongId   int64
     // 牌照id：1CIBN，2WASU
-    license   int64
+    _license   int64
     // 牌照免审：1-开启节目免审，2-关闭节目免审
-    exemptAudit   int64
+    _exemptAudit   int64
 }
 
 // 初始化YunosTvpubadminContentShowSetexemptauditRequest对象
@@ -44,37 +44,37 @@ func (r YunosTvpubadminContentShowSetexemptauditRequest) GetApiParams() url.Valu
 }
 // ShowLongId Setter
 // 节目longid
-func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetShowLongId(showLongId int64) error {
-    r.showLongId = showLongId
-    r.Set("show_long_id", showLongId)
+func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetShowLongId(_showLongId int64) error {
+    r._showLongId = _showLongId
+    r.Set("show_long_id", _showLongId)
     return nil
 }
 
 // ShowLongId Getter
 func (r YunosTvpubadminContentShowSetexemptauditRequest) GetShowLongId() int64 {
-    return r.showLongId
+    return r._showLongId
 }
 // License Setter
 // 牌照id：1CIBN，2WASU
-func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminContentShowSetexemptauditRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // ExemptAudit Setter
 // 牌照免审：1-开启节目免审，2-关闭节目免审
-func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetExemptAudit(exemptAudit int64) error {
-    r.exemptAudit = exemptAudit
-    r.Set("exempt_audit", exemptAudit)
+func (r *YunosTvpubadminContentShowSetexemptauditRequest) SetExemptAudit(_exemptAudit int64) error {
+    r._exemptAudit = _exemptAudit
+    r.Set("exempt_audit", _exemptAudit)
     return nil
 }
 
 // ExemptAudit Getter
 func (r YunosTvpubadminContentShowSetexemptauditRequest) GetExemptAudit() int64 {
-    return r.exemptAudit
+    return r._exemptAudit
 }

@@ -15,7 +15,7 @@ tmall.servicecenter.tp.funds.send.query
 type TmallServicecenterTpFundsSendQueryRequest struct {
     model.Params
     // 入参对象
-    query   *TpFundsSendQuery
+    _query   *TpFundsSendQuery
 }
 
 // 初始化TmallServicecenterTpFundsSendQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterTpFundsSendQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参对象
-func (r *TmallServicecenterTpFundsSendQueryRequest) SetQuery(query *TpFundsSendQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TmallServicecenterTpFundsSendQueryRequest) SetQuery(_query *TpFundsSendQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TmallServicecenterTpFundsSendQueryRequest) GetQuery() *TpFundsSendQuery {
-    return r.query
+    return r._query
 }

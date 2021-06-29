@@ -15,25 +15,25 @@ taobao.vas.order.search
 type TaobaoVasOrderSearchRequest struct {
     model.Params
     // 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码
-    articleCode   string
+    _articleCode   string
     // 收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码
-    itemCode   string
+    _itemCode   string
     // 淘宝会员名
-    nick   string
+    _nick   string
     // 订单创建时间（订购时间）起始值（当start_created和end_created都不填写时，默认返回最近90天的数据）
-    startCreated   string
+    _startCreated   string
     // 订单创建时间（订购时间）结束值
-    endCreated   string
+    _endCreated   string
     // 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
-    bizType   int64
+    _bizType   int64
     // 订单号
-    bizOrderId   int64
+    _bizOrderId   int64
     // 子订单号
-    orderId   int64
+    _orderId   int64
     // 一页包含的记录数
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoVasOrderSearchRequest对象
@@ -58,121 +58,121 @@ func (r TaobaoVasOrderSearchRequest) GetApiParams() url.Values {
 }
 // ArticleCode Setter
 // 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码
-func (r *TaobaoVasOrderSearchRequest) SetArticleCode(articleCode string) error {
-    r.articleCode = articleCode
-    r.Set("article_code", articleCode)
+func (r *TaobaoVasOrderSearchRequest) SetArticleCode(_articleCode string) error {
+    r._articleCode = _articleCode
+    r.Set("article_code", _articleCode)
     return nil
 }
 
 // ArticleCode Getter
 func (r TaobaoVasOrderSearchRequest) GetArticleCode() string {
-    return r.articleCode
+    return r._articleCode
 }
 // ItemCode Setter
 // 收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码
-func (r *TaobaoVasOrderSearchRequest) SetItemCode(itemCode string) error {
-    r.itemCode = itemCode
-    r.Set("item_code", itemCode)
+func (r *TaobaoVasOrderSearchRequest) SetItemCode(_itemCode string) error {
+    r._itemCode = _itemCode
+    r.Set("item_code", _itemCode)
     return nil
 }
 
 // ItemCode Getter
 func (r TaobaoVasOrderSearchRequest) GetItemCode() string {
-    return r.itemCode
+    return r._itemCode
 }
 // Nick Setter
 // 淘宝会员名
-func (r *TaobaoVasOrderSearchRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoVasOrderSearchRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoVasOrderSearchRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // StartCreated Setter
 // 订单创建时间（订购时间）起始值（当start_created和end_created都不填写时，默认返回最近90天的数据）
-func (r *TaobaoVasOrderSearchRequest) SetStartCreated(startCreated string) error {
-    r.startCreated = startCreated
-    r.Set("start_created", startCreated)
+func (r *TaobaoVasOrderSearchRequest) SetStartCreated(_startCreated string) error {
+    r._startCreated = _startCreated
+    r.Set("start_created", _startCreated)
     return nil
 }
 
 // StartCreated Getter
 func (r TaobaoVasOrderSearchRequest) GetStartCreated() string {
-    return r.startCreated
+    return r._startCreated
 }
 // EndCreated Setter
 // 订单创建时间（订购时间）结束值
-func (r *TaobaoVasOrderSearchRequest) SetEndCreated(endCreated string) error {
-    r.endCreated = endCreated
-    r.Set("end_created", endCreated)
+func (r *TaobaoVasOrderSearchRequest) SetEndCreated(_endCreated string) error {
+    r._endCreated = _endCreated
+    r.Set("end_created", _endCreated)
     return nil
 }
 
 // EndCreated Getter
 func (r TaobaoVasOrderSearchRequest) GetEndCreated() string {
-    return r.endCreated
+    return r._endCreated
 }
 // BizType Setter
 // 订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部
-func (r *TaobaoVasOrderSearchRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoVasOrderSearchRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoVasOrderSearchRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }
 // BizOrderId Setter
 // 订单号
-func (r *TaobaoVasOrderSearchRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TaobaoVasOrderSearchRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TaobaoVasOrderSearchRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // OrderId Setter
 // 子订单号
-func (r *TaobaoVasOrderSearchRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoVasOrderSearchRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoVasOrderSearchRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // PageSize Setter
 // 一页包含的记录数
-func (r *TaobaoVasOrderSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoVasOrderSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoVasOrderSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoVasOrderSearchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoVasOrderSearchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoVasOrderSearchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

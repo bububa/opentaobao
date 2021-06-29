@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.location.quote.upload
 type AlibabaTmallgenieScpPlanLocationQuoteUploadRequest struct {
     model.Params
     // 对象
-    netDemandRequest   *NetDemandRequest
+    _netDemandRequest   *NetDemandRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanLocationQuoteUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetApiParams() url.V
 }
 // NetDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) SetNetDemandRequest(netDemandRequest *NetDemandRequest) error {
-    r.netDemandRequest = netDemandRequest
-    r.Set("net_demand_request", netDemandRequest)
+func (r *AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+    r._netDemandRequest = _netDemandRequest
+    r.Set("net_demand_request", _netDemandRequest)
     return nil
 }
 
 // NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanLocationQuoteUploadRequest) GetNetDemandRequest() *NetDemandRequest {
-    return r.netDemandRequest
+    return r._netDemandRequest
 }

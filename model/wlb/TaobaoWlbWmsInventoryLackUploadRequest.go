@@ -15,7 +15,7 @@ taobao.wlb.wms.inventory.lack.upload
 type TaobaoWlbWmsInventoryLackUploadRequest struct {
     model.Params
     // 缺货通知信息
-    content   *WlbWmsInventoryLackUpload
+    _content   *WlbWmsInventoryLackUpload
 }
 
 // 初始化TaobaoWlbWmsInventoryLackUploadRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWmsInventoryLackUploadRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 缺货通知信息
-func (r *TaobaoWlbWmsInventoryLackUploadRequest) SetContent(content *WlbWmsInventoryLackUpload) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoWlbWmsInventoryLackUploadRequest) SetContent(_content *WlbWmsInventoryLackUpload) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoWlbWmsInventoryLackUploadRequest) GetContent() *WlbWmsInventoryLackUpload {
-    return r.content
+    return r._content
 }

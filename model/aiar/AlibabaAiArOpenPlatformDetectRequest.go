@@ -15,15 +15,15 @@ AR开发者平台marker图片检测服务，给AR SDK 和 阿里火眼app使用
 type AlibabaAiArOpenPlatformDetectRequest struct {
     model.Params
     // 原始图像数据
-    imgData   []*model.File
+    _imgData   []*model.File
     // 最多返回的结果数，默认为1
-    num   int64
+    _num   int64
     // 本地已cache的target，多个target间以|||分隔
-    cachedTargets   string
+    _cachedTargets   string
     // map，描述所有设备相关信息，如设备ID，分辨率等
-    deviceInfo   string
+    _deviceInfo   string
     // 版本，默认1.0
-    version   string
+    _version   string
 }
 
 // 初始化AlibabaAiArOpenPlatformDetectRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAiArOpenPlatformDetectRequest) GetApiParams() url.Values {
 }
 // ImgData Setter
 // 原始图像数据
-func (r *AlibabaAiArOpenPlatformDetectRequest) SetImgData(imgData []*model.File) error {
-    r.imgData = imgData
-    r.Set("img_data", imgData)
+func (r *AlibabaAiArOpenPlatformDetectRequest) SetImgData(_imgData []*model.File) error {
+    r._imgData = _imgData
+    r.Set("img_data", _imgData)
     return nil
 }
 
 // ImgData Getter
 func (r AlibabaAiArOpenPlatformDetectRequest) GetImgData() []*model.File {
-    return r.imgData
+    return r._imgData
 }
 // Num Setter
 // 最多返回的结果数，默认为1
-func (r *AlibabaAiArOpenPlatformDetectRequest) SetNum(num int64) error {
-    r.num = num
-    r.Set("num", num)
+func (r *AlibabaAiArOpenPlatformDetectRequest) SetNum(_num int64) error {
+    r._num = _num
+    r.Set("num", _num)
     return nil
 }
 
 // Num Getter
 func (r AlibabaAiArOpenPlatformDetectRequest) GetNum() int64 {
-    return r.num
+    return r._num
 }
 // CachedTargets Setter
 // 本地已cache的target，多个target间以|||分隔
-func (r *AlibabaAiArOpenPlatformDetectRequest) SetCachedTargets(cachedTargets string) error {
-    r.cachedTargets = cachedTargets
-    r.Set("cached_targets", cachedTargets)
+func (r *AlibabaAiArOpenPlatformDetectRequest) SetCachedTargets(_cachedTargets string) error {
+    r._cachedTargets = _cachedTargets
+    r.Set("cached_targets", _cachedTargets)
     return nil
 }
 
 // CachedTargets Getter
 func (r AlibabaAiArOpenPlatformDetectRequest) GetCachedTargets() string {
-    return r.cachedTargets
+    return r._cachedTargets
 }
 // DeviceInfo Setter
 // map，描述所有设备相关信息，如设备ID，分辨率等
-func (r *AlibabaAiArOpenPlatformDetectRequest) SetDeviceInfo(deviceInfo string) error {
-    r.deviceInfo = deviceInfo
-    r.Set("device_info", deviceInfo)
+func (r *AlibabaAiArOpenPlatformDetectRequest) SetDeviceInfo(_deviceInfo string) error {
+    r._deviceInfo = _deviceInfo
+    r.Set("device_info", _deviceInfo)
     return nil
 }
 
 // DeviceInfo Getter
 func (r AlibabaAiArOpenPlatformDetectRequest) GetDeviceInfo() string {
-    return r.deviceInfo
+    return r._deviceInfo
 }
 // Version Setter
 // 版本，默认1.0
-func (r *AlibabaAiArOpenPlatformDetectRequest) SetVersion(version string) error {
-    r.version = version
-    r.Set("version", version)
+func (r *AlibabaAiArOpenPlatformDetectRequest) SetVersion(_version string) error {
+    r._version = _version
+    r.Set("version", _version)
     return nil
 }
 
 // Version Getter
 func (r AlibabaAiArOpenPlatformDetectRequest) GetVersion() string {
-    return r.version
+    return r._version
 }

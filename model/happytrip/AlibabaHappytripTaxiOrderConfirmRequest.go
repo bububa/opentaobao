@@ -16,7 +16,7 @@ alibaba.happytrip.taxi.order.confirm
 type AlibabaHappytripTaxiOrderConfirmRequest struct {
     model.Params
     // 要确认支付的订单号
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHappytripTaxiOrderConfirmRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaHappytripTaxiOrderConfirmRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 要确认支付的订单号
-func (r *AlibabaHappytripTaxiOrderConfirmRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiOrderConfirmRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiOrderConfirmRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

@@ -15,7 +15,7 @@ ISV获取口腔标品列表
 type AlibabaAlihealthDentalItemListRequest struct {
     model.Params
     // 是否需要测试商品
-    needTestItem   bool
+    _needTestItem   bool
 }
 
 // 初始化AlibabaAlihealthDentalItemListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalItemListRequest) GetApiParams() url.Values {
 }
 // NeedTestItem Setter
 // 是否需要测试商品
-func (r *AlibabaAlihealthDentalItemListRequest) SetNeedTestItem(needTestItem bool) error {
-    r.needTestItem = needTestItem
-    r.Set("need_test_item", needTestItem)
+func (r *AlibabaAlihealthDentalItemListRequest) SetNeedTestItem(_needTestItem bool) error {
+    r._needTestItem = _needTestItem
+    r.Set("need_test_item", _needTestItem)
     return nil
 }
 
 // NeedTestItem Getter
 func (r AlibabaAlihealthDentalItemListRequest) GetNeedTestItem() bool {
-    return r.needTestItem
+    return r._needTestItem
 }

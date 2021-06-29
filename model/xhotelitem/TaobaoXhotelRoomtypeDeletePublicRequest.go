@@ -15,13 +15,13 @@ taobao.xhotel.roomtype.delete.public
 type TaobaoXhotelRoomtypeDeletePublicRequest struct {
     model.Params
     // 房型rid ，传参方式：rid    或者   outer_id+vendor
-    rid   int64
+    _rid   int64
     // vendor
-    vendor   string
+    _vendor   string
     // 外部房型ID
-    outerRid   string
+    _outerRid   string
     // 具体操作人，比如酒店帐号、小二名称等
-    operator   string
+    _operator   string
 }
 
 // 初始化TaobaoXhotelRoomtypeDeletePublicRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoXhotelRoomtypeDeletePublicRequest) GetApiParams() url.Values {
 }
 // Rid Setter
 // 房型rid ，传参方式：rid    或者   outer_id+vendor
-func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetRid(rid int64) error {
-    r.rid = rid
-    r.Set("rid", rid)
+func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetRid(_rid int64) error {
+    r._rid = _rid
+    r.Set("rid", _rid)
     return nil
 }
 
 // Rid Getter
 func (r TaobaoXhotelRoomtypeDeletePublicRequest) GetRid() int64 {
-    return r.rid
+    return r._rid
 }
 // Vendor Setter
 // vendor
-func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRoomtypeDeletePublicRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // OuterRid Setter
 // 外部房型ID
-func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetOuterRid(outerRid string) error {
-    r.outerRid = outerRid
-    r.Set("outer_rid", outerRid)
+func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetOuterRid(_outerRid string) error {
+    r._outerRid = _outerRid
+    r.Set("outer_rid", _outerRid)
     return nil
 }
 
 // OuterRid Getter
 func (r TaobaoXhotelRoomtypeDeletePublicRequest) GetOuterRid() string {
-    return r.outerRid
+    return r._outerRid
 }
 // Operator Setter
 // 具体操作人，比如酒店帐号、小二名称等
-func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetOperator(operator string) error {
-    r.operator = operator
-    r.Set("operator", operator)
+func (r *TaobaoXhotelRoomtypeDeletePublicRequest) SetOperator(_operator string) error {
+    r._operator = _operator
+    r.Set("operator", _operator)
     return nil
 }
 
 // Operator Getter
 func (r TaobaoXhotelRoomtypeDeletePublicRequest) GetOperator() string {
-    return r.operator
+    return r._operator
 }

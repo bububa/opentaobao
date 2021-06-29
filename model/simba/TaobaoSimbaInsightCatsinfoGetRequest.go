@@ -15,9 +15,9 @@ taobao.simba.insight.catsinfo.get
 type TaobaoSimbaInsightCatsinfoGetRequest struct {
     model.Params
     // 表示请求的类型：0表示请求所有顶级类目的信息，这时可以忽略第二个参数，1表示获取给定的类目id的详细信息，2表示获取给定类目id的所有子类目的详细信息
-    type   int64
+    _type   int64
     // 需要查询的类目id
-    categoryIdList   []string
+    _categoryIdList   []string
 }
 
 // 初始化TaobaoSimbaInsightCatsinfoGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaInsightCatsinfoGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 表示请求的类型：0表示请求所有顶级类目的信息，这时可以忽略第二个参数，1表示获取给定的类目id的详细信息，2表示获取给定类目id的所有子类目的详细信息
-func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoSimbaInsightCatsinfoGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // CategoryIdList Setter
 // 需要查询的类目id
-func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetCategoryIdList(categoryIdList []string) error {
-    r.categoryIdList = categoryIdList
-    r.Set("category_id_list", categoryIdList)
+func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetCategoryIdList(_categoryIdList []string) error {
+    r._categoryIdList = _categoryIdList
+    r.Set("category_id_list", _categoryIdList)
     return nil
 }
 
 // CategoryIdList Getter
 func (r TaobaoSimbaInsightCatsinfoGetRequest) GetCategoryIdList() []string {
-    return r.categoryIdList
+    return r._categoryIdList
 }

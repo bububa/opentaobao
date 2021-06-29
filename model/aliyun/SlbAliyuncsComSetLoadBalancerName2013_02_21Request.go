@@ -15,9 +15,9 @@ slb.aliyuncs.com.SetLoadBalancerName.2013-02-21
 type SlbAliyuncsComSetLoadBalancerName2013_02_21Request struct {
     model.Params
     // loadBalancerId
-    loadBalancerId   string
+    _loadBalancerId   string
     // loadBalancerName
-    loadBalancerName   string
+    _loadBalancerName   string
 }
 
 // 初始化SlbAliyuncsComSetLoadBalancerName2013_02_21Request对象
@@ -42,25 +42,25 @@ func (r SlbAliyuncsComSetLoadBalancerName2013_02_21Request) GetApiParams() url.V
 }
 // LoadBalancerId Setter
 // loadBalancerId
-func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21Request) SetLoadBalancerId(loadBalancerId string) error {
-    r.loadBalancerId = loadBalancerId
-    r.Set("loadBalancerId", loadBalancerId)
+func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21Request) SetLoadBalancerId(_loadBalancerId string) error {
+    r._loadBalancerId = _loadBalancerId
+    r.Set("loadBalancerId", _loadBalancerId)
     return nil
 }
 
 // LoadBalancerId Getter
 func (r SlbAliyuncsComSetLoadBalancerName2013_02_21Request) GetLoadBalancerId() string {
-    return r.loadBalancerId
+    return r._loadBalancerId
 }
 // LoadBalancerName Setter
 // loadBalancerName
-func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21Request) SetLoadBalancerName(loadBalancerName string) error {
-    r.loadBalancerName = loadBalancerName
-    r.Set("loadBalancerName", loadBalancerName)
+func (r *SlbAliyuncsComSetLoadBalancerName2013_02_21Request) SetLoadBalancerName(_loadBalancerName string) error {
+    r._loadBalancerName = _loadBalancerName
+    r.Set("loadBalancerName", _loadBalancerName)
     return nil
 }
 
 // LoadBalancerName Getter
 func (r SlbAliyuncsComSetLoadBalancerName2013_02_21Request) GetLoadBalancerName() string {
-    return r.loadBalancerName
+    return r._loadBalancerName
 }

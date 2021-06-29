@@ -15,9 +15,9 @@ alibaba.kclub.kc.queryknowledge
 type AlibabaKclubKcQueryknowledgeRequest struct {
     model.Params
     // 查询条件
-    kcQaQuery   *KcQaQuery
+    _kcQaQuery   *KcQaQuery
     // 鉴权
-    auth   *TenancyAuth
+    _auth   *TenancyAuth
 }
 
 // 初始化AlibabaKclubKcQueryknowledgeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaKclubKcQueryknowledgeRequest) GetApiParams() url.Values {
 }
 // KcQaQuery Setter
 // 查询条件
-func (r *AlibabaKclubKcQueryknowledgeRequest) SetKcQaQuery(kcQaQuery *KcQaQuery) error {
-    r.kcQaQuery = kcQaQuery
-    r.Set("kc_qa_query", kcQaQuery)
+func (r *AlibabaKclubKcQueryknowledgeRequest) SetKcQaQuery(_kcQaQuery *KcQaQuery) error {
+    r._kcQaQuery = _kcQaQuery
+    r.Set("kc_qa_query", _kcQaQuery)
     return nil
 }
 
 // KcQaQuery Getter
 func (r AlibabaKclubKcQueryknowledgeRequest) GetKcQaQuery() *KcQaQuery {
-    return r.kcQaQuery
+    return r._kcQaQuery
 }
 // Auth Setter
 // 鉴权
-func (r *AlibabaKclubKcQueryknowledgeRequest) SetAuth(auth *TenancyAuth) error {
-    r.auth = auth
-    r.Set("auth", auth)
+func (r *AlibabaKclubKcQueryknowledgeRequest) SetAuth(_auth *TenancyAuth) error {
+    r._auth = _auth
+    r.Set("auth", _auth)
     return nil
 }
 
 // Auth Getter
 func (r AlibabaKclubKcQueryknowledgeRequest) GetAuth() *TenancyAuth {
-    return r.auth
+    return r._auth
 }

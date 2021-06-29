@@ -15,7 +15,7 @@ pushProject
 type AlibabaDamaiMevOpenPushprojectRequest struct {
     model.Params
     // 入参pushProjectParam
-    pushProjectParam   *ThirdProjectPushOpenParam
+    _pushProjectParam   *ThirdProjectPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushprojectRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushprojectRequest) GetApiParams() url.Values {
 }
 // PushProjectParam Setter
 // 入参pushProjectParam
-func (r *AlibabaDamaiMevOpenPushprojectRequest) SetPushProjectParam(pushProjectParam *ThirdProjectPushOpenParam) error {
-    r.pushProjectParam = pushProjectParam
-    r.Set("push_project_param", pushProjectParam)
+func (r *AlibabaDamaiMevOpenPushprojectRequest) SetPushProjectParam(_pushProjectParam *ThirdProjectPushOpenParam) error {
+    r._pushProjectParam = _pushProjectParam
+    r.Set("push_project_param", _pushProjectParam)
     return nil
 }
 
 // PushProjectParam Getter
 func (r AlibabaDamaiMevOpenPushprojectRequest) GetPushProjectParam() *ThirdProjectPushOpenParam {
-    return r.pushProjectParam
+    return r._pushProjectParam
 }

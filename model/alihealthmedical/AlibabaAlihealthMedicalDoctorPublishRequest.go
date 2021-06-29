@@ -15,7 +15,7 @@ alibaba.alihealth.medical.doctor.publish
 type AlibabaAlihealthMedicalDoctorPublishRequest struct {
     model.Params
     // 三方机构医生上传request
-    outerDoctorPublishRequest   *OuterDoctorPublishRequest
+    _outerDoctorPublishRequest   *OuterDoctorPublishRequest
 }
 
 // 初始化AlibabaAlihealthMedicalDoctorPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetApiParams() url.Values {
 }
 // OuterDoctorPublishRequest Setter
 // 三方机构医生上传request
-func (r *AlibabaAlihealthMedicalDoctorPublishRequest) SetOuterDoctorPublishRequest(outerDoctorPublishRequest *OuterDoctorPublishRequest) error {
-    r.outerDoctorPublishRequest = outerDoctorPublishRequest
-    r.Set("outer_doctor_publish_request", outerDoctorPublishRequest)
+func (r *AlibabaAlihealthMedicalDoctorPublishRequest) SetOuterDoctorPublishRequest(_outerDoctorPublishRequest *OuterDoctorPublishRequest) error {
+    r._outerDoctorPublishRequest = _outerDoctorPublishRequest
+    r.Set("outer_doctor_publish_request", _outerDoctorPublishRequest)
     return nil
 }
 
 // OuterDoctorPublishRequest Getter
 func (r AlibabaAlihealthMedicalDoctorPublishRequest) GetOuterDoctorPublishRequest() *OuterDoctorPublishRequest {
-    return r.outerDoctorPublishRequest
+    return r._outerDoctorPublishRequest
 }

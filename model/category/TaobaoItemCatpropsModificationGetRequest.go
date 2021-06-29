@@ -15,11 +15,11 @@ taobao.item.catprops.modification.get
 type TaobaoItemCatpropsModificationGetRequest struct {
     model.Params
     // 类目Id（与商品Id二选一即可）
-    categoryId   int64
+    _categoryId   int64
     // 商品Id（与类目Id二选一即可。若同时传入商品Id和类目Id，则优先使用商品Id。若填写商品Id，则起始时间设为该商品最近修改时间）
-    itemId   string
+    _itemId   string
     // 起始请求时间（建议传入，默认为90天内）
-    startTime   string
+    _startTime   string
 }
 
 // 初始化TaobaoItemCatpropsModificationGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoItemCatpropsModificationGetRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 类目Id（与商品Id二选一即可）
-func (r *TaobaoItemCatpropsModificationGetRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TaobaoItemCatpropsModificationGetRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TaobaoItemCatpropsModificationGetRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // ItemId Setter
 // 商品Id（与类目Id二选一即可。若同时传入商品Id和类目Id，则优先使用商品Id。若填写商品Id，则起始时间设为该商品最近修改时间）
-func (r *TaobaoItemCatpropsModificationGetRequest) SetItemId(itemId string) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoItemCatpropsModificationGetRequest) SetItemId(_itemId string) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoItemCatpropsModificationGetRequest) GetItemId() string {
-    return r.itemId
+    return r._itemId
 }
 // StartTime Setter
 // 起始请求时间（建议传入，默认为90天内）
-func (r *TaobaoItemCatpropsModificationGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoItemCatpropsModificationGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoItemCatpropsModificationGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }

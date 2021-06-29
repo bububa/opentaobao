@@ -15,7 +15,7 @@ taobao.degoperation.check.addr.status
 type TaobaoDegoperationCheckAddrStatusRequest struct {
     model.Params
     // 奖品唯一标识
-    sequenceNo   int64
+    _sequenceNo   int64
 }
 
 // 初始化TaobaoDegoperationCheckAddrStatusRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoDegoperationCheckAddrStatusRequest) GetApiParams() url.Values {
 }
 // SequenceNo Setter
 // 奖品唯一标识
-func (r *TaobaoDegoperationCheckAddrStatusRequest) SetSequenceNo(sequenceNo int64) error {
-    r.sequenceNo = sequenceNo
-    r.Set("sequence_no", sequenceNo)
+func (r *TaobaoDegoperationCheckAddrStatusRequest) SetSequenceNo(_sequenceNo int64) error {
+    r._sequenceNo = _sequenceNo
+    r.Set("sequence_no", _sequenceNo)
     return nil
 }
 
 // SequenceNo Getter
 func (r TaobaoDegoperationCheckAddrStatusRequest) GetSequenceNo() int64 {
-    return r.sequenceNo
+    return r._sequenceNo
 }

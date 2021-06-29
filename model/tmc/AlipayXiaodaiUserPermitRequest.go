@@ -15,7 +15,7 @@ alipay.xiaodai.user.permit
 type AlipayXiaodaiUserPermitRequest struct {
     model.Params
     // 用户数字ID
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlipayXiaodaiUserPermitRequest对象
@@ -40,13 +40,13 @@ func (r AlipayXiaodaiUserPermitRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户数字ID
-func (r *AlipayXiaodaiUserPermitRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlipayXiaodaiUserPermitRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlipayXiaodaiUserPermitRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

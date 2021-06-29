@@ -15,15 +15,15 @@ taobao.promotion.coupons.get
 type TaobaoPromotionCouponsGetRequest struct {
     model.Params
     // 优惠券的id，唯一标识这个优惠券
-    couponId   int64
+    _couponId   int64
     // 优惠券的截止日期
-    endTime   string
+    _endTime   string
     // 优惠券的面额，必须是3，5，10，20，50,100
-    denominations   int64
+    _denominations   int64
     // 查询的页号，结果集是分页返回的，每页20条
-    pageNo   int64
+    _pageNo   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPromotionCouponsGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoPromotionCouponsGetRequest) GetApiParams() url.Values {
 }
 // CouponId Setter
 // 优惠券的id，唯一标识这个优惠券
-func (r *TaobaoPromotionCouponsGetRequest) SetCouponId(couponId int64) error {
-    r.couponId = couponId
-    r.Set("coupon_id", couponId)
+func (r *TaobaoPromotionCouponsGetRequest) SetCouponId(_couponId int64) error {
+    r._couponId = _couponId
+    r.Set("coupon_id", _couponId)
     return nil
 }
 
 // CouponId Getter
 func (r TaobaoPromotionCouponsGetRequest) GetCouponId() int64 {
-    return r.couponId
+    return r._couponId
 }
 // EndTime Setter
 // 优惠券的截止日期
-func (r *TaobaoPromotionCouponsGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoPromotionCouponsGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoPromotionCouponsGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // Denominations Setter
 // 优惠券的面额，必须是3，5，10，20，50,100
-func (r *TaobaoPromotionCouponsGetRequest) SetDenominations(denominations int64) error {
-    r.denominations = denominations
-    r.Set("denominations", denominations)
+func (r *TaobaoPromotionCouponsGetRequest) SetDenominations(_denominations int64) error {
+    r._denominations = _denominations
+    r.Set("denominations", _denominations)
     return nil
 }
 
 // Denominations Getter
 func (r TaobaoPromotionCouponsGetRequest) GetDenominations() int64 {
-    return r.denominations
+    return r._denominations
 }
 // PageNo Setter
 // 查询的页号，结果集是分页返回的，每页20条
-func (r *TaobaoPromotionCouponsGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPromotionCouponsGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPromotionCouponsGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数
-func (r *TaobaoPromotionCouponsGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionCouponsGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionCouponsGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

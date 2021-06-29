@@ -15,9 +15,9 @@ tmall.hk.order.clearance.query
 type TmallHkOrderClearanceQueryRequest struct {
     model.Params
     // 交易主订单号
-    bizOrderId   int64
+    _bizOrderId   int64
     // 调用方业务身份(由国际侧配置提供给调用方)
-    businessSymbol   string
+    _businessSymbol   string
 }
 
 // 初始化TmallHkOrderClearanceQueryRequest对象
@@ -42,25 +42,25 @@ func (r TmallHkOrderClearanceQueryRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 交易主订单号
-func (r *TmallHkOrderClearanceQueryRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TmallHkOrderClearanceQueryRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TmallHkOrderClearanceQueryRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // BusinessSymbol Setter
 // 调用方业务身份(由国际侧配置提供给调用方)
-func (r *TmallHkOrderClearanceQueryRequest) SetBusinessSymbol(businessSymbol string) error {
-    r.businessSymbol = businessSymbol
-    r.Set("business_symbol", businessSymbol)
+func (r *TmallHkOrderClearanceQueryRequest) SetBusinessSymbol(_businessSymbol string) error {
+    r._businessSymbol = _businessSymbol
+    r.Set("business_symbol", _businessSymbol)
     return nil
 }
 
 // BusinessSymbol Getter
 func (r TmallHkOrderClearanceQueryRequest) GetBusinessSymbol() string {
-    return r.businessSymbol
+    return r._businessSymbol
 }

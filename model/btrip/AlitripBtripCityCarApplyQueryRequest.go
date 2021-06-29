@@ -15,7 +15,7 @@ alitrip.btrip.city.car.apply.query
 type AlitripBtripCityCarApplyQueryRequest struct {
     model.Params
     // 入参对象
-    rq   *CityCarApplyQueryRq
+    _rq   *CityCarApplyQueryRq
 }
 
 // 初始化AlitripBtripCityCarApplyQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCityCarApplyQueryRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripCityCarApplyQueryRequest) SetRq(rq *CityCarApplyQueryRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCityCarApplyQueryRequest) SetRq(_rq *CityCarApplyQueryRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCityCarApplyQueryRequest) GetRq() *CityCarApplyQueryRq {
-    return r.rq
+    return r._rq
 }

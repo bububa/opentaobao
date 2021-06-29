@@ -15,7 +15,7 @@ alibaba.wdk.bm.paiyang.supply.publish
 type AlibabaWdkBmPaiyangSupplyPublishRequest struct {
     model.Params
     // 请求入参
-    isvSupplySyncParam   *IsvSupplySyncParam
+    _isvSupplySyncParam   *IsvSupplySyncParam
 }
 
 // 初始化AlibabaWdkBmPaiyangSupplyPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmPaiyangSupplyPublishRequest) GetApiParams() url.Values {
 }
 // IsvSupplySyncParam Setter
 // 请求入参
-func (r *AlibabaWdkBmPaiyangSupplyPublishRequest) SetIsvSupplySyncParam(isvSupplySyncParam *IsvSupplySyncParam) error {
-    r.isvSupplySyncParam = isvSupplySyncParam
-    r.Set("isv_supply_sync_param", isvSupplySyncParam)
+func (r *AlibabaWdkBmPaiyangSupplyPublishRequest) SetIsvSupplySyncParam(_isvSupplySyncParam *IsvSupplySyncParam) error {
+    r._isvSupplySyncParam = _isvSupplySyncParam
+    r.Set("isv_supply_sync_param", _isvSupplySyncParam)
     return nil
 }
 
 // IsvSupplySyncParam Getter
 func (r AlibabaWdkBmPaiyangSupplyPublishRequest) GetIsvSupplySyncParam() *IsvSupplySyncParam {
-    return r.isvSupplySyncParam
+    return r._isvSupplySyncParam
 }

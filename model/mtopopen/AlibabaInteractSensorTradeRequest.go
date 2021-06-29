@@ -15,7 +15,7 @@ alibaba.interact.sensor.trade
 type AlibabaInteractSensorTradeRequest struct {
     model.Params
     // 系统自动生成
-    id   string
+    _id   string
 }
 
 // 初始化AlibabaInteractSensorTradeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorTradeRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractSensorTradeRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaInteractSensorTradeRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaInteractSensorTradeRequest) GetId() string {
-    return r.id
+    return r._id
 }

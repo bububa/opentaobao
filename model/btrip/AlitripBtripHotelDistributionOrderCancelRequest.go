@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.order.cancel
 type AlitripBtripHotelDistributionOrderCancelRequest struct {
     model.Params
     // 取消订单接口入参
-    paramBtripHotelOrderOperateRq   *BtripHotelOrderOperateRq
+    _paramBtripHotelOrderOperateRq   *BtripHotelOrderOperateRq
 }
 
 // 初始化AlitripBtripHotelDistributionOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionOrderCancelRequest) GetApiParams() url.Valu
 }
 // ParamBtripHotelOrderOperateRq Setter
 // 取消订单接口入参
-func (r *AlitripBtripHotelDistributionOrderCancelRequest) SetParamBtripHotelOrderOperateRq(paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
-    r.paramBtripHotelOrderOperateRq = paramBtripHotelOrderOperateRq
-    r.Set("param_btrip_hotel_order_operate_rq", paramBtripHotelOrderOperateRq)
+func (r *AlitripBtripHotelDistributionOrderCancelRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
+    r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
+    r.Set("param_btrip_hotel_order_operate_rq", _paramBtripHotelOrderOperateRq)
     return nil
 }
 
 // ParamBtripHotelOrderOperateRq Getter
 func (r AlitripBtripHotelDistributionOrderCancelRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
-    return r.paramBtripHotelOrderOperateRq
+    return r._paramBtripHotelOrderOperateRq
 }

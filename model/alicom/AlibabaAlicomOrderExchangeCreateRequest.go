@@ -15,7 +15,7 @@ alibaba.alicom.order.exchange.create
 type AlibabaAlicomOrderExchangeCreateRequest struct {
     model.Params
     // 入参
-    exchangeModel   *ExchangeModel
+    _exchangeModel   *ExchangeModel
 }
 
 // 初始化AlibabaAlicomOrderExchangeCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiParams() url.Values {
 }
 // ExchangeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderExchangeCreateRequest) SetExchangeModel(exchangeModel *ExchangeModel) error {
-    r.exchangeModel = exchangeModel
-    r.Set("exchange_model", exchangeModel)
+func (r *AlibabaAlicomOrderExchangeCreateRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
+    r._exchangeModel = _exchangeModel
+    r.Set("exchange_model", _exchangeModel)
     return nil
 }
 
 // ExchangeModel Getter
 func (r AlibabaAlicomOrderExchangeCreateRequest) GetExchangeModel() *ExchangeModel {
-    return r.exchangeModel
+    return r._exchangeModel
 }

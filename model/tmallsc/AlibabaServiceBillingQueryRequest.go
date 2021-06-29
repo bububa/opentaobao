@@ -15,9 +15,9 @@ alibaba.service.billing.query
 type AlibabaServiceBillingQueryRequest struct {
     model.Params
     // 账单查询开始时间。格式示例 2019-03-26 17:15:28
-    gmtCreateStart   string
+    _gmtCreateStart   string
     // 账单查询结束时间，时间区间限制未15分钟。 格式示例 2019-03-26 17:15:28
-    gmtCreateEnd   string
+    _gmtCreateEnd   string
 }
 
 // 初始化AlibabaServiceBillingQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaServiceBillingQueryRequest) GetApiParams() url.Values {
 }
 // GmtCreateStart Setter
 // 账单查询开始时间。格式示例 2019-03-26 17:15:28
-func (r *AlibabaServiceBillingQueryRequest) SetGmtCreateStart(gmtCreateStart string) error {
-    r.gmtCreateStart = gmtCreateStart
-    r.Set("gmt_create_start", gmtCreateStart)
+func (r *AlibabaServiceBillingQueryRequest) SetGmtCreateStart(_gmtCreateStart string) error {
+    r._gmtCreateStart = _gmtCreateStart
+    r.Set("gmt_create_start", _gmtCreateStart)
     return nil
 }
 
 // GmtCreateStart Getter
 func (r AlibabaServiceBillingQueryRequest) GetGmtCreateStart() string {
-    return r.gmtCreateStart
+    return r._gmtCreateStart
 }
 // GmtCreateEnd Setter
 // 账单查询结束时间，时间区间限制未15分钟。 格式示例 2019-03-26 17:15:28
-func (r *AlibabaServiceBillingQueryRequest) SetGmtCreateEnd(gmtCreateEnd string) error {
-    r.gmtCreateEnd = gmtCreateEnd
-    r.Set("gmt_create_end", gmtCreateEnd)
+func (r *AlibabaServiceBillingQueryRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
+    r._gmtCreateEnd = _gmtCreateEnd
+    r.Set("gmt_create_end", _gmtCreateEnd)
     return nil
 }
 
 // GmtCreateEnd Getter
 func (r AlibabaServiceBillingQueryRequest) GetGmtCreateEnd() string {
-    return r.gmtCreateEnd
+    return r._gmtCreateEnd
 }

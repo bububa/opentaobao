@@ -15,7 +15,7 @@ Weex页面播放视频
 type AlibabaInteractUiVideoRequest struct {
     model.Params
     // 仅作鉴权使用，没有实际数据传输
-    unnamed   string
+    _unnamed   string
 }
 
 // 初始化AlibabaInteractUiVideoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractUiVideoRequest) GetApiParams() url.Values {
 }
 // Unnamed Setter
 // 仅作鉴权使用，没有实际数据传输
-func (r *AlibabaInteractUiVideoRequest) SetUnnamed(unnamed string) error {
-    r.unnamed = unnamed
-    r.Set("unnamed", unnamed)
+func (r *AlibabaInteractUiVideoRequest) SetUnnamed(_unnamed string) error {
+    r._unnamed = _unnamed
+    r.Set("unnamed", _unnamed)
     return nil
 }
 
 // Unnamed Getter
 func (r AlibabaInteractUiVideoRequest) GetUnnamed() string {
-    return r.unnamed
+    return r._unnamed
 }

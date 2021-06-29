@@ -15,7 +15,7 @@ alibaba.alihealth.examination.report.diagnose.tempmessage.receive
 type AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest struct {
     model.Params
     // 入参对象
-    reportDiagnoseImMessageRequest   *ReportDiagnoseImMessageRequest
+    _reportDiagnoseImMessageRequest   *ReportDiagnoseImMessageRequest
 }
 
 // 初始化AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetA
 }
 // ReportDiagnoseImMessageRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) SetReportDiagnoseImMessageRequest(reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
-    r.reportDiagnoseImMessageRequest = reportDiagnoseImMessageRequest
-    r.Set("report_diagnose_im_message_request", reportDiagnoseImMessageRequest)
+func (r *AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) SetReportDiagnoseImMessageRequest(_reportDiagnoseImMessageRequest *ReportDiagnoseImMessageRequest) error {
+    r._reportDiagnoseImMessageRequest = _reportDiagnoseImMessageRequest
+    r.Set("report_diagnose_im_message_request", _reportDiagnoseImMessageRequest)
     return nil
 }
 
 // ReportDiagnoseImMessageRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseTempmessageReceiveRequest) GetReportDiagnoseImMessageRequest() *ReportDiagnoseImMessageRequest {
-    return r.reportDiagnoseImMessageRequest
+    return r._reportDiagnoseImMessageRequest
 }

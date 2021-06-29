@@ -15,7 +15,7 @@ alibaba.wdk.channel.order.refund.confirm
 type AlibabaWdkChannelOrderRefundConfirmRequest struct {
     model.Params
     // 退款确认信息
-    orderRefundConfirmInfo   *OrderRefundConfirmInfo
+    _orderRefundConfirmInfo   *OrderRefundConfirmInfo
 }
 
 // 初始化AlibabaWdkChannelOrderRefundConfirmRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetApiParams() url.Values {
 }
 // OrderRefundConfirmInfo Setter
 // 退款确认信息
-func (r *AlibabaWdkChannelOrderRefundConfirmRequest) SetOrderRefundConfirmInfo(orderRefundConfirmInfo *OrderRefundConfirmInfo) error {
-    r.orderRefundConfirmInfo = orderRefundConfirmInfo
-    r.Set("order_refund_confirm_info", orderRefundConfirmInfo)
+func (r *AlibabaWdkChannelOrderRefundConfirmRequest) SetOrderRefundConfirmInfo(_orderRefundConfirmInfo *OrderRefundConfirmInfo) error {
+    r._orderRefundConfirmInfo = _orderRefundConfirmInfo
+    r.Set("order_refund_confirm_info", _orderRefundConfirmInfo)
     return nil
 }
 
 // OrderRefundConfirmInfo Getter
 func (r AlibabaWdkChannelOrderRefundConfirmRequest) GetOrderRefundConfirmInfo() *OrderRefundConfirmInfo {
-    return r.orderRefundConfirmInfo
+    return r._orderRefundConfirmInfo
 }

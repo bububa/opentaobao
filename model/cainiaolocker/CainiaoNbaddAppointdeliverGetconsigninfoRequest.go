@@ -15,7 +15,7 @@ cainiao.nbadd.appointdeliver.getconsigninfo
 type CainiaoNbaddAppointdeliverGetconsigninfoRequest struct {
     model.Params
     // 淘宝交易订单id
-    tradeOrderId   int64
+    _tradeOrderId   int64
 }
 
 // 初始化CainiaoNbaddAppointdeliverGetconsigninfoRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoNbaddAppointdeliverGetconsigninfoRequest) GetApiParams() url.Valu
 }
 // TradeOrderId Setter
 // 淘宝交易订单id
-func (r *CainiaoNbaddAppointdeliverGetconsigninfoRequest) SetTradeOrderId(tradeOrderId int64) error {
-    r.tradeOrderId = tradeOrderId
-    r.Set("trade_order_id", tradeOrderId)
+func (r *CainiaoNbaddAppointdeliverGetconsigninfoRequest) SetTradeOrderId(_tradeOrderId int64) error {
+    r._tradeOrderId = _tradeOrderId
+    r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
 func (r CainiaoNbaddAppointdeliverGetconsigninfoRequest) GetTradeOrderId() int64 {
-    return r.tradeOrderId
+    return r._tradeOrderId
 }

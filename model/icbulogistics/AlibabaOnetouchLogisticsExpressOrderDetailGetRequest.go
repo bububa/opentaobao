@@ -15,7 +15,7 @@ alibaba.onetouch.logistics.express.order.detail.get
 type AlibabaOnetouchLogisticsExpressOrderDetailGetRequest struct {
     model.Params
     // 请求参数
-    paramQuery   *LogisticsOrderQueryDto
+    _paramQuery   *LogisticsOrderQueryDto
 }
 
 // 初始化AlibabaOnetouchLogisticsExpressOrderDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressOrderDetailGetRequest) GetApiParams() url
 }
 // ParamQuery Setter
 // 请求参数
-func (r *AlibabaOnetouchLogisticsExpressOrderDetailGetRequest) SetParamQuery(paramQuery *LogisticsOrderQueryDto) error {
-    r.paramQuery = paramQuery
-    r.Set("param_query", paramQuery)
+func (r *AlibabaOnetouchLogisticsExpressOrderDetailGetRequest) SetParamQuery(_paramQuery *LogisticsOrderQueryDto) error {
+    r._paramQuery = _paramQuery
+    r.Set("param_query", _paramQuery)
     return nil
 }
 
 // ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressOrderDetailGetRequest) GetParamQuery() *LogisticsOrderQueryDto {
-    return r.paramQuery
+    return r._paramQuery
 }

@@ -15,7 +15,7 @@ tmall.product.schema.get
 type TmallProductSchemaGetRequest struct {
     model.Params
     // 产品编号
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TmallProductSchemaGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallProductSchemaGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品编号
-func (r *TmallProductSchemaGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallProductSchemaGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallProductSchemaGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

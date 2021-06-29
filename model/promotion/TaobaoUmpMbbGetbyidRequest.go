@@ -15,7 +15,7 @@ taobao.ump.mbb.getbyid
 type TaobaoUmpMbbGetbyidRequest struct {
     model.Params
     // 积木块的id
-    id   int64
+    _id   int64
 }
 
 // 初始化TaobaoUmpMbbGetbyidRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpMbbGetbyidRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 积木块的id
-func (r *TaobaoUmpMbbGetbyidRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoUmpMbbGetbyidRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoUmpMbbGetbyidRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

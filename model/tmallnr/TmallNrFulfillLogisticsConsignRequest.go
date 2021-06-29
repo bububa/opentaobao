@@ -15,7 +15,7 @@ tmall.nr.fulfill.logistics.consign
 type TmallNrFulfillLogisticsConsignRequest struct {
     model.Params
     // 入参对象
-    param0   *NrStoreGoodsReadyReqDto
+    _param0   *NrStoreGoodsReadyReqDto
 }
 
 // 初始化TmallNrFulfillLogisticsConsignRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrFulfillLogisticsConsignRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参对象
-func (r *TmallNrFulfillLogisticsConsignRequest) SetParam0(param0 *NrStoreGoodsReadyReqDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallNrFulfillLogisticsConsignRequest) SetParam0(_param0 *NrStoreGoodsReadyReqDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallNrFulfillLogisticsConsignRequest) GetParam0() *NrStoreGoodsReadyReqDto {
-    return r.param0
+    return r._param0
 }

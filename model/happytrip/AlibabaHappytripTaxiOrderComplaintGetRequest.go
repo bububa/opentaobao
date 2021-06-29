@@ -15,9 +15,9 @@ alibaba.happytrip.taxi.order.complaint.get
 type AlibabaHappytripTaxiOrderComplaintGetRequest struct {
     model.Params
     // 供应商订单号
-    orderId   string
+    _orderId   string
     // 供应商工单号
-    caseId   string
+    _caseId   string
 }
 
 // 初始化AlibabaHappytripTaxiOrderComplaintGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 供应商订单号
-func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // CaseId Setter
 // 供应商工单号
-func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetCaseId(caseId string) error {
-    r.caseId = caseId
-    r.Set("case_id", caseId)
+func (r *AlibabaHappytripTaxiOrderComplaintGetRequest) SetCaseId(_caseId string) error {
+    r._caseId = _caseId
+    r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
 func (r AlibabaHappytripTaxiOrderComplaintGetRequest) GetCaseId() string {
-    return r.caseId
+    return r._caseId
 }

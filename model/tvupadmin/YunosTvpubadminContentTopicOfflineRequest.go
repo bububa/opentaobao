@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.topic.offline
 type YunosTvpubadminContentTopicOfflineRequest struct {
     model.Params
     // id
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosTvpubadminContentTopicOfflineRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTopicOfflineRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // id
-func (r *YunosTvpubadminContentTopicOfflineRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminContentTopicOfflineRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminContentTopicOfflineRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

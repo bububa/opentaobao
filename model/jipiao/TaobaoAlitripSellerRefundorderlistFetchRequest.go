@@ -15,11 +15,11 @@ taobao.alitrip.seller.refundorderlist.fetch
 type TaobaoAlitripSellerRefundorderlistFetchRequest struct {
     model.Params
     // 提取数据的开始时间
-    startDate   string
+    _startDate   string
     // 1：初始，2：接受，3：确认，4：失败，5：买家处理，6：卖家处理，7：等待小二回填，8：退款成功
-    status   int64
+    _status   int64
     // 提取数据的结束时间
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoAlitripSellerRefundorderlistFetchRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripSellerRefundorderlistFetchRequest) GetApiParams() url.Value
 }
 // StartDate Setter
 // 提取数据的开始时间
-func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // Status Setter
 // 1：初始，2：接受，3：确认，4：失败，5：买家处理，6：卖家处理，7：等待小二回填，8：退款成功
-func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // EndDate Setter
 // 提取数据的结束时间
-func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoAlitripSellerRefundorderlistFetchRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoAlitripSellerRefundorderlistFetchRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

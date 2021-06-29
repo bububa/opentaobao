@@ -15,13 +15,13 @@ alibaba.health.nr.logistics.deliveryno.update
 type AlibabaHealthNrLogisticsDeliverynoUpdateRequest struct {
     model.Params
     // 订单ID
-    orderId   int64
+    _orderId   int64
     // 快递公司代码
-    cpCode   string
+    _cpCode   string
     // 快递单号
-    courierNo   string
+    _courierNo   string
     // 是否强制上传，1代表强制，其他值代表需要进行cp_code合法性校验
-    force   int64
+    _force   int64
 }
 
 // 初始化AlibabaHealthNrLogisticsDeliverynoUpdateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaHealthNrLogisticsDeliverynoUpdateRequest) GetApiParams() url.Valu
 }
 // OrderId Setter
 // 订单ID
-func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // CpCode Setter
 // 快递公司代码
-func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }
 // CourierNo Setter
 // 快递单号
-func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetCourierNo(courierNo string) error {
-    r.courierNo = courierNo
-    r.Set("courier_no", courierNo)
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetCourierNo(_courierNo string) error {
+    r._courierNo = _courierNo
+    r.Set("courier_no", _courierNo)
     return nil
 }
 
 // CourierNo Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateRequest) GetCourierNo() string {
-    return r.courierNo
+    return r._courierNo
 }
 // Force Setter
 // 是否强制上传，1代表强制，其他值代表需要进行cp_code合法性校验
-func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetForce(force int64) error {
-    r.force = force
-    r.Set("force", force)
+func (r *AlibabaHealthNrLogisticsDeliverynoUpdateRequest) SetForce(_force int64) error {
+    r._force = _force
+    r.Set("force", _force)
     return nil
 }
 
 // Force Getter
 func (r AlibabaHealthNrLogisticsDeliverynoUpdateRequest) GetForce() int64 {
-    return r.force
+    return r._force
 }

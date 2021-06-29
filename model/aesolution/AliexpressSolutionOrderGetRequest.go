@@ -15,7 +15,7 @@ Get Order List from AliExpress
 type AliexpressSolutionOrderGetRequest struct {
     model.Params
     // param
-    param0   *OrderQuery
+    _param0   *OrderQuery
 }
 
 // 初始化AliexpressSolutionOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionOrderGetRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // param
-func (r *AliexpressSolutionOrderGetRequest) SetParam0(param0 *OrderQuery) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AliexpressSolutionOrderGetRequest) SetParam0(_param0 *OrderQuery) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AliexpressSolutionOrderGetRequest) GetParam0() *OrderQuery {
-    return r.param0
+    return r._param0
 }

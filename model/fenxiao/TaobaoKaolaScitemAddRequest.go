@@ -15,9 +15,9 @@ taobao.kaola.scitem.add
 type TaobaoKaolaScitemAddRequest struct {
     model.Params
     // 待新增的货品
-    cnsku   *CnskuDto
+    _cnsku   *CnskuDto
     // 新增选项
-    option   *AddCnskuOption
+    _option   *AddCnskuOption
 }
 
 // 初始化TaobaoKaolaScitemAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoKaolaScitemAddRequest) GetApiParams() url.Values {
 }
 // Cnsku Setter
 // 待新增的货品
-func (r *TaobaoKaolaScitemAddRequest) SetCnsku(cnsku *CnskuDto) error {
-    r.cnsku = cnsku
-    r.Set("cnsku", cnsku)
+func (r *TaobaoKaolaScitemAddRequest) SetCnsku(_cnsku *CnskuDto) error {
+    r._cnsku = _cnsku
+    r.Set("cnsku", _cnsku)
     return nil
 }
 
 // Cnsku Getter
 func (r TaobaoKaolaScitemAddRequest) GetCnsku() *CnskuDto {
-    return r.cnsku
+    return r._cnsku
 }
 // Option Setter
 // 新增选项
-func (r *TaobaoKaolaScitemAddRequest) SetOption(option *AddCnskuOption) error {
-    r.option = option
-    r.Set("option", option)
+func (r *TaobaoKaolaScitemAddRequest) SetOption(_option *AddCnskuOption) error {
+    r._option = _option
+    r.Set("option", _option)
     return nil
 }
 
 // Option Getter
 func (r TaobaoKaolaScitemAddRequest) GetOption() *AddCnskuOption {
-    return r.option
+    return r._option
 }

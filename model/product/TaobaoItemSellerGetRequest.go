@@ -16,9 +16,9 @@ taobao.item.seller.get
 type TaobaoItemSellerGetRequest struct {
     model.Params
     // 需要返回的商品字段列表。可选值：Item商品结构体中所有字段均可返回，多个字段用“,”分隔。
-    fields   string
+    _fields   string
     // 商品数字ID
-    numIid   int64
+    _numIid   int64
 }
 
 // 初始化TaobaoItemSellerGetRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoItemSellerGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的商品字段列表。可选值：Item商品结构体中所有字段均可返回，多个字段用“,”分隔。
-func (r *TaobaoItemSellerGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoItemSellerGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoItemSellerGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // NumIid Setter
 // 商品数字ID
-func (r *TaobaoItemSellerGetRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemSellerGetRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemSellerGetRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }

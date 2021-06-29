@@ -15,7 +15,7 @@ alibaba.mos.store.recordscreenpointinfo
 type AlibabaMosStoreRecordscreenpointinfoRequest struct {
     model.Params
     // 云屏埋点信息
-    screenPointInfo   string
+    _screenPointInfo   string
 }
 
 // 初始化AlibabaMosStoreRecordscreenpointinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetApiParams() url.Values {
 }
 // ScreenPointInfo Setter
 // 云屏埋点信息
-func (r *AlibabaMosStoreRecordscreenpointinfoRequest) SetScreenPointInfo(screenPointInfo string) error {
-    r.screenPointInfo = screenPointInfo
-    r.Set("screen_point_info", screenPointInfo)
+func (r *AlibabaMosStoreRecordscreenpointinfoRequest) SetScreenPointInfo(_screenPointInfo string) error {
+    r._screenPointInfo = _screenPointInfo
+    r.Set("screen_point_info", _screenPointInfo)
     return nil
 }
 
 // ScreenPointInfo Getter
 func (r AlibabaMosStoreRecordscreenpointinfoRequest) GetScreenPointInfo() string {
-    return r.screenPointInfo
+    return r._screenPointInfo
 }

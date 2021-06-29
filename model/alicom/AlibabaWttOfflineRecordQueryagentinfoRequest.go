@@ -15,9 +15,9 @@ alibaba.wtt.offline.record.queryagentinfo
 type AlibabaWttOfflineRecordQueryagentinfoRequest struct {
     model.Params
     // 淘宝订单号
-    orderId   int64
+    _orderId   int64
     // 业务号码
-    phone   string
+    _phone   string
 }
 
 // 初始化AlibabaWttOfflineRecordQueryagentinfoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWttOfflineRecordQueryagentinfoRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 淘宝订单号
-func (r *AlibabaWttOfflineRecordQueryagentinfoRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaWttOfflineRecordQueryagentinfoRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaWttOfflineRecordQueryagentinfoRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // Phone Setter
 // 业务号码
-func (r *AlibabaWttOfflineRecordQueryagentinfoRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaWttOfflineRecordQueryagentinfoRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaWttOfflineRecordQueryagentinfoRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

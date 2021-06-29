@@ -15,11 +15,11 @@ alibaba.alihealth.tracecodeseller.ent.search
 type AlibabaAlihealthTracecodesellerEntSearchRequest struct {
     model.Params
     // appkey
-    skeyCode   string
+    _skeyCode   string
     // 商家名称
-    name   string
+    _name   string
     // 淘宝名
-    tbUserId   string
+    _tbUserId   string
 }
 
 // 初始化AlibabaAlihealthTracecodesellerEntSearchRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthTracecodesellerEntSearchRequest) GetApiParams() url.Valu
 }
 // SkeyCode Setter
 // appkey
-func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetSkeyCode(skeyCode string) error {
-    r.skeyCode = skeyCode
-    r.Set("skey_code", skeyCode)
+func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetSkeyCode(_skeyCode string) error {
+    r._skeyCode = _skeyCode
+    r.Set("skey_code", _skeyCode)
     return nil
 }
 
 // SkeyCode Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchRequest) GetSkeyCode() string {
-    return r.skeyCode
+    return r._skeyCode
 }
 // Name Setter
 // 商家名称
-func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // TbUserId Setter
 // 淘宝名
-func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetTbUserId(tbUserId string) error {
-    r.tbUserId = tbUserId
-    r.Set("tb_user_id", tbUserId)
+func (r *AlibabaAlihealthTracecodesellerEntSearchRequest) SetTbUserId(_tbUserId string) error {
+    r._tbUserId = _tbUserId
+    r.Set("tb_user_id", _tbUserId)
     return nil
 }
 
 // TbUserId Getter
 func (r AlibabaAlihealthTracecodesellerEntSearchRequest) GetTbUserId() string {
-    return r.tbUserId
+    return r._tbUserId
 }

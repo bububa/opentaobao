@@ -15,7 +15,7 @@ alibaba.mj.oc.calldispatcher
 type AlibabaMjOcCalldispatcherRequest struct {
     model.Params
     // 入参
-    callDispatcherDTO   *CallDispatcherDto
+    _callDispatcherDTO   *CallDispatcherDto
 }
 
 // 初始化AlibabaMjOcCalldispatcherRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcCalldispatcherRequest) GetApiParams() url.Values {
 }
 // CallDispatcherDTO Setter
 // 入参
-func (r *AlibabaMjOcCalldispatcherRequest) SetCallDispatcherDTO(callDispatcherDTO *CallDispatcherDto) error {
-    r.callDispatcherDTO = callDispatcherDTO
-    r.Set("call_dispatcher_d_t_o", callDispatcherDTO)
+func (r *AlibabaMjOcCalldispatcherRequest) SetCallDispatcherDTO(_callDispatcherDTO *CallDispatcherDto) error {
+    r._callDispatcherDTO = _callDispatcherDTO
+    r.Set("call_dispatcher_d_t_o", _callDispatcherDTO)
     return nil
 }
 
 // CallDispatcherDTO Getter
 func (r AlibabaMjOcCalldispatcherRequest) GetCallDispatcherDTO() *CallDispatcherDto {
-    return r.callDispatcherDTO
+    return r._callDispatcherDTO
 }

@@ -15,7 +15,7 @@ taobao.inventory.store.query
 type TaobaoInventoryStoreQueryRequest struct {
     model.Params
     // 商家的仓库编码
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化TaobaoInventoryStoreQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryStoreQueryRequest) GetApiParams() url.Values {
 }
 // StoreCode Setter
 // 商家的仓库编码
-func (r *TaobaoInventoryStoreQueryRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoInventoryStoreQueryRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoInventoryStoreQueryRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

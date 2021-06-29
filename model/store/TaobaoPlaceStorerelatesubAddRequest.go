@@ -15,9 +15,9 @@ taobao.place.storerelatesub.add
 type TaobaoPlaceStorerelatesubAddRequest struct {
     model.Params
     // 门店Id
-    storeId   int64
+    _storeId   int64
     // 子门店Id
-    subStoreIds   []int64
+    _subStoreIds   []int64
 }
 
 // 初始化TaobaoPlaceStorerelatesubAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPlaceStorerelatesubAddRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店Id
-func (r *TaobaoPlaceStorerelatesubAddRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStorerelatesubAddRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStorerelatesubAddRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // SubStoreIds Setter
 // 子门店Id
-func (r *TaobaoPlaceStorerelatesubAddRequest) SetSubStoreIds(subStoreIds []int64) error {
-    r.subStoreIds = subStoreIds
-    r.Set("sub_store_ids", subStoreIds)
+func (r *TaobaoPlaceStorerelatesubAddRequest) SetSubStoreIds(_subStoreIds []int64) error {
+    r._subStoreIds = _subStoreIds
+    r.Set("sub_store_ids", _subStoreIds)
     return nil
 }
 
 // SubStoreIds Getter
 func (r TaobaoPlaceStorerelatesubAddRequest) GetSubStoreIds() []int64 {
-    return r.subStoreIds
+    return r._subStoreIds
 }

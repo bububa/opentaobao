@@ -15,7 +15,7 @@ aliexpress.social.country.get
 type AliexpressSocialCountryGetRequest struct {
     model.Params
     // 语言
-    language   string
+    _language   string
 }
 
 // 初始化AliexpressSocialCountryGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSocialCountryGetRequest) GetApiParams() url.Values {
 }
 // Language Setter
 // 语言
-func (r *AliexpressSocialCountryGetRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AliexpressSocialCountryGetRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AliexpressSocialCountryGetRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }

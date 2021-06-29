@@ -15,7 +15,7 @@ alibaba.member.identity.rescindfinish
 type AlibabaMemberIdentityRescindfinishRequest struct {
     model.Params
     // 取消确认信息
-    rescindFinish   *RescindIdentityFinishRequest
+    _rescindFinish   *RescindIdentityFinishRequest
 }
 
 // 初始化AlibabaMemberIdentityRescindfinishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMemberIdentityRescindfinishRequest) GetApiParams() url.Values {
 }
 // RescindFinish Setter
 // 取消确认信息
-func (r *AlibabaMemberIdentityRescindfinishRequest) SetRescindFinish(rescindFinish *RescindIdentityFinishRequest) error {
-    r.rescindFinish = rescindFinish
-    r.Set("rescind_finish", rescindFinish)
+func (r *AlibabaMemberIdentityRescindfinishRequest) SetRescindFinish(_rescindFinish *RescindIdentityFinishRequest) error {
+    r._rescindFinish = _rescindFinish
+    r.Set("rescind_finish", _rescindFinish)
     return nil
 }
 
 // RescindFinish Getter
 func (r AlibabaMemberIdentityRescindfinishRequest) GetRescindFinish() *RescindIdentityFinishRequest {
-    return r.rescindFinish
+    return r._rescindFinish
 }

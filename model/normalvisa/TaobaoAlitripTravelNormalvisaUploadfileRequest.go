@@ -15,11 +15,11 @@ taobao.alitrip.travel.normalvisa.uploadfile
 type TaobaoAlitripTravelNormalvisaUploadfileRequest struct {
     model.Params
     // 文件
-    fileBytes   []*model.File
+    _fileBytes   []*model.File
     // 文件名：注意文件名请保证和上传的文件一直
-    fileName   string
+    _fileName   string
     // 订单id
-    bizOrderId   int64
+    _bizOrderId   int64
 }
 
 // 初始化TaobaoAlitripTravelNormalvisaUploadfileRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetApiParams() url.Value
 }
 // FileBytes Setter
 // 文件
-func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileBytes(fileBytes []*model.File) error {
-    r.fileBytes = fileBytes
-    r.Set("file_bytes", fileBytes)
+func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileBytes(_fileBytes []*model.File) error {
+    r._fileBytes = _fileBytes
+    r.Set("file_bytes", _fileBytes)
     return nil
 }
 
 // FileBytes Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetFileBytes() []*model.File {
-    return r.fileBytes
+    return r._fileBytes
 }
 // FileName Setter
 // 文件名：注意文件名请保证和上传的文件一直
-func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // BizOrderId Setter
 // 订单id
-func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TaobaoAlitripTravelNormalvisaUploadfileRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaUploadfileRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }

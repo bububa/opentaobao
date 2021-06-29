@@ -15,7 +15,7 @@ ott iot设备状态通知
 type YoukuOttIotStatusPushRequest struct {
     model.Params
     // 变更信息
-    changeInfo   string
+    _changeInfo   string
 }
 
 // 初始化YoukuOttIotStatusPushRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttIotStatusPushRequest) GetApiParams() url.Values {
 }
 // ChangeInfo Setter
 // 变更信息
-func (r *YoukuOttIotStatusPushRequest) SetChangeInfo(changeInfo string) error {
-    r.changeInfo = changeInfo
-    r.Set("change_info", changeInfo)
+func (r *YoukuOttIotStatusPushRequest) SetChangeInfo(_changeInfo string) error {
+    r._changeInfo = _changeInfo
+    r.Set("change_info", _changeInfo)
     return nil
 }
 
 // ChangeInfo Getter
 func (r YoukuOttIotStatusPushRequest) GetChangeInfo() string {
-    return r.changeInfo
+    return r._changeInfo
 }

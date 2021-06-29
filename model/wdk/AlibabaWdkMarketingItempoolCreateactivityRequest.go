@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itempool.createactivity
 type AlibabaWdkMarketingItempoolCreateactivityRequest struct {
     model.Params
     // 创建活动请求入参
-    param   *ItemPoolActivity
+    _param   *ItemPoolActivity
 }
 
 // 初始化AlibabaWdkMarketingItempoolCreateactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolCreateactivityRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 创建活动请求入参
-func (r *AlibabaWdkMarketingItempoolCreateactivityRequest) SetParam(param *ItemPoolActivity) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItempoolCreateactivityRequest) SetParam(_param *ItemPoolActivity) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItempoolCreateactivityRequest) GetParam() *ItemPoolActivity {
-    return r.param
+    return r._param
 }

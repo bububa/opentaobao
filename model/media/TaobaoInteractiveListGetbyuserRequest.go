@@ -15,9 +15,9 @@ taobao.interactive.list.getbyuser
 type TaobaoInteractiveListGetbyuserRequest struct {
     model.Params
     // 当前页
-    currentPage   int64
+    _currentPage   int64
     // 每页多少
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoInteractiveListGetbyuserRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoInteractiveListGetbyuserRequest) GetApiParams() url.Values {
 }
 // CurrentPage Setter
 // 当前页
-func (r *TaobaoInteractiveListGetbyuserRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoInteractiveListGetbyuserRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoInteractiveListGetbyuserRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页多少
-func (r *TaobaoInteractiveListGetbyuserRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoInteractiveListGetbyuserRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoInteractiveListGetbyuserRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

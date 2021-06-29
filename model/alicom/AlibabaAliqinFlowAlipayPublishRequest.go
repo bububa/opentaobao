@@ -15,13 +15,13 @@ alibaba.aliqin.flow.alipay.publish
 type AlibabaAliqinFlowAlipayPublishRequest struct {
     model.Params
     // 用户的支付宝ID
-    alipayId   string
+    _alipayId   string
     // 外部流水号，用来做幂等校验
-    serial   string
+    _serial   string
     // 发放的流量数，单位MB
-    flow   string
+    _flow   string
     // 发放原因
-    reason   string
+    _reason   string
 }
 
 // 初始化AlibabaAliqinFlowAlipayPublishRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinFlowAlipayPublishRequest) GetApiParams() url.Values {
 }
 // AlipayId Setter
 // 用户的支付宝ID
-func (r *AlibabaAliqinFlowAlipayPublishRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaAliqinFlowAlipayPublishRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaAliqinFlowAlipayPublishRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }
 // Serial Setter
 // 外部流水号，用来做幂等校验
-func (r *AlibabaAliqinFlowAlipayPublishRequest) SetSerial(serial string) error {
-    r.serial = serial
-    r.Set("serial", serial)
+func (r *AlibabaAliqinFlowAlipayPublishRequest) SetSerial(_serial string) error {
+    r._serial = _serial
+    r.Set("serial", _serial)
     return nil
 }
 
 // Serial Getter
 func (r AlibabaAliqinFlowAlipayPublishRequest) GetSerial() string {
-    return r.serial
+    return r._serial
 }
 // Flow Setter
 // 发放的流量数，单位MB
-func (r *AlibabaAliqinFlowAlipayPublishRequest) SetFlow(flow string) error {
-    r.flow = flow
-    r.Set("flow", flow)
+func (r *AlibabaAliqinFlowAlipayPublishRequest) SetFlow(_flow string) error {
+    r._flow = _flow
+    r.Set("flow", _flow)
     return nil
 }
 
 // Flow Getter
 func (r AlibabaAliqinFlowAlipayPublishRequest) GetFlow() string {
-    return r.flow
+    return r._flow
 }
 // Reason Setter
 // 发放原因
-func (r *AlibabaAliqinFlowAlipayPublishRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaAliqinFlowAlipayPublishRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaAliqinFlowAlipayPublishRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }

@@ -15,7 +15,7 @@ alibaba.mozi.fusion.addorupdate.employee.account
 type AlibabaMoziFusionAddorupdateEmployeeAccountRequest struct {
     model.Params
     // 人员账号
-    employeeAccount   *AddOrUpdateTenantEmployeeAndAccountRequest
+    _employeeAccount   *AddOrUpdateTenantEmployeeAndAccountRequest
 }
 
 // 初始化AlibabaMoziFusionAddorupdateEmployeeAccountRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetApiParams() url.V
 }
 // EmployeeAccount Setter
 // 人员账号
-func (r *AlibabaMoziFusionAddorupdateEmployeeAccountRequest) SetEmployeeAccount(employeeAccount *AddOrUpdateTenantEmployeeAndAccountRequest) error {
-    r.employeeAccount = employeeAccount
-    r.Set("employee_account", employeeAccount)
+func (r *AlibabaMoziFusionAddorupdateEmployeeAccountRequest) SetEmployeeAccount(_employeeAccount *AddOrUpdateTenantEmployeeAndAccountRequest) error {
+    r._employeeAccount = _employeeAccount
+    r.Set("employee_account", _employeeAccount)
     return nil
 }
 
 // EmployeeAccount Getter
 func (r AlibabaMoziFusionAddorupdateEmployeeAccountRequest) GetEmployeeAccount() *AddOrUpdateTenantEmployeeAndAccountRequest {
-    return r.employeeAccount
+    return r._employeeAccount
 }

@@ -15,7 +15,7 @@ taobao.simba.salestar.creative.delete
 type TaobaoSimbaSalestarCreativeDeleteRequest struct {
     model.Params
     // 创意Id
-    creativeId   int64
+    _creativeId   int64
 }
 
 // 初始化TaobaoSimbaSalestarCreativeDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetApiParams() url.Values {
 }
 // CreativeId Setter
 // 创意Id
-func (r *TaobaoSimbaSalestarCreativeDeleteRequest) SetCreativeId(creativeId int64) error {
-    r.creativeId = creativeId
-    r.Set("creative_id", creativeId)
+func (r *TaobaoSimbaSalestarCreativeDeleteRequest) SetCreativeId(_creativeId int64) error {
+    r._creativeId = _creativeId
+    r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
 func (r TaobaoSimbaSalestarCreativeDeleteRequest) GetCreativeId() int64 {
-    return r.creativeId
+    return r._creativeId
 }

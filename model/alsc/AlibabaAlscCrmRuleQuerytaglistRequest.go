@@ -15,7 +15,7 @@ alibaba.alsc.crm.rule.querytaglist
 type AlibabaAlscCrmRuleQuerytaglistRequest struct {
     model.Params
     // 请求参数
-    paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
+    _paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
 }
 
 // 初始化AlibabaAlscCrmRuleQuerytaglistRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQuerytaglistRequest) GetApiParams() url.Values {
 }
 // ParamPlanRuleQueryOpenReq Setter
 // 请求参数
-func (r *AlibabaAlscCrmRuleQuerytaglistRequest) SetParamPlanRuleQueryOpenReq(paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
-    r.paramPlanRuleQueryOpenReq = paramPlanRuleQueryOpenReq
-    r.Set("param_plan_rule_query_open_req", paramPlanRuleQueryOpenReq)
+func (r *AlibabaAlscCrmRuleQuerytaglistRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
+    r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
+    r.Set("param_plan_rule_query_open_req", _paramPlanRuleQueryOpenReq)
     return nil
 }
 
 // ParamPlanRuleQueryOpenReq Getter
 func (r AlibabaAlscCrmRuleQuerytaglistRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
-    return r.paramPlanRuleQueryOpenReq
+    return r._paramPlanRuleQueryOpenReq
 }

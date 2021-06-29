@@ -15,9 +15,9 @@ taobao.simba.creative.delete
 type TaobaoSimbaCreativeDeleteRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 创意Id
-    creativeId   int64
+    _creativeId   int64
 }
 
 // 初始化TaobaoSimbaCreativeDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaCreativeDeleteRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCreativeDeleteRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCreativeDeleteRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCreativeDeleteRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CreativeId Setter
 // 创意Id
-func (r *TaobaoSimbaCreativeDeleteRequest) SetCreativeId(creativeId int64) error {
-    r.creativeId = creativeId
-    r.Set("creative_id", creativeId)
+func (r *TaobaoSimbaCreativeDeleteRequest) SetCreativeId(_creativeId int64) error {
+    r._creativeId = _creativeId
+    r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
 func (r TaobaoSimbaCreativeDeleteRequest) GetCreativeId() int64 {
-    return r.creativeId
+    return r._creativeId
 }

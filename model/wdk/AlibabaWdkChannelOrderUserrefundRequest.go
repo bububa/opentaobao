@@ -15,7 +15,7 @@ alibaba.wdk.channel.order.userrefund
 type AlibabaWdkChannelOrderUserrefundRequest struct {
     model.Params
     // 退款信息
-    orderUserRefundInfo   *OrderUserRefundInfo
+    _orderUserRefundInfo   *OrderUserRefundInfo
 }
 
 // 初始化AlibabaWdkChannelOrderUserrefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderUserrefundRequest) GetApiParams() url.Values {
 }
 // OrderUserRefundInfo Setter
 // 退款信息
-func (r *AlibabaWdkChannelOrderUserrefundRequest) SetOrderUserRefundInfo(orderUserRefundInfo *OrderUserRefundInfo) error {
-    r.orderUserRefundInfo = orderUserRefundInfo
-    r.Set("order_user_refund_info", orderUserRefundInfo)
+func (r *AlibabaWdkChannelOrderUserrefundRequest) SetOrderUserRefundInfo(_orderUserRefundInfo *OrderUserRefundInfo) error {
+    r._orderUserRefundInfo = _orderUserRefundInfo
+    r.Set("order_user_refund_info", _orderUserRefundInfo)
     return nil
 }
 
 // OrderUserRefundInfo Getter
 func (r AlibabaWdkChannelOrderUserrefundRequest) GetOrderUserRefundInfo() *OrderUserRefundInfo {
-    return r.orderUserRefundInfo
+    return r._orderUserRefundInfo
 }

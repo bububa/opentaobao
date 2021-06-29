@@ -15,9 +15,9 @@ alibaba.seaking.servicepack
 type AlibabaSeakingServicepackRequest struct {
     model.Params
     // 验证类型
-    identifyType   string
+    _identifyType   string
     // 验证类型下的唯一id
-    identifier   string
+    _identifier   string
 }
 
 // 初始化AlibabaSeakingServicepackRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSeakingServicepackRequest) GetApiParams() url.Values {
 }
 // IdentifyType Setter
 // 验证类型
-func (r *AlibabaSeakingServicepackRequest) SetIdentifyType(identifyType string) error {
-    r.identifyType = identifyType
-    r.Set("identify_type", identifyType)
+func (r *AlibabaSeakingServicepackRequest) SetIdentifyType(_identifyType string) error {
+    r._identifyType = _identifyType
+    r.Set("identify_type", _identifyType)
     return nil
 }
 
 // IdentifyType Getter
 func (r AlibabaSeakingServicepackRequest) GetIdentifyType() string {
-    return r.identifyType
+    return r._identifyType
 }
 // Identifier Setter
 // 验证类型下的唯一id
-func (r *AlibabaSeakingServicepackRequest) SetIdentifier(identifier string) error {
-    r.identifier = identifier
-    r.Set("identifier", identifier)
+func (r *AlibabaSeakingServicepackRequest) SetIdentifier(_identifier string) error {
+    r._identifier = _identifier
+    r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
 func (r AlibabaSeakingServicepackRequest) GetIdentifier() string {
-    return r.identifier
+    return r._identifier
 }

@@ -15,7 +15,7 @@ alibaba.idle.recycle.order.fulfillment
 type AlibabaIdleRecycleOrderFulfillmentRequest struct {
     model.Params
     // 订单同步入参
-    param0   *RecycleOrderSynDto
+    _param0   *RecycleOrderSynDto
 }
 
 // 初始化AlibabaIdleRecycleOrderFulfillmentRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 订单同步入参
-func (r *AlibabaIdleRecycleOrderFulfillmentRequest) SetParam0(param0 *RecycleOrderSynDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaIdleRecycleOrderFulfillmentRequest) SetParam0(_param0 *RecycleOrderSynDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetParam0() *RecycleOrderSynDto {
-    return r.param0
+    return r._param0
 }

@@ -15,9 +15,9 @@ cainiao.waybill.ii.cancel
 type CainiaoWaybillIiCancelRequest struct {
     model.Params
     // 快递公司code
-    cpCode   string
+    _cpCode   string
     // 电子面单号
-    waybillCode   string
+    _waybillCode   string
 }
 
 // 初始化CainiaoWaybillIiCancelRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoWaybillIiCancelRequest) GetApiParams() url.Values {
 }
 // CpCode Setter
 // 快递公司code
-func (r *CainiaoWaybillIiCancelRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *CainiaoWaybillIiCancelRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r CainiaoWaybillIiCancelRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }
 // WaybillCode Setter
 // 电子面单号
-func (r *CainiaoWaybillIiCancelRequest) SetWaybillCode(waybillCode string) error {
-    r.waybillCode = waybillCode
-    r.Set("waybill_code", waybillCode)
+func (r *CainiaoWaybillIiCancelRequest) SetWaybillCode(_waybillCode string) error {
+    r._waybillCode = _waybillCode
+    r.Set("waybill_code", _waybillCode)
     return nil
 }
 
 // WaybillCode Getter
 func (r CainiaoWaybillIiCancelRequest) GetWaybillCode() string {
-    return r.waybillCode
+    return r._waybillCode
 }

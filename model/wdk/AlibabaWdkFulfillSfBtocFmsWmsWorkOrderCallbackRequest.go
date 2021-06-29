@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback
 type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *SfB2CFmsCallbackOrder
+    _callbackOrder   *SfB2CFmsCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetApiParams() ur
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *SfB2CFmsCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *SfB2CFmsCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackRequest) GetCallbackOrder() *SfB2CFmsCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

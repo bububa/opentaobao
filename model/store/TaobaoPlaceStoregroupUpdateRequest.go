@@ -15,11 +15,11 @@ taobao.place.storegroup.update
 type TaobaoPlaceStoregroupUpdateRequest struct {
     model.Params
     // 库id
-    id   int64
+    _id   int64
     // 库名称
-    name   string
+    _name   string
     // 库备注
-    desc   string
+    _desc   string
 }
 
 // 初始化TaobaoPlaceStoregroupUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPlaceStoregroupUpdateRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 库id
-func (r *TaobaoPlaceStoregroupUpdateRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoPlaceStoregroupUpdateRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoPlaceStoregroupUpdateRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Name Setter
 // 库名称
-func (r *TaobaoPlaceStoregroupUpdateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoPlaceStoregroupUpdateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoPlaceStoregroupUpdateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Desc Setter
 // 库备注
-func (r *TaobaoPlaceStoregroupUpdateRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoPlaceStoregroupUpdateRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoPlaceStoregroupUpdateRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }

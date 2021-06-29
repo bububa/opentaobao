@@ -15,9 +15,9 @@ taobao.train.agent.change.get.vtwo
 type TaobaoTrainAgentChangeGetVtwoRequest struct {
     model.Params
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 申请单id
-    applyId   int64
+    _applyId   int64
 }
 
 // 初始化TaobaoTrainAgentChangeGetVtwoRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentChangeGetVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // ApplyId Setter
 // 申请单id
-func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *TaobaoTrainAgentChangeGetVtwoRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r TaobaoTrainAgentChangeGetVtwoRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }

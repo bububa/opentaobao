@@ -15,7 +15,7 @@ alibaba.wdk.bm.paiyang.stock.query
 type AlibabaWdkBmPaiyangStockQueryRequest struct {
     model.Params
     // 请求入参
-    isvShopStockParam   *IsvShopStockParam
+    _isvShopStockParam   *IsvShopStockParam
 }
 
 // 初始化AlibabaWdkBmPaiyangStockQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmPaiyangStockQueryRequest) GetApiParams() url.Values {
 }
 // IsvShopStockParam Setter
 // 请求入参
-func (r *AlibabaWdkBmPaiyangStockQueryRequest) SetIsvShopStockParam(isvShopStockParam *IsvShopStockParam) error {
-    r.isvShopStockParam = isvShopStockParam
-    r.Set("isv_shop_stock_param", isvShopStockParam)
+func (r *AlibabaWdkBmPaiyangStockQueryRequest) SetIsvShopStockParam(_isvShopStockParam *IsvShopStockParam) error {
+    r._isvShopStockParam = _isvShopStockParam
+    r.Set("isv_shop_stock_param", _isvShopStockParam)
     return nil
 }
 
 // IsvShopStockParam Getter
 func (r AlibabaWdkBmPaiyangStockQueryRequest) GetIsvShopStockParam() *IsvShopStockParam {
-    return r.isvShopStockParam
+    return r._isvShopStockParam
 }

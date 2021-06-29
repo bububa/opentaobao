@@ -15,7 +15,7 @@ alibaba.wdk.series.create
 type AlibabaWdkSeriesCreateRequest struct {
     model.Params
     // 系列品创建系列请求
-    series   *SkuSeriesCreateRequest
+    _series   *SkuSeriesCreateRequest
 }
 
 // 初始化AlibabaWdkSeriesCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesCreateRequest) GetApiParams() url.Values {
 }
 // Series Setter
 // 系列品创建系列请求
-func (r *AlibabaWdkSeriesCreateRequest) SetSeries(series *SkuSeriesCreateRequest) error {
-    r.series = series
-    r.Set("series", series)
+func (r *AlibabaWdkSeriesCreateRequest) SetSeries(_series *SkuSeriesCreateRequest) error {
+    r._series = _series
+    r.Set("series", _series)
     return nil
 }
 
 // Series Getter
 func (r AlibabaWdkSeriesCreateRequest) GetSeries() *SkuSeriesCreateRequest {
-    return r.series
+    return r._series
 }

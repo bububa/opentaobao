@@ -15,7 +15,7 @@ tmall.item.hscode.detail.get
 type TmallItemHscodeDetailGetRequest struct {
     model.Params
     // hscode
-    hscode   string
+    _hscode   string
 }
 
 // 初始化TmallItemHscodeDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallItemHscodeDetailGetRequest) GetApiParams() url.Values {
 }
 // Hscode Setter
 // hscode
-func (r *TmallItemHscodeDetailGetRequest) SetHscode(hscode string) error {
-    r.hscode = hscode
-    r.Set("hscode", hscode)
+func (r *TmallItemHscodeDetailGetRequest) SetHscode(_hscode string) error {
+    r._hscode = _hscode
+    r.Set("hscode", _hscode)
     return nil
 }
 
 // Hscode Getter
 func (r TmallItemHscodeDetailGetRequest) GetHscode() string {
-    return r.hscode
+    return r._hscode
 }

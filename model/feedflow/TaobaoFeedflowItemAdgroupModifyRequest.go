@@ -15,7 +15,7 @@ taobao.feedflow.item.adgroup.modify
 type TaobaoFeedflowItemAdgroupModifyRequest struct {
     model.Params
     // 单元信息
-    adgroup   *AdgroupDto
+    _adgroup   *AdgroupDto
 }
 
 // 初始化TaobaoFeedflowItemAdgroupModifyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupModifyRequest) GetApiParams() url.Values {
 }
 // Adgroup Setter
 // 单元信息
-func (r *TaobaoFeedflowItemAdgroupModifyRequest) SetAdgroup(adgroup *AdgroupDto) error {
-    r.adgroup = adgroup
-    r.Set("adgroup", adgroup)
+func (r *TaobaoFeedflowItemAdgroupModifyRequest) SetAdgroup(_adgroup *AdgroupDto) error {
+    r._adgroup = _adgroup
+    r.Set("adgroup", _adgroup)
     return nil
 }
 
 // Adgroup Getter
 func (r TaobaoFeedflowItemAdgroupModifyRequest) GetAdgroup() *AdgroupDto {
-    return r.adgroup
+    return r._adgroup
 }

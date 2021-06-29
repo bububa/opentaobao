@@ -15,7 +15,7 @@ taobao.bus.cancleorder.set
 type TaobaoBusCancleorderSetRequest struct {
     model.Params
     // 阿里订单号
-    aliOrderId   string
+    _aliOrderId   string
 }
 
 // 初始化TaobaoBusCancleorderSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusCancleorderSetRequest) GetApiParams() url.Values {
 }
 // AliOrderId Setter
 // 阿里订单号
-func (r *TaobaoBusCancleorderSetRequest) SetAliOrderId(aliOrderId string) error {
-    r.aliOrderId = aliOrderId
-    r.Set("ali_order_id", aliOrderId)
+func (r *TaobaoBusCancleorderSetRequest) SetAliOrderId(_aliOrderId string) error {
+    r._aliOrderId = _aliOrderId
+    r.Set("ali_order_id", _aliOrderId)
     return nil
 }
 
 // AliOrderId Getter
 func (r TaobaoBusCancleorderSetRequest) GetAliOrderId() string {
-    return r.aliOrderId
+    return r._aliOrderId
 }

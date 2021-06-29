@@ -15,7 +15,7 @@ alibaba.mydata.overview.industry.get
 type AlibabaMydataOverviewIndustryGetRequest struct {
     model.Params
     // 系统自动生成
-    dateRange   *DateRange
+    _dateRange   *DateRange
 }
 
 // 初始化AlibabaMydataOverviewIndustryGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMydataOverviewIndustryGetRequest) GetApiParams() url.Values {
 }
 // DateRange Setter
 // 系统自动生成
-func (r *AlibabaMydataOverviewIndustryGetRequest) SetDateRange(dateRange *DateRange) error {
-    r.dateRange = dateRange
-    r.Set("date_range", dateRange)
+func (r *AlibabaMydataOverviewIndustryGetRequest) SetDateRange(_dateRange *DateRange) error {
+    r._dateRange = _dateRange
+    r.Set("date_range", _dateRange)
     return nil
 }
 
 // DateRange Getter
 func (r AlibabaMydataOverviewIndustryGetRequest) GetDateRange() *DateRange {
-    return r.dateRange
+    return r._dateRange
 }

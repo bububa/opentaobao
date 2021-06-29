@@ -15,7 +15,7 @@ alibaba.wdkorder.sharestock.insurance.getorder
 type AlibabaWdkorderSharestockInsuranceGetorderRequest struct {
     model.Params
     // 淘宝子订单ID
-    tbSubOrderId   int64
+    _tbSubOrderId   int64
 }
 
 // 初始化AlibabaWdkorderSharestockInsuranceGetorderRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkorderSharestockInsuranceGetorderRequest) GetApiParams() url.Va
 }
 // TbSubOrderId Setter
 // 淘宝子订单ID
-func (r *AlibabaWdkorderSharestockInsuranceGetorderRequest) SetTbSubOrderId(tbSubOrderId int64) error {
-    r.tbSubOrderId = tbSubOrderId
-    r.Set("tb_sub_order_id", tbSubOrderId)
+func (r *AlibabaWdkorderSharestockInsuranceGetorderRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
+    r._tbSubOrderId = _tbSubOrderId
+    r.Set("tb_sub_order_id", _tbSubOrderId)
     return nil
 }
 
 // TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceGetorderRequest) GetTbSubOrderId() int64 {
-    return r.tbSubOrderId
+    return r._tbSubOrderId
 }

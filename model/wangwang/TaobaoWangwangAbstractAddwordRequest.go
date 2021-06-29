@@ -15,9 +15,9 @@ taobao.wangwang.abstract.addword
 type TaobaoWangwangAbstractAddwordRequest struct {
     model.Params
     // 关键词，长度大于0
-    word   string
+    _word   string
     // 传入参数的字符集
-    charset   string
+    _charset   string
 }
 
 // 初始化TaobaoWangwangAbstractAddwordRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWangwangAbstractAddwordRequest) GetApiParams() url.Values {
 }
 // Word Setter
 // 关键词，长度大于0
-func (r *TaobaoWangwangAbstractAddwordRequest) SetWord(word string) error {
-    r.word = word
-    r.Set("word", word)
+func (r *TaobaoWangwangAbstractAddwordRequest) SetWord(_word string) error {
+    r._word = _word
+    r.Set("word", _word)
     return nil
 }
 
 // Word Getter
 func (r TaobaoWangwangAbstractAddwordRequest) GetWord() string {
-    return r.word
+    return r._word
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractAddwordRequest) SetCharset(charset string) error {
-    r.charset = charset
-    r.Set("charset", charset)
+func (r *TaobaoWangwangAbstractAddwordRequest) SetCharset(_charset string) error {
+    r._charset = _charset
+    r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
 func (r TaobaoWangwangAbstractAddwordRequest) GetCharset() string {
-    return r.charset
+    return r._charset
 }

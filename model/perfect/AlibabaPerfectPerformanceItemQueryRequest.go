@@ -15,7 +15,7 @@ alibaba.perfect.performance.item.query
 type AlibabaPerfectPerformanceItemQueryRequest struct {
     model.Params
     // 查询入参
-    itemPerfectPerformanceQueryReq   *ItemPerfectPerformanceQueryReq
+    _itemPerfectPerformanceQueryReq   *ItemPerfectPerformanceQueryReq
 }
 
 // 初始化AlibabaPerfectPerformanceItemQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPerfectPerformanceItemQueryRequest) GetApiParams() url.Values {
 }
 // ItemPerfectPerformanceQueryReq Setter
 // 查询入参
-func (r *AlibabaPerfectPerformanceItemQueryRequest) SetItemPerfectPerformanceQueryReq(itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
-    r.itemPerfectPerformanceQueryReq = itemPerfectPerformanceQueryReq
-    r.Set("item_perfect_performance_query_req", itemPerfectPerformanceQueryReq)
+func (r *AlibabaPerfectPerformanceItemQueryRequest) SetItemPerfectPerformanceQueryReq(_itemPerfectPerformanceQueryReq *ItemPerfectPerformanceQueryReq) error {
+    r._itemPerfectPerformanceQueryReq = _itemPerfectPerformanceQueryReq
+    r.Set("item_perfect_performance_query_req", _itemPerfectPerformanceQueryReq)
     return nil
 }
 
 // ItemPerfectPerformanceQueryReq Getter
 func (r AlibabaPerfectPerformanceItemQueryRequest) GetItemPerfectPerformanceQueryReq() *ItemPerfectPerformanceQueryReq {
-    return r.itemPerfectPerformanceQueryReq
+    return r._itemPerfectPerformanceQueryReq
 }

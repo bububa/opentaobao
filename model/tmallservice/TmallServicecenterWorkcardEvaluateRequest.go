@@ -15,13 +15,13 @@ tmall.servicecenter.workcard.evaluate
 type TmallServicecenterWorkcardEvaluateRequest struct {
     model.Params
     // 是否鉴定通过
-    passEvaluation   bool
+    _passEvaluation   bool
     // 鉴定不通过时的原因编码
-    failCode   int64
+    _failCode   int64
     // 鉴定结果图片列表
-    picUrlList   []string
+    _picUrlList   []string
     // 工单id
-    workcardId   int64
+    _workcardId   int64
 }
 
 // 初始化TmallServicecenterWorkcardEvaluateRequest对象
@@ -46,49 +46,49 @@ func (r TmallServicecenterWorkcardEvaluateRequest) GetApiParams() url.Values {
 }
 // PassEvaluation Setter
 // 是否鉴定通过
-func (r *TmallServicecenterWorkcardEvaluateRequest) SetPassEvaluation(passEvaluation bool) error {
-    r.passEvaluation = passEvaluation
-    r.Set("pass_evaluation", passEvaluation)
+func (r *TmallServicecenterWorkcardEvaluateRequest) SetPassEvaluation(_passEvaluation bool) error {
+    r._passEvaluation = _passEvaluation
+    r.Set("pass_evaluation", _passEvaluation)
     return nil
 }
 
 // PassEvaluation Getter
 func (r TmallServicecenterWorkcardEvaluateRequest) GetPassEvaluation() bool {
-    return r.passEvaluation
+    return r._passEvaluation
 }
 // FailCode Setter
 // 鉴定不通过时的原因编码
-func (r *TmallServicecenterWorkcardEvaluateRequest) SetFailCode(failCode int64) error {
-    r.failCode = failCode
-    r.Set("fail_code", failCode)
+func (r *TmallServicecenterWorkcardEvaluateRequest) SetFailCode(_failCode int64) error {
+    r._failCode = _failCode
+    r.Set("fail_code", _failCode)
     return nil
 }
 
 // FailCode Getter
 func (r TmallServicecenterWorkcardEvaluateRequest) GetFailCode() int64 {
-    return r.failCode
+    return r._failCode
 }
 // PicUrlList Setter
 // 鉴定结果图片列表
-func (r *TmallServicecenterWorkcardEvaluateRequest) SetPicUrlList(picUrlList []string) error {
-    r.picUrlList = picUrlList
-    r.Set("pic_url_list", picUrlList)
+func (r *TmallServicecenterWorkcardEvaluateRequest) SetPicUrlList(_picUrlList []string) error {
+    r._picUrlList = _picUrlList
+    r.Set("pic_url_list", _picUrlList)
     return nil
 }
 
 // PicUrlList Getter
 func (r TmallServicecenterWorkcardEvaluateRequest) GetPicUrlList() []string {
-    return r.picUrlList
+    return r._picUrlList
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardEvaluateRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardEvaluateRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardEvaluateRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }

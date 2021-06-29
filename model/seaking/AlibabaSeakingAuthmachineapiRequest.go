@@ -15,13 +15,13 @@ alibaba.seaking.authmachineapi
 type AlibabaSeakingAuthmachineapiRequest struct {
     model.Params
     // erp名称
-    identifyType   string
+    _identifyType   string
     // erp用户id
-    identifier   string
+    _identifier   string
     // 店铺所在平台
-    subIdentifyType   string
+    _subIdentifyType   string
     // 店铺id(ae为cn开头的店铺id, lazada为邮箱)
-    subIdentifier   string
+    _subIdentifier   string
 }
 
 // 初始化AlibabaSeakingAuthmachineapiRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaSeakingAuthmachineapiRequest) GetApiParams() url.Values {
 }
 // IdentifyType Setter
 // erp名称
-func (r *AlibabaSeakingAuthmachineapiRequest) SetIdentifyType(identifyType string) error {
-    r.identifyType = identifyType
-    r.Set("identify_type", identifyType)
+func (r *AlibabaSeakingAuthmachineapiRequest) SetIdentifyType(_identifyType string) error {
+    r._identifyType = _identifyType
+    r.Set("identify_type", _identifyType)
     return nil
 }
 
 // IdentifyType Getter
 func (r AlibabaSeakingAuthmachineapiRequest) GetIdentifyType() string {
-    return r.identifyType
+    return r._identifyType
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingAuthmachineapiRequest) SetIdentifier(identifier string) error {
-    r.identifier = identifier
-    r.Set("identifier", identifier)
+func (r *AlibabaSeakingAuthmachineapiRequest) SetIdentifier(_identifier string) error {
+    r._identifier = _identifier
+    r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
 func (r AlibabaSeakingAuthmachineapiRequest) GetIdentifier() string {
-    return r.identifier
+    return r._identifier
 }
 // SubIdentifyType Setter
 // 店铺所在平台
-func (r *AlibabaSeakingAuthmachineapiRequest) SetSubIdentifyType(subIdentifyType string) error {
-    r.subIdentifyType = subIdentifyType
-    r.Set("sub_identify_type", subIdentifyType)
+func (r *AlibabaSeakingAuthmachineapiRequest) SetSubIdentifyType(_subIdentifyType string) error {
+    r._subIdentifyType = _subIdentifyType
+    r.Set("sub_identify_type", _subIdentifyType)
     return nil
 }
 
 // SubIdentifyType Getter
 func (r AlibabaSeakingAuthmachineapiRequest) GetSubIdentifyType() string {
-    return r.subIdentifyType
+    return r._subIdentifyType
 }
 // SubIdentifier Setter
 // 店铺id(ae为cn开头的店铺id, lazada为邮箱)
-func (r *AlibabaSeakingAuthmachineapiRequest) SetSubIdentifier(subIdentifier string) error {
-    r.subIdentifier = subIdentifier
-    r.Set("sub_identifier", subIdentifier)
+func (r *AlibabaSeakingAuthmachineapiRequest) SetSubIdentifier(_subIdentifier string) error {
+    r._subIdentifier = _subIdentifier
+    r.Set("sub_identifier", _subIdentifier)
     return nil
 }
 
 // SubIdentifier Getter
 func (r AlibabaSeakingAuthmachineapiRequest) GetSubIdentifier() string {
-    return r.subIdentifier
+    return r._subIdentifier
 }

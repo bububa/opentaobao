@@ -15,7 +15,7 @@ alibaba.icbu.product.inventory.update
 type AlibabaIcbuProductInventoryUpdateRequest struct {
     model.Params
     // 更新请求
-    requestParam   *ProductInventoryRequest
+    _requestParam   *ProductInventoryRequest
 }
 
 // 初始化AlibabaIcbuProductInventoryUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductInventoryUpdateRequest) GetApiParams() url.Values {
 }
 // RequestParam Setter
 // 更新请求
-func (r *AlibabaIcbuProductInventoryUpdateRequest) SetRequestParam(requestParam *ProductInventoryRequest) error {
-    r.requestParam = requestParam
-    r.Set("request_param", requestParam)
+func (r *AlibabaIcbuProductInventoryUpdateRequest) SetRequestParam(_requestParam *ProductInventoryRequest) error {
+    r._requestParam = _requestParam
+    r.Set("request_param", _requestParam)
     return nil
 }
 
 // RequestParam Getter
 func (r AlibabaIcbuProductInventoryUpdateRequest) GetRequestParam() *ProductInventoryRequest {
-    return r.requestParam
+    return r._requestParam
 }

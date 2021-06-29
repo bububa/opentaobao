@@ -15,7 +15,7 @@ Receives information about screening results from after sales partners
 type AliexpressSolutionIssuePartnerRmaScreeningCreateRequest struct {
     model.Params
     // Screening result creation request
-    screeningResultCreationRequest   *RmaScreeningCreationRequest
+    _screeningResultCreationRequest   *RmaScreeningCreationRequest
 }
 
 // 初始化AliexpressSolutionIssuePartnerRmaScreeningCreateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaScreeningCreateRequest) GetApiParams() 
 }
 // ScreeningResultCreationRequest Setter
 // Screening result creation request
-func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateRequest) SetScreeningResultCreationRequest(screeningResultCreationRequest *RmaScreeningCreationRequest) error {
-    r.screeningResultCreationRequest = screeningResultCreationRequest
-    r.Set("screening_result_creation_request", screeningResultCreationRequest)
+func (r *AliexpressSolutionIssuePartnerRmaScreeningCreateRequest) SetScreeningResultCreationRequest(_screeningResultCreationRequest *RmaScreeningCreationRequest) error {
+    r._screeningResultCreationRequest = _screeningResultCreationRequest
+    r.Set("screening_result_creation_request", _screeningResultCreationRequest)
     return nil
 }
 
 // ScreeningResultCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaScreeningCreateRequest) GetScreeningResultCreationRequest() *RmaScreeningCreationRequest {
-    return r.screeningResultCreationRequest
+    return r._screeningResultCreationRequest
 }

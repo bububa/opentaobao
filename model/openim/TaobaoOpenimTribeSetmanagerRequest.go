@@ -15,11 +15,11 @@ OPENIM群设置管理员
 type TaobaoOpenimTribeSetmanagerRequest struct {
     model.Params
     // 用户信息
-    user   *OpenImUser
+    _user   *OpenImUser
     // 群id
-    tid   int64
+    _tid   int64
     // 用户信息
-    member   *OpenImUser
+    _member   *OpenImUser
 }
 
 // 初始化TaobaoOpenimTribeSetmanagerRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenimTribeSetmanagerRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeSetmanagerRequest) SetUser(user *OpenImUser) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeSetmanagerRequest) SetUser(_user *OpenImUser) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeSetmanagerRequest) GetUser() *OpenImUser {
-    return r.user
+    return r._user
 }
 // Tid Setter
 // 群id
-func (r *TaobaoOpenimTribeSetmanagerRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOpenimTribeSetmanagerRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOpenimTribeSetmanagerRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // Member Setter
 // 用户信息
-func (r *TaobaoOpenimTribeSetmanagerRequest) SetMember(member *OpenImUser) error {
-    r.member = member
-    r.Set("member", member)
+func (r *TaobaoOpenimTribeSetmanagerRequest) SetMember(_member *OpenImUser) error {
+    r._member = _member
+    r.Set("member", _member)
     return nil
 }
 
 // Member Getter
 func (r TaobaoOpenimTribeSetmanagerRequest) GetMember() *OpenImUser {
-    return r.member
+    return r._member
 }

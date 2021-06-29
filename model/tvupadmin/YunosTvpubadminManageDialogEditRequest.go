@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.dialog.edit
 type YunosTvpubadminManageDialogEditRequest struct {
     model.Params
     // 待编辑的全局弹窗
-    dialogJson   string
+    _dialogJson   string
 }
 
 // 初始化YunosTvpubadminManageDialogEditRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogEditRequest) GetApiParams() url.Values {
 }
 // DialogJson Setter
 // 待编辑的全局弹窗
-func (r *YunosTvpubadminManageDialogEditRequest) SetDialogJson(dialogJson string) error {
-    r.dialogJson = dialogJson
-    r.Set("dialog_json", dialogJson)
+func (r *YunosTvpubadminManageDialogEditRequest) SetDialogJson(_dialogJson string) error {
+    r._dialogJson = _dialogJson
+    r.Set("dialog_json", _dialogJson)
     return nil
 }
 
 // DialogJson Getter
 func (r YunosTvpubadminManageDialogEditRequest) GetDialogJson() string {
-    return r.dialogJson
+    return r._dialogJson
 }

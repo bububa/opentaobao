@@ -15,7 +15,7 @@ taobao.scitem.outercode.get
 type TaobaoScitemOutercodeGetRequest struct {
     model.Params
     // 商品编码
-    outerCode   string
+    _outerCode   string
 }
 
 // 初始化TaobaoScitemOutercodeGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoScitemOutercodeGetRequest) GetApiParams() url.Values {
 }
 // OuterCode Setter
 // 商品编码
-func (r *TaobaoScitemOutercodeGetRequest) SetOuterCode(outerCode string) error {
-    r.outerCode = outerCode
-    r.Set("outer_code", outerCode)
+func (r *TaobaoScitemOutercodeGetRequest) SetOuterCode(_outerCode string) error {
+    r._outerCode = _outerCode
+    r.Set("outer_code", _outerCode)
     return nil
 }
 
 // OuterCode Getter
 func (r TaobaoScitemOutercodeGetRequest) GetOuterCode() string {
-    return r.outerCode
+    return r._outerCode
 }

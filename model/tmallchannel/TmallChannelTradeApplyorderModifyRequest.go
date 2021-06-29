@@ -15,9 +15,9 @@ tmall.channel.trade.applyorder.modify
 type TmallChannelTradeApplyorderModifyRequest struct {
     model.Params
     // 采购申请单号
-    channelPurchaseApplyOrderNo   string
+    _channelPurchaseApplyOrderNo   string
     // 修改关联的的宝贝信息
-    applyOrderRelateItemModifyParamList   []TopChannelApplyOrderRelateItemModifyParam
+    _applyOrderRelateItemModifyParamList   []TopChannelApplyOrderRelateItemModifyParam
 }
 
 // 初始化TmallChannelTradeApplyorderModifyRequest对象
@@ -42,25 +42,25 @@ func (r TmallChannelTradeApplyorderModifyRequest) GetApiParams() url.Values {
 }
 // ChannelPurchaseApplyOrderNo Setter
 // 采购申请单号
-func (r *TmallChannelTradeApplyorderModifyRequest) SetChannelPurchaseApplyOrderNo(channelPurchaseApplyOrderNo string) error {
-    r.channelPurchaseApplyOrderNo = channelPurchaseApplyOrderNo
-    r.Set("channel_purchase_apply_order_no", channelPurchaseApplyOrderNo)
+func (r *TmallChannelTradeApplyorderModifyRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+    r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
+    r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
     return nil
 }
 
 // ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderModifyRequest) GetChannelPurchaseApplyOrderNo() string {
-    return r.channelPurchaseApplyOrderNo
+    return r._channelPurchaseApplyOrderNo
 }
 // ApplyOrderRelateItemModifyParamList Setter
 // 修改关联的的宝贝信息
-func (r *TmallChannelTradeApplyorderModifyRequest) SetApplyOrderRelateItemModifyParamList(applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam) error {
-    r.applyOrderRelateItemModifyParamList = applyOrderRelateItemModifyParamList
-    r.Set("apply_order_relate_item_modify_param_list", applyOrderRelateItemModifyParamList)
+func (r *TmallChannelTradeApplyorderModifyRequest) SetApplyOrderRelateItemModifyParamList(_applyOrderRelateItemModifyParamList []TopChannelApplyOrderRelateItemModifyParam) error {
+    r._applyOrderRelateItemModifyParamList = _applyOrderRelateItemModifyParamList
+    r.Set("apply_order_relate_item_modify_param_list", _applyOrderRelateItemModifyParamList)
     return nil
 }
 
 // ApplyOrderRelateItemModifyParamList Getter
 func (r TmallChannelTradeApplyorderModifyRequest) GetApplyOrderRelateItemModifyParamList() []TopChannelApplyOrderRelateItemModifyParam {
-    return r.applyOrderRelateItemModifyParamList
+    return r._applyOrderRelateItemModifyParamList
 }

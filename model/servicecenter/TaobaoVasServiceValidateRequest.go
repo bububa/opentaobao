@@ -15,9 +15,9 @@ taobao.vas.service.validate
 type TaobaoVasServiceValidateRequest struct {
     model.Params
     // 服务编码
-    servCode   string
+    _servCode   string
     // 用户昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoVasServiceValidateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoVasServiceValidateRequest) GetApiParams() url.Values {
 }
 // ServCode Setter
 // 服务编码
-func (r *TaobaoVasServiceValidateRequest) SetServCode(servCode string) error {
-    r.servCode = servCode
-    r.Set("serv_code", servCode)
+func (r *TaobaoVasServiceValidateRequest) SetServCode(_servCode string) error {
+    r._servCode = _servCode
+    r.Set("serv_code", _servCode)
     return nil
 }
 
 // ServCode Getter
 func (r TaobaoVasServiceValidateRequest) GetServCode() string {
-    return r.servCode
+    return r._servCode
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoVasServiceValidateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoVasServiceValidateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoVasServiceValidateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

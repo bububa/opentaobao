@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.resetppw
 type AlibabaAlscCrmCustomerResetppwRequest struct {
     model.Params
     // 系统自动生成
-    resetPayPwdRequest   *ResetPayPasswdOpenReq
+    _resetPayPwdRequest   *ResetPayPasswdOpenReq
 }
 
 // 初始化AlibabaAlscCrmCustomerResetppwRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerResetppwRequest) GetApiParams() url.Values {
 }
 // ResetPayPwdRequest Setter
 // 系统自动生成
-func (r *AlibabaAlscCrmCustomerResetppwRequest) SetResetPayPwdRequest(resetPayPwdRequest *ResetPayPasswdOpenReq) error {
-    r.resetPayPwdRequest = resetPayPwdRequest
-    r.Set("reset_pay_pwd_request", resetPayPwdRequest)
+func (r *AlibabaAlscCrmCustomerResetppwRequest) SetResetPayPwdRequest(_resetPayPwdRequest *ResetPayPasswdOpenReq) error {
+    r._resetPayPwdRequest = _resetPayPwdRequest
+    r.Set("reset_pay_pwd_request", _resetPayPwdRequest)
     return nil
 }
 
 // ResetPayPwdRequest Getter
 func (r AlibabaAlscCrmCustomerResetppwRequest) GetResetPayPwdRequest() *ResetPayPasswdOpenReq {
-    return r.resetPayPwdRequest
+    return r._resetPayPwdRequest
 }

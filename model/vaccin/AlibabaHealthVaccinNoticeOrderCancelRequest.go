@@ -15,9 +15,9 @@ alibaba.health.vaccin.notice.order.cancel
 type AlibabaHealthVaccinNoticeOrderCancelRequest struct {
     model.Params
     // 支付宝用户id
-    alipayUserId   string
+    _alipayUserId   string
     // 预约id
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHealthVaccinNoticeOrderCancelRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaHealthVaccinNoticeOrderCancelRequest) GetApiParams() url.Values {
 }
 // AlipayUserId Setter
 // 支付宝用户id
-func (r *AlibabaHealthVaccinNoticeOrderCancelRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinNoticeOrderCancelRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCancelRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // OrderId Setter
 // 预约id
-func (r *AlibabaHealthVaccinNoticeOrderCancelRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthVaccinNoticeOrderCancelRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCancelRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

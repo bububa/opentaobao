@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.order.updatestatus
 type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest struct {
     model.Params
     // 修改信息
-    orderStatusInfo   *OrderStatusInfo
+    _orderStatusInfo   *OrderStatusInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest) GetApiParams(
 }
 // OrderStatusInfo Setter
 // 修改信息
-func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest) SetOrderStatusInfo(orderStatusInfo *OrderStatusInfo) error {
-    r.orderStatusInfo = orderStatusInfo
-    r.Set("order_status_info", orderStatusInfo)
+func (r *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest) SetOrderStatusInfo(_orderStatusInfo *OrderStatusInfo) error {
+    r._orderStatusInfo = _orderStatusInfo
+    r.Set("order_status_info", _orderStatusInfo)
     return nil
 }
 
 // OrderStatusInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest) GetOrderStatusInfo() *OrderStatusInfo {
-    return r.orderStatusInfo
+    return r._orderStatusInfo
 }

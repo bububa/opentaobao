@@ -15,9 +15,9 @@ alibaba.nrs.item.pricetag.recognize
 type AlibabaNrsItemPricetagRecognizeRequest struct {
     model.Params
     // 图片数据
-    imgByteArr   []*model.File
+    _imgByteArr   []*model.File
     // 价签识别参数
-    priceTagParam   *PriceTagReqParam
+    _priceTagParam   *PriceTagReqParam
 }
 
 // 初始化AlibabaNrsItemPricetagRecognizeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaNrsItemPricetagRecognizeRequest) GetApiParams() url.Values {
 }
 // ImgByteArr Setter
 // 图片数据
-func (r *AlibabaNrsItemPricetagRecognizeRequest) SetImgByteArr(imgByteArr []*model.File) error {
-    r.imgByteArr = imgByteArr
-    r.Set("img_byte_arr", imgByteArr)
+func (r *AlibabaNrsItemPricetagRecognizeRequest) SetImgByteArr(_imgByteArr []*model.File) error {
+    r._imgByteArr = _imgByteArr
+    r.Set("img_byte_arr", _imgByteArr)
     return nil
 }
 
 // ImgByteArr Getter
 func (r AlibabaNrsItemPricetagRecognizeRequest) GetImgByteArr() []*model.File {
-    return r.imgByteArr
+    return r._imgByteArr
 }
 // PriceTagParam Setter
 // 价签识别参数
-func (r *AlibabaNrsItemPricetagRecognizeRequest) SetPriceTagParam(priceTagParam *PriceTagReqParam) error {
-    r.priceTagParam = priceTagParam
-    r.Set("price_tag_param", priceTagParam)
+func (r *AlibabaNrsItemPricetagRecognizeRequest) SetPriceTagParam(_priceTagParam *PriceTagReqParam) error {
+    r._priceTagParam = _priceTagParam
+    r.Set("price_tag_param", _priceTagParam)
     return nil
 }
 
 // PriceTagParam Getter
 func (r AlibabaNrsItemPricetagRecognizeRequest) GetPriceTagParam() *PriceTagReqParam {
-    return r.priceTagParam
+    return r._priceTagParam
 }

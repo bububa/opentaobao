@@ -15,7 +15,7 @@ alitrip.travel.visa.applicant.query
 type AlitripTravelVisaApplicantQueryRequest struct {
     model.Params
     // 请求参数
-    param0   *QueryApplicantParam
+    _param0   *QueryApplicantParam
 }
 
 // 初始化AlitripTravelVisaApplicantQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelVisaApplicantQueryRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlitripTravelVisaApplicantQueryRequest) SetParam0(param0 *QueryApplicantParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlitripTravelVisaApplicantQueryRequest) SetParam0(_param0 *QueryApplicantParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlitripTravelVisaApplicantQueryRequest) GetParam0() *QueryApplicantParam {
-    return r.param0
+    return r._param0
 }

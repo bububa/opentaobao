@@ -15,7 +15,7 @@ aliyun.alink.data.stat.report
 type AliyunAlinkDataStatReportRequest struct {
     model.Params
     // 入参对象
-    paramBean   *OuterDataBean
+    _paramBean   *OuterDataBean
 }
 
 // 初始化AliyunAlinkDataStatReportRequest对象
@@ -40,13 +40,13 @@ func (r AliyunAlinkDataStatReportRequest) GetApiParams() url.Values {
 }
 // ParamBean Setter
 // 入参对象
-func (r *AliyunAlinkDataStatReportRequest) SetParamBean(paramBean *OuterDataBean) error {
-    r.paramBean = paramBean
-    r.Set("param_bean", paramBean)
+func (r *AliyunAlinkDataStatReportRequest) SetParamBean(_paramBean *OuterDataBean) error {
+    r._paramBean = _paramBean
+    r.Set("param_bean", _paramBean)
     return nil
 }
 
 // ParamBean Getter
 func (r AliyunAlinkDataStatReportRequest) GetParamBean() *OuterDataBean {
-    return r.paramBean
+    return r._paramBean
 }

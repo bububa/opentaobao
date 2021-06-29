@@ -15,11 +15,11 @@ tmall.servicecenter.servicemonitormessage.update
 type TmallServicecenterServicemonitormessageUpdateRequest struct {
     model.Params
     // 预警消息id
-    serviceMonitorMessageId   int64
+    _serviceMonitorMessageId   int64
     // 预警处理备注
-    memo   string
+    _memo   string
     // 可更新状态：3、已读
-    status   int64
+    _status   int64
 }
 
 // 初始化TmallServicecenterServicemonitormessageUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiParams() url
 }
 // ServiceMonitorMessageId Setter
 // 预警消息id
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetServiceMonitorMessageId(serviceMonitorMessageId int64) error {
-    r.serviceMonitorMessageId = serviceMonitorMessageId
-    r.Set("service_monitor_message_id", serviceMonitorMessageId)
+func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetServiceMonitorMessageId(_serviceMonitorMessageId int64) error {
+    r._serviceMonitorMessageId = _serviceMonitorMessageId
+    r.Set("service_monitor_message_id", _serviceMonitorMessageId)
     return nil
 }
 
 // ServiceMonitorMessageId Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetServiceMonitorMessageId() int64 {
-    return r.serviceMonitorMessageId
+    return r._serviceMonitorMessageId
 }
 // Memo Setter
 // 预警处理备注
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }
 // Status Setter
 // 可更新状态：3、已读
-func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }

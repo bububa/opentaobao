@@ -15,7 +15,7 @@ taobao.alitrip.car.order.query
 type TaobaoAlitripCarOrderQueryRequest struct {
     model.Params
     // 飞猪平台订单id
-    orderId   string
+    _orderId   string
 }
 
 // 初始化TaobaoAlitripCarOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 飞猪平台订单id
-func (r *TaobaoAlitripCarOrderQueryRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoAlitripCarOrderQueryRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoAlitripCarOrderQueryRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

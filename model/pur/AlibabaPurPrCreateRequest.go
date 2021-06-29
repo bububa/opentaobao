@@ -15,7 +15,7 @@ alibaba.pur.pr.create
 type AlibabaPurPrCreateRequest struct {
     model.Params
     // 订单信息
-    purReq   *MallReceivePrRequest
+    _purReq   *MallReceivePrRequest
 }
 
 // 初始化AlibabaPurPrCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurPrCreateRequest) GetApiParams() url.Values {
 }
 // PurReq Setter
 // 订单信息
-func (r *AlibabaPurPrCreateRequest) SetPurReq(purReq *MallReceivePrRequest) error {
-    r.purReq = purReq
-    r.Set("pur_req", purReq)
+func (r *AlibabaPurPrCreateRequest) SetPurReq(_purReq *MallReceivePrRequest) error {
+    r._purReq = _purReq
+    r.Set("pur_req", _purReq)
     return nil
 }
 
 // PurReq Getter
 func (r AlibabaPurPrCreateRequest) GetPurReq() *MallReceivePrRequest {
-    return r.purReq
+    return r._purReq
 }

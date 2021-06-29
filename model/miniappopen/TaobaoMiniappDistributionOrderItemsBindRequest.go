@@ -15,11 +15,11 @@ taobao.miniapp.distribution.order.items.bind
 type TaobaoMiniappDistributionOrderItemsBindRequest struct {
     model.Params
     // 商品id列表
-    targetEntityList   []string
+    _targetEntityList   []string
     // true表示新增绑定，false表示解绑
-    addBind   bool
+    _addBind   bool
     // 投放计划标识id
-    distributeId   int64
+    _distributeId   int64
 }
 
 // 初始化TaobaoMiniappDistributionOrderItemsBindRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoMiniappDistributionOrderItemsBindRequest) GetApiParams() url.Value
 }
 // TargetEntityList Setter
 // 商品id列表
-func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetTargetEntityList(targetEntityList []string) error {
-    r.targetEntityList = targetEntityList
-    r.Set("target_entity_list", targetEntityList)
+func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetTargetEntityList(_targetEntityList []string) error {
+    r._targetEntityList = _targetEntityList
+    r.Set("target_entity_list", _targetEntityList)
     return nil
 }
 
 // TargetEntityList Getter
 func (r TaobaoMiniappDistributionOrderItemsBindRequest) GetTargetEntityList() []string {
-    return r.targetEntityList
+    return r._targetEntityList
 }
 // AddBind Setter
 // true表示新增绑定，false表示解绑
-func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetAddBind(addBind bool) error {
-    r.addBind = addBind
-    r.Set("add_bind", addBind)
+func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetAddBind(_addBind bool) error {
+    r._addBind = _addBind
+    r.Set("add_bind", _addBind)
     return nil
 }
 
 // AddBind Getter
 func (r TaobaoMiniappDistributionOrderItemsBindRequest) GetAddBind() bool {
-    return r.addBind
+    return r._addBind
 }
 // DistributeId Setter
 // 投放计划标识id
-func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetDistributeId(distributeId int64) error {
-    r.distributeId = distributeId
-    r.Set("distribute_id", distributeId)
+func (r *TaobaoMiniappDistributionOrderItemsBindRequest) SetDistributeId(_distributeId int64) error {
+    r._distributeId = _distributeId
+    r.Set("distribute_id", _distributeId)
     return nil
 }
 
 // DistributeId Getter
 func (r TaobaoMiniappDistributionOrderItemsBindRequest) GetDistributeId() int64 {
-    return r.distributeId
+    return r._distributeId
 }

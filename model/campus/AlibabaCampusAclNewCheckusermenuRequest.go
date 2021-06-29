@@ -15,9 +15,9 @@ alibaba.campus.acl.new.checkusermenu
 type AlibabaCampusAclNewCheckusermenuRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 入参
-    param   *CheckUserMenuParam
+    _param   *CheckUserMenuParam
 }
 
 // 初始化AlibabaCampusAclNewCheckusermenuRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewCheckusermenuRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewCheckusermenuRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewCheckusermenuRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckusermenuRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // Param Setter
 // 入参
-func (r *AlibabaCampusAclNewCheckusermenuRequest) SetParam(param *CheckUserMenuParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaCampusAclNewCheckusermenuRequest) SetParam(_param *CheckUserMenuParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaCampusAclNewCheckusermenuRequest) GetParam() *CheckUserMenuParam {
-    return r.param
+    return r._param
 }

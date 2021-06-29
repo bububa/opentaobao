@@ -15,7 +15,7 @@ alibaba.wdk.order.list
 type AlibabaWdkOrderListRequest struct {
     model.Params
     // 查询参数
-    batchQueryRequest   *BatchQueryRequest
+    _batchQueryRequest   *BatchQueryRequest
 }
 
 // 初始化AlibabaWdkOrderListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderListRequest) GetApiParams() url.Values {
 }
 // BatchQueryRequest Setter
 // 查询参数
-func (r *AlibabaWdkOrderListRequest) SetBatchQueryRequest(batchQueryRequest *BatchQueryRequest) error {
-    r.batchQueryRequest = batchQueryRequest
-    r.Set("batch_query_request", batchQueryRequest)
+func (r *AlibabaWdkOrderListRequest) SetBatchQueryRequest(_batchQueryRequest *BatchQueryRequest) error {
+    r._batchQueryRequest = _batchQueryRequest
+    r.Set("batch_query_request", _batchQueryRequest)
     return nil
 }
 
 // BatchQueryRequest Getter
 func (r AlibabaWdkOrderListRequest) GetBatchQueryRequest() *BatchQueryRequest {
-    return r.batchQueryRequest
+    return r._batchQueryRequest
 }

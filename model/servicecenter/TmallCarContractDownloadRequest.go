@@ -16,9 +16,9 @@ tmall.car.contract.download
 type TmallCarContractDownloadRequest struct {
     model.Params
     // 天猫订单号
-    orderId   int64
+    _orderId   int64
     // 是否下载html，true是html，false是pdf， html速度会快一点
-    html   bool
+    _html   bool
 }
 
 // 初始化TmallCarContractDownloadRequest对象
@@ -43,25 +43,25 @@ func (r TmallCarContractDownloadRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫订单号
-func (r *TmallCarContractDownloadRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallCarContractDownloadRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallCarContractDownloadRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // Html Setter
 // 是否下载html，true是html，false是pdf， html速度会快一点
-func (r *TmallCarContractDownloadRequest) SetHtml(html bool) error {
-    r.html = html
-    r.Set("html", html)
+func (r *TmallCarContractDownloadRequest) SetHtml(_html bool) error {
+    r._html = _html
+    r.Set("html", _html)
     return nil
 }
 
 // Html Getter
 func (r TmallCarContractDownloadRequest) GetHtml() bool {
-    return r.html
+    return r._html
 }

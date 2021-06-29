@@ -15,11 +15,11 @@ alibaba.alihealth.examination.report.diagnose.file.code.get
 type AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest struct {
     model.Params
     // 报告id
-    reportId   int64
+    _reportId   int64
     // 订单id
-    orderId   string
+    _orderId   string
     // 医生id
-    doctorId   string
+    _doctorId   string
 }
 
 // 初始化AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) GetApiParam
 }
 // ReportId Setter
 // 报告id
-func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetReportId(reportId int64) error {
-    r.reportId = reportId
-    r.Set("report_id", reportId)
+func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetReportId(_reportId int64) error {
+    r._reportId = _reportId
+    r.Set("report_id", _reportId)
     return nil
 }
 
 // ReportId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) GetReportId() int64 {
-    return r.reportId
+    return r._reportId
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // DoctorId Setter
 // 医生id
-func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetDoctorId(doctorId string) error {
-    r.doctorId = doctorId
-    r.Set("doctor_id", doctorId)
+func (r *AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) SetDoctorId(_doctorId string) error {
+    r._doctorId = _doctorId
+    r.Set("doctor_id", _doctorId)
     return nil
 }
 
 // DoctorId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseFileCodeGetRequest) GetDoctorId() string {
-    return r.doctorId
+    return r._doctorId
 }

@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.order.cancel
 type AlibabaTclsAelophyMerchantChannelOrderCancelRequest struct {
     model.Params
     // 取消信息
-    userCancelInfo   *OrderUserCancelInfo
+    _userCancelInfo   *OrderUserCancelInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelOrderCancelRequest) GetApiParams() url.
 }
 // UserCancelInfo Setter
 // 取消信息
-func (r *AlibabaTclsAelophyMerchantChannelOrderCancelRequest) SetUserCancelInfo(userCancelInfo *OrderUserCancelInfo) error {
-    r.userCancelInfo = userCancelInfo
-    r.Set("user_cancel_info", userCancelInfo)
+func (r *AlibabaTclsAelophyMerchantChannelOrderCancelRequest) SetUserCancelInfo(_userCancelInfo *OrderUserCancelInfo) error {
+    r._userCancelInfo = _userCancelInfo
+    r.Set("user_cancel_info", _userCancelInfo)
     return nil
 }
 
 // UserCancelInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderCancelRequest) GetUserCancelInfo() *OrderUserCancelInfo {
-    return r.userCancelInfo
+    return r._userCancelInfo
 }

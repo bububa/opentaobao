@@ -15,9 +15,9 @@ tmall.item.increment.update.schema.get
 type TmallItemIncrementUpdateSchemaGetRequest struct {
     model.Params
     // 需要编辑的商品ID
-    itemId   int64
+    _itemId   int64
     // 如果入参xml_data指定了更新的字段，则只返回指定字段的规则（ISV如果功能性很强，如明确更新Title，请拼装好此字段以提升API整体性能）
-    xmlData   string
+    _xmlData   string
 }
 
 // 初始化TmallItemIncrementUpdateSchemaGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallItemIncrementUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 需要编辑的商品ID
-func (r *TmallItemIncrementUpdateSchemaGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemIncrementUpdateSchemaGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemIncrementUpdateSchemaGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // XmlData Setter
 // 如果入参xml_data指定了更新的字段，则只返回指定字段的规则（ISV如果功能性很强，如明确更新Title，请拼装好此字段以提升API整体性能）
-func (r *TmallItemIncrementUpdateSchemaGetRequest) SetXmlData(xmlData string) error {
-    r.xmlData = xmlData
-    r.Set("xml_data", xmlData)
+func (r *TmallItemIncrementUpdateSchemaGetRequest) SetXmlData(_xmlData string) error {
+    r._xmlData = _xmlData
+    r.Set("xml_data", _xmlData)
     return nil
 }
 
 // XmlData Getter
 func (r TmallItemIncrementUpdateSchemaGetRequest) GetXmlData() string {
-    return r.xmlData
+    return r._xmlData
 }

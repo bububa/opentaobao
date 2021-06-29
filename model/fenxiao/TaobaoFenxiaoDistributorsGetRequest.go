@@ -15,7 +15,7 @@ taobao.fenxiao.distributors.get
 type TaobaoFenxiaoDistributorsGetRequest struct {
     model.Params
     // 分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。
-    nicks   string
+    _nicks   string
 }
 
 // 初始化TaobaoFenxiaoDistributorsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoDistributorsGetRequest) GetApiParams() url.Values {
 }
 // Nicks Setter
 // 分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。
-func (r *TaobaoFenxiaoDistributorsGetRequest) SetNicks(nicks string) error {
-    r.nicks = nicks
-    r.Set("nicks", nicks)
+func (r *TaobaoFenxiaoDistributorsGetRequest) SetNicks(_nicks string) error {
+    r._nicks = _nicks
+    r.Set("nicks", _nicks)
     return nil
 }
 
 // Nicks Getter
 func (r TaobaoFenxiaoDistributorsGetRequest) GetNicks() string {
-    return r.nicks
+    return r._nicks
 }

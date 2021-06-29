@@ -15,7 +15,7 @@ yunos.service.cmns.coa.message.cancel
 type YunosServiceCmnsCoaMessageCancelRequest struct {
     model.Params
     // 消息ID
-    mid   int64
+    _mid   int64
 }
 
 // 初始化YunosServiceCmnsCoaMessageCancelRequest对象
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaMessageCancelRequest) GetApiParams() url.Values {
 }
 // Mid Setter
 // 消息ID
-func (r *YunosServiceCmnsCoaMessageCancelRequest) SetMid(mid int64) error {
-    r.mid = mid
-    r.Set("mid", mid)
+func (r *YunosServiceCmnsCoaMessageCancelRequest) SetMid(_mid int64) error {
+    r._mid = _mid
+    r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
 func (r YunosServiceCmnsCoaMessageCancelRequest) GetMid() int64 {
-    return r.mid
+    return r._mid
 }

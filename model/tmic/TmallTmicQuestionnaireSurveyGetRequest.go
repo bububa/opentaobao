@@ -15,11 +15,11 @@ tmall.tmic.questionnaire.survey.get
 type TmallTmicQuestionnaireSurveyGetRequest struct {
     model.Params
     // 问卷hashCode，问卷对外唯一编码
-    hashCode   string
+    _hashCode   string
     // biz业务参数，1024表示投放id，下划线分隔，fav表示收藏行为的英文
-    biz   string
+    _biz   string
     // open_id
-    openUserId   string
+    _openUserId   string
 }
 
 // 初始化TmallTmicQuestionnaireSurveyGetRequest对象
@@ -44,37 +44,37 @@ func (r TmallTmicQuestionnaireSurveyGetRequest) GetApiParams() url.Values {
 }
 // HashCode Setter
 // 问卷hashCode，问卷对外唯一编码
-func (r *TmallTmicQuestionnaireSurveyGetRequest) SetHashCode(hashCode string) error {
-    r.hashCode = hashCode
-    r.Set("hash_code", hashCode)
+func (r *TmallTmicQuestionnaireSurveyGetRequest) SetHashCode(_hashCode string) error {
+    r._hashCode = _hashCode
+    r.Set("hash_code", _hashCode)
     return nil
 }
 
 // HashCode Getter
 func (r TmallTmicQuestionnaireSurveyGetRequest) GetHashCode() string {
-    return r.hashCode
+    return r._hashCode
 }
 // Biz Setter
 // biz业务参数，1024表示投放id，下划线分隔，fav表示收藏行为的英文
-func (r *TmallTmicQuestionnaireSurveyGetRequest) SetBiz(biz string) error {
-    r.biz = biz
-    r.Set("biz", biz)
+func (r *TmallTmicQuestionnaireSurveyGetRequest) SetBiz(_biz string) error {
+    r._biz = _biz
+    r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
 func (r TmallTmicQuestionnaireSurveyGetRequest) GetBiz() string {
-    return r.biz
+    return r._biz
 }
 // OpenUserId Setter
 // open_id
-func (r *TmallTmicQuestionnaireSurveyGetRequest) SetOpenUserId(openUserId string) error {
-    r.openUserId = openUserId
-    r.Set("open_user_id", openUserId)
+func (r *TmallTmicQuestionnaireSurveyGetRequest) SetOpenUserId(_openUserId string) error {
+    r._openUserId = _openUserId
+    r.Set("open_user_id", _openUserId)
     return nil
 }
 
 // OpenUserId Getter
 func (r TmallTmicQuestionnaireSurveyGetRequest) GetOpenUserId() string {
-    return r.openUserId
+    return r._openUserId
 }

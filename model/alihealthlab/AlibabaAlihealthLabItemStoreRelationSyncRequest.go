@@ -15,11 +15,11 @@ alibaba.alihealth.lab.item.store.relation.sync
 type AlibabaAlihealthLabItemStoreRelationSyncRequest struct {
     model.Params
     // EFFECTIVE 有效，INVALID 无效
-    isvRelationStatus   string
+    _isvRelationStatus   string
     // isv门店编码
-    isvStoreCodes   []string
+    _isvStoreCodes   []string
     // 检验检测项目isv侧编码
-    isvItemCode   string
+    _isvItemCode   string
 }
 
 // 初始化AlibabaAlihealthLabItemStoreRelationSyncRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetApiParams() url.Valu
 }
 // IsvRelationStatus Setter
 // EFFECTIVE 有效，INVALID 无效
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvRelationStatus(isvRelationStatus string) error {
-    r.isvRelationStatus = isvRelationStatus
-    r.Set("isv_relation_status", isvRelationStatus)
+func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
+    r._isvRelationStatus = _isvRelationStatus
+    r.Set("isv_relation_status", _isvRelationStatus)
     return nil
 }
 
 // IsvRelationStatus Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvRelationStatus() string {
-    return r.isvRelationStatus
+    return r._isvRelationStatus
 }
 // IsvStoreCodes Setter
 // isv门店编码
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvStoreCodes(isvStoreCodes []string) error {
-    r.isvStoreCodes = isvStoreCodes
-    r.Set("isv_store_codes", isvStoreCodes)
+func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvStoreCodes(_isvStoreCodes []string) error {
+    r._isvStoreCodes = _isvStoreCodes
+    r.Set("isv_store_codes", _isvStoreCodes)
     return nil
 }
 
 // IsvStoreCodes Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvStoreCodes() []string {
-    return r.isvStoreCodes
+    return r._isvStoreCodes
 }
 // IsvItemCode Setter
 // 检验检测项目isv侧编码
-func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvItemCode(isvItemCode string) error {
-    r.isvItemCode = isvItemCode
-    r.Set("isv_item_code", isvItemCode)
+func (r *AlibabaAlihealthLabItemStoreRelationSyncRequest) SetIsvItemCode(_isvItemCode string) error {
+    r._isvItemCode = _isvItemCode
+    r.Set("isv_item_code", _isvItemCode)
     return nil
 }
 
 // IsvItemCode Getter
 func (r AlibabaAlihealthLabItemStoreRelationSyncRequest) GetIsvItemCode() string {
-    return r.isvItemCode
+    return r._isvItemCode
 }

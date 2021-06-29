@@ -15,11 +15,11 @@ taobao.simba.serchcrowd.batch.delete
 type TaobaoSimbaSerchcrowdBatchDeleteRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 子帐号nick
-    subNick   string
+    _subNick   string
     // 需要删除的人群id
-    adgroupCrowdIds   []int64
+    _adgroupCrowdIds   []int64
 }
 
 // 初始化TaobaoSimbaSerchcrowdBatchDeleteRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // SubNick Setter
 // 子帐号nick
-func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetSubNick(subNick string) error {
-    r.subNick = subNick
-    r.Set("sub_nick", subNick)
+func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetSubNick(_subNick string) error {
+    r._subNick = _subNick
+    r.Set("sub_nick", _subNick)
     return nil
 }
 
 // SubNick Getter
 func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetSubNick() string {
-    return r.subNick
+    return r._subNick
 }
 // AdgroupCrowdIds Setter
 // 需要删除的人群id
-func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetAdgroupCrowdIds(adgroupCrowdIds []int64) error {
-    r.adgroupCrowdIds = adgroupCrowdIds
-    r.Set("adgroup_crowd_ids", adgroupCrowdIds)
+func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
+    r._adgroupCrowdIds = _adgroupCrowdIds
+    r.Set("adgroup_crowd_ids", _adgroupCrowdIds)
     return nil
 }
 
 // AdgroupCrowdIds Getter
 func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetAdgroupCrowdIds() []int64 {
-    return r.adgroupCrowdIds
+    return r._adgroupCrowdIds
 }

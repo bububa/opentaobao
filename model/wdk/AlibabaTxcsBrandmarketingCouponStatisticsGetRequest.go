@@ -15,7 +15,7 @@ alibaba.txcs.brandmarketing.coupon.statistics.get
 type AlibabaTxcsBrandmarketingCouponStatisticsGetRequest struct {
     model.Params
     // 请求信息
-    couponStatisticsParamDo   *CouponStatisticsParamDO
+    _couponStatisticsParamDo   *CouponStatisticsParamDO
 }
 
 // 初始化AlibabaTxcsBrandmarketingCouponStatisticsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetApiParams() url.
 }
 // CouponStatisticsParamDo Setter
 // 请求信息
-func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) SetCouponStatisticsParamDo(couponStatisticsParamDo *CouponStatisticsParamDO) error {
-    r.couponStatisticsParamDo = couponStatisticsParamDo
-    r.Set("coupon_statistics_param_do", couponStatisticsParamDo)
+func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) SetCouponStatisticsParamDo(_couponStatisticsParamDo *CouponStatisticsParamDO) error {
+    r._couponStatisticsParamDo = _couponStatisticsParamDo
+    r.Set("coupon_statistics_param_do", _couponStatisticsParamDo)
     return nil
 }
 
 // CouponStatisticsParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetCouponStatisticsParamDo() *CouponStatisticsParamDO {
-    return r.couponStatisticsParamDo
+    return r._couponStatisticsParamDo
 }

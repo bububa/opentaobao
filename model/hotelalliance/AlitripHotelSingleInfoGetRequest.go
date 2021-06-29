@@ -15,7 +15,7 @@ alitrip.hotel.single.info.get
 type AlitripHotelSingleInfoGetRequest struct {
     model.Params
     // 查询酒店信息query参数
-    queryHotelInfoParam   *QueryHotelInfoParam
+    _queryHotelInfoParam   *QueryHotelInfoParam
 }
 
 // 初始化AlitripHotelSingleInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelSingleInfoGetRequest) GetApiParams() url.Values {
 }
 // QueryHotelInfoParam Setter
 // 查询酒店信息query参数
-func (r *AlitripHotelSingleInfoGetRequest) SetQueryHotelInfoParam(queryHotelInfoParam *QueryHotelInfoParam) error {
-    r.queryHotelInfoParam = queryHotelInfoParam
-    r.Set("query_hotel_info_param", queryHotelInfoParam)
+func (r *AlitripHotelSingleInfoGetRequest) SetQueryHotelInfoParam(_queryHotelInfoParam *QueryHotelInfoParam) error {
+    r._queryHotelInfoParam = _queryHotelInfoParam
+    r.Set("query_hotel_info_param", _queryHotelInfoParam)
     return nil
 }
 
 // QueryHotelInfoParam Getter
 func (r AlitripHotelSingleInfoGetRequest) GetQueryHotelInfoParam() *QueryHotelInfoParam {
-    return r.queryHotelInfoParam
+    return r._queryHotelInfoParam
 }

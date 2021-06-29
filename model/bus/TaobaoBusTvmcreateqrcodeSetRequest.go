@@ -15,9 +15,9 @@ taobao.bus.tvmcreateqrcode.set
 type TaobaoBusTvmcreateqrcodeSetRequest struct {
     model.Params
     // 飞猪订单号
-    alitripOrderId   string
+    _alitripOrderId   string
     // 超时时间（分钟）
-    timeoutExpress   int64
+    _timeoutExpress   int64
 }
 
 // 初始化TaobaoBusTvmcreateqrcodeSetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoBusTvmcreateqrcodeSetRequest) GetApiParams() url.Values {
 }
 // AlitripOrderId Setter
 // 飞猪订单号
-func (r *TaobaoBusTvmcreateqrcodeSetRequest) SetAlitripOrderId(alitripOrderId string) error {
-    r.alitripOrderId = alitripOrderId
-    r.Set("alitrip_order_id", alitripOrderId)
+func (r *TaobaoBusTvmcreateqrcodeSetRequest) SetAlitripOrderId(_alitripOrderId string) error {
+    r._alitripOrderId = _alitripOrderId
+    r.Set("alitrip_order_id", _alitripOrderId)
     return nil
 }
 
 // AlitripOrderId Getter
 func (r TaobaoBusTvmcreateqrcodeSetRequest) GetAlitripOrderId() string {
-    return r.alitripOrderId
+    return r._alitripOrderId
 }
 // TimeoutExpress Setter
 // 超时时间（分钟）
-func (r *TaobaoBusTvmcreateqrcodeSetRequest) SetTimeoutExpress(timeoutExpress int64) error {
-    r.timeoutExpress = timeoutExpress
-    r.Set("timeout_express", timeoutExpress)
+func (r *TaobaoBusTvmcreateqrcodeSetRequest) SetTimeoutExpress(_timeoutExpress int64) error {
+    r._timeoutExpress = _timeoutExpress
+    r.Set("timeout_express", _timeoutExpress)
     return nil
 }
 
 // TimeoutExpress Getter
 func (r TaobaoBusTvmcreateqrcodeSetRequest) GetTimeoutExpress() int64 {
-    return r.timeoutExpress
+    return r._timeoutExpress
 }

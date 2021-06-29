@@ -15,11 +15,11 @@ tmall.product.specs.get
 type TmallProductSpecsGetRequest struct {
     model.Params
     // 产品的ID。这个不能和properties和cat_id同时起效果<br>properties 和cat_id 均不传时，该参数必传。
-    productId   int64
+    _productId   int64
     // 关键属性的字符串，pid:vid;pid:vid该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。<br>product_id 不传时该参数必传
-    properties   string
+    _properties   string
     // 类目的ID号，该id必须和properties同时传入。而且只有当product_id不传入的时候才起效果。<br> product_id不传时，该参数必传
-    catId   int64
+    _catId   int64
 }
 
 // 初始化TmallProductSpecsGetRequest对象
@@ -44,37 +44,37 @@ func (r TmallProductSpecsGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品的ID。这个不能和properties和cat_id同时起效果<br>properties 和cat_id 均不传时，该参数必传。
-func (r *TmallProductSpecsGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallProductSpecsGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallProductSpecsGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // Properties Setter
 // 关键属性的字符串，pid:vid;pid:vid该字段必须和cat_id同时传入才起效果。 而且只有当product_id不传入的时候才起效果。<br>product_id 不传时该参数必传
-func (r *TmallProductSpecsGetRequest) SetProperties(properties string) error {
-    r.properties = properties
-    r.Set("properties", properties)
+func (r *TmallProductSpecsGetRequest) SetProperties(_properties string) error {
+    r._properties = _properties
+    r.Set("properties", _properties)
     return nil
 }
 
 // Properties Getter
 func (r TmallProductSpecsGetRequest) GetProperties() string {
-    return r.properties
+    return r._properties
 }
 // CatId Setter
 // 类目的ID号，该id必须和properties同时传入。而且只有当product_id不传入的时候才起效果。<br> product_id不传时，该参数必传
-func (r *TmallProductSpecsGetRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *TmallProductSpecsGetRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r TmallProductSpecsGetRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

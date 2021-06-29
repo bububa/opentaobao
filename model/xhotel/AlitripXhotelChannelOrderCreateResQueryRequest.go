@@ -15,7 +15,7 @@ alitrip.xhotel.channel.order.create.res.query
 type AlitripXhotelChannelOrderCreateResQueryRequest struct {
     model.Params
     // 外部渠道订单号
-    outSourceOrderId   string
+    _outSourceOrderId   string
 }
 
 // 初始化AlitripXhotelChannelOrderCreateResQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelOrderCreateResQueryRequest) GetApiParams() url.Value
 }
 // OutSourceOrderId Setter
 // 外部渠道订单号
-func (r *AlitripXhotelChannelOrderCreateResQueryRequest) SetOutSourceOrderId(outSourceOrderId string) error {
-    r.outSourceOrderId = outSourceOrderId
-    r.Set("out_source_order_id", outSourceOrderId)
+func (r *AlitripXhotelChannelOrderCreateResQueryRequest) SetOutSourceOrderId(_outSourceOrderId string) error {
+    r._outSourceOrderId = _outSourceOrderId
+    r.Set("out_source_order_id", _outSourceOrderId)
     return nil
 }
 
 // OutSourceOrderId Getter
 func (r AlitripXhotelChannelOrderCreateResQueryRequest) GetOutSourceOrderId() string {
-    return r.outSourceOrderId
+    return r._outSourceOrderId
 }

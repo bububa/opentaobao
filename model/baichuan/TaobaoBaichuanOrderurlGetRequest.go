@@ -15,7 +15,7 @@ taobao.baichuan.orderurl.get
 type TaobaoBaichuanOrderurlGetRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOrderurlGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOrderurlGetRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOrderurlGetRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOrderurlGetRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOrderurlGetRequest) GetName() string {
-    return r.name
+    return r._name
 }

@@ -15,9 +15,9 @@ taobao.alitrip.travel.baseinfo.cities.get
 type TaobaoAlitripTravelBaseinfoCitiesGetRequest struct {
     model.Params
     // 1-获取目的地城市列表 2-获取出发地城市列表
-    iocType   int64
+    _iocType   int64
     // 1-境内跟团游 2-境内自由行 3-出境跟团游 4-出境自由行 5-境外当地玩乐 6-国际邮轮 9-境内邮轮
-    catType   int64
+    _catType   int64
 }
 
 // 初始化TaobaoAlitripTravelBaseinfoCitiesGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripTravelBaseinfoCitiesGetRequest) GetApiParams() url.Values {
 }
 // IocType Setter
 // 1-获取目的地城市列表 2-获取出发地城市列表
-func (r *TaobaoAlitripTravelBaseinfoCitiesGetRequest) SetIocType(iocType int64) error {
-    r.iocType = iocType
-    r.Set("ioc_type", iocType)
+func (r *TaobaoAlitripTravelBaseinfoCitiesGetRequest) SetIocType(_iocType int64) error {
+    r._iocType = _iocType
+    r.Set("ioc_type", _iocType)
     return nil
 }
 
 // IocType Getter
 func (r TaobaoAlitripTravelBaseinfoCitiesGetRequest) GetIocType() int64 {
-    return r.iocType
+    return r._iocType
 }
 // CatType Setter
 // 1-境内跟团游 2-境内自由行 3-出境跟团游 4-出境自由行 5-境外当地玩乐 6-国际邮轮 9-境内邮轮
-func (r *TaobaoAlitripTravelBaseinfoCitiesGetRequest) SetCatType(catType int64) error {
-    r.catType = catType
-    r.Set("cat_type", catType)
+func (r *TaobaoAlitripTravelBaseinfoCitiesGetRequest) SetCatType(_catType int64) error {
+    r._catType = _catType
+    r.Set("cat_type", _catType)
     return nil
 }
 
 // CatType Getter
 func (r TaobaoAlitripTravelBaseinfoCitiesGetRequest) GetCatType() int64 {
-    return r.catType
+    return r._catType
 }

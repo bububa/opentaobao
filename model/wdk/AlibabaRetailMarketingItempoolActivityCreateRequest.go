@@ -15,7 +15,7 @@ alibaba.retail.marketing.itempool.activity.create
 type AlibabaRetailMarketingItempoolActivityCreateRequest struct {
     model.Params
     // 创建商品池活动参数
-    param   *ItemPoolActivityOperateRequest
+    _param   *ItemPoolActivityOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingItempoolActivityCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetApiParams() url.
 }
 // Param Setter
 // 创建商品池活动参数
-func (r *AlibabaRetailMarketingItempoolActivityCreateRequest) SetParam(param *ItemPoolActivityOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingItempoolActivityCreateRequest) SetParam(_param *ItemPoolActivityOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingItempoolActivityCreateRequest) GetParam() *ItemPoolActivityOperateRequest {
-    return r.param
+    return r._param
 }

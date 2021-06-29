@@ -15,15 +15,15 @@ taobao.jushita.jdp.users.get
 type TaobaoJushitaJdpUsersGetRequest struct {
     model.Params
     // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
-    startModified   string
+    _startModified   string
     // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
-    endModified   string
+    _endModified   string
     // 每页记录数，默认200
-    pageSize   int64
+    _pageSize   int64
     // 当前页数
-    pageNo   int64
+    _pageNo   int64
     // 如果传了user_id表示单条查询
-    userId   int64
+    _userId   int64
 }
 
 // 初始化TaobaoJushitaJdpUsersGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoJushitaJdpUsersGetRequest) GetApiParams() url.Values {
 }
 // StartModified Setter
 // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
-func (r *TaobaoJushitaJdpUsersGetRequest) SetStartModified(startModified string) error {
-    r.startModified = startModified
-    r.Set("start_modified", startModified)
+func (r *TaobaoJushitaJdpUsersGetRequest) SetStartModified(_startModified string) error {
+    r._startModified = _startModified
+    r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
 func (r TaobaoJushitaJdpUsersGetRequest) GetStartModified() string {
-    return r.startModified
+    return r._startModified
 }
 // EndModified Setter
 // 此参数一般不用传，用于查询最后更改时间在某个时间段内的用户
-func (r *TaobaoJushitaJdpUsersGetRequest) SetEndModified(endModified string) error {
-    r.endModified = endModified
-    r.Set("end_modified", endModified)
+func (r *TaobaoJushitaJdpUsersGetRequest) SetEndModified(_endModified string) error {
+    r._endModified = _endModified
+    r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
 func (r TaobaoJushitaJdpUsersGetRequest) GetEndModified() string {
-    return r.endModified
+    return r._endModified
 }
 // PageSize Setter
 // 每页记录数，默认200
-func (r *TaobaoJushitaJdpUsersGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoJushitaJdpUsersGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoJushitaJdpUsersGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 当前页数
-func (r *TaobaoJushitaJdpUsersGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoJushitaJdpUsersGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoJushitaJdpUsersGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // UserId Setter
 // 如果传了user_id表示单条查询
-func (r *TaobaoJushitaJdpUsersGetRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoJushitaJdpUsersGetRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoJushitaJdpUsersGetRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

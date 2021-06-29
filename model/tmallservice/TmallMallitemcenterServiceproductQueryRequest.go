@@ -15,13 +15,13 @@ tmall.mallitemcenter.serviceproduct.query
 type TmallMallitemcenterServiceproductQueryRequest struct {
     model.Params
     // 服务产品id
-    id   int64
+    _id   int64
     // 产品状态
-    status   int64
+    _status   int64
     // 服务名称
-    serviceCode   string
+    _serviceCode   string
     // 产品类型
-    serviceProductType   int64
+    _serviceProductType   int64
 }
 
 // 初始化TmallMallitemcenterServiceproductQueryRequest对象
@@ -46,49 +46,49 @@ func (r TmallMallitemcenterServiceproductQueryRequest) GetApiParams() url.Values
 }
 // Id Setter
 // 服务产品id
-func (r *TmallMallitemcenterServiceproductQueryRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TmallMallitemcenterServiceproductQueryRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TmallMallitemcenterServiceproductQueryRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Status Setter
 // 产品状态
-func (r *TmallMallitemcenterServiceproductQueryRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallMallitemcenterServiceproductQueryRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallMallitemcenterServiceproductQueryRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // ServiceCode Setter
 // 服务名称
-func (r *TmallMallitemcenterServiceproductQueryRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *TmallMallitemcenterServiceproductQueryRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r TmallMallitemcenterServiceproductQueryRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }
 // ServiceProductType Setter
 // 产品类型
-func (r *TmallMallitemcenterServiceproductQueryRequest) SetServiceProductType(serviceProductType int64) error {
-    r.serviceProductType = serviceProductType
-    r.Set("service_product_type", serviceProductType)
+func (r *TmallMallitemcenterServiceproductQueryRequest) SetServiceProductType(_serviceProductType int64) error {
+    r._serviceProductType = _serviceProductType
+    r.Set("service_product_type", _serviceProductType)
     return nil
 }
 
 // ServiceProductType Getter
 func (r TmallMallitemcenterServiceproductQueryRequest) GetServiceProductType() int64 {
-    return r.serviceProductType
+    return r._serviceProductType
 }

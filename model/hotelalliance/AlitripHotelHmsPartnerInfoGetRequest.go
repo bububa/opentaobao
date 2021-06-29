@@ -15,7 +15,7 @@ alitrip.hotel.hms.partner.info.get
 type AlitripHotelHmsPartnerInfoGetRequest struct {
     model.Params
     // 查询合作商信息query参数
-    queryPartnerInfoParam   *QueryPartnerInfoParam
+    _queryPartnerInfoParam   *QueryPartnerInfoParam
 }
 
 // 初始化AlitripHotelHmsPartnerInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHmsPartnerInfoGetRequest) GetApiParams() url.Values {
 }
 // QueryPartnerInfoParam Setter
 // 查询合作商信息query参数
-func (r *AlitripHotelHmsPartnerInfoGetRequest) SetQueryPartnerInfoParam(queryPartnerInfoParam *QueryPartnerInfoParam) error {
-    r.queryPartnerInfoParam = queryPartnerInfoParam
-    r.Set("query_partner_info_param", queryPartnerInfoParam)
+func (r *AlitripHotelHmsPartnerInfoGetRequest) SetQueryPartnerInfoParam(_queryPartnerInfoParam *QueryPartnerInfoParam) error {
+    r._queryPartnerInfoParam = _queryPartnerInfoParam
+    r.Set("query_partner_info_param", _queryPartnerInfoParam)
     return nil
 }
 
 // QueryPartnerInfoParam Getter
 func (r AlitripHotelHmsPartnerInfoGetRequest) GetQueryPartnerInfoParam() *QueryPartnerInfoParam {
-    return r.queryPartnerInfoParam
+    return r._queryPartnerInfoParam
 }

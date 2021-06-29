@@ -18,7 +18,7 @@ alibaba.alsc.crm.card.pagetmp
 type AlibabaAlscCrmCardPagetmpRequest struct {
     model.Params
     // 请求结果
-    paramPullCardTemplateOpenReq   *PullCardTemplateOpenReq
+    _paramPullCardTemplateOpenReq   *PullCardTemplateOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardPagetmpRequest对象
@@ -43,13 +43,13 @@ func (r AlibabaAlscCrmCardPagetmpRequest) GetApiParams() url.Values {
 }
 // ParamPullCardTemplateOpenReq Setter
 // 请求结果
-func (r *AlibabaAlscCrmCardPagetmpRequest) SetParamPullCardTemplateOpenReq(paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
-    r.paramPullCardTemplateOpenReq = paramPullCardTemplateOpenReq
-    r.Set("param_pull_card_template_open_req", paramPullCardTemplateOpenReq)
+func (r *AlibabaAlscCrmCardPagetmpRequest) SetParamPullCardTemplateOpenReq(_paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
+    r._paramPullCardTemplateOpenReq = _paramPullCardTemplateOpenReq
+    r.Set("param_pull_card_template_open_req", _paramPullCardTemplateOpenReq)
     return nil
 }
 
 // ParamPullCardTemplateOpenReq Getter
 func (r AlibabaAlscCrmCardPagetmpRequest) GetParamPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
-    return r.paramPullCardTemplateOpenReq
+    return r._paramPullCardTemplateOpenReq
 }

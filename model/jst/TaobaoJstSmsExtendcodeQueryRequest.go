@@ -15,7 +15,7 @@ taobao.jst.sms.extendcode.query
 type TaobaoJstSmsExtendcodeQueryRequest struct {
     model.Params
     // 扩展码查询请求
-    extendCodeQueryRequest   *ExtendCodeQueryRequest
+    _extendCodeQueryRequest   *ExtendCodeQueryRequest
 }
 
 // 初始化TaobaoJstSmsExtendcodeQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsExtendcodeQueryRequest) GetApiParams() url.Values {
 }
 // ExtendCodeQueryRequest Setter
 // 扩展码查询请求
-func (r *TaobaoJstSmsExtendcodeQueryRequest) SetExtendCodeQueryRequest(extendCodeQueryRequest *ExtendCodeQueryRequest) error {
-    r.extendCodeQueryRequest = extendCodeQueryRequest
-    r.Set("extend_code_query_request", extendCodeQueryRequest)
+func (r *TaobaoJstSmsExtendcodeQueryRequest) SetExtendCodeQueryRequest(_extendCodeQueryRequest *ExtendCodeQueryRequest) error {
+    r._extendCodeQueryRequest = _extendCodeQueryRequest
+    r.Set("extend_code_query_request", _extendCodeQueryRequest)
     return nil
 }
 
 // ExtendCodeQueryRequest Getter
 func (r TaobaoJstSmsExtendcodeQueryRequest) GetExtendCodeQueryRequest() *ExtendCodeQueryRequest {
-    return r.extendCodeQueryRequest
+    return r._extendCodeQueryRequest
 }

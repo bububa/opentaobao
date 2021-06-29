@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.submit
 type AlibabaAlihouseNewhomeProjectSubmitRequest struct {
     model.Params
     // 楼盘对象
-    ebbasProjectDto   *EbbasProjectDto
+    _ebbasProjectDto   *EbbasProjectDto
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectSubmitRequest) GetApiParams() url.Values {
 }
 // EbbasProjectDto Setter
 // 楼盘对象
-func (r *AlibabaAlihouseNewhomeProjectSubmitRequest) SetEbbasProjectDto(ebbasProjectDto *EbbasProjectDto) error {
-    r.ebbasProjectDto = ebbasProjectDto
-    r.Set("ebbas_project_dto", ebbasProjectDto)
+func (r *AlibabaAlihouseNewhomeProjectSubmitRequest) SetEbbasProjectDto(_ebbasProjectDto *EbbasProjectDto) error {
+    r._ebbasProjectDto = _ebbasProjectDto
+    r.Set("ebbas_project_dto", _ebbasProjectDto)
     return nil
 }
 
 // EbbasProjectDto Getter
 func (r AlibabaAlihouseNewhomeProjectSubmitRequest) GetEbbasProjectDto() *EbbasProjectDto {
-    return r.ebbasProjectDto
+    return r._ebbasProjectDto
 }

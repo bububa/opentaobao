@@ -15,7 +15,7 @@ aliexpress.feed.post.publish
 type AliexpressFeedPostPublishRequest struct {
     model.Params
     // 站外导入内容请求参数
-    offsitePublishPostEntity   *OffsitePublishPostEntity
+    _offsitePublishPostEntity   *OffsitePublishPostEntity
 }
 
 // 初始化AliexpressFeedPostPublishRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressFeedPostPublishRequest) GetApiParams() url.Values {
 }
 // OffsitePublishPostEntity Setter
 // 站外导入内容请求参数
-func (r *AliexpressFeedPostPublishRequest) SetOffsitePublishPostEntity(offsitePublishPostEntity *OffsitePublishPostEntity) error {
-    r.offsitePublishPostEntity = offsitePublishPostEntity
-    r.Set("offsite_publish_post_entity", offsitePublishPostEntity)
+func (r *AliexpressFeedPostPublishRequest) SetOffsitePublishPostEntity(_offsitePublishPostEntity *OffsitePublishPostEntity) error {
+    r._offsitePublishPostEntity = _offsitePublishPostEntity
+    r.Set("offsite_publish_post_entity", _offsitePublishPostEntity)
     return nil
 }
 
 // OffsitePublishPostEntity Getter
 func (r AliexpressFeedPostPublishRequest) GetOffsitePublishPostEntity() *OffsitePublishPostEntity {
-    return r.offsitePublishPostEntity
+    return r._offsitePublishPostEntity
 }

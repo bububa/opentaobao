@@ -15,7 +15,7 @@ tmall.servicecenter.tp.funds.recover.query
 type TmallServicecenterTpFundsRecoverQueryRequest struct {
     model.Params
     // query入参
-    query   *TpFundsRecoverQuery
+    _query   *TpFundsRecoverQuery
 }
 
 // 初始化TmallServicecenterTpFundsRecoverQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterTpFundsRecoverQueryRequest) GetApiParams() url.Values 
 }
 // Query Setter
 // query入参
-func (r *TmallServicecenterTpFundsRecoverQueryRequest) SetQuery(query *TpFundsRecoverQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TmallServicecenterTpFundsRecoverQueryRequest) SetQuery(_query *TpFundsRecoverQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TmallServicecenterTpFundsRecoverQueryRequest) GetQuery() *TpFundsRecoverQuery {
-    return r.query
+    return r._query
 }

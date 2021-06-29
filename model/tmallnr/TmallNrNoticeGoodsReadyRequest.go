@@ -15,7 +15,7 @@ tmall.nr.notice.goods.ready
 type TmallNrNoticeGoodsReadyRequest struct {
     model.Params
     // 入参
-    param0   *NrZqsGoodsReadyReqDto
+    _param0   *NrZqsGoodsReadyReqDto
 }
 
 // 初始化TmallNrNoticeGoodsReadyRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrNoticeGoodsReadyRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TmallNrNoticeGoodsReadyRequest) SetParam0(param0 *NrZqsGoodsReadyReqDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallNrNoticeGoodsReadyRequest) SetParam0(_param0 *NrZqsGoodsReadyReqDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallNrNoticeGoodsReadyRequest) GetParam0() *NrZqsGoodsReadyReqDto {
-    return r.param0
+    return r._param0
 }

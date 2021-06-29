@@ -15,11 +15,11 @@ alitrip.merchant.galaxy.offer.query
 type AlitripMerchantGalaxyOfferQueryRequest struct {
     model.Params
     // 租户身份信息
-    tenantKey   string
+    _tenantKey   string
     // offer活动ID
-    offerIds   string
+    _offerIds   string
     // 渠道来源
-    offerChannel   string
+    _offerChannel   string
 }
 
 // 初始化AlitripMerchantGalaxyOfferQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlitripMerchantGalaxyOfferQueryRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyOfferQueryRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyOfferQueryRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyOfferQueryRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // OfferIds Setter
 // offer活动ID
-func (r *AlitripMerchantGalaxyOfferQueryRequest) SetOfferIds(offerIds string) error {
-    r.offerIds = offerIds
-    r.Set("offer_ids", offerIds)
+func (r *AlitripMerchantGalaxyOfferQueryRequest) SetOfferIds(_offerIds string) error {
+    r._offerIds = _offerIds
+    r.Set("offer_ids", _offerIds)
     return nil
 }
 
 // OfferIds Getter
 func (r AlitripMerchantGalaxyOfferQueryRequest) GetOfferIds() string {
-    return r.offerIds
+    return r._offerIds
 }
 // OfferChannel Setter
 // 渠道来源
-func (r *AlitripMerchantGalaxyOfferQueryRequest) SetOfferChannel(offerChannel string) error {
-    r.offerChannel = offerChannel
-    r.Set("offer_channel", offerChannel)
+func (r *AlitripMerchantGalaxyOfferQueryRequest) SetOfferChannel(_offerChannel string) error {
+    r._offerChannel = _offerChannel
+    r.Set("offer_channel", _offerChannel)
     return nil
 }
 
 // OfferChannel Getter
 func (r AlitripMerchantGalaxyOfferQueryRequest) GetOfferChannel() string {
-    return r.offerChannel
+    return r._offerChannel
 }

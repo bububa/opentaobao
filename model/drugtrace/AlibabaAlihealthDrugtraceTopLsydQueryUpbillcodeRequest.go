@@ -15,9 +15,9 @@ alibaba.alihealth.drugtrace.top.lsyd.query.upbillcode
 type AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
     // 企业REF_ENT_ID （当前企业的唯一标识）
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetApiParams() u
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // RefEntId Setter
 // 企业REF_ENT_ID （当前企业的唯一标识）
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbillcodeRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

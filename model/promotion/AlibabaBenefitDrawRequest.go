@@ -21,11 +21,11 @@ appkey验证通过的，才会进入抽奖流程，否则直接失败。
 type AlibabaBenefitDrawRequest struct {
     model.Params
     // 奖池唯一标识，奖池创建时即生成
-    ename   string
+    _ename   string
     // 调用方AppName：规定为promotioncenter-${appId}
-    appName   string
+    _appName   string
     // 调用方应用ip，非必填
-    ip   string
+    _ip   string
 }
 
 // 初始化AlibabaBenefitDrawRequest对象
@@ -50,37 +50,37 @@ func (r AlibabaBenefitDrawRequest) GetApiParams() url.Values {
 }
 // Ename Setter
 // 奖池唯一标识，奖池创建时即生成
-func (r *AlibabaBenefitDrawRequest) SetEname(ename string) error {
-    r.ename = ename
-    r.Set("ename", ename)
+func (r *AlibabaBenefitDrawRequest) SetEname(_ename string) error {
+    r._ename = _ename
+    r.Set("ename", _ename)
     return nil
 }
 
 // Ename Getter
 func (r AlibabaBenefitDrawRequest) GetEname() string {
-    return r.ename
+    return r._ename
 }
 // AppName Setter
 // 调用方AppName：规定为promotioncenter-${appId}
-func (r *AlibabaBenefitDrawRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaBenefitDrawRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaBenefitDrawRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // Ip Setter
 // 调用方应用ip，非必填
-func (r *AlibabaBenefitDrawRequest) SetIp(ip string) error {
-    r.ip = ip
-    r.Set("ip", ip)
+func (r *AlibabaBenefitDrawRequest) SetIp(_ip string) error {
+    r._ip = _ip
+    r.Set("ip", _ip)
     return nil
 }
 
 // Ip Getter
 func (r AlibabaBenefitDrawRequest) GetIp() string {
-    return r.ip
+    return r._ip
 }

@@ -15,11 +15,11 @@ taobao.ump.activities.get
 type TaobaoUmpActivitiesGetRequest struct {
     model.Params
     // 工具id
-    toolId   int64
+    _toolId   int64
     // 分页的页码
-    pageNo   int64
+    _pageNo   int64
     // 每页的最大条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoUmpActivitiesGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoUmpActivitiesGetRequest) GetApiParams() url.Values {
 }
 // ToolId Setter
 // 工具id
-func (r *TaobaoUmpActivitiesGetRequest) SetToolId(toolId int64) error {
-    r.toolId = toolId
-    r.Set("tool_id", toolId)
+func (r *TaobaoUmpActivitiesGetRequest) SetToolId(_toolId int64) error {
+    r._toolId = _toolId
+    r.Set("tool_id", _toolId)
     return nil
 }
 
 // ToolId Getter
 func (r TaobaoUmpActivitiesGetRequest) GetToolId() int64 {
-    return r.toolId
+    return r._toolId
 }
 // PageNo Setter
 // 分页的页码
-func (r *TaobaoUmpActivitiesGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoUmpActivitiesGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoUmpActivitiesGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页的最大条数
-func (r *TaobaoUmpActivitiesGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoUmpActivitiesGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoUmpActivitiesGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

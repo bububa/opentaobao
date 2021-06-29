@@ -15,7 +15,7 @@ taobao.mtop.upload.token.get
 type TaobaoMtopUploadTokenGetRequest struct {
     model.Params
     // 系统自动生成
-    paramUploadTokenRequest   *UploadTokenRequestV
+    _paramUploadTokenRequest   *UploadTokenRequestV
 }
 
 // 初始化TaobaoMtopUploadTokenGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMtopUploadTokenGetRequest) GetApiParams() url.Values {
 }
 // ParamUploadTokenRequest Setter
 // 系统自动生成
-func (r *TaobaoMtopUploadTokenGetRequest) SetParamUploadTokenRequest(paramUploadTokenRequest *UploadTokenRequestV) error {
-    r.paramUploadTokenRequest = paramUploadTokenRequest
-    r.Set("param_upload_token_request", paramUploadTokenRequest)
+func (r *TaobaoMtopUploadTokenGetRequest) SetParamUploadTokenRequest(_paramUploadTokenRequest *UploadTokenRequestV) error {
+    r._paramUploadTokenRequest = _paramUploadTokenRequest
+    r.Set("param_upload_token_request", _paramUploadTokenRequest)
     return nil
 }
 
 // ParamUploadTokenRequest Getter
 func (r TaobaoMtopUploadTokenGetRequest) GetParamUploadTokenRequest() *UploadTokenRequestV {
-    return r.paramUploadTokenRequest
+    return r._paramUploadTokenRequest
 }

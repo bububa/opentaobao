@@ -15,17 +15,17 @@ taobao.simba.adgroup.update
 type TaobaoSimbaAdgroupUpdateRequest struct {
     model.Params
     // 非搜索是否使用默认出价，false-不用；true-使用；默认为true;
-    useNonsearchDefaultPrice   string
+    _useNonsearchDefaultPrice   string
     // 用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online
-    onlineStatus   string
+    _onlineStatus   string
     // 推广组Id
-    adgroupId   int64
+    _adgroupId   int64
     // 默认出价，单位是分，不能小于5
-    defaultPrice   int64
+    _defaultPrice   int64
     // 非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价
-    nonsearchMaxPrice   int64
+    _nonsearchMaxPrice   int64
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaAdgroupUpdateRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoSimbaAdgroupUpdateRequest) GetApiParams() url.Values {
 }
 // UseNonsearchDefaultPrice Setter
 // 非搜索是否使用默认出价，false-不用；true-使用；默认为true;
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetUseNonsearchDefaultPrice(useNonsearchDefaultPrice string) error {
-    r.useNonsearchDefaultPrice = useNonsearchDefaultPrice
-    r.Set("use_nonsearch_default_price", useNonsearchDefaultPrice)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetUseNonsearchDefaultPrice(_useNonsearchDefaultPrice string) error {
+    r._useNonsearchDefaultPrice = _useNonsearchDefaultPrice
+    r.Set("use_nonsearch_default_price", _useNonsearchDefaultPrice)
     return nil
 }
 
 // UseNonsearchDefaultPrice Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetUseNonsearchDefaultPrice() string {
-    return r.useNonsearchDefaultPrice
+    return r._useNonsearchDefaultPrice
 }
 // OnlineStatus Setter
 // 用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetOnlineStatus(onlineStatus string) error {
-    r.onlineStatus = onlineStatus
-    r.Set("online_status", onlineStatus)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetOnlineStatus(_onlineStatus string) error {
+    r._onlineStatus = _onlineStatus
+    r.Set("online_status", _onlineStatus)
     return nil
 }
 
 // OnlineStatus Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetOnlineStatus() string {
-    return r.onlineStatus
+    return r._onlineStatus
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // DefaultPrice Setter
 // 默认出价，单位是分，不能小于5
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetDefaultPrice(defaultPrice int64) error {
-    r.defaultPrice = defaultPrice
-    r.Set("default_price", defaultPrice)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetDefaultPrice(_defaultPrice int64) error {
+    r._defaultPrice = _defaultPrice
+    r.Set("default_price", _defaultPrice)
     return nil
 }
 
 // DefaultPrice Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetDefaultPrice() int64 {
-    return r.defaultPrice
+    return r._defaultPrice
 }
 // NonsearchMaxPrice Setter
 // 非搜索出价，单位是分，不能小于5，如果use_nonseatch_default_price为使用默认出价，则此nonsearch_max_price字段传入的数据不起作用，商品将使用默认非搜索出价
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetNonsearchMaxPrice(nonsearchMaxPrice int64) error {
-    r.nonsearchMaxPrice = nonsearchMaxPrice
-    r.Set("nonsearch_max_price", nonsearchMaxPrice)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetNonsearchMaxPrice(_nonsearchMaxPrice int64) error {
+    r._nonsearchMaxPrice = _nonsearchMaxPrice
+    r.Set("nonsearch_max_price", _nonsearchMaxPrice)
     return nil
 }
 
 // NonsearchMaxPrice Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetNonsearchMaxPrice() int64 {
-    return r.nonsearchMaxPrice
+    return r._nonsearchMaxPrice
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaAdgroupUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaAdgroupUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaAdgroupUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

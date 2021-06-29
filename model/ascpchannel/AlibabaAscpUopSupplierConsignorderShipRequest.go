@@ -15,7 +15,7 @@ ERP通过该接口通知商家仓声明销售订单出库信息,支持履约单�
 type AlibabaAscpUopSupplierConsignorderShipRequest struct {
     model.Params
     // 发货回传请求模型
-    consignorderShipRequest   *Consignordershiprequest
+    _consignorderShipRequest   *Consignordershiprequest
 }
 
 // 初始化AlibabaAscpUopSupplierConsignorderShipRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierConsignorderShipRequest) GetApiParams() url.Values
 }
 // ConsignorderShipRequest Setter
 // 发货回传请求模型
-func (r *AlibabaAscpUopSupplierConsignorderShipRequest) SetConsignorderShipRequest(consignorderShipRequest *Consignordershiprequest) error {
-    r.consignorderShipRequest = consignorderShipRequest
-    r.Set("consignorder_ship_request", consignorderShipRequest)
+func (r *AlibabaAscpUopSupplierConsignorderShipRequest) SetConsignorderShipRequest(_consignorderShipRequest *Consignordershiprequest) error {
+    r._consignorderShipRequest = _consignorderShipRequest
+    r.Set("consignorder_ship_request", _consignorderShipRequest)
     return nil
 }
 
 // ConsignorderShipRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderShipRequest) GetConsignorderShipRequest() *Consignordershiprequest {
-    return r.consignorderShipRequest
+    return r._consignorderShipRequest
 }

@@ -15,9 +15,9 @@ taobao.fenxiao.order.confirm.paid
 type TaobaoFenxiaoOrderConfirmPaidRequest struct {
     model.Params
     // 采购单编号。
-    purchaseOrderId   int64
+    _purchaseOrderId   int64
     // 确认支付信息（字数小于100）
-    confirmRemark   string
+    _confirmRemark   string
 }
 
 // 初始化TaobaoFenxiaoOrderConfirmPaidRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFenxiaoOrderConfirmPaidRequest) GetApiParams() url.Values {
 }
 // PurchaseOrderId Setter
 // 采购单编号。
-func (r *TaobaoFenxiaoOrderConfirmPaidRequest) SetPurchaseOrderId(purchaseOrderId int64) error {
-    r.purchaseOrderId = purchaseOrderId
-    r.Set("purchase_order_id", purchaseOrderId)
+func (r *TaobaoFenxiaoOrderConfirmPaidRequest) SetPurchaseOrderId(_purchaseOrderId int64) error {
+    r._purchaseOrderId = _purchaseOrderId
+    r.Set("purchase_order_id", _purchaseOrderId)
     return nil
 }
 
 // PurchaseOrderId Getter
 func (r TaobaoFenxiaoOrderConfirmPaidRequest) GetPurchaseOrderId() int64 {
-    return r.purchaseOrderId
+    return r._purchaseOrderId
 }
 // ConfirmRemark Setter
 // 确认支付信息（字数小于100）
-func (r *TaobaoFenxiaoOrderConfirmPaidRequest) SetConfirmRemark(confirmRemark string) error {
-    r.confirmRemark = confirmRemark
-    r.Set("confirm_remark", confirmRemark)
+func (r *TaobaoFenxiaoOrderConfirmPaidRequest) SetConfirmRemark(_confirmRemark string) error {
+    r._confirmRemark = _confirmRemark
+    r.Set("confirm_remark", _confirmRemark)
     return nil
 }
 
 // ConfirmRemark Getter
 func (r TaobaoFenxiaoOrderConfirmPaidRequest) GetConfirmRemark() string {
-    return r.confirmRemark
+    return r._confirmRemark
 }

@@ -15,9 +15,9 @@ aliexpress.affiliate.featuredpromo.get
 type AliexpressAffiliateFeaturedpromoGetRequest struct {
     model.Params
     // 请求签名
-    appSignature   string
+    _appSignature   string
     // 返回字段列表
-    fields   string
+    _fields   string
 }
 
 // 初始化AliexpressAffiliateFeaturedpromoGetRequest对象
@@ -42,25 +42,25 @@ func (r AliexpressAffiliateFeaturedpromoGetRequest) GetApiParams() url.Values {
 }
 // AppSignature Setter
 // 请求签名
-func (r *AliexpressAffiliateFeaturedpromoGetRequest) SetAppSignature(appSignature string) error {
-    r.appSignature = appSignature
-    r.Set("app_signature", appSignature)
+func (r *AliexpressAffiliateFeaturedpromoGetRequest) SetAppSignature(_appSignature string) error {
+    r._appSignature = _appSignature
+    r.Set("app_signature", _appSignature)
     return nil
 }
 
 // AppSignature Getter
 func (r AliexpressAffiliateFeaturedpromoGetRequest) GetAppSignature() string {
-    return r.appSignature
+    return r._appSignature
 }
 // Fields Setter
 // 返回字段列表
-func (r *AliexpressAffiliateFeaturedpromoGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *AliexpressAffiliateFeaturedpromoGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r AliexpressAffiliateFeaturedpromoGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

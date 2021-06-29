@@ -15,11 +15,11 @@ alibaba.ascp.uop.cn.reverse.warehouseorder.update
 type AlibabaAscpUopCnReverseWarehouseorderUpdateRequest struct {
     model.Params
     // 逆向入库单号
-    orderCode   string
+    _orderCode   string
     // 是否已经退款
-    refunded   bool
+    _refunded   bool
     // 退款原因
-    refundReason   string
+    _refundReason   string
 }
 
 // 初始化AlibabaAscpUopCnReverseWarehouseorderUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) GetApiParams() url.V
 }
 // OrderCode Setter
 // 逆向入库单号
-func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // Refunded Setter
 // 是否已经退款
-func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetRefunded(refunded bool) error {
-    r.refunded = refunded
-    r.Set("refunded", refunded)
+func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetRefunded(_refunded bool) error {
+    r._refunded = _refunded
+    r.Set("refunded", _refunded)
     return nil
 }
 
 // Refunded Getter
 func (r AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) GetRefunded() bool {
-    return r.refunded
+    return r._refunded
 }
 // RefundReason Setter
 // 退款原因
-func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetRefundReason(refundReason string) error {
-    r.refundReason = refundReason
-    r.Set("refund_reason", refundReason)
+func (r *AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) SetRefundReason(_refundReason string) error {
+    r._refundReason = _refundReason
+    r.Set("refund_reason", _refundReason)
     return nil
 }
 
 // RefundReason Getter
 func (r AlibabaAscpUopCnReverseWarehouseorderUpdateRequest) GetRefundReason() string {
-    return r.refundReason
+    return r._refundReason
 }

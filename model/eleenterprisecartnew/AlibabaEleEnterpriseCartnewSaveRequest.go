@@ -15,15 +15,15 @@ alibaba.ele.enterprise.cartnew.save
 type AlibabaEleEnterpriseCartnewSaveRequest struct {
     model.Params
     // 用户11位手机号
-    phone   string
+    _phone   string
     // 用户所在纬度
-    latitude   string
+    _latitude   string
     // [[{\"id\": 1526467414,\"new_specs\": [{\"name\": \"规格\",\"value\": \"那么大鲜柠特饮(雪碧) 660ml\"}],\"attrs\": [{\"name\": \"可选小食\",\"value\": \"金黄脆薯格\"}],\"quantity\": 2}]]
-    food   string
+    _food   string
     // 用户所在经度
-    longitude   string
+    _longitude   string
     // 餐厅id
-    erestaurantId   string
+    _erestaurantId   string
 }
 
 // 初始化AlibabaEleEnterpriseCartnewSaveRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaEleEnterpriseCartnewSaveRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 用户11位手机号
-func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseCartnewSaveRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // Latitude Setter
 // 用户所在纬度
-func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetLatitude(latitude string) error {
-    r.latitude = latitude
-    r.Set("latitude", latitude)
+func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetLatitude(_latitude string) error {
+    r._latitude = _latitude
+    r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
 func (r AlibabaEleEnterpriseCartnewSaveRequest) GetLatitude() string {
-    return r.latitude
+    return r._latitude
 }
 // Food Setter
 // [[{\"id\": 1526467414,\"new_specs\": [{\"name\": \"规格\",\"value\": \"那么大鲜柠特饮(雪碧) 660ml\"}],\"attrs\": [{\"name\": \"可选小食\",\"value\": \"金黄脆薯格\"}],\"quantity\": 2}]]
-func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetFood(food string) error {
-    r.food = food
-    r.Set("food", food)
+func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetFood(_food string) error {
+    r._food = _food
+    r.Set("food", _food)
     return nil
 }
 
 // Food Getter
 func (r AlibabaEleEnterpriseCartnewSaveRequest) GetFood() string {
-    return r.food
+    return r._food
 }
 // Longitude Setter
 // 用户所在经度
-func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetLongitude(longitude string) error {
-    r.longitude = longitude
-    r.Set("longitude", longitude)
+func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetLongitude(_longitude string) error {
+    r._longitude = _longitude
+    r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
 func (r AlibabaEleEnterpriseCartnewSaveRequest) GetLongitude() string {
-    return r.longitude
+    return r._longitude
 }
 // ErestaurantId Setter
 // 餐厅id
-func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetErestaurantId(erestaurantId string) error {
-    r.erestaurantId = erestaurantId
-    r.Set("erestaurant_id", erestaurantId)
+func (r *AlibabaEleEnterpriseCartnewSaveRequest) SetErestaurantId(_erestaurantId string) error {
+    r._erestaurantId = _erestaurantId
+    r.Set("erestaurant_id", _erestaurantId)
     return nil
 }
 
 // ErestaurantId Getter
 func (r AlibabaEleEnterpriseCartnewSaveRequest) GetErestaurantId() string {
-    return r.erestaurantId
+    return r._erestaurantId
 }

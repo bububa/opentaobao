@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
 type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest struct {
     model.Params
     // 退仓结果
-    returnWarehouseResult   *ReturnWarehouseResult
+    _returnWarehouseResult   *ReturnWarehouseResult
 }
 
 // 初始化AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest) GetApiPa
 }
 // ReturnWarehouseResult Setter
 // 退仓结果
-func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest) SetReturnWarehouseResult(returnWarehouseResult *ReturnWarehouseResult) error {
-    r.returnWarehouseResult = returnWarehouseResult
-    r.Set("return_warehouse_result", returnWarehouseResult)
+func (r *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest) SetReturnWarehouseResult(_returnWarehouseResult *ReturnWarehouseResult) error {
+    r._returnWarehouseResult = _returnWarehouseResult
+    r.Set("return_warehouse_result", _returnWarehouseResult)
     return nil
 }
 
 // ReturnWarehouseResult Getter
 func (r AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedRequest) GetReturnWarehouseResult() *ReturnWarehouseResult {
-    return r.returnWarehouseResult
+    return r._returnWarehouseResult
 }

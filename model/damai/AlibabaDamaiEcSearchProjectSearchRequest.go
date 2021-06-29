@@ -15,7 +15,7 @@ alibaba.damai.ec.search.project.search
 type AlibabaDamaiEcSearchProjectSearchRequest struct {
     model.Params
     // 入参对象
-    param   *TopSearchProjectParam
+    _param   *TopSearchProjectParam
 }
 
 // 初始化AlibabaDamaiEcSearchProjectSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiEcSearchProjectSearchRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlibabaDamaiEcSearchProjectSearchRequest) SetParam(param *TopSearchProjectParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiEcSearchProjectSearchRequest) SetParam(_param *TopSearchProjectParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiEcSearchProjectSearchRequest) GetParam() *TopSearchProjectParam {
-    return r.param
+    return r._param
 }

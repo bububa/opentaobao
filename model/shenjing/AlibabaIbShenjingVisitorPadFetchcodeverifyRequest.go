@@ -15,9 +15,9 @@ alibaba.ib.shenjing.visitor.pad.fetchcodeverify
 type AlibabaIbShenjingVisitorPadFetchcodeverifyRequest struct {
     model.Params
     // 访客码
-    visitorCode   int64
+    _visitorCode   int64
     // 终端ID
-    termId   string
+    _termId   string
 }
 
 // 初始化AlibabaIbShenjingVisitorPadFetchcodeverifyRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) GetApiParams() url.Va
 }
 // VisitorCode Setter
 // 访客码
-func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) SetVisitorCode(visitorCode int64) error {
-    r.visitorCode = visitorCode
-    r.Set("visitor_code", visitorCode)
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) SetVisitorCode(_visitorCode int64) error {
+    r._visitorCode = _visitorCode
+    r.Set("visitor_code", _visitorCode)
     return nil
 }
 
 // VisitorCode Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) GetVisitorCode() int64 {
-    return r.visitorCode
+    return r._visitorCode
 }
 // TermId Setter
 // 终端ID
-func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) SetTermId(termId string) error {
-    r.termId = termId
-    r.Set("term_id", termId)
+func (r *AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) SetTermId(_termId string) error {
+    r._termId = _termId
+    r.Set("term_id", _termId)
     return nil
 }
 
 // TermId Getter
 func (r AlibabaIbShenjingVisitorPadFetchcodeverifyRequest) GetTermId() string {
-    return r.termId
+    return r._termId
 }

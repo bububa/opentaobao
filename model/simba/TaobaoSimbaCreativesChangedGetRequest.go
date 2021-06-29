@@ -15,13 +15,13 @@ taobao.simba.creatives.changed.get
 type TaobaoSimbaCreativesChangedGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 返回的每页数据量大小,默认200最大1000
-    pageSize   int64
+    _pageSize   int64
     // 返回的第几页数据，默认为1
-    pageNo   int64
+    _pageNo   int64
     // 得到此时间点之后的数据，不能大于一个月
-    startTime   string
+    _startTime   string
 }
 
 // 初始化TaobaoSimbaCreativesChangedGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaCreativesChangedGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCreativesChangedGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCreativesChangedGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCreativesChangedGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
-func (r *TaobaoSimbaCreativesChangedGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSimbaCreativesChangedGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSimbaCreativesChangedGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 返回的第几页数据，默认为1
-func (r *TaobaoSimbaCreativesChangedGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoSimbaCreativesChangedGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoSimbaCreativesChangedGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // StartTime Setter
 // 得到此时间点之后的数据，不能大于一个月
-func (r *TaobaoSimbaCreativesChangedGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoSimbaCreativesChangedGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoSimbaCreativesChangedGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }

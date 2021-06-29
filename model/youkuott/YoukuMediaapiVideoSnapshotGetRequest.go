@@ -15,7 +15,7 @@ youku.mediaapi.video.snapshot.get
 type YoukuMediaapiVideoSnapshotGetRequest struct {
     model.Params
     // 视频id
-    vid   string
+    _vid   string
 }
 
 // 初始化YoukuMediaapiVideoSnapshotGetRequest对象
@@ -40,13 +40,13 @@ func (r YoukuMediaapiVideoSnapshotGetRequest) GetApiParams() url.Values {
 }
 // Vid Setter
 // 视频id
-func (r *YoukuMediaapiVideoSnapshotGetRequest) SetVid(vid string) error {
-    r.vid = vid
-    r.Set("vid", vid)
+func (r *YoukuMediaapiVideoSnapshotGetRequest) SetVid(_vid string) error {
+    r._vid = _vid
+    r.Set("vid", _vid)
     return nil
 }
 
 // Vid Getter
 func (r YoukuMediaapiVideoSnapshotGetRequest) GetVid() string {
-    return r.vid
+    return r._vid
 }

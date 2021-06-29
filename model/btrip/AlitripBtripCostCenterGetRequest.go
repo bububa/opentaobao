@@ -15,9 +15,9 @@ alitrip.btrip.cost.center.get
 type AlitripBtripCostCenterGetRequest struct {
     model.Params
     // 企业id
-    corpId   string
+    _corpId   string
     // 用户id
-    userId   string
+    _userId   string
 }
 
 // 初始化AlitripBtripCostCenterGetRequest对象
@@ -42,25 +42,25 @@ func (r AlitripBtripCostCenterGetRequest) GetApiParams() url.Values {
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripCostCenterGetRequest) SetCorpId(corpId string) error {
-    r.corpId = corpId
-    r.Set("corp_id", corpId)
+func (r *AlitripBtripCostCenterGetRequest) SetCorpId(_corpId string) error {
+    r._corpId = _corpId
+    r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
 func (r AlitripBtripCostCenterGetRequest) GetCorpId() string {
-    return r.corpId
+    return r._corpId
 }
 // UserId Setter
 // 用户id
-func (r *AlitripBtripCostCenterGetRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlitripBtripCostCenterGetRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlitripBtripCostCenterGetRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }

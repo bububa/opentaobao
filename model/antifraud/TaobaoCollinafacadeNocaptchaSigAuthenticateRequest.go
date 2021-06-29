@@ -15,7 +15,7 @@ taobao.collinafacade.nocaptcha.sig.authenticate
 type TaobaoCollinafacadeNocaptchaSigAuthenticateRequest struct {
     model.Params
     // 签名串校验接口入参
-    sigAuthenticateContext   *SigAuthenticateContext
+    _sigAuthenticateContext   *SigAuthenticateContext
 }
 
 // 初始化TaobaoCollinafacadeNocaptchaSigAuthenticateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetApiParams() url.V
 }
 // SigAuthenticateContext Setter
 // 签名串校验接口入参
-func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) SetSigAuthenticateContext(sigAuthenticateContext *SigAuthenticateContext) error {
-    r.sigAuthenticateContext = sigAuthenticateContext
-    r.Set("sig_authenticate_context", sigAuthenticateContext)
+func (r *TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) SetSigAuthenticateContext(_sigAuthenticateContext *SigAuthenticateContext) error {
+    r._sigAuthenticateContext = _sigAuthenticateContext
+    r.Set("sig_authenticate_context", _sigAuthenticateContext)
     return nil
 }
 
 // SigAuthenticateContext Getter
 func (r TaobaoCollinafacadeNocaptchaSigAuthenticateRequest) GetSigAuthenticateContext() *SigAuthenticateContext {
-    return r.sigAuthenticateContext
+    return r._sigAuthenticateContext
 }

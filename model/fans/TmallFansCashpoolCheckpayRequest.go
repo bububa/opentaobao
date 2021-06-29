@@ -15,7 +15,7 @@ tmall.fans.cashpool.checkpay
 type TmallFansCashpoolCheckpayRequest struct {
     model.Params
     // 资金池列表
-    cashPoolList   []int64
+    _cashPoolList   []int64
 }
 
 // 初始化TmallFansCashpoolCheckpayRequest对象
@@ -40,13 +40,13 @@ func (r TmallFansCashpoolCheckpayRequest) GetApiParams() url.Values {
 }
 // CashPoolList Setter
 // 资金池列表
-func (r *TmallFansCashpoolCheckpayRequest) SetCashPoolList(cashPoolList []int64) error {
-    r.cashPoolList = cashPoolList
-    r.Set("cash_pool_list", cashPoolList)
+func (r *TmallFansCashpoolCheckpayRequest) SetCashPoolList(_cashPoolList []int64) error {
+    r._cashPoolList = _cashPoolList
+    r.Set("cash_pool_list", _cashPoolList)
     return nil
 }
 
 // CashPoolList Getter
 func (r TmallFansCashpoolCheckpayRequest) GetCashPoolList() []int64 {
-    return r.cashPoolList
+    return r._cashPoolList
 }

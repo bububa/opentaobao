@@ -15,9 +15,9 @@ alibaba.ib.shenjing.visitor.pad.uploadface
 type AlibabaIbShenjingVisitorPadUploadfaceRequest struct {
     model.Params
     // 访客ID
-    id   string
+    _id   string
     // 图片URL
-    image   string
+    _image   string
 }
 
 // 初始化AlibabaIbShenjingVisitorPadUploadfaceRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetApiParams() url.Values 
 }
 // Id Setter
 // 访客ID
-func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetId() string {
-    return r.id
+    return r._id
 }
 // Image Setter
 // 图片URL
-func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetImage(image string) error {
-    r.image = image
-    r.Set("image", image)
+func (r *AlibabaIbShenjingVisitorPadUploadfaceRequest) SetImage(_image string) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r AlibabaIbShenjingVisitorPadUploadfaceRequest) GetImage() string {
-    return r.image
+    return r._image
 }

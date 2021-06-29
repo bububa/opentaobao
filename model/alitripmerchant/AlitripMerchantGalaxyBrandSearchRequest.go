@@ -15,7 +15,7 @@ alitrip.merchant.galaxy.brand.search
 type AlitripMerchantGalaxyBrandSearchRequest struct {
     model.Params
     // 租户信息
-    tenantKey   string
+    _tenantKey   string
 }
 
 // 初始化AlitripMerchantGalaxyBrandSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripMerchantGalaxyBrandSearchRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户信息
-func (r *AlitripMerchantGalaxyBrandSearchRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyBrandSearchRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyBrandSearchRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }

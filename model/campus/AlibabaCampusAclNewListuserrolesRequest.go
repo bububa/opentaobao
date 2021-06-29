@@ -15,9 +15,9 @@ alibaba.campus.acl.new.listuserroles
 type AlibabaCampusAclNewListuserrolesRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 入参
-    param   *UserRoleQueryParam
+    _param   *UserRoleQueryParam
 }
 
 // 初始化AlibabaCampusAclNewListuserrolesRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewListuserrolesRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewListuserrolesRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewListuserrolesRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewListuserrolesRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // Param Setter
 // 入参
-func (r *AlibabaCampusAclNewListuserrolesRequest) SetParam(param *UserRoleQueryParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaCampusAclNewListuserrolesRequest) SetParam(_param *UserRoleQueryParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaCampusAclNewListuserrolesRequest) GetParam() *UserRoleQueryParam {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ tmall.nrt.member.openid
 type TmallNrtMemberOpenidRequest struct {
     model.Params
     // 会员DTO
-    nrtMemberDto   *NrtMemberDTO
+    _nrtMemberDto   *NrtMemberDTO
 }
 
 // 初始化TmallNrtMemberOpenidRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtMemberOpenidRequest) GetApiParams() url.Values {
 }
 // NrtMemberDto Setter
 // 会员DTO
-func (r *TmallNrtMemberOpenidRequest) SetNrtMemberDto(nrtMemberDto *NrtMemberDTO) error {
-    r.nrtMemberDto = nrtMemberDto
-    r.Set("nrt_member_dto", nrtMemberDto)
+func (r *TmallNrtMemberOpenidRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDTO) error {
+    r._nrtMemberDto = _nrtMemberDto
+    r.Set("nrt_member_dto", _nrtMemberDto)
     return nil
 }
 
 // NrtMemberDto Getter
 func (r TmallNrtMemberOpenidRequest) GetNrtMemberDto() *NrtMemberDTO {
-    return r.nrtMemberDto
+    return r._nrtMemberDto
 }

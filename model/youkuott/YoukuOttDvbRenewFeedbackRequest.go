@@ -15,11 +15,11 @@ dvb续费之后的反馈接口
 type YoukuOttDvbRenewFeedbackRequest struct {
     model.Params
     // 订单id
-    orderId   int64
+    _orderId   int64
     // 是否成功
-    isSuccess   bool
+    _isSuccess   bool
     // 失败原因（可无）
-    failReason   string
+    _failReason   string
 }
 
 // 初始化YoukuOttDvbRenewFeedbackRequest对象
@@ -44,37 +44,37 @@ func (r YoukuOttDvbRenewFeedbackRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *YoukuOttDvbRenewFeedbackRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *YoukuOttDvbRenewFeedbackRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r YoukuOttDvbRenewFeedbackRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // IsSuccess Setter
 // 是否成功
-func (r *YoukuOttDvbRenewFeedbackRequest) SetIsSuccess(isSuccess bool) error {
-    r.isSuccess = isSuccess
-    r.Set("is_success", isSuccess)
+func (r *YoukuOttDvbRenewFeedbackRequest) SetIsSuccess(_isSuccess bool) error {
+    r._isSuccess = _isSuccess
+    r.Set("is_success", _isSuccess)
     return nil
 }
 
 // IsSuccess Getter
 func (r YoukuOttDvbRenewFeedbackRequest) GetIsSuccess() bool {
-    return r.isSuccess
+    return r._isSuccess
 }
 // FailReason Setter
 // 失败原因（可无）
-func (r *YoukuOttDvbRenewFeedbackRequest) SetFailReason(failReason string) error {
-    r.failReason = failReason
-    r.Set("fail_reason", failReason)
+func (r *YoukuOttDvbRenewFeedbackRequest) SetFailReason(_failReason string) error {
+    r._failReason = _failReason
+    r.Set("fail_reason", _failReason)
     return nil
 }
 
 // FailReason Getter
 func (r YoukuOttDvbRenewFeedbackRequest) GetFailReason() string {
-    return r.failReason
+    return r._failReason
 }

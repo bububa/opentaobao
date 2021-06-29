@@ -15,19 +15,19 @@ taobao.trade.drug.orders.get
 type TaobaoTradeDrugOrdersGetRequest struct {
     model.Params
     // 外卖分店ID
-    shopId   int64
+    _shopId   int64
     // 关键字
-    keyword   string
+    _keyword   string
     // true-查询仅按商家维度  false-查询按商家下所属店铺维度
-    isAllShop   bool
+    _isAllShop   bool
     // true 仅有支付宝订单,false 包括所有类型订单(货到付款,支付券等)
-    isAllOrder   bool
+    _isAllOrder   bool
     // （必填字段）订单状态 待确认订单2 , 退款中订单4 , 已发货12 关闭20 交易成功21
-    orderStatus   int64
+    _orderStatus   int64
     // 返回记录数，超过20按20条返回数据
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoTradeDrugOrdersGetRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoTradeDrugOrdersGetRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 外卖分店ID
-func (r *TaobaoTradeDrugOrdersGetRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }
 // Keyword Setter
 // 关键字
-func (r *TaobaoTradeDrugOrdersGetRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // IsAllShop Setter
 // true-查询仅按商家维度  false-查询按商家下所属店铺维度
-func (r *TaobaoTradeDrugOrdersGetRequest) SetIsAllShop(isAllShop bool) error {
-    r.isAllShop = isAllShop
-    r.Set("is_all_shop", isAllShop)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetIsAllShop(_isAllShop bool) error {
+    r._isAllShop = _isAllShop
+    r.Set("is_all_shop", _isAllShop)
     return nil
 }
 
 // IsAllShop Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetIsAllShop() bool {
-    return r.isAllShop
+    return r._isAllShop
 }
 // IsAllOrder Setter
 // true 仅有支付宝订单,false 包括所有类型订单(货到付款,支付券等)
-func (r *TaobaoTradeDrugOrdersGetRequest) SetIsAllOrder(isAllOrder bool) error {
-    r.isAllOrder = isAllOrder
-    r.Set("is_all_order", isAllOrder)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetIsAllOrder(_isAllOrder bool) error {
+    r._isAllOrder = _isAllOrder
+    r.Set("is_all_order", _isAllOrder)
     return nil
 }
 
 // IsAllOrder Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetIsAllOrder() bool {
-    return r.isAllOrder
+    return r._isAllOrder
 }
 // OrderStatus Setter
 // （必填字段）订单状态 待确认订单2 , 退款中订单4 , 已发货12 关闭20 交易成功21
-func (r *TaobaoTradeDrugOrdersGetRequest) SetOrderStatus(orderStatus int64) error {
-    r.orderStatus = orderStatus
-    r.Set("order_status", orderStatus)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetOrderStatus(_orderStatus int64) error {
+    r._orderStatus = _orderStatus
+    r.Set("order_status", _orderStatus)
     return nil
 }
 
 // OrderStatus Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetOrderStatus() int64 {
-    return r.orderStatus
+    return r._orderStatus
 }
 // PageSize Setter
 // 返回记录数，超过20按20条返回数据
-func (r *TaobaoTradeDrugOrdersGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoTradeDrugOrdersGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoTradeDrugOrdersGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoTradeDrugOrdersGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

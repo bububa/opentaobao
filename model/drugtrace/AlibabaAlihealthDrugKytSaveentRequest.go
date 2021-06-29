@@ -15,11 +15,11 @@ alibaba.alihealth.drug.kyt.saveent
 type AlibabaAlihealthDrugKytSaveentRequest struct {
     model.Params
     // 添加企业唯一标识
-    refEntId   string
+    _refEntId   string
     // 新增企业信息
-    addEntReq   *AddEntReqDto
+    _addEntReq   *AddEntReqDto
     // 图片数据流。图片大小务必控制在2M以内
-    licPictureByte   []*model.File
+    _licPictureByte   []*model.File
 }
 
 // 初始化AlibabaAlihealthDrugKytSaveentRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytSaveentRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 添加企业唯一标识
-func (r *AlibabaAlihealthDrugKytSaveentRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytSaveentRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytSaveentRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // AddEntReq Setter
 // 新增企业信息
-func (r *AlibabaAlihealthDrugKytSaveentRequest) SetAddEntReq(addEntReq *AddEntReqDto) error {
-    r.addEntReq = addEntReq
-    r.Set("add_ent_req", addEntReq)
+func (r *AlibabaAlihealthDrugKytSaveentRequest) SetAddEntReq(_addEntReq *AddEntReqDto) error {
+    r._addEntReq = _addEntReq
+    r.Set("add_ent_req", _addEntReq)
     return nil
 }
 
 // AddEntReq Getter
 func (r AlibabaAlihealthDrugKytSaveentRequest) GetAddEntReq() *AddEntReqDto {
-    return r.addEntReq
+    return r._addEntReq
 }
 // LicPictureByte Setter
 // 图片数据流。图片大小务必控制在2M以内
-func (r *AlibabaAlihealthDrugKytSaveentRequest) SetLicPictureByte(licPictureByte []*model.File) error {
-    r.licPictureByte = licPictureByte
-    r.Set("lic_picture_byte", licPictureByte)
+func (r *AlibabaAlihealthDrugKytSaveentRequest) SetLicPictureByte(_licPictureByte []*model.File) error {
+    r._licPictureByte = _licPictureByte
+    r.Set("lic_picture_byte", _licPictureByte)
     return nil
 }
 
 // LicPictureByte Getter
 func (r AlibabaAlihealthDrugKytSaveentRequest) GetLicPictureByte() []*model.File {
-    return r.licPictureByte
+    return r._licPictureByte
 }

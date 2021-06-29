@@ -15,7 +15,7 @@ tmall.nrt.member.synchronize
 type TmallNrtMemberSynchronizeRequest struct {
     model.Params
     // 会员DTO
-    nrtMemberDto   *NrtMemberDTO
+    _nrtMemberDto   *NrtMemberDTO
 }
 
 // 初始化TmallNrtMemberSynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtMemberSynchronizeRequest) GetApiParams() url.Values {
 }
 // NrtMemberDto Setter
 // 会员DTO
-func (r *TmallNrtMemberSynchronizeRequest) SetNrtMemberDto(nrtMemberDto *NrtMemberDTO) error {
-    r.nrtMemberDto = nrtMemberDto
-    r.Set("nrt_member_dto", nrtMemberDto)
+func (r *TmallNrtMemberSynchronizeRequest) SetNrtMemberDto(_nrtMemberDto *NrtMemberDTO) error {
+    r._nrtMemberDto = _nrtMemberDto
+    r.Set("nrt_member_dto", _nrtMemberDto)
     return nil
 }
 
 // NrtMemberDto Getter
 func (r TmallNrtMemberSynchronizeRequest) GetNrtMemberDto() *NrtMemberDTO {
-    return r.nrtMemberDto
+    return r._nrtMemberDto
 }

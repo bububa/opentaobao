@@ -15,7 +15,7 @@ alitrip.car.invoice.confirm
 type AlitripCarInvoiceConfirmRequest struct {
     model.Params
     // 入参对象
-    receiptDo   *ReceiptDo
+    _receiptDo   *ReceiptDo
 }
 
 // 初始化AlitripCarInvoiceConfirmRequest对象
@@ -40,13 +40,13 @@ func (r AlitripCarInvoiceConfirmRequest) GetApiParams() url.Values {
 }
 // ReceiptDo Setter
 // 入参对象
-func (r *AlitripCarInvoiceConfirmRequest) SetReceiptDo(receiptDo *ReceiptDo) error {
-    r.receiptDo = receiptDo
-    r.Set("receipt_do", receiptDo)
+func (r *AlitripCarInvoiceConfirmRequest) SetReceiptDo(_receiptDo *ReceiptDo) error {
+    r._receiptDo = _receiptDo
+    r.Set("receipt_do", _receiptDo)
     return nil
 }
 
 // ReceiptDo Getter
 func (r AlitripCarInvoiceConfirmRequest) GetReceiptDo() *ReceiptDo {
-    return r.receiptDo
+    return r._receiptDo
 }

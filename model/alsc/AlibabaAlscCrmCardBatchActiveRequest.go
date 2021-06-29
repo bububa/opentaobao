@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.batch.active
 type AlibabaAlscCrmCardBatchActiveRequest struct {
     model.Params
     // 请求对象
-    paramBatchActiveCardOpenReq   *BatchActiveCardOpenReq
+    _paramBatchActiveCardOpenReq   *BatchActiveCardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardBatchActiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardBatchActiveRequest) GetApiParams() url.Values {
 }
 // ParamBatchActiveCardOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardBatchActiveRequest) SetParamBatchActiveCardOpenReq(paramBatchActiveCardOpenReq *BatchActiveCardOpenReq) error {
-    r.paramBatchActiveCardOpenReq = paramBatchActiveCardOpenReq
-    r.Set("param_batch_active_card_open_req", paramBatchActiveCardOpenReq)
+func (r *AlibabaAlscCrmCardBatchActiveRequest) SetParamBatchActiveCardOpenReq(_paramBatchActiveCardOpenReq *BatchActiveCardOpenReq) error {
+    r._paramBatchActiveCardOpenReq = _paramBatchActiveCardOpenReq
+    r.Set("param_batch_active_card_open_req", _paramBatchActiveCardOpenReq)
     return nil
 }
 
 // ParamBatchActiveCardOpenReq Getter
 func (r AlibabaAlscCrmCardBatchActiveRequest) GetParamBatchActiveCardOpenReq() *BatchActiveCardOpenReq {
-    return r.paramBatchActiveCardOpenReq
+    return r._paramBatchActiveCardOpenReq
 }

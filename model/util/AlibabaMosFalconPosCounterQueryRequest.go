@@ -15,11 +15,11 @@ alibaba.mos.falcon.pos.counter.query
 type AlibabaMosFalconPosCounterQueryRequest struct {
     model.Params
     // 设备序列号
-    sn   string
+    _sn   string
     // 门店号
-    storeNo   string
+    _storeNo   string
     // 专柜号
-    counterNo   string
+    _counterNo   string
 }
 
 // 初始化AlibabaMosFalconPosCounterQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMosFalconPosCounterQueryRequest) GetApiParams() url.Values {
 }
 // Sn Setter
 // 设备序列号
-func (r *AlibabaMosFalconPosCounterQueryRequest) SetSn(sn string) error {
-    r.sn = sn
-    r.Set("sn", sn)
+func (r *AlibabaMosFalconPosCounterQueryRequest) SetSn(_sn string) error {
+    r._sn = _sn
+    r.Set("sn", _sn)
     return nil
 }
 
 // Sn Getter
 func (r AlibabaMosFalconPosCounterQueryRequest) GetSn() string {
-    return r.sn
+    return r._sn
 }
 // StoreNo Setter
 // 门店号
-func (r *AlibabaMosFalconPosCounterQueryRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMosFalconPosCounterQueryRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMosFalconPosCounterQueryRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }
 // CounterNo Setter
 // 专柜号
-func (r *AlibabaMosFalconPosCounterQueryRequest) SetCounterNo(counterNo string) error {
-    r.counterNo = counterNo
-    r.Set("counter_no", counterNo)
+func (r *AlibabaMosFalconPosCounterQueryRequest) SetCounterNo(_counterNo string) error {
+    r._counterNo = _counterNo
+    r.Set("counter_no", _counterNo)
     return nil
 }
 
 // CounterNo Getter
 func (r AlibabaMosFalconPosCounterQueryRequest) GetCounterNo() string {
-    return r.counterNo
+    return r._counterNo
 }

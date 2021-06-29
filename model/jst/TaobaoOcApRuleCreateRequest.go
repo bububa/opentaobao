@@ -15,9 +15,9 @@ OC分账业务功能支持，用于创建分账规则
 type TaobaoOcApRuleCreateRequest struct {
     model.Params
     // 传入比例数组后者金额数组
-    divisionRule   []int64
+    _divisionRule   []int64
     // 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
-    extAttributes   string
+    _extAttributes   string
 }
 
 // 初始化TaobaoOcApRuleCreateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOcApRuleCreateRequest) GetApiParams() url.Values {
 }
 // DivisionRule Setter
 // 传入比例数组后者金额数组
-func (r *TaobaoOcApRuleCreateRequest) SetDivisionRule(divisionRule []int64) error {
-    r.divisionRule = divisionRule
-    r.Set("division_rule", divisionRule)
+func (r *TaobaoOcApRuleCreateRequest) SetDivisionRule(_divisionRule []int64) error {
+    r._divisionRule = _divisionRule
+    r.Set("division_rule", _divisionRule)
     return nil
 }
 
 // DivisionRule Getter
 func (r TaobaoOcApRuleCreateRequest) GetDivisionRule() []int64 {
-    return r.divisionRule
+    return r._divisionRule
 }
 // ExtAttributes Setter
 // 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
-func (r *TaobaoOcApRuleCreateRequest) SetExtAttributes(extAttributes string) error {
-    r.extAttributes = extAttributes
-    r.Set("ext_attributes", extAttributes)
+func (r *TaobaoOcApRuleCreateRequest) SetExtAttributes(_extAttributes string) error {
+    r._extAttributes = _extAttributes
+    r.Set("ext_attributes", _extAttributes)
     return nil
 }
 
 // ExtAttributes Getter
 func (r TaobaoOcApRuleCreateRequest) GetExtAttributes() string {
-    return r.extAttributes
+    return r._extAttributes
 }

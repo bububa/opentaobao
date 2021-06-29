@@ -15,9 +15,9 @@ taobao.subway.cia.update
 type TaobaoSubwayCiaUpdateRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 系统自动生成
-    ciaConfigs   []CiaUpdateDto
+    _ciaConfigs   []CiaUpdateDto
 }
 
 // 初始化TaobaoSubwayCiaUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSubwayCiaUpdateRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayCiaUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSubwayCiaUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSubwayCiaUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CiaConfigs Setter
 // 系统自动生成
-func (r *TaobaoSubwayCiaUpdateRequest) SetCiaConfigs(ciaConfigs []CiaUpdateDto) error {
-    r.ciaConfigs = ciaConfigs
-    r.Set("cia_configs", ciaConfigs)
+func (r *TaobaoSubwayCiaUpdateRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDto) error {
+    r._ciaConfigs = _ciaConfigs
+    r.Set("cia_configs", _ciaConfigs)
     return nil
 }
 
 // CiaConfigs Getter
 func (r TaobaoSubwayCiaUpdateRequest) GetCiaConfigs() []CiaUpdateDto {
-    return r.ciaConfigs
+    return r._ciaConfigs
 }

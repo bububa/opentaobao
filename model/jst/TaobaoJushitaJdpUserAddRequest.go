@@ -15,9 +15,9 @@ taobao.jushita.jdp.user.add
 type TaobaoJushitaJdpUserAddRequest struct {
     model.Params
     // RDS实例名称
-    rdsName   string
+    _rdsName   string
     // 推送历史数据天数，只能为90天内，包含90天。当此参数不填时，表示以页面中应用配置的历史天数为准；如果为0表示这个用户不推送历史数据；其它表示推送的历史天数。
-    historyDays   int64
+    _historyDays   int64
 }
 
 // 初始化TaobaoJushitaJdpUserAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJushitaJdpUserAddRequest) GetApiParams() url.Values {
 }
 // RdsName Setter
 // RDS实例名称
-func (r *TaobaoJushitaJdpUserAddRequest) SetRdsName(rdsName string) error {
-    r.rdsName = rdsName
-    r.Set("rds_name", rdsName)
+func (r *TaobaoJushitaJdpUserAddRequest) SetRdsName(_rdsName string) error {
+    r._rdsName = _rdsName
+    r.Set("rds_name", _rdsName)
     return nil
 }
 
 // RdsName Getter
 func (r TaobaoJushitaJdpUserAddRequest) GetRdsName() string {
-    return r.rdsName
+    return r._rdsName
 }
 // HistoryDays Setter
 // 推送历史数据天数，只能为90天内，包含90天。当此参数不填时，表示以页面中应用配置的历史天数为准；如果为0表示这个用户不推送历史数据；其它表示推送的历史天数。
-func (r *TaobaoJushitaJdpUserAddRequest) SetHistoryDays(historyDays int64) error {
-    r.historyDays = historyDays
-    r.Set("history_days", historyDays)
+func (r *TaobaoJushitaJdpUserAddRequest) SetHistoryDays(_historyDays int64) error {
+    r._historyDays = _historyDays
+    r.Set("history_days", _historyDays)
     return nil
 }
 
 // HistoryDays Getter
 func (r TaobaoJushitaJdpUserAddRequest) GetHistoryDays() int64 {
-    return r.historyDays
+    return r._historyDays
 }

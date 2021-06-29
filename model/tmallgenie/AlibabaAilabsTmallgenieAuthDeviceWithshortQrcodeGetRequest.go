@@ -15,9 +15,9 @@ alibaba.ailabs.tmallgenie.auth.device.withshort.qrcode.get
 type AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest struct {
     model.Params
     // 产品ID
-    clientId   string
+    _clientId   string
     // 授权码
-    authCode   string
+    _authCode   string
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) GetApiParams
 }
 // ClientId Setter
 // 产品ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // AuthCode Setter
 // 授权码
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) SetAuthCode(authCode string) error {
-    r.authCode = authCode
-    r.Set("auth_code", authCode)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) SetAuthCode(_authCode string) error {
+    r._authCode = _authCode
+    r.Set("auth_code", _authCode)
     return nil
 }
 
 // AuthCode Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithshortQrcodeGetRequest) GetAuthCode() string {
-    return r.authCode
+    return r._authCode
 }

@@ -15,7 +15,7 @@ alibaba.einvoice.flow.refund
 type AlibabaEinvoiceFlowRefundRequest struct {
     model.Params
     // 退订请求参数
-    invoiceFlowRefund   *InvoiceFlowRefundDto
+    _invoiceFlowRefund   *InvoiceFlowRefundDto
 }
 
 // 初始化AlibabaEinvoiceFlowRefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceFlowRefundRequest) GetApiParams() url.Values {
 }
 // InvoiceFlowRefund Setter
 // 退订请求参数
-func (r *AlibabaEinvoiceFlowRefundRequest) SetInvoiceFlowRefund(invoiceFlowRefund *InvoiceFlowRefundDto) error {
-    r.invoiceFlowRefund = invoiceFlowRefund
-    r.Set("invoice_flow_refund", invoiceFlowRefund)
+func (r *AlibabaEinvoiceFlowRefundRequest) SetInvoiceFlowRefund(_invoiceFlowRefund *InvoiceFlowRefundDto) error {
+    r._invoiceFlowRefund = _invoiceFlowRefund
+    r.Set("invoice_flow_refund", _invoiceFlowRefund)
     return nil
 }
 
 // InvoiceFlowRefund Getter
 func (r AlibabaEinvoiceFlowRefundRequest) GetInvoiceFlowRefund() *InvoiceFlowRefundDto {
-    return r.invoiceFlowRefund
+    return r._invoiceFlowRefund
 }

@@ -15,13 +15,13 @@ taobao.sellercats.list.add
 type TaobaoSellercatsListAddRequest struct {
     model.Params
     // 卖家自定义类目名称。不超过20个字符
-    name   string
+    _name   string
     // 链接图片URL地址。(绝对地址，格式：http://host/image_path)
-    pictUrl   string
+    _pictUrl   string
     // 父类目编号，如果类目为店铺下的一级类目：值等于0，如果类目为子类目，调用获取taobao.sellercats.list.get父类目编号
-    parentCid   int64
+    _parentCid   int64
     // 该类目在页面上的排序位置,取值范围:大于零的整数
-    sortOrder   int64
+    _sortOrder   int64
 }
 
 // 初始化TaobaoSellercatsListAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSellercatsListAddRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 卖家自定义类目名称。不超过20个字符
-func (r *TaobaoSellercatsListAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoSellercatsListAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoSellercatsListAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // PictUrl Setter
 // 链接图片URL地址。(绝对地址，格式：http://host/image_path)
-func (r *TaobaoSellercatsListAddRequest) SetPictUrl(pictUrl string) error {
-    r.pictUrl = pictUrl
-    r.Set("pict_url", pictUrl)
+func (r *TaobaoSellercatsListAddRequest) SetPictUrl(_pictUrl string) error {
+    r._pictUrl = _pictUrl
+    r.Set("pict_url", _pictUrl)
     return nil
 }
 
 // PictUrl Getter
 func (r TaobaoSellercatsListAddRequest) GetPictUrl() string {
-    return r.pictUrl
+    return r._pictUrl
 }
 // ParentCid Setter
 // 父类目编号，如果类目为店铺下的一级类目：值等于0，如果类目为子类目，调用获取taobao.sellercats.list.get父类目编号
-func (r *TaobaoSellercatsListAddRequest) SetParentCid(parentCid int64) error {
-    r.parentCid = parentCid
-    r.Set("parent_cid", parentCid)
+func (r *TaobaoSellercatsListAddRequest) SetParentCid(_parentCid int64) error {
+    r._parentCid = _parentCid
+    r.Set("parent_cid", _parentCid)
     return nil
 }
 
 // ParentCid Getter
 func (r TaobaoSellercatsListAddRequest) GetParentCid() int64 {
-    return r.parentCid
+    return r._parentCid
 }
 // SortOrder Setter
 // 该类目在页面上的排序位置,取值范围:大于零的整数
-func (r *TaobaoSellercatsListAddRequest) SetSortOrder(sortOrder int64) error {
-    r.sortOrder = sortOrder
-    r.Set("sort_order", sortOrder)
+func (r *TaobaoSellercatsListAddRequest) SetSortOrder(_sortOrder int64) error {
+    r._sortOrder = _sortOrder
+    r.Set("sort_order", _sortOrder)
     return nil
 }
 
 // SortOrder Getter
 func (r TaobaoSellercatsListAddRequest) GetSortOrder() int64 {
-    return r.sortOrder
+    return r._sortOrder
 }

@@ -15,9 +15,9 @@ tmall.servicecenter.workcard.verifycode.resend
 type TmallServicecenterWorkcardVerifycodeResendRequest struct {
     model.Params
     // 工单id
-    workcardId   int64
+    _workcardId   int64
     // 门店/网点id
-    serviceStoreId   int64
+    _serviceStoreId   int64
 }
 
 // 初始化TmallServicecenterWorkcardVerifycodeResendRequest对象
@@ -42,25 +42,25 @@ func (r TmallServicecenterWorkcardVerifycodeResendRequest) GetApiParams() url.Va
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardVerifycodeResendRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardVerifycodeResendRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardVerifycodeResendRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }
 // ServiceStoreId Setter
 // 门店/网点id
-func (r *TmallServicecenterWorkcardVerifycodeResendRequest) SetServiceStoreId(serviceStoreId int64) error {
-    r.serviceStoreId = serviceStoreId
-    r.Set("service_store_id", serviceStoreId)
+func (r *TmallServicecenterWorkcardVerifycodeResendRequest) SetServiceStoreId(_serviceStoreId int64) error {
+    r._serviceStoreId = _serviceStoreId
+    r.Set("service_store_id", _serviceStoreId)
     return nil
 }
 
 // ServiceStoreId Getter
 func (r TmallServicecenterWorkcardVerifycodeResendRequest) GetServiceStoreId() int64 {
-    return r.serviceStoreId
+    return r._serviceStoreId
 }

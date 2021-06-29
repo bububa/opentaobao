@@ -15,15 +15,15 @@ taobao.film.lottery.draw
 type TaobaoFilmLotteryDrawRequest struct {
     model.Params
     // 账号ID
-    accountNo   string
+    _accountNo   string
     // 账号类型（TAOBAO\ALIPAY\PHONE\TAOBAO_NAME\OPEN_ID）
-    accountType   string
+    _accountType   string
     // 活动ID
-    lotteryMixId   string
+    _lotteryMixId   string
     // 平台类型
-    platform   int64
+    _platform   int64
     // 扩展参数
-    bizData   string
+    _bizData   string
 }
 
 // 初始化TaobaoFilmLotteryDrawRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoFilmLotteryDrawRequest) GetApiParams() url.Values {
 }
 // AccountNo Setter
 // 账号ID
-func (r *TaobaoFilmLotteryDrawRequest) SetAccountNo(accountNo string) error {
-    r.accountNo = accountNo
-    r.Set("account_no", accountNo)
+func (r *TaobaoFilmLotteryDrawRequest) SetAccountNo(_accountNo string) error {
+    r._accountNo = _accountNo
+    r.Set("account_no", _accountNo)
     return nil
 }
 
 // AccountNo Getter
 func (r TaobaoFilmLotteryDrawRequest) GetAccountNo() string {
-    return r.accountNo
+    return r._accountNo
 }
 // AccountType Setter
 // 账号类型（TAOBAO\ALIPAY\PHONE\TAOBAO_NAME\OPEN_ID）
-func (r *TaobaoFilmLotteryDrawRequest) SetAccountType(accountType string) error {
-    r.accountType = accountType
-    r.Set("account_type", accountType)
+func (r *TaobaoFilmLotteryDrawRequest) SetAccountType(_accountType string) error {
+    r._accountType = _accountType
+    r.Set("account_type", _accountType)
     return nil
 }
 
 // AccountType Getter
 func (r TaobaoFilmLotteryDrawRequest) GetAccountType() string {
-    return r.accountType
+    return r._accountType
 }
 // LotteryMixId Setter
 // 活动ID
-func (r *TaobaoFilmLotteryDrawRequest) SetLotteryMixId(lotteryMixId string) error {
-    r.lotteryMixId = lotteryMixId
-    r.Set("lottery_mix_id", lotteryMixId)
+func (r *TaobaoFilmLotteryDrawRequest) SetLotteryMixId(_lotteryMixId string) error {
+    r._lotteryMixId = _lotteryMixId
+    r.Set("lottery_mix_id", _lotteryMixId)
     return nil
 }
 
 // LotteryMixId Getter
 func (r TaobaoFilmLotteryDrawRequest) GetLotteryMixId() string {
-    return r.lotteryMixId
+    return r._lotteryMixId
 }
 // Platform Setter
 // 平台类型
-func (r *TaobaoFilmLotteryDrawRequest) SetPlatform(platform int64) error {
-    r.platform = platform
-    r.Set("platform", platform)
+func (r *TaobaoFilmLotteryDrawRequest) SetPlatform(_platform int64) error {
+    r._platform = _platform
+    r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
 func (r TaobaoFilmLotteryDrawRequest) GetPlatform() int64 {
-    return r.platform
+    return r._platform
 }
 // BizData Setter
 // 扩展参数
-func (r *TaobaoFilmLotteryDrawRequest) SetBizData(bizData string) error {
-    r.bizData = bizData
-    r.Set("biz_data", bizData)
+func (r *TaobaoFilmLotteryDrawRequest) SetBizData(_bizData string) error {
+    r._bizData = _bizData
+    r.Set("biz_data", _bizData)
     return nil
 }
 
 // BizData Getter
 func (r TaobaoFilmLotteryDrawRequest) GetBizData() string {
-    return r.bizData
+    return r._bizData
 }

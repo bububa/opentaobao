@@ -15,7 +15,7 @@ alitrip.hotel.hstdf.businessarea.get
 type AlitripHotelHstdfBusinessareaGetRequest struct {
     model.Params
     // 请求参数封装
-    paramGetByTrdiDivisionIdParam   *GetByTrdiDivisionIdParam
+    _paramGetByTrdiDivisionIdParam   *GetByTrdiDivisionIdParam
 }
 
 // 初始化AlitripHotelHstdfBusinessareaGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfBusinessareaGetRequest) GetApiParams() url.Values {
 }
 // ParamGetByTrdiDivisionIdParam Setter
 // 请求参数封装
-func (r *AlitripHotelHstdfBusinessareaGetRequest) SetParamGetByTrdiDivisionIdParam(paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
-    r.paramGetByTrdiDivisionIdParam = paramGetByTrdiDivisionIdParam
-    r.Set("param_get_by_trdi_division_id_param", paramGetByTrdiDivisionIdParam)
+func (r *AlitripHotelHstdfBusinessareaGetRequest) SetParamGetByTrdiDivisionIdParam(_paramGetByTrdiDivisionIdParam *GetByTrdiDivisionIdParam) error {
+    r._paramGetByTrdiDivisionIdParam = _paramGetByTrdiDivisionIdParam
+    r.Set("param_get_by_trdi_division_id_param", _paramGetByTrdiDivisionIdParam)
     return nil
 }
 
 // ParamGetByTrdiDivisionIdParam Getter
 func (r AlitripHotelHstdfBusinessareaGetRequest) GetParamGetByTrdiDivisionIdParam() *GetByTrdiDivisionIdParam {
-    return r.paramGetByTrdiDivisionIdParam
+    return r._paramGetByTrdiDivisionIdParam
 }

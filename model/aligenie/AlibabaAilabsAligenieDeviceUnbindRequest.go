@@ -15,13 +15,13 @@ alibaba.ailabs.aligenie.device.unbind
 type AlibabaAilabsAligenieDeviceUnbindRequest struct {
     model.Params
     // 扩展信息，用于存放APP类型等
-    ext   string
+    _ext   string
     // 用户ID，此处传入第三方账户体系的用户id
-    userId   string
+    _userId   string
     // 账户体系隔离字符串
-    schema   string
+    _schema   string
     // 欲解绑的设备ID
-    uuid   string
+    _uuid   string
 }
 
 // 初始化AlibabaAilabsAligenieDeviceUnbindRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAilabsAligenieDeviceUnbindRequest) GetApiParams() url.Values {
 }
 // Ext Setter
 // 扩展信息，用于存放APP类型等
-func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r AlibabaAilabsAligenieDeviceUnbindRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
-func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAilabsAligenieDeviceUnbindRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // Schema Setter
 // 账户体系隔离字符串
-func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r AlibabaAilabsAligenieDeviceUnbindRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // Uuid Setter
 // 欲解绑的设备ID
-func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAilabsAligenieDeviceUnbindRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAilabsAligenieDeviceUnbindRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

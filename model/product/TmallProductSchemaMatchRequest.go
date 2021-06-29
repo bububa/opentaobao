@@ -15,9 +15,9 @@ tmall.product.schema.match
 type TmallProductSchemaMatchRequest struct {
     model.Params
     // 商品发布的目标类目，必须是叶子类目
-    categoryId   int64
+    _categoryId   int64
     // 根据tmall.product.match.schema.get获取到的模板，ISV将需要的字段填充好相应的值结果XML。
-    propvalues   string
+    _propvalues   string
 }
 
 // 初始化TmallProductSchemaMatchRequest对象
@@ -42,25 +42,25 @@ func (r TmallProductSchemaMatchRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
-func (r *TmallProductSchemaMatchRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TmallProductSchemaMatchRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TmallProductSchemaMatchRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // Propvalues Setter
 // 根据tmall.product.match.schema.get获取到的模板，ISV将需要的字段填充好相应的值结果XML。
-func (r *TmallProductSchemaMatchRequest) SetPropvalues(propvalues string) error {
-    r.propvalues = propvalues
-    r.Set("propvalues", propvalues)
+func (r *TmallProductSchemaMatchRequest) SetPropvalues(_propvalues string) error {
+    r._propvalues = _propvalues
+    r.Set("propvalues", _propvalues)
     return nil
 }
 
 // Propvalues Getter
 func (r TmallProductSchemaMatchRequest) GetPropvalues() string {
-    return r.propvalues
+    return r._propvalues
 }

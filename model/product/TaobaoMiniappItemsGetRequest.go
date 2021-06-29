@@ -15,9 +15,9 @@ taobao.miniapp.items.get
 type TaobaoMiniappItemsGetRequest struct {
     model.Params
     // 商品数字id列表，多个num_iid用逗号隔开，一次不超过50个。
-    numIids   []string
+    _numIids   []string
     // 需要返回的商品对象字段。可选值：Item商品结构体中字段均可返回(其中item_weight,item_size,sold_quantity暂未返回)；多个字段用“,”分隔。如果想返回整个子对象，fields设置相应字段，如itemimg；如果想返回子对象里面的某个字段，那字段设为某个值，如itemimg.url。
-    fields   []string
+    _fields   []string
 }
 
 // 初始化TaobaoMiniappItemsGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoMiniappItemsGetRequest) GetApiParams() url.Values {
 }
 // NumIids Setter
 // 商品数字id列表，多个num_iid用逗号隔开，一次不超过50个。
-func (r *TaobaoMiniappItemsGetRequest) SetNumIids(numIids []string) error {
-    r.numIids = numIids
-    r.Set("num_iids", numIids)
+func (r *TaobaoMiniappItemsGetRequest) SetNumIids(_numIids []string) error {
+    r._numIids = _numIids
+    r.Set("num_iids", _numIids)
     return nil
 }
 
 // NumIids Getter
 func (r TaobaoMiniappItemsGetRequest) GetNumIids() []string {
-    return r.numIids
+    return r._numIids
 }
 // Fields Setter
 // 需要返回的商品对象字段。可选值：Item商品结构体中字段均可返回(其中item_weight,item_size,sold_quantity暂未返回)；多个字段用“,”分隔。如果想返回整个子对象，fields设置相应字段，如itemimg；如果想返回子对象里面的某个字段，那字段设为某个值，如itemimg.url。
-func (r *TaobaoMiniappItemsGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoMiniappItemsGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoMiniappItemsGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }

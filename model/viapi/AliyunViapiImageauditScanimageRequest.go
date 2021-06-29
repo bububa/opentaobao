@@ -15,9 +15,9 @@ aliyun.viapi.imageaudit.scanimage
 type AliyunViapiImageauditScanimageRequest struct {
     model.Params
     // 系统自动生成
-    tasks   []Task
+    _tasks   []Task
     // 场景列表
-    scenes   []string
+    _scenes   []string
 }
 
 // 初始化AliyunViapiImageauditScanimageRequest对象
@@ -42,25 +42,25 @@ func (r AliyunViapiImageauditScanimageRequest) GetApiParams() url.Values {
 }
 // Tasks Setter
 // 系统自动生成
-func (r *AliyunViapiImageauditScanimageRequest) SetTasks(tasks []Task) error {
-    r.tasks = tasks
-    r.Set("tasks", tasks)
+func (r *AliyunViapiImageauditScanimageRequest) SetTasks(_tasks []Task) error {
+    r._tasks = _tasks
+    r.Set("tasks", _tasks)
     return nil
 }
 
 // Tasks Getter
 func (r AliyunViapiImageauditScanimageRequest) GetTasks() []Task {
-    return r.tasks
+    return r._tasks
 }
 // Scenes Setter
 // 场景列表
-func (r *AliyunViapiImageauditScanimageRequest) SetScenes(scenes []string) error {
-    r.scenes = scenes
-    r.Set("scenes", scenes)
+func (r *AliyunViapiImageauditScanimageRequest) SetScenes(_scenes []string) error {
+    r._scenes = _scenes
+    r.Set("scenes", _scenes)
     return nil
 }
 
 // Scenes Getter
 func (r AliyunViapiImageauditScanimageRequest) GetScenes() []string {
-    return r.scenes
+    return r._scenes
 }

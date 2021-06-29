@@ -15,11 +15,11 @@ alibaba.happytrip.taxi.city.getid
 type AlibabaHappytripTaxiCityGetidRequest struct {
     model.Params
     // 纬度
-    lat   string
+    _lat   string
     // 经度
-    lng   string
+    _lng   string
     // 地图类型:amap：高德，默认高德地图
-    mapType   string
+    _mapType   string
 }
 
 // 初始化AlibabaHappytripTaxiCityGetidRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaHappytripTaxiCityGetidRequest) GetApiParams() url.Values {
 }
 // Lat Setter
 // 纬度
-func (r *AlibabaHappytripTaxiCityGetidRequest) SetLat(lat string) error {
-    r.lat = lat
-    r.Set("lat", lat)
+func (r *AlibabaHappytripTaxiCityGetidRequest) SetLat(_lat string) error {
+    r._lat = _lat
+    r.Set("lat", _lat)
     return nil
 }
 
 // Lat Getter
 func (r AlibabaHappytripTaxiCityGetidRequest) GetLat() string {
-    return r.lat
+    return r._lat
 }
 // Lng Setter
 // 经度
-func (r *AlibabaHappytripTaxiCityGetidRequest) SetLng(lng string) error {
-    r.lng = lng
-    r.Set("lng", lng)
+func (r *AlibabaHappytripTaxiCityGetidRequest) SetLng(_lng string) error {
+    r._lng = _lng
+    r.Set("lng", _lng)
     return nil
 }
 
 // Lng Getter
 func (r AlibabaHappytripTaxiCityGetidRequest) GetLng() string {
-    return r.lng
+    return r._lng
 }
 // MapType Setter
 // 地图类型:amap：高德，默认高德地图
-func (r *AlibabaHappytripTaxiCityGetidRequest) SetMapType(mapType string) error {
-    r.mapType = mapType
-    r.Set("map_type", mapType)
+func (r *AlibabaHappytripTaxiCityGetidRequest) SetMapType(_mapType string) error {
+    r._mapType = _mapType
+    r.Set("map_type", _mapType)
     return nil
 }
 
 // MapType Getter
 func (r AlibabaHappytripTaxiCityGetidRequest) GetMapType() string {
-    return r.mapType
+    return r._mapType
 }

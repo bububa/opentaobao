@@ -15,7 +15,7 @@ o2o商家查看处方图片，包括电子图片与纸质图片
 type AlibabaAlihealthNrRxQueryimageRequest struct {
     model.Params
     // 订单编号
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化AlibabaAlihealthNrRxQueryimageRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthNrRxQueryimageRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单编号
-func (r *AlibabaAlihealthNrRxQueryimageRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaAlihealthNrRxQueryimageRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaAlihealthNrRxQueryimageRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

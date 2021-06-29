@@ -15,7 +15,7 @@ taobao.fenxiao.trade.prepay.offline.add
 type TaobaoFenxiaoTradePrepayOfflineAddRequest struct {
     model.Params
     // 增加流水
-    offlineAddPrepayParam   *TopOfflineAddPrepayDto
+    _offlineAddPrepayParam   *TopOfflineAddPrepayDto
 }
 
 // 初始化TaobaoFenxiaoTradePrepayOfflineAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoTradePrepayOfflineAddRequest) GetApiParams() url.Values {
 }
 // OfflineAddPrepayParam Setter
 // 增加流水
-func (r *TaobaoFenxiaoTradePrepayOfflineAddRequest) SetOfflineAddPrepayParam(offlineAddPrepayParam *TopOfflineAddPrepayDto) error {
-    r.offlineAddPrepayParam = offlineAddPrepayParam
-    r.Set("offline_add_prepay_param", offlineAddPrepayParam)
+func (r *TaobaoFenxiaoTradePrepayOfflineAddRequest) SetOfflineAddPrepayParam(_offlineAddPrepayParam *TopOfflineAddPrepayDto) error {
+    r._offlineAddPrepayParam = _offlineAddPrepayParam
+    r.Set("offline_add_prepay_param", _offlineAddPrepayParam)
     return nil
 }
 
 // OfflineAddPrepayParam Getter
 func (r TaobaoFenxiaoTradePrepayOfflineAddRequest) GetOfflineAddPrepayParam() *TopOfflineAddPrepayDto {
-    return r.offlineAddPrepayParam
+    return r._offlineAddPrepayParam
 }

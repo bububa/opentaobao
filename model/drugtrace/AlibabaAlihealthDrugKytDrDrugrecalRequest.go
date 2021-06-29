@@ -15,11 +15,11 @@ alibaba.alihealth.drug.kyt.dr.drugrecal
 type AlibabaAlihealthDrugKytDrDrugrecalRequest struct {
     model.Params
     // 调用企业ID
-    refEntId   string
+    _refEntId   string
     // 召回开始时间
-    recallBeginTime   string
+    _recallBeginTime   string
     // 召回结束时间
-    recallEndTime   string
+    _recallEndTime   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrDrugrecalRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytDrDrugrecalRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 调用企业ID
-func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrDrugrecalRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // RecallBeginTime Setter
 // 召回开始时间
-func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRecallBeginTime(recallBeginTime string) error {
-    r.recallBeginTime = recallBeginTime
-    r.Set("recall_begin_time", recallBeginTime)
+func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRecallBeginTime(_recallBeginTime string) error {
+    r._recallBeginTime = _recallBeginTime
+    r.Set("recall_begin_time", _recallBeginTime)
     return nil
 }
 
 // RecallBeginTime Getter
 func (r AlibabaAlihealthDrugKytDrDrugrecalRequest) GetRecallBeginTime() string {
-    return r.recallBeginTime
+    return r._recallBeginTime
 }
 // RecallEndTime Setter
 // 召回结束时间
-func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRecallEndTime(recallEndTime string) error {
-    r.recallEndTime = recallEndTime
-    r.Set("recall_end_time", recallEndTime)
+func (r *AlibabaAlihealthDrugKytDrDrugrecalRequest) SetRecallEndTime(_recallEndTime string) error {
+    r._recallEndTime = _recallEndTime
+    r.Set("recall_end_time", _recallEndTime)
     return nil
 }
 
 // RecallEndTime Getter
 func (r AlibabaAlihealthDrugKytDrDrugrecalRequest) GetRecallEndTime() string {
-    return r.recallEndTime
+    return r._recallEndTime
 }

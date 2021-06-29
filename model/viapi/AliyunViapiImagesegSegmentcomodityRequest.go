@@ -15,7 +15,7 @@ aliyun.viapi.imageseg.segmentcomodity
 type AliyunViapiImagesegSegmentcomodityRequest struct {
     model.Params
     // 待检测图片链接
-    imageUrl   string
+    _imageUrl   string
 }
 
 // 初始化AliyunViapiImagesegSegmentcomodityRequest对象
@@ -40,13 +40,13 @@ func (r AliyunViapiImagesegSegmentcomodityRequest) GetApiParams() url.Values {
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiImagesegSegmentcomodityRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AliyunViapiImagesegSegmentcomodityRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AliyunViapiImagesegSegmentcomodityRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }

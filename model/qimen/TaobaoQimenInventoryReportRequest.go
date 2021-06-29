@@ -15,7 +15,7 @@ WMS调用奇门的接口,将库存盘点情况回传ERP
 type TaobaoQimenInventoryReportRequest struct {
     model.Params
     // 
-    request   *InventoryReportRequest
+    _request   *InventoryReportRequest
 }
 
 // 初始化TaobaoQimenInventoryReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenInventoryReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenInventoryReportRequest) SetRequest(request *InventoryReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenInventoryReportRequest) SetRequest(_request *InventoryReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenInventoryReportRequest) GetRequest() *InventoryReportRequest {
-    return r.request
+    return r._request
 }

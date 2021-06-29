@@ -15,7 +15,7 @@ alibaba.mj.presale.settlement.addlist
 type AlibabaMjPresaleSettlementAddlistRequest struct {
     model.Params
     // 订单json格式数据
-    preSaleRefundJson   string
+    _preSaleRefundJson   string
 }
 
 // 初始化AlibabaMjPresaleSettlementAddlistRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjPresaleSettlementAddlistRequest) GetApiParams() url.Values {
 }
 // PreSaleRefundJson Setter
 // 订单json格式数据
-func (r *AlibabaMjPresaleSettlementAddlistRequest) SetPreSaleRefundJson(preSaleRefundJson string) error {
-    r.preSaleRefundJson = preSaleRefundJson
-    r.Set("pre_sale_refund_json", preSaleRefundJson)
+func (r *AlibabaMjPresaleSettlementAddlistRequest) SetPreSaleRefundJson(_preSaleRefundJson string) error {
+    r._preSaleRefundJson = _preSaleRefundJson
+    r.Set("pre_sale_refund_json", _preSaleRefundJson)
     return nil
 }
 
 // PreSaleRefundJson Getter
 func (r AlibabaMjPresaleSettlementAddlistRequest) GetPreSaleRefundJson() string {
-    return r.preSaleRefundJson
+    return r._preSaleRefundJson
 }

@@ -15,13 +15,13 @@ cainiao.global.solution.service.resource.query
 type CainiaoGlobalSolutionServiceResourceQueryRequest struct {
     model.Params
     // 多语言信息
-    locale   string
+    _locale   string
     // 商家信息
-    sellerParam   *SellerParam
+    _sellerParam   *SellerParam
     // 查询参数
-    solutionServiceResParam   *QuerySolutionServiceResParam
+    _solutionServiceResParam   *QuerySolutionServiceResParam
     // 发件信息
-    senderParam   *OpenSenderParam
+    _senderParam   *OpenSenderParam
 }
 
 // 初始化CainiaoGlobalSolutionServiceResourceQueryRequest对象
@@ -46,49 +46,49 @@ func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetApiParams() url.Val
 }
 // Locale Setter
 // 多语言信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }
 // SellerParam Setter
 // 商家信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSellerParam(sellerParam *SellerParam) error {
-    r.sellerParam = sellerParam
-    r.Set("seller_param", sellerParam)
+func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSellerParam(_sellerParam *SellerParam) error {
+    r._sellerParam = _sellerParam
+    r.Set("seller_param", _sellerParam)
     return nil
 }
 
 // SellerParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSellerParam() *SellerParam {
-    return r.sellerParam
+    return r._sellerParam
 }
 // SolutionServiceResParam Setter
 // 查询参数
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSolutionServiceResParam(solutionServiceResParam *QuerySolutionServiceResParam) error {
-    r.solutionServiceResParam = solutionServiceResParam
-    r.Set("solution_service_res_param", solutionServiceResParam)
+func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSolutionServiceResParam(_solutionServiceResParam *QuerySolutionServiceResParam) error {
+    r._solutionServiceResParam = _solutionServiceResParam
+    r.Set("solution_service_res_param", _solutionServiceResParam)
     return nil
 }
 
 // SolutionServiceResParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSolutionServiceResParam() *QuerySolutionServiceResParam {
-    return r.solutionServiceResParam
+    return r._solutionServiceResParam
 }
 // SenderParam Setter
 // 发件信息
-func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSenderParam(senderParam *OpenSenderParam) error {
-    r.senderParam = senderParam
-    r.Set("sender_param", senderParam)
+func (r *CainiaoGlobalSolutionServiceResourceQueryRequest) SetSenderParam(_senderParam *OpenSenderParam) error {
+    r._senderParam = _senderParam
+    r.Set("sender_param", _senderParam)
     return nil
 }
 
 // SenderParam Getter
 func (r CainiaoGlobalSolutionServiceResourceQueryRequest) GetSenderParam() *OpenSenderParam {
-    return r.senderParam
+    return r._senderParam
 }

@@ -15,13 +15,13 @@ alibaba.westcrm.job.status.update
 type AlibabaWestcrmJobStatusUpdateRequest struct {
     model.Params
     // 状态
-    status   int64
+    _status   int64
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 反馈id
-    crmComplaintId   int64
+    _crmComplaintId   int64
     // 回复内容
-    replyContent   string
+    _replyContent   string
 }
 
 // 初始化AlibabaWestcrmJobStatusUpdateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWestcrmJobStatusUpdateRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 状态
-func (r *AlibabaWestcrmJobStatusUpdateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaWestcrmJobStatusUpdateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaWestcrmJobStatusUpdateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmJobStatusUpdateRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmJobStatusUpdateRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmJobStatusUpdateRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // CrmComplaintId Setter
 // 反馈id
-func (r *AlibabaWestcrmJobStatusUpdateRequest) SetCrmComplaintId(crmComplaintId int64) error {
-    r.crmComplaintId = crmComplaintId
-    r.Set("crm_complaint_id", crmComplaintId)
+func (r *AlibabaWestcrmJobStatusUpdateRequest) SetCrmComplaintId(_crmComplaintId int64) error {
+    r._crmComplaintId = _crmComplaintId
+    r.Set("crm_complaint_id", _crmComplaintId)
     return nil
 }
 
 // CrmComplaintId Getter
 func (r AlibabaWestcrmJobStatusUpdateRequest) GetCrmComplaintId() int64 {
-    return r.crmComplaintId
+    return r._crmComplaintId
 }
 // ReplyContent Setter
 // 回复内容
-func (r *AlibabaWestcrmJobStatusUpdateRequest) SetReplyContent(replyContent string) error {
-    r.replyContent = replyContent
-    r.Set("reply_content", replyContent)
+func (r *AlibabaWestcrmJobStatusUpdateRequest) SetReplyContent(_replyContent string) error {
+    r._replyContent = _replyContent
+    r.Set("reply_content", _replyContent)
     return nil
 }
 
 // ReplyContent Getter
 func (r AlibabaWestcrmJobStatusUpdateRequest) GetReplyContent() string {
-    return r.replyContent
+    return r._replyContent
 }

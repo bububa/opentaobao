@@ -15,9 +15,9 @@ tmall.servicecenter.anomalyrecourse.search
 type TmallServicecenterAnomalyrecourseSearchRequest struct {
     model.Params
     // 开始时间
-    start   int64
+    _start   int64
     // 结束时间
-    end   int64
+    _end   int64
 }
 
 // 初始化TmallServicecenterAnomalyrecourseSearchRequest对象
@@ -42,25 +42,25 @@ func (r TmallServicecenterAnomalyrecourseSearchRequest) GetApiParams() url.Value
 }
 // Start Setter
 // 开始时间
-func (r *TmallServicecenterAnomalyrecourseSearchRequest) SetStart(start int64) error {
-    r.start = start
-    r.Set("start", start)
+func (r *TmallServicecenterAnomalyrecourseSearchRequest) SetStart(_start int64) error {
+    r._start = _start
+    r.Set("start", _start)
     return nil
 }
 
 // Start Getter
 func (r TmallServicecenterAnomalyrecourseSearchRequest) GetStart() int64 {
-    return r.start
+    return r._start
 }
 // End Setter
 // 结束时间
-func (r *TmallServicecenterAnomalyrecourseSearchRequest) SetEnd(end int64) error {
-    r.end = end
-    r.Set("end", end)
+func (r *TmallServicecenterAnomalyrecourseSearchRequest) SetEnd(_end int64) error {
+    r._end = _end
+    r.Set("end", _end)
     return nil
 }
 
 // End Getter
 func (r TmallServicecenterAnomalyrecourseSearchRequest) GetEnd() int64 {
-    return r.end
+    return r._end
 }

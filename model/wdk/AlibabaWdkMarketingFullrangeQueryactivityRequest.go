@@ -15,7 +15,7 @@ alibaba.wdk.marketing.fullrange.queryactivity
 type AlibabaWdkMarketingFullrangeQueryactivityRequest struct {
     model.Params
     // 查询活动入参
-    param0   *CommonActivityParam
+    _param0   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingFullrangeQueryactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetApiParams() url.Val
 }
 // Param0 Setter
 // 查询活动入参
-func (r *AlibabaWdkMarketingFullrangeQueryactivityRequest) SetParam0(param0 *CommonActivityParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingFullrangeQueryactivityRequest) SetParam0(_param0 *CommonActivityParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingFullrangeQueryactivityRequest) GetParam0() *CommonActivityParam {
-    return r.param0
+    return r._param0
 }

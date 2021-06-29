@@ -15,7 +15,7 @@ alibaba.security.jaq.app.risksummary.get
 type AlibabaSecurityJaqAppRisksummaryGetRequest struct {
     model.Params
     // 任务唯一标识
-    itemId   string
+    _itemId   string
 }
 
 // 初始化AlibabaSecurityJaqAppRisksummaryGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppRisksummaryGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 任务唯一标识
-func (r *AlibabaSecurityJaqAppRisksummaryGetRequest) SetItemId(itemId string) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaSecurityJaqAppRisksummaryGetRequest) SetItemId(_itemId string) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaSecurityJaqAppRisksummaryGetRequest) GetItemId() string {
-    return r.itemId
+    return r._itemId
 }

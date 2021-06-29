@@ -15,11 +15,11 @@ alibaba.lst.speaker.configure
 type AlibabaLstSpeakerConfigureRequest struct {
     model.Params
     // 设备编码
-    deviceCode   string
+    _deviceCode   string
     // 命令类型setPayTime,adjustVolume，syncAudio，syncAudioAdvert
-    command   string
+    _command   string
     // 数据体，根据命令不同而不同
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaLstSpeakerConfigureRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLstSpeakerConfigureRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerConfigureRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *AlibabaLstSpeakerConfigureRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // Command Setter
 // 命令类型setPayTime,adjustVolume，syncAudio，syncAudioAdvert
-func (r *AlibabaLstSpeakerConfigureRequest) SetCommand(command string) error {
-    r.command = command
-    r.Set("command", command)
+func (r *AlibabaLstSpeakerConfigureRequest) SetCommand(_command string) error {
+    r._command = _command
+    r.Set("command", _command)
     return nil
 }
 
 // Command Getter
 func (r AlibabaLstSpeakerConfigureRequest) GetCommand() string {
-    return r.command
+    return r._command
 }
 // Params Setter
 // 数据体，根据命令不同而不同
-func (r *AlibabaLstSpeakerConfigureRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaLstSpeakerConfigureRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaLstSpeakerConfigureRequest) GetParams() string {
-    return r.params
+    return r._params
 }

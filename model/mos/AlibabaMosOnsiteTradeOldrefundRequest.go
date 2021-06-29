@@ -15,7 +15,7 @@ alibaba.mos.onsite.trade.oldrefund
 type AlibabaMosOnsiteTradeOldrefundRequest struct {
     model.Params
     // 交易退款请求
-    onsiteRefundRequest   *OnsiteRefundRequest
+    _onsiteRefundRequest   *OnsiteRefundRequest
 }
 
 // 初始化AlibabaMosOnsiteTradeOldrefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosOnsiteTradeOldrefundRequest) GetApiParams() url.Values {
 }
 // OnsiteRefundRequest Setter
 // 交易退款请求
-func (r *AlibabaMosOnsiteTradeOldrefundRequest) SetOnsiteRefundRequest(onsiteRefundRequest *OnsiteRefundRequest) error {
-    r.onsiteRefundRequest = onsiteRefundRequest
-    r.Set("onsite_refund_request", onsiteRefundRequest)
+func (r *AlibabaMosOnsiteTradeOldrefundRequest) SetOnsiteRefundRequest(_onsiteRefundRequest *OnsiteRefundRequest) error {
+    r._onsiteRefundRequest = _onsiteRefundRequest
+    r.Set("onsite_refund_request", _onsiteRefundRequest)
     return nil
 }
 
 // OnsiteRefundRequest Getter
 func (r AlibabaMosOnsiteTradeOldrefundRequest) GetOnsiteRefundRequest() *OnsiteRefundRequest {
-    return r.onsiteRefundRequest
+    return r._onsiteRefundRequest
 }

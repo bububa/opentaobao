@@ -15,21 +15,21 @@ tmall.servicecenter.workcard.assignworker
 type TmallServicecenterWorkcardAssignworkerRequest struct {
     model.Params
     // 需要指派的工人id
-    targetWorkerId   int64
+    _targetWorkerId   int64
     // 需要指派的工人手机
-    targetWorkerMobile   string
+    _targetWorkerMobile   string
     // 需要派工人的工单id
-    workcardId   int64
+    _workcardId   int64
     // 需要指派的工人姓名
-    targetWorkerName   string
+    _targetWorkerName   string
     // 核销单外部id
-    outerId   string
+    _outerId   string
     // 不检查订单类型的原因ID由运营提供，服务商不可自由传
-    stopOrderTypeCheckReason   int64
+    _stopOrderTypeCheckReason   int64
     // 核销单id
-    fulfilTaskId   int64
+    _fulfilTaskId   int64
     // 扩展信息
-    extJson   string
+    _extJson   string
 }
 
 // 初始化TmallServicecenterWorkcardAssignworkerRequest对象
@@ -54,97 +54,97 @@ func (r TmallServicecenterWorkcardAssignworkerRequest) GetApiParams() url.Values
 }
 // TargetWorkerId Setter
 // 需要指派的工人id
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerId(targetWorkerId int64) error {
-    r.targetWorkerId = targetWorkerId
-    r.Set("target_worker_id", targetWorkerId)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerId(_targetWorkerId int64) error {
+    r._targetWorkerId = _targetWorkerId
+    r.Set("target_worker_id", _targetWorkerId)
     return nil
 }
 
 // TargetWorkerId Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetTargetWorkerId() int64 {
-    return r.targetWorkerId
+    return r._targetWorkerId
 }
 // TargetWorkerMobile Setter
 // 需要指派的工人手机
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerMobile(targetWorkerMobile string) error {
-    r.targetWorkerMobile = targetWorkerMobile
-    r.Set("target_worker_mobile", targetWorkerMobile)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerMobile(_targetWorkerMobile string) error {
+    r._targetWorkerMobile = _targetWorkerMobile
+    r.Set("target_worker_mobile", _targetWorkerMobile)
     return nil
 }
 
 // TargetWorkerMobile Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetTargetWorkerMobile() string {
-    return r.targetWorkerMobile
+    return r._targetWorkerMobile
 }
 // WorkcardId Setter
 // 需要派工人的工单id
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }
 // TargetWorkerName Setter
 // 需要指派的工人姓名
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerName(targetWorkerName string) error {
-    r.targetWorkerName = targetWorkerName
-    r.Set("target_worker_name", targetWorkerName)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetTargetWorkerName(_targetWorkerName string) error {
+    r._targetWorkerName = _targetWorkerName
+    r.Set("target_worker_name", _targetWorkerName)
     return nil
 }
 
 // TargetWorkerName Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetTargetWorkerName() string {
-    return r.targetWorkerName
+    return r._targetWorkerName
 }
 // OuterId Setter
 // 核销单外部id
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // StopOrderTypeCheckReason Setter
 // 不检查订单类型的原因ID由运营提供，服务商不可自由传
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetStopOrderTypeCheckReason(stopOrderTypeCheckReason int64) error {
-    r.stopOrderTypeCheckReason = stopOrderTypeCheckReason
-    r.Set("stop_order_type_check_reason", stopOrderTypeCheckReason)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetStopOrderTypeCheckReason(_stopOrderTypeCheckReason int64) error {
+    r._stopOrderTypeCheckReason = _stopOrderTypeCheckReason
+    r.Set("stop_order_type_check_reason", _stopOrderTypeCheckReason)
     return nil
 }
 
 // StopOrderTypeCheckReason Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetStopOrderTypeCheckReason() int64 {
-    return r.stopOrderTypeCheckReason
+    return r._stopOrderTypeCheckReason
 }
 // FulfilTaskId Setter
 // 核销单id
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetFulfilTaskId(fulfilTaskId int64) error {
-    r.fulfilTaskId = fulfilTaskId
-    r.Set("fulfil_task_id", fulfilTaskId)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+    r._fulfilTaskId = _fulfilTaskId
+    r.Set("fulfil_task_id", _fulfilTaskId)
     return nil
 }
 
 // FulfilTaskId Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetFulfilTaskId() int64 {
-    return r.fulfilTaskId
+    return r._fulfilTaskId
 }
 // ExtJson Setter
 // 扩展信息
-func (r *TmallServicecenterWorkcardAssignworkerRequest) SetExtJson(extJson string) error {
-    r.extJson = extJson
-    r.Set("ext_json", extJson)
+func (r *TmallServicecenterWorkcardAssignworkerRequest) SetExtJson(_extJson string) error {
+    r._extJson = _extJson
+    r.Set("ext_json", _extJson)
     return nil
 }
 
 // ExtJson Getter
 func (r TmallServicecenterWorkcardAssignworkerRequest) GetExtJson() string {
-    return r.extJson
+    return r._extJson
 }

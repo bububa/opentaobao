@@ -15,7 +15,7 @@ alibaba.icbu.category.attribute.get
 type AlibabaIcbuCategoryAttributeGetRequest struct {
     model.Params
     // 发布类目id
-    catId   int64
+    _catId   int64
 }
 
 // 初始化AlibabaIcbuCategoryAttributeGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryAttributeGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 发布类目id
-func (r *AlibabaIcbuCategoryAttributeGetRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlibabaIcbuCategoryAttributeGetRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlibabaIcbuCategoryAttributeGetRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

@@ -15,15 +15,15 @@ taobao.jst.miniapp.crowd.message.send
 type TaobaoJstMiniappCrowdMessageSendRequest struct {
     model.Params
     // 短信签名
-    signName   string
+    _signName   string
     // 活动code
-    crowdCode   string
+    _crowdCode   string
     // 短信模板，必须为全变量模板
-    templateCode   string
+    _templateCode   string
     // 短信内容
-    content   string
+    _content   string
     // 短信中携带的短链，会替换短信内容中的${url}
-    url   string
+    _url   string
 }
 
 // 初始化TaobaoJstMiniappCrowdMessageSendRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoJstMiniappCrowdMessageSendRequest) GetApiParams() url.Values {
 }
 // SignName Setter
 // 短信签名
-func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetSignName(signName string) error {
-    r.signName = signName
-    r.Set("sign_name", signName)
+func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetSignName(_signName string) error {
+    r._signName = _signName
+    r.Set("sign_name", _signName)
     return nil
 }
 
 // SignName Getter
 func (r TaobaoJstMiniappCrowdMessageSendRequest) GetSignName() string {
-    return r.signName
+    return r._signName
 }
 // CrowdCode Setter
 // 活动code
-func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetCrowdCode(crowdCode string) error {
-    r.crowdCode = crowdCode
-    r.Set("crowd_code", crowdCode)
+func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetCrowdCode(_crowdCode string) error {
+    r._crowdCode = _crowdCode
+    r.Set("crowd_code", _crowdCode)
     return nil
 }
 
 // CrowdCode Getter
 func (r TaobaoJstMiniappCrowdMessageSendRequest) GetCrowdCode() string {
-    return r.crowdCode
+    return r._crowdCode
 }
 // TemplateCode Setter
 // 短信模板，必须为全变量模板
-func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetTemplateCode(templateCode string) error {
-    r.templateCode = templateCode
-    r.Set("template_code", templateCode)
+func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetTemplateCode(_templateCode string) error {
+    r._templateCode = _templateCode
+    r.Set("template_code", _templateCode)
     return nil
 }
 
 // TemplateCode Getter
 func (r TaobaoJstMiniappCrowdMessageSendRequest) GetTemplateCode() string {
-    return r.templateCode
+    return r._templateCode
 }
 // Content Setter
 // 短信内容
-func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoJstMiniappCrowdMessageSendRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // Url Setter
 // 短信中携带的短链，会替换短信内容中的${url}
-func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TaobaoJstMiniappCrowdMessageSendRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TaobaoJstMiniappCrowdMessageSendRequest) GetUrl() string {
-    return r.url
+    return r._url
 }

@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.idgenerate
 type AlibabaAlihealthDrugKytIdgenerateRequest struct {
     model.Params
     // 行政区（省市区）
-    regionCode   string
+    _regionCode   string
     // 零售药店、医疗机构名称
-    terminalName   string
+    _terminalName   string
 }
 
 // 初始化AlibabaAlihealthDrugKytIdgenerateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytIdgenerateRequest) GetApiParams() url.Values {
 }
 // RegionCode Setter
 // 行政区（省市区）
-func (r *AlibabaAlihealthDrugKytIdgenerateRequest) SetRegionCode(regionCode string) error {
-    r.regionCode = regionCode
-    r.Set("region_code", regionCode)
+func (r *AlibabaAlihealthDrugKytIdgenerateRequest) SetRegionCode(_regionCode string) error {
+    r._regionCode = _regionCode
+    r.Set("region_code", _regionCode)
     return nil
 }
 
 // RegionCode Getter
 func (r AlibabaAlihealthDrugKytIdgenerateRequest) GetRegionCode() string {
-    return r.regionCode
+    return r._regionCode
 }
 // TerminalName Setter
 // 零售药店、医疗机构名称
-func (r *AlibabaAlihealthDrugKytIdgenerateRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugKytIdgenerateRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugKytIdgenerateRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }

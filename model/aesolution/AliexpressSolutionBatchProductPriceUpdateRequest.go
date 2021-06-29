@@ -15,7 +15,7 @@ batch product price update operation for oversea sellers
 type AliexpressSolutionBatchProductPriceUpdateRequest struct {
     model.Params
     // The product list, in which the price needs to be updated. Maximum length:20
-    mutipleProductUpdateList   []SynchronizeProductRequestDto
+    _mutipleProductUpdateList   []SynchronizeProductRequestDto
 }
 
 // 初始化AliexpressSolutionBatchProductPriceUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionBatchProductPriceUpdateRequest) GetApiParams() url.Val
 }
 // MutipleProductUpdateList Setter
 // The product list, in which the price needs to be updated. Maximum length:20
-func (r *AliexpressSolutionBatchProductPriceUpdateRequest) SetMutipleProductUpdateList(mutipleProductUpdateList []SynchronizeProductRequestDto) error {
-    r.mutipleProductUpdateList = mutipleProductUpdateList
-    r.Set("mutiple_product_update_list", mutipleProductUpdateList)
+func (r *AliexpressSolutionBatchProductPriceUpdateRequest) SetMutipleProductUpdateList(_mutipleProductUpdateList []SynchronizeProductRequestDto) error {
+    r._mutipleProductUpdateList = _mutipleProductUpdateList
+    r.Set("mutiple_product_update_list", _mutipleProductUpdateList)
     return nil
 }
 
 // MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductPriceUpdateRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
-    return r.mutipleProductUpdateList
+    return r._mutipleProductUpdateList
 }

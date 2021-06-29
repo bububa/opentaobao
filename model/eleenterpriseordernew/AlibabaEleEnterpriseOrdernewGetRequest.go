@@ -15,9 +15,9 @@ alibaba.ele.enterprise.ordernew.get
 type AlibabaEleEnterpriseOrdernewGetRequest struct {
     model.Params
     // 饿了么订单ID
-    orderId   string
+    _orderId   string
     // 电话号码
-    phone   string
+    _phone   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEleEnterpriseOrdernewGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaEleEnterpriseOrdernewGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Phone Setter
 // 电话号码
-func (r *AlibabaEleEnterpriseOrdernewGetRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseOrdernewGetRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseOrdernewGetRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

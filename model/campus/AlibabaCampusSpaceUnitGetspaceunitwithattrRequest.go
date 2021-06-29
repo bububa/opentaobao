@@ -15,9 +15,9 @@ alibaba.campus.space.unit.getspaceunitwithattr
 type AlibabaCampusSpaceUnitGetspaceunitwithattrRequest struct {
     model.Params
     // 操作用户上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 空间单元id
-    spaceUnitId   int64
+    _spaceUnitId   int64
 }
 
 // 初始化AlibabaCampusSpaceUnitGetspaceunitwithattrRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) GetApiParams() url.Va
 }
 // Context Setter
 // 操作用户上下文
-func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // SpaceUnitId Setter
 // 空间单元id
-func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) SetSpaceUnitId(spaceUnitId int64) error {
-    r.spaceUnitId = spaceUnitId
-    r.Set("space_unit_id", spaceUnitId)
+func (r *AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) SetSpaceUnitId(_spaceUnitId int64) error {
+    r._spaceUnitId = _spaceUnitId
+    r.Set("space_unit_id", _spaceUnitId)
     return nil
 }
 
 // SpaceUnitId Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitwithattrRequest) GetSpaceUnitId() int64 {
-    return r.spaceUnitId
+    return r._spaceUnitId
 }

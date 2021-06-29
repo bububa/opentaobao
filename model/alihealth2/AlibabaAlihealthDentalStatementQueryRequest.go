@@ -15,9 +15,9 @@ ISV查询对账单
 type AlibabaAlihealthDentalStatementQueryRequest struct {
     model.Params
     // 订单ID
-    orderId   string
+    _orderId   string
     // 结算周期，单位月
-    statementTime   string
+    _statementTime   string
 }
 
 // 初始化AlibabaAlihealthDentalStatementQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDentalStatementQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *AlibabaAlihealthDentalStatementQueryRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaAlihealthDentalStatementQueryRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaAlihealthDentalStatementQueryRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // StatementTime Setter
 // 结算周期，单位月
-func (r *AlibabaAlihealthDentalStatementQueryRequest) SetStatementTime(statementTime string) error {
-    r.statementTime = statementTime
-    r.Set("statement_time", statementTime)
+func (r *AlibabaAlihealthDentalStatementQueryRequest) SetStatementTime(_statementTime string) error {
+    r._statementTime = _statementTime
+    r.Set("statement_time", _statementTime)
     return nil
 }
 
 // StatementTime Getter
 func (r AlibabaAlihealthDentalStatementQueryRequest) GetStatementTime() string {
-    return r.statementTime
+    return r._statementTime
 }

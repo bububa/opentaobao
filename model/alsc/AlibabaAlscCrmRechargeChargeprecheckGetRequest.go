@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.chargeprecheck.get
 type AlibabaAlscCrmRechargeChargeprecheckGetRequest struct {
     model.Params
     // 入参
-    paramChargePreCheckOpenReq   *ChargePreCheckOpenReq
+    _paramChargePreCheckOpenReq   *ChargePreCheckOpenReq
 }
 
 // 初始化AlibabaAlscCrmRechargeChargeprecheckGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeChargeprecheckGetRequest) GetApiParams() url.Value
 }
 // ParamChargePreCheckOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeChargeprecheckGetRequest) SetParamChargePreCheckOpenReq(paramChargePreCheckOpenReq *ChargePreCheckOpenReq) error {
-    r.paramChargePreCheckOpenReq = paramChargePreCheckOpenReq
-    r.Set("param_charge_pre_check_open_req", paramChargePreCheckOpenReq)
+func (r *AlibabaAlscCrmRechargeChargeprecheckGetRequest) SetParamChargePreCheckOpenReq(_paramChargePreCheckOpenReq *ChargePreCheckOpenReq) error {
+    r._paramChargePreCheckOpenReq = _paramChargePreCheckOpenReq
+    r.Set("param_charge_pre_check_open_req", _paramChargePreCheckOpenReq)
     return nil
 }
 
 // ParamChargePreCheckOpenReq Getter
 func (r AlibabaAlscCrmRechargeChargeprecheckGetRequest) GetParamChargePreCheckOpenReq() *ChargePreCheckOpenReq {
-    return r.paramChargePreCheckOpenReq
+    return r._paramChargePreCheckOpenReq
 }

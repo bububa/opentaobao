@@ -15,9 +15,9 @@ taobao.sebp.organization.getinviteinfo
 type TaobaoSebpOrganizationGetinviteinfoRequest struct {
     model.Params
     // null-请求所有，20200616-请求2020年6月16号的变更信息
-    modifyDate   string
+    _modifyDate   string
     // 第几页
-    pageNum   int64
+    _pageNum   int64
 }
 
 // 初始化TaobaoSebpOrganizationGetinviteinfoRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSebpOrganizationGetinviteinfoRequest) GetApiParams() url.Values {
 }
 // ModifyDate Setter
 // null-请求所有，20200616-请求2020年6月16号的变更信息
-func (r *TaobaoSebpOrganizationGetinviteinfoRequest) SetModifyDate(modifyDate string) error {
-    r.modifyDate = modifyDate
-    r.Set("modify_date", modifyDate)
+func (r *TaobaoSebpOrganizationGetinviteinfoRequest) SetModifyDate(_modifyDate string) error {
+    r._modifyDate = _modifyDate
+    r.Set("modify_date", _modifyDate)
     return nil
 }
 
 // ModifyDate Getter
 func (r TaobaoSebpOrganizationGetinviteinfoRequest) GetModifyDate() string {
-    return r.modifyDate
+    return r._modifyDate
 }
 // PageNum Setter
 // 第几页
-func (r *TaobaoSebpOrganizationGetinviteinfoRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *TaobaoSebpOrganizationGetinviteinfoRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r TaobaoSebpOrganizationGetinviteinfoRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }

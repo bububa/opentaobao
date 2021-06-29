@@ -15,7 +15,7 @@ alitrip.btrip.supplychain.flight.city
 type AlitripBtripSupplychainFlightCityRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenSuggestRq
+    _rq   *OpenSuggestRq
 }
 
 // 初始化AlitripBtripSupplychainFlightCityRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainFlightCityRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripSupplychainFlightCityRequest) SetRq(rq *OpenSuggestRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripSupplychainFlightCityRequest) SetRq(_rq *OpenSuggestRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripSupplychainFlightCityRequest) GetRq() *OpenSuggestRq {
-    return r.rq
+    return r._rq
 }

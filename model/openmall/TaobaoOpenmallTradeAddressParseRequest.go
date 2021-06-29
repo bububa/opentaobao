@@ -15,9 +15,9 @@ openmall服务，解析地址区域码，获取创建订单等接口中的区域
 type TaobaoOpenmallTradeAddressParseRequest struct {
     model.Params
     // 需解析的地址信息，建议只传地址选择器中的省市区，街道门牌号等用户手动输入数据不传
-    rawAddress   string
+    _rawAddress   string
     // 渠道商分销者淘宝账号
-    distributor   string
+    _distributor   string
 }
 
 // 初始化TaobaoOpenmallTradeAddressParseRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallTradeAddressParseRequest) GetApiParams() url.Values {
 }
 // RawAddress Setter
 // 需解析的地址信息，建议只传地址选择器中的省市区，街道门牌号等用户手动输入数据不传
-func (r *TaobaoOpenmallTradeAddressParseRequest) SetRawAddress(rawAddress string) error {
-    r.rawAddress = rawAddress
-    r.Set("raw_address", rawAddress)
+func (r *TaobaoOpenmallTradeAddressParseRequest) SetRawAddress(_rawAddress string) error {
+    r._rawAddress = _rawAddress
+    r.Set("raw_address", _rawAddress)
     return nil
 }
 
 // RawAddress Getter
 func (r TaobaoOpenmallTradeAddressParseRequest) GetRawAddress() string {
-    return r.rawAddress
+    return r._rawAddress
 }
 // Distributor Setter
 // 渠道商分销者淘宝账号
-func (r *TaobaoOpenmallTradeAddressParseRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallTradeAddressParseRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallTradeAddressParseRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }

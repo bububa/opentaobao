@@ -15,11 +15,11 @@ taobao.alitrip.travel.item.sku.override
 type TaobaoAlitripTravelItemSkuOverrideRequest struct {
     model.Params
     // 商品id。itemId和outProductId至少填写一个
-    itemId   int64
+    _itemId   int64
     // 商品日历价格库存套餐
-    skus   []PontusTravelItemSkuInfo
+    _skus   []PontusTravelItemSkuInfo
     // 商品 外部商家编码。itemId和outProductId至少填写一个
-    outProductId   string
+    _outProductId   string
 }
 
 // 初始化TaobaoAlitripTravelItemSkuOverrideRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripTravelItemSkuOverrideRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoAlitripTravelItemSkuOverrideRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Skus Setter
 // 商品日历价格库存套餐
-func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetSkus(skus []PontusTravelItemSkuInfo) error {
-    r.skus = skus
-    r.Set("skus", skus)
+func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetSkus(_skus []PontusTravelItemSkuInfo) error {
+    r._skus = _skus
+    r.Set("skus", _skus)
     return nil
 }
 
 // Skus Getter
 func (r TaobaoAlitripTravelItemSkuOverrideRequest) GetSkus() []PontusTravelItemSkuInfo {
-    return r.skus
+    return r._skus
 }
 // OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetOutProductId(outProductId string) error {
-    r.outProductId = outProductId
-    r.Set("out_product_id", outProductId)
+func (r *TaobaoAlitripTravelItemSkuOverrideRequest) SetOutProductId(_outProductId string) error {
+    r._outProductId = _outProductId
+    r.Set("out_product_id", _outProductId)
     return nil
 }
 
 // OutProductId Getter
 func (r TaobaoAlitripTravelItemSkuOverrideRequest) GetOutProductId() string {
-    return r.outProductId
+    return r._outProductId
 }

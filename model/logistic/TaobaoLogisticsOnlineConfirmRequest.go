@@ -16,15 +16,15 @@ taobao.logistics.online.confirm
 type TaobaoLogisticsOnlineConfirmRequest struct {
     model.Params
     // 淘宝交易ID
-    tid   int64
+    _tid   int64
     // 拆单子订单列表，对应的数据是：子订单号的列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
-    subTid   []int64
+    _subTid   []int64
     // 表明是否是拆单，默认值0，1表示拆单
-    isSplit   int64
+    _isSplit   int64
     // 运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入；
-    outSid   string
+    _outSid   string
     // 商家的IP地址
-    sellerIp   string
+    _sellerIp   string
 }
 
 // 初始化TaobaoLogisticsOnlineConfirmRequest对象
@@ -49,61 +49,61 @@ func (r TaobaoLogisticsOnlineConfirmRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易ID
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoLogisticsOnlineConfirmRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // SubTid Setter
 // 拆单子订单列表，对应的数据是：子订单号的列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetSubTid(subTid []int64) error {
-    r.subTid = subTid
-    r.Set("sub_tid", subTid)
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetSubTid(_subTid []int64) error {
+    r._subTid = _subTid
+    r.Set("sub_tid", _subTid)
     return nil
 }
 
 // SubTid Getter
 func (r TaobaoLogisticsOnlineConfirmRequest) GetSubTid() []int64 {
-    return r.subTid
+    return r._subTid
 }
 // IsSplit Setter
 // 表明是否是拆单，默认值0，1表示拆单
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetIsSplit(isSplit int64) error {
-    r.isSplit = isSplit
-    r.Set("is_split", isSplit)
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetIsSplit(_isSplit int64) error {
+    r._isSplit = _isSplit
+    r.Set("is_split", _isSplit)
     return nil
 }
 
 // IsSplit Getter
 func (r TaobaoLogisticsOnlineConfirmRequest) GetIsSplit() int64 {
-    return r.isSplit
+    return r._isSplit
 }
 // OutSid Setter
 // 运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入；
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetOutSid(outSid string) error {
-    r.outSid = outSid
-    r.Set("out_sid", outSid)
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetOutSid(_outSid string) error {
+    r._outSid = _outSid
+    r.Set("out_sid", _outSid)
     return nil
 }
 
 // OutSid Getter
 func (r TaobaoLogisticsOnlineConfirmRequest) GetOutSid() string {
-    return r.outSid
+    return r._outSid
 }
 // SellerIp Setter
 // 商家的IP地址
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetSellerIp(sellerIp string) error {
-    r.sellerIp = sellerIp
-    r.Set("seller_ip", sellerIp)
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetSellerIp(_sellerIp string) error {
+    r._sellerIp = _sellerIp
+    r.Set("seller_ip", _sellerIp)
     return nil
 }
 
 // SellerIp Getter
 func (r TaobaoLogisticsOnlineConfirmRequest) GetSellerIp() string {
-    return r.sellerIp
+    return r._sellerIp
 }

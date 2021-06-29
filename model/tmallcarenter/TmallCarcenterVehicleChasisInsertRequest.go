@@ -15,7 +15,7 @@ EPC车型底盘压缩库新增接口
 type TmallCarcenterVehicleChasisInsertRequest struct {
     model.Params
     // 底盘压缩库入参
-    dto   *ChasisVehicleInfoOriginalDto
+    _dto   *ChasisVehicleInfoOriginalDto
 }
 
 // 初始化TmallCarcenterVehicleChasisInsertRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarcenterVehicleChasisInsertRequest) GetApiParams() url.Values {
 }
 // Dto Setter
 // 底盘压缩库入参
-func (r *TmallCarcenterVehicleChasisInsertRequest) SetDto(dto *ChasisVehicleInfoOriginalDto) error {
-    r.dto = dto
-    r.Set("dto", dto)
+func (r *TmallCarcenterVehicleChasisInsertRequest) SetDto(_dto *ChasisVehicleInfoOriginalDto) error {
+    r._dto = _dto
+    r.Set("dto", _dto)
     return nil
 }
 
 // Dto Getter
 func (r TmallCarcenterVehicleChasisInsertRequest) GetDto() *ChasisVehicleInfoOriginalDto {
-    return r.dto
+    return r._dto
 }

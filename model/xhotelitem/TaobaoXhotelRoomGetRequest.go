@@ -15,11 +15,11 @@ taobao.xhotel.room.get
 type TaobaoXhotelRoomGetRequest struct {
     model.Params
     // 卖家渠道 如果gid为空，那么out_rid和vendor都不能为空。 支持通过gid或者通过out_rid和vendor来获取商品
-    vendor   string
+    _vendor   string
     // 外部房型id 如果gid为空，那么out_rid和vendor都不能为空 支持通过gid或者通过out_rid和vendor来获取商品
-    outRid   string
+    _outRid   string
     // 废弃
-    gid   int64
+    _gid   int64
 }
 
 // 初始化TaobaoXhotelRoomGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelRoomGetRequest) GetApiParams() url.Values {
 }
 // Vendor Setter
 // 卖家渠道 如果gid为空，那么out_rid和vendor都不能为空。 支持通过gid或者通过out_rid和vendor来获取商品
-func (r *TaobaoXhotelRoomGetRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRoomGetRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRoomGetRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // OutRid Setter
 // 外部房型id 如果gid为空，那么out_rid和vendor都不能为空 支持通过gid或者通过out_rid和vendor来获取商品
-func (r *TaobaoXhotelRoomGetRequest) SetOutRid(outRid string) error {
-    r.outRid = outRid
-    r.Set("out_rid", outRid)
+func (r *TaobaoXhotelRoomGetRequest) SetOutRid(_outRid string) error {
+    r._outRid = _outRid
+    r.Set("out_rid", _outRid)
     return nil
 }
 
 // OutRid Getter
 func (r TaobaoXhotelRoomGetRequest) GetOutRid() string {
-    return r.outRid
+    return r._outRid
 }
 // Gid Setter
 // 废弃
-func (r *TaobaoXhotelRoomGetRequest) SetGid(gid int64) error {
-    r.gid = gid
-    r.Set("gid", gid)
+func (r *TaobaoXhotelRoomGetRequest) SetGid(_gid int64) error {
+    r._gid = _gid
+    r.Set("gid", _gid)
     return nil
 }
 
 // Gid Getter
 func (r TaobaoXhotelRoomGetRequest) GetGid() int64 {
-    return r.gid
+    return r._gid
 }

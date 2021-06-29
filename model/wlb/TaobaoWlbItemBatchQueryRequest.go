@@ -15,13 +15,13 @@ taobao.wlb.item.batch.query
 type TaobaoWlbItemBatchQueryRequest struct {
     model.Params
     // 仓库编号
-    storeCode   string
+    _storeCode   string
     // 分页查询参数，指定查询页数，默认为1
-    pageNo   int64
+    _pageNo   int64
     // 分页查询参数，每页查询数量，默认20，最大值50,大于50时按照50条查询
-    pageSize   int64
+    _pageSize   int64
     // 需要查询的商品ID列表，以字符串表示，ID间以;隔开
-    itemIds   string
+    _itemIds   string
 }
 
 // 初始化TaobaoWlbItemBatchQueryRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoWlbItemBatchQueryRequest) GetApiParams() url.Values {
 }
 // StoreCode Setter
 // 仓库编号
-func (r *TaobaoWlbItemBatchQueryRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoWlbItemBatchQueryRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoWlbItemBatchQueryRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // PageNo Setter
 // 分页查询参数，指定查询页数，默认为1
-func (r *TaobaoWlbItemBatchQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoWlbItemBatchQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoWlbItemBatchQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页查询参数，每页查询数量，默认20，最大值50,大于50时按照50条查询
-func (r *TaobaoWlbItemBatchQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoWlbItemBatchQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoWlbItemBatchQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ItemIds Setter
 // 需要查询的商品ID列表，以字符串表示，ID间以;隔开
-func (r *TaobaoWlbItemBatchQueryRequest) SetItemIds(itemIds string) error {
-    r.itemIds = itemIds
-    r.Set("item_ids", itemIds)
+func (r *TaobaoWlbItemBatchQueryRequest) SetItemIds(_itemIds string) error {
+    r._itemIds = _itemIds
+    r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
 func (r TaobaoWlbItemBatchQueryRequest) GetItemIds() string {
-    return r.itemIds
+    return r._itemIds
 }

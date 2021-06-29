@@ -15,9 +15,9 @@ alibaba.einvoice.closereq
 type AlibabaEinvoiceClosereqRequest struct {
     model.Params
     // 流水号
-    serialNo   string
+    _serialNo   string
     // 税号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
 }
 
 // 初始化AlibabaEinvoiceClosereqRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEinvoiceClosereqRequest) GetApiParams() url.Values {
 }
 // SerialNo Setter
 // 流水号
-func (r *AlibabaEinvoiceClosereqRequest) SetSerialNo(serialNo string) error {
-    r.serialNo = serialNo
-    r.Set("serial_no", serialNo)
+func (r *AlibabaEinvoiceClosereqRequest) SetSerialNo(_serialNo string) error {
+    r._serialNo = _serialNo
+    r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
 func (r AlibabaEinvoiceClosereqRequest) GetSerialNo() string {
-    return r.serialNo
+    return r._serialNo
 }
 // PayeeRegisterNo Setter
 // 税号
-func (r *AlibabaEinvoiceClosereqRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoiceClosereqRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoiceClosereqRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }

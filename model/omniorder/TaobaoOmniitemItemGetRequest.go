@@ -15,13 +15,13 @@ taobao.omniitem.item.get
 type TaobaoOmniitemItemGetRequest struct {
     model.Params
     // 分页当前页数
-    pageNo   int64
+    _pageNo   int64
     // 分页单页大小
-    pageSize   int64
+    _pageSize   int64
     // 可选，指定获取的商品id
-    itemId   int64
+    _itemId   int64
     // 可选，指定获取的商品外部id
-    outerId   string
+    _outerId   string
 }
 
 // 初始化TaobaoOmniitemItemGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOmniitemItemGetRequest) GetApiParams() url.Values {
 }
 // PageNo Setter
 // 分页当前页数
-func (r *TaobaoOmniitemItemGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoOmniitemItemGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoOmniitemItemGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页单页大小
-func (r *TaobaoOmniitemItemGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoOmniitemItemGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoOmniitemItemGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ItemId Setter
 // 可选，指定获取的商品id
-func (r *TaobaoOmniitemItemGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOmniitemItemGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOmniitemItemGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // OuterId Setter
 // 可选，指定获取的商品外部id
-func (r *TaobaoOmniitemItemGetRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoOmniitemItemGetRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoOmniitemItemGetRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }

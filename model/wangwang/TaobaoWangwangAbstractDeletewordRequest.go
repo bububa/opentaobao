@@ -15,9 +15,9 @@ taobao.wangwang.abstract.deleteword
 type TaobaoWangwangAbstractDeletewordRequest struct {
     model.Params
     // 关键词，长度大于0
-    word   string
+    _word   string
     // 传入参数的字符集
-    charset   string
+    _charset   string
 }
 
 // 初始化TaobaoWangwangAbstractDeletewordRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWangwangAbstractDeletewordRequest) GetApiParams() url.Values {
 }
 // Word Setter
 // 关键词，长度大于0
-func (r *TaobaoWangwangAbstractDeletewordRequest) SetWord(word string) error {
-    r.word = word
-    r.Set("word", word)
+func (r *TaobaoWangwangAbstractDeletewordRequest) SetWord(_word string) error {
+    r._word = _word
+    r.Set("word", _word)
     return nil
 }
 
 // Word Getter
 func (r TaobaoWangwangAbstractDeletewordRequest) GetWord() string {
-    return r.word
+    return r._word
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractDeletewordRequest) SetCharset(charset string) error {
-    r.charset = charset
-    r.Set("charset", charset)
+func (r *TaobaoWangwangAbstractDeletewordRequest) SetCharset(_charset string) error {
+    r._charset = _charset
+    r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
 func (r TaobaoWangwangAbstractDeletewordRequest) GetCharset() string {
-    return r.charset
+    return r._charset
 }

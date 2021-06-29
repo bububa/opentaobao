@@ -15,7 +15,7 @@ tmall.product.template.get
 type TmallProductTemplateGetRequest struct {
     model.Params
     // 类目ID
-    cid   int64
+    _cid   int64
 }
 
 // 初始化TmallProductTemplateGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallProductTemplateGetRequest) GetApiParams() url.Values {
 }
 // Cid Setter
 // 类目ID
-func (r *TmallProductTemplateGetRequest) SetCid(cid int64) error {
-    r.cid = cid
-    r.Set("cid", cid)
+func (r *TmallProductTemplateGetRequest) SetCid(_cid int64) error {
+    r._cid = _cid
+    r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
 func (r TmallProductTemplateGetRequest) GetCid() int64 {
-    return r.cid
+    return r._cid
 }

@@ -15,9 +15,9 @@ alibaba.mj.moscarnival.receiveencrypt
 type AlibabaMjMoscarnivalReceiveencryptRequest struct {
     model.Params
     // 加密手机号码
-    mobile   string
+    _mobile   string
     // 活动id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化AlibabaMjMoscarnivalReceiveencryptRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMjMoscarnivalReceiveencryptRequest) GetApiParams() url.Values {
 }
 // Mobile Setter
 // 加密手机号码
-func (r *AlibabaMjMoscarnivalReceiveencryptRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaMjMoscarnivalReceiveencryptRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaMjMoscarnivalReceiveencryptRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // ActivityId Setter
 // 活动id
-func (r *AlibabaMjMoscarnivalReceiveencryptRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *AlibabaMjMoscarnivalReceiveencryptRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r AlibabaMjMoscarnivalReceiveencryptRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

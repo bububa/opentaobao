@@ -15,7 +15,7 @@ tmall.mallitemcenter.subscribe.query
 type TmallMallitemcenterSubscribeQueryRequest struct {
     model.Params
     // 入参query
-    query   *Spb2bOderQuery
+    _query   *Spb2bOderQuery
 }
 
 // 初始化TmallMallitemcenterSubscribeQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallMallitemcenterSubscribeQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参query
-func (r *TmallMallitemcenterSubscribeQueryRequest) SetQuery(query *Spb2bOderQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TmallMallitemcenterSubscribeQueryRequest) SetQuery(_query *Spb2bOderQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TmallMallitemcenterSubscribeQueryRequest) GetQuery() *Spb2bOderQuery {
-    return r.query
+    return r._query
 }

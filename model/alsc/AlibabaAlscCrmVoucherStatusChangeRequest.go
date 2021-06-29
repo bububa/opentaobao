@@ -15,7 +15,7 @@ alibaba.alsc.crm.voucher.status.change
 type AlibabaAlscCrmVoucherStatusChangeRequest struct {
     model.Params
     // 参数
-    paramVoucherStatusChangeOpenReq   *VoucherStatusChangeOpenReq
+    _paramVoucherStatusChangeOpenReq   *VoucherStatusChangeOpenReq
 }
 
 // 初始化AlibabaAlscCrmVoucherStatusChangeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmVoucherStatusChangeRequest) GetApiParams() url.Values {
 }
 // ParamVoucherStatusChangeOpenReq Setter
 // 参数
-func (r *AlibabaAlscCrmVoucherStatusChangeRequest) SetParamVoucherStatusChangeOpenReq(paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq) error {
-    r.paramVoucherStatusChangeOpenReq = paramVoucherStatusChangeOpenReq
-    r.Set("param_voucher_status_change_open_req", paramVoucherStatusChangeOpenReq)
+func (r *AlibabaAlscCrmVoucherStatusChangeRequest) SetParamVoucherStatusChangeOpenReq(_paramVoucherStatusChangeOpenReq *VoucherStatusChangeOpenReq) error {
+    r._paramVoucherStatusChangeOpenReq = _paramVoucherStatusChangeOpenReq
+    r.Set("param_voucher_status_change_open_req", _paramVoucherStatusChangeOpenReq)
     return nil
 }
 
 // ParamVoucherStatusChangeOpenReq Getter
 func (r AlibabaAlscCrmVoucherStatusChangeRequest) GetParamVoucherStatusChangeOpenReq() *VoucherStatusChangeOpenReq {
-    return r.paramVoucherStatusChangeOpenReq
+    return r._paramVoucherStatusChangeOpenReq
 }

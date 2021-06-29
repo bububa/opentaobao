@@ -15,7 +15,7 @@ alibaba.idle.isv.order.dealrefund
 type AlibabaIdleIsvOrderDealrefundRequest struct {
     model.Params
     // 退款参数
-    paramAppraiseIsvRefundRequest   *AppraiseIsvRefundRequest
+    _paramAppraiseIsvRefundRequest   *AppraiseIsvRefundRequest
 }
 
 // 初始化AlibabaIdleIsvOrderDealrefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvOrderDealrefundRequest) GetApiParams() url.Values {
 }
 // ParamAppraiseIsvRefundRequest Setter
 // 退款参数
-func (r *AlibabaIdleIsvOrderDealrefundRequest) SetParamAppraiseIsvRefundRequest(paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest) error {
-    r.paramAppraiseIsvRefundRequest = paramAppraiseIsvRefundRequest
-    r.Set("param_appraise_isv_refund_request", paramAppraiseIsvRefundRequest)
+func (r *AlibabaIdleIsvOrderDealrefundRequest) SetParamAppraiseIsvRefundRequest(_paramAppraiseIsvRefundRequest *AppraiseIsvRefundRequest) error {
+    r._paramAppraiseIsvRefundRequest = _paramAppraiseIsvRefundRequest
+    r.Set("param_appraise_isv_refund_request", _paramAppraiseIsvRefundRequest)
     return nil
 }
 
 // ParamAppraiseIsvRefundRequest Getter
 func (r AlibabaIdleIsvOrderDealrefundRequest) GetParamAppraiseIsvRefundRequest() *AppraiseIsvRefundRequest {
-    return r.paramAppraiseIsvRefundRequest
+    return r._paramAppraiseIsvRefundRequest
 }

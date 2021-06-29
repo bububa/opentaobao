@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.assert.verify
 type AlibabaAlscCrmOpenAssertVerifyRequest struct {
     model.Params
     // 入参
-    paramPropertyVerifyOpenReq   *PropertyVerifyOpenReq
+    _paramPropertyVerifyOpenReq   *PropertyVerifyOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenAssertVerifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetApiParams() url.Values {
 }
 // ParamPropertyVerifyOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenAssertVerifyRequest) SetParamPropertyVerifyOpenReq(paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
-    r.paramPropertyVerifyOpenReq = paramPropertyVerifyOpenReq
-    r.Set("param_property_verify_open_req", paramPropertyVerifyOpenReq)
+func (r *AlibabaAlscCrmOpenAssertVerifyRequest) SetParamPropertyVerifyOpenReq(_paramPropertyVerifyOpenReq *PropertyVerifyOpenReq) error {
+    r._paramPropertyVerifyOpenReq = _paramPropertyVerifyOpenReq
+    r.Set("param_property_verify_open_req", _paramPropertyVerifyOpenReq)
     return nil
 }
 
 // ParamPropertyVerifyOpenReq Getter
 func (r AlibabaAlscCrmOpenAssertVerifyRequest) GetParamPropertyVerifyOpenReq() *PropertyVerifyOpenReq {
-    return r.paramPropertyVerifyOpenReq
+    return r._paramPropertyVerifyOpenReq
 }

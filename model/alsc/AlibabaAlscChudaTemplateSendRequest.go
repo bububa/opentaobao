@@ -15,7 +15,7 @@ alibaba.alsc.chuda.template.send
 type AlibabaAlscChudaTemplateSendRequest struct {
     model.Params
     // 请求参数
-    notifyRequest   *TemplateNotifyRequest
+    _notifyRequest   *TemplateNotifyRequest
 }
 
 // 初始化AlibabaAlscChudaTemplateSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscChudaTemplateSendRequest) GetApiParams() url.Values {
 }
 // NotifyRequest Setter
 // 请求参数
-func (r *AlibabaAlscChudaTemplateSendRequest) SetNotifyRequest(notifyRequest *TemplateNotifyRequest) error {
-    r.notifyRequest = notifyRequest
-    r.Set("notify_request", notifyRequest)
+func (r *AlibabaAlscChudaTemplateSendRequest) SetNotifyRequest(_notifyRequest *TemplateNotifyRequest) error {
+    r._notifyRequest = _notifyRequest
+    r.Set("notify_request", _notifyRequest)
     return nil
 }
 
 // NotifyRequest Getter
 func (r AlibabaAlscChudaTemplateSendRequest) GetNotifyRequest() *TemplateNotifyRequest {
-    return r.notifyRequest
+    return r._notifyRequest
 }

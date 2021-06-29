@@ -15,9 +15,9 @@ Iot售后工单详情信息查询
 type CainiaoIotTicketDetailQueryRequest struct {
     model.Params
     // 服务商唯一编码
-    spCode   string
+    _spCode   string
     // 工单Id
-    ticketId   int64
+    _ticketId   int64
 }
 
 // 初始化CainiaoIotTicketDetailQueryRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoIotTicketDetailQueryRequest) GetApiParams() url.Values {
 }
 // SpCode Setter
 // 服务商唯一编码
-func (r *CainiaoIotTicketDetailQueryRequest) SetSpCode(spCode string) error {
-    r.spCode = spCode
-    r.Set("sp_code", spCode)
+func (r *CainiaoIotTicketDetailQueryRequest) SetSpCode(_spCode string) error {
+    r._spCode = _spCode
+    r.Set("sp_code", _spCode)
     return nil
 }
 
 // SpCode Getter
 func (r CainiaoIotTicketDetailQueryRequest) GetSpCode() string {
-    return r.spCode
+    return r._spCode
 }
 // TicketId Setter
 // 工单Id
-func (r *CainiaoIotTicketDetailQueryRequest) SetTicketId(ticketId int64) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *CainiaoIotTicketDetailQueryRequest) SetTicketId(_ticketId int64) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r CainiaoIotTicketDetailQueryRequest) GetTicketId() int64 {
-    return r.ticketId
+    return r._ticketId
 }

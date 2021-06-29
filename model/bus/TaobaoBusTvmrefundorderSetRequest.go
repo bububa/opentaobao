@@ -15,17 +15,17 @@ taobao.bus.tvmrefundorder.set
 type TaobaoBusTvmrefundorderSetRequest struct {
     model.Params
     // 飞猪订单号
-    alitripOrderId   string
+    _alitripOrderId   string
     // 分账退款明细
-    refundAccountInDetails   []RefundAccountInDetail
+    _refundAccountInDetails   []RefundAccountInDetail
     // 退款金额（单位分） 票金额
-    refundAmount   int64
+    _refundAmount   int64
     // 退款原因
-    refundReason   string
+    _refundReason   string
     // 批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可
-    refundBatchNo   string
+    _refundBatchNo   string
     // 保险退款详情
-    insuranceRefundDetails   []InsuranceRefundDetail
+    _insuranceRefundDetails   []InsuranceRefundDetail
 }
 
 // 初始化TaobaoBusTvmrefundorderSetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoBusTvmrefundorderSetRequest) GetApiParams() url.Values {
 }
 // AlitripOrderId Setter
 // 飞猪订单号
-func (r *TaobaoBusTvmrefundorderSetRequest) SetAlitripOrderId(alitripOrderId string) error {
-    r.alitripOrderId = alitripOrderId
-    r.Set("alitrip_order_id", alitripOrderId)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetAlitripOrderId(_alitripOrderId string) error {
+    r._alitripOrderId = _alitripOrderId
+    r.Set("alitrip_order_id", _alitripOrderId)
     return nil
 }
 
 // AlitripOrderId Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetAlitripOrderId() string {
-    return r.alitripOrderId
+    return r._alitripOrderId
 }
 // RefundAccountInDetails Setter
 // 分账退款明细
-func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundAccountInDetails(refundAccountInDetails []RefundAccountInDetail) error {
-    r.refundAccountInDetails = refundAccountInDetails
-    r.Set("refund_account_in_details", refundAccountInDetails)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundAccountInDetails(_refundAccountInDetails []RefundAccountInDetail) error {
+    r._refundAccountInDetails = _refundAccountInDetails
+    r.Set("refund_account_in_details", _refundAccountInDetails)
     return nil
 }
 
 // RefundAccountInDetails Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetRefundAccountInDetails() []RefundAccountInDetail {
-    return r.refundAccountInDetails
+    return r._refundAccountInDetails
 }
 // RefundAmount Setter
 // 退款金额（单位分） 票金额
-func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundAmount(refundAmount int64) error {
-    r.refundAmount = refundAmount
-    r.Set("refund_amount", refundAmount)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundAmount(_refundAmount int64) error {
+    r._refundAmount = _refundAmount
+    r.Set("refund_amount", _refundAmount)
     return nil
 }
 
 // RefundAmount Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetRefundAmount() int64 {
-    return r.refundAmount
+    return r._refundAmount
 }
 // RefundReason Setter
 // 退款原因
-func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundReason(refundReason string) error {
-    r.refundReason = refundReason
-    r.Set("refund_reason", refundReason)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundReason(_refundReason string) error {
+    r._refundReason = _refundReason
+    r.Set("refund_reason", _refundReason)
     return nil
 }
 
 // RefundReason Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetRefundReason() string {
-    return r.refundReason
+    return r._refundReason
 }
 // RefundBatchNo Setter
 // 批次号必须唯一，同一批次号只能退款一次 （多账号分润的该值 填写refundAccountInDetails中批次号的任意一个即可
-func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundBatchNo(refundBatchNo string) error {
-    r.refundBatchNo = refundBatchNo
-    r.Set("refund_batch_no", refundBatchNo)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetRefundBatchNo(_refundBatchNo string) error {
+    r._refundBatchNo = _refundBatchNo
+    r.Set("refund_batch_no", _refundBatchNo)
     return nil
 }
 
 // RefundBatchNo Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetRefundBatchNo() string {
-    return r.refundBatchNo
+    return r._refundBatchNo
 }
 // InsuranceRefundDetails Setter
 // 保险退款详情
-func (r *TaobaoBusTvmrefundorderSetRequest) SetInsuranceRefundDetails(insuranceRefundDetails []InsuranceRefundDetail) error {
-    r.insuranceRefundDetails = insuranceRefundDetails
-    r.Set("insurance_refund_details", insuranceRefundDetails)
+func (r *TaobaoBusTvmrefundorderSetRequest) SetInsuranceRefundDetails(_insuranceRefundDetails []InsuranceRefundDetail) error {
+    r._insuranceRefundDetails = _insuranceRefundDetails
+    r.Set("insurance_refund_details", _insuranceRefundDetails)
     return nil
 }
 
 // InsuranceRefundDetails Getter
 func (r TaobaoBusTvmrefundorderSetRequest) GetInsuranceRefundDetails() []InsuranceRefundDetail {
-    return r.insuranceRefundDetails
+    return r._insuranceRefundDetails
 }

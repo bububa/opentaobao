@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.ticketing.issue
 type AlitripAgentFlightSellTicketingIssueRequest struct {
     model.Params
     // 入参对象
-    param   *TicketingIssueRequestDto
+    _param   *TicketingIssueRequestDto
 }
 
 // 初始化AlitripAgentFlightSellTicketingIssueRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellTicketingIssueRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlitripAgentFlightSellTicketingIssueRequest) SetParam(param *TicketingIssueRequestDto) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlitripAgentFlightSellTicketingIssueRequest) SetParam(_param *TicketingIssueRequestDto) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlitripAgentFlightSellTicketingIssueRequest) GetParam() *TicketingIssueRequestDto {
-    return r.param
+    return r._param
 }

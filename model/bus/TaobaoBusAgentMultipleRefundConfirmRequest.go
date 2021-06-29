@@ -15,7 +15,7 @@ taobao.bus.agent.multiple.refund.confirm
 type TaobaoBusAgentMultipleRefundConfirmRequest struct {
     model.Params
     // 入参
-    paramAgentMultipleRefundRQ   *AgentMultipleRefundRq
+    _paramAgentMultipleRefundRQ   *AgentMultipleRefundRq
 }
 
 // 初始化TaobaoBusAgentMultipleRefundConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentMultipleRefundConfirmRequest) GetApiParams() url.Values {
 }
 // ParamAgentMultipleRefundRQ Setter
 // 入参
-func (r *TaobaoBusAgentMultipleRefundConfirmRequest) SetParamAgentMultipleRefundRQ(paramAgentMultipleRefundRQ *AgentMultipleRefundRq) error {
-    r.paramAgentMultipleRefundRQ = paramAgentMultipleRefundRQ
-    r.Set("param_agent_multiple_refund_r_q", paramAgentMultipleRefundRQ)
+func (r *TaobaoBusAgentMultipleRefundConfirmRequest) SetParamAgentMultipleRefundRQ(_paramAgentMultipleRefundRQ *AgentMultipleRefundRq) error {
+    r._paramAgentMultipleRefundRQ = _paramAgentMultipleRefundRQ
+    r.Set("param_agent_multiple_refund_r_q", _paramAgentMultipleRefundRQ)
     return nil
 }
 
 // ParamAgentMultipleRefundRQ Getter
 func (r TaobaoBusAgentMultipleRefundConfirmRequest) GetParamAgentMultipleRefundRQ() *AgentMultipleRefundRq {
-    return r.paramAgentMultipleRefundRQ
+    return r._paramAgentMultipleRefundRQ
 }

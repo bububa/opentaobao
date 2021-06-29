@@ -15,15 +15,15 @@ taobao.degoperation.show.user.records
 type TaobaoDegoperationShowUserRecordsRequest struct {
     model.Params
     // 活动后台配置
-    degAppKey   string
+    _degAppKey   string
     // 活动后台配置
-    eventKey   string
+    _eventKey   string
     // 第几页
-    pageNumber   int64
+    _pageNumber   int64
     // 分页尺寸
-    pageSize   int64
+    _pageSize   int64
     // 系统信息
-    degAccessToken   string
+    _degAccessToken   string
 }
 
 // 初始化TaobaoDegoperationShowUserRecordsRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoDegoperationShowUserRecordsRequest) GetApiParams() url.Values {
 }
 // DegAppKey Setter
 // 活动后台配置
-func (r *TaobaoDegoperationShowUserRecordsRequest) SetDegAppKey(degAppKey string) error {
-    r.degAppKey = degAppKey
-    r.Set("deg_app_key", degAppKey)
+func (r *TaobaoDegoperationShowUserRecordsRequest) SetDegAppKey(_degAppKey string) error {
+    r._degAppKey = _degAppKey
+    r.Set("deg_app_key", _degAppKey)
     return nil
 }
 
 // DegAppKey Getter
 func (r TaobaoDegoperationShowUserRecordsRequest) GetDegAppKey() string {
-    return r.degAppKey
+    return r._degAppKey
 }
 // EventKey Setter
 // 活动后台配置
-func (r *TaobaoDegoperationShowUserRecordsRequest) SetEventKey(eventKey string) error {
-    r.eventKey = eventKey
-    r.Set("event_key", eventKey)
+func (r *TaobaoDegoperationShowUserRecordsRequest) SetEventKey(_eventKey string) error {
+    r._eventKey = _eventKey
+    r.Set("event_key", _eventKey)
     return nil
 }
 
 // EventKey Getter
 func (r TaobaoDegoperationShowUserRecordsRequest) GetEventKey() string {
-    return r.eventKey
+    return r._eventKey
 }
 // PageNumber Setter
 // 第几页
-func (r *TaobaoDegoperationShowUserRecordsRequest) SetPageNumber(pageNumber int64) error {
-    r.pageNumber = pageNumber
-    r.Set("page_number", pageNumber)
+func (r *TaobaoDegoperationShowUserRecordsRequest) SetPageNumber(_pageNumber int64) error {
+    r._pageNumber = _pageNumber
+    r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
 func (r TaobaoDegoperationShowUserRecordsRequest) GetPageNumber() int64 {
-    return r.pageNumber
+    return r._pageNumber
 }
 // PageSize Setter
 // 分页尺寸
-func (r *TaobaoDegoperationShowUserRecordsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoDegoperationShowUserRecordsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoDegoperationShowUserRecordsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // DegAccessToken Setter
 // 系统信息
-func (r *TaobaoDegoperationShowUserRecordsRequest) SetDegAccessToken(degAccessToken string) error {
-    r.degAccessToken = degAccessToken
-    r.Set("deg_access_token", degAccessToken)
+func (r *TaobaoDegoperationShowUserRecordsRequest) SetDegAccessToken(_degAccessToken string) error {
+    r._degAccessToken = _degAccessToken
+    r.Set("deg_access_token", _degAccessToken)
     return nil
 }
 
 // DegAccessToken Getter
 func (r TaobaoDegoperationShowUserRecordsRequest) GetDegAccessToken() string {
-    return r.degAccessToken
+    return r._degAccessToken
 }

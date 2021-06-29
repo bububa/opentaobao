@@ -15,7 +15,7 @@ alibaba.idle.isv.order.query
 type AlibabaIdleIsvOrderQueryRequest struct {
     model.Params
     // 系统自动生成
-    paramAppraiseIsvOrderQuery   *AppraiseIsvOrderQuery
+    _paramAppraiseIsvOrderQuery   *AppraiseIsvOrderQuery
 }
 
 // 初始化AlibabaIdleIsvOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvOrderQueryRequest) GetApiParams() url.Values {
 }
 // ParamAppraiseIsvOrderQuery Setter
 // 系统自动生成
-func (r *AlibabaIdleIsvOrderQueryRequest) SetParamAppraiseIsvOrderQuery(paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery) error {
-    r.paramAppraiseIsvOrderQuery = paramAppraiseIsvOrderQuery
-    r.Set("param_appraise_isv_order_query", paramAppraiseIsvOrderQuery)
+func (r *AlibabaIdleIsvOrderQueryRequest) SetParamAppraiseIsvOrderQuery(_paramAppraiseIsvOrderQuery *AppraiseIsvOrderQuery) error {
+    r._paramAppraiseIsvOrderQuery = _paramAppraiseIsvOrderQuery
+    r.Set("param_appraise_isv_order_query", _paramAppraiseIsvOrderQuery)
     return nil
 }
 
 // ParamAppraiseIsvOrderQuery Getter
 func (r AlibabaIdleIsvOrderQueryRequest) GetParamAppraiseIsvOrderQuery() *AppraiseIsvOrderQuery {
-    return r.paramAppraiseIsvOrderQuery
+    return r._paramAppraiseIsvOrderQuery
 }

@@ -17,9 +17,9 @@ HSF方法名称：getByCode
 type AlibabaCampusSpaceTypeGetbycodeRequest struct {
     model.Params
     // 查询条件封装
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 空间类别编码
-    typeCode   string
+    _typeCode   string
 }
 
 // 初始化AlibabaCampusSpaceTypeGetbycodeRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 查询条件封装
-func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // TypeCode Setter
 // 空间类别编码
-func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetTypeCode(typeCode string) error {
-    r.typeCode = typeCode
-    r.Set("type_code", typeCode)
+func (r *AlibabaCampusSpaceTypeGetbycodeRequest) SetTypeCode(_typeCode string) error {
+    r._typeCode = _typeCode
+    r.Set("type_code", _typeCode)
     return nil
 }
 
 // TypeCode Getter
 func (r AlibabaCampusSpaceTypeGetbycodeRequest) GetTypeCode() string {
-    return r.typeCode
+    return r._typeCode
 }

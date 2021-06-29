@@ -15,7 +15,7 @@ alibaba.guard.access.auth
 type AlibabaGuardAccessAuthRequest struct {
     model.Params
     // 请求
-    paramIdentifyAuthDTO   *IdentifyAuthDto
+    _paramIdentifyAuthDTO   *IdentifyAuthDto
 }
 
 // 初始化AlibabaGuardAccessAuthRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaGuardAccessAuthRequest) GetApiParams() url.Values {
 }
 // ParamIdentifyAuthDTO Setter
 // 请求
-func (r *AlibabaGuardAccessAuthRequest) SetParamIdentifyAuthDTO(paramIdentifyAuthDTO *IdentifyAuthDto) error {
-    r.paramIdentifyAuthDTO = paramIdentifyAuthDTO
-    r.Set("param_identify_auth_d_t_o", paramIdentifyAuthDTO)
+func (r *AlibabaGuardAccessAuthRequest) SetParamIdentifyAuthDTO(_paramIdentifyAuthDTO *IdentifyAuthDto) error {
+    r._paramIdentifyAuthDTO = _paramIdentifyAuthDTO
+    r.Set("param_identify_auth_d_t_o", _paramIdentifyAuthDTO)
     return nil
 }
 
 // ParamIdentifyAuthDTO Getter
 func (r AlibabaGuardAccessAuthRequest) GetParamIdentifyAuthDTO() *IdentifyAuthDto {
-    return r.paramIdentifyAuthDTO
+    return r._paramIdentifyAuthDTO
 }

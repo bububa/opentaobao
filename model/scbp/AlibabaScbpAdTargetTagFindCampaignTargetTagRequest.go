@@ -15,11 +15,11 @@ alibaba.scbp.ad.target.tag.find.campaign.target.tag
 type AlibabaScbpAdTargetTagFindCampaignTargetTagRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 请求参数
-    targetTagOperation   *TargetTagOperationDto
+    _targetTagOperation   *TargetTagOperationDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetApiParams() url.V
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // TargetTagOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTargetTagOperation(targetTagOperation *TargetTagOperationDto) error {
-    r.targetTagOperation = targetTagOperation
-    r.Set("target_tag_operation", targetTagOperation)
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDto) error {
+    r._targetTagOperation = _targetTagOperation
+    r.Set("target_tag_operation", _targetTagOperation)
     return nil
 }
 
 // TargetTagOperation Getter
 func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTargetTagOperation() *TargetTagOperationDto {
-    return r.targetTagOperation
+    return r._targetTagOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

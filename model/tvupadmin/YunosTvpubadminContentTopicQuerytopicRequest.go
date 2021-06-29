@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.topic.querytopic
 type YunosTvpubadminContentTopicQuerytopicRequest struct {
     model.Params
     // TopicAuditQueryBO
-    topicAuditQuery   string
+    _topicAuditQuery   string
 }
 
 // 初始化YunosTvpubadminContentTopicQuerytopicRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTopicQuerytopicRequest) GetApiParams() url.Values 
 }
 // TopicAuditQuery Setter
 // TopicAuditQueryBO
-func (r *YunosTvpubadminContentTopicQuerytopicRequest) SetTopicAuditQuery(topicAuditQuery string) error {
-    r.topicAuditQuery = topicAuditQuery
-    r.Set("topic_audit_query", topicAuditQuery)
+func (r *YunosTvpubadminContentTopicQuerytopicRequest) SetTopicAuditQuery(_topicAuditQuery string) error {
+    r._topicAuditQuery = _topicAuditQuery
+    r.Set("topic_audit_query", _topicAuditQuery)
     return nil
 }
 
 // TopicAuditQuery Getter
 func (r YunosTvpubadminContentTopicQuerytopicRequest) GetTopicAuditQuery() string {
-    return r.topicAuditQuery
+    return r._topicAuditQuery
 }

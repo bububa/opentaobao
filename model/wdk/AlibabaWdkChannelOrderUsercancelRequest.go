@@ -15,7 +15,7 @@ alibaba.wdk.channel.order.usercancel
 type AlibabaWdkChannelOrderUsercancelRequest struct {
     model.Params
     // 取消信息
-    userCancelInfo   *OrderUserCancelInfo
+    _userCancelInfo   *OrderUserCancelInfo
 }
 
 // 初始化AlibabaWdkChannelOrderUsercancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderUsercancelRequest) GetApiParams() url.Values {
 }
 // UserCancelInfo Setter
 // 取消信息
-func (r *AlibabaWdkChannelOrderUsercancelRequest) SetUserCancelInfo(userCancelInfo *OrderUserCancelInfo) error {
-    r.userCancelInfo = userCancelInfo
-    r.Set("user_cancel_info", userCancelInfo)
+func (r *AlibabaWdkChannelOrderUsercancelRequest) SetUserCancelInfo(_userCancelInfo *OrderUserCancelInfo) error {
+    r._userCancelInfo = _userCancelInfo
+    r.Set("user_cancel_info", _userCancelInfo)
     return nil
 }
 
 // UserCancelInfo Getter
 func (r AlibabaWdkChannelOrderUsercancelRequest) GetUserCancelInfo() *OrderUserCancelInfo {
-    return r.userCancelInfo
+    return r._userCancelInfo
 }

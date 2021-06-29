@@ -15,7 +15,7 @@ alibaba.wdk.pos.trade.close
 type AlibabaWdkPosTradeCloseRequest struct {
     model.Params
     // 关单请求
-    closeRequest   *FastBuyPosCloseRequest
+    _closeRequest   *FastBuyPosCloseRequest
 }
 
 // 初始化AlibabaWdkPosTradeCloseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeCloseRequest) GetApiParams() url.Values {
 }
 // CloseRequest Setter
 // 关单请求
-func (r *AlibabaWdkPosTradeCloseRequest) SetCloseRequest(closeRequest *FastBuyPosCloseRequest) error {
-    r.closeRequest = closeRequest
-    r.Set("close_request", closeRequest)
+func (r *AlibabaWdkPosTradeCloseRequest) SetCloseRequest(_closeRequest *FastBuyPosCloseRequest) error {
+    r._closeRequest = _closeRequest
+    r.Set("close_request", _closeRequest)
     return nil
 }
 
 // CloseRequest Getter
 func (r AlibabaWdkPosTradeCloseRequest) GetCloseRequest() *FastBuyPosCloseRequest {
-    return r.closeRequest
+    return r._closeRequest
 }

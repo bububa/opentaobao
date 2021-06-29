@@ -15,27 +15,27 @@ alibaba.aliqin.offline.customer.add
 type AlibabaAliqinOfflineCustomerAddRequest struct {
     model.Params
     // 代理商id
-    distributeId   string
+    _distributeId   string
     // 网点id，如果存在填写，不存在的话，填0即可；注意：如果填写了这个字段，后面的pob_name等会失效；如果为0，下面的网点名称、省份、城市必填
-    agentId   string
+    _agentId   string
     // 网点名称
-    pobName   string
+    _pobName   string
     // 网点所在省份
-    province   string
+    _province   string
     // 网点所在城市
-    city   string
+    _city   string
     // 客户经理名称
-    customerName   string
+    _customerName   string
     // 手机号码
-    phone   string
+    _phone   string
     // 客户经理编码，如果没有可以不填
-    otherKey   string
+    _otherKey   string
     // json类型，Map<String,String>
-    ext   string
+    _ext   string
     // 活动编码
-    activityCode   string
+    _activityCode   string
     // token，页面获取到的参数
-    token   string
+    _token   string
 }
 
 // 初始化AlibabaAliqinOfflineCustomerAddRequest对象
@@ -60,133 +60,133 @@ func (r AlibabaAliqinOfflineCustomerAddRequest) GetApiParams() url.Values {
 }
 // DistributeId Setter
 // 代理商id
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetDistributeId(distributeId string) error {
-    r.distributeId = distributeId
-    r.Set("distribute_id", distributeId)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetDistributeId(_distributeId string) error {
+    r._distributeId = _distributeId
+    r.Set("distribute_id", _distributeId)
     return nil
 }
 
 // DistributeId Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetDistributeId() string {
-    return r.distributeId
+    return r._distributeId
 }
 // AgentId Setter
 // 网点id，如果存在填写，不存在的话，填0即可；注意：如果填写了这个字段，后面的pob_name等会失效；如果为0，下面的网点名称、省份、城市必填
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetAgentId(agentId string) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetAgentId(_agentId string) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetAgentId() string {
-    return r.agentId
+    return r._agentId
 }
 // PobName Setter
 // 网点名称
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetPobName(pobName string) error {
-    r.pobName = pobName
-    r.Set("pob_name", pobName)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetPobName(_pobName string) error {
+    r._pobName = _pobName
+    r.Set("pob_name", _pobName)
     return nil
 }
 
 // PobName Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetPobName() string {
-    return r.pobName
+    return r._pobName
 }
 // Province Setter
 // 网点所在省份
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetProvince(province string) error {
-    r.province = province
-    r.Set("province", province)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetProvince(_province string) error {
+    r._province = _province
+    r.Set("province", _province)
     return nil
 }
 
 // Province Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetProvince() string {
-    return r.province
+    return r._province
 }
 // City Setter
 // 网点所在城市
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetCity(city string) error {
-    r.city = city
-    r.Set("city", city)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetCity(_city string) error {
+    r._city = _city
+    r.Set("city", _city)
     return nil
 }
 
 // City Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetCity() string {
-    return r.city
+    return r._city
 }
 // CustomerName Setter
 // 客户经理名称
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetCustomerName(customerName string) error {
-    r.customerName = customerName
-    r.Set("customer_name", customerName)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetCustomerName(_customerName string) error {
+    r._customerName = _customerName
+    r.Set("customer_name", _customerName)
     return nil
 }
 
 // CustomerName Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetCustomerName() string {
-    return r.customerName
+    return r._customerName
 }
 // Phone Setter
 // 手机号码
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // OtherKey Setter
 // 客户经理编码，如果没有可以不填
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetOtherKey(otherKey string) error {
-    r.otherKey = otherKey
-    r.Set("other_key", otherKey)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetOtherKey(_otherKey string) error {
+    r._otherKey = _otherKey
+    r.Set("other_key", _otherKey)
     return nil
 }
 
 // OtherKey Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetOtherKey() string {
-    return r.otherKey
+    return r._otherKey
 }
 // Ext Setter
 // json类型，Map<String,String>
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // ActivityCode Setter
 // 活动编码
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetActivityCode(activityCode string) error {
-    r.activityCode = activityCode
-    r.Set("activity_code", activityCode)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetActivityCode(_activityCode string) error {
+    r._activityCode = _activityCode
+    r.Set("activity_code", _activityCode)
     return nil
 }
 
 // ActivityCode Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetActivityCode() string {
-    return r.activityCode
+    return r._activityCode
 }
 // Token Setter
 // token，页面获取到的参数
-func (r *AlibabaAliqinOfflineCustomerAddRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaAliqinOfflineCustomerAddRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaAliqinOfflineCustomerAddRequest) GetToken() string {
-    return r.token
+    return r._token
 }

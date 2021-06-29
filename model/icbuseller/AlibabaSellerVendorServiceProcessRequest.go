@@ -15,7 +15,7 @@ alibaba.seller.vendor.service.process
 type AlibabaSellerVendorServiceProcessRequest struct {
     model.Params
     // order_num
-    orderNum   string
+    _orderNum   string
 }
 
 // 初始化AlibabaSellerVendorServiceProcessRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorServiceProcessRequest) GetApiParams() url.Values {
 }
 // OrderNum Setter
 // order_num
-func (r *AlibabaSellerVendorServiceProcessRequest) SetOrderNum(orderNum string) error {
-    r.orderNum = orderNum
-    r.Set("order_num", orderNum)
+func (r *AlibabaSellerVendorServiceProcessRequest) SetOrderNum(_orderNum string) error {
+    r._orderNum = _orderNum
+    r.Set("order_num", _orderNum)
     return nil
 }
 
 // OrderNum Getter
 func (r AlibabaSellerVendorServiceProcessRequest) GetOrderNum() string {
-    return r.orderNum
+    return r._orderNum
 }

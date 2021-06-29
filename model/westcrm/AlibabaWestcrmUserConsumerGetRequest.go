@@ -15,13 +15,13 @@ alibaba.westcrm.user.consumer.get
 type AlibabaWestcrmUserConsumerGetRequest struct {
     model.Params
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 用户id
-    ibUserId   int64
+    _ibUserId   int64
     // 开始时间
-    timeBegin   string
+    _timeBegin   string
     // 结束时间
-    timeEnd   string
+    _timeEnd   string
 }
 
 // 初始化AlibabaWestcrmUserConsumerGetRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWestcrmUserConsumerGetRequest) GetApiParams() url.Values {
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmUserConsumerGetRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmUserConsumerGetRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmUserConsumerGetRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // IbUserId Setter
 // 用户id
-func (r *AlibabaWestcrmUserConsumerGetRequest) SetIbUserId(ibUserId int64) error {
-    r.ibUserId = ibUserId
-    r.Set("ib_user_id", ibUserId)
+func (r *AlibabaWestcrmUserConsumerGetRequest) SetIbUserId(_ibUserId int64) error {
+    r._ibUserId = _ibUserId
+    r.Set("ib_user_id", _ibUserId)
     return nil
 }
 
 // IbUserId Getter
 func (r AlibabaWestcrmUserConsumerGetRequest) GetIbUserId() int64 {
-    return r.ibUserId
+    return r._ibUserId
 }
 // TimeBegin Setter
 // 开始时间
-func (r *AlibabaWestcrmUserConsumerGetRequest) SetTimeBegin(timeBegin string) error {
-    r.timeBegin = timeBegin
-    r.Set("time_begin", timeBegin)
+func (r *AlibabaWestcrmUserConsumerGetRequest) SetTimeBegin(_timeBegin string) error {
+    r._timeBegin = _timeBegin
+    r.Set("time_begin", _timeBegin)
     return nil
 }
 
 // TimeBegin Getter
 func (r AlibabaWestcrmUserConsumerGetRequest) GetTimeBegin() string {
-    return r.timeBegin
+    return r._timeBegin
 }
 // TimeEnd Setter
 // 结束时间
-func (r *AlibabaWestcrmUserConsumerGetRequest) SetTimeEnd(timeEnd string) error {
-    r.timeEnd = timeEnd
-    r.Set("time_end", timeEnd)
+func (r *AlibabaWestcrmUserConsumerGetRequest) SetTimeEnd(_timeEnd string) error {
+    r._timeEnd = _timeEnd
+    r.Set("time_end", _timeEnd)
     return nil
 }
 
 // TimeEnd Getter
 func (r AlibabaWestcrmUserConsumerGetRequest) GetTimeEnd() string {
-    return r.timeEnd
+    return r._timeEnd
 }

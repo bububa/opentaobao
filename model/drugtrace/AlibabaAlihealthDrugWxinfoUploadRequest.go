@@ -15,13 +15,13 @@ alibaba.alihealth.drug.wxinfo.upload
 type AlibabaAlihealthDrugWxinfoUploadRequest struct {
     model.Params
     // 用户信息
-    userInfo   string
+    _userInfo   string
     // 店铺名称
-    shopInfo   string
+    _shopInfo   string
     // 售货员信息
-    salerInfo   string
+    _salerInfo   string
     // 渠道
-    isvChannel   string
+    _isvChannel   string
 }
 
 // 初始化AlibabaAlihealthDrugWxinfoUploadRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugWxinfoUploadRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetUserInfo(userInfo string) error {
-    r.userInfo = userInfo
-    r.Set("user_info", userInfo)
+func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetUserInfo(_userInfo string) error {
+    r._userInfo = _userInfo
+    r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadRequest) GetUserInfo() string {
-    return r.userInfo
+    return r._userInfo
 }
 // ShopInfo Setter
 // 店铺名称
-func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetShopInfo(shopInfo string) error {
-    r.shopInfo = shopInfo
-    r.Set("shop_info", shopInfo)
+func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetShopInfo(_shopInfo string) error {
+    r._shopInfo = _shopInfo
+    r.Set("shop_info", _shopInfo)
     return nil
 }
 
 // ShopInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadRequest) GetShopInfo() string {
-    return r.shopInfo
+    return r._shopInfo
 }
 // SalerInfo Setter
 // 售货员信息
-func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetSalerInfo(salerInfo string) error {
-    r.salerInfo = salerInfo
-    r.Set("saler_info", salerInfo)
+func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetSalerInfo(_salerInfo string) error {
+    r._salerInfo = _salerInfo
+    r.Set("saler_info", _salerInfo)
     return nil
 }
 
 // SalerInfo Getter
 func (r AlibabaAlihealthDrugWxinfoUploadRequest) GetSalerInfo() string {
-    return r.salerInfo
+    return r._salerInfo
 }
 // IsvChannel Setter
 // 渠道
-func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetIsvChannel(isvChannel string) error {
-    r.isvChannel = isvChannel
-    r.Set("isv_channel", isvChannel)
+func (r *AlibabaAlihealthDrugWxinfoUploadRequest) SetIsvChannel(_isvChannel string) error {
+    r._isvChannel = _isvChannel
+    r.Set("isv_channel", _isvChannel)
     return nil
 }
 
 // IsvChannel Getter
 func (r AlibabaAlihealthDrugWxinfoUploadRequest) GetIsvChannel() string {
-    return r.isvChannel
+    return r._isvChannel
 }

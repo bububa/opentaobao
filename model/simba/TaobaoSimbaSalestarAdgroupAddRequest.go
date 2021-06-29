@@ -15,13 +15,13 @@ taobao.simba.salestar.adgroup.add
 type TaobaoSimbaSalestarAdgroupAddRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 商品Id
-    itemId   int64
+    _itemId   int64
     // 创意标题，最多20个汉字
-    title   string
+    _title   string
     // 创意图片地址，必须是商品的图片之一
-    imgUrl   string
+    _imgUrl   string
 }
 
 // 初始化TaobaoSimbaSalestarAdgroupAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaSalestarAdgroupAddRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaSalestarAdgroupAddRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // ItemId Setter
 // 商品Id
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoSimbaSalestarAdgroupAddRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Title Setter
 // 创意标题，最多20个汉字
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoSimbaSalestarAdgroupAddRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // ImgUrl Setter
 // 创意图片地址，必须是商品的图片之一
-func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetImgUrl(imgUrl string) error {
-    r.imgUrl = imgUrl
-    r.Set("img_url", imgUrl)
+func (r *TaobaoSimbaSalestarAdgroupAddRequest) SetImgUrl(_imgUrl string) error {
+    r._imgUrl = _imgUrl
+    r.Set("img_url", _imgUrl)
     return nil
 }
 
 // ImgUrl Getter
 func (r TaobaoSimbaSalestarAdgroupAddRequest) GetImgUrl() string {
-    return r.imgUrl
+    return r._imgUrl
 }

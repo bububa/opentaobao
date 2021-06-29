@@ -15,7 +15,7 @@ alibaba.trade.aliance.create
 type AlibabaTradeAlianceCreateRequest struct {
     model.Params
     // 下单请求
-    paramIsvCreateOrderParam   *IsvCreateOrderParam
+    _paramIsvCreateOrderParam   *IsvCreateOrderParam
 }
 
 // 初始化AlibabaTradeAlianceCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTradeAlianceCreateRequest) GetApiParams() url.Values {
 }
 // ParamIsvCreateOrderParam Setter
 // 下单请求
-func (r *AlibabaTradeAlianceCreateRequest) SetParamIsvCreateOrderParam(paramIsvCreateOrderParam *IsvCreateOrderParam) error {
-    r.paramIsvCreateOrderParam = paramIsvCreateOrderParam
-    r.Set("param_isv_create_order_param", paramIsvCreateOrderParam)
+func (r *AlibabaTradeAlianceCreateRequest) SetParamIsvCreateOrderParam(_paramIsvCreateOrderParam *IsvCreateOrderParam) error {
+    r._paramIsvCreateOrderParam = _paramIsvCreateOrderParam
+    r.Set("param_isv_create_order_param", _paramIsvCreateOrderParam)
     return nil
 }
 
 // ParamIsvCreateOrderParam Getter
 func (r AlibabaTradeAlianceCreateRequest) GetParamIsvCreateOrderParam() *IsvCreateOrderParam {
-    return r.paramIsvCreateOrderParam
+    return r._paramIsvCreateOrderParam
 }

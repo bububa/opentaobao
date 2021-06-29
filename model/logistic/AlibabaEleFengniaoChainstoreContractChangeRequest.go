@@ -15,7 +15,7 @@ alibaba.ele.fengniao.chainstore.contract.change
 type AlibabaEleFengniaoChainstoreContractChangeRequest struct {
     model.Params
     // 系统自动生成
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoChainstoreContractChangeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 系统自动生成
-func (r *AlibabaEleFengniaoChainstoreContractChangeRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoChainstoreContractChangeRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

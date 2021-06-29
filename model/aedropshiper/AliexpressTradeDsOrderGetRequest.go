@@ -15,7 +15,7 @@ aliexpress.trade.ds.order.get
 type AliexpressTradeDsOrderGetRequest struct {
     model.Params
     // 订单查询条件
-    singleOrderQuery   *AeopSingleOrderQuery
+    _singleOrderQuery   *AeopSingleOrderQuery
 }
 
 // 初始化AliexpressTradeDsOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressTradeDsOrderGetRequest) GetApiParams() url.Values {
 }
 // SingleOrderQuery Setter
 // 订单查询条件
-func (r *AliexpressTradeDsOrderGetRequest) SetSingleOrderQuery(singleOrderQuery *AeopSingleOrderQuery) error {
-    r.singleOrderQuery = singleOrderQuery
-    r.Set("single_order_query", singleOrderQuery)
+func (r *AliexpressTradeDsOrderGetRequest) SetSingleOrderQuery(_singleOrderQuery *AeopSingleOrderQuery) error {
+    r._singleOrderQuery = _singleOrderQuery
+    r.Set("single_order_query", _singleOrderQuery)
     return nil
 }
 
 // SingleOrderQuery Getter
 func (r AliexpressTradeDsOrderGetRequest) GetSingleOrderQuery() *AeopSingleOrderQuery {
-    return r.singleOrderQuery
+    return r._singleOrderQuery
 }

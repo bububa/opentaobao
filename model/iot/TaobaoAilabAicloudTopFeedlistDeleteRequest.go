@@ -15,15 +15,15 @@ taobao.ailab.aicloud.top.feedlist.delete
 type TaobaoAilabAicloudTopFeedlistDeleteRequest struct {
     model.Params
     // 扩展信息，用于存放APP类型等
-    ext   string
+    _ext   string
     // 账户体系隔离
-    schema   string
+    _schema   string
     // 用户ID，此处传入第三方账户体系的用户id
-    userId   string
+    _userId   string
     // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-    utdId   string
+    _utdId   string
     // 消息的唯一标识
-    sentenceId   string
+    _sentenceId   string
 }
 
 // 初始化TaobaoAilabAicloudTopFeedlistDeleteRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetApiParams() url.Values {
 }
 // Ext Setter
 // 扩展信息，用于存放APP类型等
-func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // Schema Setter
 // 账户体系隔离
-func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
-func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // SentenceId Setter
 // 消息的唯一标识
-func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetSentenceId(sentenceId string) error {
-    r.sentenceId = sentenceId
-    r.Set("sentence_id", sentenceId)
+func (r *TaobaoAilabAicloudTopFeedlistDeleteRequest) SetSentenceId(_sentenceId string) error {
+    r._sentenceId = _sentenceId
+    r.Set("sentence_id", _sentenceId)
     return nil
 }
 
 // SentenceId Getter
 func (r TaobaoAilabAicloudTopFeedlistDeleteRequest) GetSentenceId() string {
-    return r.sentenceId
+    return r._sentenceId
 }

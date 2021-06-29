@@ -15,31 +15,31 @@ alibaba.einvoice.income.ocr.return
 type AlibabaEinvoiceIncomeOcrReturnRequest struct {
     model.Params
     // 校验码，ocr结果为普票，success=true并且invoiceKind=1时必填
-    checksum   string
+    _checksum   string
     // 错误码，success=false是必填
-    errorCode   string
+    _errorCode   string
     // 错误消息，success=false是必填
-    errorMessage   string
+    _errorMessage   string
     // 发票ocr影像文件，type=1时必填
-    imageData   []*model.File
+    _imageData   []*model.File
     // 发票ocr影像编号，type=1时必填
-    imageId   string
+    _imageId   string
     // 发票代码，success=true时必填
-    invoiceCode   string
+    _invoiceCode   string
     // 开票日期，格式为yyyy-MM-dd，success=true时必填
-    invoiceDate   string
+    _invoiceDate   string
     // 发票种类，1=普票，2=专票，success=true时必填
-    invoiceKind   int64
+    _invoiceKind   int64
     // 发票号码，success=true时必填
-    invoiceNo   string
+    _invoiceNo   string
     // 开票请求标识，扫描驱动回传type=1时填批次号
-    reqIndex   string
+    _reqIndex   string
     // ocr结果，true=成功，false=失败
-    success   bool
+    _success   bool
     // 不含税金额，ocr结果为专票，success=true并且invoiceKind=2时必填
-    sumPrice   string
+    _sumPrice   string
     // 请求类型，0=阿里主动发起的cor，1=扫描驱动服务商主动回传ocr结果
-    type   int64
+    _type   int64
 }
 
 // 初始化AlibabaEinvoiceIncomeOcrReturnRequest对象
@@ -64,157 +64,157 @@ func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetApiParams() url.Values {
 }
 // Checksum Setter
 // 校验码，ocr结果为普票，success=true并且invoiceKind=1时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetChecksum(checksum string) error {
-    r.checksum = checksum
-    r.Set("checksum", checksum)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetChecksum(_checksum string) error {
+    r._checksum = _checksum
+    r.Set("checksum", _checksum)
     return nil
 }
 
 // Checksum Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetChecksum() string {
-    return r.checksum
+    return r._checksum
 }
 // ErrorCode Setter
 // 错误码，success=false是必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetErrorCode(errorCode string) error {
-    r.errorCode = errorCode
-    r.Set("error_code", errorCode)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetErrorCode(_errorCode string) error {
+    r._errorCode = _errorCode
+    r.Set("error_code", _errorCode)
     return nil
 }
 
 // ErrorCode Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetErrorCode() string {
-    return r.errorCode
+    return r._errorCode
 }
 // ErrorMessage Setter
 // 错误消息，success=false是必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetErrorMessage(errorMessage string) error {
-    r.errorMessage = errorMessage
-    r.Set("error_message", errorMessage)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetErrorMessage(_errorMessage string) error {
+    r._errorMessage = _errorMessage
+    r.Set("error_message", _errorMessage)
     return nil
 }
 
 // ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetErrorMessage() string {
-    return r.errorMessage
+    return r._errorMessage
 }
 // ImageData Setter
 // 发票ocr影像文件，type=1时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageData(imageData []*model.File) error {
-    r.imageData = imageData
-    r.Set("image_data", imageData)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageData(_imageData []*model.File) error {
+    r._imageData = _imageData
+    r.Set("image_data", _imageData)
     return nil
 }
 
 // ImageData Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetImageData() []*model.File {
-    return r.imageData
+    return r._imageData
 }
 // ImageId Setter
 // 发票ocr影像编号，type=1时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageId(imageId string) error {
-    r.imageId = imageId
-    r.Set("image_id", imageId)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetImageId(_imageId string) error {
+    r._imageId = _imageId
+    r.Set("image_id", _imageId)
     return nil
 }
 
 // ImageId Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetImageId() string {
-    return r.imageId
+    return r._imageId
 }
 // InvoiceCode Setter
 // 发票代码，success=true时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceCode(invoiceCode string) error {
-    r.invoiceCode = invoiceCode
-    r.Set("invoice_code", invoiceCode)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceCode(_invoiceCode string) error {
+    r._invoiceCode = _invoiceCode
+    r.Set("invoice_code", _invoiceCode)
     return nil
 }
 
 // InvoiceCode Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetInvoiceCode() string {
-    return r.invoiceCode
+    return r._invoiceCode
 }
 // InvoiceDate Setter
 // 开票日期，格式为yyyy-MM-dd，success=true时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceDate(invoiceDate string) error {
-    r.invoiceDate = invoiceDate
-    r.Set("invoice_date", invoiceDate)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceDate(_invoiceDate string) error {
+    r._invoiceDate = _invoiceDate
+    r.Set("invoice_date", _invoiceDate)
     return nil
 }
 
 // InvoiceDate Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetInvoiceDate() string {
-    return r.invoiceDate
+    return r._invoiceDate
 }
 // InvoiceKind Setter
 // 发票种类，1=普票，2=专票，success=true时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceKind(invoiceKind int64) error {
-    r.invoiceKind = invoiceKind
-    r.Set("invoice_kind", invoiceKind)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceKind(_invoiceKind int64) error {
+    r._invoiceKind = _invoiceKind
+    r.Set("invoice_kind", _invoiceKind)
     return nil
 }
 
 // InvoiceKind Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetInvoiceKind() int64 {
-    return r.invoiceKind
+    return r._invoiceKind
 }
 // InvoiceNo Setter
 // 发票号码，success=true时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceNo(invoiceNo string) error {
-    r.invoiceNo = invoiceNo
-    r.Set("invoice_no", invoiceNo)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetInvoiceNo(_invoiceNo string) error {
+    r._invoiceNo = _invoiceNo
+    r.Set("invoice_no", _invoiceNo)
     return nil
 }
 
 // InvoiceNo Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetInvoiceNo() string {
-    return r.invoiceNo
+    return r._invoiceNo
 }
 // ReqIndex Setter
 // 开票请求标识，扫描驱动回传type=1时填批次号
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetReqIndex(reqIndex string) error {
-    r.reqIndex = reqIndex
-    r.Set("req_index", reqIndex)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetReqIndex(_reqIndex string) error {
+    r._reqIndex = _reqIndex
+    r.Set("req_index", _reqIndex)
     return nil
 }
 
 // ReqIndex Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetReqIndex() string {
-    return r.reqIndex
+    return r._reqIndex
 }
 // Success Setter
 // ocr结果，true=成功，false=失败
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetSuccess(success bool) error {
-    r.success = success
-    r.Set("success", success)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetSuccess(_success bool) error {
+    r._success = _success
+    r.Set("success", _success)
     return nil
 }
 
 // Success Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetSuccess() bool {
-    return r.success
+    return r._success
 }
 // SumPrice Setter
 // 不含税金额，ocr结果为专票，success=true并且invoiceKind=2时必填
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetSumPrice(sumPrice string) error {
-    r.sumPrice = sumPrice
-    r.Set("sum_price", sumPrice)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetSumPrice(_sumPrice string) error {
+    r._sumPrice = _sumPrice
+    r.Set("sum_price", _sumPrice)
     return nil
 }
 
 // SumPrice Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetSumPrice() string {
-    return r.sumPrice
+    return r._sumPrice
 }
 // Type Setter
 // 请求类型，0=阿里主动发起的cor，1=扫描驱动服务商主动回传ocr结果
-func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaEinvoiceIncomeOcrReturnRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaEinvoiceIncomeOcrReturnRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

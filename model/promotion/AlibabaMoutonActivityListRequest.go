@@ -15,23 +15,23 @@ alibaba.mouton.activity.list
 type AlibabaMoutonActivityListRequest struct {
     model.Params
     // 开始时间
-    startTimeEnd   string
+    _startTimeEnd   string
     // 每页记录数
-    pageSize   int64
+    _pageSize   int64
     // 来源
-    source   string
+    _source   string
     // 开始时间
-    startTimeBegin   string
+    _startTimeBegin   string
     // 结束时间
-    endTimeBegin   string
+    _endTimeBegin   string
     // 结束时间
-    endTimeEnd   string
+    _endTimeEnd   string
     // 来源记录id
-    sourceRecordId   int64
+    _sourceRecordId   int64
     // 状态
-    statusList   []string
+    _statusList   []string
     // 当前页
-    currentPage   int64
+    _currentPage   int64
 }
 
 // 初始化AlibabaMoutonActivityListRequest对象
@@ -56,109 +56,109 @@ func (r AlibabaMoutonActivityListRequest) GetApiParams() url.Values {
 }
 // StartTimeEnd Setter
 // 开始时间
-func (r *AlibabaMoutonActivityListRequest) SetStartTimeEnd(startTimeEnd string) error {
-    r.startTimeEnd = startTimeEnd
-    r.Set("start_time_end", startTimeEnd)
+func (r *AlibabaMoutonActivityListRequest) SetStartTimeEnd(_startTimeEnd string) error {
+    r._startTimeEnd = _startTimeEnd
+    r.Set("start_time_end", _startTimeEnd)
     return nil
 }
 
 // StartTimeEnd Getter
 func (r AlibabaMoutonActivityListRequest) GetStartTimeEnd() string {
-    return r.startTimeEnd
+    return r._startTimeEnd
 }
 // PageSize Setter
 // 每页记录数
-func (r *AlibabaMoutonActivityListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaMoutonActivityListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaMoutonActivityListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Source Setter
 // 来源
-func (r *AlibabaMoutonActivityListRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaMoutonActivityListRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaMoutonActivityListRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // StartTimeBegin Setter
 // 开始时间
-func (r *AlibabaMoutonActivityListRequest) SetStartTimeBegin(startTimeBegin string) error {
-    r.startTimeBegin = startTimeBegin
-    r.Set("start_time_begin", startTimeBegin)
+func (r *AlibabaMoutonActivityListRequest) SetStartTimeBegin(_startTimeBegin string) error {
+    r._startTimeBegin = _startTimeBegin
+    r.Set("start_time_begin", _startTimeBegin)
     return nil
 }
 
 // StartTimeBegin Getter
 func (r AlibabaMoutonActivityListRequest) GetStartTimeBegin() string {
-    return r.startTimeBegin
+    return r._startTimeBegin
 }
 // EndTimeBegin Setter
 // 结束时间
-func (r *AlibabaMoutonActivityListRequest) SetEndTimeBegin(endTimeBegin string) error {
-    r.endTimeBegin = endTimeBegin
-    r.Set("end_time_begin", endTimeBegin)
+func (r *AlibabaMoutonActivityListRequest) SetEndTimeBegin(_endTimeBegin string) error {
+    r._endTimeBegin = _endTimeBegin
+    r.Set("end_time_begin", _endTimeBegin)
     return nil
 }
 
 // EndTimeBegin Getter
 func (r AlibabaMoutonActivityListRequest) GetEndTimeBegin() string {
-    return r.endTimeBegin
+    return r._endTimeBegin
 }
 // EndTimeEnd Setter
 // 结束时间
-func (r *AlibabaMoutonActivityListRequest) SetEndTimeEnd(endTimeEnd string) error {
-    r.endTimeEnd = endTimeEnd
-    r.Set("end_time_end", endTimeEnd)
+func (r *AlibabaMoutonActivityListRequest) SetEndTimeEnd(_endTimeEnd string) error {
+    r._endTimeEnd = _endTimeEnd
+    r.Set("end_time_end", _endTimeEnd)
     return nil
 }
 
 // EndTimeEnd Getter
 func (r AlibabaMoutonActivityListRequest) GetEndTimeEnd() string {
-    return r.endTimeEnd
+    return r._endTimeEnd
 }
 // SourceRecordId Setter
 // 来源记录id
-func (r *AlibabaMoutonActivityListRequest) SetSourceRecordId(sourceRecordId int64) error {
-    r.sourceRecordId = sourceRecordId
-    r.Set("source_record_id", sourceRecordId)
+func (r *AlibabaMoutonActivityListRequest) SetSourceRecordId(_sourceRecordId int64) error {
+    r._sourceRecordId = _sourceRecordId
+    r.Set("source_record_id", _sourceRecordId)
     return nil
 }
 
 // SourceRecordId Getter
 func (r AlibabaMoutonActivityListRequest) GetSourceRecordId() int64 {
-    return r.sourceRecordId
+    return r._sourceRecordId
 }
 // StatusList Setter
 // 状态
-func (r *AlibabaMoutonActivityListRequest) SetStatusList(statusList []string) error {
-    r.statusList = statusList
-    r.Set("status_list", statusList)
+func (r *AlibabaMoutonActivityListRequest) SetStatusList(_statusList []string) error {
+    r._statusList = _statusList
+    r.Set("status_list", _statusList)
     return nil
 }
 
 // StatusList Getter
 func (r AlibabaMoutonActivityListRequest) GetStatusList() []string {
-    return r.statusList
+    return r._statusList
 }
 // CurrentPage Setter
 // 当前页
-func (r *AlibabaMoutonActivityListRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaMoutonActivityListRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaMoutonActivityListRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }

@@ -15,9 +15,9 @@ alibaba.alihealth.drug.download.fileacceptret
 type AlibabaAlihealthDrugDownloadFileacceptretRequest struct {
     model.Params
     // appKey
-    appKeyN   string
+    _appKeyN   string
     // fileResultJson
-    fileResultJson   string
+    _fileResultJson   string
 }
 
 // 初始化AlibabaAlihealthDrugDownloadFileacceptretRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugDownloadFileacceptretRequest) GetApiParams() url.Val
 }
 // AppKeyN Setter
 // appKey
-func (r *AlibabaAlihealthDrugDownloadFileacceptretRequest) SetAppKeyN(appKeyN string) error {
-    r.appKeyN = appKeyN
-    r.Set("app_key_n", appKeyN)
+func (r *AlibabaAlihealthDrugDownloadFileacceptretRequest) SetAppKeyN(_appKeyN string) error {
+    r._appKeyN = _appKeyN
+    r.Set("app_key_n", _appKeyN)
     return nil
 }
 
 // AppKeyN Getter
 func (r AlibabaAlihealthDrugDownloadFileacceptretRequest) GetAppKeyN() string {
-    return r.appKeyN
+    return r._appKeyN
 }
 // FileResultJson Setter
 // fileResultJson
-func (r *AlibabaAlihealthDrugDownloadFileacceptretRequest) SetFileResultJson(fileResultJson string) error {
-    r.fileResultJson = fileResultJson
-    r.Set("file_result_json", fileResultJson)
+func (r *AlibabaAlihealthDrugDownloadFileacceptretRequest) SetFileResultJson(_fileResultJson string) error {
+    r._fileResultJson = _fileResultJson
+    r.Set("file_result_json", _fileResultJson)
     return nil
 }
 
 // FileResultJson Getter
 func (r AlibabaAlihealthDrugDownloadFileacceptretRequest) GetFileResultJson() string {
-    return r.fileResultJson
+    return r._fileResultJson
 }

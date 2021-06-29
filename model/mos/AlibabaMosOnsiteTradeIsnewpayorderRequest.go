@@ -15,7 +15,7 @@ alibaba.mos.onsite.trade.isnewpayorder
 type AlibabaMosOnsiteTradeIsnewpayorderRequest struct {
     model.Params
     // 外部订单号
-    outTradeNo   string
+    _outTradeNo   string
 }
 
 // 初始化AlibabaMosOnsiteTradeIsnewpayorderRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosOnsiteTradeIsnewpayorderRequest) GetApiParams() url.Values {
 }
 // OutTradeNo Setter
 // 外部订单号
-func (r *AlibabaMosOnsiteTradeIsnewpayorderRequest) SetOutTradeNo(outTradeNo string) error {
-    r.outTradeNo = outTradeNo
-    r.Set("out_trade_no", outTradeNo)
+func (r *AlibabaMosOnsiteTradeIsnewpayorderRequest) SetOutTradeNo(_outTradeNo string) error {
+    r._outTradeNo = _outTradeNo
+    r.Set("out_trade_no", _outTradeNo)
     return nil
 }
 
 // OutTradeNo Getter
 func (r AlibabaMosOnsiteTradeIsnewpayorderRequest) GetOutTradeNo() string {
-    return r.outTradeNo
+    return r._outTradeNo
 }

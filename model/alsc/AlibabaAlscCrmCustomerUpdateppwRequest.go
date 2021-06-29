@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.updateppw
 type AlibabaAlscCrmCustomerUpdateppwRequest struct {
     model.Params
     // 修改密码
-    updatePayPasswdReq   *UpdatePayPasswdReq
+    _updatePayPasswdReq   *UpdatePayPasswdReq
 }
 
 // 初始化AlibabaAlscCrmCustomerUpdateppwRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerUpdateppwRequest) GetApiParams() url.Values {
 }
 // UpdatePayPasswdReq Setter
 // 修改密码
-func (r *AlibabaAlscCrmCustomerUpdateppwRequest) SetUpdatePayPasswdReq(updatePayPasswdReq *UpdatePayPasswdReq) error {
-    r.updatePayPasswdReq = updatePayPasswdReq
-    r.Set("update_pay_passwd_req", updatePayPasswdReq)
+func (r *AlibabaAlscCrmCustomerUpdateppwRequest) SetUpdatePayPasswdReq(_updatePayPasswdReq *UpdatePayPasswdReq) error {
+    r._updatePayPasswdReq = _updatePayPasswdReq
+    r.Set("update_pay_passwd_req", _updatePayPasswdReq)
     return nil
 }
 
 // UpdatePayPasswdReq Getter
 func (r AlibabaAlscCrmCustomerUpdateppwRequest) GetUpdatePayPasswdReq() *UpdatePayPasswdReq {
-    return r.updatePayPasswdReq
+    return r._updatePayPasswdReq
 }

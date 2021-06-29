@@ -15,11 +15,11 @@ tmall.servicecenter.workcard.signin
 type TmallServicecenterWorkcardSigninRequest struct {
     model.Params
     // 核销单外部id
-    outerId   string
+    _outerId   string
     // 工单id
-    workcardId   int64
+    _workcardId   int64
     // 核销单id
-    fulfilTaskId   int64
+    _fulfilTaskId   int64
 }
 
 // 初始化TmallServicecenterWorkcardSigninRequest对象
@@ -44,37 +44,37 @@ func (r TmallServicecenterWorkcardSigninRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 核销单外部id
-func (r *TmallServicecenterWorkcardSigninRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TmallServicecenterWorkcardSigninRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TmallServicecenterWorkcardSigninRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardSigninRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardSigninRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardSigninRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }
 // FulfilTaskId Setter
 // 核销单id
-func (r *TmallServicecenterWorkcardSigninRequest) SetFulfilTaskId(fulfilTaskId int64) error {
-    r.fulfilTaskId = fulfilTaskId
-    r.Set("fulfil_task_id", fulfilTaskId)
+func (r *TmallServicecenterWorkcardSigninRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+    r._fulfilTaskId = _fulfilTaskId
+    r.Set("fulfil_task_id", _fulfilTaskId)
     return nil
 }
 
 // FulfilTaskId Getter
 func (r TmallServicecenterWorkcardSigninRequest) GetFulfilTaskId() int64 {
-    return r.fulfilTaskId
+    return r._fulfilTaskId
 }

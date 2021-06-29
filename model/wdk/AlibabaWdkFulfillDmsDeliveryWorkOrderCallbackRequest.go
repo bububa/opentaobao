@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.dms.delivery.work.order.callback
 type AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *DeliveryCallbackOrder
+    _callbackOrder   *DeliveryCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetApiParams() url
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *DeliveryCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *DeliveryCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillDmsDeliveryWorkOrderCallbackRequest) GetCallbackOrder() *DeliveryCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

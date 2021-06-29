@@ -15,7 +15,7 @@ iot设备列表变化接口
 type YoukuOttIotDevicelistChangeRequest struct {
     model.Params
     // 变更信息
-    changeInfo   string
+    _changeInfo   string
 }
 
 // 初始化YoukuOttIotDevicelistChangeRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttIotDevicelistChangeRequest) GetApiParams() url.Values {
 }
 // ChangeInfo Setter
 // 变更信息
-func (r *YoukuOttIotDevicelistChangeRequest) SetChangeInfo(changeInfo string) error {
-    r.changeInfo = changeInfo
-    r.Set("change_info", changeInfo)
+func (r *YoukuOttIotDevicelistChangeRequest) SetChangeInfo(_changeInfo string) error {
+    r._changeInfo = _changeInfo
+    r.Set("change_info", _changeInfo)
     return nil
 }
 
 // ChangeInfo Getter
 func (r YoukuOttIotDevicelistChangeRequest) GetChangeInfo() string {
-    return r.changeInfo
+    return r._changeInfo
 }

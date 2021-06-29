@@ -15,7 +15,7 @@ alibaba.ascp.channel.main.refund.create
 type AlibabaAscpChannelMainRefundCreateRequest struct {
     model.Params
     // 逆向单创建请求
-    refundCreateRequest   *ExternalCreateRefundOrderRequest
+    _refundCreateRequest   *ExternalCreateRefundOrderRequest
 }
 
 // 初始化AlibabaAscpChannelMainRefundCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelMainRefundCreateRequest) GetApiParams() url.Values {
 }
 // RefundCreateRequest Setter
 // 逆向单创建请求
-func (r *AlibabaAscpChannelMainRefundCreateRequest) SetRefundCreateRequest(refundCreateRequest *ExternalCreateRefundOrderRequest) error {
-    r.refundCreateRequest = refundCreateRequest
-    r.Set("refund_create_request", refundCreateRequest)
+func (r *AlibabaAscpChannelMainRefundCreateRequest) SetRefundCreateRequest(_refundCreateRequest *ExternalCreateRefundOrderRequest) error {
+    r._refundCreateRequest = _refundCreateRequest
+    r.Set("refund_create_request", _refundCreateRequest)
     return nil
 }
 
 // RefundCreateRequest Getter
 func (r AlibabaAscpChannelMainRefundCreateRequest) GetRefundCreateRequest() *ExternalCreateRefundOrderRequest {
-    return r.refundCreateRequest
+    return r._refundCreateRequest
 }

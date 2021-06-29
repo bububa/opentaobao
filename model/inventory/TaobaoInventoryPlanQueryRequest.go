@@ -15,7 +15,7 @@ taobao.inventory.plan.query
 type TaobaoInventoryPlanQueryRequest struct {
     model.Params
     // 计划库存查询入参
-    param   *InvUnifyPlanTopQuerys
+    _param   *InvUnifyPlanTopQuerys
 }
 
 // 初始化TaobaoInventoryPlanQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 计划库存查询入参
-func (r *TaobaoInventoryPlanQueryRequest) SetParam(param *InvUnifyPlanTopQuerys) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoInventoryPlanQueryRequest) SetParam(_param *InvUnifyPlanTopQuerys) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoInventoryPlanQueryRequest) GetParam() *InvUnifyPlanTopQuerys {
-    return r.param
+    return r._param
 }

@@ -15,13 +15,13 @@ dsp托管创意新增接口
 type TaobaoTanxAuditDepositcreativeAddRequest struct {
     model.Params
     // DSP的memberId
-    memberId   int64
+    _memberId   int64
     // dsp用户身份认证的TOKEN
-    token   string
+    _token   string
     // 当前时间戳，1970-01-01后的秒数
-    signTime   int64
+    _signTime   int64
     // 托管创意信息
-    creative   *CreativeInfoDTO
+    _creative   *CreativeInfoDTO
 }
 
 // 初始化TaobaoTanxAuditDepositcreativeAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTanxAuditDepositcreativeAddRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // DSP的memberId
-func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxAuditDepositcreativeAddRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp用户身份认证的TOKEN
-func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxAuditDepositcreativeAddRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 当前时间戳，1970-01-01后的秒数
-func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxAuditDepositcreativeAddRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // Creative Setter
 // 托管创意信息
-func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetCreative(creative *CreativeInfoDTO) error {
-    r.creative = creative
-    r.Set("creative", creative)
+func (r *TaobaoTanxAuditDepositcreativeAddRequest) SetCreative(_creative *CreativeInfoDTO) error {
+    r._creative = _creative
+    r.Set("creative", _creative)
     return nil
 }
 
 // Creative Getter
 func (r TaobaoTanxAuditDepositcreativeAddRequest) GetCreative() *CreativeInfoDTO {
-    return r.creative
+    return r._creative
 }

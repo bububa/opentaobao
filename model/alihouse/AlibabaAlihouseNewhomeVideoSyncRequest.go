@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.video.sync
 type AlibabaAlihouseNewhomeVideoSyncRequest struct {
     model.Params
     // 草稿对下
-    video   *VideoDraftDto
+    _video   *VideoDraftDto
 }
 
 // 初始化AlibabaAlihouseNewhomeVideoSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeVideoSyncRequest) GetApiParams() url.Values {
 }
 // Video Setter
 // 草稿对下
-func (r *AlibabaAlihouseNewhomeVideoSyncRequest) SetVideo(video *VideoDraftDto) error {
-    r.video = video
-    r.Set("video", video)
+func (r *AlibabaAlihouseNewhomeVideoSyncRequest) SetVideo(_video *VideoDraftDto) error {
+    r._video = _video
+    r.Set("video", _video)
     return nil
 }
 
 // Video Getter
 func (r AlibabaAlihouseNewhomeVideoSyncRequest) GetVideo() *VideoDraftDto {
-    return r.video
+    return r._video
 }

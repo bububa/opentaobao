@@ -15,7 +15,7 @@ alibaba.legal.suit.judgement.get
 type AlibabaLegalSuitJudgementGetRequest struct {
     model.Params
     // 案件id
-    suitId   int64
+    _suitId   int64
 }
 
 // 初始化AlibabaLegalSuitJudgementGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitJudgementGetRequest) GetApiParams() url.Values {
 }
 // SuitId Setter
 // 案件id
-func (r *AlibabaLegalSuitJudgementGetRequest) SetSuitId(suitId int64) error {
-    r.suitId = suitId
-    r.Set("suit_id", suitId)
+func (r *AlibabaLegalSuitJudgementGetRequest) SetSuitId(_suitId int64) error {
+    r._suitId = _suitId
+    r.Set("suit_id", _suitId)
     return nil
 }
 
 // SuitId Getter
 func (r AlibabaLegalSuitJudgementGetRequest) GetSuitId() int64 {
-    return r.suitId
+    return r._suitId
 }

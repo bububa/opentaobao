@@ -15,7 +15,7 @@ alibaba.alicom.order.preauthorize.query.fund
 type AlibabaAlicomOrderPreauthorizeQueryFundRequest struct {
     model.Params
     // 入参
-    preAuthorizeModel   *PreAuthorizeModel
+    _preAuthorizeModel   *PreAuthorizeModel
 }
 
 // 初始化AlibabaAlicomOrderPreauthorizeQueryFundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetApiParams() url.Value
 }
 // PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderPreauthorizeQueryFundRequest) SetPreAuthorizeModel(preAuthorizeModel *PreAuthorizeModel) error {
-    r.preAuthorizeModel = preAuthorizeModel
-    r.Set("pre_authorize_model", preAuthorizeModel)
+func (r *AlibabaAlicomOrderPreauthorizeQueryFundRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+    r._preAuthorizeModel = _preAuthorizeModel
+    r.Set("pre_authorize_model", _preAuthorizeModel)
     return nil
 }
 
 // PreAuthorizeModel Getter
 func (r AlibabaAlicomOrderPreauthorizeQueryFundRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
-    return r.preAuthorizeModel
+    return r._preAuthorizeModel
 }

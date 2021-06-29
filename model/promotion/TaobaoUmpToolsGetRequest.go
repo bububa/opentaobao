@@ -15,7 +15,7 @@ taobao.ump.tools.get
 type TaobaoUmpToolsGetRequest struct {
     model.Params
     // 工具编码
-    toolCode   string
+    _toolCode   string
 }
 
 // 初始化TaobaoUmpToolsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpToolsGetRequest) GetApiParams() url.Values {
 }
 // ToolCode Setter
 // 工具编码
-func (r *TaobaoUmpToolsGetRequest) SetToolCode(toolCode string) error {
-    r.toolCode = toolCode
-    r.Set("tool_code", toolCode)
+func (r *TaobaoUmpToolsGetRequest) SetToolCode(_toolCode string) error {
+    r._toolCode = _toolCode
+    r.Set("tool_code", _toolCode)
     return nil
 }
 
 // ToolCode Getter
 func (r TaobaoUmpToolsGetRequest) GetToolCode() string {
-    return r.toolCode
+    return r._toolCode
 }

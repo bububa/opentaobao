@@ -15,13 +15,13 @@ taobao.tmallgenie.hotelwelcome
 type TaobaoTmallgenieHotelwelcomeRequest struct {
     model.Params
     // 房间号
-    roomNo   string
+    _roomNo   string
     // 酒店ID
-    hotelId   int64
+    _hotelId   int64
     // 模板ID
-    templateId   string
+    _templateId   string
     // 模板变量
-    templateVariable   string
+    _templateVariable   string
 }
 
 // 初始化TaobaoTmallgenieHotelwelcomeRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTmallgenieHotelwelcomeRequest) GetApiParams() url.Values {
 }
 // RoomNo Setter
 // 房间号
-func (r *TaobaoTmallgenieHotelwelcomeRequest) SetRoomNo(roomNo string) error {
-    r.roomNo = roomNo
-    r.Set("room_no", roomNo)
+func (r *TaobaoTmallgenieHotelwelcomeRequest) SetRoomNo(_roomNo string) error {
+    r._roomNo = _roomNo
+    r.Set("room_no", _roomNo)
     return nil
 }
 
 // RoomNo Getter
 func (r TaobaoTmallgenieHotelwelcomeRequest) GetRoomNo() string {
-    return r.roomNo
+    return r._roomNo
 }
 // HotelId Setter
 // 酒店ID
-func (r *TaobaoTmallgenieHotelwelcomeRequest) SetHotelId(hotelId int64) error {
-    r.hotelId = hotelId
-    r.Set("hotel_id", hotelId)
+func (r *TaobaoTmallgenieHotelwelcomeRequest) SetHotelId(_hotelId int64) error {
+    r._hotelId = _hotelId
+    r.Set("hotel_id", _hotelId)
     return nil
 }
 
 // HotelId Getter
 func (r TaobaoTmallgenieHotelwelcomeRequest) GetHotelId() int64 {
-    return r.hotelId
+    return r._hotelId
 }
 // TemplateId Setter
 // 模板ID
-func (r *TaobaoTmallgenieHotelwelcomeRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoTmallgenieHotelwelcomeRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoTmallgenieHotelwelcomeRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }
 // TemplateVariable Setter
 // 模板变量
-func (r *TaobaoTmallgenieHotelwelcomeRequest) SetTemplateVariable(templateVariable string) error {
-    r.templateVariable = templateVariable
-    r.Set("template_variable", templateVariable)
+func (r *TaobaoTmallgenieHotelwelcomeRequest) SetTemplateVariable(_templateVariable string) error {
+    r._templateVariable = _templateVariable
+    r.Set("template_variable", _templateVariable)
     return nil
 }
 
 // TemplateVariable Getter
 func (r TaobaoTmallgenieHotelwelcomeRequest) GetTemplateVariable() string {
-    return r.templateVariable
+    return r._templateVariable
 }

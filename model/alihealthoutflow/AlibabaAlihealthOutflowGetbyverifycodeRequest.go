@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.getbyverifycode
 type AlibabaAlihealthOutflowGetbyverifycodeRequest struct {
     model.Params
     // 入参
-    prescriptionGetByVerifyRequest   *PrescriptionGetByVerifyRequest
+    _prescriptionGetByVerifyRequest   *PrescriptionGetByVerifyRequest
 }
 
 // 初始化AlibabaAlihealthOutflowGetbyverifycodeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetApiParams() url.Values
 }
 // PrescriptionGetByVerifyRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowGetbyverifycodeRequest) SetPrescriptionGetByVerifyRequest(prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest) error {
-    r.prescriptionGetByVerifyRequest = prescriptionGetByVerifyRequest
-    r.Set("prescription_get_by_verify_request", prescriptionGetByVerifyRequest)
+func (r *AlibabaAlihealthOutflowGetbyverifycodeRequest) SetPrescriptionGetByVerifyRequest(_prescriptionGetByVerifyRequest *PrescriptionGetByVerifyRequest) error {
+    r._prescriptionGetByVerifyRequest = _prescriptionGetByVerifyRequest
+    r.Set("prescription_get_by_verify_request", _prescriptionGetByVerifyRequest)
     return nil
 }
 
 // PrescriptionGetByVerifyRequest Getter
 func (r AlibabaAlihealthOutflowGetbyverifycodeRequest) GetPrescriptionGetByVerifyRequest() *PrescriptionGetByVerifyRequest {
-    return r.prescriptionGetByVerifyRequest
+    return r._prescriptionGetByVerifyRequest
 }

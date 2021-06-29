@@ -15,7 +15,7 @@ xiami.content.songs.audio.getrefrain
 type XiamiContentSongsAudioGetrefrainRequest struct {
     model.Params
     // 歌曲ID
-    songIds   []int64
+    _songIds   []int64
 }
 
 // 初始化XiamiContentSongsAudioGetrefrainRequest对象
@@ -40,13 +40,13 @@ func (r XiamiContentSongsAudioGetrefrainRequest) GetApiParams() url.Values {
 }
 // SongIds Setter
 // 歌曲ID
-func (r *XiamiContentSongsAudioGetrefrainRequest) SetSongIds(songIds []int64) error {
-    r.songIds = songIds
-    r.Set("song_ids", songIds)
+func (r *XiamiContentSongsAudioGetrefrainRequest) SetSongIds(_songIds []int64) error {
+    r._songIds = _songIds
+    r.Set("song_ids", _songIds)
     return nil
 }
 
 // SongIds Getter
 func (r XiamiContentSongsAudioGetrefrainRequest) GetSongIds() []int64 {
-    return r.songIds
+    return r._songIds
 }

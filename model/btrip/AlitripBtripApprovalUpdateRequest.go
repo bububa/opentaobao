@@ -15,7 +15,7 @@ alitrip.btrip.approval.update
 type AlitripBtripApprovalUpdateRequest struct {
     model.Params
     // 审批请求对象
-    approveApplyRequest   *OpenApproveApplyRq
+    _approveApplyRequest   *OpenApproveApplyRq
 }
 
 // 初始化AlitripBtripApprovalUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripApprovalUpdateRequest) GetApiParams() url.Values {
 }
 // ApproveApplyRequest Setter
 // 审批请求对象
-func (r *AlitripBtripApprovalUpdateRequest) SetApproveApplyRequest(approveApplyRequest *OpenApproveApplyRq) error {
-    r.approveApplyRequest = approveApplyRequest
-    r.Set("approve_apply_request", approveApplyRequest)
+func (r *AlitripBtripApprovalUpdateRequest) SetApproveApplyRequest(_approveApplyRequest *OpenApproveApplyRq) error {
+    r._approveApplyRequest = _approveApplyRequest
+    r.Set("approve_apply_request", _approveApplyRequest)
     return nil
 }
 
 // ApproveApplyRequest Getter
 func (r AlitripBtripApprovalUpdateRequest) GetApproveApplyRequest() *OpenApproveApplyRq {
-    return r.approveApplyRequest
+    return r._approveApplyRequest
 }

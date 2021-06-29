@@ -15,7 +15,7 @@ alibaba.alihealth.drugcode.drugfactory.exportcategory
 type AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest) GetApiParams()
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryExportcategoryRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

@@ -15,7 +15,7 @@ cainiao.global.logistics.carrier.querylist
 type CainiaoGlobalLogisticsCarrierQuerylistRequest struct {
     model.Params
     // 多语言(暂不支持，保留入参)
-    locale   string
+    _locale   string
 }
 
 // 初始化CainiaoGlobalLogisticsCarrierQuerylistRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoGlobalLogisticsCarrierQuerylistRequest) GetApiParams() url.Values
 }
 // Locale Setter
 // 多语言(暂不支持，保留入参)
-func (r *CainiaoGlobalLogisticsCarrierQuerylistRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *CainiaoGlobalLogisticsCarrierQuerylistRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r CainiaoGlobalLogisticsCarrierQuerylistRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }

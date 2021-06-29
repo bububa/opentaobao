@@ -15,7 +15,7 @@ alibaba.scbp.target.ad.plan.tag.get
 type AlibabaScbpTargetAdPlanTagGetRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
 }
 
 // 初始化AlibabaScbpTargetAdPlanTagGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanTagGetRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *AlibabaScbpTargetAdPlanTagGetRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpTargetAdPlanTagGetRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpTargetAdPlanTagGetRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }

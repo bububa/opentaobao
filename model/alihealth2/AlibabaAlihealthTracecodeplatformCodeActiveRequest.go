@@ -15,13 +15,13 @@ alibaba.alihealth.tracecodeplatform.code.active
 type AlibabaAlihealthTracecodeplatformCodeActiveRequest struct {
     model.Params
     // 文件信息（对文件内容16进制编码）
-    fileInfo   string
+    _fileInfo   string
     // 回调url
-    callbackUrl   string
+    _callbackUrl   string
     // 文件名
-    fileName   string
+    _fileName   string
     // 商品id
-    prodId   int64
+    _prodId   int64
 }
 
 // 初始化AlibabaAlihealthTracecodeplatformCodeActiveRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthTracecodeplatformCodeActiveRequest) GetApiParams() url.V
 }
 // FileInfo Setter
 // 文件信息（对文件内容16进制编码）
-func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetFileInfo(fileInfo string) error {
-    r.fileInfo = fileInfo
-    r.Set("file_info", fileInfo)
+func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetFileInfo(_fileInfo string) error {
+    r._fileInfo = _fileInfo
+    r.Set("file_info", _fileInfo)
     return nil
 }
 
 // FileInfo Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveRequest) GetFileInfo() string {
-    return r.fileInfo
+    return r._fileInfo
 }
 // CallbackUrl Setter
 // 回调url
-func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // FileName Setter
 // 文件名
-func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // ProdId Setter
 // 商品id
-func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetProdId(prodId int64) error {
-    r.prodId = prodId
-    r.Set("prod_id", prodId)
+func (r *AlibabaAlihealthTracecodeplatformCodeActiveRequest) SetProdId(_prodId int64) error {
+    r._prodId = _prodId
+    r.Set("prod_id", _prodId)
     return nil
 }
 
 // ProdId Getter
 func (r AlibabaAlihealthTracecodeplatformCodeActiveRequest) GetProdId() int64 {
-    return r.prodId
+    return r._prodId
 }

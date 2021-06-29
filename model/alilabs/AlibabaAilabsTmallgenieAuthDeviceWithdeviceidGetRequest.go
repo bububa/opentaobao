@@ -15,9 +15,9 @@ alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get
 type AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest struct {
     model.Params
     // 设备产品ID
-    clientId   string
+    _clientId   string
     // mac地址
-    mac   string
+    _mac   string
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) GetApiParams() 
 }
 // ClientId Setter
 // 设备产品ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // Mac Setter
 // mac地址
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithdeviceidGetRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }

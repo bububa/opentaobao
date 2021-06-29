@@ -15,7 +15,7 @@ taobao.feedflow.item.campaign.delete
 type TaobaoFeedflowItemCampaignDeleteRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
 }
 
 // 初始化TaobaoFeedflowItemCampaignDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignDeleteRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoFeedflowItemCampaignDeleteRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoFeedflowItemCampaignDeleteRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoFeedflowItemCampaignDeleteRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }

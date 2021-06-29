@@ -15,7 +15,7 @@ yunos.miniapp.datatunnel.call
 type YunosMiniappDatatunnelCallRequest struct {
     model.Params
     // 参数
-    param   *BaseRequest
+    _param   *BaseRequest
 }
 
 // 初始化YunosMiniappDatatunnelCallRequest对象
@@ -40,13 +40,13 @@ func (r YunosMiniappDatatunnelCallRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *YunosMiniappDatatunnelCallRequest) SetParam(param *BaseRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *YunosMiniappDatatunnelCallRequest) SetParam(_param *BaseRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r YunosMiniappDatatunnelCallRequest) GetParam() *BaseRequest {
-    return r.param
+    return r._param
 }

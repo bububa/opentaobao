@@ -15,7 +15,7 @@ alitrip.btrip.supplychain.train.search
 type AlitripBtripSupplychainTrainSearchRequest struct {
     model.Params
     // 入参
-    rq   *OpenApiSearchRq
+    _rq   *OpenApiSearchRq
 }
 
 // 初始化AlitripBtripSupplychainTrainSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainTrainSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripSupplychainTrainSearchRequest) SetRq(rq *OpenApiSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripSupplychainTrainSearchRequest) SetRq(_rq *OpenApiSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripSupplychainTrainSearchRequest) GetRq() *OpenApiSearchRq {
-    return r.rq
+    return r._rq
 }

@@ -15,9 +15,9 @@ alibaba.alihealth.nr.spu.query
 type AlibabaAlihealthNrSpuQueryRequest struct {
     model.Params
     // 标品查询条件
-    query   *TopAlihealthSpuQuery
+    _query   *TopAlihealthSpuQuery
     // 查询选择器
-    options   *TopAlihealthSpuQueryOptions
+    _options   *TopAlihealthSpuQueryOptions
 }
 
 // 初始化AlibabaAlihealthNrSpuQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthNrSpuQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 标品查询条件
-func (r *AlibabaAlihealthNrSpuQueryRequest) SetQuery(query *TopAlihealthSpuQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaAlihealthNrSpuQueryRequest) SetQuery(_query *TopAlihealthSpuQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaAlihealthNrSpuQueryRequest) GetQuery() *TopAlihealthSpuQuery {
-    return r.query
+    return r._query
 }
 // Options Setter
 // 查询选择器
-func (r *AlibabaAlihealthNrSpuQueryRequest) SetOptions(options *TopAlihealthSpuQueryOptions) error {
-    r.options = options
-    r.Set("options", options)
+func (r *AlibabaAlihealthNrSpuQueryRequest) SetOptions(_options *TopAlihealthSpuQueryOptions) error {
+    r._options = _options
+    r.Set("options", _options)
     return nil
 }
 
 // Options Getter
 func (r AlibabaAlihealthNrSpuQueryRequest) GetOptions() *TopAlihealthSpuQueryOptions {
-    return r.options
+    return r._options
 }

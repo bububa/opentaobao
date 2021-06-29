@@ -15,7 +15,7 @@ aliyun.alios.pay.trade.query
 type AliyunAliosPayTradeQueryRequest struct {
     model.Params
     // 请求参数
-    queryTradeRequest   *QueryTradeRequest
+    _queryTradeRequest   *QueryTradeRequest
 }
 
 // 初始化AliyunAliosPayTradeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliyunAliosPayTradeQueryRequest) GetApiParams() url.Values {
 }
 // QueryTradeRequest Setter
 // 请求参数
-func (r *AliyunAliosPayTradeQueryRequest) SetQueryTradeRequest(queryTradeRequest *QueryTradeRequest) error {
-    r.queryTradeRequest = queryTradeRequest
-    r.Set("query_trade_request", queryTradeRequest)
+func (r *AliyunAliosPayTradeQueryRequest) SetQueryTradeRequest(_queryTradeRequest *QueryTradeRequest) error {
+    r._queryTradeRequest = _queryTradeRequest
+    r.Set("query_trade_request", _queryTradeRequest)
     return nil
 }
 
 // QueryTradeRequest Getter
 func (r AliyunAliosPayTradeQueryRequest) GetQueryTradeRequest() *QueryTradeRequest {
-    return r.queryTradeRequest
+    return r._queryTradeRequest
 }

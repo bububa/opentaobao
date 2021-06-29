@@ -15,11 +15,11 @@ alitrip.ticket.scenic.query
 type AlitripTicketScenicQueryRequest struct {
     model.Params
     // 标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-    aliScenicId   int64
+    _aliScenicId   int64
     // 当前分页。每页默认最多返回20条数据
-    currentPage   int64
+    _currentPage   int64
     // 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-    outScenicId   string
+    _outScenicId   string
 }
 
 // 初始化AlitripTicketScenicQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlitripTicketScenicQueryRequest) GetApiParams() url.Values {
 }
 // AliScenicId Setter
 // 标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-func (r *AlitripTicketScenicQueryRequest) SetAliScenicId(aliScenicId int64) error {
-    r.aliScenicId = aliScenicId
-    r.Set("ali_scenic_id", aliScenicId)
+func (r *AlitripTicketScenicQueryRequest) SetAliScenicId(_aliScenicId int64) error {
+    r._aliScenicId = _aliScenicId
+    r.Set("ali_scenic_id", _aliScenicId)
     return nil
 }
 
 // AliScenicId Getter
 func (r AlitripTicketScenicQueryRequest) GetAliScenicId() int64 {
-    return r.aliScenicId
+    return r._aliScenicId
 }
 // CurrentPage Setter
 // 当前分页。每页默认最多返回20条数据
-func (r *AlitripTicketScenicQueryRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlitripTicketScenicQueryRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlitripTicketScenicQueryRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // OutScenicId Setter
 // 商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个
-func (r *AlitripTicketScenicQueryRequest) SetOutScenicId(outScenicId string) error {
-    r.outScenicId = outScenicId
-    r.Set("out_scenic_id", outScenicId)
+func (r *AlitripTicketScenicQueryRequest) SetOutScenicId(_outScenicId string) error {
+    r._outScenicId = _outScenicId
+    r.Set("out_scenic_id", _outScenicId)
     return nil
 }
 
 // OutScenicId Getter
 func (r AlitripTicketScenicQueryRequest) GetOutScenicId() string {
-    return r.outScenicId
+    return r._outScenicId
 }

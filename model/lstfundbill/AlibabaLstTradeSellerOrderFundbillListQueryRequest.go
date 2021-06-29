@@ -15,11 +15,11 @@ alibaba.lst.trade.seller.order.fundbill.list.query
 type AlibabaLstTradeSellerOrderFundbillListQueryRequest struct {
     model.Params
     // 每页最大主订单数，注意：返回的content_list数据按照子订单维度展开
-    size   int64
+    _size   int64
     // 账单日期，格式：yyyy-MM-dd
-    billDate   string
+    _billDate   string
     // 页码
-    page   int64
+    _page   int64
 }
 
 // 初始化AlibabaLstTradeSellerOrderFundbillListQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLstTradeSellerOrderFundbillListQueryRequest) GetApiParams() url.V
 }
 // Size Setter
 // 每页最大主订单数，注意：返回的content_list数据按照子订单维度展开
-func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetSize(size int64) error {
-    r.size = size
-    r.Set("size", size)
+func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetSize(_size int64) error {
+    r._size = _size
+    r.Set("size", _size)
     return nil
 }
 
 // Size Getter
 func (r AlibabaLstTradeSellerOrderFundbillListQueryRequest) GetSize() int64 {
-    return r.size
+    return r._size
 }
 // BillDate Setter
 // 账单日期，格式：yyyy-MM-dd
-func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetBillDate(billDate string) error {
-    r.billDate = billDate
-    r.Set("bill_date", billDate)
+func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetBillDate(_billDate string) error {
+    r._billDate = _billDate
+    r.Set("bill_date", _billDate)
     return nil
 }
 
 // BillDate Getter
 func (r AlibabaLstTradeSellerOrderFundbillListQueryRequest) GetBillDate() string {
-    return r.billDate
+    return r._billDate
 }
 // Page Setter
 // 页码
-func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaLstTradeSellerOrderFundbillListQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaLstTradeSellerOrderFundbillListQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }

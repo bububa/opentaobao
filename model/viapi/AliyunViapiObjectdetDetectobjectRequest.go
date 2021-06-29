@@ -16,7 +16,7 @@ aliyun.viapi.objectdet.detectobject
 type AliyunViapiObjectdetDetectobjectRequest struct {
     model.Params
     // 待检测图片链接
-    imageUrl   string
+    _imageUrl   string
 }
 
 // 初始化AliyunViapiObjectdetDetectobjectRequest对象
@@ -41,13 +41,13 @@ func (r AliyunViapiObjectdetDetectobjectRequest) GetApiParams() url.Values {
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiObjectdetDetectobjectRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AliyunViapiObjectdetDetectobjectRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AliyunViapiObjectdetDetectobjectRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }

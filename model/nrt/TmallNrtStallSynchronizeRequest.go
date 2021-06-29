@@ -15,7 +15,7 @@ tmall.nrt.stall.synchronize
 type TmallNrtStallSynchronizeRequest struct {
     model.Params
     // 参数对象
-    stall   *NrtStoreDTO
+    _stall   *NrtStoreDTO
 }
 
 // 初始化TmallNrtStallSynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtStallSynchronizeRequest) GetApiParams() url.Values {
 }
 // Stall Setter
 // 参数对象
-func (r *TmallNrtStallSynchronizeRequest) SetStall(stall *NrtStoreDTO) error {
-    r.stall = stall
-    r.Set("stall", stall)
+func (r *TmallNrtStallSynchronizeRequest) SetStall(_stall *NrtStoreDTO) error {
+    r._stall = _stall
+    r.Set("stall", _stall)
     return nil
 }
 
 // Stall Getter
 func (r TmallNrtStallSynchronizeRequest) GetStall() *NrtStoreDTO {
-    return r.stall
+    return r._stall
 }

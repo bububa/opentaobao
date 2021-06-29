@@ -15,13 +15,13 @@ alibaba.icbu.photobank.upload
 type AlibabaIcbuPhotobankUploadRequest struct {
     model.Params
     // 上传图片名称
-    fileName   string
+    _fileName   string
     // 上传图片所在分组
-    groupId   string
+    _groupId   string
     // 图片字节数组
-    imageBytes   []*model.File
+    _imageBytes   []*model.File
     // 扩展参数信息,如ICVID
-    extraContext   string
+    _extraContext   string
 }
 
 // 初始化AlibabaIcbuPhotobankUploadRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaIcbuPhotobankUploadRequest) GetApiParams() url.Values {
 }
 // FileName Setter
 // 上传图片名称
-func (r *AlibabaIcbuPhotobankUploadRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *AlibabaIcbuPhotobankUploadRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r AlibabaIcbuPhotobankUploadRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // GroupId Setter
 // 上传图片所在分组
-func (r *AlibabaIcbuPhotobankUploadRequest) SetGroupId(groupId string) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaIcbuPhotobankUploadRequest) SetGroupId(_groupId string) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaIcbuPhotobankUploadRequest) GetGroupId() string {
-    return r.groupId
+    return r._groupId
 }
 // ImageBytes Setter
 // 图片字节数组
-func (r *AlibabaIcbuPhotobankUploadRequest) SetImageBytes(imageBytes []*model.File) error {
-    r.imageBytes = imageBytes
-    r.Set("image_bytes", imageBytes)
+func (r *AlibabaIcbuPhotobankUploadRequest) SetImageBytes(_imageBytes []*model.File) error {
+    r._imageBytes = _imageBytes
+    r.Set("image_bytes", _imageBytes)
     return nil
 }
 
 // ImageBytes Getter
 func (r AlibabaIcbuPhotobankUploadRequest) GetImageBytes() []*model.File {
-    return r.imageBytes
+    return r._imageBytes
 }
 // ExtraContext Setter
 // 扩展参数信息,如ICVID
-func (r *AlibabaIcbuPhotobankUploadRequest) SetExtraContext(extraContext string) error {
-    r.extraContext = extraContext
-    r.Set("extra_context", extraContext)
+func (r *AlibabaIcbuPhotobankUploadRequest) SetExtraContext(_extraContext string) error {
+    r._extraContext = _extraContext
+    r.Set("extra_context", _extraContext)
     return nil
 }
 
 // ExtraContext Getter
 func (r AlibabaIcbuPhotobankUploadRequest) GetExtraContext() string {
-    return r.extraContext
+    return r._extraContext
 }

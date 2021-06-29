@@ -15,17 +15,17 @@ tmall.servicecenter.workcard.push
 type TmallServicecenterWorkcardPushRequest struct {
     model.Params
     // 属性列表。使用半角分号隔开,字符串前后都需要有半角分号
-    attributes   string
+    _attributes   string
     // 描述
-    desc   string
+    _desc   string
     // 淘宝交易订单号
-    bizOrderId   int64
+    _bizOrderId   int64
     // 服务预约安装时间
-    serviceReserveTime   string
+    _serviceReserveTime   string
     // 服务预约安装地址。四级地址与街道地址用空格隔开
-    serviceReserveAddress   string
+    _serviceReserveAddress   string
     // 0=初始化, 3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败
-    status   string
+    _status   string
 }
 
 // 初始化TmallServicecenterWorkcardPushRequest对象
@@ -50,73 +50,73 @@ func (r TmallServicecenterWorkcardPushRequest) GetApiParams() url.Values {
 }
 // Attributes Setter
 // 属性列表。使用半角分号隔开,字符串前后都需要有半角分号
-func (r *TmallServicecenterWorkcardPushRequest) SetAttributes(attributes string) error {
-    r.attributes = attributes
-    r.Set("attributes", attributes)
+func (r *TmallServicecenterWorkcardPushRequest) SetAttributes(_attributes string) error {
+    r._attributes = _attributes
+    r.Set("attributes", _attributes)
     return nil
 }
 
 // Attributes Getter
 func (r TmallServicecenterWorkcardPushRequest) GetAttributes() string {
-    return r.attributes
+    return r._attributes
 }
 // Desc Setter
 // 描述
-func (r *TmallServicecenterWorkcardPushRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TmallServicecenterWorkcardPushRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TmallServicecenterWorkcardPushRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }
 // BizOrderId Setter
 // 淘宝交易订单号
-func (r *TmallServicecenterWorkcardPushRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TmallServicecenterWorkcardPushRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TmallServicecenterWorkcardPushRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // ServiceReserveTime Setter
 // 服务预约安装时间
-func (r *TmallServicecenterWorkcardPushRequest) SetServiceReserveTime(serviceReserveTime string) error {
-    r.serviceReserveTime = serviceReserveTime
-    r.Set("service_reserve_time", serviceReserveTime)
+func (r *TmallServicecenterWorkcardPushRequest) SetServiceReserveTime(_serviceReserveTime string) error {
+    r._serviceReserveTime = _serviceReserveTime
+    r.Set("service_reserve_time", _serviceReserveTime)
     return nil
 }
 
 // ServiceReserveTime Getter
 func (r TmallServicecenterWorkcardPushRequest) GetServiceReserveTime() string {
-    return r.serviceReserveTime
+    return r._serviceReserveTime
 }
 // ServiceReserveAddress Setter
 // 服务预约安装地址。四级地址与街道地址用空格隔开
-func (r *TmallServicecenterWorkcardPushRequest) SetServiceReserveAddress(serviceReserveAddress string) error {
-    r.serviceReserveAddress = serviceReserveAddress
-    r.Set("service_reserve_address", serviceReserveAddress)
+func (r *TmallServicecenterWorkcardPushRequest) SetServiceReserveAddress(_serviceReserveAddress string) error {
+    r._serviceReserveAddress = _serviceReserveAddress
+    r.Set("service_reserve_address", _serviceReserveAddress)
     return nil
 }
 
 // ServiceReserveAddress Getter
 func (r TmallServicecenterWorkcardPushRequest) GetServiceReserveAddress() string {
-    return r.serviceReserveAddress
+    return r._serviceReserveAddress
 }
 // Status Setter
 // 0=初始化, 3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败
-func (r *TmallServicecenterWorkcardPushRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallServicecenterWorkcardPushRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallServicecenterWorkcardPushRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

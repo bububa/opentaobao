@@ -15,11 +15,11 @@ alibaba.alihealth.nocov.alldiseaseinfo.get
 type AlibabaAlihealthNocovAlldiseaseinfoGetRequest struct {
     model.Params
     // 省的
-    province   string
+    _province   string
     // 城市
-    city   string
+    _city   string
     // 城市code
-    cityCode   string
+    _cityCode   string
 }
 
 // 初始化AlibabaAlihealthNocovAlldiseaseinfoGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthNocovAlldiseaseinfoGetRequest) GetApiParams() url.Values
 }
 // Province Setter
 // 省的
-func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetProvince(province string) error {
-    r.province = province
-    r.Set("province", province)
+func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetProvince(_province string) error {
+    r._province = _province
+    r.Set("province", _province)
     return nil
 }
 
 // Province Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetRequest) GetProvince() string {
-    return r.province
+    return r._province
 }
 // City Setter
 // 城市
-func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetCity(city string) error {
-    r.city = city
-    r.Set("city", city)
+func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetCity(_city string) error {
+    r._city = _city
+    r.Set("city", _city)
     return nil
 }
 
 // City Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetRequest) GetCity() string {
-    return r.city
+    return r._city
 }
 // CityCode Setter
 // 城市code
-func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetCityCode(cityCode string) error {
-    r.cityCode = cityCode
-    r.Set("city_code", cityCode)
+func (r *AlibabaAlihealthNocovAlldiseaseinfoGetRequest) SetCityCode(_cityCode string) error {
+    r._cityCode = _cityCode
+    r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
 func (r AlibabaAlihealthNocovAlldiseaseinfoGetRequest) GetCityCode() string {
-    return r.cityCode
+    return r._cityCode
 }

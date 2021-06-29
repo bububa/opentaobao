@@ -15,13 +15,13 @@ alibaba.mj.member.bindmember
 type AlibabaMjMemberBindmemberRequest struct {
     model.Params
     // 用户号
-    userId   int64
+    _userId   int64
     // 商城Id
-    mallId   int64
+    _mallId   int64
     // open_id
-    openId   string
+    _openId   string
     // 渠道
-    channel   string
+    _channel   string
 }
 
 // 初始化AlibabaMjMemberBindmemberRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaMjMemberBindmemberRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户号
-func (r *AlibabaMjMemberBindmemberRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaMjMemberBindmemberRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaMjMemberBindmemberRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // MallId Setter
 // 商城Id
-func (r *AlibabaMjMemberBindmemberRequest) SetMallId(mallId int64) error {
-    r.mallId = mallId
-    r.Set("mall_id", mallId)
+func (r *AlibabaMjMemberBindmemberRequest) SetMallId(_mallId int64) error {
+    r._mallId = _mallId
+    r.Set("mall_id", _mallId)
     return nil
 }
 
 // MallId Getter
 func (r AlibabaMjMemberBindmemberRequest) GetMallId() int64 {
-    return r.mallId
+    return r._mallId
 }
 // OpenId Setter
 // open_id
-func (r *AlibabaMjMemberBindmemberRequest) SetOpenId(openId string) error {
-    r.openId = openId
-    r.Set("open_id", openId)
+func (r *AlibabaMjMemberBindmemberRequest) SetOpenId(_openId string) error {
+    r._openId = _openId
+    r.Set("open_id", _openId)
     return nil
 }
 
 // OpenId Getter
 func (r AlibabaMjMemberBindmemberRequest) GetOpenId() string {
-    return r.openId
+    return r._openId
 }
 // Channel Setter
 // 渠道
-func (r *AlibabaMjMemberBindmemberRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaMjMemberBindmemberRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaMjMemberBindmemberRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }

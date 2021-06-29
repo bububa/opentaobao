@@ -15,7 +15,7 @@ taobao.sellercenter.user.permissions.get
 type TaobaoSellercenterUserPermissionsGetRequest struct {
     model.Params
     // 用户标识，次入参必须为子账号比如zhangsan:cool。如果只输入主账号zhangsan，将报错。
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSellercenterUserPermissionsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSellercenterUserPermissionsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户标识，次入参必须为子账号比如zhangsan:cool。如果只输入主账号zhangsan，将报错。
-func (r *TaobaoSellercenterUserPermissionsGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSellercenterUserPermissionsGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSellercenterUserPermissionsGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

@@ -15,9 +15,9 @@ tmall.service.settleadjustment.search
 type TmallServiceSettleadjustmentSearchRequest struct {
     model.Params
     // 结束时间
-    endTime   string
+    _endTime   string
     // 开始时间
-    startTime   string
+    _startTime   string
 }
 
 // 初始化TmallServiceSettleadjustmentSearchRequest对象
@@ -42,25 +42,25 @@ func (r TmallServiceSettleadjustmentSearchRequest) GetApiParams() url.Values {
 }
 // EndTime Setter
 // 结束时间
-func (r *TmallServiceSettleadjustmentSearchRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TmallServiceSettleadjustmentSearchRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TmallServiceSettleadjustmentSearchRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // StartTime Setter
 // 开始时间
-func (r *TmallServiceSettleadjustmentSearchRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TmallServiceSettleadjustmentSearchRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TmallServiceSettleadjustmentSearchRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }

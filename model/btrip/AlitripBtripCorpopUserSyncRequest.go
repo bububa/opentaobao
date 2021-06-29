@@ -15,7 +15,7 @@ alitrip.btrip.corpop.user.sync
 type AlitripBtripCorpopUserSyncRequest struct {
     model.Params
     // 人员同步请求
-    rq   *BtripUserSyncRq
+    _rq   *BtripUserSyncRq
 }
 
 // 初始化AlitripBtripCorpopUserSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopUserSyncRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 人员同步请求
-func (r *AlitripBtripCorpopUserSyncRequest) SetRq(rq *BtripUserSyncRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopUserSyncRequest) SetRq(_rq *BtripUserSyncRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopUserSyncRequest) GetRq() *BtripUserSyncRq {
-    return r.rq
+    return r._rq
 }

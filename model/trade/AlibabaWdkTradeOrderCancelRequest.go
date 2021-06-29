@@ -15,7 +15,7 @@ alibaba.wdk.trade.order.cancel
 type AlibabaWdkTradeOrderCancelRequest struct {
     model.Params
     // 待取消的订单
-    trade   *TradeOrder
+    _trade   *TradeOrder
 }
 
 // 初始化AlibabaWdkTradeOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeOrderCancelRequest) GetApiParams() url.Values {
 }
 // Trade Setter
 // 待取消的订单
-func (r *AlibabaWdkTradeOrderCancelRequest) SetTrade(trade *TradeOrder) error {
-    r.trade = trade
-    r.Set("trade", trade)
+func (r *AlibabaWdkTradeOrderCancelRequest) SetTrade(_trade *TradeOrder) error {
+    r._trade = _trade
+    r.Set("trade", _trade)
     return nil
 }
 
 // Trade Getter
 func (r AlibabaWdkTradeOrderCancelRequest) GetTrade() *TradeOrder {
-    return r.trade
+    return r._trade
 }

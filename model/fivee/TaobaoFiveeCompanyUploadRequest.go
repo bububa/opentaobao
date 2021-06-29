@@ -15,9 +15,9 @@ taobao.fivee.company.upload
 type TaobaoFiveeCompanyUploadRequest struct {
     model.Params
     // bu身份标识
-    paramBucode   string
+    _paramBucode   string
     // 商家证照信息
-    paramCompany   *Company
+    _paramCompany   *Company
 }
 
 // 初始化TaobaoFiveeCompanyUploadRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFiveeCompanyUploadRequest) GetApiParams() url.Values {
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeCompanyUploadRequest) SetParamBucode(paramBucode string) error {
-    r.paramBucode = paramBucode
-    r.Set("param_bucode", paramBucode)
+func (r *TaobaoFiveeCompanyUploadRequest) SetParamBucode(_paramBucode string) error {
+    r._paramBucode = _paramBucode
+    r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
 func (r TaobaoFiveeCompanyUploadRequest) GetParamBucode() string {
-    return r.paramBucode
+    return r._paramBucode
 }
 // ParamCompany Setter
 // 商家证照信息
-func (r *TaobaoFiveeCompanyUploadRequest) SetParamCompany(paramCompany *Company) error {
-    r.paramCompany = paramCompany
-    r.Set("param_company", paramCompany)
+func (r *TaobaoFiveeCompanyUploadRequest) SetParamCompany(_paramCompany *Company) error {
+    r._paramCompany = _paramCompany
+    r.Set("param_company", _paramCompany)
     return nil
 }
 
 // ParamCompany Getter
 func (r TaobaoFiveeCompanyUploadRequest) GetParamCompany() *Company {
-    return r.paramCompany
+    return r._paramCompany
 }

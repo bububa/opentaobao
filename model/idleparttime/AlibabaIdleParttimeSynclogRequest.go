@@ -15,17 +15,17 @@ alibaba.idle.parttime.synclog
 type AlibabaIdleParttimeSynclogRequest struct {
     model.Params
     // 查询岗位同步开始时间
-    startTime   int64
+    _startTime   int64
     // 查询岗位同步结束时间
-    endTime   int64
+    _endTime   int64
     // 查询的类型, 0:岗位
-    type   int64
+    _type   int64
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 第几页, 从0开始
-    pageNum   int64
+    _pageNum   int64
     // 同步的id
-    syncIds   []int64
+    _syncIds   []int64
 }
 
 // 初始化AlibabaIdleParttimeSynclogRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaIdleParttimeSynclogRequest) GetApiParams() url.Values {
 }
 // StartTime Setter
 // 查询岗位同步开始时间
-func (r *AlibabaIdleParttimeSynclogRequest) SetStartTime(startTime int64) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaIdleParttimeSynclogRequest) SetStartTime(_startTime int64) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetStartTime() int64 {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 查询岗位同步结束时间
-func (r *AlibabaIdleParttimeSynclogRequest) SetEndTime(endTime int64) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaIdleParttimeSynclogRequest) SetEndTime(_endTime int64) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetEndTime() int64 {
-    return r.endTime
+    return r._endTime
 }
 // Type Setter
 // 查询的类型, 0:岗位
-func (r *AlibabaIdleParttimeSynclogRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaIdleParttimeSynclogRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaIdleParttimeSynclogRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaIdleParttimeSynclogRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNum Setter
 // 第几页, 从0开始
-func (r *AlibabaIdleParttimeSynclogRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *AlibabaIdleParttimeSynclogRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // SyncIds Setter
 // 同步的id
-func (r *AlibabaIdleParttimeSynclogRequest) SetSyncIds(syncIds []int64) error {
-    r.syncIds = syncIds
-    r.Set("sync_ids", syncIds)
+func (r *AlibabaIdleParttimeSynclogRequest) SetSyncIds(_syncIds []int64) error {
+    r._syncIds = _syncIds
+    r.Set("sync_ids", _syncIds)
     return nil
 }
 
 // SyncIds Getter
 func (r AlibabaIdleParttimeSynclogRequest) GetSyncIds() []int64 {
-    return r.syncIds
+    return r._syncIds
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.medical.order.query
 type AlibabaAlihealthMedicalOrderQueryRequest struct {
     model.Params
     // 请求入参
-    requestInfo   *OrderQueryRequestDTO
+    _requestInfo   *OrderQueryRequestDTO
 }
 
 // 初始化AlibabaAlihealthMedicalOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalOrderQueryRequest) GetApiParams() url.Values {
 }
 // RequestInfo Setter
 // 请求入参
-func (r *AlibabaAlihealthMedicalOrderQueryRequest) SetRequestInfo(requestInfo *OrderQueryRequestDTO) error {
-    r.requestInfo = requestInfo
-    r.Set("request_info", requestInfo)
+func (r *AlibabaAlihealthMedicalOrderQueryRequest) SetRequestInfo(_requestInfo *OrderQueryRequestDTO) error {
+    r._requestInfo = _requestInfo
+    r.Set("request_info", _requestInfo)
     return nil
 }
 
 // RequestInfo Getter
 func (r AlibabaAlihealthMedicalOrderQueryRequest) GetRequestInfo() *OrderQueryRequestDTO {
-    return r.requestInfo
+    return r._requestInfo
 }

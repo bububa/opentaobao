@@ -15,9 +15,9 @@ alibaba.ailab.user.authorized.cancel
 type AlibabaAilabUserAuthorizedCancelRequest struct {
     model.Params
     // 三方用户的唯一ID
-    merchantUserId   string
+    _merchantUserId   string
     // 开放平台申请的schema
-    schemaKey   string
+    _schemaKey   string
 }
 
 // 初始化AlibabaAilabUserAuthorizedCancelRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabUserAuthorizedCancelRequest) GetApiParams() url.Values {
 }
 // MerchantUserId Setter
 // 三方用户的唯一ID
-func (r *AlibabaAilabUserAuthorizedCancelRequest) SetMerchantUserId(merchantUserId string) error {
-    r.merchantUserId = merchantUserId
-    r.Set("merchant_user_id", merchantUserId)
+func (r *AlibabaAilabUserAuthorizedCancelRequest) SetMerchantUserId(_merchantUserId string) error {
+    r._merchantUserId = _merchantUserId
+    r.Set("merchant_user_id", _merchantUserId)
     return nil
 }
 
 // MerchantUserId Getter
 func (r AlibabaAilabUserAuthorizedCancelRequest) GetMerchantUserId() string {
-    return r.merchantUserId
+    return r._merchantUserId
 }
 // SchemaKey Setter
 // 开放平台申请的schema
-func (r *AlibabaAilabUserAuthorizedCancelRequest) SetSchemaKey(schemaKey string) error {
-    r.schemaKey = schemaKey
-    r.Set("schema_key", schemaKey)
+func (r *AlibabaAilabUserAuthorizedCancelRequest) SetSchemaKey(_schemaKey string) error {
+    r._schemaKey = _schemaKey
+    r.Set("schema_key", _schemaKey)
     return nil
 }
 
 // SchemaKey Getter
 func (r AlibabaAilabUserAuthorizedCancelRequest) GetSchemaKey() string {
-    return r.schemaKey
+    return r._schemaKey
 }

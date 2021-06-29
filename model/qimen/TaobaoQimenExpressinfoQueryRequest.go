@@ -15,7 +15,7 @@ taobao.qimen.expressinfo.query
 type TaobaoQimenExpressinfoQueryRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenExpressinfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenExpressinfoQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenExpressinfoQueryRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenExpressinfoQueryRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenExpressinfoQueryRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

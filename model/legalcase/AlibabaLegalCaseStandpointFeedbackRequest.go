@@ -15,7 +15,7 @@ alibaba.legal.case.standpoint.feedback
 type AlibabaLegalCaseStandpointFeedbackRequest struct {
     model.Params
     // 反馈对象
-    feedbackRequestModel   *FeedbackRequestModel
+    _feedbackRequestModel   *FeedbackRequestModel
 }
 
 // 初始化AlibabaLegalCaseStandpointFeedbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiParams() url.Values {
 }
 // FeedbackRequestModel Setter
 // 反馈对象
-func (r *AlibabaLegalCaseStandpointFeedbackRequest) SetFeedbackRequestModel(feedbackRequestModel *FeedbackRequestModel) error {
-    r.feedbackRequestModel = feedbackRequestModel
-    r.Set("feedback_request_model", feedbackRequestModel)
+func (r *AlibabaLegalCaseStandpointFeedbackRequest) SetFeedbackRequestModel(_feedbackRequestModel *FeedbackRequestModel) error {
+    r._feedbackRequestModel = _feedbackRequestModel
+    r.Set("feedback_request_model", _feedbackRequestModel)
     return nil
 }
 
 // FeedbackRequestModel Getter
 func (r AlibabaLegalCaseStandpointFeedbackRequest) GetFeedbackRequestModel() *FeedbackRequestModel {
-    return r.feedbackRequestModel
+    return r._feedbackRequestModel
 }

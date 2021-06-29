@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itemdiscount.createactivity
 type AlibabaWdkMarketingItemdiscountCreateactivityRequest struct {
     model.Params
     // 创建活动请求入参
-    param   *ItemDiscountActivityRequest
+    _param   *ItemDiscountActivityRequest
 }
 
 // 初始化AlibabaWdkMarketingItemdiscountCreateactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetApiParams() url
 }
 // Param Setter
 // 创建活动请求入参
-func (r *AlibabaWdkMarketingItemdiscountCreateactivityRequest) SetParam(param *ItemDiscountActivityRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItemdiscountCreateactivityRequest) SetParam(_param *ItemDiscountActivityRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItemdiscountCreateactivityRequest) GetParam() *ItemDiscountActivityRequest {
-    return r.param
+    return r._param
 }

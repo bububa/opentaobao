@@ -15,11 +15,11 @@ tmall.nr.fulfill.order.query
 type TmallNrFulfillOrderQueryRequest struct {
     model.Params
     // 业务标识，dss标识定时送业务；jsd表示极速达业务
-    bizIdentity   string
+    _bizIdentity   string
     // 交易主订单号
-    orderId   int64
+    _orderId   int64
     // 预留-扩展信息
-    extParam   string
+    _extParam   string
 }
 
 // 初始化TmallNrFulfillOrderQueryRequest对象
@@ -44,37 +44,37 @@ func (r TmallNrFulfillOrderQueryRequest) GetApiParams() url.Values {
 }
 // BizIdentity Setter
 // 业务标识，dss标识定时送业务；jsd表示极速达业务
-func (r *TmallNrFulfillOrderQueryRequest) SetBizIdentity(bizIdentity string) error {
-    r.bizIdentity = bizIdentity
-    r.Set("biz_identity", bizIdentity)
+func (r *TmallNrFulfillOrderQueryRequest) SetBizIdentity(_bizIdentity string) error {
+    r._bizIdentity = _bizIdentity
+    r.Set("biz_identity", _bizIdentity)
     return nil
 }
 
 // BizIdentity Getter
 func (r TmallNrFulfillOrderQueryRequest) GetBizIdentity() string {
-    return r.bizIdentity
+    return r._bizIdentity
 }
 // OrderId Setter
 // 交易主订单号
-func (r *TmallNrFulfillOrderQueryRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallNrFulfillOrderQueryRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallNrFulfillOrderQueryRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // ExtParam Setter
 // 预留-扩展信息
-func (r *TmallNrFulfillOrderQueryRequest) SetExtParam(extParam string) error {
-    r.extParam = extParam
-    r.Set("ext_param", extParam)
+func (r *TmallNrFulfillOrderQueryRequest) SetExtParam(_extParam string) error {
+    r._extParam = _extParam
+    r.Set("ext_param", _extParam)
     return nil
 }
 
 // ExtParam Getter
 func (r TmallNrFulfillOrderQueryRequest) GetExtParam() string {
-    return r.extParam
+    return r._extParam
 }

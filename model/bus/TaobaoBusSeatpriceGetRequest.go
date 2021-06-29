@@ -15,7 +15,7 @@ taobao.bus.seatprice.get
 type TaobaoBusSeatpriceGetRequest struct {
     model.Params
     // 余票请求参数
-    paramBusSeatPriceRQ   *BusSeatPriceRq
+    _paramBusSeatPriceRQ   *BusSeatPriceRq
 }
 
 // 初始化TaobaoBusSeatpriceGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusSeatpriceGetRequest) GetApiParams() url.Values {
 }
 // ParamBusSeatPriceRQ Setter
 // 余票请求参数
-func (r *TaobaoBusSeatpriceGetRequest) SetParamBusSeatPriceRQ(paramBusSeatPriceRQ *BusSeatPriceRq) error {
-    r.paramBusSeatPriceRQ = paramBusSeatPriceRQ
-    r.Set("param_bus_seat_price_r_q", paramBusSeatPriceRQ)
+func (r *TaobaoBusSeatpriceGetRequest) SetParamBusSeatPriceRQ(_paramBusSeatPriceRQ *BusSeatPriceRq) error {
+    r._paramBusSeatPriceRQ = _paramBusSeatPriceRQ
+    r.Set("param_bus_seat_price_r_q", _paramBusSeatPriceRQ)
     return nil
 }
 
 // ParamBusSeatPriceRQ Getter
 func (r TaobaoBusSeatpriceGetRequest) GetParamBusSeatPriceRQ() *BusSeatPriceRq {
-    return r.paramBusSeatPriceRQ
+    return r._paramBusSeatPriceRQ
 }

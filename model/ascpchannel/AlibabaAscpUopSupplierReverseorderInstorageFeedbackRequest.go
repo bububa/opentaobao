@@ -15,7 +15,7 @@ ASCP按照逆向履约单纬度，通过该接口接收商家在退货完成时�
 type AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest struct {
     model.Params
     // 销退单入库结果请求
-    instorageFeedbackRequest   *Instoragefeedbackrequest
+    _instorageFeedbackRequest   *Instoragefeedbackrequest
 }
 
 // 初始化AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest) GetApiParams
 }
 // InstorageFeedbackRequest Setter
 // 销退单入库结果请求
-func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest) SetInstorageFeedbackRequest(instorageFeedbackRequest *Instoragefeedbackrequest) error {
-    r.instorageFeedbackRequest = instorageFeedbackRequest
-    r.Set("instorage_feedback_request", instorageFeedbackRequest)
+func (r *AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest) SetInstorageFeedbackRequest(_instorageFeedbackRequest *Instoragefeedbackrequest) error {
+    r._instorageFeedbackRequest = _instorageFeedbackRequest
+    r.Set("instorage_feedback_request", _instorageFeedbackRequest)
     return nil
 }
 
 // InstorageFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderInstorageFeedbackRequest) GetInstorageFeedbackRequest() *Instoragefeedbackrequest {
-    return r.instorageFeedbackRequest
+    return r._instorageFeedbackRequest
 }

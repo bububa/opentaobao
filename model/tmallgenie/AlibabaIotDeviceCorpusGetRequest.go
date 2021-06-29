@@ -15,11 +15,11 @@ ISV通过该接口获取天猫精灵IoT设备支持控制或查询的语料
 type AlibabaIotDeviceCorpusGetRequest struct {
     model.Params
     // 天猫精灵开放用户id
-    userOpenId   string
+    _userOpenId   string
     // 天猫精灵开放的client id
-    clientId   string
+    _clientId   string
     // iot设备id
-    devId   string
+    _devId   string
 }
 
 // 初始化AlibabaIotDeviceCorpusGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaIotDeviceCorpusGetRequest) GetApiParams() url.Values {
 }
 // UserOpenId Setter
 // 天猫精灵开放用户id
-func (r *AlibabaIotDeviceCorpusGetRequest) SetUserOpenId(userOpenId string) error {
-    r.userOpenId = userOpenId
-    r.Set("user_open_id", userOpenId)
+func (r *AlibabaIotDeviceCorpusGetRequest) SetUserOpenId(_userOpenId string) error {
+    r._userOpenId = _userOpenId
+    r.Set("user_open_id", _userOpenId)
     return nil
 }
 
 // UserOpenId Getter
 func (r AlibabaIotDeviceCorpusGetRequest) GetUserOpenId() string {
-    return r.userOpenId
+    return r._userOpenId
 }
 // ClientId Setter
 // 天猫精灵开放的client id
-func (r *AlibabaIotDeviceCorpusGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaIotDeviceCorpusGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaIotDeviceCorpusGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // DevId Setter
 // iot设备id
-func (r *AlibabaIotDeviceCorpusGetRequest) SetDevId(devId string) error {
-    r.devId = devId
-    r.Set("dev_id", devId)
+func (r *AlibabaIotDeviceCorpusGetRequest) SetDevId(_devId string) error {
+    r._devId = _devId
+    r.Set("dev_id", _devId)
     return nil
 }
 
 // DevId Getter
 func (r AlibabaIotDeviceCorpusGetRequest) GetDevId() string {
-    return r.devId
+    return r._devId
 }

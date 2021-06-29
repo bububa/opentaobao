@@ -15,131 +15,131 @@ taobao.usergrowth.delivery.ask
 type TaobaoUsergrowthDeliveryAskRequest struct {
     model.Params
     // 广告id，淘宝和媒体协商
-    adid   string
+    _adid   string
     // 渠道标识，向淘宝技术申请
-    channel   string
+    _channel   string
     // 是否爱折扣： 0： 不是? 1：是
-    isDicountPrefer   string
+    _isDicountPrefer   string
     // 是否爱返现： 0： 不是? 1：是
-    isCashPrefer   string
+    _isCashPrefer   string
     // 用户网购支付层级：? 0： 0~50 1： 50~200?2： 200~500 3： 500以上
-    payLayer   string
+    _payLayer   string
     // 是否爱赠品： 0： 不是? 1：是
-    isGiftPrefer   string
+    _isGiftPrefer   string
     // 是否爱评价： 0： 不是? 1：是
-    isRemarkUser   string
+    _isRemarkUser   string
     // 是否爱分享： 0： 不是? 1：是
-    isSharingUser   string
+    _isSharingUser   string
     // 宝宝性别，0:F 1:M 2:未知，但有宝宝 3: 没有宝宝
-    babyGender   string
+    _babyGender   string
     // 是否有宠物?0：没有 1：有 2：预测有
-    hasPet   string
+    _hasPet   string
     // 预测是否有房 0：没房 1：有房 2：预测有房
-    hasHouse   string
+    _hasHouse   string
     // 预测人生阶段
-    lifeStage   string
+    _lifeStage   string
     // 预测是否有车,0: 没有车 1：自己注册有车2：预测有车
-    hasCar   string
+    _hasCar   string
     // 预测是否在校大学生?0：不是 1 是 2 预测是
-    isUndergraduate   string
+    _isUndergraduate   string
     // 预测月收入
-    userIncome   string
+    _userIncome   string
     // 预测职业
-    careerType   string
+    _careerType   string
     // 预测学历,初高中,博士,专科,硕士,本科
-    education   string
+    _education   string
     // 注册IP解析的城市等级
-    regCityLevel   string
+    _regCityLevel   string
     // 注册IP解析区县名
-    ipAreaName   string
+    _ipAreaName   string
     // 注册IP解析城市名称
-    ipCityName   string
+    _ipCityName   string
     // 注册IP解析的省份名称
-    ipProvName   string
+    _ipProvName   string
     // 用户身份证号
-    idCardNumber   string
+    _idCardNumber   string
     // 用户感兴趣的标签,多个用逗号隔开。如动漫、历史
-    ukeywords   string
+    _ukeywords   string
     // 年龄
-    age   string
+    _age   string
     // 性别, 0:未知 1： 男 2：女
-    gender   string
+    _gender   string
     // 底价，单位为分
-    adFloorPrice   string
+    _adFloorPrice   string
     // 广告位支持图片格式 0: jpg, 1:?jpeg, 2: gif
-    adImgType   string
+    _adImgType   string
     // 广告位位置 0:未知,1:头部,2:底部, 3:侧边栏,4:全屏 默认传0
-    adPos   string
+    _adPos   string
     // 广告位高度
-    adHeight   string
+    _adHeight   string
     // 广告位宽度
-    adWidth   string
+    _adWidth   string
     // 广告类型 0:横幅,1: 插屏, 2:开屏, 3:原生,4:视频
-    adType   string
+    _adType   string
     // 设备经度
-    geoLon   string
+    _geoLon   string
     // 设备维度
-    geoLat   string
+    _geoLat   string
     // 设备屏幕纵向分辨率，单位：像素
-    screenHeight   string
+    _screenHeight   string
     // 设备屏幕水平分辨率，单位：像素
-    screenWidth   string
+    _screenWidth   string
     // 设备方向：0:未知， 1： 纵向；2： 横向
-    orientation   string
+    _orientation   string
     // 运营商，0: 未知， 1:移动,2:电信,3:联通
-    carrier   string
+    _carrier   string
     // 网络类型，0：未知，1：WIFI, 2: 2G, 3: 3G, 4: 4G; 5: 5G
-    network   string
+    _network   string
     // 手机品牌
-    brand   string
+    _brand   string
     // 设备厂商
-    made   string
+    _made   string
     // 设备型号
-    model   string
+    _model   string
     // 素材展示所在的页面或者频道
-    posCat   string
+    _posCat   string
     // 合作方名称
-    publishName   string
+    _publishName   string
     // 给定appid中的位置id，用于提高转化率
-    posId   string
+    _posId   string
     // app类别
-    appCat   string
+    _appCat   string
     // app版本号
-    appVer   string
+    _appVer   string
     // 对接的appName
-    appName   string
+    _appName   string
     // 对接的appId
-    appId   string
+    _appId   string
     // 关键词的描述
-    description   string
+    _description   string
     // 关键词
-    keyword   string
+    _keyword   string
     // 关键词类型
-    keywordType   string
+    _keywordType   string
     // 安装转化目标app的标识， 0： 未安装转化目标app, 1: 安装了转化目标app
-    appInstallFlag   string
+    _appInstallFlag   string
     // 转化目标app, 1：淘宝；2：天猫；3：闲鱼；4：支付宝
-    app   string
+    _app   string
     // idfa的md5值， 32位小写
-    idfaMd5   string
+    _idfaMd5   string
     // imei的md5值， 32位小写
-    imeiMd5   string
+    _imeiMd5   string
     // idfa原生值
-    idfa   string
+    _idfa   string
     // imei原生值
-    imei   string
+    _imei   string
     // 手机号
-    mobile   string
+    _mobile   string
     // 转化类型， 1： 激活；2： 新登；32896：定向促活
-    transformType   string
+    _transformType   string
     // 用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other
-    os   string
+    _os   string
     // 广告创意id，淘宝和媒体协商
-    cid   string
+    _cid   string
     // android最新广告标识
-    oaid   string
+    _oaid   string
     // android最新广告标识md5值， 32位小写
-    oaidMd5   string
+    _oaidMd5   string
 }
 
 // 初始化TaobaoUsergrowthDeliveryAskRequest对象
@@ -164,757 +164,757 @@ func (r TaobaoUsergrowthDeliveryAskRequest) GetApiParams() url.Values {
 }
 // Adid Setter
 // 广告id，淘宝和媒体协商
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdid(adid string) error {
-    r.adid = adid
-    r.Set("adid", adid)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdid(_adid string) error {
+    r._adid = _adid
+    r.Set("adid", _adid)
     return nil
 }
 
 // Adid Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdid() string {
-    return r.adid
+    return r._adid
 }
 // Channel Setter
 // 渠道标识，向淘宝技术申请
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }
 // IsDicountPrefer Setter
 // 是否爱折扣： 0： 不是? 1：是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsDicountPrefer(isDicountPrefer string) error {
-    r.isDicountPrefer = isDicountPrefer
-    r.Set("is_dicount_prefer", isDicountPrefer)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsDicountPrefer(_isDicountPrefer string) error {
+    r._isDicountPrefer = _isDicountPrefer
+    r.Set("is_dicount_prefer", _isDicountPrefer)
     return nil
 }
 
 // IsDicountPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsDicountPrefer() string {
-    return r.isDicountPrefer
+    return r._isDicountPrefer
 }
 // IsCashPrefer Setter
 // 是否爱返现： 0： 不是? 1：是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsCashPrefer(isCashPrefer string) error {
-    r.isCashPrefer = isCashPrefer
-    r.Set("is_cash_prefer", isCashPrefer)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsCashPrefer(_isCashPrefer string) error {
+    r._isCashPrefer = _isCashPrefer
+    r.Set("is_cash_prefer", _isCashPrefer)
     return nil
 }
 
 // IsCashPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsCashPrefer() string {
-    return r.isCashPrefer
+    return r._isCashPrefer
 }
 // PayLayer Setter
 // 用户网购支付层级：? 0： 0~50 1： 50~200?2： 200~500 3： 500以上
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetPayLayer(payLayer string) error {
-    r.payLayer = payLayer
-    r.Set("pay_layer", payLayer)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetPayLayer(_payLayer string) error {
+    r._payLayer = _payLayer
+    r.Set("pay_layer", _payLayer)
     return nil
 }
 
 // PayLayer Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetPayLayer() string {
-    return r.payLayer
+    return r._payLayer
 }
 // IsGiftPrefer Setter
 // 是否爱赠品： 0： 不是? 1：是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsGiftPrefer(isGiftPrefer string) error {
-    r.isGiftPrefer = isGiftPrefer
-    r.Set("is_gift_prefer", isGiftPrefer)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsGiftPrefer(_isGiftPrefer string) error {
+    r._isGiftPrefer = _isGiftPrefer
+    r.Set("is_gift_prefer", _isGiftPrefer)
     return nil
 }
 
 // IsGiftPrefer Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsGiftPrefer() string {
-    return r.isGiftPrefer
+    return r._isGiftPrefer
 }
 // IsRemarkUser Setter
 // 是否爱评价： 0： 不是? 1：是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsRemarkUser(isRemarkUser string) error {
-    r.isRemarkUser = isRemarkUser
-    r.Set("is_remark_user", isRemarkUser)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsRemarkUser(_isRemarkUser string) error {
+    r._isRemarkUser = _isRemarkUser
+    r.Set("is_remark_user", _isRemarkUser)
     return nil
 }
 
 // IsRemarkUser Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsRemarkUser() string {
-    return r.isRemarkUser
+    return r._isRemarkUser
 }
 // IsSharingUser Setter
 // 是否爱分享： 0： 不是? 1：是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsSharingUser(isSharingUser string) error {
-    r.isSharingUser = isSharingUser
-    r.Set("is_sharing_user", isSharingUser)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsSharingUser(_isSharingUser string) error {
+    r._isSharingUser = _isSharingUser
+    r.Set("is_sharing_user", _isSharingUser)
     return nil
 }
 
 // IsSharingUser Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsSharingUser() string {
-    return r.isSharingUser
+    return r._isSharingUser
 }
 // BabyGender Setter
 // 宝宝性别，0:F 1:M 2:未知，但有宝宝 3: 没有宝宝
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetBabyGender(babyGender string) error {
-    r.babyGender = babyGender
-    r.Set("baby_gender", babyGender)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetBabyGender(_babyGender string) error {
+    r._babyGender = _babyGender
+    r.Set("baby_gender", _babyGender)
     return nil
 }
 
 // BabyGender Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetBabyGender() string {
-    return r.babyGender
+    return r._babyGender
 }
 // HasPet Setter
 // 是否有宠物?0：没有 1：有 2：预测有
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasPet(hasPet string) error {
-    r.hasPet = hasPet
-    r.Set("has_pet", hasPet)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasPet(_hasPet string) error {
+    r._hasPet = _hasPet
+    r.Set("has_pet", _hasPet)
     return nil
 }
 
 // HasPet Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetHasPet() string {
-    return r.hasPet
+    return r._hasPet
 }
 // HasHouse Setter
 // 预测是否有房 0：没房 1：有房 2：预测有房
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasHouse(hasHouse string) error {
-    r.hasHouse = hasHouse
-    r.Set("has_house", hasHouse)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasHouse(_hasHouse string) error {
+    r._hasHouse = _hasHouse
+    r.Set("has_house", _hasHouse)
     return nil
 }
 
 // HasHouse Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetHasHouse() string {
-    return r.hasHouse
+    return r._hasHouse
 }
 // LifeStage Setter
 // 预测人生阶段
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetLifeStage(lifeStage string) error {
-    r.lifeStage = lifeStage
-    r.Set("life_stage", lifeStage)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetLifeStage(_lifeStage string) error {
+    r._lifeStage = _lifeStage
+    r.Set("life_stage", _lifeStage)
     return nil
 }
 
 // LifeStage Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetLifeStage() string {
-    return r.lifeStage
+    return r._lifeStage
 }
 // HasCar Setter
 // 预测是否有车,0: 没有车 1：自己注册有车2：预测有车
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasCar(hasCar string) error {
-    r.hasCar = hasCar
-    r.Set("has_car", hasCar)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetHasCar(_hasCar string) error {
+    r._hasCar = _hasCar
+    r.Set("has_car", _hasCar)
     return nil
 }
 
 // HasCar Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetHasCar() string {
-    return r.hasCar
+    return r._hasCar
 }
 // IsUndergraduate Setter
 // 预测是否在校大学生?0：不是 1 是 2 预测是
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsUndergraduate(isUndergraduate string) error {
-    r.isUndergraduate = isUndergraduate
-    r.Set("is_undergraduate", isUndergraduate)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIsUndergraduate(_isUndergraduate string) error {
+    r._isUndergraduate = _isUndergraduate
+    r.Set("is_undergraduate", _isUndergraduate)
     return nil
 }
 
 // IsUndergraduate Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIsUndergraduate() string {
-    return r.isUndergraduate
+    return r._isUndergraduate
 }
 // UserIncome Setter
 // 预测月收入
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetUserIncome(userIncome string) error {
-    r.userIncome = userIncome
-    r.Set("user_income", userIncome)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetUserIncome(_userIncome string) error {
+    r._userIncome = _userIncome
+    r.Set("user_income", _userIncome)
     return nil
 }
 
 // UserIncome Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetUserIncome() string {
-    return r.userIncome
+    return r._userIncome
 }
 // CareerType Setter
 // 预测职业
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetCareerType(careerType string) error {
-    r.careerType = careerType
-    r.Set("career_type", careerType)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetCareerType(_careerType string) error {
+    r._careerType = _careerType
+    r.Set("career_type", _careerType)
     return nil
 }
 
 // CareerType Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetCareerType() string {
-    return r.careerType
+    return r._careerType
 }
 // Education Setter
 // 预测学历,初高中,博士,专科,硕士,本科
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetEducation(education string) error {
-    r.education = education
-    r.Set("education", education)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetEducation(_education string) error {
+    r._education = _education
+    r.Set("education", _education)
     return nil
 }
 
 // Education Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetEducation() string {
-    return r.education
+    return r._education
 }
 // RegCityLevel Setter
 // 注册IP解析的城市等级
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetRegCityLevel(regCityLevel string) error {
-    r.regCityLevel = regCityLevel
-    r.Set("reg_city_level", regCityLevel)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetRegCityLevel(_regCityLevel string) error {
+    r._regCityLevel = _regCityLevel
+    r.Set("reg_city_level", _regCityLevel)
     return nil
 }
 
 // RegCityLevel Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetRegCityLevel() string {
-    return r.regCityLevel
+    return r._regCityLevel
 }
 // IpAreaName Setter
 // 注册IP解析区县名
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpAreaName(ipAreaName string) error {
-    r.ipAreaName = ipAreaName
-    r.Set("ip_area_name", ipAreaName)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpAreaName(_ipAreaName string) error {
+    r._ipAreaName = _ipAreaName
+    r.Set("ip_area_name", _ipAreaName)
     return nil
 }
 
 // IpAreaName Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIpAreaName() string {
-    return r.ipAreaName
+    return r._ipAreaName
 }
 // IpCityName Setter
 // 注册IP解析城市名称
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpCityName(ipCityName string) error {
-    r.ipCityName = ipCityName
-    r.Set("ip_city_name", ipCityName)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpCityName(_ipCityName string) error {
+    r._ipCityName = _ipCityName
+    r.Set("ip_city_name", _ipCityName)
     return nil
 }
 
 // IpCityName Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIpCityName() string {
-    return r.ipCityName
+    return r._ipCityName
 }
 // IpProvName Setter
 // 注册IP解析的省份名称
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpProvName(ipProvName string) error {
-    r.ipProvName = ipProvName
-    r.Set("ip_prov_name", ipProvName)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIpProvName(_ipProvName string) error {
+    r._ipProvName = _ipProvName
+    r.Set("ip_prov_name", _ipProvName)
     return nil
 }
 
 // IpProvName Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIpProvName() string {
-    return r.ipProvName
+    return r._ipProvName
 }
 // IdCardNumber Setter
 // 用户身份证号
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdCardNumber(idCardNumber string) error {
-    r.idCardNumber = idCardNumber
-    r.Set("id_card_number", idCardNumber)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdCardNumber(_idCardNumber string) error {
+    r._idCardNumber = _idCardNumber
+    r.Set("id_card_number", _idCardNumber)
     return nil
 }
 
 // IdCardNumber Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIdCardNumber() string {
-    return r.idCardNumber
+    return r._idCardNumber
 }
 // Ukeywords Setter
 // 用户感兴趣的标签,多个用逗号隔开。如动漫、历史
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetUkeywords(ukeywords string) error {
-    r.ukeywords = ukeywords
-    r.Set("ukeywords", ukeywords)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetUkeywords(_ukeywords string) error {
+    r._ukeywords = _ukeywords
+    r.Set("ukeywords", _ukeywords)
     return nil
 }
 
 // Ukeywords Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetUkeywords() string {
-    return r.ukeywords
+    return r._ukeywords
 }
 // Age Setter
 // 年龄
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAge(age string) error {
-    r.age = age
-    r.Set("age", age)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAge(_age string) error {
+    r._age = _age
+    r.Set("age", _age)
     return nil
 }
 
 // Age Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAge() string {
-    return r.age
+    return r._age
 }
 // Gender Setter
 // 性别, 0:未知 1： 男 2：女
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetGender(gender string) error {
-    r.gender = gender
-    r.Set("gender", gender)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetGender(_gender string) error {
+    r._gender = _gender
+    r.Set("gender", _gender)
     return nil
 }
 
 // Gender Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetGender() string {
-    return r.gender
+    return r._gender
 }
 // AdFloorPrice Setter
 // 底价，单位为分
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdFloorPrice(adFloorPrice string) error {
-    r.adFloorPrice = adFloorPrice
-    r.Set("ad_floor_price", adFloorPrice)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdFloorPrice(_adFloorPrice string) error {
+    r._adFloorPrice = _adFloorPrice
+    r.Set("ad_floor_price", _adFloorPrice)
     return nil
 }
 
 // AdFloorPrice Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdFloorPrice() string {
-    return r.adFloorPrice
+    return r._adFloorPrice
 }
 // AdImgType Setter
 // 广告位支持图片格式 0: jpg, 1:?jpeg, 2: gif
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdImgType(adImgType string) error {
-    r.adImgType = adImgType
-    r.Set("ad_img_type", adImgType)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdImgType(_adImgType string) error {
+    r._adImgType = _adImgType
+    r.Set("ad_img_type", _adImgType)
     return nil
 }
 
 // AdImgType Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdImgType() string {
-    return r.adImgType
+    return r._adImgType
 }
 // AdPos Setter
 // 广告位位置 0:未知,1:头部,2:底部, 3:侧边栏,4:全屏 默认传0
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdPos(adPos string) error {
-    r.adPos = adPos
-    r.Set("ad_pos", adPos)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdPos(_adPos string) error {
+    r._adPos = _adPos
+    r.Set("ad_pos", _adPos)
     return nil
 }
 
 // AdPos Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdPos() string {
-    return r.adPos
+    return r._adPos
 }
 // AdHeight Setter
 // 广告位高度
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdHeight(adHeight string) error {
-    r.adHeight = adHeight
-    r.Set("ad_height", adHeight)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdHeight(_adHeight string) error {
+    r._adHeight = _adHeight
+    r.Set("ad_height", _adHeight)
     return nil
 }
 
 // AdHeight Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdHeight() string {
-    return r.adHeight
+    return r._adHeight
 }
 // AdWidth Setter
 // 广告位宽度
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdWidth(adWidth string) error {
-    r.adWidth = adWidth
-    r.Set("ad_width", adWidth)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdWidth(_adWidth string) error {
+    r._adWidth = _adWidth
+    r.Set("ad_width", _adWidth)
     return nil
 }
 
 // AdWidth Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdWidth() string {
-    return r.adWidth
+    return r._adWidth
 }
 // AdType Setter
 // 广告类型 0:横幅,1: 插屏, 2:开屏, 3:原生,4:视频
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdType(adType string) error {
-    r.adType = adType
-    r.Set("ad_type", adType)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAdType(_adType string) error {
+    r._adType = _adType
+    r.Set("ad_type", _adType)
     return nil
 }
 
 // AdType Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAdType() string {
-    return r.adType
+    return r._adType
 }
 // GeoLon Setter
 // 设备经度
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetGeoLon(geoLon string) error {
-    r.geoLon = geoLon
-    r.Set("geo_lon", geoLon)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetGeoLon(_geoLon string) error {
+    r._geoLon = _geoLon
+    r.Set("geo_lon", _geoLon)
     return nil
 }
 
 // GeoLon Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetGeoLon() string {
-    return r.geoLon
+    return r._geoLon
 }
 // GeoLat Setter
 // 设备维度
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetGeoLat(geoLat string) error {
-    r.geoLat = geoLat
-    r.Set("geo_lat", geoLat)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetGeoLat(_geoLat string) error {
+    r._geoLat = _geoLat
+    r.Set("geo_lat", _geoLat)
     return nil
 }
 
 // GeoLat Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetGeoLat() string {
-    return r.geoLat
+    return r._geoLat
 }
 // ScreenHeight Setter
 // 设备屏幕纵向分辨率，单位：像素
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetScreenHeight(screenHeight string) error {
-    r.screenHeight = screenHeight
-    r.Set("screen_height", screenHeight)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetScreenHeight(_screenHeight string) error {
+    r._screenHeight = _screenHeight
+    r.Set("screen_height", _screenHeight)
     return nil
 }
 
 // ScreenHeight Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetScreenHeight() string {
-    return r.screenHeight
+    return r._screenHeight
 }
 // ScreenWidth Setter
 // 设备屏幕水平分辨率，单位：像素
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetScreenWidth(screenWidth string) error {
-    r.screenWidth = screenWidth
-    r.Set("screen_width", screenWidth)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetScreenWidth(_screenWidth string) error {
+    r._screenWidth = _screenWidth
+    r.Set("screen_width", _screenWidth)
     return nil
 }
 
 // ScreenWidth Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetScreenWidth() string {
-    return r.screenWidth
+    return r._screenWidth
 }
 // Orientation Setter
 // 设备方向：0:未知， 1： 纵向；2： 横向
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetOrientation(orientation string) error {
-    r.orientation = orientation
-    r.Set("orientation", orientation)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetOrientation(_orientation string) error {
+    r._orientation = _orientation
+    r.Set("orientation", _orientation)
     return nil
 }
 
 // Orientation Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetOrientation() string {
-    return r.orientation
+    return r._orientation
 }
 // Carrier Setter
 // 运营商，0: 未知， 1:移动,2:电信,3:联通
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetCarrier(carrier string) error {
-    r.carrier = carrier
-    r.Set("carrier", carrier)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetCarrier(_carrier string) error {
+    r._carrier = _carrier
+    r.Set("carrier", _carrier)
     return nil
 }
 
 // Carrier Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetCarrier() string {
-    return r.carrier
+    return r._carrier
 }
 // Network Setter
 // 网络类型，0：未知，1：WIFI, 2: 2G, 3: 3G, 4: 4G; 5: 5G
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetNetwork(network string) error {
-    r.network = network
-    r.Set("network", network)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetNetwork(_network string) error {
+    r._network = _network
+    r.Set("network", _network)
     return nil
 }
 
 // Network Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetNetwork() string {
-    return r.network
+    return r._network
 }
 // Brand Setter
 // 手机品牌
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetBrand(brand string) error {
-    r.brand = brand
-    r.Set("brand", brand)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetBrand(_brand string) error {
+    r._brand = _brand
+    r.Set("brand", _brand)
     return nil
 }
 
 // Brand Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetBrand() string {
-    return r.brand
+    return r._brand
 }
 // Made Setter
 // 设备厂商
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetMade(made string) error {
-    r.made = made
-    r.Set("made", made)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetMade(_made string) error {
+    r._made = _made
+    r.Set("made", _made)
     return nil
 }
 
 // Made Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetMade() string {
-    return r.made
+    return r._made
 }
 // Model Setter
 // 设备型号
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetModel(model string) error {
-    r.model = model
-    r.Set("model", model)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetModel(_model string) error {
+    r._model = _model
+    r.Set("model", _model)
     return nil
 }
 
 // Model Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetModel() string {
-    return r.model
+    return r._model
 }
 // PosCat Setter
 // 素材展示所在的页面或者频道
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetPosCat(posCat string) error {
-    r.posCat = posCat
-    r.Set("pos_cat", posCat)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetPosCat(_posCat string) error {
+    r._posCat = _posCat
+    r.Set("pos_cat", _posCat)
     return nil
 }
 
 // PosCat Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetPosCat() string {
-    return r.posCat
+    return r._posCat
 }
 // PublishName Setter
 // 合作方名称
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetPublishName(publishName string) error {
-    r.publishName = publishName
-    r.Set("publish_name", publishName)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetPublishName(_publishName string) error {
+    r._publishName = _publishName
+    r.Set("publish_name", _publishName)
     return nil
 }
 
 // PublishName Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetPublishName() string {
-    return r.publishName
+    return r._publishName
 }
 // PosId Setter
 // 给定appid中的位置id，用于提高转化率
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetPosId(posId string) error {
-    r.posId = posId
-    r.Set("pos_id", posId)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetPosId(_posId string) error {
+    r._posId = _posId
+    r.Set("pos_id", _posId)
     return nil
 }
 
 // PosId Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetPosId() string {
-    return r.posId
+    return r._posId
 }
 // AppCat Setter
 // app类别
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppCat(appCat string) error {
-    r.appCat = appCat
-    r.Set("app_cat", appCat)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppCat(_appCat string) error {
+    r._appCat = _appCat
+    r.Set("app_cat", _appCat)
     return nil
 }
 
 // AppCat Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAppCat() string {
-    return r.appCat
+    return r._appCat
 }
 // AppVer Setter
 // app版本号
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppVer(appVer string) error {
-    r.appVer = appVer
-    r.Set("app_ver", appVer)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppVer(_appVer string) error {
+    r._appVer = _appVer
+    r.Set("app_ver", _appVer)
     return nil
 }
 
 // AppVer Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAppVer() string {
-    return r.appVer
+    return r._appVer
 }
 // AppName Setter
 // 对接的appName
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // AppId Setter
 // 对接的appId
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // Description Setter
 // 关键词的描述
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // Keyword Setter
 // 关键词
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // KeywordType Setter
 // 关键词类型
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetKeywordType(keywordType string) error {
-    r.keywordType = keywordType
-    r.Set("keyword_type", keywordType)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetKeywordType(_keywordType string) error {
+    r._keywordType = _keywordType
+    r.Set("keyword_type", _keywordType)
     return nil
 }
 
 // KeywordType Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetKeywordType() string {
-    return r.keywordType
+    return r._keywordType
 }
 // AppInstallFlag Setter
 // 安装转化目标app的标识， 0： 未安装转化目标app, 1: 安装了转化目标app
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppInstallFlag(appInstallFlag string) error {
-    r.appInstallFlag = appInstallFlag
-    r.Set("app_install_flag", appInstallFlag)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetAppInstallFlag(_appInstallFlag string) error {
+    r._appInstallFlag = _appInstallFlag
+    r.Set("app_install_flag", _appInstallFlag)
     return nil
 }
 
 // AppInstallFlag Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetAppInstallFlag() string {
-    return r.appInstallFlag
+    return r._appInstallFlag
 }
 // App Setter
 // 转化目标app, 1：淘宝；2：天猫；3：闲鱼；4：支付宝
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetApp(app string) error {
-    r.app = app
-    r.Set("app", app)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetApp(_app string) error {
+    r._app = _app
+    r.Set("app", _app)
     return nil
 }
 
 // App Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetApp() string {
-    return r.app
+    return r._app
 }
 // IdfaMd5 Setter
 // idfa的md5值， 32位小写
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdfaMd5(idfaMd5 string) error {
-    r.idfaMd5 = idfaMd5
-    r.Set("idfa_md5", idfaMd5)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdfaMd5(_idfaMd5 string) error {
+    r._idfaMd5 = _idfaMd5
+    r.Set("idfa_md5", _idfaMd5)
     return nil
 }
 
 // IdfaMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIdfaMd5() string {
-    return r.idfaMd5
+    return r._idfaMd5
 }
 // ImeiMd5 Setter
 // imei的md5值， 32位小写
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetImeiMd5(imeiMd5 string) error {
-    r.imeiMd5 = imeiMd5
-    r.Set("imei_md5", imeiMd5)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetImeiMd5(_imeiMd5 string) error {
+    r._imeiMd5 = _imeiMd5
+    r.Set("imei_md5", _imeiMd5)
     return nil
 }
 
 // ImeiMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetImeiMd5() string {
-    return r.imeiMd5
+    return r._imeiMd5
 }
 // Idfa Setter
 // idfa原生值
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdfa(idfa string) error {
-    r.idfa = idfa
-    r.Set("idfa", idfa)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetIdfa(_idfa string) error {
+    r._idfa = _idfa
+    r.Set("idfa", _idfa)
     return nil
 }
 
 // Idfa Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetIdfa() string {
-    return r.idfa
+    return r._idfa
 }
 // Imei Setter
 // imei原生值
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetImei(imei string) error {
-    r.imei = imei
-    r.Set("imei", imei)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetImei(_imei string) error {
+    r._imei = _imei
+    r.Set("imei", _imei)
     return nil
 }
 
 // Imei Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetImei() string {
-    return r.imei
+    return r._imei
 }
 // Mobile Setter
 // 手机号
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // TransformType Setter
 // 转化类型， 1： 激活；2： 新登；32896：定向促活
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetTransformType(transformType string) error {
-    r.transformType = transformType
-    r.Set("transform_type", transformType)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetTransformType(_transformType string) error {
+    r._transformType = _transformType
+    r.Set("transform_type", _transformType)
     return nil
 }
 
 // TransformType Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetTransformType() string {
-    return r.transformType
+    return r._transformType
 }
 // Os Setter
 // 用户所使用设备的系统， 0： android, 1: ios, 2: windowsphone, 3: other
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetOs(os string) error {
-    r.os = os
-    r.Set("os", os)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetOs(_os string) error {
+    r._os = _os
+    r.Set("os", _os)
     return nil
 }
 
 // Os Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetOs() string {
-    return r.os
+    return r._os
 }
 // Cid Setter
 // 广告创意id，淘宝和媒体协商
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetCid(cid string) error {
-    r.cid = cid
-    r.Set("cid", cid)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetCid(_cid string) error {
+    r._cid = _cid
+    r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetCid() string {
-    return r.cid
+    return r._cid
 }
 // Oaid Setter
 // android最新广告标识
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetOaid(oaid string) error {
-    r.oaid = oaid
-    r.Set("oaid", oaid)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetOaid(_oaid string) error {
+    r._oaid = _oaid
+    r.Set("oaid", _oaid)
     return nil
 }
 
 // Oaid Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetOaid() string {
-    return r.oaid
+    return r._oaid
 }
 // OaidMd5 Setter
 // android最新广告标识md5值， 32位小写
-func (r *TaobaoUsergrowthDeliveryAskRequest) SetOaidMd5(oaidMd5 string) error {
-    r.oaidMd5 = oaidMd5
-    r.Set("oaid_md5", oaidMd5)
+func (r *TaobaoUsergrowthDeliveryAskRequest) SetOaidMd5(_oaidMd5 string) error {
+    r._oaidMd5 = _oaidMd5
+    r.Set("oaid_md5", _oaidMd5)
     return nil
 }
 
 // OaidMd5 Getter
 func (r TaobaoUsergrowthDeliveryAskRequest) GetOaidMd5() string {
-    return r.oaidMd5
+    return r._oaidMd5
 }

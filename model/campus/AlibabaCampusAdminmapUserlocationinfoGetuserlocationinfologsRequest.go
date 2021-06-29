@@ -15,9 +15,9 @@ alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs
 type AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest struct {
     model.Params
     // 环境参数
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 查询参数
-    param1   *UserLocationInfoQuery
+    _param1   *UserLocationInfoQuery
 }
 
 // 初始化AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) Get
 }
 // Param0 Setter
 // 环境参数
-func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 查询参数
-func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) SetParam1(param1 *UserLocationInfoQuery) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) SetParam1(_param1 *UserLocationInfoQuery) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoGetuserlocationinfologsRequest) GetParam1() *UserLocationInfoQuery {
-    return r.param1
+    return r._param1
 }

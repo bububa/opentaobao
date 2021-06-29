@@ -15,7 +15,7 @@ alibaba.ais.assets.tag.abort
 type AlibabaAisAssetsTagAbortRequest struct {
     model.Params
     // 请求资产信息
-    requestParam   string
+    _requestParam   string
 }
 
 // 初始化AlibabaAisAssetsTagAbortRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAisAssetsTagAbortRequest) GetApiParams() url.Values {
 }
 // RequestParam Setter
 // 请求资产信息
-func (r *AlibabaAisAssetsTagAbortRequest) SetRequestParam(requestParam string) error {
-    r.requestParam = requestParam
-    r.Set("request_param", requestParam)
+func (r *AlibabaAisAssetsTagAbortRequest) SetRequestParam(_requestParam string) error {
+    r._requestParam = _requestParam
+    r.Set("request_param", _requestParam)
     return nil
 }
 
 // RequestParam Getter
 func (r AlibabaAisAssetsTagAbortRequest) GetRequestParam() string {
-    return r.requestParam
+    return r._requestParam
 }

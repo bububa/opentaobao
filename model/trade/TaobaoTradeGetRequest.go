@@ -16,9 +16,9 @@ taobao.trade.get
 type TaobaoTradeGetRequest struct {
     model.Params
     // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
-    fields   string
+    _fields   string
     // 交易编号
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoTradeGetRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoTradeGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
-func (r *TaobaoTradeGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoTradeGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoTradeGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // Tid Setter
 // 交易编号
-func (r *TaobaoTradeGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

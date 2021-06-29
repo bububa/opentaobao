@@ -25,7 +25,7 @@ https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
 type TaobaoCaipiaoMarketingPutRequest struct {
     model.Params
     // 活动详情设置
-    detail   *WangcaiMarketingDetail
+    _detail   *WangcaiMarketingDetail
 }
 
 // 初始化TaobaoCaipiaoMarketingPutRequest对象
@@ -50,13 +50,13 @@ func (r TaobaoCaipiaoMarketingPutRequest) GetApiParams() url.Values {
 }
 // Detail Setter
 // 活动详情设置
-func (r *TaobaoCaipiaoMarketingPutRequest) SetDetail(detail *WangcaiMarketingDetail) error {
-    r.detail = detail
-    r.Set("detail", detail)
+func (r *TaobaoCaipiaoMarketingPutRequest) SetDetail(_detail *WangcaiMarketingDetail) error {
+    r._detail = _detail
+    r.Set("detail", _detail)
     return nil
 }
 
 // Detail Getter
 func (r TaobaoCaipiaoMarketingPutRequest) GetDetail() *WangcaiMarketingDetail {
-    return r.detail
+    return r._detail
 }

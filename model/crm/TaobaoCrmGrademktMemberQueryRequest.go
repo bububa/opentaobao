@@ -15,11 +15,11 @@ taobao.crm.grademkt.member.query
 type TaobaoCrmGrademktMemberQueryRequest struct {
     model.Params
     // 会员属性-json format生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-    parameter   string
+    _parameter   string
     // 系统属性，json格式
-    feather   string
+    _feather   string
     // 会员nick
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TaobaoCrmGrademktMemberQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoCrmGrademktMemberQueryRequest) GetApiParams() url.Values {
 }
 // Parameter Setter
 // 会员属性-json format生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-func (r *TaobaoCrmGrademktMemberQueryRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *TaobaoCrmGrademktMemberQueryRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r TaobaoCrmGrademktMemberQueryRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }
 // Feather Setter
 // 系统属性，json格式
-func (r *TaobaoCrmGrademktMemberQueryRequest) SetFeather(feather string) error {
-    r.feather = feather
-    r.Set("feather", feather)
+func (r *TaobaoCrmGrademktMemberQueryRequest) SetFeather(_feather string) error {
+    r._feather = _feather
+    r.Set("feather", _feather)
     return nil
 }
 
 // Feather Getter
 func (r TaobaoCrmGrademktMemberQueryRequest) GetFeather() string {
-    return r.feather
+    return r._feather
 }
 // BuyerNick Setter
 // 会员nick
-func (r *TaobaoCrmGrademktMemberQueryRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoCrmGrademktMemberQueryRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoCrmGrademktMemberQueryRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

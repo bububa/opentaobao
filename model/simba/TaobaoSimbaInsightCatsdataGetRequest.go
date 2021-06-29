@@ -15,11 +15,11 @@ taobao.simba.insight.catsdata.get
 type TaobaoSimbaInsightCatsdataGetRequest struct {
     model.Params
     // 表示要查询的类目id
-    categoryIdList   []string
+    _categoryIdList   []string
     // 开始时间，格式：yyyy-MM-dd
-    startDate   string
+    _startDate   string
     // 查询截止时间，格式：yyyy-MM-dd
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoSimbaInsightCatsdataGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaInsightCatsdataGetRequest) GetApiParams() url.Values {
 }
 // CategoryIdList Setter
 // 表示要查询的类目id
-func (r *TaobaoSimbaInsightCatsdataGetRequest) SetCategoryIdList(categoryIdList []string) error {
-    r.categoryIdList = categoryIdList
-    r.Set("category_id_list", categoryIdList)
+func (r *TaobaoSimbaInsightCatsdataGetRequest) SetCategoryIdList(_categoryIdList []string) error {
+    r._categoryIdList = _categoryIdList
+    r.Set("category_id_list", _categoryIdList)
     return nil
 }
 
 // CategoryIdList Getter
 func (r TaobaoSimbaInsightCatsdataGetRequest) GetCategoryIdList() []string {
-    return r.categoryIdList
+    return r._categoryIdList
 }
 // StartDate Setter
 // 开始时间，格式：yyyy-MM-dd
-func (r *TaobaoSimbaInsightCatsdataGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoSimbaInsightCatsdataGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoSimbaInsightCatsdataGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 查询截止时间，格式：yyyy-MM-dd
-func (r *TaobaoSimbaInsightCatsdataGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoSimbaInsightCatsdataGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoSimbaInsightCatsdataGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

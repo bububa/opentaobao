@@ -15,7 +15,7 @@ taobao.openmall.item.get
 type TaobaoOpenmallItemGetRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoOpenmallItemGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenmallItemGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoOpenmallItemGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOpenmallItemGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOpenmallItemGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

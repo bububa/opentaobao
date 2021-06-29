@@ -15,7 +15,7 @@ alibaba.lsy.crm.activity.data.update
 type AlibabaLsyCrmActivityDataUpdateRequest struct {
     model.Params
     // 入参对象
-    reqDTO   *NrtCrmActivityStatisticsDataReq
+    _reqDTO   *NrtCrmActivityStatisticsDataReq
 }
 
 // 初始化AlibabaLsyCrmActivityDataUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityDataUpdateRequest) GetApiParams() url.Values {
 }
 // ReqDTO Setter
 // 入参对象
-func (r *AlibabaLsyCrmActivityDataUpdateRequest) SetReqDTO(reqDTO *NrtCrmActivityStatisticsDataReq) error {
-    r.reqDTO = reqDTO
-    r.Set("req_d_t_o", reqDTO)
+func (r *AlibabaLsyCrmActivityDataUpdateRequest) SetReqDTO(_reqDTO *NrtCrmActivityStatisticsDataReq) error {
+    r._reqDTO = _reqDTO
+    r.Set("req_d_t_o", _reqDTO)
     return nil
 }
 
 // ReqDTO Getter
 func (r AlibabaLsyCrmActivityDataUpdateRequest) GetReqDTO() *NrtCrmActivityStatisticsDataReq {
-    return r.reqDTO
+    return r._reqDTO
 }

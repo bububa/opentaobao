@@ -15,15 +15,15 @@ taobao.ailab.aicloud.top.memo.alarm.create
 type TaobaoAilabAicloudTopMemoAlarmCreateRequest struct {
     model.Params
     // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-    ext   string
+    _ext   string
     // schema
-    schema   string
+    _schema   string
     // 企业用户ID
-    userId   string
+    _userId   string
     // 手持设备ID
-    utdId   string
+    _utdId   string
     // 创建闹钟入参
-    paramCreateAlarmParam   *CreateAlarmParam
+    _paramCreateAlarmParam   *CreateAlarmParam
 }
 
 // 初始化TaobaoAilabAicloudTopMemoAlarmCreateRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetApiParams() url.Values {
 }
 // Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // Schema Setter
 // schema
-func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // UserId Setter
 // 企业用户ID
-func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 手持设备ID
-func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // ParamCreateAlarmParam Setter
 // 创建闹钟入参
-func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetParamCreateAlarmParam(paramCreateAlarmParam *CreateAlarmParam) error {
-    r.paramCreateAlarmParam = paramCreateAlarmParam
-    r.Set("param_create_alarm_param", paramCreateAlarmParam)
+func (r *TaobaoAilabAicloudTopMemoAlarmCreateRequest) SetParamCreateAlarmParam(_paramCreateAlarmParam *CreateAlarmParam) error {
+    r._paramCreateAlarmParam = _paramCreateAlarmParam
+    r.Set("param_create_alarm_param", _paramCreateAlarmParam)
     return nil
 }
 
 // ParamCreateAlarmParam Getter
 func (r TaobaoAilabAicloudTopMemoAlarmCreateRequest) GetParamCreateAlarmParam() *CreateAlarmParam {
-    return r.paramCreateAlarmParam
+    return r._paramCreateAlarmParam
 }

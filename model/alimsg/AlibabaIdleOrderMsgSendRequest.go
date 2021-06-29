@@ -15,9 +15,9 @@ alibaba.idle.order.msg.send
 type AlibabaIdleOrderMsgSendRequest struct {
     model.Params
     // 订单id
-    orderId   string
+    _orderId   string
     // 消息发送内容
-    text   string
+    _text   string
 }
 
 // 初始化AlibabaIdleOrderMsgSendRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIdleOrderMsgSendRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaIdleOrderMsgSendRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaIdleOrderMsgSendRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaIdleOrderMsgSendRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Text Setter
 // 消息发送内容
-func (r *AlibabaIdleOrderMsgSendRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *AlibabaIdleOrderMsgSendRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r AlibabaIdleOrderMsgSendRequest) GetText() string {
-    return r.text
+    return r._text
 }

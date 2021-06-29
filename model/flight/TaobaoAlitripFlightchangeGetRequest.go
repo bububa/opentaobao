@@ -15,7 +15,7 @@ taobao.alitrip.flightchange.get
 type TaobaoAlitripFlightchangeGetRequest struct {
     model.Params
     // 查询信息封装
-    searchOption   *FlightChangeDataQueryOption
+    _searchOption   *FlightChangeDataQueryOption
 }
 
 // 初始化TaobaoAlitripFlightchangeGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripFlightchangeGetRequest) GetApiParams() url.Values {
 }
 // SearchOption Setter
 // 查询信息封装
-func (r *TaobaoAlitripFlightchangeGetRequest) SetSearchOption(searchOption *FlightChangeDataQueryOption) error {
-    r.searchOption = searchOption
-    r.Set("search_option", searchOption)
+func (r *TaobaoAlitripFlightchangeGetRequest) SetSearchOption(_searchOption *FlightChangeDataQueryOption) error {
+    r._searchOption = _searchOption
+    r.Set("search_option", _searchOption)
     return nil
 }
 
 // SearchOption Getter
 func (r TaobaoAlitripFlightchangeGetRequest) GetSearchOption() *FlightChangeDataQueryOption {
-    return r.searchOption
+    return r._searchOption
 }

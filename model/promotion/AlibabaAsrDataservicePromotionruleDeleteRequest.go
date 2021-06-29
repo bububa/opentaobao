@@ -15,7 +15,7 @@ alibaba.asr.dataservice.promotionrule.delete
 type AlibabaAsrDataservicePromotionruleDeleteRequest struct {
     model.Params
     // poskey
-    posKey   int64
+    _posKey   int64
 }
 
 // 初始化AlibabaAsrDataservicePromotionruleDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAsrDataservicePromotionruleDeleteRequest) GetApiParams() url.Valu
 }
 // PosKey Setter
 // poskey
-func (r *AlibabaAsrDataservicePromotionruleDeleteRequest) SetPosKey(posKey int64) error {
-    r.posKey = posKey
-    r.Set("pos_key", posKey)
+func (r *AlibabaAsrDataservicePromotionruleDeleteRequest) SetPosKey(_posKey int64) error {
+    r._posKey = _posKey
+    r.Set("pos_key", _posKey)
     return nil
 }
 
 // PosKey Getter
 func (r AlibabaAsrDataservicePromotionruleDeleteRequest) GetPosKey() int64 {
-    return r.posKey
+    return r._posKey
 }

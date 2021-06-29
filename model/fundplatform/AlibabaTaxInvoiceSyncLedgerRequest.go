@@ -15,7 +15,7 @@ alibaba.tax.invoice.sync.ledger
 type AlibabaTaxInvoiceSyncLedgerRequest struct {
     model.Params
     // 参数
-    paramSyncLedgerInvoiceRequest   *SyncLedgerInvoiceRequest
+    _paramSyncLedgerInvoiceRequest   *SyncLedgerInvoiceRequest
 }
 
 // 初始化AlibabaTaxInvoiceSyncLedgerRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTaxInvoiceSyncLedgerRequest) GetApiParams() url.Values {
 }
 // ParamSyncLedgerInvoiceRequest Setter
 // 参数
-func (r *AlibabaTaxInvoiceSyncLedgerRequest) SetParamSyncLedgerInvoiceRequest(paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
-    r.paramSyncLedgerInvoiceRequest = paramSyncLedgerInvoiceRequest
-    r.Set("param_sync_ledger_invoice_request", paramSyncLedgerInvoiceRequest)
+func (r *AlibabaTaxInvoiceSyncLedgerRequest) SetParamSyncLedgerInvoiceRequest(_paramSyncLedgerInvoiceRequest *SyncLedgerInvoiceRequest) error {
+    r._paramSyncLedgerInvoiceRequest = _paramSyncLedgerInvoiceRequest
+    r.Set("param_sync_ledger_invoice_request", _paramSyncLedgerInvoiceRequest)
     return nil
 }
 
 // ParamSyncLedgerInvoiceRequest Getter
 func (r AlibabaTaxInvoiceSyncLedgerRequest) GetParamSyncLedgerInvoiceRequest() *SyncLedgerInvoiceRequest {
-    return r.paramSyncLedgerInvoiceRequest
+    return r._paramSyncLedgerInvoiceRequest
 }

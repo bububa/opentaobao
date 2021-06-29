@@ -15,7 +15,7 @@ alibaba.wdk.scm.lrp.order.predict
 type AlibabaWdkScmLrpOrderPredictRequest struct {
     model.Params
     // 单量预测查询参数
-    paramOrderPredictQuery   *OrderPredictQuery
+    _paramOrderPredictQuery   *OrderPredictQuery
 }
 
 // 初始化AlibabaWdkScmLrpOrderPredictRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkScmLrpOrderPredictRequest) GetApiParams() url.Values {
 }
 // ParamOrderPredictQuery Setter
 // 单量预测查询参数
-func (r *AlibabaWdkScmLrpOrderPredictRequest) SetParamOrderPredictQuery(paramOrderPredictQuery *OrderPredictQuery) error {
-    r.paramOrderPredictQuery = paramOrderPredictQuery
-    r.Set("param_order_predict_query", paramOrderPredictQuery)
+func (r *AlibabaWdkScmLrpOrderPredictRequest) SetParamOrderPredictQuery(_paramOrderPredictQuery *OrderPredictQuery) error {
+    r._paramOrderPredictQuery = _paramOrderPredictQuery
+    r.Set("param_order_predict_query", _paramOrderPredictQuery)
     return nil
 }
 
 // ParamOrderPredictQuery Getter
 func (r AlibabaWdkScmLrpOrderPredictRequest) GetParamOrderPredictQuery() *OrderPredictQuery {
-    return r.paramOrderPredictQuery
+    return r._paramOrderPredictQuery
 }

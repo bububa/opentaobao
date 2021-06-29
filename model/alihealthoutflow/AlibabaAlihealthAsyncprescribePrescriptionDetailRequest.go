@@ -15,7 +15,7 @@ alibaba.alihealth.asyncprescribe.prescription.detail
 type AlibabaAlihealthAsyncprescribePrescriptionDetailRequest struct {
     model.Params
     // 入参
-    detailRequest   *AsyncPrescribeDetailRequest
+    _detailRequest   *AsyncPrescribeDetailRequest
 }
 
 // 初始化AlibabaAlihealthAsyncprescribePrescriptionDetailRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiParams() 
 }
 // DetailRequest Setter
 // 入参
-func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) SetDetailRequest(detailRequest *AsyncPrescribeDetailRequest) error {
-    r.detailRequest = detailRequest
-    r.Set("detail_request", detailRequest)
+func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) SetDetailRequest(_detailRequest *AsyncPrescribeDetailRequest) error {
+    r._detailRequest = _detailRequest
+    r.Set("detail_request", _detailRequest)
     return nil
 }
 
 // DetailRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
-    return r.detailRequest
+    return r._detailRequest
 }

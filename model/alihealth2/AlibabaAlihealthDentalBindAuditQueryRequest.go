@@ -15,7 +15,7 @@ ISV查询绑定审核状态
 type AlibabaAlihealthDentalBindAuditQueryRequest struct {
     model.Params
     // 绑定ID列表
-    bindIds   []int64
+    _bindIds   []int64
 }
 
 // 初始化AlibabaAlihealthDentalBindAuditQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetApiParams() url.Values {
 }
 // BindIds Setter
 // 绑定ID列表
-func (r *AlibabaAlihealthDentalBindAuditQueryRequest) SetBindIds(bindIds []int64) error {
-    r.bindIds = bindIds
-    r.Set("bind_ids", bindIds)
+func (r *AlibabaAlihealthDentalBindAuditQueryRequest) SetBindIds(_bindIds []int64) error {
+    r._bindIds = _bindIds
+    r.Set("bind_ids", _bindIds)
     return nil
 }
 
 // BindIds Getter
 func (r AlibabaAlihealthDentalBindAuditQueryRequest) GetBindIds() []int64 {
-    return r.bindIds
+    return r._bindIds
 }

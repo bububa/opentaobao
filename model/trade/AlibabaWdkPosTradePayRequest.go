@@ -15,7 +15,7 @@ alibaba.wdk.pos.trade.pay
 type AlibabaWdkPosTradePayRequest struct {
     model.Params
     // 支付请求
-    payRequest   *FastBuyPosPayRequest
+    _payRequest   *FastBuyPosPayRequest
 }
 
 // 初始化AlibabaWdkPosTradePayRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradePayRequest) GetApiParams() url.Values {
 }
 // PayRequest Setter
 // 支付请求
-func (r *AlibabaWdkPosTradePayRequest) SetPayRequest(payRequest *FastBuyPosPayRequest) error {
-    r.payRequest = payRequest
-    r.Set("pay_request", payRequest)
+func (r *AlibabaWdkPosTradePayRequest) SetPayRequest(_payRequest *FastBuyPosPayRequest) error {
+    r._payRequest = _payRequest
+    r.Set("pay_request", _payRequest)
     return nil
 }
 
 // PayRequest Getter
 func (r AlibabaWdkPosTradePayRequest) GetPayRequest() *FastBuyPosPayRequest {
-    return r.payRequest
+    return r._payRequest
 }

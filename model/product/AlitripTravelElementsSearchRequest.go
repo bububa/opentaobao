@@ -15,13 +15,13 @@ alitrip.travel.elements.search
 type AlitripTravelElementsSearchRequest struct {
     model.Params
     // 商家id
-    sellerId   int64
+    _sellerId   int64
     // 查询关键词
-    query   string
+    _query   string
     // 查询数量，限制100
-    count   int64
+    _count   int64
     // 资源类型
-    type   int64
+    _type   int64
 }
 
 // 初始化AlitripTravelElementsSearchRequest对象
@@ -46,49 +46,49 @@ func (r AlitripTravelElementsSearchRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 商家id
-func (r *AlitripTravelElementsSearchRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *AlitripTravelElementsSearchRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r AlitripTravelElementsSearchRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // Query Setter
 // 查询关键词
-func (r *AlitripTravelElementsSearchRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlitripTravelElementsSearchRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlitripTravelElementsSearchRequest) GetQuery() string {
-    return r.query
+    return r._query
 }
 // Count Setter
 // 查询数量，限制100
-func (r *AlitripTravelElementsSearchRequest) SetCount(count int64) error {
-    r.count = count
-    r.Set("count", count)
+func (r *AlitripTravelElementsSearchRequest) SetCount(_count int64) error {
+    r._count = _count
+    r.Set("count", _count)
     return nil
 }
 
 // Count Getter
 func (r AlitripTravelElementsSearchRequest) GetCount() int64 {
-    return r.count
+    return r._count
 }
 // Type Setter
 // 资源类型
-func (r *AlitripTravelElementsSearchRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlitripTravelElementsSearchRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlitripTravelElementsSearchRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

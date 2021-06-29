@@ -15,11 +15,11 @@ tmall.servicecenter.identifytask.create
 type TmallServicecenterIdentifytaskCreateRequest struct {
     model.Params
     // 工单列表
-    workcardIds   []int64
+    _workcardIds   []int64
     // 是否改派
-    reassign   bool
+    _reassign   bool
     // 服务商自定义的外部核销单id
-    outerId   string
+    _outerId   string
 }
 
 // 初始化TmallServicecenterIdentifytaskCreateRequest对象
@@ -44,37 +44,37 @@ func (r TmallServicecenterIdentifytaskCreateRequest) GetApiParams() url.Values {
 }
 // WorkcardIds Setter
 // 工单列表
-func (r *TmallServicecenterIdentifytaskCreateRequest) SetWorkcardIds(workcardIds []int64) error {
-    r.workcardIds = workcardIds
-    r.Set("workcard_ids", workcardIds)
+func (r *TmallServicecenterIdentifytaskCreateRequest) SetWorkcardIds(_workcardIds []int64) error {
+    r._workcardIds = _workcardIds
+    r.Set("workcard_ids", _workcardIds)
     return nil
 }
 
 // WorkcardIds Getter
 func (r TmallServicecenterIdentifytaskCreateRequest) GetWorkcardIds() []int64 {
-    return r.workcardIds
+    return r._workcardIds
 }
 // Reassign Setter
 // 是否改派
-func (r *TmallServicecenterIdentifytaskCreateRequest) SetReassign(reassign bool) error {
-    r.reassign = reassign
-    r.Set("reassign", reassign)
+func (r *TmallServicecenterIdentifytaskCreateRequest) SetReassign(_reassign bool) error {
+    r._reassign = _reassign
+    r.Set("reassign", _reassign)
     return nil
 }
 
 // Reassign Getter
 func (r TmallServicecenterIdentifytaskCreateRequest) GetReassign() bool {
-    return r.reassign
+    return r._reassign
 }
 // OuterId Setter
 // 服务商自定义的外部核销单id
-func (r *TmallServicecenterIdentifytaskCreateRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TmallServicecenterIdentifytaskCreateRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TmallServicecenterIdentifytaskCreateRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }

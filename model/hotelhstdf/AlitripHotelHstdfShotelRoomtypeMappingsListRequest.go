@@ -15,7 +15,7 @@ alitrip.hotel.hstdf.shotel.roomtype.mappings.list
 type AlitripHotelHstdfShotelRoomtypeMappingsListRequest struct {
     model.Params
     // HID
-    hid   int64
+    _hid   int64
 }
 
 // 初始化AlitripHotelHstdfShotelRoomtypeMappingsListRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetApiParams() url.V
 }
 // Hid Setter
 // HID
-func (r *AlitripHotelHstdfShotelRoomtypeMappingsListRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *AlitripHotelHstdfShotelRoomtypeMappingsListRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }

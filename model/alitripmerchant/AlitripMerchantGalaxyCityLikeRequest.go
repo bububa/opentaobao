@@ -15,11 +15,11 @@ alitrip.merchant.galaxy.city.like
 type AlitripMerchantGalaxyCityLikeRequest struct {
     model.Params
     // 商家租户id
-    tenantKey   string
+    _tenantKey   string
     // 城市模糊
-    cityName   string
+    _cityName   string
     // 0国内1国外
-    domestic   int64
+    _domestic   int64
 }
 
 // 初始化AlitripMerchantGalaxyCityLikeRequest对象
@@ -44,37 +44,37 @@ func (r AlitripMerchantGalaxyCityLikeRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 商家租户id
-func (r *AlitripMerchantGalaxyCityLikeRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyCityLikeRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyCityLikeRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // CityName Setter
 // 城市模糊
-func (r *AlitripMerchantGalaxyCityLikeRequest) SetCityName(cityName string) error {
-    r.cityName = cityName
-    r.Set("city_name", cityName)
+func (r *AlitripMerchantGalaxyCityLikeRequest) SetCityName(_cityName string) error {
+    r._cityName = _cityName
+    r.Set("city_name", _cityName)
     return nil
 }
 
 // CityName Getter
 func (r AlitripMerchantGalaxyCityLikeRequest) GetCityName() string {
-    return r.cityName
+    return r._cityName
 }
 // Domestic Setter
 // 0国内1国外
-func (r *AlitripMerchantGalaxyCityLikeRequest) SetDomestic(domestic int64) error {
-    r.domestic = domestic
-    r.Set("domestic", domestic)
+func (r *AlitripMerchantGalaxyCityLikeRequest) SetDomestic(_domestic int64) error {
+    r._domestic = _domestic
+    r.Set("domestic", _domestic)
     return nil
 }
 
 // Domestic Getter
 func (r AlitripMerchantGalaxyCityLikeRequest) GetDomestic() int64 {
-    return r.domestic
+    return r._domestic
 }

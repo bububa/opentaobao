@@ -15,7 +15,7 @@ alibaba.tianji.supplier.order.query
 type AlibabaTianjiSupplierOrderQueryRequest struct {
     model.Params
     // 订单查询入参
-    paramSupplierTopQueryModel   *SupplierTopQueryModel
+    _paramSupplierTopQueryModel   *SupplierTopQueryModel
 }
 
 // 初始化AlibabaTianjiSupplierOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTianjiSupplierOrderQueryRequest) GetApiParams() url.Values {
 }
 // ParamSupplierTopQueryModel Setter
 // 订单查询入参
-func (r *AlibabaTianjiSupplierOrderQueryRequest) SetParamSupplierTopQueryModel(paramSupplierTopQueryModel *SupplierTopQueryModel) error {
-    r.paramSupplierTopQueryModel = paramSupplierTopQueryModel
-    r.Set("param_supplier_top_query_model", paramSupplierTopQueryModel)
+func (r *AlibabaTianjiSupplierOrderQueryRequest) SetParamSupplierTopQueryModel(_paramSupplierTopQueryModel *SupplierTopQueryModel) error {
+    r._paramSupplierTopQueryModel = _paramSupplierTopQueryModel
+    r.Set("param_supplier_top_query_model", _paramSupplierTopQueryModel)
     return nil
 }
 
 // ParamSupplierTopQueryModel Getter
 func (r AlibabaTianjiSupplierOrderQueryRequest) GetParamSupplierTopQueryModel() *SupplierTopQueryModel {
-    return r.paramSupplierTopQueryModel
+    return r._paramSupplierTopQueryModel
 }

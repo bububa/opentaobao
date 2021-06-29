@@ -15,7 +15,7 @@ isv通过该接口给openim用户推送自定义消息
 type TaobaoOpenimCustmsgPushRequest struct {
     model.Params
     // 自定义消息内容
-    custmsg   *CustMsg
+    _custmsg   *CustMsg
 }
 
 // 初始化TaobaoOpenimCustmsgPushRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimCustmsgPushRequest) GetApiParams() url.Values {
 }
 // Custmsg Setter
 // 自定义消息内容
-func (r *TaobaoOpenimCustmsgPushRequest) SetCustmsg(custmsg *CustMsg) error {
-    r.custmsg = custmsg
-    r.Set("custmsg", custmsg)
+func (r *TaobaoOpenimCustmsgPushRequest) SetCustmsg(_custmsg *CustMsg) error {
+    r._custmsg = _custmsg
+    r.Set("custmsg", _custmsg)
     return nil
 }
 
 // Custmsg Getter
 func (r TaobaoOpenimCustmsgPushRequest) GetCustmsg() *CustMsg {
-    return r.custmsg
+    return r._custmsg
 }

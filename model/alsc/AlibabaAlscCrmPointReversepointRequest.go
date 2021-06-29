@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.reversepoint
 type AlibabaAlscCrmPointReversepointRequest struct {
     model.Params
     // 入参
-    paramReverseConsumePointOpenReq   *ReverseConsumePointOpenReq
+    _paramReverseConsumePointOpenReq   *ReverseConsumePointOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointReversepointRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointReversepointRequest) GetApiParams() url.Values {
 }
 // ParamReverseConsumePointOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointReversepointRequest) SetParamReverseConsumePointOpenReq(paramReverseConsumePointOpenReq *ReverseConsumePointOpenReq) error {
-    r.paramReverseConsumePointOpenReq = paramReverseConsumePointOpenReq
-    r.Set("param_reverse_consume_point_open_req", paramReverseConsumePointOpenReq)
+func (r *AlibabaAlscCrmPointReversepointRequest) SetParamReverseConsumePointOpenReq(_paramReverseConsumePointOpenReq *ReverseConsumePointOpenReq) error {
+    r._paramReverseConsumePointOpenReq = _paramReverseConsumePointOpenReq
+    r.Set("param_reverse_consume_point_open_req", _paramReverseConsumePointOpenReq)
     return nil
 }
 
 // ParamReverseConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointReversepointRequest) GetParamReverseConsumePointOpenReq() *ReverseConsumePointOpenReq {
-    return r.paramReverseConsumePointOpenReq
+    return r._paramReverseConsumePointOpenReq
 }

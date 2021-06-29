@@ -15,19 +15,19 @@ alibaba.fmhealth.pressure.report.create
 type AlibabaFmhealthPressureReportCreateRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
     // 报告类型
-    reportType   string
+    _reportType   string
     // 报告内容
-    reportData   string
+    _reportData   string
     // 报告周期
-    reportPeriod   string
+    _reportPeriod   string
     // 报告时间
-    reportTime   string
+    _reportTime   string
     // 报告周期天数
-    reportPeriodDays   string
+    _reportPeriodDays   string
     // 数据来源
-    reportSource   string
+    _reportSource   string
 }
 
 // 初始化AlibabaFmhealthPressureReportCreateRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaFmhealthPressureReportCreateRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // ReportType Setter
 // 报告类型
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportType(reportType string) error {
-    r.reportType = reportType
-    r.Set("report_type", reportType)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportType(_reportType string) error {
+    r._reportType = _reportType
+    r.Set("report_type", _reportType)
     return nil
 }
 
 // ReportType Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportType() string {
-    return r.reportType
+    return r._reportType
 }
 // ReportData Setter
 // 报告内容
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportData(reportData string) error {
-    r.reportData = reportData
-    r.Set("report_data", reportData)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportData(_reportData string) error {
+    r._reportData = _reportData
+    r.Set("report_data", _reportData)
     return nil
 }
 
 // ReportData Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportData() string {
-    return r.reportData
+    return r._reportData
 }
 // ReportPeriod Setter
 // 报告周期
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriod(reportPeriod string) error {
-    r.reportPeriod = reportPeriod
-    r.Set("report_period", reportPeriod)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriod(_reportPeriod string) error {
+    r._reportPeriod = _reportPeriod
+    r.Set("report_period", _reportPeriod)
     return nil
 }
 
 // ReportPeriod Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportPeriod() string {
-    return r.reportPeriod
+    return r._reportPeriod
 }
 // ReportTime Setter
 // 报告时间
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportTime(reportTime string) error {
-    r.reportTime = reportTime
-    r.Set("report_time", reportTime)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportTime(_reportTime string) error {
+    r._reportTime = _reportTime
+    r.Set("report_time", _reportTime)
     return nil
 }
 
 // ReportTime Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportTime() string {
-    return r.reportTime
+    return r._reportTime
 }
 // ReportPeriodDays Setter
 // 报告周期天数
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriodDays(reportPeriodDays string) error {
-    r.reportPeriodDays = reportPeriodDays
-    r.Set("report_period_days", reportPeriodDays)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportPeriodDays(_reportPeriodDays string) error {
+    r._reportPeriodDays = _reportPeriodDays
+    r.Set("report_period_days", _reportPeriodDays)
     return nil
 }
 
 // ReportPeriodDays Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportPeriodDays() string {
-    return r.reportPeriodDays
+    return r._reportPeriodDays
 }
 // ReportSource Setter
 // 数据来源
-func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportSource(reportSource string) error {
-    r.reportSource = reportSource
-    r.Set("report_source", reportSource)
+func (r *AlibabaFmhealthPressureReportCreateRequest) SetReportSource(_reportSource string) error {
+    r._reportSource = _reportSource
+    r.Set("report_source", _reportSource)
     return nil
 }
 
 // ReportSource Getter
 func (r AlibabaFmhealthPressureReportCreateRequest) GetReportSource() string {
-    return r.reportSource
+    return r._reportSource
 }

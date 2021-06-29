@@ -15,9 +15,9 @@ alibaba.interact.allsparkisv.draw
 type AlibabaInteractAllsparkisvDrawRequest struct {
     model.Params
     // ddd
-    test   string
+    _test   string
     // dd
-    ddd   string
+    _ddd   string
 }
 
 // 初始化AlibabaInteractAllsparkisvDrawRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaInteractAllsparkisvDrawRequest) GetApiParams() url.Values {
 }
 // Test Setter
 // ddd
-func (r *AlibabaInteractAllsparkisvDrawRequest) SetTest(test string) error {
-    r.test = test
-    r.Set("test", test)
+func (r *AlibabaInteractAllsparkisvDrawRequest) SetTest(_test string) error {
+    r._test = _test
+    r.Set("test", _test)
     return nil
 }
 
 // Test Getter
 func (r AlibabaInteractAllsparkisvDrawRequest) GetTest() string {
-    return r.test
+    return r._test
 }
 // Ddd Setter
 // dd
-func (r *AlibabaInteractAllsparkisvDrawRequest) SetDdd(ddd string) error {
-    r.ddd = ddd
-    r.Set("ddd", ddd)
+func (r *AlibabaInteractAllsparkisvDrawRequest) SetDdd(_ddd string) error {
+    r._ddd = _ddd
+    r.Set("ddd", _ddd)
     return nil
 }
 
 // Ddd Getter
 func (r AlibabaInteractAllsparkisvDrawRequest) GetDdd() string {
-    return r.ddd
+    return r._ddd
 }

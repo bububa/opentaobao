@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.id.mix
 type AlibabaTclsAelophyMerchantIdMixRequest struct {
     model.Params
     // 商家用户id
-    unionUid   string
+    _unionUid   string
 }
 
 // 初始化AlibabaTclsAelophyMerchantIdMixRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantIdMixRequest) GetApiParams() url.Values {
 }
 // UnionUid Setter
 // 商家用户id
-func (r *AlibabaTclsAelophyMerchantIdMixRequest) SetUnionUid(unionUid string) error {
-    r.unionUid = unionUid
-    r.Set("union_uid", unionUid)
+func (r *AlibabaTclsAelophyMerchantIdMixRequest) SetUnionUid(_unionUid string) error {
+    r._unionUid = _unionUid
+    r.Set("union_uid", _unionUid)
     return nil
 }
 
 // UnionUid Getter
 func (r AlibabaTclsAelophyMerchantIdMixRequest) GetUnionUid() string {
-    return r.unionUid
+    return r._unionUid
 }

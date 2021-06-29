@@ -15,11 +15,11 @@ taobao.cloudpush.message.ios
 type TaobaoCloudpushMessageIosRequest struct {
     model.Params
     // 发送的消息内容.
-    body   string
+    _body   string
     // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
-    target   string
+    _target   string
     // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
-    targetValue   string
+    _targetValue   string
 }
 
 // 初始化TaobaoCloudpushMessageIosRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoCloudpushMessageIosRequest) GetApiParams() url.Values {
 }
 // Body Setter
 // 发送的消息内容.
-func (r *TaobaoCloudpushMessageIosRequest) SetBody(body string) error {
-    r.body = body
-    r.Set("body", body)
+func (r *TaobaoCloudpushMessageIosRequest) SetBody(_body string) error {
+    r._body = _body
+    r.Set("body", _body)
     return nil
 }
 
 // Body Getter
 func (r TaobaoCloudpushMessageIosRequest) GetBody() string {
-    return r.body
+    return r._body
 }
 // Target Setter
 // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
-func (r *TaobaoCloudpushMessageIosRequest) SetTarget(target string) error {
-    r.target = target
-    r.Set("target", target)
+func (r *TaobaoCloudpushMessageIosRequest) SetTarget(_target string) error {
+    r._target = _target
+    r.Set("target", _target)
     return nil
 }
 
 // Target Getter
 func (r TaobaoCloudpushMessageIosRequest) GetTarget() string {
-    return r.target
+    return r._target
 }
 // TargetValue Setter
 // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
-func (r *TaobaoCloudpushMessageIosRequest) SetTargetValue(targetValue string) error {
-    r.targetValue = targetValue
-    r.Set("target_value", targetValue)
+func (r *TaobaoCloudpushMessageIosRequest) SetTargetValue(_targetValue string) error {
+    r._targetValue = _targetValue
+    r.Set("target_value", _targetValue)
     return nil
 }
 
 // TargetValue Getter
 func (r TaobaoCloudpushMessageIosRequest) GetTargetValue() string {
-    return r.targetValue
+    return r._targetValue
 }

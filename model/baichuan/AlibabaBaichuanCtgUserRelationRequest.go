@@ -15,11 +15,11 @@ alibaba.baichuan.ctg.user.relation
 type AlibabaBaichuanCtgUserRelationRequest struct {
     model.Params
     // 调用的业务方
-    app   string
+    _app   string
     // 业务方的用户ID
-    uid   string
+    _uid   string
     // 淘宝的用户ID
-    tbUid   string
+    _tbUid   string
 }
 
 // 初始化AlibabaBaichuanCtgUserRelationRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaBaichuanCtgUserRelationRequest) GetApiParams() url.Values {
 }
 // App Setter
 // 调用的业务方
-func (r *AlibabaBaichuanCtgUserRelationRequest) SetApp(app string) error {
-    r.app = app
-    r.Set("app", app)
+func (r *AlibabaBaichuanCtgUserRelationRequest) SetApp(_app string) error {
+    r._app = _app
+    r.Set("app", _app)
     return nil
 }
 
 // App Getter
 func (r AlibabaBaichuanCtgUserRelationRequest) GetApp() string {
-    return r.app
+    return r._app
 }
 // Uid Setter
 // 业务方的用户ID
-func (r *AlibabaBaichuanCtgUserRelationRequest) SetUid(uid string) error {
-    r.uid = uid
-    r.Set("uid", uid)
+func (r *AlibabaBaichuanCtgUserRelationRequest) SetUid(_uid string) error {
+    r._uid = _uid
+    r.Set("uid", _uid)
     return nil
 }
 
 // Uid Getter
 func (r AlibabaBaichuanCtgUserRelationRequest) GetUid() string {
-    return r.uid
+    return r._uid
 }
 // TbUid Setter
 // 淘宝的用户ID
-func (r *AlibabaBaichuanCtgUserRelationRequest) SetTbUid(tbUid string) error {
-    r.tbUid = tbUid
-    r.Set("tb_uid", tbUid)
+func (r *AlibabaBaichuanCtgUserRelationRequest) SetTbUid(_tbUid string) error {
+    r._tbUid = _tbUid
+    r.Set("tb_uid", _tbUid)
     return nil
 }
 
 // TbUid Getter
 func (r AlibabaBaichuanCtgUserRelationRequest) GetTbUid() string {
-    return r.tbUid
+    return r._tbUid
 }

@@ -16,13 +16,13 @@ taobao.inventory.query
 type TaobaoInventoryQueryRequest struct {
     model.Params
     // 后端商品ID 列表，控制到50个
-    scItemIds   string
+    _scItemIds   string
     // 后端商品的商家编码列表，控制到50个
-    scItemCodes   string
+    _scItemCodes   string
     // 卖家昵称
-    sellerNick   string
+    _sellerNick   string
     // 仓库列表:GLY001^GLY002
-    storeCodes   string
+    _storeCodes   string
 }
 
 // 初始化TaobaoInventoryQueryRequest对象
@@ -47,49 +47,49 @@ func (r TaobaoInventoryQueryRequest) GetApiParams() url.Values {
 }
 // ScItemIds Setter
 // 后端商品ID 列表，控制到50个
-func (r *TaobaoInventoryQueryRequest) SetScItemIds(scItemIds string) error {
-    r.scItemIds = scItemIds
-    r.Set("sc_item_ids", scItemIds)
+func (r *TaobaoInventoryQueryRequest) SetScItemIds(_scItemIds string) error {
+    r._scItemIds = _scItemIds
+    r.Set("sc_item_ids", _scItemIds)
     return nil
 }
 
 // ScItemIds Getter
 func (r TaobaoInventoryQueryRequest) GetScItemIds() string {
-    return r.scItemIds
+    return r._scItemIds
 }
 // ScItemCodes Setter
 // 后端商品的商家编码列表，控制到50个
-func (r *TaobaoInventoryQueryRequest) SetScItemCodes(scItemCodes string) error {
-    r.scItemCodes = scItemCodes
-    r.Set("sc_item_codes", scItemCodes)
+func (r *TaobaoInventoryQueryRequest) SetScItemCodes(_scItemCodes string) error {
+    r._scItemCodes = _scItemCodes
+    r.Set("sc_item_codes", _scItemCodes)
     return nil
 }
 
 // ScItemCodes Getter
 func (r TaobaoInventoryQueryRequest) GetScItemCodes() string {
-    return r.scItemCodes
+    return r._scItemCodes
 }
 // SellerNick Setter
 // 卖家昵称
-func (r *TaobaoInventoryQueryRequest) SetSellerNick(sellerNick string) error {
-    r.sellerNick = sellerNick
-    r.Set("seller_nick", sellerNick)
+func (r *TaobaoInventoryQueryRequest) SetSellerNick(_sellerNick string) error {
+    r._sellerNick = _sellerNick
+    r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
 func (r TaobaoInventoryQueryRequest) GetSellerNick() string {
-    return r.sellerNick
+    return r._sellerNick
 }
 // StoreCodes Setter
 // 仓库列表:GLY001^GLY002
-func (r *TaobaoInventoryQueryRequest) SetStoreCodes(storeCodes string) error {
-    r.storeCodes = storeCodes
-    r.Set("store_codes", storeCodes)
+func (r *TaobaoInventoryQueryRequest) SetStoreCodes(_storeCodes string) error {
+    r._storeCodes = _storeCodes
+    r.Set("store_codes", _storeCodes)
     return nil
 }
 
 // StoreCodes Getter
 func (r TaobaoInventoryQueryRequest) GetStoreCodes() string {
-    return r.storeCodes
+    return r._storeCodes
 }

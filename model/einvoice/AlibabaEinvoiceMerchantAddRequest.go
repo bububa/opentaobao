@@ -16,19 +16,19 @@ alibaba.einvoice.merchant.add
 type AlibabaEinvoiceMerchantAddRequest struct {
     model.Params
     // 验证码，门店绑定已入驻税号接口返回的taxToken
-    taxToken   string
+    _taxToken   string
     // 业务方发起新增门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
-    outerId   string
+    _outerId   string
     // 业务平台门店ID
-    merchantUserId   string
+    _merchantUserId   string
     // 业务平台code, 由阿里发票分配
-    platformCode   string
+    _platformCode   string
     // 税务登记号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
     // 业务平台门店名称
-    merchantName   string
+    _merchantName   string
     // 税盘列表
-    deviceIds   []string
+    _deviceIds   []string
 }
 
 // 初始化AlibabaEinvoiceMerchantAddRequest对象
@@ -53,85 +53,85 @@ func (r AlibabaEinvoiceMerchantAddRequest) GetApiParams() url.Values {
 }
 // TaxToken Setter
 // 验证码，门店绑定已入驻税号接口返回的taxToken
-func (r *AlibabaEinvoiceMerchantAddRequest) SetTaxToken(taxToken string) error {
-    r.taxToken = taxToken
-    r.Set("tax_token", taxToken)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetTaxToken(_taxToken string) error {
+    r._taxToken = _taxToken
+    r.Set("tax_token", _taxToken)
     return nil
 }
 
 // TaxToken Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetTaxToken() string {
-    return r.taxToken
+    return r._taxToken
 }
 // OuterId Setter
 // 业务方发起新增门店的唯一幂等ID, 由业务方生成。只能由字母和数字组成。
-func (r *AlibabaEinvoiceMerchantAddRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // MerchantUserId Setter
 // 业务平台门店ID
-func (r *AlibabaEinvoiceMerchantAddRequest) SetMerchantUserId(merchantUserId string) error {
-    r.merchantUserId = merchantUserId
-    r.Set("merchant_user_id", merchantUserId)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetMerchantUserId(_merchantUserId string) error {
+    r._merchantUserId = _merchantUserId
+    r.Set("merchant_user_id", _merchantUserId)
     return nil
 }
 
 // MerchantUserId Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetMerchantUserId() string {
-    return r.merchantUserId
+    return r._merchantUserId
 }
 // PlatformCode Setter
 // 业务平台code, 由阿里发票分配
-func (r *AlibabaEinvoiceMerchantAddRequest) SetPlatformCode(platformCode string) error {
-    r.platformCode = platformCode
-    r.Set("platform_code", platformCode)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetPlatformCode(_platformCode string) error {
+    r._platformCode = _platformCode
+    r.Set("platform_code", _platformCode)
     return nil
 }
 
 // PlatformCode Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetPlatformCode() string {
-    return r.platformCode
+    return r._platformCode
 }
 // PayeeRegisterNo Setter
 // 税务登记号
-func (r *AlibabaEinvoiceMerchantAddRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }
 // MerchantName Setter
 // 业务平台门店名称
-func (r *AlibabaEinvoiceMerchantAddRequest) SetMerchantName(merchantName string) error {
-    r.merchantName = merchantName
-    r.Set("merchant_name", merchantName)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetMerchantName(_merchantName string) error {
+    r._merchantName = _merchantName
+    r.Set("merchant_name", _merchantName)
     return nil
 }
 
 // MerchantName Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetMerchantName() string {
-    return r.merchantName
+    return r._merchantName
 }
 // DeviceIds Setter
 // 税盘列表
-func (r *AlibabaEinvoiceMerchantAddRequest) SetDeviceIds(deviceIds []string) error {
-    r.deviceIds = deviceIds
-    r.Set("device_ids", deviceIds)
+func (r *AlibabaEinvoiceMerchantAddRequest) SetDeviceIds(_deviceIds []string) error {
+    r._deviceIds = _deviceIds
+    r.Set("device_ids", _deviceIds)
     return nil
 }
 
 // DeviceIds Getter
 func (r AlibabaEinvoiceMerchantAddRequest) GetDeviceIds() []string {
-    return r.deviceIds
+    return r._deviceIds
 }

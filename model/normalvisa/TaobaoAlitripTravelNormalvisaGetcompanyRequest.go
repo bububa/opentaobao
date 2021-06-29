@@ -15,7 +15,7 @@ taobao.alitrip.travel.normalvisa.getcompany
 type TaobaoAlitripTravelNormalvisaGetcompanyRequest struct {
     model.Params
     // true：取5个重要的物流公司 false：取所有的物流公司
-    param0   bool
+    _param0   bool
 }
 
 // 初始化TaobaoAlitripTravelNormalvisaGetcompanyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelNormalvisaGetcompanyRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // true：取5个重要的物流公司 false：取所有的物流公司
-func (r *TaobaoAlitripTravelNormalvisaGetcompanyRequest) SetParam0(param0 bool) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAlitripTravelNormalvisaGetcompanyRequest) SetParam0(_param0 bool) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAlitripTravelNormalvisaGetcompanyRequest) GetParam0() bool {
-    return r.param0
+    return r._param0
 }

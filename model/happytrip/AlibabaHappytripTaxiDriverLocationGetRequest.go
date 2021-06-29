@@ -15,7 +15,7 @@ alibaba.happytrip.taxi.driver.location.get
 type AlibabaHappytripTaxiDriverLocationGetRequest struct {
     model.Params
     // 供应商订单号
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHappytripTaxiDriverLocationGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTaxiDriverLocationGetRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 供应商订单号
-func (r *AlibabaHappytripTaxiDriverLocationGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiDriverLocationGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiDriverLocationGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

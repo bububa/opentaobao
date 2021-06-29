@@ -15,15 +15,15 @@ tmall.servicecenter.msf.tasks.update
 type TmallServicecenterMsfTasksUpdateRequest struct {
     model.Params
     // 工人手机号
-    workerMobile   int64
+    _workerMobile   int64
     // 服务编码
-    serviceCode   string
+    _serviceCode   string
     // 调用来源
-    source   string
+    _source   string
     // 子订单号列表。最多100个
-    bizOrderIds   []int64
+    _bizOrderIds   []int64
     // 周期序号。必须与子订单列表对应
-    seqs   []int64
+    _seqs   []int64
 }
 
 // 初始化TmallServicecenterMsfTasksUpdateRequest对象
@@ -48,61 +48,61 @@ func (r TmallServicecenterMsfTasksUpdateRequest) GetApiParams() url.Values {
 }
 // WorkerMobile Setter
 // 工人手机号
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetWorkerMobile(workerMobile int64) error {
-    r.workerMobile = workerMobile
-    r.Set("worker_mobile", workerMobile)
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetWorkerMobile(_workerMobile int64) error {
+    r._workerMobile = _workerMobile
+    r.Set("worker_mobile", _workerMobile)
     return nil
 }
 
 // WorkerMobile Getter
 func (r TmallServicecenterMsfTasksUpdateRequest) GetWorkerMobile() int64 {
-    return r.workerMobile
+    return r._workerMobile
 }
 // ServiceCode Setter
 // 服务编码
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r TmallServicecenterMsfTasksUpdateRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }
 // Source Setter
 // 调用来源
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r TmallServicecenterMsfTasksUpdateRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // BizOrderIds Setter
 // 子订单号列表。最多100个
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetBizOrderIds(bizOrderIds []int64) error {
-    r.bizOrderIds = bizOrderIds
-    r.Set("biz_order_ids", bizOrderIds)
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetBizOrderIds(_bizOrderIds []int64) error {
+    r._bizOrderIds = _bizOrderIds
+    r.Set("biz_order_ids", _bizOrderIds)
     return nil
 }
 
 // BizOrderIds Getter
 func (r TmallServicecenterMsfTasksUpdateRequest) GetBizOrderIds() []int64 {
-    return r.bizOrderIds
+    return r._bizOrderIds
 }
 // Seqs Setter
 // 周期序号。必须与子订单列表对应
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetSeqs(seqs []int64) error {
-    r.seqs = seqs
-    r.Set("seqs", seqs)
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetSeqs(_seqs []int64) error {
+    r._seqs = _seqs
+    r.Set("seqs", _seqs)
     return nil
 }
 
 // Seqs Getter
 func (r TmallServicecenterMsfTasksUpdateRequest) GetSeqs() []int64 {
-    return r.seqs
+    return r._seqs
 }

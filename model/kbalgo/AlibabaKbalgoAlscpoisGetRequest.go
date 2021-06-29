@@ -15,9 +15,9 @@ alibaba.kbalgo.alscpois.get
 type AlibabaKbalgoAlscpoisGetRequest struct {
     model.Params
     // 第几页
-    pageNum   int64
+    _pageNum   int64
     // 每页的数量。
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaKbalgoAlscpoisGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaKbalgoAlscpoisGetRequest) GetApiParams() url.Values {
 }
 // PageNum Setter
 // 第几页
-func (r *AlibabaKbalgoAlscpoisGetRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *AlibabaKbalgoAlscpoisGetRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r AlibabaKbalgoAlscpoisGetRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // PageSize Setter
 // 每页的数量。
-func (r *AlibabaKbalgoAlscpoisGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaKbalgoAlscpoisGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaKbalgoAlscpoisGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

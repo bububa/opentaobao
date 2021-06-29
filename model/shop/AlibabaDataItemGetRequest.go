@@ -15,7 +15,7 @@ alibaba.data.item.get
 type AlibabaDataItemGetRequest struct {
     model.Params
     // 获取商品信息，作为客户端Weex鉴权的虚拟api
-    unNamed   string
+    _unNamed   string
 }
 
 // 初始化AlibabaDataItemGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDataItemGetRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 获取商品信息，作为客户端Weex鉴权的虚拟api
-func (r *AlibabaDataItemGetRequest) SetUnNamed(unNamed string) error {
-    r.unNamed = unNamed
-    r.Set("un_named", unNamed)
+func (r *AlibabaDataItemGetRequest) SetUnNamed(_unNamed string) error {
+    r._unNamed = _unNamed
+    r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
 func (r AlibabaDataItemGetRequest) GetUnNamed() string {
-    return r.unNamed
+    return r._unNamed
 }

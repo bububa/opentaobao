@@ -15,7 +15,7 @@ yunos.osupdate.appversion.publish
 type YunosOsupdateAppversionPublishRequest struct {
     model.Params
     // 发布应用升级入参json
-    publishJson   string
+    _publishJson   string
 }
 
 // 初始化YunosOsupdateAppversionPublishRequest对象
@@ -40,13 +40,13 @@ func (r YunosOsupdateAppversionPublishRequest) GetApiParams() url.Values {
 }
 // PublishJson Setter
 // 发布应用升级入参json
-func (r *YunosOsupdateAppversionPublishRequest) SetPublishJson(publishJson string) error {
-    r.publishJson = publishJson
-    r.Set("publish_json", publishJson)
+func (r *YunosOsupdateAppversionPublishRequest) SetPublishJson(_publishJson string) error {
+    r._publishJson = _publishJson
+    r.Set("publish_json", _publishJson)
     return nil
 }
 
 // PublishJson Getter
 func (r YunosOsupdateAppversionPublishRequest) GetPublishJson() string {
-    return r.publishJson
+    return r._publishJson
 }

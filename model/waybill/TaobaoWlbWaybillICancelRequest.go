@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.cancel
 type TaobaoWlbWaybillICancelRequest struct {
     model.Params
     // 取消接口入参
-    waybillApplyCancelRequest   *WaybillApplyCancelRequest
+    _waybillApplyCancelRequest   *WaybillApplyCancelRequest
 }
 
 // 初始化TaobaoWlbWaybillICancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillICancelRequest) GetApiParams() url.Values {
 }
 // WaybillApplyCancelRequest Setter
 // 取消接口入参
-func (r *TaobaoWlbWaybillICancelRequest) SetWaybillApplyCancelRequest(waybillApplyCancelRequest *WaybillApplyCancelRequest) error {
-    r.waybillApplyCancelRequest = waybillApplyCancelRequest
-    r.Set("waybill_apply_cancel_request", waybillApplyCancelRequest)
+func (r *TaobaoWlbWaybillICancelRequest) SetWaybillApplyCancelRequest(_waybillApplyCancelRequest *WaybillApplyCancelRequest) error {
+    r._waybillApplyCancelRequest = _waybillApplyCancelRequest
+    r.Set("waybill_apply_cancel_request", _waybillApplyCancelRequest)
     return nil
 }
 
 // WaybillApplyCancelRequest Getter
 func (r TaobaoWlbWaybillICancelRequest) GetWaybillApplyCancelRequest() *WaybillApplyCancelRequest {
-    return r.waybillApplyCancelRequest
+    return r._waybillApplyCancelRequest
 }

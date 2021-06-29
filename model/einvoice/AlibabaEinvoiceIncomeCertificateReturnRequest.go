@@ -15,15 +15,15 @@ alibaba.einvoice.income.certificate.return
 type AlibabaEinvoiceIncomeCertificateReturnRequest struct {
     model.Params
     // 错误码，success=false时必填
-    errorCode   string
+    _errorCode   string
     // 错误信息，success=false时必填
-    errorMessage   string
+    _errorMessage   string
     // 请求标识
-    reqIndex   string
+    _reqIndex   string
     // 认证结果，true=成功，false=失败
-    success   bool
+    _success   bool
     // 认证步骤，1=勾选，2=汇总，3=确认
-    step   int64
+    _step   int64
 }
 
 // 初始化AlibabaEinvoiceIncomeCertificateReturnRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetApiParams() url.Values
 }
 // ErrorCode Setter
 // 错误码，success=false时必填
-func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetErrorCode(errorCode string) error {
-    r.errorCode = errorCode
-    r.Set("error_code", errorCode)
+func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetErrorCode(_errorCode string) error {
+    r._errorCode = _errorCode
+    r.Set("error_code", _errorCode)
     return nil
 }
 
 // ErrorCode Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetErrorCode() string {
-    return r.errorCode
+    return r._errorCode
 }
 // ErrorMessage Setter
 // 错误信息，success=false时必填
-func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetErrorMessage(errorMessage string) error {
-    r.errorMessage = errorMessage
-    r.Set("error_message", errorMessage)
+func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetErrorMessage(_errorMessage string) error {
+    r._errorMessage = _errorMessage
+    r.Set("error_message", _errorMessage)
     return nil
 }
 
 // ErrorMessage Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetErrorMessage() string {
-    return r.errorMessage
+    return r._errorMessage
 }
 // ReqIndex Setter
 // 请求标识
-func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetReqIndex(reqIndex string) error {
-    r.reqIndex = reqIndex
-    r.Set("req_index", reqIndex)
+func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetReqIndex(_reqIndex string) error {
+    r._reqIndex = _reqIndex
+    r.Set("req_index", _reqIndex)
     return nil
 }
 
 // ReqIndex Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetReqIndex() string {
-    return r.reqIndex
+    return r._reqIndex
 }
 // Success Setter
 // 认证结果，true=成功，false=失败
-func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetSuccess(success bool) error {
-    r.success = success
-    r.Set("success", success)
+func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetSuccess(_success bool) error {
+    r._success = _success
+    r.Set("success", _success)
     return nil
 }
 
 // Success Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetSuccess() bool {
-    return r.success
+    return r._success
 }
 // Step Setter
 // 认证步骤，1=勾选，2=汇总，3=确认
-func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetStep(step int64) error {
-    r.step = step
-    r.Set("step", step)
+func (r *AlibabaEinvoiceIncomeCertificateReturnRequest) SetStep(_step int64) error {
+    r._step = _step
+    r.Set("step", _step)
     return nil
 }
 
 // Step Getter
 func (r AlibabaEinvoiceIncomeCertificateReturnRequest) GetStep() int64 {
-    return r.step
+    return r._step
 }

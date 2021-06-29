@@ -15,9 +15,9 @@ taobao.usergrowth.delivery.profile.report
 type TaobaoUsergrowthDeliveryProfileReportRequest struct {
     model.Params
     // 标签参数, 支持一次传多个， 一次最多传20个
-    data   string
+    _data   string
     // 渠道标识，找淘宝运营申请
-    channel   string
+    _channel   string
 }
 
 // 初始化TaobaoUsergrowthDeliveryProfileReportRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUsergrowthDeliveryProfileReportRequest) GetApiParams() url.Values 
 }
 // Data Setter
 // 标签参数, 支持一次传多个， 一次最多传20个
-func (r *TaobaoUsergrowthDeliveryProfileReportRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoUsergrowthDeliveryProfileReportRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoUsergrowthDeliveryProfileReportRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // Channel Setter
 // 渠道标识，找淘宝运营申请
-func (r *TaobaoUsergrowthDeliveryProfileReportRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TaobaoUsergrowthDeliveryProfileReportRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TaobaoUsergrowthDeliveryProfileReportRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }

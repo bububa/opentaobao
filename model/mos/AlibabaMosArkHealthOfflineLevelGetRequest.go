@@ -15,7 +15,7 @@ alibaba.mos.ark.health.offline.level.get
 type AlibabaMosArkHealthOfflineLevelGetRequest struct {
     model.Params
     // 商场id
-    mallId   string
+    _mallId   string
 }
 
 // 初始化AlibabaMosArkHealthOfflineLevelGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetApiParams() url.Values {
 }
 // MallId Setter
 // 商场id
-func (r *AlibabaMosArkHealthOfflineLevelGetRequest) SetMallId(mallId string) error {
-    r.mallId = mallId
-    r.Set("mall_id", mallId)
+func (r *AlibabaMosArkHealthOfflineLevelGetRequest) SetMallId(_mallId string) error {
+    r._mallId = _mallId
+    r.Set("mall_id", _mallId)
     return nil
 }
 
 // MallId Getter
 func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetMallId() string {
-    return r.mallId
+    return r._mallId
 }

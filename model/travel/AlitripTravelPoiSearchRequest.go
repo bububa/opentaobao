@@ -15,11 +15,11 @@ POI信息查询，用于商品更新使用
 type AlitripTravelPoiSearchRequest struct {
     model.Params
     // POI信息ID；
-    id   int64
+    _id   int64
     // POI信息名称
-    name   string
+    _name   string
     // POI类型；1->机场,2->火车站,3->汽车站,4->酒店,5->景点,6->购物，7->美食，9->玩乐，10->阿里旅行服务站，11->服务，100->其他
-    type   int64
+    _type   int64
 }
 
 // 初始化AlitripTravelPoiSearchRequest对象
@@ -44,37 +44,37 @@ func (r AlitripTravelPoiSearchRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // POI信息ID；
-func (r *AlitripTravelPoiSearchRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlitripTravelPoiSearchRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlitripTravelPoiSearchRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Name Setter
 // POI信息名称
-func (r *AlitripTravelPoiSearchRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlitripTravelPoiSearchRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlitripTravelPoiSearchRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Type Setter
 // POI类型；1->机场,2->火车站,3->汽车站,4->酒店,5->景点,6->购物，7->美食，9->玩乐，10->阿里旅行服务站，11->服务，100->其他
-func (r *AlitripTravelPoiSearchRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlitripTravelPoiSearchRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlitripTravelPoiSearchRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

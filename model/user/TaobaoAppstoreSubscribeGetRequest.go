@@ -15,7 +15,7 @@ taobao.appstore.subscribe.get
 type TaobaoAppstoreSubscribeGetRequest struct {
     model.Params
     // 用户昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoAppstoreSubscribeGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAppstoreSubscribeGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoAppstoreSubscribeGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoAppstoreSubscribeGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoAppstoreSubscribeGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

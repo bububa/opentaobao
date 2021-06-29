@@ -15,9 +15,9 @@ alibaba.alicom.wtt.opentrade.getproductinfo
 type AlibabaAlicomWttOpentradeGetproductinfoRequest struct {
     model.Params
     // 阿里通信产品ID
-    productId   string
+    _productId   string
     // 类型
-    bizType   string
+    _bizType   string
 }
 
 // 初始化AlibabaAlicomWttOpentradeGetproductinfoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetApiParams() url.Value
 }
 // ProductId Setter
 // 阿里通信产品ID
-func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }
 // BizType Setter
 // 类型
-func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *AlibabaAlicomWttOpentradeGetproductinfoRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r AlibabaAlicomWttOpentradeGetproductinfoRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }

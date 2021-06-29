@@ -15,13 +15,13 @@ alibaba.wdk.merchant.storeitem.create
 type AlibabaWdkMerchantStoreitemCreateRequest struct {
     model.Params
     // 门店id
-    storeId   string
+    _storeId   string
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 商家编码
-    merchantCode   string
+    _merchantCode   string
     // 新增门店商品参数，具体字段详见文档
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaWdkMerchantStoreitemCreateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWdkMerchantStoreitemCreateRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店id
-func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkMerchantStoreitemCreateRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkMerchantStoreitemCreateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // MerchantCode Setter
 // 商家编码
-func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaWdkMerchantStoreitemCreateRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // Params Setter
 // 新增门店商品参数，具体字段详见文档
-func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaWdkMerchantStoreitemCreateRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaWdkMerchantStoreitemCreateRequest) GetParams() string {
-    return r.params
+    return r._params
 }

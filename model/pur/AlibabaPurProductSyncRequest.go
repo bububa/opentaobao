@@ -15,7 +15,7 @@ alibaba.pur.product.sync
 type AlibabaPurProductSyncRequest struct {
     model.Params
     // 产品对象
-    accessProductDtos   []AccessProductDto
+    _accessProductDtos   []AccessProductDto
 }
 
 // 初始化AlibabaPurProductSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurProductSyncRequest) GetApiParams() url.Values {
 }
 // AccessProductDtos Setter
 // 产品对象
-func (r *AlibabaPurProductSyncRequest) SetAccessProductDtos(accessProductDtos []AccessProductDto) error {
-    r.accessProductDtos = accessProductDtos
-    r.Set("access_product_dtos", accessProductDtos)
+func (r *AlibabaPurProductSyncRequest) SetAccessProductDtos(_accessProductDtos []AccessProductDto) error {
+    r._accessProductDtos = _accessProductDtos
+    r.Set("access_product_dtos", _accessProductDtos)
     return nil
 }
 
 // AccessProductDtos Getter
 func (r AlibabaPurProductSyncRequest) GetAccessProductDtos() []AccessProductDto {
-    return r.accessProductDtos
+    return r._accessProductDtos
 }

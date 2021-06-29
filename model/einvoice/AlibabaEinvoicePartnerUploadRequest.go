@@ -15,33 +15,33 @@ alibaba.einvoice.partner.upload
 type AlibabaEinvoicePartnerUploadRequest struct {
     model.Params
     // 原蓝票发票号码
-    normalInvoiceNo   string
+    _normalInvoiceNo   string
     // 原蓝票发票代码
-    normalInvoiceCode   string
+    _normalInvoiceCode   string
     // 销方税号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
     // 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-    invoiceFileData   []*model.File
+    _invoiceFileData   []*model.File
     // 发票号码，upload_type=0时必填
-    invoiceNo   string
+    _invoiceNo   string
     // 发票代码，upload_type=0时必填
-    invoiceCode   string
+    _invoiceCode   string
     // 开票日期，upload_type=0时必填
-    invoiceDate   string
+    _invoiceDate   string
     // 密码区
-    cipherText   string
+    _cipherText   string
     // 机器编号
-    deviceNo   string
+    _deviceNo   string
     // 校验码
-    antiFakeCode   string
+    _antiFakeCode   string
     // 发票类型，upload_type=0且invoiceKind=0电子发票时必填，暂时只支持pdf
-    fileDataType   string
+    _fileDataType   string
     // 原蓝票的reqIndex
-    reqIndex   string
+    _reqIndex   string
     // 发票种类，0=电子发票，1=纸质普票，2=纸质专票
-    invoiceKind   int64
+    _invoiceKind   int64
     // 上传的类型，0=冲红上传，1=作废上传
-    uploadType   int64
+    _uploadType   int64
 }
 
 // 初始化AlibabaEinvoicePartnerUploadRequest对象
@@ -66,169 +66,169 @@ func (r AlibabaEinvoicePartnerUploadRequest) GetApiParams() url.Values {
 }
 // NormalInvoiceNo Setter
 // 原蓝票发票号码
-func (r *AlibabaEinvoicePartnerUploadRequest) SetNormalInvoiceNo(normalInvoiceNo string) error {
-    r.normalInvoiceNo = normalInvoiceNo
-    r.Set("normal_invoice_no", normalInvoiceNo)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetNormalInvoiceNo(_normalInvoiceNo string) error {
+    r._normalInvoiceNo = _normalInvoiceNo
+    r.Set("normal_invoice_no", _normalInvoiceNo)
     return nil
 }
 
 // NormalInvoiceNo Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetNormalInvoiceNo() string {
-    return r.normalInvoiceNo
+    return r._normalInvoiceNo
 }
 // NormalInvoiceCode Setter
 // 原蓝票发票代码
-func (r *AlibabaEinvoicePartnerUploadRequest) SetNormalInvoiceCode(normalInvoiceCode string) error {
-    r.normalInvoiceCode = normalInvoiceCode
-    r.Set("normal_invoice_code", normalInvoiceCode)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetNormalInvoiceCode(_normalInvoiceCode string) error {
+    r._normalInvoiceCode = _normalInvoiceCode
+    r.Set("normal_invoice_code", _normalInvoiceCode)
     return nil
 }
 
 // NormalInvoiceCode Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetNormalInvoiceCode() string {
-    return r.normalInvoiceCode
+    return r._normalInvoiceCode
 }
 // PayeeRegisterNo Setter
 // 销方税号
-func (r *AlibabaEinvoicePartnerUploadRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }
 // InvoiceFileData Setter
 // 发票数据，upload_type=0且invoiceKind=0电子发票时必填
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceFileData(invoiceFileData []*model.File) error {
-    r.invoiceFileData = invoiceFileData
-    r.Set("invoice_file_data", invoiceFileData)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceFileData(_invoiceFileData []*model.File) error {
+    r._invoiceFileData = _invoiceFileData
+    r.Set("invoice_file_data", _invoiceFileData)
     return nil
 }
 
 // InvoiceFileData Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceFileData() []*model.File {
-    return r.invoiceFileData
+    return r._invoiceFileData
 }
 // InvoiceNo Setter
 // 发票号码，upload_type=0时必填
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceNo(invoiceNo string) error {
-    r.invoiceNo = invoiceNo
-    r.Set("invoice_no", invoiceNo)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceNo(_invoiceNo string) error {
+    r._invoiceNo = _invoiceNo
+    r.Set("invoice_no", _invoiceNo)
     return nil
 }
 
 // InvoiceNo Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceNo() string {
-    return r.invoiceNo
+    return r._invoiceNo
 }
 // InvoiceCode Setter
 // 发票代码，upload_type=0时必填
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceCode(invoiceCode string) error {
-    r.invoiceCode = invoiceCode
-    r.Set("invoice_code", invoiceCode)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceCode(_invoiceCode string) error {
+    r._invoiceCode = _invoiceCode
+    r.Set("invoice_code", _invoiceCode)
     return nil
 }
 
 // InvoiceCode Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceCode() string {
-    return r.invoiceCode
+    return r._invoiceCode
 }
 // InvoiceDate Setter
 // 开票日期，upload_type=0时必填
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceDate(invoiceDate string) error {
-    r.invoiceDate = invoiceDate
-    r.Set("invoice_date", invoiceDate)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceDate(_invoiceDate string) error {
+    r._invoiceDate = _invoiceDate
+    r.Set("invoice_date", _invoiceDate)
     return nil
 }
 
 // InvoiceDate Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceDate() string {
-    return r.invoiceDate
+    return r._invoiceDate
 }
 // CipherText Setter
 // 密码区
-func (r *AlibabaEinvoicePartnerUploadRequest) SetCipherText(cipherText string) error {
-    r.cipherText = cipherText
-    r.Set("cipher_text", cipherText)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetCipherText(_cipherText string) error {
+    r._cipherText = _cipherText
+    r.Set("cipher_text", _cipherText)
     return nil
 }
 
 // CipherText Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetCipherText() string {
-    return r.cipherText
+    return r._cipherText
 }
 // DeviceNo Setter
 // 机器编号
-func (r *AlibabaEinvoicePartnerUploadRequest) SetDeviceNo(deviceNo string) error {
-    r.deviceNo = deviceNo
-    r.Set("device_no", deviceNo)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetDeviceNo(_deviceNo string) error {
+    r._deviceNo = _deviceNo
+    r.Set("device_no", _deviceNo)
     return nil
 }
 
 // DeviceNo Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetDeviceNo() string {
-    return r.deviceNo
+    return r._deviceNo
 }
 // AntiFakeCode Setter
 // 校验码
-func (r *AlibabaEinvoicePartnerUploadRequest) SetAntiFakeCode(antiFakeCode string) error {
-    r.antiFakeCode = antiFakeCode
-    r.Set("anti_fake_code", antiFakeCode)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetAntiFakeCode(_antiFakeCode string) error {
+    r._antiFakeCode = _antiFakeCode
+    r.Set("anti_fake_code", _antiFakeCode)
     return nil
 }
 
 // AntiFakeCode Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetAntiFakeCode() string {
-    return r.antiFakeCode
+    return r._antiFakeCode
 }
 // FileDataType Setter
 // 发票类型，upload_type=0且invoiceKind=0电子发票时必填，暂时只支持pdf
-func (r *AlibabaEinvoicePartnerUploadRequest) SetFileDataType(fileDataType string) error {
-    r.fileDataType = fileDataType
-    r.Set("file_data_type", fileDataType)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetFileDataType(_fileDataType string) error {
+    r._fileDataType = _fileDataType
+    r.Set("file_data_type", _fileDataType)
     return nil
 }
 
 // FileDataType Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetFileDataType() string {
-    return r.fileDataType
+    return r._fileDataType
 }
 // ReqIndex Setter
 // 原蓝票的reqIndex
-func (r *AlibabaEinvoicePartnerUploadRequest) SetReqIndex(reqIndex string) error {
-    r.reqIndex = reqIndex
-    r.Set("req_index", reqIndex)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetReqIndex(_reqIndex string) error {
+    r._reqIndex = _reqIndex
+    r.Set("req_index", _reqIndex)
     return nil
 }
 
 // ReqIndex Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetReqIndex() string {
-    return r.reqIndex
+    return r._reqIndex
 }
 // InvoiceKind Setter
 // 发票种类，0=电子发票，1=纸质普票，2=纸质专票
-func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceKind(invoiceKind int64) error {
-    r.invoiceKind = invoiceKind
-    r.Set("invoice_kind", invoiceKind)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetInvoiceKind(_invoiceKind int64) error {
+    r._invoiceKind = _invoiceKind
+    r.Set("invoice_kind", _invoiceKind)
     return nil
 }
 
 // InvoiceKind Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetInvoiceKind() int64 {
-    return r.invoiceKind
+    return r._invoiceKind
 }
 // UploadType Setter
 // 上传的类型，0=冲红上传，1=作废上传
-func (r *AlibabaEinvoicePartnerUploadRequest) SetUploadType(uploadType int64) error {
-    r.uploadType = uploadType
-    r.Set("upload_type", uploadType)
+func (r *AlibabaEinvoicePartnerUploadRequest) SetUploadType(_uploadType int64) error {
+    r._uploadType = _uploadType
+    r.Set("upload_type", _uploadType)
     return nil
 }
 
 // UploadType Getter
 func (r AlibabaEinvoicePartnerUploadRequest) GetUploadType() int64 {
-    return r.uploadType
+    return r._uploadType
 }

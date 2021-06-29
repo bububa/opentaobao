@@ -15,9 +15,9 @@ taobao.vmarket.eticket.flow.resend
 type TaobaoVmarketEticketFlowResendRequest struct {
     model.Params
     // 业务单号
-    outerId   string
+    _outerId   string
     // 业务类型值，可联系淘宝业务运营取得具体值
-    bizType   int64
+    _bizType   int64
 }
 
 // 初始化TaobaoVmarketEticketFlowResendRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoVmarketEticketFlowResendRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 业务单号
-func (r *TaobaoVmarketEticketFlowResendRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoVmarketEticketFlowResendRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoVmarketEticketFlowResendRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // BizType Setter
 // 业务类型值，可联系淘宝业务运营取得具体值
-func (r *TaobaoVmarketEticketFlowResendRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoVmarketEticketFlowResendRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoVmarketEticketFlowResendRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }

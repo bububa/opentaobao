@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.order.upload
 type AlibabaTclsAelophyMerchantOrderUploadRequest struct {
     model.Params
     // 商家订单信息
-    orderInfo   *MerchantOrderInfo
+    _orderInfo   *MerchantOrderInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantOrderUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetApiParams() url.Values 
 }
 // OrderInfo Setter
 // 商家订单信息
-func (r *AlibabaTclsAelophyMerchantOrderUploadRequest) SetOrderInfo(orderInfo *MerchantOrderInfo) error {
-    r.orderInfo = orderInfo
-    r.Set("order_info", orderInfo)
+func (r *AlibabaTclsAelophyMerchantOrderUploadRequest) SetOrderInfo(_orderInfo *MerchantOrderInfo) error {
+    r._orderInfo = _orderInfo
+    r.Set("order_info", _orderInfo)
     return nil
 }
 
 // OrderInfo Getter
 func (r AlibabaTclsAelophyMerchantOrderUploadRequest) GetOrderInfo() *MerchantOrderInfo {
-    return r.orderInfo
+    return r._orderInfo
 }

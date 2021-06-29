@@ -15,9 +15,9 @@ taobao.promotion.meal.get
 type TaobaoPromotionMealGetRequest struct {
     model.Params
     // 搭配套餐id
-    mealId   int64
+    _mealId   int64
     // 套餐状态。有效：VALID;失效：INVALID(有效套餐为可使用的套餐,无效套餐为套餐中有商品下架或库存为0时)。默认时两种情况都会查询。
-    status   string
+    _status   string
 }
 
 // 初始化TaobaoPromotionMealGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionMealGetRequest) GetApiParams() url.Values {
 }
 // MealId Setter
 // 搭配套餐id
-func (r *TaobaoPromotionMealGetRequest) SetMealId(mealId int64) error {
-    r.mealId = mealId
-    r.Set("meal_id", mealId)
+func (r *TaobaoPromotionMealGetRequest) SetMealId(_mealId int64) error {
+    r._mealId = _mealId
+    r.Set("meal_id", _mealId)
     return nil
 }
 
 // MealId Getter
 func (r TaobaoPromotionMealGetRequest) GetMealId() int64 {
-    return r.mealId
+    return r._mealId
 }
 // Status Setter
 // 套餐状态。有效：VALID;失效：INVALID(有效套餐为可使用的套餐,无效套餐为套餐中有商品下架或库存为0时)。默认时两种情况都会查询。
-func (r *TaobaoPromotionMealGetRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoPromotionMealGetRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoPromotionMealGetRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

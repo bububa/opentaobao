@@ -15,17 +15,17 @@ tmall.car.lease.reserve
 type TmallCarLeaseReserveRequest struct {
     model.Params
     // 买家id
-    buyerId   int64
+    _buyerId   int64
     // 订单id
-    orderId   int64
+    _orderId   int64
     // 文案
-    text   string
+    _text   string
     // 车架号
-    vin   string
+    _vin   string
     // 1 代表 车辆到店，已预约用户到店提车   ; 2 车辆到店，未能联系到用户
-    flag   int64
+    _flag   int64
     // 买家昵称
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TmallCarLeaseReserveRequest对象
@@ -50,73 +50,73 @@ func (r TmallCarLeaseReserveRequest) GetApiParams() url.Values {
 }
 // BuyerId Setter
 // 买家id
-func (r *TmallCarLeaseReserveRequest) SetBuyerId(buyerId int64) error {
-    r.buyerId = buyerId
-    r.Set("buyer_id", buyerId)
+func (r *TmallCarLeaseReserveRequest) SetBuyerId(_buyerId int64) error {
+    r._buyerId = _buyerId
+    r.Set("buyer_id", _buyerId)
     return nil
 }
 
 // BuyerId Getter
 func (r TmallCarLeaseReserveRequest) GetBuyerId() int64 {
-    return r.buyerId
+    return r._buyerId
 }
 // OrderId Setter
 // 订单id
-func (r *TmallCarLeaseReserveRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallCarLeaseReserveRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallCarLeaseReserveRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // Text Setter
 // 文案
-func (r *TmallCarLeaseReserveRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *TmallCarLeaseReserveRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r TmallCarLeaseReserveRequest) GetText() string {
-    return r.text
+    return r._text
 }
 // Vin Setter
 // 车架号
-func (r *TmallCarLeaseReserveRequest) SetVin(vin string) error {
-    r.vin = vin
-    r.Set("vin", vin)
+func (r *TmallCarLeaseReserveRequest) SetVin(_vin string) error {
+    r._vin = _vin
+    r.Set("vin", _vin)
     return nil
 }
 
 // Vin Getter
 func (r TmallCarLeaseReserveRequest) GetVin() string {
-    return r.vin
+    return r._vin
 }
 // Flag Setter
 // 1 代表 车辆到店，已预约用户到店提车   ; 2 车辆到店，未能联系到用户
-func (r *TmallCarLeaseReserveRequest) SetFlag(flag int64) error {
-    r.flag = flag
-    r.Set("flag", flag)
+func (r *TmallCarLeaseReserveRequest) SetFlag(_flag int64) error {
+    r._flag = _flag
+    r.Set("flag", _flag)
     return nil
 }
 
 // Flag Getter
 func (r TmallCarLeaseReserveRequest) GetFlag() int64 {
-    return r.flag
+    return r._flag
 }
 // BuyerNick Setter
 // 买家昵称
-func (r *TmallCarLeaseReserveRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TmallCarLeaseReserveRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TmallCarLeaseReserveRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

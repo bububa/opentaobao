@@ -15,7 +15,7 @@ taobao.jushita.jms.user.delete
 type TaobaoJushitaJmsUserDeleteRequest struct {
     model.Params
     // 需要停止同步消息的用户nick
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoJushitaJmsUserDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJushitaJmsUserDeleteRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 需要停止同步消息的用户nick
-func (r *TaobaoJushitaJmsUserDeleteRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoJushitaJmsUserDeleteRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoJushitaJmsUserDeleteRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

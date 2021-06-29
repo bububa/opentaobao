@@ -15,9 +15,9 @@ alibaba.aliqin.fc.iot.cardoffer
 type AlibabaAliqinFcIotCardofferRequest struct {
     model.Params
     // 具体ICCID的值
-    billreal   string
+    _billreal   string
     // ICCID
-    billsource   string
+    _billsource   string
 }
 
 // 初始化AlibabaAliqinFcIotCardofferRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliqinFcIotCardofferRequest) GetApiParams() url.Values {
 }
 // Billreal Setter
 // 具体ICCID的值
-func (r *AlibabaAliqinFcIotCardofferRequest) SetBillreal(billreal string) error {
-    r.billreal = billreal
-    r.Set("billreal", billreal)
+func (r *AlibabaAliqinFcIotCardofferRequest) SetBillreal(_billreal string) error {
+    r._billreal = _billreal
+    r.Set("billreal", _billreal)
     return nil
 }
 
 // Billreal Getter
 func (r AlibabaAliqinFcIotCardofferRequest) GetBillreal() string {
-    return r.billreal
+    return r._billreal
 }
 // Billsource Setter
 // ICCID
-func (r *AlibabaAliqinFcIotCardofferRequest) SetBillsource(billsource string) error {
-    r.billsource = billsource
-    r.Set("billsource", billsource)
+func (r *AlibabaAliqinFcIotCardofferRequest) SetBillsource(_billsource string) error {
+    r._billsource = _billsource
+    r.Set("billsource", _billsource)
     return nil
 }
 
 // Billsource Getter
 func (r AlibabaAliqinFcIotCardofferRequest) GetBillsource() string {
-    return r.billsource
+    return r._billsource
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.child.recoitem.offline
 type YunosTvpubadminContentChildRecoitemOfflineRequest struct {
     model.Params
     // 推荐内容ID
-    recItemId   int64
+    _recItemId   int64
 }
 
 // 初始化YunosTvpubadminContentChildRecoitemOfflineRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetApiParams() url.Va
 }
 // RecItemId Setter
 // 推荐内容ID
-func (r *YunosTvpubadminContentChildRecoitemOfflineRequest) SetRecItemId(recItemId int64) error {
-    r.recItemId = recItemId
-    r.Set("rec_item_id", recItemId)
+func (r *YunosTvpubadminContentChildRecoitemOfflineRequest) SetRecItemId(_recItemId int64) error {
+    r._recItemId = _recItemId
+    r.Set("rec_item_id", _recItemId)
     return nil
 }
 
 // RecItemId Getter
 func (r YunosTvpubadminContentChildRecoitemOfflineRequest) GetRecItemId() int64 {
-    return r.recItemId
+    return r._recItemId
 }

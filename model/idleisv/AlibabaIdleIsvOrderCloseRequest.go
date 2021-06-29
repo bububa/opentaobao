@@ -15,7 +15,7 @@ alibaba.idle.isv.order.close
 type AlibabaIdleIsvOrderCloseRequest struct {
     model.Params
     // 输入参数
-    isvAppraiseIsvOrderCloseDto   *AppraiseIsvOrderCloseDto
+    _isvAppraiseIsvOrderCloseDto   *AppraiseIsvOrderCloseDto
 }
 
 // 初始化AlibabaIdleIsvOrderCloseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvOrderCloseRequest) GetApiParams() url.Values {
 }
 // IsvAppraiseIsvOrderCloseDto Setter
 // 输入参数
-func (r *AlibabaIdleIsvOrderCloseRequest) SetIsvAppraiseIsvOrderCloseDto(isvAppraiseIsvOrderCloseDto *AppraiseIsvOrderCloseDto) error {
-    r.isvAppraiseIsvOrderCloseDto = isvAppraiseIsvOrderCloseDto
-    r.Set("isv_appraise_isv_order_close_dto", isvAppraiseIsvOrderCloseDto)
+func (r *AlibabaIdleIsvOrderCloseRequest) SetIsvAppraiseIsvOrderCloseDto(_isvAppraiseIsvOrderCloseDto *AppraiseIsvOrderCloseDto) error {
+    r._isvAppraiseIsvOrderCloseDto = _isvAppraiseIsvOrderCloseDto
+    r.Set("isv_appraise_isv_order_close_dto", _isvAppraiseIsvOrderCloseDto)
     return nil
 }
 
 // IsvAppraiseIsvOrderCloseDto Getter
 func (r AlibabaIdleIsvOrderCloseRequest) GetIsvAppraiseIsvOrderCloseDto() *AppraiseIsvOrderCloseDto {
-    return r.isvAppraiseIsvOrderCloseDto
+    return r._isvAppraiseIsvOrderCloseDto
 }

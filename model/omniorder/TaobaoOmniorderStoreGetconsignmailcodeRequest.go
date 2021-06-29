@@ -15,17 +15,17 @@ taobao.omniorder.store.getconsignmailcode
 type TaobaoOmniorderStoreGetconsignmailcodeRequest struct {
     model.Params
     // 门店ID
-    storeId   int64
+    _storeId   int64
     // 发件人联系电话，如空则表示使用门店信息中的电话号码
-    senderContact   string
+    _senderContact   string
     // 淘宝(TB)、天猫(TM)、京东(JD)、当当(DD)、拍拍(PP)、易讯(YX)、ebay(EBAY)、QQ网购(QQ)      、亚马逊(AMAZON)、苏宁(SN)、国美(GM)、唯品会(WPH)、聚美(JM)、乐蜂(LF)、蘑菇街(MGJ)      、聚尚(JS)、拍鞋(PX)、银泰(YT)、1号店(YHD)、凡客(VANCL)、邮乐(YL)、优购(YG)、阿里      巴巴(1688)、其他(OTHERS)
-    channel   string
+    _channel   string
     // 订单信息，目前一次请求只支持一个主订单
-    trades   []TradeOrderInfoDto
+    _trades   []TradeOrderInfoDto
     // 收件人信息
-    receiver   *ReceiverDto
+    _receiver   *ReceiverDto
     // 扩展信息
-    sdtExtendInfoDTO   *SdtExtendInfoDto
+    _sdtExtendInfoDTO   *SdtExtendInfoDto
 }
 
 // 初始化TaobaoOmniorderStoreGetconsignmailcodeRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetApiParams() url.Values
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // SenderContact Setter
 // 发件人联系电话，如空则表示使用门店信息中的电话号码
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetSenderContact(senderContact string) error {
-    r.senderContact = senderContact
-    r.Set("sender_contact", senderContact)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetSenderContact(_senderContact string) error {
+    r._senderContact = _senderContact
+    r.Set("sender_contact", _senderContact)
     return nil
 }
 
 // SenderContact Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetSenderContact() string {
-    return r.senderContact
+    return r._senderContact
 }
 // Channel Setter
 // 淘宝(TB)、天猫(TM)、京东(JD)、当当(DD)、拍拍(PP)、易讯(YX)、ebay(EBAY)、QQ网购(QQ)      、亚马逊(AMAZON)、苏宁(SN)、国美(GM)、唯品会(WPH)、聚美(JM)、乐蜂(LF)、蘑菇街(MGJ)      、聚尚(JS)、拍鞋(PX)、银泰(YT)、1号店(YHD)、凡客(VANCL)、邮乐(YL)、优购(YG)、阿里      巴巴(1688)、其他(OTHERS)
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }
 // Trades Setter
 // 订单信息，目前一次请求只支持一个主订单
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetTrades(trades []TradeOrderInfoDto) error {
-    r.trades = trades
-    r.Set("trades", trades)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetTrades(_trades []TradeOrderInfoDto) error {
+    r._trades = _trades
+    r.Set("trades", _trades)
     return nil
 }
 
 // Trades Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetTrades() []TradeOrderInfoDto {
-    return r.trades
+    return r._trades
 }
 // Receiver Setter
 // 收件人信息
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetReceiver(receiver *ReceiverDto) error {
-    r.receiver = receiver
-    r.Set("receiver", receiver)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetReceiver(_receiver *ReceiverDto) error {
+    r._receiver = _receiver
+    r.Set("receiver", _receiver)
     return nil
 }
 
 // Receiver Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetReceiver() *ReceiverDto {
-    return r.receiver
+    return r._receiver
 }
 // SdtExtendInfoDTO Setter
 // 扩展信息
-func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetSdtExtendInfoDTO(sdtExtendInfoDTO *SdtExtendInfoDto) error {
-    r.sdtExtendInfoDTO = sdtExtendInfoDTO
-    r.Set("sdt_extend_info_d_t_o", sdtExtendInfoDTO)
+func (r *TaobaoOmniorderStoreGetconsignmailcodeRequest) SetSdtExtendInfoDTO(_sdtExtendInfoDTO *SdtExtendInfoDto) error {
+    r._sdtExtendInfoDTO = _sdtExtendInfoDTO
+    r.Set("sdt_extend_info_d_t_o", _sdtExtendInfoDTO)
     return nil
 }
 
 // SdtExtendInfoDTO Getter
 func (r TaobaoOmniorderStoreGetconsignmailcodeRequest) GetSdtExtendInfoDTO() *SdtExtendInfoDto {
-    return r.sdtExtendInfoDTO
+    return r._sdtExtendInfoDTO
 }

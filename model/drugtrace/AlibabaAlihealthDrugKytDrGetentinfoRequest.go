@@ -15,7 +15,7 @@ alibaba.alihealth.drug.kyt.dr.getentinfo
 type AlibabaAlihealthDrugKytDrGetentinfoRequest struct {
     model.Params
     // 公司名称(全称)
-    entName   string
+    _entName   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrGetentinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugKytDrGetentinfoRequest) GetApiParams() url.Values {
 }
 // EntName Setter
 // 公司名称(全称)
-func (r *AlibabaAlihealthDrugKytDrGetentinfoRequest) SetEntName(entName string) error {
-    r.entName = entName
-    r.Set("ent_name", entName)
+func (r *AlibabaAlihealthDrugKytDrGetentinfoRequest) SetEntName(_entName string) error {
+    r._entName = _entName
+    r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
 func (r AlibabaAlihealthDrugKytDrGetentinfoRequest) GetEntName() string {
-    return r.entName
+    return r._entName
 }

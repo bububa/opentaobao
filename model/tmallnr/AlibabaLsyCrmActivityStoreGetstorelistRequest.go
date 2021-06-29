@@ -15,7 +15,7 @@ ISV查询门店
 type AlibabaLsyCrmActivityStoreGetstorelistRequest struct {
     model.Params
     // 系统自动生成
-    queryStoreReq   *NrtQueryStoreReq
+    _queryStoreReq   *NrtQueryStoreReq
 }
 
 // 初始化AlibabaLsyCrmActivityStoreGetstorelistRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiParams() url.Values
 }
 // QueryStoreReq Setter
 // 系统自动生成
-func (r *AlibabaLsyCrmActivityStoreGetstorelistRequest) SetQueryStoreReq(queryStoreReq *NrtQueryStoreReq) error {
-    r.queryStoreReq = queryStoreReq
-    r.Set("query_store_req", queryStoreReq)
+func (r *AlibabaLsyCrmActivityStoreGetstorelistRequest) SetQueryStoreReq(_queryStoreReq *NrtQueryStoreReq) error {
+    r._queryStoreReq = _queryStoreReq
+    r.Set("query_store_req", _queryStoreReq)
     return nil
 }
 
 // QueryStoreReq Getter
 func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetQueryStoreReq() *NrtQueryStoreReq {
-    return r.queryStoreReq
+    return r._queryStoreReq
 }

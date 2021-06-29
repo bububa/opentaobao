@@ -15,13 +15,13 @@ xiami.content.songs.info.query
 type XiamiContentSongsInfoQueryRequest struct {
     model.Params
     // 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
-    searchTerms   []SearchTermsDto
+    _searchTerms   []SearchTermsDto
     // tag搜索条件，tag尽量不要超过50个
-    tagOptional   *SongCatsSearchDto
+    _tagOptional   *SongCatsSearchDto
     // 排序,默认按照最新排序 1最新 2本周最热 3本月最热
-    orderBy   int64
+    _orderBy   int64
     // 分页信息
-    page   *PagingVo
+    _page   *PagingVo
 }
 
 // 初始化XiamiContentSongsInfoQueryRequest对象
@@ -46,49 +46,49 @@ func (r XiamiContentSongsInfoQueryRequest) GetApiParams() url.Values {
 }
 // SearchTerms Setter
 // 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
-func (r *XiamiContentSongsInfoQueryRequest) SetSearchTerms(searchTerms []SearchTermsDto) error {
-    r.searchTerms = searchTerms
-    r.Set("search_terms", searchTerms)
+func (r *XiamiContentSongsInfoQueryRequest) SetSearchTerms(_searchTerms []SearchTermsDto) error {
+    r._searchTerms = _searchTerms
+    r.Set("search_terms", _searchTerms)
     return nil
 }
 
 // SearchTerms Getter
 func (r XiamiContentSongsInfoQueryRequest) GetSearchTerms() []SearchTermsDto {
-    return r.searchTerms
+    return r._searchTerms
 }
 // TagOptional Setter
 // tag搜索条件，tag尽量不要超过50个
-func (r *XiamiContentSongsInfoQueryRequest) SetTagOptional(tagOptional *SongCatsSearchDto) error {
-    r.tagOptional = tagOptional
-    r.Set("tag_optional", tagOptional)
+func (r *XiamiContentSongsInfoQueryRequest) SetTagOptional(_tagOptional *SongCatsSearchDto) error {
+    r._tagOptional = _tagOptional
+    r.Set("tag_optional", _tagOptional)
     return nil
 }
 
 // TagOptional Getter
 func (r XiamiContentSongsInfoQueryRequest) GetTagOptional() *SongCatsSearchDto {
-    return r.tagOptional
+    return r._tagOptional
 }
 // OrderBy Setter
 // 排序,默认按照最新排序 1最新 2本周最热 3本月最热
-func (r *XiamiContentSongsInfoQueryRequest) SetOrderBy(orderBy int64) error {
-    r.orderBy = orderBy
-    r.Set("order_by", orderBy)
+func (r *XiamiContentSongsInfoQueryRequest) SetOrderBy(_orderBy int64) error {
+    r._orderBy = _orderBy
+    r.Set("order_by", _orderBy)
     return nil
 }
 
 // OrderBy Getter
 func (r XiamiContentSongsInfoQueryRequest) GetOrderBy() int64 {
-    return r.orderBy
+    return r._orderBy
 }
 // Page Setter
 // 分页信息
-func (r *XiamiContentSongsInfoQueryRequest) SetPage(page *PagingVo) error {
-    r.page = page
-    r.Set("page", page)
+func (r *XiamiContentSongsInfoQueryRequest) SetPage(_page *PagingVo) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r XiamiContentSongsInfoQueryRequest) GetPage() *PagingVo {
-    return r.page
+    return r._page
 }

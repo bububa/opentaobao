@@ -15,21 +15,21 @@ alibaba.ailabs.aligenie.skill.message.push
 type AlibabaAilabsAligenieSkillMessagePushRequest struct {
     model.Params
     // 要推送的消息内容
-    content   string
+    _content   string
     // 智能应用平台创建的技能id
-    skillId   int64
+    _skillId   int64
     // 接收方的用户Id，从技能WebHook中取得的userOpenId
-    accountType   string
+    _accountType   string
     // 消息推送的方式，和技能中申请的权限相关，可选值为TO_USER，TO_APP_BOX，BROADCAST
-    pushType   string
+    _pushType   string
     // 是否是测试消息
-    test   bool
+    _test   bool
     // TO_USER时必填，接收方的用户Id，从技能WebHook中取得的userOpenId
-    userId   string
+    _userId   string
     // 接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送
-    uuid   string
+    _uuid   string
     // 鉴权用户类型
-    authAccountType   string
+    _authAccountType   string
 }
 
 // 初始化AlibabaAilabsAligenieSkillMessagePushRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetApiParams() url.Values 
 }
 // Content Setter
 // 要推送的消息内容
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // SkillId Setter
 // 智能应用平台创建的技能id
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetSkillId(skillId int64) error {
-    r.skillId = skillId
-    r.Set("skill_id", skillId)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetSkillId(_skillId int64) error {
+    r._skillId = _skillId
+    r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetSkillId() int64 {
-    return r.skillId
+    return r._skillId
 }
 // AccountType Setter
 // 接收方的用户Id，从技能WebHook中取得的userOpenId
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetAccountType(accountType string) error {
-    r.accountType = accountType
-    r.Set("account_type", accountType)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetAccountType(_accountType string) error {
+    r._accountType = _accountType
+    r.Set("account_type", _accountType)
     return nil
 }
 
 // AccountType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetAccountType() string {
-    return r.accountType
+    return r._accountType
 }
 // PushType Setter
 // 消息推送的方式，和技能中申请的权限相关，可选值为TO_USER，TO_APP_BOX，BROADCAST
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetPushType(pushType string) error {
-    r.pushType = pushType
-    r.Set("push_type", pushType)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetPushType(_pushType string) error {
+    r._pushType = _pushType
+    r.Set("push_type", _pushType)
     return nil
 }
 
 // PushType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetPushType() string {
-    return r.pushType
+    return r._pushType
 }
 // Test Setter
 // 是否是测试消息
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetTest(test bool) error {
-    r.test = test
-    r.Set("test", test)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetTest(_test bool) error {
+    r._test = _test
+    r.Set("test", _test)
     return nil
 }
 
 // Test Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetTest() bool {
-    return r.test
+    return r._test
 }
 // UserId Setter
 // TO_USER时必填，接收方的用户Id，从技能WebHook中取得的userOpenId
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // Uuid Setter
 // 接收方的用户设备id，从技能WebHook中取得的deviceOpenId，填写设备id，则用户id必填，否则无法推送
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // AuthAccountType Setter
 // 鉴权用户类型
-func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetAuthAccountType(authAccountType string) error {
-    r.authAccountType = authAccountType
-    r.Set("auth_account_type", authAccountType)
+func (r *AlibabaAilabsAligenieSkillMessagePushRequest) SetAuthAccountType(_authAccountType string) error {
+    r._authAccountType = _authAccountType
+    r.Set("auth_account_type", _authAccountType)
     return nil
 }
 
 // AuthAccountType Getter
 func (r AlibabaAilabsAligenieSkillMessagePushRequest) GetAuthAccountType() string {
-    return r.authAccountType
+    return r._authAccountType
 }

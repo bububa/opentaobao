@@ -16,13 +16,13 @@ alitrip.rail.ir.division.get
 type AlitripRailIrDivisionGetRequest struct {
     model.Params
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区，境外火车票业务只需要市级别，传4就可以
-    level   int64
+    _level   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
     // 页数，从1开始
-    pageIndex   int64
+    _pageIndex   int64
 }
 
 // 初始化AlitripRailIrDivisionGetRequest对象
@@ -47,49 +47,49 @@ func (r AlitripRailIrDivisionGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商id
-func (r *AlitripRailIrDivisionGetRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlitripRailIrDivisionGetRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlitripRailIrDivisionGetRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // Level Setter
 // 层级，1洲，2是国家，3是省，4是市，5是区，6是街道/镇，7是村，8是逻辑行政区，境外火车票业务只需要市级别，传4就可以
-func (r *AlitripRailIrDivisionGetRequest) SetLevel(level int64) error {
-    r.level = level
-    r.Set("level", level)
+func (r *AlitripRailIrDivisionGetRequest) SetLevel(_level int64) error {
+    r._level = _level
+    r.Set("level", _level)
     return nil
 }
 
 // Level Getter
 func (r AlitripRailIrDivisionGetRequest) GetLevel() int64 {
-    return r.level
+    return r._level
 }
 // PageSize Setter
 // 每页条数
-func (r *AlitripRailIrDivisionGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlitripRailIrDivisionGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlitripRailIrDivisionGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageIndex Setter
 // 页数，从1开始
-func (r *AlitripRailIrDivisionGetRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *AlitripRailIrDivisionGetRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r AlitripRailIrDivisionGetRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }

@@ -15,7 +15,7 @@ alibaba.wdk.item.merchant.category.query
 type AlibabaWdkItemMerchantCategoryQueryRequest struct {
     model.Params
     // 请求
-    queryRequest   *WdkOpenSkuMerchantCatServiceQueryRequest
+    _queryRequest   *WdkOpenSkuMerchantCatServiceQueryRequest
 }
 
 // 初始化AlibabaWdkItemMerchantCategoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetApiParams() url.Values {
 }
 // QueryRequest Setter
 // 请求
-func (r *AlibabaWdkItemMerchantCategoryQueryRequest) SetQueryRequest(queryRequest *WdkOpenSkuMerchantCatServiceQueryRequest) error {
-    r.queryRequest = queryRequest
-    r.Set("query_request", queryRequest)
+func (r *AlibabaWdkItemMerchantCategoryQueryRequest) SetQueryRequest(_queryRequest *WdkOpenSkuMerchantCatServiceQueryRequest) error {
+    r._queryRequest = _queryRequest
+    r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
 func (r AlibabaWdkItemMerchantCategoryQueryRequest) GetQueryRequest() *WdkOpenSkuMerchantCatServiceQueryRequest {
-    return r.queryRequest
+    return r._queryRequest
 }

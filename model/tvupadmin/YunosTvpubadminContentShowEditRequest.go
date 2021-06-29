@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.show.edit
 type YunosTvpubadminContentShowEditRequest struct {
     model.Params
     // 请求入参，JSON格式
-    data   string
+    _data   string
 }
 
 // 初始化YunosTvpubadminContentShowEditRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentShowEditRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 请求入参，JSON格式
-func (r *YunosTvpubadminContentShowEditRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *YunosTvpubadminContentShowEditRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r YunosTvpubadminContentShowEditRequest) GetData() string {
-    return r.data
+    return r._data
 }

@@ -15,41 +15,41 @@ taobao.xhotel.room.update
 type TaobaoXhotelRoomUpdateRequest struct {
     model.Params
     // 废弃，使用out_rid
-    gid   int64
+    _gid   int64
     // 废弃，宝贝名称展示在店铺里
-    title   string
+    _title   string
     // 废弃，房型购买须知展示在PC购物路径
-    guide   string
+    _guide   string
     // 废弃，宝贝描述展示在宝贝详情页面
-    desc   string
+    _desc   string
     // 废弃，宝贝图片，没有默认使用标准酒店房型图片
-    pic   []*model.File
+    _pic   []*model.File
     // 废弃，房型是否提供发票
-    hasReceipt   bool
+    _hasReceipt   bool
     // 废弃，房型发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
-    receiptType   string
+    _receiptType   string
     // 废弃，房型发票类型为其他时的发票描述,不能超过30个字
-    receiptOtherTypeDesc   string
+    _receiptOtherTypeDesc   string
     // 废弃，房型发票说明，不能超过100个字
-    receiptInfo   string
+    _receiptInfo   string
     // 房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{"date":2011-01-28,"quota":10,"al_quota":2,"sp_quota":3}]
-    inventory   string
+    _inventory   string
     // 系统商，一般不填写，使用须申请
-    vendor   string
+    _vendor   string
     // 卖家房型ID
-    outRid   string
+    _outRid   string
     // 房型库存开关。 1，开；2，关
-    roomSwitchCal   string
+    _roomSwitchCal   string
     // 超预定库存截止时间
-    superbookEndTime   string
+    _superbookEndTime   string
     // 超预定库存开始时间
-    superbookStartTime   string
+    _superbookStartTime   string
     // 保留房库存截止时间
-    allotmentEndTime   string
+    _allotmentEndTime   string
     // 保留房库存截止时间
-    allotmentStartTime   string
+    _allotmentStartTime   string
     // 宝贝状态,1上架。
-    status   int64
+    _status   int64
 }
 
 // 初始化TaobaoXhotelRoomUpdateRequest对象
@@ -74,217 +74,217 @@ func (r TaobaoXhotelRoomUpdateRequest) GetApiParams() url.Values {
 }
 // Gid Setter
 // 废弃，使用out_rid
-func (r *TaobaoXhotelRoomUpdateRequest) SetGid(gid int64) error {
-    r.gid = gid
-    r.Set("gid", gid)
+func (r *TaobaoXhotelRoomUpdateRequest) SetGid(_gid int64) error {
+    r._gid = _gid
+    r.Set("gid", _gid)
     return nil
 }
 
 // Gid Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetGid() int64 {
-    return r.gid
+    return r._gid
 }
 // Title Setter
 // 废弃，宝贝名称展示在店铺里
-func (r *TaobaoXhotelRoomUpdateRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoXhotelRoomUpdateRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Guide Setter
 // 废弃，房型购买须知展示在PC购物路径
-func (r *TaobaoXhotelRoomUpdateRequest) SetGuide(guide string) error {
-    r.guide = guide
-    r.Set("guide", guide)
+func (r *TaobaoXhotelRoomUpdateRequest) SetGuide(_guide string) error {
+    r._guide = _guide
+    r.Set("guide", _guide)
     return nil
 }
 
 // Guide Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetGuide() string {
-    return r.guide
+    return r._guide
 }
 // Desc Setter
 // 废弃，宝贝描述展示在宝贝详情页面
-func (r *TaobaoXhotelRoomUpdateRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoXhotelRoomUpdateRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }
 // Pic Setter
 // 废弃，宝贝图片，没有默认使用标准酒店房型图片
-func (r *TaobaoXhotelRoomUpdateRequest) SetPic(pic []*model.File) error {
-    r.pic = pic
-    r.Set("pic", pic)
+func (r *TaobaoXhotelRoomUpdateRequest) SetPic(_pic []*model.File) error {
+    r._pic = _pic
+    r.Set("pic", _pic)
     return nil
 }
 
 // Pic Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetPic() []*model.File {
-    return r.pic
+    return r._pic
 }
 // HasReceipt Setter
 // 废弃，房型是否提供发票
-func (r *TaobaoXhotelRoomUpdateRequest) SetHasReceipt(hasReceipt bool) error {
-    r.hasReceipt = hasReceipt
-    r.Set("has_receipt", hasReceipt)
+func (r *TaobaoXhotelRoomUpdateRequest) SetHasReceipt(_hasReceipt bool) error {
+    r._hasReceipt = _hasReceipt
+    r.Set("has_receipt", _hasReceipt)
     return nil
 }
 
 // HasReceipt Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetHasReceipt() bool {
-    return r.hasReceipt
+    return r._hasReceipt
 }
 // ReceiptType Setter
 // 废弃，房型发票类型。A,B。分别代表： A:酒店住宿发票,B:其他
-func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptType(receiptType string) error {
-    r.receiptType = receiptType
-    r.Set("receipt_type", receiptType)
+func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptType(_receiptType string) error {
+    r._receiptType = _receiptType
+    r.Set("receipt_type", _receiptType)
     return nil
 }
 
 // ReceiptType Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetReceiptType() string {
-    return r.receiptType
+    return r._receiptType
 }
 // ReceiptOtherTypeDesc Setter
 // 废弃，房型发票类型为其他时的发票描述,不能超过30个字
-func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptOtherTypeDesc(receiptOtherTypeDesc string) error {
-    r.receiptOtherTypeDesc = receiptOtherTypeDesc
-    r.Set("receipt_other_type_desc", receiptOtherTypeDesc)
+func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptOtherTypeDesc(_receiptOtherTypeDesc string) error {
+    r._receiptOtherTypeDesc = _receiptOtherTypeDesc
+    r.Set("receipt_other_type_desc", _receiptOtherTypeDesc)
     return nil
 }
 
 // ReceiptOtherTypeDesc Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetReceiptOtherTypeDesc() string {
-    return r.receiptOtherTypeDesc
+    return r._receiptOtherTypeDesc
 }
 // ReceiptInfo Setter
 // 废弃，房型发票说明，不能超过100个字
-func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptInfo(receiptInfo string) error {
-    r.receiptInfo = receiptInfo
-    r.Set("receipt_info", receiptInfo)
+func (r *TaobaoXhotelRoomUpdateRequest) SetReceiptInfo(_receiptInfo string) error {
+    r._receiptInfo = _receiptInfo
+    r.Set("receipt_info", _receiptInfo)
     return nil
 }
 
 // ReceiptInfo Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetReceiptInfo() string {
-    return r.receiptInfo
+    return r._receiptInfo
 }
 // Inventory Setter
 // 房型共享库存日历。quota物理库存；al_quota保留房库存；sp_quota超预定库存。其中保留房库存和超预定库存需要向运营申请权限示例：[{"date":2011-01-28,"quota":10,"al_quota":2,"sp_quota":3}]
-func (r *TaobaoXhotelRoomUpdateRequest) SetInventory(inventory string) error {
-    r.inventory = inventory
-    r.Set("inventory", inventory)
+func (r *TaobaoXhotelRoomUpdateRequest) SetInventory(_inventory string) error {
+    r._inventory = _inventory
+    r.Set("inventory", _inventory)
     return nil
 }
 
 // Inventory Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetInventory() string {
-    return r.inventory
+    return r._inventory
 }
 // Vendor Setter
 // 系统商，一般不填写，使用须申请
-func (r *TaobaoXhotelRoomUpdateRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRoomUpdateRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // OutRid Setter
 // 卖家房型ID
-func (r *TaobaoXhotelRoomUpdateRequest) SetOutRid(outRid string) error {
-    r.outRid = outRid
-    r.Set("out_rid", outRid)
+func (r *TaobaoXhotelRoomUpdateRequest) SetOutRid(_outRid string) error {
+    r._outRid = _outRid
+    r.Set("out_rid", _outRid)
     return nil
 }
 
 // OutRid Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetOutRid() string {
-    return r.outRid
+    return r._outRid
 }
 // RoomSwitchCal Setter
 // 房型库存开关。 1，开；2，关
-func (r *TaobaoXhotelRoomUpdateRequest) SetRoomSwitchCal(roomSwitchCal string) error {
-    r.roomSwitchCal = roomSwitchCal
-    r.Set("room_switch_cal", roomSwitchCal)
+func (r *TaobaoXhotelRoomUpdateRequest) SetRoomSwitchCal(_roomSwitchCal string) error {
+    r._roomSwitchCal = _roomSwitchCal
+    r.Set("room_switch_cal", _roomSwitchCal)
     return nil
 }
 
 // RoomSwitchCal Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetRoomSwitchCal() string {
-    return r.roomSwitchCal
+    return r._roomSwitchCal
 }
 // SuperbookEndTime Setter
 // 超预定库存截止时间
-func (r *TaobaoXhotelRoomUpdateRequest) SetSuperbookEndTime(superbookEndTime string) error {
-    r.superbookEndTime = superbookEndTime
-    r.Set("superbook_end_time", superbookEndTime)
+func (r *TaobaoXhotelRoomUpdateRequest) SetSuperbookEndTime(_superbookEndTime string) error {
+    r._superbookEndTime = _superbookEndTime
+    r.Set("superbook_end_time", _superbookEndTime)
     return nil
 }
 
 // SuperbookEndTime Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetSuperbookEndTime() string {
-    return r.superbookEndTime
+    return r._superbookEndTime
 }
 // SuperbookStartTime Setter
 // 超预定库存开始时间
-func (r *TaobaoXhotelRoomUpdateRequest) SetSuperbookStartTime(superbookStartTime string) error {
-    r.superbookStartTime = superbookStartTime
-    r.Set("superbook_start_time", superbookStartTime)
+func (r *TaobaoXhotelRoomUpdateRequest) SetSuperbookStartTime(_superbookStartTime string) error {
+    r._superbookStartTime = _superbookStartTime
+    r.Set("superbook_start_time", _superbookStartTime)
     return nil
 }
 
 // SuperbookStartTime Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetSuperbookStartTime() string {
-    return r.superbookStartTime
+    return r._superbookStartTime
 }
 // AllotmentEndTime Setter
 // 保留房库存截止时间
-func (r *TaobaoXhotelRoomUpdateRequest) SetAllotmentEndTime(allotmentEndTime string) error {
-    r.allotmentEndTime = allotmentEndTime
-    r.Set("allotment_end_time", allotmentEndTime)
+func (r *TaobaoXhotelRoomUpdateRequest) SetAllotmentEndTime(_allotmentEndTime string) error {
+    r._allotmentEndTime = _allotmentEndTime
+    r.Set("allotment_end_time", _allotmentEndTime)
     return nil
 }
 
 // AllotmentEndTime Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetAllotmentEndTime() string {
-    return r.allotmentEndTime
+    return r._allotmentEndTime
 }
 // AllotmentStartTime Setter
 // 保留房库存截止时间
-func (r *TaobaoXhotelRoomUpdateRequest) SetAllotmentStartTime(allotmentStartTime string) error {
-    r.allotmentStartTime = allotmentStartTime
-    r.Set("allotment_start_time", allotmentStartTime)
+func (r *TaobaoXhotelRoomUpdateRequest) SetAllotmentStartTime(_allotmentStartTime string) error {
+    r._allotmentStartTime = _allotmentStartTime
+    r.Set("allotment_start_time", _allotmentStartTime)
     return nil
 }
 
 // AllotmentStartTime Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetAllotmentStartTime() string {
-    return r.allotmentStartTime
+    return r._allotmentStartTime
 }
 // Status Setter
 // 宝贝状态,1上架。
-func (r *TaobaoXhotelRoomUpdateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoXhotelRoomUpdateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoXhotelRoomUpdateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }

@@ -17,19 +17,19 @@ taobao.promotionmisc.common.item.activity.update
 type TaobaoPromotionmiscCommonItemActivityUpdateRequest struct {
     model.Params
     // 优惠活动ID
-    activityId   int64
+    _activityId   int64
     // 活动名称，不能超过32字符
-    name   string
+    _name   string
     // 活动描述，不能超过100字符
-    description   string
+    _description   string
     // 活动开始时间
-    startTime   string
+    _startTime   string
     // 活动结束时间
-    endTime   string
+    _endTime   string
     // 是否指定人群标签
-    isUserTag   bool
+    _isUserTag   bool
     // 用户标签。当is_user_tag为true时，该值才有意义。
-    userTag   string
+    _userTag   string
 }
 
 // 初始化TaobaoPromotionmiscCommonItemActivityUpdateRequest对象
@@ -54,85 +54,85 @@ func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetApiParams() url.V
 }
 // ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // Name Setter
 // 活动名称，不能超过32字符
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Description Setter
 // 活动描述，不能超过100字符
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // StartTime Setter
 // 活动开始时间
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动结束时间
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // IsUserTag Setter
 // 是否指定人群标签
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetIsUserTag(isUserTag bool) error {
-    r.isUserTag = isUserTag
-    r.Set("is_user_tag", isUserTag)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetIsUserTag(_isUserTag bool) error {
+    r._isUserTag = _isUserTag
+    r.Set("is_user_tag", _isUserTag)
     return nil
 }
 
 // IsUserTag Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetIsUserTag() bool {
-    return r.isUserTag
+    return r._isUserTag
 }
 // UserTag Setter
 // 用户标签。当is_user_tag为true时，该值才有意义。
-func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetUserTag(userTag string) error {
-    r.userTag = userTag
-    r.Set("user_tag", userTag)
+func (r *TaobaoPromotionmiscCommonItemActivityUpdateRequest) SetUserTag(_userTag string) error {
+    r._userTag = _userTag
+    r.Set("user_tag", _userTag)
     return nil
 }
 
 // UserTag Getter
 func (r TaobaoPromotionmiscCommonItemActivityUpdateRequest) GetUserTag() string {
-    return r.userTag
+    return r._userTag
 }

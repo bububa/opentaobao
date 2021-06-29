@@ -15,9 +15,9 @@ lbs数据采集
 type TaobaoLbsMessageUploadRequest struct {
     model.Params
     // 消息TOPIC
-    topic   string
+    _topic   string
     // 消息体 json结构
-    body   string
+    _body   string
 }
 
 // 初始化TaobaoLbsMessageUploadRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoLbsMessageUploadRequest) GetApiParams() url.Values {
 }
 // Topic Setter
 // 消息TOPIC
-func (r *TaobaoLbsMessageUploadRequest) SetTopic(topic string) error {
-    r.topic = topic
-    r.Set("topic", topic)
+func (r *TaobaoLbsMessageUploadRequest) SetTopic(_topic string) error {
+    r._topic = _topic
+    r.Set("topic", _topic)
     return nil
 }
 
 // Topic Getter
 func (r TaobaoLbsMessageUploadRequest) GetTopic() string {
-    return r.topic
+    return r._topic
 }
 // Body Setter
 // 消息体 json结构
-func (r *TaobaoLbsMessageUploadRequest) SetBody(body string) error {
-    r.body = body
-    r.Set("body", body)
+func (r *TaobaoLbsMessageUploadRequest) SetBody(_body string) error {
+    r._body = _body
+    r.Set("body", _body)
     return nil
 }
 
 // Body Getter
 func (r TaobaoLbsMessageUploadRequest) GetBody() string {
-    return r.body
+    return r._body
 }

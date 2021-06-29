@@ -15,9 +15,9 @@ alibaba.westcrm.activity.info.get
 type AlibabaWestcrmActivityInfoGetRequest struct {
     model.Params
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 活动id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化AlibabaWestcrmActivityInfoGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWestcrmActivityInfoGetRequest) GetApiParams() url.Values {
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmActivityInfoGetRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmActivityInfoGetRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmActivityInfoGetRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // ActivityId Setter
 // 活动id
-func (r *AlibabaWestcrmActivityInfoGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *AlibabaWestcrmActivityInfoGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r AlibabaWestcrmActivityInfoGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

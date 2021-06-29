@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.bindcard
 type AlibabaAlscCrmCardBindcardRequest struct {
     model.Params
     // 请求参数
-    paramBindPhysicalCardOpenReq   *BindPhysicalCardOpenReq
+    _paramBindPhysicalCardOpenReq   *BindPhysicalCardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardBindcardRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardBindcardRequest) GetApiParams() url.Values {
 }
 // ParamBindPhysicalCardOpenReq Setter
 // 请求参数
-func (r *AlibabaAlscCrmCardBindcardRequest) SetParamBindPhysicalCardOpenReq(paramBindPhysicalCardOpenReq *BindPhysicalCardOpenReq) error {
-    r.paramBindPhysicalCardOpenReq = paramBindPhysicalCardOpenReq
-    r.Set("param_bind_physical_card_open_req", paramBindPhysicalCardOpenReq)
+func (r *AlibabaAlscCrmCardBindcardRequest) SetParamBindPhysicalCardOpenReq(_paramBindPhysicalCardOpenReq *BindPhysicalCardOpenReq) error {
+    r._paramBindPhysicalCardOpenReq = _paramBindPhysicalCardOpenReq
+    r.Set("param_bind_physical_card_open_req", _paramBindPhysicalCardOpenReq)
     return nil
 }
 
 // ParamBindPhysicalCardOpenReq Getter
 func (r AlibabaAlscCrmCardBindcardRequest) GetParamBindPhysicalCardOpenReq() *BindPhysicalCardOpenReq {
-    return r.paramBindPhysicalCardOpenReq
+    return r._paramBindPhysicalCardOpenReq
 }

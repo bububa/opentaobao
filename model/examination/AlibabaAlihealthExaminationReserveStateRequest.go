@@ -15,11 +15,11 @@ alibaba.alihealth.examination.reserve.state
 type AlibabaAlihealthExaminationReserveStateRequest struct {
     model.Params
     // 商户唯一码
-    merchantCode   string
+    _merchantCode   string
     // 阿里健康预约唯一标识
-    reserveNumber   string
+    _reserveNumber   string
     // 体检机构预约唯一标识码
-    uniqReserveCode   string
+    _uniqReserveCode   string
 }
 
 // 初始化AlibabaAlihealthExaminationReserveStateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationReserveStateRequest) GetApiParams() url.Value
 }
 // MerchantCode Setter
 // 商户唯一码
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaAlihealthExaminationReserveStateRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaAlihealthExaminationReserveStateRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // ReserveNumber Setter
 // 阿里健康预约唯一标识
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetReserveNumber(reserveNumber string) error {
-    r.reserveNumber = reserveNumber
-    r.Set("reserve_number", reserveNumber)
+func (r *AlibabaAlihealthExaminationReserveStateRequest) SetReserveNumber(_reserveNumber string) error {
+    r._reserveNumber = _reserveNumber
+    r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveStateRequest) GetReserveNumber() string {
-    return r.reserveNumber
+    return r._reserveNumber
 }
 // UniqReserveCode Setter
 // 体检机构预约唯一标识码
-func (r *AlibabaAlihealthExaminationReserveStateRequest) SetUniqReserveCode(uniqReserveCode string) error {
-    r.uniqReserveCode = uniqReserveCode
-    r.Set("uniq_reserve_code", uniqReserveCode)
+func (r *AlibabaAlihealthExaminationReserveStateRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+    r._uniqReserveCode = _uniqReserveCode
+    r.Set("uniq_reserve_code", _uniqReserveCode)
     return nil
 }
 
 // UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveStateRequest) GetUniqReserveCode() string {
-    return r.uniqReserveCode
+    return r._uniqReserveCode
 }

@@ -15,7 +15,7 @@ alibaba.wdk.series.edit
 type AlibabaWdkSeriesEditRequest struct {
     model.Params
     // 商品系列修改请求
-    series   *SkuSeriesEditRequest
+    _series   *SkuSeriesEditRequest
 }
 
 // 初始化AlibabaWdkSeriesEditRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesEditRequest) GetApiParams() url.Values {
 }
 // Series Setter
 // 商品系列修改请求
-func (r *AlibabaWdkSeriesEditRequest) SetSeries(series *SkuSeriesEditRequest) error {
-    r.series = series
-    r.Set("series", series)
+func (r *AlibabaWdkSeriesEditRequest) SetSeries(_series *SkuSeriesEditRequest) error {
+    r._series = _series
+    r.Set("series", _series)
     return nil
 }
 
 // Series Getter
 func (r AlibabaWdkSeriesEditRequest) GetSeries() *SkuSeriesEditRequest {
-    return r.series
+    return r._series
 }

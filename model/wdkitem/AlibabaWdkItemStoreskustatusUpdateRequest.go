@@ -15,7 +15,7 @@ alibaba.wdk.item.storeskustatus.update
 type AlibabaWdkItemStoreskustatusUpdateRequest struct {
     model.Params
     // bean
-    bean   *UpdateStoreSkuLifeStatusRequestBean
+    _bean   *UpdateStoreSkuLifeStatusRequestBean
 }
 
 // 初始化AlibabaWdkItemStoreskustatusUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetApiParams() url.Values {
 }
 // Bean Setter
 // bean
-func (r *AlibabaWdkItemStoreskustatusUpdateRequest) SetBean(bean *UpdateStoreSkuLifeStatusRequestBean) error {
-    r.bean = bean
-    r.Set("bean", bean)
+func (r *AlibabaWdkItemStoreskustatusUpdateRequest) SetBean(_bean *UpdateStoreSkuLifeStatusRequestBean) error {
+    r._bean = _bean
+    r.Set("bean", _bean)
     return nil
 }
 
 // Bean Getter
 func (r AlibabaWdkItemStoreskustatusUpdateRequest) GetBean() *UpdateStoreSkuLifeStatusRequestBean {
-    return r.bean
+    return r._bean
 }

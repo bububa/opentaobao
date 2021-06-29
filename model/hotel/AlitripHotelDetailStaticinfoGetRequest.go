@@ -15,7 +15,7 @@ alitrip.hotel.detail.staticinfo.get
 type AlitripHotelDetailStaticinfoGetRequest struct {
     model.Params
     // 酒店详情页静态信息参数
-    paramHotelTopStaticDetailsParam   *HotelTopStaticDetailsParam
+    _paramHotelTopStaticDetailsParam   *HotelTopStaticDetailsParam
 }
 
 // 初始化AlitripHotelDetailStaticinfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelDetailStaticinfoGetRequest) GetApiParams() url.Values {
 }
 // ParamHotelTopStaticDetailsParam Setter
 // 酒店详情页静态信息参数
-func (r *AlitripHotelDetailStaticinfoGetRequest) SetParamHotelTopStaticDetailsParam(paramHotelTopStaticDetailsParam *HotelTopStaticDetailsParam) error {
-    r.paramHotelTopStaticDetailsParam = paramHotelTopStaticDetailsParam
-    r.Set("param_hotel_top_static_details_param", paramHotelTopStaticDetailsParam)
+func (r *AlitripHotelDetailStaticinfoGetRequest) SetParamHotelTopStaticDetailsParam(_paramHotelTopStaticDetailsParam *HotelTopStaticDetailsParam) error {
+    r._paramHotelTopStaticDetailsParam = _paramHotelTopStaticDetailsParam
+    r.Set("param_hotel_top_static_details_param", _paramHotelTopStaticDetailsParam)
     return nil
 }
 
 // ParamHotelTopStaticDetailsParam Getter
 func (r AlitripHotelDetailStaticinfoGetRequest) GetParamHotelTopStaticDetailsParam() *HotelTopStaticDetailsParam {
-    return r.paramHotelTopStaticDetailsParam
+    return r._paramHotelTopStaticDetailsParam
 }

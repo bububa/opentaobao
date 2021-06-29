@@ -15,7 +15,7 @@ alibaba.damai.maitix.distribution.delivery.calculate
 type AlibabaDamaiMaitixDistributionDeliveryCalculateRequest struct {
     model.Params
     // 入参
-    param   *OpenApiPostFeeParam
+    _param   *OpenApiPostFeeParam
 }
 
 // 初始化AlibabaDamaiMaitixDistributionDeliveryCalculateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixDistributionDeliveryCalculateRequest) GetApiParams() u
 }
 // Param Setter
 // 入参
-func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateRequest) SetParam(param *OpenApiPostFeeParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixDistributionDeliveryCalculateRequest) SetParam(_param *OpenApiPostFeeParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixDistributionDeliveryCalculateRequest) GetParam() *OpenApiPostFeeParam {
-    return r.param
+    return r._param
 }

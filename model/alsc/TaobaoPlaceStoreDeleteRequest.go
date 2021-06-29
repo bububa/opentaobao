@@ -15,7 +15,7 @@ taobao.place.store.delete
 type TaobaoPlaceStoreDeleteRequest struct {
     model.Params
     // 门店id
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoPlaceStoreDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreDeleteRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店id
-func (r *TaobaoPlaceStoreDeleteRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStoreDeleteRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStoreDeleteRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

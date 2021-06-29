@@ -15,7 +15,7 @@ Api for invalidating specific feeds based on job Ids. Please use aliexpress.solu
 type AliexpressSolutionFeedInvalidateRequest struct {
     model.Params
     // job id separated by ;  No more than 100 job Ids could be passed in one request.
-    jobIdList   string
+    _jobIdList   string
 }
 
 // 初始化AliexpressSolutionFeedInvalidateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionFeedInvalidateRequest) GetApiParams() url.Values {
 }
 // JobIdList Setter
 // job id separated by ;  No more than 100 job Ids could be passed in one request.
-func (r *AliexpressSolutionFeedInvalidateRequest) SetJobIdList(jobIdList string) error {
-    r.jobIdList = jobIdList
-    r.Set("job_id_list", jobIdList)
+func (r *AliexpressSolutionFeedInvalidateRequest) SetJobIdList(_jobIdList string) error {
+    r._jobIdList = _jobIdList
+    r.Set("job_id_list", _jobIdList)
     return nil
 }
 
 // JobIdList Getter
 func (r AliexpressSolutionFeedInvalidateRequest) GetJobIdList() string {
-    return r.jobIdList
+    return r._jobIdList
 }

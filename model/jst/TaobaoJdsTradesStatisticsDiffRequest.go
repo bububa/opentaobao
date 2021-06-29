@@ -15,13 +15,13 @@ taobao.jds.trades.statistics.diff
 type TaobaoJdsTradesStatisticsDiffRequest struct {
     model.Params
     // 查询的日期，格式如YYYYMMDD的日期对应的数字
-    date   int64
+    _date   int64
     // 需要比较的状态，将会和post_status做比较
-    preStatus   string
+    _preStatus   string
     // 需要比较的状态
-    postStatus   string
+    _postStatus   string
     // 页数
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoJdsTradesStatisticsDiffRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoJdsTradesStatisticsDiffRequest) GetApiParams() url.Values {
 }
 // Date Setter
 // 查询的日期，格式如YYYYMMDD的日期对应的数字
-func (r *TaobaoJdsTradesStatisticsDiffRequest) SetDate(date int64) error {
-    r.date = date
-    r.Set("date", date)
+func (r *TaobaoJdsTradesStatisticsDiffRequest) SetDate(_date int64) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r TaobaoJdsTradesStatisticsDiffRequest) GetDate() int64 {
-    return r.date
+    return r._date
 }
 // PreStatus Setter
 // 需要比较的状态，将会和post_status做比较
-func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPreStatus(preStatus string) error {
-    r.preStatus = preStatus
-    r.Set("pre_status", preStatus)
+func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPreStatus(_preStatus string) error {
+    r._preStatus = _preStatus
+    r.Set("pre_status", _preStatus)
     return nil
 }
 
 // PreStatus Getter
 func (r TaobaoJdsTradesStatisticsDiffRequest) GetPreStatus() string {
-    return r.preStatus
+    return r._preStatus
 }
 // PostStatus Setter
 // 需要比较的状态
-func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPostStatus(postStatus string) error {
-    r.postStatus = postStatus
-    r.Set("post_status", postStatus)
+func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPostStatus(_postStatus string) error {
+    r._postStatus = _postStatus
+    r.Set("post_status", _postStatus)
     return nil
 }
 
 // PostStatus Getter
 func (r TaobaoJdsTradesStatisticsDiffRequest) GetPostStatus() string {
-    return r.postStatus
+    return r._postStatus
 }
 // PageNo Setter
 // 页数
-func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoJdsTradesStatisticsDiffRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoJdsTradesStatisticsDiffRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

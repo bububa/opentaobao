@@ -15,7 +15,7 @@ alibaba.mozi.acl.role.add
 type AlibabaMoziAclRoleAddRequest struct {
     model.Params
     // 创建角色请求对象
-    createRoleRequest   *CreateRoleRequest
+    _createRoleRequest   *CreateRoleRequest
 }
 
 // 初始化AlibabaMoziAclRoleAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleAddRequest) GetApiParams() url.Values {
 }
 // CreateRoleRequest Setter
 // 创建角色请求对象
-func (r *AlibabaMoziAclRoleAddRequest) SetCreateRoleRequest(createRoleRequest *CreateRoleRequest) error {
-    r.createRoleRequest = createRoleRequest
-    r.Set("create_role_request", createRoleRequest)
+func (r *AlibabaMoziAclRoleAddRequest) SetCreateRoleRequest(_createRoleRequest *CreateRoleRequest) error {
+    r._createRoleRequest = _createRoleRequest
+    r.Set("create_role_request", _createRoleRequest)
     return nil
 }
 
 // CreateRoleRequest Getter
 func (r AlibabaMoziAclRoleAddRequest) GetCreateRoleRequest() *CreateRoleRequest {
-    return r.createRoleRequest
+    return r._createRoleRequest
 }

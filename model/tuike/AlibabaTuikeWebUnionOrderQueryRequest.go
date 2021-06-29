@@ -15,15 +15,15 @@ alibaba.tuike.web.union.order.query
 type AlibabaTuikeWebUnionOrderQueryRequest struct {
     model.Params
     // 0 表示time为下单时间;1表示time为更新时间
-    timeType   int64
+    _timeType   int64
     // 13位时间戳
-    startTime   int64
+    _startTime   int64
     // 13位时间戳
-    endTime   int64
+    _endTime   int64
     // 页码偏移
-    pageOffset   int64
+    _pageOffset   int64
     // 返回条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaTuikeWebUnionOrderQueryRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaTuikeWebUnionOrderQueryRequest) GetApiParams() url.Values {
 }
 // TimeType Setter
 // 0 表示time为下单时间;1表示time为更新时间
-func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetTimeType(timeType int64) error {
-    r.timeType = timeType
-    r.Set("time_type", timeType)
+func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetTimeType(_timeType int64) error {
+    r._timeType = _timeType
+    r.Set("time_type", _timeType)
     return nil
 }
 
 // TimeType Getter
 func (r AlibabaTuikeWebUnionOrderQueryRequest) GetTimeType() int64 {
-    return r.timeType
+    return r._timeType
 }
 // StartTime Setter
 // 13位时间戳
-func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetStartTime(startTime int64) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetStartTime(_startTime int64) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaTuikeWebUnionOrderQueryRequest) GetStartTime() int64 {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 13位时间戳
-func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetEndTime(endTime int64) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetEndTime(_endTime int64) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaTuikeWebUnionOrderQueryRequest) GetEndTime() int64 {
-    return r.endTime
+    return r._endTime
 }
 // PageOffset Setter
 // 页码偏移
-func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetPageOffset(pageOffset int64) error {
-    r.pageOffset = pageOffset
-    r.Set("page_offset", pageOffset)
+func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetPageOffset(_pageOffset int64) error {
+    r._pageOffset = _pageOffset
+    r.Set("page_offset", _pageOffset)
     return nil
 }
 
 // PageOffset Getter
 func (r AlibabaTuikeWebUnionOrderQueryRequest) GetPageOffset() int64 {
-    return r.pageOffset
+    return r._pageOffset
 }
 // PageSize Setter
 // 返回条数
-func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaTuikeWebUnionOrderQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaTuikeWebUnionOrderQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

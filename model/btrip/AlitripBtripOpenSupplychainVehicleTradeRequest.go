@@ -15,7 +15,7 @@ alitrip.btrip.open.supplychain.vehicle.trade
 type AlitripBtripOpenSupplychainVehicleTradeRequest struct {
     model.Params
     // 入参
-    rq   *OpenApiZzdSearchRq
+    _rq   *OpenApiZzdSearchRq
 }
 
 // 初始化AlitripBtripOpenSupplychainVehicleTradeRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetApiParams() url.Value
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenSupplychainVehicleTradeRequest) SetRq(rq *OpenApiZzdSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenSupplychainVehicleTradeRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenSupplychainVehicleTradeRequest) GetRq() *OpenApiZzdSearchRq {
-    return r.rq
+    return r._rq
 }

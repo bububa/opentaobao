@@ -15,7 +15,7 @@ alibaba.fundplatform.cardorders.status.make.finish
 type AlibabaFundplatformCardordersStatusMakeFinishRequest struct {
     model.Params
     // 子制卡单ID
-    cardOrderId   int64
+    _cardOrderId   int64
 }
 
 // 初始化AlibabaFundplatformCardordersStatusMakeFinishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardordersStatusMakeFinishRequest) GetApiParams() url
 }
 // CardOrderId Setter
 // 子制卡单ID
-func (r *AlibabaFundplatformCardordersStatusMakeFinishRequest) SetCardOrderId(cardOrderId int64) error {
-    r.cardOrderId = cardOrderId
-    r.Set("card_order_id", cardOrderId)
+func (r *AlibabaFundplatformCardordersStatusMakeFinishRequest) SetCardOrderId(_cardOrderId int64) error {
+    r._cardOrderId = _cardOrderId
+    r.Set("card_order_id", _cardOrderId)
     return nil
 }
 
 // CardOrderId Getter
 func (r AlibabaFundplatformCardordersStatusMakeFinishRequest) GetCardOrderId() int64 {
-    return r.cardOrderId
+    return r._cardOrderId
 }

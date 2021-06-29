@@ -15,7 +15,7 @@ deleteFloor
 type AlibabaDamaiMevOpenDeletefloorRequest struct {
     model.Params
     // 入参deleteFloorParam
-    deleteFloorParam   *FloorIdOpenParam
+    _deleteFloorParam   *FloorIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeletefloorRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletefloorRequest) GetApiParams() url.Values {
 }
 // DeleteFloorParam Setter
 // 入参deleteFloorParam
-func (r *AlibabaDamaiMevOpenDeletefloorRequest) SetDeleteFloorParam(deleteFloorParam *FloorIdOpenParam) error {
-    r.deleteFloorParam = deleteFloorParam
-    r.Set("delete_floor_param", deleteFloorParam)
+func (r *AlibabaDamaiMevOpenDeletefloorRequest) SetDeleteFloorParam(_deleteFloorParam *FloorIdOpenParam) error {
+    r._deleteFloorParam = _deleteFloorParam
+    r.Set("delete_floor_param", _deleteFloorParam)
     return nil
 }
 
 // DeleteFloorParam Getter
 func (r AlibabaDamaiMevOpenDeletefloorRequest) GetDeleteFloorParam() *FloorIdOpenParam {
-    return r.deleteFloorParam
+    return r._deleteFloorParam
 }

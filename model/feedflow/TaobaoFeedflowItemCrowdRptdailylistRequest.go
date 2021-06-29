@@ -15,7 +15,7 @@ taobao.feedflow.item.crowd.rptdailylist
 type TaobaoFeedflowItemCrowdRptdailylistRequest struct {
     model.Params
     // 查询条件
-    rptQueryDTO   *RptQueryDto
+    _rptQueryDTO   *RptQueryDto
 }
 
 // 初始化TaobaoFeedflowItemCrowdRptdailylistRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCrowdRptdailylistRequest) GetApiParams() url.Values {
 }
 // RptQueryDTO Setter
 // 查询条件
-func (r *TaobaoFeedflowItemCrowdRptdailylistRequest) SetRptQueryDTO(rptQueryDTO *RptQueryDto) error {
-    r.rptQueryDTO = rptQueryDTO
-    r.Set("rpt_query_d_t_o", rptQueryDTO)
+func (r *TaobaoFeedflowItemCrowdRptdailylistRequest) SetRptQueryDTO(_rptQueryDTO *RptQueryDto) error {
+    r._rptQueryDTO = _rptQueryDTO
+    r.Set("rpt_query_d_t_o", _rptQueryDTO)
     return nil
 }
 
 // RptQueryDTO Getter
 func (r TaobaoFeedflowItemCrowdRptdailylistRequest) GetRptQueryDTO() *RptQueryDto {
-    return r.rptQueryDTO
+    return r._rptQueryDTO
 }

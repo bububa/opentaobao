@@ -15,9 +15,9 @@ taobao.nlp.word
 type TaobaoNlpWordRequest struct {
     model.Params
     // 功能类型选择：1)wType=1时提供分词功能，type=0时为基本粒度，type=1时为混合粒度，type=3时为基本粒度和混合粒度共同输出；
-    wType   int64
+    _wType   int64
     // 文本内容
-    text   *Text
+    _text   *Text
 }
 
 // 初始化TaobaoNlpWordRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoNlpWordRequest) GetApiParams() url.Values {
 }
 // WType Setter
 // 功能类型选择：1)wType=1时提供分词功能，type=0时为基本粒度，type=1时为混合粒度，type=3时为基本粒度和混合粒度共同输出；
-func (r *TaobaoNlpWordRequest) SetWType(wType int64) error {
-    r.wType = wType
-    r.Set("w_type", wType)
+func (r *TaobaoNlpWordRequest) SetWType(_wType int64) error {
+    r._wType = _wType
+    r.Set("w_type", _wType)
     return nil
 }
 
 // WType Getter
 func (r TaobaoNlpWordRequest) GetWType() int64 {
-    return r.wType
+    return r._wType
 }
 // Text Setter
 // 文本内容
-func (r *TaobaoNlpWordRequest) SetText(text *Text) error {
-    r.text = text
-    r.Set("text", text)
+func (r *TaobaoNlpWordRequest) SetText(_text *Text) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r TaobaoNlpWordRequest) GetText() *Text {
-    return r.text
+    return r._text
 }

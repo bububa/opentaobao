@@ -15,11 +15,11 @@ taobao.travel.ticket.order.refund
 type TaobaoTravelTicketOrderRefundRequest struct {
     model.Params
     // 下单时订单ID
-    orderId   int64
+    _orderId   int64
     // 退票结果；1: 退票成功；2: 退票失败
-    refundStatus   int64
+    _refundStatus   int64
     // 退票失败理由
-    refundFailureReason   string
+    _refundFailureReason   string
 }
 
 // 初始化TaobaoTravelTicketOrderRefundRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTravelTicketOrderRefundRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 下单时订单ID
-func (r *TaobaoTravelTicketOrderRefundRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoTravelTicketOrderRefundRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoTravelTicketOrderRefundRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // RefundStatus Setter
 // 退票结果；1: 退票成功；2: 退票失败
-func (r *TaobaoTravelTicketOrderRefundRequest) SetRefundStatus(refundStatus int64) error {
-    r.refundStatus = refundStatus
-    r.Set("refund_status", refundStatus)
+func (r *TaobaoTravelTicketOrderRefundRequest) SetRefundStatus(_refundStatus int64) error {
+    r._refundStatus = _refundStatus
+    r.Set("refund_status", _refundStatus)
     return nil
 }
 
 // RefundStatus Getter
 func (r TaobaoTravelTicketOrderRefundRequest) GetRefundStatus() int64 {
-    return r.refundStatus
+    return r._refundStatus
 }
 // RefundFailureReason Setter
 // 退票失败理由
-func (r *TaobaoTravelTicketOrderRefundRequest) SetRefundFailureReason(refundFailureReason string) error {
-    r.refundFailureReason = refundFailureReason
-    r.Set("refund_failure_reason", refundFailureReason)
+func (r *TaobaoTravelTicketOrderRefundRequest) SetRefundFailureReason(_refundFailureReason string) error {
+    r._refundFailureReason = _refundFailureReason
+    r.Set("refund_failure_reason", _refundFailureReason)
     return nil
 }
 
 // RefundFailureReason Getter
 func (r TaobaoTravelTicketOrderRefundRequest) GetRefundFailureReason() string {
-    return r.refundFailureReason
+    return r._refundFailureReason
 }

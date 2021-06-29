@@ -15,7 +15,7 @@ alibaba.damai.maitix.eticket.distribution.query
 type AlibabaDamaiMaitixEticketDistributionQueryRequest struct {
     model.Params
     // 入参param
-    param   *EticketQueryParam
+    _param   *EticketQueryParam
 }
 
 // 初始化AlibabaDamaiMaitixEticketDistributionQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixEticketDistributionQueryRequest) SetParam(param *EticketQueryParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixEticketDistributionQueryRequest) SetParam(_param *EticketQueryParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixEticketDistributionQueryRequest) GetParam() *EticketQueryParam {
-    return r.param
+    return r._param
 }

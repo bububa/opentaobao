@@ -15,7 +15,7 @@ pos机创建订单前获取餐饮取餐号
 type WdkMealPosGetfetchmealcodeRequest struct {
     model.Params
     // 渠道店id
-    channelShopId   string
+    _channelShopId   string
 }
 
 // 初始化WdkMealPosGetfetchmealcodeRequest对象
@@ -40,13 +40,13 @@ func (r WdkMealPosGetfetchmealcodeRequest) GetApiParams() url.Values {
 }
 // ChannelShopId Setter
 // 渠道店id
-func (r *WdkMealPosGetfetchmealcodeRequest) SetChannelShopId(channelShopId string) error {
-    r.channelShopId = channelShopId
-    r.Set("channel_shop_id", channelShopId)
+func (r *WdkMealPosGetfetchmealcodeRequest) SetChannelShopId(_channelShopId string) error {
+    r._channelShopId = _channelShopId
+    r.Set("channel_shop_id", _channelShopId)
     return nil
 }
 
 // ChannelShopId Getter
 func (r WdkMealPosGetfetchmealcodeRequest) GetChannelShopId() string {
-    return r.channelShopId
+    return r._channelShopId
 }

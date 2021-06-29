@@ -17,9 +17,9 @@ HSF方法名称：getListByCampusAndType
 type AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest struct {
     model.Params
     // 系统自动生成
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 查询参数封装
-    param1   *SpaceUnitQuery
+    _param1   *SpaceUnitQuery
 }
 
 // 初始化AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) GetApiParams() url.
 }
 // Param0 Setter
 // 系统自动生成
-func (r *AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 查询参数封装
-func (r *AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) SetParam1(param1 *SpaceUnitQuery) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) SetParam1(_param1 *SpaceUnitQuery) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusSpaceUnitGetlistbycampusandtypeRequest) GetParam1() *SpaceUnitQuery {
-    return r.param1
+    return r._param1
 }

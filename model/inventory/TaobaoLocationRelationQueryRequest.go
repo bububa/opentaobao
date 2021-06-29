@@ -16,7 +16,7 @@ taobao.location.relation.query
 type TaobaoLocationRelationQueryRequest struct {
     model.Params
     // 关系查询
-    locationRelation   *LocationRelationDto
+    _locationRelation   *LocationRelationDto
 }
 
 // 初始化TaobaoLocationRelationQueryRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoLocationRelationQueryRequest) GetApiParams() url.Values {
 }
 // LocationRelation Setter
 // 关系查询
-func (r *TaobaoLocationRelationQueryRequest) SetLocationRelation(locationRelation *LocationRelationDto) error {
-    r.locationRelation = locationRelation
-    r.Set("location_relation", locationRelation)
+func (r *TaobaoLocationRelationQueryRequest) SetLocationRelation(_locationRelation *LocationRelationDto) error {
+    r._locationRelation = _locationRelation
+    r.Set("location_relation", _locationRelation)
     return nil
 }
 
 // LocationRelation Getter
 func (r TaobaoLocationRelationQueryRequest) GetLocationRelation() *LocationRelationDto {
-    return r.locationRelation
+    return r._locationRelation
 }

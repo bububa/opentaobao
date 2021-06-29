@@ -15,9 +15,9 @@ taobao.traderate.impr.imprwords.get
 type TaobaoTraderateImprImprwordsGetRequest struct {
     model.Params
     // 淘宝一级类目id
-    catRootId   int64
+    _catRootId   int64
     // 淘宝叶子类目id
-    catLeafId   int64
+    _catLeafId   int64
 }
 
 // 初始化TaobaoTraderateImprImprwordsGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTraderateImprImprwordsGetRequest) GetApiParams() url.Values {
 }
 // CatRootId Setter
 // 淘宝一级类目id
-func (r *TaobaoTraderateImprImprwordsGetRequest) SetCatRootId(catRootId int64) error {
-    r.catRootId = catRootId
-    r.Set("cat_root_id", catRootId)
+func (r *TaobaoTraderateImprImprwordsGetRequest) SetCatRootId(_catRootId int64) error {
+    r._catRootId = _catRootId
+    r.Set("cat_root_id", _catRootId)
     return nil
 }
 
 // CatRootId Getter
 func (r TaobaoTraderateImprImprwordsGetRequest) GetCatRootId() int64 {
-    return r.catRootId
+    return r._catRootId
 }
 // CatLeafId Setter
 // 淘宝叶子类目id
-func (r *TaobaoTraderateImprImprwordsGetRequest) SetCatLeafId(catLeafId int64) error {
-    r.catLeafId = catLeafId
-    r.Set("cat_leaf_id", catLeafId)
+func (r *TaobaoTraderateImprImprwordsGetRequest) SetCatLeafId(_catLeafId int64) error {
+    r._catLeafId = _catLeafId
+    r.Set("cat_leaf_id", _catLeafId)
     return nil
 }
 
 // CatLeafId Getter
 func (r TaobaoTraderateImprImprwordsGetRequest) GetCatLeafId() int64 {
-    return r.catLeafId
+    return r._catLeafId
 }

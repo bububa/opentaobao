@@ -15,7 +15,7 @@ taobao.wlb.order.consign
 type TaobaoWlbOrderConsignRequest struct {
     model.Params
     // 物流宝订单编号
-    wlbOrderCode   string
+    _wlbOrderCode   string
 }
 
 // 初始化TaobaoWlbOrderConsignRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbOrderConsignRequest) GetApiParams() url.Values {
 }
 // WlbOrderCode Setter
 // 物流宝订单编号
-func (r *TaobaoWlbOrderConsignRequest) SetWlbOrderCode(wlbOrderCode string) error {
-    r.wlbOrderCode = wlbOrderCode
-    r.Set("wlb_order_code", wlbOrderCode)
+func (r *TaobaoWlbOrderConsignRequest) SetWlbOrderCode(_wlbOrderCode string) error {
+    r._wlbOrderCode = _wlbOrderCode
+    r.Set("wlb_order_code", _wlbOrderCode)
     return nil
 }
 
 // WlbOrderCode Getter
 func (r TaobaoWlbOrderConsignRequest) GetWlbOrderCode() string {
-    return r.wlbOrderCode
+    return r._wlbOrderCode
 }

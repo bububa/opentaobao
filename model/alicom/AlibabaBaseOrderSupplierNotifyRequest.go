@@ -15,7 +15,7 @@ alibaba.base.order.supplier.notify
 type AlibabaBaseOrderSupplierNotifyRequest struct {
     model.Params
     // 入参对象
-    paramFlowSuppllierNotifyModel   *FlowSuppllierNotifyModel
+    _paramFlowSuppllierNotifyModel   *FlowSuppllierNotifyModel
 }
 
 // 初始化AlibabaBaseOrderSupplierNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaBaseOrderSupplierNotifyRequest) GetApiParams() url.Values {
 }
 // ParamFlowSuppllierNotifyModel Setter
 // 入参对象
-func (r *AlibabaBaseOrderSupplierNotifyRequest) SetParamFlowSuppllierNotifyModel(paramFlowSuppllierNotifyModel *FlowSuppllierNotifyModel) error {
-    r.paramFlowSuppllierNotifyModel = paramFlowSuppllierNotifyModel
-    r.Set("param_flow_suppllier_notify_model", paramFlowSuppllierNotifyModel)
+func (r *AlibabaBaseOrderSupplierNotifyRequest) SetParamFlowSuppllierNotifyModel(_paramFlowSuppllierNotifyModel *FlowSuppllierNotifyModel) error {
+    r._paramFlowSuppllierNotifyModel = _paramFlowSuppllierNotifyModel
+    r.Set("param_flow_suppllier_notify_model", _paramFlowSuppllierNotifyModel)
     return nil
 }
 
 // ParamFlowSuppllierNotifyModel Getter
 func (r AlibabaBaseOrderSupplierNotifyRequest) GetParamFlowSuppllierNotifyModel() *FlowSuppllierNotifyModel {
-    return r.paramFlowSuppllierNotifyModel
+    return r._paramFlowSuppllierNotifyModel
 }

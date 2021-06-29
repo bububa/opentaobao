@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.video.getauditlist
 type YunosTvpubadminContentVideoGetauditlistRequest struct {
     model.Params
     // 查询
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminContentVideoGetauditlistRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentVideoGetauditlistRequest) GetApiParams() url.Value
 }
 // Query Setter
 // 查询
-func (r *YunosTvpubadminContentVideoGetauditlistRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminContentVideoGetauditlistRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminContentVideoGetauditlistRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

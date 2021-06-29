@@ -15,7 +15,7 @@ CMNS消息发送到达查询,根据消息ID查询，仅能查询该appKey所发�
 type YunosServiceCmnsCoaMessageresultGetRequest struct {
     model.Params
     // 消息ID
-    mid   int64
+    _mid   int64
 }
 
 // 初始化YunosServiceCmnsCoaMessageresultGetRequest对象
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaMessageresultGetRequest) GetApiParams() url.Values {
 }
 // Mid Setter
 // 消息ID
-func (r *YunosServiceCmnsCoaMessageresultGetRequest) SetMid(mid int64) error {
-    r.mid = mid
-    r.Set("mid", mid)
+func (r *YunosServiceCmnsCoaMessageresultGetRequest) SetMid(_mid int64) error {
+    r._mid = _mid
+    r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
 func (r YunosServiceCmnsCoaMessageresultGetRequest) GetMid() int64 {
-    return r.mid
+    return r._mid
 }

@@ -15,9 +15,9 @@ taobao.feedflow.item.adgroup.adzone.bind
 type TaobaoFeedflowItemAdgroupAdzoneBindRequest struct {
     model.Params
     // 新增的绑定资源位
-    bindAdzoneList   []AdzoneBindDto
+    _bindAdzoneList   []AdzoneBindDto
     // 单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoFeedflowItemAdgroupAdzoneBindRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemAdgroupAdzoneBindRequest) GetApiParams() url.Values {
 }
 // BindAdzoneList Setter
 // 新增的绑定资源位
-func (r *TaobaoFeedflowItemAdgroupAdzoneBindRequest) SetBindAdzoneList(bindAdzoneList []AdzoneBindDto) error {
-    r.bindAdzoneList = bindAdzoneList
-    r.Set("bind_adzone_list", bindAdzoneList)
+func (r *TaobaoFeedflowItemAdgroupAdzoneBindRequest) SetBindAdzoneList(_bindAdzoneList []AdzoneBindDto) error {
+    r._bindAdzoneList = _bindAdzoneList
+    r.Set("bind_adzone_list", _bindAdzoneList)
     return nil
 }
 
 // BindAdzoneList Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneBindRequest) GetBindAdzoneList() []AdzoneBindDto {
-    return r.bindAdzoneList
+    return r._bindAdzoneList
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemAdgroupAdzoneBindRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoFeedflowItemAdgroupAdzoneBindRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneBindRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

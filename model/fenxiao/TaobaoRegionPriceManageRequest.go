@@ -15,13 +15,13 @@ taobao.region.price.manage
 type TaobaoRegionPriceManageRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 无sku传0
-    skuId   int64
+    _skuId   int64
     // 列表
-    regionalPriceDtos   []RegionalPriceDto
+    _regionalPriceDtos   []RegionalPriceDto
     // true:全量, false:增量
-    isFull   bool
+    _isFull   bool
 }
 
 // 初始化TaobaoRegionPriceManageRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoRegionPriceManageRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoRegionPriceManageRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoRegionPriceManageRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoRegionPriceManageRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SkuId Setter
 // 无sku传0
-func (r *TaobaoRegionPriceManageRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoRegionPriceManageRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoRegionPriceManageRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // RegionalPriceDtos Setter
 // 列表
-func (r *TaobaoRegionPriceManageRequest) SetRegionalPriceDtos(regionalPriceDtos []RegionalPriceDto) error {
-    r.regionalPriceDtos = regionalPriceDtos
-    r.Set("regional_price_dtos", regionalPriceDtos)
+func (r *TaobaoRegionPriceManageRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
+    r._regionalPriceDtos = _regionalPriceDtos
+    r.Set("regional_price_dtos", _regionalPriceDtos)
     return nil
 }
 
 // RegionalPriceDtos Getter
 func (r TaobaoRegionPriceManageRequest) GetRegionalPriceDtos() []RegionalPriceDto {
-    return r.regionalPriceDtos
+    return r._regionalPriceDtos
 }
 // IsFull Setter
 // true:全量, false:增量
-func (r *TaobaoRegionPriceManageRequest) SetIsFull(isFull bool) error {
-    r.isFull = isFull
-    r.Set("is_full", isFull)
+func (r *TaobaoRegionPriceManageRequest) SetIsFull(_isFull bool) error {
+    r._isFull = _isFull
+    r.Set("is_full", _isFull)
     return nil
 }
 
 // IsFull Getter
 func (r TaobaoRegionPriceManageRequest) GetIsFull() bool {
-    return r.isFull
+    return r._isFull
 }

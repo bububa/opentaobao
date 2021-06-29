@@ -15,7 +15,7 @@ taobao.idle.recycle.refund.apply
 type TaobaoIdleRecycleRefundApplyRequest struct {
     model.Params
     // 退款申请
-    refundApply   *RecycleRefundTopRequest
+    _refundApply   *RecycleRefundTopRequest
 }
 
 // 初始化TaobaoIdleRecycleRefundApplyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoIdleRecycleRefundApplyRequest) GetApiParams() url.Values {
 }
 // RefundApply Setter
 // 退款申请
-func (r *TaobaoIdleRecycleRefundApplyRequest) SetRefundApply(refundApply *RecycleRefundTopRequest) error {
-    r.refundApply = refundApply
-    r.Set("refund_apply", refundApply)
+func (r *TaobaoIdleRecycleRefundApplyRequest) SetRefundApply(_refundApply *RecycleRefundTopRequest) error {
+    r._refundApply = _refundApply
+    r.Set("refund_apply", _refundApply)
     return nil
 }
 
 // RefundApply Getter
 func (r TaobaoIdleRecycleRefundApplyRequest) GetRefundApply() *RecycleRefundTopRequest {
-    return r.refundApply
+    return r._refundApply
 }

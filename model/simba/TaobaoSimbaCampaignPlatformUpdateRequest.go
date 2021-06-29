@@ -15,17 +15,17 @@ taobao.simba.campaign.platform.update
 type TaobaoSimbaCampaignPlatformUpdateRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
-    searchChannels   []int64
+    _searchChannels   []int64
     // 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向
-    nonsearchChannels   []int64
+    _nonsearchChannels   []int64
     // 已经废弃
-    outsideDiscount   int64
+    _outsideDiscount   int64
     // 已经废弃
-    mobileDiscount   int64
+    _mobileDiscount   int64
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaCampaignPlatformUpdateRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // SearchChannels Setter
 // 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetSearchChannels(searchChannels []int64) error {
-    r.searchChannels = searchChannels
-    r.Set("search_channels", searchChannels)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetSearchChannels(_searchChannels []int64) error {
+    r._searchChannels = _searchChannels
+    r.Set("search_channels", _searchChannels)
     return nil
 }
 
 // SearchChannels Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetSearchChannels() []int64 {
-    return r.searchChannels
+    return r._searchChannels
 }
 // NonsearchChannels Setter
 // 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNonsearchChannels(nonsearchChannels []int64) error {
-    r.nonsearchChannels = nonsearchChannels
-    r.Set("nonsearch_channels", nonsearchChannels)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNonsearchChannels(_nonsearchChannels []int64) error {
+    r._nonsearchChannels = _nonsearchChannels
+    r.Set("nonsearch_channels", _nonsearchChannels)
     return nil
 }
 
 // NonsearchChannels Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetNonsearchChannels() []int64 {
-    return r.nonsearchChannels
+    return r._nonsearchChannels
 }
 // OutsideDiscount Setter
 // 已经废弃
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetOutsideDiscount(outsideDiscount int64) error {
-    r.outsideDiscount = outsideDiscount
-    r.Set("outside_discount", outsideDiscount)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetOutsideDiscount(_outsideDiscount int64) error {
+    r._outsideDiscount = _outsideDiscount
+    r.Set("outside_discount", _outsideDiscount)
     return nil
 }
 
 // OutsideDiscount Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetOutsideDiscount() int64 {
-    return r.outsideDiscount
+    return r._outsideDiscount
 }
 // MobileDiscount Setter
 // 已经废弃
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetMobileDiscount(mobileDiscount int64) error {
-    r.mobileDiscount = mobileDiscount
-    r.Set("mobile_discount", mobileDiscount)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetMobileDiscount(_mobileDiscount int64) error {
+    r._mobileDiscount = _mobileDiscount
+    r.Set("mobile_discount", _mobileDiscount)
     return nil
 }
 
 // MobileDiscount Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetMobileDiscount() int64 {
-    return r.mobileDiscount
+    return r._mobileDiscount
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

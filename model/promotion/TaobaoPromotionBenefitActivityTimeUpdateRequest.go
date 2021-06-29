@@ -15,11 +15,11 @@ taobao.promotion.benefit.activity.time.update
 type TaobaoPromotionBenefitActivityTimeUpdateRequest struct {
     model.Params
     // ISV活动关联权益后获得的关联ID
-    relationId   int64
+    _relationId   int64
     // 活动的开始时间
-    startTime   string
+    _startTime   string
     // 活动的i结束时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化TaobaoPromotionBenefitActivityTimeUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPromotionBenefitActivityTimeUpdateRequest) GetApiParams() url.Valu
 }
 // RelationId Setter
 // ISV活动关联权益后获得的关联ID
-func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetRelationId(relationId int64) error {
-    r.relationId = relationId
-    r.Set("relation_id", relationId)
+func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetRelationId(_relationId int64) error {
+    r._relationId = _relationId
+    r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateRequest) GetRelationId() int64 {
-    return r.relationId
+    return r._relationId
 }
 // StartTime Setter
 // 活动的开始时间
-func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动的i结束时间
-func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoPromotionBenefitActivityTimeUpdateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoPromotionBenefitActivityTimeUpdateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

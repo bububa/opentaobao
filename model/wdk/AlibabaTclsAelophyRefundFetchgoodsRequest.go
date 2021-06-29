@@ -15,19 +15,19 @@ saas 售后逆向 商户发起逆向取货
 type AlibabaTclsAelophyRefundFetchgoodsRequest struct {
     model.Params
     // 经营店ID
-    storeId   string
+    _storeId   string
     // 外部订单ID
-    outOrderId   string
+    _outOrderId   string
     // 退款单ID
-    refundId   string
+    _refundId   string
     // 取货开始时间
-    fetchStartTime   string
+    _fetchStartTime   string
     // 取货结束时间
-    fetchEndTime   string
+    _fetchEndTime   string
     // 备注
-    remark   string
+    _remark   string
     // 外部子订单列表
-    subRefundList   []Subrefundlist
+    _subRefundList   []Subrefundlist
 }
 
 // 初始化AlibabaTclsAelophyRefundFetchgoodsRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 经营店ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // OutOrderId Setter
 // 外部订单ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetOutOrderId(outOrderId string) error {
-    r.outOrderId = outOrderId
-    r.Set("out_order_id", outOrderId)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetOutOrderId(_outOrderId string) error {
+    r._outOrderId = _outOrderId
+    r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetOutOrderId() string {
-    return r.outOrderId
+    return r._outOrderId
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRefundId(refundId string) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRefundId(_refundId string) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetRefundId() string {
-    return r.refundId
+    return r._refundId
 }
 // FetchStartTime Setter
 // 取货开始时间
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchStartTime(fetchStartTime string) error {
-    r.fetchStartTime = fetchStartTime
-    r.Set("fetch_start_time", fetchStartTime)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchStartTime(_fetchStartTime string) error {
+    r._fetchStartTime = _fetchStartTime
+    r.Set("fetch_start_time", _fetchStartTime)
     return nil
 }
 
 // FetchStartTime Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetFetchStartTime() string {
-    return r.fetchStartTime
+    return r._fetchStartTime
 }
 // FetchEndTime Setter
 // 取货结束时间
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchEndTime(fetchEndTime string) error {
-    r.fetchEndTime = fetchEndTime
-    r.Set("fetch_end_time", fetchEndTime)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetFetchEndTime(_fetchEndTime string) error {
+    r._fetchEndTime = _fetchEndTime
+    r.Set("fetch_end_time", _fetchEndTime)
     return nil
 }
 
 // FetchEndTime Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetFetchEndTime() string {
-    return r.fetchEndTime
+    return r._fetchEndTime
 }
 // Remark Setter
 // 备注
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // SubRefundList Setter
 // 外部子订单列表
-func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetSubRefundList(subRefundList []Subrefundlist) error {
-    r.subRefundList = subRefundList
-    r.Set("sub_refund_list", subRefundList)
+func (r *AlibabaTclsAelophyRefundFetchgoodsRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
+    r._subRefundList = _subRefundList
+    r.Set("sub_refund_list", _subRefundList)
     return nil
 }
 
 // SubRefundList Getter
 func (r AlibabaTclsAelophyRefundFetchgoodsRequest) GetSubRefundList() []Subrefundlist {
-    return r.subRefundList
+    return r._subRefundList
 }

@@ -15,7 +15,7 @@ ISV查询活动
 type AlibabaLsyCrmActivityGetbaseinfoRequest struct {
     model.Params
     // 入参
-    nrtQueryActivityReq   *NrtQueryActivityReq
+    _nrtQueryActivityReq   *NrtQueryActivityReq
 }
 
 // 初始化AlibabaLsyCrmActivityGetbaseinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetApiParams() url.Values {
 }
 // NrtQueryActivityReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityGetbaseinfoRequest) SetNrtQueryActivityReq(nrtQueryActivityReq *NrtQueryActivityReq) error {
-    r.nrtQueryActivityReq = nrtQueryActivityReq
-    r.Set("nrt_query_activity_req", nrtQueryActivityReq)
+func (r *AlibabaLsyCrmActivityGetbaseinfoRequest) SetNrtQueryActivityReq(_nrtQueryActivityReq *NrtQueryActivityReq) error {
+    r._nrtQueryActivityReq = _nrtQueryActivityReq
+    r.Set("nrt_query_activity_req", _nrtQueryActivityReq)
     return nil
 }
 
 // NrtQueryActivityReq Getter
 func (r AlibabaLsyCrmActivityGetbaseinfoRequest) GetNrtQueryActivityReq() *NrtQueryActivityReq {
-    return r.nrtQueryActivityReq
+    return r._nrtQueryActivityReq
 }

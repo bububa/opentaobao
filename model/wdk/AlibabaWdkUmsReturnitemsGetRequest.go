@@ -15,7 +15,7 @@ alibaba.wdk.ums.returnitems.get
 type AlibabaWdkUmsReturnitemsGetRequest struct {
     model.Params
     // 店仓code，指的是作业对象，对应一个物理店或仓编码
-    warehouseCode   string
+    _warehouseCode   string
 }
 
 // 初始化AlibabaWdkUmsReturnitemsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsReturnitemsGetRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 店仓code，指的是作业对象，对应一个物理店或仓编码
-func (r *AlibabaWdkUmsReturnitemsGetRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *AlibabaWdkUmsReturnitemsGetRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r AlibabaWdkUmsReturnitemsGetRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }

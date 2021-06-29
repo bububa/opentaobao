@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.account.flowdetail.get
 type AlibabaAlscCrmRechargeAccountFlowdetailGetRequest struct {
     model.Params
     // 入参
-    paramQueryRechargeAccountFlowOpenReq   *QueryRechargeAccountFlowOpenReq
+    _paramQueryRechargeAccountFlowOpenReq   *QueryRechargeAccountFlowOpenReq
 }
 
 // 初始化AlibabaAlscCrmRechargeAccountFlowdetailGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetApiParams() url.Va
 }
 // ParamQueryRechargeAccountFlowOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) SetParamQueryRechargeAccountFlowOpenReq(paramQueryRechargeAccountFlowOpenReq *QueryRechargeAccountFlowOpenReq) error {
-    r.paramQueryRechargeAccountFlowOpenReq = paramQueryRechargeAccountFlowOpenReq
-    r.Set("param_query_recharge_account_flow_open_req", paramQueryRechargeAccountFlowOpenReq)
+func (r *AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) SetParamQueryRechargeAccountFlowOpenReq(_paramQueryRechargeAccountFlowOpenReq *QueryRechargeAccountFlowOpenReq) error {
+    r._paramQueryRechargeAccountFlowOpenReq = _paramQueryRechargeAccountFlowOpenReq
+    r.Set("param_query_recharge_account_flow_open_req", _paramQueryRechargeAccountFlowOpenReq)
     return nil
 }
 
 // ParamQueryRechargeAccountFlowOpenReq Getter
 func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetParamQueryRechargeAccountFlowOpenReq() *QueryRechargeAccountFlowOpenReq {
-    return r.paramQueryRechargeAccountFlowOpenReq
+    return r._paramQueryRechargeAccountFlowOpenReq
 }

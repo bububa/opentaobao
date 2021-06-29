@@ -15,9 +15,9 @@ alibaba.alink.device.unify.status.set
 type AlibabaAlinkDeviceUnifyStatusSetRequest struct {
     model.Params
     // uuid
-    uuid   string
+    _uuid   string
     // 设备的设置参数数据
-    instructions   string
+    _instructions   string
 }
 
 // 初始化AlibabaAlinkDeviceUnifyStatusSetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // uuid
-func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // Instructions Setter
 // 设备的设置参数数据
-func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetInstructions(instructions string) error {
-    r.instructions = instructions
-    r.Set("instructions", instructions)
+func (r *AlibabaAlinkDeviceUnifyStatusSetRequest) SetInstructions(_instructions string) error {
+    r._instructions = _instructions
+    r.Set("instructions", _instructions)
     return nil
 }
 
 // Instructions Getter
 func (r AlibabaAlinkDeviceUnifyStatusSetRequest) GetInstructions() string {
-    return r.instructions
+    return r._instructions
 }

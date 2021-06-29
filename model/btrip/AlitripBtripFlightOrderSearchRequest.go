@@ -15,7 +15,7 @@ alitrip.btrip.flight.order.search
 type AlitripBtripFlightOrderSearchRequest struct {
     model.Params
     // 请求
-    rq   *OpenSearchRq
+    _rq   *OpenSearchRq
 }
 
 // 初始化AlitripBtripFlightOrderSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripFlightOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求
-func (r *AlitripBtripFlightOrderSearchRequest) SetRq(rq *OpenSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripFlightOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripFlightOrderSearchRequest) GetRq() *OpenSearchRq {
-    return r.rq
+    return r._rq
 }

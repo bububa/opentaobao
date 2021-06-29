@@ -15,9 +15,9 @@ tmall.fuwu.serviceitem.list
 type TmallFuwuServiceitemListRequest struct {
     model.Params
     // 商品所属卖家账号id
-    sellerId   int64
+    _sellerId   int64
     // 商品id列表，有数量限制
-    itemids   []int64
+    _itemids   []int64
 }
 
 // 初始化TmallFuwuServiceitemListRequest对象
@@ -42,25 +42,25 @@ func (r TmallFuwuServiceitemListRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 商品所属卖家账号id
-func (r *TmallFuwuServiceitemListRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TmallFuwuServiceitemListRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TmallFuwuServiceitemListRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // Itemids Setter
 // 商品id列表，有数量限制
-func (r *TmallFuwuServiceitemListRequest) SetItemids(itemids []int64) error {
-    r.itemids = itemids
-    r.Set("itemids", itemids)
+func (r *TmallFuwuServiceitemListRequest) SetItemids(_itemids []int64) error {
+    r._itemids = _itemids
+    r.Set("itemids", _itemids)
     return nil
 }
 
 // Itemids Getter
 func (r TmallFuwuServiceitemListRequest) GetItemids() []int64 {
-    return r.itemids
+    return r._itemids
 }

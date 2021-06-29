@@ -15,7 +15,7 @@ aliexpress.affiliate.category.get
 type AliexpressAffiliateCategoryGetRequest struct {
     model.Params
     // 请求安全签名
-    appSignature   string
+    _appSignature   string
 }
 
 // 初始化AliexpressAffiliateCategoryGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAffiliateCategoryGetRequest) GetApiParams() url.Values {
 }
 // AppSignature Setter
 // 请求安全签名
-func (r *AliexpressAffiliateCategoryGetRequest) SetAppSignature(appSignature string) error {
-    r.appSignature = appSignature
-    r.Set("app_signature", appSignature)
+func (r *AliexpressAffiliateCategoryGetRequest) SetAppSignature(_appSignature string) error {
+    r._appSignature = _appSignature
+    r.Set("app_signature", _appSignature)
     return nil
 }
 
 // AppSignature Getter
 func (r AliexpressAffiliateCategoryGetRequest) GetAppSignature() string {
-    return r.appSignature
+    return r._appSignature
 }

@@ -15,9 +15,9 @@ taobao.openmall.trace.search
 type TaobaoOpenmallTraceSearchRequest struct {
     model.Params
     // 签约支付宝代扣的账号
-    distributor   string
+    _distributor   string
     // 淘宝订单编号
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoOpenmallTraceSearchRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallTraceSearchRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 签约支付宝代扣的账号
-func (r *TaobaoOpenmallTraceSearchRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallTraceSearchRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallTraceSearchRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // Tid Setter
 // 淘宝订单编号
-func (r *TaobaoOpenmallTraceSearchRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOpenmallTraceSearchRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOpenmallTraceSearchRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

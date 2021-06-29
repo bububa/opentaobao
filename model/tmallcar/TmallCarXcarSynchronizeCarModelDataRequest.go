@@ -15,7 +15,7 @@ tmall.car.xcar.synchronize.car.model.data
 type TmallCarXcarSynchronizeCarModelDataRequest struct {
     model.Params
     // 传入对象描述
-    paramXCarSysModelDTO   *XCarSysModelDto
+    _paramXCarSysModelDTO   *XCarSysModelDto
 }
 
 // 初始化TmallCarXcarSynchronizeCarModelDataRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarXcarSynchronizeCarModelDataRequest) GetApiParams() url.Values {
 }
 // ParamXCarSysModelDTO Setter
 // 传入对象描述
-func (r *TmallCarXcarSynchronizeCarModelDataRequest) SetParamXCarSysModelDTO(paramXCarSysModelDTO *XCarSysModelDto) error {
-    r.paramXCarSysModelDTO = paramXCarSysModelDTO
-    r.Set("param_x_car_sys_model_d_t_o", paramXCarSysModelDTO)
+func (r *TmallCarXcarSynchronizeCarModelDataRequest) SetParamXCarSysModelDTO(_paramXCarSysModelDTO *XCarSysModelDto) error {
+    r._paramXCarSysModelDTO = _paramXCarSysModelDTO
+    r.Set("param_x_car_sys_model_d_t_o", _paramXCarSysModelDTO)
     return nil
 }
 
 // ParamXCarSysModelDTO Getter
 func (r TmallCarXcarSynchronizeCarModelDataRequest) GetParamXCarSysModelDTO() *XCarSysModelDto {
-    return r.paramXCarSysModelDTO
+    return r._paramXCarSysModelDTO
 }

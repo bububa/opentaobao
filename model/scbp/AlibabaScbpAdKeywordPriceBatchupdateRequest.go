@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.price.batchupdate
 type AlibabaScbpAdKeywordPriceBatchupdateRequest struct {
     model.Params
     // 系统自动生成
-    keywordUpdateDtoList   []KeywordUpdateDto
+    _keywordUpdateDtoList   []KeywordUpdateDto
 }
 
 // 初始化AlibabaScbpAdKeywordPriceBatchupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiParams() url.Values {
 }
 // KeywordUpdateDtoList Setter
 // 系统自动生成
-func (r *AlibabaScbpAdKeywordPriceBatchupdateRequest) SetKeywordUpdateDtoList(keywordUpdateDtoList []KeywordUpdateDto) error {
-    r.keywordUpdateDtoList = keywordUpdateDtoList
-    r.Set("keyword_update_dto_list", keywordUpdateDtoList)
+func (r *AlibabaScbpAdKeywordPriceBatchupdateRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDto) error {
+    r._keywordUpdateDtoList = _keywordUpdateDtoList
+    r.Set("keyword_update_dto_list", _keywordUpdateDtoList)
     return nil
 }
 
 // KeywordUpdateDtoList Getter
 func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
-    return r.keywordUpdateDtoList
+    return r._keywordUpdateDtoList
 }

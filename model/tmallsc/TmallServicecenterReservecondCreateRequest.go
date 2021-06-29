@@ -15,7 +15,7 @@ tmall.servicecenter.reservecond.create
 type TmallServicecenterReservecondCreateRequest struct {
     model.Params
     // 主动预约开通条件
-    rocList   []ReserveOpenConditionDTO
+    _rocList   []ReserveOpenConditionDTO
 }
 
 // 初始化TmallServicecenterReservecondCreateRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterReservecondCreateRequest) GetApiParams() url.Values {
 }
 // RocList Setter
 // 主动预约开通条件
-func (r *TmallServicecenterReservecondCreateRequest) SetRocList(rocList []ReserveOpenConditionDTO) error {
-    r.rocList = rocList
-    r.Set("roc_list", rocList)
+func (r *TmallServicecenterReservecondCreateRequest) SetRocList(_rocList []ReserveOpenConditionDTO) error {
+    r._rocList = _rocList
+    r.Set("roc_list", _rocList)
     return nil
 }
 
 // RocList Getter
 func (r TmallServicecenterReservecondCreateRequest) GetRocList() []ReserveOpenConditionDTO {
-    return r.rocList
+    return r._rocList
 }

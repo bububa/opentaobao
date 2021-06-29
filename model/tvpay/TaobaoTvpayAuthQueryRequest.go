@@ -15,17 +15,17 @@ taobao.tvpay.auth.query
 type TaobaoTvpayAuthQueryRequest struct {
     model.Params
     // 设备号
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 业务订单号
-    bizOrderId   string
+    _bizOrderId   string
     // 是否淘系
-    isTao   bool
+    _isTao   bool
     // 支付宝订单号
-    orderNo   string
+    _orderNo   string
     // 外部订单号
-    outOrderNo   string
+    _outOrderNo   string
 }
 
 // 初始化TaobaoTvpayAuthQueryRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTvpayAuthQueryRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备号
-func (r *TaobaoTvpayAuthQueryRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayAuthQueryRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayAuthQueryRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayAuthQueryRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayAuthQueryRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayAuthQueryRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // BizOrderId Setter
 // 业务订单号
-func (r *TaobaoTvpayAuthQueryRequest) SetBizOrderId(bizOrderId string) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TaobaoTvpayAuthQueryRequest) SetBizOrderId(_bizOrderId string) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TaobaoTvpayAuthQueryRequest) GetBizOrderId() string {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // IsTao Setter
 // 是否淘系
-func (r *TaobaoTvpayAuthQueryRequest) SetIsTao(isTao bool) error {
-    r.isTao = isTao
-    r.Set("is_tao", isTao)
+func (r *TaobaoTvpayAuthQueryRequest) SetIsTao(_isTao bool) error {
+    r._isTao = _isTao
+    r.Set("is_tao", _isTao)
     return nil
 }
 
 // IsTao Getter
 func (r TaobaoTvpayAuthQueryRequest) GetIsTao() bool {
-    return r.isTao
+    return r._isTao
 }
 // OrderNo Setter
 // 支付宝订单号
-func (r *TaobaoTvpayAuthQueryRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *TaobaoTvpayAuthQueryRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r TaobaoTvpayAuthQueryRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // OutOrderNo Setter
 // 外部订单号
-func (r *TaobaoTvpayAuthQueryRequest) SetOutOrderNo(outOrderNo string) error {
-    r.outOrderNo = outOrderNo
-    r.Set("out_order_no", outOrderNo)
+func (r *TaobaoTvpayAuthQueryRequest) SetOutOrderNo(_outOrderNo string) error {
+    r._outOrderNo = _outOrderNo
+    r.Set("out_order_no", _outOrderNo)
     return nil
 }
 
 // OutOrderNo Getter
 func (r TaobaoTvpayAuthQueryRequest) GetOutOrderNo() string {
-    return r.outOrderNo
+    return r._outOrderNo
 }

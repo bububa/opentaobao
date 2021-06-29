@@ -15,11 +15,11 @@ taobao.promotionmisc.common.item.detail.list.get
 type TaobaoPromotionmiscCommonItemDetailListGetRequest struct {
     model.Params
     // 优惠活动ID
-    activityId   int64
+    _activityId   int64
     // 分页页码，页码从1开始
-    pageNo   int64
+    _pageNo   int64
     // 分页大小，不能超过50
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPromotionmiscCommonItemDetailListGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPromotionmiscCommonItemDetailListGetRequest) GetApiParams() url.Va
 }
 // ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // PageNo Setter
 // 分页页码，页码从1开始
-func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页大小，不能超过50
-func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionmiscCommonItemDetailListGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionmiscCommonItemDetailListGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

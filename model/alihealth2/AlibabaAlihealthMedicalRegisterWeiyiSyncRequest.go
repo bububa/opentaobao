@@ -15,7 +15,7 @@ alibaba.alihealth.medical.register.weiyi.sync
 type AlibabaAlihealthMedicalRegisterWeiyiSyncRequest struct {
     model.Params
     // 号源数据实体
-    serviceRequest   *SourcesReturnVo
+    _serviceRequest   *SourcesReturnVo
 }
 
 // 初始化AlibabaAlihealthMedicalRegisterWeiyiSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiParams() url.Valu
 }
 // ServiceRequest Setter
 // 号源数据实体
-func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) SetServiceRequest(serviceRequest *SourcesReturnVo) error {
-    r.serviceRequest = serviceRequest
-    r.Set("service_request", serviceRequest)
+func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) SetServiceRequest(_serviceRequest *SourcesReturnVo) error {
+    r._serviceRequest = _serviceRequest
+    r.Set("service_request", _serviceRequest)
     return nil
 }
 
 // ServiceRequest Getter
 func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetServiceRequest() *SourcesReturnVo {
-    return r.serviceRequest
+    return r._serviceRequest
 }

@@ -15,9 +15,9 @@ alibaba.mos.onsite.trade.queryrefund
 type AlibabaMosOnsiteTradeQueryrefundRequest struct {
     model.Params
     // 退款外部流水号
-    outRequestNo   string
+    _outRequestNo   string
     // 订单号。可能为外部订单号，也可能为喵街订单号
-    orderNo   string
+    _orderNo   string
 }
 
 // 初始化AlibabaMosOnsiteTradeQueryrefundRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMosOnsiteTradeQueryrefundRequest) GetApiParams() url.Values {
 }
 // OutRequestNo Setter
 // 退款外部流水号
-func (r *AlibabaMosOnsiteTradeQueryrefundRequest) SetOutRequestNo(outRequestNo string) error {
-    r.outRequestNo = outRequestNo
-    r.Set("out_request_no", outRequestNo)
+func (r *AlibabaMosOnsiteTradeQueryrefundRequest) SetOutRequestNo(_outRequestNo string) error {
+    r._outRequestNo = _outRequestNo
+    r.Set("out_request_no", _outRequestNo)
     return nil
 }
 
 // OutRequestNo Getter
 func (r AlibabaMosOnsiteTradeQueryrefundRequest) GetOutRequestNo() string {
-    return r.outRequestNo
+    return r._outRequestNo
 }
 // OrderNo Setter
 // 订单号。可能为外部订单号，也可能为喵街订单号
-func (r *AlibabaMosOnsiteTradeQueryrefundRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *AlibabaMosOnsiteTradeQueryrefundRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r AlibabaMosOnsiteTradeQueryrefundRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }

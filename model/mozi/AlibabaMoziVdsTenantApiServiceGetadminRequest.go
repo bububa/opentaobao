@@ -15,7 +15,7 @@ alibaba.mozi.vds.tenant.api.service.getadmin
 type AlibabaMoziVdsTenantApiServiceGetadminRequest struct {
     model.Params
     // 入参
-    par0   *GetEmployeeTenantAdminInfoRequest
+    _par0   *GetEmployeeTenantAdminInfoRequest
 }
 
 // 初始化AlibabaMoziVdsTenantApiServiceGetadminRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetApiParams() url.Values
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServiceGetadminRequest) SetPar0(par0 *GetEmployeeTenantAdminInfoRequest) error {
-    r.par0 = par0
-    r.Set("par0", par0)
+func (r *AlibabaMoziVdsTenantApiServiceGetadminRequest) SetPar0(_par0 *GetEmployeeTenantAdminInfoRequest) error {
+    r._par0 = _par0
+    r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceGetadminRequest) GetPar0() *GetEmployeeTenantAdminInfoRequest {
-    return r.par0
+    return r._par0
 }

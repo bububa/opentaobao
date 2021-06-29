@@ -15,7 +15,7 @@ alibaba.wdk.merchant.item.createdraft
 type AlibabaWdkMerchantItemCreatedraftRequest struct {
     model.Params
     // 商品信息json
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaWdkMerchantItemCreatedraftRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMerchantItemCreatedraftRequest) GetApiParams() url.Values {
 }
 // Params Setter
 // 商品信息json
-func (r *AlibabaWdkMerchantItemCreatedraftRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaWdkMerchantItemCreatedraftRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaWdkMerchantItemCreatedraftRequest) GetParams() string {
-    return r.params
+    return r._params
 }

@@ -15,11 +15,11 @@ alibaba.lst.speaker.configure.adjustvolume
 type AlibabaLstSpeakerConfigureAdjustvolumeRequest struct {
     model.Params
     // 设备编码
-    deviceCode   string
+    _deviceCode   string
     // 音量直
-    volume   string
+    _volume   string
     // 音量类型，val:固定值, percent:百分比
-    valueType   string
+    _valueType   string
 }
 
 // 初始化AlibabaLstSpeakerConfigureAdjustvolumeRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLstSpeakerConfigureAdjustvolumeRequest) GetApiParams() url.Values
 }
 // DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // Volume Setter
 // 音量直
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetVolume(volume string) error {
-    r.volume = volume
-    r.Set("volume", volume)
+func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetVolume(_volume string) error {
+    r._volume = _volume
+    r.Set("volume", _volume)
     return nil
 }
 
 // Volume Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeRequest) GetVolume() string {
-    return r.volume
+    return r._volume
 }
 // ValueType Setter
 // 音量类型，val:固定值, percent:百分比
-func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetValueType(valueType string) error {
-    r.valueType = valueType
-    r.Set("value_type", valueType)
+func (r *AlibabaLstSpeakerConfigureAdjustvolumeRequest) SetValueType(_valueType string) error {
+    r._valueType = _valueType
+    r.Set("value_type", _valueType)
     return nil
 }
 
 // ValueType Getter
 func (r AlibabaLstSpeakerConfigureAdjustvolumeRequest) GetValueType() string {
-    return r.valueType
+    return r._valueType
 }

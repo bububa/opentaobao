@@ -15,7 +15,7 @@ alitrip.rail.ir.carrier.get
 type AlitripRailIrCarrierGetRequest struct {
     model.Params
     // 商家id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化AlitripRailIrCarrierGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripRailIrCarrierGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 商家id
-func (r *AlitripRailIrCarrierGetRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlitripRailIrCarrierGetRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlitripRailIrCarrierGetRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

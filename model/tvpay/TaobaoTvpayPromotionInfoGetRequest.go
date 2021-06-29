@@ -15,17 +15,17 @@ taobao.tvpay.promotion.info.get
 type TaobaoTvpayPromotionInfoGetRequest struct {
     model.Params
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 商品id
-    subjectId   string
+    _subjectId   string
     // 淘系订单号
-    extOrderId   string
+    _extOrderId   string
     // 是否淘系
-    isTao   bool
+    _isTao   bool
     // 标题
-    subject   string
+    _subject   string
 }
 
 // 初始化TaobaoTvpayPromotionInfoGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTvpayPromotionInfoGetRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // SubjectId Setter
 // 商品id
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubjectId(subjectId string) error {
-    r.subjectId = subjectId
-    r.Set("subject_id", subjectId)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubjectId(_subjectId string) error {
+    r._subjectId = _subjectId
+    r.Set("subject_id", _subjectId)
     return nil
 }
 
 // SubjectId Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetSubjectId() string {
-    return r.subjectId
+    return r._subjectId
 }
 // ExtOrderId Setter
 // 淘系订单号
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetExtOrderId(extOrderId string) error {
-    r.extOrderId = extOrderId
-    r.Set("ext_order_id", extOrderId)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetExtOrderId(_extOrderId string) error {
+    r._extOrderId = _extOrderId
+    r.Set("ext_order_id", _extOrderId)
     return nil
 }
 
 // ExtOrderId Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetExtOrderId() string {
-    return r.extOrderId
+    return r._extOrderId
 }
 // IsTao Setter
 // 是否淘系
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetIsTao(isTao bool) error {
-    r.isTao = isTao
-    r.Set("is_tao", isTao)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetIsTao(_isTao bool) error {
+    r._isTao = _isTao
+    r.Set("is_tao", _isTao)
     return nil
 }
 
 // IsTao Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetIsTao() bool {
-    return r.isTao
+    return r._isTao
 }
 // Subject Setter
 // 标题
-func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubject(subject string) error {
-    r.subject = subject
-    r.Set("subject", subject)
+func (r *TaobaoTvpayPromotionInfoGetRequest) SetSubject(_subject string) error {
+    r._subject = _subject
+    r.Set("subject", _subject)
     return nil
 }
 
 // Subject Getter
 func (r TaobaoTvpayPromotionInfoGetRequest) GetSubject() string {
-    return r.subject
+    return r._subject
 }

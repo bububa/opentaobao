@@ -15,9 +15,9 @@ alitrip.hotel.search.citysuggest.get
 type AlitripHotelSearchCitysuggestGetRequest struct {
     model.Params
     // 用户输入的词
-    keyWords   string
+    _keyWords   string
     // 用户id
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlitripHotelSearchCitysuggestGetRequest对象
@@ -42,25 +42,25 @@ func (r AlitripHotelSearchCitysuggestGetRequest) GetApiParams() url.Values {
 }
 // KeyWords Setter
 // 用户输入的词
-func (r *AlitripHotelSearchCitysuggestGetRequest) SetKeyWords(keyWords string) error {
-    r.keyWords = keyWords
-    r.Set("key_words", keyWords)
+func (r *AlitripHotelSearchCitysuggestGetRequest) SetKeyWords(_keyWords string) error {
+    r._keyWords = _keyWords
+    r.Set("key_words", _keyWords)
     return nil
 }
 
 // KeyWords Getter
 func (r AlitripHotelSearchCitysuggestGetRequest) GetKeyWords() string {
-    return r.keyWords
+    return r._keyWords
 }
 // UserId Setter
 // 用户id
-func (r *AlitripHotelSearchCitysuggestGetRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlitripHotelSearchCitysuggestGetRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlitripHotelSearchCitysuggestGetRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

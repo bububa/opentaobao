@@ -15,7 +15,7 @@ alitrip.xhotel.channel.notify
 type AlitripXhotelChannelNotifyRequest struct {
     model.Params
     // 通知类型查询条件
-    orderNotifyQuery   *OrderNotifyQuery
+    _orderNotifyQuery   *OrderNotifyQuery
 }
 
 // 初始化AlitripXhotelChannelNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelNotifyRequest) GetApiParams() url.Values {
 }
 // OrderNotifyQuery Setter
 // 通知类型查询条件
-func (r *AlitripXhotelChannelNotifyRequest) SetOrderNotifyQuery(orderNotifyQuery *OrderNotifyQuery) error {
-    r.orderNotifyQuery = orderNotifyQuery
-    r.Set("order_notify_query", orderNotifyQuery)
+func (r *AlitripXhotelChannelNotifyRequest) SetOrderNotifyQuery(_orderNotifyQuery *OrderNotifyQuery) error {
+    r._orderNotifyQuery = _orderNotifyQuery
+    r.Set("order_notify_query", _orderNotifyQuery)
     return nil
 }
 
 // OrderNotifyQuery Getter
 func (r AlitripXhotelChannelNotifyRequest) GetOrderNotifyQuery() *OrderNotifyQuery {
-    return r.orderNotifyQuery
+    return r._orderNotifyQuery
 }

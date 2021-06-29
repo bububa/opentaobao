@@ -15,7 +15,7 @@ xiami.api.song.detail.get
 type XiamiApiSongDetailGetRequest struct {
     model.Params
     // 歌曲id
-    songIds   []int64
+    _songIds   []int64
 }
 
 // 初始化XiamiApiSongDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r XiamiApiSongDetailGetRequest) GetApiParams() url.Values {
 }
 // SongIds Setter
 // 歌曲id
-func (r *XiamiApiSongDetailGetRequest) SetSongIds(songIds []int64) error {
-    r.songIds = songIds
-    r.Set("song_ids", songIds)
+func (r *XiamiApiSongDetailGetRequest) SetSongIds(_songIds []int64) error {
+    r._songIds = _songIds
+    r.Set("song_ids", _songIds)
     return nil
 }
 
 // SongIds Getter
 func (r XiamiApiSongDetailGetRequest) GetSongIds() []int64 {
-    return r.songIds
+    return r._songIds
 }

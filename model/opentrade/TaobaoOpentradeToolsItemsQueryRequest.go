@@ -15,7 +15,7 @@ taobao.opentrade.tools.items.query
 type TaobaoOpentradeToolsItemsQueryRequest struct {
     model.Params
     // 交易开放C端小程序ID
-    miniappId   int64
+    _miniappId   int64
 }
 
 // 初始化TaobaoOpentradeToolsItemsQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpentradeToolsItemsQueryRequest) GetApiParams() url.Values {
 }
 // MiniappId Setter
 // 交易开放C端小程序ID
-func (r *TaobaoOpentradeToolsItemsQueryRequest) SetMiniappId(miniappId int64) error {
-    r.miniappId = miniappId
-    r.Set("miniapp_id", miniappId)
+func (r *TaobaoOpentradeToolsItemsQueryRequest) SetMiniappId(_miniappId int64) error {
+    r._miniappId = _miniappId
+    r.Set("miniapp_id", _miniappId)
     return nil
 }
 
 // MiniappId Getter
 func (r TaobaoOpentradeToolsItemsQueryRequest) GetMiniappId() int64 {
-    return r.miniappId
+    return r._miniappId
 }

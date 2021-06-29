@@ -15,13 +15,13 @@ taobao.tanx.nativetemplates.get
 type TaobaoTanxNativetemplatesGetRequest struct {
     model.Params
     // dsp在tanx的memberid
-    memberId   int64
+    _memberId   int64
     // dsp对应的tanx的token
-    token   string
+    _token   string
     // 1970年到现在的毫秒
-    signTime   int64
+    _signTime   int64
     // 本地模板ID列表
-    templateIds   []int64
+    _templateIds   []int64
 }
 
 // 初始化TaobaoTanxNativetemplatesGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTanxNativetemplatesGetRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // dsp在tanx的memberid
-func (r *TaobaoTanxNativetemplatesGetRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxNativetemplatesGetRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxNativetemplatesGetRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp对应的tanx的token
-func (r *TaobaoTanxNativetemplatesGetRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxNativetemplatesGetRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxNativetemplatesGetRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 1970年到现在的毫秒
-func (r *TaobaoTanxNativetemplatesGetRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxNativetemplatesGetRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxNativetemplatesGetRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // TemplateIds Setter
 // 本地模板ID列表
-func (r *TaobaoTanxNativetemplatesGetRequest) SetTemplateIds(templateIds []int64) error {
-    r.templateIds = templateIds
-    r.Set("template_ids", templateIds)
+func (r *TaobaoTanxNativetemplatesGetRequest) SetTemplateIds(_templateIds []int64) error {
+    r._templateIds = _templateIds
+    r.Set("template_ids", _templateIds)
     return nil
 }
 
 // TemplateIds Getter
 func (r TaobaoTanxNativetemplatesGetRequest) GetTemplateIds() []int64 {
-    return r.templateIds
+    return r._templateIds
 }

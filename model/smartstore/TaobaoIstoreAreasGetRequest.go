@@ -16,7 +16,7 @@ taobao.istore.areas.get
 type TaobaoIstoreAreasGetRequest struct {
     model.Params
     // 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
-    fields   string
+    _fields   string
 }
 
 // 初始化TaobaoIstoreAreasGetRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoIstoreAreasGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
-func (r *TaobaoIstoreAreasGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoIstoreAreasGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoIstoreAreasGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

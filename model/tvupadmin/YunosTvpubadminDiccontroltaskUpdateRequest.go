@@ -15,11 +15,11 @@ yunos.tvpubadmin.diccontroltask.update
 type YunosTvpubadminDiccontroltaskUpdateRequest struct {
     model.Params
     // 任务ID
-    id   int64
+    _id   int64
     // 任务状态
-    status   int64
+    _status   int64
     // 牌照方
-    license   int64
+    _license   int64
 }
 
 // 初始化YunosTvpubadminDiccontroltaskUpdateRequest对象
@@ -44,37 +44,37 @@ func (r YunosTvpubadminDiccontroltaskUpdateRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 任务ID
-func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminDiccontroltaskUpdateRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Status Setter
 // 任务状态
-func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r YunosTvpubadminDiccontroltaskUpdateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDiccontroltaskUpdateRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDiccontroltaskUpdateRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }

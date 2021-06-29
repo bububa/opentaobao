@@ -15,7 +15,7 @@ taobao.tmc.user.topics.get
 type TaobaoTmcUserTopicsGetRequest struct {
     model.Params
     // 卖家nick
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoTmcUserTopicsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTmcUserTopicsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 卖家nick
-func (r *TaobaoTmcUserTopicsGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoTmcUserTopicsGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoTmcUserTopicsGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

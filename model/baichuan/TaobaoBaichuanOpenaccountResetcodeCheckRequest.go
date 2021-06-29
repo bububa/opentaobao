@@ -15,7 +15,7 @@ taobao.baichuan.openaccount.resetcode.check
 type TaobaoBaichuanOpenaccountResetcodeCheckRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOpenaccountResetcodeCheckRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountResetcodeCheckRequest) GetApiParams() url.Value
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountResetcodeCheckRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOpenaccountResetcodeCheckRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOpenaccountResetcodeCheckRequest) GetName() string {
-    return r.name
+    return r._name
 }

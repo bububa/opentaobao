@@ -15,7 +15,7 @@ alibaba.alihealth.uic.userinfo.healthid.get
 type AlibabaAlihealthUicUserinfoHealthidGetRequest struct {
     model.Params
     // 支付宝用户ID
-    alipayUserId   string
+    _alipayUserId   string
 }
 
 // 初始化AlibabaAlihealthUicUserinfoHealthidGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetApiParams() url.Values
 }
 // AlipayUserId Setter
 // 支付宝用户ID
-func (r *AlibabaAlihealthUicUserinfoHealthidGetRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaAlihealthUicUserinfoHealthidGetRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaAlihealthUicUserinfoHealthidGetRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }

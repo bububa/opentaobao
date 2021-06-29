@@ -15,7 +15,7 @@ taobao.feedflow.item.creative.delete
 type TaobaoFeedflowItemCreativeDeleteRequest struct {
     model.Params
     // 创意id列表
-    creativeIdList   []int64
+    _creativeIdList   []int64
 }
 
 // 初始化TaobaoFeedflowItemCreativeDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCreativeDeleteRequest) GetApiParams() url.Values {
 }
 // CreativeIdList Setter
 // 创意id列表
-func (r *TaobaoFeedflowItemCreativeDeleteRequest) SetCreativeIdList(creativeIdList []int64) error {
-    r.creativeIdList = creativeIdList
-    r.Set("creative_id_list", creativeIdList)
+func (r *TaobaoFeedflowItemCreativeDeleteRequest) SetCreativeIdList(_creativeIdList []int64) error {
+    r._creativeIdList = _creativeIdList
+    r.Set("creative_id_list", _creativeIdList)
     return nil
 }
 
 // CreativeIdList Getter
 func (r TaobaoFeedflowItemCreativeDeleteRequest) GetCreativeIdList() []int64 {
-    return r.creativeIdList
+    return r._creativeIdList
 }

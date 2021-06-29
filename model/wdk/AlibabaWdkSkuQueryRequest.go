@@ -15,7 +15,7 @@ alibaba.wdk.sku.query
 type AlibabaWdkSkuQueryRequest struct {
     model.Params
     // 入参
-    param   *SkuQueryDo
+    _param   *SkuQueryDo
 }
 
 // 初始化AlibabaWdkSkuQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaWdkSkuQueryRequest) SetParam(param *SkuQueryDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkSkuQueryRequest) SetParam(_param *SkuQueryDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkSkuQueryRequest) GetParam() *SkuQueryDo {
-    return r.param
+    return r._param
 }

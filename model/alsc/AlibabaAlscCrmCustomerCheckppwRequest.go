@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.checkppw
 type AlibabaAlscCrmCustomerCheckppwRequest struct {
     model.Params
     // 请求参数
-    checkRequest   *CheckPayPasswdReq
+    _checkRequest   *CheckPayPasswdReq
 }
 
 // 初始化AlibabaAlscCrmCustomerCheckppwRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerCheckppwRequest) GetApiParams() url.Values {
 }
 // CheckRequest Setter
 // 请求参数
-func (r *AlibabaAlscCrmCustomerCheckppwRequest) SetCheckRequest(checkRequest *CheckPayPasswdReq) error {
-    r.checkRequest = checkRequest
-    r.Set("check_request", checkRequest)
+func (r *AlibabaAlscCrmCustomerCheckppwRequest) SetCheckRequest(_checkRequest *CheckPayPasswdReq) error {
+    r._checkRequest = _checkRequest
+    r.Set("check_request", _checkRequest)
     return nil
 }
 
 // CheckRequest Getter
 func (r AlibabaAlscCrmCustomerCheckppwRequest) GetCheckRequest() *CheckPayPasswdReq {
-    return r.checkRequest
+    return r._checkRequest
 }

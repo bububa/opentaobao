@@ -15,9 +15,9 @@ taobao.promotionmisc.item.activity.list.get
 type TaobaoPromotionmiscItemActivityListGetRequest struct {
     model.Params
     // 页码。
-    pageNo   int64
+    _pageNo   int64
     // 每页记录数，最大支持50 。
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPromotionmiscItemActivityListGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionmiscItemActivityListGetRequest) GetApiParams() url.Values
 }
 // PageNo Setter
 // 页码。
-func (r *TaobaoPromotionmiscItemActivityListGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPromotionmiscItemActivityListGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPromotionmiscItemActivityListGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页记录数，最大支持50 。
-func (r *TaobaoPromotionmiscItemActivityListGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionmiscItemActivityListGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionmiscItemActivityListGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

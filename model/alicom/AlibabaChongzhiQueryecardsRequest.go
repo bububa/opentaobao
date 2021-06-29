@@ -15,9 +15,9 @@ alibaba.chongzhi.queryecards
 type AlibabaChongzhiQueryecardsRequest struct {
     model.Params
     // 号码
-    mobile   int64
+    _mobile   int64
     // 来源
-    clientSource   string
+    _clientSource   string
 }
 
 // 初始化AlibabaChongzhiQueryecardsRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaChongzhiQueryecardsRequest) GetApiParams() url.Values {
 }
 // Mobile Setter
 // 号码
-func (r *AlibabaChongzhiQueryecardsRequest) SetMobile(mobile int64) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaChongzhiQueryecardsRequest) SetMobile(_mobile int64) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaChongzhiQueryecardsRequest) GetMobile() int64 {
-    return r.mobile
+    return r._mobile
 }
 // ClientSource Setter
 // 来源
-func (r *AlibabaChongzhiQueryecardsRequest) SetClientSource(clientSource string) error {
-    r.clientSource = clientSource
-    r.Set("client_source", clientSource)
+func (r *AlibabaChongzhiQueryecardsRequest) SetClientSource(_clientSource string) error {
+    r._clientSource = _clientSource
+    r.Set("client_source", _clientSource)
     return nil
 }
 
 // ClientSource Getter
 func (r AlibabaChongzhiQueryecardsRequest) GetClientSource() string {
-    return r.clientSource
+    return r._clientSource
 }

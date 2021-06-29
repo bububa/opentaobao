@@ -15,7 +15,7 @@ alibaba.ele.fengniao.order.query
 type AlibabaEleFengniaoOrderQueryRequest struct {
     model.Params
     // 参数
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoOrderQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *AlibabaEleFengniaoOrderQueryRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoOrderQueryRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoOrderQueryRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

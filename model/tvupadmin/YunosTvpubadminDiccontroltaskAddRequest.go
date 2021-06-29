@@ -15,7 +15,7 @@ yunos.tvpubadmin.diccontroltask.add
 type YunosTvpubadminDiccontroltaskAddRequest struct {
     model.Params
     // 任务信息
-    task   *DicControlTaskDO
+    _task   *DicControlTaskDO
 }
 
 // 初始化YunosTvpubadminDiccontroltaskAddRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDiccontroltaskAddRequest) GetApiParams() url.Values {
 }
 // Task Setter
 // 任务信息
-func (r *YunosTvpubadminDiccontroltaskAddRequest) SetTask(task *DicControlTaskDO) error {
-    r.task = task
-    r.Set("task", task)
+func (r *YunosTvpubadminDiccontroltaskAddRequest) SetTask(_task *DicControlTaskDO) error {
+    r._task = _task
+    r.Set("task", _task)
     return nil
 }
 
 // Task Getter
 func (r YunosTvpubadminDiccontroltaskAddRequest) GetTask() *DicControlTaskDO {
-    return r.task
+    return r._task
 }

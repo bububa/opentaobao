@@ -15,7 +15,7 @@ taobao.fuwu.purchase.order.confirm
 type TaobaoFuwuPurchaseOrderConfirmRequest struct {
     model.Params
     // 内购服务下单接口参数
-    paramOrderConfirmQueryDTO   *OrderConfirmQueryDto
+    _paramOrderConfirmQueryDTO   *OrderConfirmQueryDto
 }
 
 // 初始化TaobaoFuwuPurchaseOrderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFuwuPurchaseOrderConfirmRequest) GetApiParams() url.Values {
 }
 // ParamOrderConfirmQueryDTO Setter
 // 内购服务下单接口参数
-func (r *TaobaoFuwuPurchaseOrderConfirmRequest) SetParamOrderConfirmQueryDTO(paramOrderConfirmQueryDTO *OrderConfirmQueryDto) error {
-    r.paramOrderConfirmQueryDTO = paramOrderConfirmQueryDTO
-    r.Set("param_order_confirm_query_d_t_o", paramOrderConfirmQueryDTO)
+func (r *TaobaoFuwuPurchaseOrderConfirmRequest) SetParamOrderConfirmQueryDTO(_paramOrderConfirmQueryDTO *OrderConfirmQueryDto) error {
+    r._paramOrderConfirmQueryDTO = _paramOrderConfirmQueryDTO
+    r.Set("param_order_confirm_query_d_t_o", _paramOrderConfirmQueryDTO)
     return nil
 }
 
 // ParamOrderConfirmQueryDTO Getter
 func (r TaobaoFuwuPurchaseOrderConfirmRequest) GetParamOrderConfirmQueryDTO() *OrderConfirmQueryDto {
-    return r.paramOrderConfirmQueryDTO
+    return r._paramOrderConfirmQueryDTO
 }

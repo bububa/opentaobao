@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.forecast.raw.upload
 type AlibabaTmallgenieScpPlanForecastRawUploadRequest struct {
     model.Params
     // 入参对象
-    supplierForecastRawRequest   *SupplierForecastRawRequest
+    _supplierForecastRawRequest   *SupplierForecastRawRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanForecastRawUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetApiParams() url.Val
 }
 // SupplierForecastRawRequest Setter
 // 入参对象
-func (r *AlibabaTmallgenieScpPlanForecastRawUploadRequest) SetSupplierForecastRawRequest(supplierForecastRawRequest *SupplierForecastRawRequest) error {
-    r.supplierForecastRawRequest = supplierForecastRawRequest
-    r.Set("supplier_forecast_raw_request", supplierForecastRawRequest)
+func (r *AlibabaTmallgenieScpPlanForecastRawUploadRequest) SetSupplierForecastRawRequest(_supplierForecastRawRequest *SupplierForecastRawRequest) error {
+    r._supplierForecastRawRequest = _supplierForecastRawRequest
+    r.Set("supplier_forecast_raw_request", _supplierForecastRawRequest)
     return nil
 }
 
 // SupplierForecastRawRequest Getter
 func (r AlibabaTmallgenieScpPlanForecastRawUploadRequest) GetSupplierForecastRawRequest() *SupplierForecastRawRequest {
-    return r.supplierForecastRawRequest
+    return r._supplierForecastRawRequest
 }

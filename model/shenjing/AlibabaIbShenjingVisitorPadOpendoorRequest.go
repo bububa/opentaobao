@@ -15,9 +15,9 @@ alibaba.ib.shenjing.visitor.pad.opendoor
 type AlibabaIbShenjingVisitorPadOpendoorRequest struct {
     model.Params
     // 访客标识
-    id   string
+    _id   string
     // padid
-    padId   string
+    _padId   string
 }
 
 // 初始化AlibabaIbShenjingVisitorPadOpendoorRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 访客标识
-func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetId() string {
-    return r.id
+    return r._id
 }
 // PadId Setter
 // padid
-func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetPadId(padId string) error {
-    r.padId = padId
-    r.Set("pad_id", padId)
+func (r *AlibabaIbShenjingVisitorPadOpendoorRequest) SetPadId(_padId string) error {
+    r._padId = _padId
+    r.Set("pad_id", _padId)
     return nil
 }
 
 // PadId Getter
 func (r AlibabaIbShenjingVisitorPadOpendoorRequest) GetPadId() string {
-    return r.padId
+    return r._padId
 }

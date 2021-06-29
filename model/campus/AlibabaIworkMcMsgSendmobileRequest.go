@@ -15,7 +15,7 @@ alibaba.iwork.mc.msg.sendmobile
 type AlibabaIworkMcMsgSendmobileRequest struct {
     model.Params
     // 消息对象
-    mobileReceiverMessageEvent   *MobileReceiverMessageEvent
+    _mobileReceiverMessageEvent   *MobileReceiverMessageEvent
 }
 
 // 初始化AlibabaIworkMcMsgSendmobileRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIworkMcMsgSendmobileRequest) GetApiParams() url.Values {
 }
 // MobileReceiverMessageEvent Setter
 // 消息对象
-func (r *AlibabaIworkMcMsgSendmobileRequest) SetMobileReceiverMessageEvent(mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
-    r.mobileReceiverMessageEvent = mobileReceiverMessageEvent
-    r.Set("mobile_receiver_message_event", mobileReceiverMessageEvent)
+func (r *AlibabaIworkMcMsgSendmobileRequest) SetMobileReceiverMessageEvent(_mobileReceiverMessageEvent *MobileReceiverMessageEvent) error {
+    r._mobileReceiverMessageEvent = _mobileReceiverMessageEvent
+    r.Set("mobile_receiver_message_event", _mobileReceiverMessageEvent)
     return nil
 }
 
 // MobileReceiverMessageEvent Getter
 func (r AlibabaIworkMcMsgSendmobileRequest) GetMobileReceiverMessageEvent() *MobileReceiverMessageEvent {
-    return r.mobileReceiverMessageEvent
+    return r._mobileReceiverMessageEvent
 }

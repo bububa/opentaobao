@@ -15,7 +15,7 @@ Upload product based on json schema instance.QPS(Invoke per second) for this API
 type AliexpressSolutionSchemaProductInstancePostRequest struct {
     model.Params
     // Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
-    productInstanceRequest   string
+    _productInstanceRequest   string
 }
 
 // 初始化AliexpressSolutionSchemaProductInstancePostRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionSchemaProductInstancePostRequest) GetApiParams() url.V
 }
 // ProductInstanceRequest Setter
 // Product instance data. Please note: the shipping_template_id should be replaced with your own shipping template id, which could be obtained through  https://developers.aliexpress.com/en/doc.htm?docId=43456&docType=2
-func (r *AliexpressSolutionSchemaProductInstancePostRequest) SetProductInstanceRequest(productInstanceRequest string) error {
-    r.productInstanceRequest = productInstanceRequest
-    r.Set("product_instance_request", productInstanceRequest)
+func (r *AliexpressSolutionSchemaProductInstancePostRequest) SetProductInstanceRequest(_productInstanceRequest string) error {
+    r._productInstanceRequest = _productInstanceRequest
+    r.Set("product_instance_request", _productInstanceRequest)
     return nil
 }
 
 // ProductInstanceRequest Getter
 func (r AliexpressSolutionSchemaProductInstancePostRequest) GetProductInstanceRequest() string {
-    return r.productInstanceRequest
+    return r._productInstanceRequest
 }

@@ -15,9 +15,9 @@ alibaba.xiami.api.artist.musiclist.get
 type AlibabaXiamiApiArtistMusiclistGetRequest struct {
     model.Params
     // 语种, 有all, chinese, musician, english, japanese, korea
-    type   string
+    _type   string
     // 所有、男、女、组合分别为(all、male、female、combination)
-    order   string
+    _order   string
 }
 
 // 初始化AlibabaXiamiApiArtistMusiclistGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaXiamiApiArtistMusiclistGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 语种, 有all, chinese, musician, english, japanese, korea
-func (r *AlibabaXiamiApiArtistMusiclistGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaXiamiApiArtistMusiclistGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaXiamiApiArtistMusiclistGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // Order Setter
 // 所有、男、女、组合分别为(all、male、female、combination)
-func (r *AlibabaXiamiApiArtistMusiclistGetRequest) SetOrder(order string) error {
-    r.order = order
-    r.Set("order", order)
+func (r *AlibabaXiamiApiArtistMusiclistGetRequest) SetOrder(_order string) error {
+    r._order = _order
+    r.Set("order", _order)
     return nil
 }
 
 // Order Getter
 func (r AlibabaXiamiApiArtistMusiclistGetRequest) GetOrder() string {
-    return r.order
+    return r._order
 }

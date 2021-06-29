@@ -15,11 +15,11 @@ taobao.picture.category.update
 type TaobaoPictureCategoryUpdateRequest struct {
     model.Params
     // 要更新的图片分类的id
-    categoryId   int64
+    _categoryId   int64
     // 图片分类的新名字，最大长度20字符，不能为空
-    categoryName   string
+    _categoryName   string
     // 图片分类的新父分类id
-    parentId   int64
+    _parentId   int64
 }
 
 // 初始化TaobaoPictureCategoryUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPictureCategoryUpdateRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 要更新的图片分类的id
-func (r *TaobaoPictureCategoryUpdateRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TaobaoPictureCategoryUpdateRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TaobaoPictureCategoryUpdateRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // CategoryName Setter
 // 图片分类的新名字，最大长度20字符，不能为空
-func (r *TaobaoPictureCategoryUpdateRequest) SetCategoryName(categoryName string) error {
-    r.categoryName = categoryName
-    r.Set("category_name", categoryName)
+func (r *TaobaoPictureCategoryUpdateRequest) SetCategoryName(_categoryName string) error {
+    r._categoryName = _categoryName
+    r.Set("category_name", _categoryName)
     return nil
 }
 
 // CategoryName Getter
 func (r TaobaoPictureCategoryUpdateRequest) GetCategoryName() string {
-    return r.categoryName
+    return r._categoryName
 }
 // ParentId Setter
 // 图片分类的新父分类id
-func (r *TaobaoPictureCategoryUpdateRequest) SetParentId(parentId int64) error {
-    r.parentId = parentId
-    r.Set("parent_id", parentId)
+func (r *TaobaoPictureCategoryUpdateRequest) SetParentId(_parentId int64) error {
+    r._parentId = _parentId
+    r.Set("parent_id", _parentId)
     return nil
 }
 
 // ParentId Getter
 func (r TaobaoPictureCategoryUpdateRequest) GetParentId() int64 {
-    return r.parentId
+    return r._parentId
 }

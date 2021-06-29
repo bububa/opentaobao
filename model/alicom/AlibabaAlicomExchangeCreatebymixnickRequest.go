@@ -15,7 +15,7 @@ alibaba.alicom.exchange.createbymixnick
 type AlibabaAlicomExchangeCreatebymixnickRequest struct {
     model.Params
     // 入参
-    exchangeModel   *ExchangeModel
+    _exchangeModel   *ExchangeModel
 }
 
 // 初始化AlibabaAlicomExchangeCreatebymixnickRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiParams() url.Values {
 }
 // ExchangeModel Setter
 // 入参
-func (r *AlibabaAlicomExchangeCreatebymixnickRequest) SetExchangeModel(exchangeModel *ExchangeModel) error {
-    r.exchangeModel = exchangeModel
-    r.Set("exchange_model", exchangeModel)
+func (r *AlibabaAlicomExchangeCreatebymixnickRequest) SetExchangeModel(_exchangeModel *ExchangeModel) error {
+    r._exchangeModel = _exchangeModel
+    r.Set("exchange_model", _exchangeModel)
     return nil
 }
 
 // ExchangeModel Getter
 func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetExchangeModel() *ExchangeModel {
-    return r.exchangeModel
+    return r._exchangeModel
 }

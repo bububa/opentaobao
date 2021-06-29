@@ -15,7 +15,7 @@ tmall.nr.zqs.plan.query
 type TmallNrZqsPlanQueryRequest struct {
     model.Params
     // 交易子订单id
-    detailOrderId   int64
+    _detailOrderId   int64
 }
 
 // 初始化TmallNrZqsPlanQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrZqsPlanQueryRequest) GetApiParams() url.Values {
 }
 // DetailOrderId Setter
 // 交易子订单id
-func (r *TmallNrZqsPlanQueryRequest) SetDetailOrderId(detailOrderId int64) error {
-    r.detailOrderId = detailOrderId
-    r.Set("detail_order_id", detailOrderId)
+func (r *TmallNrZqsPlanQueryRequest) SetDetailOrderId(_detailOrderId int64) error {
+    r._detailOrderId = _detailOrderId
+    r.Set("detail_order_id", _detailOrderId)
     return nil
 }
 
 // DetailOrderId Getter
 func (r TmallNrZqsPlanQueryRequest) GetDetailOrderId() int64 {
-    return r.detailOrderId
+    return r._detailOrderId
 }

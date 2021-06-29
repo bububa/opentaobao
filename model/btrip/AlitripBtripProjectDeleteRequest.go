@@ -15,7 +15,7 @@ alitrip.btrip.project.delete
 type AlitripBtripProjectDeleteRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenProjectRq
+    _rq   *OpenProjectRq
 }
 
 // 初始化AlitripBtripProjectDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripProjectDeleteRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripProjectDeleteRequest) SetRq(rq *OpenProjectRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripProjectDeleteRequest) SetRq(_rq *OpenProjectRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripProjectDeleteRequest) GetRq() *OpenProjectRq {
-    return r.rq
+    return r._rq
 }

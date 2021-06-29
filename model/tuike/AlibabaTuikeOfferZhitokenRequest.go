@@ -15,25 +15,25 @@ alibaba.tuike.offer.zhitoken
 type AlibabaTuikeOfferZhitokenRequest struct {
     model.Params
     // 主标题
-    title   string
+    _title   string
     // 主要内容
-    desc   string
+    _desc   string
     // 图标链接，可以为空
-    iconLink   string
+    _iconLink   string
     // SHORT/MEDIUM/LONG
-    bizType   string
+    _bizType   string
     // 业务类型
-    source   string
+    _source   string
     // 生效时间，可以为空
-    startTime   int64
+    _startTime   int64
     // 左按钮文案，可以为空，默认为"取消"
-    leftBtnText   string
+    _leftBtnText   string
     // 左按钮链接，可以为空
-    leftBtnLink   string
+    _leftBtnLink   string
     // 右按钮文案，可以为空，默认为"确定"
-    rightBtnText   string
+    _rightBtnText   string
     // 右按钮链接
-    rightBtnLink   string
+    _rightBtnLink   string
 }
 
 // 初始化AlibabaTuikeOfferZhitokenRequest对象
@@ -58,121 +58,121 @@ func (r AlibabaTuikeOfferZhitokenRequest) GetApiParams() url.Values {
 }
 // Title Setter
 // 主标题
-func (r *AlibabaTuikeOfferZhitokenRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Desc Setter
 // 主要内容
-func (r *AlibabaTuikeOfferZhitokenRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }
 // IconLink Setter
 // 图标链接，可以为空
-func (r *AlibabaTuikeOfferZhitokenRequest) SetIconLink(iconLink string) error {
-    r.iconLink = iconLink
-    r.Set("icon_link", iconLink)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetIconLink(_iconLink string) error {
+    r._iconLink = _iconLink
+    r.Set("icon_link", _iconLink)
     return nil
 }
 
 // IconLink Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetIconLink() string {
-    return r.iconLink
+    return r._iconLink
 }
 // BizType Setter
 // SHORT/MEDIUM/LONG
-func (r *AlibabaTuikeOfferZhitokenRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // Source Setter
 // 业务类型
-func (r *AlibabaTuikeOfferZhitokenRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // StartTime Setter
 // 生效时间，可以为空
-func (r *AlibabaTuikeOfferZhitokenRequest) SetStartTime(startTime int64) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetStartTime(_startTime int64) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetStartTime() int64 {
-    return r.startTime
+    return r._startTime
 }
 // LeftBtnText Setter
 // 左按钮文案，可以为空，默认为"取消"
-func (r *AlibabaTuikeOfferZhitokenRequest) SetLeftBtnText(leftBtnText string) error {
-    r.leftBtnText = leftBtnText
-    r.Set("left_btn_text", leftBtnText)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetLeftBtnText(_leftBtnText string) error {
+    r._leftBtnText = _leftBtnText
+    r.Set("left_btn_text", _leftBtnText)
     return nil
 }
 
 // LeftBtnText Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetLeftBtnText() string {
-    return r.leftBtnText
+    return r._leftBtnText
 }
 // LeftBtnLink Setter
 // 左按钮链接，可以为空
-func (r *AlibabaTuikeOfferZhitokenRequest) SetLeftBtnLink(leftBtnLink string) error {
-    r.leftBtnLink = leftBtnLink
-    r.Set("left_btn_link", leftBtnLink)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetLeftBtnLink(_leftBtnLink string) error {
+    r._leftBtnLink = _leftBtnLink
+    r.Set("left_btn_link", _leftBtnLink)
     return nil
 }
 
 // LeftBtnLink Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetLeftBtnLink() string {
-    return r.leftBtnLink
+    return r._leftBtnLink
 }
 // RightBtnText Setter
 // 右按钮文案，可以为空，默认为"确定"
-func (r *AlibabaTuikeOfferZhitokenRequest) SetRightBtnText(rightBtnText string) error {
-    r.rightBtnText = rightBtnText
-    r.Set("right_btn_text", rightBtnText)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetRightBtnText(_rightBtnText string) error {
+    r._rightBtnText = _rightBtnText
+    r.Set("right_btn_text", _rightBtnText)
     return nil
 }
 
 // RightBtnText Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetRightBtnText() string {
-    return r.rightBtnText
+    return r._rightBtnText
 }
 // RightBtnLink Setter
 // 右按钮链接
-func (r *AlibabaTuikeOfferZhitokenRequest) SetRightBtnLink(rightBtnLink string) error {
-    r.rightBtnLink = rightBtnLink
-    r.Set("right_btn_link", rightBtnLink)
+func (r *AlibabaTuikeOfferZhitokenRequest) SetRightBtnLink(_rightBtnLink string) error {
+    r._rightBtnLink = _rightBtnLink
+    r.Set("right_btn_link", _rightBtnLink)
     return nil
 }
 
 // RightBtnLink Getter
 func (r AlibabaTuikeOfferZhitokenRequest) GetRightBtnLink() string {
-    return r.rightBtnLink
+    return r._rightBtnLink
 }

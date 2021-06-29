@@ -15,9 +15,9 @@ alibaba.lst.speaker.configure.syncaudio
 type AlibabaLstSpeakerConfigureSyncaudioRequest struct {
     model.Params
     // 设备编码
-    deviceCode   string
+    _deviceCode   string
     // 参数
-    speakerConfigParam4SyncAudio   *SpeakerConfigParam4SyncAudio
+    _speakerConfigParam4SyncAudio   *SpeakerConfigParam4SyncAudio
 }
 
 // 初始化AlibabaLstSpeakerConfigureSyncaudioRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstSpeakerConfigureSyncaudioRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerConfigureSyncaudioRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *AlibabaLstSpeakerConfigureSyncaudioRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r AlibabaLstSpeakerConfigureSyncaudioRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // SpeakerConfigParam4SyncAudio Setter
 // 参数
-func (r *AlibabaLstSpeakerConfigureSyncaudioRequest) SetSpeakerConfigParam4SyncAudio(speakerConfigParam4SyncAudio *SpeakerConfigParam4SyncAudio) error {
-    r.speakerConfigParam4SyncAudio = speakerConfigParam4SyncAudio
-    r.Set("speaker_config_param4_sync_audio", speakerConfigParam4SyncAudio)
+func (r *AlibabaLstSpeakerConfigureSyncaudioRequest) SetSpeakerConfigParam4SyncAudio(_speakerConfigParam4SyncAudio *SpeakerConfigParam4SyncAudio) error {
+    r._speakerConfigParam4SyncAudio = _speakerConfigParam4SyncAudio
+    r.Set("speaker_config_param4_sync_audio", _speakerConfigParam4SyncAudio)
     return nil
 }
 
 // SpeakerConfigParam4SyncAudio Getter
 func (r AlibabaLstSpeakerConfigureSyncaudioRequest) GetSpeakerConfigParam4SyncAudio() *SpeakerConfigParam4SyncAudio {
-    return r.speakerConfigParam4SyncAudio
+    return r._speakerConfigParam4SyncAudio
 }

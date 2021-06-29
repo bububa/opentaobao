@@ -15,13 +15,13 @@ alibaba.nlife.store.itemdetails.get
 type AlibabaNlifeStoreItemdetailsGetRequest struct {
     model.Params
     // 门店ID/设备号
-    storeId   string
+    _storeId   string
     // 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ; 门店设备号-STORE_DEVICE
-    storeIdType   string
+    _storeIdType   string
     // 查询参数list
-    itemQueryDOList   []ItemQueryDOList
+    _itemQueryDOList   []ItemQueryDOList
     // 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
-    itemType   *model.File
+    _itemType   *model.File
 }
 
 // 初始化AlibabaNlifeStoreItemdetailsGetRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaNlifeStoreItemdetailsGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID/设备号
-func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeStoreItemdetailsGetRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // StoreIdType Setter
 // 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ; 门店设备号-STORE_DEVICE
-func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetStoreIdType(storeIdType string) error {
-    r.storeIdType = storeIdType
-    r.Set("store_id_type", storeIdType)
+func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetStoreIdType(_storeIdType string) error {
+    r._storeIdType = _storeIdType
+    r.Set("store_id_type", _storeIdType)
     return nil
 }
 
 // StoreIdType Getter
 func (r AlibabaNlifeStoreItemdetailsGetRequest) GetStoreIdType() string {
-    return r.storeIdType
+    return r._storeIdType
 }
 // ItemQueryDOList Setter
 // 查询参数list
-func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetItemQueryDOList(itemQueryDOList []ItemQueryDOList) error {
-    r.itemQueryDOList = itemQueryDOList
-    r.Set("item_query_d_o_list", itemQueryDOList)
+func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetItemQueryDOList(_itemQueryDOList []ItemQueryDOList) error {
+    r._itemQueryDOList = _itemQueryDOList
+    r.Set("item_query_d_o_list", _itemQueryDOList)
     return nil
 }
 
 // ItemQueryDOList Getter
 func (r AlibabaNlifeStoreItemdetailsGetRequest) GetItemQueryDOList() []ItemQueryDOList {
-    return r.itemQueryDOList
+    return r._itemQueryDOList
 }
 // ItemType Setter
 // 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
-func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetItemType(itemType *model.File) error {
-    r.itemType = itemType
-    r.Set("item_type", itemType)
+func (r *AlibabaNlifeStoreItemdetailsGetRequest) SetItemType(_itemType *model.File) error {
+    r._itemType = _itemType
+    r.Set("item_type", _itemType)
     return nil
 }
 
 // ItemType Getter
 func (r AlibabaNlifeStoreItemdetailsGetRequest) GetItemType() *model.File {
-    return r.itemType
+    return r._itemType
 }

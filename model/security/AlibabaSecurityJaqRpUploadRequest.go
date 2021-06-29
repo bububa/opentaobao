@@ -15,9 +15,9 @@ alibaba.security.jaq.rp.upload
 type AlibabaSecurityJaqRpUploadRequest struct {
     model.Params
     // 认证会话token
-    verifyToken   string
+    _verifyToken   string
     // 此次需要上传的认证信息的列表
-    elements   []Element
+    _elements   []Element
 }
 
 // 初始化AlibabaSecurityJaqRpUploadRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqRpUploadRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // 认证会话token
-func (r *AlibabaSecurityJaqRpUploadRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpUploadRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpUploadRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }
 // Elements Setter
 // 此次需要上传的认证信息的列表
-func (r *AlibabaSecurityJaqRpUploadRequest) SetElements(elements []Element) error {
-    r.elements = elements
-    r.Set("elements", elements)
+func (r *AlibabaSecurityJaqRpUploadRequest) SetElements(_elements []Element) error {
+    r._elements = _elements
+    r.Set("elements", _elements)
     return nil
 }
 
 // Elements Getter
 func (r AlibabaSecurityJaqRpUploadRequest) GetElements() []Element {
-    return r.elements
+    return r._elements
 }

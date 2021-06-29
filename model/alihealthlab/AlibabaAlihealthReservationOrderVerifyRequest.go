@@ -15,7 +15,7 @@ alibaba.alihealth.reservation.order.verify
 type AlibabaAlihealthReservationOrderVerifyRequest struct {
     model.Params
     // 请求参数
-    verify   *VerifyOrderRequest
+    _verify   *VerifyOrderRequest
 }
 
 // 初始化AlibabaAlihealthReservationOrderVerifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReservationOrderVerifyRequest) GetApiParams() url.Values
 }
 // Verify Setter
 // 请求参数
-func (r *AlibabaAlihealthReservationOrderVerifyRequest) SetVerify(verify *VerifyOrderRequest) error {
-    r.verify = verify
-    r.Set("verify", verify)
+func (r *AlibabaAlihealthReservationOrderVerifyRequest) SetVerify(_verify *VerifyOrderRequest) error {
+    r._verify = _verify
+    r.Set("verify", _verify)
     return nil
 }
 
 // Verify Getter
 func (r AlibabaAlihealthReservationOrderVerifyRequest) GetVerify() *VerifyOrderRequest {
-    return r.verify
+    return r._verify
 }

@@ -15,9 +15,9 @@ ISV解绑商品
 type AlibabaAlihealthDentalItemUnbindRequest struct {
     model.Params
     // ISV门店ID
-    spStoreId   string
+    _spStoreId   string
     // ISV商品ID
-    spItemId   string
+    _spItemId   string
 }
 
 // 初始化AlibabaAlihealthDentalItemUnbindRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDentalItemUnbindRequest) GetApiParams() url.Values {
 }
 // SpStoreId Setter
 // ISV门店ID
-func (r *AlibabaAlihealthDentalItemUnbindRequest) SetSpStoreId(spStoreId string) error {
-    r.spStoreId = spStoreId
-    r.Set("sp_store_id", spStoreId)
+func (r *AlibabaAlihealthDentalItemUnbindRequest) SetSpStoreId(_spStoreId string) error {
+    r._spStoreId = _spStoreId
+    r.Set("sp_store_id", _spStoreId)
     return nil
 }
 
 // SpStoreId Getter
 func (r AlibabaAlihealthDentalItemUnbindRequest) GetSpStoreId() string {
-    return r.spStoreId
+    return r._spStoreId
 }
 // SpItemId Setter
 // ISV商品ID
-func (r *AlibabaAlihealthDentalItemUnbindRequest) SetSpItemId(spItemId string) error {
-    r.spItemId = spItemId
-    r.Set("sp_item_id", spItemId)
+func (r *AlibabaAlihealthDentalItemUnbindRequest) SetSpItemId(_spItemId string) error {
+    r._spItemId = _spItemId
+    r.Set("sp_item_id", _spItemId)
     return nil
 }
 
 // SpItemId Getter
 func (r AlibabaAlihealthDentalItemUnbindRequest) GetSpItemId() string {
-    return r.spItemId
+    return r._spItemId
 }

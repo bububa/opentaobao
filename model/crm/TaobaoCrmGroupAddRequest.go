@@ -15,7 +15,7 @@ taobao.crm.group.add
 type TaobaoCrmGroupAddRequest struct {
     model.Params
     // 分组名称，每个卖家最多可以拥有100个分组
-    groupName   string
+    _groupName   string
 }
 
 // 初始化TaobaoCrmGroupAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCrmGroupAddRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 分组名称，每个卖家最多可以拥有100个分组
-func (r *TaobaoCrmGroupAddRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoCrmGroupAddRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoCrmGroupAddRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }

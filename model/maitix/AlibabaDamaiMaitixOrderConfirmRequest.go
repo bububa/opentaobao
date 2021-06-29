@@ -15,7 +15,7 @@ alibaba.damai.maitix.order.confirm
 type AlibabaDamaiMaitixOrderConfirmRequest struct {
     model.Params
     // 出票入参
-    param   *MoaConfirmOrderParam
+    _param   *MoaConfirmOrderParam
 }
 
 // 初始化AlibabaDamaiMaitixOrderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 出票入参
-func (r *AlibabaDamaiMaitixOrderConfirmRequest) SetParam(param *MoaConfirmOrderParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixOrderConfirmRequest) SetParam(_param *MoaConfirmOrderParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixOrderConfirmRequest) GetParam() *MoaConfirmOrderParam {
-    return r.param
+    return r._param
 }

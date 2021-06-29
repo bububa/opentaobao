@@ -15,7 +15,7 @@ taobao.bus.agent.city.change
 type TaobaoBusAgentCityChangeRequest struct {
     model.Params
     // 城市变更请求对象
-    paramCityChangeRQ   *CityChangeRq
+    _paramCityChangeRQ   *CityChangeRq
 }
 
 // 初始化TaobaoBusAgentCityChangeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentCityChangeRequest) GetApiParams() url.Values {
 }
 // ParamCityChangeRQ Setter
 // 城市变更请求对象
-func (r *TaobaoBusAgentCityChangeRequest) SetParamCityChangeRQ(paramCityChangeRQ *CityChangeRq) error {
-    r.paramCityChangeRQ = paramCityChangeRQ
-    r.Set("param_city_change_r_q", paramCityChangeRQ)
+func (r *TaobaoBusAgentCityChangeRequest) SetParamCityChangeRQ(_paramCityChangeRQ *CityChangeRq) error {
+    r._paramCityChangeRQ = _paramCityChangeRQ
+    r.Set("param_city_change_r_q", _paramCityChangeRQ)
     return nil
 }
 
 // ParamCityChangeRQ Getter
 func (r TaobaoBusAgentCityChangeRequest) GetParamCityChangeRQ() *CityChangeRq {
-    return r.paramCityChangeRQ
+    return r._paramCityChangeRQ
 }

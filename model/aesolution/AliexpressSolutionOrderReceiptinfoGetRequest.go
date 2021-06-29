@@ -15,7 +15,7 @@ Get Order Receipt Info, Support multi stores requirements for Turkey sellers.
 type AliexpressSolutionOrderReceiptinfoGetRequest struct {
     model.Params
     // query param
-    param1   *SingleOrderQuery
+    _param1   *SingleOrderQuery
 }
 
 // 初始化AliexpressSolutionOrderReceiptinfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionOrderReceiptinfoGetRequest) GetApiParams() url.Values 
 }
 // Param1 Setter
 // query param
-func (r *AliexpressSolutionOrderReceiptinfoGetRequest) SetParam1(param1 *SingleOrderQuery) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AliexpressSolutionOrderReceiptinfoGetRequest) SetParam1(_param1 *SingleOrderQuery) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AliexpressSolutionOrderReceiptinfoGetRequest) GetParam1() *SingleOrderQuery {
-    return r.param1
+    return r._param1
 }

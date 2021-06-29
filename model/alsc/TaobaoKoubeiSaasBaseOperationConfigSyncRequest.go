@@ -15,15 +15,15 @@ ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS
 type TaobaoKoubeiSaasBaseOperationConfigSyncRequest struct {
     model.Params
     // 商户ID
-    merchantId   string
+    _merchantId   string
     // 请求ID
-    requestId   string
+    _requestId   string
     // 业务类型。支付方式：payment_method
-    bizType   string
+    _bizType   string
     // 经营设置json串
-    operationConfig   string
+    _operationConfig   string
     // 操作员ID
-    outerOperatorId   string
+    _outerOperatorId   string
 }
 
 // 初始化TaobaoKoubeiSaasBaseOperationConfigSyncRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetApiParams() url.Value
 }
 // MerchantId Setter
 // 商户ID
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetMerchantId(merchantId string) error {
-    r.merchantId = merchantId
-    r.Set("merchant_id", merchantId)
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetMerchantId(_merchantId string) error {
+    r._merchantId = _merchantId
+    r.Set("merchant_id", _merchantId)
     return nil
 }
 
 // MerchantId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetMerchantId() string {
-    return r.merchantId
+    return r._merchantId
 }
 // RequestId Setter
 // 请求ID
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }
 // BizType Setter
 // 业务类型。支付方式：payment_method
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // OperationConfig Setter
 // 经营设置json串
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetOperationConfig(operationConfig string) error {
-    r.operationConfig = operationConfig
-    r.Set("operation_config", operationConfig)
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetOperationConfig(_operationConfig string) error {
+    r._operationConfig = _operationConfig
+    r.Set("operation_config", _operationConfig)
     return nil
 }
 
 // OperationConfig Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetOperationConfig() string {
-    return r.operationConfig
+    return r._operationConfig
 }
 // OuterOperatorId Setter
 // 操作员ID
-func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetOuterOperatorId(outerOperatorId string) error {
-    r.outerOperatorId = outerOperatorId
-    r.Set("outer_operator_id", outerOperatorId)
+func (r *TaobaoKoubeiSaasBaseOperationConfigSyncRequest) SetOuterOperatorId(_outerOperatorId string) error {
+    r._outerOperatorId = _outerOperatorId
+    r.Set("outer_operator_id", _outerOperatorId)
     return nil
 }
 
 // OuterOperatorId Getter
 func (r TaobaoKoubeiSaasBaseOperationConfigSyncRequest) GetOuterOperatorId() string {
-    return r.outerOperatorId
+    return r._outerOperatorId
 }

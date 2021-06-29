@@ -15,7 +15,7 @@ alibaba.ais.assets.tag.get
 type AlibabaAisAssetsTagGetRequest struct {
     model.Params
     // 二维码生成唯一标识
-    uNonce   string
+    _uNonce   string
 }
 
 // 初始化AlibabaAisAssetsTagGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAisAssetsTagGetRequest) GetApiParams() url.Values {
 }
 // UNonce Setter
 // 二维码生成唯一标识
-func (r *AlibabaAisAssetsTagGetRequest) SetUNonce(uNonce string) error {
-    r.uNonce = uNonce
-    r.Set("u_nonce", uNonce)
+func (r *AlibabaAisAssetsTagGetRequest) SetUNonce(_uNonce string) error {
+    r._uNonce = _uNonce
+    r.Set("u_nonce", _uNonce)
     return nil
 }
 
 // UNonce Getter
 func (r AlibabaAisAssetsTagGetRequest) GetUNonce() string {
-    return r.uNonce
+    return r._uNonce
 }

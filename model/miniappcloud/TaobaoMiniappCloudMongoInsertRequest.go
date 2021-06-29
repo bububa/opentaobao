@@ -15,11 +15,11 @@ taobao.miniapp.cloud.mongo.insert
 type TaobaoMiniappCloudMongoInsertRequest struct {
     model.Params
     // 待插入的数据，JSON格式
-    record   string
+    _record   string
     // MongoDB表名
-    collection   string
+    _collection   string
     // 要操作的环境，默认是测试环境
-    env   string
+    _env   string
 }
 
 // 初始化TaobaoMiniappCloudMongoInsertRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoMiniappCloudMongoInsertRequest) GetApiParams() url.Values {
 }
 // Record Setter
 // 待插入的数据，JSON格式
-func (r *TaobaoMiniappCloudMongoInsertRequest) SetRecord(record string) error {
-    r.record = record
-    r.Set("record", record)
+func (r *TaobaoMiniappCloudMongoInsertRequest) SetRecord(_record string) error {
+    r._record = _record
+    r.Set("record", _record)
     return nil
 }
 
 // Record Getter
 func (r TaobaoMiniappCloudMongoInsertRequest) GetRecord() string {
-    return r.record
+    return r._record
 }
 // Collection Setter
 // MongoDB表名
-func (r *TaobaoMiniappCloudMongoInsertRequest) SetCollection(collection string) error {
-    r.collection = collection
-    r.Set("collection", collection)
+func (r *TaobaoMiniappCloudMongoInsertRequest) SetCollection(_collection string) error {
+    r._collection = _collection
+    r.Set("collection", _collection)
     return nil
 }
 
 // Collection Getter
 func (r TaobaoMiniappCloudMongoInsertRequest) GetCollection() string {
-    return r.collection
+    return r._collection
 }
 // Env Setter
 // 要操作的环境，默认是测试环境
-func (r *TaobaoMiniappCloudMongoInsertRequest) SetEnv(env string) error {
-    r.env = env
-    r.Set("env", env)
+func (r *TaobaoMiniappCloudMongoInsertRequest) SetEnv(_env string) error {
+    r._env = _env
+    r.Set("env", _env)
     return nil
 }
 
 // Env Getter
 func (r TaobaoMiniappCloudMongoInsertRequest) GetEnv() string {
-    return r.env
+    return r._env
 }

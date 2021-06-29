@@ -15,7 +15,7 @@ alibaba.nrs.item.rtdata.backflow
 type AlibabaNrsItemRtdataBackflowRequest struct {
     model.Params
     // 入参
-    rtItemPriceTagBackParam   *RtItemPriceTagBackParam
+    _rtItemPriceTagBackParam   *RtItemPriceTagBackParam
 }
 
 // 初始化AlibabaNrsItemRtdataBackflowRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNrsItemRtdataBackflowRequest) GetApiParams() url.Values {
 }
 // RtItemPriceTagBackParam Setter
 // 入参
-func (r *AlibabaNrsItemRtdataBackflowRequest) SetRtItemPriceTagBackParam(rtItemPriceTagBackParam *RtItemPriceTagBackParam) error {
-    r.rtItemPriceTagBackParam = rtItemPriceTagBackParam
-    r.Set("rt_item_price_tag_back_param", rtItemPriceTagBackParam)
+func (r *AlibabaNrsItemRtdataBackflowRequest) SetRtItemPriceTagBackParam(_rtItemPriceTagBackParam *RtItemPriceTagBackParam) error {
+    r._rtItemPriceTagBackParam = _rtItemPriceTagBackParam
+    r.Set("rt_item_price_tag_back_param", _rtItemPriceTagBackParam)
     return nil
 }
 
 // RtItemPriceTagBackParam Getter
 func (r AlibabaNrsItemRtdataBackflowRequest) GetRtItemPriceTagBackParam() *RtItemPriceTagBackParam {
-    return r.rtItemPriceTagBackParam
+    return r._rtItemPriceTagBackParam
 }

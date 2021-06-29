@@ -15,7 +15,7 @@ alibaba.seller.vendor.order.list
 type AlibabaSellerVendorOrderListRequest struct {
     model.Params
     // 查询参数
-    queryTradeDto   *QueryTradeDto
+    _queryTradeDto   *QueryTradeDto
 }
 
 // 初始化AlibabaSellerVendorOrderListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorOrderListRequest) GetApiParams() url.Values {
 }
 // QueryTradeDto Setter
 // 查询参数
-func (r *AlibabaSellerVendorOrderListRequest) SetQueryTradeDto(queryTradeDto *QueryTradeDto) error {
-    r.queryTradeDto = queryTradeDto
-    r.Set("query_trade_dto", queryTradeDto)
+func (r *AlibabaSellerVendorOrderListRequest) SetQueryTradeDto(_queryTradeDto *QueryTradeDto) error {
+    r._queryTradeDto = _queryTradeDto
+    r.Set("query_trade_dto", _queryTradeDto)
     return nil
 }
 
 // QueryTradeDto Getter
 func (r AlibabaSellerVendorOrderListRequest) GetQueryTradeDto() *QueryTradeDto {
-    return r.queryTradeDto
+    return r._queryTradeDto
 }

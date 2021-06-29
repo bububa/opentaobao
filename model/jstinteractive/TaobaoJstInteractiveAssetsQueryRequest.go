@@ -15,7 +15,7 @@ taobao.jst.interactive.assets.query
 type TaobaoJstInteractiveAssetsQueryRequest struct {
     model.Params
     // 小程序id
-    miniAppId   string
+    _miniAppId   string
 }
 
 // 初始化TaobaoJstInteractiveAssetsQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstInteractiveAssetsQueryRequest) GetApiParams() url.Values {
 }
 // MiniAppId Setter
 // 小程序id
-func (r *TaobaoJstInteractiveAssetsQueryRequest) SetMiniAppId(miniAppId string) error {
-    r.miniAppId = miniAppId
-    r.Set("mini_app_id", miniAppId)
+func (r *TaobaoJstInteractiveAssetsQueryRequest) SetMiniAppId(_miniAppId string) error {
+    r._miniAppId = _miniAppId
+    r.Set("mini_app_id", _miniAppId)
     return nil
 }
 
 // MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsQueryRequest) GetMiniAppId() string {
-    return r.miniAppId
+    return r._miniAppId
 }

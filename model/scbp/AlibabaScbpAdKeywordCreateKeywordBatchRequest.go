@@ -15,11 +15,11 @@ alibaba.scbp.ad.keyword.create.keyword.batch
 type AlibabaScbpAdKeywordCreateKeywordBatchRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 请求参数
-    keywordQuery   *KeywordQuery
+    _keywordQuery   *KeywordQuery
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdKeywordCreateKeywordBatchRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetApiParams() url.Values
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // KeywordQuery Setter
 // 请求参数
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetKeywordQuery(keywordQuery *KeywordQuery) error {
-    r.keywordQuery = keywordQuery
-    r.Set("keyword_query", keywordQuery)
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetKeywordQuery(_keywordQuery *KeywordQuery) error {
+    r._keywordQuery = _keywordQuery
+    r.Set("keyword_query", _keywordQuery)
     return nil
 }
 
 // KeywordQuery Getter
 func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetKeywordQuery() *KeywordQuery {
-    return r.keywordQuery
+    return r._keywordQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

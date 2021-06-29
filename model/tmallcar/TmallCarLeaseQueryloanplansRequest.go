@@ -15,9 +15,9 @@ tmall.car.lease.queryloanplans
 type TmallCarLeaseQueryloanplansRequest struct {
     model.Params
     // 合约编号
-    loanarno   string
+    _loanarno   string
     // 客户的角色编号
-    iproleid   string
+    _iproleid   string
 }
 
 // 初始化TmallCarLeaseQueryloanplansRequest对象
@@ -42,25 +42,25 @@ func (r TmallCarLeaseQueryloanplansRequest) GetApiParams() url.Values {
 }
 // Loanarno Setter
 // 合约编号
-func (r *TmallCarLeaseQueryloanplansRequest) SetLoanarno(loanarno string) error {
-    r.loanarno = loanarno
-    r.Set("loanarno", loanarno)
+func (r *TmallCarLeaseQueryloanplansRequest) SetLoanarno(_loanarno string) error {
+    r._loanarno = _loanarno
+    r.Set("loanarno", _loanarno)
     return nil
 }
 
 // Loanarno Getter
 func (r TmallCarLeaseQueryloanplansRequest) GetLoanarno() string {
-    return r.loanarno
+    return r._loanarno
 }
 // Iproleid Setter
 // 客户的角色编号
-func (r *TmallCarLeaseQueryloanplansRequest) SetIproleid(iproleid string) error {
-    r.iproleid = iproleid
-    r.Set("iproleid", iproleid)
+func (r *TmallCarLeaseQueryloanplansRequest) SetIproleid(_iproleid string) error {
+    r._iproleid = _iproleid
+    r.Set("iproleid", _iproleid)
     return nil
 }
 
 // Iproleid Getter
 func (r TmallCarLeaseQueryloanplansRequest) GetIproleid() string {
-    return r.iproleid
+    return r._iproleid
 }

@@ -15,7 +15,7 @@ alibaba.dutyfree.stock.query
 type AlibabaDutyfreeStockQueryRequest struct {
     model.Params
     // 条形码
-    barCode   string
+    _barCode   string
 }
 
 // 初始化AlibabaDutyfreeStockQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDutyfreeStockQueryRequest) GetApiParams() url.Values {
 }
 // BarCode Setter
 // 条形码
-func (r *AlibabaDutyfreeStockQueryRequest) SetBarCode(barCode string) error {
-    r.barCode = barCode
-    r.Set("bar_code", barCode)
+func (r *AlibabaDutyfreeStockQueryRequest) SetBarCode(_barCode string) error {
+    r._barCode = _barCode
+    r.Set("bar_code", _barCode)
     return nil
 }
 
 // BarCode Getter
 func (r AlibabaDutyfreeStockQueryRequest) GetBarCode() string {
-    return r.barCode
+    return r._barCode
 }

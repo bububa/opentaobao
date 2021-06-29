@@ -15,7 +15,7 @@ taobao.qimen.events.produce
 type TaobaoQimenEventsProduceRequest struct {
     model.Params
     // 奇门事件列表, 最多50条
-    messages   []QimenEvent
+    _messages   []QimenEvent
 }
 
 // 初始化TaobaoQimenEventsProduceRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenEventsProduceRequest) GetApiParams() url.Values {
 }
 // Messages Setter
 // 奇门事件列表, 最多50条
-func (r *TaobaoQimenEventsProduceRequest) SetMessages(messages []QimenEvent) error {
-    r.messages = messages
-    r.Set("messages", messages)
+func (r *TaobaoQimenEventsProduceRequest) SetMessages(_messages []QimenEvent) error {
+    r._messages = _messages
+    r.Set("messages", _messages)
     return nil
 }
 
 // Messages Getter
 func (r TaobaoQimenEventsProduceRequest) GetMessages() []QimenEvent {
-    return r.messages
+    return r._messages
 }

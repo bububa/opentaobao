@@ -15,11 +15,11 @@ alibaba.xiami.api.radio.songs.get
 type AlibabaXiamiApiRadioSongsGetRequest struct {
     model.Params
     // 电台类型
-    type   int64
+    _type   int64
     // 电台id
-    oid   int64
+    _oid   int64
     // 歌曲个数, 不传为20
-    limit   int64
+    _limit   int64
 }
 
 // 初始化AlibabaXiamiApiRadioSongsGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaXiamiApiRadioSongsGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 电台类型
-func (r *AlibabaXiamiApiRadioSongsGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaXiamiApiRadioSongsGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaXiamiApiRadioSongsGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // Oid Setter
 // 电台id
-func (r *AlibabaXiamiApiRadioSongsGetRequest) SetOid(oid int64) error {
-    r.oid = oid
-    r.Set("oid", oid)
+func (r *AlibabaXiamiApiRadioSongsGetRequest) SetOid(_oid int64) error {
+    r._oid = _oid
+    r.Set("oid", _oid)
     return nil
 }
 
 // Oid Getter
 func (r AlibabaXiamiApiRadioSongsGetRequest) GetOid() int64 {
-    return r.oid
+    return r._oid
 }
 // Limit Setter
 // 歌曲个数, 不传为20
-func (r *AlibabaXiamiApiRadioSongsGetRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *AlibabaXiamiApiRadioSongsGetRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r AlibabaXiamiApiRadioSongsGetRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }

@@ -15,13 +15,13 @@ tv支付预下单
 type TaobaoTvpayOrderPrecreateRequest struct {
     model.Params
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 订单详情
-    data   string
+    _data   string
     // 牌照方
-    license   string
+    _license   string
 }
 
 // 初始化TaobaoTvpayOrderPrecreateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTvpayOrderPrecreateRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayOrderPrecreateRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayOrderPrecreateRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayOrderPrecreateRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayOrderPrecreateRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayOrderPrecreateRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayOrderPrecreateRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // Data Setter
 // 订单详情
-func (r *TaobaoTvpayOrderPrecreateRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoTvpayOrderPrecreateRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoTvpayOrderPrecreateRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // License Setter
 // 牌照方
-func (r *TaobaoTvpayOrderPrecreateRequest) SetLicense(license string) error {
-    r.license = license
-    r.Set("license", license)
+func (r *TaobaoTvpayOrderPrecreateRequest) SetLicense(_license string) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r TaobaoTvpayOrderPrecreateRequest) GetLicense() string {
-    return r.license
+    return r._license
 }

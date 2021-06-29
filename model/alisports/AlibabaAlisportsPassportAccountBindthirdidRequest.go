@@ -15,17 +15,17 @@ alibaba.alisports.passport.account.bindthirdid
 type AlibabaAlisportsPassportAccountBindthirdidRequest struct {
     model.Params
     // 业务方appkey
-    alispAppKey   string
+    _alispAppKey   string
     // 时间戳精确到秒
-    alispTime   string
+    _alispTime   string
     // 接口签名
-    alispSign   string
+    _alispSign   string
     // 阿里体育用户ID
-    aliuid   string
+    _aliuid   string
     // 三方ID
-    appUid   string
+    _appUid   string
     // 手机号
-    mobile   string
+    _mobile   string
 }
 
 // 初始化AlibabaAlisportsPassportAccountBindthirdidRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetApiParams() url.Va
 }
 // AlispAppKey Setter
 // 业务方appkey
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispAppKey(alispAppKey string) error {
-    r.alispAppKey = alispAppKey
-    r.Set("alisp_app_key", alispAppKey)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispAppKey(_alispAppKey string) error {
+    r._alispAppKey = _alispAppKey
+    r.Set("alisp_app_key", _alispAppKey)
     return nil
 }
 
 // AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetAlispAppKey() string {
-    return r.alispAppKey
+    return r._alispAppKey
 }
 // AlispTime Setter
 // 时间戳精确到秒
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispTime(alispTime string) error {
-    r.alispTime = alispTime
-    r.Set("alisp_time", alispTime)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispTime(_alispTime string) error {
+    r._alispTime = _alispTime
+    r.Set("alisp_time", _alispTime)
     return nil
 }
 
 // AlispTime Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetAlispTime() string {
-    return r.alispTime
+    return r._alispTime
 }
 // AlispSign Setter
 // 接口签名
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispSign(alispSign string) error {
-    r.alispSign = alispSign
-    r.Set("alisp_sign", alispSign)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAlispSign(_alispSign string) error {
+    r._alispSign = _alispSign
+    r.Set("alisp_sign", _alispSign)
     return nil
 }
 
 // AlispSign Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetAlispSign() string {
-    return r.alispSign
+    return r._alispSign
 }
 // Aliuid Setter
 // 阿里体育用户ID
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAliuid(aliuid string) error {
-    r.aliuid = aliuid
-    r.Set("aliuid", aliuid)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAliuid(_aliuid string) error {
+    r._aliuid = _aliuid
+    r.Set("aliuid", _aliuid)
     return nil
 }
 
 // Aliuid Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetAliuid() string {
-    return r.aliuid
+    return r._aliuid
 }
 // AppUid Setter
 // 三方ID
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAppUid(appUid string) error {
-    r.appUid = appUid
-    r.Set("app_uid", appUid)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetAppUid(_appUid string) error {
+    r._appUid = _appUid
+    r.Set("app_uid", _appUid)
     return nil
 }
 
 // AppUid Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetAppUid() string {
-    return r.appUid
+    return r._appUid
 }
 // Mobile Setter
 // 手机号
-func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaAlisportsPassportAccountBindthirdidRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaAlisportsPassportAccountBindthirdidRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }

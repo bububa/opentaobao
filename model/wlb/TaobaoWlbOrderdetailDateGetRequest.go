@@ -15,13 +15,13 @@ taobao.wlb.orderdetail.date.get
 type TaobaoWlbOrderdetailDateGetRequest struct {
     model.Params
     // 创建时间起始
-    startTime   string
+    _startTime   string
     // 创建时间结束
-    endTime   string
+    _endTime   string
     // 分页大小
-    pageSize   int64
+    _pageSize   int64
     // 分页下标
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoWlbOrderdetailDateGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoWlbOrderdetailDateGetRequest) GetApiParams() url.Values {
 }
 // StartTime Setter
 // 创建时间起始
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoWlbOrderdetailDateGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoWlbOrderdetailDateGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 创建时间结束
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoWlbOrderdetailDateGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoWlbOrderdetailDateGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // PageSize Setter
 // 分页大小
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoWlbOrderdetailDateGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 分页下标
-func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoWlbOrderdetailDateGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoWlbOrderdetailDateGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

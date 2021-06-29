@@ -15,11 +15,11 @@ taobao.wlb.wms.sku.get
 type TaobaoWlbWmsSkuGetRequest struct {
     model.Params
     // 菜鸟商品ID,与itemcode必须有一个值不为空
-    itemCode   string
+    _itemCode   string
     // 商家商品编码,与itemid必须有一个值不为空
-    itemId   string
+    _itemId   string
     // 货主ID
-    ownerUserId   string
+    _ownerUserId   string
 }
 
 // 初始化TaobaoWlbWmsSkuGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoWlbWmsSkuGetRequest) GetApiParams() url.Values {
 }
 // ItemCode Setter
 // 菜鸟商品ID,与itemcode必须有一个值不为空
-func (r *TaobaoWlbWmsSkuGetRequest) SetItemCode(itemCode string) error {
-    r.itemCode = itemCode
-    r.Set("item_code", itemCode)
+func (r *TaobaoWlbWmsSkuGetRequest) SetItemCode(_itemCode string) error {
+    r._itemCode = _itemCode
+    r.Set("item_code", _itemCode)
     return nil
 }
 
 // ItemCode Getter
 func (r TaobaoWlbWmsSkuGetRequest) GetItemCode() string {
-    return r.itemCode
+    return r._itemCode
 }
 // ItemId Setter
 // 商家商品编码,与itemid必须有一个值不为空
-func (r *TaobaoWlbWmsSkuGetRequest) SetItemId(itemId string) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoWlbWmsSkuGetRequest) SetItemId(_itemId string) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoWlbWmsSkuGetRequest) GetItemId() string {
-    return r.itemId
+    return r._itemId
 }
 // OwnerUserId Setter
 // 货主ID
-func (r *TaobaoWlbWmsSkuGetRequest) SetOwnerUserId(ownerUserId string) error {
-    r.ownerUserId = ownerUserId
-    r.Set("owner_user_id", ownerUserId)
+func (r *TaobaoWlbWmsSkuGetRequest) SetOwnerUserId(_ownerUserId string) error {
+    r._ownerUserId = _ownerUserId
+    r.Set("owner_user_id", _ownerUserId)
     return nil
 }
 
 // OwnerUserId Getter
 func (r TaobaoWlbWmsSkuGetRequest) GetOwnerUserId() string {
-    return r.ownerUserId
+    return r._ownerUserId
 }

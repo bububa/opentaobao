@@ -15,7 +15,7 @@ alibaba.alihealth.booking.reserve.modify
 type AlibabaAlihealthBookingReserveModifyRequest struct {
     model.Params
     // modify
-    modify   *IsvReserveRequest
+    _modify   *IsvReserveRequest
 }
 
 // 初始化AlibabaAlihealthBookingReserveModifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveModifyRequest) GetApiParams() url.Values {
 }
 // Modify Setter
 // modify
-func (r *AlibabaAlihealthBookingReserveModifyRequest) SetModify(modify *IsvReserveRequest) error {
-    r.modify = modify
-    r.Set("modify", modify)
+func (r *AlibabaAlihealthBookingReserveModifyRequest) SetModify(_modify *IsvReserveRequest) error {
+    r._modify = _modify
+    r.Set("modify", _modify)
     return nil
 }
 
 // Modify Getter
 func (r AlibabaAlihealthBookingReserveModifyRequest) GetModify() *IsvReserveRequest {
-    return r.modify
+    return r._modify
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.codeseller.getuseraward
 type AlibabaAlihealthCodesellerGetuserawardRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaAlihealthCodesellerGetuserawardRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetApiParams() url.Values
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthCodesellerGetuserawardRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthCodesellerGetuserawardRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthCodesellerGetuserawardRequest) GetCode() string {
-    return r.code
+    return r._code
 }

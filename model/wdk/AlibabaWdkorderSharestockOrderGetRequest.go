@@ -15,7 +15,7 @@ alibaba.wdkorder.sharestock.order.get
 type AlibabaWdkorderSharestockOrderGetRequest struct {
     model.Params
     // 淘宝主订单ID
-    tbOrderId   int64
+    _tbOrderId   int64
 }
 
 // 初始化AlibabaWdkorderSharestockOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkorderSharestockOrderGetRequest) GetApiParams() url.Values {
 }
 // TbOrderId Setter
 // 淘宝主订单ID
-func (r *AlibabaWdkorderSharestockOrderGetRequest) SetTbOrderId(tbOrderId int64) error {
-    r.tbOrderId = tbOrderId
-    r.Set("tb_order_id", tbOrderId)
+func (r *AlibabaWdkorderSharestockOrderGetRequest) SetTbOrderId(_tbOrderId int64) error {
+    r._tbOrderId = _tbOrderId
+    r.Set("tb_order_id", _tbOrderId)
     return nil
 }
 
 // TbOrderId Getter
 func (r AlibabaWdkorderSharestockOrderGetRequest) GetTbOrderId() int64 {
-    return r.tbOrderId
+    return r._tbOrderId
 }

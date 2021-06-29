@@ -15,7 +15,7 @@ upsertOrderBySeller
 type TmallTraceplatformTicketOrderUploadRequest struct {
     model.Params
     // 上传小票参数
-    ticketOrder   *TicketOrderUpdator
+    _ticketOrder   *TicketOrderUpdator
 }
 
 // 初始化TmallTraceplatformTicketOrderUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallTraceplatformTicketOrderUploadRequest) GetApiParams() url.Values {
 }
 // TicketOrder Setter
 // 上传小票参数
-func (r *TmallTraceplatformTicketOrderUploadRequest) SetTicketOrder(ticketOrder *TicketOrderUpdator) error {
-    r.ticketOrder = ticketOrder
-    r.Set("ticket_order", ticketOrder)
+func (r *TmallTraceplatformTicketOrderUploadRequest) SetTicketOrder(_ticketOrder *TicketOrderUpdator) error {
+    r._ticketOrder = _ticketOrder
+    r.Set("ticket_order", _ticketOrder)
     return nil
 }
 
 // TicketOrder Getter
 func (r TmallTraceplatformTicketOrderUploadRequest) GetTicketOrder() *TicketOrderUpdator {
-    return r.ticketOrder
+    return r._ticketOrder
 }

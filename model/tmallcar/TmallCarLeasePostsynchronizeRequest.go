@@ -15,7 +15,7 @@ tmall.car.lease.postsynchronize
 type TmallCarLeasePostsynchronizeRequest struct {
     model.Params
     // 租后方案信息
-    schemeDto   *CarLeasePostSchemeSynchronizeDto
+    _schemeDto   *CarLeasePostSchemeSynchronizeDto
 }
 
 // 初始化TmallCarLeasePostsynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeasePostsynchronizeRequest) GetApiParams() url.Values {
 }
 // SchemeDto Setter
 // 租后方案信息
-func (r *TmallCarLeasePostsynchronizeRequest) SetSchemeDto(schemeDto *CarLeasePostSchemeSynchronizeDto) error {
-    r.schemeDto = schemeDto
-    r.Set("scheme_dto", schemeDto)
+func (r *TmallCarLeasePostsynchronizeRequest) SetSchemeDto(_schemeDto *CarLeasePostSchemeSynchronizeDto) error {
+    r._schemeDto = _schemeDto
+    r.Set("scheme_dto", _schemeDto)
     return nil
 }
 
 // SchemeDto Getter
 func (r TmallCarLeasePostsynchronizeRequest) GetSchemeDto() *CarLeasePostSchemeSynchronizeDto {
-    return r.schemeDto
+    return r._schemeDto
 }

@@ -15,7 +15,7 @@ taobao.wlb.item.map.get
 type TaobaoWlbItemMapGetRequest struct {
     model.Params
     // 要查询映射关系的物流宝商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoWlbItemMapGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbItemMapGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 要查询映射关系的物流宝商品id
-func (r *TaobaoWlbItemMapGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoWlbItemMapGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoWlbItemMapGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

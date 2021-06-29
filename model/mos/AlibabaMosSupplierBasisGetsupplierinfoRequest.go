@@ -15,7 +15,7 @@ alibaba.mos.supplier.basis.getsupplierinfo
 type AlibabaMosSupplierBasisGetsupplierinfoRequest struct {
     model.Params
     // 供应商id
-    supplierId   string
+    _supplierId   string
 }
 
 // 初始化AlibabaMosSupplierBasisGetsupplierinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetApiParams() url.Values
 }
 // SupplierId Setter
 // 供应商id
-func (r *AlibabaMosSupplierBasisGetsupplierinfoRequest) SetSupplierId(supplierId string) error {
-    r.supplierId = supplierId
-    r.Set("supplier_id", supplierId)
+func (r *AlibabaMosSupplierBasisGetsupplierinfoRequest) SetSupplierId(_supplierId string) error {
+    r._supplierId = _supplierId
+    r.Set("supplier_id", _supplierId)
     return nil
 }
 
 // SupplierId Getter
 func (r AlibabaMosSupplierBasisGetsupplierinfoRequest) GetSupplierId() string {
-    return r.supplierId
+    return r._supplierId
 }

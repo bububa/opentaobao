@@ -15,9 +15,9 @@ tmall.txcs.finance.verify.statement.bill
 type TmallTxcsFinanceVerifyStatementBillRequest struct {
     model.Params
     // 门店ID
-    ouCode   string
+    _ouCode   string
     // 核销单内容
-    verificationBillDTO   *VerificationBillDto
+    _verificationBillDTO   *VerificationBillDto
 }
 
 // 初始化TmallTxcsFinanceVerifyStatementBillRequest对象
@@ -42,25 +42,25 @@ func (r TmallTxcsFinanceVerifyStatementBillRequest) GetApiParams() url.Values {
 }
 // OuCode Setter
 // 门店ID
-func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r TmallTxcsFinanceVerifyStatementBillRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }
 // VerificationBillDTO Setter
 // 核销单内容
-func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetVerificationBillDTO(verificationBillDTO *VerificationBillDto) error {
-    r.verificationBillDTO = verificationBillDTO
-    r.Set("verification_bill_d_t_o", verificationBillDTO)
+func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDto) error {
+    r._verificationBillDTO = _verificationBillDTO
+    r.Set("verification_bill_d_t_o", _verificationBillDTO)
     return nil
 }
 
 // VerificationBillDTO Getter
 func (r TmallTxcsFinanceVerifyStatementBillRequest) GetVerificationBillDTO() *VerificationBillDto {
-    return r.verificationBillDTO
+    return r._verificationBillDTO
 }

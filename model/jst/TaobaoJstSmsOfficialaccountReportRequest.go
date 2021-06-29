@@ -15,7 +15,7 @@ taobao.jst.sms.officialaccount.report
 type TaobaoJstSmsOfficialaccountReportRequest struct {
     model.Params
     // 公众号信息上报接口入参
-    officialAccountInfoReportRequest   *OfficialAccountInfoReportRequest
+    _officialAccountInfoReportRequest   *OfficialAccountInfoReportRequest
 }
 
 // 初始化TaobaoJstSmsOfficialaccountReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountReportRequest) GetApiParams() url.Values {
 }
 // OfficialAccountInfoReportRequest Setter
 // 公众号信息上报接口入参
-func (r *TaobaoJstSmsOfficialaccountReportRequest) SetOfficialAccountInfoReportRequest(officialAccountInfoReportRequest *OfficialAccountInfoReportRequest) error {
-    r.officialAccountInfoReportRequest = officialAccountInfoReportRequest
-    r.Set("official_account_info_report_request", officialAccountInfoReportRequest)
+func (r *TaobaoJstSmsOfficialaccountReportRequest) SetOfficialAccountInfoReportRequest(_officialAccountInfoReportRequest *OfficialAccountInfoReportRequest) error {
+    r._officialAccountInfoReportRequest = _officialAccountInfoReportRequest
+    r.Set("official_account_info_report_request", _officialAccountInfoReportRequest)
     return nil
 }
 
 // OfficialAccountInfoReportRequest Getter
 func (r TaobaoJstSmsOfficialaccountReportRequest) GetOfficialAccountInfoReportRequest() *OfficialAccountInfoReportRequest {
-    return r.officialAccountInfoReportRequest
+    return r._officialAccountInfoReportRequest
 }

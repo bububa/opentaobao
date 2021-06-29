@@ -15,7 +15,7 @@ ISV活动页面创建修改
 type AlibabaLsyCrmActivityPageUpdateRequest struct {
     model.Params
     // 入参
-    nrtCrmActivityPageCreateReq   *NrtCrmActivityPageCreateReq
+    _nrtCrmActivityPageCreateReq   *NrtCrmActivityPageCreateReq
 }
 
 // 初始化AlibabaLsyCrmActivityPageUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityPageUpdateRequest) GetApiParams() url.Values {
 }
 // NrtCrmActivityPageCreateReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityPageUpdateRequest) SetNrtCrmActivityPageCreateReq(nrtCrmActivityPageCreateReq *NrtCrmActivityPageCreateReq) error {
-    r.nrtCrmActivityPageCreateReq = nrtCrmActivityPageCreateReq
-    r.Set("nrt_crm_activity_page_create_req", nrtCrmActivityPageCreateReq)
+func (r *AlibabaLsyCrmActivityPageUpdateRequest) SetNrtCrmActivityPageCreateReq(_nrtCrmActivityPageCreateReq *NrtCrmActivityPageCreateReq) error {
+    r._nrtCrmActivityPageCreateReq = _nrtCrmActivityPageCreateReq
+    r.Set("nrt_crm_activity_page_create_req", _nrtCrmActivityPageCreateReq)
     return nil
 }
 
 // NrtCrmActivityPageCreateReq Getter
 func (r AlibabaLsyCrmActivityPageUpdateRequest) GetNrtCrmActivityPageCreateReq() *NrtCrmActivityPageCreateReq {
-    return r.nrtCrmActivityPageCreateReq
+    return r._nrtCrmActivityPageCreateReq
 }

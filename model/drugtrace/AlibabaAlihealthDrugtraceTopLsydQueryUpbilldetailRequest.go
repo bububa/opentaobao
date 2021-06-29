@@ -15,9 +15,9 @@ alibaba.alihealth.drugtrace.top.lsyd.query.upbilldetail
 type AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest struct {
     model.Params
     // 单据号码
-    billCode   string
+    _billCode   string
     // 本企业refEntId
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) GetApiParams()
 }
 // BillCode Setter
 // 单据号码
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) SetBillCode(billCode string) error {
-    r.billCode = billCode
-    r.Set("bill_code", billCode)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) SetBillCode(_billCode string) error {
+    r._billCode = _billCode
+    r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) GetBillCode() string {
-    return r.billCode
+    return r._billCode
 }
 // RefEntId Setter
 // 本企业refEntId
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryUpbilldetailRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

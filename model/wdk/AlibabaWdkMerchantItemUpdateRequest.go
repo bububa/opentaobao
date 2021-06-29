@@ -15,11 +15,11 @@ alibaba.wdk.merchant.item.update
 type AlibabaWdkMerchantItemUpdateRequest struct {
     model.Params
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 门店编码
-    merchantCode   string
+    _merchantCode   string
     // 修改字段的json
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaWdkMerchantItemUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkMerchantItemUpdateRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkMerchantItemUpdateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkMerchantItemUpdateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkMerchantItemUpdateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // MerchantCode Setter
 // 门店编码
-func (r *AlibabaWdkMerchantItemUpdateRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaWdkMerchantItemUpdateRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaWdkMerchantItemUpdateRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // Params Setter
 // 修改字段的json
-func (r *AlibabaWdkMerchantItemUpdateRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaWdkMerchantItemUpdateRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaWdkMerchantItemUpdateRequest) GetParams() string {
-    return r.params
+    return r._params
 }

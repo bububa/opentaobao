@@ -15,7 +15,7 @@ A006_INVALID_ACCOUNT_INFO
 type AliexpressTradeBuyPlaceorderRequest struct {
     model.Params
     // 下单具体参数
-    paramPlaceOrderRequest4OpenApiDTO   *PlaceOrderRequest4OpenApiDto
+    _paramPlaceOrderRequest4OpenApiDTO   *PlaceOrderRequest4OpenApiDto
 }
 
 // 初始化AliexpressTradeBuyPlaceorderRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressTradeBuyPlaceorderRequest) GetApiParams() url.Values {
 }
 // ParamPlaceOrderRequest4OpenApiDTO Setter
 // 下单具体参数
-func (r *AliexpressTradeBuyPlaceorderRequest) SetParamPlaceOrderRequest4OpenApiDTO(paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDto) error {
-    r.paramPlaceOrderRequest4OpenApiDTO = paramPlaceOrderRequest4OpenApiDTO
-    r.Set("param_place_order_request4_open_api_d_t_o", paramPlaceOrderRequest4OpenApiDTO)
+func (r *AliexpressTradeBuyPlaceorderRequest) SetParamPlaceOrderRequest4OpenApiDTO(_paramPlaceOrderRequest4OpenApiDTO *PlaceOrderRequest4OpenApiDto) error {
+    r._paramPlaceOrderRequest4OpenApiDTO = _paramPlaceOrderRequest4OpenApiDTO
+    r.Set("param_place_order_request4_open_api_d_t_o", _paramPlaceOrderRequest4OpenApiDTO)
     return nil
 }
 
 // ParamPlaceOrderRequest4OpenApiDTO Getter
 func (r AliexpressTradeBuyPlaceorderRequest) GetParamPlaceOrderRequest4OpenApiDTO() *PlaceOrderRequest4OpenApiDto {
-    return r.paramPlaceOrderRequest4OpenApiDTO
+    return r._paramPlaceOrderRequest4OpenApiDTO
 }

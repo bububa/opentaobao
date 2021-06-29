@@ -15,7 +15,7 @@ alibaba.damai.maitix.order.cancel
 type AlibabaDamaiMaitixOrderCancelRequest struct {
     model.Params
     // 库存释放入参
-    param   *MoaUnlockTicketParam
+    _param   *MoaUnlockTicketParam
 }
 
 // 初始化AlibabaDamaiMaitixOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderCancelRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 库存释放入参
-func (r *AlibabaDamaiMaitixOrderCancelRequest) SetParam(param *MoaUnlockTicketParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixOrderCancelRequest) SetParam(_param *MoaUnlockTicketParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixOrderCancelRequest) GetParam() *MoaUnlockTicketParam {
-    return r.param
+    return r._param
 }

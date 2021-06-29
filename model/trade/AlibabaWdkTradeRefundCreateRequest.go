@@ -15,7 +15,7 @@ alibaba.wdk.trade.refund.create
 type AlibabaWdkTradeRefundCreateRequest struct {
     model.Params
     // 退货请求
-    refundGoodsCreateRequest   *RefundGoodsCreateRequest
+    _refundGoodsCreateRequest   *RefundGoodsCreateRequest
 }
 
 // 初始化AlibabaWdkTradeRefundCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeRefundCreateRequest) GetApiParams() url.Values {
 }
 // RefundGoodsCreateRequest Setter
 // 退货请求
-func (r *AlibabaWdkTradeRefundCreateRequest) SetRefundGoodsCreateRequest(refundGoodsCreateRequest *RefundGoodsCreateRequest) error {
-    r.refundGoodsCreateRequest = refundGoodsCreateRequest
-    r.Set("refund_goods_create_request", refundGoodsCreateRequest)
+func (r *AlibabaWdkTradeRefundCreateRequest) SetRefundGoodsCreateRequest(_refundGoodsCreateRequest *RefundGoodsCreateRequest) error {
+    r._refundGoodsCreateRequest = _refundGoodsCreateRequest
+    r.Set("refund_goods_create_request", _refundGoodsCreateRequest)
     return nil
 }
 
 // RefundGoodsCreateRequest Getter
 func (r AlibabaWdkTradeRefundCreateRequest) GetRefundGoodsCreateRequest() *RefundGoodsCreateRequest {
-    return r.refundGoodsCreateRequest
+    return r._refundGoodsCreateRequest
 }

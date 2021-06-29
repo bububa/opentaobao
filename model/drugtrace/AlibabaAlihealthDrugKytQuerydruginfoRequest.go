@@ -15,11 +15,11 @@ alibaba.alihealth.drug.kyt.querydruginfo
 type AlibabaAlihealthDrugKytQuerydruginfoRequest struct {
     model.Params
     // 码列表
-    codeList   []string
+    _codeList   []string
     // 物流企业refentid
-    wuliuRefEntId   string
+    _wuliuRefEntId   string
     // 生产企业refentid
-    huozhuRefEntId   string
+    _huozhuRefEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytQuerydruginfoRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetApiParams() url.Values {
 }
 // CodeList Setter
 // 码列表
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetCodeList(codeList []string) error {
-    r.codeList = codeList
-    r.Set("code_list", codeList)
+func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetCodeList(_codeList []string) error {
+    r._codeList = _codeList
+    r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
 func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetCodeList() []string {
-    return r.codeList
+    return r._codeList
 }
 // WuliuRefEntId Setter
 // 物流企业refentid
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetWuliuRefEntId(wuliuRefEntId string) error {
-    r.wuliuRefEntId = wuliuRefEntId
-    r.Set("wuliu_ref_ent_id", wuliuRefEntId)
+func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetWuliuRefEntId(_wuliuRefEntId string) error {
+    r._wuliuRefEntId = _wuliuRefEntId
+    r.Set("wuliu_ref_ent_id", _wuliuRefEntId)
     return nil
 }
 
 // WuliuRefEntId Getter
 func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetWuliuRefEntId() string {
-    return r.wuliuRefEntId
+    return r._wuliuRefEntId
 }
 // HuozhuRefEntId Setter
 // 生产企业refentid
-func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetHuozhuRefEntId(huozhuRefEntId string) error {
-    r.huozhuRefEntId = huozhuRefEntId
-    r.Set("huozhu_ref_ent_id", huozhuRefEntId)
+func (r *AlibabaAlihealthDrugKytQuerydruginfoRequest) SetHuozhuRefEntId(_huozhuRefEntId string) error {
+    r._huozhuRefEntId = _huozhuRefEntId
+    r.Set("huozhu_ref_ent_id", _huozhuRefEntId)
     return nil
 }
 
 // HuozhuRefEntId Getter
 func (r AlibabaAlihealthDrugKytQuerydruginfoRequest) GetHuozhuRefEntId() string {
-    return r.huozhuRefEntId
+    return r._huozhuRefEntId
 }

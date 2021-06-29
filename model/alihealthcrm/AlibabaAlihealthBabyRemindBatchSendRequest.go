@@ -15,9 +15,9 @@ alibaba.alihealth.baby.remind.batch.send
 type AlibabaAlihealthBabyRemindBatchSendRequest struct {
     model.Params
     // 批量发送提醒
-    batchRemindRequests   []BatchRemindRequestDto
+    _batchRemindRequests   []BatchRemindRequestDto
     // 提醒类型：1-每日任务，2-疫苗提醒，3-产检提醒
-    remindType   int64
+    _remindType   int64
 }
 
 // 初始化AlibabaAlihealthBabyRemindBatchSendRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthBabyRemindBatchSendRequest) GetApiParams() url.Values {
 }
 // BatchRemindRequests Setter
 // 批量发送提醒
-func (r *AlibabaAlihealthBabyRemindBatchSendRequest) SetBatchRemindRequests(batchRemindRequests []BatchRemindRequestDto) error {
-    r.batchRemindRequests = batchRemindRequests
-    r.Set("batch_remind_requests", batchRemindRequests)
+func (r *AlibabaAlihealthBabyRemindBatchSendRequest) SetBatchRemindRequests(_batchRemindRequests []BatchRemindRequestDto) error {
+    r._batchRemindRequests = _batchRemindRequests
+    r.Set("batch_remind_requests", _batchRemindRequests)
     return nil
 }
 
 // BatchRemindRequests Getter
 func (r AlibabaAlihealthBabyRemindBatchSendRequest) GetBatchRemindRequests() []BatchRemindRequestDto {
-    return r.batchRemindRequests
+    return r._batchRemindRequests
 }
 // RemindType Setter
 // 提醒类型：1-每日任务，2-疫苗提醒，3-产检提醒
-func (r *AlibabaAlihealthBabyRemindBatchSendRequest) SetRemindType(remindType int64) error {
-    r.remindType = remindType
-    r.Set("remind_type", remindType)
+func (r *AlibabaAlihealthBabyRemindBatchSendRequest) SetRemindType(_remindType int64) error {
+    r._remindType = _remindType
+    r.Set("remind_type", _remindType)
     return nil
 }
 
 // RemindType Getter
 func (r AlibabaAlihealthBabyRemindBatchSendRequest) GetRemindType() int64 {
-    return r.remindType
+    return r._remindType
 }

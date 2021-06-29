@@ -15,7 +15,7 @@ taobao.jst.sms.message.shorturl.query
 type TaobaoJstSmsMessageShorturlQueryRequest struct {
     model.Params
     // 短链名，即域名后的字符串
-    shortName   string
+    _shortName   string
 }
 
 // 初始化TaobaoJstSmsMessageShorturlQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsMessageShorturlQueryRequest) GetApiParams() url.Values {
 }
 // ShortName Setter
 // 短链名，即域名后的字符串
-func (r *TaobaoJstSmsMessageShorturlQueryRequest) SetShortName(shortName string) error {
-    r.shortName = shortName
-    r.Set("short_name", shortName)
+func (r *TaobaoJstSmsMessageShorturlQueryRequest) SetShortName(_shortName string) error {
+    r._shortName = _shortName
+    r.Set("short_name", _shortName)
     return nil
 }
 
 // ShortName Getter
 func (r TaobaoJstSmsMessageShorturlQueryRequest) GetShortName() string {
-    return r.shortName
+    return r._shortName
 }

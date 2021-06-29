@@ -15,11 +15,11 @@ taobao.alitrip.travel.item.sku.package.modify
 type TaobaoAlitripTravelItemSkuPackageModifyRequest struct {
     model.Params
     // 商品id。itemId和outProductId至少填写一个
-    itemId   int64
+    _itemId   int64
     // 商品 外部商家编码。itemId和outProductId至少填写一个
-    outProductId   string
+    _outProductId   string
     // 商品日历价格库存套餐
-    skus   []ItemSkuInfo
+    _skus   []ItemSkuInfo
 }
 
 // 初始化TaobaoAlitripTravelItemSkuPackageModifyRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripTravelItemSkuPackageModifyRequest) GetApiParams() url.Value
 }
 // ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetOutProductId(outProductId string) error {
-    r.outProductId = outProductId
-    r.Set("out_product_id", outProductId)
+func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetOutProductId(_outProductId string) error {
+    r._outProductId = _outProductId
+    r.Set("out_product_id", _outProductId)
     return nil
 }
 
 // OutProductId Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyRequest) GetOutProductId() string {
-    return r.outProductId
+    return r._outProductId
 }
 // Skus Setter
 // 商品日历价格库存套餐
-func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetSkus(skus []ItemSkuInfo) error {
-    r.skus = skus
-    r.Set("skus", skus)
+func (r *TaobaoAlitripTravelItemSkuPackageModifyRequest) SetSkus(_skus []ItemSkuInfo) error {
+    r._skus = _skus
+    r.Set("skus", _skus)
     return nil
 }
 
 // Skus Getter
 func (r TaobaoAlitripTravelItemSkuPackageModifyRequest) GetSkus() []ItemSkuInfo {
-    return r.skus
+    return r._skus
 }

@@ -15,7 +15,7 @@ alibaba.alsc.saas.codec.code.attrs.query
 type AlibabaAlscSaasCodecCodeAttrsQueryRequest struct {
     model.Params
     // 请求入参
-    queryCodeRequest   *QueryCodeBizAttrRequest
+    _queryCodeRequest   *QueryCodeBizAttrRequest
 }
 
 // 初始化AlibabaAlscSaasCodecCodeAttrsQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetApiParams() url.Values {
 }
 // QueryCodeRequest Setter
 // 请求入参
-func (r *AlibabaAlscSaasCodecCodeAttrsQueryRequest) SetQueryCodeRequest(queryCodeRequest *QueryCodeBizAttrRequest) error {
-    r.queryCodeRequest = queryCodeRequest
-    r.Set("query_code_request", queryCodeRequest)
+func (r *AlibabaAlscSaasCodecCodeAttrsQueryRequest) SetQueryCodeRequest(_queryCodeRequest *QueryCodeBizAttrRequest) error {
+    r._queryCodeRequest = _queryCodeRequest
+    r.Set("query_code_request", _queryCodeRequest)
     return nil
 }
 
 // QueryCodeRequest Getter
 func (r AlibabaAlscSaasCodecCodeAttrsQueryRequest) GetQueryCodeRequest() *QueryCodeBizAttrRequest {
-    return r.queryCodeRequest
+    return r._queryCodeRequest
 }

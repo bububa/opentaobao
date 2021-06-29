@@ -15,7 +15,7 @@ agent注册是，需要交易用户填写的agentId是否有效
 type AlibabaEinvoiceIncomeAgentCheckRequest struct {
     model.Params
     // 阿里发票平台分配的agentId
-    agentId   string
+    _agentId   string
 }
 
 // 初始化AlibabaEinvoiceIncomeAgentCheckRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 阿里发票平台分配的agentId
-func (r *AlibabaEinvoiceIncomeAgentCheckRequest) SetAgentId(agentId string) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlibabaEinvoiceIncomeAgentCheckRequest) SetAgentId(_agentId string) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlibabaEinvoiceIncomeAgentCheckRequest) GetAgentId() string {
-    return r.agentId
+    return r._agentId
 }

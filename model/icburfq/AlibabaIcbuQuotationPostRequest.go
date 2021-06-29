@@ -15,9 +15,9 @@ alibaba.icbu.quotation.post
 type AlibabaIcbuQuotationPostRequest struct {
     model.Params
     // 验证
-    md5key   string
+    _md5key   string
     // 报价DTO
-    dto   *RfqQuotationRemoteDto
+    _dto   *RfqQuotationRemoteDto
 }
 
 // 初始化AlibabaIcbuQuotationPostRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIcbuQuotationPostRequest) GetApiParams() url.Values {
 }
 // Md5key Setter
 // 验证
-func (r *AlibabaIcbuQuotationPostRequest) SetMd5key(md5key string) error {
-    r.md5key = md5key
-    r.Set("md5key", md5key)
+func (r *AlibabaIcbuQuotationPostRequest) SetMd5key(_md5key string) error {
+    r._md5key = _md5key
+    r.Set("md5key", _md5key)
     return nil
 }
 
 // Md5key Getter
 func (r AlibabaIcbuQuotationPostRequest) GetMd5key() string {
-    return r.md5key
+    return r._md5key
 }
 // Dto Setter
 // 报价DTO
-func (r *AlibabaIcbuQuotationPostRequest) SetDto(dto *RfqQuotationRemoteDto) error {
-    r.dto = dto
-    r.Set("dto", dto)
+func (r *AlibabaIcbuQuotationPostRequest) SetDto(_dto *RfqQuotationRemoteDto) error {
+    r._dto = _dto
+    r.Set("dto", _dto)
     return nil
 }
 
 // Dto Getter
 func (r AlibabaIcbuQuotationPostRequest) GetDto() *RfqQuotationRemoteDto {
-    return r.dto
+    return r._dto
 }

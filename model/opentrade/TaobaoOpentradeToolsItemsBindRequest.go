@@ -15,9 +15,9 @@ taobao.opentrade.tools.items.bind
 type TaobaoOpentradeToolsItemsBindRequest struct {
     model.Params
     // 绑定交易开放场景的C端小程序ID
-    miniappId   int64
+    _miniappId   int64
     // 待绑定商品id
-    itemIds   []int64
+    _itemIds   []int64
 }
 
 // 初始化TaobaoOpentradeToolsItemsBindRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpentradeToolsItemsBindRequest) GetApiParams() url.Values {
 }
 // MiniappId Setter
 // 绑定交易开放场景的C端小程序ID
-func (r *TaobaoOpentradeToolsItemsBindRequest) SetMiniappId(miniappId int64) error {
-    r.miniappId = miniappId
-    r.Set("miniapp_id", miniappId)
+func (r *TaobaoOpentradeToolsItemsBindRequest) SetMiniappId(_miniappId int64) error {
+    r._miniappId = _miniappId
+    r.Set("miniapp_id", _miniappId)
     return nil
 }
 
 // MiniappId Getter
 func (r TaobaoOpentradeToolsItemsBindRequest) GetMiniappId() int64 {
-    return r.miniappId
+    return r._miniappId
 }
 // ItemIds Setter
 // 待绑定商品id
-func (r *TaobaoOpentradeToolsItemsBindRequest) SetItemIds(itemIds []int64) error {
-    r.itemIds = itemIds
-    r.Set("item_ids", itemIds)
+func (r *TaobaoOpentradeToolsItemsBindRequest) SetItemIds(_itemIds []int64) error {
+    r._itemIds = _itemIds
+    r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
 func (r TaobaoOpentradeToolsItemsBindRequest) GetItemIds() []int64 {
-    return r.itemIds
+    return r._itemIds
 }

@@ -15,7 +15,7 @@ PO反馈接口
 type AlibabaPurSupplierPorespcreateRequest struct {
     model.Params
     // PO反馈信息
-    poResponse   []SupplierPoResponseDO
+    _poResponse   []SupplierPoResponseDO
 }
 
 // 初始化AlibabaPurSupplierPorespcreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurSupplierPorespcreateRequest) GetApiParams() url.Values {
 }
 // PoResponse Setter
 // PO反馈信息
-func (r *AlibabaPurSupplierPorespcreateRequest) SetPoResponse(poResponse []SupplierPoResponseDO) error {
-    r.poResponse = poResponse
-    r.Set("po_response", poResponse)
+func (r *AlibabaPurSupplierPorespcreateRequest) SetPoResponse(_poResponse []SupplierPoResponseDO) error {
+    r._poResponse = _poResponse
+    r.Set("po_response", _poResponse)
     return nil
 }
 
 // PoResponse Getter
 func (r AlibabaPurSupplierPorespcreateRequest) GetPoResponse() []SupplierPoResponseDO {
-    return r.poResponse
+    return r._poResponse
 }

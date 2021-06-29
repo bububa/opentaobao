@@ -15,7 +15,7 @@ alibaba.idle.recycle.order.perform
 type AlibabaIdleRecycleOrderPerformRequest struct {
     model.Params
     // 参数
-    param0   *RecycleOrderSynDto
+    _param0   *RecycleOrderSynDto
 }
 
 // 初始化AlibabaIdleRecycleOrderPerformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleOrderPerformRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 参数
-func (r *AlibabaIdleRecycleOrderPerformRequest) SetParam0(param0 *RecycleOrderSynDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaIdleRecycleOrderPerformRequest) SetParam0(_param0 *RecycleOrderSynDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaIdleRecycleOrderPerformRequest) GetParam0() *RecycleOrderSynDto {
-    return r.param0
+    return r._param0
 }

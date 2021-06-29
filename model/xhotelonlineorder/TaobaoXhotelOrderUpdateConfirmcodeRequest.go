@@ -15,7 +15,7 @@ taobao.xhotel.order.update.confirmcode
 type TaobaoXhotelOrderUpdateConfirmcodeRequest struct {
     model.Params
     // 系统入参
-    param   *UpdateOrderConfirmCodeParam
+    _param   *UpdateOrderConfirmCodeParam
 }
 
 // 初始化TaobaoXhotelOrderUpdateConfirmcodeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 系统入参
-func (r *TaobaoXhotelOrderUpdateConfirmcodeRequest) SetParam(param *UpdateOrderConfirmCodeParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoXhotelOrderUpdateConfirmcodeRequest) SetParam(_param *UpdateOrderConfirmCodeParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetParam() *UpdateOrderConfirmCodeParam {
-    return r.param
+    return r._param
 }

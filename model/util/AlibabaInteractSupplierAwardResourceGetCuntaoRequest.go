@@ -15,13 +15,13 @@ alibaba.interact.supplier.award.resource.get.cuntao
 type AlibabaInteractSupplierAwardResourceGetCuntaoRequest struct {
     model.Params
     // 用户昵称
-    userNick   string
+    _userNick   string
     // 活动code
-    activityKey   string
+    _activityKey   string
     // 经度
-    lng   string
+    _lng   string
     // 纬度
-    lat   string
+    _lat   string
 }
 
 // 初始化AlibabaInteractSupplierAwardResourceGetCuntaoRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetApiParams() url
 }
 // UserNick Setter
 // 用户昵称
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }
 // ActivityKey Setter
 // 活动code
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetActivityKey(activityKey string) error {
-    r.activityKey = activityKey
-    r.Set("activity_key", activityKey)
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetActivityKey(_activityKey string) error {
+    r._activityKey = _activityKey
+    r.Set("activity_key", _activityKey)
     return nil
 }
 
 // ActivityKey Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetActivityKey() string {
-    return r.activityKey
+    return r._activityKey
 }
 // Lng Setter
 // 经度
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLng(lng string) error {
-    r.lng = lng
-    r.Set("lng", lng)
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLng(_lng string) error {
+    r._lng = _lng
+    r.Set("lng", _lng)
     return nil
 }
 
 // Lng Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetLng() string {
-    return r.lng
+    return r._lng
 }
 // Lat Setter
 // 纬度
-func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLat(lat string) error {
-    r.lat = lat
-    r.Set("lat", lat)
+func (r *AlibabaInteractSupplierAwardResourceGetCuntaoRequest) SetLat(_lat string) error {
+    r._lat = _lat
+    r.Set("lat", _lat)
     return nil
 }
 
 // Lat Getter
 func (r AlibabaInteractSupplierAwardResourceGetCuntaoRequest) GetLat() string {
-    return r.lat
+    return r._lat
 }

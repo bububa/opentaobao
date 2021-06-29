@@ -15,7 +15,7 @@ alibaba.wdk.bm.paiyang.stat.data.query
 type AlibabaWdkBmPaiyangStatDataQueryRequest struct {
     model.Params
     // 入参对象
-    param   *PaiyangStatDataParam
+    _param   *PaiyangStatDataParam
 }
 
 // 初始化AlibabaWdkBmPaiyangStatDataQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AlibabaWdkBmPaiyangStatDataQueryRequest) SetParam(param *PaiyangStatDataParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkBmPaiyangStatDataQueryRequest) SetParam(_param *PaiyangStatDataParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkBmPaiyangStatDataQueryRequest) GetParam() *PaiyangStatDataParam {
-    return r.param
+    return r._param
 }

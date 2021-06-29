@@ -15,7 +15,7 @@ taobao.caipiao.present.stat.get
 type TaobaoCaipiaoPresentStatGetRequest struct {
     model.Params
     // 指定查询的天数，从当前日期（不包括当前日期）向前推算的天数，可为空。如果为空、0、负数或者大于90天，则设置为默认的90天。举例：当天是20120703， days=2， 则统计数据的日期为：20120702，20120701.
-    days   int64
+    _days   int64
 }
 
 // 初始化TaobaoCaipiaoPresentStatGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCaipiaoPresentStatGetRequest) GetApiParams() url.Values {
 }
 // Days Setter
 // 指定查询的天数，从当前日期（不包括当前日期）向前推算的天数，可为空。如果为空、0、负数或者大于90天，则设置为默认的90天。举例：当天是20120703， days=2， 则统计数据的日期为：20120702，20120701.
-func (r *TaobaoCaipiaoPresentStatGetRequest) SetDays(days int64) error {
-    r.days = days
-    r.Set("days", days)
+func (r *TaobaoCaipiaoPresentStatGetRequest) SetDays(_days int64) error {
+    r._days = _days
+    r.Set("days", _days)
     return nil
 }
 
 // Days Getter
 func (r TaobaoCaipiaoPresentStatGetRequest) GetDays() int64 {
-    return r.days
+    return r._days
 }

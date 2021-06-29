@@ -15,7 +15,7 @@ alibaba.einvoice.invoiceapply.get
 type AlibabaEinvoiceInvoiceapplyGetRequest struct {
     model.Params
     // 开票申请id
-    applyId   string
+    _applyId   string
 }
 
 // 初始化AlibabaEinvoiceInvoiceapplyGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceInvoiceapplyGetRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 开票申请id
-func (r *AlibabaEinvoiceInvoiceapplyGetRequest) SetApplyId(applyId string) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlibabaEinvoiceInvoiceapplyGetRequest) SetApplyId(_applyId string) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlibabaEinvoiceInvoiceapplyGetRequest) GetApplyId() string {
-    return r.applyId
+    return r._applyId
 }

@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.current.rawpo.get
 type AlibabaTmallgenieScpPlanCurrentRawpoGetRequest struct {
     model.Params
     // 系统自动生成
-    paramRequest   *AbstractRequest
+    _paramRequest   *AbstractRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanCurrentRawpoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanCurrentRawpoGetRequest) GetApiParams() url.Value
 }
 // ParamRequest Setter
 // 系统自动生成
-func (r *AlibabaTmallgenieScpPlanCurrentRawpoGetRequest) SetParamRequest(paramRequest *AbstractRequest) error {
-    r.paramRequest = paramRequest
-    r.Set("param_request", paramRequest)
+func (r *AlibabaTmallgenieScpPlanCurrentRawpoGetRequest) SetParamRequest(_paramRequest *AbstractRequest) error {
+    r._paramRequest = _paramRequest
+    r.Set("param_request", _paramRequest)
     return nil
 }
 
 // ParamRequest Getter
 func (r AlibabaTmallgenieScpPlanCurrentRawpoGetRequest) GetParamRequest() *AbstractRequest {
-    return r.paramRequest
+    return r._paramRequest
 }

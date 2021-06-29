@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.dialog.list
 type YunosTvpubadminManageDialogListRequest struct {
     model.Params
     // 查询的query参数
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminManageDialogListRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogListRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询的query参数
-func (r *YunosTvpubadminManageDialogListRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminManageDialogListRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminManageDialogListRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

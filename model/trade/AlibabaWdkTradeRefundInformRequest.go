@@ -15,7 +15,7 @@ alibaba.wdk.trade.refund.inform
 type AlibabaWdkTradeRefundInformRequest struct {
     model.Params
     // 通知退款成功请求
-    informRefundSuccessRequest   *InformRefundSuccessRequest
+    _informRefundSuccessRequest   *InformRefundSuccessRequest
 }
 
 // 初始化AlibabaWdkTradeRefundInformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeRefundInformRequest) GetApiParams() url.Values {
 }
 // InformRefundSuccessRequest Setter
 // 通知退款成功请求
-func (r *AlibabaWdkTradeRefundInformRequest) SetInformRefundSuccessRequest(informRefundSuccessRequest *InformRefundSuccessRequest) error {
-    r.informRefundSuccessRequest = informRefundSuccessRequest
-    r.Set("inform_refund_success_request", informRefundSuccessRequest)
+func (r *AlibabaWdkTradeRefundInformRequest) SetInformRefundSuccessRequest(_informRefundSuccessRequest *InformRefundSuccessRequest) error {
+    r._informRefundSuccessRequest = _informRefundSuccessRequest
+    r.Set("inform_refund_success_request", _informRefundSuccessRequest)
     return nil
 }
 
 // InformRefundSuccessRequest Getter
 func (r AlibabaWdkTradeRefundInformRequest) GetInformRefundSuccessRequest() *InformRefundSuccessRequest {
-    return r.informRefundSuccessRequest
+    return r._informRefundSuccessRequest
 }

@@ -15,13 +15,13 @@ taobao.sebp.isv.user.check
 type TaobaoSebpIsvUserCheckRequest struct {
     model.Params
     // 淘宝账号
-    userName   string
+    _userName   string
     // 姓名
-    name   string
+    _name   string
     // 证件号
-    identity   string
+    _identity   string
     // 支付宝账号
-    alipay   string
+    _alipay   string
 }
 
 // 初始化TaobaoSebpIsvUserCheckRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSebpIsvUserCheckRequest) GetApiParams() url.Values {
 }
 // UserName Setter
 // 淘宝账号
-func (r *TaobaoSebpIsvUserCheckRequest) SetUserName(userName string) error {
-    r.userName = userName
-    r.Set("user_name", userName)
+func (r *TaobaoSebpIsvUserCheckRequest) SetUserName(_userName string) error {
+    r._userName = _userName
+    r.Set("user_name", _userName)
     return nil
 }
 
 // UserName Getter
 func (r TaobaoSebpIsvUserCheckRequest) GetUserName() string {
-    return r.userName
+    return r._userName
 }
 // Name Setter
 // 姓名
-func (r *TaobaoSebpIsvUserCheckRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoSebpIsvUserCheckRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoSebpIsvUserCheckRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Identity Setter
 // 证件号
-func (r *TaobaoSebpIsvUserCheckRequest) SetIdentity(identity string) error {
-    r.identity = identity
-    r.Set("identity", identity)
+func (r *TaobaoSebpIsvUserCheckRequest) SetIdentity(_identity string) error {
+    r._identity = _identity
+    r.Set("identity", _identity)
     return nil
 }
 
 // Identity Getter
 func (r TaobaoSebpIsvUserCheckRequest) GetIdentity() string {
-    return r.identity
+    return r._identity
 }
 // Alipay Setter
 // 支付宝账号
-func (r *TaobaoSebpIsvUserCheckRequest) SetAlipay(alipay string) error {
-    r.alipay = alipay
-    r.Set("alipay", alipay)
+func (r *TaobaoSebpIsvUserCheckRequest) SetAlipay(_alipay string) error {
+    r._alipay = _alipay
+    r.Set("alipay", _alipay)
     return nil
 }
 
 // Alipay Getter
 func (r TaobaoSebpIsvUserCheckRequest) GetAlipay() string {
-    return r.alipay
+    return r._alipay
 }

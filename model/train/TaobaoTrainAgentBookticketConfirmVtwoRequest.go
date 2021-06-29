@@ -15,45 +15,45 @@ taobao.train.agent.bookticket.confirm.vtwo
 type TaobaoTrainAgentBookticketConfirmVtwoRequest struct {
     model.Params
     // 错误的子订单号123434,123432
-    subOrderId   string
+    _subOrderId   string
     // 是否支持在线退改签
-    canChange   bool
+    _canChange   bool
     // 主订单id
-    mainOrderId   int64
+    _mainOrderId   int64
     // 是否成功
-    status   bool
+    _status   bool
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.
-    tickets   []string
+    _tickets   []string
     // 订单中包含的票数量
-    ticketNum   int64
+    _ticketNum   int64
     // 出发时间
-    depDate   string
+    _depDate   string
     // 12306成功出票id
-    ticket12306Id   string
+    _ticket12306Id   string
     // 记录失败原因，传数字，1、票已售完，出票失败全额退款，2、票价变动，出票失败全额退款，3、乘车人已购买相同车票，出票失败全额退款， 4、出票超时，出票失败全额退款，5、乘车人证件未通过铁路局审核，需到售票窗口办理， 6、发车时间变动，出票失败全额退款，7、车次信息错误，出票失败全额退款，8、12306故障,出票失败全额退款， 0、出票失败全额退款
-    failMsg   string
+    _failMsg   string
     // 支付宝交易流水号
-    alipayTradeNo   string
+    _alipayTradeNo   string
     // 订单类型0 代购 1直购 3抢票
-    orderType   int64
+    _orderType   int64
     // 支付宝账号
-    alipayAccount   string
+    _alipayAccount   string
     // 到达时间
-    arriveDate   string
+    _arriveDate   string
     // 出发站
-    fromStationName   string
+    _fromStationName   string
     // 到达站
-    toStationName   string
+    _toStationName   string
     // 检票口
-    boardingGates   string
+    _boardingGates   string
     // 送票上门预计派送时间
-    expectDeliveryTime   string
+    _expectDeliveryTime   string
     // 扩展字段
-    extendParams   string
+    _extendParams   string
     // 票信息列表
-    ticketInfoList   []OrderTicketInfo
+    _ticketInfoList   []OrderTicketInfo
 }
 
 // 初始化TaobaoTrainAgentBookticketConfirmVtwoRequest对象
@@ -78,241 +78,241 @@ func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetApiParams() url.Values 
 }
 // SubOrderId Setter
 // 错误的子订单号123434,123432
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetSubOrderId(subOrderId string) error {
-    r.subOrderId = subOrderId
-    r.Set("sub_order_id", subOrderId)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetSubOrderId(_subOrderId string) error {
+    r._subOrderId = _subOrderId
+    r.Set("sub_order_id", _subOrderId)
     return nil
 }
 
 // SubOrderId Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetSubOrderId() string {
-    return r.subOrderId
+    return r._subOrderId
 }
 // CanChange Setter
 // 是否支持在线退改签
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetCanChange(canChange bool) error {
-    r.canChange = canChange
-    r.Set("can_change", canChange)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetCanChange(_canChange bool) error {
+    r._canChange = _canChange
+    r.Set("can_change", _canChange)
     return nil
 }
 
 // CanChange Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetCanChange() bool {
-    return r.canChange
+    return r._canChange
 }
 // MainOrderId Setter
 // 主订单id
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // Status Setter
 // 是否成功
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetStatus(status bool) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetStatus(_status bool) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetStatus() bool {
-    return r.status
+    return r._status
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // Tickets Setter
 // 火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTickets(tickets []string) error {
-    r.tickets = tickets
-    r.Set("tickets", tickets)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTickets(_tickets []string) error {
+    r._tickets = _tickets
+    r.Set("tickets", _tickets)
     return nil
 }
 
 // Tickets Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetTickets() []string {
-    return r.tickets
+    return r._tickets
 }
 // TicketNum Setter
 // 订单中包含的票数量
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicketNum(ticketNum int64) error {
-    r.ticketNum = ticketNum
-    r.Set("ticket_num", ticketNum)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicketNum(_ticketNum int64) error {
+    r._ticketNum = _ticketNum
+    r.Set("ticket_num", _ticketNum)
     return nil
 }
 
 // TicketNum Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetTicketNum() int64 {
-    return r.ticketNum
+    return r._ticketNum
 }
 // DepDate Setter
 // 出发时间
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetDepDate(depDate string) error {
-    r.depDate = depDate
-    r.Set("dep_date", depDate)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetDepDate(_depDate string) error {
+    r._depDate = _depDate
+    r.Set("dep_date", _depDate)
     return nil
 }
 
 // DepDate Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetDepDate() string {
-    return r.depDate
+    return r._depDate
 }
 // Ticket12306Id Setter
 // 12306成功出票id
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicket12306Id(ticket12306Id string) error {
-    r.ticket12306Id = ticket12306Id
-    r.Set("ticket_12306_id", ticket12306Id)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicket12306Id(_ticket12306Id string) error {
+    r._ticket12306Id = _ticket12306Id
+    r.Set("ticket_12306_id", _ticket12306Id)
     return nil
 }
 
 // Ticket12306Id Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetTicket12306Id() string {
-    return r.ticket12306Id
+    return r._ticket12306Id
 }
 // FailMsg Setter
 // 记录失败原因，传数字，1、票已售完，出票失败全额退款，2、票价变动，出票失败全额退款，3、乘车人已购买相同车票，出票失败全额退款， 4、出票超时，出票失败全额退款，5、乘车人证件未通过铁路局审核，需到售票窗口办理， 6、发车时间变动，出票失败全额退款，7、车次信息错误，出票失败全额退款，8、12306故障,出票失败全额退款， 0、出票失败全额退款
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetFailMsg(failMsg string) error {
-    r.failMsg = failMsg
-    r.Set("fail_msg", failMsg)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetFailMsg(_failMsg string) error {
+    r._failMsg = _failMsg
+    r.Set("fail_msg", _failMsg)
     return nil
 }
 
 // FailMsg Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetFailMsg() string {
-    return r.failMsg
+    return r._failMsg
 }
 // AlipayTradeNo Setter
 // 支付宝交易流水号
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAlipayTradeNo(alipayTradeNo string) error {
-    r.alipayTradeNo = alipayTradeNo
-    r.Set("alipay_trade_no", alipayTradeNo)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAlipayTradeNo(_alipayTradeNo string) error {
+    r._alipayTradeNo = _alipayTradeNo
+    r.Set("alipay_trade_no", _alipayTradeNo)
     return nil
 }
 
 // AlipayTradeNo Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetAlipayTradeNo() string {
-    return r.alipayTradeNo
+    return r._alipayTradeNo
 }
 // OrderType Setter
 // 订单类型0 代购 1直购 3抢票
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetOrderType(orderType int64) error {
-    r.orderType = orderType
-    r.Set("order_type", orderType)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetOrderType(_orderType int64) error {
+    r._orderType = _orderType
+    r.Set("order_type", _orderType)
     return nil
 }
 
 // OrderType Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetOrderType() int64 {
-    return r.orderType
+    return r._orderType
 }
 // AlipayAccount Setter
 // 支付宝账号
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAlipayAccount(alipayAccount string) error {
-    r.alipayAccount = alipayAccount
-    r.Set("alipay_account", alipayAccount)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetAlipayAccount(_alipayAccount string) error {
+    r._alipayAccount = _alipayAccount
+    r.Set("alipay_account", _alipayAccount)
     return nil
 }
 
 // AlipayAccount Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetAlipayAccount() string {
-    return r.alipayAccount
+    return r._alipayAccount
 }
 // ArriveDate Setter
 // 到达时间
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetArriveDate(arriveDate string) error {
-    r.arriveDate = arriveDate
-    r.Set("arrive_date", arriveDate)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetArriveDate(_arriveDate string) error {
+    r._arriveDate = _arriveDate
+    r.Set("arrive_date", _arriveDate)
     return nil
 }
 
 // ArriveDate Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetArriveDate() string {
-    return r.arriveDate
+    return r._arriveDate
 }
 // FromStationName Setter
 // 出发站
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetFromStationName(fromStationName string) error {
-    r.fromStationName = fromStationName
-    r.Set("from_station_name", fromStationName)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetFromStationName(_fromStationName string) error {
+    r._fromStationName = _fromStationName
+    r.Set("from_station_name", _fromStationName)
     return nil
 }
 
 // FromStationName Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetFromStationName() string {
-    return r.fromStationName
+    return r._fromStationName
 }
 // ToStationName Setter
 // 到达站
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetToStationName(toStationName string) error {
-    r.toStationName = toStationName
-    r.Set("to_station_name", toStationName)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetToStationName(_toStationName string) error {
+    r._toStationName = _toStationName
+    r.Set("to_station_name", _toStationName)
     return nil
 }
 
 // ToStationName Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetToStationName() string {
-    return r.toStationName
+    return r._toStationName
 }
 // BoardingGates Setter
 // 检票口
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetBoardingGates(boardingGates string) error {
-    r.boardingGates = boardingGates
-    r.Set("boarding_gates", boardingGates)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetBoardingGates(_boardingGates string) error {
+    r._boardingGates = _boardingGates
+    r.Set("boarding_gates", _boardingGates)
     return nil
 }
 
 // BoardingGates Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetBoardingGates() string {
-    return r.boardingGates
+    return r._boardingGates
 }
 // ExpectDeliveryTime Setter
 // 送票上门预计派送时间
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetExpectDeliveryTime(expectDeliveryTime string) error {
-    r.expectDeliveryTime = expectDeliveryTime
-    r.Set("expect_delivery_time", expectDeliveryTime)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetExpectDeliveryTime(_expectDeliveryTime string) error {
+    r._expectDeliveryTime = _expectDeliveryTime
+    r.Set("expect_delivery_time", _expectDeliveryTime)
     return nil
 }
 
 // ExpectDeliveryTime Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetExpectDeliveryTime() string {
-    return r.expectDeliveryTime
+    return r._expectDeliveryTime
 }
 // ExtendParams Setter
 // 扩展字段
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetExtendParams(extendParams string) error {
-    r.extendParams = extendParams
-    r.Set("extend_params", extendParams)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetExtendParams(_extendParams string) error {
+    r._extendParams = _extendParams
+    r.Set("extend_params", _extendParams)
     return nil
 }
 
 // ExtendParams Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetExtendParams() string {
-    return r.extendParams
+    return r._extendParams
 }
 // TicketInfoList Setter
 // 票信息列表
-func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicketInfoList(ticketInfoList []OrderTicketInfo) error {
-    r.ticketInfoList = ticketInfoList
-    r.Set("ticket_info_list", ticketInfoList)
+func (r *TaobaoTrainAgentBookticketConfirmVtwoRequest) SetTicketInfoList(_ticketInfoList []OrderTicketInfo) error {
+    r._ticketInfoList = _ticketInfoList
+    r.Set("ticket_info_list", _ticketInfoList)
     return nil
 }
 
 // TicketInfoList Getter
 func (r TaobaoTrainAgentBookticketConfirmVtwoRequest) GetTicketInfoList() []OrderTicketInfo {
-    return r.ticketInfoList
+    return r._ticketInfoList
 }

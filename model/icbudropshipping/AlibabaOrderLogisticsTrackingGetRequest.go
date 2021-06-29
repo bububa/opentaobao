@@ -15,7 +15,7 @@ alibaba.order.logistics.tracking.get
 type AlibabaOrderLogisticsTrackingGetRequest struct {
     model.Params
     // order id
-    tradeId   int64
+    _tradeId   int64
 }
 
 // 初始化AlibabaOrderLogisticsTrackingGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOrderLogisticsTrackingGetRequest) GetApiParams() url.Values {
 }
 // TradeId Setter
 // order id
-func (r *AlibabaOrderLogisticsTrackingGetRequest) SetTradeId(tradeId int64) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *AlibabaOrderLogisticsTrackingGetRequest) SetTradeId(_tradeId int64) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r AlibabaOrderLogisticsTrackingGetRequest) GetTradeId() int64 {
-    return r.tradeId
+    return r._tradeId
 }

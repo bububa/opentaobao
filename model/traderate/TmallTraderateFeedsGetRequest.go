@@ -15,7 +15,7 @@ tmall.traderate.feeds.get
 type TmallTraderateFeedsGetRequest struct {
     model.Params
     // 交易子订单ID
-    childTradeId   int64
+    _childTradeId   int64
 }
 
 // 初始化TmallTraderateFeedsGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallTraderateFeedsGetRequest) GetApiParams() url.Values {
 }
 // ChildTradeId Setter
 // 交易子订单ID
-func (r *TmallTraderateFeedsGetRequest) SetChildTradeId(childTradeId int64) error {
-    r.childTradeId = childTradeId
-    r.Set("child_trade_id", childTradeId)
+func (r *TmallTraderateFeedsGetRequest) SetChildTradeId(_childTradeId int64) error {
+    r._childTradeId = _childTradeId
+    r.Set("child_trade_id", _childTradeId)
     return nil
 }
 
 // ChildTradeId Getter
 func (r TmallTraderateFeedsGetRequest) GetChildTradeId() int64 {
-    return r.childTradeId
+    return r._childTradeId
 }

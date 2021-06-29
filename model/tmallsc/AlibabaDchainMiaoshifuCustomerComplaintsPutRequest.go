@@ -15,7 +15,7 @@ alibaba.dchain.miaoshifu.customer.complaints.put
 type AlibabaDchainMiaoshifuCustomerComplaintsPutRequest struct {
     model.Params
     // 服务工人客诉对象
-    workerCustomerComplaintSaveCmd   *WorkerCustomerComplaintSaveCmd
+    _workerCustomerComplaintSaveCmd   *WorkerCustomerComplaintSaveCmd
 }
 
 // 初始化AlibabaDchainMiaoshifuCustomerComplaintsPutRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetApiParams() url.V
 }
 // WorkerCustomerComplaintSaveCmd Setter
 // 服务工人客诉对象
-func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) SetWorkerCustomerComplaintSaveCmd(workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
-    r.workerCustomerComplaintSaveCmd = workerCustomerComplaintSaveCmd
-    r.Set("worker_customer_complaint_save_cmd", workerCustomerComplaintSaveCmd)
+func (r *AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) SetWorkerCustomerComplaintSaveCmd(_workerCustomerComplaintSaveCmd *WorkerCustomerComplaintSaveCmd) error {
+    r._workerCustomerComplaintSaveCmd = _workerCustomerComplaintSaveCmd
+    r.Set("worker_customer_complaint_save_cmd", _workerCustomerComplaintSaveCmd)
     return nil
 }
 
 // WorkerCustomerComplaintSaveCmd Getter
 func (r AlibabaDchainMiaoshifuCustomerComplaintsPutRequest) GetWorkerCustomerComplaintSaveCmd() *WorkerCustomerComplaintSaveCmd {
-    return r.workerCustomerComplaintSaveCmd
+    return r._workerCustomerComplaintSaveCmd
 }

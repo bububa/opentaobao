@@ -15,7 +15,7 @@ alibaba.ailabs.iot.device.control.notify
 type AlibabaAilabsIotDeviceControlNotifyRequest struct {
     model.Params
     // 入参
-    notifyControlParams   *NotifyVehicleControlParams
+    _notifyControlParams   *NotifyVehicleControlParams
 }
 
 // 初始化AlibabaAilabsIotDeviceControlNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsIotDeviceControlNotifyRequest) GetApiParams() url.Values {
 }
 // NotifyControlParams Setter
 // 入参
-func (r *AlibabaAilabsIotDeviceControlNotifyRequest) SetNotifyControlParams(notifyControlParams *NotifyVehicleControlParams) error {
-    r.notifyControlParams = notifyControlParams
-    r.Set("notify_control_params", notifyControlParams)
+func (r *AlibabaAilabsIotDeviceControlNotifyRequest) SetNotifyControlParams(_notifyControlParams *NotifyVehicleControlParams) error {
+    r._notifyControlParams = _notifyControlParams
+    r.Set("notify_control_params", _notifyControlParams)
     return nil
 }
 
 // NotifyControlParams Getter
 func (r AlibabaAilabsIotDeviceControlNotifyRequest) GetNotifyControlParams() *NotifyVehicleControlParams {
-    return r.notifyControlParams
+    return r._notifyControlParams
 }

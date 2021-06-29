@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.city.list
 type AlitripMerchantGalaxyCityListRequest struct {
     model.Params
     // 商家租户id
-    tenantKey   string
+    _tenantKey   string
     // 0国内 1国外
-    domestic   int64
+    _domestic   int64
 }
 
 // 初始化AlitripMerchantGalaxyCityListRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyCityListRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 商家租户id
-func (r *AlitripMerchantGalaxyCityListRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyCityListRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyCityListRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Domestic Setter
 // 0国内 1国外
-func (r *AlitripMerchantGalaxyCityListRequest) SetDomestic(domestic int64) error {
-    r.domestic = domestic
-    r.Set("domestic", domestic)
+func (r *AlitripMerchantGalaxyCityListRequest) SetDomestic(_domestic int64) error {
+    r._domestic = _domestic
+    r.Set("domestic", _domestic)
     return nil
 }
 
 // Domestic Getter
 func (r AlitripMerchantGalaxyCityListRequest) GetDomestic() int64 {
-    return r.domestic
+    return r._domestic
 }

@@ -15,11 +15,11 @@ ASCP通过该接口接收商家仓开始接单生产订单对应的物流订单�
 type AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest struct {
     model.Params
     // qimen.alibaba.ascp.uop.consignorder.notify报文中的supplierId字段值
-    supplierId   string
+    _supplierId   string
     // qimen.alibaba.ascp.uop.consignorder.notify报文中bizOrderCode履约单号
-    bizOrderCode   string
+    _bizOrderCode   string
     // 业务请求时间
-    bizTime   string
+    _bizTime   string
 }
 
 // 初始化AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) GetApiParams() 
 }
 // SupplierId Setter
 // qimen.alibaba.ascp.uop.consignorder.notify报文中的supplierId字段值
-func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetSupplierId(supplierId string) error {
-    r.supplierId = supplierId
-    r.Set("supplier_id", supplierId)
+func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetSupplierId(_supplierId string) error {
+    r._supplierId = _supplierId
+    r.Set("supplier_id", _supplierId)
     return nil
 }
 
 // SupplierId Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) GetSupplierId() string {
-    return r.supplierId
+    return r._supplierId
 }
 // BizOrderCode Setter
 // qimen.alibaba.ascp.uop.consignorder.notify报文中bizOrderCode履约单号
-func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetBizOrderCode(bizOrderCode string) error {
-    r.bizOrderCode = bizOrderCode
-    r.Set("biz_order_code", bizOrderCode)
+func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetBizOrderCode(_bizOrderCode string) error {
+    r._bizOrderCode = _bizOrderCode
+    r.Set("biz_order_code", _bizOrderCode)
     return nil
 }
 
 // BizOrderCode Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) GetBizOrderCode() string {
-    return r.bizOrderCode
+    return r._bizOrderCode
 }
 // BizTime Setter
 // 业务请求时间
-func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetBizTime(bizTime string) error {
-    r.bizTime = bizTime
-    r.Set("biz_time", bizTime)
+func (r *AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) SetBizTime(_bizTime string) error {
+    r._bizTime = _bizTime
+    r.Set("biz_time", _bizTime)
     return nil
 }
 
 // BizTime Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyReceivedRequest) GetBizTime() string {
-    return r.bizTime
+    return r._bizTime
 }

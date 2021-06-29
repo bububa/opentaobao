@@ -15,11 +15,11 @@ taobao.openim.tribe.sendmsg
 type TaobaoOpenimTribeSendmsgRequest struct {
     model.Params
     // 群消息发送者，只有该群的成员才可以发送群消息
-    user   *User
+    _user   *User
     // 群id
-    tribeId   int64
+    _tribeId   int64
     // 发送群消息
-    msg   *TribeMsg
+    _msg   *TribeMsg
 }
 
 // 初始化TaobaoOpenimTribeSendmsgRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenimTribeSendmsgRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 群消息发送者，只有该群的成员才可以发送群消息
-func (r *TaobaoOpenimTribeSendmsgRequest) SetUser(user *User) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeSendmsgRequest) SetUser(_user *User) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeSendmsgRequest) GetUser() *User {
-    return r.user
+    return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeSendmsgRequest) SetTribeId(tribeId int64) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribeSendmsgRequest) SetTribeId(_tribeId int64) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribeSendmsgRequest) GetTribeId() int64 {
-    return r.tribeId
+    return r._tribeId
 }
 // Msg Setter
 // 发送群消息
-func (r *TaobaoOpenimTribeSendmsgRequest) SetMsg(msg *TribeMsg) error {
-    r.msg = msg
-    r.Set("msg", msg)
+func (r *TaobaoOpenimTribeSendmsgRequest) SetMsg(_msg *TribeMsg) error {
+    r._msg = _msg
+    r.Set("msg", _msg)
     return nil
 }
 
 // Msg Getter
 func (r TaobaoOpenimTribeSendmsgRequest) GetMsg() *TribeMsg {
-    return r.msg
+    return r._msg
 }

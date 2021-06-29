@@ -15,13 +15,13 @@ taobao.simba.campaign.update
 type TaobaoSimbaCampaignUpdateRequest struct {
     model.Params
     // 用户设置的上下限状态；offline-下线；online-上线；
-    onlineStatus   string
+    _onlineStatus   string
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
-    title   string
+    _title   string
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaCampaignUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaCampaignUpdateRequest) GetApiParams() url.Values {
 }
 // OnlineStatus Setter
 // 用户设置的上下限状态；offline-下线；online-上线；
-func (r *TaobaoSimbaCampaignUpdateRequest) SetOnlineStatus(onlineStatus string) error {
-    r.onlineStatus = onlineStatus
-    r.Set("online_status", onlineStatus)
+func (r *TaobaoSimbaCampaignUpdateRequest) SetOnlineStatus(_onlineStatus string) error {
+    r._onlineStatus = _onlineStatus
+    r.Set("online_status", _onlineStatus)
     return nil
 }
 
 // OnlineStatus Getter
 func (r TaobaoSimbaCampaignUpdateRequest) GetOnlineStatus() string {
-    return r.onlineStatus
+    return r._onlineStatus
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignUpdateRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaCampaignUpdateRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaCampaignUpdateRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // Title Setter
 // 推广计划名称，不能多余40个字符，不能和客户其他推广计划同名。
-func (r *TaobaoSimbaCampaignUpdateRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoSimbaCampaignUpdateRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoSimbaCampaignUpdateRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

@@ -15,15 +15,15 @@ cainiao.guoguo.cp.backup.assigncourierbyid
 type CainiaoGuoguoCpBackupAssigncourierbyidRequest struct {
     model.Params
     // 指派/改派原因
-    assignReason   string
+    _assignReason   string
     // 指派/改派原因编码
-    assignReasonCode   string
+    _assignReasonCode   string
     // 任务编号
-    taskId   int64
+    _taskId   int64
     // 小件员菜鸟账号ID
-    accountId   int64
+    _accountId   int64
     // CP公司编号
-    cpCode   string
+    _cpCode   string
 }
 
 // 初始化CainiaoGuoguoCpBackupAssigncourierbyidRequest对象
@@ -48,61 +48,61 @@ func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetApiParams() url.Values
 }
 // AssignReason Setter
 // 指派/改派原因
-func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAssignReason(assignReason string) error {
-    r.assignReason = assignReason
-    r.Set("assign_reason", assignReason)
+func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAssignReason(_assignReason string) error {
+    r._assignReason = _assignReason
+    r.Set("assign_reason", _assignReason)
     return nil
 }
 
 // AssignReason Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetAssignReason() string {
-    return r.assignReason
+    return r._assignReason
 }
 // AssignReasonCode Setter
 // 指派/改派原因编码
-func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAssignReasonCode(assignReasonCode string) error {
-    r.assignReasonCode = assignReasonCode
-    r.Set("assign_reason_code", assignReasonCode)
+func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAssignReasonCode(_assignReasonCode string) error {
+    r._assignReasonCode = _assignReasonCode
+    r.Set("assign_reason_code", _assignReasonCode)
     return nil
 }
 
 // AssignReasonCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetAssignReasonCode() string {
-    return r.assignReasonCode
+    return r._assignReasonCode
 }
 // TaskId Setter
 // 任务编号
-func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetTaskId(taskId int64) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetTaskId(_taskId int64) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetTaskId() int64 {
-    return r.taskId
+    return r._taskId
 }
 // AccountId Setter
 // 小件员菜鸟账号ID
-func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAccountId(accountId int64) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetAccountId(_accountId int64) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetAccountId() int64 {
-    return r.accountId
+    return r._accountId
 }
 // CpCode Setter
 // CP公司编号
-func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *CainiaoGuoguoCpBackupAssigncourierbyidRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierbyidRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }

@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.wechat.login
 type AlitripMerchantGalaxyWechatLoginRequest struct {
     model.Params
     // 租户身份信息
-    tenantKey   string
+    _tenantKey   string
     // 微信小程序登陆请求参数
-    loginParam   *LoginParam
+    _loginParam   *LoginParam
 }
 
 // 初始化AlitripMerchantGalaxyWechatLoginRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyWechatLoginRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyWechatLoginRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyWechatLoginRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyWechatLoginRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // LoginParam Setter
 // 微信小程序登陆请求参数
-func (r *AlitripMerchantGalaxyWechatLoginRequest) SetLoginParam(loginParam *LoginParam) error {
-    r.loginParam = loginParam
-    r.Set("login_param", loginParam)
+func (r *AlitripMerchantGalaxyWechatLoginRequest) SetLoginParam(_loginParam *LoginParam) error {
+    r._loginParam = _loginParam
+    r.Set("login_param", _loginParam)
     return nil
 }
 
 // LoginParam Getter
 func (r AlitripMerchantGalaxyWechatLoginRequest) GetLoginParam() *LoginParam {
-    return r.loginParam
+    return r._loginParam
 }

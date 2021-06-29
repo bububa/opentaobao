@@ -15,7 +15,7 @@ taobao.singletreasure.activity.delete
 type TaobaoSingletreasureActivityDeleteRequest struct {
     model.Params
     // 活动Id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化TaobaoSingletreasureActivityDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityDeleteRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 活动Id
-func (r *TaobaoSingletreasureActivityDeleteRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoSingletreasureActivityDeleteRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoSingletreasureActivityDeleteRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

@@ -15,7 +15,7 @@ youku.ott.pay.order.querycporder
 type YoukuOttPayOrderQuerycporderRequest struct {
     model.Params
     // 支付对应订单
-    gatewayOrder   string
+    _gatewayOrder   string
 }
 
 // 初始化YoukuOttPayOrderQuerycporderRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQuerycporderRequest) GetApiParams() url.Values {
 }
 // GatewayOrder Setter
 // 支付对应订单
-func (r *YoukuOttPayOrderQuerycporderRequest) SetGatewayOrder(gatewayOrder string) error {
-    r.gatewayOrder = gatewayOrder
-    r.Set("gateway_order", gatewayOrder)
+func (r *YoukuOttPayOrderQuerycporderRequest) SetGatewayOrder(_gatewayOrder string) error {
+    r._gatewayOrder = _gatewayOrder
+    r.Set("gateway_order", _gatewayOrder)
     return nil
 }
 
 // GatewayOrder Getter
 func (r YoukuOttPayOrderQuerycporderRequest) GetGatewayOrder() string {
-    return r.gatewayOrder
+    return r._gatewayOrder
 }

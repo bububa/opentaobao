@@ -15,21 +15,21 @@ cainiao.endpoint.locker.top.order.withhold
 type CainiaoEndpointLockerTopOrderWithholdRequest struct {
     model.Params
     // 柜子公司编码
-    companyCode   string
+    _companyCode   string
     // 柜子id
-    guiId   string
+    _guiId   string
     // 订单类型(0-取件业务，1-寄件业务，2-派样业务)
-    orderType   int64
+    _orderType   int64
     // 开放用户id
-    openUserId   string
+    _openUserId   string
     // 代扣金额（全额），单位：分
-    totalFee   int64
+    _totalFee   int64
     // 扩展字段
-    extra   string
+    _extra   string
     // 柜子订单编码
-    orderCode   string
+    _orderCode   string
     // 运单号
-    mailNo   string
+    _mailNo   string
 }
 
 // 初始化CainiaoEndpointLockerTopOrderWithholdRequest对象
@@ -54,97 +54,97 @@ func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetApiParams() url.Values 
 }
 // CompanyCode Setter
 // 柜子公司编码
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetCompanyCode(companyCode string) error {
-    r.companyCode = companyCode
-    r.Set("company_code", companyCode)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetCompanyCode(_companyCode string) error {
+    r._companyCode = _companyCode
+    r.Set("company_code", _companyCode)
     return nil
 }
 
 // CompanyCode Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetCompanyCode() string {
-    return r.companyCode
+    return r._companyCode
 }
 // GuiId Setter
 // 柜子id
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetGuiId(guiId string) error {
-    r.guiId = guiId
-    r.Set("gui_id", guiId)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetGuiId(_guiId string) error {
+    r._guiId = _guiId
+    r.Set("gui_id", _guiId)
     return nil
 }
 
 // GuiId Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetGuiId() string {
-    return r.guiId
+    return r._guiId
 }
 // OrderType Setter
 // 订单类型(0-取件业务，1-寄件业务，2-派样业务)
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOrderType(orderType int64) error {
-    r.orderType = orderType
-    r.Set("order_type", orderType)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOrderType(_orderType int64) error {
+    r._orderType = _orderType
+    r.Set("order_type", _orderType)
     return nil
 }
 
 // OrderType Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetOrderType() int64 {
-    return r.orderType
+    return r._orderType
 }
 // OpenUserId Setter
 // 开放用户id
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOpenUserId(openUserId string) error {
-    r.openUserId = openUserId
-    r.Set("open_user_id", openUserId)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOpenUserId(_openUserId string) error {
+    r._openUserId = _openUserId
+    r.Set("open_user_id", _openUserId)
     return nil
 }
 
 // OpenUserId Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetOpenUserId() string {
-    return r.openUserId
+    return r._openUserId
 }
 // TotalFee Setter
 // 代扣金额（全额），单位：分
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetTotalFee(totalFee int64) error {
-    r.totalFee = totalFee
-    r.Set("total_fee", totalFee)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetTotalFee(_totalFee int64) error {
+    r._totalFee = _totalFee
+    r.Set("total_fee", _totalFee)
     return nil
 }
 
 // TotalFee Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetTotalFee() int64 {
-    return r.totalFee
+    return r._totalFee
 }
 // Extra Setter
 // 扩展字段
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetExtra(extra string) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetExtra(_extra string) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetExtra() string {
-    return r.extra
+    return r._extra
 }
 // OrderCode Setter
 // 柜子订单编码
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // MailNo Setter
 // 运单号
-func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetMailNo(mailNo string) error {
-    r.mailNo = mailNo
-    r.Set("mail_no", mailNo)
+func (r *CainiaoEndpointLockerTopOrderWithholdRequest) SetMailNo(_mailNo string) error {
+    r._mailNo = _mailNo
+    r.Set("mail_no", _mailNo)
     return nil
 }
 
 // MailNo Getter
 func (r CainiaoEndpointLockerTopOrderWithholdRequest) GetMailNo() string {
-    return r.mailNo
+    return r._mailNo
 }

@@ -15,9 +15,9 @@ taobao.ailab.aicloud.top.device.getstatus
 type TaobaoAilabAicloudTopDeviceGetstatusRequest struct {
     model.Params
     // 用户信息
-    param0   *OpenBaseInfo
+    _param0   *OpenBaseInfo
     // 设备id
-    param1   string
+    _param1   string
 }
 
 // 初始化TaobaoAilabAicloudTopDeviceGetstatusRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAilabAicloudTopDeviceGetstatusRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 用户信息
-func (r *TaobaoAilabAicloudTopDeviceGetstatusRequest) SetParam0(param0 *OpenBaseInfo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAilabAicloudTopDeviceGetstatusRequest) SetParam0(_param0 *OpenBaseInfo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceGetstatusRequest) GetParam0() *OpenBaseInfo {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopDeviceGetstatusRequest) SetParam1(param1 string) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *TaobaoAilabAicloudTopDeviceGetstatusRequest) SetParam1(_param1 string) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceGetstatusRequest) GetParam1() string {
-    return r.param1
+    return r._param1
 }

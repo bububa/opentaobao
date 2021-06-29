@@ -15,15 +15,15 @@ yunos.tvpubadmin.device.osupgradequery
 type YunosTvpubadminDeviceOsupgradequeryRequest struct {
     model.Params
     // 牌照方
-    license   int64
+    _license   int64
     // 审核状态
-    status   string
+    _status   string
     // 时间范围
-    dayRange   int64
+    _dayRange   int64
     // 第几页
-    pageNo   int64
+    _pageNo   int64
     // 数据大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosTvpubadminDeviceOsupgradequeryRequest对象
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetApiParams() url.Values {
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // Status Setter
 // 审核状态
-func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // DayRange Setter
 // 时间范围
-func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetDayRange(dayRange int64) error {
-    r.dayRange = dayRange
-    r.Set("day_range", dayRange)
+func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetDayRange(_dayRange int64) error {
+    r._dayRange = _dayRange
+    r.Set("day_range", _dayRange)
     return nil
 }
 
 // DayRange Getter
 func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetDayRange() int64 {
-    return r.dayRange
+    return r._dayRange
 }
 // PageNo Setter
 // 第几页
-func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 数据大小
-func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminDeviceOsupgradequeryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminDeviceOsupgradequeryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

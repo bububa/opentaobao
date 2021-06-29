@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itempool.queryactivity
 type AlibabaWdkMarketingItempoolQueryactivityRequest struct {
     model.Params
     // 查询商品池活动入参
-    param0   *CommonActivityParam
+    _param0   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItempoolQueryactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 查询商品池活动入参
-func (r *AlibabaWdkMarketingItempoolQueryactivityRequest) SetParam0(param0 *CommonActivityParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingItempoolQueryactivityRequest) SetParam0(_param0 *CommonActivityParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingItempoolQueryactivityRequest) GetParam0() *CommonActivityParam {
-    return r.param0
+    return r._param0
 }

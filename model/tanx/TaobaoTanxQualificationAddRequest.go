@@ -15,13 +15,13 @@ dsp客户提交客户资质和行业资质
 type TaobaoTanxQualificationAddRequest struct {
     model.Params
     // dsp客户新增资质dto
-    qualifications   []Qualification
+    _qualifications   []Qualification
     // dsp用户memberId
-    memberId   int64
+    _memberId   int64
     // dsp验证的token
-    token   string
+    _token   string
     // 签名时间，1970年到现在的秒
-    signTime   int64
+    _signTime   int64
 }
 
 // 初始化TaobaoTanxQualificationAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTanxQualificationAddRequest) GetApiParams() url.Values {
 }
 // Qualifications Setter
 // dsp客户新增资质dto
-func (r *TaobaoTanxQualificationAddRequest) SetQualifications(qualifications []Qualification) error {
-    r.qualifications = qualifications
-    r.Set("qualifications", qualifications)
+func (r *TaobaoTanxQualificationAddRequest) SetQualifications(_qualifications []Qualification) error {
+    r._qualifications = _qualifications
+    r.Set("qualifications", _qualifications)
     return nil
 }
 
 // Qualifications Getter
 func (r TaobaoTanxQualificationAddRequest) GetQualifications() []Qualification {
-    return r.qualifications
+    return r._qualifications
 }
 // MemberId Setter
 // dsp用户memberId
-func (r *TaobaoTanxQualificationAddRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxQualificationAddRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxQualificationAddRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp验证的token
-func (r *TaobaoTanxQualificationAddRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxQualificationAddRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxQualificationAddRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 签名时间，1970年到现在的秒
-func (r *TaobaoTanxQualificationAddRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxQualificationAddRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxQualificationAddRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }

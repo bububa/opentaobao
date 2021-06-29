@@ -15,11 +15,11 @@ taobao.train.agent.handleticket.confirm.vtwo
 type TaobaoTrainAgentHandleticketConfirmVtwoRequest struct {
     model.Params
     // 扩展参数
-    extendParams   string
+    _extendParams   string
     // 主站id
-    mainOrderId   int64
+    _mainOrderId   int64
     // 代理商id
-    sellerId   int64
+    _sellerId   int64
 }
 
 // 初始化TaobaoTrainAgentHandleticketConfirmVtwoRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTrainAgentHandleticketConfirmVtwoRequest) GetApiParams() url.Value
 }
 // ExtendParams Setter
 // 扩展参数
-func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetExtendParams(extendParams string) error {
-    r.extendParams = extendParams
-    r.Set("extend_params", extendParams)
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetExtendParams(_extendParams string) error {
+    r._extendParams = _extendParams
+    r.Set("extend_params", _extendParams)
     return nil
 }
 
 // ExtendParams Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoRequest) GetExtendParams() string {
-    return r.extendParams
+    return r._extendParams
 }
 // MainOrderId Setter
 // 主站id
-func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // SellerId Setter
 // 代理商id
-func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TaobaoTrainAgentHandleticketConfirmVtwoRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TaobaoTrainAgentHandleticketConfirmVtwoRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }

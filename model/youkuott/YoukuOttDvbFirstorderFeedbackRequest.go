@@ -15,11 +15,11 @@ dvb首次安装订单反馈
 type YoukuOttDvbFirstorderFeedbackRequest struct {
     model.Params
     // 订单id
-    orderId   int64
+    _orderId   int64
     // 反馈时间（时间戳，精确到毫秒），调用接口的时间有时候并非是反馈时间，所以增加反馈时间字段作为反馈时间
-    occureTime   int64
+    _occureTime   int64
     // 反馈类型， 200：广电接单
-    type   int64
+    _type   int64
 }
 
 // 初始化YoukuOttDvbFirstorderFeedbackRequest对象
@@ -44,37 +44,37 @@ func (r YoukuOttDvbFirstorderFeedbackRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *YoukuOttDvbFirstorderFeedbackRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *YoukuOttDvbFirstorderFeedbackRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r YoukuOttDvbFirstorderFeedbackRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // OccureTime Setter
 // 反馈时间（时间戳，精确到毫秒），调用接口的时间有时候并非是反馈时间，所以增加反馈时间字段作为反馈时间
-func (r *YoukuOttDvbFirstorderFeedbackRequest) SetOccureTime(occureTime int64) error {
-    r.occureTime = occureTime
-    r.Set("occure_time", occureTime)
+func (r *YoukuOttDvbFirstorderFeedbackRequest) SetOccureTime(_occureTime int64) error {
+    r._occureTime = _occureTime
+    r.Set("occure_time", _occureTime)
     return nil
 }
 
 // OccureTime Getter
 func (r YoukuOttDvbFirstorderFeedbackRequest) GetOccureTime() int64 {
-    return r.occureTime
+    return r._occureTime
 }
 // Type Setter
 // 反馈类型， 200：广电接单
-func (r *YoukuOttDvbFirstorderFeedbackRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *YoukuOttDvbFirstorderFeedbackRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r YoukuOttDvbFirstorderFeedbackRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

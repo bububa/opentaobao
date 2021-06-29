@@ -15,7 +15,7 @@ alibaba.ele.fengniao.service.package.query
 type AlibabaEleFengniaoServicePackageQueryRequest struct {
     model.Params
     // 入参
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoServicePackageQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoServicePackageQueryRequest) GetApiParams() url.Values 
 }
 // Param Setter
 // 入参
-func (r *AlibabaEleFengniaoServicePackageQueryRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoServicePackageQueryRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoServicePackageQueryRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

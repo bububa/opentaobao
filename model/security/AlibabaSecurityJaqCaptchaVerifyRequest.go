@@ -15,21 +15,21 @@ alibaba.security.jaq.captcha.verify
 type AlibabaSecurityJaqCaptchaVerifyRequest struct {
     model.Params
     // 验证码发送渠道类型 1-短信 2-语音 3-邮件
-    captchaType   int64
+    _captchaType   int64
     // 扩展字段，格式为JSON字符串，用于传递“短信验证”等验证方式所需的额外入参，例如用户输入的验证码等，格式及JSON字段key定义请参考示例
-    extendData   string
+    _extendData   string
     // 协议版本号
-    protocolVersion   string
+    _protocolVersion   string
     // 软token签名
-    rsign   string
+    _rsign   string
     // 软token索引
-    rtkenIndex   string
+    _rtkenIndex   string
     // 验证码会话ID
-    sessionId   string
+    _sessionId   string
     // UMID token
-    utoken   string
+    _utoken   string
     // 风险识别接口返回的信息口令
-    infoToken   string
+    _infoToken   string
 }
 
 // 初始化AlibabaSecurityJaqCaptchaVerifyRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetApiParams() url.Values {
 }
 // CaptchaType Setter
 // 验证码发送渠道类型 1-短信 2-语音 3-邮件
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetCaptchaType(captchaType int64) error {
-    r.captchaType = captchaType
-    r.Set("captcha_type", captchaType)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetCaptchaType(_captchaType int64) error {
+    r._captchaType = _captchaType
+    r.Set("captcha_type", _captchaType)
     return nil
 }
 
 // CaptchaType Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetCaptchaType() int64 {
-    return r.captchaType
+    return r._captchaType
 }
 // ExtendData Setter
 // 扩展字段，格式为JSON字符串，用于传递“短信验证”等验证方式所需的额外入参，例如用户输入的验证码等，格式及JSON字段key定义请参考示例
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetExtendData(extendData string) error {
-    r.extendData = extendData
-    r.Set("extend_data", extendData)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetExtendData(_extendData string) error {
+    r._extendData = _extendData
+    r.Set("extend_data", _extendData)
     return nil
 }
 
 // ExtendData Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetExtendData() string {
-    return r.extendData
+    return r._extendData
 }
 // ProtocolVersion Setter
 // 协议版本号
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetProtocolVersion(protocolVersion string) error {
-    r.protocolVersion = protocolVersion
-    r.Set("protocol_version", protocolVersion)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetProtocolVersion(_protocolVersion string) error {
+    r._protocolVersion = _protocolVersion
+    r.Set("protocol_version", _protocolVersion)
     return nil
 }
 
 // ProtocolVersion Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetProtocolVersion() string {
-    return r.protocolVersion
+    return r._protocolVersion
 }
 // Rsign Setter
 // 软token签名
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetRsign(rsign string) error {
-    r.rsign = rsign
-    r.Set("rsign", rsign)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetRsign(_rsign string) error {
+    r._rsign = _rsign
+    r.Set("rsign", _rsign)
     return nil
 }
 
 // Rsign Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetRsign() string {
-    return r.rsign
+    return r._rsign
 }
 // RtkenIndex Setter
 // 软token索引
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetRtkenIndex(rtkenIndex string) error {
-    r.rtkenIndex = rtkenIndex
-    r.Set("rtken_index", rtkenIndex)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetRtkenIndex(_rtkenIndex string) error {
+    r._rtkenIndex = _rtkenIndex
+    r.Set("rtken_index", _rtkenIndex)
     return nil
 }
 
 // RtkenIndex Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetRtkenIndex() string {
-    return r.rtkenIndex
+    return r._rtkenIndex
 }
 // SessionId Setter
 // 验证码会话ID
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetSessionId(sessionId string) error {
-    r.sessionId = sessionId
-    r.Set("session_id", sessionId)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetSessionId(_sessionId string) error {
+    r._sessionId = _sessionId
+    r.Set("session_id", _sessionId)
     return nil
 }
 
 // SessionId Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetSessionId() string {
-    return r.sessionId
+    return r._sessionId
 }
 // Utoken Setter
 // UMID token
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetUtoken(utoken string) error {
-    r.utoken = utoken
-    r.Set("utoken", utoken)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetUtoken(_utoken string) error {
+    r._utoken = _utoken
+    r.Set("utoken", _utoken)
     return nil
 }
 
 // Utoken Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetUtoken() string {
-    return r.utoken
+    return r._utoken
 }
 // InfoToken Setter
 // 风险识别接口返回的信息口令
-func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetInfoToken(infoToken string) error {
-    r.infoToken = infoToken
-    r.Set("info_token", infoToken)
+func (r *AlibabaSecurityJaqCaptchaVerifyRequest) SetInfoToken(_infoToken string) error {
+    r._infoToken = _infoToken
+    r.Set("info_token", _infoToken)
     return nil
 }
 
 // InfoToken Getter
 func (r AlibabaSecurityJaqCaptchaVerifyRequest) GetInfoToken() string {
-    return r.infoToken
+    return r._infoToken
 }

@@ -15,7 +15,7 @@ taobao.qimen.returnpackage.report
 type TaobaoQimenReturnpackageReportRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenReturnpackageReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenReturnpackageReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenReturnpackageReportRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenReturnpackageReportRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenReturnpackageReportRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

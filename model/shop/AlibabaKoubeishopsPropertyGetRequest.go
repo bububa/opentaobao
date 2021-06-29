@@ -15,7 +15,7 @@ alibaba.koubeishops.property.get
 type AlibabaKoubeishopsPropertyGetRequest struct {
     model.Params
     // 入参
-    paramOpenApiSearchRequest   *OpenApiSearchRequest
+    _paramOpenApiSearchRequest   *OpenApiSearchRequest
 }
 
 // 初始化AlibabaKoubeishopsPropertyGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaKoubeishopsPropertyGetRequest) GetApiParams() url.Values {
 }
 // ParamOpenApiSearchRequest Setter
 // 入参
-func (r *AlibabaKoubeishopsPropertyGetRequest) SetParamOpenApiSearchRequest(paramOpenApiSearchRequest *OpenApiSearchRequest) error {
-    r.paramOpenApiSearchRequest = paramOpenApiSearchRequest
-    r.Set("param_open_api_search_request", paramOpenApiSearchRequest)
+func (r *AlibabaKoubeishopsPropertyGetRequest) SetParamOpenApiSearchRequest(_paramOpenApiSearchRequest *OpenApiSearchRequest) error {
+    r._paramOpenApiSearchRequest = _paramOpenApiSearchRequest
+    r.Set("param_open_api_search_request", _paramOpenApiSearchRequest)
     return nil
 }
 
 // ParamOpenApiSearchRequest Getter
 func (r AlibabaKoubeishopsPropertyGetRequest) GetParamOpenApiSearchRequest() *OpenApiSearchRequest {
-    return r.paramOpenApiSearchRequest
+    return r._paramOpenApiSearchRequest
 }

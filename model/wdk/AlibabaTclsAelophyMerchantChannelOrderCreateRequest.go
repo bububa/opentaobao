@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.order.create
 type AlibabaTclsAelophyMerchantChannelOrderCreateRequest struct {
     model.Params
     // 订单信息
-    orderInfo   *OrderInfo
+    _orderInfo   *OrderInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelOrderCreateRequest) GetApiParams() url.
 }
 // OrderInfo Setter
 // 订单信息
-func (r *AlibabaTclsAelophyMerchantChannelOrderCreateRequest) SetOrderInfo(orderInfo *OrderInfo) error {
-    r.orderInfo = orderInfo
-    r.Set("order_info", orderInfo)
+func (r *AlibabaTclsAelophyMerchantChannelOrderCreateRequest) SetOrderInfo(_orderInfo *OrderInfo) error {
+    r._orderInfo = _orderInfo
+    r.Set("order_info", _orderInfo)
     return nil
 }
 
 // OrderInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelOrderCreateRequest) GetOrderInfo() *OrderInfo {
-    return r.orderInfo
+    return r._orderInfo
 }

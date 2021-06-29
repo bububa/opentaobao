@@ -17,13 +17,13 @@ taobao.openim.tribe.setmembernick
 type TaobaoOpenimTribeSetmembernickRequest struct {
     model.Params
     // 发起设置昵称的操作者，如果是设置其他成员的昵称，只有普通组的群主和管理员有权限
-    user   *User
+    _user   *User
     // 群id
-    tribeId   int64
+    _tribeId   int64
     // 被设置昵称的群成员
-    member   *User
+    _member   *User
     // 设置的昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoOpenimTribeSetmembernickRequest对象
@@ -48,49 +48,49 @@ func (r TaobaoOpenimTribeSetmembernickRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 发起设置昵称的操作者，如果是设置其他成员的昵称，只有普通组的群主和管理员有权限
-func (r *TaobaoOpenimTribeSetmembernickRequest) SetUser(user *User) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeSetmembernickRequest) SetUser(_user *User) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeSetmembernickRequest) GetUser() *User {
-    return r.user
+    return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeSetmembernickRequest) SetTribeId(tribeId int64) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribeSetmembernickRequest) SetTribeId(_tribeId int64) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribeSetmembernickRequest) GetTribeId() int64 {
-    return r.tribeId
+    return r._tribeId
 }
 // Member Setter
 // 被设置昵称的群成员
-func (r *TaobaoOpenimTribeSetmembernickRequest) SetMember(member *User) error {
-    r.member = member
-    r.Set("member", member)
+func (r *TaobaoOpenimTribeSetmembernickRequest) SetMember(_member *User) error {
+    r._member = _member
+    r.Set("member", _member)
     return nil
 }
 
 // Member Getter
 func (r TaobaoOpenimTribeSetmembernickRequest) GetMember() *User {
-    return r.member
+    return r._member
 }
 // Nick Setter
 // 设置的昵称
-func (r *TaobaoOpenimTribeSetmembernickRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoOpenimTribeSetmembernickRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoOpenimTribeSetmembernickRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

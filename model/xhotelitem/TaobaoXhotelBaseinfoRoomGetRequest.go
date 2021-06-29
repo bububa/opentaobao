@@ -15,11 +15,11 @@ taobao.xhotel.baseinfo.room.get
 type TaobaoXhotelBaseinfoRoomGetRequest struct {
     model.Params
     // 卖家系统中的酒店ID。
-    outHid   string
+    _outHid   string
     // 用于标示该酒店发布的渠道信息
-    vendor   string
+    _vendor   string
     // 是否需要房价基本信息（false为不需要），默认为需要
-    isNeedRatePlan   bool
+    _isNeedRatePlan   bool
 }
 
 // 初始化TaobaoXhotelBaseinfoRoomGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelBaseinfoRoomGetRequest) GetApiParams() url.Values {
 }
 // OutHid Setter
 // 卖家系统中的酒店ID。
-func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetOutHid(outHid string) error {
-    r.outHid = outHid
-    r.Set("out_hid", outHid)
+func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetOutHid(_outHid string) error {
+    r._outHid = _outHid
+    r.Set("out_hid", _outHid)
     return nil
 }
 
 // OutHid Getter
 func (r TaobaoXhotelBaseinfoRoomGetRequest) GetOutHid() string {
-    return r.outHid
+    return r._outHid
 }
 // Vendor Setter
 // 用于标示该酒店发布的渠道信息
-func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelBaseinfoRoomGetRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // IsNeedRatePlan Setter
 // 是否需要房价基本信息（false为不需要），默认为需要
-func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetIsNeedRatePlan(isNeedRatePlan bool) error {
-    r.isNeedRatePlan = isNeedRatePlan
-    r.Set("is_need_rate_plan", isNeedRatePlan)
+func (r *TaobaoXhotelBaseinfoRoomGetRequest) SetIsNeedRatePlan(_isNeedRatePlan bool) error {
+    r._isNeedRatePlan = _isNeedRatePlan
+    r.Set("is_need_rate_plan", _isNeedRatePlan)
     return nil
 }
 
 // IsNeedRatePlan Getter
 func (r TaobaoXhotelBaseinfoRoomGetRequest) GetIsNeedRatePlan() bool {
-    return r.isNeedRatePlan
+    return r._isNeedRatePlan
 }

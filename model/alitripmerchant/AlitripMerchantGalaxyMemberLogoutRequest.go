@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.member.logout
 type AlitripMerchantGalaxyMemberLogoutRequest struct {
     model.Params
     // 租户信息
-    tenantKey   string
+    _tenantKey   string
     // 用户登录token
-    token   string
+    _token   string
 }
 
 // 初始化AlitripMerchantGalaxyMemberLogoutRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyMemberLogoutRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户信息
-func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyMemberLogoutRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Token Setter
 // 用户登录token
-func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyMemberLogoutRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyMemberLogoutRequest) GetToken() string {
-    return r.token
+    return r._token
 }

@@ -15,9 +15,9 @@ alibaba.lst.pos.open.inventory.getinventorydata
 type AlibabaLstPosOpenInventoryGetinventorydataRequest struct {
     model.Params
     // ISV商品Id列表
-    isvGoodsIdList   []string
+    _isvGoodsIdList   []string
     // 门店主账号Id
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaLstPosOpenInventoryGetinventorydataRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstPosOpenInventoryGetinventorydataRequest) GetApiParams() url.Va
 }
 // IsvGoodsIdList Setter
 // ISV商品Id列表
-func (r *AlibabaLstPosOpenInventoryGetinventorydataRequest) SetIsvGoodsIdList(isvGoodsIdList []string) error {
-    r.isvGoodsIdList = isvGoodsIdList
-    r.Set("isv_goods_id_list", isvGoodsIdList)
+func (r *AlibabaLstPosOpenInventoryGetinventorydataRequest) SetIsvGoodsIdList(_isvGoodsIdList []string) error {
+    r._isvGoodsIdList = _isvGoodsIdList
+    r.Set("isv_goods_id_list", _isvGoodsIdList)
     return nil
 }
 
 // IsvGoodsIdList Getter
 func (r AlibabaLstPosOpenInventoryGetinventorydataRequest) GetIsvGoodsIdList() []string {
-    return r.isvGoodsIdList
+    return r._isvGoodsIdList
 }
 // UserId Setter
 // 门店主账号Id
-func (r *AlibabaLstPosOpenInventoryGetinventorydataRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaLstPosOpenInventoryGetinventorydataRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaLstPosOpenInventoryGetinventorydataRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

@@ -15,7 +15,7 @@ alibaba.wtt.user.regioninfo.byip.get
 type AlibabaWttUserRegioninfoByipGetRequest struct {
     model.Params
     // ip地址
-    ip   string
+    _ip   string
 }
 
 // 初始化AlibabaWttUserRegioninfoByipGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWttUserRegioninfoByipGetRequest) GetApiParams() url.Values {
 }
 // Ip Setter
 // ip地址
-func (r *AlibabaWttUserRegioninfoByipGetRequest) SetIp(ip string) error {
-    r.ip = ip
-    r.Set("ip", ip)
+func (r *AlibabaWttUserRegioninfoByipGetRequest) SetIp(_ip string) error {
+    r._ip = _ip
+    r.Set("ip", _ip)
     return nil
 }
 
 // Ip Getter
 func (r AlibabaWttUserRegioninfoByipGetRequest) GetIp() string {
-    return r.ip
+    return r._ip
 }

@@ -15,9 +15,9 @@ alibaba.campus.space.floor.getbyid
 type AlibabaCampusSpaceFloorGetbyidRequest struct {
     model.Params
     // 环境上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 楼层id
-    id   int64
+    _id   int64
 }
 
 // 初始化AlibabaCampusSpaceFloorGetbyidRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceFloorGetbyidRequest) GetApiParams() url.Values {
 }
 // Context Setter
 // 环境上下文
-func (r *AlibabaCampusSpaceFloorGetbyidRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceFloorGetbyidRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceFloorGetbyidRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // Id Setter
 // 楼层id
-func (r *AlibabaCampusSpaceFloorGetbyidRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaCampusSpaceFloorGetbyidRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaCampusSpaceFloorGetbyidRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

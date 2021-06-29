@@ -15,11 +15,11 @@ aliyun.viapi.facebody.compareface
 type AliyunViapiFacebodyComparefaceRequest struct {
     model.Params
     // 图片url地址(http/https)
-    imageUrlA   string
+    _imageUrlA   string
     // 图片url地址(http/https)
-    imageUrlB   string
+    _imageUrlB   string
     // 图片类型, ,取值范围[0:图片URL, 1:图片Base64数据]
-    imageType   int64
+    _imageType   int64
 }
 
 // 初始化AliyunViapiFacebodyComparefaceRequest对象
@@ -44,37 +44,37 @@ func (r AliyunViapiFacebodyComparefaceRequest) GetApiParams() url.Values {
 }
 // ImageUrlA Setter
 // 图片url地址(http/https)
-func (r *AliyunViapiFacebodyComparefaceRequest) SetImageUrlA(imageUrlA string) error {
-    r.imageUrlA = imageUrlA
-    r.Set("image_url_a", imageUrlA)
+func (r *AliyunViapiFacebodyComparefaceRequest) SetImageUrlA(_imageUrlA string) error {
+    r._imageUrlA = _imageUrlA
+    r.Set("image_url_a", _imageUrlA)
     return nil
 }
 
 // ImageUrlA Getter
 func (r AliyunViapiFacebodyComparefaceRequest) GetImageUrlA() string {
-    return r.imageUrlA
+    return r._imageUrlA
 }
 // ImageUrlB Setter
 // 图片url地址(http/https)
-func (r *AliyunViapiFacebodyComparefaceRequest) SetImageUrlB(imageUrlB string) error {
-    r.imageUrlB = imageUrlB
-    r.Set("image_url_b", imageUrlB)
+func (r *AliyunViapiFacebodyComparefaceRequest) SetImageUrlB(_imageUrlB string) error {
+    r._imageUrlB = _imageUrlB
+    r.Set("image_url_b", _imageUrlB)
     return nil
 }
 
 // ImageUrlB Getter
 func (r AliyunViapiFacebodyComparefaceRequest) GetImageUrlB() string {
-    return r.imageUrlB
+    return r._imageUrlB
 }
 // ImageType Setter
 // 图片类型, ,取值范围[0:图片URL, 1:图片Base64数据]
-func (r *AliyunViapiFacebodyComparefaceRequest) SetImageType(imageType int64) error {
-    r.imageType = imageType
-    r.Set("image_type", imageType)
+func (r *AliyunViapiFacebodyComparefaceRequest) SetImageType(_imageType int64) error {
+    r._imageType = _imageType
+    r.Set("image_type", _imageType)
     return nil
 }
 
 // ImageType Getter
 func (r AliyunViapiFacebodyComparefaceRequest) GetImageType() int64 {
-    return r.imageType
+    return r._imageType
 }

@@ -15,7 +15,7 @@ alibaba.wdk.marketing.fullrange.deleteactivity
 type AlibabaWdkMarketingFullrangeDeleteactivityRequest struct {
     model.Params
     // 需要删除的活动的信息
-    param   *CommonActivityParam
+    _param   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingFullrangeDeleteactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingFullrangeDeleteactivityRequest) SetParam(param *CommonActivityParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingFullrangeDeleteactivityRequest) SetParam(_param *CommonActivityParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingFullrangeDeleteactivityRequest) GetParam() *CommonActivityParam {
-    return r.param
+    return r._param
 }

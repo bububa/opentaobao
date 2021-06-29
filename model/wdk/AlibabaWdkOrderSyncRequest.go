@@ -15,7 +15,7 @@ alibaba.wdk.order.sync
 type AlibabaWdkOrderSyncRequest struct {
     model.Params
     // 订单
-    receiptOrder   *ReceiptOrderDO
+    _receiptOrder   *ReceiptOrderDO
 }
 
 // 初始化AlibabaWdkOrderSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderSyncRequest) GetApiParams() url.Values {
 }
 // ReceiptOrder Setter
 // 订单
-func (r *AlibabaWdkOrderSyncRequest) SetReceiptOrder(receiptOrder *ReceiptOrderDO) error {
-    r.receiptOrder = receiptOrder
-    r.Set("receipt_order", receiptOrder)
+func (r *AlibabaWdkOrderSyncRequest) SetReceiptOrder(_receiptOrder *ReceiptOrderDO) error {
+    r._receiptOrder = _receiptOrder
+    r.Set("receipt_order", _receiptOrder)
     return nil
 }
 
 // ReceiptOrder Getter
 func (r AlibabaWdkOrderSyncRequest) GetReceiptOrder() *ReceiptOrderDO {
-    return r.receiptOrder
+    return r._receiptOrder
 }

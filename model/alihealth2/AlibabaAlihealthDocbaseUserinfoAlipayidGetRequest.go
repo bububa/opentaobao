@@ -15,9 +15,9 @@ alibaba.alihealth.docbase.userinfo.alipayid.get
 type AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest struct {
     model.Params
     // 阿里健康ID
-    alihealthUserId   string
+    _alihealthUserId   string
     // 渠道alipay taobao uc gaode
-    appChannel   string
+    _appChannel   string
 }
 
 // 初始化AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) GetApiParams() url.Va
 }
 // AlihealthUserId Setter
 // 阿里健康ID
-func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) SetAlihealthUserId(alihealthUserId string) error {
-    r.alihealthUserId = alihealthUserId
-    r.Set("alihealth_user_id", alihealthUserId)
+func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) SetAlihealthUserId(_alihealthUserId string) error {
+    r._alihealthUserId = _alihealthUserId
+    r.Set("alihealth_user_id", _alihealthUserId)
     return nil
 }
 
 // AlihealthUserId Getter
 func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) GetAlihealthUserId() string {
-    return r.alihealthUserId
+    return r._alihealthUserId
 }
 // AppChannel Setter
 // 渠道alipay taobao uc gaode
-func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) SetAppChannel(appChannel string) error {
-    r.appChannel = appChannel
-    r.Set("app_channel", appChannel)
+func (r *AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) SetAppChannel(_appChannel string) error {
+    r._appChannel = _appChannel
+    r.Set("app_channel", _appChannel)
     return nil
 }
 
 // AppChannel Getter
 func (r AlibabaAlihealthDocbaseUserinfoAlipayidGetRequest) GetAppChannel() string {
-    return r.appChannel
+    return r._appChannel
 }

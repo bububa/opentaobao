@@ -15,15 +15,15 @@ tmall.car.lease.freedownpayment.put
 type TmallCarLeaseFreedownpaymentPutRequest struct {
     model.Params
     // 活动预热结束时间:格式：yyyy.MM.dd HH:mm:ss
-    preEndTime   string
+    _preEndTime   string
     // 活动预热开始时间:格式：yyyy.MM.dd HH:mm:ss
-    preStartTime   string
+    _preStartTime   string
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 活动时间范围节点(json格式字符串)：<br/> 开始时间(startTime),格式：yyyy.MM.dd HH:mm:ss <br/>  结束时间(endTime),格式：yyyy.MM.dd HH:mm:ss <br/>  名额(amount)
-    timeRangeList   string
+    _timeRangeList   string
     // 外部活动ID
-    refActivityId   string
+    _refActivityId   string
 }
 
 // 初始化TmallCarLeaseFreedownpaymentPutRequest对象
@@ -48,61 +48,61 @@ func (r TmallCarLeaseFreedownpaymentPutRequest) GetApiParams() url.Values {
 }
 // PreEndTime Setter
 // 活动预热结束时间:格式：yyyy.MM.dd HH:mm:ss
-func (r *TmallCarLeaseFreedownpaymentPutRequest) SetPreEndTime(preEndTime string) error {
-    r.preEndTime = preEndTime
-    r.Set("pre_end_time", preEndTime)
+func (r *TmallCarLeaseFreedownpaymentPutRequest) SetPreEndTime(_preEndTime string) error {
+    r._preEndTime = _preEndTime
+    r.Set("pre_end_time", _preEndTime)
     return nil
 }
 
 // PreEndTime Getter
 func (r TmallCarLeaseFreedownpaymentPutRequest) GetPreEndTime() string {
-    return r.preEndTime
+    return r._preEndTime
 }
 // PreStartTime Setter
 // 活动预热开始时间:格式：yyyy.MM.dd HH:mm:ss
-func (r *TmallCarLeaseFreedownpaymentPutRequest) SetPreStartTime(preStartTime string) error {
-    r.preStartTime = preStartTime
-    r.Set("pre_start_time", preStartTime)
+func (r *TmallCarLeaseFreedownpaymentPutRequest) SetPreStartTime(_preStartTime string) error {
+    r._preStartTime = _preStartTime
+    r.Set("pre_start_time", _preStartTime)
     return nil
 }
 
 // PreStartTime Getter
 func (r TmallCarLeaseFreedownpaymentPutRequest) GetPreStartTime() string {
-    return r.preStartTime
+    return r._preStartTime
 }
 // ItemId Setter
 // 商品ID
-func (r *TmallCarLeaseFreedownpaymentPutRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallCarLeaseFreedownpaymentPutRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallCarLeaseFreedownpaymentPutRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // TimeRangeList Setter
 // 活动时间范围节点(json格式字符串)：<br/> 开始时间(startTime),格式：yyyy.MM.dd HH:mm:ss <br/>  结束时间(endTime),格式：yyyy.MM.dd HH:mm:ss <br/>  名额(amount)
-func (r *TmallCarLeaseFreedownpaymentPutRequest) SetTimeRangeList(timeRangeList string) error {
-    r.timeRangeList = timeRangeList
-    r.Set("time_range_list", timeRangeList)
+func (r *TmallCarLeaseFreedownpaymentPutRequest) SetTimeRangeList(_timeRangeList string) error {
+    r._timeRangeList = _timeRangeList
+    r.Set("time_range_list", _timeRangeList)
     return nil
 }
 
 // TimeRangeList Getter
 func (r TmallCarLeaseFreedownpaymentPutRequest) GetTimeRangeList() string {
-    return r.timeRangeList
+    return r._timeRangeList
 }
 // RefActivityId Setter
 // 外部活动ID
-func (r *TmallCarLeaseFreedownpaymentPutRequest) SetRefActivityId(refActivityId string) error {
-    r.refActivityId = refActivityId
-    r.Set("ref_activity_id", refActivityId)
+func (r *TmallCarLeaseFreedownpaymentPutRequest) SetRefActivityId(_refActivityId string) error {
+    r._refActivityId = _refActivityId
+    r.Set("ref_activity_id", _refActivityId)
     return nil
 }
 
 // RefActivityId Getter
 func (r TmallCarLeaseFreedownpaymentPutRequest) GetRefActivityId() string {
-    return r.refActivityId
+    return r._refActivityId
 }

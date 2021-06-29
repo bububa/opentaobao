@@ -15,7 +15,7 @@ taobao.openuid.get.bymixnick
 type TaobaoOpenuidGetBymixnickRequest struct {
     model.Params
     // 无线类应用获取到的混淆的nick
-    mixNick   string
+    _mixNick   string
 }
 
 // 初始化TaobaoOpenuidGetBymixnickRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenuidGetBymixnickRequest) GetApiParams() url.Values {
 }
 // MixNick Setter
 // 无线类应用获取到的混淆的nick
-func (r *TaobaoOpenuidGetBymixnickRequest) SetMixNick(mixNick string) error {
-    r.mixNick = mixNick
-    r.Set("mix_nick", mixNick)
+func (r *TaobaoOpenuidGetBymixnickRequest) SetMixNick(_mixNick string) error {
+    r._mixNick = _mixNick
+    r.Set("mix_nick", _mixNick)
     return nil
 }
 
 // MixNick Getter
 func (r TaobaoOpenuidGetBymixnickRequest) GetMixNick() string {
-    return r.mixNick
+    return r._mixNick
 }

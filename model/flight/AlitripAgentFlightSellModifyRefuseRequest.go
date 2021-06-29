@@ -15,11 +15,11 @@ alitrip.agent.flight.sell.modify.refuse
 type AlitripAgentFlightSellModifyRefuseRequest struct {
     model.Params
     // 申请单号
-    applyId   string
+    _applyId   string
     // 国际国内标识
-    domesticIntl   int64
+    _domesticIntl   int64
     // 拒绝原因
-    refuseReason   string
+    _refuseReason   string
 }
 
 // 初始化AlitripAgentFlightSellModifyRefuseRequest对象
@@ -44,37 +44,37 @@ func (r AlitripAgentFlightSellModifyRefuseRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 申请单号
-func (r *AlitripAgentFlightSellModifyRefuseRequest) SetApplyId(applyId string) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlitripAgentFlightSellModifyRefuseRequest) SetApplyId(_applyId string) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlitripAgentFlightSellModifyRefuseRequest) GetApplyId() string {
-    return r.applyId
+    return r._applyId
 }
 // DomesticIntl Setter
 // 国际国内标识
-func (r *AlitripAgentFlightSellModifyRefuseRequest) SetDomesticIntl(domesticIntl int64) error {
-    r.domesticIntl = domesticIntl
-    r.Set("domestic_intl", domesticIntl)
+func (r *AlitripAgentFlightSellModifyRefuseRequest) SetDomesticIntl(_domesticIntl int64) error {
+    r._domesticIntl = _domesticIntl
+    r.Set("domestic_intl", _domesticIntl)
     return nil
 }
 
 // DomesticIntl Getter
 func (r AlitripAgentFlightSellModifyRefuseRequest) GetDomesticIntl() int64 {
-    return r.domesticIntl
+    return r._domesticIntl
 }
 // RefuseReason Setter
 // 拒绝原因
-func (r *AlitripAgentFlightSellModifyRefuseRequest) SetRefuseReason(refuseReason string) error {
-    r.refuseReason = refuseReason
-    r.Set("refuse_reason", refuseReason)
+func (r *AlitripAgentFlightSellModifyRefuseRequest) SetRefuseReason(_refuseReason string) error {
+    r._refuseReason = _refuseReason
+    r.Set("refuse_reason", _refuseReason)
     return nil
 }
 
 // RefuseReason Getter
 func (r AlitripAgentFlightSellModifyRefuseRequest) GetRefuseReason() string {
-    return r.refuseReason
+    return r._refuseReason
 }

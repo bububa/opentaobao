@@ -15,13 +15,13 @@ taobao.alitrip.ie.agent.refund.refuse
 type TaobaoAlitripIeAgentRefundRefuseRequest struct {
     model.Params
     // 退票申请单id
-    applyId   int64
+    _applyId   int64
     // 订单id
-    orderId   int64
+    _orderId   int64
     // 代理商回复
-    agentAnswer   string
+    _agentAnswer   string
     // 代理商id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化TaobaoAlitripIeAgentRefundRefuseRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAlitripIeAgentRefundRefuseRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 退票申请单id
-func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r TaobaoAlitripIeAgentRefundRefuseRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }
 // OrderId Setter
 // 订单id
-func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoAlitripIeAgentRefundRefuseRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // AgentAnswer Setter
 // 代理商回复
-func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetAgentAnswer(agentAnswer string) error {
-    r.agentAnswer = agentAnswer
-    r.Set("agent_answer", agentAnswer)
+func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetAgentAnswer(_agentAnswer string) error {
+    r._agentAnswer = _agentAnswer
+    r.Set("agent_answer", _agentAnswer)
     return nil
 }
 
 // AgentAnswer Getter
 func (r TaobaoAlitripIeAgentRefundRefuseRequest) GetAgentAnswer() string {
-    return r.agentAnswer
+    return r._agentAnswer
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentRefundRefuseRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentRefundRefuseRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

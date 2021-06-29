@@ -15,7 +15,7 @@ alitrip.btrip.corpop.apply.modify
 type AlitripBtripCorpopApplyModifyRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenApiApplyRq
+    _rq   *OpenApiApplyRq
 }
 
 // 初始化AlitripBtripCorpopApplyModifyRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplyModifyRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCorpopApplyModifyRequest) SetRq(rq *OpenApiApplyRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopApplyModifyRequest) SetRq(_rq *OpenApiApplyRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopApplyModifyRequest) GetRq() *OpenApiApplyRq {
-    return r.rq
+    return r._rq
 }

@@ -15,9 +15,9 @@ alibaba.icbu.product.batch.update.display
 type AlibabaIcbuProductBatchUpdateDisplayRequest struct {
     model.Params
     // on表示上架，off表示下架
-    newDisplay   string
+    _newDisplay   string
     // 用逗号分隔的混淆id字符串
-    productIdList   string
+    _productIdList   string
 }
 
 // 初始化AlibabaIcbuProductBatchUpdateDisplayRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIcbuProductBatchUpdateDisplayRequest) GetApiParams() url.Values {
 }
 // NewDisplay Setter
 // on表示上架，off表示下架
-func (r *AlibabaIcbuProductBatchUpdateDisplayRequest) SetNewDisplay(newDisplay string) error {
-    r.newDisplay = newDisplay
-    r.Set("new_display", newDisplay)
+func (r *AlibabaIcbuProductBatchUpdateDisplayRequest) SetNewDisplay(_newDisplay string) error {
+    r._newDisplay = _newDisplay
+    r.Set("new_display", _newDisplay)
     return nil
 }
 
 // NewDisplay Getter
 func (r AlibabaIcbuProductBatchUpdateDisplayRequest) GetNewDisplay() string {
-    return r.newDisplay
+    return r._newDisplay
 }
 // ProductIdList Setter
 // 用逗号分隔的混淆id字符串
-func (r *AlibabaIcbuProductBatchUpdateDisplayRequest) SetProductIdList(productIdList string) error {
-    r.productIdList = productIdList
-    r.Set("product_id_list", productIdList)
+func (r *AlibabaIcbuProductBatchUpdateDisplayRequest) SetProductIdList(_productIdList string) error {
+    r._productIdList = _productIdList
+    r.Set("product_id_list", _productIdList)
     return nil
 }
 
 // ProductIdList Getter
 func (r AlibabaIcbuProductBatchUpdateDisplayRequest) GetProductIdList() string {
-    return r.productIdList
+    return r._productIdList
 }

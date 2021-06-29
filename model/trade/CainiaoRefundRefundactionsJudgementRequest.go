@@ -15,7 +15,7 @@ cainiao.refund.refundactions.judgement
 type CainiaoRefundRefundactionsJudgementRequest struct {
     model.Params
     // 操作请求
-    param0   *OrderRefundOperationJudgementReq
+    _param0   *OrderRefundOperationJudgementReq
 }
 
 // 初始化CainiaoRefundRefundactionsJudgementRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoRefundRefundactionsJudgementRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 操作请求
-func (r *CainiaoRefundRefundactionsJudgementRequest) SetParam0(param0 *OrderRefundOperationJudgementReq) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *CainiaoRefundRefundactionsJudgementRequest) SetParam0(_param0 *OrderRefundOperationJudgementReq) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r CainiaoRefundRefundactionsJudgementRequest) GetParam0() *OrderRefundOperationJudgementReq {
-    return r.param0
+    return r._param0
 }

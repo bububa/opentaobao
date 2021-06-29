@@ -15,7 +15,7 @@ API for editing product, customized for Oversea merchants. Most of the input fie
 type AliexpressSolutionProductEditRequest struct {
     model.Params
     // input param
-    editProductRequest   *PostProductRequestDto
+    _editProductRequest   *PostProductRequestDto
 }
 
 // 初始化AliexpressSolutionProductEditRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionProductEditRequest) GetApiParams() url.Values {
 }
 // EditProductRequest Setter
 // input param
-func (r *AliexpressSolutionProductEditRequest) SetEditProductRequest(editProductRequest *PostProductRequestDto) error {
-    r.editProductRequest = editProductRequest
-    r.Set("edit_product_request", editProductRequest)
+func (r *AliexpressSolutionProductEditRequest) SetEditProductRequest(_editProductRequest *PostProductRequestDto) error {
+    r._editProductRequest = _editProductRequest
+    r.Set("edit_product_request", _editProductRequest)
     return nil
 }
 
 // EditProductRequest Getter
 func (r AliexpressSolutionProductEditRequest) GetEditProductRequest() *PostProductRequestDto {
-    return r.editProductRequest
+    return r._editProductRequest
 }

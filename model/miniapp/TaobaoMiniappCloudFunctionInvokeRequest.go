@@ -15,15 +15,15 @@ taobao.miniapp.cloud.function.invoke
 type TaobaoMiniappCloudFunctionInvokeRequest struct {
     model.Params
     // 云函数名称
-    name   string
+    _name   string
     // 指定云函数的handler
-    handler   string
+    _handler   string
     // 调用云函数时的传参（JSON格式）
-    data   string
+    _data   string
     // 云环境
-    env   string
+    _env   string
     // 扩展协议参数
-    exts   string
+    _exts   string
 }
 
 // 初始化TaobaoMiniappCloudFunctionInvokeRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoMiniappCloudFunctionInvokeRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 云函数名称
-func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoMiniappCloudFunctionInvokeRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Handler Setter
 // 指定云函数的handler
-func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetHandler(handler string) error {
-    r.handler = handler
-    r.Set("handler", handler)
+func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetHandler(_handler string) error {
+    r._handler = _handler
+    r.Set("handler", _handler)
     return nil
 }
 
 // Handler Getter
 func (r TaobaoMiniappCloudFunctionInvokeRequest) GetHandler() string {
-    return r.handler
+    return r._handler
 }
 // Data Setter
 // 调用云函数时的传参（JSON格式）
-func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoMiniappCloudFunctionInvokeRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // Env Setter
 // 云环境
-func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetEnv(env string) error {
-    r.env = env
-    r.Set("env", env)
+func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetEnv(_env string) error {
+    r._env = _env
+    r.Set("env", _env)
     return nil
 }
 
 // Env Getter
 func (r TaobaoMiniappCloudFunctionInvokeRequest) GetEnv() string {
-    return r.env
+    return r._env
 }
 // Exts Setter
 // 扩展协议参数
-func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetExts(exts string) error {
-    r.exts = exts
-    r.Set("exts", exts)
+func (r *TaobaoMiniappCloudFunctionInvokeRequest) SetExts(_exts string) error {
+    r._exts = _exts
+    r.Set("exts", _exts)
     return nil
 }
 
 // Exts Getter
 func (r TaobaoMiniappCloudFunctionInvokeRequest) GetExts() string {
-    return r.exts
+    return r._exts
 }

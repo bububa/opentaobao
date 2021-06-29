@@ -15,13 +15,13 @@ alibaba.lst.speaker.file.upload
 type AlibabaLstSpeakerFileUploadRequest struct {
     model.Params
     // 数据流
-    fileBytes   []*model.File
+    _fileBytes   []*model.File
     // 文件类型,audio:音频，advert:广告
-    fileType   string
+    _fileType   string
     // 文件ID
-    fileId   string
+    _fileId   string
     // md5直
-    md5   string
+    _md5   string
 }
 
 // 初始化AlibabaLstSpeakerFileUploadRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaLstSpeakerFileUploadRequest) GetApiParams() url.Values {
 }
 // FileBytes Setter
 // 数据流
-func (r *AlibabaLstSpeakerFileUploadRequest) SetFileBytes(fileBytes []*model.File) error {
-    r.fileBytes = fileBytes
-    r.Set("file_bytes", fileBytes)
+func (r *AlibabaLstSpeakerFileUploadRequest) SetFileBytes(_fileBytes []*model.File) error {
+    r._fileBytes = _fileBytes
+    r.Set("file_bytes", _fileBytes)
     return nil
 }
 
 // FileBytes Getter
 func (r AlibabaLstSpeakerFileUploadRequest) GetFileBytes() []*model.File {
-    return r.fileBytes
+    return r._fileBytes
 }
 // FileType Setter
 // 文件类型,audio:音频，advert:广告
-func (r *AlibabaLstSpeakerFileUploadRequest) SetFileType(fileType string) error {
-    r.fileType = fileType
-    r.Set("file_type", fileType)
+func (r *AlibabaLstSpeakerFileUploadRequest) SetFileType(_fileType string) error {
+    r._fileType = _fileType
+    r.Set("file_type", _fileType)
     return nil
 }
 
 // FileType Getter
 func (r AlibabaLstSpeakerFileUploadRequest) GetFileType() string {
-    return r.fileType
+    return r._fileType
 }
 // FileId Setter
 // 文件ID
-func (r *AlibabaLstSpeakerFileUploadRequest) SetFileId(fileId string) error {
-    r.fileId = fileId
-    r.Set("file_id", fileId)
+func (r *AlibabaLstSpeakerFileUploadRequest) SetFileId(_fileId string) error {
+    r._fileId = _fileId
+    r.Set("file_id", _fileId)
     return nil
 }
 
 // FileId Getter
 func (r AlibabaLstSpeakerFileUploadRequest) GetFileId() string {
-    return r.fileId
+    return r._fileId
 }
 // Md5 Setter
 // md5直
-func (r *AlibabaLstSpeakerFileUploadRequest) SetMd5(md5 string) error {
-    r.md5 = md5
-    r.Set("md5", md5)
+func (r *AlibabaLstSpeakerFileUploadRequest) SetMd5(_md5 string) error {
+    r._md5 = _md5
+    r.Set("md5", _md5)
     return nil
 }
 
 // Md5 Getter
 func (r AlibabaLstSpeakerFileUploadRequest) GetMd5() string {
-    return r.md5
+    return r._md5
 }

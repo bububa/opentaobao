@@ -15,7 +15,7 @@ alibaba.mos.commdy.offline.getfileurl
 type AlibabaMosCommdyOfflineGetfileurlRequest struct {
     model.Params
     // 离线文件名称
-    fileKeys   []string
+    _fileKeys   []string
 }
 
 // 初始化AlibabaMosCommdyOfflineGetfileurlRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetApiParams() url.Values {
 }
 // FileKeys Setter
 // 离线文件名称
-func (r *AlibabaMosCommdyOfflineGetfileurlRequest) SetFileKeys(fileKeys []string) error {
-    r.fileKeys = fileKeys
-    r.Set("file_keys", fileKeys)
+func (r *AlibabaMosCommdyOfflineGetfileurlRequest) SetFileKeys(_fileKeys []string) error {
+    r._fileKeys = _fileKeys
+    r.Set("file_keys", _fileKeys)
     return nil
 }
 
 // FileKeys Getter
 func (r AlibabaMosCommdyOfflineGetfileurlRequest) GetFileKeys() []string {
-    return r.fileKeys
+    return r._fileKeys
 }

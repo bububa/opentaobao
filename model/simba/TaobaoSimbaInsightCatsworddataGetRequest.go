@@ -15,13 +15,13 @@ taobao.simba.insight.catsworddata.get
 type TaobaoSimbaInsightCatsworddataGetRequest struct {
     model.Params
     // 类目id
-    catId   string
+    _catId   string
     // 需要查询的关键词列表，最大长度100。
-    bidwordList   []string
+    _bidwordList   []string
     // 开始时间，格式只能为：yyyy-MM-dd
-    startDate   string
+    _startDate   string
     // 结束时间，格式只能为：yyyy-MM-dd
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoSimbaInsightCatsworddataGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaInsightCatsworddataGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetCatId(catId string) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetCatId(_catId string) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r TaobaoSimbaInsightCatsworddataGetRequest) GetCatId() string {
-    return r.catId
+    return r._catId
 }
 // BidwordList Setter
 // 需要查询的关键词列表，最大长度100。
-func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetBidwordList(bidwordList []string) error {
-    r.bidwordList = bidwordList
-    r.Set("bidword_list", bidwordList)
+func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetBidwordList(_bidwordList []string) error {
+    r._bidwordList = _bidwordList
+    r.Set("bidword_list", _bidwordList)
     return nil
 }
 
 // BidwordList Getter
 func (r TaobaoSimbaInsightCatsworddataGetRequest) GetBidwordList() []string {
-    return r.bidwordList
+    return r._bidwordList
 }
 // StartDate Setter
 // 开始时间，格式只能为：yyyy-MM-dd
-func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoSimbaInsightCatsworddataGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 结束时间，格式只能为：yyyy-MM-dd
-func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoSimbaInsightCatsworddataGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

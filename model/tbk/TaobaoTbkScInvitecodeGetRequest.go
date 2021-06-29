@@ -15,11 +15,11 @@ taobao.tbk.sc.invitecode.get
 type TaobaoTbkScInvitecodeGetRequest struct {
     model.Params
     // 渠道关系ID
-    relationId   int64
+    _relationId   int64
     // 渠道推广的物料类型
-    relationApp   string
+    _relationApp   string
     // 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-    codeType   int64
+    _codeType   int64
 }
 
 // 初始化TaobaoTbkScInvitecodeGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTbkScInvitecodeGetRequest) GetApiParams() url.Values {
 }
 // RelationId Setter
 // 渠道关系ID
-func (r *TaobaoTbkScInvitecodeGetRequest) SetRelationId(relationId int64) error {
-    r.relationId = relationId
-    r.Set("relation_id", relationId)
+func (r *TaobaoTbkScInvitecodeGetRequest) SetRelationId(_relationId int64) error {
+    r._relationId = _relationId
+    r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
 func (r TaobaoTbkScInvitecodeGetRequest) GetRelationId() int64 {
-    return r.relationId
+    return r._relationId
 }
 // RelationApp Setter
 // 渠道推广的物料类型
-func (r *TaobaoTbkScInvitecodeGetRequest) SetRelationApp(relationApp string) error {
-    r.relationApp = relationApp
-    r.Set("relation_app", relationApp)
+func (r *TaobaoTbkScInvitecodeGetRequest) SetRelationApp(_relationApp string) error {
+    r._relationApp = _relationApp
+    r.Set("relation_app", _relationApp)
     return nil
 }
 
 // RelationApp Getter
 func (r TaobaoTbkScInvitecodeGetRequest) GetRelationApp() string {
-    return r.relationApp
+    return r._relationApp
 }
 // CodeType Setter
 // 邀请码类型，1 - 渠道邀请，2 - 渠道裂变，3 -会员邀请
-func (r *TaobaoTbkScInvitecodeGetRequest) SetCodeType(codeType int64) error {
-    r.codeType = codeType
-    r.Set("code_type", codeType)
+func (r *TaobaoTbkScInvitecodeGetRequest) SetCodeType(_codeType int64) error {
+    r._codeType = _codeType
+    r.Set("code_type", _codeType)
     return nil
 }
 
 // CodeType Getter
 func (r TaobaoTbkScInvitecodeGetRequest) GetCodeType() int64 {
-    return r.codeType
+    return r._codeType
 }

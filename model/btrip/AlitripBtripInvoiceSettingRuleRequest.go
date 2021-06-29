@@ -15,7 +15,7 @@ alitrip.btrip.invoice.setting.rule
 type AlitripBtripInvoiceSettingRuleRequest struct {
     model.Params
     // 入参对象
-    rq   *OpenInvoiceRuleRq
+    _rq   *OpenInvoiceRuleRq
 }
 
 // 初始化AlitripBtripInvoiceSettingRuleRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripInvoiceSettingRuleRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripInvoiceSettingRuleRequest) SetRq(rq *OpenInvoiceRuleRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripInvoiceSettingRuleRequest) SetRq(_rq *OpenInvoiceRuleRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripInvoiceSettingRuleRequest) GetRq() *OpenInvoiceRuleRq {
-    return r.rq
+    return r._rq
 }

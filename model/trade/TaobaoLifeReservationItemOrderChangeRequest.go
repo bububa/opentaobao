@@ -15,15 +15,15 @@ taobao.life.reservation.item.order.change
 type TaobaoLifeReservationItemOrderChangeRequest struct {
     model.Params
     // 淘宝主单号
-    tradeNo   string
+    _tradeNo   string
     // 凭证ID
-    ticketId   string
+    _ticketId   string
     // 改期：MODIFY   取消：CANCEL
-    action   string
+    _action   string
     // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定00:00
-    reserveStartTime   string
+    _reserveStartTime   string
     // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59
-    reserveEndTime   string
+    _reserveEndTime   string
 }
 
 // 初始化TaobaoLifeReservationItemOrderChangeRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoLifeReservationItemOrderChangeRequest) GetApiParams() url.Values {
 }
 // TradeNo Setter
 // 淘宝主单号
-func (r *TaobaoLifeReservationItemOrderChangeRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *TaobaoLifeReservationItemOrderChangeRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r TaobaoLifeReservationItemOrderChangeRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // TicketId Setter
 // 凭证ID
-func (r *TaobaoLifeReservationItemOrderChangeRequest) SetTicketId(ticketId string) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *TaobaoLifeReservationItemOrderChangeRequest) SetTicketId(_ticketId string) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r TaobaoLifeReservationItemOrderChangeRequest) GetTicketId() string {
-    return r.ticketId
+    return r._ticketId
 }
 // Action Setter
 // 改期：MODIFY   取消：CANCEL
-func (r *TaobaoLifeReservationItemOrderChangeRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *TaobaoLifeReservationItemOrderChangeRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r TaobaoLifeReservationItemOrderChangeRequest) GetAction() string {
-    return r.action
+    return r._action
 }
 // ReserveStartTime Setter
 // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定00:00
-func (r *TaobaoLifeReservationItemOrderChangeRequest) SetReserveStartTime(reserveStartTime string) error {
-    r.reserveStartTime = reserveStartTime
-    r.Set("reserve_start_time", reserveStartTime)
+func (r *TaobaoLifeReservationItemOrderChangeRequest) SetReserveStartTime(_reserveStartTime string) error {
+    r._reserveStartTime = _reserveStartTime
+    r.Set("reserve_start_time", _reserveStartTime)
     return nil
 }
 
 // ReserveStartTime Getter
 func (r TaobaoLifeReservationItemOrderChangeRequest) GetReserveStartTime() string {
-    return r.reserveStartTime
+    return r._reserveStartTime
 }
 // ReserveEndTime Setter
 // 改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59
-func (r *TaobaoLifeReservationItemOrderChangeRequest) SetReserveEndTime(reserveEndTime string) error {
-    r.reserveEndTime = reserveEndTime
-    r.Set("reserve_end_time", reserveEndTime)
+func (r *TaobaoLifeReservationItemOrderChangeRequest) SetReserveEndTime(_reserveEndTime string) error {
+    r._reserveEndTime = _reserveEndTime
+    r.Set("reserve_end_time", _reserveEndTime)
     return nil
 }
 
 // ReserveEndTime Getter
 func (r TaobaoLifeReservationItemOrderChangeRequest) GetReserveEndTime() string {
-    return r.reserveEndTime
+    return r._reserveEndTime
 }

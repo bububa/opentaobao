@@ -15,11 +15,11 @@ taobao.alitrip.travel.product.sku.override
 type TaobaoAlitripTravelProductSkuOverrideRequest struct {
     model.Params
     // 商品 外部商家编码。itemId和outProductId至少填写一个
-    outProductId   string
+    _outProductId   string
     // 商品id。itemId和outProductId至少填写一个
-    itemId   int64
+    _itemId   int64
     // 商品日历价格库存套餐
-    skus   []ItemSkuInfo
+    _skus   []ItemSkuInfo
 }
 
 // 初始化TaobaoAlitripTravelProductSkuOverrideRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetApiParams() url.Values 
 }
 // OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetOutProductId(outProductId string) error {
-    r.outProductId = outProductId
-    r.Set("out_product_id", outProductId)
+func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetOutProductId(_outProductId string) error {
+    r._outProductId = _outProductId
+    r.Set("out_product_id", _outProductId)
     return nil
 }
 
 // OutProductId Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetOutProductId() string {
-    return r.outProductId
+    return r._outProductId
 }
 // ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Skus Setter
 // 商品日历价格库存套餐
-func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetSkus(skus []ItemSkuInfo) error {
-    r.skus = skus
-    r.Set("skus", skus)
+func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetSkus(_skus []ItemSkuInfo) error {
+    r._skus = _skus
+    r.Set("skus", _skus)
     return nil
 }
 
 // Skus Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetSkus() []ItemSkuInfo {
-    return r.skus
+    return r._skus
 }

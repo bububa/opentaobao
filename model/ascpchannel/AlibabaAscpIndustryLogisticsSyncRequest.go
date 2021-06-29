@@ -15,7 +15,7 @@ alibaba.ascp.industry.logistics.sync
 type AlibabaAscpIndustryLogisticsSyncRequest struct {
     model.Params
     // 参数
-    param   *LogisticsSyncSellerRequest
+    _param   *LogisticsSyncSellerRequest
 }
 
 // 初始化AlibabaAscpIndustryLogisticsSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpIndustryLogisticsSyncRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *AlibabaAscpIndustryLogisticsSyncRequest) SetParam(param *LogisticsSyncSellerRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaAscpIndustryLogisticsSyncRequest) SetParam(_param *LogisticsSyncSellerRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaAscpIndustryLogisticsSyncRequest) GetParam() *LogisticsSyncSellerRequest {
-    return r.param
+    return r._param
 }

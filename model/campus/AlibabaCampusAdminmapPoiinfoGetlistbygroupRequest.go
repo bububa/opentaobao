@@ -15,9 +15,9 @@ alibaba.campus.adminmap.poiinfo.getlistbygroup
 type AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest struct {
     model.Params
     // 上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 查询对象
-    query   *SpaceUnitQuery
+    _query   *SpaceUnitQuery
 }
 
 // 初始化AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) GetApiParams() url.Va
 }
 // Context Setter
 // 上下文
-func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // Query Setter
 // 查询对象
-func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) SetQuery(query *SpaceUnitQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) SetQuery(_query *SpaceUnitQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusAdminmapPoiinfoGetlistbygroupRequest) GetQuery() *SpaceUnitQuery {
-    return r.query
+    return r._query
 }

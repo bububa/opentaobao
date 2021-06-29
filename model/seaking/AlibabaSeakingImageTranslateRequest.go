@@ -15,17 +15,17 @@ alibaba.seaking.imagetranslate
 type AlibabaSeakingImagetranslateRequest struct {
     model.Params
     // erp用户id
-    identifier   string
+    _identifier   string
     // 目标语种
-    targetLang   string
+    _targetLang   string
     // 源语种
-    sourceLang   string
+    _sourceLang   string
     // 调用来源(erp名称)
-    identifierType   string
+    _identifierType   string
     // 原图url
-    url   string
+    _url   string
     // 扩展信息
-    extra   *Extra
+    _extra   *Extra
 }
 
 // 初始化AlibabaSeakingImagetranslateRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaSeakingImagetranslateRequest) GetApiParams() url.Values {
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingImagetranslateRequest) SetIdentifier(identifier string) error {
-    r.identifier = identifier
-    r.Set("identifier", identifier)
+func (r *AlibabaSeakingImagetranslateRequest) SetIdentifier(_identifier string) error {
+    r._identifier = _identifier
+    r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
 func (r AlibabaSeakingImagetranslateRequest) GetIdentifier() string {
-    return r.identifier
+    return r._identifier
 }
 // TargetLang Setter
 // 目标语种
-func (r *AlibabaSeakingImagetranslateRequest) SetTargetLang(targetLang string) error {
-    r.targetLang = targetLang
-    r.Set("target_lang", targetLang)
+func (r *AlibabaSeakingImagetranslateRequest) SetTargetLang(_targetLang string) error {
+    r._targetLang = _targetLang
+    r.Set("target_lang", _targetLang)
     return nil
 }
 
 // TargetLang Getter
 func (r AlibabaSeakingImagetranslateRequest) GetTargetLang() string {
-    return r.targetLang
+    return r._targetLang
 }
 // SourceLang Setter
 // 源语种
-func (r *AlibabaSeakingImagetranslateRequest) SetSourceLang(sourceLang string) error {
-    r.sourceLang = sourceLang
-    r.Set("source_lang", sourceLang)
+func (r *AlibabaSeakingImagetranslateRequest) SetSourceLang(_sourceLang string) error {
+    r._sourceLang = _sourceLang
+    r.Set("source_lang", _sourceLang)
     return nil
 }
 
 // SourceLang Getter
 func (r AlibabaSeakingImagetranslateRequest) GetSourceLang() string {
-    return r.sourceLang
+    return r._sourceLang
 }
 // IdentifierType Setter
 // 调用来源(erp名称)
-func (r *AlibabaSeakingImagetranslateRequest) SetIdentifierType(identifierType string) error {
-    r.identifierType = identifierType
-    r.Set("identifier_type", identifierType)
+func (r *AlibabaSeakingImagetranslateRequest) SetIdentifierType(_identifierType string) error {
+    r._identifierType = _identifierType
+    r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
 func (r AlibabaSeakingImagetranslateRequest) GetIdentifierType() string {
-    return r.identifierType
+    return r._identifierType
 }
 // Url Setter
 // 原图url
-func (r *AlibabaSeakingImagetranslateRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *AlibabaSeakingImagetranslateRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r AlibabaSeakingImagetranslateRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // Extra Setter
 // 扩展信息
-func (r *AlibabaSeakingImagetranslateRequest) SetExtra(extra *Extra) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *AlibabaSeakingImagetranslateRequest) SetExtra(_extra *Extra) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r AlibabaSeakingImagetranslateRequest) GetExtra() *Extra {
-    return r.extra
+    return r._extra
 }

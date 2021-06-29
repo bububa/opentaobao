@@ -15,7 +15,7 @@ alibaba.wdk.sopo.push.trigger
 type AlibabaWdkSopoPushTriggerRequest struct {
     model.Params
     // 系统自动生成
-    wdkOpenPushSoPoRequest   *WdkOpenPushSoPoRequest
+    _wdkOpenPushSoPoRequest   *WdkOpenPushSoPoRequest
 }
 
 // 初始化AlibabaWdkSopoPushTriggerRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSopoPushTriggerRequest) GetApiParams() url.Values {
 }
 // WdkOpenPushSoPoRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkSopoPushTriggerRequest) SetWdkOpenPushSoPoRequest(wdkOpenPushSoPoRequest *WdkOpenPushSoPoRequest) error {
-    r.wdkOpenPushSoPoRequest = wdkOpenPushSoPoRequest
-    r.Set("wdk_open_push_so_po_request", wdkOpenPushSoPoRequest)
+func (r *AlibabaWdkSopoPushTriggerRequest) SetWdkOpenPushSoPoRequest(_wdkOpenPushSoPoRequest *WdkOpenPushSoPoRequest) error {
+    r._wdkOpenPushSoPoRequest = _wdkOpenPushSoPoRequest
+    r.Set("wdk_open_push_so_po_request", _wdkOpenPushSoPoRequest)
     return nil
 }
 
 // WdkOpenPushSoPoRequest Getter
 func (r AlibabaWdkSopoPushTriggerRequest) GetWdkOpenPushSoPoRequest() *WdkOpenPushSoPoRequest {
-    return r.wdkOpenPushSoPoRequest
+    return r._wdkOpenPushSoPoRequest
 }

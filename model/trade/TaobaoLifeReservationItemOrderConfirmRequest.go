@@ -15,11 +15,11 @@ taobao.life.reservation.item.order.confirm
 type TaobaoLifeReservationItemOrderConfirmRequest struct {
     model.Params
     // 淘宝主单号
-    tradeNo   string
+    _tradeNo   string
     // 凭证ID
-    ticketId   string
+    _ticketId   string
     // 审核类型，PASS-通过；REJECT-驳回
-    optType   string
+    _optType   string
 }
 
 // 初始化TaobaoLifeReservationItemOrderConfirmRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoLifeReservationItemOrderConfirmRequest) GetApiParams() url.Values 
 }
 // TradeNo Setter
 // 淘宝主单号
-func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r TaobaoLifeReservationItemOrderConfirmRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // TicketId Setter
 // 凭证ID
-func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetTicketId(ticketId string) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetTicketId(_ticketId string) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r TaobaoLifeReservationItemOrderConfirmRequest) GetTicketId() string {
-    return r.ticketId
+    return r._ticketId
 }
 // OptType Setter
 // 审核类型，PASS-通过；REJECT-驳回
-func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetOptType(optType string) error {
-    r.optType = optType
-    r.Set("opt_type", optType)
+func (r *TaobaoLifeReservationItemOrderConfirmRequest) SetOptType(_optType string) error {
+    r._optType = _optType
+    r.Set("opt_type", _optType)
     return nil
 }
 
 // OptType Getter
 func (r TaobaoLifeReservationItemOrderConfirmRequest) GetOptType() string {
-    return r.optType
+    return r._optType
 }

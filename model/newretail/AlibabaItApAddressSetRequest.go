@@ -15,35 +15,35 @@ alibaba.it.ap.address.set
 type AlibabaItApAddressSetRequest struct {
     model.Params
     // 城市
-    apCityName   string
+    _apCityName   string
     // 经度
-    lng   string
+    _lng   string
     // 签名
-    signature   string
+    _signature   string
     // 园区/门店
-    apCampusName   string
+    _apCampusName   string
     // 区域
-    apAreaName   string
+    _apAreaName   string
     // 省份
-    apProvinceName   string
+    _apProvinceName   string
     // ap mac地址
-    mac   string
+    _mac   string
     // ap空间单元名称
-    apUnitName   string
+    _apUnitName   string
     // 楼层
-    apFloor   string
+    _apFloor   string
     // 楼栋
-    apBuildingName   string
+    _apBuildingName   string
     // 分配的内部ak
-    appKeyInternal   string
+    _appKeyInternal   string
     // 国家
-    apNationName   string
+    _apNationName   string
     // 纬度
-    lat   string
+    _lat   string
     // 方位
-    direction   string
+    _direction   string
     // 时间戳，毫秒
-    timestampInternal   int64
+    _timestampInternal   int64
 }
 
 // 初始化AlibabaItApAddressSetRequest对象
@@ -68,181 +68,181 @@ func (r AlibabaItApAddressSetRequest) GetApiParams() url.Values {
 }
 // ApCityName Setter
 // 城市
-func (r *AlibabaItApAddressSetRequest) SetApCityName(apCityName string) error {
-    r.apCityName = apCityName
-    r.Set("ap_city_name", apCityName)
+func (r *AlibabaItApAddressSetRequest) SetApCityName(_apCityName string) error {
+    r._apCityName = _apCityName
+    r.Set("ap_city_name", _apCityName)
     return nil
 }
 
 // ApCityName Getter
 func (r AlibabaItApAddressSetRequest) GetApCityName() string {
-    return r.apCityName
+    return r._apCityName
 }
 // Lng Setter
 // 经度
-func (r *AlibabaItApAddressSetRequest) SetLng(lng string) error {
-    r.lng = lng
-    r.Set("lng", lng)
+func (r *AlibabaItApAddressSetRequest) SetLng(_lng string) error {
+    r._lng = _lng
+    r.Set("lng", _lng)
     return nil
 }
 
 // Lng Getter
 func (r AlibabaItApAddressSetRequest) GetLng() string {
-    return r.lng
+    return r._lng
 }
 // Signature Setter
 // 签名
-func (r *AlibabaItApAddressSetRequest) SetSignature(signature string) error {
-    r.signature = signature
-    r.Set("signature", signature)
+func (r *AlibabaItApAddressSetRequest) SetSignature(_signature string) error {
+    r._signature = _signature
+    r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
 func (r AlibabaItApAddressSetRequest) GetSignature() string {
-    return r.signature
+    return r._signature
 }
 // ApCampusName Setter
 // 园区/门店
-func (r *AlibabaItApAddressSetRequest) SetApCampusName(apCampusName string) error {
-    r.apCampusName = apCampusName
-    r.Set("ap_campus_name", apCampusName)
+func (r *AlibabaItApAddressSetRequest) SetApCampusName(_apCampusName string) error {
+    r._apCampusName = _apCampusName
+    r.Set("ap_campus_name", _apCampusName)
     return nil
 }
 
 // ApCampusName Getter
 func (r AlibabaItApAddressSetRequest) GetApCampusName() string {
-    return r.apCampusName
+    return r._apCampusName
 }
 // ApAreaName Setter
 // 区域
-func (r *AlibabaItApAddressSetRequest) SetApAreaName(apAreaName string) error {
-    r.apAreaName = apAreaName
-    r.Set("ap_area_name", apAreaName)
+func (r *AlibabaItApAddressSetRequest) SetApAreaName(_apAreaName string) error {
+    r._apAreaName = _apAreaName
+    r.Set("ap_area_name", _apAreaName)
     return nil
 }
 
 // ApAreaName Getter
 func (r AlibabaItApAddressSetRequest) GetApAreaName() string {
-    return r.apAreaName
+    return r._apAreaName
 }
 // ApProvinceName Setter
 // 省份
-func (r *AlibabaItApAddressSetRequest) SetApProvinceName(apProvinceName string) error {
-    r.apProvinceName = apProvinceName
-    r.Set("ap_province_name", apProvinceName)
+func (r *AlibabaItApAddressSetRequest) SetApProvinceName(_apProvinceName string) error {
+    r._apProvinceName = _apProvinceName
+    r.Set("ap_province_name", _apProvinceName)
     return nil
 }
 
 // ApProvinceName Getter
 func (r AlibabaItApAddressSetRequest) GetApProvinceName() string {
-    return r.apProvinceName
+    return r._apProvinceName
 }
 // Mac Setter
 // ap mac地址
-func (r *AlibabaItApAddressSetRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *AlibabaItApAddressSetRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r AlibabaItApAddressSetRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }
 // ApUnitName Setter
 // ap空间单元名称
-func (r *AlibabaItApAddressSetRequest) SetApUnitName(apUnitName string) error {
-    r.apUnitName = apUnitName
-    r.Set("ap_unit_name", apUnitName)
+func (r *AlibabaItApAddressSetRequest) SetApUnitName(_apUnitName string) error {
+    r._apUnitName = _apUnitName
+    r.Set("ap_unit_name", _apUnitName)
     return nil
 }
 
 // ApUnitName Getter
 func (r AlibabaItApAddressSetRequest) GetApUnitName() string {
-    return r.apUnitName
+    return r._apUnitName
 }
 // ApFloor Setter
 // 楼层
-func (r *AlibabaItApAddressSetRequest) SetApFloor(apFloor string) error {
-    r.apFloor = apFloor
-    r.Set("ap_floor", apFloor)
+func (r *AlibabaItApAddressSetRequest) SetApFloor(_apFloor string) error {
+    r._apFloor = _apFloor
+    r.Set("ap_floor", _apFloor)
     return nil
 }
 
 // ApFloor Getter
 func (r AlibabaItApAddressSetRequest) GetApFloor() string {
-    return r.apFloor
+    return r._apFloor
 }
 // ApBuildingName Setter
 // 楼栋
-func (r *AlibabaItApAddressSetRequest) SetApBuildingName(apBuildingName string) error {
-    r.apBuildingName = apBuildingName
-    r.Set("ap_building_name", apBuildingName)
+func (r *AlibabaItApAddressSetRequest) SetApBuildingName(_apBuildingName string) error {
+    r._apBuildingName = _apBuildingName
+    r.Set("ap_building_name", _apBuildingName)
     return nil
 }
 
 // ApBuildingName Getter
 func (r AlibabaItApAddressSetRequest) GetApBuildingName() string {
-    return r.apBuildingName
+    return r._apBuildingName
 }
 // AppKeyInternal Setter
 // 分配的内部ak
-func (r *AlibabaItApAddressSetRequest) SetAppKeyInternal(appKeyInternal string) error {
-    r.appKeyInternal = appKeyInternal
-    r.Set("app_key_internal", appKeyInternal)
+func (r *AlibabaItApAddressSetRequest) SetAppKeyInternal(_appKeyInternal string) error {
+    r._appKeyInternal = _appKeyInternal
+    r.Set("app_key_internal", _appKeyInternal)
     return nil
 }
 
 // AppKeyInternal Getter
 func (r AlibabaItApAddressSetRequest) GetAppKeyInternal() string {
-    return r.appKeyInternal
+    return r._appKeyInternal
 }
 // ApNationName Setter
 // 国家
-func (r *AlibabaItApAddressSetRequest) SetApNationName(apNationName string) error {
-    r.apNationName = apNationName
-    r.Set("ap_nation_name", apNationName)
+func (r *AlibabaItApAddressSetRequest) SetApNationName(_apNationName string) error {
+    r._apNationName = _apNationName
+    r.Set("ap_nation_name", _apNationName)
     return nil
 }
 
 // ApNationName Getter
 func (r AlibabaItApAddressSetRequest) GetApNationName() string {
-    return r.apNationName
+    return r._apNationName
 }
 // Lat Setter
 // 纬度
-func (r *AlibabaItApAddressSetRequest) SetLat(lat string) error {
-    r.lat = lat
-    r.Set("lat", lat)
+func (r *AlibabaItApAddressSetRequest) SetLat(_lat string) error {
+    r._lat = _lat
+    r.Set("lat", _lat)
     return nil
 }
 
 // Lat Getter
 func (r AlibabaItApAddressSetRequest) GetLat() string {
-    return r.lat
+    return r._lat
 }
 // Direction Setter
 // 方位
-func (r *AlibabaItApAddressSetRequest) SetDirection(direction string) error {
-    r.direction = direction
-    r.Set("direction", direction)
+func (r *AlibabaItApAddressSetRequest) SetDirection(_direction string) error {
+    r._direction = _direction
+    r.Set("direction", _direction)
     return nil
 }
 
 // Direction Getter
 func (r AlibabaItApAddressSetRequest) GetDirection() string {
-    return r.direction
+    return r._direction
 }
 // TimestampInternal Setter
 // 时间戳，毫秒
-func (r *AlibabaItApAddressSetRequest) SetTimestampInternal(timestampInternal int64) error {
-    r.timestampInternal = timestampInternal
-    r.Set("timestamp_internal", timestampInternal)
+func (r *AlibabaItApAddressSetRequest) SetTimestampInternal(_timestampInternal int64) error {
+    r._timestampInternal = _timestampInternal
+    r.Set("timestamp_internal", _timestampInternal)
     return nil
 }
 
 // TimestampInternal Getter
 func (r AlibabaItApAddressSetRequest) GetTimestampInternal() int64 {
-    return r.timestampInternal
+    return r._timestampInternal
 }

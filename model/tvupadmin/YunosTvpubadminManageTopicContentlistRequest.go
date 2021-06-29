@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.contentlist
 type YunosTvpubadminManageTopicContentlistRequest struct {
     model.Params
     // 节目查询参数
-    programQuery   string
+    _programQuery   string
 }
 
 // 初始化YunosTvpubadminManageTopicContentlistRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicContentlistRequest) GetApiParams() url.Values 
 }
 // ProgramQuery Setter
 // 节目查询参数
-func (r *YunosTvpubadminManageTopicContentlistRequest) SetProgramQuery(programQuery string) error {
-    r.programQuery = programQuery
-    r.Set("program_query", programQuery)
+func (r *YunosTvpubadminManageTopicContentlistRequest) SetProgramQuery(_programQuery string) error {
+    r._programQuery = _programQuery
+    r.Set("program_query", _programQuery)
     return nil
 }
 
 // ProgramQuery Getter
 func (r YunosTvpubadminManageTopicContentlistRequest) GetProgramQuery() string {
-    return r.programQuery
+    return r._programQuery
 }

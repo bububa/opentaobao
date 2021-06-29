@@ -15,15 +15,15 @@ taobao.openim.tribelogs.get
 type TaobaoOpenimTribelogsGetRequest struct {
     model.Params
     // 群号
-    tribeId   string
+    _tribeId   string
     // 查询起始时间，UTC秒数。必须在一个月内。
-    begin   int64
+    _begin   int64
     // 查询结束时间，UTC秒数。必须大于起始时间并小于当前时间
-    end   int64
+    _end   int64
     // 查询条数
-    count   int64
+    _count   int64
     // 迭代key
-    next   string
+    _next   string
 }
 
 // 初始化TaobaoOpenimTribelogsGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoOpenimTribelogsGetRequest) GetApiParams() url.Values {
 }
 // TribeId Setter
 // 群号
-func (r *TaobaoOpenimTribelogsGetRequest) SetTribeId(tribeId string) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribelogsGetRequest) SetTribeId(_tribeId string) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribelogsGetRequest) GetTribeId() string {
-    return r.tribeId
+    return r._tribeId
 }
 // Begin Setter
 // 查询起始时间，UTC秒数。必须在一个月内。
-func (r *TaobaoOpenimTribelogsGetRequest) SetBegin(begin int64) error {
-    r.begin = begin
-    r.Set("begin", begin)
+func (r *TaobaoOpenimTribelogsGetRequest) SetBegin(_begin int64) error {
+    r._begin = _begin
+    r.Set("begin", _begin)
     return nil
 }
 
 // Begin Getter
 func (r TaobaoOpenimTribelogsGetRequest) GetBegin() int64 {
-    return r.begin
+    return r._begin
 }
 // End Setter
 // 查询结束时间，UTC秒数。必须大于起始时间并小于当前时间
-func (r *TaobaoOpenimTribelogsGetRequest) SetEnd(end int64) error {
-    r.end = end
-    r.Set("end", end)
+func (r *TaobaoOpenimTribelogsGetRequest) SetEnd(_end int64) error {
+    r._end = _end
+    r.Set("end", _end)
     return nil
 }
 
 // End Getter
 func (r TaobaoOpenimTribelogsGetRequest) GetEnd() int64 {
-    return r.end
+    return r._end
 }
 // Count Setter
 // 查询条数
-func (r *TaobaoOpenimTribelogsGetRequest) SetCount(count int64) error {
-    r.count = count
-    r.Set("count", count)
+func (r *TaobaoOpenimTribelogsGetRequest) SetCount(_count int64) error {
+    r._count = _count
+    r.Set("count", _count)
     return nil
 }
 
 // Count Getter
 func (r TaobaoOpenimTribelogsGetRequest) GetCount() int64 {
-    return r.count
+    return r._count
 }
 // Next Setter
 // 迭代key
-func (r *TaobaoOpenimTribelogsGetRequest) SetNext(next string) error {
-    r.next = next
-    r.Set("next", next)
+func (r *TaobaoOpenimTribelogsGetRequest) SetNext(_next string) error {
+    r._next = _next
+    r.Set("next", _next)
     return nil
 }
 
 // Next Getter
 func (r TaobaoOpenimTribelogsGetRequest) GetNext() string {
-    return r.next
+    return r._next
 }

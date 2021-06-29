@@ -15,13 +15,13 @@ taobao.oc.trades.bytag.get
 type TaobaoOcTradesBytagGetRequest struct {
     model.Params
     // 分页大小
-    pageSize   int64
+    _pageSize   int64
     // 标签类型，1官方，2自定义
-    tagType   int64
+    _tagType   int64
     // 当前页
-    page   int64
+    _page   int64
     // 标签名称
-    tagName   string
+    _tagName   string
 }
 
 // 初始化TaobaoOcTradesBytagGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOcTradesBytagGetRequest) GetApiParams() url.Values {
 }
 // PageSize Setter
 // 分页大小
-func (r *TaobaoOcTradesBytagGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoOcTradesBytagGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoOcTradesBytagGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // TagType Setter
 // 标签类型，1官方，2自定义
-func (r *TaobaoOcTradesBytagGetRequest) SetTagType(tagType int64) error {
-    r.tagType = tagType
-    r.Set("tag_type", tagType)
+func (r *TaobaoOcTradesBytagGetRequest) SetTagType(_tagType int64) error {
+    r._tagType = _tagType
+    r.Set("tag_type", _tagType)
     return nil
 }
 
 // TagType Getter
 func (r TaobaoOcTradesBytagGetRequest) GetTagType() int64 {
-    return r.tagType
+    return r._tagType
 }
 // Page Setter
 // 当前页
-func (r *TaobaoOcTradesBytagGetRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *TaobaoOcTradesBytagGetRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r TaobaoOcTradesBytagGetRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // TagName Setter
 // 标签名称
-func (r *TaobaoOcTradesBytagGetRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *TaobaoOcTradesBytagGetRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r TaobaoOcTradesBytagGetRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }

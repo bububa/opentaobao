@@ -15,7 +15,7 @@ alitrip.btrip.corpop.apply.search
 type AlitripBtripCorpopApplySearchRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenIsvSearchRq
+    _rq   *OpenIsvSearchRq
 }
 
 // 初始化AlitripBtripCorpopApplySearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplySearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCorpopApplySearchRequest) SetRq(rq *OpenIsvSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopApplySearchRequest) SetRq(_rq *OpenIsvSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopApplySearchRequest) GetRq() *OpenIsvSearchRq {
-    return r.rq
+    return r._rq
 }

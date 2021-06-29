@@ -15,7 +15,7 @@ alitrip.btrip.cost.center.entity.set
 type AlitripBtripCostCenterEntitySetRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenCostCenterSetEntityRq
+    _rq   *OpenCostCenterSetEntityRq
 }
 
 // 初始化AlitripBtripCostCenterEntitySetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCostCenterEntitySetRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCostCenterEntitySetRequest) SetRq(rq *OpenCostCenterSetEntityRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCostCenterEntitySetRequest) SetRq(_rq *OpenCostCenterSetEntityRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCostCenterEntitySetRequest) GetRq() *OpenCostCenterSetEntityRq {
-    return r.rq
+    return r._rq
 }

@@ -15,13 +15,13 @@ taobao.omniorder.store.reallocate
 type TaobaoOmniorderStoreReallocateRequest struct {
     model.Params
     // 主订单号
-    mainOrderId   int64
+    _mainOrderId   int64
     // 子订单号
-    subOrderIds   []int64
+    _subOrderIds   []int64
     // 门店Id
-    storeId   int64
+    _storeId   int64
     // 电商仓code
-    warehouseCode   string
+    _warehouseCode   string
 }
 
 // 初始化TaobaoOmniorderStoreReallocateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOmniorderStoreReallocateRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 主订单号
-func (r *TaobaoOmniorderStoreReallocateRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoOmniorderStoreReallocateRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoOmniorderStoreReallocateRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // SubOrderIds Setter
 // 子订单号
-func (r *TaobaoOmniorderStoreReallocateRequest) SetSubOrderIds(subOrderIds []int64) error {
-    r.subOrderIds = subOrderIds
-    r.Set("sub_order_ids", subOrderIds)
+func (r *TaobaoOmniorderStoreReallocateRequest) SetSubOrderIds(_subOrderIds []int64) error {
+    r._subOrderIds = _subOrderIds
+    r.Set("sub_order_ids", _subOrderIds)
     return nil
 }
 
 // SubOrderIds Getter
 func (r TaobaoOmniorderStoreReallocateRequest) GetSubOrderIds() []int64 {
-    return r.subOrderIds
+    return r._subOrderIds
 }
 // StoreId Setter
 // 门店Id
-func (r *TaobaoOmniorderStoreReallocateRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreReallocateRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreReallocateRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // WarehouseCode Setter
 // 电商仓code
-func (r *TaobaoOmniorderStoreReallocateRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *TaobaoOmniorderStoreReallocateRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r TaobaoOmniorderStoreReallocateRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }

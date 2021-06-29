@@ -15,11 +15,11 @@ alitrip.btrip.flight.city.suggest
 type AlitripBtripFlightCitySuggestRequest struct {
     model.Params
     // 用户id
-    userId   string
+    _userId   string
     // 搜索关键字
-    keyword   string
+    _keyword   string
     // 企业id
-    corpId   string
+    _corpId   string
 }
 
 // 初始化AlitripBtripFlightCitySuggestRequest对象
@@ -44,37 +44,37 @@ func (r AlitripBtripFlightCitySuggestRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlitripBtripFlightCitySuggestRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlitripBtripFlightCitySuggestRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlitripBtripFlightCitySuggestRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // Keyword Setter
 // 搜索关键字
-func (r *AlitripBtripFlightCitySuggestRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *AlitripBtripFlightCitySuggestRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r AlitripBtripFlightCitySuggestRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripFlightCitySuggestRequest) SetCorpId(corpId string) error {
-    r.corpId = corpId
-    r.Set("corp_id", corpId)
+func (r *AlitripBtripFlightCitySuggestRequest) SetCorpId(_corpId string) error {
+    r._corpId = _corpId
+    r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
 func (r AlitripBtripFlightCitySuggestRequest) GetCorpId() string {
-    return r.corpId
+    return r._corpId
 }

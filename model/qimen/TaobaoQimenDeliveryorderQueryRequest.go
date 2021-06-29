@@ -15,7 +15,7 @@ ERP调用奇门的发货单查询接口，查询发货单详情
 type TaobaoQimenDeliveryorderQueryRequest struct {
     model.Params
     // 
-    request   *DeliveryOrderQueryRequest
+    _request   *DeliveryOrderQueryRequest
 }
 
 // 初始化TaobaoQimenDeliveryorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenDeliveryorderQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenDeliveryorderQueryRequest) SetRequest(request *DeliveryOrderQueryRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenDeliveryorderQueryRequest) SetRequest(_request *DeliveryOrderQueryRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenDeliveryorderQueryRequest) GetRequest() *DeliveryOrderQueryRequest {
-    return r.request
+    return r._request
 }

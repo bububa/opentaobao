@@ -15,7 +15,7 @@ taobao.elife.lifecard.refund
 type TaobaoElifeLifecardRefundRequest struct {
     model.Params
     // 请求参数
-    refundRequest   *RefundRequest
+    _refundRequest   *RefundRequest
 }
 
 // 初始化TaobaoElifeLifecardRefundRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoElifeLifecardRefundRequest) GetApiParams() url.Values {
 }
 // RefundRequest Setter
 // 请求参数
-func (r *TaobaoElifeLifecardRefundRequest) SetRefundRequest(refundRequest *RefundRequest) error {
-    r.refundRequest = refundRequest
-    r.Set("refund_request", refundRequest)
+func (r *TaobaoElifeLifecardRefundRequest) SetRefundRequest(_refundRequest *RefundRequest) error {
+    r._refundRequest = _refundRequest
+    r.Set("refund_request", _refundRequest)
     return nil
 }
 
 // RefundRequest Getter
 func (r TaobaoElifeLifecardRefundRequest) GetRefundRequest() *RefundRequest {
-    return r.refundRequest
+    return r._refundRequest
 }

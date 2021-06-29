@@ -15,7 +15,7 @@ alitrip.btrip.hotel.order.search
 type AlitripBtripHotelOrderSearchRequest struct {
     model.Params
     // 请求
-    rq   *OpenSearchRq
+    _rq   *OpenSearchRq
 }
 
 // 初始化AlitripBtripHotelOrderSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求
-func (r *AlitripBtripHotelOrderSearchRequest) SetRq(rq *OpenSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripHotelOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripHotelOrderSearchRequest) GetRq() *OpenSearchRq {
-    return r.rq
+    return r._rq
 }

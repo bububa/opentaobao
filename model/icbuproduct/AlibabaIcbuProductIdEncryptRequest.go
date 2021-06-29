@@ -15,9 +15,9 @@ ICBU国际站，对混淆的产品ID加密。
 type AlibabaIcbuProductIdEncryptRequest struct {
     model.Params
     // 语种
-    language   string
+    _language   string
     // 明文id
-    productId   int64
+    _productId   int64
 }
 
 // 初始化AlibabaIcbuProductIdEncryptRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIcbuProductIdEncryptRequest) GetApiParams() url.Values {
 }
 // Language Setter
 // 语种
-func (r *AlibabaIcbuProductIdEncryptRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AlibabaIcbuProductIdEncryptRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AlibabaIcbuProductIdEncryptRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }
 // ProductId Setter
 // 明文id
-func (r *AlibabaIcbuProductIdEncryptRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaIcbuProductIdEncryptRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaIcbuProductIdEncryptRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

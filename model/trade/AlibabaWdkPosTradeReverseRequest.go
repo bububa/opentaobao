@@ -15,7 +15,7 @@ alibaba.wdk.pos.trade.reverse
 type AlibabaWdkPosTradeReverseRequest struct {
     model.Params
     // 退款请求
-    reverseRequest   *FastBuyPosReverseRequest
+    _reverseRequest   *FastBuyPosReverseRequest
 }
 
 // 初始化AlibabaWdkPosTradeReverseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeReverseRequest) GetApiParams() url.Values {
 }
 // ReverseRequest Setter
 // 退款请求
-func (r *AlibabaWdkPosTradeReverseRequest) SetReverseRequest(reverseRequest *FastBuyPosReverseRequest) error {
-    r.reverseRequest = reverseRequest
-    r.Set("reverse_request", reverseRequest)
+func (r *AlibabaWdkPosTradeReverseRequest) SetReverseRequest(_reverseRequest *FastBuyPosReverseRequest) error {
+    r._reverseRequest = _reverseRequest
+    r.Set("reverse_request", _reverseRequest)
     return nil
 }
 
 // ReverseRequest Getter
 func (r AlibabaWdkPosTradeReverseRequest) GetReverseRequest() *FastBuyPosReverseRequest {
-    return r.reverseRequest
+    return r._reverseRequest
 }

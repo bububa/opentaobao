@@ -15,11 +15,11 @@ alibaba.alihealth.pregnancy.product.get
 type AlibabaAlihealthPregnancyProductGetRequest struct {
     model.Params
     // tab页对应id
-    sceneId   int64
+    _sceneId   int64
     // 起始页码，大于0
-    currentPage   int64
+    _currentPage   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaAlihealthPregnancyProductGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthPregnancyProductGetRequest) GetApiParams() url.Values {
 }
 // SceneId Setter
 // tab页对应id
-func (r *AlibabaAlihealthPregnancyProductGetRequest) SetSceneId(sceneId int64) error {
-    r.sceneId = sceneId
-    r.Set("scene_id", sceneId)
+func (r *AlibabaAlihealthPregnancyProductGetRequest) SetSceneId(_sceneId int64) error {
+    r._sceneId = _sceneId
+    r.Set("scene_id", _sceneId)
     return nil
 }
 
 // SceneId Getter
 func (r AlibabaAlihealthPregnancyProductGetRequest) GetSceneId() int64 {
-    return r.sceneId
+    return r._sceneId
 }
 // CurrentPage Setter
 // 起始页码，大于0
-func (r *AlibabaAlihealthPregnancyProductGetRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaAlihealthPregnancyProductGetRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaAlihealthPregnancyProductGetRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页条数
-func (r *AlibabaAlihealthPregnancyProductGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthPregnancyProductGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthPregnancyProductGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

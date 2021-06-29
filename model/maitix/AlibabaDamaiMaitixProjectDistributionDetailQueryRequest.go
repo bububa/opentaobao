@@ -15,7 +15,7 @@ alibaba.damai.maitix.project.distribution.detail.query
 type AlibabaDamaiMaitixProjectDistributionDetailQueryRequest struct {
     model.Params
     // 项目ID，前提已授权
-    projectId   int64
+    _projectId   int64
 }
 
 // 初始化AlibabaDamaiMaitixProjectDistributionDetailQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixProjectDistributionDetailQueryRequest) GetApiParams() 
 }
 // ProjectId Setter
 // 项目ID，前提已授权
-func (r *AlibabaDamaiMaitixProjectDistributionDetailQueryRequest) SetProjectId(projectId int64) error {
-    r.projectId = projectId
-    r.Set("project_id", projectId)
+func (r *AlibabaDamaiMaitixProjectDistributionDetailQueryRequest) SetProjectId(_projectId int64) error {
+    r._projectId = _projectId
+    r.Set("project_id", _projectId)
     return nil
 }
 
 // ProjectId Getter
 func (r AlibabaDamaiMaitixProjectDistributionDetailQueryRequest) GetProjectId() int64 {
-    return r.projectId
+    return r._projectId
 }

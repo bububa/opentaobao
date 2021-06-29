@@ -15,9 +15,9 @@ taobao.ump.detail.update
 type TaobaoUmpDetailUpdateRequest struct {
     model.Params
     // 活动详情id
-    detailId   int64
+    _detailId   int64
     // 活动详情内容，可以通过ump sdk中的MarketingTool来生成这个内容
-    content   string
+    _content   string
 }
 
 // 初始化TaobaoUmpDetailUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUmpDetailUpdateRequest) GetApiParams() url.Values {
 }
 // DetailId Setter
 // 活动详情id
-func (r *TaobaoUmpDetailUpdateRequest) SetDetailId(detailId int64) error {
-    r.detailId = detailId
-    r.Set("detail_id", detailId)
+func (r *TaobaoUmpDetailUpdateRequest) SetDetailId(_detailId int64) error {
+    r._detailId = _detailId
+    r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
 func (r TaobaoUmpDetailUpdateRequest) GetDetailId() int64 {
-    return r.detailId
+    return r._detailId
 }
 // Content Setter
 // 活动详情内容，可以通过ump sdk中的MarketingTool来生成这个内容
-func (r *TaobaoUmpDetailUpdateRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoUmpDetailUpdateRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoUmpDetailUpdateRequest) GetContent() string {
-    return r.content
+    return r._content
 }

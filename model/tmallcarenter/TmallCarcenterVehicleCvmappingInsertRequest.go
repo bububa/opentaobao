@@ -15,11 +15,11 @@ EPC车辆版本信息与底盘信息库关系绑定
 type TmallCarcenterVehicleCvmappingInsertRequest struct {
     model.Params
     // 状态
-    status   int64
+    _status   int64
     // 版本ID
-    supplierVersionCid   string
+    _supplierVersionCid   string
     // 底盘ID
-    supplierChassisCid   string
+    _supplierChassisCid   string
 }
 
 // 初始化TmallCarcenterVehicleCvmappingInsertRequest对象
@@ -44,37 +44,37 @@ func (r TmallCarcenterVehicleCvmappingInsertRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 状态
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallCarcenterVehicleCvmappingInsertRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // SupplierVersionCid Setter
 // 版本ID
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierVersionCid(supplierVersionCid string) error {
-    r.supplierVersionCid = supplierVersionCid
-    r.Set("supplier_version_cid", supplierVersionCid)
+func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierVersionCid(_supplierVersionCid string) error {
+    r._supplierVersionCid = _supplierVersionCid
+    r.Set("supplier_version_cid", _supplierVersionCid)
     return nil
 }
 
 // SupplierVersionCid Getter
 func (r TmallCarcenterVehicleCvmappingInsertRequest) GetSupplierVersionCid() string {
-    return r.supplierVersionCid
+    return r._supplierVersionCid
 }
 // SupplierChassisCid Setter
 // 底盘ID
-func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierChassisCid(supplierChassisCid string) error {
-    r.supplierChassisCid = supplierChassisCid
-    r.Set("supplier_chassis_cid", supplierChassisCid)
+func (r *TmallCarcenterVehicleCvmappingInsertRequest) SetSupplierChassisCid(_supplierChassisCid string) error {
+    r._supplierChassisCid = _supplierChassisCid
+    r.Set("supplier_chassis_cid", _supplierChassisCid)
     return nil
 }
 
 // SupplierChassisCid Getter
 func (r TmallCarcenterVehicleCvmappingInsertRequest) GetSupplierChassisCid() string {
-    return r.supplierChassisCid
+    return r._supplierChassisCid
 }

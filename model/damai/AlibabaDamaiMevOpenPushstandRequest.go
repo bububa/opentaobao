@@ -15,7 +15,7 @@ pushStand
 type AlibabaDamaiMevOpenPushstandRequest struct {
     model.Params
     // 入参pushStandParam
-    pushStandParam   *ThirdStandPushOpenParam
+    _pushStandParam   *ThirdStandPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushstandRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushstandRequest) GetApiParams() url.Values {
 }
 // PushStandParam Setter
 // 入参pushStandParam
-func (r *AlibabaDamaiMevOpenPushstandRequest) SetPushStandParam(pushStandParam *ThirdStandPushOpenParam) error {
-    r.pushStandParam = pushStandParam
-    r.Set("push_stand_param", pushStandParam)
+func (r *AlibabaDamaiMevOpenPushstandRequest) SetPushStandParam(_pushStandParam *ThirdStandPushOpenParam) error {
+    r._pushStandParam = _pushStandParam
+    r.Set("push_stand_param", _pushStandParam)
     return nil
 }
 
 // PushStandParam Getter
 func (r AlibabaDamaiMevOpenPushstandRequest) GetPushStandParam() *ThirdStandPushOpenParam {
-    return r.pushStandParam
+    return r._pushStandParam
 }

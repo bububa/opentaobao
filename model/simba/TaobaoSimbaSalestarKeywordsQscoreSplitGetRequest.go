@@ -15,11 +15,11 @@ taobao.simba.salestar.keywords.qscore.split.get
 type TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest struct {
     model.Params
     // 账号昵称
-    nick   string
+    _nick   string
     // 推广组id
-    adGroupId   int64
+    _adGroupId   int64
     // 词id数组（最多批量获取20个）
-    bidwordIds   []int64
+    _bidwordIds   []int64
 }
 
 // 初始化TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetApiParams() url.Val
 }
 // Nick Setter
 // 账号昵称
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdGroupId Setter
 // 推广组id
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetAdGroupId(adGroupId int64) error {
-    r.adGroupId = adGroupId
-    r.Set("ad_group_id", adGroupId)
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetAdGroupId(_adGroupId int64) error {
+    r._adGroupId = _adGroupId
+    r.Set("ad_group_id", _adGroupId)
     return nil
 }
 
 // AdGroupId Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetAdGroupId() int64 {
-    return r.adGroupId
+    return r._adGroupId
 }
 // BidwordIds Setter
 // 词id数组（最多批量获取20个）
-func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetBidwordIds(bidwordIds []int64) error {
-    r.bidwordIds = bidwordIds
-    r.Set("bidword_ids", bidwordIds)
+func (r *TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) SetBidwordIds(_bidwordIds []int64) error {
+    r._bidwordIds = _bidwordIds
+    r.Set("bidword_ids", _bidwordIds)
     return nil
 }
 
 // BidwordIds Getter
 func (r TaobaoSimbaSalestarKeywordsQscoreSplitGetRequest) GetBidwordIds() []int64 {
-    return r.bidwordIds
+    return r._bidwordIds
 }

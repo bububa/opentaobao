@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.rule.get
 type AlibabaAlscCrmOpenRuleGetRequest struct {
     model.Params
     // 入参
-    paramRuleOpenReq   *RuleOpenReq
+    _paramRuleOpenReq   *RuleOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenRuleGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenRuleGetRequest) GetApiParams() url.Values {
 }
 // ParamRuleOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenRuleGetRequest) SetParamRuleOpenReq(paramRuleOpenReq *RuleOpenReq) error {
-    r.paramRuleOpenReq = paramRuleOpenReq
-    r.Set("param_rule_open_req", paramRuleOpenReq)
+func (r *AlibabaAlscCrmOpenRuleGetRequest) SetParamRuleOpenReq(_paramRuleOpenReq *RuleOpenReq) error {
+    r._paramRuleOpenReq = _paramRuleOpenReq
+    r.Set("param_rule_open_req", _paramRuleOpenReq)
     return nil
 }
 
 // ParamRuleOpenReq Getter
 func (r AlibabaAlscCrmOpenRuleGetRequest) GetParamRuleOpenReq() *RuleOpenReq {
-    return r.paramRuleOpenReq
+    return r._paramRuleOpenReq
 }

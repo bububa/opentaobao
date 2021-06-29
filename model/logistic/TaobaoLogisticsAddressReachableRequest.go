@@ -16,15 +16,15 @@ taobao.logistics.address.reachable
 type TaobaoLogisticsAddressReachableRequest struct {
     model.Params
     // 标准区域编码(三级行政区编码或是四级行政区)，可以通过taobao.areas.get获取，如北京市朝阳区为110105
-    areaCode   string
+    _areaCode   string
     // 详细地址
-    address   string
+    _address   string
     // 物流公司编码ID，可以从这个接口获取所有物流公司的标准编码taobao.logistics.companies.get，可以传入多个值，以英文逗号分隔，如“1000000952,1000000953”
-    partnerIds   string
+    _partnerIds   string
     // 服务对应的数字编码，如揽派范围对应88
-    serviceType   int64
+    _serviceType   int64
     // 发货地，标准区域编码(四级行政)，可以通过taobao.areas.get获取，如浙江省杭州市余杭区闲林街道为 330110011
-    sourceAreaCode   string
+    _sourceAreaCode   string
 }
 
 // 初始化TaobaoLogisticsAddressReachableRequest对象
@@ -49,61 +49,61 @@ func (r TaobaoLogisticsAddressReachableRequest) GetApiParams() url.Values {
 }
 // AreaCode Setter
 // 标准区域编码(三级行政区编码或是四级行政区)，可以通过taobao.areas.get获取，如北京市朝阳区为110105
-func (r *TaobaoLogisticsAddressReachableRequest) SetAreaCode(areaCode string) error {
-    r.areaCode = areaCode
-    r.Set("area_code", areaCode)
+func (r *TaobaoLogisticsAddressReachableRequest) SetAreaCode(_areaCode string) error {
+    r._areaCode = _areaCode
+    r.Set("area_code", _areaCode)
     return nil
 }
 
 // AreaCode Getter
 func (r TaobaoLogisticsAddressReachableRequest) GetAreaCode() string {
-    return r.areaCode
+    return r._areaCode
 }
 // Address Setter
 // 详细地址
-func (r *TaobaoLogisticsAddressReachableRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *TaobaoLogisticsAddressReachableRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r TaobaoLogisticsAddressReachableRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // PartnerIds Setter
 // 物流公司编码ID，可以从这个接口获取所有物流公司的标准编码taobao.logistics.companies.get，可以传入多个值，以英文逗号分隔，如“1000000952,1000000953”
-func (r *TaobaoLogisticsAddressReachableRequest) SetPartnerIds(partnerIds string) error {
-    r.partnerIds = partnerIds
-    r.Set("partner_ids", partnerIds)
+func (r *TaobaoLogisticsAddressReachableRequest) SetPartnerIds(_partnerIds string) error {
+    r._partnerIds = _partnerIds
+    r.Set("partner_ids", _partnerIds)
     return nil
 }
 
 // PartnerIds Getter
 func (r TaobaoLogisticsAddressReachableRequest) GetPartnerIds() string {
-    return r.partnerIds
+    return r._partnerIds
 }
 // ServiceType Setter
 // 服务对应的数字编码，如揽派范围对应88
-func (r *TaobaoLogisticsAddressReachableRequest) SetServiceType(serviceType int64) error {
-    r.serviceType = serviceType
-    r.Set("service_type", serviceType)
+func (r *TaobaoLogisticsAddressReachableRequest) SetServiceType(_serviceType int64) error {
+    r._serviceType = _serviceType
+    r.Set("service_type", _serviceType)
     return nil
 }
 
 // ServiceType Getter
 func (r TaobaoLogisticsAddressReachableRequest) GetServiceType() int64 {
-    return r.serviceType
+    return r._serviceType
 }
 // SourceAreaCode Setter
 // 发货地，标准区域编码(四级行政)，可以通过taobao.areas.get获取，如浙江省杭州市余杭区闲林街道为 330110011
-func (r *TaobaoLogisticsAddressReachableRequest) SetSourceAreaCode(sourceAreaCode string) error {
-    r.sourceAreaCode = sourceAreaCode
-    r.Set("source_area_code", sourceAreaCode)
+func (r *TaobaoLogisticsAddressReachableRequest) SetSourceAreaCode(_sourceAreaCode string) error {
+    r._sourceAreaCode = _sourceAreaCode
+    r.Set("source_area_code", _sourceAreaCode)
     return nil
 }
 
 // SourceAreaCode Getter
 func (r TaobaoLogisticsAddressReachableRequest) GetSourceAreaCode() string {
-    return r.sourceAreaCode
+    return r._sourceAreaCode
 }

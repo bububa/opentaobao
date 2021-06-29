@@ -15,7 +15,7 @@ alibaba.wdk.item.category.update
 type AlibabaWdkItemCategoryUpdateRequest struct {
     model.Params
     // 入参
-    bean   *UpdateCategoryRequestBean
+    _bean   *UpdateCategoryRequestBean
 }
 
 // 初始化AlibabaWdkItemCategoryUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemCategoryUpdateRequest) GetApiParams() url.Values {
 }
 // Bean Setter
 // 入参
-func (r *AlibabaWdkItemCategoryUpdateRequest) SetBean(bean *UpdateCategoryRequestBean) error {
-    r.bean = bean
-    r.Set("bean", bean)
+func (r *AlibabaWdkItemCategoryUpdateRequest) SetBean(_bean *UpdateCategoryRequestBean) error {
+    r._bean = _bean
+    r.Set("bean", _bean)
     return nil
 }
 
 // Bean Getter
 func (r AlibabaWdkItemCategoryUpdateRequest) GetBean() *UpdateCategoryRequestBean {
-    return r.bean
+    return r._bean
 }

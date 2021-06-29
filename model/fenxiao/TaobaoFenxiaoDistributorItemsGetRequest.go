@@ -15,17 +15,17 @@ taobao.fenxiao.distributor.items.get
 type TaobaoFenxiaoDistributorItemsGetRequest struct {
     model.Params
     // 分销商ID 。
-    distributorId   int64
+    _distributorId   int64
     // 设置开始时间。空为不设置。
-    startModified   string
+    _startModified   string
     // 设置结束时间,空为不设置。
-    endModified   string
+    _endModified   string
     // 页码（大于0的整数，默认1）
-    pageNo   int64
+    _pageNo   int64
     // 每页记录数（默认20，最大50）
-    pageSize   int64
+    _pageSize   int64
     // 产品ID
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TaobaoFenxiaoDistributorItemsGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoFenxiaoDistributorItemsGetRequest) GetApiParams() url.Values {
 }
 // DistributorId Setter
 // 分销商ID 。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetDistributorId(distributorId int64) error {
-    r.distributorId = distributorId
-    r.Set("distributor_id", distributorId)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetDistributorId(_distributorId int64) error {
+    r._distributorId = _distributorId
+    r.Set("distributor_id", _distributorId)
     return nil
 }
 
 // DistributorId Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetDistributorId() int64 {
-    return r.distributorId
+    return r._distributorId
 }
 // StartModified Setter
 // 设置开始时间。空为不设置。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetStartModified(startModified string) error {
-    r.startModified = startModified
-    r.Set("start_modified", startModified)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetStartModified(_startModified string) error {
+    r._startModified = _startModified
+    r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetStartModified() string {
-    return r.startModified
+    return r._startModified
 }
 // EndModified Setter
 // 设置结束时间,空为不设置。
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetEndModified(endModified string) error {
-    r.endModified = endModified
-    r.Set("end_modified", endModified)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetEndModified(_endModified string) error {
+    r._endModified = _endModified
+    r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetEndModified() string {
-    return r.endModified
+    return r._endModified
 }
 // PageNo Setter
 // 页码（大于0的整数，默认1）
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页记录数（默认20，最大50）
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ProductId Setter
 // 产品ID
-func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoFenxiaoDistributorItemsGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoFenxiaoDistributorItemsGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

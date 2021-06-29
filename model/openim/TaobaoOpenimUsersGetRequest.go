@@ -15,7 +15,7 @@ taobao.openim.users.get
 type TaobaoOpenimUsersGetRequest struct {
     model.Params
     // 用户id序列
-    userids   []string
+    _userids   []string
 }
 
 // 初始化TaobaoOpenimUsersGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
 }
 // Userids Setter
 // 用户id序列
-func (r *TaobaoOpenimUsersGetRequest) SetUserids(userids []string) error {
-    r.userids = userids
-    r.Set("userids", userids)
+func (r *TaobaoOpenimUsersGetRequest) SetUserids(_userids []string) error {
+    r._userids = _userids
+    r.Set("userids", _userids)
     return nil
 }
 
 // Userids Getter
 func (r TaobaoOpenimUsersGetRequest) GetUserids() []string {
-    return r.userids
+    return r._userids
 }

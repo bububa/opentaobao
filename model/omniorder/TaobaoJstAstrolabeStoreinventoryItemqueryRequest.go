@@ -15,7 +15,7 @@ taobao.jst.astrolabe.storeinventory.itemquery
 type TaobaoJstAstrolabeStoreinventoryItemqueryRequest struct {
     model.Params
     // 门店信息
-    stores   []Store
+    _stores   []Store
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryItemqueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstAstrolabeStoreinventoryItemqueryRequest) GetApiParams() url.Val
 }
 // Stores Setter
 // 门店信息
-func (r *TaobaoJstAstrolabeStoreinventoryItemqueryRequest) SetStores(stores []Store) error {
-    r.stores = stores
-    r.Set("stores", stores)
+func (r *TaobaoJstAstrolabeStoreinventoryItemqueryRequest) SetStores(_stores []Store) error {
+    r._stores = _stores
+    r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemqueryRequest) GetStores() []Store {
-    return r.stores
+    return r._stores
 }

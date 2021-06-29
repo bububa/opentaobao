@@ -15,7 +15,7 @@ alibaba.mozi.vds.tenant.api.service.pagesubadmins
 type AlibabaMoziVdsTenantApiServicePagesubadminsRequest struct {
     model.Params
     // 入参
-    par0   *PageTenantSubAdminsRequest
+    _par0   *PageTenantSubAdminsRequest
 }
 
 // 初始化AlibabaMoziVdsTenantApiServicePagesubadminsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetApiParams() url.V
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServicePagesubadminsRequest) SetPar0(par0 *PageTenantSubAdminsRequest) error {
-    r.par0 = par0
-    r.Set("par0", par0)
+func (r *AlibabaMoziVdsTenantApiServicePagesubadminsRequest) SetPar0(_par0 *PageTenantSubAdminsRequest) error {
+    r._par0 = _par0
+    r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
 func (r AlibabaMoziVdsTenantApiServicePagesubadminsRequest) GetPar0() *PageTenantSubAdminsRequest {
-    return r.par0
+    return r._par0
 }

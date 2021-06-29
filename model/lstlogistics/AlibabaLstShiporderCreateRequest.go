@@ -15,7 +15,7 @@ alibaba.lst.shiporder.create
 type AlibabaLstShiporderCreateRequest struct {
     model.Params
     // 创建发货单入参
-    shipOrder   *LstThirdPartMainShipOrderCreateDto
+    _shipOrder   *LstThirdPartMainShipOrderCreateDto
 }
 
 // 初始化AlibabaLstShiporderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstShiporderCreateRequest) GetApiParams() url.Values {
 }
 // ShipOrder Setter
 // 创建发货单入参
-func (r *AlibabaLstShiporderCreateRequest) SetShipOrder(shipOrder *LstThirdPartMainShipOrderCreateDto) error {
-    r.shipOrder = shipOrder
-    r.Set("ship_order", shipOrder)
+func (r *AlibabaLstShiporderCreateRequest) SetShipOrder(_shipOrder *LstThirdPartMainShipOrderCreateDto) error {
+    r._shipOrder = _shipOrder
+    r.Set("ship_order", _shipOrder)
     return nil
 }
 
 // ShipOrder Getter
 func (r AlibabaLstShiporderCreateRequest) GetShipOrder() *LstThirdPartMainShipOrderCreateDto {
-    return r.shipOrder
+    return r._shipOrder
 }

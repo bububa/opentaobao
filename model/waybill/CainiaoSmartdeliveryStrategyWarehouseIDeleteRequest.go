@@ -15,7 +15,7 @@ cainiao.smartdelivery.strategy.warehouse.i.delete
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest struct {
     model.Params
     // 仓id
-    warehouseId   int64
+    _warehouseId   int64
 }
 
 // 初始化CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetApiParams() url.
 }
 // WarehouseId Setter
 // 仓id
-func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) SetWarehouseId(warehouseId int64) error {
-    r.warehouseId = warehouseId
-    r.Set("warehouse_id", warehouseId)
+func (r *CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) SetWarehouseId(_warehouseId int64) error {
+    r._warehouseId = _warehouseId
+    r.Set("warehouse_id", _warehouseId)
     return nil
 }
 
 // WarehouseId Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest) GetWarehouseId() int64 {
-    return r.warehouseId
+    return r._warehouseId
 }

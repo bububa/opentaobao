@@ -15,9 +15,9 @@ alibaba.alihealth.tracecodeseller.bill.rootcode.get
 type AlibabaAlihealthTracecodesellerBillRootcodeGetRequest struct {
     model.Params
     // 用户身份认证
-    appCode   string
+    _appCode   string
     // 码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaAlihealthTracecodesellerBillRootcodeGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetApiParams() ur
 }
 // AppCode Setter
 // 用户身份认证
-func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetAppCode(appCode string) error {
-    r.appCode = appCode
-    r.Set("app_code", appCode)
+func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetAppCode(_appCode string) error {
+    r._appCode = _appCode
+    r.Set("app_code", _appCode)
     return nil
 }
 
 // AppCode Getter
 func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetAppCode() string {
-    return r.appCode
+    return r._appCode
 }
 // Code Setter
 // 码
-func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthTracecodesellerBillRootcodeGetRequest) GetCode() string {
-    return r.code
+    return r._code
 }

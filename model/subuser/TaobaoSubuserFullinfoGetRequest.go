@@ -15,11 +15,11 @@ taobao.subuser.fullinfo.get
 type TaobaoSubuserFullinfoGetRequest struct {
     model.Params
     // 子账号ID（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
-    subId   int64
+    _subId   int64
     // 传入所需要的参数信息（若不需要获取子账号或主账号的企业邮箱地址，则无需传入该参数；若需要获取子账号或主账号的企业邮箱地址，则需要传入fields；可选参数值为subuser_email和user_email，传入其他参数值均无效；两个参数都需要则以逗号隔开传入即可，例如：subuser_email,user_email）
-    fields   string
+    _fields   string
     // 子账号用户名（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
-    subNick   string
+    _subNick   string
 }
 
 // 初始化TaobaoSubuserFullinfoGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSubuserFullinfoGetRequest) GetApiParams() url.Values {
 }
 // SubId Setter
 // 子账号ID（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
-func (r *TaobaoSubuserFullinfoGetRequest) SetSubId(subId int64) error {
-    r.subId = subId
-    r.Set("sub_id", subId)
+func (r *TaobaoSubuserFullinfoGetRequest) SetSubId(_subId int64) error {
+    r._subId = _subId
+    r.Set("sub_id", _subId)
     return nil
 }
 
 // SubId Getter
 func (r TaobaoSubuserFullinfoGetRequest) GetSubId() int64 {
-    return r.subId
+    return r._subId
 }
 // Fields Setter
 // 传入所需要的参数信息（若不需要获取子账号或主账号的企业邮箱地址，则无需传入该参数；若需要获取子账号或主账号的企业邮箱地址，则需要传入fields；可选参数值为subuser_email和user_email，传入其他参数值均无效；两个参数都需要则以逗号隔开传入即可，例如：subuser_email,user_email）
-func (r *TaobaoSubuserFullinfoGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoSubuserFullinfoGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoSubuserFullinfoGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // SubNick Setter
 // 子账号用户名（传参中sub_id和sub_nick至少需要其中一个，若sub_id与sub_nick同时传入并且合法，那么sub_nick优先，以sub_nick查询子账号）
-func (r *TaobaoSubuserFullinfoGetRequest) SetSubNick(subNick string) error {
-    r.subNick = subNick
-    r.Set("sub_nick", subNick)
+func (r *TaobaoSubuserFullinfoGetRequest) SetSubNick(_subNick string) error {
+    r._subNick = _subNick
+    r.Set("sub_nick", _subNick)
     return nil
 }
 
 // SubNick Getter
 func (r TaobaoSubuserFullinfoGetRequest) GetSubNick() string {
-    return r.subNick
+    return r._subNick
 }

@@ -15,11 +15,11 @@ taobao.simba.campaign.add
 type TaobaoSimbaCampaignAddRequest struct {
     model.Params
     // 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
-    title   string
+    _title   string
     // 主人昵称
-    nick   string
+    _nick   string
     // 计划类型，当前仅支持两种标准推广0，销量明星16，默认为0
-    type   int64
+    _type   int64
 }
 
 // 初始化TaobaoSimbaCampaignAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaCampaignAddRequest) GetApiParams() url.Values {
 }
 // Title Setter
 // 推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。
-func (r *TaobaoSimbaCampaignAddRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoSimbaCampaignAddRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoSimbaCampaignAddRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignAddRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignAddRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignAddRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // Type Setter
 // 计划类型，当前仅支持两种标准推广0，销量明星16，默认为0
-func (r *TaobaoSimbaCampaignAddRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoSimbaCampaignAddRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoSimbaCampaignAddRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

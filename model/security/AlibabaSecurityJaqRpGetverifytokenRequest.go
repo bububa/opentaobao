@@ -15,15 +15,15 @@ alibaba.security.jaq.rp.getverifytoken
 type AlibabaSecurityJaqRpGetverifytokenRequest struct {
     model.Params
     // 账号，强烈建议填写，区别用户的唯一标识
-    accountId   string
+    _accountId   string
     // 选填，作为一次验证的唯一标识，每次验证需更换。如果不是验证类型可不填
-    ticketId   string
+    _ticketId   string
     // 客户端来源
-    source   string
+    _source   string
     // 业务点
-    biz   string
+    _biz   string
     // 额外信息
-    extraData   string
+    _extraData   string
 }
 
 // 初始化AlibabaSecurityJaqRpGetverifytokenRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 账号，强烈建议填写，区别用户的唯一标识
-func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }
 // TicketId Setter
 // 选填，作为一次验证的唯一标识，每次验证需更换。如果不是验证类型可不填
-func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetTicketId(ticketId string) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetTicketId(_ticketId string) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetTicketId() string {
-    return r.ticketId
+    return r._ticketId
 }
 // Source Setter
 // 客户端来源
-func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // Biz Setter
 // 业务点
-func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetBiz(biz string) error {
-    r.biz = biz
-    r.Set("biz", biz)
+func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetBiz(_biz string) error {
+    r._biz = _biz
+    r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
 func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetBiz() string {
-    return r.biz
+    return r._biz
 }
 // ExtraData Setter
 // 额外信息
-func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetExtraData(extraData string) error {
-    r.extraData = extraData
-    r.Set("extra_data", extraData)
+func (r *AlibabaSecurityJaqRpGetverifytokenRequest) SetExtraData(_extraData string) error {
+    r._extraData = _extraData
+    r.Set("extra_data", _extraData)
     return nil
 }
 
 // ExtraData Getter
 func (r AlibabaSecurityJaqRpGetverifytokenRequest) GetExtraData() string {
-    return r.extraData
+    return r._extraData
 }

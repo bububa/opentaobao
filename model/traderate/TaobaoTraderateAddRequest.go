@@ -15,17 +15,17 @@ taobao.traderate.add
 type TaobaoTraderateAddRequest struct {
     model.Params
     // 交易ID
-    tid   int64
+    _tid   int64
     // 子订单ID
-    oid   int64
+    _oid   int64
     // 评价结果,可选值:good(好评),neutral(中评),bad(差评)
-    result   string
+    _result   string
     // 评价者角色,可选值:seller(卖家),buyer(买家)
-    role   string
+    _role   string
     // 评价内容,最大长度: 500个汉字 .注意：当评价结果为good时就不用输入评价内容.评价内容为neutral/bad的时候需要输入评价内容
-    content   string
+    _content   string
     // 是否匿名,卖家评不能匿名。可选值:true(匿名),false(非匿名)。注意：如果交易订单匿名，则评价也匿名
-    anony   bool
+    _anony   bool
 }
 
 // 初始化TaobaoTraderateAddRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTraderateAddRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 交易ID
-func (r *TaobaoTraderateAddRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTraderateAddRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTraderateAddRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // Oid Setter
 // 子订单ID
-func (r *TaobaoTraderateAddRequest) SetOid(oid int64) error {
-    r.oid = oid
-    r.Set("oid", oid)
+func (r *TaobaoTraderateAddRequest) SetOid(_oid int64) error {
+    r._oid = _oid
+    r.Set("oid", _oid)
     return nil
 }
 
 // Oid Getter
 func (r TaobaoTraderateAddRequest) GetOid() int64 {
-    return r.oid
+    return r._oid
 }
 // Result Setter
 // 评价结果,可选值:good(好评),neutral(中评),bad(差评)
-func (r *TaobaoTraderateAddRequest) SetResult(result string) error {
-    r.result = result
-    r.Set("result", result)
+func (r *TaobaoTraderateAddRequest) SetResult(_result string) error {
+    r._result = _result
+    r.Set("result", _result)
     return nil
 }
 
 // Result Getter
 func (r TaobaoTraderateAddRequest) GetResult() string {
-    return r.result
+    return r._result
 }
 // Role Setter
 // 评价者角色,可选值:seller(卖家),buyer(买家)
-func (r *TaobaoTraderateAddRequest) SetRole(role string) error {
-    r.role = role
-    r.Set("role", role)
+func (r *TaobaoTraderateAddRequest) SetRole(_role string) error {
+    r._role = _role
+    r.Set("role", _role)
     return nil
 }
 
 // Role Getter
 func (r TaobaoTraderateAddRequest) GetRole() string {
-    return r.role
+    return r._role
 }
 // Content Setter
 // 评价内容,最大长度: 500个汉字 .注意：当评价结果为good时就不用输入评价内容.评价内容为neutral/bad的时候需要输入评价内容
-func (r *TaobaoTraderateAddRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoTraderateAddRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoTraderateAddRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // Anony Setter
 // 是否匿名,卖家评不能匿名。可选值:true(匿名),false(非匿名)。注意：如果交易订单匿名，则评价也匿名
-func (r *TaobaoTraderateAddRequest) SetAnony(anony bool) error {
-    r.anony = anony
-    r.Set("anony", anony)
+func (r *TaobaoTraderateAddRequest) SetAnony(_anony bool) error {
+    r._anony = _anony
+    r.Set("anony", _anony)
     return nil
 }
 
 // Anony Getter
 func (r TaobaoTraderateAddRequest) GetAnony() bool {
-    return r.anony
+    return r._anony
 }

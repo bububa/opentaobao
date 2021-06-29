@@ -15,7 +15,7 @@ taobao.vmarket.eticket.package.base.get
 type TaobaoVmarketEticketPackageBaseGetRequest struct {
     model.Params
     // 包id
-    packageId   int64
+    _packageId   int64
 }
 
 // 初始化TaobaoVmarketEticketPackageBaseGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoVmarketEticketPackageBaseGetRequest) GetApiParams() url.Values {
 }
 // PackageId Setter
 // 包id
-func (r *TaobaoVmarketEticketPackageBaseGetRequest) SetPackageId(packageId int64) error {
-    r.packageId = packageId
-    r.Set("package_id", packageId)
+func (r *TaobaoVmarketEticketPackageBaseGetRequest) SetPackageId(_packageId int64) error {
+    r._packageId = _packageId
+    r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
 func (r TaobaoVmarketEticketPackageBaseGetRequest) GetPackageId() int64 {
-    return r.packageId
+    return r._packageId
 }

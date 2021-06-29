@@ -15,7 +15,7 @@ alibaba.ele.enterprise.coupon.get
 type AlibabaEleEnterpriseCouponGetRequest struct {
     model.Params
     // 手机号
-    phone   string
+    _phone   string
 }
 
 // 初始化AlibabaEleEnterpriseCouponGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseCouponGetRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 手机号
-func (r *AlibabaEleEnterpriseCouponGetRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseCouponGetRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseCouponGetRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

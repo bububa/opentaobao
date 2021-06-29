@@ -15,9 +15,9 @@ taobao.banamadpc.item.update
 type TaobaoBanamadpcItemUpdateRequest struct {
     model.Params
     // 商品的schema xml
-    xml   string
+    _xml   string
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoBanamadpcItemUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoBanamadpcItemUpdateRequest) GetApiParams() url.Values {
 }
 // Xml Setter
 // 商品的schema xml
-func (r *TaobaoBanamadpcItemUpdateRequest) SetXml(xml string) error {
-    r.xml = xml
-    r.Set("xml", xml)
+func (r *TaobaoBanamadpcItemUpdateRequest) SetXml(_xml string) error {
+    r._xml = _xml
+    r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
 func (r TaobaoBanamadpcItemUpdateRequest) GetXml() string {
-    return r.xml
+    return r._xml
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBanamadpcItemUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoBanamadpcItemUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoBanamadpcItemUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

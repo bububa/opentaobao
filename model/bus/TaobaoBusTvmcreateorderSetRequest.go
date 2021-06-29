@@ -15,7 +15,7 @@ taobao.bus.tvmcreateorder.set
 type TaobaoBusTvmcreateorderSetRequest struct {
     model.Params
     // 创建订单对象
-    paramTVMCreateOrderRQ   *TvmCreateOrderRq
+    _paramTVMCreateOrderRQ   *TvmCreateOrderRq
 }
 
 // 初始化TaobaoBusTvmcreateorderSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusTvmcreateorderSetRequest) GetApiParams() url.Values {
 }
 // ParamTVMCreateOrderRQ Setter
 // 创建订单对象
-func (r *TaobaoBusTvmcreateorderSetRequest) SetParamTVMCreateOrderRQ(paramTVMCreateOrderRQ *TvmCreateOrderRq) error {
-    r.paramTVMCreateOrderRQ = paramTVMCreateOrderRQ
-    r.Set("param_t_v_m_create_order_r_q", paramTVMCreateOrderRQ)
+func (r *TaobaoBusTvmcreateorderSetRequest) SetParamTVMCreateOrderRQ(_paramTVMCreateOrderRQ *TvmCreateOrderRq) error {
+    r._paramTVMCreateOrderRQ = _paramTVMCreateOrderRQ
+    r.Set("param_t_v_m_create_order_r_q", _paramTVMCreateOrderRQ)
     return nil
 }
 
 // ParamTVMCreateOrderRQ Getter
 func (r TaobaoBusTvmcreateorderSetRequest) GetParamTVMCreateOrderRQ() *TvmCreateOrderRq {
-    return r.paramTVMCreateOrderRQ
+    return r._paramTVMCreateOrderRQ
 }

@@ -15,15 +15,15 @@ alibaba.einvoice.prod.result.fileurl.get
 type AlibabaEinvoiceProdResultFileurlGetRequest struct {
     model.Params
     // 业务平台商户ID/卖家用户ID
-    platformUserId   string
+    _platformUserId   string
     // 发票号码
-    invoiceNo   string
+    _invoiceNo   string
     // 发票代码
-    invoiceCode   string
+    _invoiceCode   string
     // 发票文件类型，小写，pdf/ofd/jpg
-    fileType   string
+    _fileType   string
     // 业务平台code, 由发票中台分配
-    platformCode   string
+    _platformCode   string
 }
 
 // 初始化AlibabaEinvoiceProdResultFileurlGetRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetApiParams() url.Values {
 }
 // PlatformUserId Setter
 // 业务平台商户ID/卖家用户ID
-func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetPlatformUserId(platformUserId string) error {
-    r.platformUserId = platformUserId
-    r.Set("platform_user_id", platformUserId)
+func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetPlatformUserId(_platformUserId string) error {
+    r._platformUserId = _platformUserId
+    r.Set("platform_user_id", _platformUserId)
     return nil
 }
 
 // PlatformUserId Getter
 func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetPlatformUserId() string {
-    return r.platformUserId
+    return r._platformUserId
 }
 // InvoiceNo Setter
 // 发票号码
-func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetInvoiceNo(invoiceNo string) error {
-    r.invoiceNo = invoiceNo
-    r.Set("invoice_no", invoiceNo)
+func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetInvoiceNo(_invoiceNo string) error {
+    r._invoiceNo = _invoiceNo
+    r.Set("invoice_no", _invoiceNo)
     return nil
 }
 
 // InvoiceNo Getter
 func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetInvoiceNo() string {
-    return r.invoiceNo
+    return r._invoiceNo
 }
 // InvoiceCode Setter
 // 发票代码
-func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetInvoiceCode(invoiceCode string) error {
-    r.invoiceCode = invoiceCode
-    r.Set("invoice_code", invoiceCode)
+func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetInvoiceCode(_invoiceCode string) error {
+    r._invoiceCode = _invoiceCode
+    r.Set("invoice_code", _invoiceCode)
     return nil
 }
 
 // InvoiceCode Getter
 func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetInvoiceCode() string {
-    return r.invoiceCode
+    return r._invoiceCode
 }
 // FileType Setter
 // 发票文件类型，小写，pdf/ofd/jpg
-func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetFileType(fileType string) error {
-    r.fileType = fileType
-    r.Set("file_type", fileType)
+func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetFileType(_fileType string) error {
+    r._fileType = _fileType
+    r.Set("file_type", _fileType)
     return nil
 }
 
 // FileType Getter
 func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetFileType() string {
-    return r.fileType
+    return r._fileType
 }
 // PlatformCode Setter
 // 业务平台code, 由发票中台分配
-func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetPlatformCode(platformCode string) error {
-    r.platformCode = platformCode
-    r.Set("platform_code", platformCode)
+func (r *AlibabaEinvoiceProdResultFileurlGetRequest) SetPlatformCode(_platformCode string) error {
+    r._platformCode = _platformCode
+    r.Set("platform_code", _platformCode)
     return nil
 }
 
 // PlatformCode Getter
 func (r AlibabaEinvoiceProdResultFileurlGetRequest) GetPlatformCode() string {
-    return r.platformCode
+    return r._platformCode
 }

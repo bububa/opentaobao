@@ -15,7 +15,7 @@ alibaba.alsc.kms.access
 type AlibabaAlscKmsAccessRequest struct {
     model.Params
     // 接入参数
-    requestdata   string
+    _requestdata   string
 }
 
 // 初始化AlibabaAlscKmsAccessRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscKmsAccessRequest) GetApiParams() url.Values {
 }
 // Requestdata Setter
 // 接入参数
-func (r *AlibabaAlscKmsAccessRequest) SetRequestdata(requestdata string) error {
-    r.requestdata = requestdata
-    r.Set("requestdata", requestdata)
+func (r *AlibabaAlscKmsAccessRequest) SetRequestdata(_requestdata string) error {
+    r._requestdata = _requestdata
+    r.Set("requestdata", _requestdata)
     return nil
 }
 
 // Requestdata Getter
 func (r AlibabaAlscKmsAccessRequest) GetRequestdata() string {
-    return r.requestdata
+    return r._requestdata
 }

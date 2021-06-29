@@ -15,7 +15,7 @@ cainiao.endpoint.locker.top.station.addorupdate
 type CainiaoEndpointLockerTopStationAddorupdateRequest struct {
     model.Params
     // 站点信息
-    stationInfo   *StationInfo
+    _stationInfo   *StationInfo
 }
 
 // 初始化CainiaoEndpointLockerTopStationAddorupdateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetApiParams() url.Va
 }
 // StationInfo Setter
 // 站点信息
-func (r *CainiaoEndpointLockerTopStationAddorupdateRequest) SetStationInfo(stationInfo *StationInfo) error {
-    r.stationInfo = stationInfo
-    r.Set("station_info", stationInfo)
+func (r *CainiaoEndpointLockerTopStationAddorupdateRequest) SetStationInfo(_stationInfo *StationInfo) error {
+    r._stationInfo = _stationInfo
+    r.Set("station_info", _stationInfo)
     return nil
 }
 
 // StationInfo Getter
 func (r CainiaoEndpointLockerTopStationAddorupdateRequest) GetStationInfo() *StationInfo {
-    return r.stationInfo
+    return r._stationInfo
 }

@@ -15,9 +15,9 @@ taobao.card.expandcard.query
 type TaobaoCardExpandcardQueryRequest struct {
     model.Params
     // 卡使用范围，不传则会查询所有
-    usedScopeCode   string
+    _usedScopeCode   string
     // 支付宝accountNo
-    accountNo   string
+    _accountNo   string
 }
 
 // 初始化TaobaoCardExpandcardQueryRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCardExpandcardQueryRequest) GetApiParams() url.Values {
 }
 // UsedScopeCode Setter
 // 卡使用范围，不传则会查询所有
-func (r *TaobaoCardExpandcardQueryRequest) SetUsedScopeCode(usedScopeCode string) error {
-    r.usedScopeCode = usedScopeCode
-    r.Set("used_scope_code", usedScopeCode)
+func (r *TaobaoCardExpandcardQueryRequest) SetUsedScopeCode(_usedScopeCode string) error {
+    r._usedScopeCode = _usedScopeCode
+    r.Set("used_scope_code", _usedScopeCode)
     return nil
 }
 
 // UsedScopeCode Getter
 func (r TaobaoCardExpandcardQueryRequest) GetUsedScopeCode() string {
-    return r.usedScopeCode
+    return r._usedScopeCode
 }
 // AccountNo Setter
 // 支付宝accountNo
-func (r *TaobaoCardExpandcardQueryRequest) SetAccountNo(accountNo string) error {
-    r.accountNo = accountNo
-    r.Set("account_no", accountNo)
+func (r *TaobaoCardExpandcardQueryRequest) SetAccountNo(_accountNo string) error {
+    r._accountNo = _accountNo
+    r.Set("account_no", _accountNo)
     return nil
 }
 
 // AccountNo Getter
 func (r TaobaoCardExpandcardQueryRequest) GetAccountNo() string {
-    return r.accountNo
+    return r._accountNo
 }

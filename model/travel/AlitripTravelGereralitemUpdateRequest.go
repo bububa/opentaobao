@@ -16,19 +16,19 @@ alitrip.travel.gereralitem.update
 type AlitripTravelGereralitemUpdateRequest struct {
     model.Params
     // 必填，商品基本信息
-    baseInfo   *BaseInfo
+    _baseInfo   *BaseInfo
     // 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-    bookingRules   []BookingRuleInfo
+    _bookingRules   []BookingRuleInfo
     // 更新sku信息，仅限日历商品使用
-    dateSkuInfoList   []DateSkuInfo
+    _dateSkuInfoList   []DateSkuInfo
     // 新版电子凭证信息。如果传递了此参数，则sales_info中旧版电子凭证信息将被忽略，否则电子凭证信息将以旧版电子凭证参数为准。如果新、旧版参数都没传，则该商品不支持电子凭证
-    itemEleCertInfo   *ItemEleCertInfo
+    _itemEleCertInfo   *ItemEleCertInfo
     // 选填，退款规则结构
-    itemRefundInfo   *ItemRefundInfo
+    _itemRefundInfo   *ItemRefundInfo
     // poi信息，个别类目必填，如演艺类目下场馆信息
-    poi   *Poi
+    _poi   *Poi
     // 更新sku信息，仅限非日历（普通）商品使用
-    commonSkuList   []NoDateSkuInfo
+    _commonSkuList   []NoDateSkuInfo
 }
 
 // 初始化AlitripTravelGereralitemUpdateRequest对象
@@ -53,85 +53,85 @@ func (r AlitripTravelGereralitemUpdateRequest) GetApiParams() url.Values {
 }
 // BaseInfo Setter
 // 必填，商品基本信息
-func (r *AlitripTravelGereralitemUpdateRequest) SetBaseInfo(baseInfo *BaseInfo) error {
-    r.baseInfo = baseInfo
-    r.Set("base_info", baseInfo)
+func (r *AlitripTravelGereralitemUpdateRequest) SetBaseInfo(_baseInfo *BaseInfo) error {
+    r._baseInfo = _baseInfo
+    r.Set("base_info", _baseInfo)
     return nil
 }
 
 // BaseInfo Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetBaseInfo() *BaseInfo {
-    return r.baseInfo
+    return r._baseInfo
 }
 // BookingRules Setter
 // 必填，预定规则结构。示例： [{ "rule_type": "fee_excluded", "rule_desc": "费用包含描述"},{ "rule_type": "fee_included", "rule_desc": "费用不含描述"},{ "rule_type": "order_info", "rule_desc": "预定须知描述"}]
-func (r *AlitripTravelGereralitemUpdateRequest) SetBookingRules(bookingRules []BookingRuleInfo) error {
-    r.bookingRules = bookingRules
-    r.Set("booking_rules", bookingRules)
+func (r *AlitripTravelGereralitemUpdateRequest) SetBookingRules(_bookingRules []BookingRuleInfo) error {
+    r._bookingRules = _bookingRules
+    r.Set("booking_rules", _bookingRules)
     return nil
 }
 
 // BookingRules Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetBookingRules() []BookingRuleInfo {
-    return r.bookingRules
+    return r._bookingRules
 }
 // DateSkuInfoList Setter
 // 更新sku信息，仅限日历商品使用
-func (r *AlitripTravelGereralitemUpdateRequest) SetDateSkuInfoList(dateSkuInfoList []DateSkuInfo) error {
-    r.dateSkuInfoList = dateSkuInfoList
-    r.Set("date_sku_info_list", dateSkuInfoList)
+func (r *AlitripTravelGereralitemUpdateRequest) SetDateSkuInfoList(_dateSkuInfoList []DateSkuInfo) error {
+    r._dateSkuInfoList = _dateSkuInfoList
+    r.Set("date_sku_info_list", _dateSkuInfoList)
     return nil
 }
 
 // DateSkuInfoList Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetDateSkuInfoList() []DateSkuInfo {
-    return r.dateSkuInfoList
+    return r._dateSkuInfoList
 }
 // ItemEleCertInfo Setter
 // 新版电子凭证信息。如果传递了此参数，则sales_info中旧版电子凭证信息将被忽略，否则电子凭证信息将以旧版电子凭证参数为准。如果新、旧版参数都没传，则该商品不支持电子凭证
-func (r *AlitripTravelGereralitemUpdateRequest) SetItemEleCertInfo(itemEleCertInfo *ItemEleCertInfo) error {
-    r.itemEleCertInfo = itemEleCertInfo
-    r.Set("item_ele_cert_info", itemEleCertInfo)
+func (r *AlitripTravelGereralitemUpdateRequest) SetItemEleCertInfo(_itemEleCertInfo *ItemEleCertInfo) error {
+    r._itemEleCertInfo = _itemEleCertInfo
+    r.Set("item_ele_cert_info", _itemEleCertInfo)
     return nil
 }
 
 // ItemEleCertInfo Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetItemEleCertInfo() *ItemEleCertInfo {
-    return r.itemEleCertInfo
+    return r._itemEleCertInfo
 }
 // ItemRefundInfo Setter
 // 选填，退款规则结构
-func (r *AlitripTravelGereralitemUpdateRequest) SetItemRefundInfo(itemRefundInfo *ItemRefundInfo) error {
-    r.itemRefundInfo = itemRefundInfo
-    r.Set("item_refund_info", itemRefundInfo)
+func (r *AlitripTravelGereralitemUpdateRequest) SetItemRefundInfo(_itemRefundInfo *ItemRefundInfo) error {
+    r._itemRefundInfo = _itemRefundInfo
+    r.Set("item_refund_info", _itemRefundInfo)
     return nil
 }
 
 // ItemRefundInfo Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetItemRefundInfo() *ItemRefundInfo {
-    return r.itemRefundInfo
+    return r._itemRefundInfo
 }
 // Poi Setter
 // poi信息，个别类目必填，如演艺类目下场馆信息
-func (r *AlitripTravelGereralitemUpdateRequest) SetPoi(poi *Poi) error {
-    r.poi = poi
-    r.Set("poi", poi)
+func (r *AlitripTravelGereralitemUpdateRequest) SetPoi(_poi *Poi) error {
+    r._poi = _poi
+    r.Set("poi", _poi)
     return nil
 }
 
 // Poi Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetPoi() *Poi {
-    return r.poi
+    return r._poi
 }
 // CommonSkuList Setter
 // 更新sku信息，仅限非日历（普通）商品使用
-func (r *AlitripTravelGereralitemUpdateRequest) SetCommonSkuList(commonSkuList []NoDateSkuInfo) error {
-    r.commonSkuList = commonSkuList
-    r.Set("common_sku_list", commonSkuList)
+func (r *AlitripTravelGereralitemUpdateRequest) SetCommonSkuList(_commonSkuList []NoDateSkuInfo) error {
+    r._commonSkuList = _commonSkuList
+    r.Set("common_sku_list", _commonSkuList)
     return nil
 }
 
 // CommonSkuList Getter
 func (r AlitripTravelGereralitemUpdateRequest) GetCommonSkuList() []NoDateSkuInfo {
-    return r.commonSkuList
+    return r._commonSkuList
 }

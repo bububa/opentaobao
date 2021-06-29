@@ -15,7 +15,7 @@ taobao.ump.tool.get
 type TaobaoUmpToolGetRequest struct {
     model.Params
     // 工具的id
-    toolId   int64
+    _toolId   int64
 }
 
 // 初始化TaobaoUmpToolGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpToolGetRequest) GetApiParams() url.Values {
 }
 // ToolId Setter
 // 工具的id
-func (r *TaobaoUmpToolGetRequest) SetToolId(toolId int64) error {
-    r.toolId = toolId
-    r.Set("tool_id", toolId)
+func (r *TaobaoUmpToolGetRequest) SetToolId(_toolId int64) error {
+    r._toolId = _toolId
+    r.Set("tool_id", _toolId)
     return nil
 }
 
 // ToolId Getter
 func (r TaobaoUmpToolGetRequest) GetToolId() int64 {
-    return r.toolId
+    return r._toolId
 }

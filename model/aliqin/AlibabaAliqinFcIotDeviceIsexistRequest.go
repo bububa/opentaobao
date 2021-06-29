@@ -15,11 +15,11 @@ alibaba.aliqin.fc.iot.device.isexist
 type AlibabaAliqinFcIotDeviceIsexistRequest struct {
     model.Params
     // 设备编号
-    imei   string
+    _imei   string
     // 设备类型（预留将来扩展）
-    deviceType   string
+    _deviceType   string
     // 渠道扩展编码（预留）
-    midPatChannel   string
+    _midPatChannel   string
 }
 
 // 初始化AlibabaAliqinFcIotDeviceIsexistRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAliqinFcIotDeviceIsexistRequest) GetApiParams() url.Values {
 }
 // Imei Setter
 // 设备编号
-func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetImei(imei string) error {
-    r.imei = imei
-    r.Set("imei", imei)
+func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetImei(_imei string) error {
+    r._imei = _imei
+    r.Set("imei", _imei)
     return nil
 }
 
 // Imei Getter
 func (r AlibabaAliqinFcIotDeviceIsexistRequest) GetImei() string {
-    return r.imei
+    return r._imei
 }
 // DeviceType Setter
 // 设备类型（预留将来扩展）
-func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetDeviceType(deviceType string) error {
-    r.deviceType = deviceType
-    r.Set("device_type", deviceType)
+func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetDeviceType(_deviceType string) error {
+    r._deviceType = _deviceType
+    r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
 func (r AlibabaAliqinFcIotDeviceIsexistRequest) GetDeviceType() string {
-    return r.deviceType
+    return r._deviceType
 }
 // MidPatChannel Setter
 // 渠道扩展编码（预留）
-func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetMidPatChannel(midPatChannel string) error {
-    r.midPatChannel = midPatChannel
-    r.Set("mid_pat_channel", midPatChannel)
+func (r *AlibabaAliqinFcIotDeviceIsexistRequest) SetMidPatChannel(_midPatChannel string) error {
+    r._midPatChannel = _midPatChannel
+    r.Set("mid_pat_channel", _midPatChannel)
     return nil
 }
 
 // MidPatChannel Getter
 func (r AlibabaAliqinFcIotDeviceIsexistRequest) GetMidPatChannel() string {
-    return r.midPatChannel
+    return r._midPatChannel
 }

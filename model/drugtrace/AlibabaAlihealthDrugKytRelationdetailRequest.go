@@ -15,11 +15,11 @@ alibaba.alihealth.drug.kyt.relationdetail
 type AlibabaAlihealthDrugKytRelationdetailRequest struct {
     model.Params
     // 码激活文件上传信息标识
-    codeActiveInfoId   string
+    _codeActiveInfoId   string
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 客户端ID【默认写2】
-    clientType   string
+    _clientType   string
 }
 
 // 初始化AlibabaAlihealthDrugKytRelationdetailRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetApiParams() url.Values 
 }
 // CodeActiveInfoId Setter
 // 码激活文件上传信息标识
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetCodeActiveInfoId(codeActiveInfoId string) error {
-    r.codeActiveInfoId = codeActiveInfoId
-    r.Set("code_active_info_id", codeActiveInfoId)
+func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetCodeActiveInfoId(_codeActiveInfoId string) error {
+    r._codeActiveInfoId = _codeActiveInfoId
+    r.Set("code_active_info_id", _codeActiveInfoId)
     return nil
 }
 
 // CodeActiveInfoId Getter
 func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetCodeActiveInfoId() string {
-    return r.codeActiveInfoId
+    return r._codeActiveInfoId
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // ClientType Setter
 // 客户端ID【默认写2】
-func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetClientType(clientType string) error {
-    r.clientType = clientType
-    r.Set("client_type", clientType)
+func (r *AlibabaAlihealthDrugKytRelationdetailRequest) SetClientType(_clientType string) error {
+    r._clientType = _clientType
+    r.Set("client_type", _clientType)
     return nil
 }
 
 // ClientType Getter
 func (r AlibabaAlihealthDrugKytRelationdetailRequest) GetClientType() string {
-    return r.clientType
+    return r._clientType
 }

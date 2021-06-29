@@ -15,7 +15,7 @@ taobao.sellercenter.subusers.get
 type TaobaoSellercenterSubusersGetRequest struct {
     model.Params
     // 表示卖家昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSellercenterSubusersGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSellercenterSubusersGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 表示卖家昵称
-func (r *TaobaoSellercenterSubusersGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSellercenterSubusersGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSellercenterSubusersGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

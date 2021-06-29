@@ -15,7 +15,7 @@ taobao.opensecurity.isv.uid.get
 type TaobaoOpensecurityIsvUidGetRequest struct {
     model.Params
     // 基于Appkey生成的open security淘宝用户Id
-    openUid   string
+    _openUid   string
 }
 
 // 初始化TaobaoOpensecurityIsvUidGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpensecurityIsvUidGetRequest) GetApiParams() url.Values {
 }
 // OpenUid Setter
 // 基于Appkey生成的open security淘宝用户Id
-func (r *TaobaoOpensecurityIsvUidGetRequest) SetOpenUid(openUid string) error {
-    r.openUid = openUid
-    r.Set("open_uid", openUid)
+func (r *TaobaoOpensecurityIsvUidGetRequest) SetOpenUid(_openUid string) error {
+    r._openUid = _openUid
+    r.Set("open_uid", _openUid)
     return nil
 }
 
 // OpenUid Getter
 func (r TaobaoOpensecurityIsvUidGetRequest) GetOpenUid() string {
-    return r.openUid
+    return r._openUid
 }

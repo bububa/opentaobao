@@ -15,7 +15,7 @@ alibaba.fundplatform.cardorder.status.query
 type AlibabaFundplatformCardorderStatusQueryRequest struct {
     model.Params
     // 请求结构体
-    request   *AlibabaFundplatformCardorderStatusQueryStruct
+    _request   *AlibabaFundplatformCardorderStatusQueryStruct
 }
 
 // 初始化AlibabaFundplatformCardorderStatusQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardorderStatusQueryRequest) GetApiParams() url.Value
 }
 // Request Setter
 // 请求结构体
-func (r *AlibabaFundplatformCardorderStatusQueryRequest) SetRequest(request *AlibabaFundplatformCardorderStatusQueryStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *AlibabaFundplatformCardorderStatusQueryRequest) SetRequest(_request *AlibabaFundplatformCardorderStatusQueryStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r AlibabaFundplatformCardorderStatusQueryRequest) GetRequest() *AlibabaFundplatformCardorderStatusQueryStruct {
-    return r.request
+    return r._request
 }

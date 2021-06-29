@@ -15,9 +15,9 @@ alibaba.legal.suit.court.entrust.get
 type AlibabaLegalSuitCourtEntrustGetRequest struct {
     model.Params
     // 委托ID
-    entrustId   int64
+    _entrustId   int64
     // 案件ID
-    suitId   int64
+    _suitId   int64
 }
 
 // 初始化AlibabaLegalSuitCourtEntrustGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLegalSuitCourtEntrustGetRequest) GetApiParams() url.Values {
 }
 // EntrustId Setter
 // 委托ID
-func (r *AlibabaLegalSuitCourtEntrustGetRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalSuitCourtEntrustGetRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalSuitCourtEntrustGetRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // SuitId Setter
 // 案件ID
-func (r *AlibabaLegalSuitCourtEntrustGetRequest) SetSuitId(suitId int64) error {
-    r.suitId = suitId
-    r.Set("suit_id", suitId)
+func (r *AlibabaLegalSuitCourtEntrustGetRequest) SetSuitId(_suitId int64) error {
+    r._suitId = _suitId
+    r.Set("suit_id", _suitId)
     return nil
 }
 
 // SuitId Getter
 func (r AlibabaLegalSuitCourtEntrustGetRequest) GetSuitId() int64 {
-    return r.suitId
+    return r._suitId
 }

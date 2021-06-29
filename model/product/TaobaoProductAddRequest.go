@@ -15,33 +15,33 @@ taobao.product.add
 type TaobaoProductAddRequest struct {
     model.Params
     // native_unkeyprops
-    nativeUnkeyprops   string
+    _nativeUnkeyprops   string
     // 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
-    cid   int64
+    _cid   int64
     // 外部产品ID
-    outerId   string
+    _outerId   string
     // 关键属性 结构:pid:vid;pid:vid.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.
-    props   string
+    _props   string
     // 非关键属性结构:pid:vid;pid:vid.<br>非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性;<br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font>
-    binds   string
+    _binds   string
     // 销售属性结构:pid:vid;pid:vid.调用taobao.itemprops.get获取is_sale_prop＝true的pid,调用taobao.itempropvalues.get获取vid.
-    saleProps   string
+    _saleProps   string
     // 用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”<br><font color=red>注：包含所有自定义属性的传入</font>
-    customerProps   string
+    _customerProps   string
     // 产品市场价.精确到2位小数;单位为元.如：200.07
-    price   string
+    _price   string
     // 产品主图片.最大1M,目前仅支持GIF,JPG.
-    image   []*model.File
+    _image   []*model.File
     // 产品名称,最大30个字符.
-    name   string
+    _name   string
     // 产品描述.最大不超过25000个字符
-    desc   string
+    _desc   string
     // 是不是主图
-    major   bool
+    _major   bool
     // 上市时间。目前只支持鞋城类目传入此参数
-    marketTime   string
+    _marketTime   string
     // 销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。只有少数销售属性值支持传入别名，比如颜色和尺寸
-    propertyAlias   string
+    _propertyAlias   string
 }
 
 // 初始化TaobaoProductAddRequest对象
@@ -66,169 +66,169 @@ func (r TaobaoProductAddRequest) GetApiParams() url.Values {
 }
 // NativeUnkeyprops Setter
 // native_unkeyprops
-func (r *TaobaoProductAddRequest) SetNativeUnkeyprops(nativeUnkeyprops string) error {
-    r.nativeUnkeyprops = nativeUnkeyprops
-    r.Set("native_unkeyprops", nativeUnkeyprops)
+func (r *TaobaoProductAddRequest) SetNativeUnkeyprops(_nativeUnkeyprops string) error {
+    r._nativeUnkeyprops = _nativeUnkeyprops
+    r.Set("native_unkeyprops", _nativeUnkeyprops)
     return nil
 }
 
 // NativeUnkeyprops Getter
 func (r TaobaoProductAddRequest) GetNativeUnkeyprops() string {
-    return r.nativeUnkeyprops
+    return r._nativeUnkeyprops
 }
 // Cid Setter
 // 商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.
-func (r *TaobaoProductAddRequest) SetCid(cid int64) error {
-    r.cid = cid
-    r.Set("cid", cid)
+func (r *TaobaoProductAddRequest) SetCid(_cid int64) error {
+    r._cid = _cid
+    r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
 func (r TaobaoProductAddRequest) GetCid() int64 {
-    return r.cid
+    return r._cid
 }
 // OuterId Setter
 // 外部产品ID
-func (r *TaobaoProductAddRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoProductAddRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoProductAddRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // Props Setter
 // 关键属性 结构:pid:vid;pid:vid.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.
-func (r *TaobaoProductAddRequest) SetProps(props string) error {
-    r.props = props
-    r.Set("props", props)
+func (r *TaobaoProductAddRequest) SetProps(_props string) error {
+    r._props = _props
+    r.Set("props", _props)
     return nil
 }
 
 // Props Getter
 func (r TaobaoProductAddRequest) GetProps() string {
-    return r.props
+    return r._props
 }
 // Binds Setter
 // 非关键属性结构:pid:vid;pid:vid.<br>非关键属性<font color=red>不包含</font>关键属性、销售属性、用户自定义属性、商品属性;<br>调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.<br><font color=red>注:支持最大长度为512字节</font>
-func (r *TaobaoProductAddRequest) SetBinds(binds string) error {
-    r.binds = binds
-    r.Set("binds", binds)
+func (r *TaobaoProductAddRequest) SetBinds(_binds string) error {
+    r._binds = _binds
+    r.Set("binds", _binds)
     return nil
 }
 
 // Binds Getter
 func (r TaobaoProductAddRequest) GetBinds() string {
-    return r.binds
+    return r._binds
 }
 // SaleProps Setter
 // 销售属性结构:pid:vid;pid:vid.调用taobao.itemprops.get获取is_sale_prop＝true的pid,调用taobao.itempropvalues.get获取vid.
-func (r *TaobaoProductAddRequest) SetSaleProps(saleProps string) error {
-    r.saleProps = saleProps
-    r.Set("sale_props", saleProps)
+func (r *TaobaoProductAddRequest) SetSaleProps(_saleProps string) error {
+    r._saleProps = _saleProps
+    r.Set("sale_props", _saleProps)
     return nil
 }
 
 // SaleProps Getter
 func (r TaobaoProductAddRequest) GetSaleProps() string {
-    return r.saleProps
+    return r._saleProps
 }
 // CustomerProps Setter
 // 用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”<br><font color=red>注：包含所有自定义属性的传入</font>
-func (r *TaobaoProductAddRequest) SetCustomerProps(customerProps string) error {
-    r.customerProps = customerProps
-    r.Set("customer_props", customerProps)
+func (r *TaobaoProductAddRequest) SetCustomerProps(_customerProps string) error {
+    r._customerProps = _customerProps
+    r.Set("customer_props", _customerProps)
     return nil
 }
 
 // CustomerProps Getter
 func (r TaobaoProductAddRequest) GetCustomerProps() string {
-    return r.customerProps
+    return r._customerProps
 }
 // Price Setter
 // 产品市场价.精确到2位小数;单位为元.如：200.07
-func (r *TaobaoProductAddRequest) SetPrice(price string) error {
-    r.price = price
-    r.Set("price", price)
+func (r *TaobaoProductAddRequest) SetPrice(_price string) error {
+    r._price = _price
+    r.Set("price", _price)
     return nil
 }
 
 // Price Getter
 func (r TaobaoProductAddRequest) GetPrice() string {
-    return r.price
+    return r._price
 }
 // Image Setter
 // 产品主图片.最大1M,目前仅支持GIF,JPG.
-func (r *TaobaoProductAddRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoProductAddRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoProductAddRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Name Setter
 // 产品名称,最大30个字符.
-func (r *TaobaoProductAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoProductAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoProductAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Desc Setter
 // 产品描述.最大不超过25000个字符
-func (r *TaobaoProductAddRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoProductAddRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoProductAddRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }
 // Major Setter
 // 是不是主图
-func (r *TaobaoProductAddRequest) SetMajor(major bool) error {
-    r.major = major
-    r.Set("major", major)
+func (r *TaobaoProductAddRequest) SetMajor(_major bool) error {
+    r._major = _major
+    r.Set("major", _major)
     return nil
 }
 
 // Major Getter
 func (r TaobaoProductAddRequest) GetMajor() bool {
-    return r.major
+    return r._major
 }
 // MarketTime Setter
 // 上市时间。目前只支持鞋城类目传入此参数
-func (r *TaobaoProductAddRequest) SetMarketTime(marketTime string) error {
-    r.marketTime = marketTime
-    r.Set("market_time", marketTime)
+func (r *TaobaoProductAddRequest) SetMarketTime(_marketTime string) error {
+    r._marketTime = _marketTime
+    r.Set("market_time", _marketTime)
     return nil
 }
 
 // MarketTime Getter
 func (r TaobaoProductAddRequest) GetMarketTime() string {
-    return r.marketTime
+    return r._marketTime
 }
 // PropertyAlias Setter
 // 销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。只有少数销售属性值支持传入别名，比如颜色和尺寸
-func (r *TaobaoProductAddRequest) SetPropertyAlias(propertyAlias string) error {
-    r.propertyAlias = propertyAlias
-    r.Set("property_alias", propertyAlias)
+func (r *TaobaoProductAddRequest) SetPropertyAlias(_propertyAlias string) error {
+    r._propertyAlias = _propertyAlias
+    r.Set("property_alias", _propertyAlias)
     return nil
 }
 
 // PropertyAlias Getter
 func (r TaobaoProductAddRequest) GetPropertyAlias() string {
-    return r.propertyAlias
+    return r._propertyAlias
 }

@@ -15,7 +15,7 @@ taobao.vmarket.eticket.store.get
 type TaobaoVmarketEticketStoreGetRequest struct {
     model.Params
     // 订单ID
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化TaobaoVmarketEticketStoreGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoVmarketEticketStoreGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoVmarketEticketStoreGetRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoVmarketEticketStoreGetRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoVmarketEticketStoreGetRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

@@ -15,7 +15,7 @@ alibaba.ascp.uop.supplier.consignorder.notify.tms.change
 type AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest struct {
     model.Params
     // 修改运单号请求模型
-    modifyMailNoRequest   *Modifymailnorequest
+    _modifyMailNoRequest   *Modifymailnorequest
 }
 
 // 初始化AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest) GetApiParams()
 }
 // ModifyMailNoRequest Setter
 // 修改运单号请求模型
-func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest) SetModifyMailNoRequest(modifyMailNoRequest *Modifymailnorequest) error {
-    r.modifyMailNoRequest = modifyMailNoRequest
-    r.Set("modify_mail_no_request", modifyMailNoRequest)
+func (r *AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest) SetModifyMailNoRequest(_modifyMailNoRequest *Modifymailnorequest) error {
+    r._modifyMailNoRequest = _modifyMailNoRequest
+    r.Set("modify_mail_no_request", _modifyMailNoRequest)
     return nil
 }
 
 // ModifyMailNoRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderNotifyTmsChangeRequest) GetModifyMailNoRequest() *Modifymailnorequest {
-    return r.modifyMailNoRequest
+    return r._modifyMailNoRequest
 }

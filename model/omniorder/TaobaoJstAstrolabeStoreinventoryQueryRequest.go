@@ -15,7 +15,7 @@ taobao.jst.astrolabe.storeinventory.query
 type TaobaoJstAstrolabeStoreinventoryQueryRequest struct {
     model.Params
     // 门店
-    stores   []Store
+    _stores   []Store
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstAstrolabeStoreinventoryQueryRequest) GetApiParams() url.Values 
 }
 // Stores Setter
 // 门店
-func (r *TaobaoJstAstrolabeStoreinventoryQueryRequest) SetStores(stores []Store) error {
-    r.stores = stores
-    r.Set("stores", stores)
+func (r *TaobaoJstAstrolabeStoreinventoryQueryRequest) SetStores(_stores []Store) error {
+    r._stores = _stores
+    r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryQueryRequest) GetStores() []Store {
-    return r.stores
+    return r._stores
 }

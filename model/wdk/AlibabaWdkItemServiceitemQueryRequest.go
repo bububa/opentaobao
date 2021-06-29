@@ -15,9 +15,9 @@ alibaba.wdk.item.serviceitem.query
 type AlibabaWdkItemServiceitemQueryRequest struct {
     model.Params
     // 后台类目
-    hemaCategoryId   string
+    _hemaCategoryId   string
     // 机构编码
-    orgNo   string
+    _orgNo   string
 }
 
 // 初始化AlibabaWdkItemServiceitemQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkItemServiceitemQueryRequest) GetApiParams() url.Values {
 }
 // HemaCategoryId Setter
 // 后台类目
-func (r *AlibabaWdkItemServiceitemQueryRequest) SetHemaCategoryId(hemaCategoryId string) error {
-    r.hemaCategoryId = hemaCategoryId
-    r.Set("hema_category_id", hemaCategoryId)
+func (r *AlibabaWdkItemServiceitemQueryRequest) SetHemaCategoryId(_hemaCategoryId string) error {
+    r._hemaCategoryId = _hemaCategoryId
+    r.Set("hema_category_id", _hemaCategoryId)
     return nil
 }
 
 // HemaCategoryId Getter
 func (r AlibabaWdkItemServiceitemQueryRequest) GetHemaCategoryId() string {
-    return r.hemaCategoryId
+    return r._hemaCategoryId
 }
 // OrgNo Setter
 // 机构编码
-func (r *AlibabaWdkItemServiceitemQueryRequest) SetOrgNo(orgNo string) error {
-    r.orgNo = orgNo
-    r.Set("org_no", orgNo)
+func (r *AlibabaWdkItemServiceitemQueryRequest) SetOrgNo(_orgNo string) error {
+    r._orgNo = _orgNo
+    r.Set("org_no", _orgNo)
     return nil
 }
 
 // OrgNo Getter
 func (r AlibabaWdkItemServiceitemQueryRequest) GetOrgNo() string {
-    return r.orgNo
+    return r._orgNo
 }

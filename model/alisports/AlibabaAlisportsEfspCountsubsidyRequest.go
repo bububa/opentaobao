@@ -15,15 +15,15 @@ alibaba.alisports.efsp.countsubsidy
 type AlibabaAlisportsEfspCountsubsidyRequest struct {
     model.Params
     // 订单金额
-    sumAmount   int64
+    _sumAmount   int64
     // 健身房ID
-    gymId   string
+    _gymId   string
     // 企业ID
-    enterpriseId   string
+    _enterpriseId   string
     // alipayId
-    alipayId   string
+    _alipayId   string
     // 健身房所在省市
-    districtCode   string
+    _districtCode   string
 }
 
 // 初始化AlibabaAlisportsEfspCountsubsidyRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlisportsEfspCountsubsidyRequest) GetApiParams() url.Values {
 }
 // SumAmount Setter
 // 订单金额
-func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetSumAmount(sumAmount int64) error {
-    r.sumAmount = sumAmount
-    r.Set("sum_amount", sumAmount)
+func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetSumAmount(_sumAmount int64) error {
+    r._sumAmount = _sumAmount
+    r.Set("sum_amount", _sumAmount)
     return nil
 }
 
 // SumAmount Getter
 func (r AlibabaAlisportsEfspCountsubsidyRequest) GetSumAmount() int64 {
-    return r.sumAmount
+    return r._sumAmount
 }
 // GymId Setter
 // 健身房ID
-func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetGymId(gymId string) error {
-    r.gymId = gymId
-    r.Set("gym_id", gymId)
+func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetGymId(_gymId string) error {
+    r._gymId = _gymId
+    r.Set("gym_id", _gymId)
     return nil
 }
 
 // GymId Getter
 func (r AlibabaAlisportsEfspCountsubsidyRequest) GetGymId() string {
-    return r.gymId
+    return r._gymId
 }
 // EnterpriseId Setter
 // 企业ID
-func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetEnterpriseId(enterpriseId string) error {
-    r.enterpriseId = enterpriseId
-    r.Set("enterprise_id", enterpriseId)
+func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetEnterpriseId(_enterpriseId string) error {
+    r._enterpriseId = _enterpriseId
+    r.Set("enterprise_id", _enterpriseId)
     return nil
 }
 
 // EnterpriseId Getter
 func (r AlibabaAlisportsEfspCountsubsidyRequest) GetEnterpriseId() string {
-    return r.enterpriseId
+    return r._enterpriseId
 }
 // AlipayId Setter
 // alipayId
-func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaAlisportsEfspCountsubsidyRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }
 // DistrictCode Setter
 // 健身房所在省市
-func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetDistrictCode(districtCode string) error {
-    r.districtCode = districtCode
-    r.Set("district_code", districtCode)
+func (r *AlibabaAlisportsEfspCountsubsidyRequest) SetDistrictCode(_districtCode string) error {
+    r._districtCode = _districtCode
+    r.Set("district_code", _districtCode)
     return nil
 }
 
 // DistrictCode Getter
 func (r AlibabaAlisportsEfspCountsubsidyRequest) GetDistrictCode() string {
-    return r.districtCode
+    return r._districtCode
 }

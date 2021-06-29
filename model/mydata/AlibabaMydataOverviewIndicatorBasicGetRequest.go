@@ -15,9 +15,9 @@ alibaba.mydata.overview.indicator.basic.get
 type AlibabaMydataOverviewIndicatorBasicGetRequest struct {
     model.Params
     // 要查询的数据周期
-    dateRange   *DateRange
+    _dateRange   *DateRange
     // 要查询的行业信息
-    industry   *Industry
+    _industry   *Industry
 }
 
 // 初始化AlibabaMydataOverviewIndicatorBasicGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMydataOverviewIndicatorBasicGetRequest) GetApiParams() url.Values
 }
 // DateRange Setter
 // 要查询的数据周期
-func (r *AlibabaMydataOverviewIndicatorBasicGetRequest) SetDateRange(dateRange *DateRange) error {
-    r.dateRange = dateRange
-    r.Set("date_range", dateRange)
+func (r *AlibabaMydataOverviewIndicatorBasicGetRequest) SetDateRange(_dateRange *DateRange) error {
+    r._dateRange = _dateRange
+    r.Set("date_range", _dateRange)
     return nil
 }
 
 // DateRange Getter
 func (r AlibabaMydataOverviewIndicatorBasicGetRequest) GetDateRange() *DateRange {
-    return r.dateRange
+    return r._dateRange
 }
 // Industry Setter
 // 要查询的行业信息
-func (r *AlibabaMydataOverviewIndicatorBasicGetRequest) SetIndustry(industry *Industry) error {
-    r.industry = industry
-    r.Set("industry", industry)
+func (r *AlibabaMydataOverviewIndicatorBasicGetRequest) SetIndustry(_industry *Industry) error {
+    r._industry = _industry
+    r.Set("industry", _industry)
     return nil
 }
 
 // Industry Getter
 func (r AlibabaMydataOverviewIndicatorBasicGetRequest) GetIndustry() *Industry {
-    return r.industry
+    return r._industry
 }

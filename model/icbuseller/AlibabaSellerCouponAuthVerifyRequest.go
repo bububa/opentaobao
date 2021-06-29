@@ -15,9 +15,9 @@ alibaba.seller.coupon.auth.verify
 type AlibabaSellerCouponAuthVerifyRequest struct {
     model.Params
     // 服务代码
-    serviceCode   string
+    _serviceCode   string
     // 卡券验证码
-    couponSeqNumber   string
+    _couponSeqNumber   string
 }
 
 // 初始化AlibabaSellerCouponAuthVerifyRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSellerCouponAuthVerifyRequest) GetApiParams() url.Values {
 }
 // ServiceCode Setter
 // 服务代码
-func (r *AlibabaSellerCouponAuthVerifyRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *AlibabaSellerCouponAuthVerifyRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r AlibabaSellerCouponAuthVerifyRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }
 // CouponSeqNumber Setter
 // 卡券验证码
-func (r *AlibabaSellerCouponAuthVerifyRequest) SetCouponSeqNumber(couponSeqNumber string) error {
-    r.couponSeqNumber = couponSeqNumber
-    r.Set("coupon_seq_number", couponSeqNumber)
+func (r *AlibabaSellerCouponAuthVerifyRequest) SetCouponSeqNumber(_couponSeqNumber string) error {
+    r._couponSeqNumber = _couponSeqNumber
+    r.Set("coupon_seq_number", _couponSeqNumber)
     return nil
 }
 
 // CouponSeqNumber Getter
 func (r AlibabaSellerCouponAuthVerifyRequest) GetCouponSeqNumber() string {
-    return r.couponSeqNumber
+    return r._couponSeqNumber
 }

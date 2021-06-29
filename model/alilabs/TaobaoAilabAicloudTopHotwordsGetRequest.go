@@ -15,11 +15,11 @@ taobao.ailab.aicloud.top.hotwords.get
 type TaobaoAilabAicloudTopHotwordsGetRequest struct {
     model.Params
     // 三方用户id
-    userId   string
+    _userId   string
     // 业务类型
-    bizClass   string
+    _bizClass   string
     // schemeKey
-    schema   string
+    _schema   string
 }
 
 // 初始化TaobaoAilabAicloudTopHotwordsGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAilabAicloudTopHotwordsGetRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 三方用户id
-func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopHotwordsGetRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // BizClass Setter
 // 业务类型
-func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetBizClass(bizClass string) error {
-    r.bizClass = bizClass
-    r.Set("biz_class", bizClass)
+func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetBizClass(_bizClass string) error {
+    r._bizClass = _bizClass
+    r.Set("biz_class", _bizClass)
     return nil
 }
 
 // BizClass Getter
 func (r TaobaoAilabAicloudTopHotwordsGetRequest) GetBizClass() string {
-    return r.bizClass
+    return r._bizClass
 }
 // Schema Setter
 // schemeKey
-func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopHotwordsGetRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopHotwordsGetRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }

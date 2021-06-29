@@ -15,11 +15,11 @@ taobao.place.store.tags.update
 type TaobaoPlaceStoreTagsUpdateRequest struct {
     model.Params
     // 门店信息
-    storeUpdate   *StoreUpdateTopDto
+    _storeUpdate   *StoreUpdateTopDto
     // 新增标list
-    addTags   []int64
+    _addTags   []int64
     // 删除标list
-    removeTags   []int64
+    _removeTags   []int64
 }
 
 // 初始化TaobaoPlaceStoreTagsUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPlaceStoreTagsUpdateRequest) GetApiParams() url.Values {
 }
 // StoreUpdate Setter
 // 门店信息
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetStoreUpdate(storeUpdate *StoreUpdateTopDto) error {
-    r.storeUpdate = storeUpdate
-    r.Set("store_update", storeUpdate)
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDto) error {
+    r._storeUpdate = _storeUpdate
+    r.Set("store_update", _storeUpdate)
     return nil
 }
 
 // StoreUpdate Getter
 func (r TaobaoPlaceStoreTagsUpdateRequest) GetStoreUpdate() *StoreUpdateTopDto {
-    return r.storeUpdate
+    return r._storeUpdate
 }
 // AddTags Setter
 // 新增标list
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetAddTags(addTags []int64) error {
-    r.addTags = addTags
-    r.Set("add_tags", addTags)
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetAddTags(_addTags []int64) error {
+    r._addTags = _addTags
+    r.Set("add_tags", _addTags)
     return nil
 }
 
 // AddTags Getter
 func (r TaobaoPlaceStoreTagsUpdateRequest) GetAddTags() []int64 {
-    return r.addTags
+    return r._addTags
 }
 // RemoveTags Setter
 // 删除标list
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetRemoveTags(removeTags []int64) error {
-    r.removeTags = removeTags
-    r.Set("remove_tags", removeTags)
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetRemoveTags(_removeTags []int64) error {
+    r._removeTags = _removeTags
+    r.Set("remove_tags", _removeTags)
     return nil
 }
 
 // RemoveTags Getter
 func (r TaobaoPlaceStoreTagsUpdateRequest) GetRemoveTags() []int64 {
-    return r.removeTags
+    return r._removeTags
 }

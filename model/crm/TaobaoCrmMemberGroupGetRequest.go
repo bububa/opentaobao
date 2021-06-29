@@ -15,7 +15,7 @@ taobao.crm.member.group.get
 type TaobaoCrmMemberGroupGetRequest struct {
     model.Params
     // 会员Nick
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TaobaoCrmMemberGroupGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCrmMemberGroupGetRequest) GetApiParams() url.Values {
 }
 // BuyerNick Setter
 // 会员Nick
-func (r *TaobaoCrmMemberGroupGetRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoCrmMemberGroupGetRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoCrmMemberGroupGetRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

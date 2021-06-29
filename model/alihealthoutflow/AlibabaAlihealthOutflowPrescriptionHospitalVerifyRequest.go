@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.prescription.hospital.verify
 type AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest struct {
     model.Params
     // 入参对象
-    updateRequest   *PrescriptionOutflowUpdateRequest
+    _updateRequest   *PrescriptionOutflowUpdateRequest
 }
 
 // 初始化AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest) GetApiParams()
 }
 // UpdateRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest) SetUpdateRequest(updateRequest *PrescriptionOutflowUpdateRequest) error {
-    r.updateRequest = updateRequest
-    r.Set("update_request", updateRequest)
+func (r *AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
+    r._updateRequest = _updateRequest
+    r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionHospitalVerifyRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
-    return r.updateRequest
+    return r._updateRequest
 }

@@ -15,9 +15,9 @@ taobao.vmarket.eticket.time.expand
 type TaobaoVmarketEticketTimeExpandRequest struct {
     model.Params
     // 订单ID
-    orderId   int64
+    _orderId   int64
     // 延长天数，延长时间=当前过期时间+延长天数
-    expandDays   int64
+    _expandDays   int64
 }
 
 // 初始化TaobaoVmarketEticketTimeExpandRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoVmarketEticketTimeExpandRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoVmarketEticketTimeExpandRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoVmarketEticketTimeExpandRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoVmarketEticketTimeExpandRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // ExpandDays Setter
 // 延长天数，延长时间=当前过期时间+延长天数
-func (r *TaobaoVmarketEticketTimeExpandRequest) SetExpandDays(expandDays int64) error {
-    r.expandDays = expandDays
-    r.Set("expand_days", expandDays)
+func (r *TaobaoVmarketEticketTimeExpandRequest) SetExpandDays(_expandDays int64) error {
+    r._expandDays = _expandDays
+    r.Set("expand_days", _expandDays)
     return nil
 }
 
 // ExpandDays Getter
 func (r TaobaoVmarketEticketTimeExpandRequest) GetExpandDays() int64 {
-    return r.expandDays
+    return r._expandDays
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.tableaudit.querylauncher
 type YunosTvpubadminContentTableauditQuerylauncherRequest struct {
     model.Params
     // 桌面坑位审核查询条件,json格式
-    tableAuditQuery   string
+    _tableAuditQuery   string
 }
 
 // 初始化YunosTvpubadminContentTableauditQuerylauncherRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentTableauditQuerylauncherRequest) GetApiParams() url
 }
 // TableAuditQuery Setter
 // 桌面坑位审核查询条件,json格式
-func (r *YunosTvpubadminContentTableauditQuerylauncherRequest) SetTableAuditQuery(tableAuditQuery string) error {
-    r.tableAuditQuery = tableAuditQuery
-    r.Set("table_audit_query", tableAuditQuery)
+func (r *YunosTvpubadminContentTableauditQuerylauncherRequest) SetTableAuditQuery(_tableAuditQuery string) error {
+    r._tableAuditQuery = _tableAuditQuery
+    r.Set("table_audit_query", _tableAuditQuery)
     return nil
 }
 
 // TableAuditQuery Getter
 func (r YunosTvpubadminContentTableauditQuerylauncherRequest) GetTableAuditQuery() string {
-    return r.tableAuditQuery
+    return r._tableAuditQuery
 }

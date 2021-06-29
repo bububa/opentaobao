@@ -15,13 +15,13 @@ taobao.alitrip.it.policy.update
 type TaobaoAlitripItPolicyUpdateRequest struct {
     model.Params
     // 扩展字段
-    extendAttributes   string
+    _extendAttributes   string
     // 接入方产品id
-    outId   string
+    _outId   string
     // 淘宝政策id
-    taobaoId   int64
+    _taobaoId   int64
     // 国际机票销售规则
-    topPolicyDo   *TopPolicyDo
+    _topPolicyDo   *TopPolicyDo
 }
 
 // 初始化TaobaoAlitripItPolicyUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAlitripItPolicyUpdateRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // 扩展字段
-func (r *TaobaoAlitripItPolicyUpdateRequest) SetExtendAttributes(extendAttributes string) error {
-    r.extendAttributes = extendAttributes
-    r.Set("extend_attributes", extendAttributes)
+func (r *TaobaoAlitripItPolicyUpdateRequest) SetExtendAttributes(_extendAttributes string) error {
+    r._extendAttributes = _extendAttributes
+    r.Set("extend_attributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyUpdateRequest) GetExtendAttributes() string {
-    return r.extendAttributes
+    return r._extendAttributes
 }
 // OutId Setter
 // 接入方产品id
-func (r *TaobaoAlitripItPolicyUpdateRequest) SetOutId(outId string) error {
-    r.outId = outId
-    r.Set("out_id", outId)
+func (r *TaobaoAlitripItPolicyUpdateRequest) SetOutId(_outId string) error {
+    r._outId = _outId
+    r.Set("out_id", _outId)
     return nil
 }
 
 // OutId Getter
 func (r TaobaoAlitripItPolicyUpdateRequest) GetOutId() string {
-    return r.outId
+    return r._outId
 }
 // TaobaoId Setter
 // 淘宝政策id
-func (r *TaobaoAlitripItPolicyUpdateRequest) SetTaobaoId(taobaoId int64) error {
-    r.taobaoId = taobaoId
-    r.Set("taobao_id", taobaoId)
+func (r *TaobaoAlitripItPolicyUpdateRequest) SetTaobaoId(_taobaoId int64) error {
+    r._taobaoId = _taobaoId
+    r.Set("taobao_id", _taobaoId)
     return nil
 }
 
 // TaobaoId Getter
 func (r TaobaoAlitripItPolicyUpdateRequest) GetTaobaoId() int64 {
-    return r.taobaoId
+    return r._taobaoId
 }
 // TopPolicyDo Setter
 // 国际机票销售规则
-func (r *TaobaoAlitripItPolicyUpdateRequest) SetTopPolicyDo(topPolicyDo *TopPolicyDo) error {
-    r.topPolicyDo = topPolicyDo
-    r.Set("top_policy_do", topPolicyDo)
+func (r *TaobaoAlitripItPolicyUpdateRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDo) error {
+    r._topPolicyDo = _topPolicyDo
+    r.Set("top_policy_do", _topPolicyDo)
     return nil
 }
 
 // TopPolicyDo Getter
 func (r TaobaoAlitripItPolicyUpdateRequest) GetTopPolicyDo() *TopPolicyDo {
-    return r.topPolicyDo
+    return r._topPolicyDo
 }

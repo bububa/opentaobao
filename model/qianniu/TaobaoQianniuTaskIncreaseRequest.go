@@ -15,9 +15,9 @@ taobao.qianniu.task.increase
 type TaobaoQianniuTaskIncreaseRequest struct {
     model.Params
     // 任务元id
-    metadataId   int64
+    _metadataId   int64
     // 任务列表，JSON格式，例如： tasks =[{ "receiver_uid" : 123, "receiver_nick" : "nick"}, { "receiver_uid" : 456, "receiver_nick" : "nick2"} ]
-    tasks   string
+    _tasks   string
 }
 
 // 初始化TaobaoQianniuTaskIncreaseRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQianniuTaskIncreaseRequest) GetApiParams() url.Values {
 }
 // MetadataId Setter
 // 任务元id
-func (r *TaobaoQianniuTaskIncreaseRequest) SetMetadataId(metadataId int64) error {
-    r.metadataId = metadataId
-    r.Set("metadata_id", metadataId)
+func (r *TaobaoQianniuTaskIncreaseRequest) SetMetadataId(_metadataId int64) error {
+    r._metadataId = _metadataId
+    r.Set("metadata_id", _metadataId)
     return nil
 }
 
 // MetadataId Getter
 func (r TaobaoQianniuTaskIncreaseRequest) GetMetadataId() int64 {
-    return r.metadataId
+    return r._metadataId
 }
 // Tasks Setter
 // 任务列表，JSON格式，例如： tasks =[{ "receiver_uid" : 123, "receiver_nick" : "nick"}, { "receiver_uid" : 456, "receiver_nick" : "nick2"} ]
-func (r *TaobaoQianniuTaskIncreaseRequest) SetTasks(tasks string) error {
-    r.tasks = tasks
-    r.Set("tasks", tasks)
+func (r *TaobaoQianniuTaskIncreaseRequest) SetTasks(_tasks string) error {
+    r._tasks = _tasks
+    r.Set("tasks", _tasks)
     return nil
 }
 
 // Tasks Getter
 func (r TaobaoQianniuTaskIncreaseRequest) GetTasks() string {
-    return r.tasks
+    return r._tasks
 }

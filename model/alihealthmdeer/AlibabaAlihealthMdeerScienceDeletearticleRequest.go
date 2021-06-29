@@ -15,7 +15,7 @@ alibaba.alihealth.mdeer.science.deletearticle
 type AlibabaAlihealthMdeerScienceDeletearticleRequest struct {
     model.Params
     // 文章ID
-    articleId   int64
+    _articleId   int64
 }
 
 // 初始化AlibabaAlihealthMdeerScienceDeletearticleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetApiParams() url.Val
 }
 // ArticleId Setter
 // 文章ID
-func (r *AlibabaAlihealthMdeerScienceDeletearticleRequest) SetArticleId(articleId int64) error {
-    r.articleId = articleId
-    r.Set("article_id", articleId)
+func (r *AlibabaAlihealthMdeerScienceDeletearticleRequest) SetArticleId(_articleId int64) error {
+    r._articleId = _articleId
+    r.Set("article_id", _articleId)
     return nil
 }
 
 // ArticleId Getter
 func (r AlibabaAlihealthMdeerScienceDeletearticleRequest) GetArticleId() int64 {
-    return r.articleId
+    return r._articleId
 }

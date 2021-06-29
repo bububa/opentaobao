@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.recharge.operate
 type AlibabaAlscCrmOpenRechargeOperateRequest struct {
     model.Params
     // 储值操作参数
-    paramRechargeOperateOpenReq   *RechargeOperateOpenReq
+    _paramRechargeOperateOpenReq   *RechargeOperateOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenRechargeOperateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetApiParams() url.Values {
 }
 // ParamRechargeOperateOpenReq Setter
 // 储值操作参数
-func (r *AlibabaAlscCrmOpenRechargeOperateRequest) SetParamRechargeOperateOpenReq(paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
-    r.paramRechargeOperateOpenReq = paramRechargeOperateOpenReq
-    r.Set("param_recharge_operate_open_req", paramRechargeOperateOpenReq)
+func (r *AlibabaAlscCrmOpenRechargeOperateRequest) SetParamRechargeOperateOpenReq(_paramRechargeOperateOpenReq *RechargeOperateOpenReq) error {
+    r._paramRechargeOperateOpenReq = _paramRechargeOperateOpenReq
+    r.Set("param_recharge_operate_open_req", _paramRechargeOperateOpenReq)
     return nil
 }
 
 // ParamRechargeOperateOpenReq Getter
 func (r AlibabaAlscCrmOpenRechargeOperateRequest) GetParamRechargeOperateOpenReq() *RechargeOperateOpenReq {
-    return r.paramRechargeOperateOpenReq
+    return r._paramRechargeOperateOpenReq
 }

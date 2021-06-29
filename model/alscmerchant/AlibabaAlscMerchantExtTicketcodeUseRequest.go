@@ -15,7 +15,7 @@ alibaba.alsc.merchant.ext.ticketcode.use
 type AlibabaAlscMerchantExtTicketcodeUseRequest struct {
     model.Params
     // 外部券使用请求
-    useRequest   *ExternalTicketUseRequest
+    _useRequest   *ExternalTicketUseRequest
 }
 
 // 初始化AlibabaAlscMerchantExtTicketcodeUseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscMerchantExtTicketcodeUseRequest) GetApiParams() url.Values {
 }
 // UseRequest Setter
 // 外部券使用请求
-func (r *AlibabaAlscMerchantExtTicketcodeUseRequest) SetUseRequest(useRequest *ExternalTicketUseRequest) error {
-    r.useRequest = useRequest
-    r.Set("use_request", useRequest)
+func (r *AlibabaAlscMerchantExtTicketcodeUseRequest) SetUseRequest(_useRequest *ExternalTicketUseRequest) error {
+    r._useRequest = _useRequest
+    r.Set("use_request", _useRequest)
     return nil
 }
 
 // UseRequest Getter
 func (r AlibabaAlscMerchantExtTicketcodeUseRequest) GetUseRequest() *ExternalTicketUseRequest {
-    return r.useRequest
+    return r._useRequest
 }

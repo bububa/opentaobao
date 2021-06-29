@@ -15,7 +15,7 @@ WMS调用接口，回传入库单信息;
 type TaobaoQimenEntryorderConfirmRequest struct {
     model.Params
     // 
-    request   *EntryOrderConfirmRequest
+    _request   *EntryOrderConfirmRequest
 }
 
 // 初始化TaobaoQimenEntryorderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenEntryorderConfirmRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenEntryorderConfirmRequest) SetRequest(request *EntryOrderConfirmRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenEntryorderConfirmRequest) SetRequest(_request *EntryOrderConfirmRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenEntryorderConfirmRequest) GetRequest() *EntryOrderConfirmRequest {
-    return r.request
+    return r._request
 }

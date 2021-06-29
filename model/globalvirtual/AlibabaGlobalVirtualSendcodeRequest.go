@@ -15,9 +15,9 @@ global virtual send code service
 type AlibabaGlobalVirtualSendcodeRequest struct {
     model.Params
     // trade order id
-    tradeOrderLineId   int64
+    _tradeOrderLineId   int64
     // code list
-    codeList   []VirtualCertificateDo
+    _codeList   []VirtualCertificateDo
 }
 
 // 初始化AlibabaGlobalVirtualSendcodeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaGlobalVirtualSendcodeRequest) GetApiParams() url.Values {
 }
 // TradeOrderLineId Setter
 // trade order id
-func (r *AlibabaGlobalVirtualSendcodeRequest) SetTradeOrderLineId(tradeOrderLineId int64) error {
-    r.tradeOrderLineId = tradeOrderLineId
-    r.Set("trade_order_line_id", tradeOrderLineId)
+func (r *AlibabaGlobalVirtualSendcodeRequest) SetTradeOrderLineId(_tradeOrderLineId int64) error {
+    r._tradeOrderLineId = _tradeOrderLineId
+    r.Set("trade_order_line_id", _tradeOrderLineId)
     return nil
 }
 
 // TradeOrderLineId Getter
 func (r AlibabaGlobalVirtualSendcodeRequest) GetTradeOrderLineId() int64 {
-    return r.tradeOrderLineId
+    return r._tradeOrderLineId
 }
 // CodeList Setter
 // code list
-func (r *AlibabaGlobalVirtualSendcodeRequest) SetCodeList(codeList []VirtualCertificateDo) error {
-    r.codeList = codeList
-    r.Set("code_list", codeList)
+func (r *AlibabaGlobalVirtualSendcodeRequest) SetCodeList(_codeList []VirtualCertificateDo) error {
+    r._codeList = _codeList
+    r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
 func (r AlibabaGlobalVirtualSendcodeRequest) GetCodeList() []VirtualCertificateDo {
-    return r.codeList
+    return r._codeList
 }

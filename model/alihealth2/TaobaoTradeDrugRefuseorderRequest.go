@@ -15,9 +15,9 @@ taobao.trade.drug.refuseorder
 type TaobaoTradeDrugRefuseorderRequest struct {
     model.Params
     // 订单ID
-    orderId   int64
+    _orderId   int64
     // 拒单原因
-    refuseReason   string
+    _refuseReason   string
 }
 
 // 初始化TaobaoTradeDrugRefuseorderRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTradeDrugRefuseorderRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoTradeDrugRefuseorderRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoTradeDrugRefuseorderRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoTradeDrugRefuseorderRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // RefuseReason Setter
 // 拒单原因
-func (r *TaobaoTradeDrugRefuseorderRequest) SetRefuseReason(refuseReason string) error {
-    r.refuseReason = refuseReason
-    r.Set("refuse_reason", refuseReason)
+func (r *TaobaoTradeDrugRefuseorderRequest) SetRefuseReason(_refuseReason string) error {
+    r._refuseReason = _refuseReason
+    r.Set("refuse_reason", _refuseReason)
     return nil
 }
 
 // RefuseReason Getter
 func (r TaobaoTradeDrugRefuseorderRequest) GetRefuseReason() string {
-    return r.refuseReason
+    return r._refuseReason
 }

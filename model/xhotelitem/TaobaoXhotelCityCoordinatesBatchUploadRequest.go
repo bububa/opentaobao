@@ -16,7 +16,7 @@ taobao.xhotel.city.coordinates.batch.upload
 type TaobaoXhotelCityCoordinatesBatchUploadRequest struct {
     model.Params
     // 经纬度列表
-    coordinateList   []Coordinate
+    _coordinateList   []Coordinate
 }
 
 // 初始化TaobaoXhotelCityCoordinatesBatchUploadRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoXhotelCityCoordinatesBatchUploadRequest) GetApiParams() url.Values
 }
 // CoordinateList Setter
 // 经纬度列表
-func (r *TaobaoXhotelCityCoordinatesBatchUploadRequest) SetCoordinateList(coordinateList []Coordinate) error {
-    r.coordinateList = coordinateList
-    r.Set("coordinate_list", coordinateList)
+func (r *TaobaoXhotelCityCoordinatesBatchUploadRequest) SetCoordinateList(_coordinateList []Coordinate) error {
+    r._coordinateList = _coordinateList
+    r.Set("coordinate_list", _coordinateList)
     return nil
 }
 
 // CoordinateList Getter
 func (r TaobaoXhotelCityCoordinatesBatchUploadRequest) GetCoordinateList() []Coordinate {
-    return r.coordinateList
+    return r._coordinateList
 }

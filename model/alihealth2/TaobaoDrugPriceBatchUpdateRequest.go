@@ -15,9 +15,9 @@ taobao.drug.price.batch.update
 type TaobaoDrugPriceBatchUpdateRequest struct {
     model.Params
     // 外部店铺ID
-    outStoreId   string
+    _outStoreId   string
     // 商品ID和价格
-    outItemIdPriceMap   string
+    _outItemIdPriceMap   string
 }
 
 // 初始化TaobaoDrugPriceBatchUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoDrugPriceBatchUpdateRequest) GetApiParams() url.Values {
 }
 // OutStoreId Setter
 // 外部店铺ID
-func (r *TaobaoDrugPriceBatchUpdateRequest) SetOutStoreId(outStoreId string) error {
-    r.outStoreId = outStoreId
-    r.Set("out_store_id", outStoreId)
+func (r *TaobaoDrugPriceBatchUpdateRequest) SetOutStoreId(_outStoreId string) error {
+    r._outStoreId = _outStoreId
+    r.Set("out_store_id", _outStoreId)
     return nil
 }
 
 // OutStoreId Getter
 func (r TaobaoDrugPriceBatchUpdateRequest) GetOutStoreId() string {
-    return r.outStoreId
+    return r._outStoreId
 }
 // OutItemIdPriceMap Setter
 // 商品ID和价格
-func (r *TaobaoDrugPriceBatchUpdateRequest) SetOutItemIdPriceMap(outItemIdPriceMap string) error {
-    r.outItemIdPriceMap = outItemIdPriceMap
-    r.Set("out_item_id_price_map", outItemIdPriceMap)
+func (r *TaobaoDrugPriceBatchUpdateRequest) SetOutItemIdPriceMap(_outItemIdPriceMap string) error {
+    r._outItemIdPriceMap = _outItemIdPriceMap
+    r.Set("out_item_id_price_map", _outItemIdPriceMap)
     return nil
 }
 
 // OutItemIdPriceMap Getter
 func (r TaobaoDrugPriceBatchUpdateRequest) GetOutItemIdPriceMap() string {
-    return r.outItemIdPriceMap
+    return r._outItemIdPriceMap
 }

@@ -15,7 +15,7 @@ alibaba.wdk.item.merchantsku.create
 type AlibabaWdkItemMerchantskuCreateRequest struct {
     model.Params
     // 新建商品参数，是个json字符串
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaWdkItemMerchantskuCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemMerchantskuCreateRequest) GetApiParams() url.Values {
 }
 // Params Setter
 // 新建商品参数，是个json字符串
-func (r *AlibabaWdkItemMerchantskuCreateRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaWdkItemMerchantskuCreateRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaWdkItemMerchantskuCreateRequest) GetParams() string {
-    return r.params
+    return r._params
 }

@@ -15,11 +15,11 @@ taobao.place.store.query
 type TaobaoPlaceStoreQueryRequest struct {
     model.Params
     // 业务code，用于区分业务
-    bizCode   string
+    _bizCode   string
     // 业务外部id
-    outerId   string
+    _outerId   string
     // 门店id
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoPlaceStoreQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPlaceStoreQueryRequest) GetApiParams() url.Values {
 }
 // BizCode Setter
 // 业务code，用于区分业务
-func (r *TaobaoPlaceStoreQueryRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *TaobaoPlaceStoreQueryRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r TaobaoPlaceStoreQueryRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }
 // OuterId Setter
 // 业务外部id
-func (r *TaobaoPlaceStoreQueryRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoPlaceStoreQueryRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoPlaceStoreQueryRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // StoreId Setter
 // 门店id
-func (r *TaobaoPlaceStoreQueryRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStoreQueryRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStoreQueryRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

@@ -15,9 +15,9 @@ taobao.wdk.equipment.conveyor.batchconfirm
 type TaobaoWdkEquipmentConveyorBatchconfirmRequest struct {
     model.Params
     // 仓库code
-    warehouseCode   string
+    _warehouseCode   string
     // 待确认的uuid列表
-    uuids   []string
+    _uuids   []string
 }
 
 // 初始化TaobaoWdkEquipmentConveyorBatchconfirmRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetApiParams() url.Values
 }
 // WarehouseCode Setter
 // 仓库code
-func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }
 // Uuids Setter
 // 待确认的uuid列表
-func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetUuids(uuids []string) error {
-    r.uuids = uuids
-    r.Set("uuids", uuids)
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetUuids(_uuids []string) error {
+    r._uuids = _uuids
+    r.Set("uuids", _uuids)
     return nil
 }
 
 // Uuids Getter
 func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetUuids() []string {
-    return r.uuids
+    return r._uuids
 }

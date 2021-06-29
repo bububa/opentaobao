@@ -17,9 +17,9 @@ alibaba.wdk.marketing.coupon.additem
 type AlibabaWdkMarketingCouponAdditemRequest struct {
     model.Params
     // 商品对象
-    param0   *ItemCouponSku
+    _param0   *ItemCouponSku
     // 活动基本信息
-    param1   *CommonActivityParam
+    _param1   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingCouponAdditemRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaWdkMarketingCouponAdditemRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 商品对象
-func (r *AlibabaWdkMarketingCouponAdditemRequest) SetParam0(param0 *ItemCouponSku) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingCouponAdditemRequest) SetParam0(_param0 *ItemCouponSku) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingCouponAdditemRequest) GetParam0() *ItemCouponSku {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 活动基本信息
-func (r *AlibabaWdkMarketingCouponAdditemRequest) SetParam1(param1 *CommonActivityParam) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaWdkMarketingCouponAdditemRequest) SetParam1(_param1 *CommonActivityParam) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaWdkMarketingCouponAdditemRequest) GetParam1() *CommonActivityParam {
-    return r.param1
+    return r._param1
 }

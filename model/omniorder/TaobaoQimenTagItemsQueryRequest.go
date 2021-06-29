@@ -15,9 +15,9 @@ taobao.qimen.tag.items.query
 type TaobaoQimenTagItemsQueryRequest struct {
     model.Params
     // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-    tagType   string
+    _tagType   string
     // 备注，string（500）
-    remark   string
+    _remark   string
 }
 
 // 初始化TaobaoQimenTagItemsQueryRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQimenTagItemsQueryRequest) GetApiParams() url.Values {
 }
 // TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-func (r *TaobaoQimenTagItemsQueryRequest) SetTagType(tagType string) error {
-    r.tagType = tagType
-    r.Set("tag_type", tagType)
+func (r *TaobaoQimenTagItemsQueryRequest) SetTagType(_tagType string) error {
+    r._tagType = _tagType
+    r.Set("tag_type", _tagType)
     return nil
 }
 
 // TagType Getter
 func (r TaobaoQimenTagItemsQueryRequest) GetTagType() string {
-    return r.tagType
+    return r._tagType
 }
 // Remark Setter
 // 备注，string（500）
-func (r *TaobaoQimenTagItemsQueryRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoQimenTagItemsQueryRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoQimenTagItemsQueryRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

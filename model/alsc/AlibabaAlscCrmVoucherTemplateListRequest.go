@@ -15,7 +15,7 @@ alibaba.alsc.crm.voucher.template.list
 type AlibabaAlscCrmVoucherTemplateListRequest struct {
     model.Params
     // 获取优惠模版规则请求参数
-    voucherTemplateOpenReq   *VoucherTemplateOpenReq
+    _voucherTemplateOpenReq   *VoucherTemplateOpenReq
 }
 
 // 初始化AlibabaAlscCrmVoucherTemplateListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmVoucherTemplateListRequest) GetApiParams() url.Values {
 }
 // VoucherTemplateOpenReq Setter
 // 获取优惠模版规则请求参数
-func (r *AlibabaAlscCrmVoucherTemplateListRequest) SetVoucherTemplateOpenReq(voucherTemplateOpenReq *VoucherTemplateOpenReq) error {
-    r.voucherTemplateOpenReq = voucherTemplateOpenReq
-    r.Set("voucher_template_open_req", voucherTemplateOpenReq)
+func (r *AlibabaAlscCrmVoucherTemplateListRequest) SetVoucherTemplateOpenReq(_voucherTemplateOpenReq *VoucherTemplateOpenReq) error {
+    r._voucherTemplateOpenReq = _voucherTemplateOpenReq
+    r.Set("voucher_template_open_req", _voucherTemplateOpenReq)
     return nil
 }
 
 // VoucherTemplateOpenReq Getter
 func (r AlibabaAlscCrmVoucherTemplateListRequest) GetVoucherTemplateOpenReq() *VoucherTemplateOpenReq {
-    return r.voucherTemplateOpenReq
+    return r._voucherTemplateOpenReq
 }

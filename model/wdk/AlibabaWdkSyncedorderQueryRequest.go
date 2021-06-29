@@ -15,9 +15,9 @@ alibaba.wdk.syncedorder.query
 type AlibabaWdkSyncedorderQueryRequest struct {
     model.Params
     // 门店ID
-    storeId   string
+    _storeId   string
     // 序列号
-    serialNum   string
+    _serialNum   string
 }
 
 // 初始化AlibabaWdkSyncedorderQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkSyncedorderQueryRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaWdkSyncedorderQueryRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkSyncedorderQueryRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkSyncedorderQueryRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // SerialNum Setter
 // 序列号
-func (r *AlibabaWdkSyncedorderQueryRequest) SetSerialNum(serialNum string) error {
-    r.serialNum = serialNum
-    r.Set("serial_num", serialNum)
+func (r *AlibabaWdkSyncedorderQueryRequest) SetSerialNum(_serialNum string) error {
+    r._serialNum = _serialNum
+    r.Set("serial_num", _serialNum)
     return nil
 }
 
 // SerialNum Getter
 func (r AlibabaWdkSyncedorderQueryRequest) GetSerialNum() string {
-    return r.serialNum
+    return r._serialNum
 }

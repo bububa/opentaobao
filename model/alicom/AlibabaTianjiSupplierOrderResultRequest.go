@@ -15,7 +15,7 @@ alibaba.tianji.supplier.order.result
 type AlibabaTianjiSupplierOrderResultRequest struct {
     model.Params
     // 供应商处理订单结果反馈参数
-    supplierOrderResultModel   *SupplierOrderResultModel
+    _supplierOrderResultModel   *SupplierOrderResultModel
 }
 
 // 初始化AlibabaTianjiSupplierOrderResultRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTianjiSupplierOrderResultRequest) GetApiParams() url.Values {
 }
 // SupplierOrderResultModel Setter
 // 供应商处理订单结果反馈参数
-func (r *AlibabaTianjiSupplierOrderResultRequest) SetSupplierOrderResultModel(supplierOrderResultModel *SupplierOrderResultModel) error {
-    r.supplierOrderResultModel = supplierOrderResultModel
-    r.Set("supplier_order_result_model", supplierOrderResultModel)
+func (r *AlibabaTianjiSupplierOrderResultRequest) SetSupplierOrderResultModel(_supplierOrderResultModel *SupplierOrderResultModel) error {
+    r._supplierOrderResultModel = _supplierOrderResultModel
+    r.Set("supplier_order_result_model", _supplierOrderResultModel)
     return nil
 }
 
 // SupplierOrderResultModel Getter
 func (r AlibabaTianjiSupplierOrderResultRequest) GetSupplierOrderResultModel() *SupplierOrderResultModel {
-    return r.supplierOrderResultModel
+    return r._supplierOrderResultModel
 }

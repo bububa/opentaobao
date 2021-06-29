@@ -15,7 +15,7 @@ open account token验证
 type TaobaoOpenAccountTokenValidateRequest struct {
     model.Params
     // token
-    paramToken   string
+    _paramToken   string
 }
 
 // 初始化TaobaoOpenAccountTokenValidateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenAccountTokenValidateRequest) GetApiParams() url.Values {
 }
 // ParamToken Setter
 // token
-func (r *TaobaoOpenAccountTokenValidateRequest) SetParamToken(paramToken string) error {
-    r.paramToken = paramToken
-    r.Set("param_token", paramToken)
+func (r *TaobaoOpenAccountTokenValidateRequest) SetParamToken(_paramToken string) error {
+    r._paramToken = _paramToken
+    r.Set("param_token", _paramToken)
     return nil
 }
 
 // ParamToken Getter
 func (r TaobaoOpenAccountTokenValidateRequest) GetParamToken() string {
-    return r.paramToken
+    return r._paramToken
 }

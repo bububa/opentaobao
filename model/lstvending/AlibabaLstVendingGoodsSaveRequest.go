@@ -15,7 +15,7 @@ alibaba.lst.vending.goods.save
 type AlibabaLstVendingGoodsSaveRequest struct {
     model.Params
     // 商品信息
-    goodsDTOList   []VendingGoodsDto
+    _goodsDTOList   []VendingGoodsDto
 }
 
 // 初始化AlibabaLstVendingGoodsSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingGoodsSaveRequest) GetApiParams() url.Values {
 }
 // GoodsDTOList Setter
 // 商品信息
-func (r *AlibabaLstVendingGoodsSaveRequest) SetGoodsDTOList(goodsDTOList []VendingGoodsDto) error {
-    r.goodsDTOList = goodsDTOList
-    r.Set("goods_d_t_o_list", goodsDTOList)
+func (r *AlibabaLstVendingGoodsSaveRequest) SetGoodsDTOList(_goodsDTOList []VendingGoodsDto) error {
+    r._goodsDTOList = _goodsDTOList
+    r.Set("goods_d_t_o_list", _goodsDTOList)
     return nil
 }
 
 // GoodsDTOList Getter
 func (r AlibabaLstVendingGoodsSaveRequest) GetGoodsDTOList() []VendingGoodsDto {
-    return r.goodsDTOList
+    return r._goodsDTOList
 }

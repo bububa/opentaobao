@@ -15,11 +15,11 @@ alibaba.scbp.ad.keyword.update.keyword.price.batch
 type AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 请求参数
-    keywordUpdateQuery   *KeywordUpdateQuery
+    _keywordUpdateQuery   *KeywordUpdateQuery
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) GetApiParams() url.V
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // KeywordUpdateQuery Setter
 // 请求参数
-func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetKeywordUpdateQuery(keywordUpdateQuery *KeywordUpdateQuery) error {
-    r.keywordUpdateQuery = keywordUpdateQuery
-    r.Set("keyword_update_query", keywordUpdateQuery)
+func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetKeywordUpdateQuery(_keywordUpdateQuery *KeywordUpdateQuery) error {
+    r._keywordUpdateQuery = _keywordUpdateQuery
+    r.Set("keyword_update_query", _keywordUpdateQuery)
     return nil
 }
 
 // KeywordUpdateQuery Getter
 func (r AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) GetKeywordUpdateQuery() *KeywordUpdateQuery {
-    return r.keywordUpdateQuery
+    return r._keywordUpdateQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdKeywordUpdateKeywordPriceBatchRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

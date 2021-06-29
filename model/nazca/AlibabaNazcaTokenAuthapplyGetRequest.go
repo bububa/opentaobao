@@ -15,7 +15,7 @@ alibaba.nazca.token.authapply.get
 type AlibabaNazcaTokenAuthapplyGetRequest struct {
     model.Params
     // token
-    token   string
+    _token   string
 }
 
 // 初始化AlibabaNazcaTokenAuthapplyGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNazcaTokenAuthapplyGetRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // token
-func (r *AlibabaNazcaTokenAuthapplyGetRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaNazcaTokenAuthapplyGetRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaNazcaTokenAuthapplyGetRequest) GetToken() string {
-    return r.token
+    return r._token
 }

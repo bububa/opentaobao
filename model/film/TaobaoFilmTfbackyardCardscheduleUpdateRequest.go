@@ -15,7 +15,7 @@ cgv影城卡排期价格数据传输API
 type TaobaoFilmTfbackyardCardscheduleUpdateRequest struct {
     model.Params
     // CGV影城卡价格数据
-    jsonData   string
+    _jsonData   string
 }
 
 // 初始化TaobaoFilmTfbackyardCardscheduleUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFilmTfbackyardCardscheduleUpdateRequest) GetApiParams() url.Values
 }
 // JsonData Setter
 // CGV影城卡价格数据
-func (r *TaobaoFilmTfbackyardCardscheduleUpdateRequest) SetJsonData(jsonData string) error {
-    r.jsonData = jsonData
-    r.Set("json_data", jsonData)
+func (r *TaobaoFilmTfbackyardCardscheduleUpdateRequest) SetJsonData(_jsonData string) error {
+    r._jsonData = _jsonData
+    r.Set("json_data", _jsonData)
     return nil
 }
 
 // JsonData Getter
 func (r TaobaoFilmTfbackyardCardscheduleUpdateRequest) GetJsonData() string {
-    return r.jsonData
+    return r._jsonData
 }

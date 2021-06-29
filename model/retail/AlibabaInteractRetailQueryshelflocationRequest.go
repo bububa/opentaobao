@@ -15,7 +15,7 @@ alibaba.interact.retail.queryshelflocation
 type AlibabaInteractRetailQueryshelflocationRequest struct {
     model.Params
     // 门店code
-    param0   string
+    _param0   string
 }
 
 // 初始化AlibabaInteractRetailQueryshelflocationRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractRetailQueryshelflocationRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // 门店code
-func (r *AlibabaInteractRetailQueryshelflocationRequest) SetParam0(param0 string) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaInteractRetailQueryshelflocationRequest) SetParam0(_param0 string) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaInteractRetailQueryshelflocationRequest) GetParam0() string {
-    return r.param0
+    return r._param0
 }

@@ -15,7 +15,7 @@ taobao.jst.sms.officialaccount.offline
 type TaobaoJstSmsOfficialaccountOfflineRequest struct {
     model.Params
     // 公众号下线请求
-    officialAccountOffline   *JstBaseRequest
+    _officialAccountOffline   *JstBaseRequest
 }
 
 // 初始化TaobaoJstSmsOfficialaccountOfflineRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountOfflineRequest) GetApiParams() url.Values {
 }
 // OfficialAccountOffline Setter
 // 公众号下线请求
-func (r *TaobaoJstSmsOfficialaccountOfflineRequest) SetOfficialAccountOffline(officialAccountOffline *JstBaseRequest) error {
-    r.officialAccountOffline = officialAccountOffline
-    r.Set("official_account_offline", officialAccountOffline)
+func (r *TaobaoJstSmsOfficialaccountOfflineRequest) SetOfficialAccountOffline(_officialAccountOffline *JstBaseRequest) error {
+    r._officialAccountOffline = _officialAccountOffline
+    r.Set("official_account_offline", _officialAccountOffline)
     return nil
 }
 
 // OfficialAccountOffline Getter
 func (r TaobaoJstSmsOfficialaccountOfflineRequest) GetOfficialAccountOffline() *JstBaseRequest {
-    return r.officialAccountOffline
+    return r._officialAccountOffline
 }

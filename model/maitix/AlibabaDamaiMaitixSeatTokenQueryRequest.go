@@ -15,13 +15,13 @@ alibaba.damai.maitix.seat.token.query
 type AlibabaDamaiMaitixSeatTokenQueryRequest struct {
     model.Params
     // 场次ID-必填
-    performId   int64
+    _performId   int64
     // 项目ID-必填
-    projectId   int64
+    _projectId   int64
     // 必填-选座结束跳转回去的url,这是渠道方自己的url地址,用于接收选座后的座位信息参数
-    callbackUrl   string
+    _callbackUrl   string
     // 会话ID，保证一次选座会话,建议使用 appKey+随机串 生成 ；注意：同一个场次下的会话ID不能重复
-    requestId   string
+    _requestId   string
 }
 
 // 初始化AlibabaDamaiMaitixSeatTokenQueryRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaDamaiMaitixSeatTokenQueryRequest) GetApiParams() url.Values {
 }
 // PerformId Setter
 // 场次ID-必填
-func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetPerformId(performId int64) error {
-    r.performId = performId
-    r.Set("perform_id", performId)
+func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetPerformId(_performId int64) error {
+    r._performId = _performId
+    r.Set("perform_id", _performId)
     return nil
 }
 
 // PerformId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryRequest) GetPerformId() int64 {
-    return r.performId
+    return r._performId
 }
 // ProjectId Setter
 // 项目ID-必填
-func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetProjectId(projectId int64) error {
-    r.projectId = projectId
-    r.Set("project_id", projectId)
+func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetProjectId(_projectId int64) error {
+    r._projectId = _projectId
+    r.Set("project_id", _projectId)
     return nil
 }
 
 // ProjectId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryRequest) GetProjectId() int64 {
-    return r.projectId
+    return r._projectId
 }
 // CallbackUrl Setter
 // 必填-选座结束跳转回去的url,这是渠道方自己的url地址,用于接收选座后的座位信息参数
-func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // RequestId Setter
 // 会话ID，保证一次选座会话,建议使用 appKey+随机串 生成 ；注意：同一个场次下的会话ID不能重复
-func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *AlibabaDamaiMaitixSeatTokenQueryRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r AlibabaDamaiMaitixSeatTokenQueryRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }

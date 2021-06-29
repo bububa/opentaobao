@@ -15,21 +15,21 @@ alibaba.alihealth.pregnancy.posts.data
 type AlibabaAlihealthPregnancyPostsDataRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
     // 事件类型 0发帖 1回帖
-    eventType   int64
+    _eventType   int64
     // 主贴id
-    mainId   int64
+    _mainId   int64
     // 回帖id
-    replyId   int64
+    _replyId   int64
     // 标题
-    title   string
+    _title   string
     // 内容
-    content   string
+    _content   string
     // 图片url
-    picUrl   string
+    _picUrl   string
     // 发帖时间
-    date   int64
+    _date   int64
 }
 
 // 初始化AlibabaAlihealthPregnancyPostsDataRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaAlihealthPregnancyPostsDataRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // EventType Setter
 // 事件类型 0发帖 1回帖
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetEventType(eventType int64) error {
-    r.eventType = eventType
-    r.Set("event_type", eventType)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetEventType(_eventType int64) error {
+    r._eventType = _eventType
+    r.Set("event_type", _eventType)
     return nil
 }
 
 // EventType Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetEventType() int64 {
-    return r.eventType
+    return r._eventType
 }
 // MainId Setter
 // 主贴id
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetMainId(mainId int64) error {
-    r.mainId = mainId
-    r.Set("main_id", mainId)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetMainId(_mainId int64) error {
+    r._mainId = _mainId
+    r.Set("main_id", _mainId)
     return nil
 }
 
 // MainId Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetMainId() int64 {
-    return r.mainId
+    return r._mainId
 }
 // ReplyId Setter
 // 回帖id
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetReplyId(replyId int64) error {
-    r.replyId = replyId
-    r.Set("reply_id", replyId)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetReplyId(_replyId int64) error {
+    r._replyId = _replyId
+    r.Set("reply_id", _replyId)
     return nil
 }
 
 // ReplyId Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetReplyId() int64 {
-    return r.replyId
+    return r._replyId
 }
 // Title Setter
 // 标题
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Content Setter
 // 内容
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // PicUrl Setter
 // 图片url
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetPicUrl(picUrl string) error {
-    r.picUrl = picUrl
-    r.Set("pic_url", picUrl)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetPicUrl(_picUrl string) error {
+    r._picUrl = _picUrl
+    r.Set("pic_url", _picUrl)
     return nil
 }
 
 // PicUrl Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetPicUrl() string {
-    return r.picUrl
+    return r._picUrl
 }
 // Date Setter
 // 发帖时间
-func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetDate(date int64) error {
-    r.date = date
-    r.Set("date", date)
+func (r *AlibabaAlihealthPregnancyPostsDataRequest) SetDate(_date int64) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r AlibabaAlihealthPregnancyPostsDataRequest) GetDate() int64 {
-    return r.date
+    return r._date
 }

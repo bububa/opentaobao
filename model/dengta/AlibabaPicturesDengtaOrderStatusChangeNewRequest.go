@@ -15,21 +15,21 @@ alibaba.pictures.dengta.order.status.change.new
 type AlibabaPicturesDengtaOrderStatusChangeNewRequest struct {
     model.Params
     // 拒绝原因
-    remark   string
+    _remark   string
     // 新状态
-    status   int64
+    _status   int64
     // 变更时间
-    changeTime   string
+    _changeTime   string
     // ims订单编号
-    imsOrderId   string
+    _imsOrderId   string
     // task 编号
-    aliTaskId   string
+    _aliTaskId   string
     // 发布内容
-    taskContent   string
+    _taskContent   string
     // 发布图片url列表
-    taskPic   string
+    _taskPic   string
     // 扩展字段。json结构
-    extJson   string
+    _extJson   string
 }
 
 // 初始化AlibabaPicturesDengtaOrderStatusChangeNewRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetApiParams() url.Val
 }
 // Remark Setter
 // 拒绝原因
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // Status Setter
 // 新状态
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // ChangeTime Setter
 // 变更时间
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetChangeTime(changeTime string) error {
-    r.changeTime = changeTime
-    r.Set("change_time", changeTime)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetChangeTime(_changeTime string) error {
+    r._changeTime = _changeTime
+    r.Set("change_time", _changeTime)
     return nil
 }
 
 // ChangeTime Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetChangeTime() string {
-    return r.changeTime
+    return r._changeTime
 }
 // ImsOrderId Setter
 // ims订单编号
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetImsOrderId(imsOrderId string) error {
-    r.imsOrderId = imsOrderId
-    r.Set("ims_order_id", imsOrderId)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetImsOrderId(_imsOrderId string) error {
+    r._imsOrderId = _imsOrderId
+    r.Set("ims_order_id", _imsOrderId)
     return nil
 }
 
 // ImsOrderId Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetImsOrderId() string {
-    return r.imsOrderId
+    return r._imsOrderId
 }
 // AliTaskId Setter
 // task 编号
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetAliTaskId(aliTaskId string) error {
-    r.aliTaskId = aliTaskId
-    r.Set("ali_task_id", aliTaskId)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetAliTaskId(_aliTaskId string) error {
+    r._aliTaskId = _aliTaskId
+    r.Set("ali_task_id", _aliTaskId)
     return nil
 }
 
 // AliTaskId Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetAliTaskId() string {
-    return r.aliTaskId
+    return r._aliTaskId
 }
 // TaskContent Setter
 // 发布内容
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetTaskContent(taskContent string) error {
-    r.taskContent = taskContent
-    r.Set("task_content", taskContent)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetTaskContent(_taskContent string) error {
+    r._taskContent = _taskContent
+    r.Set("task_content", _taskContent)
     return nil
 }
 
 // TaskContent Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetTaskContent() string {
-    return r.taskContent
+    return r._taskContent
 }
 // TaskPic Setter
 // 发布图片url列表
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetTaskPic(taskPic string) error {
-    r.taskPic = taskPic
-    r.Set("task_pic", taskPic)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetTaskPic(_taskPic string) error {
+    r._taskPic = _taskPic
+    r.Set("task_pic", _taskPic)
     return nil
 }
 
 // TaskPic Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetTaskPic() string {
-    return r.taskPic
+    return r._taskPic
 }
 // ExtJson Setter
 // 扩展字段。json结构
-func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetExtJson(extJson string) error {
-    r.extJson = extJson
-    r.Set("ext_json", extJson)
+func (r *AlibabaPicturesDengtaOrderStatusChangeNewRequest) SetExtJson(_extJson string) error {
+    r._extJson = _extJson
+    r.Set("ext_json", _extJson)
     return nil
 }
 
 // ExtJson Getter
 func (r AlibabaPicturesDengtaOrderStatusChangeNewRequest) GetExtJson() string {
-    return r.extJson
+    return r._extJson
 }

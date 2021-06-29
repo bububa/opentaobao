@@ -15,7 +15,7 @@ alibaba.westcrm.account.id.get
 type AlibabaWestcrmAccountIdGetRequest struct {
     model.Params
     // 支付宝id
-    alipayId   string
+    _alipayId   string
 }
 
 // 初始化AlibabaWestcrmAccountIdGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWestcrmAccountIdGetRequest) GetApiParams() url.Values {
 }
 // AlipayId Setter
 // 支付宝id
-func (r *AlibabaWestcrmAccountIdGetRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaWestcrmAccountIdGetRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaWestcrmAccountIdGetRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }

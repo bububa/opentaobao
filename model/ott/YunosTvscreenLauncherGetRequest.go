@@ -15,9 +15,9 @@ LCTS一体机桌面后台,提供基于运营坑位适配的桌面服务
 type YunosTvscreenLauncherGetRequest struct {
     model.Params
     // 设备属性
-    property   string
+    _property   string
     // IP来源
-    ip   string
+    _ip   string
 }
 
 // 初始化YunosTvscreenLauncherGetRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvscreenLauncherGetRequest) GetApiParams() url.Values {
 }
 // Property Setter
 // 设备属性
-func (r *YunosTvscreenLauncherGetRequest) SetProperty(property string) error {
-    r.property = property
-    r.Set("property", property)
+func (r *YunosTvscreenLauncherGetRequest) SetProperty(_property string) error {
+    r._property = _property
+    r.Set("property", _property)
     return nil
 }
 
 // Property Getter
 func (r YunosTvscreenLauncherGetRequest) GetProperty() string {
-    return r.property
+    return r._property
 }
 // Ip Setter
 // IP来源
-func (r *YunosTvscreenLauncherGetRequest) SetIp(ip string) error {
-    r.ip = ip
-    r.Set("ip", ip)
+func (r *YunosTvscreenLauncherGetRequest) SetIp(_ip string) error {
+    r._ip = _ip
+    r.Set("ip", _ip)
     return nil
 }
 
 // Ip Getter
 func (r YunosTvscreenLauncherGetRequest) GetIp() string {
-    return r.ip
+    return r._ip
 }

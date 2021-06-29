@@ -15,9 +15,9 @@ alibaba.auth.cert.get
 type AlibabaAuthCertGetRequest struct {
     model.Params
     // 认证商
-    provider   string
+    _provider   string
     // 证书数据
-    receiveInfo   string
+    _receiveInfo   string
 }
 
 // 初始化AlibabaAuthCertGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAuthCertGetRequest) GetApiParams() url.Values {
 }
 // Provider Setter
 // 认证商
-func (r *AlibabaAuthCertGetRequest) SetProvider(provider string) error {
-    r.provider = provider
-    r.Set("provider", provider)
+func (r *AlibabaAuthCertGetRequest) SetProvider(_provider string) error {
+    r._provider = _provider
+    r.Set("provider", _provider)
     return nil
 }
 
 // Provider Getter
 func (r AlibabaAuthCertGetRequest) GetProvider() string {
-    return r.provider
+    return r._provider
 }
 // ReceiveInfo Setter
 // 证书数据
-func (r *AlibabaAuthCertGetRequest) SetReceiveInfo(receiveInfo string) error {
-    r.receiveInfo = receiveInfo
-    r.Set("receive_info", receiveInfo)
+func (r *AlibabaAuthCertGetRequest) SetReceiveInfo(_receiveInfo string) error {
+    r._receiveInfo = _receiveInfo
+    r.Set("receive_info", _receiveInfo)
     return nil
 }
 
 // ReceiveInfo Getter
 func (r AlibabaAuthCertGetRequest) GetReceiveInfo() string {
-    return r.receiveInfo
+    return r._receiveInfo
 }

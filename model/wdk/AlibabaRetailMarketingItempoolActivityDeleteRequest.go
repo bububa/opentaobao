@@ -15,11 +15,11 @@ alibaba.retail.marketing.itempool.activity.delete
 type AlibabaRetailMarketingItempoolActivityDeleteRequest struct {
     model.Params
     // 同城零售活动Id
-    actId   int64
+    _actId   int64
     // 操作人id
-    creatorId   string
+    _creatorId   string
     // 操作人名称
-    creatorName   string
+    _creatorName   string
 }
 
 // 初始化AlibabaRetailMarketingItempoolActivityDeleteRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetApiParams() url.
 }
 // ActId Setter
 // 同城零售活动Id
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }
 // CreatorId Setter
 // 操作人id
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorId(creatorId string) error {
-    r.creatorId = creatorId
-    r.Set("creator_id", creatorId)
+func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorId(_creatorId string) error {
+    r._creatorId = _creatorId
+    r.Set("creator_id", _creatorId)
     return nil
 }
 
 // CreatorId Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetCreatorId() string {
-    return r.creatorId
+    return r._creatorId
 }
 // CreatorName Setter
 // 操作人名称
-func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorName(creatorName string) error {
-    r.creatorName = creatorName
-    r.Set("creator_name", creatorName)
+func (r *AlibabaRetailMarketingItempoolActivityDeleteRequest) SetCreatorName(_creatorName string) error {
+    r._creatorName = _creatorName
+    r.Set("creator_name", _creatorName)
     return nil
 }
 
 // CreatorName Getter
 func (r AlibabaRetailMarketingItempoolActivityDeleteRequest) GetCreatorName() string {
-    return r.creatorName
+    return r._creatorName
 }

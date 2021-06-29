@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.rank.get
 type AlibabaScbpAdKeywordRankGetRequest struct {
     model.Params
     // 查询预估排名的关键词
-    keyword   string
+    _keyword   string
 }
 
 // 初始化AlibabaScbpAdKeywordRankGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordRankGetRequest) GetApiParams() url.Values {
 }
 // Keyword Setter
 // 查询预估排名的关键词
-func (r *AlibabaScbpAdKeywordRankGetRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *AlibabaScbpAdKeywordRankGetRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r AlibabaScbpAdKeywordRankGetRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }

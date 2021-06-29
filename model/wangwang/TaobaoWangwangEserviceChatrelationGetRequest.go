@@ -18,7 +18,7 @@ A 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该
 type TaobaoWangwangEserviceChatrelationGetRequest struct {
     model.Params
     // 请求参数
-    chatRelationRequest   *ChatRelationRequest
+    _chatRelationRequest   *ChatRelationRequest
 }
 
 // 初始化TaobaoWangwangEserviceChatrelationGetRequest对象
@@ -43,13 +43,13 @@ func (r TaobaoWangwangEserviceChatrelationGetRequest) GetApiParams() url.Values 
 }
 // ChatRelationRequest Setter
 // 请求参数
-func (r *TaobaoWangwangEserviceChatrelationGetRequest) SetChatRelationRequest(chatRelationRequest *ChatRelationRequest) error {
-    r.chatRelationRequest = chatRelationRequest
-    r.Set("chat_relation_request", chatRelationRequest)
+func (r *TaobaoWangwangEserviceChatrelationGetRequest) SetChatRelationRequest(_chatRelationRequest *ChatRelationRequest) error {
+    r._chatRelationRequest = _chatRelationRequest
+    r.Set("chat_relation_request", _chatRelationRequest)
     return nil
 }
 
 // ChatRelationRequest Getter
 func (r TaobaoWangwangEserviceChatrelationGetRequest) GetChatRelationRequest() *ChatRelationRequest {
-    return r.chatRelationRequest
+    return r._chatRelationRequest
 }

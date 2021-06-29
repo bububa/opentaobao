@@ -15,11 +15,11 @@ alibaba.campus.acl.new.deleteuserrole
 type AlibabaCampusAclNewDeleteuserroleRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 用户账号
-    userId   string
+    _userId   string
     // 角色id
-    roleIds   []int64
+    _roleIds   []int64
 }
 
 // 初始化AlibabaCampusAclNewDeleteuserroleRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusAclNewDeleteuserroleRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewDeleteuserroleRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // UserId Setter
 // 用户账号
-func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaCampusAclNewDeleteuserroleRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // RoleIds Setter
 // 角色id
-func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetRoleIds(roleIds []int64) error {
-    r.roleIds = roleIds
-    r.Set("role_ids", roleIds)
+func (r *AlibabaCampusAclNewDeleteuserroleRequest) SetRoleIds(_roleIds []int64) error {
+    r._roleIds = _roleIds
+    r.Set("role_ids", _roleIds)
     return nil
 }
 
 // RoleIds Getter
 func (r AlibabaCampusAclNewDeleteuserroleRequest) GetRoleIds() []int64 {
-    return r.roleIds
+    return r._roleIds
 }

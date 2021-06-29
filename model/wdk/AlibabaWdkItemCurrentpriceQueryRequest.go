@@ -15,11 +15,11 @@ alibaba.wdk.item.currentprice.query
 type AlibabaWdkItemCurrentpriceQueryRequest struct {
     model.Params
     // 渠道店id
-    shopId   int64
+    _shopId   int64
     // sku编码列表
-    skuCodes   []string
+    _skuCodes   []string
     // 渠道
-    orderChannelCode   string
+    _orderChannelCode   string
 }
 
 // 初始化AlibabaWdkItemCurrentpriceQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkItemCurrentpriceQueryRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 渠道店id
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkItemCurrentpriceQueryRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }
 // SkuCodes Setter
 // sku编码列表
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetSkuCodes(skuCodes []string) error {
-    r.skuCodes = skuCodes
-    r.Set("sku_codes", skuCodes)
+func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetSkuCodes(_skuCodes []string) error {
+    r._skuCodes = _skuCodes
+    r.Set("sku_codes", _skuCodes)
     return nil
 }
 
 // SkuCodes Getter
 func (r AlibabaWdkItemCurrentpriceQueryRequest) GetSkuCodes() []string {
-    return r.skuCodes
+    return r._skuCodes
 }
 // OrderChannelCode Setter
 // 渠道
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetOrderChannelCode(orderChannelCode string) error {
-    r.orderChannelCode = orderChannelCode
-    r.Set("order_channel_code", orderChannelCode)
+func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetOrderChannelCode(_orderChannelCode string) error {
+    r._orderChannelCode = _orderChannelCode
+    r.Set("order_channel_code", _orderChannelCode)
     return nil
 }
 
 // OrderChannelCode Getter
 func (r AlibabaWdkItemCurrentpriceQueryRequest) GetOrderChannelCode() string {
-    return r.orderChannelCode
+    return r._orderChannelCode
 }

@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.update
 type AlibabaAlscCrmCustomerUpdateRequest struct {
     model.Params
     // 修改顾客参数
-    paramCustomerUpdateOpenReq   *CustomerUpdateOpenReq
+    _paramCustomerUpdateOpenReq   *CustomerUpdateOpenReq
 }
 
 // 初始化AlibabaAlscCrmCustomerUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerUpdateRequest) GetApiParams() url.Values {
 }
 // ParamCustomerUpdateOpenReq Setter
 // 修改顾客参数
-func (r *AlibabaAlscCrmCustomerUpdateRequest) SetParamCustomerUpdateOpenReq(paramCustomerUpdateOpenReq *CustomerUpdateOpenReq) error {
-    r.paramCustomerUpdateOpenReq = paramCustomerUpdateOpenReq
-    r.Set("param_customer_update_open_req", paramCustomerUpdateOpenReq)
+func (r *AlibabaAlscCrmCustomerUpdateRequest) SetParamCustomerUpdateOpenReq(_paramCustomerUpdateOpenReq *CustomerUpdateOpenReq) error {
+    r._paramCustomerUpdateOpenReq = _paramCustomerUpdateOpenReq
+    r.Set("param_customer_update_open_req", _paramCustomerUpdateOpenReq)
     return nil
 }
 
 // ParamCustomerUpdateOpenReq Getter
 func (r AlibabaAlscCrmCustomerUpdateRequest) GetParamCustomerUpdateOpenReq() *CustomerUpdateOpenReq {
-    return r.paramCustomerUpdateOpenReq
+    return r._paramCustomerUpdateOpenReq
 }

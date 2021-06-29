@@ -15,9 +15,9 @@ alibaba.scbp.product.status.update
 type AlibabaScbpProductStatusUpdateRequest struct {
     model.Params
     // 产品ID列表
-    productIdList   []int64
+    _productIdList   []int64
     // enabled:开启,disabled:暂停
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaScbpProductStatusUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpProductStatusUpdateRequest) GetApiParams() url.Values {
 }
 // ProductIdList Setter
 // 产品ID列表
-func (r *AlibabaScbpProductStatusUpdateRequest) SetProductIdList(productIdList []int64) error {
-    r.productIdList = productIdList
-    r.Set("product_id_list", productIdList)
+func (r *AlibabaScbpProductStatusUpdateRequest) SetProductIdList(_productIdList []int64) error {
+    r._productIdList = _productIdList
+    r.Set("product_id_list", _productIdList)
     return nil
 }
 
 // ProductIdList Getter
 func (r AlibabaScbpProductStatusUpdateRequest) GetProductIdList() []int64 {
-    return r.productIdList
+    return r._productIdList
 }
 // Status Setter
 // enabled:开启,disabled:暂停
-func (r *AlibabaScbpProductStatusUpdateRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaScbpProductStatusUpdateRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaScbpProductStatusUpdateRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

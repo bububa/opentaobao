@@ -15,11 +15,11 @@ alibaba.legal.suit.court.lawyer.push
 type AlibabaLegalSuitCourtLawyerPushRequest struct {
     model.Params
     // 委托ID
-    entrustId   int64
+    _entrustId   int64
     // 案件ID
-    suitId   int64
+    _suitId   int64
     // 推荐律师模型
-    lawyersModel   *LawyersModel
+    _lawyersModel   *LawyersModel
 }
 
 // 初始化AlibabaLegalSuitCourtLawyerPushRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLegalSuitCourtLawyerPushRequest) GetApiParams() url.Values {
 }
 // EntrustId Setter
 // 委托ID
-func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalSuitCourtLawyerPushRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // SuitId Setter
 // 案件ID
-func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetSuitId(suitId int64) error {
-    r.suitId = suitId
-    r.Set("suit_id", suitId)
+func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetSuitId(_suitId int64) error {
+    r._suitId = _suitId
+    r.Set("suit_id", _suitId)
     return nil
 }
 
 // SuitId Getter
 func (r AlibabaLegalSuitCourtLawyerPushRequest) GetSuitId() int64 {
-    return r.suitId
+    return r._suitId
 }
 // LawyersModel Setter
 // 推荐律师模型
-func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetLawyersModel(lawyersModel *LawyersModel) error {
-    r.lawyersModel = lawyersModel
-    r.Set("lawyers_model", lawyersModel)
+func (r *AlibabaLegalSuitCourtLawyerPushRequest) SetLawyersModel(_lawyersModel *LawyersModel) error {
+    r._lawyersModel = _lawyersModel
+    r.Set("lawyers_model", _lawyersModel)
     return nil
 }
 
 // LawyersModel Getter
 func (r AlibabaLegalSuitCourtLawyerPushRequest) GetLawyersModel() *LawyersModel {
-    return r.lawyersModel
+    return r._lawyersModel
 }

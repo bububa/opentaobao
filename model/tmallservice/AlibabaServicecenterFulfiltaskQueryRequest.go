@@ -15,17 +15,17 @@ alibaba.servicecenter.fulfiltask.query
 type AlibabaServicecenterFulfiltaskQueryRequest struct {
     model.Params
     // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
-    gmtCreateStart   string
+    _gmtCreateStart   string
     // 每页条数，默认50，最大50
-    pageSize   int64
+    _pageSize   int64
     // 核销单外部单号
-    outerId   string
+    _outerId   string
     // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
-    gmtCreateEnd   string
+    _gmtCreateEnd   string
     // 查询第几页
-    currentPage   int64
+    _currentPage   int64
     // 核销单id列表
-    fulfilTaskIdList   []int64
+    _fulfilTaskIdList   []int64
 }
 
 // 初始化AlibabaServicecenterFulfiltaskQueryRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaServicecenterFulfiltaskQueryRequest) GetApiParams() url.Values {
 }
 // GmtCreateStart Setter
 // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetGmtCreateStart(gmtCreateStart string) error {
-    r.gmtCreateStart = gmtCreateStart
-    r.Set("gmt_create_start", gmtCreateStart)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetGmtCreateStart(_gmtCreateStart string) error {
+    r._gmtCreateStart = _gmtCreateStart
+    r.Set("gmt_create_start", _gmtCreateStart)
     return nil
 }
 
 // GmtCreateStart Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetGmtCreateStart() string {
-    return r.gmtCreateStart
+    return r._gmtCreateStart
 }
 // PageSize Setter
 // 每页条数，默认50，最大50
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // OuterId Setter
 // 核销单外部单号
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // GmtCreateEnd Setter
 // 时间段查询，核销单创建时间，时间段跨度不超过15分钟
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetGmtCreateEnd(gmtCreateEnd string) error {
-    r.gmtCreateEnd = gmtCreateEnd
-    r.Set("gmt_create_end", gmtCreateEnd)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
+    r._gmtCreateEnd = _gmtCreateEnd
+    r.Set("gmt_create_end", _gmtCreateEnd)
     return nil
 }
 
 // GmtCreateEnd Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetGmtCreateEnd() string {
-    return r.gmtCreateEnd
+    return r._gmtCreateEnd
 }
 // CurrentPage Setter
 // 查询第几页
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // FulfilTaskIdList Setter
 // 核销单id列表
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetFulfilTaskIdList(fulfilTaskIdList []int64) error {
-    r.fulfilTaskIdList = fulfilTaskIdList
-    r.Set("fulfil_task_id_list", fulfilTaskIdList)
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetFulfilTaskIdList(_fulfilTaskIdList []int64) error {
+    r._fulfilTaskIdList = _fulfilTaskIdList
+    r.Set("fulfil_task_id_list", _fulfilTaskIdList)
     return nil
 }
 
 // FulfilTaskIdList Getter
 func (r AlibabaServicecenterFulfiltaskQueryRequest) GetFulfilTaskIdList() []int64 {
-    return r.fulfilTaskIdList
+    return r._fulfilTaskIdList
 }

@@ -15,9 +15,9 @@ alibaba.ailab.user.authorized.query
 type AlibabaAilabUserAuthorizedQueryRequest struct {
     model.Params
     // 开放平台申请的schema
-    schemaKey   string
+    _schemaKey   string
     // 三方用户的唯一ID
-    merchantUserId   string
+    _merchantUserId   string
 }
 
 // 初始化AlibabaAilabUserAuthorizedQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabUserAuthorizedQueryRequest) GetApiParams() url.Values {
 }
 // SchemaKey Setter
 // 开放平台申请的schema
-func (r *AlibabaAilabUserAuthorizedQueryRequest) SetSchemaKey(schemaKey string) error {
-    r.schemaKey = schemaKey
-    r.Set("schema_key", schemaKey)
+func (r *AlibabaAilabUserAuthorizedQueryRequest) SetSchemaKey(_schemaKey string) error {
+    r._schemaKey = _schemaKey
+    r.Set("schema_key", _schemaKey)
     return nil
 }
 
 // SchemaKey Getter
 func (r AlibabaAilabUserAuthorizedQueryRequest) GetSchemaKey() string {
-    return r.schemaKey
+    return r._schemaKey
 }
 // MerchantUserId Setter
 // 三方用户的唯一ID
-func (r *AlibabaAilabUserAuthorizedQueryRequest) SetMerchantUserId(merchantUserId string) error {
-    r.merchantUserId = merchantUserId
-    r.Set("merchant_user_id", merchantUserId)
+func (r *AlibabaAilabUserAuthorizedQueryRequest) SetMerchantUserId(_merchantUserId string) error {
+    r._merchantUserId = _merchantUserId
+    r.Set("merchant_user_id", _merchantUserId)
     return nil
 }
 
 // MerchantUserId Getter
 func (r AlibabaAilabUserAuthorizedQueryRequest) GetMerchantUserId() string {
-    return r.merchantUserId
+    return r._merchantUserId
 }

@@ -15,7 +15,7 @@ aliexpress.payment.exchange.get
 type AliexpressPaymentExchangeGetRequest struct {
     model.Params
     // 系统自动生成
-    checkoutExchangeRequest   *CheckoutExchangeRequest
+    _checkoutExchangeRequest   *CheckoutExchangeRequest
 }
 
 // 初始化AliexpressPaymentExchangeGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressPaymentExchangeGetRequest) GetApiParams() url.Values {
 }
 // CheckoutExchangeRequest Setter
 // 系统自动生成
-func (r *AliexpressPaymentExchangeGetRequest) SetCheckoutExchangeRequest(checkoutExchangeRequest *CheckoutExchangeRequest) error {
-    r.checkoutExchangeRequest = checkoutExchangeRequest
-    r.Set("checkout_exchange_request", checkoutExchangeRequest)
+func (r *AliexpressPaymentExchangeGetRequest) SetCheckoutExchangeRequest(_checkoutExchangeRequest *CheckoutExchangeRequest) error {
+    r._checkoutExchangeRequest = _checkoutExchangeRequest
+    r.Set("checkout_exchange_request", _checkoutExchangeRequest)
     return nil
 }
 
 // CheckoutExchangeRequest Getter
 func (r AliexpressPaymentExchangeGetRequest) GetCheckoutExchangeRequest() *CheckoutExchangeRequest {
-    return r.checkoutExchangeRequest
+    return r._checkoutExchangeRequest
 }

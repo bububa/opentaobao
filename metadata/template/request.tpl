@@ -16,7 +16,7 @@ type {{ .Name }}Request struct {
     model.Params
 {{- range $v := .RequestParams }}
     // {{ $v.Desc }}
-    {{ $v.Label }}   {{ $v.Type }} 
+    _{{ $v.Label }}   {{ $v.Type }} 
 {{- end }}
 }
 
@@ -44,14 +44,14 @@ func (r {{ .Name }}Request) GetApiParams() url.Values {
 {{- range $v := .RequestParams }}
 // {{ $v.Name }} Setter
 // {{ $v.Desc }}
-func (r *{{ $.Name }}Request) Set{{ $v.Name }}({{ $v.Label }} {{ $v.Type }}) error {
-    r.{{ $v.Label }} = {{ $v.Label }}
-    r.Set("{{ $v.ParamKey }}", {{ $v.Label }})
+func (r *{{ $.Name }}Request) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
+    r._{{ $v.Label }} = _{{ $v.Label }}
+    r.Set("{{ $v.ParamKey }}", _{{ $v.Label }})
     return nil
 }
 
 // {{ $v.Name }} Getter
 func (r {{ $.Name }}Request) Get{{ $v.Name }}() {{ $v.Type }} {
-    return r.{{ $v.Label }}
+    return r._{{ $v.Label }}
 }
 {{- end }}

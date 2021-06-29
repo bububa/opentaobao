@@ -15,7 +15,7 @@ alibaba.fundplatform.cardorder.fetch.card.async
 type AlibabaFundplatformCardorderFetchCardAsyncRequest struct {
     model.Params
     // 入参复杂对象
-    paramCardFetchAsyncRequest   *CardFetchAsyncRequest
+    _paramCardFetchAsyncRequest   *CardFetchAsyncRequest
 }
 
 // 初始化AlibabaFundplatformCardorderFetchCardAsyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardorderFetchCardAsyncRequest) GetApiParams() url.Va
 }
 // ParamCardFetchAsyncRequest Setter
 // 入参复杂对象
-func (r *AlibabaFundplatformCardorderFetchCardAsyncRequest) SetParamCardFetchAsyncRequest(paramCardFetchAsyncRequest *CardFetchAsyncRequest) error {
-    r.paramCardFetchAsyncRequest = paramCardFetchAsyncRequest
-    r.Set("param_card_fetch_async_request", paramCardFetchAsyncRequest)
+func (r *AlibabaFundplatformCardorderFetchCardAsyncRequest) SetParamCardFetchAsyncRequest(_paramCardFetchAsyncRequest *CardFetchAsyncRequest) error {
+    r._paramCardFetchAsyncRequest = _paramCardFetchAsyncRequest
+    r.Set("param_card_fetch_async_request", _paramCardFetchAsyncRequest)
     return nil
 }
 
 // ParamCardFetchAsyncRequest Getter
 func (r AlibabaFundplatformCardorderFetchCardAsyncRequest) GetParamCardFetchAsyncRequest() *CardFetchAsyncRequest {
-    return r.paramCardFetchAsyncRequest
+    return r._paramCardFetchAsyncRequest
 }

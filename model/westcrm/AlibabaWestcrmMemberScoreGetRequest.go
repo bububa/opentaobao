@@ -15,13 +15,13 @@ alibaba.westcrm.member.score.get
 type AlibabaWestcrmMemberScoreGetRequest struct {
     model.Params
     // requestId
-    requestId   string
+    _requestId   string
     // 支付宝id
-    alipayId   string
+    _alipayId   string
     // 开始时间
-    startTime   string
+    _startTime   string
     // 结束时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化AlibabaWestcrmMemberScoreGetRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWestcrmMemberScoreGetRequest) GetApiParams() url.Values {
 }
 // RequestId Setter
 // requestId
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *AlibabaWestcrmMemberScoreGetRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r AlibabaWestcrmMemberScoreGetRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }
 // AlipayId Setter
 // 支付宝id
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaWestcrmMemberScoreGetRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaWestcrmMemberScoreGetRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }
 // StartTime Setter
 // 开始时间
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaWestcrmMemberScoreGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaWestcrmMemberScoreGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 结束时间
-func (r *AlibabaWestcrmMemberScoreGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaWestcrmMemberScoreGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaWestcrmMemberScoreGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

@@ -15,7 +15,7 @@ alitrip.hotel.rate.getmixratelist.get
 type AlitripHotelRateGetmixratelistGetRequest struct {
     model.Params
     // 评论参数
-    paramGetMixRateListParam   *GetMixRateListParam
+    _paramGetMixRateListParam   *GetMixRateListParam
 }
 
 // 初始化AlitripHotelRateGetmixratelistGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelRateGetmixratelistGetRequest) GetApiParams() url.Values {
 }
 // ParamGetMixRateListParam Setter
 // 评论参数
-func (r *AlitripHotelRateGetmixratelistGetRequest) SetParamGetMixRateListParam(paramGetMixRateListParam *GetMixRateListParam) error {
-    r.paramGetMixRateListParam = paramGetMixRateListParam
-    r.Set("param_get_mix_rate_list_param", paramGetMixRateListParam)
+func (r *AlitripHotelRateGetmixratelistGetRequest) SetParamGetMixRateListParam(_paramGetMixRateListParam *GetMixRateListParam) error {
+    r._paramGetMixRateListParam = _paramGetMixRateListParam
+    r.Set("param_get_mix_rate_list_param", _paramGetMixRateListParam)
     return nil
 }
 
 // ParamGetMixRateListParam Getter
 func (r AlitripHotelRateGetmixratelistGetRequest) GetParamGetMixRateListParam() *GetMixRateListParam {
-    return r.paramGetMixRateListParam
+    return r._paramGetMixRateListParam
 }

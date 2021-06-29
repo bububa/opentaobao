@@ -15,7 +15,7 @@ cainiao.endpoint.locker.top.order.tracking.new
 type CainiaoEndpointLockerTopOrderTrackingNewRequest struct {
     model.Params
     // 回传信息
-    trackInfo   *CollectTrackingInfo
+    _trackInfo   *CollectTrackingInfo
 }
 
 // 初始化CainiaoEndpointLockerTopOrderTrackingNewRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoEndpointLockerTopOrderTrackingNewRequest) GetApiParams() url.Valu
 }
 // TrackInfo Setter
 // 回传信息
-func (r *CainiaoEndpointLockerTopOrderTrackingNewRequest) SetTrackInfo(trackInfo *CollectTrackingInfo) error {
-    r.trackInfo = trackInfo
-    r.Set("track_info", trackInfo)
+func (r *CainiaoEndpointLockerTopOrderTrackingNewRequest) SetTrackInfo(_trackInfo *CollectTrackingInfo) error {
+    r._trackInfo = _trackInfo
+    r.Set("track_info", _trackInfo)
     return nil
 }
 
 // TrackInfo Getter
 func (r CainiaoEndpointLockerTopOrderTrackingNewRequest) GetTrackInfo() *CollectTrackingInfo {
-    return r.trackInfo
+    return r._trackInfo
 }

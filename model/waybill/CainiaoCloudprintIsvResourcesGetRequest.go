@@ -15,7 +15,7 @@ isv资源查询，包括isv模板、打印项、预设的自定义区等
 type CainiaoCloudprintIsvResourcesGetRequest struct {
     model.Params
     // isv资源类型，分为：TEMPLATE（表示模板），PRINT_ITEM（打印项），CUSTOM_AREA（预设自定义区）
-    isvResourceType   string
+    _isvResourceType   string
 }
 
 // 初始化CainiaoCloudprintIsvResourcesGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintIsvResourcesGetRequest) GetApiParams() url.Values {
 }
 // IsvResourceType Setter
 // isv资源类型，分为：TEMPLATE（表示模板），PRINT_ITEM（打印项），CUSTOM_AREA（预设自定义区）
-func (r *CainiaoCloudprintIsvResourcesGetRequest) SetIsvResourceType(isvResourceType string) error {
-    r.isvResourceType = isvResourceType
-    r.Set("isv_resource_type", isvResourceType)
+func (r *CainiaoCloudprintIsvResourcesGetRequest) SetIsvResourceType(_isvResourceType string) error {
+    r._isvResourceType = _isvResourceType
+    r.Set("isv_resource_type", _isvResourceType)
     return nil
 }
 
 // IsvResourceType Getter
 func (r CainiaoCloudprintIsvResourcesGetRequest) GetIsvResourceType() string {
-    return r.isvResourceType
+    return r._isvResourceType
 }

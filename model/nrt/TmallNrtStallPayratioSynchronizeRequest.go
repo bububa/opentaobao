@@ -15,13 +15,13 @@ ISV同步摊位收银比例到阿里
 type TmallNrtStallPayratioSynchronizeRequest struct {
     model.Params
     // 业务编码
-    bizCode   string
+    _bizCode   string
     // 合同编号
-    contractCode   string
+    _contractCode   string
     // 摊位编码
-    storeCode   string
+    _storeCode   string
     // 收银比例
-    payRatio   string
+    _payRatio   string
 }
 
 // 初始化TmallNrtStallPayratioSynchronizeRequest对象
@@ -46,49 +46,49 @@ func (r TmallNrtStallPayratioSynchronizeRequest) GetApiParams() url.Values {
 }
 // BizCode Setter
 // 业务编码
-func (r *TmallNrtStallPayratioSynchronizeRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *TmallNrtStallPayratioSynchronizeRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r TmallNrtStallPayratioSynchronizeRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }
 // ContractCode Setter
 // 合同编号
-func (r *TmallNrtStallPayratioSynchronizeRequest) SetContractCode(contractCode string) error {
-    r.contractCode = contractCode
-    r.Set("contract_code", contractCode)
+func (r *TmallNrtStallPayratioSynchronizeRequest) SetContractCode(_contractCode string) error {
+    r._contractCode = _contractCode
+    r.Set("contract_code", _contractCode)
     return nil
 }
 
 // ContractCode Getter
 func (r TmallNrtStallPayratioSynchronizeRequest) GetContractCode() string {
-    return r.contractCode
+    return r._contractCode
 }
 // StoreCode Setter
 // 摊位编码
-func (r *TmallNrtStallPayratioSynchronizeRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TmallNrtStallPayratioSynchronizeRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TmallNrtStallPayratioSynchronizeRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // PayRatio Setter
 // 收银比例
-func (r *TmallNrtStallPayratioSynchronizeRequest) SetPayRatio(payRatio string) error {
-    r.payRatio = payRatio
-    r.Set("pay_ratio", payRatio)
+func (r *TmallNrtStallPayratioSynchronizeRequest) SetPayRatio(_payRatio string) error {
+    r._payRatio = _payRatio
+    r.Set("pay_ratio", _payRatio)
     return nil
 }
 
 // PayRatio Getter
 func (r TmallNrtStallPayratioSynchronizeRequest) GetPayRatio() string {
-    return r.payRatio
+    return r._payRatio
 }

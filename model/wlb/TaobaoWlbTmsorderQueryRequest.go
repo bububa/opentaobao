@@ -15,11 +15,11 @@ taobao.wlb.tmsorder.query
 type TaobaoWlbTmsorderQueryRequest struct {
     model.Params
     // 物流订单编号
-    orderCode   string
+    _orderCode   string
     // 当前页
-    pageNo   int64
+    _pageNo   int64
     // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoWlbTmsorderQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoWlbTmsorderQueryRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 物流订单编号
-func (r *TaobaoWlbTmsorderQueryRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbTmsorderQueryRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbTmsorderQueryRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // PageNo Setter
 // 当前页
-func (r *TaobaoWlbTmsorderQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoWlbTmsorderQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoWlbTmsorderQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录
-func (r *TaobaoWlbTmsorderQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoWlbTmsorderQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoWlbTmsorderQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

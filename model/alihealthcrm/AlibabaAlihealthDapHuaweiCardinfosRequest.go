@@ -15,7 +15,7 @@ alibaba.alihealth.dap.huawei.cardinfos
 type AlibabaAlihealthDapHuaweiCardinfosRequest struct {
     model.Params
     // source     HUAWEI_HAG,OPPO_OAG
-    param   string
+    _param   string
 }
 
 // 初始化AlibabaAlihealthDapHuaweiCardinfosRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // source     HUAWEI_HAG,OPPO_OAG
-func (r *AlibabaAlihealthDapHuaweiCardinfosRequest) SetParam(param string) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaAlihealthDapHuaweiCardinfosRequest) SetParam(_param string) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaAlihealthDapHuaweiCardinfosRequest) GetParam() string {
-    return r.param
+    return r._param
 }

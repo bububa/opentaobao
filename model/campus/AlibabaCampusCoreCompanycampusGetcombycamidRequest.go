@@ -15,7 +15,7 @@ alibaba.campus.core.companycampus.getcombycamid
 type AlibabaCampusCoreCompanycampusGetcombycamidRequest struct {
     model.Params
     // WorkBenchContext
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
 }
 
 // 初始化AlibabaCampusCoreCompanycampusGetcombycamidRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCampusCoreCompanycampusGetcombycamidRequest) GetApiParams() url.V
 }
 // Param0 Setter
 // WorkBenchContext
-func (r *AlibabaCampusCoreCompanycampusGetcombycamidRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusCoreCompanycampusGetcombycamidRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusCoreCompanycampusGetcombycamidRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }

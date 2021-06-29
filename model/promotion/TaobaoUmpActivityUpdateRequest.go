@@ -15,9 +15,9 @@ taobao.ump.activity.update
 type TaobaoUmpActivityUpdateRequest struct {
     model.Params
     // 活动id
-    actId   int64
+    _actId   int64
     // 营销活动内容，json格式，通过ump sdk 的marketingTool来生成
-    content   string
+    _content   string
 }
 
 // 初始化TaobaoUmpActivityUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUmpActivityUpdateRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 活动id
-func (r *TaobaoUmpActivityUpdateRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *TaobaoUmpActivityUpdateRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r TaobaoUmpActivityUpdateRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }
 // Content Setter
 // 营销活动内容，json格式，通过ump sdk 的marketingTool来生成
-func (r *TaobaoUmpActivityUpdateRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoUmpActivityUpdateRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoUmpActivityUpdateRequest) GetContent() string {
-    return r.content
+    return r._content
 }

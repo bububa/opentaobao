@@ -15,7 +15,7 @@ taobao.trade.confirmfee.get
 type TaobaoTradeConfirmfeeGetRequest struct {
     model.Params
     // 交易主订单或子订单ID
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoTradeConfirmfeeGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTradeConfirmfeeGetRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 交易主订单或子订单ID
-func (r *TaobaoTradeConfirmfeeGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeConfirmfeeGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeConfirmfeeGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

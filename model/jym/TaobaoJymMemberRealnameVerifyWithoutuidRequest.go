@@ -15,9 +15,9 @@ taobao.jym.member.realname.verify.withoutuid
 type TaobaoJymMemberRealnameVerifyWithoutuidRequest struct {
     model.Params
     // 加密名字串
-    encryptName   string
+    _encryptName   string
     // 加密身份证串
-    encryptIdNo   string
+    _encryptIdNo   string
 }
 
 // 初始化TaobaoJymMemberRealnameVerifyWithoutuidRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJymMemberRealnameVerifyWithoutuidRequest) GetApiParams() url.Value
 }
 // EncryptName Setter
 // 加密名字串
-func (r *TaobaoJymMemberRealnameVerifyWithoutuidRequest) SetEncryptName(encryptName string) error {
-    r.encryptName = encryptName
-    r.Set("encrypt_name", encryptName)
+func (r *TaobaoJymMemberRealnameVerifyWithoutuidRequest) SetEncryptName(_encryptName string) error {
+    r._encryptName = _encryptName
+    r.Set("encrypt_name", _encryptName)
     return nil
 }
 
 // EncryptName Getter
 func (r TaobaoJymMemberRealnameVerifyWithoutuidRequest) GetEncryptName() string {
-    return r.encryptName
+    return r._encryptName
 }
 // EncryptIdNo Setter
 // 加密身份证串
-func (r *TaobaoJymMemberRealnameVerifyWithoutuidRequest) SetEncryptIdNo(encryptIdNo string) error {
-    r.encryptIdNo = encryptIdNo
-    r.Set("encrypt_id_no", encryptIdNo)
+func (r *TaobaoJymMemberRealnameVerifyWithoutuidRequest) SetEncryptIdNo(_encryptIdNo string) error {
+    r._encryptIdNo = _encryptIdNo
+    r.Set("encrypt_id_no", _encryptIdNo)
     return nil
 }
 
 // EncryptIdNo Getter
 func (r TaobaoJymMemberRealnameVerifyWithoutuidRequest) GetEncryptIdNo() string {
-    return r.encryptIdNo
+    return r._encryptIdNo
 }

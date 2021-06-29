@@ -15,11 +15,11 @@ alibaba.gpu.schema.update
 type AlibabaGpuSchemaUpdateRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
     // 更新产品提交的schema数据
-    schemaXmlFields   string
+    _schemaXmlFields   string
     // 当前用户所在渠道如0代表天猫，8代表淘宝
-    providerId   int64
+    _providerId   int64
 }
 
 // 初始化AlibabaGpuSchemaUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaGpuSchemaUpdateRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品ID
-func (r *AlibabaGpuSchemaUpdateRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaGpuSchemaUpdateRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaGpuSchemaUpdateRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // SchemaXmlFields Setter
 // 更新产品提交的schema数据
-func (r *AlibabaGpuSchemaUpdateRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *AlibabaGpuSchemaUpdateRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r AlibabaGpuSchemaUpdateRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }
 // ProviderId Setter
 // 当前用户所在渠道如0代表天猫，8代表淘宝
-func (r *AlibabaGpuSchemaUpdateRequest) SetProviderId(providerId int64) error {
-    r.providerId = providerId
-    r.Set("provider_id", providerId)
+func (r *AlibabaGpuSchemaUpdateRequest) SetProviderId(_providerId int64) error {
+    r._providerId = _providerId
+    r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
 func (r AlibabaGpuSchemaUpdateRequest) GetProviderId() int64 {
-    return r.providerId
+    return r._providerId
 }

@@ -15,11 +15,11 @@ taobao.ump.range.add
 type TaobaoUmpRangeAddRequest struct {
     model.Params
     // 活动id
-    actId   int64
+    _actId   int64
     // 范围的类型，比如是全店，商品，见：MarketingConstants.PARTICIPATE_TYPE_*
-    type   int64
+    _type   int64
     // id列表，当范围类型为商品时，该id为商品id.多个id用逗号隔开，一次不超过50个
-    ids   string
+    _ids   string
 }
 
 // 初始化TaobaoUmpRangeAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoUmpRangeAddRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 活动id
-func (r *TaobaoUmpRangeAddRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *TaobaoUmpRangeAddRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r TaobaoUmpRangeAddRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }
 // Type Setter
 // 范围的类型，比如是全店，商品，见：MarketingConstants.PARTICIPATE_TYPE_*
-func (r *TaobaoUmpRangeAddRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoUmpRangeAddRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoUmpRangeAddRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // Ids Setter
 // id列表，当范围类型为商品时，该id为商品id.多个id用逗号隔开，一次不超过50个
-func (r *TaobaoUmpRangeAddRequest) SetIds(ids string) error {
-    r.ids = ids
-    r.Set("ids", ids)
+func (r *TaobaoUmpRangeAddRequest) SetIds(_ids string) error {
+    r._ids = _ids
+    r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
 func (r TaobaoUmpRangeAddRequest) GetIds() string {
-    return r.ids
+    return r._ids
 }

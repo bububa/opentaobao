@@ -15,11 +15,11 @@ alibaba.scbp.ad.keyword.add
 type AlibabaScbpAdKeywordAddRequest struct {
     model.Params
     // 加入的词
-    adKeyword   string
+    _adKeyword   string
     // 词的出价
-    priceStr   string
+    _priceStr   string
     // 分组名
-    tagName   string
+    _tagName   string
 }
 
 // 初始化AlibabaScbpAdKeywordAddRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdKeywordAddRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 加入的词
-func (r *AlibabaScbpAdKeywordAddRequest) SetAdKeyword(adKeyword string) error {
-    r.adKeyword = adKeyword
-    r.Set("ad_keyword", adKeyword)
+func (r *AlibabaScbpAdKeywordAddRequest) SetAdKeyword(_adKeyword string) error {
+    r._adKeyword = _adKeyword
+    r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
 func (r AlibabaScbpAdKeywordAddRequest) GetAdKeyword() string {
-    return r.adKeyword
+    return r._adKeyword
 }
 // PriceStr Setter
 // 词的出价
-func (r *AlibabaScbpAdKeywordAddRequest) SetPriceStr(priceStr string) error {
-    r.priceStr = priceStr
-    r.Set("price_str", priceStr)
+func (r *AlibabaScbpAdKeywordAddRequest) SetPriceStr(_priceStr string) error {
+    r._priceStr = _priceStr
+    r.Set("price_str", _priceStr)
     return nil
 }
 
 // PriceStr Getter
 func (r AlibabaScbpAdKeywordAddRequest) GetPriceStr() string {
-    return r.priceStr
+    return r._priceStr
 }
 // TagName Setter
 // 分组名
-func (r *AlibabaScbpAdKeywordAddRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *AlibabaScbpAdKeywordAddRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r AlibabaScbpAdKeywordAddRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }

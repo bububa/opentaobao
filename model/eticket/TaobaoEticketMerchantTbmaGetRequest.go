@@ -15,7 +15,7 @@ taobao.eticket.merchant.tbma.get
 type TaobaoEticketMerchantTbmaGetRequest struct {
     model.Params
     // 查询淘宝码请求
-    queryTbMaCallbackReq   *QueryTbMaCallbackReq
+    _queryTbMaCallbackReq   *QueryTbMaCallbackReq
 }
 
 // 初始化TaobaoEticketMerchantTbmaGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoEticketMerchantTbmaGetRequest) GetApiParams() url.Values {
 }
 // QueryTbMaCallbackReq Setter
 // 查询淘宝码请求
-func (r *TaobaoEticketMerchantTbmaGetRequest) SetQueryTbMaCallbackReq(queryTbMaCallbackReq *QueryTbMaCallbackReq) error {
-    r.queryTbMaCallbackReq = queryTbMaCallbackReq
-    r.Set("query_tb_ma_callback_req", queryTbMaCallbackReq)
+func (r *TaobaoEticketMerchantTbmaGetRequest) SetQueryTbMaCallbackReq(_queryTbMaCallbackReq *QueryTbMaCallbackReq) error {
+    r._queryTbMaCallbackReq = _queryTbMaCallbackReq
+    r.Set("query_tb_ma_callback_req", _queryTbMaCallbackReq)
     return nil
 }
 
 // QueryTbMaCallbackReq Getter
 func (r TaobaoEticketMerchantTbmaGetRequest) GetQueryTbMaCallbackReq() *QueryTbMaCallbackReq {
-    return r.queryTbMaCallbackReq
+    return r._queryTbMaCallbackReq
 }

@@ -15,7 +15,7 @@ TMC连接授权Token
 type TaobaoTmcAuthGetRequest struct {
     model.Params
     // tmc组名
-    group   string
+    _group   string
 }
 
 // 初始化TaobaoTmcAuthGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTmcAuthGetRequest) GetApiParams() url.Values {
 }
 // Group Setter
 // tmc组名
-func (r *TaobaoTmcAuthGetRequest) SetGroup(group string) error {
-    r.group = group
-    r.Set("group", group)
+func (r *TaobaoTmcAuthGetRequest) SetGroup(_group string) error {
+    r._group = _group
+    r.Set("group", _group)
     return nil
 }
 
 // Group Getter
 func (r TaobaoTmcAuthGetRequest) GetGroup() string {
-    return r.group
+    return r._group
 }

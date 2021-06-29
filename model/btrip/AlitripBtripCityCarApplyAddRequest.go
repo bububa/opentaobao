@@ -15,7 +15,7 @@ alitrip.btrip.city.car.apply.add
 type AlitripBtripCityCarApplyAddRequest struct {
     model.Params
     // 入参对象
-    rq   *CityCarApplyAddRq
+    _rq   *CityCarApplyAddRq
 }
 
 // 初始化AlitripBtripCityCarApplyAddRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCityCarApplyAddRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripCityCarApplyAddRequest) SetRq(rq *CityCarApplyAddRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCityCarApplyAddRequest) SetRq(_rq *CityCarApplyAddRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCityCarApplyAddRequest) GetRq() *CityCarApplyAddRq {
-    return r.rq
+    return r._rq
 }

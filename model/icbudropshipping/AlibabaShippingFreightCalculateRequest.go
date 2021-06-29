@@ -15,7 +15,7 @@ alibaba.shipping.freight.calculate
 type AlibabaShippingFreightCalculateRequest struct {
     model.Params
     // {}
-    paramFreightTemplateRequest   *FreightTemplateRequest
+    _paramFreightTemplateRequest   *FreightTemplateRequest
 }
 
 // 初始化AlibabaShippingFreightCalculateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaShippingFreightCalculateRequest) GetApiParams() url.Values {
 }
 // ParamFreightTemplateRequest Setter
 // {}
-func (r *AlibabaShippingFreightCalculateRequest) SetParamFreightTemplateRequest(paramFreightTemplateRequest *FreightTemplateRequest) error {
-    r.paramFreightTemplateRequest = paramFreightTemplateRequest
-    r.Set("param_freight_template_request", paramFreightTemplateRequest)
+func (r *AlibabaShippingFreightCalculateRequest) SetParamFreightTemplateRequest(_paramFreightTemplateRequest *FreightTemplateRequest) error {
+    r._paramFreightTemplateRequest = _paramFreightTemplateRequest
+    r.Set("param_freight_template_request", _paramFreightTemplateRequest)
     return nil
 }
 
 // ParamFreightTemplateRequest Getter
 func (r AlibabaShippingFreightCalculateRequest) GetParamFreightTemplateRequest() *FreightTemplateRequest {
-    return r.paramFreightTemplateRequest
+    return r._paramFreightTemplateRequest
 }

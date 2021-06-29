@@ -15,7 +15,7 @@ alibaba.idle.transferpay.query
 type AlibabaIdleTransferpayQueryRequest struct {
     model.Params
     // 入参
-    param   *PayQueryRequest
+    _param   *PayQueryRequest
 }
 
 // 初始化AlibabaIdleTransferpayQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleTransferpayQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaIdleTransferpayQueryRequest) SetParam(param *PayQueryRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaIdleTransferpayQueryRequest) SetParam(_param *PayQueryRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaIdleTransferpayQueryRequest) GetParam() *PayQueryRequest {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ Open Account数据更新
 type TaobaoOpenAccountUpdateRequest struct {
     model.Params
     // Open Account
-    paramList   []OpenAccount
+    _paramList   []OpenAccount
 }
 
 // 初始化TaobaoOpenAccountUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenAccountUpdateRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // Open Account
-func (r *TaobaoOpenAccountUpdateRequest) SetParamList(paramList []OpenAccount) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *TaobaoOpenAccountUpdateRequest) SetParamList(_paramList []OpenAccount) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r TaobaoOpenAccountUpdateRequest) GetParamList() []OpenAccount {
-    return r.paramList
+    return r._paramList
 }

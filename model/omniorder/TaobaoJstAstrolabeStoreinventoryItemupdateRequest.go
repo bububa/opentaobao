@@ -15,9 +15,9 @@ ERP调用该接口，增量更新门店或电商仓库存，该接口一次可�
 type TaobaoJstAstrolabeStoreinventoryItemupdateRequest struct {
     model.Params
     // 门店列表
-    stores   []Store
+    _stores   []Store
     // 操作时间
-    operationTime   string
+    _operationTime   string
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryItemupdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetApiParams() url.Va
 }
 // Stores Setter
 // 门店列表
-func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetStores(stores []Store) error {
-    r.stores = stores
-    r.Set("stores", stores)
+func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetStores(_stores []Store) error {
+    r._stores = _stores
+    r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetStores() []Store {
-    return r.stores
+    return r._stores
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetOperationTime(operationTime string) error {
-    r.operationTime = operationTime
-    r.Set("operation_time", operationTime)
+func (r *TaobaoJstAstrolabeStoreinventoryItemupdateRequest) SetOperationTime(_operationTime string) error {
+    r._operationTime = _operationTime
+    r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryItemupdateRequest) GetOperationTime() string {
-    return r.operationTime
+    return r._operationTime
 }

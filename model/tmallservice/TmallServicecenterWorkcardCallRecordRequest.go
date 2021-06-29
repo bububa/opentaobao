@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.call.record
 type TmallServicecenterWorkcardCallRecordRequest struct {
     model.Params
     // 请求入参
-    busiRequest   *UpdateAttributeRequest
+    _busiRequest   *UpdateAttributeRequest
 }
 
 // 初始化TmallServicecenterWorkcardCallRecordRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardCallRecordRequest) GetApiParams() url.Values {
 }
 // BusiRequest Setter
 // 请求入参
-func (r *TmallServicecenterWorkcardCallRecordRequest) SetBusiRequest(busiRequest *UpdateAttributeRequest) error {
-    r.busiRequest = busiRequest
-    r.Set("busi_request", busiRequest)
+func (r *TmallServicecenterWorkcardCallRecordRequest) SetBusiRequest(_busiRequest *UpdateAttributeRequest) error {
+    r._busiRequest = _busiRequest
+    r.Set("busi_request", _busiRequest)
     return nil
 }
 
 // BusiRequest Getter
 func (r TmallServicecenterWorkcardCallRecordRequest) GetBusiRequest() *UpdateAttributeRequest {
-    return r.busiRequest
+    return r._busiRequest
 }

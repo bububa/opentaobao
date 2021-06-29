@@ -15,7 +15,7 @@ account.aliyuncs.com.GetPubKey.2013-07-01
 type AccountAliyuncsComGetPubKey2013_07_01Request struct {
     model.Params
     // appkey
-    ownerAppkey   string
+    _ownerAppkey   string
 }
 
 // 初始化AccountAliyuncsComGetPubKey2013_07_01Request对象
@@ -40,13 +40,13 @@ func (r AccountAliyuncsComGetPubKey2013_07_01Request) GetApiParams() url.Values 
 }
 // OwnerAppkey Setter
 // appkey
-func (r *AccountAliyuncsComGetPubKey2013_07_01Request) SetOwnerAppkey(ownerAppkey string) error {
-    r.ownerAppkey = ownerAppkey
-    r.Set("OwnerAppkey", ownerAppkey)
+func (r *AccountAliyuncsComGetPubKey2013_07_01Request) SetOwnerAppkey(_ownerAppkey string) error {
+    r._ownerAppkey = _ownerAppkey
+    r.Set("OwnerAppkey", _ownerAppkey)
     return nil
 }
 
 // OwnerAppkey Getter
 func (r AccountAliyuncsComGetPubKey2013_07_01Request) GetOwnerAppkey() string {
-    return r.ownerAppkey
+    return r._ownerAppkey
 }

@@ -15,9 +15,9 @@ taobao.tmc.user.cancel
 type TaobaoTmcUserCancelRequest struct {
     model.Params
     // 用户昵称
-    nick   string
+    _nick   string
     // 用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-    userPlatform   string
+    _userPlatform   string
 }
 
 // 初始化TaobaoTmcUserCancelRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTmcUserCancelRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户昵称
-func (r *TaobaoTmcUserCancelRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoTmcUserCancelRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoTmcUserCancelRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // UserPlatform Setter
 // 用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-func (r *TaobaoTmcUserCancelRequest) SetUserPlatform(userPlatform string) error {
-    r.userPlatform = userPlatform
-    r.Set("user_platform", userPlatform)
+func (r *TaobaoTmcUserCancelRequest) SetUserPlatform(_userPlatform string) error {
+    r._userPlatform = _userPlatform
+    r.Set("user_platform", _userPlatform)
     return nil
 }
 
 // UserPlatform Getter
 func (r TaobaoTmcUserCancelRequest) GetUserPlatform() string {
-    return r.userPlatform
+    return r._userPlatform
 }

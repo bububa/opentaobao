@@ -15,7 +15,7 @@ taobao.item.delete
 type TaobaoItemDeleteRequest struct {
     model.Params
     // 商品数字ID，该参数必须
-    numIid   int64
+    _numIid   int64
 }
 
 // 初始化TaobaoItemDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoItemDeleteRequest) GetApiParams() url.Values {
 }
 // NumIid Setter
 // 商品数字ID，该参数必须
-func (r *TaobaoItemDeleteRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemDeleteRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemDeleteRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }

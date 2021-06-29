@@ -15,17 +15,17 @@ taobao.qt.reports.get
 type TaobaoQtReportsGetRequest struct {
     model.Params
     // 质检服务商名
-    spName   string
+    _spName   string
     // 质检类型，目前只支持查询qt_type=11的类型
-    qtType   int64
+    _qtType   int64
     // 收费项code
-    servcieItemCode   string
+    _servcieItemCode   string
     // 送检者昵称
-    nick   string
+    _nick   string
     // 查询时间段的开始时间
-    startTime   string
+    _startTime   string
     // 查询时间段的结束时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化TaobaoQtReportsGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoQtReportsGetRequest) GetApiParams() url.Values {
 }
 // SpName Setter
 // 质检服务商名
-func (r *TaobaoQtReportsGetRequest) SetSpName(spName string) error {
-    r.spName = spName
-    r.Set("sp_name", spName)
+func (r *TaobaoQtReportsGetRequest) SetSpName(_spName string) error {
+    r._spName = _spName
+    r.Set("sp_name", _spName)
     return nil
 }
 
 // SpName Getter
 func (r TaobaoQtReportsGetRequest) GetSpName() string {
-    return r.spName
+    return r._spName
 }
 // QtType Setter
 // 质检类型，目前只支持查询qt_type=11的类型
-func (r *TaobaoQtReportsGetRequest) SetQtType(qtType int64) error {
-    r.qtType = qtType
-    r.Set("qt_type", qtType)
+func (r *TaobaoQtReportsGetRequest) SetQtType(_qtType int64) error {
+    r._qtType = _qtType
+    r.Set("qt_type", _qtType)
     return nil
 }
 
 // QtType Getter
 func (r TaobaoQtReportsGetRequest) GetQtType() int64 {
-    return r.qtType
+    return r._qtType
 }
 // ServcieItemCode Setter
 // 收费项code
-func (r *TaobaoQtReportsGetRequest) SetServcieItemCode(servcieItemCode string) error {
-    r.servcieItemCode = servcieItemCode
-    r.Set("servcie_item_code", servcieItemCode)
+func (r *TaobaoQtReportsGetRequest) SetServcieItemCode(_servcieItemCode string) error {
+    r._servcieItemCode = _servcieItemCode
+    r.Set("servcie_item_code", _servcieItemCode)
     return nil
 }
 
 // ServcieItemCode Getter
 func (r TaobaoQtReportsGetRequest) GetServcieItemCode() string {
-    return r.servcieItemCode
+    return r._servcieItemCode
 }
 // Nick Setter
 // 送检者昵称
-func (r *TaobaoQtReportsGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoQtReportsGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoQtReportsGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // StartTime Setter
 // 查询时间段的开始时间
-func (r *TaobaoQtReportsGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoQtReportsGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoQtReportsGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 查询时间段的结束时间
-func (r *TaobaoQtReportsGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoQtReportsGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoQtReportsGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

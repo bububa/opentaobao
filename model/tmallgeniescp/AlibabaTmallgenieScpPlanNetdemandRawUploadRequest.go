@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.netdemand.raw.upload
 type AlibabaTmallgenieScpPlanNetdemandRawUploadRequest struct {
     model.Params
     // 对象
-    netDemandRawRequest   *NetDemandRawRequest
+    _netDemandRawRequest   *NetDemandRawRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanNetdemandRawUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanNetdemandRawUploadRequest) GetApiParams() url.Va
 }
 // NetDemandRawRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanNetdemandRawUploadRequest) SetNetDemandRawRequest(netDemandRawRequest *NetDemandRawRequest) error {
-    r.netDemandRawRequest = netDemandRawRequest
-    r.Set("net_demand_raw_request", netDemandRawRequest)
+func (r *AlibabaTmallgenieScpPlanNetdemandRawUploadRequest) SetNetDemandRawRequest(_netDemandRawRequest *NetDemandRawRequest) error {
+    r._netDemandRawRequest = _netDemandRawRequest
+    r.Set("net_demand_raw_request", _netDemandRawRequest)
     return nil
 }
 
 // NetDemandRawRequest Getter
 func (r AlibabaTmallgenieScpPlanNetdemandRawUploadRequest) GetNetDemandRawRequest() *NetDemandRawRequest {
-    return r.netDemandRawRequest
+    return r._netDemandRawRequest
 }

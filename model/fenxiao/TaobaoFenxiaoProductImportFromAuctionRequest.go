@@ -15,11 +15,11 @@ taobao.fenxiao.product.import.from.auction
 type TaobaoFenxiaoProductImportFromAuctionRequest struct {
     model.Params
     // 导入产品需要支持的交易类型：[1 代销][ 2 经销 ][3 代销和经销]
-    tradeType   int64
+    _tradeType   int64
     // 店铺宝贝id
-    auctionId   int64
+    _auctionId   int64
     // 产品线id
-    productLineId   int64
+    _productLineId   int64
 }
 
 // 初始化TaobaoFenxiaoProductImportFromAuctionRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoFenxiaoProductImportFromAuctionRequest) GetApiParams() url.Values 
 }
 // TradeType Setter
 // 导入产品需要支持的交易类型：[1 代销][ 2 经销 ][3 代销和经销]
-func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetTradeType(tradeType int64) error {
-    r.tradeType = tradeType
-    r.Set("trade_type", tradeType)
+func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetTradeType(_tradeType int64) error {
+    r._tradeType = _tradeType
+    r.Set("trade_type", _tradeType)
     return nil
 }
 
 // TradeType Getter
 func (r TaobaoFenxiaoProductImportFromAuctionRequest) GetTradeType() int64 {
-    return r.tradeType
+    return r._tradeType
 }
 // AuctionId Setter
 // 店铺宝贝id
-func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetAuctionId(auctionId int64) error {
-    r.auctionId = auctionId
-    r.Set("auction_id", auctionId)
+func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetAuctionId(_auctionId int64) error {
+    r._auctionId = _auctionId
+    r.Set("auction_id", _auctionId)
     return nil
 }
 
 // AuctionId Getter
 func (r TaobaoFenxiaoProductImportFromAuctionRequest) GetAuctionId() int64 {
-    return r.auctionId
+    return r._auctionId
 }
 // ProductLineId Setter
 // 产品线id
-func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetProductLineId(productLineId int64) error {
-    r.productLineId = productLineId
-    r.Set("product_line_id", productLineId)
+func (r *TaobaoFenxiaoProductImportFromAuctionRequest) SetProductLineId(_productLineId int64) error {
+    r._productLineId = _productLineId
+    r.Set("product_line_id", _productLineId)
     return nil
 }
 
 // ProductLineId Getter
 func (r TaobaoFenxiaoProductImportFromAuctionRequest) GetProductLineId() int64 {
-    return r.productLineId
+    return r._productLineId
 }

@@ -15,9 +15,9 @@ taobao.simba.campaigns.get
 type TaobaoSimbaCampaignsGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 计划类型0位标准计划，16位销量明星计划
-    type   int64
+    _type   int64
 }
 
 // 初始化TaobaoSimbaCampaignsGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaCampaignsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignsGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignsGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignsGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // Type Setter
 // 计划类型0位标准计划，16位销量明星计划
-func (r *TaobaoSimbaCampaignsGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoSimbaCampaignsGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoSimbaCampaignsGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

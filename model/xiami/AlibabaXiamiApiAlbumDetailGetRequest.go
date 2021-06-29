@@ -15,9 +15,9 @@ alibaba.xiami.api.album.detail.get
 type AlibabaXiamiApiAlbumDetailGetRequest struct {
     model.Params
     // 专辑ID
-    id   int64
+    _id   int64
     // 是否获取完整描述
-    fullDes   bool
+    _fullDes   bool
 }
 
 // 初始化AlibabaXiamiApiAlbumDetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaXiamiApiAlbumDetailGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 专辑ID
-func (r *AlibabaXiamiApiAlbumDetailGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaXiamiApiAlbumDetailGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaXiamiApiAlbumDetailGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // FullDes Setter
 // 是否获取完整描述
-func (r *AlibabaXiamiApiAlbumDetailGetRequest) SetFullDes(fullDes bool) error {
-    r.fullDes = fullDes
-    r.Set("full_des", fullDes)
+func (r *AlibabaXiamiApiAlbumDetailGetRequest) SetFullDes(_fullDes bool) error {
+    r._fullDes = _fullDes
+    r.Set("full_des", _fullDes)
     return nil
 }
 
 // FullDes Getter
 func (r AlibabaXiamiApiAlbumDetailGetRequest) GetFullDes() bool {
-    return r.fullDes
+    return r._fullDes
 }

@@ -15,41 +15,41 @@ taobao.wlb.wms.stock.out.order.notify
 type TaobaoWlbWmsStockOutOrderNotifyRequest struct {
     model.Params
     // 仓储编码
-    storeCode   string
+    _storeCode   string
     // ERP单据ID
-    orderCode   string
+    _orderCode   string
     // 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
-    orderType   int64
+    _orderType   int64
     // ERP可选择性文本透传至WMS
-    outboundTypeDesc   string
+    _outboundTypeDesc   string
     // 订单创建时间
-    orderCreateTime   string
+    _orderCreateTime   string
     // 要求出库日期
-    sendTime   string
+    _sendTime   string
     // 收件人信息
-    receiverInfo   *Receiverwlbwmsstockoutordernotify
+    _receiverInfo   *Receiverwlbwmsstockoutordernotify
     // 发货方信息
-    senderInfo   *Senderwlbwmsstockoutordernotify
+    _senderInfo   *Senderwlbwmsstockoutordernotify
     // 出库方式
-    transportMode   string
+    _transportMode   string
     // 承运商名称
-    carriersName   string
+    _carriersName   string
     // 取件人姓名
-    pickName   string
+    _pickName   string
     // 取件人电话
-    pickCall   string
+    _pickCall   string
     // 取件人身份证ID
-    pickId   string
+    _pickId   string
     // 车牌号
-    carNo   string
+    _carNo   string
     // 订单商品信息列表
-    orderItemList   []Orderitemlistwlbwmsstockoutordernotify
+    _orderItemList   []Orderitemlistwlbwmsstockoutordernotify
     // 备注
-    remark   string
+    _remark   string
     // 前物流订单号，如退货入库单可能会用到
-    prevOrderCode   string
+    _prevOrderCode   string
     // 拓展属性
-    extendFields   string
+    _extendFields   string
 }
 
 // 初始化TaobaoWlbWmsStockOutOrderNotifyRequest对象
@@ -74,217 +74,217 @@ func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetApiParams() url.Values {
 }
 // StoreCode Setter
 // 仓储编码
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // OrderCode Setter
 // ERP单据ID
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // OrderType Setter
 // 单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderType(orderType int64) error {
-    r.orderType = orderType
-    r.Set("order_type", orderType)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderType(_orderType int64) error {
+    r._orderType = _orderType
+    r.Set("order_type", _orderType)
     return nil
 }
 
 // OrderType Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetOrderType() int64 {
-    return r.orderType
+    return r._orderType
 }
 // OutboundTypeDesc Setter
 // ERP可选择性文本透传至WMS
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOutboundTypeDesc(outboundTypeDesc string) error {
-    r.outboundTypeDesc = outboundTypeDesc
-    r.Set("outbound_type_desc", outboundTypeDesc)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOutboundTypeDesc(_outboundTypeDesc string) error {
+    r._outboundTypeDesc = _outboundTypeDesc
+    r.Set("outbound_type_desc", _outboundTypeDesc)
     return nil
 }
 
 // OutboundTypeDesc Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetOutboundTypeDesc() string {
-    return r.outboundTypeDesc
+    return r._outboundTypeDesc
 }
 // OrderCreateTime Setter
 // 订单创建时间
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderCreateTime(orderCreateTime string) error {
-    r.orderCreateTime = orderCreateTime
-    r.Set("order_create_time", orderCreateTime)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderCreateTime(_orderCreateTime string) error {
+    r._orderCreateTime = _orderCreateTime
+    r.Set("order_create_time", _orderCreateTime)
     return nil
 }
 
 // OrderCreateTime Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetOrderCreateTime() string {
-    return r.orderCreateTime
+    return r._orderCreateTime
 }
 // SendTime Setter
 // 要求出库日期
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetSendTime(sendTime string) error {
-    r.sendTime = sendTime
-    r.Set("send_time", sendTime)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetSendTime(_sendTime string) error {
+    r._sendTime = _sendTime
+    r.Set("send_time", _sendTime)
     return nil
 }
 
 // SendTime Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetSendTime() string {
-    return r.sendTime
+    return r._sendTime
 }
 // ReceiverInfo Setter
 // 收件人信息
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetReceiverInfo(receiverInfo *Receiverwlbwmsstockoutordernotify) error {
-    r.receiverInfo = receiverInfo
-    r.Set("receiver_info", receiverInfo)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetReceiverInfo(_receiverInfo *Receiverwlbwmsstockoutordernotify) error {
+    r._receiverInfo = _receiverInfo
+    r.Set("receiver_info", _receiverInfo)
     return nil
 }
 
 // ReceiverInfo Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetReceiverInfo() *Receiverwlbwmsstockoutordernotify {
-    return r.receiverInfo
+    return r._receiverInfo
 }
 // SenderInfo Setter
 // 发货方信息
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetSenderInfo(senderInfo *Senderwlbwmsstockoutordernotify) error {
-    r.senderInfo = senderInfo
-    r.Set("sender_info", senderInfo)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetSenderInfo(_senderInfo *Senderwlbwmsstockoutordernotify) error {
+    r._senderInfo = _senderInfo
+    r.Set("sender_info", _senderInfo)
     return nil
 }
 
 // SenderInfo Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetSenderInfo() *Senderwlbwmsstockoutordernotify {
-    return r.senderInfo
+    return r._senderInfo
 }
 // TransportMode Setter
 // 出库方式
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetTransportMode(transportMode string) error {
-    r.transportMode = transportMode
-    r.Set("transport_mode", transportMode)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetTransportMode(_transportMode string) error {
+    r._transportMode = _transportMode
+    r.Set("transport_mode", _transportMode)
     return nil
 }
 
 // TransportMode Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetTransportMode() string {
-    return r.transportMode
+    return r._transportMode
 }
 // CarriersName Setter
 // 承运商名称
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetCarriersName(carriersName string) error {
-    r.carriersName = carriersName
-    r.Set("carriers_name", carriersName)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetCarriersName(_carriersName string) error {
+    r._carriersName = _carriersName
+    r.Set("carriers_name", _carriersName)
     return nil
 }
 
 // CarriersName Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetCarriersName() string {
-    return r.carriersName
+    return r._carriersName
 }
 // PickName Setter
 // 取件人姓名
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickName(pickName string) error {
-    r.pickName = pickName
-    r.Set("pick_name", pickName)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickName(_pickName string) error {
+    r._pickName = _pickName
+    r.Set("pick_name", _pickName)
     return nil
 }
 
 // PickName Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetPickName() string {
-    return r.pickName
+    return r._pickName
 }
 // PickCall Setter
 // 取件人电话
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickCall(pickCall string) error {
-    r.pickCall = pickCall
-    r.Set("pick_call", pickCall)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickCall(_pickCall string) error {
+    r._pickCall = _pickCall
+    r.Set("pick_call", _pickCall)
     return nil
 }
 
 // PickCall Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetPickCall() string {
-    return r.pickCall
+    return r._pickCall
 }
 // PickId Setter
 // 取件人身份证ID
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickId(pickId string) error {
-    r.pickId = pickId
-    r.Set("pick_id", pickId)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPickId(_pickId string) error {
+    r._pickId = _pickId
+    r.Set("pick_id", _pickId)
     return nil
 }
 
 // PickId Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetPickId() string {
-    return r.pickId
+    return r._pickId
 }
 // CarNo Setter
 // 车牌号
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetCarNo(carNo string) error {
-    r.carNo = carNo
-    r.Set("car_no", carNo)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetCarNo(_carNo string) error {
+    r._carNo = _carNo
+    r.Set("car_no", _carNo)
     return nil
 }
 
 // CarNo Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetCarNo() string {
-    return r.carNo
+    return r._carNo
 }
 // OrderItemList Setter
 // 订单商品信息列表
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderItemList(orderItemList []Orderitemlistwlbwmsstockoutordernotify) error {
-    r.orderItemList = orderItemList
-    r.Set("order_item_list", orderItemList)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetOrderItemList(_orderItemList []Orderitemlistwlbwmsstockoutordernotify) error {
+    r._orderItemList = _orderItemList
+    r.Set("order_item_list", _orderItemList)
     return nil
 }
 
 // OrderItemList Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetOrderItemList() []Orderitemlistwlbwmsstockoutordernotify {
-    return r.orderItemList
+    return r._orderItemList
 }
 // Remark Setter
 // 备注
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // PrevOrderCode Setter
 // 前物流订单号，如退货入库单可能会用到
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPrevOrderCode(prevOrderCode string) error {
-    r.prevOrderCode = prevOrderCode
-    r.Set("prev_order_code", prevOrderCode)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetPrevOrderCode(_prevOrderCode string) error {
+    r._prevOrderCode = _prevOrderCode
+    r.Set("prev_order_code", _prevOrderCode)
     return nil
 }
 
 // PrevOrderCode Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetPrevOrderCode() string {
-    return r.prevOrderCode
+    return r._prevOrderCode
 }
 // ExtendFields Setter
 // 拓展属性
-func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetExtendFields(extendFields string) error {
-    r.extendFields = extendFields
-    r.Set("extend_fields", extendFields)
+func (r *TaobaoWlbWmsStockOutOrderNotifyRequest) SetExtendFields(_extendFields string) error {
+    r._extendFields = _extendFields
+    r.Set("extend_fields", _extendFields)
     return nil
 }
 
 // ExtendFields Getter
 func (r TaobaoWlbWmsStockOutOrderNotifyRequest) GetExtendFields() string {
-    return r.extendFields
+    return r._extendFields
 }

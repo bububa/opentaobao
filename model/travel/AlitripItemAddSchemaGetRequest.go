@@ -15,7 +15,7 @@ alitrip.item.add.schema.get
 type AlitripItemAddSchemaGetRequest struct {
     model.Params
     // 类目id
-    catId   int64
+    _catId   int64
 }
 
 // 初始化AlitripItemAddSchemaGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripItemAddSchemaGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *AlitripItemAddSchemaGetRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlitripItemAddSchemaGetRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlitripItemAddSchemaGetRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

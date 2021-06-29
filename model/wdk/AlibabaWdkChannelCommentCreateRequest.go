@@ -15,7 +15,7 @@ alibaba.wdk.channel.comment.create
 type AlibabaWdkChannelCommentCreateRequest struct {
     model.Params
     // 差评信息
-    commentCreateInfo   *CommentCreateInfo
+    _commentCreateInfo   *CommentCreateInfo
 }
 
 // 初始化AlibabaWdkChannelCommentCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelCommentCreateRequest) GetApiParams() url.Values {
 }
 // CommentCreateInfo Setter
 // 差评信息
-func (r *AlibabaWdkChannelCommentCreateRequest) SetCommentCreateInfo(commentCreateInfo *CommentCreateInfo) error {
-    r.commentCreateInfo = commentCreateInfo
-    r.Set("comment_create_info", commentCreateInfo)
+func (r *AlibabaWdkChannelCommentCreateRequest) SetCommentCreateInfo(_commentCreateInfo *CommentCreateInfo) error {
+    r._commentCreateInfo = _commentCreateInfo
+    r.Set("comment_create_info", _commentCreateInfo)
     return nil
 }
 
 // CommentCreateInfo Getter
 func (r AlibabaWdkChannelCommentCreateRequest) GetCommentCreateInfo() *CommentCreateInfo {
-    return r.commentCreateInfo
+    return r._commentCreateInfo
 }

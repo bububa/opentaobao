@@ -15,9 +15,9 @@ alibaba.lst.bm.store.emp.save
 type AlibabaLstBmStoreEmpSaveRequest struct {
     model.Params
     // 门店id标识
-    storeId   string
+    _storeId   string
     // 员工id标识
-    bmEmpId   string
+    _bmEmpId   string
 }
 
 // 初始化AlibabaLstBmStoreEmpSaveRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstBmStoreEmpSaveRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店id标识
-func (r *AlibabaLstBmStoreEmpSaveRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaLstBmStoreEmpSaveRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaLstBmStoreEmpSaveRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // BmEmpId Setter
 // 员工id标识
-func (r *AlibabaLstBmStoreEmpSaveRequest) SetBmEmpId(bmEmpId string) error {
-    r.bmEmpId = bmEmpId
-    r.Set("bm_emp_id", bmEmpId)
+func (r *AlibabaLstBmStoreEmpSaveRequest) SetBmEmpId(_bmEmpId string) error {
+    r._bmEmpId = _bmEmpId
+    r.Set("bm_emp_id", _bmEmpId)
     return nil
 }
 
 // BmEmpId Getter
 func (r AlibabaLstBmStoreEmpSaveRequest) GetBmEmpId() string {
-    return r.bmEmpId
+    return r._bmEmpId
 }

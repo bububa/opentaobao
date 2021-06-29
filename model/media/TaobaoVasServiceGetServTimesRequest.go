@@ -15,7 +15,7 @@ taobao.vas.service.getServTimes
 type TaobaoVasServiceGetServTimesRequest struct {
     model.Params
     // 服务编码
-    servCode   string
+    _servCode   string
 }
 
 // 初始化TaobaoVasServiceGetServTimesRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoVasServiceGetServTimesRequest) GetApiParams() url.Values {
 }
 // ServCode Setter
 // 服务编码
-func (r *TaobaoVasServiceGetServTimesRequest) SetServCode(servCode string) error {
-    r.servCode = servCode
-    r.Set("serv_code", servCode)
+func (r *TaobaoVasServiceGetServTimesRequest) SetServCode(_servCode string) error {
+    r._servCode = _servCode
+    r.Set("serv_code", _servCode)
     return nil
 }
 
 // ServCode Getter
 func (r TaobaoVasServiceGetServTimesRequest) GetServCode() string {
-    return r.servCode
+    return r._servCode
 }

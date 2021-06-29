@@ -15,11 +15,11 @@ taobao.tmc.msg.sendrecord
 type TaobaoTmcMsgSendrecordRequest struct {
     model.Params
     // 消息分组名
-    groupName   string
+    _groupName   string
     // TOPIC名称
-    topicName   string
+    _topicName   string
     // 消息主键ID
-    dataId   string
+    _dataId   string
 }
 
 // 初始化TaobaoTmcMsgSendrecordRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTmcMsgSendrecordRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 消息分组名
-func (r *TaobaoTmcMsgSendrecordRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcMsgSendrecordRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcMsgSendrecordRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }
 // TopicName Setter
 // TOPIC名称
-func (r *TaobaoTmcMsgSendrecordRequest) SetTopicName(topicName string) error {
-    r.topicName = topicName
-    r.Set("topic_name", topicName)
+func (r *TaobaoTmcMsgSendrecordRequest) SetTopicName(_topicName string) error {
+    r._topicName = _topicName
+    r.Set("topic_name", _topicName)
     return nil
 }
 
 // TopicName Getter
 func (r TaobaoTmcMsgSendrecordRequest) GetTopicName() string {
-    return r.topicName
+    return r._topicName
 }
 // DataId Setter
 // 消息主键ID
-func (r *TaobaoTmcMsgSendrecordRequest) SetDataId(dataId string) error {
-    r.dataId = dataId
-    r.Set("data_id", dataId)
+func (r *TaobaoTmcMsgSendrecordRequest) SetDataId(_dataId string) error {
+    r._dataId = _dataId
+    r.Set("data_id", _dataId)
     return nil
 }
 
 // DataId Getter
 func (r TaobaoTmcMsgSendrecordRequest) GetDataId() string {
-    return r.dataId
+    return r._dataId
 }

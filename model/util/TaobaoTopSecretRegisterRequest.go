@@ -15,7 +15,7 @@ taobao.top.secret.register
 type TaobaoTopSecretRegisterRequest struct {
     model.Params
     // 用户id，保证唯一
-    userId   int64
+    _userId   int64
 }
 
 // 初始化TaobaoTopSecretRegisterRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopSecretRegisterRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id，保证唯一
-func (r *TaobaoTopSecretRegisterRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoTopSecretRegisterRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoTopSecretRegisterRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

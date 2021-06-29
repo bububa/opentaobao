@@ -15,11 +15,11 @@ taobao.xhotel.memberright.update
 type TaobaoXhotelMemberrightUpdateRequest struct {
     model.Params
     // 淘宝用户id
-    taobaoUserId   int64
+    _taobaoUserId   int64
     // 表示用户是否有对应的权益，取值范围true、false
-    hasRight   bool
+    _hasRight   bool
     // 会员权益类型，1表示首住权益
-    rightType   int64
+    _rightType   int64
 }
 
 // 初始化TaobaoXhotelMemberrightUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelMemberrightUpdateRequest) GetApiParams() url.Values {
 }
 // TaobaoUserId Setter
 // 淘宝用户id
-func (r *TaobaoXhotelMemberrightUpdateRequest) SetTaobaoUserId(taobaoUserId int64) error {
-    r.taobaoUserId = taobaoUserId
-    r.Set("taobao_user_id", taobaoUserId)
+func (r *TaobaoXhotelMemberrightUpdateRequest) SetTaobaoUserId(_taobaoUserId int64) error {
+    r._taobaoUserId = _taobaoUserId
+    r.Set("taobao_user_id", _taobaoUserId)
     return nil
 }
 
 // TaobaoUserId Getter
 func (r TaobaoXhotelMemberrightUpdateRequest) GetTaobaoUserId() int64 {
-    return r.taobaoUserId
+    return r._taobaoUserId
 }
 // HasRight Setter
 // 表示用户是否有对应的权益，取值范围true、false
-func (r *TaobaoXhotelMemberrightUpdateRequest) SetHasRight(hasRight bool) error {
-    r.hasRight = hasRight
-    r.Set("has_right", hasRight)
+func (r *TaobaoXhotelMemberrightUpdateRequest) SetHasRight(_hasRight bool) error {
+    r._hasRight = _hasRight
+    r.Set("has_right", _hasRight)
     return nil
 }
 
 // HasRight Getter
 func (r TaobaoXhotelMemberrightUpdateRequest) GetHasRight() bool {
-    return r.hasRight
+    return r._hasRight
 }
 // RightType Setter
 // 会员权益类型，1表示首住权益
-func (r *TaobaoXhotelMemberrightUpdateRequest) SetRightType(rightType int64) error {
-    r.rightType = rightType
-    r.Set("right_type", rightType)
+func (r *TaobaoXhotelMemberrightUpdateRequest) SetRightType(_rightType int64) error {
+    r._rightType = _rightType
+    r.Set("right_type", _rightType)
     return nil
 }
 
 // RightType Getter
 func (r TaobaoXhotelMemberrightUpdateRequest) GetRightType() int64 {
-    return r.rightType
+    return r._rightType
 }

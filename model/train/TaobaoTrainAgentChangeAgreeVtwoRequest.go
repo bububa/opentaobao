@@ -15,7 +15,7 @@ taobao.train.agent.change.agree.vtwo
 type TaobaoTrainAgentChangeAgreeVtwoRequest struct {
     model.Params
     // 代理商同意改签参数
-    param   *AgentAgreeChangeParam
+    _param   *AgentAgreeChangeParam
 }
 
 // 初始化TaobaoTrainAgentChangeAgreeVtwoRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 代理商同意改签参数
-func (r *TaobaoTrainAgentChangeAgreeVtwoRequest) SetParam(param *AgentAgreeChangeParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoTrainAgentChangeAgreeVtwoRequest) SetParam(_param *AgentAgreeChangeParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoTrainAgentChangeAgreeVtwoRequest) GetParam() *AgentAgreeChangeParam {
-    return r.param
+    return r._param
 }

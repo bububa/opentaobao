@@ -15,7 +15,7 @@ alitrip.btrip.open.supplychain.flight.trade
 type AlitripBtripOpenSupplychainFlightTradeRequest struct {
     model.Params
     // 入参对象
-    rq   *OpenApiZzdSearchRq
+    _rq   *OpenApiZzdSearchRq
 }
 
 // 初始化AlitripBtripOpenSupplychainFlightTradeRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenSupplychainFlightTradeRequest) GetApiParams() url.Values
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripOpenSupplychainFlightTradeRequest) SetRq(rq *OpenApiZzdSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenSupplychainFlightTradeRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenSupplychainFlightTradeRequest) GetRq() *OpenApiZzdSearchRq {
-    return r.rq
+    return r._rq
 }

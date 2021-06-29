@@ -15,9 +15,9 @@ taobao.scitem.map.delete
 type TaobaoScitemMapDeleteRequest struct {
     model.Params
     // 后台商品ID
-    scItemId   int64
+    _scItemId   int64
     // 店铺用户nick。 如果该参数为空则删除后端商品与当前调用人的商品映射关系;如果不为空则删除指定用户与后端商品的映射关系
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoScitemMapDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoScitemMapDeleteRequest) GetApiParams() url.Values {
 }
 // ScItemId Setter
 // 后台商品ID
-func (r *TaobaoScitemMapDeleteRequest) SetScItemId(scItemId int64) error {
-    r.scItemId = scItemId
-    r.Set("sc_item_id", scItemId)
+func (r *TaobaoScitemMapDeleteRequest) SetScItemId(_scItemId int64) error {
+    r._scItemId = _scItemId
+    r.Set("sc_item_id", _scItemId)
     return nil
 }
 
 // ScItemId Getter
 func (r TaobaoScitemMapDeleteRequest) GetScItemId() int64 {
-    return r.scItemId
+    return r._scItemId
 }
 // UserNick Setter
 // 店铺用户nick。 如果该参数为空则删除后端商品与当前调用人的商品映射关系;如果不为空则删除指定用户与后端商品的映射关系
-func (r *TaobaoScitemMapDeleteRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoScitemMapDeleteRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoScitemMapDeleteRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

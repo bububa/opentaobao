@@ -15,9 +15,9 @@ alibaba.wdk.marketing.fullrange.addexchangeitem
 type AlibabaWdkMarketingFullrangeAddexchangeitemRequest struct {
     model.Params
     // 系统自动生成
-    param0   *ItemStairSku
+    _param0   *ItemStairSku
     // 系统自动生成
-    param1   *CommonActivityParam
+    _param1   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingFullrangeAddexchangeitemRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingFullrangeAddexchangeitemRequest) GetApiParams() url.V
 }
 // Param0 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingFullrangeAddexchangeitemRequest) SetParam0(param0 *ItemStairSku) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingFullrangeAddexchangeitemRequest) SetParam0(_param0 *ItemStairSku) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingFullrangeAddexchangeitemRequest) GetParam0() *ItemStairSku {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingFullrangeAddexchangeitemRequest) SetParam1(param1 *CommonActivityParam) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaWdkMarketingFullrangeAddexchangeitemRequest) SetParam1(_param1 *CommonActivityParam) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaWdkMarketingFullrangeAddexchangeitemRequest) GetParam1() *CommonActivityParam {
-    return r.param1
+    return r._param1
 }

@@ -15,11 +15,11 @@ alibaba.campus.core.employee.modifyemployee
 type AlibabaCampusCoreEmployeeModifyemployeeRequest struct {
     model.Params
     // WorkBenchContext
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // EmployeeDto
-    employeeDto   *EmployeeDto
+    _employeeDto   *EmployeeDto
     // 用户ID
-    accountId   string
+    _accountId   string
 }
 
 // 初始化AlibabaCampusCoreEmployeeModifyemployeeRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetApiParams() url.Value
 }
 // WorkBenchContext Setter
 // WorkBenchContext
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // EmployeeDto Setter
 // EmployeeDto
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetEmployeeDto(employeeDto *EmployeeDto) error {
-    r.employeeDto = employeeDto
-    r.Set("employee_dto", employeeDto)
+func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetEmployeeDto(_employeeDto *EmployeeDto) error {
+    r._employeeDto = _employeeDto
+    r.Set("employee_dto", _employeeDto)
     return nil
 }
 
 // EmployeeDto Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetEmployeeDto() *EmployeeDto {
-    return r.employeeDto
+    return r._employeeDto
 }
 // AccountId Setter
 // 用户ID
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }

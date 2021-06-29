@@ -15,9 +15,9 @@ alibaba.xiami.api.artist.detail.get
 type AlibabaXiamiApiArtistDetailGetRequest struct {
     model.Params
     // 艺人id
-    id   int64
+    _id   int64
     // 是否显示description, show为显示, 其他为不显示
-    description   string
+    _description   string
 }
 
 // 初始化AlibabaXiamiApiArtistDetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaXiamiApiArtistDetailGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 艺人id
-func (r *AlibabaXiamiApiArtistDetailGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaXiamiApiArtistDetailGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaXiamiApiArtistDetailGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Description Setter
 // 是否显示description, show为显示, 其他为不显示
-func (r *AlibabaXiamiApiArtistDetailGetRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *AlibabaXiamiApiArtistDetailGetRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r AlibabaXiamiApiArtistDetailGetRequest) GetDescription() string {
-    return r.description
+    return r._description
 }

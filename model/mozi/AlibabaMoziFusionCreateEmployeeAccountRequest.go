@@ -15,7 +15,7 @@ alibaba.mozi.fusion.create.employee.account
 type AlibabaMoziFusionCreateEmployeeAccountRequest struct {
     model.Params
     // 入参
-    employeeAccount   *CreateTenantEmployeeAndAccountRequest
+    _employeeAccount   *CreateTenantEmployeeAndAccountRequest
 }
 
 // 初始化AlibabaMoziFusionCreateEmployeeAccountRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetApiParams() url.Values
 }
 // EmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionCreateEmployeeAccountRequest) SetEmployeeAccount(employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
-    r.employeeAccount = employeeAccount
-    r.Set("employee_account", employeeAccount)
+func (r *AlibabaMoziFusionCreateEmployeeAccountRequest) SetEmployeeAccount(_employeeAccount *CreateTenantEmployeeAndAccountRequest) error {
+    r._employeeAccount = _employeeAccount
+    r.Set("employee_account", _employeeAccount)
     return nil
 }
 
 // EmployeeAccount Getter
 func (r AlibabaMoziFusionCreateEmployeeAccountRequest) GetEmployeeAccount() *CreateTenantEmployeeAndAccountRequest {
-    return r.employeeAccount
+    return r._employeeAccount
 }

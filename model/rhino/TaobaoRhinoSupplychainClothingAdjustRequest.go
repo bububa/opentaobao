@@ -15,7 +15,7 @@ taobao.rhino.supplychain.clothing.adjust
 type TaobaoRhinoSupplychainClothingAdjustRequest struct {
     model.Params
     // 库存盘点对象
-    param0   *MaterialInventoryAdjustDto
+    _param0   *MaterialInventoryAdjustDto
 }
 
 // 初始化TaobaoRhinoSupplychainClothingAdjustRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRhinoSupplychainClothingAdjustRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 库存盘点对象
-func (r *TaobaoRhinoSupplychainClothingAdjustRequest) SetParam0(param0 *MaterialInventoryAdjustDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoRhinoSupplychainClothingAdjustRequest) SetParam0(_param0 *MaterialInventoryAdjustDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoRhinoSupplychainClothingAdjustRequest) GetParam0() *MaterialInventoryAdjustDto {
-    return r.param0
+    return r._param0
 }

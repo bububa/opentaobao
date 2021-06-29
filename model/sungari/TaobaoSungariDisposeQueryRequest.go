@@ -15,7 +15,7 @@ taobao.sungari.dispose.query
 type TaobaoSungariDisposeQueryRequest struct {
     model.Params
     // 查询的key列表
-    paramList   []string
+    _paramList   []string
 }
 
 // 初始化TaobaoSungariDisposeQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSungariDisposeQueryRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 查询的key列表
-func (r *TaobaoSungariDisposeQueryRequest) SetParamList(paramList []string) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *TaobaoSungariDisposeQueryRequest) SetParamList(_paramList []string) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r TaobaoSungariDisposeQueryRequest) GetParamList() []string {
-    return r.paramList
+    return r._paramList
 }

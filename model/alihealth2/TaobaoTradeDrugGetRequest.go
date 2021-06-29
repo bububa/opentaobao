@@ -15,11 +15,11 @@ taobao.trade.drug.get
 type TaobaoTradeDrugGetRequest struct {
     model.Params
     // 店铺id
-    storeId   int64
+    _storeId   int64
     // true-商家下所有店铺的待确认订单, false—指定店铺的订单
-    isAll   bool
+    _isAll   bool
     // 返回记录数，超过20按20条返回数据
-    maxSize   int64
+    _maxSize   int64
 }
 
 // 初始化TaobaoTradeDrugGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTradeDrugGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 店铺id
-func (r *TaobaoTradeDrugGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoTradeDrugGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoTradeDrugGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // IsAll Setter
 // true-商家下所有店铺的待确认订单, false—指定店铺的订单
-func (r *TaobaoTradeDrugGetRequest) SetIsAll(isAll bool) error {
-    r.isAll = isAll
-    r.Set("is_all", isAll)
+func (r *TaobaoTradeDrugGetRequest) SetIsAll(_isAll bool) error {
+    r._isAll = _isAll
+    r.Set("is_all", _isAll)
     return nil
 }
 
 // IsAll Getter
 func (r TaobaoTradeDrugGetRequest) GetIsAll() bool {
-    return r.isAll
+    return r._isAll
 }
 // MaxSize Setter
 // 返回记录数，超过20按20条返回数据
-func (r *TaobaoTradeDrugGetRequest) SetMaxSize(maxSize int64) error {
-    r.maxSize = maxSize
-    r.Set("max_size", maxSize)
+func (r *TaobaoTradeDrugGetRequest) SetMaxSize(_maxSize int64) error {
+    r._maxSize = _maxSize
+    r.Set("max_size", _maxSize)
     return nil
 }
 
 // MaxSize Getter
 func (r TaobaoTradeDrugGetRequest) GetMaxSize() int64 {
-    return r.maxSize
+    return r._maxSize
 }

@@ -15,7 +15,7 @@ Product delete API. Please note that there is no reverse way to retrieve the pro
 type AliexpressSolutionBatchProductDeleteRequest struct {
     model.Params
     // maximum 100
-    productIds   []int64
+    _productIds   []int64
 }
 
 // 初始化AliexpressSolutionBatchProductDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionBatchProductDeleteRequest) GetApiParams() url.Values {
 }
 // ProductIds Setter
 // maximum 100
-func (r *AliexpressSolutionBatchProductDeleteRequest) SetProductIds(productIds []int64) error {
-    r.productIds = productIds
-    r.Set("product_ids", productIds)
+func (r *AliexpressSolutionBatchProductDeleteRequest) SetProductIds(_productIds []int64) error {
+    r._productIds = _productIds
+    r.Set("product_ids", _productIds)
     return nil
 }
 
 // ProductIds Getter
 func (r AliexpressSolutionBatchProductDeleteRequest) GetProductIds() []int64 {
-    return r.productIds
+    return r._productIds
 }

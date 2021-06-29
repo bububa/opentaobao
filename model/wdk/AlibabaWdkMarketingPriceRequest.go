@@ -15,17 +15,17 @@ alibaba.wdk.marketing.price
 type AlibabaWdkMarketingPriceRequest struct {
     model.Params
     // 单页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageIndex   int64
+    _pageIndex   int64
     // 商品sku
-    skuCodes   []string
+    _skuCodes   []string
     // 门店标识数组
-    shopIds   []int64
+    _shopIds   []int64
     // 查询结束时间(sku_codes非空无效)
-    endTime   string
+    _endTime   string
     // 查询开始时间(sku_codes非空无效)
-    beginTime   string
+    _beginTime   string
 }
 
 // 初始化AlibabaWdkMarketingPriceRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaWdkMarketingPriceRequest) GetApiParams() url.Values {
 }
 // PageSize Setter
 // 单页大小
-func (r *AlibabaWdkMarketingPriceRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaWdkMarketingPriceRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaWdkMarketingPriceRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageIndex Setter
 // 页码
-func (r *AlibabaWdkMarketingPriceRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *AlibabaWdkMarketingPriceRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r AlibabaWdkMarketingPriceRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // SkuCodes Setter
 // 商品sku
-func (r *AlibabaWdkMarketingPriceRequest) SetSkuCodes(skuCodes []string) error {
-    r.skuCodes = skuCodes
-    r.Set("sku_codes", skuCodes)
+func (r *AlibabaWdkMarketingPriceRequest) SetSkuCodes(_skuCodes []string) error {
+    r._skuCodes = _skuCodes
+    r.Set("sku_codes", _skuCodes)
     return nil
 }
 
 // SkuCodes Getter
 func (r AlibabaWdkMarketingPriceRequest) GetSkuCodes() []string {
-    return r.skuCodes
+    return r._skuCodes
 }
 // ShopIds Setter
 // 门店标识数组
-func (r *AlibabaWdkMarketingPriceRequest) SetShopIds(shopIds []int64) error {
-    r.shopIds = shopIds
-    r.Set("shop_ids", shopIds)
+func (r *AlibabaWdkMarketingPriceRequest) SetShopIds(_shopIds []int64) error {
+    r._shopIds = _shopIds
+    r.Set("shop_ids", _shopIds)
     return nil
 }
 
 // ShopIds Getter
 func (r AlibabaWdkMarketingPriceRequest) GetShopIds() []int64 {
-    return r.shopIds
+    return r._shopIds
 }
 // EndTime Setter
 // 查询结束时间(sku_codes非空无效)
-func (r *AlibabaWdkMarketingPriceRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaWdkMarketingPriceRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaWdkMarketingPriceRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // BeginTime Setter
 // 查询开始时间(sku_codes非空无效)
-func (r *AlibabaWdkMarketingPriceRequest) SetBeginTime(beginTime string) error {
-    r.beginTime = beginTime
-    r.Set("begin_time", beginTime)
+func (r *AlibabaWdkMarketingPriceRequest) SetBeginTime(_beginTime string) error {
+    r._beginTime = _beginTime
+    r.Set("begin_time", _beginTime)
     return nil
 }
 
 // BeginTime Getter
 func (r AlibabaWdkMarketingPriceRequest) GetBeginTime() string {
-    return r.beginTime
+    return r._beginTime
 }

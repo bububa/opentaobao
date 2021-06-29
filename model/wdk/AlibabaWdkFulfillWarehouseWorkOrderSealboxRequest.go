@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.warehouse.work.order.sealbox
 type AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest struct {
     model.Params
     // 同城交付物箱
-    sameTownBox   *SameTownBox
+    _sameTownBox   *SameTownBox
 }
 
 // 初始化AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetApiParams() url.Va
 }
 // SameTownBox Setter
 // 同城交付物箱
-func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) SetSameTownBox(sameTownBox *SameTownBox) error {
-    r.sameTownBox = sameTownBox
-    r.Set("same_town_box", sameTownBox)
+func (r *AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) SetSameTownBox(_sameTownBox *SameTownBox) error {
+    r._sameTownBox = _sameTownBox
+    r.Set("same_town_box", _sameTownBox)
     return nil
 }
 
 // SameTownBox Getter
 func (r AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest) GetSameTownBox() *SameTownBox {
-    return r.sameTownBox
+    return r._sameTownBox
 }

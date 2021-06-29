@@ -20,11 +20,11 @@ taobao.trade.fullinfo.get
 type TaobaoTradeFullinfoGetRequest struct {
     model.Params
     // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
-    fields   string
+    _fields   string
     // 交易编号
-    tid   int64
+    _tid   int64
     // appkey未对接oaid加密，则忽略该字段。对接oaid加密情况下，（收货人+手机号+座机+收货地址+create）5个字段组合成oaid，原始订单上座机为空也满足条件。传true，代表必须返回oaid，生成不了就报isv.oaid-field-miss错误；默认或者传false，满足生成条件则返回oaid，否则为空
-    includeOaid   string
+    _includeOaid   string
 }
 
 // 初始化TaobaoTradeFullinfoGetRequest对象
@@ -49,37 +49,37 @@ func (r TaobaoTradeFullinfoGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。
-func (r *TaobaoTradeFullinfoGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoTradeFullinfoGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoTradeFullinfoGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // Tid Setter
 // 交易编号
-func (r *TaobaoTradeFullinfoGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeFullinfoGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeFullinfoGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // IncludeOaid Setter
 // appkey未对接oaid加密，则忽略该字段。对接oaid加密情况下，（收货人+手机号+座机+收货地址+create）5个字段组合成oaid，原始订单上座机为空也满足条件。传true，代表必须返回oaid，生成不了就报isv.oaid-field-miss错误；默认或者传false，满足生成条件则返回oaid，否则为空
-func (r *TaobaoTradeFullinfoGetRequest) SetIncludeOaid(includeOaid string) error {
-    r.includeOaid = includeOaid
-    r.Set("include_oaid", includeOaid)
+func (r *TaobaoTradeFullinfoGetRequest) SetIncludeOaid(_includeOaid string) error {
+    r._includeOaid = _includeOaid
+    r.Set("include_oaid", _includeOaid)
     return nil
 }
 
 // IncludeOaid Getter
 func (r TaobaoTradeFullinfoGetRequest) GetIncludeOaid() string {
-    return r.includeOaid
+    return r._includeOaid
 }

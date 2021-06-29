@@ -15,9 +15,9 @@ taobao.skus.custom.get
 type TaobaoSkusCustomGetRequest struct {
     model.Params
     // Sku的外部商家ID
-    outerId   string
+    _outerId   string
     // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”隔开
-    fields   string
+    _fields   string
 }
 
 // 初始化TaobaoSkusCustomGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSkusCustomGetRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // Sku的外部商家ID
-func (r *TaobaoSkusCustomGetRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoSkusCustomGetRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoSkusCustomGetRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”隔开
-func (r *TaobaoSkusCustomGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoSkusCustomGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoSkusCustomGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

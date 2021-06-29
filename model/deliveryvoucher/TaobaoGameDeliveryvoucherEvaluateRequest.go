@@ -15,7 +15,7 @@ taobao.game.deliveryvoucher.evaluate
 type TaobaoGameDeliveryvoucherEvaluateRequest struct {
     model.Params
     // 系统自动生成
-    param0   *VoucherEvaluateRequest
+    _param0   *VoucherEvaluateRequest
 }
 
 // 初始化TaobaoGameDeliveryvoucherEvaluateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 系统自动生成
-func (r *TaobaoGameDeliveryvoucherEvaluateRequest) SetParam0(param0 *VoucherEvaluateRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoGameDeliveryvoucherEvaluateRequest) SetParam0(_param0 *VoucherEvaluateRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoGameDeliveryvoucherEvaluateRequest) GetParam0() *VoucherEvaluateRequest {
-    return r.param0
+    return r._param0
 }

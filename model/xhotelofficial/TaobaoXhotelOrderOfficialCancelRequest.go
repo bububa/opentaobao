@@ -15,15 +15,15 @@ taobao.xhotel.order.official.cancel
 type TaobaoXhotelOrderOfficialCancelRequest struct {
     model.Params
     // 淘宝订单号,必选
-    tid   int64
+    _tid   int64
     // 原因描述
-    reasonText   string
+    _reasonText   string
     // 外部订单号
-    outId   string
+    _outId   string
     // 请求流水号（必须传入）
-    outUuid   string
+    _outUuid   string
     // 暂无意义，无需传入
-    notifyUrl   string
+    _notifyUrl   string
 }
 
 // 初始化TaobaoXhotelOrderOfficialCancelRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoXhotelOrderOfficialCancelRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝订单号,必选
-func (r *TaobaoXhotelOrderOfficialCancelRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoXhotelOrderOfficialCancelRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoXhotelOrderOfficialCancelRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // ReasonText Setter
 // 原因描述
-func (r *TaobaoXhotelOrderOfficialCancelRequest) SetReasonText(reasonText string) error {
-    r.reasonText = reasonText
-    r.Set("reason_text", reasonText)
+func (r *TaobaoXhotelOrderOfficialCancelRequest) SetReasonText(_reasonText string) error {
+    r._reasonText = _reasonText
+    r.Set("reason_text", _reasonText)
     return nil
 }
 
 // ReasonText Getter
 func (r TaobaoXhotelOrderOfficialCancelRequest) GetReasonText() string {
-    return r.reasonText
+    return r._reasonText
 }
 // OutId Setter
 // 外部订单号
-func (r *TaobaoXhotelOrderOfficialCancelRequest) SetOutId(outId string) error {
-    r.outId = outId
-    r.Set("out_id", outId)
+func (r *TaobaoXhotelOrderOfficialCancelRequest) SetOutId(_outId string) error {
+    r._outId = _outId
+    r.Set("out_id", _outId)
     return nil
 }
 
 // OutId Getter
 func (r TaobaoXhotelOrderOfficialCancelRequest) GetOutId() string {
-    return r.outId
+    return r._outId
 }
 // OutUuid Setter
 // 请求流水号（必须传入）
-func (r *TaobaoXhotelOrderOfficialCancelRequest) SetOutUuid(outUuid string) error {
-    r.outUuid = outUuid
-    r.Set("out_uuid", outUuid)
+func (r *TaobaoXhotelOrderOfficialCancelRequest) SetOutUuid(_outUuid string) error {
+    r._outUuid = _outUuid
+    r.Set("out_uuid", _outUuid)
     return nil
 }
 
 // OutUuid Getter
 func (r TaobaoXhotelOrderOfficialCancelRequest) GetOutUuid() string {
-    return r.outUuid
+    return r._outUuid
 }
 // NotifyUrl Setter
 // 暂无意义，无需传入
-func (r *TaobaoXhotelOrderOfficialCancelRequest) SetNotifyUrl(notifyUrl string) error {
-    r.notifyUrl = notifyUrl
-    r.Set("notify_url", notifyUrl)
+func (r *TaobaoXhotelOrderOfficialCancelRequest) SetNotifyUrl(_notifyUrl string) error {
+    r._notifyUrl = _notifyUrl
+    r.Set("notify_url", _notifyUrl)
     return nil
 }
 
 // NotifyUrl Getter
 func (r TaobaoXhotelOrderOfficialCancelRequest) GetNotifyUrl() string {
-    return r.notifyUrl
+    return r._notifyUrl
 }

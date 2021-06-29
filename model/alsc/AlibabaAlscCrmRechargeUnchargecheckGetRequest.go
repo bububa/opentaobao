@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.unchargecheck.get
 type AlibabaAlscCrmRechargeUnchargecheckGetRequest struct {
     model.Params
     // 入参
-    paramUnchargeCheckOpenReq   *UnchargeCheckOpenReq
+    _paramUnchargeCheckOpenReq   *UnchargeCheckOpenReq
 }
 
 // 初始化AlibabaAlscCrmRechargeUnchargecheckGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeUnchargecheckGetRequest) GetApiParams() url.Values
 }
 // ParamUnchargeCheckOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeUnchargecheckGetRequest) SetParamUnchargeCheckOpenReq(paramUnchargeCheckOpenReq *UnchargeCheckOpenReq) error {
-    r.paramUnchargeCheckOpenReq = paramUnchargeCheckOpenReq
-    r.Set("param_uncharge_check_open_req", paramUnchargeCheckOpenReq)
+func (r *AlibabaAlscCrmRechargeUnchargecheckGetRequest) SetParamUnchargeCheckOpenReq(_paramUnchargeCheckOpenReq *UnchargeCheckOpenReq) error {
+    r._paramUnchargeCheckOpenReq = _paramUnchargeCheckOpenReq
+    r.Set("param_uncharge_check_open_req", _paramUnchargeCheckOpenReq)
     return nil
 }
 
 // ParamUnchargeCheckOpenReq Getter
 func (r AlibabaAlscCrmRechargeUnchargecheckGetRequest) GetParamUnchargeCheckOpenReq() *UnchargeCheckOpenReq {
-    return r.paramUnchargeCheckOpenReq
+    return r._paramUnchargeCheckOpenReq
 }

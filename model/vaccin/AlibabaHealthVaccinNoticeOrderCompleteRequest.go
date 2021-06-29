@@ -15,9 +15,9 @@ alibaba.health.vaccin.notice.order.complete
 type AlibabaHealthVaccinNoticeOrderCompleteRequest struct {
     model.Params
     // 支付宝唯一标识
-    alipayUserId   string
+    _alipayUserId   string
     // 在ISV预约单唯一标识
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHealthVaccinNoticeOrderCompleteRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaHealthVaccinNoticeOrderCompleteRequest) GetApiParams() url.Values
 }
 // AlipayUserId Setter
 // 支付宝唯一标识
-func (r *AlibabaHealthVaccinNoticeOrderCompleteRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinNoticeOrderCompleteRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCompleteRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // OrderId Setter
 // 在ISV预约单唯一标识
-func (r *AlibabaHealthVaccinNoticeOrderCompleteRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthVaccinNoticeOrderCompleteRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCompleteRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

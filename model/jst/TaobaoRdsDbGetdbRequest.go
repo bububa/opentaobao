@@ -15,9 +15,9 @@ rds获取RDS的DB
 type TaobaoRdsDbGetdbRequest struct {
     model.Params
     // 账户名
-    accountName   string
+    _accountName   string
     // 实例名
-    instanceName   string
+    _instanceName   string
 }
 
 // 初始化TaobaoRdsDbGetdbRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoRdsDbGetdbRequest) GetApiParams() url.Values {
 }
 // AccountName Setter
 // 账户名
-func (r *TaobaoRdsDbGetdbRequest) SetAccountName(accountName string) error {
-    r.accountName = accountName
-    r.Set("account_name", accountName)
+func (r *TaobaoRdsDbGetdbRequest) SetAccountName(_accountName string) error {
+    r._accountName = _accountName
+    r.Set("account_name", _accountName)
     return nil
 }
 
 // AccountName Getter
 func (r TaobaoRdsDbGetdbRequest) GetAccountName() string {
-    return r.accountName
+    return r._accountName
 }
 // InstanceName Setter
 // 实例名
-func (r *TaobaoRdsDbGetdbRequest) SetInstanceName(instanceName string) error {
-    r.instanceName = instanceName
-    r.Set("instance_name", instanceName)
+func (r *TaobaoRdsDbGetdbRequest) SetInstanceName(_instanceName string) error {
+    r._instanceName = _instanceName
+    r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
 func (r TaobaoRdsDbGetdbRequest) GetInstanceName() string {
-    return r.instanceName
+    return r._instanceName
 }

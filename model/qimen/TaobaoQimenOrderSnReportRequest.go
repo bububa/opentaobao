@@ -15,7 +15,7 @@ WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之�
 type TaobaoQimenOrderSnReportRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenOrderSnReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderSnReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderSnReportRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderSnReportRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderSnReportRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

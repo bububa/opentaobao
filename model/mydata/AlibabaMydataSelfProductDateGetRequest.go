@@ -15,7 +15,7 @@ alibaba.mydata.self.product.date.get
 type AlibabaMydataSelfProductDateGetRequest struct {
     model.Params
     // 统计周期类型，可以为"day"，"week"，"month"
-    statisticsType   string
+    _statisticsType   string
 }
 
 // 初始化AlibabaMydataSelfProductDateGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMydataSelfProductDateGetRequest) GetApiParams() url.Values {
 }
 // StatisticsType Setter
 // 统计周期类型，可以为"day"，"week"，"month"
-func (r *AlibabaMydataSelfProductDateGetRequest) SetStatisticsType(statisticsType string) error {
-    r.statisticsType = statisticsType
-    r.Set("statistics_type", statisticsType)
+func (r *AlibabaMydataSelfProductDateGetRequest) SetStatisticsType(_statisticsType string) error {
+    r._statisticsType = _statisticsType
+    r.Set("statistics_type", _statisticsType)
     return nil
 }
 
 // StatisticsType Getter
 func (r AlibabaMydataSelfProductDateGetRequest) GetStatisticsType() string {
-    return r.statisticsType
+    return r._statisticsType
 }

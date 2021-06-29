@@ -15,9 +15,9 @@ iot无人超市服务商通过接口获取影院的可售卖品数据
 type TaobaoLarkIotOrderGetgoodslistRequest struct {
     model.Params
     // 渠道编码
-    channelCode   string
+    _channelCode   string
     // 影院内码
-    cinemaLinkId   string
+    _cinemaLinkId   string
 }
 
 // 初始化TaobaoLarkIotOrderGetgoodslistRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoLarkIotOrderGetgoodslistRequest) GetApiParams() url.Values {
 }
 // ChannelCode Setter
 // 渠道编码
-func (r *TaobaoLarkIotOrderGetgoodslistRequest) SetChannelCode(channelCode string) error {
-    r.channelCode = channelCode
-    r.Set("channel_code", channelCode)
+func (r *TaobaoLarkIotOrderGetgoodslistRequest) SetChannelCode(_channelCode string) error {
+    r._channelCode = _channelCode
+    r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
 func (r TaobaoLarkIotOrderGetgoodslistRequest) GetChannelCode() string {
-    return r.channelCode
+    return r._channelCode
 }
 // CinemaLinkId Setter
 // 影院内码
-func (r *TaobaoLarkIotOrderGetgoodslistRequest) SetCinemaLinkId(cinemaLinkId string) error {
-    r.cinemaLinkId = cinemaLinkId
-    r.Set("cinema_link_id", cinemaLinkId)
+func (r *TaobaoLarkIotOrderGetgoodslistRequest) SetCinemaLinkId(_cinemaLinkId string) error {
+    r._cinemaLinkId = _cinemaLinkId
+    r.Set("cinema_link_id", _cinemaLinkId)
     return nil
 }
 
 // CinemaLinkId Getter
 func (r TaobaoLarkIotOrderGetgoodslistRequest) GetCinemaLinkId() string {
-    return r.cinemaLinkId
+    return r._cinemaLinkId
 }

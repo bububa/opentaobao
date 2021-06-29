@@ -15,11 +15,11 @@ alibaba.wdk.item.merchantsku.update
 type AlibabaWdkItemMerchantskuUpdateRequest struct {
     model.Params
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 参数json
-    params   string
+    _params   string
     // 机构编码
-    orgCode   string
+    _orgCode   string
 }
 
 // 初始化AlibabaWdkItemMerchantskuUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkItemMerchantskuUpdateRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemMerchantskuUpdateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // Params Setter
 // 参数json
-func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaWdkItemMerchantskuUpdateRequest) GetParams() string {
-    return r.params
+    return r._params
 }
 // OrgCode Setter
 // 机构编码
-func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetOrgCode(orgCode string) error {
-    r.orgCode = orgCode
-    r.Set("org_code", orgCode)
+func (r *AlibabaWdkItemMerchantskuUpdateRequest) SetOrgCode(_orgCode string) error {
+    r._orgCode = _orgCode
+    r.Set("org_code", _orgCode)
     return nil
 }
 
 // OrgCode Getter
 func (r AlibabaWdkItemMerchantskuUpdateRequest) GetOrgCode() string {
-    return r.orgCode
+    return r._orgCode
 }

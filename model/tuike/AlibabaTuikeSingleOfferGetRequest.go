@@ -15,9 +15,9 @@ alibaba.tuike.single.offer.get
 type AlibabaTuikeSingleOfferGetRequest struct {
     model.Params
     // 推客id
-    loginId   string
+    _loginId   string
     // 商品id
-    offerId   int64
+    _offerId   int64
 }
 
 // 初始化AlibabaTuikeSingleOfferGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaTuikeSingleOfferGetRequest) GetApiParams() url.Values {
 }
 // LoginId Setter
 // 推客id
-func (r *AlibabaTuikeSingleOfferGetRequest) SetLoginId(loginId string) error {
-    r.loginId = loginId
-    r.Set("login_id", loginId)
+func (r *AlibabaTuikeSingleOfferGetRequest) SetLoginId(_loginId string) error {
+    r._loginId = _loginId
+    r.Set("login_id", _loginId)
     return nil
 }
 
 // LoginId Getter
 func (r AlibabaTuikeSingleOfferGetRequest) GetLoginId() string {
-    return r.loginId
+    return r._loginId
 }
 // OfferId Setter
 // 商品id
-func (r *AlibabaTuikeSingleOfferGetRequest) SetOfferId(offerId int64) error {
-    r.offerId = offerId
-    r.Set("offer_id", offerId)
+func (r *AlibabaTuikeSingleOfferGetRequest) SetOfferId(_offerId int64) error {
+    r._offerId = _offerId
+    r.Set("offer_id", _offerId)
     return nil
 }
 
 // OfferId Getter
 func (r AlibabaTuikeSingleOfferGetRequest) GetOfferId() int64 {
-    return r.offerId
+    return r._offerId
 }

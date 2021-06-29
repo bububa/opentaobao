@@ -15,7 +15,7 @@ alibaba.legal.suit.court.open.push
 type AlibabaLegalSuitCourtOpenPushRequest struct {
     model.Params
     // 开庭信息
-    courtInfoModel   *CourtInfoModel
+    _courtInfoModel   *CourtInfoModel
 }
 
 // 初始化AlibabaLegalSuitCourtOpenPushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitCourtOpenPushRequest) GetApiParams() url.Values {
 }
 // CourtInfoModel Setter
 // 开庭信息
-func (r *AlibabaLegalSuitCourtOpenPushRequest) SetCourtInfoModel(courtInfoModel *CourtInfoModel) error {
-    r.courtInfoModel = courtInfoModel
-    r.Set("court_info_model", courtInfoModel)
+func (r *AlibabaLegalSuitCourtOpenPushRequest) SetCourtInfoModel(_courtInfoModel *CourtInfoModel) error {
+    r._courtInfoModel = _courtInfoModel
+    r.Set("court_info_model", _courtInfoModel)
     return nil
 }
 
 // CourtInfoModel Getter
 func (r AlibabaLegalSuitCourtOpenPushRequest) GetCourtInfoModel() *CourtInfoModel {
-    return r.courtInfoModel
+    return r._courtInfoModel
 }

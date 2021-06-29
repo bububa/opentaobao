@@ -15,7 +15,7 @@ taobao.qimen.trade.user.add
 type TaobaoQimenTradeUserAddRequest struct {
     model.Params
     // 商家备注
-    memo   string
+    _memo   string
 }
 
 // 初始化TaobaoQimenTradeUserAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenTradeUserAddRequest) GetApiParams() url.Values {
 }
 // Memo Setter
 // 商家备注
-func (r *TaobaoQimenTradeUserAddRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *TaobaoQimenTradeUserAddRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r TaobaoQimenTradeUserAddRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }

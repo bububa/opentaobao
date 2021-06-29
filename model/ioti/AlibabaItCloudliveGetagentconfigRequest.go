@@ -15,13 +15,13 @@ alibaba.it.cloudlive.getagentconfig
 type AlibabaItCloudliveGetagentconfigRequest struct {
     model.Params
     // agent标识信息
-    agentId   string
+    _agentId   string
     // 时间戳
-    timeStamp   int64
+    _timeStamp   int64
     // 签名
-    signature   string
+    _signature   string
     // 设备所在IP地址
-    agentIp   string
+    _agentIp   string
 }
 
 // 初始化AlibabaItCloudliveGetagentconfigRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaItCloudliveGetagentconfigRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // agent标识信息
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentId(agentId string) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentId(_agentId string) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlibabaItCloudliveGetagentconfigRequest) GetAgentId() string {
-    return r.agentId
+    return r._agentId
 }
 // TimeStamp Setter
 // 时间戳
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetTimeStamp(timeStamp int64) error {
-    r.timeStamp = timeStamp
-    r.Set("time_stamp", timeStamp)
+func (r *AlibabaItCloudliveGetagentconfigRequest) SetTimeStamp(_timeStamp int64) error {
+    r._timeStamp = _timeStamp
+    r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
 func (r AlibabaItCloudliveGetagentconfigRequest) GetTimeStamp() int64 {
-    return r.timeStamp
+    return r._timeStamp
 }
 // Signature Setter
 // 签名
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetSignature(signature string) error {
-    r.signature = signature
-    r.Set("signature", signature)
+func (r *AlibabaItCloudliveGetagentconfigRequest) SetSignature(_signature string) error {
+    r._signature = _signature
+    r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
 func (r AlibabaItCloudliveGetagentconfigRequest) GetSignature() string {
-    return r.signature
+    return r._signature
 }
 // AgentIp Setter
 // 设备所在IP地址
-func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentIp(agentIp string) error {
-    r.agentIp = agentIp
-    r.Set("agent_ip", agentIp)
+func (r *AlibabaItCloudliveGetagentconfigRequest) SetAgentIp(_agentIp string) error {
+    r._agentIp = _agentIp
+    r.Set("agent_ip", _agentIp)
     return nil
 }
 
 // AgentIp Getter
 func (r AlibabaItCloudliveGetagentconfigRequest) GetAgentIp() string {
-    return r.agentIp
+    return r._agentIp
 }

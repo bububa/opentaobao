@@ -15,9 +15,9 @@ taobao.promotionmisc.common.item.activity.list.get
 type TaobaoPromotionmiscCommonItemActivityListGetRequest struct {
     model.Params
     // 分页页码，页码从1开始
-    pageNo   int64
+    _pageNo   int64
     // 分页大小，不能超过50
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPromotionmiscCommonItemActivityListGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetApiParams() url.
 }
 // PageNo Setter
 // 分页页码，页码从1开始
-func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页大小，不能超过50
-func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionmiscCommonItemActivityListGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionmiscCommonItemActivityListGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

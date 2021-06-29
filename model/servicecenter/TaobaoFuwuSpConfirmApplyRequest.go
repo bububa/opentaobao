@@ -15,7 +15,7 @@ isv能通过该接口发起确认申请单
 type TaobaoFuwuSpConfirmApplyRequest struct {
     model.Params
     // 确认单申请
-    paramIncomeConfirmDTO   *IncomeConfirmDto
+    _paramIncomeConfirmDTO   *IncomeConfirmDto
 }
 
 // 初始化TaobaoFuwuSpConfirmApplyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFuwuSpConfirmApplyRequest) GetApiParams() url.Values {
 }
 // ParamIncomeConfirmDTO Setter
 // 确认单申请
-func (r *TaobaoFuwuSpConfirmApplyRequest) SetParamIncomeConfirmDTO(paramIncomeConfirmDTO *IncomeConfirmDto) error {
-    r.paramIncomeConfirmDTO = paramIncomeConfirmDTO
-    r.Set("param_income_confirm_d_t_o", paramIncomeConfirmDTO)
+func (r *TaobaoFuwuSpConfirmApplyRequest) SetParamIncomeConfirmDTO(_paramIncomeConfirmDTO *IncomeConfirmDto) error {
+    r._paramIncomeConfirmDTO = _paramIncomeConfirmDTO
+    r.Set("param_income_confirm_d_t_o", _paramIncomeConfirmDTO)
     return nil
 }
 
 // ParamIncomeConfirmDTO Getter
 func (r TaobaoFuwuSpConfirmApplyRequest) GetParamIncomeConfirmDTO() *IncomeConfirmDto {
-    return r.paramIncomeConfirmDTO
+    return r._paramIncomeConfirmDTO
 }

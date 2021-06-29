@@ -15,7 +15,7 @@ taobao.scitem.get
 type TaobaoScitemGetRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoScitemGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoScitemGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoScitemGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoScitemGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoScitemGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

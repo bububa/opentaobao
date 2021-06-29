@@ -15,7 +15,7 @@ alibaba.wdk.coupon.contract.create
 type AlibabaWdkCouponContractCreateRequest struct {
     model.Params
     // 调用入参
-    createContractInstanceRequest   *CreateContractInstanceRequest
+    _createContractInstanceRequest   *CreateContractInstanceRequest
 }
 
 // 初始化AlibabaWdkCouponContractCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponContractCreateRequest) GetApiParams() url.Values {
 }
 // CreateContractInstanceRequest Setter
 // 调用入参
-func (r *AlibabaWdkCouponContractCreateRequest) SetCreateContractInstanceRequest(createContractInstanceRequest *CreateContractInstanceRequest) error {
-    r.createContractInstanceRequest = createContractInstanceRequest
-    r.Set("create_contract_instance_request", createContractInstanceRequest)
+func (r *AlibabaWdkCouponContractCreateRequest) SetCreateContractInstanceRequest(_createContractInstanceRequest *CreateContractInstanceRequest) error {
+    r._createContractInstanceRequest = _createContractInstanceRequest
+    r.Set("create_contract_instance_request", _createContractInstanceRequest)
     return nil
 }
 
 // CreateContractInstanceRequest Getter
 func (r AlibabaWdkCouponContractCreateRequest) GetCreateContractInstanceRequest() *CreateContractInstanceRequest {
-    return r.createContractInstanceRequest
+    return r._createContractInstanceRequest
 }

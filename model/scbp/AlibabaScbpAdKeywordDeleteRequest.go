@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.delete
 type AlibabaScbpAdKeywordDeleteRequest struct {
     model.Params
     // 要删除的关键词
-    adKeyword   string
+    _adKeyword   string
 }
 
 // 初始化AlibabaScbpAdKeywordDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordDeleteRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 要删除的关键词
-func (r *AlibabaScbpAdKeywordDeleteRequest) SetAdKeyword(adKeyword string) error {
-    r.adKeyword = adKeyword
-    r.Set("ad_keyword", adKeyword)
+func (r *AlibabaScbpAdKeywordDeleteRequest) SetAdKeyword(_adKeyword string) error {
+    r._adKeyword = _adKeyword
+    r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
 func (r AlibabaScbpAdKeywordDeleteRequest) GetAdKeyword() string {
-    return r.adKeyword
+    return r._adKeyword
 }

@@ -15,13 +15,13 @@ taobao.ailab.aicloud.top.device.control.lamp
 type TaobaoAilabAicloudTopDeviceControlLampRequest struct {
     model.Params
     // 用户信息
-    param0   *OpenBaseInfo
+    _param0   *OpenBaseInfo
     // 设备id
-    param1   string
+    _param1   string
     // 是否打开
-    param2   bool
+    _param2   bool
     // 目标名称
-    param3   string
+    _param3   string
 }
 
 // 初始化TaobaoAilabAicloudTopDeviceControlLampRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudTopDeviceControlLampRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam0(param0 *OpenBaseInfo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam0(_param0 *OpenBaseInfo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlLampRequest) GetParam0() *OpenBaseInfo {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam1(param1 string) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam1(_param1 string) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlLampRequest) GetParam1() string {
-    return r.param1
+    return r._param1
 }
 // Param2 Setter
 // 是否打开
-func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam2(param2 bool) error {
-    r.param2 = param2
-    r.Set("param2", param2)
+func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam2(_param2 bool) error {
+    r._param2 = _param2
+    r.Set("param2", _param2)
     return nil
 }
 
 // Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlLampRequest) GetParam2() bool {
-    return r.param2
+    return r._param2
 }
 // Param3 Setter
 // 目标名称
-func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam3(param3 string) error {
-    r.param3 = param3
-    r.Set("param3", param3)
+func (r *TaobaoAilabAicloudTopDeviceControlLampRequest) SetParam3(_param3 string) error {
+    r._param3 = _param3
+    r.Set("param3", _param3)
     return nil
 }
 
 // Param3 Getter
 func (r TaobaoAilabAicloudTopDeviceControlLampRequest) GetParam3() string {
-    return r.param3
+    return r._param3
 }

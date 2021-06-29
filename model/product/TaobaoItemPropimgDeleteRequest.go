@@ -15,9 +15,9 @@ taobao.item.propimg.delete
 type TaobaoItemPropimgDeleteRequest struct {
     model.Params
     // 商品属性图片ID
-    id   int64
+    _id   int64
     // 商品数字ID，必选
-    numIid   int64
+    _numIid   int64
 }
 
 // 初始化TaobaoItemPropimgDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoItemPropimgDeleteRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 商品属性图片ID
-func (r *TaobaoItemPropimgDeleteRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoItemPropimgDeleteRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoItemPropimgDeleteRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // NumIid Setter
 // 商品数字ID，必选
-func (r *TaobaoItemPropimgDeleteRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemPropimgDeleteRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemPropimgDeleteRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }

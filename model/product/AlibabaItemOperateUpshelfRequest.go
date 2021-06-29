@@ -15,9 +15,9 @@ alibaba.item.operate.upshelf
 type AlibabaItemOperateUpshelfRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 商品库存
-    quantity   int64
+    _quantity   int64
 }
 
 // 初始化AlibabaItemOperateUpshelfRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaItemOperateUpshelfRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemOperateUpshelfRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaItemOperateUpshelfRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaItemOperateUpshelfRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Quantity Setter
 // 商品库存
-func (r *AlibabaItemOperateUpshelfRequest) SetQuantity(quantity int64) error {
-    r.quantity = quantity
-    r.Set("quantity", quantity)
+func (r *AlibabaItemOperateUpshelfRequest) SetQuantity(_quantity int64) error {
+    r._quantity = _quantity
+    r.Set("quantity", _quantity)
     return nil
 }
 
 // Quantity Getter
 func (r AlibabaItemOperateUpshelfRequest) GetQuantity() int64 {
-    return r.quantity
+    return r._quantity
 }

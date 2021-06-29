@@ -15,11 +15,11 @@ alibaba.idle.isv.media.upload
 type AlibabaIdleIsvMediaUploadRequest struct {
     model.Params
     // 多媒体字节数组
-    data   []*model.File
+    _data   []*model.File
     // 文件名
-    name   string
+    _name   string
     // 0-表示图片，1-表示视频（暂不支持）
-    type   int64
+    _type   int64
 }
 
 // 初始化AlibabaIdleIsvMediaUploadRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaIdleIsvMediaUploadRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 多媒体字节数组
-func (r *AlibabaIdleIsvMediaUploadRequest) SetData(data []*model.File) error {
-    r.data = data
-    r.Set("data", data)
+func (r *AlibabaIdleIsvMediaUploadRequest) SetData(_data []*model.File) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r AlibabaIdleIsvMediaUploadRequest) GetData() []*model.File {
-    return r.data
+    return r._data
 }
 // Name Setter
 // 文件名
-func (r *AlibabaIdleIsvMediaUploadRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaIdleIsvMediaUploadRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaIdleIsvMediaUploadRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Type Setter
 // 0-表示图片，1-表示视频（暂不支持）
-func (r *AlibabaIdleIsvMediaUploadRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaIdleIsvMediaUploadRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaIdleIsvMediaUploadRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

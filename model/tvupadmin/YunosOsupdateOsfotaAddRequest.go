@@ -15,7 +15,7 @@ yunos.osupdate.osfota.add
 type YunosOsupdateOsfotaAddRequest struct {
     model.Params
     // 系统升级任务json格式
-    osFotaJson   string
+    _osFotaJson   string
 }
 
 // 初始化YunosOsupdateOsfotaAddRequest对象
@@ -40,13 +40,13 @@ func (r YunosOsupdateOsfotaAddRequest) GetApiParams() url.Values {
 }
 // OsFotaJson Setter
 // 系统升级任务json格式
-func (r *YunosOsupdateOsfotaAddRequest) SetOsFotaJson(osFotaJson string) error {
-    r.osFotaJson = osFotaJson
-    r.Set("os_fota_json", osFotaJson)
+func (r *YunosOsupdateOsfotaAddRequest) SetOsFotaJson(_osFotaJson string) error {
+    r._osFotaJson = _osFotaJson
+    r.Set("os_fota_json", _osFotaJson)
     return nil
 }
 
 // OsFotaJson Getter
 func (r YunosOsupdateOsfotaAddRequest) GetOsFotaJson() string {
-    return r.osFotaJson
+    return r._osFotaJson
 }

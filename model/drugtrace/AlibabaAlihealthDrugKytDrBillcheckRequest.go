@@ -15,13 +15,13 @@ alibaba.alihealth.drug.kyt.dr.billcheck
 type AlibabaAlihealthDrugKytDrBillcheckRequest struct {
     model.Params
     // 调用企业ID
-    refEntId   string
+    _refEntId   string
     // 单据编号
-    billCode   string
+    _billCode   string
     // 单据类型
-    billType   string
+    _billType   string
     // 单据企业refEntId
-    owerRefEntId   string
+    _owerRefEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrBillcheckRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugKytDrBillcheckRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 调用企业ID
-func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BillCode Setter
 // 单据编号
-func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetBillCode(billCode string) error {
-    r.billCode = billCode
-    r.Set("bill_code", billCode)
+func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetBillCode(_billCode string) error {
+    r._billCode = _billCode
+    r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckRequest) GetBillCode() string {
-    return r.billCode
+    return r._billCode
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }
 // OwerRefEntId Setter
 // 单据企业refEntId
-func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetOwerRefEntId(owerRefEntId string) error {
-    r.owerRefEntId = owerRefEntId
-    r.Set("ower_ref_ent_id", owerRefEntId)
+func (r *AlibabaAlihealthDrugKytDrBillcheckRequest) SetOwerRefEntId(_owerRefEntId string) error {
+    r._owerRefEntId = _owerRefEntId
+    r.Set("ower_ref_ent_id", _owerRefEntId)
     return nil
 }
 
 // OwerRefEntId Getter
 func (r AlibabaAlihealthDrugKytDrBillcheckRequest) GetOwerRefEntId() string {
-    return r.owerRefEntId
+    return r._owerRefEntId
 }

@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.query.template
 type AlibabaAlscCrmCardQueryTemplateRequest struct {
     model.Params
     // 请求对象
-    paramQueryCardTemplateOpenReq   *QueryCardTemplateOpenReq
+    _paramQueryCardTemplateOpenReq   *QueryCardTemplateOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardQueryTemplateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardQueryTemplateRequest) GetApiParams() url.Values {
 }
 // ParamQueryCardTemplateOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardQueryTemplateRequest) SetParamQueryCardTemplateOpenReq(paramQueryCardTemplateOpenReq *QueryCardTemplateOpenReq) error {
-    r.paramQueryCardTemplateOpenReq = paramQueryCardTemplateOpenReq
-    r.Set("param_query_card_template_open_req", paramQueryCardTemplateOpenReq)
+func (r *AlibabaAlscCrmCardQueryTemplateRequest) SetParamQueryCardTemplateOpenReq(_paramQueryCardTemplateOpenReq *QueryCardTemplateOpenReq) error {
+    r._paramQueryCardTemplateOpenReq = _paramQueryCardTemplateOpenReq
+    r.Set("param_query_card_template_open_req", _paramQueryCardTemplateOpenReq)
     return nil
 }
 
 // ParamQueryCardTemplateOpenReq Getter
 func (r AlibabaAlscCrmCardQueryTemplateRequest) GetParamQueryCardTemplateOpenReq() *QueryCardTemplateOpenReq {
-    return r.paramQueryCardTemplateOpenReq
+    return r._paramQueryCardTemplateOpenReq
 }

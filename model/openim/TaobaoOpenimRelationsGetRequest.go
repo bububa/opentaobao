@@ -15,11 +15,11 @@ taobao.openim.relations.get
 type TaobaoOpenimRelationsGetRequest struct {
     model.Params
     // 查询起始日期。格式yyyyMMdd。不得早于一个月
-    begDate   string
+    _begDate   string
     // 查询结束日期。格式yyyyMMdd。不得早于一个月
-    endDate   string
+    _endDate   string
     // 用户信息
-    user   *OpenImUser
+    _user   *OpenImUser
 }
 
 // 初始化TaobaoOpenimRelationsGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenimRelationsGetRequest) GetApiParams() url.Values {
 }
 // BegDate Setter
 // 查询起始日期。格式yyyyMMdd。不得早于一个月
-func (r *TaobaoOpenimRelationsGetRequest) SetBegDate(begDate string) error {
-    r.begDate = begDate
-    r.Set("beg_date", begDate)
+func (r *TaobaoOpenimRelationsGetRequest) SetBegDate(_begDate string) error {
+    r._begDate = _begDate
+    r.Set("beg_date", _begDate)
     return nil
 }
 
 // BegDate Getter
 func (r TaobaoOpenimRelationsGetRequest) GetBegDate() string {
-    return r.begDate
+    return r._begDate
 }
 // EndDate Setter
 // 查询结束日期。格式yyyyMMdd。不得早于一个月
-func (r *TaobaoOpenimRelationsGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoOpenimRelationsGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoOpenimRelationsGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimRelationsGetRequest) SetUser(user *OpenImUser) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimRelationsGetRequest) SetUser(_user *OpenImUser) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimRelationsGetRequest) GetUser() *OpenImUser {
-    return r.user
+    return r._user
 }

@@ -15,7 +15,7 @@ alibaba.westcrm.grade.get
 type AlibabaWestcrmGradeGetRequest struct {
     model.Params
     // 园区id
-    campusId   int64
+    _campusId   int64
 }
 
 // 初始化AlibabaWestcrmGradeGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWestcrmGradeGetRequest) GetApiParams() url.Values {
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmGradeGetRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmGradeGetRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmGradeGetRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }

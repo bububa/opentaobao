@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.extracharge
 type AlibabaAlscCrmPointExtrachargeRequest struct {
     model.Params
     // 入参
-    paramExtraChargePointOpenReq   *ExtraChargePointOpenReq
+    _paramExtraChargePointOpenReq   *ExtraChargePointOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointExtrachargeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointExtrachargeRequest) GetApiParams() url.Values {
 }
 // ParamExtraChargePointOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointExtrachargeRequest) SetParamExtraChargePointOpenReq(paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
-    r.paramExtraChargePointOpenReq = paramExtraChargePointOpenReq
-    r.Set("param_extra_charge_point_open_req", paramExtraChargePointOpenReq)
+func (r *AlibabaAlscCrmPointExtrachargeRequest) SetParamExtraChargePointOpenReq(_paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
+    r._paramExtraChargePointOpenReq = _paramExtraChargePointOpenReq
+    r.Set("param_extra_charge_point_open_req", _paramExtraChargePointOpenReq)
     return nil
 }
 
 // ParamExtraChargePointOpenReq Getter
 func (r AlibabaAlscCrmPointExtrachargeRequest) GetParamExtraChargePointOpenReq() *ExtraChargePointOpenReq {
-    return r.paramExtraChargePointOpenReq
+    return r._paramExtraChargePointOpenReq
 }

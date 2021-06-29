@@ -15,7 +15,7 @@ alibaba.mozi.fusion.dimission.employee.account
 type AlibabaMoziFusionDimissionEmployeeAccountRequest struct {
     model.Params
     // 入参
-    dimissionEmployee   *RemoveTenantEmployeeAndAccountRequest
+    _dimissionEmployee   *RemoveTenantEmployeeAndAccountRequest
 }
 
 // 初始化AlibabaMoziFusionDimissionEmployeeAccountRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionDimissionEmployeeAccountRequest) GetApiParams() url.Val
 }
 // DimissionEmployee Setter
 // 入参
-func (r *AlibabaMoziFusionDimissionEmployeeAccountRequest) SetDimissionEmployee(dimissionEmployee *RemoveTenantEmployeeAndAccountRequest) error {
-    r.dimissionEmployee = dimissionEmployee
-    r.Set("dimission.employee", dimissionEmployee)
+func (r *AlibabaMoziFusionDimissionEmployeeAccountRequest) SetDimissionEmployee(_dimissionEmployee *RemoveTenantEmployeeAndAccountRequest) error {
+    r._dimissionEmployee = _dimissionEmployee
+    r.Set("dimission.employee", _dimissionEmployee)
     return nil
 }
 
 // DimissionEmployee Getter
 func (r AlibabaMoziFusionDimissionEmployeeAccountRequest) GetDimissionEmployee() *RemoveTenantEmployeeAndAccountRequest {
-    return r.dimissionEmployee
+    return r._dimissionEmployee
 }

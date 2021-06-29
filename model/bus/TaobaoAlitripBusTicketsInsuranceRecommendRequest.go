@@ -15,7 +15,7 @@ taobao.alitrip.bus.tickets.insurance.recommend
 type TaobaoAlitripBusTicketsInsuranceRecommendRequest struct {
     model.Params
     // 请求对象
-    recommendReq   *TopStandardInsRecommendRequest
+    _recommendReq   *TopStandardInsRecommendRequest
 }
 
 // 初始化TaobaoAlitripBusTicketsInsuranceRecommendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetApiParams() url.Val
 }
 // RecommendReq Setter
 // 请求对象
-func (r *TaobaoAlitripBusTicketsInsuranceRecommendRequest) SetRecommendReq(recommendReq *TopStandardInsRecommendRequest) error {
-    r.recommendReq = recommendReq
-    r.Set("recommend_req", recommendReq)
+func (r *TaobaoAlitripBusTicketsInsuranceRecommendRequest) SetRecommendReq(_recommendReq *TopStandardInsRecommendRequest) error {
+    r._recommendReq = _recommendReq
+    r.Set("recommend_req", _recommendReq)
     return nil
 }
 
 // RecommendReq Getter
 func (r TaobaoAlitripBusTicketsInsuranceRecommendRequest) GetRecommendReq() *TopStandardInsRecommendRequest {
-    return r.recommendReq
+    return r._recommendReq
 }

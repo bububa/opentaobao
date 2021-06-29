@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.qryphysical
 type AlibabaAlscCrmCardQryphysicalRequest struct {
     model.Params
     // 入参
-    paramQueryPhyCardOpenReq   *QueryPhyCardOpenReq
+    _paramQueryPhyCardOpenReq   *QueryPhyCardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardQryphysicalRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardQryphysicalRequest) GetApiParams() url.Values {
 }
 // ParamQueryPhyCardOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmCardQryphysicalRequest) SetParamQueryPhyCardOpenReq(paramQueryPhyCardOpenReq *QueryPhyCardOpenReq) error {
-    r.paramQueryPhyCardOpenReq = paramQueryPhyCardOpenReq
-    r.Set("param_query_phy_card_open_req", paramQueryPhyCardOpenReq)
+func (r *AlibabaAlscCrmCardQryphysicalRequest) SetParamQueryPhyCardOpenReq(_paramQueryPhyCardOpenReq *QueryPhyCardOpenReq) error {
+    r._paramQueryPhyCardOpenReq = _paramQueryPhyCardOpenReq
+    r.Set("param_query_phy_card_open_req", _paramQueryPhyCardOpenReq)
     return nil
 }
 
 // ParamQueryPhyCardOpenReq Getter
 func (r AlibabaAlscCrmCardQryphysicalRequest) GetParamQueryPhyCardOpenReq() *QueryPhyCardOpenReq {
-    return r.paramQueryPhyCardOpenReq
+    return r._paramQueryPhyCardOpenReq
 }

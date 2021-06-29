@@ -15,7 +15,7 @@ alibaba.alink.device.bind
 type AlibabaAlinkDeviceBindRequest struct {
     model.Params
     // 设备id
-    uuid   string
+    _uuid   string
 }
 
 // 初始化AlibabaAlinkDeviceBindRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlinkDeviceBindRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备id
-func (r *AlibabaAlinkDeviceBindRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAlinkDeviceBindRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAlinkDeviceBindRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

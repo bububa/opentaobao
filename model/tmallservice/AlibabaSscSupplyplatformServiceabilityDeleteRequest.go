@@ -15,9 +15,9 @@ alibaba.ssc.supplyplatform.serviceability.delete
 type AlibabaSscSupplyplatformServiceabilityDeleteRequest struct {
     model.Params
     // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-    providerType   string
+    _providerType   string
     // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
-    providerId   int64
+    _providerId   int64
 }
 
 // 初始化AlibabaSscSupplyplatformServiceabilityDeleteRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSscSupplyplatformServiceabilityDeleteRequest) GetApiParams() url.
 }
 // ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-func (r *AlibabaSscSupplyplatformServiceabilityDeleteRequest) SetProviderType(providerType string) error {
-    r.providerType = providerType
-    r.Set("provider_type", providerType)
+func (r *AlibabaSscSupplyplatformServiceabilityDeleteRequest) SetProviderType(_providerType string) error {
+    r._providerType = _providerType
+    r.Set("provider_type", _providerType)
     return nil
 }
 
 // ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceabilityDeleteRequest) GetProviderType() string {
-    return r.providerType
+    return r._providerType
 }
 // ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
-func (r *AlibabaSscSupplyplatformServiceabilityDeleteRequest) SetProviderId(providerId int64) error {
-    r.providerId = providerId
-    r.Set("provider_id", providerId)
+func (r *AlibabaSscSupplyplatformServiceabilityDeleteRequest) SetProviderId(_providerId int64) error {
+    r._providerId = _providerId
+    r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceabilityDeleteRequest) GetProviderId() int64 {
-    return r.providerId
+    return r._providerId
 }

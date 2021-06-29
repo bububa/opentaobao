@@ -15,9 +15,9 @@ alibaba.security.jaq.app.risk.scanbatch
 type AlibabaSecurityJaqAppRiskScanbatchRequest struct {
     model.Params
     // APP信息
-    appInfo   *AppInfoBatch
+    _appInfo   *AppInfoBatch
     // 扫描类型
-    scanTypes   []string
+    _scanTypes   []string
 }
 
 // 初始化AlibabaSecurityJaqAppRiskScanbatchRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetApiParams() url.Values {
 }
 // AppInfo Setter
 // APP信息
-func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetAppInfo(appInfo *AppInfoBatch) error {
-    r.appInfo = appInfo
-    r.Set("app_info", appInfo)
+func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetAppInfo(_appInfo *AppInfoBatch) error {
+    r._appInfo = _appInfo
+    r.Set("app_info", _appInfo)
     return nil
 }
 
 // AppInfo Getter
 func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetAppInfo() *AppInfoBatch {
-    return r.appInfo
+    return r._appInfo
 }
 // ScanTypes Setter
 // 扫描类型
-func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetScanTypes(scanTypes []string) error {
-    r.scanTypes = scanTypes
-    r.Set("scan_types", scanTypes)
+func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetScanTypes(_scanTypes []string) error {
+    r._scanTypes = _scanTypes
+    r.Set("scan_types", _scanTypes)
     return nil
 }
 
 // ScanTypes Getter
 func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetScanTypes() []string {
-    return r.scanTypes
+    return r._scanTypes
 }

@@ -15,13 +15,13 @@ taobao.brand.startshop.rpt.campaign.get
 type TaobaoBrandStartshopRptCampaignGetRequest struct {
     model.Params
     // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
-    traffictype   string
+    _traffictype   string
     // 查询开始时间(最多查询90天数据)
-    startdate   string
+    _startdate   string
     // 查询截至时间(最晚查询到昨天)
-    enddate   string
+    _enddate   string
     // 转化周期,默认15天,可选 3,7,15
-    effect   int64
+    _effect   int64
 }
 
 // 初始化TaobaoBrandStartshopRptCampaignGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoBrandStartshopRptCampaignGetRequest) GetApiParams() url.Values {
 }
 // Traffictype Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
-func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetTraffictype(traffictype string) error {
-    r.traffictype = traffictype
-    r.Set("traffictype", traffictype)
+func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetTraffictype(_traffictype string) error {
+    r._traffictype = _traffictype
+    r.Set("traffictype", _traffictype)
     return nil
 }
 
 // Traffictype Getter
 func (r TaobaoBrandStartshopRptCampaignGetRequest) GetTraffictype() string {
-    return r.traffictype
+    return r._traffictype
 }
 // Startdate Setter
 // 查询开始时间(最多查询90天数据)
-func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetStartdate(startdate string) error {
-    r.startdate = startdate
-    r.Set("startdate", startdate)
+func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetStartdate(_startdate string) error {
+    r._startdate = _startdate
+    r.Set("startdate", _startdate)
     return nil
 }
 
 // Startdate Getter
 func (r TaobaoBrandStartshopRptCampaignGetRequest) GetStartdate() string {
-    return r.startdate
+    return r._startdate
 }
 // Enddate Setter
 // 查询截至时间(最晚查询到昨天)
-func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetEnddate(enddate string) error {
-    r.enddate = enddate
-    r.Set("enddate", enddate)
+func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetEnddate(_enddate string) error {
+    r._enddate = _enddate
+    r.Set("enddate", _enddate)
     return nil
 }
 
 // Enddate Getter
 func (r TaobaoBrandStartshopRptCampaignGetRequest) GetEnddate() string {
-    return r.enddate
+    return r._enddate
 }
 // Effect Setter
 // 转化周期,默认15天,可选 3,7,15
-func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetEffect(effect int64) error {
-    r.effect = effect
-    r.Set("effect", effect)
+func (r *TaobaoBrandStartshopRptCampaignGetRequest) SetEffect(_effect int64) error {
+    r._effect = _effect
+    r.Set("effect", _effect)
     return nil
 }
 
 // Effect Getter
 func (r TaobaoBrandStartshopRptCampaignGetRequest) GetEffect() int64 {
-    return r.effect
+    return r._effect
 }

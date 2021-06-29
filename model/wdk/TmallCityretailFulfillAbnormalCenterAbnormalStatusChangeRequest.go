@@ -15,7 +15,7 @@ tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest struct {
     model.Params
     // 入参
-    abnormalStatusChangeDto   []AbnormalStatusChangeDto
+    _abnormalStatusChangeDto   []AbnormalStatusChangeDto
 }
 
 // 初始化TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest对象
@@ -40,13 +40,13 @@ func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest) GetApiP
 }
 // AbnormalStatusChangeDto Setter
 // 入参
-func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest) SetAbnormalStatusChangeDto(abnormalStatusChangeDto []AbnormalStatusChangeDto) error {
-    r.abnormalStatusChangeDto = abnormalStatusChangeDto
-    r.Set("abnormal_status_change_dto", abnormalStatusChangeDto)
+func (r *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest) SetAbnormalStatusChangeDto(_abnormalStatusChangeDto []AbnormalStatusChangeDto) error {
+    r._abnormalStatusChangeDto = _abnormalStatusChangeDto
+    r.Set("abnormal_status_change_dto", _abnormalStatusChangeDto)
     return nil
 }
 
 // AbnormalStatusChangeDto Getter
 func (r TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeRequest) GetAbnormalStatusChangeDto() []AbnormalStatusChangeDto {
-    return r.abnormalStatusChangeDto
+    return r._abnormalStatusChangeDto
 }

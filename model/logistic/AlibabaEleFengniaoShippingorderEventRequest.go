@@ -15,9 +15,9 @@ alibaba.ele.fengniao.shippingorder.event
 type AlibabaEleFengniaoShippingorderEventRequest struct {
     model.Params
     // appid
-    appId   string
+    _appId   string
     // 外部订单号
-    partnerOrderCode   string
+    _partnerOrderCode   string
 }
 
 // 初始化AlibabaEleFengniaoShippingorderEventRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEleFengniaoShippingorderEventRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // appid
-func (r *AlibabaEleFengniaoShippingorderEventRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaEleFengniaoShippingorderEventRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaEleFengniaoShippingorderEventRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // PartnerOrderCode Setter
 // 外部订单号
-func (r *AlibabaEleFengniaoShippingorderEventRequest) SetPartnerOrderCode(partnerOrderCode string) error {
-    r.partnerOrderCode = partnerOrderCode
-    r.Set("partner_order_code", partnerOrderCode)
+func (r *AlibabaEleFengniaoShippingorderEventRequest) SetPartnerOrderCode(_partnerOrderCode string) error {
+    r._partnerOrderCode = _partnerOrderCode
+    r.Set("partner_order_code", _partnerOrderCode)
     return nil
 }
 
 // PartnerOrderCode Getter
 func (r AlibabaEleFengniaoShippingorderEventRequest) GetPartnerOrderCode() string {
-    return r.partnerOrderCode
+    return r._partnerOrderCode
 }

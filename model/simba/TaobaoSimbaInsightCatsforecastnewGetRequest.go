@@ -15,7 +15,7 @@ taobao.simba.insight.catsforecastnew.get
 type TaobaoSimbaInsightCatsforecastnewGetRequest struct {
     model.Params
     // 需要查询的词列表
-    bidwordList   []string
+    _bidwordList   []string
 }
 
 // 初始化TaobaoSimbaInsightCatsforecastnewGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetApiParams() url.Values {
 }
 // BidwordList Setter
 // 需要查询的词列表
-func (r *TaobaoSimbaInsightCatsforecastnewGetRequest) SetBidwordList(bidwordList []string) error {
-    r.bidwordList = bidwordList
-    r.Set("bidword_list", bidwordList)
+func (r *TaobaoSimbaInsightCatsforecastnewGetRequest) SetBidwordList(_bidwordList []string) error {
+    r._bidwordList = _bidwordList
+    r.Set("bidword_list", _bidwordList)
     return nil
 }
 
 // BidwordList Getter
 func (r TaobaoSimbaInsightCatsforecastnewGetRequest) GetBidwordList() []string {
-    return r.bidwordList
+    return r._bidwordList
 }

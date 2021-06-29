@@ -15,7 +15,7 @@ alitrip.btrip.invoice.setting.delete
 type AlitripBtripInvoiceSettingDeleteRequest struct {
     model.Params
     // 入参
-    rq   *OpenInvoiceDeleteRq
+    _rq   *OpenInvoiceDeleteRq
 }
 
 // 初始化AlitripBtripInvoiceSettingDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripInvoiceSettingDeleteRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripInvoiceSettingDeleteRequest) SetRq(rq *OpenInvoiceDeleteRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripInvoiceSettingDeleteRequest) SetRq(_rq *OpenInvoiceDeleteRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripInvoiceSettingDeleteRequest) GetRq() *OpenInvoiceDeleteRq {
-    return r.rq
+    return r._rq
 }

@@ -15,11 +15,11 @@ alibaba.seaking.titlerewrite.submit
 type AlibabaSeakingTitlerewriteSubmitRequest struct {
     model.Params
     // 任务详情列表
-    titleRewriteDetailList   []TitleRewriteDetailDto
+    _titleRewriteDetailList   []TitleRewriteDetailDto
     // token来源站点
-    tokenFrom   string
+    _tokenFrom   string
     // 用户token
-    token   string
+    _token   string
 }
 
 // 初始化AlibabaSeakingTitlerewriteSubmitRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaSeakingTitlerewriteSubmitRequest) GetApiParams() url.Values {
 }
 // TitleRewriteDetailList Setter
 // 任务详情列表
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTitleRewriteDetailList(titleRewriteDetailList []TitleRewriteDetailDto) error {
-    r.titleRewriteDetailList = titleRewriteDetailList
-    r.Set("title_rewrite_detail_list", titleRewriteDetailList)
+func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDto) error {
+    r._titleRewriteDetailList = _titleRewriteDetailList
+    r.Set("title_rewrite_detail_list", _titleRewriteDetailList)
     return nil
 }
 
 // TitleRewriteDetailList Getter
 func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDto {
-    return r.titleRewriteDetailList
+    return r._titleRewriteDetailList
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTokenFrom(tokenFrom string) error {
-    r.tokenFrom = tokenFrom
-    r.Set("token_from", tokenFrom)
+func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTokenFrom(_tokenFrom string) error {
+    r._tokenFrom = _tokenFrom
+    r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
 func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTokenFrom() string {
-    return r.tokenFrom
+    return r._tokenFrom
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaSeakingTitlerewriteSubmitRequest) GetToken() string {
-    return r.token
+    return r._token
 }

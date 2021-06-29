@@ -15,17 +15,17 @@ alibaba.alihealth.zy.uploadrelation
 type AlibabaAlihealthZyUploadrelationRequest struct {
     model.Params
     // 关联关系文件信息
-    saveCodeRelation   *SaveCodeRelationType
+    _saveCodeRelation   *SaveCodeRelationType
     // affirmFlag
-    affirmFlag   string
+    _affirmFlag   string
     // fileContent
-    fileContent   string
+    _fileContent   string
     // 加密之后的上传的关联关系文件内容
-    fileContentString   string
+    _fileContentString   string
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 客户端类型
-    clientType   string
+    _clientType   string
 }
 
 // 初始化AlibabaAlihealthZyUploadrelationRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlihealthZyUploadrelationRequest) GetApiParams() url.Values {
 }
 // SaveCodeRelation Setter
 // 关联关系文件信息
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetSaveCodeRelation(saveCodeRelation *SaveCodeRelationType) error {
-    r.saveCodeRelation = saveCodeRelation
-    r.Set("save_code_relation", saveCodeRelation)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetSaveCodeRelation(_saveCodeRelation *SaveCodeRelationType) error {
+    r._saveCodeRelation = _saveCodeRelation
+    r.Set("save_code_relation", _saveCodeRelation)
     return nil
 }
 
 // SaveCodeRelation Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetSaveCodeRelation() *SaveCodeRelationType {
-    return r.saveCodeRelation
+    return r._saveCodeRelation
 }
 // AffirmFlag Setter
 // affirmFlag
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetAffirmFlag(affirmFlag string) error {
-    r.affirmFlag = affirmFlag
-    r.Set("affirm_flag", affirmFlag)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetAffirmFlag(_affirmFlag string) error {
+    r._affirmFlag = _affirmFlag
+    r.Set("affirm_flag", _affirmFlag)
     return nil
 }
 
 // AffirmFlag Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetAffirmFlag() string {
-    return r.affirmFlag
+    return r._affirmFlag
 }
 // FileContent Setter
 // fileContent
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetFileContent(fileContent string) error {
-    r.fileContent = fileContent
-    r.Set("file_content", fileContent)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetFileContent(_fileContent string) error {
+    r._fileContent = _fileContent
+    r.Set("file_content", _fileContent)
     return nil
 }
 
 // FileContent Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetFileContent() string {
-    return r.fileContent
+    return r._fileContent
 }
 // FileContentString Setter
 // 加密之后的上传的关联关系文件内容
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetFileContentString(fileContentString string) error {
-    r.fileContentString = fileContentString
-    r.Set("file_content_string", fileContentString)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetFileContentString(_fileContentString string) error {
+    r._fileContentString = _fileContentString
+    r.Set("file_content_string", _fileContentString)
     return nil
 }
 
 // FileContentString Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetFileContentString() string {
-    return r.fileContentString
+    return r._fileContentString
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // ClientType Setter
 // 客户端类型
-func (r *AlibabaAlihealthZyUploadrelationRequest) SetClientType(clientType string) error {
-    r.clientType = clientType
-    r.Set("client_type", clientType)
+func (r *AlibabaAlihealthZyUploadrelationRequest) SetClientType(_clientType string) error {
+    r._clientType = _clientType
+    r.Set("client_type", _clientType)
     return nil
 }
 
 // ClientType Getter
 func (r AlibabaAlihealthZyUploadrelationRequest) GetClientType() string {
-    return r.clientType
+    return r._clientType
 }

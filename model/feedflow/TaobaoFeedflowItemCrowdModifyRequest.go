@@ -15,9 +15,9 @@ taobao.feedflow.item.crowd.modify
 type TaobaoFeedflowItemCrowdModifyRequest struct {
     model.Params
     // 人群信息
-    crowds   []CrowdDto
+    _crowds   []CrowdDto
     // 单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoFeedflowItemCrowdModifyRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemCrowdModifyRequest) GetApiParams() url.Values {
 }
 // Crowds Setter
 // 人群信息
-func (r *TaobaoFeedflowItemCrowdModifyRequest) SetCrowds(crowds []CrowdDto) error {
-    r.crowds = crowds
-    r.Set("crowds", crowds)
+func (r *TaobaoFeedflowItemCrowdModifyRequest) SetCrowds(_crowds []CrowdDto) error {
+    r._crowds = _crowds
+    r.Set("crowds", _crowds)
     return nil
 }
 
 // Crowds Getter
 func (r TaobaoFeedflowItemCrowdModifyRequest) GetCrowds() []CrowdDto {
-    return r.crowds
+    return r._crowds
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemCrowdModifyRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoFeedflowItemCrowdModifyRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoFeedflowItemCrowdModifyRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

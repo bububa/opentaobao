@@ -15,7 +15,7 @@ tmall.item.sizemapping.template.delete
 type TmallItemSizemappingTemplateDeleteRequest struct {
     model.Params
     // 尺码表模板ID
-    templateId   int64
+    _templateId   int64
 }
 
 // 初始化TmallItemSizemappingTemplateDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TmallItemSizemappingTemplateDeleteRequest) GetApiParams() url.Values {
 }
 // TemplateId Setter
 // 尺码表模板ID
-func (r *TmallItemSizemappingTemplateDeleteRequest) SetTemplateId(templateId int64) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TmallItemSizemappingTemplateDeleteRequest) SetTemplateId(_templateId int64) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TmallItemSizemappingTemplateDeleteRequest) GetTemplateId() int64 {
-    return r.templateId
+    return r._templateId
 }

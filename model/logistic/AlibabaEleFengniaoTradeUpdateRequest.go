@@ -15,7 +15,7 @@ alibaba.ele.fengniao.trade.update
 type AlibabaEleFengniaoTradeUpdateRequest struct {
     model.Params
     // param 参数
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoTradeUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoTradeUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // param 参数
-func (r *AlibabaEleFengniaoTradeUpdateRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoTradeUpdateRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoTradeUpdateRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

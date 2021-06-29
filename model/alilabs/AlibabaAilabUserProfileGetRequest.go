@@ -15,9 +15,9 @@ alibaba.ailab.user.profile.get
 type AlibabaAilabUserProfileGetRequest struct {
     model.Params
     // open uid
-    openUid   string
+    _openUid   string
     // client id
-    clientId   string
+    _clientId   string
 }
 
 // 初始化AlibabaAilabUserProfileGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabUserProfileGetRequest) GetApiParams() url.Values {
 }
 // OpenUid Setter
 // open uid
-func (r *AlibabaAilabUserProfileGetRequest) SetOpenUid(openUid string) error {
-    r.openUid = openUid
-    r.Set("open_uid", openUid)
+func (r *AlibabaAilabUserProfileGetRequest) SetOpenUid(_openUid string) error {
+    r._openUid = _openUid
+    r.Set("open_uid", _openUid)
     return nil
 }
 
 // OpenUid Getter
 func (r AlibabaAilabUserProfileGetRequest) GetOpenUid() string {
-    return r.openUid
+    return r._openUid
 }
 // ClientId Setter
 // client id
-func (r *AlibabaAilabUserProfileGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabUserProfileGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabUserProfileGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }

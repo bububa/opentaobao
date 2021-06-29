@@ -15,9 +15,9 @@ taobao.omniorder.store.deliverconfig.get
 type TaobaoOmniorderStoreDeliverconfigGetRequest struct {
     model.Params
     // 门店ID
-    storeId   int64
+    _storeId   int64
     // 是否是活动期
-    activity   bool
+    _activity   bool
 }
 
 // 初始化TaobaoOmniorderStoreDeliverconfigGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreDeliverconfigGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreDeliverconfigGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreDeliverconfigGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreDeliverconfigGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // Activity Setter
 // 是否是活动期
-func (r *TaobaoOmniorderStoreDeliverconfigGetRequest) SetActivity(activity bool) error {
-    r.activity = activity
-    r.Set("activity", activity)
+func (r *TaobaoOmniorderStoreDeliverconfigGetRequest) SetActivity(_activity bool) error {
+    r._activity = _activity
+    r.Set("activity", _activity)
     return nil
 }
 
 // Activity Getter
 func (r TaobaoOmniorderStoreDeliverconfigGetRequest) GetActivity() bool {
-    return r.activity
+    return r._activity
 }

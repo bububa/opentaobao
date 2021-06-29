@@ -15,7 +15,7 @@ ERP调用接口，将发货信息批量推送给WMS
 type TaobaoQimenDeliveryorderBatchcreateRequest struct {
     model.Params
     // 
-    request   *DeliveryOrderBatchCreateRequest
+    _request   *DeliveryOrderBatchCreateRequest
 }
 
 // 初始化TaobaoQimenDeliveryorderBatchcreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenDeliveryorderBatchcreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenDeliveryorderBatchcreateRequest) SetRequest(request *DeliveryOrderBatchCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenDeliveryorderBatchcreateRequest) SetRequest(_request *DeliveryOrderBatchCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenDeliveryorderBatchcreateRequest) GetRequest() *DeliveryOrderBatchCreateRequest {
-    return r.request
+    return r._request
 }

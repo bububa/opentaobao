@@ -15,9 +15,9 @@ alibaba.alihealth.reserve.dental.modifyrestime
 type AlibabaAlihealthReserveDentalModifyrestimeRequest struct {
     model.Params
     // 预约单ID
-    reserveId   int64
+    _reserveId   int64
     // 预约时间
-    reserveTime   string
+    _reserveTime   string
 }
 
 // 初始化AlibabaAlihealthReserveDentalModifyrestimeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetApiParams() url.Va
 }
 // ReserveId Setter
 // 预约单ID
-func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveId(reserveId int64) error {
-    r.reserveId = reserveId
-    r.Set("reserve_id", reserveId)
+func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveId(_reserveId int64) error {
+    r._reserveId = _reserveId
+    r.Set("reserve_id", _reserveId)
     return nil
 }
 
 // ReserveId Getter
 func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetReserveId() int64 {
-    return r.reserveId
+    return r._reserveId
 }
 // ReserveTime Setter
 // 预约时间
-func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveTime(reserveTime string) error {
-    r.reserveTime = reserveTime
-    r.Set("reserve_time", reserveTime)
+func (r *AlibabaAlihealthReserveDentalModifyrestimeRequest) SetReserveTime(_reserveTime string) error {
+    r._reserveTime = _reserveTime
+    r.Set("reserve_time", _reserveTime)
     return nil
 }
 
 // ReserveTime Getter
 func (r AlibabaAlihealthReserveDentalModifyrestimeRequest) GetReserveTime() string {
-    return r.reserveTime
+    return r._reserveTime
 }

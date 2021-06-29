@@ -15,13 +15,13 @@ alibaba.nlife.store.delivers.get
 type AlibabaNlifeStoreDeliversGetRequest struct {
     model.Params
     // 门店采购订单号
-    tradeNo   string
+    _tradeNo   string
     // 零售商的门店id
-    storeId   int64
+    _storeId   int64
     // 每页的数量
-    pageSize   int64
+    _pageSize   int64
     // 查询的页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化AlibabaNlifeStoreDeliversGetRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaNlifeStoreDeliversGetRequest) GetApiParams() url.Values {
 }
 // TradeNo Setter
 // 门店采购订单号
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *AlibabaNlifeStoreDeliversGetRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r AlibabaNlifeStoreDeliversGetRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // StoreId Setter
 // 零售商的门店id
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeStoreDeliversGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeStoreDeliversGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // PageSize Setter
 // 每页的数量
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaNlifeStoreDeliversGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 查询的页码
-func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AlibabaNlifeStoreDeliversGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AlibabaNlifeStoreDeliversGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

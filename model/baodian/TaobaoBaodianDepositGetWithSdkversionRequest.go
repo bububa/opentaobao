@@ -15,11 +15,11 @@ taobao.baodian.deposit.get.with.sdkversion
 type TaobaoBaodianDepositGetWithSdkversionRequest struct {
     model.Params
     // 设备型号
-    deviceModel   string
+    _deviceModel   string
     // uuid
-    uuid   string
+    _uuid   string
     // sdk版本
-    sdkVersion   string
+    _sdkVersion   string
 }
 
 // 初始化TaobaoBaodianDepositGetWithSdkversionRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoBaodianDepositGetWithSdkversionRequest) GetApiParams() url.Values 
 }
 // DeviceModel Setter
 // 设备型号
-func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetDeviceModel(deviceModel string) error {
-    r.deviceModel = deviceModel
-    r.Set("device_model", deviceModel)
+func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetDeviceModel(_deviceModel string) error {
+    r._deviceModel = _deviceModel
+    r.Set("device_model", _deviceModel)
     return nil
 }
 
 // DeviceModel Getter
 func (r TaobaoBaodianDepositGetWithSdkversionRequest) GetDeviceModel() string {
-    return r.deviceModel
+    return r._deviceModel
 }
 // Uuid Setter
 // uuid
-func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r TaobaoBaodianDepositGetWithSdkversionRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // SdkVersion Setter
 // sdk版本
-func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetSdkVersion(sdkVersion string) error {
-    r.sdkVersion = sdkVersion
-    r.Set("sdk_version", sdkVersion)
+func (r *TaobaoBaodianDepositGetWithSdkversionRequest) SetSdkVersion(_sdkVersion string) error {
+    r._sdkVersion = _sdkVersion
+    r.Set("sdk_version", _sdkVersion)
     return nil
 }
 
 // SdkVersion Getter
 func (r TaobaoBaodianDepositGetWithSdkversionRequest) GetSdkVersion() string {
-    return r.sdkVersion
+    return r._sdkVersion
 }

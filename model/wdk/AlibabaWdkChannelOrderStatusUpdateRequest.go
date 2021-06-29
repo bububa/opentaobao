@@ -15,7 +15,7 @@ alibaba.wdk.channel.order.status.update
 type AlibabaWdkChannelOrderStatusUpdateRequest struct {
     model.Params
     // 修改信息
-    orderStatusInfo   *OrderStatusInfo
+    _orderStatusInfo   *OrderStatusInfo
 }
 
 // 初始化AlibabaWdkChannelOrderStatusUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetApiParams() url.Values {
 }
 // OrderStatusInfo Setter
 // 修改信息
-func (r *AlibabaWdkChannelOrderStatusUpdateRequest) SetOrderStatusInfo(orderStatusInfo *OrderStatusInfo) error {
-    r.orderStatusInfo = orderStatusInfo
-    r.Set("order_status_info", orderStatusInfo)
+func (r *AlibabaWdkChannelOrderStatusUpdateRequest) SetOrderStatusInfo(_orderStatusInfo *OrderStatusInfo) error {
+    r._orderStatusInfo = _orderStatusInfo
+    r.Set("order_status_info", _orderStatusInfo)
     return nil
 }
 
 // OrderStatusInfo Getter
 func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetOrderStatusInfo() *OrderStatusInfo {
-    return r.orderStatusInfo
+    return r._orderStatusInfo
 }

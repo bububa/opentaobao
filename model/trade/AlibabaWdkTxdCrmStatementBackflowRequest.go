@@ -15,7 +15,7 @@ alibaba.wdk.txd.crm.statement.backflow
 type AlibabaWdkTxdCrmStatementBackflowRequest struct {
     model.Params
     // 参数
-    paramStatementBO   *StatementBo
+    _paramStatementBO   *StatementBo
 }
 
 // 初始化AlibabaWdkTxdCrmStatementBackflowRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTxdCrmStatementBackflowRequest) GetApiParams() url.Values {
 }
 // ParamStatementBO Setter
 // 参数
-func (r *AlibabaWdkTxdCrmStatementBackflowRequest) SetParamStatementBO(paramStatementBO *StatementBo) error {
-    r.paramStatementBO = paramStatementBO
-    r.Set("param_statement_b_o", paramStatementBO)
+func (r *AlibabaWdkTxdCrmStatementBackflowRequest) SetParamStatementBO(_paramStatementBO *StatementBo) error {
+    r._paramStatementBO = _paramStatementBO
+    r.Set("param_statement_b_o", _paramStatementBO)
     return nil
 }
 
 // ParamStatementBO Getter
 func (r AlibabaWdkTxdCrmStatementBackflowRequest) GetParamStatementBO() *StatementBo {
-    return r.paramStatementBO
+    return r._paramStatementBO
 }

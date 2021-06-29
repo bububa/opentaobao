@@ -15,11 +15,11 @@ taobao.sebp.isv.wxrobot.callback
 type TaobaoSebpIsvWxrobotCallbackRequest struct {
     model.Params
     // 操作类型
-    nType   string
+    _nType   string
     // 调用签名
-    strSign   string
+    _strSign   string
     // 参数
-    strContext   string
+    _strContext   string
 }
 
 // 初始化TaobaoSebpIsvWxrobotCallbackRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSebpIsvWxrobotCallbackRequest) GetApiParams() url.Values {
 }
 // NType Setter
 // 操作类型
-func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetNType(nType string) error {
-    r.nType = nType
-    r.Set("n_type", nType)
+func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetNType(_nType string) error {
+    r._nType = _nType
+    r.Set("n_type", _nType)
     return nil
 }
 
 // NType Getter
 func (r TaobaoSebpIsvWxrobotCallbackRequest) GetNType() string {
-    return r.nType
+    return r._nType
 }
 // StrSign Setter
 // 调用签名
-func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetStrSign(strSign string) error {
-    r.strSign = strSign
-    r.Set("str_sign", strSign)
+func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetStrSign(_strSign string) error {
+    r._strSign = _strSign
+    r.Set("str_sign", _strSign)
     return nil
 }
 
 // StrSign Getter
 func (r TaobaoSebpIsvWxrobotCallbackRequest) GetStrSign() string {
-    return r.strSign
+    return r._strSign
 }
 // StrContext Setter
 // 参数
-func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetStrContext(strContext string) error {
-    r.strContext = strContext
-    r.Set("str_context", strContext)
+func (r *TaobaoSebpIsvWxrobotCallbackRequest) SetStrContext(_strContext string) error {
+    r._strContext = _strContext
+    r.Set("str_context", _strContext)
     return nil
 }
 
 // StrContext Getter
 func (r TaobaoSebpIsvWxrobotCallbackRequest) GetStrContext() string {
-    return r.strContext
+    return r._strContext
 }

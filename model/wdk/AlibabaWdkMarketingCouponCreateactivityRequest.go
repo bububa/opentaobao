@@ -15,7 +15,7 @@ alibaba.wdk.marketing.coupon.createactivity
 type AlibabaWdkMarketingCouponCreateactivityRequest struct {
     model.Params
     // 创建优惠券活动请求入参
-    param   *CouponActivity
+    _param   *CouponActivity
 }
 
 // 初始化AlibabaWdkMarketingCouponCreateactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingCouponCreateactivityRequest) GetApiParams() url.Value
 }
 // Param Setter
 // 创建优惠券活动请求入参
-func (r *AlibabaWdkMarketingCouponCreateactivityRequest) SetParam(param *CouponActivity) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingCouponCreateactivityRequest) SetParam(_param *CouponActivity) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingCouponCreateactivityRequest) GetParam() *CouponActivity {
-    return r.param
+    return r._param
 }

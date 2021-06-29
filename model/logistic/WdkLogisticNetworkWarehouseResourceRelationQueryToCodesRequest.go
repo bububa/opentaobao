@@ -15,7 +15,7 @@ wdk.logistic.network.warehouse.resource.relation.query.to.codes
 type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest struct {
     model.Params
     // 入参
-    paramYxWarehouseResourceRelationQueryRequest   *YxWarehouseResourceRelationQueryRequest
+    _paramYxWarehouseResourceRelationQueryRequest   *YxWarehouseResourceRelationQueryRequest
 }
 
 // 初始化WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest对象
@@ -40,13 +40,13 @@ func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest) GetApiPa
 }
 // ParamYxWarehouseResourceRelationQueryRequest Setter
 // 入参
-func (r *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest) SetParamYxWarehouseResourceRelationQueryRequest(paramYxWarehouseResourceRelationQueryRequest *YxWarehouseResourceRelationQueryRequest) error {
-    r.paramYxWarehouseResourceRelationQueryRequest = paramYxWarehouseResourceRelationQueryRequest
-    r.Set("param_yx_warehouse_resource_relation_query_request", paramYxWarehouseResourceRelationQueryRequest)
+func (r *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest) SetParamYxWarehouseResourceRelationQueryRequest(_paramYxWarehouseResourceRelationQueryRequest *YxWarehouseResourceRelationQueryRequest) error {
+    r._paramYxWarehouseResourceRelationQueryRequest = _paramYxWarehouseResourceRelationQueryRequest
+    r.Set("param_yx_warehouse_resource_relation_query_request", _paramYxWarehouseResourceRelationQueryRequest)
     return nil
 }
 
 // ParamYxWarehouseResourceRelationQueryRequest Getter
 func (r WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest) GetParamYxWarehouseResourceRelationQueryRequest() *YxWarehouseResourceRelationQueryRequest {
-    return r.paramYxWarehouseResourceRelationQueryRequest
+    return r._paramYxWarehouseResourceRelationQueryRequest
 }

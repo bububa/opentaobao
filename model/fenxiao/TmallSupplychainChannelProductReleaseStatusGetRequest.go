@@ -15,9 +15,9 @@ tmall.supplychain.channel.product.release.status.get
 type TmallSupplychainChannelProductReleaseStatusGetRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
     // 渠道ID ( 台湾 : 111002 )
-    channelCode   int64
+    _channelCode   int64
 }
 
 // 初始化TmallSupplychainChannelProductReleaseStatusGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetApiParams() ur
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // ChannelCode Setter
 // 渠道ID ( 台湾 : 111002 )
-func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetChannelCode(channelCode int64) error {
-    r.channelCode = channelCode
-    r.Set("channel_code", channelCode)
+func (r *TmallSupplychainChannelProductReleaseStatusGetRequest) SetChannelCode(_channelCode int64) error {
+    r._channelCode = _channelCode
+    r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
 func (r TmallSupplychainChannelProductReleaseStatusGetRequest) GetChannelCode() int64 {
-    return r.channelCode
+    return r._channelCode
 }

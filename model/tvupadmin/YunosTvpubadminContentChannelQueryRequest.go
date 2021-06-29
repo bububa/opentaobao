@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.channel.query
 type YunosTvpubadminContentChannelQueryRequest struct {
     model.Params
     // ChannelAuditQueryBO
-    channelAuditQuery   string
+    _channelAuditQuery   string
 }
 
 // 初始化YunosTvpubadminContentChannelQueryRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChannelQueryRequest) GetApiParams() url.Values {
 }
 // ChannelAuditQuery Setter
 // ChannelAuditQueryBO
-func (r *YunosTvpubadminContentChannelQueryRequest) SetChannelAuditQuery(channelAuditQuery string) error {
-    r.channelAuditQuery = channelAuditQuery
-    r.Set("channel_audit_query", channelAuditQuery)
+func (r *YunosTvpubadminContentChannelQueryRequest) SetChannelAuditQuery(_channelAuditQuery string) error {
+    r._channelAuditQuery = _channelAuditQuery
+    r.Set("channel_audit_query", _channelAuditQuery)
     return nil
 }
 
 // ChannelAuditQuery Getter
 func (r YunosTvpubadminContentChannelQueryRequest) GetChannelAuditQuery() string {
-    return r.channelAuditQuery
+    return r._channelAuditQuery
 }

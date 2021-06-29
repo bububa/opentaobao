@@ -15,7 +15,7 @@ alibaba.nlife.store.tradedetail.get
 type AlibabaNlifeStoreTradedetailGetRequest struct {
     model.Params
     // 集团采购单号
-    procurementNo   string
+    _procurementNo   string
 }
 
 // 初始化AlibabaNlifeStoreTradedetailGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNlifeStoreTradedetailGetRequest) GetApiParams() url.Values {
 }
 // ProcurementNo Setter
 // 集团采购单号
-func (r *AlibabaNlifeStoreTradedetailGetRequest) SetProcurementNo(procurementNo string) error {
-    r.procurementNo = procurementNo
-    r.Set("procurement_no", procurementNo)
+func (r *AlibabaNlifeStoreTradedetailGetRequest) SetProcurementNo(_procurementNo string) error {
+    r._procurementNo = _procurementNo
+    r.Set("procurement_no", _procurementNo)
     return nil
 }
 
 // ProcurementNo Getter
 func (r AlibabaNlifeStoreTradedetailGetRequest) GetProcurementNo() string {
-    return r.procurementNo
+    return r._procurementNo
 }

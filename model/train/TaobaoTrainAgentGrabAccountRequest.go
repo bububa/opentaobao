@@ -15,7 +15,7 @@ taobao.train.agent.grab.account
 type TaobaoTrainAgentGrabAccountRequest struct {
     model.Params
     // 12306账户信息
-    accountParam   *AccountParam
+    _accountParam   *AccountParam
 }
 
 // 初始化TaobaoTrainAgentGrabAccountRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentGrabAccountRequest) GetApiParams() url.Values {
 }
 // AccountParam Setter
 // 12306账户信息
-func (r *TaobaoTrainAgentGrabAccountRequest) SetAccountParam(accountParam *AccountParam) error {
-    r.accountParam = accountParam
-    r.Set("account_param", accountParam)
+func (r *TaobaoTrainAgentGrabAccountRequest) SetAccountParam(_accountParam *AccountParam) error {
+    r._accountParam = _accountParam
+    r.Set("account_param", _accountParam)
     return nil
 }
 
 // AccountParam Getter
 func (r TaobaoTrainAgentGrabAccountRequest) GetAccountParam() *AccountParam {
-    return r.accountParam
+    return r._accountParam
 }

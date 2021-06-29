@@ -15,9 +15,9 @@ taobao.fivee.importproduct.publish
 type TaobaoFiveeImportproductPublishRequest struct {
     model.Params
     // 进口商品
-    importProduct   *ImportProduct
+    _importProduct   *ImportProduct
     // bu身份标识
-    paramBucode   string
+    _paramBucode   string
 }
 
 // 初始化TaobaoFiveeImportproductPublishRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFiveeImportproductPublishRequest) GetApiParams() url.Values {
 }
 // ImportProduct Setter
 // 进口商品
-func (r *TaobaoFiveeImportproductPublishRequest) SetImportProduct(importProduct *ImportProduct) error {
-    r.importProduct = importProduct
-    r.Set("import_product", importProduct)
+func (r *TaobaoFiveeImportproductPublishRequest) SetImportProduct(_importProduct *ImportProduct) error {
+    r._importProduct = _importProduct
+    r.Set("import_product", _importProduct)
     return nil
 }
 
 // ImportProduct Getter
 func (r TaobaoFiveeImportproductPublishRequest) GetImportProduct() *ImportProduct {
-    return r.importProduct
+    return r._importProduct
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeImportproductPublishRequest) SetParamBucode(paramBucode string) error {
-    r.paramBucode = paramBucode
-    r.Set("param_bucode", paramBucode)
+func (r *TaobaoFiveeImportproductPublishRequest) SetParamBucode(_paramBucode string) error {
+    r._paramBucode = _paramBucode
+    r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
 func (r TaobaoFiveeImportproductPublishRequest) GetParamBucode() string {
-    return r.paramBucode
+    return r._paramBucode
 }

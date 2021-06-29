@@ -15,9 +15,9 @@ tmall.channel.trade.deliverorder.get
 type TmallChannelTradeDeliverorderGetRequest struct {
     model.Params
     // 发货单号
-    mainDeliverOrderNo   int64
+    _mainDeliverOrderNo   int64
     // 是否包含子发货单
-    isIncludeSubOrder   bool
+    _isIncludeSubOrder   bool
 }
 
 // 初始化TmallChannelTradeDeliverorderGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallChannelTradeDeliverorderGetRequest) GetApiParams() url.Values {
 }
 // MainDeliverOrderNo Setter
 // 发货单号
-func (r *TmallChannelTradeDeliverorderGetRequest) SetMainDeliverOrderNo(mainDeliverOrderNo int64) error {
-    r.mainDeliverOrderNo = mainDeliverOrderNo
-    r.Set("main_deliver_order_no", mainDeliverOrderNo)
+func (r *TmallChannelTradeDeliverorderGetRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+    r._mainDeliverOrderNo = _mainDeliverOrderNo
+    r.Set("main_deliver_order_no", _mainDeliverOrderNo)
     return nil
 }
 
 // MainDeliverOrderNo Getter
 func (r TmallChannelTradeDeliverorderGetRequest) GetMainDeliverOrderNo() int64 {
-    return r.mainDeliverOrderNo
+    return r._mainDeliverOrderNo
 }
 // IsIncludeSubOrder Setter
 // 是否包含子发货单
-func (r *TmallChannelTradeDeliverorderGetRequest) SetIsIncludeSubOrder(isIncludeSubOrder bool) error {
-    r.isIncludeSubOrder = isIncludeSubOrder
-    r.Set("is_include_sub_order", isIncludeSubOrder)
+func (r *TmallChannelTradeDeliverorderGetRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
+    r._isIncludeSubOrder = _isIncludeSubOrder
+    r.Set("is_include_sub_order", _isIncludeSubOrder)
     return nil
 }
 
 // IsIncludeSubOrder Getter
 func (r TmallChannelTradeDeliverorderGetRequest) GetIsIncludeSubOrder() bool {
-    return r.isIncludeSubOrder
+    return r._isIncludeSubOrder
 }

@@ -15,7 +15,7 @@ cainiao.waybill.ii.query.by.tradecode
 type CainiaoWaybillIiQueryByTradecodeRequest struct {
     model.Params
     // 订单号列表
-    paramList   []WaybillDetailQueryByBizSubCodeRequest
+    _paramList   []WaybillDetailQueryByBizSubCodeRequest
 }
 
 // 初始化CainiaoWaybillIiQueryByTradecodeRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiQueryByTradecodeRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 订单号列表
-func (r *CainiaoWaybillIiQueryByTradecodeRequest) SetParamList(paramList []WaybillDetailQueryByBizSubCodeRequest) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *CainiaoWaybillIiQueryByTradecodeRequest) SetParamList(_paramList []WaybillDetailQueryByBizSubCodeRequest) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r CainiaoWaybillIiQueryByTradecodeRequest) GetParamList() []WaybillDetailQueryByBizSubCodeRequest {
-    return r.paramList
+    return r._paramList
 }

@@ -15,11 +15,11 @@ msf服务核销的top接口
 type TmallMsfVerifyRequest struct {
     model.Params
     // 111
-    shopId   string
+    _shopId   string
     // 111
-    bizType   string
+    _bizType   string
     // 111
-    code   string
+    _code   string
 }
 
 // 初始化TmallMsfVerifyRequest对象
@@ -44,37 +44,37 @@ func (r TmallMsfVerifyRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 111
-func (r *TmallMsfVerifyRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TmallMsfVerifyRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TmallMsfVerifyRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // BizType Setter
 // 111
-func (r *TmallMsfVerifyRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallMsfVerifyRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallMsfVerifyRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // Code Setter
 // 111
-func (r *TmallMsfVerifyRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TmallMsfVerifyRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TmallMsfVerifyRequest) GetCode() string {
-    return r.code
+    return r._code
 }

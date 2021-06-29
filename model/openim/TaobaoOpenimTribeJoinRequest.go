@@ -15,9 +15,9 @@ OPENIM群主动加入
 type TaobaoOpenimTribeJoinRequest struct {
     model.Params
     // 用户信息
-    user   *OpenImUser
+    _user   *OpenImUser
     // 群id
-    tribeId   int64
+    _tribeId   int64
 }
 
 // 初始化TaobaoOpenimTribeJoinRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenimTribeJoinRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeJoinRequest) SetUser(user *OpenImUser) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeJoinRequest) SetUser(_user *OpenImUser) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeJoinRequest) GetUser() *OpenImUser {
-    return r.user
+    return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeJoinRequest) SetTribeId(tribeId int64) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribeJoinRequest) SetTribeId(_tribeId int64) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribeJoinRequest) GetTribeId() int64 {
-    return r.tribeId
+    return r._tribeId
 }

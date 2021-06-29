@@ -15,7 +15,7 @@ taobao.qimen.store.query
 type TaobaoQimenStoreQueryRequest struct {
     model.Params
     // 已分配的线上门店ID
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoQimenStoreQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStoreQueryRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 已分配的线上门店ID
-func (r *TaobaoQimenStoreQueryRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoQimenStoreQueryRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoQimenStoreQueryRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

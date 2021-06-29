@@ -15,7 +15,7 @@ alibaba.scbp.tag.delete
 type AlibabaScbpTagDeleteRequest struct {
     model.Params
     // 关键词分组名
-    tagName   string
+    _tagName   string
 }
 
 // 初始化AlibabaScbpTagDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTagDeleteRequest) GetApiParams() url.Values {
 }
 // TagName Setter
 // 关键词分组名
-func (r *AlibabaScbpTagDeleteRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *AlibabaScbpTagDeleteRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r AlibabaScbpTagDeleteRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }

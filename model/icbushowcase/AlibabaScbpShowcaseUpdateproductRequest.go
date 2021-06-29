@@ -15,9 +15,9 @@ alibaba.scbp.showcase.updateproduct
 type AlibabaScbpShowcaseUpdateproductRequest struct {
     model.Params
     // 橱窗id
-    windowId   int64
+    _windowId   int64
     // 新的商品id
-    newProductId   int64
+    _newProductId   int64
 }
 
 // 初始化AlibabaScbpShowcaseUpdateproductRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpShowcaseUpdateproductRequest) GetApiParams() url.Values {
 }
 // WindowId Setter
 // 橱窗id
-func (r *AlibabaScbpShowcaseUpdateproductRequest) SetWindowId(windowId int64) error {
-    r.windowId = windowId
-    r.Set("window_id", windowId)
+func (r *AlibabaScbpShowcaseUpdateproductRequest) SetWindowId(_windowId int64) error {
+    r._windowId = _windowId
+    r.Set("window_id", _windowId)
     return nil
 }
 
 // WindowId Getter
 func (r AlibabaScbpShowcaseUpdateproductRequest) GetWindowId() int64 {
-    return r.windowId
+    return r._windowId
 }
 // NewProductId Setter
 // 新的商品id
-func (r *AlibabaScbpShowcaseUpdateproductRequest) SetNewProductId(newProductId int64) error {
-    r.newProductId = newProductId
-    r.Set("new_product_id", newProductId)
+func (r *AlibabaScbpShowcaseUpdateproductRequest) SetNewProductId(_newProductId int64) error {
+    r._newProductId = _newProductId
+    r.Set("new_product_id", _newProductId)
     return nil
 }
 
 // NewProductId Getter
 func (r AlibabaScbpShowcaseUpdateproductRequest) GetNewProductId() int64 {
-    return r.newProductId
+    return r._newProductId
 }

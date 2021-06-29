@@ -15,7 +15,7 @@ taobao.openim.users.delete
 type TaobaoOpenimUsersDeleteRequest struct {
     model.Params
     // 需要删除的用户列表，多个用户用半角逗号分隔，最多一次可以删除100个用户
-    userids   []string
+    _userids   []string
 }
 
 // 初始化TaobaoOpenimUsersDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimUsersDeleteRequest) GetApiParams() url.Values {
 }
 // Userids Setter
 // 需要删除的用户列表，多个用户用半角逗号分隔，最多一次可以删除100个用户
-func (r *TaobaoOpenimUsersDeleteRequest) SetUserids(userids []string) error {
-    r.userids = userids
-    r.Set("userids", userids)
+func (r *TaobaoOpenimUsersDeleteRequest) SetUserids(_userids []string) error {
+    r._userids = _userids
+    r.Set("userids", _userids)
     return nil
 }
 
 // Userids Getter
 func (r TaobaoOpenimUsersDeleteRequest) GetUserids() []string {
-    return r.userids
+    return r._userids
 }

@@ -15,9 +15,9 @@ taobao.alitrip.it.fare.querytask
 type TaobaoAlitripItFareQuerytaskRequest struct {
     model.Params
     // json格式的字符串，扩展属性，预留
-    extendAttributes   string
+    _extendAttributes   string
     // 任务id
-    taskId   int64
+    _taskId   int64
 }
 
 // 初始化TaobaoAlitripItFareQuerytaskRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripItFareQuerytaskRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareQuerytaskRequest) SetExtendAttributes(extendAttributes string) error {
-    r.extendAttributes = extendAttributes
-    r.Set("extendAttributes", extendAttributes)
+func (r *TaobaoAlitripItFareQuerytaskRequest) SetExtendAttributes(_extendAttributes string) error {
+    r._extendAttributes = _extendAttributes
+    r.Set("extendAttributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
 func (r TaobaoAlitripItFareQuerytaskRequest) GetExtendAttributes() string {
-    return r.extendAttributes
+    return r._extendAttributes
 }
 // TaskId Setter
 // 任务id
-func (r *TaobaoAlitripItFareQuerytaskRequest) SetTaskId(taskId int64) error {
-    r.taskId = taskId
-    r.Set("taskId", taskId)
+func (r *TaobaoAlitripItFareQuerytaskRequest) SetTaskId(_taskId int64) error {
+    r._taskId = _taskId
+    r.Set("taskId", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r TaobaoAlitripItFareQuerytaskRequest) GetTaskId() int64 {
-    return r.taskId
+    return r._taskId
 }

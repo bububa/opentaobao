@@ -15,15 +15,15 @@ taobao.miniapp.template.onlineapp
 type TaobaoMiniappTemplateOnlineappRequest struct {
     model.Params
     // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-    clients   []string
+    _clients   []string
     // 小程序app_id
-    appId   string
+    _appId   string
     // 模板id
-    templateId   string
+    _templateId   string
     // 模板版本
-    templateVersion   string
+    _templateVersion   string
     // 待上线的预览版本号
-    appVersion   string
+    _appVersion   string
 }
 
 // 初始化TaobaoMiniappTemplateOnlineappRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoMiniappTemplateOnlineappRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetClients(clients []string) error {
-    r.clients = clients
-    r.Set("clients", clients)
+func (r *TaobaoMiniappTemplateOnlineappRequest) SetClients(_clients []string) error {
+    r._clients = _clients
+    r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
 func (r TaobaoMiniappTemplateOnlineappRequest) GetClients() []string {
-    return r.clients
+    return r._clients
 }
 // AppId Setter
 // 小程序app_id
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r TaobaoMiniappTemplateOnlineappRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoMiniappTemplateOnlineappRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }
 // TemplateVersion Setter
 // 模板版本
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateVersion(templateVersion string) error {
-    r.templateVersion = templateVersion
-    r.Set("template_version", templateVersion)
+func (r *TaobaoMiniappTemplateOnlineappRequest) SetTemplateVersion(_templateVersion string) error {
+    r._templateVersion = _templateVersion
+    r.Set("template_version", _templateVersion)
     return nil
 }
 
 // TemplateVersion Getter
 func (r TaobaoMiniappTemplateOnlineappRequest) GetTemplateVersion() string {
-    return r.templateVersion
+    return r._templateVersion
 }
 // AppVersion Setter
 // 待上线的预览版本号
-func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppVersion(appVersion string) error {
-    r.appVersion = appVersion
-    r.Set("app_version", appVersion)
+func (r *TaobaoMiniappTemplateOnlineappRequest) SetAppVersion(_appVersion string) error {
+    r._appVersion = _appVersion
+    r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
 func (r TaobaoMiniappTemplateOnlineappRequest) GetAppVersion() string {
-    return r.appVersion
+    return r._appVersion
 }

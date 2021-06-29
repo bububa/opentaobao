@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itempool.stair.queryitem
 type AlibabaWdkMarketingItempoolStairQueryitemRequest struct {
     model.Params
     // 换购商品查询参数
-    param0   *ActivitySkuQuery
+    _param0   *ActivitySkuQuery
 }
 
 // 初始化AlibabaWdkMarketingItempoolStairQueryitemRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolStairQueryitemRequest) GetApiParams() url.Val
 }
 // Param0 Setter
 // 换购商品查询参数
-func (r *AlibabaWdkMarketingItempoolStairQueryitemRequest) SetParam0(param0 *ActivitySkuQuery) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingItempoolStairQueryitemRequest) SetParam0(_param0 *ActivitySkuQuery) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingItempoolStairQueryitemRequest) GetParam0() *ActivitySkuQuery {
-    return r.param0
+    return r._param0
 }

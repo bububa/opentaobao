@@ -15,7 +15,7 @@ alibaba.alihealth.ms.area.district.list
 type AlibabaAlihealthMsAreaDistrictListRequest struct {
     model.Params
     // 省份ID
-    divisionId   int64
+    _divisionId   int64
 }
 
 // 初始化AlibabaAlihealthMsAreaDistrictListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiParams() url.Values {
 }
 // DivisionId Setter
 // 省份ID
-func (r *AlibabaAlihealthMsAreaDistrictListRequest) SetDivisionId(divisionId int64) error {
-    r.divisionId = divisionId
-    r.Set("division_id", divisionId)
+func (r *AlibabaAlihealthMsAreaDistrictListRequest) SetDivisionId(_divisionId int64) error {
+    r._divisionId = _divisionId
+    r.Set("division_id", _divisionId)
     return nil
 }
 
 // DivisionId Getter
 func (r AlibabaAlihealthMsAreaDistrictListRequest) GetDivisionId() int64 {
-    return r.divisionId
+    return r._divisionId
 }

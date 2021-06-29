@@ -15,13 +15,13 @@ alibaba.mj.oc.getproductbyscancode
 type AlibabaMjOcGetproductbyscancodeRequest struct {
     model.Params
     // 码, 对应的信息可能是款号，也有可能是具体的某一个商品
-    code   string
+    _code   string
     // 条码/二维码/rfid(电子标签),货号、条码、零售+唯一码;ARTNO、BARCODE、UNIQUECODE
-    codeType   string
+    _codeType   string
     // 专柜编码
-    shopCode   string
+    _shopCode   string
     // 门店编码
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化AlibabaMjOcGetproductbyscancodeRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaMjOcGetproductbyscancodeRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 码, 对应的信息可能是款号，也有可能是具体的某一个商品
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaMjOcGetproductbyscancodeRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // CodeType Setter
 // 条码/二维码/rfid(电子标签),货号、条码、零售+唯一码;ARTNO、BARCODE、UNIQUECODE
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCodeType(codeType string) error {
-    r.codeType = codeType
-    r.Set("code_type", codeType)
+func (r *AlibabaMjOcGetproductbyscancodeRequest) SetCodeType(_codeType string) error {
+    r._codeType = _codeType
+    r.Set("code_type", _codeType)
     return nil
 }
 
 // CodeType Getter
 func (r AlibabaMjOcGetproductbyscancodeRequest) GetCodeType() string {
-    return r.codeType
+    return r._codeType
 }
 // ShopCode Setter
 // 专柜编码
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetShopCode(shopCode string) error {
-    r.shopCode = shopCode
-    r.Set("shop_code", shopCode)
+func (r *AlibabaMjOcGetproductbyscancodeRequest) SetShopCode(_shopCode string) error {
+    r._shopCode = _shopCode
+    r.Set("shop_code", _shopCode)
     return nil
 }
 
 // ShopCode Getter
 func (r AlibabaMjOcGetproductbyscancodeRequest) GetShopCode() string {
-    return r.shopCode
+    return r._shopCode
 }
 // StoreCode Setter
 // 门店编码
-func (r *AlibabaMjOcGetproductbyscancodeRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *AlibabaMjOcGetproductbyscancodeRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r AlibabaMjOcGetproductbyscancodeRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

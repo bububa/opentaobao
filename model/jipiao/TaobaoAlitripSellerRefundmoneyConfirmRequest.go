@@ -15,7 +15,7 @@ taobao.alitrip.seller.refundmoney.confirm
 type TaobaoAlitripSellerRefundmoneyConfirmRequest struct {
     model.Params
     // 申请单id
-    applyId   int64
+    _applyId   int64
 }
 
 // 初始化TaobaoAlitripSellerRefundmoneyConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripSellerRefundmoneyConfirmRequest) GetApiParams() url.Values 
 }
 // ApplyId Setter
 // 申请单id
-func (r *TaobaoAlitripSellerRefundmoneyConfirmRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *TaobaoAlitripSellerRefundmoneyConfirmRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r TaobaoAlitripSellerRefundmoneyConfirmRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }

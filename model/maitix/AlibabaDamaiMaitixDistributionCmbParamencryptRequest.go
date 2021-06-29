@@ -15,7 +15,7 @@ encryptParam4Cmb
 type AlibabaDamaiMaitixDistributionCmbParamencryptRequest struct {
     model.Params
     // 入参param
-    param   *DisEncrypt4CmbParam
+    _param   *DisEncrypt4CmbParam
 }
 
 // 初始化AlibabaDamaiMaitixDistributionCmbParamencryptRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetApiParams() url
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixDistributionCmbParamencryptRequest) SetParam(param *DisEncrypt4CmbParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixDistributionCmbParamencryptRequest) SetParam(_param *DisEncrypt4CmbParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixDistributionCmbParamencryptRequest) GetParam() *DisEncrypt4CmbParam {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ alibaba.mozi.acl.app.getpermisspkgs
 type AlibabaMoziAclAppGetpermisspkgsRequest struct {
     model.Params
     // 获取应用的权限套餐请求对象
-    getAppPermissionPackagesRequest   *GetAppPermissionPackageRequest
+    _getAppPermissionPackagesRequest   *GetAppPermissionPackageRequest
 }
 
 // 初始化AlibabaMoziAclAppGetpermisspkgsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclAppGetpermisspkgsRequest) GetApiParams() url.Values {
 }
 // GetAppPermissionPackagesRequest Setter
 // 获取应用的权限套餐请求对象
-func (r *AlibabaMoziAclAppGetpermisspkgsRequest) SetGetAppPermissionPackagesRequest(getAppPermissionPackagesRequest *GetAppPermissionPackageRequest) error {
-    r.getAppPermissionPackagesRequest = getAppPermissionPackagesRequest
-    r.Set("get_app_permission_packages_request", getAppPermissionPackagesRequest)
+func (r *AlibabaMoziAclAppGetpermisspkgsRequest) SetGetAppPermissionPackagesRequest(_getAppPermissionPackagesRequest *GetAppPermissionPackageRequest) error {
+    r._getAppPermissionPackagesRequest = _getAppPermissionPackagesRequest
+    r.Set("get_app_permission_packages_request", _getAppPermissionPackagesRequest)
     return nil
 }
 
 // GetAppPermissionPackagesRequest Getter
 func (r AlibabaMoziAclAppGetpermisspkgsRequest) GetGetAppPermissionPackagesRequest() *GetAppPermissionPackageRequest {
-    return r.getAppPermissionPackagesRequest
+    return r._getAppPermissionPackagesRequest
 }

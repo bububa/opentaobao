@@ -15,7 +15,7 @@ cainiao.waybill.ii.product
 type CainiaoWaybillIiProductRequest struct {
     model.Params
     // 快递公司code
-    cpCode   string
+    _cpCode   string
 }
 
 // 初始化CainiaoWaybillIiProductRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiProductRequest) GetApiParams() url.Values {
 }
 // CpCode Setter
 // 快递公司code
-func (r *CainiaoWaybillIiProductRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *CainiaoWaybillIiProductRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r CainiaoWaybillIiProductRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }

@@ -15,33 +15,33 @@ aliexpress.affiliate.product.smartmatch
 type AliexpressAffiliateProductSmartmatchRequest struct {
     model.Params
     // 接入APP信息
-    app   string
+    _app   string
     // 请求签名
-    appSignature   string
+    _appSignature   string
     // 设备信息
-    device   string
+    _device   string
     // adid或者idfa
-    deviceId   string
+    _deviceId   string
     // 返回字段列表
-    fields   string
+    _fields   string
     // 关键词
-    keywords   string
+    _keywords   string
     // 商品ID
-    productId   string
+    _productId   string
     // 站点信息
-    site   string
+    _site   string
     // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
-    targetCurrency   string
+    _targetCurrency   string
     // 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
-    targetLanguage   string
+    _targetLanguage   string
     // trackingId
-    trackingId   string
+    _trackingId   string
     // 用户信息
-    user   string
+    _user   string
     // 请求页数
-    pageNo   int64
+    _pageNo   int64
     // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
-    country   string
+    _country   string
 }
 
 // 初始化AliexpressAffiliateProductSmartmatchRequest对象
@@ -66,169 +66,169 @@ func (r AliexpressAffiliateProductSmartmatchRequest) GetApiParams() url.Values {
 }
 // App Setter
 // 接入APP信息
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetApp(app string) error {
-    r.app = app
-    r.Set("app", app)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetApp(_app string) error {
+    r._app = _app
+    r.Set("app", _app)
     return nil
 }
 
 // App Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetApp() string {
-    return r.app
+    return r._app
 }
 // AppSignature Setter
 // 请求签名
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetAppSignature(appSignature string) error {
-    r.appSignature = appSignature
-    r.Set("app_signature", appSignature)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetAppSignature(_appSignature string) error {
+    r._appSignature = _appSignature
+    r.Set("app_signature", _appSignature)
     return nil
 }
 
 // AppSignature Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetAppSignature() string {
-    return r.appSignature
+    return r._appSignature
 }
 // Device Setter
 // 设备信息
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetDevice(device string) error {
-    r.device = device
-    r.Set("device", device)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetDevice(_device string) error {
+    r._device = _device
+    r.Set("device", _device)
     return nil
 }
 
 // Device Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetDevice() string {
-    return r.device
+    return r._device
 }
 // DeviceId Setter
 // adid或者idfa
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // Fields Setter
 // 返回字段列表
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // Keywords Setter
 // 关键词
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetKeywords(keywords string) error {
-    r.keywords = keywords
-    r.Set("keywords", keywords)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetKeywords(_keywords string) error {
+    r._keywords = _keywords
+    r.Set("keywords", _keywords)
     return nil
 }
 
 // Keywords Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetKeywords() string {
-    return r.keywords
+    return r._keywords
 }
 // ProductId Setter
 // 商品ID
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }
 // Site Setter
 // 站点信息
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetSite(site string) error {
-    r.site = site
-    r.Set("site", site)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetSite(_site string) error {
+    r._site = _site
+    r.Set("site", _site)
     return nil
 }
 
 // Site Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetSite() string {
-    return r.site
+    return r._site
 }
 // TargetCurrency Setter
 // 目标币种:USD, GBP, CAD, EUR, UAH, MXN, TRY, RUB, BRL, AUD, INR, JPY, IDR, SEK,KRW
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetTargetCurrency(targetCurrency string) error {
-    r.targetCurrency = targetCurrency
-    r.Set("target_currency", targetCurrency)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetTargetCurrency(_targetCurrency string) error {
+    r._targetCurrency = _targetCurrency
+    r.Set("target_currency", _targetCurrency)
     return nil
 }
 
 // TargetCurrency Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetTargetCurrency() string {
-    return r.targetCurrency
+    return r._targetCurrency
 }
 // TargetLanguage Setter
 // 目标语言:EN,RU,PT,ES,FR,ID,IT,TH,JA,AR,VI,TR,DE,HE,KO,NL,PL,MX,CL,IW,IN
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetTargetLanguage(targetLanguage string) error {
-    r.targetLanguage = targetLanguage
-    r.Set("target_language", targetLanguage)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetTargetLanguage(_targetLanguage string) error {
+    r._targetLanguage = _targetLanguage
+    r.Set("target_language", _targetLanguage)
     return nil
 }
 
 // TargetLanguage Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetTargetLanguage() string {
-    return r.targetLanguage
+    return r._targetLanguage
 }
 // TrackingId Setter
 // trackingId
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetTrackingId(trackingId string) error {
-    r.trackingId = trackingId
-    r.Set("tracking_id", trackingId)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetTrackingId(_trackingId string) error {
+    r._trackingId = _trackingId
+    r.Set("tracking_id", _trackingId)
     return nil
 }
 
 // TrackingId Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetTrackingId() string {
-    return r.trackingId
+    return r._trackingId
 }
 // User Setter
 // 用户信息
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetUser(user string) error {
-    r.user = user
-    r.Set("user", user)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetUser(_user string) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetUser() string {
-    return r.user
+    return r._user
 }
 // PageNo Setter
 // 请求页数
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // Country Setter
 // 商品收货国家，可筛选能销售至该国家的商品，并根据该国家税率政策返回对应商品价格
-func (r *AliexpressAffiliateProductSmartmatchRequest) SetCountry(country string) error {
-    r.country = country
-    r.Set("country", country)
+func (r *AliexpressAffiliateProductSmartmatchRequest) SetCountry(_country string) error {
+    r._country = _country
+    r.Set("country", _country)
     return nil
 }
 
 // Country Getter
 func (r AliexpressAffiliateProductSmartmatchRequest) GetCountry() string {
-    return r.country
+    return r._country
 }

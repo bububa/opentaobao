@@ -15,9 +15,9 @@ alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.key.secret.update
 type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest struct {
     model.Params
     // 一次请求的唯一标识符
-    seqId   string
+    _seqId   string
     // 新的 key
-    secret   string
+    _secret   string
 }
 
 // 初始化AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetA
 }
 // SeqId Setter
 // 一次请求的唯一标识符
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSeqId(seqId string) error {
-    r.seqId = seqId
-    r.Set("seq_id", seqId)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSeqId(_seqId string) error {
+    r._seqId = _seqId
+    r.Set("seq_id", _seqId)
     return nil
 }
 
 // SeqId Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetSeqId() string {
-    return r.seqId
+    return r._seqId
 }
 // Secret Setter
 // 新的 key
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSecret(secret string) error {
-    r.secret = secret
-    r.Set("secret", secret)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) SetSecret(_secret string) error {
+    r._secret = _secret
+    r.Set("secret", _secret)
     return nil
 }
 
 // Secret Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuKeySecretUpdateRequest) GetSecret() string {
-    return r.secret
+    return r._secret
 }

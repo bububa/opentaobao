@@ -15,7 +15,7 @@ alibaba.fundplatform.cardorder.make.success
 type AlibabaFundplatformCardorderMakeSuccessRequest struct {
     model.Params
     // 入参对象
-    request   *AlibabaFundplatformCardorderMakeSuccessStruct
+    _request   *AlibabaFundplatformCardorderMakeSuccessStruct
 }
 
 // 初始化AlibabaFundplatformCardorderMakeSuccessRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetApiParams() url.Value
 }
 // Request Setter
 // 入参对象
-func (r *AlibabaFundplatformCardorderMakeSuccessRequest) SetRequest(request *AlibabaFundplatformCardorderMakeSuccessStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *AlibabaFundplatformCardorderMakeSuccessRequest) SetRequest(_request *AlibabaFundplatformCardorderMakeSuccessStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r AlibabaFundplatformCardorderMakeSuccessRequest) GetRequest() *AlibabaFundplatformCardorderMakeSuccessStruct {
-    return r.request
+    return r._request
 }

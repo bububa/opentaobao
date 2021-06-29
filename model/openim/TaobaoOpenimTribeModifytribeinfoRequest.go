@@ -15,13 +15,13 @@ OPENIM群信息修改
 type TaobaoOpenimTribeModifytribeinfoRequest struct {
     model.Params
     // 用户信息
-    user   *OpenImUser
+    _user   *OpenImUser
     // 群名称
-    tribeName   string
+    _tribeName   string
     // 群公告
-    notice   string
+    _notice   string
     // 群id
-    tribeId   int64
+    _tribeId   int64
 }
 
 // 初始化TaobaoOpenimTribeModifytribeinfoRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOpenimTribeModifytribeinfoRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetUser(user *OpenImUser) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetUser(_user *OpenImUser) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeModifytribeinfoRequest) GetUser() *OpenImUser {
-    return r.user
+    return r._user
 }
 // TribeName Setter
 // 群名称
-func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetTribeName(tribeName string) error {
-    r.tribeName = tribeName
-    r.Set("tribe_name", tribeName)
+func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetTribeName(_tribeName string) error {
+    r._tribeName = _tribeName
+    r.Set("tribe_name", _tribeName)
     return nil
 }
 
 // TribeName Getter
 func (r TaobaoOpenimTribeModifytribeinfoRequest) GetTribeName() string {
-    return r.tribeName
+    return r._tribeName
 }
 // Notice Setter
 // 群公告
-func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetNotice(notice string) error {
-    r.notice = notice
-    r.Set("notice", notice)
+func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetNotice(_notice string) error {
+    r._notice = _notice
+    r.Set("notice", _notice)
     return nil
 }
 
 // Notice Getter
 func (r TaobaoOpenimTribeModifytribeinfoRequest) GetNotice() string {
-    return r.notice
+    return r._notice
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetTribeId(tribeId int64) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribeModifytribeinfoRequest) SetTribeId(_tribeId int64) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribeModifytribeinfoRequest) GetTribeId() int64 {
-    return r.tribeId
+    return r._tribeId
 }

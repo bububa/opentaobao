@@ -15,7 +15,7 @@ taobao.wlb.orderstatus.get
 type TaobaoWlbOrderstatusGetRequest struct {
     model.Params
     // 物流宝订单编码
-    orderCode   string
+    _orderCode   string
 }
 
 // 初始化TaobaoWlbOrderstatusGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbOrderstatusGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 物流宝订单编码
-func (r *TaobaoWlbOrderstatusGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbOrderstatusGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbOrderstatusGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }

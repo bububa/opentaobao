@@ -15,7 +15,7 @@ WMS调用接口，用于异步化的批量发货单创建结果通知。（如�
 type TaobaoQimenDeliveryorderBatchcreateAnswerRequest struct {
     model.Params
     // 
-    request   *DeliveryOrderBatchCreateAnswerRequest
+    _request   *DeliveryOrderBatchCreateAnswerRequest
 }
 
 // 初始化TaobaoQimenDeliveryorderBatchcreateAnswerRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenDeliveryorderBatchcreateAnswerRequest) GetApiParams() url.Val
 }
 // Request Setter
 // 
-func (r *TaobaoQimenDeliveryorderBatchcreateAnswerRequest) SetRequest(request *DeliveryOrderBatchCreateAnswerRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenDeliveryorderBatchcreateAnswerRequest) SetRequest(_request *DeliveryOrderBatchCreateAnswerRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenDeliveryorderBatchcreateAnswerRequest) GetRequest() *DeliveryOrderBatchCreateAnswerRequest {
-    return r.request
+    return r._request
 }

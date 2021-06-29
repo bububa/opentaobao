@@ -15,11 +15,11 @@ alibaba.seaking.imagetranslate.submit
 type AlibabaSeakingImagetranslateSubmitRequest struct {
     model.Params
     // token来源站点
-    tokenFrom   string
+    _tokenFrom   string
     // 子任务列表
-    imageTranslateDetailList   []ImageTranslateDetailDto
+    _imageTranslateDetailList   []ImageTranslateDetailDto
     // 用户token
-    token   string
+    _token   string
 }
 
 // 初始化AlibabaSeakingImagetranslateSubmitRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaSeakingImagetranslateSubmitRequest) GetApiParams() url.Values {
 }
 // TokenFrom Setter
 // token来源站点
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetTokenFrom(tokenFrom string) error {
-    r.tokenFrom = tokenFrom
-    r.Set("token_from", tokenFrom)
+func (r *AlibabaSeakingImagetranslateSubmitRequest) SetTokenFrom(_tokenFrom string) error {
+    r._tokenFrom = _tokenFrom
+    r.Set("token_from", _tokenFrom)
     return nil
 }
 
 // TokenFrom Getter
 func (r AlibabaSeakingImagetranslateSubmitRequest) GetTokenFrom() string {
-    return r.tokenFrom
+    return r._tokenFrom
 }
 // ImageTranslateDetailList Setter
 // 子任务列表
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetImageTranslateDetailList(imageTranslateDetailList []ImageTranslateDetailDto) error {
-    r.imageTranslateDetailList = imageTranslateDetailList
-    r.Set("image_translate_detail_list", imageTranslateDetailList)
+func (r *AlibabaSeakingImagetranslateSubmitRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDto) error {
+    r._imageTranslateDetailList = _imageTranslateDetailList
+    r.Set("image_translate_detail_list", _imageTranslateDetailList)
     return nil
 }
 
 // ImageTranslateDetailList Getter
 func (r AlibabaSeakingImagetranslateSubmitRequest) GetImageTranslateDetailList() []ImageTranslateDetailDto {
-    return r.imageTranslateDetailList
+    return r._imageTranslateDetailList
 }
 // Token Setter
 // 用户token
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaSeakingImagetranslateSubmitRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaSeakingImagetranslateSubmitRequest) GetToken() string {
-    return r.token
+    return r._token
 }

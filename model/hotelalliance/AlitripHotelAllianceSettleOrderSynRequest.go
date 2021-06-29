@@ -15,7 +15,7 @@ alitrip.hotel.alliance.settle.order.syn
 type AlitripHotelAllianceSettleOrderSynRequest struct {
     model.Params
     // 订单信息
-    orderInfo   *AllianceSettleOrderInfo
+    _orderInfo   *AllianceSettleOrderInfo
 }
 
 // 初始化AlitripHotelAllianceSettleOrderSynRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelAllianceSettleOrderSynRequest) GetApiParams() url.Values {
 }
 // OrderInfo Setter
 // 订单信息
-func (r *AlitripHotelAllianceSettleOrderSynRequest) SetOrderInfo(orderInfo *AllianceSettleOrderInfo) error {
-    r.orderInfo = orderInfo
-    r.Set("order_info", orderInfo)
+func (r *AlitripHotelAllianceSettleOrderSynRequest) SetOrderInfo(_orderInfo *AllianceSettleOrderInfo) error {
+    r._orderInfo = _orderInfo
+    r.Set("order_info", _orderInfo)
     return nil
 }
 
 // OrderInfo Getter
 func (r AlitripHotelAllianceSettleOrderSynRequest) GetOrderInfo() *AllianceSettleOrderInfo {
-    return r.orderInfo
+    return r._orderInfo
 }

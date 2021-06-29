@@ -15,11 +15,11 @@ taobao.subuser.info.update
 type TaobaoSubuserInfoUpdateRequest struct {
     model.Params
     // 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
-    isDisableSubaccount   bool
+    _isDisableSubaccount   bool
     // 子账号是否参与分流 true:参与分流 false:不参与分流
-    isDispatch   bool
+    _isDispatch   bool
     // 子账号ID
-    subId   int64
+    _subId   int64
 }
 
 // 初始化TaobaoSubuserInfoUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSubuserInfoUpdateRequest) GetApiParams() url.Values {
 }
 // IsDisableSubaccount Setter
 // 是否停用子账号 true:表示停用该子账号false:表示开启该子账号
-func (r *TaobaoSubuserInfoUpdateRequest) SetIsDisableSubaccount(isDisableSubaccount bool) error {
-    r.isDisableSubaccount = isDisableSubaccount
-    r.Set("is_disable_subaccount", isDisableSubaccount)
+func (r *TaobaoSubuserInfoUpdateRequest) SetIsDisableSubaccount(_isDisableSubaccount bool) error {
+    r._isDisableSubaccount = _isDisableSubaccount
+    r.Set("is_disable_subaccount", _isDisableSubaccount)
     return nil
 }
 
 // IsDisableSubaccount Getter
 func (r TaobaoSubuserInfoUpdateRequest) GetIsDisableSubaccount() bool {
-    return r.isDisableSubaccount
+    return r._isDisableSubaccount
 }
 // IsDispatch Setter
 // 子账号是否参与分流 true:参与分流 false:不参与分流
-func (r *TaobaoSubuserInfoUpdateRequest) SetIsDispatch(isDispatch bool) error {
-    r.isDispatch = isDispatch
-    r.Set("is_dispatch", isDispatch)
+func (r *TaobaoSubuserInfoUpdateRequest) SetIsDispatch(_isDispatch bool) error {
+    r._isDispatch = _isDispatch
+    r.Set("is_dispatch", _isDispatch)
     return nil
 }
 
 // IsDispatch Getter
 func (r TaobaoSubuserInfoUpdateRequest) GetIsDispatch() bool {
-    return r.isDispatch
+    return r._isDispatch
 }
 // SubId Setter
 // 子账号ID
-func (r *TaobaoSubuserInfoUpdateRequest) SetSubId(subId int64) error {
-    r.subId = subId
-    r.Set("sub_id", subId)
+func (r *TaobaoSubuserInfoUpdateRequest) SetSubId(_subId int64) error {
+    r._subId = _subId
+    r.Set("sub_id", _subId)
     return nil
 }
 
 // SubId Getter
 func (r TaobaoSubuserInfoUpdateRequest) GetSubId() int64 {
-    return r.subId
+    return r._subId
 }

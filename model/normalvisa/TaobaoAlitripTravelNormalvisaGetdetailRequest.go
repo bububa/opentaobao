@@ -15,7 +15,7 @@ taobao.alitrip.travel.normalvisa.getdetail
 type TaobaoAlitripTravelNormalvisaGetdetailRequest struct {
     model.Params
     // 订单id
-    bizOrderId   int64
+    _bizOrderId   int64
 }
 
 // 初始化TaobaoAlitripTravelNormalvisaGetdetailRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetApiParams() url.Values
 }
 // BizOrderId Setter
 // 订单id
-func (r *TaobaoAlitripTravelNormalvisaGetdetailRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TaobaoAlitripTravelNormalvisaGetdetailRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TaobaoAlitripTravelNormalvisaGetdetailRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }

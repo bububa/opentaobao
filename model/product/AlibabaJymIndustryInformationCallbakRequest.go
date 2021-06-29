@@ -15,13 +15,13 @@ VMOS回调交易猫行业信息系统
 type AlibabaJymIndustryInformationCallbakRequest struct {
     model.Params
     // 任务ID
-    taskId   string
+    _taskId   string
     // 幂等ID
-    bizId   string
+    _bizId   string
     // 状态
-    status   int64
+    _status   int64
     // 内容
-    content   string
+    _content   string
 }
 
 // 初始化AlibabaJymIndustryInformationCallbakRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaJymIndustryInformationCallbakRequest) GetApiParams() url.Values {
 }
 // TaskId Setter
 // 任务ID
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetTaskId(taskId string) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *AlibabaJymIndustryInformationCallbakRequest) SetTaskId(_taskId string) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r AlibabaJymIndustryInformationCallbakRequest) GetTaskId() string {
-    return r.taskId
+    return r._taskId
 }
 // BizId Setter
 // 幂等ID
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetBizId(bizId string) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *AlibabaJymIndustryInformationCallbakRequest) SetBizId(_bizId string) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r AlibabaJymIndustryInformationCallbakRequest) GetBizId() string {
-    return r.bizId
+    return r._bizId
 }
 // Status Setter
 // 状态
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaJymIndustryInformationCallbakRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaJymIndustryInformationCallbakRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // Content Setter
 // 内容
-func (r *AlibabaJymIndustryInformationCallbakRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaJymIndustryInformationCallbakRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaJymIndustryInformationCallbakRequest) GetContent() string {
-    return r.content
+    return r._content
 }

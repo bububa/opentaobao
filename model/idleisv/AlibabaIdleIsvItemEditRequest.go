@@ -15,7 +15,7 @@ alibaba.idle.isv.item.edit
 type AlibabaIdleIsvItemEditRequest struct {
     model.Params
     // 商品数据参数
-    param   *IdleItemApiDo
+    _param   *IdleItemApiDo
 }
 
 // 初始化AlibabaIdleIsvItemEditRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemEditRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 商品数据参数
-func (r *AlibabaIdleIsvItemEditRequest) SetParam(param *IdleItemApiDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaIdleIsvItemEditRequest) SetParam(_param *IdleItemApiDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaIdleIsvItemEditRequest) GetParam() *IdleItemApiDo {
-    return r.param
+    return r._param
 }

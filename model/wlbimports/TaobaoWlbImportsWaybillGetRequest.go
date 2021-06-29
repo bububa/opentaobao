@@ -15,7 +15,7 @@ taobao.wlb.imports.waybill.get
 type TaobaoWlbImportsWaybillGetRequest struct {
     model.Params
     // 物流订单号
-    orderCode   string
+    _orderCode   string
 }
 
 // 初始化TaobaoWlbImportsWaybillGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbImportsWaybillGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 物流订单号
-func (r *TaobaoWlbImportsWaybillGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbImportsWaybillGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbImportsWaybillGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }

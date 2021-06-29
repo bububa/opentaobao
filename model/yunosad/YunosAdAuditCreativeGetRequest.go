@@ -15,9 +15,9 @@ yunos.ad.audit.creative.get
 type YunosAdAuditCreativeGetRequest struct {
     model.Params
     // 第三方的dspId
-    memberId   int64
+    _memberId   int64
     // 第三方广告创意id
-    creativeId   string
+    _creativeId   string
 }
 
 // 初始化YunosAdAuditCreativeGetRequest对象
@@ -42,25 +42,25 @@ func (r YunosAdAuditCreativeGetRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // 第三方的dspId
-func (r *YunosAdAuditCreativeGetRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *YunosAdAuditCreativeGetRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r YunosAdAuditCreativeGetRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // CreativeId Setter
 // 第三方广告创意id
-func (r *YunosAdAuditCreativeGetRequest) SetCreativeId(creativeId string) error {
-    r.creativeId = creativeId
-    r.Set("creative_id", creativeId)
+func (r *YunosAdAuditCreativeGetRequest) SetCreativeId(_creativeId string) error {
+    r._creativeId = _creativeId
+    r.Set("creative_id", _creativeId)
     return nil
 }
 
 // CreativeId Getter
 func (r YunosAdAuditCreativeGetRequest) GetCreativeId() string {
-    return r.creativeId
+    return r._creativeId
 }

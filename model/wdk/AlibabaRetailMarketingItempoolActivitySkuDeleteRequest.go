@@ -15,7 +15,7 @@ alibaba.retail.marketing.itempool.activity.sku.delete
 type AlibabaRetailMarketingItempoolActivitySkuDeleteRequest struct {
     model.Params
     // 入参
-    param   *ItemPoolActivityElementOperateRequest
+    _param   *ItemPoolActivityElementOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingItempoolActivitySkuDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItempoolActivitySkuDeleteRequest) GetApiParams() u
 }
 // Param Setter
 // 入参
-func (r *AlibabaRetailMarketingItempoolActivitySkuDeleteRequest) SetParam(param *ItemPoolActivityElementOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingItempoolActivitySkuDeleteRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingItempoolActivitySkuDeleteRequest) GetParam() *ItemPoolActivityElementOperateRequest {
-    return r.param
+    return r._param
 }

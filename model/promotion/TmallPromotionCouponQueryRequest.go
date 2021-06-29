@@ -15,11 +15,11 @@ tmall.promotion.coupon.query
 type TmallPromotionCouponQueryRequest struct {
     model.Params
     // 业务类型
-    bizType   string
+    _bizType   string
     // buyer_id、buyer_nick至少填一个， 都填写以id为准
-    buyerId   string
+    _buyerId   string
     // buyer_id、buyer_nick至少填一个， 都填写以id为准
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TmallPromotionCouponQueryRequest对象
@@ -44,37 +44,37 @@ func (r TmallPromotionCouponQueryRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 业务类型
-func (r *TmallPromotionCouponQueryRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallPromotionCouponQueryRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallPromotionCouponQueryRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // BuyerId Setter
 // buyer_id、buyer_nick至少填一个， 都填写以id为准
-func (r *TmallPromotionCouponQueryRequest) SetBuyerId(buyerId string) error {
-    r.buyerId = buyerId
-    r.Set("buyer_id", buyerId)
+func (r *TmallPromotionCouponQueryRequest) SetBuyerId(_buyerId string) error {
+    r._buyerId = _buyerId
+    r.Set("buyer_id", _buyerId)
     return nil
 }
 
 // BuyerId Getter
 func (r TmallPromotionCouponQueryRequest) GetBuyerId() string {
-    return r.buyerId
+    return r._buyerId
 }
 // BuyerNick Setter
 // buyer_id、buyer_nick至少填一个， 都填写以id为准
-func (r *TmallPromotionCouponQueryRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TmallPromotionCouponQueryRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TmallPromotionCouponQueryRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

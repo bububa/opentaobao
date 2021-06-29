@@ -15,7 +15,7 @@ POI开放存储提供离线/在线/纬错更新的能力
 type AlitripPlatformPoiRawSaverawpoiRequest struct {
     model.Params
     // poi存储参数
-    tripPoiRawSaveParam   *TripPoiRawSaveParamV2
+    _tripPoiRawSaveParam   *TripPoiRawSaveParamV2
 }
 
 // 初始化AlitripPlatformPoiRawSaverawpoiRequest对象
@@ -40,13 +40,13 @@ func (r AlitripPlatformPoiRawSaverawpoiRequest) GetApiParams() url.Values {
 }
 // TripPoiRawSaveParam Setter
 // poi存储参数
-func (r *AlitripPlatformPoiRawSaverawpoiRequest) SetTripPoiRawSaveParam(tripPoiRawSaveParam *TripPoiRawSaveParamV2) error {
-    r.tripPoiRawSaveParam = tripPoiRawSaveParam
-    r.Set("trip_poi_raw_save_param", tripPoiRawSaveParam)
+func (r *AlitripPlatformPoiRawSaverawpoiRequest) SetTripPoiRawSaveParam(_tripPoiRawSaveParam *TripPoiRawSaveParamV2) error {
+    r._tripPoiRawSaveParam = _tripPoiRawSaveParam
+    r.Set("trip_poi_raw_save_param", _tripPoiRawSaveParam)
     return nil
 }
 
 // TripPoiRawSaveParam Getter
 func (r AlitripPlatformPoiRawSaverawpoiRequest) GetTripPoiRawSaveParam() *TripPoiRawSaveParamV2 {
-    return r.tripPoiRawSaveParam
+    return r._tripPoiRawSaveParam
 }

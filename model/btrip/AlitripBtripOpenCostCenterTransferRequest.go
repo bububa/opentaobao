@@ -15,7 +15,7 @@ alitrip.btrip.open.cost.center.transfer
 type AlitripBtripOpenCostCenterTransferRequest struct {
     model.Params
     // 入参对象
-    rq   *OpenCostCenterTransferRq
+    _rq   *OpenCostCenterTransferRq
 }
 
 // 初始化AlitripBtripOpenCostCenterTransferRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenCostCenterTransferRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripOpenCostCenterTransferRequest) SetRq(rq *OpenCostCenterTransferRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenCostCenterTransferRequest) SetRq(_rq *OpenCostCenterTransferRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenCostCenterTransferRequest) GetRq() *OpenCostCenterTransferRq {
-    return r.rq
+    return r._rq
 }

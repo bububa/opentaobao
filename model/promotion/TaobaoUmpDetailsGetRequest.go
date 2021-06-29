@@ -15,11 +15,11 @@ taobao.ump.details.get
 type TaobaoUmpDetailsGetRequest struct {
     model.Params
     // 营销活动id
-    actId   int64
+    _actId   int64
     // 分页的页码
-    pageNo   int64
+    _pageNo   int64
     // 每页的最大条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoUmpDetailsGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoUmpDetailsGetRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 营销活动id
-func (r *TaobaoUmpDetailsGetRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *TaobaoUmpDetailsGetRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r TaobaoUmpDetailsGetRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }
 // PageNo Setter
 // 分页的页码
-func (r *TaobaoUmpDetailsGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoUmpDetailsGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoUmpDetailsGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页的最大条数
-func (r *TaobaoUmpDetailsGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoUmpDetailsGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoUmpDetailsGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

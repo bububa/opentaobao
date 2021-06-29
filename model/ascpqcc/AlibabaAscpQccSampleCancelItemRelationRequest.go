@@ -15,7 +15,7 @@ alibaba.ascp.qcc.sample.cancel.item.relation
 type AlibabaAscpQccSampleCancelItemRelationRequest struct {
     model.Params
     // 请求参数对象
-    cancelRequest   *CancelSampleRelationRequest
+    _cancelRequest   *CancelSampleRelationRequest
 }
 
 // 初始化AlibabaAscpQccSampleCancelItemRelationRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpQccSampleCancelItemRelationRequest) GetApiParams() url.Values
 }
 // CancelRequest Setter
 // 请求参数对象
-func (r *AlibabaAscpQccSampleCancelItemRelationRequest) SetCancelRequest(cancelRequest *CancelSampleRelationRequest) error {
-    r.cancelRequest = cancelRequest
-    r.Set("cancel_request", cancelRequest)
+func (r *AlibabaAscpQccSampleCancelItemRelationRequest) SetCancelRequest(_cancelRequest *CancelSampleRelationRequest) error {
+    r._cancelRequest = _cancelRequest
+    r.Set("cancel_request", _cancelRequest)
     return nil
 }
 
 // CancelRequest Getter
 func (r AlibabaAscpQccSampleCancelItemRelationRequest) GetCancelRequest() *CancelSampleRelationRequest {
-    return r.cancelRequest
+    return r._cancelRequest
 }

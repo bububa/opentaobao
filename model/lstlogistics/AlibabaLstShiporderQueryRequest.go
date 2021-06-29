@@ -15,9 +15,9 @@ alibaba.lst.shiporder.query
 type AlibabaLstShiporderQueryRequest struct {
     model.Params
     // 零售通
-    source   string
+    _source   string
     // 订单
-    outOrderId   string
+    _outOrderId   string
 }
 
 // 初始化AlibabaLstShiporderQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstShiporderQueryRequest) GetApiParams() url.Values {
 }
 // Source Setter
 // 零售通
-func (r *AlibabaLstShiporderQueryRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaLstShiporderQueryRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaLstShiporderQueryRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // OutOrderId Setter
 // 订单
-func (r *AlibabaLstShiporderQueryRequest) SetOutOrderId(outOrderId string) error {
-    r.outOrderId = outOrderId
-    r.Set("out_order_id", outOrderId)
+func (r *AlibabaLstShiporderQueryRequest) SetOutOrderId(_outOrderId string) error {
+    r._outOrderId = _outOrderId
+    r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
 func (r AlibabaLstShiporderQueryRequest) GetOutOrderId() string {
-    return r.outOrderId
+    return r._outOrderId
 }

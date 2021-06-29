@@ -15,21 +15,21 @@ tmall.servicecenter.workcard.querybyseller
 type TmallServicecenterWorkcardQuerybysellerRequest struct {
     model.Params
     // 门店/网点id
-    serviceStoreId   int64
+    _serviceStoreId   int64
     // 核销码
-    identifyCode   string
+    _identifyCode   string
     // 工单id
-    id   int64
+    _id   int64
     // 工单创建开始时间
-    gmtCreateStart   string
+    _gmtCreateStart   string
     // 工单创建结束时间，必须与工单创建开始时间一起传入，且间隔不超过15分钟
-    gmtCreateEnd   string
+    _gmtCreateEnd   string
     // 淘宝交易订单号。主订单或子订单均可
-    bizOrderId   int64
+    _bizOrderId   int64
     // 当前页数
-    currentPage   int64
+    _currentPage   int64
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TmallServicecenterWorkcardQuerybysellerRequest对象
@@ -54,97 +54,97 @@ func (r TmallServicecenterWorkcardQuerybysellerRequest) GetApiParams() url.Value
 }
 // ServiceStoreId Setter
 // 门店/网点id
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetServiceStoreId(serviceStoreId int64) error {
-    r.serviceStoreId = serviceStoreId
-    r.Set("service_store_id", serviceStoreId)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetServiceStoreId(_serviceStoreId int64) error {
+    r._serviceStoreId = _serviceStoreId
+    r.Set("service_store_id", _serviceStoreId)
     return nil
 }
 
 // ServiceStoreId Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetServiceStoreId() int64 {
-    return r.serviceStoreId
+    return r._serviceStoreId
 }
 // IdentifyCode Setter
 // 核销码
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetIdentifyCode(identifyCode string) error {
-    r.identifyCode = identifyCode
-    r.Set("identify_code", identifyCode)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetIdentifyCode(_identifyCode string) error {
+    r._identifyCode = _identifyCode
+    r.Set("identify_code", _identifyCode)
     return nil
 }
 
 // IdentifyCode Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetIdentifyCode() string {
-    return r.identifyCode
+    return r._identifyCode
 }
 // Id Setter
 // 工单id
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // GmtCreateStart Setter
 // 工单创建开始时间
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetGmtCreateStart(gmtCreateStart string) error {
-    r.gmtCreateStart = gmtCreateStart
-    r.Set("gmt_create_start", gmtCreateStart)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetGmtCreateStart(_gmtCreateStart string) error {
+    r._gmtCreateStart = _gmtCreateStart
+    r.Set("gmt_create_start", _gmtCreateStart)
     return nil
 }
 
 // GmtCreateStart Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetGmtCreateStart() string {
-    return r.gmtCreateStart
+    return r._gmtCreateStart
 }
 // GmtCreateEnd Setter
 // 工单创建结束时间，必须与工单创建开始时间一起传入，且间隔不超过15分钟
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetGmtCreateEnd(gmtCreateEnd string) error {
-    r.gmtCreateEnd = gmtCreateEnd
-    r.Set("gmt_create_end", gmtCreateEnd)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
+    r._gmtCreateEnd = _gmtCreateEnd
+    r.Set("gmt_create_end", _gmtCreateEnd)
     return nil
 }
 
 // GmtCreateEnd Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetGmtCreateEnd() string {
-    return r.gmtCreateEnd
+    return r._gmtCreateEnd
 }
 // BizOrderId Setter
 // 淘宝交易订单号。主订单或子订单均可
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // CurrentPage Setter
 // 当前页数
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页大小
-func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TmallServicecenterWorkcardQuerybysellerRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TmallServicecenterWorkcardQuerybysellerRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

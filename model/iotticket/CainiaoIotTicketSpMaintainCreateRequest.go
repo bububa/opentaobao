@@ -15,7 +15,7 @@ IoT售后服务商制定维修方案
 type CainiaoIotTicketSpMaintainCreateRequest struct {
     model.Params
     // 请求参数
-    param   *AssignMaintenancePersonnelTopRequest
+    _param   *AssignMaintenancePersonnelTopRequest
 }
 
 // 初始化CainiaoIotTicketSpMaintainCreateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpMaintainCreateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求参数
-func (r *CainiaoIotTicketSpMaintainCreateRequest) SetParam(param *AssignMaintenancePersonnelTopRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *CainiaoIotTicketSpMaintainCreateRequest) SetParam(_param *AssignMaintenancePersonnelTopRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r CainiaoIotTicketSpMaintainCreateRequest) GetParam() *AssignMaintenancePersonnelTopRequest {
-    return r.param
+    return r._param
 }

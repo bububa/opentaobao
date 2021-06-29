@@ -15,7 +15,7 @@ taobao.jst.sms.status.query
 type TaobaoJstSmsStatusQueryRequest struct {
     model.Params
     // 公众号状态信息查询请求
-    officialAccountStatusQueryRequest   *JstBaseRequest
+    _officialAccountStatusQueryRequest   *JstBaseRequest
 }
 
 // 初始化TaobaoJstSmsStatusQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsStatusQueryRequest) GetApiParams() url.Values {
 }
 // OfficialAccountStatusQueryRequest Setter
 // 公众号状态信息查询请求
-func (r *TaobaoJstSmsStatusQueryRequest) SetOfficialAccountStatusQueryRequest(officialAccountStatusQueryRequest *JstBaseRequest) error {
-    r.officialAccountStatusQueryRequest = officialAccountStatusQueryRequest
-    r.Set("official_account_status_query_request", officialAccountStatusQueryRequest)
+func (r *TaobaoJstSmsStatusQueryRequest) SetOfficialAccountStatusQueryRequest(_officialAccountStatusQueryRequest *JstBaseRequest) error {
+    r._officialAccountStatusQueryRequest = _officialAccountStatusQueryRequest
+    r.Set("official_account_status_query_request", _officialAccountStatusQueryRequest)
     return nil
 }
 
 // OfficialAccountStatusQueryRequest Getter
 func (r TaobaoJstSmsStatusQueryRequest) GetOfficialAccountStatusQueryRequest() *JstBaseRequest {
-    return r.officialAccountStatusQueryRequest
+    return r._officialAccountStatusQueryRequest
 }

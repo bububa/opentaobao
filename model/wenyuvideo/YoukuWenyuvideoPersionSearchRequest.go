@@ -15,7 +15,7 @@ youku.wenyuvideo.persion.search
 type YoukuWenyuvideoPersionSearchRequest struct {
     model.Params
     // 人物名字，搜索规则是完全匹配，即只返回同名人物列表
-    personName   string
+    _personName   string
 }
 
 // 初始化YoukuWenyuvideoPersionSearchRequest对象
@@ -40,13 +40,13 @@ func (r YoukuWenyuvideoPersionSearchRequest) GetApiParams() url.Values {
 }
 // PersonName Setter
 // 人物名字，搜索规则是完全匹配，即只返回同名人物列表
-func (r *YoukuWenyuvideoPersionSearchRequest) SetPersonName(personName string) error {
-    r.personName = personName
-    r.Set("person_name", personName)
+func (r *YoukuWenyuvideoPersionSearchRequest) SetPersonName(_personName string) error {
+    r._personName = _personName
+    r.Set("person_name", _personName)
     return nil
 }
 
 // PersonName Getter
 func (r YoukuWenyuvideoPersionSearchRequest) GetPersonName() string {
-    return r.personName
+    return r._personName
 }

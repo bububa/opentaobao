@@ -15,7 +15,7 @@ tmall.traceplatform.cts.order.stop
 type TmallTraceplatformCtsOrderStopRequest struct {
     model.Params
     // 入参traceInfo
-    traceInfo   *TraceInfo
+    _traceInfo   *TraceInfo
 }
 
 // 初始化TmallTraceplatformCtsOrderStopRequest对象
@@ -40,13 +40,13 @@ func (r TmallTraceplatformCtsOrderStopRequest) GetApiParams() url.Values {
 }
 // TraceInfo Setter
 // 入参traceInfo
-func (r *TmallTraceplatformCtsOrderStopRequest) SetTraceInfo(traceInfo *TraceInfo) error {
-    r.traceInfo = traceInfo
-    r.Set("trace_info", traceInfo)
+func (r *TmallTraceplatformCtsOrderStopRequest) SetTraceInfo(_traceInfo *TraceInfo) error {
+    r._traceInfo = _traceInfo
+    r.Set("trace_info", _traceInfo)
     return nil
 }
 
 // TraceInfo Getter
 func (r TmallTraceplatformCtsOrderStopRequest) GetTraceInfo() *TraceInfo {
-    return r.traceInfo
+    return r._traceInfo
 }

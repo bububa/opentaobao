@@ -15,11 +15,11 @@ alibaba.jym.requirements.receive
 type AlibabaJymRequirementsReceiveRequest struct {
     model.Params
     // 需求id
-    requirementId   string
+    _requirementId   string
     // 接单者手机号
-    receiverMobile   string
+    _receiverMobile   string
     // 需求订单id
-    requirementOrderId   string
+    _requirementOrderId   string
 }
 
 // 初始化AlibabaJymRequirementsReceiveRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaJymRequirementsReceiveRequest) GetApiParams() url.Values {
 }
 // RequirementId Setter
 // 需求id
-func (r *AlibabaJymRequirementsReceiveRequest) SetRequirementId(requirementId string) error {
-    r.requirementId = requirementId
-    r.Set("requirement_id", requirementId)
+func (r *AlibabaJymRequirementsReceiveRequest) SetRequirementId(_requirementId string) error {
+    r._requirementId = _requirementId
+    r.Set("requirement_id", _requirementId)
     return nil
 }
 
 // RequirementId Getter
 func (r AlibabaJymRequirementsReceiveRequest) GetRequirementId() string {
-    return r.requirementId
+    return r._requirementId
 }
 // ReceiverMobile Setter
 // 接单者手机号
-func (r *AlibabaJymRequirementsReceiveRequest) SetReceiverMobile(receiverMobile string) error {
-    r.receiverMobile = receiverMobile
-    r.Set("receiver_mobile", receiverMobile)
+func (r *AlibabaJymRequirementsReceiveRequest) SetReceiverMobile(_receiverMobile string) error {
+    r._receiverMobile = _receiverMobile
+    r.Set("receiver_mobile", _receiverMobile)
     return nil
 }
 
 // ReceiverMobile Getter
 func (r AlibabaJymRequirementsReceiveRequest) GetReceiverMobile() string {
-    return r.receiverMobile
+    return r._receiverMobile
 }
 // RequirementOrderId Setter
 // 需求订单id
-func (r *AlibabaJymRequirementsReceiveRequest) SetRequirementOrderId(requirementOrderId string) error {
-    r.requirementOrderId = requirementOrderId
-    r.Set("requirement_order_id", requirementOrderId)
+func (r *AlibabaJymRequirementsReceiveRequest) SetRequirementOrderId(_requirementOrderId string) error {
+    r._requirementOrderId = _requirementOrderId
+    r.Set("requirement_order_id", _requirementOrderId)
     return nil
 }
 
 // RequirementOrderId Getter
 func (r AlibabaJymRequirementsReceiveRequest) GetRequirementOrderId() string {
-    return r.requirementOrderId
+    return r._requirementOrderId
 }

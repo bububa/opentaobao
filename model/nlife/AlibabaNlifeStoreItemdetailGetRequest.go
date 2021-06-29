@@ -15,19 +15,19 @@ alibaba.nlife.store.itemdetail.get
 type AlibabaNlifeStoreItemdetailGetRequest struct {
     model.Params
     // 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ;  门店设备号-STORE_DEVICE
-    storeIdType   string
+    _storeIdType   string
     // 门店ID
-    storeId   string
+    _storeId   string
     // 商品在外部商家的编码(与item_id不能同时为空)
-    outerId   string
+    _outerId   string
     // 商品Item的ID(与outer_id不能同时为空)
-    itemId   int64
+    _itemId   int64
     // skuId列表-可查询指定的sku
-    skuIdList   []int64
+    _skuIdList   []int64
     // 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
-    itemType   *model.File
+    _itemType   *model.File
     // 商家对商品的自用编码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaNlifeStoreItemdetailGetRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaNlifeStoreItemdetailGetRequest) GetApiParams() url.Values {
 }
 // StoreIdType Setter
 // 门店类型: 零售加的门店-RETAIL_PLUS_STORE ; 商户中心门店-PLACE_STORE ;  门店设备号-STORE_DEVICE
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetStoreIdType(storeIdType string) error {
-    r.storeIdType = storeIdType
-    r.Set("store_id_type", storeIdType)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetStoreIdType(_storeIdType string) error {
+    r._storeIdType = _storeIdType
+    r.Set("store_id_type", _storeIdType)
     return nil
 }
 
 // StoreIdType Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetStoreIdType() string {
-    return r.storeIdType
+    return r._storeIdType
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // OuterId Setter
 // 商品在外部商家的编码(与item_id不能同时为空)
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // ItemId Setter
 // 商品Item的ID(与outer_id不能同时为空)
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SkuIdList Setter
 // skuId列表-可查询指定的sku
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetSkuIdList(skuIdList []int64) error {
-    r.skuIdList = skuIdList
-    r.Set("sku_id_list", skuIdList)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetSkuIdList(_skuIdList []int64) error {
+    r._skuIdList = _skuIdList
+    r.Set("sku_id_list", _skuIdList)
     return nil
 }
 
 // SkuIdList Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetSkuIdList() []int64 {
-    return r.skuIdList
+    return r._skuIdList
 }
 // ItemType Setter
 // 商品来源类型: 0-线上商品; 1-商户导入的线下商品. 如果为空则默认值为0
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetItemType(itemType *model.File) error {
-    r.itemType = itemType
-    r.Set("item_type", itemType)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetItemType(_itemType *model.File) error {
+    r._itemType = _itemType
+    r.Set("item_type", _itemType)
     return nil
 }
 
 // ItemType Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetItemType() *model.File {
-    return r.itemType
+    return r._itemType
 }
 // Code Setter
 // 商家对商品的自用编码
-func (r *AlibabaNlifeStoreItemdetailGetRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaNlifeStoreItemdetailGetRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaNlifeStoreItemdetailGetRequest) GetCode() string {
-    return r.code
+    return r._code
 }

@@ -15,13 +15,13 @@ taobao.miniapp.cloud.mongo.update
 type TaobaoMiniappCloudMongoUpdateRequest struct {
     model.Params
     // MongoDB表名
-    collection   string
+    _collection   string
     // 更新条件
-    filter   string
+    _filter   string
     // 待写入的数据
-    record   string
+    _record   string
     // 要操作的环境，默认是测试环境
-    env   string
+    _env   string
 }
 
 // 初始化TaobaoMiniappCloudMongoUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoMiniappCloudMongoUpdateRequest) GetApiParams() url.Values {
 }
 // Collection Setter
 // MongoDB表名
-func (r *TaobaoMiniappCloudMongoUpdateRequest) SetCollection(collection string) error {
-    r.collection = collection
-    r.Set("collection", collection)
+func (r *TaobaoMiniappCloudMongoUpdateRequest) SetCollection(_collection string) error {
+    r._collection = _collection
+    r.Set("collection", _collection)
     return nil
 }
 
 // Collection Getter
 func (r TaobaoMiniappCloudMongoUpdateRequest) GetCollection() string {
-    return r.collection
+    return r._collection
 }
 // Filter Setter
 // 更新条件
-func (r *TaobaoMiniappCloudMongoUpdateRequest) SetFilter(filter string) error {
-    r.filter = filter
-    r.Set("filter", filter)
+func (r *TaobaoMiniappCloudMongoUpdateRequest) SetFilter(_filter string) error {
+    r._filter = _filter
+    r.Set("filter", _filter)
     return nil
 }
 
 // Filter Getter
 func (r TaobaoMiniappCloudMongoUpdateRequest) GetFilter() string {
-    return r.filter
+    return r._filter
 }
 // Record Setter
 // 待写入的数据
-func (r *TaobaoMiniappCloudMongoUpdateRequest) SetRecord(record string) error {
-    r.record = record
-    r.Set("record", record)
+func (r *TaobaoMiniappCloudMongoUpdateRequest) SetRecord(_record string) error {
+    r._record = _record
+    r.Set("record", _record)
     return nil
 }
 
 // Record Getter
 func (r TaobaoMiniappCloudMongoUpdateRequest) GetRecord() string {
-    return r.record
+    return r._record
 }
 // Env Setter
 // 要操作的环境，默认是测试环境
-func (r *TaobaoMiniappCloudMongoUpdateRequest) SetEnv(env string) error {
-    r.env = env
-    r.Set("env", env)
+func (r *TaobaoMiniappCloudMongoUpdateRequest) SetEnv(_env string) error {
+    r._env = _env
+    r.Set("env", _env)
     return nil
 }
 
 // Env Getter
 func (r TaobaoMiniappCloudMongoUpdateRequest) GetEnv() string {
-    return r.env
+    return r._env
 }

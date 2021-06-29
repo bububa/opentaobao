@@ -15,9 +15,9 @@ taobao.simba.campaign.platform.get
 type TaobaoSimbaCampaignPlatformGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
 }
 
 // 初始化TaobaoSimbaCampaignPlatformGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaCampaignPlatformGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignPlatformGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignPlatformGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignPlatformGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignPlatformGetRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaCampaignPlatformGetRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaCampaignPlatformGetRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }

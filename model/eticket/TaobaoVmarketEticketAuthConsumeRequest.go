@@ -15,15 +15,15 @@ taobao.vmarket.eticket.auth.consume
 type TaobaoVmarketEticketAuthConsumeRequest struct {
     model.Params
     // 核销的码，只支持单个码，多个码核销需要多次调用
-    verifyCode   string
+    _verifyCode   string
     // 核销份数
-    consumeNum   int64
+    _consumeNum   int64
     // 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
-    operatorid   string
+    _operatorid   string
     // 自定义核销流水号，需要小于等于100个字符(a-zA-Z0-9_)
-    serialNum   string
+    _serialNum   string
     // 网点ID,网点授权核销时，必须传入；其他核销方式可不传
-    storeid   string
+    _storeid   string
 }
 
 // 初始化TaobaoVmarketEticketAuthConsumeRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoVmarketEticketAuthConsumeRequest) GetApiParams() url.Values {
 }
 // VerifyCode Setter
 // 核销的码，只支持单个码，多个码核销需要多次调用
-func (r *TaobaoVmarketEticketAuthConsumeRequest) SetVerifyCode(verifyCode string) error {
-    r.verifyCode = verifyCode
-    r.Set("verify_code", verifyCode)
+func (r *TaobaoVmarketEticketAuthConsumeRequest) SetVerifyCode(_verifyCode string) error {
+    r._verifyCode = _verifyCode
+    r.Set("verify_code", _verifyCode)
     return nil
 }
 
 // VerifyCode Getter
 func (r TaobaoVmarketEticketAuthConsumeRequest) GetVerifyCode() string {
-    return r.verifyCode
+    return r._verifyCode
 }
 // ConsumeNum Setter
 // 核销份数
-func (r *TaobaoVmarketEticketAuthConsumeRequest) SetConsumeNum(consumeNum int64) error {
-    r.consumeNum = consumeNum
-    r.Set("consume_num", consumeNum)
+func (r *TaobaoVmarketEticketAuthConsumeRequest) SetConsumeNum(_consumeNum int64) error {
+    r._consumeNum = _consumeNum
+    r.Set("consume_num", _consumeNum)
     return nil
 }
 
 // ConsumeNum Getter
 func (r TaobaoVmarketEticketAuthConsumeRequest) GetConsumeNum() int64 {
-    return r.consumeNum
+    return r._consumeNum
 }
 // Operatorid Setter
 // 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
-func (r *TaobaoVmarketEticketAuthConsumeRequest) SetOperatorid(operatorid string) error {
-    r.operatorid = operatorid
-    r.Set("operatorid", operatorid)
+func (r *TaobaoVmarketEticketAuthConsumeRequest) SetOperatorid(_operatorid string) error {
+    r._operatorid = _operatorid
+    r.Set("operatorid", _operatorid)
     return nil
 }
 
 // Operatorid Getter
 func (r TaobaoVmarketEticketAuthConsumeRequest) GetOperatorid() string {
-    return r.operatorid
+    return r._operatorid
 }
 // SerialNum Setter
 // 自定义核销流水号，需要小于等于100个字符(a-zA-Z0-9_)
-func (r *TaobaoVmarketEticketAuthConsumeRequest) SetSerialNum(serialNum string) error {
-    r.serialNum = serialNum
-    r.Set("serial_num", serialNum)
+func (r *TaobaoVmarketEticketAuthConsumeRequest) SetSerialNum(_serialNum string) error {
+    r._serialNum = _serialNum
+    r.Set("serial_num", _serialNum)
     return nil
 }
 
 // SerialNum Getter
 func (r TaobaoVmarketEticketAuthConsumeRequest) GetSerialNum() string {
-    return r.serialNum
+    return r._serialNum
 }
 // Storeid Setter
 // 网点ID,网点授权核销时，必须传入；其他核销方式可不传
-func (r *TaobaoVmarketEticketAuthConsumeRequest) SetStoreid(storeid string) error {
-    r.storeid = storeid
-    r.Set("storeid", storeid)
+func (r *TaobaoVmarketEticketAuthConsumeRequest) SetStoreid(_storeid string) error {
+    r._storeid = _storeid
+    r.Set("storeid", _storeid)
     return nil
 }
 
 // Storeid Getter
 func (r TaobaoVmarketEticketAuthConsumeRequest) GetStoreid() string {
-    return r.storeid
+    return r._storeid
 }

@@ -15,9 +15,9 @@ taobao.qianniu.buyer.tag.get
 type TaobaoQianniuBuyerTagGetRequest struct {
     model.Params
     // 买家nick
-    buyerNick   string
+    _buyerNick   string
     // 支持的表，多个tag用英文逗号切割
-    tagList   string
+    _tagList   string
 }
 
 // 初始化TaobaoQianniuBuyerTagGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQianniuBuyerTagGetRequest) GetApiParams() url.Values {
 }
 // BuyerNick Setter
 // 买家nick
-func (r *TaobaoQianniuBuyerTagGetRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoQianniuBuyerTagGetRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoQianniuBuyerTagGetRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }
 // TagList Setter
 // 支持的表，多个tag用英文逗号切割
-func (r *TaobaoQianniuBuyerTagGetRequest) SetTagList(tagList string) error {
-    r.tagList = tagList
-    r.Set("tag_list", tagList)
+func (r *TaobaoQianniuBuyerTagGetRequest) SetTagList(_tagList string) error {
+    r._tagList = _tagList
+    r.Set("tag_list", _tagList)
     return nil
 }
 
 // TagList Getter
 func (r TaobaoQianniuBuyerTagGetRequest) GetTagList() string {
-    return r.tagList
+    return r._tagList
 }

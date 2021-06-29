@@ -15,7 +15,7 @@ alitrip.btrip.corpop.apply.approve
 type AlitripBtripCorpopApplyApproveRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenApiUpdateApplyRq
+    _rq   *OpenApiUpdateApplyRq
 }
 
 // 初始化AlitripBtripCorpopApplyApproveRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplyApproveRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCorpopApplyApproveRequest) SetRq(rq *OpenApiUpdateApplyRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopApplyApproveRequest) SetRq(_rq *OpenApiUpdateApplyRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopApplyApproveRequest) GetRq() *OpenApiUpdateApplyRq {
-    return r.rq
+    return r._rq
 }

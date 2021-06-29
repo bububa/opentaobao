@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.contentadd
 type YunosTvpubadminManageTopicContentaddRequest struct {
     model.Params
     // 新增的专题内容
-    contentJson   string
+    _contentJson   string
 }
 
 // 初始化YunosTvpubadminManageTopicContentaddRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicContentaddRequest) GetApiParams() url.Values {
 }
 // ContentJson Setter
 // 新增的专题内容
-func (r *YunosTvpubadminManageTopicContentaddRequest) SetContentJson(contentJson string) error {
-    r.contentJson = contentJson
-    r.Set("content_json", contentJson)
+func (r *YunosTvpubadminManageTopicContentaddRequest) SetContentJson(_contentJson string) error {
+    r._contentJson = _contentJson
+    r.Set("content_json", _contentJson)
     return nil
 }
 
 // ContentJson Getter
 func (r YunosTvpubadminManageTopicContentaddRequest) GetContentJson() string {
-    return r.contentJson
+    return r._contentJson
 }

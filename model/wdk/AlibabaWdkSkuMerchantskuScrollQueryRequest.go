@@ -15,9 +15,9 @@ alibaba.wdk.sku.merchantsku.scroll.query
 type AlibabaWdkSkuMerchantskuScrollQueryRequest struct {
     model.Params
     // HM
-    orgNo   string
+    _orgNo   string
     // 第一次为null，后面从结果中获取
-    scrollId   string
+    _scrollId   string
 }
 
 // 初始化AlibabaWdkSkuMerchantskuScrollQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkSkuMerchantskuScrollQueryRequest) GetApiParams() url.Values {
 }
 // OrgNo Setter
 // HM
-func (r *AlibabaWdkSkuMerchantskuScrollQueryRequest) SetOrgNo(orgNo string) error {
-    r.orgNo = orgNo
-    r.Set("org_no", orgNo)
+func (r *AlibabaWdkSkuMerchantskuScrollQueryRequest) SetOrgNo(_orgNo string) error {
+    r._orgNo = _orgNo
+    r.Set("org_no", _orgNo)
     return nil
 }
 
 // OrgNo Getter
 func (r AlibabaWdkSkuMerchantskuScrollQueryRequest) GetOrgNo() string {
-    return r.orgNo
+    return r._orgNo
 }
 // ScrollId Setter
 // 第一次为null，后面从结果中获取
-func (r *AlibabaWdkSkuMerchantskuScrollQueryRequest) SetScrollId(scrollId string) error {
-    r.scrollId = scrollId
-    r.Set("scroll_id", scrollId)
+func (r *AlibabaWdkSkuMerchantskuScrollQueryRequest) SetScrollId(_scrollId string) error {
+    r._scrollId = _scrollId
+    r.Set("scroll_id", _scrollId)
     return nil
 }
 
 // ScrollId Getter
 func (r AlibabaWdkSkuMerchantskuScrollQueryRequest) GetScrollId() string {
-    return r.scrollId
+    return r._scrollId
 }

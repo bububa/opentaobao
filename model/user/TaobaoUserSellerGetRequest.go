@@ -15,7 +15,7 @@ taobao.user.seller.get
 type TaobaoUserSellerGetRequest struct {
     model.Params
     // 需要返回的字段列表，可选值为返回示例值中的可以看到的字段
-    fields   []string
+    _fields   []string
 }
 
 // 初始化TaobaoUserSellerGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUserSellerGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段列表，可选值为返回示例值中的可以看到的字段
-func (r *TaobaoUserSellerGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoUserSellerGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoUserSellerGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }

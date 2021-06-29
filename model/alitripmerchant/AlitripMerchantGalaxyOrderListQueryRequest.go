@@ -15,19 +15,19 @@ alitrip.merchant.galaxy.order.list.query
 type AlitripMerchantGalaxyOrderListQueryRequest struct {
     model.Params
     // 租户标识
-    tenantKey   string
+    _tenantKey   string
     // 用户token
-    token   string
+    _token   string
     // 订单状态
-    orderStatus   string
+    _orderStatus   string
     // 入住时间
-    startTime   string
+    _startTime   string
     // 入住时间
-    endTime   string
+    _endTime   string
     // 页数
-    page   int64
+    _page   int64
     // 每页行数
-    row   int64
+    _row   int64
 }
 
 // 初始化AlitripMerchantGalaxyOrderListQueryRequest对象
@@ -52,85 +52,85 @@ func (r AlitripMerchantGalaxyOrderListQueryRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户标识
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Token Setter
 // 用户token
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // OrderStatus Setter
 // 订单状态
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetOrderStatus(orderStatus string) error {
-    r.orderStatus = orderStatus
-    r.Set("order_status", orderStatus)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetOrderStatus(_orderStatus string) error {
+    r._orderStatus = _orderStatus
+    r.Set("order_status", _orderStatus)
     return nil
 }
 
 // OrderStatus Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetOrderStatus() string {
-    return r.orderStatus
+    return r._orderStatus
 }
 // StartTime Setter
 // 入住时间
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 入住时间
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // Page Setter
 // 页数
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // Row Setter
 // 每页行数
-func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetRow(row int64) error {
-    r.row = row
-    r.Set("row", row)
+func (r *AlitripMerchantGalaxyOrderListQueryRequest) SetRow(_row int64) error {
+    r._row = _row
+    r.Set("row", _row)
     return nil
 }
 
 // Row Getter
 func (r AlitripMerchantGalaxyOrderListQueryRequest) GetRow() int64 {
-    return r.row
+    return r._row
 }

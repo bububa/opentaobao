@@ -15,7 +15,7 @@ taobao.sellercenter.subuser.permissions.roles.get
 type TaobaoSellercenterSubuserPermissionsRolesGetRequest struct {
     model.Params
     // 子账号昵称(子账号标识)
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSellercenterSubuserPermissionsRolesGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSellercenterSubuserPermissionsRolesGetRequest) GetApiParams() url.
 }
 // Nick Setter
 // 子账号昵称(子账号标识)
-func (r *TaobaoSellercenterSubuserPermissionsRolesGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSellercenterSubuserPermissionsRolesGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSellercenterSubuserPermissionsRolesGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.device.yks.skill.offline
 type YunosTvpubadminDeviceYksSkillOfflineRequest struct {
     model.Params
     // bot与skill关系表id
-    botSkillRelId   int64
+    _botSkillRelId   int64
 }
 
 // 初始化YunosTvpubadminDeviceYksSkillOfflineRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDeviceYksSkillOfflineRequest) GetApiParams() url.Values {
 }
 // BotSkillRelId Setter
 // bot与skill关系表id
-func (r *YunosTvpubadminDeviceYksSkillOfflineRequest) SetBotSkillRelId(botSkillRelId int64) error {
-    r.botSkillRelId = botSkillRelId
-    r.Set("bot_skill_rel_id", botSkillRelId)
+func (r *YunosTvpubadminDeviceYksSkillOfflineRequest) SetBotSkillRelId(_botSkillRelId int64) error {
+    r._botSkillRelId = _botSkillRelId
+    r.Set("bot_skill_rel_id", _botSkillRelId)
     return nil
 }
 
 // BotSkillRelId Getter
 func (r YunosTvpubadminDeviceYksSkillOfflineRequest) GetBotSkillRelId() int64 {
-    return r.botSkillRelId
+    return r._botSkillRelId
 }

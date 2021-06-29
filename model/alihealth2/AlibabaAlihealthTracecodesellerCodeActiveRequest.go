@@ -15,17 +15,17 @@ alibaba.alihealth.tracecodeseller.code.active
 type AlibabaAlihealthTracecodesellerCodeActiveRequest struct {
     model.Params
     // 文件名
-    fileName   string
+    _fileName   string
     // 商品编号
-    productInfoId   int64
+    _productInfoId   int64
     // 文件内容，十六进制编码
-    fileContent   string
+    _fileContent   string
     // 关联类型，0:无关联，1:前关联，2:后关联
-    correlationType   int64
+    _correlationType   int64
     // 关联比例
-    correlationRatio   string
+    _correlationRatio   string
     // 语言标识
-    language   string
+    _language   string
 }
 
 // 初始化AlibabaAlihealthTracecodesellerCodeActiveRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetApiParams() url.Val
 }
 // FileName Setter
 // 文件名
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // ProductInfoId Setter
 // 商品编号
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetProductInfoId(productInfoId int64) error {
-    r.productInfoId = productInfoId
-    r.Set("product_info_id", productInfoId)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetProductInfoId(_productInfoId int64) error {
+    r._productInfoId = _productInfoId
+    r.Set("product_info_id", _productInfoId)
     return nil
 }
 
 // ProductInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetProductInfoId() int64 {
-    return r.productInfoId
+    return r._productInfoId
 }
 // FileContent Setter
 // 文件内容，十六进制编码
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetFileContent(fileContent string) error {
-    r.fileContent = fileContent
-    r.Set("file_content", fileContent)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetFileContent(_fileContent string) error {
+    r._fileContent = _fileContent
+    r.Set("file_content", _fileContent)
     return nil
 }
 
 // FileContent Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetFileContent() string {
-    return r.fileContent
+    return r._fileContent
 }
 // CorrelationType Setter
 // 关联类型，0:无关联，1:前关联，2:后关联
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetCorrelationType(correlationType int64) error {
-    r.correlationType = correlationType
-    r.Set("correlation_type", correlationType)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetCorrelationType(_correlationType int64) error {
+    r._correlationType = _correlationType
+    r.Set("correlation_type", _correlationType)
     return nil
 }
 
 // CorrelationType Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetCorrelationType() int64 {
-    return r.correlationType
+    return r._correlationType
 }
 // CorrelationRatio Setter
 // 关联比例
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetCorrelationRatio(correlationRatio string) error {
-    r.correlationRatio = correlationRatio
-    r.Set("correlation_ratio", correlationRatio)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetCorrelationRatio(_correlationRatio string) error {
+    r._correlationRatio = _correlationRatio
+    r.Set("correlation_ratio", _correlationRatio)
     return nil
 }
 
 // CorrelationRatio Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetCorrelationRatio() string {
-    return r.correlationRatio
+    return r._correlationRatio
 }
 // Language Setter
 // 语言标识
-func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AlibabaAlihealthTracecodesellerCodeActiveRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AlibabaAlihealthTracecodesellerCodeActiveRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }

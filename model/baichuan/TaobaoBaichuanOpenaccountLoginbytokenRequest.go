@@ -15,7 +15,7 @@ taobao.baichuan.openaccount.loginbytoken
 type TaobaoBaichuanOpenaccountLoginbytokenRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOpenaccountLoginbytokenRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountLoginbytokenRequest) GetApiParams() url.Values 
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountLoginbytokenRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOpenaccountLoginbytokenRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOpenaccountLoginbytokenRequest) GetName() string {
-    return r.name
+    return r._name
 }

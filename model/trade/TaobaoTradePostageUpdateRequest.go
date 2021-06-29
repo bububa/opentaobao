@@ -16,9 +16,9 @@ taobao.trade.postage.update
 type TaobaoTradePostageUpdateRequest struct {
     model.Params
     // 主订单编号
-    tid   int64
+    _tid   int64
     // 邮费价格(邮费单位是元）
-    postFee   string
+    _postFee   string
 }
 
 // 初始化TaobaoTradePostageUpdateRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoTradePostageUpdateRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 主订单编号
-func (r *TaobaoTradePostageUpdateRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradePostageUpdateRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradePostageUpdateRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // PostFee Setter
 // 邮费价格(邮费单位是元）
-func (r *TaobaoTradePostageUpdateRequest) SetPostFee(postFee string) error {
-    r.postFee = postFee
-    r.Set("post_fee", postFee)
+func (r *TaobaoTradePostageUpdateRequest) SetPostFee(_postFee string) error {
+    r._postFee = _postFee
+    r.Set("post_fee", _postFee)
     return nil
 }
 
 // PostFee Getter
 func (r TaobaoTradePostageUpdateRequest) GetPostFee() string {
-    return r.postFee
+    return r._postFee
 }

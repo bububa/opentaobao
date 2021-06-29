@@ -15,7 +15,7 @@ TOP-SPI工单任务下发接口（菜鸟--->商家ISV）
 type CainiaoCbossWorkplatformWorkorderTaskNotifyRequest struct {
     model.Params
     // content
-    content   *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct
+    _content   *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct
 }
 
 // 初始化CainiaoCbossWorkplatformWorkorderTaskNotifyRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformWorkorderTaskNotifyRequest) GetApiParams() url.V
 }
 // Content Setter
 // content
-func (r *CainiaoCbossWorkplatformWorkorderTaskNotifyRequest) SetContent(content *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct) error {
-    r.content = content
-    r.Set("content", content)
+func (r *CainiaoCbossWorkplatformWorkorderTaskNotifyRequest) SetContent(_content *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r CainiaoCbossWorkplatformWorkorderTaskNotifyRequest) GetContent() *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct {
-    return r.content
+    return r._content
 }

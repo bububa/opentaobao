@@ -15,7 +15,7 @@ alibaba.wt.order.exchange.partner.checktbuser
 type AlibabaWtOrderExchangePartnerChecktbuserRequest struct {
     model.Params
     // model入参
-    outExchangeModel   *OutExchangeModel
+    _outExchangeModel   *OutExchangeModel
 }
 
 // 初始化AlibabaWtOrderExchangePartnerChecktbuserRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWtOrderExchangePartnerChecktbuserRequest) GetApiParams() url.Valu
 }
 // OutExchangeModel Setter
 // model入参
-func (r *AlibabaWtOrderExchangePartnerChecktbuserRequest) SetOutExchangeModel(outExchangeModel *OutExchangeModel) error {
-    r.outExchangeModel = outExchangeModel
-    r.Set("out_exchange_model", outExchangeModel)
+func (r *AlibabaWtOrderExchangePartnerChecktbuserRequest) SetOutExchangeModel(_outExchangeModel *OutExchangeModel) error {
+    r._outExchangeModel = _outExchangeModel
+    r.Set("out_exchange_model", _outExchangeModel)
     return nil
 }
 
 // OutExchangeModel Getter
 func (r AlibabaWtOrderExchangePartnerChecktbuserRequest) GetOutExchangeModel() *OutExchangeModel {
-    return r.outExchangeModel
+    return r._outExchangeModel
 }

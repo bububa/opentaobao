@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.rule.get
 type AlibabaAlscCrmPointRuleGetRequest struct {
     model.Params
     // 入参
-    paramQueryPointRuleOpenReq   *QueryPointRuleOpenReq
+    _paramQueryPointRuleOpenReq   *QueryPointRuleOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointRuleGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointRuleGetRequest) GetApiParams() url.Values {
 }
 // ParamQueryPointRuleOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointRuleGetRequest) SetParamQueryPointRuleOpenReq(paramQueryPointRuleOpenReq *QueryPointRuleOpenReq) error {
-    r.paramQueryPointRuleOpenReq = paramQueryPointRuleOpenReq
-    r.Set("param_query_point_rule_open_req", paramQueryPointRuleOpenReq)
+func (r *AlibabaAlscCrmPointRuleGetRequest) SetParamQueryPointRuleOpenReq(_paramQueryPointRuleOpenReq *QueryPointRuleOpenReq) error {
+    r._paramQueryPointRuleOpenReq = _paramQueryPointRuleOpenReq
+    r.Set("param_query_point_rule_open_req", _paramQueryPointRuleOpenReq)
     return nil
 }
 
 // ParamQueryPointRuleOpenReq Getter
 func (r AlibabaAlscCrmPointRuleGetRequest) GetParamQueryPointRuleOpenReq() *QueryPointRuleOpenReq {
-    return r.paramQueryPointRuleOpenReq
+    return r._paramQueryPointRuleOpenReq
 }

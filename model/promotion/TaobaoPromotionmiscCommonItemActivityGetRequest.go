@@ -15,7 +15,7 @@ taobao.promotionmisc.common.item.activity.get
 type TaobaoPromotionmiscCommonItemActivityGetRequest struct {
     model.Params
     // 优惠活动ID
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化TaobaoPromotionmiscCommonItemActivityGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionmiscCommonItemActivityGetRequest) GetApiParams() url.Valu
 }
 // ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemActivityGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscCommonItemActivityGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemActivityGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

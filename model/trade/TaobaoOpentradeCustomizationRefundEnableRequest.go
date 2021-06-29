@@ -15,7 +15,7 @@ taobao.opentrade.customization.refund.enable
 type TaobaoOpentradeCustomizationRefundEnableRequest struct {
     model.Params
     // 主订单ID
-    tradeId   int64
+    _tradeId   int64
 }
 
 // 初始化TaobaoOpentradeCustomizationRefundEnableRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetApiParams() url.Valu
 }
 // TradeId Setter
 // 主订单ID
-func (r *TaobaoOpentradeCustomizationRefundEnableRequest) SetTradeId(tradeId int64) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *TaobaoOpentradeCustomizationRefundEnableRequest) SetTradeId(_tradeId int64) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r TaobaoOpentradeCustomizationRefundEnableRequest) GetTradeId() int64 {
-    return r.tradeId
+    return r._tradeId
 }

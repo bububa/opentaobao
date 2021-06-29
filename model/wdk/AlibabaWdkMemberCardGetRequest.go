@@ -15,7 +15,7 @@ alibaba.wdk.member.card.get
 type AlibabaWdkMemberCardGetRequest struct {
     model.Params
     // 系统自动生成
-    memberQuery   *MemberQueryRequest
+    _memberQuery   *MemberQueryRequest
 }
 
 // 初始化AlibabaWdkMemberCardGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMemberCardGetRequest) GetApiParams() url.Values {
 }
 // MemberQuery Setter
 // 系统自动生成
-func (r *AlibabaWdkMemberCardGetRequest) SetMemberQuery(memberQuery *MemberQueryRequest) error {
-    r.memberQuery = memberQuery
-    r.Set("member_query", memberQuery)
+func (r *AlibabaWdkMemberCardGetRequest) SetMemberQuery(_memberQuery *MemberQueryRequest) error {
+    r._memberQuery = _memberQuery
+    r.Set("member_query", _memberQuery)
     return nil
 }
 
 // MemberQuery Getter
 func (r AlibabaWdkMemberCardGetRequest) GetMemberQuery() *MemberQueryRequest {
-    return r.memberQuery
+    return r._memberQuery
 }

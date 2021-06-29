@@ -15,13 +15,13 @@ taobao.tvpay.access.data.get
 type TaobaoTvpayAccessDataGetRequest struct {
     model.Params
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 订单id
-    outOrderNo   string
+    _outOrderNo   string
     // 账号客户端版本
-    accountClientVersion   string
+    _accountClientVersion   string
 }
 
 // 初始化TaobaoTvpayAccessDataGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTvpayAccessDataGetRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayAccessDataGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayAccessDataGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayAccessDataGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayAccessDataGetRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayAccessDataGetRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayAccessDataGetRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // OutOrderNo Setter
 // 订单id
-func (r *TaobaoTvpayAccessDataGetRequest) SetOutOrderNo(outOrderNo string) error {
-    r.outOrderNo = outOrderNo
-    r.Set("out_order_no", outOrderNo)
+func (r *TaobaoTvpayAccessDataGetRequest) SetOutOrderNo(_outOrderNo string) error {
+    r._outOrderNo = _outOrderNo
+    r.Set("out_order_no", _outOrderNo)
     return nil
 }
 
 // OutOrderNo Getter
 func (r TaobaoTvpayAccessDataGetRequest) GetOutOrderNo() string {
-    return r.outOrderNo
+    return r._outOrderNo
 }
 // AccountClientVersion Setter
 // 账号客户端版本
-func (r *TaobaoTvpayAccessDataGetRequest) SetAccountClientVersion(accountClientVersion string) error {
-    r.accountClientVersion = accountClientVersion
-    r.Set("account_client_version", accountClientVersion)
+func (r *TaobaoTvpayAccessDataGetRequest) SetAccountClientVersion(_accountClientVersion string) error {
+    r._accountClientVersion = _accountClientVersion
+    r.Set("account_client_version", _accountClientVersion)
     return nil
 }
 
 // AccountClientVersion Getter
 func (r TaobaoTvpayAccessDataGetRequest) GetAccountClientVersion() string {
-    return r.accountClientVersion
+    return r._accountClientVersion
 }

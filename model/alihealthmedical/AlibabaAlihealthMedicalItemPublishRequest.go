@@ -15,7 +15,7 @@ alibaba.alihealth.medical.item.publish
 type AlibabaAlihealthMedicalItemPublishRequest struct {
     model.Params
     // 请求
-    request1   *ItemPublishRequest
+    _request1   *ItemPublishRequest
 }
 
 // 初始化AlibabaAlihealthMedicalItemPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalItemPublishRequest) GetApiParams() url.Values {
 }
 // Request1 Setter
 // 请求
-func (r *AlibabaAlihealthMedicalItemPublishRequest) SetRequest1(request1 *ItemPublishRequest) error {
-    r.request1 = request1
-    r.Set("request1", request1)
+func (r *AlibabaAlihealthMedicalItemPublishRequest) SetRequest1(_request1 *ItemPublishRequest) error {
+    r._request1 = _request1
+    r.Set("request1", _request1)
     return nil
 }
 
 // Request1 Getter
 func (r AlibabaAlihealthMedicalItemPublishRequest) GetRequest1() *ItemPublishRequest {
-    return r.request1
+    return r._request1
 }

@@ -15,7 +15,7 @@ alibaba.lst.pos.open.account.checkissettled
 type AlibabaLstPosOpenAccountCheckissettledRequest struct {
     model.Params
     // 当前登录主账号userId
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaLstPosOpenAccountCheckissettledRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstPosOpenAccountCheckissettledRequest) GetApiParams() url.Values
 }
 // UserId Setter
 // 当前登录主账号userId
-func (r *AlibabaLstPosOpenAccountCheckissettledRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaLstPosOpenAccountCheckissettledRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaLstPosOpenAccountCheckissettledRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

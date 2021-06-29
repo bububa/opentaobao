@@ -15,7 +15,7 @@ taobao.alitrip.ie.agent.shopping.push
 type TaobaoAlitripIeAgentShoppingPushRequest struct {
     model.Params
     // 政策推送结构体
-    param0   *ShoppingPushRq
+    _param0   *ShoppingPushRq
 }
 
 // 初始化TaobaoAlitripIeAgentShoppingPushRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentShoppingPushRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 政策推送结构体
-func (r *TaobaoAlitripIeAgentShoppingPushRequest) SetParam0(param0 *ShoppingPushRq) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAlitripIeAgentShoppingPushRequest) SetParam0(_param0 *ShoppingPushRq) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAlitripIeAgentShoppingPushRequest) GetParam0() *ShoppingPushRq {
-    return r.param0
+    return r._param0
 }

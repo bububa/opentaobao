@@ -15,7 +15,7 @@ yunos.osupdate.appversion.info
 type YunosOsupdateAppversionInfoRequest struct {
     model.Params
     // 升级任务ID
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosOsupdateAppversionInfoRequest对象
@@ -40,13 +40,13 @@ func (r YunosOsupdateAppversionInfoRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 升级任务ID
-func (r *YunosOsupdateAppversionInfoRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosOsupdateAppversionInfoRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosOsupdateAppversionInfoRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

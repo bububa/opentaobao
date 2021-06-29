@@ -15,13 +15,13 @@ taobao.alihealth.drug.store.search
 type TaobaoAlihealthDrugStoreSearchRequest struct {
     model.Params
     // 搜索关键字
-    keyword   string
+    _keyword   string
     // 每页显示数量
-    pageSize   int64
+    _pageSize   int64
     // 店铺ID
-    shopId   string
+    _shopId   string
     // 页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoAlihealthDrugStoreSearchRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAlihealthDrugStoreSearchRequest) GetApiParams() url.Values {
 }
 // Keyword Setter
 // 搜索关键字
-func (r *TaobaoAlihealthDrugStoreSearchRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *TaobaoAlihealthDrugStoreSearchRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r TaobaoAlihealthDrugStoreSearchRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // PageSize Setter
 // 每页显示数量
-func (r *TaobaoAlihealthDrugStoreSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoAlihealthDrugStoreSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoAlihealthDrugStoreSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ShopId Setter
 // 店铺ID
-func (r *TaobaoAlihealthDrugStoreSearchRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TaobaoAlihealthDrugStoreSearchRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TaobaoAlihealthDrugStoreSearchRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoAlihealthDrugStoreSearchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoAlihealthDrugStoreSearchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoAlihealthDrugStoreSearchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

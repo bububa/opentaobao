@@ -15,7 +15,7 @@ taobao.train.agent.direct.compensate
 type TaobaoTrainAgentDirectCompensateRequest struct {
     model.Params
     // 出票成功补偿入参
-    compensateParam   *CompensateParam
+    _compensateParam   *CompensateParam
 }
 
 // 初始化TaobaoTrainAgentDirectCompensateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentDirectCompensateRequest) GetApiParams() url.Values {
 }
 // CompensateParam Setter
 // 出票成功补偿入参
-func (r *TaobaoTrainAgentDirectCompensateRequest) SetCompensateParam(compensateParam *CompensateParam) error {
-    r.compensateParam = compensateParam
-    r.Set("compensate_param", compensateParam)
+func (r *TaobaoTrainAgentDirectCompensateRequest) SetCompensateParam(_compensateParam *CompensateParam) error {
+    r._compensateParam = _compensateParam
+    r.Set("compensate_param", _compensateParam)
     return nil
 }
 
 // CompensateParam Getter
 func (r TaobaoTrainAgentDirectCompensateRequest) GetCompensateParam() *CompensateParam {
-    return r.compensateParam
+    return r._compensateParam
 }

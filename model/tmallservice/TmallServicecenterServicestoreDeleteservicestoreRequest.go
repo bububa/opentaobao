@@ -28,7 +28,7 @@ tmall.servicecenter.servicestore.deleteservicestore
 type TmallServicecenterServicestoreDeleteservicestoreRequest struct {
     model.Params
     // 网点名称
-    serviceStoreCode   string
+    _serviceStoreCode   string
 }
 
 // 初始化TmallServicecenterServicestoreDeleteservicestoreRequest对象
@@ -53,13 +53,13 @@ func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiParams() 
 }
 // ServiceStoreCode Setter
 // 网点名称
-func (r *TmallServicecenterServicestoreDeleteservicestoreRequest) SetServiceStoreCode(serviceStoreCode string) error {
-    r.serviceStoreCode = serviceStoreCode
-    r.Set("service_store_code", serviceStoreCode)
+func (r *TmallServicecenterServicestoreDeleteservicestoreRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+    r._serviceStoreCode = _serviceStoreCode
+    r.Set("service_store_code", _serviceStoreCode)
     return nil
 }
 
 // ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetServiceStoreCode() string {
-    return r.serviceStoreCode
+    return r._serviceStoreCode
 }

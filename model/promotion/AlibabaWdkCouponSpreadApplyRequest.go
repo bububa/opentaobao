@@ -15,7 +15,7 @@ alibaba.wdk.coupon.spread.apply
 type AlibabaWdkCouponSpreadApplyRequest struct {
     model.Params
     // 参数对象
-    paramWdkCouponApplyParam   *WdkCouponApplyParam
+    _paramWdkCouponApplyParam   *WdkCouponApplyParam
 }
 
 // 初始化AlibabaWdkCouponSpreadApplyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponSpreadApplyRequest) GetApiParams() url.Values {
 }
 // ParamWdkCouponApplyParam Setter
 // 参数对象
-func (r *AlibabaWdkCouponSpreadApplyRequest) SetParamWdkCouponApplyParam(paramWdkCouponApplyParam *WdkCouponApplyParam) error {
-    r.paramWdkCouponApplyParam = paramWdkCouponApplyParam
-    r.Set("param_wdk_coupon_apply_param", paramWdkCouponApplyParam)
+func (r *AlibabaWdkCouponSpreadApplyRequest) SetParamWdkCouponApplyParam(_paramWdkCouponApplyParam *WdkCouponApplyParam) error {
+    r._paramWdkCouponApplyParam = _paramWdkCouponApplyParam
+    r.Set("param_wdk_coupon_apply_param", _paramWdkCouponApplyParam)
     return nil
 }
 
 // ParamWdkCouponApplyParam Getter
 func (r AlibabaWdkCouponSpreadApplyRequest) GetParamWdkCouponApplyParam() *WdkCouponApplyParam {
-    return r.paramWdkCouponApplyParam
+    return r._paramWdkCouponApplyParam
 }

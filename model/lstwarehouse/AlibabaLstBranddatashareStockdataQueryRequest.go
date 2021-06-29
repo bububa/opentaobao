@@ -15,7 +15,7 @@ alibaba.lst.branddatashare.stockdata.query
 type AlibabaLstBranddatashareStockdataQueryRequest struct {
     model.Params
     // 入参
-    param   *BmSupplierStockDataParam
+    _param   *BmSupplierStockDataParam
 }
 
 // 初始化AlibabaLstBranddatashareStockdataQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstBranddatashareStockdataQueryRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstBranddatashareStockdataQueryRequest) SetParam(param *BmSupplierStockDataParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstBranddatashareStockdataQueryRequest) SetParam(_param *BmSupplierStockDataParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstBranddatashareStockdataQueryRequest) GetParam() *BmSupplierStockDataParam {
-    return r.param
+    return r._param
 }

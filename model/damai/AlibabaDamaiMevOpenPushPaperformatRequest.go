@@ -15,7 +15,7 @@ pushPaperFormat
 type AlibabaDamaiMevOpenPushPaperformatRequest struct {
     model.Params
     // 入参pushPaperFormatParam
-    pushPaperFormatParam   *ThirdPaperFormatPushOpenParam
+    _pushPaperFormatParam   *ThirdPaperFormatPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushPaperformatRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetApiParams() url.Values {
 }
 // PushPaperFormatParam Setter
 // 入参pushPaperFormatParam
-func (r *AlibabaDamaiMevOpenPushPaperformatRequest) SetPushPaperFormatParam(pushPaperFormatParam *ThirdPaperFormatPushOpenParam) error {
-    r.pushPaperFormatParam = pushPaperFormatParam
-    r.Set("push_paper_format_param", pushPaperFormatParam)
+func (r *AlibabaDamaiMevOpenPushPaperformatRequest) SetPushPaperFormatParam(_pushPaperFormatParam *ThirdPaperFormatPushOpenParam) error {
+    r._pushPaperFormatParam = _pushPaperFormatParam
+    r.Set("push_paper_format_param", _pushPaperFormatParam)
     return nil
 }
 
 // PushPaperFormatParam Getter
 func (r AlibabaDamaiMevOpenPushPaperformatRequest) GetPushPaperFormatParam() *ThirdPaperFormatPushOpenParam {
-    return r.pushPaperFormatParam
+    return r._pushPaperFormatParam
 }

@@ -15,7 +15,7 @@ alibaba.alsc.order.order.upload
 type AlibabaAlscOrderOrderUploadRequest struct {
     model.Params
     // 订单回流参数
-    paramBackflowRequest   *BackflowRequest
+    _paramBackflowRequest   *BackflowRequest
 }
 
 // 初始化AlibabaAlscOrderOrderUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscOrderOrderUploadRequest) GetApiParams() url.Values {
 }
 // ParamBackflowRequest Setter
 // 订单回流参数
-func (r *AlibabaAlscOrderOrderUploadRequest) SetParamBackflowRequest(paramBackflowRequest *BackflowRequest) error {
-    r.paramBackflowRequest = paramBackflowRequest
-    r.Set("param_backflow_request", paramBackflowRequest)
+func (r *AlibabaAlscOrderOrderUploadRequest) SetParamBackflowRequest(_paramBackflowRequest *BackflowRequest) error {
+    r._paramBackflowRequest = _paramBackflowRequest
+    r.Set("param_backflow_request", _paramBackflowRequest)
     return nil
 }
 
 // ParamBackflowRequest Getter
 func (r AlibabaAlscOrderOrderUploadRequest) GetParamBackflowRequest() *BackflowRequest {
-    return r.paramBackflowRequest
+    return r._paramBackflowRequest
 }

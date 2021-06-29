@@ -15,7 +15,7 @@ taobao.miniapp.distribution.order.get
 type TaobaoMiniappDistributionOrderGetRequest struct {
     model.Params
     // 查询入参
-    orderIdRequest   *DistributionOrderQueryByIdOpenRequest
+    _orderIdRequest   *DistributionOrderQueryByIdOpenRequest
 }
 
 // 初始化TaobaoMiniappDistributionOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMiniappDistributionOrderGetRequest) GetApiParams() url.Values {
 }
 // OrderIdRequest Setter
 // 查询入参
-func (r *TaobaoMiniappDistributionOrderGetRequest) SetOrderIdRequest(orderIdRequest *DistributionOrderQueryByIdOpenRequest) error {
-    r.orderIdRequest = orderIdRequest
-    r.Set("order_id_request", orderIdRequest)
+func (r *TaobaoMiniappDistributionOrderGetRequest) SetOrderIdRequest(_orderIdRequest *DistributionOrderQueryByIdOpenRequest) error {
+    r._orderIdRequest = _orderIdRequest
+    r.Set("order_id_request", _orderIdRequest)
     return nil
 }
 
 // OrderIdRequest Getter
 func (r TaobaoMiniappDistributionOrderGetRequest) GetOrderIdRequest() *DistributionOrderQueryByIdOpenRequest {
-    return r.orderIdRequest
+    return r._orderIdRequest
 }

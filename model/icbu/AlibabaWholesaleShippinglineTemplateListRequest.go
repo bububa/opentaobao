@@ -15,9 +15,9 @@ alibaba.wholesale.shippingline.template.list
 type AlibabaWholesaleShippinglineTemplateListRequest struct {
     model.Params
     // 第几页从1开始
-    pageNum   int64
+    _pageNum   int64
     // 每页返回的数据个数
-    count   int64
+    _count   int64
 }
 
 // 初始化AlibabaWholesaleShippinglineTemplateListRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWholesaleShippinglineTemplateListRequest) GetApiParams() url.Valu
 }
 // PageNum Setter
 // 第几页从1开始
-func (r *AlibabaWholesaleShippinglineTemplateListRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *AlibabaWholesaleShippinglineTemplateListRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r AlibabaWholesaleShippinglineTemplateListRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // Count Setter
 // 每页返回的数据个数
-func (r *AlibabaWholesaleShippinglineTemplateListRequest) SetCount(count int64) error {
-    r.count = count
-    r.Set("count", count)
+func (r *AlibabaWholesaleShippinglineTemplateListRequest) SetCount(_count int64) error {
+    r._count = _count
+    r.Set("count", _count)
     return nil
 }
 
 // Count Getter
 func (r AlibabaWholesaleShippinglineTemplateListRequest) GetCount() int64 {
-    return r.count
+    return r._count
 }

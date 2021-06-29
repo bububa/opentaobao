@@ -15,7 +15,7 @@ alibaba查询订单支付结果
 type AlibabaOrderPayResultQueryRequest struct {
     model.Params
     // order id
-    tradeId   int64
+    _tradeId   int64
 }
 
 // 初始化AlibabaOrderPayResultQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOrderPayResultQueryRequest) GetApiParams() url.Values {
 }
 // TradeId Setter
 // order id
-func (r *AlibabaOrderPayResultQueryRequest) SetTradeId(tradeId int64) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *AlibabaOrderPayResultQueryRequest) SetTradeId(_tradeId int64) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r AlibabaOrderPayResultQueryRequest) GetTradeId() int64 {
-    return r.tradeId
+    return r._tradeId
 }

@@ -15,11 +15,11 @@ taobao.miniapp.template.queryapp
 type TaobaoMiniappTemplateQueryappRequest struct {
     model.Params
     // 分页大小，最大50，按照小程序Id倒序
-    pageSize   int64
+    _pageSize   int64
     // 模板id
-    templateId   string
+    _templateId   string
     // 分页号,>=1
-    pageNum   int64
+    _pageNum   int64
 }
 
 // 初始化TaobaoMiniappTemplateQueryappRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoMiniappTemplateQueryappRequest) GetApiParams() url.Values {
 }
 // PageSize Setter
 // 分页大小，最大50，按照小程序Id倒序
-func (r *TaobaoMiniappTemplateQueryappRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoMiniappTemplateQueryappRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoMiniappTemplateQueryappRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniappTemplateQueryappRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoMiniappTemplateQueryappRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoMiniappTemplateQueryappRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }
 // PageNum Setter
 // 分页号,>=1
-func (r *TaobaoMiniappTemplateQueryappRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *TaobaoMiniappTemplateQueryappRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r TaobaoMiniappTemplateQueryappRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }

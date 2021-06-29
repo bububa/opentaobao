@@ -15,19 +15,19 @@ taobao.miniappp.template.instantiate
 type TaobaoMiniapppTemplateInstantiateRequest struct {
     model.Params
     // 投放端,目前可投放： taobao(淘宝),tmall(天猫)
-    clients   []string
+    _clients   []string
     // 描述长度(9~200)
-    description   string
+    _description   string
     // schemadata, json字符串
-    extJson   string
+    _extJson   string
     // 小程序icon
-    icon   string
+    _icon   string
     // 小程序名称
-    name   string
+    _name   string
     // 模板id
-    templateId   string
+    _templateId   string
     // 模板版本
-    templateVersion   string
+    _templateVersion   string
 }
 
 // 初始化TaobaoMiniapppTemplateInstantiateRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoMiniapppTemplateInstantiateRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 投放端,目前可投放： taobao(淘宝),tmall(天猫)
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetClients(clients []string) error {
-    r.clients = clients
-    r.Set("clients", clients)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetClients(_clients []string) error {
+    r._clients = _clients
+    r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetClients() []string {
-    return r.clients
+    return r._clients
 }
 // Description Setter
 // 描述长度(9~200)
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // ExtJson Setter
 // schemadata, json字符串
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetExtJson(extJson string) error {
-    r.extJson = extJson
-    r.Set("ext_json", extJson)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetExtJson(_extJson string) error {
+    r._extJson = _extJson
+    r.Set("ext_json", _extJson)
     return nil
 }
 
 // ExtJson Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetExtJson() string {
-    return r.extJson
+    return r._extJson
 }
 // Icon Setter
 // 小程序icon
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetIcon(icon string) error {
-    r.icon = icon
-    r.Set("icon", icon)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetIcon(_icon string) error {
+    r._icon = _icon
+    r.Set("icon", _icon)
     return nil
 }
 
 // Icon Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetIcon() string {
-    return r.icon
+    return r._icon
 }
 // Name Setter
 // 小程序名称
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }
 // TemplateVersion Setter
 // 模板版本
-func (r *TaobaoMiniapppTemplateInstantiateRequest) SetTemplateVersion(templateVersion string) error {
-    r.templateVersion = templateVersion
-    r.Set("template_version", templateVersion)
+func (r *TaobaoMiniapppTemplateInstantiateRequest) SetTemplateVersion(_templateVersion string) error {
+    r._templateVersion = _templateVersion
+    r.Set("template_version", _templateVersion)
     return nil
 }
 
 // TemplateVersion Getter
 func (r TaobaoMiniapppTemplateInstantiateRequest) GetTemplateVersion() string {
-    return r.templateVersion
+    return r._templateVersion
 }

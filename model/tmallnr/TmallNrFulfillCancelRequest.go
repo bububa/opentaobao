@@ -15,7 +15,7 @@ tmall.nr.fulfill.cancel
 type TmallNrFulfillCancelRequest struct {
     model.Params
     // 入参
-    req   *NrCancelFulfillReqDto
+    _req   *NrCancelFulfillReqDto
 }
 
 // 初始化TmallNrFulfillCancelRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrFulfillCancelRequest) GetApiParams() url.Values {
 }
 // Req Setter
 // 入参
-func (r *TmallNrFulfillCancelRequest) SetReq(req *NrCancelFulfillReqDto) error {
-    r.req = req
-    r.Set("req", req)
+func (r *TmallNrFulfillCancelRequest) SetReq(_req *NrCancelFulfillReqDto) error {
+    r._req = _req
+    r.Set("req", _req)
     return nil
 }
 
 // Req Getter
 func (r TmallNrFulfillCancelRequest) GetReq() *NrCancelFulfillReqDto {
-    return r.req
+    return r._req
 }

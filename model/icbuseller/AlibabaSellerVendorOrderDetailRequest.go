@@ -15,7 +15,7 @@ alibaba.seller.vendor.order.detail
 type AlibabaSellerVendorOrderDetailRequest struct {
     model.Params
     // 订单编号
-    orderNo   string
+    _orderNo   string
 }
 
 // 初始化AlibabaSellerVendorOrderDetailRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSellerVendorOrderDetailRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单编号
-func (r *AlibabaSellerVendorOrderDetailRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *AlibabaSellerVendorOrderDetailRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r AlibabaSellerVendorOrderDetailRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }

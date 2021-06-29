@@ -15,7 +15,7 @@ alitrip.platform.poi.raw.poioutbypoiids
 type AlitripPlatformPoiRawPoioutbypoiidsRequest struct {
     model.Params
     // 查询参数
-    fliggyPoiidParam   *FliggyPoiIdParam
+    _fliggyPoiidParam   *FliggyPoiIdParam
 }
 
 // 初始化AlitripPlatformPoiRawPoioutbypoiidsRequest对象
@@ -40,13 +40,13 @@ func (r AlitripPlatformPoiRawPoioutbypoiidsRequest) GetApiParams() url.Values {
 }
 // FliggyPoiidParam Setter
 // 查询参数
-func (r *AlitripPlatformPoiRawPoioutbypoiidsRequest) SetFliggyPoiidParam(fliggyPoiidParam *FliggyPoiIdParam) error {
-    r.fliggyPoiidParam = fliggyPoiidParam
-    r.Set("fliggy_poiid_param", fliggyPoiidParam)
+func (r *AlitripPlatformPoiRawPoioutbypoiidsRequest) SetFliggyPoiidParam(_fliggyPoiidParam *FliggyPoiIdParam) error {
+    r._fliggyPoiidParam = _fliggyPoiidParam
+    r.Set("fliggy_poiid_param", _fliggyPoiidParam)
     return nil
 }
 
 // FliggyPoiidParam Getter
 func (r AlitripPlatformPoiRawPoioutbypoiidsRequest) GetFliggyPoiidParam() *FliggyPoiIdParam {
-    return r.fliggyPoiidParam
+    return r._fliggyPoiidParam
 }

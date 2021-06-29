@@ -15,7 +15,7 @@ taobao.oauth.code.create
 type TaobaoOauthCodeCreateRequest struct {
     model.Params
     // mock param
-    test   int64
+    _test   int64
 }
 
 // 初始化TaobaoOauthCodeCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOauthCodeCreateRequest) GetApiParams() url.Values {
 }
 // Test Setter
 // mock param
-func (r *TaobaoOauthCodeCreateRequest) SetTest(test int64) error {
-    r.test = test
-    r.Set("test", test)
+func (r *TaobaoOauthCodeCreateRequest) SetTest(_test int64) error {
+    r._test = _test
+    r.Set("test", _test)
     return nil
 }
 
 // Test Getter
 func (r TaobaoOauthCodeCreateRequest) GetTest() int64 {
-    return r.test
+    return r._test
 }

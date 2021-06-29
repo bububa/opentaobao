@@ -15,7 +15,7 @@ yunos.tvpubadmin.device.apkinfo
 type YunosTvpubadminDeviceApkinfoRequest struct {
     model.Params
     // apkid
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosTvpubadminDeviceApkinfoRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDeviceApkinfoRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // apkid
-func (r *YunosTvpubadminDeviceApkinfoRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminDeviceApkinfoRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminDeviceApkinfoRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

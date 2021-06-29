@@ -15,7 +15,7 @@ alibaba.lst.vas.tradeflow.save
 type AlibabaLstVasTradeflowSaveRequest struct {
     model.Params
     // 交易流水信息
-    tradeFlowModelList   *TradeFlowModel
+    _tradeFlowModelList   *TradeFlowModel
 }
 
 // 初始化AlibabaLstVasTradeflowSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVasTradeflowSaveRequest) GetApiParams() url.Values {
 }
 // TradeFlowModelList Setter
 // 交易流水信息
-func (r *AlibabaLstVasTradeflowSaveRequest) SetTradeFlowModelList(tradeFlowModelList *TradeFlowModel) error {
-    r.tradeFlowModelList = tradeFlowModelList
-    r.Set("trade_flow_model_list", tradeFlowModelList)
+func (r *AlibabaLstVasTradeflowSaveRequest) SetTradeFlowModelList(_tradeFlowModelList *TradeFlowModel) error {
+    r._tradeFlowModelList = _tradeFlowModelList
+    r.Set("trade_flow_model_list", _tradeFlowModelList)
     return nil
 }
 
 // TradeFlowModelList Getter
 func (r AlibabaLstVasTradeflowSaveRequest) GetTradeFlowModelList() *TradeFlowModel {
-    return r.tradeFlowModelList
+    return r._tradeFlowModelList
 }

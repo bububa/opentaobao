@@ -15,9 +15,9 @@ alibaba.campus.device.openapi.getdevicelist
 type AlibabaCampusDeviceOpenapiGetdevicelistRequest struct {
     model.Params
     // 请求发送端信息
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // 多条件查询对象
-    query   *DeviceApiQuery
+    _query   *DeviceApiQuery
 }
 
 // 初始化AlibabaCampusDeviceOpenapiGetdevicelistRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusDeviceOpenapiGetdevicelistRequest) GetApiParams() url.Value
 }
 // WorkBenchContext Setter
 // 请求发送端信息
-func (r *AlibabaCampusDeviceOpenapiGetdevicelistRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceOpenapiGetdevicelistRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicelistRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // Query Setter
 // 多条件查询对象
-func (r *AlibabaCampusDeviceOpenapiGetdevicelistRequest) SetQuery(query *DeviceApiQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusDeviceOpenapiGetdevicelistRequest) SetQuery(_query *DeviceApiQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicelistRequest) GetQuery() *DeviceApiQuery {
-    return r.query
+    return r._query
 }

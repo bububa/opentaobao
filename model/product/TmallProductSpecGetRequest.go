@@ -15,7 +15,7 @@ tmall.product.spec.get
 type TmallProductSpecGetRequest struct {
     model.Params
     // 要获取信息的产品规格信息。
-    specId   int64
+    _specId   int64
 }
 
 // 初始化TmallProductSpecGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallProductSpecGetRequest) GetApiParams() url.Values {
 }
 // SpecId Setter
 // 要获取信息的产品规格信息。
-func (r *TmallProductSpecGetRequest) SetSpecId(specId int64) error {
-    r.specId = specId
-    r.Set("spec_id", specId)
+func (r *TmallProductSpecGetRequest) SetSpecId(_specId int64) error {
+    r._specId = _specId
+    r.Set("spec_id", _specId)
     return nil
 }
 
 // SpecId Getter
 func (r TmallProductSpecGetRequest) GetSpecId() int64 {
-    return r.specId
+    return r._specId
 }

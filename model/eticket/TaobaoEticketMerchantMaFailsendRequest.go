@@ -15,15 +15,15 @@ taobao.eticket.merchant.ma.failsend
 type TaobaoEticketMerchantMaFailsendRequest struct {
     model.Params
     // 业务id（订单号）
-    outerId   string
+    _outerId   string
     // 错误原因码
-    subErrCode   string
+    _subErrCode   string
     // 错误码描述
-    subErrMsg   string
+    _subErrMsg   string
     // 需要与发码通知获取的值一致
-    token   string
+    _token   string
     // 业务类型
-    bizType   int64
+    _bizType   int64
 }
 
 // 初始化TaobaoEticketMerchantMaFailsendRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoEticketMerchantMaFailsendRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 业务id（订单号）
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoEticketMerchantMaFailsendRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoEticketMerchantMaFailsendRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // SubErrCode Setter
 // 错误原因码
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrCode(subErrCode string) error {
-    r.subErrCode = subErrCode
-    r.Set("sub_err_code", subErrCode)
+func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrCode(_subErrCode string) error {
+    r._subErrCode = _subErrCode
+    r.Set("sub_err_code", _subErrCode)
     return nil
 }
 
 // SubErrCode Getter
 func (r TaobaoEticketMerchantMaFailsendRequest) GetSubErrCode() string {
-    return r.subErrCode
+    return r._subErrCode
 }
 // SubErrMsg Setter
 // 错误码描述
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrMsg(subErrMsg string) error {
-    r.subErrMsg = subErrMsg
-    r.Set("sub_err_msg", subErrMsg)
+func (r *TaobaoEticketMerchantMaFailsendRequest) SetSubErrMsg(_subErrMsg string) error {
+    r._subErrMsg = _subErrMsg
+    r.Set("sub_err_msg", _subErrMsg)
     return nil
 }
 
 // SubErrMsg Getter
 func (r TaobaoEticketMerchantMaFailsendRequest) GetSubErrMsg() string {
-    return r.subErrMsg
+    return r._subErrMsg
 }
 // Token Setter
 // 需要与发码通知获取的值一致
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoEticketMerchantMaFailsendRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoEticketMerchantMaFailsendRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // BizType Setter
 // 业务类型
-func (r *TaobaoEticketMerchantMaFailsendRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoEticketMerchantMaFailsendRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoEticketMerchantMaFailsendRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }

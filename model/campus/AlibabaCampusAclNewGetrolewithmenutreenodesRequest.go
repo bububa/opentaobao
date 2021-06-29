@@ -15,11 +15,11 @@ alibaba.campus.acl.new.getrolewithmenutreenodes
 type AlibabaCampusAclNewGetrolewithmenutreenodesRequest struct {
     model.Params
     // 角色id
-    roleId   int64
+    _roleId   int64
     // 是否查询全部类型权限
-    allPermission   bool
+    _allPermission   bool
     // 系统参数
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
 }
 
 // 初始化AlibabaCampusAclNewGetrolewithmenutreenodesRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusAclNewGetrolewithmenutreenodesRequest) GetApiParams() url.V
 }
 // RoleId Setter
 // 角色id
-func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetRoleId(roleId int64) error {
-    r.roleId = roleId
-    r.Set("role_id", roleId)
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetRoleId(_roleId int64) error {
+    r._roleId = _roleId
+    r.Set("role_id", _roleId)
     return nil
 }
 
 // RoleId Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesRequest) GetRoleId() int64 {
-    return r.roleId
+    return r._roleId
 }
 // AllPermission Setter
 // 是否查询全部类型权限
-func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetAllPermission(allPermission bool) error {
-    r.allPermission = allPermission
-    r.Set("all_permission", allPermission)
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetAllPermission(_allPermission bool) error {
+    r._allPermission = _allPermission
+    r.Set("all_permission", _allPermission)
     return nil
 }
 
 // AllPermission Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesRequest) GetAllPermission() bool {
-    return r.allPermission
+    return r._allPermission
 }
 // Workbenchcontext Setter
 // 系统参数
-func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewGetrolewithmenutreenodesRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewGetrolewithmenutreenodesRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }

@@ -15,7 +15,7 @@ alitrip.rail.trade.refund
 type AlitripRailTradeRefundRequest struct {
     model.Params
     // 入参
-    refundParam   *RefundReq
+    _refundParam   *RefundReq
 }
 
 // 初始化AlitripRailTradeRefundRequest对象
@@ -40,13 +40,13 @@ func (r AlitripRailTradeRefundRequest) GetApiParams() url.Values {
 }
 // RefundParam Setter
 // 入参
-func (r *AlitripRailTradeRefundRequest) SetRefundParam(refundParam *RefundReq) error {
-    r.refundParam = refundParam
-    r.Set("refund_param", refundParam)
+func (r *AlitripRailTradeRefundRequest) SetRefundParam(_refundParam *RefundReq) error {
+    r._refundParam = _refundParam
+    r.Set("refund_param", _refundParam)
     return nil
 }
 
 // RefundParam Getter
 func (r AlitripRailTradeRefundRequest) GetRefundParam() *RefundReq {
-    return r.refundParam
+    return r._refundParam
 }

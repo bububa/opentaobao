@@ -15,9 +15,9 @@ taobao.subway.wordpackage.get
 type TaobaoSubwayWordpackageGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广组id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSubwayWordpackageGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSubwayWordpackageGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayWordpackageGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSubwayWordpackageGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSubwayWordpackageGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSubwayWordpackageGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSubwayWordpackageGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSubwayWordpackageGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

@@ -15,9 +15,9 @@ tae查询费用科目信息
 type TaobaoTaeAccountsGetRequest struct {
     model.Params
     // 需要返回的字段
-    fields   []string
+    _fields   []string
     // 需要获取的科目ID
-    aids   []int64
+    _aids   []int64
 }
 
 // 初始化TaobaoTaeAccountsGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTaeAccountsGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的字段
-func (r *TaobaoTaeAccountsGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoTaeAccountsGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoTaeAccountsGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }
 // Aids Setter
 // 需要获取的科目ID
-func (r *TaobaoTaeAccountsGetRequest) SetAids(aids []int64) error {
-    r.aids = aids
-    r.Set("aids", aids)
+func (r *TaobaoTaeAccountsGetRequest) SetAids(_aids []int64) error {
+    r._aids = _aids
+    r.Set("aids", _aids)
     return nil
 }
 
 // Aids Getter
 func (r TaobaoTaeAccountsGetRequest) GetAids() []int64 {
-    return r.aids
+    return r._aids
 }

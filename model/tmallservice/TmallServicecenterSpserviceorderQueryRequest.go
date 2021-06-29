@@ -15,7 +15,7 @@ tmall.servicecenter.spserviceorder.query
 type TmallServicecenterSpserviceorderQueryRequest struct {
     model.Params
     // 交易主订单id
-    parentBizOrderId   int64
+    _parentBizOrderId   int64
 }
 
 // 初始化TmallServicecenterSpserviceorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterSpserviceorderQueryRequest) GetApiParams() url.Values 
 }
 // ParentBizOrderId Setter
 // 交易主订单id
-func (r *TmallServicecenterSpserviceorderQueryRequest) SetParentBizOrderId(parentBizOrderId int64) error {
-    r.parentBizOrderId = parentBizOrderId
-    r.Set("parent_biz_order_id", parentBizOrderId)
+func (r *TmallServicecenterSpserviceorderQueryRequest) SetParentBizOrderId(_parentBizOrderId int64) error {
+    r._parentBizOrderId = _parentBizOrderId
+    r.Set("parent_biz_order_id", _parentBizOrderId)
     return nil
 }
 
 // ParentBizOrderId Getter
 func (r TmallServicecenterSpserviceorderQueryRequest) GetParentBizOrderId() int64 {
-    return r.parentBizOrderId
+    return r._parentBizOrderId
 }

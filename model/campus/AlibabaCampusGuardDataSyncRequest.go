@@ -15,11 +15,11 @@ alibaba.campus.guard.data.sync
 type AlibabaCampusGuardDataSyncRequest struct {
     model.Params
     // 1-刷卡流水
-    dataType   string
+    _dataType   string
     // 供应商名称
-    supplierName   string
+    _supplierName   string
     // json串
-    data   string
+    _data   string
 }
 
 // 初始化AlibabaCampusGuardDataSyncRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusGuardDataSyncRequest) GetApiParams() url.Values {
 }
 // DataType Setter
 // 1-刷卡流水
-func (r *AlibabaCampusGuardDataSyncRequest) SetDataType(dataType string) error {
-    r.dataType = dataType
-    r.Set("data_type", dataType)
+func (r *AlibabaCampusGuardDataSyncRequest) SetDataType(_dataType string) error {
+    r._dataType = _dataType
+    r.Set("data_type", _dataType)
     return nil
 }
 
 // DataType Getter
 func (r AlibabaCampusGuardDataSyncRequest) GetDataType() string {
-    return r.dataType
+    return r._dataType
 }
 // SupplierName Setter
 // 供应商名称
-func (r *AlibabaCampusGuardDataSyncRequest) SetSupplierName(supplierName string) error {
-    r.supplierName = supplierName
-    r.Set("supplier_name", supplierName)
+func (r *AlibabaCampusGuardDataSyncRequest) SetSupplierName(_supplierName string) error {
+    r._supplierName = _supplierName
+    r.Set("supplier_name", _supplierName)
     return nil
 }
 
 // SupplierName Getter
 func (r AlibabaCampusGuardDataSyncRequest) GetSupplierName() string {
-    return r.supplierName
+    return r._supplierName
 }
 // Data Setter
 // json串
-func (r *AlibabaCampusGuardDataSyncRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *AlibabaCampusGuardDataSyncRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r AlibabaCampusGuardDataSyncRequest) GetData() string {
-    return r.data
+    return r._data
 }

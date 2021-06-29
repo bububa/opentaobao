@@ -15,9 +15,9 @@ alibaba.ailabs.tmallgenie.auth.device.withmac.qrcode.get
 type AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest struct {
     model.Params
     // 产品ID
-    clientId   string
+    _clientId   string
     // 设备mac地址
-    mac   string
+    _mac   string
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) GetApiParams()
 }
 // ClientId Setter
 // 产品ID
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // Mac Setter
 // 设备mac地址
-func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r AlibabaAilabsTmallgenieAuthDeviceWithmacQrcodeGetRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }

@@ -15,7 +15,7 @@ taobao.alitrip.ie.agent.refund.new.getlist
 type TaobaoAlitripIeAgentRefundNewGetlistRequest struct {
     model.Params
     // 列表查询
-    paramRefundOrderQueryListRq   *RefundOrderQueryListRq
+    _paramRefundOrderQueryListRq   *RefundOrderQueryListRq
 }
 
 // 初始化TaobaoAlitripIeAgentRefundNewGetlistRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentRefundNewGetlistRequest) GetApiParams() url.Values {
 }
 // ParamRefundOrderQueryListRq Setter
 // 列表查询
-func (r *TaobaoAlitripIeAgentRefundNewGetlistRequest) SetParamRefundOrderQueryListRq(paramRefundOrderQueryListRq *RefundOrderQueryListRq) error {
-    r.paramRefundOrderQueryListRq = paramRefundOrderQueryListRq
-    r.Set("param_refund_order_query_list_rq", paramRefundOrderQueryListRq)
+func (r *TaobaoAlitripIeAgentRefundNewGetlistRequest) SetParamRefundOrderQueryListRq(_paramRefundOrderQueryListRq *RefundOrderQueryListRq) error {
+    r._paramRefundOrderQueryListRq = _paramRefundOrderQueryListRq
+    r.Set("param_refund_order_query_list_rq", _paramRefundOrderQueryListRq)
     return nil
 }
 
 // ParamRefundOrderQueryListRq Getter
 func (r TaobaoAlitripIeAgentRefundNewGetlistRequest) GetParamRefundOrderQueryListRq() *RefundOrderQueryListRq {
-    return r.paramRefundOrderQueryListRq
+    return r._paramRefundOrderQueryListRq
 }

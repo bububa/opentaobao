@@ -15,7 +15,7 @@ tmall.marketing.liuliangbao.spreadlink.create
 type TmallMarketingLiuliangbaoSpreadlinkCreateRequest struct {
     model.Params
     // 活动链接，必须为淘系链接
-    url   string
+    _url   string
 }
 
 // 初始化TmallMarketingLiuliangbaoSpreadlinkCreateRequest对象
@@ -40,13 +40,13 @@ func (r TmallMarketingLiuliangbaoSpreadlinkCreateRequest) GetApiParams() url.Val
 }
 // Url Setter
 // 活动链接，必须为淘系链接
-func (r *TmallMarketingLiuliangbaoSpreadlinkCreateRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TmallMarketingLiuliangbaoSpreadlinkCreateRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TmallMarketingLiuliangbaoSpreadlinkCreateRequest) GetUrl() string {
-    return r.url
+    return r._url
 }

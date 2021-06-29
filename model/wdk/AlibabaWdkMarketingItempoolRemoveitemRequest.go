@@ -15,9 +15,9 @@ alibaba.wdk.marketing.itempool.removeitem
 type AlibabaWdkMarketingItempoolRemoveitemRequest struct {
     model.Params
     // 商品对象
-    param0   *ItemPoolSku
+    _param0   *ItemPoolSku
     // 活动基本信息
-    param1   *CommonActivityParam
+    _param1   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItempoolRemoveitemRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingItempoolRemoveitemRequest) GetApiParams() url.Values 
 }
 // Param0 Setter
 // 商品对象
-func (r *AlibabaWdkMarketingItempoolRemoveitemRequest) SetParam0(param0 *ItemPoolSku) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingItempoolRemoveitemRequest) SetParam0(_param0 *ItemPoolSku) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingItempoolRemoveitemRequest) GetParam0() *ItemPoolSku {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 活动基本信息
-func (r *AlibabaWdkMarketingItempoolRemoveitemRequest) SetParam1(param1 *CommonActivityParam) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaWdkMarketingItempoolRemoveitemRequest) SetParam1(_param1 *CommonActivityParam) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaWdkMarketingItempoolRemoveitemRequest) GetParam1() *CommonActivityParam {
-    return r.param1
+    return r._param1
 }

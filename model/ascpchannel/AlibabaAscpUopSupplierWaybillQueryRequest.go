@@ -15,7 +15,7 @@ ERP调用打印面单取号接口
 type AlibabaAscpUopSupplierWaybillQueryRequest struct {
     model.Params
     // 查询面单请求参数
-    waybillQueryRequest   *Waybillqueryrequest
+    _waybillQueryRequest   *Waybillqueryrequest
 }
 
 // 初始化AlibabaAscpUopSupplierWaybillQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierWaybillQueryRequest) GetApiParams() url.Values {
 }
 // WaybillQueryRequest Setter
 // 查询面单请求参数
-func (r *AlibabaAscpUopSupplierWaybillQueryRequest) SetWaybillQueryRequest(waybillQueryRequest *Waybillqueryrequest) error {
-    r.waybillQueryRequest = waybillQueryRequest
-    r.Set("waybill_query_request", waybillQueryRequest)
+func (r *AlibabaAscpUopSupplierWaybillQueryRequest) SetWaybillQueryRequest(_waybillQueryRequest *Waybillqueryrequest) error {
+    r._waybillQueryRequest = _waybillQueryRequest
+    r.Set("waybill_query_request", _waybillQueryRequest)
     return nil
 }
 
 // WaybillQueryRequest Getter
 func (r AlibabaAscpUopSupplierWaybillQueryRequest) GetWaybillQueryRequest() *Waybillqueryrequest {
-    return r.waybillQueryRequest
+    return r._waybillQueryRequest
 }

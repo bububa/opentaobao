@@ -15,7 +15,7 @@ taobao.feedflow.item.campaign.modify
 type TaobaoFeedflowItemCampaignModifyRequest struct {
     model.Params
     // 修改参数
-    campaign   *CampaignDto
+    _campaign   *CampaignDto
 }
 
 // 初始化TaobaoFeedflowItemCampaignModifyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignModifyRequest) GetApiParams() url.Values {
 }
 // Campaign Setter
 // 修改参数
-func (r *TaobaoFeedflowItemCampaignModifyRequest) SetCampaign(campaign *CampaignDto) error {
-    r.campaign = campaign
-    r.Set("campaign", campaign)
+func (r *TaobaoFeedflowItemCampaignModifyRequest) SetCampaign(_campaign *CampaignDto) error {
+    r._campaign = _campaign
+    r.Set("campaign", _campaign)
     return nil
 }
 
 // Campaign Getter
 func (r TaobaoFeedflowItemCampaignModifyRequest) GetCampaign() *CampaignDto {
-    return r.campaign
+    return r._campaign
 }

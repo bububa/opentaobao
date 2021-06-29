@@ -15,7 +15,7 @@ alibaba.idle.agreement.pay.query
 type AlibabaIdleAgreementPayQueryRequest struct {
     model.Params
     // 入参
-    param   *AgreementPayBillQueryParam
+    _param   *AgreementPayBillQueryParam
 }
 
 // 初始化AlibabaIdleAgreementPayQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleAgreementPayQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaIdleAgreementPayQueryRequest) SetParam(param *AgreementPayBillQueryParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaIdleAgreementPayQueryRequest) SetParam(_param *AgreementPayBillQueryParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaIdleAgreementPayQueryRequest) GetParam() *AgreementPayBillQueryParam {
-    return r.param
+    return r._param
 }

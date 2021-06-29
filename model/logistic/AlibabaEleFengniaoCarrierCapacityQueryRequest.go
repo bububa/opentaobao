@@ -15,7 +15,7 @@ alibaba.ele.fengniao.carrier.capacity.query
 type AlibabaEleFengniaoCarrierCapacityQueryRequest struct {
     model.Params
     // 系统自动生成
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoCarrierCapacityQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 系统自动生成
-func (r *AlibabaEleFengniaoCarrierCapacityQueryRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoCarrierCapacityQueryRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoCarrierCapacityQueryRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

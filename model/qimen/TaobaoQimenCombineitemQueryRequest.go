@@ -15,7 +15,7 @@ taobao.qimen.combineitem.query
 type TaobaoQimenCombineitemQueryRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenCombineitemQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenCombineitemQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenCombineitemQueryRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenCombineitemQueryRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenCombineitemQueryRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

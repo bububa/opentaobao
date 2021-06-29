@@ -15,9 +15,9 @@ taobao.simba.searchtagtemplate.get
 type TaobaoSimbaSearchtagtemplateGetRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 子帐号nick
-    subNick   string
+    _subNick   string
 }
 
 // 初始化TaobaoSimbaSearchtagtemplateGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSearchtagtemplateGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSearchtagtemplateGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // SubNick Setter
 // 子帐号nick
-func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetSubNick(subNick string) error {
-    r.subNick = subNick
-    r.Set("sub_nick", subNick)
+func (r *TaobaoSimbaSearchtagtemplateGetRequest) SetSubNick(_subNick string) error {
+    r._subNick = _subNick
+    r.Set("sub_nick", _subNick)
     return nil
 }
 
 // SubNick Getter
 func (r TaobaoSimbaSearchtagtemplateGetRequest) GetSubNick() string {
-    return r.subNick
+    return r._subNick
 }

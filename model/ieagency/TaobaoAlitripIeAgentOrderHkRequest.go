@@ -15,9 +15,9 @@ taobao.alitrip.ie.agent.order.hk
 type TaobaoAlitripIeAgentOrderHkRequest struct {
     model.Params
     // 代理商ID
-    agentId   int64
+    _agentId   int64
     // 回填pnr信息
-    writeBackPnrVO   *IeWriteBackPnrVO
+    _writeBackPnrVO   *IeWriteBackPnrVO
 }
 
 // 初始化TaobaoAlitripIeAgentOrderHkRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripIeAgentOrderHkRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商ID
-func (r *TaobaoAlitripIeAgentOrderHkRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentOrderHkRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentOrderHkRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // WriteBackPnrVO Setter
 // 回填pnr信息
-func (r *TaobaoAlitripIeAgentOrderHkRequest) SetWriteBackPnrVO(writeBackPnrVO *IeWriteBackPnrVO) error {
-    r.writeBackPnrVO = writeBackPnrVO
-    r.Set("write_back_pnr_v_o", writeBackPnrVO)
+func (r *TaobaoAlitripIeAgentOrderHkRequest) SetWriteBackPnrVO(_writeBackPnrVO *IeWriteBackPnrVO) error {
+    r._writeBackPnrVO = _writeBackPnrVO
+    r.Set("write_back_pnr_v_o", _writeBackPnrVO)
     return nil
 }
 
 // WriteBackPnrVO Getter
 func (r TaobaoAlitripIeAgentOrderHkRequest) GetWriteBackPnrVO() *IeWriteBackPnrVO {
-    return r.writeBackPnrVO
+    return r._writeBackPnrVO
 }

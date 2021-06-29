@@ -15,7 +15,7 @@ taobao.wireless.content.check
 type TaobaoWirelessContentCheckRequest struct {
     model.Params
     // 待检查的文本
-    text   string
+    _text   string
 }
 
 // 初始化TaobaoWirelessContentCheckRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWirelessContentCheckRequest) GetApiParams() url.Values {
 }
 // Text Setter
 // 待检查的文本
-func (r *TaobaoWirelessContentCheckRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *TaobaoWirelessContentCheckRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r TaobaoWirelessContentCheckRequest) GetText() string {
-    return r.text
+    return r._text
 }

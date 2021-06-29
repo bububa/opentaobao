@@ -15,7 +15,7 @@ taobao.bus.busnumber.set
 type TaobaoBusBusnumberSetRequest struct {
     model.Params
     // 车次更新通知参数
-    pushParam   *TopBusNumerPushRq
+    _pushParam   *TopBusNumerPushRq
 }
 
 // 初始化TaobaoBusBusnumberSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusBusnumberSetRequest) GetApiParams() url.Values {
 }
 // PushParam Setter
 // 车次更新通知参数
-func (r *TaobaoBusBusnumberSetRequest) SetPushParam(pushParam *TopBusNumerPushRq) error {
-    r.pushParam = pushParam
-    r.Set("push_param", pushParam)
+func (r *TaobaoBusBusnumberSetRequest) SetPushParam(_pushParam *TopBusNumerPushRq) error {
+    r._pushParam = _pushParam
+    r.Set("push_param", _pushParam)
     return nil
 }
 
 // PushParam Getter
 func (r TaobaoBusBusnumberSetRequest) GetPushParam() *TopBusNumerPushRq {
-    return r.pushParam
+    return r._pushParam
 }

@@ -15,11 +15,11 @@ alibaba.alihealth.alipaypfm.consume.record
 type AlibabaAlihealthAlipaypfmConsumeRecordRequest struct {
     model.Params
     // 用户健康ID
-    userId   int64
+    _userId   int64
     // 用户消耗卡路里总量
-    energy   int64
+    _energy   int64
     // 记录日期, 格式: yyyy-MM-dd
-    date   string
+    _date   string
 }
 
 // 初始化AlibabaAlihealthAlipaypfmConsumeRecordRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthAlipaypfmConsumeRecordRequest) GetApiParams() url.Values
 }
 // UserId Setter
 // 用户健康ID
-func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthAlipaypfmConsumeRecordRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // Energy Setter
 // 用户消耗卡路里总量
-func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetEnergy(energy int64) error {
-    r.energy = energy
-    r.Set("energy", energy)
+func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetEnergy(_energy int64) error {
+    r._energy = _energy
+    r.Set("energy", _energy)
     return nil
 }
 
 // Energy Getter
 func (r AlibabaAlihealthAlipaypfmConsumeRecordRequest) GetEnergy() int64 {
-    return r.energy
+    return r._energy
 }
 // Date Setter
 // 记录日期, 格式: yyyy-MM-dd
-func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *AlibabaAlihealthAlipaypfmConsumeRecordRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r AlibabaAlihealthAlipaypfmConsumeRecordRequest) GetDate() string {
-    return r.date
+    return r._date
 }

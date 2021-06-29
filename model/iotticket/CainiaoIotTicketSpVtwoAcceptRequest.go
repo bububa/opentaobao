@@ -15,7 +15,7 @@ IoT售后服务商确认接单
 type CainiaoIotTicketSpVtwoAcceptRequest struct {
     model.Params
     // 受理接口请求参数
-    acceptTicketTopRequest   *AcceptTicketV2TopRequest
+    _acceptTicketTopRequest   *AcceptTicketV2TopRequest
 }
 
 // 初始化CainiaoIotTicketSpVtwoAcceptRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpVtwoAcceptRequest) GetApiParams() url.Values {
 }
 // AcceptTicketTopRequest Setter
 // 受理接口请求参数
-func (r *CainiaoIotTicketSpVtwoAcceptRequest) SetAcceptTicketTopRequest(acceptTicketTopRequest *AcceptTicketV2TopRequest) error {
-    r.acceptTicketTopRequest = acceptTicketTopRequest
-    r.Set("accept_ticket_top_request", acceptTicketTopRequest)
+func (r *CainiaoIotTicketSpVtwoAcceptRequest) SetAcceptTicketTopRequest(_acceptTicketTopRequest *AcceptTicketV2TopRequest) error {
+    r._acceptTicketTopRequest = _acceptTicketTopRequest
+    r.Set("accept_ticket_top_request", _acceptTicketTopRequest)
     return nil
 }
 
 // AcceptTicketTopRequest Getter
 func (r CainiaoIotTicketSpVtwoAcceptRequest) GetAcceptTicketTopRequest() *AcceptTicketV2TopRequest {
-    return r.acceptTicketTopRequest
+    return r._acceptTicketTopRequest
 }

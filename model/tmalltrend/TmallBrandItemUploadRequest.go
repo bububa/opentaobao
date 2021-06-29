@@ -15,7 +15,7 @@ tmall.brand.item.upload
 type TmallBrandItemUploadRequest struct {
     model.Params
     // 需要同步的商品列表
-    itemList   []TmallBrandChannelNewItem
+    _itemList   []TmallBrandChannelNewItem
 }
 
 // 初始化TmallBrandItemUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallBrandItemUploadRequest) GetApiParams() url.Values {
 }
 // ItemList Setter
 // 需要同步的商品列表
-func (r *TmallBrandItemUploadRequest) SetItemList(itemList []TmallBrandChannelNewItem) error {
-    r.itemList = itemList
-    r.Set("item_list", itemList)
+func (r *TmallBrandItemUploadRequest) SetItemList(_itemList []TmallBrandChannelNewItem) error {
+    r._itemList = _itemList
+    r.Set("item_list", _itemList)
     return nil
 }
 
 // ItemList Getter
 func (r TmallBrandItemUploadRequest) GetItemList() []TmallBrandChannelNewItem {
-    return r.itemList
+    return r._itemList
 }

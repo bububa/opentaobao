@@ -15,11 +15,11 @@ taobao.drug.price.update
 type TaobaoDrugPriceUpdateRequest struct {
     model.Params
     // 对应的外部店铺ID
-    outStoreId   string
+    _outStoreId   string
     // 对应的外部商品编码
-    outItemId   string
+    _outItemId   string
     // 商品价格
-    price   float64
+    _price   float64
 }
 
 // 初始化TaobaoDrugPriceUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoDrugPriceUpdateRequest) GetApiParams() url.Values {
 }
 // OutStoreId Setter
 // 对应的外部店铺ID
-func (r *TaobaoDrugPriceUpdateRequest) SetOutStoreId(outStoreId string) error {
-    r.outStoreId = outStoreId
-    r.Set("out_store_id", outStoreId)
+func (r *TaobaoDrugPriceUpdateRequest) SetOutStoreId(_outStoreId string) error {
+    r._outStoreId = _outStoreId
+    r.Set("out_store_id", _outStoreId)
     return nil
 }
 
 // OutStoreId Getter
 func (r TaobaoDrugPriceUpdateRequest) GetOutStoreId() string {
-    return r.outStoreId
+    return r._outStoreId
 }
 // OutItemId Setter
 // 对应的外部商品编码
-func (r *TaobaoDrugPriceUpdateRequest) SetOutItemId(outItemId string) error {
-    r.outItemId = outItemId
-    r.Set("out_item_id", outItemId)
+func (r *TaobaoDrugPriceUpdateRequest) SetOutItemId(_outItemId string) error {
+    r._outItemId = _outItemId
+    r.Set("out_item_id", _outItemId)
     return nil
 }
 
 // OutItemId Getter
 func (r TaobaoDrugPriceUpdateRequest) GetOutItemId() string {
-    return r.outItemId
+    return r._outItemId
 }
 // Price Setter
 // 商品价格
-func (r *TaobaoDrugPriceUpdateRequest) SetPrice(price float64) error {
-    r.price = price
-    r.Set("price", price)
+func (r *TaobaoDrugPriceUpdateRequest) SetPrice(_price float64) error {
+    r._price = _price
+    r.Set("price", _price)
     return nil
 }
 
 // Price Getter
 func (r TaobaoDrugPriceUpdateRequest) GetPrice() float64 {
-    return r.price
+    return r._price
 }

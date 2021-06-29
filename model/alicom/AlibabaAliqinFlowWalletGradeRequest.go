@@ -15,7 +15,7 @@ alibaba.aliqin.flow.wallet.grade
 type AlibabaAliqinFlowWalletGradeRequest struct {
     model.Params
     // 手机号码
-    phoneNum   string
+    _phoneNum   string
 }
 
 // 初始化AlibabaAliqinFlowWalletGradeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletGradeRequest) GetApiParams() url.Values {
 }
 // PhoneNum Setter
 // 手机号码
-func (r *AlibabaAliqinFlowWalletGradeRequest) SetPhoneNum(phoneNum string) error {
-    r.phoneNum = phoneNum
-    r.Set("phone_num", phoneNum)
+func (r *AlibabaAliqinFlowWalletGradeRequest) SetPhoneNum(_phoneNum string) error {
+    r._phoneNum = _phoneNum
+    r.Set("phone_num", _phoneNum)
     return nil
 }
 
 // PhoneNum Getter
 func (r AlibabaAliqinFlowWalletGradeRequest) GetPhoneNum() string {
-    return r.phoneNum
+    return r._phoneNum
 }

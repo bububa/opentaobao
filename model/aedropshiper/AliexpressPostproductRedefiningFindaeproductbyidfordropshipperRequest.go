@@ -15,11 +15,11 @@ aliexpress.postproduct.redefining.findaeproductbyidfordropshipper
 type AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest struct {
     model.Params
     // 商品ID
-    productId   int64
+    _productId   int64
     // 国家
-    localCountry   string
+    _localCountry   string
     // 语言
-    localLanguage   string
+    _localLanguage   string
 }
 
 // 初始化AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest对象
@@ -44,37 +44,37 @@ func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) G
 }
 // ProductId Setter
 // 商品ID
-func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // LocalCountry Setter
 // 国家
-func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetLocalCountry(localCountry string) error {
-    r.localCountry = localCountry
-    r.Set("local_country", localCountry)
+func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetLocalCountry(_localCountry string) error {
+    r._localCountry = _localCountry
+    r.Set("local_country", _localCountry)
     return nil
 }
 
 // LocalCountry Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) GetLocalCountry() string {
-    return r.localCountry
+    return r._localCountry
 }
 // LocalLanguage Setter
 // 语言
-func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetLocalLanguage(localLanguage string) error {
-    r.localLanguage = localLanguage
-    r.Set("local_language", localLanguage)
+func (r *AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) SetLocalLanguage(_localLanguage string) error {
+    r._localLanguage = _localLanguage
+    r.Set("local_language", _localLanguage)
     return nil
 }
 
 // LocalLanguage Getter
 func (r AliexpressPostproductRedefiningFindaeproductbyidfordropshipperRequest) GetLocalLanguage() string {
-    return r.localLanguage
+    return r._localLanguage
 }

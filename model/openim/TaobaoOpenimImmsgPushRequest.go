@@ -15,7 +15,7 @@ taobao.openim.immsg.push
 type TaobaoOpenimImmsgPushRequest struct {
     model.Params
     // openim消息结构体
-    immsg   *ImMsg
+    _immsg   *ImMsg
 }
 
 // 初始化TaobaoOpenimImmsgPushRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimImmsgPushRequest) GetApiParams() url.Values {
 }
 // Immsg Setter
 // openim消息结构体
-func (r *TaobaoOpenimImmsgPushRequest) SetImmsg(immsg *ImMsg) error {
-    r.immsg = immsg
-    r.Set("immsg", immsg)
+func (r *TaobaoOpenimImmsgPushRequest) SetImmsg(_immsg *ImMsg) error {
+    r._immsg = _immsg
+    r.Set("immsg", _immsg)
     return nil
 }
 
 // Immsg Getter
 func (r TaobaoOpenimImmsgPushRequest) GetImmsg() *ImMsg {
-    return r.immsg
+    return r._immsg
 }

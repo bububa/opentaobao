@@ -15,9 +15,9 @@ alibaba.ailabs.aligenie.opencontent.push
 type AlibabaAilabsAligenieOpencontentPushRequest struct {
     model.Params
     // 在Aligenie开放平台创建的技能的ID
-    skillId   int64
+    _skillId   int64
     // 详细内容列表
-    contents   *BatchContent
+    _contents   *BatchContent
 }
 
 // 初始化AlibabaAilabsAligenieOpencontentPushRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsAligenieOpencontentPushRequest) GetApiParams() url.Values {
 }
 // SkillId Setter
 // 在Aligenie开放平台创建的技能的ID
-func (r *AlibabaAilabsAligenieOpencontentPushRequest) SetSkillId(skillId int64) error {
-    r.skillId = skillId
-    r.Set("skill_id", skillId)
+func (r *AlibabaAilabsAligenieOpencontentPushRequest) SetSkillId(_skillId int64) error {
+    r._skillId = _skillId
+    r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
 func (r AlibabaAilabsAligenieOpencontentPushRequest) GetSkillId() int64 {
-    return r.skillId
+    return r._skillId
 }
 // Contents Setter
 // 详细内容列表
-func (r *AlibabaAilabsAligenieOpencontentPushRequest) SetContents(contents *BatchContent) error {
-    r.contents = contents
-    r.Set("contents", contents)
+func (r *AlibabaAilabsAligenieOpencontentPushRequest) SetContents(_contents *BatchContent) error {
+    r._contents = _contents
+    r.Set("contents", _contents)
     return nil
 }
 
 // Contents Getter
 func (r AlibabaAilabsAligenieOpencontentPushRequest) GetContents() *BatchContent {
-    return r.contents
+    return r._contents
 }

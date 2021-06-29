@@ -15,11 +15,11 @@ taobao.taotv.video.playlist.ottnav.get
 type TaobaoTaotvVideoPlaylistOttnavGetRequest struct {
     model.Params
     // 播单id
-    playListId   int64
+    _playListId   int64
     // 播单列表
-    playListNav   []string
+    _playListNav   []string
     // 系统信息
-    systemInfo   string
+    _systemInfo   string
 }
 
 // 初始化TaobaoTaotvVideoPlaylistOttnavGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetApiParams() url.Values {
 }
 // PlayListId Setter
 // 播单id
-func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListId(playListId int64) error {
-    r.playListId = playListId
-    r.Set("play_list_id", playListId)
+func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListId(_playListId int64) error {
+    r._playListId = _playListId
+    r.Set("play_list_id", _playListId)
     return nil
 }
 
 // PlayListId Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetPlayListId() int64 {
-    return r.playListId
+    return r._playListId
 }
 // PlayListNav Setter
 // 播单列表
-func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListNav(playListNav []string) error {
-    r.playListNav = playListNav
-    r.Set("play_list_nav", playListNav)
+func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListNav(_playListNav []string) error {
+    r._playListNav = _playListNav
+    r.Set("play_list_nav", _playListNav)
     return nil
 }
 
 // PlayListNav Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetPlayListNav() []string {
-    return r.playListNav
+    return r._playListNav
 }
 // SystemInfo Setter
 // 系统信息
-func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }

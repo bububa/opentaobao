@@ -15,15 +15,15 @@ alibaba.alihealth.drug.kyt.updatebillcode
 type AlibabaAlihealthDrugKytUpdatebillcodeRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 操作人ID
-    icCode   string
+    _icCode   string
     // 单据ID
-    billId   string
+    _billId   string
     // 单据类型
-    billType   string
+    _billType   string
     // 追溯码
-    codeList   []string
+    _codeList   []string
 }
 
 // 初始化AlibabaAlihealthDrugKytUpdatebillcodeRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetApiParams() url.Values 
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // IcCode Setter
 // 操作人ID
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetIcCode(icCode string) error {
-    r.icCode = icCode
-    r.Set("ic_code", icCode)
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetIcCode(_icCode string) error {
+    r._icCode = _icCode
+    r.Set("ic_code", _icCode)
     return nil
 }
 
 // IcCode Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetIcCode() string {
-    return r.icCode
+    return r._icCode
 }
 // BillId Setter
 // 单据ID
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetBillId(billId string) error {
-    r.billId = billId
-    r.Set("bill_id", billId)
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetBillId(_billId string) error {
+    r._billId = _billId
+    r.Set("bill_id", _billId)
     return nil
 }
 
 // BillId Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetBillId() string {
-    return r.billId
+    return r._billId
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }
 // CodeList Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetCodeList(codeList []string) error {
-    r.codeList = codeList
-    r.Set("code_list", codeList)
+func (r *AlibabaAlihealthDrugKytUpdatebillcodeRequest) SetCodeList(_codeList []string) error {
+    r._codeList = _codeList
+    r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
 func (r AlibabaAlihealthDrugKytUpdatebillcodeRequest) GetCodeList() []string {
-    return r.codeList
+    return r._codeList
 }

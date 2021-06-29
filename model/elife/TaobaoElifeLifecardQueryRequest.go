@@ -15,7 +15,7 @@ taobao.elife.lifecard.query
 type TaobaoElifeLifecardQueryRequest struct {
     model.Params
     // 入参
-    queryRequest   *ConsumeRequest
+    _queryRequest   *ConsumeRequest
 }
 
 // 初始化TaobaoElifeLifecardQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoElifeLifecardQueryRequest) GetApiParams() url.Values {
 }
 // QueryRequest Setter
 // 入参
-func (r *TaobaoElifeLifecardQueryRequest) SetQueryRequest(queryRequest *ConsumeRequest) error {
-    r.queryRequest = queryRequest
-    r.Set("query_request", queryRequest)
+func (r *TaobaoElifeLifecardQueryRequest) SetQueryRequest(_queryRequest *ConsumeRequest) error {
+    r._queryRequest = _queryRequest
+    r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
 func (r TaobaoElifeLifecardQueryRequest) GetQueryRequest() *ConsumeRequest {
-    return r.queryRequest
+    return r._queryRequest
 }

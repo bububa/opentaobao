@@ -15,9 +15,9 @@ alibaba.campus.acl.new.listuserbymenu
 type AlibabaCampusAclNewListuserbymenuRequest struct {
     model.Params
     // 系统入参
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // /workbench/space/application
-    menuUrl   string
+    _menuUrl   string
 }
 
 // 初始化AlibabaCampusAclNewListuserbymenuRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewListuserbymenuRequest) GetApiParams() url.Values {
 }
 // Context Setter
 // 系统入参
-func (r *AlibabaCampusAclNewListuserbymenuRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusAclNewListuserbymenuRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusAclNewListuserbymenuRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // MenuUrl Setter
 // /workbench/space/application
-func (r *AlibabaCampusAclNewListuserbymenuRequest) SetMenuUrl(menuUrl string) error {
-    r.menuUrl = menuUrl
-    r.Set("menu_url", menuUrl)
+func (r *AlibabaCampusAclNewListuserbymenuRequest) SetMenuUrl(_menuUrl string) error {
+    r._menuUrl = _menuUrl
+    r.Set("menu_url", _menuUrl)
     return nil
 }
 
 // MenuUrl Getter
 func (r AlibabaCampusAclNewListuserbymenuRequest) GetMenuUrl() string {
-    return r.menuUrl
+    return r._menuUrl
 }

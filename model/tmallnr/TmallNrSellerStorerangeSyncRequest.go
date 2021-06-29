@@ -15,11 +15,11 @@ tmall.nr.seller.storerange.sync
 type TmallNrSellerStorerangeSyncRequest struct {
     model.Params
     // 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
-    bizIdentity   string
+    _bizIdentity   string
     // 系统自动生成
-    reqDTOList   []SyncServiceRangeRequestDto
+    _reqDTOList   []SyncServiceRangeRequestDto
     // 卖家id，有可能和登录seller不是同一个id
-    sellerId   int64
+    _sellerId   int64
 }
 
 // 初始化TmallNrSellerStorerangeSyncRequest对象
@@ -44,37 +44,37 @@ func (r TmallNrSellerStorerangeSyncRequest) GetApiParams() url.Values {
 }
 // BizIdentity Setter
 // 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
-func (r *TmallNrSellerStorerangeSyncRequest) SetBizIdentity(bizIdentity string) error {
-    r.bizIdentity = bizIdentity
-    r.Set("biz_identity", bizIdentity)
+func (r *TmallNrSellerStorerangeSyncRequest) SetBizIdentity(_bizIdentity string) error {
+    r._bizIdentity = _bizIdentity
+    r.Set("biz_identity", _bizIdentity)
     return nil
 }
 
 // BizIdentity Getter
 func (r TmallNrSellerStorerangeSyncRequest) GetBizIdentity() string {
-    return r.bizIdentity
+    return r._bizIdentity
 }
 // ReqDTOList Setter
 // 系统自动生成
-func (r *TmallNrSellerStorerangeSyncRequest) SetReqDTOList(reqDTOList []SyncServiceRangeRequestDto) error {
-    r.reqDTOList = reqDTOList
-    r.Set("req_d_t_o_list", reqDTOList)
+func (r *TmallNrSellerStorerangeSyncRequest) SetReqDTOList(_reqDTOList []SyncServiceRangeRequestDto) error {
+    r._reqDTOList = _reqDTOList
+    r.Set("req_d_t_o_list", _reqDTOList)
     return nil
 }
 
 // ReqDTOList Getter
 func (r TmallNrSellerStorerangeSyncRequest) GetReqDTOList() []SyncServiceRangeRequestDto {
-    return r.reqDTOList
+    return r._reqDTOList
 }
 // SellerId Setter
 // 卖家id，有可能和登录seller不是同一个id
-func (r *TmallNrSellerStorerangeSyncRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TmallNrSellerStorerangeSyncRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TmallNrSellerStorerangeSyncRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }

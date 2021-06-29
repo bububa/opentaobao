@@ -15,11 +15,11 @@ yunos.tvpubadmin.user.rights
 type YunosTvpubadminUserRightsRequest struct {
     model.Params
     // 用户ID
-    uid   int64
+    _uid   int64
     // 页码值
-    pageNo   int64
+    _pageNo   int64
     // 每页行数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosTvpubadminUserRightsRequest对象
@@ -44,37 +44,37 @@ func (r YunosTvpubadminUserRightsRequest) GetApiParams() url.Values {
 }
 // Uid Setter
 // 用户ID
-func (r *YunosTvpubadminUserRightsRequest) SetUid(uid int64) error {
-    r.uid = uid
-    r.Set("uid", uid)
+func (r *YunosTvpubadminUserRightsRequest) SetUid(_uid int64) error {
+    r._uid = _uid
+    r.Set("uid", _uid)
     return nil
 }
 
 // Uid Getter
 func (r YunosTvpubadminUserRightsRequest) GetUid() int64 {
-    return r.uid
+    return r._uid
 }
 // PageNo Setter
 // 页码值
-func (r *YunosTvpubadminUserRightsRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YunosTvpubadminUserRightsRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YunosTvpubadminUserRightsRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页行数
-func (r *YunosTvpubadminUserRightsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminUserRightsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminUserRightsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

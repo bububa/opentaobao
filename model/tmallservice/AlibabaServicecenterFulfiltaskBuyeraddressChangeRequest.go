@@ -15,11 +15,11 @@ alibaba.servicecenter.fulfiltask.buyeraddress.change
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest struct {
     model.Params
     // 核销单id
-    fulfilTaskId   int64
+    _fulfilTaskId   int64
     // 详细地址
-    addressDetail   string
+    _addressDetail   string
     // 地址编码
-    location   int64
+    _location   int64
 }
 
 // 初始化AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) GetApiParams() 
 }
 // FulfilTaskId Setter
 // 核销单id
-func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetFulfilTaskId(fulfilTaskId int64) error {
-    r.fulfilTaskId = fulfilTaskId
-    r.Set("fulfil_task_id", fulfilTaskId)
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+    r._fulfilTaskId = _fulfilTaskId
+    r.Set("fulfil_task_id", _fulfilTaskId)
     return nil
 }
 
 // FulfilTaskId Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) GetFulfilTaskId() int64 {
-    return r.fulfilTaskId
+    return r._fulfilTaskId
 }
 // AddressDetail Setter
 // 详细地址
-func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetAddressDetail(addressDetail string) error {
-    r.addressDetail = addressDetail
-    r.Set("address_detail", addressDetail)
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetAddressDetail(_addressDetail string) error {
+    r._addressDetail = _addressDetail
+    r.Set("address_detail", _addressDetail)
     return nil
 }
 
 // AddressDetail Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) GetAddressDetail() string {
-    return r.addressDetail
+    return r._addressDetail
 }
 // Location Setter
 // 地址编码
-func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetLocation(location int64) error {
-    r.location = location
-    r.Set("location", location)
+func (r *AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) SetLocation(_location int64) error {
+    r._location = _location
+    r.Set("location", _location)
     return nil
 }
 
 // Location Getter
 func (r AlibabaServicecenterFulfiltaskBuyeraddressChangeRequest) GetLocation() int64 {
-    return r.location
+    return r._location
 }

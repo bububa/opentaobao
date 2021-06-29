@@ -15,7 +15,7 @@ aliyun.alios.pay.token.get
 type AliyunAliosPayTokenGetRequest struct {
     model.Params
     // 请求参数
-    getTokenRequest   *GetTokenRequest
+    _getTokenRequest   *GetTokenRequest
 }
 
 // 初始化AliyunAliosPayTokenGetRequest对象
@@ -40,13 +40,13 @@ func (r AliyunAliosPayTokenGetRequest) GetApiParams() url.Values {
 }
 // GetTokenRequest Setter
 // 请求参数
-func (r *AliyunAliosPayTokenGetRequest) SetGetTokenRequest(getTokenRequest *GetTokenRequest) error {
-    r.getTokenRequest = getTokenRequest
-    r.Set("get_token_request", getTokenRequest)
+func (r *AliyunAliosPayTokenGetRequest) SetGetTokenRequest(_getTokenRequest *GetTokenRequest) error {
+    r._getTokenRequest = _getTokenRequest
+    r.Set("get_token_request", _getTokenRequest)
     return nil
 }
 
 // GetTokenRequest Getter
 func (r AliyunAliosPayTokenGetRequest) GetGetTokenRequest() *GetTokenRequest {
-    return r.getTokenRequest
+    return r._getTokenRequest
 }

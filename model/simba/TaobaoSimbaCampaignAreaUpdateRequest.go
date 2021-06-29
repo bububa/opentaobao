@@ -15,11 +15,11 @@ taobao.simba.campaign.area.update
 type TaobaoSimbaCampaignAreaUpdateRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
-    area   string
+    _area   string
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaCampaignAreaUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaCampaignAreaUpdateRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaCampaignAreaUpdateRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // Area Setter
 // 值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID；
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetArea(area string) error {
-    r.area = area
-    r.Set("area", area)
+func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetArea(_area string) error {
+    r._area = _area
+    r.Set("area", _area)
     return nil
 }
 
 // Area Getter
 func (r TaobaoSimbaCampaignAreaUpdateRequest) GetArea() string {
-    return r.area
+    return r._area
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignAreaUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignAreaUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

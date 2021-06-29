@@ -15,13 +15,13 @@ alibaba.aliqin.ta.number.singlecallbyvoice
 type AlibabaAliqinTaNumberSinglecallbyvoiceRequest struct {
     model.Params
     // 单呼号码
-    calledNum   string
+    _calledNum   string
     // 显示号码
-    calledShowNum   string
+    _calledShowNum   string
     // 语音文件code
-    voiceCode   string
+    _voiceCode   string
     // 上下文参数 示例:{"extend":"回传参数"} extend为扩展信息作为回传参数的key
-    params   string
+    _params   string
 }
 
 // 初始化AlibabaAliqinTaNumberSinglecallbyvoiceRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinTaNumberSinglecallbyvoiceRequest) GetApiParams() url.Values
 }
 // CalledNum Setter
 // 单呼号码
-func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetCalledNum(calledNum string) error {
-    r.calledNum = calledNum
-    r.Set("called_num", calledNum)
+func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetCalledNum(_calledNum string) error {
+    r._calledNum = _calledNum
+    r.Set("called_num", _calledNum)
     return nil
 }
 
 // CalledNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceRequest) GetCalledNum() string {
-    return r.calledNum
+    return r._calledNum
 }
 // CalledShowNum Setter
 // 显示号码
-func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetCalledShowNum(calledShowNum string) error {
-    r.calledShowNum = calledShowNum
-    r.Set("called_show_num", calledShowNum)
+func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetCalledShowNum(_calledShowNum string) error {
+    r._calledShowNum = _calledShowNum
+    r.Set("called_show_num", _calledShowNum)
     return nil
 }
 
 // CalledShowNum Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceRequest) GetCalledShowNum() string {
-    return r.calledShowNum
+    return r._calledShowNum
 }
 // VoiceCode Setter
 // 语音文件code
-func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetVoiceCode(voiceCode string) error {
-    r.voiceCode = voiceCode
-    r.Set("voice_code", voiceCode)
+func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetVoiceCode(_voiceCode string) error {
+    r._voiceCode = _voiceCode
+    r.Set("voice_code", _voiceCode)
     return nil
 }
 
 // VoiceCode Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceRequest) GetVoiceCode() string {
-    return r.voiceCode
+    return r._voiceCode
 }
 // Params Setter
 // 上下文参数 示例:{"extend":"回传参数"} extend为扩展信息作为回传参数的key
-func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaAliqinTaNumberSinglecallbyvoiceRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaAliqinTaNumberSinglecallbyvoiceRequest) GetParams() string {
-    return r.params
+    return r._params
 }

@@ -15,13 +15,13 @@ taobao.drug.shop.list
 type TaobaoDrugShopListRequest struct {
     model.Params
     // 查询关键字
-    keywords   string
+    _keywords   string
     // 店铺状态，歇业：0，营业：1，所有：-1
-    status   int64
+    _status   int64
     // 页码
-    page   int64
+    _page   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoDrugShopListRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoDrugShopListRequest) GetApiParams() url.Values {
 }
 // Keywords Setter
 // 查询关键字
-func (r *TaobaoDrugShopListRequest) SetKeywords(keywords string) error {
-    r.keywords = keywords
-    r.Set("keywords", keywords)
+func (r *TaobaoDrugShopListRequest) SetKeywords(_keywords string) error {
+    r._keywords = _keywords
+    r.Set("keywords", _keywords)
     return nil
 }
 
 // Keywords Getter
 func (r TaobaoDrugShopListRequest) GetKeywords() string {
-    return r.keywords
+    return r._keywords
 }
 // Status Setter
 // 店铺状态，歇业：0，营业：1，所有：-1
-func (r *TaobaoDrugShopListRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoDrugShopListRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoDrugShopListRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // Page Setter
 // 页码
-func (r *TaobaoDrugShopListRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *TaobaoDrugShopListRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r TaobaoDrugShopListRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // PageSize Setter
 // 每页条数
-func (r *TaobaoDrugShopListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoDrugShopListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoDrugShopListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

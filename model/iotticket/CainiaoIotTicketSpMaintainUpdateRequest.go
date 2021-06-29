@@ -15,7 +15,7 @@ IoT售后服务商维修方案更新
 type CainiaoIotTicketSpMaintainUpdateRequest struct {
     model.Params
     // 请求参数
-    param   *UpdateMaintainPlanTopRequest
+    _param   *UpdateMaintainPlanTopRequest
 }
 
 // 初始化CainiaoIotTicketSpMaintainUpdateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpMaintainUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求参数
-func (r *CainiaoIotTicketSpMaintainUpdateRequest) SetParam(param *UpdateMaintainPlanTopRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *CainiaoIotTicketSpMaintainUpdateRequest) SetParam(_param *UpdateMaintainPlanTopRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r CainiaoIotTicketSpMaintainUpdateRequest) GetParam() *UpdateMaintainPlanTopRequest {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ taobao.rdc.aligenius.warehouse.resend.update
 type TaobaoRdcAligeniusWarehouseResendUpdateRequest struct {
     model.Params
     // 参数
-    param0   *UpdateResendStatusDto
+    _param0   *UpdateResendStatusDto
 }
 
 // 初始化TaobaoRdcAligeniusWarehouseResendUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseResendUpdateRequest) SetParam0(param0 *UpdateResendStatusDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoRdcAligeniusWarehouseResendUpdateRequest) SetParam0(_param0 *UpdateResendStatusDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseResendUpdateRequest) GetParam0() *UpdateResendStatusDto {
-    return r.param0
+    return r._param0
 }

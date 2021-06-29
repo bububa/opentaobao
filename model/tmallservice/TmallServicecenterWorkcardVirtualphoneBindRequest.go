@@ -16,7 +16,7 @@ tmall.servicecenter.workcard.virtualphone.bind
 type TmallServicecenterWorkcardVirtualphoneBindRequest struct {
     model.Params
     // 绑定阿里通讯号入参
-    workcardRequest   *WorkcardBaseRequest
+    _workcardRequest   *WorkcardBaseRequest
 }
 
 // 初始化TmallServicecenterWorkcardVirtualphoneBindRequest对象
@@ -41,13 +41,13 @@ func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetApiParams() url.Va
 }
 // WorkcardRequest Setter
 // 绑定阿里通讯号入参
-func (r *TmallServicecenterWorkcardVirtualphoneBindRequest) SetWorkcardRequest(workcardRequest *WorkcardBaseRequest) error {
-    r.workcardRequest = workcardRequest
-    r.Set("workcard_request", workcardRequest)
+func (r *TmallServicecenterWorkcardVirtualphoneBindRequest) SetWorkcardRequest(_workcardRequest *WorkcardBaseRequest) error {
+    r._workcardRequest = _workcardRequest
+    r.Set("workcard_request", _workcardRequest)
     return nil
 }
 
 // WorkcardRequest Getter
 func (r TmallServicecenterWorkcardVirtualphoneBindRequest) GetWorkcardRequest() *WorkcardBaseRequest {
-    return r.workcardRequest
+    return r._workcardRequest
 }

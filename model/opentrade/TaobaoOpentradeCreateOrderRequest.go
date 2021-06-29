@@ -15,21 +15,21 @@ taobao.opentrade.create.order
 type TaobaoOpentradeCreateOrderRequest struct {
     model.Params
     // 外部订单ID
-    outId   string
+    _outId   string
     // 买家openID
-    openUserId   string
+    _openUserId   string
     // 收货地址的收件人姓名
-    fullName   string
+    _fullName   string
     // 收货地址的手机号码
-    mobile   string
+    _mobile   string
     // 收货地址
-    address   string
+    _address   string
     // 卖家备忘
-    sellerMemo   string
+    _sellerMemo   string
     // 卖家备忘
-    buyerMemo   string
+    _buyerMemo   string
     // 商品信息，一次不能超过10个
-    itemInfos   []ItemInfo
+    _itemInfos   []ItemInfo
 }
 
 // 初始化TaobaoOpentradeCreateOrderRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoOpentradeCreateOrderRequest) GetApiParams() url.Values {
 }
 // OutId Setter
 // 外部订单ID
-func (r *TaobaoOpentradeCreateOrderRequest) SetOutId(outId string) error {
-    r.outId = outId
-    r.Set("out_id", outId)
+func (r *TaobaoOpentradeCreateOrderRequest) SetOutId(_outId string) error {
+    r._outId = _outId
+    r.Set("out_id", _outId)
     return nil
 }
 
 // OutId Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetOutId() string {
-    return r.outId
+    return r._outId
 }
 // OpenUserId Setter
 // 买家openID
-func (r *TaobaoOpentradeCreateOrderRequest) SetOpenUserId(openUserId string) error {
-    r.openUserId = openUserId
-    r.Set("open_user_id", openUserId)
+func (r *TaobaoOpentradeCreateOrderRequest) SetOpenUserId(_openUserId string) error {
+    r._openUserId = _openUserId
+    r.Set("open_user_id", _openUserId)
     return nil
 }
 
 // OpenUserId Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetOpenUserId() string {
-    return r.openUserId
+    return r._openUserId
 }
 // FullName Setter
 // 收货地址的收件人姓名
-func (r *TaobaoOpentradeCreateOrderRequest) SetFullName(fullName string) error {
-    r.fullName = fullName
-    r.Set("full_name", fullName)
+func (r *TaobaoOpentradeCreateOrderRequest) SetFullName(_fullName string) error {
+    r._fullName = _fullName
+    r.Set("full_name", _fullName)
     return nil
 }
 
 // FullName Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetFullName() string {
-    return r.fullName
+    return r._fullName
 }
 // Mobile Setter
 // 收货地址的手机号码
-func (r *TaobaoOpentradeCreateOrderRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *TaobaoOpentradeCreateOrderRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // Address Setter
 // 收货地址
-func (r *TaobaoOpentradeCreateOrderRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *TaobaoOpentradeCreateOrderRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // SellerMemo Setter
 // 卖家备忘
-func (r *TaobaoOpentradeCreateOrderRequest) SetSellerMemo(sellerMemo string) error {
-    r.sellerMemo = sellerMemo
-    r.Set("seller_memo", sellerMemo)
+func (r *TaobaoOpentradeCreateOrderRequest) SetSellerMemo(_sellerMemo string) error {
+    r._sellerMemo = _sellerMemo
+    r.Set("seller_memo", _sellerMemo)
     return nil
 }
 
 // SellerMemo Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetSellerMemo() string {
-    return r.sellerMemo
+    return r._sellerMemo
 }
 // BuyerMemo Setter
 // 卖家备忘
-func (r *TaobaoOpentradeCreateOrderRequest) SetBuyerMemo(buyerMemo string) error {
-    r.buyerMemo = buyerMemo
-    r.Set("buyer_memo", buyerMemo)
+func (r *TaobaoOpentradeCreateOrderRequest) SetBuyerMemo(_buyerMemo string) error {
+    r._buyerMemo = _buyerMemo
+    r.Set("buyer_memo", _buyerMemo)
     return nil
 }
 
 // BuyerMemo Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetBuyerMemo() string {
-    return r.buyerMemo
+    return r._buyerMemo
 }
 // ItemInfos Setter
 // 商品信息，一次不能超过10个
-func (r *TaobaoOpentradeCreateOrderRequest) SetItemInfos(itemInfos []ItemInfo) error {
-    r.itemInfos = itemInfos
-    r.Set("item_infos", itemInfos)
+func (r *TaobaoOpentradeCreateOrderRequest) SetItemInfos(_itemInfos []ItemInfo) error {
+    r._itemInfos = _itemInfos
+    r.Set("item_infos", _itemInfos)
     return nil
 }
 
 // ItemInfos Getter
 func (r TaobaoOpentradeCreateOrderRequest) GetItemInfos() []ItemInfo {
-    return r.itemInfos
+    return r._itemInfos
 }

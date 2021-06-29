@@ -15,9 +15,9 @@ alibaba.wdk.marketing.fullrange.removeitem
 type AlibabaWdkMarketingFullrangeRemoveitemRequest struct {
     model.Params
     // 商品sku信息
-    param0   *ItemStairSku
+    _param0   *ItemStairSku
     // 活动信息
-    param1   *CommonActivityParam
+    _param1   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingFullrangeRemoveitemRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingFullrangeRemoveitemRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // 商品sku信息
-func (r *AlibabaWdkMarketingFullrangeRemoveitemRequest) SetParam0(param0 *ItemStairSku) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingFullrangeRemoveitemRequest) SetParam0(_param0 *ItemStairSku) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingFullrangeRemoveitemRequest) GetParam0() *ItemStairSku {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 活动信息
-func (r *AlibabaWdkMarketingFullrangeRemoveitemRequest) SetParam1(param1 *CommonActivityParam) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaWdkMarketingFullrangeRemoveitemRequest) SetParam1(_param1 *CommonActivityParam) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaWdkMarketingFullrangeRemoveitemRequest) GetParam1() *CommonActivityParam {
-    return r.param1
+    return r._param1
 }

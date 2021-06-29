@@ -15,7 +15,7 @@ tmall.servicecenter.task.queryrefund
 type TmallServicecenterTaskQueryrefundRequest struct {
     model.Params
     // 工单id列表
-    workcardList   []int64
+    _workcardList   []int64
 }
 
 // 初始化TmallServicecenterTaskQueryrefundRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterTaskQueryrefundRequest) GetApiParams() url.Values {
 }
 // WorkcardList Setter
 // 工单id列表
-func (r *TmallServicecenterTaskQueryrefundRequest) SetWorkcardList(workcardList []int64) error {
-    r.workcardList = workcardList
-    r.Set("workcard_list", workcardList)
+func (r *TmallServicecenterTaskQueryrefundRequest) SetWorkcardList(_workcardList []int64) error {
+    r._workcardList = _workcardList
+    r.Set("workcard_list", _workcardList)
     return nil
 }
 
 // WorkcardList Getter
 func (r TmallServicecenterTaskQueryrefundRequest) GetWorkcardList() []int64 {
-    return r.workcardList
+    return r._workcardList
 }

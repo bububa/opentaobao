@@ -15,7 +15,7 @@ alibaba.ele.fengniao.chainstore.contract.cancel
 type AlibabaEleFengniaoChainstoreContractCancelRequest struct {
     model.Params
     // 系统自动生成
-    param   *AlibabaEleFengniaoChainstoreContractCancelData
+    _param   *AlibabaEleFengniaoChainstoreContractCancelData
 }
 
 // 初始化AlibabaEleFengniaoChainstoreContractCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoChainstoreContractCancelRequest) GetApiParams() url.Va
 }
 // Param Setter
 // 系统自动生成
-func (r *AlibabaEleFengniaoChainstoreContractCancelRequest) SetParam(param *AlibabaEleFengniaoChainstoreContractCancelData) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoChainstoreContractCancelRequest) SetParam(_param *AlibabaEleFengniaoChainstoreContractCancelData) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoChainstoreContractCancelRequest) GetParam() *AlibabaEleFengniaoChainstoreContractCancelData {
-    return r.param
+    return r._param
 }

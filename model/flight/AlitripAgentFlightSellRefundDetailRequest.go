@@ -15,9 +15,9 @@ alitrip.agent.flight.sell.refund.detail
 type AlitripAgentFlightSellRefundDetailRequest struct {
     model.Params
     // 申请单号
-    applyId   string
+    _applyId   string
     // 国际国内标识
-    domesticIntl   int64
+    _domesticIntl   int64
 }
 
 // 初始化AlitripAgentFlightSellRefundDetailRequest对象
@@ -42,25 +42,25 @@ func (r AlitripAgentFlightSellRefundDetailRequest) GetApiParams() url.Values {
 }
 // ApplyId Setter
 // 申请单号
-func (r *AlitripAgentFlightSellRefundDetailRequest) SetApplyId(applyId string) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlitripAgentFlightSellRefundDetailRequest) SetApplyId(_applyId string) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlitripAgentFlightSellRefundDetailRequest) GetApplyId() string {
-    return r.applyId
+    return r._applyId
 }
 // DomesticIntl Setter
 // 国际国内标识
-func (r *AlitripAgentFlightSellRefundDetailRequest) SetDomesticIntl(domesticIntl int64) error {
-    r.domesticIntl = domesticIntl
-    r.Set("domestic_intl", domesticIntl)
+func (r *AlitripAgentFlightSellRefundDetailRequest) SetDomesticIntl(_domesticIntl int64) error {
+    r._domesticIntl = _domesticIntl
+    r.Set("domestic_intl", _domesticIntl)
     return nil
 }
 
 // DomesticIntl Getter
 func (r AlitripAgentFlightSellRefundDetailRequest) GetDomesticIntl() int64 {
-    return r.domesticIntl
+    return r._domesticIntl
 }

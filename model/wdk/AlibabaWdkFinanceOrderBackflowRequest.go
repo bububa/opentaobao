@@ -15,7 +15,7 @@ alibaba.wdk.finance.order.backflow
 type AlibabaWdkFinanceOrderBackflowRequest struct {
     model.Params
     // 财务订单回流入参
-    financeOrderDetailRequest   *FinanceOrderDetailRequest
+    _financeOrderDetailRequest   *FinanceOrderDetailRequest
 }
 
 // 初始化AlibabaWdkFinanceOrderBackflowRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiParams() url.Values {
 }
 // FinanceOrderDetailRequest Setter
 // 财务订单回流入参
-func (r *AlibabaWdkFinanceOrderBackflowRequest) SetFinanceOrderDetailRequest(financeOrderDetailRequest *FinanceOrderDetailRequest) error {
-    r.financeOrderDetailRequest = financeOrderDetailRequest
-    r.Set("finance_order_detail_request", financeOrderDetailRequest)
+func (r *AlibabaWdkFinanceOrderBackflowRequest) SetFinanceOrderDetailRequest(_financeOrderDetailRequest *FinanceOrderDetailRequest) error {
+    r._financeOrderDetailRequest = _financeOrderDetailRequest
+    r.Set("finance_order_detail_request", _financeOrderDetailRequest)
     return nil
 }
 
 // FinanceOrderDetailRequest Getter
 func (r AlibabaWdkFinanceOrderBackflowRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
-    return r.financeOrderDetailRequest
+    return r._financeOrderDetailRequest
 }

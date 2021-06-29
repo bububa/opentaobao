@@ -15,7 +15,7 @@ taobao.banamadpc.item.edit.render
 type TaobaoBanamadpcItemEditRenderRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoBanamadpcItemEditRenderRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBanamadpcItemEditRenderRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoBanamadpcItemEditRenderRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoBanamadpcItemEditRenderRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoBanamadpcItemEditRenderRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

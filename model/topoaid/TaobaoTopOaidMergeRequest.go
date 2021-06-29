@@ -15,7 +15,7 @@ taobao.top.oaid.merge
 type TaobaoTopOaidMergeRequest struct {
     model.Params
     // 合单请求列表，最多支持100个。
-    mergeList   []OrderMerge
+    _mergeList   []OrderMerge
 }
 
 // 初始化TaobaoTopOaidMergeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopOaidMergeRequest) GetApiParams() url.Values {
 }
 // MergeList Setter
 // 合单请求列表，最多支持100个。
-func (r *TaobaoTopOaidMergeRequest) SetMergeList(mergeList []OrderMerge) error {
-    r.mergeList = mergeList
-    r.Set("merge_list", mergeList)
+func (r *TaobaoTopOaidMergeRequest) SetMergeList(_mergeList []OrderMerge) error {
+    r._mergeList = _mergeList
+    r.Set("merge_list", _mergeList)
     return nil
 }
 
 // MergeList Getter
 func (r TaobaoTopOaidMergeRequest) GetMergeList() []OrderMerge {
-    return r.mergeList
+    return r._mergeList
 }

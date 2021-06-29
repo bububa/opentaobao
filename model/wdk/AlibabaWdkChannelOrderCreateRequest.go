@@ -15,7 +15,7 @@ alibaba.wdk.channel.order.create
 type AlibabaWdkChannelOrderCreateRequest struct {
     model.Params
     // 订单信息
-    orderInfo   *OrderInfo
+    _orderInfo   *OrderInfo
 }
 
 // 初始化AlibabaWdkChannelOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelOrderCreateRequest) GetApiParams() url.Values {
 }
 // OrderInfo Setter
 // 订单信息
-func (r *AlibabaWdkChannelOrderCreateRequest) SetOrderInfo(orderInfo *OrderInfo) error {
-    r.orderInfo = orderInfo
-    r.Set("order_info", orderInfo)
+func (r *AlibabaWdkChannelOrderCreateRequest) SetOrderInfo(_orderInfo *OrderInfo) error {
+    r._orderInfo = _orderInfo
+    r.Set("order_info", _orderInfo)
     return nil
 }
 
 // OrderInfo Getter
 func (r AlibabaWdkChannelOrderCreateRequest) GetOrderInfo() *OrderInfo {
-    return r.orderInfo
+    return r._orderInfo
 }

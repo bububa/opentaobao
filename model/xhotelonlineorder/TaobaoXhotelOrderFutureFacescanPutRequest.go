@@ -15,7 +15,7 @@ taobao.xhotel.order.future.facescan.put
 type TaobaoXhotelOrderFutureFacescanPutRequest struct {
     model.Params
     // 扫脸参数
-    faceScanParam   *FaceScanParam
+    _faceScanParam   *FaceScanParam
 }
 
 // 初始化TaobaoXhotelOrderFutureFacescanPutRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetApiParams() url.Values {
 }
 // FaceScanParam Setter
 // 扫脸参数
-func (r *TaobaoXhotelOrderFutureFacescanPutRequest) SetFaceScanParam(faceScanParam *FaceScanParam) error {
-    r.faceScanParam = faceScanParam
-    r.Set("face_scan_param", faceScanParam)
+func (r *TaobaoXhotelOrderFutureFacescanPutRequest) SetFaceScanParam(_faceScanParam *FaceScanParam) error {
+    r._faceScanParam = _faceScanParam
+    r.Set("face_scan_param", _faceScanParam)
     return nil
 }
 
 // FaceScanParam Getter
 func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetFaceScanParam() *FaceScanParam {
-    return r.faceScanParam
+    return r._faceScanParam
 }

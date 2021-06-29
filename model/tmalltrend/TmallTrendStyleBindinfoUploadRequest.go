@@ -15,7 +15,7 @@ tmall.trend.style.bindinfo.upload
 type TmallTrendStyleBindinfoUploadRequest struct {
     model.Params
     // 趋势词&款式绑定信息列表，一次最多1000条
-    trendStyleBindInfoBoList   []TrendStyleBindInfoBO
+    _trendStyleBindInfoBoList   []TrendStyleBindInfoBO
 }
 
 // 初始化TmallTrendStyleBindinfoUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallTrendStyleBindinfoUploadRequest) GetApiParams() url.Values {
 }
 // TrendStyleBindInfoBoList Setter
 // 趋势词&款式绑定信息列表，一次最多1000条
-func (r *TmallTrendStyleBindinfoUploadRequest) SetTrendStyleBindInfoBoList(trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
-    r.trendStyleBindInfoBoList = trendStyleBindInfoBoList
-    r.Set("trend_style_bind_info_bo_list", trendStyleBindInfoBoList)
+func (r *TmallTrendStyleBindinfoUploadRequest) SetTrendStyleBindInfoBoList(_trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
+    r._trendStyleBindInfoBoList = _trendStyleBindInfoBoList
+    r.Set("trend_style_bind_info_bo_list", _trendStyleBindInfoBoList)
     return nil
 }
 
 // TrendStyleBindInfoBoList Getter
 func (r TmallTrendStyleBindinfoUploadRequest) GetTrendStyleBindInfoBoList() []TrendStyleBindInfoBO {
-    return r.trendStyleBindInfoBoList
+    return r._trendStyleBindInfoBoList
 }

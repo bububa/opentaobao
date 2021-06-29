@@ -15,7 +15,7 @@ ERP调用奇门的接口,创建仓内加工单
 type TaobaoQimenStoreprocessCreateRequest struct {
     model.Params
     // 
-    request   *StoreProcessCreateRequest
+    _request   *StoreProcessCreateRequest
 }
 
 // 初始化TaobaoQimenStoreprocessCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStoreprocessCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenStoreprocessCreateRequest) SetRequest(request *StoreProcessCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenStoreprocessCreateRequest) SetRequest(_request *StoreProcessCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenStoreprocessCreateRequest) GetRequest() *StoreProcessCreateRequest {
-    return r.request
+    return r._request
 }

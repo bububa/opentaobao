@@ -15,7 +15,7 @@ ISV活动修改
 type AlibabaLsyCrmActivityUpdateRequest struct {
     model.Params
     // 入参
-    nrtUpdateActivityReq   *NrtUpdateActivityReq
+    _nrtUpdateActivityReq   *NrtUpdateActivityReq
 }
 
 // 初始化AlibabaLsyCrmActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmActivityUpdateRequest) GetApiParams() url.Values {
 }
 // NrtUpdateActivityReq Setter
 // 入参
-func (r *AlibabaLsyCrmActivityUpdateRequest) SetNrtUpdateActivityReq(nrtUpdateActivityReq *NrtUpdateActivityReq) error {
-    r.nrtUpdateActivityReq = nrtUpdateActivityReq
-    r.Set("nrt_update_activity_req", nrtUpdateActivityReq)
+func (r *AlibabaLsyCrmActivityUpdateRequest) SetNrtUpdateActivityReq(_nrtUpdateActivityReq *NrtUpdateActivityReq) error {
+    r._nrtUpdateActivityReq = _nrtUpdateActivityReq
+    r.Set("nrt_update_activity_req", _nrtUpdateActivityReq)
     return nil
 }
 
 // NrtUpdateActivityReq Getter
 func (r AlibabaLsyCrmActivityUpdateRequest) GetNrtUpdateActivityReq() *NrtUpdateActivityReq {
-    return r.nrtUpdateActivityReq
+    return r._nrtUpdateActivityReq
 }

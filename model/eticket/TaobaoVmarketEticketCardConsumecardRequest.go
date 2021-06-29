@@ -15,25 +15,25 @@ taobao.vmarket.eticket.card.consumecard
 type TaobaoVmarketEticketCardConsumecardRequest struct {
     model.Params
     // 卡号
-    cardId   string
+    _cardId   string
     // 卡内等级
-    cardLevel   int64
+    _cardLevel   int64
     // 核销金额，精确到分，例如1.99元=199
-    consumeValue   int64
+    _consumeValue   int64
     // 买家昵称
-    buyerNick   string
+    _buyerNick   string
     // 核销原因
-    reason   string
+    _reason   string
     // 门店id
-    storeId   int64
+    _storeId   int64
     // 操作人id
-    operatorId   int64
+    _operatorId   int64
     // 核销流水号，外部ISV全局唯一
-    consumeSerialNum   string
+    _consumeSerialNum   string
     // 核销code
-    consumeCode   string
+    _consumeCode   string
     // 安全token
-    token   string
+    _token   string
 }
 
 // 初始化TaobaoVmarketEticketCardConsumecardRequest对象
@@ -58,121 +58,121 @@ func (r TaobaoVmarketEticketCardConsumecardRequest) GetApiParams() url.Values {
 }
 // CardId Setter
 // 卡号
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetCardId(cardId string) error {
-    r.cardId = cardId
-    r.Set("card_id", cardId)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetCardId(_cardId string) error {
+    r._cardId = _cardId
+    r.Set("card_id", _cardId)
     return nil
 }
 
 // CardId Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetCardId() string {
-    return r.cardId
+    return r._cardId
 }
 // CardLevel Setter
 // 卡内等级
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetCardLevel(cardLevel int64) error {
-    r.cardLevel = cardLevel
-    r.Set("card_level", cardLevel)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetCardLevel(_cardLevel int64) error {
+    r._cardLevel = _cardLevel
+    r.Set("card_level", _cardLevel)
     return nil
 }
 
 // CardLevel Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetCardLevel() int64 {
-    return r.cardLevel
+    return r._cardLevel
 }
 // ConsumeValue Setter
 // 核销金额，精确到分，例如1.99元=199
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeValue(consumeValue int64) error {
-    r.consumeValue = consumeValue
-    r.Set("consume_value", consumeValue)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeValue(_consumeValue int64) error {
+    r._consumeValue = _consumeValue
+    r.Set("consume_value", _consumeValue)
     return nil
 }
 
 // ConsumeValue Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetConsumeValue() int64 {
-    return r.consumeValue
+    return r._consumeValue
 }
 // BuyerNick Setter
 // 买家昵称
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }
 // Reason Setter
 // 核销原因
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // StoreId Setter
 // 门店id
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // OperatorId Setter
 // 操作人id
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetOperatorId(operatorId int64) error {
-    r.operatorId = operatorId
-    r.Set("operator_id", operatorId)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetOperatorId(_operatorId int64) error {
+    r._operatorId = _operatorId
+    r.Set("operator_id", _operatorId)
     return nil
 }
 
 // OperatorId Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetOperatorId() int64 {
-    return r.operatorId
+    return r._operatorId
 }
 // ConsumeSerialNum Setter
 // 核销流水号，外部ISV全局唯一
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeSerialNum(consumeSerialNum string) error {
-    r.consumeSerialNum = consumeSerialNum
-    r.Set("consume_serial_num", consumeSerialNum)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeSerialNum(_consumeSerialNum string) error {
+    r._consumeSerialNum = _consumeSerialNum
+    r.Set("consume_serial_num", _consumeSerialNum)
     return nil
 }
 
 // ConsumeSerialNum Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetConsumeSerialNum() string {
-    return r.consumeSerialNum
+    return r._consumeSerialNum
 }
 // ConsumeCode Setter
 // 核销code
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeCode(consumeCode string) error {
-    r.consumeCode = consumeCode
-    r.Set("consume_code", consumeCode)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetConsumeCode(_consumeCode string) error {
+    r._consumeCode = _consumeCode
+    r.Set("consume_code", _consumeCode)
     return nil
 }
 
 // ConsumeCode Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetConsumeCode() string {
-    return r.consumeCode
+    return r._consumeCode
 }
 // Token Setter
 // 安全token
-func (r *TaobaoVmarketEticketCardConsumecardRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoVmarketEticketCardConsumecardRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoVmarketEticketCardConsumecardRequest) GetToken() string {
-    return r.token
+    return r._token
 }

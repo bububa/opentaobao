@@ -15,7 +15,7 @@ alibaba.ascp.channel.distributor.inventory.list.get
 type AlibabaAscpChannelDistributorInventoryListGetRequest struct {
     model.Params
     // 系统自动生成
-    inventoryRequest   *BatchChannelInventoryQuery
+    _inventoryRequest   *BatchChannelInventoryQuery
 }
 
 // 初始化AlibabaAscpChannelDistributorInventoryListGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelDistributorInventoryListGetRequest) GetApiParams() url
 }
 // InventoryRequest Setter
 // 系统自动生成
-func (r *AlibabaAscpChannelDistributorInventoryListGetRequest) SetInventoryRequest(inventoryRequest *BatchChannelInventoryQuery) error {
-    r.inventoryRequest = inventoryRequest
-    r.Set("inventory_request", inventoryRequest)
+func (r *AlibabaAscpChannelDistributorInventoryListGetRequest) SetInventoryRequest(_inventoryRequest *BatchChannelInventoryQuery) error {
+    r._inventoryRequest = _inventoryRequest
+    r.Set("inventory_request", _inventoryRequest)
     return nil
 }
 
 // InventoryRequest Getter
 func (r AlibabaAscpChannelDistributorInventoryListGetRequest) GetInventoryRequest() *BatchChannelInventoryQuery {
-    return r.inventoryRequest
+    return r._inventoryRequest
 }

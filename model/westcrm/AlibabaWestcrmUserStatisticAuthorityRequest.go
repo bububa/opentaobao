@@ -15,9 +15,9 @@ alibaba.westcrm.user.statistic.authority
 type AlibabaWestcrmUserStatisticAuthorityRequest struct {
     model.Params
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 用户id
-    ibUserId   int64
+    _ibUserId   int64
 }
 
 // 初始化AlibabaWestcrmUserStatisticAuthorityRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWestcrmUserStatisticAuthorityRequest) GetApiParams() url.Values {
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmUserStatisticAuthorityRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmUserStatisticAuthorityRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmUserStatisticAuthorityRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // IbUserId Setter
 // 用户id
-func (r *AlibabaWestcrmUserStatisticAuthorityRequest) SetIbUserId(ibUserId int64) error {
-    r.ibUserId = ibUserId
-    r.Set("ib_user_id", ibUserId)
+func (r *AlibabaWestcrmUserStatisticAuthorityRequest) SetIbUserId(_ibUserId int64) error {
+    r._ibUserId = _ibUserId
+    r.Set("ib_user_id", _ibUserId)
     return nil
 }
 
 // IbUserId Getter
 func (r AlibabaWestcrmUserStatisticAuthorityRequest) GetIbUserId() int64 {
-    return r.ibUserId
+    return r._ibUserId
 }

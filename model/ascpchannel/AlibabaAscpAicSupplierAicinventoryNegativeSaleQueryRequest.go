@@ -15,7 +15,7 @@ alibaba.ascp.aic.supplier.aicinventory.negative.sale.query
 type AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest struct {
     model.Params
     // 库存查询参数
-    aicinventoryQueryRequest   *Aicinventoryqueryrequest
+    _aicinventoryQueryRequest   *Aicinventoryqueryrequest
 }
 
 // 初始化AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest) GetApiParams
 }
 // AicinventoryQueryRequest Setter
 // 库存查询参数
-func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest) SetAicinventoryQueryRequest(aicinventoryQueryRequest *Aicinventoryqueryrequest) error {
-    r.aicinventoryQueryRequest = aicinventoryQueryRequest
-    r.Set("aicinventory_query_request", aicinventoryQueryRequest)
+func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest) SetAicinventoryQueryRequest(_aicinventoryQueryRequest *Aicinventoryqueryrequest) error {
+    r._aicinventoryQueryRequest = _aicinventoryQueryRequest
+    r.Set("aicinventory_query_request", _aicinventoryQueryRequest)
     return nil
 }
 
 // AicinventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleQueryRequest) GetAicinventoryQueryRequest() *Aicinventoryqueryrequest {
-    return r.aicinventoryQueryRequest
+    return r._aicinventoryQueryRequest
 }

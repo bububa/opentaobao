@@ -15,7 +15,7 @@ alibaba.mozi.acl.userroles.revoke
 type AlibabaMoziAclUserrolesRevokeRequest struct {
     model.Params
     // 回收角色入参对象
-    revokeRolesRequest   *RevokeRolesRequest
+    _revokeRolesRequest   *RevokeRolesRequest
 }
 
 // 初始化AlibabaMoziAclUserrolesRevokeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclUserrolesRevokeRequest) GetApiParams() url.Values {
 }
 // RevokeRolesRequest Setter
 // 回收角色入参对象
-func (r *AlibabaMoziAclUserrolesRevokeRequest) SetRevokeRolesRequest(revokeRolesRequest *RevokeRolesRequest) error {
-    r.revokeRolesRequest = revokeRolesRequest
-    r.Set("revoke_roles_request", revokeRolesRequest)
+func (r *AlibabaMoziAclUserrolesRevokeRequest) SetRevokeRolesRequest(_revokeRolesRequest *RevokeRolesRequest) error {
+    r._revokeRolesRequest = _revokeRolesRequest
+    r.Set("revoke_roles_request", _revokeRolesRequest)
     return nil
 }
 
 // RevokeRolesRequest Getter
 func (r AlibabaMoziAclUserrolesRevokeRequest) GetRevokeRolesRequest() *RevokeRolesRequest {
-    return r.revokeRolesRequest
+    return r._revokeRolesRequest
 }

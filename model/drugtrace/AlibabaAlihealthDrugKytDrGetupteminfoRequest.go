@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.dr.getupteminfo
 type AlibabaAlihealthDrugKytDrGetupteminfoRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
     // 企业ID
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrGetupteminfoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytDrGetupteminfoRequest) GetApiParams() url.Values 
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugKytDrGetupteminfoRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugKytDrGetupteminfoRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugKytDrGetupteminfoRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytDrGetupteminfoRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrGetupteminfoRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrGetupteminfoRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

@@ -15,13 +15,13 @@ taobao.sellercenter.role.add
 type TaobaoSellercenterRoleAddRequest struct {
     model.Params
     // 角色名
-    name   string
+    _name   string
     // 角色描述
-    description   string
+    _description   string
     // 需要授权的权限点permission_code列表,以","分割.其code值可以通过调用taobao.sellercenter.user.permissions.get返回，其中permission.is_authorize=1的权限点可以通过本接口授权给对应角色。
-    permissionCodes   []string
+    _permissionCodes   []string
     // 表示卖家昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSellercenterRoleAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSellercenterRoleAddRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 角色名
-func (r *TaobaoSellercenterRoleAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoSellercenterRoleAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoSellercenterRoleAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Description Setter
 // 角色描述
-func (r *TaobaoSellercenterRoleAddRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *TaobaoSellercenterRoleAddRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r TaobaoSellercenterRoleAddRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // PermissionCodes Setter
 // 需要授权的权限点permission_code列表,以","分割.其code值可以通过调用taobao.sellercenter.user.permissions.get返回，其中permission.is_authorize=1的权限点可以通过本接口授权给对应角色。
-func (r *TaobaoSellercenterRoleAddRequest) SetPermissionCodes(permissionCodes []string) error {
-    r.permissionCodes = permissionCodes
-    r.Set("permission_codes", permissionCodes)
+func (r *TaobaoSellercenterRoleAddRequest) SetPermissionCodes(_permissionCodes []string) error {
+    r._permissionCodes = _permissionCodes
+    r.Set("permission_codes", _permissionCodes)
     return nil
 }
 
 // PermissionCodes Getter
 func (r TaobaoSellercenterRoleAddRequest) GetPermissionCodes() []string {
-    return r.permissionCodes
+    return r._permissionCodes
 }
 // Nick Setter
 // 表示卖家昵称
-func (r *TaobaoSellercenterRoleAddRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSellercenterRoleAddRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSellercenterRoleAddRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

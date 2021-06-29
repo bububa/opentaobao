@@ -15,7 +15,7 @@ alitrip.btrip.openplatform.address.get
 type AlitripBtripOpenplatformAddressGetRequest struct {
     model.Params
     // 入参
-    rq   *OpenApiJumpInfoRq
+    _rq   *OpenApiJumpInfoRq
 }
 
 // 初始化AlitripBtripOpenplatformAddressGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenplatformAddressGetRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenplatformAddressGetRequest) SetRq(rq *OpenApiJumpInfoRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenplatformAddressGetRequest) SetRq(_rq *OpenApiJumpInfoRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenplatformAddressGetRequest) GetRq() *OpenApiJumpInfoRq {
-    return r.rq
+    return r._rq
 }

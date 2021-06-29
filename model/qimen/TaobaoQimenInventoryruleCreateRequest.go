@@ -15,7 +15,7 @@ taobao.qimen.inventoryrule.create
 type TaobaoQimenInventoryruleCreateRequest struct {
     model.Params
     // 
-    request   *RequestDO
+    _request   *RequestDO
 }
 
 // 初始化TaobaoQimenInventoryruleCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenInventoryruleCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenInventoryruleCreateRequest) SetRequest(request *RequestDO) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenInventoryruleCreateRequest) SetRequest(_request *RequestDO) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenInventoryruleCreateRequest) GetRequest() *RequestDO {
-    return r.request
+    return r._request
 }

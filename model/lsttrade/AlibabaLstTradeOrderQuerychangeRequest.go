@@ -15,7 +15,7 @@ alibaba.lst.trade.order.querychange
 type AlibabaLstTradeOrderQuerychangeRequest struct {
     model.Params
     // 入参包装类
-    query   *LstOrderQuery
+    _query   *LstOrderQuery
 }
 
 // 初始化AlibabaLstTradeOrderQuerychangeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeOrderQuerychangeRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参包装类
-func (r *AlibabaLstTradeOrderQuerychangeRequest) SetQuery(query *LstOrderQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstTradeOrderQuerychangeRequest) SetQuery(_query *LstOrderQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstTradeOrderQuerychangeRequest) GetQuery() *LstOrderQuery {
-    return r.query
+    return r._query
 }

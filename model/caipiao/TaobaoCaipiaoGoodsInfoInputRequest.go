@@ -15,25 +15,25 @@ taobao.caipiao.goods.info.input
 type TaobaoCaipiaoGoodsInfoInputRequest struct {
     model.Params
     // 商品在淘宝的唯一id，不可为空
-    goodsId   int64
+    _goodsId   int64
     // 商品标题
-    goodsTitle   string
+    _goodsTitle   string
     // 商品价格,保留两位小数，不可为空
-    goodsPrice   float64
+    _goodsPrice   float64
     // 商品主图地址
-    goodsImage   string
+    _goodsImage   string
     // 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-    presentType   int64
+    _presentType   int64
     // 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-    actStartDate   string
+    _actStartDate   string
     // 活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-    actEndDate   string
+    _actEndDate   string
     // 商品类目编号，不可为空
-    goodsType   int64
+    _goodsType   int64
     // 彩种id,不可为空
-    lotteryTypeId   int64
+    _lotteryTypeId   int64
     // 店铺相关商品参加的送彩票活动描述
-    goodsDesc   string
+    _goodsDesc   string
 }
 
 // 初始化TaobaoCaipiaoGoodsInfoInputRequest对象
@@ -58,121 +58,121 @@ func (r TaobaoCaipiaoGoodsInfoInputRequest) GetApiParams() url.Values {
 }
 // GoodsId Setter
 // 商品在淘宝的唯一id，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsId(goodsId int64) error {
-    r.goodsId = goodsId
-    r.Set("goods_id", goodsId)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsId(_goodsId int64) error {
+    r._goodsId = _goodsId
+    r.Set("goods_id", _goodsId)
     return nil
 }
 
 // GoodsId Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsId() int64 {
-    return r.goodsId
+    return r._goodsId
 }
 // GoodsTitle Setter
 // 商品标题
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsTitle(goodsTitle string) error {
-    r.goodsTitle = goodsTitle
-    r.Set("goods_title", goodsTitle)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsTitle(_goodsTitle string) error {
+    r._goodsTitle = _goodsTitle
+    r.Set("goods_title", _goodsTitle)
     return nil
 }
 
 // GoodsTitle Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsTitle() string {
-    return r.goodsTitle
+    return r._goodsTitle
 }
 // GoodsPrice Setter
 // 商品价格,保留两位小数，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsPrice(goodsPrice float64) error {
-    r.goodsPrice = goodsPrice
-    r.Set("goods_price", goodsPrice)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsPrice(_goodsPrice float64) error {
+    r._goodsPrice = _goodsPrice
+    r.Set("goods_price", _goodsPrice)
     return nil
 }
 
 // GoodsPrice Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsPrice() float64 {
-    return r.goodsPrice
+    return r._goodsPrice
 }
 // GoodsImage Setter
 // 商品主图地址
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsImage(goodsImage string) error {
-    r.goodsImage = goodsImage
-    r.Set("goods_image", goodsImage)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsImage(_goodsImage string) error {
+    r._goodsImage = _goodsImage
+    r.Set("goods_image", _goodsImage)
     return nil
 }
 
 // GoodsImage Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsImage() string {
-    return r.goodsImage
+    return r._goodsImage
 }
 // PresentType Setter
 // 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetPresentType(presentType int64) error {
-    r.presentType = presentType
-    r.Set("present_type", presentType)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetPresentType(_presentType int64) error {
+    r._presentType = _presentType
+    r.Set("present_type", _presentType)
     return nil
 }
 
 // PresentType Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetPresentType() int64 {
-    return r.presentType
+    return r._presentType
 }
 // ActStartDate Setter
 // 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetActStartDate(actStartDate string) error {
-    r.actStartDate = actStartDate
-    r.Set("act_start_date", actStartDate)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetActStartDate(_actStartDate string) error {
+    r._actStartDate = _actStartDate
+    r.Set("act_start_date", _actStartDate)
     return nil
 }
 
 // ActStartDate Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetActStartDate() string {
-    return r.actStartDate
+    return r._actStartDate
 }
 // ActEndDate Setter
 // 活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetActEndDate(actEndDate string) error {
-    r.actEndDate = actEndDate
-    r.Set("act_end_date", actEndDate)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetActEndDate(_actEndDate string) error {
+    r._actEndDate = _actEndDate
+    r.Set("act_end_date", _actEndDate)
     return nil
 }
 
 // ActEndDate Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetActEndDate() string {
-    return r.actEndDate
+    return r._actEndDate
 }
 // GoodsType Setter
 // 商品类目编号，不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsType(goodsType int64) error {
-    r.goodsType = goodsType
-    r.Set("goods_type", goodsType)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsType(_goodsType int64) error {
+    r._goodsType = _goodsType
+    r.Set("goods_type", _goodsType)
     return nil
 }
 
 // GoodsType Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsType() int64 {
-    return r.goodsType
+    return r._goodsType
 }
 // LotteryTypeId Setter
 // 彩种id,不可为空
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetLotteryTypeId(lotteryTypeId int64) error {
-    r.lotteryTypeId = lotteryTypeId
-    r.Set("lottery_type_id", lotteryTypeId)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetLotteryTypeId(_lotteryTypeId int64) error {
+    r._lotteryTypeId = _lotteryTypeId
+    r.Set("lottery_type_id", _lotteryTypeId)
     return nil
 }
 
 // LotteryTypeId Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetLotteryTypeId() int64 {
-    return r.lotteryTypeId
+    return r._lotteryTypeId
 }
 // GoodsDesc Setter
 // 店铺相关商品参加的送彩票活动描述
-func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsDesc(goodsDesc string) error {
-    r.goodsDesc = goodsDesc
-    r.Set("goods_desc", goodsDesc)
+func (r *TaobaoCaipiaoGoodsInfoInputRequest) SetGoodsDesc(_goodsDesc string) error {
+    r._goodsDesc = _goodsDesc
+    r.Set("goods_desc", _goodsDesc)
     return nil
 }
 
 // GoodsDesc Getter
 func (r TaobaoCaipiaoGoodsInfoInputRequest) GetGoodsDesc() string {
-    return r.goodsDesc
+    return r._goodsDesc
 }

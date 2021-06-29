@@ -15,7 +15,7 @@ isv查询服务工单详情
 type TmallAliautoServiceReceiptGetRequest struct {
     model.Params
     // 工单号
-    receiptId   int64
+    _receiptId   int64
 }
 
 // 初始化TmallAliautoServiceReceiptGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallAliautoServiceReceiptGetRequest) GetApiParams() url.Values {
 }
 // ReceiptId Setter
 // 工单号
-func (r *TmallAliautoServiceReceiptGetRequest) SetReceiptId(receiptId int64) error {
-    r.receiptId = receiptId
-    r.Set("receipt_id", receiptId)
+func (r *TmallAliautoServiceReceiptGetRequest) SetReceiptId(_receiptId int64) error {
+    r._receiptId = _receiptId
+    r.Set("receipt_id", _receiptId)
     return nil
 }
 
 // ReceiptId Getter
 func (r TmallAliautoServiceReceiptGetRequest) GetReceiptId() int64 {
-    return r.receiptId
+    return r._receiptId
 }

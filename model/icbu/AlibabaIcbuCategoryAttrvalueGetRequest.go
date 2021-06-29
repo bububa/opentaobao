@@ -15,7 +15,7 @@ alibaba.icbu.category.attrvalue.get
 type AlibabaIcbuCategoryAttrvalueGetRequest struct {
     model.Params
     // 属性值request对象
-    attributeValueRequest   *AttributeValueRequest
+    _attributeValueRequest   *AttributeValueRequest
 }
 
 // 初始化AlibabaIcbuCategoryAttrvalueGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetApiParams() url.Values {
 }
 // AttributeValueRequest Setter
 // 属性值request对象
-func (r *AlibabaIcbuCategoryAttrvalueGetRequest) SetAttributeValueRequest(attributeValueRequest *AttributeValueRequest) error {
-    r.attributeValueRequest = attributeValueRequest
-    r.Set("attribute_value_request", attributeValueRequest)
+func (r *AlibabaIcbuCategoryAttrvalueGetRequest) SetAttributeValueRequest(_attributeValueRequest *AttributeValueRequest) error {
+    r._attributeValueRequest = _attributeValueRequest
+    r.Set("attribute_value_request", _attributeValueRequest)
     return nil
 }
 
 // AttributeValueRequest Getter
 func (r AlibabaIcbuCategoryAttrvalueGetRequest) GetAttributeValueRequest() *AttributeValueRequest {
-    return r.attributeValueRequest
+    return r._attributeValueRequest
 }

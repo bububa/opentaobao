@@ -15,7 +15,7 @@ taobao.jipiao.agent.order.bdetail
 type TaobaoJipiaoAgentOrderBdetailRequest struct {
     model.Params
     // 订单号
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化TaobaoJipiaoAgentOrderBdetailRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJipiaoAgentOrderBdetailRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单号
-func (r *TaobaoJipiaoAgentOrderBdetailRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoJipiaoAgentOrderBdetailRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoJipiaoAgentOrderBdetailRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

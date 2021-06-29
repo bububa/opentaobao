@@ -15,7 +15,7 @@ alibaba.ailabs.aligenie.openvideo.push
 type AlibabaAilabsAligenieOpenvideoPushRequest struct {
     model.Params
     // 待推送的视频数据
-    videos   []RawSingleVideo
+    _videos   []RawSingleVideo
 }
 
 // 初始化AlibabaAilabsAligenieOpenvideoPushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetApiParams() url.Values {
 }
 // Videos Setter
 // 待推送的视频数据
-func (r *AlibabaAilabsAligenieOpenvideoPushRequest) SetVideos(videos []RawSingleVideo) error {
-    r.videos = videos
-    r.Set("videos", videos)
+func (r *AlibabaAilabsAligenieOpenvideoPushRequest) SetVideos(_videos []RawSingleVideo) error {
+    r._videos = _videos
+    r.Set("videos", _videos)
     return nil
 }
 
 // Videos Getter
 func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetVideos() []RawSingleVideo {
-    return r.videos
+    return r._videos
 }

@@ -15,7 +15,7 @@ alibaba.mozi.acl.role.add.permissions
 type AlibabaMoziAclRoleAddPermissionsRequest struct {
     model.Params
     // 角色添加功能权限请求对象
-    addPermissionsToRole   *AddPermissionToRoleRequest
+    _addPermissionsToRole   *AddPermissionToRoleRequest
 }
 
 // 初始化AlibabaMoziAclRoleAddPermissionsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleAddPermissionsRequest) GetApiParams() url.Values {
 }
 // AddPermissionsToRole Setter
 // 角色添加功能权限请求对象
-func (r *AlibabaMoziAclRoleAddPermissionsRequest) SetAddPermissionsToRole(addPermissionsToRole *AddPermissionToRoleRequest) error {
-    r.addPermissionsToRole = addPermissionsToRole
-    r.Set("add_permissions_to_role", addPermissionsToRole)
+func (r *AlibabaMoziAclRoleAddPermissionsRequest) SetAddPermissionsToRole(_addPermissionsToRole *AddPermissionToRoleRequest) error {
+    r._addPermissionsToRole = _addPermissionsToRole
+    r.Set("add_permissions_to_role", _addPermissionsToRole)
     return nil
 }
 
 // AddPermissionsToRole Getter
 func (r AlibabaMoziAclRoleAddPermissionsRequest) GetAddPermissionsToRole() *AddPermissionToRoleRequest {
-    return r.addPermissionsToRole
+    return r._addPermissionsToRole
 }

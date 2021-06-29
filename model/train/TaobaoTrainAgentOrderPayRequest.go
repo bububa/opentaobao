@@ -15,7 +15,7 @@ taobao.train.agent.order.pay
 type TaobaoTrainAgentOrderPayRequest struct {
     model.Params
     // 入参对象
-    agentPayOrderParam   *AgentPayOrderParam
+    _agentPayOrderParam   *AgentPayOrderParam
 }
 
 // 初始化TaobaoTrainAgentOrderPayRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentOrderPayRequest) GetApiParams() url.Values {
 }
 // AgentPayOrderParam Setter
 // 入参对象
-func (r *TaobaoTrainAgentOrderPayRequest) SetAgentPayOrderParam(agentPayOrderParam *AgentPayOrderParam) error {
-    r.agentPayOrderParam = agentPayOrderParam
-    r.Set("agent_pay_order_param", agentPayOrderParam)
+func (r *TaobaoTrainAgentOrderPayRequest) SetAgentPayOrderParam(_agentPayOrderParam *AgentPayOrderParam) error {
+    r._agentPayOrderParam = _agentPayOrderParam
+    r.Set("agent_pay_order_param", _agentPayOrderParam)
     return nil
 }
 
 // AgentPayOrderParam Getter
 func (r TaobaoTrainAgentOrderPayRequest) GetAgentPayOrderParam() *AgentPayOrderParam {
-    return r.agentPayOrderParam
+    return r._agentPayOrderParam
 }

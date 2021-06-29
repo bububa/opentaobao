@@ -15,9 +15,9 @@ taobao.omniorder.store.switchstatus.get
 type TaobaoOmniorderStoreSwitchstatusGetRequest struct {
     model.Params
     // 门店ID
-    storeId   int64
+    _storeId   int64
     // 卖家ID
-    sellerId   int64
+    _sellerId   int64
 }
 
 // 初始化TaobaoOmniorderStoreSwitchstatusGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // SellerId Setter
 // 卖家ID
-func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TaobaoOmniorderStoreSwitchstatusGetRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TaobaoOmniorderStoreSwitchstatusGetRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }

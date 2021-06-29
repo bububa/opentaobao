@@ -15,13 +15,13 @@ taobao.simba.keywordids.changed.get
 type TaobaoSimbaKeywordidsChangedGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 得到此时间点之后的数据，不能大于一个月
-    startTime   string
+    _startTime   string
     // 返回的每页数据量大小,默认200最大1000
-    pageSize   int64
+    _pageSize   int64
     // 返回的第几页数据，默认为1
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoSimbaKeywordidsChangedGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaKeywordidsChangedGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaKeywordidsChangedGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // StartTime Setter
 // 得到此时间点之后的数据，不能大于一个月
-func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoSimbaKeywordidsChangedGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // PageSize Setter
 // 返回的每页数据量大小,默认200最大1000
-func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSimbaKeywordidsChangedGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 返回的第几页数据，默认为1
-func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoSimbaKeywordidsChangedGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoSimbaKeywordidsChangedGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

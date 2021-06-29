@@ -15,9 +15,9 @@ taobao.recycle.ofnpreredpacket.tpdeductsuccess
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest struct {
     model.Params
     // 变化的金额
-    deductAmount   int64
+    _deductAmount   int64
     // 旧机单id
-    oldOrderId   int64
+    _oldOrderId   int64
 }
 
 // 初始化TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) GetApiParams() url.V
 }
 // DeductAmount Setter
 // 变化的金额
-func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) SetDeductAmount(deductAmount int64) error {
-    r.deductAmount = deductAmount
-    r.Set("deduct_amount", deductAmount)
+func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) SetDeductAmount(_deductAmount int64) error {
+    r._deductAmount = _deductAmount
+    r.Set("deduct_amount", _deductAmount)
     return nil
 }
 
 // DeductAmount Getter
 func (r TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) GetDeductAmount() int64 {
-    return r.deductAmount
+    return r._deductAmount
 }
 // OldOrderId Setter
 // 旧机单id
-func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) SetOldOrderId(oldOrderId int64) error {
-    r.oldOrderId = oldOrderId
-    r.Set("old_order_id", oldOrderId)
+func (r *TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) SetOldOrderId(_oldOrderId int64) error {
+    r._oldOrderId = _oldOrderId
+    r.Set("old_order_id", _oldOrderId)
     return nil
 }
 
 // OldOrderId Getter
 func (r TaobaoRecycleOfnpreredpacketTpdeductsuccessRequest) GetOldOrderId() int64 {
-    return r.oldOrderId
+    return r._oldOrderId
 }

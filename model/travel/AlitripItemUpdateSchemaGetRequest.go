@@ -15,9 +15,9 @@ alitrip.item.update.schema.get
 type AlitripItemUpdateSchemaGetRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 需要获取的编辑schema，不填默认返回全部
-    updateFieldIds   []string
+    _updateFieldIds   []string
 }
 
 // 初始化AlitripItemUpdateSchemaGetRequest对象
@@ -42,25 +42,25 @@ func (r AlitripItemUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *AlitripItemUpdateSchemaGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlitripItemUpdateSchemaGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlitripItemUpdateSchemaGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // UpdateFieldIds Setter
 // 需要获取的编辑schema，不填默认返回全部
-func (r *AlitripItemUpdateSchemaGetRequest) SetUpdateFieldIds(updateFieldIds []string) error {
-    r.updateFieldIds = updateFieldIds
-    r.Set("update_field_ids", updateFieldIds)
+func (r *AlitripItemUpdateSchemaGetRequest) SetUpdateFieldIds(_updateFieldIds []string) error {
+    r._updateFieldIds = _updateFieldIds
+    r.Set("update_field_ids", _updateFieldIds)
     return nil
 }
 
 // UpdateFieldIds Getter
 func (r AlitripItemUpdateSchemaGetRequest) GetUpdateFieldIds() []string {
-    return r.updateFieldIds
+    return r._updateFieldIds
 }

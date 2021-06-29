@@ -15,7 +15,7 @@ taobao.logistics.address.search
 type TaobaoLogisticsAddressSearchRequest struct {
     model.Params
     // 可选，参数列表如下：<br><font color='red'>no_def:查询非默认地址<br>get_def:查询默认取货地址，也即对应卖家后台地址库中发货地址（send_def暂不起作用）<br>cancel_def:查询默认退货地址<br>缺省此参数时，查询所有当前用户的地址库</font>
-    rdef   string
+    _rdef   string
 }
 
 // 初始化TaobaoLogisticsAddressSearchRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLogisticsAddressSearchRequest) GetApiParams() url.Values {
 }
 // Rdef Setter
 // 可选，参数列表如下：<br><font color='red'>no_def:查询非默认地址<br>get_def:查询默认取货地址，也即对应卖家后台地址库中发货地址（send_def暂不起作用）<br>cancel_def:查询默认退货地址<br>缺省此参数时，查询所有当前用户的地址库</font>
-func (r *TaobaoLogisticsAddressSearchRequest) SetRdef(rdef string) error {
-    r.rdef = rdef
-    r.Set("rdef", rdef)
+func (r *TaobaoLogisticsAddressSearchRequest) SetRdef(_rdef string) error {
+    r._rdef = _rdef
+    r.Set("rdef", _rdef)
     return nil
 }
 
 // Rdef Getter
 func (r TaobaoLogisticsAddressSearchRequest) GetRdef() string {
-    return r.rdef
+    return r._rdef
 }

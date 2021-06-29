@@ -15,7 +15,7 @@ alibaba.mos.goods.inventory.getinventorys
 type AlibabaMosGoodsInventoryGetinventorysRequest struct {
     model.Params
     // 查询对象
-    paramVirtualInventoryQueryDto   *VirtualInventoryQueryDto
+    _paramVirtualInventoryQueryDto   *VirtualInventoryQueryDto
 }
 
 // 初始化AlibabaMosGoodsInventoryGetinventorysRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetApiParams() url.Values 
 }
 // ParamVirtualInventoryQueryDto Setter
 // 查询对象
-func (r *AlibabaMosGoodsInventoryGetinventorysRequest) SetParamVirtualInventoryQueryDto(paramVirtualInventoryQueryDto *VirtualInventoryQueryDto) error {
-    r.paramVirtualInventoryQueryDto = paramVirtualInventoryQueryDto
-    r.Set("param_virtual_inventory_query_dto", paramVirtualInventoryQueryDto)
+func (r *AlibabaMosGoodsInventoryGetinventorysRequest) SetParamVirtualInventoryQueryDto(_paramVirtualInventoryQueryDto *VirtualInventoryQueryDto) error {
+    r._paramVirtualInventoryQueryDto = _paramVirtualInventoryQueryDto
+    r.Set("param_virtual_inventory_query_dto", _paramVirtualInventoryQueryDto)
     return nil
 }
 
 // ParamVirtualInventoryQueryDto Getter
 func (r AlibabaMosGoodsInventoryGetinventorysRequest) GetParamVirtualInventoryQueryDto() *VirtualInventoryQueryDto {
-    return r.paramVirtualInventoryQueryDto
+    return r._paramVirtualInventoryQueryDto
 }

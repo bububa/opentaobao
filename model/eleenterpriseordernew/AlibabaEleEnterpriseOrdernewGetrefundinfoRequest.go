@@ -15,7 +15,7 @@ alibaba.ele.enterprise.ordernew.getrefundinfo
 type AlibabaEleEnterpriseOrdernewGetrefundinfoRequest struct {
     model.Params
     // 饿了么订单ID
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewGetrefundinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetApiParams() url.Val
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetrefundinfoRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

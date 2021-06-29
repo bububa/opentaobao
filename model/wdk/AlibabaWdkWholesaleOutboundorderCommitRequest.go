@@ -15,7 +15,7 @@ alibaba.wdk.wholesale.outboundorder.commit
 type AlibabaWdkWholesaleOutboundorderCommitRequest struct {
     model.Params
     // 发货信息参数
-    outboundInfoCommitReq   *OutboundInfoCommitReq
+    _outboundInfoCommitReq   *OutboundInfoCommitReq
 }
 
 // 初始化AlibabaWdkWholesaleOutboundorderCommitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkWholesaleOutboundorderCommitRequest) GetApiParams() url.Values
 }
 // OutboundInfoCommitReq Setter
 // 发货信息参数
-func (r *AlibabaWdkWholesaleOutboundorderCommitRequest) SetOutboundInfoCommitReq(outboundInfoCommitReq *OutboundInfoCommitReq) error {
-    r.outboundInfoCommitReq = outboundInfoCommitReq
-    r.Set("outbound_info_commit_req", outboundInfoCommitReq)
+func (r *AlibabaWdkWholesaleOutboundorderCommitRequest) SetOutboundInfoCommitReq(_outboundInfoCommitReq *OutboundInfoCommitReq) error {
+    r._outboundInfoCommitReq = _outboundInfoCommitReq
+    r.Set("outbound_info_commit_req", _outboundInfoCommitReq)
     return nil
 }
 
 // OutboundInfoCommitReq Getter
 func (r AlibabaWdkWholesaleOutboundorderCommitRequest) GetOutboundInfoCommitReq() *OutboundInfoCommitReq {
-    return r.outboundInfoCommitReq
+    return r._outboundInfoCommitReq
 }

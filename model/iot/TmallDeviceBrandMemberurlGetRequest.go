@@ -15,15 +15,15 @@ tmall.device.brand.memberurl.get
 type TmallDeviceBrandMemberurlGetRequest struct {
     model.Params
     // 设备DeviceCode
-    deviceCode   string
+    _deviceCode   string
     // 入会后的回调地址
-    callbackUrl   string
+    _callbackUrl   string
     // 是否使用长期链接
-    longterm   bool
+    _longterm   bool
     // 页面banner的图片，如果没有传入，会使用系统默认图
-    bannerImg   string
+    _bannerImg   string
     // 是否同时关注天猫理想站
-    followRetailAccount   bool
+    _followRetailAccount   bool
 }
 
 // 初始化TmallDeviceBrandMemberurlGetRequest对象
@@ -48,61 +48,61 @@ func (r TmallDeviceBrandMemberurlGetRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备DeviceCode
-func (r *TmallDeviceBrandMemberurlGetRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *TmallDeviceBrandMemberurlGetRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r TmallDeviceBrandMemberurlGetRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // CallbackUrl Setter
 // 入会后的回调地址
-func (r *TmallDeviceBrandMemberurlGetRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *TmallDeviceBrandMemberurlGetRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r TmallDeviceBrandMemberurlGetRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // Longterm Setter
 // 是否使用长期链接
-func (r *TmallDeviceBrandMemberurlGetRequest) SetLongterm(longterm bool) error {
-    r.longterm = longterm
-    r.Set("longterm", longterm)
+func (r *TmallDeviceBrandMemberurlGetRequest) SetLongterm(_longterm bool) error {
+    r._longterm = _longterm
+    r.Set("longterm", _longterm)
     return nil
 }
 
 // Longterm Getter
 func (r TmallDeviceBrandMemberurlGetRequest) GetLongterm() bool {
-    return r.longterm
+    return r._longterm
 }
 // BannerImg Setter
 // 页面banner的图片，如果没有传入，会使用系统默认图
-func (r *TmallDeviceBrandMemberurlGetRequest) SetBannerImg(bannerImg string) error {
-    r.bannerImg = bannerImg
-    r.Set("banner_img", bannerImg)
+func (r *TmallDeviceBrandMemberurlGetRequest) SetBannerImg(_bannerImg string) error {
+    r._bannerImg = _bannerImg
+    r.Set("banner_img", _bannerImg)
     return nil
 }
 
 // BannerImg Getter
 func (r TmallDeviceBrandMemberurlGetRequest) GetBannerImg() string {
-    return r.bannerImg
+    return r._bannerImg
 }
 // FollowRetailAccount Setter
 // 是否同时关注天猫理想站
-func (r *TmallDeviceBrandMemberurlGetRequest) SetFollowRetailAccount(followRetailAccount bool) error {
-    r.followRetailAccount = followRetailAccount
-    r.Set("follow_retail_account", followRetailAccount)
+func (r *TmallDeviceBrandMemberurlGetRequest) SetFollowRetailAccount(_followRetailAccount bool) error {
+    r._followRetailAccount = _followRetailAccount
+    r.Set("follow_retail_account", _followRetailAccount)
     return nil
 }
 
 // FollowRetailAccount Getter
 func (r TmallDeviceBrandMemberurlGetRequest) GetFollowRetailAccount() bool {
-    return r.followRetailAccount
+    return r._followRetailAccount
 }

@@ -15,11 +15,11 @@ alibaba.wdk.item.storesku.update
 type AlibabaWdkItemStoreskuUpdateRequest struct {
     model.Params
     // 盒马门店id
-    storeId   string
+    _storeId   string
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 1-可售   0-不可售
-    saleFlag   int64
+    _saleFlag   int64
 }
 
 // 初始化AlibabaWdkItemStoreskuUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkItemStoreskuUpdateRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 盒马门店id
-func (r *AlibabaWdkItemStoreskuUpdateRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkItemStoreskuUpdateRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkItemStoreskuUpdateRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemStoreskuUpdateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemStoreskuUpdateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemStoreskuUpdateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // SaleFlag Setter
 // 1-可售   0-不可售
-func (r *AlibabaWdkItemStoreskuUpdateRequest) SetSaleFlag(saleFlag int64) error {
-    r.saleFlag = saleFlag
-    r.Set("sale_flag", saleFlag)
+func (r *AlibabaWdkItemStoreskuUpdateRequest) SetSaleFlag(_saleFlag int64) error {
+    r._saleFlag = _saleFlag
+    r.Set("sale_flag", _saleFlag)
     return nil
 }
 
 // SaleFlag Getter
 func (r AlibabaWdkItemStoreskuUpdateRequest) GetSaleFlag() int64 {
-    return r.saleFlag
+    return r._saleFlag
 }

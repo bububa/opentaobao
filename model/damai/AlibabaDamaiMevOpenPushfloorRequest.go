@@ -15,7 +15,7 @@ pushFloor
 type AlibabaDamaiMevOpenPushfloorRequest struct {
     model.Params
     // 入参pushFloorParam
-    pushFloorParam   *ThirdFloorPushOpenParam
+    _pushFloorParam   *ThirdFloorPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushfloorRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushfloorRequest) GetApiParams() url.Values {
 }
 // PushFloorParam Setter
 // 入参pushFloorParam
-func (r *AlibabaDamaiMevOpenPushfloorRequest) SetPushFloorParam(pushFloorParam *ThirdFloorPushOpenParam) error {
-    r.pushFloorParam = pushFloorParam
-    r.Set("push_floor_param", pushFloorParam)
+func (r *AlibabaDamaiMevOpenPushfloorRequest) SetPushFloorParam(_pushFloorParam *ThirdFloorPushOpenParam) error {
+    r._pushFloorParam = _pushFloorParam
+    r.Set("push_floor_param", _pushFloorParam)
     return nil
 }
 
 // PushFloorParam Getter
 func (r AlibabaDamaiMevOpenPushfloorRequest) GetPushFloorParam() *ThirdFloorPushOpenParam {
-    return r.pushFloorParam
+    return r._pushFloorParam
 }

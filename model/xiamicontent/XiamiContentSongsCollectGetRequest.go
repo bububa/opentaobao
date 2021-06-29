@@ -15,9 +15,9 @@ xiami.content.songs.collect.get
 type XiamiContentSongsCollectGetRequest struct {
     model.Params
     // 歌单id
-    collectId   int64
+    _collectId   int64
     // 分页信息
-    page   *PagingVo
+    _page   *PagingVo
 }
 
 // 初始化XiamiContentSongsCollectGetRequest对象
@@ -42,25 +42,25 @@ func (r XiamiContentSongsCollectGetRequest) GetApiParams() url.Values {
 }
 // CollectId Setter
 // 歌单id
-func (r *XiamiContentSongsCollectGetRequest) SetCollectId(collectId int64) error {
-    r.collectId = collectId
-    r.Set("collect_id", collectId)
+func (r *XiamiContentSongsCollectGetRequest) SetCollectId(_collectId int64) error {
+    r._collectId = _collectId
+    r.Set("collect_id", _collectId)
     return nil
 }
 
 // CollectId Getter
 func (r XiamiContentSongsCollectGetRequest) GetCollectId() int64 {
-    return r.collectId
+    return r._collectId
 }
 // Page Setter
 // 分页信息
-func (r *XiamiContentSongsCollectGetRequest) SetPage(page *PagingVo) error {
-    r.page = page
-    r.Set("page", page)
+func (r *XiamiContentSongsCollectGetRequest) SetPage(_page *PagingVo) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r XiamiContentSongsCollectGetRequest) GetPage() *PagingVo {
-    return r.page
+    return r._page
 }

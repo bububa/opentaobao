@@ -15,15 +15,15 @@ alibaba.item.edit.submit
 type AlibabaItemEditSubmitRequest struct {
     model.Params
     // 业务扩展参数，需与平台约定好
-    bizType   string
+    _bizType   string
     // 商品类目ID。若不需要修改商品类目，则不用填写
-    catId   int64
+    _catId   int64
     // 产品ID，若不需要修改关联的产品信息，则不需要填写
-    spuId   int64
+    _spuId   int64
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
-    schema   string
+    _schema   string
 }
 
 // 初始化AlibabaItemEditSubmitRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaItemEditSubmitRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 业务扩展参数，需与平台约定好
-func (r *AlibabaItemEditSubmitRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *AlibabaItemEditSubmitRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r AlibabaItemEditSubmitRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // CatId Setter
 // 商品类目ID。若不需要修改商品类目，则不用填写
-func (r *AlibabaItemEditSubmitRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlibabaItemEditSubmitRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlibabaItemEditSubmitRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // SpuId Setter
 // 产品ID，若不需要修改关联的产品信息，则不需要填写
-func (r *AlibabaItemEditSubmitRequest) SetSpuId(spuId int64) error {
-    r.spuId = spuId
-    r.Set("spu_id", spuId)
+func (r *AlibabaItemEditSubmitRequest) SetSpuId(_spuId int64) error {
+    r._spuId = _spuId
+    r.Set("spu_id", _spuId)
     return nil
 }
 
 // SpuId Getter
 func (r AlibabaItemEditSubmitRequest) GetSpuId() int64 {
-    return r.spuId
+    return r._spuId
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaItemEditSubmitRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaItemEditSubmitRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaItemEditSubmitRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Schema Setter
 // 编辑后的schema信息，通过alibaba.item.edit.schema.get获取
-func (r *AlibabaItemEditSubmitRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *AlibabaItemEditSubmitRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r AlibabaItemEditSubmitRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }

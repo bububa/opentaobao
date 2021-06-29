@@ -15,7 +15,7 @@ taobao.opensecurity.uid.get
 type TaobaoOpensecurityUidGetRequest struct {
     model.Params
     // 淘宝用户ID
-    tbUserId   int64
+    _tbUserId   int64
 }
 
 // 初始化TaobaoOpensecurityUidGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpensecurityUidGetRequest) GetApiParams() url.Values {
 }
 // TbUserId Setter
 // 淘宝用户ID
-func (r *TaobaoOpensecurityUidGetRequest) SetTbUserId(tbUserId int64) error {
-    r.tbUserId = tbUserId
-    r.Set("tb_user_id", tbUserId)
+func (r *TaobaoOpensecurityUidGetRequest) SetTbUserId(_tbUserId int64) error {
+    r._tbUserId = _tbUserId
+    r.Set("tb_user_id", _tbUserId)
     return nil
 }
 
 // TbUserId Getter
 func (r TaobaoOpensecurityUidGetRequest) GetTbUserId() int64 {
-    return r.tbUserId
+    return r._tbUserId
 }

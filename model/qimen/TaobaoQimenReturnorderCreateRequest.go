@@ -15,7 +15,7 @@ ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就
 type TaobaoQimenReturnorderCreateRequest struct {
     model.Params
     // 
-    request   *ReturnOrderCreateRequest
+    _request   *ReturnOrderCreateRequest
 }
 
 // 初始化TaobaoQimenReturnorderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenReturnorderCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenReturnorderCreateRequest) SetRequest(request *ReturnOrderCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenReturnorderCreateRequest) SetRequest(_request *ReturnOrderCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenReturnorderCreateRequest) GetRequest() *ReturnOrderCreateRequest {
-    return r.request
+    return r._request
 }

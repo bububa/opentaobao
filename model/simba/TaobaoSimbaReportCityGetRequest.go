@@ -15,13 +15,13 @@ taobao.simba.report.city.get
 type TaobaoSimbaReportCityGetRequest struct {
     model.Params
     // 昵称
-    nick   string
+    _nick   string
     // 时间
-    theDate   string
+    _theDate   string
     // 当前小时
-    hour   string
+    _hour   string
     // 计划id
-    campaignId   string
+    _campaignId   string
 }
 
 // 初始化TaobaoSimbaReportCityGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaReportCityGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaReportCityGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaReportCityGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaReportCityGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // TheDate Setter
 // 时间
-func (r *TaobaoSimbaReportCityGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaReportCityGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaReportCityGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }
 // Hour Setter
 // 当前小时
-func (r *TaobaoSimbaReportCityGetRequest) SetHour(hour string) error {
-    r.hour = hour
-    r.Set("hour", hour)
+func (r *TaobaoSimbaReportCityGetRequest) SetHour(_hour string) error {
+    r._hour = _hour
+    r.Set("hour", _hour)
     return nil
 }
 
 // Hour Getter
 func (r TaobaoSimbaReportCityGetRequest) GetHour() string {
-    return r.hour
+    return r._hour
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaReportCityGetRequest) SetCampaignId(campaignId string) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaReportCityGetRequest) SetCampaignId(_campaignId string) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaReportCityGetRequest) GetCampaignId() string {
-    return r.campaignId
+    return r._campaignId
 }

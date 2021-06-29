@@ -15,15 +15,15 @@ taobao.weike.eservice.schedule.get
 type TaobaoWeikeEserviceScheduleGetRequest struct {
     model.Params
     // 订单ID，orderId、sellerNick、spNick三者不能同时为Null
-    orderId   int64
+    _orderId   int64
     // 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-    sellerNick   string
+    _sellerNick   string
     // 服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-    spNick   string
+    _spNick   string
     // 起始日期，起始日期和结束日期跨度不能超过31天
-    startDate   string
+    _startDate   string
     // 结束日期，起始日期和结束日期跨度不能超过31天
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoWeikeEserviceScheduleGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoWeikeEserviceScheduleGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单ID，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoWeikeEserviceScheduleGetRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoWeikeEserviceScheduleGetRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // SellerNick Setter
 // 商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetRequest) SetSellerNick(sellerNick string) error {
-    r.sellerNick = sellerNick
-    r.Set("seller_nick", sellerNick)
+func (r *TaobaoWeikeEserviceScheduleGetRequest) SetSellerNick(_sellerNick string) error {
+    r._sellerNick = _sellerNick
+    r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
 func (r TaobaoWeikeEserviceScheduleGetRequest) GetSellerNick() string {
-    return r.sellerNick
+    return r._sellerNick
 }
 // SpNick Setter
 // 服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null
-func (r *TaobaoWeikeEserviceScheduleGetRequest) SetSpNick(spNick string) error {
-    r.spNick = spNick
-    r.Set("sp_nick", spNick)
+func (r *TaobaoWeikeEserviceScheduleGetRequest) SetSpNick(_spNick string) error {
+    r._spNick = _spNick
+    r.Set("sp_nick", _spNick)
     return nil
 }
 
 // SpNick Getter
 func (r TaobaoWeikeEserviceScheduleGetRequest) GetSpNick() string {
-    return r.spNick
+    return r._spNick
 }
 // StartDate Setter
 // 起始日期，起始日期和结束日期跨度不能超过31天
-func (r *TaobaoWeikeEserviceScheduleGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoWeikeEserviceScheduleGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoWeikeEserviceScheduleGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 结束日期，起始日期和结束日期跨度不能超过31天
-func (r *TaobaoWeikeEserviceScheduleGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoWeikeEserviceScheduleGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoWeikeEserviceScheduleGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

@@ -15,7 +15,7 @@ alibaba.wdk.eleme.bill.detail.get
 type AlibabaWdkElemeBillDetailGetRequest struct {
     model.Params
     // 对账单查询参数
-    eleBillRequest   *EleBillRequest
+    _eleBillRequest   *EleBillRequest
 }
 
 // 初始化AlibabaWdkElemeBillDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkElemeBillDetailGetRequest) GetApiParams() url.Values {
 }
 // EleBillRequest Setter
 // 对账单查询参数
-func (r *AlibabaWdkElemeBillDetailGetRequest) SetEleBillRequest(eleBillRequest *EleBillRequest) error {
-    r.eleBillRequest = eleBillRequest
-    r.Set("ele_bill_request", eleBillRequest)
+func (r *AlibabaWdkElemeBillDetailGetRequest) SetEleBillRequest(_eleBillRequest *EleBillRequest) error {
+    r._eleBillRequest = _eleBillRequest
+    r.Set("ele_bill_request", _eleBillRequest)
     return nil
 }
 
 // EleBillRequest Getter
 func (r AlibabaWdkElemeBillDetailGetRequest) GetEleBillRequest() *EleBillRequest {
-    return r.eleBillRequest
+    return r._eleBillRequest
 }

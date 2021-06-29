@@ -15,9 +15,9 @@ taobao.aplatform.weakget
 type TaobaoAplatformWeakgetRequest struct {
     model.Params
     // 客户端自带参数
-    paramRichClientInfo   *RichClientInfo
+    _paramRichClientInfo   *RichClientInfo
     // 业务自定义参数
-    paramDto   *ParamDto
+    _paramDto   *ParamDto
 }
 
 // 初始化TaobaoAplatformWeakgetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAplatformWeakgetRequest) GetApiParams() url.Values {
 }
 // ParamRichClientInfo Setter
 // 客户端自带参数
-func (r *TaobaoAplatformWeakgetRequest) SetParamRichClientInfo(paramRichClientInfo *RichClientInfo) error {
-    r.paramRichClientInfo = paramRichClientInfo
-    r.Set("param_rich_client_info", paramRichClientInfo)
+func (r *TaobaoAplatformWeakgetRequest) SetParamRichClientInfo(_paramRichClientInfo *RichClientInfo) error {
+    r._paramRichClientInfo = _paramRichClientInfo
+    r.Set("param_rich_client_info", _paramRichClientInfo)
     return nil
 }
 
 // ParamRichClientInfo Getter
 func (r TaobaoAplatformWeakgetRequest) GetParamRichClientInfo() *RichClientInfo {
-    return r.paramRichClientInfo
+    return r._paramRichClientInfo
 }
 // ParamDto Setter
 // 业务自定义参数
-func (r *TaobaoAplatformWeakgetRequest) SetParamDto(paramDto *ParamDto) error {
-    r.paramDto = paramDto
-    r.Set("param_dto", paramDto)
+func (r *TaobaoAplatformWeakgetRequest) SetParamDto(_paramDto *ParamDto) error {
+    r._paramDto = _paramDto
+    r.Set("param_dto", _paramDto)
     return nil
 }
 
 // ParamDto Getter
 func (r TaobaoAplatformWeakgetRequest) GetParamDto() *ParamDto {
-    return r.paramDto
+    return r._paramDto
 }

@@ -15,23 +15,23 @@ taobao.wlb.out.inventory.change.notify
 type TaobaoWlbOutInventoryChangeNotifyRequest struct {
     model.Params
     // WLB_ITEM--物流宝商品 IC_ITEM--淘宝商品 IC_SKU--淘宝sku
-    type   string
+    _type   string
     // OUT--出库 IN--入库
-    opType   string
+    _opType   string
     // （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK:盘点 （6）PURCHASE:采购
-    source   string
+    _source   string
     // 物流宝商品id或前台宝贝id（由type类型决定）
-    itemId   int64
+    _itemId   int64
     // 库存变化数量
-    changeCount   int64
+    _changeCount   int64
     // 本次库存变化后库存余额
-    resultCount   int64
+    _resultCount   int64
     // 订单号，如果source为TAOBAO_TRADE,order_source_code必须为淘宝交易号
-    orderSourceCode   string
+    _orderSourceCode   string
     // 库存变化唯一标识，用于去重，一个外部唯一编码唯一标识一次库存变化。
-    outBizCode   string
+    _outBizCode   string
     // 目前非必须，系统会选择默认值
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化TaobaoWlbOutInventoryChangeNotifyRequest对象
@@ -56,109 +56,109 @@ func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // WLB_ITEM--物流宝商品 IC_ITEM--淘宝商品 IC_SKU--淘宝sku
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // OpType Setter
 // OUT--出库 IN--入库
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOpType(opType string) error {
-    r.opType = opType
-    r.Set("op_type", opType)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOpType(_opType string) error {
+    r._opType = _opType
+    r.Set("op_type", _opType)
     return nil
 }
 
 // OpType Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetOpType() string {
-    return r.opType
+    return r._opType
 }
 // Source Setter
 // （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK:盘点 （6）PURCHASE:采购
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // ItemId Setter
 // 物流宝商品id或前台宝贝id（由type类型决定）
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // ChangeCount Setter
 // 库存变化数量
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetChangeCount(changeCount int64) error {
-    r.changeCount = changeCount
-    r.Set("change_count", changeCount)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetChangeCount(_changeCount int64) error {
+    r._changeCount = _changeCount
+    r.Set("change_count", _changeCount)
     return nil
 }
 
 // ChangeCount Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetChangeCount() int64 {
-    return r.changeCount
+    return r._changeCount
 }
 // ResultCount Setter
 // 本次库存变化后库存余额
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetResultCount(resultCount int64) error {
-    r.resultCount = resultCount
-    r.Set("result_count", resultCount)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetResultCount(_resultCount int64) error {
+    r._resultCount = _resultCount
+    r.Set("result_count", _resultCount)
     return nil
 }
 
 // ResultCount Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetResultCount() int64 {
-    return r.resultCount
+    return r._resultCount
 }
 // OrderSourceCode Setter
 // 订单号，如果source为TAOBAO_TRADE,order_source_code必须为淘宝交易号
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOrderSourceCode(orderSourceCode string) error {
-    r.orderSourceCode = orderSourceCode
-    r.Set("order_source_code", orderSourceCode)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOrderSourceCode(_orderSourceCode string) error {
+    r._orderSourceCode = _orderSourceCode
+    r.Set("order_source_code", _orderSourceCode)
     return nil
 }
 
 // OrderSourceCode Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetOrderSourceCode() string {
-    return r.orderSourceCode
+    return r._orderSourceCode
 }
 // OutBizCode Setter
 // 库存变化唯一标识，用于去重，一个外部唯一编码唯一标识一次库存变化。
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOutBizCode(outBizCode string) error {
-    r.outBizCode = outBizCode
-    r.Set("out_biz_code", outBizCode)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetOutBizCode(_outBizCode string) error {
+    r._outBizCode = _outBizCode
+    r.Set("out_biz_code", _outBizCode)
     return nil
 }
 
 // OutBizCode Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetOutBizCode() string {
-    return r.outBizCode
+    return r._outBizCode
 }
 // StoreCode Setter
 // 目前非必须，系统会选择默认值
-func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoWlbOutInventoryChangeNotifyRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoWlbOutInventoryChangeNotifyRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

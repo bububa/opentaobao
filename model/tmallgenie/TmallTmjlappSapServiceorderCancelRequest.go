@@ -15,7 +15,7 @@ SAP跟天猫精灵app接口对接，用户在app取消sap售后服务工单
 type TmallTmjlappSapServiceorderCancelRequest struct {
     model.Params
     // 取消服务单请求
-    cancelRequest   *Dtcancelrequest
+    _cancelRequest   *Dtcancelrequest
 }
 
 // 初始化TmallTmjlappSapServiceorderCancelRequest对象
@@ -40,13 +40,13 @@ func (r TmallTmjlappSapServiceorderCancelRequest) GetApiParams() url.Values {
 }
 // CancelRequest Setter
 // 取消服务单请求
-func (r *TmallTmjlappSapServiceorderCancelRequest) SetCancelRequest(cancelRequest *Dtcancelrequest) error {
-    r.cancelRequest = cancelRequest
-    r.Set("cancel_request", cancelRequest)
+func (r *TmallTmjlappSapServiceorderCancelRequest) SetCancelRequest(_cancelRequest *Dtcancelrequest) error {
+    r._cancelRequest = _cancelRequest
+    r.Set("cancel_request", _cancelRequest)
     return nil
 }
 
 // CancelRequest Getter
 func (r TmallTmjlappSapServiceorderCancelRequest) GetCancelRequest() *Dtcancelrequest {
-    return r.cancelRequest
+    return r._cancelRequest
 }

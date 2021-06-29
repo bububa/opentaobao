@@ -15,9 +15,9 @@ taobao.simba.rtrpt.campaign.get
 type TaobaoSimbaRtrptCampaignGetRequest struct {
     model.Params
     // 用户名
-    nick   string
+    _nick   string
     // 日期，格式yyyy-mm-dd
-    theDate   string
+    _theDate   string
 }
 
 // 初始化TaobaoSimbaRtrptCampaignGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaRtrptCampaignGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户名
-func (r *TaobaoSimbaRtrptCampaignGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaRtrptCampaignGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaRtrptCampaignGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptCampaignGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaRtrptCampaignGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaRtrptCampaignGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }

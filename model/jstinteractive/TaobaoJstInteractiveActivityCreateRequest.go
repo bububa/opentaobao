@@ -15,13 +15,13 @@ taobao.jst.interactive.activity.create
 type TaobaoJstInteractiveActivityCreateRequest struct {
     model.Params
     // 小程序id
-    miniAppId   string
+    _miniAppId   string
     // 活动名称
-    activityName   string
+    _activityName   string
     // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-    startTime   string
+    _startTime   string
     // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-    endTime   string
+    _endTime   string
 }
 
 // 初始化TaobaoJstInteractiveActivityCreateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoJstInteractiveActivityCreateRequest) GetApiParams() url.Values {
 }
 // MiniAppId Setter
 // 小程序id
-func (r *TaobaoJstInteractiveActivityCreateRequest) SetMiniAppId(miniAppId string) error {
-    r.miniAppId = miniAppId
-    r.Set("mini_app_id", miniAppId)
+func (r *TaobaoJstInteractiveActivityCreateRequest) SetMiniAppId(_miniAppId string) error {
+    r._miniAppId = _miniAppId
+    r.Set("mini_app_id", _miniAppId)
     return nil
 }
 
 // MiniAppId Getter
 func (r TaobaoJstInteractiveActivityCreateRequest) GetMiniAppId() string {
-    return r.miniAppId
+    return r._miniAppId
 }
 // ActivityName Setter
 // 活动名称
-func (r *TaobaoJstInteractiveActivityCreateRequest) SetActivityName(activityName string) error {
-    r.activityName = activityName
-    r.Set("activity_name", activityName)
+func (r *TaobaoJstInteractiveActivityCreateRequest) SetActivityName(_activityName string) error {
+    r._activityName = _activityName
+    r.Set("activity_name", _activityName)
     return nil
 }
 
 // ActivityName Getter
 func (r TaobaoJstInteractiveActivityCreateRequest) GetActivityName() string {
-    return r.activityName
+    return r._activityName
 }
 // StartTime Setter
 // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-func (r *TaobaoJstInteractiveActivityCreateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoJstInteractiveActivityCreateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoJstInteractiveActivityCreateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-func (r *TaobaoJstInteractiveActivityCreateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoJstInteractiveActivityCreateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoJstInteractiveActivityCreateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

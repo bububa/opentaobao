@@ -15,15 +15,15 @@ taobao.xhotel.item.selection.seller.stat.hotshid
 type TaobaoXhotelItemSelectionSellerStatHotshidRequest struct {
     model.Params
     // 日期  默认为昨天
-    date   string
+    _date   string
     // 酒店id  默认all
-    hid   string
+    _hid   string
     // vendor  默认all
-    vendor   string
+    _vendor   string
     // supplier  默认all
-    supplier   string
+    _supplier   string
     // 酒店编码
-    outHid   string
+    _outHid   string
 }
 
 // 初始化TaobaoXhotelItemSelectionSellerStatHotshidRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetApiParams() url.Va
 }
 // Date Setter
 // 日期  默认为昨天
-func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetDate() string {
-    return r.date
+    return r._date
 }
 // Hid Setter
 // 酒店id  默认all
-func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetHid(hid string) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetHid(_hid string) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetHid() string {
-    return r.hid
+    return r._hid
 }
 // Vendor Setter
 // vendor  默认all
-func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // Supplier Setter
 // supplier  默认all
-func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetSupplier(supplier string) error {
-    r.supplier = supplier
-    r.Set("supplier", supplier)
+func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetSupplier(_supplier string) error {
+    r._supplier = _supplier
+    r.Set("supplier", _supplier)
     return nil
 }
 
 // Supplier Getter
 func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetSupplier() string {
-    return r.supplier
+    return r._supplier
 }
 // OutHid Setter
 // 酒店编码
-func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetOutHid(outHid string) error {
-    r.outHid = outHid
-    r.Set("out_hid", outHid)
+func (r *TaobaoXhotelItemSelectionSellerStatHotshidRequest) SetOutHid(_outHid string) error {
+    r._outHid = _outHid
+    r.Set("out_hid", _outHid)
     return nil
 }
 
 // OutHid Getter
 func (r TaobaoXhotelItemSelectionSellerStatHotshidRequest) GetOutHid() string {
-    return r.outHid
+    return r._outHid
 }

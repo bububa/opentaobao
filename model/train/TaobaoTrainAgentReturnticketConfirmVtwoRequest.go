@@ -15,21 +15,21 @@ taobao.train.agent.returnticket.confirm.vtwo
 type TaobaoTrainAgentReturnticketConfirmVtwoRequest struct {
     model.Params
     // 用户id
-    buyerId   int64
+    _buyerId   int64
     // 是否同意退票
-    agreeReturn   bool
+    _agreeReturn   bool
     // 退票金额，单位分
-    refundFee   int64
+    _refundFee   int64
     // 淘宝主订单id
-    mainBizOrderId   int64
+    _mainBizOrderId   int64
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 拒绝退票原因
-    refuseReturnReason   string
+    _refuseReturnReason   string
     // 淘宝子订单id
-    subBizOrderId   int64
+    _subBizOrderId   int64
     // 关闭通知用户 true:关闭 false:不关闭
-    closeRefundNotify   bool
+    _closeRefundNotify   bool
 }
 
 // 初始化TaobaoTrainAgentReturnticketConfirmVtwoRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetApiParams() url.Value
 }
 // BuyerId Setter
 // 用户id
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetBuyerId(buyerId int64) error {
-    r.buyerId = buyerId
-    r.Set("buyer_id", buyerId)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetBuyerId(_buyerId int64) error {
+    r._buyerId = _buyerId
+    r.Set("buyer_id", _buyerId)
     return nil
 }
 
 // BuyerId Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetBuyerId() int64 {
-    return r.buyerId
+    return r._buyerId
 }
 // AgreeReturn Setter
 // 是否同意退票
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetAgreeReturn(agreeReturn bool) error {
-    r.agreeReturn = agreeReturn
-    r.Set("agree_return", agreeReturn)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetAgreeReturn(_agreeReturn bool) error {
+    r._agreeReturn = _agreeReturn
+    r.Set("agree_return", _agreeReturn)
     return nil
 }
 
 // AgreeReturn Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetAgreeReturn() bool {
-    return r.agreeReturn
+    return r._agreeReturn
 }
 // RefundFee Setter
 // 退票金额，单位分
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetRefundFee(refundFee int64) error {
-    r.refundFee = refundFee
-    r.Set("refund_fee", refundFee)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetRefundFee(_refundFee int64) error {
+    r._refundFee = _refundFee
+    r.Set("refund_fee", _refundFee)
     return nil
 }
 
 // RefundFee Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetRefundFee() int64 {
-    return r.refundFee
+    return r._refundFee
 }
 // MainBizOrderId Setter
 // 淘宝主订单id
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetMainBizOrderId(mainBizOrderId int64) error {
-    r.mainBizOrderId = mainBizOrderId
-    r.Set("main_biz_order_id", mainBizOrderId)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
+    r._mainBizOrderId = _mainBizOrderId
+    r.Set("main_biz_order_id", _mainBizOrderId)
     return nil
 }
 
 // MainBizOrderId Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetMainBizOrderId() int64 {
-    return r.mainBizOrderId
+    return r._mainBizOrderId
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // RefuseReturnReason Setter
 // 拒绝退票原因
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetRefuseReturnReason(refuseReturnReason string) error {
-    r.refuseReturnReason = refuseReturnReason
-    r.Set("refuse_return_reason", refuseReturnReason)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetRefuseReturnReason(_refuseReturnReason string) error {
+    r._refuseReturnReason = _refuseReturnReason
+    r.Set("refuse_return_reason", _refuseReturnReason)
     return nil
 }
 
 // RefuseReturnReason Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetRefuseReturnReason() string {
-    return r.refuseReturnReason
+    return r._refuseReturnReason
 }
 // SubBizOrderId Setter
 // 淘宝子订单id
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetSubBizOrderId(subBizOrderId int64) error {
-    r.subBizOrderId = subBizOrderId
-    r.Set("sub_biz_order_id", subBizOrderId)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetSubBizOrderId(_subBizOrderId int64) error {
+    r._subBizOrderId = _subBizOrderId
+    r.Set("sub_biz_order_id", _subBizOrderId)
     return nil
 }
 
 // SubBizOrderId Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetSubBizOrderId() int64 {
-    return r.subBizOrderId
+    return r._subBizOrderId
 }
 // CloseRefundNotify Setter
 // 关闭通知用户 true:关闭 false:不关闭
-func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetCloseRefundNotify(closeRefundNotify bool) error {
-    r.closeRefundNotify = closeRefundNotify
-    r.Set("close_refund_notify", closeRefundNotify)
+func (r *TaobaoTrainAgentReturnticketConfirmVtwoRequest) SetCloseRefundNotify(_closeRefundNotify bool) error {
+    r._closeRefundNotify = _closeRefundNotify
+    r.Set("close_refund_notify", _closeRefundNotify)
     return nil
 }
 
 // CloseRefundNotify Getter
 func (r TaobaoTrainAgentReturnticketConfirmVtwoRequest) GetCloseRefundNotify() bool {
-    return r.closeRefundNotify
+    return r._closeRefundNotify
 }

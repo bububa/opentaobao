@@ -15,7 +15,7 @@ alibaba.security.jaq.porn.image.sync.detect
 type AlibabaSecurityJaqPornImageSyncDetectRequest struct {
     model.Params
     // 待检测图片链接
-    imageUrl   string
+    _imageUrl   string
 }
 
 // 初始化AlibabaSecurityJaqPornImageSyncDetectRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetApiParams() url.Values 
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AlibabaSecurityJaqPornImageSyncDetectRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AlibabaSecurityJaqPornImageSyncDetectRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }

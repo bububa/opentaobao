@@ -15,7 +15,7 @@ queryPayResult
 type AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest struct {
     model.Params
     // 入参param
-    param   *QueryPayResultParam
+    _param   *QueryPayResultParam
 }
 
 // 初始化AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest) GetApiParams() u
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest) SetParam(param *QueryPayResultParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest) SetParam(_param *QueryPayResultParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixDistributionCmbQuerypayresultRequest) GetParam() *QueryPayResultParam {
-    return r.param
+    return r._param
 }

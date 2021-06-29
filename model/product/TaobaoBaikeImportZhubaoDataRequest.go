@@ -15,7 +15,7 @@ taobao.baike.import.zhubao.data
 type TaobaoBaikeImportZhubaoDataRequest struct {
     model.Params
     // 约定的Json数据
-    dataJsonStr   string
+    _dataJsonStr   string
 }
 
 // 初始化TaobaoBaikeImportZhubaoDataRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaikeImportZhubaoDataRequest) GetApiParams() url.Values {
 }
 // DataJsonStr Setter
 // 约定的Json数据
-func (r *TaobaoBaikeImportZhubaoDataRequest) SetDataJsonStr(dataJsonStr string) error {
-    r.dataJsonStr = dataJsonStr
-    r.Set("data_json_str", dataJsonStr)
+func (r *TaobaoBaikeImportZhubaoDataRequest) SetDataJsonStr(_dataJsonStr string) error {
+    r._dataJsonStr = _dataJsonStr
+    r.Set("data_json_str", _dataJsonStr)
     return nil
 }
 
 // DataJsonStr Getter
 func (r TaobaoBaikeImportZhubaoDataRequest) GetDataJsonStr() string {
-    return r.dataJsonStr
+    return r._dataJsonStr
 }

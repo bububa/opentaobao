@@ -15,7 +15,7 @@ alibaba.lst.logistics.notrace.send
 type AlibabaLstLogisticsNotraceSendRequest struct {
     model.Params
     // 入参
-    param   *SendDummyOrderParam
+    _param   *SendDummyOrderParam
 }
 
 // 初始化AlibabaLstLogisticsNotraceSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsNotraceSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstLogisticsNotraceSendRequest) SetParam(param *SendDummyOrderParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstLogisticsNotraceSendRequest) SetParam(_param *SendDummyOrderParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstLogisticsNotraceSendRequest) GetParam() *SendDummyOrderParam {
-    return r.param
+    return r._param
 }

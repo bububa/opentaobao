@@ -15,7 +15,7 @@ yunos.admarket.material.audit
 type YunosAdmarketMaterialAuditRequest struct {
     model.Params
     // 创意审核结果
-    sspMaterialAuditResult   *SspMaterialAuditResult
+    _sspMaterialAuditResult   *SspMaterialAuditResult
 }
 
 // 初始化YunosAdmarketMaterialAuditRequest对象
@@ -40,13 +40,13 @@ func (r YunosAdmarketMaterialAuditRequest) GetApiParams() url.Values {
 }
 // SspMaterialAuditResult Setter
 // 创意审核结果
-func (r *YunosAdmarketMaterialAuditRequest) SetSspMaterialAuditResult(sspMaterialAuditResult *SspMaterialAuditResult) error {
-    r.sspMaterialAuditResult = sspMaterialAuditResult
-    r.Set("ssp_material_audit_result", sspMaterialAuditResult)
+func (r *YunosAdmarketMaterialAuditRequest) SetSspMaterialAuditResult(_sspMaterialAuditResult *SspMaterialAuditResult) error {
+    r._sspMaterialAuditResult = _sspMaterialAuditResult
+    r.Set("ssp_material_audit_result", _sspMaterialAuditResult)
     return nil
 }
 
 // SspMaterialAuditResult Getter
 func (r YunosAdmarketMaterialAuditRequest) GetSspMaterialAuditResult() *SspMaterialAuditResult {
-    return r.sspMaterialAuditResult
+    return r._sspMaterialAuditResult
 }

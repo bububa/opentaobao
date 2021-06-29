@@ -15,7 +15,7 @@ alibaba.mosflow.work.queryvariables
 type AlibabaMosflowWorkQueryvariablesRequest struct {
     model.Params
     // 流程实例ID
-    processInstanceId   string
+    _processInstanceId   string
 }
 
 // 初始化AlibabaMosflowWorkQueryvariablesRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosflowWorkQueryvariablesRequest) GetApiParams() url.Values {
 }
 // ProcessInstanceId Setter
 // 流程实例ID
-func (r *AlibabaMosflowWorkQueryvariablesRequest) SetProcessInstanceId(processInstanceId string) error {
-    r.processInstanceId = processInstanceId
-    r.Set("process_instance_id", processInstanceId)
+func (r *AlibabaMosflowWorkQueryvariablesRequest) SetProcessInstanceId(_processInstanceId string) error {
+    r._processInstanceId = _processInstanceId
+    r.Set("process_instance_id", _processInstanceId)
     return nil
 }
 
 // ProcessInstanceId Getter
 func (r AlibabaMosflowWorkQueryvariablesRequest) GetProcessInstanceId() string {
-    return r.processInstanceId
+    return r._processInstanceId
 }

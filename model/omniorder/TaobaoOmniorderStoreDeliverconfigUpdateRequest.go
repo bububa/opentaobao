@@ -15,9 +15,9 @@ taobao.omniorder.store.deliverconfig.update
 type TaobaoOmniorderStoreDeliverconfigUpdateRequest struct {
     model.Params
     // 门店ID
-    storeId   int64
+    _storeId   int64
     // 卖家发货配置
-    storeDeliverConfig   *StoreDeliverConfig
+    _storeDeliverConfig   *StoreDeliverConfig
 }
 
 // 初始化TaobaoOmniorderStoreDeliverconfigUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreDeliverconfigUpdateRequest) GetApiParams() url.Value
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreDeliverconfigUpdateRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreDeliverconfigUpdateRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreDeliverconfigUpdateRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // StoreDeliverConfig Setter
 // 卖家发货配置
-func (r *TaobaoOmniorderStoreDeliverconfigUpdateRequest) SetStoreDeliverConfig(storeDeliverConfig *StoreDeliverConfig) error {
-    r.storeDeliverConfig = storeDeliverConfig
-    r.Set("store_deliver_config", storeDeliverConfig)
+func (r *TaobaoOmniorderStoreDeliverconfigUpdateRequest) SetStoreDeliverConfig(_storeDeliverConfig *StoreDeliverConfig) error {
+    r._storeDeliverConfig = _storeDeliverConfig
+    r.Set("store_deliver_config", _storeDeliverConfig)
     return nil
 }
 
 // StoreDeliverConfig Getter
 func (r TaobaoOmniorderStoreDeliverconfigUpdateRequest) GetStoreDeliverConfig() *StoreDeliverConfig {
-    return r.storeDeliverConfig
+    return r._storeDeliverConfig
 }

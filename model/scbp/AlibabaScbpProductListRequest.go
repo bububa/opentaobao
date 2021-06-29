@@ -15,11 +15,11 @@ alibaba.scbp.product.list
 type AlibabaScbpProductListRequest struct {
     model.Params
     // 产品分组标识
-    groupId   string
+    _groupId   string
     // 产品分页查询，每页个数，最大值20
-    perPageSize   int64
+    _perPageSize   int64
     // 第几页
-    toPage   int64
+    _toPage   int64
 }
 
 // 初始化AlibabaScbpProductListRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpProductListRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 产品分组标识
-func (r *AlibabaScbpProductListRequest) SetGroupId(groupId string) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaScbpProductListRequest) SetGroupId(_groupId string) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaScbpProductListRequest) GetGroupId() string {
-    return r.groupId
+    return r._groupId
 }
 // PerPageSize Setter
 // 产品分页查询，每页个数，最大值20
-func (r *AlibabaScbpProductListRequest) SetPerPageSize(perPageSize int64) error {
-    r.perPageSize = perPageSize
-    r.Set("per_page_size", perPageSize)
+func (r *AlibabaScbpProductListRequest) SetPerPageSize(_perPageSize int64) error {
+    r._perPageSize = _perPageSize
+    r.Set("per_page_size", _perPageSize)
     return nil
 }
 
 // PerPageSize Getter
 func (r AlibabaScbpProductListRequest) GetPerPageSize() int64 {
-    return r.perPageSize
+    return r._perPageSize
 }
 // ToPage Setter
 // 第几页
-func (r *AlibabaScbpProductListRequest) SetToPage(toPage int64) error {
-    r.toPage = toPage
-    r.Set("to_page", toPage)
+func (r *AlibabaScbpProductListRequest) SetToPage(_toPage int64) error {
+    r._toPage = _toPage
+    r.Set("to_page", _toPage)
     return nil
 }
 
 // ToPage Getter
 func (r AlibabaScbpProductListRequest) GetToPage() int64 {
-    return r.toPage
+    return r._toPage
 }

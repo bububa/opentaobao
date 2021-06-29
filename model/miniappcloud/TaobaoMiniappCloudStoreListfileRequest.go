@@ -15,9 +15,9 @@ taobao.miniapp.cloud.store.listfile
 type TaobaoMiniappCloudStoreListfileRequest struct {
     model.Params
     // 环境(online/test)
-    env   string
+    _env   string
     // 文件全路径名
-    filePath   string
+    _filePath   string
 }
 
 // 初始化TaobaoMiniappCloudStoreListfileRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoMiniappCloudStoreListfileRequest) GetApiParams() url.Values {
 }
 // Env Setter
 // 环境(online/test)
-func (r *TaobaoMiniappCloudStoreListfileRequest) SetEnv(env string) error {
-    r.env = env
-    r.Set("env", env)
+func (r *TaobaoMiniappCloudStoreListfileRequest) SetEnv(_env string) error {
+    r._env = _env
+    r.Set("env", _env)
     return nil
 }
 
 // Env Getter
 func (r TaobaoMiniappCloudStoreListfileRequest) GetEnv() string {
-    return r.env
+    return r._env
 }
 // FilePath Setter
 // 文件全路径名
-func (r *TaobaoMiniappCloudStoreListfileRequest) SetFilePath(filePath string) error {
-    r.filePath = filePath
-    r.Set("file_path", filePath)
+func (r *TaobaoMiniappCloudStoreListfileRequest) SetFilePath(_filePath string) error {
+    r._filePath = _filePath
+    r.Set("file_path", _filePath)
     return nil
 }
 
 // FilePath Getter
 func (r TaobaoMiniappCloudStoreListfileRequest) GetFilePath() string {
-    return r.filePath
+    return r._filePath
 }

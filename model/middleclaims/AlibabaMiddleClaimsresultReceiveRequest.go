@@ -15,7 +15,7 @@ alibaba.middle.claimsresult.receive
 type AlibabaMiddleClaimsresultReceiveRequest struct {
     model.Params
     // 理赔结果实体
-    claimsResultDTO   *ClaimsResultDto
+    _claimsResultDTO   *ClaimsResultDto
 }
 
 // 初始化AlibabaMiddleClaimsresultReceiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMiddleClaimsresultReceiveRequest) GetApiParams() url.Values {
 }
 // ClaimsResultDTO Setter
 // 理赔结果实体
-func (r *AlibabaMiddleClaimsresultReceiveRequest) SetClaimsResultDTO(claimsResultDTO *ClaimsResultDto) error {
-    r.claimsResultDTO = claimsResultDTO
-    r.Set("claims_result_d_t_o", claimsResultDTO)
+func (r *AlibabaMiddleClaimsresultReceiveRequest) SetClaimsResultDTO(_claimsResultDTO *ClaimsResultDto) error {
+    r._claimsResultDTO = _claimsResultDTO
+    r.Set("claims_result_d_t_o", _claimsResultDTO)
     return nil
 }
 
 // ClaimsResultDTO Getter
 func (r AlibabaMiddleClaimsresultReceiveRequest) GetClaimsResultDTO() *ClaimsResultDto {
-    return r.claimsResultDTO
+    return r._claimsResultDTO
 }

@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.querydetail
 type TaobaoWlbWaybillIQuerydetailRequest struct {
     model.Params
     // 面单查询请求
-    waybillDetailQueryRequest   *WaybillDetailQueryRequest
+    _waybillDetailQueryRequest   *WaybillDetailQueryRequest
 }
 
 // 初始化TaobaoWlbWaybillIQuerydetailRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIQuerydetailRequest) GetApiParams() url.Values {
 }
 // WaybillDetailQueryRequest Setter
 // 面单查询请求
-func (r *TaobaoWlbWaybillIQuerydetailRequest) SetWaybillDetailQueryRequest(waybillDetailQueryRequest *WaybillDetailQueryRequest) error {
-    r.waybillDetailQueryRequest = waybillDetailQueryRequest
-    r.Set("waybill_detail_query_request", waybillDetailQueryRequest)
+func (r *TaobaoWlbWaybillIQuerydetailRequest) SetWaybillDetailQueryRequest(_waybillDetailQueryRequest *WaybillDetailQueryRequest) error {
+    r._waybillDetailQueryRequest = _waybillDetailQueryRequest
+    r.Set("waybill_detail_query_request", _waybillDetailQueryRequest)
     return nil
 }
 
 // WaybillDetailQueryRequest Getter
 func (r TaobaoWlbWaybillIQuerydetailRequest) GetWaybillDetailQueryRequest() *WaybillDetailQueryRequest {
-    return r.waybillDetailQueryRequest
+    return r._waybillDetailQueryRequest
 }

@@ -15,9 +15,9 @@ taobao.fuwu.sku.get
 type TaobaoFuwuSkuGetRequest struct {
     model.Params
     // 服务code
-    articleCode   string
+    _articleCode   string
     // 用户的淘宝nick
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoFuwuSkuGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFuwuSkuGetRequest) GetApiParams() url.Values {
 }
 // ArticleCode Setter
 // 服务code
-func (r *TaobaoFuwuSkuGetRequest) SetArticleCode(articleCode string) error {
-    r.articleCode = articleCode
-    r.Set("article_code", articleCode)
+func (r *TaobaoFuwuSkuGetRequest) SetArticleCode(_articleCode string) error {
+    r._articleCode = _articleCode
+    r.Set("article_code", _articleCode)
     return nil
 }
 
 // ArticleCode Getter
 func (r TaobaoFuwuSkuGetRequest) GetArticleCode() string {
-    return r.articleCode
+    return r._articleCode
 }
 // Nick Setter
 // 用户的淘宝nick
-func (r *TaobaoFuwuSkuGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoFuwuSkuGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoFuwuSkuGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

@@ -15,7 +15,7 @@ deleteFaceElement
 type AlibabaDamaiMevOpenDeleteFaceelementRequest struct {
     model.Params
     // 入参deleteFaceElementParam
-    deleteFaceElementParam   *FaceElementIdOpenParam
+    _deleteFaceElementParam   *FaceElementIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeleteFaceelementRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteFaceelementRequest) GetApiParams() url.Values {
 }
 // DeleteFaceElementParam Setter
 // 入参deleteFaceElementParam
-func (r *AlibabaDamaiMevOpenDeleteFaceelementRequest) SetDeleteFaceElementParam(deleteFaceElementParam *FaceElementIdOpenParam) error {
-    r.deleteFaceElementParam = deleteFaceElementParam
-    r.Set("delete_face_element_param", deleteFaceElementParam)
+func (r *AlibabaDamaiMevOpenDeleteFaceelementRequest) SetDeleteFaceElementParam(_deleteFaceElementParam *FaceElementIdOpenParam) error {
+    r._deleteFaceElementParam = _deleteFaceElementParam
+    r.Set("delete_face_element_param", _deleteFaceElementParam)
     return nil
 }
 
 // DeleteFaceElementParam Getter
 func (r AlibabaDamaiMevOpenDeleteFaceelementRequest) GetDeleteFaceElementParam() *FaceElementIdOpenParam {
-    return r.deleteFaceElementParam
+    return r._deleteFaceElementParam
 }

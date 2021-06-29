@@ -15,7 +15,7 @@ taobao.alitrip.travel.axin.poi.detail.query
 type TaobaoAlitripTravelAxinPoiDetailQueryRequest struct {
     model.Params
     // poiId
-    poiId   int64
+    _poiId   int64
 }
 
 // 初始化TaobaoAlitripTravelAxinPoiDetailQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelAxinPoiDetailQueryRequest) GetApiParams() url.Values 
 }
 // PoiId Setter
 // poiId
-func (r *TaobaoAlitripTravelAxinPoiDetailQueryRequest) SetPoiId(poiId int64) error {
-    r.poiId = poiId
-    r.Set("poi_id", poiId)
+func (r *TaobaoAlitripTravelAxinPoiDetailQueryRequest) SetPoiId(_poiId int64) error {
+    r._poiId = _poiId
+    r.Set("poi_id", _poiId)
     return nil
 }
 
 // PoiId Getter
 func (r TaobaoAlitripTravelAxinPoiDetailQueryRequest) GetPoiId() int64 {
-    return r.poiId
+    return r._poiId
 }

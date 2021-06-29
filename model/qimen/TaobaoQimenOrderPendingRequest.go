@@ -15,7 +15,7 @@ ERP调用奇门的接口,挂起某些创建的单据;场景介绍：ERP主动发
 type TaobaoQimenOrderPendingRequest struct {
     model.Params
     // 
-    request   *OrderPendingRequest
+    _request   *OrderPendingRequest
 }
 
 // 初始化TaobaoQimenOrderPendingRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderPendingRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderPendingRequest) SetRequest(request *OrderPendingRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderPendingRequest) SetRequest(_request *OrderPendingRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderPendingRequest) GetRequest() *OrderPendingRequest {
-    return r.request
+    return r._request
 }

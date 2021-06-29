@@ -15,9 +15,9 @@ tmall.item.store.update.schema.get
 type TmallItemStoreUpdateSchemaGetRequest struct {
     model.Params
     // 主商品ID
-    mainItemId   int64
+    _mainItemId   int64
     // 门店ID
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TmallItemStoreUpdateSchemaGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallItemStoreUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // MainItemId Setter
 // 主商品ID
-func (r *TmallItemStoreUpdateSchemaGetRequest) SetMainItemId(mainItemId int64) error {
-    r.mainItemId = mainItemId
-    r.Set("main_item_id", mainItemId)
+func (r *TmallItemStoreUpdateSchemaGetRequest) SetMainItemId(_mainItemId int64) error {
+    r._mainItemId = _mainItemId
+    r.Set("main_item_id", _mainItemId)
     return nil
 }
 
 // MainItemId Getter
 func (r TmallItemStoreUpdateSchemaGetRequest) GetMainItemId() int64 {
-    return r.mainItemId
+    return r._mainItemId
 }
 // StoreId Setter
 // 门店ID
-func (r *TmallItemStoreUpdateSchemaGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TmallItemStoreUpdateSchemaGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TmallItemStoreUpdateSchemaGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

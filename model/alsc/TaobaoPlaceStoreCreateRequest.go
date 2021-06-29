@@ -15,7 +15,7 @@ taobao.place.store.create
 type TaobaoPlaceStoreCreateRequest struct {
     model.Params
     // 门店创建入参
-    storeCreate   *StoreUpdateTopDto
+    _storeCreate   *StoreUpdateTopDto
 }
 
 // 初始化TaobaoPlaceStoreCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreCreateRequest) GetApiParams() url.Values {
 }
 // StoreCreate Setter
 // 门店创建入参
-func (r *TaobaoPlaceStoreCreateRequest) SetStoreCreate(storeCreate *StoreUpdateTopDto) error {
-    r.storeCreate = storeCreate
-    r.Set("store_create", storeCreate)
+func (r *TaobaoPlaceStoreCreateRequest) SetStoreCreate(_storeCreate *StoreUpdateTopDto) error {
+    r._storeCreate = _storeCreate
+    r.Set("store_create", _storeCreate)
     return nil
 }
 
 // StoreCreate Getter
 func (r TaobaoPlaceStoreCreateRequest) GetStoreCreate() *StoreUpdateTopDto {
-    return r.storeCreate
+    return r._storeCreate
 }

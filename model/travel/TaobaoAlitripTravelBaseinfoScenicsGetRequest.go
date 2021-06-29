@@ -15,11 +15,11 @@ taobao.alitrip.travel.baseinfo.scenics.get
 type TaobaoAlitripTravelBaseinfoScenicsGetRequest struct {
     model.Params
     // 城市名称
-    city   string
+    _city   string
     // 景点简称
-    scenic   string
+    _scenic   string
     // 景点id，可选。若传了该值，则查询结果中只会保留该id的景点，其余景点信息将被过滤
-    scenicId   int64
+    _scenicId   int64
 }
 
 // 初始化TaobaoAlitripTravelBaseinfoScenicsGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripTravelBaseinfoScenicsGetRequest) GetApiParams() url.Values 
 }
 // City Setter
 // 城市名称
-func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetCity(city string) error {
-    r.city = city
-    r.Set("city", city)
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetCity(_city string) error {
+    r._city = _city
+    r.Set("city", _city)
     return nil
 }
 
 // City Getter
 func (r TaobaoAlitripTravelBaseinfoScenicsGetRequest) GetCity() string {
-    return r.city
+    return r._city
 }
 // Scenic Setter
 // 景点简称
-func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetScenic(scenic string) error {
-    r.scenic = scenic
-    r.Set("scenic", scenic)
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetScenic(_scenic string) error {
+    r._scenic = _scenic
+    r.Set("scenic", _scenic)
     return nil
 }
 
 // Scenic Getter
 func (r TaobaoAlitripTravelBaseinfoScenicsGetRequest) GetScenic() string {
-    return r.scenic
+    return r._scenic
 }
 // ScenicId Setter
 // 景点id，可选。若传了该值，则查询结果中只会保留该id的景点，其余景点信息将被过滤
-func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetScenicId(scenicId int64) error {
-    r.scenicId = scenicId
-    r.Set("scenic_id", scenicId)
+func (r *TaobaoAlitripTravelBaseinfoScenicsGetRequest) SetScenicId(_scenicId int64) error {
+    r._scenicId = _scenicId
+    r.Set("scenic_id", _scenicId)
     return nil
 }
 
 // ScenicId Getter
 func (r TaobaoAlitripTravelBaseinfoScenicsGetRequest) GetScenicId() int64 {
-    return r.scenicId
+    return r._scenicId
 }

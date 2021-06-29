@@ -15,7 +15,7 @@ alibaba.security.jaq.app.official.apply
 type AlibabaSecurityJaqAppOfficialApplyRequest struct {
     model.Params
     // 官方应用申请入参
-    officialAppApplyRequest   *OfficialAppApplyRequest
+    _officialAppApplyRequest   *OfficialAppApplyRequest
 }
 
 // 初始化AlibabaSecurityJaqAppOfficialApplyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetApiParams() url.Values {
 }
 // OfficialAppApplyRequest Setter
 // 官方应用申请入参
-func (r *AlibabaSecurityJaqAppOfficialApplyRequest) SetOfficialAppApplyRequest(officialAppApplyRequest *OfficialAppApplyRequest) error {
-    r.officialAppApplyRequest = officialAppApplyRequest
-    r.Set("official_app_apply_request", officialAppApplyRequest)
+func (r *AlibabaSecurityJaqAppOfficialApplyRequest) SetOfficialAppApplyRequest(_officialAppApplyRequest *OfficialAppApplyRequest) error {
+    r._officialAppApplyRequest = _officialAppApplyRequest
+    r.Set("official_app_apply_request", _officialAppApplyRequest)
     return nil
 }
 
 // OfficialAppApplyRequest Getter
 func (r AlibabaSecurityJaqAppOfficialApplyRequest) GetOfficialAppApplyRequest() *OfficialAppApplyRequest {
-    return r.officialAppApplyRequest
+    return r._officialAppApplyRequest
 }

@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.rt.btoc.warehouse.work.order.callback
 type AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *DrfB2CCallbackOrder
+    _callbackOrder   *DrfB2CCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest) GetApiParams()
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *DrfB2CCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *DrfB2CCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackRequest) GetCallbackOrder() *DrfB2CCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

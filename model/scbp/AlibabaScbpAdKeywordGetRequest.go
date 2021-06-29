@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.get
 type AlibabaScbpAdKeywordGetRequest struct {
     model.Params
     // KeywordQuery
-    queryDto   *KeywordQuery
+    _queryDto   *KeywordQuery
 }
 
 // 初始化AlibabaScbpAdKeywordGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordGetRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // KeywordQuery
-func (r *AlibabaScbpAdKeywordGetRequest) SetQueryDto(queryDto *KeywordQuery) error {
-    r.queryDto = queryDto
-    r.Set("query_dto", queryDto)
+func (r *AlibabaScbpAdKeywordGetRequest) SetQueryDto(_queryDto *KeywordQuery) error {
+    r._queryDto = _queryDto
+    r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
 func (r AlibabaScbpAdKeywordGetRequest) GetQueryDto() *KeywordQuery {
-    return r.queryDto
+    return r._queryDto
 }

@@ -15,11 +15,11 @@ alibaba.wdkorder.sharestock.insurance.refundcallback
 type AlibabaWdkorderSharestockInsuranceRefundcallbackRequest struct {
     model.Params
     // 淘宝交易子单ID
-    tbSubOrderId   int64
+    _tbSubOrderId   int64
     // 退款单ID
-    refundId   string
+    _refundId   string
     // 理赔单ID
-    claimId   string
+    _claimId   string
 }
 
 // 初始化AlibabaWdkorderSharestockInsuranceRefundcallbackRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) GetApiParams() 
 }
 // TbSubOrderId Setter
 // 淘宝交易子单ID
-func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetTbSubOrderId(tbSubOrderId int64) error {
-    r.tbSubOrderId = tbSubOrderId
-    r.Set("tb_sub_order_id", tbSubOrderId)
+func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
+    r._tbSubOrderId = _tbSubOrderId
+    r.Set("tb_sub_order_id", _tbSubOrderId)
     return nil
 }
 
 // TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) GetTbSubOrderId() int64 {
-    return r.tbSubOrderId
+    return r._tbSubOrderId
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetRefundId(refundId string) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetRefundId(_refundId string) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) GetRefundId() string {
-    return r.refundId
+    return r._refundId
 }
 // ClaimId Setter
 // 理赔单ID
-func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetClaimId(claimId string) error {
-    r.claimId = claimId
-    r.Set("claim_id", claimId)
+func (r *AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) SetClaimId(_claimId string) error {
+    r._claimId = _claimId
+    r.Set("claim_id", _claimId)
     return nil
 }
 
 // ClaimId Getter
 func (r AlibabaWdkorderSharestockInsuranceRefundcallbackRequest) GetClaimId() string {
-    return r.claimId
+    return r._claimId
 }

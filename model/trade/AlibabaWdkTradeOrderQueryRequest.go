@@ -15,7 +15,7 @@ alibaba.wdk.trade.order.query
 type AlibabaWdkTradeOrderQueryRequest struct {
     model.Params
     // 订单查询
-    query   *TradeOrderQuery
+    _query   *TradeOrderQuery
 }
 
 // 初始化AlibabaWdkTradeOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeOrderQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 订单查询
-func (r *AlibabaWdkTradeOrderQueryRequest) SetQuery(query *TradeOrderQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaWdkTradeOrderQueryRequest) SetQuery(_query *TradeOrderQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaWdkTradeOrderQueryRequest) GetQuery() *TradeOrderQuery {
-    return r.query
+    return r._query
 }

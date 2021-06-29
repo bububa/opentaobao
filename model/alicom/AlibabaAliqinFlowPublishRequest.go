@@ -15,15 +15,15 @@ alibaba.aliqin.flow.publish
 type AlibabaAliqinFlowPublishRequest struct {
     model.Params
     // 用户id
-    userId   string
+    _userId   string
     // 流量
-    flow   string
+    _flow   string
     // 原因
-    reason   string
+    _reason   string
     // 唯一流水号（字母+数字）
-    serial   string
+    _serial   string
     // 设置true为始终发送成功
-    always   string
+    _always   string
 }
 
 // 初始化AlibabaAliqinFlowPublishRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAliqinFlowPublishRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAliqinFlowPublishRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAliqinFlowPublishRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAliqinFlowPublishRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // Flow Setter
 // 流量
-func (r *AlibabaAliqinFlowPublishRequest) SetFlow(flow string) error {
-    r.flow = flow
-    r.Set("flow", flow)
+func (r *AlibabaAliqinFlowPublishRequest) SetFlow(_flow string) error {
+    r._flow = _flow
+    r.Set("flow", _flow)
     return nil
 }
 
 // Flow Getter
 func (r AlibabaAliqinFlowPublishRequest) GetFlow() string {
-    return r.flow
+    return r._flow
 }
 // Reason Setter
 // 原因
-func (r *AlibabaAliqinFlowPublishRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaAliqinFlowPublishRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaAliqinFlowPublishRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // Serial Setter
 // 唯一流水号（字母+数字）
-func (r *AlibabaAliqinFlowPublishRequest) SetSerial(serial string) error {
-    r.serial = serial
-    r.Set("serial", serial)
+func (r *AlibabaAliqinFlowPublishRequest) SetSerial(_serial string) error {
+    r._serial = _serial
+    r.Set("serial", _serial)
     return nil
 }
 
 // Serial Getter
 func (r AlibabaAliqinFlowPublishRequest) GetSerial() string {
-    return r.serial
+    return r._serial
 }
 // Always Setter
 // 设置true为始终发送成功
-func (r *AlibabaAliqinFlowPublishRequest) SetAlways(always string) error {
-    r.always = always
-    r.Set("always", always)
+func (r *AlibabaAliqinFlowPublishRequest) SetAlways(_always string) error {
+    r._always = _always
+    r.Set("always", _always)
     return nil
 }
 
 // Always Getter
 func (r AlibabaAliqinFlowPublishRequest) GetAlways() string {
-    return r.always
+    return r._always
 }

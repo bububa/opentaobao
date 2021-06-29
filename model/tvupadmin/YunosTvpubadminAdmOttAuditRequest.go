@@ -15,7 +15,7 @@ yunos.tvpubadmin.adm.ott.audit
 type YunosTvpubadminAdmOttAuditRequest struct {
     model.Params
     // 广告审核内容，json格式
-    data   string
+    _data   string
 }
 
 // 初始化YunosTvpubadminAdmOttAuditRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminAdmOttAuditRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 广告审核内容，json格式
-func (r *YunosTvpubadminAdmOttAuditRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *YunosTvpubadminAdmOttAuditRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r YunosTvpubadminAdmOttAuditRequest) GetData() string {
-    return r.data
+    return r._data
 }

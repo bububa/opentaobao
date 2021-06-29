@@ -15,7 +15,7 @@ taobao.train.agent.changeorders.get.vtwo
 type TaobaoTrainAgentChangeordersGetVtwoRequest struct {
     model.Params
     // 卖家id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化TaobaoTrainAgentChangeordersGetVtwoRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 卖家id
-func (r *TaobaoTrainAgentChangeordersGetVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentChangeordersGetVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentChangeordersGetVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

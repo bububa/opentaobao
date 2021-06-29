@@ -15,7 +15,7 @@ taobao.trades.sold.query
 type TaobaoTradesSoldQueryRequest struct {
     model.Params
     // 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
-    queryList   []OrderQuery
+    _queryList   []OrderQuery
 }
 
 // 初始化TaobaoTradesSoldQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTradesSoldQueryRequest) GetApiParams() url.Values {
 }
 // QueryList Setter
 // 查询条件列表，多个条件之间是OR关系，最多支持20个。receiver_name、receiver_mobile、receiver_phone至少有一个值不为空。
-func (r *TaobaoTradesSoldQueryRequest) SetQueryList(queryList []OrderQuery) error {
-    r.queryList = queryList
-    r.Set("query_list", queryList)
+func (r *TaobaoTradesSoldQueryRequest) SetQueryList(_queryList []OrderQuery) error {
+    r._queryList = _queryList
+    r.Set("query_list", _queryList)
     return nil
 }
 
 // QueryList Getter
 func (r TaobaoTradesSoldQueryRequest) GetQueryList() []OrderQuery {
-    return r.queryList
+    return r._queryList
 }

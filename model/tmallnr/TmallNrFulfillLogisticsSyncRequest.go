@@ -15,7 +15,7 @@ tmall.nr.fulfill.logistics.sync
 type TmallNrFulfillLogisticsSyncRequest struct {
     model.Params
     // 物流回传参数
-    param0   *NrLogisticsInfoSynReqDto
+    _param0   *NrLogisticsInfoSynReqDto
 }
 
 // 初始化TmallNrFulfillLogisticsSyncRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrFulfillLogisticsSyncRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 物流回传参数
-func (r *TmallNrFulfillLogisticsSyncRequest) SetParam0(param0 *NrLogisticsInfoSynReqDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallNrFulfillLogisticsSyncRequest) SetParam0(_param0 *NrLogisticsInfoSynReqDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallNrFulfillLogisticsSyncRequest) GetParam0() *NrLogisticsInfoSynReqDto {
-    return r.param0
+    return r._param0
 }

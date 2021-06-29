@@ -15,11 +15,11 @@ alibaba.ele.enterprise.ordernew.cancel
 type AlibabaEleEnterpriseOrdernewCancelRequest struct {
     model.Params
     // 饿了么订单ID
-    orderId   string
+    _orderId   string
     // 用户手机号
-    phone   string
+    _phone   string
     // 取消原因(取消时提供)
-    reason   string
+    _reason   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewCancelRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaEleEnterpriseOrdernewCancelRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewCancelRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Phone Setter
 // 用户手机号
-func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseOrdernewCancelRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // Reason Setter
 // 取消原因(取消时提供)
-func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaEleEnterpriseOrdernewCancelRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaEleEnterpriseOrdernewCancelRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }

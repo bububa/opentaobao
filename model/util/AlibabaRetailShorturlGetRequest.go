@@ -15,9 +15,9 @@ alibaba.retail.shorturl.get
 type AlibabaRetailShorturlGetRequest struct {
     model.Params
     // 源url
-    sourceUrl   string
+    _sourceUrl   string
     // 系统自动生成
-    options   *ShortUrlOption
+    _options   *ShortUrlOption
 }
 
 // 初始化AlibabaRetailShorturlGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaRetailShorturlGetRequest) GetApiParams() url.Values {
 }
 // SourceUrl Setter
 // 源url
-func (r *AlibabaRetailShorturlGetRequest) SetSourceUrl(sourceUrl string) error {
-    r.sourceUrl = sourceUrl
-    r.Set("source_url", sourceUrl)
+func (r *AlibabaRetailShorturlGetRequest) SetSourceUrl(_sourceUrl string) error {
+    r._sourceUrl = _sourceUrl
+    r.Set("source_url", _sourceUrl)
     return nil
 }
 
 // SourceUrl Getter
 func (r AlibabaRetailShorturlGetRequest) GetSourceUrl() string {
-    return r.sourceUrl
+    return r._sourceUrl
 }
 // Options Setter
 // 系统自动生成
-func (r *AlibabaRetailShorturlGetRequest) SetOptions(options *ShortUrlOption) error {
-    r.options = options
-    r.Set("options", options)
+func (r *AlibabaRetailShorturlGetRequest) SetOptions(_options *ShortUrlOption) error {
+    r._options = _options
+    r.Set("options", _options)
     return nil
 }
 
 // Options Getter
 func (r AlibabaRetailShorturlGetRequest) GetOptions() *ShortUrlOption {
-    return r.options
+    return r._options
 }

@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.member.register
 type AlitripMerchantGalaxyMemberRegisterRequest struct {
     model.Params
     // 租户身份信息
-    tenantKey   string
+    _tenantKey   string
     // 注册入参
-    memberParam   *MemberParam
+    _memberParam   *MemberParam
 }
 
 // 初始化AlitripMerchantGalaxyMemberRegisterRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyMemberRegisterRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyMemberRegisterRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // MemberParam Setter
 // 注册入参
-func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetMemberParam(memberParam *MemberParam) error {
-    r.memberParam = memberParam
-    r.Set("member_param", memberParam)
+func (r *AlitripMerchantGalaxyMemberRegisterRequest) SetMemberParam(_memberParam *MemberParam) error {
+    r._memberParam = _memberParam
+    r.Set("member_param", _memberParam)
     return nil
 }
 
 // MemberParam Getter
 func (r AlitripMerchantGalaxyMemberRegisterRequest) GetMemberParam() *MemberParam {
-    return r.memberParam
+    return r._memberParam
 }

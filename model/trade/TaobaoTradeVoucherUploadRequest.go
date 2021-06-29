@@ -15,13 +15,13 @@ taobao.trade.voucher.upload
 type TaobaoTradeVoucherUploadRequest struct {
     model.Params
     // 上传文件的名称
-    fileName   string
+    _fileName   string
     // 文件
-    fileData   []*model.File
+    _fileData   []*model.File
     // 该笔订单的卖家Nick
-    sellerNick   string
+    _sellerNick   string
     // 该笔订单的买家Nick（混淆nick）
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TaobaoTradeVoucherUploadRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTradeVoucherUploadRequest) GetApiParams() url.Values {
 }
 // FileName Setter
 // 上传文件的名称
-func (r *TaobaoTradeVoucherUploadRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *TaobaoTradeVoucherUploadRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r TaobaoTradeVoucherUploadRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // FileData Setter
 // 文件
-func (r *TaobaoTradeVoucherUploadRequest) SetFileData(fileData []*model.File) error {
-    r.fileData = fileData
-    r.Set("file_data", fileData)
+func (r *TaobaoTradeVoucherUploadRequest) SetFileData(_fileData []*model.File) error {
+    r._fileData = _fileData
+    r.Set("file_data", _fileData)
     return nil
 }
 
 // FileData Getter
 func (r TaobaoTradeVoucherUploadRequest) GetFileData() []*model.File {
-    return r.fileData
+    return r._fileData
 }
 // SellerNick Setter
 // 该笔订单的卖家Nick
-func (r *TaobaoTradeVoucherUploadRequest) SetSellerNick(sellerNick string) error {
-    r.sellerNick = sellerNick
-    r.Set("seller_nick", sellerNick)
+func (r *TaobaoTradeVoucherUploadRequest) SetSellerNick(_sellerNick string) error {
+    r._sellerNick = _sellerNick
+    r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
 func (r TaobaoTradeVoucherUploadRequest) GetSellerNick() string {
-    return r.sellerNick
+    return r._sellerNick
 }
 // BuyerNick Setter
 // 该笔订单的买家Nick（混淆nick）
-func (r *TaobaoTradeVoucherUploadRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoTradeVoucherUploadRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoTradeVoucherUploadRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

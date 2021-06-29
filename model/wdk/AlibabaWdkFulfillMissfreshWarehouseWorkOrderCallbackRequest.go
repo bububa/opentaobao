@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback
 type AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *MissfreshO2OCallbackOrder
+    _callbackOrder   *MissfreshO2OCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest) GetApiParam
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *MissfreshO2OCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *MissfreshO2OCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackRequest) GetCallbackOrder() *MissfreshO2OCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

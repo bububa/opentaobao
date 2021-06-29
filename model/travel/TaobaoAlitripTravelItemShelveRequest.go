@@ -16,13 +16,13 @@ taobao.alitrip.travel.item.shelve
 type TaobaoAlitripTravelItemShelveRequest struct {
     model.Params
     // 商品id。itemId和outProductId至少填写一个
-    itemId   int64
+    _itemId   int64
     // 商品 外部商家编码。itemId和outProductId至少填写一个
-    outProductId   string
+    _outProductId   string
     // 1-上架 0-下架
-    itemStatus   int64
+    _itemStatus   int64
     // 指定定时上架时间，格式：yyyy-MM-dd HH:mm:ss。若不设置该值且item_status为1，则表示立即上架。
-    onlineTime   string
+    _onlineTime   string
 }
 
 // 初始化TaobaoAlitripTravelItemShelveRequest对象
@@ -47,49 +47,49 @@ func (r TaobaoAlitripTravelItemShelveRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemShelveRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoAlitripTravelItemShelveRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoAlitripTravelItemShelveRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // OutProductId Setter
 // 商品 外部商家编码。itemId和outProductId至少填写一个
-func (r *TaobaoAlitripTravelItemShelveRequest) SetOutProductId(outProductId string) error {
-    r.outProductId = outProductId
-    r.Set("out_product_id", outProductId)
+func (r *TaobaoAlitripTravelItemShelveRequest) SetOutProductId(_outProductId string) error {
+    r._outProductId = _outProductId
+    r.Set("out_product_id", _outProductId)
     return nil
 }
 
 // OutProductId Getter
 func (r TaobaoAlitripTravelItemShelveRequest) GetOutProductId() string {
-    return r.outProductId
+    return r._outProductId
 }
 // ItemStatus Setter
 // 1-上架 0-下架
-func (r *TaobaoAlitripTravelItemShelveRequest) SetItemStatus(itemStatus int64) error {
-    r.itemStatus = itemStatus
-    r.Set("item_status", itemStatus)
+func (r *TaobaoAlitripTravelItemShelveRequest) SetItemStatus(_itemStatus int64) error {
+    r._itemStatus = _itemStatus
+    r.Set("item_status", _itemStatus)
     return nil
 }
 
 // ItemStatus Getter
 func (r TaobaoAlitripTravelItemShelveRequest) GetItemStatus() int64 {
-    return r.itemStatus
+    return r._itemStatus
 }
 // OnlineTime Setter
 // 指定定时上架时间，格式：yyyy-MM-dd HH:mm:ss。若不设置该值且item_status为1，则表示立即上架。
-func (r *TaobaoAlitripTravelItemShelveRequest) SetOnlineTime(onlineTime string) error {
-    r.onlineTime = onlineTime
-    r.Set("online_time", onlineTime)
+func (r *TaobaoAlitripTravelItemShelveRequest) SetOnlineTime(_onlineTime string) error {
+    r._onlineTime = _onlineTime
+    r.Set("online_time", _onlineTime)
     return nil
 }
 
 // OnlineTime Getter
 func (r TaobaoAlitripTravelItemShelveRequest) GetOnlineTime() string {
-    return r.onlineTime
+    return r._onlineTime
 }

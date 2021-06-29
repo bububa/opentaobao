@@ -15,11 +15,11 @@ alibaba.fmhealth.weight.lossplan.syncweightdata
 type AlibabaFmhealthWeightLossplanSyncweightdataRequest struct {
     model.Params
     // 阿里健康id
-    tpUserId   int64
+    _tpUserId   int64
     // 记录体重
-    weight   string
+    _weight   string
     // 记录日期
-    recordDate   string
+    _recordDate   string
 }
 
 // 初始化AlibabaFmhealthWeightLossplanSyncweightdataRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaFmhealthWeightLossplanSyncweightdataRequest) GetApiParams() url.V
 }
 // TpUserId Setter
 // 阿里健康id
-func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetTpUserId(tpUserId int64) error {
-    r.tpUserId = tpUserId
-    r.Set("tp_user_id", tpUserId)
+func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetTpUserId(_tpUserId int64) error {
+    r._tpUserId = _tpUserId
+    r.Set("tp_user_id", _tpUserId)
     return nil
 }
 
 // TpUserId Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataRequest) GetTpUserId() int64 {
-    return r.tpUserId
+    return r._tpUserId
 }
 // Weight Setter
 // 记录体重
-func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetWeight(weight string) error {
-    r.weight = weight
-    r.Set("weight", weight)
+func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetWeight(_weight string) error {
+    r._weight = _weight
+    r.Set("weight", _weight)
     return nil
 }
 
 // Weight Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataRequest) GetWeight() string {
-    return r.weight
+    return r._weight
 }
 // RecordDate Setter
 // 记录日期
-func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetRecordDate(recordDate string) error {
-    r.recordDate = recordDate
-    r.Set("record_date", recordDate)
+func (r *AlibabaFmhealthWeightLossplanSyncweightdataRequest) SetRecordDate(_recordDate string) error {
+    r._recordDate = _recordDate
+    r.Set("record_date", _recordDate)
     return nil
 }
 
 // RecordDate Getter
 func (r AlibabaFmhealthWeightLossplanSyncweightdataRequest) GetRecordDate() string {
-    return r.recordDate
+    return r._recordDate
 }

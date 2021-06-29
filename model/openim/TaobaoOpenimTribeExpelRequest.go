@@ -15,11 +15,11 @@ OPENIM群踢出成员
 type TaobaoOpenimTribeExpelRequest struct {
     model.Params
     // 用户信息
-    user   *OpenImUser
+    _user   *OpenImUser
     // 群id
-    tribeId   int64
+    _tribeId   int64
     // 用户信息
-    member   *OpenImUser
+    _member   *OpenImUser
 }
 
 // 初始化TaobaoOpenimTribeExpelRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenimTribeExpelRequest) GetApiParams() url.Values {
 }
 // User Setter
 // 用户信息
-func (r *TaobaoOpenimTribeExpelRequest) SetUser(user *OpenImUser) error {
-    r.user = user
-    r.Set("user", user)
+func (r *TaobaoOpenimTribeExpelRequest) SetUser(_user *OpenImUser) error {
+    r._user = _user
+    r.Set("user", _user)
     return nil
 }
 
 // User Getter
 func (r TaobaoOpenimTribeExpelRequest) GetUser() *OpenImUser {
-    return r.user
+    return r._user
 }
 // TribeId Setter
 // 群id
-func (r *TaobaoOpenimTribeExpelRequest) SetTribeId(tribeId int64) error {
-    r.tribeId = tribeId
-    r.Set("tribe_id", tribeId)
+func (r *TaobaoOpenimTribeExpelRequest) SetTribeId(_tribeId int64) error {
+    r._tribeId = _tribeId
+    r.Set("tribe_id", _tribeId)
     return nil
 }
 
 // TribeId Getter
 func (r TaobaoOpenimTribeExpelRequest) GetTribeId() int64 {
-    return r.tribeId
+    return r._tribeId
 }
 // Member Setter
 // 用户信息
-func (r *TaobaoOpenimTribeExpelRequest) SetMember(member *OpenImUser) error {
-    r.member = member
-    r.Set("member", member)
+func (r *TaobaoOpenimTribeExpelRequest) SetMember(_member *OpenImUser) error {
+    r._member = _member
+    r.Set("member", _member)
     return nil
 }
 
 // Member Getter
 func (r TaobaoOpenimTribeExpelRequest) GetMember() *OpenImUser {
-    return r.member
+    return r._member
 }

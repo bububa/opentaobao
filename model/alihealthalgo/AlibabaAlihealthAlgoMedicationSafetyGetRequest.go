@@ -15,7 +15,7 @@ alibaba.alihealth.algo.medication.safety.get
 type AlibabaAlihealthAlgoMedicationSafetyGetRequest struct {
     model.Params
     // 业务请求对象
-    paramSolutionRequestTopSupport   *SolutionRequestTopSupport
+    _paramSolutionRequestTopSupport   *SolutionRequestTopSupport
 }
 
 // 初始化AlibabaAlihealthAlgoMedicationSafetyGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetApiParams() url.Value
 }
 // ParamSolutionRequestTopSupport Setter
 // 业务请求对象
-func (r *AlibabaAlihealthAlgoMedicationSafetyGetRequest) SetParamSolutionRequestTopSupport(paramSolutionRequestTopSupport *SolutionRequestTopSupport) error {
-    r.paramSolutionRequestTopSupport = paramSolutionRequestTopSupport
-    r.Set("param_solution_request_top_support", paramSolutionRequestTopSupport)
+func (r *AlibabaAlihealthAlgoMedicationSafetyGetRequest) SetParamSolutionRequestTopSupport(_paramSolutionRequestTopSupport *SolutionRequestTopSupport) error {
+    r._paramSolutionRequestTopSupport = _paramSolutionRequestTopSupport
+    r.Set("param_solution_request_top_support", _paramSolutionRequestTopSupport)
     return nil
 }
 
 // ParamSolutionRequestTopSupport Getter
 func (r AlibabaAlihealthAlgoMedicationSafetyGetRequest) GetParamSolutionRequestTopSupport() *SolutionRequestTopSupport {
-    return r.paramSolutionRequestTopSupport
+    return r._paramSolutionRequestTopSupport
 }

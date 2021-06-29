@@ -15,9 +15,9 @@ taobao.train.agent.returnorders.get.vtwo
 type TaobaoTrainAgentReturnordersGetVtwoRequest struct {
     model.Params
     // 卖家ID
-    agentId   int64
+    _agentId   int64
     // 0 线上退票 1线下退票
-    offline   int64
+    _offline   int64
 }
 
 // 初始化TaobaoTrainAgentReturnordersGetVtwoRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTrainAgentReturnordersGetVtwoRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 卖家ID
-func (r *TaobaoTrainAgentReturnordersGetVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentReturnordersGetVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentReturnordersGetVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // Offline Setter
 // 0 线上退票 1线下退票
-func (r *TaobaoTrainAgentReturnordersGetVtwoRequest) SetOffline(offline int64) error {
-    r.offline = offline
-    r.Set("offline", offline)
+func (r *TaobaoTrainAgentReturnordersGetVtwoRequest) SetOffline(_offline int64) error {
+    r._offline = _offline
+    r.Set("offline", _offline)
     return nil
 }
 
 // Offline Getter
 func (r TaobaoTrainAgentReturnordersGetVtwoRequest) GetOffline() int64 {
-    return r.offline
+    return r._offline
 }

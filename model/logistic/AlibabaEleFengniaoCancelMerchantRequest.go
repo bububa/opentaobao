@@ -15,7 +15,7 @@ alibaba.ele.fengniao.cancel.merchant
 type AlibabaEleFengniaoCancelMerchantRequest struct {
     model.Params
     // 参数param
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoCancelMerchantRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoCancelMerchantRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数param
-func (r *AlibabaEleFengniaoCancelMerchantRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoCancelMerchantRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoCancelMerchantRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.medical.doctor.sync
 type AlibabaAlihealthMedicalDoctorSyncRequest struct {
     model.Params
     // 接口入参
-    saveRequest   *CommonRequest4Top
+    _saveRequest   *CommonRequest4Top
 }
 
 // 初始化AlibabaAlihealthMedicalDoctorSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetApiParams() url.Values {
 }
 // SaveRequest Setter
 // 接口入参
-func (r *AlibabaAlihealthMedicalDoctorSyncRequest) SetSaveRequest(saveRequest *CommonRequest4Top) error {
-    r.saveRequest = saveRequest
-    r.Set("save_request", saveRequest)
+func (r *AlibabaAlihealthMedicalDoctorSyncRequest) SetSaveRequest(_saveRequest *CommonRequest4Top) error {
+    r._saveRequest = _saveRequest
+    r.Set("save_request", _saveRequest)
     return nil
 }
 
 // SaveRequest Getter
 func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetSaveRequest() *CommonRequest4Top {
-    return r.saveRequest
+    return r._saveRequest
 }

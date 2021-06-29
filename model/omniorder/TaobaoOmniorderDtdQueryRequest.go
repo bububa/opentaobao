@@ -15,7 +15,7 @@ taobao.omniorder.dtd.query
 type TaobaoOmniorderDtdQueryRequest struct {
     model.Params
     // 核销码
-    code   string
+    _code   string
 }
 
 // 初始化TaobaoOmniorderDtdQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderDtdQueryRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 核销码
-func (r *TaobaoOmniorderDtdQueryRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TaobaoOmniorderDtdQueryRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TaobaoOmniorderDtdQueryRequest) GetCode() string {
-    return r.code
+    return r._code
 }

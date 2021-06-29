@@ -15,17 +15,17 @@ taobao.tanx.biddingrefuses.get
 type TaobaoTanxBiddingrefusesGetRequest struct {
     model.Params
     // dsp的创意id
-    creativeIds   []string
+    _creativeIds   []string
     // dsp在tanx的memberid
-    memberId   int64
+    _memberId   int64
     // dsp对应的tanx的token
-    token   string
+    _token   string
     // 1970年到现在的毫秒
-    signTime   int64
+    _signTime   int64
     // 起始时间
-    startTime   string
+    _startTime   string
     // 截止时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化TaobaoTanxBiddingrefusesGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTanxBiddingrefusesGetRequest) GetApiParams() url.Values {
 }
 // CreativeIds Setter
 // dsp的创意id
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetCreativeIds(creativeIds []string) error {
-    r.creativeIds = creativeIds
-    r.Set("creative_ids", creativeIds)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetCreativeIds(_creativeIds []string) error {
+    r._creativeIds = _creativeIds
+    r.Set("creative_ids", _creativeIds)
     return nil
 }
 
 // CreativeIds Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetCreativeIds() []string {
-    return r.creativeIds
+    return r._creativeIds
 }
 // MemberId Setter
 // dsp在tanx的memberid
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp对应的tanx的token
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 1970年到现在的毫秒
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // StartTime Setter
 // 起始时间
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 截止时间
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoTanxBiddingrefusesGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

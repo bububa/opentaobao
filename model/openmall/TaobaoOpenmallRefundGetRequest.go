@@ -15,9 +15,9 @@ taobao.openmall.refund.get
 type TaobaoOpenmallRefundGetRequest struct {
     model.Params
     // 渠道商身份
-    distributor   string
+    _distributor   string
     // 退款单ID
-    refundId   int64
+    _refundId   int64
 }
 
 // 初始化TaobaoOpenmallRefundGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallRefundGetRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 渠道商身份
-func (r *TaobaoOpenmallRefundGetRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallRefundGetRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallRefundGetRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // RefundId Setter
 // 退款单ID
-func (r *TaobaoOpenmallRefundGetRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoOpenmallRefundGetRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoOpenmallRefundGetRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }

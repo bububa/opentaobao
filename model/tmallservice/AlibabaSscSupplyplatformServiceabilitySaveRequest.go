@@ -15,15 +15,15 @@ alibaba.ssc.supplyplatform.serviceability.save
 type AlibabaSscSupplyplatformServiceabilitySaveRequest struct {
     model.Params
     // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-    providerType   string
+    _providerType   string
     // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
-    providerId   int64
+    _providerId   int64
     // 目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写
-    fulfilTypeList   []string
+    _fulfilTypeList   []string
     // 服务sku，具体的sku列表可以从服务商工作台的类目树获取
-    serviceSkuCodeList   []string
+    _serviceSkuCodeList   []string
     // 菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填
-    areaCodeList   []int64
+    _areaCodeList   []int64
 }
 
 // 初始化AlibabaSscSupplyplatformServiceabilitySaveRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetApiParams() url.Va
 }
 // ProviderType Setter
 // 服务提供者类型。service_store 网点；worker 工人；supplier 服务商
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetProviderType(providerType string) error {
-    r.providerType = providerType
-    r.Set("provider_type", providerType)
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetProviderType(_providerType string) error {
+    r._providerType = _providerType
+    r.Set("provider_type", _providerType)
     return nil
 }
 
 // ProviderType Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetProviderType() string {
-    return r.providerType
+    return r._providerType
 }
 // ProviderId Setter
 // 服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetProviderId(providerId int64) error {
-    r.providerId = providerId
-    r.Set("provider_id", providerId)
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetProviderId(_providerId int64) error {
+    r._providerId = _providerId
+    r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetProviderId() int64 {
-    return r.providerId
+    return r._providerId
 }
 // FulfilTypeList Setter
 // 目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetFulfilTypeList(fulfilTypeList []string) error {
-    r.fulfilTypeList = fulfilTypeList
-    r.Set("fulfil_type_list", fulfilTypeList)
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetFulfilTypeList(_fulfilTypeList []string) error {
+    r._fulfilTypeList = _fulfilTypeList
+    r.Set("fulfil_type_list", _fulfilTypeList)
     return nil
 }
 
 // FulfilTypeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetFulfilTypeList() []string {
-    return r.fulfilTypeList
+    return r._fulfilTypeList
 }
 // ServiceSkuCodeList Setter
 // 服务sku，具体的sku列表可以从服务商工作台的类目树获取
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetServiceSkuCodeList(serviceSkuCodeList []string) error {
-    r.serviceSkuCodeList = serviceSkuCodeList
-    r.Set("service_sku_code_list", serviceSkuCodeList)
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetServiceSkuCodeList(_serviceSkuCodeList []string) error {
+    r._serviceSkuCodeList = _serviceSkuCodeList
+    r.Set("service_sku_code_list", _serviceSkuCodeList)
     return nil
 }
 
 // ServiceSkuCodeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetServiceSkuCodeList() []string {
-    return r.serviceSkuCodeList
+    return r._serviceSkuCodeList
 }
 // AreaCodeList Setter
 // 菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetAreaCodeList(areaCodeList []int64) error {
-    r.areaCodeList = areaCodeList
-    r.Set("area_code_list", areaCodeList)
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetAreaCodeList(_areaCodeList []int64) error {
+    r._areaCodeList = _areaCodeList
+    r.Set("area_code_list", _areaCodeList)
     return nil
 }
 
 // AreaCodeList Getter
 func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetAreaCodeList() []int64 {
-    return r.areaCodeList
+    return r._areaCodeList
 }

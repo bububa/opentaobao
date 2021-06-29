@@ -15,13 +15,13 @@ alibaba.price.promotion.item.delete
 type AlibabaPricePromotionItemDeleteRequest struct {
     model.Params
     // 商品code
-    skuCodes   []string
+    _skuCodes   []string
     // toB渠道店OU
-    ouCode   string
+    _ouCode   string
     // 外部档期编码
-    outerPromotionCode   string
+    _outerPromotionCode   string
     // 盒马唯一标识
-    uniqueId   string
+    _uniqueId   string
 }
 
 // 初始化AlibabaPricePromotionItemDeleteRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaPricePromotionItemDeleteRequest) GetApiParams() url.Values {
 }
 // SkuCodes Setter
 // 商品code
-func (r *AlibabaPricePromotionItemDeleteRequest) SetSkuCodes(skuCodes []string) error {
-    r.skuCodes = skuCodes
-    r.Set("sku_codes", skuCodes)
+func (r *AlibabaPricePromotionItemDeleteRequest) SetSkuCodes(_skuCodes []string) error {
+    r._skuCodes = _skuCodes
+    r.Set("sku_codes", _skuCodes)
     return nil
 }
 
 // SkuCodes Getter
 func (r AlibabaPricePromotionItemDeleteRequest) GetSkuCodes() []string {
-    return r.skuCodes
+    return r._skuCodes
 }
 // OuCode Setter
 // toB渠道店OU
-func (r *AlibabaPricePromotionItemDeleteRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *AlibabaPricePromotionItemDeleteRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r AlibabaPricePromotionItemDeleteRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }
 // OuterPromotionCode Setter
 // 外部档期编码
-func (r *AlibabaPricePromotionItemDeleteRequest) SetOuterPromotionCode(outerPromotionCode string) error {
-    r.outerPromotionCode = outerPromotionCode
-    r.Set("outer_promotion_code", outerPromotionCode)
+func (r *AlibabaPricePromotionItemDeleteRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
+    r._outerPromotionCode = _outerPromotionCode
+    r.Set("outer_promotion_code", _outerPromotionCode)
     return nil
 }
 
 // OuterPromotionCode Getter
 func (r AlibabaPricePromotionItemDeleteRequest) GetOuterPromotionCode() string {
-    return r.outerPromotionCode
+    return r._outerPromotionCode
 }
 // UniqueId Setter
 // 盒马唯一标识
-func (r *AlibabaPricePromotionItemDeleteRequest) SetUniqueId(uniqueId string) error {
-    r.uniqueId = uniqueId
-    r.Set("unique_id", uniqueId)
+func (r *AlibabaPricePromotionItemDeleteRequest) SetUniqueId(_uniqueId string) error {
+    r._uniqueId = _uniqueId
+    r.Set("unique_id", _uniqueId)
     return nil
 }
 
 // UniqueId Getter
 func (r AlibabaPricePromotionItemDeleteRequest) GetUniqueId() string {
-    return r.uniqueId
+    return r._uniqueId
 }

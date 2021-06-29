@@ -15,7 +15,7 @@ alibaba.fundplatform.cardorders.info.query
 type AlibabaFundplatformCardordersInfoQueryRequest struct {
     model.Params
     // 请求结构体
-    parameters   *CardMakingInfoQueryRequest
+    _parameters   *CardMakingInfoQueryRequest
 }
 
 // 初始化AlibabaFundplatformCardordersInfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformCardordersInfoQueryRequest) GetApiParams() url.Values
 }
 // Parameters Setter
 // 请求结构体
-func (r *AlibabaFundplatformCardordersInfoQueryRequest) SetParameters(parameters *CardMakingInfoQueryRequest) error {
-    r.parameters = parameters
-    r.Set("parameters", parameters)
+func (r *AlibabaFundplatformCardordersInfoQueryRequest) SetParameters(_parameters *CardMakingInfoQueryRequest) error {
+    r._parameters = _parameters
+    r.Set("parameters", _parameters)
     return nil
 }
 
 // Parameters Getter
 func (r AlibabaFundplatformCardordersInfoQueryRequest) GetParameters() *CardMakingInfoQueryRequest {
-    return r.parameters
+    return r._parameters
 }

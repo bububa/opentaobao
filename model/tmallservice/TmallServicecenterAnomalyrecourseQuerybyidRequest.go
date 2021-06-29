@@ -15,7 +15,7 @@ tmall.servicecenter.anomalyrecourse.querybyid
 type TmallServicecenterAnomalyrecourseQuerybyidRequest struct {
     model.Params
     // 一键求助的id
-    anomalyRecourseId   int64
+    _anomalyRecourseId   int64
 }
 
 // 初始化TmallServicecenterAnomalyrecourseQuerybyidRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetApiParams() url.Va
 }
 // AnomalyRecourseId Setter
 // 一键求助的id
-func (r *TmallServicecenterAnomalyrecourseQuerybyidRequest) SetAnomalyRecourseId(anomalyRecourseId int64) error {
-    r.anomalyRecourseId = anomalyRecourseId
-    r.Set("anomaly_recourse_id", anomalyRecourseId)
+func (r *TmallServicecenterAnomalyrecourseQuerybyidRequest) SetAnomalyRecourseId(_anomalyRecourseId int64) error {
+    r._anomalyRecourseId = _anomalyRecourseId
+    r.Set("anomaly_recourse_id", _anomalyRecourseId)
     return nil
 }
 
 // AnomalyRecourseId Getter
 func (r TmallServicecenterAnomalyrecourseQuerybyidRequest) GetAnomalyRecourseId() int64 {
-    return r.anomalyRecourseId
+    return r._anomalyRecourseId
 }

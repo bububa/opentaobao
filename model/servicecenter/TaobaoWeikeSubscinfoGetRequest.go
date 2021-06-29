@@ -15,13 +15,13 @@ taobao.weike.subscinfo.get
 type TaobaoWeikeSubscinfoGetRequest struct {
     model.Params
     // 商家旺旺名称
-    sellerName   string
+    _sellerName   string
     // 时间范围开始时间
-    startTime   string
+    _startTime   string
     // 时间范围结束时间
-    endTime   string
+    _endTime   string
     // 页码
-    pageNum   int64
+    _pageNum   int64
 }
 
 // 初始化TaobaoWeikeSubscinfoGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoWeikeSubscinfoGetRequest) GetApiParams() url.Values {
 }
 // SellerName Setter
 // 商家旺旺名称
-func (r *TaobaoWeikeSubscinfoGetRequest) SetSellerName(sellerName string) error {
-    r.sellerName = sellerName
-    r.Set("seller_name", sellerName)
+func (r *TaobaoWeikeSubscinfoGetRequest) SetSellerName(_sellerName string) error {
+    r._sellerName = _sellerName
+    r.Set("seller_name", _sellerName)
     return nil
 }
 
 // SellerName Getter
 func (r TaobaoWeikeSubscinfoGetRequest) GetSellerName() string {
-    return r.sellerName
+    return r._sellerName
 }
 // StartTime Setter
 // 时间范围开始时间
-func (r *TaobaoWeikeSubscinfoGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoWeikeSubscinfoGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoWeikeSubscinfoGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 时间范围结束时间
-func (r *TaobaoWeikeSubscinfoGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoWeikeSubscinfoGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoWeikeSubscinfoGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // PageNum Setter
 // 页码
-func (r *TaobaoWeikeSubscinfoGetRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *TaobaoWeikeSubscinfoGetRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r TaobaoWeikeSubscinfoGetRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }

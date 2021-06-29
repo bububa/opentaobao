@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.order.validate
 type AlitripBtripHotelDistributionOrderValidateRequest struct {
     model.Params
     // 下单前校验入参
-    paramBtripHotelValidateOrderRq   *BtripHotelValidateOrderRq
+    _paramBtripHotelValidateOrderRq   *BtripHotelValidateOrderRq
 }
 
 // 初始化AlitripBtripHotelDistributionOrderValidateRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionOrderValidateRequest) GetApiParams() url.Va
 }
 // ParamBtripHotelValidateOrderRq Setter
 // 下单前校验入参
-func (r *AlitripBtripHotelDistributionOrderValidateRequest) SetParamBtripHotelValidateOrderRq(paramBtripHotelValidateOrderRq *BtripHotelValidateOrderRq) error {
-    r.paramBtripHotelValidateOrderRq = paramBtripHotelValidateOrderRq
-    r.Set("param_btrip_hotel_validate_order_rq", paramBtripHotelValidateOrderRq)
+func (r *AlitripBtripHotelDistributionOrderValidateRequest) SetParamBtripHotelValidateOrderRq(_paramBtripHotelValidateOrderRq *BtripHotelValidateOrderRq) error {
+    r._paramBtripHotelValidateOrderRq = _paramBtripHotelValidateOrderRq
+    r.Set("param_btrip_hotel_validate_order_rq", _paramBtripHotelValidateOrderRq)
     return nil
 }
 
 // ParamBtripHotelValidateOrderRq Getter
 func (r AlitripBtripHotelDistributionOrderValidateRequest) GetParamBtripHotelValidateOrderRq() *BtripHotelValidateOrderRq {
-    return r.paramBtripHotelValidateOrderRq
+    return r._paramBtripHotelValidateOrderRq
 }

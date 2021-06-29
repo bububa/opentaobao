@@ -15,7 +15,7 @@ taobao.alitrip.travel.item.element.query
 type TaobaoAlitripTravelItemElementQueryRequest struct {
     model.Params
     // 需要查询的资源元素列表，最大列表长度为50
-    outerIds   []string
+    _outerIds   []string
 }
 
 // 初始化TaobaoAlitripTravelItemElementQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelItemElementQueryRequest) GetApiParams() url.Values {
 }
 // OuterIds Setter
 // 需要查询的资源元素列表，最大列表长度为50
-func (r *TaobaoAlitripTravelItemElementQueryRequest) SetOuterIds(outerIds []string) error {
-    r.outerIds = outerIds
-    r.Set("outer_ids", outerIds)
+func (r *TaobaoAlitripTravelItemElementQueryRequest) SetOuterIds(_outerIds []string) error {
+    r._outerIds = _outerIds
+    r.Set("outer_ids", _outerIds)
     return nil
 }
 
 // OuterIds Getter
 func (r TaobaoAlitripTravelItemElementQueryRequest) GetOuterIds() []string {
-    return r.outerIds
+    return r._outerIds
 }

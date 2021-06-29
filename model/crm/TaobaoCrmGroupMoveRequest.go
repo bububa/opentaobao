@@ -15,9 +15,9 @@ taobao.crm.group.move
 type TaobaoCrmGroupMoveRequest struct {
     model.Params
     // 需要移动的分组
-    fromGroupId   int64
+    _fromGroupId   int64
     // 目的分组
-    toGroupId   int64
+    _toGroupId   int64
 }
 
 // 初始化TaobaoCrmGroupMoveRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCrmGroupMoveRequest) GetApiParams() url.Values {
 }
 // FromGroupId Setter
 // 需要移动的分组
-func (r *TaobaoCrmGroupMoveRequest) SetFromGroupId(fromGroupId int64) error {
-    r.fromGroupId = fromGroupId
-    r.Set("from_group_id", fromGroupId)
+func (r *TaobaoCrmGroupMoveRequest) SetFromGroupId(_fromGroupId int64) error {
+    r._fromGroupId = _fromGroupId
+    r.Set("from_group_id", _fromGroupId)
     return nil
 }
 
 // FromGroupId Getter
 func (r TaobaoCrmGroupMoveRequest) GetFromGroupId() int64 {
-    return r.fromGroupId
+    return r._fromGroupId
 }
 // ToGroupId Setter
 // 目的分组
-func (r *TaobaoCrmGroupMoveRequest) SetToGroupId(toGroupId int64) error {
-    r.toGroupId = toGroupId
-    r.Set("to_group_id", toGroupId)
+func (r *TaobaoCrmGroupMoveRequest) SetToGroupId(_toGroupId int64) error {
+    r._toGroupId = _toGroupId
+    r.Set("to_group_id", _toGroupId)
     return nil
 }
 
 // ToGroupId Getter
 func (r TaobaoCrmGroupMoveRequest) GetToGroupId() int64 {
-    return r.toGroupId
+    return r._toGroupId
 }

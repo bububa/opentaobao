@@ -15,7 +15,7 @@ taobao.game.deliveryvoucher.sendgoods
 type TaobaoGameDeliveryvoucherSendgoodsRequest struct {
     model.Params
     // 发券参数
-    param0   *SendVoucherRequest
+    _param0   *SendVoucherRequest
 }
 
 // 初始化TaobaoGameDeliveryvoucherSendgoodsRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherSendgoodsRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 发券参数
-func (r *TaobaoGameDeliveryvoucherSendgoodsRequest) SetParam0(param0 *SendVoucherRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoGameDeliveryvoucherSendgoodsRequest) SetParam0(_param0 *SendVoucherRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoGameDeliveryvoucherSendgoodsRequest) GetParam0() *SendVoucherRequest {
-    return r.param0
+    return r._param0
 }

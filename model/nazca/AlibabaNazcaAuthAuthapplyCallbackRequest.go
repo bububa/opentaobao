@@ -15,7 +15,7 @@ alibaba.nazca.auth.authapply.callback
 type AlibabaNazcaAuthAuthapplyCallbackRequest struct {
     model.Params
     // 认证回调参数
-    authApplyDoneCallbackDo   *AuthApplyDoneCallBackDo
+    _authApplyDoneCallbackDo   *AuthApplyDoneCallBackDo
 }
 
 // 初始化AlibabaNazcaAuthAuthapplyCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNazcaAuthAuthapplyCallbackRequest) GetApiParams() url.Values {
 }
 // AuthApplyDoneCallbackDo Setter
 // 认证回调参数
-func (r *AlibabaNazcaAuthAuthapplyCallbackRequest) SetAuthApplyDoneCallbackDo(authApplyDoneCallbackDo *AuthApplyDoneCallBackDo) error {
-    r.authApplyDoneCallbackDo = authApplyDoneCallbackDo
-    r.Set("auth_apply_done_callback_do", authApplyDoneCallbackDo)
+func (r *AlibabaNazcaAuthAuthapplyCallbackRequest) SetAuthApplyDoneCallbackDo(_authApplyDoneCallbackDo *AuthApplyDoneCallBackDo) error {
+    r._authApplyDoneCallbackDo = _authApplyDoneCallbackDo
+    r.Set("auth_apply_done_callback_do", _authApplyDoneCallbackDo)
     return nil
 }
 
 // AuthApplyDoneCallbackDo Getter
 func (r AlibabaNazcaAuthAuthapplyCallbackRequest) GetAuthApplyDoneCallbackDo() *AuthApplyDoneCallBackDo {
-    return r.authApplyDoneCallbackDo
+    return r._authApplyDoneCallbackDo
 }

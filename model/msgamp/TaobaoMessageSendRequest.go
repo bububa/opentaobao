@@ -15,7 +15,7 @@ taobao.message.send
 type TaobaoMessageSendRequest struct {
     model.Params
     // 消息发送相关参数
-    sendMessageReq   *SendMessageReq
+    _sendMessageReq   *SendMessageReq
 }
 
 // 初始化TaobaoMessageSendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMessageSendRequest) GetApiParams() url.Values {
 }
 // SendMessageReq Setter
 // 消息发送相关参数
-func (r *TaobaoMessageSendRequest) SetSendMessageReq(sendMessageReq *SendMessageReq) error {
-    r.sendMessageReq = sendMessageReq
-    r.Set("send_message_req", sendMessageReq)
+func (r *TaobaoMessageSendRequest) SetSendMessageReq(_sendMessageReq *SendMessageReq) error {
+    r._sendMessageReq = _sendMessageReq
+    r.Set("send_message_req", _sendMessageReq)
     return nil
 }
 
 // SendMessageReq Getter
 func (r TaobaoMessageSendRequest) GetSendMessageReq() *SendMessageReq {
-    return r.sendMessageReq
+    return r._sendMessageReq
 }

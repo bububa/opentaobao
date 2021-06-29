@@ -15,7 +15,7 @@ taobao.taotv.carousel.channel.all
 type TaobaoTaotvCarouselChannelAllRequest struct {
     model.Params
     // 系统信息
-    systemInfo   string
+    _systemInfo   string
 }
 
 // 初始化TaobaoTaotvCarouselChannelAllRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTaotvCarouselChannelAllRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 系统信息
-func (r *TaobaoTaotvCarouselChannelAllRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvCarouselChannelAllRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvCarouselChannelAllRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }

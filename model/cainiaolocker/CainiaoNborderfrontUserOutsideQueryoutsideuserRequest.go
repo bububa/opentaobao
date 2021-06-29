@@ -15,9 +15,9 @@ cainiao.nborderfront.user.outside.queryoutsideuser
 type CainiaoNborderfrontUserOutsideQueryoutsideuserRequest struct {
     model.Params
     // cpcode
-    cpCode   string
+    _cpCode   string
     // cp小件员ID
-    cpUserId   string
+    _cpUserId   string
 }
 
 // 初始化CainiaoNborderfrontUserOutsideQueryoutsideuserRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) GetApiParams() ur
 }
 // CpCode Setter
 // cpcode
-func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }
 // CpUserId Setter
 // cp小件员ID
-func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) SetCpUserId(cpUserId string) error {
-    r.cpUserId = cpUserId
-    r.Set("cp_user_id", cpUserId)
+func (r *CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) SetCpUserId(_cpUserId string) error {
+    r._cpUserId = _cpUserId
+    r.Set("cp_user_id", _cpUserId)
     return nil
 }
 
 // CpUserId Getter
 func (r CainiaoNborderfrontUserOutsideQueryoutsideuserRequest) GetCpUserId() string {
-    return r.cpUserId
+    return r._cpUserId
 }

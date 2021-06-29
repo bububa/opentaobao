@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.qryrule
 type AlibabaAlscCrmRechargeQryruleRequest struct {
     model.Params
     // 请求对象
-    paramPullRechargeRuleByShopReq   *PullRechargeRuleByShopReq
+    _paramPullRechargeRuleByShopReq   *PullRechargeRuleByShopReq
 }
 
 // 初始化AlibabaAlscCrmRechargeQryruleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeQryruleRequest) GetApiParams() url.Values {
 }
 // ParamPullRechargeRuleByShopReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmRechargeQryruleRequest) SetParamPullRechargeRuleByShopReq(paramPullRechargeRuleByShopReq *PullRechargeRuleByShopReq) error {
-    r.paramPullRechargeRuleByShopReq = paramPullRechargeRuleByShopReq
-    r.Set("param_pull_recharge_rule_by_shop_req", paramPullRechargeRuleByShopReq)
+func (r *AlibabaAlscCrmRechargeQryruleRequest) SetParamPullRechargeRuleByShopReq(_paramPullRechargeRuleByShopReq *PullRechargeRuleByShopReq) error {
+    r._paramPullRechargeRuleByShopReq = _paramPullRechargeRuleByShopReq
+    r.Set("param_pull_recharge_rule_by_shop_req", _paramPullRechargeRuleByShopReq)
     return nil
 }
 
 // ParamPullRechargeRuleByShopReq Getter
 func (r AlibabaAlscCrmRechargeQryruleRequest) GetParamPullRechargeRuleByShopReq() *PullRechargeRuleByShopReq {
-    return r.paramPullRechargeRuleByShopReq
+    return r._paramPullRechargeRuleByShopReq
 }

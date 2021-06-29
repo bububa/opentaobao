@@ -17,7 +17,7 @@ tmall.nrt.simpleitem.query
 type TmallNrtSimpleitemQueryRequest struct {
     model.Params
     // 商品编码数组
-    ids   []int64
+    _ids   []int64
 }
 
 // 初始化TmallNrtSimpleitemQueryRequest对象
@@ -42,13 +42,13 @@ func (r TmallNrtSimpleitemQueryRequest) GetApiParams() url.Values {
 }
 // Ids Setter
 // 商品编码数组
-func (r *TmallNrtSimpleitemQueryRequest) SetIds(ids []int64) error {
-    r.ids = ids
-    r.Set("ids", ids)
+func (r *TmallNrtSimpleitemQueryRequest) SetIds(_ids []int64) error {
+    r._ids = _ids
+    r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
 func (r TmallNrtSimpleitemQueryRequest) GetIds() []int64 {
-    return r.ids
+    return r._ids
 }

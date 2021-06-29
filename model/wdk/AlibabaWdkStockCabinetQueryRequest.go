@@ -15,7 +15,7 @@ alibaba.wdk.stock.cabinet.query
 type AlibabaWdkStockCabinetQueryRequest struct {
     model.Params
     // 系统自动生成
-    query   *WmsInventoryTopQuery
+    _query   *WmsInventoryTopQuery
 }
 
 // 初始化AlibabaWdkStockCabinetQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkStockCabinetQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 系统自动生成
-func (r *AlibabaWdkStockCabinetQueryRequest) SetQuery(query *WmsInventoryTopQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaWdkStockCabinetQueryRequest) SetQuery(_query *WmsInventoryTopQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaWdkStockCabinetQueryRequest) GetQuery() *WmsInventoryTopQuery {
-    return r.query
+    return r._query
 }

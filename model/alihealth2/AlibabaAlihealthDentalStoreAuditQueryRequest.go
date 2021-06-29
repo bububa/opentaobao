@@ -15,7 +15,7 @@ ISV查询门店审核状态
 type AlibabaAlihealthDentalStoreAuditQueryRequest struct {
     model.Params
     // 审核ID列表
-    storeAuditIds   []int64
+    _storeAuditIds   []int64
 }
 
 // 初始化AlibabaAlihealthDentalStoreAuditQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalStoreAuditQueryRequest) GetApiParams() url.Values 
 }
 // StoreAuditIds Setter
 // 审核ID列表
-func (r *AlibabaAlihealthDentalStoreAuditQueryRequest) SetStoreAuditIds(storeAuditIds []int64) error {
-    r.storeAuditIds = storeAuditIds
-    r.Set("store_audit_ids", storeAuditIds)
+func (r *AlibabaAlihealthDentalStoreAuditQueryRequest) SetStoreAuditIds(_storeAuditIds []int64) error {
+    r._storeAuditIds = _storeAuditIds
+    r.Set("store_audit_ids", _storeAuditIds)
     return nil
 }
 
 // StoreAuditIds Getter
 func (r AlibabaAlihealthDentalStoreAuditQueryRequest) GetStoreAuditIds() []int64 {
-    return r.storeAuditIds
+    return r._storeAuditIds
 }

@@ -15,11 +15,11 @@ taobao.smartstore.device.status.feedback
 type TaobaoSmartstoreDeviceStatusFeedbackRequest struct {
     model.Params
     // ONLINE_WITH_CONTENT("ONLINE_WITH_CONTENT", "设备在线"), OFFLINE("OFFLINE", "设备断线");
-    status   string
+    _status   string
     // 设备编码
-    deviceCode   string
+    _deviceCode   string
     // 当前状态的时间
-    statusTime   string
+    _statusTime   string
 }
 
 // 初始化TaobaoSmartstoreDeviceStatusFeedbackRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSmartstoreDeviceStatusFeedbackRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // ONLINE_WITH_CONTENT("ONLINE_WITH_CONTENT", "设备在线"), OFFLINE("OFFLINE", "设备断线");
-func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // DeviceCode Setter
 // 设备编码
-func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // StatusTime Setter
 // 当前状态的时间
-func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetStatusTime(statusTime string) error {
-    r.statusTime = statusTime
-    r.Set("status_time", statusTime)
+func (r *TaobaoSmartstoreDeviceStatusFeedbackRequest) SetStatusTime(_statusTime string) error {
+    r._statusTime = _statusTime
+    r.Set("status_time", _statusTime)
     return nil
 }
 
 // StatusTime Getter
 func (r TaobaoSmartstoreDeviceStatusFeedbackRequest) GetStatusTime() string {
-    return r.statusTime
+    return r._statusTime
 }

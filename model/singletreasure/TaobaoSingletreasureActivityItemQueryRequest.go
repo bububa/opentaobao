@@ -15,11 +15,11 @@ taobao.singletreasure.activity.item.query
 type TaobaoSingletreasureActivityItemQueryRequest struct {
     model.Params
     // 活动Id
-    activityId   int64
+    _activityId   int64
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNumber   int64
+    _pageNumber   int64
 }
 
 // 初始化TaobaoSingletreasureActivityItemQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSingletreasureActivityItemQueryRequest) GetApiParams() url.Values 
 }
 // ActivityId Setter
 // 活动Id
-func (r *TaobaoSingletreasureActivityItemQueryRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoSingletreasureActivityItemQueryRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoSingletreasureActivityItemQueryRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // PageSize Setter
 // 页大小
-func (r *TaobaoSingletreasureActivityItemQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSingletreasureActivityItemQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSingletreasureActivityItemQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNumber Setter
 // 页码
-func (r *TaobaoSingletreasureActivityItemQueryRequest) SetPageNumber(pageNumber int64) error {
-    r.pageNumber = pageNumber
-    r.Set("page_number", pageNumber)
+func (r *TaobaoSingletreasureActivityItemQueryRequest) SetPageNumber(_pageNumber int64) error {
+    r._pageNumber = _pageNumber
+    r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
 func (r TaobaoSingletreasureActivityItemQueryRequest) GetPageNumber() int64 {
-    return r.pageNumber
+    return r._pageNumber
 }

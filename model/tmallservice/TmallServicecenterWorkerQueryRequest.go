@@ -15,7 +15,7 @@ tmall.servicecenter.worker.query
 type TmallServicecenterWorkerQueryRequest struct {
     model.Params
     // 身份证号
-    identityId   string
+    _identityId   string
 }
 
 // 初始化TmallServicecenterWorkerQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerQueryRequest) GetApiParams() url.Values {
 }
 // IdentityId Setter
 // 身份证号
-func (r *TmallServicecenterWorkerQueryRequest) SetIdentityId(identityId string) error {
-    r.identityId = identityId
-    r.Set("identity_id", identityId)
+func (r *TmallServicecenterWorkerQueryRequest) SetIdentityId(_identityId string) error {
+    r._identityId = _identityId
+    r.Set("identity_id", _identityId)
     return nil
 }
 
 // IdentityId Getter
 func (r TmallServicecenterWorkerQueryRequest) GetIdentityId() string {
-    return r.identityId
+    return r._identityId
 }

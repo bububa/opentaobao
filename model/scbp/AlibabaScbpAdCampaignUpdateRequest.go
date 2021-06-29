@@ -15,9 +15,9 @@ alibaba.scbp.ad.campaign.update
 type AlibabaScbpAdCampaignUpdateRequest struct {
     model.Params
     // 修改数据
-    campaignOperation   *CampaignOperationDto
+    _campaignOperation   *CampaignOperationDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdCampaignUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdCampaignUpdateRequest) GetApiParams() url.Values {
 }
 // CampaignOperation Setter
 // 修改数据
-func (r *AlibabaScbpAdCampaignUpdateRequest) SetCampaignOperation(campaignOperation *CampaignOperationDto) error {
-    r.campaignOperation = campaignOperation
-    r.Set("campaign_operation", campaignOperation)
+func (r *AlibabaScbpAdCampaignUpdateRequest) SetCampaignOperation(_campaignOperation *CampaignOperationDto) error {
+    r._campaignOperation = _campaignOperation
+    r.Set("campaign_operation", _campaignOperation)
     return nil
 }
 
 // CampaignOperation Getter
 func (r AlibabaScbpAdCampaignUpdateRequest) GetCampaignOperation() *CampaignOperationDto {
-    return r.campaignOperation
+    return r._campaignOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignUpdateRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdCampaignUpdateRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdCampaignUpdateRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

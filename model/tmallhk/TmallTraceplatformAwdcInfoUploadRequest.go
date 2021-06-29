@@ -15,7 +15,7 @@ tmall.traceplatform.awdc.info.upload
 type TmallTraceplatformAwdcInfoUploadRequest struct {
     model.Params
     // 入参traceInfo
-    traceInfo   *AwdcInfo
+    _traceInfo   *AwdcInfo
 }
 
 // 初始化TmallTraceplatformAwdcInfoUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallTraceplatformAwdcInfoUploadRequest) GetApiParams() url.Values {
 }
 // TraceInfo Setter
 // 入参traceInfo
-func (r *TmallTraceplatformAwdcInfoUploadRequest) SetTraceInfo(traceInfo *AwdcInfo) error {
-    r.traceInfo = traceInfo
-    r.Set("trace_info", traceInfo)
+func (r *TmallTraceplatformAwdcInfoUploadRequest) SetTraceInfo(_traceInfo *AwdcInfo) error {
+    r._traceInfo = _traceInfo
+    r.Set("trace_info", _traceInfo)
     return nil
 }
 
 // TraceInfo Getter
 func (r TmallTraceplatformAwdcInfoUploadRequest) GetTraceInfo() *AwdcInfo {
-    return r.traceInfo
+    return r._traceInfo
 }

@@ -15,7 +15,7 @@ alibaba.scbp.account.status.update
 type AlibabaScbpAccountStatusUpdateRequest struct {
     model.Params
     // on:开启,off:暂停
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaScbpAccountStatusUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAccountStatusUpdateRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // on:开启,off:暂停
-func (r *AlibabaScbpAccountStatusUpdateRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaScbpAccountStatusUpdateRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaScbpAccountStatusUpdateRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

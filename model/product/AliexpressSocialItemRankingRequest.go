@@ -15,17 +15,17 @@ aliexpress.social.item.ranking
 type AliexpressSocialItemRankingRequest struct {
     model.Params
     // 币种
-    currency   string
+    _currency   string
     // 国家列表
-    countryList   []string
+    _countryList   []string
     // locale，格式为language+"_"+country
-    locale   string
+    _locale   string
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 类目ID
-    cateId   int64
+    _cateId   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AliexpressSocialItemRankingRequest对象
@@ -50,73 +50,73 @@ func (r AliexpressSocialItemRankingRequest) GetApiParams() url.Values {
 }
 // Currency Setter
 // 币种
-func (r *AliexpressSocialItemRankingRequest) SetCurrency(currency string) error {
-    r.currency = currency
-    r.Set("currency", currency)
+func (r *AliexpressSocialItemRankingRequest) SetCurrency(_currency string) error {
+    r._currency = _currency
+    r.Set("currency", _currency)
     return nil
 }
 
 // Currency Getter
 func (r AliexpressSocialItemRankingRequest) GetCurrency() string {
-    return r.currency
+    return r._currency
 }
 // CountryList Setter
 // 国家列表
-func (r *AliexpressSocialItemRankingRequest) SetCountryList(countryList []string) error {
-    r.countryList = countryList
-    r.Set("country_list", countryList)
+func (r *AliexpressSocialItemRankingRequest) SetCountryList(_countryList []string) error {
+    r._countryList = _countryList
+    r.Set("country_list", _countryList)
     return nil
 }
 
 // CountryList Getter
 func (r AliexpressSocialItemRankingRequest) GetCountryList() []string {
-    return r.countryList
+    return r._countryList
 }
 // Locale Setter
 // locale，格式为language+"_"+country
-func (r *AliexpressSocialItemRankingRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *AliexpressSocialItemRankingRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r AliexpressSocialItemRankingRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }
 // PageNo Setter
 // 页码
-func (r *AliexpressSocialItemRankingRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AliexpressSocialItemRankingRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AliexpressSocialItemRankingRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // CateId Setter
 // 类目ID
-func (r *AliexpressSocialItemRankingRequest) SetCateId(cateId int64) error {
-    r.cateId = cateId
-    r.Set("cate_id", cateId)
+func (r *AliexpressSocialItemRankingRequest) SetCateId(_cateId int64) error {
+    r._cateId = _cateId
+    r.Set("cate_id", _cateId)
     return nil
 }
 
 // CateId Getter
 func (r AliexpressSocialItemRankingRequest) GetCateId() int64 {
-    return r.cateId
+    return r._cateId
 }
 // PageSize Setter
 // 每页条数
-func (r *AliexpressSocialItemRankingRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AliexpressSocialItemRankingRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AliexpressSocialItemRankingRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

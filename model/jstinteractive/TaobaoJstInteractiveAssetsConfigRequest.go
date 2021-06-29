@@ -15,9 +15,9 @@ taobao.jst.interactive.assets.config
 type TaobaoJstInteractiveAssetsConfigRequest struct {
     model.Params
     // []
-    assetsConfigList   []AssetsConfig
+    _assetsConfigList   []AssetsConfig
     // 小程序id
-    miniAppId   string
+    _miniAppId   string
 }
 
 // 初始化TaobaoJstInteractiveAssetsConfigRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstInteractiveAssetsConfigRequest) GetApiParams() url.Values {
 }
 // AssetsConfigList Setter
 // []
-func (r *TaobaoJstInteractiveAssetsConfigRequest) SetAssetsConfigList(assetsConfigList []AssetsConfig) error {
-    r.assetsConfigList = assetsConfigList
-    r.Set("assets_config_list", assetsConfigList)
+func (r *TaobaoJstInteractiveAssetsConfigRequest) SetAssetsConfigList(_assetsConfigList []AssetsConfig) error {
+    r._assetsConfigList = _assetsConfigList
+    r.Set("assets_config_list", _assetsConfigList)
     return nil
 }
 
 // AssetsConfigList Getter
 func (r TaobaoJstInteractiveAssetsConfigRequest) GetAssetsConfigList() []AssetsConfig {
-    return r.assetsConfigList
+    return r._assetsConfigList
 }
 // MiniAppId Setter
 // 小程序id
-func (r *TaobaoJstInteractiveAssetsConfigRequest) SetMiniAppId(miniAppId string) error {
-    r.miniAppId = miniAppId
-    r.Set("mini_app_id", miniAppId)
+func (r *TaobaoJstInteractiveAssetsConfigRequest) SetMiniAppId(_miniAppId string) error {
+    r._miniAppId = _miniAppId
+    r.Set("mini_app_id", _miniAppId)
     return nil
 }
 
 // MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsConfigRequest) GetMiniAppId() string {
-    return r.miniAppId
+    return r._miniAppId
 }

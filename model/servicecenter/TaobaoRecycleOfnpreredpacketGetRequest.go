@@ -15,7 +15,7 @@ taobao.recycle.ofnpreredpacket.get
 type TaobaoRecycleOfnpreredpacketGetRequest struct {
     model.Params
     // 旧机单id
-    oldOrderId   int64
+    _oldOrderId   int64
 }
 
 // 初始化TaobaoRecycleOfnpreredpacketGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRecycleOfnpreredpacketGetRequest) GetApiParams() url.Values {
 }
 // OldOrderId Setter
 // 旧机单id
-func (r *TaobaoRecycleOfnpreredpacketGetRequest) SetOldOrderId(oldOrderId int64) error {
-    r.oldOrderId = oldOrderId
-    r.Set("old_order_id", oldOrderId)
+func (r *TaobaoRecycleOfnpreredpacketGetRequest) SetOldOrderId(_oldOrderId int64) error {
+    r._oldOrderId = _oldOrderId
+    r.Set("old_order_id", _oldOrderId)
     return nil
 }
 
 // OldOrderId Getter
 func (r TaobaoRecycleOfnpreredpacketGetRequest) GetOldOrderId() int64 {
-    return r.oldOrderId
+    return r._oldOrderId
 }

@@ -15,7 +15,7 @@ taobao.tbk.dg.vegas.tlj.instance.report
 type TaobaoTbkDgVegasTljInstanceReportRequest struct {
     model.Params
     // 实例ID
-    rightsId   string
+    _rightsId   string
 }
 
 // 初始化TaobaoTbkDgVegasTljInstanceReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetApiParams() url.Values {
 }
 // RightsId Setter
 // 实例ID
-func (r *TaobaoTbkDgVegasTljInstanceReportRequest) SetRightsId(rightsId string) error {
-    r.rightsId = rightsId
-    r.Set("rights_id", rightsId)
+func (r *TaobaoTbkDgVegasTljInstanceReportRequest) SetRightsId(_rightsId string) error {
+    r._rightsId = _rightsId
+    r.Set("rights_id", _rightsId)
     return nil
 }
 
 // RightsId Getter
 func (r TaobaoTbkDgVegasTljInstanceReportRequest) GetRightsId() string {
-    return r.rightsId
+    return r._rightsId
 }

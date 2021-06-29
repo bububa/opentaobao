@@ -15,9 +15,9 @@ alibaba.wdkorder.sharestock.insurance.callback
 type AlibabaWdkorderSharestockInsuranceCallbackRequest struct {
     model.Params
     // 淘宝交易子订单ID
-    tbSubOrderId   int64
+    _tbSubOrderId   int64
     // 投保单ID
-    insuranceId   string
+    _insuranceId   string
 }
 
 // 初始化AlibabaWdkorderSharestockInsuranceCallbackRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkorderSharestockInsuranceCallbackRequest) GetApiParams() url.Va
 }
 // TbSubOrderId Setter
 // 淘宝交易子订单ID
-func (r *AlibabaWdkorderSharestockInsuranceCallbackRequest) SetTbSubOrderId(tbSubOrderId int64) error {
-    r.tbSubOrderId = tbSubOrderId
-    r.Set("tb_sub_order_id", tbSubOrderId)
+func (r *AlibabaWdkorderSharestockInsuranceCallbackRequest) SetTbSubOrderId(_tbSubOrderId int64) error {
+    r._tbSubOrderId = _tbSubOrderId
+    r.Set("tb_sub_order_id", _tbSubOrderId)
     return nil
 }
 
 // TbSubOrderId Getter
 func (r AlibabaWdkorderSharestockInsuranceCallbackRequest) GetTbSubOrderId() int64 {
-    return r.tbSubOrderId
+    return r._tbSubOrderId
 }
 // InsuranceId Setter
 // 投保单ID
-func (r *AlibabaWdkorderSharestockInsuranceCallbackRequest) SetInsuranceId(insuranceId string) error {
-    r.insuranceId = insuranceId
-    r.Set("insurance_id", insuranceId)
+func (r *AlibabaWdkorderSharestockInsuranceCallbackRequest) SetInsuranceId(_insuranceId string) error {
+    r._insuranceId = _insuranceId
+    r.Set("insurance_id", _insuranceId)
     return nil
 }
 
 // InsuranceId Getter
 func (r AlibabaWdkorderSharestockInsuranceCallbackRequest) GetInsuranceId() string {
-    return r.insuranceId
+    return r._insuranceId
 }

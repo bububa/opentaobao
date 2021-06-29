@@ -15,7 +15,7 @@ alibaba.scbp.effect.keyword.list
 type AlibabaScbpEffectKeywordListRequest struct {
     model.Params
     // IKeywordQuery
-    p4pKeywordReportQuery   *IKeywordQuery
+    _p4pKeywordReportQuery   *IKeywordQuery
 }
 
 // 初始化AlibabaScbpEffectKeywordListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpEffectKeywordListRequest) GetApiParams() url.Values {
 }
 // P4pKeywordReportQuery Setter
 // IKeywordQuery
-func (r *AlibabaScbpEffectKeywordListRequest) SetP4pKeywordReportQuery(p4pKeywordReportQuery *IKeywordQuery) error {
-    r.p4pKeywordReportQuery = p4pKeywordReportQuery
-    r.Set("p4p_keyword_report_query", p4pKeywordReportQuery)
+func (r *AlibabaScbpEffectKeywordListRequest) SetP4pKeywordReportQuery(_p4pKeywordReportQuery *IKeywordQuery) error {
+    r._p4pKeywordReportQuery = _p4pKeywordReportQuery
+    r.Set("p4p_keyword_report_query", _p4pKeywordReportQuery)
     return nil
 }
 
 // P4pKeywordReportQuery Getter
 func (r AlibabaScbpEffectKeywordListRequest) GetP4pKeywordReportQuery() *IKeywordQuery {
-    return r.p4pKeywordReportQuery
+    return r._p4pKeywordReportQuery
 }

@@ -15,7 +15,7 @@ alibaba.ascp.uop.supplier.consignorder.outofstock.callback
 type AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest struct {
     model.Params
     // 缺货回告请求模型
-    consignorderOutofstockCallbackRequest   *Consignorderoutofstockcallbackrequest
+    _consignorderOutofstockCallbackRequest   *Consignorderoutofstockcallbackrequest
 }
 
 // 初始化AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest) GetApiParam
 }
 // ConsignorderOutofstockCallbackRequest Setter
 // 缺货回告请求模型
-func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest) SetConsignorderOutofstockCallbackRequest(consignorderOutofstockCallbackRequest *Consignorderoutofstockcallbackrequest) error {
-    r.consignorderOutofstockCallbackRequest = consignorderOutofstockCallbackRequest
-    r.Set("consignorder_outofstock_callback_request", consignorderOutofstockCallbackRequest)
+func (r *AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest) SetConsignorderOutofstockCallbackRequest(_consignorderOutofstockCallbackRequest *Consignorderoutofstockcallbackrequest) error {
+    r._consignorderOutofstockCallbackRequest = _consignorderOutofstockCallbackRequest
+    r.Set("consignorder_outofstock_callback_request", _consignorderOutofstockCallbackRequest)
     return nil
 }
 
 // ConsignorderOutofstockCallbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderOutofstockCallbackRequest) GetConsignorderOutofstockCallbackRequest() *Consignorderoutofstockcallbackrequest {
-    return r.consignorderOutofstockCallbackRequest
+    return r._consignorderOutofstockCallbackRequest
 }

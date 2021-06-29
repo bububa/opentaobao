@@ -15,19 +15,19 @@ alibaba.alihealth.pregnancy.data.sync
 type AlibabaAlihealthPregnancyDataSyncRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
     // 三方id
-    outerId   int64
+    _outerId   int64
     // 4经期调整；1基础体温；2排卵试纸；3 B超测排
-    eventType   int64
+    _eventType   int64
     // 四类数据定制化详情
-    data   string
+    _data   string
     // 测量日期
-    measureDate   int64
+    _measureDate   int64
     // 0-新增 1-修改 2-删除
-    operationType   int64
+    _operationType   int64
     // 经期数据json串
-    periodMsg   string
+    _periodMsg   string
 }
 
 // 初始化AlibabaAlihealthPregnancyDataSyncRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthPregnancyDataSyncRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // OuterId Setter
 // 三方id
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOuterId(outerId int64) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOuterId(_outerId int64) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetOuterId() int64 {
-    return r.outerId
+    return r._outerId
 }
 // EventType Setter
 // 4经期调整；1基础体温；2排卵试纸；3 B超测排
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetEventType(eventType int64) error {
-    r.eventType = eventType
-    r.Set("event_type", eventType)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetEventType(_eventType int64) error {
+    r._eventType = _eventType
+    r.Set("event_type", _eventType)
     return nil
 }
 
 // EventType Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetEventType() int64 {
-    return r.eventType
+    return r._eventType
 }
 // Data Setter
 // 四类数据定制化详情
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // MeasureDate Setter
 // 测量日期
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetMeasureDate(measureDate int64) error {
-    r.measureDate = measureDate
-    r.Set("measure_date", measureDate)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetMeasureDate(_measureDate int64) error {
+    r._measureDate = _measureDate
+    r.Set("measure_date", _measureDate)
     return nil
 }
 
 // MeasureDate Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetMeasureDate() int64 {
-    return r.measureDate
+    return r._measureDate
 }
 // OperationType Setter
 // 0-新增 1-修改 2-删除
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOperationType(operationType int64) error {
-    r.operationType = operationType
-    r.Set("operation_type", operationType)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetOperationType(_operationType int64) error {
+    r._operationType = _operationType
+    r.Set("operation_type", _operationType)
     return nil
 }
 
 // OperationType Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetOperationType() int64 {
-    return r.operationType
+    return r._operationType
 }
 // PeriodMsg Setter
 // 经期数据json串
-func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetPeriodMsg(periodMsg string) error {
-    r.periodMsg = periodMsg
-    r.Set("period_msg", periodMsg)
+func (r *AlibabaAlihealthPregnancyDataSyncRequest) SetPeriodMsg(_periodMsg string) error {
+    r._periodMsg = _periodMsg
+    r.Set("period_msg", _periodMsg)
     return nil
 }
 
 // PeriodMsg Getter
 func (r AlibabaAlihealthPregnancyDataSyncRequest) GetPeriodMsg() string {
-    return r.periodMsg
+    return r._periodMsg
 }

@@ -15,7 +15,7 @@ yunos.service.cmns.coa.push
 type YunosServiceCmnsCoaPushRequest struct {
     model.Params
     // 消息结构对象
-    msgObj   *CmnsMessage
+    _msgObj   *CmnsMessage
 }
 
 // 初始化YunosServiceCmnsCoaPushRequest对象
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaPushRequest) GetApiParams() url.Values {
 }
 // MsgObj Setter
 // 消息结构对象
-func (r *YunosServiceCmnsCoaPushRequest) SetMsgObj(msgObj *CmnsMessage) error {
-    r.msgObj = msgObj
-    r.Set("msg_obj", msgObj)
+func (r *YunosServiceCmnsCoaPushRequest) SetMsgObj(_msgObj *CmnsMessage) error {
+    r._msgObj = _msgObj
+    r.Set("msg_obj", _msgObj)
     return nil
 }
 
 // MsgObj Getter
 func (r YunosServiceCmnsCoaPushRequest) GetMsgObj() *CmnsMessage {
-    return r.msgObj
+    return r._msgObj
 }

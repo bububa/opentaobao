@@ -15,9 +15,9 @@ yunos.tvpubadmin.device.brands
 type YunosTvpubadminDeviceBrandsRequest struct {
     model.Params
     // 终端类型
-    terminalType   string
+    _terminalType   string
     // 牌照方
-    license   int64
+    _license   int64
 }
 
 // 初始化YunosTvpubadminDeviceBrandsRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvpubadminDeviceBrandsRequest) GetApiParams() url.Values {
 }
 // TerminalType Setter
 // 终端类型
-func (r *YunosTvpubadminDeviceBrandsRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *YunosTvpubadminDeviceBrandsRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r YunosTvpubadminDeviceBrandsRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceBrandsRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceBrandsRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceBrandsRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }

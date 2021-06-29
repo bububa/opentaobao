@@ -15,11 +15,11 @@ cainiao.endpoint.locker.top.order.noticesend.query
 type CainiaoEndpointLockerTopOrderNoticesendQueryRequest struct {
     model.Params
     // 站点id
-    stationId   string
+    _stationId   string
     // 收件人手机号
-    getterPhone   string
+    _getterPhone   string
     // 运单号
-    mailNo   string
+    _mailNo   string
 }
 
 // 初始化CainiaoEndpointLockerTopOrderNoticesendQueryRequest对象
@@ -44,37 +44,37 @@ func (r CainiaoEndpointLockerTopOrderNoticesendQueryRequest) GetApiParams() url.
 }
 // StationId Setter
 // 站点id
-func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetStationId(stationId string) error {
-    r.stationId = stationId
-    r.Set("station_id", stationId)
+func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetStationId(_stationId string) error {
+    r._stationId = _stationId
+    r.Set("station_id", _stationId)
     return nil
 }
 
 // StationId Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryRequest) GetStationId() string {
-    return r.stationId
+    return r._stationId
 }
 // GetterPhone Setter
 // 收件人手机号
-func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetGetterPhone(getterPhone string) error {
-    r.getterPhone = getterPhone
-    r.Set("getter_phone", getterPhone)
+func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetGetterPhone(_getterPhone string) error {
+    r._getterPhone = _getterPhone
+    r.Set("getter_phone", _getterPhone)
     return nil
 }
 
 // GetterPhone Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryRequest) GetGetterPhone() string {
-    return r.getterPhone
+    return r._getterPhone
 }
 // MailNo Setter
 // 运单号
-func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetMailNo(mailNo string) error {
-    r.mailNo = mailNo
-    r.Set("mail_no", mailNo)
+func (r *CainiaoEndpointLockerTopOrderNoticesendQueryRequest) SetMailNo(_mailNo string) error {
+    r._mailNo = _mailNo
+    r.Set("mail_no", _mailNo)
     return nil
 }
 
 // MailNo Getter
 func (r CainiaoEndpointLockerTopOrderNoticesendQueryRequest) GetMailNo() string {
-    return r.mailNo
+    return r._mailNo
 }

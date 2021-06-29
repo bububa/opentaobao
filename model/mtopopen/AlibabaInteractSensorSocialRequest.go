@@ -15,7 +15,7 @@ alibaba.interact.sensor.social
 type AlibabaInteractSensorSocialRequest struct {
     model.Params
     // 系统自动生成
-    id   string
+    _id   string
 }
 
 // 初始化AlibabaInteractSensorSocialRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorSocialRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 系统自动生成
-func (r *AlibabaInteractSensorSocialRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaInteractSensorSocialRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaInteractSensorSocialRequest) GetId() string {
-    return r.id
+    return r._id
 }

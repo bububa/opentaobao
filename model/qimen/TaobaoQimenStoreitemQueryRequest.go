@@ -15,9 +15,9 @@ taobao.qimen.storeitem.query
 type TaobaoQimenStoreitemQueryRequest struct {
     model.Params
     // 当前页面
-    page   int64
+    _page   int64
     // 线上门店id
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoQimenStoreitemQueryRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQimenStoreitemQueryRequest) GetApiParams() url.Values {
 }
 // Page Setter
 // 当前页面
-func (r *TaobaoQimenStoreitemQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *TaobaoQimenStoreitemQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r TaobaoQimenStoreitemQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // StoreId Setter
 // 线上门店id
-func (r *TaobaoQimenStoreitemQueryRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoQimenStoreitemQueryRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoQimenStoreitemQueryRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

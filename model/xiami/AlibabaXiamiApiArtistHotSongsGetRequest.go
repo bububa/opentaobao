@@ -15,7 +15,7 @@ alibaba.xiami.api.artist.hotSongs.get
 type AlibabaXiamiApiArtistHotSongsGetRequest struct {
     model.Params
     // 艺人id
-    id   int64
+    _id   int64
 }
 
 // 初始化AlibabaXiamiApiArtistHotSongsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 艺人id
-func (r *AlibabaXiamiApiArtistHotSongsGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaXiamiApiArtistHotSongsGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaXiamiApiArtistHotSongsGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

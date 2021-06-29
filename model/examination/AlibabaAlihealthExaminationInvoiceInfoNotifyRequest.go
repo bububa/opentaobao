@@ -15,11 +15,11 @@ alibaba.alihealth.examination.invoice.info.notify
 type AlibabaAlihealthExaminationInvoiceInfoNotifyRequest struct {
     model.Params
     // 开票状态；（have_submit已提交、invoice_done已开票）
-    invoiceStatus   string
+    _invoiceStatus   string
     // 发票访问地址；（invoice_status在已开票状态下必填）
-    invoiceUrl   string
+    _invoiceUrl   string
     // 阿里健康预约凭证
-    reserveNumber   string
+    _reserveNumber   string
 }
 
 // 初始化AlibabaAlihealthExaminationInvoiceInfoNotifyRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) GetApiParams() url.
 }
 // InvoiceStatus Setter
 // 开票状态；（have_submit已提交、invoice_done已开票）
-func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetInvoiceStatus(invoiceStatus string) error {
-    r.invoiceStatus = invoiceStatus
-    r.Set("invoice_status", invoiceStatus)
+func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetInvoiceStatus(_invoiceStatus string) error {
+    r._invoiceStatus = _invoiceStatus
+    r.Set("invoice_status", _invoiceStatus)
     return nil
 }
 
 // InvoiceStatus Getter
 func (r AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) GetInvoiceStatus() string {
-    return r.invoiceStatus
+    return r._invoiceStatus
 }
 // InvoiceUrl Setter
 // 发票访问地址；（invoice_status在已开票状态下必填）
-func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetInvoiceUrl(invoiceUrl string) error {
-    r.invoiceUrl = invoiceUrl
-    r.Set("invoice_url", invoiceUrl)
+func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetInvoiceUrl(_invoiceUrl string) error {
+    r._invoiceUrl = _invoiceUrl
+    r.Set("invoice_url", _invoiceUrl)
     return nil
 }
 
 // InvoiceUrl Getter
 func (r AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) GetInvoiceUrl() string {
-    return r.invoiceUrl
+    return r._invoiceUrl
 }
 // ReserveNumber Setter
 // 阿里健康预约凭证
-func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetReserveNumber(reserveNumber string) error {
-    r.reserveNumber = reserveNumber
-    r.Set("reserve_number", reserveNumber)
+func (r *AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) SetReserveNumber(_reserveNumber string) error {
+    r._reserveNumber = _reserveNumber
+    r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
 func (r AlibabaAlihealthExaminationInvoiceInfoNotifyRequest) GetReserveNumber() string {
-    return r.reserveNumber
+    return r._reserveNumber
 }

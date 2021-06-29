@@ -15,7 +15,7 @@ taobao.train.agent.change.holdseat.confirm
 type TaobaoTrainAgentChangeHoldseatConfirmRequest struct {
     model.Params
     // 改签占座入参
-    changeHoldSeatParam   *ChangeHoldSeatParam
+    _changeHoldSeatParam   *ChangeHoldSeatParam
 }
 
 // 初始化TaobaoTrainAgentChangeHoldseatConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetApiParams() url.Values 
 }
 // ChangeHoldSeatParam Setter
 // 改签占座入参
-func (r *TaobaoTrainAgentChangeHoldseatConfirmRequest) SetChangeHoldSeatParam(changeHoldSeatParam *ChangeHoldSeatParam) error {
-    r.changeHoldSeatParam = changeHoldSeatParam
-    r.Set("change_hold_seat_param", changeHoldSeatParam)
+func (r *TaobaoTrainAgentChangeHoldseatConfirmRequest) SetChangeHoldSeatParam(_changeHoldSeatParam *ChangeHoldSeatParam) error {
+    r._changeHoldSeatParam = _changeHoldSeatParam
+    r.Set("change_hold_seat_param", _changeHoldSeatParam)
     return nil
 }
 
 // ChangeHoldSeatParam Getter
 func (r TaobaoTrainAgentChangeHoldseatConfirmRequest) GetChangeHoldSeatParam() *ChangeHoldSeatParam {
-    return r.changeHoldSeatParam
+    return r._changeHoldSeatParam
 }

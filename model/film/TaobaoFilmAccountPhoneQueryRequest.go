@@ -15,7 +15,7 @@ taobao.film.account.phone.query
 type TaobaoFilmAccountPhoneQueryRequest struct {
     model.Params
     // 11位手机号码
-    phone   string
+    _phone   string
 }
 
 // 初始化TaobaoFilmAccountPhoneQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFilmAccountPhoneQueryRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 11位手机号码
-func (r *TaobaoFilmAccountPhoneQueryRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *TaobaoFilmAccountPhoneQueryRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r TaobaoFilmAccountPhoneQueryRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

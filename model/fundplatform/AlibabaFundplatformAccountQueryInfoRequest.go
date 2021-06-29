@@ -15,7 +15,7 @@ alibaba.fundplatform.account.query.info
 type AlibabaFundplatformAccountQueryInfoRequest struct {
     model.Params
     // 账户ID
-    accountId   int64
+    _accountId   int64
 }
 
 // 初始化AlibabaFundplatformAccountQueryInfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformAccountQueryInfoRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 账户ID
-func (r *AlibabaFundplatformAccountQueryInfoRequest) SetAccountId(accountId int64) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaFundplatformAccountQueryInfoRequest) SetAccountId(_accountId int64) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaFundplatformAccountQueryInfoRequest) GetAccountId() int64 {
-    return r.accountId
+    return r._accountId
 }

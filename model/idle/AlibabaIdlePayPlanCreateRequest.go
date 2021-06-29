@@ -17,7 +17,7 @@ alibaba.idle.pay.plan.create
 type AlibabaIdlePayPlanCreateRequest struct {
     model.Params
     // 业务入参
-    agreementPayPlanParam   *AgreementPayPlanParam
+    _agreementPayPlanParam   *AgreementPayPlanParam
 }
 
 // 初始化AlibabaIdlePayPlanCreateRequest对象
@@ -42,13 +42,13 @@ func (r AlibabaIdlePayPlanCreateRequest) GetApiParams() url.Values {
 }
 // AgreementPayPlanParam Setter
 // 业务入参
-func (r *AlibabaIdlePayPlanCreateRequest) SetAgreementPayPlanParam(agreementPayPlanParam *AgreementPayPlanParam) error {
-    r.agreementPayPlanParam = agreementPayPlanParam
-    r.Set("agreement_pay_plan_param", agreementPayPlanParam)
+func (r *AlibabaIdlePayPlanCreateRequest) SetAgreementPayPlanParam(_agreementPayPlanParam *AgreementPayPlanParam) error {
+    r._agreementPayPlanParam = _agreementPayPlanParam
+    r.Set("agreement_pay_plan_param", _agreementPayPlanParam)
     return nil
 }
 
 // AgreementPayPlanParam Getter
 func (r AlibabaIdlePayPlanCreateRequest) GetAgreementPayPlanParam() *AgreementPayPlanParam {
-    return r.agreementPayPlanParam
+    return r._agreementPayPlanParam
 }

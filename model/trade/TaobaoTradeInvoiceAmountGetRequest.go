@@ -15,7 +15,7 @@ taobao.trade.invoice.amount.get
 type TaobaoTradeInvoiceAmountGetRequest struct {
     model.Params
     // 业务订单ID
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoTradeInvoiceAmountGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTradeInvoiceAmountGetRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 业务订单ID
-func (r *TaobaoTradeInvoiceAmountGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeInvoiceAmountGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeInvoiceAmountGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

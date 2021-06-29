@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.create
 type AlibabaAlscCrmCustomerCreateRequest struct {
     model.Params
     // 创建顾客参数
-    paramCustomerCreateOpenReq   *CustomerCreateOpenReq
+    _paramCustomerCreateOpenReq   *CustomerCreateOpenReq
 }
 
 // 初始化AlibabaAlscCrmCustomerCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerCreateRequest) GetApiParams() url.Values {
 }
 // ParamCustomerCreateOpenReq Setter
 // 创建顾客参数
-func (r *AlibabaAlscCrmCustomerCreateRequest) SetParamCustomerCreateOpenReq(paramCustomerCreateOpenReq *CustomerCreateOpenReq) error {
-    r.paramCustomerCreateOpenReq = paramCustomerCreateOpenReq
-    r.Set("param_customer_create_open_req", paramCustomerCreateOpenReq)
+func (r *AlibabaAlscCrmCustomerCreateRequest) SetParamCustomerCreateOpenReq(_paramCustomerCreateOpenReq *CustomerCreateOpenReq) error {
+    r._paramCustomerCreateOpenReq = _paramCustomerCreateOpenReq
+    r.Set("param_customer_create_open_req", _paramCustomerCreateOpenReq)
     return nil
 }
 
 // ParamCustomerCreateOpenReq Getter
 func (r AlibabaAlscCrmCustomerCreateRequest) GetParamCustomerCreateOpenReq() *CustomerCreateOpenReq {
-    return r.paramCustomerCreateOpenReq
+    return r._paramCustomerCreateOpenReq
 }

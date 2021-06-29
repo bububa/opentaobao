@@ -15,7 +15,7 @@ alibaba.retail.commission.status.change
 type AlibabaRetailCommissionStatusChangeRequest struct {
     model.Params
     // 请求参数
-    param0   *UniverseOrderVo
+    _param0   *UniverseOrderVo
 }
 
 // 初始化AlibabaRetailCommissionStatusChangeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailCommissionStatusChangeRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaRetailCommissionStatusChangeRequest) SetParam0(param0 *UniverseOrderVo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaRetailCommissionStatusChangeRequest) SetParam0(_param0 *UniverseOrderVo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaRetailCommissionStatusChangeRequest) GetParam0() *UniverseOrderVo {
-    return r.param0
+    return r._param0
 }

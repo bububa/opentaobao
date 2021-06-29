@@ -15,7 +15,7 @@ taobao.fenxiao.product.skus.get
 type TaobaoFenxiaoProductSkusGetRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TaobaoFenxiaoProductSkusGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoProductSkusGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品ID
-func (r *TaobaoFenxiaoProductSkusGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoFenxiaoProductSkusGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoFenxiaoProductSkusGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

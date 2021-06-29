@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.edit
 type YunosTvpubadminManageTopicEditRequest struct {
     model.Params
     // 待编辑专题
-    topicJson   string
+    _topicJson   string
 }
 
 // 初始化YunosTvpubadminManageTopicEditRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicEditRequest) GetApiParams() url.Values {
 }
 // TopicJson Setter
 // 待编辑专题
-func (r *YunosTvpubadminManageTopicEditRequest) SetTopicJson(topicJson string) error {
-    r.topicJson = topicJson
-    r.Set("topic_json", topicJson)
+func (r *YunosTvpubadminManageTopicEditRequest) SetTopicJson(_topicJson string) error {
+    r._topicJson = _topicJson
+    r.Set("topic_json", _topicJson)
     return nil
 }
 
 // TopicJson Getter
 func (r YunosTvpubadminManageTopicEditRequest) GetTopicJson() string {
-    return r.topicJson
+    return r._topicJson
 }

@@ -15,9 +15,9 @@ taobao.train.agent.tostation.receive
 type TaobaoTrainAgentTostationReceiveRequest struct {
     model.Params
     // 淘宝的主订单号
-    mainOrderId   int64
+    _mainOrderId   int64
     // 代理商id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化TaobaoTrainAgentTostationReceiveRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTrainAgentTostationReceiveRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 淘宝的主订单号
-func (r *TaobaoTrainAgentTostationReceiveRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoTrainAgentTostationReceiveRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoTrainAgentTostationReceiveRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentTostationReceiveRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentTostationReceiveRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentTostationReceiveRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

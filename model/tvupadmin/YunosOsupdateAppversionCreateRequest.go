@@ -15,7 +15,7 @@ yunos.osupdate.appversion.create
 type YunosOsupdateAppversionCreateRequest struct {
     model.Params
     // 应用版本信息
-    appVersion   *TvAppVersion
+    _appVersion   *TvAppVersion
 }
 
 // 初始化YunosOsupdateAppversionCreateRequest对象
@@ -40,13 +40,13 @@ func (r YunosOsupdateAppversionCreateRequest) GetApiParams() url.Values {
 }
 // AppVersion Setter
 // 应用版本信息
-func (r *YunosOsupdateAppversionCreateRequest) SetAppVersion(appVersion *TvAppVersion) error {
-    r.appVersion = appVersion
-    r.Set("app_version", appVersion)
+func (r *YunosOsupdateAppversionCreateRequest) SetAppVersion(_appVersion *TvAppVersion) error {
+    r._appVersion = _appVersion
+    r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
 func (r YunosOsupdateAppversionCreateRequest) GetAppVersion() *TvAppVersion {
-    return r.appVersion
+    return r._appVersion
 }

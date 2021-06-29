@@ -15,7 +15,7 @@ taobao.jst.sms.task.create
 type TaobaoJstSmsTaskCreateRequest struct {
     model.Params
     // 创建任务的入参
-    paramCreateSmsTaskRequest   *CreateSmsTaskRequest
+    _paramCreateSmsTaskRequest   *CreateSmsTaskRequest
 }
 
 // 初始化TaobaoJstSmsTaskCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsTaskCreateRequest) GetApiParams() url.Values {
 }
 // ParamCreateSmsTaskRequest Setter
 // 创建任务的入参
-func (r *TaobaoJstSmsTaskCreateRequest) SetParamCreateSmsTaskRequest(paramCreateSmsTaskRequest *CreateSmsTaskRequest) error {
-    r.paramCreateSmsTaskRequest = paramCreateSmsTaskRequest
-    r.Set("param_create_sms_task_request", paramCreateSmsTaskRequest)
+func (r *TaobaoJstSmsTaskCreateRequest) SetParamCreateSmsTaskRequest(_paramCreateSmsTaskRequest *CreateSmsTaskRequest) error {
+    r._paramCreateSmsTaskRequest = _paramCreateSmsTaskRequest
+    r.Set("param_create_sms_task_request", _paramCreateSmsTaskRequest)
     return nil
 }
 
 // ParamCreateSmsTaskRequest Getter
 func (r TaobaoJstSmsTaskCreateRequest) GetParamCreateSmsTaskRequest() *CreateSmsTaskRequest {
-    return r.paramCreateSmsTaskRequest
+    return r._paramCreateSmsTaskRequest
 }

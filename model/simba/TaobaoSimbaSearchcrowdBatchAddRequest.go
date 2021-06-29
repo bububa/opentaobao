@@ -15,11 +15,11 @@ taobao.simba.searchcrowd.batch.add
 type TaobaoSimbaSearchcrowdBatchAddRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
     // 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
-    adgroupTargetingTags   string
+    _adgroupTargetingTags   string
 }
 
 // 初始化TaobaoSimbaSearchcrowdBatchAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // AdgroupTargetingTags Setter
 // 新增人群信息,批量接口,入参为list,溢价(discount)范围为[105,400]
-func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupTargetingTags(adgroupTargetingTags string) error {
-    r.adgroupTargetingTags = adgroupTargetingTags
-    r.Set("adgroup_targeting_tags", adgroupTargetingTags)
+func (r *TaobaoSimbaSearchcrowdBatchAddRequest) SetAdgroupTargetingTags(_adgroupTargetingTags string) error {
+    r._adgroupTargetingTags = _adgroupTargetingTags
+    r.Set("adgroup_targeting_tags", _adgroupTargetingTags)
     return nil
 }
 
 // AdgroupTargetingTags Getter
 func (r TaobaoSimbaSearchcrowdBatchAddRequest) GetAdgroupTargetingTags() string {
-    return r.adgroupTargetingTags
+    return r._adgroupTargetingTags
 }

@@ -15,21 +15,21 @@ alibaba.alihealth.drug.kyt.listparts.byagent
 type AlibabaAlihealthDrugKytListpartsByagentRequest struct {
     model.Params
     // 企业唯一标识（货主企业）
-    refEntId   string
+    _refEntId   string
     // 企业名称
-    entName   string
+    _entName   string
     // 企业自定义编号
-    refPartnerId   string
+    _refPartnerId   string
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    page   int64
+    _page   int64
     // 开始时间
-    beginDate   string
+    _beginDate   string
     // 结束时间
-    endDate   string
+    _endDate   string
     // 代理企业唯一标识（物流企业）
-    agentRefEntId   string
+    _agentRefEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytListpartsByagentRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetApiParams() url.Value
 }
 // RefEntId Setter
 // 企业唯一标识（货主企业）
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // EntName Setter
 // 企业名称
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetEntName(entName string) error {
-    r.entName = entName
-    r.Set("ent_name", entName)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetEntName(_entName string) error {
+    r._entName = _entName
+    r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetEntName() string {
-    return r.entName
+    return r._entName
 }
 // RefPartnerId Setter
 // 企业自定义编号
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetRefPartnerId(refPartnerId string) error {
-    r.refPartnerId = refPartnerId
-    r.Set("ref_partner_id", refPartnerId)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetRefPartnerId(_refPartnerId string) error {
+    r._refPartnerId = _refPartnerId
+    r.Set("ref_partner_id", _refPartnerId)
     return nil
 }
 
 // RefPartnerId Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetRefPartnerId() string {
-    return r.refPartnerId
+    return r._refPartnerId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // AgentRefEntId Setter
 // 代理企业唯一标识（物流企业）
-func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetAgentRefEntId(agentRefEntId string) error {
-    r.agentRefEntId = agentRefEntId
-    r.Set("agent_ref_ent_id", agentRefEntId)
+func (r *AlibabaAlihealthDrugKytListpartsByagentRequest) SetAgentRefEntId(_agentRefEntId string) error {
+    r._agentRefEntId = _agentRefEntId
+    r.Set("agent_ref_ent_id", _agentRefEntId)
     return nil
 }
 
 // AgentRefEntId Getter
 func (r AlibabaAlihealthDrugKytListpartsByagentRequest) GetAgentRefEntId() string {
-    return r.agentRefEntId
+    return r._agentRefEntId
 }

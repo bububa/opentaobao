@@ -15,11 +15,11 @@ alibaba.wdk.marketing.open.darunfa.activity.sync
 type AlibabaWdkMarketingOpenDarunfaActivitySyncRequest struct {
     model.Params
     // 大润发活动数据
-    activityList   []DrfTxdActivityBo
+    _activityList   []DrfTxdActivityBo
     // 门店Id
-    shopId   string
+    _shopId   string
     // 版本ID
-    versionId   int64
+    _versionId   int64
 }
 
 // 初始化AlibabaWdkMarketingOpenDarunfaActivitySyncRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetApiParams() url.Va
 }
 // ActivityList Setter
 // 大润发活动数据
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetActivityList(activityList []DrfTxdActivityBo) error {
-    r.activityList = activityList
-    r.Set("activity_list", activityList)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetActivityList(_activityList []DrfTxdActivityBo) error {
+    r._activityList = _activityList
+    r.Set("activity_list", _activityList)
     return nil
 }
 
 // ActivityList Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetActivityList() []DrfTxdActivityBo {
-    return r.activityList
+    return r._activityList
 }
 // ShopId Setter
 // 门店Id
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // VersionId Setter
 // 版本ID
-func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetVersionId(versionId int64) error {
-    r.versionId = versionId
-    r.Set("version_id", versionId)
+func (r *AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) SetVersionId(_versionId int64) error {
+    r._versionId = _versionId
+    r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
 func (r AlibabaWdkMarketingOpenDarunfaActivitySyncRequest) GetVersionId() int64 {
-    return r.versionId
+    return r._versionId
 }

@@ -15,7 +15,7 @@ alibaba.retail.commission.result.query
 type AlibabaRetailCommissionResultQueryRequest struct {
     model.Params
     // 请求参数
-    param0   *CommissionResultQuery
+    _param0   *CommissionResultQuery
 }
 
 // 初始化AlibabaRetailCommissionResultQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailCommissionResultQueryRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaRetailCommissionResultQueryRequest) SetParam0(param0 *CommissionResultQuery) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaRetailCommissionResultQueryRequest) SetParam0(_param0 *CommissionResultQuery) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaRetailCommissionResultQueryRequest) GetParam0() *CommissionResultQuery {
-    return r.param0
+    return r._param0
 }

@@ -15,9 +15,9 @@ taobao.alitrip.it.policy.add
 type TaobaoAlitripItPolicyAddRequest struct {
     model.Params
     // 扩展字段
-    extendAttributes   string
+    _extendAttributes   string
     // 国际机票销售规则
-    topPolicyDo   *TopPolicyDo
+    _topPolicyDo   *TopPolicyDo
 }
 
 // 初始化TaobaoAlitripItPolicyAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripItPolicyAddRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // 扩展字段
-func (r *TaobaoAlitripItPolicyAddRequest) SetExtendAttributes(extendAttributes string) error {
-    r.extendAttributes = extendAttributes
-    r.Set("extend_attributes", extendAttributes)
+func (r *TaobaoAlitripItPolicyAddRequest) SetExtendAttributes(_extendAttributes string) error {
+    r._extendAttributes = _extendAttributes
+    r.Set("extend_attributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyAddRequest) GetExtendAttributes() string {
-    return r.extendAttributes
+    return r._extendAttributes
 }
 // TopPolicyDo Setter
 // 国际机票销售规则
-func (r *TaobaoAlitripItPolicyAddRequest) SetTopPolicyDo(topPolicyDo *TopPolicyDo) error {
-    r.topPolicyDo = topPolicyDo
-    r.Set("top_policy_do", topPolicyDo)
+func (r *TaobaoAlitripItPolicyAddRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDo) error {
+    r._topPolicyDo = _topPolicyDo
+    r.Set("top_policy_do", _topPolicyDo)
     return nil
 }
 
 // TopPolicyDo Getter
 func (r TaobaoAlitripItPolicyAddRequest) GetTopPolicyDo() *TopPolicyDo {
-    return r.topPolicyDo
+    return r._topPolicyDo
 }

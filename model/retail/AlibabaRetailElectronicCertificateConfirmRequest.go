@@ -15,11 +15,11 @@ alibaba.retail.electronic.certificate.confirm
 type AlibabaRetailElectronicCertificateConfirmRequest struct {
     model.Params
     // 核销码
-    code   int64
+    _code   int64
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 设备ID
-    deviceId   string
+    _deviceId   string
 }
 
 // 初始化AlibabaRetailElectronicCertificateConfirmRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaRetailElectronicCertificateConfirmRequest) GetApiParams() url.Val
 }
 // Code Setter
 // 核销码
-func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetCode(code int64) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetCode(_code int64) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaRetailElectronicCertificateConfirmRequest) GetCode() int64 {
-    return r.code
+    return r._code
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaRetailElectronicCertificateConfirmRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // DeviceId Setter
 // 设备ID
-func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AlibabaRetailElectronicCertificateConfirmRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AlibabaRetailElectronicCertificateConfirmRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }

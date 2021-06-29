@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.get
 type AlibabaAlscCrmCustomerGetRequest struct {
     model.Params
     // 顾客详情查询条件
-    paramCustomerIdQueryOpenReq   *CustomerIdQueryOpenReq
+    _paramCustomerIdQueryOpenReq   *CustomerIdQueryOpenReq
 }
 
 // 初始化AlibabaAlscCrmCustomerGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerGetRequest) GetApiParams() url.Values {
 }
 // ParamCustomerIdQueryOpenReq Setter
 // 顾客详情查询条件
-func (r *AlibabaAlscCrmCustomerGetRequest) SetParamCustomerIdQueryOpenReq(paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
-    r.paramCustomerIdQueryOpenReq = paramCustomerIdQueryOpenReq
-    r.Set("param_customer_id_query_open_req", paramCustomerIdQueryOpenReq)
+func (r *AlibabaAlscCrmCustomerGetRequest) SetParamCustomerIdQueryOpenReq(_paramCustomerIdQueryOpenReq *CustomerIdQueryOpenReq) error {
+    r._paramCustomerIdQueryOpenReq = _paramCustomerIdQueryOpenReq
+    r.Set("param_customer_id_query_open_req", _paramCustomerIdQueryOpenReq)
     return nil
 }
 
 // ParamCustomerIdQueryOpenReq Getter
 func (r AlibabaAlscCrmCustomerGetRequest) GetParamCustomerIdQueryOpenReq() *CustomerIdQueryOpenReq {
-    return r.paramCustomerIdQueryOpenReq
+    return r._paramCustomerIdQueryOpenReq
 }

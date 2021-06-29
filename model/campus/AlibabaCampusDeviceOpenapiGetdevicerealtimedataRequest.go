@@ -15,11 +15,11 @@ alibaba.campus.device.openapi.getdevicerealtimedata
 type AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest struct {
     model.Params
     // 请求端信息
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // 设备uuid
-    uuid   string
+    _uuid   string
     // 参数code,如灯亮度参数为brightness;参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’[根据设备类型查看该设备所拥有的采集类参数]。
-    propertyCode   string
+    _propertyCode   string
 }
 
 // 初始化AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) GetApiParams() u
 }
 // WorkBenchContext Setter
 // 请求端信息
-func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // Uuid Setter
 // 设备uuid
-func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // PropertyCode Setter
 // 参数code,如灯亮度参数为brightness;参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’[根据设备类型查看该设备所拥有的采集类参数]。
-func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetPropertyCode(propertyCode string) error {
-    r.propertyCode = propertyCode
-    r.Set("property_code", propertyCode)
+func (r *AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) SetPropertyCode(_propertyCode string) error {
+    r._propertyCode = _propertyCode
+    r.Set("property_code", _propertyCode)
     return nil
 }
 
 // PropertyCode Getter
 func (r AlibabaCampusDeviceOpenapiGetdevicerealtimedataRequest) GetPropertyCode() string {
-    return r.propertyCode
+    return r._propertyCode
 }

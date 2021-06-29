@@ -18,21 +18,21 @@ taobao.wlb.imports.general.consign
 type TaobaoWlbImportsGeneralConsignRequest struct {
     model.Params
     // 交易订单id
-    tradeOrderId   int64
+    _tradeOrderId   int64
     // 物流资源ID
-    resourceId   int64
+    _resourceId   int64
     // 仓库编码
-    storeCode   string
+    _storeCode   string
     // 第1段物流承运商
-    firstLogistics   string
+    _firstLogistics   string
     // 第1段物流运单号
-    firstWaybillno   string
+    _firstWaybillno   string
     // 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
-    senderId   int64
+    _senderId   int64
     // 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
-    cancelId   int64
+    _cancelId   int64
     // 增值服务编码.多个以逗号分隔
-    vasCode   string
+    _vasCode   string
 }
 
 // 初始化TaobaoWlbImportsGeneralConsignRequest对象
@@ -57,97 +57,97 @@ func (r TaobaoWlbImportsGeneralConsignRequest) GetApiParams() url.Values {
 }
 // TradeOrderId Setter
 // 交易订单id
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetTradeOrderId(tradeOrderId int64) error {
-    r.tradeOrderId = tradeOrderId
-    r.Set("trade_order_id", tradeOrderId)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetTradeOrderId(_tradeOrderId int64) error {
+    r._tradeOrderId = _tradeOrderId
+    r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetTradeOrderId() int64 {
-    return r.tradeOrderId
+    return r._tradeOrderId
 }
 // ResourceId Setter
 // 物流资源ID
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetResourceId(resourceId int64) error {
-    r.resourceId = resourceId
-    r.Set("resource_id", resourceId)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetResourceId(_resourceId int64) error {
+    r._resourceId = _resourceId
+    r.Set("resource_id", _resourceId)
     return nil
 }
 
 // ResourceId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetResourceId() int64 {
-    return r.resourceId
+    return r._resourceId
 }
 // StoreCode Setter
 // 仓库编码
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // FirstLogistics Setter
 // 第1段物流承运商
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstLogistics(firstLogistics string) error {
-    r.firstLogistics = firstLogistics
-    r.Set("first_logistics", firstLogistics)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstLogistics(_firstLogistics string) error {
+    r._firstLogistics = _firstLogistics
+    r.Set("first_logistics", _firstLogistics)
     return nil
 }
 
 // FirstLogistics Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetFirstLogistics() string {
-    return r.firstLogistics
+    return r._firstLogistics
 }
 // FirstWaybillno Setter
 // 第1段物流运单号
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstWaybillno(firstWaybillno string) error {
-    r.firstWaybillno = firstWaybillno
-    r.Set("first_waybillno", firstWaybillno)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstWaybillno(_firstWaybillno string) error {
+    r._firstWaybillno = _firstWaybillno
+    r.Set("first_waybillno", _firstWaybillno)
     return nil
 }
 
 // FirstWaybillno Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetFirstWaybillno() string {
-    return r.firstWaybillno
+    return r._firstWaybillno
 }
 // SenderId Setter
 // 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetSenderId(senderId int64) error {
-    r.senderId = senderId
-    r.Set("sender_id", senderId)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetSenderId(_senderId int64) error {
+    r._senderId = _senderId
+    r.Set("sender_id", _senderId)
     return nil
 }
 
 // SenderId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetSenderId() int64 {
-    return r.senderId
+    return r._senderId
 }
 // CancelId Setter
 // 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetCancelId(cancelId int64) error {
-    r.cancelId = cancelId
-    r.Set("cancel_id", cancelId)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetCancelId(_cancelId int64) error {
+    r._cancelId = _cancelId
+    r.Set("cancel_id", _cancelId)
     return nil
 }
 
 // CancelId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetCancelId() int64 {
-    return r.cancelId
+    return r._cancelId
 }
 // VasCode Setter
 // 增值服务编码.多个以逗号分隔
-func (r *TaobaoWlbImportsGeneralConsignRequest) SetVasCode(vasCode string) error {
-    r.vasCode = vasCode
-    r.Set("vas_code", vasCode)
+func (r *TaobaoWlbImportsGeneralConsignRequest) SetVasCode(_vasCode string) error {
+    r._vasCode = _vasCode
+    r.Set("vas_code", _vasCode)
     return nil
 }
 
 // VasCode Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetVasCode() string {
-    return r.vasCode
+    return r._vasCode
 }

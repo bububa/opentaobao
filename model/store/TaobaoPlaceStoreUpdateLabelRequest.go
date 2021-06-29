@@ -15,13 +15,13 @@ taobao.place.store.update.label
 type TaobaoPlaceStoreUpdateLabelRequest struct {
     model.Params
     // 门店id
-    storeId   int64
+    _storeId   int64
     // 标签id
-    labelIdList   []int64
+    _labelIdList   []int64
     // 行业code
-    businessCode   string
+    _businessCode   string
     // 标签类型
-    labelType   string
+    _labelType   string
 }
 
 // 初始化TaobaoPlaceStoreUpdateLabelRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoPlaceStoreUpdateLabelRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店id
-func (r *TaobaoPlaceStoreUpdateLabelRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStoreUpdateLabelRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStoreUpdateLabelRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // LabelIdList Setter
 // 标签id
-func (r *TaobaoPlaceStoreUpdateLabelRequest) SetLabelIdList(labelIdList []int64) error {
-    r.labelIdList = labelIdList
-    r.Set("label_id_list", labelIdList)
+func (r *TaobaoPlaceStoreUpdateLabelRequest) SetLabelIdList(_labelIdList []int64) error {
+    r._labelIdList = _labelIdList
+    r.Set("label_id_list", _labelIdList)
     return nil
 }
 
 // LabelIdList Getter
 func (r TaobaoPlaceStoreUpdateLabelRequest) GetLabelIdList() []int64 {
-    return r.labelIdList
+    return r._labelIdList
 }
 // BusinessCode Setter
 // 行业code
-func (r *TaobaoPlaceStoreUpdateLabelRequest) SetBusinessCode(businessCode string) error {
-    r.businessCode = businessCode
-    r.Set("business_code", businessCode)
+func (r *TaobaoPlaceStoreUpdateLabelRequest) SetBusinessCode(_businessCode string) error {
+    r._businessCode = _businessCode
+    r.Set("business_code", _businessCode)
     return nil
 }
 
 // BusinessCode Getter
 func (r TaobaoPlaceStoreUpdateLabelRequest) GetBusinessCode() string {
-    return r.businessCode
+    return r._businessCode
 }
 // LabelType Setter
 // 标签类型
-func (r *TaobaoPlaceStoreUpdateLabelRequest) SetLabelType(labelType string) error {
-    r.labelType = labelType
-    r.Set("label_type", labelType)
+func (r *TaobaoPlaceStoreUpdateLabelRequest) SetLabelType(_labelType string) error {
+    r._labelType = _labelType
+    r.Set("label_type", _labelType)
     return nil
 }
 
 // LabelType Getter
 func (r TaobaoPlaceStoreUpdateLabelRequest) GetLabelType() string {
-    return r.labelType
+    return r._labelType
 }

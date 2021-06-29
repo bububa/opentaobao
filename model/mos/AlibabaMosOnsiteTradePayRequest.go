@@ -15,7 +15,7 @@ alibaba.mos.onsite.trade.pay
 type AlibabaMosOnsiteTradePayRequest struct {
     model.Params
     // 创建订单请求参数
-    onsiteTradePayRequest   *OnsiteTradePayRequest
+    _onsiteTradePayRequest   *OnsiteTradePayRequest
 }
 
 // 初始化AlibabaMosOnsiteTradePayRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosOnsiteTradePayRequest) GetApiParams() url.Values {
 }
 // OnsiteTradePayRequest Setter
 // 创建订单请求参数
-func (r *AlibabaMosOnsiteTradePayRequest) SetOnsiteTradePayRequest(onsiteTradePayRequest *OnsiteTradePayRequest) error {
-    r.onsiteTradePayRequest = onsiteTradePayRequest
-    r.Set("onsite_trade_pay_request", onsiteTradePayRequest)
+func (r *AlibabaMosOnsiteTradePayRequest) SetOnsiteTradePayRequest(_onsiteTradePayRequest *OnsiteTradePayRequest) error {
+    r._onsiteTradePayRequest = _onsiteTradePayRequest
+    r.Set("onsite_trade_pay_request", _onsiteTradePayRequest)
     return nil
 }
 
 // OnsiteTradePayRequest Getter
 func (r AlibabaMosOnsiteTradePayRequest) GetOnsiteTradePayRequest() *OnsiteTradePayRequest {
-    return r.onsiteTradePayRequest
+    return r._onsiteTradePayRequest
 }

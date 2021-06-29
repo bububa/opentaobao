@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.child.nodeitem.offline
 type YunosTvpubadminContentChildNodeitemOfflineRequest struct {
     model.Params
     // 类目内容ID
-    contentId   int64
+    _contentId   int64
 }
 
 // 初始化YunosTvpubadminContentChildNodeitemOfflineRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetApiParams() url.Va
 }
 // ContentId Setter
 // 类目内容ID
-func (r *YunosTvpubadminContentChildNodeitemOfflineRequest) SetContentId(contentId int64) error {
-    r.contentId = contentId
-    r.Set("content_id", contentId)
+func (r *YunosTvpubadminContentChildNodeitemOfflineRequest) SetContentId(_contentId int64) error {
+    r._contentId = _contentId
+    r.Set("content_id", _contentId)
     return nil
 }
 
 // ContentId Getter
 func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetContentId() int64 {
-    return r.contentId
+    return r._contentId
 }

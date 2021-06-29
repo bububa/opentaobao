@@ -15,9 +15,9 @@ alibaba.wdk.marketing.itempool.stair.additem
 type AlibabaWdkMarketingItempoolStairAdditemRequest struct {
     model.Params
     // 系统自动生成
-    param0   *ItemPoolSku
+    _param0   *ItemPoolSku
     // 系统自动生成
-    param1   *CommonActivityParam
+    _param1   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItempoolStairAdditemRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingItempoolStairAdditemRequest) GetApiParams() url.Value
 }
 // Param0 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingItempoolStairAdditemRequest) SetParam0(param0 *ItemPoolSku) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingItempoolStairAdditemRequest) SetParam0(_param0 *ItemPoolSku) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingItempoolStairAdditemRequest) GetParam0() *ItemPoolSku {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaWdkMarketingItempoolStairAdditemRequest) SetParam1(param1 *CommonActivityParam) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaWdkMarketingItempoolStairAdditemRequest) SetParam1(_param1 *CommonActivityParam) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaWdkMarketingItempoolStairAdditemRequest) GetParam1() *CommonActivityParam {
-    return r.param1
+    return r._param1
 }

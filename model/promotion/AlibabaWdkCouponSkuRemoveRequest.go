@@ -15,7 +15,7 @@ alibaba.wdk.coupon.sku.remove
 type AlibabaWdkCouponSkuRemoveRequest struct {
     model.Params
     // 请求
-    paramCouponTemplateItemRequest   *CouponTemplateItemRequest
+    _paramCouponTemplateItemRequest   *CouponTemplateItemRequest
 }
 
 // 初始化AlibabaWdkCouponSkuRemoveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponSkuRemoveRequest) GetApiParams() url.Values {
 }
 // ParamCouponTemplateItemRequest Setter
 // 请求
-func (r *AlibabaWdkCouponSkuRemoveRequest) SetParamCouponTemplateItemRequest(paramCouponTemplateItemRequest *CouponTemplateItemRequest) error {
-    r.paramCouponTemplateItemRequest = paramCouponTemplateItemRequest
-    r.Set("param_coupon_template_item_request", paramCouponTemplateItemRequest)
+func (r *AlibabaWdkCouponSkuRemoveRequest) SetParamCouponTemplateItemRequest(_paramCouponTemplateItemRequest *CouponTemplateItemRequest) error {
+    r._paramCouponTemplateItemRequest = _paramCouponTemplateItemRequest
+    r.Set("param_coupon_template_item_request", _paramCouponTemplateItemRequest)
     return nil
 }
 
 // ParamCouponTemplateItemRequest Getter
 func (r AlibabaWdkCouponSkuRemoveRequest) GetParamCouponTemplateItemRequest() *CouponTemplateItemRequest {
-    return r.paramCouponTemplateItemRequest
+    return r._paramCouponTemplateItemRequest
 }

@@ -15,7 +15,7 @@ alibaba.ascp.uop.supplier.reverseorder.create
 type AlibabaAscpUopSupplierReverseorderCreateRequest struct {
     model.Params
     // 逆向销退单创建请求
-    reverseCreateRequest   *ReverseCreateRequest
+    _reverseCreateRequest   *ReverseCreateRequest
 }
 
 // 初始化AlibabaAscpUopSupplierReverseorderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierReverseorderCreateRequest) GetApiParams() url.Valu
 }
 // ReverseCreateRequest Setter
 // 逆向销退单创建请求
-func (r *AlibabaAscpUopSupplierReverseorderCreateRequest) SetReverseCreateRequest(reverseCreateRequest *ReverseCreateRequest) error {
-    r.reverseCreateRequest = reverseCreateRequest
-    r.Set("reverse_create_request", reverseCreateRequest)
+func (r *AlibabaAscpUopSupplierReverseorderCreateRequest) SetReverseCreateRequest(_reverseCreateRequest *ReverseCreateRequest) error {
+    r._reverseCreateRequest = _reverseCreateRequest
+    r.Set("reverse_create_request", _reverseCreateRequest)
     return nil
 }
 
 // ReverseCreateRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderCreateRequest) GetReverseCreateRequest() *ReverseCreateRequest {
-    return r.reverseCreateRequest
+    return r._reverseCreateRequest
 }

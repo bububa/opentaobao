@@ -15,39 +15,39 @@ alibaba.health.vaccin.notice.order.create
 type AlibabaHealthVaccinNoticeOrderCreateRequest struct {
     model.Params
     // 预约人性别(1男2女)
-    sex   int64
+    _sex   int64
     // 年龄
-    age   int64
+    _age   int64
     // 预约日期
-    reserveDate   string
+    _reserveDate   string
     // 支付宝用户id
-    alipayUserId   string
+    _alipayUserId   string
     // 外部渠道用户id
-    outerUserId   string
+    _outerUserId   string
     // 预约id
-    orderId   string
+    _orderId   string
     // 手机号码
-    mobile   string
+    _mobile   string
     // 接种人姓名
-    name   string
+    _name   string
     // 接种点地址
-    address   string
+    _address   string
     // 接种点名称
-    povStoreName   string
+    _povStoreName   string
     // 预约时间
-    reserveTime   string
+    _reserveTime   string
     // 疫苗信息
-    vaccineInfo   string
+    _vaccineInfo   string
     // 年龄类型(1-宝宝2-成人)
-    ageType   int64
+    _ageType   int64
     // 支付宝消息通知跳转订单详情链接
-    orderDetailUrl   string
+    _orderDetailUrl   string
     // 地区名字
-    area   string
+    _area   string
     // 城市名字
-    city   string
+    _city   string
     // 省份名字
-    province   string
+    _province   string
 }
 
 // 初始化AlibabaHealthVaccinNoticeOrderCreateRequest对象
@@ -72,205 +72,205 @@ func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetApiParams() url.Values {
 }
 // Sex Setter
 // 预约人性别(1男2女)
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetSex(sex int64) error {
-    r.sex = sex
-    r.Set("sex", sex)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetSex(_sex int64) error {
+    r._sex = _sex
+    r.Set("sex", _sex)
     return nil
 }
 
 // Sex Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetSex() int64 {
-    return r.sex
+    return r._sex
 }
 // Age Setter
 // 年龄
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAge(age int64) error {
-    r.age = age
-    r.Set("age", age)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAge(_age int64) error {
+    r._age = _age
+    r.Set("age", _age)
     return nil
 }
 
 // Age Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetAge() int64 {
-    return r.age
+    return r._age
 }
 // ReserveDate Setter
 // 预约日期
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetReserveDate(reserveDate string) error {
-    r.reserveDate = reserveDate
-    r.Set("reserve_date", reserveDate)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetReserveDate(_reserveDate string) error {
+    r._reserveDate = _reserveDate
+    r.Set("reserve_date", _reserveDate)
     return nil
 }
 
 // ReserveDate Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetReserveDate() string {
-    return r.reserveDate
+    return r._reserveDate
 }
 // AlipayUserId Setter
 // 支付宝用户id
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // OuterUserId Setter
 // 外部渠道用户id
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOuterUserId(outerUserId string) error {
-    r.outerUserId = outerUserId
-    r.Set("outer_user_id", outerUserId)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOuterUserId(_outerUserId string) error {
+    r._outerUserId = _outerUserId
+    r.Set("outer_user_id", _outerUserId)
     return nil
 }
 
 // OuterUserId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetOuterUserId() string {
-    return r.outerUserId
+    return r._outerUserId
 }
 // OrderId Setter
 // 预约id
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Mobile Setter
 // 手机号码
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // Name Setter
 // 接种人姓名
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Address Setter
 // 接种点地址
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // PovStoreName Setter
 // 接种点名称
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetPovStoreName(povStoreName string) error {
-    r.povStoreName = povStoreName
-    r.Set("pov_store_name", povStoreName)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetPovStoreName(_povStoreName string) error {
+    r._povStoreName = _povStoreName
+    r.Set("pov_store_name", _povStoreName)
     return nil
 }
 
 // PovStoreName Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetPovStoreName() string {
-    return r.povStoreName
+    return r._povStoreName
 }
 // ReserveTime Setter
 // 预约时间
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetReserveTime(reserveTime string) error {
-    r.reserveTime = reserveTime
-    r.Set("reserve_time", reserveTime)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetReserveTime(_reserveTime string) error {
+    r._reserveTime = _reserveTime
+    r.Set("reserve_time", _reserveTime)
     return nil
 }
 
 // ReserveTime Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetReserveTime() string {
-    return r.reserveTime
+    return r._reserveTime
 }
 // VaccineInfo Setter
 // 疫苗信息
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetVaccineInfo(vaccineInfo string) error {
-    r.vaccineInfo = vaccineInfo
-    r.Set("vaccine_info", vaccineInfo)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetVaccineInfo(_vaccineInfo string) error {
+    r._vaccineInfo = _vaccineInfo
+    r.Set("vaccine_info", _vaccineInfo)
     return nil
 }
 
 // VaccineInfo Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetVaccineInfo() string {
-    return r.vaccineInfo
+    return r._vaccineInfo
 }
 // AgeType Setter
 // 年龄类型(1-宝宝2-成人)
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAgeType(ageType int64) error {
-    r.ageType = ageType
-    r.Set("age_type", ageType)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetAgeType(_ageType int64) error {
+    r._ageType = _ageType
+    r.Set("age_type", _ageType)
     return nil
 }
 
 // AgeType Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetAgeType() int64 {
-    return r.ageType
+    return r._ageType
 }
 // OrderDetailUrl Setter
 // 支付宝消息通知跳转订单详情链接
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOrderDetailUrl(orderDetailUrl string) error {
-    r.orderDetailUrl = orderDetailUrl
-    r.Set("order_detail_url", orderDetailUrl)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetOrderDetailUrl(_orderDetailUrl string) error {
+    r._orderDetailUrl = _orderDetailUrl
+    r.Set("order_detail_url", _orderDetailUrl)
     return nil
 }
 
 // OrderDetailUrl Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetOrderDetailUrl() string {
-    return r.orderDetailUrl
+    return r._orderDetailUrl
 }
 // Area Setter
 // 地区名字
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetArea(area string) error {
-    r.area = area
-    r.Set("area", area)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetArea(_area string) error {
+    r._area = _area
+    r.Set("area", _area)
     return nil
 }
 
 // Area Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetArea() string {
-    return r.area
+    return r._area
 }
 // City Setter
 // 城市名字
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetCity(city string) error {
-    r.city = city
-    r.Set("city", city)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetCity(_city string) error {
+    r._city = _city
+    r.Set("city", _city)
     return nil
 }
 
 // City Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetCity() string {
-    return r.city
+    return r._city
 }
 // Province Setter
 // 省份名字
-func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetProvince(province string) error {
-    r.province = province
-    r.Set("province", province)
+func (r *AlibabaHealthVaccinNoticeOrderCreateRequest) SetProvince(_province string) error {
+    r._province = _province
+    r.Set("province", _province)
     return nil
 }
 
 // Province Getter
 func (r AlibabaHealthVaccinNoticeOrderCreateRequest) GetProvince() string {
-    return r.province
+    return r._province
 }

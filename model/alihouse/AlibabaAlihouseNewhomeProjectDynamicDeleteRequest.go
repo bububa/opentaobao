@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.dynamic.delete
 type AlibabaAlihouseNewhomeProjectDynamicDeleteRequest struct {
     model.Params
     // 外部动态ID
-    outerDynamicId   string
+    _outerDynamicId   string
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectDynamicDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetApiParams() url.Va
 }
 // OuterDynamicId Setter
 // 外部动态ID
-func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) SetOuterDynamicId(outerDynamicId string) error {
-    r.outerDynamicId = outerDynamicId
-    r.Set("outer_dynamic_id", outerDynamicId)
+func (r *AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) SetOuterDynamicId(_outerDynamicId string) error {
+    r._outerDynamicId = _outerDynamicId
+    r.Set("outer_dynamic_id", _outerDynamicId)
     return nil
 }
 
 // OuterDynamicId Getter
 func (r AlibabaAlihouseNewhomeProjectDynamicDeleteRequest) GetOuterDynamicId() string {
-    return r.outerDynamicId
+    return r._outerDynamicId
 }

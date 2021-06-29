@@ -15,13 +15,13 @@ taobao.rp.returngoods.refill
 type TaobaoRpReturngoodsRefillRequest struct {
     model.Params
     // 退款单编号
-    refundId   int64
+    _refundId   int64
     // 退款阶段，可选值：售中：onsale，售后：aftersale
-    refundPhase   string
+    _refundPhase   string
     // 物流公司运单号
-    logisticsWaybillNo   string
+    _logisticsWaybillNo   string
     // 物流公司编号
-    logisticsCompanyCode   string
+    _logisticsCompanyCode   string
 }
 
 // 初始化TaobaoRpReturngoodsRefillRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoRpReturngoodsRefillRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款单编号
-func (r *TaobaoRpReturngoodsRefillRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoRpReturngoodsRefillRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoRpReturngoodsRefillRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // RefundPhase Setter
 // 退款阶段，可选值：售中：onsale，售后：aftersale
-func (r *TaobaoRpReturngoodsRefillRequest) SetRefundPhase(refundPhase string) error {
-    r.refundPhase = refundPhase
-    r.Set("refund_phase", refundPhase)
+func (r *TaobaoRpReturngoodsRefillRequest) SetRefundPhase(_refundPhase string) error {
+    r._refundPhase = _refundPhase
+    r.Set("refund_phase", _refundPhase)
     return nil
 }
 
 // RefundPhase Getter
 func (r TaobaoRpReturngoodsRefillRequest) GetRefundPhase() string {
-    return r.refundPhase
+    return r._refundPhase
 }
 // LogisticsWaybillNo Setter
 // 物流公司运单号
-func (r *TaobaoRpReturngoodsRefillRequest) SetLogisticsWaybillNo(logisticsWaybillNo string) error {
-    r.logisticsWaybillNo = logisticsWaybillNo
-    r.Set("logistics_waybill_no", logisticsWaybillNo)
+func (r *TaobaoRpReturngoodsRefillRequest) SetLogisticsWaybillNo(_logisticsWaybillNo string) error {
+    r._logisticsWaybillNo = _logisticsWaybillNo
+    r.Set("logistics_waybill_no", _logisticsWaybillNo)
     return nil
 }
 
 // LogisticsWaybillNo Getter
 func (r TaobaoRpReturngoodsRefillRequest) GetLogisticsWaybillNo() string {
-    return r.logisticsWaybillNo
+    return r._logisticsWaybillNo
 }
 // LogisticsCompanyCode Setter
 // 物流公司编号
-func (r *TaobaoRpReturngoodsRefillRequest) SetLogisticsCompanyCode(logisticsCompanyCode string) error {
-    r.logisticsCompanyCode = logisticsCompanyCode
-    r.Set("logistics_company_code", logisticsCompanyCode)
+func (r *TaobaoRpReturngoodsRefillRequest) SetLogisticsCompanyCode(_logisticsCompanyCode string) error {
+    r._logisticsCompanyCode = _logisticsCompanyCode
+    r.Set("logistics_company_code", _logisticsCompanyCode)
     return nil
 }
 
 // LogisticsCompanyCode Getter
 func (r TaobaoRpReturngoodsRefillRequest) GetLogisticsCompanyCode() string {
-    return r.logisticsCompanyCode
+    return r._logisticsCompanyCode
 }

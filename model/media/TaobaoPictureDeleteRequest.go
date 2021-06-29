@@ -15,7 +15,7 @@ taobao.picture.delete
 type TaobaoPictureDeleteRequest struct {
     model.Params
     // 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
-    pictureIds   []string
+    _pictureIds   []string
 }
 
 // 初始化TaobaoPictureDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPictureDeleteRequest) GetApiParams() url.Values {
 }
 // PictureIds Setter
 // 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
-func (r *TaobaoPictureDeleteRequest) SetPictureIds(pictureIds []string) error {
-    r.pictureIds = pictureIds
-    r.Set("picture_ids", pictureIds)
+func (r *TaobaoPictureDeleteRequest) SetPictureIds(_pictureIds []string) error {
+    r._pictureIds = _pictureIds
+    r.Set("picture_ids", _pictureIds)
     return nil
 }
 
 // PictureIds Getter
 func (r TaobaoPictureDeleteRequest) GetPictureIds() []string {
-    return r.pictureIds
+    return r._pictureIds
 }

@@ -15,7 +15,7 @@ alibaba.damai.maitix.order.directrefund
 type AlibabaDamaiMaitixOrderDirectrefundRequest struct {
     model.Params
     // 退票入参
-    param   *MoaRefundAuditParam
+    _param   *MoaRefundAuditParam
 }
 
 // 初始化AlibabaDamaiMaitixOrderDirectrefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 退票入参
-func (r *AlibabaDamaiMaitixOrderDirectrefundRequest) SetParam(param *MoaRefundAuditParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixOrderDirectrefundRequest) SetParam(_param *MoaRefundAuditParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetParam() *MoaRefundAuditParam {
-    return r.param
+    return r._param
 }

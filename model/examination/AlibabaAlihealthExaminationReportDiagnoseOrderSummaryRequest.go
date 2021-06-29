@@ -15,7 +15,7 @@ alibaba.alihealth.examination.report.diagnose.order.summary
 type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest struct {
     model.Params
     // 入参对象
-    reportOrderSummaryRequest   *ReportOrderSummaryRequest
+    _reportOrderSummaryRequest   *ReportOrderSummaryRequest
 }
 
 // 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetApiPara
 }
 // ReportOrderSummaryRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) SetReportOrderSummaryRequest(reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
-    r.reportOrderSummaryRequest = reportOrderSummaryRequest
-    r.Set("report_order_summary_request", reportOrderSummaryRequest)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
+    r._reportOrderSummaryRequest = _reportOrderSummaryRequest
+    r.Set("report_order_summary_request", _reportOrderSummaryRequest)
     return nil
 }
 
 // ReportOrderSummaryRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
-    return r.reportOrderSummaryRequest
+    return r._reportOrderSummaryRequest
 }

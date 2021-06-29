@@ -15,13 +15,13 @@ taobao.fenxiao.product.quantity.update
 type TaobaoFenxiaoProductQuantityUpdateRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
     // 库存修改值。产品有sku时，与sku属性顺序对应，用,分隔。产品无sku时，只写库存值。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0
-    quantity   string
+    _quantity   string
     // 库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新。当选择全量更新时，如果库存更新值传入的是负数，会出错并返回错误码；当选择增量更新时，如果库存更新值为负数且绝对值大于当前库存，则sku库存会设置为0
-    type   int64
+    _type   int64
     // sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。
-    properties   string
+    _properties   string
 }
 
 // 初始化TaobaoFenxiaoProductQuantityUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoFenxiaoProductQuantityUpdateRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品ID
-func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoFenxiaoProductQuantityUpdateRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // Quantity Setter
 // 库存修改值。产品有sku时，与sku属性顺序对应，用,分隔。产品无sku时，只写库存值。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0
-func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetQuantity(quantity string) error {
-    r.quantity = quantity
-    r.Set("quantity", quantity)
+func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetQuantity(_quantity string) error {
+    r._quantity = _quantity
+    r.Set("quantity", _quantity)
     return nil
 }
 
 // Quantity Getter
 func (r TaobaoFenxiaoProductQuantityUpdateRequest) GetQuantity() string {
-    return r.quantity
+    return r._quantity
 }
 // Type Setter
 // 库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新。当选择全量更新时，如果库存更新值传入的是负数，会出错并返回错误码；当选择增量更新时，如果库存更新值为负数且绝对值大于当前库存，则sku库存会设置为0
-func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoFenxiaoProductQuantityUpdateRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // Properties Setter
 // sku属性值，产品有sku时填写，多个sku用,分隔。为空时默认该产品无sku，则只修改产品的库存。
-func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetProperties(properties string) error {
-    r.properties = properties
-    r.Set("properties", properties)
+func (r *TaobaoFenxiaoProductQuantityUpdateRequest) SetProperties(_properties string) error {
+    r._properties = _properties
+    r.Set("properties", _properties)
     return nil
 }
 
 // Properties Getter
 func (r TaobaoFenxiaoProductQuantityUpdateRequest) GetProperties() string {
-    return r.properties
+    return r._properties
 }

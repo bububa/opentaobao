@@ -15,11 +15,11 @@ alibaba.infodept.lassen.casestatistics.get
 type AlibabaInfodeptLassenCasestatisticsGetRequest struct {
     model.Params
     // 地区代码
-    areaCode   string
+    _areaCode   string
     // 开始时间
-    startTime   string
+    _startTime   string
     // 结束时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化AlibabaInfodeptLassenCasestatisticsGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaInfodeptLassenCasestatisticsGetRequest) GetApiParams() url.Values
 }
 // AreaCode Setter
 // 地区代码
-func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetAreaCode(areaCode string) error {
-    r.areaCode = areaCode
-    r.Set("area_code", areaCode)
+func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetAreaCode(_areaCode string) error {
+    r._areaCode = _areaCode
+    r.Set("area_code", _areaCode)
     return nil
 }
 
 // AreaCode Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetRequest) GetAreaCode() string {
-    return r.areaCode
+    return r._areaCode
 }
 // StartTime Setter
 // 开始时间
-func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 结束时间
-func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaInfodeptLassenCasestatisticsGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaInfodeptLassenCasestatisticsGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

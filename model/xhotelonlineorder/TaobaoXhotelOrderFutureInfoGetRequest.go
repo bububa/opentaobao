@@ -15,19 +15,19 @@ taobao.xhotel.order.future.info.get
 type TaobaoXhotelOrderFutureInfoGetRequest struct {
     model.Params
     // 请求流水号
-    outUuid   string
+    _outUuid   string
     // 指定淘宝订单ID。以英文分号隔开的字符串“123455666;123455666;123455666”
-    tids   string
+    _tids   string
     // 酒店编码
-    hotelCode   string
+    _hotelCode   string
     // 系统商分配的身份识别
-    vendor   string
+    _vendor   string
     // 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
-    operateType   int64
+    _operateType   int64
     // 开始时间
-    createdStart   string
+    _createdStart   string
     // 结束时间
-    createdEnd   string
+    _createdEnd   string
 }
 
 // 初始化TaobaoXhotelOrderFutureInfoGetRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoXhotelOrderFutureInfoGetRequest) GetApiParams() url.Values {
 }
 // OutUuid Setter
 // 请求流水号
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetOutUuid(outUuid string) error {
-    r.outUuid = outUuid
-    r.Set("out_uuid", outUuid)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetOutUuid(_outUuid string) error {
+    r._outUuid = _outUuid
+    r.Set("out_uuid", _outUuid)
     return nil
 }
 
 // OutUuid Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetOutUuid() string {
-    return r.outUuid
+    return r._outUuid
 }
 // Tids Setter
 // 指定淘宝订单ID。以英文分号隔开的字符串“123455666;123455666;123455666”
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetTids(tids string) error {
-    r.tids = tids
-    r.Set("tids", tids)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetTids(_tids string) error {
+    r._tids = _tids
+    r.Set("tids", _tids)
     return nil
 }
 
 // Tids Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetTids() string {
-    return r.tids
+    return r._tids
 }
 // HotelCode Setter
 // 酒店编码
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetHotelCode(hotelCode string) error {
-    r.hotelCode = hotelCode
-    r.Set("hotel_code", hotelCode)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetHotelCode(_hotelCode string) error {
+    r._hotelCode = _hotelCode
+    r.Set("hotel_code", _hotelCode)
     return nil
 }
 
 // HotelCode Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetHotelCode() string {
-    return r.hotelCode
+    return r._hotelCode
 }
 // Vendor Setter
 // 系统商分配的身份识别
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // OperateType Setter
 // 操作类型 1.在线开发票请求 3.在线选房请求 4.自助checkIn请求 13.扫脸入住身份信息请求 10.房态信息查询请求 103.通用任务取消指令
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetOperateType(operateType int64) error {
-    r.operateType = operateType
-    r.Set("operate_type", operateType)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetOperateType(_operateType int64) error {
+    r._operateType = _operateType
+    r.Set("operate_type", _operateType)
     return nil
 }
 
 // OperateType Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetOperateType() int64 {
-    return r.operateType
+    return r._operateType
 }
 // CreatedStart Setter
 // 开始时间
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetCreatedStart(createdStart string) error {
-    r.createdStart = createdStart
-    r.Set("created_start", createdStart)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetCreatedStart(_createdStart string) error {
+    r._createdStart = _createdStart
+    r.Set("created_start", _createdStart)
     return nil
 }
 
 // CreatedStart Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetCreatedStart() string {
-    return r.createdStart
+    return r._createdStart
 }
 // CreatedEnd Setter
 // 结束时间
-func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetCreatedEnd(createdEnd string) error {
-    r.createdEnd = createdEnd
-    r.Set("created_end", createdEnd)
+func (r *TaobaoXhotelOrderFutureInfoGetRequest) SetCreatedEnd(_createdEnd string) error {
+    r._createdEnd = _createdEnd
+    r.Set("created_end", _createdEnd)
     return nil
 }
 
 // CreatedEnd Getter
 func (r TaobaoXhotelOrderFutureInfoGetRequest) GetCreatedEnd() string {
-    return r.createdEnd
+    return r._createdEnd
 }

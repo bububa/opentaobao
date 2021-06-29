@@ -15,7 +15,7 @@ taobao.wangwang.abstract.getwordlist
 type TaobaoWangwangAbstractGetwordlistRequest struct {
     model.Params
     // 传入参数的字符集
-    charset   string
+    _charset   string
 }
 
 // 初始化TaobaoWangwangAbstractGetwordlistRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiParams() url.Values {
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractGetwordlistRequest) SetCharset(charset string) error {
-    r.charset = charset
-    r.Set("charset", charset)
+func (r *TaobaoWangwangAbstractGetwordlistRequest) SetCharset(_charset string) error {
+    r._charset = _charset
+    r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
 func (r TaobaoWangwangAbstractGetwordlistRequest) GetCharset() string {
-    return r.charset
+    return r._charset
 }

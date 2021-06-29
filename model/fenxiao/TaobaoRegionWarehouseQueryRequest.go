@@ -15,7 +15,7 @@ taobao.region.warehouse.query
 type TaobaoRegionWarehouseQueryRequest struct {
     model.Params
     // 仓库编码
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化TaobaoRegionWarehouseQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRegionWarehouseQueryRequest) GetApiParams() url.Values {
 }
 // StoreCode Setter
 // 仓库编码
-func (r *TaobaoRegionWarehouseQueryRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoRegionWarehouseQueryRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoRegionWarehouseQueryRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

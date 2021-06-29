@@ -15,7 +15,7 @@ isv能通过该接口上传确认单明细数据
 type TaobaoFuwuSpBillreordAddRequest struct {
     model.Params
     // 确认单的账单明细
-    paramBillRecordDTO   *BillRecordDto
+    _paramBillRecordDTO   *BillRecordDto
 }
 
 // 初始化TaobaoFuwuSpBillreordAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFuwuSpBillreordAddRequest) GetApiParams() url.Values {
 }
 // ParamBillRecordDTO Setter
 // 确认单的账单明细
-func (r *TaobaoFuwuSpBillreordAddRequest) SetParamBillRecordDTO(paramBillRecordDTO *BillRecordDto) error {
-    r.paramBillRecordDTO = paramBillRecordDTO
-    r.Set("param_bill_record_d_t_o", paramBillRecordDTO)
+func (r *TaobaoFuwuSpBillreordAddRequest) SetParamBillRecordDTO(_paramBillRecordDTO *BillRecordDto) error {
+    r._paramBillRecordDTO = _paramBillRecordDTO
+    r.Set("param_bill_record_d_t_o", _paramBillRecordDTO)
     return nil
 }
 
 // ParamBillRecordDTO Getter
 func (r TaobaoFuwuSpBillreordAddRequest) GetParamBillRecordDTO() *BillRecordDto {
-    return r.paramBillRecordDTO
+    return r._paramBillRecordDTO
 }

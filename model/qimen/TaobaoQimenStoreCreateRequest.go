@@ -15,31 +15,31 @@ isv调用接口来讲线下门店同步到线上
 type TaobaoQimenStoreCreateRequest struct {
     model.Params
     // 门店名称
-    storeName   string
+    _storeName   string
     // 门店主营类目
-    mainCategory   int64
+    _mainCategory   int64
     // 商户名称
-    companyName   string
+    _companyName   string
     // 关闭营业时间(只填时，分；只支持半点和整点)
-    endTime   string
+    _endTime   string
     // 开始营业时间(只填时，分；只支持半点和整点)
-    startTime   string
+    _startTime   string
     // 门店状态
-    storeStatus   string
+    _storeStatus   string
     // 商户介绍
-    storeDescription   string
+    _storeDescription   string
     // 地址信息
-    address   *Address
+    _address   *Address
     // 需要关联的线上店铺ID
-    shopId   int64
+    _shopId   int64
     // 门店所有者信息
-    storeKeeper   *StoreKeeper
+    _storeKeeper   *StoreKeeper
     // 门店的类型
-    storeType   string
+    _storeType   string
     // ERP系统中门店的编码
-    storeCode   string
+    _storeCode   string
     // 备注
-    remark   string
+    _remark   string
 }
 
 // 初始化TaobaoQimenStoreCreateRequest对象
@@ -64,157 +64,157 @@ func (r TaobaoQimenStoreCreateRequest) GetApiParams() url.Values {
 }
 // StoreName Setter
 // 门店名称
-func (r *TaobaoQimenStoreCreateRequest) SetStoreName(storeName string) error {
-    r.storeName = storeName
-    r.Set("store_name", storeName)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreName(_storeName string) error {
+    r._storeName = _storeName
+    r.Set("store_name", _storeName)
     return nil
 }
 
 // StoreName Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreName() string {
-    return r.storeName
+    return r._storeName
 }
 // MainCategory Setter
 // 门店主营类目
-func (r *TaobaoQimenStoreCreateRequest) SetMainCategory(mainCategory int64) error {
-    r.mainCategory = mainCategory
-    r.Set("main_category", mainCategory)
+func (r *TaobaoQimenStoreCreateRequest) SetMainCategory(_mainCategory int64) error {
+    r._mainCategory = _mainCategory
+    r.Set("main_category", _mainCategory)
     return nil
 }
 
 // MainCategory Getter
 func (r TaobaoQimenStoreCreateRequest) GetMainCategory() int64 {
-    return r.mainCategory
+    return r._mainCategory
 }
 // CompanyName Setter
 // 商户名称
-func (r *TaobaoQimenStoreCreateRequest) SetCompanyName(companyName string) error {
-    r.companyName = companyName
-    r.Set("company_name", companyName)
+func (r *TaobaoQimenStoreCreateRequest) SetCompanyName(_companyName string) error {
+    r._companyName = _companyName
+    r.Set("company_name", _companyName)
     return nil
 }
 
 // CompanyName Getter
 func (r TaobaoQimenStoreCreateRequest) GetCompanyName() string {
-    return r.companyName
+    return r._companyName
 }
 // EndTime Setter
 // 关闭营业时间(只填时，分；只支持半点和整点)
-func (r *TaobaoQimenStoreCreateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoQimenStoreCreateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoQimenStoreCreateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // StartTime Setter
 // 开始营业时间(只填时，分；只支持半点和整点)
-func (r *TaobaoQimenStoreCreateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoQimenStoreCreateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoQimenStoreCreateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // StoreStatus Setter
 // 门店状态
-func (r *TaobaoQimenStoreCreateRequest) SetStoreStatus(storeStatus string) error {
-    r.storeStatus = storeStatus
-    r.Set("store_status", storeStatus)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreStatus(_storeStatus string) error {
+    r._storeStatus = _storeStatus
+    r.Set("store_status", _storeStatus)
     return nil
 }
 
 // StoreStatus Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreStatus() string {
-    return r.storeStatus
+    return r._storeStatus
 }
 // StoreDescription Setter
 // 商户介绍
-func (r *TaobaoQimenStoreCreateRequest) SetStoreDescription(storeDescription string) error {
-    r.storeDescription = storeDescription
-    r.Set("store_description", storeDescription)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreDescription(_storeDescription string) error {
+    r._storeDescription = _storeDescription
+    r.Set("store_description", _storeDescription)
     return nil
 }
 
 // StoreDescription Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreDescription() string {
-    return r.storeDescription
+    return r._storeDescription
 }
 // Address Setter
 // 地址信息
-func (r *TaobaoQimenStoreCreateRequest) SetAddress(address *Address) error {
-    r.address = address
-    r.Set("address", address)
+func (r *TaobaoQimenStoreCreateRequest) SetAddress(_address *Address) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r TaobaoQimenStoreCreateRequest) GetAddress() *Address {
-    return r.address
+    return r._address
 }
 // ShopId Setter
 // 需要关联的线上店铺ID
-func (r *TaobaoQimenStoreCreateRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TaobaoQimenStoreCreateRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TaobaoQimenStoreCreateRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }
 // StoreKeeper Setter
 // 门店所有者信息
-func (r *TaobaoQimenStoreCreateRequest) SetStoreKeeper(storeKeeper *StoreKeeper) error {
-    r.storeKeeper = storeKeeper
-    r.Set("store_keeper", storeKeeper)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreKeeper(_storeKeeper *StoreKeeper) error {
+    r._storeKeeper = _storeKeeper
+    r.Set("store_keeper", _storeKeeper)
     return nil
 }
 
 // StoreKeeper Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreKeeper() *StoreKeeper {
-    return r.storeKeeper
+    return r._storeKeeper
 }
 // StoreType Setter
 // 门店的类型
-func (r *TaobaoQimenStoreCreateRequest) SetStoreType(storeType string) error {
-    r.storeType = storeType
-    r.Set("store_type", storeType)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreType(_storeType string) error {
+    r._storeType = _storeType
+    r.Set("store_type", _storeType)
     return nil
 }
 
 // StoreType Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreType() string {
-    return r.storeType
+    return r._storeType
 }
 // StoreCode Setter
 // ERP系统中门店的编码
-func (r *TaobaoQimenStoreCreateRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoQimenStoreCreateRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoQimenStoreCreateRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // Remark Setter
 // 备注
-func (r *TaobaoQimenStoreCreateRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoQimenStoreCreateRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoQimenStoreCreateRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

@@ -15,15 +15,15 @@ taobao.ailab.aicloud.top.message.sendtext
 type TaobaoAilabAicloudTopMessageSendtextRequest struct {
     model.Params
     // 账户体系隔离
-    schema   string
+    _schema   string
     // 用户ID，此处传入第三方账户体系的用户 id
-    userId   string
+    _userId   string
     // 用户设备唯一识别码，长度限制32以内， 建议使用系统接口获取deviceid, 然后做一定的混淆处理来作为此输入参数
-    utdId   string
+    _utdId   string
     // 扩展信息，用于存放APP类型等
-    ext   string
+    _ext   string
     // 留言输入的文本
-    text   string
+    _text   string
 }
 
 // 初始化TaobaoAilabAicloudTopMessageSendtextRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetApiParams() url.Values {
 }
 // Schema Setter
 // 账户体系隔离
-func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // UserId Setter
 // 用户ID，此处传入第三方账户体系的用户 id
-func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 用户设备唯一识别码，长度限制32以内， 建议使用系统接口获取deviceid, 然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // Ext Setter
 // 扩展信息，用于存放APP类型等
-func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // Text Setter
 // 留言输入的文本
-func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *TaobaoAilabAicloudTopMessageSendtextRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r TaobaoAilabAicloudTopMessageSendtextRequest) GetText() string {
-    return r.text
+    return r._text
 }

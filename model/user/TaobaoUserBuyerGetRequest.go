@@ -15,7 +15,7 @@ taobao.user.buyer.get
 type TaobaoUserBuyerGetRequest struct {
     model.Params
     // 只返回nick, avatar参数
-    fields   string
+    _fields   string
 }
 
 // 初始化TaobaoUserBuyerGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUserBuyerGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 只返回nick, avatar参数
-func (r *TaobaoUserBuyerGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoUserBuyerGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoUserBuyerGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

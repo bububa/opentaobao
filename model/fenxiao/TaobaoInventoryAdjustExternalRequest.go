@@ -16,21 +16,21 @@ taobao.inventory.adjust.external
 type TaobaoInventoryAdjustExternalRequest struct {
     model.Params
     // test
-    reduceType   string
+    _reduceType   string
     // 外部订单类型, BALANCE:盘点、NON_TAOBAO_TRADE:非淘宝交易、ALLOCATE:调拨、OTHERS:其他
-    bizType   string
+    _bizType   string
     // test
-    operateType   string
+    _operateType   string
     // 商家外部定单号
-    bizUniqueCode   string
+    _bizUniqueCode   string
     // 商品初始库存信息： [{"scItemId":"商品后端ID，如果有传scItemCode,参数可以为0","scItemCode":"商品商家编码","inventoryType":"库存类型  1：正常,”direction”: 1: 盘盈 -1: 盘亏,参数可选,"quantity":"数量(正数)"}]
-    items   string
+    _items   string
     // 库存占用返回的操作码.operate_type 为OUTBOUND时，如果是确认事先进行过的库存占用，需要传入当时返回的操作码，并且明细必须与申请时保持一致
-    occupyOperateCode   string
+    _occupyOperateCode   string
     // 业务操作时间
-    operateTime   string
+    _operateTime   string
     // 商家仓库编码
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化TaobaoInventoryAdjustExternalRequest对象
@@ -55,97 +55,97 @@ func (r TaobaoInventoryAdjustExternalRequest) GetApiParams() url.Values {
 }
 // ReduceType Setter
 // test
-func (r *TaobaoInventoryAdjustExternalRequest) SetReduceType(reduceType string) error {
-    r.reduceType = reduceType
-    r.Set("reduce_type", reduceType)
+func (r *TaobaoInventoryAdjustExternalRequest) SetReduceType(_reduceType string) error {
+    r._reduceType = _reduceType
+    r.Set("reduce_type", _reduceType)
     return nil
 }
 
 // ReduceType Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetReduceType() string {
-    return r.reduceType
+    return r._reduceType
 }
 // BizType Setter
 // 外部订单类型, BALANCE:盘点、NON_TAOBAO_TRADE:非淘宝交易、ALLOCATE:调拨、OTHERS:其他
-func (r *TaobaoInventoryAdjustExternalRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoInventoryAdjustExternalRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // OperateType Setter
 // test
-func (r *TaobaoInventoryAdjustExternalRequest) SetOperateType(operateType string) error {
-    r.operateType = operateType
-    r.Set("operate_type", operateType)
+func (r *TaobaoInventoryAdjustExternalRequest) SetOperateType(_operateType string) error {
+    r._operateType = _operateType
+    r.Set("operate_type", _operateType)
     return nil
 }
 
 // OperateType Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetOperateType() string {
-    return r.operateType
+    return r._operateType
 }
 // BizUniqueCode Setter
 // 商家外部定单号
-func (r *TaobaoInventoryAdjustExternalRequest) SetBizUniqueCode(bizUniqueCode string) error {
-    r.bizUniqueCode = bizUniqueCode
-    r.Set("biz_unique_code", bizUniqueCode)
+func (r *TaobaoInventoryAdjustExternalRequest) SetBizUniqueCode(_bizUniqueCode string) error {
+    r._bizUniqueCode = _bizUniqueCode
+    r.Set("biz_unique_code", _bizUniqueCode)
     return nil
 }
 
 // BizUniqueCode Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetBizUniqueCode() string {
-    return r.bizUniqueCode
+    return r._bizUniqueCode
 }
 // Items Setter
 // 商品初始库存信息： [{"scItemId":"商品后端ID，如果有传scItemCode,参数可以为0","scItemCode":"商品商家编码","inventoryType":"库存类型  1：正常,”direction”: 1: 盘盈 -1: 盘亏,参数可选,"quantity":"数量(正数)"}]
-func (r *TaobaoInventoryAdjustExternalRequest) SetItems(items string) error {
-    r.items = items
-    r.Set("items", items)
+func (r *TaobaoInventoryAdjustExternalRequest) SetItems(_items string) error {
+    r._items = _items
+    r.Set("items", _items)
     return nil
 }
 
 // Items Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetItems() string {
-    return r.items
+    return r._items
 }
 // OccupyOperateCode Setter
 // 库存占用返回的操作码.operate_type 为OUTBOUND时，如果是确认事先进行过的库存占用，需要传入当时返回的操作码，并且明细必须与申请时保持一致
-func (r *TaobaoInventoryAdjustExternalRequest) SetOccupyOperateCode(occupyOperateCode string) error {
-    r.occupyOperateCode = occupyOperateCode
-    r.Set("occupy_operate_code", occupyOperateCode)
+func (r *TaobaoInventoryAdjustExternalRequest) SetOccupyOperateCode(_occupyOperateCode string) error {
+    r._occupyOperateCode = _occupyOperateCode
+    r.Set("occupy_operate_code", _occupyOperateCode)
     return nil
 }
 
 // OccupyOperateCode Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetOccupyOperateCode() string {
-    return r.occupyOperateCode
+    return r._occupyOperateCode
 }
 // OperateTime Setter
 // 业务操作时间
-func (r *TaobaoInventoryAdjustExternalRequest) SetOperateTime(operateTime string) error {
-    r.operateTime = operateTime
-    r.Set("operate_time", operateTime)
+func (r *TaobaoInventoryAdjustExternalRequest) SetOperateTime(_operateTime string) error {
+    r._operateTime = _operateTime
+    r.Set("operate_time", _operateTime)
     return nil
 }
 
 // OperateTime Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetOperateTime() string {
-    return r.operateTime
+    return r._operateTime
 }
 // StoreCode Setter
 // 商家仓库编码
-func (r *TaobaoInventoryAdjustExternalRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoInventoryAdjustExternalRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoInventoryAdjustExternalRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

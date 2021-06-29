@@ -15,13 +15,13 @@ taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest struct {
     model.Params
     // 供应商id
-    vendorId   int64
+    _vendorId   int64
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 设备状态，online上线，offline下线
-    status   string
+    _status   string
     // 保留字段json字符串
-    extensions   string
+    _extensions   string
 }
 
 // 初始化TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetApiParams
 }
 // VendorId Setter
 // 供应商id
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetVendorId(vendorId int64) error {
-    r.vendorId = vendorId
-    r.Set("vendor_id", vendorId)
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetVendorId(_vendorId int64) error {
+    r._vendorId = _vendorId
+    r.Set("vendor_id", _vendorId)
     return nil
 }
 
 // VendorId Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetVendorId() int64 {
-    return r.vendorId
+    return r._vendorId
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // Status Setter
 // 设备状态，online上线，offline下线
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // Extensions Setter
 // 保留字段json字符串
-func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetExtensions(extensions string) error {
-    r.extensions = extensions
-    r.Set("extensions", extensions)
+func (r *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) SetExtensions(_extensions string) error {
+    r._extensions = _extensions
+    r.Set("extensions", _extensions)
     return nil
 }
 
 // Extensions Getter
 func (r TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceRequest) GetExtensions() string {
-    return r.extensions
+    return r._extensions
 }

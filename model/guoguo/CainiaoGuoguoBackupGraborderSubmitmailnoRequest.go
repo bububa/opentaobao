@@ -15,9 +15,9 @@ cainiao.guoguo.backup.graborder.submitmailno
 type CainiaoGuoguoBackupGraborderSubmitmailnoRequest struct {
     model.Params
     // 菜鸟物流订单号
-    orderCode   string
+    _orderCode   string
     // 运单号
-    mailNo   string
+    _mailNo   string
 }
 
 // 初始化CainiaoGuoguoBackupGraborderSubmitmailnoRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoGuoguoBackupGraborderSubmitmailnoRequest) GetApiParams() url.Valu
 }
 // OrderCode Setter
 // 菜鸟物流订单号
-func (r *CainiaoGuoguoBackupGraborderSubmitmailnoRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("orderCode", orderCode)
+func (r *CainiaoGuoguoBackupGraborderSubmitmailnoRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("orderCode", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r CainiaoGuoguoBackupGraborderSubmitmailnoRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // MailNo Setter
 // 运单号
-func (r *CainiaoGuoguoBackupGraborderSubmitmailnoRequest) SetMailNo(mailNo string) error {
-    r.mailNo = mailNo
-    r.Set("mailNo", mailNo)
+func (r *CainiaoGuoguoBackupGraborderSubmitmailnoRequest) SetMailNo(_mailNo string) error {
+    r._mailNo = _mailNo
+    r.Set("mailNo", _mailNo)
     return nil
 }
 
 // MailNo Getter
 func (r CainiaoGuoguoBackupGraborderSubmitmailnoRequest) GetMailNo() string {
-    return r.mailNo
+    return r._mailNo
 }

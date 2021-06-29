@@ -15,11 +15,11 @@ alibaba.lst.shiporder.cancel
 type AlibabaLstShiporderCancelRequest struct {
     model.Params
     // 取消原因
-    reason   string
+    _reason   string
     // 订单号
-    outOrderId   string
+    _outOrderId   string
     // 需要退款的明细ID
-    detailOrderIds   []string
+    _detailOrderIds   []string
 }
 
 // 初始化AlibabaLstShiporderCancelRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLstShiporderCancelRequest) GetApiParams() url.Values {
 }
 // Reason Setter
 // 取消原因
-func (r *AlibabaLstShiporderCancelRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaLstShiporderCancelRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaLstShiporderCancelRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // OutOrderId Setter
 // 订单号
-func (r *AlibabaLstShiporderCancelRequest) SetOutOrderId(outOrderId string) error {
-    r.outOrderId = outOrderId
-    r.Set("out_order_id", outOrderId)
+func (r *AlibabaLstShiporderCancelRequest) SetOutOrderId(_outOrderId string) error {
+    r._outOrderId = _outOrderId
+    r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
 func (r AlibabaLstShiporderCancelRequest) GetOutOrderId() string {
-    return r.outOrderId
+    return r._outOrderId
 }
 // DetailOrderIds Setter
 // 需要退款的明细ID
-func (r *AlibabaLstShiporderCancelRequest) SetDetailOrderIds(detailOrderIds []string) error {
-    r.detailOrderIds = detailOrderIds
-    r.Set("detail_order_ids", detailOrderIds)
+func (r *AlibabaLstShiporderCancelRequest) SetDetailOrderIds(_detailOrderIds []string) error {
+    r._detailOrderIds = _detailOrderIds
+    r.Set("detail_order_ids", _detailOrderIds)
     return nil
 }
 
 // DetailOrderIds Getter
 func (r AlibabaLstShiporderCancelRequest) GetDetailOrderIds() []string {
-    return r.detailOrderIds
+    return r._detailOrderIds
 }

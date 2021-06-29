@@ -15,9 +15,9 @@ alibaba.nlife.store.deliverdetail.get
 type AlibabaNlifeStoreDeliverdetailGetRequest struct {
     model.Params
     // 发货单号
-    consignNo   string
+    _consignNo   string
     // 门店id
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化AlibabaNlifeStoreDeliverdetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaNlifeStoreDeliverdetailGetRequest) GetApiParams() url.Values {
 }
 // ConsignNo Setter
 // 发货单号
-func (r *AlibabaNlifeStoreDeliverdetailGetRequest) SetConsignNo(consignNo string) error {
-    r.consignNo = consignNo
-    r.Set("consign_no", consignNo)
+func (r *AlibabaNlifeStoreDeliverdetailGetRequest) SetConsignNo(_consignNo string) error {
+    r._consignNo = _consignNo
+    r.Set("consign_no", _consignNo)
     return nil
 }
 
 // ConsignNo Getter
 func (r AlibabaNlifeStoreDeliverdetailGetRequest) GetConsignNo() string {
-    return r.consignNo
+    return r._consignNo
 }
 // StoreId Setter
 // 门店id
-func (r *AlibabaNlifeStoreDeliverdetailGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeStoreDeliverdetailGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeStoreDeliverdetailGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

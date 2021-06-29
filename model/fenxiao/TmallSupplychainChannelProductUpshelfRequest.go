@@ -15,7 +15,7 @@ tmall.supplychain.channel.product.upshelf
 type TmallSupplychainChannelProductUpshelfRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TmallSupplychainChannelProductUpshelfRequest对象
@@ -40,13 +40,13 @@ func (r TmallSupplychainChannelProductUpshelfRequest) GetApiParams() url.Values 
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductUpshelfRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductUpshelfRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductUpshelfRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

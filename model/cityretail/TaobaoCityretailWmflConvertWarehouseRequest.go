@@ -15,7 +15,7 @@ taobao.cityretail.wmfl.convert.warehouse
 type TaobaoCityretailWmflConvertWarehouseRequest struct {
     model.Params
     // 淘宝交易单id
-    tbOrderId   string
+    _tbOrderId   string
 }
 
 // 初始化TaobaoCityretailWmflConvertWarehouseRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCityretailWmflConvertWarehouseRequest) GetApiParams() url.Values {
 }
 // TbOrderId Setter
 // 淘宝交易单id
-func (r *TaobaoCityretailWmflConvertWarehouseRequest) SetTbOrderId(tbOrderId string) error {
-    r.tbOrderId = tbOrderId
-    r.Set("tb_order_id", tbOrderId)
+func (r *TaobaoCityretailWmflConvertWarehouseRequest) SetTbOrderId(_tbOrderId string) error {
+    r._tbOrderId = _tbOrderId
+    r.Set("tb_order_id", _tbOrderId)
     return nil
 }
 
 // TbOrderId Getter
 func (r TaobaoCityretailWmflConvertWarehouseRequest) GetTbOrderId() string {
-    return r.tbOrderId
+    return r._tbOrderId
 }

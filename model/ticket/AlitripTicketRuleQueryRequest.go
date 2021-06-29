@@ -15,7 +15,7 @@ alitrip.ticket.rule.query
 type AlitripTicketRuleQueryRequest struct {
     model.Params
     // 卖家景点规则编码
-    outRuleId   string
+    _outRuleId   string
 }
 
 // 初始化AlitripTicketRuleQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTicketRuleQueryRequest) GetApiParams() url.Values {
 }
 // OutRuleId Setter
 // 卖家景点规则编码
-func (r *AlitripTicketRuleQueryRequest) SetOutRuleId(outRuleId string) error {
-    r.outRuleId = outRuleId
-    r.Set("out_rule_id", outRuleId)
+func (r *AlitripTicketRuleQueryRequest) SetOutRuleId(_outRuleId string) error {
+    r._outRuleId = _outRuleId
+    r.Set("out_rule_id", _outRuleId)
     return nil
 }
 
 // OutRuleId Getter
 func (r AlitripTicketRuleQueryRequest) GetOutRuleId() string {
-    return r.outRuleId
+    return r._outRuleId
 }

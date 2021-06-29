@@ -15,13 +15,13 @@ taobao.tanx.deal.get
 type TaobaoTanxDealGetRequest struct {
     model.Params
     // dsp用户id
-    dspId   int64
+    _dspId   int64
     // 交易id
-    dealId   int64
+    _dealId   int64
     // 1970年到现在的时间，毫秒
-    signTime   int64
+    _signTime   int64
     // 验证token
-    token   string
+    _token   string
 }
 
 // 初始化TaobaoTanxDealGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTanxDealGetRequest) GetApiParams() url.Values {
 }
 // DspId Setter
 // dsp用户id
-func (r *TaobaoTanxDealGetRequest) SetDspId(dspId int64) error {
-    r.dspId = dspId
-    r.Set("dsp_id", dspId)
+func (r *TaobaoTanxDealGetRequest) SetDspId(_dspId int64) error {
+    r._dspId = _dspId
+    r.Set("dsp_id", _dspId)
     return nil
 }
 
 // DspId Getter
 func (r TaobaoTanxDealGetRequest) GetDspId() int64 {
-    return r.dspId
+    return r._dspId
 }
 // DealId Setter
 // 交易id
-func (r *TaobaoTanxDealGetRequest) SetDealId(dealId int64) error {
-    r.dealId = dealId
-    r.Set("deal_id", dealId)
+func (r *TaobaoTanxDealGetRequest) SetDealId(_dealId int64) error {
+    r._dealId = _dealId
+    r.Set("deal_id", _dealId)
     return nil
 }
 
 // DealId Getter
 func (r TaobaoTanxDealGetRequest) GetDealId() int64 {
-    return r.dealId
+    return r._dealId
 }
 // SignTime Setter
 // 1970年到现在的时间，毫秒
-func (r *TaobaoTanxDealGetRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxDealGetRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxDealGetRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // Token Setter
 // 验证token
-func (r *TaobaoTanxDealGetRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxDealGetRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxDealGetRequest) GetToken() string {
-    return r.token
+    return r._token
 }

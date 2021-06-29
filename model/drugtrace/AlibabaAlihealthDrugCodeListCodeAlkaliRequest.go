@@ -21,19 +21,19 @@ alibaba.alihealth.drug.code.list.code.alkali
 type AlibabaAlihealthDrugCodeListCodeAlkaliRequest struct {
     model.Params
     // 追溯码
-    codeList   []string
+    _codeList   []string
     // 证件编号
-    certIsvNo   string
+    _certIsvNo   string
     // 调用方式：formal-正式、test-测试
-    invocation   string
+    _invocation   string
     // 终端类型 1：零售
-    terminalType   string
+    _terminalType   string
     // 调用零售药店名称
-    terminalName   string
+    _terminalName   string
     // 城市名称
-    bureauName   string
+    _bureauName   string
     // 错误信息
-    errorMessage   string
+    _errorMessage   string
 }
 
 // 初始化AlibabaAlihealthDrugCodeListCodeAlkaliRequest对象
@@ -58,85 +58,85 @@ func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetApiParams() url.Values
 }
 // CodeList Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCodeList(codeList []string) error {
-    r.codeList = codeList
-    r.Set("code_list", codeList)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCodeList(_codeList []string) error {
+    r._codeList = _codeList
+    r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetCodeList() []string {
-    return r.codeList
+    return r._codeList
 }
 // CertIsvNo Setter
 // 证件编号
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCertIsvNo(certIsvNo string) error {
-    r.certIsvNo = certIsvNo
-    r.Set("cert_isv_no", certIsvNo)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetCertIsvNo(_certIsvNo string) error {
+    r._certIsvNo = _certIsvNo
+    r.Set("cert_isv_no", _certIsvNo)
     return nil
 }
 
 // CertIsvNo Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetCertIsvNo() string {
-    return r.certIsvNo
+    return r._certIsvNo
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetInvocation(invocation string) error {
-    r.invocation = invocation
-    r.Set("invocation", invocation)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetInvocation(_invocation string) error {
+    r._invocation = _invocation
+    r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetInvocation() string {
-    return r.invocation
+    return r._invocation
 }
 // TerminalType Setter
 // 终端类型 1：零售
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // TerminalName Setter
 // 调用零售药店名称
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // BureauName Setter
 // 城市名称
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // ErrorMessage Setter
 // 错误信息
-func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetErrorMessage(errorMessage string) error {
-    r.errorMessage = errorMessage
-    r.Set("error_message", errorMessage)
+func (r *AlibabaAlihealthDrugCodeListCodeAlkaliRequest) SetErrorMessage(_errorMessage string) error {
+    r._errorMessage = _errorMessage
+    r.Set("error_message", _errorMessage)
     return nil
 }
 
 // ErrorMessage Getter
 func (r AlibabaAlihealthDrugCodeListCodeAlkaliRequest) GetErrorMessage() string {
-    return r.errorMessage
+    return r._errorMessage
 }

@@ -15,7 +15,7 @@ preInvoice创建
 type AlibabaPurSupplierInvoicecreateRequest struct {
     model.Params
     // 预发票头信息
-    invoice   *SupplierPreInvoiceInfoVO
+    _invoice   *SupplierPreInvoiceInfoVO
 }
 
 // 初始化AlibabaPurSupplierInvoicecreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurSupplierInvoicecreateRequest) GetApiParams() url.Values {
 }
 // Invoice Setter
 // 预发票头信息
-func (r *AlibabaPurSupplierInvoicecreateRequest) SetInvoice(invoice *SupplierPreInvoiceInfoVO) error {
-    r.invoice = invoice
-    r.Set("invoice", invoice)
+func (r *AlibabaPurSupplierInvoicecreateRequest) SetInvoice(_invoice *SupplierPreInvoiceInfoVO) error {
+    r._invoice = _invoice
+    r.Set("invoice", _invoice)
     return nil
 }
 
 // Invoice Getter
 func (r AlibabaPurSupplierInvoicecreateRequest) GetInvoice() *SupplierPreInvoiceInfoVO {
-    return r.invoice
+    return r._invoice
 }

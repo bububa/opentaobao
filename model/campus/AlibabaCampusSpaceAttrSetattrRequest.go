@@ -15,9 +15,9 @@ alibaba.campus.space.attr.setattr
 type AlibabaCampusSpaceAttrSetattrRequest struct {
     model.Params
     // 操作用户上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 业务属性实例集合
-    list   []TypeAttrInstanceRequest
+    _list   []TypeAttrInstanceRequest
 }
 
 // 初始化AlibabaCampusSpaceAttrSetattrRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceAttrSetattrRequest) GetApiParams() url.Values {
 }
 // Context Setter
 // 操作用户上下文
-func (r *AlibabaCampusSpaceAttrSetattrRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceAttrSetattrRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceAttrSetattrRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // List Setter
 // 业务属性实例集合
-func (r *AlibabaCampusSpaceAttrSetattrRequest) SetList(list []TypeAttrInstanceRequest) error {
-    r.list = list
-    r.Set("list", list)
+func (r *AlibabaCampusSpaceAttrSetattrRequest) SetList(_list []TypeAttrInstanceRequest) error {
+    r._list = _list
+    r.Set("list", _list)
     return nil
 }
 
 // List Getter
 func (r AlibabaCampusSpaceAttrSetattrRequest) GetList() []TypeAttrInstanceRequest {
-    return r.list
+    return r._list
 }

@@ -15,7 +15,7 @@ Receive changes in state updates for RMAs orders from after sales partners
 type AliexpressSolutionIssuePartnerRmaStateUpdateRequest struct {
     model.Params
     // RMA's order state update request
-    rmaStateUpdateRequest   *RmaStateUpdateRequest
+    _rmaStateUpdateRequest   *RmaStateUpdateRequest
 }
 
 // 初始化AliexpressSolutionIssuePartnerRmaStateUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaStateUpdateRequest) GetApiParams() url.
 }
 // RmaStateUpdateRequest Setter
 // RMA's order state update request
-func (r *AliexpressSolutionIssuePartnerRmaStateUpdateRequest) SetRmaStateUpdateRequest(rmaStateUpdateRequest *RmaStateUpdateRequest) error {
-    r.rmaStateUpdateRequest = rmaStateUpdateRequest
-    r.Set("rma_state_update_request", rmaStateUpdateRequest)
+func (r *AliexpressSolutionIssuePartnerRmaStateUpdateRequest) SetRmaStateUpdateRequest(_rmaStateUpdateRequest *RmaStateUpdateRequest) error {
+    r._rmaStateUpdateRequest = _rmaStateUpdateRequest
+    r.Set("rma_state_update_request", _rmaStateUpdateRequest)
     return nil
 }
 
 // RmaStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaStateUpdateRequest) GetRmaStateUpdateRequest() *RmaStateUpdateRequest {
-    return r.rmaStateUpdateRequest
+    return r._rmaStateUpdateRequest
 }

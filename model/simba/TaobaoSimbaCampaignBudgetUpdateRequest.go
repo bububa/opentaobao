@@ -15,13 +15,13 @@ taobao.simba.campaign.budget.update
 type TaobaoSimbaCampaignBudgetUpdateRequest struct {
     model.Params
     // 是否平滑消耗：false-否，true-是
-    useSmooth   bool
+    _useSmooth   bool
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
-    budget   int64
+    _budget   int64
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaCampaignBudgetUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaCampaignBudgetUpdateRequest) GetApiParams() url.Values {
 }
 // UseSmooth Setter
 // 是否平滑消耗：false-否，true-是
-func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetUseSmooth(useSmooth bool) error {
-    r.useSmooth = useSmooth
-    r.Set("use_smooth", useSmooth)
+func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetUseSmooth(_useSmooth bool) error {
+    r._useSmooth = _useSmooth
+    r.Set("use_smooth", _useSmooth)
     return nil
 }
 
 // UseSmooth Getter
 func (r TaobaoSimbaCampaignBudgetUpdateRequest) GetUseSmooth() bool {
-    return r.useSmooth
+    return r._useSmooth
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaCampaignBudgetUpdateRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // Budget Setter
 // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
-func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetBudget(budget int64) error {
-    r.budget = budget
-    r.Set("budget", budget)
+func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetBudget(_budget int64) error {
+    r._budget = _budget
+    r.Set("budget", _budget)
     return nil
 }
 
 // Budget Getter
 func (r TaobaoSimbaCampaignBudgetUpdateRequest) GetBudget() int64 {
-    return r.budget
+    return r._budget
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaCampaignBudgetUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaCampaignBudgetUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

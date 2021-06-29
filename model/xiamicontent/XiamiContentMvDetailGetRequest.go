@@ -15,7 +15,7 @@ xiami.content.mv.detail.get
 type XiamiContentMvDetailGetRequest struct {
     model.Params
     // mvId
-    mvIds   []int64
+    _mvIds   []int64
 }
 
 // 初始化XiamiContentMvDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r XiamiContentMvDetailGetRequest) GetApiParams() url.Values {
 }
 // MvIds Setter
 // mvId
-func (r *XiamiContentMvDetailGetRequest) SetMvIds(mvIds []int64) error {
-    r.mvIds = mvIds
-    r.Set("mv_ids", mvIds)
+func (r *XiamiContentMvDetailGetRequest) SetMvIds(_mvIds []int64) error {
+    r._mvIds = _mvIds
+    r.Set("mv_ids", _mvIds)
     return nil
 }
 
 // MvIds Getter
 func (r XiamiContentMvDetailGetRequest) GetMvIds() []int64 {
-    return r.mvIds
+    return r._mvIds
 }

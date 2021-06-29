@@ -15,11 +15,11 @@ alibaba.mos.bunk.bunkinfo.querybunk
 type AlibabaMosBunkBunkinfoQuerybunkRequest struct {
     model.Params
     // 门店号
-    storeNo   string
+    _storeNo   string
     // 合同状态集合
-    statusList   []string
+    _statusList   []string
     // 合同号集合
-    contractCodes   []string
+    _contractCodes   []string
 }
 
 // 初始化AlibabaMosBunkBunkinfoQuerybunkRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetApiParams() url.Values {
 }
 // StoreNo Setter
 // 门店号
-func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }
 // StatusList Setter
 // 合同状态集合
-func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStatusList(statusList []string) error {
-    r.statusList = statusList
-    r.Set("status_list", statusList)
+func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStatusList(_statusList []string) error {
+    r._statusList = _statusList
+    r.Set("status_list", _statusList)
     return nil
 }
 
 // StatusList Getter
 func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetStatusList() []string {
-    return r.statusList
+    return r._statusList
 }
 // ContractCodes Setter
 // 合同号集合
-func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetContractCodes(contractCodes []string) error {
-    r.contractCodes = contractCodes
-    r.Set("contract_codes", contractCodes)
+func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetContractCodes(_contractCodes []string) error {
+    r._contractCodes = _contractCodes
+    r.Set("contract_codes", _contractCodes)
     return nil
 }
 
 // ContractCodes Getter
 func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetContractCodes() []string {
-    return r.contractCodes
+    return r._contractCodes
 }

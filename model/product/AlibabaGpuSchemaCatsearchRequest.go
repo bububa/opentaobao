@@ -15,13 +15,13 @@ alibaba.gpu.schema.catsearch
 type AlibabaGpuSchemaCatsearchRequest struct {
     model.Params
     // 叶子类目ID
-    leafCatId   int64
+    _leafCatId   int64
     // 当前页
-    currentPage   int64
+    _currentPage   int64
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
     // 渠道Id，如0代表天猫，8代表淘宝
-    providerId   int64
+    _providerId   int64
 }
 
 // 初始化AlibabaGpuSchemaCatsearchRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaGpuSchemaCatsearchRequest) GetApiParams() url.Values {
 }
 // LeafCatId Setter
 // 叶子类目ID
-func (r *AlibabaGpuSchemaCatsearchRequest) SetLeafCatId(leafCatId int64) error {
-    r.leafCatId = leafCatId
-    r.Set("leaf_cat_id", leafCatId)
+func (r *AlibabaGpuSchemaCatsearchRequest) SetLeafCatId(_leafCatId int64) error {
+    r._leafCatId = _leafCatId
+    r.Set("leaf_cat_id", _leafCatId)
     return nil
 }
 
 // LeafCatId Getter
 func (r AlibabaGpuSchemaCatsearchRequest) GetLeafCatId() int64 {
-    return r.leafCatId
+    return r._leafCatId
 }
 // CurrentPage Setter
 // 当前页
-func (r *AlibabaGpuSchemaCatsearchRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaGpuSchemaCatsearchRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaGpuSchemaCatsearchRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页大小
-func (r *AlibabaGpuSchemaCatsearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaGpuSchemaCatsearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaGpuSchemaCatsearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ProviderId Setter
 // 渠道Id，如0代表天猫，8代表淘宝
-func (r *AlibabaGpuSchemaCatsearchRequest) SetProviderId(providerId int64) error {
-    r.providerId = providerId
-    r.Set("provider_id", providerId)
+func (r *AlibabaGpuSchemaCatsearchRequest) SetProviderId(_providerId int64) error {
+    r._providerId = _providerId
+    r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
 func (r AlibabaGpuSchemaCatsearchRequest) GetProviderId() int64 {
-    return r.providerId
+    return r._providerId
 }

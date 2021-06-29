@@ -15,7 +15,7 @@ TOF&SCM营销域对接-成本录入设置
 type TmallAscpPricingScmTofRequest struct {
     model.Params
     // 成本价集合
-    costs   []ItemSkuCost
+    _costs   []ItemSkuCost
 }
 
 // 初始化TmallAscpPricingScmTofRequest对象
@@ -40,13 +40,13 @@ func (r TmallAscpPricingScmTofRequest) GetApiParams() url.Values {
 }
 // Costs Setter
 // 成本价集合
-func (r *TmallAscpPricingScmTofRequest) SetCosts(costs []ItemSkuCost) error {
-    r.costs = costs
-    r.Set("costs", costs)
+func (r *TmallAscpPricingScmTofRequest) SetCosts(_costs []ItemSkuCost) error {
+    r._costs = _costs
+    r.Set("costs", _costs)
     return nil
 }
 
 // Costs Getter
 func (r TmallAscpPricingScmTofRequest) GetCosts() []ItemSkuCost {
-    return r.costs
+    return r._costs
 }

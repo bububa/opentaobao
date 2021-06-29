@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.reassign
 type TmallServicecenterWorkcardReassignRequest struct {
     model.Params
     // 请求入参
-    reassignStoreRequest   *ReassignStoreRequest
+    _reassignStoreRequest   *ReassignStoreRequest
 }
 
 // 初始化TmallServicecenterWorkcardReassignRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardReassignRequest) GetApiParams() url.Values {
 }
 // ReassignStoreRequest Setter
 // 请求入参
-func (r *TmallServicecenterWorkcardReassignRequest) SetReassignStoreRequest(reassignStoreRequest *ReassignStoreRequest) error {
-    r.reassignStoreRequest = reassignStoreRequest
-    r.Set("reassign_store_request", reassignStoreRequest)
+func (r *TmallServicecenterWorkcardReassignRequest) SetReassignStoreRequest(_reassignStoreRequest *ReassignStoreRequest) error {
+    r._reassignStoreRequest = _reassignStoreRequest
+    r.Set("reassign_store_request", _reassignStoreRequest)
     return nil
 }
 
 // ReassignStoreRequest Getter
 func (r TmallServicecenterWorkcardReassignRequest) GetReassignStoreRequest() *ReassignStoreRequest {
-    return r.reassignStoreRequest
+    return r._reassignStoreRequest
 }

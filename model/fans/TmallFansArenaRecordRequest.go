@@ -15,11 +15,11 @@ tmall.fans.arena.record
 type TmallFansArenaRecordRequest struct {
     model.Params
     // 资金池id
-    cashPoolId   int64
+    _cashPoolId   int64
     // 用户得分
-    score   int64
+    _score   int64
     // mixnick
-    mixNick   string
+    _mixNick   string
 }
 
 // 初始化TmallFansArenaRecordRequest对象
@@ -44,37 +44,37 @@ func (r TmallFansArenaRecordRequest) GetApiParams() url.Values {
 }
 // CashPoolId Setter
 // 资金池id
-func (r *TmallFansArenaRecordRequest) SetCashPoolId(cashPoolId int64) error {
-    r.cashPoolId = cashPoolId
-    r.Set("cash_pool_id", cashPoolId)
+func (r *TmallFansArenaRecordRequest) SetCashPoolId(_cashPoolId int64) error {
+    r._cashPoolId = _cashPoolId
+    r.Set("cash_pool_id", _cashPoolId)
     return nil
 }
 
 // CashPoolId Getter
 func (r TmallFansArenaRecordRequest) GetCashPoolId() int64 {
-    return r.cashPoolId
+    return r._cashPoolId
 }
 // Score Setter
 // 用户得分
-func (r *TmallFansArenaRecordRequest) SetScore(score int64) error {
-    r.score = score
-    r.Set("score", score)
+func (r *TmallFansArenaRecordRequest) SetScore(_score int64) error {
+    r._score = _score
+    r.Set("score", _score)
     return nil
 }
 
 // Score Getter
 func (r TmallFansArenaRecordRequest) GetScore() int64 {
-    return r.score
+    return r._score
 }
 // MixNick Setter
 // mixnick
-func (r *TmallFansArenaRecordRequest) SetMixNick(mixNick string) error {
-    r.mixNick = mixNick
-    r.Set("mix_nick", mixNick)
+func (r *TmallFansArenaRecordRequest) SetMixNick(_mixNick string) error {
+    r._mixNick = _mixNick
+    r.Set("mix_nick", _mixNick)
     return nil
 }
 
 // MixNick Getter
 func (r TmallFansArenaRecordRequest) GetMixNick() string {
-    return r.mixNick
+    return r._mixNick
 }

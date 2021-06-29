@@ -15,7 +15,7 @@ alibaba.wdk.refund.aggregate
 type AlibabaWdkRefundAggregateRequest struct {
     model.Params
     // 系统自动生成
-    refundAggregateQueryRequest   *RefundAggregateQueryRequest
+    _refundAggregateQueryRequest   *RefundAggregateQueryRequest
 }
 
 // 初始化AlibabaWdkRefundAggregateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkRefundAggregateRequest) GetApiParams() url.Values {
 }
 // RefundAggregateQueryRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkRefundAggregateRequest) SetRefundAggregateQueryRequest(refundAggregateQueryRequest *RefundAggregateQueryRequest) error {
-    r.refundAggregateQueryRequest = refundAggregateQueryRequest
-    r.Set("refund_aggregate_query_request", refundAggregateQueryRequest)
+func (r *AlibabaWdkRefundAggregateRequest) SetRefundAggregateQueryRequest(_refundAggregateQueryRequest *RefundAggregateQueryRequest) error {
+    r._refundAggregateQueryRequest = _refundAggregateQueryRequest
+    r.Set("refund_aggregate_query_request", _refundAggregateQueryRequest)
     return nil
 }
 
 // RefundAggregateQueryRequest Getter
 func (r AlibabaWdkRefundAggregateRequest) GetRefundAggregateQueryRequest() *RefundAggregateQueryRequest {
-    return r.refundAggregateQueryRequest
+    return r._refundAggregateQueryRequest
 }

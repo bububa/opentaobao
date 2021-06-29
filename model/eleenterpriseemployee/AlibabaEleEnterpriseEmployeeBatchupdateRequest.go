@@ -15,7 +15,7 @@ alibaba.ele.enterprise.employee.batchupdate
 type AlibabaEleEnterpriseEmployeeBatchupdateRequest struct {
     model.Params
     // 批量员工信息
-    enterpriseDatas   []EmployeeInfoDto
+    _enterpriseDatas   []EmployeeInfoDto
 }
 
 // 初始化AlibabaEleEnterpriseEmployeeBatchupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseEmployeeBatchupdateRequest) GetApiParams() url.Value
 }
 // EnterpriseDatas Setter
 // 批量员工信息
-func (r *AlibabaEleEnterpriseEmployeeBatchupdateRequest) SetEnterpriseDatas(enterpriseDatas []EmployeeInfoDto) error {
-    r.enterpriseDatas = enterpriseDatas
-    r.Set("enterprise_datas", enterpriseDatas)
+func (r *AlibabaEleEnterpriseEmployeeBatchupdateRequest) SetEnterpriseDatas(_enterpriseDatas []EmployeeInfoDto) error {
+    r._enterpriseDatas = _enterpriseDatas
+    r.Set("enterprise_datas", _enterpriseDatas)
     return nil
 }
 
 // EnterpriseDatas Getter
 func (r AlibabaEleEnterpriseEmployeeBatchupdateRequest) GetEnterpriseDatas() []EmployeeInfoDto {
-    return r.enterpriseDatas
+    return r._enterpriseDatas
 }

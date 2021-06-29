@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.delivery
 type TmallServicecenterWorkcardDeliveryRequest struct {
     model.Params
     // 工单配送请求参数
-    identifyTaskDeliveryRequest   *IdentifyTaskDeliveryRequest
+    _identifyTaskDeliveryRequest   *IdentifyTaskDeliveryRequest
 }
 
 // 初始化TmallServicecenterWorkcardDeliveryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardDeliveryRequest) GetApiParams() url.Values {
 }
 // IdentifyTaskDeliveryRequest Setter
 // 工单配送请求参数
-func (r *TmallServicecenterWorkcardDeliveryRequest) SetIdentifyTaskDeliveryRequest(identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest) error {
-    r.identifyTaskDeliveryRequest = identifyTaskDeliveryRequest
-    r.Set("identify_task_delivery_request", identifyTaskDeliveryRequest)
+func (r *TmallServicecenterWorkcardDeliveryRequest) SetIdentifyTaskDeliveryRequest(_identifyTaskDeliveryRequest *IdentifyTaskDeliveryRequest) error {
+    r._identifyTaskDeliveryRequest = _identifyTaskDeliveryRequest
+    r.Set("identify_task_delivery_request", _identifyTaskDeliveryRequest)
     return nil
 }
 
 // IdentifyTaskDeliveryRequest Getter
 func (r TmallServicecenterWorkcardDeliveryRequest) GetIdentifyTaskDeliveryRequest() *IdentifyTaskDeliveryRequest {
-    return r.identifyTaskDeliveryRequest
+    return r._identifyTaskDeliveryRequest
 }

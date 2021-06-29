@@ -15,7 +15,7 @@ alibaba.retail.marketing.itempool.activity.sku.add
 type AlibabaRetailMarketingItempoolActivitySkuAddRequest struct {
     model.Params
     // 入参
-    param   *ItemPoolActivityElementOperateRequest
+    _param   *ItemPoolActivityElementOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingItempoolActivitySkuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItempoolActivitySkuAddRequest) GetApiParams() url.
 }
 // Param Setter
 // 入参
-func (r *AlibabaRetailMarketingItempoolActivitySkuAddRequest) SetParam(param *ItemPoolActivityElementOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingItempoolActivitySkuAddRequest) SetParam(_param *ItemPoolActivityElementOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingItempoolActivitySkuAddRequest) GetParam() *ItemPoolActivityElementOperateRequest {
-    return r.param
+    return r._param
 }

@@ -16,9 +16,9 @@ taobao.items.seller.list.get
 type TaobaoItemsSellerListGetRequest struct {
     model.Params
     // 需要返回的商品字段列表。可选值：点击返回结果中的Item结构体中能展示出来的所有字段，多个字段用“,”分隔。注：返回所有sku信息的字段名称是sku而不是skus。
-    fields   string
+    _fields   string
     // 商品ID列表，多个ID用半角逗号隔开，一次最多不超过20个。注：获取不存在的商品ID或获取别人的商品都不会报错，但没有商品数据返回。
-    numIids   []string
+    _numIids   []string
 }
 
 // 初始化TaobaoItemsSellerListGetRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoItemsSellerListGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需要返回的商品字段列表。可选值：点击返回结果中的Item结构体中能展示出来的所有字段，多个字段用“,”分隔。注：返回所有sku信息的字段名称是sku而不是skus。
-func (r *TaobaoItemsSellerListGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoItemsSellerListGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoItemsSellerListGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // NumIids Setter
 // 商品ID列表，多个ID用半角逗号隔开，一次最多不超过20个。注：获取不存在的商品ID或获取别人的商品都不会报错，但没有商品数据返回。
-func (r *TaobaoItemsSellerListGetRequest) SetNumIids(numIids []string) error {
-    r.numIids = numIids
-    r.Set("num_iids", numIids)
+func (r *TaobaoItemsSellerListGetRequest) SetNumIids(_numIids []string) error {
+    r._numIids = _numIids
+    r.Set("num_iids", _numIids)
     return nil
 }
 
 // NumIids Getter
 func (r TaobaoItemsSellerListGetRequest) GetNumIids() []string {
-    return r.numIids
+    return r._numIids
 }

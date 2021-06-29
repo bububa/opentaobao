@@ -15,7 +15,7 @@ isv协议获取
 type AlibabaAlihealthExaminationAgreementListRequest struct {
     model.Params
     // isv传递过来的门店code
-    storeCode   string
+    _storeCode   string
 }
 
 // 初始化AlibabaAlihealthExaminationAgreementListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiParams() url.Valu
 }
 // StoreCode Setter
 // isv传递过来的门店code
-func (r *AlibabaAlihealthExaminationAgreementListRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *AlibabaAlihealthExaminationAgreementListRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r AlibabaAlihealthExaminationAgreementListRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }

@@ -15,11 +15,11 @@ aliexpress.offer.ds.product.simplequery
 type AliexpressOfferDsProductSimplequeryRequest struct {
     model.Params
     // 商品ID
-    productId   int64
+    _productId   int64
     // 国家
-    localCountry   string
+    _localCountry   string
     // 语言
-    localLanguage   string
+    _localLanguage   string
 }
 
 // 初始化AliexpressOfferDsProductSimplequeryRequest对象
@@ -44,37 +44,37 @@ func (r AliexpressOfferDsProductSimplequeryRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 商品ID
-func (r *AliexpressOfferDsProductSimplequeryRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AliexpressOfferDsProductSimplequeryRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AliexpressOfferDsProductSimplequeryRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // LocalCountry Setter
 // 国家
-func (r *AliexpressOfferDsProductSimplequeryRequest) SetLocalCountry(localCountry string) error {
-    r.localCountry = localCountry
-    r.Set("local_country", localCountry)
+func (r *AliexpressOfferDsProductSimplequeryRequest) SetLocalCountry(_localCountry string) error {
+    r._localCountry = _localCountry
+    r.Set("local_country", _localCountry)
     return nil
 }
 
 // LocalCountry Getter
 func (r AliexpressOfferDsProductSimplequeryRequest) GetLocalCountry() string {
-    return r.localCountry
+    return r._localCountry
 }
 // LocalLanguage Setter
 // 语言
-func (r *AliexpressOfferDsProductSimplequeryRequest) SetLocalLanguage(localLanguage string) error {
-    r.localLanguage = localLanguage
-    r.Set("local_language", localLanguage)
+func (r *AliexpressOfferDsProductSimplequeryRequest) SetLocalLanguage(_localLanguage string) error {
+    r._localLanguage = _localLanguage
+    r.Set("local_language", _localLanguage)
     return nil
 }
 
 // LocalLanguage Getter
 func (r AliexpressOfferDsProductSimplequeryRequest) GetLocalLanguage() string {
-    return r.localLanguage
+    return r._localLanguage
 }

@@ -15,7 +15,7 @@ taobao.antifraud.riskassessment.get
 type TaobaoAntifraudRiskassessmentGetRequest struct {
     model.Params
     // 风控查询参数
-    collinadataContext   *CollinadataContext
+    _collinadataContext   *CollinadataContext
 }
 
 // 初始化TaobaoAntifraudRiskassessmentGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAntifraudRiskassessmentGetRequest) GetApiParams() url.Values {
 }
 // CollinadataContext Setter
 // 风控查询参数
-func (r *TaobaoAntifraudRiskassessmentGetRequest) SetCollinadataContext(collinadataContext *CollinadataContext) error {
-    r.collinadataContext = collinadataContext
-    r.Set("collinadata_context", collinadataContext)
+func (r *TaobaoAntifraudRiskassessmentGetRequest) SetCollinadataContext(_collinadataContext *CollinadataContext) error {
+    r._collinadataContext = _collinadataContext
+    r.Set("collinadata_context", _collinadataContext)
     return nil
 }
 
 // CollinadataContext Getter
 func (r TaobaoAntifraudRiskassessmentGetRequest) GetCollinadataContext() *CollinadataContext {
-    return r.collinadataContext
+    return r._collinadataContext
 }

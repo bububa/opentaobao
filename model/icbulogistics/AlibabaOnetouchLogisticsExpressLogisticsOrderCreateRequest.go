@@ -15,7 +15,7 @@ alibaba.onetouch.logistics.express.logistics.order.create
 type AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest struct {
     model.Params
     // 请求参数对象
-    paramnQuery   *PlaceOrderDTO
+    _paramnQuery   *PlaceOrderDTO
 }
 
 // 初始化AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest) GetApiParams
 }
 // ParamnQuery Setter
 // 请求参数对象
-func (r *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest) SetParamnQuery(paramnQuery *PlaceOrderDTO) error {
-    r.paramnQuery = paramnQuery
-    r.Set("paramn_query", paramnQuery)
+func (r *AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest) SetParamnQuery(_paramnQuery *PlaceOrderDTO) error {
+    r._paramnQuery = _paramnQuery
+    r.Set("paramn_query", _paramnQuery)
     return nil
 }
 
 // ParamnQuery Getter
 func (r AlibabaOnetouchLogisticsExpressLogisticsOrderCreateRequest) GetParamnQuery() *PlaceOrderDTO {
-    return r.paramnQuery
+    return r._paramnQuery
 }

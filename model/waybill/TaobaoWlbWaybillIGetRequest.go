@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.get
 type TaobaoWlbWaybillIGetRequest struct {
     model.Params
     // 面单申请
-    waybillApplyNewRequest   *WaybillApplyNewRequest
+    _waybillApplyNewRequest   *WaybillApplyNewRequest
 }
 
 // 初始化TaobaoWlbWaybillIGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIGetRequest) GetApiParams() url.Values {
 }
 // WaybillApplyNewRequest Setter
 // 面单申请
-func (r *TaobaoWlbWaybillIGetRequest) SetWaybillApplyNewRequest(waybillApplyNewRequest *WaybillApplyNewRequest) error {
-    r.waybillApplyNewRequest = waybillApplyNewRequest
-    r.Set("waybill_apply_new_request", waybillApplyNewRequest)
+func (r *TaobaoWlbWaybillIGetRequest) SetWaybillApplyNewRequest(_waybillApplyNewRequest *WaybillApplyNewRequest) error {
+    r._waybillApplyNewRequest = _waybillApplyNewRequest
+    r.Set("waybill_apply_new_request", _waybillApplyNewRequest)
     return nil
 }
 
 // WaybillApplyNewRequest Getter
 func (r TaobaoWlbWaybillIGetRequest) GetWaybillApplyNewRequest() *WaybillApplyNewRequest {
-    return r.waybillApplyNewRequest
+    return r._waybillApplyNewRequest
 }

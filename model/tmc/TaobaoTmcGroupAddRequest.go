@@ -15,11 +15,11 @@ taobao.tmc.group.add
 type TaobaoTmcGroupAddRequest struct {
     model.Params
     // 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
-    groupName   string
+    _groupName   string
     // 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
-    nicks   []string
+    _nicks   []string
     // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-    userPlatform   string
+    _userPlatform   string
 }
 
 // 初始化TaobaoTmcGroupAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTmcGroupAddRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
-func (r *TaobaoTmcGroupAddRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcGroupAddRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcGroupAddRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }
 // Nicks Setter
 // 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
-func (r *TaobaoTmcGroupAddRequest) SetNicks(nicks []string) error {
-    r.nicks = nicks
-    r.Set("nicks", nicks)
+func (r *TaobaoTmcGroupAddRequest) SetNicks(_nicks []string) error {
+    r._nicks = _nicks
+    r.Set("nicks", _nicks)
     return nil
 }
 
 // Nicks Getter
 func (r TaobaoTmcGroupAddRequest) GetNicks() []string {
-    return r.nicks
+    return r._nicks
 }
 // UserPlatform Setter
 // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-func (r *TaobaoTmcGroupAddRequest) SetUserPlatform(userPlatform string) error {
-    r.userPlatform = userPlatform
-    r.Set("user_platform", userPlatform)
+func (r *TaobaoTmcGroupAddRequest) SetUserPlatform(_userPlatform string) error {
+    r._userPlatform = _userPlatform
+    r.Set("user_platform", _userPlatform)
     return nil
 }
 
 // UserPlatform Getter
 func (r TaobaoTmcGroupAddRequest) GetUserPlatform() string {
-    return r.userPlatform
+    return r._userPlatform
 }

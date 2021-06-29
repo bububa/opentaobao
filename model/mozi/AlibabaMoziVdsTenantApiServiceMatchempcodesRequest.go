@@ -15,7 +15,7 @@ alibaba.mozi.vds.tenant.api.service.matchempcodes
 type AlibabaMoziVdsTenantApiServiceMatchempcodesRequest struct {
     model.Params
     // 入参
-    par0   *MatchWithEmployeeRequest
+    _par0   *MatchWithEmployeeRequest
 }
 
 // 初始化AlibabaMoziVdsTenantApiServiceMatchempcodesRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceMatchempcodesRequest) GetApiParams() url.V
 }
 // Par0 Setter
 // 入参
-func (r *AlibabaMoziVdsTenantApiServiceMatchempcodesRequest) SetPar0(par0 *MatchWithEmployeeRequest) error {
-    r.par0 = par0
-    r.Set("par0", par0)
+func (r *AlibabaMoziVdsTenantApiServiceMatchempcodesRequest) SetPar0(_par0 *MatchWithEmployeeRequest) error {
+    r._par0 = _par0
+    r.Set("par0", _par0)
     return nil
 }
 
 // Par0 Getter
 func (r AlibabaMoziVdsTenantApiServiceMatchempcodesRequest) GetPar0() *MatchWithEmployeeRequest {
-    return r.par0
+    return r._par0
 }

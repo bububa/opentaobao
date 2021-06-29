@@ -15,9 +15,9 @@ alibaba.footscan.mini.saved
 type AlibabaFootscanMiniSavedRequest struct {
     model.Params
     // 平台分配的token
-    token   string
+    _token   string
     // 请求数据
-    reqData   string
+    _reqData   string
 }
 
 // 初始化AlibabaFootscanMiniSavedRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniSavedRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniSavedRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaFootscanMiniSavedRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaFootscanMiniSavedRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ReqData Setter
 // 请求数据
-func (r *AlibabaFootscanMiniSavedRequest) SetReqData(reqData string) error {
-    r.reqData = reqData
-    r.Set("req_data", reqData)
+func (r *AlibabaFootscanMiniSavedRequest) SetReqData(_reqData string) error {
+    r._reqData = _reqData
+    r.Set("req_data", _reqData)
     return nil
 }
 
 // ReqData Getter
 func (r AlibabaFootscanMiniSavedRequest) GetReqData() string {
-    return r.reqData
+    return r._reqData
 }

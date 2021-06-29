@@ -15,7 +15,7 @@ cainiao.waybill.ii.query.by.waybillcode
 type CainiaoWaybillIiQueryByWaybillcodeRequest struct {
     model.Params
     // 系统自动生成
-    paramList   []WaybillDetailQueryByWaybillCodeRequest
+    _paramList   []WaybillDetailQueryByWaybillCodeRequest
 }
 
 // 初始化CainiaoWaybillIiQueryByWaybillcodeRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 系统自动生成
-func (r *CainiaoWaybillIiQueryByWaybillcodeRequest) SetParamList(paramList []WaybillDetailQueryByWaybillCodeRequest) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *CainiaoWaybillIiQueryByWaybillcodeRequest) SetParamList(_paramList []WaybillDetailQueryByWaybillCodeRequest) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r CainiaoWaybillIiQueryByWaybillcodeRequest) GetParamList() []WaybillDetailQueryByWaybillCodeRequest {
-    return r.paramList
+    return r._paramList
 }

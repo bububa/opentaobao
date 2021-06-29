@@ -15,15 +15,15 @@ alibaba.health.vaccin.notice.miss.remind
 type AlibabaHealthVaccinNoticeMissRemindRequest struct {
     model.Params
     // 432421
-    alipayUserId   string
+    _alipayUserId   string
     // 多个疫苗英文逗号分隔
-    vaccineName   string
+    _vaccineName   string
     // 2019-02-08 严格按照
-    reserveDate   string
+    _reserveDate   string
     // 姓名
-    name   string
+    _name   string
     // 点击提醒消息的跳转链接
-    url   string
+    _url   string
 }
 
 // 初始化AlibabaHealthVaccinNoticeMissRemindRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetApiParams() url.Values {
 }
 // AlipayUserId Setter
 // 432421
-func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // VaccineName Setter
 // 多个疫苗英文逗号分隔
-func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetVaccineName(vaccineName string) error {
-    r.vaccineName = vaccineName
-    r.Set("vaccine_name", vaccineName)
+func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetVaccineName(_vaccineName string) error {
+    r._vaccineName = _vaccineName
+    r.Set("vaccine_name", _vaccineName)
     return nil
 }
 
 // VaccineName Getter
 func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetVaccineName() string {
-    return r.vaccineName
+    return r._vaccineName
 }
 // ReserveDate Setter
 // 2019-02-08 严格按照
-func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetReserveDate(reserveDate string) error {
-    r.reserveDate = reserveDate
-    r.Set("reserve_date", reserveDate)
+func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetReserveDate(_reserveDate string) error {
+    r._reserveDate = _reserveDate
+    r.Set("reserve_date", _reserveDate)
     return nil
 }
 
 // ReserveDate Getter
 func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetReserveDate() string {
-    return r.reserveDate
+    return r._reserveDate
 }
 // Name Setter
 // 姓名
-func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Url Setter
 // 点击提醒消息的跳转链接
-func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *AlibabaHealthVaccinNoticeMissRemindRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r AlibabaHealthVaccinNoticeMissRemindRequest) GetUrl() string {
-    return r.url
+    return r._url
 }

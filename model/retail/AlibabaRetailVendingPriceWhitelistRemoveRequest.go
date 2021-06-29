@@ -15,17 +15,17 @@ alibaba.retail.vending.price.whitelist.remove
 type AlibabaRetailVendingPriceWhitelistRemoveRequest struct {
     model.Params
     // 淘宝用户ID
-    sellerId   int64
+    _sellerId   int64
     // 设备编码 device_code_list, device_uuid_list 二选一必填
-    deviceCodeList   []string
+    _deviceCodeList   []string
     // 外部设备编码 device_code_list, device_uuid_list 二选一必填
-    deviceUuidList   []string
+    _deviceUuidList   []string
     // 条码
-    barcode   string
+    _barcode   string
     // 如果该参数传入，条码以商品条码为准
-    itemId   int64
+    _itemId   int64
     // 是否生效到所有设备
-    allDevice   bool
+    _allDevice   bool
 }
 
 // 初始化AlibabaRetailVendingPriceWhitelistRemoveRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetApiParams() url.Valu
 }
 // SellerId Setter
 // 淘宝用户ID
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // DeviceCodeList Setter
 // 设备编码 device_code_list, device_uuid_list 二选一必填
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetDeviceCodeList(deviceCodeList []string) error {
-    r.deviceCodeList = deviceCodeList
-    r.Set("device_code_list", deviceCodeList)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetDeviceCodeList(_deviceCodeList []string) error {
+    r._deviceCodeList = _deviceCodeList
+    r.Set("device_code_list", _deviceCodeList)
     return nil
 }
 
 // DeviceCodeList Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetDeviceCodeList() []string {
-    return r.deviceCodeList
+    return r._deviceCodeList
 }
 // DeviceUuidList Setter
 // 外部设备编码 device_code_list, device_uuid_list 二选一必填
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetDeviceUuidList(deviceUuidList []string) error {
-    r.deviceUuidList = deviceUuidList
-    r.Set("device_uuid_list", deviceUuidList)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetDeviceUuidList(_deviceUuidList []string) error {
+    r._deviceUuidList = _deviceUuidList
+    r.Set("device_uuid_list", _deviceUuidList)
     return nil
 }
 
 // DeviceUuidList Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetDeviceUuidList() []string {
-    return r.deviceUuidList
+    return r._deviceUuidList
 }
 // Barcode Setter
 // 条码
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetBarcode(barcode string) error {
-    r.barcode = barcode
-    r.Set("barcode", barcode)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetBarcode(_barcode string) error {
+    r._barcode = _barcode
+    r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetBarcode() string {
-    return r.barcode
+    return r._barcode
 }
 // ItemId Setter
 // 如果该参数传入，条码以商品条码为准
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // AllDevice Setter
 // 是否生效到所有设备
-func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetAllDevice(allDevice bool) error {
-    r.allDevice = allDevice
-    r.Set("all_device", allDevice)
+func (r *AlibabaRetailVendingPriceWhitelistRemoveRequest) SetAllDevice(_allDevice bool) error {
+    r._allDevice = _allDevice
+    r.Set("all_device", _allDevice)
     return nil
 }
 
 // AllDevice Getter
 func (r AlibabaRetailVendingPriceWhitelistRemoveRequest) GetAllDevice() bool {
-    return r.allDevice
+    return r._allDevice
 }

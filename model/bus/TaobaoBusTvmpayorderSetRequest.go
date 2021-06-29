@@ -15,9 +15,9 @@ taobao.bus.tvmpayorder.set
 type TaobaoBusTvmpayorderSetRequest struct {
     model.Params
     // 条形码认证码
-    alipayAuthCode   string
+    _alipayAuthCode   string
     // 飞猪订单号
-    alitripOrderId   string
+    _alitripOrderId   string
 }
 
 // 初始化TaobaoBusTvmpayorderSetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoBusTvmpayorderSetRequest) GetApiParams() url.Values {
 }
 // AlipayAuthCode Setter
 // 条形码认证码
-func (r *TaobaoBusTvmpayorderSetRequest) SetAlipayAuthCode(alipayAuthCode string) error {
-    r.alipayAuthCode = alipayAuthCode
-    r.Set("alipay_auth_code", alipayAuthCode)
+func (r *TaobaoBusTvmpayorderSetRequest) SetAlipayAuthCode(_alipayAuthCode string) error {
+    r._alipayAuthCode = _alipayAuthCode
+    r.Set("alipay_auth_code", _alipayAuthCode)
     return nil
 }
 
 // AlipayAuthCode Getter
 func (r TaobaoBusTvmpayorderSetRequest) GetAlipayAuthCode() string {
-    return r.alipayAuthCode
+    return r._alipayAuthCode
 }
 // AlitripOrderId Setter
 // 飞猪订单号
-func (r *TaobaoBusTvmpayorderSetRequest) SetAlitripOrderId(alitripOrderId string) error {
-    r.alitripOrderId = alitripOrderId
-    r.Set("alitrip_order_id", alitripOrderId)
+func (r *TaobaoBusTvmpayorderSetRequest) SetAlitripOrderId(_alitripOrderId string) error {
+    r._alitripOrderId = _alitripOrderId
+    r.Set("alitrip_order_id", _alitripOrderId)
     return nil
 }
 
 // AlitripOrderId Getter
 func (r TaobaoBusTvmpayorderSetRequest) GetAlitripOrderId() string {
-    return r.alitripOrderId
+    return r._alitripOrderId
 }

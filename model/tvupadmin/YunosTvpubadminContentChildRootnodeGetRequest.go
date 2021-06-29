@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.child.rootnode.get
 type YunosTvpubadminContentChildRootnodeGetRequest struct {
     model.Params
     // 是否需要首页目录
-    needHomePage   bool
+    _needHomePage   bool
 }
 
 // 初始化YunosTvpubadminContentChildRootnodeGetRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentChildRootnodeGetRequest) GetApiParams() url.Values
 }
 // NeedHomePage Setter
 // 是否需要首页目录
-func (r *YunosTvpubadminContentChildRootnodeGetRequest) SetNeedHomePage(needHomePage bool) error {
-    r.needHomePage = needHomePage
-    r.Set("need_home_page", needHomePage)
+func (r *YunosTvpubadminContentChildRootnodeGetRequest) SetNeedHomePage(_needHomePage bool) error {
+    r._needHomePage = _needHomePage
+    r.Set("need_home_page", _needHomePage)
     return nil
 }
 
 // NeedHomePage Getter
 func (r YunosTvpubadminContentChildRootnodeGetRequest) GetNeedHomePage() bool {
-    return r.needHomePage
+    return r._needHomePage
 }

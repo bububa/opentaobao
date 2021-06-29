@@ -15,17 +15,17 @@ taobao.train.agent.express.set.vtwo
 type TaobaoTrainAgentExpressSetVtwoRequest struct {
     model.Params
     // 订单号
-    mainOrderId   int64
+    _mainOrderId   int64
     // 物流单号
-    expressId   string
+    _expressId   string
     // 发货地址
-    addr   string
+    _addr   string
     // 手机号
-    mobile   string
+    _mobile   string
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 物流公司:SF,EMS
-    expressName   string
+    _expressName   string
 }
 
 // 初始化TaobaoTrainAgentExpressSetVtwoRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTrainAgentExpressSetVtwoRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 订单号
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // ExpressId Setter
 // 物流单号
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetExpressId(expressId string) error {
-    r.expressId = expressId
-    r.Set("express_id", expressId)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetExpressId(_expressId string) error {
+    r._expressId = _expressId
+    r.Set("express_id", _expressId)
     return nil
 }
 
 // ExpressId Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetExpressId() string {
-    return r.expressId
+    return r._expressId
 }
 // Addr Setter
 // 发货地址
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetAddr(addr string) error {
-    r.addr = addr
-    r.Set("addr", addr)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetAddr(_addr string) error {
+    r._addr = _addr
+    r.Set("addr", _addr)
     return nil
 }
 
 // Addr Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetAddr() string {
-    return r.addr
+    return r._addr
 }
 // Mobile Setter
 // 手机号
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // ExpressName Setter
 // 物流公司:SF,EMS
-func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetExpressName(expressName string) error {
-    r.expressName = expressName
-    r.Set("express_name", expressName)
+func (r *TaobaoTrainAgentExpressSetVtwoRequest) SetExpressName(_expressName string) error {
+    r._expressName = _expressName
+    r.Set("express_name", _expressName)
     return nil
 }
 
 // ExpressName Getter
 func (r TaobaoTrainAgentExpressSetVtwoRequest) GetExpressName() string {
-    return r.expressName
+    return r._expressName
 }

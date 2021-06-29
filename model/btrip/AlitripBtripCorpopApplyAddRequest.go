@@ -15,7 +15,7 @@ alitrip.btrip.corpop.apply.add
 type AlitripBtripCorpopApplyAddRequest struct {
     model.Params
     // 请求参数
-    rq   *OpenApiApplyRq
+    _rq   *OpenApiApplyRq
 }
 
 // 初始化AlitripBtripCorpopApplyAddRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopApplyAddRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求参数
-func (r *AlitripBtripCorpopApplyAddRequest) SetRq(rq *OpenApiApplyRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopApplyAddRequest) SetRq(_rq *OpenApiApplyRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopApplyAddRequest) GetRq() *OpenApiApplyRq {
-    return r.rq
+    return r._rq
 }

@@ -15,7 +15,7 @@ taobao.feedflow.item.campaign.rpthourlist
 type TaobaoFeedflowItemCampaignRpthourlistRequest struct {
     model.Params
     // 查询参数
-    rptQuery   *RptQueryDto
+    _rptQuery   *RptQueryDto
 }
 
 // 初始化TaobaoFeedflowItemCampaignRpthourlistRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignRpthourlistRequest) GetApiParams() url.Values 
 }
 // RptQuery Setter
 // 查询参数
-func (r *TaobaoFeedflowItemCampaignRpthourlistRequest) SetRptQuery(rptQuery *RptQueryDto) error {
-    r.rptQuery = rptQuery
-    r.Set("rpt_query", rptQuery)
+func (r *TaobaoFeedflowItemCampaignRpthourlistRequest) SetRptQuery(_rptQuery *RptQueryDto) error {
+    r._rptQuery = _rptQuery
+    r.Set("rpt_query", _rptQuery)
     return nil
 }
 
 // RptQuery Getter
 func (r TaobaoFeedflowItemCampaignRpthourlistRequest) GetRptQuery() *RptQueryDto {
-    return r.rptQuery
+    return r._rptQuery
 }

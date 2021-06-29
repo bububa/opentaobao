@@ -15,7 +15,7 @@ alibaba.alsc.crm.voucher.send
 type AlibabaAlscCrmVoucherSendRequest struct {
     model.Params
     // 请求参数
-    paramVoucherSendOpenReq   *VoucherSendOpenReq
+    _paramVoucherSendOpenReq   *VoucherSendOpenReq
 }
 
 // 初始化AlibabaAlscCrmVoucherSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmVoucherSendRequest) GetApiParams() url.Values {
 }
 // ParamVoucherSendOpenReq Setter
 // 请求参数
-func (r *AlibabaAlscCrmVoucherSendRequest) SetParamVoucherSendOpenReq(paramVoucherSendOpenReq *VoucherSendOpenReq) error {
-    r.paramVoucherSendOpenReq = paramVoucherSendOpenReq
-    r.Set("param_voucher_send_open_req", paramVoucherSendOpenReq)
+func (r *AlibabaAlscCrmVoucherSendRequest) SetParamVoucherSendOpenReq(_paramVoucherSendOpenReq *VoucherSendOpenReq) error {
+    r._paramVoucherSendOpenReq = _paramVoucherSendOpenReq
+    r.Set("param_voucher_send_open_req", _paramVoucherSendOpenReq)
     return nil
 }
 
 // ParamVoucherSendOpenReq Getter
 func (r AlibabaAlscCrmVoucherSendRequest) GetParamVoucherSendOpenReq() *VoucherSendOpenReq {
-    return r.paramVoucherSendOpenReq
+    return r._paramVoucherSendOpenReq
 }

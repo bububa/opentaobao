@@ -15,11 +15,11 @@ OpenMall业务提交退款单留言
 type TaobaoOpenmallRefundMessageSubmitRequest struct {
     model.Params
     // 分销者身份
-    distributor   string
+    _distributor   string
     // 退款单ID
-    refundId   int64
+    _refundId   int64
     // 提交留言结构
-    refundMessage   *RefundMessage
+    _refundMessage   *RefundMessage
 }
 
 // 初始化TaobaoOpenmallRefundMessageSubmitRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenmallRefundMessageSubmitRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 分销者身份
-func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallRefundMessageSubmitRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // RefundId Setter
 // 退款单ID
-func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoOpenmallRefundMessageSubmitRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // RefundMessage Setter
 // 提交留言结构
-func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetRefundMessage(refundMessage *RefundMessage) error {
-    r.refundMessage = refundMessage
-    r.Set("refund_message", refundMessage)
+func (r *TaobaoOpenmallRefundMessageSubmitRequest) SetRefundMessage(_refundMessage *RefundMessage) error {
+    r._refundMessage = _refundMessage
+    r.Set("refund_message", _refundMessage)
     return nil
 }
 
 // RefundMessage Getter
 func (r TaobaoOpenmallRefundMessageSubmitRequest) GetRefundMessage() *RefundMessage {
-    return r.refundMessage
+    return r._refundMessage
 }

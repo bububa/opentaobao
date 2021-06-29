@@ -15,11 +15,11 @@ yunos.osupdate.appversion.query
 type YunosOsupdateAppversionQueryRequest struct {
     model.Params
     // 应用ID
-    appId   int64
+    _appId   int64
     // 页码值
-    page   int64
+    _page   int64
     // 页大小
-    size   int64
+    _size   int64
 }
 
 // 初始化YunosOsupdateAppversionQueryRequest对象
@@ -44,37 +44,37 @@ func (r YunosOsupdateAppversionQueryRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 应用ID
-func (r *YunosOsupdateAppversionQueryRequest) SetAppId(appId int64) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *YunosOsupdateAppversionQueryRequest) SetAppId(_appId int64) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r YunosOsupdateAppversionQueryRequest) GetAppId() int64 {
-    return r.appId
+    return r._appId
 }
 // Page Setter
 // 页码值
-func (r *YunosOsupdateAppversionQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *YunosOsupdateAppversionQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r YunosOsupdateAppversionQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // Size Setter
 // 页大小
-func (r *YunosOsupdateAppversionQueryRequest) SetSize(size int64) error {
-    r.size = size
-    r.Set("size", size)
+func (r *YunosOsupdateAppversionQueryRequest) SetSize(_size int64) error {
+    r._size = _size
+    r.Set("size", _size)
     return nil
 }
 
 // Size Getter
 func (r YunosOsupdateAppversionQueryRequest) GetSize() int64 {
-    return r.size
+    return r._size
 }

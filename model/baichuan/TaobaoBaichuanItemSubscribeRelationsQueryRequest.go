@@ -15,7 +15,7 @@ taobao.baichuan.item.subscribe.relations.query
 type TaobaoBaichuanItemSubscribeRelationsQueryRequest struct {
     model.Params
     // 查询条件
-    condition   *Condition
+    _condition   *Condition
 }
 
 // 初始化TaobaoBaichuanItemSubscribeRelationsQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetApiParams() url.Val
 }
 // Condition Setter
 // 查询条件
-func (r *TaobaoBaichuanItemSubscribeRelationsQueryRequest) SetCondition(condition *Condition) error {
-    r.condition = condition
-    r.Set("condition", condition)
+func (r *TaobaoBaichuanItemSubscribeRelationsQueryRequest) SetCondition(_condition *Condition) error {
+    r._condition = _condition
+    r.Set("condition", _condition)
     return nil
 }
 
 // Condition Getter
 func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetCondition() *Condition {
-    return r.condition
+    return r._condition
 }

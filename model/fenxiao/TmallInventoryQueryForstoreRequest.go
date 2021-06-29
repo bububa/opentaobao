@@ -15,7 +15,7 @@ tmall.inventory.query.forstore
 type TmallInventoryQueryForstoreRequest struct {
     model.Params
     // 查询列表
-    paramList   []InventoryQueryForStoreRequest
+    _paramList   []InventoryQueryForStoreRequest
 }
 
 // 初始化TmallInventoryQueryForstoreRequest对象
@@ -40,13 +40,13 @@ func (r TmallInventoryQueryForstoreRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 查询列表
-func (r *TmallInventoryQueryForstoreRequest) SetParamList(paramList []InventoryQueryForStoreRequest) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *TmallInventoryQueryForstoreRequest) SetParamList(_paramList []InventoryQueryForStoreRequest) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r TmallInventoryQueryForstoreRequest) GetParamList() []InventoryQueryForStoreRequest {
-    return r.paramList
+    return r._paramList
 }

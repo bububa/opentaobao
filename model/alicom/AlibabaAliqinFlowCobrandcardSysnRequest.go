@@ -15,13 +15,13 @@ alibaba.aliqin.flow.cobrandcard.sysn
 type AlibabaAliqinFlowCobrandcardSysnRequest struct {
     model.Params
     // 淘宝nick
-    tbUserNick   string
+    _tbUserNick   string
     // 手机号码
-    phone   string
+    _phone   string
     // 联名卡类型cardType:1-大喵卡,2-小喵卡
-    cardType   string
+    _cardType   string
     // 1-激活，0-失效
-    action   string
+    _action   string
 }
 
 // 初始化AlibabaAliqinFlowCobrandcardSysnRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinFlowCobrandcardSysnRequest) GetApiParams() url.Values {
 }
 // TbUserNick Setter
 // 淘宝nick
-func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetTbUserNick(tbUserNick string) error {
-    r.tbUserNick = tbUserNick
-    r.Set("tb_user_nick", tbUserNick)
+func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetTbUserNick(_tbUserNick string) error {
+    r._tbUserNick = _tbUserNick
+    r.Set("tb_user_nick", _tbUserNick)
     return nil
 }
 
 // TbUserNick Getter
 func (r AlibabaAliqinFlowCobrandcardSysnRequest) GetTbUserNick() string {
-    return r.tbUserNick
+    return r._tbUserNick
 }
 // Phone Setter
 // 手机号码
-func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaAliqinFlowCobrandcardSysnRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // CardType Setter
 // 联名卡类型cardType:1-大喵卡,2-小喵卡
-func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetCardType(cardType string) error {
-    r.cardType = cardType
-    r.Set("card_type", cardType)
+func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetCardType(_cardType string) error {
+    r._cardType = _cardType
+    r.Set("card_type", _cardType)
     return nil
 }
 
 // CardType Getter
 func (r AlibabaAliqinFlowCobrandcardSysnRequest) GetCardType() string {
-    return r.cardType
+    return r._cardType
 }
 // Action Setter
 // 1-激活，0-失效
-func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *AlibabaAliqinFlowCobrandcardSysnRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r AlibabaAliqinFlowCobrandcardSysnRequest) GetAction() string {
-    return r.action
+    return r._action
 }

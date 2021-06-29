@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.adviser.submit
 type AlibabaAlihouseNewhomeProjectAdviserSubmitRequest struct {
     model.Params
     // 顾问列表
-    advisers   []ProjectAdviserDto
+    _advisers   []ProjectAdviserDto
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectAdviserSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetApiParams() url.Va
 }
 // Advisers Setter
 // 顾问列表
-func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) SetAdvisers(advisers []ProjectAdviserDto) error {
-    r.advisers = advisers
-    r.Set("advisers", advisers)
+func (r *AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) SetAdvisers(_advisers []ProjectAdviserDto) error {
+    r._advisers = _advisers
+    r.Set("advisers", _advisers)
     return nil
 }
 
 // Advisers Getter
 func (r AlibabaAlihouseNewhomeProjectAdviserSubmitRequest) GetAdvisers() []ProjectAdviserDto {
-    return r.advisers
+    return r._advisers
 }

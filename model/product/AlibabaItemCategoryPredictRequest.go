@@ -15,15 +15,15 @@ alibaba.item.category.predict
 type AlibabaItemCategoryPredictRequest struct {
     model.Params
     // 商品主图链接，最多5张，传入完整URL
-    images   []string
+    _images   []string
     // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
-    market   string
+    _market   string
     // 商品条码
-    barcode   string
+    _barcode   string
     // 商品条码图片
-    barcodeImage   string
+    _barcodeImage   string
     // 商品介绍
-    itemDesc   string
+    _itemDesc   string
 }
 
 // 初始化AlibabaItemCategoryPredictRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaItemCategoryPredictRequest) GetApiParams() url.Values {
 }
 // Images Setter
 // 商品主图链接，最多5张，传入完整URL
-func (r *AlibabaItemCategoryPredictRequest) SetImages(images []string) error {
-    r.images = images
-    r.Set("images", images)
+func (r *AlibabaItemCategoryPredictRequest) SetImages(_images []string) error {
+    r._images = _images
+    r.Set("images", _images)
     return nil
 }
 
 // Images Getter
 func (r AlibabaItemCategoryPredictRequest) GetImages() []string {
-    return r.images
+    return r._images
 }
 // Market Setter
 // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
-func (r *AlibabaItemCategoryPredictRequest) SetMarket(market string) error {
-    r.market = market
-    r.Set("market", market)
+func (r *AlibabaItemCategoryPredictRequest) SetMarket(_market string) error {
+    r._market = _market
+    r.Set("market", _market)
     return nil
 }
 
 // Market Getter
 func (r AlibabaItemCategoryPredictRequest) GetMarket() string {
-    return r.market
+    return r._market
 }
 // Barcode Setter
 // 商品条码
-func (r *AlibabaItemCategoryPredictRequest) SetBarcode(barcode string) error {
-    r.barcode = barcode
-    r.Set("barcode", barcode)
+func (r *AlibabaItemCategoryPredictRequest) SetBarcode(_barcode string) error {
+    r._barcode = _barcode
+    r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
 func (r AlibabaItemCategoryPredictRequest) GetBarcode() string {
-    return r.barcode
+    return r._barcode
 }
 // BarcodeImage Setter
 // 商品条码图片
-func (r *AlibabaItemCategoryPredictRequest) SetBarcodeImage(barcodeImage string) error {
-    r.barcodeImage = barcodeImage
-    r.Set("barcode_image", barcodeImage)
+func (r *AlibabaItemCategoryPredictRequest) SetBarcodeImage(_barcodeImage string) error {
+    r._barcodeImage = _barcodeImage
+    r.Set("barcode_image", _barcodeImage)
     return nil
 }
 
 // BarcodeImage Getter
 func (r AlibabaItemCategoryPredictRequest) GetBarcodeImage() string {
-    return r.barcodeImage
+    return r._barcodeImage
 }
 // ItemDesc Setter
 // 商品介绍
-func (r *AlibabaItemCategoryPredictRequest) SetItemDesc(itemDesc string) error {
-    r.itemDesc = itemDesc
-    r.Set("item_desc", itemDesc)
+func (r *AlibabaItemCategoryPredictRequest) SetItemDesc(_itemDesc string) error {
+    r._itemDesc = _itemDesc
+    r.Set("item_desc", _itemDesc)
     return nil
 }
 
 // ItemDesc Getter
 func (r AlibabaItemCategoryPredictRequest) GetItemDesc() string {
-    return r.itemDesc
+    return r._itemDesc
 }

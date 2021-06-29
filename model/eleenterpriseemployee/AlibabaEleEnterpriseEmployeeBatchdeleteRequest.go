@@ -15,7 +15,7 @@ alibaba.ele.enterprise.employee.batchdelete
 type AlibabaEleEnterpriseEmployeeBatchdeleteRequest struct {
     model.Params
     // 员工工号
-    employeeNos   []string
+    _employeeNos   []string
 }
 
 // 初始化AlibabaEleEnterpriseEmployeeBatchdeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetApiParams() url.Value
 }
 // EmployeeNos Setter
 // 员工工号
-func (r *AlibabaEleEnterpriseEmployeeBatchdeleteRequest) SetEmployeeNos(employeeNos []string) error {
-    r.employeeNos = employeeNos
-    r.Set("employee_nos", employeeNos)
+func (r *AlibabaEleEnterpriseEmployeeBatchdeleteRequest) SetEmployeeNos(_employeeNos []string) error {
+    r._employeeNos = _employeeNos
+    r.Set("employee_nos", _employeeNos)
     return nil
 }
 
 // EmployeeNos Getter
 func (r AlibabaEleEnterpriseEmployeeBatchdeleteRequest) GetEmployeeNos() []string {
-    return r.employeeNos
+    return r._employeeNos
 }

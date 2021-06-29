@@ -15,7 +15,7 @@ taobao.alitrip.car.rent.order.cancel
 type TaobaoAlitripCarRentOrderCancelRequest struct {
     model.Params
     // 取消请求对象
-    param0   *RentProviderCancelRequest
+    _param0   *RentProviderCancelRequest
 }
 
 // 初始化TaobaoAlitripCarRentOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarRentOrderCancelRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 取消请求对象
-func (r *TaobaoAlitripCarRentOrderCancelRequest) SetParam0(param0 *RentProviderCancelRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAlitripCarRentOrderCancelRequest) SetParam0(_param0 *RentProviderCancelRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAlitripCarRentOrderCancelRequest) GetParam0() *RentProviderCancelRequest {
-    return r.param0
+    return r._param0
 }

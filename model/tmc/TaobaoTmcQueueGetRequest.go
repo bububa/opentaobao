@@ -15,7 +15,7 @@ taobao.tmc.queue.get
 type TaobaoTmcQueueGetRequest struct {
     model.Params
     // TMC组名
-    groupName   string
+    _groupName   string
 }
 
 // 初始化TaobaoTmcQueueGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTmcQueueGetRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // TMC组名
-func (r *TaobaoTmcQueueGetRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcQueueGetRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcQueueGetRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }

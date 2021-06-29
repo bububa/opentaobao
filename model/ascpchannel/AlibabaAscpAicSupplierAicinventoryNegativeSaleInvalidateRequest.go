@@ -15,7 +15,7 @@ alibaba.ascp.aic.supplier.aicinventory.negative.sale.invalidate
 type AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest struct {
     model.Params
     // 入参
-    futureInventoryMainOperationQuest   *Futureinventorymainoperationquest
+    _futureInventoryMainOperationQuest   *Futureinventorymainoperationquest
 }
 
 // 初始化AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest) GetApiP
 }
 // FutureInventoryMainOperationQuest Setter
 // 入参
-func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest) SetFutureInventoryMainOperationQuest(futureInventoryMainOperationQuest *Futureinventorymainoperationquest) error {
-    r.futureInventoryMainOperationQuest = futureInventoryMainOperationQuest
-    r.Set("future_inventory_main_operation_quest", futureInventoryMainOperationQuest)
+func (r *AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest) SetFutureInventoryMainOperationQuest(_futureInventoryMainOperationQuest *Futureinventorymainoperationquest) error {
+    r._futureInventoryMainOperationQuest = _futureInventoryMainOperationQuest
+    r.Set("future_inventory_main_operation_quest", _futureInventoryMainOperationQuest)
     return nil
 }
 
 // FutureInventoryMainOperationQuest Getter
 func (r AlibabaAscpAicSupplierAicinventoryNegativeSaleInvalidateRequest) GetFutureInventoryMainOperationQuest() *Futureinventorymainoperationquest {
-    return r.futureInventoryMainOperationQuest
+    return r._futureInventoryMainOperationQuest
 }

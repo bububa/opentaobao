@@ -15,7 +15,7 @@ ISV回传订单退款审核结果
 type AlibabaEinvoiceOrderRefundUpdateRequest struct {
     model.Params
     // 退款审核结果DTO
-    orderRefundResultDto   *InvoiceOrderRefundResultDto
+    _orderRefundResultDto   *InvoiceOrderRefundResultDto
 }
 
 // 初始化AlibabaEinvoiceOrderRefundUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceOrderRefundUpdateRequest) GetApiParams() url.Values {
 }
 // OrderRefundResultDto Setter
 // 退款审核结果DTO
-func (r *AlibabaEinvoiceOrderRefundUpdateRequest) SetOrderRefundResultDto(orderRefundResultDto *InvoiceOrderRefundResultDto) error {
-    r.orderRefundResultDto = orderRefundResultDto
-    r.Set("order_refund_result_dto", orderRefundResultDto)
+func (r *AlibabaEinvoiceOrderRefundUpdateRequest) SetOrderRefundResultDto(_orderRefundResultDto *InvoiceOrderRefundResultDto) error {
+    r._orderRefundResultDto = _orderRefundResultDto
+    r.Set("order_refund_result_dto", _orderRefundResultDto)
     return nil
 }
 
 // OrderRefundResultDto Getter
 func (r AlibabaEinvoiceOrderRefundUpdateRequest) GetOrderRefundResultDto() *InvoiceOrderRefundResultDto {
-    return r.orderRefundResultDto
+    return r._orderRefundResultDto
 }

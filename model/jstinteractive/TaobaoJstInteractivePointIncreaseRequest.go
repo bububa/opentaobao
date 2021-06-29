@@ -15,9 +15,9 @@ taobao.jst.interactive.point.increase
 type TaobaoJstInteractivePointIncreaseRequest struct {
     model.Params
     // 发放的积分值
-    amount   int64
+    _amount   int64
     // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
-    operateCode   string
+    _operateCode   string
 }
 
 // 初始化TaobaoJstInteractivePointIncreaseRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstInteractivePointIncreaseRequest) GetApiParams() url.Values {
 }
 // Amount Setter
 // 发放的积分值
-func (r *TaobaoJstInteractivePointIncreaseRequest) SetAmount(amount int64) error {
-    r.amount = amount
-    r.Set("amount", amount)
+func (r *TaobaoJstInteractivePointIncreaseRequest) SetAmount(_amount int64) error {
+    r._amount = _amount
+    r.Set("amount", _amount)
     return nil
 }
 
 // Amount Getter
 func (r TaobaoJstInteractivePointIncreaseRequest) GetAmount() int64 {
-    return r.amount
+    return r._amount
 }
 // OperateCode Setter
 // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
-func (r *TaobaoJstInteractivePointIncreaseRequest) SetOperateCode(operateCode string) error {
-    r.operateCode = operateCode
-    r.Set("operate_code", operateCode)
+func (r *TaobaoJstInteractivePointIncreaseRequest) SetOperateCode(_operateCode string) error {
+    r._operateCode = _operateCode
+    r.Set("operate_code", _operateCode)
     return nil
 }
 
 // OperateCode Getter
 func (r TaobaoJstInteractivePointIncreaseRequest) GetOperateCode() string {
-    return r.operateCode
+    return r._operateCode
 }

@@ -15,15 +15,15 @@ taobao.product.propimg.upload
 type TaobaoProductPropimgUploadRequest struct {
     model.Params
     // 产品属性图片ID
-    id   int64
+    _id   int64
     // 产品ID.Product的id
-    productId   int64
+    _productId   int64
     // 属性串.目前仅支持颜色属性.调用taobao.itemprops.get获取类目属性,取得颜色属性pid,再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串;
-    props   string
+    _props   string
     // 图片内容.图片最大为2M,只支持JPG,GIF.
-    image   []*model.File
+    _image   []*model.File
     // 图片序号
-    position   int64
+    _position   int64
 }
 
 // 初始化TaobaoProductPropimgUploadRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoProductPropimgUploadRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 产品属性图片ID
-func (r *TaobaoProductPropimgUploadRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoProductPropimgUploadRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoProductPropimgUploadRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // ProductId Setter
 // 产品ID.Product的id
-func (r *TaobaoProductPropimgUploadRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoProductPropimgUploadRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoProductPropimgUploadRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // Props Setter
 // 属性串.目前仅支持颜色属性.调用taobao.itemprops.get获取类目属性,取得颜色属性pid,再用taobao.itempropvalues.get取得vid;格式:pid:vid,只能传入一个颜色pid:vid串;
-func (r *TaobaoProductPropimgUploadRequest) SetProps(props string) error {
-    r.props = props
-    r.Set("props", props)
+func (r *TaobaoProductPropimgUploadRequest) SetProps(_props string) error {
+    r._props = _props
+    r.Set("props", _props)
     return nil
 }
 
 // Props Getter
 func (r TaobaoProductPropimgUploadRequest) GetProps() string {
-    return r.props
+    return r._props
 }
 // Image Setter
 // 图片内容.图片最大为2M,只支持JPG,GIF.
-func (r *TaobaoProductPropimgUploadRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoProductPropimgUploadRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoProductPropimgUploadRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Position Setter
 // 图片序号
-func (r *TaobaoProductPropimgUploadRequest) SetPosition(position int64) error {
-    r.position = position
-    r.Set("position", position)
+func (r *TaobaoProductPropimgUploadRequest) SetPosition(_position int64) error {
+    r._position = _position
+    r.Set("position", _position)
     return nil
 }
 
 // Position Getter
 func (r TaobaoProductPropimgUploadRequest) GetPosition() int64 {
-    return r.position
+    return r._position
 }

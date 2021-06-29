@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.search.low.price
 type AlitripBtripHotelDistributionSearchLowPriceRequest struct {
     model.Params
     // 列表最低价入参
-    paramHotelSearchListRQ   *HotelSearchListRq
+    _paramHotelSearchListRQ   *HotelSearchListRq
 }
 
 // 初始化AlitripBtripHotelDistributionSearchLowPriceRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionSearchLowPriceRequest) GetApiParams() url.V
 }
 // ParamHotelSearchListRQ Setter
 // 列表最低价入参
-func (r *AlitripBtripHotelDistributionSearchLowPriceRequest) SetParamHotelSearchListRQ(paramHotelSearchListRQ *HotelSearchListRq) error {
-    r.paramHotelSearchListRQ = paramHotelSearchListRQ
-    r.Set("param_hotel_search_list_r_q", paramHotelSearchListRQ)
+func (r *AlitripBtripHotelDistributionSearchLowPriceRequest) SetParamHotelSearchListRQ(_paramHotelSearchListRQ *HotelSearchListRq) error {
+    r._paramHotelSearchListRQ = _paramHotelSearchListRQ
+    r.Set("param_hotel_search_list_r_q", _paramHotelSearchListRQ)
     return nil
 }
 
 // ParamHotelSearchListRQ Getter
 func (r AlitripBtripHotelDistributionSearchLowPriceRequest) GetParamHotelSearchListRQ() *HotelSearchListRq {
-    return r.paramHotelSearchListRQ
+    return r._paramHotelSearchListRQ
 }

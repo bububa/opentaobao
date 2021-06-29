@@ -15,7 +15,7 @@ alibaba.wdk.sku.category.query
 type AlibabaWdkSkuCategoryQueryRequest struct {
     model.Params
     // 查询类目请模型
-    param   *CategoryDo
+    _param   *CategoryDo
 }
 
 // 初始化AlibabaWdkSkuCategoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCategoryQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 查询类目请模型
-func (r *AlibabaWdkSkuCategoryQueryRequest) SetParam(param *CategoryDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkSkuCategoryQueryRequest) SetParam(_param *CategoryDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkSkuCategoryQueryRequest) GetParam() *CategoryDo {
-    return r.param
+    return r._param
 }

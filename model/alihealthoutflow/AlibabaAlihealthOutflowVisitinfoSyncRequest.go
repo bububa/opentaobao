@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.visitinfo.sync
 type AlibabaAlihealthOutflowVisitinfoSyncRequest struct {
     model.Params
     // 入参
-    syncVisitInfoRequest   *SyncVisitInfoRequest
+    _syncVisitInfoRequest   *SyncVisitInfoRequest
 }
 
 // 初始化AlibabaAlihealthOutflowVisitinfoSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowVisitinfoSyncRequest) GetApiParams() url.Values {
 }
 // SyncVisitInfoRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowVisitinfoSyncRequest) SetSyncVisitInfoRequest(syncVisitInfoRequest *SyncVisitInfoRequest) error {
-    r.syncVisitInfoRequest = syncVisitInfoRequest
-    r.Set("sync_visit_info_request", syncVisitInfoRequest)
+func (r *AlibabaAlihealthOutflowVisitinfoSyncRequest) SetSyncVisitInfoRequest(_syncVisitInfoRequest *SyncVisitInfoRequest) error {
+    r._syncVisitInfoRequest = _syncVisitInfoRequest
+    r.Set("sync_visit_info_request", _syncVisitInfoRequest)
     return nil
 }
 
 // SyncVisitInfoRequest Getter
 func (r AlibabaAlihealthOutflowVisitinfoSyncRequest) GetSyncVisitInfoRequest() *SyncVisitInfoRequest {
-    return r.syncVisitInfoRequest
+    return r._syncVisitInfoRequest
 }

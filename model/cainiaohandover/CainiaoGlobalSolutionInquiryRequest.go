@@ -15,13 +15,13 @@ cainiao.global.solution.inquiry
 type CainiaoGlobalSolutionInquiryRequest struct {
     model.Params
     // 多语言，zh_CN中文、en_US:英文、ru_RU俄语
-    locale   string
+    _locale   string
     // 交易单参数
-    tradeOrderParam   *OpenTradeOrderParam
+    _tradeOrderParam   *OpenTradeOrderParam
     // 商家信息
-    sellerInfoParam   *OpenSellerInfoParam
+    _sellerInfoParam   *OpenSellerInfoParam
     // 包裹参数
-    packageParams   []OpenPackageParam
+    _packageParams   []OpenPackageParam
 }
 
 // 初始化CainiaoGlobalSolutionInquiryRequest对象
@@ -46,49 +46,49 @@ func (r CainiaoGlobalSolutionInquiryRequest) GetApiParams() url.Values {
 }
 // Locale Setter
 // 多语言，zh_CN中文、en_US:英文、ru_RU俄语
-func (r *CainiaoGlobalSolutionInquiryRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *CainiaoGlobalSolutionInquiryRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r CainiaoGlobalSolutionInquiryRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }
 // TradeOrderParam Setter
 // 交易单参数
-func (r *CainiaoGlobalSolutionInquiryRequest) SetTradeOrderParam(tradeOrderParam *OpenTradeOrderParam) error {
-    r.tradeOrderParam = tradeOrderParam
-    r.Set("trade_order_param", tradeOrderParam)
+func (r *CainiaoGlobalSolutionInquiryRequest) SetTradeOrderParam(_tradeOrderParam *OpenTradeOrderParam) error {
+    r._tradeOrderParam = _tradeOrderParam
+    r.Set("trade_order_param", _tradeOrderParam)
     return nil
 }
 
 // TradeOrderParam Getter
 func (r CainiaoGlobalSolutionInquiryRequest) GetTradeOrderParam() *OpenTradeOrderParam {
-    return r.tradeOrderParam
+    return r._tradeOrderParam
 }
 // SellerInfoParam Setter
 // 商家信息
-func (r *CainiaoGlobalSolutionInquiryRequest) SetSellerInfoParam(sellerInfoParam *OpenSellerInfoParam) error {
-    r.sellerInfoParam = sellerInfoParam
-    r.Set("seller_info_param", sellerInfoParam)
+func (r *CainiaoGlobalSolutionInquiryRequest) SetSellerInfoParam(_sellerInfoParam *OpenSellerInfoParam) error {
+    r._sellerInfoParam = _sellerInfoParam
+    r.Set("seller_info_param", _sellerInfoParam)
     return nil
 }
 
 // SellerInfoParam Getter
 func (r CainiaoGlobalSolutionInquiryRequest) GetSellerInfoParam() *OpenSellerInfoParam {
-    return r.sellerInfoParam
+    return r._sellerInfoParam
 }
 // PackageParams Setter
 // 包裹参数
-func (r *CainiaoGlobalSolutionInquiryRequest) SetPackageParams(packageParams []OpenPackageParam) error {
-    r.packageParams = packageParams
-    r.Set("package_params", packageParams)
+func (r *CainiaoGlobalSolutionInquiryRequest) SetPackageParams(_packageParams []OpenPackageParam) error {
+    r._packageParams = _packageParams
+    r.Set("package_params", _packageParams)
     return nil
 }
 
 // PackageParams Getter
 func (r CainiaoGlobalSolutionInquiryRequest) GetPackageParams() []OpenPackageParam {
-    return r.packageParams
+    return r._packageParams
 }

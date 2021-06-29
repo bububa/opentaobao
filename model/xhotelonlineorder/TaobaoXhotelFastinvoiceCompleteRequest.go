@@ -15,7 +15,7 @@ taobao.xhotel.fastinvoice.complete
 type TaobaoXhotelFastinvoiceCompleteRequest struct {
     model.Params
     // 无
-    invoiceInfoParam   *InvoiceInfoParam
+    _invoiceInfoParam   *InvoiceInfoParam
 }
 
 // 初始化TaobaoXhotelFastinvoiceCompleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelFastinvoiceCompleteRequest) GetApiParams() url.Values {
 }
 // InvoiceInfoParam Setter
 // 无
-func (r *TaobaoXhotelFastinvoiceCompleteRequest) SetInvoiceInfoParam(invoiceInfoParam *InvoiceInfoParam) error {
-    r.invoiceInfoParam = invoiceInfoParam
-    r.Set("invoice_info_param", invoiceInfoParam)
+func (r *TaobaoXhotelFastinvoiceCompleteRequest) SetInvoiceInfoParam(_invoiceInfoParam *InvoiceInfoParam) error {
+    r._invoiceInfoParam = _invoiceInfoParam
+    r.Set("invoice_info_param", _invoiceInfoParam)
     return nil
 }
 
 // InvoiceInfoParam Getter
 func (r TaobaoXhotelFastinvoiceCompleteRequest) GetInvoiceInfoParam() *InvoiceInfoParam {
-    return r.invoiceInfoParam
+    return r._invoiceInfoParam
 }

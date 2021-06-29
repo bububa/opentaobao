@@ -15,9 +15,9 @@ alibaba.alihealth.reserve.dental.markitem
 type AlibabaAlihealthReserveDentalMarkitemRequest struct {
     model.Params
     // 平台商品id
-    itemId   int64
+    _itemId   int64
     // 是否可预约，1.可预约 0.不可预约
-    status   int64
+    _status   int64
 }
 
 // 初始化AlibabaAlihealthReserveDentalMarkitemRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetApiParams() url.Values 
 }
 // ItemId Setter
 // 平台商品id
-func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Status Setter
 // 是否可预约，1.可预约 0.不可预约
-func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaAlihealthReserveDentalMarkitemRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaAlihealthReserveDentalMarkitemRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }

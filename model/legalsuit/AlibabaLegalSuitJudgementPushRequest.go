@@ -15,7 +15,7 @@ isv推送裁判登记信息给集团法务系统
 type AlibabaLegalSuitJudgementPushRequest struct {
     model.Params
     // 裁判登记信息
-    refereeRegistrationModel   *RefereeRegistrationModel
+    _refereeRegistrationModel   *RefereeRegistrationModel
 }
 
 // 初始化AlibabaLegalSuitJudgementPushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitJudgementPushRequest) GetApiParams() url.Values {
 }
 // RefereeRegistrationModel Setter
 // 裁判登记信息
-func (r *AlibabaLegalSuitJudgementPushRequest) SetRefereeRegistrationModel(refereeRegistrationModel *RefereeRegistrationModel) error {
-    r.refereeRegistrationModel = refereeRegistrationModel
-    r.Set("referee_registration_model", refereeRegistrationModel)
+func (r *AlibabaLegalSuitJudgementPushRequest) SetRefereeRegistrationModel(_refereeRegistrationModel *RefereeRegistrationModel) error {
+    r._refereeRegistrationModel = _refereeRegistrationModel
+    r.Set("referee_registration_model", _refereeRegistrationModel)
     return nil
 }
 
 // RefereeRegistrationModel Getter
 func (r AlibabaLegalSuitJudgementPushRequest) GetRefereeRegistrationModel() *RefereeRegistrationModel {
-    return r.refereeRegistrationModel
+    return r._refereeRegistrationModel
 }

@@ -15,13 +15,13 @@ yunos.tvpubadmin.device.yks.skill.add
 type YunosTvpubadminDeviceYksSkillAddRequest struct {
     model.Params
     // 技能id
-    skillId   int64
+    _skillId   int64
     // 设备id
-    botId   int64
+    _botId   int64
     // 技能名称
-    name   string
+    _name   string
     // 图片地址
-    iconImageUrl   string
+    _iconImageUrl   string
 }
 
 // 初始化YunosTvpubadminDeviceYksSkillAddRequest对象
@@ -46,49 +46,49 @@ func (r YunosTvpubadminDeviceYksSkillAddRequest) GetApiParams() url.Values {
 }
 // SkillId Setter
 // 技能id
-func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetSkillId(skillId int64) error {
-    r.skillId = skillId
-    r.Set("skill_id", skillId)
+func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetSkillId(_skillId int64) error {
+    r._skillId = _skillId
+    r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillAddRequest) GetSkillId() int64 {
-    return r.skillId
+    return r._skillId
 }
 // BotId Setter
 // 设备id
-func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetBotId(botId int64) error {
-    r.botId = botId
-    r.Set("bot_id", botId)
+func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetBotId(_botId int64) error {
+    r._botId = _botId
+    r.Set("bot_id", _botId)
     return nil
 }
 
 // BotId Getter
 func (r YunosTvpubadminDeviceYksSkillAddRequest) GetBotId() int64 {
-    return r.botId
+    return r._botId
 }
 // Name Setter
 // 技能名称
-func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r YunosTvpubadminDeviceYksSkillAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // IconImageUrl Setter
 // 图片地址
-func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetIconImageUrl(iconImageUrl string) error {
-    r.iconImageUrl = iconImageUrl
-    r.Set("icon_image_url", iconImageUrl)
+func (r *YunosTvpubadminDeviceYksSkillAddRequest) SetIconImageUrl(_iconImageUrl string) error {
+    r._iconImageUrl = _iconImageUrl
+    r.Set("icon_image_url", _iconImageUrl)
     return nil
 }
 
 // IconImageUrl Getter
 func (r YunosTvpubadminDeviceYksSkillAddRequest) GetIconImageUrl() string {
-    return r.iconImageUrl
+    return r._iconImageUrl
 }

@@ -15,11 +15,11 @@ taobao.region.sale.query
 type TaobaoRegionSaleQueryRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 无sku传0
-    skuId   int64
+    _skuId   int64
     // 1:国家;2:省;3: 市;4:区县
-    saleRegionLevel   int64
+    _saleRegionLevel   int64
 }
 
 // 初始化TaobaoRegionSaleQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoRegionSaleQueryRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoRegionSaleQueryRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoRegionSaleQueryRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoRegionSaleQueryRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SkuId Setter
 // 无sku传0
-func (r *TaobaoRegionSaleQueryRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoRegionSaleQueryRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoRegionSaleQueryRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // SaleRegionLevel Setter
 // 1:国家;2:省;3: 市;4:区县
-func (r *TaobaoRegionSaleQueryRequest) SetSaleRegionLevel(saleRegionLevel int64) error {
-    r.saleRegionLevel = saleRegionLevel
-    r.Set("sale_region_level", saleRegionLevel)
+func (r *TaobaoRegionSaleQueryRequest) SetSaleRegionLevel(_saleRegionLevel int64) error {
+    r._saleRegionLevel = _saleRegionLevel
+    r.Set("sale_region_level", _saleRegionLevel)
     return nil
 }
 
 // SaleRegionLevel Getter
 func (r TaobaoRegionSaleQueryRequest) GetSaleRegionLevel() int64 {
-    return r.saleRegionLevel
+    return r._saleRegionLevel
 }

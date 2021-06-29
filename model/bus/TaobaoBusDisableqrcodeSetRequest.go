@@ -15,7 +15,7 @@ taobao.bus.disableqrcode.set
 type TaobaoBusDisableqrcodeSetRequest struct {
     model.Params
     // 飞猪订单号
-    alitripOrderId   string
+    _alitripOrderId   string
 }
 
 // 初始化TaobaoBusDisableqrcodeSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusDisableqrcodeSetRequest) GetApiParams() url.Values {
 }
 // AlitripOrderId Setter
 // 飞猪订单号
-func (r *TaobaoBusDisableqrcodeSetRequest) SetAlitripOrderId(alitripOrderId string) error {
-    r.alitripOrderId = alitripOrderId
-    r.Set("alitrip_order_id", alitripOrderId)
+func (r *TaobaoBusDisableqrcodeSetRequest) SetAlitripOrderId(_alitripOrderId string) error {
+    r._alitripOrderId = _alitripOrderId
+    r.Set("alitrip_order_id", _alitripOrderId)
     return nil
 }
 
 // AlitripOrderId Getter
 func (r TaobaoBusDisableqrcodeSetRequest) GetAlitripOrderId() string {
-    return r.alitripOrderId
+    return r._alitripOrderId
 }

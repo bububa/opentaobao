@@ -15,21 +15,21 @@ alibaba.aliqin.ta.sms.num.send
 type AlibabaAliqinTaSmsNumSendRequest struct {
     model.Params
     // 公共回传参数
-    extend   string
+    _extend   string
     // 类型，normal：短信
-    smsType   string
+    _smsType   string
     // 短信签名
-    smsFreeSignName   string
+    _smsFreeSignName   string
     // 短信模板变量，AckNum是变量参数
-    smsParam   string
+    _smsParam   string
     // 接收号码
-    recNum   string
+    _recNum   string
     // 短信模板CODE
-    smsTemplateCode   string
+    _smsTemplateCode   string
     // 商家自定义扩展码
-    extendCode   string
+    _extendCode   string
     // 商家自定义扩展名,例如店铺nick
-    extendName   string
+    _extendName   string
 }
 
 // 初始化AlibabaAliqinTaSmsNumSendRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaAliqinTaSmsNumSendRequest) GetApiParams() url.Values {
 }
 // Extend Setter
 // 公共回传参数
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtend(extend string) error {
-    r.extend = extend
-    r.Set("extend", extend)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtend(_extend string) error {
+    r._extend = _extend
+    r.Set("extend", _extend)
     return nil
 }
 
 // Extend Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetExtend() string {
-    return r.extend
+    return r._extend
 }
 // SmsType Setter
 // 类型，normal：短信
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsType(smsType string) error {
-    r.smsType = smsType
-    r.Set("sms_type", smsType)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsType(_smsType string) error {
+    r._smsType = _smsType
+    r.Set("sms_type", _smsType)
     return nil
 }
 
 // SmsType Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetSmsType() string {
-    return r.smsType
+    return r._smsType
 }
 // SmsFreeSignName Setter
 // 短信签名
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsFreeSignName(smsFreeSignName string) error {
-    r.smsFreeSignName = smsFreeSignName
-    r.Set("sms_free_sign_name", smsFreeSignName)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsFreeSignName(_smsFreeSignName string) error {
+    r._smsFreeSignName = _smsFreeSignName
+    r.Set("sms_free_sign_name", _smsFreeSignName)
     return nil
 }
 
 // SmsFreeSignName Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetSmsFreeSignName() string {
-    return r.smsFreeSignName
+    return r._smsFreeSignName
 }
 // SmsParam Setter
 // 短信模板变量，AckNum是变量参数
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsParam(smsParam string) error {
-    r.smsParam = smsParam
-    r.Set("sms_param", smsParam)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsParam(_smsParam string) error {
+    r._smsParam = _smsParam
+    r.Set("sms_param", _smsParam)
     return nil
 }
 
 // SmsParam Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetSmsParam() string {
-    return r.smsParam
+    return r._smsParam
 }
 // RecNum Setter
 // 接收号码
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetRecNum(recNum string) error {
-    r.recNum = recNum
-    r.Set("rec_num", recNum)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetRecNum(_recNum string) error {
+    r._recNum = _recNum
+    r.Set("rec_num", _recNum)
     return nil
 }
 
 // RecNum Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetRecNum() string {
-    return r.recNum
+    return r._recNum
 }
 // SmsTemplateCode Setter
 // 短信模板CODE
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsTemplateCode(smsTemplateCode string) error {
-    r.smsTemplateCode = smsTemplateCode
-    r.Set("sms_template_code", smsTemplateCode)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetSmsTemplateCode(_smsTemplateCode string) error {
+    r._smsTemplateCode = _smsTemplateCode
+    r.Set("sms_template_code", _smsTemplateCode)
     return nil
 }
 
 // SmsTemplateCode Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetSmsTemplateCode() string {
-    return r.smsTemplateCode
+    return r._smsTemplateCode
 }
 // ExtendCode Setter
 // 商家自定义扩展码
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtendCode(extendCode string) error {
-    r.extendCode = extendCode
-    r.Set("extend_code", extendCode)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtendCode(_extendCode string) error {
+    r._extendCode = _extendCode
+    r.Set("extend_code", _extendCode)
     return nil
 }
 
 // ExtendCode Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetExtendCode() string {
-    return r.extendCode
+    return r._extendCode
 }
 // ExtendName Setter
 // 商家自定义扩展名,例如店铺nick
-func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtendName(extendName string) error {
-    r.extendName = extendName
-    r.Set("extend_name", extendName)
+func (r *AlibabaAliqinTaSmsNumSendRequest) SetExtendName(_extendName string) error {
+    r._extendName = _extendName
+    r.Set("extend_name", _extendName)
     return nil
 }
 
 // ExtendName Getter
 func (r AlibabaAliqinTaSmsNumSendRequest) GetExtendName() string {
-    return r.extendName
+    return r._extendName
 }

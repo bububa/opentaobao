@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.rc.sync
 type AlibabaAlihouseNewhomeRcSyncRequest struct {
     model.Params
     // 图文内容
-    rc   *RichContentDraftDto
+    _rc   *RichContentDraftDto
 }
 
 // 初始化AlibabaAlihouseNewhomeRcSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeRcSyncRequest) GetApiParams() url.Values {
 }
 // Rc Setter
 // 图文内容
-func (r *AlibabaAlihouseNewhomeRcSyncRequest) SetRc(rc *RichContentDraftDto) error {
-    r.rc = rc
-    r.Set("rc", rc)
+func (r *AlibabaAlihouseNewhomeRcSyncRequest) SetRc(_rc *RichContentDraftDto) error {
+    r._rc = _rc
+    r.Set("rc", _rc)
     return nil
 }
 
 // Rc Getter
 func (r AlibabaAlihouseNewhomeRcSyncRequest) GetRc() *RichContentDraftDto {
-    return r.rc
+    return r._rc
 }

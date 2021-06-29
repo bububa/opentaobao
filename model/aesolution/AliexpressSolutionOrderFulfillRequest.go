@@ -15,17 +15,17 @@ fulfill order for seller
 type AliexpressSolutionOrderFulfillRequest struct {
     model.Params
     // Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120&page=1&toread=1#tpc for the detailed list of logistics services supported by the platform.)
-    serviceName   string
+    _serviceName   string
     // When serviceName=other, fill in the corresponding tracking website.
-    trackingWebsite   string
+    _trackingWebsite   string
     // order ID for delivery by the user
-    outRef   string
+    _outRef   string
     // Status including: all shipments (all), part of the delivery (part)
-    sendType   string
+    _sendType   string
     // Remarks (only in English, and the length is limited to 512 characters)
-    description   string
+    _description   string
     // logistics number
-    logisticsNo   string
+    _logisticsNo   string
 }
 
 // 初始化AliexpressSolutionOrderFulfillRequest对象
@@ -50,73 +50,73 @@ func (r AliexpressSolutionOrderFulfillRequest) GetApiParams() url.Values {
 }
 // ServiceName Setter
 // Actual logistics service selected by the user (logistics service key: This interface obtains the currently supportable logistics according to all the supportable logistics services listed by api.listLogisticsService. Please visit the forum link http://bbs.seller.aliexpress.com/bbs/read.php?tid=266120&page=1&toread=1#tpc for the detailed list of logistics services supported by the platform.)
-func (r *AliexpressSolutionOrderFulfillRequest) SetServiceName(serviceName string) error {
-    r.serviceName = serviceName
-    r.Set("service_name", serviceName)
+func (r *AliexpressSolutionOrderFulfillRequest) SetServiceName(_serviceName string) error {
+    r._serviceName = _serviceName
+    r.Set("service_name", _serviceName)
     return nil
 }
 
 // ServiceName Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetServiceName() string {
-    return r.serviceName
+    return r._serviceName
 }
 // TrackingWebsite Setter
 // When serviceName=other, fill in the corresponding tracking website.
-func (r *AliexpressSolutionOrderFulfillRequest) SetTrackingWebsite(trackingWebsite string) error {
-    r.trackingWebsite = trackingWebsite
-    r.Set("tracking_website", trackingWebsite)
+func (r *AliexpressSolutionOrderFulfillRequest) SetTrackingWebsite(_trackingWebsite string) error {
+    r._trackingWebsite = _trackingWebsite
+    r.Set("tracking_website", _trackingWebsite)
     return nil
 }
 
 // TrackingWebsite Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetTrackingWebsite() string {
-    return r.trackingWebsite
+    return r._trackingWebsite
 }
 // OutRef Setter
 // order ID for delivery by the user
-func (r *AliexpressSolutionOrderFulfillRequest) SetOutRef(outRef string) error {
-    r.outRef = outRef
-    r.Set("out_ref", outRef)
+func (r *AliexpressSolutionOrderFulfillRequest) SetOutRef(_outRef string) error {
+    r._outRef = _outRef
+    r.Set("out_ref", _outRef)
     return nil
 }
 
 // OutRef Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetOutRef() string {
-    return r.outRef
+    return r._outRef
 }
 // SendType Setter
 // Status including: all shipments (all), part of the delivery (part)
-func (r *AliexpressSolutionOrderFulfillRequest) SetSendType(sendType string) error {
-    r.sendType = sendType
-    r.Set("send_type", sendType)
+func (r *AliexpressSolutionOrderFulfillRequest) SetSendType(_sendType string) error {
+    r._sendType = _sendType
+    r.Set("send_type", _sendType)
     return nil
 }
 
 // SendType Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetSendType() string {
-    return r.sendType
+    return r._sendType
 }
 // Description Setter
 // Remarks (only in English, and the length is limited to 512 characters)
-func (r *AliexpressSolutionOrderFulfillRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *AliexpressSolutionOrderFulfillRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // LogisticsNo Setter
 // logistics number
-func (r *AliexpressSolutionOrderFulfillRequest) SetLogisticsNo(logisticsNo string) error {
-    r.logisticsNo = logisticsNo
-    r.Set("logistics_no", logisticsNo)
+func (r *AliexpressSolutionOrderFulfillRequest) SetLogisticsNo(_logisticsNo string) error {
+    r._logisticsNo = _logisticsNo
+    r.Set("logistics_no", _logisticsNo)
     return nil
 }
 
 // LogisticsNo Getter
 func (r AliexpressSolutionOrderFulfillRequest) GetLogisticsNo() string {
-    return r.logisticsNo
+    return r._logisticsNo
 }

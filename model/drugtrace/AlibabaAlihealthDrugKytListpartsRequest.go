@@ -15,19 +15,19 @@ alibaba.alihealth.drug.kyt.listparts
 type AlibabaAlihealthDrugKytListpartsRequest struct {
     model.Params
     // 企业唯一标识
-    refEntId   string
+    _refEntId   string
     // 企业名称
-    entName   string
+    _entName   string
     // 企业自定义编号
-    refPartnerId   string
+    _refPartnerId   string
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    page   int64
+    _page   int64
     // 开始时间
-    beginDate   string
+    _beginDate   string
     // 结束时间
-    endDate   string
+    _endDate   string
 }
 
 // 初始化AlibabaAlihealthDrugKytListpartsRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthDrugKytListpartsRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业唯一标识
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // EntName Setter
 // 企业名称
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetEntName(entName string) error {
-    r.entName = entName
-    r.Set("ent_name", entName)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetEntName(_entName string) error {
+    r._entName = _entName
+    r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetEntName() string {
-    return r.entName
+    return r._entName
 }
 // RefPartnerId Setter
 // 企业自定义编号
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetRefPartnerId(refPartnerId string) error {
-    r.refPartnerId = refPartnerId
-    r.Set("ref_partner_id", refPartnerId)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetRefPartnerId(_refPartnerId string) error {
+    r._refPartnerId = _refPartnerId
+    r.Set("ref_partner_id", _refPartnerId)
     return nil
 }
 
 // RefPartnerId Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetRefPartnerId() string {
-    return r.refPartnerId
+    return r._refPartnerId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaAlihealthDrugKytListpartsRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugKytListpartsRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugKytListpartsRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

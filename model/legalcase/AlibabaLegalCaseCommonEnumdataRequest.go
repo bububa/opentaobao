@@ -15,9 +15,9 @@ alibaba.legal.case.common.enumdata
 type AlibabaLegalCaseCommonEnumdataRequest struct {
     model.Params
     // bu
-    key   string
+    _key   string
     // 语言
-    lang   string
+    _lang   string
 }
 
 // 初始化AlibabaLegalCaseCommonEnumdataRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLegalCaseCommonEnumdataRequest) GetApiParams() url.Values {
 }
 // Key Setter
 // bu
-func (r *AlibabaLegalCaseCommonEnumdataRequest) SetKey(key string) error {
-    r.key = key
-    r.Set("key", key)
+func (r *AlibabaLegalCaseCommonEnumdataRequest) SetKey(_key string) error {
+    r._key = _key
+    r.Set("key", _key)
     return nil
 }
 
 // Key Getter
 func (r AlibabaLegalCaseCommonEnumdataRequest) GetKey() string {
-    return r.key
+    return r._key
 }
 // Lang Setter
 // 语言
-func (r *AlibabaLegalCaseCommonEnumdataRequest) SetLang(lang string) error {
-    r.lang = lang
-    r.Set("lang", lang)
+func (r *AlibabaLegalCaseCommonEnumdataRequest) SetLang(_lang string) error {
+    r._lang = _lang
+    r.Set("lang", _lang)
     return nil
 }
 
 // Lang Getter
 func (r AlibabaLegalCaseCommonEnumdataRequest) GetLang() string {
-    return r.lang
+    return r._lang
 }

@@ -15,7 +15,7 @@ WMS调用奇门的接口,当WMS接收到ERP的发货指令时，由于种种原�
 type TaobaoQimenOrderexceptionReportRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenOrderexceptionReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderexceptionReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderexceptionReportRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderexceptionReportRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderexceptionReportRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

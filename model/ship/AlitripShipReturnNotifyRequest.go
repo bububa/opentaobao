@@ -15,7 +15,7 @@ alitrip.ship.return.notify
 type AlitripShipReturnNotifyRequest struct {
     model.Params
     // 退票请求入参
-    confirmRefundRQ   *ShipAgentConfirmRefundRq
+    _confirmRefundRQ   *ShipAgentConfirmRefundRq
 }
 
 // 初始化AlitripShipReturnNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlitripShipReturnNotifyRequest) GetApiParams() url.Values {
 }
 // ConfirmRefundRQ Setter
 // 退票请求入参
-func (r *AlitripShipReturnNotifyRequest) SetConfirmRefundRQ(confirmRefundRQ *ShipAgentConfirmRefundRq) error {
-    r.confirmRefundRQ = confirmRefundRQ
-    r.Set("confirm_refund_r_q", confirmRefundRQ)
+func (r *AlitripShipReturnNotifyRequest) SetConfirmRefundRQ(_confirmRefundRQ *ShipAgentConfirmRefundRq) error {
+    r._confirmRefundRQ = _confirmRefundRQ
+    r.Set("confirm_refund_r_q", _confirmRefundRQ)
     return nil
 }
 
 // ConfirmRefundRQ Getter
 func (r AlitripShipReturnNotifyRequest) GetConfirmRefundRQ() *ShipAgentConfirmRefundRq {
-    return r.confirmRefundRQ
+    return r._confirmRefundRQ
 }

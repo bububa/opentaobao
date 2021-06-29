@@ -15,19 +15,19 @@ alibaba.alihouse.newhome.vr.sync
 type AlibabaAlihouseNewhomeVrSyncRequest struct {
     model.Params
     // VR提取码
-    extractedCode   string
+    _extractedCode   string
     // 户型ID
-    layoutInfoId   string
+    _layoutInfoId   string
     // 是否生效
-    isValid   string
+    _isValid   string
     // 封面图
-    coverImage   string
+    _coverImage   string
     // vr展示链接
-    vrUrl   string
+    _vrUrl   string
     // 营销户型图
-    markingLayoutImg   string
+    _markingLayoutImg   string
     // 是否是单层 1 是 0 否
-    isSingleLayout   int64
+    _isSingleLayout   int64
 }
 
 // 初始化AlibabaAlihouseNewhomeVrSyncRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihouseNewhomeVrSyncRequest) GetApiParams() url.Values {
 }
 // ExtractedCode Setter
 // VR提取码
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetExtractedCode(extractedCode string) error {
-    r.extractedCode = extractedCode
-    r.Set("extracted_code", extractedCode)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetExtractedCode(_extractedCode string) error {
+    r._extractedCode = _extractedCode
+    r.Set("extracted_code", _extractedCode)
     return nil
 }
 
 // ExtractedCode Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetExtractedCode() string {
-    return r.extractedCode
+    return r._extractedCode
 }
 // LayoutInfoId Setter
 // 户型ID
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetLayoutInfoId(layoutInfoId string) error {
-    r.layoutInfoId = layoutInfoId
-    r.Set("layout_info_id", layoutInfoId)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetLayoutInfoId(_layoutInfoId string) error {
+    r._layoutInfoId = _layoutInfoId
+    r.Set("layout_info_id", _layoutInfoId)
     return nil
 }
 
 // LayoutInfoId Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetLayoutInfoId() string {
-    return r.layoutInfoId
+    return r._layoutInfoId
 }
 // IsValid Setter
 // 是否生效
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetIsValid(isValid string) error {
-    r.isValid = isValid
-    r.Set("is_valid", isValid)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetIsValid(_isValid string) error {
+    r._isValid = _isValid
+    r.Set("is_valid", _isValid)
     return nil
 }
 
 // IsValid Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetIsValid() string {
-    return r.isValid
+    return r._isValid
 }
 // CoverImage Setter
 // 封面图
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetCoverImage(coverImage string) error {
-    r.coverImage = coverImage
-    r.Set("cover_image", coverImage)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetCoverImage(_coverImage string) error {
+    r._coverImage = _coverImage
+    r.Set("cover_image", _coverImage)
     return nil
 }
 
 // CoverImage Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetCoverImage() string {
-    return r.coverImage
+    return r._coverImage
 }
 // VrUrl Setter
 // vr展示链接
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetVrUrl(vrUrl string) error {
-    r.vrUrl = vrUrl
-    r.Set("vr_url", vrUrl)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetVrUrl(_vrUrl string) error {
+    r._vrUrl = _vrUrl
+    r.Set("vr_url", _vrUrl)
     return nil
 }
 
 // VrUrl Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetVrUrl() string {
-    return r.vrUrl
+    return r._vrUrl
 }
 // MarkingLayoutImg Setter
 // 营销户型图
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetMarkingLayoutImg(markingLayoutImg string) error {
-    r.markingLayoutImg = markingLayoutImg
-    r.Set("marking_layout_img", markingLayoutImg)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetMarkingLayoutImg(_markingLayoutImg string) error {
+    r._markingLayoutImg = _markingLayoutImg
+    r.Set("marking_layout_img", _markingLayoutImg)
     return nil
 }
 
 // MarkingLayoutImg Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetMarkingLayoutImg() string {
-    return r.markingLayoutImg
+    return r._markingLayoutImg
 }
 // IsSingleLayout Setter
 // 是否是单层 1 是 0 否
-func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetIsSingleLayout(isSingleLayout int64) error {
-    r.isSingleLayout = isSingleLayout
-    r.Set("is_single_layout", isSingleLayout)
+func (r *AlibabaAlihouseNewhomeVrSyncRequest) SetIsSingleLayout(_isSingleLayout int64) error {
+    r._isSingleLayout = _isSingleLayout
+    r.Set("is_single_layout", _isSingleLayout)
     return nil
 }
 
 // IsSingleLayout Getter
 func (r AlibabaAlihouseNewhomeVrSyncRequest) GetIsSingleLayout() int64 {
-    return r.isSingleLayout
+    return r._isSingleLayout
 }

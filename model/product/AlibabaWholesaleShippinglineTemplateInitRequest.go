@@ -15,7 +15,7 @@ alibaba.wholesale.shippingline.template.init
 type AlibabaWholesaleShippinglineTemplateInitRequest struct {
     model.Params
     // 创建初始运费模板参数
-    initialTemplate   []InitialTemplate
+    _initialTemplate   []InitialTemplate
 }
 
 // 初始化AlibabaWholesaleShippinglineTemplateInitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiParams() url.Valu
 }
 // InitialTemplate Setter
 // 创建初始运费模板参数
-func (r *AlibabaWholesaleShippinglineTemplateInitRequest) SetInitialTemplate(initialTemplate []InitialTemplate) error {
-    r.initialTemplate = initialTemplate
-    r.Set("initial_template", initialTemplate)
+func (r *AlibabaWholesaleShippinglineTemplateInitRequest) SetInitialTemplate(_initialTemplate []InitialTemplate) error {
+    r._initialTemplate = _initialTemplate
+    r.Set("initial_template", _initialTemplate)
     return nil
 }
 
 // InitialTemplate Getter
 func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetInitialTemplate() []InitialTemplate {
-    return r.initialTemplate
+    return r._initialTemplate
 }

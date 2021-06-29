@@ -15,7 +15,7 @@ youku.wenyuvideo.seeta.get
 type YoukuWenyuvideoSeetaGetRequest struct {
     model.Params
     // 视频字符串形式id
-    videoStrId   string
+    _videoStrId   string
 }
 
 // 初始化YoukuWenyuvideoSeetaGetRequest对象
@@ -40,13 +40,13 @@ func (r YoukuWenyuvideoSeetaGetRequest) GetApiParams() url.Values {
 }
 // VideoStrId Setter
 // 视频字符串形式id
-func (r *YoukuWenyuvideoSeetaGetRequest) SetVideoStrId(videoStrId string) error {
-    r.videoStrId = videoStrId
-    r.Set("video_str_id", videoStrId)
+func (r *YoukuWenyuvideoSeetaGetRequest) SetVideoStrId(_videoStrId string) error {
+    r._videoStrId = _videoStrId
+    r.Set("video_str_id", _videoStrId)
     return nil
 }
 
 // VideoStrId Getter
 func (r YoukuWenyuvideoSeetaGetRequest) GetVideoStrId() string {
-    return r.videoStrId
+    return r._videoStrId
 }

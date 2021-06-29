@@ -15,7 +15,7 @@ taobao.train.moment.get
 type TaobaoTrainMomentGetRequest struct {
     model.Params
     // 出参
-    param   *TrainMomentTopParam
+    _param   *TrainMomentTopParam
 }
 
 // 初始化TaobaoTrainMomentGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainMomentGetRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 出参
-func (r *TaobaoTrainMomentGetRequest) SetParam(param *TrainMomentTopParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoTrainMomentGetRequest) SetParam(_param *TrainMomentTopParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoTrainMomentGetRequest) GetParam() *TrainMomentTopParam {
-    return r.param
+    return r._param
 }

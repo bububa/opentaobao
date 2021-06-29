@@ -15,7 +15,7 @@ alibaba.xiami.api.rank.songs.get
 type AlibabaXiamiApiRankSongsGetRequest struct {
     model.Params
     // 榜单类型:<br/>虾米榜 music_all,music_oumei,music_ri,music_han,music_huayu;<br/>虾米新歌榜 newmusic_all,newmusc_oumei,newmusic_ri,newmusic_han,newmusic_huayu;<br/>全球媒体榜 hito,jingge,uk,billboard,oricon,mnet;<br/>原创榜 music_original;<br/>demo榜 music_demo;<br/>陌陌榜 momo;
-    type   string
+    _type   string
 }
 
 // 初始化AlibabaXiamiApiRankSongsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiRankSongsGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 榜单类型:<br/>虾米榜 music_all,music_oumei,music_ri,music_han,music_huayu;<br/>虾米新歌榜 newmusic_all,newmusc_oumei,newmusic_ri,newmusic_han,newmusic_huayu;<br/>全球媒体榜 hito,jingge,uk,billboard,oricon,mnet;<br/>原创榜 music_original;<br/>demo榜 music_demo;<br/>陌陌榜 momo;
-func (r *AlibabaXiamiApiRankSongsGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaXiamiApiRankSongsGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaXiamiApiRankSongsGetRequest) GetType() string {
-    return r.type
+    return r._type
 }

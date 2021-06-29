@@ -15,9 +15,9 @@ alibaba.mos.goods.searchcspu
 type AlibabaMosGoodsSearchcspuRequest struct {
     model.Params
     // 组合查询对象
-    paramCspuCriteria   *CspuCriteria
+    _paramCspuCriteria   *CspuCriteria
     // 分页参数
-    paramPaginator   *Paginator
+    _paramPaginator   *Paginator
 }
 
 // 初始化AlibabaMosGoodsSearchcspuRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMosGoodsSearchcspuRequest) GetApiParams() url.Values {
 }
 // ParamCspuCriteria Setter
 // 组合查询对象
-func (r *AlibabaMosGoodsSearchcspuRequest) SetParamCspuCriteria(paramCspuCriteria *CspuCriteria) error {
-    r.paramCspuCriteria = paramCspuCriteria
-    r.Set("param_cspu_criteria", paramCspuCriteria)
+func (r *AlibabaMosGoodsSearchcspuRequest) SetParamCspuCriteria(_paramCspuCriteria *CspuCriteria) error {
+    r._paramCspuCriteria = _paramCspuCriteria
+    r.Set("param_cspu_criteria", _paramCspuCriteria)
     return nil
 }
 
 // ParamCspuCriteria Getter
 func (r AlibabaMosGoodsSearchcspuRequest) GetParamCspuCriteria() *CspuCriteria {
-    return r.paramCspuCriteria
+    return r._paramCspuCriteria
 }
 // ParamPaginator Setter
 // 分页参数
-func (r *AlibabaMosGoodsSearchcspuRequest) SetParamPaginator(paramPaginator *Paginator) error {
-    r.paramPaginator = paramPaginator
-    r.Set("param_paginator", paramPaginator)
+func (r *AlibabaMosGoodsSearchcspuRequest) SetParamPaginator(_paramPaginator *Paginator) error {
+    r._paramPaginator = _paramPaginator
+    r.Set("param_paginator", _paramPaginator)
     return nil
 }
 
 // ParamPaginator Getter
 func (r AlibabaMosGoodsSearchcspuRequest) GetParamPaginator() *Paginator {
-    return r.paramPaginator
+    return r._paramPaginator
 }

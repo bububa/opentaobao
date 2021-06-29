@@ -15,7 +15,7 @@ ToB仓储发货
 type TaobaoUopTobOrderCreateRequest struct {
     model.Params
     // ERP出库对象
-    deliveryOrder   *DeliveryOrder
+    _deliveryOrder   *DeliveryOrder
 }
 
 // 初始化TaobaoUopTobOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUopTobOrderCreateRequest) GetApiParams() url.Values {
 }
 // DeliveryOrder Setter
 // ERP出库对象
-func (r *TaobaoUopTobOrderCreateRequest) SetDeliveryOrder(deliveryOrder *DeliveryOrder) error {
-    r.deliveryOrder = deliveryOrder
-    r.Set("delivery_order", deliveryOrder)
+func (r *TaobaoUopTobOrderCreateRequest) SetDeliveryOrder(_deliveryOrder *DeliveryOrder) error {
+    r._deliveryOrder = _deliveryOrder
+    r.Set("delivery_order", _deliveryOrder)
     return nil
 }
 
 // DeliveryOrder Getter
 func (r TaobaoUopTobOrderCreateRequest) GetDeliveryOrder() *DeliveryOrder {
-    return r.deliveryOrder
+    return r._deliveryOrder
 }

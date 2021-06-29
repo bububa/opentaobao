@@ -15,7 +15,7 @@ taobao.wangwang.abstract.initialize
 type TaobaoWangwangAbstractInitializeRequest struct {
     model.Params
     // 传入参数的字符集
-    charset   string
+    _charset   string
 }
 
 // 初始化TaobaoWangwangAbstractInitializeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWangwangAbstractInitializeRequest) GetApiParams() url.Values {
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractInitializeRequest) SetCharset(charset string) error {
-    r.charset = charset
-    r.Set("charset", charset)
+func (r *TaobaoWangwangAbstractInitializeRequest) SetCharset(_charset string) error {
+    r._charset = _charset
+    r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
 func (r TaobaoWangwangAbstractInitializeRequest) GetCharset() string {
-    return r.charset
+    return r._charset
 }

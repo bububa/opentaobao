@@ -15,9 +15,9 @@ alibaba.scbp.ad.keyword.tag.update
 type AlibabaScbpAdKeywordTagUpdateRequest struct {
     model.Params
     // 关键词ID列表
-    keywordIdList   []int64
+    _keywordIdList   []int64
     // 关键词分组ID,不传表示取消关键词的分组
-    tagIdList   []int64
+    _tagIdList   []int64
 }
 
 // 初始化AlibabaScbpAdKeywordTagUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdKeywordTagUpdateRequest) GetApiParams() url.Values {
 }
 // KeywordIdList Setter
 // 关键词ID列表
-func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetKeywordIdList(keywordIdList []int64) error {
-    r.keywordIdList = keywordIdList
-    r.Set("keyword_id_list", keywordIdList)
+func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetKeywordIdList(_keywordIdList []int64) error {
+    r._keywordIdList = _keywordIdList
+    r.Set("keyword_id_list", _keywordIdList)
     return nil
 }
 
 // KeywordIdList Getter
 func (r AlibabaScbpAdKeywordTagUpdateRequest) GetKeywordIdList() []int64 {
-    return r.keywordIdList
+    return r._keywordIdList
 }
 // TagIdList Setter
 // 关键词分组ID,不传表示取消关键词的分组
-func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetTagIdList(tagIdList []int64) error {
-    r.tagIdList = tagIdList
-    r.Set("tag_id_list", tagIdList)
+func (r *AlibabaScbpAdKeywordTagUpdateRequest) SetTagIdList(_tagIdList []int64) error {
+    r._tagIdList = _tagIdList
+    r.Set("tag_id_list", _tagIdList)
     return nil
 }
 
 // TagIdList Getter
 func (r AlibabaScbpAdKeywordTagUpdateRequest) GetTagIdList() []int64 {
-    return r.tagIdList
+    return r._tagIdList
 }

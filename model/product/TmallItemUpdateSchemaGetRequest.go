@@ -15,11 +15,11 @@ Schema方式编辑天猫商品时，编辑商品规则获取
 type TmallItemUpdateSchemaGetRequest struct {
     model.Params
     // 需要编辑的商品ID
-    itemId   int64
+    _itemId   int64
     // 商品发布的目标类目，必须是叶子类目。如果没有切换类目需求，不需要填写。
-    categoryId   int64
+    _categoryId   int64
     // 商品发布的目标product_id。如果没有切换产品的需求，参数可以不填写。
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TmallItemUpdateSchemaGetRequest对象
@@ -44,37 +44,37 @@ func (r TmallItemUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 需要编辑的商品ID
-func (r *TmallItemUpdateSchemaGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemUpdateSchemaGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemUpdateSchemaGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目。如果没有切换类目需求，不需要填写。
-func (r *TmallItemUpdateSchemaGetRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TmallItemUpdateSchemaGetRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TmallItemUpdateSchemaGetRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // ProductId Setter
 // 商品发布的目标product_id。如果没有切换产品的需求，参数可以不填写。
-func (r *TmallItemUpdateSchemaGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallItemUpdateSchemaGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallItemUpdateSchemaGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

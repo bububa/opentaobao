@@ -15,7 +15,7 @@ alibaba.wdk.trade.discount.bill.get
 type AlibabaWdkTradeDiscountBillGetRequest struct {
     model.Params
     // 请求参数
-    param0   *OrderDiscountBillQueryRequest
+    _param0   *OrderDiscountBillQueryRequest
 }
 
 // 初始化AlibabaWdkTradeDiscountBillGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeDiscountBillGetRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaWdkTradeDiscountBillGetRequest) SetParam0(param0 *OrderDiscountBillQueryRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkTradeDiscountBillGetRequest) SetParam0(_param0 *OrderDiscountBillQueryRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkTradeDiscountBillGetRequest) GetParam0() *OrderDiscountBillQueryRequest {
-    return r.param0
+    return r._param0
 }

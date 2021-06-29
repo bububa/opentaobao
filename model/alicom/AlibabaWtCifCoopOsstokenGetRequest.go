@@ -15,11 +15,11 @@ alibaba.wt.cif.coop.osstoken.get
 type AlibabaWtCifCoopOsstokenGetRequest struct {
     model.Params
     // 调用方的应用名
-    appName   string
+    _appName   string
     // 系统分配的source
-    source   string
+    _source   string
     // 系统分配的biz
-    biz   string
+    _biz   string
 }
 
 // 初始化AlibabaWtCifCoopOsstokenGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWtCifCoopOsstokenGetRequest) GetApiParams() url.Values {
 }
 // AppName Setter
 // 调用方的应用名
-func (r *AlibabaWtCifCoopOsstokenGetRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaWtCifCoopOsstokenGetRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaWtCifCoopOsstokenGetRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // Source Setter
 // 系统分配的source
-func (r *AlibabaWtCifCoopOsstokenGetRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaWtCifCoopOsstokenGetRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaWtCifCoopOsstokenGetRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // Biz Setter
 // 系统分配的biz
-func (r *AlibabaWtCifCoopOsstokenGetRequest) SetBiz(biz string) error {
-    r.biz = biz
-    r.Set("biz", biz)
+func (r *AlibabaWtCifCoopOsstokenGetRequest) SetBiz(_biz string) error {
+    r._biz = _biz
+    r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
 func (r AlibabaWtCifCoopOsstokenGetRequest) GetBiz() string {
-    return r.biz
+    return r._biz
 }

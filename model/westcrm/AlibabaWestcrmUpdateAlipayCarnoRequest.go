@@ -15,13 +15,13 @@ alibaba.westcrm.update.alipay.carno
 type AlibabaWestcrmUpdateAlipayCarnoRequest struct {
     model.Params
     // 商场id
-    mallId   int64
+    _mallId   int64
     // 用户id
-    id   int64
+    _id   int64
     // 2088102011918821
-    alipayCardNo   string
+    _alipayCardNo   string
     // appkey
-    westcrmAppKey   string
+    _westcrmAppKey   string
 }
 
 // 初始化AlibabaWestcrmUpdateAlipayCarnoRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWestcrmUpdateAlipayCarnoRequest) GetApiParams() url.Values {
 }
 // MallId Setter
 // 商场id
-func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetMallId(mallId int64) error {
-    r.mallId = mallId
-    r.Set("mall_id", mallId)
+func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetMallId(_mallId int64) error {
+    r._mallId = _mallId
+    r.Set("mall_id", _mallId)
     return nil
 }
 
 // MallId Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoRequest) GetMallId() int64 {
-    return r.mallId
+    return r._mallId
 }
 // Id Setter
 // 用户id
-func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // AlipayCardNo Setter
 // 2088102011918821
-func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetAlipayCardNo(alipayCardNo string) error {
-    r.alipayCardNo = alipayCardNo
-    r.Set("alipay_card_no", alipayCardNo)
+func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetAlipayCardNo(_alipayCardNo string) error {
+    r._alipayCardNo = _alipayCardNo
+    r.Set("alipay_card_no", _alipayCardNo)
     return nil
 }
 
 // AlipayCardNo Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoRequest) GetAlipayCardNo() string {
-    return r.alipayCardNo
+    return r._alipayCardNo
 }
 // WestcrmAppKey Setter
 // appkey
-func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetWestcrmAppKey(westcrmAppKey string) error {
-    r.westcrmAppKey = westcrmAppKey
-    r.Set("westcrm_app_key", westcrmAppKey)
+func (r *AlibabaWestcrmUpdateAlipayCarnoRequest) SetWestcrmAppKey(_westcrmAppKey string) error {
+    r._westcrmAppKey = _westcrmAppKey
+    r.Set("westcrm_app_key", _westcrmAppKey)
     return nil
 }
 
 // WestcrmAppKey Getter
 func (r AlibabaWestcrmUpdateAlipayCarnoRequest) GetWestcrmAppKey() string {
-    return r.westcrmAppKey
+    return r._westcrmAppKey
 }

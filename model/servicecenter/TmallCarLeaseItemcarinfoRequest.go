@@ -15,7 +15,7 @@ tmall.car.lease.itemcarinfo
 type TmallCarLeaseItemcarinfoRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallCarLeaseItemcarinfoRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeaseItemcarinfoRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallCarLeaseItemcarinfoRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallCarLeaseItemcarinfoRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallCarLeaseItemcarinfoRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

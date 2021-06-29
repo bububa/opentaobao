@@ -15,11 +15,11 @@ alitrip.tuan.hotel.item.sku.update
 type AlitripTuanHotelItemSkuUpdateRequest struct {
     model.Params
     // 宝贝ID
-    itemId   int64
+    _itemId   int64
     // 宝贝所属类目
-    catId   int64
+    _catId   int64
     // 关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。
-    itemSkuList   []TopTuanItemSkuVO
+    _itemSkuList   []TopTuanItemSkuVO
 }
 
 // 初始化AlitripTuanHotelItemSkuUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlitripTuanHotelItemSkuUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 宝贝ID
-func (r *AlitripTuanHotelItemSkuUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlitripTuanHotelItemSkuUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlitripTuanHotelItemSkuUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // CatId Setter
 // 宝贝所属类目
-func (r *AlitripTuanHotelItemSkuUpdateRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlitripTuanHotelItemSkuUpdateRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlitripTuanHotelItemSkuUpdateRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // ItemSkuList Setter
 // 关于sku（价格策略）的字段填写的说明  国内酒店套餐类目(日历库存必填选项：套餐名称、原价、间夜;普通库存必填选项：套餐名称、价格、原价、库存、间夜)。  国际酒店套餐类目(日历库存必填选型：套餐名称、原价、间夜、人数;普通库存必填选项：套餐名称、价格、原件、库存、间夜、人数)。  酒店餐饮美食类目(日历库存必填选项：套餐名称、原价、人数、次数;普通库存必填选项：套餐名称、价格、原价、库存、人数，次数)。  酒店服务类目(日历库存必填选项：套餐名称、原价、使用次数;普通库存必填选项：套餐名称、价格、原价、库存、使用次数)。  酒店客房优惠券类目(无sku（价格策略）选项，不填写)。
-func (r *AlitripTuanHotelItemSkuUpdateRequest) SetItemSkuList(itemSkuList []TopTuanItemSkuVO) error {
-    r.itemSkuList = itemSkuList
-    r.Set("item_sku_list", itemSkuList)
+func (r *AlitripTuanHotelItemSkuUpdateRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
+    r._itemSkuList = _itemSkuList
+    r.Set("item_sku_list", _itemSkuList)
     return nil
 }
 
 // ItemSkuList Getter
 func (r AlitripTuanHotelItemSkuUpdateRequest) GetItemSkuList() []TopTuanItemSkuVO {
-    return r.itemSkuList
+    return r._itemSkuList
 }

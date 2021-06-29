@@ -15,7 +15,7 @@ taobao.feedflow.item.campaign.get
 type TaobaoFeedflowItemCampaignGetRequest struct {
     model.Params
     // 计划id
-    campaginId   int64
+    _campaginId   int64
 }
 
 // 初始化TaobaoFeedflowItemCampaignGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignGetRequest) GetApiParams() url.Values {
 }
 // CampaginId Setter
 // 计划id
-func (r *TaobaoFeedflowItemCampaignGetRequest) SetCampaginId(campaginId int64) error {
-    r.campaginId = campaginId
-    r.Set("campagin_id", campaginId)
+func (r *TaobaoFeedflowItemCampaignGetRequest) SetCampaginId(_campaginId int64) error {
+    r._campaginId = _campaginId
+    r.Set("campagin_id", _campaginId)
     return nil
 }
 
 // CampaginId Getter
 func (r TaobaoFeedflowItemCampaignGetRequest) GetCampaginId() int64 {
-    return r.campaginId
+    return r._campaginId
 }

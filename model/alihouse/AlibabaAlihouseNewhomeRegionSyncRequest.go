@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.region.sync
 type AlibabaAlihouseNewhomeRegionSyncRequest struct {
     model.Params
     // 城区数据
-    baseRegionDto   *BaseRegionDto
+    _baseRegionDto   *BaseRegionDto
 }
 
 // 初始化AlibabaAlihouseNewhomeRegionSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeRegionSyncRequest) GetApiParams() url.Values {
 }
 // BaseRegionDto Setter
 // 城区数据
-func (r *AlibabaAlihouseNewhomeRegionSyncRequest) SetBaseRegionDto(baseRegionDto *BaseRegionDto) error {
-    r.baseRegionDto = baseRegionDto
-    r.Set("base_region_dto", baseRegionDto)
+func (r *AlibabaAlihouseNewhomeRegionSyncRequest) SetBaseRegionDto(_baseRegionDto *BaseRegionDto) error {
+    r._baseRegionDto = _baseRegionDto
+    r.Set("base_region_dto", _baseRegionDto)
     return nil
 }
 
 // BaseRegionDto Getter
 func (r AlibabaAlihouseNewhomeRegionSyncRequest) GetBaseRegionDto() *BaseRegionDto {
-    return r.baseRegionDto
+    return r._baseRegionDto
 }

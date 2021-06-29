@@ -15,7 +15,7 @@ alitrip.hotel.alliance.hid.get
 type AlitripHotelAllianceHidGetRequest struct {
     model.Params
     // 查询入参
-    allianceInfoRequest   *AllianceInfoRequest
+    _allianceInfoRequest   *AllianceInfoRequest
 }
 
 // 初始化AlitripHotelAllianceHidGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelAllianceHidGetRequest) GetApiParams() url.Values {
 }
 // AllianceInfoRequest Setter
 // 查询入参
-func (r *AlitripHotelAllianceHidGetRequest) SetAllianceInfoRequest(allianceInfoRequest *AllianceInfoRequest) error {
-    r.allianceInfoRequest = allianceInfoRequest
-    r.Set("alliance_info_request", allianceInfoRequest)
+func (r *AlitripHotelAllianceHidGetRequest) SetAllianceInfoRequest(_allianceInfoRequest *AllianceInfoRequest) error {
+    r._allianceInfoRequest = _allianceInfoRequest
+    r.Set("alliance_info_request", _allianceInfoRequest)
     return nil
 }
 
 // AllianceInfoRequest Getter
 func (r AlitripHotelAllianceHidGetRequest) GetAllianceInfoRequest() *AllianceInfoRequest {
-    return r.allianceInfoRequest
+    return r._allianceInfoRequest
 }

@@ -15,7 +15,7 @@ alibaba.wdk.coupon.abandon
 type AlibabaWdkCouponAbandonRequest struct {
     model.Params
     // 废券参数
-    paramWdkCouponAbandonParam   *WdkCouponAbandonParam
+    _paramWdkCouponAbandonParam   *WdkCouponAbandonParam
 }
 
 // 初始化AlibabaWdkCouponAbandonRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponAbandonRequest) GetApiParams() url.Values {
 }
 // ParamWdkCouponAbandonParam Setter
 // 废券参数
-func (r *AlibabaWdkCouponAbandonRequest) SetParamWdkCouponAbandonParam(paramWdkCouponAbandonParam *WdkCouponAbandonParam) error {
-    r.paramWdkCouponAbandonParam = paramWdkCouponAbandonParam
-    r.Set("param_wdk_coupon_abandon_param", paramWdkCouponAbandonParam)
+func (r *AlibabaWdkCouponAbandonRequest) SetParamWdkCouponAbandonParam(_paramWdkCouponAbandonParam *WdkCouponAbandonParam) error {
+    r._paramWdkCouponAbandonParam = _paramWdkCouponAbandonParam
+    r.Set("param_wdk_coupon_abandon_param", _paramWdkCouponAbandonParam)
     return nil
 }
 
 // ParamWdkCouponAbandonParam Getter
 func (r AlibabaWdkCouponAbandonRequest) GetParamWdkCouponAbandonParam() *WdkCouponAbandonParam {
-    return r.paramWdkCouponAbandonParam
+    return r._paramWdkCouponAbandonParam
 }

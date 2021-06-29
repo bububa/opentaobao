@@ -15,7 +15,7 @@ alibaba.mj.mos.fund.cancelbill
 type AlibabaMjMosFundCancelbillRequest struct {
     model.Params
     // 取消入参
-    cancelBillDTO   *CancelBillDto
+    _cancelBillDTO   *CancelBillDto
 }
 
 // 初始化AlibabaMjMosFundCancelbillRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjMosFundCancelbillRequest) GetApiParams() url.Values {
 }
 // CancelBillDTO Setter
 // 取消入参
-func (r *AlibabaMjMosFundCancelbillRequest) SetCancelBillDTO(cancelBillDTO *CancelBillDto) error {
-    r.cancelBillDTO = cancelBillDTO
-    r.Set("cancel_bill_d_t_o", cancelBillDTO)
+func (r *AlibabaMjMosFundCancelbillRequest) SetCancelBillDTO(_cancelBillDTO *CancelBillDto) error {
+    r._cancelBillDTO = _cancelBillDTO
+    r.Set("cancel_bill_d_t_o", _cancelBillDTO)
     return nil
 }
 
 // CancelBillDTO Getter
 func (r AlibabaMjMosFundCancelbillRequest) GetCancelBillDTO() *CancelBillDto {
-    return r.cancelBillDTO
+    return r._cancelBillDTO
 }

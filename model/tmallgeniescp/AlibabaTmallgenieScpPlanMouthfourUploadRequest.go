@@ -15,7 +15,7 @@ M+4 PR 回传接口
 type AlibabaTmallgenieScpPlanMouthfourUploadRequest struct {
     model.Params
     // 请求参数
-    monthFourPrRequest   *MonthFourPrRequest
+    _monthFourPrRequest   *MonthFourPrRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanMouthfourUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanMouthfourUploadRequest) GetApiParams() url.Value
 }
 // MonthFourPrRequest Setter
 // 请求参数
-func (r *AlibabaTmallgenieScpPlanMouthfourUploadRequest) SetMonthFourPrRequest(monthFourPrRequest *MonthFourPrRequest) error {
-    r.monthFourPrRequest = monthFourPrRequest
-    r.Set("month_four_pr_request", monthFourPrRequest)
+func (r *AlibabaTmallgenieScpPlanMouthfourUploadRequest) SetMonthFourPrRequest(_monthFourPrRequest *MonthFourPrRequest) error {
+    r._monthFourPrRequest = _monthFourPrRequest
+    r.Set("month_four_pr_request", _monthFourPrRequest)
     return nil
 }
 
 // MonthFourPrRequest Getter
 func (r AlibabaTmallgenieScpPlanMouthfourUploadRequest) GetMonthFourPrRequest() *MonthFourPrRequest {
-    return r.monthFourPrRequest
+    return r._monthFourPrRequest
 }

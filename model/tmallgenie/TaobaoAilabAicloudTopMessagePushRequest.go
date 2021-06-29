@@ -15,9 +15,9 @@ taobao.ailab.aicloud.top.message.push
 type TaobaoAilabAicloudTopMessagePushRequest struct {
     model.Params
     // 消息推送请求
-    messageBroadcastRequest   *MessageBroadcastRequest
+    _messageBroadcastRequest   *MessageBroadcastRequest
     // 当前用户信息
-    userInfoContext   *OpsRequestUserInfoContext
+    _userInfoContext   *OpsRequestUserInfoContext
 }
 
 // 初始化TaobaoAilabAicloudTopMessagePushRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAilabAicloudTopMessagePushRequest) GetApiParams() url.Values {
 }
 // MessageBroadcastRequest Setter
 // 消息推送请求
-func (r *TaobaoAilabAicloudTopMessagePushRequest) SetMessageBroadcastRequest(messageBroadcastRequest *MessageBroadcastRequest) error {
-    r.messageBroadcastRequest = messageBroadcastRequest
-    r.Set("message_broadcast_request", messageBroadcastRequest)
+func (r *TaobaoAilabAicloudTopMessagePushRequest) SetMessageBroadcastRequest(_messageBroadcastRequest *MessageBroadcastRequest) error {
+    r._messageBroadcastRequest = _messageBroadcastRequest
+    r.Set("message_broadcast_request", _messageBroadcastRequest)
     return nil
 }
 
 // MessageBroadcastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushRequest) GetMessageBroadcastRequest() *MessageBroadcastRequest {
-    return r.messageBroadcastRequest
+    return r._messageBroadcastRequest
 }
 // UserInfoContext Setter
 // 当前用户信息
-func (r *TaobaoAilabAicloudTopMessagePushRequest) SetUserInfoContext(userInfoContext *OpsRequestUserInfoContext) error {
-    r.userInfoContext = userInfoContext
-    r.Set("user_info_context", userInfoContext)
+func (r *TaobaoAilabAicloudTopMessagePushRequest) SetUserInfoContext(_userInfoContext *OpsRequestUserInfoContext) error {
+    r._userInfoContext = _userInfoContext
+    r.Set("user_info_context", _userInfoContext)
     return nil
 }
 
 // UserInfoContext Getter
 func (r TaobaoAilabAicloudTopMessagePushRequest) GetUserInfoContext() *OpsRequestUserInfoContext {
-    return r.userInfoContext
+    return r._userInfoContext
 }

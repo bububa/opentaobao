@@ -15,9 +15,9 @@ tmall.nr.fulfill.cancel.reason.query
 type TmallNrFulfillCancelReasonQueryRequest struct {
     model.Params
     // 商家的sellerID
-    sellerId   int64
+    _sellerId   int64
     // 淘宝交易的主订单号
-    mainOrderId   int64
+    _mainOrderId   int64
 }
 
 // 初始化TmallNrFulfillCancelReasonQueryRequest对象
@@ -42,25 +42,25 @@ func (r TmallNrFulfillCancelReasonQueryRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 商家的sellerID
-func (r *TmallNrFulfillCancelReasonQueryRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TmallNrFulfillCancelReasonQueryRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TmallNrFulfillCancelReasonQueryRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // MainOrderId Setter
 // 淘宝交易的主订单号
-func (r *TmallNrFulfillCancelReasonQueryRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TmallNrFulfillCancelReasonQueryRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TmallNrFulfillCancelReasonQueryRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }

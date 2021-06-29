@@ -17,9 +17,9 @@ alibaba.alihealth.drug.code.kyt.yy.querycode
 type AlibabaAlihealthDrugCodeKytYyQuerycodeRequest struct {
     model.Params
     // 企业唯一标识（或appkey）
-    refEntId   string
+    _refEntId   string
     // 码列表
-    codes   []string
+    _codes   []string
 }
 
 // 初始化AlibabaAlihealthDrugCodeKytYyQuerycodeRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) GetApiParams() url.Values
 }
 // RefEntId Setter
 // 企业唯一标识（或appkey）
-func (r *AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // Codes Setter
 // 码列表
-func (r *AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) SetCodes(codes []string) error {
-    r.codes = codes
-    r.Set("codes", codes)
+func (r *AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) SetCodes(_codes []string) error {
+    r._codes = _codes
+    r.Set("codes", _codes)
     return nil
 }
 
 // Codes Getter
 func (r AlibabaAlihealthDrugCodeKytYyQuerycodeRequest) GetCodes() []string {
-    return r.codes
+    return r._codes
 }

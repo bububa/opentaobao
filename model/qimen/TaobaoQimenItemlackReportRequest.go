@@ -15,7 +15,7 @@ WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
 type TaobaoQimenItemlackReportRequest struct {
     model.Params
     // 
-    request   *ItemLackReportRequest
+    _request   *ItemLackReportRequest
 }
 
 // 初始化TaobaoQimenItemlackReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenItemlackReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenItemlackReportRequest) SetRequest(request *ItemLackReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenItemlackReportRequest) SetRequest(_request *ItemLackReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenItemlackReportRequest) GetRequest() *ItemLackReportRequest {
-    return r.request
+    return r._request
 }

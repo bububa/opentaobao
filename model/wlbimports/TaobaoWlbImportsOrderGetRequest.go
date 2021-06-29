@@ -15,17 +15,17 @@ taobao.wlb.imports.order.get
 type TaobaoWlbImportsOrderGetRequest struct {
     model.Params
     // 交易订单号
-    tradeId   int64
+    _tradeId   int64
     // 交易订单开始创建时间
-    gmtCreateStart   string
+    _gmtCreateStart   string
     // 交易订单结束创建时间
-    gmtCreateEnd   string
+    _gmtCreateEnd   string
     // 物流订单状态编码。以下依（物流订单状态编码，描述）的形式列举出来：(TIN_CONSING,发货中),(SENT_WAIT_COMPANY_MAKE_SURE,待仓库收货),(ORDER_CANCELED,订单关闭),(COMPANY_MAKE_SURE,海外仓已揽收),(REJECTED_RECEIVED_BY_COMPANY,海外仓拒收),(ORDER_REFUNDING,退货中),(ORDER_REFUND_BY_COMPANY,订单已退货),(EXCEPTION_IN_COMPANY,海外仓内异常),(FAILED_PAID_SHIPPING_FEE,支付失败),(PAID_SHIPPING_FEE,待仓库发货),(COMPANY_CONSIGN_CONFIRM,海外仓已发货),(WAIT_CUSTOMS_MAKE_SURE,清关已收货),(EXCEPTION_IN_CUSTOMS,清关异常),(CUSTOMSING,清关中),(COMPANY_DELIVERY,国内配送)。
-    statusCode   string
+    _statusCode   string
     // 页码。取值范围:大于零的整数; 默认值:1
-    pageNo   int64
+    _pageNo   int64
     // 每页条数。取值范围:大于0小于等于100的整数; 默认值:40; 最小值：1；最大值:20
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoWlbImportsOrderGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoWlbImportsOrderGetRequest) GetApiParams() url.Values {
 }
 // TradeId Setter
 // 交易订单号
-func (r *TaobaoWlbImportsOrderGetRequest) SetTradeId(tradeId int64) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *TaobaoWlbImportsOrderGetRequest) SetTradeId(_tradeId int64) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetTradeId() int64 {
-    return r.tradeId
+    return r._tradeId
 }
 // GmtCreateStart Setter
 // 交易订单开始创建时间
-func (r *TaobaoWlbImportsOrderGetRequest) SetGmtCreateStart(gmtCreateStart string) error {
-    r.gmtCreateStart = gmtCreateStart
-    r.Set("gmt_create_start", gmtCreateStart)
+func (r *TaobaoWlbImportsOrderGetRequest) SetGmtCreateStart(_gmtCreateStart string) error {
+    r._gmtCreateStart = _gmtCreateStart
+    r.Set("gmt_create_start", _gmtCreateStart)
     return nil
 }
 
 // GmtCreateStart Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetGmtCreateStart() string {
-    return r.gmtCreateStart
+    return r._gmtCreateStart
 }
 // GmtCreateEnd Setter
 // 交易订单结束创建时间
-func (r *TaobaoWlbImportsOrderGetRequest) SetGmtCreateEnd(gmtCreateEnd string) error {
-    r.gmtCreateEnd = gmtCreateEnd
-    r.Set("gmt_create_end", gmtCreateEnd)
+func (r *TaobaoWlbImportsOrderGetRequest) SetGmtCreateEnd(_gmtCreateEnd string) error {
+    r._gmtCreateEnd = _gmtCreateEnd
+    r.Set("gmt_create_end", _gmtCreateEnd)
     return nil
 }
 
 // GmtCreateEnd Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetGmtCreateEnd() string {
-    return r.gmtCreateEnd
+    return r._gmtCreateEnd
 }
 // StatusCode Setter
 // 物流订单状态编码。以下依（物流订单状态编码，描述）的形式列举出来：(TIN_CONSING,发货中),(SENT_WAIT_COMPANY_MAKE_SURE,待仓库收货),(ORDER_CANCELED,订单关闭),(COMPANY_MAKE_SURE,海外仓已揽收),(REJECTED_RECEIVED_BY_COMPANY,海外仓拒收),(ORDER_REFUNDING,退货中),(ORDER_REFUND_BY_COMPANY,订单已退货),(EXCEPTION_IN_COMPANY,海外仓内异常),(FAILED_PAID_SHIPPING_FEE,支付失败),(PAID_SHIPPING_FEE,待仓库发货),(COMPANY_CONSIGN_CONFIRM,海外仓已发货),(WAIT_CUSTOMS_MAKE_SURE,清关已收货),(EXCEPTION_IN_CUSTOMS,清关异常),(CUSTOMSING,清关中),(COMPANY_DELIVERY,国内配送)。
-func (r *TaobaoWlbImportsOrderGetRequest) SetStatusCode(statusCode string) error {
-    r.statusCode = statusCode
-    r.Set("status_code", statusCode)
+func (r *TaobaoWlbImportsOrderGetRequest) SetStatusCode(_statusCode string) error {
+    r._statusCode = _statusCode
+    r.Set("status_code", _statusCode)
     return nil
 }
 
 // StatusCode Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetStatusCode() string {
-    return r.statusCode
+    return r._statusCode
 }
 // PageNo Setter
 // 页码。取值范围:大于零的整数; 默认值:1
-func (r *TaobaoWlbImportsOrderGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoWlbImportsOrderGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数。取值范围:大于0小于等于100的整数; 默认值:40; 最小值：1；最大值:20
-func (r *TaobaoWlbImportsOrderGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoWlbImportsOrderGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoWlbImportsOrderGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

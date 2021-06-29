@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.patientinfo.sync
 type AlibabaAlihealthOutflowPatientinfoSyncRequest struct {
     model.Params
     // 入参
-    syncPatientInfoRequest   *SyncPatientInfoRequest
+    _syncPatientInfoRequest   *SyncPatientInfoRequest
 }
 
 // 初始化AlibabaAlihealthOutflowPatientinfoSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetApiParams() url.Values
 }
 // SyncPatientInfoRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowPatientinfoSyncRequest) SetSyncPatientInfoRequest(syncPatientInfoRequest *SyncPatientInfoRequest) error {
-    r.syncPatientInfoRequest = syncPatientInfoRequest
-    r.Set("sync_patient_info_request", syncPatientInfoRequest)
+func (r *AlibabaAlihealthOutflowPatientinfoSyncRequest) SetSyncPatientInfoRequest(_syncPatientInfoRequest *SyncPatientInfoRequest) error {
+    r._syncPatientInfoRequest = _syncPatientInfoRequest
+    r.Set("sync_patient_info_request", _syncPatientInfoRequest)
     return nil
 }
 
 // SyncPatientInfoRequest Getter
 func (r AlibabaAlihealthOutflowPatientinfoSyncRequest) GetSyncPatientInfoRequest() *SyncPatientInfoRequest {
-    return r.syncPatientInfoRequest
+    return r._syncPatientInfoRequest
 }

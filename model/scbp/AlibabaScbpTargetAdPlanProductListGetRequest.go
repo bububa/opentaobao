@@ -15,7 +15,7 @@ alibaba.scbp.target.ad.plan.product.list.get
 type AlibabaScbpTargetAdPlanProductListGetRequest struct {
     model.Params
     // TopP4pQuickProductQuery
-    topP4pQuickProductQuery   *TopP4pQuickProductQuery
+    _topP4pQuickProductQuery   *TopP4pQuickProductQuery
 }
 
 // 初始化AlibabaScbpTargetAdPlanProductListGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanProductListGetRequest) GetApiParams() url.Values 
 }
 // TopP4pQuickProductQuery Setter
 // TopP4pQuickProductQuery
-func (r *AlibabaScbpTargetAdPlanProductListGetRequest) SetTopP4pQuickProductQuery(topP4pQuickProductQuery *TopP4pQuickProductQuery) error {
-    r.topP4pQuickProductQuery = topP4pQuickProductQuery
-    r.Set("top_p4p_quick_product_query", topP4pQuickProductQuery)
+func (r *AlibabaScbpTargetAdPlanProductListGetRequest) SetTopP4pQuickProductQuery(_topP4pQuickProductQuery *TopP4pQuickProductQuery) error {
+    r._topP4pQuickProductQuery = _topP4pQuickProductQuery
+    r.Set("top_p4p_quick_product_query", _topP4pQuickProductQuery)
     return nil
 }
 
 // TopP4pQuickProductQuery Getter
 func (r AlibabaScbpTargetAdPlanProductListGetRequest) GetTopP4pQuickProductQuery() *TopP4pQuickProductQuery {
-    return r.topP4pQuickProductQuery
+    return r._topP4pQuickProductQuery
 }

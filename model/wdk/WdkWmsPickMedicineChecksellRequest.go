@@ -15,9 +15,9 @@ wdk.wms.pick.medicine.checksell
 type WdkWmsPickMedicineChecksellRequest struct {
     model.Params
     // 从二维码扫描出的信息
-    uuid   string
+    _uuid   string
     // shopId
-    shopId   int64
+    _shopId   int64
 }
 
 // 初始化WdkWmsPickMedicineChecksellRequest对象
@@ -42,25 +42,25 @@ func (r WdkWmsPickMedicineChecksellRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 从二维码扫描出的信息
-func (r *WdkWmsPickMedicineChecksellRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *WdkWmsPickMedicineChecksellRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r WdkWmsPickMedicineChecksellRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // ShopId Setter
 // shopId
-func (r *WdkWmsPickMedicineChecksellRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *WdkWmsPickMedicineChecksellRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r WdkWmsPickMedicineChecksellRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }

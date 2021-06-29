@@ -18,19 +18,19 @@ tmall.device.trade.precreate
 type TmallDeviceTradePrecreateRequest struct {
     model.Params
     // 交易类型。1，售卖。2，派样
-    type   int64
+    _type   int64
     // 商品列表
-    itemList   []TradeItemDo
+    _itemList   []TradeItemDo
     // 设备业务编码
-    deviceCode   string
+    _deviceCode   string
     // 外部订单ID，用户下保证唯一。最大长度22
-    outTradeId   string
+    _outTradeId   string
     // 回调地址，当订单创建，付款成功后，会收到回调。必须是https地址，HTTP响应必须包含success，否则系统会重发
-    callbackUrl   string
+    _callbackUrl   string
     // 导购员手机号码
-    baPhone   string
+    _baPhone   string
     // 导购员所属门店
-    baStoreId   int64
+    _baStoreId   int64
 }
 
 // 初始化TmallDeviceTradePrecreateRequest对象
@@ -55,85 +55,85 @@ func (r TmallDeviceTradePrecreateRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 交易类型。1，售卖。2，派样
-func (r *TmallDeviceTradePrecreateRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TmallDeviceTradePrecreateRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TmallDeviceTradePrecreateRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // ItemList Setter
 // 商品列表
-func (r *TmallDeviceTradePrecreateRequest) SetItemList(itemList []TradeItemDo) error {
-    r.itemList = itemList
-    r.Set("item_list", itemList)
+func (r *TmallDeviceTradePrecreateRequest) SetItemList(_itemList []TradeItemDo) error {
+    r._itemList = _itemList
+    r.Set("item_list", _itemList)
     return nil
 }
 
 // ItemList Getter
 func (r TmallDeviceTradePrecreateRequest) GetItemList() []TradeItemDo {
-    return r.itemList
+    return r._itemList
 }
 // DeviceCode Setter
 // 设备业务编码
-func (r *TmallDeviceTradePrecreateRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *TmallDeviceTradePrecreateRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r TmallDeviceTradePrecreateRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // OutTradeId Setter
 // 外部订单ID，用户下保证唯一。最大长度22
-func (r *TmallDeviceTradePrecreateRequest) SetOutTradeId(outTradeId string) error {
-    r.outTradeId = outTradeId
-    r.Set("out_trade_id", outTradeId)
+func (r *TmallDeviceTradePrecreateRequest) SetOutTradeId(_outTradeId string) error {
+    r._outTradeId = _outTradeId
+    r.Set("out_trade_id", _outTradeId)
     return nil
 }
 
 // OutTradeId Getter
 func (r TmallDeviceTradePrecreateRequest) GetOutTradeId() string {
-    return r.outTradeId
+    return r._outTradeId
 }
 // CallbackUrl Setter
 // 回调地址，当订单创建，付款成功后，会收到回调。必须是https地址，HTTP响应必须包含success，否则系统会重发
-func (r *TmallDeviceTradePrecreateRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *TmallDeviceTradePrecreateRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r TmallDeviceTradePrecreateRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // BaPhone Setter
 // 导购员手机号码
-func (r *TmallDeviceTradePrecreateRequest) SetBaPhone(baPhone string) error {
-    r.baPhone = baPhone
-    r.Set("ba_phone", baPhone)
+func (r *TmallDeviceTradePrecreateRequest) SetBaPhone(_baPhone string) error {
+    r._baPhone = _baPhone
+    r.Set("ba_phone", _baPhone)
     return nil
 }
 
 // BaPhone Getter
 func (r TmallDeviceTradePrecreateRequest) GetBaPhone() string {
-    return r.baPhone
+    return r._baPhone
 }
 // BaStoreId Setter
 // 导购员所属门店
-func (r *TmallDeviceTradePrecreateRequest) SetBaStoreId(baStoreId int64) error {
-    r.baStoreId = baStoreId
-    r.Set("ba_store_id", baStoreId)
+func (r *TmallDeviceTradePrecreateRequest) SetBaStoreId(_baStoreId int64) error {
+    r._baStoreId = _baStoreId
+    r.Set("ba_store_id", _baStoreId)
     return nil
 }
 
 // BaStoreId Getter
 func (r TmallDeviceTradePrecreateRequest) GetBaStoreId() int64 {
-    return r.baStoreId
+    return r._baStoreId
 }

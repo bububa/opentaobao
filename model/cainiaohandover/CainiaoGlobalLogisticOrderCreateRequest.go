@@ -15,9 +15,9 @@ cainiao.global.logistic.order.create
 type CainiaoGlobalLogisticOrderCreateRequest struct {
     model.Params
     // 订单参数
-    orderParam   *OpenOrderParam
+    _orderParam   *OpenOrderParam
     // 多语言
-    locale   string
+    _locale   string
 }
 
 // 初始化CainiaoGlobalLogisticOrderCreateRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoGlobalLogisticOrderCreateRequest) GetApiParams() url.Values {
 }
 // OrderParam Setter
 // 订单参数
-func (r *CainiaoGlobalLogisticOrderCreateRequest) SetOrderParam(orderParam *OpenOrderParam) error {
-    r.orderParam = orderParam
-    r.Set("order_param", orderParam)
+func (r *CainiaoGlobalLogisticOrderCreateRequest) SetOrderParam(_orderParam *OpenOrderParam) error {
+    r._orderParam = _orderParam
+    r.Set("order_param", _orderParam)
     return nil
 }
 
 // OrderParam Getter
 func (r CainiaoGlobalLogisticOrderCreateRequest) GetOrderParam() *OpenOrderParam {
-    return r.orderParam
+    return r._orderParam
 }
 // Locale Setter
 // 多语言
-func (r *CainiaoGlobalLogisticOrderCreateRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *CainiaoGlobalLogisticOrderCreateRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r CainiaoGlobalLogisticOrderCreateRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }

@@ -15,7 +15,7 @@ alibaba.pos.fund.cashier.shift.summary
 type AlibabaPosFundCashierShiftSummaryRequest struct {
     model.Params
     // 请求参数
-    cashierShiftFundRequest   *CashierShiftFundRequest
+    _cashierShiftFundRequest   *CashierShiftFundRequest
 }
 
 // 初始化AlibabaPosFundCashierShiftSummaryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPosFundCashierShiftSummaryRequest) GetApiParams() url.Values {
 }
 // CashierShiftFundRequest Setter
 // 请求参数
-func (r *AlibabaPosFundCashierShiftSummaryRequest) SetCashierShiftFundRequest(cashierShiftFundRequest *CashierShiftFundRequest) error {
-    r.cashierShiftFundRequest = cashierShiftFundRequest
-    r.Set("cashier_shift_fund_request", cashierShiftFundRequest)
+func (r *AlibabaPosFundCashierShiftSummaryRequest) SetCashierShiftFundRequest(_cashierShiftFundRequest *CashierShiftFundRequest) error {
+    r._cashierShiftFundRequest = _cashierShiftFundRequest
+    r.Set("cashier_shift_fund_request", _cashierShiftFundRequest)
     return nil
 }
 
 // CashierShiftFundRequest Getter
 func (r AlibabaPosFundCashierShiftSummaryRequest) GetCashierShiftFundRequest() *CashierShiftFundRequest {
-    return r.cashierShiftFundRequest
+    return r._cashierShiftFundRequest
 }

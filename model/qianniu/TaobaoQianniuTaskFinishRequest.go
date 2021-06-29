@@ -15,9 +15,9 @@ taobao.qianniu.task.finish
 type TaobaoQianniuTaskFinishRequest struct {
     model.Params
     // 任务ID
-    taskId   int64
+    _taskId   int64
     // 任务备注
-    memo   string
+    _memo   string
 }
 
 // 初始化TaobaoQianniuTaskFinishRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQianniuTaskFinishRequest) GetApiParams() url.Values {
 }
 // TaskId Setter
 // 任务ID
-func (r *TaobaoQianniuTaskFinishRequest) SetTaskId(taskId int64) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *TaobaoQianniuTaskFinishRequest) SetTaskId(_taskId int64) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r TaobaoQianniuTaskFinishRequest) GetTaskId() int64 {
-    return r.taskId
+    return r._taskId
 }
 // Memo Setter
 // 任务备注
-func (r *TaobaoQianniuTaskFinishRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *TaobaoQianniuTaskFinishRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r TaobaoQianniuTaskFinishRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }

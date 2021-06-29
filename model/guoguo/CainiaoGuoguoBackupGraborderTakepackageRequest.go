@@ -15,9 +15,9 @@ cainiao.guoguo.backup.graborder.takepackage
 type CainiaoGuoguoBackupGraborderTakepackageRequest struct {
     model.Params
     // 物流订单号
-    orderCode   string
+    _orderCode   string
     // 包裹四位码
-    packageCode   string
+    _packageCode   string
 }
 
 // 初始化CainiaoGuoguoBackupGraborderTakepackageRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoGuoguoBackupGraborderTakepackageRequest) GetApiParams() url.Value
 }
 // OrderCode Setter
 // 物流订单号
-func (r *CainiaoGuoguoBackupGraborderTakepackageRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("orderCode", orderCode)
+func (r *CainiaoGuoguoBackupGraborderTakepackageRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("orderCode", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r CainiaoGuoguoBackupGraborderTakepackageRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // PackageCode Setter
 // 包裹四位码
-func (r *CainiaoGuoguoBackupGraborderTakepackageRequest) SetPackageCode(packageCode string) error {
-    r.packageCode = packageCode
-    r.Set("packageCode", packageCode)
+func (r *CainiaoGuoguoBackupGraborderTakepackageRequest) SetPackageCode(_packageCode string) error {
+    r._packageCode = _packageCode
+    r.Set("packageCode", _packageCode)
     return nil
 }
 
 // PackageCode Getter
 func (r CainiaoGuoguoBackupGraborderTakepackageRequest) GetPackageCode() string {
-    return r.packageCode
+    return r._packageCode
 }

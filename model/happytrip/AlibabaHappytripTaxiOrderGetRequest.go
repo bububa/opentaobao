@@ -15,7 +15,7 @@ alibaba.happytrip.taxi.order.get
 type AlibabaHappytripTaxiOrderGetRequest struct {
     model.Params
     // 订单id
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHappytripTaxiOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTaxiOrderGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHappytripTaxiOrderGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiOrderGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiOrderGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

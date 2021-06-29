@@ -15,17 +15,17 @@ alibaba.aliqin.flow.wallet.send.flow
 type AlibabaAliqinFlowWalletSendFlowRequest struct {
     model.Params
     // 混淆用户名
-    buyerNick   string
+    _buyerNick   string
     // 真实用户名称，如果填写这个字段，buyer_nick失效
-    realNick   string
+    _realNick   string
     // 唯一流水号，字母+数字组合
-    serial   string
+    _serial   string
     // 流量
-    flow   string
+    _flow   string
     // 购物送
-    reason   string
+    _reason   string
     // 设置true为始终发送成功
-    always   string
+    _always   string
 }
 
 // 初始化AlibabaAliqinFlowWalletSendFlowRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAliqinFlowWalletSendFlowRequest) GetApiParams() url.Values {
 }
 // BuyerNick Setter
 // 混淆用户名
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }
 // RealNick Setter
 // 真实用户名称，如果填写这个字段，buyer_nick失效
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetRealNick(realNick string) error {
-    r.realNick = realNick
-    r.Set("real_nick", realNick)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetRealNick(_realNick string) error {
+    r._realNick = _realNick
+    r.Set("real_nick", _realNick)
     return nil
 }
 
 // RealNick Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetRealNick() string {
-    return r.realNick
+    return r._realNick
 }
 // Serial Setter
 // 唯一流水号，字母+数字组合
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetSerial(serial string) error {
-    r.serial = serial
-    r.Set("serial", serial)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetSerial(_serial string) error {
+    r._serial = _serial
+    r.Set("serial", _serial)
     return nil
 }
 
 // Serial Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetSerial() string {
-    return r.serial
+    return r._serial
 }
 // Flow Setter
 // 流量
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetFlow(flow string) error {
-    r.flow = flow
-    r.Set("flow", flow)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetFlow(_flow string) error {
+    r._flow = _flow
+    r.Set("flow", _flow)
     return nil
 }
 
 // Flow Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetFlow() string {
-    return r.flow
+    return r._flow
 }
 // Reason Setter
 // 购物送
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // Always Setter
 // 设置true为始终发送成功
-func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetAlways(always string) error {
-    r.always = always
-    r.Set("always", always)
+func (r *AlibabaAliqinFlowWalletSendFlowRequest) SetAlways(_always string) error {
+    r._always = _always
+    r.Set("always", _always)
     return nil
 }
 
 // Always Getter
 func (r AlibabaAliqinFlowWalletSendFlowRequest) GetAlways() string {
-    return r.always
+    return r._always
 }

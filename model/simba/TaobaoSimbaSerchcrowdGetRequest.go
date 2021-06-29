@@ -15,9 +15,9 @@ taobao.simba.serchcrowd.get
 type TaobaoSimbaSerchcrowdGetRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSimbaSerchcrowdGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSerchcrowdGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSerchcrowdGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSerchcrowdGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSerchcrowdGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSerchcrowdGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSerchcrowdGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

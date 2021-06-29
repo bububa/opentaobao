@@ -15,7 +15,7 @@ taobao.inventory.plan.invalid
 type TaobaoInventoryPlanInvalidRequest struct {
     model.Params
     // 计划库存失效入参
-    planStopTop   *PlanStopTopDto
+    _planStopTop   *PlanStopTopDto
 }
 
 // 初始化TaobaoInventoryPlanInvalidRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanInvalidRequest) GetApiParams() url.Values {
 }
 // PlanStopTop Setter
 // 计划库存失效入参
-func (r *TaobaoInventoryPlanInvalidRequest) SetPlanStopTop(planStopTop *PlanStopTopDto) error {
-    r.planStopTop = planStopTop
-    r.Set("plan_stop_top", planStopTop)
+func (r *TaobaoInventoryPlanInvalidRequest) SetPlanStopTop(_planStopTop *PlanStopTopDto) error {
+    r._planStopTop = _planStopTop
+    r.Set("plan_stop_top", _planStopTop)
     return nil
 }
 
 // PlanStopTop Getter
 func (r TaobaoInventoryPlanInvalidRequest) GetPlanStopTop() *PlanStopTopDto {
-    return r.planStopTop
+    return r._planStopTop
 }

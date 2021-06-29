@@ -15,17 +15,17 @@ taobao.brand.startshop.rpt.adgroup.get
 type TaobaoBrandStartshopRptAdgroupGetRequest struct {
     model.Params
     // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
-    trafficType   string
+    _trafficType   string
     // 转化周期默认15天,3,7,15
-    effect   int64
+    _effect   int64
     // 当前页数
-    pageIndex   string
+    _pageIndex   string
     // 每页条数
-    pageSize   string
+    _pageSize   string
     // 开始时间(最多可查询最近90天)
-    startDate   string
+    _startDate   string
     // 截至时间(最晚到昨天)
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoBrandStartshopRptAdgroupGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetApiParams() url.Values {
 }
 // TrafficType Setter
 // 流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetTrafficType(trafficType string) error {
-    r.trafficType = trafficType
-    r.Set("traffic_type", trafficType)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetTrafficType(_trafficType string) error {
+    r._trafficType = _trafficType
+    r.Set("traffic_type", _trafficType)
     return nil
 }
 
 // TrafficType Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetTrafficType() string {
-    return r.trafficType
+    return r._trafficType
 }
 // Effect Setter
 // 转化周期默认15天,3,7,15
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetEffect(effect int64) error {
-    r.effect = effect
-    r.Set("effect", effect)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetEffect(_effect int64) error {
+    r._effect = _effect
+    r.Set("effect", _effect)
     return nil
 }
 
 // Effect Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetEffect() int64 {
-    return r.effect
+    return r._effect
 }
 // PageIndex Setter
 // 当前页数
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetPageIndex(pageIndex string) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetPageIndex(_pageIndex string) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetPageIndex() string {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 每页条数
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetPageSize(pageSize string) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetPageSize(_pageSize string) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetPageSize() string {
-    return r.pageSize
+    return r._pageSize
 }
 // StartDate Setter
 // 开始时间(最多可查询最近90天)
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 截至时间(最晚到昨天)
-func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoBrandStartshopRptAdgroupGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoBrandStartshopRptAdgroupGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

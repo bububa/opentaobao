@@ -15,9 +15,9 @@ taobao.promotionmisc.common.item.detail.delete
 type TaobaoPromotionmiscCommonItemDetailDeleteRequest struct {
     model.Params
     // 优惠活动ID
-    activityId   int64
+    _activityId   int64
     // 优惠详情ID
-    detailId   int64
+    _detailId   int64
 }
 
 // 初始化TaobaoPromotionmiscCommonItemDetailDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionmiscCommonItemDetailDeleteRequest) GetApiParams() url.Val
 }
 // ActivityId Setter
 // 优惠活动ID
-func (r *TaobaoPromotionmiscCommonItemDetailDeleteRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscCommonItemDetailDeleteRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscCommonItemDetailDeleteRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // DetailId Setter
 // 优惠详情ID
-func (r *TaobaoPromotionmiscCommonItemDetailDeleteRequest) SetDetailId(detailId int64) error {
-    r.detailId = detailId
-    r.Set("detail_id", detailId)
+func (r *TaobaoPromotionmiscCommonItemDetailDeleteRequest) SetDetailId(_detailId int64) error {
+    r._detailId = _detailId
+    r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
 func (r TaobaoPromotionmiscCommonItemDetailDeleteRequest) GetDetailId() int64 {
-    return r.detailId
+    return r._detailId
 }

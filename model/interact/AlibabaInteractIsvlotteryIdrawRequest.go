@@ -15,11 +15,11 @@ alibaba.interact.isvlottery.idraw
 type AlibabaInteractIsvlotteryIdrawRequest struct {
     model.Params
     // 互动实例ID
-    interactId   string
+    _interactId   string
     // 抽奖ID列表 用逗号隔开
-    awardIds   string
+    _awardIds   string
     // 埋点参数
-    ua   string
+    _ua   string
 }
 
 // 初始化AlibabaInteractIsvlotteryIdrawRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaInteractIsvlotteryIdrawRequest) GetApiParams() url.Values {
 }
 // InteractId Setter
 // 互动实例ID
-func (r *AlibabaInteractIsvlotteryIdrawRequest) SetInteractId(interactId string) error {
-    r.interactId = interactId
-    r.Set("interact_id", interactId)
+func (r *AlibabaInteractIsvlotteryIdrawRequest) SetInteractId(_interactId string) error {
+    r._interactId = _interactId
+    r.Set("interact_id", _interactId)
     return nil
 }
 
 // InteractId Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetInteractId() string {
-    return r.interactId
+    return r._interactId
 }
 // AwardIds Setter
 // 抽奖ID列表 用逗号隔开
-func (r *AlibabaInteractIsvlotteryIdrawRequest) SetAwardIds(awardIds string) error {
-    r.awardIds = awardIds
-    r.Set("award_ids", awardIds)
+func (r *AlibabaInteractIsvlotteryIdrawRequest) SetAwardIds(_awardIds string) error {
+    r._awardIds = _awardIds
+    r.Set("award_ids", _awardIds)
     return nil
 }
 
 // AwardIds Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetAwardIds() string {
-    return r.awardIds
+    return r._awardIds
 }
 // Ua Setter
 // 埋点参数
-func (r *AlibabaInteractIsvlotteryIdrawRequest) SetUa(ua string) error {
-    r.ua = ua
-    r.Set("ua", ua)
+func (r *AlibabaInteractIsvlotteryIdrawRequest) SetUa(_ua string) error {
+    r._ua = _ua
+    r.Set("ua", _ua)
     return nil
 }
 
 // Ua Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetUa() string {
-    return r.ua
+    return r._ua
 }

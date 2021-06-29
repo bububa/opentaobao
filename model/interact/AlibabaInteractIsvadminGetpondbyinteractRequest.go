@@ -15,7 +15,7 @@ alibaba.interact.isvadmin.getpondbyinteract
 type AlibabaInteractIsvadminGetpondbyinteractRequest struct {
     model.Params
     // 互动实例ID
-    interactId   string
+    _interactId   string
 }
 
 // 初始化AlibabaInteractIsvadminGetpondbyinteractRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractIsvadminGetpondbyinteractRequest) GetApiParams() url.Valu
 }
 // InteractId Setter
 // 互动实例ID
-func (r *AlibabaInteractIsvadminGetpondbyinteractRequest) SetInteractId(interactId string) error {
-    r.interactId = interactId
-    r.Set("interact_id", interactId)
+func (r *AlibabaInteractIsvadminGetpondbyinteractRequest) SetInteractId(_interactId string) error {
+    r._interactId = _interactId
+    r.Set("interact_id", _interactId)
     return nil
 }
 
 // InteractId Getter
 func (r AlibabaInteractIsvadminGetpondbyinteractRequest) GetInteractId() string {
-    return r.interactId
+    return r._interactId
 }

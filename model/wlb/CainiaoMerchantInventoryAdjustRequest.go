@@ -15,11 +15,11 @@ cainiao.merchant.inventory.adjust
 type CainiaoMerchantInventoryAdjustRequest struct {
     model.Params
     // 商家仓编辑库存
-    adjustRequest   []MerStoreInvAdjustDto
+    _adjustRequest   []MerStoreInvAdjustDto
     // 调用方应用名
-    appName   string
+    _appName   string
     // 操作
-    operation   string
+    _operation   string
 }
 
 // 初始化CainiaoMerchantInventoryAdjustRequest对象
@@ -44,37 +44,37 @@ func (r CainiaoMerchantInventoryAdjustRequest) GetApiParams() url.Values {
 }
 // AdjustRequest Setter
 // 商家仓编辑库存
-func (r *CainiaoMerchantInventoryAdjustRequest) SetAdjustRequest(adjustRequest []MerStoreInvAdjustDto) error {
-    r.adjustRequest = adjustRequest
-    r.Set("adjust_request", adjustRequest)
+func (r *CainiaoMerchantInventoryAdjustRequest) SetAdjustRequest(_adjustRequest []MerStoreInvAdjustDto) error {
+    r._adjustRequest = _adjustRequest
+    r.Set("adjust_request", _adjustRequest)
     return nil
 }
 
 // AdjustRequest Getter
 func (r CainiaoMerchantInventoryAdjustRequest) GetAdjustRequest() []MerStoreInvAdjustDto {
-    return r.adjustRequest
+    return r._adjustRequest
 }
 // AppName Setter
 // 调用方应用名
-func (r *CainiaoMerchantInventoryAdjustRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *CainiaoMerchantInventoryAdjustRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r CainiaoMerchantInventoryAdjustRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // Operation Setter
 // 操作
-func (r *CainiaoMerchantInventoryAdjustRequest) SetOperation(operation string) error {
-    r.operation = operation
-    r.Set("operation", operation)
+func (r *CainiaoMerchantInventoryAdjustRequest) SetOperation(_operation string) error {
+    r._operation = _operation
+    r.Set("operation", _operation)
     return nil
 }
 
 // Operation Getter
 func (r CainiaoMerchantInventoryAdjustRequest) GetOperation() string {
-    return r.operation
+    return r._operation
 }

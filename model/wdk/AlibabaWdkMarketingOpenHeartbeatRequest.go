@@ -15,7 +15,7 @@ alibaba.wdk.marketing.open.heartbeat
 type AlibabaWdkMarketingOpenHeartbeatRequest struct {
     model.Params
     // 心跳信息
-    heartBeat   *HeartBeatBo
+    _heartBeat   *HeartBeatBo
 }
 
 // 初始化AlibabaWdkMarketingOpenHeartbeatRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetApiParams() url.Values {
 }
 // HeartBeat Setter
 // 心跳信息
-func (r *AlibabaWdkMarketingOpenHeartbeatRequest) SetHeartBeat(heartBeat *HeartBeatBo) error {
-    r.heartBeat = heartBeat
-    r.Set("heart_beat", heartBeat)
+func (r *AlibabaWdkMarketingOpenHeartbeatRequest) SetHeartBeat(_heartBeat *HeartBeatBo) error {
+    r._heartBeat = _heartBeat
+    r.Set("heart_beat", _heartBeat)
     return nil
 }
 
 // HeartBeat Getter
 func (r AlibabaWdkMarketingOpenHeartbeatRequest) GetHeartBeat() *HeartBeatBo {
-    return r.heartBeat
+    return r._heartBeat
 }

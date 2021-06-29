@@ -15,7 +15,7 @@ cainiao.ncwl.jhorder.query
 type CainiaoNcwlJhorderQueryRequest struct {
     model.Params
     // 1
-    param0   *JhRequest
+    _param0   *JhRequest
 }
 
 // 初始化CainiaoNcwlJhorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoNcwlJhorderQueryRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 1
-func (r *CainiaoNcwlJhorderQueryRequest) SetParam0(param0 *JhRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *CainiaoNcwlJhorderQueryRequest) SetParam0(_param0 *JhRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r CainiaoNcwlJhorderQueryRequest) GetParam0() *JhRequest {
-    return r.param0
+    return r._param0
 }

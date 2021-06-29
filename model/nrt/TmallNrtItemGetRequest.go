@@ -15,9 +15,9 @@ tmall.nrt.item.get
 type TmallNrtItemGetRequest struct {
     model.Params
     // 城市站id
-    boothId   int64
+    _boothId   int64
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallNrtItemGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallNrtItemGetRequest) GetApiParams() url.Values {
 }
 // BoothId Setter
 // 城市站id
-func (r *TmallNrtItemGetRequest) SetBoothId(boothId int64) error {
-    r.boothId = boothId
-    r.Set("booth_id", boothId)
+func (r *TmallNrtItemGetRequest) SetBoothId(_boothId int64) error {
+    r._boothId = _boothId
+    r.Set("booth_id", _boothId)
     return nil
 }
 
 // BoothId Getter
 func (r TmallNrtItemGetRequest) GetBoothId() int64 {
-    return r.boothId
+    return r._boothId
 }
 // ItemId Setter
 // 商品id
-func (r *TmallNrtItemGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallNrtItemGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallNrtItemGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

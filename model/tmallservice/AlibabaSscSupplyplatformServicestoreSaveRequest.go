@@ -15,7 +15,7 @@ alibaba.ssc.supplyplatform.servicestore.save
 type AlibabaSscSupplyplatformServicestoreSaveRequest struct {
     model.Params
     // 入参
-    serviceStoreSaveReq   *ServiceStoreSaveForTopReqDTO
+    _serviceStoreSaveReq   *ServiceStoreSaveForTopReqDTO
 }
 
 // 初始化AlibabaSscSupplyplatformServicestoreSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSscSupplyplatformServicestoreSaveRequest) GetApiParams() url.Valu
 }
 // ServiceStoreSaveReq Setter
 // 入参
-func (r *AlibabaSscSupplyplatformServicestoreSaveRequest) SetServiceStoreSaveReq(serviceStoreSaveReq *ServiceStoreSaveForTopReqDTO) error {
-    r.serviceStoreSaveReq = serviceStoreSaveReq
-    r.Set("service_store_save_req", serviceStoreSaveReq)
+func (r *AlibabaSscSupplyplatformServicestoreSaveRequest) SetServiceStoreSaveReq(_serviceStoreSaveReq *ServiceStoreSaveForTopReqDTO) error {
+    r._serviceStoreSaveReq = _serviceStoreSaveReq
+    r.Set("service_store_save_req", _serviceStoreSaveReq)
     return nil
 }
 
 // ServiceStoreSaveReq Getter
 func (r AlibabaSscSupplyplatformServicestoreSaveRequest) GetServiceStoreSaveReq() *ServiceStoreSaveForTopReqDTO {
-    return r.serviceStoreSaveReq
+    return r._serviceStoreSaveReq
 }

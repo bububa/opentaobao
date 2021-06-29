@@ -15,7 +15,7 @@ ERP调用接口，创建入库单;
 type TaobaoQimenEntryorderCreateRequest struct {
     model.Params
     // 
-    request   *EntryOrderCreateRequest
+    _request   *EntryOrderCreateRequest
 }
 
 // 初始化TaobaoQimenEntryorderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenEntryorderCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenEntryorderCreateRequest) SetRequest(request *EntryOrderCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenEntryorderCreateRequest) SetRequest(_request *EntryOrderCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenEntryorderCreateRequest) GetRequest() *EntryOrderCreateRequest {
-    return r.request
+    return r._request
 }

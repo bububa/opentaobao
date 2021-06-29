@@ -15,7 +15,7 @@ youku.mirage.query.permission
 type YoukuMirageQueryPermissionRequest struct {
     model.Params
     // 入参
-    permissionRequestDto   *PermissionRequestDto
+    _permissionRequestDto   *PermissionRequestDto
 }
 
 // 初始化YoukuMirageQueryPermissionRequest对象
@@ -40,13 +40,13 @@ func (r YoukuMirageQueryPermissionRequest) GetApiParams() url.Values {
 }
 // PermissionRequestDto Setter
 // 入参
-func (r *YoukuMirageQueryPermissionRequest) SetPermissionRequestDto(permissionRequestDto *PermissionRequestDto) error {
-    r.permissionRequestDto = permissionRequestDto
-    r.Set("permission_request_dto", permissionRequestDto)
+func (r *YoukuMirageQueryPermissionRequest) SetPermissionRequestDto(_permissionRequestDto *PermissionRequestDto) error {
+    r._permissionRequestDto = _permissionRequestDto
+    r.Set("permission_request_dto", _permissionRequestDto)
     return nil
 }
 
 // PermissionRequestDto Getter
 func (r YoukuMirageQueryPermissionRequest) GetPermissionRequestDto() *PermissionRequestDto {
-    return r.permissionRequestDto
+    return r._permissionRequestDto
 }

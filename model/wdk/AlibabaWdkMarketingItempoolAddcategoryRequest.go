@@ -15,9 +15,9 @@ alibaba.wdk.marketing.itempool.addcategory
 type AlibabaWdkMarketingItempoolAddcategoryRequest struct {
     model.Params
     // 类目对象
-    itemPoolActivityCategory   *ItemPoolActivityCategory
+    _itemPoolActivityCategory   *ItemPoolActivityCategory
     // 活动对象
-    commonActivityParam   *CommonActivityParam
+    _commonActivityParam   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItempoolAddcategoryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingItempoolAddcategoryRequest) GetApiParams() url.Values
 }
 // ItemPoolActivityCategory Setter
 // 类目对象
-func (r *AlibabaWdkMarketingItempoolAddcategoryRequest) SetItemPoolActivityCategory(itemPoolActivityCategory *ItemPoolActivityCategory) error {
-    r.itemPoolActivityCategory = itemPoolActivityCategory
-    r.Set("item_pool_activity_category", itemPoolActivityCategory)
+func (r *AlibabaWdkMarketingItempoolAddcategoryRequest) SetItemPoolActivityCategory(_itemPoolActivityCategory *ItemPoolActivityCategory) error {
+    r._itemPoolActivityCategory = _itemPoolActivityCategory
+    r.Set("item_pool_activity_category", _itemPoolActivityCategory)
     return nil
 }
 
 // ItemPoolActivityCategory Getter
 func (r AlibabaWdkMarketingItempoolAddcategoryRequest) GetItemPoolActivityCategory() *ItemPoolActivityCategory {
-    return r.itemPoolActivityCategory
+    return r._itemPoolActivityCategory
 }
 // CommonActivityParam Setter
 // 活动对象
-func (r *AlibabaWdkMarketingItempoolAddcategoryRequest) SetCommonActivityParam(commonActivityParam *CommonActivityParam) error {
-    r.commonActivityParam = commonActivityParam
-    r.Set("common_activity_param", commonActivityParam)
+func (r *AlibabaWdkMarketingItempoolAddcategoryRequest) SetCommonActivityParam(_commonActivityParam *CommonActivityParam) error {
+    r._commonActivityParam = _commonActivityParam
+    r.Set("common_activity_param", _commonActivityParam)
     return nil
 }
 
 // CommonActivityParam Getter
 func (r AlibabaWdkMarketingItempoolAddcategoryRequest) GetCommonActivityParam() *CommonActivityParam {
-    return r.commonActivityParam
+    return r._commonActivityParam
 }

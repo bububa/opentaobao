@@ -15,7 +15,7 @@ alibaba.ceres.supplier.po.querydetail
 type AlibabaCeresSupplierPoQuerydetailRequest struct {
     model.Params
     // 订单编号
-    poNo   string
+    _poNo   string
 }
 
 // 初始化AlibabaCeresSupplierPoQuerydetailRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCeresSupplierPoQuerydetailRequest) GetApiParams() url.Values {
 }
 // PoNo Setter
 // 订单编号
-func (r *AlibabaCeresSupplierPoQuerydetailRequest) SetPoNo(poNo string) error {
-    r.poNo = poNo
-    r.Set("po_no", poNo)
+func (r *AlibabaCeresSupplierPoQuerydetailRequest) SetPoNo(_poNo string) error {
+    r._poNo = _poNo
+    r.Set("po_no", _poNo)
     return nil
 }
 
 // PoNo Getter
 func (r AlibabaCeresSupplierPoQuerydetailRequest) GetPoNo() string {
-    return r.poNo
+    return r._poNo
 }

@@ -15,11 +15,11 @@ alitrip.merchant.galaxy.order.query
 type AlitripMerchantGalaxyOrderQueryRequest struct {
     model.Params
     // 租户标识
-    tenantKey   string
+    _tenantKey   string
     // 用户登录标识
-    token   string
+    _token   string
     // 订单号
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlitripMerchantGalaxyOrderQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlitripMerchantGalaxyOrderQueryRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户标识
-func (r *AlitripMerchantGalaxyOrderQueryRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyOrderQueryRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyOrderQueryRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Token Setter
 // 用户登录标识
-func (r *AlitripMerchantGalaxyOrderQueryRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyOrderQueryRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyOrderQueryRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // OrderId Setter
 // 订单号
-func (r *AlitripMerchantGalaxyOrderQueryRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlitripMerchantGalaxyOrderQueryRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlitripMerchantGalaxyOrderQueryRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

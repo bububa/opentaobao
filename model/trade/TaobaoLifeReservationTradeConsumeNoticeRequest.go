@@ -15,9 +15,9 @@ taobao.life.reservation.trade.consume.notice
 type TaobaoLifeReservationTradeConsumeNoticeRequest struct {
     model.Params
     // 淘宝主单号
-    tradeNo   string
+    _tradeNo   string
     // 凭证ID
-    ticketId   string
+    _ticketId   string
 }
 
 // 初始化TaobaoLifeReservationTradeConsumeNoticeRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoLifeReservationTradeConsumeNoticeRequest) GetApiParams() url.Value
 }
 // TradeNo Setter
 // 淘宝主单号
-func (r *TaobaoLifeReservationTradeConsumeNoticeRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *TaobaoLifeReservationTradeConsumeNoticeRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r TaobaoLifeReservationTradeConsumeNoticeRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // TicketId Setter
 // 凭证ID
-func (r *TaobaoLifeReservationTradeConsumeNoticeRequest) SetTicketId(ticketId string) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *TaobaoLifeReservationTradeConsumeNoticeRequest) SetTicketId(_ticketId string) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r TaobaoLifeReservationTradeConsumeNoticeRequest) GetTicketId() string {
-    return r.ticketId
+    return r._ticketId
 }

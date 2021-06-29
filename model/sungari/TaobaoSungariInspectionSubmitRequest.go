@@ -15,9 +15,9 @@ taobao.sungari.inspection.submit
 type TaobaoSungariInspectionSubmitRequest struct {
     model.Params
     // 抽检入参
-    data   string
+    _data   string
     // 操作类型
-    methodName   string
+    _methodName   string
 }
 
 // 初始化TaobaoSungariInspectionSubmitRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSungariInspectionSubmitRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 抽检入参
-func (r *TaobaoSungariInspectionSubmitRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoSungariInspectionSubmitRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoSungariInspectionSubmitRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // MethodName Setter
 // 操作类型
-func (r *TaobaoSungariInspectionSubmitRequest) SetMethodName(methodName string) error {
-    r.methodName = methodName
-    r.Set("method_name", methodName)
+func (r *TaobaoSungariInspectionSubmitRequest) SetMethodName(_methodName string) error {
+    r._methodName = _methodName
+    r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
 func (r TaobaoSungariInspectionSubmitRequest) GetMethodName() string {
-    return r.methodName
+    return r._methodName
 }

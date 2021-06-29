@@ -15,9 +15,9 @@ taobao.wlb.wms.stock.out.bill.get
 type TaobaoWlbWmsStockOutBillGetRequest struct {
     model.Params
     // ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-    orderCode   string
+    _orderCode   string
     // 菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-    cnOrderCode   string
+    _cnOrderCode   string
 }
 
 // 初始化TaobaoWlbWmsStockOutBillGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWlbWmsStockOutBillGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-func (r *TaobaoWlbWmsStockOutBillGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbWmsStockOutBillGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbWmsStockOutBillGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // CnOrderCode Setter
 // 菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据
-func (r *TaobaoWlbWmsStockOutBillGetRequest) SetCnOrderCode(cnOrderCode string) error {
-    r.cnOrderCode = cnOrderCode
-    r.Set("cn_order_code", cnOrderCode)
+func (r *TaobaoWlbWmsStockOutBillGetRequest) SetCnOrderCode(_cnOrderCode string) error {
+    r._cnOrderCode = _cnOrderCode
+    r.Set("cn_order_code", _cnOrderCode)
     return nil
 }
 
 // CnOrderCode Getter
 func (r TaobaoWlbWmsStockOutBillGetRequest) GetCnOrderCode() string {
-    return r.cnOrderCode
+    return r._cnOrderCode
 }

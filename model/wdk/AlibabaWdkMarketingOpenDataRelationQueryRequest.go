@@ -15,11 +15,11 @@ alibaba.wdk.marketing.open.data.relation.query
 type AlibabaWdkMarketingOpenDataRelationQueryRequest struct {
     model.Params
     // 外部数据Id
-    outDataIds   []string
+    _outDataIds   []string
     // 数据类型：WDK_MARKET:五道口营销
-    bizCode   string
+    _bizCode   string
     // 数据子类型：ACTIVITY:营销活动数据
-    subBizCode   string
+    _subBizCode   string
 }
 
 // 初始化AlibabaWdkMarketingOpenDataRelationQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetApiParams() url.Valu
 }
 // OutDataIds Setter
 // 外部数据Id
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetOutDataIds(outDataIds []string) error {
-    r.outDataIds = outDataIds
-    r.Set("out_data_ids", outDataIds)
+func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetOutDataIds(_outDataIds []string) error {
+    r._outDataIds = _outDataIds
+    r.Set("out_data_ids", _outDataIds)
     return nil
 }
 
 // OutDataIds Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetOutDataIds() []string {
-    return r.outDataIds
+    return r._outDataIds
 }
 // BizCode Setter
 // 数据类型：WDK_MARKET:五道口营销
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }
 // SubBizCode Setter
 // 数据子类型：ACTIVITY:营销活动数据
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetSubBizCode(subBizCode string) error {
-    r.subBizCode = subBizCode
-    r.Set("sub_biz_code", subBizCode)
+func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetSubBizCode(_subBizCode string) error {
+    r._subBizCode = _subBizCode
+    r.Set("sub_biz_code", _subBizCode)
     return nil
 }
 
 // SubBizCode Getter
 func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetSubBizCode() string {
-    return r.subBizCode
+    return r._subBizCode
 }

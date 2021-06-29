@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.confirm
 type TmallServicecenterWorkcardConfirmRequest struct {
     model.Params
     // 工单id
-    workcardId   int64
+    _workcardId   int64
 }
 
 // 初始化TmallServicecenterWorkcardConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardConfirmRequest) GetApiParams() url.Values {
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardConfirmRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardConfirmRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardConfirmRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }

@@ -15,7 +15,7 @@ taobao.qimen.singleitem.query
 type TaobaoQimenSingleitemQueryRequest struct {
     model.Params
     // 
-    request   *RequestDO
+    _request   *RequestDO
 }
 
 // 初始化TaobaoQimenSingleitemQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenSingleitemQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenSingleitemQueryRequest) SetRequest(request *RequestDO) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenSingleitemQueryRequest) SetRequest(_request *RequestDO) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenSingleitemQueryRequest) GetRequest() *RequestDO {
-    return r.request
+    return r._request
 }

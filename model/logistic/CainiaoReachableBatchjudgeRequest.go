@@ -15,11 +15,11 @@ cainiao.reachable.batchjudge
 type CainiaoReachableBatchjudgeRequest struct {
     model.Params
     // 调用方对象
-    clientInfo   *ClientInfoDto
+    _clientInfo   *ClientInfoDto
     // 1:快递 2:快运
-    addressType   int64
+    _addressType   int64
     // 收发信息
-    data   *RoutingReachableBatchRequestDto
+    _data   *RoutingReachableBatchRequestDto
 }
 
 // 初始化CainiaoReachableBatchjudgeRequest对象
@@ -44,37 +44,37 @@ func (r CainiaoReachableBatchjudgeRequest) GetApiParams() url.Values {
 }
 // ClientInfo Setter
 // 调用方对象
-func (r *CainiaoReachableBatchjudgeRequest) SetClientInfo(clientInfo *ClientInfoDto) error {
-    r.clientInfo = clientInfo
-    r.Set("client_info", clientInfo)
+func (r *CainiaoReachableBatchjudgeRequest) SetClientInfo(_clientInfo *ClientInfoDto) error {
+    r._clientInfo = _clientInfo
+    r.Set("client_info", _clientInfo)
     return nil
 }
 
 // ClientInfo Getter
 func (r CainiaoReachableBatchjudgeRequest) GetClientInfo() *ClientInfoDto {
-    return r.clientInfo
+    return r._clientInfo
 }
 // AddressType Setter
 // 1:快递 2:快运
-func (r *CainiaoReachableBatchjudgeRequest) SetAddressType(addressType int64) error {
-    r.addressType = addressType
-    r.Set("address_type", addressType)
+func (r *CainiaoReachableBatchjudgeRequest) SetAddressType(_addressType int64) error {
+    r._addressType = _addressType
+    r.Set("address_type", _addressType)
     return nil
 }
 
 // AddressType Getter
 func (r CainiaoReachableBatchjudgeRequest) GetAddressType() int64 {
-    return r.addressType
+    return r._addressType
 }
 // Data Setter
 // 收发信息
-func (r *CainiaoReachableBatchjudgeRequest) SetData(data *RoutingReachableBatchRequestDto) error {
-    r.data = data
-    r.Set("data", data)
+func (r *CainiaoReachableBatchjudgeRequest) SetData(_data *RoutingReachableBatchRequestDto) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r CainiaoReachableBatchjudgeRequest) GetData() *RoutingReachableBatchRequestDto {
-    return r.data
+    return r._data
 }

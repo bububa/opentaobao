@@ -15,7 +15,7 @@ alibaba.interact.aopdata.register
 type AlibabaInteractAopdataRegisterRequest struct {
     model.Params
     // 入参
-    paramTopIsvDecorateParam   *TopIsvDecorateParam
+    _paramTopIsvDecorateParam   *TopIsvDecorateParam
 }
 
 // 初始化AlibabaInteractAopdataRegisterRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractAopdataRegisterRequest) GetApiParams() url.Values {
 }
 // ParamTopIsvDecorateParam Setter
 // 入参
-func (r *AlibabaInteractAopdataRegisterRequest) SetParamTopIsvDecorateParam(paramTopIsvDecorateParam *TopIsvDecorateParam) error {
-    r.paramTopIsvDecorateParam = paramTopIsvDecorateParam
-    r.Set("param_top_isv_decorate_param", paramTopIsvDecorateParam)
+func (r *AlibabaInteractAopdataRegisterRequest) SetParamTopIsvDecorateParam(_paramTopIsvDecorateParam *TopIsvDecorateParam) error {
+    r._paramTopIsvDecorateParam = _paramTopIsvDecorateParam
+    r.Set("param_top_isv_decorate_param", _paramTopIsvDecorateParam)
     return nil
 }
 
 // ParamTopIsvDecorateParam Getter
 func (r AlibabaInteractAopdataRegisterRequest) GetParamTopIsvDecorateParam() *TopIsvDecorateParam {
-    return r.paramTopIsvDecorateParam
+    return r._paramTopIsvDecorateParam
 }

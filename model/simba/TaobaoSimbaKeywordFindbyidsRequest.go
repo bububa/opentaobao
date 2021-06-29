@@ -15,7 +15,7 @@ taobao.simba.keyword.findbyids
 type TaobaoSimbaKeywordFindbyidsRequest struct {
     model.Params
     // 关键词ids
-    bidwordIds   []int64
+    _bidwordIds   []int64
 }
 
 // 初始化TaobaoSimbaKeywordFindbyidsRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaKeywordFindbyidsRequest) GetApiParams() url.Values {
 }
 // BidwordIds Setter
 // 关键词ids
-func (r *TaobaoSimbaKeywordFindbyidsRequest) SetBidwordIds(bidwordIds []int64) error {
-    r.bidwordIds = bidwordIds
-    r.Set("bidword_ids", bidwordIds)
+func (r *TaobaoSimbaKeywordFindbyidsRequest) SetBidwordIds(_bidwordIds []int64) error {
+    r._bidwordIds = _bidwordIds
+    r.Set("bidword_ids", _bidwordIds)
     return nil
 }
 
 // BidwordIds Getter
 func (r TaobaoSimbaKeywordFindbyidsRequest) GetBidwordIds() []int64 {
-    return r.bidwordIds
+    return r._bidwordIds
 }

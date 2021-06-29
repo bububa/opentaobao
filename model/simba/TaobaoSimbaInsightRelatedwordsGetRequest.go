@@ -15,9 +15,9 @@ taobao.simba.insight.relatedwords.get
 type TaobaoSimbaInsightRelatedwordsGetRequest struct {
     model.Params
     // 要查询的词列表
-    bidwordList   []string
+    _bidwordList   []string
     // 表示返回数据的条数
-    number   int64
+    _number   int64
 }
 
 // 初始化TaobaoSimbaInsightRelatedwordsGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetApiParams() url.Values {
 }
 // BidwordList Setter
 // 要查询的词列表
-func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetBidwordList(bidwordList []string) error {
-    r.bidwordList = bidwordList
-    r.Set("bidword_list", bidwordList)
+func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetBidwordList(_bidwordList []string) error {
+    r._bidwordList = _bidwordList
+    r.Set("bidword_list", _bidwordList)
     return nil
 }
 
 // BidwordList Getter
 func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetBidwordList() []string {
-    return r.bidwordList
+    return r._bidwordList
 }
 // Number Setter
 // 表示返回数据的条数
-func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetNumber(number int64) error {
-    r.number = number
-    r.Set("number", number)
+func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetNumber(_number int64) error {
+    r._number = _number
+    r.Set("number", _number)
     return nil
 }
 
 // Number Getter
 func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetNumber() int64 {
-    return r.number
+    return r._number
 }

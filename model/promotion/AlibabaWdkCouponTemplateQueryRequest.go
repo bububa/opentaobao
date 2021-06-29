@@ -15,7 +15,7 @@ alibaba.wdk.coupon.template.query
 type AlibabaWdkCouponTemplateQueryRequest struct {
     model.Params
     // 系统自动生成
-    paramCouponTemplateQueryRequest   *CouponTemplateQueryRequest
+    _paramCouponTemplateQueryRequest   *CouponTemplateQueryRequest
 }
 
 // 初始化AlibabaWdkCouponTemplateQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponTemplateQueryRequest) GetApiParams() url.Values {
 }
 // ParamCouponTemplateQueryRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkCouponTemplateQueryRequest) SetParamCouponTemplateQueryRequest(paramCouponTemplateQueryRequest *CouponTemplateQueryRequest) error {
-    r.paramCouponTemplateQueryRequest = paramCouponTemplateQueryRequest
-    r.Set("param_coupon_template_query_request", paramCouponTemplateQueryRequest)
+func (r *AlibabaWdkCouponTemplateQueryRequest) SetParamCouponTemplateQueryRequest(_paramCouponTemplateQueryRequest *CouponTemplateQueryRequest) error {
+    r._paramCouponTemplateQueryRequest = _paramCouponTemplateQueryRequest
+    r.Set("param_coupon_template_query_request", _paramCouponTemplateQueryRequest)
     return nil
 }
 
 // ParamCouponTemplateQueryRequest Getter
 func (r AlibabaWdkCouponTemplateQueryRequest) GetParamCouponTemplateQueryRequest() *CouponTemplateQueryRequest {
-    return r.paramCouponTemplateQueryRequest
+    return r._paramCouponTemplateQueryRequest
 }

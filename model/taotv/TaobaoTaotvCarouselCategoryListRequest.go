@@ -15,7 +15,7 @@ taobao.taotv.carousel.category.list
 type TaobaoTaotvCarouselCategoryListRequest struct {
     model.Params
     // 设备信息
-    systemInfo   string
+    _systemInfo   string
 }
 
 // 初始化TaobaoTaotvCarouselCategoryListRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTaotvCarouselCategoryListRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 设备信息
-func (r *TaobaoTaotvCarouselCategoryListRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvCarouselCategoryListRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvCarouselCategoryListRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }

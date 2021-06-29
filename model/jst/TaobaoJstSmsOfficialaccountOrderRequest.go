@@ -15,7 +15,7 @@ taobao.jst.sms.officialaccount.order
 type TaobaoJstSmsOfficialaccountOrderRequest struct {
     model.Params
     // 聚石塔公众号订购
-    orderOfficialAccountRequest   *OrderOfficialAccountRequest
+    _orderOfficialAccountRequest   *OrderOfficialAccountRequest
 }
 
 // 初始化TaobaoJstSmsOfficialaccountOrderRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountOrderRequest) GetApiParams() url.Values {
 }
 // OrderOfficialAccountRequest Setter
 // 聚石塔公众号订购
-func (r *TaobaoJstSmsOfficialaccountOrderRequest) SetOrderOfficialAccountRequest(orderOfficialAccountRequest *OrderOfficialAccountRequest) error {
-    r.orderOfficialAccountRequest = orderOfficialAccountRequest
-    r.Set("order_official_account_request", orderOfficialAccountRequest)
+func (r *TaobaoJstSmsOfficialaccountOrderRequest) SetOrderOfficialAccountRequest(_orderOfficialAccountRequest *OrderOfficialAccountRequest) error {
+    r._orderOfficialAccountRequest = _orderOfficialAccountRequest
+    r.Set("order_official_account_request", _orderOfficialAccountRequest)
     return nil
 }
 
 // OrderOfficialAccountRequest Getter
 func (r TaobaoJstSmsOfficialaccountOrderRequest) GetOrderOfficialAccountRequest() *OrderOfficialAccountRequest {
-    return r.orderOfficialAccountRequest
+    return r._orderOfficialAccountRequest
 }

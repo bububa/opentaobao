@@ -15,19 +15,19 @@ taobao.openmall.refund.modify
 type TaobaoOpenmallRefundModifyRequest struct {
     model.Params
     // 退款类型，可选值refund（仅退款）、return_and_refund（退款退货）
-    refundType   string
+    _refundType   string
     // 退款金额，分
-    refundFee   int64
+    _refundFee   int64
     // 买家的退货描述
-    refundDesc   string
+    _refundDesc   string
     // 货品状态，可选值 BUYER_NOT_RECEIVED（买家未收到货）、BUYER_RECEIVED（买家已收到货）、UNSHIPPED（未发货）
-    goodsStatus   string
+    _goodsStatus   string
     // 退款类别，可选值OTHER_REASON（其他，默认）、SEVEN_DAYS_WITHOUT_REASON（7天无理由，不退邮费）
-    refundReason   string
+    _refundReason   string
     // 分销者联盟身份
-    distributor   string
+    _distributor   string
     // 退款单ID
-    refundId   int64
+    _refundId   int64
 }
 
 // 初始化TaobaoOpenmallRefundModifyRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoOpenmallRefundModifyRequest) GetApiParams() url.Values {
 }
 // RefundType Setter
 // 退款类型，可选值refund（仅退款）、return_and_refund（退款退货）
-func (r *TaobaoOpenmallRefundModifyRequest) SetRefundType(refundType string) error {
-    r.refundType = refundType
-    r.Set("refund_type", refundType)
+func (r *TaobaoOpenmallRefundModifyRequest) SetRefundType(_refundType string) error {
+    r._refundType = _refundType
+    r.Set("refund_type", _refundType)
     return nil
 }
 
 // RefundType Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetRefundType() string {
-    return r.refundType
+    return r._refundType
 }
 // RefundFee Setter
 // 退款金额，分
-func (r *TaobaoOpenmallRefundModifyRequest) SetRefundFee(refundFee int64) error {
-    r.refundFee = refundFee
-    r.Set("refund_fee", refundFee)
+func (r *TaobaoOpenmallRefundModifyRequest) SetRefundFee(_refundFee int64) error {
+    r._refundFee = _refundFee
+    r.Set("refund_fee", _refundFee)
     return nil
 }
 
 // RefundFee Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetRefundFee() int64 {
-    return r.refundFee
+    return r._refundFee
 }
 // RefundDesc Setter
 // 买家的退货描述
-func (r *TaobaoOpenmallRefundModifyRequest) SetRefundDesc(refundDesc string) error {
-    r.refundDesc = refundDesc
-    r.Set("refund_desc", refundDesc)
+func (r *TaobaoOpenmallRefundModifyRequest) SetRefundDesc(_refundDesc string) error {
+    r._refundDesc = _refundDesc
+    r.Set("refund_desc", _refundDesc)
     return nil
 }
 
 // RefundDesc Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetRefundDesc() string {
-    return r.refundDesc
+    return r._refundDesc
 }
 // GoodsStatus Setter
 // 货品状态，可选值 BUYER_NOT_RECEIVED（买家未收到货）、BUYER_RECEIVED（买家已收到货）、UNSHIPPED（未发货）
-func (r *TaobaoOpenmallRefundModifyRequest) SetGoodsStatus(goodsStatus string) error {
-    r.goodsStatus = goodsStatus
-    r.Set("goods_status", goodsStatus)
+func (r *TaobaoOpenmallRefundModifyRequest) SetGoodsStatus(_goodsStatus string) error {
+    r._goodsStatus = _goodsStatus
+    r.Set("goods_status", _goodsStatus)
     return nil
 }
 
 // GoodsStatus Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetGoodsStatus() string {
-    return r.goodsStatus
+    return r._goodsStatus
 }
 // RefundReason Setter
 // 退款类别，可选值OTHER_REASON（其他，默认）、SEVEN_DAYS_WITHOUT_REASON（7天无理由，不退邮费）
-func (r *TaobaoOpenmallRefundModifyRequest) SetRefundReason(refundReason string) error {
-    r.refundReason = refundReason
-    r.Set("refund_reason", refundReason)
+func (r *TaobaoOpenmallRefundModifyRequest) SetRefundReason(_refundReason string) error {
+    r._refundReason = _refundReason
+    r.Set("refund_reason", _refundReason)
     return nil
 }
 
 // RefundReason Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetRefundReason() string {
-    return r.refundReason
+    return r._refundReason
 }
 // Distributor Setter
 // 分销者联盟身份
-func (r *TaobaoOpenmallRefundModifyRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallRefundModifyRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // RefundId Setter
 // 退款单ID
-func (r *TaobaoOpenmallRefundModifyRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoOpenmallRefundModifyRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoOpenmallRefundModifyRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }

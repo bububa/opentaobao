@@ -15,19 +15,19 @@ alibaba.alihealth.drugtrace.top.lsyd.query.listparts
 type AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest struct {
     model.Params
     // 企业唯一标识
-    refEntId   string
+    _refEntId   string
     // 企业名称
-    entName   string
+    _entName   string
     // 企业自定义编号
-    refPartnerId   string
+    _refPartnerId   string
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    page   int64
+    _page   int64
     // 开始时间
-    beginDate   string
+    _beginDate   string
     // 结束时间
-    endDate   string
+    _endDate   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetApiParams() ur
 }
 // RefEntId Setter
 // 企业唯一标识
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // EntName Setter
 // 企业名称
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetEntName(entName string) error {
-    r.entName = entName
-    r.Set("ent_name", entName)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetEntName(_entName string) error {
+    r._entName = _entName
+    r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetEntName() string {
-    return r.entName
+    return r._entName
 }
 // RefPartnerId Setter
 // 企业自定义编号
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetRefPartnerId(refPartnerId string) error {
-    r.refPartnerId = refPartnerId
-    r.Set("ref_partner_id", refPartnerId)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetRefPartnerId(_refPartnerId string) error {
+    r._refPartnerId = _refPartnerId
+    r.Set("ref_partner_id", _refPartnerId)
     return nil
 }
 
 // RefPartnerId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetRefPartnerId() string {
-    return r.refPartnerId
+    return r._refPartnerId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydQueryListpartsRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

@@ -15,15 +15,15 @@ taobao.xhotel.pms.guestbill.get.vtwo
 type TaobaoXhotelPmsGuestbillGetVtwoRequest struct {
     model.Params
     // 开票点税号
-    taxNum   string
+    _taxNum   string
     // 身份证后4位
-    shortIdNum   string
+    _shortIdNum   string
     // 房间号
-    roomNum   string
+    _roomNum   string
     // 请求id (32位唯一值)
-    requestId   string
+    _requestId   string
     // 用户渠道(0:未知,1:淘宝)
-    userChannel   int64
+    _userChannel   int64
 }
 
 // 初始化TaobaoXhotelPmsGuestbillGetVtwoRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetApiParams() url.Values {
 }
 // TaxNum Setter
 // 开票点税号
-func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetTaxNum(taxNum string) error {
-    r.taxNum = taxNum
-    r.Set("tax_num", taxNum)
+func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetTaxNum(_taxNum string) error {
+    r._taxNum = _taxNum
+    r.Set("tax_num", _taxNum)
     return nil
 }
 
 // TaxNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetTaxNum() string {
-    return r.taxNum
+    return r._taxNum
 }
 // ShortIdNum Setter
 // 身份证后4位
-func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetShortIdNum(shortIdNum string) error {
-    r.shortIdNum = shortIdNum
-    r.Set("short_id_num", shortIdNum)
+func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetShortIdNum(_shortIdNum string) error {
+    r._shortIdNum = _shortIdNum
+    r.Set("short_id_num", _shortIdNum)
     return nil
 }
 
 // ShortIdNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetShortIdNum() string {
-    return r.shortIdNum
+    return r._shortIdNum
 }
 // RoomNum Setter
 // 房间号
-func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetRoomNum(roomNum string) error {
-    r.roomNum = roomNum
-    r.Set("room_num", roomNum)
+func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetRoomNum(_roomNum string) error {
+    r._roomNum = _roomNum
+    r.Set("room_num", _roomNum)
     return nil
 }
 
 // RoomNum Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetRoomNum() string {
-    return r.roomNum
+    return r._roomNum
 }
 // RequestId Setter
 // 请求id (32位唯一值)
-func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }
 // UserChannel Setter
 // 用户渠道(0:未知,1:淘宝)
-func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetUserChannel(userChannel int64) error {
-    r.userChannel = userChannel
-    r.Set("user_channel", userChannel)
+func (r *TaobaoXhotelPmsGuestbillGetVtwoRequest) SetUserChannel(_userChannel int64) error {
+    r._userChannel = _userChannel
+    r.Set("user_channel", _userChannel)
     return nil
 }
 
 // UserChannel Getter
 func (r TaobaoXhotelPmsGuestbillGetVtwoRequest) GetUserChannel() int64 {
-    return r.userChannel
+    return r._userChannel
 }

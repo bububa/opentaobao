@@ -15,7 +15,7 @@ alibaba.onetouch.logistics.express.address.street.list
 type AlibabaOnetouchLogisticsExpressAddressStreetListRequest struct {
     model.Params
     // 请求参数
-    paramQuery   *AddressQueryDto
+    _paramQuery   *AddressQueryDto
 }
 
 // 初始化AlibabaOnetouchLogisticsExpressAddressStreetListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetApiParams() 
 }
 // ParamQuery Setter
 // 请求参数
-func (r *AlibabaOnetouchLogisticsExpressAddressStreetListRequest) SetParamQuery(paramQuery *AddressQueryDto) error {
-    r.paramQuery = paramQuery
-    r.Set("param_query", paramQuery)
+func (r *AlibabaOnetouchLogisticsExpressAddressStreetListRequest) SetParamQuery(_paramQuery *AddressQueryDto) error {
+    r._paramQuery = _paramQuery
+    r.Set("param_query", _paramQuery)
     return nil
 }
 
 // ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetParamQuery() *AddressQueryDto {
-    return r.paramQuery
+    return r._paramQuery
 }

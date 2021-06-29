@@ -15,7 +15,7 @@ tmall.aliauto.autofinance.credit.receive
 type TmallAliautoAutofinanceCreditReceiveRequest struct {
     model.Params
     // 授信通知描述
-    creditReceiveDto   *CreditReceiveDto
+    _creditReceiveDto   *CreditReceiveDto
 }
 
 // 初始化TmallAliautoAutofinanceCreditReceiveRequest对象
@@ -40,13 +40,13 @@ func (r TmallAliautoAutofinanceCreditReceiveRequest) GetApiParams() url.Values {
 }
 // CreditReceiveDto Setter
 // 授信通知描述
-func (r *TmallAliautoAutofinanceCreditReceiveRequest) SetCreditReceiveDto(creditReceiveDto *CreditReceiveDto) error {
-    r.creditReceiveDto = creditReceiveDto
-    r.Set("credit_receive_dto", creditReceiveDto)
+func (r *TmallAliautoAutofinanceCreditReceiveRequest) SetCreditReceiveDto(_creditReceiveDto *CreditReceiveDto) error {
+    r._creditReceiveDto = _creditReceiveDto
+    r.Set("credit_receive_dto", _creditReceiveDto)
     return nil
 }
 
 // CreditReceiveDto Getter
 func (r TmallAliautoAutofinanceCreditReceiveRequest) GetCreditReceiveDto() *CreditReceiveDto {
-    return r.creditReceiveDto
+    return r._creditReceiveDto
 }

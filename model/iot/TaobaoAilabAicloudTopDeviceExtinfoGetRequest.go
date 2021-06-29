@@ -15,13 +15,13 @@ taobao.ailab.aicloud.top.device.extinfo.get
 type TaobaoAilabAicloudTopDeviceExtinfoGetRequest struct {
     model.Params
     // 三方id、淘宝openId
-    originUserId   string
+    _originUserId   string
     // 账号秘钥
-    schemaKey   string
+    _schemaKey   string
     // 类型：openTaoBao, extUser
-    userType   string
+    _userType   string
     // 设备id
-    deviceId   string
+    _deviceId   string
 }
 
 // 初始化TaobaoAilabAicloudTopDeviceExtinfoGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudTopDeviceExtinfoGetRequest) GetApiParams() url.Values 
 }
 // OriginUserId Setter
 // 三方id、淘宝openId
-func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetOriginUserId(originUserId string) error {
-    r.originUserId = originUserId
-    r.Set("origin_user_id", originUserId)
+func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetOriginUserId(_originUserId string) error {
+    r._originUserId = _originUserId
+    r.Set("origin_user_id", _originUserId)
     return nil
 }
 
 // OriginUserId Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetRequest) GetOriginUserId() string {
-    return r.originUserId
+    return r._originUserId
 }
 // SchemaKey Setter
 // 账号秘钥
-func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetSchemaKey(schemaKey string) error {
-    r.schemaKey = schemaKey
-    r.Set("schema_key", schemaKey)
+func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetSchemaKey(_schemaKey string) error {
+    r._schemaKey = _schemaKey
+    r.Set("schema_key", _schemaKey)
     return nil
 }
 
 // SchemaKey Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetRequest) GetSchemaKey() string {
-    return r.schemaKey
+    return r._schemaKey
 }
 // UserType Setter
 // 类型：openTaoBao, extUser
-func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetUserType(userType string) error {
-    r.userType = userType
-    r.Set("user_type", userType)
+func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetUserType(_userType string) error {
+    r._userType = _userType
+    r.Set("user_type", _userType)
     return nil
 }
 
 // UserType Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetRequest) GetUserType() string {
-    return r.userType
+    return r._userType
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoAilabAicloudTopDeviceExtinfoGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoAilabAicloudTopDeviceExtinfoGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }

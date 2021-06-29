@@ -15,9 +15,9 @@ taobao.daogoubao.order.statistics.total
 type TaobaoDaogoubaoOrderStatisticsTotalRequest struct {
     model.Params
     // 调试时用的传入id
-    debugId   string
+    _debugId   string
     // 需要的字段名
-    field   string
+    _field   string
 }
 
 // 初始化TaobaoDaogoubaoOrderStatisticsTotalRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoDaogoubaoOrderStatisticsTotalRequest) GetApiParams() url.Values {
 }
 // DebugId Setter
 // 调试时用的传入id
-func (r *TaobaoDaogoubaoOrderStatisticsTotalRequest) SetDebugId(debugId string) error {
-    r.debugId = debugId
-    r.Set("debug_id", debugId)
+func (r *TaobaoDaogoubaoOrderStatisticsTotalRequest) SetDebugId(_debugId string) error {
+    r._debugId = _debugId
+    r.Set("debug_id", _debugId)
     return nil
 }
 
 // DebugId Getter
 func (r TaobaoDaogoubaoOrderStatisticsTotalRequest) GetDebugId() string {
-    return r.debugId
+    return r._debugId
 }
 // Field Setter
 // 需要的字段名
-func (r *TaobaoDaogoubaoOrderStatisticsTotalRequest) SetField(field string) error {
-    r.field = field
-    r.Set("field", field)
+func (r *TaobaoDaogoubaoOrderStatisticsTotalRequest) SetField(_field string) error {
+    r._field = _field
+    r.Set("field", _field)
     return nil
 }
 
 // Field Getter
 func (r TaobaoDaogoubaoOrderStatisticsTotalRequest) GetField() string {
-    return r.field
+    return r._field
 }

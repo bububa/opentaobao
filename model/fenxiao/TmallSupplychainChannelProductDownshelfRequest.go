@@ -15,7 +15,7 @@ tmall.supplychain.channel.product.downshelf
 type TmallSupplychainChannelProductDownshelfRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TmallSupplychainChannelProductDownshelfRequest对象
@@ -40,13 +40,13 @@ func (r TmallSupplychainChannelProductDownshelfRequest) GetApiParams() url.Value
 }
 // ProductId Setter
 // 产品ID
-func (r *TmallSupplychainChannelProductDownshelfRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductDownshelfRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductDownshelfRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

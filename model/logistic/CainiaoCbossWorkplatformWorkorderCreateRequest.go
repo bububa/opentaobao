@@ -15,35 +15,35 @@ cainiao.cboss.workplatform.workorder.create
 type CainiaoCbossWorkplatformWorkorderCreateRequest struct {
     model.Params
     // 工单类型
-    workOrderType   string
+    _workOrderType   string
     // 业务类型
-    bizType   string
+    _bizType   string
     // 工单创建备注
-    memo   string
+    _memo   string
     // 货主商家用户id
-    memberId   string
+    _memberId   string
     // 货主用户角色
-    memberRole   string
+    _memberRole   string
     // 创建者淘宝id（区分子账号）
-    creatorId   string
+    _creatorId   string
     // 创建者角色
-    creatorRole   string
+    _creatorRole   string
     // 外部业务系统主键
-    bizEntityValue   string
+    _bizEntityValue   string
     // 店铺用户id
-    shopUserId   string
+    _shopUserId   string
     // 交易订单id
-    tradeId   string
+    _tradeId   string
     // 工单来源
-    source   string
+    _source   string
     // 来源签名，用于唯一区分不同的来源方
-    sourceSign   string
+    _sourceSign   string
     // 运单号
-    mailNo   string
+    _mailNo   string
     // 扩展字段
-    features   string
+    _features   string
     // 凭证地址列表
-    attachPathList   []string
+    _attachPathList   []string
 }
 
 // 初始化CainiaoCbossWorkplatformWorkorderCreateRequest对象
@@ -68,181 +68,181 @@ func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetApiParams() url.Value
 }
 // WorkOrderType Setter
 // 工单类型
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetWorkOrderType(workOrderType string) error {
-    r.workOrderType = workOrderType
-    r.Set("work_order_type", workOrderType)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetWorkOrderType(_workOrderType string) error {
+    r._workOrderType = _workOrderType
+    r.Set("work_order_type", _workOrderType)
     return nil
 }
 
 // WorkOrderType Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetWorkOrderType() string {
-    return r.workOrderType
+    return r._workOrderType
 }
 // BizType Setter
 // 业务类型
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // Memo Setter
 // 工单创建备注
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }
 // MemberId Setter
 // 货主商家用户id
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemberId(memberId string) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemberId(_memberId string) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetMemberId() string {
-    return r.memberId
+    return r._memberId
 }
 // MemberRole Setter
 // 货主用户角色
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemberRole(memberRole string) error {
-    r.memberRole = memberRole
-    r.Set("member_role", memberRole)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMemberRole(_memberRole string) error {
+    r._memberRole = _memberRole
+    r.Set("member_role", _memberRole)
     return nil
 }
 
 // MemberRole Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetMemberRole() string {
-    return r.memberRole
+    return r._memberRole
 }
 // CreatorId Setter
 // 创建者淘宝id（区分子账号）
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetCreatorId(creatorId string) error {
-    r.creatorId = creatorId
-    r.Set("creator_id", creatorId)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetCreatorId(_creatorId string) error {
+    r._creatorId = _creatorId
+    r.Set("creator_id", _creatorId)
     return nil
 }
 
 // CreatorId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetCreatorId() string {
-    return r.creatorId
+    return r._creatorId
 }
 // CreatorRole Setter
 // 创建者角色
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetCreatorRole(creatorRole string) error {
-    r.creatorRole = creatorRole
-    r.Set("creator_role", creatorRole)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetCreatorRole(_creatorRole string) error {
+    r._creatorRole = _creatorRole
+    r.Set("creator_role", _creatorRole)
     return nil
 }
 
 // CreatorRole Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetCreatorRole() string {
-    return r.creatorRole
+    return r._creatorRole
 }
 // BizEntityValue Setter
 // 外部业务系统主键
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetBizEntityValue(bizEntityValue string) error {
-    r.bizEntityValue = bizEntityValue
-    r.Set("biz_entity_value", bizEntityValue)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetBizEntityValue(_bizEntityValue string) error {
+    r._bizEntityValue = _bizEntityValue
+    r.Set("biz_entity_value", _bizEntityValue)
     return nil
 }
 
 // BizEntityValue Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetBizEntityValue() string {
-    return r.bizEntityValue
+    return r._bizEntityValue
 }
 // ShopUserId Setter
 // 店铺用户id
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetShopUserId(shopUserId string) error {
-    r.shopUserId = shopUserId
-    r.Set("shop_user_id", shopUserId)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetShopUserId(_shopUserId string) error {
+    r._shopUserId = _shopUserId
+    r.Set("shop_user_id", _shopUserId)
     return nil
 }
 
 // ShopUserId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetShopUserId() string {
-    return r.shopUserId
+    return r._shopUserId
 }
 // TradeId Setter
 // 交易订单id
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetTradeId(tradeId string) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetTradeId(_tradeId string) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetTradeId() string {
-    return r.tradeId
+    return r._tradeId
 }
 // Source Setter
 // 工单来源
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // SourceSign Setter
 // 来源签名，用于唯一区分不同的来源方
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetSourceSign(sourceSign string) error {
-    r.sourceSign = sourceSign
-    r.Set("source_sign", sourceSign)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetSourceSign(_sourceSign string) error {
+    r._sourceSign = _sourceSign
+    r.Set("source_sign", _sourceSign)
     return nil
 }
 
 // SourceSign Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetSourceSign() string {
-    return r.sourceSign
+    return r._sourceSign
 }
 // MailNo Setter
 // 运单号
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMailNo(mailNo string) error {
-    r.mailNo = mailNo
-    r.Set("mail_no", mailNo)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetMailNo(_mailNo string) error {
+    r._mailNo = _mailNo
+    r.Set("mail_no", _mailNo)
     return nil
 }
 
 // MailNo Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetMailNo() string {
-    return r.mailNo
+    return r._mailNo
 }
 // Features Setter
 // 扩展字段
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetFeatures(features string) error {
-    r.features = features
-    r.Set("features", features)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetFeatures(_features string) error {
+    r._features = _features
+    r.Set("features", _features)
     return nil
 }
 
 // Features Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetFeatures() string {
-    return r.features
+    return r._features
 }
 // AttachPathList Setter
 // 凭证地址列表
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetAttachPathList(attachPathList []string) error {
-    r.attachPathList = attachPathList
-    r.Set("attach_path_list", attachPathList)
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetAttachPathList(_attachPathList []string) error {
+    r._attachPathList = _attachPathList
+    r.Set("attach_path_list", _attachPathList)
     return nil
 }
 
 // AttachPathList Getter
 func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetAttachPathList() []string {
-    return r.attachPathList
+    return r._attachPathList
 }

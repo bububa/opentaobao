@@ -22,7 +22,7 @@ taobao.miniapp.cloud.picture.token
 type TaobaoMiniappCloudPictureTokenRequest struct {
     model.Params
     // 请求参数
-    generateTokenRequest   *GenerateTokenRequest
+    _generateTokenRequest   *GenerateTokenRequest
 }
 
 // 初始化TaobaoMiniappCloudPictureTokenRequest对象
@@ -47,13 +47,13 @@ func (r TaobaoMiniappCloudPictureTokenRequest) GetApiParams() url.Values {
 }
 // GenerateTokenRequest Setter
 // 请求参数
-func (r *TaobaoMiniappCloudPictureTokenRequest) SetGenerateTokenRequest(generateTokenRequest *GenerateTokenRequest) error {
-    r.generateTokenRequest = generateTokenRequest
-    r.Set("generate_token_request", generateTokenRequest)
+func (r *TaobaoMiniappCloudPictureTokenRequest) SetGenerateTokenRequest(_generateTokenRequest *GenerateTokenRequest) error {
+    r._generateTokenRequest = _generateTokenRequest
+    r.Set("generate_token_request", _generateTokenRequest)
     return nil
 }
 
 // GenerateTokenRequest Getter
 func (r TaobaoMiniappCloudPictureTokenRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
-    return r.generateTokenRequest
+    return r._generateTokenRequest
 }

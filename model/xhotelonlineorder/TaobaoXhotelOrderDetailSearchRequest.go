@@ -15,9 +15,9 @@ taobao.xhotel.order.detail.search
 type TaobaoXhotelOrderDetailSearchRequest struct {
     model.Params
     // 外部订单号
-    outOid   string
+    _outOid   string
     // 外部订单号
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoXhotelOrderDetailSearchRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoXhotelOrderDetailSearchRequest) GetApiParams() url.Values {
 }
 // OutOid Setter
 // 外部订单号
-func (r *TaobaoXhotelOrderDetailSearchRequest) SetOutOid(outOid string) error {
-    r.outOid = outOid
-    r.Set("out_oid", outOid)
+func (r *TaobaoXhotelOrderDetailSearchRequest) SetOutOid(_outOid string) error {
+    r._outOid = _outOid
+    r.Set("out_oid", _outOid)
     return nil
 }
 
 // OutOid Getter
 func (r TaobaoXhotelOrderDetailSearchRequest) GetOutOid() string {
-    return r.outOid
+    return r._outOid
 }
 // Tid Setter
 // 外部订单号
-func (r *TaobaoXhotelOrderDetailSearchRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoXhotelOrderDetailSearchRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoXhotelOrderDetailSearchRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

@@ -15,7 +15,7 @@ alibaba.wdk.marketing.fullrange.queryitem
 type AlibabaWdkMarketingFullrangeQueryitemRequest struct {
     model.Params
     // 换购商品查询参数
-    param0   *ActivitySkuQuery
+    _param0   *ActivitySkuQuery
 }
 
 // 初始化AlibabaWdkMarketingFullrangeQueryitemRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetApiParams() url.Values 
 }
 // Param0 Setter
 // 换购商品查询参数
-func (r *AlibabaWdkMarketingFullrangeQueryitemRequest) SetParam0(param0 *ActivitySkuQuery) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingFullrangeQueryitemRequest) SetParam0(_param0 *ActivitySkuQuery) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetParam0() *ActivitySkuQuery {
-    return r.param0
+    return r._param0
 }

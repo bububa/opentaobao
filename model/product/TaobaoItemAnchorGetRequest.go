@@ -15,9 +15,9 @@ taobao.item.anchor.get
 type TaobaoItemAnchorGetRequest struct {
     model.Params
     // 宝贝模板类型是人工打标还是自动打标：人工打标为1，自动打标为0.人工和自动打标为-1.(最小值：-1，最大值：1)
-    type   int64
+    _type   int64
     // 对应类目编号
-    catId   int64
+    _catId   int64
 }
 
 // 初始化TaobaoItemAnchorGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoItemAnchorGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 宝贝模板类型是人工打标还是自动打标：人工打标为1，自动打标为0.人工和自动打标为-1.(最小值：-1，最大值：1)
-func (r *TaobaoItemAnchorGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoItemAnchorGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoItemAnchorGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // CatId Setter
 // 对应类目编号
-func (r *TaobaoItemAnchorGetRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *TaobaoItemAnchorGetRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r TaobaoItemAnchorGetRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

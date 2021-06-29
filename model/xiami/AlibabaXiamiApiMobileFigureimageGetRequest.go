@@ -15,15 +15,15 @@ alibaba.xiami.api.mobile.figureimage.get
 type AlibabaXiamiApiMobileFigureimageGetRequest struct {
     model.Params
     // 分页限制
-    limit   int64
+    _limit   int64
     // 类型
-    type   string
+    _type   string
     // 客户端版本
-    av   string
+    _av   string
     // 设备类型
-    deviceType   string
+    _deviceType   string
     // 设备ID
-    deviceId   string
+    _deviceId   string
 }
 
 // 初始化AlibabaXiamiApiMobileFigureimageGetRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetApiParams() url.Values {
 }
 // Limit Setter
 // 分页限制
-func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }
 // Type Setter
 // 类型
-func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // Av Setter
 // 客户端版本
-func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetAv(av string) error {
-    r.av = av
-    r.Set("av", av)
+func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetAv(_av string) error {
+    r._av = _av
+    r.Set("av", _av)
     return nil
 }
 
 // Av Getter
 func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetAv() string {
-    return r.av
+    return r._av
 }
 // DeviceType Setter
 // 设备类型
-func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetDeviceType(deviceType string) error {
-    r.deviceType = deviceType
-    r.Set("device_type", deviceType)
+func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetDeviceType(_deviceType string) error {
+    r._deviceType = _deviceType
+    r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
 func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetDeviceType() string {
-    return r.deviceType
+    return r._deviceType
 }
 // DeviceId Setter
 // 设备ID
-func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AlibabaXiamiApiMobileFigureimageGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AlibabaXiamiApiMobileFigureimageGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }

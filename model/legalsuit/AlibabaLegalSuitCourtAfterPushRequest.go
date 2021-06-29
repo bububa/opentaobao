@@ -15,7 +15,7 @@ alibaba.legal.suit.court.after.push
 type AlibabaLegalSuitCourtAfterPushRequest struct {
     model.Params
     // 庭后信息
-    afterCourtInfoModel   *AfterCourtInfoModel
+    _afterCourtInfoModel   *AfterCourtInfoModel
 }
 
 // 初始化AlibabaLegalSuitCourtAfterPushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitCourtAfterPushRequest) GetApiParams() url.Values {
 }
 // AfterCourtInfoModel Setter
 // 庭后信息
-func (r *AlibabaLegalSuitCourtAfterPushRequest) SetAfterCourtInfoModel(afterCourtInfoModel *AfterCourtInfoModel) error {
-    r.afterCourtInfoModel = afterCourtInfoModel
-    r.Set("after_court_info_model", afterCourtInfoModel)
+func (r *AlibabaLegalSuitCourtAfterPushRequest) SetAfterCourtInfoModel(_afterCourtInfoModel *AfterCourtInfoModel) error {
+    r._afterCourtInfoModel = _afterCourtInfoModel
+    r.Set("after_court_info_model", _afterCourtInfoModel)
     return nil
 }
 
 // AfterCourtInfoModel Getter
 func (r AlibabaLegalSuitCourtAfterPushRequest) GetAfterCourtInfoModel() *AfterCourtInfoModel {
-    return r.afterCourtInfoModel
+    return r._afterCourtInfoModel
 }

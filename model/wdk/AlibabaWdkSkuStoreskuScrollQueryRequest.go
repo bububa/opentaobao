@@ -15,9 +15,9 @@ alibaba.wdk.sku.storesku.scroll.query
 type AlibabaWdkSkuStoreskuScrollQueryRequest struct {
     model.Params
     // 经营的id
-    storeId   string
+    _storeId   string
     // 历游标，首次调用传递null，后续传递ScrollPageResult.getScrollId()
-    scrollId   string
+    _scrollId   string
 }
 
 // 初始化AlibabaWdkSkuStoreskuScrollQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkSkuStoreskuScrollQueryRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 经营的id
-func (r *AlibabaWdkSkuStoreskuScrollQueryRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkSkuStoreskuScrollQueryRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkSkuStoreskuScrollQueryRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // ScrollId Setter
 // 历游标，首次调用传递null，后续传递ScrollPageResult.getScrollId()
-func (r *AlibabaWdkSkuStoreskuScrollQueryRequest) SetScrollId(scrollId string) error {
-    r.scrollId = scrollId
-    r.Set("scroll_id", scrollId)
+func (r *AlibabaWdkSkuStoreskuScrollQueryRequest) SetScrollId(_scrollId string) error {
+    r._scrollId = _scrollId
+    r.Set("scroll_id", _scrollId)
     return nil
 }
 
 // ScrollId Getter
 func (r AlibabaWdkSkuStoreskuScrollQueryRequest) GetScrollId() string {
-    return r.scrollId
+    return r._scrollId
 }

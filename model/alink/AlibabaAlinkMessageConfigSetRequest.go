@@ -15,9 +15,9 @@ alibaba.alink.message.config.set
 type AlibabaAlinkMessageConfigSetRequest struct {
     model.Params
     // 设备id
-    uuid   string
+    _uuid   string
     // 0：开启，1：关闭
-    pushDisabled   string
+    _pushDisabled   string
 }
 
 // 初始化AlibabaAlinkMessageConfigSetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlinkMessageConfigSetRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备id
-func (r *AlibabaAlinkMessageConfigSetRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaAlinkMessageConfigSetRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaAlinkMessageConfigSetRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // PushDisabled Setter
 // 0：开启，1：关闭
-func (r *AlibabaAlinkMessageConfigSetRequest) SetPushDisabled(pushDisabled string) error {
-    r.pushDisabled = pushDisabled
-    r.Set("push_disabled", pushDisabled)
+func (r *AlibabaAlinkMessageConfigSetRequest) SetPushDisabled(_pushDisabled string) error {
+    r._pushDisabled = _pushDisabled
+    r.Set("push_disabled", _pushDisabled)
     return nil
 }
 
 // PushDisabled Getter
 func (r AlibabaAlinkMessageConfigSetRequest) GetPushDisabled() string {
-    return r.pushDisabled
+    return r._pushDisabled
 }

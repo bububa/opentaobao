@@ -15,7 +15,7 @@ alibaba.wdk.trade.refund.query
 type AlibabaWdkTradeRefundQueryRequest struct {
     model.Params
     // 查询请求
-    refundGoodsQueryRequest   *RefundGoodsQueryRequest
+    _refundGoodsQueryRequest   *RefundGoodsQueryRequest
 }
 
 // 初始化AlibabaWdkTradeRefundQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeRefundQueryRequest) GetApiParams() url.Values {
 }
 // RefundGoodsQueryRequest Setter
 // 查询请求
-func (r *AlibabaWdkTradeRefundQueryRequest) SetRefundGoodsQueryRequest(refundGoodsQueryRequest *RefundGoodsQueryRequest) error {
-    r.refundGoodsQueryRequest = refundGoodsQueryRequest
-    r.Set("refund_goods_query_request", refundGoodsQueryRequest)
+func (r *AlibabaWdkTradeRefundQueryRequest) SetRefundGoodsQueryRequest(_refundGoodsQueryRequest *RefundGoodsQueryRequest) error {
+    r._refundGoodsQueryRequest = _refundGoodsQueryRequest
+    r.Set("refund_goods_query_request", _refundGoodsQueryRequest)
     return nil
 }
 
 // RefundGoodsQueryRequest Getter
 func (r AlibabaWdkTradeRefundQueryRequest) GetRefundGoodsQueryRequest() *RefundGoodsQueryRequest {
-    return r.refundGoodsQueryRequest
+    return r._refundGoodsQueryRequest
 }

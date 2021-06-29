@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.line.sync
 type AlibabaAlihouseNewhomeLineSyncRequest struct {
     model.Params
     // 环线入参
-    baseLoopLineDto   *BaseLoopLineDto
+    _baseLoopLineDto   *BaseLoopLineDto
 }
 
 // 初始化AlibabaAlihouseNewhomeLineSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeLineSyncRequest) GetApiParams() url.Values {
 }
 // BaseLoopLineDto Setter
 // 环线入参
-func (r *AlibabaAlihouseNewhomeLineSyncRequest) SetBaseLoopLineDto(baseLoopLineDto *BaseLoopLineDto) error {
-    r.baseLoopLineDto = baseLoopLineDto
-    r.Set("base_loop_line_dto", baseLoopLineDto)
+func (r *AlibabaAlihouseNewhomeLineSyncRequest) SetBaseLoopLineDto(_baseLoopLineDto *BaseLoopLineDto) error {
+    r._baseLoopLineDto = _baseLoopLineDto
+    r.Set("base_loop_line_dto", _baseLoopLineDto)
     return nil
 }
 
 // BaseLoopLineDto Getter
 func (r AlibabaAlihouseNewhomeLineSyncRequest) GetBaseLoopLineDto() *BaseLoopLineDto {
-    return r.baseLoopLineDto
+    return r._baseLoopLineDto
 }

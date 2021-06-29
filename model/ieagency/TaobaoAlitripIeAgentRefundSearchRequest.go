@@ -15,17 +15,17 @@ taobao.alitrip.ie.agent.refund.search
 type TaobaoAlitripIeAgentRefundSearchRequest struct {
     model.Params
     // 查询起始时间
-    createStartTime   string
+    _createStartTime   string
     // 查询结束时间
-    createEndTime   string
+    _createEndTime   string
     // WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款");
-    refundStatus   int64
+    _refundStatus   int64
     // 从1开始
-    pageIndex   int64
+    _pageIndex   int64
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
     // 代理商id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化TaobaoAlitripIeAgentRefundSearchRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoAlitripIeAgentRefundSearchRequest) GetApiParams() url.Values {
 }
 // CreateStartTime Setter
 // 查询起始时间
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetCreateStartTime(createStartTime string) error {
-    r.createStartTime = createStartTime
-    r.Set("create_start_time", createStartTime)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetCreateStartTime(_createStartTime string) error {
+    r._createStartTime = _createStartTime
+    r.Set("create_start_time", _createStartTime)
     return nil
 }
 
 // CreateStartTime Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetCreateStartTime() string {
-    return r.createStartTime
+    return r._createStartTime
 }
 // CreateEndTime Setter
 // 查询结束时间
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetCreateEndTime(createEndTime string) error {
-    r.createEndTime = createEndTime
-    r.Set("create_end_time", createEndTime)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetCreateEndTime(_createEndTime string) error {
+    r._createEndTime = _createEndTime
+    r.Set("create_end_time", _createEndTime)
     return nil
 }
 
 // CreateEndTime Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetCreateEndTime() string {
-    return r.createEndTime
+    return r._createEndTime
 }
 // RefundStatus Setter
 // WAIT(1,"待处理"), AGREED(2, "已同意"),REFUSE(3, "已拒绝"),PROCESS(6, "已受理"), SUCCESS(7, "已退款");
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetRefundStatus(refundStatus int64) error {
-    r.refundStatus = refundStatus
-    r.Set("refund_status", refundStatus)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetRefundStatus(_refundStatus int64) error {
+    r._refundStatus = _refundStatus
+    r.Set("refund_status", _refundStatus)
     return nil
 }
 
 // RefundStatus Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetRefundStatus() int64 {
-    return r.refundStatus
+    return r._refundStatus
 }
 // PageIndex Setter
 // 从1开始
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentRefundSearchRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentRefundSearchRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

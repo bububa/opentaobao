@@ -15,7 +15,7 @@ alibaba.alihealth.reserve.dental.bindshopanditem
 type AlibabaAlihealthReserveDentalBindshopanditemRequest struct {
     model.Params
     // bind_list
-    bindList   []BindDTO
+    _bindList   []BindDTO
 }
 
 // 初始化AlibabaAlihealthReserveDentalBindshopanditemRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiParams() url.
 }
 // BindList Setter
 // bind_list
-func (r *AlibabaAlihealthReserveDentalBindshopanditemRequest) SetBindList(bindList []BindDTO) error {
-    r.bindList = bindList
-    r.Set("bind_list", bindList)
+func (r *AlibabaAlihealthReserveDentalBindshopanditemRequest) SetBindList(_bindList []BindDTO) error {
+    r._bindList = _bindList
+    r.Set("bind_list", _bindList)
     return nil
 }
 
 // BindList Getter
 func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetBindList() []BindDTO {
-    return r.bindList
+    return r._bindList
 }

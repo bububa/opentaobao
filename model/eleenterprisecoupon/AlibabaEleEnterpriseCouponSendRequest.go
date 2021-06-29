@@ -15,21 +15,21 @@ alibaba.ele.enterprise.coupon.send
 type AlibabaEleEnterpriseCouponSendRequest struct {
     model.Params
     // 手机号
-    phone   string
+    _phone   string
     // 固定值，申请获取
-    channel   string
+    _channel   string
     // 纬度
-    latitude   string
+    _latitude   string
     // 经度
-    longitude   string
+    _longitude   string
     // 客户端IP地址
-    ip   string
+    _ip   string
     // 客户端User-Agent信息
-    userAgent   string
+    _userAgent   string
     // 批次,同一个批次号只会发券一次，后续用同一个批次号的请求会返回上次发的券(幂等)
-    batchNo   string
+    _batchNo   string
     // 设备ID
-    deviceId   string
+    _deviceId   string
 }
 
 // 初始化AlibabaEleEnterpriseCouponSendRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaEleEnterpriseCouponSendRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 手机号
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // Channel Setter
 // 固定值，申请获取
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }
 // Latitude Setter
 // 纬度
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetLatitude(latitude string) error {
-    r.latitude = latitude
-    r.Set("latitude", latitude)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetLatitude(_latitude string) error {
+    r._latitude = _latitude
+    r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetLatitude() string {
-    return r.latitude
+    return r._latitude
 }
 // Longitude Setter
 // 经度
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetLongitude(longitude string) error {
-    r.longitude = longitude
-    r.Set("longitude", longitude)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetLongitude(_longitude string) error {
+    r._longitude = _longitude
+    r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetLongitude() string {
-    return r.longitude
+    return r._longitude
 }
 // Ip Setter
 // 客户端IP地址
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetIp(ip string) error {
-    r.ip = ip
-    r.Set("ip", ip)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetIp(_ip string) error {
+    r._ip = _ip
+    r.Set("ip", _ip)
     return nil
 }
 
 // Ip Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetIp() string {
-    return r.ip
+    return r._ip
 }
 // UserAgent Setter
 // 客户端User-Agent信息
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetUserAgent(userAgent string) error {
-    r.userAgent = userAgent
-    r.Set("user_agent", userAgent)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetUserAgent(_userAgent string) error {
+    r._userAgent = _userAgent
+    r.Set("user_agent", _userAgent)
     return nil
 }
 
 // UserAgent Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetUserAgent() string {
-    return r.userAgent
+    return r._userAgent
 }
 // BatchNo Setter
 // 批次,同一个批次号只会发券一次，后续用同一个批次号的请求会返回上次发的券(幂等)
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetBatchNo(batchNo string) error {
-    r.batchNo = batchNo
-    r.Set("batch_no", batchNo)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetBatchNo(_batchNo string) error {
+    r._batchNo = _batchNo
+    r.Set("batch_no", _batchNo)
     return nil
 }
 
 // BatchNo Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetBatchNo() string {
-    return r.batchNo
+    return r._batchNo
 }
 // DeviceId Setter
 // 设备ID
-func (r *AlibabaEleEnterpriseCouponSendRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AlibabaEleEnterpriseCouponSendRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AlibabaEleEnterpriseCouponSendRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }

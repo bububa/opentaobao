@@ -15,7 +15,7 @@ alitrip.xhotel.channel.order.membertype.sync
 type AlitripXhotelChannelOrderMembertypeSyncRequest struct {
     model.Params
     // 入参
-    channelSyncOrderMemberType   *ChannelSyncOrderMemberType
+    _channelSyncOrderMemberType   *ChannelSyncOrderMemberType
 }
 
 // 初始化AlitripXhotelChannelOrderMembertypeSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetApiParams() url.Value
 }
 // ChannelSyncOrderMemberType Setter
 // 入参
-func (r *AlitripXhotelChannelOrderMembertypeSyncRequest) SetChannelSyncOrderMemberType(channelSyncOrderMemberType *ChannelSyncOrderMemberType) error {
-    r.channelSyncOrderMemberType = channelSyncOrderMemberType
-    r.Set("channel_sync_order_member_type", channelSyncOrderMemberType)
+func (r *AlitripXhotelChannelOrderMembertypeSyncRequest) SetChannelSyncOrderMemberType(_channelSyncOrderMemberType *ChannelSyncOrderMemberType) error {
+    r._channelSyncOrderMemberType = _channelSyncOrderMemberType
+    r.Set("channel_sync_order_member_type", _channelSyncOrderMemberType)
     return nil
 }
 
 // ChannelSyncOrderMemberType Getter
 func (r AlitripXhotelChannelOrderMembertypeSyncRequest) GetChannelSyncOrderMemberType() *ChannelSyncOrderMemberType {
-    return r.channelSyncOrderMemberType
+    return r._channelSyncOrderMemberType
 }

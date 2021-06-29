@@ -15,7 +15,7 @@ taobao.newretail.division.record.list.get
 type TaobaoNewretailDivisionRecordListGetRequest struct {
     model.Params
     // 入参
-    param   *TopDivisionRecordReqDto
+    _param   *TopDivisionRecordReqDto
 }
 
 // 初始化TaobaoNewretailDivisionRecordListGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoNewretailDivisionRecordListGetRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *TaobaoNewretailDivisionRecordListGetRequest) SetParam(param *TopDivisionRecordReqDto) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoNewretailDivisionRecordListGetRequest) SetParam(_param *TopDivisionRecordReqDto) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoNewretailDivisionRecordListGetRequest) GetParam() *TopDivisionRecordReqDto {
-    return r.param
+    return r._param
 }

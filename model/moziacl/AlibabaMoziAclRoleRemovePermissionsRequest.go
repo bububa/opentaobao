@@ -15,7 +15,7 @@ alibaba.mozi.acl.role.remove.permissions
 type AlibabaMoziAclRoleRemovePermissionsRequest struct {
     model.Params
     // 角色移除功能权限请求对象
-    removePermissionsFromRole   *RemovePermissionsFromRoleRequest
+    _removePermissionsFromRole   *RemovePermissionsFromRoleRequest
 }
 
 // 初始化AlibabaMoziAclRoleRemovePermissionsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetApiParams() url.Values {
 }
 // RemovePermissionsFromRole Setter
 // 角色移除功能权限请求对象
-func (r *AlibabaMoziAclRoleRemovePermissionsRequest) SetRemovePermissionsFromRole(removePermissionsFromRole *RemovePermissionsFromRoleRequest) error {
-    r.removePermissionsFromRole = removePermissionsFromRole
-    r.Set("remove_permissions_from_role", removePermissionsFromRole)
+func (r *AlibabaMoziAclRoleRemovePermissionsRequest) SetRemovePermissionsFromRole(_removePermissionsFromRole *RemovePermissionsFromRoleRequest) error {
+    r._removePermissionsFromRole = _removePermissionsFromRole
+    r.Set("remove_permissions_from_role", _removePermissionsFromRole)
     return nil
 }
 
 // RemovePermissionsFromRole Getter
 func (r AlibabaMoziAclRoleRemovePermissionsRequest) GetRemovePermissionsFromRole() *RemovePermissionsFromRoleRequest {
-    return r.removePermissionsFromRole
+    return r._removePermissionsFromRole
 }

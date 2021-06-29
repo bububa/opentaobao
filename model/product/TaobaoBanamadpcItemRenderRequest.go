@@ -15,7 +15,7 @@ taobao.banamadpc.item.render
 type TaobaoBanamadpcItemRenderRequest struct {
     model.Params
     // 类目ID
-    catId   int64
+    _catId   int64
 }
 
 // 初始化TaobaoBanamadpcItemRenderRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBanamadpcItemRenderRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目ID
-func (r *TaobaoBanamadpcItemRenderRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *TaobaoBanamadpcItemRenderRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r TaobaoBanamadpcItemRenderRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

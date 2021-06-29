@@ -15,7 +15,7 @@ API for query the execution result of feed.
 type AliexpressSolutionFeedQueryRequest struct {
     model.Params
     // job id
-    jobId   int64
+    _jobId   int64
 }
 
 // 初始化AliexpressSolutionFeedQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionFeedQueryRequest) GetApiParams() url.Values {
 }
 // JobId Setter
 // job id
-func (r *AliexpressSolutionFeedQueryRequest) SetJobId(jobId int64) error {
-    r.jobId = jobId
-    r.Set("job_id", jobId)
+func (r *AliexpressSolutionFeedQueryRequest) SetJobId(_jobId int64) error {
+    r._jobId = _jobId
+    r.Set("job_id", _jobId)
     return nil
 }
 
 // JobId Getter
 func (r AliexpressSolutionFeedQueryRequest) GetJobId() int64 {
-    return r.jobId
+    return r._jobId
 }

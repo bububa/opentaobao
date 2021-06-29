@@ -15,7 +15,7 @@ tmall.nrt.easyhomemember.syn
 type TmallNrtEasyhomememberSynRequest struct {
     model.Params
     // 入参
-    param   *ExternalMemberDTO
+    _param   *ExternalMemberDTO
 }
 
 // 初始化TmallNrtEasyhomememberSynRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtEasyhomememberSynRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *TmallNrtEasyhomememberSynRequest) SetParam(param *ExternalMemberDTO) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TmallNrtEasyhomememberSynRequest) SetParam(_param *ExternalMemberDTO) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TmallNrtEasyhomememberSynRequest) GetParam() *ExternalMemberDTO {
-    return r.param
+    return r._param
 }

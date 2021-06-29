@@ -15,7 +15,7 @@ tmall.promotag.tag.removetag
 type TmallPromotagTagRemovetagRequest struct {
     model.Params
     // 需要删除的标签id
-    tagId   int64
+    _tagId   int64
 }
 
 // 初始化TmallPromotagTagRemovetagRequest对象
@@ -40,13 +40,13 @@ func (r TmallPromotagTagRemovetagRequest) GetApiParams() url.Values {
 }
 // TagId Setter
 // 需要删除的标签id
-func (r *TmallPromotagTagRemovetagRequest) SetTagId(tagId int64) error {
-    r.tagId = tagId
-    r.Set("tag_id", tagId)
+func (r *TmallPromotagTagRemovetagRequest) SetTagId(_tagId int64) error {
+    r._tagId = _tagId
+    r.Set("tag_id", _tagId)
     return nil
 }
 
 // TagId Getter
 func (r TmallPromotagTagRemovetagRequest) GetTagId() int64 {
-    return r.tagId
+    return r._tagId
 }

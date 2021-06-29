@@ -15,11 +15,11 @@ tv支付获取应用信息
 type TaobaoTvpayAppinfoGetRequest struct {
     model.Params
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 客户端版本号
-    clientVersion   string
+    _clientVersion   string
 }
 
 // 初始化TaobaoTvpayAppinfoGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTvpayAppinfoGetRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayAppinfoGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayAppinfoGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayAppinfoGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayAppinfoGetRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayAppinfoGetRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayAppinfoGetRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // ClientVersion Setter
 // 客户端版本号
-func (r *TaobaoTvpayAppinfoGetRequest) SetClientVersion(clientVersion string) error {
-    r.clientVersion = clientVersion
-    r.Set("client_version", clientVersion)
+func (r *TaobaoTvpayAppinfoGetRequest) SetClientVersion(_clientVersion string) error {
+    r._clientVersion = _clientVersion
+    r.Set("client_version", _clientVersion)
     return nil
 }
 
 // ClientVersion Getter
 func (r TaobaoTvpayAppinfoGetRequest) GetClientVersion() string {
-    return r.clientVersion
+    return r._clientVersion
 }

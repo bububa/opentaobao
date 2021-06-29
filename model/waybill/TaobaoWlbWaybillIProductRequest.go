@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.product
 type TaobaoWlbWaybillIProductRequest struct {
     model.Params
     // 查询物流商电子面单产品类型入参
-    waybillProductTypeRequest   *WaybillProductTypeRequest
+    _waybillProductTypeRequest   *WaybillProductTypeRequest
 }
 
 // 初始化TaobaoWlbWaybillIProductRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIProductRequest) GetApiParams() url.Values {
 }
 // WaybillProductTypeRequest Setter
 // 查询物流商电子面单产品类型入参
-func (r *TaobaoWlbWaybillIProductRequest) SetWaybillProductTypeRequest(waybillProductTypeRequest *WaybillProductTypeRequest) error {
-    r.waybillProductTypeRequest = waybillProductTypeRequest
-    r.Set("waybill_product_type_request", waybillProductTypeRequest)
+func (r *TaobaoWlbWaybillIProductRequest) SetWaybillProductTypeRequest(_waybillProductTypeRequest *WaybillProductTypeRequest) error {
+    r._waybillProductTypeRequest = _waybillProductTypeRequest
+    r.Set("waybill_product_type_request", _waybillProductTypeRequest)
     return nil
 }
 
 // WaybillProductTypeRequest Getter
 func (r TaobaoWlbWaybillIProductRequest) GetWaybillProductTypeRequest() *WaybillProductTypeRequest {
-    return r.waybillProductTypeRequest
+    return r._waybillProductTypeRequest
 }

@@ -15,15 +15,15 @@ alibaba.alihealth.examination.reserve.report.nofify
 type AlibabaAlihealthExaminationReserveReportNofifyRequest struct {
     model.Params
     // 服务商预约凭证
-    uniqReserveCode   string
+    _uniqReserveCode   string
     // 服务商到检编号
-    checkNo   string
+    _checkNo   string
     // 健康预约凭证
-    reserveNumber   string
+    _reserveNumber   string
     // 报告通知类型，传1即可
-    type   string
+    _type   string
     // pdf文件的二进制base64编码字符串
-    content   string
+    _content   string
 }
 
 // 初始化AlibabaAlihealthExaminationReserveReportNofifyRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetApiParams() ur
 }
 // UniqReserveCode Setter
 // 服务商预约凭证
-func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetUniqReserveCode(uniqReserveCode string) error {
-    r.uniqReserveCode = uniqReserveCode
-    r.Set("uniq_reserve_code", uniqReserveCode)
+func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+    r._uniqReserveCode = _uniqReserveCode
+    r.Set("uniq_reserve_code", _uniqReserveCode)
     return nil
 }
 
 // UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetUniqReserveCode() string {
-    return r.uniqReserveCode
+    return r._uniqReserveCode
 }
 // CheckNo Setter
 // 服务商到检编号
-func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetCheckNo(checkNo string) error {
-    r.checkNo = checkNo
-    r.Set("check_no", checkNo)
+func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetCheckNo(_checkNo string) error {
+    r._checkNo = _checkNo
+    r.Set("check_no", _checkNo)
     return nil
 }
 
 // CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetCheckNo() string {
-    return r.checkNo
+    return r._checkNo
 }
 // ReserveNumber Setter
 // 健康预约凭证
-func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetReserveNumber(reserveNumber string) error {
-    r.reserveNumber = reserveNumber
-    r.Set("reserve_number", reserveNumber)
+func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetReserveNumber(_reserveNumber string) error {
+    r._reserveNumber = _reserveNumber
+    r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetReserveNumber() string {
-    return r.reserveNumber
+    return r._reserveNumber
 }
 // Type Setter
 // 报告通知类型，传1即可
-func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // Content Setter
 // pdf文件的二进制base64编码字符串
-func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaAlihealthExaminationReserveReportNofifyRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaAlihealthExaminationReserveReportNofifyRequest) GetContent() string {
-    return r.content
+    return r._content
 }

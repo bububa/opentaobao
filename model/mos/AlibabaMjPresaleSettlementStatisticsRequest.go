@@ -15,9 +15,9 @@ alibaba.mj.presale.settlement.statistics
 type AlibabaMjPresaleSettlementStatisticsRequest struct {
     model.Params
     // 活动期号
-    actionNo   int64
+    _actionNo   int64
     // 外部门店编码
-    storeNo   string
+    _storeNo   string
 }
 
 // 初始化AlibabaMjPresaleSettlementStatisticsRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMjPresaleSettlementStatisticsRequest) GetApiParams() url.Values {
 }
 // ActionNo Setter
 // 活动期号
-func (r *AlibabaMjPresaleSettlementStatisticsRequest) SetActionNo(actionNo int64) error {
-    r.actionNo = actionNo
-    r.Set("action_no", actionNo)
+func (r *AlibabaMjPresaleSettlementStatisticsRequest) SetActionNo(_actionNo int64) error {
+    r._actionNo = _actionNo
+    r.Set("action_no", _actionNo)
     return nil
 }
 
 // ActionNo Getter
 func (r AlibabaMjPresaleSettlementStatisticsRequest) GetActionNo() int64 {
-    return r.actionNo
+    return r._actionNo
 }
 // StoreNo Setter
 // 外部门店编码
-func (r *AlibabaMjPresaleSettlementStatisticsRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMjPresaleSettlementStatisticsRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMjPresaleSettlementStatisticsRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }

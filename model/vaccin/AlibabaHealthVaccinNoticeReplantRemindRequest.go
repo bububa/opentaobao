@@ -15,11 +15,11 @@ alibaba.health.vaccin.notice.replant.remind
 type AlibabaHealthVaccinNoticeReplantRemindRequest struct {
     model.Params
     // 支付宝ID
-    alipayUserId   string
+    _alipayUserId   string
     // 针次
-    theTimes   string
+    _theTimes   string
     // 预约id
-    orderId   string
+    _orderId   string
 }
 
 // 初始化AlibabaHealthVaccinNoticeReplantRemindRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaHealthVaccinNoticeReplantRemindRequest) GetApiParams() url.Values
 }
 // AlipayUserId Setter
 // 支付宝ID
-func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinNoticeReplantRemindRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // TheTimes Setter
 // 针次
-func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetTheTimes(theTimes string) error {
-    r.theTimes = theTimes
-    r.Set("the_times", theTimes)
+func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetTheTimes(_theTimes string) error {
+    r._theTimes = _theTimes
+    r.Set("the_times", _theTimes)
     return nil
 }
 
 // TheTimes Getter
 func (r AlibabaHealthVaccinNoticeReplantRemindRequest) GetTheTimes() string {
-    return r.theTimes
+    return r._theTimes
 }
 // OrderId Setter
 // 预约id
-func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthVaccinNoticeReplantRemindRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthVaccinNoticeReplantRemindRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

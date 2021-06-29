@@ -15,19 +15,19 @@ taobao.wlb.waybill.shengxian.get
 type TaobaoWlbWaybillShengxianGetRequest struct {
     model.Params
     // 物流服务方代码，生鲜配送：YXSR
-    bizCode   string
+    _bizCode   string
     // 物流服务类型。冷链：602，常温：502
-    deliveryType   string
+    _deliveryType   string
     // 商家淘宝地址信息ID
-    senderAddressId   string
+    _senderAddressId   string
     // 仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)
-    serviceCode   string
+    _serviceCode   string
     // 订单渠道： 淘宝平台订单："TB"; 天猫平台订单："TM"; 京东："JD"; 拍拍："PP"; 易迅平台订单："YX"; 一号店平台订单："YHD"; 当当网平台订单："DD"; EBAY："EBAY"; QQ网购："QQ"; 苏宁："SN"; 国美："GM"; 唯品会："WPH"; 聚美："Jm"; 乐峰："LF"; 蘑菇街："MGJ"; 聚尚："JS"; 银泰："YT"; VANCL："VANCL"; 邮乐："YL"; 优购："YG"; 拍鞋："PX"; 1688平台："1688";
-    orderChannelsType   string
+    _orderChannelsType   string
     // 交易号，传入交易号不能存在拆单场景。
-    tradeId   string
+    _tradeId   string
     // 预留扩展字段
-    feature   string
+    _feature   string
 }
 
 // 初始化TaobaoWlbWaybillShengxianGetRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoWlbWaybillShengxianGetRequest) GetApiParams() url.Values {
 }
 // BizCode Setter
 // 物流服务方代码，生鲜配送：YXSR
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }
 // DeliveryType Setter
 // 物流服务类型。冷链：602，常温：502
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetDeliveryType(deliveryType string) error {
-    r.deliveryType = deliveryType
-    r.Set("delivery_type", deliveryType)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetDeliveryType(_deliveryType string) error {
+    r._deliveryType = _deliveryType
+    r.Set("delivery_type", _deliveryType)
     return nil
 }
 
 // DeliveryType Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetDeliveryType() string {
-    return r.deliveryType
+    return r._deliveryType
 }
 // SenderAddressId Setter
 // 商家淘宝地址信息ID
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetSenderAddressId(senderAddressId string) error {
-    r.senderAddressId = senderAddressId
-    r.Set("sender_address_id", senderAddressId)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetSenderAddressId(_senderAddressId string) error {
+    r._senderAddressId = _senderAddressId
+    r.Set("sender_address_id", _senderAddressId)
     return nil
 }
 
 // SenderAddressId Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetSenderAddressId() string {
-    return r.senderAddressId
+    return r._senderAddressId
 }
 // ServiceCode Setter
 // 仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }
 // OrderChannelsType Setter
 // 订单渠道： 淘宝平台订单："TB"; 天猫平台订单："TM"; 京东："JD"; 拍拍："PP"; 易迅平台订单："YX"; 一号店平台订单："YHD"; 当当网平台订单："DD"; EBAY："EBAY"; QQ网购："QQ"; 苏宁："SN"; 国美："GM"; 唯品会："WPH"; 聚美："Jm"; 乐峰："LF"; 蘑菇街："MGJ"; 聚尚："JS"; 银泰："YT"; VANCL："VANCL"; 邮乐："YL"; 优购："YG"; 拍鞋："PX"; 1688平台："1688";
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetOrderChannelsType(orderChannelsType string) error {
-    r.orderChannelsType = orderChannelsType
-    r.Set("order_channels_type", orderChannelsType)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetOrderChannelsType(_orderChannelsType string) error {
+    r._orderChannelsType = _orderChannelsType
+    r.Set("order_channels_type", _orderChannelsType)
     return nil
 }
 
 // OrderChannelsType Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetOrderChannelsType() string {
-    return r.orderChannelsType
+    return r._orderChannelsType
 }
 // TradeId Setter
 // 交易号，传入交易号不能存在拆单场景。
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetTradeId(tradeId string) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetTradeId(_tradeId string) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetTradeId() string {
-    return r.tradeId
+    return r._tradeId
 }
 // Feature Setter
 // 预留扩展字段
-func (r *TaobaoWlbWaybillShengxianGetRequest) SetFeature(feature string) error {
-    r.feature = feature
-    r.Set("feature", feature)
+func (r *TaobaoWlbWaybillShengxianGetRequest) SetFeature(_feature string) error {
+    r._feature = _feature
+    r.Set("feature", _feature)
     return nil
 }
 
 // Feature Getter
 func (r TaobaoWlbWaybillShengxianGetRequest) GetFeature() string {
-    return r.feature
+    return r._feature
 }

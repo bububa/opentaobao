@@ -15,11 +15,11 @@ alibaba.scbp.ad.group.find.ad.group
 type AlibabaScbpAdGroupFindAdGroupRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 入参
-    adGroupQuery   *AdGroupQueryDto
+    _adGroupQuery   *AdGroupQueryDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdGroupFindAdGroupRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdGroupFindAdGroupRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdGroupFindAdGroupRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // AdGroupQuery Setter
 // 入参
-func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetAdGroupQuery(adGroupQuery *AdGroupQueryDto) error {
-    r.adGroupQuery = adGroupQuery
-    r.Set("ad_group_query", adGroupQuery)
+func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetAdGroupQuery(_adGroupQuery *AdGroupQueryDto) error {
+    r._adGroupQuery = _adGroupQuery
+    r.Set("ad_group_query", _adGroupQuery)
     return nil
 }
 
 // AdGroupQuery Getter
 func (r AlibabaScbpAdGroupFindAdGroupRequest) GetAdGroupQuery() *AdGroupQueryDto {
-    return r.adGroupQuery
+    return r._adGroupQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdGroupFindAdGroupRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdGroupFindAdGroupRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

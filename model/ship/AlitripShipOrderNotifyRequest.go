@@ -15,7 +15,7 @@ alitrip.ship.order.notify
 type AlitripShipOrderNotifyRequest struct {
     model.Params
     // 出票入参
-    confirmBookRQ   *ShipAgentConfirmBookRq
+    _confirmBookRQ   *ShipAgentConfirmBookRq
 }
 
 // 初始化AlitripShipOrderNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlitripShipOrderNotifyRequest) GetApiParams() url.Values {
 }
 // ConfirmBookRQ Setter
 // 出票入参
-func (r *AlitripShipOrderNotifyRequest) SetConfirmBookRQ(confirmBookRQ *ShipAgentConfirmBookRq) error {
-    r.confirmBookRQ = confirmBookRQ
-    r.Set("confirm_book_r_q", confirmBookRQ)
+func (r *AlitripShipOrderNotifyRequest) SetConfirmBookRQ(_confirmBookRQ *ShipAgentConfirmBookRq) error {
+    r._confirmBookRQ = _confirmBookRQ
+    r.Set("confirm_book_r_q", _confirmBookRQ)
     return nil
 }
 
 // ConfirmBookRQ Getter
 func (r AlitripShipOrderNotifyRequest) GetConfirmBookRQ() *ShipAgentConfirmBookRq {
-    return r.confirmBookRQ
+    return r._confirmBookRQ
 }

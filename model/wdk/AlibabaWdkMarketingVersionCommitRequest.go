@@ -15,7 +15,7 @@ alibaba.wdk.marketing.version.commit
 type AlibabaWdkMarketingVersionCommitRequest struct {
     model.Params
     // 版本号提交参数
-    param   *SeasonVersionCommitParam
+    _param   *SeasonVersionCommitParam
 }
 
 // 初始化AlibabaWdkMarketingVersionCommitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingVersionCommitRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 版本号提交参数
-func (r *AlibabaWdkMarketingVersionCommitRequest) SetParam(param *SeasonVersionCommitParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingVersionCommitRequest) SetParam(_param *SeasonVersionCommitParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingVersionCommitRequest) GetParam() *SeasonVersionCommitParam {
-    return r.param
+    return r._param
 }

@@ -15,11 +15,11 @@ alibaba.campus.acl.new.checkuserrole
 type AlibabaCampusAclNewCheckuserroleRequest struct {
     model.Params
     // 用户账号
-    userId   string
+    _userId   string
     // 角色key
-    roleKey   string
+    _roleKey   string
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
 }
 
 // 初始化AlibabaCampusAclNewCheckuserroleRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusAclNewCheckuserroleRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户账号
-func (r *AlibabaCampusAclNewCheckuserroleRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaCampusAclNewCheckuserroleRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaCampusAclNewCheckuserroleRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // RoleKey Setter
 // 角色key
-func (r *AlibabaCampusAclNewCheckuserroleRequest) SetRoleKey(roleKey string) error {
-    r.roleKey = roleKey
-    r.Set("role_key", roleKey)
+func (r *AlibabaCampusAclNewCheckuserroleRequest) SetRoleKey(_roleKey string) error {
+    r._roleKey = _roleKey
+    r.Set("role_key", _roleKey)
     return nil
 }
 
 // RoleKey Getter
 func (r AlibabaCampusAclNewCheckuserroleRequest) GetRoleKey() string {
-    return r.roleKey
+    return r._roleKey
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewCheckuserroleRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewCheckuserroleRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckuserroleRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }

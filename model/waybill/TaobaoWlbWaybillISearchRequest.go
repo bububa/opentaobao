@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.search
 type TaobaoWlbWaybillISearchRequest struct {
     model.Params
     // 查询网点信息
-    waybillApplyRequest   *WaybillApplyRequest
+    _waybillApplyRequest   *WaybillApplyRequest
 }
 
 // 初始化TaobaoWlbWaybillISearchRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillISearchRequest) GetApiParams() url.Values {
 }
 // WaybillApplyRequest Setter
 // 查询网点信息
-func (r *TaobaoWlbWaybillISearchRequest) SetWaybillApplyRequest(waybillApplyRequest *WaybillApplyRequest) error {
-    r.waybillApplyRequest = waybillApplyRequest
-    r.Set("waybill_apply_request", waybillApplyRequest)
+func (r *TaobaoWlbWaybillISearchRequest) SetWaybillApplyRequest(_waybillApplyRequest *WaybillApplyRequest) error {
+    r._waybillApplyRequest = _waybillApplyRequest
+    r.Set("waybill_apply_request", _waybillApplyRequest)
     return nil
 }
 
 // WaybillApplyRequest Getter
 func (r TaobaoWlbWaybillISearchRequest) GetWaybillApplyRequest() *WaybillApplyRequest {
-    return r.waybillApplyRequest
+    return r._waybillApplyRequest
 }

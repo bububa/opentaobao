@@ -15,7 +15,7 @@ taobao.ump.mbbs.list.get
 type TaobaoUmpMbbsListGetRequest struct {
     model.Params
     // 营销积木块id组成的字符串。
-    ids   []int64
+    _ids   []int64
 }
 
 // 初始化TaobaoUmpMbbsListGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpMbbsListGetRequest) GetApiParams() url.Values {
 }
 // Ids Setter
 // 营销积木块id组成的字符串。
-func (r *TaobaoUmpMbbsListGetRequest) SetIds(ids []int64) error {
-    r.ids = ids
-    r.Set("ids", ids)
+func (r *TaobaoUmpMbbsListGetRequest) SetIds(_ids []int64) error {
+    r._ids = _ids
+    r.Set("ids", _ids)
     return nil
 }
 
 // Ids Getter
 func (r TaobaoUmpMbbsListGetRequest) GetIds() []int64 {
-    return r.ids
+    return r._ids
 }

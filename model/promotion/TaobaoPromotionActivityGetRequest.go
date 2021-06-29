@@ -15,7 +15,7 @@ taobao.promotion.activity.get
 type TaobaoPromotionActivityGetRequest struct {
     model.Params
     // 活动的id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化TaobaoPromotionActivityGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionActivityGetRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 活动的id
-func (r *TaobaoPromotionActivityGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionActivityGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionActivityGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

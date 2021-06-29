@@ -15,9 +15,9 @@ openmall订单支付
 type TaobaoOpenmallTradeAgreepayRequest struct {
     model.Params
     // 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
-    distributor   string
+    _distributor   string
     // 淘宝交易单号
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoOpenmallTradeAgreepayRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallTradeAgreepayRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 媒体渠道，代表分销者的身份，签约支付宝代扣的渠道商淘宝账号nick
-func (r *TaobaoOpenmallTradeAgreepayRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallTradeAgreepayRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallTradeAgreepayRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // Tid Setter
 // 淘宝交易单号
-func (r *TaobaoOpenmallTradeAgreepayRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOpenmallTradeAgreepayRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOpenmallTradeAgreepayRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

@@ -15,21 +15,21 @@ alibaba.seaking.aititlegenerate
 type AlibabaSeakingAititlegenerateRequest struct {
     model.Params
     // erp用户id
-    identifier   string
+    _identifier   string
     // 扩展信息
-    extra   *Extra
+    _extra   *Extra
     // 语种
-    language   string
+    _language   string
     // 商品属性
-    attributes   string
+    _attributes   string
     // 调用来源(erp名称)
-    identifierType   string
+    _identifierType   string
     // 标题
-    title   string
+    _title   string
     // 商品所在平台（ae/icbu）
-    platform   string
+    _platform   string
     // 类目id,没有的时候传-1
-    categoryId   int64
+    _categoryId   int64
 }
 
 // 初始化AlibabaSeakingAititlegenerateRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaSeakingAititlegenerateRequest) GetApiParams() url.Values {
 }
 // Identifier Setter
 // erp用户id
-func (r *AlibabaSeakingAititlegenerateRequest) SetIdentifier(identifier string) error {
-    r.identifier = identifier
-    r.Set("identifier", identifier)
+func (r *AlibabaSeakingAititlegenerateRequest) SetIdentifier(_identifier string) error {
+    r._identifier = _identifier
+    r.Set("identifier", _identifier)
     return nil
 }
 
 // Identifier Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetIdentifier() string {
-    return r.identifier
+    return r._identifier
 }
 // Extra Setter
 // 扩展信息
-func (r *AlibabaSeakingAititlegenerateRequest) SetExtra(extra *Extra) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *AlibabaSeakingAititlegenerateRequest) SetExtra(_extra *Extra) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetExtra() *Extra {
-    return r.extra
+    return r._extra
 }
 // Language Setter
 // 语种
-func (r *AlibabaSeakingAititlegenerateRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AlibabaSeakingAititlegenerateRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }
 // Attributes Setter
 // 商品属性
-func (r *AlibabaSeakingAititlegenerateRequest) SetAttributes(attributes string) error {
-    r.attributes = attributes
-    r.Set("attributes", attributes)
+func (r *AlibabaSeakingAititlegenerateRequest) SetAttributes(_attributes string) error {
+    r._attributes = _attributes
+    r.Set("attributes", _attributes)
     return nil
 }
 
 // Attributes Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetAttributes() string {
-    return r.attributes
+    return r._attributes
 }
 // IdentifierType Setter
 // 调用来源(erp名称)
-func (r *AlibabaSeakingAititlegenerateRequest) SetIdentifierType(identifierType string) error {
-    r.identifierType = identifierType
-    r.Set("identifier_type", identifierType)
+func (r *AlibabaSeakingAititlegenerateRequest) SetIdentifierType(_identifierType string) error {
+    r._identifierType = _identifierType
+    r.Set("identifier_type", _identifierType)
     return nil
 }
 
 // IdentifierType Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetIdentifierType() string {
-    return r.identifierType
+    return r._identifierType
 }
 // Title Setter
 // 标题
-func (r *AlibabaSeakingAititlegenerateRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *AlibabaSeakingAititlegenerateRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Platform Setter
 // 商品所在平台（ae/icbu）
-func (r *AlibabaSeakingAititlegenerateRequest) SetPlatform(platform string) error {
-    r.platform = platform
-    r.Set("platform", platform)
+func (r *AlibabaSeakingAititlegenerateRequest) SetPlatform(_platform string) error {
+    r._platform = _platform
+    r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetPlatform() string {
-    return r.platform
+    return r._platform
 }
 // CategoryId Setter
 // 类目id,没有的时候传-1
-func (r *AlibabaSeakingAititlegenerateRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *AlibabaSeakingAititlegenerateRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r AlibabaSeakingAititlegenerateRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }

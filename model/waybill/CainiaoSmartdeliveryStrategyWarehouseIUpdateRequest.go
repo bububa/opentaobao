@@ -15,7 +15,7 @@ cainiao.smartdelivery.strategy.warehouse.i.update
 type CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest struct {
     model.Params
     // 智能发货设置请求参数
-    deliveryStrategySetRequest   *DeliveryStrategySetRequest
+    _deliveryStrategySetRequest   *DeliveryStrategySetRequest
 }
 
 // 初始化CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetApiParams() url.
 }
 // DeliveryStrategySetRequest Setter
 // 智能发货设置请求参数
-func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) SetDeliveryStrategySetRequest(deliveryStrategySetRequest *DeliveryStrategySetRequest) error {
-    r.deliveryStrategySetRequest = deliveryStrategySetRequest
-    r.Set("delivery_strategy_set_request", deliveryStrategySetRequest)
+func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) SetDeliveryStrategySetRequest(_deliveryStrategySetRequest *DeliveryStrategySetRequest) error {
+    r._deliveryStrategySetRequest = _deliveryStrategySetRequest
+    r.Set("delivery_strategy_set_request", _deliveryStrategySetRequest)
     return nil
 }
 
 // DeliveryStrategySetRequest Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetDeliveryStrategySetRequest() *DeliveryStrategySetRequest {
-    return r.deliveryStrategySetRequest
+    return r._deliveryStrategySetRequest
 }

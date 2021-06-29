@@ -15,7 +15,7 @@ taobao.feedflow.item.adgroup.adzone.page
 type TaobaoFeedflowItemAdgroupAdzonePageRequest struct {
     model.Params
     // 查询条件
-    adzoneBindQuery   *AdzoneBindQueryDto
+    _adzoneBindQuery   *AdzoneBindQueryDto
 }
 
 // 初始化TaobaoFeedflowItemAdgroupAdzonePageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetApiParams() url.Values {
 }
 // AdzoneBindQuery Setter
 // 查询条件
-func (r *TaobaoFeedflowItemAdgroupAdzonePageRequest) SetAdzoneBindQuery(adzoneBindQuery *AdzoneBindQueryDto) error {
-    r.adzoneBindQuery = adzoneBindQuery
-    r.Set("adzone_bind_query", adzoneBindQuery)
+func (r *TaobaoFeedflowItemAdgroupAdzonePageRequest) SetAdzoneBindQuery(_adzoneBindQuery *AdzoneBindQueryDto) error {
+    r._adzoneBindQuery = _adzoneBindQuery
+    r.Set("adzone_bind_query", _adzoneBindQuery)
     return nil
 }
 
 // AdzoneBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetAdzoneBindQuery() *AdzoneBindQueryDto {
-    return r.adzoneBindQuery
+    return r._adzoneBindQuery
 }

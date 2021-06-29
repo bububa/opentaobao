@@ -15,7 +15,7 @@ alitrip.btrip.open.invoice.search
 type AlitripBtripOpenInvoiceSearchRequest struct {
     model.Params
     // 入参对象
-    rq   *OpenInvoiceRq
+    _rq   *OpenInvoiceRq
 }
 
 // 初始化AlitripBtripOpenInvoiceSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenInvoiceSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripOpenInvoiceSearchRequest) SetRq(rq *OpenInvoiceRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenInvoiceSearchRequest) SetRq(_rq *OpenInvoiceRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenInvoiceSearchRequest) GetRq() *OpenInvoiceRq {
-    return r.rq
+    return r._rq
 }

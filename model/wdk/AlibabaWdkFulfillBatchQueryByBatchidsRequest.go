@@ -15,11 +15,11 @@ alibaba.wdk.fulfill.batch.query.by.batchids
 type AlibabaWdkFulfillBatchQueryByBatchidsRequest struct {
     model.Params
     // 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店
-    nodeType   string
+    _nodeType   string
     // warehouseCode, 出库仓，由基础店仓维护，盒马全域统一,
-    nodeCode   string
+    _nodeCode   string
     // 批次号列表
-    batchIds   []string
+    _batchIds   []string
 }
 
 // 初始化AlibabaWdkFulfillBatchQueryByBatchidsRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetApiParams() url.Values 
 }
 // NodeType Setter
 // 作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeType(nodeType string) error {
-    r.nodeType = nodeType
-    r.Set("node_type", nodeType)
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeType(_nodeType string) error {
+    r._nodeType = _nodeType
+    r.Set("node_type", _nodeType)
     return nil
 }
 
 // NodeType Getter
 func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetNodeType() string {
-    return r.nodeType
+    return r._nodeType
 }
 // NodeCode Setter
 // warehouseCode, 出库仓，由基础店仓维护，盒马全域统一,
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeCode(nodeCode string) error {
-    r.nodeCode = nodeCode
-    r.Set("node_code", nodeCode)
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetNodeCode(_nodeCode string) error {
+    r._nodeCode = _nodeCode
+    r.Set("node_code", _nodeCode)
     return nil
 }
 
 // NodeCode Getter
 func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetNodeCode() string {
-    return r.nodeCode
+    return r._nodeCode
 }
 // BatchIds Setter
 // 批次号列表
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetBatchIds(batchIds []string) error {
-    r.batchIds = batchIds
-    r.Set("batch_ids", batchIds)
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetBatchIds(_batchIds []string) error {
+    r._batchIds = _batchIds
+    r.Set("batch_ids", _batchIds)
     return nil
 }
 
 // BatchIds Getter
 func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetBatchIds() []string {
-    return r.batchIds
+    return r._batchIds
 }

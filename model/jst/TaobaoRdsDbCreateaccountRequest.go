@@ -15,7 +15,7 @@ rds创建数据库账户
 type TaobaoRdsDbCreateaccountRequest struct {
     model.Params
     // 入参对象
-    param0   *RequestDbAccountModel
+    _param0   *RequestDbAccountModel
 }
 
 // 初始化TaobaoRdsDbCreateaccountRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdsDbCreateaccountRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参对象
-func (r *TaobaoRdsDbCreateaccountRequest) SetParam0(param0 *RequestDbAccountModel) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoRdsDbCreateaccountRequest) SetParam0(_param0 *RequestDbAccountModel) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoRdsDbCreateaccountRequest) GetParam0() *RequestDbAccountModel {
-    return r.param0
+    return r._param0
 }

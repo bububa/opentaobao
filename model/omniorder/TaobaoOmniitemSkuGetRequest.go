@@ -15,11 +15,11 @@ taobao.omniitem.sku.get
 type TaobaoOmniitemSkuGetRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // skuId
-    skuId   int64
+    _skuId   int64
     // sku商家编码
-    skuOuterId   string
+    _skuOuterId   string
 }
 
 // 初始化TaobaoOmniitemSkuGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOmniitemSkuGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoOmniitemSkuGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOmniitemSkuGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOmniitemSkuGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SkuId Setter
 // skuId
-func (r *TaobaoOmniitemSkuGetRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoOmniitemSkuGetRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoOmniitemSkuGetRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // SkuOuterId Setter
 // sku商家编码
-func (r *TaobaoOmniitemSkuGetRequest) SetSkuOuterId(skuOuterId string) error {
-    r.skuOuterId = skuOuterId
-    r.Set("sku_outer_id", skuOuterId)
+func (r *TaobaoOmniitemSkuGetRequest) SetSkuOuterId(_skuOuterId string) error {
+    r._skuOuterId = _skuOuterId
+    r.Set("sku_outer_id", _skuOuterId)
     return nil
 }
 
 // SkuOuterId Getter
 func (r TaobaoOmniitemSkuGetRequest) GetSkuOuterId() string {
-    return r.skuOuterId
+    return r._skuOuterId
 }

@@ -15,29 +15,29 @@ alibaba.alihealth.drug.kyt.dr.searchstatus
 type AlibabaAlihealthDrugKytDrSearchstatusRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 开始日期
-    beginDate   string
+    _beginDate   string
     // 结束日期
-    endDate   string
+    _endDate   string
     // 单据类型 A：全部 AI：全部入库 AO：全部出库
-    billType   string
+    _billType   string
     // 单据号
-    billCode   string
+    _billCode   string
     // 药品类型
-    drugType   string
+    _drugType   string
     // 状态  0, 上传成功     3, 处理成功     4, 处理失败
-    dealStatus   string
+    _dealStatus   string
     // 发货商
-    fromUserId   string
+    _fromUserId   string
     // 收货商
-    toUserId   string
+    _toUserId   string
     // 代理商
-    agentRefUserId   string
+    _agentRefUserId   string
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    page   int64
+    _page   int64
 }
 
 // 初始化AlibabaAlihealthDrugKytDrSearchstatusRequest对象
@@ -62,145 +62,145 @@ func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetApiParams() url.Values 
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BeginDate Setter
 // 开始日期
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束日期
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // BillType Setter
 // 单据类型 A：全部 AI：全部入库 AO：全部出库
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }
 // BillCode Setter
 // 单据号
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBillCode(billCode string) error {
-    r.billCode = billCode
-    r.Set("bill_code", billCode)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetBillCode(_billCode string) error {
+    r._billCode = _billCode
+    r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetBillCode() string {
-    return r.billCode
+    return r._billCode
 }
 // DrugType Setter
 // 药品类型
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetDrugType(drugType string) error {
-    r.drugType = drugType
-    r.Set("drug_type", drugType)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetDrugType(_drugType string) error {
+    r._drugType = _drugType
+    r.Set("drug_type", _drugType)
     return nil
 }
 
 // DrugType Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetDrugType() string {
-    return r.drugType
+    return r._drugType
 }
 // DealStatus Setter
 // 状态  0, 上传成功     3, 处理成功     4, 处理失败
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetDealStatus(dealStatus string) error {
-    r.dealStatus = dealStatus
-    r.Set("deal_status", dealStatus)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetDealStatus(_dealStatus string) error {
+    r._dealStatus = _dealStatus
+    r.Set("deal_status", _dealStatus)
     return nil
 }
 
 // DealStatus Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetDealStatus() string {
-    return r.dealStatus
+    return r._dealStatus
 }
 // FromUserId Setter
 // 发货商
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetFromUserId(fromUserId string) error {
-    r.fromUserId = fromUserId
-    r.Set("from_user_id", fromUserId)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetFromUserId(_fromUserId string) error {
+    r._fromUserId = _fromUserId
+    r.Set("from_user_id", _fromUserId)
     return nil
 }
 
 // FromUserId Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetFromUserId() string {
-    return r.fromUserId
+    return r._fromUserId
 }
 // ToUserId Setter
 // 收货商
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetToUserId(toUserId string) error {
-    r.toUserId = toUserId
-    r.Set("to_user_id", toUserId)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetToUserId(_toUserId string) error {
+    r._toUserId = _toUserId
+    r.Set("to_user_id", _toUserId)
     return nil
 }
 
 // ToUserId Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetToUserId() string {
-    return r.toUserId
+    return r._toUserId
 }
 // AgentRefUserId Setter
 // 代理商
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetAgentRefUserId(agentRefUserId string) error {
-    r.agentRefUserId = agentRefUserId
-    r.Set("agent_ref_user_id", agentRefUserId)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetAgentRefUserId(_agentRefUserId string) error {
+    r._agentRefUserId = _agentRefUserId
+    r.Set("agent_ref_user_id", _agentRefUserId)
     return nil
 }
 
 // AgentRefUserId Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetAgentRefUserId() string {
-    return r.agentRefUserId
+    return r._agentRefUserId
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthDrugKytDrSearchstatusRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthDrugKytDrSearchstatusRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }

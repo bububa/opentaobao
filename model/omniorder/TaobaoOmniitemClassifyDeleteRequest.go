@@ -15,9 +15,9 @@ taobao.omniitem.classify.delete
 type TaobaoOmniitemClassifyDeleteRequest struct {
     model.Params
     // 分类ID
-    classifyId   int64
+    _classifyId   int64
     // 操作人信息（暂时不填）
-    operator   string
+    _operator   string
 }
 
 // 初始化TaobaoOmniitemClassifyDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOmniitemClassifyDeleteRequest) GetApiParams() url.Values {
 }
 // ClassifyId Setter
 // 分类ID
-func (r *TaobaoOmniitemClassifyDeleteRequest) SetClassifyId(classifyId int64) error {
-    r.classifyId = classifyId
-    r.Set("classify_id", classifyId)
+func (r *TaobaoOmniitemClassifyDeleteRequest) SetClassifyId(_classifyId int64) error {
+    r._classifyId = _classifyId
+    r.Set("classify_id", _classifyId)
     return nil
 }
 
 // ClassifyId Getter
 func (r TaobaoOmniitemClassifyDeleteRequest) GetClassifyId() int64 {
-    return r.classifyId
+    return r._classifyId
 }
 // Operator Setter
 // 操作人信息（暂时不填）
-func (r *TaobaoOmniitemClassifyDeleteRequest) SetOperator(operator string) error {
-    r.operator = operator
-    r.Set("operator", operator)
+func (r *TaobaoOmniitemClassifyDeleteRequest) SetOperator(_operator string) error {
+    r._operator = _operator
+    r.Set("operator", _operator)
     return nil
 }
 
 // Operator Getter
 func (r TaobaoOmniitemClassifyDeleteRequest) GetOperator() string {
-    return r.operator
+    return r._operator
 }

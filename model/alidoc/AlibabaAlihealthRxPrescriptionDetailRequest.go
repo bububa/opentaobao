@@ -15,7 +15,7 @@ alibaba.alihealth.rx.prescription.detail
 type AlibabaAlihealthRxPrescriptionDetailRequest struct {
     model.Params
     // 查询参数
-    query   *RxPrescriptionQuery
+    _query   *RxPrescriptionQuery
 }
 
 // 初始化AlibabaAlihealthRxPrescriptionDetailRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthRxPrescriptionDetailRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询参数
-func (r *AlibabaAlihealthRxPrescriptionDetailRequest) SetQuery(query *RxPrescriptionQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaAlihealthRxPrescriptionDetailRequest) SetQuery(_query *RxPrescriptionQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaAlihealthRxPrescriptionDetailRequest) GetQuery() *RxPrescriptionQuery {
-    return r.query
+    return r._query
 }

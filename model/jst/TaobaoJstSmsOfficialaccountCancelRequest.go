@@ -15,7 +15,7 @@ taobao.jst.sms.officialaccount.cancel
 type TaobaoJstSmsOfficialaccountCancelRequest struct {
     model.Params
     // 取消公众号订购请求
-    cancelOrderRequest   *CancelOrderRequest
+    _cancelOrderRequest   *CancelOrderRequest
 }
 
 // 初始化TaobaoJstSmsOfficialaccountCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountCancelRequest) GetApiParams() url.Values {
 }
 // CancelOrderRequest Setter
 // 取消公众号订购请求
-func (r *TaobaoJstSmsOfficialaccountCancelRequest) SetCancelOrderRequest(cancelOrderRequest *CancelOrderRequest) error {
-    r.cancelOrderRequest = cancelOrderRequest
-    r.Set("cancel_order_request", cancelOrderRequest)
+func (r *TaobaoJstSmsOfficialaccountCancelRequest) SetCancelOrderRequest(_cancelOrderRequest *CancelOrderRequest) error {
+    r._cancelOrderRequest = _cancelOrderRequest
+    r.Set("cancel_order_request", _cancelOrderRequest)
     return nil
 }
 
 // CancelOrderRequest Getter
 func (r TaobaoJstSmsOfficialaccountCancelRequest) GetCancelOrderRequest() *CancelOrderRequest {
-    return r.cancelOrderRequest
+    return r._cancelOrderRequest
 }

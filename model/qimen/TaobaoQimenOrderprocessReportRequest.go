@@ -15,7 +15,7 @@ WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明�
 type TaobaoQimenOrderprocessReportRequest struct {
     model.Params
     // 
-    request   *OrderProcessReportRequest
+    _request   *OrderProcessReportRequest
 }
 
 // 初始化TaobaoQimenOrderprocessReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderprocessReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderprocessReportRequest) SetRequest(request *OrderProcessReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderprocessReportRequest) SetRequest(_request *OrderProcessReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderprocessReportRequest) GetRequest() *OrderProcessReportRequest {
-    return r.request
+    return r._request
 }

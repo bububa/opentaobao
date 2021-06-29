@@ -15,13 +15,13 @@ taobao.trade.drug.confirmorder
 type TaobaoTradeDrugConfirmorderRequest struct {
     model.Params
     // 代送宝 代送商ID
-    deliveryId   int64
+    _deliveryId   int64
     // public static int NORMAL_TYPE=0; 普通发货 默认 public static int DD_DAI_SONG=2; 代送宝	public static int DD_SONG_TYPE_V2=3; 点点送发货
-    confirmType   int64
+    _confirmType   int64
     // 订单ID
-    orderId   int64
+    _orderId   int64
     // 子账号nick
-    subUserNick   string
+    _subUserNick   string
 }
 
 // 初始化TaobaoTradeDrugConfirmorderRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoTradeDrugConfirmorderRequest) GetApiParams() url.Values {
 }
 // DeliveryId Setter
 // 代送宝 代送商ID
-func (r *TaobaoTradeDrugConfirmorderRequest) SetDeliveryId(deliveryId int64) error {
-    r.deliveryId = deliveryId
-    r.Set("delivery_id", deliveryId)
+func (r *TaobaoTradeDrugConfirmorderRequest) SetDeliveryId(_deliveryId int64) error {
+    r._deliveryId = _deliveryId
+    r.Set("delivery_id", _deliveryId)
     return nil
 }
 
 // DeliveryId Getter
 func (r TaobaoTradeDrugConfirmorderRequest) GetDeliveryId() int64 {
-    return r.deliveryId
+    return r._deliveryId
 }
 // ConfirmType Setter
 // public static int NORMAL_TYPE=0; 普通发货 默认 public static int DD_DAI_SONG=2; 代送宝	public static int DD_SONG_TYPE_V2=3; 点点送发货
-func (r *TaobaoTradeDrugConfirmorderRequest) SetConfirmType(confirmType int64) error {
-    r.confirmType = confirmType
-    r.Set("confirm_type", confirmType)
+func (r *TaobaoTradeDrugConfirmorderRequest) SetConfirmType(_confirmType int64) error {
+    r._confirmType = _confirmType
+    r.Set("confirm_type", _confirmType)
     return nil
 }
 
 // ConfirmType Getter
 func (r TaobaoTradeDrugConfirmorderRequest) GetConfirmType() int64 {
-    return r.confirmType
+    return r._confirmType
 }
 // OrderId Setter
 // 订单ID
-func (r *TaobaoTradeDrugConfirmorderRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoTradeDrugConfirmorderRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoTradeDrugConfirmorderRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // SubUserNick Setter
 // 子账号nick
-func (r *TaobaoTradeDrugConfirmorderRequest) SetSubUserNick(subUserNick string) error {
-    r.subUserNick = subUserNick
-    r.Set("sub_user_nick", subUserNick)
+func (r *TaobaoTradeDrugConfirmorderRequest) SetSubUserNick(_subUserNick string) error {
+    r._subUserNick = _subUserNick
+    r.Set("sub_user_nick", _subUserNick)
     return nil
 }
 
 // SubUserNick Getter
 func (r TaobaoTradeDrugConfirmorderRequest) GetSubUserNick() string {
-    return r.subUserNick
+    return r._subUserNick
 }

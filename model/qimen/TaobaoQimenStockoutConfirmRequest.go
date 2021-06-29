@@ -15,7 +15,7 @@ taobao.qimen.stockout.confirm
 type TaobaoQimenStockoutConfirmRequest struct {
     model.Params
     // 
-    request   *TaobaoQimenStockoutConfirmStruct
+    _request   *TaobaoQimenStockoutConfirmStruct
 }
 
 // 初始化TaobaoQimenStockoutConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStockoutConfirmRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenStockoutConfirmRequest) SetRequest(request *TaobaoQimenStockoutConfirmStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenStockoutConfirmRequest) SetRequest(_request *TaobaoQimenStockoutConfirmStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenStockoutConfirmRequest) GetRequest() *TaobaoQimenStockoutConfirmStruct {
-    return r.request
+    return r._request
 }

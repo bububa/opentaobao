@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.query
 type AlibabaAlihouseNewhomeProjectQueryRequest struct {
     model.Params
     // 外部楼盘/小区id
-    outerId   string
+    _outerId   string
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 外部楼盘/小区id
-func (r *AlibabaAlihouseNewhomeProjectQueryRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaAlihouseNewhomeProjectQueryRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaAlihouseNewhomeProjectQueryRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }

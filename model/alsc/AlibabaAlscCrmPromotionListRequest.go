@@ -15,7 +15,7 @@ alibaba.alsc.crm.promotion.list
 type AlibabaAlscCrmPromotionListRequest struct {
     model.Params
     // 获取促销规则请求参数
-    promotionFacadeOpenReq   *PromotionFacadeOpenReq
+    _promotionFacadeOpenReq   *PromotionFacadeOpenReq
 }
 
 // 初始化AlibabaAlscCrmPromotionListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPromotionListRequest) GetApiParams() url.Values {
 }
 // PromotionFacadeOpenReq Setter
 // 获取促销规则请求参数
-func (r *AlibabaAlscCrmPromotionListRequest) SetPromotionFacadeOpenReq(promotionFacadeOpenReq *PromotionFacadeOpenReq) error {
-    r.promotionFacadeOpenReq = promotionFacadeOpenReq
-    r.Set("promotion_facade_open_req", promotionFacadeOpenReq)
+func (r *AlibabaAlscCrmPromotionListRequest) SetPromotionFacadeOpenReq(_promotionFacadeOpenReq *PromotionFacadeOpenReq) error {
+    r._promotionFacadeOpenReq = _promotionFacadeOpenReq
+    r.Set("promotion_facade_open_req", _promotionFacadeOpenReq)
     return nil
 }
 
 // PromotionFacadeOpenReq Getter
 func (r AlibabaAlscCrmPromotionListRequest) GetPromotionFacadeOpenReq() *PromotionFacadeOpenReq {
-    return r.promotionFacadeOpenReq
+    return r._promotionFacadeOpenReq
 }

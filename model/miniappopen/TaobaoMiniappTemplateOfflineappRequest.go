@@ -15,13 +15,13 @@ taobao.miniapp.template.offlineapp
 type TaobaoMiniappTemplateOfflineappRequest struct {
     model.Params
     // 要下线的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-    clients   []string
+    _clients   []string
     // 要下线的小程序app_id
-    appId   string
+    _appId   string
     // 要下线的小程序版本号
-    appVersion   string
+    _appVersion   string
     // 模板id
-    templateId   string
+    _templateId   string
 }
 
 // 初始化TaobaoMiniappTemplateOfflineappRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoMiniappTemplateOfflineappRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 要下线的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-func (r *TaobaoMiniappTemplateOfflineappRequest) SetClients(clients []string) error {
-    r.clients = clients
-    r.Set("clients", clients)
+func (r *TaobaoMiniappTemplateOfflineappRequest) SetClients(_clients []string) error {
+    r._clients = _clients
+    r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
 func (r TaobaoMiniappTemplateOfflineappRequest) GetClients() []string {
-    return r.clients
+    return r._clients
 }
 // AppId Setter
 // 要下线的小程序app_id
-func (r *TaobaoMiniappTemplateOfflineappRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *TaobaoMiniappTemplateOfflineappRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r TaobaoMiniappTemplateOfflineappRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // AppVersion Setter
 // 要下线的小程序版本号
-func (r *TaobaoMiniappTemplateOfflineappRequest) SetAppVersion(appVersion string) error {
-    r.appVersion = appVersion
-    r.Set("app_version", appVersion)
+func (r *TaobaoMiniappTemplateOfflineappRequest) SetAppVersion(_appVersion string) error {
+    r._appVersion = _appVersion
+    r.Set("app_version", _appVersion)
     return nil
 }
 
 // AppVersion Getter
 func (r TaobaoMiniappTemplateOfflineappRequest) GetAppVersion() string {
-    return r.appVersion
+    return r._appVersion
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniappTemplateOfflineappRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoMiniappTemplateOfflineappRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoMiniappTemplateOfflineappRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }

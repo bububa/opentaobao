@@ -15,7 +15,7 @@ alibaba.wdk.order.refund.list
 type AlibabaWdkOrderRefundListRequest struct {
     model.Params
     // 查询条件
-    batchQueryRefundRequest   *BatchQueryRefundRequest
+    _batchQueryRefundRequest   *BatchQueryRefundRequest
 }
 
 // 初始化AlibabaWdkOrderRefundListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderRefundListRequest) GetApiParams() url.Values {
 }
 // BatchQueryRefundRequest Setter
 // 查询条件
-func (r *AlibabaWdkOrderRefundListRequest) SetBatchQueryRefundRequest(batchQueryRefundRequest *BatchQueryRefundRequest) error {
-    r.batchQueryRefundRequest = batchQueryRefundRequest
-    r.Set("batch_query_refund_request", batchQueryRefundRequest)
+func (r *AlibabaWdkOrderRefundListRequest) SetBatchQueryRefundRequest(_batchQueryRefundRequest *BatchQueryRefundRequest) error {
+    r._batchQueryRefundRequest = _batchQueryRefundRequest
+    r.Set("batch_query_refund_request", _batchQueryRefundRequest)
     return nil
 }
 
 // BatchQueryRefundRequest Getter
 func (r AlibabaWdkOrderRefundListRequest) GetBatchQueryRefundRequest() *BatchQueryRefundRequest {
-    return r.batchQueryRefundRequest
+    return r._batchQueryRefundRequest
 }

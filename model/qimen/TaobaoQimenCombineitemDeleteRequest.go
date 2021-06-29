@@ -15,7 +15,7 @@ taobao.qimen.combineitem.delete
 type TaobaoQimenCombineitemDeleteRequest struct {
     model.Params
     // 
-    request   *RequestDO
+    _request   *RequestDO
 }
 
 // 初始化TaobaoQimenCombineitemDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenCombineitemDeleteRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenCombineitemDeleteRequest) SetRequest(request *RequestDO) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenCombineitemDeleteRequest) SetRequest(_request *RequestDO) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenCombineitemDeleteRequest) GetRequest() *RequestDO {
-    return r.request
+    return r._request
 }

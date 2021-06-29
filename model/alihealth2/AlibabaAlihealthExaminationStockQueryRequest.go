@@ -15,15 +15,15 @@ alibaba.alihealth.examination.stock.query
 type AlibabaAlihealthExaminationStockQueryRequest struct {
     model.Params
     // 商户唯一码
-    merchantCode   string
+    _merchantCode   string
     // 分院ID
-    hospitalId   string
+    _hospitalId   string
     // 套餐id
-    packageId   string
+    _packageId   string
     // 开始日期
-    timeFrom   string
+    _timeFrom   string
     // 结束日期
-    timeTo   string
+    _timeTo   string
 }
 
 // 初始化AlibabaAlihealthExaminationStockQueryRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthExaminationStockQueryRequest) GetApiParams() url.Values 
 }
 // MerchantCode Setter
 // 商户唯一码
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaAlihealthExaminationStockQueryRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaAlihealthExaminationStockQueryRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // HospitalId Setter
 // 分院ID
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetHospitalId(hospitalId string) error {
-    r.hospitalId = hospitalId
-    r.Set("hospital_id", hospitalId)
+func (r *AlibabaAlihealthExaminationStockQueryRequest) SetHospitalId(_hospitalId string) error {
+    r._hospitalId = _hospitalId
+    r.Set("hospital_id", _hospitalId)
     return nil
 }
 
 // HospitalId Getter
 func (r AlibabaAlihealthExaminationStockQueryRequest) GetHospitalId() string {
-    return r.hospitalId
+    return r._hospitalId
 }
 // PackageId Setter
 // 套餐id
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetPackageId(packageId string) error {
-    r.packageId = packageId
-    r.Set("package_id", packageId)
+func (r *AlibabaAlihealthExaminationStockQueryRequest) SetPackageId(_packageId string) error {
+    r._packageId = _packageId
+    r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
 func (r AlibabaAlihealthExaminationStockQueryRequest) GetPackageId() string {
-    return r.packageId
+    return r._packageId
 }
 // TimeFrom Setter
 // 开始日期
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeFrom(timeFrom string) error {
-    r.timeFrom = timeFrom
-    r.Set("time_from", timeFrom)
+func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeFrom(_timeFrom string) error {
+    r._timeFrom = _timeFrom
+    r.Set("time_from", _timeFrom)
     return nil
 }
 
 // TimeFrom Getter
 func (r AlibabaAlihealthExaminationStockQueryRequest) GetTimeFrom() string {
-    return r.timeFrom
+    return r._timeFrom
 }
 // TimeTo Setter
 // 结束日期
-func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeTo(timeTo string) error {
-    r.timeTo = timeTo
-    r.Set("time_to", timeTo)
+func (r *AlibabaAlihealthExaminationStockQueryRequest) SetTimeTo(_timeTo string) error {
+    r._timeTo = _timeTo
+    r.Set("time_to", _timeTo)
     return nil
 }
 
 // TimeTo Getter
 func (r AlibabaAlihealthExaminationStockQueryRequest) GetTimeTo() string {
-    return r.timeTo
+    return r._timeTo
 }

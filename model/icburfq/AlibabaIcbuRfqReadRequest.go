@@ -15,7 +15,7 @@ alibaba.icbu.rfq.read
 type AlibabaIcbuRfqReadRequest struct {
     model.Params
     // 查询RFQID列表
-    rfqIdList   []string
+    _rfqIdList   []string
 }
 
 // 初始化AlibabaIcbuRfqReadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuRfqReadRequest) GetApiParams() url.Values {
 }
 // RfqIdList Setter
 // 查询RFQID列表
-func (r *AlibabaIcbuRfqReadRequest) SetRfqIdList(rfqIdList []string) error {
-    r.rfqIdList = rfqIdList
-    r.Set("rfq_id_list", rfqIdList)
+func (r *AlibabaIcbuRfqReadRequest) SetRfqIdList(_rfqIdList []string) error {
+    r._rfqIdList = _rfqIdList
+    r.Set("rfq_id_list", _rfqIdList)
     return nil
 }
 
 // RfqIdList Getter
 func (r AlibabaIcbuRfqReadRequest) GetRfqIdList() []string {
-    return r.rfqIdList
+    return r._rfqIdList
 }

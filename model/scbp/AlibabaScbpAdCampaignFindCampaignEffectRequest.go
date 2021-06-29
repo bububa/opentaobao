@@ -15,13 +15,13 @@ alibaba.scbp.ad.campaign.find.campaign.effect
 type AlibabaScbpAdCampaignFindCampaignEffectRequest struct {
     model.Params
     // 计划id集合
-    campaignIdList   []int64
+    _campaignIdList   []int64
     // 开始时间
-    beginDate   string
+    _beginDate   string
     // 结束时间
-    endDate   string
+    _endDate   string
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdCampaignFindCampaignEffectRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetApiParams() url.Value
 }
 // CampaignIdList Setter
 // 计划id集合
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetCampaignIdList(campaignIdList []int64) error {
-    r.campaignIdList = campaignIdList
-    r.Set("campaign_id_list", campaignIdList)
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetCampaignIdList(_campaignIdList []int64) error {
+    r._campaignIdList = _campaignIdList
+    r.Set("campaign_id_list", _campaignIdList)
     return nil
 }
 
 // CampaignIdList Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetCampaignIdList() []int64 {
-    return r.campaignIdList
+    return r._campaignIdList
 }
 // BeginDate Setter
 // 开始时间
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束时间
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

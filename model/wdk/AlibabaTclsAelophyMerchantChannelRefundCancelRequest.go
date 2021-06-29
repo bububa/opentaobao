@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.refund.cancel
 type AlibabaTclsAelophyMerchantChannelRefundCancelRequest struct {
     model.Params
     // 逆向申请取消
-    refundCancelInfo   *RefundCancelInfo
+    _refundCancelInfo   *RefundCancelInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelRefundCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetApiParams() url
 }
 // RefundCancelInfo Setter
 // 逆向申请取消
-func (r *AlibabaTclsAelophyMerchantChannelRefundCancelRequest) SetRefundCancelInfo(refundCancelInfo *RefundCancelInfo) error {
-    r.refundCancelInfo = refundCancelInfo
-    r.Set("refund_cancel_info", refundCancelInfo)
+func (r *AlibabaTclsAelophyMerchantChannelRefundCancelRequest) SetRefundCancelInfo(_refundCancelInfo *RefundCancelInfo) error {
+    r._refundCancelInfo = _refundCancelInfo
+    r.Set("refund_cancel_info", _refundCancelInfo)
     return nil
 }
 
 // RefundCancelInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundCancelRequest) GetRefundCancelInfo() *RefundCancelInfo {
-    return r.refundCancelInfo
+    return r._refundCancelInfo
 }

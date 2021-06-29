@@ -15,13 +15,13 @@ taobao.omniorder.item.tag.operate
 type TaobaoOmniorderItemTagOperateRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 商品标,storeDeliver代表门店发货, AllocateByFront代表前置拆单, storeCollect代表门店自提
-    types   []string
+    _types   []string
     // 操作状态， 填 1 代表打标，填 -1 代表去标
-    status   int64
+    _status   int64
     // 分单&接单设置
-    omniSetting   *OmniSettingDto
+    _omniSetting   *OmniSettingDto
 }
 
 // 初始化TaobaoOmniorderItemTagOperateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOmniorderItemTagOperateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoOmniorderItemTagOperateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOmniorderItemTagOperateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOmniorderItemTagOperateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Types Setter
 // 商品标,storeDeliver代表门店发货, AllocateByFront代表前置拆单, storeCollect代表门店自提
-func (r *TaobaoOmniorderItemTagOperateRequest) SetTypes(types []string) error {
-    r.types = types
-    r.Set("types", types)
+func (r *TaobaoOmniorderItemTagOperateRequest) SetTypes(_types []string) error {
+    r._types = _types
+    r.Set("types", _types)
     return nil
 }
 
 // Types Getter
 func (r TaobaoOmniorderItemTagOperateRequest) GetTypes() []string {
-    return r.types
+    return r._types
 }
 // Status Setter
 // 操作状态， 填 1 代表打标，填 -1 代表去标
-func (r *TaobaoOmniorderItemTagOperateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoOmniorderItemTagOperateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoOmniorderItemTagOperateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // OmniSetting Setter
 // 分单&接单设置
-func (r *TaobaoOmniorderItemTagOperateRequest) SetOmniSetting(omniSetting *OmniSettingDto) error {
-    r.omniSetting = omniSetting
-    r.Set("omni_setting", omniSetting)
+func (r *TaobaoOmniorderItemTagOperateRequest) SetOmniSetting(_omniSetting *OmniSettingDto) error {
+    r._omniSetting = _omniSetting
+    r.Set("omni_setting", _omniSetting)
     return nil
 }
 
 // OmniSetting Getter
 func (r TaobaoOmniorderItemTagOperateRequest) GetOmniSetting() *OmniSettingDto {
-    return r.omniSetting
+    return r._omniSetting
 }

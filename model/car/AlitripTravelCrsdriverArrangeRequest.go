@@ -15,7 +15,7 @@ alitrip.travel.crsdriver.arrange
 type AlitripTravelCrsdriverArrangeRequest struct {
     model.Params
     // 请求对象
-    crsDriverArrangeParam   *CrsDriverArrangeParam
+    _crsDriverArrangeParam   *CrsDriverArrangeParam
 }
 
 // 初始化AlitripTravelCrsdriverArrangeRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelCrsdriverArrangeRequest) GetApiParams() url.Values {
 }
 // CrsDriverArrangeParam Setter
 // 请求对象
-func (r *AlitripTravelCrsdriverArrangeRequest) SetCrsDriverArrangeParam(crsDriverArrangeParam *CrsDriverArrangeParam) error {
-    r.crsDriverArrangeParam = crsDriverArrangeParam
-    r.Set("crs_driver_arrange_param", crsDriverArrangeParam)
+func (r *AlitripTravelCrsdriverArrangeRequest) SetCrsDriverArrangeParam(_crsDriverArrangeParam *CrsDriverArrangeParam) error {
+    r._crsDriverArrangeParam = _crsDriverArrangeParam
+    r.Set("crs_driver_arrange_param", _crsDriverArrangeParam)
     return nil
 }
 
 // CrsDriverArrangeParam Getter
 func (r AlitripTravelCrsdriverArrangeRequest) GetCrsDriverArrangeParam() *CrsDriverArrangeParam {
-    return r.crsDriverArrangeParam
+    return r._crsDriverArrangeParam
 }

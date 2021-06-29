@@ -15,7 +15,7 @@ alibaba.wdk.order.sync.withitem
 type AlibabaWdkOrderSyncWithitemRequest struct {
     model.Params
     // 商家传过来的交易和商品信息
-    posOrderAndItemSync   *PosOrderAndItemSyncDo
+    _posOrderAndItemSync   *PosOrderAndItemSyncDo
 }
 
 // 初始化AlibabaWdkOrderSyncWithitemRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderSyncWithitemRequest) GetApiParams() url.Values {
 }
 // PosOrderAndItemSync Setter
 // 商家传过来的交易和商品信息
-func (r *AlibabaWdkOrderSyncWithitemRequest) SetPosOrderAndItemSync(posOrderAndItemSync *PosOrderAndItemSyncDo) error {
-    r.posOrderAndItemSync = posOrderAndItemSync
-    r.Set("pos_order_and_item_sync", posOrderAndItemSync)
+func (r *AlibabaWdkOrderSyncWithitemRequest) SetPosOrderAndItemSync(_posOrderAndItemSync *PosOrderAndItemSyncDo) error {
+    r._posOrderAndItemSync = _posOrderAndItemSync
+    r.Set("pos_order_and_item_sync", _posOrderAndItemSync)
     return nil
 }
 
 // PosOrderAndItemSync Getter
 func (r AlibabaWdkOrderSyncWithitemRequest) GetPosOrderAndItemSync() *PosOrderAndItemSyncDo {
-    return r.posOrderAndItemSync
+    return r._posOrderAndItemSync
 }

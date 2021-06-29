@@ -15,9 +15,9 @@ alibaba.scbp.ad.keyword.price.update
 type AlibabaScbpAdKeywordPriceUpdateRequest struct {
     model.Params
     // 只能取ascci字符
-    adKeyword   string
+    _adKeyword   string
     // 关键词价格单位元，一位小数
-    priceStr   string
+    _priceStr   string
 }
 
 // 初始化AlibabaScbpAdKeywordPriceUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdKeywordPriceUpdateRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 只能取ascci字符
-func (r *AlibabaScbpAdKeywordPriceUpdateRequest) SetAdKeyword(adKeyword string) error {
-    r.adKeyword = adKeyword
-    r.Set("ad_keyword", adKeyword)
+func (r *AlibabaScbpAdKeywordPriceUpdateRequest) SetAdKeyword(_adKeyword string) error {
+    r._adKeyword = _adKeyword
+    r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
 func (r AlibabaScbpAdKeywordPriceUpdateRequest) GetAdKeyword() string {
-    return r.adKeyword
+    return r._adKeyword
 }
 // PriceStr Setter
 // 关键词价格单位元，一位小数
-func (r *AlibabaScbpAdKeywordPriceUpdateRequest) SetPriceStr(priceStr string) error {
-    r.priceStr = priceStr
-    r.Set("price_str", priceStr)
+func (r *AlibabaScbpAdKeywordPriceUpdateRequest) SetPriceStr(_priceStr string) error {
+    r._priceStr = _priceStr
+    r.Set("price_str", _priceStr)
     return nil
 }
 
 // PriceStr Getter
 func (r AlibabaScbpAdKeywordPriceUpdateRequest) GetPriceStr() string {
-    return r.priceStr
+    return r._priceStr
 }

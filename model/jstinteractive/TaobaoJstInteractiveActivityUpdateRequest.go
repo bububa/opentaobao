@@ -15,13 +15,13 @@ taobao.jst.interactive.activity.update
 type TaobaoJstInteractiveActivityUpdateRequest struct {
     model.Params
     // 小程序id
-    miniAppId   string
+    _miniAppId   string
     // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-    startTime   string
+    _startTime   string
     // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-    endTime   string
+    _endTime   string
     // 活动状态，0=无效，1=有效，status设为0即代表删除此活动，需创建新的活动
-    status   int64
+    _status   int64
 }
 
 // 初始化TaobaoJstInteractiveActivityUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoJstInteractiveActivityUpdateRequest) GetApiParams() url.Values {
 }
 // MiniAppId Setter
 // 小程序id
-func (r *TaobaoJstInteractiveActivityUpdateRequest) SetMiniAppId(miniAppId string) error {
-    r.miniAppId = miniAppId
-    r.Set("mini_app_id", miniAppId)
+func (r *TaobaoJstInteractiveActivityUpdateRequest) SetMiniAppId(_miniAppId string) error {
+    r._miniAppId = _miniAppId
+    r.Set("mini_app_id", _miniAppId)
     return nil
 }
 
 // MiniAppId Getter
 func (r TaobaoJstInteractiveActivityUpdateRequest) GetMiniAppId() string {
-    return r.miniAppId
+    return r._miniAppId
 }
 // StartTime Setter
 // 活动开始时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-func (r *TaobaoJstInteractiveActivityUpdateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoJstInteractiveActivityUpdateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoJstInteractiveActivityUpdateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动结束时间，格式为yyyy-MM-dd HH:mm:ss，任务列表只在活动期间内返回
-func (r *TaobaoJstInteractiveActivityUpdateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoJstInteractiveActivityUpdateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoJstInteractiveActivityUpdateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // Status Setter
 // 活动状态，0=无效，1=有效，status设为0即代表删除此活动，需创建新的活动
-func (r *TaobaoJstInteractiveActivityUpdateRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoJstInteractiveActivityUpdateRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoJstInteractiveActivityUpdateRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }

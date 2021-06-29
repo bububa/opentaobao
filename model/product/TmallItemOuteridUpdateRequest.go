@@ -15,11 +15,11 @@ tmall.item.outerid.update
 type TmallItemOuteridUpdateRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 商品维度商家编码，如果不修改可以不传；清空请设置空串
-    outerId   string
+    _outerId   string
     // 商品SKU更新OuterId时候用的数据
-    skuOuters   []UpdateSkuOuterId
+    _skuOuters   []UpdateSkuOuterId
 }
 
 // 初始化TmallItemOuteridUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TmallItemOuteridUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TmallItemOuteridUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemOuteridUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemOuteridUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // OuterId Setter
 // 商品维度商家编码，如果不修改可以不传；清空请设置空串
-func (r *TmallItemOuteridUpdateRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TmallItemOuteridUpdateRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TmallItemOuteridUpdateRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // SkuOuters Setter
 // 商品SKU更新OuterId时候用的数据
-func (r *TmallItemOuteridUpdateRequest) SetSkuOuters(skuOuters []UpdateSkuOuterId) error {
-    r.skuOuters = skuOuters
-    r.Set("sku_outers", skuOuters)
+func (r *TmallItemOuteridUpdateRequest) SetSkuOuters(_skuOuters []UpdateSkuOuterId) error {
+    r._skuOuters = _skuOuters
+    r.Set("sku_outers", _skuOuters)
     return nil
 }
 
 // SkuOuters Getter
 func (r TmallItemOuteridUpdateRequest) GetSkuOuters() []UpdateSkuOuterId {
-    return r.skuOuters
+    return r._skuOuters
 }

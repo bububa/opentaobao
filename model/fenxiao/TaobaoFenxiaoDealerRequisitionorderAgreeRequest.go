@@ -15,7 +15,7 @@ taobao.fenxiao.dealer.requisitionorder.agree
 type TaobaoFenxiaoDealerRequisitionorderAgreeRequest struct {
     model.Params
     // 采购申请/经销采购单编号
-    dealerOrderId   int64
+    _dealerOrderId   int64
 }
 
 // 初始化TaobaoFenxiaoDealerRequisitionorderAgreeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoDealerRequisitionorderAgreeRequest) GetApiParams() url.Valu
 }
 // DealerOrderId Setter
 // 采购申请/经销采购单编号
-func (r *TaobaoFenxiaoDealerRequisitionorderAgreeRequest) SetDealerOrderId(dealerOrderId int64) error {
-    r.dealerOrderId = dealerOrderId
-    r.Set("dealer_order_id", dealerOrderId)
+func (r *TaobaoFenxiaoDealerRequisitionorderAgreeRequest) SetDealerOrderId(_dealerOrderId int64) error {
+    r._dealerOrderId = _dealerOrderId
+    r.Set("dealer_order_id", _dealerOrderId)
     return nil
 }
 
 // DealerOrderId Getter
 func (r TaobaoFenxiaoDealerRequisitionorderAgreeRequest) GetDealerOrderId() int64 {
-    return r.dealerOrderId
+    return r._dealerOrderId
 }

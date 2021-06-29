@@ -15,7 +15,7 @@ alibaba.wdk.marketing.version.generate
 type AlibabaWdkMarketingVersionGenerateRequest struct {
     model.Params
     // 档期版本号参数信息
-    param   *SeasonVersionParam
+    _param   *SeasonVersionParam
 }
 
 // 初始化AlibabaWdkMarketingVersionGenerateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 档期版本号参数信息
-func (r *AlibabaWdkMarketingVersionGenerateRequest) SetParam(param *SeasonVersionParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingVersionGenerateRequest) SetParam(_param *SeasonVersionParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingVersionGenerateRequest) GetParam() *SeasonVersionParam {
-    return r.param
+    return r._param
 }

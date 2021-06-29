@@ -15,11 +15,11 @@ alibaba.mos.store.getdefautitems
 type AlibabaMosStoreGetdefautitemsRequest struct {
     model.Params
     // 屏编号
-    screenNo   string
+    _screenNo   string
     // 分页查询开始index
-    start   int64
+    _start   int64
     // 分页查询每页记录数
-    limitCount   int64
+    _limitCount   int64
 }
 
 // 初始化AlibabaMosStoreGetdefautitemsRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMosStoreGetdefautitemsRequest) GetApiParams() url.Values {
 }
 // ScreenNo Setter
 // 屏编号
-func (r *AlibabaMosStoreGetdefautitemsRequest) SetScreenNo(screenNo string) error {
-    r.screenNo = screenNo
-    r.Set("screen_no", screenNo)
+func (r *AlibabaMosStoreGetdefautitemsRequest) SetScreenNo(_screenNo string) error {
+    r._screenNo = _screenNo
+    r.Set("screen_no", _screenNo)
     return nil
 }
 
 // ScreenNo Getter
 func (r AlibabaMosStoreGetdefautitemsRequest) GetScreenNo() string {
-    return r.screenNo
+    return r._screenNo
 }
 // Start Setter
 // 分页查询开始index
-func (r *AlibabaMosStoreGetdefautitemsRequest) SetStart(start int64) error {
-    r.start = start
-    r.Set("start", start)
+func (r *AlibabaMosStoreGetdefautitemsRequest) SetStart(_start int64) error {
+    r._start = _start
+    r.Set("start", _start)
     return nil
 }
 
 // Start Getter
 func (r AlibabaMosStoreGetdefautitemsRequest) GetStart() int64 {
-    return r.start
+    return r._start
 }
 // LimitCount Setter
 // 分页查询每页记录数
-func (r *AlibabaMosStoreGetdefautitemsRequest) SetLimitCount(limitCount int64) error {
-    r.limitCount = limitCount
-    r.Set("limit_count", limitCount)
+func (r *AlibabaMosStoreGetdefautitemsRequest) SetLimitCount(_limitCount int64) error {
+    r._limitCount = _limitCount
+    r.Set("limit_count", _limitCount)
     return nil
 }
 
 // LimitCount Getter
 func (r AlibabaMosStoreGetdefautitemsRequest) GetLimitCount() int64 {
-    return r.limitCount
+    return r._limitCount
 }

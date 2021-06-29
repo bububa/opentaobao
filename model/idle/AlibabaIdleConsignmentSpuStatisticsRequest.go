@@ -15,7 +15,7 @@ alibaba.idle.consignment.spu.statistics
 type AlibabaIdleConsignmentSpuStatisticsRequest struct {
     model.Params
     // 入参
-    param   *SpuStatistics
+    _param   *SpuStatistics
 }
 
 // 初始化AlibabaIdleConsignmentSpuStatisticsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaIdleConsignmentSpuStatisticsRequest) SetParam(param *SpuStatistics) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaIdleConsignmentSpuStatisticsRequest) SetParam(_param *SpuStatistics) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaIdleConsignmentSpuStatisticsRequest) GetParam() *SpuStatistics {
-    return r.param
+    return r._param
 }

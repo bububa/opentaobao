@@ -15,13 +15,13 @@ alibaba.alihealth.drugcode.drugfactory.transferdata
 type AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest struct {
     model.Params
     // 时间戳(毫秒级别)
-    timestampYl   int64
+    _timestampYl   int64
     // 签名值
-    signValue   string
+    _signValue   string
     // 密文
-    cipherText   string
+    _cipherText   string
     // 企业Id
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) GetApiParams() u
 }
 // TimestampYl Setter
 // 时间戳(毫秒级别)
-func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetTimestampYl(timestampYl int64) error {
-    r.timestampYl = timestampYl
-    r.Set("timestamp_yl", timestampYl)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetTimestampYl(_timestampYl int64) error {
+    r._timestampYl = _timestampYl
+    r.Set("timestamp_yl", _timestampYl)
     return nil
 }
 
 // TimestampYl Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) GetTimestampYl() int64 {
-    return r.timestampYl
+    return r._timestampYl
 }
 // SignValue Setter
 // 签名值
-func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetSignValue(signValue string) error {
-    r.signValue = signValue
-    r.Set("sign_value", signValue)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetSignValue(_signValue string) error {
+    r._signValue = _signValue
+    r.Set("sign_value", _signValue)
     return nil
 }
 
 // SignValue Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) GetSignValue() string {
-    return r.signValue
+    return r._signValue
 }
 // CipherText Setter
 // 密文
-func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetCipherText(cipherText string) error {
-    r.cipherText = cipherText
-    r.Set("cipher_text", cipherText)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetCipherText(_cipherText string) error {
+    r._cipherText = _cipherText
+    r.Set("cipher_text", _cipherText)
     return nil
 }
 
 // CipherText Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) GetCipherText() string {
-    return r.cipherText
+    return r._cipherText
 }
 // RefEntId Setter
 // 企业Id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryTransferdataRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

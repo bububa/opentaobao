@@ -15,9 +15,9 @@ ts订购关系状态查询. 暂只支持1口价服务.
 type TaobaoTsSubscribeGetRequest struct {
     model.Params
     // 服务收费项code
-    servcieItemCode   string
+    _servcieItemCode   string
     // 订购用户昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoTsSubscribeGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTsSubscribeGetRequest) GetApiParams() url.Values {
 }
 // ServcieItemCode Setter
 // 服务收费项code
-func (r *TaobaoTsSubscribeGetRequest) SetServcieItemCode(servcieItemCode string) error {
-    r.servcieItemCode = servcieItemCode
-    r.Set("servcie_item_code", servcieItemCode)
+func (r *TaobaoTsSubscribeGetRequest) SetServcieItemCode(_servcieItemCode string) error {
+    r._servcieItemCode = _servcieItemCode
+    r.Set("servcie_item_code", _servcieItemCode)
     return nil
 }
 
 // ServcieItemCode Getter
 func (r TaobaoTsSubscribeGetRequest) GetServcieItemCode() string {
-    return r.servcieItemCode
+    return r._servcieItemCode
 }
 // Nick Setter
 // 订购用户昵称
-func (r *TaobaoTsSubscribeGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoTsSubscribeGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoTsSubscribeGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

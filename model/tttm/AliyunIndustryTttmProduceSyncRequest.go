@@ -15,7 +15,7 @@ aliyun.industry.tttm.produce.sync
 type AliyunIndustryTttmProduceSyncRequest struct {
     model.Params
     // 计划单
-    syncPlan   *SyncPlanDto
+    _syncPlan   *SyncPlanDto
 }
 
 // 初始化AliyunIndustryTttmProduceSyncRequest对象
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmProduceSyncRequest) GetApiParams() url.Values {
 }
 // SyncPlan Setter
 // 计划单
-func (r *AliyunIndustryTttmProduceSyncRequest) SetSyncPlan(syncPlan *SyncPlanDto) error {
-    r.syncPlan = syncPlan
-    r.Set("sync_plan", syncPlan)
+func (r *AliyunIndustryTttmProduceSyncRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
+    r._syncPlan = _syncPlan
+    r.Set("sync_plan", _syncPlan)
     return nil
 }
 
 // SyncPlan Getter
 func (r AliyunIndustryTttmProduceSyncRequest) GetSyncPlan() *SyncPlanDto {
-    return r.syncPlan
+    return r._syncPlan
 }

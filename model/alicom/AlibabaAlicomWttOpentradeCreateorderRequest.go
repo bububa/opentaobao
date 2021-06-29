@@ -15,7 +15,7 @@ alibaba.alicom.wtt.opentrade.createorder
 type AlibabaAlicomWttOpentradeCreateorderRequest struct {
     model.Params
     // 入参请求说明
-    param0   *OpentradCreateOrderRequestDTO
+    _param0   *OpentradCreateOrderRequestDTO
 }
 
 // 初始化AlibabaAlicomWttOpentradeCreateorderRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlicomWttOpentradeCreateorderRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参请求说明
-func (r *AlibabaAlicomWttOpentradeCreateorderRequest) SetParam0(param0 *OpentradCreateOrderRequestDTO) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaAlicomWttOpentradeCreateorderRequest) SetParam0(_param0 *OpentradCreateOrderRequestDTO) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaAlicomWttOpentradeCreateorderRequest) GetParam0() *OpentradCreateOrderRequestDTO {
-    return r.param0
+    return r._param0
 }

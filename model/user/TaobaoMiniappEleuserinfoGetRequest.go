@@ -15,7 +15,7 @@ taobao.miniapp.eleuserinfo.get
 type TaobaoMiniappEleuserinfoGetRequest struct {
     model.Params
     // 怪兽业务方
-    bizScence   string
+    _bizScence   string
 }
 
 // 初始化TaobaoMiniappEleuserinfoGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMiniappEleuserinfoGetRequest) GetApiParams() url.Values {
 }
 // BizScence Setter
 // 怪兽业务方
-func (r *TaobaoMiniappEleuserinfoGetRequest) SetBizScence(bizScence string) error {
-    r.bizScence = bizScence
-    r.Set("biz_scence", bizScence)
+func (r *TaobaoMiniappEleuserinfoGetRequest) SetBizScence(_bizScence string) error {
+    r._bizScence = _bizScence
+    r.Set("biz_scence", _bizScence)
     return nil
 }
 
 // BizScence Getter
 func (r TaobaoMiniappEleuserinfoGetRequest) GetBizScence() string {
-    return r.bizScence
+    return r._bizScence
 }

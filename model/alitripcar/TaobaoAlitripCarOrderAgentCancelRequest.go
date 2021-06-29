@@ -15,7 +15,7 @@ taobao.alitrip.car.order.agent.cancel
 type TaobaoAlitripCarOrderAgentCancelRequest struct {
     model.Params
     // 取消对象
-    paramOrderCancel   *OrderCancel
+    _paramOrderCancel   *OrderCancel
 }
 
 // 初始化TaobaoAlitripCarOrderAgentCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderAgentCancelRequest) GetApiParams() url.Values {
 }
 // ParamOrderCancel Setter
 // 取消对象
-func (r *TaobaoAlitripCarOrderAgentCancelRequest) SetParamOrderCancel(paramOrderCancel *OrderCancel) error {
-    r.paramOrderCancel = paramOrderCancel
-    r.Set("param_order_cancel", paramOrderCancel)
+func (r *TaobaoAlitripCarOrderAgentCancelRequest) SetParamOrderCancel(_paramOrderCancel *OrderCancel) error {
+    r._paramOrderCancel = _paramOrderCancel
+    r.Set("param_order_cancel", _paramOrderCancel)
     return nil
 }
 
 // ParamOrderCancel Getter
 func (r TaobaoAlitripCarOrderAgentCancelRequest) GetParamOrderCancel() *OrderCancel {
-    return r.paramOrderCancel
+    return r._paramOrderCancel
 }

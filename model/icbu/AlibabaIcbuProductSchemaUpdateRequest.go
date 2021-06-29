@@ -15,7 +15,7 @@ alibaba.icbu.product.schema.update
 type AlibabaIcbuProductSchemaUpdateRequest struct {
     model.Params
     // 发布入参
-    paramProductTopPublishRequest   *ProductTopPublishRequest
+    _paramProductTopPublishRequest   *ProductTopPublishRequest
 }
 
 // 初始化AlibabaIcbuProductSchemaUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductSchemaUpdateRequest) GetApiParams() url.Values {
 }
 // ParamProductTopPublishRequest Setter
 // 发布入参
-func (r *AlibabaIcbuProductSchemaUpdateRequest) SetParamProductTopPublishRequest(paramProductTopPublishRequest *ProductTopPublishRequest) error {
-    r.paramProductTopPublishRequest = paramProductTopPublishRequest
-    r.Set("param_product_top_publish_request", paramProductTopPublishRequest)
+func (r *AlibabaIcbuProductSchemaUpdateRequest) SetParamProductTopPublishRequest(_paramProductTopPublishRequest *ProductTopPublishRequest) error {
+    r._paramProductTopPublishRequest = _paramProductTopPublishRequest
+    r.Set("param_product_top_publish_request", _paramProductTopPublishRequest)
     return nil
 }
 
 // ParamProductTopPublishRequest Getter
 func (r AlibabaIcbuProductSchemaUpdateRequest) GetParamProductTopPublishRequest() *ProductTopPublishRequest {
-    return r.paramProductTopPublishRequest
+    return r._paramProductTopPublishRequest
 }

@@ -15,9 +15,9 @@ taobao.tmc.messages.consume
 type TaobaoTmcMessagesConsumeRequest struct {
     model.Params
     // 用户分组名称，不传表示消费默认分组，如果应用没有设置用户分组，传入分组名称将会返回错误
-    groupName   string
+    _groupName   string
     // 每次批量消费消息的条数，最小值：10；最大值：200
-    quantity   int64
+    _quantity   int64
 }
 
 // 初始化TaobaoTmcMessagesConsumeRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTmcMessagesConsumeRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 用户分组名称，不传表示消费默认分组，如果应用没有设置用户分组，传入分组名称将会返回错误
-func (r *TaobaoTmcMessagesConsumeRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcMessagesConsumeRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcMessagesConsumeRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }
 // Quantity Setter
 // 每次批量消费消息的条数，最小值：10；最大值：200
-func (r *TaobaoTmcMessagesConsumeRequest) SetQuantity(quantity int64) error {
-    r.quantity = quantity
-    r.Set("quantity", quantity)
+func (r *TaobaoTmcMessagesConsumeRequest) SetQuantity(_quantity int64) error {
+    r._quantity = _quantity
+    r.Set("quantity", _quantity)
     return nil
 }
 
 // Quantity Getter
 func (r TaobaoTmcMessagesConsumeRequest) GetQuantity() int64 {
-    return r.quantity
+    return r._quantity
 }

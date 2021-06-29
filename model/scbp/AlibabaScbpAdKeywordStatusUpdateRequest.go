@@ -15,9 +15,9 @@ alibaba.scbp.ad.keyword.status.update
 type AlibabaScbpAdKeywordStatusUpdateRequest struct {
     model.Params
     // 只能取ascci字符
-    adKeyword   string
+    _adKeyword   string
     // 只能去in_promotion或者stopped
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaScbpAdKeywordStatusUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdKeywordStatusUpdateRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 只能取ascci字符
-func (r *AlibabaScbpAdKeywordStatusUpdateRequest) SetAdKeyword(adKeyword string) error {
-    r.adKeyword = adKeyword
-    r.Set("ad_keyword", adKeyword)
+func (r *AlibabaScbpAdKeywordStatusUpdateRequest) SetAdKeyword(_adKeyword string) error {
+    r._adKeyword = _adKeyword
+    r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
 func (r AlibabaScbpAdKeywordStatusUpdateRequest) GetAdKeyword() string {
-    return r.adKeyword
+    return r._adKeyword
 }
 // Status Setter
 // 只能去in_promotion或者stopped
-func (r *AlibabaScbpAdKeywordStatusUpdateRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaScbpAdKeywordStatusUpdateRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaScbpAdKeywordStatusUpdateRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

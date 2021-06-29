@@ -15,21 +15,21 @@ taobao.tbk.sc.publisher.info.get
 type TaobaoTbkScPublisherInfoGetRequest struct {
     model.Params
     // 类型，必选 1:渠道信息；2:会员信息
-    infoType   int64
+    _infoType   int64
     // 渠道独占 - 渠道关系ID
-    relationId   int64
+    _relationId   int64
     // 第几页
-    pageNo   int64
+    _pageNo   int64
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
     // 备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可
-    relationApp   string
+    _relationApp   string
     // 会员独占 - 会员运营ID
-    specialId   string
+    _specialId   string
     // 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-    externalId   string
+    _externalId   string
     // 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0
-    externalType   int64
+    _externalType   int64
 }
 
 // 初始化TaobaoTbkScPublisherInfoGetRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoTbkScPublisherInfoGetRequest) GetApiParams() url.Values {
 }
 // InfoType Setter
 // 类型，必选 1:渠道信息；2:会员信息
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetInfoType(infoType int64) error {
-    r.infoType = infoType
-    r.Set("info_type", infoType)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetInfoType(_infoType int64) error {
+    r._infoType = _infoType
+    r.Set("info_type", _infoType)
     return nil
 }
 
 // InfoType Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetInfoType() int64 {
-    return r.infoType
+    return r._infoType
 }
 // RelationId Setter
 // 渠道独占 - 渠道关系ID
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetRelationId(relationId int64) error {
-    r.relationId = relationId
-    r.Set("relation_id", relationId)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetRelationId(_relationId int64) error {
+    r._relationId = _relationId
+    r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetRelationId() int64 {
-    return r.relationId
+    return r._relationId
 }
 // PageNo Setter
 // 第几页
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // RelationApp Setter
 // 备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetRelationApp(relationApp string) error {
-    r.relationApp = relationApp
-    r.Set("relation_app", relationApp)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetRelationApp(_relationApp string) error {
+    r._relationApp = _relationApp
+    r.Set("relation_app", _relationApp)
     return nil
 }
 
 // RelationApp Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetRelationApp() string {
-    return r.relationApp
+    return r._relationApp
 }
 // SpecialId Setter
 // 会员独占 - 会员运营ID
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetSpecialId(specialId string) error {
-    r.specialId = specialId
-    r.Set("special_id", specialId)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetSpecialId(_specialId string) error {
+    r._specialId = _specialId
+    r.Set("special_id", _specialId)
     return nil
 }
 
 // SpecialId Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetSpecialId() string {
-    return r.specialId
+    return r._specialId
 }
 // ExternalId Setter
 // 淘宝客外部用户标记，如自身系统账户ID；微信ID等
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetExternalId(externalId string) error {
-    r.externalId = externalId
-    r.Set("external_id", externalId)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetExternalId(_externalId string) error {
+    r._externalId = _externalId
+    r.Set("external_id", _externalId)
     return nil
 }
 
 // ExternalId Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetExternalId() string {
-    return r.externalId
+    return r._externalId
 }
 // ExternalType Setter
 // 1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0
-func (r *TaobaoTbkScPublisherInfoGetRequest) SetExternalType(externalType int64) error {
-    r.externalType = externalType
-    r.Set("external_type", externalType)
+func (r *TaobaoTbkScPublisherInfoGetRequest) SetExternalType(_externalType int64) error {
+    r._externalType = _externalType
+    r.Set("external_type", _externalType)
     return nil
 }
 
 // ExternalType Getter
 func (r TaobaoTbkScPublisherInfoGetRequest) GetExternalType() int64 {
-    return r.externalType
+    return r._externalType
 }

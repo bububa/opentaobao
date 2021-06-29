@@ -15,7 +15,7 @@ taobao.tbk.dg.punish.order.get
 type TaobaoTbkDgPunishOrderGetRequest struct {
     model.Params
     // 入参的对象
-    afOrderOption   *TopApiAfOrderOption
+    _afOrderOption   *TopApiAfOrderOption
 }
 
 // 初始化TaobaoTbkDgPunishOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTbkDgPunishOrderGetRequest) GetApiParams() url.Values {
 }
 // AfOrderOption Setter
 // 入参的对象
-func (r *TaobaoTbkDgPunishOrderGetRequest) SetAfOrderOption(afOrderOption *TopApiAfOrderOption) error {
-    r.afOrderOption = afOrderOption
-    r.Set("af_order_option", afOrderOption)
+func (r *TaobaoTbkDgPunishOrderGetRequest) SetAfOrderOption(_afOrderOption *TopApiAfOrderOption) error {
+    r._afOrderOption = _afOrderOption
+    r.Set("af_order_option", _afOrderOption)
     return nil
 }
 
 // AfOrderOption Getter
 func (r TaobaoTbkDgPunishOrderGetRequest) GetAfOrderOption() *TopApiAfOrderOption {
-    return r.afOrderOption
+    return r._afOrderOption
 }

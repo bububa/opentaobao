@@ -15,15 +15,15 @@ taobao.oc.tradetag.attach
 type TaobaoOcTradetagAttachRequest struct {
     model.Params
     // 标签类型       1：官方标签      2：自定义标签
-    tagType   int64
+    _tagType   int64
     // 订单id
-    tid   int64
+    _tid   int64
     // 标签名称
-    tagName   string
+    _tagName   string
     // 标签值，json格式
-    tagValue   string
+    _tagValue   string
     // 该标签在消费者端是否显示,0:不显示,1：显示
-    visible   int64
+    _visible   int64
 }
 
 // 初始化TaobaoOcTradetagAttachRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoOcTradetagAttachRequest) GetApiParams() url.Values {
 }
 // TagType Setter
 // 标签类型       1：官方标签      2：自定义标签
-func (r *TaobaoOcTradetagAttachRequest) SetTagType(tagType int64) error {
-    r.tagType = tagType
-    r.Set("tag_type", tagType)
+func (r *TaobaoOcTradetagAttachRequest) SetTagType(_tagType int64) error {
+    r._tagType = _tagType
+    r.Set("tag_type", _tagType)
     return nil
 }
 
 // TagType Getter
 func (r TaobaoOcTradetagAttachRequest) GetTagType() int64 {
-    return r.tagType
+    return r._tagType
 }
 // Tid Setter
 // 订单id
-func (r *TaobaoOcTradetagAttachRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOcTradetagAttachRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOcTradetagAttachRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // TagName Setter
 // 标签名称
-func (r *TaobaoOcTradetagAttachRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *TaobaoOcTradetagAttachRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r TaobaoOcTradetagAttachRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }
 // TagValue Setter
 // 标签值，json格式
-func (r *TaobaoOcTradetagAttachRequest) SetTagValue(tagValue string) error {
-    r.tagValue = tagValue
-    r.Set("tag_value", tagValue)
+func (r *TaobaoOcTradetagAttachRequest) SetTagValue(_tagValue string) error {
+    r._tagValue = _tagValue
+    r.Set("tag_value", _tagValue)
     return nil
 }
 
 // TagValue Getter
 func (r TaobaoOcTradetagAttachRequest) GetTagValue() string {
-    return r.tagValue
+    return r._tagValue
 }
 // Visible Setter
 // 该标签在消费者端是否显示,0:不显示,1：显示
-func (r *TaobaoOcTradetagAttachRequest) SetVisible(visible int64) error {
-    r.visible = visible
-    r.Set("visible", visible)
+func (r *TaobaoOcTradetagAttachRequest) SetVisible(_visible int64) error {
+    r._visible = _visible
+    r.Set("visible", _visible)
     return nil
 }
 
 // Visible Getter
 func (r TaobaoOcTradetagAttachRequest) GetVisible() int64 {
-    return r.visible
+    return r._visible
 }

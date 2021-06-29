@@ -15,7 +15,7 @@ alibaba.baichuan.ctg.toutiao.content
 type AlibabaBaichuanCtgToutiaoContentRequest struct {
     model.Params
     // param0
-    param0   *CtgRequest
+    _param0   *CtgRequest
 }
 
 // 初始化AlibabaBaichuanCtgToutiaoContentRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaBaichuanCtgToutiaoContentRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // param0
-func (r *AlibabaBaichuanCtgToutiaoContentRequest) SetParam0(param0 *CtgRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaBaichuanCtgToutiaoContentRequest) SetParam0(_param0 *CtgRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaBaichuanCtgToutiaoContentRequest) GetParam0() *CtgRequest {
-    return r.param0
+    return r._param0
 }

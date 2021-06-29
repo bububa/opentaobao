@@ -15,7 +15,7 @@ alibaba.tax.invoice.sync
 type AlibabaTaxInvoiceSyncRequest struct {
     model.Params
     // 回调发票信息，请求参数详情见链接：https://yuque.antfin-inc.com/tax/biw99l/uestb7
-    paramJson   string
+    _paramJson   string
 }
 
 // 初始化AlibabaTaxInvoiceSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTaxInvoiceSyncRequest) GetApiParams() url.Values {
 }
 // ParamJson Setter
 // 回调发票信息，请求参数详情见链接：https://yuque.antfin-inc.com/tax/biw99l/uestb7
-func (r *AlibabaTaxInvoiceSyncRequest) SetParamJson(paramJson string) error {
-    r.paramJson = paramJson
-    r.Set("param_json", paramJson)
+func (r *AlibabaTaxInvoiceSyncRequest) SetParamJson(_paramJson string) error {
+    r._paramJson = _paramJson
+    r.Set("param_json", _paramJson)
     return nil
 }
 
 // ParamJson Getter
 func (r AlibabaTaxInvoiceSyncRequest) GetParamJson() string {
-    return r.paramJson
+    return r._paramJson
 }

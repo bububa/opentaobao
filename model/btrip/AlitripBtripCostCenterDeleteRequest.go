@@ -15,7 +15,7 @@ alitrip.btrip.cost.center.delete
 type AlitripBtripCostCenterDeleteRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenCostCenterDeleteRq
+    _rq   *OpenCostCenterDeleteRq
 }
 
 // 初始化AlitripBtripCostCenterDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCostCenterDeleteRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripCostCenterDeleteRequest) SetRq(rq *OpenCostCenterDeleteRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCostCenterDeleteRequest) SetRq(_rq *OpenCostCenterDeleteRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCostCenterDeleteRequest) GetRq() *OpenCostCenterDeleteRq {
-    return r.rq
+    return r._rq
 }

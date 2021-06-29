@@ -15,7 +15,7 @@ taobao.ailab.aicloud.top.message.push.unicast
 type TaobaoAilabAicloudTopMessagePushUnicastRequest struct {
     model.Params
     // 消息推送单播请求体
-    messageUnicastRequest   *MessageUnicastRequest
+    _messageUnicastRequest   *MessageUnicastRequest
 }
 
 // 初始化TaobaoAilabAicloudTopMessagePushUnicastRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAilabAicloudTopMessagePushUnicastRequest) GetApiParams() url.Value
 }
 // MessageUnicastRequest Setter
 // 消息推送单播请求体
-func (r *TaobaoAilabAicloudTopMessagePushUnicastRequest) SetMessageUnicastRequest(messageUnicastRequest *MessageUnicastRequest) error {
-    r.messageUnicastRequest = messageUnicastRequest
-    r.Set("message_unicast_request", messageUnicastRequest)
+func (r *TaobaoAilabAicloudTopMessagePushUnicastRequest) SetMessageUnicastRequest(_messageUnicastRequest *MessageUnicastRequest) error {
+    r._messageUnicastRequest = _messageUnicastRequest
+    r.Set("message_unicast_request", _messageUnicastRequest)
     return nil
 }
 
 // MessageUnicastRequest Getter
 func (r TaobaoAilabAicloudTopMessagePushUnicastRequest) GetMessageUnicastRequest() *MessageUnicastRequest {
-    return r.messageUnicastRequest
+    return r._messageUnicastRequest
 }

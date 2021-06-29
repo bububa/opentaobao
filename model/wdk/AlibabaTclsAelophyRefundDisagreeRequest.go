@@ -15,9 +15,9 @@ saas 售后逆向 商户拒绝用户逆向申请
 type AlibabaTclsAelophyRefundDisagreeRequest struct {
     model.Params
     // 退款单ID
-    refundId   string
+    _refundId   string
     // 拒绝原因
-    rejectReason   string
+    _rejectReason   string
 }
 
 // 初始化AlibabaTclsAelophyRefundDisagreeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaTclsAelophyRefundDisagreeRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRefundId(refundId string) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRefundId(_refundId string) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r AlibabaTclsAelophyRefundDisagreeRequest) GetRefundId() string {
-    return r.refundId
+    return r._refundId
 }
 // RejectReason Setter
 // 拒绝原因
-func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRejectReason(rejectReason string) error {
-    r.rejectReason = rejectReason
-    r.Set("reject_reason", rejectReason)
+func (r *AlibabaTclsAelophyRefundDisagreeRequest) SetRejectReason(_rejectReason string) error {
+    r._rejectReason = _rejectReason
+    r.Set("reject_reason", _rejectReason)
     return nil
 }
 
 // RejectReason Getter
 func (r AlibabaTclsAelophyRefundDisagreeRequest) GetRejectReason() string {
-    return r.rejectReason
+    return r._rejectReason
 }

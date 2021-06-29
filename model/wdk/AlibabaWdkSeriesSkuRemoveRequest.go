@@ -15,7 +15,7 @@ alibaba.wdk.series.sku.remove
 type AlibabaWdkSeriesSkuRemoveRequest struct {
     model.Params
     // 系列品移除商品请求
-    seriesSkus   *SeriesSkuRequest
+    _seriesSkus   *SeriesSkuRequest
 }
 
 // 初始化AlibabaWdkSeriesSkuRemoveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesSkuRemoveRequest) GetApiParams() url.Values {
 }
 // SeriesSkus Setter
 // 系列品移除商品请求
-func (r *AlibabaWdkSeriesSkuRemoveRequest) SetSeriesSkus(seriesSkus *SeriesSkuRequest) error {
-    r.seriesSkus = seriesSkus
-    r.Set("series_skus", seriesSkus)
+func (r *AlibabaWdkSeriesSkuRemoveRequest) SetSeriesSkus(_seriesSkus *SeriesSkuRequest) error {
+    r._seriesSkus = _seriesSkus
+    r.Set("series_skus", _seriesSkus)
     return nil
 }
 
 // SeriesSkus Getter
 func (r AlibabaWdkSeriesSkuRemoveRequest) GetSeriesSkus() *SeriesSkuRequest {
-    return r.seriesSkus
+    return r._seriesSkus
 }

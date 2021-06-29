@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.advert.manageschedule
 type YunosTvpubadminContentAdvertManagescheduleRequest struct {
     model.Params
     // 管理参数
-    req   string
+    _req   string
 }
 
 // 初始化YunosTvpubadminContentAdvertManagescheduleRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiParams() url.Va
 }
 // Req Setter
 // 管理参数
-func (r *YunosTvpubadminContentAdvertManagescheduleRequest) SetReq(req string) error {
-    r.req = req
-    r.Set("req", req)
+func (r *YunosTvpubadminContentAdvertManagescheduleRequest) SetReq(_req string) error {
+    r._req = _req
+    r.Set("req", _req)
     return nil
 }
 
 // Req Getter
 func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetReq() string {
-    return r.req
+    return r._req
 }

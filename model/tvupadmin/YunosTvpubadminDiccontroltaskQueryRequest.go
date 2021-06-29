@@ -15,15 +15,15 @@ yunos.tvpubadmin.diccontroltask.query
 type YunosTvpubadminDiccontroltaskQueryRequest struct {
     model.Params
     // 任务名称
-    name   string
+    _name   string
     // 任务状态
-    status   int64
+    _status   int64
     // 牌照方
-    license   int64
+    _license   int64
     // 当前页码值
-    pageNo   int64
+    _pageNo   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosTvpubadminDiccontroltaskQueryRequest对象
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDiccontroltaskQueryRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 任务名称
-func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r YunosTvpubadminDiccontroltaskQueryRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Status Setter
 // 任务状态
-func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r YunosTvpubadminDiccontroltaskQueryRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDiccontroltaskQueryRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // PageNo Setter
 // 当前页码值
-func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YunosTvpubadminDiccontroltaskQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数
-func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminDiccontroltaskQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminDiccontroltaskQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

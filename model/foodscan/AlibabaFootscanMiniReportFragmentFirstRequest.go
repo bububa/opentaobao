@@ -15,9 +15,9 @@ alibaba.footscan.mini.report.fragment.first
 type AlibabaFootscanMiniReportFragmentFirstRequest struct {
     model.Params
     // 平台分配的token
-    token   string
+    _token   string
     // 请求数据
-    reqData   *FilePackageRequest
+    _reqData   *FilePackageRequest
 }
 
 // 初始化AlibabaFootscanMiniReportFragmentFirstRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniReportFragmentFirstRequest) GetApiParams() url.Values
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniReportFragmentFirstRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaFootscanMiniReportFragmentFirstRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaFootscanMiniReportFragmentFirstRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ReqData Setter
 // 请求数据
-func (r *AlibabaFootscanMiniReportFragmentFirstRequest) SetReqData(reqData *FilePackageRequest) error {
-    r.reqData = reqData
-    r.Set("req_data", reqData)
+func (r *AlibabaFootscanMiniReportFragmentFirstRequest) SetReqData(_reqData *FilePackageRequest) error {
+    r._reqData = _reqData
+    r.Set("req_data", _reqData)
     return nil
 }
 
 // ReqData Getter
 func (r AlibabaFootscanMiniReportFragmentFirstRequest) GetReqData() *FilePackageRequest {
-    return r.reqData
+    return r._reqData
 }

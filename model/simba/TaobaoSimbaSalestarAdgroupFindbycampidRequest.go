@@ -15,11 +15,11 @@ taobao.simba.salestar.adgroup.findbycampid
 type TaobaoSimbaSalestarAdgroupFindbycampidRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
-    pageSize   int64
+    _pageSize   int64
     // 页码，从1开始
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoSimbaSalestarAdgroupFindbycampidRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaSalestarAdgroupFindbycampidRequest) GetApiParams() url.Values
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // PageSize Setter
 // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
-func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 页码，从1开始
-func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoSimbaSalestarAdgroupFindbycampidRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoSimbaSalestarAdgroupFindbycampidRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

@@ -17,9 +17,9 @@ alibaba.imap.category.predict
 type AlibabaImapCategoryPredictRequest struct {
     model.Params
     // 入参DO
-    topImapItemDo   *TopImapItemDo
+    _topImapItemDo   *TopImapItemDo
     // 账号信息
-    fixedMappingAppInfo   *FixedMappingAppInfo
+    _fixedMappingAppInfo   *FixedMappingAppInfo
 }
 
 // 初始化AlibabaImapCategoryPredictRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaImapCategoryPredictRequest) GetApiParams() url.Values {
 }
 // TopImapItemDo Setter
 // 入参DO
-func (r *AlibabaImapCategoryPredictRequest) SetTopImapItemDo(topImapItemDo *TopImapItemDo) error {
-    r.topImapItemDo = topImapItemDo
-    r.Set("top_imap_item_do", topImapItemDo)
+func (r *AlibabaImapCategoryPredictRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDo) error {
+    r._topImapItemDo = _topImapItemDo
+    r.Set("top_imap_item_do", _topImapItemDo)
     return nil
 }
 
 // TopImapItemDo Getter
 func (r AlibabaImapCategoryPredictRequest) GetTopImapItemDo() *TopImapItemDo {
-    return r.topImapItemDo
+    return r._topImapItemDo
 }
 // FixedMappingAppInfo Setter
 // 账号信息
-func (r *AlibabaImapCategoryPredictRequest) SetFixedMappingAppInfo(fixedMappingAppInfo *FixedMappingAppInfo) error {
-    r.fixedMappingAppInfo = fixedMappingAppInfo
-    r.Set("fixed_mapping_app_info", fixedMappingAppInfo)
+func (r *AlibabaImapCategoryPredictRequest) SetFixedMappingAppInfo(_fixedMappingAppInfo *FixedMappingAppInfo) error {
+    r._fixedMappingAppInfo = _fixedMappingAppInfo
+    r.Set("fixed_mapping_app_info", _fixedMappingAppInfo)
     return nil
 }
 
 // FixedMappingAppInfo Getter
 func (r AlibabaImapCategoryPredictRequest) GetFixedMappingAppInfo() *FixedMappingAppInfo {
-    return r.fixedMappingAppInfo
+    return r._fixedMappingAppInfo
 }

@@ -15,11 +15,11 @@ alibaba.campus.acl.new.saverolewithmenu
 type AlibabaCampusAclNewSaverolewithmenuRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 系统自动生成
-    sysRoleDTO   *SysRoleDto
+    _sysRoleDTO   *SysRoleDto
     // 菜单id,权限id
-    treeNodeIds   []string
+    _treeNodeIds   []string
 }
 
 // 初始化AlibabaCampusAclNewSaverolewithmenuRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // SysRoleDTO Setter
 // 系统自动生成
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetSysRoleDTO(sysRoleDTO *SysRoleDto) error {
-    r.sysRoleDTO = sysRoleDTO
-    r.Set("sys_role_d_t_o", sysRoleDTO)
+func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetSysRoleDTO(_sysRoleDTO *SysRoleDto) error {
+    r._sysRoleDTO = _sysRoleDTO
+    r.Set("sys_role_d_t_o", _sysRoleDTO)
     return nil
 }
 
 // SysRoleDTO Getter
 func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetSysRoleDTO() *SysRoleDto {
-    return r.sysRoleDTO
+    return r._sysRoleDTO
 }
 // TreeNodeIds Setter
 // 菜单id,权限id
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetTreeNodeIds(treeNodeIds []string) error {
-    r.treeNodeIds = treeNodeIds
-    r.Set("tree_node_ids", treeNodeIds)
+func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetTreeNodeIds(_treeNodeIds []string) error {
+    r._treeNodeIds = _treeNodeIds
+    r.Set("tree_node_ids", _treeNodeIds)
     return nil
 }
 
 // TreeNodeIds Getter
 func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetTreeNodeIds() []string {
-    return r.treeNodeIds
+    return r._treeNodeIds
 }

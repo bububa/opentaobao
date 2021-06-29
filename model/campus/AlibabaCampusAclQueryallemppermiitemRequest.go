@@ -15,17 +15,17 @@ alibaba.campus.acl.queryallemppermiitem
 type AlibabaCampusAclQueryallemppermiitemRequest struct {
     model.Params
     // 公司id不填默认SYS_000
-    companyId   int64
+    _companyId   int64
     // 系统id
-    systemId   string
+    _systemId   string
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 用户账号
-    accountId   string
+    _accountId   string
     // 每页多少条
-    page   int64
+    _page   int64
     // 每页记录数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaCampusAclQueryallemppermiitemRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaCampusAclQueryallemppermiitemRequest) GetApiParams() url.Values {
 }
 // CompanyId Setter
 // 公司id不填默认SYS_000
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetCompanyId(companyId int64) error {
-    r.companyId = companyId
-    r.Set("company_id", companyId)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetCompanyId(_companyId int64) error {
+    r._companyId = _companyId
+    r.Set("company_id", _companyId)
     return nil
 }
 
 // CompanyId Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetCompanyId() int64 {
-    return r.companyId
+    return r._companyId
 }
 // SystemId Setter
 // 系统id
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetSystemId(systemId string) error {
-    r.systemId = systemId
-    r.Set("system_id", systemId)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetSystemId(_systemId string) error {
+    r._systemId = _systemId
+    r.Set("system_id", _systemId)
     return nil
 }
 
 // SystemId Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetSystemId() string {
-    return r.systemId
+    return r._systemId
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // AccountId Setter
 // 用户账号
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }
 // Page Setter
 // 每页多少条
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // PageSize Setter
 // 每页记录数
-func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaCampusAclQueryallemppermiitemRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaCampusAclQueryallemppermiitemRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

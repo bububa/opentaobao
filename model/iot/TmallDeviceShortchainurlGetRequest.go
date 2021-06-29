@@ -15,15 +15,15 @@ tmall.device.shortchainurl.get
 type TmallDeviceShortchainurlGetRequest struct {
     model.Params
     // 是否需要长期二维码，默认否
-    longterm   bool
+    _longterm   bool
     // 需要生成短链接的url
-    url   string
+    _url   string
     // 设备DeviceCode
-    deviceCode   string
+    _deviceCode   string
     // 商户中心门店ID
-    storeId   int64
+    _storeId   int64
     // 动作类型，支持自定义
-    action   string
+    _action   string
 }
 
 // 初始化TmallDeviceShortchainurlGetRequest对象
@@ -48,61 +48,61 @@ func (r TmallDeviceShortchainurlGetRequest) GetApiParams() url.Values {
 }
 // Longterm Setter
 // 是否需要长期二维码，默认否
-func (r *TmallDeviceShortchainurlGetRequest) SetLongterm(longterm bool) error {
-    r.longterm = longterm
-    r.Set("longterm", longterm)
+func (r *TmallDeviceShortchainurlGetRequest) SetLongterm(_longterm bool) error {
+    r._longterm = _longterm
+    r.Set("longterm", _longterm)
     return nil
 }
 
 // Longterm Getter
 func (r TmallDeviceShortchainurlGetRequest) GetLongterm() bool {
-    return r.longterm
+    return r._longterm
 }
 // Url Setter
 // 需要生成短链接的url
-func (r *TmallDeviceShortchainurlGetRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TmallDeviceShortchainurlGetRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TmallDeviceShortchainurlGetRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // DeviceCode Setter
 // 设备DeviceCode
-func (r *TmallDeviceShortchainurlGetRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *TmallDeviceShortchainurlGetRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r TmallDeviceShortchainurlGetRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // StoreId Setter
 // 商户中心门店ID
-func (r *TmallDeviceShortchainurlGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TmallDeviceShortchainurlGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TmallDeviceShortchainurlGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // Action Setter
 // 动作类型，支持自定义
-func (r *TmallDeviceShortchainurlGetRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *TmallDeviceShortchainurlGetRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r TmallDeviceShortchainurlGetRequest) GetAction() string {
-    return r.action
+    return r._action
 }

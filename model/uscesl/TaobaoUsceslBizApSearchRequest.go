@@ -15,17 +15,17 @@ taobao.uscesl.biz.ap.search
 type TaobaoUsceslBizApSearchRequest struct {
     model.Params
     // 商家编码
-    bizBrandKey   string
+    _bizBrandKey   string
     // 每页显示数
-    limit   int64
+    _limit   int64
     // 是否激活
-    isActivate   bool
+    _isActivate   bool
     // 价签条码
-    mac   string
+    _mac   string
     // 页码
-    currentPage   int64
+    _currentPage   int64
     // 门店ID
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoUsceslBizApSearchRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoUsceslBizApSearchRequest) GetApiParams() url.Values {
 }
 // BizBrandKey Setter
 // 商家编码
-func (r *TaobaoUsceslBizApSearchRequest) SetBizBrandKey(bizBrandKey string) error {
-    r.bizBrandKey = bizBrandKey
-    r.Set("biz_brand_key", bizBrandKey)
+func (r *TaobaoUsceslBizApSearchRequest) SetBizBrandKey(_bizBrandKey string) error {
+    r._bizBrandKey = _bizBrandKey
+    r.Set("biz_brand_key", _bizBrandKey)
     return nil
 }
 
 // BizBrandKey Getter
 func (r TaobaoUsceslBizApSearchRequest) GetBizBrandKey() string {
-    return r.bizBrandKey
+    return r._bizBrandKey
 }
 // Limit Setter
 // 每页显示数
-func (r *TaobaoUsceslBizApSearchRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *TaobaoUsceslBizApSearchRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r TaobaoUsceslBizApSearchRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }
 // IsActivate Setter
 // 是否激活
-func (r *TaobaoUsceslBizApSearchRequest) SetIsActivate(isActivate bool) error {
-    r.isActivate = isActivate
-    r.Set("is_activate", isActivate)
+func (r *TaobaoUsceslBizApSearchRequest) SetIsActivate(_isActivate bool) error {
+    r._isActivate = _isActivate
+    r.Set("is_activate", _isActivate)
     return nil
 }
 
 // IsActivate Getter
 func (r TaobaoUsceslBizApSearchRequest) GetIsActivate() bool {
-    return r.isActivate
+    return r._isActivate
 }
 // Mac Setter
 // 价签条码
-func (r *TaobaoUsceslBizApSearchRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *TaobaoUsceslBizApSearchRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r TaobaoUsceslBizApSearchRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }
 // CurrentPage Setter
 // 页码
-func (r *TaobaoUsceslBizApSearchRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoUsceslBizApSearchRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoUsceslBizApSearchRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoUsceslBizApSearchRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoUsceslBizApSearchRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoUsceslBizApSearchRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

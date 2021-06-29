@@ -15,13 +15,13 @@ ISV Pos端门店拒单，通知星盘
 type TaobaoOmniorderStoreRefusedRequest struct {
     model.Params
     // 淘宝交易主订单ID
-    tid   int64
+    _tid   int64
     // 子订单列表
-    subOrderList   []SubOrder
+    _subOrderList   []SubOrder
     // ISV的系统时间
-    reportTimestamp   int64
+    _reportTimestamp   int64
     // 跟踪Id
-    traceId   string
+    _traceId   string
 }
 
 // 初始化TaobaoOmniorderStoreRefusedRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOmniorderStoreRefusedRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易主订单ID
-func (r *TaobaoOmniorderStoreRefusedRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOmniorderStoreRefusedRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOmniorderStoreRefusedRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // SubOrderList Setter
 // 子订单列表
-func (r *TaobaoOmniorderStoreRefusedRequest) SetSubOrderList(subOrderList []SubOrder) error {
-    r.subOrderList = subOrderList
-    r.Set("sub_order_list", subOrderList)
+func (r *TaobaoOmniorderStoreRefusedRequest) SetSubOrderList(_subOrderList []SubOrder) error {
+    r._subOrderList = _subOrderList
+    r.Set("sub_order_list", _subOrderList)
     return nil
 }
 
 // SubOrderList Getter
 func (r TaobaoOmniorderStoreRefusedRequest) GetSubOrderList() []SubOrder {
-    return r.subOrderList
+    return r._subOrderList
 }
 // ReportTimestamp Setter
 // ISV的系统时间
-func (r *TaobaoOmniorderStoreRefusedRequest) SetReportTimestamp(reportTimestamp int64) error {
-    r.reportTimestamp = reportTimestamp
-    r.Set("report_timestamp", reportTimestamp)
+func (r *TaobaoOmniorderStoreRefusedRequest) SetReportTimestamp(_reportTimestamp int64) error {
+    r._reportTimestamp = _reportTimestamp
+    r.Set("report_timestamp", _reportTimestamp)
     return nil
 }
 
 // ReportTimestamp Getter
 func (r TaobaoOmniorderStoreRefusedRequest) GetReportTimestamp() int64 {
-    return r.reportTimestamp
+    return r._reportTimestamp
 }
 // TraceId Setter
 // 跟踪Id
-func (r *TaobaoOmniorderStoreRefusedRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *TaobaoOmniorderStoreRefusedRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r TaobaoOmniorderStoreRefusedRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }

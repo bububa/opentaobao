@@ -15,7 +15,7 @@ taobao.logistics.address.remove
 type TaobaoLogisticsAddressRemoveRequest struct {
     model.Params
     // 地址库ID
-    contactId   int64
+    _contactId   int64
 }
 
 // 初始化TaobaoLogisticsAddressRemoveRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLogisticsAddressRemoveRequest) GetApiParams() url.Values {
 }
 // ContactId Setter
 // 地址库ID
-func (r *TaobaoLogisticsAddressRemoveRequest) SetContactId(contactId int64) error {
-    r.contactId = contactId
-    r.Set("contact_id", contactId)
+func (r *TaobaoLogisticsAddressRemoveRequest) SetContactId(_contactId int64) error {
+    r._contactId = _contactId
+    r.Set("contact_id", _contactId)
     return nil
 }
 
 // ContactId Getter
 func (r TaobaoLogisticsAddressRemoveRequest) GetContactId() int64 {
-    return r.contactId
+    return r._contactId
 }

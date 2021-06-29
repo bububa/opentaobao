@@ -15,7 +15,7 @@ queryPerformStatusByPerformId
 type AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest struct {
     model.Params
     // 入参
-    disPerformStatusQueryParam   *DisPerformStatusQueryDto
+    _disPerformStatusQueryParam   *DisPerformStatusQueryDto
 }
 
 // 初始化AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetApiParams() u
 }
 // DisPerformStatusQueryParam Setter
 // 入参
-func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) SetDisPerformStatusQueryParam(disPerformStatusQueryParam *DisPerformStatusQueryDto) error {
-    r.disPerformStatusQueryParam = disPerformStatusQueryParam
-    r.Set("dis_perform_status_query_param", disPerformStatusQueryParam)
+func (r *AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) SetDisPerformStatusQueryParam(_disPerformStatusQueryParam *DisPerformStatusQueryDto) error {
+    r._disPerformStatusQueryParam = _disPerformStatusQueryParam
+    r.Set("dis_perform_status_query_param", _disPerformStatusQueryParam)
     return nil
 }
 
 // DisPerformStatusQueryParam Getter
 func (r AlibabaDamaiMaitixOpengatewayPerformStatusQueryRequest) GetDisPerformStatusQueryParam() *DisPerformStatusQueryDto {
-    return r.disPerformStatusQueryParam
+    return r._disPerformStatusQueryParam
 }

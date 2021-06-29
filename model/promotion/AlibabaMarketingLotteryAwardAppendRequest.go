@@ -15,7 +15,7 @@ alibaba.marketing.lottery.award.append
 type AlibabaMarketingLotteryAwardAppendRequest struct {
     model.Params
     // 奖品添加请求对象
-    lotteryAwardAppend   *LotteryAwardAppendDto
+    _lotteryAwardAppend   *LotteryAwardAppendDto
 }
 
 // 初始化AlibabaMarketingLotteryAwardAppendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryAwardAppendRequest) GetApiParams() url.Values {
 }
 // LotteryAwardAppend Setter
 // 奖品添加请求对象
-func (r *AlibabaMarketingLotteryAwardAppendRequest) SetLotteryAwardAppend(lotteryAwardAppend *LotteryAwardAppendDto) error {
-    r.lotteryAwardAppend = lotteryAwardAppend
-    r.Set("lottery_award_append", lotteryAwardAppend)
+func (r *AlibabaMarketingLotteryAwardAppendRequest) SetLotteryAwardAppend(_lotteryAwardAppend *LotteryAwardAppendDto) error {
+    r._lotteryAwardAppend = _lotteryAwardAppend
+    r.Set("lottery_award_append", _lotteryAwardAppend)
     return nil
 }
 
 // LotteryAwardAppend Getter
 func (r AlibabaMarketingLotteryAwardAppendRequest) GetLotteryAwardAppend() *LotteryAwardAppendDto {
-    return r.lotteryAwardAppend
+    return r._lotteryAwardAppend
 }

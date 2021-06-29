@@ -15,7 +15,7 @@ ERP调用接口，查询入库单信息;
 type TaobaoQimenEntryorderQueryRequest struct {
     model.Params
     // 
-    request   *EntryOrderQueryRequest
+    _request   *EntryOrderQueryRequest
 }
 
 // 初始化TaobaoQimenEntryorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenEntryorderQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenEntryorderQueryRequest) SetRequest(request *EntryOrderQueryRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenEntryorderQueryRequest) SetRequest(_request *EntryOrderQueryRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenEntryorderQueryRequest) GetRequest() *EntryOrderQueryRequest {
-    return r.request
+    return r._request
 }

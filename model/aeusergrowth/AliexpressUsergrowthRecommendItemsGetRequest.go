@@ -15,19 +15,19 @@ aliexpress.usergrowth.recommend.items.get
 type AliexpressUsergrowthRecommendItemsGetRequest struct {
     model.Params
     // third party trackingId
-    trackingId   string
+    _trackingId   string
     // currency Code
-    currencyCode   string
+    _currencyCode   string
     // language
-    language   string
+    _language   string
     // user type
-    userTypeCode   string
+    _userTypeCode   string
     // page index,start from 1
-    pageIndex   string
+    _pageIndex   string
     // page size
-    pageSize   string
+    _pageSize   string
     // country code
-    countryCode   string
+    _countryCode   string
 }
 
 // 初始化AliexpressUsergrowthRecommendItemsGetRequest对象
@@ -52,85 +52,85 @@ func (r AliexpressUsergrowthRecommendItemsGetRequest) GetApiParams() url.Values 
 }
 // TrackingId Setter
 // third party trackingId
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetTrackingId(trackingId string) error {
-    r.trackingId = trackingId
-    r.Set("tracking_id", trackingId)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetTrackingId(_trackingId string) error {
+    r._trackingId = _trackingId
+    r.Set("tracking_id", _trackingId)
     return nil
 }
 
 // TrackingId Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetTrackingId() string {
-    return r.trackingId
+    return r._trackingId
 }
 // CurrencyCode Setter
 // currency Code
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetCurrencyCode(currencyCode string) error {
-    r.currencyCode = currencyCode
-    r.Set("currency_code", currencyCode)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetCurrencyCode(_currencyCode string) error {
+    r._currencyCode = _currencyCode
+    r.Set("currency_code", _currencyCode)
     return nil
 }
 
 // CurrencyCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetCurrencyCode() string {
-    return r.currencyCode
+    return r._currencyCode
 }
 // Language Setter
 // language
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }
 // UserTypeCode Setter
 // user type
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetUserTypeCode(userTypeCode string) error {
-    r.userTypeCode = userTypeCode
-    r.Set("user_type_code", userTypeCode)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetUserTypeCode(_userTypeCode string) error {
+    r._userTypeCode = _userTypeCode
+    r.Set("user_type_code", _userTypeCode)
     return nil
 }
 
 // UserTypeCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetUserTypeCode() string {
-    return r.userTypeCode
+    return r._userTypeCode
 }
 // PageIndex Setter
 // page index,start from 1
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetPageIndex(pageIndex string) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetPageIndex(_pageIndex string) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetPageIndex() string {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // page size
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetPageSize(pageSize string) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetPageSize(_pageSize string) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetPageSize() string {
-    return r.pageSize
+    return r._pageSize
 }
 // CountryCode Setter
 // country code
-func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetCountryCode(countryCode string) error {
-    r.countryCode = countryCode
-    r.Set("country_code", countryCode)
+func (r *AliexpressUsergrowthRecommendItemsGetRequest) SetCountryCode(_countryCode string) error {
+    r._countryCode = _countryCode
+    r.Set("country_code", _countryCode)
     return nil
 }
 
 // CountryCode Getter
 func (r AliexpressUsergrowthRecommendItemsGetRequest) GetCountryCode() string {
-    return r.countryCode
+    return r._countryCode
 }

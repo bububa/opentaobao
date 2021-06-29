@@ -15,11 +15,11 @@ cainiao.cloudprint.templates.migrate
 type CainiaoCloudprintTemplatesMigrateRequest struct {
     model.Params
     // 标准电子面单模板的id
-    tempalteId   int64
+    _tempalteId   int64
     // 自定义区名称
-    customAreaName   string
+    _customAreaName   string
     // 自定义区内容
-    customAreaContent   string
+    _customAreaContent   string
 }
 
 // 初始化CainiaoCloudprintTemplatesMigrateRequest对象
@@ -44,37 +44,37 @@ func (r CainiaoCloudprintTemplatesMigrateRequest) GetApiParams() url.Values {
 }
 // TempalteId Setter
 // 标准电子面单模板的id
-func (r *CainiaoCloudprintTemplatesMigrateRequest) SetTempalteId(tempalteId int64) error {
-    r.tempalteId = tempalteId
-    r.Set("tempalte_id", tempalteId)
+func (r *CainiaoCloudprintTemplatesMigrateRequest) SetTempalteId(_tempalteId int64) error {
+    r._tempalteId = _tempalteId
+    r.Set("tempalte_id", _tempalteId)
     return nil
 }
 
 // TempalteId Getter
 func (r CainiaoCloudprintTemplatesMigrateRequest) GetTempalteId() int64 {
-    return r.tempalteId
+    return r._tempalteId
 }
 // CustomAreaName Setter
 // 自定义区名称
-func (r *CainiaoCloudprintTemplatesMigrateRequest) SetCustomAreaName(customAreaName string) error {
-    r.customAreaName = customAreaName
-    r.Set("custom_area_name", customAreaName)
+func (r *CainiaoCloudprintTemplatesMigrateRequest) SetCustomAreaName(_customAreaName string) error {
+    r._customAreaName = _customAreaName
+    r.Set("custom_area_name", _customAreaName)
     return nil
 }
 
 // CustomAreaName Getter
 func (r CainiaoCloudprintTemplatesMigrateRequest) GetCustomAreaName() string {
-    return r.customAreaName
+    return r._customAreaName
 }
 // CustomAreaContent Setter
 // 自定义区内容
-func (r *CainiaoCloudprintTemplatesMigrateRequest) SetCustomAreaContent(customAreaContent string) error {
-    r.customAreaContent = customAreaContent
-    r.Set("custom_area_content", customAreaContent)
+func (r *CainiaoCloudprintTemplatesMigrateRequest) SetCustomAreaContent(_customAreaContent string) error {
+    r._customAreaContent = _customAreaContent
+    r.Set("custom_area_content", _customAreaContent)
     return nil
 }
 
 // CustomAreaContent Getter
 func (r CainiaoCloudprintTemplatesMigrateRequest) GetCustomAreaContent() string {
-    return r.customAreaContent
+    return r._customAreaContent
 }

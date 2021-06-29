@@ -15,7 +15,7 @@ alibaba.alihealth.examination.report.diagnose.order.status
 type AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest struct {
     model.Params
     // 参数对象
-    reportOrderStatusRequest   *ReportOrderStatusRequest
+    _reportOrderStatusRequest   *ReportOrderStatusRequest
 }
 
 // 初始化AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetApiParam
 }
 // ReportOrderStatusRequest Setter
 // 参数对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) SetReportOrderStatusRequest(reportOrderStatusRequest *ReportOrderStatusRequest) error {
-    r.reportOrderStatusRequest = reportOrderStatusRequest
-    r.Set("report_order_status_request", reportOrderStatusRequest)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) SetReportOrderStatusRequest(_reportOrderStatusRequest *ReportOrderStatusRequest) error {
+    r._reportOrderStatusRequest = _reportOrderStatusRequest
+    r.Set("report_order_status_request", _reportOrderStatusRequest)
     return nil
 }
 
 // ReportOrderStatusRequest Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderStatusRequest) GetReportOrderStatusRequest() *ReportOrderStatusRequest {
-    return r.reportOrderStatusRequest
+    return r._reportOrderStatusRequest
 }

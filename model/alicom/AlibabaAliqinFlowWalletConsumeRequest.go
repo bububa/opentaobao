@@ -15,13 +15,13 @@ alibaba.aliqin.flow.wallet.consume
 type AlibabaAliqinFlowWalletConsumeRequest struct {
     model.Params
     // 扣减流量值
-    flow   int64
+    _flow   int64
     // 扣减流水号
-    serialNo   string
+    _serialNo   string
     // 扣减原因
-    reason   string
+    _reason   string
     // 备注
-    remark   string
+    _remark   string
 }
 
 // 初始化AlibabaAliqinFlowWalletConsumeRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinFlowWalletConsumeRequest) GetApiParams() url.Values {
 }
 // Flow Setter
 // 扣减流量值
-func (r *AlibabaAliqinFlowWalletConsumeRequest) SetFlow(flow int64) error {
-    r.flow = flow
-    r.Set("flow", flow)
+func (r *AlibabaAliqinFlowWalletConsumeRequest) SetFlow(_flow int64) error {
+    r._flow = _flow
+    r.Set("flow", _flow)
     return nil
 }
 
 // Flow Getter
 func (r AlibabaAliqinFlowWalletConsumeRequest) GetFlow() int64 {
-    return r.flow
+    return r._flow
 }
 // SerialNo Setter
 // 扣减流水号
-func (r *AlibabaAliqinFlowWalletConsumeRequest) SetSerialNo(serialNo string) error {
-    r.serialNo = serialNo
-    r.Set("serial_no", serialNo)
+func (r *AlibabaAliqinFlowWalletConsumeRequest) SetSerialNo(_serialNo string) error {
+    r._serialNo = _serialNo
+    r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
 func (r AlibabaAliqinFlowWalletConsumeRequest) GetSerialNo() string {
-    return r.serialNo
+    return r._serialNo
 }
 // Reason Setter
 // 扣减原因
-func (r *AlibabaAliqinFlowWalletConsumeRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlibabaAliqinFlowWalletConsumeRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlibabaAliqinFlowWalletConsumeRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // Remark Setter
 // 备注
-func (r *AlibabaAliqinFlowWalletConsumeRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *AlibabaAliqinFlowWalletConsumeRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r AlibabaAliqinFlowWalletConsumeRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

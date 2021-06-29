@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.saleforcast.saler.upload
 type AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest struct {
     model.Params
     // 入参
-    salesForecastRequest   *SalesForecastRequest
+    _salesForecastRequest   *SalesForecastRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest) GetApiParams() ur
 }
 // SalesForecastRequest Setter
 // 入参
-func (r *AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest) SetSalesForecastRequest(salesForecastRequest *SalesForecastRequest) error {
-    r.salesForecastRequest = salesForecastRequest
-    r.Set("sales_forecast_request", salesForecastRequest)
+func (r *AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest) SetSalesForecastRequest(_salesForecastRequest *SalesForecastRequest) error {
+    r._salesForecastRequest = _salesForecastRequest
+    r.Set("sales_forecast_request", _salesForecastRequest)
     return nil
 }
 
 // SalesForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanSaleforcastSalerUploadRequest) GetSalesForecastRequest() *SalesForecastRequest {
-    return r.salesForecastRequest
+    return r._salesForecastRequest
 }

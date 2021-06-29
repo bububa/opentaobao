@@ -15,7 +15,7 @@ alibaba.alihealth.booking.reserve.confirm
 type AlibabaAlihealthBookingReserveConfirmRequest struct {
     model.Params
     // 参数
-    confirm   *IsvReserveRequest
+    _confirm   *IsvReserveRequest
 }
 
 // 初始化AlibabaAlihealthBookingReserveConfirmRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveConfirmRequest) GetApiParams() url.Values 
 }
 // Confirm Setter
 // 参数
-func (r *AlibabaAlihealthBookingReserveConfirmRequest) SetConfirm(confirm *IsvReserveRequest) error {
-    r.confirm = confirm
-    r.Set("confirm", confirm)
+func (r *AlibabaAlihealthBookingReserveConfirmRequest) SetConfirm(_confirm *IsvReserveRequest) error {
+    r._confirm = _confirm
+    r.Set("confirm", _confirm)
     return nil
 }
 
 // Confirm Getter
 func (r AlibabaAlihealthBookingReserveConfirmRequest) GetConfirm() *IsvReserveRequest {
-    return r.confirm
+    return r._confirm
 }

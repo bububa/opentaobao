@@ -15,7 +15,7 @@ tmall.mallitemcenter.supplier.ability.update
 type TmallMallitemcenterSupplierAbilityUpdateRequest struct {
     model.Params
     // 入参
-    param0   *EnableServiceStoreRequestDto
+    _param0   *EnableServiceStoreRequestDto
 }
 
 // 初始化TmallMallitemcenterSupplierAbilityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TmallMallitemcenterSupplierAbilityUpdateRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 入参
-func (r *TmallMallitemcenterSupplierAbilityUpdateRequest) SetParam0(param0 *EnableServiceStoreRequestDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallMallitemcenterSupplierAbilityUpdateRequest) SetParam0(_param0 *EnableServiceStoreRequestDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallMallitemcenterSupplierAbilityUpdateRequest) GetParam0() *EnableServiceStoreRequestDto {
-    return r.param0
+    return r._param0
 }

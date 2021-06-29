@@ -15,7 +15,7 @@ tmall.item.vip.schema.add
 type TmallItemVipSchemaAddRequest struct {
     model.Params
     // 商品发布schema参数
-    schemaXmlFields   string
+    _schemaXmlFields   string
 }
 
 // 初始化TmallItemVipSchemaAddRequest对象
@@ -40,13 +40,13 @@ func (r TmallItemVipSchemaAddRequest) GetApiParams() url.Values {
 }
 // SchemaXmlFields Setter
 // 商品发布schema参数
-func (r *TmallItemVipSchemaAddRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *TmallItemVipSchemaAddRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r TmallItemVipSchemaAddRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }

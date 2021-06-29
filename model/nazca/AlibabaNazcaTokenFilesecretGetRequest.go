@@ -15,9 +15,9 @@ alibaba.nazca.token.filesecret.get
 type AlibabaNazcaTokenFilesecretGetRequest struct {
     model.Params
     // 客户在1688的唯一标识
-    platformUserId   string
+    _platformUserId   string
     // 合同编号
-    contractNum   string
+    _contractNum   string
 }
 
 // 初始化AlibabaNazcaTokenFilesecretGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaNazcaTokenFilesecretGetRequest) GetApiParams() url.Values {
 }
 // PlatformUserId Setter
 // 客户在1688的唯一标识
-func (r *AlibabaNazcaTokenFilesecretGetRequest) SetPlatformUserId(platformUserId string) error {
-    r.platformUserId = platformUserId
-    r.Set("platform_user_id", platformUserId)
+func (r *AlibabaNazcaTokenFilesecretGetRequest) SetPlatformUserId(_platformUserId string) error {
+    r._platformUserId = _platformUserId
+    r.Set("platform_user_id", _platformUserId)
     return nil
 }
 
 // PlatformUserId Getter
 func (r AlibabaNazcaTokenFilesecretGetRequest) GetPlatformUserId() string {
-    return r.platformUserId
+    return r._platformUserId
 }
 // ContractNum Setter
 // 合同编号
-func (r *AlibabaNazcaTokenFilesecretGetRequest) SetContractNum(contractNum string) error {
-    r.contractNum = contractNum
-    r.Set("contract_num", contractNum)
+func (r *AlibabaNazcaTokenFilesecretGetRequest) SetContractNum(_contractNum string) error {
+    r._contractNum = _contractNum
+    r.Set("contract_num", _contractNum)
     return nil
 }
 
 // ContractNum Getter
 func (r AlibabaNazcaTokenFilesecretGetRequest) GetContractNum() string {
-    return r.contractNum
+    return r._contractNum
 }

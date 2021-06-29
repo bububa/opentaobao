@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.accountflows.get
 type AlibabaAlscCrmRechargeAccountflowsGetRequest struct {
     model.Params
     // 入参
-    paramPageQueryAccountFlowsOpenReq   *PageQueryAccountFlowsOpenReq
+    _paramPageQueryAccountFlowsOpenReq   *PageQueryAccountFlowsOpenReq
 }
 
 // 初始化AlibabaAlscCrmRechargeAccountflowsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeAccountflowsGetRequest) GetApiParams() url.Values 
 }
 // ParamPageQueryAccountFlowsOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeAccountflowsGetRequest) SetParamPageQueryAccountFlowsOpenReq(paramPageQueryAccountFlowsOpenReq *PageQueryAccountFlowsOpenReq) error {
-    r.paramPageQueryAccountFlowsOpenReq = paramPageQueryAccountFlowsOpenReq
-    r.Set("param_page_query_account_flows_open_req", paramPageQueryAccountFlowsOpenReq)
+func (r *AlibabaAlscCrmRechargeAccountflowsGetRequest) SetParamPageQueryAccountFlowsOpenReq(_paramPageQueryAccountFlowsOpenReq *PageQueryAccountFlowsOpenReq) error {
+    r._paramPageQueryAccountFlowsOpenReq = _paramPageQueryAccountFlowsOpenReq
+    r.Set("param_page_query_account_flows_open_req", _paramPageQueryAccountFlowsOpenReq)
     return nil
 }
 
 // ParamPageQueryAccountFlowsOpenReq Getter
 func (r AlibabaAlscCrmRechargeAccountflowsGetRequest) GetParamPageQueryAccountFlowsOpenReq() *PageQueryAccountFlowsOpenReq {
-    return r.paramPageQueryAccountFlowsOpenReq
+    return r._paramPageQueryAccountFlowsOpenReq
 }

@@ -15,7 +15,7 @@ taobao.xhotel.bnbowner.add
 type TaobaoXhotelBnbownerAddRequest struct {
     model.Params
     // 添加房东信息的对象
-    addOwnerParam   *AddOwnerParam
+    _addOwnerParam   *AddOwnerParam
 }
 
 // 初始化TaobaoXhotelBnbownerAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelBnbownerAddRequest) GetApiParams() url.Values {
 }
 // AddOwnerParam Setter
 // 添加房东信息的对象
-func (r *TaobaoXhotelBnbownerAddRequest) SetAddOwnerParam(addOwnerParam *AddOwnerParam) error {
-    r.addOwnerParam = addOwnerParam
-    r.Set("add_owner_param", addOwnerParam)
+func (r *TaobaoXhotelBnbownerAddRequest) SetAddOwnerParam(_addOwnerParam *AddOwnerParam) error {
+    r._addOwnerParam = _addOwnerParam
+    r.Set("add_owner_param", _addOwnerParam)
     return nil
 }
 
 // AddOwnerParam Getter
 func (r TaobaoXhotelBnbownerAddRequest) GetAddOwnerParam() *AddOwnerParam {
-    return r.addOwnerParam
+    return r._addOwnerParam
 }

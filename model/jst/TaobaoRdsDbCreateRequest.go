@@ -15,11 +15,11 @@ taobao.rds.db.create
 type TaobaoRdsDbCreateRequest struct {
     model.Params
     // rds的实例名
-    instanceName   string
+    _instanceName   string
     // 数据库名
-    dbName   string
+    _dbName   string
     // 已存在账号名
-    accountName   string
+    _accountName   string
 }
 
 // 初始化TaobaoRdsDbCreateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoRdsDbCreateRequest) GetApiParams() url.Values {
 }
 // InstanceName Setter
 // rds的实例名
-func (r *TaobaoRdsDbCreateRequest) SetInstanceName(instanceName string) error {
-    r.instanceName = instanceName
-    r.Set("instance_name", instanceName)
+func (r *TaobaoRdsDbCreateRequest) SetInstanceName(_instanceName string) error {
+    r._instanceName = _instanceName
+    r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
 func (r TaobaoRdsDbCreateRequest) GetInstanceName() string {
-    return r.instanceName
+    return r._instanceName
 }
 // DbName Setter
 // 数据库名
-func (r *TaobaoRdsDbCreateRequest) SetDbName(dbName string) error {
-    r.dbName = dbName
-    r.Set("db_name", dbName)
+func (r *TaobaoRdsDbCreateRequest) SetDbName(_dbName string) error {
+    r._dbName = _dbName
+    r.Set("db_name", _dbName)
     return nil
 }
 
 // DbName Getter
 func (r TaobaoRdsDbCreateRequest) GetDbName() string {
-    return r.dbName
+    return r._dbName
 }
 // AccountName Setter
 // 已存在账号名
-func (r *TaobaoRdsDbCreateRequest) SetAccountName(accountName string) error {
-    r.accountName = accountName
-    r.Set("account_name", accountName)
+func (r *TaobaoRdsDbCreateRequest) SetAccountName(_accountName string) error {
+    r._accountName = _accountName
+    r.Set("account_name", _accountName)
     return nil
 }
 
 // AccountName Getter
 func (r TaobaoRdsDbCreateRequest) GetAccountName() string {
-    return r.accountName
+    return r._accountName
 }

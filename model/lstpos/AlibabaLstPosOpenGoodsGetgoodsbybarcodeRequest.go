@@ -15,7 +15,7 @@ ISV条码库查询接口
 type AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest struct {
     model.Params
     // 商品条码
-    barcode   string
+    _barcode   string
 }
 
 // 初始化AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetApiParams() url.Value
 }
 // Barcode Setter
 // 商品条码
-func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) SetBarcode(barcode string) error {
-    r.barcode = barcode
-    r.Set("barcode", barcode)
+func (r *AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) SetBarcode(_barcode string) error {
+    r._barcode = _barcode
+    r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbybarcodeRequest) GetBarcode() string {
-    return r.barcode
+    return r._barcode
 }

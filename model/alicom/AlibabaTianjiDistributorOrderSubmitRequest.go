@@ -15,11 +15,11 @@ alibaba.tianji.distributor.order.submit
 type AlibabaTianjiDistributorOrderSubmitRequest struct {
     model.Params
     // 商品编码，如手机串号
-    itemSerialNo   string
+    _itemSerialNo   string
     // 淘宝交易订单号
-    orderNo   string
+    _orderNo   string
     // 供应商产品编码，如SIM卡号
-    productSerialNo   string
+    _productSerialNo   string
 }
 
 // 初始化AlibabaTianjiDistributorOrderSubmitRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaTianjiDistributorOrderSubmitRequest) GetApiParams() url.Values {
 }
 // ItemSerialNo Setter
 // 商品编码，如手机串号
-func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetItemSerialNo(itemSerialNo string) error {
-    r.itemSerialNo = itemSerialNo
-    r.Set("item_serial_no", itemSerialNo)
+func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetItemSerialNo(_itemSerialNo string) error {
+    r._itemSerialNo = _itemSerialNo
+    r.Set("item_serial_no", _itemSerialNo)
     return nil
 }
 
 // ItemSerialNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitRequest) GetItemSerialNo() string {
-    return r.itemSerialNo
+    return r._itemSerialNo
 }
 // OrderNo Setter
 // 淘宝交易订单号
-func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // ProductSerialNo Setter
 // 供应商产品编码，如SIM卡号
-func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetProductSerialNo(productSerialNo string) error {
-    r.productSerialNo = productSerialNo
-    r.Set("product_serial_no", productSerialNo)
+func (r *AlibabaTianjiDistributorOrderSubmitRequest) SetProductSerialNo(_productSerialNo string) error {
+    r._productSerialNo = _productSerialNo
+    r.Set("product_serial_no", _productSerialNo)
     return nil
 }
 
 // ProductSerialNo Getter
 func (r AlibabaTianjiDistributorOrderSubmitRequest) GetProductSerialNo() string {
-    return r.productSerialNo
+    return r._productSerialNo
 }

@@ -15,9 +15,9 @@ tmall.popupstore.activity.query
 type TmallPopupstoreActivityQueryRequest struct {
     model.Params
     // 查询开始时间,yyyy-MM-dd
-    startDate   string
+    _startDate   string
     // 查询结束时间，yyyy-MM-dd
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TmallPopupstoreActivityQueryRequest对象
@@ -42,25 +42,25 @@ func (r TmallPopupstoreActivityQueryRequest) GetApiParams() url.Values {
 }
 // StartDate Setter
 // 查询开始时间,yyyy-MM-dd
-func (r *TmallPopupstoreActivityQueryRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TmallPopupstoreActivityQueryRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TmallPopupstoreActivityQueryRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 查询结束时间，yyyy-MM-dd
-func (r *TmallPopupstoreActivityQueryRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TmallPopupstoreActivityQueryRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TmallPopupstoreActivityQueryRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

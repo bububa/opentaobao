@@ -15,7 +15,7 @@ alibaba.alihealth.medical.item.status
 type AlibabaAlihealthMedicalItemStatusRequest struct {
     model.Params
     // 请求入参
-    shelfrequest   *ThirdAgencyUpDownShelfRequest
+    _shelfrequest   *ThirdAgencyUpDownShelfRequest
 }
 
 // 初始化AlibabaAlihealthMedicalItemStatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalItemStatusRequest) GetApiParams() url.Values {
 }
 // Shelfrequest Setter
 // 请求入参
-func (r *AlibabaAlihealthMedicalItemStatusRequest) SetShelfrequest(shelfrequest *ThirdAgencyUpDownShelfRequest) error {
-    r.shelfrequest = shelfrequest
-    r.Set("shelfrequest", shelfrequest)
+func (r *AlibabaAlihealthMedicalItemStatusRequest) SetShelfrequest(_shelfrequest *ThirdAgencyUpDownShelfRequest) error {
+    r._shelfrequest = _shelfrequest
+    r.Set("shelfrequest", _shelfrequest)
     return nil
 }
 
 // Shelfrequest Getter
 func (r AlibabaAlihealthMedicalItemStatusRequest) GetShelfrequest() *ThirdAgencyUpDownShelfRequest {
-    return r.shelfrequest
+    return r._shelfrequest
 }

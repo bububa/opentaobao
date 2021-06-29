@@ -15,9 +15,9 @@ slb.aliyuncs.com.DescribeBackendServers.2013-02-21
 type SlbAliyuncsComDescribeBackendServers2013_02_21Request struct {
     model.Params
     // loadBalancerId
-    loadBalancerId   string
+    _loadBalancerId   string
     // listenerPort
-    listenerPort   int64
+    _listenerPort   int64
 }
 
 // 初始化SlbAliyuncsComDescribeBackendServers2013_02_21Request对象
@@ -42,25 +42,25 @@ func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetApiParams() ur
 }
 // LoadBalancerId Setter
 // loadBalancerId
-func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetLoadBalancerId(loadBalancerId string) error {
-    r.loadBalancerId = loadBalancerId
-    r.Set("loadBalancerId", loadBalancerId)
+func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetLoadBalancerId(_loadBalancerId string) error {
+    r._loadBalancerId = _loadBalancerId
+    r.Set("loadBalancerId", _loadBalancerId)
     return nil
 }
 
 // LoadBalancerId Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetLoadBalancerId() string {
-    return r.loadBalancerId
+    return r._loadBalancerId
 }
 // ListenerPort Setter
 // listenerPort
-func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetListenerPort(listenerPort int64) error {
-    r.listenerPort = listenerPort
-    r.Set("listenerPort", listenerPort)
+func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetListenerPort(_listenerPort int64) error {
+    r._listenerPort = _listenerPort
+    r.Set("listenerPort", _listenerPort)
     return nil
 }
 
 // ListenerPort Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetListenerPort() int64 {
-    return r.listenerPort
+    return r._listenerPort
 }

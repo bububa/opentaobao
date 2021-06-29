@@ -15,7 +15,7 @@ alibaba.wdk.marketing.expire.promotion.delete
 type AlibabaWdkMarketingExpirePromotionDeleteRequest struct {
     model.Params
     // 删除短保优惠
-    param0   *ExpirePromotionBo
+    _param0   *ExpirePromotionBo
 }
 
 // 初始化AlibabaWdkMarketingExpirePromotionDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingExpirePromotionDeleteRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 删除短保优惠
-func (r *AlibabaWdkMarketingExpirePromotionDeleteRequest) SetParam0(param0 *ExpirePromotionBo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingExpirePromotionDeleteRequest) SetParam0(_param0 *ExpirePromotionBo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingExpirePromotionDeleteRequest) GetParam0() *ExpirePromotionBo {
-    return r.param0
+    return r._param0
 }

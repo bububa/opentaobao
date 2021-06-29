@@ -15,7 +15,7 @@ alitrip.receipt.seller.invoice.return
 type AlitripReceiptSellerInvoiceReturnRequest struct {
     model.Params
     // 入参对象
-    receiptDo   *ReceiptDo
+    _receiptDo   *ReceiptDo
 }
 
 // 初始化AlitripReceiptSellerInvoiceReturnRequest对象
@@ -40,13 +40,13 @@ func (r AlitripReceiptSellerInvoiceReturnRequest) GetApiParams() url.Values {
 }
 // ReceiptDo Setter
 // 入参对象
-func (r *AlitripReceiptSellerInvoiceReturnRequest) SetReceiptDo(receiptDo *ReceiptDo) error {
-    r.receiptDo = receiptDo
-    r.Set("receipt_do", receiptDo)
+func (r *AlitripReceiptSellerInvoiceReturnRequest) SetReceiptDo(_receiptDo *ReceiptDo) error {
+    r._receiptDo = _receiptDo
+    r.Set("receipt_do", _receiptDo)
     return nil
 }
 
 // ReceiptDo Getter
 func (r AlitripReceiptSellerInvoiceReturnRequest) GetReceiptDo() *ReceiptDo {
-    return r.receiptDo
+    return r._receiptDo
 }

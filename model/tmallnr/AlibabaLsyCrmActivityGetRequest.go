@@ -15,11 +15,11 @@ alibaba.lsy.crm.activity.get
 type AlibabaLsyCrmActivityGetRequest struct {
     model.Params
     // 活动id
-    activityId   int64
+    _activityId   int64
     // 导购员id
-    guiderId   int64
+    _guiderId   int64
     // 摊位id
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化AlibabaLsyCrmActivityGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLsyCrmActivityGetRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 活动id
-func (r *AlibabaLsyCrmActivityGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *AlibabaLsyCrmActivityGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r AlibabaLsyCrmActivityGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // GuiderId Setter
 // 导购员id
-func (r *AlibabaLsyCrmActivityGetRequest) SetGuiderId(guiderId int64) error {
-    r.guiderId = guiderId
-    r.Set("guider_id", guiderId)
+func (r *AlibabaLsyCrmActivityGetRequest) SetGuiderId(_guiderId int64) error {
+    r._guiderId = _guiderId
+    r.Set("guider_id", _guiderId)
     return nil
 }
 
 // GuiderId Getter
 func (r AlibabaLsyCrmActivityGetRequest) GetGuiderId() int64 {
-    return r.guiderId
+    return r._guiderId
 }
 // StoreId Setter
 // 摊位id
-func (r *AlibabaLsyCrmActivityGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaLsyCrmActivityGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaLsyCrmActivityGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

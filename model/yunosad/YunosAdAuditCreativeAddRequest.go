@@ -15,9 +15,9 @@ YunOS广告业务第三方DSP单个创意预审接口
 type YunosAdAuditCreativeAddRequest struct {
     model.Params
     // 外部dsp的id
-    memberId   int64
+    _memberId   int64
     // 创意审核入参
-    creative   *CreativeParamDto
+    _creative   *CreativeParamDto
 }
 
 // 初始化YunosAdAuditCreativeAddRequest对象
@@ -42,25 +42,25 @@ func (r YunosAdAuditCreativeAddRequest) GetApiParams() url.Values {
 }
 // MemberId Setter
 // 外部dsp的id
-func (r *YunosAdAuditCreativeAddRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *YunosAdAuditCreativeAddRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r YunosAdAuditCreativeAddRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Creative Setter
 // 创意审核入参
-func (r *YunosAdAuditCreativeAddRequest) SetCreative(creative *CreativeParamDto) error {
-    r.creative = creative
-    r.Set("creative", creative)
+func (r *YunosAdAuditCreativeAddRequest) SetCreative(_creative *CreativeParamDto) error {
+    r._creative = _creative
+    r.Set("creative", _creative)
     return nil
 }
 
 // Creative Getter
 func (r YunosAdAuditCreativeAddRequest) GetCreative() *CreativeParamDto {
-    return r.creative
+    return r._creative
 }

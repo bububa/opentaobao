@@ -15,7 +15,7 @@ alibaba.mos.delivery.send
 type AlibabaMosDeliverySendRequest struct {
     model.Params
     // 发货信息
-    deliveryDto   *DeliveryDto
+    _deliveryDto   *DeliveryDto
 }
 
 // 初始化AlibabaMosDeliverySendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosDeliverySendRequest) GetApiParams() url.Values {
 }
 // DeliveryDto Setter
 // 发货信息
-func (r *AlibabaMosDeliverySendRequest) SetDeliveryDto(deliveryDto *DeliveryDto) error {
-    r.deliveryDto = deliveryDto
-    r.Set("delivery_dto", deliveryDto)
+func (r *AlibabaMosDeliverySendRequest) SetDeliveryDto(_deliveryDto *DeliveryDto) error {
+    r._deliveryDto = _deliveryDto
+    r.Set("delivery_dto", _deliveryDto)
     return nil
 }
 
 // DeliveryDto Getter
 func (r AlibabaMosDeliverySendRequest) GetDeliveryDto() *DeliveryDto {
-    return r.deliveryDto
+    return r._deliveryDto
 }

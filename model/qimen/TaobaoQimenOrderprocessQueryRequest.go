@@ -15,7 +15,7 @@ ERP调用订单流水查询接口
 type TaobaoQimenOrderprocessQueryRequest struct {
     model.Params
     // 
-    request   *OrderProcessQueryRequest
+    _request   *OrderProcessQueryRequest
 }
 
 // 初始化TaobaoQimenOrderprocessQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderprocessQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderprocessQueryRequest) SetRequest(request *OrderProcessQueryRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderprocessQueryRequest) SetRequest(_request *OrderProcessQueryRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderprocessQueryRequest) GetRequest() *OrderProcessQueryRequest {
-    return r.request
+    return r._request
 }

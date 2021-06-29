@@ -15,11 +15,11 @@ alibaba.oversea.translate.get
 type AlibabaOverseaTranslateGetRequest struct {
     model.Params
     // 待翻译文本
-    text   string
+    _text   string
     // 源语种英文
-    sourceLang   string
+    _sourceLang   string
     // 目标语种中文
-    targetLang   string
+    _targetLang   string
 }
 
 // 初始化AlibabaOverseaTranslateGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaOverseaTranslateGetRequest) GetApiParams() url.Values {
 }
 // Text Setter
 // 待翻译文本
-func (r *AlibabaOverseaTranslateGetRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *AlibabaOverseaTranslateGetRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r AlibabaOverseaTranslateGetRequest) GetText() string {
-    return r.text
+    return r._text
 }
 // SourceLang Setter
 // 源语种英文
-func (r *AlibabaOverseaTranslateGetRequest) SetSourceLang(sourceLang string) error {
-    r.sourceLang = sourceLang
-    r.Set("source_lang", sourceLang)
+func (r *AlibabaOverseaTranslateGetRequest) SetSourceLang(_sourceLang string) error {
+    r._sourceLang = _sourceLang
+    r.Set("source_lang", _sourceLang)
     return nil
 }
 
 // SourceLang Getter
 func (r AlibabaOverseaTranslateGetRequest) GetSourceLang() string {
-    return r.sourceLang
+    return r._sourceLang
 }
 // TargetLang Setter
 // 目标语种中文
-func (r *AlibabaOverseaTranslateGetRequest) SetTargetLang(targetLang string) error {
-    r.targetLang = targetLang
-    r.Set("target_lang", targetLang)
+func (r *AlibabaOverseaTranslateGetRequest) SetTargetLang(_targetLang string) error {
+    r._targetLang = _targetLang
+    r.Set("target_lang", _targetLang)
     return nil
 }
 
 // TargetLang Getter
 func (r AlibabaOverseaTranslateGetRequest) GetTargetLang() string {
-    return r.targetLang
+    return r._targetLang
 }

@@ -15,7 +15,7 @@ taobao.ts.property.get
 type TaobaoTsPropertyGetRequest struct {
     model.Params
     // 服务收费项code
-    serviceItemCode   string
+    _serviceItemCode   string
 }
 
 // 初始化TaobaoTsPropertyGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTsPropertyGetRequest) GetApiParams() url.Values {
 }
 // ServiceItemCode Setter
 // 服务收费项code
-func (r *TaobaoTsPropertyGetRequest) SetServiceItemCode(serviceItemCode string) error {
-    r.serviceItemCode = serviceItemCode
-    r.Set("service_item_code", serviceItemCode)
+func (r *TaobaoTsPropertyGetRequest) SetServiceItemCode(_serviceItemCode string) error {
+    r._serviceItemCode = _serviceItemCode
+    r.Set("service_item_code", _serviceItemCode)
     return nil
 }
 
 // ServiceItemCode Getter
 func (r TaobaoTsPropertyGetRequest) GetServiceItemCode() string {
-    return r.serviceItemCode
+    return r._serviceItemCode
 }

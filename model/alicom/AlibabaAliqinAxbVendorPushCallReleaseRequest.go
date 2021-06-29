@@ -15,7 +15,7 @@ alibaba.aliqin.axb.vendor.push.call.release
 type AlibabaAliqinAxbVendorPushCallReleaseRequest struct {
     model.Params
     // end_call_request
-    endCallRequest   *EndCallRequest
+    _endCallRequest   *EndCallRequest
 }
 
 // 初始化AlibabaAliqinAxbVendorPushCallReleaseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinAxbVendorPushCallReleaseRequest) GetApiParams() url.Values 
 }
 // EndCallRequest Setter
 // end_call_request
-func (r *AlibabaAliqinAxbVendorPushCallReleaseRequest) SetEndCallRequest(endCallRequest *EndCallRequest) error {
-    r.endCallRequest = endCallRequest
-    r.Set("end_call_request", endCallRequest)
+func (r *AlibabaAliqinAxbVendorPushCallReleaseRequest) SetEndCallRequest(_endCallRequest *EndCallRequest) error {
+    r._endCallRequest = _endCallRequest
+    r.Set("end_call_request", _endCallRequest)
     return nil
 }
 
 // EndCallRequest Getter
 func (r AlibabaAliqinAxbVendorPushCallReleaseRequest) GetEndCallRequest() *EndCallRequest {
-    return r.endCallRequest
+    return r._endCallRequest
 }

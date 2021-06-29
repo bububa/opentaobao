@@ -15,21 +15,21 @@ taobao.xhotel.future.softmodify
 type TaobaoXhotelFutureSoftmodifyRequest struct {
     model.Params
     // 超时时长，默认3s
-    expireTime   int64
+    _expireTime   int64
     // 淘宝订单号
-    tid   int64
+    _tid   int64
     // 外部订单号
-    outOrderId   string
+    _outOrderId   string
     // 酒店code
-    hotelCode   string
+    _hotelCode   string
     // 酒店Id
-    hid   int64
+    _hid   int64
     // 请求报文
-    context   string
+    _context   string
     // 操作类型
-    operateType   string
+    _operateType   string
     // 请求唯一标识值
-    requestId   string
+    _requestId   string
 }
 
 // 初始化TaobaoXhotelFutureSoftmodifyRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoXhotelFutureSoftmodifyRequest) GetApiParams() url.Values {
 }
 // ExpireTime Setter
 // 超时时长，默认3s
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetExpireTime(expireTime int64) error {
-    r.expireTime = expireTime
-    r.Set("expire_time", expireTime)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetExpireTime(_expireTime int64) error {
+    r._expireTime = _expireTime
+    r.Set("expire_time", _expireTime)
     return nil
 }
 
 // ExpireTime Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetExpireTime() int64 {
-    return r.expireTime
+    return r._expireTime
 }
 // Tid Setter
 // 淘宝订单号
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // OutOrderId Setter
 // 外部订单号
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetOutOrderId(outOrderId string) error {
-    r.outOrderId = outOrderId
-    r.Set("out_order_id", outOrderId)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetOutOrderId(_outOrderId string) error {
+    r._outOrderId = _outOrderId
+    r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetOutOrderId() string {
-    return r.outOrderId
+    return r._outOrderId
 }
 // HotelCode Setter
 // 酒店code
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetHotelCode(hotelCode string) error {
-    r.hotelCode = hotelCode
-    r.Set("hotel_code", hotelCode)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetHotelCode(_hotelCode string) error {
+    r._hotelCode = _hotelCode
+    r.Set("hotel_code", _hotelCode)
     return nil
 }
 
 // HotelCode Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetHotelCode() string {
-    return r.hotelCode
+    return r._hotelCode
 }
 // Hid Setter
 // 酒店Id
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }
 // Context Setter
 // 请求报文
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetContext(context string) error {
-    r.context = context
-    r.Set("context", context)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetContext(_context string) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetContext() string {
-    return r.context
+    return r._context
 }
 // OperateType Setter
 // 操作类型
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetOperateType(operateType string) error {
-    r.operateType = operateType
-    r.Set("operate_type", operateType)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetOperateType(_operateType string) error {
+    r._operateType = _operateType
+    r.Set("operate_type", _operateType)
     return nil
 }
 
 // OperateType Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetOperateType() string {
-    return r.operateType
+    return r._operateType
 }
 // RequestId Setter
 // 请求唯一标识值
-func (r *TaobaoXhotelFutureSoftmodifyRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *TaobaoXhotelFutureSoftmodifyRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r TaobaoXhotelFutureSoftmodifyRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }

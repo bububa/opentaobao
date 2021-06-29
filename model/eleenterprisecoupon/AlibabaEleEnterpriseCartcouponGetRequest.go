@@ -15,9 +15,9 @@ alibaba.ele.enterprise.cartcoupon.get
 type AlibabaEleEnterpriseCartcouponGetRequest struct {
     model.Params
     // 手机号
-    phone   string
+    _phone   string
     // 购物车id
-    cartId   string
+    _cartId   string
 }
 
 // 初始化AlibabaEleEnterpriseCartcouponGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEleEnterpriseCartcouponGetRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 手机号
-func (r *AlibabaEleEnterpriseCartcouponGetRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseCartcouponGetRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseCartcouponGetRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // CartId Setter
 // 购物车id
-func (r *AlibabaEleEnterpriseCartcouponGetRequest) SetCartId(cartId string) error {
-    r.cartId = cartId
-    r.Set("cart_id", cartId)
+func (r *AlibabaEleEnterpriseCartcouponGetRequest) SetCartId(_cartId string) error {
+    r._cartId = _cartId
+    r.Set("cart_id", _cartId)
     return nil
 }
 
 // CartId Getter
 func (r AlibabaEleEnterpriseCartcouponGetRequest) GetCartId() string {
-    return r.cartId
+    return r._cartId
 }

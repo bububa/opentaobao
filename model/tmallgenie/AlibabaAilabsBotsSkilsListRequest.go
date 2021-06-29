@@ -15,9 +15,9 @@ alibaba.ailabs.bots.skils.list
 type AlibabaAilabsBotsSkilsListRequest struct {
     model.Params
     // 当前页
-    pageIndex   int64
+    _pageIndex   int64
     // 分页单位
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaAilabsBotsSkilsListRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsBotsSkilsListRequest) GetApiParams() url.Values {
 }
 // PageIndex Setter
 // 当前页
-func (r *AlibabaAilabsBotsSkilsListRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *AlibabaAilabsBotsSkilsListRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r AlibabaAilabsBotsSkilsListRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 分页单位
-func (r *AlibabaAilabsBotsSkilsListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAilabsBotsSkilsListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAilabsBotsSkilsListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

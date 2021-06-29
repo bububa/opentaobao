@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.batch.on.task.status.changed
 type AlibabaWdkFulfillBatchOnTaskStatusChangedRequest struct {
     model.Params
     // 作业状态回传对象
-    taskStatus   *TaskStatus
+    _taskStatus   *TaskStatus
 }
 
 // 初始化AlibabaWdkFulfillBatchOnTaskStatusChangedRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiParams() url.Val
 }
 // TaskStatus Setter
 // 作业状态回传对象
-func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) SetTaskStatus(taskStatus *TaskStatus) error {
-    r.taskStatus = taskStatus
-    r.Set("task_status", taskStatus)
+func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) SetTaskStatus(_taskStatus *TaskStatus) error {
+    r._taskStatus = _taskStatus
+    r.Set("task_status", _taskStatus)
     return nil
 }
 
 // TaskStatus Getter
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetTaskStatus() *TaskStatus {
-    return r.taskStatus
+    return r._taskStatus
 }

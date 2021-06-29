@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.sku.supplier.quote.upload
 type AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest struct {
     model.Params
     // 对象
-    netDemandRequest   *NetDemandRequest
+    _netDemandRequest   *NetDemandRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest) GetApiParams() ur
 }
 // NetDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest) SetNetDemandRequest(netDemandRequest *NetDemandRequest) error {
-    r.netDemandRequest = netDemandRequest
-    r.Set("net_demand_request", netDemandRequest)
+func (r *AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+    r._netDemandRequest = _netDemandRequest
+    r.Set("net_demand_request", _netDemandRequest)
     return nil
 }
 
 // NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanSkuSupplierQuoteUploadRequest) GetNetDemandRequest() *NetDemandRequest {
-    return r.netDemandRequest
+    return r._netDemandRequest
 }

@@ -15,11 +15,11 @@ alibaba.tuike.offer.get.pro
 type AlibabaTuikeOfferGetProRequest struct {
     model.Params
     // 用户ID
-    loginId   string
+    _loginId   string
     // 标识调用方
-    isvCode   string
+    _isvCode   string
     // 搜索查询参数(json)
-    queryString   string
+    _queryString   string
 }
 
 // 初始化AlibabaTuikeOfferGetProRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaTuikeOfferGetProRequest) GetApiParams() url.Values {
 }
 // LoginId Setter
 // 用户ID
-func (r *AlibabaTuikeOfferGetProRequest) SetLoginId(loginId string) error {
-    r.loginId = loginId
-    r.Set("login_id", loginId)
+func (r *AlibabaTuikeOfferGetProRequest) SetLoginId(_loginId string) error {
+    r._loginId = _loginId
+    r.Set("login_id", _loginId)
     return nil
 }
 
 // LoginId Getter
 func (r AlibabaTuikeOfferGetProRequest) GetLoginId() string {
-    return r.loginId
+    return r._loginId
 }
 // IsvCode Setter
 // 标识调用方
-func (r *AlibabaTuikeOfferGetProRequest) SetIsvCode(isvCode string) error {
-    r.isvCode = isvCode
-    r.Set("isv_code", isvCode)
+func (r *AlibabaTuikeOfferGetProRequest) SetIsvCode(_isvCode string) error {
+    r._isvCode = _isvCode
+    r.Set("isv_code", _isvCode)
     return nil
 }
 
 // IsvCode Getter
 func (r AlibabaTuikeOfferGetProRequest) GetIsvCode() string {
-    return r.isvCode
+    return r._isvCode
 }
 // QueryString Setter
 // 搜索查询参数(json)
-func (r *AlibabaTuikeOfferGetProRequest) SetQueryString(queryString string) error {
-    r.queryString = queryString
-    r.Set("query_string", queryString)
+func (r *AlibabaTuikeOfferGetProRequest) SetQueryString(_queryString string) error {
+    r._queryString = _queryString
+    r.Set("query_string", _queryString)
     return nil
 }
 
 // QueryString Getter
 func (r AlibabaTuikeOfferGetProRequest) GetQueryString() string {
-    return r.queryString
+    return r._queryString
 }

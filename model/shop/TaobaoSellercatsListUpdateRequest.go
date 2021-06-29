@@ -15,13 +15,13 @@ taobao.sellercats.list.update
 type TaobaoSellercatsListUpdateRequest struct {
     model.Params
     // 卖家自定义类目编号
-    cid   int64
+    _cid   int64
     // 卖家自定义类目名称。不超过20个字符
-    name   string
+    _name   string
     // 链接图片URL地址
-    pictUrl   string
+    _pictUrl   string
     // 该类目在页面上的排序位置,取值范围:大于零的整数
-    sortOrder   int64
+    _sortOrder   int64
 }
 
 // 初始化TaobaoSellercatsListUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSellercatsListUpdateRequest) GetApiParams() url.Values {
 }
 // Cid Setter
 // 卖家自定义类目编号
-func (r *TaobaoSellercatsListUpdateRequest) SetCid(cid int64) error {
-    r.cid = cid
-    r.Set("cid", cid)
+func (r *TaobaoSellercatsListUpdateRequest) SetCid(_cid int64) error {
+    r._cid = _cid
+    r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
 func (r TaobaoSellercatsListUpdateRequest) GetCid() int64 {
-    return r.cid
+    return r._cid
 }
 // Name Setter
 // 卖家自定义类目名称。不超过20个字符
-func (r *TaobaoSellercatsListUpdateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoSellercatsListUpdateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoSellercatsListUpdateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // PictUrl Setter
 // 链接图片URL地址
-func (r *TaobaoSellercatsListUpdateRequest) SetPictUrl(pictUrl string) error {
-    r.pictUrl = pictUrl
-    r.Set("pict_url", pictUrl)
+func (r *TaobaoSellercatsListUpdateRequest) SetPictUrl(_pictUrl string) error {
+    r._pictUrl = _pictUrl
+    r.Set("pict_url", _pictUrl)
     return nil
 }
 
 // PictUrl Getter
 func (r TaobaoSellercatsListUpdateRequest) GetPictUrl() string {
-    return r.pictUrl
+    return r._pictUrl
 }
 // SortOrder Setter
 // 该类目在页面上的排序位置,取值范围:大于零的整数
-func (r *TaobaoSellercatsListUpdateRequest) SetSortOrder(sortOrder int64) error {
-    r.sortOrder = sortOrder
-    r.Set("sort_order", sortOrder)
+func (r *TaobaoSellercatsListUpdateRequest) SetSortOrder(_sortOrder int64) error {
+    r._sortOrder = _sortOrder
+    r.Set("sort_order", _sortOrder)
     return nil
 }
 
 // SortOrder Getter
 func (r TaobaoSellercatsListUpdateRequest) GetSortOrder() int64 {
-    return r.sortOrder
+    return r._sortOrder
 }

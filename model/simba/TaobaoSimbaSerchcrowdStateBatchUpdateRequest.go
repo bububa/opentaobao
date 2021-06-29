@@ -15,13 +15,13 @@ taobao.simba.serchcrowd.state.batch.update
 type TaobaoSimbaSerchcrowdStateBatchUpdateRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 需要修改出价的人群包id,批量传入时用,分割
-    adgroupCrowdIds   []int64
+    _adgroupCrowdIds   []int64
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
     // 人群状态,0:暂停;1:启用
-    state   int64
+    _state   int64
 }
 
 // 初始化TaobaoSimbaSerchcrowdStateBatchUpdateRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaSerchcrowdStateBatchUpdateRequest) GetApiParams() url.Values 
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupCrowdIds Setter
 // 需要修改出价的人群包id,批量传入时用,分割
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetAdgroupCrowdIds(adgroupCrowdIds []int64) error {
-    r.adgroupCrowdIds = adgroupCrowdIds
-    r.Set("adgroup_crowd_ids", adgroupCrowdIds)
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
+    r._adgroupCrowdIds = _adgroupCrowdIds
+    r.Set("adgroup_crowd_ids", _adgroupCrowdIds)
     return nil
 }
 
 // AdgroupCrowdIds Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateRequest) GetAdgroupCrowdIds() []int64 {
-    return r.adgroupCrowdIds
+    return r._adgroupCrowdIds
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // State Setter
 // 人群状态,0:暂停;1:启用
-func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetState(state int64) error {
-    r.state = state
-    r.Set("state", state)
+func (r *TaobaoSimbaSerchcrowdStateBatchUpdateRequest) SetState(_state int64) error {
+    r._state = _state
+    r.Set("state", _state)
     return nil
 }
 
 // State Getter
 func (r TaobaoSimbaSerchcrowdStateBatchUpdateRequest) GetState() int64 {
-    return r.state
+    return r._state
 }

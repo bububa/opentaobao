@@ -15,21 +15,21 @@ ISV 将用户完成接种的疫苗同步给免疫规划中心
 type AlibabaHealthVaccinVaccinateCompleteRequest struct {
     model.Params
     // 支付宝用户 ID
-    alipayUserId   string
+    _alipayUserId   string
     // ISV 侧用户 ID
-    isvUserId   string
+    _isvUserId   string
     // 订单 ID
-    orderId   string
+    _orderId   string
     // 接种人姓名
-    name   string
+    _name   string
     // 联系电话
-    mobile   string
+    _mobile   string
     // 接种日期
-    vaccinateDate   string
+    _vaccinateDate   string
     // 接种时间
-    vaccinateTime   string
+    _vaccinateTime   string
     // 接种的疫苗信息
-    vaccineList   []VaccineInfo
+    _vaccineList   []VaccineInfo
 }
 
 // 初始化AlibabaHealthVaccinVaccinateCompleteRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetApiParams() url.Values {
 }
 // AlipayUserId Setter
 // 支付宝用户 ID
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetAlipayUserId(alipayUserId string) error {
-    r.alipayUserId = alipayUserId
-    r.Set("alipay_user_id", alipayUserId)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetAlipayUserId(_alipayUserId string) error {
+    r._alipayUserId = _alipayUserId
+    r.Set("alipay_user_id", _alipayUserId)
     return nil
 }
 
 // AlipayUserId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetAlipayUserId() string {
-    return r.alipayUserId
+    return r._alipayUserId
 }
 // IsvUserId Setter
 // ISV 侧用户 ID
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetIsvUserId(isvUserId string) error {
-    r.isvUserId = isvUserId
-    r.Set("isv_user_id", isvUserId)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetIsvUserId(_isvUserId string) error {
+    r._isvUserId = _isvUserId
+    r.Set("isv_user_id", _isvUserId)
     return nil
 }
 
 // IsvUserId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetIsvUserId() string {
-    return r.isvUserId
+    return r._isvUserId
 }
 // OrderId Setter
 // 订单 ID
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Name Setter
 // 接种人姓名
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Mobile Setter
 // 联系电话
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // VaccinateDate Setter
 // 接种日期
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccinateDate(vaccinateDate string) error {
-    r.vaccinateDate = vaccinateDate
-    r.Set("vaccinate_date", vaccinateDate)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccinateDate(_vaccinateDate string) error {
+    r._vaccinateDate = _vaccinateDate
+    r.Set("vaccinate_date", _vaccinateDate)
     return nil
 }
 
 // VaccinateDate Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetVaccinateDate() string {
-    return r.vaccinateDate
+    return r._vaccinateDate
 }
 // VaccinateTime Setter
 // 接种时间
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccinateTime(vaccinateTime string) error {
-    r.vaccinateTime = vaccinateTime
-    r.Set("vaccinate_time", vaccinateTime)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccinateTime(_vaccinateTime string) error {
+    r._vaccinateTime = _vaccinateTime
+    r.Set("vaccinate_time", _vaccinateTime)
     return nil
 }
 
 // VaccinateTime Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetVaccinateTime() string {
-    return r.vaccinateTime
+    return r._vaccinateTime
 }
 // VaccineList Setter
 // 接种的疫苗信息
-func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccineList(vaccineList []VaccineInfo) error {
-    r.vaccineList = vaccineList
-    r.Set("vaccine_list", vaccineList)
+func (r *AlibabaHealthVaccinVaccinateCompleteRequest) SetVaccineList(_vaccineList []VaccineInfo) error {
+    r._vaccineList = _vaccineList
+    r.Set("vaccine_list", _vaccineList)
     return nil
 }
 
 // VaccineList Getter
 func (r AlibabaHealthVaccinVaccinateCompleteRequest) GetVaccineList() []VaccineInfo {
-    return r.vaccineList
+    return r._vaccineList
 }

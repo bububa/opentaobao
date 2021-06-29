@@ -15,13 +15,13 @@ sso_token验证
 type AlibabaAlisportsPassportAccountSsotokenvalidateRequest struct {
     model.Params
     // sso_token
-    ssoToken   string
+    _ssoToken   string
     // 应用APPKEY
-    alispAppKey   string
+    _alispAppKey   string
     // 当前时间戳[精确到秒，10位]
-    alispTime   string
+    _alispTime   string
     // 签名
-    alispSign   string
+    _alispSign   string
 }
 
 // 初始化AlibabaAlisportsPassportAccountSsotokenvalidateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlisportsPassportAccountSsotokenvalidateRequest) GetApiParams() u
 }
 // SsoToken Setter
 // sso_token
-func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetSsoToken(ssoToken string) error {
-    r.ssoToken = ssoToken
-    r.Set("sso_token", ssoToken)
+func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetSsoToken(_ssoToken string) error {
+    r._ssoToken = _ssoToken
+    r.Set("sso_token", _ssoToken)
     return nil
 }
 
 // SsoToken Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateRequest) GetSsoToken() string {
-    return r.ssoToken
+    return r._ssoToken
 }
 // AlispAppKey Setter
 // 应用APPKEY
-func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispAppKey(alispAppKey string) error {
-    r.alispAppKey = alispAppKey
-    r.Set("alisp_app_key", alispAppKey)
+func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispAppKey(_alispAppKey string) error {
+    r._alispAppKey = _alispAppKey
+    r.Set("alisp_app_key", _alispAppKey)
     return nil
 }
 
 // AlispAppKey Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateRequest) GetAlispAppKey() string {
-    return r.alispAppKey
+    return r._alispAppKey
 }
 // AlispTime Setter
 // 当前时间戳[精确到秒，10位]
-func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispTime(alispTime string) error {
-    r.alispTime = alispTime
-    r.Set("alisp_time", alispTime)
+func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispTime(_alispTime string) error {
+    r._alispTime = _alispTime
+    r.Set("alisp_time", _alispTime)
     return nil
 }
 
 // AlispTime Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateRequest) GetAlispTime() string {
-    return r.alispTime
+    return r._alispTime
 }
 // AlispSign Setter
 // 签名
-func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispSign(alispSign string) error {
-    r.alispSign = alispSign
-    r.Set("alisp_sign", alispSign)
+func (r *AlibabaAlisportsPassportAccountSsotokenvalidateRequest) SetAlispSign(_alispSign string) error {
+    r._alispSign = _alispSign
+    r.Set("alisp_sign", _alispSign)
     return nil
 }
 
 // AlispSign Getter
 func (r AlibabaAlisportsPassportAccountSsotokenvalidateRequest) GetAlispSign() string {
-    return r.alispSign
+    return r._alispSign
 }

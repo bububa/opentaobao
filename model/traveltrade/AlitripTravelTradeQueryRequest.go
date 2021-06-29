@@ -15,7 +15,7 @@ alitrip.travel.trade.query
 type AlitripTravelTradeQueryRequest struct {
     model.Params
     // 主订单id
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化AlitripTravelTradeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelTradeQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 主订单id
-func (r *AlitripTravelTradeQueryRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlitripTravelTradeQueryRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlitripTravelTradeQueryRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

@@ -15,15 +15,15 @@ taobao.media.file.add
 type TaobaoMediaFileAddRequest struct {
     model.Params
     // 文件属于的那个目录的目录编号
-    dirId   int64
+    _dirId   int64
     // 上传文件的名称
-    name   string
+    _name   string
     // 额外信息
-    ext   int64
+    _ext   int64
     // 文件
-    fileData   []*model.File
+    _fileData   []*model.File
     // 接入多媒体平台的业务code每个应用有一个特有的业务code
-    bizCode   string
+    _bizCode   string
 }
 
 // 初始化TaobaoMediaFileAddRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoMediaFileAddRequest) GetApiParams() url.Values {
 }
 // DirId Setter
 // 文件属于的那个目录的目录编号
-func (r *TaobaoMediaFileAddRequest) SetDirId(dirId int64) error {
-    r.dirId = dirId
-    r.Set("dir_id", dirId)
+func (r *TaobaoMediaFileAddRequest) SetDirId(_dirId int64) error {
+    r._dirId = _dirId
+    r.Set("dir_id", _dirId)
     return nil
 }
 
 // DirId Getter
 func (r TaobaoMediaFileAddRequest) GetDirId() int64 {
-    return r.dirId
+    return r._dirId
 }
 // Name Setter
 // 上传文件的名称
-func (r *TaobaoMediaFileAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoMediaFileAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoMediaFileAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Ext Setter
 // 额外信息
-func (r *TaobaoMediaFileAddRequest) SetExt(ext int64) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoMediaFileAddRequest) SetExt(_ext int64) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoMediaFileAddRequest) GetExt() int64 {
-    return r.ext
+    return r._ext
 }
 // FileData Setter
 // 文件
-func (r *TaobaoMediaFileAddRequest) SetFileData(fileData []*model.File) error {
-    r.fileData = fileData
-    r.Set("file_data", fileData)
+func (r *TaobaoMediaFileAddRequest) SetFileData(_fileData []*model.File) error {
+    r._fileData = _fileData
+    r.Set("file_data", _fileData)
     return nil
 }
 
 // FileData Getter
 func (r TaobaoMediaFileAddRequest) GetFileData() []*model.File {
-    return r.fileData
+    return r._fileData
 }
 // BizCode Setter
 // 接入多媒体平台的业务code每个应用有一个特有的业务code
-func (r *TaobaoMediaFileAddRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *TaobaoMediaFileAddRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r TaobaoMediaFileAddRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }

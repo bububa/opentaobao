@@ -15,15 +15,15 @@ taobao.bus.historyorder.get
 type TaobaoBusHistoryorderGetRequest struct {
     model.Params
     // 开始时间 2017-04-23 13:33:43
-    fromDate   string
+    _fromDate   string
     // 分页大小 不超过1w
-    pageSize   int64
+    _pageSize   int64
     // 结束时间 2017-04-23 13:33:43
-    toDate   string
+    _toDate   string
     // offline_ticket 线下自助机； online_ticket：线上售票； 空 代表查全部
-    type   string
+    _type   string
     // 第几页 从1开始
-    pageIndex   int64
+    _pageIndex   int64
 }
 
 // 初始化TaobaoBusHistoryorderGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoBusHistoryorderGetRequest) GetApiParams() url.Values {
 }
 // FromDate Setter
 // 开始时间 2017-04-23 13:33:43
-func (r *TaobaoBusHistoryorderGetRequest) SetFromDate(fromDate string) error {
-    r.fromDate = fromDate
-    r.Set("from_date", fromDate)
+func (r *TaobaoBusHistoryorderGetRequest) SetFromDate(_fromDate string) error {
+    r._fromDate = _fromDate
+    r.Set("from_date", _fromDate)
     return nil
 }
 
 // FromDate Getter
 func (r TaobaoBusHistoryorderGetRequest) GetFromDate() string {
-    return r.fromDate
+    return r._fromDate
 }
 // PageSize Setter
 // 分页大小 不超过1w
-func (r *TaobaoBusHistoryorderGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoBusHistoryorderGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoBusHistoryorderGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ToDate Setter
 // 结束时间 2017-04-23 13:33:43
-func (r *TaobaoBusHistoryorderGetRequest) SetToDate(toDate string) error {
-    r.toDate = toDate
-    r.Set("to_date", toDate)
+func (r *TaobaoBusHistoryorderGetRequest) SetToDate(_toDate string) error {
+    r._toDate = _toDate
+    r.Set("to_date", _toDate)
     return nil
 }
 
 // ToDate Getter
 func (r TaobaoBusHistoryorderGetRequest) GetToDate() string {
-    return r.toDate
+    return r._toDate
 }
 // Type Setter
 // offline_ticket 线下自助机； online_ticket：线上售票； 空 代表查全部
-func (r *TaobaoBusHistoryorderGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoBusHistoryorderGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoBusHistoryorderGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // PageIndex Setter
 // 第几页 从1开始
-func (r *TaobaoBusHistoryorderGetRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoBusHistoryorderGetRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoBusHistoryorderGetRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }

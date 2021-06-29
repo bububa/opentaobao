@@ -15,7 +15,7 @@ taobao.baichuan.openaccount.password.reset
 type TaobaoBaichuanOpenaccountPasswordResetRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOpenaccountPasswordResetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetApiParams() url.Values
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountPasswordResetRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOpenaccountPasswordResetRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOpenaccountPasswordResetRequest) GetName() string {
-    return r.name
+    return r._name
 }

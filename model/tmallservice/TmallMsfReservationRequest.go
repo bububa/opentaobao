@@ -15,7 +15,7 @@ tmall.msf.reservation
 type TmallMsfReservationRequest struct {
     model.Params
     // 预约内容
-    reservInfo   *ReservationDTO
+    _reservInfo   *ReservationDTO
 }
 
 // 初始化TmallMsfReservationRequest对象
@@ -40,13 +40,13 @@ func (r TmallMsfReservationRequest) GetApiParams() url.Values {
 }
 // ReservInfo Setter
 // 预约内容
-func (r *TmallMsfReservationRequest) SetReservInfo(reservInfo *ReservationDTO) error {
-    r.reservInfo = reservInfo
-    r.Set("reserv_info", reservInfo)
+func (r *TmallMsfReservationRequest) SetReservInfo(_reservInfo *ReservationDTO) error {
+    r._reservInfo = _reservInfo
+    r.Set("reserv_info", _reservInfo)
     return nil
 }
 
 // ReservInfo Getter
 func (r TmallMsfReservationRequest) GetReservInfo() *ReservationDTO {
-    return r.reservInfo
+    return r._reservInfo
 }

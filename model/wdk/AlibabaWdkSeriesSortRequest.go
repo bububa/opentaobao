@@ -15,7 +15,7 @@ alibaba.wdk.series.sort
 type AlibabaWdkSeriesSortRequest struct {
     model.Params
     // 自定义排序请求
-    sort   *SeriesSortRequest
+    _sort   *SeriesSortRequest
 }
 
 // 初始化AlibabaWdkSeriesSortRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesSortRequest) GetApiParams() url.Values {
 }
 // Sort Setter
 // 自定义排序请求
-func (r *AlibabaWdkSeriesSortRequest) SetSort(sort *SeriesSortRequest) error {
-    r.sort = sort
-    r.Set("sort", sort)
+func (r *AlibabaWdkSeriesSortRequest) SetSort(_sort *SeriesSortRequest) error {
+    r._sort = _sort
+    r.Set("sort", _sort)
     return nil
 }
 
 // Sort Getter
 func (r AlibabaWdkSeriesSortRequest) GetSort() *SeriesSortRequest {
-    return r.sort
+    return r._sort
 }

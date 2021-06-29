@@ -15,7 +15,7 @@ alibaba.interact.windvane.call
 type AlibabaInteractWindvaneCallRequest struct {
     model.Params
     // 客户端鉴权使用，实际不会发送或接收数据
-    unNamed   string
+    _unNamed   string
 }
 
 // 初始化AlibabaInteractWindvaneCallRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractWindvaneCallRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 客户端鉴权使用，实际不会发送或接收数据
-func (r *AlibabaInteractWindvaneCallRequest) SetUnNamed(unNamed string) error {
-    r.unNamed = unNamed
-    r.Set("un_named", unNamed)
+func (r *AlibabaInteractWindvaneCallRequest) SetUnNamed(_unNamed string) error {
+    r._unNamed = _unNamed
+    r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
 func (r AlibabaInteractWindvaneCallRequest) GetUnNamed() string {
-    return r.unNamed
+    return r._unNamed
 }

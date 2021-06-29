@@ -15,7 +15,7 @@ taobao.wlb.imports.vas.identity.result
 type TaobaoWlbImportsVasIdentityResultRequest struct {
     model.Params
     // 物流订单编号
-    lgOrderCode   string
+    _lgOrderCode   string
 }
 
 // 初始化TaobaoWlbImportsVasIdentityResultRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbImportsVasIdentityResultRequest) GetApiParams() url.Values {
 }
 // LgOrderCode Setter
 // 物流订单编号
-func (r *TaobaoWlbImportsVasIdentityResultRequest) SetLgOrderCode(lgOrderCode string) error {
-    r.lgOrderCode = lgOrderCode
-    r.Set("lg_order_code", lgOrderCode)
+func (r *TaobaoWlbImportsVasIdentityResultRequest) SetLgOrderCode(_lgOrderCode string) error {
+    r._lgOrderCode = _lgOrderCode
+    r.Set("lg_order_code", _lgOrderCode)
     return nil
 }
 
 // LgOrderCode Getter
 func (r TaobaoWlbImportsVasIdentityResultRequest) GetLgOrderCode() string {
-    return r.lgOrderCode
+    return r._lgOrderCode
 }

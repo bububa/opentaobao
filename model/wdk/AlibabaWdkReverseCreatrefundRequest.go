@@ -15,7 +15,7 @@ alibaba.wdk.reverse.creatrefund
 type AlibabaWdkReverseCreatrefundRequest struct {
     model.Params
     // CreateReverseReq
-    paramCreateReverseReq   *CreateReverseReq
+    _paramCreateReverseReq   *CreateReverseReq
 }
 
 // 初始化AlibabaWdkReverseCreatrefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkReverseCreatrefundRequest) GetApiParams() url.Values {
 }
 // ParamCreateReverseReq Setter
 // CreateReverseReq
-func (r *AlibabaWdkReverseCreatrefundRequest) SetParamCreateReverseReq(paramCreateReverseReq *CreateReverseReq) error {
-    r.paramCreateReverseReq = paramCreateReverseReq
-    r.Set("param_create_reverse_req", paramCreateReverseReq)
+func (r *AlibabaWdkReverseCreatrefundRequest) SetParamCreateReverseReq(_paramCreateReverseReq *CreateReverseReq) error {
+    r._paramCreateReverseReq = _paramCreateReverseReq
+    r.Set("param_create_reverse_req", _paramCreateReverseReq)
     return nil
 }
 
 // ParamCreateReverseReq Getter
 func (r AlibabaWdkReverseCreatrefundRequest) GetParamCreateReverseReq() *CreateReverseReq {
-    return r.paramCreateReverseReq
+    return r._paramCreateReverseReq
 }

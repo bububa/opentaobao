@@ -15,7 +15,7 @@ deleteItem
 type AlibabaDamaiMevOpenDeleteitemRequest struct {
     model.Params
     // 入参deleteItemParam
-    deleteItemParam   *TicketItemIdOpenParam
+    _deleteItemParam   *TicketItemIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeleteitemRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteitemRequest) GetApiParams() url.Values {
 }
 // DeleteItemParam Setter
 // 入参deleteItemParam
-func (r *AlibabaDamaiMevOpenDeleteitemRequest) SetDeleteItemParam(deleteItemParam *TicketItemIdOpenParam) error {
-    r.deleteItemParam = deleteItemParam
-    r.Set("delete_item_param", deleteItemParam)
+func (r *AlibabaDamaiMevOpenDeleteitemRequest) SetDeleteItemParam(_deleteItemParam *TicketItemIdOpenParam) error {
+    r._deleteItemParam = _deleteItemParam
+    r.Set("delete_item_param", _deleteItemParam)
     return nil
 }
 
 // DeleteItemParam Getter
 func (r AlibabaDamaiMevOpenDeleteitemRequest) GetDeleteItemParam() *TicketItemIdOpenParam {
-    return r.deleteItemParam
+    return r._deleteItemParam
 }

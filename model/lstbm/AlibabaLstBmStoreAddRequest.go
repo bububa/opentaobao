@@ -15,7 +15,7 @@ alibaba.lst.bm.store.add
 type AlibabaLstBmStoreAddRequest struct {
     model.Params
     // 门店数据模型
-    openStoreDto   *LstTopOpenStoreDto
+    _openStoreDto   *LstTopOpenStoreDto
 }
 
 // 初始化AlibabaLstBmStoreAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstBmStoreAddRequest) GetApiParams() url.Values {
 }
 // OpenStoreDto Setter
 // 门店数据模型
-func (r *AlibabaLstBmStoreAddRequest) SetOpenStoreDto(openStoreDto *LstTopOpenStoreDto) error {
-    r.openStoreDto = openStoreDto
-    r.Set("open_store_dto", openStoreDto)
+func (r *AlibabaLstBmStoreAddRequest) SetOpenStoreDto(_openStoreDto *LstTopOpenStoreDto) error {
+    r._openStoreDto = _openStoreDto
+    r.Set("open_store_dto", _openStoreDto)
     return nil
 }
 
 // OpenStoreDto Getter
 func (r AlibabaLstBmStoreAddRequest) GetOpenStoreDto() *LstTopOpenStoreDto {
-    return r.openStoreDto
+    return r._openStoreDto
 }

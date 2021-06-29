@@ -17,9 +17,9 @@ HSF方法名称：insertActualUserLocationInfo
 type AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest struct {
     model.Params
     // 环境参数
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 查询参数
-    param1   *UserLocationInfo
+    _param1   *UserLocationInfo
 }
 
 // 初始化AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest
 }
 // Param0 Setter
 // 环境参数
-func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 查询参数
-func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam1(param1 *UserLocationInfo) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam1(_param1 *UserLocationInfo) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetParam1() *UserLocationInfo {
-    return r.param1
+    return r._param1
 }

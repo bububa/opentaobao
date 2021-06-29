@@ -15,7 +15,7 @@ alibaba.lsy.crm.customer.add
 type AlibabaLsyCrmCustomerAddRequest struct {
     model.Params
     // 入参对象
-    reqDto   *NrtCrmCreateCustomerReq
+    _reqDto   *NrtCrmCreateCustomerReq
 }
 
 // 初始化AlibabaLsyCrmCustomerAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmCustomerAddRequest) GetApiParams() url.Values {
 }
 // ReqDto Setter
 // 入参对象
-func (r *AlibabaLsyCrmCustomerAddRequest) SetReqDto(reqDto *NrtCrmCreateCustomerReq) error {
-    r.reqDto = reqDto
-    r.Set("req_dto", reqDto)
+func (r *AlibabaLsyCrmCustomerAddRequest) SetReqDto(_reqDto *NrtCrmCreateCustomerReq) error {
+    r._reqDto = _reqDto
+    r.Set("req_dto", _reqDto)
     return nil
 }
 
 // ReqDto Getter
 func (r AlibabaLsyCrmCustomerAddRequest) GetReqDto() *NrtCrmCreateCustomerReq {
-    return r.reqDto
+    return r._reqDto
 }

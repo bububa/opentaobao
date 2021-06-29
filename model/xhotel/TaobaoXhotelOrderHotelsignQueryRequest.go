@@ -15,15 +15,15 @@ taobao.xhotel.order.hotelsign.query
 type TaobaoXhotelOrderHotelsignQueryRequest struct {
     model.Params
     // 请求流水
-    outUuid   string
+    _outUuid   string
     // 商家酒店编码
-    hotelCode   string
+    _hotelCode   string
     // 商家vendor
-    vendor   string
+    _vendor   string
     // 1
-    type   string
+    _type   string
     // 页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoXhotelOrderHotelsignQueryRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoXhotelOrderHotelsignQueryRequest) GetApiParams() url.Values {
 }
 // OutUuid Setter
 // 请求流水
-func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetOutUuid(outUuid string) error {
-    r.outUuid = outUuid
-    r.Set("out_uuid", outUuid)
+func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetOutUuid(_outUuid string) error {
+    r._outUuid = _outUuid
+    r.Set("out_uuid", _outUuid)
     return nil
 }
 
 // OutUuid Getter
 func (r TaobaoXhotelOrderHotelsignQueryRequest) GetOutUuid() string {
-    return r.outUuid
+    return r._outUuid
 }
 // HotelCode Setter
 // 商家酒店编码
-func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetHotelCode(hotelCode string) error {
-    r.hotelCode = hotelCode
-    r.Set("hotel_code", hotelCode)
+func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetHotelCode(_hotelCode string) error {
+    r._hotelCode = _hotelCode
+    r.Set("hotel_code", _hotelCode)
     return nil
 }
 
 // HotelCode Getter
 func (r TaobaoXhotelOrderHotelsignQueryRequest) GetHotelCode() string {
-    return r.hotelCode
+    return r._hotelCode
 }
 // Vendor Setter
 // 商家vendor
-func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelOrderHotelsignQueryRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // Type Setter
 // 1
-func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoXhotelOrderHotelsignQueryRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoXhotelOrderHotelsignQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoXhotelOrderHotelsignQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

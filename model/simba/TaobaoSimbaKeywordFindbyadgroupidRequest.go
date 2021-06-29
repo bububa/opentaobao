@@ -15,7 +15,7 @@ taobao.simba.keyword.findbyadgroupid
 type TaobaoSimbaKeywordFindbyadgroupidRequest struct {
     model.Params
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSimbaKeywordFindbyadgroupidRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaKeywordFindbyadgroupidRequest) GetApiParams() url.Values {
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaKeywordFindbyadgroupidRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaKeywordFindbyadgroupidRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaKeywordFindbyadgroupidRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

@@ -15,9 +15,9 @@ yunos.osupdate.deviceservice.searchmodels
 type YunosOsupdateDeviceserviceSearchmodelsRequest struct {
     model.Params
     // 设备父ID
-    parentId   int64
+    _parentId   int64
     // 关键词
-    name   string
+    _name   string
 }
 
 // 初始化YunosOsupdateDeviceserviceSearchmodelsRequest对象
@@ -42,25 +42,25 @@ func (r YunosOsupdateDeviceserviceSearchmodelsRequest) GetApiParams() url.Values
 }
 // ParentId Setter
 // 设备父ID
-func (r *YunosOsupdateDeviceserviceSearchmodelsRequest) SetParentId(parentId int64) error {
-    r.parentId = parentId
-    r.Set("parent_id", parentId)
+func (r *YunosOsupdateDeviceserviceSearchmodelsRequest) SetParentId(_parentId int64) error {
+    r._parentId = _parentId
+    r.Set("parent_id", _parentId)
     return nil
 }
 
 // ParentId Getter
 func (r YunosOsupdateDeviceserviceSearchmodelsRequest) GetParentId() int64 {
-    return r.parentId
+    return r._parentId
 }
 // Name Setter
 // 关键词
-func (r *YunosOsupdateDeviceserviceSearchmodelsRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *YunosOsupdateDeviceserviceSearchmodelsRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r YunosOsupdateDeviceserviceSearchmodelsRequest) GetName() string {
-    return r.name
+    return r._name
 }

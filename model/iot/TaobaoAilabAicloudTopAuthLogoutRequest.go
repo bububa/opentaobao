@@ -15,11 +15,11 @@ taobao.ailab.aicloud.top.auth.logout
 type TaobaoAilabAicloudTopAuthLogoutRequest struct {
     model.Params
     // 用户ID，此处传入第三方账户体系的用户id
-    userId   string
+    _userId   string
     // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-    utdId   string
+    _utdId   string
     // 账户体系隔离，建议传入设备uuid
-    schema   string
+    _schema   string
 }
 
 // 初始化TaobaoAilabAicloudTopAuthLogoutRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAilabAicloudTopAuthLogoutRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
-func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopAuthLogoutRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopAuthLogoutRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // Schema Setter
 // 账户体系隔离，建议传入设备uuid
-func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopAuthLogoutRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopAuthLogoutRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }

@@ -15,11 +15,11 @@ alibaba.aliqin.fc.iot.qrycard
 type AlibabaAliqinFcIotQrycardRequest struct {
     model.Params
     // 外部计费来源
-    billSource   string
+    _billSource   string
     // 外部计费号
-    billReal   string
+    _billReal   string
     // ICCID
-    iccid   string
+    _iccid   string
 }
 
 // 初始化AlibabaAliqinFcIotQrycardRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAliqinFcIotQrycardRequest) GetApiParams() url.Values {
 }
 // BillSource Setter
 // 外部计费来源
-func (r *AlibabaAliqinFcIotQrycardRequest) SetBillSource(billSource string) error {
-    r.billSource = billSource
-    r.Set("bill_source", billSource)
+func (r *AlibabaAliqinFcIotQrycardRequest) SetBillSource(_billSource string) error {
+    r._billSource = _billSource
+    r.Set("bill_source", _billSource)
     return nil
 }
 
 // BillSource Getter
 func (r AlibabaAliqinFcIotQrycardRequest) GetBillSource() string {
-    return r.billSource
+    return r._billSource
 }
 // BillReal Setter
 // 外部计费号
-func (r *AlibabaAliqinFcIotQrycardRequest) SetBillReal(billReal string) error {
-    r.billReal = billReal
-    r.Set("bill_real", billReal)
+func (r *AlibabaAliqinFcIotQrycardRequest) SetBillReal(_billReal string) error {
+    r._billReal = _billReal
+    r.Set("bill_real", _billReal)
     return nil
 }
 
 // BillReal Getter
 func (r AlibabaAliqinFcIotQrycardRequest) GetBillReal() string {
-    return r.billReal
+    return r._billReal
 }
 // Iccid Setter
 // ICCID
-func (r *AlibabaAliqinFcIotQrycardRequest) SetIccid(iccid string) error {
-    r.iccid = iccid
-    r.Set("iccid", iccid)
+func (r *AlibabaAliqinFcIotQrycardRequest) SetIccid(_iccid string) error {
+    r._iccid = _iccid
+    r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
 func (r AlibabaAliqinFcIotQrycardRequest) GetIccid() string {
-    return r.iccid
+    return r._iccid
 }

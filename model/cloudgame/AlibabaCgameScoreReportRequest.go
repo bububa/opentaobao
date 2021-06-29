@@ -15,7 +15,7 @@ alibaba.cgame.score.report
 type AlibabaCgameScoreReportRequest struct {
     model.Params
     // 通用战绩回传数据
-    reportData   *CpCallbackReportDto
+    _reportData   *CpCallbackReportDto
 }
 
 // 初始化AlibabaCgameScoreReportRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCgameScoreReportRequest) GetApiParams() url.Values {
 }
 // ReportData Setter
 // 通用战绩回传数据
-func (r *AlibabaCgameScoreReportRequest) SetReportData(reportData *CpCallbackReportDto) error {
-    r.reportData = reportData
-    r.Set("report_data", reportData)
+func (r *AlibabaCgameScoreReportRequest) SetReportData(_reportData *CpCallbackReportDto) error {
+    r._reportData = _reportData
+    r.Set("report_data", _reportData)
     return nil
 }
 
 // ReportData Getter
 func (r AlibabaCgameScoreReportRequest) GetReportData() *CpCallbackReportDto {
-    return r.reportData
+    return r._reportData
 }

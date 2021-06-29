@@ -15,9 +15,9 @@ alibaba.aliqin.tcc.trade.identity.get
 type AlibabaAliqinTccTradeIdentityGetRequest struct {
     model.Params
     // 订单编号
-    bizOrderId   int64
+    _bizOrderId   int64
     // 店铺名称
-    sellerNick   string
+    _sellerNick   string
 }
 
 // 初始化AlibabaAliqinTccTradeIdentityGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliqinTccTradeIdentityGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单编号
-func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r AlibabaAliqinTccTradeIdentityGetRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // SellerNick Setter
 // 店铺名称
-func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetSellerNick(sellerNick string) error {
-    r.sellerNick = sellerNick
-    r.Set("seller_nick", sellerNick)
+func (r *AlibabaAliqinTccTradeIdentityGetRequest) SetSellerNick(_sellerNick string) error {
+    r._sellerNick = _sellerNick
+    r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
 func (r AlibabaAliqinTccTradeIdentityGetRequest) GetSellerNick() string {
-    return r.sellerNick
+    return r._sellerNick
 }

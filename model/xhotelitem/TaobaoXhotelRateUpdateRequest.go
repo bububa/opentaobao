@@ -15,21 +15,21 @@ taobao.xhotel.rate.update
 type TaobaoXhotelRateUpdateRequest struct {
     model.Params
     // 每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
-    inventoryPrice   string
+    _inventoryPrice   string
     // 商家价格计划编码
-    rateplanCode   string
+    _rateplanCode   string
     // 商家房型ID
-    outRid   string
+    _outRid   string
     // 系统商，一般不用填写，使用需要申请
-    vendor   string
+    _vendor   string
     // 日历价格开关， date：开关状态控制的是那一天 rate_status：开关状态。0，关闭；1，打开
-    rateSwitchCal   string
+    _rateSwitchCal   string
     // 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
-    lockEndTime   string
+    _lockEndTime   string
     // 锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
-    lockStartTime   string
+    _lockStartTime   string
     // 在线预约关联关系推送，priceRuleNumber：加价规则序号
-    onlineBookingBindingInfo   string
+    _onlineBookingBindingInfo   string
 }
 
 // 初始化TaobaoXhotelRateUpdateRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoXhotelRateUpdateRequest) GetApiParams() url.Values {
 }
 // InventoryPrice Setter
 // 每日价格和房价专有库存信息。A:use_room_inventory:是否使用room级别共享库存，可选值 true false 1、true时：使用room级别共享库存（即使用gid对应的XRoom中的inventory），rate_quota_map 的json 数据中不需要录入库存信息,录入的库存信息会忽略 2、false时：使用rate级别私有库存，此时要求价格和库存必填。B:date  日期必须为 T---T+180 日内的日期（T为当天），且不能重复C:price 价格 int类型 取值范围1-99999999 单位为分D:quota 库存 int 类型 取值范围  0-999（数量库存）  60000(状态库存关) 61000(状态库存开)
-func (r *TaobaoXhotelRateUpdateRequest) SetInventoryPrice(inventoryPrice string) error {
-    r.inventoryPrice = inventoryPrice
-    r.Set("inventory_price", inventoryPrice)
+func (r *TaobaoXhotelRateUpdateRequest) SetInventoryPrice(_inventoryPrice string) error {
+    r._inventoryPrice = _inventoryPrice
+    r.Set("inventory_price", _inventoryPrice)
     return nil
 }
 
 // InventoryPrice Getter
 func (r TaobaoXhotelRateUpdateRequest) GetInventoryPrice() string {
-    return r.inventoryPrice
+    return r._inventoryPrice
 }
 // RateplanCode Setter
 // 商家价格计划编码
-func (r *TaobaoXhotelRateUpdateRequest) SetRateplanCode(rateplanCode string) error {
-    r.rateplanCode = rateplanCode
-    r.Set("rateplan_code", rateplanCode)
+func (r *TaobaoXhotelRateUpdateRequest) SetRateplanCode(_rateplanCode string) error {
+    r._rateplanCode = _rateplanCode
+    r.Set("rateplan_code", _rateplanCode)
     return nil
 }
 
 // RateplanCode Getter
 func (r TaobaoXhotelRateUpdateRequest) GetRateplanCode() string {
-    return r.rateplanCode
+    return r._rateplanCode
 }
 // OutRid Setter
 // 商家房型ID
-func (r *TaobaoXhotelRateUpdateRequest) SetOutRid(outRid string) error {
-    r.outRid = outRid
-    r.Set("out_rid", outRid)
+func (r *TaobaoXhotelRateUpdateRequest) SetOutRid(_outRid string) error {
+    r._outRid = _outRid
+    r.Set("out_rid", _outRid)
     return nil
 }
 
 // OutRid Getter
 func (r TaobaoXhotelRateUpdateRequest) GetOutRid() string {
-    return r.outRid
+    return r._outRid
 }
 // Vendor Setter
 // 系统商，一般不用填写，使用需要申请
-func (r *TaobaoXhotelRateUpdateRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRateUpdateRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRateUpdateRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // RateSwitchCal Setter
 // 日历价格开关， date：开关状态控制的是那一天 rate_status：开关状态。0，关闭；1，打开
-func (r *TaobaoXhotelRateUpdateRequest) SetRateSwitchCal(rateSwitchCal string) error {
-    r.rateSwitchCal = rateSwitchCal
-    r.Set("rate_switch_cal", rateSwitchCal)
+func (r *TaobaoXhotelRateUpdateRequest) SetRateSwitchCal(_rateSwitchCal string) error {
+    r._rateSwitchCal = _rateSwitchCal
+    r.Set("rate_switch_cal", _rateSwitchCal)
     return nil
 }
 
 // RateSwitchCal Getter
 func (r TaobaoXhotelRateUpdateRequest) GetRateSwitchCal() string {
-    return r.rateSwitchCal
+    return r._rateSwitchCal
 }
 // LockEndTime Setter
 // 锁库存截止时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
-func (r *TaobaoXhotelRateUpdateRequest) SetLockEndTime(lockEndTime string) error {
-    r.lockEndTime = lockEndTime
-    r.Set("lock_end_time", lockEndTime)
+func (r *TaobaoXhotelRateUpdateRequest) SetLockEndTime(_lockEndTime string) error {
+    r._lockEndTime = _lockEndTime
+    r.Set("lock_end_time", _lockEndTime)
     return nil
 }
 
 // LockEndTime Getter
 func (r TaobaoXhotelRateUpdateRequest) GetLockEndTime() string {
-    return r.lockEndTime
+    return r._lockEndTime
 }
 // LockStartTime Setter
 // 锁库存开始时间，如果当前时间是在锁库存开始时间和截止时间之间，那么不允许修改该活动库存（包含开始时间和截止时间）
-func (r *TaobaoXhotelRateUpdateRequest) SetLockStartTime(lockStartTime string) error {
-    r.lockStartTime = lockStartTime
-    r.Set("lock_start_time", lockStartTime)
+func (r *TaobaoXhotelRateUpdateRequest) SetLockStartTime(_lockStartTime string) error {
+    r._lockStartTime = _lockStartTime
+    r.Set("lock_start_time", _lockStartTime)
     return nil
 }
 
 // LockStartTime Getter
 func (r TaobaoXhotelRateUpdateRequest) GetLockStartTime() string {
-    return r.lockStartTime
+    return r._lockStartTime
 }
 // OnlineBookingBindingInfo Setter
 // 在线预约关联关系推送，priceRuleNumber：加价规则序号
-func (r *TaobaoXhotelRateUpdateRequest) SetOnlineBookingBindingInfo(onlineBookingBindingInfo string) error {
-    r.onlineBookingBindingInfo = onlineBookingBindingInfo
-    r.Set("online_booking_binding_info", onlineBookingBindingInfo)
+func (r *TaobaoXhotelRateUpdateRequest) SetOnlineBookingBindingInfo(_onlineBookingBindingInfo string) error {
+    r._onlineBookingBindingInfo = _onlineBookingBindingInfo
+    r.Set("online_booking_binding_info", _onlineBookingBindingInfo)
     return nil
 }
 
 // OnlineBookingBindingInfo Getter
 func (r TaobaoXhotelRateUpdateRequest) GetOnlineBookingBindingInfo() string {
-    return r.onlineBookingBindingInfo
+    return r._onlineBookingBindingInfo
 }

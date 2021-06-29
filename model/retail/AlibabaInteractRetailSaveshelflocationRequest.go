@@ -15,17 +15,17 @@ alibaba.interact.retail.saveshelflocation
 type AlibabaInteractRetailSaveshelflocationRequest struct {
     model.Params
     // 门店code
-    storeCode   string
+    _storeCode   string
     // 货架编号
-    shelfNo   string
+    _shelfNo   string
     // 经度
-    lng   string
+    _lng   string
     // 纬度
-    lat   string
+    _lat   string
     // POI
-    poiId   string
+    _poiId   string
     // 地址
-    address   string
+    _address   string
 }
 
 // 初始化AlibabaInteractRetailSaveshelflocationRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaInteractRetailSaveshelflocationRequest) GetApiParams() url.Values
 }
 // StoreCode Setter
 // 门店code
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // ShelfNo Setter
 // 货架编号
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetShelfNo(shelfNo string) error {
-    r.shelfNo = shelfNo
-    r.Set("shelf_no", shelfNo)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetShelfNo(_shelfNo string) error {
+    r._shelfNo = _shelfNo
+    r.Set("shelf_no", _shelfNo)
     return nil
 }
 
 // ShelfNo Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetShelfNo() string {
-    return r.shelfNo
+    return r._shelfNo
 }
 // Lng Setter
 // 经度
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetLng(lng string) error {
-    r.lng = lng
-    r.Set("lng", lng)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetLng(_lng string) error {
+    r._lng = _lng
+    r.Set("lng", _lng)
     return nil
 }
 
 // Lng Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetLng() string {
-    return r.lng
+    return r._lng
 }
 // Lat Setter
 // 纬度
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetLat(lat string) error {
-    r.lat = lat
-    r.Set("lat", lat)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetLat(_lat string) error {
+    r._lat = _lat
+    r.Set("lat", _lat)
     return nil
 }
 
 // Lat Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetLat() string {
-    return r.lat
+    return r._lat
 }
 // PoiId Setter
 // POI
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetPoiId(poiId string) error {
-    r.poiId = poiId
-    r.Set("poi_id", poiId)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetPoiId(_poiId string) error {
+    r._poiId = _poiId
+    r.Set("poi_id", _poiId)
     return nil
 }
 
 // PoiId Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetPoiId() string {
-    return r.poiId
+    return r._poiId
 }
 // Address Setter
 // 地址
-func (r *AlibabaInteractRetailSaveshelflocationRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *AlibabaInteractRetailSaveshelflocationRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r AlibabaInteractRetailSaveshelflocationRequest) GetAddress() string {
-    return r.address
+    return r._address
 }

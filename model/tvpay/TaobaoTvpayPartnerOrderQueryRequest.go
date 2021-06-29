@@ -15,7 +15,7 @@ taobao.tvpay.partner.order.query
 type TaobaoTvpayPartnerOrderQueryRequest struct {
     model.Params
     // 商户订单号
-    orderNo   string
+    _orderNo   string
 }
 
 // 初始化TaobaoTvpayPartnerOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTvpayPartnerOrderQueryRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 商户订单号
-func (r *TaobaoTvpayPartnerOrderQueryRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *TaobaoTvpayPartnerOrderQueryRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r TaobaoTvpayPartnerOrderQueryRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }

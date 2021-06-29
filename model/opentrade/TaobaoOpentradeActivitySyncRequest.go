@@ -18,15 +18,15 @@ taobao.opentrade.activity.sync
 type TaobaoOpentradeActivitySyncRequest struct {
     model.Params
     // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
-    activityId   string
+    _activityId   string
     // 活动开始时间
-    startTime   string
+    _startTime   string
     // 活动结束时间（全流程结束时间，非排队结束时间）
-    endTime   string
+    _endTime   string
     // 活动名称
-    activityName   string
+    _activityName   string
     // 活动关联的商品列表，使用逗号(,)分割
-    itemIdList   []int64
+    _itemIdList   []int64
 }
 
 // 初始化TaobaoOpentradeActivitySyncRequest对象
@@ -51,61 +51,61 @@ func (r TaobaoOpentradeActivitySyncRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
-func (r *TaobaoOpentradeActivitySyncRequest) SetActivityId(activityId string) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoOpentradeActivitySyncRequest) SetActivityId(_activityId string) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoOpentradeActivitySyncRequest) GetActivityId() string {
-    return r.activityId
+    return r._activityId
 }
 // StartTime Setter
 // 活动开始时间
-func (r *TaobaoOpentradeActivitySyncRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoOpentradeActivitySyncRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoOpentradeActivitySyncRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动结束时间（全流程结束时间，非排队结束时间）
-func (r *TaobaoOpentradeActivitySyncRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoOpentradeActivitySyncRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoOpentradeActivitySyncRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // ActivityName Setter
 // 活动名称
-func (r *TaobaoOpentradeActivitySyncRequest) SetActivityName(activityName string) error {
-    r.activityName = activityName
-    r.Set("activity_name", activityName)
+func (r *TaobaoOpentradeActivitySyncRequest) SetActivityName(_activityName string) error {
+    r._activityName = _activityName
+    r.Set("activity_name", _activityName)
     return nil
 }
 
 // ActivityName Getter
 func (r TaobaoOpentradeActivitySyncRequest) GetActivityName() string {
-    return r.activityName
+    return r._activityName
 }
 // ItemIdList Setter
 // 活动关联的商品列表，使用逗号(,)分割
-func (r *TaobaoOpentradeActivitySyncRequest) SetItemIdList(itemIdList []int64) error {
-    r.itemIdList = itemIdList
-    r.Set("item_id_list", itemIdList)
+func (r *TaobaoOpentradeActivitySyncRequest) SetItemIdList(_itemIdList []int64) error {
+    r._itemIdList = _itemIdList
+    r.Set("item_id_list", _itemIdList)
     return nil
 }
 
 // ItemIdList Getter
 func (r TaobaoOpentradeActivitySyncRequest) GetItemIdList() []int64 {
-    return r.itemIdList
+    return r._itemIdList
 }

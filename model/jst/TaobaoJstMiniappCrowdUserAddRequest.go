@@ -15,11 +15,11 @@ taobao.jst.miniapp.crowd.user.add
 type TaobaoJstMiniappCrowdUserAddRequest struct {
     model.Params
     // 活动code
-    crowdCode   string
+    _crowdCode   string
     // 小程序id
-    mcGwSourceMiniAppId   string
+    _mcGwSourceMiniAppId   string
     // 小程序appkey
-    mcGwSourceAppKey   string
+    _mcGwSourceAppKey   string
 }
 
 // 初始化TaobaoJstMiniappCrowdUserAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoJstMiniappCrowdUserAddRequest) GetApiParams() url.Values {
 }
 // CrowdCode Setter
 // 活动code
-func (r *TaobaoJstMiniappCrowdUserAddRequest) SetCrowdCode(crowdCode string) error {
-    r.crowdCode = crowdCode
-    r.Set("crowd_code", crowdCode)
+func (r *TaobaoJstMiniappCrowdUserAddRequest) SetCrowdCode(_crowdCode string) error {
+    r._crowdCode = _crowdCode
+    r.Set("crowd_code", _crowdCode)
     return nil
 }
 
 // CrowdCode Getter
 func (r TaobaoJstMiniappCrowdUserAddRequest) GetCrowdCode() string {
-    return r.crowdCode
+    return r._crowdCode
 }
 // McGwSourceMiniAppId Setter
 // 小程序id
-func (r *TaobaoJstMiniappCrowdUserAddRequest) SetMcGwSourceMiniAppId(mcGwSourceMiniAppId string) error {
-    r.mcGwSourceMiniAppId = mcGwSourceMiniAppId
-    r.Set("mc_gw_source_mini_app_id", mcGwSourceMiniAppId)
+func (r *TaobaoJstMiniappCrowdUserAddRequest) SetMcGwSourceMiniAppId(_mcGwSourceMiniAppId string) error {
+    r._mcGwSourceMiniAppId = _mcGwSourceMiniAppId
+    r.Set("mc_gw_source_mini_app_id", _mcGwSourceMiniAppId)
     return nil
 }
 
 // McGwSourceMiniAppId Getter
 func (r TaobaoJstMiniappCrowdUserAddRequest) GetMcGwSourceMiniAppId() string {
-    return r.mcGwSourceMiniAppId
+    return r._mcGwSourceMiniAppId
 }
 // McGwSourceAppKey Setter
 // 小程序appkey
-func (r *TaobaoJstMiniappCrowdUserAddRequest) SetMcGwSourceAppKey(mcGwSourceAppKey string) error {
-    r.mcGwSourceAppKey = mcGwSourceAppKey
-    r.Set("mc_gw_source_app_key", mcGwSourceAppKey)
+func (r *TaobaoJstMiniappCrowdUserAddRequest) SetMcGwSourceAppKey(_mcGwSourceAppKey string) error {
+    r._mcGwSourceAppKey = _mcGwSourceAppKey
+    r.Set("mc_gw_source_app_key", _mcGwSourceAppKey)
     return nil
 }
 
 // McGwSourceAppKey Getter
 func (r TaobaoJstMiniappCrowdUserAddRequest) GetMcGwSourceAppKey() string {
-    return r.mcGwSourceAppKey
+    return r._mcGwSourceAppKey
 }

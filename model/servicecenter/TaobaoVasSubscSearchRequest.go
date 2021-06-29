@@ -15,25 +15,25 @@ taobao.vas.subsc.search
 type TaobaoVasSubscSearchRequest struct {
     model.Params
     // 一页包含的记录数
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码
-    articleCode   string
+    _articleCode   string
     // 收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码
-    itemCode   string
+    _itemCode   string
     // 到期时间起始值（当start_deadline和end_deadline都不填写时，默认返回最近90天的数据）
-    startDeadline   string
+    _startDeadline   string
     // 到期时间结束值
-    endDeadline   string
+    _endDeadline   string
     // 订购记录状态，1=有效 2=过期 空=全部
-    status   int64
+    _status   int64
     // 是否自动续费，true=自动续费 false=非自动续费 空=全部
-    autosub   bool
+    _autosub   bool
     // 是否到期提醒，true=到期提醒 false=非到期提醒 空=全部
-    expireNotice   bool
+    _expireNotice   bool
     // 淘宝会员名
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoVasSubscSearchRequest对象
@@ -58,121 +58,121 @@ func (r TaobaoVasSubscSearchRequest) GetApiParams() url.Values {
 }
 // PageSize Setter
 // 一页包含的记录数
-func (r *TaobaoVasSubscSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoVasSubscSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoVasSubscSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoVasSubscSearchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoVasSubscSearchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoVasSubscSearchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // ArticleCode Setter
 // 应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码
-func (r *TaobaoVasSubscSearchRequest) SetArticleCode(articleCode string) error {
-    r.articleCode = articleCode
-    r.Set("article_code", articleCode)
+func (r *TaobaoVasSubscSearchRequest) SetArticleCode(_articleCode string) error {
+    r._articleCode = _articleCode
+    r.Set("article_code", _articleCode)
     return nil
 }
 
 // ArticleCode Getter
 func (r TaobaoVasSubscSearchRequest) GetArticleCode() string {
-    return r.articleCode
+    return r._articleCode
 }
 // ItemCode Setter
 // 收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码
-func (r *TaobaoVasSubscSearchRequest) SetItemCode(itemCode string) error {
-    r.itemCode = itemCode
-    r.Set("item_code", itemCode)
+func (r *TaobaoVasSubscSearchRequest) SetItemCode(_itemCode string) error {
+    r._itemCode = _itemCode
+    r.Set("item_code", _itemCode)
     return nil
 }
 
 // ItemCode Getter
 func (r TaobaoVasSubscSearchRequest) GetItemCode() string {
-    return r.itemCode
+    return r._itemCode
 }
 // StartDeadline Setter
 // 到期时间起始值（当start_deadline和end_deadline都不填写时，默认返回最近90天的数据）
-func (r *TaobaoVasSubscSearchRequest) SetStartDeadline(startDeadline string) error {
-    r.startDeadline = startDeadline
-    r.Set("start_deadline", startDeadline)
+func (r *TaobaoVasSubscSearchRequest) SetStartDeadline(_startDeadline string) error {
+    r._startDeadline = _startDeadline
+    r.Set("start_deadline", _startDeadline)
     return nil
 }
 
 // StartDeadline Getter
 func (r TaobaoVasSubscSearchRequest) GetStartDeadline() string {
-    return r.startDeadline
+    return r._startDeadline
 }
 // EndDeadline Setter
 // 到期时间结束值
-func (r *TaobaoVasSubscSearchRequest) SetEndDeadline(endDeadline string) error {
-    r.endDeadline = endDeadline
-    r.Set("end_deadline", endDeadline)
+func (r *TaobaoVasSubscSearchRequest) SetEndDeadline(_endDeadline string) error {
+    r._endDeadline = _endDeadline
+    r.Set("end_deadline", _endDeadline)
     return nil
 }
 
 // EndDeadline Getter
 func (r TaobaoVasSubscSearchRequest) GetEndDeadline() string {
-    return r.endDeadline
+    return r._endDeadline
 }
 // Status Setter
 // 订购记录状态，1=有效 2=过期 空=全部
-func (r *TaobaoVasSubscSearchRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoVasSubscSearchRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoVasSubscSearchRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // Autosub Setter
 // 是否自动续费，true=自动续费 false=非自动续费 空=全部
-func (r *TaobaoVasSubscSearchRequest) SetAutosub(autosub bool) error {
-    r.autosub = autosub
-    r.Set("autosub", autosub)
+func (r *TaobaoVasSubscSearchRequest) SetAutosub(_autosub bool) error {
+    r._autosub = _autosub
+    r.Set("autosub", _autosub)
     return nil
 }
 
 // Autosub Getter
 func (r TaobaoVasSubscSearchRequest) GetAutosub() bool {
-    return r.autosub
+    return r._autosub
 }
 // ExpireNotice Setter
 // 是否到期提醒，true=到期提醒 false=非到期提醒 空=全部
-func (r *TaobaoVasSubscSearchRequest) SetExpireNotice(expireNotice bool) error {
-    r.expireNotice = expireNotice
-    r.Set("expire_notice", expireNotice)
+func (r *TaobaoVasSubscSearchRequest) SetExpireNotice(_expireNotice bool) error {
+    r._expireNotice = _expireNotice
+    r.Set("expire_notice", _expireNotice)
     return nil
 }
 
 // ExpireNotice Getter
 func (r TaobaoVasSubscSearchRequest) GetExpireNotice() bool {
-    return r.expireNotice
+    return r._expireNotice
 }
 // Nick Setter
 // 淘宝会员名
-func (r *TaobaoVasSubscSearchRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoVasSubscSearchRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoVasSubscSearchRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

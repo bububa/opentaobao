@@ -15,7 +15,7 @@ alitrip.btrip.corpop.depart.sync
 type AlitripBtripCorpopDepartSyncRequest struct {
     model.Params
     // 同步部门请求
-    rq   *BtripDepartSyncRq
+    _rq   *BtripDepartSyncRq
 }
 
 // 初始化AlitripBtripCorpopDepartSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripCorpopDepartSyncRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 同步部门请求
-func (r *AlitripBtripCorpopDepartSyncRequest) SetRq(rq *BtripDepartSyncRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripCorpopDepartSyncRequest) SetRq(_rq *BtripDepartSyncRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripCorpopDepartSyncRequest) GetRq() *BtripDepartSyncRq {
-    return r.rq
+    return r._rq
 }

@@ -15,7 +15,7 @@ taobao.jushita.jms.topics.get
 type TaobaoJushitaJmsTopicsGetRequest struct {
     model.Params
     // 卖家nick
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoJushitaJmsTopicsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJushitaJmsTopicsGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 卖家nick
-func (r *TaobaoJushitaJmsTopicsGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoJushitaJmsTopicsGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoJushitaJmsTopicsGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

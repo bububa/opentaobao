@@ -15,9 +15,9 @@ alibaba.campus.device.openapi.gethistorydata
 type AlibabaCampusDeviceOpenapiGethistorydataRequest struct {
     model.Params
     // 请求端信息
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // 历史数据查询对象
-    query   *DeviceDataApiQuery
+    _query   *DeviceDataApiQuery
 }
 
 // 初始化AlibabaCampusDeviceOpenapiGethistorydataRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusDeviceOpenapiGethistorydataRequest) GetApiParams() url.Valu
 }
 // WorkBenchContext Setter
 // 请求端信息
-func (r *AlibabaCampusDeviceOpenapiGethistorydataRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceOpenapiGethistorydataRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiGethistorydataRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // Query Setter
 // 历史数据查询对象
-func (r *AlibabaCampusDeviceOpenapiGethistorydataRequest) SetQuery(query *DeviceDataApiQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusDeviceOpenapiGethistorydataRequest) SetQuery(_query *DeviceDataApiQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusDeviceOpenapiGethistorydataRequest) GetQuery() *DeviceDataApiQuery {
-    return r.query
+    return r._query
 }

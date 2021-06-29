@@ -15,7 +15,7 @@ B2B业务支持退票
 type TaobaoBusRefundSetRequest struct {
     model.Params
     // 入参
-    param0   *B2BRefundOrderRq
+    _param0   *B2BRefundOrderRq
 }
 
 // 初始化TaobaoBusRefundSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusRefundSetRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TaobaoBusRefundSetRequest) SetParam0(param0 *B2BRefundOrderRq) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoBusRefundSetRequest) SetParam0(_param0 *B2BRefundOrderRq) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoBusRefundSetRequest) GetParam0() *B2BRefundOrderRq {
-    return r.param0
+    return r._param0
 }

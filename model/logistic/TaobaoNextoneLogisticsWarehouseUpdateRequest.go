@@ -15,9 +15,9 @@ taobao.nextone.logistics.warehouse.update
 type TaobaoNextoneLogisticsWarehouseUpdateRequest struct {
     model.Params
     // 退款编号
-    refundId   int64
+    _refundId   int64
     // 退货入仓状态 1.已入仓
-    warehouseStatus   int64
+    _warehouseStatus   int64
 }
 
 // 初始化TaobaoNextoneLogisticsWarehouseUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetApiParams() url.Values 
 }
 // RefundId Setter
 // 退款编号
-func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // WarehouseStatus Setter
 // 退货入仓状态 1.已入仓
-func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetWarehouseStatus(warehouseStatus int64) error {
-    r.warehouseStatus = warehouseStatus
-    r.Set("warehouse_status", warehouseStatus)
+func (r *TaobaoNextoneLogisticsWarehouseUpdateRequest) SetWarehouseStatus(_warehouseStatus int64) error {
+    r._warehouseStatus = _warehouseStatus
+    r.Set("warehouse_status", _warehouseStatus)
     return nil
 }
 
 // WarehouseStatus Getter
 func (r TaobaoNextoneLogisticsWarehouseUpdateRequest) GetWarehouseStatus() int64 {
-    return r.warehouseStatus
+    return r._warehouseStatus
 }

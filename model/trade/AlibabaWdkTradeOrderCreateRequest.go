@@ -15,7 +15,7 @@ alibaba.wdk.trade.order.create
 type AlibabaWdkTradeOrderCreateRequest struct {
     model.Params
     // 待创建的订单
-    trade   *TradeOrder
+    _trade   *TradeOrder
 }
 
 // 初始化AlibabaWdkTradeOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeOrderCreateRequest) GetApiParams() url.Values {
 }
 // Trade Setter
 // 待创建的订单
-func (r *AlibabaWdkTradeOrderCreateRequest) SetTrade(trade *TradeOrder) error {
-    r.trade = trade
-    r.Set("trade", trade)
+func (r *AlibabaWdkTradeOrderCreateRequest) SetTrade(_trade *TradeOrder) error {
+    r._trade = _trade
+    r.Set("trade", _trade)
     return nil
 }
 
 // Trade Getter
 func (r AlibabaWdkTradeOrderCreateRequest) GetTrade() *TradeOrder {
-    return r.trade
+    return r._trade
 }

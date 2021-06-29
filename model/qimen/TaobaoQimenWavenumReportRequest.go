@@ -15,7 +15,7 @@ WMS调用奇门的接口,该接口用来给ERP或者OMS回传波次号及对应�
 type TaobaoQimenWavenumReportRequest struct {
     model.Params
     // 
-    request   *WaveNumReportRequest
+    _request   *WaveNumReportRequest
 }
 
 // 初始化TaobaoQimenWavenumReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenWavenumReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenWavenumReportRequest) SetRequest(request *WaveNumReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenWavenumReportRequest) SetRequest(_request *WaveNumReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenWavenumReportRequest) GetRequest() *WaveNumReportRequest {
-    return r.request
+    return r._request
 }

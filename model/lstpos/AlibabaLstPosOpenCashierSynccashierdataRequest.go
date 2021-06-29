@@ -15,9 +15,9 @@ alibaba.lst.pos.open.cashier.synccashierdata
 type AlibabaLstPosOpenCashierSynccashierdataRequest struct {
     model.Params
     // 订单对象列表
-    cashierFlowDTOList   []CashierFlowDto
+    _cashierFlowDTOList   []CashierFlowDto
     // 门店对应的主账号id
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaLstPosOpenCashierSynccashierdataRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetApiParams() url.Value
 }
 // CashierFlowDTOList Setter
 // 订单对象列表
-func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetCashierFlowDTOList(cashierFlowDTOList []CashierFlowDto) error {
-    r.cashierFlowDTOList = cashierFlowDTOList
-    r.Set("cashier_flow_d_t_o_list", cashierFlowDTOList)
+func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetCashierFlowDTOList(_cashierFlowDTOList []CashierFlowDto) error {
+    r._cashierFlowDTOList = _cashierFlowDTOList
+    r.Set("cashier_flow_d_t_o_list", _cashierFlowDTOList)
     return nil
 }
 
 // CashierFlowDTOList Getter
 func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetCashierFlowDTOList() []CashierFlowDto {
-    return r.cashierFlowDTOList
+    return r._cashierFlowDTOList
 }
 // UserId Setter
 // 门店对应的主账号id
-func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

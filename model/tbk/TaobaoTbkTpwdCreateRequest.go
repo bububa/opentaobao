@@ -15,15 +15,15 @@ taobao.tbk.tpwd.create
 type TaobaoTbkTpwdCreateRequest struct {
     model.Params
     // 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
-    url   string
+    _url   string
     // 兼容旧版本api参数，无实际作用
-    text   string
+    _text   string
     // 兼容旧版本api参数，无实际作用
-    logo   string
+    _logo   string
     // 兼容旧版本api参数，无实际作用
-    ext   string
+    _ext   string
     // 兼容旧版本api参数，无实际作用
-    userId   string
+    _userId   string
 }
 
 // 初始化TaobaoTbkTpwdCreateRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoTbkTpwdCreateRequest) GetApiParams() url.Values {
 }
 // Url Setter
 // 联盟官方渠道获取的淘客推广链接，请注意，不要随意篡改官方生成的链接，否则可能无法生成淘口令
-func (r *TaobaoTbkTpwdCreateRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TaobaoTbkTpwdCreateRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TaobaoTbkTpwdCreateRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // Text Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateRequest) SetText(text string) error {
-    r.text = text
-    r.Set("text", text)
+func (r *TaobaoTbkTpwdCreateRequest) SetText(_text string) error {
+    r._text = _text
+    r.Set("text", _text)
     return nil
 }
 
 // Text Getter
 func (r TaobaoTbkTpwdCreateRequest) GetText() string {
-    return r.text
+    return r._text
 }
 // Logo Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateRequest) SetLogo(logo string) error {
-    r.logo = logo
-    r.Set("logo", logo)
+func (r *TaobaoTbkTpwdCreateRequest) SetLogo(_logo string) error {
+    r._logo = _logo
+    r.Set("logo", _logo)
     return nil
 }
 
 // Logo Getter
 func (r TaobaoTbkTpwdCreateRequest) GetLogo() string {
-    return r.logo
+    return r._logo
 }
 // Ext Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoTbkTpwdCreateRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoTbkTpwdCreateRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // UserId Setter
 // 兼容旧版本api参数，无实际作用
-func (r *TaobaoTbkTpwdCreateRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoTbkTpwdCreateRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoTbkTpwdCreateRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }

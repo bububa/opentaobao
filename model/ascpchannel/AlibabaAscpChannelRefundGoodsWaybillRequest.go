@@ -15,7 +15,7 @@ alibaba.ascp.channel.refund.goods.waybill
 type AlibabaAscpChannelRefundGoodsWaybillRequest struct {
     model.Params
     // 请求
-    refundWayBillReq   *ExternalRefundGoodsWaybillRequest
+    _refundWayBillReq   *ExternalRefundGoodsWaybillRequest
 }
 
 // 初始化AlibabaAscpChannelRefundGoodsWaybillRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiParams() url.Values {
 }
 // RefundWayBillReq Setter
 // 请求
-func (r *AlibabaAscpChannelRefundGoodsWaybillRequest) SetRefundWayBillReq(refundWayBillReq *ExternalRefundGoodsWaybillRequest) error {
-    r.refundWayBillReq = refundWayBillReq
-    r.Set("refund_way_bill_req", refundWayBillReq)
+func (r *AlibabaAscpChannelRefundGoodsWaybillRequest) SetRefundWayBillReq(_refundWayBillReq *ExternalRefundGoodsWaybillRequest) error {
+    r._refundWayBillReq = _refundWayBillReq
+    r.Set("refund_way_bill_req", _refundWayBillReq)
     return nil
 }
 
 // RefundWayBillReq Getter
 func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetRefundWayBillReq() *ExternalRefundGoodsWaybillRequest {
-    return r.refundWayBillReq
+    return r._refundWayBillReq
 }

@@ -15,23 +15,23 @@ alibaba.retail.vending.price.whitelist.add
 type AlibabaRetailVendingPriceWhitelistAddRequest struct {
     model.Params
     // 生效时间
-    validStarts   string
+    _validStarts   string
     // 淘宝用户ID
-    sellerId   int64
+    _sellerId   int64
     // 设备编码 device_code_list, device_uuid_list 二选一必填
-    deviceCodeList   []string
+    _deviceCodeList   []string
     // 外部设备编码   device_code_list, device_uuid_list 二选一必填
-    deviceUuidList   []string
+    _deviceUuidList   []string
     // 生效结束时间
-    validEnds   string
+    _validEnds   string
     // 条码
-    barcode   string
+    _barcode   string
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 允许修改的最低价
-    minPrice   string
+    _minPrice   string
     // 是否生效到所有设备
-    allDevice   bool
+    _allDevice   bool
 }
 
 // 初始化AlibabaRetailVendingPriceWhitelistAddRequest对象
@@ -56,109 +56,109 @@ func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetApiParams() url.Values 
 }
 // ValidStarts Setter
 // 生效时间
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetValidStarts(validStarts string) error {
-    r.validStarts = validStarts
-    r.Set("valid_starts", validStarts)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetValidStarts(_validStarts string) error {
+    r._validStarts = _validStarts
+    r.Set("valid_starts", _validStarts)
     return nil
 }
 
 // ValidStarts Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetValidStarts() string {
-    return r.validStarts
+    return r._validStarts
 }
 // SellerId Setter
 // 淘宝用户ID
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // DeviceCodeList Setter
 // 设备编码 device_code_list, device_uuid_list 二选一必填
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetDeviceCodeList(deviceCodeList []string) error {
-    r.deviceCodeList = deviceCodeList
-    r.Set("device_code_list", deviceCodeList)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetDeviceCodeList(_deviceCodeList []string) error {
+    r._deviceCodeList = _deviceCodeList
+    r.Set("device_code_list", _deviceCodeList)
     return nil
 }
 
 // DeviceCodeList Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetDeviceCodeList() []string {
-    return r.deviceCodeList
+    return r._deviceCodeList
 }
 // DeviceUuidList Setter
 // 外部设备编码   device_code_list, device_uuid_list 二选一必填
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetDeviceUuidList(deviceUuidList []string) error {
-    r.deviceUuidList = deviceUuidList
-    r.Set("device_uuid_list", deviceUuidList)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetDeviceUuidList(_deviceUuidList []string) error {
+    r._deviceUuidList = _deviceUuidList
+    r.Set("device_uuid_list", _deviceUuidList)
     return nil
 }
 
 // DeviceUuidList Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetDeviceUuidList() []string {
-    return r.deviceUuidList
+    return r._deviceUuidList
 }
 // ValidEnds Setter
 // 生效结束时间
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetValidEnds(validEnds string) error {
-    r.validEnds = validEnds
-    r.Set("valid_ends", validEnds)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetValidEnds(_validEnds string) error {
+    r._validEnds = _validEnds
+    r.Set("valid_ends", _validEnds)
     return nil
 }
 
 // ValidEnds Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetValidEnds() string {
-    return r.validEnds
+    return r._validEnds
 }
 // Barcode Setter
 // 条码
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetBarcode(barcode string) error {
-    r.barcode = barcode
-    r.Set("barcode", barcode)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetBarcode(_barcode string) error {
+    r._barcode = _barcode
+    r.Set("barcode", _barcode)
     return nil
 }
 
 // Barcode Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetBarcode() string {
-    return r.barcode
+    return r._barcode
 }
 // ItemId Setter
 // 商品ID
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // MinPrice Setter
 // 允许修改的最低价
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetMinPrice(minPrice string) error {
-    r.minPrice = minPrice
-    r.Set("min_price", minPrice)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetMinPrice(_minPrice string) error {
+    r._minPrice = _minPrice
+    r.Set("min_price", _minPrice)
     return nil
 }
 
 // MinPrice Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetMinPrice() string {
-    return r.minPrice
+    return r._minPrice
 }
 // AllDevice Setter
 // 是否生效到所有设备
-func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetAllDevice(allDevice bool) error {
-    r.allDevice = allDevice
-    r.Set("all_device", allDevice)
+func (r *AlibabaRetailVendingPriceWhitelistAddRequest) SetAllDevice(_allDevice bool) error {
+    r._allDevice = _allDevice
+    r.Set("all_device", _allDevice)
     return nil
 }
 
 // AllDevice Getter
 func (r AlibabaRetailVendingPriceWhitelistAddRequest) GetAllDevice() bool {
-    return r.allDevice
+    return r._allDevice
 }

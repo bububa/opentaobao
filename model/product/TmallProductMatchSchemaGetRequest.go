@@ -15,7 +15,7 @@ ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品
 type TmallProductMatchSchemaGetRequest struct {
     model.Params
     // 商品发布的目标类目，必须是叶子类目
-    categoryId   int64
+    _categoryId   int64
 }
 
 // 初始化TmallProductMatchSchemaGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallProductMatchSchemaGetRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
-func (r *TmallProductMatchSchemaGetRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TmallProductMatchSchemaGetRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TmallProductMatchSchemaGetRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }

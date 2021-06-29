@@ -15,7 +15,7 @@ taobao.wms.order.warehouse.route.get
 type TaobaoWmsOrderWarehouseRouteGetRequest struct {
     model.Params
     // 订单编号
-    orderCode   string
+    _orderCode   string
 }
 
 // 初始化TaobaoWmsOrderWarehouseRouteGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWmsOrderWarehouseRouteGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 订单编号
-func (r *TaobaoWmsOrderWarehouseRouteGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWmsOrderWarehouseRouteGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWmsOrderWarehouseRouteGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }

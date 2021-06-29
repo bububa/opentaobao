@@ -15,15 +15,15 @@ taobao.wlb.import.threepl.offline.consign
 type TaobaoWlbImportThreeplOfflineConsignRequest struct {
     model.Params
     // 交易单号
-    tradeId   int64
+    _tradeId   int64
     // 资源id
-    resId   int64
+    _resId   int64
     // 资源code
-    resCode   string
+    _resCode   string
     // 运单号
-    waybillNo   string
+    _waybillNo   string
     // 发件人地址库id
-    fromId   int64
+    _fromId   int64
 }
 
 // 初始化TaobaoWlbImportThreeplOfflineConsignRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetApiParams() url.Values {
 }
 // TradeId Setter
 // 交易单号
-func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetTradeId(tradeId int64) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetTradeId(_tradeId int64) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetTradeId() int64 {
-    return r.tradeId
+    return r._tradeId
 }
 // ResId Setter
 // 资源id
-func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetResId(resId int64) error {
-    r.resId = resId
-    r.Set("res_id", resId)
+func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetResId(_resId int64) error {
+    r._resId = _resId
+    r.Set("res_id", _resId)
     return nil
 }
 
 // ResId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetResId() int64 {
-    return r.resId
+    return r._resId
 }
 // ResCode Setter
 // 资源code
-func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetResCode(resCode string) error {
-    r.resCode = resCode
-    r.Set("res_code", resCode)
+func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetResCode(_resCode string) error {
+    r._resCode = _resCode
+    r.Set("res_code", _resCode)
     return nil
 }
 
 // ResCode Getter
 func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetResCode() string {
-    return r.resCode
+    return r._resCode
 }
 // WaybillNo Setter
 // 运单号
-func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetWaybillNo(waybillNo string) error {
-    r.waybillNo = waybillNo
-    r.Set("waybill_no", waybillNo)
+func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetWaybillNo(_waybillNo string) error {
+    r._waybillNo = _waybillNo
+    r.Set("waybill_no", _waybillNo)
     return nil
 }
 
 // WaybillNo Getter
 func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetWaybillNo() string {
-    return r.waybillNo
+    return r._waybillNo
 }
 // FromId Setter
 // 发件人地址库id
-func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetFromId(fromId int64) error {
-    r.fromId = fromId
-    r.Set("from_id", fromId)
+func (r *TaobaoWlbImportThreeplOfflineConsignRequest) SetFromId(_fromId int64) error {
+    r._fromId = _fromId
+    r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
 func (r TaobaoWlbImportThreeplOfflineConsignRequest) GetFromId() int64 {
-    return r.fromId
+    return r._fromId
 }

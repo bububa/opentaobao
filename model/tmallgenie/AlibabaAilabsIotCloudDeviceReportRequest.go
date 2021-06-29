@@ -15,7 +15,7 @@ alibaba.ailabs.iot.cloud.device.report
 type AlibabaAilabsIotCloudDeviceReportRequest struct {
     model.Params
     // 上报总入参
-    cloudReportParam   *CloudReportParam
+    _cloudReportParam   *CloudReportParam
 }
 
 // 初始化AlibabaAilabsIotCloudDeviceReportRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsIotCloudDeviceReportRequest) GetApiParams() url.Values {
 }
 // CloudReportParam Setter
 // 上报总入参
-func (r *AlibabaAilabsIotCloudDeviceReportRequest) SetCloudReportParam(cloudReportParam *CloudReportParam) error {
-    r.cloudReportParam = cloudReportParam
-    r.Set("cloud_report_param", cloudReportParam)
+func (r *AlibabaAilabsIotCloudDeviceReportRequest) SetCloudReportParam(_cloudReportParam *CloudReportParam) error {
+    r._cloudReportParam = _cloudReportParam
+    r.Set("cloud_report_param", _cloudReportParam)
     return nil
 }
 
 // CloudReportParam Getter
 func (r AlibabaAilabsIotCloudDeviceReportRequest) GetCloudReportParam() *CloudReportParam {
-    return r.cloudReportParam
+    return r._cloudReportParam
 }

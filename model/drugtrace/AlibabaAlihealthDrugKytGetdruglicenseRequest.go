@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.getdruglicense
 type AlibabaAlihealthDrugKytGetdruglicenseRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 药品ID
-    drugId   string
+    _drugId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytGetdruglicenseRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytGetdruglicenseRequest) GetApiParams() url.Values 
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytGetdruglicenseRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytGetdruglicenseRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytGetdruglicenseRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // DrugId Setter
 // 药品ID
-func (r *AlibabaAlihealthDrugKytGetdruglicenseRequest) SetDrugId(drugId string) error {
-    r.drugId = drugId
-    r.Set("drug_id", drugId)
+func (r *AlibabaAlihealthDrugKytGetdruglicenseRequest) SetDrugId(_drugId string) error {
+    r._drugId = _drugId
+    r.Set("drug_id", _drugId)
     return nil
 }
 
 // DrugId Getter
 func (r AlibabaAlihealthDrugKytGetdruglicenseRequest) GetDrugId() string {
-    return r.drugId
+    return r._drugId
 }

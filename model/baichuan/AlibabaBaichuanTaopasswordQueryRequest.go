@@ -15,7 +15,7 @@ alibaba.baichuan.taopassword.query
 type AlibabaBaichuanTaopasswordQueryRequest struct {
     model.Params
     // 淘口令
-    passwordContent   string
+    _passwordContent   string
 }
 
 // 初始化AlibabaBaichuanTaopasswordQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaBaichuanTaopasswordQueryRequest) GetApiParams() url.Values {
 }
 // PasswordContent Setter
 // 淘口令
-func (r *AlibabaBaichuanTaopasswordQueryRequest) SetPasswordContent(passwordContent string) error {
-    r.passwordContent = passwordContent
-    r.Set("password_content", passwordContent)
+func (r *AlibabaBaichuanTaopasswordQueryRequest) SetPasswordContent(_passwordContent string) error {
+    r._passwordContent = _passwordContent
+    r.Set("password_content", _passwordContent)
     return nil
 }
 
 // PasswordContent Getter
 func (r AlibabaBaichuanTaopasswordQueryRequest) GetPasswordContent() string {
-    return r.passwordContent
+    return r._passwordContent
 }

@@ -15,7 +15,7 @@ taobao.omni.dealer.oders.get
 type TaobaoOmniDealerOdersGetRequest struct {
     model.Params
     // 主订单ID
-    mainOrderId   int64
+    _mainOrderId   int64
 }
 
 // 初始化TaobaoOmniDealerOdersGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniDealerOdersGetRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 主订单ID
-func (r *TaobaoOmniDealerOdersGetRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TaobaoOmniDealerOdersGetRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TaobaoOmniDealerOdersGetRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }

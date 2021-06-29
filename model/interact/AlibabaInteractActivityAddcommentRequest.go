@@ -15,11 +15,11 @@ alibaba.interact.activity.addcomment
 type AlibabaInteractActivityAddcommentRequest struct {
     model.Params
     // 该字段为评论内容
-    content   string
+    _content   string
     // 评论feedid
-    feedId   int64
+    _feedId   int64
     // 发评论的业务id
-    bizId   string
+    _bizId   string
 }
 
 // 初始化AlibabaInteractActivityAddcommentRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaInteractActivityAddcommentRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 该字段为评论内容
-func (r *AlibabaInteractActivityAddcommentRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaInteractActivityAddcommentRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaInteractActivityAddcommentRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // FeedId Setter
 // 评论feedid
-func (r *AlibabaInteractActivityAddcommentRequest) SetFeedId(feedId int64) error {
-    r.feedId = feedId
-    r.Set("feed_id", feedId)
+func (r *AlibabaInteractActivityAddcommentRequest) SetFeedId(_feedId int64) error {
+    r._feedId = _feedId
+    r.Set("feed_id", _feedId)
     return nil
 }
 
 // FeedId Getter
 func (r AlibabaInteractActivityAddcommentRequest) GetFeedId() int64 {
-    return r.feedId
+    return r._feedId
 }
 // BizId Setter
 // 发评论的业务id
-func (r *AlibabaInteractActivityAddcommentRequest) SetBizId(bizId string) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *AlibabaInteractActivityAddcommentRequest) SetBizId(_bizId string) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r AlibabaInteractActivityAddcommentRequest) GetBizId() string {
-    return r.bizId
+    return r._bizId
 }

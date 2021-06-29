@@ -15,15 +15,15 @@ taobao.promotion.coupon.buyer.search
 type TaobaoPromotionCouponBuyerSearchRequest struct {
     model.Params
     // 卖家昵称
-    sellerNick   string
+    _sellerNick   string
     // 券状态  "正常",1 "已删除",-1 "已使用",-2 "冻结",0
-    status   int64
+    _status   int64
     // 每页数据 建议20左右
-    pageSize   int64
+    _pageSize   int64
     // 当前第几页  从第一页开始
-    currentPage   int64
+    _currentPage   int64
     // 结束时间
-    endTime   string
+    _endTime   string
 }
 
 // 初始化TaobaoPromotionCouponBuyerSearchRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoPromotionCouponBuyerSearchRequest) GetApiParams() url.Values {
 }
 // SellerNick Setter
 // 卖家昵称
-func (r *TaobaoPromotionCouponBuyerSearchRequest) SetSellerNick(sellerNick string) error {
-    r.sellerNick = sellerNick
-    r.Set("seller_nick", sellerNick)
+func (r *TaobaoPromotionCouponBuyerSearchRequest) SetSellerNick(_sellerNick string) error {
+    r._sellerNick = _sellerNick
+    r.Set("seller_nick", _sellerNick)
     return nil
 }
 
 // SellerNick Getter
 func (r TaobaoPromotionCouponBuyerSearchRequest) GetSellerNick() string {
-    return r.sellerNick
+    return r._sellerNick
 }
 // Status Setter
 // 券状态  "正常",1 "已删除",-1 "已使用",-2 "冻结",0
-func (r *TaobaoPromotionCouponBuyerSearchRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoPromotionCouponBuyerSearchRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoPromotionCouponBuyerSearchRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // PageSize Setter
 // 每页数据 建议20左右
-func (r *TaobaoPromotionCouponBuyerSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionCouponBuyerSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionCouponBuyerSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // CurrentPage Setter
 // 当前第几页  从第一页开始
-func (r *TaobaoPromotionCouponBuyerSearchRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoPromotionCouponBuyerSearchRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoPromotionCouponBuyerSearchRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // EndTime Setter
 // 结束时间
-func (r *TaobaoPromotionCouponBuyerSearchRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoPromotionCouponBuyerSearchRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoPromotionCouponBuyerSearchRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }

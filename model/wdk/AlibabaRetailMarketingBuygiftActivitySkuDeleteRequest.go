@@ -15,7 +15,7 @@ alibaba.retail.marketing.buygift.activity.sku.delete
 type AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest struct {
     model.Params
     // 删除买赠活动商品参数
-    param   *BuyGiftActivitySkuOperateRequest
+    _param   *BuyGiftActivitySkuOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetApiParams() ur
 }
 // Param Setter
 // 删除买赠活动商品参数
-func (r *AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) SetParam(param *BuyGiftActivitySkuOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) SetParam(_param *BuyGiftActivitySkuOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest) GetParam() *BuyGiftActivitySkuOperateRequest {
-    return r.param
+    return r._param
 }

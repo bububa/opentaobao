@@ -15,9 +15,9 @@ tmall.nr.fulfill.logistics.query
 type TmallNrFulfillLogisticsQueryRequest struct {
     model.Params
     // 交易主订单号
-    mainOrderId   int64
+    _mainOrderId   int64
     // 业务标识，dss标识定时送业务；jsd表示极速达业务
-    bizIdentity   string
+    _bizIdentity   string
 }
 
 // 初始化TmallNrFulfillLogisticsQueryRequest对象
@@ -42,25 +42,25 @@ func (r TmallNrFulfillLogisticsQueryRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 交易主订单号
-func (r *TmallNrFulfillLogisticsQueryRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TmallNrFulfillLogisticsQueryRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TmallNrFulfillLogisticsQueryRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // BizIdentity Setter
 // 业务标识，dss标识定时送业务；jsd表示极速达业务
-func (r *TmallNrFulfillLogisticsQueryRequest) SetBizIdentity(bizIdentity string) error {
-    r.bizIdentity = bizIdentity
-    r.Set("biz_identity", bizIdentity)
+func (r *TmallNrFulfillLogisticsQueryRequest) SetBizIdentity(_bizIdentity string) error {
+    r._bizIdentity = _bizIdentity
+    r.Set("biz_identity", _bizIdentity)
     return nil
 }
 
 // BizIdentity Getter
 func (r TmallNrFulfillLogisticsQueryRequest) GetBizIdentity() string {
-    return r.bizIdentity
+    return r._bizIdentity
 }

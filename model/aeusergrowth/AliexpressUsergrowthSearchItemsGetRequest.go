@@ -15,19 +15,19 @@ aliexpress.usergrowth.search.items.get
 type AliexpressUsergrowthSearchItemsGetRequest struct {
     model.Params
     // user input keypods
-    keywords   string
+    _keywords   string
     // Third party tracking_id
-    trackingId   string
+    _trackingId   string
     // currency code
-    currencyCode   string
+    _currencyCode   string
     // language
-    language   string
+    _language   string
     // page size
-    pageSize   string
+    _pageSize   string
     // page index
-    pageIndex   string
+    _pageIndex   string
     // ship to country
-    countryCode   string
+    _countryCode   string
 }
 
 // 初始化AliexpressUsergrowthSearchItemsGetRequest对象
@@ -52,85 +52,85 @@ func (r AliexpressUsergrowthSearchItemsGetRequest) GetApiParams() url.Values {
 }
 // Keywords Setter
 // user input keypods
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetKeywords(keywords string) error {
-    r.keywords = keywords
-    r.Set("keywords", keywords)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetKeywords(_keywords string) error {
+    r._keywords = _keywords
+    r.Set("keywords", _keywords)
     return nil
 }
 
 // Keywords Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetKeywords() string {
-    return r.keywords
+    return r._keywords
 }
 // TrackingId Setter
 // Third party tracking_id
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetTrackingId(trackingId string) error {
-    r.trackingId = trackingId
-    r.Set("tracking_id", trackingId)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetTrackingId(_trackingId string) error {
+    r._trackingId = _trackingId
+    r.Set("tracking_id", _trackingId)
     return nil
 }
 
 // TrackingId Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetTrackingId() string {
-    return r.trackingId
+    return r._trackingId
 }
 // CurrencyCode Setter
 // currency code
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCurrencyCode(currencyCode string) error {
-    r.currencyCode = currencyCode
-    r.Set("currency_code", currencyCode)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCurrencyCode(_currencyCode string) error {
+    r._currencyCode = _currencyCode
+    r.Set("currency_code", _currencyCode)
     return nil
 }
 
 // CurrencyCode Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetCurrencyCode() string {
-    return r.currencyCode
+    return r._currencyCode
 }
 // Language Setter
 // language
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }
 // PageSize Setter
 // page size
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageSize(pageSize string) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageSize(_pageSize string) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetPageSize() string {
-    return r.pageSize
+    return r._pageSize
 }
 // PageIndex Setter
 // page index
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageIndex(pageIndex string) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetPageIndex(_pageIndex string) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetPageIndex() string {
-    return r.pageIndex
+    return r._pageIndex
 }
 // CountryCode Setter
 // ship to country
-func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCountryCode(countryCode string) error {
-    r.countryCode = countryCode
-    r.Set("country_code", countryCode)
+func (r *AliexpressUsergrowthSearchItemsGetRequest) SetCountryCode(_countryCode string) error {
+    r._countryCode = _countryCode
+    r.Set("country_code", _countryCode)
     return nil
 }
 
 // CountryCode Getter
 func (r AliexpressUsergrowthSearchItemsGetRequest) GetCountryCode() string {
-    return r.countryCode
+    return r._countryCode
 }

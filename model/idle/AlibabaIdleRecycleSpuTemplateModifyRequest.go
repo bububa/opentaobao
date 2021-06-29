@@ -15,7 +15,7 @@ alibaba.idle.recycle.spu.template.modify
 type AlibabaIdleRecycleSpuTemplateModifyRequest struct {
     model.Params
     // 回收商挂载模版信息
-    recycleSpuTemplate   *RecycleSpuTemplate
+    _recycleSpuTemplate   *RecycleSpuTemplate
 }
 
 // 初始化AlibabaIdleRecycleSpuTemplateModifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleSpuTemplateModifyRequest) GetApiParams() url.Values {
 }
 // RecycleSpuTemplate Setter
 // 回收商挂载模版信息
-func (r *AlibabaIdleRecycleSpuTemplateModifyRequest) SetRecycleSpuTemplate(recycleSpuTemplate *RecycleSpuTemplate) error {
-    r.recycleSpuTemplate = recycleSpuTemplate
-    r.Set("recycle_spu_template", recycleSpuTemplate)
+func (r *AlibabaIdleRecycleSpuTemplateModifyRequest) SetRecycleSpuTemplate(_recycleSpuTemplate *RecycleSpuTemplate) error {
+    r._recycleSpuTemplate = _recycleSpuTemplate
+    r.Set("recycle_spu_template", _recycleSpuTemplate)
     return nil
 }
 
 // RecycleSpuTemplate Getter
 func (r AlibabaIdleRecycleSpuTemplateModifyRequest) GetRecycleSpuTemplate() *RecycleSpuTemplate {
-    return r.recycleSpuTemplate
+    return r._recycleSpuTemplate
 }

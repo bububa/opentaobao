@@ -15,9 +15,9 @@ taobao.alitrip.ie.agent.ticket.issue
 type TaobaoAlitripIeAgentTicketIssueRequest struct {
     model.Params
     // 代理商id
-    agentId   int64
+    _agentId   int64
     // 出票信息
-    issueTicketVO   *IeIssueTicketVO
+    _issueTicketVO   *IeIssueTicketVO
 }
 
 // 初始化TaobaoAlitripIeAgentTicketIssueRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripIeAgentTicketIssueRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoAlitripIeAgentTicketIssueRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentTicketIssueRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentTicketIssueRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // IssueTicketVO Setter
 // 出票信息
-func (r *TaobaoAlitripIeAgentTicketIssueRequest) SetIssueTicketVO(issueTicketVO *IeIssueTicketVO) error {
-    r.issueTicketVO = issueTicketVO
-    r.Set("issue_ticket_v_o", issueTicketVO)
+func (r *TaobaoAlitripIeAgentTicketIssueRequest) SetIssueTicketVO(_issueTicketVO *IeIssueTicketVO) error {
+    r._issueTicketVO = _issueTicketVO
+    r.Set("issue_ticket_v_o", _issueTicketVO)
     return nil
 }
 
 // IssueTicketVO Getter
 func (r TaobaoAlitripIeAgentTicketIssueRequest) GetIssueTicketVO() *IeIssueTicketVO {
-    return r.issueTicketVO
+    return r._issueTicketVO
 }

@@ -15,7 +15,7 @@ alibaba.alsc.crm.menu.list
 type AlibabaAlscCrmMenuListRequest struct {
     model.Params
     // 获取特价菜单请求参数
-    menuOpenReq   *MenuOpenReq
+    _menuOpenReq   *MenuOpenReq
 }
 
 // 初始化AlibabaAlscCrmMenuListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmMenuListRequest) GetApiParams() url.Values {
 }
 // MenuOpenReq Setter
 // 获取特价菜单请求参数
-func (r *AlibabaAlscCrmMenuListRequest) SetMenuOpenReq(menuOpenReq *MenuOpenReq) error {
-    r.menuOpenReq = menuOpenReq
-    r.Set("menu_open_req", menuOpenReq)
+func (r *AlibabaAlscCrmMenuListRequest) SetMenuOpenReq(_menuOpenReq *MenuOpenReq) error {
+    r._menuOpenReq = _menuOpenReq
+    r.Set("menu_open_req", _menuOpenReq)
     return nil
 }
 
 // MenuOpenReq Getter
 func (r AlibabaAlscCrmMenuListRequest) GetMenuOpenReq() *MenuOpenReq {
-    return r.menuOpenReq
+    return r._menuOpenReq
 }

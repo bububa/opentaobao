@@ -15,7 +15,7 @@ alibaba.mj.oc.outbound
 type AlibabaMjOcOutboundRequest struct {
     model.Params
     // 发货信息
-    goodsOutbound   *GoodsOutboundDTO
+    _goodsOutbound   *GoodsOutboundDTO
 }
 
 // 初始化AlibabaMjOcOutboundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcOutboundRequest) GetApiParams() url.Values {
 }
 // GoodsOutbound Setter
 // 发货信息
-func (r *AlibabaMjOcOutboundRequest) SetGoodsOutbound(goodsOutbound *GoodsOutboundDTO) error {
-    r.goodsOutbound = goodsOutbound
-    r.Set("goods_outbound", goodsOutbound)
+func (r *AlibabaMjOcOutboundRequest) SetGoodsOutbound(_goodsOutbound *GoodsOutboundDTO) error {
+    r._goodsOutbound = _goodsOutbound
+    r.Set("goods_outbound", _goodsOutbound)
     return nil
 }
 
 // GoodsOutbound Getter
 func (r AlibabaMjOcOutboundRequest) GetGoodsOutbound() *GoodsOutboundDTO {
-    return r.goodsOutbound
+    return r._goodsOutbound
 }

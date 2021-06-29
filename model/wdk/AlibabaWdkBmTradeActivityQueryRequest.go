@@ -15,7 +15,7 @@ alibaba.wdk.bm.trade.activity.query
 type AlibabaWdkBmTradeActivityQueryRequest struct {
     model.Params
     // 入参
-    queryParam   *IsvOrderQueryParam
+    _queryParam   *IsvOrderQueryParam
 }
 
 // 初始化AlibabaWdkBmTradeActivityQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmTradeActivityQueryRequest) GetApiParams() url.Values {
 }
 // QueryParam Setter
 // 入参
-func (r *AlibabaWdkBmTradeActivityQueryRequest) SetQueryParam(queryParam *IsvOrderQueryParam) error {
-    r.queryParam = queryParam
-    r.Set("query_param", queryParam)
+func (r *AlibabaWdkBmTradeActivityQueryRequest) SetQueryParam(_queryParam *IsvOrderQueryParam) error {
+    r._queryParam = _queryParam
+    r.Set("query_param", _queryParam)
     return nil
 }
 
 // QueryParam Getter
 func (r AlibabaWdkBmTradeActivityQueryRequest) GetQueryParam() *IsvOrderQueryParam {
-    return r.queryParam
+    return r._queryParam
 }

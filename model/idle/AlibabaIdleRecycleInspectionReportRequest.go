@@ -15,7 +15,7 @@ alibaba.idle.recycle.inspection.report
 type AlibabaIdleRecycleInspectionReportRequest struct {
     model.Params
     // 鉴定报告
-    inspectionReport   *InspectionReport
+    _inspectionReport   *InspectionReport
 }
 
 // 初始化AlibabaIdleRecycleInspectionReportRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleInspectionReportRequest) GetApiParams() url.Values {
 }
 // InspectionReport Setter
 // 鉴定报告
-func (r *AlibabaIdleRecycleInspectionReportRequest) SetInspectionReport(inspectionReport *InspectionReport) error {
-    r.inspectionReport = inspectionReport
-    r.Set("inspection_report", inspectionReport)
+func (r *AlibabaIdleRecycleInspectionReportRequest) SetInspectionReport(_inspectionReport *InspectionReport) error {
+    r._inspectionReport = _inspectionReport
+    r.Set("inspection_report", _inspectionReport)
     return nil
 }
 
 // InspectionReport Getter
 func (r AlibabaIdleRecycleInspectionReportRequest) GetInspectionReport() *InspectionReport {
-    return r.inspectionReport
+    return r._inspectionReport
 }

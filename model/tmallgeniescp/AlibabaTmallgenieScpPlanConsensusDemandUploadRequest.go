@@ -15,7 +15,7 @@ IBP共识需求回传接口
 type AlibabaTmallgenieScpPlanConsensusDemandUploadRequest struct {
     model.Params
     // 入参
-    consensusDemandRequest   *ConsensusDemandRequest
+    _consensusDemandRequest   *ConsensusDemandRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanConsensusDemandUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanConsensusDemandUploadRequest) GetApiParams() url
 }
 // ConsensusDemandRequest Setter
 // 入参
-func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadRequest) SetConsensusDemandRequest(consensusDemandRequest *ConsensusDemandRequest) error {
-    r.consensusDemandRequest = consensusDemandRequest
-    r.Set("consensus_demand_request", consensusDemandRequest)
+func (r *AlibabaTmallgenieScpPlanConsensusDemandUploadRequest) SetConsensusDemandRequest(_consensusDemandRequest *ConsensusDemandRequest) error {
+    r._consensusDemandRequest = _consensusDemandRequest
+    r.Set("consensus_demand_request", _consensusDemandRequest)
     return nil
 }
 
 // ConsensusDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanConsensusDemandUploadRequest) GetConsensusDemandRequest() *ConsensusDemandRequest {
-    return r.consensusDemandRequest
+    return r._consensusDemandRequest
 }

@@ -15,7 +15,7 @@ alibaba.xiami.api.search.letter.get
 type AlibabaXiamiApiSearchLetterGetRequest struct {
     model.Params
     // 搜索关键字
-    key   string
+    _key   string
 }
 
 // 初始化AlibabaXiamiApiSearchLetterGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiSearchLetterGetRequest) GetApiParams() url.Values {
 }
 // Key Setter
 // 搜索关键字
-func (r *AlibabaXiamiApiSearchLetterGetRequest) SetKey(key string) error {
-    r.key = key
-    r.Set("key", key)
+func (r *AlibabaXiamiApiSearchLetterGetRequest) SetKey(_key string) error {
+    r._key = _key
+    r.Set("key", _key)
     return nil
 }
 
 // Key Getter
 func (r AlibabaXiamiApiSearchLetterGetRequest) GetKey() string {
-    return r.key
+    return r._key
 }

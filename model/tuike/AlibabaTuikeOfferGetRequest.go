@@ -15,9 +15,9 @@ alibaba.tuike.offer.get
 type AlibabaTuikeOfferGetRequest struct {
     model.Params
     // 标识调用方
-    isvCode   string
+    _isvCode   string
     // 搜索查询参数(json)
-    queryString   string
+    _queryString   string
 }
 
 // 初始化AlibabaTuikeOfferGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaTuikeOfferGetRequest) GetApiParams() url.Values {
 }
 // IsvCode Setter
 // 标识调用方
-func (r *AlibabaTuikeOfferGetRequest) SetIsvCode(isvCode string) error {
-    r.isvCode = isvCode
-    r.Set("isv_code", isvCode)
+func (r *AlibabaTuikeOfferGetRequest) SetIsvCode(_isvCode string) error {
+    r._isvCode = _isvCode
+    r.Set("isv_code", _isvCode)
     return nil
 }
 
 // IsvCode Getter
 func (r AlibabaTuikeOfferGetRequest) GetIsvCode() string {
-    return r.isvCode
+    return r._isvCode
 }
 // QueryString Setter
 // 搜索查询参数(json)
-func (r *AlibabaTuikeOfferGetRequest) SetQueryString(queryString string) error {
-    r.queryString = queryString
-    r.Set("query_string", queryString)
+func (r *AlibabaTuikeOfferGetRequest) SetQueryString(_queryString string) error {
+    r._queryString = _queryString
+    r.Set("query_string", _queryString)
     return nil
 }
 
 // QueryString Getter
 func (r AlibabaTuikeOfferGetRequest) GetQueryString() string {
-    return r.queryString
+    return r._queryString
 }

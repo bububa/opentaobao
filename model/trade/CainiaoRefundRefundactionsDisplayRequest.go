@@ -15,7 +15,7 @@ cainiao.refund.refundactions.display
 type CainiaoRefundRefundactionsDisplayRequest struct {
     model.Params
     // 请求入参
-    param0   *OrderRefundOperationReq
+    _param0   *OrderRefundOperationReq
 }
 
 // 初始化CainiaoRefundRefundactionsDisplayRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoRefundRefundactionsDisplayRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求入参
-func (r *CainiaoRefundRefundactionsDisplayRequest) SetParam0(param0 *OrderRefundOperationReq) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *CainiaoRefundRefundactionsDisplayRequest) SetParam0(_param0 *OrderRefundOperationReq) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r CainiaoRefundRefundactionsDisplayRequest) GetParam0() *OrderRefundOperationReq {
-    return r.param0
+    return r._param0
 }

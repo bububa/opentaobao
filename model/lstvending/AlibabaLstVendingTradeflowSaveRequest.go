@@ -15,7 +15,7 @@ alibaba.lst.vending.tradeflow.save
 type AlibabaLstVendingTradeflowSaveRequest struct {
     model.Params
     // 交易流水信息
-    tradeFlowDTOList   []VendingTradeFlowDto
+    _tradeFlowDTOList   []VendingTradeFlowDto
 }
 
 // 初始化AlibabaLstVendingTradeflowSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingTradeflowSaveRequest) GetApiParams() url.Values {
 }
 // TradeFlowDTOList Setter
 // 交易流水信息
-func (r *AlibabaLstVendingTradeflowSaveRequest) SetTradeFlowDTOList(tradeFlowDTOList []VendingTradeFlowDto) error {
-    r.tradeFlowDTOList = tradeFlowDTOList
-    r.Set("trade_flow_d_t_o_list", tradeFlowDTOList)
+func (r *AlibabaLstVendingTradeflowSaveRequest) SetTradeFlowDTOList(_tradeFlowDTOList []VendingTradeFlowDto) error {
+    r._tradeFlowDTOList = _tradeFlowDTOList
+    r.Set("trade_flow_d_t_o_list", _tradeFlowDTOList)
     return nil
 }
 
 // TradeFlowDTOList Getter
 func (r AlibabaLstVendingTradeflowSaveRequest) GetTradeFlowDTOList() []VendingTradeFlowDto {
-    return r.tradeFlowDTOList
+    return r._tradeFlowDTOList
 }

@@ -15,7 +15,7 @@ alibaba.alisports.efsp.userplaceorder
 type AlibabaAlisportsEfspUserplaceorderRequest struct {
     model.Params
     // 青橙订单的json
-    orderJson   string
+    _orderJson   string
 }
 
 // 初始化AlibabaAlisportsEfspUserplaceorderRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlisportsEfspUserplaceorderRequest) GetApiParams() url.Values {
 }
 // OrderJson Setter
 // 青橙订单的json
-func (r *AlibabaAlisportsEfspUserplaceorderRequest) SetOrderJson(orderJson string) error {
-    r.orderJson = orderJson
-    r.Set("order_json", orderJson)
+func (r *AlibabaAlisportsEfspUserplaceorderRequest) SetOrderJson(_orderJson string) error {
+    r._orderJson = _orderJson
+    r.Set("order_json", _orderJson)
     return nil
 }
 
 // OrderJson Getter
 func (r AlibabaAlisportsEfspUserplaceorderRequest) GetOrderJson() string {
-    return r.orderJson
+    return r._orderJson
 }

@@ -15,7 +15,7 @@ taobao.qt.report.get
 type TaobaoQtReportGetRequest struct {
     model.Params
     // 质检编号
-    qtCode   string
+    _qtCode   string
 }
 
 // 初始化TaobaoQtReportGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQtReportGetRequest) GetApiParams() url.Values {
 }
 // QtCode Setter
 // 质检编号
-func (r *TaobaoQtReportGetRequest) SetQtCode(qtCode string) error {
-    r.qtCode = qtCode
-    r.Set("qt_code", qtCode)
+func (r *TaobaoQtReportGetRequest) SetQtCode(_qtCode string) error {
+    r._qtCode = _qtCode
+    r.Set("qt_code", _qtCode)
     return nil
 }
 
 // QtCode Getter
 func (r TaobaoQtReportGetRequest) GetQtCode() string {
-    return r.qtCode
+    return r._qtCode
 }

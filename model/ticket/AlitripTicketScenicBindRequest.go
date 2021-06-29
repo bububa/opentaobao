@@ -15,19 +15,19 @@ alitrip.ticket.scenic.bind
 type AlitripTicketScenicBindRequest struct {
     model.Params
     // 必填，阿里旅行对应的景点编码
-    aliScenicId   int64
+    _aliScenicId   int64
     // 商户景点城市
-    city   string
+    _city   string
     // 商户景点地址
-    address   string
+    _address   string
     // 商户景点名称
-    outScenicName   string
+    _outScenicName   string
     // 商户景点省份
-    province   string
+    _province   string
     // 必填，商户系统中的景点编码，用于与ali_scenic_id建立映射关系
-    outScenicId   string
+    _outScenicId   string
     // 可选，如果需要更新out_scenic_id与ali_scenic_id的映射关系时 需要填写
-    updateOutScenicId   string
+    _updateOutScenicId   string
 }
 
 // 初始化AlitripTicketScenicBindRequest对象
@@ -52,85 +52,85 @@ func (r AlitripTicketScenicBindRequest) GetApiParams() url.Values {
 }
 // AliScenicId Setter
 // 必填，阿里旅行对应的景点编码
-func (r *AlitripTicketScenicBindRequest) SetAliScenicId(aliScenicId int64) error {
-    r.aliScenicId = aliScenicId
-    r.Set("ali_scenic_id", aliScenicId)
+func (r *AlitripTicketScenicBindRequest) SetAliScenicId(_aliScenicId int64) error {
+    r._aliScenicId = _aliScenicId
+    r.Set("ali_scenic_id", _aliScenicId)
     return nil
 }
 
 // AliScenicId Getter
 func (r AlitripTicketScenicBindRequest) GetAliScenicId() int64 {
-    return r.aliScenicId
+    return r._aliScenicId
 }
 // City Setter
 // 商户景点城市
-func (r *AlitripTicketScenicBindRequest) SetCity(city string) error {
-    r.city = city
-    r.Set("city", city)
+func (r *AlitripTicketScenicBindRequest) SetCity(_city string) error {
+    r._city = _city
+    r.Set("city", _city)
     return nil
 }
 
 // City Getter
 func (r AlitripTicketScenicBindRequest) GetCity() string {
-    return r.city
+    return r._city
 }
 // Address Setter
 // 商户景点地址
-func (r *AlitripTicketScenicBindRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *AlitripTicketScenicBindRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r AlitripTicketScenicBindRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // OutScenicName Setter
 // 商户景点名称
-func (r *AlitripTicketScenicBindRequest) SetOutScenicName(outScenicName string) error {
-    r.outScenicName = outScenicName
-    r.Set("out_scenic_name", outScenicName)
+func (r *AlitripTicketScenicBindRequest) SetOutScenicName(_outScenicName string) error {
+    r._outScenicName = _outScenicName
+    r.Set("out_scenic_name", _outScenicName)
     return nil
 }
 
 // OutScenicName Getter
 func (r AlitripTicketScenicBindRequest) GetOutScenicName() string {
-    return r.outScenicName
+    return r._outScenicName
 }
 // Province Setter
 // 商户景点省份
-func (r *AlitripTicketScenicBindRequest) SetProvince(province string) error {
-    r.province = province
-    r.Set("province", province)
+func (r *AlitripTicketScenicBindRequest) SetProvince(_province string) error {
+    r._province = _province
+    r.Set("province", _province)
     return nil
 }
 
 // Province Getter
 func (r AlitripTicketScenicBindRequest) GetProvince() string {
-    return r.province
+    return r._province
 }
 // OutScenicId Setter
 // 必填，商户系统中的景点编码，用于与ali_scenic_id建立映射关系
-func (r *AlitripTicketScenicBindRequest) SetOutScenicId(outScenicId string) error {
-    r.outScenicId = outScenicId
-    r.Set("out_scenic_id", outScenicId)
+func (r *AlitripTicketScenicBindRequest) SetOutScenicId(_outScenicId string) error {
+    r._outScenicId = _outScenicId
+    r.Set("out_scenic_id", _outScenicId)
     return nil
 }
 
 // OutScenicId Getter
 func (r AlitripTicketScenicBindRequest) GetOutScenicId() string {
-    return r.outScenicId
+    return r._outScenicId
 }
 // UpdateOutScenicId Setter
 // 可选，如果需要更新out_scenic_id与ali_scenic_id的映射关系时 需要填写
-func (r *AlitripTicketScenicBindRequest) SetUpdateOutScenicId(updateOutScenicId string) error {
-    r.updateOutScenicId = updateOutScenicId
-    r.Set("update_out_scenic_id", updateOutScenicId)
+func (r *AlitripTicketScenicBindRequest) SetUpdateOutScenicId(_updateOutScenicId string) error {
+    r._updateOutScenicId = _updateOutScenicId
+    r.Set("update_out_scenic_id", _updateOutScenicId)
     return nil
 }
 
 // UpdateOutScenicId Getter
 func (r AlitripTicketScenicBindRequest) GetUpdateOutScenicId() string {
-    return r.updateOutScenicId
+    return r._updateOutScenicId
 }

@@ -15,13 +15,13 @@ alibaba.campus.device.openapi.operatedevice
 type AlibabaCampusDeviceOpenapiOperatedeviceRequest struct {
     model.Params
     // 请求发送端信息
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
     // 设备序列号uuid
-    uuid   string
+    _uuid   string
     // 参数code,如灯亮度参数为brightness;设备的开关switchstate。参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’。
-    propertyCode   string
+    _propertyCode   string
     // 设置的参数值.如灯亮度为0~255.0表示关;设备开关,值使用on或off。[请按照‘设备详细信息开发文档’传入正确的参数值类型]
-    value   string
+    _value   string
 }
 
 // 初始化AlibabaCampusDeviceOpenapiOperatedeviceRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaCampusDeviceOpenapiOperatedeviceRequest) GetApiParams() url.Value
 }
 // WorkBenchContext Setter
 // 请求发送端信息
-func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }
 // Uuid Setter
 // 设备序列号uuid
-func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // PropertyCode Setter
 // 参数code,如灯亮度参数为brightness;设备的开关switchstate。参数code信息请查阅‘平台技术’下‘设备详细信息开发文档’。
-func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetPropertyCode(propertyCode string) error {
-    r.propertyCode = propertyCode
-    r.Set("property_code", propertyCode)
+func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetPropertyCode(_propertyCode string) error {
+    r._propertyCode = _propertyCode
+    r.Set("property_code", _propertyCode)
     return nil
 }
 
 // PropertyCode Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceRequest) GetPropertyCode() string {
-    return r.propertyCode
+    return r._propertyCode
 }
 // Value Setter
 // 设置的参数值.如灯亮度为0~255.0表示关;设备开关,值使用on或off。[请按照‘设备详细信息开发文档’传入正确的参数值类型]
-func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetValue(value string) error {
-    r.value = value
-    r.Set("value", value)
+func (r *AlibabaCampusDeviceOpenapiOperatedeviceRequest) SetValue(_value string) error {
+    r._value = _value
+    r.Set("value", _value)
     return nil
 }
 
 // Value Getter
 func (r AlibabaCampusDeviceOpenapiOperatedeviceRequest) GetValue() string {
-    return r.value
+    return r._value
 }

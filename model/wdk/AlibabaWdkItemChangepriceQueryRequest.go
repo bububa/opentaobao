@@ -22,13 +22,13 @@ alibaba.wdk.item.changeprice.query
 type AlibabaWdkItemChangepriceQueryRequest struct {
     model.Params
     // 变价的类型  * 查询变价的单据专用
-    type   string
+    _type   string
     // 开始时间
-    startTime   string
+    _startTime   string
     // 结束时间，结束时间-开始时间不能超过48小时
-    endTime   string
+    _endTime   string
     // 渠道店id
-    shopId   string
+    _shopId   string
 }
 
 // 初始化AlibabaWdkItemChangepriceQueryRequest对象
@@ -53,49 +53,49 @@ func (r AlibabaWdkItemChangepriceQueryRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 变价的类型  * 查询变价的单据专用
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaWdkItemChangepriceQueryRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaWdkItemChangepriceQueryRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // StartTime Setter
 // 开始时间
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaWdkItemChangepriceQueryRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaWdkItemChangepriceQueryRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 结束时间，结束时间-开始时间不能超过48小时
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaWdkItemChangepriceQueryRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaWdkItemChangepriceQueryRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // ShopId Setter
 // 渠道店id
-func (r *AlibabaWdkItemChangepriceQueryRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkItemChangepriceQueryRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkItemChangepriceQueryRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }

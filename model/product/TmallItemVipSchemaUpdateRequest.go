@@ -15,9 +15,9 @@ tmall.item.vip.schema.update
 type TmallItemVipSchemaUpdateRequest struct {
     model.Params
     // 商品编辑的schema参数
-    schemaXmlFields   string
+    _schemaXmlFields   string
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallItemVipSchemaUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TmallItemVipSchemaUpdateRequest) GetApiParams() url.Values {
 }
 // SchemaXmlFields Setter
 // 商品编辑的schema参数
-func (r *TmallItemVipSchemaUpdateRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *TmallItemVipSchemaUpdateRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r TmallItemVipSchemaUpdateRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }
 // ItemId Setter
 // 商品id
-func (r *TmallItemVipSchemaUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemVipSchemaUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemVipSchemaUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

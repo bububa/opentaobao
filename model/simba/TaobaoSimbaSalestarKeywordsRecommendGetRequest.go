@@ -15,9 +15,9 @@ taobao.simba.salestar.keywords.recommend.get
 type TaobaoSimbaSalestarKeywordsRecommendGetRequest struct {
     model.Params
     // 推广组ID
-    adgroupId   int64
+    _adgroupId   int64
     // 产品类型101001005代表标准推广，101001014代表销量明星
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TaobaoSimbaSalestarKeywordsRecommendGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSalestarKeywordsRecommendGetRequest) GetApiParams() url.Value
 }
 // AdgroupId Setter
 // 推广组ID
-func (r *TaobaoSimbaSalestarKeywordsRecommendGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSalestarKeywordsRecommendGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSalestarKeywordsRecommendGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // ProductId Setter
 // 产品类型101001005代表标准推广，101001014代表销量明星
-func (r *TaobaoSimbaSalestarKeywordsRecommendGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoSimbaSalestarKeywordsRecommendGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoSimbaSalestarKeywordsRecommendGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

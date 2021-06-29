@@ -15,9 +15,9 @@ taobao.homeai.alg.predict
 type TaobaoHomeaiAlgPredictRequest struct {
     model.Params
     // 来源房间json
-    fromCase   string
+    _fromCase   string
     // 我的家房间json
-    toCase   string
+    _toCase   string
 }
 
 // 初始化TaobaoHomeaiAlgPredictRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoHomeaiAlgPredictRequest) GetApiParams() url.Values {
 }
 // FromCase Setter
 // 来源房间json
-func (r *TaobaoHomeaiAlgPredictRequest) SetFromCase(fromCase string) error {
-    r.fromCase = fromCase
-    r.Set("from_case", fromCase)
+func (r *TaobaoHomeaiAlgPredictRequest) SetFromCase(_fromCase string) error {
+    r._fromCase = _fromCase
+    r.Set("from_case", _fromCase)
     return nil
 }
 
 // FromCase Getter
 func (r TaobaoHomeaiAlgPredictRequest) GetFromCase() string {
-    return r.fromCase
+    return r._fromCase
 }
 // ToCase Setter
 // 我的家房间json
-func (r *TaobaoHomeaiAlgPredictRequest) SetToCase(toCase string) error {
-    r.toCase = toCase
-    r.Set("to_case", toCase)
+func (r *TaobaoHomeaiAlgPredictRequest) SetToCase(_toCase string) error {
+    r._toCase = _toCase
+    r.Set("to_case", _toCase)
     return nil
 }
 
 // ToCase Getter
 func (r TaobaoHomeaiAlgPredictRequest) GetToCase() string {
-    return r.toCase
+    return r._toCase
 }

@@ -15,7 +15,7 @@ alibaba.iwork.mc.msg.senddefault
 type AlibabaIworkMcMsgSenddefaultRequest struct {
     model.Params
     // 消息对象
-    messageEvent   *DefaultMessageEvent
+    _messageEvent   *DefaultMessageEvent
 }
 
 // 初始化AlibabaIworkMcMsgSenddefaultRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIworkMcMsgSenddefaultRequest) GetApiParams() url.Values {
 }
 // MessageEvent Setter
 // 消息对象
-func (r *AlibabaIworkMcMsgSenddefaultRequest) SetMessageEvent(messageEvent *DefaultMessageEvent) error {
-    r.messageEvent = messageEvent
-    r.Set("message_event", messageEvent)
+func (r *AlibabaIworkMcMsgSenddefaultRequest) SetMessageEvent(_messageEvent *DefaultMessageEvent) error {
+    r._messageEvent = _messageEvent
+    r.Set("message_event", _messageEvent)
     return nil
 }
 
 // MessageEvent Getter
 func (r AlibabaIworkMcMsgSenddefaultRequest) GetMessageEvent() *DefaultMessageEvent {
-    return r.messageEvent
+    return r._messageEvent
 }

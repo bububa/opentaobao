@@ -15,29 +15,29 @@ alibaba.alihealth.drugtrace.top.lsyd.listupout
 type AlibabaAlihealthDrugtraceTopLsydListupoutRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 开始日期（不写时分秒）
-    beginDate   string
+    _beginDate   string
     // 结束日期（不写时分秒）
-    endDate   string
+    _endDate   string
     // 生产批号
-    produceBatchNo   string
+    _produceBatchNo   string
     // 药品ID
-    drugEntBaseInfoId   string
+    _drugEntBaseInfoId   string
     // 单据类型
-    billType   string
+    _billType   string
     // 药品类型
-    physicType   string
+    _physicType   string
     // 状态
-    status   string
+    _status   string
     // 单据号
-    billCode   string
+    _billCode   string
     // 页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    page   int64
+    _page   int64
     // 发货单位
-    fromUserId   string
+    _fromUserId   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopLsydListupoutRequest对象
@@ -62,145 +62,145 @@ func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetApiParams() url.Val
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BeginDate Setter
 // 开始日期（不写时分秒）
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束日期（不写时分秒）
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // ProduceBatchNo Setter
 // 生产批号
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetProduceBatchNo(produceBatchNo string) error {
-    r.produceBatchNo = produceBatchNo
-    r.Set("produce_batch_no", produceBatchNo)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetProduceBatchNo(_produceBatchNo string) error {
+    r._produceBatchNo = _produceBatchNo
+    r.Set("produce_batch_no", _produceBatchNo)
     return nil
 }
 
 // ProduceBatchNo Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetProduceBatchNo() string {
-    return r.produceBatchNo
+    return r._produceBatchNo
 }
 // DrugEntBaseInfoId Setter
 // 药品ID
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetDrugEntBaseInfoId(drugEntBaseInfoId string) error {
-    r.drugEntBaseInfoId = drugEntBaseInfoId
-    r.Set("drug_ent_base_info_id", drugEntBaseInfoId)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetDrugEntBaseInfoId(_drugEntBaseInfoId string) error {
+    r._drugEntBaseInfoId = _drugEntBaseInfoId
+    r.Set("drug_ent_base_info_id", _drugEntBaseInfoId)
     return nil
 }
 
 // DrugEntBaseInfoId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetDrugEntBaseInfoId() string {
-    return r.drugEntBaseInfoId
+    return r._drugEntBaseInfoId
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }
 // PhysicType Setter
 // 药品类型
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPhysicType(physicType string) error {
-    r.physicType = physicType
-    r.Set("physic_type", physicType)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPhysicType(_physicType string) error {
+    r._physicType = _physicType
+    r.Set("physic_type", _physicType)
     return nil
 }
 
 // PhysicType Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetPhysicType() string {
-    return r.physicType
+    return r._physicType
 }
 // Status Setter
 // 状态
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // BillCode Setter
 // 单据号
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBillCode(billCode string) error {
-    r.billCode = billCode
-    r.Set("bill_code", billCode)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetBillCode(_billCode string) error {
+    r._billCode = _billCode
+    r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetBillCode() string {
-    return r.billCode
+    return r._billCode
 }
 // PageSize Setter
 // 页大小
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Page Setter
 // 页码
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // FromUserId Setter
 // 发货单位
-func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetFromUserId(fromUserId string) error {
-    r.fromUserId = fromUserId
-    r.Set("from_user_id", fromUserId)
+func (r *AlibabaAlihealthDrugtraceTopLsydListupoutRequest) SetFromUserId(_fromUserId string) error {
+    r._fromUserId = _fromUserId
+    r.Set("from_user_id", _fromUserId)
     return nil
 }
 
 // FromUserId Getter
 func (r AlibabaAlihealthDrugtraceTopLsydListupoutRequest) GetFromUserId() string {
-    return r.fromUserId
+    return r._fromUserId
 }

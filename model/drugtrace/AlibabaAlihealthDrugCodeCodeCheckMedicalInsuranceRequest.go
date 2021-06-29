@@ -20,17 +20,17 @@ alibaba.alihealth.drug.code.code.check.medical.insurance
 type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest struct {
     model.Params
     // 行政区域
-    bureauName   string
+    _bureauName   string
     // 终端id
-    terminalId   string
+    _terminalId   string
     // 终端类型（1005100-零售药店；1005200-医疗机构）
-    terminalType   string
+    _terminalType   string
     // 核销类型(1012100：核销；1012900：退库)
-    cType   string
+    _cType   string
     // 码列表
-    codes   []string
+    _codes   []string
     // 平台返回的终端id
-    terminalEntId   string
+    _terminalEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest对象
@@ -55,73 +55,73 @@ func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetApiParams()
 }
 // BureauName Setter
 // 行政区域
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // TerminalId Setter
 // 终端id
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalId(terminalId string) error {
-    r.terminalId = terminalId
-    r.Set("terminal_id", terminalId)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalId(_terminalId string) error {
+    r._terminalId = _terminalId
+    r.Set("terminal_id", _terminalId)
     return nil
 }
 
 // TerminalId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalId() string {
-    return r.terminalId
+    return r._terminalId
 }
 // TerminalType Setter
 // 终端类型（1005100-零售药店；1005200-医疗机构）
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // CType Setter
 // 核销类型(1012100：核销；1012900：退库)
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCType(cType string) error {
-    r.cType = cType
-    r.Set("c_type", cType)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCType(_cType string) error {
+    r._cType = _cType
+    r.Set("c_type", _cType)
     return nil
 }
 
 // CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetCType() string {
-    return r.cType
+    return r._cType
 }
 // Codes Setter
 // 码列表
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCodes(codes []string) error {
-    r.codes = codes
-    r.Set("codes", codes)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetCodes(_codes []string) error {
+    r._codes = _codes
+    r.Set("codes", _codes)
     return nil
 }
 
 // Codes Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetCodes() []string {
-    return r.codes
+    return r._codes
 }
 // TerminalEntId Setter
 // 平台返回的终端id
-func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalEntId(terminalEntId string) error {
-    r.terminalEntId = terminalEntId
-    r.Set("terminal_ent_id", terminalEntId)
+func (r *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) SetTerminalEntId(_terminalEntId string) error {
+    r._terminalEntId = _terminalEntId
+    r.Set("terminal_ent_id", _terminalEntId)
     return nil
 }
 
 // TerminalEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceRequest) GetTerminalEntId() string {
-    return r.terminalEntId
+    return r._terminalEntId
 }

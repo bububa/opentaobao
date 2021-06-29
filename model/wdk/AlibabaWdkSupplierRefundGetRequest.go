@@ -15,7 +15,7 @@ alibaba.wdk.supplier.refund.get
 type AlibabaWdkSupplierRefundGetRequest struct {
     model.Params
     // 查询入参
-    supplierRefundQueryListRequest   *SupplierRefundQueryListRequest
+    _supplierRefundQueryListRequest   *SupplierRefundQueryListRequest
 }
 
 // 初始化AlibabaWdkSupplierRefundGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSupplierRefundGetRequest) GetApiParams() url.Values {
 }
 // SupplierRefundQueryListRequest Setter
 // 查询入参
-func (r *AlibabaWdkSupplierRefundGetRequest) SetSupplierRefundQueryListRequest(supplierRefundQueryListRequest *SupplierRefundQueryListRequest) error {
-    r.supplierRefundQueryListRequest = supplierRefundQueryListRequest
-    r.Set("supplier_refund_query_list_request", supplierRefundQueryListRequest)
+func (r *AlibabaWdkSupplierRefundGetRequest) SetSupplierRefundQueryListRequest(_supplierRefundQueryListRequest *SupplierRefundQueryListRequest) error {
+    r._supplierRefundQueryListRequest = _supplierRefundQueryListRequest
+    r.Set("supplier_refund_query_list_request", _supplierRefundQueryListRequest)
     return nil
 }
 
 // SupplierRefundQueryListRequest Getter
 func (r AlibabaWdkSupplierRefundGetRequest) GetSupplierRefundQueryListRequest() *SupplierRefundQueryListRequest {
-    return r.supplierRefundQueryListRequest
+    return r._supplierRefundQueryListRequest
 }

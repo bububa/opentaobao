@@ -15,7 +15,7 @@ taobao.alitrip.totoro.auxproduct.push
 type TaobaoAlitripTotoroAuxproductPushRequest struct {
     model.Params
     // 廉航辅营产品推送请求
-    pushAuxProductsRq   *PushAuxProductsRq
+    _pushAuxProductsRq   *PushAuxProductsRq
 }
 
 // 初始化TaobaoAlitripTotoroAuxproductPushRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTotoroAuxproductPushRequest) GetApiParams() url.Values {
 }
 // PushAuxProductsRq Setter
 // 廉航辅营产品推送请求
-func (r *TaobaoAlitripTotoroAuxproductPushRequest) SetPushAuxProductsRq(pushAuxProductsRq *PushAuxProductsRq) error {
-    r.pushAuxProductsRq = pushAuxProductsRq
-    r.Set("push_aux_products_rq", pushAuxProductsRq)
+func (r *TaobaoAlitripTotoroAuxproductPushRequest) SetPushAuxProductsRq(_pushAuxProductsRq *PushAuxProductsRq) error {
+    r._pushAuxProductsRq = _pushAuxProductsRq
+    r.Set("push_aux_products_rq", _pushAuxProductsRq)
     return nil
 }
 
 // PushAuxProductsRq Getter
 func (r TaobaoAlitripTotoroAuxproductPushRequest) GetPushAuxProductsRq() *PushAuxProductsRq {
-    return r.pushAuxProductsRq
+    return r._pushAuxProductsRq
 }

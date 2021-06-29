@@ -15,7 +15,7 @@ alibaba.wdk.shop.query
 type AlibabaWdkShopQueryRequest struct {
     model.Params
     // 如果不传，返回所有
-    ouCode   string
+    _ouCode   string
 }
 
 // 初始化AlibabaWdkShopQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkShopQueryRequest) GetApiParams() url.Values {
 }
 // OuCode Setter
 // 如果不传，返回所有
-func (r *AlibabaWdkShopQueryRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *AlibabaWdkShopQueryRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r AlibabaWdkShopQueryRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }

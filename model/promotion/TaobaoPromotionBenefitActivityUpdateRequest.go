@@ -15,7 +15,7 @@ taobao.promotion.benefit.activity.update
 type TaobaoPromotionBenefitActivityUpdateRequest struct {
     model.Params
     // 修改关联的权益的活动请求
-    updateRequest   *UpdateBenefitActivityRequest
+    _updateRequest   *UpdateBenefitActivityRequest
 }
 
 // 初始化TaobaoPromotionBenefitActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionBenefitActivityUpdateRequest) GetApiParams() url.Values {
 }
 // UpdateRequest Setter
 // 修改关联的权益的活动请求
-func (r *TaobaoPromotionBenefitActivityUpdateRequest) SetUpdateRequest(updateRequest *UpdateBenefitActivityRequest) error {
-    r.updateRequest = updateRequest
-    r.Set("update_request", updateRequest)
+func (r *TaobaoPromotionBenefitActivityUpdateRequest) SetUpdateRequest(_updateRequest *UpdateBenefitActivityRequest) error {
+    r._updateRequest = _updateRequest
+    r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
 func (r TaobaoPromotionBenefitActivityUpdateRequest) GetUpdateRequest() *UpdateBenefitActivityRequest {
-    return r.updateRequest
+    return r._updateRequest
 }

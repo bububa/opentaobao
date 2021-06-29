@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.fund.confirm
 type TaobaoAlitripAxinTransFundConfirmRequest struct {
     model.Params
     // 外部订单编号
-    outerOrderId   string
+    _outerOrderId   string
 }
 
 // 初始化TaobaoAlitripAxinTransFundConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransFundConfirmRequest) GetApiParams() url.Values {
 }
 // OuterOrderId Setter
 // 外部订单编号
-func (r *TaobaoAlitripAxinTransFundConfirmRequest) SetOuterOrderId(outerOrderId string) error {
-    r.outerOrderId = outerOrderId
-    r.Set("outer_order_id", outerOrderId)
+func (r *TaobaoAlitripAxinTransFundConfirmRequest) SetOuterOrderId(_outerOrderId string) error {
+    r._outerOrderId = _outerOrderId
+    r.Set("outer_order_id", _outerOrderId)
     return nil
 }
 
 // OuterOrderId Getter
 func (r TaobaoAlitripAxinTransFundConfirmRequest) GetOuterOrderId() string {
-    return r.outerOrderId
+    return r._outerOrderId
 }

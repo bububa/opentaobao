@@ -15,9 +15,9 @@ taobao.mixnick.wetoplay
 type TaobaoMixnickWetoplayRequest struct {
     model.Params
     // 排查问题id
-    traceId   string
+    _traceId   string
     // 微淘混淆nick
-    weMixnick   string
+    _weMixnick   string
 }
 
 // 初始化TaobaoMixnickWetoplayRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoMixnickWetoplayRequest) GetApiParams() url.Values {
 }
 // TraceId Setter
 // 排查问题id
-func (r *TaobaoMixnickWetoplayRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *TaobaoMixnickWetoplayRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r TaobaoMixnickWetoplayRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }
 // WeMixnick Setter
 // 微淘混淆nick
-func (r *TaobaoMixnickWetoplayRequest) SetWeMixnick(weMixnick string) error {
-    r.weMixnick = weMixnick
-    r.Set("we_mixnick", weMixnick)
+func (r *TaobaoMixnickWetoplayRequest) SetWeMixnick(_weMixnick string) error {
+    r._weMixnick = _weMixnick
+    r.Set("we_mixnick", _weMixnick)
     return nil
 }
 
 // WeMixnick Getter
 func (r TaobaoMixnickWetoplayRequest) GetWeMixnick() string {
-    return r.weMixnick
+    return r._weMixnick
 }

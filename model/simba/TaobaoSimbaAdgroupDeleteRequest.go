@@ -15,9 +15,9 @@ taobao.simba.adgroup.delete
 type TaobaoSimbaAdgroupDeleteRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广组Id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSimbaAdgroupDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaAdgroupDeleteRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaAdgroupDeleteRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaAdgroupDeleteRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaAdgroupDeleteRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaAdgroupDeleteRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaAdgroupDeleteRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaAdgroupDeleteRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

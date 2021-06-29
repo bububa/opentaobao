@@ -15,7 +15,7 @@ alibaba.scbp.reckeyword.search
 type AlibabaScbpReckeywordSearchRequest struct {
     model.Params
     // RecKeywordQuery
-    queryDto   *RecKeywordQuery
+    _queryDto   *RecKeywordQuery
 }
 
 // 初始化AlibabaScbpReckeywordSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpReckeywordSearchRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // RecKeywordQuery
-func (r *AlibabaScbpReckeywordSearchRequest) SetQueryDto(queryDto *RecKeywordQuery) error {
-    r.queryDto = queryDto
-    r.Set("query_dto", queryDto)
+func (r *AlibabaScbpReckeywordSearchRequest) SetQueryDto(_queryDto *RecKeywordQuery) error {
+    r._queryDto = _queryDto
+    r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
 func (r AlibabaScbpReckeywordSearchRequest) GetQueryDto() *RecKeywordQuery {
-    return r.queryDto
+    return r._queryDto
 }

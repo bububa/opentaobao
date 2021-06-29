@@ -15,13 +15,13 @@ taobao.ailab.aicloud.top.message.get.unread.count
 type TaobaoAilabAicloudTopMessageGetUnreadCountRequest struct {
     model.Params
     // 账户体系隔离
-    schema   string
+    _schema   string
     // 用户ID，此处传入第三方账户体系的用户id
-    userId   string
+    _userId   string
     // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-    utdId   string
+    _utdId   string
     // 扩展信息，用于存放APP类型等
-    ext   string
+    _ext   string
 }
 
 // 初始化TaobaoAilabAicloudTopMessageGetUnreadCountRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAilabAicloudTopMessageGetUnreadCountRequest) GetApiParams() url.Va
 }
 // Schema Setter
 // 账户体系隔离
-func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopMessageGetUnreadCountRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // UserId Setter
 // 用户ID，此处传入第三方账户体系的用户id
-func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopMessageGetUnreadCountRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopMessageGetUnreadCountRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // Ext Setter
 // 扩展信息，用于存放APP类型等
-func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoAilabAicloudTopMessageGetUnreadCountRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoAilabAicloudTopMessageGetUnreadCountRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }

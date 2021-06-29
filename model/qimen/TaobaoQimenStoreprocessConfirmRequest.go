@@ -15,7 +15,7 @@ WMS调用奇门的接口,回传仓内加工单创建情况
 type TaobaoQimenStoreprocessConfirmRequest struct {
     model.Params
     // 
-    request   *StoreProcessConfirmRequest
+    _request   *StoreProcessConfirmRequest
 }
 
 // 初始化TaobaoQimenStoreprocessConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStoreprocessConfirmRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenStoreprocessConfirmRequest) SetRequest(request *StoreProcessConfirmRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenStoreprocessConfirmRequest) SetRequest(_request *StoreProcessConfirmRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenStoreprocessConfirmRequest) GetRequest() *StoreProcessConfirmRequest {
-    return r.request
+    return r._request
 }

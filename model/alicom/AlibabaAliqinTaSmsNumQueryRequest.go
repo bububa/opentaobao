@@ -15,15 +15,15 @@ alibaba.aliqin.ta.sms.num.query
 type AlibabaAliqinTaSmsNumQueryRequest struct {
     model.Params
     // 短信发送流水
-    bizId   string
+    _bizId   string
     // 短信接收号码
-    recNum   string
+    _recNum   string
     // 短信发送日期，支持近30天记录查询，格式yyyyMMdd
-    queryDate   string
+    _queryDate   string
     // 分页参数,页码
-    currentPage   int64
+    _currentPage   int64
     // 分页参数，每页数量。最大值50
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaAliqinTaSmsNumQueryRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAliqinTaSmsNumQueryRequest) GetApiParams() url.Values {
 }
 // BizId Setter
 // 短信发送流水
-func (r *AlibabaAliqinTaSmsNumQueryRequest) SetBizId(bizId string) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *AlibabaAliqinTaSmsNumQueryRequest) SetBizId(_bizId string) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r AlibabaAliqinTaSmsNumQueryRequest) GetBizId() string {
-    return r.bizId
+    return r._bizId
 }
 // RecNum Setter
 // 短信接收号码
-func (r *AlibabaAliqinTaSmsNumQueryRequest) SetRecNum(recNum string) error {
-    r.recNum = recNum
-    r.Set("rec_num", recNum)
+func (r *AlibabaAliqinTaSmsNumQueryRequest) SetRecNum(_recNum string) error {
+    r._recNum = _recNum
+    r.Set("rec_num", _recNum)
     return nil
 }
 
 // RecNum Getter
 func (r AlibabaAliqinTaSmsNumQueryRequest) GetRecNum() string {
-    return r.recNum
+    return r._recNum
 }
 // QueryDate Setter
 // 短信发送日期，支持近30天记录查询，格式yyyyMMdd
-func (r *AlibabaAliqinTaSmsNumQueryRequest) SetQueryDate(queryDate string) error {
-    r.queryDate = queryDate
-    r.Set("query_date", queryDate)
+func (r *AlibabaAliqinTaSmsNumQueryRequest) SetQueryDate(_queryDate string) error {
+    r._queryDate = _queryDate
+    r.Set("query_date", _queryDate)
     return nil
 }
 
 // QueryDate Getter
 func (r AlibabaAliqinTaSmsNumQueryRequest) GetQueryDate() string {
-    return r.queryDate
+    return r._queryDate
 }
 // CurrentPage Setter
 // 分页参数,页码
-func (r *AlibabaAliqinTaSmsNumQueryRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaAliqinTaSmsNumQueryRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaAliqinTaSmsNumQueryRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 分页参数，每页数量。最大值50
-func (r *AlibabaAliqinTaSmsNumQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAliqinTaSmsNumQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAliqinTaSmsNumQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

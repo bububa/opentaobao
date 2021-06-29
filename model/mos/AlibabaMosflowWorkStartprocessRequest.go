@@ -15,9 +15,9 @@ alibaba.mosflow.work.startprocess
 type AlibabaMosflowWorkStartprocessRequest struct {
     model.Params
     // 参数二:额外业务参数,Map的JSON串
-    variables   string
+    _variables   string
     // 流程必传参数
-    parameterEntity   *ParameterEntity
+    _parameterEntity   *ParameterEntity
 }
 
 // 初始化AlibabaMosflowWorkStartprocessRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMosflowWorkStartprocessRequest) GetApiParams() url.Values {
 }
 // Variables Setter
 // 参数二:额外业务参数,Map的JSON串
-func (r *AlibabaMosflowWorkStartprocessRequest) SetVariables(variables string) error {
-    r.variables = variables
-    r.Set("variables", variables)
+func (r *AlibabaMosflowWorkStartprocessRequest) SetVariables(_variables string) error {
+    r._variables = _variables
+    r.Set("variables", _variables)
     return nil
 }
 
 // Variables Getter
 func (r AlibabaMosflowWorkStartprocessRequest) GetVariables() string {
-    return r.variables
+    return r._variables
 }
 // ParameterEntity Setter
 // 流程必传参数
-func (r *AlibabaMosflowWorkStartprocessRequest) SetParameterEntity(parameterEntity *ParameterEntity) error {
-    r.parameterEntity = parameterEntity
-    r.Set("parameter_entity", parameterEntity)
+func (r *AlibabaMosflowWorkStartprocessRequest) SetParameterEntity(_parameterEntity *ParameterEntity) error {
+    r._parameterEntity = _parameterEntity
+    r.Set("parameter_entity", _parameterEntity)
     return nil
 }
 
 // ParameterEntity Getter
 func (r AlibabaMosflowWorkStartprocessRequest) GetParameterEntity() *ParameterEntity {
-    return r.parameterEntity
+    return r._parameterEntity
 }

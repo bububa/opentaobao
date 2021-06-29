@@ -15,15 +15,15 @@ taobao.miniapp.template.update
 type TaobaoMiniappTemplateUpdateRequest struct {
     model.Params
     // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-    clients   []string
+    _clients   []string
     // 应用id
-    id   string
+    _id   string
     // schema信息，不填且 应用线上版本使用的templateId与传入的templateId不一致，则会报错; 一致，则复用线上版本的schema。
-    extJson   string
+    _extJson   string
     // 模板id
-    templateId   string
+    _templateId   string
     // 模板版本
-    templateVersion   string
+    _templateVersion   string
 }
 
 // 初始化TaobaoMiniappTemplateUpdateRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoMiniappTemplateUpdateRequest) GetApiParams() url.Values {
 }
 // Clients Setter
 // 要更新的投放端,目前可投放： taobao(淘宝),tmall(天猫)
-func (r *TaobaoMiniappTemplateUpdateRequest) SetClients(clients []string) error {
-    r.clients = clients
-    r.Set("clients", clients)
+func (r *TaobaoMiniappTemplateUpdateRequest) SetClients(_clients []string) error {
+    r._clients = _clients
+    r.Set("clients", _clients)
     return nil
 }
 
 // Clients Getter
 func (r TaobaoMiniappTemplateUpdateRequest) GetClients() []string {
-    return r.clients
+    return r._clients
 }
 // Id Setter
 // 应用id
-func (r *TaobaoMiniappTemplateUpdateRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoMiniappTemplateUpdateRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoMiniappTemplateUpdateRequest) GetId() string {
-    return r.id
+    return r._id
 }
 // ExtJson Setter
 // schema信息，不填且 应用线上版本使用的templateId与传入的templateId不一致，则会报错; 一致，则复用线上版本的schema。
-func (r *TaobaoMiniappTemplateUpdateRequest) SetExtJson(extJson string) error {
-    r.extJson = extJson
-    r.Set("ext_json", extJson)
+func (r *TaobaoMiniappTemplateUpdateRequest) SetExtJson(_extJson string) error {
+    r._extJson = _extJson
+    r.Set("ext_json", _extJson)
     return nil
 }
 
 // ExtJson Getter
 func (r TaobaoMiniappTemplateUpdateRequest) GetExtJson() string {
-    return r.extJson
+    return r._extJson
 }
 // TemplateId Setter
 // 模板id
-func (r *TaobaoMiniappTemplateUpdateRequest) SetTemplateId(templateId string) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoMiniappTemplateUpdateRequest) SetTemplateId(_templateId string) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoMiniappTemplateUpdateRequest) GetTemplateId() string {
-    return r.templateId
+    return r._templateId
 }
 // TemplateVersion Setter
 // 模板版本
-func (r *TaobaoMiniappTemplateUpdateRequest) SetTemplateVersion(templateVersion string) error {
-    r.templateVersion = templateVersion
-    r.Set("template_version", templateVersion)
+func (r *TaobaoMiniappTemplateUpdateRequest) SetTemplateVersion(_templateVersion string) error {
+    r._templateVersion = _templateVersion
+    r.Set("template_version", _templateVersion)
     return nil
 }
 
 // TemplateVersion Getter
 func (r TaobaoMiniappTemplateUpdateRequest) GetTemplateVersion() string {
-    return r.templateVersion
+    return r._templateVersion
 }

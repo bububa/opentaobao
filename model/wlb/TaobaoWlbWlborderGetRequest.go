@@ -15,7 +15,7 @@ taobao.wlb.wlborder.get
 type TaobaoWlbWlborderGetRequest struct {
     model.Params
     // 物流宝订单编码
-    wlbOrderCode   string
+    _wlbOrderCode   string
 }
 
 // 初始化TaobaoWlbWlborderGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWlborderGetRequest) GetApiParams() url.Values {
 }
 // WlbOrderCode Setter
 // 物流宝订单编码
-func (r *TaobaoWlbWlborderGetRequest) SetWlbOrderCode(wlbOrderCode string) error {
-    r.wlbOrderCode = wlbOrderCode
-    r.Set("wlb_order_code", wlbOrderCode)
+func (r *TaobaoWlbWlborderGetRequest) SetWlbOrderCode(_wlbOrderCode string) error {
+    r._wlbOrderCode = _wlbOrderCode
+    r.Set("wlb_order_code", _wlbOrderCode)
     return nil
 }
 
 // WlbOrderCode Getter
 func (r TaobaoWlbWlborderGetRequest) GetWlbOrderCode() string {
-    return r.wlbOrderCode
+    return r._wlbOrderCode
 }

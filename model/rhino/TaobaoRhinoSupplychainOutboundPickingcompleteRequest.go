@@ -15,7 +15,7 @@ taobao.rhino.supplychain.outbound.pickingcomplete
 type TaobaoRhinoSupplychainOutboundPickingcompleteRequest struct {
     model.Params
     // 捡配完成消息
-    param0   *PickingCompleteMsg
+    _param0   *PickingCompleteMsg
 }
 
 // 初始化TaobaoRhinoSupplychainOutboundPickingcompleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetApiParams() url
 }
 // Param0 Setter
 // 捡配完成消息
-func (r *TaobaoRhinoSupplychainOutboundPickingcompleteRequest) SetParam0(param0 *PickingCompleteMsg) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoRhinoSupplychainOutboundPickingcompleteRequest) SetParam0(_param0 *PickingCompleteMsg) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoRhinoSupplychainOutboundPickingcompleteRequest) GetParam0() *PickingCompleteMsg {
-    return r.param0
+    return r._param0
 }

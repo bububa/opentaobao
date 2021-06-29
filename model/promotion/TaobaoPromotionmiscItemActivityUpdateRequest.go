@@ -15,27 +15,27 @@ taobao.promotionmisc.item.activity.update
 type TaobaoPromotionmiscItemActivityUpdateRequest struct {
     model.Params
     // 活动id。
-    activityId   int64
+    _activityId   int64
     // 活动名称。
-    name   string
+    _name   string
     // 活动范围：0表示全部参与； 1表示部分商品参与。
-    participateRange   int64
+    _participateRange   int64
     // 活动开始时间。
-    startTime   string
+    _startTime   string
     // 活动结束时间。
-    endTime   string
+    _endTime   string
     // 是否指定用户标签。
-    isUserTag   bool
+    _isUserTag   bool
     // 用户标签。当is_user_tag为true时，该值才有意义。
-    userTag   string
+    _userTag   string
     // 是否有减钱行为。
-    isDecreaseMoney   bool
+    _isDecreaseMoney   bool
     // 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。
-    decreaseAmount   int64
+    _decreaseAmount   int64
     // 是否有打折行为。
-    isDiscount   bool
+    _isDiscount   bool
     // 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
-    discountRate   int64
+    _discountRate   int64
 }
 
 // 初始化TaobaoPromotionmiscItemActivityUpdateRequest对象
@@ -60,133 +60,133 @@ func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetApiParams() url.Values 
 }
 // ActivityId Setter
 // 活动id。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }
 // Name Setter
 // 活动名称。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // ParticipateRange Setter
 // 活动范围：0表示全部参与； 1表示部分商品参与。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetParticipateRange(participateRange int64) error {
-    r.participateRange = participateRange
-    r.Set("participate_range", participateRange)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetParticipateRange(_participateRange int64) error {
+    r._participateRange = _participateRange
+    r.Set("participate_range", _participateRange)
     return nil
 }
 
 // ParticipateRange Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetParticipateRange() int64 {
-    return r.participateRange
+    return r._participateRange
 }
 // StartTime Setter
 // 活动开始时间。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 活动结束时间。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // IsUserTag Setter
 // 是否指定用户标签。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsUserTag(isUserTag bool) error {
-    r.isUserTag = isUserTag
-    r.Set("is_user_tag", isUserTag)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsUserTag(_isUserTag bool) error {
+    r._isUserTag = _isUserTag
+    r.Set("is_user_tag", _isUserTag)
     return nil
 }
 
 // IsUserTag Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetIsUserTag() bool {
-    return r.isUserTag
+    return r._isUserTag
 }
 // UserTag Setter
 // 用户标签。当is_user_tag为true时，该值才有意义。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetUserTag(userTag string) error {
-    r.userTag = userTag
-    r.Set("user_tag", userTag)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetUserTag(_userTag string) error {
+    r._userTag = _userTag
+    r.Set("user_tag", _userTag)
     return nil
 }
 
 // UserTag Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetUserTag() string {
-    return r.userTag
+    return r._userTag
 }
 // IsDecreaseMoney Setter
 // 是否有减钱行为。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsDecreaseMoney(isDecreaseMoney bool) error {
-    r.isDecreaseMoney = isDecreaseMoney
-    r.Set("is_decrease_money", isDecreaseMoney)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsDecreaseMoney(_isDecreaseMoney bool) error {
+    r._isDecreaseMoney = _isDecreaseMoney
+    r.Set("is_decrease_money", _isDecreaseMoney)
     return nil
 }
 
 // IsDecreaseMoney Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetIsDecreaseMoney() bool {
-    return r.isDecreaseMoney
+    return r._isDecreaseMoney
 }
 // DecreaseAmount Setter
 // 减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetDecreaseAmount(decreaseAmount int64) error {
-    r.decreaseAmount = decreaseAmount
-    r.Set("decrease_amount", decreaseAmount)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetDecreaseAmount(_decreaseAmount int64) error {
+    r._decreaseAmount = _decreaseAmount
+    r.Set("decrease_amount", _decreaseAmount)
     return nil
 }
 
 // DecreaseAmount Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetDecreaseAmount() int64 {
-    return r.decreaseAmount
+    return r._decreaseAmount
 }
 // IsDiscount Setter
 // 是否有打折行为。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsDiscount(isDiscount bool) error {
-    r.isDiscount = isDiscount
-    r.Set("is_discount", isDiscount)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetIsDiscount(_isDiscount bool) error {
+    r._isDiscount = _isDiscount
+    r.Set("is_discount", _isDiscount)
     return nil
 }
 
 // IsDiscount Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetIsDiscount() bool {
-    return r.isDiscount
+    return r._isDiscount
 }
 // DiscountRate Setter
 // 折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。
-func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetDiscountRate(discountRate int64) error {
-    r.discountRate = discountRate
-    r.Set("discount_rate", discountRate)
+func (r *TaobaoPromotionmiscItemActivityUpdateRequest) SetDiscountRate(_discountRate int64) error {
+    r._discountRate = _discountRate
+    r.Set("discount_rate", _discountRate)
     return nil
 }
 
 // DiscountRate Getter
 func (r TaobaoPromotionmiscItemActivityUpdateRequest) GetDiscountRate() int64 {
-    return r.discountRate
+    return r._discountRate
 }

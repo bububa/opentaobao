@@ -15,7 +15,7 @@ taobao.promotion.benefit.activity.relation
 type TaobaoPromotionBenefitActivityRelationRequest struct {
     model.Params
     // 活动关联权益请求参数
-    relationRequest   *RelationActivityBenefitRequest
+    _relationRequest   *RelationActivityBenefitRequest
 }
 
 // 初始化TaobaoPromotionBenefitActivityRelationRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionBenefitActivityRelationRequest) GetApiParams() url.Values
 }
 // RelationRequest Setter
 // 活动关联权益请求参数
-func (r *TaobaoPromotionBenefitActivityRelationRequest) SetRelationRequest(relationRequest *RelationActivityBenefitRequest) error {
-    r.relationRequest = relationRequest
-    r.Set("relation_request", relationRequest)
+func (r *TaobaoPromotionBenefitActivityRelationRequest) SetRelationRequest(_relationRequest *RelationActivityBenefitRequest) error {
+    r._relationRequest = _relationRequest
+    r.Set("relation_request", _relationRequest)
     return nil
 }
 
 // RelationRequest Getter
 func (r TaobaoPromotionBenefitActivityRelationRequest) GetRelationRequest() *RelationActivityBenefitRequest {
-    return r.relationRequest
+    return r._relationRequest
 }

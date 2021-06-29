@@ -15,53 +15,53 @@ taobao.scitem.update
 type TaobaoScitemUpdateRequest struct {
     model.Params
     // 后端商品ID，跟outer_code必须指定一个
-    itemId   int64
+    _itemId   int64
     // 商家编码，跟item_id必须指定一个
-    outerCode   string
+    _outerCode   string
     // 商品名称
-    itemName   string
+    _itemName   string
     // 0.普通供应链商品 1.供应链组合主商品
-    itemType   int64
+    _itemType   int64
     // 需要更新的商品属性格式是  p1:v1,p2:v2,p3:v3
-    updateProperties   string
+    _updateProperties   string
     // 条形码
-    barCode   string
+    _barCode   string
     // 仓储商编码
-    wmsCode   string
+    _wmsCode   string
     // 是否易碎 0：不是  1：是
-    isFriable   int64
+    _isFriable   int64
     // 是否危险 0：不是  0：是
-    isDangerous   int64
+    _isDangerous   int64
     // 是否是贵重品 0:不是 1：是
-    isCostly   int64
+    _isCostly   int64
     // 是否保质期：0:不是 1：是
-    isWarranty   int64
+    _isWarranty   int64
     // weight
-    weight   int64
+    _weight   int64
     // 长度 单位：mm
-    length   int64
+    _length   int64
     // 宽 单位：mm
-    width   int64
+    _width   int64
     // 高 单位：mm
-    height   int64
+    _height   int64
     // 体积：立方厘米
-    volume   int64
+    _volume   int64
     // price
-    price   int64
+    _price   int64
     // remark
-    remark   string
+    _remark   string
     // 0:液体，1：粉体，2：固体
-    matterStatus   int64
+    _matterStatus   int64
     // 品牌id
-    brandId   int64
+    _brandId   int64
     // brand_Name
-    brandName   string
+    _brandName   string
     // 淘宝SKU产品级编码CSPU ID
-    spuId   int64
+    _spuId   int64
     // 移除商品属性P列表,P由系统分配：p1；p2
-    removeProperties   string
+    _removeProperties   string
     // 1表示区域销售，0或是空是非区域销售
-    isAreaSale   int64
+    _isAreaSale   int64
 }
 
 // 初始化TaobaoScitemUpdateRequest对象
@@ -86,289 +86,289 @@ func (r TaobaoScitemUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 后端商品ID，跟outer_code必须指定一个
-func (r *TaobaoScitemUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoScitemUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoScitemUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // OuterCode Setter
 // 商家编码，跟item_id必须指定一个
-func (r *TaobaoScitemUpdateRequest) SetOuterCode(outerCode string) error {
-    r.outerCode = outerCode
-    r.Set("outer_code", outerCode)
+func (r *TaobaoScitemUpdateRequest) SetOuterCode(_outerCode string) error {
+    r._outerCode = _outerCode
+    r.Set("outer_code", _outerCode)
     return nil
 }
 
 // OuterCode Getter
 func (r TaobaoScitemUpdateRequest) GetOuterCode() string {
-    return r.outerCode
+    return r._outerCode
 }
 // ItemName Setter
 // 商品名称
-func (r *TaobaoScitemUpdateRequest) SetItemName(itemName string) error {
-    r.itemName = itemName
-    r.Set("item_name", itemName)
+func (r *TaobaoScitemUpdateRequest) SetItemName(_itemName string) error {
+    r._itemName = _itemName
+    r.Set("item_name", _itemName)
     return nil
 }
 
 // ItemName Getter
 func (r TaobaoScitemUpdateRequest) GetItemName() string {
-    return r.itemName
+    return r._itemName
 }
 // ItemType Setter
 // 0.普通供应链商品 1.供应链组合主商品
-func (r *TaobaoScitemUpdateRequest) SetItemType(itemType int64) error {
-    r.itemType = itemType
-    r.Set("item_type", itemType)
+func (r *TaobaoScitemUpdateRequest) SetItemType(_itemType int64) error {
+    r._itemType = _itemType
+    r.Set("item_type", _itemType)
     return nil
 }
 
 // ItemType Getter
 func (r TaobaoScitemUpdateRequest) GetItemType() int64 {
-    return r.itemType
+    return r._itemType
 }
 // UpdateProperties Setter
 // 需要更新的商品属性格式是  p1:v1,p2:v2,p3:v3
-func (r *TaobaoScitemUpdateRequest) SetUpdateProperties(updateProperties string) error {
-    r.updateProperties = updateProperties
-    r.Set("update_properties", updateProperties)
+func (r *TaobaoScitemUpdateRequest) SetUpdateProperties(_updateProperties string) error {
+    r._updateProperties = _updateProperties
+    r.Set("update_properties", _updateProperties)
     return nil
 }
 
 // UpdateProperties Getter
 func (r TaobaoScitemUpdateRequest) GetUpdateProperties() string {
-    return r.updateProperties
+    return r._updateProperties
 }
 // BarCode Setter
 // 条形码
-func (r *TaobaoScitemUpdateRequest) SetBarCode(barCode string) error {
-    r.barCode = barCode
-    r.Set("bar_code", barCode)
+func (r *TaobaoScitemUpdateRequest) SetBarCode(_barCode string) error {
+    r._barCode = _barCode
+    r.Set("bar_code", _barCode)
     return nil
 }
 
 // BarCode Getter
 func (r TaobaoScitemUpdateRequest) GetBarCode() string {
-    return r.barCode
+    return r._barCode
 }
 // WmsCode Setter
 // 仓储商编码
-func (r *TaobaoScitemUpdateRequest) SetWmsCode(wmsCode string) error {
-    r.wmsCode = wmsCode
-    r.Set("wms_code", wmsCode)
+func (r *TaobaoScitemUpdateRequest) SetWmsCode(_wmsCode string) error {
+    r._wmsCode = _wmsCode
+    r.Set("wms_code", _wmsCode)
     return nil
 }
 
 // WmsCode Getter
 func (r TaobaoScitemUpdateRequest) GetWmsCode() string {
-    return r.wmsCode
+    return r._wmsCode
 }
 // IsFriable Setter
 // 是否易碎 0：不是  1：是
-func (r *TaobaoScitemUpdateRequest) SetIsFriable(isFriable int64) error {
-    r.isFriable = isFriable
-    r.Set("is_friable", isFriable)
+func (r *TaobaoScitemUpdateRequest) SetIsFriable(_isFriable int64) error {
+    r._isFriable = _isFriable
+    r.Set("is_friable", _isFriable)
     return nil
 }
 
 // IsFriable Getter
 func (r TaobaoScitemUpdateRequest) GetIsFriable() int64 {
-    return r.isFriable
+    return r._isFriable
 }
 // IsDangerous Setter
 // 是否危险 0：不是  0：是
-func (r *TaobaoScitemUpdateRequest) SetIsDangerous(isDangerous int64) error {
-    r.isDangerous = isDangerous
-    r.Set("is_dangerous", isDangerous)
+func (r *TaobaoScitemUpdateRequest) SetIsDangerous(_isDangerous int64) error {
+    r._isDangerous = _isDangerous
+    r.Set("is_dangerous", _isDangerous)
     return nil
 }
 
 // IsDangerous Getter
 func (r TaobaoScitemUpdateRequest) GetIsDangerous() int64 {
-    return r.isDangerous
+    return r._isDangerous
 }
 // IsCostly Setter
 // 是否是贵重品 0:不是 1：是
-func (r *TaobaoScitemUpdateRequest) SetIsCostly(isCostly int64) error {
-    r.isCostly = isCostly
-    r.Set("is_costly", isCostly)
+func (r *TaobaoScitemUpdateRequest) SetIsCostly(_isCostly int64) error {
+    r._isCostly = _isCostly
+    r.Set("is_costly", _isCostly)
     return nil
 }
 
 // IsCostly Getter
 func (r TaobaoScitemUpdateRequest) GetIsCostly() int64 {
-    return r.isCostly
+    return r._isCostly
 }
 // IsWarranty Setter
 // 是否保质期：0:不是 1：是
-func (r *TaobaoScitemUpdateRequest) SetIsWarranty(isWarranty int64) error {
-    r.isWarranty = isWarranty
-    r.Set("is_warranty", isWarranty)
+func (r *TaobaoScitemUpdateRequest) SetIsWarranty(_isWarranty int64) error {
+    r._isWarranty = _isWarranty
+    r.Set("is_warranty", _isWarranty)
     return nil
 }
 
 // IsWarranty Getter
 func (r TaobaoScitemUpdateRequest) GetIsWarranty() int64 {
-    return r.isWarranty
+    return r._isWarranty
 }
 // Weight Setter
 // weight
-func (r *TaobaoScitemUpdateRequest) SetWeight(weight int64) error {
-    r.weight = weight
-    r.Set("weight", weight)
+func (r *TaobaoScitemUpdateRequest) SetWeight(_weight int64) error {
+    r._weight = _weight
+    r.Set("weight", _weight)
     return nil
 }
 
 // Weight Getter
 func (r TaobaoScitemUpdateRequest) GetWeight() int64 {
-    return r.weight
+    return r._weight
 }
 // Length Setter
 // 长度 单位：mm
-func (r *TaobaoScitemUpdateRequest) SetLength(length int64) error {
-    r.length = length
-    r.Set("length", length)
+func (r *TaobaoScitemUpdateRequest) SetLength(_length int64) error {
+    r._length = _length
+    r.Set("length", _length)
     return nil
 }
 
 // Length Getter
 func (r TaobaoScitemUpdateRequest) GetLength() int64 {
-    return r.length
+    return r._length
 }
 // Width Setter
 // 宽 单位：mm
-func (r *TaobaoScitemUpdateRequest) SetWidth(width int64) error {
-    r.width = width
-    r.Set("width", width)
+func (r *TaobaoScitemUpdateRequest) SetWidth(_width int64) error {
+    r._width = _width
+    r.Set("width", _width)
     return nil
 }
 
 // Width Getter
 func (r TaobaoScitemUpdateRequest) GetWidth() int64 {
-    return r.width
+    return r._width
 }
 // Height Setter
 // 高 单位：mm
-func (r *TaobaoScitemUpdateRequest) SetHeight(height int64) error {
-    r.height = height
-    r.Set("height", height)
+func (r *TaobaoScitemUpdateRequest) SetHeight(_height int64) error {
+    r._height = _height
+    r.Set("height", _height)
     return nil
 }
 
 // Height Getter
 func (r TaobaoScitemUpdateRequest) GetHeight() int64 {
-    return r.height
+    return r._height
 }
 // Volume Setter
 // 体积：立方厘米
-func (r *TaobaoScitemUpdateRequest) SetVolume(volume int64) error {
-    r.volume = volume
-    r.Set("volume", volume)
+func (r *TaobaoScitemUpdateRequest) SetVolume(_volume int64) error {
+    r._volume = _volume
+    r.Set("volume", _volume)
     return nil
 }
 
 // Volume Getter
 func (r TaobaoScitemUpdateRequest) GetVolume() int64 {
-    return r.volume
+    return r._volume
 }
 // Price Setter
 // price
-func (r *TaobaoScitemUpdateRequest) SetPrice(price int64) error {
-    r.price = price
-    r.Set("price", price)
+func (r *TaobaoScitemUpdateRequest) SetPrice(_price int64) error {
+    r._price = _price
+    r.Set("price", _price)
     return nil
 }
 
 // Price Getter
 func (r TaobaoScitemUpdateRequest) GetPrice() int64 {
-    return r.price
+    return r._price
 }
 // Remark Setter
 // remark
-func (r *TaobaoScitemUpdateRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoScitemUpdateRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoScitemUpdateRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // MatterStatus Setter
 // 0:液体，1：粉体，2：固体
-func (r *TaobaoScitemUpdateRequest) SetMatterStatus(matterStatus int64) error {
-    r.matterStatus = matterStatus
-    r.Set("matter_status", matterStatus)
+func (r *TaobaoScitemUpdateRequest) SetMatterStatus(_matterStatus int64) error {
+    r._matterStatus = _matterStatus
+    r.Set("matter_status", _matterStatus)
     return nil
 }
 
 // MatterStatus Getter
 func (r TaobaoScitemUpdateRequest) GetMatterStatus() int64 {
-    return r.matterStatus
+    return r._matterStatus
 }
 // BrandId Setter
 // 品牌id
-func (r *TaobaoScitemUpdateRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *TaobaoScitemUpdateRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r TaobaoScitemUpdateRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }
 // BrandName Setter
 // brand_Name
-func (r *TaobaoScitemUpdateRequest) SetBrandName(brandName string) error {
-    r.brandName = brandName
-    r.Set("brand_name", brandName)
+func (r *TaobaoScitemUpdateRequest) SetBrandName(_brandName string) error {
+    r._brandName = _brandName
+    r.Set("brand_name", _brandName)
     return nil
 }
 
 // BrandName Getter
 func (r TaobaoScitemUpdateRequest) GetBrandName() string {
-    return r.brandName
+    return r._brandName
 }
 // SpuId Setter
 // 淘宝SKU产品级编码CSPU ID
-func (r *TaobaoScitemUpdateRequest) SetSpuId(spuId int64) error {
-    r.spuId = spuId
-    r.Set("spu_id", spuId)
+func (r *TaobaoScitemUpdateRequest) SetSpuId(_spuId int64) error {
+    r._spuId = _spuId
+    r.Set("spu_id", _spuId)
     return nil
 }
 
 // SpuId Getter
 func (r TaobaoScitemUpdateRequest) GetSpuId() int64 {
-    return r.spuId
+    return r._spuId
 }
 // RemoveProperties Setter
 // 移除商品属性P列表,P由系统分配：p1；p2
-func (r *TaobaoScitemUpdateRequest) SetRemoveProperties(removeProperties string) error {
-    r.removeProperties = removeProperties
-    r.Set("remove_properties", removeProperties)
+func (r *TaobaoScitemUpdateRequest) SetRemoveProperties(_removeProperties string) error {
+    r._removeProperties = _removeProperties
+    r.Set("remove_properties", _removeProperties)
     return nil
 }
 
 // RemoveProperties Getter
 func (r TaobaoScitemUpdateRequest) GetRemoveProperties() string {
-    return r.removeProperties
+    return r._removeProperties
 }
 // IsAreaSale Setter
 // 1表示区域销售，0或是空是非区域销售
-func (r *TaobaoScitemUpdateRequest) SetIsAreaSale(isAreaSale int64) error {
-    r.isAreaSale = isAreaSale
-    r.Set("is_area_sale", isAreaSale)
+func (r *TaobaoScitemUpdateRequest) SetIsAreaSale(_isAreaSale int64) error {
+    r._isAreaSale = _isAreaSale
+    r.Set("is_area_sale", _isAreaSale)
     return nil
 }
 
 // IsAreaSale Getter
 func (r TaobaoScitemUpdateRequest) GetIsAreaSale() int64 {
-    return r.isAreaSale
+    return r._isAreaSale
 }

@@ -15,13 +15,13 @@ taobao.openim.app.chatlogs.get
 type TaobaoOpenimAppChatlogsGetRequest struct {
     model.Params
     // 查询结束时间。UTC时间。精度到秒
-    beg   int64
+    _beg   int64
     // 查询结束时间。UTC时间。精度到秒
-    end   int64
+    _end   int64
     // 查询最大条数
-    count   int64
+    _count   int64
     // 迭代key
-    next   string
+    _next   string
 }
 
 // 初始化TaobaoOpenimAppChatlogsGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoOpenimAppChatlogsGetRequest) GetApiParams() url.Values {
 }
 // Beg Setter
 // 查询结束时间。UTC时间。精度到秒
-func (r *TaobaoOpenimAppChatlogsGetRequest) SetBeg(beg int64) error {
-    r.beg = beg
-    r.Set("beg", beg)
+func (r *TaobaoOpenimAppChatlogsGetRequest) SetBeg(_beg int64) error {
+    r._beg = _beg
+    r.Set("beg", _beg)
     return nil
 }
 
 // Beg Getter
 func (r TaobaoOpenimAppChatlogsGetRequest) GetBeg() int64 {
-    return r.beg
+    return r._beg
 }
 // End Setter
 // 查询结束时间。UTC时间。精度到秒
-func (r *TaobaoOpenimAppChatlogsGetRequest) SetEnd(end int64) error {
-    r.end = end
-    r.Set("end", end)
+func (r *TaobaoOpenimAppChatlogsGetRequest) SetEnd(_end int64) error {
+    r._end = _end
+    r.Set("end", _end)
     return nil
 }
 
 // End Getter
 func (r TaobaoOpenimAppChatlogsGetRequest) GetEnd() int64 {
-    return r.end
+    return r._end
 }
 // Count Setter
 // 查询最大条数
-func (r *TaobaoOpenimAppChatlogsGetRequest) SetCount(count int64) error {
-    r.count = count
-    r.Set("count", count)
+func (r *TaobaoOpenimAppChatlogsGetRequest) SetCount(_count int64) error {
+    r._count = _count
+    r.Set("count", _count)
     return nil
 }
 
 // Count Getter
 func (r TaobaoOpenimAppChatlogsGetRequest) GetCount() int64 {
-    return r.count
+    return r._count
 }
 // Next Setter
 // 迭代key
-func (r *TaobaoOpenimAppChatlogsGetRequest) SetNext(next string) error {
-    r.next = next
-    r.Set("next", next)
+func (r *TaobaoOpenimAppChatlogsGetRequest) SetNext(_next string) error {
+    r._next = _next
+    r.Set("next", _next)
     return nil
 }
 
 // Next Getter
 func (r TaobaoOpenimAppChatlogsGetRequest) GetNext() string {
-    return r.next
+    return r._next
 }

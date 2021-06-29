@@ -15,7 +15,7 @@ alibaba.interact.lotteryactivity.register
 type AlibabaInteractLotteryactivityRegisterRequest struct {
     model.Params
     // 入参
-    paramTopUpdateActivityLotteryInfoParam   *TopUpdateActivityLotteryInfoParam
+    _paramTopUpdateActivityLotteryInfoParam   *TopUpdateActivityLotteryInfoParam
 }
 
 // 初始化AlibabaInteractLotteryactivityRegisterRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractLotteryactivityRegisterRequest) GetApiParams() url.Values
 }
 // ParamTopUpdateActivityLotteryInfoParam Setter
 // 入参
-func (r *AlibabaInteractLotteryactivityRegisterRequest) SetParamTopUpdateActivityLotteryInfoParam(paramTopUpdateActivityLotteryInfoParam *TopUpdateActivityLotteryInfoParam) error {
-    r.paramTopUpdateActivityLotteryInfoParam = paramTopUpdateActivityLotteryInfoParam
-    r.Set("param_top_update_activity_lottery_info_param", paramTopUpdateActivityLotteryInfoParam)
+func (r *AlibabaInteractLotteryactivityRegisterRequest) SetParamTopUpdateActivityLotteryInfoParam(_paramTopUpdateActivityLotteryInfoParam *TopUpdateActivityLotteryInfoParam) error {
+    r._paramTopUpdateActivityLotteryInfoParam = _paramTopUpdateActivityLotteryInfoParam
+    r.Set("param_top_update_activity_lottery_info_param", _paramTopUpdateActivityLotteryInfoParam)
     return nil
 }
 
 // ParamTopUpdateActivityLotteryInfoParam Getter
 func (r AlibabaInteractLotteryactivityRegisterRequest) GetParamTopUpdateActivityLotteryInfoParam() *TopUpdateActivityLotteryInfoParam {
-    return r.paramTopUpdateActivityLotteryInfoParam
+    return r._paramTopUpdateActivityLotteryInfoParam
 }

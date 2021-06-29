@@ -15,7 +15,7 @@ alibaba.perfect.performance.localitem.publish
 type AlibabaPerfectPerformanceLocalitemPublishRequest struct {
     model.Params
     // 请求参数
-    paramPerfectPerformanceItemPublishReq   *PerfectPerformanceItemPublishReq
+    _paramPerfectPerformanceItemPublishReq   *PerfectPerformanceItemPublishReq
 }
 
 // 初始化AlibabaPerfectPerformanceLocalitemPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPerfectPerformanceLocalitemPublishRequest) GetApiParams() url.Val
 }
 // ParamPerfectPerformanceItemPublishReq Setter
 // 请求参数
-func (r *AlibabaPerfectPerformanceLocalitemPublishRequest) SetParamPerfectPerformanceItemPublishReq(paramPerfectPerformanceItemPublishReq *PerfectPerformanceItemPublishReq) error {
-    r.paramPerfectPerformanceItemPublishReq = paramPerfectPerformanceItemPublishReq
-    r.Set("param_perfect_performance_item_publish_req", paramPerfectPerformanceItemPublishReq)
+func (r *AlibabaPerfectPerformanceLocalitemPublishRequest) SetParamPerfectPerformanceItemPublishReq(_paramPerfectPerformanceItemPublishReq *PerfectPerformanceItemPublishReq) error {
+    r._paramPerfectPerformanceItemPublishReq = _paramPerfectPerformanceItemPublishReq
+    r.Set("param_perfect_performance_item_publish_req", _paramPerfectPerformanceItemPublishReq)
     return nil
 }
 
 // ParamPerfectPerformanceItemPublishReq Getter
 func (r AlibabaPerfectPerformanceLocalitemPublishRequest) GetParamPerfectPerformanceItemPublishReq() *PerfectPerformanceItemPublishReq {
-    return r.paramPerfectPerformanceItemPublishReq
+    return r._paramPerfectPerformanceItemPublishReq
 }

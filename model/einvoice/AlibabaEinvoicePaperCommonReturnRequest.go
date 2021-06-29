@@ -15,15 +15,15 @@ alibaba.einvoice.paper.common.return
 type AlibabaEinvoicePaperCommonReturnRequest struct {
     model.Params
     // 请求索引
-    reqIndex   string
+    _reqIndex   string
     // 回传结果
-    success   bool
+    _success   bool
     // 错误码，success=false时必填
-    bizErrorCode   string
+    _bizErrorCode   string
     // 错误信息，success=false时必填
-    bizErrorMsg   string
+    _bizErrorMsg   string
     // 扩展信息
-    extProps   string
+    _extProps   string
 }
 
 // 初始化AlibabaEinvoicePaperCommonReturnRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaEinvoicePaperCommonReturnRequest) GetApiParams() url.Values {
 }
 // ReqIndex Setter
 // 请求索引
-func (r *AlibabaEinvoicePaperCommonReturnRequest) SetReqIndex(reqIndex string) error {
-    r.reqIndex = reqIndex
-    r.Set("req_index", reqIndex)
+func (r *AlibabaEinvoicePaperCommonReturnRequest) SetReqIndex(_reqIndex string) error {
+    r._reqIndex = _reqIndex
+    r.Set("req_index", _reqIndex)
     return nil
 }
 
 // ReqIndex Getter
 func (r AlibabaEinvoicePaperCommonReturnRequest) GetReqIndex() string {
-    return r.reqIndex
+    return r._reqIndex
 }
 // Success Setter
 // 回传结果
-func (r *AlibabaEinvoicePaperCommonReturnRequest) SetSuccess(success bool) error {
-    r.success = success
-    r.Set("success", success)
+func (r *AlibabaEinvoicePaperCommonReturnRequest) SetSuccess(_success bool) error {
+    r._success = _success
+    r.Set("success", _success)
     return nil
 }
 
 // Success Getter
 func (r AlibabaEinvoicePaperCommonReturnRequest) GetSuccess() bool {
-    return r.success
+    return r._success
 }
 // BizErrorCode Setter
 // 错误码，success=false时必填
-func (r *AlibabaEinvoicePaperCommonReturnRequest) SetBizErrorCode(bizErrorCode string) error {
-    r.bizErrorCode = bizErrorCode
-    r.Set("biz_error_code", bizErrorCode)
+func (r *AlibabaEinvoicePaperCommonReturnRequest) SetBizErrorCode(_bizErrorCode string) error {
+    r._bizErrorCode = _bizErrorCode
+    r.Set("biz_error_code", _bizErrorCode)
     return nil
 }
 
 // BizErrorCode Getter
 func (r AlibabaEinvoicePaperCommonReturnRequest) GetBizErrorCode() string {
-    return r.bizErrorCode
+    return r._bizErrorCode
 }
 // BizErrorMsg Setter
 // 错误信息，success=false时必填
-func (r *AlibabaEinvoicePaperCommonReturnRequest) SetBizErrorMsg(bizErrorMsg string) error {
-    r.bizErrorMsg = bizErrorMsg
-    r.Set("biz_error_msg", bizErrorMsg)
+func (r *AlibabaEinvoicePaperCommonReturnRequest) SetBizErrorMsg(_bizErrorMsg string) error {
+    r._bizErrorMsg = _bizErrorMsg
+    r.Set("biz_error_msg", _bizErrorMsg)
     return nil
 }
 
 // BizErrorMsg Getter
 func (r AlibabaEinvoicePaperCommonReturnRequest) GetBizErrorMsg() string {
-    return r.bizErrorMsg
+    return r._bizErrorMsg
 }
 // ExtProps Setter
 // 扩展信息
-func (r *AlibabaEinvoicePaperCommonReturnRequest) SetExtProps(extProps string) error {
-    r.extProps = extProps
-    r.Set("ext_props", extProps)
+func (r *AlibabaEinvoicePaperCommonReturnRequest) SetExtProps(_extProps string) error {
+    r._extProps = _extProps
+    r.Set("ext_props", _extProps)
     return nil
 }
 
 // ExtProps Getter
 func (r AlibabaEinvoicePaperCommonReturnRequest) GetExtProps() string {
-    return r.extProps
+    return r._extProps
 }

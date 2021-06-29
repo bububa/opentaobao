@@ -16,7 +16,7 @@ taobao.wlb.crossborder.waybill.get
 type TaobaoWlbCrossborderWaybillGetRequest struct {
     model.Params
     // 菜鸟物流单号
-    orderCode   string
+    _orderCode   string
 }
 
 // 初始化TaobaoWlbCrossborderWaybillGetRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoWlbCrossborderWaybillGetRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 菜鸟物流单号
-func (r *TaobaoWlbCrossborderWaybillGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbCrossborderWaybillGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbCrossborderWaybillGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }

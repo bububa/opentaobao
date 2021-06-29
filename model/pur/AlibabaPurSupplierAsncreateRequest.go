@@ -15,7 +15,7 @@ asn创建
 type AlibabaPurSupplierAsncreateRequest struct {
     model.Params
     // asn头信息
-    asn   *SupplierAsnInfoVO
+    _asn   *SupplierAsnInfoVO
 }
 
 // 初始化AlibabaPurSupplierAsncreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurSupplierAsncreateRequest) GetApiParams() url.Values {
 }
 // Asn Setter
 // asn头信息
-func (r *AlibabaPurSupplierAsncreateRequest) SetAsn(asn *SupplierAsnInfoVO) error {
-    r.asn = asn
-    r.Set("asn", asn)
+func (r *AlibabaPurSupplierAsncreateRequest) SetAsn(_asn *SupplierAsnInfoVO) error {
+    r._asn = _asn
+    r.Set("asn", _asn)
     return nil
 }
 
 // Asn Getter
 func (r AlibabaPurSupplierAsncreateRequest) GetAsn() *SupplierAsnInfoVO {
-    return r.asn
+    return r._asn
 }

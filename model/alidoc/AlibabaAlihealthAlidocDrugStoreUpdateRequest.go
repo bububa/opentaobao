@@ -15,7 +15,7 @@ alibaba.alihealth.alidoc.drug.store.update
 type AlibabaAlihealthAlidocDrugStoreUpdateRequest struct {
     model.Params
     // 更新对象
-    drugStoreUpdateTopRequest   *DrugStoreUpdateTopRequest
+    _drugStoreUpdateTopRequest   *DrugStoreUpdateTopRequest
 }
 
 // 初始化AlibabaAlihealthAlidocDrugStoreUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAlidocDrugStoreUpdateRequest) GetApiParams() url.Values 
 }
 // DrugStoreUpdateTopRequest Setter
 // 更新对象
-func (r *AlibabaAlihealthAlidocDrugStoreUpdateRequest) SetDrugStoreUpdateTopRequest(drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest) error {
-    r.drugStoreUpdateTopRequest = drugStoreUpdateTopRequest
-    r.Set("drug_store_update_top_request", drugStoreUpdateTopRequest)
+func (r *AlibabaAlihealthAlidocDrugStoreUpdateRequest) SetDrugStoreUpdateTopRequest(_drugStoreUpdateTopRequest *DrugStoreUpdateTopRequest) error {
+    r._drugStoreUpdateTopRequest = _drugStoreUpdateTopRequest
+    r.Set("drug_store_update_top_request", _drugStoreUpdateTopRequest)
     return nil
 }
 
 // DrugStoreUpdateTopRequest Getter
 func (r AlibabaAlihealthAlidocDrugStoreUpdateRequest) GetDrugStoreUpdateTopRequest() *DrugStoreUpdateTopRequest {
-    return r.drugStoreUpdateTopRequest
+    return r._drugStoreUpdateTopRequest
 }

@@ -15,7 +15,7 @@ alibaba.wdk.order.aggregate
 type AlibabaWdkOrderAggregateRequest struct {
     model.Params
     // 系统自动生成
-    orderAggregateQueryRequest   *OrderAggregateQueryRequest
+    _orderAggregateQueryRequest   *OrderAggregateQueryRequest
 }
 
 // 初始化AlibabaWdkOrderAggregateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderAggregateRequest) GetApiParams() url.Values {
 }
 // OrderAggregateQueryRequest Setter
 // 系统自动生成
-func (r *AlibabaWdkOrderAggregateRequest) SetOrderAggregateQueryRequest(orderAggregateQueryRequest *OrderAggregateQueryRequest) error {
-    r.orderAggregateQueryRequest = orderAggregateQueryRequest
-    r.Set("order_aggregate_query_request", orderAggregateQueryRequest)
+func (r *AlibabaWdkOrderAggregateRequest) SetOrderAggregateQueryRequest(_orderAggregateQueryRequest *OrderAggregateQueryRequest) error {
+    r._orderAggregateQueryRequest = _orderAggregateQueryRequest
+    r.Set("order_aggregate_query_request", _orderAggregateQueryRequest)
     return nil
 }
 
 // OrderAggregateQueryRequest Getter
 func (r AlibabaWdkOrderAggregateRequest) GetOrderAggregateQueryRequest() *OrderAggregateQueryRequest {
-    return r.orderAggregateQueryRequest
+    return r._orderAggregateQueryRequest
 }

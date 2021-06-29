@@ -15,9 +15,9 @@ taobao.promotion.coupon.apply
 type TaobaoPromotionCouponApplyRequest struct {
     model.Params
     // 卖家id
-    sellerId   string
+    _sellerId   string
     // 传播id
-    spreadId   string
+    _spreadId   string
 }
 
 // 初始化TaobaoPromotionCouponApplyRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionCouponApplyRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 卖家id
-func (r *TaobaoPromotionCouponApplyRequest) SetSellerId(sellerId string) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TaobaoPromotionCouponApplyRequest) SetSellerId(_sellerId string) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TaobaoPromotionCouponApplyRequest) GetSellerId() string {
-    return r.sellerId
+    return r._sellerId
 }
 // SpreadId Setter
 // 传播id
-func (r *TaobaoPromotionCouponApplyRequest) SetSpreadId(spreadId string) error {
-    r.spreadId = spreadId
-    r.Set("spread_id", spreadId)
+func (r *TaobaoPromotionCouponApplyRequest) SetSpreadId(_spreadId string) error {
+    r._spreadId = _spreadId
+    r.Set("spread_id", _spreadId)
     return nil
 }
 
 // SpreadId Getter
 func (r TaobaoPromotionCouponApplyRequest) GetSpreadId() string {
-    return r.spreadId
+    return r._spreadId
 }

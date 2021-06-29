@@ -15,7 +15,7 @@ alibaba.mj.mos.fund.modifybillbankaccount
 type AlibabaMjMosFundModifybillbankaccountRequest struct {
     model.Params
     // 修改入参
-    modifyDto   *ModifyBillDto
+    _modifyDto   *ModifyBillDto
 }
 
 // 初始化AlibabaMjMosFundModifybillbankaccountRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiParams() url.Values 
 }
 // ModifyDto Setter
 // 修改入参
-func (r *AlibabaMjMosFundModifybillbankaccountRequest) SetModifyDto(modifyDto *ModifyBillDto) error {
-    r.modifyDto = modifyDto
-    r.Set("modify_dto", modifyDto)
+func (r *AlibabaMjMosFundModifybillbankaccountRequest) SetModifyDto(_modifyDto *ModifyBillDto) error {
+    r._modifyDto = _modifyDto
+    r.Set("modify_dto", _modifyDto)
     return nil
 }
 
 // ModifyDto Getter
 func (r AlibabaMjMosFundModifybillbankaccountRequest) GetModifyDto() *ModifyBillDto {
-    return r.modifyDto
+    return r._modifyDto
 }

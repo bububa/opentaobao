@@ -16,7 +16,7 @@ alibaba.fundplatform.cardorder.card.active
 type AlibabaFundplatformCardorderCardActiveRequest struct {
     model.Params
     // 入参对象
-    paramCardActiveRequest   *CardActiveRequest
+    _paramCardActiveRequest   *CardActiveRequest
 }
 
 // 初始化AlibabaFundplatformCardorderCardActiveRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaFundplatformCardorderCardActiveRequest) GetApiParams() url.Values
 }
 // ParamCardActiveRequest Setter
 // 入参对象
-func (r *AlibabaFundplatformCardorderCardActiveRequest) SetParamCardActiveRequest(paramCardActiveRequest *CardActiveRequest) error {
-    r.paramCardActiveRequest = paramCardActiveRequest
-    r.Set("param_card_active_request", paramCardActiveRequest)
+func (r *AlibabaFundplatformCardorderCardActiveRequest) SetParamCardActiveRequest(_paramCardActiveRequest *CardActiveRequest) error {
+    r._paramCardActiveRequest = _paramCardActiveRequest
+    r.Set("param_card_active_request", _paramCardActiveRequest)
     return nil
 }
 
 // ParamCardActiveRequest Getter
 func (r AlibabaFundplatformCardorderCardActiveRequest) GetParamCardActiveRequest() *CardActiveRequest {
-    return r.paramCardActiveRequest
+    return r._paramCardActiveRequest
 }

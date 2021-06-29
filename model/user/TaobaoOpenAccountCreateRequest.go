@@ -15,7 +15,7 @@ Open Account导入数据
 type TaobaoOpenAccountCreateRequest struct {
     model.Params
     // Open Account的列表
-    paramList   []OpenAccount
+    _paramList   []OpenAccount
 }
 
 // 初始化TaobaoOpenAccountCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenAccountCreateRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // Open Account的列表
-func (r *TaobaoOpenAccountCreateRequest) SetParamList(paramList []OpenAccount) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *TaobaoOpenAccountCreateRequest) SetParamList(_paramList []OpenAccount) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r TaobaoOpenAccountCreateRequest) GetParamList() []OpenAccount {
-    return r.paramList
+    return r._paramList
 }

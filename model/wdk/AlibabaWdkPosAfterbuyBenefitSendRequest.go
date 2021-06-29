@@ -15,7 +15,7 @@ alibaba.wdk.pos.afterbuy.benefit.send
 type AlibabaWdkPosAfterbuyBenefitSendRequest struct {
     model.Params
     // 入参
-    sendBenefitParam   *IsvSendBenefitParam
+    _sendBenefitParam   *IsvSendBenefitParam
 }
 
 // 初始化AlibabaWdkPosAfterbuyBenefitSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetApiParams() url.Values {
 }
 // SendBenefitParam Setter
 // 入参
-func (r *AlibabaWdkPosAfterbuyBenefitSendRequest) SetSendBenefitParam(sendBenefitParam *IsvSendBenefitParam) error {
-    r.sendBenefitParam = sendBenefitParam
-    r.Set("send_benefit_param", sendBenefitParam)
+func (r *AlibabaWdkPosAfterbuyBenefitSendRequest) SetSendBenefitParam(_sendBenefitParam *IsvSendBenefitParam) error {
+    r._sendBenefitParam = _sendBenefitParam
+    r.Set("send_benefit_param", _sendBenefitParam)
     return nil
 }
 
 // SendBenefitParam Getter
 func (r AlibabaWdkPosAfterbuyBenefitSendRequest) GetSendBenefitParam() *IsvSendBenefitParam {
-    return r.sendBenefitParam
+    return r._sendBenefitParam
 }

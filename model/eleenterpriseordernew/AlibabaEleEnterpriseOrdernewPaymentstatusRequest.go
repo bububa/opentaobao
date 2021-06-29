@@ -15,9 +15,9 @@ alibaba.ele.enterprise.ordernew.paymentstatus
 type AlibabaEleEnterpriseOrdernewPaymentstatusRequest struct {
     model.Params
     // 订单id
-    orderId   string
+    _orderId   string
     // 支付流水号
-    paySerialNumber   string
+    _paySerialNumber   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewPaymentstatusRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEleEnterpriseOrdernewPaymentstatusRequest) GetApiParams() url.Val
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaEleEnterpriseOrdernewPaymentstatusRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaEleEnterpriseOrdernewPaymentstatusRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewPaymentstatusRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // PaySerialNumber Setter
 // 支付流水号
-func (r *AlibabaEleEnterpriseOrdernewPaymentstatusRequest) SetPaySerialNumber(paySerialNumber string) error {
-    r.paySerialNumber = paySerialNumber
-    r.Set("pay_serial_number", paySerialNumber)
+func (r *AlibabaEleEnterpriseOrdernewPaymentstatusRequest) SetPaySerialNumber(_paySerialNumber string) error {
+    r._paySerialNumber = _paySerialNumber
+    r.Set("pay_serial_number", _paySerialNumber)
     return nil
 }
 
 // PaySerialNumber Getter
 func (r AlibabaEleEnterpriseOrdernewPaymentstatusRequest) GetPaySerialNumber() string {
-    return r.paySerialNumber
+    return r._paySerialNumber
 }

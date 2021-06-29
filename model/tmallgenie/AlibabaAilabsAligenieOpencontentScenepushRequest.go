@@ -15,11 +15,11 @@ alibaba.ailabs.aligenie.opencontent.scenepush
 type AlibabaAilabsAligenieOpencontentScenepushRequest struct {
     model.Params
     // 0 无场景接入  1 关联应用接入
-    sceneType   int64
+    _sceneType   int64
     // 如果关联应用此字段为应用id
-    sceneValue   string
+    _sceneValue   string
     // 详细内容列表
-    batchContent   *BatchContent
+    _batchContent   *BatchContent
 }
 
 // 初始化AlibabaAilabsAligenieOpencontentScenepushRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAilabsAligenieOpencontentScenepushRequest) GetApiParams() url.Val
 }
 // SceneType Setter
 // 0 无场景接入  1 关联应用接入
-func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetSceneType(sceneType int64) error {
-    r.sceneType = sceneType
-    r.Set("scene_type", sceneType)
+func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetSceneType(_sceneType int64) error {
+    r._sceneType = _sceneType
+    r.Set("scene_type", _sceneType)
     return nil
 }
 
 // SceneType Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushRequest) GetSceneType() int64 {
-    return r.sceneType
+    return r._sceneType
 }
 // SceneValue Setter
 // 如果关联应用此字段为应用id
-func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetSceneValue(sceneValue string) error {
-    r.sceneValue = sceneValue
-    r.Set("scene_value", sceneValue)
+func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetSceneValue(_sceneValue string) error {
+    r._sceneValue = _sceneValue
+    r.Set("scene_value", _sceneValue)
     return nil
 }
 
 // SceneValue Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushRequest) GetSceneValue() string {
-    return r.sceneValue
+    return r._sceneValue
 }
 // BatchContent Setter
 // 详细内容列表
-func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetBatchContent(batchContent *BatchContent) error {
-    r.batchContent = batchContent
-    r.Set("batch_content", batchContent)
+func (r *AlibabaAilabsAligenieOpencontentScenepushRequest) SetBatchContent(_batchContent *BatchContent) error {
+    r._batchContent = _batchContent
+    r.Set("batch_content", _batchContent)
     return nil
 }
 
 // BatchContent Getter
 func (r AlibabaAilabsAligenieOpencontentScenepushRequest) GetBatchContent() *BatchContent {
-    return r.batchContent
+    return r._batchContent
 }

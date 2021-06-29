@@ -15,7 +15,7 @@ alibaba.wdk.stock.real.query
 type AlibabaWdkStockRealQueryRequest struct {
     model.Params
     // 系统自动生成
-    query   *WmsInventoryTopQuery
+    _query   *WmsInventoryTopQuery
 }
 
 // 初始化AlibabaWdkStockRealQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkStockRealQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 系统自动生成
-func (r *AlibabaWdkStockRealQueryRequest) SetQuery(query *WmsInventoryTopQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaWdkStockRealQueryRequest) SetQuery(_query *WmsInventoryTopQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaWdkStockRealQueryRequest) GetQuery() *WmsInventoryTopQuery {
-    return r.query
+    return r._query
 }

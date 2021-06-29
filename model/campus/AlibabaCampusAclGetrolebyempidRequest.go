@@ -15,13 +15,13 @@ alibaba.campus.acl.getrolebyempid
 type AlibabaCampusAclGetrolebyempidRequest struct {
     model.Params
     // 公司id
-    companyId   int64
+    _companyId   int64
     // 系统id
-    systemId   string
+    _systemId   string
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 用户id
-    param1   string
+    _param1   string
 }
 
 // 初始化AlibabaCampusAclGetrolebyempidRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaCampusAclGetrolebyempidRequest) GetApiParams() url.Values {
 }
 // CompanyId Setter
 // 公司id
-func (r *AlibabaCampusAclGetrolebyempidRequest) SetCompanyId(companyId int64) error {
-    r.companyId = companyId
-    r.Set("company_id", companyId)
+func (r *AlibabaCampusAclGetrolebyempidRequest) SetCompanyId(_companyId int64) error {
+    r._companyId = _companyId
+    r.Set("company_id", _companyId)
     return nil
 }
 
 // CompanyId Getter
 func (r AlibabaCampusAclGetrolebyempidRequest) GetCompanyId() int64 {
-    return r.companyId
+    return r._companyId
 }
 // SystemId Setter
 // 系统id
-func (r *AlibabaCampusAclGetrolebyempidRequest) SetSystemId(systemId string) error {
-    r.systemId = systemId
-    r.Set("system_id", systemId)
+func (r *AlibabaCampusAclGetrolebyempidRequest) SetSystemId(_systemId string) error {
+    r._systemId = _systemId
+    r.Set("system_id", _systemId)
     return nil
 }
 
 // SystemId Getter
 func (r AlibabaCampusAclGetrolebyempidRequest) GetSystemId() string {
-    return r.systemId
+    return r._systemId
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaCampusAclGetrolebyempidRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaCampusAclGetrolebyempidRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaCampusAclGetrolebyempidRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // Param1 Setter
 // 用户id
-func (r *AlibabaCampusAclGetrolebyempidRequest) SetParam1(param1 string) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusAclGetrolebyempidRequest) SetParam1(_param1 string) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusAclGetrolebyempidRequest) GetParam1() string {
-    return r.param1
+    return r._param1
 }

@@ -16,13 +16,13 @@ alibaba.ihome.ctom.case.mainpic.update
 type AlibabaIhomeCtomCaseMainpicUpdateRequest struct {
     model.Params
     // 32位字符串
-    traceId   string
+    _traceId   string
     // 方案id
-    caseId   string
+    _caseId   string
     // 图片的地址
-    picUrl   string
+    _picUrl   string
     // 图片类型
-    picType   string
+    _picType   string
 }
 
 // 初始化AlibabaIhomeCtomCaseMainpicUpdateRequest对象
@@ -47,49 +47,49 @@ func (r AlibabaIhomeCtomCaseMainpicUpdateRequest) GetApiParams() url.Values {
 }
 // TraceId Setter
 // 32位字符串
-func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }
 // CaseId Setter
 // 方案id
-func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetCaseId(caseId string) error {
-    r.caseId = caseId
-    r.Set("case_id", caseId)
+func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetCaseId(_caseId string) error {
+    r._caseId = _caseId
+    r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateRequest) GetCaseId() string {
-    return r.caseId
+    return r._caseId
 }
 // PicUrl Setter
 // 图片的地址
-func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetPicUrl(picUrl string) error {
-    r.picUrl = picUrl
-    r.Set("pic_url", picUrl)
+func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetPicUrl(_picUrl string) error {
+    r._picUrl = _picUrl
+    r.Set("pic_url", _picUrl)
     return nil
 }
 
 // PicUrl Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateRequest) GetPicUrl() string {
-    return r.picUrl
+    return r._picUrl
 }
 // PicType Setter
 // 图片类型
-func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetPicType(picType string) error {
-    r.picType = picType
-    r.Set("pic_type", picType)
+func (r *AlibabaIhomeCtomCaseMainpicUpdateRequest) SetPicType(_picType string) error {
+    r._picType = _picType
+    r.Set("pic_type", _picType)
     return nil
 }
 
 // PicType Getter
 func (r AlibabaIhomeCtomCaseMainpicUpdateRequest) GetPicType() string {
-    return r.picType
+    return r._picType
 }

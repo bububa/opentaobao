@@ -15,9 +15,9 @@ taobao.ailab.aicloud.top.device.deviceid.convert
 type TaobaoAilabAicloudTopDeviceDeviceidConvertRequest struct {
     model.Params
     // 设备openId
-    deviceOpenId   string
+    _deviceOpenId   string
     // 技能id
-    skillId   string
+    _skillId   string
 }
 
 // 初始化TaobaoAilabAicloudTopDeviceDeviceidConvertRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) GetApiParams() url.Va
 }
 // DeviceOpenId Setter
 // 设备openId
-func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) SetDeviceOpenId(deviceOpenId string) error {
-    r.deviceOpenId = deviceOpenId
-    r.Set("device_open_id", deviceOpenId)
+func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) SetDeviceOpenId(_deviceOpenId string) error {
+    r._deviceOpenId = _deviceOpenId
+    r.Set("device_open_id", _deviceOpenId)
     return nil
 }
 
 // DeviceOpenId Getter
 func (r TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) GetDeviceOpenId() string {
-    return r.deviceOpenId
+    return r._deviceOpenId
 }
 // SkillId Setter
 // 技能id
-func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) SetSkillId(skillId string) error {
-    r.skillId = skillId
-    r.Set("skill_id", skillId)
+func (r *TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) SetSkillId(_skillId string) error {
+    r._skillId = _skillId
+    r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
 func (r TaobaoAilabAicloudTopDeviceDeviceidConvertRequest) GetSkillId() string {
-    return r.skillId
+    return r._skillId
 }

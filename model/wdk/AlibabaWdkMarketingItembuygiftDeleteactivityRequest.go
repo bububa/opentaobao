@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itembuygift.deleteactivity
 type AlibabaWdkMarketingItembuygiftDeleteactivityRequest struct {
     model.Params
     // 要删除的活动信息
-    param   *CommonActivityParam
+    _param   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItembuygiftDeleteactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItembuygiftDeleteactivityRequest) GetApiParams() url.
 }
 // Param Setter
 // 要删除的活动信息
-func (r *AlibabaWdkMarketingItembuygiftDeleteactivityRequest) SetParam(param *CommonActivityParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItembuygiftDeleteactivityRequest) SetParam(_param *CommonActivityParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItembuygiftDeleteactivityRequest) GetParam() *CommonActivityParam {
-    return r.param
+    return r._param
 }

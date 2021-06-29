@@ -15,9 +15,9 @@ cainiao.cboss.workplatform.biztype.queryall
 type CainiaoCbossWorkplatformBiztypeQueryallRequest struct {
     model.Params
     // level
-    level   int64
+    _level   int64
     // tradeId
-    tradeId   string
+    _tradeId   string
 }
 
 // 初始化CainiaoCbossWorkplatformBiztypeQueryallRequest对象
@@ -42,25 +42,25 @@ func (r CainiaoCbossWorkplatformBiztypeQueryallRequest) GetApiParams() url.Value
 }
 // Level Setter
 // level
-func (r *CainiaoCbossWorkplatformBiztypeQueryallRequest) SetLevel(level int64) error {
-    r.level = level
-    r.Set("level", level)
+func (r *CainiaoCbossWorkplatformBiztypeQueryallRequest) SetLevel(_level int64) error {
+    r._level = _level
+    r.Set("level", _level)
     return nil
 }
 
 // Level Getter
 func (r CainiaoCbossWorkplatformBiztypeQueryallRequest) GetLevel() int64 {
-    return r.level
+    return r._level
 }
 // TradeId Setter
 // tradeId
-func (r *CainiaoCbossWorkplatformBiztypeQueryallRequest) SetTradeId(tradeId string) error {
-    r.tradeId = tradeId
-    r.Set("trade_id", tradeId)
+func (r *CainiaoCbossWorkplatformBiztypeQueryallRequest) SetTradeId(_tradeId string) error {
+    r._tradeId = _tradeId
+    r.Set("trade_id", _tradeId)
     return nil
 }
 
 // TradeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQueryallRequest) GetTradeId() string {
-    return r.tradeId
+    return r._tradeId
 }

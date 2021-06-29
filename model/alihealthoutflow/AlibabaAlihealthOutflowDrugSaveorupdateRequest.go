@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.drug.saveorupdate
 type AlibabaAlihealthOutflowDrugSaveorupdateRequest struct {
     model.Params
     // 结果集
-    drugRequest   *DrugRequest
+    _drugRequest   *DrugRequest
 }
 
 // 初始化AlibabaAlihealthOutflowDrugSaveorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetApiParams() url.Value
 }
 // DrugRequest Setter
 // 结果集
-func (r *AlibabaAlihealthOutflowDrugSaveorupdateRequest) SetDrugRequest(drugRequest *DrugRequest) error {
-    r.drugRequest = drugRequest
-    r.Set("drug_request", drugRequest)
+func (r *AlibabaAlihealthOutflowDrugSaveorupdateRequest) SetDrugRequest(_drugRequest *DrugRequest) error {
+    r._drugRequest = _drugRequest
+    r.Set("drug_request", _drugRequest)
     return nil
 }
 
 // DrugRequest Getter
 func (r AlibabaAlihealthOutflowDrugSaveorupdateRequest) GetDrugRequest() *DrugRequest {
-    return r.drugRequest
+    return r._drugRequest
 }

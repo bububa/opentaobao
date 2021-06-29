@@ -15,7 +15,7 @@ taobao.bus.lastplace.get
 type TaobaoBusLastplaceGetRequest struct {
     model.Params
     // 目的地查询参数
-    paramLastPlaceSearchRQ   *ParamLastPlaceSearchRq
+    _paramLastPlaceSearchRQ   *ParamLastPlaceSearchRq
 }
 
 // 初始化TaobaoBusLastplaceGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusLastplaceGetRequest) GetApiParams() url.Values {
 }
 // ParamLastPlaceSearchRQ Setter
 // 目的地查询参数
-func (r *TaobaoBusLastplaceGetRequest) SetParamLastPlaceSearchRQ(paramLastPlaceSearchRQ *ParamLastPlaceSearchRq) error {
-    r.paramLastPlaceSearchRQ = paramLastPlaceSearchRQ
-    r.Set("param_last_place_search_r_q", paramLastPlaceSearchRQ)
+func (r *TaobaoBusLastplaceGetRequest) SetParamLastPlaceSearchRQ(_paramLastPlaceSearchRQ *ParamLastPlaceSearchRq) error {
+    r._paramLastPlaceSearchRQ = _paramLastPlaceSearchRQ
+    r.Set("param_last_place_search_r_q", _paramLastPlaceSearchRQ)
     return nil
 }
 
 // ParamLastPlaceSearchRQ Getter
 func (r TaobaoBusLastplaceGetRequest) GetParamLastPlaceSearchRQ() *ParamLastPlaceSearchRq {
-    return r.paramLastPlaceSearchRQ
+    return r._paramLastPlaceSearchRQ
 }

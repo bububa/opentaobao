@@ -15,9 +15,9 @@ taobao.ump.detail.list.add
 type TaobaoUmpDetailListAddRequest struct {
     model.Params
     // 营销活动id。
-    actId   int64
+    _actId   int64
     // 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
-    details   string
+    _details   string
 }
 
 // 初始化TaobaoUmpDetailListAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUmpDetailListAddRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 营销活动id。
-func (r *TaobaoUmpDetailListAddRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *TaobaoUmpDetailListAddRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r TaobaoUmpDetailListAddRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }
 // Details Setter
 // 营销详情的列表。此列表由detail的json字符串组成。最多插入为10个。
-func (r *TaobaoUmpDetailListAddRequest) SetDetails(details string) error {
-    r.details = details
-    r.Set("details", details)
+func (r *TaobaoUmpDetailListAddRequest) SetDetails(_details string) error {
+    r._details = _details
+    r.Set("details", _details)
     return nil
 }
 
 // Details Getter
 func (r TaobaoUmpDetailListAddRequest) GetDetails() string {
-    return r.details
+    return r._details
 }

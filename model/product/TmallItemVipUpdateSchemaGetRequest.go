@@ -15,7 +15,7 @@ tmall.item.vip.update.schema.get
 type TmallItemVipUpdateSchemaGetRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallItemVipUpdateSchemaGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallItemVipUpdateSchemaGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallItemVipUpdateSchemaGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemVipUpdateSchemaGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemVipUpdateSchemaGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

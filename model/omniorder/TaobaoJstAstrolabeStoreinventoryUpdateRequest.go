@@ -15,9 +15,9 @@ taobao.jst.astrolabe.storeinventory.update
 type TaobaoJstAstrolabeStoreinventoryUpdateRequest struct {
     model.Params
     // 操作时间
-    operationTime   string
+    _operationTime   string
     // 门店列表
-    stores   []Store
+    _stores   []Store
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryUpdateRequest) GetApiParams() url.Values
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryUpdateRequest) SetOperationTime(operationTime string) error {
-    r.operationTime = operationTime
-    r.Set("operation_time", operationTime)
+func (r *TaobaoJstAstrolabeStoreinventoryUpdateRequest) SetOperationTime(_operationTime string) error {
+    r._operationTime = _operationTime
+    r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryUpdateRequest) GetOperationTime() string {
-    return r.operationTime
+    return r._operationTime
 }
 // Stores Setter
 // 门店列表
-func (r *TaobaoJstAstrolabeStoreinventoryUpdateRequest) SetStores(stores []Store) error {
-    r.stores = stores
-    r.Set("stores", stores)
+func (r *TaobaoJstAstrolabeStoreinventoryUpdateRequest) SetStores(_stores []Store) error {
+    r._stores = _stores
+    r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryUpdateRequest) GetStores() []Store {
-    return r.stores
+    return r._stores
 }

@@ -15,7 +15,7 @@ ERP回告销退入库单到仓信息回告
 type AlibabaAscpUopSupplierReverseorderInstorageResultRequest struct {
     model.Params
     // 消退入库单结果请求
-    instorageResultRequest   *Instorageresultrequest
+    _instorageResultRequest   *Instorageresultrequest
 }
 
 // 初始化AlibabaAscpUopSupplierReverseorderInstorageResultRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierReverseorderInstorageResultRequest) GetApiParams()
 }
 // InstorageResultRequest Setter
 // 消退入库单结果请求
-func (r *AlibabaAscpUopSupplierReverseorderInstorageResultRequest) SetInstorageResultRequest(instorageResultRequest *Instorageresultrequest) error {
-    r.instorageResultRequest = instorageResultRequest
-    r.Set("instorage_result_request", instorageResultRequest)
+func (r *AlibabaAscpUopSupplierReverseorderInstorageResultRequest) SetInstorageResultRequest(_instorageResultRequest *Instorageresultrequest) error {
+    r._instorageResultRequest = _instorageResultRequest
+    r.Set("instorage_result_request", _instorageResultRequest)
     return nil
 }
 
 // InstorageResultRequest Getter
 func (r AlibabaAscpUopSupplierReverseorderInstorageResultRequest) GetInstorageResultRequest() *Instorageresultrequest {
-    return r.instorageResultRequest
+    return r._instorageResultRequest
 }

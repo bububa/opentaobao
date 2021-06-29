@@ -15,9 +15,9 @@ taobao.region.price.cancle
 type TaobaoRegionPriceCancleRequest struct {
     model.Params
     // 商品
-    itemId   int64
+    _itemId   int64
     // 无sku传0
-    skuId   int64
+    _skuId   int64
 }
 
 // 初始化TaobaoRegionPriceCancleRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoRegionPriceCancleRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品
-func (r *TaobaoRegionPriceCancleRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoRegionPriceCancleRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoRegionPriceCancleRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SkuId Setter
 // 无sku传0
-func (r *TaobaoRegionPriceCancleRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoRegionPriceCancleRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoRegionPriceCancleRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }

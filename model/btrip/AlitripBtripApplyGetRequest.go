@@ -15,13 +15,13 @@ alitrip.btrip.apply.get
 type AlitripBtripApplyGetRequest struct {
     model.Params
     // 外部审批单id
-    thirdpartApplyId   string
+    _thirdpartApplyId   string
     // 阿里商旅审批单id
-    applyId   int64
+    _applyId   int64
     // 企业id
-    corpId   string
+    _corpId   string
     // 审批单展示id
-    applyShowId   string
+    _applyShowId   string
 }
 
 // 初始化AlitripBtripApplyGetRequest对象
@@ -46,49 +46,49 @@ func (r AlitripBtripApplyGetRequest) GetApiParams() url.Values {
 }
 // ThirdpartApplyId Setter
 // 外部审批单id
-func (r *AlitripBtripApplyGetRequest) SetThirdpartApplyId(thirdpartApplyId string) error {
-    r.thirdpartApplyId = thirdpartApplyId
-    r.Set("thirdpart_apply_id", thirdpartApplyId)
+func (r *AlitripBtripApplyGetRequest) SetThirdpartApplyId(_thirdpartApplyId string) error {
+    r._thirdpartApplyId = _thirdpartApplyId
+    r.Set("thirdpart_apply_id", _thirdpartApplyId)
     return nil
 }
 
 // ThirdpartApplyId Getter
 func (r AlitripBtripApplyGetRequest) GetThirdpartApplyId() string {
-    return r.thirdpartApplyId
+    return r._thirdpartApplyId
 }
 // ApplyId Setter
 // 阿里商旅审批单id
-func (r *AlitripBtripApplyGetRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlitripBtripApplyGetRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlitripBtripApplyGetRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripApplyGetRequest) SetCorpId(corpId string) error {
-    r.corpId = corpId
-    r.Set("corp_id", corpId)
+func (r *AlitripBtripApplyGetRequest) SetCorpId(_corpId string) error {
+    r._corpId = _corpId
+    r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
 func (r AlitripBtripApplyGetRequest) GetCorpId() string {
-    return r.corpId
+    return r._corpId
 }
 // ApplyShowId Setter
 // 审批单展示id
-func (r *AlitripBtripApplyGetRequest) SetApplyShowId(applyShowId string) error {
-    r.applyShowId = applyShowId
-    r.Set("apply_show_id", applyShowId)
+func (r *AlitripBtripApplyGetRequest) SetApplyShowId(_applyShowId string) error {
+    r._applyShowId = _applyShowId
+    r.Set("apply_show_id", _applyShowId)
     return nil
 }
 
 // ApplyShowId Getter
 func (r AlitripBtripApplyGetRequest) GetApplyShowId() string {
-    return r.applyShowId
+    return r._applyShowId
 }

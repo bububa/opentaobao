@@ -15,13 +15,13 @@ alitrip.uppc.member.gain
 type AlitripUppcMemberGainRequest struct {
     model.Params
     // 请求唯一标识
-    requestId   string
+    _requestId   string
     // 查询成功
-    statusCode   int64
+    _statusCode   int64
     // 权益截止时间（扩展字段）
-    responseJson   string
+    _responseJson   string
     // 错误提示
-    errorMsg   string
+    _errorMsg   string
 }
 
 // 初始化AlitripUppcMemberGainRequest对象
@@ -46,49 +46,49 @@ func (r AlitripUppcMemberGainRequest) GetApiParams() url.Values {
 }
 // RequestId Setter
 // 请求唯一标识
-func (r *AlitripUppcMemberGainRequest) SetRequestId(requestId string) error {
-    r.requestId = requestId
-    r.Set("request_id", requestId)
+func (r *AlitripUppcMemberGainRequest) SetRequestId(_requestId string) error {
+    r._requestId = _requestId
+    r.Set("request_id", _requestId)
     return nil
 }
 
 // RequestId Getter
 func (r AlitripUppcMemberGainRequest) GetRequestId() string {
-    return r.requestId
+    return r._requestId
 }
 // StatusCode Setter
 // 查询成功
-func (r *AlitripUppcMemberGainRequest) SetStatusCode(statusCode int64) error {
-    r.statusCode = statusCode
-    r.Set("status_code", statusCode)
+func (r *AlitripUppcMemberGainRequest) SetStatusCode(_statusCode int64) error {
+    r._statusCode = _statusCode
+    r.Set("status_code", _statusCode)
     return nil
 }
 
 // StatusCode Getter
 func (r AlitripUppcMemberGainRequest) GetStatusCode() int64 {
-    return r.statusCode
+    return r._statusCode
 }
 // ResponseJson Setter
 // 权益截止时间（扩展字段）
-func (r *AlitripUppcMemberGainRequest) SetResponseJson(responseJson string) error {
-    r.responseJson = responseJson
-    r.Set("response_json", responseJson)
+func (r *AlitripUppcMemberGainRequest) SetResponseJson(_responseJson string) error {
+    r._responseJson = _responseJson
+    r.Set("response_json", _responseJson)
     return nil
 }
 
 // ResponseJson Getter
 func (r AlitripUppcMemberGainRequest) GetResponseJson() string {
-    return r.responseJson
+    return r._responseJson
 }
 // ErrorMsg Setter
 // 错误提示
-func (r *AlitripUppcMemberGainRequest) SetErrorMsg(errorMsg string) error {
-    r.errorMsg = errorMsg
-    r.Set("error_msg", errorMsg)
+func (r *AlitripUppcMemberGainRequest) SetErrorMsg(_errorMsg string) error {
+    r._errorMsg = _errorMsg
+    r.Set("error_msg", _errorMsg)
     return nil
 }
 
 // ErrorMsg Getter
 func (r AlitripUppcMemberGainRequest) GetErrorMsg() string {
-    return r.errorMsg
+    return r._errorMsg
 }

@@ -15,7 +15,7 @@ tmall.nrt.branddetail.query
 type TmallNrtBranddetailQueryRequest struct {
     model.Params
     // 品牌id
-    brandId   int64
+    _brandId   int64
 }
 
 // 初始化TmallNrtBranddetailQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtBranddetailQueryRequest) GetApiParams() url.Values {
 }
 // BrandId Setter
 // 品牌id
-func (r *TmallNrtBranddetailQueryRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *TmallNrtBranddetailQueryRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r TmallNrtBranddetailQueryRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }

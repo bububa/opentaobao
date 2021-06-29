@@ -15,7 +15,7 @@ alibaba.member.checkmerchant
 type AlibabaMemberCheckmerchantRequest struct {
     model.Params
     // 混淆后的商家id
-    openMerchantId   string
+    _openMerchantId   string
 }
 
 // 初始化AlibabaMemberCheckmerchantRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMemberCheckmerchantRequest) GetApiParams() url.Values {
 }
 // OpenMerchantId Setter
 // 混淆后的商家id
-func (r *AlibabaMemberCheckmerchantRequest) SetOpenMerchantId(openMerchantId string) error {
-    r.openMerchantId = openMerchantId
-    r.Set("open_merchant_id", openMerchantId)
+func (r *AlibabaMemberCheckmerchantRequest) SetOpenMerchantId(_openMerchantId string) error {
+    r._openMerchantId = _openMerchantId
+    r.Set("open_merchant_id", _openMerchantId)
     return nil
 }
 
 // OpenMerchantId Getter
 func (r AlibabaMemberCheckmerchantRequest) GetOpenMerchantId() string {
-    return r.openMerchantId
+    return r._openMerchantId
 }

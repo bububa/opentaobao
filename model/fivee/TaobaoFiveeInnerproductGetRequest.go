@@ -15,9 +15,9 @@ taobao.fivee.innerproduct.get
 type TaobaoFiveeInnerproductGetRequest struct {
     model.Params
     // bu身份标识
-    paramBucode   string
+    _paramBucode   string
     // 条形码
-    paramBarcode   string
+    _paramBarcode   string
 }
 
 // 初始化TaobaoFiveeInnerproductGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFiveeInnerproductGetRequest) GetApiParams() url.Values {
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeInnerproductGetRequest) SetParamBucode(paramBucode string) error {
-    r.paramBucode = paramBucode
-    r.Set("param_bucode", paramBucode)
+func (r *TaobaoFiveeInnerproductGetRequest) SetParamBucode(_paramBucode string) error {
+    r._paramBucode = _paramBucode
+    r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
 func (r TaobaoFiveeInnerproductGetRequest) GetParamBucode() string {
-    return r.paramBucode
+    return r._paramBucode
 }
 // ParamBarcode Setter
 // 条形码
-func (r *TaobaoFiveeInnerproductGetRequest) SetParamBarcode(paramBarcode string) error {
-    r.paramBarcode = paramBarcode
-    r.Set("param_barcode", paramBarcode)
+func (r *TaobaoFiveeInnerproductGetRequest) SetParamBarcode(_paramBarcode string) error {
+    r._paramBarcode = _paramBarcode
+    r.Set("param_barcode", _paramBarcode)
     return nil
 }
 
 // ParamBarcode Getter
 func (r TaobaoFiveeInnerproductGetRequest) GetParamBarcode() string {
-    return r.paramBarcode
+    return r._paramBarcode
 }

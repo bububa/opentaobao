@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.order.create
 type AlitripBtripHotelDistributionOrderCreateRequest struct {
     model.Params
     // 创建订单请求入参
-    paramBtripHotelCreateOrderRq   *BtripHotelCreateOrderRq
+    _paramBtripHotelCreateOrderRq   *BtripHotelCreateOrderRq
 }
 
 // 初始化AlitripBtripHotelDistributionOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionOrderCreateRequest) GetApiParams() url.Valu
 }
 // ParamBtripHotelCreateOrderRq Setter
 // 创建订单请求入参
-func (r *AlitripBtripHotelDistributionOrderCreateRequest) SetParamBtripHotelCreateOrderRq(paramBtripHotelCreateOrderRq *BtripHotelCreateOrderRq) error {
-    r.paramBtripHotelCreateOrderRq = paramBtripHotelCreateOrderRq
-    r.Set("param_btrip_hotel_create_order_rq", paramBtripHotelCreateOrderRq)
+func (r *AlitripBtripHotelDistributionOrderCreateRequest) SetParamBtripHotelCreateOrderRq(_paramBtripHotelCreateOrderRq *BtripHotelCreateOrderRq) error {
+    r._paramBtripHotelCreateOrderRq = _paramBtripHotelCreateOrderRq
+    r.Set("param_btrip_hotel_create_order_rq", _paramBtripHotelCreateOrderRq)
     return nil
 }
 
 // ParamBtripHotelCreateOrderRq Getter
 func (r AlitripBtripHotelDistributionOrderCreateRequest) GetParamBtripHotelCreateOrderRq() *BtripHotelCreateOrderRq {
-    return r.paramBtripHotelCreateOrderRq
+    return r._paramBtripHotelCreateOrderRq
 }

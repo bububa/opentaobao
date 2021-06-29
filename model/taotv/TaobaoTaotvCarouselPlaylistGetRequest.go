@@ -15,9 +15,9 @@ taobao.taotv.carousel.playlist.get
 type TaobaoTaotvCarouselPlaylistGetRequest struct {
     model.Params
     // 频道ID
-    channelId   int64
+    _channelId   int64
     // 设备信息
-    systemInfo   string
+    _systemInfo   string
 }
 
 // 初始化TaobaoTaotvCarouselPlaylistGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTaotvCarouselPlaylistGetRequest) GetApiParams() url.Values {
 }
 // ChannelId Setter
 // 频道ID
-func (r *TaobaoTaotvCarouselPlaylistGetRequest) SetChannelId(channelId int64) error {
-    r.channelId = channelId
-    r.Set("channel_id", channelId)
+func (r *TaobaoTaotvCarouselPlaylistGetRequest) SetChannelId(_channelId int64) error {
+    r._channelId = _channelId
+    r.Set("channel_id", _channelId)
     return nil
 }
 
 // ChannelId Getter
 func (r TaobaoTaotvCarouselPlaylistGetRequest) GetChannelId() int64 {
-    return r.channelId
+    return r._channelId
 }
 // SystemInfo Setter
 // 设备信息
-func (r *TaobaoTaotvCarouselPlaylistGetRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvCarouselPlaylistGetRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvCarouselPlaylistGetRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }

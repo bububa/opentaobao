@@ -15,7 +15,7 @@ taobao.baichuan.user.login
 type TaobaoBaichuanUserLoginRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanUserLoginRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanUserLoginRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanUserLoginRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanUserLoginRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanUserLoginRequest) GetName() string {
-    return r.name
+    return r._name
 }

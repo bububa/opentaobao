@@ -15,15 +15,15 @@ alibaba.interact.isvadmin.bind
 type AlibabaInteractIsvadminBindRequest struct {
     model.Params
     // 描述信息
-    interactDescription   string
+    _interactDescription   string
     // 互动实例名称
-    instanceName   string
+    _instanceName   string
     // 互动开始时间
-    startTime   string
+    _startTime   string
     // 互动结束时间
-    endTime   string
+    _endTime   string
     // 奖池ID
-    lotteryCode   string
+    _lotteryCode   string
 }
 
 // 初始化AlibabaInteractIsvadminBindRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaInteractIsvadminBindRequest) GetApiParams() url.Values {
 }
 // InteractDescription Setter
 // 描述信息
-func (r *AlibabaInteractIsvadminBindRequest) SetInteractDescription(interactDescription string) error {
-    r.interactDescription = interactDescription
-    r.Set("interact_description", interactDescription)
+func (r *AlibabaInteractIsvadminBindRequest) SetInteractDescription(_interactDescription string) error {
+    r._interactDescription = _interactDescription
+    r.Set("interact_description", _interactDescription)
     return nil
 }
 
 // InteractDescription Getter
 func (r AlibabaInteractIsvadminBindRequest) GetInteractDescription() string {
-    return r.interactDescription
+    return r._interactDescription
 }
 // InstanceName Setter
 // 互动实例名称
-func (r *AlibabaInteractIsvadminBindRequest) SetInstanceName(instanceName string) error {
-    r.instanceName = instanceName
-    r.Set("instance_name", instanceName)
+func (r *AlibabaInteractIsvadminBindRequest) SetInstanceName(_instanceName string) error {
+    r._instanceName = _instanceName
+    r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
 func (r AlibabaInteractIsvadminBindRequest) GetInstanceName() string {
-    return r.instanceName
+    return r._instanceName
 }
 // StartTime Setter
 // 互动开始时间
-func (r *AlibabaInteractIsvadminBindRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AlibabaInteractIsvadminBindRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AlibabaInteractIsvadminBindRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 互动结束时间
-func (r *AlibabaInteractIsvadminBindRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AlibabaInteractIsvadminBindRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AlibabaInteractIsvadminBindRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // LotteryCode Setter
 // 奖池ID
-func (r *AlibabaInteractIsvadminBindRequest) SetLotteryCode(lotteryCode string) error {
-    r.lotteryCode = lotteryCode
-    r.Set("lottery_code", lotteryCode)
+func (r *AlibabaInteractIsvadminBindRequest) SetLotteryCode(_lotteryCode string) error {
+    r._lotteryCode = _lotteryCode
+    r.Set("lottery_code", _lotteryCode)
     return nil
 }
 
 // LotteryCode Getter
 func (r AlibabaInteractIsvadminBindRequest) GetLotteryCode() string {
-    return r.lotteryCode
+    return r._lotteryCode
 }

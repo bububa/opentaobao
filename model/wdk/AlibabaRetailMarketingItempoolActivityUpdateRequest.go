@@ -15,7 +15,7 @@ alibaba.retail.marketing.itempool.activity.update
 type AlibabaRetailMarketingItempoolActivityUpdateRequest struct {
     model.Params
     // 更新商品池活动参数
-    param   *ItemPoolActivityOperateRequest
+    _param   *ItemPoolActivityOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingItempoolActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItempoolActivityUpdateRequest) GetApiParams() url.
 }
 // Param Setter
 // 更新商品池活动参数
-func (r *AlibabaRetailMarketingItempoolActivityUpdateRequest) SetParam(param *ItemPoolActivityOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingItempoolActivityUpdateRequest) SetParam(_param *ItemPoolActivityOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingItempoolActivityUpdateRequest) GetParam() *ItemPoolActivityOperateRequest {
-    return r.param
+    return r._param
 }

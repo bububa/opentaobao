@@ -15,7 +15,7 @@ taobao.promotionmisc.activity.range.list.get
 type TaobaoPromotionmiscActivityRangeListGetRequest struct {
     model.Params
     // 活动id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化TaobaoPromotionmiscActivityRangeListGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetApiParams() url.Value
 }
 // ActivityId Setter
 // 活动id
-func (r *TaobaoPromotionmiscActivityRangeListGetRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoPromotionmiscActivityRangeListGetRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoPromotionmiscActivityRangeListGetRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

@@ -15,7 +15,7 @@ alibaba.member.identity.signfinish
 type AlibabaMemberIdentitySignfinishRequest struct {
     model.Params
     // 签约确认信息
-    signFinish   *SignIdentityFinishRequest
+    _signFinish   *SignIdentityFinishRequest
 }
 
 // 初始化AlibabaMemberIdentitySignfinishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMemberIdentitySignfinishRequest) GetApiParams() url.Values {
 }
 // SignFinish Setter
 // 签约确认信息
-func (r *AlibabaMemberIdentitySignfinishRequest) SetSignFinish(signFinish *SignIdentityFinishRequest) error {
-    r.signFinish = signFinish
-    r.Set("sign_finish", signFinish)
+func (r *AlibabaMemberIdentitySignfinishRequest) SetSignFinish(_signFinish *SignIdentityFinishRequest) error {
+    r._signFinish = _signFinish
+    r.Set("sign_finish", _signFinish)
     return nil
 }
 
 // SignFinish Getter
 func (r AlibabaMemberIdentitySignfinishRequest) GetSignFinish() *SignIdentityFinishRequest {
-    return r.signFinish
+    return r._signFinish
 }

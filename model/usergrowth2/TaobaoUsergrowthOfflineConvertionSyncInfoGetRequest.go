@@ -15,7 +15,7 @@ taobao.usergrowth.offline.convertion.sync.info.get
 type TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest struct {
     model.Params
     // 入参
-    query   *OfflineConvertionSyncInfoQuery
+    _query   *OfflineConvertionSyncInfoQuery
 }
 
 // 初始化TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest) GetApiParams() url.
 }
 // Query Setter
 // 入参
-func (r *TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest) SetQuery(query *OfflineConvertionSyncInfoQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest) SetQuery(_query *OfflineConvertionSyncInfoQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TaobaoUsergrowthOfflineConvertionSyncInfoGetRequest) GetQuery() *OfflineConvertionSyncInfoQuery {
-    return r.query
+    return r._query
 }

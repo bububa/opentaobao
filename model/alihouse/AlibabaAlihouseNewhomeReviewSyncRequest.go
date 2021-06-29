@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.review.sync
 type AlibabaAlihouseNewhomeReviewSyncRequest struct {
     model.Params
     // 测评草稿信息
-    review   *ProjectReviewDraftDto
+    _review   *ProjectReviewDraftDto
 }
 
 // 初始化AlibabaAlihouseNewhomeReviewSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiParams() url.Values {
 }
 // Review Setter
 // 测评草稿信息
-func (r *AlibabaAlihouseNewhomeReviewSyncRequest) SetReview(review *ProjectReviewDraftDto) error {
-    r.review = review
-    r.Set("review", review)
+func (r *AlibabaAlihouseNewhomeReviewSyncRequest) SetReview(_review *ProjectReviewDraftDto) error {
+    r._review = _review
+    r.Set("review", _review)
     return nil
 }
 
 // Review Getter
 func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetReview() *ProjectReviewDraftDto {
-    return r.review
+    return r._review
 }

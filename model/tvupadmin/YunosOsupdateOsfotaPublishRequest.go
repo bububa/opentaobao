@@ -15,7 +15,7 @@ yunos.osupdate.osfota.publish
 type YunosOsupdateOsfotaPublishRequest struct {
     model.Params
     // 入参json格式
-    publishJson   string
+    _publishJson   string
 }
 
 // 初始化YunosOsupdateOsfotaPublishRequest对象
@@ -40,13 +40,13 @@ func (r YunosOsupdateOsfotaPublishRequest) GetApiParams() url.Values {
 }
 // PublishJson Setter
 // 入参json格式
-func (r *YunosOsupdateOsfotaPublishRequest) SetPublishJson(publishJson string) error {
-    r.publishJson = publishJson
-    r.Set("publish_json", publishJson)
+func (r *YunosOsupdateOsfotaPublishRequest) SetPublishJson(_publishJson string) error {
+    r._publishJson = _publishJson
+    r.Set("publish_json", _publishJson)
     return nil
 }
 
 // PublishJson Getter
 func (r YunosOsupdateOsfotaPublishRequest) GetPublishJson() string {
-    return r.publishJson
+    return r._publishJson
 }

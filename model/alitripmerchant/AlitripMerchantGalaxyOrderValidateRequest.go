@@ -15,11 +15,11 @@ alitrip.merchant.galaxy.order.validate
 type AlitripMerchantGalaxyOrderValidateRequest struct {
     model.Params
     // 租户身份信息
-    tenantKey   string
+    _tenantKey   string
     // 试单参数
-    validateOrderParam   *ValidateOrderParam
+    _validateOrderParam   *ValidateOrderParam
     // 用户标识
-    token   string
+    _token   string
 }
 
 // 初始化AlitripMerchantGalaxyOrderValidateRequest对象
@@ -44,37 +44,37 @@ func (r AlitripMerchantGalaxyOrderValidateRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyOrderValidateRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyOrderValidateRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyOrderValidateRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // ValidateOrderParam Setter
 // 试单参数
-func (r *AlitripMerchantGalaxyOrderValidateRequest) SetValidateOrderParam(validateOrderParam *ValidateOrderParam) error {
-    r.validateOrderParam = validateOrderParam
-    r.Set("validate_order_param", validateOrderParam)
+func (r *AlitripMerchantGalaxyOrderValidateRequest) SetValidateOrderParam(_validateOrderParam *ValidateOrderParam) error {
+    r._validateOrderParam = _validateOrderParam
+    r.Set("validate_order_param", _validateOrderParam)
     return nil
 }
 
 // ValidateOrderParam Getter
 func (r AlitripMerchantGalaxyOrderValidateRequest) GetValidateOrderParam() *ValidateOrderParam {
-    return r.validateOrderParam
+    return r._validateOrderParam
 }
 // Token Setter
 // 用户标识
-func (r *AlitripMerchantGalaxyOrderValidateRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyOrderValidateRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyOrderValidateRequest) GetToken() string {
-    return r.token
+    return r._token
 }

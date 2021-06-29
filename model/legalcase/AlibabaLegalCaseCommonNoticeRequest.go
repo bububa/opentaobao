@@ -15,13 +15,13 @@ alibaba.legal.case.common.notice
 type AlibabaLegalCaseCommonNoticeRequest struct {
     model.Params
     // 案件id
-    caseId   int64
+    _caseId   int64
     // 委托id
-    entrustId   int64
+    _entrustId   int64
     // adminicular_evidence（补充证据）risk_early_warning（风险预警）
-    type   string
+    _type   string
     // 消息模型
-    noticeModel   *NoticeModel
+    _noticeModel   *NoticeModel
 }
 
 // 初始化AlibabaLegalCaseCommonNoticeRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaLegalCaseCommonNoticeRequest) GetApiParams() url.Values {
 }
 // CaseId Setter
 // 案件id
-func (r *AlibabaLegalCaseCommonNoticeRequest) SetCaseId(caseId int64) error {
-    r.caseId = caseId
-    r.Set("case_id", caseId)
+func (r *AlibabaLegalCaseCommonNoticeRequest) SetCaseId(_caseId int64) error {
+    r._caseId = _caseId
+    r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
 func (r AlibabaLegalCaseCommonNoticeRequest) GetCaseId() int64 {
-    return r.caseId
+    return r._caseId
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseCommonNoticeRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalCaseCommonNoticeRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalCaseCommonNoticeRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // Type Setter
 // adminicular_evidence（补充证据）risk_early_warning（风险预警）
-func (r *AlibabaLegalCaseCommonNoticeRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaLegalCaseCommonNoticeRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaLegalCaseCommonNoticeRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // NoticeModel Setter
 // 消息模型
-func (r *AlibabaLegalCaseCommonNoticeRequest) SetNoticeModel(noticeModel *NoticeModel) error {
-    r.noticeModel = noticeModel
-    r.Set("notice_model", noticeModel)
+func (r *AlibabaLegalCaseCommonNoticeRequest) SetNoticeModel(_noticeModel *NoticeModel) error {
+    r._noticeModel = _noticeModel
+    r.Set("notice_model", _noticeModel)
     return nil
 }
 
 // NoticeModel Getter
 func (r AlibabaLegalCaseCommonNoticeRequest) GetNoticeModel() *NoticeModel {
-    return r.noticeModel
+    return r._noticeModel
 }

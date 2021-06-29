@@ -15,9 +15,9 @@ alitrip.rail.ir.service.get
 type AlitripRailIrServiceGetRequest struct {
     model.Params
     // 6代表境外火车票
-    bizType   int64
+    _bizType   int64
     // 代理商id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化AlitripRailIrServiceGetRequest对象
@@ -42,25 +42,25 @@ func (r AlitripRailIrServiceGetRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 6代表境外火车票
-func (r *AlitripRailIrServiceGetRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *AlitripRailIrServiceGetRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r AlitripRailIrServiceGetRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }
 // AgentId Setter
 // 代理商id
-func (r *AlitripRailIrServiceGetRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlitripRailIrServiceGetRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlitripRailIrServiceGetRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.findbyid
 type YunosTvpubadminManageTopicFindbyidRequest struct {
     model.Params
     // 专题id
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosTvpubadminManageTopicFindbyidRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicFindbyidRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 专题id
-func (r *YunosTvpubadminManageTopicFindbyidRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminManageTopicFindbyidRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminManageTopicFindbyidRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

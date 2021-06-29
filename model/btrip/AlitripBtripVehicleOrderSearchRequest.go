@@ -15,7 +15,7 @@ alitrip.btrip.vehicle.order.search
 type AlitripBtripVehicleOrderSearchRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenSearchRq
+    _rq   *OpenSearchRq
 }
 
 // 初始化AlitripBtripVehicleOrderSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripVehicleOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripVehicleOrderSearchRequest) SetRq(rq *OpenSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripVehicleOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripVehicleOrderSearchRequest) GetRq() *OpenSearchRq {
-    return r.rq
+    return r._rq
 }

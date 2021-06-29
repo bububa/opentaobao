@@ -15,7 +15,7 @@ taobao.subuser.departments.get
 type TaobaoSubuserDepartmentsGetRequest struct {
     model.Params
     // 主账号用户名
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoSubuserDepartmentsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSubuserDepartmentsGetRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 主账号用户名
-func (r *TaobaoSubuserDepartmentsGetRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoSubuserDepartmentsGetRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoSubuserDepartmentsGetRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

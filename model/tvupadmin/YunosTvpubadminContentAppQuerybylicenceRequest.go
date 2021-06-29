@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.app.querybylicence
 type YunosTvpubadminContentAppQuerybylicenceRequest struct {
     model.Params
     // 查询条件
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminContentAppQuerybylicenceRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetApiParams() url.Value
 }
 // Query Setter
 // 查询条件
-func (r *YunosTvpubadminContentAppQuerybylicenceRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminContentAppQuerybylicenceRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminContentAppQuerybylicenceRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

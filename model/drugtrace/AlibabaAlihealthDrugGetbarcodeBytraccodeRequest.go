@@ -15,7 +15,7 @@ alibaba.alihealth.drug.getbarcode.bytraccode
 type AlibabaAlihealthDrugGetbarcodeBytraccodeRequest struct {
     model.Params
     // 追溯码
-    traceCode   string
+    _traceCode   string
 }
 
 // 初始化AlibabaAlihealthDrugGetbarcodeBytraccodeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetApiParams() url.Valu
 }
 // TraceCode Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) SetTraceCode(traceCode string) error {
-    r.traceCode = traceCode
-    r.Set("trace_code", traceCode)
+func (r *AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) SetTraceCode(_traceCode string) error {
+    r._traceCode = _traceCode
+    r.Set("trace_code", _traceCode)
     return nil
 }
 
 // TraceCode Getter
 func (r AlibabaAlihealthDrugGetbarcodeBytraccodeRequest) GetTraceCode() string {
-    return r.traceCode
+    return r._traceCode
 }

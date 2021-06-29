@@ -17,9 +17,9 @@ HSF方法名称：getCampusById
 type AlibabaCampusSpaceCampusGetbyidRequest struct {
     model.Params
     // 园区ID
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 园区ID
-    param1   int64
+    _param1   int64
 }
 
 // 初始化AlibabaCampusSpaceCampusGetbyidRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceCampusGetbyidRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 园区ID
-func (r *AlibabaCampusSpaceCampusGetbyidRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusSpaceCampusGetbyidRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusSpaceCampusGetbyidRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 园区ID
-func (r *AlibabaCampusSpaceCampusGetbyidRequest) SetParam1(param1 int64) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusSpaceCampusGetbyidRequest) SetParam1(_param1 int64) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusSpaceCampusGetbyidRequest) GetParam1() int64 {
-    return r.param1
+    return r._param1
 }

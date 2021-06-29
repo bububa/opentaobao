@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.wechat.info
 type AlitripMerchantGalaxyWechatInfoRequest struct {
     model.Params
     // 租户的id
-    tenantKey   string
+    _tenantKey   string
     // 微信小程序获取的code
-    code   string
+    _code   string
 }
 
 // 初始化AlitripMerchantGalaxyWechatInfoRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyWechatInfoRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户的id
-func (r *AlitripMerchantGalaxyWechatInfoRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyWechatInfoRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyWechatInfoRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Code Setter
 // 微信小程序获取的code
-func (r *AlitripMerchantGalaxyWechatInfoRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlitripMerchantGalaxyWechatInfoRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlitripMerchantGalaxyWechatInfoRequest) GetCode() string {
-    return r.code
+    return r._code
 }

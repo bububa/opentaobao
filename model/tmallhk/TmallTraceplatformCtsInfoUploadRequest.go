@@ -15,7 +15,7 @@ cts上传溯源信息
 type TmallTraceplatformCtsInfoUploadRequest struct {
     model.Params
     // 入参traceInfo
-    traceInfo   *CtsInfo
+    _traceInfo   *CtsInfo
 }
 
 // 初始化TmallTraceplatformCtsInfoUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallTraceplatformCtsInfoUploadRequest) GetApiParams() url.Values {
 }
 // TraceInfo Setter
 // 入参traceInfo
-func (r *TmallTraceplatformCtsInfoUploadRequest) SetTraceInfo(traceInfo *CtsInfo) error {
-    r.traceInfo = traceInfo
-    r.Set("trace_info", traceInfo)
+func (r *TmallTraceplatformCtsInfoUploadRequest) SetTraceInfo(_traceInfo *CtsInfo) error {
+    r._traceInfo = _traceInfo
+    r.Set("trace_info", _traceInfo)
     return nil
 }
 
 // TraceInfo Getter
 func (r TmallTraceplatformCtsInfoUploadRequest) GetTraceInfo() *CtsInfo {
-    return r.traceInfo
+    return r._traceInfo
 }

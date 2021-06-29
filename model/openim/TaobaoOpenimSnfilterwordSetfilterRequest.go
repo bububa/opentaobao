@@ -15,11 +15,11 @@ taobao.openim.snfilterword.setfilter
 type TaobaoOpenimSnfilterwordSetfilterRequest struct {
     model.Params
     // 上传者身份信息，区分不同上传者;只是记录，没有身份校验功能
-    creator   string
+    _creator   string
     // 需要过滤的关键词
-    filterword   string
+    _filterword   string
     // 过滤原因描述
-    desc   string
+    _desc   string
 }
 
 // 初始化TaobaoOpenimSnfilterwordSetfilterRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOpenimSnfilterwordSetfilterRequest) GetApiParams() url.Values {
 }
 // Creator Setter
 // 上传者身份信息，区分不同上传者;只是记录，没有身份校验功能
-func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetCreator(creator string) error {
-    r.creator = creator
-    r.Set("creator", creator)
+func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetCreator(_creator string) error {
+    r._creator = _creator
+    r.Set("creator", _creator)
     return nil
 }
 
 // Creator Getter
 func (r TaobaoOpenimSnfilterwordSetfilterRequest) GetCreator() string {
-    return r.creator
+    return r._creator
 }
 // Filterword Setter
 // 需要过滤的关键词
-func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetFilterword(filterword string) error {
-    r.filterword = filterword
-    r.Set("filterword", filterword)
+func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetFilterword(_filterword string) error {
+    r._filterword = _filterword
+    r.Set("filterword", _filterword)
     return nil
 }
 
 // Filterword Getter
 func (r TaobaoOpenimSnfilterwordSetfilterRequest) GetFilterword() string {
-    return r.filterword
+    return r._filterword
 }
 // Desc Setter
 // 过滤原因描述
-func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoOpenimSnfilterwordSetfilterRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoOpenimSnfilterwordSetfilterRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }

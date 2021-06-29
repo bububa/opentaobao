@@ -15,11 +15,11 @@ taobao.item.img.delete
 type TaobaoItemImgDeleteRequest struct {
     model.Params
     // 商品数字ID
-    numIid   int64
+    _numIid   int64
     // 商品图片ID；如果是竖图，请将id的值设置为1
-    id   int64
+    _id   int64
     // 标记是否要删除第6张图，因为第6张图与普通商品图片不是存储在同一个位置的无图片ID，所以要通过一个标记来判断是否为第6张图，目前第6张图业务主要用在女装业务下
-    isSixthPic   bool
+    _isSixthPic   bool
 }
 
 // 初始化TaobaoItemImgDeleteRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoItemImgDeleteRequest) GetApiParams() url.Values {
 }
 // NumIid Setter
 // 商品数字ID
-func (r *TaobaoItemImgDeleteRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemImgDeleteRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemImgDeleteRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }
 // Id Setter
 // 商品图片ID；如果是竖图，请将id的值设置为1
-func (r *TaobaoItemImgDeleteRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoItemImgDeleteRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoItemImgDeleteRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // IsSixthPic Setter
 // 标记是否要删除第6张图，因为第6张图与普通商品图片不是存储在同一个位置的无图片ID，所以要通过一个标记来判断是否为第6张图，目前第6张图业务主要用在女装业务下
-func (r *TaobaoItemImgDeleteRequest) SetIsSixthPic(isSixthPic bool) error {
-    r.isSixthPic = isSixthPic
-    r.Set("is_sixth_pic", isSixthPic)
+func (r *TaobaoItemImgDeleteRequest) SetIsSixthPic(_isSixthPic bool) error {
+    r._isSixthPic = _isSixthPic
+    r.Set("is_sixth_pic", _isSixthPic)
     return nil
 }
 
 // IsSixthPic Getter
 func (r TaobaoItemImgDeleteRequest) GetIsSixthPic() bool {
-    return r.isSixthPic
+    return r._isSixthPic
 }

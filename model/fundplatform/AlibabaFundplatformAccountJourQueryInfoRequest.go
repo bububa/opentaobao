@@ -15,7 +15,7 @@ alibaba.fundplatform.account.jour.query.info
 type AlibabaFundplatformAccountJourQueryInfoRequest struct {
     model.Params
     // 入参对象
-    paramFundAccountJournalQueryReq   *FundAccountJournalQueryReq
+    _paramFundAccountJournalQueryReq   *FundAccountJournalQueryReq
 }
 
 // 初始化AlibabaFundplatformAccountJourQueryInfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformAccountJourQueryInfoRequest) GetApiParams() url.Value
 }
 // ParamFundAccountJournalQueryReq Setter
 // 入参对象
-func (r *AlibabaFundplatformAccountJourQueryInfoRequest) SetParamFundAccountJournalQueryReq(paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
-    r.paramFundAccountJournalQueryReq = paramFundAccountJournalQueryReq
-    r.Set("param_fund_account_journal_query_req", paramFundAccountJournalQueryReq)
+func (r *AlibabaFundplatformAccountJourQueryInfoRequest) SetParamFundAccountJournalQueryReq(_paramFundAccountJournalQueryReq *FundAccountJournalQueryReq) error {
+    r._paramFundAccountJournalQueryReq = _paramFundAccountJournalQueryReq
+    r.Set("param_fund_account_journal_query_req", _paramFundAccountJournalQueryReq)
     return nil
 }
 
 // ParamFundAccountJournalQueryReq Getter
 func (r AlibabaFundplatformAccountJourQueryInfoRequest) GetParamFundAccountJournalQueryReq() *FundAccountJournalQueryReq {
-    return r.paramFundAccountJournalQueryReq
+    return r._paramFundAccountJournalQueryReq
 }

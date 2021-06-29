@@ -15,7 +15,7 @@ alibaba.idle.recycle.order.get
 type AlibabaIdleRecycleOrderGetRequest struct {
     model.Params
     // 订单号
-    bizOrderId   int64
+    _bizOrderId   int64
 }
 
 // 初始化AlibabaIdleRecycleOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRecycleOrderGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *AlibabaIdleRecycleOrderGetRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *AlibabaIdleRecycleOrderGetRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r AlibabaIdleRecycleOrderGetRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }

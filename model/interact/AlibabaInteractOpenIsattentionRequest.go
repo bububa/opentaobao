@@ -15,7 +15,7 @@ alibaba.interact.open.isattention
 type AlibabaInteractOpenIsattentionRequest struct {
     model.Params
     // 1
-    param0   int64
+    _param0   int64
 }
 
 // 初始化AlibabaInteractOpenIsattentionRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractOpenIsattentionRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 1
-func (r *AlibabaInteractOpenIsattentionRequest) SetParam0(param0 int64) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaInteractOpenIsattentionRequest) SetParam0(_param0 int64) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaInteractOpenIsattentionRequest) GetParam0() int64 {
-    return r.param0
+    return r._param0
 }

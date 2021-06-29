@@ -15,9 +15,9 @@ alibaba.campus.space.getbyids
 type AlibabaCampusSpaceGetbyidsRequest struct {
     model.Params
     // 上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 查询条件
-    query   *SpaceIdsQuery
+    _query   *SpaceIdsQuery
 }
 
 // 初始化AlibabaCampusSpaceGetbyidsRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceGetbyidsRequest) GetApiParams() url.Values {
 }
 // Context Setter
 // 上下文
-func (r *AlibabaCampusSpaceGetbyidsRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceGetbyidsRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceGetbyidsRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // Query Setter
 // 查询条件
-func (r *AlibabaCampusSpaceGetbyidsRequest) SetQuery(query *SpaceIdsQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusSpaceGetbyidsRequest) SetQuery(_query *SpaceIdsQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusSpaceGetbyidsRequest) GetQuery() *SpaceIdsQuery {
-    return r.query
+    return r._query
 }

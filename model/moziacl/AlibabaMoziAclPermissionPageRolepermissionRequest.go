@@ -15,7 +15,7 @@ alibaba.mozi.acl.permission.page.rolepermission
 type AlibabaMoziAclPermissionPageRolepermissionRequest struct {
     model.Params
     // 分页查询角色下包含的权限列表
-    pageRolePermisions   *PageRolePermissionRequest
+    _pageRolePermisions   *PageRolePermissionRequest
 }
 
 // 初始化AlibabaMoziAclPermissionPageRolepermissionRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclPermissionPageRolepermissionRequest) GetApiParams() url.Va
 }
 // PageRolePermisions Setter
 // 分页查询角色下包含的权限列表
-func (r *AlibabaMoziAclPermissionPageRolepermissionRequest) SetPageRolePermisions(pageRolePermisions *PageRolePermissionRequest) error {
-    r.pageRolePermisions = pageRolePermisions
-    r.Set("page_role_permisions", pageRolePermisions)
+func (r *AlibabaMoziAclPermissionPageRolepermissionRequest) SetPageRolePermisions(_pageRolePermisions *PageRolePermissionRequest) error {
+    r._pageRolePermisions = _pageRolePermisions
+    r.Set("page_role_permisions", _pageRolePermisions)
     return nil
 }
 
 // PageRolePermisions Getter
 func (r AlibabaMoziAclPermissionPageRolepermissionRequest) GetPageRolePermisions() *PageRolePermissionRequest {
-    return r.pageRolePermisions
+    return r._pageRolePermisions
 }

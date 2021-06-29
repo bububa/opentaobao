@@ -15,11 +15,11 @@ taobao.simba.insight.wordssubdata.get
 type TaobaoSimbaInsightWordssubdataGetRequest struct {
     model.Params
     // 关键词列表
-    bidwordList   []string
+    _bidwordList   []string
     // 开始时间
-    startDate   string
+    _startDate   string
     // 结束时间
-    endDate   string
+    _endDate   string
 }
 
 // 初始化TaobaoSimbaInsightWordssubdataGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaInsightWordssubdataGetRequest) GetApiParams() url.Values {
 }
 // BidwordList Setter
 // 关键词列表
-func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetBidwordList(bidwordList []string) error {
-    r.bidwordList = bidwordList
-    r.Set("bidword_list", bidwordList)
+func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetBidwordList(_bidwordList []string) error {
+    r._bidwordList = _bidwordList
+    r.Set("bidword_list", _bidwordList)
     return nil
 }
 
 // BidwordList Getter
 func (r TaobaoSimbaInsightWordssubdataGetRequest) GetBidwordList() []string {
-    return r.bidwordList
+    return r._bidwordList
 }
 // StartDate Setter
 // 开始时间
-func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoSimbaInsightWordssubdataGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 结束时间
-func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoSimbaInsightWordssubdataGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

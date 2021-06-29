@@ -15,15 +15,15 @@ taobao.product.img.upload
 type TaobaoProductImgUploadRequest struct {
     model.Params
     // 产品图片ID.修改图片时需要传入
-    id   int64
+    _id   int64
     // 产品ID.Product的id
-    productId   int64
+    _productId   int64
     // 图片内容.图片最大为500K,只支持JPG,GIF格式.
-    image   []*model.File
+    _image   []*model.File
     // 图片序号
-    position   int64
+    _position   int64
     // 是否将该图片设为主图.可选值:true,false;默认值:false.
-    isMajor   bool
+    _isMajor   bool
 }
 
 // 初始化TaobaoProductImgUploadRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoProductImgUploadRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 产品图片ID.修改图片时需要传入
-func (r *TaobaoProductImgUploadRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoProductImgUploadRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoProductImgUploadRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // ProductId Setter
 // 产品ID.Product的id
-func (r *TaobaoProductImgUploadRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoProductImgUploadRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoProductImgUploadRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // Image Setter
 // 图片内容.图片最大为500K,只支持JPG,GIF格式.
-func (r *TaobaoProductImgUploadRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoProductImgUploadRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoProductImgUploadRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Position Setter
 // 图片序号
-func (r *TaobaoProductImgUploadRequest) SetPosition(position int64) error {
-    r.position = position
-    r.Set("position", position)
+func (r *TaobaoProductImgUploadRequest) SetPosition(_position int64) error {
+    r._position = _position
+    r.Set("position", _position)
     return nil
 }
 
 // Position Getter
 func (r TaobaoProductImgUploadRequest) GetPosition() int64 {
-    return r.position
+    return r._position
 }
 // IsMajor Setter
 // 是否将该图片设为主图.可选值:true,false;默认值:false.
-func (r *TaobaoProductImgUploadRequest) SetIsMajor(isMajor bool) error {
-    r.isMajor = isMajor
-    r.Set("is_major", isMajor)
+func (r *TaobaoProductImgUploadRequest) SetIsMajor(_isMajor bool) error {
+    r._isMajor = _isMajor
+    r.Set("is_major", _isMajor)
     return nil
 }
 
 // IsMajor Getter
 func (r TaobaoProductImgUploadRequest) GetIsMajor() bool {
-    return r.isMajor
+    return r._isMajor
 }

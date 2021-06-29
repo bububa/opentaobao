@@ -15,7 +15,7 @@ alibaba.marketing.lottery.activity.create
 type AlibabaMarketingLotteryActivityCreateRequest struct {
     model.Params
     // 抽奖活动创建请求对象
-    lotteryActivityCreate   *LotteryActivityCreateDto
+    _lotteryActivityCreate   *LotteryActivityCreateDto
 }
 
 // 初始化AlibabaMarketingLotteryActivityCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityCreateRequest) GetApiParams() url.Values 
 }
 // LotteryActivityCreate Setter
 // 抽奖活动创建请求对象
-func (r *AlibabaMarketingLotteryActivityCreateRequest) SetLotteryActivityCreate(lotteryActivityCreate *LotteryActivityCreateDto) error {
-    r.lotteryActivityCreate = lotteryActivityCreate
-    r.Set("lottery_activity_create", lotteryActivityCreate)
+func (r *AlibabaMarketingLotteryActivityCreateRequest) SetLotteryActivityCreate(_lotteryActivityCreate *LotteryActivityCreateDto) error {
+    r._lotteryActivityCreate = _lotteryActivityCreate
+    r.Set("lottery_activity_create", _lotteryActivityCreate)
     return nil
 }
 
 // LotteryActivityCreate Getter
 func (r AlibabaMarketingLotteryActivityCreateRequest) GetLotteryActivityCreate() *LotteryActivityCreateDto {
-    return r.lotteryActivityCreate
+    return r._lotteryActivityCreate
 }

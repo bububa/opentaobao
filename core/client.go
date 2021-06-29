@@ -101,7 +101,7 @@ func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	return resp.Error()
+	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
 func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp model.IResponse) error {
@@ -158,7 +158,7 @@ func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp mode
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	return resp.Error()
+	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
 func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
@@ -190,7 +190,7 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	return resp.Error()
+	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
 func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url.Values {

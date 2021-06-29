@@ -15,7 +15,7 @@ alibaba.health.nr.cep.warstqty.batchupdate
 type AlibabaHealthNrCepWarstqtyBatchupdateRequest struct {
     model.Params
     // 库存更新对象
-    warStqtyList   []TopIsvStqtyLstDto
+    _warStqtyList   []TopIsvStqtyLstDto
 }
 
 // 初始化AlibabaHealthNrCepWarstqtyBatchupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetApiParams() url.Values 
 }
 // WarStqtyList Setter
 // 库存更新对象
-func (r *AlibabaHealthNrCepWarstqtyBatchupdateRequest) SetWarStqtyList(warStqtyList []TopIsvStqtyLstDto) error {
-    r.warStqtyList = warStqtyList
-    r.Set("war_stqty_list", warStqtyList)
+func (r *AlibabaHealthNrCepWarstqtyBatchupdateRequest) SetWarStqtyList(_warStqtyList []TopIsvStqtyLstDto) error {
+    r._warStqtyList = _warStqtyList
+    r.Set("war_stqty_list", _warStqtyList)
     return nil
 }
 
 // WarStqtyList Getter
 func (r AlibabaHealthNrCepWarstqtyBatchupdateRequest) GetWarStqtyList() []TopIsvStqtyLstDto {
-    return r.warStqtyList
+    return r._warStqtyList
 }

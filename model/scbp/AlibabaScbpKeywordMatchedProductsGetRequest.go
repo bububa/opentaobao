@@ -15,7 +15,7 @@ alibaba.scbp.keyword.matched.products.get
 type AlibabaScbpKeywordMatchedProductsGetRequest struct {
     model.Params
     // 已购买的关键词
-    adKeyword   string
+    _adKeyword   string
 }
 
 // 初始化AlibabaScbpKeywordMatchedProductsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiParams() url.Values {
 }
 // AdKeyword Setter
 // 已购买的关键词
-func (r *AlibabaScbpKeywordMatchedProductsGetRequest) SetAdKeyword(adKeyword string) error {
-    r.adKeyword = adKeyword
-    r.Set("ad_keyword", adKeyword)
+func (r *AlibabaScbpKeywordMatchedProductsGetRequest) SetAdKeyword(_adKeyword string) error {
+    r._adKeyword = _adKeyword
+    r.Set("ad_keyword", _adKeyword)
     return nil
 }
 
 // AdKeyword Getter
 func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetAdKeyword() string {
-    return r.adKeyword
+    return r._adKeyword
 }

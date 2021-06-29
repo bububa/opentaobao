@@ -15,7 +15,7 @@ alibaba.lst.vending.equipment.query
 type AlibabaLstVendingEquipmentQueryRequest struct {
     model.Params
     // 设备查询条件
-    openEquipmentQuery   *OpenEquipmentQuery
+    _openEquipmentQuery   *OpenEquipmentQuery
 }
 
 // 初始化AlibabaLstVendingEquipmentQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingEquipmentQueryRequest) GetApiParams() url.Values {
 }
 // OpenEquipmentQuery Setter
 // 设备查询条件
-func (r *AlibabaLstVendingEquipmentQueryRequest) SetOpenEquipmentQuery(openEquipmentQuery *OpenEquipmentQuery) error {
-    r.openEquipmentQuery = openEquipmentQuery
-    r.Set("open_equipment_query", openEquipmentQuery)
+func (r *AlibabaLstVendingEquipmentQueryRequest) SetOpenEquipmentQuery(_openEquipmentQuery *OpenEquipmentQuery) error {
+    r._openEquipmentQuery = _openEquipmentQuery
+    r.Set("open_equipment_query", _openEquipmentQuery)
     return nil
 }
 
 // OpenEquipmentQuery Getter
 func (r AlibabaLstVendingEquipmentQueryRequest) GetOpenEquipmentQuery() *OpenEquipmentQuery {
-    return r.openEquipmentQuery
+    return r._openEquipmentQuery
 }

@@ -15,11 +15,11 @@ alibaba.security.jaq.rp.cloud.start
 type AlibabaSecurityJaqRpCloudStartRequest struct {
     model.Params
     // token
-    verifyToken   string
+    _verifyToken   string
     // 客户端信息，如果是服务端接入，里面的参数可为空
-    clientInfo   *RpClientInfo
+    _clientInfo   *RpClientInfo
     // 扩展信息
-    extraData   string
+    _extraData   string
 }
 
 // 初始化AlibabaSecurityJaqRpCloudStartRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaSecurityJaqRpCloudStartRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpCloudStartRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudStartRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }
 // ClientInfo Setter
 // 客户端信息，如果是服务端接入，里面的参数可为空
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetClientInfo(clientInfo *RpClientInfo) error {
-    r.clientInfo = clientInfo
-    r.Set("client_info", clientInfo)
+func (r *AlibabaSecurityJaqRpCloudStartRequest) SetClientInfo(_clientInfo *RpClientInfo) error {
+    r._clientInfo = _clientInfo
+    r.Set("client_info", _clientInfo)
     return nil
 }
 
 // ClientInfo Getter
 func (r AlibabaSecurityJaqRpCloudStartRequest) GetClientInfo() *RpClientInfo {
-    return r.clientInfo
+    return r._clientInfo
 }
 // ExtraData Setter
 // 扩展信息
-func (r *AlibabaSecurityJaqRpCloudStartRequest) SetExtraData(extraData string) error {
-    r.extraData = extraData
-    r.Set("extra_data", extraData)
+func (r *AlibabaSecurityJaqRpCloudStartRequest) SetExtraData(_extraData string) error {
+    r._extraData = _extraData
+    r.Set("extra_data", _extraData)
     return nil
 }
 
 // ExtraData Getter
 func (r AlibabaSecurityJaqRpCloudStartRequest) GetExtraData() string {
-    return r.extraData
+    return r._extraData
 }

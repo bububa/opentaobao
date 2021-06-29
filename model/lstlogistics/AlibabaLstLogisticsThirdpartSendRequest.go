@@ -15,7 +15,7 @@ alibaba.lst.logistics.thirdpart.send
 type AlibabaLstLogisticsThirdpartSendRequest struct {
     model.Params
     // 入参
-    param   *SendOfflineOrderParam
+    _param   *SendOfflineOrderParam
 }
 
 // 初始化AlibabaLstLogisticsThirdpartSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsThirdpartSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstLogisticsThirdpartSendRequest) SetParam(param *SendOfflineOrderParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstLogisticsThirdpartSendRequest) SetParam(_param *SendOfflineOrderParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstLogisticsThirdpartSendRequest) GetParam() *SendOfflineOrderParam {
-    return r.param
+    return r._param
 }

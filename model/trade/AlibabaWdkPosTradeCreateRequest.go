@@ -15,7 +15,7 @@ alibaba.wdk.pos.trade.create
 type AlibabaWdkPosTradeCreateRequest struct {
     model.Params
     // 下单请求
-    createRequest   *FastBuyPosCreateRequest
+    _createRequest   *FastBuyPosCreateRequest
 }
 
 // 初始化AlibabaWdkPosTradeCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeCreateRequest) GetApiParams() url.Values {
 }
 // CreateRequest Setter
 // 下单请求
-func (r *AlibabaWdkPosTradeCreateRequest) SetCreateRequest(createRequest *FastBuyPosCreateRequest) error {
-    r.createRequest = createRequest
-    r.Set("create_request", createRequest)
+func (r *AlibabaWdkPosTradeCreateRequest) SetCreateRequest(_createRequest *FastBuyPosCreateRequest) error {
+    r._createRequest = _createRequest
+    r.Set("create_request", _createRequest)
     return nil
 }
 
 // CreateRequest Getter
 func (r AlibabaWdkPosTradeCreateRequest) GetCreateRequest() *FastBuyPosCreateRequest {
-    return r.createRequest
+    return r._createRequest
 }

@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itemdiscount.queryitems
 type AlibabaWdkMarketingItemdiscountQueryitemsRequest struct {
     model.Params
     // 查询入参
-    param   *ActivitySkuQuery
+    _param   *ActivitySkuQuery
 }
 
 // 初始化AlibabaWdkMarketingItemdiscountQueryitemsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItemdiscountQueryitemsRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 查询入参
-func (r *AlibabaWdkMarketingItemdiscountQueryitemsRequest) SetParam(param *ActivitySkuQuery) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItemdiscountQueryitemsRequest) SetParam(_param *ActivitySkuQuery) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItemdiscountQueryitemsRequest) GetParam() *ActivitySkuQuery {
-    return r.param
+    return r._param
 }

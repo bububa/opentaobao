@@ -15,7 +15,7 @@ alibaba.health.nr.logistics.query
 type AlibabaHealthNrLogisticsQueryRequest struct {
     model.Params
     // 订单id
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化AlibabaHealthNrLogisticsQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrLogisticsQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHealthNrLogisticsQueryRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthNrLogisticsQueryRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthNrLogisticsQueryRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

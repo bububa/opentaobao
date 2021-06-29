@@ -15,13 +15,13 @@ taobao.qimen.itemstore.banding
 type TaobaoQimenItemstoreBandingRequest struct {
     model.Params
     // 门店列表
-    storeIds   []int64
+    _storeIds   []int64
     // 备注信息
-    remark   string
+    _remark   string
     // 操作类型
-    actionType   string
+    _actionType   string
     // 线上商品ID
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoQimenItemstoreBandingRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoQimenItemstoreBandingRequest) GetApiParams() url.Values {
 }
 // StoreIds Setter
 // 门店列表
-func (r *TaobaoQimenItemstoreBandingRequest) SetStoreIds(storeIds []int64) error {
-    r.storeIds = storeIds
-    r.Set("store_ids", storeIds)
+func (r *TaobaoQimenItemstoreBandingRequest) SetStoreIds(_storeIds []int64) error {
+    r._storeIds = _storeIds
+    r.Set("store_ids", _storeIds)
     return nil
 }
 
 // StoreIds Getter
 func (r TaobaoQimenItemstoreBandingRequest) GetStoreIds() []int64 {
-    return r.storeIds
+    return r._storeIds
 }
 // Remark Setter
 // 备注信息
-func (r *TaobaoQimenItemstoreBandingRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoQimenItemstoreBandingRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoQimenItemstoreBandingRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // ActionType Setter
 // 操作类型
-func (r *TaobaoQimenItemstoreBandingRequest) SetActionType(actionType string) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *TaobaoQimenItemstoreBandingRequest) SetActionType(_actionType string) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r TaobaoQimenItemstoreBandingRequest) GetActionType() string {
-    return r.actionType
+    return r._actionType
 }
 // ItemId Setter
 // 线上商品ID
-func (r *TaobaoQimenItemstoreBandingRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoQimenItemstoreBandingRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoQimenItemstoreBandingRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

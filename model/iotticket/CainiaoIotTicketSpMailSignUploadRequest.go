@@ -15,7 +15,7 @@ IoT售后服务商签收客户邮寄设备附件上传
 type CainiaoIotTicketSpMailSignUploadRequest struct {
     model.Params
     // 请求参数
-    param   *UploadSignVoucherRequest
+    _param   *UploadSignVoucherRequest
 }
 
 // 初始化CainiaoIotTicketSpMailSignUploadRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpMailSignUploadRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求参数
-func (r *CainiaoIotTicketSpMailSignUploadRequest) SetParam(param *UploadSignVoucherRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *CainiaoIotTicketSpMailSignUploadRequest) SetParam(_param *UploadSignVoucherRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r CainiaoIotTicketSpMailSignUploadRequest) GetParam() *UploadSignVoucherRequest {
-    return r.param
+    return r._param
 }

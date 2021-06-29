@@ -15,7 +15,7 @@ alibaba.wdk.sku.add
 type AlibabaWdkSkuAddRequest struct {
     model.Params
     // 商品列表
-    paramList   []SkuDo
+    _paramList   []SkuDo
 }
 
 // 初始化AlibabaWdkSkuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuAddRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 商品列表
-func (r *AlibabaWdkSkuAddRequest) SetParamList(paramList []SkuDo) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *AlibabaWdkSkuAddRequest) SetParamList(_paramList []SkuDo) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r AlibabaWdkSkuAddRequest) GetParamList() []SkuDo {
-    return r.paramList
+    return r._paramList
 }

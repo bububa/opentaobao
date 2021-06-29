@@ -16,11 +16,11 @@ taobao.ump.shoutaotag.add
 type TaobaoUmpShoutaotagAddRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 买家ID
-    buyerId   int64
+    _buyerId   int64
     // 渠道KEY
-    channelKey   string
+    _channelKey   string
 }
 
 // 初始化TaobaoUmpShoutaotagAddRequest对象
@@ -45,37 +45,37 @@ func (r TaobaoUmpShoutaotagAddRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoUmpShoutaotagAddRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoUmpShoutaotagAddRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoUmpShoutaotagAddRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // BuyerId Setter
 // 买家ID
-func (r *TaobaoUmpShoutaotagAddRequest) SetBuyerId(buyerId int64) error {
-    r.buyerId = buyerId
-    r.Set("buyer_id", buyerId)
+func (r *TaobaoUmpShoutaotagAddRequest) SetBuyerId(_buyerId int64) error {
+    r._buyerId = _buyerId
+    r.Set("buyer_id", _buyerId)
     return nil
 }
 
 // BuyerId Getter
 func (r TaobaoUmpShoutaotagAddRequest) GetBuyerId() int64 {
-    return r.buyerId
+    return r._buyerId
 }
 // ChannelKey Setter
 // 渠道KEY
-func (r *TaobaoUmpShoutaotagAddRequest) SetChannelKey(channelKey string) error {
-    r.channelKey = channelKey
-    r.Set("channel_key", channelKey)
+func (r *TaobaoUmpShoutaotagAddRequest) SetChannelKey(_channelKey string) error {
+    r._channelKey = _channelKey
+    r.Set("channel_key", _channelKey)
     return nil
 }
 
 // ChannelKey Getter
 func (r TaobaoUmpShoutaotagAddRequest) GetChannelKey() string {
-    return r.channelKey
+    return r._channelKey
 }

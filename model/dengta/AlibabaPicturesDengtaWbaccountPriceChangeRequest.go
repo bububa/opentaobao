@@ -15,19 +15,19 @@ alibaba.pictures.dengta.wbaccount.price.change
 type AlibabaPicturesDengtaWbaccountPriceChangeRequest struct {
     model.Params
     // 账号id
-    accountId   string
+    _accountId   string
     // 转发价格
-    transferPrice   string
+    _transferPrice   string
     // 日期
-    changeTime   string
+    _changeTime   string
     // 原发价
-    originPrice   string
+    _originPrice   string
     // id
-    id   int64
+    _id   int64
     // 转发价格 折后价
-    transferPriceAli   string
+    _transferPriceAli   string
     // 原发价 折后价
-    originPriceAli   string
+    _originPriceAli   string
 }
 
 // 初始化AlibabaPicturesDengtaWbaccountPriceChangeRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetApiParams() url.Val
 }
 // AccountId Setter
 // 账号id
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }
 // TransferPrice Setter
 // 转发价格
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetTransferPrice(transferPrice string) error {
-    r.transferPrice = transferPrice
-    r.Set("transfer_price", transferPrice)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetTransferPrice(_transferPrice string) error {
+    r._transferPrice = _transferPrice
+    r.Set("transfer_price", _transferPrice)
     return nil
 }
 
 // TransferPrice Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetTransferPrice() string {
-    return r.transferPrice
+    return r._transferPrice
 }
 // ChangeTime Setter
 // 日期
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetChangeTime(changeTime string) error {
-    r.changeTime = changeTime
-    r.Set("change_time", changeTime)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetChangeTime(_changeTime string) error {
+    r._changeTime = _changeTime
+    r.Set("change_time", _changeTime)
     return nil
 }
 
 // ChangeTime Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetChangeTime() string {
-    return r.changeTime
+    return r._changeTime
 }
 // OriginPrice Setter
 // 原发价
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetOriginPrice(originPrice string) error {
-    r.originPrice = originPrice
-    r.Set("origin_price", originPrice)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetOriginPrice(_originPrice string) error {
+    r._originPrice = _originPrice
+    r.Set("origin_price", _originPrice)
     return nil
 }
 
 // OriginPrice Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetOriginPrice() string {
-    return r.originPrice
+    return r._originPrice
 }
 // Id Setter
 // id
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // TransferPriceAli Setter
 // 转发价格 折后价
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetTransferPriceAli(transferPriceAli string) error {
-    r.transferPriceAli = transferPriceAli
-    r.Set("transfer_price_ali", transferPriceAli)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetTransferPriceAli(_transferPriceAli string) error {
+    r._transferPriceAli = _transferPriceAli
+    r.Set("transfer_price_ali", _transferPriceAli)
     return nil
 }
 
 // TransferPriceAli Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetTransferPriceAli() string {
-    return r.transferPriceAli
+    return r._transferPriceAli
 }
 // OriginPriceAli Setter
 // 原发价 折后价
-func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetOriginPriceAli(originPriceAli string) error {
-    r.originPriceAli = originPriceAli
-    r.Set("origin_price_ali", originPriceAli)
+func (r *AlibabaPicturesDengtaWbaccountPriceChangeRequest) SetOriginPriceAli(_originPriceAli string) error {
+    r._originPriceAli = _originPriceAli
+    r.Set("origin_price_ali", _originPriceAli)
     return nil
 }
 
 // OriginPriceAli Getter
 func (r AlibabaPicturesDengtaWbaccountPriceChangeRequest) GetOriginPriceAli() string {
-    return r.originPriceAli
+    return r._originPriceAli
 }

@@ -15,7 +15,7 @@ taobao.promotion.benefit.activity.delete
 type TaobaoPromotionBenefitActivityDeleteRequest struct {
     model.Params
     // ISV活动关联权益后获得的关联ID
-    relationId   int64
+    _relationId   int64
 }
 
 // 初始化TaobaoPromotionBenefitActivityDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPromotionBenefitActivityDeleteRequest) GetApiParams() url.Values {
 }
 // RelationId Setter
 // ISV活动关联权益后获得的关联ID
-func (r *TaobaoPromotionBenefitActivityDeleteRequest) SetRelationId(relationId int64) error {
-    r.relationId = relationId
-    r.Set("relation_id", relationId)
+func (r *TaobaoPromotionBenefitActivityDeleteRequest) SetRelationId(_relationId int64) error {
+    r._relationId = _relationId
+    r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
 func (r TaobaoPromotionBenefitActivityDeleteRequest) GetRelationId() int64 {
-    return r.relationId
+    return r._relationId
 }

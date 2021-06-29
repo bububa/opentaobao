@@ -15,7 +15,7 @@ WMS 调用该接口，通过 OAID 查询解密后的收件人信息
 type TaobaoQimenReceiverinfoQueryRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenReceiverinfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenReceiverinfoQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenReceiverinfoQueryRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenReceiverinfoQueryRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenReceiverinfoQueryRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

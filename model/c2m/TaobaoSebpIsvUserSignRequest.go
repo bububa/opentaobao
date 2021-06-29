@@ -15,13 +15,13 @@ taobao.sebp.isv.user.sign
 type TaobaoSebpIsvUserSignRequest struct {
     model.Params
     // 淘宝账号
-    userName   string
+    _userName   string
     // 身份证
-    identity   string
+    _identity   string
     // 到期日期
-    endTime   string
+    _endTime   string
     // 签约日期
-    startTime   string
+    _startTime   string
 }
 
 // 初始化TaobaoSebpIsvUserSignRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSebpIsvUserSignRequest) GetApiParams() url.Values {
 }
 // UserName Setter
 // 淘宝账号
-func (r *TaobaoSebpIsvUserSignRequest) SetUserName(userName string) error {
-    r.userName = userName
-    r.Set("user_name", userName)
+func (r *TaobaoSebpIsvUserSignRequest) SetUserName(_userName string) error {
+    r._userName = _userName
+    r.Set("user_name", _userName)
     return nil
 }
 
 // UserName Getter
 func (r TaobaoSebpIsvUserSignRequest) GetUserName() string {
-    return r.userName
+    return r._userName
 }
 // Identity Setter
 // 身份证
-func (r *TaobaoSebpIsvUserSignRequest) SetIdentity(identity string) error {
-    r.identity = identity
-    r.Set("identity", identity)
+func (r *TaobaoSebpIsvUserSignRequest) SetIdentity(_identity string) error {
+    r._identity = _identity
+    r.Set("identity", _identity)
     return nil
 }
 
 // Identity Getter
 func (r TaobaoSebpIsvUserSignRequest) GetIdentity() string {
-    return r.identity
+    return r._identity
 }
 // EndTime Setter
 // 到期日期
-func (r *TaobaoSebpIsvUserSignRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoSebpIsvUserSignRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoSebpIsvUserSignRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // StartTime Setter
 // 签约日期
-func (r *TaobaoSebpIsvUserSignRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoSebpIsvUserSignRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoSebpIsvUserSignRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }

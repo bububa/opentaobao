@@ -15,13 +15,13 @@ taobao.mobile.promotion.coupon.seller.search
 type TaobaoMobilePromotionCouponSellerSearchRequest struct {
     model.Params
     // 请求id 排查线索 需保证单次调用唯一
-    traceId   string
+    _traceId   string
     // 券id集合
-    spreadIds   string
+    _spreadIds   string
     // 每页数据 最大20左右
-    pageSize   int64
+    _pageSize   int64
     // 当前第几页 从第一页开始
-    currentPage   int64
+    _currentPage   int64
 }
 
 // 初始化TaobaoMobilePromotionCouponSellerSearchRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoMobilePromotionCouponSellerSearchRequest) GetApiParams() url.Value
 }
 // TraceId Setter
 // 请求id 排查线索 需保证单次调用唯一
-func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r TaobaoMobilePromotionCouponSellerSearchRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }
 // SpreadIds Setter
 // 券id集合
-func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetSpreadIds(spreadIds string) error {
-    r.spreadIds = spreadIds
-    r.Set("spread_ids", spreadIds)
+func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetSpreadIds(_spreadIds string) error {
+    r._spreadIds = _spreadIds
+    r.Set("spread_ids", _spreadIds)
     return nil
 }
 
 // SpreadIds Getter
 func (r TaobaoMobilePromotionCouponSellerSearchRequest) GetSpreadIds() string {
-    return r.spreadIds
+    return r._spreadIds
 }
 // PageSize Setter
 // 每页数据 最大20左右
-func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoMobilePromotionCouponSellerSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // CurrentPage Setter
 // 当前第几页 从第一页开始
-func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoMobilePromotionCouponSellerSearchRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoMobilePromotionCouponSellerSearchRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }

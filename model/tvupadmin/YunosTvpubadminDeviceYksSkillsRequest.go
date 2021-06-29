@@ -15,15 +15,15 @@ yunos.tvpubadmin.device.yks.skills
 type YunosTvpubadminDeviceYksSkillsRequest struct {
     model.Params
     // 设备id
-    botId   int64
+    _botId   int64
     // 1234
-    deletToken   int64
+    _deletToken   int64
     // 当前页
-    pageIndex   int64
+    _pageIndex   int64
     // 分页单位
-    pageSize   int64
+    _pageSize   int64
     // 技能id
-    skillId   int64
+    _skillId   int64
 }
 
 // 初始化YunosTvpubadminDeviceYksSkillsRequest对象
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDeviceYksSkillsRequest) GetApiParams() url.Values {
 }
 // BotId Setter
 // 设备id
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetBotId(botId int64) error {
-    r.botId = botId
-    r.Set("bot_id", botId)
+func (r *YunosTvpubadminDeviceYksSkillsRequest) SetBotId(_botId int64) error {
+    r._botId = _botId
+    r.Set("bot_id", _botId)
     return nil
 }
 
 // BotId Getter
 func (r YunosTvpubadminDeviceYksSkillsRequest) GetBotId() int64 {
-    return r.botId
+    return r._botId
 }
 // DeletToken Setter
 // 1234
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetDeletToken(deletToken int64) error {
-    r.deletToken = deletToken
-    r.Set("delet_token", deletToken)
+func (r *YunosTvpubadminDeviceYksSkillsRequest) SetDeletToken(_deletToken int64) error {
+    r._deletToken = _deletToken
+    r.Set("delet_token", _deletToken)
     return nil
 }
 
 // DeletToken Getter
 func (r YunosTvpubadminDeviceYksSkillsRequest) GetDeletToken() int64 {
-    return r.deletToken
+    return r._deletToken
 }
 // PageIndex Setter
 // 当前页
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r YunosTvpubadminDeviceYksSkillsRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 分页单位
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminDeviceYksSkillsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminDeviceYksSkillsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // SkillId Setter
 // 技能id
-func (r *YunosTvpubadminDeviceYksSkillsRequest) SetSkillId(skillId int64) error {
-    r.skillId = skillId
-    r.Set("skill_id", skillId)
+func (r *YunosTvpubadminDeviceYksSkillsRequest) SetSkillId(_skillId int64) error {
+    r._skillId = _skillId
+    r.Set("skill_id", _skillId)
     return nil
 }
 
 // SkillId Getter
 func (r YunosTvpubadminDeviceYksSkillsRequest) GetSkillId() int64 {
-    return r.skillId
+    return r._skillId
 }

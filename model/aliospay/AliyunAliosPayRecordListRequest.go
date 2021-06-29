@@ -15,7 +15,7 @@ aliyun.alios.pay.record.list
 type AliyunAliosPayRecordListRequest struct {
     model.Params
     // 请求参数
-    searchRecordRequest   *SearchRecordRequest
+    _searchRecordRequest   *SearchRecordRequest
 }
 
 // 初始化AliyunAliosPayRecordListRequest对象
@@ -40,13 +40,13 @@ func (r AliyunAliosPayRecordListRequest) GetApiParams() url.Values {
 }
 // SearchRecordRequest Setter
 // 请求参数
-func (r *AliyunAliosPayRecordListRequest) SetSearchRecordRequest(searchRecordRequest *SearchRecordRequest) error {
-    r.searchRecordRequest = searchRecordRequest
-    r.Set("search_record_request", searchRecordRequest)
+func (r *AliyunAliosPayRecordListRequest) SetSearchRecordRequest(_searchRecordRequest *SearchRecordRequest) error {
+    r._searchRecordRequest = _searchRecordRequest
+    r.Set("search_record_request", _searchRecordRequest)
     return nil
 }
 
 // SearchRecordRequest Getter
 func (r AliyunAliosPayRecordListRequest) GetSearchRecordRequest() *SearchRecordRequest {
-    return r.searchRecordRequest
+    return r._searchRecordRequest
 }

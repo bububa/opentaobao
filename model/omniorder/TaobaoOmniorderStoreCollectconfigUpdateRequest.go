@@ -15,9 +15,9 @@ taobao.omniorder.store.collectconfig.update
 type TaobaoOmniorderStoreCollectconfigUpdateRequest struct {
     model.Params
     // 门店自提配置
-    storeCollectConfig   *StoreCollectConfig
+    _storeCollectConfig   *StoreCollectConfig
     // 门店ID
-    storeId   int64
+    _storeId   int64
 }
 
 // 初始化TaobaoOmniorderStoreCollectconfigUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetApiParams() url.Value
 }
 // StoreCollectConfig Setter
 // 门店自提配置
-func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreCollectConfig(storeCollectConfig *StoreCollectConfig) error {
-    r.storeCollectConfig = storeCollectConfig
-    r.Set("store_collect_config", storeCollectConfig)
+func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreCollectConfig(_storeCollectConfig *StoreCollectConfig) error {
+    r._storeCollectConfig = _storeCollectConfig
+    r.Set("store_collect_config", _storeCollectConfig)
     return nil
 }
 
 // StoreCollectConfig Getter
 func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetStoreCollectConfig() *StoreCollectConfig {
-    return r.storeCollectConfig
+    return r._storeCollectConfig
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoOmniorderStoreCollectconfigUpdateRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoOmniorderStoreCollectconfigUpdateRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }

@@ -15,7 +15,7 @@ taobao.feedflow.item.adgroup.page
 type TaobaoFeedflowItemAdgroupPageRequest struct {
     model.Params
     // 系统自动生成
-    adgroupQuery   *AdgroupQueryDto
+    _adgroupQuery   *AdgroupQueryDto
 }
 
 // 初始化TaobaoFeedflowItemAdgroupPageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupPageRequest) GetApiParams() url.Values {
 }
 // AdgroupQuery Setter
 // 系统自动生成
-func (r *TaobaoFeedflowItemAdgroupPageRequest) SetAdgroupQuery(adgroupQuery *AdgroupQueryDto) error {
-    r.adgroupQuery = adgroupQuery
-    r.Set("adgroup_query", adgroupQuery)
+func (r *TaobaoFeedflowItemAdgroupPageRequest) SetAdgroupQuery(_adgroupQuery *AdgroupQueryDto) error {
+    r._adgroupQuery = _adgroupQuery
+    r.Set("adgroup_query", _adgroupQuery)
     return nil
 }
 
 // AdgroupQuery Getter
 func (r TaobaoFeedflowItemAdgroupPageRequest) GetAdgroupQuery() *AdgroupQueryDto {
-    return r.adgroupQuery
+    return r._adgroupQuery
 }

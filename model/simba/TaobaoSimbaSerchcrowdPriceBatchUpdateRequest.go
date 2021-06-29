@@ -15,15 +15,15 @@ taobao.simba.serchcrowd.price.batch.update
 type TaobaoSimbaSerchcrowdPriceBatchUpdateRequest struct {
     model.Params
     // 被操作者的淘宝昵称
-    nick   string
+    _nick   string
     // 子帐号nick
-    subNick   string
+    _subNick   string
     // 需要修改出价的人群包id,批量传入的时候用,分割
-    adgroupCrowdIds   []int64
+    _adgroupCrowdIds   []int64
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
     // 人群溢价比例，溢价范围[5,300]
-    discount   int64
+    _discount   int64
 }
 
 // 初始化TaobaoSimbaSerchcrowdPriceBatchUpdateRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetApiParams() url.Values 
 }
 // Nick Setter
 // 被操作者的淘宝昵称
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // SubNick Setter
 // 子帐号nick
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetSubNick(subNick string) error {
-    r.subNick = subNick
-    r.Set("sub_nick", subNick)
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetSubNick(_subNick string) error {
+    r._subNick = _subNick
+    r.Set("sub_nick", _subNick)
     return nil
 }
 
 // SubNick Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetSubNick() string {
-    return r.subNick
+    return r._subNick
 }
 // AdgroupCrowdIds Setter
 // 需要修改出价的人群包id,批量传入的时候用,分割
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupCrowdIds(adgroupCrowdIds []int64) error {
-    r.adgroupCrowdIds = adgroupCrowdIds
-    r.Set("adgroup_crowd_ids", adgroupCrowdIds)
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupCrowdIds(_adgroupCrowdIds []int64) error {
+    r._adgroupCrowdIds = _adgroupCrowdIds
+    r.Set("adgroup_crowd_ids", _adgroupCrowdIds)
     return nil
 }
 
 // AdgroupCrowdIds Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetAdgroupCrowdIds() []int64 {
-    return r.adgroupCrowdIds
+    return r._adgroupCrowdIds
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // Discount Setter
 // 人群溢价比例，溢价范围[5,300]
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetDiscount(discount int64) error {
-    r.discount = discount
-    r.Set("discount", discount)
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetDiscount(_discount int64) error {
+    r._discount = _discount
+    r.Set("discount", _discount)
     return nil
 }
 
 // Discount Getter
 func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetDiscount() int64 {
-    return r.discount
+    return r._discount
 }

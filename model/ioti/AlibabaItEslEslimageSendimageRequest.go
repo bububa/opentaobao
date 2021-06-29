@@ -15,7 +15,7 @@ alibaba.it.esl.eslimage.sendimage
 type AlibabaItEslEslimageSendimageRequest struct {
     model.Params
     // 价签地址
-    mac   string
+    _mac   string
 }
 
 // 初始化AlibabaItEslEslimageSendimageRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaItEslEslimageSendimageRequest) GetApiParams() url.Values {
 }
 // Mac Setter
 // 价签地址
-func (r *AlibabaItEslEslimageSendimageRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *AlibabaItEslEslimageSendimageRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r AlibabaItEslEslimageSendimageRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }

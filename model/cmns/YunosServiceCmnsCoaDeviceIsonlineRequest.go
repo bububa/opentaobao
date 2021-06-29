@@ -15,9 +15,9 @@ yunos.service.cmns.coa.device.isonline
 type YunosServiceCmnsCoaDeviceIsonlineRequest struct {
     model.Params
     // 设备id类型，取值"uuid"或者"imei"或者"deviceToken"
-    type   string
+    _type   string
     // 对应的设备id值
-    value   string
+    _value   string
 }
 
 // 初始化YunosServiceCmnsCoaDeviceIsonlineRequest对象
@@ -42,25 +42,25 @@ func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 设备id类型，取值"uuid"或者"imei"或者"deviceToken"
-func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // Value Setter
 // 对应的设备id值
-func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetValue(value string) error {
-    r.value = value
-    r.Set("value", value)
+func (r *YunosServiceCmnsCoaDeviceIsonlineRequest) SetValue(_value string) error {
+    r._value = _value
+    r.Set("value", _value)
     return nil
 }
 
 // Value Getter
 func (r YunosServiceCmnsCoaDeviceIsonlineRequest) GetValue() string {
-    return r.value
+    return r._value
 }

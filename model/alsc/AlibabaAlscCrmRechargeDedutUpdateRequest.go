@@ -15,7 +15,7 @@ alibaba.alsc.crm.recharge.dedut.update
 type AlibabaAlscCrmRechargeDedutUpdateRequest struct {
     model.Params
     // 入参
-    paramDedutOpenReq   *DedutOpenReq
+    _paramDedutOpenReq   *DedutOpenReq
 }
 
 // 初始化AlibabaAlscCrmRechargeDedutUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetApiParams() url.Values {
 }
 // ParamDedutOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmRechargeDedutUpdateRequest) SetParamDedutOpenReq(paramDedutOpenReq *DedutOpenReq) error {
-    r.paramDedutOpenReq = paramDedutOpenReq
-    r.Set("param_dedut_open_req", paramDedutOpenReq)
+func (r *AlibabaAlscCrmRechargeDedutUpdateRequest) SetParamDedutOpenReq(_paramDedutOpenReq *DedutOpenReq) error {
+    r._paramDedutOpenReq = _paramDedutOpenReq
+    r.Set("param_dedut_open_req", _paramDedutOpenReq)
     return nil
 }
 
 // ParamDedutOpenReq Getter
 func (r AlibabaAlscCrmRechargeDedutUpdateRequest) GetParamDedutOpenReq() *DedutOpenReq {
-    return r.paramDedutOpenReq
+    return r._paramDedutOpenReq
 }

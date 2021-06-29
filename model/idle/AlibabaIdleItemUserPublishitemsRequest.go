@@ -15,7 +15,7 @@ alibaba.idle.item.user.publishitems
 type AlibabaIdleItemUserPublishitemsRequest struct {
     model.Params
     // 查询参数
-    paramItemPageQuery   *ItemPageQuery
+    _paramItemPageQuery   *ItemPageQuery
 }
 
 // 初始化AlibabaIdleItemUserPublishitemsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleItemUserPublishitemsRequest) GetApiParams() url.Values {
 }
 // ParamItemPageQuery Setter
 // 查询参数
-func (r *AlibabaIdleItemUserPublishitemsRequest) SetParamItemPageQuery(paramItemPageQuery *ItemPageQuery) error {
-    r.paramItemPageQuery = paramItemPageQuery
-    r.Set("param_item_page_query", paramItemPageQuery)
+func (r *AlibabaIdleItemUserPublishitemsRequest) SetParamItemPageQuery(_paramItemPageQuery *ItemPageQuery) error {
+    r._paramItemPageQuery = _paramItemPageQuery
+    r.Set("param_item_page_query", _paramItemPageQuery)
     return nil
 }
 
 // ParamItemPageQuery Getter
 func (r AlibabaIdleItemUserPublishitemsRequest) GetParamItemPageQuery() *ItemPageQuery {
-    return r.paramItemPageQuery
+    return r._paramItemPageQuery
 }

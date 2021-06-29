@@ -15,7 +15,7 @@ alitrip.btrip.supplychain.train.city
 type AlitripBtripSupplychainTrainCityRequest struct {
     model.Params
     // 入参对象
-    rq   *OpenSuggestRq
+    _rq   *OpenSuggestRq
 }
 
 // 初始化AlitripBtripSupplychainTrainCityRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainTrainCityRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 入参对象
-func (r *AlitripBtripSupplychainTrainCityRequest) SetRq(rq *OpenSuggestRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripSupplychainTrainCityRequest) SetRq(_rq *OpenSuggestRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripSupplychainTrainCityRequest) GetRq() *OpenSuggestRq {
-    return r.rq
+    return r._rq
 }

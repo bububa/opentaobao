@@ -15,11 +15,11 @@ taobao.wlb.import.threepl.resource.get
 type TaobaoWlbImportThreeplResourceGetRequest struct {
     model.Params
     // ONLINE或者OFFLINE
-    type   string
+    _type   string
     // 发货地区域id
-    fromId   int64
+    _fromId   int64
     // 收件人地址
-    toAddress   *AddressDto
+    _toAddress   *AddressDto
 }
 
 // 初始化TaobaoWlbImportThreeplResourceGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoWlbImportThreeplResourceGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // ONLINE或者OFFLINE
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoWlbImportThreeplResourceGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoWlbImportThreeplResourceGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // FromId Setter
 // 发货地区域id
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetFromId(fromId int64) error {
-    r.fromId = fromId
-    r.Set("from_id", fromId)
+func (r *TaobaoWlbImportThreeplResourceGetRequest) SetFromId(_fromId int64) error {
+    r._fromId = _fromId
+    r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
 func (r TaobaoWlbImportThreeplResourceGetRequest) GetFromId() int64 {
-    return r.fromId
+    return r._fromId
 }
 // ToAddress Setter
 // 收件人地址
-func (r *TaobaoWlbImportThreeplResourceGetRequest) SetToAddress(toAddress *AddressDto) error {
-    r.toAddress = toAddress
-    r.Set("to_address", toAddress)
+func (r *TaobaoWlbImportThreeplResourceGetRequest) SetToAddress(_toAddress *AddressDto) error {
+    r._toAddress = _toAddress
+    r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
 func (r TaobaoWlbImportThreeplResourceGetRequest) GetToAddress() *AddressDto {
-    return r.toAddress
+    return r._toAddress
 }

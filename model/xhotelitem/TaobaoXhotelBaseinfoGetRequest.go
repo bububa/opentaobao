@@ -15,21 +15,21 @@ taobao.xhotel.baseinfo.get
 type TaobaoXhotelBaseinfoGetRequest struct {
     model.Params
     // 淘宝酒店ID
-    hid   int64
+    _hid   int64
     // 推荐使用卖家系统中的酒店ID。
-    outHid   string
+    _outHid   string
     // 用于标示该酒店发布的渠道信息
-    vendor   string
+    _vendor   string
     // 是否需要房价基本信息（false为不需要），默认为需要
-    isNeedRatePlan   bool
+    _isNeedRatePlan   bool
     // 是否需要房型基本信息（false为不需要），默认为需要
-    isNeedRoomType   bool
+    _isNeedRoomType   bool
     // 是否需要 根据 hid 查询 标准房型列表
-    needSRoomTypeList   bool
+    _needSRoomTypeList   bool
     // 是否需要酒店房型可售详情
-    needHotelDynamicInfo   bool
+    _needHotelDynamicInfo   bool
     // 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
-    jsonHotelSellerInvQuery   string
+    _jsonHotelSellerInvQuery   string
 }
 
 // 初始化TaobaoXhotelBaseinfoGetRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoXhotelBaseinfoGetRequest) GetApiParams() url.Values {
 }
 // Hid Setter
 // 淘宝酒店ID
-func (r *TaobaoXhotelBaseinfoGetRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }
 // OutHid Setter
 // 推荐使用卖家系统中的酒店ID。
-func (r *TaobaoXhotelBaseinfoGetRequest) SetOutHid(outHid string) error {
-    r.outHid = outHid
-    r.Set("out_hid", outHid)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetOutHid(_outHid string) error {
+    r._outHid = _outHid
+    r.Set("out_hid", _outHid)
     return nil
 }
 
 // OutHid Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetOutHid() string {
-    return r.outHid
+    return r._outHid
 }
 // Vendor Setter
 // 用于标示该酒店发布的渠道信息
-func (r *TaobaoXhotelBaseinfoGetRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // IsNeedRatePlan Setter
 // 是否需要房价基本信息（false为不需要），默认为需要
-func (r *TaobaoXhotelBaseinfoGetRequest) SetIsNeedRatePlan(isNeedRatePlan bool) error {
-    r.isNeedRatePlan = isNeedRatePlan
-    r.Set("is_need_rate_plan", isNeedRatePlan)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetIsNeedRatePlan(_isNeedRatePlan bool) error {
+    r._isNeedRatePlan = _isNeedRatePlan
+    r.Set("is_need_rate_plan", _isNeedRatePlan)
     return nil
 }
 
 // IsNeedRatePlan Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetIsNeedRatePlan() bool {
-    return r.isNeedRatePlan
+    return r._isNeedRatePlan
 }
 // IsNeedRoomType Setter
 // 是否需要房型基本信息（false为不需要），默认为需要
-func (r *TaobaoXhotelBaseinfoGetRequest) SetIsNeedRoomType(isNeedRoomType bool) error {
-    r.isNeedRoomType = isNeedRoomType
-    r.Set("is_need_room_type", isNeedRoomType)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetIsNeedRoomType(_isNeedRoomType bool) error {
+    r._isNeedRoomType = _isNeedRoomType
+    r.Set("is_need_room_type", _isNeedRoomType)
     return nil
 }
 
 // IsNeedRoomType Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetIsNeedRoomType() bool {
-    return r.isNeedRoomType
+    return r._isNeedRoomType
 }
 // NeedSRoomTypeList Setter
 // 是否需要 根据 hid 查询 标准房型列表
-func (r *TaobaoXhotelBaseinfoGetRequest) SetNeedSRoomTypeList(needSRoomTypeList bool) error {
-    r.needSRoomTypeList = needSRoomTypeList
-    r.Set("need_s_room_type_list", needSRoomTypeList)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetNeedSRoomTypeList(_needSRoomTypeList bool) error {
+    r._needSRoomTypeList = _needSRoomTypeList
+    r.Set("need_s_room_type_list", _needSRoomTypeList)
     return nil
 }
 
 // NeedSRoomTypeList Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetNeedSRoomTypeList() bool {
-    return r.needSRoomTypeList
+    return r._needSRoomTypeList
 }
 // NeedHotelDynamicInfo Setter
 // 是否需要酒店房型可售详情
-func (r *TaobaoXhotelBaseinfoGetRequest) SetNeedHotelDynamicInfo(needHotelDynamicInfo bool) error {
-    r.needHotelDynamicInfo = needHotelDynamicInfo
-    r.Set("need_hotel_dynamic_info", needHotelDynamicInfo)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetNeedHotelDynamicInfo(_needHotelDynamicInfo bool) error {
+    r._needHotelDynamicInfo = _needHotelDynamicInfo
+    r.Set("need_hotel_dynamic_info", _needHotelDynamicInfo)
     return nil
 }
 
 // NeedHotelDynamicInfo Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetNeedHotelDynamicInfo() bool {
-    return r.needHotelDynamicInfo
+    return r._needHotelDynamicInfo
 }
 // JsonHotelSellerInvQuery Setter
 // 在查询酒店房型可售详情 时的入参JSON , {@link com.taobao.trip.hpc.client.query.HotelSellerInvQuery}
-func (r *TaobaoXhotelBaseinfoGetRequest) SetJsonHotelSellerInvQuery(jsonHotelSellerInvQuery string) error {
-    r.jsonHotelSellerInvQuery = jsonHotelSellerInvQuery
-    r.Set("json_hotel_seller_inv_query", jsonHotelSellerInvQuery)
+func (r *TaobaoXhotelBaseinfoGetRequest) SetJsonHotelSellerInvQuery(_jsonHotelSellerInvQuery string) error {
+    r._jsonHotelSellerInvQuery = _jsonHotelSellerInvQuery
+    r.Set("json_hotel_seller_inv_query", _jsonHotelSellerInvQuery)
     return nil
 }
 
 // JsonHotelSellerInvQuery Getter
 func (r TaobaoXhotelBaseinfoGetRequest) GetJsonHotelSellerInvQuery() string {
-    return r.jsonHotelSellerInvQuery
+    return r._jsonHotelSellerInvQuery
 }

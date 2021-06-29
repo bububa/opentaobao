@@ -15,7 +15,7 @@ alitrip.travel.bookinfo.query
 type AlitripTravelBookinfoQueryRequest struct {
     model.Params
     // 预定信息id
-    bookinfoId   int64
+    _bookinfoId   int64
 }
 
 // 初始化AlitripTravelBookinfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelBookinfoQueryRequest) GetApiParams() url.Values {
 }
 // BookinfoId Setter
 // 预定信息id
-func (r *AlitripTravelBookinfoQueryRequest) SetBookinfoId(bookinfoId int64) error {
-    r.bookinfoId = bookinfoId
-    r.Set("bookinfo_id", bookinfoId)
+func (r *AlitripTravelBookinfoQueryRequest) SetBookinfoId(_bookinfoId int64) error {
+    r._bookinfoId = _bookinfoId
+    r.Set("bookinfo_id", _bookinfoId)
     return nil
 }
 
 // BookinfoId Getter
 func (r AlitripTravelBookinfoQueryRequest) GetBookinfoId() int64 {
-    return r.bookinfoId
+    return r._bookinfoId
 }

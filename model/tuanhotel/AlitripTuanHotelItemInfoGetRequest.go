@@ -15,7 +15,7 @@ alitrip.tuan.hotel.item.info.get
 type AlitripTuanHotelItemInfoGetRequest struct {
     model.Params
     // 宝贝ID
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化AlitripTuanHotelItemInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTuanHotelItemInfoGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 宝贝ID
-func (r *AlitripTuanHotelItemInfoGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlitripTuanHotelItemInfoGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlitripTuanHotelItemInfoGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

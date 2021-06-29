@@ -15,13 +15,13 @@ alitrip.merchant.galaxy.order.cancel
 type AlitripMerchantGalaxyOrderCancelRequest struct {
     model.Params
     // 租户标识
-    tenantKey   string
+    _tenantKey   string
     // 用户登录标识
-    token   string
+    _token   string
     // 订单编号
-    orderId   string
+    _orderId   string
     // 退款原因
-    reason   string
+    _reason   string
 }
 
 // 初始化AlitripMerchantGalaxyOrderCancelRequest对象
@@ -46,49 +46,49 @@ func (r AlitripMerchantGalaxyOrderCancelRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户标识
-func (r *AlitripMerchantGalaxyOrderCancelRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyOrderCancelRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyOrderCancelRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Token Setter
 // 用户登录标识
-func (r *AlitripMerchantGalaxyOrderCancelRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyOrderCancelRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyOrderCancelRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // OrderId Setter
 // 订单编号
-func (r *AlitripMerchantGalaxyOrderCancelRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlitripMerchantGalaxyOrderCancelRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlitripMerchantGalaxyOrderCancelRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Reason Setter
 // 退款原因
-func (r *AlitripMerchantGalaxyOrderCancelRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *AlitripMerchantGalaxyOrderCancelRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r AlitripMerchantGalaxyOrderCancelRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }

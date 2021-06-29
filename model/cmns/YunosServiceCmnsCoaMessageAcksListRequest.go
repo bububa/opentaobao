@@ -15,13 +15,13 @@ yunos.service.cmns.coa.message.acks.list
 type YunosServiceCmnsCoaMessageAcksListRequest struct {
     model.Params
     // 消息id
-    mid   int64
+    _mid   int64
     // 设备id
-    did   int64
+    _did   int64
     // 分页查询页码
-    pageIndex   int64
+    _pageIndex   int64
     // 分页每页数据集数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosServiceCmnsCoaMessageAcksListRequest对象
@@ -46,49 +46,49 @@ func (r YunosServiceCmnsCoaMessageAcksListRequest) GetApiParams() url.Values {
 }
 // Mid Setter
 // 消息id
-func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetMid(mid int64) error {
-    r.mid = mid
-    r.Set("mid", mid)
+func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetMid(_mid int64) error {
+    r._mid = _mid
+    r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
 func (r YunosServiceCmnsCoaMessageAcksListRequest) GetMid() int64 {
-    return r.mid
+    return r._mid
 }
 // Did Setter
 // 设备id
-func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetDid(did int64) error {
-    r.did = did
-    r.Set("did", did)
+func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetDid(_did int64) error {
+    r._did = _did
+    r.Set("did", _did)
     return nil
 }
 
 // Did Getter
 func (r YunosServiceCmnsCoaMessageAcksListRequest) GetDid() int64 {
-    return r.did
+    return r._did
 }
 // PageIndex Setter
 // 分页查询页码
-func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r YunosServiceCmnsCoaMessageAcksListRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }
 // PageSize Setter
 // 分页每页数据集数
-func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosServiceCmnsCoaMessageAcksListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosServiceCmnsCoaMessageAcksListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

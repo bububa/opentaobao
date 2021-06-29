@@ -15,25 +15,25 @@ alibaba.alihealth.drug.code.common.list.codeinfo
 type AlibabaAlihealthDrugCodeCommonListCodeinfoRequest struct {
     model.Params
     // 企业refEntId
-    refEntId   string
+    _refEntId   string
     // 标示医院业务
-    searchSource   string
+    _searchSource   string
     // 追溯码
-    codeList   []string
+    _codeList   []string
     // 证件编号
-    certIsvNo   string
+    _certIsvNo   string
     // 调用方式：formal-正式、test-测试
-    invocation   string
+    _invocation   string
     // 终端类型 1：零售
-    terminalType   string
+    _terminalType   string
     // 调用零售药店名称
-    terminalName   string
+    _terminalName   string
     // 城市名称
-    bureauName   string
+    _bureauName   string
     // 错误信息
-    errorMessage   string
+    _errorMessage   string
     // 验证权限企业id
-    authRefEntId   string
+    _authRefEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugCodeCommonListCodeinfoRequest对象
@@ -58,121 +58,121 @@ func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetApiParams() url.Va
 }
 // RefEntId Setter
 // 企业refEntId
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // SearchSource Setter
 // 标示医院业务
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetSearchSource(searchSource string) error {
-    r.searchSource = searchSource
-    r.Set("search_source", searchSource)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetSearchSource(_searchSource string) error {
+    r._searchSource = _searchSource
+    r.Set("search_source", _searchSource)
     return nil
 }
 
 // SearchSource Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetSearchSource() string {
-    return r.searchSource
+    return r._searchSource
 }
 // CodeList Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetCodeList(codeList []string) error {
-    r.codeList = codeList
-    r.Set("code_list", codeList)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetCodeList(_codeList []string) error {
+    r._codeList = _codeList
+    r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetCodeList() []string {
-    return r.codeList
+    return r._codeList
 }
 // CertIsvNo Setter
 // 证件编号
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetCertIsvNo(certIsvNo string) error {
-    r.certIsvNo = certIsvNo
-    r.Set("cert_isv_no", certIsvNo)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetCertIsvNo(_certIsvNo string) error {
+    r._certIsvNo = _certIsvNo
+    r.Set("cert_isv_no", _certIsvNo)
     return nil
 }
 
 // CertIsvNo Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetCertIsvNo() string {
-    return r.certIsvNo
+    return r._certIsvNo
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetInvocation(invocation string) error {
-    r.invocation = invocation
-    r.Set("invocation", invocation)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetInvocation(_invocation string) error {
+    r._invocation = _invocation
+    r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetInvocation() string {
-    return r.invocation
+    return r._invocation
 }
 // TerminalType Setter
 // 终端类型 1：零售
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // TerminalName Setter
 // 调用零售药店名称
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // BureauName Setter
 // 城市名称
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // ErrorMessage Setter
 // 错误信息
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetErrorMessage(errorMessage string) error {
-    r.errorMessage = errorMessage
-    r.Set("error_message", errorMessage)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetErrorMessage(_errorMessage string) error {
+    r._errorMessage = _errorMessage
+    r.Set("error_message", _errorMessage)
     return nil
 }
 
 // ErrorMessage Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetErrorMessage() string {
-    return r.errorMessage
+    return r._errorMessage
 }
 // AuthRefEntId Setter
 // 验证权限企业id
-func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetAuthRefEntId(authRefEntId string) error {
-    r.authRefEntId = authRefEntId
-    r.Set("auth_ref_ent_id", authRefEntId)
+func (r *AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) SetAuthRefEntId(_authRefEntId string) error {
+    r._authRefEntId = _authRefEntId
+    r.Set("auth_ref_ent_id", _authRefEntId)
     return nil
 }
 
 // AuthRefEntId Getter
 func (r AlibabaAlihealthDrugCodeCommonListCodeinfoRequest) GetAuthRefEntId() string {
-    return r.authRefEntId
+    return r._authRefEntId
 }

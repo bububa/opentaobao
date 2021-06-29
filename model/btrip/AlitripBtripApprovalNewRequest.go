@@ -15,7 +15,7 @@ alitrip.btrip.approval.new
 type AlitripBtripApprovalNewRequest struct {
     model.Params
     // 申请单
-    addApplyRequest   *OpenAddApplyRq
+    _addApplyRequest   *OpenAddApplyRq
 }
 
 // 初始化AlitripBtripApprovalNewRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripApprovalNewRequest) GetApiParams() url.Values {
 }
 // AddApplyRequest Setter
 // 申请单
-func (r *AlitripBtripApprovalNewRequest) SetAddApplyRequest(addApplyRequest *OpenAddApplyRq) error {
-    r.addApplyRequest = addApplyRequest
-    r.Set("add_apply_request", addApplyRequest)
+func (r *AlitripBtripApprovalNewRequest) SetAddApplyRequest(_addApplyRequest *OpenAddApplyRq) error {
+    r._addApplyRequest = _addApplyRequest
+    r.Set("add_apply_request", _addApplyRequest)
     return nil
 }
 
 // AddApplyRequest Getter
 func (r AlitripBtripApprovalNewRequest) GetAddApplyRequest() *OpenAddApplyRq {
-    return r.addApplyRequest
+    return r._addApplyRequest
 }

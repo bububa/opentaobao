@@ -15,7 +15,7 @@ taobao.oc.order.create
 type TaobaoOcOrderCreateRequest struct {
     model.Params
     // OC订单
-    paramOCOrder   *OcOrder
+    _paramOCOrder   *OcOrder
 }
 
 // 初始化TaobaoOcOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOcOrderCreateRequest) GetApiParams() url.Values {
 }
 // ParamOCOrder Setter
 // OC订单
-func (r *TaobaoOcOrderCreateRequest) SetParamOCOrder(paramOCOrder *OcOrder) error {
-    r.paramOCOrder = paramOCOrder
-    r.Set("param_o_c_order", paramOCOrder)
+func (r *TaobaoOcOrderCreateRequest) SetParamOCOrder(_paramOCOrder *OcOrder) error {
+    r._paramOCOrder = _paramOCOrder
+    r.Set("param_o_c_order", _paramOCOrder)
     return nil
 }
 
 // ParamOCOrder Getter
 func (r TaobaoOcOrderCreateRequest) GetParamOCOrder() *OcOrder {
-    return r.paramOCOrder
+    return r._paramOCOrder
 }

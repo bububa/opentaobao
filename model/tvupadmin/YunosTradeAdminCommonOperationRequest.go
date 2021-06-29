@@ -15,11 +15,11 @@ yunos.trade.admin.common.operation
 type YunosTradeAdminCommonOperationRequest struct {
     model.Params
     // 入参数据，json格式
-    parameter   string
+    _parameter   string
     // 调用方法
-    methodName   string
+    _methodName   string
     // 调用接口
-    interfaceName   string
+    _interfaceName   string
 }
 
 // 初始化YunosTradeAdminCommonOperationRequest对象
@@ -44,37 +44,37 @@ func (r YunosTradeAdminCommonOperationRequest) GetApiParams() url.Values {
 }
 // Parameter Setter
 // 入参数据，json格式
-func (r *YunosTradeAdminCommonOperationRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *YunosTradeAdminCommonOperationRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r YunosTradeAdminCommonOperationRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }
 // MethodName Setter
 // 调用方法
-func (r *YunosTradeAdminCommonOperationRequest) SetMethodName(methodName string) error {
-    r.methodName = methodName
-    r.Set("method_name", methodName)
+func (r *YunosTradeAdminCommonOperationRequest) SetMethodName(_methodName string) error {
+    r._methodName = _methodName
+    r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
 func (r YunosTradeAdminCommonOperationRequest) GetMethodName() string {
-    return r.methodName
+    return r._methodName
 }
 // InterfaceName Setter
 // 调用接口
-func (r *YunosTradeAdminCommonOperationRequest) SetInterfaceName(interfaceName string) error {
-    r.interfaceName = interfaceName
-    r.Set("interface_name", interfaceName)
+func (r *YunosTradeAdminCommonOperationRequest) SetInterfaceName(_interfaceName string) error {
+    r._interfaceName = _interfaceName
+    r.Set("interface_name", _interfaceName)
     return nil
 }
 
 // InterfaceName Getter
 func (r YunosTradeAdminCommonOperationRequest) GetInterfaceName() string {
-    return r.interfaceName
+    return r._interfaceName
 }

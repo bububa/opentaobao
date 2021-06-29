@@ -15,7 +15,7 @@ alibaba.ascp.industry.disivison.query
 type AlibabaAscpIndustryDisivisonQueryRequest struct {
     model.Params
     // 服务编码
-    serviceCode   string
+    _serviceCode   string
 }
 
 // 初始化AlibabaAscpIndustryDisivisonQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpIndustryDisivisonQueryRequest) GetApiParams() url.Values {
 }
 // ServiceCode Setter
 // 服务编码
-func (r *AlibabaAscpIndustryDisivisonQueryRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *AlibabaAscpIndustryDisivisonQueryRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r AlibabaAscpIndustryDisivisonQueryRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }

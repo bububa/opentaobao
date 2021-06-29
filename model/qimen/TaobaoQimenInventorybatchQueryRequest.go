@@ -15,7 +15,7 @@ ERP 通过该接口查询指定商品的单仓批次库存
 type TaobaoQimenInventorybatchQueryRequest struct {
     model.Params
     // request
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenInventorybatchQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenInventorybatchQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // request
-func (r *TaobaoQimenInventorybatchQueryRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenInventorybatchQueryRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenInventorybatchQueryRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

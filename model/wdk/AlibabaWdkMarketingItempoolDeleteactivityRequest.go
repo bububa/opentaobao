@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itempool.deleteactivity
 type AlibabaWdkMarketingItempoolDeleteactivityRequest struct {
     model.Params
     // 需要删除的活动的信息
-    param   *CommonActivityParam
+    _param   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingItempoolDeleteactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItempoolDeleteactivityRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingItempoolDeleteactivityRequest) SetParam(param *CommonActivityParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItempoolDeleteactivityRequest) SetParam(_param *CommonActivityParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItempoolDeleteactivityRequest) GetParam() *CommonActivityParam {
-    return r.param
+    return r._param
 }

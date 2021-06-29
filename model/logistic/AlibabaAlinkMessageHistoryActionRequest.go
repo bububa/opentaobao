@@ -15,9 +15,9 @@ alibaba.alink.message.history.action
 type AlibabaAlinkMessageHistoryActionRequest struct {
     model.Params
     // 消息id
-    index   string
+    _index   string
     // 删除：delete,已读：read
-    action   string
+    _action   string
 }
 
 // 初始化AlibabaAlinkMessageHistoryActionRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlinkMessageHistoryActionRequest) GetApiParams() url.Values {
 }
 // Index Setter
 // 消息id
-func (r *AlibabaAlinkMessageHistoryActionRequest) SetIndex(index string) error {
-    r.index = index
-    r.Set("index", index)
+func (r *AlibabaAlinkMessageHistoryActionRequest) SetIndex(_index string) error {
+    r._index = _index
+    r.Set("index", _index)
     return nil
 }
 
 // Index Getter
 func (r AlibabaAlinkMessageHistoryActionRequest) GetIndex() string {
-    return r.index
+    return r._index
 }
 // Action Setter
 // 删除：delete,已读：read
-func (r *AlibabaAlinkMessageHistoryActionRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *AlibabaAlinkMessageHistoryActionRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r AlibabaAlinkMessageHistoryActionRequest) GetAction() string {
-    return r.action
+    return r._action
 }

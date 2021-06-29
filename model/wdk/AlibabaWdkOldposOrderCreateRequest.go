@@ -15,7 +15,7 @@ alibaba.wdk.oldpos.order.create
 type AlibabaWdkOldposOrderCreateRequest struct {
     model.Params
     // 入参
-    posOrderCreateRequest   *PosOrderCreateRequest
+    _posOrderCreateRequest   *PosOrderCreateRequest
 }
 
 // 初始化AlibabaWdkOldposOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOldposOrderCreateRequest) GetApiParams() url.Values {
 }
 // PosOrderCreateRequest Setter
 // 入参
-func (r *AlibabaWdkOldposOrderCreateRequest) SetPosOrderCreateRequest(posOrderCreateRequest *PosOrderCreateRequest) error {
-    r.posOrderCreateRequest = posOrderCreateRequest
-    r.Set("pos_order_create_request", posOrderCreateRequest)
+func (r *AlibabaWdkOldposOrderCreateRequest) SetPosOrderCreateRequest(_posOrderCreateRequest *PosOrderCreateRequest) error {
+    r._posOrderCreateRequest = _posOrderCreateRequest
+    r.Set("pos_order_create_request", _posOrderCreateRequest)
     return nil
 }
 
 // PosOrderCreateRequest Getter
 func (r AlibabaWdkOldposOrderCreateRequest) GetPosOrderCreateRequest() *PosOrderCreateRequest {
-    return r.posOrderCreateRequest
+    return r._posOrderCreateRequest
 }

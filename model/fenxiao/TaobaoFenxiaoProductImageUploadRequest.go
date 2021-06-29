@@ -15,15 +15,15 @@ taobao.fenxiao.product.image.upload
 type TaobaoFenxiaoProductImageUploadRequest struct {
     model.Params
     // 产品ID
-    productId   int64
+    _productId   int64
     // 产品主图图片空间相对路径或绝对路径
-    picPath   string
+    _picPath   string
     // 产品图片
-    image   []*model.File
+    _image   []*model.File
     // 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
-    position   int64
+    _position   int64
     // properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-    properties   string
+    _properties   string
 }
 
 // 初始化TaobaoFenxiaoProductImageUploadRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoFenxiaoProductImageUploadRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 产品ID
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoFenxiaoProductImageUploadRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // PicPath Setter
 // 产品主图图片空间相对路径或绝对路径
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetPicPath(picPath string) error {
-    r.picPath = picPath
-    r.Set("pic_path", picPath)
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetPicPath(_picPath string) error {
+    r._picPath = _picPath
+    r.Set("pic_path", _picPath)
     return nil
 }
 
 // PicPath Getter
 func (r TaobaoFenxiaoProductImageUploadRequest) GetPicPath() string {
-    return r.picPath
+    return r._picPath
 }
 // Image Setter
 // 产品图片
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoFenxiaoProductImageUploadRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Position Setter
 // 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetPosition(position int64) error {
-    r.position = position
-    r.Set("position", position)
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetPosition(_position int64) error {
+    r._position = _position
+    r.Set("position", _position)
     return nil
 }
 
 // Position Getter
 func (r TaobaoFenxiaoProductImageUploadRequest) GetPosition() int64 {
-    return r.position
+    return r._position
 }
 // Properties Setter
 // properties表示sku图片的属性。key:value形式，key是pid，value是vid。如果position是0的话，则properties需要是必传项
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetProperties(properties string) error {
-    r.properties = properties
-    r.Set("properties", properties)
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetProperties(_properties string) error {
+    r._properties = _properties
+    r.Set("properties", _properties)
     return nil
 }
 
 // Properties Getter
 func (r TaobaoFenxiaoProductImageUploadRequest) GetProperties() string {
-    return r.properties
+    return r._properties
 }

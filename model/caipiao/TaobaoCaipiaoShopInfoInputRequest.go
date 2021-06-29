@@ -15,17 +15,17 @@ taobao.caipiao.shop.info.input
 type TaobaoCaipiaoShopInfoInputRequest struct {
     model.Params
     // 店铺名称
-    shopName   string
+    _shopName   string
     // 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-    presentType   int64
+    _presentType   int64
     // 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-    actStartDate   string
+    _actStartDate   string
     // 活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-    actEndDate   string
+    _actEndDate   string
     // 店铺类目编号，不可为空
-    shopType   int64
+    _shopType   int64
     // 店铺参加的送彩票活动描述
-    shopDesc   string
+    _shopDesc   string
 }
 
 // 初始化TaobaoCaipiaoShopInfoInputRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoCaipiaoShopInfoInputRequest) GetApiParams() url.Values {
 }
 // ShopName Setter
 // 店铺名称
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopName(shopName string) error {
-    r.shopName = shopName
-    r.Set("shop_name", shopName)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopName(_shopName string) error {
+    r._shopName = _shopName
+    r.Set("shop_name", _shopName)
     return nil
 }
 
 // ShopName Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetShopName() string {
-    return r.shopName
+    return r._shopName
 }
 // PresentType Setter
 // 赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetPresentType(presentType int64) error {
-    r.presentType = presentType
-    r.Set("present_type", presentType)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetPresentType(_presentType int64) error {
+    r._presentType = _presentType
+    r.Set("present_type", _presentType)
     return nil
 }
 
 // PresentType Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetPresentType() int64 {
-    return r.presentType
+    return r._presentType
 }
 // ActStartDate Setter
 // 活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetActStartDate(actStartDate string) error {
-    r.actStartDate = actStartDate
-    r.Set("act_start_date", actStartDate)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetActStartDate(_actStartDate string) error {
+    r._actStartDate = _actStartDate
+    r.Set("act_start_date", _actStartDate)
     return nil
 }
 
 // ActStartDate Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetActStartDate() string {
-    return r.actStartDate
+    return r._actStartDate
 }
 // ActEndDate Setter
 // 活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetActEndDate(actEndDate string) error {
-    r.actEndDate = actEndDate
-    r.Set("act_end_date", actEndDate)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetActEndDate(_actEndDate string) error {
+    r._actEndDate = _actEndDate
+    r.Set("act_end_date", _actEndDate)
     return nil
 }
 
 // ActEndDate Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetActEndDate() string {
-    return r.actEndDate
+    return r._actEndDate
 }
 // ShopType Setter
 // 店铺类目编号，不可为空
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopType(shopType int64) error {
-    r.shopType = shopType
-    r.Set("shop_type", shopType)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopType(_shopType int64) error {
+    r._shopType = _shopType
+    r.Set("shop_type", _shopType)
     return nil
 }
 
 // ShopType Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetShopType() int64 {
-    return r.shopType
+    return r._shopType
 }
 // ShopDesc Setter
 // 店铺参加的送彩票活动描述
-func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopDesc(shopDesc string) error {
-    r.shopDesc = shopDesc
-    r.Set("shop_desc", shopDesc)
+func (r *TaobaoCaipiaoShopInfoInputRequest) SetShopDesc(_shopDesc string) error {
+    r._shopDesc = _shopDesc
+    r.Set("shop_desc", _shopDesc)
     return nil
 }
 
 // ShopDesc Getter
 func (r TaobaoCaipiaoShopInfoInputRequest) GetShopDesc() string {
-    return r.shopDesc
+    return r._shopDesc
 }

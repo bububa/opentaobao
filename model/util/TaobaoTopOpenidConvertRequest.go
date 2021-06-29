@@ -15,7 +15,7 @@ taobao.top.openid.convert
 type TaobaoTopOpenidConvertRequest struct {
     model.Params
     // 混淆nick转open_id
-    mixNick   string
+    _mixNick   string
 }
 
 // 初始化TaobaoTopOpenidConvertRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopOpenidConvertRequest) GetApiParams() url.Values {
 }
 // MixNick Setter
 // 混淆nick转open_id
-func (r *TaobaoTopOpenidConvertRequest) SetMixNick(mixNick string) error {
-    r.mixNick = mixNick
-    r.Set("mix_nick", mixNick)
+func (r *TaobaoTopOpenidConvertRequest) SetMixNick(_mixNick string) error {
+    r._mixNick = _mixNick
+    r.Set("mix_nick", _mixNick)
     return nil
 }
 
 // MixNick Getter
 func (r TaobaoTopOpenidConvertRequest) GetMixNick() string {
-    return r.mixNick
+    return r._mixNick
 }

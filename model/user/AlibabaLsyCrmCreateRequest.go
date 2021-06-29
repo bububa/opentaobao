@@ -15,7 +15,7 @@ alibaba.lsy.crm.create
 type AlibabaLsyCrmCreateRequest struct {
     model.Params
     // 客资记录对象
-    nrtRecordDto   *NrtRecordDto
+    _nrtRecordDto   *NrtRecordDto
 }
 
 // 初始化AlibabaLsyCrmCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmCreateRequest) GetApiParams() url.Values {
 }
 // NrtRecordDto Setter
 // 客资记录对象
-func (r *AlibabaLsyCrmCreateRequest) SetNrtRecordDto(nrtRecordDto *NrtRecordDto) error {
-    r.nrtRecordDto = nrtRecordDto
-    r.Set("nrt_record_dto", nrtRecordDto)
+func (r *AlibabaLsyCrmCreateRequest) SetNrtRecordDto(_nrtRecordDto *NrtRecordDto) error {
+    r._nrtRecordDto = _nrtRecordDto
+    r.Set("nrt_record_dto", _nrtRecordDto)
     return nil
 }
 
 // NrtRecordDto Getter
 func (r AlibabaLsyCrmCreateRequest) GetNrtRecordDto() *NrtRecordDto {
-    return r.nrtRecordDto
+    return r._nrtRecordDto
 }

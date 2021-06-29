@@ -15,7 +15,7 @@ alibaba.alihealth.pregnancy.baseinfo.get
 type AlibabaAlihealthPregnancyBaseinfoGetRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaAlihealthPregnancyBaseinfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPregnancyBaseinfoGetRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyBaseinfoGetRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthPregnancyBaseinfoGetRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthPregnancyBaseinfoGetRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

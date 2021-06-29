@@ -15,7 +15,7 @@ alibaba.ele.fengniao.user.time.query
 type AlibabaEleFengniaoUserTimeQueryRequest struct {
     model.Params
     // 询T入参
-    param   *PredictDeliveryTimeParam
+    _param   *PredictDeliveryTimeParam
 }
 
 // 初始化AlibabaEleFengniaoUserTimeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoUserTimeQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 询T入参
-func (r *AlibabaEleFengniaoUserTimeQueryRequest) SetParam(param *PredictDeliveryTimeParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoUserTimeQueryRequest) SetParam(_param *PredictDeliveryTimeParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoUserTimeQueryRequest) GetParam() *PredictDeliveryTimeParam {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ alibaba.data.coupon.get
 type AlibabaDataCouponGetRequest struct {
     model.Params
     // 客户端鉴权虚拟api使用
-    unNamed   string
+    _unNamed   string
 }
 
 // 初始化AlibabaDataCouponGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDataCouponGetRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 客户端鉴权虚拟api使用
-func (r *AlibabaDataCouponGetRequest) SetUnNamed(unNamed string) error {
-    r.unNamed = unNamed
-    r.Set("un_named", unNamed)
+func (r *AlibabaDataCouponGetRequest) SetUnNamed(_unNamed string) error {
+    r._unNamed = _unNamed
+    r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
 func (r AlibabaDataCouponGetRequest) GetUnNamed() string {
-    return r.unNamed
+    return r._unNamed
 }

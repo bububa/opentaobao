@@ -15,9 +15,9 @@ alibaba.alihouse.newhome.project.line
 type AlibabaAlihouseNewhomeProjectLineRequest struct {
     model.Params
     // 外部id
-    outerId   string
+    _outerId   string
     // 0-下架 1-上架
-    type   *model.File
+    _type   *model.File
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectLineRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihouseNewhomeProjectLineRequest) GetApiParams() url.Values {
 }
 // OuterId Setter
 // 外部id
-func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r AlibabaAlihouseNewhomeProjectLineRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // Type Setter
 // 0-下架 1-上架
-func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetType(type *model.File) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaAlihouseNewhomeProjectLineRequest) SetType(_type *model.File) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaAlihouseNewhomeProjectLineRequest) GetType() *model.File {
-    return r.type
+    return r._type
 }

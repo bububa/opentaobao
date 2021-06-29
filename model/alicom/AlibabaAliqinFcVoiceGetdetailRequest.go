@@ -15,11 +15,11 @@ alibaba.aliqin.fc.voice.getdetail
 type AlibabaAliqinFcVoiceGetdetailRequest struct {
     model.Params
     // 呼叫唯一ID
-    callId   string
+    _callId   string
     // 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
-    prodId   int64
+    _prodId   int64
     // Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
-    queryDate   int64
+    _queryDate   int64
 }
 
 // 初始化AlibabaAliqinFcVoiceGetdetailRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAliqinFcVoiceGetdetailRequest) GetApiParams() url.Values {
 }
 // CallId Setter
 // 呼叫唯一ID
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetCallId(callId string) error {
-    r.callId = callId
-    r.Set("call_id", callId)
+func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetCallId(_callId string) error {
+    r._callId = _callId
+    r.Set("call_id", _callId)
     return nil
 }
 
 // CallId Getter
 func (r AlibabaAliqinFcVoiceGetdetailRequest) GetCallId() string {
-    return r.callId
+    return r._callId
 }
 // ProdId Setter
 // 语音通知为:11000000300006, 语音验证码为:11010000138001, IVR为:11000000300005, 点击拨号为:11000000300004, SIP为:11000000300009
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetProdId(prodId int64) error {
-    r.prodId = prodId
-    r.Set("prod_id", prodId)
+func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetProdId(_prodId int64) error {
+    r._prodId = _prodId
+    r.Set("prod_id", _prodId)
     return nil
 }
 
 // ProdId Getter
 func (r AlibabaAliqinFcVoiceGetdetailRequest) GetProdId() int64 {
-    return r.prodId
+    return r._prodId
 }
 // QueryDate Setter
 // Unix时间戳，会查询这个时间点对应那一天的记录（单位毫秒）
-func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetQueryDate(queryDate int64) error {
-    r.queryDate = queryDate
-    r.Set("query_date", queryDate)
+func (r *AlibabaAliqinFcVoiceGetdetailRequest) SetQueryDate(_queryDate int64) error {
+    r._queryDate = _queryDate
+    r.Set("query_date", _queryDate)
     return nil
 }
 
 // QueryDate Getter
 func (r AlibabaAliqinFcVoiceGetdetailRequest) GetQueryDate() int64 {
-    return r.queryDate
+    return r._queryDate
 }

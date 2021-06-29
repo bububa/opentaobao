@@ -15,7 +15,7 @@ alibaba.alihealth.medicalbase.order.status.sync
 type AlibabaAlihealthMedicalbaseOrderStatusSyncRequest struct {
     model.Params
     // 订单信息
-    orderlSyncDTO   *OrderlSyncDto
+    _orderlSyncDTO   *OrderlSyncDto
 }
 
 // 初始化AlibabaAlihealthMedicalbaseOrderStatusSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetApiParams() url.Va
 }
 // OrderlSyncDTO Setter
 // 订单信息
-func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) SetOrderlSyncDTO(orderlSyncDTO *OrderlSyncDto) error {
-    r.orderlSyncDTO = orderlSyncDTO
-    r.Set("orderl_sync_d_t_o", orderlSyncDTO)
+func (r *AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) SetOrderlSyncDTO(_orderlSyncDTO *OrderlSyncDto) error {
+    r._orderlSyncDTO = _orderlSyncDTO
+    r.Set("orderl_sync_d_t_o", _orderlSyncDTO)
     return nil
 }
 
 // OrderlSyncDTO Getter
 func (r AlibabaAlihealthMedicalbaseOrderStatusSyncRequest) GetOrderlSyncDTO() *OrderlSyncDto {
-    return r.orderlSyncDTO
+    return r._orderlSyncDTO
 }

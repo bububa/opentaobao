@@ -15,7 +15,7 @@ ERP调用奇门的接口,取消创建单据操作。场景介绍：ERP主动发�
 type TaobaoQimenOrderCancelRequest struct {
     model.Params
     // 
-    request   *OrderCancelRequest
+    _request   *OrderCancelRequest
 }
 
 // 初始化TaobaoQimenOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderCancelRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderCancelRequest) SetRequest(request *OrderCancelRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderCancelRequest) SetRequest(_request *OrderCancelRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderCancelRequest) GetRequest() *OrderCancelRequest {
-    return r.request
+    return r._request
 }

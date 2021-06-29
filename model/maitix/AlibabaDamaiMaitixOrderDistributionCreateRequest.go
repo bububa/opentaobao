@@ -15,7 +15,7 @@ createDistributionOrder
 type AlibabaDamaiMaitixOrderDistributionCreateRequest struct {
     model.Params
     // 下单参数param
-    param   *MoaOrderParam
+    _param   *MoaOrderParam
 }
 
 // 初始化AlibabaDamaiMaitixOrderDistributionCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 下单参数param
-func (r *AlibabaDamaiMaitixOrderDistributionCreateRequest) SetParam(param *MoaOrderParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixOrderDistributionCreateRequest) SetParam(_param *MoaOrderParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixOrderDistributionCreateRequest) GetParam() *MoaOrderParam {
-    return r.param
+    return r._param
 }

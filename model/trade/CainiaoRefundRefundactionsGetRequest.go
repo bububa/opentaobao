@@ -15,7 +15,7 @@ cainiao.refund.refundactions.get
 type CainiaoRefundRefundactionsGetRequest struct {
     model.Params
     // 子订单ID
-    orderId   string
+    _orderId   string
 }
 
 // 初始化CainiaoRefundRefundactionsGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoRefundRefundactionsGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 子订单ID
-func (r *CainiaoRefundRefundactionsGetRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *CainiaoRefundRefundactionsGetRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r CainiaoRefundRefundactionsGetRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }

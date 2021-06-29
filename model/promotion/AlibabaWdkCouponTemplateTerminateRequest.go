@@ -15,7 +15,7 @@ alibaba.wdk.coupon.template.terminate
 type AlibabaWdkCouponTemplateTerminateRequest struct {
     model.Params
     // 参数
-    paramCouponTemplateTerminateRequest   *CouponTemplateTerminateRequest
+    _paramCouponTemplateTerminateRequest   *CouponTemplateTerminateRequest
 }
 
 // 初始化AlibabaWdkCouponTemplateTerminateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkCouponTemplateTerminateRequest) GetApiParams() url.Values {
 }
 // ParamCouponTemplateTerminateRequest Setter
 // 参数
-func (r *AlibabaWdkCouponTemplateTerminateRequest) SetParamCouponTemplateTerminateRequest(paramCouponTemplateTerminateRequest *CouponTemplateTerminateRequest) error {
-    r.paramCouponTemplateTerminateRequest = paramCouponTemplateTerminateRequest
-    r.Set("param_coupon_template_terminate_request", paramCouponTemplateTerminateRequest)
+func (r *AlibabaWdkCouponTemplateTerminateRequest) SetParamCouponTemplateTerminateRequest(_paramCouponTemplateTerminateRequest *CouponTemplateTerminateRequest) error {
+    r._paramCouponTemplateTerminateRequest = _paramCouponTemplateTerminateRequest
+    r.Set("param_coupon_template_terminate_request", _paramCouponTemplateTerminateRequest)
     return nil
 }
 
 // ParamCouponTemplateTerminateRequest Getter
 func (r AlibabaWdkCouponTemplateTerminateRequest) GetParamCouponTemplateTerminateRequest() *CouponTemplateTerminateRequest {
-    return r.paramCouponTemplateTerminateRequest
+    return r._paramCouponTemplateTerminateRequest
 }

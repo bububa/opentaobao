@@ -15,15 +15,15 @@ youku.ott.pay.order.authpay
 type YoukuOttPayOrderAuthpayRequest struct {
     model.Params
     // cp用户名
-    buyer   string
+    _buyer   string
     // 连续包月原始cp订单号
-    originalOrderNo   string
+    _originalOrderNo   string
     // 委托扣款cp订单号
-    orderNo   string
+    _orderNo   string
     // 已配置开通连续包月的产品id
-    productId   string
+    _productId   string
     // 回调
-    callbackUrl   string
+    _callbackUrl   string
 }
 
 // 初始化YoukuOttPayOrderAuthpayRequest对象
@@ -48,61 +48,61 @@ func (r YoukuOttPayOrderAuthpayRequest) GetApiParams() url.Values {
 }
 // Buyer Setter
 // cp用户名
-func (r *YoukuOttPayOrderAuthpayRequest) SetBuyer(buyer string) error {
-    r.buyer = buyer
-    r.Set("buyer", buyer)
+func (r *YoukuOttPayOrderAuthpayRequest) SetBuyer(_buyer string) error {
+    r._buyer = _buyer
+    r.Set("buyer", _buyer)
     return nil
 }
 
 // Buyer Getter
 func (r YoukuOttPayOrderAuthpayRequest) GetBuyer() string {
-    return r.buyer
+    return r._buyer
 }
 // OriginalOrderNo Setter
 // 连续包月原始cp订单号
-func (r *YoukuOttPayOrderAuthpayRequest) SetOriginalOrderNo(originalOrderNo string) error {
-    r.originalOrderNo = originalOrderNo
-    r.Set("original_order_no", originalOrderNo)
+func (r *YoukuOttPayOrderAuthpayRequest) SetOriginalOrderNo(_originalOrderNo string) error {
+    r._originalOrderNo = _originalOrderNo
+    r.Set("original_order_no", _originalOrderNo)
     return nil
 }
 
 // OriginalOrderNo Getter
 func (r YoukuOttPayOrderAuthpayRequest) GetOriginalOrderNo() string {
-    return r.originalOrderNo
+    return r._originalOrderNo
 }
 // OrderNo Setter
 // 委托扣款cp订单号
-func (r *YoukuOttPayOrderAuthpayRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *YoukuOttPayOrderAuthpayRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r YoukuOttPayOrderAuthpayRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // ProductId Setter
 // 已配置开通连续包月的产品id
-func (r *YoukuOttPayOrderAuthpayRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *YoukuOttPayOrderAuthpayRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r YoukuOttPayOrderAuthpayRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }
 // CallbackUrl Setter
 // 回调
-func (r *YoukuOttPayOrderAuthpayRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *YoukuOttPayOrderAuthpayRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r YoukuOttPayOrderAuthpayRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }

@@ -15,11 +15,11 @@ taobao.fuwu.scores.get
 type TaobaoFuwuScoresGetRequest struct {
     model.Params
     // 当前页
-    currentPage   int64
+    _currentPage   int64
     // 每页获取条数。默认值40，最小值1，最大值100。
-    pageSize   int64
+    _pageSize   int64
     // 评价日期，查询某一天的评价
-    date   string
+    _date   string
 }
 
 // 初始化TaobaoFuwuScoresGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoFuwuScoresGetRequest) GetApiParams() url.Values {
 }
 // CurrentPage Setter
 // 当前页
-func (r *TaobaoFuwuScoresGetRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoFuwuScoresGetRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoFuwuScoresGetRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页获取条数。默认值40，最小值1，最大值100。
-func (r *TaobaoFuwuScoresGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoFuwuScoresGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoFuwuScoresGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Date Setter
 // 评价日期，查询某一天的评价
-func (r *TaobaoFuwuScoresGetRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *TaobaoFuwuScoresGetRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r TaobaoFuwuScoresGetRequest) GetDate() string {
-    return r.date
+    return r._date
 }

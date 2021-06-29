@@ -15,19 +15,19 @@ yunos.tvpubadmin.data.query
 type YunosTvpubadminDataQueryRequest struct {
     model.Params
     // 表名
-    tableName   string
+    _tableName   string
     // 列名
-    columns   string
+    _columns   string
     // UUID
-    uuid   string
+    _uuid   string
     // 数据类型
-    dataTypeId   int64
+    _dataTypeId   int64
     // 日期
-    date   string
+    _date   string
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 每页个数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosTvpubadminDataQueryRequest对象
@@ -52,85 +52,85 @@ func (r YunosTvpubadminDataQueryRequest) GetApiParams() url.Values {
 }
 // TableName Setter
 // 表名
-func (r *YunosTvpubadminDataQueryRequest) SetTableName(tableName string) error {
-    r.tableName = tableName
-    r.Set("table_name", tableName)
+func (r *YunosTvpubadminDataQueryRequest) SetTableName(_tableName string) error {
+    r._tableName = _tableName
+    r.Set("table_name", _tableName)
     return nil
 }
 
 // TableName Getter
 func (r YunosTvpubadminDataQueryRequest) GetTableName() string {
-    return r.tableName
+    return r._tableName
 }
 // Columns Setter
 // 列名
-func (r *YunosTvpubadminDataQueryRequest) SetColumns(columns string) error {
-    r.columns = columns
-    r.Set("columns", columns)
+func (r *YunosTvpubadminDataQueryRequest) SetColumns(_columns string) error {
+    r._columns = _columns
+    r.Set("columns", _columns)
     return nil
 }
 
 // Columns Getter
 func (r YunosTvpubadminDataQueryRequest) GetColumns() string {
-    return r.columns
+    return r._columns
 }
 // Uuid Setter
 // UUID
-func (r *YunosTvpubadminDataQueryRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *YunosTvpubadminDataQueryRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r YunosTvpubadminDataQueryRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // DataTypeId Setter
 // 数据类型
-func (r *YunosTvpubadminDataQueryRequest) SetDataTypeId(dataTypeId int64) error {
-    r.dataTypeId = dataTypeId
-    r.Set("data_type_id", dataTypeId)
+func (r *YunosTvpubadminDataQueryRequest) SetDataTypeId(_dataTypeId int64) error {
+    r._dataTypeId = _dataTypeId
+    r.Set("data_type_id", _dataTypeId)
     return nil
 }
 
 // DataTypeId Getter
 func (r YunosTvpubadminDataQueryRequest) GetDataTypeId() int64 {
-    return r.dataTypeId
+    return r._dataTypeId
 }
 // Date Setter
 // 日期
-func (r *YunosTvpubadminDataQueryRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *YunosTvpubadminDataQueryRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r YunosTvpubadminDataQueryRequest) GetDate() string {
-    return r.date
+    return r._date
 }
 // PageNo Setter
 // 页码
-func (r *YunosTvpubadminDataQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YunosTvpubadminDataQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YunosTvpubadminDataQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页个数
-func (r *YunosTvpubadminDataQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminDataQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminDataQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

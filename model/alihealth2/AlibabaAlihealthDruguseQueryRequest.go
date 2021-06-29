@@ -15,7 +15,7 @@ alibaba.alihealth.druguse.query
 type AlibabaAlihealthDruguseQueryRequest struct {
     model.Params
     // 入参
-    command   *SafeMedicationReqCommand
+    _command   *SafeMedicationReqCommand
 }
 
 // 初始化AlibabaAlihealthDruguseQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDruguseQueryRequest) GetApiParams() url.Values {
 }
 // Command Setter
 // 入参
-func (r *AlibabaAlihealthDruguseQueryRequest) SetCommand(command *SafeMedicationReqCommand) error {
-    r.command = command
-    r.Set("command", command)
+func (r *AlibabaAlihealthDruguseQueryRequest) SetCommand(_command *SafeMedicationReqCommand) error {
+    r._command = _command
+    r.Set("command", _command)
     return nil
 }
 
 // Command Getter
 func (r AlibabaAlihealthDruguseQueryRequest) GetCommand() *SafeMedicationReqCommand {
-    return r.command
+    return r._command
 }

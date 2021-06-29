@@ -15,9 +15,9 @@ taobao.promotion.coupon.sns.send
 type TaobaoPromotionCouponSnsSendRequest struct {
     model.Params
     // 优惠券的id
-    couponId   int64
+    _couponId   int64
     // 买家昵称用半角','号分割
-    buyerNick   []string
+    _buyerNick   []string
 }
 
 // 初始化TaobaoPromotionCouponSnsSendRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionCouponSnsSendRequest) GetApiParams() url.Values {
 }
 // CouponId Setter
 // 优惠券的id
-func (r *TaobaoPromotionCouponSnsSendRequest) SetCouponId(couponId int64) error {
-    r.couponId = couponId
-    r.Set("coupon_id", couponId)
+func (r *TaobaoPromotionCouponSnsSendRequest) SetCouponId(_couponId int64) error {
+    r._couponId = _couponId
+    r.Set("coupon_id", _couponId)
     return nil
 }
 
 // CouponId Getter
 func (r TaobaoPromotionCouponSnsSendRequest) GetCouponId() int64 {
-    return r.couponId
+    return r._couponId
 }
 // BuyerNick Setter
 // 买家昵称用半角','号分割
-func (r *TaobaoPromotionCouponSnsSendRequest) SetBuyerNick(buyerNick []string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoPromotionCouponSnsSendRequest) SetBuyerNick(_buyerNick []string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoPromotionCouponSnsSendRequest) GetBuyerNick() []string {
-    return r.buyerNick
+    return r._buyerNick
 }

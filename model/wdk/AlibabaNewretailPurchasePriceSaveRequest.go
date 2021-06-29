@@ -15,7 +15,7 @@ alibaba.newretail.purchase.price.save
 type AlibabaNewretailPurchasePriceSaveRequest struct {
     model.Params
     // 接口入参
-    savePurchasePriceRequest   *SavePurchasePriceRequest
+    _savePurchasePriceRequest   *SavePurchasePriceRequest
 }
 
 // 初始化AlibabaNewretailPurchasePriceSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNewretailPurchasePriceSaveRequest) GetApiParams() url.Values {
 }
 // SavePurchasePriceRequest Setter
 // 接口入参
-func (r *AlibabaNewretailPurchasePriceSaveRequest) SetSavePurchasePriceRequest(savePurchasePriceRequest *SavePurchasePriceRequest) error {
-    r.savePurchasePriceRequest = savePurchasePriceRequest
-    r.Set("save_purchase_price_request", savePurchasePriceRequest)
+func (r *AlibabaNewretailPurchasePriceSaveRequest) SetSavePurchasePriceRequest(_savePurchasePriceRequest *SavePurchasePriceRequest) error {
+    r._savePurchasePriceRequest = _savePurchasePriceRequest
+    r.Set("save_purchase_price_request", _savePurchasePriceRequest)
     return nil
 }
 
 // SavePurchasePriceRequest Getter
 func (r AlibabaNewretailPurchasePriceSaveRequest) GetSavePurchasePriceRequest() *SavePurchasePriceRequest {
-    return r.savePurchasePriceRequest
+    return r._savePurchasePriceRequest
 }

@@ -15,9 +15,9 @@ alibaba.alicom.vt.opentrade.getproductinfo
 type AlibabaAlicomVtOpentradeGetproductinfoRequest struct {
     model.Params
     // 阿里通信产品ID
-    productId   string
+    _productId   string
     // 类型
-    bizType   string
+    _bizType   string
 }
 
 // 初始化AlibabaAlicomVtOpentradeGetproductinfoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlicomVtOpentradeGetproductinfoRequest) GetApiParams() url.Values
 }
 // ProductId Setter
 // 阿里通信产品ID
-func (r *AlibabaAlicomVtOpentradeGetproductinfoRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaAlicomVtOpentradeGetproductinfoRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaAlicomVtOpentradeGetproductinfoRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }
 // BizType Setter
 // 类型
-func (r *AlibabaAlicomVtOpentradeGetproductinfoRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *AlibabaAlicomVtOpentradeGetproductinfoRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r AlibabaAlicomVtOpentradeGetproductinfoRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }

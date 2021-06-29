@@ -15,7 +15,7 @@ alitrip.receipt.seller.invoice.query
 type AlitripReceiptSellerInvoiceQueryRequest struct {
     model.Params
     // 入参对象
-    queryReceiptParam   *QueryReceiptParam
+    _queryReceiptParam   *QueryReceiptParam
 }
 
 // 初始化AlitripReceiptSellerInvoiceQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripReceiptSellerInvoiceQueryRequest) GetApiParams() url.Values {
 }
 // QueryReceiptParam Setter
 // 入参对象
-func (r *AlitripReceiptSellerInvoiceQueryRequest) SetQueryReceiptParam(queryReceiptParam *QueryReceiptParam) error {
-    r.queryReceiptParam = queryReceiptParam
-    r.Set("query_receipt_param", queryReceiptParam)
+func (r *AlitripReceiptSellerInvoiceQueryRequest) SetQueryReceiptParam(_queryReceiptParam *QueryReceiptParam) error {
+    r._queryReceiptParam = _queryReceiptParam
+    r.Set("query_receipt_param", _queryReceiptParam)
     return nil
 }
 
 // QueryReceiptParam Getter
 func (r AlitripReceiptSellerInvoiceQueryRequest) GetQueryReceiptParam() *QueryReceiptParam {
-    return r.queryReceiptParam
+    return r._queryReceiptParam
 }

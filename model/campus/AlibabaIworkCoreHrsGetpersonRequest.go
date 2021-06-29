@@ -15,13 +15,13 @@ alibaba.iwork.core.hrs.getperson
 type AlibabaIworkCoreHrsGetpersonRequest struct {
     model.Params
     // 用户ACCOUNT_ID
-    accountId   string
+    _accountId   string
     // 用户ID
-    personId   int64
+    _personId   int64
     // 应用ID
-    appId   string
+    _appId   string
     // 操作人ID
-    operatorId   string
+    _operatorId   string
 }
 
 // 初始化AlibabaIworkCoreHrsGetpersonRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaIworkCoreHrsGetpersonRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 用户ACCOUNT_ID
-func (r *AlibabaIworkCoreHrsGetpersonRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaIworkCoreHrsGetpersonRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaIworkCoreHrsGetpersonRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }
 // PersonId Setter
 // 用户ID
-func (r *AlibabaIworkCoreHrsGetpersonRequest) SetPersonId(personId int64) error {
-    r.personId = personId
-    r.Set("person_id", personId)
+func (r *AlibabaIworkCoreHrsGetpersonRequest) SetPersonId(_personId int64) error {
+    r._personId = _personId
+    r.Set("person_id", _personId)
     return nil
 }
 
 // PersonId Getter
 func (r AlibabaIworkCoreHrsGetpersonRequest) GetPersonId() int64 {
-    return r.personId
+    return r._personId
 }
 // AppId Setter
 // 应用ID
-func (r *AlibabaIworkCoreHrsGetpersonRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaIworkCoreHrsGetpersonRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaIworkCoreHrsGetpersonRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // OperatorId Setter
 // 操作人ID
-func (r *AlibabaIworkCoreHrsGetpersonRequest) SetOperatorId(operatorId string) error {
-    r.operatorId = operatorId
-    r.Set("operator_id", operatorId)
+func (r *AlibabaIworkCoreHrsGetpersonRequest) SetOperatorId(_operatorId string) error {
+    r._operatorId = _operatorId
+    r.Set("operator_id", _operatorId)
     return nil
 }
 
 // OperatorId Getter
 func (r AlibabaIworkCoreHrsGetpersonRequest) GetOperatorId() string {
-    return r.operatorId
+    return r._operatorId
 }

@@ -15,7 +15,7 @@ alitrip.platform.poi.raw.feed
 type AlitripPlatformPoiRawFeedRequest struct {
     model.Params
     // poi存储参数
-    param0   *TripPoiRawSaveParam
+    _param0   *TripPoiRawSaveParam
 }
 
 // 初始化AlitripPlatformPoiRawFeedRequest对象
@@ -40,13 +40,13 @@ func (r AlitripPlatformPoiRawFeedRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // poi存储参数
-func (r *AlitripPlatformPoiRawFeedRequest) SetParam0(param0 *TripPoiRawSaveParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlitripPlatformPoiRawFeedRequest) SetParam0(_param0 *TripPoiRawSaveParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlitripPlatformPoiRawFeedRequest) GetParam0() *TripPoiRawSaveParam {
-    return r.param0
+    return r._param0
 }

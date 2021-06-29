@@ -15,9 +15,9 @@ alibaba.damai.ticklet.qrcode.decode
 type AlibabaDamaiTickletQrcodeDecodeRequest struct {
     model.Params
     // 生产系统
-    productSystemId   string
+    _productSystemId   string
     // 加密二维码
-    encryptedQrCode   string
+    _encryptedQrCode   string
 }
 
 // 初始化AlibabaDamaiTickletQrcodeDecodeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaDamaiTickletQrcodeDecodeRequest) GetApiParams() url.Values {
 }
 // ProductSystemId Setter
 // 生产系统
-func (r *AlibabaDamaiTickletQrcodeDecodeRequest) SetProductSystemId(productSystemId string) error {
-    r.productSystemId = productSystemId
-    r.Set("product_system_id", productSystemId)
+func (r *AlibabaDamaiTickletQrcodeDecodeRequest) SetProductSystemId(_productSystemId string) error {
+    r._productSystemId = _productSystemId
+    r.Set("product_system_id", _productSystemId)
     return nil
 }
 
 // ProductSystemId Getter
 func (r AlibabaDamaiTickletQrcodeDecodeRequest) GetProductSystemId() string {
-    return r.productSystemId
+    return r._productSystemId
 }
 // EncryptedQrCode Setter
 // 加密二维码
-func (r *AlibabaDamaiTickletQrcodeDecodeRequest) SetEncryptedQrCode(encryptedQrCode string) error {
-    r.encryptedQrCode = encryptedQrCode
-    r.Set("encrypted_qr_code", encryptedQrCode)
+func (r *AlibabaDamaiTickletQrcodeDecodeRequest) SetEncryptedQrCode(_encryptedQrCode string) error {
+    r._encryptedQrCode = _encryptedQrCode
+    r.Set("encrypted_qr_code", _encryptedQrCode)
     return nil
 }
 
 // EncryptedQrCode Getter
 func (r AlibabaDamaiTickletQrcodeDecodeRequest) GetEncryptedQrCode() string {
-    return r.encryptedQrCode
+    return r._encryptedQrCode
 }

@@ -15,11 +15,11 @@ taobao.promotionmisc.mjs.activity.list.get
 type TaobaoPromotionmiscMjsActivityListGetRequest struct {
     model.Params
     // 活动类型： 1表示商品级别的活动；2表示店铺级别的活动。
-    activityType   int64
+    _activityType   int64
     // 页码。
-    pageNo   int64
+    _pageNo   int64
     // 每页记录数，最大支持50 。
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPromotionmiscMjsActivityListGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPromotionmiscMjsActivityListGetRequest) GetApiParams() url.Values 
 }
 // ActivityType Setter
 // 活动类型： 1表示商品级别的活动；2表示店铺级别的活动。
-func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetActivityType(activityType int64) error {
-    r.activityType = activityType
-    r.Set("activity_type", activityType)
+func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetActivityType(_activityType int64) error {
+    r._activityType = _activityType
+    r.Set("activity_type", _activityType)
     return nil
 }
 
 // ActivityType Getter
 func (r TaobaoPromotionmiscMjsActivityListGetRequest) GetActivityType() int64 {
-    return r.activityType
+    return r._activityType
 }
 // PageNo Setter
 // 页码。
-func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPromotionmiscMjsActivityListGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页记录数，最大支持50 。
-func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPromotionmiscMjsActivityListGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPromotionmiscMjsActivityListGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

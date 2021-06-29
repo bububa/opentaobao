@@ -15,7 +15,7 @@ alibaba.fundplatform.account.charge.notify
 type AlibabaFundplatformAccountChargeNotifyRequest struct {
     model.Params
     // 入参对象
-    request   *AlibabaFundplatformAccountChargeNotifyStruct
+    _request   *AlibabaFundplatformAccountChargeNotifyStruct
 }
 
 // 初始化AlibabaFundplatformAccountChargeNotifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFundplatformAccountChargeNotifyRequest) GetApiParams() url.Values
 }
 // Request Setter
 // 入参对象
-func (r *AlibabaFundplatformAccountChargeNotifyRequest) SetRequest(request *AlibabaFundplatformAccountChargeNotifyStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *AlibabaFundplatformAccountChargeNotifyRequest) SetRequest(_request *AlibabaFundplatformAccountChargeNotifyStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r AlibabaFundplatformAccountChargeNotifyRequest) GetRequest() *AlibabaFundplatformAccountChargeNotifyStruct {
-    return r.request
+    return r._request
 }

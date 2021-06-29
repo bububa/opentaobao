@@ -15,25 +15,25 @@ alibaba.einvoice.paper.return
 type AlibabaEinvoicePaperReturnRequest struct {
     model.Params
     // 发票密文，密码区的字符串
-    ciphertext   string
+    _ciphertext   string
     // 发票号码
-    invoiceNo   string
+    _invoiceNo   string
     // 发票日期
-    invoiceDate   string
+    _invoiceDate   string
     // 防伪码
-    antiFakeCode   string
+    _antiFakeCode   string
     // 税控设备编号(新版电子发票有)
-    deviceNo   string
+    _deviceNo   string
     // 发票代码
-    invoiceCode   string
+    _invoiceCode   string
     // 开票结果"success"或者"fail"
-    createResult   string
+    _createResult   string
     // 错误码
-    bizErrorCode   string
+    _bizErrorCode   string
     // 错误信息
-    bizErrorMsg   string
+    _bizErrorMsg   string
     // 开票请求的唯一索引
-    reqIndex   string
+    _reqIndex   string
 }
 
 // 初始化AlibabaEinvoicePaperReturnRequest对象
@@ -58,121 +58,121 @@ func (r AlibabaEinvoicePaperReturnRequest) GetApiParams() url.Values {
 }
 // Ciphertext Setter
 // 发票密文，密码区的字符串
-func (r *AlibabaEinvoicePaperReturnRequest) SetCiphertext(ciphertext string) error {
-    r.ciphertext = ciphertext
-    r.Set("ciphertext", ciphertext)
+func (r *AlibabaEinvoicePaperReturnRequest) SetCiphertext(_ciphertext string) error {
+    r._ciphertext = _ciphertext
+    r.Set("ciphertext", _ciphertext)
     return nil
 }
 
 // Ciphertext Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetCiphertext() string {
-    return r.ciphertext
+    return r._ciphertext
 }
 // InvoiceNo Setter
 // 发票号码
-func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceNo(invoiceNo string) error {
-    r.invoiceNo = invoiceNo
-    r.Set("invoice_no", invoiceNo)
+func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceNo(_invoiceNo string) error {
+    r._invoiceNo = _invoiceNo
+    r.Set("invoice_no", _invoiceNo)
     return nil
 }
 
 // InvoiceNo Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetInvoiceNo() string {
-    return r.invoiceNo
+    return r._invoiceNo
 }
 // InvoiceDate Setter
 // 发票日期
-func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceDate(invoiceDate string) error {
-    r.invoiceDate = invoiceDate
-    r.Set("invoice_date", invoiceDate)
+func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceDate(_invoiceDate string) error {
+    r._invoiceDate = _invoiceDate
+    r.Set("invoice_date", _invoiceDate)
     return nil
 }
 
 // InvoiceDate Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetInvoiceDate() string {
-    return r.invoiceDate
+    return r._invoiceDate
 }
 // AntiFakeCode Setter
 // 防伪码
-func (r *AlibabaEinvoicePaperReturnRequest) SetAntiFakeCode(antiFakeCode string) error {
-    r.antiFakeCode = antiFakeCode
-    r.Set("anti_fake_code", antiFakeCode)
+func (r *AlibabaEinvoicePaperReturnRequest) SetAntiFakeCode(_antiFakeCode string) error {
+    r._antiFakeCode = _antiFakeCode
+    r.Set("anti_fake_code", _antiFakeCode)
     return nil
 }
 
 // AntiFakeCode Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetAntiFakeCode() string {
-    return r.antiFakeCode
+    return r._antiFakeCode
 }
 // DeviceNo Setter
 // 税控设备编号(新版电子发票有)
-func (r *AlibabaEinvoicePaperReturnRequest) SetDeviceNo(deviceNo string) error {
-    r.deviceNo = deviceNo
-    r.Set("device_no", deviceNo)
+func (r *AlibabaEinvoicePaperReturnRequest) SetDeviceNo(_deviceNo string) error {
+    r._deviceNo = _deviceNo
+    r.Set("device_no", _deviceNo)
     return nil
 }
 
 // DeviceNo Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetDeviceNo() string {
-    return r.deviceNo
+    return r._deviceNo
 }
 // InvoiceCode Setter
 // 发票代码
-func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceCode(invoiceCode string) error {
-    r.invoiceCode = invoiceCode
-    r.Set("invoice_code", invoiceCode)
+func (r *AlibabaEinvoicePaperReturnRequest) SetInvoiceCode(_invoiceCode string) error {
+    r._invoiceCode = _invoiceCode
+    r.Set("invoice_code", _invoiceCode)
     return nil
 }
 
 // InvoiceCode Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetInvoiceCode() string {
-    return r.invoiceCode
+    return r._invoiceCode
 }
 // CreateResult Setter
 // 开票结果"success"或者"fail"
-func (r *AlibabaEinvoicePaperReturnRequest) SetCreateResult(createResult string) error {
-    r.createResult = createResult
-    r.Set("create_result", createResult)
+func (r *AlibabaEinvoicePaperReturnRequest) SetCreateResult(_createResult string) error {
+    r._createResult = _createResult
+    r.Set("create_result", _createResult)
     return nil
 }
 
 // CreateResult Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetCreateResult() string {
-    return r.createResult
+    return r._createResult
 }
 // BizErrorCode Setter
 // 错误码
-func (r *AlibabaEinvoicePaperReturnRequest) SetBizErrorCode(bizErrorCode string) error {
-    r.bizErrorCode = bizErrorCode
-    r.Set("biz_error_code", bizErrorCode)
+func (r *AlibabaEinvoicePaperReturnRequest) SetBizErrorCode(_bizErrorCode string) error {
+    r._bizErrorCode = _bizErrorCode
+    r.Set("biz_error_code", _bizErrorCode)
     return nil
 }
 
 // BizErrorCode Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetBizErrorCode() string {
-    return r.bizErrorCode
+    return r._bizErrorCode
 }
 // BizErrorMsg Setter
 // 错误信息
-func (r *AlibabaEinvoicePaperReturnRequest) SetBizErrorMsg(bizErrorMsg string) error {
-    r.bizErrorMsg = bizErrorMsg
-    r.Set("biz_error_msg", bizErrorMsg)
+func (r *AlibabaEinvoicePaperReturnRequest) SetBizErrorMsg(_bizErrorMsg string) error {
+    r._bizErrorMsg = _bizErrorMsg
+    r.Set("biz_error_msg", _bizErrorMsg)
     return nil
 }
 
 // BizErrorMsg Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetBizErrorMsg() string {
-    return r.bizErrorMsg
+    return r._bizErrorMsg
 }
 // ReqIndex Setter
 // 开票请求的唯一索引
-func (r *AlibabaEinvoicePaperReturnRequest) SetReqIndex(reqIndex string) error {
-    r.reqIndex = reqIndex
-    r.Set("req_index", reqIndex)
+func (r *AlibabaEinvoicePaperReturnRequest) SetReqIndex(_reqIndex string) error {
+    r._reqIndex = _reqIndex
+    r.Set("req_index", _reqIndex)
     return nil
 }
 
 // ReqIndex Getter
 func (r AlibabaEinvoicePaperReturnRequest) GetReqIndex() string {
-    return r.reqIndex
+    return r._reqIndex
 }

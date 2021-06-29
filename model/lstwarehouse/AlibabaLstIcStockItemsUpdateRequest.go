@@ -15,7 +15,7 @@ alibaba.lst.ic.stock.items.update
 type AlibabaLstIcStockItemsUpdateRequest struct {
     model.Params
     // 零售通经销商商品库存
-    query   *LstItemStockParam
+    _query   *LstItemStockParam
 }
 
 // 初始化AlibabaLstIcStockItemsUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstIcStockItemsUpdateRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 零售通经销商商品库存
-func (r *AlibabaLstIcStockItemsUpdateRequest) SetQuery(query *LstItemStockParam) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstIcStockItemsUpdateRequest) SetQuery(_query *LstItemStockParam) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstIcStockItemsUpdateRequest) GetQuery() *LstItemStockParam {
-    return r.query
+    return r._query
 }

@@ -15,7 +15,7 @@ alibaba.ascp.qcc.sample.update
 type AlibabaAscpQccSampleUpdateRequest struct {
     model.Params
     // 更新请求参数
-    updateRequest   *UpdateSampleRequest
+    _updateRequest   *UpdateSampleRequest
 }
 
 // 初始化AlibabaAscpQccSampleUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpQccSampleUpdateRequest) GetApiParams() url.Values {
 }
 // UpdateRequest Setter
 // 更新请求参数
-func (r *AlibabaAscpQccSampleUpdateRequest) SetUpdateRequest(updateRequest *UpdateSampleRequest) error {
-    r.updateRequest = updateRequest
-    r.Set("update_request", updateRequest)
+func (r *AlibabaAscpQccSampleUpdateRequest) SetUpdateRequest(_updateRequest *UpdateSampleRequest) error {
+    r._updateRequest = _updateRequest
+    r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
 func (r AlibabaAscpQccSampleUpdateRequest) GetUpdateRequest() *UpdateSampleRequest {
-    return r.updateRequest
+    return r._updateRequest
 }

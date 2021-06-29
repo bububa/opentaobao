@@ -22,29 +22,29 @@ taobao.products.search
 type TaobaoProductsSearchRequest struct {
     model.Params
     // 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用","分隔.新增字段status(product的当前状态)
-    fields   []string
+    _fields   []string
     // 搜索的关键词是用来搜索产品的title.　注:q,cid和props至少传入一个
-    q   string
+    _q   string
     // 商品类目ID.调用taobao.itemcats.get获取.
-    cid   int64
+    _cid   int64
     // 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid <br/>,再用taobao.itempropvalues.get取得vid.
-    props   string
+    _props   string
     // 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。
-    status   string
+    _status   string
     // 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
-    pageNo   int64
+    _pageNo   int64
     // 每页条数.每页返回最多返回100条,默认值为40.
-    pageSize   int64
+    _pageSize   int64
     // 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
-    verticalMarket   int64
+    _verticalMarket   int64
     // 用户自定义关键属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”
-    customerProps   string
+    _customerProps   string
     // 按关联产品规格specs搜索套装产品
-    suiteItemsStr   string
+    _suiteItemsStr   string
     // 按条码搜索产品信息,多个逗号隔开，不支持条码为全零的方式
-    barcodeStr   string
+    _barcodeStr   string
     // 市场ID，1为取C2C市场的产品信息， 2为取B2C市场的产品信息。  不填写此值则默认取C2C的产品信息。
-    marketId   string
+    _marketId   string
 }
 
 // 初始化TaobaoProductsSearchRequest对象
@@ -69,145 +69,145 @@ func (r TaobaoProductsSearchRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用","分隔.新增字段status(product的当前状态)
-func (r *TaobaoProductsSearchRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoProductsSearchRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoProductsSearchRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }
 // Q Setter
 // 搜索的关键词是用来搜索产品的title.　注:q,cid和props至少传入一个
-func (r *TaobaoProductsSearchRequest) SetQ(q string) error {
-    r.q = q
-    r.Set("q", q)
+func (r *TaobaoProductsSearchRequest) SetQ(_q string) error {
+    r._q = _q
+    r.Set("q", _q)
     return nil
 }
 
 // Q Getter
 func (r TaobaoProductsSearchRequest) GetQ() string {
-    return r.q
+    return r._q
 }
 // Cid Setter
 // 商品类目ID.调用taobao.itemcats.get获取.
-func (r *TaobaoProductsSearchRequest) SetCid(cid int64) error {
-    r.cid = cid
-    r.Set("cid", cid)
+func (r *TaobaoProductsSearchRequest) SetCid(_cid int64) error {
+    r._cid = _cid
+    r.Set("cid", _cid)
     return nil
 }
 
 // Cid Getter
 func (r TaobaoProductsSearchRequest) GetCid() int64 {
-    return r.cid
+    return r._cid
 }
 // Props Setter
 // 属性,属性值的组合.格式:pid:vid;pid:vid;调用taobao.itemprops.get获取类目属性pid <br/>,再用taobao.itempropvalues.get取得vid.
-func (r *TaobaoProductsSearchRequest) SetProps(props string) error {
-    r.props = props
-    r.Set("props", props)
+func (r *TaobaoProductsSearchRequest) SetProps(_props string) error {
+    r._props = _props
+    r.Set("props", _props)
     return nil
 }
 
 // Props Getter
 func (r TaobaoProductsSearchRequest) GetProps() string {
-    return r.props
+    return r._props
 }
 // Status Setter
 // 想要获取的产品的状态列表，支持多个状态并列获取，多个状态之间用","分隔，最多同时指定5种状态。例如，只获取小二确认的spu传入"3",只要商家确认的传入"0"，既要小二确认又要商家确认的传入"0,3"。目前只支持者两种类型的状态搜索，输入其他状态无效。
-func (r *TaobaoProductsSearchRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoProductsSearchRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoProductsSearchRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // PageNo Setter
 // 页码.传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始.
-func (r *TaobaoProductsSearchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoProductsSearchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoProductsSearchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数.每页返回最多返回100条,默认值为40.
-func (r *TaobaoProductsSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoProductsSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoProductsSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // VerticalMarket Setter
 // 传入值为：3表示3C表示3C垂直市场产品，4表示鞋城垂直市场产品，8表示网游垂直市场产品。一次只能指定一种垂直市场类型
-func (r *TaobaoProductsSearchRequest) SetVerticalMarket(verticalMarket int64) error {
-    r.verticalMarket = verticalMarket
-    r.Set("vertical_market", verticalMarket)
+func (r *TaobaoProductsSearchRequest) SetVerticalMarket(_verticalMarket int64) error {
+    r._verticalMarket = _verticalMarket
+    r.Set("vertical_market", _verticalMarket)
     return nil
 }
 
 // VerticalMarket Getter
 func (r TaobaoProductsSearchRequest) GetVerticalMarket() int64 {
-    return r.verticalMarket
+    return r._verticalMarket
 }
 // CustomerProps Setter
 // 用户自定义关键属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”
-func (r *TaobaoProductsSearchRequest) SetCustomerProps(customerProps string) error {
-    r.customerProps = customerProps
-    r.Set("customer_props", customerProps)
+func (r *TaobaoProductsSearchRequest) SetCustomerProps(_customerProps string) error {
+    r._customerProps = _customerProps
+    r.Set("customer_props", _customerProps)
     return nil
 }
 
 // CustomerProps Getter
 func (r TaobaoProductsSearchRequest) GetCustomerProps() string {
-    return r.customerProps
+    return r._customerProps
 }
 // SuiteItemsStr Setter
 // 按关联产品规格specs搜索套装产品
-func (r *TaobaoProductsSearchRequest) SetSuiteItemsStr(suiteItemsStr string) error {
-    r.suiteItemsStr = suiteItemsStr
-    r.Set("suite_items_str", suiteItemsStr)
+func (r *TaobaoProductsSearchRequest) SetSuiteItemsStr(_suiteItemsStr string) error {
+    r._suiteItemsStr = _suiteItemsStr
+    r.Set("suite_items_str", _suiteItemsStr)
     return nil
 }
 
 // SuiteItemsStr Getter
 func (r TaobaoProductsSearchRequest) GetSuiteItemsStr() string {
-    return r.suiteItemsStr
+    return r._suiteItemsStr
 }
 // BarcodeStr Setter
 // 按条码搜索产品信息,多个逗号隔开，不支持条码为全零的方式
-func (r *TaobaoProductsSearchRequest) SetBarcodeStr(barcodeStr string) error {
-    r.barcodeStr = barcodeStr
-    r.Set("barcode_str", barcodeStr)
+func (r *TaobaoProductsSearchRequest) SetBarcodeStr(_barcodeStr string) error {
+    r._barcodeStr = _barcodeStr
+    r.Set("barcode_str", _barcodeStr)
     return nil
 }
 
 // BarcodeStr Getter
 func (r TaobaoProductsSearchRequest) GetBarcodeStr() string {
-    return r.barcodeStr
+    return r._barcodeStr
 }
 // MarketId Setter
 // 市场ID，1为取C2C市场的产品信息， 2为取B2C市场的产品信息。  不填写此值则默认取C2C的产品信息。
-func (r *TaobaoProductsSearchRequest) SetMarketId(marketId string) error {
-    r.marketId = marketId
-    r.Set("market_id", marketId)
+func (r *TaobaoProductsSearchRequest) SetMarketId(_marketId string) error {
+    r._marketId = _marketId
+    r.Set("market_id", _marketId)
     return nil
 }
 
 // MarketId Getter
 func (r TaobaoProductsSearchRequest) GetMarketId() string {
-    return r.marketId
+    return r._marketId
 }

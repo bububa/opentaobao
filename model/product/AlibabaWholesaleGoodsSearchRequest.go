@@ -15,7 +15,7 @@ alibaba.wholesale.goods.search
 type AlibabaWholesaleGoodsSearchRequest struct {
     model.Params
     // SearchGoodsOption
-    paramSearchGoodsOption   *SearchGoodsOption
+    _paramSearchGoodsOption   *SearchGoodsOption
 }
 
 // 初始化AlibabaWholesaleGoodsSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWholesaleGoodsSearchRequest) GetApiParams() url.Values {
 }
 // ParamSearchGoodsOption Setter
 // SearchGoodsOption
-func (r *AlibabaWholesaleGoodsSearchRequest) SetParamSearchGoodsOption(paramSearchGoodsOption *SearchGoodsOption) error {
-    r.paramSearchGoodsOption = paramSearchGoodsOption
-    r.Set("param_search_goods_option", paramSearchGoodsOption)
+func (r *AlibabaWholesaleGoodsSearchRequest) SetParamSearchGoodsOption(_paramSearchGoodsOption *SearchGoodsOption) error {
+    r._paramSearchGoodsOption = _paramSearchGoodsOption
+    r.Set("param_search_goods_option", _paramSearchGoodsOption)
     return nil
 }
 
 // ParamSearchGoodsOption Getter
 func (r AlibabaWholesaleGoodsSearchRequest) GetParamSearchGoodsOption() *SearchGoodsOption {
-    return r.paramSearchGoodsOption
+    return r._paramSearchGoodsOption
 }

@@ -16,15 +16,15 @@ alibaba.alihealth.drug.kyt.queryactivetime
 type AlibabaAlihealthDrugKytQueryactivetimeRequest struct {
     model.Params
     // 社保局(所属地市名称)
-    bureauName   string
+    _bureauName   string
     // 请求终端名称
-    terminalName   string
+    _terminalName   string
     // 终端类型：1005100-零售，1005200-医疗
-    terminalType   string
+    _terminalType   string
     // 调用方式：formal-正式、test-测试
-    invocation   string
+    _invocation   string
     // 码段的数组
-    resProdCodeList   []string
+    _resProdCodeList   []string
 }
 
 // 初始化AlibabaAlihealthDrugKytQueryactivetimeRequest对象
@@ -49,61 +49,61 @@ func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetApiParams() url.Values
 }
 // BureauName Setter
 // 社保局(所属地市名称)
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // TerminalName Setter
 // 请求终端名称
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetInvocation(invocation string) error {
-    r.invocation = invocation
-    r.Set("invocation", invocation)
+func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetInvocation(_invocation string) error {
+    r._invocation = _invocation
+    r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetInvocation() string {
-    return r.invocation
+    return r._invocation
 }
 // ResProdCodeList Setter
 // 码段的数组
-func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetResProdCodeList(resProdCodeList []string) error {
-    r.resProdCodeList = resProdCodeList
-    r.Set("res_prod_code_list", resProdCodeList)
+func (r *AlibabaAlihealthDrugKytQueryactivetimeRequest) SetResProdCodeList(_resProdCodeList []string) error {
+    r._resProdCodeList = _resProdCodeList
+    r.Set("res_prod_code_list", _resProdCodeList)
     return nil
 }
 
 // ResProdCodeList Getter
 func (r AlibabaAlihealthDrugKytQueryactivetimeRequest) GetResProdCodeList() []string {
-    return r.resProdCodeList
+    return r._resProdCodeList
 }

@@ -15,7 +15,7 @@ alibaba.marketing.lottery.activity.bind
 type AlibabaMarketingLotteryActivityBindRequest struct {
     model.Params
     // 关联抽奖活动请求对象
-    lotteryActivityRel   *LotteryActivityRelDto
+    _lotteryActivityRel   *LotteryActivityRelDto
 }
 
 // 初始化AlibabaMarketingLotteryActivityBindRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityBindRequest) GetApiParams() url.Values {
 }
 // LotteryActivityRel Setter
 // 关联抽奖活动请求对象
-func (r *AlibabaMarketingLotteryActivityBindRequest) SetLotteryActivityRel(lotteryActivityRel *LotteryActivityRelDto) error {
-    r.lotteryActivityRel = lotteryActivityRel
-    r.Set("lottery_activity_rel", lotteryActivityRel)
+func (r *AlibabaMarketingLotteryActivityBindRequest) SetLotteryActivityRel(_lotteryActivityRel *LotteryActivityRelDto) error {
+    r._lotteryActivityRel = _lotteryActivityRel
+    r.Set("lottery_activity_rel", _lotteryActivityRel)
     return nil
 }
 
 // LotteryActivityRel Getter
 func (r AlibabaMarketingLotteryActivityBindRequest) GetLotteryActivityRel() *LotteryActivityRelDto {
-    return r.lotteryActivityRel
+    return r._lotteryActivityRel
 }

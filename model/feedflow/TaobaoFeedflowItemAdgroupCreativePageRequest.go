@@ -15,7 +15,7 @@ taobao.feedflow.item.adgroup.creative.page
 type TaobaoFeedflowItemAdgroupCreativePageRequest struct {
     model.Params
     // 绑定查询条件
-    creativeBindQuery   *CreativeBindQueryDto
+    _creativeBindQuery   *CreativeBindQueryDto
 }
 
 // 初始化TaobaoFeedflowItemAdgroupCreativePageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetApiParams() url.Values 
 }
 // CreativeBindQuery Setter
 // 绑定查询条件
-func (r *TaobaoFeedflowItemAdgroupCreativePageRequest) SetCreativeBindQuery(creativeBindQuery *CreativeBindQueryDto) error {
-    r.creativeBindQuery = creativeBindQuery
-    r.Set("creative_bind_query", creativeBindQuery)
+func (r *TaobaoFeedflowItemAdgroupCreativePageRequest) SetCreativeBindQuery(_creativeBindQuery *CreativeBindQueryDto) error {
+    r._creativeBindQuery = _creativeBindQuery
+    r.Set("creative_bind_query", _creativeBindQuery)
     return nil
 }
 
 // CreativeBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupCreativePageRequest) GetCreativeBindQuery() *CreativeBindQueryDto {
-    return r.creativeBindQuery
+    return r._creativeBindQuery
 }

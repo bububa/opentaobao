@@ -15,13 +15,13 @@ youku.ott.alicb.facadeservice.getdata
 type YoukuOttAlicbFacadeserviceGetdataRequest struct {
     model.Params
     // 能力维度
-    serviceList   []string
+    _serviceList   []string
     // 设备唯一标识
-    uuid   string
+    _uuid   string
     // 属性MAP JSON串
-    propertyMapJson   string
+    _propertyMapJson   string
     // 扩展属性
-    extraInfoMap   string
+    _extraInfoMap   string
 }
 
 // 初始化YoukuOttAlicbFacadeserviceGetdataRequest对象
@@ -46,49 +46,49 @@ func (r YoukuOttAlicbFacadeserviceGetdataRequest) GetApiParams() url.Values {
 }
 // ServiceList Setter
 // 能力维度
-func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetServiceList(serviceList []string) error {
-    r.serviceList = serviceList
-    r.Set("service_list", serviceList)
+func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetServiceList(_serviceList []string) error {
+    r._serviceList = _serviceList
+    r.Set("service_list", _serviceList)
     return nil
 }
 
 // ServiceList Getter
 func (r YoukuOttAlicbFacadeserviceGetdataRequest) GetServiceList() []string {
-    return r.serviceList
+    return r._serviceList
 }
 // Uuid Setter
 // 设备唯一标识
-func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r YoukuOttAlicbFacadeserviceGetdataRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // PropertyMapJson Setter
 // 属性MAP JSON串
-func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetPropertyMapJson(propertyMapJson string) error {
-    r.propertyMapJson = propertyMapJson
-    r.Set("property_map_json", propertyMapJson)
+func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetPropertyMapJson(_propertyMapJson string) error {
+    r._propertyMapJson = _propertyMapJson
+    r.Set("property_map_json", _propertyMapJson)
     return nil
 }
 
 // PropertyMapJson Getter
 func (r YoukuOttAlicbFacadeserviceGetdataRequest) GetPropertyMapJson() string {
-    return r.propertyMapJson
+    return r._propertyMapJson
 }
 // ExtraInfoMap Setter
 // 扩展属性
-func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetExtraInfoMap(extraInfoMap string) error {
-    r.extraInfoMap = extraInfoMap
-    r.Set("extra_info_map", extraInfoMap)
+func (r *YoukuOttAlicbFacadeserviceGetdataRequest) SetExtraInfoMap(_extraInfoMap string) error {
+    r._extraInfoMap = _extraInfoMap
+    r.Set("extra_info_map", _extraInfoMap)
     return nil
 }
 
 // ExtraInfoMap Getter
 func (r YoukuOttAlicbFacadeserviceGetdataRequest) GetExtraInfoMap() string {
-    return r.extraInfoMap
+    return r._extraInfoMap
 }

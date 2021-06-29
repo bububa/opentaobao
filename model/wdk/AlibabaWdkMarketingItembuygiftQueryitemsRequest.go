@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itembuygift.queryitems
 type AlibabaWdkMarketingItembuygiftQueryitemsRequest struct {
     model.Params
     // 查询入参
-    param   *ActivitySkuQuery
+    _param   *ActivitySkuQuery
 }
 
 // 初始化AlibabaWdkMarketingItembuygiftQueryitemsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetApiParams() url.Valu
 }
 // Param Setter
 // 查询入参
-func (r *AlibabaWdkMarketingItembuygiftQueryitemsRequest) SetParam(param *ActivitySkuQuery) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItembuygiftQueryitemsRequest) SetParam(_param *ActivitySkuQuery) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItembuygiftQueryitemsRequest) GetParam() *ActivitySkuQuery {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ taobao.ump.mbb.getbycode
 type TaobaoUmpMbbGetbycodeRequest struct {
     model.Params
     // 营销积木块code
-    code   string
+    _code   string
 }
 
 // 初始化TaobaoUmpMbbGetbycodeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpMbbGetbycodeRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 营销积木块code
-func (r *TaobaoUmpMbbGetbycodeRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TaobaoUmpMbbGetbycodeRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TaobaoUmpMbbGetbycodeRequest) GetCode() string {
-    return r.code
+    return r._code
 }

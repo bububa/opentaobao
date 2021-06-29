@@ -15,7 +15,7 @@ alibaba.security.jaq.rp.cloud.rphit
 type AlibabaSecurityJaqRpCloudRphitRequest struct {
     model.Params
     // xxx
-    content   string
+    _content   string
 }
 
 // 初始化AlibabaSecurityJaqRpCloudRphitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpCloudRphitRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // xxx
-func (r *AlibabaSecurityJaqRpCloudRphitRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaSecurityJaqRpCloudRphitRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaSecurityJaqRpCloudRphitRequest) GetContent() string {
-    return r.content
+    return r._content
 }

@@ -15,19 +15,19 @@ taobao.simba.rpt.targetingtageffect.get
 type TaobaoSimbaRptTargetingtageffectGetRequest struct {
     model.Params
     // 被操作者昵称
-    nick   string
+    _nick   string
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 推广组id
-    adgroupId   int64
+    _adgroupId   int64
     // 起始时间
-    startTime   string
+    _startTime   string
     // 终止时间 ,必须小于今天
-    endTime   string
+    _endTime   string
     // 页面大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNumber   int64
+    _pageNumber   int64
 }
 
 // 初始化TaobaoSimbaRptTargetingtageffectGetRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 被操作者昵称
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CampaignId Setter
 // 计划id
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // StartTime Setter
 // 起始时间
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 终止时间 ,必须小于今天
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // PageSize Setter
 // 页面大小
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNumber Setter
 // 页码
-func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageNumber(pageNumber int64) error {
-    r.pageNumber = pageNumber
-    r.Set("page_number", pageNumber)
+func (r *TaobaoSimbaRptTargetingtageffectGetRequest) SetPageNumber(_pageNumber int64) error {
+    r._pageNumber = _pageNumber
+    r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
 func (r TaobaoSimbaRptTargetingtageffectGetRequest) GetPageNumber() int64 {
-    return r.pageNumber
+    return r._pageNumber
 }

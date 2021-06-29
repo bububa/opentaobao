@@ -15,7 +15,7 @@ alibaba.ihome.ctom.content.publish.status
 type AlibabaIhomeCtomContentPublishStatusRequest struct {
     model.Params
     // 要查询投稿状态的ID列表
-    idList   []int64
+    _idList   []int64
 }
 
 // 初始化AlibabaIhomeCtomContentPublishStatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIhomeCtomContentPublishStatusRequest) GetApiParams() url.Values {
 }
 // IdList Setter
 // 要查询投稿状态的ID列表
-func (r *AlibabaIhomeCtomContentPublishStatusRequest) SetIdList(idList []int64) error {
-    r.idList = idList
-    r.Set("id_list", idList)
+func (r *AlibabaIhomeCtomContentPublishStatusRequest) SetIdList(_idList []int64) error {
+    r._idList = _idList
+    r.Set("id_list", _idList)
     return nil
 }
 
 // IdList Getter
 func (r AlibabaIhomeCtomContentPublishStatusRequest) GetIdList() []int64 {
-    return r.idList
+    return r._idList
 }

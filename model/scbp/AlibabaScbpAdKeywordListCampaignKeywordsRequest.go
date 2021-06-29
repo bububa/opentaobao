@@ -15,11 +15,11 @@ alibaba.scbp.ad.keyword.list.campaign.keywords
 type AlibabaScbpAdKeywordListCampaignKeywordsRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 搜索条件
-    campaignKeywordQuery   *CampaignKeywordQuery
+    _campaignKeywordQuery   *CampaignKeywordQuery
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdKeywordListCampaignKeywordsRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetApiParams() url.Valu
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // CampaignKeywordQuery Setter
 // 搜索条件
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetCampaignKeywordQuery(campaignKeywordQuery *CampaignKeywordQuery) error {
-    r.campaignKeywordQuery = campaignKeywordQuery
-    r.Set("campaign_keyword_query", campaignKeywordQuery)
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetCampaignKeywordQuery(_campaignKeywordQuery *CampaignKeywordQuery) error {
+    r._campaignKeywordQuery = _campaignKeywordQuery
+    r.Set("campaign_keyword_query", _campaignKeywordQuery)
     return nil
 }
 
 // CampaignKeywordQuery Getter
 func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetCampaignKeywordQuery() *CampaignKeywordQuery {
-    return r.campaignKeywordQuery
+    return r._campaignKeywordQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

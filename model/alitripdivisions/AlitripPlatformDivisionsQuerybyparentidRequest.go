@@ -15,7 +15,7 @@ alitrip.platform.divisions.querybyparentid
 type AlitripPlatformDivisionsQuerybyparentidRequest struct {
     model.Params
     // 行政区划父id
-    paramLong   int64
+    _paramLong   int64
 }
 
 // 初始化AlitripPlatformDivisionsQuerybyparentidRequest对象
@@ -40,13 +40,13 @@ func (r AlitripPlatformDivisionsQuerybyparentidRequest) GetApiParams() url.Value
 }
 // ParamLong Setter
 // 行政区划父id
-func (r *AlitripPlatformDivisionsQuerybyparentidRequest) SetParamLong(paramLong int64) error {
-    r.paramLong = paramLong
-    r.Set("param_long", paramLong)
+func (r *AlitripPlatformDivisionsQuerybyparentidRequest) SetParamLong(_paramLong int64) error {
+    r._paramLong = _paramLong
+    r.Set("param_long", _paramLong)
     return nil
 }
 
 // ParamLong Getter
 func (r AlitripPlatformDivisionsQuerybyparentidRequest) GetParamLong() int64 {
-    return r.paramLong
+    return r._paramLong
 }

@@ -15,9 +15,9 @@ taobao.opentrade.group.member.infos
 type TaobaoOpentradeGroupMemberInfosRequest struct {
     model.Params
     // 团id
-    groupId   int64
+    _groupId   int64
     // 用户openId列表
-    openUserIds   []string
+    _openUserIds   []string
 }
 
 // 初始化TaobaoOpentradeGroupMemberInfosRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpentradeGroupMemberInfosRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 团id
-func (r *TaobaoOpentradeGroupMemberInfosRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *TaobaoOpentradeGroupMemberInfosRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r TaobaoOpentradeGroupMemberInfosRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }
 // OpenUserIds Setter
 // 用户openId列表
-func (r *TaobaoOpentradeGroupMemberInfosRequest) SetOpenUserIds(openUserIds []string) error {
-    r.openUserIds = openUserIds
-    r.Set("open_user_ids", openUserIds)
+func (r *TaobaoOpentradeGroupMemberInfosRequest) SetOpenUserIds(_openUserIds []string) error {
+    r._openUserIds = _openUserIds
+    r.Set("open_user_ids", _openUserIds)
     return nil
 }
 
 // OpenUserIds Getter
 func (r TaobaoOpentradeGroupMemberInfosRequest) GetOpenUserIds() []string {
-    return r.openUserIds
+    return r._openUserIds
 }

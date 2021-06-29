@@ -15,9 +15,9 @@ alibaba.campus.device.getdeviceforquery
 type AlibabaCampusDeviceGetdeviceforqueryRequest struct {
     model.Params
     // 系统自动生成
-    query   *DeviceApiQuery
+    _query   *DeviceApiQuery
     // 平台统一参数
-    workBenchContext   *WorkBenchContext
+    _workBenchContext   *WorkBenchContext
 }
 
 // 初始化AlibabaCampusDeviceGetdeviceforqueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusDeviceGetdeviceforqueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 系统自动生成
-func (r *AlibabaCampusDeviceGetdeviceforqueryRequest) SetQuery(query *DeviceApiQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusDeviceGetdeviceforqueryRequest) SetQuery(_query *DeviceApiQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusDeviceGetdeviceforqueryRequest) GetQuery() *DeviceApiQuery {
-    return r.query
+    return r._query
 }
 // WorkBenchContext Setter
 // 平台统一参数
-func (r *AlibabaCampusDeviceGetdeviceforqueryRequest) SetWorkBenchContext(workBenchContext *WorkBenchContext) error {
-    r.workBenchContext = workBenchContext
-    r.Set("work_bench_context", workBenchContext)
+func (r *AlibabaCampusDeviceGetdeviceforqueryRequest) SetWorkBenchContext(_workBenchContext *WorkBenchContext) error {
+    r._workBenchContext = _workBenchContext
+    r.Set("work_bench_context", _workBenchContext)
     return nil
 }
 
 // WorkBenchContext Getter
 func (r AlibabaCampusDeviceGetdeviceforqueryRequest) GetWorkBenchContext() *WorkBenchContext {
-    return r.workBenchContext
+    return r._workBenchContext
 }

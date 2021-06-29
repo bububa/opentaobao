@@ -15,9 +15,9 @@ alibaba.security.jaq.app.riskdetail.get
 type AlibabaSecurityJaqAppRiskdetailGetRequest struct {
     model.Params
     // 任务唯一标识
-    itemId   string
+    _itemId   string
     // 本地化语言信息
-    locale   *Locale
+    _locale   *Locale
 }
 
 // 初始化AlibabaSecurityJaqAppRiskdetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqAppRiskdetailGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 任务唯一标识
-func (r *AlibabaSecurityJaqAppRiskdetailGetRequest) SetItemId(itemId string) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaSecurityJaqAppRiskdetailGetRequest) SetItemId(_itemId string) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaSecurityJaqAppRiskdetailGetRequest) GetItemId() string {
-    return r.itemId
+    return r._itemId
 }
 // Locale Setter
 // 本地化语言信息
-func (r *AlibabaSecurityJaqAppRiskdetailGetRequest) SetLocale(locale *Locale) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *AlibabaSecurityJaqAppRiskdetailGetRequest) SetLocale(_locale *Locale) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r AlibabaSecurityJaqAppRiskdetailGetRequest) GetLocale() *Locale {
-    return r.locale
+    return r._locale
 }

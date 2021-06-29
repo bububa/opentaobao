@@ -15,13 +15,13 @@ taobao.alitrip.car.order.status
 type TaobaoAlitripCarOrderStatusRequest struct {
     model.Params
     // 固定值：statusChanged
-    operation   string
+    _operation   string
     // 飞猪订单ID
-    orderId   string
+    _orderId   string
     // 服务商ID
-    providerId   string
+    _providerId   string
     // 司机服务状态。arriving-司机已出发，arrived-司机已到达，serviceStarted-已开始服务，serviceFinished-已结束服务
-    status   string
+    _status   string
 }
 
 // 初始化TaobaoAlitripCarOrderStatusRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAlitripCarOrderStatusRequest) GetApiParams() url.Values {
 }
 // Operation Setter
 // 固定值：statusChanged
-func (r *TaobaoAlitripCarOrderStatusRequest) SetOperation(operation string) error {
-    r.operation = operation
-    r.Set("operation", operation)
+func (r *TaobaoAlitripCarOrderStatusRequest) SetOperation(_operation string) error {
+    r._operation = _operation
+    r.Set("operation", _operation)
     return nil
 }
 
 // Operation Getter
 func (r TaobaoAlitripCarOrderStatusRequest) GetOperation() string {
-    return r.operation
+    return r._operation
 }
 // OrderId Setter
 // 飞猪订单ID
-func (r *TaobaoAlitripCarOrderStatusRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoAlitripCarOrderStatusRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoAlitripCarOrderStatusRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // ProviderId Setter
 // 服务商ID
-func (r *TaobaoAlitripCarOrderStatusRequest) SetProviderId(providerId string) error {
-    r.providerId = providerId
-    r.Set("provider_id", providerId)
+func (r *TaobaoAlitripCarOrderStatusRequest) SetProviderId(_providerId string) error {
+    r._providerId = _providerId
+    r.Set("provider_id", _providerId)
     return nil
 }
 
 // ProviderId Getter
 func (r TaobaoAlitripCarOrderStatusRequest) GetProviderId() string {
-    return r.providerId
+    return r._providerId
 }
 // Status Setter
 // 司机服务状态。arriving-司机已出发，arrived-司机已到达，serviceStarted-已开始服务，serviceFinished-已结束服务
-func (r *TaobaoAlitripCarOrderStatusRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoAlitripCarOrderStatusRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoAlitripCarOrderStatusRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

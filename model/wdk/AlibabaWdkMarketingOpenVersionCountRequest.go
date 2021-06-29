@@ -15,9 +15,9 @@ alibaba.wdk.marketing.open.version.count
 type AlibabaWdkMarketingOpenVersionCountRequest struct {
     model.Params
     // 查询版本号
-    versionId   int64
+    _versionId   int64
     // 操作Id
-    operateId   string
+    _operateId   string
 }
 
 // 初始化AlibabaWdkMarketingOpenVersionCountRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMarketingOpenVersionCountRequest) GetApiParams() url.Values {
 }
 // VersionId Setter
 // 查询版本号
-func (r *AlibabaWdkMarketingOpenVersionCountRequest) SetVersionId(versionId int64) error {
-    r.versionId = versionId
-    r.Set("version_id", versionId)
+func (r *AlibabaWdkMarketingOpenVersionCountRequest) SetVersionId(_versionId int64) error {
+    r._versionId = _versionId
+    r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
 func (r AlibabaWdkMarketingOpenVersionCountRequest) GetVersionId() int64 {
-    return r.versionId
+    return r._versionId
 }
 // OperateId Setter
 // 操作Id
-func (r *AlibabaWdkMarketingOpenVersionCountRequest) SetOperateId(operateId string) error {
-    r.operateId = operateId
-    r.Set("operate_id", operateId)
+func (r *AlibabaWdkMarketingOpenVersionCountRequest) SetOperateId(_operateId string) error {
+    r._operateId = _operateId
+    r.Set("operate_id", _operateId)
     return nil
 }
 
 // OperateId Getter
 func (r AlibabaWdkMarketingOpenVersionCountRequest) GetOperateId() string {
-    return r.operateId
+    return r._operateId
 }

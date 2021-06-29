@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.correct.supplier.quote.raw.upload
 type AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest struct {
     model.Params
     // 对象
-    currentQuoteRawRequest   *AbstractRequest
+    _currentQuoteRawRequest   *AbstractRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest) GetApiPara
 }
 // CurrentQuoteRawRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest) SetCurrentQuoteRawRequest(currentQuoteRawRequest *AbstractRequest) error {
-    r.currentQuoteRawRequest = currentQuoteRawRequest
-    r.Set("current_quote_raw_request", currentQuoteRawRequest)
+func (r *AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest) SetCurrentQuoteRawRequest(_currentQuoteRawRequest *AbstractRequest) error {
+    r._currentQuoteRawRequest = _currentQuoteRawRequest
+    r.Set("current_quote_raw_request", _currentQuoteRawRequest)
     return nil
 }
 
 // CurrentQuoteRawRequest Getter
 func (r AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadRequest) GetCurrentQuoteRawRequest() *AbstractRequest {
-    return r.currentQuoteRawRequest
+    return r._currentQuoteRawRequest
 }

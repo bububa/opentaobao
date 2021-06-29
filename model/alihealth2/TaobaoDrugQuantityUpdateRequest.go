@@ -15,11 +15,11 @@ taobao.drug.quantity.update
 type TaobaoDrugQuantityUpdateRequest struct {
     model.Params
     // 外部店铺ID
-    outStoreId   string
+    _outStoreId   string
     // 外部商品ID
-    outItemId   string
+    _outItemId   string
     // 库存数量
-    quantity   int64
+    _quantity   int64
 }
 
 // 初始化TaobaoDrugQuantityUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoDrugQuantityUpdateRequest) GetApiParams() url.Values {
 }
 // OutStoreId Setter
 // 外部店铺ID
-func (r *TaobaoDrugQuantityUpdateRequest) SetOutStoreId(outStoreId string) error {
-    r.outStoreId = outStoreId
-    r.Set("out_store_id", outStoreId)
+func (r *TaobaoDrugQuantityUpdateRequest) SetOutStoreId(_outStoreId string) error {
+    r._outStoreId = _outStoreId
+    r.Set("out_store_id", _outStoreId)
     return nil
 }
 
 // OutStoreId Getter
 func (r TaobaoDrugQuantityUpdateRequest) GetOutStoreId() string {
-    return r.outStoreId
+    return r._outStoreId
 }
 // OutItemId Setter
 // 外部商品ID
-func (r *TaobaoDrugQuantityUpdateRequest) SetOutItemId(outItemId string) error {
-    r.outItemId = outItemId
-    r.Set("out_item_id", outItemId)
+func (r *TaobaoDrugQuantityUpdateRequest) SetOutItemId(_outItemId string) error {
+    r._outItemId = _outItemId
+    r.Set("out_item_id", _outItemId)
     return nil
 }
 
 // OutItemId Getter
 func (r TaobaoDrugQuantityUpdateRequest) GetOutItemId() string {
-    return r.outItemId
+    return r._outItemId
 }
 // Quantity Setter
 // 库存数量
-func (r *TaobaoDrugQuantityUpdateRequest) SetQuantity(quantity int64) error {
-    r.quantity = quantity
-    r.Set("quantity", quantity)
+func (r *TaobaoDrugQuantityUpdateRequest) SetQuantity(_quantity int64) error {
+    r._quantity = _quantity
+    r.Set("quantity", _quantity)
     return nil
 }
 
 // Quantity Getter
 func (r TaobaoDrugQuantityUpdateRequest) GetQuantity() int64 {
-    return r.quantity
+    return r._quantity
 }

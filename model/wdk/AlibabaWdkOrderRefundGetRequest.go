@@ -15,15 +15,15 @@ alibaba.wdk.order.refund.get
 type AlibabaWdkOrderRefundGetRequest struct {
     model.Params
     // 五道口订单列表（子订单）
-    bizOrderIds   []int64
+    _bizOrderIds   []int64
     // 退款订单列表
-    refundIds   []int64
+    _refundIds   []int64
     // 渠道来源 3：饿了么 4：盒马
-    orderFrom   int64
+    _orderFrom   int64
     // 渠道店id
-    shopId   string
+    _shopId   string
     // 经营店id
-    storeId   string
+    _storeId   string
 }
 
 // 初始化AlibabaWdkOrderRefundGetRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaWdkOrderRefundGetRequest) GetApiParams() url.Values {
 }
 // BizOrderIds Setter
 // 五道口订单列表（子订单）
-func (r *AlibabaWdkOrderRefundGetRequest) SetBizOrderIds(bizOrderIds []int64) error {
-    r.bizOrderIds = bizOrderIds
-    r.Set("biz_order_ids", bizOrderIds)
+func (r *AlibabaWdkOrderRefundGetRequest) SetBizOrderIds(_bizOrderIds []int64) error {
+    r._bizOrderIds = _bizOrderIds
+    r.Set("biz_order_ids", _bizOrderIds)
     return nil
 }
 
 // BizOrderIds Getter
 func (r AlibabaWdkOrderRefundGetRequest) GetBizOrderIds() []int64 {
-    return r.bizOrderIds
+    return r._bizOrderIds
 }
 // RefundIds Setter
 // 退款订单列表
-func (r *AlibabaWdkOrderRefundGetRequest) SetRefundIds(refundIds []int64) error {
-    r.refundIds = refundIds
-    r.Set("refund_ids", refundIds)
+func (r *AlibabaWdkOrderRefundGetRequest) SetRefundIds(_refundIds []int64) error {
+    r._refundIds = _refundIds
+    r.Set("refund_ids", _refundIds)
     return nil
 }
 
 // RefundIds Getter
 func (r AlibabaWdkOrderRefundGetRequest) GetRefundIds() []int64 {
-    return r.refundIds
+    return r._refundIds
 }
 // OrderFrom Setter
 // 渠道来源 3：饿了么 4：盒马
-func (r *AlibabaWdkOrderRefundGetRequest) SetOrderFrom(orderFrom int64) error {
-    r.orderFrom = orderFrom
-    r.Set("order_from", orderFrom)
+func (r *AlibabaWdkOrderRefundGetRequest) SetOrderFrom(_orderFrom int64) error {
+    r._orderFrom = _orderFrom
+    r.Set("order_from", _orderFrom)
     return nil
 }
 
 // OrderFrom Getter
 func (r AlibabaWdkOrderRefundGetRequest) GetOrderFrom() int64 {
-    return r.orderFrom
+    return r._orderFrom
 }
 // ShopId Setter
 // 渠道店id
-func (r *AlibabaWdkOrderRefundGetRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *AlibabaWdkOrderRefundGetRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r AlibabaWdkOrderRefundGetRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }
 // StoreId Setter
 // 经营店id
-func (r *AlibabaWdkOrderRefundGetRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkOrderRefundGetRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkOrderRefundGetRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }

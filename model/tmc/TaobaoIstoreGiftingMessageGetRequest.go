@@ -15,7 +15,7 @@ taobao.istore.gifting.message.get
 type TaobaoIstoreGiftingMessageGetRequest struct {
     model.Params
     // 消息查询条件
-    giftMessageBizCondition   *GiftMessageBizCondition
+    _giftMessageBizCondition   *GiftMessageBizCondition
 }
 
 // 初始化TaobaoIstoreGiftingMessageGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoIstoreGiftingMessageGetRequest) GetApiParams() url.Values {
 }
 // GiftMessageBizCondition Setter
 // 消息查询条件
-func (r *TaobaoIstoreGiftingMessageGetRequest) SetGiftMessageBizCondition(giftMessageBizCondition *GiftMessageBizCondition) error {
-    r.giftMessageBizCondition = giftMessageBizCondition
-    r.Set("gift_message_biz_condition", giftMessageBizCondition)
+func (r *TaobaoIstoreGiftingMessageGetRequest) SetGiftMessageBizCondition(_giftMessageBizCondition *GiftMessageBizCondition) error {
+    r._giftMessageBizCondition = _giftMessageBizCondition
+    r.Set("gift_message_biz_condition", _giftMessageBizCondition)
     return nil
 }
 
 // GiftMessageBizCondition Getter
 func (r TaobaoIstoreGiftingMessageGetRequest) GetGiftMessageBizCondition() *GiftMessageBizCondition {
-    return r.giftMessageBizCondition
+    return r._giftMessageBizCondition
 }

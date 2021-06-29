@@ -15,7 +15,7 @@ taobao.elife.lifecard.recon
 type TaobaoElifeLifecardReconRequest struct {
     model.Params
     // 对账日期(YYYYMMDD)
-    opDate   string
+    _opDate   string
 }
 
 // 初始化TaobaoElifeLifecardReconRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoElifeLifecardReconRequest) GetApiParams() url.Values {
 }
 // OpDate Setter
 // 对账日期(YYYYMMDD)
-func (r *TaobaoElifeLifecardReconRequest) SetOpDate(opDate string) error {
-    r.opDate = opDate
-    r.Set("op_date", opDate)
+func (r *TaobaoElifeLifecardReconRequest) SetOpDate(_opDate string) error {
+    r._opDate = _opDate
+    r.Set("op_date", _opDate)
     return nil
 }
 
 // OpDate Getter
 func (r TaobaoElifeLifecardReconRequest) GetOpDate() string {
-    return r.opDate
+    return r._opDate
 }

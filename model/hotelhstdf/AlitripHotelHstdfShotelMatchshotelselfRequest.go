@@ -15,7 +15,7 @@ alitrip.hotel.hstdf.shotel.matchshotelself
 type AlitripHotelHstdfShotelMatchshotelselfRequest struct {
     model.Params
     // HotelMatchParam
-    param0   *HotelMatchParam
+    _param0   *HotelMatchParam
 }
 
 // 初始化AlitripHotelHstdfShotelMatchshotelselfRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfShotelMatchshotelselfRequest) GetApiParams() url.Values
 }
 // Param0 Setter
 // HotelMatchParam
-func (r *AlitripHotelHstdfShotelMatchshotelselfRequest) SetParam0(param0 *HotelMatchParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlitripHotelHstdfShotelMatchshotelselfRequest) SetParam0(_param0 *HotelMatchParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlitripHotelHstdfShotelMatchshotelselfRequest) GetParam0() *HotelMatchParam {
-    return r.param0
+    return r._param0
 }

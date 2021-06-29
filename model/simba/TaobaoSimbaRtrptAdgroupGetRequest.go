@@ -15,15 +15,15 @@ taobao.simba.rtrpt.adgroup.get
 type TaobaoSimbaRtrptAdgroupGetRequest struct {
     model.Params
     // 用户名
-    nick   string
+    _nick   string
     // 推广计划id
-    campaignId   int64
+    _campaignId   int64
     // 日期，格式yyyy-mm-dd
-    theDate   string
+    _theDate   string
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
     // 页码
-    pageNumber   int64
+    _pageNumber   int64
 }
 
 // 初始化TaobaoSimbaRtrptAdgroupGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoSimbaRtrptAdgroupGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户名
-func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaRtrptAdgroupGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CampaignId Setter
 // 推广计划id
-func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaRtrptAdgroupGetRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaRtrptAdgroupGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoSimbaRtrptAdgroupGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNumber Setter
 // 页码
-func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetPageNumber(pageNumber int64) error {
-    r.pageNumber = pageNumber
-    r.Set("page_number", pageNumber)
+func (r *TaobaoSimbaRtrptAdgroupGetRequest) SetPageNumber(_pageNumber int64) error {
+    r._pageNumber = _pageNumber
+    r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
 func (r TaobaoSimbaRtrptAdgroupGetRequest) GetPageNumber() int64 {
-    return r.pageNumber
+    return r._pageNumber
 }

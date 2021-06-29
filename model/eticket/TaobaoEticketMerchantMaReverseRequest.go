@@ -15,19 +15,19 @@ taobao.eticket.merchant.ma.reverse
 type TaobaoEticketMerchantMaReverseRequest struct {
     model.Params
     // 业务类型
-    bizType   int64
+    _bizType   int64
     // 码值
-    code   string
+    _code   string
     // 业务id（订单号）
-    outerId   string
+    _outerId   string
     // 机具编号，如果核销时有则必传
-    posId   string
+    _posId   string
     // 冲正份数，需要与核销份数一致
-    reverseNum   int64
+    _reverseNum   int64
     // 需要冲正的核销序列号
-    serialNum   string
+    _serialNum   string
     // 需要跟发码通知获取到的参数一致
-    token   string
+    _token   string
 }
 
 // 初始化TaobaoEticketMerchantMaReverseRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoEticketMerchantMaReverseRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 业务类型
-func (r *TaobaoEticketMerchantMaReverseRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }
 // Code Setter
 // 码值
-func (r *TaobaoEticketMerchantMaReverseRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // OuterId Setter
 // 业务id（订单号）
-func (r *TaobaoEticketMerchantMaReverseRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // PosId Setter
 // 机具编号，如果核销时有则必传
-func (r *TaobaoEticketMerchantMaReverseRequest) SetPosId(posId string) error {
-    r.posId = posId
-    r.Set("pos_id", posId)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetPosId(_posId string) error {
+    r._posId = _posId
+    r.Set("pos_id", _posId)
     return nil
 }
 
 // PosId Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetPosId() string {
-    return r.posId
+    return r._posId
 }
 // ReverseNum Setter
 // 冲正份数，需要与核销份数一致
-func (r *TaobaoEticketMerchantMaReverseRequest) SetReverseNum(reverseNum int64) error {
-    r.reverseNum = reverseNum
-    r.Set("reverse_num", reverseNum)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetReverseNum(_reverseNum int64) error {
+    r._reverseNum = _reverseNum
+    r.Set("reverse_num", _reverseNum)
     return nil
 }
 
 // ReverseNum Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetReverseNum() int64 {
-    return r.reverseNum
+    return r._reverseNum
 }
 // SerialNum Setter
 // 需要冲正的核销序列号
-func (r *TaobaoEticketMerchantMaReverseRequest) SetSerialNum(serialNum string) error {
-    r.serialNum = serialNum
-    r.Set("serial_num", serialNum)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetSerialNum(_serialNum string) error {
+    r._serialNum = _serialNum
+    r.Set("serial_num", _serialNum)
     return nil
 }
 
 // SerialNum Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetSerialNum() string {
-    return r.serialNum
+    return r._serialNum
 }
 // Token Setter
 // 需要跟发码通知获取到的参数一致
-func (r *TaobaoEticketMerchantMaReverseRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoEticketMerchantMaReverseRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoEticketMerchantMaReverseRequest) GetToken() string {
-    return r.token
+    return r._token
 }

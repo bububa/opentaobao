@@ -15,9 +15,9 @@ taobao.xhotel.commoninvoice.remove
 type TaobaoXhotelCommoninvoiceRemoveRequest struct {
     model.Params
     // 发票id
-    invoiceId   int64
+    _invoiceId   int64
     // 用户名
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoXhotelCommoninvoiceRemoveRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoXhotelCommoninvoiceRemoveRequest) GetApiParams() url.Values {
 }
 // InvoiceId Setter
 // 发票id
-func (r *TaobaoXhotelCommoninvoiceRemoveRequest) SetInvoiceId(invoiceId int64) error {
-    r.invoiceId = invoiceId
-    r.Set("invoice_id", invoiceId)
+func (r *TaobaoXhotelCommoninvoiceRemoveRequest) SetInvoiceId(_invoiceId int64) error {
+    r._invoiceId = _invoiceId
+    r.Set("invoice_id", _invoiceId)
     return nil
 }
 
 // InvoiceId Getter
 func (r TaobaoXhotelCommoninvoiceRemoveRequest) GetInvoiceId() int64 {
-    return r.invoiceId
+    return r._invoiceId
 }
 // UserNick Setter
 // 用户名
-func (r *TaobaoXhotelCommoninvoiceRemoveRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoXhotelCommoninvoiceRemoveRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoXhotelCommoninvoiceRemoveRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

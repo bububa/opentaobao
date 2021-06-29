@@ -15,9 +15,9 @@ alibaba.lst.trade.order.get
 type AlibabaLstTradeOrderGetRequest struct {
     model.Params
     // 主订单id
-    mainOrderId   int64
+    _mainOrderId   int64
     // 子订单id
-    subOrderId   int64
+    _subOrderId   int64
 }
 
 // 初始化AlibabaLstTradeOrderGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstTradeOrderGetRequest) GetApiParams() url.Values {
 }
 // MainOrderId Setter
 // 主订单id
-func (r *AlibabaLstTradeOrderGetRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *AlibabaLstTradeOrderGetRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r AlibabaLstTradeOrderGetRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // SubOrderId Setter
 // 子订单id
-func (r *AlibabaLstTradeOrderGetRequest) SetSubOrderId(subOrderId int64) error {
-    r.subOrderId = subOrderId
-    r.Set("sub_order_id", subOrderId)
+func (r *AlibabaLstTradeOrderGetRequest) SetSubOrderId(_subOrderId int64) error {
+    r._subOrderId = _subOrderId
+    r.Set("sub_order_id", _subOrderId)
     return nil
 }
 
 // SubOrderId Getter
 func (r AlibabaLstTradeOrderGetRequest) GetSubOrderId() int64 {
-    return r.subOrderId
+    return r._subOrderId
 }

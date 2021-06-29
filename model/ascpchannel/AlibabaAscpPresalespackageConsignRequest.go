@@ -15,7 +15,7 @@ alibaba.ascp.presalespackage.consign
 type AlibabaAscpPresalespackageConsignRequest struct {
     model.Params
     // 入参
-    requestParams   *Requestparams
+    _requestParams   *Requestparams
 }
 
 // 初始化AlibabaAscpPresalespackageConsignRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpPresalespackageConsignRequest) GetApiParams() url.Values {
 }
 // RequestParams Setter
 // 入参
-func (r *AlibabaAscpPresalespackageConsignRequest) SetRequestParams(requestParams *Requestparams) error {
-    r.requestParams = requestParams
-    r.Set("request_params", requestParams)
+func (r *AlibabaAscpPresalespackageConsignRequest) SetRequestParams(_requestParams *Requestparams) error {
+    r._requestParams = _requestParams
+    r.Set("request_params", _requestParams)
     return nil
 }
 
 // RequestParams Getter
 func (r AlibabaAscpPresalespackageConsignRequest) GetRequestParams() *Requestparams {
-    return r.requestParams
+    return r._requestParams
 }

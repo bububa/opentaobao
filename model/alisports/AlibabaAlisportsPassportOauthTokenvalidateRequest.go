@@ -15,13 +15,13 @@ alibaba.alisports.passport.oauth.tokenvalidate
 type AlibabaAlisportsPassportOauthTokenvalidateRequest struct {
     model.Params
     // 登录时返回给前端的token
-    token   string
+    _token   string
     // 时间戳
-    alispTime   string
+    _alispTime   string
     // 应用的appkey
-    alispAppKey   string
+    _alispAppKey   string
     // 参数加密之后的串
-    alispSign   string
+    _alispSign   string
 }
 
 // 初始化AlibabaAlisportsPassportOauthTokenvalidateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlisportsPassportOauthTokenvalidateRequest) GetApiParams() url.Va
 }
 // Token Setter
 // 登录时返回给前端的token
-func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // AlispTime Setter
 // 时间戳
-func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispTime(alispTime string) error {
-    r.alispTime = alispTime
-    r.Set("alisp_time", alispTime)
+func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispTime(_alispTime string) error {
+    r._alispTime = _alispTime
+    r.Set("alisp_time", _alispTime)
     return nil
 }
 
 // AlispTime Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateRequest) GetAlispTime() string {
-    return r.alispTime
+    return r._alispTime
 }
 // AlispAppKey Setter
 // 应用的appkey
-func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispAppKey(alispAppKey string) error {
-    r.alispAppKey = alispAppKey
-    r.Set("alisp_app_key", alispAppKey)
+func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispAppKey(_alispAppKey string) error {
+    r._alispAppKey = _alispAppKey
+    r.Set("alisp_app_key", _alispAppKey)
     return nil
 }
 
 // AlispAppKey Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateRequest) GetAlispAppKey() string {
-    return r.alispAppKey
+    return r._alispAppKey
 }
 // AlispSign Setter
 // 参数加密之后的串
-func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispSign(alispSign string) error {
-    r.alispSign = alispSign
-    r.Set("alisp_sign", alispSign)
+func (r *AlibabaAlisportsPassportOauthTokenvalidateRequest) SetAlispSign(_alispSign string) error {
+    r._alispSign = _alispSign
+    r.Set("alisp_sign", _alispSign)
     return nil
 }
 
 // AlispSign Getter
 func (r AlibabaAlisportsPassportOauthTokenvalidateRequest) GetAlispSign() string {
-    return r.alispSign
+    return r._alispSign
 }

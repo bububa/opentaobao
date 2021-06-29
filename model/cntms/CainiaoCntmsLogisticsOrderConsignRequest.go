@@ -15,7 +15,7 @@ cainiao.cntms.logistics.order.consign
 type CainiaoCntmsLogisticsOrderConsignRequest struct {
     model.Params
     // 配送发货信息
-    content   *CnTmsLogisticsOrderConsignContent
+    _content   *CnTmsLogisticsOrderConsignContent
 }
 
 // 初始化CainiaoCntmsLogisticsOrderConsignRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCntmsLogisticsOrderConsignRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 配送发货信息
-func (r *CainiaoCntmsLogisticsOrderConsignRequest) SetContent(content *CnTmsLogisticsOrderConsignContent) error {
-    r.content = content
-    r.Set("content", content)
+func (r *CainiaoCntmsLogisticsOrderConsignRequest) SetContent(_content *CnTmsLogisticsOrderConsignContent) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r CainiaoCntmsLogisticsOrderConsignRequest) GetContent() *CnTmsLogisticsOrderConsignContent {
-    return r.content
+    return r._content
 }

@@ -15,7 +15,7 @@ batch product inventory update API for oversea sellers. Sellers could update mul
 type AliexpressSolutionBatchProductInventoryUpdateRequest struct {
     model.Params
     // The product list, in which the inventory needs to be updated. Maximum 20 products.
-    mutipleProductUpdateList   []SynchronizeProductRequestDto
+    _mutipleProductUpdateList   []SynchronizeProductRequestDto
 }
 
 // 初始化AliexpressSolutionBatchProductInventoryUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionBatchProductInventoryUpdateRequest) GetApiParams() url
 }
 // MutipleProductUpdateList Setter
 // The product list, in which the inventory needs to be updated. Maximum 20 products.
-func (r *AliexpressSolutionBatchProductInventoryUpdateRequest) SetMutipleProductUpdateList(mutipleProductUpdateList []SynchronizeProductRequestDto) error {
-    r.mutipleProductUpdateList = mutipleProductUpdateList
-    r.Set("mutiple_product_update_list", mutipleProductUpdateList)
+func (r *AliexpressSolutionBatchProductInventoryUpdateRequest) SetMutipleProductUpdateList(_mutipleProductUpdateList []SynchronizeProductRequestDto) error {
+    r._mutipleProductUpdateList = _mutipleProductUpdateList
+    r.Set("mutiple_product_update_list", _mutipleProductUpdateList)
     return nil
 }
 
 // MutipleProductUpdateList Getter
 func (r AliexpressSolutionBatchProductInventoryUpdateRequest) GetMutipleProductUpdateList() []SynchronizeProductRequestDto {
-    return r.mutipleProductUpdateList
+    return r._mutipleProductUpdateList
 }

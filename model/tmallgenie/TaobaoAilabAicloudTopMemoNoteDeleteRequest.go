@@ -15,15 +15,15 @@ taobao.ailab.aicloud.top.memo.note.delete
 type TaobaoAilabAicloudTopMemoNoteDeleteRequest struct {
     model.Params
     // schema
-    schema   string
+    _schema   string
     // 企业用户ID
-    userId   string
+    _userId   string
     // 手持设备ID
-    utdId   string
+    _utdId   string
     // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-    ext   string
+    _ext   string
     // 备忘录ID
-    memoId   int64
+    _memoId   int64
 }
 
 // 初始化TaobaoAilabAicloudTopMemoNoteDeleteRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetApiParams() url.Values {
 }
 // Schema Setter
 // schema
-func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetSchema(schema string) error {
-    r.schema = schema
-    r.Set("schema", schema)
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetSchema(_schema string) error {
+    r._schema = _schema
+    r.Set("schema", _schema)
     return nil
 }
 
 // Schema Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetSchema() string {
-    return r.schema
+    return r._schema
 }
 // UserId Setter
 // 企业用户ID
-func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // UtdId Setter
 // 手持设备ID
-func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetUtdId(utdId string) error {
-    r.utdId = utdId
-    r.Set("utd_id", utdId)
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetUtdId(_utdId string) error {
+    r._utdId = _utdId
+    r.Set("utd_id", _utdId)
     return nil
 }
 
 // UtdId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetUtdId() string {
-    return r.utdId
+    return r._utdId
 }
 // Ext Setter
 // 扩展信息json段，用于存放APP类型，APP版本等等信息。
-func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }
 // MemoId Setter
 // 备忘录ID
-func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetMemoId(memoId int64) error {
-    r.memoId = memoId
-    r.Set("memo_id", memoId)
+func (r *TaobaoAilabAicloudTopMemoNoteDeleteRequest) SetMemoId(_memoId int64) error {
+    r._memoId = _memoId
+    r.Set("memo_id", _memoId)
     return nil
 }
 
 // MemoId Getter
 func (r TaobaoAilabAicloudTopMemoNoteDeleteRequest) GetMemoId() int64 {
-    return r.memoId
+    return r._memoId
 }

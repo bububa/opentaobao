@@ -15,11 +15,11 @@ alibaba.ailabs.aligenie.openvideoalbum.scenepush
 type AlibabaAilabsAligenieOpenvideoalbumScenepushRequest struct {
     model.Params
     // 接入场景 0 无应用 1 挂靠应用
-    sceneType   int64
+    _sceneType   int64
     // 如果场景是1 此处为应用id
-    sceneValue   string
+    _sceneValue   string
     // 视频合辑数据
-    paramList   []RawVideoAlbum
+    _paramList   []RawVideoAlbum
 }
 
 // 初始化AlibabaAilabsAligenieOpenvideoalbumScenepushRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) GetApiParams() url.
 }
 // SceneType Setter
 // 接入场景 0 无应用 1 挂靠应用
-func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetSceneType(sceneType int64) error {
-    r.sceneType = sceneType
-    r.Set("scene_type", sceneType)
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetSceneType(_sceneType int64) error {
+    r._sceneType = _sceneType
+    r.Set("scene_type", _sceneType)
     return nil
 }
 
 // SceneType Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) GetSceneType() int64 {
-    return r.sceneType
+    return r._sceneType
 }
 // SceneValue Setter
 // 如果场景是1 此处为应用id
-func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetSceneValue(sceneValue string) error {
-    r.sceneValue = sceneValue
-    r.Set("scene_value", sceneValue)
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetSceneValue(_sceneValue string) error {
+    r._sceneValue = _sceneValue
+    r.Set("scene_value", _sceneValue)
     return nil
 }
 
 // SceneValue Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) GetSceneValue() string {
-    return r.sceneValue
+    return r._sceneValue
 }
 // ParamList Setter
 // 视频合辑数据
-func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetParamList(paramList []RawVideoAlbum) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) SetParamList(_paramList []RawVideoAlbum) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r AlibabaAilabsAligenieOpenvideoalbumScenepushRequest) GetParamList() []RawVideoAlbum {
-    return r.paramList
+    return r._paramList
 }

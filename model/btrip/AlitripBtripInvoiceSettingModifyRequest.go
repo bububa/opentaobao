@@ -15,7 +15,7 @@ alitrip.btrip.invoice.setting.modify
 type AlitripBtripInvoiceSettingModifyRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenInvoiceModifyAndNewRq
+    _rq   *OpenInvoiceModifyAndNewRq
 }
 
 // 初始化AlitripBtripInvoiceSettingModifyRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripInvoiceSettingModifyRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripInvoiceSettingModifyRequest) SetRq(rq *OpenInvoiceModifyAndNewRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripInvoiceSettingModifyRequest) SetRq(_rq *OpenInvoiceModifyAndNewRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripInvoiceSettingModifyRequest) GetRq() *OpenInvoiceModifyAndNewRq {
-    return r.rq
+    return r._rq
 }

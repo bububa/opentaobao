@@ -15,11 +15,11 @@ taobao.shop.update
 type TaobaoShopUpdateRequest struct {
     model.Params
     // 店铺标题。不超过30个字符；过滤敏感词，如淘咖啡、阿里巴巴等。title, bulletin和desc至少必须传一个
-    title   string
+    _title   string
     // 店铺公告。不超过1024个字符
-    bulletin   string
+    _bulletin   string
     // 店铺描述。10～2000个字符以内
-    desc   string
+    _desc   string
 }
 
 // 初始化TaobaoShopUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoShopUpdateRequest) GetApiParams() url.Values {
 }
 // Title Setter
 // 店铺标题。不超过30个字符；过滤敏感词，如淘咖啡、阿里巴巴等。title, bulletin和desc至少必须传一个
-func (r *TaobaoShopUpdateRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoShopUpdateRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoShopUpdateRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // Bulletin Setter
 // 店铺公告。不超过1024个字符
-func (r *TaobaoShopUpdateRequest) SetBulletin(bulletin string) error {
-    r.bulletin = bulletin
-    r.Set("bulletin", bulletin)
+func (r *TaobaoShopUpdateRequest) SetBulletin(_bulletin string) error {
+    r._bulletin = _bulletin
+    r.Set("bulletin", _bulletin)
     return nil
 }
 
 // Bulletin Getter
 func (r TaobaoShopUpdateRequest) GetBulletin() string {
-    return r.bulletin
+    return r._bulletin
 }
 // Desc Setter
 // 店铺描述。10～2000个字符以内
-func (r *TaobaoShopUpdateRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoShopUpdateRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoShopUpdateRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }

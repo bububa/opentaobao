@@ -15,7 +15,7 @@ alibaba.wdk.merchantproduct.edit
 type AlibabaWdkMerchantproductEditRequest struct {
     model.Params
     // 产品编辑入参
-    req   *MerchantProductRequest
+    _req   *MerchantProductRequest
 }
 
 // 初始化AlibabaWdkMerchantproductEditRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMerchantproductEditRequest) GetApiParams() url.Values {
 }
 // Req Setter
 // 产品编辑入参
-func (r *AlibabaWdkMerchantproductEditRequest) SetReq(req *MerchantProductRequest) error {
-    r.req = req
-    r.Set("req", req)
+func (r *AlibabaWdkMerchantproductEditRequest) SetReq(_req *MerchantProductRequest) error {
+    r._req = _req
+    r.Set("req", _req)
     return nil
 }
 
 // Req Getter
 func (r AlibabaWdkMerchantproductEditRequest) GetReq() *MerchantProductRequest {
-    return r.req
+    return r._req
 }

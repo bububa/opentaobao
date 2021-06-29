@@ -15,7 +15,7 @@ alibaba.scbp.showcase.addproduct
 type AlibabaScbpShowcaseAddproductRequest struct {
     model.Params
     // 需要添加的产品ids
-    productIdList   []int64
+    _productIdList   []int64
 }
 
 // 初始化AlibabaScbpShowcaseAddproductRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpShowcaseAddproductRequest) GetApiParams() url.Values {
 }
 // ProductIdList Setter
 // 需要添加的产品ids
-func (r *AlibabaScbpShowcaseAddproductRequest) SetProductIdList(productIdList []int64) error {
-    r.productIdList = productIdList
-    r.Set("product_id_list", productIdList)
+func (r *AlibabaScbpShowcaseAddproductRequest) SetProductIdList(_productIdList []int64) error {
+    r._productIdList = _productIdList
+    r.Set("product_id_list", _productIdList)
     return nil
 }
 
 // ProductIdList Getter
 func (r AlibabaScbpShowcaseAddproductRequest) GetProductIdList() []int64 {
-    return r.productIdList
+    return r._productIdList
 }

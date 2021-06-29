@@ -15,15 +15,15 @@ saas 售后逆向 商户同意用户逆向申请
 type AlibabaTclsAelophyRefundAgreeRequest struct {
     model.Params
     // 门店ID
-    storeId   string
+    _storeId   string
     // 外部订单ID
-    outOrderId   string
+    _outOrderId   string
     // 退款单ID
-    refundId   string
+    _refundId   string
     // 审核说明
-    auditMemo   string
+    _auditMemo   string
     // 外部子订单列表
-    subRefundList   []Subrefundlist
+    _subRefundList   []Subrefundlist
 }
 
 // 初始化AlibabaTclsAelophyRefundAgreeRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaTclsAelophyRefundAgreeRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaTclsAelophyRefundAgreeRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaTclsAelophyRefundAgreeRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaTclsAelophyRefundAgreeRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // OutOrderId Setter
 // 外部订单ID
-func (r *AlibabaTclsAelophyRefundAgreeRequest) SetOutOrderId(outOrderId string) error {
-    r.outOrderId = outOrderId
-    r.Set("out_order_id", outOrderId)
+func (r *AlibabaTclsAelophyRefundAgreeRequest) SetOutOrderId(_outOrderId string) error {
+    r._outOrderId = _outOrderId
+    r.Set("out_order_id", _outOrderId)
     return nil
 }
 
 // OutOrderId Getter
 func (r AlibabaTclsAelophyRefundAgreeRequest) GetOutOrderId() string {
-    return r.outOrderId
+    return r._outOrderId
 }
 // RefundId Setter
 // 退款单ID
-func (r *AlibabaTclsAelophyRefundAgreeRequest) SetRefundId(refundId string) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *AlibabaTclsAelophyRefundAgreeRequest) SetRefundId(_refundId string) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r AlibabaTclsAelophyRefundAgreeRequest) GetRefundId() string {
-    return r.refundId
+    return r._refundId
 }
 // AuditMemo Setter
 // 审核说明
-func (r *AlibabaTclsAelophyRefundAgreeRequest) SetAuditMemo(auditMemo string) error {
-    r.auditMemo = auditMemo
-    r.Set("audit_memo", auditMemo)
+func (r *AlibabaTclsAelophyRefundAgreeRequest) SetAuditMemo(_auditMemo string) error {
+    r._auditMemo = _auditMemo
+    r.Set("audit_memo", _auditMemo)
     return nil
 }
 
 // AuditMemo Getter
 func (r AlibabaTclsAelophyRefundAgreeRequest) GetAuditMemo() string {
-    return r.auditMemo
+    return r._auditMemo
 }
 // SubRefundList Setter
 // 外部子订单列表
-func (r *AlibabaTclsAelophyRefundAgreeRequest) SetSubRefundList(subRefundList []Subrefundlist) error {
-    r.subRefundList = subRefundList
-    r.Set("sub_refund_list", subRefundList)
+func (r *AlibabaTclsAelophyRefundAgreeRequest) SetSubRefundList(_subRefundList []Subrefundlist) error {
+    r._subRefundList = _subRefundList
+    r.Set("sub_refund_list", _subRefundList)
     return nil
 }
 
 // SubRefundList Getter
 func (r AlibabaTclsAelophyRefundAgreeRequest) GetSubRefundList() []Subrefundlist {
-    return r.subRefundList
+    return r._subRefundList
 }

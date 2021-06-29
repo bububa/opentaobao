@@ -15,7 +15,7 @@ alibaba.idle.appraise.spu.register.modify
 type AlibabaIdleAppraiseSpuRegisterModifyRequest struct {
     model.Params
     // 入参
-    idleAppraiseSpuRegister4TopDto   *IdleAppraiseSpuRegister4TopDTO
+    _idleAppraiseSpuRegister4TopDto   *IdleAppraiseSpuRegister4TopDTO
 }
 
 // 初始化AlibabaIdleAppraiseSpuRegisterModifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleAppraiseSpuRegisterModifyRequest) GetApiParams() url.Values {
 }
 // IdleAppraiseSpuRegister4TopDto Setter
 // 入参
-func (r *AlibabaIdleAppraiseSpuRegisterModifyRequest) SetIdleAppraiseSpuRegister4TopDto(idleAppraiseSpuRegister4TopDto *IdleAppraiseSpuRegister4TopDTO) error {
-    r.idleAppraiseSpuRegister4TopDto = idleAppraiseSpuRegister4TopDto
-    r.Set("idle_appraise_spu_register4_top_dto", idleAppraiseSpuRegister4TopDto)
+func (r *AlibabaIdleAppraiseSpuRegisterModifyRequest) SetIdleAppraiseSpuRegister4TopDto(_idleAppraiseSpuRegister4TopDto *IdleAppraiseSpuRegister4TopDTO) error {
+    r._idleAppraiseSpuRegister4TopDto = _idleAppraiseSpuRegister4TopDto
+    r.Set("idle_appraise_spu_register4_top_dto", _idleAppraiseSpuRegister4TopDto)
     return nil
 }
 
 // IdleAppraiseSpuRegister4TopDto Getter
 func (r AlibabaIdleAppraiseSpuRegisterModifyRequest) GetIdleAppraiseSpuRegister4TopDto() *IdleAppraiseSpuRegister4TopDTO {
-    return r.idleAppraiseSpuRegister4TopDto
+    return r._idleAppraiseSpuRegister4TopDto
 }

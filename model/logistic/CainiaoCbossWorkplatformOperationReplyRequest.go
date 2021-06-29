@@ -15,23 +15,23 @@ cainiao.cboss.workplatform.operation.reply
 type CainiaoCbossWorkplatformOperationReplyRequest struct {
     model.Params
     // 工单id
-    workOrderId   string
+    _workOrderId   string
     // 工单任务id
-    taskId   string
+    _taskId   string
     // 任务操作时间
-    actionTime   string
+    _actionTime   string
     // 任务操作类型
-    actionType   int64
+    _actionType   int64
     // 操作者userId
-    dealerUserId   string
+    _dealerUserId   string
     // 操作者联系方式
-    dealerContact   string
+    _dealerContact   string
     // 商家工单操作回传备注
-    memo   string
+    _memo   string
     // 凭证照片地址拼接
-    attachPath   string
+    _attachPath   string
     // 扩展字段
-    features   string
+    _features   string
 }
 
 // 初始化CainiaoCbossWorkplatformOperationReplyRequest对象
@@ -56,109 +56,109 @@ func (r CainiaoCbossWorkplatformOperationReplyRequest) GetApiParams() url.Values
 }
 // WorkOrderId Setter
 // 工单id
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetWorkOrderId(workOrderId string) error {
-    r.workOrderId = workOrderId
-    r.Set("work_order_id", workOrderId)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetWorkOrderId(_workOrderId string) error {
+    r._workOrderId = _workOrderId
+    r.Set("work_order_id", _workOrderId)
     return nil
 }
 
 // WorkOrderId Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetWorkOrderId() string {
-    return r.workOrderId
+    return r._workOrderId
 }
 // TaskId Setter
 // 工单任务id
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetTaskId(taskId string) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetTaskId(_taskId string) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetTaskId() string {
-    return r.taskId
+    return r._taskId
 }
 // ActionTime Setter
 // 任务操作时间
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetActionTime(actionTime string) error {
-    r.actionTime = actionTime
-    r.Set("action_time", actionTime)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetActionTime(_actionTime string) error {
+    r._actionTime = _actionTime
+    r.Set("action_time", _actionTime)
     return nil
 }
 
 // ActionTime Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetActionTime() string {
-    return r.actionTime
+    return r._actionTime
 }
 // ActionType Setter
 // 任务操作类型
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetActionType(actionType int64) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetActionType(_actionType int64) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetActionType() int64 {
-    return r.actionType
+    return r._actionType
 }
 // DealerUserId Setter
 // 操作者userId
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetDealerUserId(dealerUserId string) error {
-    r.dealerUserId = dealerUserId
-    r.Set("dealer_user_id", dealerUserId)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetDealerUserId(_dealerUserId string) error {
+    r._dealerUserId = _dealerUserId
+    r.Set("dealer_user_id", _dealerUserId)
     return nil
 }
 
 // DealerUserId Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetDealerUserId() string {
-    return r.dealerUserId
+    return r._dealerUserId
 }
 // DealerContact Setter
 // 操作者联系方式
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetDealerContact(dealerContact string) error {
-    r.dealerContact = dealerContact
-    r.Set("dealer_contact", dealerContact)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetDealerContact(_dealerContact string) error {
+    r._dealerContact = _dealerContact
+    r.Set("dealer_contact", _dealerContact)
     return nil
 }
 
 // DealerContact Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetDealerContact() string {
-    return r.dealerContact
+    return r._dealerContact
 }
 // Memo Setter
 // 商家工单操作回传备注
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }
 // AttachPath Setter
 // 凭证照片地址拼接
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetAttachPath(attachPath string) error {
-    r.attachPath = attachPath
-    r.Set("attach_path", attachPath)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetAttachPath(_attachPath string) error {
+    r._attachPath = _attachPath
+    r.Set("attach_path", _attachPath)
     return nil
 }
 
 // AttachPath Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetAttachPath() string {
-    return r.attachPath
+    return r._attachPath
 }
 // Features Setter
 // 扩展字段
-func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetFeatures(features string) error {
-    r.features = features
-    r.Set("features", features)
+func (r *CainiaoCbossWorkplatformOperationReplyRequest) SetFeatures(_features string) error {
+    r._features = _features
+    r.Set("features", _features)
     return nil
 }
 
 // Features Getter
 func (r CainiaoCbossWorkplatformOperationReplyRequest) GetFeatures() string {
-    return r.features
+    return r._features
 }

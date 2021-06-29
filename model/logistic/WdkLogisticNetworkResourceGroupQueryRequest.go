@@ -15,7 +15,7 @@ wdk.logistic.network.resource.group.query
 type WdkLogisticNetworkResourceGroupQueryRequest struct {
     model.Params
     // 入参
-    paramResourceGroupPageQueryRequest   *ResourceGroupPageQueryRequest
+    _paramResourceGroupPageQueryRequest   *ResourceGroupPageQueryRequest
 }
 
 // 初始化WdkLogisticNetworkResourceGroupQueryRequest对象
@@ -40,13 +40,13 @@ func (r WdkLogisticNetworkResourceGroupQueryRequest) GetApiParams() url.Values {
 }
 // ParamResourceGroupPageQueryRequest Setter
 // 入参
-func (r *WdkLogisticNetworkResourceGroupQueryRequest) SetParamResourceGroupPageQueryRequest(paramResourceGroupPageQueryRequest *ResourceGroupPageQueryRequest) error {
-    r.paramResourceGroupPageQueryRequest = paramResourceGroupPageQueryRequest
-    r.Set("param_resource_group_page_query_request", paramResourceGroupPageQueryRequest)
+func (r *WdkLogisticNetworkResourceGroupQueryRequest) SetParamResourceGroupPageQueryRequest(_paramResourceGroupPageQueryRequest *ResourceGroupPageQueryRequest) error {
+    r._paramResourceGroupPageQueryRequest = _paramResourceGroupPageQueryRequest
+    r.Set("param_resource_group_page_query_request", _paramResourceGroupPageQueryRequest)
     return nil
 }
 
 // ParamResourceGroupPageQueryRequest Getter
 func (r WdkLogisticNetworkResourceGroupQueryRequest) GetParamResourceGroupPageQueryRequest() *ResourceGroupPageQueryRequest {
-    return r.paramResourceGroupPageQueryRequest
+    return r._paramResourceGroupPageQueryRequest
 }

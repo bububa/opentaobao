@@ -15,7 +15,7 @@ taobao.logistics.address.reachablebatch.get
 type TaobaoLogisticsAddressReachablebatchGetRequest struct {
     model.Params
     // 筛单用户输入地址结构
-    addressList   []AddressReachable
+    _addressList   []AddressReachable
 }
 
 // 初始化TaobaoLogisticsAddressReachablebatchGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLogisticsAddressReachablebatchGetRequest) GetApiParams() url.Value
 }
 // AddressList Setter
 // 筛单用户输入地址结构
-func (r *TaobaoLogisticsAddressReachablebatchGetRequest) SetAddressList(addressList []AddressReachable) error {
-    r.addressList = addressList
-    r.Set("address_list", addressList)
+func (r *TaobaoLogisticsAddressReachablebatchGetRequest) SetAddressList(_addressList []AddressReachable) error {
+    r._addressList = _addressList
+    r.Set("address_list", _addressList)
     return nil
 }
 
 // AddressList Getter
 func (r TaobaoLogisticsAddressReachablebatchGetRequest) GetAddressList() []AddressReachable {
-    return r.addressList
+    return r._addressList
 }

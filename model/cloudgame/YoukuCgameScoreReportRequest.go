@@ -15,7 +15,7 @@ youku.cgame.score.report
 type YoukuCgameScoreReportRequest struct {
     model.Params
     // 战绩上传Dto
-    scoreReportDto   *ScoreReportDto
+    _scoreReportDto   *ScoreReportDto
 }
 
 // 初始化YoukuCgameScoreReportRequest对象
@@ -40,13 +40,13 @@ func (r YoukuCgameScoreReportRequest) GetApiParams() url.Values {
 }
 // ScoreReportDto Setter
 // 战绩上传Dto
-func (r *YoukuCgameScoreReportRequest) SetScoreReportDto(scoreReportDto *ScoreReportDto) error {
-    r.scoreReportDto = scoreReportDto
-    r.Set("score_report_dto", scoreReportDto)
+func (r *YoukuCgameScoreReportRequest) SetScoreReportDto(_scoreReportDto *ScoreReportDto) error {
+    r._scoreReportDto = _scoreReportDto
+    r.Set("score_report_dto", _scoreReportDto)
     return nil
 }
 
 // ScoreReportDto Getter
 func (r YoukuCgameScoreReportRequest) GetScoreReportDto() *ScoreReportDto {
-    return r.scoreReportDto
+    return r._scoreReportDto
 }

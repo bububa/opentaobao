@@ -15,9 +15,9 @@ alibaba.campus.acl.new.removerole
 type AlibabaCampusAclNewRemoveroleRequest struct {
     model.Params
     // 系统入参
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 角色主键id
-    roleId   int64
+    _roleId   int64
 }
 
 // 初始化AlibabaCampusAclNewRemoveroleRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewRemoveroleRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 系统入参
-func (r *AlibabaCampusAclNewRemoveroleRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusAclNewRemoveroleRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusAclNewRemoveroleRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // RoleId Setter
 // 角色主键id
-func (r *AlibabaCampusAclNewRemoveroleRequest) SetRoleId(roleId int64) error {
-    r.roleId = roleId
-    r.Set("role_id", roleId)
+func (r *AlibabaCampusAclNewRemoveroleRequest) SetRoleId(_roleId int64) error {
+    r._roleId = _roleId
+    r.Set("role_id", _roleId)
     return nil
 }
 
 // RoleId Getter
 func (r AlibabaCampusAclNewRemoveroleRequest) GetRoleId() int64 {
-    return r.roleId
+    return r._roleId
 }

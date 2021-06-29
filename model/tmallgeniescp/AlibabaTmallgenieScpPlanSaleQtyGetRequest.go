@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.sale.qty.get
 type AlibabaTmallgenieScpPlanSaleQtyGetRequest struct {
     model.Params
     // 扩展参数
-    requestExtendJson   string
+    _requestExtendJson   string
 }
 
 // 初始化AlibabaTmallgenieScpPlanSaleQtyGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanSaleQtyGetRequest) GetApiParams() url.Values {
 }
 // RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpPlanSaleQtyGetRequest) SetRequestExtendJson(requestExtendJson string) error {
-    r.requestExtendJson = requestExtendJson
-    r.Set("request_extend_json", requestExtendJson)
+func (r *AlibabaTmallgenieScpPlanSaleQtyGetRequest) SetRequestExtendJson(_requestExtendJson string) error {
+    r._requestExtendJson = _requestExtendJson
+    r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanSaleQtyGetRequest) GetRequestExtendJson() string {
-    return r.requestExtendJson
+    return r._requestExtendJson
 }

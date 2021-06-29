@@ -15,7 +15,7 @@ taobao.de.activity.info.get
 type TaobaoDeActivityInfoGetRequest struct {
     model.Params
     // 事件唯一标识
-    eventKey   string
+    _eventKey   string
 }
 
 // 初始化TaobaoDeActivityInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoDeActivityInfoGetRequest) GetApiParams() url.Values {
 }
 // EventKey Setter
 // 事件唯一标识
-func (r *TaobaoDeActivityInfoGetRequest) SetEventKey(eventKey string) error {
-    r.eventKey = eventKey
-    r.Set("event_key", eventKey)
+func (r *TaobaoDeActivityInfoGetRequest) SetEventKey(_eventKey string) error {
+    r._eventKey = _eventKey
+    r.Set("event_key", _eventKey)
     return nil
 }
 
 // EventKey Getter
 func (r TaobaoDeActivityInfoGetRequest) GetEventKey() string {
-    return r.eventKey
+    return r._eventKey
 }

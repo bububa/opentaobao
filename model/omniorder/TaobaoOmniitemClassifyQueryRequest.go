@@ -15,11 +15,11 @@ taobao.omniitem.classify.query
 type TaobaoOmniitemClassifyQueryRequest struct {
     model.Params
     // 查询关键词
-    keyword   string
+    _keyword   string
     // 页码
-    pageNum   int64
+    _pageNum   int64
     // 每页大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoOmniitemClassifyQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoOmniitemClassifyQueryRequest) GetApiParams() url.Values {
 }
 // Keyword Setter
 // 查询关键词
-func (r *TaobaoOmniitemClassifyQueryRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *TaobaoOmniitemClassifyQueryRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r TaobaoOmniitemClassifyQueryRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // PageNum Setter
 // 页码
-func (r *TaobaoOmniitemClassifyQueryRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *TaobaoOmniitemClassifyQueryRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r TaobaoOmniitemClassifyQueryRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // PageSize Setter
 // 每页大小
-func (r *TaobaoOmniitemClassifyQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoOmniitemClassifyQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoOmniitemClassifyQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

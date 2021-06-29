@@ -15,7 +15,7 @@ alibaba.ailabs.iot.device.status.update
 type AlibabaAilabsIotDeviceStatusUpdateRequest struct {
     model.Params
     // 入参设备信息
-    deviceStatusDTO   *DeviceStatusDto
+    _deviceStatusDTO   *DeviceStatusDto
 }
 
 // 初始化AlibabaAilabsIotDeviceStatusUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsIotDeviceStatusUpdateRequest) GetApiParams() url.Values {
 }
 // DeviceStatusDTO Setter
 // 入参设备信息
-func (r *AlibabaAilabsIotDeviceStatusUpdateRequest) SetDeviceStatusDTO(deviceStatusDTO *DeviceStatusDto) error {
-    r.deviceStatusDTO = deviceStatusDTO
-    r.Set("device_status_d_t_o", deviceStatusDTO)
+func (r *AlibabaAilabsIotDeviceStatusUpdateRequest) SetDeviceStatusDTO(_deviceStatusDTO *DeviceStatusDto) error {
+    r._deviceStatusDTO = _deviceStatusDTO
+    r.Set("device_status_d_t_o", _deviceStatusDTO)
     return nil
 }
 
 // DeviceStatusDTO Getter
 func (r AlibabaAilabsIotDeviceStatusUpdateRequest) GetDeviceStatusDTO() *DeviceStatusDto {
-    return r.deviceStatusDTO
+    return r._deviceStatusDTO
 }

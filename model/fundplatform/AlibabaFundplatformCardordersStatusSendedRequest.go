@@ -15,11 +15,11 @@ alibaba.fundplatform.cardorders.status.sended
 type AlibabaFundplatformCardordersStatusSendedRequest struct {
     model.Params
     // 子制卡单ID
-    cardOrderId   int64
+    _cardOrderId   int64
     // 物流单号
-    logisticsOrderId   string
+    _logisticsOrderId   string
     // 物流商名称
-    logisticsCompany   string
+    _logisticsCompany   string
 }
 
 // 初始化AlibabaFundplatformCardordersStatusSendedRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaFundplatformCardordersStatusSendedRequest) GetApiParams() url.Val
 }
 // CardOrderId Setter
 // 子制卡单ID
-func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetCardOrderId(cardOrderId int64) error {
-    r.cardOrderId = cardOrderId
-    r.Set("card_order_id", cardOrderId)
+func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetCardOrderId(_cardOrderId int64) error {
+    r._cardOrderId = _cardOrderId
+    r.Set("card_order_id", _cardOrderId)
     return nil
 }
 
 // CardOrderId Getter
 func (r AlibabaFundplatformCardordersStatusSendedRequest) GetCardOrderId() int64 {
-    return r.cardOrderId
+    return r._cardOrderId
 }
 // LogisticsOrderId Setter
 // 物流单号
-func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetLogisticsOrderId(logisticsOrderId string) error {
-    r.logisticsOrderId = logisticsOrderId
-    r.Set("logistics_order_id", logisticsOrderId)
+func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetLogisticsOrderId(_logisticsOrderId string) error {
+    r._logisticsOrderId = _logisticsOrderId
+    r.Set("logistics_order_id", _logisticsOrderId)
     return nil
 }
 
 // LogisticsOrderId Getter
 func (r AlibabaFundplatformCardordersStatusSendedRequest) GetLogisticsOrderId() string {
-    return r.logisticsOrderId
+    return r._logisticsOrderId
 }
 // LogisticsCompany Setter
 // 物流商名称
-func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetLogisticsCompany(logisticsCompany string) error {
-    r.logisticsCompany = logisticsCompany
-    r.Set("logistics_company", logisticsCompany)
+func (r *AlibabaFundplatformCardordersStatusSendedRequest) SetLogisticsCompany(_logisticsCompany string) error {
+    r._logisticsCompany = _logisticsCompany
+    r.Set("logistics_company", _logisticsCompany)
     return nil
 }
 
 // LogisticsCompany Getter
 func (r AlibabaFundplatformCardordersStatusSendedRequest) GetLogisticsCompany() string {
-    return r.logisticsCompany
+    return r._logisticsCompany
 }

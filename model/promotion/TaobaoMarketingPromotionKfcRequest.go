@@ -15,9 +15,9 @@ taobao.marketing.promotion.kfc
 type TaobaoMarketingPromotionKfcRequest struct {
     model.Params
     // 活动名称
-    promotionTitle   string
+    _promotionTitle   string
     // 活动描述
-    promotionDesc   string
+    _promotionDesc   string
 }
 
 // 初始化TaobaoMarketingPromotionKfcRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoMarketingPromotionKfcRequest) GetApiParams() url.Values {
 }
 // PromotionTitle Setter
 // 活动名称
-func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionTitle(promotionTitle string) error {
-    r.promotionTitle = promotionTitle
-    r.Set("promotion_title", promotionTitle)
+func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionTitle(_promotionTitle string) error {
+    r._promotionTitle = _promotionTitle
+    r.Set("promotion_title", _promotionTitle)
     return nil
 }
 
 // PromotionTitle Getter
 func (r TaobaoMarketingPromotionKfcRequest) GetPromotionTitle() string {
-    return r.promotionTitle
+    return r._promotionTitle
 }
 // PromotionDesc Setter
 // 活动描述
-func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionDesc(promotionDesc string) error {
-    r.promotionDesc = promotionDesc
-    r.Set("promotion_desc", promotionDesc)
+func (r *TaobaoMarketingPromotionKfcRequest) SetPromotionDesc(_promotionDesc string) error {
+    r._promotionDesc = _promotionDesc
+    r.Set("promotion_desc", _promotionDesc)
     return nil
 }
 
 // PromotionDesc Getter
 func (r TaobaoMarketingPromotionKfcRequest) GetPromotionDesc() string {
-    return r.promotionDesc
+    return r._promotionDesc
 }

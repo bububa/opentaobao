@@ -15,7 +15,7 @@ alibaba.happytrip.taxi.id.get
 type AlibabaHappytripTaxiIdGetRequest struct {
     model.Params
     // 用户唯一标识
-    uid   string
+    _uid   string
 }
 
 // 初始化AlibabaHappytripTaxiIdGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTaxiIdGetRequest) GetApiParams() url.Values {
 }
 // Uid Setter
 // 用户唯一标识
-func (r *AlibabaHappytripTaxiIdGetRequest) SetUid(uid string) error {
-    r.uid = uid
-    r.Set("uid", uid)
+func (r *AlibabaHappytripTaxiIdGetRequest) SetUid(_uid string) error {
+    r._uid = _uid
+    r.Set("uid", _uid)
     return nil
 }
 
 // Uid Getter
 func (r AlibabaHappytripTaxiIdGetRequest) GetUid() string {
-    return r.uid
+    return r._uid
 }

@@ -17,11 +17,11 @@ sku_id对应的sku要属于传入的nick对应的卖家
 type TaobaoItemSkuGetRequest struct {
     model.Params
     // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
-    fields   string
+    _fields   string
     // Sku的id。可以通过taobao.item.seller.get得到
-    skuId   int64
+    _skuId   int64
     // 商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。
-    numIid   int64
+    _numIid   int64
 }
 
 // 初始化TaobaoItemSkuGetRequest对象
@@ -46,37 +46,37 @@ func (r TaobaoItemSkuGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
-func (r *TaobaoItemSkuGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoItemSkuGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoItemSkuGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // SkuId Setter
 // Sku的id。可以通过taobao.item.seller.get得到
-func (r *TaobaoItemSkuGetRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoItemSkuGetRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoItemSkuGetRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // NumIid Setter
 // 商品的数字IID（num_iid和nick必传一个，推荐用num_iid），传商品的数字id返回的结果里包含cspu（SKu上的产品规格信息）。
-func (r *TaobaoItemSkuGetRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemSkuGetRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemSkuGetRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }

@@ -15,13 +15,13 @@ alibaba.ai.user.quick.register
 type AlibabaAiUserQuickRegisterRequest struct {
     model.Params
     // 请求交易流水号（唯一即可，不参与业务运算）
-    serialNo   string
+    _serialNo   string
     // 请求时间
-    reqTime   string
+    _reqTime   string
     // 商户的用户的唯一ID
-    merchantUserId   string
+    _merchantUserId   string
     // 账户体系隔离
-    schemaKey   string
+    _schemaKey   string
 }
 
 // 初始化AlibabaAiUserQuickRegisterRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAiUserQuickRegisterRequest) GetApiParams() url.Values {
 }
 // SerialNo Setter
 // 请求交易流水号（唯一即可，不参与业务运算）
-func (r *AlibabaAiUserQuickRegisterRequest) SetSerialNo(serialNo string) error {
-    r.serialNo = serialNo
-    r.Set("serial_no", serialNo)
+func (r *AlibabaAiUserQuickRegisterRequest) SetSerialNo(_serialNo string) error {
+    r._serialNo = _serialNo
+    r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
 func (r AlibabaAiUserQuickRegisterRequest) GetSerialNo() string {
-    return r.serialNo
+    return r._serialNo
 }
 // ReqTime Setter
 // 请求时间
-func (r *AlibabaAiUserQuickRegisterRequest) SetReqTime(reqTime string) error {
-    r.reqTime = reqTime
-    r.Set("req_time", reqTime)
+func (r *AlibabaAiUserQuickRegisterRequest) SetReqTime(_reqTime string) error {
+    r._reqTime = _reqTime
+    r.Set("req_time", _reqTime)
     return nil
 }
 
 // ReqTime Getter
 func (r AlibabaAiUserQuickRegisterRequest) GetReqTime() string {
-    return r.reqTime
+    return r._reqTime
 }
 // MerchantUserId Setter
 // 商户的用户的唯一ID
-func (r *AlibabaAiUserQuickRegisterRequest) SetMerchantUserId(merchantUserId string) error {
-    r.merchantUserId = merchantUserId
-    r.Set("merchant_user_id", merchantUserId)
+func (r *AlibabaAiUserQuickRegisterRequest) SetMerchantUserId(_merchantUserId string) error {
+    r._merchantUserId = _merchantUserId
+    r.Set("merchant_user_id", _merchantUserId)
     return nil
 }
 
 // MerchantUserId Getter
 func (r AlibabaAiUserQuickRegisterRequest) GetMerchantUserId() string {
-    return r.merchantUserId
+    return r._merchantUserId
 }
 // SchemaKey Setter
 // 账户体系隔离
-func (r *AlibabaAiUserQuickRegisterRequest) SetSchemaKey(schemaKey string) error {
-    r.schemaKey = schemaKey
-    r.Set("schema_key", schemaKey)
+func (r *AlibabaAiUserQuickRegisterRequest) SetSchemaKey(_schemaKey string) error {
+    r._schemaKey = _schemaKey
+    r.Set("schema_key", _schemaKey)
     return nil
 }
 
 // SchemaKey Getter
 func (r AlibabaAiUserQuickRegisterRequest) GetSchemaKey() string {
-    return r.schemaKey
+    return r._schemaKey
 }

@@ -15,7 +15,7 @@ alibaba.legal.suit.court.before.push
 type AlibabaLegalSuitCourtBeforePushRequest struct {
     model.Params
     // 庭前信息
-    beforeCourtModel   *BeforeCourtModel
+    _beforeCourtModel   *BeforeCourtModel
 }
 
 // 初始化AlibabaLegalSuitCourtBeforePushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitCourtBeforePushRequest) GetApiParams() url.Values {
 }
 // BeforeCourtModel Setter
 // 庭前信息
-func (r *AlibabaLegalSuitCourtBeforePushRequest) SetBeforeCourtModel(beforeCourtModel *BeforeCourtModel) error {
-    r.beforeCourtModel = beforeCourtModel
-    r.Set("before_court_model", beforeCourtModel)
+func (r *AlibabaLegalSuitCourtBeforePushRequest) SetBeforeCourtModel(_beforeCourtModel *BeforeCourtModel) error {
+    r._beforeCourtModel = _beforeCourtModel
+    r.Set("before_court_model", _beforeCourtModel)
     return nil
 }
 
 // BeforeCourtModel Getter
 func (r AlibabaLegalSuitCourtBeforePushRequest) GetBeforeCourtModel() *BeforeCourtModel {
-    return r.beforeCourtModel
+    return r._beforeCourtModel
 }

@@ -15,9 +15,9 @@ tmall.servicecenter.settlement.storetransfer.audit
 type TmallServicecenterSettlementStoretransferAuditRequest struct {
     model.Params
     // 审批通过
-    auditPass   bool
+    _auditPass   bool
     // 工单id
-    workcardId   int64
+    _workcardId   int64
 }
 
 // 初始化TmallServicecenterSettlementStoretransferAuditRequest对象
@@ -42,25 +42,25 @@ func (r TmallServicecenterSettlementStoretransferAuditRequest) GetApiParams() ur
 }
 // AuditPass Setter
 // 审批通过
-func (r *TmallServicecenterSettlementStoretransferAuditRequest) SetAuditPass(auditPass bool) error {
-    r.auditPass = auditPass
-    r.Set("audit_pass", auditPass)
+func (r *TmallServicecenterSettlementStoretransferAuditRequest) SetAuditPass(_auditPass bool) error {
+    r._auditPass = _auditPass
+    r.Set("audit_pass", _auditPass)
     return nil
 }
 
 // AuditPass Getter
 func (r TmallServicecenterSettlementStoretransferAuditRequest) GetAuditPass() bool {
-    return r.auditPass
+    return r._auditPass
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterSettlementStoretransferAuditRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterSettlementStoretransferAuditRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterSettlementStoretransferAuditRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }

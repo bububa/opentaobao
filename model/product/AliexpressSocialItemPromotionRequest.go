@@ -15,15 +15,15 @@ aliexpress.social.item.promotion
 type AliexpressSocialItemPromotionRequest struct {
     model.Params
     // 推广的商品链接
-    targetUrl   string
+    _targetUrl   string
     // 子渠道号
-    af   string
+    _af   string
     // campaign Id
-    cn   string
+    _cn   string
     // creative id
-    cv   string
+    _cv   string
     // click id
-    dp   string
+    _dp   string
 }
 
 // 初始化AliexpressSocialItemPromotionRequest对象
@@ -48,61 +48,61 @@ func (r AliexpressSocialItemPromotionRequest) GetApiParams() url.Values {
 }
 // TargetUrl Setter
 // 推广的商品链接
-func (r *AliexpressSocialItemPromotionRequest) SetTargetUrl(targetUrl string) error {
-    r.targetUrl = targetUrl
-    r.Set("target_url", targetUrl)
+func (r *AliexpressSocialItemPromotionRequest) SetTargetUrl(_targetUrl string) error {
+    r._targetUrl = _targetUrl
+    r.Set("target_url", _targetUrl)
     return nil
 }
 
 // TargetUrl Getter
 func (r AliexpressSocialItemPromotionRequest) GetTargetUrl() string {
-    return r.targetUrl
+    return r._targetUrl
 }
 // Af Setter
 // 子渠道号
-func (r *AliexpressSocialItemPromotionRequest) SetAf(af string) error {
-    r.af = af
-    r.Set("af", af)
+func (r *AliexpressSocialItemPromotionRequest) SetAf(_af string) error {
+    r._af = _af
+    r.Set("af", _af)
     return nil
 }
 
 // Af Getter
 func (r AliexpressSocialItemPromotionRequest) GetAf() string {
-    return r.af
+    return r._af
 }
 // Cn Setter
 // campaign Id
-func (r *AliexpressSocialItemPromotionRequest) SetCn(cn string) error {
-    r.cn = cn
-    r.Set("cn", cn)
+func (r *AliexpressSocialItemPromotionRequest) SetCn(_cn string) error {
+    r._cn = _cn
+    r.Set("cn", _cn)
     return nil
 }
 
 // Cn Getter
 func (r AliexpressSocialItemPromotionRequest) GetCn() string {
-    return r.cn
+    return r._cn
 }
 // Cv Setter
 // creative id
-func (r *AliexpressSocialItemPromotionRequest) SetCv(cv string) error {
-    r.cv = cv
-    r.Set("cv", cv)
+func (r *AliexpressSocialItemPromotionRequest) SetCv(_cv string) error {
+    r._cv = _cv
+    r.Set("cv", _cv)
     return nil
 }
 
 // Cv Getter
 func (r AliexpressSocialItemPromotionRequest) GetCv() string {
-    return r.cv
+    return r._cv
 }
 // Dp Setter
 // click id
-func (r *AliexpressSocialItemPromotionRequest) SetDp(dp string) error {
-    r.dp = dp
-    r.Set("dp", dp)
+func (r *AliexpressSocialItemPromotionRequest) SetDp(_dp string) error {
+    r._dp = _dp
+    r.Set("dp", _dp)
     return nil
 }
 
 // Dp Getter
 func (r AliexpressSocialItemPromotionRequest) GetDp() string {
-    return r.dp
+    return r._dp
 }

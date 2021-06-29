@@ -15,7 +15,7 @@ alibaba.alihealth.health.record.have
 type AlibabaAlihealthHealthRecordHaveRequest struct {
     model.Params
     // 入参
-    request1   *HaveRecordRequest
+    _request1   *HaveRecordRequest
 }
 
 // 初始化AlibabaAlihealthHealthRecordHaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthHealthRecordHaveRequest) GetApiParams() url.Values {
 }
 // Request1 Setter
 // 入参
-func (r *AlibabaAlihealthHealthRecordHaveRequest) SetRequest1(request1 *HaveRecordRequest) error {
-    r.request1 = request1
-    r.Set("request1", request1)
+func (r *AlibabaAlihealthHealthRecordHaveRequest) SetRequest1(_request1 *HaveRecordRequest) error {
+    r._request1 = _request1
+    r.Set("request1", _request1)
     return nil
 }
 
 // Request1 Getter
 func (r AlibabaAlihealthHealthRecordHaveRequest) GetRequest1() *HaveRecordRequest {
-    return r.request1
+    return r._request1
 }

@@ -15,13 +15,13 @@ taobao.alitrip.it.fare.batchadd
 type TaobaoAlitripItFareBatchaddRequest struct {
     model.Params
     // 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
-    addType   int64
+    _addType   int64
     // 文本zip压缩后的数据字节流
-    bytes   []*model.File
+    _bytes   []*model.File
     // 数据格式类型，1 淘宝 2 携程
-    dataType   int64
+    _dataType   int64
     // json格式的字符串，扩展属性，预留
-    extendAttributes   string
+    _extendAttributes   string
 }
 
 // 初始化TaobaoAlitripItFareBatchaddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoAlitripItFareBatchaddRequest) GetApiParams() url.Values {
 }
 // AddType Setter
 // 新增类型，1 自有政策单程 2 自有政策往返 3 销售规则
-func (r *TaobaoAlitripItFareBatchaddRequest) SetAddType(addType int64) error {
-    r.addType = addType
-    r.Set("addType", addType)
+func (r *TaobaoAlitripItFareBatchaddRequest) SetAddType(_addType int64) error {
+    r._addType = _addType
+    r.Set("addType", _addType)
     return nil
 }
 
 // AddType Getter
 func (r TaobaoAlitripItFareBatchaddRequest) GetAddType() int64 {
-    return r.addType
+    return r._addType
 }
 // Bytes Setter
 // 文本zip压缩后的数据字节流
-func (r *TaobaoAlitripItFareBatchaddRequest) SetBytes(bytes []*model.File) error {
-    r.bytes = bytes
-    r.Set("bytes", bytes)
+func (r *TaobaoAlitripItFareBatchaddRequest) SetBytes(_bytes []*model.File) error {
+    r._bytes = _bytes
+    r.Set("bytes", _bytes)
     return nil
 }
 
 // Bytes Getter
 func (r TaobaoAlitripItFareBatchaddRequest) GetBytes() []*model.File {
-    return r.bytes
+    return r._bytes
 }
 // DataType Setter
 // 数据格式类型，1 淘宝 2 携程
-func (r *TaobaoAlitripItFareBatchaddRequest) SetDataType(dataType int64) error {
-    r.dataType = dataType
-    r.Set("dataType", dataType)
+func (r *TaobaoAlitripItFareBatchaddRequest) SetDataType(_dataType int64) error {
+    r._dataType = _dataType
+    r.Set("dataType", _dataType)
     return nil
 }
 
 // DataType Getter
 func (r TaobaoAlitripItFareBatchaddRequest) GetDataType() int64 {
-    return r.dataType
+    return r._dataType
 }
 // ExtendAttributes Setter
 // json格式的字符串，扩展属性，预留
-func (r *TaobaoAlitripItFareBatchaddRequest) SetExtendAttributes(extendAttributes string) error {
-    r.extendAttributes = extendAttributes
-    r.Set("extendAttributes", extendAttributes)
+func (r *TaobaoAlitripItFareBatchaddRequest) SetExtendAttributes(_extendAttributes string) error {
+    r._extendAttributes = _extendAttributes
+    r.Set("extendAttributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
 func (r TaobaoAlitripItFareBatchaddRequest) GetExtendAttributes() string {
-    return r.extendAttributes
+    return r._extendAttributes
 }

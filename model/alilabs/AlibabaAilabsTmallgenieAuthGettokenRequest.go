@@ -15,11 +15,11 @@ alibaba.ailabs.tmallgenie.auth.gettoken
 type AlibabaAilabsTmallgenieAuthGettokenRequest struct {
     model.Params
     // clientId
-    clientId   string
+    _clientId   string
     // 授权码
-    authCode   string
+    _authCode   string
     // 授权类型，只支持authorization_code
-    grantType   string
+    _grantType   string
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthGettokenRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetApiParams() url.Values {
 }
 // ClientId Setter
 // clientId
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }
 // AuthCode Setter
 // 授权码
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetAuthCode(authCode string) error {
-    r.authCode = authCode
-    r.Set("auth_code", authCode)
+func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetAuthCode(_authCode string) error {
+    r._authCode = _authCode
+    r.Set("auth_code", _authCode)
     return nil
 }
 
 // AuthCode Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetAuthCode() string {
-    return r.authCode
+    return r._authCode
 }
 // GrantType Setter
 // 授权类型，只支持authorization_code
-func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetGrantType(grantType string) error {
-    r.grantType = grantType
-    r.Set("grant_type", grantType)
+func (r *AlibabaAilabsTmallgenieAuthGettokenRequest) SetGrantType(_grantType string) error {
+    r._grantType = _grantType
+    r.Set("grant_type", _grantType)
     return nil
 }
 
 // GrantType Getter
 func (r AlibabaAilabsTmallgenieAuthGettokenRequest) GetGrantType() string {
-    return r.grantType
+    return r._grantType
 }

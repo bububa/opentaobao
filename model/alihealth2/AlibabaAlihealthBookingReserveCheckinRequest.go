@@ -15,7 +15,7 @@ alibaba.alihealth.booking.reserve.checkin
 type AlibabaAlihealthBookingReserveCheckinRequest struct {
     model.Params
     // check_in
-    checkIn   *IsvReserveRequest
+    _checkIn   *IsvReserveRequest
 }
 
 // 初始化AlibabaAlihealthBookingReserveCheckinRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveCheckinRequest) GetApiParams() url.Values 
 }
 // CheckIn Setter
 // check_in
-func (r *AlibabaAlihealthBookingReserveCheckinRequest) SetCheckIn(checkIn *IsvReserveRequest) error {
-    r.checkIn = checkIn
-    r.Set("check_in", checkIn)
+func (r *AlibabaAlihealthBookingReserveCheckinRequest) SetCheckIn(_checkIn *IsvReserveRequest) error {
+    r._checkIn = _checkIn
+    r.Set("check_in", _checkIn)
     return nil
 }
 
 // CheckIn Getter
 func (r AlibabaAlihealthBookingReserveCheckinRequest) GetCheckIn() *IsvReserveRequest {
-    return r.checkIn
+    return r._checkIn
 }

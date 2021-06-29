@@ -15,13 +15,13 @@ taobao.simba.bidword.pricetools
 type TaobaoSimbaBidwordPricetoolsRequest struct {
     model.Params
     // 关键词id
-    bidwordId   int64
+    _bidwordId   int64
     // 出价目标 ，1：争取排名；2：提升展现；3：提示点击；4：提升转化
-    type   int64
+    _type   int64
     // 区分渠道 ，计算机：PC，无线 ：WL
-    trafficType   string
+    _trafficType   string
     // 推广单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoSimbaBidwordPricetoolsRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaBidwordPricetoolsRequest) GetApiParams() url.Values {
 }
 // BidwordId Setter
 // 关键词id
-func (r *TaobaoSimbaBidwordPricetoolsRequest) SetBidwordId(bidwordId int64) error {
-    r.bidwordId = bidwordId
-    r.Set("bidword_id", bidwordId)
+func (r *TaobaoSimbaBidwordPricetoolsRequest) SetBidwordId(_bidwordId int64) error {
+    r._bidwordId = _bidwordId
+    r.Set("bidword_id", _bidwordId)
     return nil
 }
 
 // BidwordId Getter
 func (r TaobaoSimbaBidwordPricetoolsRequest) GetBidwordId() int64 {
-    return r.bidwordId
+    return r._bidwordId
 }
 // Type Setter
 // 出价目标 ，1：争取排名；2：提升展现；3：提示点击；4：提升转化
-func (r *TaobaoSimbaBidwordPricetoolsRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoSimbaBidwordPricetoolsRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoSimbaBidwordPricetoolsRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // TrafficType Setter
 // 区分渠道 ，计算机：PC，无线 ：WL
-func (r *TaobaoSimbaBidwordPricetoolsRequest) SetTrafficType(trafficType string) error {
-    r.trafficType = trafficType
-    r.Set("traffic_type", trafficType)
+func (r *TaobaoSimbaBidwordPricetoolsRequest) SetTrafficType(_trafficType string) error {
+    r._trafficType = _trafficType
+    r.Set("traffic_type", _trafficType)
     return nil
 }
 
 // TrafficType Getter
 func (r TaobaoSimbaBidwordPricetoolsRequest) GetTrafficType() string {
-    return r.trafficType
+    return r._trafficType
 }
 // AdgroupId Setter
 // 推广单元id
-func (r *TaobaoSimbaBidwordPricetoolsRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaBidwordPricetoolsRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaBidwordPricetoolsRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

@@ -15,7 +15,7 @@ alibaba.retail.marketing.buygift.activity.sku.add
 type AlibabaRetailMarketingBuygiftActivitySkuAddRequest struct {
     model.Params
     // 添加活动商品参数
-    param   *BuyGiftActivitySkuOperateRequest
+    _param   *BuyGiftActivitySkuOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingBuygiftActivitySkuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivitySkuAddRequest) GetApiParams() url.V
 }
 // Param Setter
 // 添加活动商品参数
-func (r *AlibabaRetailMarketingBuygiftActivitySkuAddRequest) SetParam(param *BuyGiftActivitySkuOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingBuygiftActivitySkuAddRequest) SetParam(_param *BuyGiftActivitySkuOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingBuygiftActivitySkuAddRequest) GetParam() *BuyGiftActivitySkuOperateRequest {
-    return r.param
+    return r._param
 }

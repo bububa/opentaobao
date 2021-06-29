@@ -15,9 +15,9 @@ tmall.hk.clearance.get
 type TmallHkClearanceGetRequest struct {
     model.Params
     // 天猫国际订单号
-    orderId   int64
+    _orderId   int64
     // 是否需要身份证图片，不需要可以缩短接口响应时间
-    needImage   bool
+    _needImage   bool
 }
 
 // 初始化TmallHkClearanceGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallHkClearanceGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫国际订单号
-func (r *TmallHkClearanceGetRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallHkClearanceGetRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallHkClearanceGetRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // NeedImage Setter
 // 是否需要身份证图片，不需要可以缩短接口响应时间
-func (r *TmallHkClearanceGetRequest) SetNeedImage(needImage bool) error {
-    r.needImage = needImage
-    r.Set("need_image", needImage)
+func (r *TmallHkClearanceGetRequest) SetNeedImage(_needImage bool) error {
+    r._needImage = _needImage
+    r.Set("need_image", _needImage)
     return nil
 }
 
 // NeedImage Getter
 func (r TmallHkClearanceGetRequest) GetNeedImage() bool {
-    return r.needImage
+    return r._needImage
 }

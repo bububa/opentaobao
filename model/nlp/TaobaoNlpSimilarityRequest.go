@@ -15,7 +15,7 @@ taobao.nlp.similarity
 type TaobaoNlpSimilarityRequest struct {
     model.Params
     // 多文本内容
-    texts   *Texts
+    _texts   *Texts
 }
 
 // 初始化TaobaoNlpSimilarityRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoNlpSimilarityRequest) GetApiParams() url.Values {
 }
 // Texts Setter
 // 多文本内容
-func (r *TaobaoNlpSimilarityRequest) SetTexts(texts *Texts) error {
-    r.texts = texts
-    r.Set("texts", texts)
+func (r *TaobaoNlpSimilarityRequest) SetTexts(_texts *Texts) error {
+    r._texts = _texts
+    r.Set("texts", _texts)
     return nil
 }
 
 // Texts Getter
 func (r TaobaoNlpSimilarityRequest) GetTexts() *Texts {
-    return r.texts
+    return r._texts
 }

@@ -15,7 +15,7 @@ alibaba.happytrip.taxi.provider.account.balance
 type AlibabaHappytripTaxiProviderAccountBalanceRequest struct {
     model.Params
     // 成本中心代码，用于区分不同的分账账号
-    costCenter   string
+    _costCenter   string
 }
 
 // 初始化AlibabaHappytripTaxiProviderAccountBalanceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetApiParams() url.Va
 }
 // CostCenter Setter
 // 成本中心代码，用于区分不同的分账账号
-func (r *AlibabaHappytripTaxiProviderAccountBalanceRequest) SetCostCenter(costCenter string) error {
-    r.costCenter = costCenter
-    r.Set("cost_center", costCenter)
+func (r *AlibabaHappytripTaxiProviderAccountBalanceRequest) SetCostCenter(_costCenter string) error {
+    r._costCenter = _costCenter
+    r.Set("cost_center", _costCenter)
     return nil
 }
 
 // CostCenter Getter
 func (r AlibabaHappytripTaxiProviderAccountBalanceRequest) GetCostCenter() string {
-    return r.costCenter
+    return r._costCenter
 }

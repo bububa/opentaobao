@@ -15,7 +15,7 @@ alibaba.lst.trade.shiporder.query
 type AlibabaLstTradeShiporderQueryRequest struct {
     model.Params
     // 入参
-    paramLstShipOrderQuery   *LstShipOrderQuery
+    _paramLstShipOrderQuery   *LstShipOrderQuery
 }
 
 // 初始化AlibabaLstTradeShiporderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeShiporderQueryRequest) GetApiParams() url.Values {
 }
 // ParamLstShipOrderQuery Setter
 // 入参
-func (r *AlibabaLstTradeShiporderQueryRequest) SetParamLstShipOrderQuery(paramLstShipOrderQuery *LstShipOrderQuery) error {
-    r.paramLstShipOrderQuery = paramLstShipOrderQuery
-    r.Set("param_lst_ship_order_query", paramLstShipOrderQuery)
+func (r *AlibabaLstTradeShiporderQueryRequest) SetParamLstShipOrderQuery(_paramLstShipOrderQuery *LstShipOrderQuery) error {
+    r._paramLstShipOrderQuery = _paramLstShipOrderQuery
+    r.Set("param_lst_ship_order_query", _paramLstShipOrderQuery)
     return nil
 }
 
 // ParamLstShipOrderQuery Getter
 func (r AlibabaLstTradeShiporderQueryRequest) GetParamLstShipOrderQuery() *LstShipOrderQuery {
-    return r.paramLstShipOrderQuery
+    return r._paramLstShipOrderQuery
 }

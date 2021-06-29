@@ -15,7 +15,7 @@ taobao.wdk.equipment.conveyor.info.upload
 type TaobaoWdkEquipmentConveyorInfoUploadRequest struct {
     model.Params
     // 上传信息
-    param0   string
+    _param0   string
 }
 
 // 初始化TaobaoWdkEquipmentConveyorInfoUploadRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 上传信息
-func (r *TaobaoWdkEquipmentConveyorInfoUploadRequest) SetParam0(param0 string) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoWdkEquipmentConveyorInfoUploadRequest) SetParam0(_param0 string) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoWdkEquipmentConveyorInfoUploadRequest) GetParam0() string {
-    return r.param0
+    return r._param0
 }

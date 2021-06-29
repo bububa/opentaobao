@@ -15,19 +15,19 @@ alibaba.alihealth.drug.code.code.check.hospital
 type AlibabaAlihealthDrugCodeCodeCheckHospitalRequest struct {
     model.Params
     // 认证企业refEntId
-    authRefEntId   string
+    _authRefEntId   string
     // 企业refEntId
-    refEntId   string
+    _refEntId   string
     // 城市名
-    bureauName   string
+    _bureauName   string
     // 终端名称
-    terminalName   string
+    _terminalName   string
     // 终端类型
-    terminalType   string
+    _terminalType   string
     // 核销类型
-    cType   string
+    _cType   string
     // 码列表
-    codes   []string
+    _codes   []string
 }
 
 // 初始化AlibabaAlihealthDrugCodeCodeCheckHospitalRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetApiParams() url.Val
 }
 // AuthRefEntId Setter
 // 认证企业refEntId
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetAuthRefEntId(authRefEntId string) error {
-    r.authRefEntId = authRefEntId
-    r.Set("auth_ref_ent_id", authRefEntId)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetAuthRefEntId(_authRefEntId string) error {
+    r._authRefEntId = _authRefEntId
+    r.Set("auth_ref_ent_id", _authRefEntId)
     return nil
 }
 
 // AuthRefEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetAuthRefEntId() string {
-    return r.authRefEntId
+    return r._authRefEntId
 }
 // RefEntId Setter
 // 企业refEntId
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BureauName Setter
 // 城市名
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // TerminalName Setter
 // 终端名称
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // TerminalType Setter
 // 终端类型
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // CType Setter
 // 核销类型
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetCType(cType string) error {
-    r.cType = cType
-    r.Set("c_type", cType)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetCType(_cType string) error {
+    r._cType = _cType
+    r.Set("c_type", _cType)
     return nil
 }
 
 // CType Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetCType() string {
-    return r.cType
+    return r._cType
 }
 // Codes Setter
 // 码列表
-func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetCodes(codes []string) error {
-    r.codes = codes
-    r.Set("codes", codes)
+func (r *AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) SetCodes(_codes []string) error {
+    r._codes = _codes
+    r.Set("codes", _codes)
     return nil
 }
 
 // Codes Getter
 func (r AlibabaAlihealthDrugCodeCodeCheckHospitalRequest) GetCodes() []string {
-    return r.codes
+    return r._codes
 }

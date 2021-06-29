@@ -15,19 +15,19 @@ taobao.tanx.qualification.solid.find
 type TaobaoTanxQualificationSolidFindRequest struct {
     model.Params
     // 广告主id
-    advertiserId   int64
+    _advertiserId   int64
     // 资质元素id列表
-    elementIds   []int64
+    _elementIds   []int64
     // dsp用户id
-    memberId   int64
+    _memberId   int64
     // dsp客户验证token
-    token   string
+    _token   string
     // 1970年到现在的秒
-    signTime   int64
+    _signTime   int64
     // 查询起始页
-    page   int64
+    _page   int64
     // 分页大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoTanxQualificationSolidFindRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoTanxQualificationSolidFindRequest) GetApiParams() url.Values {
 }
 // AdvertiserId Setter
 // 广告主id
-func (r *TaobaoTanxQualificationSolidFindRequest) SetAdvertiserId(advertiserId int64) error {
-    r.advertiserId = advertiserId
-    r.Set("advertiser_id", advertiserId)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetAdvertiserId(_advertiserId int64) error {
+    r._advertiserId = _advertiserId
+    r.Set("advertiser_id", _advertiserId)
     return nil
 }
 
 // AdvertiserId Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetAdvertiserId() int64 {
-    return r.advertiserId
+    return r._advertiserId
 }
 // ElementIds Setter
 // 资质元素id列表
-func (r *TaobaoTanxQualificationSolidFindRequest) SetElementIds(elementIds []int64) error {
-    r.elementIds = elementIds
-    r.Set("element_ids", elementIds)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetElementIds(_elementIds []int64) error {
+    r._elementIds = _elementIds
+    r.Set("element_ids", _elementIds)
     return nil
 }
 
 // ElementIds Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetElementIds() []int64 {
-    return r.elementIds
+    return r._elementIds
 }
 // MemberId Setter
 // dsp用户id
-func (r *TaobaoTanxQualificationSolidFindRequest) SetMemberId(memberId int64) error {
-    r.memberId = memberId
-    r.Set("member_id", memberId)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetMemberId(_memberId int64) error {
+    r._memberId = _memberId
+    r.Set("member_id", _memberId)
     return nil
 }
 
 // MemberId Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetMemberId() int64 {
-    return r.memberId
+    return r._memberId
 }
 // Token Setter
 // dsp客户验证token
-func (r *TaobaoTanxQualificationSolidFindRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // SignTime Setter
 // 1970年到现在的秒
-func (r *TaobaoTanxQualificationSolidFindRequest) SetSignTime(signTime int64) error {
-    r.signTime = signTime
-    r.Set("sign_time", signTime)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetSignTime(_signTime int64) error {
+    r._signTime = _signTime
+    r.Set("sign_time", _signTime)
     return nil
 }
 
 // SignTime Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetSignTime() int64 {
-    return r.signTime
+    return r._signTime
 }
 // Page Setter
 // 查询起始页
-func (r *TaobaoTanxQualificationSolidFindRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // PageSize Setter
 // 分页大小
-func (r *TaobaoTanxQualificationSolidFindRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoTanxQualificationSolidFindRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoTanxQualificationSolidFindRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

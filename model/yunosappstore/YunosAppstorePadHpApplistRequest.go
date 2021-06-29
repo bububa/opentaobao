@@ -15,7 +15,7 @@ yunos.appstore.pad.hp.applist
 type YunosAppstorePadHpApplistRequest struct {
     model.Params
     // 获取的应用群code
-    code   string
+    _code   string
 }
 
 // 初始化YunosAppstorePadHpApplistRequest对象
@@ -40,13 +40,13 @@ func (r YunosAppstorePadHpApplistRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 获取的应用群code
-func (r *YunosAppstorePadHpApplistRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *YunosAppstorePadHpApplistRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r YunosAppstorePadHpApplistRequest) GetCode() string {
-    return r.code
+    return r._code
 }

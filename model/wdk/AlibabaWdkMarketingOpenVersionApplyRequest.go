@@ -15,7 +15,7 @@ alibaba.wdk.marketing.open.version.apply
 type AlibabaWdkMarketingOpenVersionApplyRequest struct {
     model.Params
     // 同步版本信息
-    syncVersion   *SyncVersionBo
+    _syncVersion   *SyncVersionBo
 }
 
 // 初始化AlibabaWdkMarketingOpenVersionApplyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingOpenVersionApplyRequest) GetApiParams() url.Values {
 }
 // SyncVersion Setter
 // 同步版本信息
-func (r *AlibabaWdkMarketingOpenVersionApplyRequest) SetSyncVersion(syncVersion *SyncVersionBo) error {
-    r.syncVersion = syncVersion
-    r.Set("sync_version", syncVersion)
+func (r *AlibabaWdkMarketingOpenVersionApplyRequest) SetSyncVersion(_syncVersion *SyncVersionBo) error {
+    r._syncVersion = _syncVersion
+    r.Set("sync_version", _syncVersion)
     return nil
 }
 
 // SyncVersion Getter
 func (r AlibabaWdkMarketingOpenVersionApplyRequest) GetSyncVersion() *SyncVersionBo {
-    return r.syncVersion
+    return r._syncVersion
 }

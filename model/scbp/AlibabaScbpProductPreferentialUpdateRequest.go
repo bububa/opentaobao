@@ -15,11 +15,11 @@ alibaba.scbp.product.preferential.update
 type AlibabaScbpProductPreferentialUpdateRequest struct {
     model.Params
     // 关键词ID
-    keywordId   int64
+    _keywordId   int64
     // 产品ID
-    productId   int64
+    _productId   int64
     // Y:设置优推,N:取消优推
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaScbpProductPreferentialUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpProductPreferentialUpdateRequest) GetApiParams() url.Values {
 }
 // KeywordId Setter
 // 关键词ID
-func (r *AlibabaScbpProductPreferentialUpdateRequest) SetKeywordId(keywordId int64) error {
-    r.keywordId = keywordId
-    r.Set("keyword_id", keywordId)
+func (r *AlibabaScbpProductPreferentialUpdateRequest) SetKeywordId(_keywordId int64) error {
+    r._keywordId = _keywordId
+    r.Set("keyword_id", _keywordId)
     return nil
 }
 
 // KeywordId Getter
 func (r AlibabaScbpProductPreferentialUpdateRequest) GetKeywordId() int64 {
-    return r.keywordId
+    return r._keywordId
 }
 // ProductId Setter
 // 产品ID
-func (r *AlibabaScbpProductPreferentialUpdateRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaScbpProductPreferentialUpdateRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaScbpProductPreferentialUpdateRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // Status Setter
 // Y:设置优推,N:取消优推
-func (r *AlibabaScbpProductPreferentialUpdateRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaScbpProductPreferentialUpdateRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaScbpProductPreferentialUpdateRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

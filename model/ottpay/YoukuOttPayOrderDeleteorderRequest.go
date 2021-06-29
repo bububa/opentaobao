@@ -15,21 +15,21 @@ youku.ott.pay.order.deleteorder
 type YoukuOttPayOrderDeleteorderRequest struct {
     model.Params
     // 下单账号， cp账号
-    buyer   string
+    _buyer   string
     // 商品id
-    productId   string
+    _productId   string
     // 商品名称
-    productName   string
+    _productName   string
     // cp订单号
-    orderNo   string
+    _orderNo   string
     // 回调地址
-    callbackUrl   string
+    _callbackUrl   string
     // 订单无关的其他参数,如埋点统计的utdid, mac地址等
-    extra   string
+    _extra   string
     // 订单类型，1为连续包月类型,2为取消连续包月
-    orderType   int64
+    _orderType   int64
     // 连续包月原始订单
-    originalOrderNo   string
+    _originalOrderNo   string
 }
 
 // 初始化YoukuOttPayOrderDeleteorderRequest对象
@@ -54,97 +54,97 @@ func (r YoukuOttPayOrderDeleteorderRequest) GetApiParams() url.Values {
 }
 // Buyer Setter
 // 下单账号， cp账号
-func (r *YoukuOttPayOrderDeleteorderRequest) SetBuyer(buyer string) error {
-    r.buyer = buyer
-    r.Set("buyer", buyer)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetBuyer(_buyer string) error {
+    r._buyer = _buyer
+    r.Set("buyer", _buyer)
     return nil
 }
 
 // Buyer Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetBuyer() string {
-    return r.buyer
+    return r._buyer
 }
 // ProductId Setter
 // 商品id
-func (r *YoukuOttPayOrderDeleteorderRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }
 // ProductName Setter
 // 商品名称
-func (r *YoukuOttPayOrderDeleteorderRequest) SetProductName(productName string) error {
-    r.productName = productName
-    r.Set("product_name", productName)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetProductName(_productName string) error {
+    r._productName = _productName
+    r.Set("product_name", _productName)
     return nil
 }
 
 // ProductName Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetProductName() string {
-    return r.productName
+    return r._productName
 }
 // OrderNo Setter
 // cp订单号
-func (r *YoukuOttPayOrderDeleteorderRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // CallbackUrl Setter
 // 回调地址
-func (r *YoukuOttPayOrderDeleteorderRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // Extra Setter
 // 订单无关的其他参数,如埋点统计的utdid, mac地址等
-func (r *YoukuOttPayOrderDeleteorderRequest) SetExtra(extra string) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetExtra(_extra string) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetExtra() string {
-    return r.extra
+    return r._extra
 }
 // OrderType Setter
 // 订单类型，1为连续包月类型,2为取消连续包月
-func (r *YoukuOttPayOrderDeleteorderRequest) SetOrderType(orderType int64) error {
-    r.orderType = orderType
-    r.Set("order_type", orderType)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetOrderType(_orderType int64) error {
+    r._orderType = _orderType
+    r.Set("order_type", _orderType)
     return nil
 }
 
 // OrderType Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetOrderType() int64 {
-    return r.orderType
+    return r._orderType
 }
 // OriginalOrderNo Setter
 // 连续包月原始订单
-func (r *YoukuOttPayOrderDeleteorderRequest) SetOriginalOrderNo(originalOrderNo string) error {
-    r.originalOrderNo = originalOrderNo
-    r.Set("original_order_no", originalOrderNo)
+func (r *YoukuOttPayOrderDeleteorderRequest) SetOriginalOrderNo(_originalOrderNo string) error {
+    r._originalOrderNo = _originalOrderNo
+    r.Set("original_order_no", _originalOrderNo)
     return nil
 }
 
 // OriginalOrderNo Getter
 func (r YoukuOttPayOrderDeleteorderRequest) GetOriginalOrderNo() string {
-    return r.originalOrderNo
+    return r._originalOrderNo
 }

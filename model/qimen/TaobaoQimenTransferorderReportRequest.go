@@ -15,7 +15,7 @@ taobao.qimen.transferorder.report
 type TaobaoQimenTransferorderReportRequest struct {
     model.Params
     // 
-    request   *TaobaoQimenTransferorderReportStruct
+    _request   *TaobaoQimenTransferorderReportStruct
 }
 
 // 初始化TaobaoQimenTransferorderReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenTransferorderReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenTransferorderReportRequest) SetRequest(request *TaobaoQimenTransferorderReportStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenTransferorderReportRequest) SetRequest(_request *TaobaoQimenTransferorderReportStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenTransferorderReportRequest) GetRequest() *TaobaoQimenTransferorderReportStruct {
-    return r.request
+    return r._request
 }

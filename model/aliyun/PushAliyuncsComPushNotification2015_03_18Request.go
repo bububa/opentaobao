@@ -15,49 +15,49 @@ pushNotification
 type PushAliyuncsComPushNotification2015_03_18Request struct {
     model.Params
     // 用户账号列表,以换行区分,仅sendType为3时有效
-    account   string
+    _account   string
     // 自定义的kv结构,开发者扩展用
-    androidExtraMap   string
+    _androidExtraMap   string
     // 通知声音
-    androidMusic   string
+    _androidMusic   string
     // 通知类型 1:震动 2:响铃
-    androidNotifyType   int64
+    _androidNotifyType   int64
     // 打开app指定位置
-    androidOpenActivity   string
+    _androidOpenActivity   string
     // 点击通知后动作
-    androidOpenType   int64
+    _androidOpenType   int64
     // 打开应用,网页
-    androidOpenUrl   string
+    _androidOpenUrl   string
     // 防打扰时长,取值范围为1~23
-    antiHarassDuration   int64
+    _antiHarassDuration   int64
     // 防打扰开始时间点,取值范围为0~23
-    antiHarassStartTime   int64
+    _antiHarassStartTime   int64
     // 应用标识
-    appId   int64
+    _appId   int64
     // 批次编号,用于活动效果统计
-    batchNumber   string
+    _batchNumber   string
     // 设备编号列表,以换行区分,仅sendType为4时有效
-    deviceId   string
+    _deviceId   string
     // 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType&amp;1=1; Andriod设备:deviceType&amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);
-    deviceType   int64
+    _deviceType   int64
     // 自定义的kv结构,开发者扩展用
-    iosExtraMap   string
+    _iosExtraMap   string
     // 角标
-    iosFooter   int64
+    _iosFooter   int64
     // 默认音乐
-    iosMusic   string
+    _iosMusic   string
     // 推送时间,若空表示立即推送,推送时间不能早于当前时间
-    pushTime   string
+    _pushTime   string
     // 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1
-    sendType   int64
+    _sendType   int64
     // 摘要
-    summary   string
+    _summary   string
     // 标签名称,仅支持1个标签,仅sendType为2时有效
-    tag   string
+    _tag   string
     // 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
-    timeout   int64
+    _timeout   int64
     // 标题
-    title   string
+    _title   string
 }
 
 // 初始化PushAliyuncsComPushNotification2015_03_18Request对象
@@ -82,265 +82,265 @@ func (r PushAliyuncsComPushNotification2015_03_18Request) GetApiParams() url.Val
 }
 // Account Setter
 // 用户账号列表,以换行区分,仅sendType为3时有效
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAccount(account string) error {
-    r.account = account
-    r.Set("Account", account)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAccount(_account string) error {
+    r._account = _account
+    r.Set("Account", _account)
     return nil
 }
 
 // Account Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAccount() string {
-    return r.account
+    return r._account
 }
 // AndroidExtraMap Setter
 // 自定义的kv结构,开发者扩展用
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidExtraMap(androidExtraMap string) error {
-    r.androidExtraMap = androidExtraMap
-    r.Set("AndroidExtraMap", androidExtraMap)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidExtraMap(_androidExtraMap string) error {
+    r._androidExtraMap = _androidExtraMap
+    r.Set("AndroidExtraMap", _androidExtraMap)
     return nil
 }
 
 // AndroidExtraMap Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidExtraMap() string {
-    return r.androidExtraMap
+    return r._androidExtraMap
 }
 // AndroidMusic Setter
 // 通知声音
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidMusic(androidMusic string) error {
-    r.androidMusic = androidMusic
-    r.Set("AndroidMusic", androidMusic)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidMusic(_androidMusic string) error {
+    r._androidMusic = _androidMusic
+    r.Set("AndroidMusic", _androidMusic)
     return nil
 }
 
 // AndroidMusic Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidMusic() string {
-    return r.androidMusic
+    return r._androidMusic
 }
 // AndroidNotifyType Setter
 // 通知类型 1:震动 2:响铃
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidNotifyType(androidNotifyType int64) error {
-    r.androidNotifyType = androidNotifyType
-    r.Set("AndroidNotifyType", androidNotifyType)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidNotifyType(_androidNotifyType int64) error {
+    r._androidNotifyType = _androidNotifyType
+    r.Set("AndroidNotifyType", _androidNotifyType)
     return nil
 }
 
 // AndroidNotifyType Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidNotifyType() int64 {
-    return r.androidNotifyType
+    return r._androidNotifyType
 }
 // AndroidOpenActivity Setter
 // 打开app指定位置
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenActivity(androidOpenActivity string) error {
-    r.androidOpenActivity = androidOpenActivity
-    r.Set("AndroidOpenActivity", androidOpenActivity)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenActivity(_androidOpenActivity string) error {
+    r._androidOpenActivity = _androidOpenActivity
+    r.Set("AndroidOpenActivity", _androidOpenActivity)
     return nil
 }
 
 // AndroidOpenActivity Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidOpenActivity() string {
-    return r.androidOpenActivity
+    return r._androidOpenActivity
 }
 // AndroidOpenType Setter
 // 点击通知后动作
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenType(androidOpenType int64) error {
-    r.androidOpenType = androidOpenType
-    r.Set("AndroidOpenType", androidOpenType)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenType(_androidOpenType int64) error {
+    r._androidOpenType = _androidOpenType
+    r.Set("AndroidOpenType", _androidOpenType)
     return nil
 }
 
 // AndroidOpenType Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidOpenType() int64 {
-    return r.androidOpenType
+    return r._androidOpenType
 }
 // AndroidOpenUrl Setter
 // 打开应用,网页
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenUrl(androidOpenUrl string) error {
-    r.androidOpenUrl = androidOpenUrl
-    r.Set("AndroidOpenUrl", androidOpenUrl)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAndroidOpenUrl(_androidOpenUrl string) error {
+    r._androidOpenUrl = _androidOpenUrl
+    r.Set("AndroidOpenUrl", _androidOpenUrl)
     return nil
 }
 
 // AndroidOpenUrl Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAndroidOpenUrl() string {
-    return r.androidOpenUrl
+    return r._androidOpenUrl
 }
 // AntiHarassDuration Setter
 // 防打扰时长,取值范围为1~23
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAntiHarassDuration(antiHarassDuration int64) error {
-    r.antiHarassDuration = antiHarassDuration
-    r.Set("AntiHarassDuration", antiHarassDuration)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAntiHarassDuration(_antiHarassDuration int64) error {
+    r._antiHarassDuration = _antiHarassDuration
+    r.Set("AntiHarassDuration", _antiHarassDuration)
     return nil
 }
 
 // AntiHarassDuration Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAntiHarassDuration() int64 {
-    return r.antiHarassDuration
+    return r._antiHarassDuration
 }
 // AntiHarassStartTime Setter
 // 防打扰开始时间点,取值范围为0~23
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAntiHarassStartTime(antiHarassStartTime int64) error {
-    r.antiHarassStartTime = antiHarassStartTime
-    r.Set("AntiHarassStartTime", antiHarassStartTime)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAntiHarassStartTime(_antiHarassStartTime int64) error {
+    r._antiHarassStartTime = _antiHarassStartTime
+    r.Set("AntiHarassStartTime", _antiHarassStartTime)
     return nil
 }
 
 // AntiHarassStartTime Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAntiHarassStartTime() int64 {
-    return r.antiHarassStartTime
+    return r._antiHarassStartTime
 }
 // AppId Setter
 // 应用标识
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAppId(appId int64) error {
-    r.appId = appId
-    r.Set("AppId", appId)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetAppId(_appId int64) error {
+    r._appId = _appId
+    r.Set("AppId", _appId)
     return nil
 }
 
 // AppId Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetAppId() int64 {
-    return r.appId
+    return r._appId
 }
 // BatchNumber Setter
 // 批次编号,用于活动效果统计
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetBatchNumber(batchNumber string) error {
-    r.batchNumber = batchNumber
-    r.Set("BatchNumber", batchNumber)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetBatchNumber(_batchNumber string) error {
+    r._batchNumber = _batchNumber
+    r.Set("BatchNumber", _batchNumber)
     return nil
 }
 
 // BatchNumber Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetBatchNumber() string {
-    return r.batchNumber
+    return r._batchNumber
 }
 // DeviceId Setter
 // 设备编号列表,以换行区分,仅sendType为4时有效
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("DeviceId", deviceId)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("DeviceId", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // DeviceType Setter
 // 设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType&amp;1=1; Andriod设备:deviceType&amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetDeviceType(deviceType int64) error {
-    r.deviceType = deviceType
-    r.Set("DeviceType", deviceType)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetDeviceType(_deviceType int64) error {
+    r._deviceType = _deviceType
+    r.Set("DeviceType", _deviceType)
     return nil
 }
 
 // DeviceType Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetDeviceType() int64 {
-    return r.deviceType
+    return r._deviceType
 }
 // IosExtraMap Setter
 // 自定义的kv结构,开发者扩展用
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosExtraMap(iosExtraMap string) error {
-    r.iosExtraMap = iosExtraMap
-    r.Set("IosExtraMap", iosExtraMap)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosExtraMap(_iosExtraMap string) error {
+    r._iosExtraMap = _iosExtraMap
+    r.Set("IosExtraMap", _iosExtraMap)
     return nil
 }
 
 // IosExtraMap Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetIosExtraMap() string {
-    return r.iosExtraMap
+    return r._iosExtraMap
 }
 // IosFooter Setter
 // 角标
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosFooter(iosFooter int64) error {
-    r.iosFooter = iosFooter
-    r.Set("IosFooter", iosFooter)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosFooter(_iosFooter int64) error {
+    r._iosFooter = _iosFooter
+    r.Set("IosFooter", _iosFooter)
     return nil
 }
 
 // IosFooter Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetIosFooter() int64 {
-    return r.iosFooter
+    return r._iosFooter
 }
 // IosMusic Setter
 // 默认音乐
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosMusic(iosMusic string) error {
-    r.iosMusic = iosMusic
-    r.Set("IosMusic", iosMusic)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetIosMusic(_iosMusic string) error {
+    r._iosMusic = _iosMusic
+    r.Set("IosMusic", _iosMusic)
     return nil
 }
 
 // IosMusic Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetIosMusic() string {
-    return r.iosMusic
+    return r._iosMusic
 }
 // PushTime Setter
 // 推送时间,若空表示立即推送,推送时间不能早于当前时间
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetPushTime(pushTime string) error {
-    r.pushTime = pushTime
-    r.Set("PushTime", pushTime)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetPushTime(_pushTime string) error {
+    r._pushTime = _pushTime
+    r.Set("PushTime", _pushTime)
     return nil
 }
 
 // PushTime Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetPushTime() string {
-    return r.pushTime
+    return r._pushTime
 }
 // SendType Setter
 // 推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetSendType(sendType int64) error {
-    r.sendType = sendType
-    r.Set("SendType", sendType)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetSendType(_sendType int64) error {
+    r._sendType = _sendType
+    r.Set("SendType", _sendType)
     return nil
 }
 
 // SendType Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetSendType() int64 {
-    return r.sendType
+    return r._sendType
 }
 // Summary Setter
 // 摘要
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetSummary(summary string) error {
-    r.summary = summary
-    r.Set("Summary", summary)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetSummary(_summary string) error {
+    r._summary = _summary
+    r.Set("Summary", _summary)
     return nil
 }
 
 // Summary Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetSummary() string {
-    return r.summary
+    return r._summary
 }
 // Tag Setter
 // 标签名称,仅支持1个标签,仅sendType为2时有效
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTag(tag string) error {
-    r.tag = tag
-    r.Set("Tag", tag)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTag(_tag string) error {
+    r._tag = _tag
+    r.Set("Tag", _tag)
     return nil
 }
 
 // Tag Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetTag() string {
-    return r.tag
+    return r._tag
 }
 // Timeout Setter
 // 离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTimeout(timeout int64) error {
-    r.timeout = timeout
-    r.Set("Timeout", timeout)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTimeout(_timeout int64) error {
+    r._timeout = _timeout
+    r.Set("Timeout", _timeout)
     return nil
 }
 
 // Timeout Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetTimeout() int64 {
-    return r.timeout
+    return r._timeout
 }
 // Title Setter
 // 标题
-func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTitle(title string) error {
-    r.title = title
-    r.Set("Title", title)
+func (r *PushAliyuncsComPushNotification2015_03_18Request) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("Title", _title)
     return nil
 }
 
 // Title Getter
 func (r PushAliyuncsComPushNotification2015_03_18Request) GetTitle() string {
-    return r.title
+    return r._title
 }

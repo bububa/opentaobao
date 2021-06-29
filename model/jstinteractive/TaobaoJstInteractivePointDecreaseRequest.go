@@ -15,9 +15,9 @@ taobao.jst.interactive.point.decrease
 type TaobaoJstInteractivePointDecreaseRequest struct {
     model.Params
     // 扣减的积分值
-    amount   int64
+    _amount   int64
     // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
-    operateCode   string
+    _operateCode   string
 }
 
 // 初始化TaobaoJstInteractivePointDecreaseRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstInteractivePointDecreaseRequest) GetApiParams() url.Values {
 }
 // Amount Setter
 // 扣减的积分值
-func (r *TaobaoJstInteractivePointDecreaseRequest) SetAmount(amount int64) error {
-    r.amount = amount
-    r.Set("amount", amount)
+func (r *TaobaoJstInteractivePointDecreaseRequest) SetAmount(_amount int64) error {
+    r._amount = _amount
+    r.Set("amount", _amount)
     return nil
 }
 
 // Amount Getter
 func (r TaobaoJstInteractivePointDecreaseRequest) GetAmount() int64 {
-    return r.amount
+    return r._amount
 }
 // OperateCode Setter
 // 幂等操作码，要确保唯一性，同一个操作码只能使用一次，避免重复操作
-func (r *TaobaoJstInteractivePointDecreaseRequest) SetOperateCode(operateCode string) error {
-    r.operateCode = operateCode
-    r.Set("operate_code", operateCode)
+func (r *TaobaoJstInteractivePointDecreaseRequest) SetOperateCode(_operateCode string) error {
+    r._operateCode = _operateCode
+    r.Set("operate_code", _operateCode)
     return nil
 }
 
 // OperateCode Getter
 func (r TaobaoJstInteractivePointDecreaseRequest) GetOperateCode() string {
-    return r.operateCode
+    return r._operateCode
 }

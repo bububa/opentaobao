@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.point.operate
 type AlibabaAlscCrmOpenPointOperateRequest struct {
     model.Params
     // 入参
-    paramPointOperateOpenReq   *PointOperateOpenReq
+    _paramPointOperateOpenReq   *PointOperateOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenPointOperateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenPointOperateRequest) GetApiParams() url.Values {
 }
 // ParamPointOperateOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenPointOperateRequest) SetParamPointOperateOpenReq(paramPointOperateOpenReq *PointOperateOpenReq) error {
-    r.paramPointOperateOpenReq = paramPointOperateOpenReq
-    r.Set("param_point_operate_open_req", paramPointOperateOpenReq)
+func (r *AlibabaAlscCrmOpenPointOperateRequest) SetParamPointOperateOpenReq(_paramPointOperateOpenReq *PointOperateOpenReq) error {
+    r._paramPointOperateOpenReq = _paramPointOperateOpenReq
+    r.Set("param_point_operate_open_req", _paramPointOperateOpenReq)
     return nil
 }
 
 // ParamPointOperateOpenReq Getter
 func (r AlibabaAlscCrmOpenPointOperateRequest) GetParamPointOperateOpenReq() *PointOperateOpenReq {
-    return r.paramPointOperateOpenReq
+    return r._paramPointOperateOpenReq
 }

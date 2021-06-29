@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.member.query
 type AlitripMerchantGalaxyMemberQueryRequest struct {
     model.Params
     // 租户身份信息
-    tenantKey   string
+    _tenantKey   string
     // toekn
-    token   string
+    _token   string
 }
 
 // 初始化AlitripMerchantGalaxyMemberQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyMemberQueryRequest) GetApiParams() url.Values {
 }
 // TenantKey Setter
 // 租户身份信息
-func (r *AlitripMerchantGalaxyMemberQueryRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyMemberQueryRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyMemberQueryRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // Token Setter
 // toekn
-func (r *AlitripMerchantGalaxyMemberQueryRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlitripMerchantGalaxyMemberQueryRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlitripMerchantGalaxyMemberQueryRequest) GetToken() string {
-    return r.token
+    return r._token
 }

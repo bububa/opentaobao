@@ -15,9 +15,9 @@ alibaba.wdk.ums.retrieve.confirm
 type AlibabaWdkUmsRetrieveConfirmRequest struct {
     model.Params
     // 店仓code，指的是作业对象，对应一个物理店或仓编码
-    warehouseCode   string
+    _warehouseCode   string
     // 唯一识别码
-    uuid   string
+    _uuid   string
 }
 
 // 初始化AlibabaWdkUmsRetrieveConfirmRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkUmsRetrieveConfirmRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 店仓code，指的是作业对象，对应一个物理店或仓编码
-func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r AlibabaWdkUmsRetrieveConfirmRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }
 // Uuid Setter
 // 唯一识别码
-func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *AlibabaWdkUmsRetrieveConfirmRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r AlibabaWdkUmsRetrieveConfirmRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

@@ -15,7 +15,7 @@ aliyun.industry.tttm.items.sync
 type AliyunIndustryTttmItemsSyncRequest struct {
     model.Params
     // 商品信息
-    syncItems   []ItemInfoDto
+    _syncItems   []ItemInfoDto
 }
 
 // 初始化AliyunIndustryTttmItemsSyncRequest对象
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmItemsSyncRequest) GetApiParams() url.Values {
 }
 // SyncItems Setter
 // 商品信息
-func (r *AliyunIndustryTttmItemsSyncRequest) SetSyncItems(syncItems []ItemInfoDto) error {
-    r.syncItems = syncItems
-    r.Set("sync_items", syncItems)
+func (r *AliyunIndustryTttmItemsSyncRequest) SetSyncItems(_syncItems []ItemInfoDto) error {
+    r._syncItems = _syncItems
+    r.Set("sync_items", _syncItems)
     return nil
 }
 
 // SyncItems Getter
 func (r AliyunIndustryTttmItemsSyncRequest) GetSyncItems() []ItemInfoDto {
-    return r.syncItems
+    return r._syncItems
 }

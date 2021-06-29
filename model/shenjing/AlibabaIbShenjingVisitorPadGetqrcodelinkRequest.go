@@ -15,7 +15,7 @@ pad获取二维码链接。扫码录入人脸。
 type AlibabaIbShenjingVisitorPadGetqrcodelinkRequest struct {
     model.Params
     // 终端id
-    termId   string
+    _termId   string
 }
 
 // 初始化AlibabaIbShenjingVisitorPadGetqrcodelinkRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetApiParams() url.Valu
 }
 // TermId Setter
 // 终端id
-func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) SetTermId(termId string) error {
-    r.termId = termId
-    r.Set("term_id", termId)
+func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) SetTermId(_termId string) error {
+    r._termId = _termId
+    r.Set("term_id", _termId)
     return nil
 }
 
 // TermId Getter
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetTermId() string {
-    return r.termId
+    return r._termId
 }

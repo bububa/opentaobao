@@ -15,11 +15,11 @@ alibaba.alihealth.drugtrace.top.yljg.query.relation
 type AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
     // 接口调用企业的唯一标识（接口调用者）
-    refEntId   string
+    _refEntId   string
     // 目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）
-    desRefEntId   string
+    _desRefEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) GetApiParams() url
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // DesRefEntId Setter
 // 目标企业唯一标识（为哪个企业查询，一般与入参ref_ent_id一样）
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetDesRefEntId(desRefEntId string) error {
-    r.desRefEntId = desRefEntId
-    r.Set("des_ref_ent_id", desRefEntId)
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) SetDesRefEntId(_desRefEntId string) error {
+    r._desRefEntId = _desRefEntId
+    r.Set("des_ref_ent_id", _desRefEntId)
     return nil
 }
 
 // DesRefEntId Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryRelationRequest) GetDesRefEntId() string {
-    return r.desRefEntId
+    return r._desRefEntId
 }

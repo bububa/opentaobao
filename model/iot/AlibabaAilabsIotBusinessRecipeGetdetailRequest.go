@@ -15,9 +15,9 @@ alibaba.ailabs.iot.business.recipe.getdetail
 type AlibabaAilabsIotBusinessRecipeGetdetailRequest struct {
     model.Params
     // 行业食谱id
-    businessRecipeId   int64
+    _businessRecipeId   int64
     // 开放账号id
-    openAccountId   string
+    _openAccountId   string
 }
 
 // 初始化AlibabaAilabsIotBusinessRecipeGetdetailRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsIotBusinessRecipeGetdetailRequest) GetApiParams() url.Value
 }
 // BusinessRecipeId Setter
 // 行业食谱id
-func (r *AlibabaAilabsIotBusinessRecipeGetdetailRequest) SetBusinessRecipeId(businessRecipeId int64) error {
-    r.businessRecipeId = businessRecipeId
-    r.Set("business_recipe_id", businessRecipeId)
+func (r *AlibabaAilabsIotBusinessRecipeGetdetailRequest) SetBusinessRecipeId(_businessRecipeId int64) error {
+    r._businessRecipeId = _businessRecipeId
+    r.Set("business_recipe_id", _businessRecipeId)
     return nil
 }
 
 // BusinessRecipeId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetdetailRequest) GetBusinessRecipeId() int64 {
-    return r.businessRecipeId
+    return r._businessRecipeId
 }
 // OpenAccountId Setter
 // 开放账号id
-func (r *AlibabaAilabsIotBusinessRecipeGetdetailRequest) SetOpenAccountId(openAccountId string) error {
-    r.openAccountId = openAccountId
-    r.Set("open_account_id", openAccountId)
+func (r *AlibabaAilabsIotBusinessRecipeGetdetailRequest) SetOpenAccountId(_openAccountId string) error {
+    r._openAccountId = _openAccountId
+    r.Set("open_account_id", _openAccountId)
     return nil
 }
 
 // OpenAccountId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetdetailRequest) GetOpenAccountId() string {
-    return r.openAccountId
+    return r._openAccountId
 }

@@ -15,11 +15,11 @@ alibaba.mos.finance.bankinfo.querybank
 type AlibabaMosFinanceBankinfoQuerybankRequest struct {
     model.Params
     // 供应商id
-    supplierId   string
+    _supplierId   string
     // 门店号
-    storeNo   string
+    _storeNo   string
     // 签约主体id
-    companyId   string
+    _companyId   string
 }
 
 // 初始化AlibabaMosFinanceBankinfoQuerybankRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMosFinanceBankinfoQuerybankRequest) GetApiParams() url.Values {
 }
 // SupplierId Setter
 // 供应商id
-func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetSupplierId(supplierId string) error {
-    r.supplierId = supplierId
-    r.Set("supplier_id", supplierId)
+func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetSupplierId(_supplierId string) error {
+    r._supplierId = _supplierId
+    r.Set("supplier_id", _supplierId)
     return nil
 }
 
 // SupplierId Getter
 func (r AlibabaMosFinanceBankinfoQuerybankRequest) GetSupplierId() string {
-    return r.supplierId
+    return r._supplierId
 }
 // StoreNo Setter
 // 门店号
-func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMosFinanceBankinfoQuerybankRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }
 // CompanyId Setter
 // 签约主体id
-func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetCompanyId(companyId string) error {
-    r.companyId = companyId
-    r.Set("company_id", companyId)
+func (r *AlibabaMosFinanceBankinfoQuerybankRequest) SetCompanyId(_companyId string) error {
+    r._companyId = _companyId
+    r.Set("company_id", _companyId)
     return nil
 }
 
 // CompanyId Getter
 func (r AlibabaMosFinanceBankinfoQuerybankRequest) GetCompanyId() string {
-    return r.companyId
+    return r._companyId
 }

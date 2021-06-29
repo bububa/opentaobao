@@ -15,9 +15,9 @@ taobao.alitrip.ie.agent.refund.refundmoney
 type TaobaoAlitripIeAgentRefundRefundmoneyRequest struct {
     model.Params
     // 退票申请单id
-    applyId   int64
+    _applyId   int64
     // 代理商id
-    agentId   int64
+    _agentId   int64
 }
 
 // 初始化TaobaoAlitripIeAgentRefundRefundmoneyRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripIeAgentRefundRefundmoneyRequest) GetApiParams() url.Values 
 }
 // ApplyId Setter
 // 退票申请单id
-func (r *TaobaoAlitripIeAgentRefundRefundmoneyRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *TaobaoAlitripIeAgentRefundRefundmoneyRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r TaobaoAlitripIeAgentRefundRefundmoneyRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }
 // AgentId Setter
 // 代理商id
-func (r *TaobaoAlitripIeAgentRefundRefundmoneyRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *TaobaoAlitripIeAgentRefundRefundmoneyRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r TaobaoAlitripIeAgentRefundRefundmoneyRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }

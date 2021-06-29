@@ -15,11 +15,11 @@ alibaba.alsc.merchant.ext.ticket.refund
 type AlibabaAlscMerchantExtTicketRefundRequest struct {
     model.Params
     // 券核销流水号，针对该次核销发起售后退操作
-    transId   string
+    _transId   string
     // 外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）
-    ticketRequestId   string
+    _ticketRequestId   string
     // 凭证码，包括内部凭证码和外部凭证码，内部凭证码为12位，纯数字，且唯一不重复
-    ticketCode   string
+    _ticketCode   string
 }
 
 // 初始化AlibabaAlscMerchantExtTicketRefundRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlscMerchantExtTicketRefundRequest) GetApiParams() url.Values {
 }
 // TransId Setter
 // 券核销流水号，针对该次核销发起售后退操作
-func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTransId(transId string) error {
-    r.transId = transId
-    r.Set("trans_id", transId)
+func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTransId(_transId string) error {
+    r._transId = _transId
+    r.Set("trans_id", _transId)
     return nil
 }
 
 // TransId Getter
 func (r AlibabaAlscMerchantExtTicketRefundRequest) GetTransId() string {
-    return r.transId
+    return r._transId
 }
 // TicketRequestId Setter
 // 外部请求号，支持英文字母和数字，由开发者自行定义（不允许重复）
-func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTicketRequestId(ticketRequestId string) error {
-    r.ticketRequestId = ticketRequestId
-    r.Set("ticket_request_id", ticketRequestId)
+func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTicketRequestId(_ticketRequestId string) error {
+    r._ticketRequestId = _ticketRequestId
+    r.Set("ticket_request_id", _ticketRequestId)
     return nil
 }
 
 // TicketRequestId Getter
 func (r AlibabaAlscMerchantExtTicketRefundRequest) GetTicketRequestId() string {
-    return r.ticketRequestId
+    return r._ticketRequestId
 }
 // TicketCode Setter
 // 凭证码，包括内部凭证码和外部凭证码，内部凭证码为12位，纯数字，且唯一不重复
-func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTicketCode(ticketCode string) error {
-    r.ticketCode = ticketCode
-    r.Set("ticket_code", ticketCode)
+func (r *AlibabaAlscMerchantExtTicketRefundRequest) SetTicketCode(_ticketCode string) error {
+    r._ticketCode = _ticketCode
+    r.Set("ticket_code", _ticketCode)
     return nil
 }
 
 // TicketCode Getter
 func (r AlibabaAlscMerchantExtTicketRefundRequest) GetTicketCode() string {
-    return r.ticketCode
+    return r._ticketCode
 }

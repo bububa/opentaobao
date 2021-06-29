@@ -15,11 +15,11 @@ Schema体系发布一个产品
 type TmallProductSchemaAddRequest struct {
     model.Params
     // 商品发布的目标类目，必须是叶子类目
-    categoryId   int64
+    _categoryId   int64
     // 品牌ID
-    brandId   int64
+    _brandId   int64
     // 根据tmall.product.add.schema.get生成的产品发布规则入参数据
-    xmlData   string
+    _xmlData   string
 }
 
 // 初始化TmallProductSchemaAddRequest对象
@@ -44,37 +44,37 @@ func (r TmallProductSchemaAddRequest) GetApiParams() url.Values {
 }
 // CategoryId Setter
 // 商品发布的目标类目，必须是叶子类目
-func (r *TmallProductSchemaAddRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TmallProductSchemaAddRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TmallProductSchemaAddRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // BrandId Setter
 // 品牌ID
-func (r *TmallProductSchemaAddRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *TmallProductSchemaAddRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r TmallProductSchemaAddRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }
 // XmlData Setter
 // 根据tmall.product.add.schema.get生成的产品发布规则入参数据
-func (r *TmallProductSchemaAddRequest) SetXmlData(xmlData string) error {
-    r.xmlData = xmlData
-    r.Set("xml_data", xmlData)
+func (r *TmallProductSchemaAddRequest) SetXmlData(_xmlData string) error {
+    r._xmlData = _xmlData
+    r.Set("xml_data", _xmlData)
     return nil
 }
 
 // XmlData Getter
 func (r TmallProductSchemaAddRequest) GetXmlData() string {
-    return r.xmlData
+    return r._xmlData
 }

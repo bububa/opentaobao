@@ -15,7 +15,7 @@ alibaba.icbu.category.level.attr.get
 type AlibabaIcbuCategoryLevelAttrGetRequest struct {
     model.Params
     // 属性值request对象
-    attributeValueRequest   *LevelAttributeValueRequest
+    _attributeValueRequest   *LevelAttributeValueRequest
 }
 
 // 初始化AlibabaIcbuCategoryLevelAttrGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryLevelAttrGetRequest) GetApiParams() url.Values {
 }
 // AttributeValueRequest Setter
 // 属性值request对象
-func (r *AlibabaIcbuCategoryLevelAttrGetRequest) SetAttributeValueRequest(attributeValueRequest *LevelAttributeValueRequest) error {
-    r.attributeValueRequest = attributeValueRequest
-    r.Set("attribute_value_request", attributeValueRequest)
+func (r *AlibabaIcbuCategoryLevelAttrGetRequest) SetAttributeValueRequest(_attributeValueRequest *LevelAttributeValueRequest) error {
+    r._attributeValueRequest = _attributeValueRequest
+    r.Set("attribute_value_request", _attributeValueRequest)
     return nil
 }
 
 // AttributeValueRequest Getter
 func (r AlibabaIcbuCategoryLevelAttrGetRequest) GetAttributeValueRequest() *LevelAttributeValueRequest {
-    return r.attributeValueRequest
+    return r._attributeValueRequest
 }

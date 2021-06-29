@@ -15,9 +15,9 @@ alibaba.security.jaq.app.shield
 type AlibabaSecurityJaqAppShieldRequest struct {
     model.Params
     // 待加固的应用信息
-    appInfo   *ScanAppInfo
+    _appInfo   *ScanAppInfo
     // 渠道列表,多渠道加固时填写
-    channel   *ShieldChannel
+    _channel   *ShieldChannel
 }
 
 // 初始化AlibabaSecurityJaqAppShieldRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqAppShieldRequest) GetApiParams() url.Values {
 }
 // AppInfo Setter
 // 待加固的应用信息
-func (r *AlibabaSecurityJaqAppShieldRequest) SetAppInfo(appInfo *ScanAppInfo) error {
-    r.appInfo = appInfo
-    r.Set("app_info", appInfo)
+func (r *AlibabaSecurityJaqAppShieldRequest) SetAppInfo(_appInfo *ScanAppInfo) error {
+    r._appInfo = _appInfo
+    r.Set("app_info", _appInfo)
     return nil
 }
 
 // AppInfo Getter
 func (r AlibabaSecurityJaqAppShieldRequest) GetAppInfo() *ScanAppInfo {
-    return r.appInfo
+    return r._appInfo
 }
 // Channel Setter
 // 渠道列表,多渠道加固时填写
-func (r *AlibabaSecurityJaqAppShieldRequest) SetChannel(channel *ShieldChannel) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaSecurityJaqAppShieldRequest) SetChannel(_channel *ShieldChannel) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaSecurityJaqAppShieldRequest) GetChannel() *ShieldChannel {
-    return r.channel
+    return r._channel
 }

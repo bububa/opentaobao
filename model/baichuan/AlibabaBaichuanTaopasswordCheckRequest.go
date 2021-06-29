@@ -15,9 +15,9 @@ alibaba.baichuan.taopassword.check
 type AlibabaBaichuanTaopasswordCheckRequest struct {
     model.Params
     // 参数DTO
-    paramDto   *ParamDto
+    _paramDto   *ParamDto
     // 系统自动生成
-    clientInfo   *RichClientInfo
+    _clientInfo   *RichClientInfo
 }
 
 // 初始化AlibabaBaichuanTaopasswordCheckRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaBaichuanTaopasswordCheckRequest) GetApiParams() url.Values {
 }
 // ParamDto Setter
 // 参数DTO
-func (r *AlibabaBaichuanTaopasswordCheckRequest) SetParamDto(paramDto *ParamDto) error {
-    r.paramDto = paramDto
-    r.Set("param_dto", paramDto)
+func (r *AlibabaBaichuanTaopasswordCheckRequest) SetParamDto(_paramDto *ParamDto) error {
+    r._paramDto = _paramDto
+    r.Set("param_dto", _paramDto)
     return nil
 }
 
 // ParamDto Getter
 func (r AlibabaBaichuanTaopasswordCheckRequest) GetParamDto() *ParamDto {
-    return r.paramDto
+    return r._paramDto
 }
 // ClientInfo Setter
 // 系统自动生成
-func (r *AlibabaBaichuanTaopasswordCheckRequest) SetClientInfo(clientInfo *RichClientInfo) error {
-    r.clientInfo = clientInfo
-    r.Set("client_info", clientInfo)
+func (r *AlibabaBaichuanTaopasswordCheckRequest) SetClientInfo(_clientInfo *RichClientInfo) error {
+    r._clientInfo = _clientInfo
+    r.Set("client_info", _clientInfo)
     return nil
 }
 
 // ClientInfo Getter
 func (r AlibabaBaichuanTaopasswordCheckRequest) GetClientInfo() *RichClientInfo {
-    return r.clientInfo
+    return r._clientInfo
 }

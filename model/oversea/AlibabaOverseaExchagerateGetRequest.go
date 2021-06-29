@@ -15,11 +15,11 @@ alibaba.oversea.exchagerate.get
 type AlibabaOverseaExchagerateGetRequest struct {
     model.Params
     // 业务类型
-    bizCode   string
+    _bizCode   string
     // 原始币种
-    baseCode   string
+    _baseCode   string
     // 目标币种
-    targetCode   string
+    _targetCode   string
 }
 
 // 初始化AlibabaOverseaExchagerateGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaOverseaExchagerateGetRequest) GetApiParams() url.Values {
 }
 // BizCode Setter
 // 业务类型
-func (r *AlibabaOverseaExchagerateGetRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *AlibabaOverseaExchagerateGetRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r AlibabaOverseaExchagerateGetRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }
 // BaseCode Setter
 // 原始币种
-func (r *AlibabaOverseaExchagerateGetRequest) SetBaseCode(baseCode string) error {
-    r.baseCode = baseCode
-    r.Set("base_code", baseCode)
+func (r *AlibabaOverseaExchagerateGetRequest) SetBaseCode(_baseCode string) error {
+    r._baseCode = _baseCode
+    r.Set("base_code", _baseCode)
     return nil
 }
 
 // BaseCode Getter
 func (r AlibabaOverseaExchagerateGetRequest) GetBaseCode() string {
-    return r.baseCode
+    return r._baseCode
 }
 // TargetCode Setter
 // 目标币种
-func (r *AlibabaOverseaExchagerateGetRequest) SetTargetCode(targetCode string) error {
-    r.targetCode = targetCode
-    r.Set("target_code", targetCode)
+func (r *AlibabaOverseaExchagerateGetRequest) SetTargetCode(_targetCode string) error {
+    r._targetCode = _targetCode
+    r.Set("target_code", _targetCode)
     return nil
 }
 
 // TargetCode Getter
 func (r AlibabaOverseaExchagerateGetRequest) GetTargetCode() string {
-    return r.targetCode
+    return r._targetCode
 }

@@ -15,7 +15,7 @@ alibaba.lst.bm.store.update
 type AlibabaLstBmStoreUpdateRequest struct {
     model.Params
     // 门店数据模型
-    openStoreDto   *LstTopOpenStoreDto
+    _openStoreDto   *LstTopOpenStoreDto
 }
 
 // 初始化AlibabaLstBmStoreUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstBmStoreUpdateRequest) GetApiParams() url.Values {
 }
 // OpenStoreDto Setter
 // 门店数据模型
-func (r *AlibabaLstBmStoreUpdateRequest) SetOpenStoreDto(openStoreDto *LstTopOpenStoreDto) error {
-    r.openStoreDto = openStoreDto
-    r.Set("open_store_dto", openStoreDto)
+func (r *AlibabaLstBmStoreUpdateRequest) SetOpenStoreDto(_openStoreDto *LstTopOpenStoreDto) error {
+    r._openStoreDto = _openStoreDto
+    r.Set("open_store_dto", _openStoreDto)
     return nil
 }
 
 // OpenStoreDto Getter
 func (r AlibabaLstBmStoreUpdateRequest) GetOpenStoreDto() *LstTopOpenStoreDto {
-    return r.openStoreDto
+    return r._openStoreDto
 }

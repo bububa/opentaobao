@@ -15,11 +15,11 @@ taobao.vmarket.eticket.auth.beforeconsume
 type TaobaoVmarketEticketAuthBeforeconsumeRequest struct {
     model.Params
     // 核销的码，只支持单个码，多个码核销需要多次调用
-    verifyCode   string
+    _verifyCode   string
     // 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
-    operatorid   string
+    _operatorid   string
     // 网点ID,网点授权核销时，必须传入；其他核销方式可不传
-    storeid   string
+    _storeid   string
 }
 
 // 初始化TaobaoVmarketEticketAuthBeforeconsumeRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoVmarketEticketAuthBeforeconsumeRequest) GetApiParams() url.Values 
 }
 // VerifyCode Setter
 // 核销的码，只支持单个码，多个码核销需要多次调用
-func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetVerifyCode(verifyCode string) error {
-    r.verifyCode = verifyCode
-    r.Set("verify_code", verifyCode)
+func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetVerifyCode(_verifyCode string) error {
+    r._verifyCode = _verifyCode
+    r.Set("verify_code", _verifyCode)
     return nil
 }
 
 // VerifyCode Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeRequest) GetVerifyCode() string {
-    return r.verifyCode
+    return r._verifyCode
 }
 // Operatorid Setter
 // 核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID
-func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetOperatorid(operatorid string) error {
-    r.operatorid = operatorid
-    r.Set("operatorid", operatorid)
+func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetOperatorid(_operatorid string) error {
+    r._operatorid = _operatorid
+    r.Set("operatorid", _operatorid)
     return nil
 }
 
 // Operatorid Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeRequest) GetOperatorid() string {
-    return r.operatorid
+    return r._operatorid
 }
 // Storeid Setter
 // 网点ID,网点授权核销时，必须传入；其他核销方式可不传
-func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetStoreid(storeid string) error {
-    r.storeid = storeid
-    r.Set("storeid", storeid)
+func (r *TaobaoVmarketEticketAuthBeforeconsumeRequest) SetStoreid(_storeid string) error {
+    r._storeid = _storeid
+    r.Set("storeid", _storeid)
     return nil
 }
 
 // Storeid Getter
 func (r TaobaoVmarketEticketAuthBeforeconsumeRequest) GetStoreid() string {
-    return r.storeid
+    return r._storeid
 }

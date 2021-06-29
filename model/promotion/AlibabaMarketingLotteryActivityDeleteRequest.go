@@ -15,7 +15,7 @@ alibaba.marketing.lottery.activity.delete
 type AlibabaMarketingLotteryActivityDeleteRequest struct {
     model.Params
     // 抽奖活动删除对象
-    lotteryActivityDelete   *LotteryActivityDeleteDto
+    _lotteryActivityDelete   *LotteryActivityDeleteDto
 }
 
 // 初始化AlibabaMarketingLotteryActivityDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityDeleteRequest) GetApiParams() url.Values 
 }
 // LotteryActivityDelete Setter
 // 抽奖活动删除对象
-func (r *AlibabaMarketingLotteryActivityDeleteRequest) SetLotteryActivityDelete(lotteryActivityDelete *LotteryActivityDeleteDto) error {
-    r.lotteryActivityDelete = lotteryActivityDelete
-    r.Set("lottery_activity_delete", lotteryActivityDelete)
+func (r *AlibabaMarketingLotteryActivityDeleteRequest) SetLotteryActivityDelete(_lotteryActivityDelete *LotteryActivityDeleteDto) error {
+    r._lotteryActivityDelete = _lotteryActivityDelete
+    r.Set("lottery_activity_delete", _lotteryActivityDelete)
     return nil
 }
 
 // LotteryActivityDelete Getter
 func (r AlibabaMarketingLotteryActivityDeleteRequest) GetLotteryActivityDelete() *LotteryActivityDeleteDto {
-    return r.lotteryActivityDelete
+    return r._lotteryActivityDelete
 }

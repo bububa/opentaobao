@@ -15,7 +15,7 @@ alibaba.wdk.trade.order.balance.bill.query
 type AlibabaWdkTradeOrderBalanceBillQueryRequest struct {
     model.Params
     // 入参
-    orderBalanceBillRequest   *OrderBalanceBillRequest
+    _orderBalanceBillRequest   *OrderBalanceBillRequest
 }
 
 // 初始化AlibabaWdkTradeOrderBalanceBillQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkTradeOrderBalanceBillQueryRequest) GetApiParams() url.Values {
 }
 // OrderBalanceBillRequest Setter
 // 入参
-func (r *AlibabaWdkTradeOrderBalanceBillQueryRequest) SetOrderBalanceBillRequest(orderBalanceBillRequest *OrderBalanceBillRequest) error {
-    r.orderBalanceBillRequest = orderBalanceBillRequest
-    r.Set("order_balance_bill_request", orderBalanceBillRequest)
+func (r *AlibabaWdkTradeOrderBalanceBillQueryRequest) SetOrderBalanceBillRequest(_orderBalanceBillRequest *OrderBalanceBillRequest) error {
+    r._orderBalanceBillRequest = _orderBalanceBillRequest
+    r.Set("order_balance_bill_request", _orderBalanceBillRequest)
     return nil
 }
 
 // OrderBalanceBillRequest Getter
 func (r AlibabaWdkTradeOrderBalanceBillQueryRequest) GetOrderBalanceBillRequest() *OrderBalanceBillRequest {
-    return r.orderBalanceBillRequest
+    return r._orderBalanceBillRequest
 }

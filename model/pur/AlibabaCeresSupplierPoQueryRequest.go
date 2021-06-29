@@ -15,11 +15,11 @@ alibaba.ceres.supplier.po.query
 type AlibabaCeresSupplierPoQueryRequest struct {
     model.Params
     // 订单创建日期开始时间
-    startDate   string
+    _startDate   string
     // 订单创建日期结束时间
-    endDate   string
+    _endDate   string
     // 订单状态
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaCeresSupplierPoQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaCeresSupplierPoQueryRequest) GetApiParams() url.Values {
 }
 // StartDate Setter
 // 订单创建日期开始时间
-func (r *AlibabaCeresSupplierPoQueryRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *AlibabaCeresSupplierPoQueryRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r AlibabaCeresSupplierPoQueryRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 订单创建日期结束时间
-func (r *AlibabaCeresSupplierPoQueryRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaCeresSupplierPoQueryRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaCeresSupplierPoQueryRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // Status Setter
 // 订单状态
-func (r *AlibabaCeresSupplierPoQueryRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaCeresSupplierPoQueryRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaCeresSupplierPoQueryRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

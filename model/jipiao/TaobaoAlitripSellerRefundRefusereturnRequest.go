@@ -15,9 +15,9 @@ taobao.alitrip.seller.refund.refusereturn
 type TaobaoAlitripSellerRefundRefusereturnRequest struct {
     model.Params
     // 申请单ID
-    applyId   int64
+    _applyId   int64
     // 拒绝理由
-    reason   string
+    _reason   string
 }
 
 // 初始化TaobaoAlitripSellerRefundRefusereturnRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAlitripSellerRefundRefusereturnRequest) GetApiParams() url.Values 
 }
 // ApplyId Setter
 // 申请单ID
-func (r *TaobaoAlitripSellerRefundRefusereturnRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *TaobaoAlitripSellerRefundRefusereturnRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r TaobaoAlitripSellerRefundRefusereturnRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }
 // Reason Setter
 // 拒绝理由
-func (r *TaobaoAlitripSellerRefundRefusereturnRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *TaobaoAlitripSellerRefundRefusereturnRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r TaobaoAlitripSellerRefundRefusereturnRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }

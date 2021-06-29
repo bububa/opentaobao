@@ -15,7 +15,7 @@ alibaba.campus.devicehub.openapi.reportdata
 type AlibabaCampusDevicehubOpenapiReportdataRequest struct {
     model.Params
     // 自动生成
-    deviceEventData   *DeviceReportEventDTO
+    _deviceEventData   *DeviceReportEventDTO
 }
 
 // 初始化AlibabaCampusDevicehubOpenapiReportdataRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetApiParams() url.Value
 }
 // DeviceEventData Setter
 // 自动生成
-func (r *AlibabaCampusDevicehubOpenapiReportdataRequest) SetDeviceEventData(deviceEventData *DeviceReportEventDTO) error {
-    r.deviceEventData = deviceEventData
-    r.Set("device_event_data", deviceEventData)
+func (r *AlibabaCampusDevicehubOpenapiReportdataRequest) SetDeviceEventData(_deviceEventData *DeviceReportEventDTO) error {
+    r._deviceEventData = _deviceEventData
+    r.Set("device_event_data", _deviceEventData)
     return nil
 }
 
 // DeviceEventData Getter
 func (r AlibabaCampusDevicehubOpenapiReportdataRequest) GetDeviceEventData() *DeviceReportEventDTO {
-    return r.deviceEventData
+    return r._deviceEventData
 }

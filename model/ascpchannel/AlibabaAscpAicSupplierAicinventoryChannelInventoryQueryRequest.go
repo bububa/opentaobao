@@ -15,7 +15,7 @@ alibaba.ascp.aic.supplier.aicinventory.channel.inventory.query
 type AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest struct {
     model.Params
     // 商家仓库存查询请求参数
-    merchantInventoryQueryRequest   *MerchantInventoryQuery
+    _merchantInventoryQueryRequest   *MerchantInventoryQuery
 }
 
 // 初始化AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest) GetApiPa
 }
 // MerchantInventoryQueryRequest Setter
 // 商家仓库存查询请求参数
-func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest) SetMerchantInventoryQueryRequest(merchantInventoryQueryRequest *MerchantInventoryQuery) error {
-    r.merchantInventoryQueryRequest = merchantInventoryQueryRequest
-    r.Set("merchant_inventory_query_request", merchantInventoryQueryRequest)
+func (r *AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest) SetMerchantInventoryQueryRequest(_merchantInventoryQueryRequest *MerchantInventoryQuery) error {
+    r._merchantInventoryQueryRequest = _merchantInventoryQueryRequest
+    r.Set("merchant_inventory_query_request", _merchantInventoryQueryRequest)
     return nil
 }
 
 // MerchantInventoryQueryRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryChannelInventoryQueryRequest) GetMerchantInventoryQueryRequest() *MerchantInventoryQuery {
-    return r.merchantInventoryQueryRequest
+    return r._merchantInventoryQueryRequest
 }

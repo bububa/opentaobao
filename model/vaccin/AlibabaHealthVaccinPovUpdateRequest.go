@@ -15,17 +15,17 @@ ISV 将疫苗的接种点信息同步到免疫规划中心，提醒用户接种�
 type AlibabaHealthVaccinPovUpdateRequest struct {
     model.Params
     // 接种点联系电话
-    telephone   string
+    _telephone   string
     // 接种点具体地址
-    address   string
+    _address   string
     // 接种点介绍
-    description   string
+    _description   string
     // 接种点编码
-    povNo   string
+    _povNo   string
     // 接种点名称
-    povName   string
+    _povName   string
     // 服务时间
-    businessTime   string
+    _businessTime   string
 }
 
 // 初始化AlibabaHealthVaccinPovUpdateRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaHealthVaccinPovUpdateRequest) GetApiParams() url.Values {
 }
 // Telephone Setter
 // 接种点联系电话
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetTelephone(telephone string) error {
-    r.telephone = telephone
-    r.Set("telephone", telephone)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetTelephone(_telephone string) error {
+    r._telephone = _telephone
+    r.Set("telephone", _telephone)
     return nil
 }
 
 // Telephone Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetTelephone() string {
-    return r.telephone
+    return r._telephone
 }
 // Address Setter
 // 接种点具体地址
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetAddress(address string) error {
-    r.address = address
-    r.Set("address", address)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetAddress(_address string) error {
+    r._address = _address
+    r.Set("address", _address)
     return nil
 }
 
 // Address Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetAddress() string {
-    return r.address
+    return r._address
 }
 // Description Setter
 // 接种点介绍
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetDescription(description string) error {
-    r.description = description
-    r.Set("description", description)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetDescription(_description string) error {
+    r._description = _description
+    r.Set("description", _description)
     return nil
 }
 
 // Description Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetDescription() string {
-    return r.description
+    return r._description
 }
 // PovNo Setter
 // 接种点编码
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetPovNo(povNo string) error {
-    r.povNo = povNo
-    r.Set("pov_no", povNo)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetPovNo(_povNo string) error {
+    r._povNo = _povNo
+    r.Set("pov_no", _povNo)
     return nil
 }
 
 // PovNo Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetPovNo() string {
-    return r.povNo
+    return r._povNo
 }
 // PovName Setter
 // 接种点名称
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetPovName(povName string) error {
-    r.povName = povName
-    r.Set("pov_name", povName)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetPovName(_povName string) error {
+    r._povName = _povName
+    r.Set("pov_name", _povName)
     return nil
 }
 
 // PovName Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetPovName() string {
-    return r.povName
+    return r._povName
 }
 // BusinessTime Setter
 // 服务时间
-func (r *AlibabaHealthVaccinPovUpdateRequest) SetBusinessTime(businessTime string) error {
-    r.businessTime = businessTime
-    r.Set("business_time", businessTime)
+func (r *AlibabaHealthVaccinPovUpdateRequest) SetBusinessTime(_businessTime string) error {
+    r._businessTime = _businessTime
+    r.Set("business_time", _businessTime)
     return nil
 }
 
 // BusinessTime Getter
 func (r AlibabaHealthVaccinPovUpdateRequest) GetBusinessTime() string {
-    return r.businessTime
+    return r._businessTime
 }

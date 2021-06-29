@@ -15,7 +15,7 @@ alibaba.ascp.channel.sales.order.create
 type AlibabaAscpChannelSalesOrderCreateRequest struct {
     model.Params
     // 请求参数
-    createOrderRequest   *ExternalCreateSalesOrderRequest
+    _createOrderRequest   *ExternalCreateSalesOrderRequest
 }
 
 // 初始化AlibabaAscpChannelSalesOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelSalesOrderCreateRequest) GetApiParams() url.Values {
 }
 // CreateOrderRequest Setter
 // 请求参数
-func (r *AlibabaAscpChannelSalesOrderCreateRequest) SetCreateOrderRequest(createOrderRequest *ExternalCreateSalesOrderRequest) error {
-    r.createOrderRequest = createOrderRequest
-    r.Set("create_order_request", createOrderRequest)
+func (r *AlibabaAscpChannelSalesOrderCreateRequest) SetCreateOrderRequest(_createOrderRequest *ExternalCreateSalesOrderRequest) error {
+    r._createOrderRequest = _createOrderRequest
+    r.Set("create_order_request", _createOrderRequest)
     return nil
 }
 
 // CreateOrderRequest Getter
 func (r AlibabaAscpChannelSalesOrderCreateRequest) GetCreateOrderRequest() *ExternalCreateSalesOrderRequest {
-    return r.createOrderRequest
+    return r._createOrderRequest
 }

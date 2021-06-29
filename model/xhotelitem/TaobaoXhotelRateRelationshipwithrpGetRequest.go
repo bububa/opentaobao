@@ -15,9 +15,9 @@ taobao.xhotel.rate.relationshipwithrp.get
 type TaobaoXhotelRateRelationshipwithrpGetRequest struct {
     model.Params
     // 宝贝的gid
-    gid   int64
+    _gid   int64
     // 页数，可根据此值展示某页的数据。不填默认为1
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoXhotelRateRelationshipwithrpGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoXhotelRateRelationshipwithrpGetRequest) GetApiParams() url.Values 
 }
 // Gid Setter
 // 宝贝的gid
-func (r *TaobaoXhotelRateRelationshipwithrpGetRequest) SetGid(gid int64) error {
-    r.gid = gid
-    r.Set("gid", gid)
+func (r *TaobaoXhotelRateRelationshipwithrpGetRequest) SetGid(_gid int64) error {
+    r._gid = _gid
+    r.Set("gid", _gid)
     return nil
 }
 
 // Gid Getter
 func (r TaobaoXhotelRateRelationshipwithrpGetRequest) GetGid() int64 {
-    return r.gid
+    return r._gid
 }
 // PageNo Setter
 // 页数，可根据此值展示某页的数据。不填默认为1
-func (r *TaobaoXhotelRateRelationshipwithrpGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoXhotelRateRelationshipwithrpGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoXhotelRateRelationshipwithrpGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

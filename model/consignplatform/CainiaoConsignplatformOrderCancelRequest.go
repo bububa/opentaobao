@@ -15,7 +15,7 @@ cainiao.consignplatform.order.cancel
 type CainiaoConsignplatformOrderCancelRequest struct {
     model.Params
     // 取消参数
-    cancelRequest   *OrderCancelRequest
+    _cancelRequest   *OrderCancelRequest
 }
 
 // 初始化CainiaoConsignplatformOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoConsignplatformOrderCancelRequest) GetApiParams() url.Values {
 }
 // CancelRequest Setter
 // 取消参数
-func (r *CainiaoConsignplatformOrderCancelRequest) SetCancelRequest(cancelRequest *OrderCancelRequest) error {
-    r.cancelRequest = cancelRequest
-    r.Set("cancel_request", cancelRequest)
+func (r *CainiaoConsignplatformOrderCancelRequest) SetCancelRequest(_cancelRequest *OrderCancelRequest) error {
+    r._cancelRequest = _cancelRequest
+    r.Set("cancel_request", _cancelRequest)
     return nil
 }
 
 // CancelRequest Getter
 func (r CainiaoConsignplatformOrderCancelRequest) GetCancelRequest() *OrderCancelRequest {
-    return r.cancelRequest
+    return r._cancelRequest
 }

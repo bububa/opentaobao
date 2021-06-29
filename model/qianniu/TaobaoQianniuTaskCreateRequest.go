@@ -15,9 +15,9 @@ taobao.qianniu.task.create
 type TaobaoQianniuTaskCreateRequest struct {
     model.Params
     // 任务元数据，JSON格式，例如：<br/>meta = {<br/>            title : "可自定义",<br/>            content : “任务正文”,<br/>            sender_uid : user_id,<br/>            sender_nick : user_nick,<br/>            reminder_flag : 1,<br/>            finish_strategy : 0,<br/>         biz_type : "memo",<br/>         priority : 0<br/>        };<br/>说明：reminder_flag:1表示需要发送任务提醒消息,0表示不需要消息提醒。建议写1;<br/>finish_strategy : 0表示只要一个人完成任务就可以，1表示所有人都需要完成任务。根据场景设置，建议选0;<br/>biz_type : 任务类型，请咨询千牛官方获取正确的任务类型;<br/>priority : 1表示高优先级，0表示普通;<br/>这里的举例为必填字段，一些选填字段没有列出，如有其它需求请联系千牛官方。
-    meta   string
+    _meta   string
     // 任务列表，JSON格式的数组，即支持多个接收人，例如：<br/>task = [{<br/>            receiver_uid : user_id,<br/>            receiver_nick : user_nick,<br/>            biz_type : "memo",<br/>            sub_biz_type : "memo",<br/>            biz_id : user_nick,<br/>            biz_nick : user_nick<br/>         }];<br/>上述为必填字段，其它字段请咨询千牛官方。
-    tasks   string
+    _tasks   string
 }
 
 // 初始化TaobaoQianniuTaskCreateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoQianniuTaskCreateRequest) GetApiParams() url.Values {
 }
 // Meta Setter
 // 任务元数据，JSON格式，例如：<br/>meta = {<br/>            title : "可自定义",<br/>            content : “任务正文”,<br/>            sender_uid : user_id,<br/>            sender_nick : user_nick,<br/>            reminder_flag : 1,<br/>            finish_strategy : 0,<br/>         biz_type : "memo",<br/>         priority : 0<br/>        };<br/>说明：reminder_flag:1表示需要发送任务提醒消息,0表示不需要消息提醒。建议写1;<br/>finish_strategy : 0表示只要一个人完成任务就可以，1表示所有人都需要完成任务。根据场景设置，建议选0;<br/>biz_type : 任务类型，请咨询千牛官方获取正确的任务类型;<br/>priority : 1表示高优先级，0表示普通;<br/>这里的举例为必填字段，一些选填字段没有列出，如有其它需求请联系千牛官方。
-func (r *TaobaoQianniuTaskCreateRequest) SetMeta(meta string) error {
-    r.meta = meta
-    r.Set("meta", meta)
+func (r *TaobaoQianniuTaskCreateRequest) SetMeta(_meta string) error {
+    r._meta = _meta
+    r.Set("meta", _meta)
     return nil
 }
 
 // Meta Getter
 func (r TaobaoQianniuTaskCreateRequest) GetMeta() string {
-    return r.meta
+    return r._meta
 }
 // Tasks Setter
 // 任务列表，JSON格式的数组，即支持多个接收人，例如：<br/>task = [{<br/>            receiver_uid : user_id,<br/>            receiver_nick : user_nick,<br/>            biz_type : "memo",<br/>            sub_biz_type : "memo",<br/>            biz_id : user_nick,<br/>            biz_nick : user_nick<br/>         }];<br/>上述为必填字段，其它字段请咨询千牛官方。
-func (r *TaobaoQianniuTaskCreateRequest) SetTasks(tasks string) error {
-    r.tasks = tasks
-    r.Set("tasks", tasks)
+func (r *TaobaoQianniuTaskCreateRequest) SetTasks(_tasks string) error {
+    r._tasks = _tasks
+    r.Set("tasks", _tasks)
     return nil
 }
 
 // Tasks Getter
 func (r TaobaoQianniuTaskCreateRequest) GetTasks() string {
-    return r.tasks
+    return r._tasks
 }

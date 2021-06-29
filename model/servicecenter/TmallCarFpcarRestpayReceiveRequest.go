@@ -15,11 +15,11 @@ tmall.car.fpcar.restpay.receive
 type TmallCarFpcarRestpayReceiveRequest struct {
     model.Params
     // 卖家id
-    sellerId   int64
+    _sellerId   int64
     // 订单id
-    orderId   int64
+    _orderId   int64
     // 商品宝贝id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallCarFpcarRestpayReceiveRequest对象
@@ -44,37 +44,37 @@ func (r TmallCarFpcarRestpayReceiveRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 卖家id
-func (r *TmallCarFpcarRestpayReceiveRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TmallCarFpcarRestpayReceiveRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TmallCarFpcarRestpayReceiveRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // OrderId Setter
 // 订单id
-func (r *TmallCarFpcarRestpayReceiveRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallCarFpcarRestpayReceiveRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallCarFpcarRestpayReceiveRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // ItemId Setter
 // 商品宝贝id
-func (r *TmallCarFpcarRestpayReceiveRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallCarFpcarRestpayReceiveRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallCarFpcarRestpayReceiveRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

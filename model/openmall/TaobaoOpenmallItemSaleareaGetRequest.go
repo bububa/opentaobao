@@ -15,9 +15,9 @@ taobao.openmall.item.salearea.get
 type TaobaoOpenmallItemSaleareaGetRequest struct {
     model.Params
     // 商品SKU
-    skuIds   string
+    _skuIds   string
     // 商品ID
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoOpenmallItemSaleareaGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallItemSaleareaGetRequest) GetApiParams() url.Values {
 }
 // SkuIds Setter
 // 商品SKU
-func (r *TaobaoOpenmallItemSaleareaGetRequest) SetSkuIds(skuIds string) error {
-    r.skuIds = skuIds
-    r.Set("sku_ids", skuIds)
+func (r *TaobaoOpenmallItemSaleareaGetRequest) SetSkuIds(_skuIds string) error {
+    r._skuIds = _skuIds
+    r.Set("sku_ids", _skuIds)
     return nil
 }
 
 // SkuIds Getter
 func (r TaobaoOpenmallItemSaleareaGetRequest) GetSkuIds() string {
-    return r.skuIds
+    return r._skuIds
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoOpenmallItemSaleareaGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOpenmallItemSaleareaGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOpenmallItemSaleareaGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

@@ -15,7 +15,7 @@ alitrip.hotel.hstdf.hotelroomstatic.get
 type AlitripHotelHstdfHotelroomstaticGetRequest struct {
     model.Params
     // 参数封装
-    paramGetHotelRoomStaticParam   *GetHotelRoomStaticParam
+    _paramGetHotelRoomStaticParam   *GetHotelRoomStaticParam
 }
 
 // 初始化AlitripHotelHstdfHotelroomstaticGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetApiParams() url.Values {
 }
 // ParamGetHotelRoomStaticParam Setter
 // 参数封装
-func (r *AlitripHotelHstdfHotelroomstaticGetRequest) SetParamGetHotelRoomStaticParam(paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
-    r.paramGetHotelRoomStaticParam = paramGetHotelRoomStaticParam
-    r.Set("param_get_hotel_room_static_param", paramGetHotelRoomStaticParam)
+func (r *AlitripHotelHstdfHotelroomstaticGetRequest) SetParamGetHotelRoomStaticParam(_paramGetHotelRoomStaticParam *GetHotelRoomStaticParam) error {
+    r._paramGetHotelRoomStaticParam = _paramGetHotelRoomStaticParam
+    r.Set("param_get_hotel_room_static_param", _paramGetHotelRoomStaticParam)
     return nil
 }
 
 // ParamGetHotelRoomStaticParam Getter
 func (r AlitripHotelHstdfHotelroomstaticGetRequest) GetParamGetHotelRoomStaticParam() *GetHotelRoomStaticParam {
-    return r.paramGetHotelRoomStaticParam
+    return r._paramGetHotelRoomStaticParam
 }

@@ -15,7 +15,7 @@ taobao.delivery.template.delete
 type TaobaoDeliveryTemplateDeleteRequest struct {
     model.Params
     // 运费模板ID
-    templateId   int64
+    _templateId   int64
 }
 
 // 初始化TaobaoDeliveryTemplateDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoDeliveryTemplateDeleteRequest) GetApiParams() url.Values {
 }
 // TemplateId Setter
 // 运费模板ID
-func (r *TaobaoDeliveryTemplateDeleteRequest) SetTemplateId(templateId int64) error {
-    r.templateId = templateId
-    r.Set("template_id", templateId)
+func (r *TaobaoDeliveryTemplateDeleteRequest) SetTemplateId(_templateId int64) error {
+    r._templateId = _templateId
+    r.Set("template_id", _templateId)
     return nil
 }
 
 // TemplateId Getter
 func (r TaobaoDeliveryTemplateDeleteRequest) GetTemplateId() int64 {
-    return r.templateId
+    return r._templateId
 }

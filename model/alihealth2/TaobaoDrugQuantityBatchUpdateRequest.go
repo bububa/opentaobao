@@ -15,9 +15,9 @@ taobao.drug.quantity.batch.update
 type TaobaoDrugQuantityBatchUpdateRequest struct {
     model.Params
     // 外部店铺ID
-    outStoreId   string
+    _outStoreId   string
     // 商品ID和库存
-    outItemIdQuantityMap   string
+    _outItemIdQuantityMap   string
 }
 
 // 初始化TaobaoDrugQuantityBatchUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoDrugQuantityBatchUpdateRequest) GetApiParams() url.Values {
 }
 // OutStoreId Setter
 // 外部店铺ID
-func (r *TaobaoDrugQuantityBatchUpdateRequest) SetOutStoreId(outStoreId string) error {
-    r.outStoreId = outStoreId
-    r.Set("out_store_id", outStoreId)
+func (r *TaobaoDrugQuantityBatchUpdateRequest) SetOutStoreId(_outStoreId string) error {
+    r._outStoreId = _outStoreId
+    r.Set("out_store_id", _outStoreId)
     return nil
 }
 
 // OutStoreId Getter
 func (r TaobaoDrugQuantityBatchUpdateRequest) GetOutStoreId() string {
-    return r.outStoreId
+    return r._outStoreId
 }
 // OutItemIdQuantityMap Setter
 // 商品ID和库存
-func (r *TaobaoDrugQuantityBatchUpdateRequest) SetOutItemIdQuantityMap(outItemIdQuantityMap string) error {
-    r.outItemIdQuantityMap = outItemIdQuantityMap
-    r.Set("out_item_id_quantity_map", outItemIdQuantityMap)
+func (r *TaobaoDrugQuantityBatchUpdateRequest) SetOutItemIdQuantityMap(_outItemIdQuantityMap string) error {
+    r._outItemIdQuantityMap = _outItemIdQuantityMap
+    r.Set("out_item_id_quantity_map", _outItemIdQuantityMap)
     return nil
 }
 
 // OutItemIdQuantityMap Getter
 func (r TaobaoDrugQuantityBatchUpdateRequest) GetOutItemIdQuantityMap() string {
-    return r.outItemIdQuantityMap
+    return r._outItemIdQuantityMap
 }

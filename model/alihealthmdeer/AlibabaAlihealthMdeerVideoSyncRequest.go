@@ -15,47 +15,47 @@ alibaba.alihealth.mdeer.video.sync
 type AlibabaAlihealthMdeerVideoSyncRequest struct {
     model.Params
     // 合作方头像url
-    partnerPortraitUrl   string
+    _partnerPortraitUrl   string
     // 作者电话
-    phoneNumber   string
+    _phoneNumber   string
     // 作者简介
-    authorIntroduction   string
+    _authorIntroduction   string
     // 作者科室
-    authorDepartment   string
+    _authorDepartment   string
     // 作者级别
-    authorLevel   string
+    _authorLevel   string
     // 医院级别
-    hospitalLevel   string
+    _hospitalLevel   string
     // 医院名称
-    hospitalName   string
+    _hospitalName   string
     // 作者头像
-    portraitUrl   string
+    _portraitUrl   string
     // 作者名称
-    authorName   string
+    _authorName   string
     // 作者id
-    authorId   string
+    _authorId   string
     // 合作方主页
-    partnerHomepage   string
+    _partnerHomepage   string
     // 合作方名称
-    partnerName   string
+    _partnerName   string
     // 发布日期
-    releaseDate   string
+    _releaseDate   string
     // 视频文件url
-    videoFileUrl   string
+    _videoFileUrl   string
     // 视频落地页
-    videoMobileUrl   string
+    _videoMobileUrl   string
     // 视频简介
-    videoIntroduction   string
+    _videoIntroduction   string
     // 视频长度
-    videoLength   string
+    _videoLength   string
     // 视频所述疾病
-    disease   string
+    _disease   string
     // 预览图url
-    priviewUrl   string
+    _priviewUrl   string
     // 视频标题
-    videoTitle   string
+    _videoTitle   string
     // 视频id
-    videoId   string
+    _videoId   string
 }
 
 // 初始化AlibabaAlihealthMdeerVideoSyncRequest对象
@@ -80,253 +80,253 @@ func (r AlibabaAlihealthMdeerVideoSyncRequest) GetApiParams() url.Values {
 }
 // PartnerPortraitUrl Setter
 // 合作方头像url
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerPortraitUrl(partnerPortraitUrl string) error {
-    r.partnerPortraitUrl = partnerPortraitUrl
-    r.Set("partner_portrait_url", partnerPortraitUrl)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerPortraitUrl(_partnerPortraitUrl string) error {
+    r._partnerPortraitUrl = _partnerPortraitUrl
+    r.Set("partner_portrait_url", _partnerPortraitUrl)
     return nil
 }
 
 // PartnerPortraitUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPartnerPortraitUrl() string {
-    return r.partnerPortraitUrl
+    return r._partnerPortraitUrl
 }
 // PhoneNumber Setter
 // 作者电话
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPhoneNumber(phoneNumber string) error {
-    r.phoneNumber = phoneNumber
-    r.Set("phone_number", phoneNumber)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPhoneNumber(_phoneNumber string) error {
+    r._phoneNumber = _phoneNumber
+    r.Set("phone_number", _phoneNumber)
     return nil
 }
 
 // PhoneNumber Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPhoneNumber() string {
-    return r.phoneNumber
+    return r._phoneNumber
 }
 // AuthorIntroduction Setter
 // 作者简介
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorIntroduction(authorIntroduction string) error {
-    r.authorIntroduction = authorIntroduction
-    r.Set("author_introduction", authorIntroduction)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorIntroduction(_authorIntroduction string) error {
+    r._authorIntroduction = _authorIntroduction
+    r.Set("author_introduction", _authorIntroduction)
     return nil
 }
 
 // AuthorIntroduction Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetAuthorIntroduction() string {
-    return r.authorIntroduction
+    return r._authorIntroduction
 }
 // AuthorDepartment Setter
 // 作者科室
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorDepartment(authorDepartment string) error {
-    r.authorDepartment = authorDepartment
-    r.Set("author_department", authorDepartment)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorDepartment(_authorDepartment string) error {
+    r._authorDepartment = _authorDepartment
+    r.Set("author_department", _authorDepartment)
     return nil
 }
 
 // AuthorDepartment Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetAuthorDepartment() string {
-    return r.authorDepartment
+    return r._authorDepartment
 }
 // AuthorLevel Setter
 // 作者级别
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorLevel(authorLevel string) error {
-    r.authorLevel = authorLevel
-    r.Set("author_level", authorLevel)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorLevel(_authorLevel string) error {
+    r._authorLevel = _authorLevel
+    r.Set("author_level", _authorLevel)
     return nil
 }
 
 // AuthorLevel Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetAuthorLevel() string {
-    return r.authorLevel
+    return r._authorLevel
 }
 // HospitalLevel Setter
 // 医院级别
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetHospitalLevel(hospitalLevel string) error {
-    r.hospitalLevel = hospitalLevel
-    r.Set("hospital_level", hospitalLevel)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetHospitalLevel(_hospitalLevel string) error {
+    r._hospitalLevel = _hospitalLevel
+    r.Set("hospital_level", _hospitalLevel)
     return nil
 }
 
 // HospitalLevel Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetHospitalLevel() string {
-    return r.hospitalLevel
+    return r._hospitalLevel
 }
 // HospitalName Setter
 // 医院名称
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetHospitalName(hospitalName string) error {
-    r.hospitalName = hospitalName
-    r.Set("hospital_name", hospitalName)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetHospitalName(_hospitalName string) error {
+    r._hospitalName = _hospitalName
+    r.Set("hospital_name", _hospitalName)
     return nil
 }
 
 // HospitalName Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetHospitalName() string {
-    return r.hospitalName
+    return r._hospitalName
 }
 // PortraitUrl Setter
 // 作者头像
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPortraitUrl(portraitUrl string) error {
-    r.portraitUrl = portraitUrl
-    r.Set("portrait_url", portraitUrl)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPortraitUrl(_portraitUrl string) error {
+    r._portraitUrl = _portraitUrl
+    r.Set("portrait_url", _portraitUrl)
     return nil
 }
 
 // PortraitUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPortraitUrl() string {
-    return r.portraitUrl
+    return r._portraitUrl
 }
 // AuthorName Setter
 // 作者名称
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorName(authorName string) error {
-    r.authorName = authorName
-    r.Set("author_name", authorName)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorName(_authorName string) error {
+    r._authorName = _authorName
+    r.Set("author_name", _authorName)
     return nil
 }
 
 // AuthorName Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetAuthorName() string {
-    return r.authorName
+    return r._authorName
 }
 // AuthorId Setter
 // 作者id
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorId(authorId string) error {
-    r.authorId = authorId
-    r.Set("author_id", authorId)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetAuthorId(_authorId string) error {
+    r._authorId = _authorId
+    r.Set("author_id", _authorId)
     return nil
 }
 
 // AuthorId Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetAuthorId() string {
-    return r.authorId
+    return r._authorId
 }
 // PartnerHomepage Setter
 // 合作方主页
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerHomepage(partnerHomepage string) error {
-    r.partnerHomepage = partnerHomepage
-    r.Set("partner_homepage", partnerHomepage)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerHomepage(_partnerHomepage string) error {
+    r._partnerHomepage = _partnerHomepage
+    r.Set("partner_homepage", _partnerHomepage)
     return nil
 }
 
 // PartnerHomepage Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPartnerHomepage() string {
-    return r.partnerHomepage
+    return r._partnerHomepage
 }
 // PartnerName Setter
 // 合作方名称
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerName(partnerName string) error {
-    r.partnerName = partnerName
-    r.Set("partner_name", partnerName)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPartnerName(_partnerName string) error {
+    r._partnerName = _partnerName
+    r.Set("partner_name", _partnerName)
     return nil
 }
 
 // PartnerName Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPartnerName() string {
-    return r.partnerName
+    return r._partnerName
 }
 // ReleaseDate Setter
 // 发布日期
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetReleaseDate(releaseDate string) error {
-    r.releaseDate = releaseDate
-    r.Set("release_date", releaseDate)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetReleaseDate(_releaseDate string) error {
+    r._releaseDate = _releaseDate
+    r.Set("release_date", _releaseDate)
     return nil
 }
 
 // ReleaseDate Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetReleaseDate() string {
-    return r.releaseDate
+    return r._releaseDate
 }
 // VideoFileUrl Setter
 // 视频文件url
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoFileUrl(videoFileUrl string) error {
-    r.videoFileUrl = videoFileUrl
-    r.Set("video_file_url", videoFileUrl)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoFileUrl(_videoFileUrl string) error {
+    r._videoFileUrl = _videoFileUrl
+    r.Set("video_file_url", _videoFileUrl)
     return nil
 }
 
 // VideoFileUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoFileUrl() string {
-    return r.videoFileUrl
+    return r._videoFileUrl
 }
 // VideoMobileUrl Setter
 // 视频落地页
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoMobileUrl(videoMobileUrl string) error {
-    r.videoMobileUrl = videoMobileUrl
-    r.Set("video_mobile_url", videoMobileUrl)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoMobileUrl(_videoMobileUrl string) error {
+    r._videoMobileUrl = _videoMobileUrl
+    r.Set("video_mobile_url", _videoMobileUrl)
     return nil
 }
 
 // VideoMobileUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoMobileUrl() string {
-    return r.videoMobileUrl
+    return r._videoMobileUrl
 }
 // VideoIntroduction Setter
 // 视频简介
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoIntroduction(videoIntroduction string) error {
-    r.videoIntroduction = videoIntroduction
-    r.Set("video_introduction", videoIntroduction)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoIntroduction(_videoIntroduction string) error {
+    r._videoIntroduction = _videoIntroduction
+    r.Set("video_introduction", _videoIntroduction)
     return nil
 }
 
 // VideoIntroduction Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoIntroduction() string {
-    return r.videoIntroduction
+    return r._videoIntroduction
 }
 // VideoLength Setter
 // 视频长度
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoLength(videoLength string) error {
-    r.videoLength = videoLength
-    r.Set("video_length", videoLength)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoLength(_videoLength string) error {
+    r._videoLength = _videoLength
+    r.Set("video_length", _videoLength)
     return nil
 }
 
 // VideoLength Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoLength() string {
-    return r.videoLength
+    return r._videoLength
 }
 // Disease Setter
 // 视频所述疾病
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetDisease(disease string) error {
-    r.disease = disease
-    r.Set("disease", disease)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetDisease(_disease string) error {
+    r._disease = _disease
+    r.Set("disease", _disease)
     return nil
 }
 
 // Disease Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetDisease() string {
-    return r.disease
+    return r._disease
 }
 // PriviewUrl Setter
 // 预览图url
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPriviewUrl(priviewUrl string) error {
-    r.priviewUrl = priviewUrl
-    r.Set("priview_url", priviewUrl)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetPriviewUrl(_priviewUrl string) error {
+    r._priviewUrl = _priviewUrl
+    r.Set("priview_url", _priviewUrl)
     return nil
 }
 
 // PriviewUrl Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetPriviewUrl() string {
-    return r.priviewUrl
+    return r._priviewUrl
 }
 // VideoTitle Setter
 // 视频标题
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoTitle(videoTitle string) error {
-    r.videoTitle = videoTitle
-    r.Set("video_title", videoTitle)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoTitle(_videoTitle string) error {
+    r._videoTitle = _videoTitle
+    r.Set("video_title", _videoTitle)
     return nil
 }
 
 // VideoTitle Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoTitle() string {
-    return r.videoTitle
+    return r._videoTitle
 }
 // VideoId Setter
 // 视频id
-func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoId(videoId string) error {
-    r.videoId = videoId
-    r.Set("video_id", videoId)
+func (r *AlibabaAlihealthMdeerVideoSyncRequest) SetVideoId(_videoId string) error {
+    r._videoId = _videoId
+    r.Set("video_id", _videoId)
     return nil
 }
 
 // VideoId Getter
 func (r AlibabaAlihealthMdeerVideoSyncRequest) GetVideoId() string {
-    return r.videoId
+    return r._videoId
 }

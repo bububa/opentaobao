@@ -15,13 +15,13 @@ taobao.wlb.imports.resource.transferstore.get
 type TaobaoWlbImportsResourceTransferstoreGetRequest struct {
     model.Params
     // 通过taobao.wlb.imports.resource.get接口查询出来的资源ID
-    resourceId   int64
+    _resourceId   int64
     // 卖家发货地址的区域ID，如果不填则为默认发货地址ID
-    fromId   int64
+    _fromId   int64
     // 商品前台叶子类目ID
-    cids   []int64
+    _cids   []int64
     // 买家收货地信息
-    toAddress   *ReciverAddressDo
+    _toAddress   *ReciverAddressDo
 }
 
 // 初始化TaobaoWlbImportsResourceTransferstoreGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetApiParams() url.Valu
 }
 // ResourceId Setter
 // 通过taobao.wlb.imports.resource.get接口查询出来的资源ID
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetResourceId(resourceId int64) error {
-    r.resourceId = resourceId
-    r.Set("resource_id", resourceId)
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetResourceId(_resourceId int64) error {
+    r._resourceId = _resourceId
+    r.Set("resource_id", _resourceId)
     return nil
 }
 
 // ResourceId Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetResourceId() int64 {
-    return r.resourceId
+    return r._resourceId
 }
 // FromId Setter
 // 卖家发货地址的区域ID，如果不填则为默认发货地址ID
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetFromId(fromId int64) error {
-    r.fromId = fromId
-    r.Set("from_id", fromId)
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetFromId(_fromId int64) error {
+    r._fromId = _fromId
+    r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetFromId() int64 {
-    return r.fromId
+    return r._fromId
 }
 // Cids Setter
 // 商品前台叶子类目ID
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetCids(cids []int64) error {
-    r.cids = cids
-    r.Set("cids", cids)
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetCids(_cids []int64) error {
+    r._cids = _cids
+    r.Set("cids", _cids)
     return nil
 }
 
 // Cids Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetCids() []int64 {
-    return r.cids
+    return r._cids
 }
 // ToAddress Setter
 // 买家收货地信息
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetToAddress(toAddress *ReciverAddressDo) error {
-    r.toAddress = toAddress
-    r.Set("to_address", toAddress)
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetToAddress(_toAddress *ReciverAddressDo) error {
+    r._toAddress = _toAddress
+    r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
 func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetToAddress() *ReciverAddressDo {
-    return r.toAddress
+    return r._toAddress
 }

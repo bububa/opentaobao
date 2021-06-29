@@ -15,9 +15,9 @@ taobao.taotv.video.playlist.page
 type TaobaoTaotvVideoPlaylistPageRequest struct {
     model.Params
     // 客户端信息
-    systemInfo   string
+    _systemInfo   string
     // 当前页（从1开始）
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化TaobaoTaotvVideoPlaylistPageRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTaotvVideoPlaylistPageRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 客户端信息
-func (r *TaobaoTaotvVideoPlaylistPageRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvVideoPlaylistPageRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistPageRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }
 // PageNo Setter
 // 当前页（从1开始）
-func (r *TaobaoTaotvVideoPlaylistPageRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoTaotvVideoPlaylistPageRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoTaotvVideoPlaylistPageRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

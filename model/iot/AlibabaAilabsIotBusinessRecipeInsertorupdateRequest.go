@@ -15,7 +15,7 @@ alibaba.ailabs.iot.business.recipe.insertorupdate
 type AlibabaAilabsIotBusinessRecipeInsertorupdateRequest struct {
     model.Params
     // 行业食谱开放参数
-    paramBusinessRecipeOpenParam   *BusinessRecipeOpenParam
+    _paramBusinessRecipeOpenParam   *BusinessRecipeOpenParam
 }
 
 // 初始化AlibabaAilabsIotBusinessRecipeInsertorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsIotBusinessRecipeInsertorupdateRequest) GetApiParams() url.
 }
 // ParamBusinessRecipeOpenParam Setter
 // 行业食谱开放参数
-func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateRequest) SetParamBusinessRecipeOpenParam(paramBusinessRecipeOpenParam *BusinessRecipeOpenParam) error {
-    r.paramBusinessRecipeOpenParam = paramBusinessRecipeOpenParam
-    r.Set("param_business_recipe_open_param", paramBusinessRecipeOpenParam)
+func (r *AlibabaAilabsIotBusinessRecipeInsertorupdateRequest) SetParamBusinessRecipeOpenParam(_paramBusinessRecipeOpenParam *BusinessRecipeOpenParam) error {
+    r._paramBusinessRecipeOpenParam = _paramBusinessRecipeOpenParam
+    r.Set("param_business_recipe_open_param", _paramBusinessRecipeOpenParam)
     return nil
 }
 
 // ParamBusinessRecipeOpenParam Getter
 func (r AlibabaAilabsIotBusinessRecipeInsertorupdateRequest) GetParamBusinessRecipeOpenParam() *BusinessRecipeOpenParam {
-    return r.paramBusinessRecipeOpenParam
+    return r._paramBusinessRecipeOpenParam
 }

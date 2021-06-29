@@ -15,13 +15,13 @@ alibaba.aliyun.aicloud.iot.vision.saas.ctcc.jiangsu.cloud.watcher.status.update
 type AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest struct {
     model.Params
     // 设备唯一标识符
-    ctei   string
+    _ctei   string
     // 设备对应的产品类型
-    devType   string
+    _devType   string
     // 一次请求的唯一标识符
-    seqId   string
+    _seqId   string
     // 设备所属用户的账号信息
-    userAccount   string
+    _userAccount   string
 }
 
 // 初始化AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequ
 }
 // Ctei Setter
 // 设备唯一标识符
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetCtei(ctei string) error {
-    r.ctei = ctei
-    r.Set("ctei", ctei)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetCtei(_ctei string) error {
+    r._ctei = _ctei
+    r.Set("ctei", _ctei)
     return nil
 }
 
 // Ctei Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) GetCtei() string {
-    return r.ctei
+    return r._ctei
 }
 // DevType Setter
 // 设备对应的产品类型
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetDevType(devType string) error {
-    r.devType = devType
-    r.Set("dev_type", devType)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetDevType(_devType string) error {
+    r._devType = _devType
+    r.Set("dev_type", _devType)
     return nil
 }
 
 // DevType Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) GetDevType() string {
-    return r.devType
+    return r._devType
 }
 // SeqId Setter
 // 一次请求的唯一标识符
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetSeqId(seqId string) error {
-    r.seqId = seqId
-    r.Set("seq_id", seqId)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetSeqId(_seqId string) error {
+    r._seqId = _seqId
+    r.Set("seq_id", _seqId)
     return nil
 }
 
 // SeqId Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) GetSeqId() string {
-    return r.seqId
+    return r._seqId
 }
 // UserAccount Setter
 // 设备所属用户的账号信息
-func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetUserAccount(userAccount string) error {
-    r.userAccount = userAccount
-    r.Set("user_account", userAccount)
+func (r *AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) SetUserAccount(_userAccount string) error {
+    r._userAccount = _userAccount
+    r.Set("user_account", _userAccount)
     return nil
 }
 
 // UserAccount Getter
 func (r AlibabaAliyunAicloudIotVisionSaasCtccJiangsuCloudWatcherStatusUpdateRequest) GetUserAccount() string {
-    return r.userAccount
+    return r._userAccount
 }

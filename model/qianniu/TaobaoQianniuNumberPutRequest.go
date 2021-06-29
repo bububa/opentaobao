@@ -15,7 +15,7 @@ ISV提供给卖家使用的业务数据，需要通过这个接口上传到千�
 type TaobaoQianniuNumberPutRequest struct {
     model.Params
     // 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
-    data   string
+    _data   string
 }
 
 // 初始化TaobaoQianniuNumberPutRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQianniuNumberPutRequest) GetApiParams() url.Values {
 }
 // Data Setter
 // 考虑到稳定性，建议一次卖家最多为200个。标准json格式的数组构成的字符串。每个元素为{user_id:****,field:"****",value:"****"}分别是用户的userid，数据的名称，以及数据的值。
-func (r *TaobaoQianniuNumberPutRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoQianniuNumberPutRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoQianniuNumberPutRequest) GetData() string {
-    return r.data
+    return r._data
 }

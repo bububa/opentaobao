@@ -15,7 +15,7 @@ alibaba.alihealth.drug.download.entlist
 type AlibabaAlihealthDrugDownloadEntlistRequest struct {
     model.Params
     // appKey
-    appKeyN   string
+    _appKeyN   string
 }
 
 // 初始化AlibabaAlihealthDrugDownloadEntlistRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetApiParams() url.Values {
 }
 // AppKeyN Setter
 // appKey
-func (r *AlibabaAlihealthDrugDownloadEntlistRequest) SetAppKeyN(appKeyN string) error {
-    r.appKeyN = appKeyN
-    r.Set("app_key_n", appKeyN)
+func (r *AlibabaAlihealthDrugDownloadEntlistRequest) SetAppKeyN(_appKeyN string) error {
+    r._appKeyN = _appKeyN
+    r.Set("app_key_n", _appKeyN)
     return nil
 }
 
 // AppKeyN Getter
 func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetAppKeyN() string {
-    return r.appKeyN
+    return r._appKeyN
 }

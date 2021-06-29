@@ -15,11 +15,11 @@ taobao.xhotel.delete
 type TaobaoXhotelDeleteRequest struct {
     model.Params
     // 酒店id，传参方式  hid   或者   outer_id+vendor
-    hid   int64
+    _hid   int64
     // 酒店vendor
-    vendor   string
+    _vendor   string
     // 酒店编码
-    outerId   string
+    _outerId   string
 }
 
 // 初始化TaobaoXhotelDeleteRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelDeleteRequest) GetApiParams() url.Values {
 }
 // Hid Setter
 // 酒店id，传参方式  hid   或者   outer_id+vendor
-func (r *TaobaoXhotelDeleteRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *TaobaoXhotelDeleteRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r TaobaoXhotelDeleteRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }
 // Vendor Setter
 // 酒店vendor
-func (r *TaobaoXhotelDeleteRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelDeleteRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelDeleteRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // OuterId Setter
 // 酒店编码
-func (r *TaobaoXhotelDeleteRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoXhotelDeleteRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoXhotelDeleteRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }

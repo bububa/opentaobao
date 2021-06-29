@@ -15,7 +15,7 @@ alibaba.lst.trade.seller.warehouse.query
 type AlibabaLstTradeSellerWarehouseQueryRequest struct {
     model.Params
     // 入参
-    warehouseQueryParam   *WarehouseQueryParam
+    _warehouseQueryParam   *WarehouseQueryParam
 }
 
 // 初始化AlibabaLstTradeSellerWarehouseQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetApiParams() url.Values {
 }
 // WarehouseQueryParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerWarehouseQueryRequest) SetWarehouseQueryParam(warehouseQueryParam *WarehouseQueryParam) error {
-    r.warehouseQueryParam = warehouseQueryParam
-    r.Set("warehouse_query_param", warehouseQueryParam)
+func (r *AlibabaLstTradeSellerWarehouseQueryRequest) SetWarehouseQueryParam(_warehouseQueryParam *WarehouseQueryParam) error {
+    r._warehouseQueryParam = _warehouseQueryParam
+    r.Set("warehouse_query_param", _warehouseQueryParam)
     return nil
 }
 
 // WarehouseQueryParam Getter
 func (r AlibabaLstTradeSellerWarehouseQueryRequest) GetWarehouseQueryParam() *WarehouseQueryParam {
-    return r.warehouseQueryParam
+    return r._warehouseQueryParam
 }

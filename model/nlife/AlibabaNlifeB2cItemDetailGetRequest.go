@@ -15,9 +15,9 @@ alibaba.nlife.b2c.item.detail.get
 type AlibabaNlifeB2cItemDetailGetRequest struct {
     model.Params
     // 商家入驻门店在零售+平台的ID
-    storeId   string
+    _storeId   string
     // 零售+平台生成的唯一码或条码
-    uniqueCode   string
+    _uniqueCode   string
 }
 
 // 初始化AlibabaNlifeB2cItemDetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaNlifeB2cItemDetailGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 商家入驻门店在零售+平台的ID
-func (r *AlibabaNlifeB2cItemDetailGetRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeB2cItemDetailGetRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeB2cItemDetailGetRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // UniqueCode Setter
 // 零售+平台生成的唯一码或条码
-func (r *AlibabaNlifeB2cItemDetailGetRequest) SetUniqueCode(uniqueCode string) error {
-    r.uniqueCode = uniqueCode
-    r.Set("unique_code", uniqueCode)
+func (r *AlibabaNlifeB2cItemDetailGetRequest) SetUniqueCode(_uniqueCode string) error {
+    r._uniqueCode = _uniqueCode
+    r.Set("unique_code", _uniqueCode)
     return nil
 }
 
 // UniqueCode Getter
 func (r AlibabaNlifeB2cItemDetailGetRequest) GetUniqueCode() string {
-    return r.uniqueCode
+    return r._uniqueCode
 }

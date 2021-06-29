@@ -15,15 +15,15 @@ tv支付第三方发起并支付订单（使用设备授权）
 type TaobaoTvpayOrderPartnerpayRequest struct {
     model.Params
     // 设备id
-    deviceId   string
+    _deviceId   string
     // 来源
-    from   string
+    _from   string
     // 订单信息
-    data   string
+    _data   string
     // 支付方式
-    payType   string
+    _payType   string
     // 牌照方
-    license   string
+    _license   string
 }
 
 // 初始化TaobaoTvpayOrderPartnerpayRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoTvpayOrderPartnerpayRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *TaobaoTvpayOrderPartnerpayRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r TaobaoTvpayOrderPartnerpayRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // From Setter
 // 来源
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetFrom(from string) error {
-    r.from = from
-    r.Set("from", from)
+func (r *TaobaoTvpayOrderPartnerpayRequest) SetFrom(_from string) error {
+    r._from = _from
+    r.Set("from", _from)
     return nil
 }
 
 // From Getter
 func (r TaobaoTvpayOrderPartnerpayRequest) GetFrom() string {
-    return r.from
+    return r._from
 }
 // Data Setter
 // 订单信息
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoTvpayOrderPartnerpayRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoTvpayOrderPartnerpayRequest) GetData() string {
-    return r.data
+    return r._data
 }
 // PayType Setter
 // 支付方式
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetPayType(payType string) error {
-    r.payType = payType
-    r.Set("pay_type", payType)
+func (r *TaobaoTvpayOrderPartnerpayRequest) SetPayType(_payType string) error {
+    r._payType = _payType
+    r.Set("pay_type", _payType)
     return nil
 }
 
 // PayType Getter
 func (r TaobaoTvpayOrderPartnerpayRequest) GetPayType() string {
-    return r.payType
+    return r._payType
 }
 // License Setter
 // 牌照方
-func (r *TaobaoTvpayOrderPartnerpayRequest) SetLicense(license string) error {
-    r.license = license
-    r.Set("license", license)
+func (r *TaobaoTvpayOrderPartnerpayRequest) SetLicense(_license string) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r TaobaoTvpayOrderPartnerpayRequest) GetLicense() string {
-    return r.license
+    return r._license
 }

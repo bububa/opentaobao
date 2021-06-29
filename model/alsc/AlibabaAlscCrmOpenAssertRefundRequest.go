@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.assert.refund
 type AlibabaAlscCrmOpenAssertRefundRequest struct {
     model.Params
     // 入参
-    paramPropertyRefundOpenReq   *PropertyRefundOpenReq
+    _paramPropertyRefundOpenReq   *PropertyRefundOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenAssertRefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenAssertRefundRequest) GetApiParams() url.Values {
 }
 // ParamPropertyRefundOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenAssertRefundRequest) SetParamPropertyRefundOpenReq(paramPropertyRefundOpenReq *PropertyRefundOpenReq) error {
-    r.paramPropertyRefundOpenReq = paramPropertyRefundOpenReq
-    r.Set("param_property_refund_open_req", paramPropertyRefundOpenReq)
+func (r *AlibabaAlscCrmOpenAssertRefundRequest) SetParamPropertyRefundOpenReq(_paramPropertyRefundOpenReq *PropertyRefundOpenReq) error {
+    r._paramPropertyRefundOpenReq = _paramPropertyRefundOpenReq
+    r.Set("param_property_refund_open_req", _paramPropertyRefundOpenReq)
     return nil
 }
 
 // ParamPropertyRefundOpenReq Getter
 func (r AlibabaAlscCrmOpenAssertRefundRequest) GetParamPropertyRefundOpenReq() *PropertyRefundOpenReq {
-    return r.paramPropertyRefundOpenReq
+    return r._paramPropertyRefundOpenReq
 }

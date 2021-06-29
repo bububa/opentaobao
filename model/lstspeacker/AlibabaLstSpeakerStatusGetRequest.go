@@ -15,7 +15,7 @@ alibaba.lst.speaker.status.get
 type AlibabaLstSpeakerStatusGetRequest struct {
     model.Params
     // 设备编码
-    deviceCode   string
+    _deviceCode   string
 }
 
 // 初始化AlibabaLstSpeakerStatusGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstSpeakerStatusGetRequest) GetApiParams() url.Values {
 }
 // DeviceCode Setter
 // 设备编码
-func (r *AlibabaLstSpeakerStatusGetRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *AlibabaLstSpeakerStatusGetRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r AlibabaLstSpeakerStatusGetRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }

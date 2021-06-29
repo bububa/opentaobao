@@ -15,7 +15,7 @@ cainiao.iot.ticket.sp.maintain.vtwo.create
 type CainiaoIotTicketSpMaintainVtwoCreateRequest struct {
     model.Params
     // 维修方案
-    makeMaintainPlanTopRequest   *MakeMaintainPlanV2TopRequest
+    _makeMaintainPlanTopRequest   *MakeMaintainPlanV2TopRequest
 }
 
 // 初始化CainiaoIotTicketSpMaintainVtwoCreateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpMaintainVtwoCreateRequest) GetApiParams() url.Values {
 }
 // MakeMaintainPlanTopRequest Setter
 // 维修方案
-func (r *CainiaoIotTicketSpMaintainVtwoCreateRequest) SetMakeMaintainPlanTopRequest(makeMaintainPlanTopRequest *MakeMaintainPlanV2TopRequest) error {
-    r.makeMaintainPlanTopRequest = makeMaintainPlanTopRequest
-    r.Set("make_maintain_plan_top_request", makeMaintainPlanTopRequest)
+func (r *CainiaoIotTicketSpMaintainVtwoCreateRequest) SetMakeMaintainPlanTopRequest(_makeMaintainPlanTopRequest *MakeMaintainPlanV2TopRequest) error {
+    r._makeMaintainPlanTopRequest = _makeMaintainPlanTopRequest
+    r.Set("make_maintain_plan_top_request", _makeMaintainPlanTopRequest)
     return nil
 }
 
 // MakeMaintainPlanTopRequest Getter
 func (r CainiaoIotTicketSpMaintainVtwoCreateRequest) GetMakeMaintainPlanTopRequest() *MakeMaintainPlanV2TopRequest {
-    return r.makeMaintainPlanTopRequest
+    return r._makeMaintainPlanTopRequest
 }

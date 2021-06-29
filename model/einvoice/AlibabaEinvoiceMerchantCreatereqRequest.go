@@ -15,65 +15,65 @@ alibaba.einvoice.merchant.createreq
 type AlibabaEinvoiceMerchantCreatereqRequest struct {
     model.Params
     // 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
-    businessType   int64
+    _businessType   int64
     // ERP系统中的单据号。如果没有erp的唯一单据号。建议使用platform_code+”_”+ platform_tid的组合方式
-    erpTid   string
+    _erpTid   string
     // 电商平台代码。TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
-    platformCode   string
+    _platformCode   string
     // 电商平台对应的主订单号
-    platformTid   string
+    _platformTid   string
     // 开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。请调用平台统一流水号获取接口，alibaba.einvoice.serialno.generate。
-    serialNo   string
+    _serialNo   string
     // 开票方地址(新版中为必传)
-    payeeAddress   string
+    _payeeAddress   string
     // 开票方银行及 帐号
-    payeeBankaccount   string
+    _payeeBankaccount   string
     // 开票方名称，公司名(如:XX商城)
-    payeeName   string
+    _payeeName   string
     // 付款方税务登记证号。对企业开具电子发票时必填。目前北京地区暂未开放对企业开具电子发票，若北京地区放开后，对于向企业开具的情况，付款方税务登记证号和名称也不能为空
-    payerRegisterNo   string
+    _payerRegisterNo   string
     // 开票人
-    payeeOperator   string
+    _payeeOperator   string
     // 开票金额； <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-    invoiceAmount   string
+    _invoiceAmount   string
     // 电子发票明细
-    invoiceItems   []InvoiceItem
+    _invoiceItems   []InvoiceItem
     // 发票备注，有些省市会把此信息打印到PDF中
-    invoiceMemo   string
+    _invoiceMemo   string
     // 发票(开票)类型，蓝票blue,红票red，默认blue
-    invoiceType   string
+    _invoiceType   string
     // 原发票代码(开红票时传入)
-    normalInvoiceCode   string
+    _normalInvoiceCode   string
     // 原发票号码(开红票时传入)
-    normalInvoiceNo   string
+    _normalInvoiceNo   string
     // 收款方税务登记证号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
     // 消费者地址
-    payerAddress   string
+    _payerAddress   string
     // 付款方开票开户银行及账号
-    payerBankaccount   string
+    _payerBankaccount   string
     // 消费者电子邮箱
-    payerEmail   string
+    _payerEmail   string
     // 付款方名称, 对应发票台头
-    payerName   string
+    _payerName   string
     // 消费者联系电话
-    payerPhone   string
+    _payerPhone   string
     // 合计金额(新版中为必传) <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-    sumPrice   string
+    _sumPrice   string
     // 合计税额 <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-    sumTax   string
+    _sumTax   string
     // 复核人
-    payeeChecker   string
+    _payeeChecker   string
     // 收款人
-    payeeReceiver   string
+    _payeeReceiver   string
     // 收款方电话
-    payeePhone   string
+    _payeePhone   string
     // 开票申请ID，接收了开票申请消息后，需要把apply_id带上
-    applyId   string
+    _applyId   string
     // 发票种类，0=电子发票,1=纸质发票,2=专票
-    invoiceKind   int64
+    _invoiceKind   int64
     // 红字通知单号，冲红时需要，商家跟税局申请
-    redNoticeNo   string
+    _redNoticeNo   string
 }
 
 // 初始化AlibabaEinvoiceMerchantCreatereqRequest对象
@@ -98,361 +98,361 @@ func (r AlibabaEinvoiceMerchantCreatereqRequest) GetApiParams() url.Values {
 }
 // BusinessType Setter
 // 默认：0。对于商家对个人开具，为0;对于商家对企业开具，为1;
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetBusinessType(businessType int64) error {
-    r.businessType = businessType
-    r.Set("business_type", businessType)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetBusinessType(_businessType int64) error {
+    r._businessType = _businessType
+    r.Set("business_type", _businessType)
     return nil
 }
 
 // BusinessType Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetBusinessType() int64 {
-    return r.businessType
+    return r._businessType
 }
 // ErpTid Setter
 // ERP系统中的单据号。如果没有erp的唯一单据号。建议使用platform_code+”_”+ platform_tid的组合方式
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetErpTid(erpTid string) error {
-    r.erpTid = erpTid
-    r.Set("erp_tid", erpTid)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetErpTid(_erpTid string) error {
+    r._erpTid = _erpTid
+    r.Set("erp_tid", _erpTid)
     return nil
 }
 
 // ErpTid Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetErpTid() string {
-    return r.erpTid
+    return r._erpTid
 }
 // PlatformCode Setter
 // 电商平台代码。TB=淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码)
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPlatformCode(platformCode string) error {
-    r.platformCode = platformCode
-    r.Set("platform_code", platformCode)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPlatformCode(_platformCode string) error {
+    r._platformCode = _platformCode
+    r.Set("platform_code", _platformCode)
     return nil
 }
 
 // PlatformCode Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPlatformCode() string {
-    return r.platformCode
+    return r._platformCode
 }
 // PlatformTid Setter
 // 电商平台对应的主订单号
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPlatformTid(platformTid string) error {
-    r.platformTid = platformTid
-    r.Set("platform_tid", platformTid)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPlatformTid(_platformTid string) error {
+    r._platformTid = _platformTid
+    r.Set("platform_tid", _platformTid)
     return nil
 }
 
 // PlatformTid Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPlatformTid() string {
-    return r.platformTid
+    return r._platformTid
 }
 // SerialNo Setter
 // 开票流水号，唯一标志开票请求。如果两次请求流水号相同，则表示重复请求。请调用平台统一流水号获取接口，alibaba.einvoice.serialno.generate。
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSerialNo(serialNo string) error {
-    r.serialNo = serialNo
-    r.Set("serial_no", serialNo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSerialNo(_serialNo string) error {
+    r._serialNo = _serialNo
+    r.Set("serial_no", _serialNo)
     return nil
 }
 
 // SerialNo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetSerialNo() string {
-    return r.serialNo
+    return r._serialNo
 }
 // PayeeAddress Setter
 // 开票方地址(新版中为必传)
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeAddress(payeeAddress string) error {
-    r.payeeAddress = payeeAddress
-    r.Set("payee_address", payeeAddress)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeAddress(_payeeAddress string) error {
+    r._payeeAddress = _payeeAddress
+    r.Set("payee_address", _payeeAddress)
     return nil
 }
 
 // PayeeAddress Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeAddress() string {
-    return r.payeeAddress
+    return r._payeeAddress
 }
 // PayeeBankaccount Setter
 // 开票方银行及 帐号
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeBankaccount(payeeBankaccount string) error {
-    r.payeeBankaccount = payeeBankaccount
-    r.Set("payee_bankaccount", payeeBankaccount)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeBankaccount(_payeeBankaccount string) error {
+    r._payeeBankaccount = _payeeBankaccount
+    r.Set("payee_bankaccount", _payeeBankaccount)
     return nil
 }
 
 // PayeeBankaccount Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeBankaccount() string {
-    return r.payeeBankaccount
+    return r._payeeBankaccount
 }
 // PayeeName Setter
 // 开票方名称，公司名(如:XX商城)
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeName(payeeName string) error {
-    r.payeeName = payeeName
-    r.Set("payee_name", payeeName)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeName(_payeeName string) error {
+    r._payeeName = _payeeName
+    r.Set("payee_name", _payeeName)
     return nil
 }
 
 // PayeeName Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeName() string {
-    return r.payeeName
+    return r._payeeName
 }
 // PayerRegisterNo Setter
 // 付款方税务登记证号。对企业开具电子发票时必填。目前北京地区暂未开放对企业开具电子发票，若北京地区放开后，对于向企业开具的情况，付款方税务登记证号和名称也不能为空
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerRegisterNo(payerRegisterNo string) error {
-    r.payerRegisterNo = payerRegisterNo
-    r.Set("payer_register_no", payerRegisterNo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerRegisterNo(_payerRegisterNo string) error {
+    r._payerRegisterNo = _payerRegisterNo
+    r.Set("payer_register_no", _payerRegisterNo)
     return nil
 }
 
 // PayerRegisterNo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerRegisterNo() string {
-    return r.payerRegisterNo
+    return r._payerRegisterNo
 }
 // PayeeOperator Setter
 // 开票人
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeOperator(payeeOperator string) error {
-    r.payeeOperator = payeeOperator
-    r.Set("payee_operator", payeeOperator)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeOperator(_payeeOperator string) error {
+    r._payeeOperator = _payeeOperator
+    r.Set("payee_operator", _payeeOperator)
     return nil
 }
 
 // PayeeOperator Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeOperator() string {
-    return r.payeeOperator
+    return r._payeeOperator
 }
 // InvoiceAmount Setter
 // 开票金额； <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceAmount(invoiceAmount string) error {
-    r.invoiceAmount = invoiceAmount
-    r.Set("invoice_amount", invoiceAmount)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceAmount(_invoiceAmount string) error {
+    r._invoiceAmount = _invoiceAmount
+    r.Set("invoice_amount", _invoiceAmount)
     return nil
 }
 
 // InvoiceAmount Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetInvoiceAmount() string {
-    return r.invoiceAmount
+    return r._invoiceAmount
 }
 // InvoiceItems Setter
 // 电子发票明细
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceItems(invoiceItems []InvoiceItem) error {
-    r.invoiceItems = invoiceItems
-    r.Set("invoice_items", invoiceItems)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceItems(_invoiceItems []InvoiceItem) error {
+    r._invoiceItems = _invoiceItems
+    r.Set("invoice_items", _invoiceItems)
     return nil
 }
 
 // InvoiceItems Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetInvoiceItems() []InvoiceItem {
-    return r.invoiceItems
+    return r._invoiceItems
 }
 // InvoiceMemo Setter
 // 发票备注，有些省市会把此信息打印到PDF中
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceMemo(invoiceMemo string) error {
-    r.invoiceMemo = invoiceMemo
-    r.Set("invoice_memo", invoiceMemo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceMemo(_invoiceMemo string) error {
+    r._invoiceMemo = _invoiceMemo
+    r.Set("invoice_memo", _invoiceMemo)
     return nil
 }
 
 // InvoiceMemo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetInvoiceMemo() string {
-    return r.invoiceMemo
+    return r._invoiceMemo
 }
 // InvoiceType Setter
 // 发票(开票)类型，蓝票blue,红票red，默认blue
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceType(invoiceType string) error {
-    r.invoiceType = invoiceType
-    r.Set("invoice_type", invoiceType)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceType(_invoiceType string) error {
+    r._invoiceType = _invoiceType
+    r.Set("invoice_type", _invoiceType)
     return nil
 }
 
 // InvoiceType Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetInvoiceType() string {
-    return r.invoiceType
+    return r._invoiceType
 }
 // NormalInvoiceCode Setter
 // 原发票代码(开红票时传入)
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetNormalInvoiceCode(normalInvoiceCode string) error {
-    r.normalInvoiceCode = normalInvoiceCode
-    r.Set("normal_invoice_code", normalInvoiceCode)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetNormalInvoiceCode(_normalInvoiceCode string) error {
+    r._normalInvoiceCode = _normalInvoiceCode
+    r.Set("normal_invoice_code", _normalInvoiceCode)
     return nil
 }
 
 // NormalInvoiceCode Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetNormalInvoiceCode() string {
-    return r.normalInvoiceCode
+    return r._normalInvoiceCode
 }
 // NormalInvoiceNo Setter
 // 原发票号码(开红票时传入)
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetNormalInvoiceNo(normalInvoiceNo string) error {
-    r.normalInvoiceNo = normalInvoiceNo
-    r.Set("normal_invoice_no", normalInvoiceNo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetNormalInvoiceNo(_normalInvoiceNo string) error {
+    r._normalInvoiceNo = _normalInvoiceNo
+    r.Set("normal_invoice_no", _normalInvoiceNo)
     return nil
 }
 
 // NormalInvoiceNo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetNormalInvoiceNo() string {
-    return r.normalInvoiceNo
+    return r._normalInvoiceNo
 }
 // PayeeRegisterNo Setter
 // 收款方税务登记证号
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }
 // PayerAddress Setter
 // 消费者地址
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerAddress(payerAddress string) error {
-    r.payerAddress = payerAddress
-    r.Set("payer_address", payerAddress)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerAddress(_payerAddress string) error {
+    r._payerAddress = _payerAddress
+    r.Set("payer_address", _payerAddress)
     return nil
 }
 
 // PayerAddress Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerAddress() string {
-    return r.payerAddress
+    return r._payerAddress
 }
 // PayerBankaccount Setter
 // 付款方开票开户银行及账号
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerBankaccount(payerBankaccount string) error {
-    r.payerBankaccount = payerBankaccount
-    r.Set("payer_bankaccount", payerBankaccount)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerBankaccount(_payerBankaccount string) error {
+    r._payerBankaccount = _payerBankaccount
+    r.Set("payer_bankaccount", _payerBankaccount)
     return nil
 }
 
 // PayerBankaccount Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerBankaccount() string {
-    return r.payerBankaccount
+    return r._payerBankaccount
 }
 // PayerEmail Setter
 // 消费者电子邮箱
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerEmail(payerEmail string) error {
-    r.payerEmail = payerEmail
-    r.Set("payer_email", payerEmail)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerEmail(_payerEmail string) error {
+    r._payerEmail = _payerEmail
+    r.Set("payer_email", _payerEmail)
     return nil
 }
 
 // PayerEmail Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerEmail() string {
-    return r.payerEmail
+    return r._payerEmail
 }
 // PayerName Setter
 // 付款方名称, 对应发票台头
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerName(payerName string) error {
-    r.payerName = payerName
-    r.Set("payer_name", payerName)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerName(_payerName string) error {
+    r._payerName = _payerName
+    r.Set("payer_name", _payerName)
     return nil
 }
 
 // PayerName Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerName() string {
-    return r.payerName
+    return r._payerName
 }
 // PayerPhone Setter
 // 消费者联系电话
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerPhone(payerPhone string) error {
-    r.payerPhone = payerPhone
-    r.Set("payer_phone", payerPhone)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayerPhone(_payerPhone string) error {
+    r._payerPhone = _payerPhone
+    r.Set("payer_phone", _payerPhone)
     return nil
 }
 
 // PayerPhone Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayerPhone() string {
-    return r.payerPhone
+    return r._payerPhone
 }
 // SumPrice Setter
 // 合计金额(新版中为必传) <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSumPrice(sumPrice string) error {
-    r.sumPrice = sumPrice
-    r.Set("sum_price", sumPrice)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSumPrice(_sumPrice string) error {
+    r._sumPrice = _sumPrice
+    r.Set("sum_price", _sumPrice)
     return nil
 }
 
 // SumPrice Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetSumPrice() string {
-    return r.sumPrice
+    return r._sumPrice
 }
 // SumTax Setter
 // 合计税额 <span style="color:red;font-weight: bold;">当开红票时，该字段为负数</span>
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSumTax(sumTax string) error {
-    r.sumTax = sumTax
-    r.Set("sum_tax", sumTax)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetSumTax(_sumTax string) error {
+    r._sumTax = _sumTax
+    r.Set("sum_tax", _sumTax)
     return nil
 }
 
 // SumTax Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetSumTax() string {
-    return r.sumTax
+    return r._sumTax
 }
 // PayeeChecker Setter
 // 复核人
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeChecker(payeeChecker string) error {
-    r.payeeChecker = payeeChecker
-    r.Set("payee_checker", payeeChecker)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeChecker(_payeeChecker string) error {
+    r._payeeChecker = _payeeChecker
+    r.Set("payee_checker", _payeeChecker)
     return nil
 }
 
 // PayeeChecker Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeChecker() string {
-    return r.payeeChecker
+    return r._payeeChecker
 }
 // PayeeReceiver Setter
 // 收款人
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeReceiver(payeeReceiver string) error {
-    r.payeeReceiver = payeeReceiver
-    r.Set("payee_receiver", payeeReceiver)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeeReceiver(_payeeReceiver string) error {
+    r._payeeReceiver = _payeeReceiver
+    r.Set("payee_receiver", _payeeReceiver)
     return nil
 }
 
 // PayeeReceiver Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeeReceiver() string {
-    return r.payeeReceiver
+    return r._payeeReceiver
 }
 // PayeePhone Setter
 // 收款方电话
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeePhone(payeePhone string) error {
-    r.payeePhone = payeePhone
-    r.Set("payee_phone", payeePhone)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetPayeePhone(_payeePhone string) error {
+    r._payeePhone = _payeePhone
+    r.Set("payee_phone", _payeePhone)
     return nil
 }
 
 // PayeePhone Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetPayeePhone() string {
-    return r.payeePhone
+    return r._payeePhone
 }
 // ApplyId Setter
 // 开票申请ID，接收了开票申请消息后，需要把apply_id带上
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetApplyId(applyId string) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetApplyId(_applyId string) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetApplyId() string {
-    return r.applyId
+    return r._applyId
 }
 // InvoiceKind Setter
 // 发票种类，0=电子发票,1=纸质发票,2=专票
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceKind(invoiceKind int64) error {
-    r.invoiceKind = invoiceKind
-    r.Set("invoice_kind", invoiceKind)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetInvoiceKind(_invoiceKind int64) error {
+    r._invoiceKind = _invoiceKind
+    r.Set("invoice_kind", _invoiceKind)
     return nil
 }
 
 // InvoiceKind Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetInvoiceKind() int64 {
-    return r.invoiceKind
+    return r._invoiceKind
 }
 // RedNoticeNo Setter
 // 红字通知单号，冲红时需要，商家跟税局申请
-func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetRedNoticeNo(redNoticeNo string) error {
-    r.redNoticeNo = redNoticeNo
-    r.Set("red_notice_no", redNoticeNo)
+func (r *AlibabaEinvoiceMerchantCreatereqRequest) SetRedNoticeNo(_redNoticeNo string) error {
+    r._redNoticeNo = _redNoticeNo
+    r.Set("red_notice_no", _redNoticeNo)
     return nil
 }
 
 // RedNoticeNo Getter
 func (r AlibabaEinvoiceMerchantCreatereqRequest) GetRedNoticeNo() string {
-    return r.redNoticeNo
+    return r._redNoticeNo
 }

@@ -15,15 +15,15 @@ taobao.uscesl.biz.item.light.up
 type TaobaoUsceslBizItemLightUpRequest struct {
     model.Params
     // 商品条码
-    itemBarCode   string
+    _itemBarCode   string
     // 亮灯颜色，绿：值为2；红：值为4
-    ledColor   string
+    _ledColor   string
     // 亮灯时长，单位：秒，最大长度3600秒
-    lightUpTime   int64
+    _lightUpTime   int64
     // 门店编号
-    storeId   int64
+    _storeId   int64
     // 商家编号
-    bizBrandKey   string
+    _bizBrandKey   string
 }
 
 // 初始化TaobaoUsceslBizItemLightUpRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoUsceslBizItemLightUpRequest) GetApiParams() url.Values {
 }
 // ItemBarCode Setter
 // 商品条码
-func (r *TaobaoUsceslBizItemLightUpRequest) SetItemBarCode(itemBarCode string) error {
-    r.itemBarCode = itemBarCode
-    r.Set("item_bar_code", itemBarCode)
+func (r *TaobaoUsceslBizItemLightUpRequest) SetItemBarCode(_itemBarCode string) error {
+    r._itemBarCode = _itemBarCode
+    r.Set("item_bar_code", _itemBarCode)
     return nil
 }
 
 // ItemBarCode Getter
 func (r TaobaoUsceslBizItemLightUpRequest) GetItemBarCode() string {
-    return r.itemBarCode
+    return r._itemBarCode
 }
 // LedColor Setter
 // 亮灯颜色，绿：值为2；红：值为4
-func (r *TaobaoUsceslBizItemLightUpRequest) SetLedColor(ledColor string) error {
-    r.ledColor = ledColor
-    r.Set("led_color", ledColor)
+func (r *TaobaoUsceslBizItemLightUpRequest) SetLedColor(_ledColor string) error {
+    r._ledColor = _ledColor
+    r.Set("led_color", _ledColor)
     return nil
 }
 
 // LedColor Getter
 func (r TaobaoUsceslBizItemLightUpRequest) GetLedColor() string {
-    return r.ledColor
+    return r._ledColor
 }
 // LightUpTime Setter
 // 亮灯时长，单位：秒，最大长度3600秒
-func (r *TaobaoUsceslBizItemLightUpRequest) SetLightUpTime(lightUpTime int64) error {
-    r.lightUpTime = lightUpTime
-    r.Set("light_up_time", lightUpTime)
+func (r *TaobaoUsceslBizItemLightUpRequest) SetLightUpTime(_lightUpTime int64) error {
+    r._lightUpTime = _lightUpTime
+    r.Set("light_up_time", _lightUpTime)
     return nil
 }
 
 // LightUpTime Getter
 func (r TaobaoUsceslBizItemLightUpRequest) GetLightUpTime() int64 {
-    return r.lightUpTime
+    return r._lightUpTime
 }
 // StoreId Setter
 // 门店编号
-func (r *TaobaoUsceslBizItemLightUpRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoUsceslBizItemLightUpRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoUsceslBizItemLightUpRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // BizBrandKey Setter
 // 商家编号
-func (r *TaobaoUsceslBizItemLightUpRequest) SetBizBrandKey(bizBrandKey string) error {
-    r.bizBrandKey = bizBrandKey
-    r.Set("biz_brand_key", bizBrandKey)
+func (r *TaobaoUsceslBizItemLightUpRequest) SetBizBrandKey(_bizBrandKey string) error {
+    r._bizBrandKey = _bizBrandKey
+    r.Set("biz_brand_key", _bizBrandKey)
     return nil
 }
 
 // BizBrandKey Getter
 func (r TaobaoUsceslBizItemLightUpRequest) GetBizBrandKey() string {
-    return r.bizBrandKey
+    return r._bizBrandKey
 }

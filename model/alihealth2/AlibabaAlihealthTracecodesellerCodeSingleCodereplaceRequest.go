@@ -15,11 +15,11 @@ alibaba.alihealth.tracecodeseller.code.single.codereplace
 type AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest struct {
     model.Params
     // 企业id
-    entInfoId   string
+    _entInfoId   string
     // 新码
-    newCode   string
+    _newCode   string
     // 老码
-    oldCode   string
+    _oldCode   string
 }
 
 // 初始化AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) GetApiParam
 }
 // EntInfoId Setter
 // 企业id
-func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetEntInfoId(entInfoId string) error {
-    r.entInfoId = entInfoId
-    r.Set("ent_info_id", entInfoId)
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetEntInfoId(_entInfoId string) error {
+    r._entInfoId = _entInfoId
+    r.Set("ent_info_id", _entInfoId)
     return nil
 }
 
 // EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) GetEntInfoId() string {
-    return r.entInfoId
+    return r._entInfoId
 }
 // NewCode Setter
 // 新码
-func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetNewCode(newCode string) error {
-    r.newCode = newCode
-    r.Set("new_code", newCode)
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetNewCode(_newCode string) error {
+    r._newCode = _newCode
+    r.Set("new_code", _newCode)
     return nil
 }
 
 // NewCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) GetNewCode() string {
-    return r.newCode
+    return r._newCode
 }
 // OldCode Setter
 // 老码
-func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetOldCode(oldCode string) error {
-    r.oldCode = oldCode
-    r.Set("old_code", oldCode)
+func (r *AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) SetOldCode(_oldCode string) error {
+    r._oldCode = _oldCode
+    r.Set("old_code", _oldCode)
     return nil
 }
 
 // OldCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeSingleCodereplaceRequest) GetOldCode() string {
-    return r.oldCode
+    return r._oldCode
 }

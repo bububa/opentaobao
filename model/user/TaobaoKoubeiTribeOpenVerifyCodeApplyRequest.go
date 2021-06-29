@@ -15,9 +15,9 @@ taobao.koubei.tribe.open.verify.code.apply
 type TaobaoKoubeiTribeOpenVerifyCodeApplyRequest struct {
     model.Params
     // 数据集id
-    dataSetId   string
+    _dataSetId   string
     // 手机号
-    phone   string
+    _phone   string
 }
 
 // 初始化TaobaoKoubeiTribeOpenVerifyCodeApplyRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetApiParams() url.Values {
 }
 // DataSetId Setter
 // 数据集id
-func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetDataSetId(dataSetId string) error {
-    r.dataSetId = dataSetId
-    r.Set("data_set_id", dataSetId)
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetDataSetId(_dataSetId string) error {
+    r._dataSetId = _dataSetId
+    r.Set("data_set_id", _dataSetId)
     return nil
 }
 
 // DataSetId Getter
 func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetDataSetId() string {
-    return r.dataSetId
+    return r._dataSetId
 }
 // Phone Setter
 // 手机号
-func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r TaobaoKoubeiTribeOpenVerifyCodeApplyRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

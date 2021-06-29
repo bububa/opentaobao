@@ -15,9 +15,9 @@ alibaba.ailabs.iot.device.list.get
 type AlibabaAilabsIotDeviceListGetRequest struct {
     model.Params
     // 用户open id
-    userOpenId   string
+    _userOpenId   string
     // client id
-    clientId   string
+    _clientId   string
 }
 
 // 初始化AlibabaAilabsIotDeviceListGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsIotDeviceListGetRequest) GetApiParams() url.Values {
 }
 // UserOpenId Setter
 // 用户open id
-func (r *AlibabaAilabsIotDeviceListGetRequest) SetUserOpenId(userOpenId string) error {
-    r.userOpenId = userOpenId
-    r.Set("user_open_id", userOpenId)
+func (r *AlibabaAilabsIotDeviceListGetRequest) SetUserOpenId(_userOpenId string) error {
+    r._userOpenId = _userOpenId
+    r.Set("user_open_id", _userOpenId)
     return nil
 }
 
 // UserOpenId Getter
 func (r AlibabaAilabsIotDeviceListGetRequest) GetUserOpenId() string {
-    return r.userOpenId
+    return r._userOpenId
 }
 // ClientId Setter
 // client id
-func (r *AlibabaAilabsIotDeviceListGetRequest) SetClientId(clientId string) error {
-    r.clientId = clientId
-    r.Set("client_id", clientId)
+func (r *AlibabaAilabsIotDeviceListGetRequest) SetClientId(_clientId string) error {
+    r._clientId = _clientId
+    r.Set("client_id", _clientId)
     return nil
 }
 
 // ClientId Getter
 func (r AlibabaAilabsIotDeviceListGetRequest) GetClientId() string {
-    return r.clientId
+    return r._clientId
 }

@@ -15,13 +15,13 @@ alibaba.security.jaq.rp.cloud.realname.check
 type AlibabaSecurityJaqRpCloudRealnameCheckRequest struct {
     model.Params
     // token
-    verifyToken   string
+    _verifyToken   string
     // 要识别的信息
-    imageUrls   string
+    _imageUrls   string
     // 姓名
-    name   string
+    _name   string
     // 证件号
-    identityCode   string
+    _identityCode   string
 }
 
 // 初始化AlibabaSecurityJaqRpCloudRealnameCheckRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaSecurityJaqRpCloudRealnameCheckRequest) GetApiParams() url.Values
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }
 // ImageUrls Setter
 // 要识别的信息
-func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetImageUrls(imageUrls string) error {
-    r.imageUrls = imageUrls
-    r.Set("image_urls", imageUrls)
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetImageUrls(_imageUrls string) error {
+    r._imageUrls = _imageUrls
+    r.Set("image_urls", _imageUrls)
     return nil
 }
 
 // ImageUrls Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckRequest) GetImageUrls() string {
-    return r.imageUrls
+    return r._imageUrls
 }
 // Name Setter
 // 姓名
-func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // IdentityCode Setter
 // 证件号
-func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetIdentityCode(identityCode string) error {
-    r.identityCode = identityCode
-    r.Set("identity_code", identityCode)
+func (r *AlibabaSecurityJaqRpCloudRealnameCheckRequest) SetIdentityCode(_identityCode string) error {
+    r._identityCode = _identityCode
+    r.Set("identity_code", _identityCode)
     return nil
 }
 
 // IdentityCode Getter
 func (r AlibabaSecurityJaqRpCloudRealnameCheckRequest) GetIdentityCode() string {
-    return r.identityCode
+    return r._identityCode
 }

@@ -16,15 +16,15 @@ alibaba.alihealth.drug.kyt.yb.getcoderelation
 type AlibabaAlihealthDrugKytYbGetcoderelationRequest struct {
     model.Params
     // 社保局(所属地市名称)
-    bureauName   string
+    _bureauName   string
     // 请求终端名称
-    terminalName   string
+    _terminalName   string
     // 终端类型：1005100-零售，1005200-医疗
-    terminalType   string
+    _terminalType   string
     // 调用方式：formal-正式、test-测试
-    invocation   string
+    _invocation   string
     // 追溯码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaAlihealthDrugKytYbGetcoderelationRequest对象
@@ -49,61 +49,61 @@ func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetApiParams() url.Valu
 }
 // BureauName Setter
 // 社保局(所属地市名称)
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // TerminalName Setter
 // 请求终端名称
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetInvocation(invocation string) error {
-    r.invocation = invocation
-    r.Set("invocation", invocation)
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetInvocation(_invocation string) error {
+    r._invocation = _invocation
+    r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetInvocation() string {
-    return r.invocation
+    return r._invocation
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugKytYbGetcoderelationRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugKytYbGetcoderelationRequest) GetCode() string {
-    return r.code
+    return r._code
 }

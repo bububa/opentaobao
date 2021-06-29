@@ -15,7 +15,7 @@ taobao.jst.sms.menuinfo.report
 type TaobaoJstSmsMenuinfoReportRequest struct {
     model.Params
     // 菜单信息上报接口的请求参数
-    menuInfoReportRequest   *MenuInfoReportRequest
+    _menuInfoReportRequest   *MenuInfoReportRequest
 }
 
 // 初始化TaobaoJstSmsMenuinfoReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsMenuinfoReportRequest) GetApiParams() url.Values {
 }
 // MenuInfoReportRequest Setter
 // 菜单信息上报接口的请求参数
-func (r *TaobaoJstSmsMenuinfoReportRequest) SetMenuInfoReportRequest(menuInfoReportRequest *MenuInfoReportRequest) error {
-    r.menuInfoReportRequest = menuInfoReportRequest
-    r.Set("menu_info_report_request", menuInfoReportRequest)
+func (r *TaobaoJstSmsMenuinfoReportRequest) SetMenuInfoReportRequest(_menuInfoReportRequest *MenuInfoReportRequest) error {
+    r._menuInfoReportRequest = _menuInfoReportRequest
+    r.Set("menu_info_report_request", _menuInfoReportRequest)
     return nil
 }
 
 // MenuInfoReportRequest Getter
 func (r TaobaoJstSmsMenuinfoReportRequest) GetMenuInfoReportRequest() *MenuInfoReportRequest {
-    return r.menuInfoReportRequest
+    return r._menuInfoReportRequest
 }

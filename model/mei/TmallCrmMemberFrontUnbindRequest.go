@@ -15,7 +15,7 @@ tmall.crm.member.front.unbind
 type TmallCrmMemberFrontUnbindRequest struct {
     model.Params
     // 会员昵称
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TmallCrmMemberFrontUnbindRequest对象
@@ -40,13 +40,13 @@ func (r TmallCrmMemberFrontUnbindRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 会员昵称
-func (r *TmallCrmMemberFrontUnbindRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TmallCrmMemberFrontUnbindRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TmallCrmMemberFrontUnbindRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

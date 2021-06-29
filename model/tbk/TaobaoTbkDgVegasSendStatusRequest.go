@@ -15,17 +15,17 @@ taobao.tbk.dg.vegas.send.status
 type TaobaoTbkDgVegasSendStatusRequest struct {
     model.Params
     // 渠道管理id
-    relationId   string
+    _relationId   string
     // 会员运营id
-    specialId   string
+    _specialId   string
     // 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
-    deviceValue   string
+    _deviceValue   string
     // 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
-    deviceType   string
+    _deviceType   string
     // thor平台业务码， 1：coupon 超红
-    thorBizCode   string
+    _thorBizCode   string
     // 媒体pid
-    pid   string
+    _pid   string
 }
 
 // 初始化TaobaoTbkDgVegasSendStatusRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoTbkDgVegasSendStatusRequest) GetApiParams() url.Values {
 }
 // RelationId Setter
 // 渠道管理id
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetRelationId(relationId string) error {
-    r.relationId = relationId
-    r.Set("relation_id", relationId)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetRelationId(_relationId string) error {
+    r._relationId = _relationId
+    r.Set("relation_id", _relationId)
     return nil
 }
 
 // RelationId Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetRelationId() string {
-    return r.relationId
+    return r._relationId
 }
 // SpecialId Setter
 // 会员运营id
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetSpecialId(specialId string) error {
-    r.specialId = specialId
-    r.Set("special_id", specialId)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetSpecialId(_specialId string) error {
+    r._specialId = _specialId
+    r.Set("special_id", _specialId)
     return nil
 }
 
 // SpecialId Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetSpecialId() string {
-    return r.specialId
+    return r._specialId
 }
 // DeviceValue Setter
 // 加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetDeviceValue(deviceValue string) error {
-    r.deviceValue = deviceValue
-    r.Set("device_value", deviceValue)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetDeviceValue(_deviceValue string) error {
+    r._deviceValue = _deviceValue
+    r.Set("device_value", _deviceValue)
     return nil
 }
 
 // DeviceValue Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetDeviceValue() string {
-    return r.deviceValue
+    return r._deviceValue
 }
 // DeviceType Setter
 // 入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetDeviceType(deviceType string) error {
-    r.deviceType = deviceType
-    r.Set("device_type", deviceType)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetDeviceType(_deviceType string) error {
+    r._deviceType = _deviceType
+    r.Set("device_type", _deviceType)
     return nil
 }
 
 // DeviceType Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetDeviceType() string {
-    return r.deviceType
+    return r._deviceType
 }
 // ThorBizCode Setter
 // thor平台业务码， 1：coupon 超红
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetThorBizCode(thorBizCode string) error {
-    r.thorBizCode = thorBizCode
-    r.Set("thor_biz_code", thorBizCode)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetThorBizCode(_thorBizCode string) error {
+    r._thorBizCode = _thorBizCode
+    r.Set("thor_biz_code", _thorBizCode)
     return nil
 }
 
 // ThorBizCode Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetThorBizCode() string {
-    return r.thorBizCode
+    return r._thorBizCode
 }
 // Pid Setter
 // 媒体pid
-func (r *TaobaoTbkDgVegasSendStatusRequest) SetPid(pid string) error {
-    r.pid = pid
-    r.Set("pid", pid)
+func (r *TaobaoTbkDgVegasSendStatusRequest) SetPid(_pid string) error {
+    r._pid = _pid
+    r.Set("pid", _pid)
     return nil
 }
 
 // Pid Getter
 func (r TaobaoTbkDgVegasSendStatusRequest) GetPid() string {
-    return r.pid
+    return r._pid
 }

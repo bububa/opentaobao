@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.usage.saveorupdate
 type AlibabaAlihealthOutflowUsageSaveorupdateRequest struct {
     model.Params
     // 用法数据
-    usageRequest   *UsageRequest
+    _usageRequest   *UsageRequest
 }
 
 // 初始化AlibabaAlihealthOutflowUsageSaveorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetApiParams() url.Valu
 }
 // UsageRequest Setter
 // 用法数据
-func (r *AlibabaAlihealthOutflowUsageSaveorupdateRequest) SetUsageRequest(usageRequest *UsageRequest) error {
-    r.usageRequest = usageRequest
-    r.Set("usage_request", usageRequest)
+func (r *AlibabaAlihealthOutflowUsageSaveorupdateRequest) SetUsageRequest(_usageRequest *UsageRequest) error {
+    r._usageRequest = _usageRequest
+    r.Set("usage_request", _usageRequest)
     return nil
 }
 
 // UsageRequest Getter
 func (r AlibabaAlihealthOutflowUsageSaveorupdateRequest) GetUsageRequest() *UsageRequest {
-    return r.usageRequest
+    return r._usageRequest
 }

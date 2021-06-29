@@ -15,11 +15,11 @@ yunos.osupdate.osfota.query
 type YunosOsupdateOsfotaQueryRequest struct {
     model.Params
     // 设备型号ID
-    modleId   int64
+    _modleId   int64
     // 页码
-    page   int64
+    _page   int64
     // 每页数量
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosOsupdateOsfotaQueryRequest对象
@@ -44,37 +44,37 @@ func (r YunosOsupdateOsfotaQueryRequest) GetApiParams() url.Values {
 }
 // ModleId Setter
 // 设备型号ID
-func (r *YunosOsupdateOsfotaQueryRequest) SetModleId(modleId int64) error {
-    r.modleId = modleId
-    r.Set("modle_id", modleId)
+func (r *YunosOsupdateOsfotaQueryRequest) SetModleId(_modleId int64) error {
+    r._modleId = _modleId
+    r.Set("modle_id", _modleId)
     return nil
 }
 
 // ModleId Getter
 func (r YunosOsupdateOsfotaQueryRequest) GetModleId() int64 {
-    return r.modleId
+    return r._modleId
 }
 // Page Setter
 // 页码
-func (r *YunosOsupdateOsfotaQueryRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *YunosOsupdateOsfotaQueryRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r YunosOsupdateOsfotaQueryRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // PageSize Setter
 // 每页数量
-func (r *YunosOsupdateOsfotaQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosOsupdateOsfotaQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosOsupdateOsfotaQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

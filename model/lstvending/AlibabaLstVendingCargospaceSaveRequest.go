@@ -15,7 +15,7 @@ alibaba.lst.vending.cargospace.save
 type AlibabaLstVendingCargospaceSaveRequest struct {
     model.Params
     // 货道信息
-    cargoSpaceDTOList   []VendingCargoSpaceDto
+    _cargoSpaceDTOList   []VendingCargoSpaceDto
 }
 
 // 初始化AlibabaLstVendingCargospaceSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingCargospaceSaveRequest) GetApiParams() url.Values {
 }
 // CargoSpaceDTOList Setter
 // 货道信息
-func (r *AlibabaLstVendingCargospaceSaveRequest) SetCargoSpaceDTOList(cargoSpaceDTOList []VendingCargoSpaceDto) error {
-    r.cargoSpaceDTOList = cargoSpaceDTOList
-    r.Set("cargo_space_d_t_o_list", cargoSpaceDTOList)
+func (r *AlibabaLstVendingCargospaceSaveRequest) SetCargoSpaceDTOList(_cargoSpaceDTOList []VendingCargoSpaceDto) error {
+    r._cargoSpaceDTOList = _cargoSpaceDTOList
+    r.Set("cargo_space_d_t_o_list", _cargoSpaceDTOList)
     return nil
 }
 
 // CargoSpaceDTOList Getter
 func (r AlibabaLstVendingCargospaceSaveRequest) GetCargoSpaceDTOList() []VendingCargoSpaceDto {
-    return r.cargoSpaceDTOList
+    return r._cargoSpaceDTOList
 }

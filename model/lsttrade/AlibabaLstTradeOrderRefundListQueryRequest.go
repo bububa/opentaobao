@@ -15,7 +15,7 @@ alibaba.lst.trade.order.refund.list.query
 type AlibabaLstTradeOrderRefundListQueryRequest struct {
     model.Params
     // 输入参数
-    param   *TopLstSupplierOrderRefundQuery
+    _param   *TopLstSupplierOrderRefundQuery
 }
 
 // 初始化AlibabaLstTradeOrderRefundListQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeOrderRefundListQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 输入参数
-func (r *AlibabaLstTradeOrderRefundListQueryRequest) SetParam(param *TopLstSupplierOrderRefundQuery) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstTradeOrderRefundListQueryRequest) SetParam(_param *TopLstSupplierOrderRefundQuery) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstTradeOrderRefundListQueryRequest) GetParam() *TopLstSupplierOrderRefundQuery {
-    return r.param
+    return r._param
 }

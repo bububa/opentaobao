@@ -15,15 +15,15 @@ yunos.tvpubadmin.device.query
 type YunosTvpubadminDeviceQueryRequest struct {
     model.Params
     // 终端类型
-    terminalType   string
+    _terminalType   string
     // 品牌ID
-    brandId   int64
+    _brandId   int64
     // 牌照方
-    license   int64
+    _license   int64
     // 页码值
-    pageNo   int64
+    _pageNo   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化YunosTvpubadminDeviceQueryRequest对象
@@ -48,61 +48,61 @@ func (r YunosTvpubadminDeviceQueryRequest) GetApiParams() url.Values {
 }
 // TerminalType Setter
 // 终端类型
-func (r *YunosTvpubadminDeviceQueryRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *YunosTvpubadminDeviceQueryRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r YunosTvpubadminDeviceQueryRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // BrandId Setter
 // 品牌ID
-func (r *YunosTvpubadminDeviceQueryRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *YunosTvpubadminDeviceQueryRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r YunosTvpubadminDeviceQueryRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceQueryRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceQueryRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceQueryRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // PageNo Setter
 // 页码值
-func (r *YunosTvpubadminDeviceQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YunosTvpubadminDeviceQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YunosTvpubadminDeviceQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数
-func (r *YunosTvpubadminDeviceQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YunosTvpubadminDeviceQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YunosTvpubadminDeviceQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

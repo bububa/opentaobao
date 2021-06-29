@@ -15,7 +15,7 @@ alibaba.wdk.ums.handling.get
 type AlibabaWdkUmsHandlingGetRequest struct {
     model.Params
     // 仓库编码
-    warehouseCode   string
+    _warehouseCode   string
 }
 
 // 初始化AlibabaWdkUmsHandlingGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsHandlingGetRequest) GetApiParams() url.Values {
 }
 // WarehouseCode Setter
 // 仓库编码
-func (r *AlibabaWdkUmsHandlingGetRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *AlibabaWdkUmsHandlingGetRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r AlibabaWdkUmsHandlingGetRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }

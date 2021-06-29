@@ -15,7 +15,7 @@ alibaba.ais.assets.tag.generate
 type AlibabaAisAssetsTagGenerateRequest struct {
     model.Params
     // 请求资产信息
-    requestParam   string
+    _requestParam   string
 }
 
 // 初始化AlibabaAisAssetsTagGenerateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAisAssetsTagGenerateRequest) GetApiParams() url.Values {
 }
 // RequestParam Setter
 // 请求资产信息
-func (r *AlibabaAisAssetsTagGenerateRequest) SetRequestParam(requestParam string) error {
-    r.requestParam = requestParam
-    r.Set("request_param", requestParam)
+func (r *AlibabaAisAssetsTagGenerateRequest) SetRequestParam(_requestParam string) error {
+    r._requestParam = _requestParam
+    r.Set("request_param", _requestParam)
     return nil
 }
 
 // RequestParam Getter
 func (r AlibabaAisAssetsTagGenerateRequest) GetRequestParam() string {
-    return r.requestParam
+    return r._requestParam
 }

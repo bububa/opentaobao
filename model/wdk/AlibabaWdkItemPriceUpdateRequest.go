@@ -15,13 +15,13 @@ alibaba.wdk.item.price.update
 type AlibabaWdkItemPriceUpdateRequest struct {
     model.Params
     // 盒马门店id
-    storeId   string
+    _storeId   string
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 价格，单位是分
-    skuPrice   int64
+    _skuPrice   int64
     // 会员价格，单位是分，且不能大于价格
-    skuMemberPrice   int64
+    _skuMemberPrice   int64
 }
 
 // 初始化AlibabaWdkItemPriceUpdateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaWdkItemPriceUpdateRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 盒马门店id
-func (r *AlibabaWdkItemPriceUpdateRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkItemPriceUpdateRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkItemPriceUpdateRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemPriceUpdateRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // SkuPrice Setter
 // 价格，单位是分
-func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuPrice(skuPrice int64) error {
-    r.skuPrice = skuPrice
-    r.Set("sku_price", skuPrice)
+func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuPrice(_skuPrice int64) error {
+    r._skuPrice = _skuPrice
+    r.Set("sku_price", _skuPrice)
     return nil
 }
 
 // SkuPrice Getter
 func (r AlibabaWdkItemPriceUpdateRequest) GetSkuPrice() int64 {
-    return r.skuPrice
+    return r._skuPrice
 }
 // SkuMemberPrice Setter
 // 会员价格，单位是分，且不能大于价格
-func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuMemberPrice(skuMemberPrice int64) error {
-    r.skuMemberPrice = skuMemberPrice
-    r.Set("sku_member_price", skuMemberPrice)
+func (r *AlibabaWdkItemPriceUpdateRequest) SetSkuMemberPrice(_skuMemberPrice int64) error {
+    r._skuMemberPrice = _skuMemberPrice
+    r.Set("sku_member_price", _skuMemberPrice)
     return nil
 }
 
 // SkuMemberPrice Getter
 func (r AlibabaWdkItemPriceUpdateRequest) GetSkuMemberPrice() int64 {
-    return r.skuMemberPrice
+    return r._skuMemberPrice
 }

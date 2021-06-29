@@ -15,9 +15,9 @@ alibaba.westcrm.member.message.handle
 type AlibabaWestcrmMemberMessageHandleRequest struct {
     model.Params
     // 消息类型
-    messageType   string
+    _messageType   string
     // 消息内容
-    messageContent   string
+    _messageContent   string
 }
 
 // 初始化AlibabaWestcrmMemberMessageHandleRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWestcrmMemberMessageHandleRequest) GetApiParams() url.Values {
 }
 // MessageType Setter
 // 消息类型
-func (r *AlibabaWestcrmMemberMessageHandleRequest) SetMessageType(messageType string) error {
-    r.messageType = messageType
-    r.Set("message_type", messageType)
+func (r *AlibabaWestcrmMemberMessageHandleRequest) SetMessageType(_messageType string) error {
+    r._messageType = _messageType
+    r.Set("message_type", _messageType)
     return nil
 }
 
 // MessageType Getter
 func (r AlibabaWestcrmMemberMessageHandleRequest) GetMessageType() string {
-    return r.messageType
+    return r._messageType
 }
 // MessageContent Setter
 // 消息内容
-func (r *AlibabaWestcrmMemberMessageHandleRequest) SetMessageContent(messageContent string) error {
-    r.messageContent = messageContent
-    r.Set("message_content", messageContent)
+func (r *AlibabaWestcrmMemberMessageHandleRequest) SetMessageContent(_messageContent string) error {
+    r._messageContent = _messageContent
+    r.Set("message_content", _messageContent)
     return nil
 }
 
 // MessageContent Getter
 func (r AlibabaWestcrmMemberMessageHandleRequest) GetMessageContent() string {
-    return r.messageContent
+    return r._messageContent
 }

@@ -15,7 +15,7 @@ alibaba.ascp.uop.taobao.presalesorder.consignconfirm
 type AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest struct {
     model.Params
     // 预售订单商家仓出库对象
-    presalesOrderConsignConfirmRequest   *Presalesorderconsignconfirmrequest
+    _presalesOrderConsignConfirmRequest   *Presalesorderconsignconfirmrequest
 }
 
 // 初始化AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest) GetApiParams() u
 }
 // PresalesOrderConsignConfirmRequest Setter
 // 预售订单商家仓出库对象
-func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest) SetPresalesOrderConsignConfirmRequest(presalesOrderConsignConfirmRequest *Presalesorderconsignconfirmrequest) error {
-    r.presalesOrderConsignConfirmRequest = presalesOrderConsignConfirmRequest
-    r.Set("presales_order_consign_confirm_request", presalesOrderConsignConfirmRequest)
+func (r *AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest) SetPresalesOrderConsignConfirmRequest(_presalesOrderConsignConfirmRequest *Presalesorderconsignconfirmrequest) error {
+    r._presalesOrderConsignConfirmRequest = _presalesOrderConsignConfirmRequest
+    r.Set("presales_order_consign_confirm_request", _presalesOrderConsignConfirmRequest)
     return nil
 }
 
 // PresalesOrderConsignConfirmRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderConsignconfirmRequest) GetPresalesOrderConsignConfirmRequest() *Presalesorderconsignconfirmrequest {
-    return r.presalesOrderConsignConfirmRequest
+    return r._presalesOrderConsignConfirmRequest
 }

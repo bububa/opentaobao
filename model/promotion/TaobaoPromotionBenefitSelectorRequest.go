@@ -20,7 +20,7 @@ taobao.promotion.benefit.selector
 type TaobaoPromotionBenefitSelectorRequest struct {
     model.Params
     // 权益选择器请求
-    query   *BenefitSelectorQuery
+    _query   *BenefitSelectorQuery
 }
 
 // 初始化TaobaoPromotionBenefitSelectorRequest对象
@@ -45,13 +45,13 @@ func (r TaobaoPromotionBenefitSelectorRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 权益选择器请求
-func (r *TaobaoPromotionBenefitSelectorRequest) SetQuery(query *BenefitSelectorQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TaobaoPromotionBenefitSelectorRequest) SetQuery(_query *BenefitSelectorQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TaobaoPromotionBenefitSelectorRequest) GetQuery() *BenefitSelectorQuery {
-    return r.query
+    return r._query
 }

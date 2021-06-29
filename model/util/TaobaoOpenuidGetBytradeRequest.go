@@ -15,7 +15,7 @@ taobao.openuid.get.bytrade
 type TaobaoOpenuidGetBytradeRequest struct {
     model.Params
     // 订单ID
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoOpenuidGetBytradeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenuidGetBytradeRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 订单ID
-func (r *TaobaoOpenuidGetBytradeRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOpenuidGetBytradeRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOpenuidGetBytradeRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

@@ -15,7 +15,7 @@ alibaba.scbp.product.group.get
 type AlibabaScbpProductGroupGetRequest struct {
     model.Params
     // 产品分组标识，null表示查询第一层分组
-    groupId   string
+    _groupId   string
 }
 
 // 初始化AlibabaScbpProductGroupGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpProductGroupGetRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 产品分组标识，null表示查询第一层分组
-func (r *AlibabaScbpProductGroupGetRequest) SetGroupId(groupId string) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaScbpProductGroupGetRequest) SetGroupId(_groupId string) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaScbpProductGroupGetRequest) GetGroupId() string {
-    return r.groupId
+    return r._groupId
 }

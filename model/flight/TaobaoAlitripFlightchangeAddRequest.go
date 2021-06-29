@@ -17,7 +17,7 @@ taobao.alitrip.flightchange.add
 type TaobaoAlitripFlightchangeAddRequest struct {
     model.Params
     // 录入参数类
-    flightChangeDataDo   *FlightChangeDataDO
+    _flightChangeDataDo   *FlightChangeDataDO
 }
 
 // 初始化TaobaoAlitripFlightchangeAddRequest对象
@@ -42,13 +42,13 @@ func (r TaobaoAlitripFlightchangeAddRequest) GetApiParams() url.Values {
 }
 // FlightChangeDataDo Setter
 // 录入参数类
-func (r *TaobaoAlitripFlightchangeAddRequest) SetFlightChangeDataDo(flightChangeDataDo *FlightChangeDataDO) error {
-    r.flightChangeDataDo = flightChangeDataDo
-    r.Set("flight_change_data_do", flightChangeDataDo)
+func (r *TaobaoAlitripFlightchangeAddRequest) SetFlightChangeDataDo(_flightChangeDataDo *FlightChangeDataDO) error {
+    r._flightChangeDataDo = _flightChangeDataDo
+    r.Set("flight_change_data_do", _flightChangeDataDo)
     return nil
 }
 
 // FlightChangeDataDo Getter
 func (r TaobaoAlitripFlightchangeAddRequest) GetFlightChangeDataDo() *FlightChangeDataDO {
-    return r.flightChangeDataDo
+    return r._flightChangeDataDo
 }

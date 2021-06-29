@@ -15,7 +15,7 @@ alibaba.alsc.crm.marketing.encrypt
 type AlibabaAlscCrmMarketingEncryptRequest struct {
     model.Params
     // 参数
-    param   string
+    _param   string
 }
 
 // 初始化AlibabaAlscCrmMarketingEncryptRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmMarketingEncryptRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *AlibabaAlscCrmMarketingEncryptRequest) SetParam(param string) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaAlscCrmMarketingEncryptRequest) SetParam(_param string) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaAlscCrmMarketingEncryptRequest) GetParam() string {
-    return r.param
+    return r._param
 }

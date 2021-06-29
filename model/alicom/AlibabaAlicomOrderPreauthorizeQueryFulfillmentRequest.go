@@ -15,7 +15,7 @@ alibaba.alicom.order.preauthorize.query.fulfillment
 type AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest struct {
     model.Params
     // 入参
-    preAuthorizeModel   *PreAuthorizeModel
+    _preAuthorizeModel   *PreAuthorizeModel
 }
 
 // 初始化AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest) GetApiParams() ur
 }
 // PreAuthorizeModel Setter
 // 入参
-func (r *AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest) SetPreAuthorizeModel(preAuthorizeModel *PreAuthorizeModel) error {
-    r.preAuthorizeModel = preAuthorizeModel
-    r.Set("pre_authorize_model", preAuthorizeModel)
+func (r *AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
+    r._preAuthorizeModel = _preAuthorizeModel
+    r.Set("pre_authorize_model", _preAuthorizeModel)
     return nil
 }
 
 // PreAuthorizeModel Getter
 func (r AlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
-    return r.preAuthorizeModel
+    return r._preAuthorizeModel
 }

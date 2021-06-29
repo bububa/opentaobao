@@ -15,7 +15,7 @@ alibaba.lst.logistics.trace.query
 type AlibabaLstLogisticsTraceQueryRequest struct {
     model.Params
     // 入参
-    query   *LstLogisticsTraceQuery
+    _query   *LstLogisticsTraceQuery
 }
 
 // 初始化AlibabaLstLogisticsTraceQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsTraceQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstLogisticsTraceQueryRequest) SetQuery(query *LstLogisticsTraceQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstLogisticsTraceQueryRequest) SetQuery(_query *LstLogisticsTraceQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstLogisticsTraceQueryRequest) GetQuery() *LstLogisticsTraceQuery {
-    return r.query
+    return r._query
 }

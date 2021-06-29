@@ -15,7 +15,7 @@ taobao.xhotel.roomtype.conflict.data
 type TaobaoXhotelRoomtypeConflictDataRequest struct {
     model.Params
     // 查询第几页数据
-    currentPage   int64
+    _currentPage   int64
 }
 
 // 初始化TaobaoXhotelRoomtypeConflictDataRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelRoomtypeConflictDataRequest) GetApiParams() url.Values {
 }
 // CurrentPage Setter
 // 查询第几页数据
-func (r *TaobaoXhotelRoomtypeConflictDataRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *TaobaoXhotelRoomtypeConflictDataRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r TaobaoXhotelRoomtypeConflictDataRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }

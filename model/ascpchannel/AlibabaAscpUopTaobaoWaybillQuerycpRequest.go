@@ -15,7 +15,7 @@ alibaba.ascp.uop.taobao.waybill.querycp
 type AlibabaAscpUopTaobaoWaybillQuerycpRequest struct {
     model.Params
     // 系统自动生成
-    queryCpRequest   *Querycprequest
+    _queryCpRequest   *Querycprequest
 }
 
 // 初始化AlibabaAscpUopTaobaoWaybillQuerycpRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetApiParams() url.Values {
 }
 // QueryCpRequest Setter
 // 系统自动生成
-func (r *AlibabaAscpUopTaobaoWaybillQuerycpRequest) SetQueryCpRequest(queryCpRequest *Querycprequest) error {
-    r.queryCpRequest = queryCpRequest
-    r.Set("query_cp_request", queryCpRequest)
+func (r *AlibabaAscpUopTaobaoWaybillQuerycpRequest) SetQueryCpRequest(_queryCpRequest *Querycprequest) error {
+    r._queryCpRequest = _queryCpRequest
+    r.Set("query_cp_request", _queryCpRequest)
     return nil
 }
 
 // QueryCpRequest Getter
 func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetQueryCpRequest() *Querycprequest {
-    return r.queryCpRequest
+    return r._queryCpRequest
 }

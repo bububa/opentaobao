@@ -15,21 +15,21 @@ taobao.logistics.order.shengxian.confirm
 type TaobaoLogisticsOrderShengxianConfirmRequest struct {
     model.Params
     // 淘宝交易ID
-    tid   int64
+    _tid   int64
     // 运单号.具体一个物流公司的真实运单号码。支持多个运单号，多个运单号之间用英文分号（;）隔开，不能重复。淘宝官方物流会校验，请谨慎传入；
-    outSid   string
+    _outSid   string
     // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<font color='red'>如果为空，取的卖家的默认取货地址</font>如果service_code不为空，默认使用service_code如果service_code为空，sender_id不为空，使用sender_id对应的地址发货如果service_code与sender_id都为空，使用默认地址发货
-    senderId   int64
+    _senderId   int64
     // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<br><font color='red'>如果为空，取的卖家的默认退货地址</font><br>
-    cancelId   int64
+    _cancelId   int64
     // 商家的IP地址
-    sellerIp   string
+    _sellerIp   string
     // 物流订单ID 。同淘宝交易订单互斥，淘宝交易号存在，，以淘宝交易号为准
-    logisId   int64
+    _logisId   int64
     // 仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)如果service_code为空，默认通过sender_id来发货
-    serviceCode   string
+    _serviceCode   string
     // 1：冷链。0：常温
-    deliveryType   int64
+    _deliveryType   int64
 }
 
 // 初始化TaobaoLogisticsOrderShengxianConfirmRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易ID
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // OutSid Setter
 // 运单号.具体一个物流公司的真实运单号码。支持多个运单号，多个运单号之间用英文分号（;）隔开，不能重复。淘宝官方物流会校验，请谨慎传入；
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetOutSid(outSid string) error {
-    r.outSid = outSid
-    r.Set("out_sid", outSid)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetOutSid(_outSid string) error {
+    r._outSid = _outSid
+    r.Set("out_sid", _outSid)
     return nil
 }
 
 // OutSid Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetOutSid() string {
-    return r.outSid
+    return r._outSid
 }
 // SenderId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<font color='red'>如果为空，取的卖家的默认取货地址</font>如果service_code不为空，默认使用service_code如果service_code为空，sender_id不为空，使用sender_id对应的地址发货如果service_code与sender_id都为空，使用默认地址发货
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetSenderId(senderId int64) error {
-    r.senderId = senderId
-    r.Set("sender_id", senderId)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetSenderId(_senderId int64) error {
+    r._senderId = _senderId
+    r.Set("sender_id", _senderId)
     return nil
 }
 
 // SenderId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetSenderId() int64 {
-    return r.senderId
+    return r._senderId
 }
 // CancelId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。<br><font color='red'>如果为空，取的卖家的默认退货地址</font><br>
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetCancelId(cancelId int64) error {
-    r.cancelId = cancelId
-    r.Set("cancel_id", cancelId)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetCancelId(_cancelId int64) error {
+    r._cancelId = _cancelId
+    r.Set("cancel_id", _cancelId)
     return nil
 }
 
 // CancelId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetCancelId() int64 {
-    return r.cancelId
+    return r._cancelId
 }
 // SellerIp Setter
 // 商家的IP地址
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetSellerIp(sellerIp string) error {
-    r.sellerIp = sellerIp
-    r.Set("seller_ip", sellerIp)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetSellerIp(_sellerIp string) error {
+    r._sellerIp = _sellerIp
+    r.Set("seller_ip", _sellerIp)
     return nil
 }
 
 // SellerIp Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetSellerIp() string {
-    return r.sellerIp
+    return r._sellerIp
 }
 // LogisId Setter
 // 物流订单ID 。同淘宝交易订单互斥，淘宝交易号存在，，以淘宝交易号为准
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetLogisId(logisId int64) error {
-    r.logisId = logisId
-    r.Set("logis_id", logisId)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetLogisId(_logisId int64) error {
+    r._logisId = _logisId
+    r.Set("logis_id", _logisId)
     return nil
 }
 
 // LogisId Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetLogisId() int64 {
-    return r.logisId
+    return r._logisId
 }
 // ServiceCode Setter
 // 仓库的服务代码标示，代码一个仓库的实体。(可以通过taobao.wlb.stores.baseinfo.get接口查询)如果service_code为空，默认通过sender_id来发货
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetServiceCode(serviceCode string) error {
-    r.serviceCode = serviceCode
-    r.Set("service_code", serviceCode)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetServiceCode(_serviceCode string) error {
+    r._serviceCode = _serviceCode
+    r.Set("service_code", _serviceCode)
     return nil
 }
 
 // ServiceCode Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetServiceCode() string {
-    return r.serviceCode
+    return r._serviceCode
 }
 // DeliveryType Setter
 // 1：冷链。0：常温
-func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetDeliveryType(deliveryType int64) error {
-    r.deliveryType = deliveryType
-    r.Set("delivery_type", deliveryType)
+func (r *TaobaoLogisticsOrderShengxianConfirmRequest) SetDeliveryType(_deliveryType int64) error {
+    r._deliveryType = _deliveryType
+    r.Set("delivery_type", _deliveryType)
     return nil
 }
 
 // DeliveryType Getter
 func (r TaobaoLogisticsOrderShengxianConfirmRequest) GetDeliveryType() int64 {
-    return r.deliveryType
+    return r._deliveryType
 }

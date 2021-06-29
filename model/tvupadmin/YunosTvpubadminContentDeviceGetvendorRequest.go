@@ -15,9 +15,9 @@ yunos.tvpubadmin.content.device.getvendor
 type YunosTvpubadminContentDeviceGetvendorRequest struct {
     model.Params
     // license
-    license   int64
+    _license   int64
     // brand_id
-    brandId   int64
+    _brandId   int64
 }
 
 // 初始化YunosTvpubadminContentDeviceGetvendorRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvpubadminContentDeviceGetvendorRequest) GetApiParams() url.Values 
 }
 // License Setter
 // license
-func (r *YunosTvpubadminContentDeviceGetvendorRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminContentDeviceGetvendorRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminContentDeviceGetvendorRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // BrandId Setter
 // brand_id
-func (r *YunosTvpubadminContentDeviceGetvendorRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *YunosTvpubadminContentDeviceGetvendorRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r YunosTvpubadminContentDeviceGetvendorRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }

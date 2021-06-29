@@ -15,15 +15,15 @@ taobao.xhotel.multiplerate.delete
 type TaobaoXhotelMultiplerateDeleteRequest struct {
     model.Params
     // 渠道，和推送房价所使用的渠道保持一致
-    vendor   string
+    _vendor   string
     // 商家价格政策编码
-    rateplanCode   string
+    _rateplanCode   string
     // 商家房型编码
-    outRid   string
+    _outRid   string
     // 连住天数
-    occupancy   int64
+    _occupancy   int64
     // 入住人数
-    lengthofstay   int64
+    _lengthofstay   int64
 }
 
 // 初始化TaobaoXhotelMultiplerateDeleteRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoXhotelMultiplerateDeleteRequest) GetApiParams() url.Values {
 }
 // Vendor Setter
 // 渠道，和推送房价所使用的渠道保持一致
-func (r *TaobaoXhotelMultiplerateDeleteRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelMultiplerateDeleteRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelMultiplerateDeleteRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }
 // RateplanCode Setter
 // 商家价格政策编码
-func (r *TaobaoXhotelMultiplerateDeleteRequest) SetRateplanCode(rateplanCode string) error {
-    r.rateplanCode = rateplanCode
-    r.Set("rateplan_code", rateplanCode)
+func (r *TaobaoXhotelMultiplerateDeleteRequest) SetRateplanCode(_rateplanCode string) error {
+    r._rateplanCode = _rateplanCode
+    r.Set("rateplan_code", _rateplanCode)
     return nil
 }
 
 // RateplanCode Getter
 func (r TaobaoXhotelMultiplerateDeleteRequest) GetRateplanCode() string {
-    return r.rateplanCode
+    return r._rateplanCode
 }
 // OutRid Setter
 // 商家房型编码
-func (r *TaobaoXhotelMultiplerateDeleteRequest) SetOutRid(outRid string) error {
-    r.outRid = outRid
-    r.Set("out_rid", outRid)
+func (r *TaobaoXhotelMultiplerateDeleteRequest) SetOutRid(_outRid string) error {
+    r._outRid = _outRid
+    r.Set("out_rid", _outRid)
     return nil
 }
 
 // OutRid Getter
 func (r TaobaoXhotelMultiplerateDeleteRequest) GetOutRid() string {
-    return r.outRid
+    return r._outRid
 }
 // Occupancy Setter
 // 连住天数
-func (r *TaobaoXhotelMultiplerateDeleteRequest) SetOccupancy(occupancy int64) error {
-    r.occupancy = occupancy
-    r.Set("occupancy", occupancy)
+func (r *TaobaoXhotelMultiplerateDeleteRequest) SetOccupancy(_occupancy int64) error {
+    r._occupancy = _occupancy
+    r.Set("occupancy", _occupancy)
     return nil
 }
 
 // Occupancy Getter
 func (r TaobaoXhotelMultiplerateDeleteRequest) GetOccupancy() int64 {
-    return r.occupancy
+    return r._occupancy
 }
 // Lengthofstay Setter
 // 入住人数
-func (r *TaobaoXhotelMultiplerateDeleteRequest) SetLengthofstay(lengthofstay int64) error {
-    r.lengthofstay = lengthofstay
-    r.Set("lengthofstay", lengthofstay)
+func (r *TaobaoXhotelMultiplerateDeleteRequest) SetLengthofstay(_lengthofstay int64) error {
+    r._lengthofstay = _lengthofstay
+    r.Set("lengthofstay", _lengthofstay)
     return nil
 }
 
 // Lengthofstay Getter
 func (r TaobaoXhotelMultiplerateDeleteRequest) GetLengthofstay() int64 {
-    return r.lengthofstay
+    return r._lengthofstay
 }

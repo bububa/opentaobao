@@ -15,7 +15,7 @@ alibaba.mozi.fusion.reentry.employee.account
 type AlibabaMoziFusionReentryEmployeeAccountRequest struct {
     model.Params
     // 入参
-    reentryEmployeeAccount   *ReEntryTenantEmployeeAndAccountRequest
+    _reentryEmployeeAccount   *ReEntryTenantEmployeeAndAccountRequest
 }
 
 // 初始化AlibabaMoziFusionReentryEmployeeAccountRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiParams() url.Value
 }
 // ReentryEmployeeAccount Setter
 // 入参
-func (r *AlibabaMoziFusionReentryEmployeeAccountRequest) SetReentryEmployeeAccount(reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
-    r.reentryEmployeeAccount = reentryEmployeeAccount
-    r.Set("reentry.employee.account", reentryEmployeeAccount)
+func (r *AlibabaMoziFusionReentryEmployeeAccountRequest) SetReentryEmployeeAccount(_reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
+    r._reentryEmployeeAccount = _reentryEmployeeAccount
+    r.Set("reentry.employee.account", _reentryEmployeeAccount)
     return nil
 }
 
 // ReentryEmployeeAccount Getter
 func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
-    return r.reentryEmployeeAccount
+    return r._reentryEmployeeAccount
 }

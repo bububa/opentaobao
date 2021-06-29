@@ -15,25 +15,25 @@ ISV Pos端门店发货，通知星盘
 type TaobaoOmniorderStoreConsignedRequest struct {
     model.Params
     // 跟踪Id
-    traceId   string
+    _traceId   string
     // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
-    senderId   int64
+    _senderId   int64
     // 家装物流-安装收货人信息,如果为空,则取默认收货人信息
-    insReceiverTo   *JzReceiverDto
+    _insReceiverTo   *JzReceiverDto
     // 子订单列表
-    subOrderList   []StoreConsignedResult
+    _subOrderList   []StoreConsignedResult
     // 家装物流-发货参数
-    jzTopArgs   *JzTopArgsDto
+    _jzTopArgs   *JzTopArgsDto
     // 家装物流-安装公司信息,需要安装时,才填写
-    insTpDto   *TpDto
+    _insTpDto   *TpDto
     // 家装物流-家装收货人信息,如果为空,则取默认收货信息
-    jzReceiverTo   *JzReceiverDto
+    _jzReceiverTo   *JzReceiverDto
     // 淘宝交易主订单ID
-    tid   int64
+    _tid   int64
     // ISV系统上报时间
-    reportTimestamp   int64
+    _reportTimestamp   int64
     // 家装物流-物流公司信息
-    lgTpDto   *TpDto
+    _lgTpDto   *TpDto
 }
 
 // 初始化TaobaoOmniorderStoreConsignedRequest对象
@@ -58,121 +58,121 @@ func (r TaobaoOmniorderStoreConsignedRequest) GetApiParams() url.Values {
 }
 // TraceId Setter
 // 跟踪Id
-func (r *TaobaoOmniorderStoreConsignedRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }
 // SenderId Setter
 // 卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址
-func (r *TaobaoOmniorderStoreConsignedRequest) SetSenderId(senderId int64) error {
-    r.senderId = senderId
-    r.Set("sender_id", senderId)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetSenderId(_senderId int64) error {
+    r._senderId = _senderId
+    r.Set("sender_id", _senderId)
     return nil
 }
 
 // SenderId Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetSenderId() int64 {
-    return r.senderId
+    return r._senderId
 }
 // InsReceiverTo Setter
 // 家装物流-安装收货人信息,如果为空,则取默认收货人信息
-func (r *TaobaoOmniorderStoreConsignedRequest) SetInsReceiverTo(insReceiverTo *JzReceiverDto) error {
-    r.insReceiverTo = insReceiverTo
-    r.Set("ins_receiver_to", insReceiverTo)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetInsReceiverTo(_insReceiverTo *JzReceiverDto) error {
+    r._insReceiverTo = _insReceiverTo
+    r.Set("ins_receiver_to", _insReceiverTo)
     return nil
 }
 
 // InsReceiverTo Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetInsReceiverTo() *JzReceiverDto {
-    return r.insReceiverTo
+    return r._insReceiverTo
 }
 // SubOrderList Setter
 // 子订单列表
-func (r *TaobaoOmniorderStoreConsignedRequest) SetSubOrderList(subOrderList []StoreConsignedResult) error {
-    r.subOrderList = subOrderList
-    r.Set("sub_order_list", subOrderList)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetSubOrderList(_subOrderList []StoreConsignedResult) error {
+    r._subOrderList = _subOrderList
+    r.Set("sub_order_list", _subOrderList)
     return nil
 }
 
 // SubOrderList Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetSubOrderList() []StoreConsignedResult {
-    return r.subOrderList
+    return r._subOrderList
 }
 // JzTopArgs Setter
 // 家装物流-发货参数
-func (r *TaobaoOmniorderStoreConsignedRequest) SetJzTopArgs(jzTopArgs *JzTopArgsDto) error {
-    r.jzTopArgs = jzTopArgs
-    r.Set("jz_top_args", jzTopArgs)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetJzTopArgs(_jzTopArgs *JzTopArgsDto) error {
+    r._jzTopArgs = _jzTopArgs
+    r.Set("jz_top_args", _jzTopArgs)
     return nil
 }
 
 // JzTopArgs Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetJzTopArgs() *JzTopArgsDto {
-    return r.jzTopArgs
+    return r._jzTopArgs
 }
 // InsTpDto Setter
 // 家装物流-安装公司信息,需要安装时,才填写
-func (r *TaobaoOmniorderStoreConsignedRequest) SetInsTpDto(insTpDto *TpDto) error {
-    r.insTpDto = insTpDto
-    r.Set("ins_tp_dto", insTpDto)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetInsTpDto(_insTpDto *TpDto) error {
+    r._insTpDto = _insTpDto
+    r.Set("ins_tp_dto", _insTpDto)
     return nil
 }
 
 // InsTpDto Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetInsTpDto() *TpDto {
-    return r.insTpDto
+    return r._insTpDto
 }
 // JzReceiverTo Setter
 // 家装物流-家装收货人信息,如果为空,则取默认收货信息
-func (r *TaobaoOmniorderStoreConsignedRequest) SetJzReceiverTo(jzReceiverTo *JzReceiverDto) error {
-    r.jzReceiverTo = jzReceiverTo
-    r.Set("jz_receiver_to", jzReceiverTo)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetJzReceiverTo(_jzReceiverTo *JzReceiverDto) error {
+    r._jzReceiverTo = _jzReceiverTo
+    r.Set("jz_receiver_to", _jzReceiverTo)
     return nil
 }
 
 // JzReceiverTo Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetJzReceiverTo() *JzReceiverDto {
-    return r.jzReceiverTo
+    return r._jzReceiverTo
 }
 // Tid Setter
 // 淘宝交易主订单ID
-func (r *TaobaoOmniorderStoreConsignedRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // ReportTimestamp Setter
 // ISV系统上报时间
-func (r *TaobaoOmniorderStoreConsignedRequest) SetReportTimestamp(reportTimestamp int64) error {
-    r.reportTimestamp = reportTimestamp
-    r.Set("report_timestamp", reportTimestamp)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetReportTimestamp(_reportTimestamp int64) error {
+    r._reportTimestamp = _reportTimestamp
+    r.Set("report_timestamp", _reportTimestamp)
     return nil
 }
 
 // ReportTimestamp Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetReportTimestamp() int64 {
-    return r.reportTimestamp
+    return r._reportTimestamp
 }
 // LgTpDto Setter
 // 家装物流-物流公司信息
-func (r *TaobaoOmniorderStoreConsignedRequest) SetLgTpDto(lgTpDto *TpDto) error {
-    r.lgTpDto = lgTpDto
-    r.Set("lg_tp_dto", lgTpDto)
+func (r *TaobaoOmniorderStoreConsignedRequest) SetLgTpDto(_lgTpDto *TpDto) error {
+    r._lgTpDto = _lgTpDto
+    r.Set("lg_tp_dto", _lgTpDto)
     return nil
 }
 
 // LgTpDto Getter
 func (r TaobaoOmniorderStoreConsignedRequest) GetLgTpDto() *TpDto {
-    return r.lgTpDto
+    return r._lgTpDto
 }

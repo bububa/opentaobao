@@ -15,9 +15,9 @@ API for merchants to submit feed data. Please note for each seller, the recommen
 type AliexpressSolutionFeedSubmitRequest struct {
     model.Params
     // Currently support 4 types of feeds:PRODUCT_CREATE,PRODUCT_FULL_UPDATE,PRODUCT_STOCKS_UPDATE,PRODUCT_PRICES_UPDATE
-    operationType   string
+    _operationType   string
     // item list, maximum size: 2000.
-    itemList   []SingleItemRequestDto
+    _itemList   []SingleItemRequestDto
 }
 
 // 初始化AliexpressSolutionFeedSubmitRequest对象
@@ -42,25 +42,25 @@ func (r AliexpressSolutionFeedSubmitRequest) GetApiParams() url.Values {
 }
 // OperationType Setter
 // Currently support 4 types of feeds:PRODUCT_CREATE,PRODUCT_FULL_UPDATE,PRODUCT_STOCKS_UPDATE,PRODUCT_PRICES_UPDATE
-func (r *AliexpressSolutionFeedSubmitRequest) SetOperationType(operationType string) error {
-    r.operationType = operationType
-    r.Set("operation_type", operationType)
+func (r *AliexpressSolutionFeedSubmitRequest) SetOperationType(_operationType string) error {
+    r._operationType = _operationType
+    r.Set("operation_type", _operationType)
     return nil
 }
 
 // OperationType Getter
 func (r AliexpressSolutionFeedSubmitRequest) GetOperationType() string {
-    return r.operationType
+    return r._operationType
 }
 // ItemList Setter
 // item list, maximum size: 2000.
-func (r *AliexpressSolutionFeedSubmitRequest) SetItemList(itemList []SingleItemRequestDto) error {
-    r.itemList = itemList
-    r.Set("item_list", itemList)
+func (r *AliexpressSolutionFeedSubmitRequest) SetItemList(_itemList []SingleItemRequestDto) error {
+    r._itemList = _itemList
+    r.Set("item_list", _itemList)
     return nil
 }
 
 // ItemList Getter
 func (r AliexpressSolutionFeedSubmitRequest) GetItemList() []SingleItemRequestDto {
-    return r.itemList
+    return r._itemList
 }

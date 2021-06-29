@@ -15,9 +15,9 @@ taobao.wdk.equipment.conveyor.conveyorinfo.get
 type TaobaoWdkEquipmentConveyorConveyorinfoGetRequest struct {
     model.Params
     // 仓库code
-    warehouseCode   string
+    _warehouseCode   string
     // wcsNum
-    conveyorId   int64
+    _conveyorId   int64
 }
 
 // 初始化TaobaoWdkEquipmentConveyorConveyorinfoGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) GetApiParams() url.Val
 }
 // WarehouseCode Setter
 // 仓库code
-func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }
 // ConveyorId Setter
 // wcsNum
-func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) SetConveyorId(conveyorId int64) error {
-    r.conveyorId = conveyorId
-    r.Set("conveyor_id", conveyorId)
+func (r *TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) SetConveyorId(_conveyorId int64) error {
+    r._conveyorId = _conveyorId
+    r.Set("conveyor_id", _conveyorId)
     return nil
 }
 
 // ConveyorId Getter
 func (r TaobaoWdkEquipmentConveyorConveyorinfoGetRequest) GetConveyorId() int64 {
-    return r.conveyorId
+    return r._conveyorId
 }

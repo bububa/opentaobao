@@ -15,7 +15,7 @@ tmall.car.lease.riskcallback
 type TmallCarLeaseRiskcallbackRequest struct {
     model.Params
     // 授信结果
-    creditInfo   *CreditInfoTopDto
+    _creditInfo   *CreditInfoTopDto
 }
 
 // 初始化TmallCarLeaseRiskcallbackRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeaseRiskcallbackRequest) GetApiParams() url.Values {
 }
 // CreditInfo Setter
 // 授信结果
-func (r *TmallCarLeaseRiskcallbackRequest) SetCreditInfo(creditInfo *CreditInfoTopDto) error {
-    r.creditInfo = creditInfo
-    r.Set("credit_info", creditInfo)
+func (r *TmallCarLeaseRiskcallbackRequest) SetCreditInfo(_creditInfo *CreditInfoTopDto) error {
+    r._creditInfo = _creditInfo
+    r.Set("credit_info", _creditInfo)
     return nil
 }
 
 // CreditInfo Getter
 func (r TmallCarLeaseRiskcallbackRequest) GetCreditInfo() *CreditInfoTopDto {
-    return r.creditInfo
+    return r._creditInfo
 }

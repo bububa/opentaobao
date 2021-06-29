@@ -15,7 +15,7 @@ taobao.alitrip.car.order.complete
 type TaobaoAlitripCarOrderCompleteRequest struct {
     model.Params
     // 服务完成API
-    paramOrderComplete   *OrderComplete
+    _paramOrderComplete   *OrderComplete
 }
 
 // 初始化TaobaoAlitripCarOrderCompleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderCompleteRequest) GetApiParams() url.Values {
 }
 // ParamOrderComplete Setter
 // 服务完成API
-func (r *TaobaoAlitripCarOrderCompleteRequest) SetParamOrderComplete(paramOrderComplete *OrderComplete) error {
-    r.paramOrderComplete = paramOrderComplete
-    r.Set("param_order_complete", paramOrderComplete)
+func (r *TaobaoAlitripCarOrderCompleteRequest) SetParamOrderComplete(_paramOrderComplete *OrderComplete) error {
+    r._paramOrderComplete = _paramOrderComplete
+    r.Set("param_order_complete", _paramOrderComplete)
     return nil
 }
 
 // ParamOrderComplete Getter
 func (r TaobaoAlitripCarOrderCompleteRequest) GetParamOrderComplete() *OrderComplete {
-    return r.paramOrderComplete
+    return r._paramOrderComplete
 }

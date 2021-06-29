@@ -15,7 +15,7 @@ alibaba.health.nr.logistics.waybill.get
 type AlibabaHealthNrLogisticsWaybillGetRequest struct {
     model.Params
     // 订单id
-    orderId   int64
+    _orderId   int64
 }
 
 // 初始化AlibabaHealthNrLogisticsWaybillGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单id
-func (r *AlibabaHealthNrLogisticsWaybillGetRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHealthNrLogisticsWaybillGetRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHealthNrLogisticsWaybillGetRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }

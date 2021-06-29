@@ -15,11 +15,11 @@ taobao.refund.message.add
 type TaobaoRefundMessageAddRequest struct {
     model.Params
     // 退款编号。
-    refundId   int64
+    _refundId   int64
     // 留言内容。最大长度: 400个字节
-    content   string
+    _content   string
     // 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
-    image   []*model.File
+    _image   []*model.File
 }
 
 // 初始化TaobaoRefundMessageAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoRefundMessageAddRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款编号。
-func (r *TaobaoRefundMessageAddRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoRefundMessageAddRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoRefundMessageAddRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // Content Setter
 // 留言内容。最大长度: 400个字节
-func (r *TaobaoRefundMessageAddRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoRefundMessageAddRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoRefundMessageAddRequest) GetContent() string {
-    return r.content
+    return r._content
 }
 // Image Setter
 // 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
-func (r *TaobaoRefundMessageAddRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoRefundMessageAddRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoRefundMessageAddRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }

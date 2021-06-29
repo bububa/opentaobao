@@ -15,7 +15,7 @@ alibaba.icbu.photobank.group.operate
 type AlibabaIcbuPhotobankGroupOperateRequest struct {
     model.Params
     // 图片分组操作请求对象
-    photoGroupOperationRequest   *PhotoGroupOperationRequest
+    _photoGroupOperationRequest   *PhotoGroupOperationRequest
 }
 
 // 初始化AlibabaIcbuPhotobankGroupOperateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuPhotobankGroupOperateRequest) GetApiParams() url.Values {
 }
 // PhotoGroupOperationRequest Setter
 // 图片分组操作请求对象
-func (r *AlibabaIcbuPhotobankGroupOperateRequest) SetPhotoGroupOperationRequest(photoGroupOperationRequest *PhotoGroupOperationRequest) error {
-    r.photoGroupOperationRequest = photoGroupOperationRequest
-    r.Set("photo_group_operation_request", photoGroupOperationRequest)
+func (r *AlibabaIcbuPhotobankGroupOperateRequest) SetPhotoGroupOperationRequest(_photoGroupOperationRequest *PhotoGroupOperationRequest) error {
+    r._photoGroupOperationRequest = _photoGroupOperationRequest
+    r.Set("photo_group_operation_request", _photoGroupOperationRequest)
     return nil
 }
 
 // PhotoGroupOperationRequest Getter
 func (r AlibabaIcbuPhotobankGroupOperateRequest) GetPhotoGroupOperationRequest() *PhotoGroupOperationRequest {
-    return r.photoGroupOperationRequest
+    return r._photoGroupOperationRequest
 }

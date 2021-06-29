@@ -15,15 +15,15 @@ tmall.exchange.messages.get
 type TmallExchangeMessagesGetRequest struct {
     model.Params
     // 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)
-    operatorRoles   []int64
+    _operatorRoles   []int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
     // 换货单号ID
-    disputeId   int64
+    _disputeId   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 返回的字段。具体包括：id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
-    fields   []string
+    _fields   []string
 }
 
 // 初始化TmallExchangeMessagesGetRequest对象
@@ -48,61 +48,61 @@ func (r TmallExchangeMessagesGetRequest) GetApiParams() url.Values {
 }
 // OperatorRoles Setter
 // 留言创建角色。具体包括：卖家主账户(1)、卖家子账户(2)、小二(3)、买家(4)、系统(5)、系统超时(6)
-func (r *TmallExchangeMessagesGetRequest) SetOperatorRoles(operatorRoles []int64) error {
-    r.operatorRoles = operatorRoles
-    r.Set("operator_roles", operatorRoles)
+func (r *TmallExchangeMessagesGetRequest) SetOperatorRoles(_operatorRoles []int64) error {
+    r._operatorRoles = _operatorRoles
+    r.Set("operator_roles", _operatorRoles)
     return nil
 }
 
 // OperatorRoles Getter
 func (r TmallExchangeMessagesGetRequest) GetOperatorRoles() []int64 {
-    return r.operatorRoles
+    return r._operatorRoles
 }
 // PageSize Setter
 // 每页条数
-func (r *TmallExchangeMessagesGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TmallExchangeMessagesGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TmallExchangeMessagesGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // DisputeId Setter
 // 换货单号ID
-func (r *TmallExchangeMessagesGetRequest) SetDisputeId(disputeId int64) error {
-    r.disputeId = disputeId
-    r.Set("dispute_id", disputeId)
+func (r *TmallExchangeMessagesGetRequest) SetDisputeId(_disputeId int64) error {
+    r._disputeId = _disputeId
+    r.Set("dispute_id", _disputeId)
     return nil
 }
 
 // DisputeId Getter
 func (r TmallExchangeMessagesGetRequest) GetDisputeId() int64 {
-    return r.disputeId
+    return r._disputeId
 }
 // PageNo Setter
 // 页码
-func (r *TmallExchangeMessagesGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TmallExchangeMessagesGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TmallExchangeMessagesGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // Fields Setter
 // 返回的字段。具体包括：id,refund_id,owner_id,owner_nick,owner_role,content,pic_urls,created,message_type
-func (r *TmallExchangeMessagesGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TmallExchangeMessagesGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TmallExchangeMessagesGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }

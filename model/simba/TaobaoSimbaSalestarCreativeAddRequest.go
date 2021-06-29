@@ -15,13 +15,13 @@ taobao.simba.salestar.creative.add
 type TaobaoSimbaSalestarCreativeAddRequest struct {
     model.Params
     // 推广组Id
-    adgroupId   int64
+    _adgroupId   int64
     // 创意标题，最多20个汉字
-    title   string
+    _title   string
     // 创意图片地址，必须是推广组对应商品的图片之一
-    imgUrl   string
+    _imgUrl   string
     // 主人昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoSimbaSalestarCreativeAddRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaSalestarCreativeAddRequest) GetApiParams() url.Values {
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSimbaSalestarCreativeAddRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaSalestarCreativeAddRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaSalestarCreativeAddRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // Title Setter
 // 创意标题，最多20个汉字
-func (r *TaobaoSimbaSalestarCreativeAddRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoSimbaSalestarCreativeAddRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoSimbaSalestarCreativeAddRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // ImgUrl Setter
 // 创意图片地址，必须是推广组对应商品的图片之一
-func (r *TaobaoSimbaSalestarCreativeAddRequest) SetImgUrl(imgUrl string) error {
-    r.imgUrl = imgUrl
-    r.Set("img_url", imgUrl)
+func (r *TaobaoSimbaSalestarCreativeAddRequest) SetImgUrl(_imgUrl string) error {
+    r._imgUrl = _imgUrl
+    r.Set("img_url", _imgUrl)
     return nil
 }
 
 // ImgUrl Getter
 func (r TaobaoSimbaSalestarCreativeAddRequest) GetImgUrl() string {
-    return r.imgUrl
+    return r._imgUrl
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaSalestarCreativeAddRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaSalestarCreativeAddRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaSalestarCreativeAddRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

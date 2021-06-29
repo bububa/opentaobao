@@ -15,15 +15,15 @@ taobao.degoperation.createqrcode
 type TaobaoDegoperationCreateqrcodeRequest struct {
     model.Params
     // 设备id
-    uuid   string
+    _uuid   string
     // 系统信息
-    degAccessToken   string
+    _degAccessToken   string
     // 奖品唯一标识
-    sequenceNo   string
+    _sequenceNo   string
     // 活动名称
-    activity   string
+    _activity   string
     // 奖品名称
-    title   string
+    _title   string
 }
 
 // 初始化TaobaoDegoperationCreateqrcodeRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoDegoperationCreateqrcodeRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备id
-func (r *TaobaoDegoperationCreateqrcodeRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *TaobaoDegoperationCreateqrcodeRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r TaobaoDegoperationCreateqrcodeRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }
 // DegAccessToken Setter
 // 系统信息
-func (r *TaobaoDegoperationCreateqrcodeRequest) SetDegAccessToken(degAccessToken string) error {
-    r.degAccessToken = degAccessToken
-    r.Set("deg_access_token", degAccessToken)
+func (r *TaobaoDegoperationCreateqrcodeRequest) SetDegAccessToken(_degAccessToken string) error {
+    r._degAccessToken = _degAccessToken
+    r.Set("deg_access_token", _degAccessToken)
     return nil
 }
 
 // DegAccessToken Getter
 func (r TaobaoDegoperationCreateqrcodeRequest) GetDegAccessToken() string {
-    return r.degAccessToken
+    return r._degAccessToken
 }
 // SequenceNo Setter
 // 奖品唯一标识
-func (r *TaobaoDegoperationCreateqrcodeRequest) SetSequenceNo(sequenceNo string) error {
-    r.sequenceNo = sequenceNo
-    r.Set("sequence_no", sequenceNo)
+func (r *TaobaoDegoperationCreateqrcodeRequest) SetSequenceNo(_sequenceNo string) error {
+    r._sequenceNo = _sequenceNo
+    r.Set("sequence_no", _sequenceNo)
     return nil
 }
 
 // SequenceNo Getter
 func (r TaobaoDegoperationCreateqrcodeRequest) GetSequenceNo() string {
-    return r.sequenceNo
+    return r._sequenceNo
 }
 // Activity Setter
 // 活动名称
-func (r *TaobaoDegoperationCreateqrcodeRequest) SetActivity(activity string) error {
-    r.activity = activity
-    r.Set("activity", activity)
+func (r *TaobaoDegoperationCreateqrcodeRequest) SetActivity(_activity string) error {
+    r._activity = _activity
+    r.Set("activity", _activity)
     return nil
 }
 
 // Activity Getter
 func (r TaobaoDegoperationCreateqrcodeRequest) GetActivity() string {
-    return r.activity
+    return r._activity
 }
 // Title Setter
 // 奖品名称
-func (r *TaobaoDegoperationCreateqrcodeRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoDegoperationCreateqrcodeRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoDegoperationCreateqrcodeRequest) GetTitle() string {
-    return r.title
+    return r._title
 }

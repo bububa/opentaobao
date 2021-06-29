@@ -15,7 +15,7 @@ taobao.baichuan.user.logindoublecheck
 type TaobaoBaichuanUserLogindoublecheckRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanUserLogindoublecheckRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanUserLogindoublecheckRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanUserLogindoublecheckRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanUserLogindoublecheckRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanUserLogindoublecheckRequest) GetName() string {
-    return r.name
+    return r._name
 }

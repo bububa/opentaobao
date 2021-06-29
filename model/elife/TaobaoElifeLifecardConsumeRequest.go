@@ -15,7 +15,7 @@ taobao.elife.lifecard.consume
 type TaobaoElifeLifecardConsumeRequest struct {
     model.Params
     // 交易请求参数
-    consumeRequest   *ConsumeRequest
+    _consumeRequest   *ConsumeRequest
 }
 
 // 初始化TaobaoElifeLifecardConsumeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoElifeLifecardConsumeRequest) GetApiParams() url.Values {
 }
 // ConsumeRequest Setter
 // 交易请求参数
-func (r *TaobaoElifeLifecardConsumeRequest) SetConsumeRequest(consumeRequest *ConsumeRequest) error {
-    r.consumeRequest = consumeRequest
-    r.Set("consume_request", consumeRequest)
+func (r *TaobaoElifeLifecardConsumeRequest) SetConsumeRequest(_consumeRequest *ConsumeRequest) error {
+    r._consumeRequest = _consumeRequest
+    r.Set("consume_request", _consumeRequest)
     return nil
 }
 
 // ConsumeRequest Getter
 func (r TaobaoElifeLifecardConsumeRequest) GetConsumeRequest() *ConsumeRequest {
-    return r.consumeRequest
+    return r._consumeRequest
 }

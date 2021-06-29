@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.warehouse.work.order.callback
 type AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *DrfHalfDayCcCallbackOrder
+    _callbackOrder   *DrfHalfDayCcCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest) GetApiParams() url.V
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *DrfHalfDayCcCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *DrfHalfDayCcCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest) GetCallbackOrder() *DrfHalfDayCcCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

@@ -15,7 +15,7 @@ alibaba.ascp.uop.tob.package.query
 type AlibabaAscpUopTobPackageQueryRequest struct {
     model.Params
     // 系统自动生成
-    packageQueryRequest   *Packagequeryrequest
+    _packageQueryRequest   *Packagequeryrequest
 }
 
 // 初始化AlibabaAscpUopTobPackageQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopTobPackageQueryRequest) GetApiParams() url.Values {
 }
 // PackageQueryRequest Setter
 // 系统自动生成
-func (r *AlibabaAscpUopTobPackageQueryRequest) SetPackageQueryRequest(packageQueryRequest *Packagequeryrequest) error {
-    r.packageQueryRequest = packageQueryRequest
-    r.Set("package_query_request", packageQueryRequest)
+func (r *AlibabaAscpUopTobPackageQueryRequest) SetPackageQueryRequest(_packageQueryRequest *Packagequeryrequest) error {
+    r._packageQueryRequest = _packageQueryRequest
+    r.Set("package_query_request", _packageQueryRequest)
     return nil
 }
 
 // PackageQueryRequest Getter
 func (r AlibabaAscpUopTobPackageQueryRequest) GetPackageQueryRequest() *Packagequeryrequest {
-    return r.packageQueryRequest
+    return r._packageQueryRequest
 }

@@ -15,7 +15,7 @@ alibaba.idle.isv.item.downshelf
 type AlibabaIdleIsvItemDownshelfRequest struct {
     model.Params
     // 返回结果result
-    param   *IdleItemBaseApiDo
+    _param   *IdleItemBaseApiDo
 }
 
 // 初始化AlibabaIdleIsvItemDownshelfRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemDownshelfRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 返回结果result
-func (r *AlibabaIdleIsvItemDownshelfRequest) SetParam(param *IdleItemBaseApiDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaIdleIsvItemDownshelfRequest) SetParam(_param *IdleItemBaseApiDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaIdleIsvItemDownshelfRequest) GetParam() *IdleItemBaseApiDo {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ tmall.trend.style.basicinfo.upload
 type TmallTrendStyleBasicinfoUploadRequest struct {
     model.Params
     // 款式基本信息列表，单次同步最多1000条
-    styleBasicInfoBoList   []StyleBasicInfoBo
+    _styleBasicInfoBoList   []StyleBasicInfoBo
 }
 
 // 初始化TmallTrendStyleBasicinfoUploadRequest对象
@@ -40,13 +40,13 @@ func (r TmallTrendStyleBasicinfoUploadRequest) GetApiParams() url.Values {
 }
 // StyleBasicInfoBoList Setter
 // 款式基本信息列表，单次同步最多1000条
-func (r *TmallTrendStyleBasicinfoUploadRequest) SetStyleBasicInfoBoList(styleBasicInfoBoList []StyleBasicInfoBo) error {
-    r.styleBasicInfoBoList = styleBasicInfoBoList
-    r.Set("style_basic_info_bo_list", styleBasicInfoBoList)
+func (r *TmallTrendStyleBasicinfoUploadRequest) SetStyleBasicInfoBoList(_styleBasicInfoBoList []StyleBasicInfoBo) error {
+    r._styleBasicInfoBoList = _styleBasicInfoBoList
+    r.Set("style_basic_info_bo_list", _styleBasicInfoBoList)
     return nil
 }
 
 // StyleBasicInfoBoList Getter
 func (r TmallTrendStyleBasicinfoUploadRequest) GetStyleBasicInfoBoList() []StyleBasicInfoBo {
-    return r.styleBasicInfoBoList
+    return r._styleBasicInfoBoList
 }

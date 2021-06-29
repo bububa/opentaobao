@@ -15,7 +15,7 @@ deleteFace
 type AlibabaDamaiMevOpenDeletefaceRequest struct {
     model.Params
     // 入参deleteFaceParam
-    deleteFaceParam   *TicketFaceIdOpenParam
+    _deleteFaceParam   *TicketFaceIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeletefaceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletefaceRequest) GetApiParams() url.Values {
 }
 // DeleteFaceParam Setter
 // 入参deleteFaceParam
-func (r *AlibabaDamaiMevOpenDeletefaceRequest) SetDeleteFaceParam(deleteFaceParam *TicketFaceIdOpenParam) error {
-    r.deleteFaceParam = deleteFaceParam
-    r.Set("delete_face_param", deleteFaceParam)
+func (r *AlibabaDamaiMevOpenDeletefaceRequest) SetDeleteFaceParam(_deleteFaceParam *TicketFaceIdOpenParam) error {
+    r._deleteFaceParam = _deleteFaceParam
+    r.Set("delete_face_param", _deleteFaceParam)
     return nil
 }
 
 // DeleteFaceParam Getter
 func (r AlibabaDamaiMevOpenDeletefaceRequest) GetDeleteFaceParam() *TicketFaceIdOpenParam {
-    return r.deleteFaceParam
+    return r._deleteFaceParam
 }

@@ -15,15 +15,15 @@ alibaba.legal.suit.file.upload
 type AlibabaLegalSuitFileUploadRequest struct {
     model.Params
     // 文件
-    file   []*model.File
+    _file   []*model.File
     // 时间搓
-    timeStamp   int64
+    _timeStamp   int64
     // 文件名称
-    fileName   string
+    _fileName   string
     // 文件大小
-    fileSize   int64
+    _fileSize   int64
     // 签名
-    signature   string
+    _signature   string
 }
 
 // 初始化AlibabaLegalSuitFileUploadRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaLegalSuitFileUploadRequest) GetApiParams() url.Values {
 }
 // File Setter
 // 文件
-func (r *AlibabaLegalSuitFileUploadRequest) SetFile(file []*model.File) error {
-    r.file = file
-    r.Set("file", file)
+func (r *AlibabaLegalSuitFileUploadRequest) SetFile(_file []*model.File) error {
+    r._file = _file
+    r.Set("file", _file)
     return nil
 }
 
 // File Getter
 func (r AlibabaLegalSuitFileUploadRequest) GetFile() []*model.File {
-    return r.file
+    return r._file
 }
 // TimeStamp Setter
 // 时间搓
-func (r *AlibabaLegalSuitFileUploadRequest) SetTimeStamp(timeStamp int64) error {
-    r.timeStamp = timeStamp
-    r.Set("time_stamp", timeStamp)
+func (r *AlibabaLegalSuitFileUploadRequest) SetTimeStamp(_timeStamp int64) error {
+    r._timeStamp = _timeStamp
+    r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
 func (r AlibabaLegalSuitFileUploadRequest) GetTimeStamp() int64 {
-    return r.timeStamp
+    return r._timeStamp
 }
 // FileName Setter
 // 文件名称
-func (r *AlibabaLegalSuitFileUploadRequest) SetFileName(fileName string) error {
-    r.fileName = fileName
-    r.Set("file_name", fileName)
+func (r *AlibabaLegalSuitFileUploadRequest) SetFileName(_fileName string) error {
+    r._fileName = _fileName
+    r.Set("file_name", _fileName)
     return nil
 }
 
 // FileName Getter
 func (r AlibabaLegalSuitFileUploadRequest) GetFileName() string {
-    return r.fileName
+    return r._fileName
 }
 // FileSize Setter
 // 文件大小
-func (r *AlibabaLegalSuitFileUploadRequest) SetFileSize(fileSize int64) error {
-    r.fileSize = fileSize
-    r.Set("file_size", fileSize)
+func (r *AlibabaLegalSuitFileUploadRequest) SetFileSize(_fileSize int64) error {
+    r._fileSize = _fileSize
+    r.Set("file_size", _fileSize)
     return nil
 }
 
 // FileSize Getter
 func (r AlibabaLegalSuitFileUploadRequest) GetFileSize() int64 {
-    return r.fileSize
+    return r._fileSize
 }
 // Signature Setter
 // 签名
-func (r *AlibabaLegalSuitFileUploadRequest) SetSignature(signature string) error {
-    r.signature = signature
-    r.Set("signature", signature)
+func (r *AlibabaLegalSuitFileUploadRequest) SetSignature(_signature string) error {
+    r._signature = _signature
+    r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
 func (r AlibabaLegalSuitFileUploadRequest) GetSignature() string {
-    return r.signature
+    return r._signature
 }

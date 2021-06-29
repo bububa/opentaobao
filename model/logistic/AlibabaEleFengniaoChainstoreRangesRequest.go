@@ -15,11 +15,11 @@ alibaba.ele.fengniao.chainstore.ranges
 type AlibabaEleFengniaoChainstoreRangesRequest struct {
     model.Params
     // 商户code
-    merchantCode   string
+    _merchantCode   string
     // appId
-    appId   string
+    _appId   string
     // 门店code
-    chainstoreCode   string
+    _chainstoreCode   string
 }
 
 // 初始化AlibabaEleFengniaoChainstoreRangesRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaEleFengniaoChainstoreRangesRequest) GetApiParams() url.Values {
 }
 // MerchantCode Setter
 // 商户code
-func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaEleFengniaoChainstoreRangesRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // AppId Setter
 // appId
-func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaEleFengniaoChainstoreRangesRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // ChainstoreCode Setter
 // 门店code
-func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetChainstoreCode(chainstoreCode string) error {
-    r.chainstoreCode = chainstoreCode
-    r.Set("chainstore_code", chainstoreCode)
+func (r *AlibabaEleFengniaoChainstoreRangesRequest) SetChainstoreCode(_chainstoreCode string) error {
+    r._chainstoreCode = _chainstoreCode
+    r.Set("chainstore_code", _chainstoreCode)
     return nil
 }
 
 // ChainstoreCode Getter
 func (r AlibabaEleFengniaoChainstoreRangesRequest) GetChainstoreCode() string {
-    return r.chainstoreCode
+    return r._chainstoreCode
 }

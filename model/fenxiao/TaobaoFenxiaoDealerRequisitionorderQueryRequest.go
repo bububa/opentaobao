@@ -15,9 +15,9 @@ taobao.fenxiao.dealer.requisitionorder.query
 type TaobaoFenxiaoDealerRequisitionorderQueryRequest struct {
     model.Params
     // 经销采购单编号。<br/>多个编号用英文符号的逗号隔开。最多支持50个经销采购单编号的查询。
-    dealerOrderIds   []int64
+    _dealerOrderIds   []int64
     // 多个字段用","分隔。 fields 如果为空：返回所有经销采购单对象(dealer_orders)字段。 如果不为空：返回指定采购单对象(dealer_orders)字段。 例1： dealer_order_details.product_id 表示只返回product_id 例2： dealer_order_details 表示只返回明细列表
-    fields   string
+    _fields   string
 }
 
 // 初始化TaobaoFenxiaoDealerRequisitionorderQueryRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFenxiaoDealerRequisitionorderQueryRequest) GetApiParams() url.Valu
 }
 // DealerOrderIds Setter
 // 经销采购单编号。<br/>多个编号用英文符号的逗号隔开。最多支持50个经销采购单编号的查询。
-func (r *TaobaoFenxiaoDealerRequisitionorderQueryRequest) SetDealerOrderIds(dealerOrderIds []int64) error {
-    r.dealerOrderIds = dealerOrderIds
-    r.Set("dealer_order_ids", dealerOrderIds)
+func (r *TaobaoFenxiaoDealerRequisitionorderQueryRequest) SetDealerOrderIds(_dealerOrderIds []int64) error {
+    r._dealerOrderIds = _dealerOrderIds
+    r.Set("dealer_order_ids", _dealerOrderIds)
     return nil
 }
 
 // DealerOrderIds Getter
 func (r TaobaoFenxiaoDealerRequisitionorderQueryRequest) GetDealerOrderIds() []int64 {
-    return r.dealerOrderIds
+    return r._dealerOrderIds
 }
 // Fields Setter
 // 多个字段用","分隔。 fields 如果为空：返回所有经销采购单对象(dealer_orders)字段。 如果不为空：返回指定采购单对象(dealer_orders)字段。 例1： dealer_order_details.product_id 表示只返回product_id 例2： dealer_order_details 表示只返回明细列表
-func (r *TaobaoFenxiaoDealerRequisitionorderQueryRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoFenxiaoDealerRequisitionorderQueryRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoFenxiaoDealerRequisitionorderQueryRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

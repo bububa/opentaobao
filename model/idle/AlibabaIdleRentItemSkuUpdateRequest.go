@@ -15,7 +15,7 @@ alibaba.idle.rent.item.sku.update
 type AlibabaIdleRentItemSkuUpdateRequest struct {
     model.Params
     // sku信息，更新后skuId保持不变
-    sku   *ItemSkuDto
+    _sku   *ItemSkuDto
 }
 
 // 初始化AlibabaIdleRentItemSkuUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiParams() url.Values {
 }
 // Sku Setter
 // sku信息，更新后skuId保持不变
-func (r *AlibabaIdleRentItemSkuUpdateRequest) SetSku(sku *ItemSkuDto) error {
-    r.sku = sku
-    r.Set("sku", sku)
+func (r *AlibabaIdleRentItemSkuUpdateRequest) SetSku(_sku *ItemSkuDto) error {
+    r._sku = _sku
+    r.Set("sku", _sku)
     return nil
 }
 
 // Sku Getter
 func (r AlibabaIdleRentItemSkuUpdateRequest) GetSku() *ItemSkuDto {
-    return r.sku
+    return r._sku
 }

@@ -15,9 +15,9 @@ alitrip.merchant.galaxy.hotel.detail.search
 type AlitripMerchantGalaxyHotelDetailSearchRequest struct {
     model.Params
     // 租户id
-    tenantKey   string
+    _tenantKey   string
     // 酒店详情入参
-    hotelDetailsParam   *HotelDetailsParam
+    _hotelDetailsParam   *HotelDetailsParam
 }
 
 // 初始化AlitripMerchantGalaxyHotelDetailSearchRequest对象
@@ -42,25 +42,25 @@ func (r AlitripMerchantGalaxyHotelDetailSearchRequest) GetApiParams() url.Values
 }
 // TenantKey Setter
 // 租户id
-func (r *AlitripMerchantGalaxyHotelDetailSearchRequest) SetTenantKey(tenantKey string) error {
-    r.tenantKey = tenantKey
-    r.Set("tenant_key", tenantKey)
+func (r *AlitripMerchantGalaxyHotelDetailSearchRequest) SetTenantKey(_tenantKey string) error {
+    r._tenantKey = _tenantKey
+    r.Set("tenant_key", _tenantKey)
     return nil
 }
 
 // TenantKey Getter
 func (r AlitripMerchantGalaxyHotelDetailSearchRequest) GetTenantKey() string {
-    return r.tenantKey
+    return r._tenantKey
 }
 // HotelDetailsParam Setter
 // 酒店详情入参
-func (r *AlitripMerchantGalaxyHotelDetailSearchRequest) SetHotelDetailsParam(hotelDetailsParam *HotelDetailsParam) error {
-    r.hotelDetailsParam = hotelDetailsParam
-    r.Set("hotel_details_param", hotelDetailsParam)
+func (r *AlitripMerchantGalaxyHotelDetailSearchRequest) SetHotelDetailsParam(_hotelDetailsParam *HotelDetailsParam) error {
+    r._hotelDetailsParam = _hotelDetailsParam
+    r.Set("hotel_details_param", _hotelDetailsParam)
     return nil
 }
 
 // HotelDetailsParam Getter
 func (r AlitripMerchantGalaxyHotelDetailSearchRequest) GetHotelDetailsParam() *HotelDetailsParam {
-    return r.hotelDetailsParam
+    return r._hotelDetailsParam
 }

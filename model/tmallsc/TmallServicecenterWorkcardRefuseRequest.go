@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.refuse
 type TmallServicecenterWorkcardRefuseRequest struct {
     model.Params
     // 买家拒收信息
-    buyerRefuseAcceptRequest   *BuyerRefuseAcceptRequest
+    _buyerRefuseAcceptRequest   *BuyerRefuseAcceptRequest
 }
 
 // 初始化TmallServicecenterWorkcardRefuseRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardRefuseRequest) GetApiParams() url.Values {
 }
 // BuyerRefuseAcceptRequest Setter
 // 买家拒收信息
-func (r *TmallServicecenterWorkcardRefuseRequest) SetBuyerRefuseAcceptRequest(buyerRefuseAcceptRequest *BuyerRefuseAcceptRequest) error {
-    r.buyerRefuseAcceptRequest = buyerRefuseAcceptRequest
-    r.Set("buyer_refuse_accept_request", buyerRefuseAcceptRequest)
+func (r *TmallServicecenterWorkcardRefuseRequest) SetBuyerRefuseAcceptRequest(_buyerRefuseAcceptRequest *BuyerRefuseAcceptRequest) error {
+    r._buyerRefuseAcceptRequest = _buyerRefuseAcceptRequest
+    r.Set("buyer_refuse_accept_request", _buyerRefuseAcceptRequest)
     return nil
 }
 
 // BuyerRefuseAcceptRequest Getter
 func (r TmallServicecenterWorkcardRefuseRequest) GetBuyerRefuseAcceptRequest() *BuyerRefuseAcceptRequest {
-    return r.buyerRefuseAcceptRequest
+    return r._buyerRefuseAcceptRequest
 }

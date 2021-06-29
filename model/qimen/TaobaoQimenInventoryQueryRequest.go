@@ -15,7 +15,7 @@ ERP调用奇门的接口,查询商品的库存量
 type TaobaoQimenInventoryQueryRequest struct {
     model.Params
     // 
-    request   *InventoryQueryRequest
+    _request   *InventoryQueryRequest
 }
 
 // 初始化TaobaoQimenInventoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenInventoryQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenInventoryQueryRequest) SetRequest(request *InventoryQueryRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenInventoryQueryRequest) SetRequest(_request *InventoryQueryRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenInventoryQueryRequest) GetRequest() *InventoryQueryRequest {
-    return r.request
+    return r._request
 }

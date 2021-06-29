@@ -15,11 +15,11 @@ taobao.koubei.tribe.open.user.query
 type TaobaoKoubeiTribeOpenUserQueryRequest struct {
     model.Params
     // 验证码
-    verifyCode   string
+    _verifyCode   string
     // 手机号
-    phone   string
+    _phone   string
     // 数据集id
-    dataSetId   string
+    _dataSetId   string
 }
 
 // 初始化TaobaoKoubeiTribeOpenUserQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoKoubeiTribeOpenUserQueryRequest) GetApiParams() url.Values {
 }
 // VerifyCode Setter
 // 验证码
-func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetVerifyCode(verifyCode string) error {
-    r.verifyCode = verifyCode
-    r.Set("verify_code", verifyCode)
+func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetVerifyCode(_verifyCode string) error {
+    r._verifyCode = _verifyCode
+    r.Set("verify_code", _verifyCode)
     return nil
 }
 
 // VerifyCode Getter
 func (r TaobaoKoubeiTribeOpenUserQueryRequest) GetVerifyCode() string {
-    return r.verifyCode
+    return r._verifyCode
 }
 // Phone Setter
 // 手机号
-func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r TaobaoKoubeiTribeOpenUserQueryRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // DataSetId Setter
 // 数据集id
-func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetDataSetId(dataSetId string) error {
-    r.dataSetId = dataSetId
-    r.Set("data_set_id", dataSetId)
+func (r *TaobaoKoubeiTribeOpenUserQueryRequest) SetDataSetId(_dataSetId string) error {
+    r._dataSetId = _dataSetId
+    r.Set("data_set_id", _dataSetId)
     return nil
 }
 
 // DataSetId Getter
 func (r TaobaoKoubeiTribeOpenUserQueryRequest) GetDataSetId() string {
-    return r.dataSetId
+    return r._dataSetId
 }

@@ -15,9 +15,9 @@ alibaba.ailabs.aligenie.device.register
 type AlibabaAilabsAligenieDeviceRegisterRequest struct {
     model.Params
     // 设备id
-    deviceId   int64
+    _deviceId   int64
     // mac区段脚本
-    macSections   string
+    _macSections   string
 }
 
 // 初始化AlibabaAilabsAligenieDeviceRegisterRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备id
-func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetDeviceId(deviceId int64) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetDeviceId(_deviceId int64) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetDeviceId() int64 {
-    return r.deviceId
+    return r._deviceId
 }
 // MacSections Setter
 // mac区段脚本
-func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetMacSections(macSections string) error {
-    r.macSections = macSections
-    r.Set("mac_sections", macSections)
+func (r *AlibabaAilabsAligenieDeviceRegisterRequest) SetMacSections(_macSections string) error {
+    r._macSections = _macSections
+    r.Set("mac_sections", _macSections)
     return nil
 }
 
 // MacSections Getter
 func (r AlibabaAilabsAligenieDeviceRegisterRequest) GetMacSections() string {
-    return r.macSections
+    return r._macSections
 }

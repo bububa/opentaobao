@@ -15,13 +15,13 @@ alibaba.alihealth.lab.item.tbitemsku.relation.sync
 type AlibabaAlihealthLabItemTbitemskuRelationSyncRequest struct {
     model.Params
     // EFFECTIVE 有效，INVALID 无效
-    isvRelationStatus   string
+    _isvRelationStatus   string
     // 关联的淘宝商品SKU id，在商品没有sku的情况下传0
-    tbSkuId   int64
+    _tbSkuId   int64
     // 关联的淘宝商品 id
-    tbItemId   int64
+    _tbItemId   int64
     // 检验检测项目isv侧code
-    isvItemCode   string
+    _isvItemCode   string
 }
 
 // 初始化AlibabaAlihealthLabItemTbitemskuRelationSyncRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) GetApiParams() url.
 }
 // IsvRelationStatus Setter
 // EFFECTIVE 有效，INVALID 无效
-func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetIsvRelationStatus(isvRelationStatus string) error {
-    r.isvRelationStatus = isvRelationStatus
-    r.Set("isv_relation_status", isvRelationStatus)
+func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetIsvRelationStatus(_isvRelationStatus string) error {
+    r._isvRelationStatus = _isvRelationStatus
+    r.Set("isv_relation_status", _isvRelationStatus)
     return nil
 }
 
 // IsvRelationStatus Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) GetIsvRelationStatus() string {
-    return r.isvRelationStatus
+    return r._isvRelationStatus
 }
 // TbSkuId Setter
 // 关联的淘宝商品SKU id，在商品没有sku的情况下传0
-func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetTbSkuId(tbSkuId int64) error {
-    r.tbSkuId = tbSkuId
-    r.Set("tb_sku_id", tbSkuId)
+func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetTbSkuId(_tbSkuId int64) error {
+    r._tbSkuId = _tbSkuId
+    r.Set("tb_sku_id", _tbSkuId)
     return nil
 }
 
 // TbSkuId Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) GetTbSkuId() int64 {
-    return r.tbSkuId
+    return r._tbSkuId
 }
 // TbItemId Setter
 // 关联的淘宝商品 id
-func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetTbItemId(tbItemId int64) error {
-    r.tbItemId = tbItemId
-    r.Set("tb_item_id", tbItemId)
+func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetTbItemId(_tbItemId int64) error {
+    r._tbItemId = _tbItemId
+    r.Set("tb_item_id", _tbItemId)
     return nil
 }
 
 // TbItemId Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) GetTbItemId() int64 {
-    return r.tbItemId
+    return r._tbItemId
 }
 // IsvItemCode Setter
 // 检验检测项目isv侧code
-func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetIsvItemCode(isvItemCode string) error {
-    r.isvItemCode = isvItemCode
-    r.Set("isv_item_code", isvItemCode)
+func (r *AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) SetIsvItemCode(_isvItemCode string) error {
+    r._isvItemCode = _isvItemCode
+    r.Set("isv_item_code", _isvItemCode)
     return nil
 }
 
 // IsvItemCode Getter
 func (r AlibabaAlihealthLabItemTbitemskuRelationSyncRequest) GetIsvItemCode() string {
-    return r.isvItemCode
+    return r._isvItemCode
 }

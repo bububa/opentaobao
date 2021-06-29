@@ -15,13 +15,13 @@ alibaba.security.jaq.rp.status
 type AlibabaSecurityJaqRpStatusRequest struct {
     model.Params
     // 账号id
-    accountId   string
+    _accountId   string
     // 凭据id
-    ticketId   string
+    _ticketId   string
     // 客户端来源
-    source   string
+    _source   string
     // 业务来源
-    biz   string
+    _biz   string
 }
 
 // 初始化AlibabaSecurityJaqRpStatusRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaSecurityJaqRpStatusRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 账号id
-func (r *AlibabaSecurityJaqRpStatusRequest) SetAccountId(accountId string) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *AlibabaSecurityJaqRpStatusRequest) SetAccountId(_accountId string) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r AlibabaSecurityJaqRpStatusRequest) GetAccountId() string {
-    return r.accountId
+    return r._accountId
 }
 // TicketId Setter
 // 凭据id
-func (r *AlibabaSecurityJaqRpStatusRequest) SetTicketId(ticketId string) error {
-    r.ticketId = ticketId
-    r.Set("ticket_id", ticketId)
+func (r *AlibabaSecurityJaqRpStatusRequest) SetTicketId(_ticketId string) error {
+    r._ticketId = _ticketId
+    r.Set("ticket_id", _ticketId)
     return nil
 }
 
 // TicketId Getter
 func (r AlibabaSecurityJaqRpStatusRequest) GetTicketId() string {
-    return r.ticketId
+    return r._ticketId
 }
 // Source Setter
 // 客户端来源
-func (r *AlibabaSecurityJaqRpStatusRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *AlibabaSecurityJaqRpStatusRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r AlibabaSecurityJaqRpStatusRequest) GetSource() string {
-    return r.source
+    return r._source
 }
 // Biz Setter
 // 业务来源
-func (r *AlibabaSecurityJaqRpStatusRequest) SetBiz(biz string) error {
-    r.biz = biz
-    r.Set("biz", biz)
+func (r *AlibabaSecurityJaqRpStatusRequest) SetBiz(_biz string) error {
+    r._biz = _biz
+    r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
 func (r AlibabaSecurityJaqRpStatusRequest) GetBiz() string {
-    return r.biz
+    return r._biz
 }

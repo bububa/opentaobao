@@ -15,7 +15,7 @@ taobao.taotv.video.playlist.all
 type TaobaoTaotvVideoPlaylistAllRequest struct {
     model.Params
     // 系统信息
-    systemInfo   string
+    _systemInfo   string
 }
 
 // 初始化TaobaoTaotvVideoPlaylistAllRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTaotvVideoPlaylistAllRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 系统信息
-func (r *TaobaoTaotvVideoPlaylistAllRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *TaobaoTaotvVideoPlaylistAllRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r TaobaoTaotvVideoPlaylistAllRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }

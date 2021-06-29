@@ -15,7 +15,7 @@ tmall.channel.trade.applyorder.get
 type TmallChannelTradeApplyorderGetRequest struct {
     model.Params
     // 采购申请单单号
-    channelPurchaseApplyOrderNo   string
+    _channelPurchaseApplyOrderNo   string
 }
 
 // 初始化TmallChannelTradeApplyorderGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallChannelTradeApplyorderGetRequest) GetApiParams() url.Values {
 }
 // ChannelPurchaseApplyOrderNo Setter
 // 采购申请单单号
-func (r *TmallChannelTradeApplyorderGetRequest) SetChannelPurchaseApplyOrderNo(channelPurchaseApplyOrderNo string) error {
-    r.channelPurchaseApplyOrderNo = channelPurchaseApplyOrderNo
-    r.Set("channel_purchase_apply_order_no", channelPurchaseApplyOrderNo)
+func (r *TmallChannelTradeApplyorderGetRequest) SetChannelPurchaseApplyOrderNo(_channelPurchaseApplyOrderNo string) error {
+    r._channelPurchaseApplyOrderNo = _channelPurchaseApplyOrderNo
+    r.Set("channel_purchase_apply_order_no", _channelPurchaseApplyOrderNo)
     return nil
 }
 
 // ChannelPurchaseApplyOrderNo Getter
 func (r TmallChannelTradeApplyorderGetRequest) GetChannelPurchaseApplyOrderNo() string {
-    return r.channelPurchaseApplyOrderNo
+    return r._channelPurchaseApplyOrderNo
 }

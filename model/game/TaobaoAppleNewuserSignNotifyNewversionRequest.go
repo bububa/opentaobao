@@ -15,11 +15,11 @@ taobao.apple.newuser.sign.notify.newversion
 type TaobaoAppleNewuserSignNotifyNewversionRequest struct {
     model.Params
     // 结果code
-    resultCode   string
+    _resultCode   string
     // 结果信息说明
-    resultMsg   string
+    _resultMsg   string
     // 业务参数
-    mainData   *AppleTopNewSignNotifyDo
+    _mainData   *AppleTopNewSignNotifyDo
 }
 
 // 初始化TaobaoAppleNewuserSignNotifyNewversionRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAppleNewuserSignNotifyNewversionRequest) GetApiParams() url.Values
 }
 // ResultCode Setter
 // 结果code
-func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetResultCode(resultCode string) error {
-    r.resultCode = resultCode
-    r.Set("result_code", resultCode)
+func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetResultCode(_resultCode string) error {
+    r._resultCode = _resultCode
+    r.Set("result_code", _resultCode)
     return nil
 }
 
 // ResultCode Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionRequest) GetResultCode() string {
-    return r.resultCode
+    return r._resultCode
 }
 // ResultMsg Setter
 // 结果信息说明
-func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetResultMsg(resultMsg string) error {
-    r.resultMsg = resultMsg
-    r.Set("result_msg", resultMsg)
+func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetResultMsg(_resultMsg string) error {
+    r._resultMsg = _resultMsg
+    r.Set("result_msg", _resultMsg)
     return nil
 }
 
 // ResultMsg Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionRequest) GetResultMsg() string {
-    return r.resultMsg
+    return r._resultMsg
 }
 // MainData Setter
 // 业务参数
-func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetMainData(mainData *AppleTopNewSignNotifyDo) error {
-    r.mainData = mainData
-    r.Set("main_data", mainData)
+func (r *TaobaoAppleNewuserSignNotifyNewversionRequest) SetMainData(_mainData *AppleTopNewSignNotifyDo) error {
+    r._mainData = _mainData
+    r.Set("main_data", _mainData)
     return nil
 }
 
 // MainData Getter
 func (r TaobaoAppleNewuserSignNotifyNewversionRequest) GetMainData() *AppleTopNewSignNotifyDo {
-    return r.mainData
+    return r._mainData
 }

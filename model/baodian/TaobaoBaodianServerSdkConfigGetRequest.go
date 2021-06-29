@@ -15,13 +15,13 @@ taobao.baodian.server.sdk.config.get
 type TaobaoBaodianServerSdkConfigGetRequest struct {
     model.Params
     // appKey
-    appkey   string
+    _appkey   string
     // 渠道
-    channel   string
+    _channel   string
     // sdk版本号
-    sdkVer   string
+    _sdkVer   string
     // 与后端约定
-    type   int64
+    _type   int64
 }
 
 // 初始化TaobaoBaodianServerSdkConfigGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoBaodianServerSdkConfigGetRequest) GetApiParams() url.Values {
 }
 // Appkey Setter
 // appKey
-func (r *TaobaoBaodianServerSdkConfigGetRequest) SetAppkey(appkey string) error {
-    r.appkey = appkey
-    r.Set("appkey", appkey)
+func (r *TaobaoBaodianServerSdkConfigGetRequest) SetAppkey(_appkey string) error {
+    r._appkey = _appkey
+    r.Set("appkey", _appkey)
     return nil
 }
 
 // Appkey Getter
 func (r TaobaoBaodianServerSdkConfigGetRequest) GetAppkey() string {
-    return r.appkey
+    return r._appkey
 }
 // Channel Setter
 // 渠道
-func (r *TaobaoBaodianServerSdkConfigGetRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TaobaoBaodianServerSdkConfigGetRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TaobaoBaodianServerSdkConfigGetRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }
 // SdkVer Setter
 // sdk版本号
-func (r *TaobaoBaodianServerSdkConfigGetRequest) SetSdkVer(sdkVer string) error {
-    r.sdkVer = sdkVer
-    r.Set("sdk_ver", sdkVer)
+func (r *TaobaoBaodianServerSdkConfigGetRequest) SetSdkVer(_sdkVer string) error {
+    r._sdkVer = _sdkVer
+    r.Set("sdk_ver", _sdkVer)
     return nil
 }
 
 // SdkVer Getter
 func (r TaobaoBaodianServerSdkConfigGetRequest) GetSdkVer() string {
-    return r.sdkVer
+    return r._sdkVer
 }
 // Type Setter
 // 与后端约定
-func (r *TaobaoBaodianServerSdkConfigGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoBaodianServerSdkConfigGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoBaodianServerSdkConfigGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }

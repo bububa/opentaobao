@@ -15,7 +15,7 @@ tmall.mei.crm.member.getbypaycode
 type TmallMeiCrmMemberGetbypaycodeRequest struct {
     model.Params
     // 会员码
-    payCode   string
+    _payCode   string
 }
 
 // 初始化TmallMeiCrmMemberGetbypaycodeRequest对象
@@ -40,13 +40,13 @@ func (r TmallMeiCrmMemberGetbypaycodeRequest) GetApiParams() url.Values {
 }
 // PayCode Setter
 // 会员码
-func (r *TmallMeiCrmMemberGetbypaycodeRequest) SetPayCode(payCode string) error {
-    r.payCode = payCode
-    r.Set("pay_code", payCode)
+func (r *TmallMeiCrmMemberGetbypaycodeRequest) SetPayCode(_payCode string) error {
+    r._payCode = _payCode
+    r.Set("pay_code", _payCode)
     return nil
 }
 
 // PayCode Getter
 func (r TmallMeiCrmMemberGetbypaycodeRequest) GetPayCode() string {
-    return r.payCode
+    return r._payCode
 }

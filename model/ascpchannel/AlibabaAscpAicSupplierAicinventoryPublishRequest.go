@@ -15,7 +15,7 @@ alibaba.ascp.aic.supplier.aicinventory.publish
 type AlibabaAscpAicSupplierAicinventoryPublishRequest struct {
     model.Params
     // 库存发布请求参数
-    aicInventoryPublishRequest   *Aicinventorypublishrequest
+    _aicInventoryPublishRequest   *Aicinventorypublishrequest
 }
 
 // 初始化AlibabaAscpAicSupplierAicinventoryPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpAicSupplierAicinventoryPublishRequest) GetApiParams() url.Val
 }
 // AicInventoryPublishRequest Setter
 // 库存发布请求参数
-func (r *AlibabaAscpAicSupplierAicinventoryPublishRequest) SetAicInventoryPublishRequest(aicInventoryPublishRequest *Aicinventorypublishrequest) error {
-    r.aicInventoryPublishRequest = aicInventoryPublishRequest
-    r.Set("aic_inventory_publish_request", aicInventoryPublishRequest)
+func (r *AlibabaAscpAicSupplierAicinventoryPublishRequest) SetAicInventoryPublishRequest(_aicInventoryPublishRequest *Aicinventorypublishrequest) error {
+    r._aicInventoryPublishRequest = _aicInventoryPublishRequest
+    r.Set("aic_inventory_publish_request", _aicInventoryPublishRequest)
     return nil
 }
 
 // AicInventoryPublishRequest Getter
 func (r AlibabaAscpAicSupplierAicinventoryPublishRequest) GetAicInventoryPublishRequest() *Aicinventorypublishrequest {
-    return r.aicInventoryPublishRequest
+    return r._aicInventoryPublishRequest
 }

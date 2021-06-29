@@ -15,9 +15,9 @@ alibaba.wdk.item.merchantsku.query
 type AlibabaWdkItemMerchantskuQueryRequest struct {
     model.Params
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 机构编码
-    orgCode   string
+    _orgCode   string
 }
 
 // 初始化AlibabaWdkItemMerchantskuQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkItemMerchantskuQueryRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemMerchantskuQueryRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemMerchantskuQueryRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemMerchantskuQueryRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // OrgCode Setter
 // 机构编码
-func (r *AlibabaWdkItemMerchantskuQueryRequest) SetOrgCode(orgCode string) error {
-    r.orgCode = orgCode
-    r.Set("org_code", orgCode)
+func (r *AlibabaWdkItemMerchantskuQueryRequest) SetOrgCode(_orgCode string) error {
+    r._orgCode = _orgCode
+    r.Set("org_code", _orgCode)
     return nil
 }
 
 // OrgCode Getter
 func (r AlibabaWdkItemMerchantskuQueryRequest) GetOrgCode() string {
-    return r.orgCode
+    return r._orgCode
 }

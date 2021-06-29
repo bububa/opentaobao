@@ -15,9 +15,9 @@ tmall.channel.trade.deliverorder.agree
 type TmallChannelTradeDeliverorderAgreeRequest struct {
     model.Params
     // 发货单号
-    mainDeliverOrderNo   int64
+    _mainDeliverOrderNo   int64
     // 同意理由
-    operateDesc   string
+    _operateDesc   string
 }
 
 // 初始化TmallChannelTradeDeliverorderAgreeRequest对象
@@ -42,25 +42,25 @@ func (r TmallChannelTradeDeliverorderAgreeRequest) GetApiParams() url.Values {
 }
 // MainDeliverOrderNo Setter
 // 发货单号
-func (r *TmallChannelTradeDeliverorderAgreeRequest) SetMainDeliverOrderNo(mainDeliverOrderNo int64) error {
-    r.mainDeliverOrderNo = mainDeliverOrderNo
-    r.Set("main_deliver_order_no", mainDeliverOrderNo)
+func (r *TmallChannelTradeDeliverorderAgreeRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+    r._mainDeliverOrderNo = _mainDeliverOrderNo
+    r.Set("main_deliver_order_no", _mainDeliverOrderNo)
     return nil
 }
 
 // MainDeliverOrderNo Getter
 func (r TmallChannelTradeDeliverorderAgreeRequest) GetMainDeliverOrderNo() int64 {
-    return r.mainDeliverOrderNo
+    return r._mainDeliverOrderNo
 }
 // OperateDesc Setter
 // 同意理由
-func (r *TmallChannelTradeDeliverorderAgreeRequest) SetOperateDesc(operateDesc string) error {
-    r.operateDesc = operateDesc
-    r.Set("operate_desc", operateDesc)
+func (r *TmallChannelTradeDeliverorderAgreeRequest) SetOperateDesc(_operateDesc string) error {
+    r._operateDesc = _operateDesc
+    r.Set("operate_desc", _operateDesc)
     return nil
 }
 
 // OperateDesc Getter
 func (r TmallChannelTradeDeliverorderAgreeRequest) GetOperateDesc() string {
-    return r.operateDesc
+    return r._operateDesc
 }

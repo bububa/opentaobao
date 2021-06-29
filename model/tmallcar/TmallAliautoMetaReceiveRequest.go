@@ -15,7 +15,7 @@ tmall.aliauto.meta.receive
 type TmallAliautoMetaReceiveRequest struct {
     model.Params
     // 元数据参数集
-    command   *ResourceMetaCommand
+    _command   *ResourceMetaCommand
 }
 
 // 初始化TmallAliautoMetaReceiveRequest对象
@@ -40,13 +40,13 @@ func (r TmallAliautoMetaReceiveRequest) GetApiParams() url.Values {
 }
 // Command Setter
 // 元数据参数集
-func (r *TmallAliautoMetaReceiveRequest) SetCommand(command *ResourceMetaCommand) error {
-    r.command = command
-    r.Set("command", command)
+func (r *TmallAliautoMetaReceiveRequest) SetCommand(_command *ResourceMetaCommand) error {
+    r._command = _command
+    r.Set("command", _command)
     return nil
 }
 
 // Command Getter
 func (r TmallAliautoMetaReceiveRequest) GetCommand() *ResourceMetaCommand {
-    return r.command
+    return r._command
 }

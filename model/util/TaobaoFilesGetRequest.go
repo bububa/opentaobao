@@ -15,11 +15,11 @@ taobao.files.get
 type TaobaoFilesGetRequest struct {
     model.Params
     // 搜索开始时间
-    startDate   string
+    _startDate   string
     // 搜索结束时间
-    endDate   string
+    _endDate   string
     // 下载链接状态。1:未下载。2:已下载
-    status   int64
+    _status   int64
 }
 
 // 初始化TaobaoFilesGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoFilesGetRequest) GetApiParams() url.Values {
 }
 // StartDate Setter
 // 搜索开始时间
-func (r *TaobaoFilesGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoFilesGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoFilesGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 搜索结束时间
-func (r *TaobaoFilesGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoFilesGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoFilesGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // Status Setter
 // 下载链接状态。1:未下载。2:已下载
-func (r *TaobaoFilesGetRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoFilesGetRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoFilesGetRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }

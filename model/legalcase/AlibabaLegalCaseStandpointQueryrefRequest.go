@@ -15,11 +15,11 @@ alibaba.legal.case.standpoint.queryref
 type AlibabaLegalCaseStandpointQueryrefRequest struct {
     model.Params
     // 案件id
-    suitId   int64
+    _suitId   int64
     // 委托id
-    entrustId   int64
+    _entrustId   int64
     // 查询的口径id列表
-    standpointIds   []int64
+    _standpointIds   []int64
 }
 
 // 初始化AlibabaLegalCaseStandpointQueryrefRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLegalCaseStandpointQueryrefRequest) GetApiParams() url.Values {
 }
 // SuitId Setter
 // 案件id
-func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetSuitId(suitId int64) error {
-    r.suitId = suitId
-    r.Set("suit_id", suitId)
+func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetSuitId(_suitId int64) error {
+    r._suitId = _suitId
+    r.Set("suit_id", _suitId)
     return nil
 }
 
 // SuitId Getter
 func (r AlibabaLegalCaseStandpointQueryrefRequest) GetSuitId() int64 {
-    return r.suitId
+    return r._suitId
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalCaseStandpointQueryrefRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // StandpointIds Setter
 // 查询的口径id列表
-func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetStandpointIds(standpointIds []int64) error {
-    r.standpointIds = standpointIds
-    r.Set("standpoint_ids", standpointIds)
+func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetStandpointIds(_standpointIds []int64) error {
+    r._standpointIds = _standpointIds
+    r.Set("standpoint_ids", _standpointIds)
     return nil
 }
 
 // StandpointIds Getter
 func (r AlibabaLegalCaseStandpointQueryrefRequest) GetStandpointIds() []int64 {
-    return r.standpointIds
+    return r._standpointIds
 }

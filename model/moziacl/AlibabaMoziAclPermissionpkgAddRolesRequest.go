@@ -15,7 +15,7 @@ alibaba.mozi.acl.permissionpkg.add.roles
 type AlibabaMoziAclPermissionpkgAddRolesRequest struct {
     model.Params
     // 请求入参对象
-    parameters   *UpdateRolesToPermissionPackageRequest
+    _parameters   *UpdateRolesToPermissionPackageRequest
 }
 
 // 初始化AlibabaMoziAclPermissionpkgAddRolesRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclPermissionpkgAddRolesRequest) GetApiParams() url.Values {
 }
 // Parameters Setter
 // 请求入参对象
-func (r *AlibabaMoziAclPermissionpkgAddRolesRequest) SetParameters(parameters *UpdateRolesToPermissionPackageRequest) error {
-    r.parameters = parameters
-    r.Set("parameters", parameters)
+func (r *AlibabaMoziAclPermissionpkgAddRolesRequest) SetParameters(_parameters *UpdateRolesToPermissionPackageRequest) error {
+    r._parameters = _parameters
+    r.Set("parameters", _parameters)
     return nil
 }
 
 // Parameters Getter
 func (r AlibabaMoziAclPermissionpkgAddRolesRequest) GetParameters() *UpdateRolesToPermissionPackageRequest {
-    return r.parameters
+    return r._parameters
 }

@@ -15,9 +15,9 @@ alibaba.wholesale.goods.get
 type AlibabaWholesaleGoodsGetRequest struct {
     model.Params
     // country_code
-    countryCode   string
+    _countryCode   string
     // id
-    id   string
+    _id   string
 }
 
 // 初始化AlibabaWholesaleGoodsGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWholesaleGoodsGetRequest) GetApiParams() url.Values {
 }
 // CountryCode Setter
 // country_code
-func (r *AlibabaWholesaleGoodsGetRequest) SetCountryCode(countryCode string) error {
-    r.countryCode = countryCode
-    r.Set("country_code", countryCode)
+func (r *AlibabaWholesaleGoodsGetRequest) SetCountryCode(_countryCode string) error {
+    r._countryCode = _countryCode
+    r.Set("country_code", _countryCode)
     return nil
 }
 
 // CountryCode Getter
 func (r AlibabaWholesaleGoodsGetRequest) GetCountryCode() string {
-    return r.countryCode
+    return r._countryCode
 }
 // Id Setter
 // id
-func (r *AlibabaWholesaleGoodsGetRequest) SetId(id string) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaWholesaleGoodsGetRequest) SetId(_id string) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaWholesaleGoodsGetRequest) GetId() string {
-    return r.id
+    return r._id
 }

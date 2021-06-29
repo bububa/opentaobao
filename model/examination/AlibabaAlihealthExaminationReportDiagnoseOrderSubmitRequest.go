@@ -15,19 +15,19 @@ alibaba.alihealth.examination.report.diagnose.order.submit
 type AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest struct {
     model.Params
     // 订单ID
-    orderId   string
+    _orderId   string
     // 手机号码，显示后四位
-    mobilePhone   string
+    _mobilePhone   string
     // 证件号，显示前1，后1
-    idCardNo   string
+    _idCardNo   string
     // 性别
-    gender   string
+    _gender   string
     // 报告地址
-    reportUrl   string
+    _reportUrl   string
     // 主诉问题
-    question   string
+    _question   string
     // 咨询人名称
-    patientName   string
+    _patientName   string
 }
 
 // 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetApiParam
 }
 // OrderId Setter
 // 订单ID
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // MobilePhone Setter
 // 手机号码，显示后四位
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetMobilePhone(mobilePhone string) error {
-    r.mobilePhone = mobilePhone
-    r.Set("mobile_phone", mobilePhone)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetMobilePhone(_mobilePhone string) error {
+    r._mobilePhone = _mobilePhone
+    r.Set("mobile_phone", _mobilePhone)
     return nil
 }
 
 // MobilePhone Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetMobilePhone() string {
-    return r.mobilePhone
+    return r._mobilePhone
 }
 // IdCardNo Setter
 // 证件号，显示前1，后1
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetIdCardNo(idCardNo string) error {
-    r.idCardNo = idCardNo
-    r.Set("id_card_no", idCardNo)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetIdCardNo(_idCardNo string) error {
+    r._idCardNo = _idCardNo
+    r.Set("id_card_no", _idCardNo)
     return nil
 }
 
 // IdCardNo Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetIdCardNo() string {
-    return r.idCardNo
+    return r._idCardNo
 }
 // Gender Setter
 // 性别
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetGender(gender string) error {
-    r.gender = gender
-    r.Set("gender", gender)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetGender(_gender string) error {
+    r._gender = _gender
+    r.Set("gender", _gender)
     return nil
 }
 
 // Gender Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetGender() string {
-    return r.gender
+    return r._gender
 }
 // ReportUrl Setter
 // 报告地址
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetReportUrl(reportUrl string) error {
-    r.reportUrl = reportUrl
-    r.Set("report_url", reportUrl)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetReportUrl(_reportUrl string) error {
+    r._reportUrl = _reportUrl
+    r.Set("report_url", _reportUrl)
     return nil
 }
 
 // ReportUrl Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetReportUrl() string {
-    return r.reportUrl
+    return r._reportUrl
 }
 // Question Setter
 // 主诉问题
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetQuestion(question string) error {
-    r.question = question
-    r.Set("question", question)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetQuestion(_question string) error {
+    r._question = _question
+    r.Set("question", _question)
     return nil
 }
 
 // Question Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetQuestion() string {
-    return r.question
+    return r._question
 }
 // PatientName Setter
 // 咨询人名称
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetPatientName(patientName string) error {
-    r.patientName = patientName
-    r.Set("patient_name", patientName)
+func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) SetPatientName(_patientName string) error {
+    r._patientName = _patientName
+    r.Set("patient_name", _patientName)
     return nil
 }
 
 // PatientName Getter
 func (r AlibabaAlihealthExaminationReportDiagnoseOrderSubmitRequest) GetPatientName() string {
-    return r.patientName
+    return r._patientName
 }

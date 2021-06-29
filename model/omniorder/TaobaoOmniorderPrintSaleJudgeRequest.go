@@ -15,7 +15,7 @@ taobao.omniorder.print.sale.judge
 type TaobaoOmniorderPrintSaleJudgeRequest struct {
     model.Params
     // 用户子账号ID
-    subUid   int64
+    _subUid   int64
 }
 
 // 初始化TaobaoOmniorderPrintSaleJudgeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderPrintSaleJudgeRequest) GetApiParams() url.Values {
 }
 // SubUid Setter
 // 用户子账号ID
-func (r *TaobaoOmniorderPrintSaleJudgeRequest) SetSubUid(subUid int64) error {
-    r.subUid = subUid
-    r.Set("sub_uid", subUid)
+func (r *TaobaoOmniorderPrintSaleJudgeRequest) SetSubUid(_subUid int64) error {
+    r._subUid = _subUid
+    r.Set("sub_uid", _subUid)
     return nil
 }
 
 // SubUid Getter
 func (r TaobaoOmniorderPrintSaleJudgeRequest) GetSubUid() int64 {
-    return r.subUid
+    return r._subUid
 }

@@ -15,9 +15,9 @@ yunos.tvpubadmin.device.osupgradedetail
 type YunosTvpubadminDeviceOsupgradedetailRequest struct {
     model.Params
     // 版本ID
-    versionId   int64
+    _versionId   int64
     // 牌照方
-    license   int64
+    _license   int64
 }
 
 // 初始化YunosTvpubadminDeviceOsupgradedetailRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetApiParams() url.Values {
 }
 // VersionId Setter
 // 版本ID
-func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetVersionId(versionId int64) error {
-    r.versionId = versionId
-    r.Set("version_id", versionId)
+func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetVersionId(_versionId int64) error {
+    r._versionId = _versionId
+    r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
 func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetVersionId() int64 {
-    return r.versionId
+    return r._versionId
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceOsupgradedetailRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceOsupgradedetailRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }

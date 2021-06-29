@@ -15,9 +15,9 @@ taobao.xhotel.get.entity.by.tag
 type TaobaoXhotelGetEntityByTagRequest struct {
     model.Params
     // 标签
-    tag   int64
+    _tag   int64
     // 查询token，填入上一页查询的返回结果，只能按顺序单线程查询
-    tokenStr   string
+    _tokenStr   string
 }
 
 // 初始化TaobaoXhotelGetEntityByTagRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoXhotelGetEntityByTagRequest) GetApiParams() url.Values {
 }
 // Tag Setter
 // 标签
-func (r *TaobaoXhotelGetEntityByTagRequest) SetTag(tag int64) error {
-    r.tag = tag
-    r.Set("tag", tag)
+func (r *TaobaoXhotelGetEntityByTagRequest) SetTag(_tag int64) error {
+    r._tag = _tag
+    r.Set("tag", _tag)
     return nil
 }
 
 // Tag Getter
 func (r TaobaoXhotelGetEntityByTagRequest) GetTag() int64 {
-    return r.tag
+    return r._tag
 }
 // TokenStr Setter
 // 查询token，填入上一页查询的返回结果，只能按顺序单线程查询
-func (r *TaobaoXhotelGetEntityByTagRequest) SetTokenStr(tokenStr string) error {
-    r.tokenStr = tokenStr
-    r.Set("token_str", tokenStr)
+func (r *TaobaoXhotelGetEntityByTagRequest) SetTokenStr(_tokenStr string) error {
+    r._tokenStr = _tokenStr
+    r.Set("token_str", _tokenStr)
     return nil
 }
 
 // TokenStr Getter
 func (r TaobaoXhotelGetEntityByTagRequest) GetTokenStr() string {
-    return r.tokenStr
+    return r._tokenStr
 }

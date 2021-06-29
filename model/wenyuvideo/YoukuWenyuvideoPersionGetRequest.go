@@ -15,9 +15,9 @@ youku.wenyuvideo.persion.get
 type YoukuWenyuvideoPersionGetRequest struct {
     model.Params
     // 设备信息
-    systemInfo   string
+    _systemInfo   string
     // 人物ID
-    personId   int64
+    _personId   int64
 }
 
 // 初始化YoukuWenyuvideoPersionGetRequest对象
@@ -42,25 +42,25 @@ func (r YoukuWenyuvideoPersionGetRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 设备信息
-func (r *YoukuWenyuvideoPersionGetRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *YoukuWenyuvideoPersionGetRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r YoukuWenyuvideoPersionGetRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }
 // PersonId Setter
 // 人物ID
-func (r *YoukuWenyuvideoPersionGetRequest) SetPersonId(personId int64) error {
-    r.personId = personId
-    r.Set("person_id", personId)
+func (r *YoukuWenyuvideoPersionGetRequest) SetPersonId(_personId int64) error {
+    r._personId = _personId
+    r.Set("person_id", _personId)
     return nil
 }
 
 // PersonId Getter
 func (r YoukuWenyuvideoPersionGetRequest) GetPersonId() int64 {
-    return r.personId
+    return r._personId
 }

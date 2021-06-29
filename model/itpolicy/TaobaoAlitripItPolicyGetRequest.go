@@ -15,11 +15,11 @@ taobao.alitrip.it.policy.get
 type TaobaoAlitripItPolicyGetRequest struct {
     model.Params
     // 预留扩展字段
-    extendAttributes   string
+    _extendAttributes   string
     // 接入方产品编号
-    outId   string
+    _outId   string
     // 淘宝政策id
-    taobaoId   int64
+    _taobaoId   int64
 }
 
 // 初始化TaobaoAlitripItPolicyGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAlitripItPolicyGetRequest) GetApiParams() url.Values {
 }
 // ExtendAttributes Setter
 // 预留扩展字段
-func (r *TaobaoAlitripItPolicyGetRequest) SetExtendAttributes(extendAttributes string) error {
-    r.extendAttributes = extendAttributes
-    r.Set("extend_attributes", extendAttributes)
+func (r *TaobaoAlitripItPolicyGetRequest) SetExtendAttributes(_extendAttributes string) error {
+    r._extendAttributes = _extendAttributes
+    r.Set("extend_attributes", _extendAttributes)
     return nil
 }
 
 // ExtendAttributes Getter
 func (r TaobaoAlitripItPolicyGetRequest) GetExtendAttributes() string {
-    return r.extendAttributes
+    return r._extendAttributes
 }
 // OutId Setter
 // 接入方产品编号
-func (r *TaobaoAlitripItPolicyGetRequest) SetOutId(outId string) error {
-    r.outId = outId
-    r.Set("out_id", outId)
+func (r *TaobaoAlitripItPolicyGetRequest) SetOutId(_outId string) error {
+    r._outId = _outId
+    r.Set("out_id", _outId)
     return nil
 }
 
 // OutId Getter
 func (r TaobaoAlitripItPolicyGetRequest) GetOutId() string {
-    return r.outId
+    return r._outId
 }
 // TaobaoId Setter
 // 淘宝政策id
-func (r *TaobaoAlitripItPolicyGetRequest) SetTaobaoId(taobaoId int64) error {
-    r.taobaoId = taobaoId
-    r.Set("taobao_id", taobaoId)
+func (r *TaobaoAlitripItPolicyGetRequest) SetTaobaoId(_taobaoId int64) error {
+    r._taobaoId = _taobaoId
+    r.Set("taobao_id", _taobaoId)
     return nil
 }
 
 // TaobaoId Getter
 func (r TaobaoAlitripItPolicyGetRequest) GetTaobaoId() int64 {
-    return r.taobaoId
+    return r._taobaoId
 }

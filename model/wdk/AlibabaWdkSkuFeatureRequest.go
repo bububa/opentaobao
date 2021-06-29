@@ -15,7 +15,7 @@ alibaba.wdk.sku.feature
 type AlibabaWdkSkuFeatureRequest struct {
     model.Params
     // SkuFeatureDo
-    param   *SkuFeatureDo
+    _param   *SkuFeatureDo
 }
 
 // 初始化AlibabaWdkSkuFeatureRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuFeatureRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // SkuFeatureDo
-func (r *AlibabaWdkSkuFeatureRequest) SetParam(param *SkuFeatureDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkSkuFeatureRequest) SetParam(_param *SkuFeatureDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkSkuFeatureRequest) GetParam() *SkuFeatureDo {
-    return r.param
+    return r._param
 }

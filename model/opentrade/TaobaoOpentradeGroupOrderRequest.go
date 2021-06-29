@@ -15,7 +15,7 @@ taobao.opentrade.group.order
 type TaobaoOpentradeGroupOrderRequest struct {
     model.Params
     // 团id
-    groupId   int64
+    _groupId   int64
 }
 
 // 初始化TaobaoOpentradeGroupOrderRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpentradeGroupOrderRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 团id
-func (r *TaobaoOpentradeGroupOrderRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *TaobaoOpentradeGroupOrderRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r TaobaoOpentradeGroupOrderRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }

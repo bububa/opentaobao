@@ -15,9 +15,9 @@ taobao.crm.grademkt.member.detail.delete
 type TaobaoCrmGrademktMemberDetailDeleteRequest struct {
     model.Params
     // 扩展字段
-    feather   string
+    _feather   string
     // 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-    parameter   string
+    _parameter   string
 }
 
 // 初始化TaobaoCrmGrademktMemberDetailDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCrmGrademktMemberDetailDeleteRequest) GetApiParams() url.Values {
 }
 // Feather Setter
 // 扩展字段
-func (r *TaobaoCrmGrademktMemberDetailDeleteRequest) SetFeather(feather string) error {
-    r.feather = feather
-    r.Set("feather", feather)
+func (r *TaobaoCrmGrademktMemberDetailDeleteRequest) SetFeather(_feather string) error {
+    r._feather = _feather
+    r.Set("feather", _feather)
     return nil
 }
 
 // Feather Getter
 func (r TaobaoCrmGrademktMemberDetailDeleteRequest) GetFeather() string {
-    return r.feather
+    return r._feather
 }
 // Parameter Setter
 // 创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-func (r *TaobaoCrmGrademktMemberDetailDeleteRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *TaobaoCrmGrademktMemberDetailDeleteRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r TaobaoCrmGrademktMemberDetailDeleteRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }

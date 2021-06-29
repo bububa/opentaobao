@@ -15,9 +15,9 @@ tmall.promotag.taguser.judge
 type TmallPromotagTaguserJudgeRequest struct {
     model.Params
     // 标签ID
-    tagId   int64
+    _tagId   int64
     // 买家昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TmallPromotagTaguserJudgeRequest对象
@@ -42,25 +42,25 @@ func (r TmallPromotagTaguserJudgeRequest) GetApiParams() url.Values {
 }
 // TagId Setter
 // 标签ID
-func (r *TmallPromotagTaguserJudgeRequest) SetTagId(tagId int64) error {
-    r.tagId = tagId
-    r.Set("tag_id", tagId)
+func (r *TmallPromotagTaguserJudgeRequest) SetTagId(_tagId int64) error {
+    r._tagId = _tagId
+    r.Set("tag_id", _tagId)
     return nil
 }
 
 // TagId Getter
 func (r TmallPromotagTaguserJudgeRequest) GetTagId() int64 {
-    return r.tagId
+    return r._tagId
 }
 // Nick Setter
 // 买家昵称
-func (r *TmallPromotagTaguserJudgeRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TmallPromotagTaguserJudgeRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TmallPromotagTaguserJudgeRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

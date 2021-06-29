@@ -15,9 +15,9 @@ alibaba.aliqin.flow.wallet.query.charge
 type AlibabaAliqinFlowWalletQueryChargeRequest struct {
     model.Params
     // 唯一流水号
-    outRechargeId   string
+    _outRechargeId   string
     // 渠道id
-    channelId   string
+    _channelId   string
 }
 
 // 初始化AlibabaAliqinFlowWalletQueryChargeRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliqinFlowWalletQueryChargeRequest) GetApiParams() url.Values {
 }
 // OutRechargeId Setter
 // 唯一流水号
-func (r *AlibabaAliqinFlowWalletQueryChargeRequest) SetOutRechargeId(outRechargeId string) error {
-    r.outRechargeId = outRechargeId
-    r.Set("out_recharge_id", outRechargeId)
+func (r *AlibabaAliqinFlowWalletQueryChargeRequest) SetOutRechargeId(_outRechargeId string) error {
+    r._outRechargeId = _outRechargeId
+    r.Set("out_recharge_id", _outRechargeId)
     return nil
 }
 
 // OutRechargeId Getter
 func (r AlibabaAliqinFlowWalletQueryChargeRequest) GetOutRechargeId() string {
-    return r.outRechargeId
+    return r._outRechargeId
 }
 // ChannelId Setter
 // 渠道id
-func (r *AlibabaAliqinFlowWalletQueryChargeRequest) SetChannelId(channelId string) error {
-    r.channelId = channelId
-    r.Set("channel_id", channelId)
+func (r *AlibabaAliqinFlowWalletQueryChargeRequest) SetChannelId(_channelId string) error {
+    r._channelId = _channelId
+    r.Set("channel_id", _channelId)
     return nil
 }
 
 // ChannelId Getter
 func (r AlibabaAliqinFlowWalletQueryChargeRequest) GetChannelId() string {
-    return r.channelId
+    return r._channelId
 }

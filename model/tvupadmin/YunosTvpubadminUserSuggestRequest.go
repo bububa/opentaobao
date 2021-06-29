@@ -15,7 +15,7 @@ yunos.tvpubadmin.user.suggest
 type YunosTvpubadminUserSuggestRequest struct {
     model.Params
     // 关键词
-    keyword   string
+    _keyword   string
 }
 
 // 初始化YunosTvpubadminUserSuggestRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminUserSuggestRequest) GetApiParams() url.Values {
 }
 // Keyword Setter
 // 关键词
-func (r *YunosTvpubadminUserSuggestRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *YunosTvpubadminUserSuggestRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r YunosTvpubadminUserSuggestRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }

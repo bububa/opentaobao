@@ -15,7 +15,7 @@ alibaba.onetouch.logistics.express.charge.calculate
 type AlibabaOnetouchLogisticsExpressChargeCalculateRequest struct {
     model.Params
     // 请求参数对象
-    paramnQuery   *PlaceOrderDTO
+    _paramnQuery   *PlaceOrderDTO
 }
 
 // 初始化AlibabaOnetouchLogisticsExpressChargeCalculateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetApiParams() ur
 }
 // ParamnQuery Setter
 // 请求参数对象
-func (r *AlibabaOnetouchLogisticsExpressChargeCalculateRequest) SetParamnQuery(paramnQuery *PlaceOrderDTO) error {
-    r.paramnQuery = paramnQuery
-    r.Set("paramn_query", paramnQuery)
+func (r *AlibabaOnetouchLogisticsExpressChargeCalculateRequest) SetParamnQuery(_paramnQuery *PlaceOrderDTO) error {
+    r._paramnQuery = _paramnQuery
+    r.Set("paramn_query", _paramnQuery)
     return nil
 }
 
 // ParamnQuery Getter
 func (r AlibabaOnetouchLogisticsExpressChargeCalculateRequest) GetParamnQuery() *PlaceOrderDTO {
-    return r.paramnQuery
+    return r._paramnQuery
 }

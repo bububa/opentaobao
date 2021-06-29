@@ -15,7 +15,7 @@ alibaba.wdk.bm.coupon.query
 type AlibabaWdkBmCouponQueryRequest struct {
     model.Params
     // 查询券参数
-    isvQueryCouponParam   *IsvQueryCouponParam
+    _isvQueryCouponParam   *IsvQueryCouponParam
 }
 
 // 初始化AlibabaWdkBmCouponQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmCouponQueryRequest) GetApiParams() url.Values {
 }
 // IsvQueryCouponParam Setter
 // 查询券参数
-func (r *AlibabaWdkBmCouponQueryRequest) SetIsvQueryCouponParam(isvQueryCouponParam *IsvQueryCouponParam) error {
-    r.isvQueryCouponParam = isvQueryCouponParam
-    r.Set("isv_query_coupon_param", isvQueryCouponParam)
+func (r *AlibabaWdkBmCouponQueryRequest) SetIsvQueryCouponParam(_isvQueryCouponParam *IsvQueryCouponParam) error {
+    r._isvQueryCouponParam = _isvQueryCouponParam
+    r.Set("isv_query_coupon_param", _isvQueryCouponParam)
     return nil
 }
 
 // IsvQueryCouponParam Getter
 func (r AlibabaWdkBmCouponQueryRequest) GetIsvQueryCouponParam() *IsvQueryCouponParam {
-    return r.isvQueryCouponParam
+    return r._isvQueryCouponParam
 }

@@ -15,9 +15,9 @@ taobao.jst.astrolabe.storeinventory.adjust
 type TaobaoJstAstrolabeStoreinventoryAdjustRequest struct {
     model.Params
     // 操作时间
-    operationTime   string
+    _operationTime   string
     // 库存调整信息
-    inventoryAdjustInfo   *InventoryAdjustInfo
+    _inventoryAdjustInfo   *InventoryAdjustInfo
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryAdjustRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryAdjustRequest) GetApiParams() url.Values
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryAdjustRequest) SetOperationTime(operationTime string) error {
-    r.operationTime = operationTime
-    r.Set("operation_time", operationTime)
+func (r *TaobaoJstAstrolabeStoreinventoryAdjustRequest) SetOperationTime(_operationTime string) error {
+    r._operationTime = _operationTime
+    r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryAdjustRequest) GetOperationTime() string {
-    return r.operationTime
+    return r._operationTime
 }
 // InventoryAdjustInfo Setter
 // 库存调整信息
-func (r *TaobaoJstAstrolabeStoreinventoryAdjustRequest) SetInventoryAdjustInfo(inventoryAdjustInfo *InventoryAdjustInfo) error {
-    r.inventoryAdjustInfo = inventoryAdjustInfo
-    r.Set("inventory_adjust_info", inventoryAdjustInfo)
+func (r *TaobaoJstAstrolabeStoreinventoryAdjustRequest) SetInventoryAdjustInfo(_inventoryAdjustInfo *InventoryAdjustInfo) error {
+    r._inventoryAdjustInfo = _inventoryAdjustInfo
+    r.Set("inventory_adjust_info", _inventoryAdjustInfo)
     return nil
 }
 
 // InventoryAdjustInfo Getter
 func (r TaobaoJstAstrolabeStoreinventoryAdjustRequest) GetInventoryAdjustInfo() *InventoryAdjustInfo {
-    return r.inventoryAdjustInfo
+    return r._inventoryAdjustInfo
 }

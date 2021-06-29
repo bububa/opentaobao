@@ -15,7 +15,7 @@ alibaba.alihealth.dental.store.invisible.consume.update
 type AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest struct {
     model.Params
     // 入参
-    store   *DentalOuterStoreNicRequest
+    _store   *DentalOuterStoreNicRequest
 }
 
 // 初始化AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest) GetApiParams()
 }
 // Store Setter
 // 入参
-func (r *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest) SetStore(store *DentalOuterStoreNicRequest) error {
-    r.store = store
-    r.Set("store", store)
+func (r *AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest) SetStore(_store *DentalOuterStoreNicRequest) error {
+    r._store = _store
+    r.Set("store", _store)
     return nil
 }
 
 // Store Getter
 func (r AlibabaAlihealthDentalStoreInvisibleConsumeUpdateRequest) GetStore() *DentalOuterStoreNicRequest {
-    return r.store
+    return r._store
 }

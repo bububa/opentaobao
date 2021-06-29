@@ -15,7 +15,7 @@ alibaba.retail.marketing.itemdiscount.activity.update
 type AlibabaRetailMarketingItemdiscountActivityUpdateRequest struct {
     model.Params
     // 创建活动参数
-    param   *ItemDiscountActivityOperateRequest
+    _param   *ItemDiscountActivityOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingItemdiscountActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingItemdiscountActivityUpdateRequest) GetApiParams() 
 }
 // Param Setter
 // 创建活动参数
-func (r *AlibabaRetailMarketingItemdiscountActivityUpdateRequest) SetParam(param *ItemDiscountActivityOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingItemdiscountActivityUpdateRequest) SetParam(_param *ItemDiscountActivityOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingItemdiscountActivityUpdateRequest) GetParam() *ItemDiscountActivityOperateRequest {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ alitrip.btrip.train.order.search
 type AlitripBtripTrainOrderSearchRequest struct {
     model.Params
     // 请求
-    rq   *OpenSearchRq
+    _rq   *OpenSearchRq
 }
 
 // 初始化AlitripBtripTrainOrderSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripTrainOrderSearchRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求
-func (r *AlitripBtripTrainOrderSearchRequest) SetRq(rq *OpenSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripTrainOrderSearchRequest) SetRq(_rq *OpenSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripTrainOrderSearchRequest) GetRq() *OpenSearchRq {
-    return r.rq
+    return r._rq
 }

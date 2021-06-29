@@ -15,9 +15,9 @@ taobao.openmall.trade.confirm
 type TaobaoOpenmallTradeConfirmRequest struct {
     model.Params
     // 分销者信息
-    distributor   string
+    _distributor   string
     // 淘宝订单号
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoOpenmallTradeConfirmRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenmallTradeConfirmRequest) GetApiParams() url.Values {
 }
 // Distributor Setter
 // 分销者信息
-func (r *TaobaoOpenmallTradeConfirmRequest) SetDistributor(distributor string) error {
-    r.distributor = distributor
-    r.Set("distributor", distributor)
+func (r *TaobaoOpenmallTradeConfirmRequest) SetDistributor(_distributor string) error {
+    r._distributor = _distributor
+    r.Set("distributor", _distributor)
     return nil
 }
 
 // Distributor Getter
 func (r TaobaoOpenmallTradeConfirmRequest) GetDistributor() string {
-    return r.distributor
+    return r._distributor
 }
 // Tid Setter
 // 淘宝订单号
-func (r *TaobaoOpenmallTradeConfirmRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoOpenmallTradeConfirmRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoOpenmallTradeConfirmRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

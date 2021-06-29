@@ -15,7 +15,7 @@ alibaba.tianji.supplier.order.delivery
 type AlibabaTianjiSupplierOrderDeliveryRequest struct {
     model.Params
     // 物流信息
-    paramDistributionOrderLogisticsModel   *DistributionOrderLogisticsModel
+    _paramDistributionOrderLogisticsModel   *DistributionOrderLogisticsModel
 }
 
 // 初始化AlibabaTianjiSupplierOrderDeliveryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetApiParams() url.Values {
 }
 // ParamDistributionOrderLogisticsModel Setter
 // 物流信息
-func (r *AlibabaTianjiSupplierOrderDeliveryRequest) SetParamDistributionOrderLogisticsModel(paramDistributionOrderLogisticsModel *DistributionOrderLogisticsModel) error {
-    r.paramDistributionOrderLogisticsModel = paramDistributionOrderLogisticsModel
-    r.Set("param_distribution_order_logistics_model", paramDistributionOrderLogisticsModel)
+func (r *AlibabaTianjiSupplierOrderDeliveryRequest) SetParamDistributionOrderLogisticsModel(_paramDistributionOrderLogisticsModel *DistributionOrderLogisticsModel) error {
+    r._paramDistributionOrderLogisticsModel = _paramDistributionOrderLogisticsModel
+    r.Set("param_distribution_order_logistics_model", _paramDistributionOrderLogisticsModel)
     return nil
 }
 
 // ParamDistributionOrderLogisticsModel Getter
 func (r AlibabaTianjiSupplierOrderDeliveryRequest) GetParamDistributionOrderLogisticsModel() *DistributionOrderLogisticsModel {
-    return r.paramDistributionOrderLogisticsModel
+    return r._paramDistributionOrderLogisticsModel
 }

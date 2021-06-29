@@ -15,9 +15,9 @@ alibaba.lst.pos.open.goods.getgoodsbypaging
 type AlibabaLstPosOpenGoodsGetgoodsbypagingRequest struct {
     model.Params
     // 当前页码
-    page   int64
+    _page   int64
     // 当前主账号userId
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaLstPosOpenGoodsGetgoodsbypagingRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) GetApiParams() url.Values
 }
 // Page Setter
 // 当前页码
-func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // UserId Setter
 // 当前主账号userId
-func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaLstPosOpenGoodsGetgoodsbypagingRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

@@ -15,7 +15,7 @@ alibaba.alisports.efsp.getuserinfo
 type AlibabaAlisportsEfspGetuserinfoRequest struct {
     model.Params
     // 支付宝ID
-    alipayId   string
+    _alipayId   string
 }
 
 // 初始化AlibabaAlisportsEfspGetuserinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlisportsEfspGetuserinfoRequest) GetApiParams() url.Values {
 }
 // AlipayId Setter
 // 支付宝ID
-func (r *AlibabaAlisportsEfspGetuserinfoRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaAlisportsEfspGetuserinfoRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaAlisportsEfspGetuserinfoRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }

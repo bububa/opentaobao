@@ -16,9 +16,9 @@ taobao.inventory.initial.item
 type TaobaoInventoryInitialItemRequest struct {
     model.Params
     // 后端商品id
-    scItemId   int64
+    _scItemId   int64
     // 商品初始库存信息： [{"storeCode":"必选,商家仓库编号","inventoryType":"可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1","quantity":"必选,数量"}]
-    storeInventorys   string
+    _storeInventorys   string
 }
 
 // 初始化TaobaoInventoryInitialItemRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoInventoryInitialItemRequest) GetApiParams() url.Values {
 }
 // ScItemId Setter
 // 后端商品id
-func (r *TaobaoInventoryInitialItemRequest) SetScItemId(scItemId int64) error {
-    r.scItemId = scItemId
-    r.Set("sc_item_id", scItemId)
+func (r *TaobaoInventoryInitialItemRequest) SetScItemId(_scItemId int64) error {
+    r._scItemId = _scItemId
+    r.Set("sc_item_id", _scItemId)
     return nil
 }
 
 // ScItemId Getter
 func (r TaobaoInventoryInitialItemRequest) GetScItemId() int64 {
-    return r.scItemId
+    return r._scItemId
 }
 // StoreInventorys Setter
 // 商品初始库存信息： [{"storeCode":"必选,商家仓库编号","inventoryType":"可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1","quantity":"必选,数量"}]
-func (r *TaobaoInventoryInitialItemRequest) SetStoreInventorys(storeInventorys string) error {
-    r.storeInventorys = storeInventorys
-    r.Set("store_inventorys", storeInventorys)
+func (r *TaobaoInventoryInitialItemRequest) SetStoreInventorys(_storeInventorys string) error {
+    r._storeInventorys = _storeInventorys
+    r.Set("store_inventorys", _storeInventorys)
     return nil
 }
 
 // StoreInventorys Getter
 func (r TaobaoInventoryInitialItemRequest) GetStoreInventorys() string {
-    return r.storeInventorys
+    return r._storeInventorys
 }

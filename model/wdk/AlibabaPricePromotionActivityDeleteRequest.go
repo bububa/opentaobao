@@ -15,9 +15,9 @@ alibaba.price.promotion.activity.delete
 type AlibabaPricePromotionActivityDeleteRequest struct {
     model.Params
     // 外部主键
-    outerPromotionCode   string
+    _outerPromotionCode   string
     // 经营店OU
-    ouCode   string
+    _ouCode   string
 }
 
 // 初始化AlibabaPricePromotionActivityDeleteRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaPricePromotionActivityDeleteRequest) GetApiParams() url.Values {
 }
 // OuterPromotionCode Setter
 // 外部主键
-func (r *AlibabaPricePromotionActivityDeleteRequest) SetOuterPromotionCode(outerPromotionCode string) error {
-    r.outerPromotionCode = outerPromotionCode
-    r.Set("outer_promotion_code", outerPromotionCode)
+func (r *AlibabaPricePromotionActivityDeleteRequest) SetOuterPromotionCode(_outerPromotionCode string) error {
+    r._outerPromotionCode = _outerPromotionCode
+    r.Set("outer_promotion_code", _outerPromotionCode)
     return nil
 }
 
 // OuterPromotionCode Getter
 func (r AlibabaPricePromotionActivityDeleteRequest) GetOuterPromotionCode() string {
-    return r.outerPromotionCode
+    return r._outerPromotionCode
 }
 // OuCode Setter
 // 经营店OU
-func (r *AlibabaPricePromotionActivityDeleteRequest) SetOuCode(ouCode string) error {
-    r.ouCode = ouCode
-    r.Set("ou_code", ouCode)
+func (r *AlibabaPricePromotionActivityDeleteRequest) SetOuCode(_ouCode string) error {
+    r._ouCode = _ouCode
+    r.Set("ou_code", _ouCode)
     return nil
 }
 
 // OuCode Getter
 func (r AlibabaPricePromotionActivityDeleteRequest) GetOuCode() string {
-    return r.ouCode
+    return r._ouCode
 }

@@ -15,9 +15,9 @@ yunos.osupdate.model.search
 type YunosOsupdateModelSearchRequest struct {
     model.Params
     // 应用ID
-    appId   int64
+    _appId   int64
     // 关键词
-    name   string
+    _name   string
 }
 
 // 初始化YunosOsupdateModelSearchRequest对象
@@ -42,25 +42,25 @@ func (r YunosOsupdateModelSearchRequest) GetApiParams() url.Values {
 }
 // AppId Setter
 // 应用ID
-func (r *YunosOsupdateModelSearchRequest) SetAppId(appId int64) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *YunosOsupdateModelSearchRequest) SetAppId(_appId int64) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r YunosOsupdateModelSearchRequest) GetAppId() int64 {
-    return r.appId
+    return r._appId
 }
 // Name Setter
 // 关键词
-func (r *YunosOsupdateModelSearchRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *YunosOsupdateModelSearchRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r YunosOsupdateModelSearchRequest) GetName() string {
-    return r.name
+    return r._name
 }

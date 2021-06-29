@@ -15,7 +15,7 @@ alitrip.xhotel.channel.order.create
 type AlitripXhotelChannelOrderCreateRequest struct {
     model.Params
     // 创建订单参数
-    outSourceOrderCreateReq   *OutSourceOrderCreateReq
+    _outSourceOrderCreateReq   *OutSourceOrderCreateReq
 }
 
 // 初始化AlitripXhotelChannelOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlitripXhotelChannelOrderCreateRequest) GetApiParams() url.Values {
 }
 // OutSourceOrderCreateReq Setter
 // 创建订单参数
-func (r *AlitripXhotelChannelOrderCreateRequest) SetOutSourceOrderCreateReq(outSourceOrderCreateReq *OutSourceOrderCreateReq) error {
-    r.outSourceOrderCreateReq = outSourceOrderCreateReq
-    r.Set("out_source_order_create_req", outSourceOrderCreateReq)
+func (r *AlitripXhotelChannelOrderCreateRequest) SetOutSourceOrderCreateReq(_outSourceOrderCreateReq *OutSourceOrderCreateReq) error {
+    r._outSourceOrderCreateReq = _outSourceOrderCreateReq
+    r.Set("out_source_order_create_req", _outSourceOrderCreateReq)
     return nil
 }
 
 // OutSourceOrderCreateReq Getter
 func (r AlitripXhotelChannelOrderCreateRequest) GetOutSourceOrderCreateReq() *OutSourceOrderCreateReq {
-    return r.outSourceOrderCreateReq
+    return r._outSourceOrderCreateReq
 }

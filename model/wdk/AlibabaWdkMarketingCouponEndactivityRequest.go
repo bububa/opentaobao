@@ -15,7 +15,7 @@ alibaba.wdk.marketing.coupon.endactivity
 type AlibabaWdkMarketingCouponEndactivityRequest struct {
     model.Params
     // 需要删除的活动的信息
-    param   *CommonActivityParam
+    _param   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingCouponEndactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingCouponEndactivityRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 需要删除的活动的信息
-func (r *AlibabaWdkMarketingCouponEndactivityRequest) SetParam(param *CommonActivityParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingCouponEndactivityRequest) SetParam(_param *CommonActivityParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingCouponEndactivityRequest) GetParam() *CommonActivityParam {
-    return r.param
+    return r._param
 }

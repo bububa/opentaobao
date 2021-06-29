@@ -15,15 +15,15 @@ taobao.refund.messages.get
 type TaobaoRefundMessagesGetRequest struct {
     model.Params
     // 需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。
-    fields   []string
+    _fields   []string
     // 退款单号
-    refundId   int64
+    _refundId   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
     // 退款阶段，可选值：onsale（售中），aftersale（售后），天猫退款为必传。
-    refundPhase   string
+    _refundPhase   string
 }
 
 // 初始化TaobaoRefundMessagesGetRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoRefundMessagesGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。
-func (r *TaobaoRefundMessagesGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoRefundMessagesGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoRefundMessagesGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }
 // RefundId Setter
 // 退款单号
-func (r *TaobaoRefundMessagesGetRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoRefundMessagesGetRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoRefundMessagesGetRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoRefundMessagesGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoRefundMessagesGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoRefundMessagesGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页条数
-func (r *TaobaoRefundMessagesGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoRefundMessagesGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoRefundMessagesGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // RefundPhase Setter
 // 退款阶段，可选值：onsale（售中），aftersale（售后），天猫退款为必传。
-func (r *TaobaoRefundMessagesGetRequest) SetRefundPhase(refundPhase string) error {
-    r.refundPhase = refundPhase
-    r.Set("refund_phase", refundPhase)
+func (r *TaobaoRefundMessagesGetRequest) SetRefundPhase(_refundPhase string) error {
+    r._refundPhase = _refundPhase
+    r.Set("refund_phase", _refundPhase)
     return nil
 }
 
 // RefundPhase Getter
 func (r TaobaoRefundMessagesGetRequest) GetRefundPhase() string {
-    return r.refundPhase
+    return r._refundPhase
 }

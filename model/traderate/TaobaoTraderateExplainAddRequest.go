@@ -15,9 +15,9 @@ taobao.traderate.explain.add
 type TaobaoTraderateExplainAddRequest struct {
     model.Params
     // 子订单ID
-    oid   int64
+    _oid   int64
     // 评价解释内容，最大长度：500个汉字
-    reply   string
+    _reply   string
 }
 
 // 初始化TaobaoTraderateExplainAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTraderateExplainAddRequest) GetApiParams() url.Values {
 }
 // Oid Setter
 // 子订单ID
-func (r *TaobaoTraderateExplainAddRequest) SetOid(oid int64) error {
-    r.oid = oid
-    r.Set("oid", oid)
+func (r *TaobaoTraderateExplainAddRequest) SetOid(_oid int64) error {
+    r._oid = _oid
+    r.Set("oid", _oid)
     return nil
 }
 
 // Oid Getter
 func (r TaobaoTraderateExplainAddRequest) GetOid() int64 {
-    return r.oid
+    return r._oid
 }
 // Reply Setter
 // 评价解释内容，最大长度：500个汉字
-func (r *TaobaoTraderateExplainAddRequest) SetReply(reply string) error {
-    r.reply = reply
-    r.Set("reply", reply)
+func (r *TaobaoTraderateExplainAddRequest) SetReply(_reply string) error {
+    r._reply = _reply
+    r.Set("reply", _reply)
     return nil
 }
 
 // Reply Getter
 func (r TaobaoTraderateExplainAddRequest) GetReply() string {
-    return r.reply
+    return r._reply
 }

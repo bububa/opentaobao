@@ -15,11 +15,11 @@ yunos.pubadmin.common.operation
 type YunosPubadminCommonOperationRequest struct {
     model.Params
     // 入参json串
-    parameter   string
+    _parameter   string
     // 接口名
-    interfaceName   string
+    _interfaceName   string
     // 方法名
-    methodName   string
+    _methodName   string
 }
 
 // 初始化YunosPubadminCommonOperationRequest对象
@@ -44,37 +44,37 @@ func (r YunosPubadminCommonOperationRequest) GetApiParams() url.Values {
 }
 // Parameter Setter
 // 入参json串
-func (r *YunosPubadminCommonOperationRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *YunosPubadminCommonOperationRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r YunosPubadminCommonOperationRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }
 // InterfaceName Setter
 // 接口名
-func (r *YunosPubadminCommonOperationRequest) SetInterfaceName(interfaceName string) error {
-    r.interfaceName = interfaceName
-    r.Set("interface_name", interfaceName)
+func (r *YunosPubadminCommonOperationRequest) SetInterfaceName(_interfaceName string) error {
+    r._interfaceName = _interfaceName
+    r.Set("interface_name", _interfaceName)
     return nil
 }
 
 // InterfaceName Getter
 func (r YunosPubadminCommonOperationRequest) GetInterfaceName() string {
-    return r.interfaceName
+    return r._interfaceName
 }
 // MethodName Setter
 // 方法名
-func (r *YunosPubadminCommonOperationRequest) SetMethodName(methodName string) error {
-    r.methodName = methodName
-    r.Set("method_name", methodName)
+func (r *YunosPubadminCommonOperationRequest) SetMethodName(_methodName string) error {
+    r._methodName = _methodName
+    r.Set("method_name", _methodName)
     return nil
 }
 
 // MethodName Getter
 func (r YunosPubadminCommonOperationRequest) GetMethodName() string {
-    return r.methodName
+    return r._methodName
 }

@@ -15,9 +15,9 @@ alibaba.footscan.mini.query.mobilereport
 type AlibabaFootscanMiniQueryMobilereportRequest struct {
     model.Params
     // 平台分配的token
-    token   string
+    _token   string
     // 扫描ID
-    scanId   string
+    _scanId   string
 }
 
 // 初始化AlibabaFootscanMiniQueryMobilereportRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniQueryMobilereportRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniQueryMobilereportRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaFootscanMiniQueryMobilereportRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaFootscanMiniQueryMobilereportRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ScanId Setter
 // 扫描ID
-func (r *AlibabaFootscanMiniQueryMobilereportRequest) SetScanId(scanId string) error {
-    r.scanId = scanId
-    r.Set("scan_id", scanId)
+func (r *AlibabaFootscanMiniQueryMobilereportRequest) SetScanId(_scanId string) error {
+    r._scanId = _scanId
+    r.Set("scan_id", _scanId)
     return nil
 }
 
 // ScanId Getter
 func (r AlibabaFootscanMiniQueryMobilereportRequest) GetScanId() string {
-    return r.scanId
+    return r._scanId
 }

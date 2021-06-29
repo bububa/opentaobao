@@ -15,7 +15,7 @@ alibaba.lst.nicetuan.order.save
 type AlibabaLstNicetuanOrderSaveRequest struct {
     model.Params
     // 订单数据
-    param   *NicetuanMainOrderParam
+    _param   *NicetuanMainOrderParam
 }
 
 // 初始化AlibabaLstNicetuanOrderSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstNicetuanOrderSaveRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 订单数据
-func (r *AlibabaLstNicetuanOrderSaveRequest) SetParam(param *NicetuanMainOrderParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstNicetuanOrderSaveRequest) SetParam(_param *NicetuanMainOrderParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstNicetuanOrderSaveRequest) GetParam() *NicetuanMainOrderParam {
-    return r.param
+    return r._param
 }

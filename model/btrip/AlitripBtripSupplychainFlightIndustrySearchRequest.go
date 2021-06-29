@@ -15,7 +15,7 @@ alitrip.btrip.supplychain.flight.industry.search
 type AlitripBtripSupplychainFlightIndustrySearchRequest struct {
     model.Params
     // 入参
-    rq   *FlightSearchRq
+    _rq   *FlightSearchRq
 }
 
 // 初始化AlitripBtripSupplychainFlightIndustrySearchRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetApiParams() url.V
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripSupplychainFlightIndustrySearchRequest) SetRq(rq *FlightSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripSupplychainFlightIndustrySearchRequest) SetRq(_rq *FlightSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripSupplychainFlightIndustrySearchRequest) GetRq() *FlightSearchRq {
-    return r.rq
+    return r._rq
 }

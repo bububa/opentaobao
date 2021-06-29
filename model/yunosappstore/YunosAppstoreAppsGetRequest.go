@@ -15,7 +15,7 @@ yunos.appstore.apps.get
 type YunosAppstoreAppsGetRequest struct {
     model.Params
     // 应用包名列表
-    pkgs   []string
+    _pkgs   []string
 }
 
 // 初始化YunosAppstoreAppsGetRequest对象
@@ -40,13 +40,13 @@ func (r YunosAppstoreAppsGetRequest) GetApiParams() url.Values {
 }
 // Pkgs Setter
 // 应用包名列表
-func (r *YunosAppstoreAppsGetRequest) SetPkgs(pkgs []string) error {
-    r.pkgs = pkgs
-    r.Set("pkgs", pkgs)
+func (r *YunosAppstoreAppsGetRequest) SetPkgs(_pkgs []string) error {
+    r._pkgs = _pkgs
+    r.Set("pkgs", _pkgs)
     return nil
 }
 
 // Pkgs Getter
 func (r YunosAppstoreAppsGetRequest) GetPkgs() []string {
-    return r.pkgs
+    return r._pkgs
 }

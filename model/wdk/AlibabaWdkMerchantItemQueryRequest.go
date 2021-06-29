@@ -15,9 +15,9 @@ alibaba.wdk.merchant.item.query
 type AlibabaWdkMerchantItemQueryRequest struct {
     model.Params
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 商家编码
-    merchantCode   string
+    _merchantCode   string
 }
 
 // 初始化AlibabaWdkMerchantItemQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkMerchantItemQueryRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkMerchantItemQueryRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkMerchantItemQueryRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkMerchantItemQueryRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // MerchantCode Setter
 // 商家编码
-func (r *AlibabaWdkMerchantItemQueryRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaWdkMerchantItemQueryRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaWdkMerchantItemQueryRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }

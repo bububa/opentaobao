@@ -15,19 +15,19 @@ alibaba.nlife.b2c.tradestatus.drive
 type AlibabaNlifeB2cTradestatusDriveRequest struct {
     model.Params
     // 零售门店在零售+平台的ID
-    storeId   string
+    _storeId   string
     // APP:是指线上销售应用，POS:是指现场收银应用
-    channel   string
+    _channel   string
     // 对零售+为外部订单号，对业务方为订单号
-    outTradeNo   string
+    _outTradeNo   string
     // 零售+平台订单号，和out_trade_no不能同时为空
-    tradeNo   string
+    _tradeNo   string
     // 接口类型：CONFIRM（收货）DELIVER（发货）
-    action   string
+    _action   string
     // 货流信息
-    logisticsInfo   *LogisticsInfo
+    _logisticsInfo   *LogisticsInfo
     // 扩展参数 JSON格式
-    extendParams   string
+    _extendParams   string
 }
 
 // 初始化AlibabaNlifeB2cTradestatusDriveRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaNlifeB2cTradestatusDriveRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 零售门店在零售+平台的ID
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }
 // Channel Setter
 // APP:是指线上销售应用，POS:是指现场收银应用
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }
 // OutTradeNo Setter
 // 对零售+为外部订单号，对业务方为订单号
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetOutTradeNo(outTradeNo string) error {
-    r.outTradeNo = outTradeNo
-    r.Set("out_trade_no", outTradeNo)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetOutTradeNo(_outTradeNo string) error {
+    r._outTradeNo = _outTradeNo
+    r.Set("out_trade_no", _outTradeNo)
     return nil
 }
 
 // OutTradeNo Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetOutTradeNo() string {
-    return r.outTradeNo
+    return r._outTradeNo
 }
 // TradeNo Setter
 // 零售+平台订单号，和out_trade_no不能同时为空
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetTradeNo(tradeNo string) error {
-    r.tradeNo = tradeNo
-    r.Set("trade_no", tradeNo)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetTradeNo(_tradeNo string) error {
+    r._tradeNo = _tradeNo
+    r.Set("trade_no", _tradeNo)
     return nil
 }
 
 // TradeNo Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetTradeNo() string {
-    return r.tradeNo
+    return r._tradeNo
 }
 // Action Setter
 // 接口类型：CONFIRM（收货）DELIVER（发货）
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetAction() string {
-    return r.action
+    return r._action
 }
 // LogisticsInfo Setter
 // 货流信息
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetLogisticsInfo(logisticsInfo *LogisticsInfo) error {
-    r.logisticsInfo = logisticsInfo
-    r.Set("logistics_info", logisticsInfo)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetLogisticsInfo(_logisticsInfo *LogisticsInfo) error {
+    r._logisticsInfo = _logisticsInfo
+    r.Set("logistics_info", _logisticsInfo)
     return nil
 }
 
 // LogisticsInfo Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetLogisticsInfo() *LogisticsInfo {
-    return r.logisticsInfo
+    return r._logisticsInfo
 }
 // ExtendParams Setter
 // 扩展参数 JSON格式
-func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetExtendParams(extendParams string) error {
-    r.extendParams = extendParams
-    r.Set("extend_params", extendParams)
+func (r *AlibabaNlifeB2cTradestatusDriveRequest) SetExtendParams(_extendParams string) error {
+    r._extendParams = _extendParams
+    r.Set("extend_params", _extendParams)
     return nil
 }
 
 // ExtendParams Getter
 func (r AlibabaNlifeB2cTradestatusDriveRequest) GetExtendParams() string {
-    return r.extendParams
+    return r._extendParams
 }

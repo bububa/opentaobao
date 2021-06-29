@@ -15,7 +15,7 @@ taobao.wlb.wms.inventory.profitloss.get
 type TaobaoWlbWmsInventoryProfitlossGetRequest struct {
     model.Params
     // 菜鸟订单编码
-    cnOrderCode   string
+    _cnOrderCode   string
 }
 
 // 初始化TaobaoWlbWmsInventoryProfitlossGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWmsInventoryProfitlossGetRequest) GetApiParams() url.Values {
 }
 // CnOrderCode Setter
 // 菜鸟订单编码
-func (r *TaobaoWlbWmsInventoryProfitlossGetRequest) SetCnOrderCode(cnOrderCode string) error {
-    r.cnOrderCode = cnOrderCode
-    r.Set("cn_order_code", cnOrderCode)
+func (r *TaobaoWlbWmsInventoryProfitlossGetRequest) SetCnOrderCode(_cnOrderCode string) error {
+    r._cnOrderCode = _cnOrderCode
+    r.Set("cn_order_code", _cnOrderCode)
     return nil
 }
 
 // CnOrderCode Getter
 func (r TaobaoWlbWmsInventoryProfitlossGetRequest) GetCnOrderCode() string {
-    return r.cnOrderCode
+    return r._cnOrderCode
 }

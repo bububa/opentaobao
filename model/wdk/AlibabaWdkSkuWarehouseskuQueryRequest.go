@@ -15,9 +15,9 @@ alibaba.wdk.sku.warehousesku.query
 type AlibabaWdkSkuWarehouseskuQueryRequest struct {
     model.Params
     // 商品编码
-    skuCodeList   []string
+    _skuCodeList   []string
     // 仓编码
-    warehouseCode   string
+    _warehouseCode   string
 }
 
 // 初始化AlibabaWdkSkuWarehouseskuQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkSkuWarehouseskuQueryRequest) GetApiParams() url.Values {
 }
 // SkuCodeList Setter
 // 商品编码
-func (r *AlibabaWdkSkuWarehouseskuQueryRequest) SetSkuCodeList(skuCodeList []string) error {
-    r.skuCodeList = skuCodeList
-    r.Set("sku_code_list", skuCodeList)
+func (r *AlibabaWdkSkuWarehouseskuQueryRequest) SetSkuCodeList(_skuCodeList []string) error {
+    r._skuCodeList = _skuCodeList
+    r.Set("sku_code_list", _skuCodeList)
     return nil
 }
 
 // SkuCodeList Getter
 func (r AlibabaWdkSkuWarehouseskuQueryRequest) GetSkuCodeList() []string {
-    return r.skuCodeList
+    return r._skuCodeList
 }
 // WarehouseCode Setter
 // 仓编码
-func (r *AlibabaWdkSkuWarehouseskuQueryRequest) SetWarehouseCode(warehouseCode string) error {
-    r.warehouseCode = warehouseCode
-    r.Set("warehouse_code", warehouseCode)
+func (r *AlibabaWdkSkuWarehouseskuQueryRequest) SetWarehouseCode(_warehouseCode string) error {
+    r._warehouseCode = _warehouseCode
+    r.Set("warehouse_code", _warehouseCode)
     return nil
 }
 
 // WarehouseCode Getter
 func (r AlibabaWdkSkuWarehouseskuQueryRequest) GetWarehouseCode() string {
-    return r.warehouseCode
+    return r._warehouseCode
 }

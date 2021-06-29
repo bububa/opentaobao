@@ -15,7 +15,7 @@ alibaba.icbu.product.score.get
 type AlibabaIcbuProductScoreGetRequest struct {
     model.Params
     // 混淆后的商品ID
-    productId   string
+    _productId   string
 }
 
 // 初始化AlibabaIcbuProductScoreGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuProductScoreGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // 混淆后的商品ID
-func (r *AlibabaIcbuProductScoreGetRequest) SetProductId(productId string) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AlibabaIcbuProductScoreGetRequest) SetProductId(_productId string) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AlibabaIcbuProductScoreGetRequest) GetProductId() string {
-    return r.productId
+    return r._productId
 }

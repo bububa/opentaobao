@@ -15,7 +15,7 @@ alibaba.mozi.buc.account.list.accountids
 type AlibabaMoziBucAccountListAccountidsRequest struct {
     model.Params
     // 请求参数
-    listAccountIds   *ListAccountsByAccountIdsRequest
+    _listAccountIds   *ListAccountsByAccountIdsRequest
 }
 
 // 初始化AlibabaMoziBucAccountListAccountidsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziBucAccountListAccountidsRequest) GetApiParams() url.Values {
 }
 // ListAccountIds Setter
 // 请求参数
-func (r *AlibabaMoziBucAccountListAccountidsRequest) SetListAccountIds(listAccountIds *ListAccountsByAccountIdsRequest) error {
-    r.listAccountIds = listAccountIds
-    r.Set("list_account_ids", listAccountIds)
+func (r *AlibabaMoziBucAccountListAccountidsRequest) SetListAccountIds(_listAccountIds *ListAccountsByAccountIdsRequest) error {
+    r._listAccountIds = _listAccountIds
+    r.Set("list_account_ids", _listAccountIds)
     return nil
 }
 
 // ListAccountIds Getter
 func (r AlibabaMoziBucAccountListAccountidsRequest) GetListAccountIds() *ListAccountsByAccountIdsRequest {
-    return r.listAccountIds
+    return r._listAccountIds
 }

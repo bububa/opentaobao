@@ -15,7 +15,7 @@ alibaba.lst.trade.seller.offline.order.upload
 type AlibabaLstTradeSellerOfflineOrderUploadRequest struct {
     model.Params
     // 入参
-    offlineOrderUploadParam   *LstOffLineOrderUploadParam
+    _offlineOrderUploadParam   *LstOffLineOrderUploadParam
 }
 
 // 初始化AlibabaLstTradeSellerOfflineOrderUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerOfflineOrderUploadRequest) GetApiParams() url.Value
 }
 // OfflineOrderUploadParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerOfflineOrderUploadRequest) SetOfflineOrderUploadParam(offlineOrderUploadParam *LstOffLineOrderUploadParam) error {
-    r.offlineOrderUploadParam = offlineOrderUploadParam
-    r.Set("offline_order_upload_param", offlineOrderUploadParam)
+func (r *AlibabaLstTradeSellerOfflineOrderUploadRequest) SetOfflineOrderUploadParam(_offlineOrderUploadParam *LstOffLineOrderUploadParam) error {
+    r._offlineOrderUploadParam = _offlineOrderUploadParam
+    r.Set("offline_order_upload_param", _offlineOrderUploadParam)
     return nil
 }
 
 // OfflineOrderUploadParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderUploadRequest) GetOfflineOrderUploadParam() *LstOffLineOrderUploadParam {
-    return r.offlineOrderUploadParam
+    return r._offlineOrderUploadParam
 }

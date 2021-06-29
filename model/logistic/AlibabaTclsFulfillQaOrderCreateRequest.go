@@ -15,13 +15,13 @@ alibaba.tcls.fulfill.qa.order.create
 type AlibabaTclsFulfillQaOrderCreateRequest struct {
     model.Params
     // 原始履约单号
-    fulfillOrderId   string
+    _fulfillOrderId   string
     // 目标ip
-    targetIp   string
+    _targetIp   string
     // 执行人姓名
-    creator   string
+    _creator   string
     // 执行人工号
-    jobNo   string
+    _jobNo   string
 }
 
 // 初始化AlibabaTclsFulfillQaOrderCreateRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaTclsFulfillQaOrderCreateRequest) GetApiParams() url.Values {
 }
 // FulfillOrderId Setter
 // 原始履约单号
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetFulfillOrderId(fulfillOrderId string) error {
-    r.fulfillOrderId = fulfillOrderId
-    r.Set("fulfill_order_id", fulfillOrderId)
+func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetFulfillOrderId(_fulfillOrderId string) error {
+    r._fulfillOrderId = _fulfillOrderId
+    r.Set("fulfill_order_id", _fulfillOrderId)
     return nil
 }
 
 // FulfillOrderId Getter
 func (r AlibabaTclsFulfillQaOrderCreateRequest) GetFulfillOrderId() string {
-    return r.fulfillOrderId
+    return r._fulfillOrderId
 }
 // TargetIp Setter
 // 目标ip
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetTargetIp(targetIp string) error {
-    r.targetIp = targetIp
-    r.Set("target_ip", targetIp)
+func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetTargetIp(_targetIp string) error {
+    r._targetIp = _targetIp
+    r.Set("target_ip", _targetIp)
     return nil
 }
 
 // TargetIp Getter
 func (r AlibabaTclsFulfillQaOrderCreateRequest) GetTargetIp() string {
-    return r.targetIp
+    return r._targetIp
 }
 // Creator Setter
 // 执行人姓名
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetCreator(creator string) error {
-    r.creator = creator
-    r.Set("creator", creator)
+func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetCreator(_creator string) error {
+    r._creator = _creator
+    r.Set("creator", _creator)
     return nil
 }
 
 // Creator Getter
 func (r AlibabaTclsFulfillQaOrderCreateRequest) GetCreator() string {
-    return r.creator
+    return r._creator
 }
 // JobNo Setter
 // 执行人工号
-func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetJobNo(jobNo string) error {
-    r.jobNo = jobNo
-    r.Set("job_no", jobNo)
+func (r *AlibabaTclsFulfillQaOrderCreateRequest) SetJobNo(_jobNo string) error {
+    r._jobNo = _jobNo
+    r.Set("job_no", _jobNo)
     return nil
 }
 
 // JobNo Getter
 func (r AlibabaTclsFulfillQaOrderCreateRequest) GetJobNo() string {
-    return r.jobNo
+    return r._jobNo
 }

@@ -15,9 +15,9 @@ tmall.servicecenter.servicemonitormessage.search
 type TmallServicecenterServicemonitormessageSearchRequest struct {
     model.Params
     // 开始时间long值
-    start   int64
+    _start   int64
     // 结束时间long值，与start相差15分钟
-    end   int64
+    _end   int64
 }
 
 // 初始化TmallServicecenterServicemonitormessageSearchRequest对象
@@ -42,25 +42,25 @@ func (r TmallServicecenterServicemonitormessageSearchRequest) GetApiParams() url
 }
 // Start Setter
 // 开始时间long值
-func (r *TmallServicecenterServicemonitormessageSearchRequest) SetStart(start int64) error {
-    r.start = start
-    r.Set("start", start)
+func (r *TmallServicecenterServicemonitormessageSearchRequest) SetStart(_start int64) error {
+    r._start = _start
+    r.Set("start", _start)
     return nil
 }
 
 // Start Getter
 func (r TmallServicecenterServicemonitormessageSearchRequest) GetStart() int64 {
-    return r.start
+    return r._start
 }
 // End Setter
 // 结束时间long值，与start相差15分钟
-func (r *TmallServicecenterServicemonitormessageSearchRequest) SetEnd(end int64) error {
-    r.end = end
-    r.Set("end", end)
+func (r *TmallServicecenterServicemonitormessageSearchRequest) SetEnd(_end int64) error {
+    r._end = _end
+    r.Set("end", _end)
     return nil
 }
 
 // End Getter
 func (r TmallServicecenterServicemonitormessageSearchRequest) GetEnd() int64 {
-    return r.end
+    return r._end
 }

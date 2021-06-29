@@ -15,7 +15,7 @@ taobao.place.store.relation.query
 type TaobaoPlaceStoreRelationQueryRequest struct {
     model.Params
     // 系统自动生成
-    paramStoreRelationSimpleQuery   *StoreRelationSimpleQuery
+    _paramStoreRelationSimpleQuery   *StoreRelationSimpleQuery
 }
 
 // 初始化TaobaoPlaceStoreRelationQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreRelationQueryRequest) GetApiParams() url.Values {
 }
 // ParamStoreRelationSimpleQuery Setter
 // 系统自动生成
-func (r *TaobaoPlaceStoreRelationQueryRequest) SetParamStoreRelationSimpleQuery(paramStoreRelationSimpleQuery *StoreRelationSimpleQuery) error {
-    r.paramStoreRelationSimpleQuery = paramStoreRelationSimpleQuery
-    r.Set("param_store_relation_simple_query", paramStoreRelationSimpleQuery)
+func (r *TaobaoPlaceStoreRelationQueryRequest) SetParamStoreRelationSimpleQuery(_paramStoreRelationSimpleQuery *StoreRelationSimpleQuery) error {
+    r._paramStoreRelationSimpleQuery = _paramStoreRelationSimpleQuery
+    r.Set("param_store_relation_simple_query", _paramStoreRelationSimpleQuery)
     return nil
 }
 
 // ParamStoreRelationSimpleQuery Getter
 func (r TaobaoPlaceStoreRelationQueryRequest) GetParamStoreRelationSimpleQuery() *StoreRelationSimpleQuery {
-    return r.paramStoreRelationSimpleQuery
+    return r._paramStoreRelationSimpleQuery
 }

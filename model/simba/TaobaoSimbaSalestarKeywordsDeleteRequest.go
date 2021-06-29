@@ -15,7 +15,7 @@ taobao.simba.salestar.keywords.delete
 type TaobaoSimbaSalestarKeywordsDeleteRequest struct {
     model.Params
     // 关键词ids
-    bidwordIds   []int64
+    _bidwordIds   []int64
 }
 
 // 初始化TaobaoSimbaSalestarKeywordsDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaSalestarKeywordsDeleteRequest) GetApiParams() url.Values {
 }
 // BidwordIds Setter
 // 关键词ids
-func (r *TaobaoSimbaSalestarKeywordsDeleteRequest) SetBidwordIds(bidwordIds []int64) error {
-    r.bidwordIds = bidwordIds
-    r.Set("bidword_ids", bidwordIds)
+func (r *TaobaoSimbaSalestarKeywordsDeleteRequest) SetBidwordIds(_bidwordIds []int64) error {
+    r._bidwordIds = _bidwordIds
+    r.Set("bidword_ids", _bidwordIds)
     return nil
 }
 
 // BidwordIds Getter
 func (r TaobaoSimbaSalestarKeywordsDeleteRequest) GetBidwordIds() []int64 {
-    return r.bidwordIds
+    return r._bidwordIds
 }

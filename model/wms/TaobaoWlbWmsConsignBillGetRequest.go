@@ -15,9 +15,9 @@ taobao.wlb.wms.consign.bill.get
 type TaobaoWlbWmsConsignBillGetRequest struct {
     model.Params
     // 菜鸟订单编码,cnOrderCode与orderCode必须有一个值不可为空
-    cnOrderCode   string
+    _cnOrderCode   string
     // ERP订单编码,cnOrderCode与orderCode必须有一个值不可为空
-    orderCode   string
+    _orderCode   string
 }
 
 // 初始化TaobaoWlbWmsConsignBillGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoWlbWmsConsignBillGetRequest) GetApiParams() url.Values {
 }
 // CnOrderCode Setter
 // 菜鸟订单编码,cnOrderCode与orderCode必须有一个值不可为空
-func (r *TaobaoWlbWmsConsignBillGetRequest) SetCnOrderCode(cnOrderCode string) error {
-    r.cnOrderCode = cnOrderCode
-    r.Set("cn_order_code", cnOrderCode)
+func (r *TaobaoWlbWmsConsignBillGetRequest) SetCnOrderCode(_cnOrderCode string) error {
+    r._cnOrderCode = _cnOrderCode
+    r.Set("cn_order_code", _cnOrderCode)
     return nil
 }
 
 // CnOrderCode Getter
 func (r TaobaoWlbWmsConsignBillGetRequest) GetCnOrderCode() string {
-    return r.cnOrderCode
+    return r._cnOrderCode
 }
 // OrderCode Setter
 // ERP订单编码,cnOrderCode与orderCode必须有一个值不可为空
-func (r *TaobaoWlbWmsConsignBillGetRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbWmsConsignBillGetRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbWmsConsignBillGetRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }

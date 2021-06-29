@@ -21,11 +21,11 @@ appkey验证通过的，才会查数据 并透出，否则直接失败。
 type AlibabaBenefitQueryRequest struct {
     model.Params
     // 奖池编号
-    ename   string
+    _ename   string
     // 商家来源身份标识（"promotion-"+appId）
-    appName   string
+    _appName   string
     // 表示奖池类型（发奖奖池传1，抽奖传0）
-    awardType   string
+    _awardType   string
 }
 
 // 初始化AlibabaBenefitQueryRequest对象
@@ -50,37 +50,37 @@ func (r AlibabaBenefitQueryRequest) GetApiParams() url.Values {
 }
 // Ename Setter
 // 奖池编号
-func (r *AlibabaBenefitQueryRequest) SetEname(ename string) error {
-    r.ename = ename
-    r.Set("ename", ename)
+func (r *AlibabaBenefitQueryRequest) SetEname(_ename string) error {
+    r._ename = _ename
+    r.Set("ename", _ename)
     return nil
 }
 
 // Ename Getter
 func (r AlibabaBenefitQueryRequest) GetEname() string {
-    return r.ename
+    return r._ename
 }
 // AppName Setter
 // 商家来源身份标识（"promotion-"+appId）
-func (r *AlibabaBenefitQueryRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaBenefitQueryRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaBenefitQueryRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // AwardType Setter
 // 表示奖池类型（发奖奖池传1，抽奖传0）
-func (r *AlibabaBenefitQueryRequest) SetAwardType(awardType string) error {
-    r.awardType = awardType
-    r.Set("award_type", awardType)
+func (r *AlibabaBenefitQueryRequest) SetAwardType(_awardType string) error {
+    r._awardType = _awardType
+    r.Set("award_type", _awardType)
     return nil
 }
 
 // AwardType Getter
 func (r AlibabaBenefitQueryRequest) GetAwardType() string {
-    return r.awardType
+    return r._awardType
 }

@@ -15,7 +15,7 @@ ISV新增/修改口腔门店
 type AlibabaAlihealthDentalStoreInsertorupdateRequest struct {
     model.Params
     // 门店
-    store   *DentalOuterStoreRequest
+    _store   *DentalOuterStoreRequest
 }
 
 // 初始化AlibabaAlihealthDentalStoreInsertorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetApiParams() url.Val
 }
 // Store Setter
 // 门店
-func (r *AlibabaAlihealthDentalStoreInsertorupdateRequest) SetStore(store *DentalOuterStoreRequest) error {
-    r.store = store
-    r.Set("store", store)
+func (r *AlibabaAlihealthDentalStoreInsertorupdateRequest) SetStore(_store *DentalOuterStoreRequest) error {
+    r._store = _store
+    r.Set("store", _store)
     return nil
 }
 
 // Store Getter
 func (r AlibabaAlihealthDentalStoreInsertorupdateRequest) GetStore() *DentalOuterStoreRequest {
-    return r.store
+    return r._store
 }

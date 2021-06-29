@@ -15,7 +15,7 @@ alitrip.travel.crsorder.complete
 type AlitripTravelCrsorderCompleteRequest struct {
     model.Params
     // 请求对象
-    crsOrderCompleteParam   *CrsOrderCompleteParam
+    _crsOrderCompleteParam   *CrsOrderCompleteParam
 }
 
 // 初始化AlitripTravelCrsorderCompleteRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelCrsorderCompleteRequest) GetApiParams() url.Values {
 }
 // CrsOrderCompleteParam Setter
 // 请求对象
-func (r *AlitripTravelCrsorderCompleteRequest) SetCrsOrderCompleteParam(crsOrderCompleteParam *CrsOrderCompleteParam) error {
-    r.crsOrderCompleteParam = crsOrderCompleteParam
-    r.Set("crs_order_complete_param", crsOrderCompleteParam)
+func (r *AlitripTravelCrsorderCompleteRequest) SetCrsOrderCompleteParam(_crsOrderCompleteParam *CrsOrderCompleteParam) error {
+    r._crsOrderCompleteParam = _crsOrderCompleteParam
+    r.Set("crs_order_complete_param", _crsOrderCompleteParam)
     return nil
 }
 
 // CrsOrderCompleteParam Getter
 func (r AlitripTravelCrsorderCompleteRequest) GetCrsOrderCompleteParam() *CrsOrderCompleteParam {
-    return r.crsOrderCompleteParam
+    return r._crsOrderCompleteParam
 }

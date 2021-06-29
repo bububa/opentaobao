@@ -15,7 +15,7 @@ alibaba.security.jaq.rp.fetchmaterial
 type AlibabaSecurityJaqRpFetchmaterialRequest struct {
     model.Params
     // 消息服务推送的key
-    securityKey   string
+    _securityKey   string
 }
 
 // 初始化AlibabaSecurityJaqRpFetchmaterialRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetApiParams() url.Values {
 }
 // SecurityKey Setter
 // 消息服务推送的key
-func (r *AlibabaSecurityJaqRpFetchmaterialRequest) SetSecurityKey(securityKey string) error {
-    r.securityKey = securityKey
-    r.Set("security_key", securityKey)
+func (r *AlibabaSecurityJaqRpFetchmaterialRequest) SetSecurityKey(_securityKey string) error {
+    r._securityKey = _securityKey
+    r.Set("security_key", _securityKey)
     return nil
 }
 
 // SecurityKey Getter
 func (r AlibabaSecurityJaqRpFetchmaterialRequest) GetSecurityKey() string {
-    return r.securityKey
+    return r._securityKey
 }

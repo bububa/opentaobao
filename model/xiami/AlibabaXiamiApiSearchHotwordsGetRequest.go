@@ -15,7 +15,7 @@ alibaba.xiami.api.search.hotwords.get
 type AlibabaXiamiApiSearchHotwordsGetRequest struct {
     model.Params
     // 数量
-    limit   int64
+    _limit   int64
 }
 
 // 初始化AlibabaXiamiApiSearchHotwordsGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetApiParams() url.Values {
 }
 // Limit Setter
 // 数量
-func (r *AlibabaXiamiApiSearchHotwordsGetRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *AlibabaXiamiApiSearchHotwordsGetRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r AlibabaXiamiApiSearchHotwordsGetRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }

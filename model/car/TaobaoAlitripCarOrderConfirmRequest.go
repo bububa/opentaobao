@@ -15,7 +15,7 @@ taobao.alitrip.car.order.confirm
 type TaobaoAlitripCarOrderConfirmRequest struct {
     model.Params
     // 请求对象
-    paramOrderConfirm   *OrderConfirm
+    _paramOrderConfirm   *OrderConfirm
 }
 
 // 初始化TaobaoAlitripCarOrderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderConfirmRequest) GetApiParams() url.Values {
 }
 // ParamOrderConfirm Setter
 // 请求对象
-func (r *TaobaoAlitripCarOrderConfirmRequest) SetParamOrderConfirm(paramOrderConfirm *OrderConfirm) error {
-    r.paramOrderConfirm = paramOrderConfirm
-    r.Set("param_order_confirm", paramOrderConfirm)
+func (r *TaobaoAlitripCarOrderConfirmRequest) SetParamOrderConfirm(_paramOrderConfirm *OrderConfirm) error {
+    r._paramOrderConfirm = _paramOrderConfirm
+    r.Set("param_order_confirm", _paramOrderConfirm)
     return nil
 }
 
 // ParamOrderConfirm Getter
 func (r TaobaoAlitripCarOrderConfirmRequest) GetParamOrderConfirm() *OrderConfirm {
-    return r.paramOrderConfirm
+    return r._paramOrderConfirm
 }

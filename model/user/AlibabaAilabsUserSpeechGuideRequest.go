@@ -15,7 +15,7 @@ alibaba.ailabs.user.speech.guide
 type AlibabaAilabsUserSpeechGuideRequest struct {
     model.Params
     // 用户query
-    query   string
+    _query   string
 }
 
 // 初始化AlibabaAilabsUserSpeechGuideRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsUserSpeechGuideRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 用户query
-func (r *AlibabaAilabsUserSpeechGuideRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaAilabsUserSpeechGuideRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaAilabsUserSpeechGuideRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

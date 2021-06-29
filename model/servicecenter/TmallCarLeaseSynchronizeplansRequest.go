@@ -15,9 +15,9 @@ tmall.car.lease.synchronizeplans
 type TmallCarLeaseSynchronizeplansRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 租赁计划
-    plans   []CarLeasePlanDo
+    _plans   []CarLeasePlanDo
 }
 
 // 初始化TmallCarLeaseSynchronizeplansRequest对象
@@ -42,25 +42,25 @@ func (r TmallCarLeaseSynchronizeplansRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallCarLeaseSynchronizeplansRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallCarLeaseSynchronizeplansRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallCarLeaseSynchronizeplansRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // Plans Setter
 // 租赁计划
-func (r *TmallCarLeaseSynchronizeplansRequest) SetPlans(plans []CarLeasePlanDo) error {
-    r.plans = plans
-    r.Set("plans", plans)
+func (r *TmallCarLeaseSynchronizeplansRequest) SetPlans(_plans []CarLeasePlanDo) error {
+    r._plans = _plans
+    r.Set("plans", _plans)
     return nil
 }
 
 // Plans Getter
 func (r TmallCarLeaseSynchronizeplansRequest) GetPlans() []CarLeasePlanDo {
-    return r.plans
+    return r._plans
 }

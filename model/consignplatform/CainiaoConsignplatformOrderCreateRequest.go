@@ -15,7 +15,7 @@ cainiao.consignplatform.order.create
 type CainiaoConsignplatformOrderCreateRequest struct {
     model.Params
     // 订单创建入参
-    createRequest   *OrderCreateRequest
+    _createRequest   *OrderCreateRequest
 }
 
 // 初始化CainiaoConsignplatformOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoConsignplatformOrderCreateRequest) GetApiParams() url.Values {
 }
 // CreateRequest Setter
 // 订单创建入参
-func (r *CainiaoConsignplatformOrderCreateRequest) SetCreateRequest(createRequest *OrderCreateRequest) error {
-    r.createRequest = createRequest
-    r.Set("create_request", createRequest)
+func (r *CainiaoConsignplatformOrderCreateRequest) SetCreateRequest(_createRequest *OrderCreateRequest) error {
+    r._createRequest = _createRequest
+    r.Set("create_request", _createRequest)
     return nil
 }
 
 // CreateRequest Getter
 func (r CainiaoConsignplatformOrderCreateRequest) GetCreateRequest() *OrderCreateRequest {
-    return r.createRequest
+    return r._createRequest
 }

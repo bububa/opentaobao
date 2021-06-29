@@ -15,7 +15,7 @@ taobao.qimen.itemmapping.query
 type TaobaoQimenItemmappingQueryRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenItemmappingQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenItemmappingQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenItemmappingQueryRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenItemmappingQueryRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenItemmappingQueryRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

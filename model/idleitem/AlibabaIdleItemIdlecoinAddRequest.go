@@ -15,7 +15,7 @@ alibaba.idle.item.idlecoin.add
 type AlibabaIdleItemIdlecoinAddRequest struct {
     model.Params
     // 免费送商品数据
-    idleCoinItemParam   *IdleCoinItemApiDto
+    _idleCoinItemParam   *IdleCoinItemApiDto
 }
 
 // 初始化AlibabaIdleItemIdlecoinAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleItemIdlecoinAddRequest) GetApiParams() url.Values {
 }
 // IdleCoinItemParam Setter
 // 免费送商品数据
-func (r *AlibabaIdleItemIdlecoinAddRequest) SetIdleCoinItemParam(idleCoinItemParam *IdleCoinItemApiDto) error {
-    r.idleCoinItemParam = idleCoinItemParam
-    r.Set("idle_coin_item_param", idleCoinItemParam)
+func (r *AlibabaIdleItemIdlecoinAddRequest) SetIdleCoinItemParam(_idleCoinItemParam *IdleCoinItemApiDto) error {
+    r._idleCoinItemParam = _idleCoinItemParam
+    r.Set("idle_coin_item_param", _idleCoinItemParam)
     return nil
 }
 
 // IdleCoinItemParam Getter
 func (r AlibabaIdleItemIdlecoinAddRequest) GetIdleCoinItemParam() *IdleCoinItemApiDto {
-    return r.idleCoinItemParam
+    return r._idleCoinItemParam
 }

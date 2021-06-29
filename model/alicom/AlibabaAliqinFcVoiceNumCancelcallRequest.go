@@ -15,7 +15,7 @@ alibaba.aliqin.fc.voice.num.cancelcall
 type AlibabaAliqinFcVoiceNumCancelcallRequest struct {
     model.Params
     // 呼叫唯一id
-    callId   string
+    _callId   string
 }
 
 // 初始化AlibabaAliqinFcVoiceNumCancelcallRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFcVoiceNumCancelcallRequest) GetApiParams() url.Values {
 }
 // CallId Setter
 // 呼叫唯一id
-func (r *AlibabaAliqinFcVoiceNumCancelcallRequest) SetCallId(callId string) error {
-    r.callId = callId
-    r.Set("call_id", callId)
+func (r *AlibabaAliqinFcVoiceNumCancelcallRequest) SetCallId(_callId string) error {
+    r._callId = _callId
+    r.Set("call_id", _callId)
     return nil
 }
 
 // CallId Getter
 func (r AlibabaAliqinFcVoiceNumCancelcallRequest) GetCallId() string {
-    return r.callId
+    return r._callId
 }

@@ -15,7 +15,7 @@ taobao.alitrip.car.order.accept
 type TaobaoAlitripCarOrderAcceptRequest struct {
     model.Params
     // 确认订单请求
-    paramOrderAccept   *OrderAccept
+    _paramOrderAccept   *OrderAccept
 }
 
 // 初始化TaobaoAlitripCarOrderAcceptRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripCarOrderAcceptRequest) GetApiParams() url.Values {
 }
 // ParamOrderAccept Setter
 // 确认订单请求
-func (r *TaobaoAlitripCarOrderAcceptRequest) SetParamOrderAccept(paramOrderAccept *OrderAccept) error {
-    r.paramOrderAccept = paramOrderAccept
-    r.Set("param_order_accept", paramOrderAccept)
+func (r *TaobaoAlitripCarOrderAcceptRequest) SetParamOrderAccept(_paramOrderAccept *OrderAccept) error {
+    r._paramOrderAccept = _paramOrderAccept
+    r.Set("param_order_accept", _paramOrderAccept)
     return nil
 }
 
 // ParamOrderAccept Getter
 func (r TaobaoAlitripCarOrderAcceptRequest) GetParamOrderAccept() *OrderAccept {
-    return r.paramOrderAccept
+    return r._paramOrderAccept
 }

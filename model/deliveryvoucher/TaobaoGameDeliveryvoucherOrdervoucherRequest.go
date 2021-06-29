@@ -15,7 +15,7 @@ taobao.game.deliveryvoucher.ordervoucher
 type TaobaoGameDeliveryvoucherOrdervoucherRequest struct {
     model.Params
     // 发券参数
-    param0   *OrderVoucherRequest
+    _param0   *OrderVoucherRequest
 }
 
 // 初始化TaobaoGameDeliveryvoucherOrdervoucherRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherOrdervoucherRequest) GetApiParams() url.Values 
 }
 // Param0 Setter
 // 发券参数
-func (r *TaobaoGameDeliveryvoucherOrdervoucherRequest) SetParam0(param0 *OrderVoucherRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoGameDeliveryvoucherOrdervoucherRequest) SetParam0(_param0 *OrderVoucherRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoGameDeliveryvoucherOrdervoucherRequest) GetParam0() *OrderVoucherRequest {
-    return r.param0
+    return r._param0
 }

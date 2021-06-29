@@ -15,9 +15,9 @@ alibaba.icbu.product.group.get
 type AlibabaIcbuProductGroupGetRequest struct {
     model.Params
     // 分组ID，传-1获得所有一级分组
-    groupId   int64
+    _groupId   int64
     // 补充信息
-    extraContext   string
+    _extraContext   string
 }
 
 // 初始化AlibabaIcbuProductGroupGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIcbuProductGroupGetRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 分组ID，传-1获得所有一级分组
-func (r *AlibabaIcbuProductGroupGetRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaIcbuProductGroupGetRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaIcbuProductGroupGetRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }
 // ExtraContext Setter
 // 补充信息
-func (r *AlibabaIcbuProductGroupGetRequest) SetExtraContext(extraContext string) error {
-    r.extraContext = extraContext
-    r.Set("extra_context", extraContext)
+func (r *AlibabaIcbuProductGroupGetRequest) SetExtraContext(_extraContext string) error {
+    r._extraContext = _extraContext
+    r.Set("extra_context", _extraContext)
     return nil
 }
 
 // ExtraContext Getter
 func (r AlibabaIcbuProductGroupGetRequest) GetExtraContext() string {
-    return r.extraContext
+    return r._extraContext
 }

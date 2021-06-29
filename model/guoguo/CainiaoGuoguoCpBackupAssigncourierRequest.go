@@ -15,19 +15,19 @@ CP兜底后指定接单的小件员；CP改派小件员
 type CainiaoGuoguoCpBackupAssigncourierRequest struct {
     model.Params
     // 小件员所在公司编号
-    cpCode   string
+    _cpCode   string
     // 小件员员工编号
-    cpUserId   string
+    _cpUserId   string
     // LP订单号
-    lpCode   string
+    _lpCode   string
     // 任务ID
-    taskId   int64
+    _taskId   int64
     // 指派/改派原因编码
-    assignReasonCode   string
+    _assignReasonCode   string
     // 指派/改派原因
-    assignReason   string
+    _assignReason   string
     // 小件员手机号
-    mobile   string
+    _mobile   string
 }
 
 // 初始化CainiaoGuoguoCpBackupAssigncourierRequest对象
@@ -52,85 +52,85 @@ func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetApiParams() url.Values {
 }
 // CpCode Setter
 // 小件员所在公司编号
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetCpCode(cpCode string) error {
-    r.cpCode = cpCode
-    r.Set("cp_code", cpCode)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetCpCode(_cpCode string) error {
+    r._cpCode = _cpCode
+    r.Set("cp_code", _cpCode)
     return nil
 }
 
 // CpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetCpCode() string {
-    return r.cpCode
+    return r._cpCode
 }
 // CpUserId Setter
 // 小件员员工编号
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetCpUserId(cpUserId string) error {
-    r.cpUserId = cpUserId
-    r.Set("cp_user_id", cpUserId)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetCpUserId(_cpUserId string) error {
+    r._cpUserId = _cpUserId
+    r.Set("cp_user_id", _cpUserId)
     return nil
 }
 
 // CpUserId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetCpUserId() string {
-    return r.cpUserId
+    return r._cpUserId
 }
 // LpCode Setter
 // LP订单号
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetLpCode(lpCode string) error {
-    r.lpCode = lpCode
-    r.Set("lp_code", lpCode)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetLpCode(_lpCode string) error {
+    r._lpCode = _lpCode
+    r.Set("lp_code", _lpCode)
     return nil
 }
 
 // LpCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetLpCode() string {
-    return r.lpCode
+    return r._lpCode
 }
 // TaskId Setter
 // 任务ID
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetTaskId(taskId int64) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetTaskId(_taskId int64) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetTaskId() int64 {
-    return r.taskId
+    return r._taskId
 }
 // AssignReasonCode Setter
 // 指派/改派原因编码
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetAssignReasonCode(assignReasonCode string) error {
-    r.assignReasonCode = assignReasonCode
-    r.Set("assign_reason_code", assignReasonCode)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetAssignReasonCode(_assignReasonCode string) error {
+    r._assignReasonCode = _assignReasonCode
+    r.Set("assign_reason_code", _assignReasonCode)
     return nil
 }
 
 // AssignReasonCode Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetAssignReasonCode() string {
-    return r.assignReasonCode
+    return r._assignReasonCode
 }
 // AssignReason Setter
 // 指派/改派原因
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetAssignReason(assignReason string) error {
-    r.assignReason = assignReason
-    r.Set("assign_reason", assignReason)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetAssignReason(_assignReason string) error {
+    r._assignReason = _assignReason
+    r.Set("assign_reason", _assignReason)
     return nil
 }
 
 // AssignReason Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetAssignReason() string {
-    return r.assignReason
+    return r._assignReason
 }
 // Mobile Setter
 // 小件员手机号
-func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *CainiaoGuoguoCpBackupAssigncourierRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r CainiaoGuoguoCpBackupAssigncourierRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }

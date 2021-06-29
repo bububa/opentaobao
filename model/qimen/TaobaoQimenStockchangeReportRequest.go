@@ -15,7 +15,7 @@ WMS调用奇门的接口,将库存异动信息信息回传给ERP
 type TaobaoQimenStockchangeReportRequest struct {
     model.Params
     // 
-    request   *StockChangeReportRequest
+    _request   *StockChangeReportRequest
 }
 
 // 初始化TaobaoQimenStockchangeReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStockchangeReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenStockchangeReportRequest) SetRequest(request *StockChangeReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenStockchangeReportRequest) SetRequest(_request *StockChangeReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenStockchangeReportRequest) GetRequest() *StockChangeReportRequest {
-    return r.request
+    return r._request
 }

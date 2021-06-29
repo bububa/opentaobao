@@ -15,7 +15,7 @@ ASCP渠道中心销售单创建接口
 type TmallAscpOrdersSaleCreateRequest struct {
     model.Params
     // 请求对象
-    channelOrderRequest   *CreateChannelOrderRequest
+    _channelOrderRequest   *CreateChannelOrderRequest
 }
 
 // 初始化TmallAscpOrdersSaleCreateRequest对象
@@ -40,13 +40,13 @@ func (r TmallAscpOrdersSaleCreateRequest) GetApiParams() url.Values {
 }
 // ChannelOrderRequest Setter
 // 请求对象
-func (r *TmallAscpOrdersSaleCreateRequest) SetChannelOrderRequest(channelOrderRequest *CreateChannelOrderRequest) error {
-    r.channelOrderRequest = channelOrderRequest
-    r.Set("channel_order_request", channelOrderRequest)
+func (r *TmallAscpOrdersSaleCreateRequest) SetChannelOrderRequest(_channelOrderRequest *CreateChannelOrderRequest) error {
+    r._channelOrderRequest = _channelOrderRequest
+    r.Set("channel_order_request", _channelOrderRequest)
     return nil
 }
 
 // ChannelOrderRequest Getter
 func (r TmallAscpOrdersSaleCreateRequest) GetChannelOrderRequest() *CreateChannelOrderRequest {
-    return r.channelOrderRequest
+    return r._channelOrderRequest
 }

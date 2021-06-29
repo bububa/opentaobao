@@ -15,7 +15,7 @@ alibaba.aliqin.axb.vendor.sms.intercept
 type AlibabaAliqinAxbVendorSmsInterceptRequest struct {
     model.Params
     // 短信托收结构体
-    smsInterceptRequest   *SmsInterceptRequest
+    _smsInterceptRequest   *SmsInterceptRequest
 }
 
 // 初始化AlibabaAliqinAxbVendorSmsInterceptRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetApiParams() url.Values {
 }
 // SmsInterceptRequest Setter
 // 短信托收结构体
-func (r *AlibabaAliqinAxbVendorSmsInterceptRequest) SetSmsInterceptRequest(smsInterceptRequest *SmsInterceptRequest) error {
-    r.smsInterceptRequest = smsInterceptRequest
-    r.Set("sms_intercept_request", smsInterceptRequest)
+func (r *AlibabaAliqinAxbVendorSmsInterceptRequest) SetSmsInterceptRequest(_smsInterceptRequest *SmsInterceptRequest) error {
+    r._smsInterceptRequest = _smsInterceptRequest
+    r.Set("sms_intercept_request", _smsInterceptRequest)
     return nil
 }
 
 // SmsInterceptRequest Getter
 func (r AlibabaAliqinAxbVendorSmsInterceptRequest) GetSmsInterceptRequest() *SmsInterceptRequest {
-    return r.smsInterceptRequest
+    return r._smsInterceptRequest
 }

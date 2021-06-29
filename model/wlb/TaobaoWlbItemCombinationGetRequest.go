@@ -15,7 +15,7 @@ taobao.wlb.item.combination.get
 type TaobaoWlbItemCombinationGetRequest struct {
     model.Params
     // 要查询的组合商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoWlbItemCombinationGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbItemCombinationGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 要查询的组合商品id
-func (r *TaobaoWlbItemCombinationGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoWlbItemCombinationGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoWlbItemCombinationGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

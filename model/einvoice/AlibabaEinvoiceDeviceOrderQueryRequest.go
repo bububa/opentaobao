@@ -15,7 +15,7 @@ alibaba.einvoice.device.order.query
 type AlibabaEinvoiceDeviceOrderQueryRequest struct {
     model.Params
     // 税控设备订购单ID
-    flowId   string
+    _flowId   string
 }
 
 // 初始化AlibabaEinvoiceDeviceOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetApiParams() url.Values {
 }
 // FlowId Setter
 // 税控设备订购单ID
-func (r *AlibabaEinvoiceDeviceOrderQueryRequest) SetFlowId(flowId string) error {
-    r.flowId = flowId
-    r.Set("flow_id", flowId)
+func (r *AlibabaEinvoiceDeviceOrderQueryRequest) SetFlowId(_flowId string) error {
+    r._flowId = _flowId
+    r.Set("flow_id", _flowId)
     return nil
 }
 
 // FlowId Getter
 func (r AlibabaEinvoiceDeviceOrderQueryRequest) GetFlowId() string {
-    return r.flowId
+    return r._flowId
 }

@@ -16,7 +16,7 @@ alibaba.einvoice.flow.tax.get
 type AlibabaEinvoiceFlowTaxGetRequest struct {
     model.Params
     // 入驻开通工单ID
-    flowId   string
+    _flowId   string
 }
 
 // 初始化AlibabaEinvoiceFlowTaxGetRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaEinvoiceFlowTaxGetRequest) GetApiParams() url.Values {
 }
 // FlowId Setter
 // 入驻开通工单ID
-func (r *AlibabaEinvoiceFlowTaxGetRequest) SetFlowId(flowId string) error {
-    r.flowId = flowId
-    r.Set("flow_id", flowId)
+func (r *AlibabaEinvoiceFlowTaxGetRequest) SetFlowId(_flowId string) error {
+    r._flowId = _flowId
+    r.Set("flow_id", _flowId)
     return nil
 }
 
 // FlowId Getter
 func (r AlibabaEinvoiceFlowTaxGetRequest) GetFlowId() string {
-    return r.flowId
+    return r._flowId
 }

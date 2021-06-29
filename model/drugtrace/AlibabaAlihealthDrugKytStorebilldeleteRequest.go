@@ -15,13 +15,13 @@ alibaba.alihealth.drug.kyt.storebilldelete
 type AlibabaAlihealthDrugKytStorebilldeleteRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 操作人编码
-    icCode   string
+    _icCode   string
     // 单据ID
-    billId   string
+    _billId   string
     // 单据类型
-    billType   string
+    _billType   string
 }
 
 // 初始化AlibabaAlihealthDrugKytStorebilldeleteRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetApiParams() url.Values
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // IcCode Setter
 // 操作人编码
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetIcCode(icCode string) error {
-    r.icCode = icCode
-    r.Set("ic_code", icCode)
+func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetIcCode(_icCode string) error {
+    r._icCode = _icCode
+    r.Set("ic_code", _icCode)
     return nil
 }
 
 // IcCode Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetIcCode() string {
-    return r.icCode
+    return r._icCode
 }
 // BillId Setter
 // 单据ID
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillId(billId string) error {
-    r.billId = billId
-    r.Set("bill_id", billId)
+func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillId(_billId string) error {
+    r._billId = _billId
+    r.Set("bill_id", _billId)
     return nil
 }
 
 // BillId Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetBillId() string {
-    return r.billId
+    return r._billId
 }
 // BillType Setter
 // 单据类型
-func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillType(billType string) error {
-    r.billType = billType
-    r.Set("bill_type", billType)
+func (r *AlibabaAlihealthDrugKytStorebilldeleteRequest) SetBillType(_billType string) error {
+    r._billType = _billType
+    r.Set("bill_type", _billType)
     return nil
 }
 
 // BillType Getter
 func (r AlibabaAlihealthDrugKytStorebilldeleteRequest) GetBillType() string {
-    return r.billType
+    return r._billType
 }

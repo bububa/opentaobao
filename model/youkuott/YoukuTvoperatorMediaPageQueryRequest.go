@@ -15,13 +15,13 @@ youku.tvoperator.media.page.query
 type YoukuTvoperatorMediaPageQueryRequest struct {
     model.Params
     // 系统信息（和服务提供方确认)
-    systemInfo   string
+    _systemInfo   string
     // 从第一页开始
-    pageNo   int64
+    _pageNo   int64
     // 页面大小
-    pageSize   int64
+    _pageSize   int64
     // 节目programId
-    programId   int64
+    _programId   int64
 }
 
 // 初始化YoukuTvoperatorMediaPageQueryRequest对象
@@ -46,49 +46,49 @@ func (r YoukuTvoperatorMediaPageQueryRequest) GetApiParams() url.Values {
 }
 // SystemInfo Setter
 // 系统信息（和服务提供方确认)
-func (r *YoukuTvoperatorMediaPageQueryRequest) SetSystemInfo(systemInfo string) error {
-    r.systemInfo = systemInfo
-    r.Set("system_info", systemInfo)
+func (r *YoukuTvoperatorMediaPageQueryRequest) SetSystemInfo(_systemInfo string) error {
+    r._systemInfo = _systemInfo
+    r.Set("system_info", _systemInfo)
     return nil
 }
 
 // SystemInfo Getter
 func (r YoukuTvoperatorMediaPageQueryRequest) GetSystemInfo() string {
-    return r.systemInfo
+    return r._systemInfo
 }
 // PageNo Setter
 // 从第一页开始
-func (r *YoukuTvoperatorMediaPageQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *YoukuTvoperatorMediaPageQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r YoukuTvoperatorMediaPageQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 页面大小
-func (r *YoukuTvoperatorMediaPageQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *YoukuTvoperatorMediaPageQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r YoukuTvoperatorMediaPageQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // ProgramId Setter
 // 节目programId
-func (r *YoukuTvoperatorMediaPageQueryRequest) SetProgramId(programId int64) error {
-    r.programId = programId
-    r.Set("program_id", programId)
+func (r *YoukuTvoperatorMediaPageQueryRequest) SetProgramId(_programId int64) error {
+    r._programId = _programId
+    r.Set("program_id", _programId)
     return nil
 }
 
 // ProgramId Getter
 func (r YoukuTvoperatorMediaPageQueryRequest) GetProgramId() int64 {
-    return r.programId
+    return r._programId
 }

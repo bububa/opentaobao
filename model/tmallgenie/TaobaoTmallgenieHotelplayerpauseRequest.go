@@ -15,9 +15,9 @@ taobao.tmallgenie.hotelplayerpause
 type TaobaoTmallgenieHotelplayerpauseRequest struct {
     model.Params
     // 房间号
-    roomNo   string
+    _roomNo   string
     // 酒店ID
-    hotelId   int64
+    _hotelId   int64
 }
 
 // 初始化TaobaoTmallgenieHotelplayerpauseRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTmallgenieHotelplayerpauseRequest) GetApiParams() url.Values {
 }
 // RoomNo Setter
 // 房间号
-func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetRoomNo(roomNo string) error {
-    r.roomNo = roomNo
-    r.Set("room_no", roomNo)
+func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetRoomNo(_roomNo string) error {
+    r._roomNo = _roomNo
+    r.Set("room_no", _roomNo)
     return nil
 }
 
 // RoomNo Getter
 func (r TaobaoTmallgenieHotelplayerpauseRequest) GetRoomNo() string {
-    return r.roomNo
+    return r._roomNo
 }
 // HotelId Setter
 // 酒店ID
-func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetHotelId(hotelId int64) error {
-    r.hotelId = hotelId
-    r.Set("hotel_id", hotelId)
+func (r *TaobaoTmallgenieHotelplayerpauseRequest) SetHotelId(_hotelId int64) error {
+    r._hotelId = _hotelId
+    r.Set("hotel_id", _hotelId)
     return nil
 }
 
 // HotelId Getter
 func (r TaobaoTmallgenieHotelplayerpauseRequest) GetHotelId() int64 {
-    return r.hotelId
+    return r._hotelId
 }

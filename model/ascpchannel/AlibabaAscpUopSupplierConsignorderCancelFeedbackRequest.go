@@ -15,7 +15,7 @@ alibaba.ascp.uop.supplier.consignorder.cancel.feedback
 type AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest struct {
     model.Params
     // 取消发货反馈回告请求
-    consignorderCancelFeedbackRequest   *Consignordercancelfeedbackrequest
+    _consignorderCancelFeedbackRequest   *Consignordercancelfeedbackrequest
 }
 
 // 初始化AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest) GetApiParams() 
 }
 // ConsignorderCancelFeedbackRequest Setter
 // 取消发货反馈回告请求
-func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest) SetConsignorderCancelFeedbackRequest(consignorderCancelFeedbackRequest *Consignordercancelfeedbackrequest) error {
-    r.consignorderCancelFeedbackRequest = consignorderCancelFeedbackRequest
-    r.Set("consignorder_cancel_feedback_request", consignorderCancelFeedbackRequest)
+func (r *AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest) SetConsignorderCancelFeedbackRequest(_consignorderCancelFeedbackRequest *Consignordercancelfeedbackrequest) error {
+    r._consignorderCancelFeedbackRequest = _consignorderCancelFeedbackRequest
+    r.Set("consignorder_cancel_feedback_request", _consignorderCancelFeedbackRequest)
     return nil
 }
 
 // ConsignorderCancelFeedbackRequest Getter
 func (r AlibabaAscpUopSupplierConsignorderCancelFeedbackRequest) GetConsignorderCancelFeedbackRequest() *Consignordercancelfeedbackrequest {
-    return r.consignorderCancelFeedbackRequest
+    return r._consignorderCancelFeedbackRequest
 }

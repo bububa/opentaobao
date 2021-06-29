@@ -15,9 +15,9 @@ alibaba.mj.member.hasbind
 type AlibabaMjMemberHasbindRequest struct {
     model.Params
     // user_id
-    userId   int64
+    _userId   int64
     // open_id
-    openId   string
+    _openId   string
 }
 
 // 初始化AlibabaMjMemberHasbindRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMjMemberHasbindRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // user_id
-func (r *AlibabaMjMemberHasbindRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaMjMemberHasbindRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaMjMemberHasbindRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // OpenId Setter
 // open_id
-func (r *AlibabaMjMemberHasbindRequest) SetOpenId(openId string) error {
-    r.openId = openId
-    r.Set("open_id", openId)
+func (r *AlibabaMjMemberHasbindRequest) SetOpenId(_openId string) error {
+    r._openId = _openId
+    r.Set("open_id", _openId)
     return nil
 }
 
 // OpenId Getter
 func (r AlibabaMjMemberHasbindRequest) GetOpenId() string {
-    return r.openId
+    return r._openId
 }

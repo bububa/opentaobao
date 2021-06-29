@@ -15,7 +15,7 @@ taobao.car.vehicleinfo.register
 type TaobaoCarVehicleinfoRegisterRequest struct {
     model.Params
     // 参数集合
-    paramList   []FullInfoCarModelDTO
+    _paramList   []FullInfoCarModelDTO
 }
 
 // 初始化TaobaoCarVehicleinfoRegisterRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCarVehicleinfoRegisterRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 参数集合
-func (r *TaobaoCarVehicleinfoRegisterRequest) SetParamList(paramList []FullInfoCarModelDTO) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *TaobaoCarVehicleinfoRegisterRequest) SetParamList(_paramList []FullInfoCarModelDTO) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r TaobaoCarVehicleinfoRegisterRequest) GetParamList() []FullInfoCarModelDTO {
-    return r.paramList
+    return r._paramList
 }

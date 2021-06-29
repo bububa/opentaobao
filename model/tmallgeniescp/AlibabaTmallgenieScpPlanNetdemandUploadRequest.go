@@ -15,7 +15,7 @@ Net Demand净需求回传
 type AlibabaTmallgenieScpPlanNetdemandUploadRequest struct {
     model.Params
     // 对象
-    netDemandRequest   *NetDemandRequest
+    _netDemandRequest   *NetDemandRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanNetdemandUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanNetdemandUploadRequest) GetApiParams() url.Value
 }
 // NetDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanNetdemandUploadRequest) SetNetDemandRequest(netDemandRequest *NetDemandRequest) error {
-    r.netDemandRequest = netDemandRequest
-    r.Set("net_demand_request", netDemandRequest)
+func (r *AlibabaTmallgenieScpPlanNetdemandUploadRequest) SetNetDemandRequest(_netDemandRequest *NetDemandRequest) error {
+    r._netDemandRequest = _netDemandRequest
+    r.Set("net_demand_request", _netDemandRequest)
     return nil
 }
 
 // NetDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanNetdemandUploadRequest) GetNetDemandRequest() *NetDemandRequest {
-    return r.netDemandRequest
+    return r._netDemandRequest
 }

@@ -15,11 +15,11 @@ alibaba.ailabs.iot.business.recipe.getpage
 type AlibabaAilabsIotBusinessRecipeGetpageRequest struct {
     model.Params
     // 开放账号id
-    openAccountId   string
+    _openAccountId   string
     // 分页页码
-    pageNum   int64
+    _pageNum   int64
     // 分页大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaAilabsIotBusinessRecipeGetpageRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAilabsIotBusinessRecipeGetpageRequest) GetApiParams() url.Values 
 }
 // OpenAccountId Setter
 // 开放账号id
-func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetOpenAccountId(openAccountId string) error {
-    r.openAccountId = openAccountId
-    r.Set("open_account_id", openAccountId)
+func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetOpenAccountId(_openAccountId string) error {
+    r._openAccountId = _openAccountId
+    r.Set("open_account_id", _openAccountId)
     return nil
 }
 
 // OpenAccountId Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageRequest) GetOpenAccountId() string {
-    return r.openAccountId
+    return r._openAccountId
 }
 // PageNum Setter
 // 分页页码
-func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // PageSize Setter
 // 分页大小
-func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaAilabsIotBusinessRecipeGetpageRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaAilabsIotBusinessRecipeGetpageRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

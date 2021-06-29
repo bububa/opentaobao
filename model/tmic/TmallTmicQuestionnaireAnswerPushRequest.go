@@ -15,17 +15,17 @@ tmall.tmic.questionnaire.answer.push
 type TmallTmicQuestionnaireAnswerPushRequest struct {
     model.Params
     // 问卷填答id，从问卷信息接口的应答中获取
-    recordId   int64
+    _recordId   int64
     // 问卷唯一编码，从问卷信息接口应答中获取
-    hashCode   string
+    _hashCode   string
     // 业务参数，区分问卷分组投放，1024表示分组投放id，fav表示用户动作类型为收藏
-    biz   string
+    _biz   string
     // 问卷版本号，从问卷信息接口的应答中获取
-    version   int64
+    _version   int64
     // 用户填写的回答，类型为数组
-    userAnswerList   []AnswerBo
+    _userAnswerList   []AnswerBo
     // 开发平台userId
-    openUserId   string
+    _openUserId   string
 }
 
 // 初始化TmallTmicQuestionnaireAnswerPushRequest对象
@@ -50,73 +50,73 @@ func (r TmallTmicQuestionnaireAnswerPushRequest) GetApiParams() url.Values {
 }
 // RecordId Setter
 // 问卷填答id，从问卷信息接口的应答中获取
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetRecordId(recordId int64) error {
-    r.recordId = recordId
-    r.Set("record_id", recordId)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetRecordId(_recordId int64) error {
+    r._recordId = _recordId
+    r.Set("record_id", _recordId)
     return nil
 }
 
 // RecordId Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetRecordId() int64 {
-    return r.recordId
+    return r._recordId
 }
 // HashCode Setter
 // 问卷唯一编码，从问卷信息接口应答中获取
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetHashCode(hashCode string) error {
-    r.hashCode = hashCode
-    r.Set("hash_code", hashCode)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetHashCode(_hashCode string) error {
+    r._hashCode = _hashCode
+    r.Set("hash_code", _hashCode)
     return nil
 }
 
 // HashCode Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetHashCode() string {
-    return r.hashCode
+    return r._hashCode
 }
 // Biz Setter
 // 业务参数，区分问卷分组投放，1024表示分组投放id，fav表示用户动作类型为收藏
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetBiz(biz string) error {
-    r.biz = biz
-    r.Set("biz", biz)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetBiz(_biz string) error {
+    r._biz = _biz
+    r.Set("biz", _biz)
     return nil
 }
 
 // Biz Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetBiz() string {
-    return r.biz
+    return r._biz
 }
 // Version Setter
 // 问卷版本号，从问卷信息接口的应答中获取
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetVersion(version int64) error {
-    r.version = version
-    r.Set("version", version)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetVersion(_version int64) error {
+    r._version = _version
+    r.Set("version", _version)
     return nil
 }
 
 // Version Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetVersion() int64 {
-    return r.version
+    return r._version
 }
 // UserAnswerList Setter
 // 用户填写的回答，类型为数组
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetUserAnswerList(userAnswerList []AnswerBo) error {
-    r.userAnswerList = userAnswerList
-    r.Set("user_answer_list", userAnswerList)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetUserAnswerList(_userAnswerList []AnswerBo) error {
+    r._userAnswerList = _userAnswerList
+    r.Set("user_answer_list", _userAnswerList)
     return nil
 }
 
 // UserAnswerList Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetUserAnswerList() []AnswerBo {
-    return r.userAnswerList
+    return r._userAnswerList
 }
 // OpenUserId Setter
 // 开发平台userId
-func (r *TmallTmicQuestionnaireAnswerPushRequest) SetOpenUserId(openUserId string) error {
-    r.openUserId = openUserId
-    r.Set("open_user_id", openUserId)
+func (r *TmallTmicQuestionnaireAnswerPushRequest) SetOpenUserId(_openUserId string) error {
+    r._openUserId = _openUserId
+    r.Set("open_user_id", _openUserId)
     return nil
 }
 
 // OpenUserId Getter
 func (r TmallTmicQuestionnaireAnswerPushRequest) GetOpenUserId() string {
-    return r.openUserId
+    return r._openUserId
 }

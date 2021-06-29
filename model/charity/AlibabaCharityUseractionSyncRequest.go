@@ -15,7 +15,7 @@ alibaba.charity.useraction.sync
 type AlibabaCharityUseractionSyncRequest struct {
     model.Params
     // 用户公益行为
-    channelUserActionDto   *ChannelUserActionDto
+    _channelUserActionDto   *ChannelUserActionDto
 }
 
 // 初始化AlibabaCharityUseractionSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCharityUseractionSyncRequest) GetApiParams() url.Values {
 }
 // ChannelUserActionDto Setter
 // 用户公益行为
-func (r *AlibabaCharityUseractionSyncRequest) SetChannelUserActionDto(channelUserActionDto *ChannelUserActionDto) error {
-    r.channelUserActionDto = channelUserActionDto
-    r.Set("channel_user_action_dto", channelUserActionDto)
+func (r *AlibabaCharityUseractionSyncRequest) SetChannelUserActionDto(_channelUserActionDto *ChannelUserActionDto) error {
+    r._channelUserActionDto = _channelUserActionDto
+    r.Set("channel_user_action_dto", _channelUserActionDto)
     return nil
 }
 
 // ChannelUserActionDto Getter
 func (r AlibabaCharityUseractionSyncRequest) GetChannelUserActionDto() *ChannelUserActionDto {
-    return r.channelUserActionDto
+    return r._channelUserActionDto
 }

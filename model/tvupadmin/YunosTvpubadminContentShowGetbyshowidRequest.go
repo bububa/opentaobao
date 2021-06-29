@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.show.getbyshowid
 type YunosTvpubadminContentShowGetbyshowidRequest struct {
     model.Params
     // 节目字符串id
-    showId   string
+    _showId   string
 }
 
 // 初始化YunosTvpubadminContentShowGetbyshowidRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentShowGetbyshowidRequest) GetApiParams() url.Values 
 }
 // ShowId Setter
 // 节目字符串id
-func (r *YunosTvpubadminContentShowGetbyshowidRequest) SetShowId(showId string) error {
-    r.showId = showId
-    r.Set("show_id", showId)
+func (r *YunosTvpubadminContentShowGetbyshowidRequest) SetShowId(_showId string) error {
+    r._showId = _showId
+    r.Set("show_id", _showId)
     return nil
 }
 
 // ShowId Getter
 func (r YunosTvpubadminContentShowGetbyshowidRequest) GetShowId() string {
-    return r.showId
+    return r._showId
 }

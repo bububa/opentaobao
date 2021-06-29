@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.fund.update
 type TaobaoAlitripAxinTransFundUpdateRequest struct {
     model.Params
     // 更新资金单接口入参
-    axinFundUpdateDTO   *AxinFundUpdateDto
+    _axinFundUpdateDTO   *AxinFundUpdateDto
 }
 
 // 初始化TaobaoAlitripAxinTransFundUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransFundUpdateRequest) GetApiParams() url.Values {
 }
 // AxinFundUpdateDTO Setter
 // 更新资金单接口入参
-func (r *TaobaoAlitripAxinTransFundUpdateRequest) SetAxinFundUpdateDTO(axinFundUpdateDTO *AxinFundUpdateDto) error {
-    r.axinFundUpdateDTO = axinFundUpdateDTO
-    r.Set("axin_fund_update_d_t_o", axinFundUpdateDTO)
+func (r *TaobaoAlitripAxinTransFundUpdateRequest) SetAxinFundUpdateDTO(_axinFundUpdateDTO *AxinFundUpdateDto) error {
+    r._axinFundUpdateDTO = _axinFundUpdateDTO
+    r.Set("axin_fund_update_d_t_o", _axinFundUpdateDTO)
     return nil
 }
 
 // AxinFundUpdateDTO Getter
 func (r TaobaoAlitripAxinTransFundUpdateRequest) GetAxinFundUpdateDTO() *AxinFundUpdateDto {
-    return r.axinFundUpdateDTO
+    return r._axinFundUpdateDTO
 }

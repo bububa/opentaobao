@@ -15,7 +15,7 @@ youku.ott.pay.order.queryauthstate
 type YoukuOttPayOrderQueryauthstateRequest struct {
     model.Params
     // 原始签约订单号
-    originalCpOrderNo   string
+    _originalCpOrderNo   string
 }
 
 // 初始化YoukuOttPayOrderQueryauthstateRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryauthstateRequest) GetApiParams() url.Values {
 }
 // OriginalCpOrderNo Setter
 // 原始签约订单号
-func (r *YoukuOttPayOrderQueryauthstateRequest) SetOriginalCpOrderNo(originalCpOrderNo string) error {
-    r.originalCpOrderNo = originalCpOrderNo
-    r.Set("original_cp_order_no", originalCpOrderNo)
+func (r *YoukuOttPayOrderQueryauthstateRequest) SetOriginalCpOrderNo(_originalCpOrderNo string) error {
+    r._originalCpOrderNo = _originalCpOrderNo
+    r.Set("original_cp_order_no", _originalCpOrderNo)
     return nil
 }
 
 // OriginalCpOrderNo Getter
 func (r YoukuOttPayOrderQueryauthstateRequest) GetOriginalCpOrderNo() string {
-    return r.originalCpOrderNo
+    return r._originalCpOrderNo
 }

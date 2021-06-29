@@ -15,9 +15,9 @@ yunos.tvpubadmin.content.tableaudit.offlinelauncheritem
 type YunosTvpubadminContentTableauditOfflinelauncheritemRequest struct {
     model.Params
     // 元数据主键id
-    id   int64
+    _id   int64
     // 联盟：TV_OTT,一体机：TV_ALLINONE
-    terminalType   string
+    _terminalType   string
 }
 
 // 初始化YunosTvpubadminContentTableauditOfflinelauncheritemRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvpubadminContentTableauditOfflinelauncheritemRequest) GetApiParams
 }
 // Id Setter
 // 元数据主键id
-func (r *YunosTvpubadminContentTableauditOfflinelauncheritemRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminContentTableauditOfflinelauncheritemRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminContentTableauditOfflinelauncheritemRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // TerminalType Setter
 // 联盟：TV_OTT,一体机：TV_ALLINONE
-func (r *YunosTvpubadminContentTableauditOfflinelauncheritemRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *YunosTvpubadminContentTableauditOfflinelauncheritemRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r YunosTvpubadminContentTableauditOfflinelauncheritemRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }

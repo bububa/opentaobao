@@ -15,9 +15,9 @@ alibaba.idle.apprize.order.fulfillment
 type AlibabaIdleApprizeOrderFulfillmentRequest struct {
     model.Params
     // deal：服务商收取费用、refund：退款给付款方
-    action   string
+    _action   string
     // 天猫服务工单Id
-    workCardId   int64
+    _workCardId   int64
 }
 
 // 初始化AlibabaIdleApprizeOrderFulfillmentRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIdleApprizeOrderFulfillmentRequest) GetApiParams() url.Values {
 }
 // Action Setter
 // deal：服务商收取费用、refund：退款给付款方
-func (r *AlibabaIdleApprizeOrderFulfillmentRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *AlibabaIdleApprizeOrderFulfillmentRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r AlibabaIdleApprizeOrderFulfillmentRequest) GetAction() string {
-    return r.action
+    return r._action
 }
 // WorkCardId Setter
 // 天猫服务工单Id
-func (r *AlibabaIdleApprizeOrderFulfillmentRequest) SetWorkCardId(workCardId int64) error {
-    r.workCardId = workCardId
-    r.Set("work_card_id", workCardId)
+func (r *AlibabaIdleApprizeOrderFulfillmentRequest) SetWorkCardId(_workCardId int64) error {
+    r._workCardId = _workCardId
+    r.Set("work_card_id", _workCardId)
     return nil
 }
 
 // WorkCardId Getter
 func (r AlibabaIdleApprizeOrderFulfillmentRequest) GetWorkCardId() int64 {
-    return r.workCardId
+    return r._workCardId
 }

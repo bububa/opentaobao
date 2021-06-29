@@ -15,11 +15,11 @@ taobao.apple.olduser.charge.notify
 type TaobaoAppleOlduserChargeNotifyRequest struct {
     model.Params
     // 结果code
-    resultCode   string
+    _resultCode   string
     // 结果信息说明
-    resultMsg   string
+    _resultMsg   string
     // 业务参数
-    mainData   *AppleTopOldSignNotifyDo
+    _mainData   *AppleTopOldSignNotifyDo
 }
 
 // 初始化TaobaoAppleOlduserChargeNotifyRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAppleOlduserChargeNotifyRequest) GetApiParams() url.Values {
 }
 // ResultCode Setter
 // 结果code
-func (r *TaobaoAppleOlduserChargeNotifyRequest) SetResultCode(resultCode string) error {
-    r.resultCode = resultCode
-    r.Set("result_code", resultCode)
+func (r *TaobaoAppleOlduserChargeNotifyRequest) SetResultCode(_resultCode string) error {
+    r._resultCode = _resultCode
+    r.Set("result_code", _resultCode)
     return nil
 }
 
 // ResultCode Getter
 func (r TaobaoAppleOlduserChargeNotifyRequest) GetResultCode() string {
-    return r.resultCode
+    return r._resultCode
 }
 // ResultMsg Setter
 // 结果信息说明
-func (r *TaobaoAppleOlduserChargeNotifyRequest) SetResultMsg(resultMsg string) error {
-    r.resultMsg = resultMsg
-    r.Set("result_msg", resultMsg)
+func (r *TaobaoAppleOlduserChargeNotifyRequest) SetResultMsg(_resultMsg string) error {
+    r._resultMsg = _resultMsg
+    r.Set("result_msg", _resultMsg)
     return nil
 }
 
 // ResultMsg Getter
 func (r TaobaoAppleOlduserChargeNotifyRequest) GetResultMsg() string {
-    return r.resultMsg
+    return r._resultMsg
 }
 // MainData Setter
 // 业务参数
-func (r *TaobaoAppleOlduserChargeNotifyRequest) SetMainData(mainData *AppleTopOldSignNotifyDo) error {
-    r.mainData = mainData
-    r.Set("main_data", mainData)
+func (r *TaobaoAppleOlduserChargeNotifyRequest) SetMainData(_mainData *AppleTopOldSignNotifyDo) error {
+    r._mainData = _mainData
+    r.Set("main_data", _mainData)
     return nil
 }
 
 // MainData Getter
 func (r TaobaoAppleOlduserChargeNotifyRequest) GetMainData() *AppleTopOldSignNotifyDo {
-    return r.mainData
+    return r._mainData
 }

@@ -15,11 +15,11 @@ tmall.servicecenter.picture.upload
 type TmallServicecenterPictureUploadRequest struct {
     model.Params
     // 图片文件二进制流
-    img   []*model.File
+    _img   []*model.File
     // 图片全称包括扩展名。目前支持 jpg jpeg png
-    pictureName   string
+    _pictureName   string
     // true返回Https地址
-    isHttps   bool
+    _isHttps   bool
 }
 
 // 初始化TmallServicecenterPictureUploadRequest对象
@@ -44,37 +44,37 @@ func (r TmallServicecenterPictureUploadRequest) GetApiParams() url.Values {
 }
 // Img Setter
 // 图片文件二进制流
-func (r *TmallServicecenterPictureUploadRequest) SetImg(img []*model.File) error {
-    r.img = img
-    r.Set("img", img)
+func (r *TmallServicecenterPictureUploadRequest) SetImg(_img []*model.File) error {
+    r._img = _img
+    r.Set("img", _img)
     return nil
 }
 
 // Img Getter
 func (r TmallServicecenterPictureUploadRequest) GetImg() []*model.File {
-    return r.img
+    return r._img
 }
 // PictureName Setter
 // 图片全称包括扩展名。目前支持 jpg jpeg png
-func (r *TmallServicecenterPictureUploadRequest) SetPictureName(pictureName string) error {
-    r.pictureName = pictureName
-    r.Set("picture_name", pictureName)
+func (r *TmallServicecenterPictureUploadRequest) SetPictureName(_pictureName string) error {
+    r._pictureName = _pictureName
+    r.Set("picture_name", _pictureName)
     return nil
 }
 
 // PictureName Getter
 func (r TmallServicecenterPictureUploadRequest) GetPictureName() string {
-    return r.pictureName
+    return r._pictureName
 }
 // IsHttps Setter
 // true返回Https地址
-func (r *TmallServicecenterPictureUploadRequest) SetIsHttps(isHttps bool) error {
-    r.isHttps = isHttps
-    r.Set("is_https", isHttps)
+func (r *TmallServicecenterPictureUploadRequest) SetIsHttps(_isHttps bool) error {
+    r._isHttps = _isHttps
+    r.Set("is_https", _isHttps)
     return nil
 }
 
 // IsHttps Getter
 func (r TmallServicecenterPictureUploadRequest) GetIsHttps() bool {
-    return r.isHttps
+    return r._isHttps
 }

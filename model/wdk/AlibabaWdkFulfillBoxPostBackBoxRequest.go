@@ -15,7 +15,7 @@ RT收箱后，信息同步履约，履约同通知UMS 容器管理
 type AlibabaWdkFulfillBoxPostBackBoxRequest struct {
     model.Params
     // RT收箱回传请求参数
-    returnBoxContainerRequest   *ReturnBoxContainerRequest
+    _returnBoxContainerRequest   *ReturnBoxContainerRequest
 }
 
 // 初始化AlibabaWdkFulfillBoxPostBackBoxRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillBoxPostBackBoxRequest) GetApiParams() url.Values {
 }
 // ReturnBoxContainerRequest Setter
 // RT收箱回传请求参数
-func (r *AlibabaWdkFulfillBoxPostBackBoxRequest) SetReturnBoxContainerRequest(returnBoxContainerRequest *ReturnBoxContainerRequest) error {
-    r.returnBoxContainerRequest = returnBoxContainerRequest
-    r.Set("return_box_container_request", returnBoxContainerRequest)
+func (r *AlibabaWdkFulfillBoxPostBackBoxRequest) SetReturnBoxContainerRequest(_returnBoxContainerRequest *ReturnBoxContainerRequest) error {
+    r._returnBoxContainerRequest = _returnBoxContainerRequest
+    r.Set("return_box_container_request", _returnBoxContainerRequest)
     return nil
 }
 
 // ReturnBoxContainerRequest Getter
 func (r AlibabaWdkFulfillBoxPostBackBoxRequest) GetReturnBoxContainerRequest() *ReturnBoxContainerRequest {
-    return r.returnBoxContainerRequest
+    return r._returnBoxContainerRequest
 }

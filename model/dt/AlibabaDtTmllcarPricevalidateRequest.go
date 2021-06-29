@@ -17,17 +17,17 @@ alibaba.dt.tmllcar.pricevalidate
 type AlibabaDtTmllcarPricevalidateRequest struct {
     model.Params
     // tt
-    appName   string
+    _appName   string
     // tt
-    name   string
+    _name   string
     // tt
-    password   string
+    _password   string
     // tt
-    price   *BigDecimal
+    _price   *BigDecimal
     // tt
-    cityName   string
+    _cityName   string
     // tt
-    modelName   string
+    _modelName   string
 }
 
 // 初始化AlibabaDtTmllcarPricevalidateRequest对象
@@ -52,73 +52,73 @@ func (r AlibabaDtTmllcarPricevalidateRequest) GetApiParams() url.Values {
 }
 // AppName Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }
 // Name Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Password Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetPassword(password string) error {
-    r.password = password
-    r.Set("password", password)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetPassword(_password string) error {
+    r._password = _password
+    r.Set("password", _password)
     return nil
 }
 
 // Password Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetPassword() string {
-    return r.password
+    return r._password
 }
 // Price Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetPrice(price *BigDecimal) error {
-    r.price = price
-    r.Set("price", price)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetPrice(_price *BigDecimal) error {
+    r._price = _price
+    r.Set("price", _price)
     return nil
 }
 
 // Price Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetPrice() *BigDecimal {
-    return r.price
+    return r._price
 }
 // CityName Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetCityName(cityName string) error {
-    r.cityName = cityName
-    r.Set("city_name", cityName)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetCityName(_cityName string) error {
+    r._cityName = _cityName
+    r.Set("city_name", _cityName)
     return nil
 }
 
 // CityName Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetCityName() string {
-    return r.cityName
+    return r._cityName
 }
 // ModelName Setter
 // tt
-func (r *AlibabaDtTmllcarPricevalidateRequest) SetModelName(modelName string) error {
-    r.modelName = modelName
-    r.Set("model_name", modelName)
+func (r *AlibabaDtTmllcarPricevalidateRequest) SetModelName(_modelName string) error {
+    r._modelName = _modelName
+    r.Set("model_name", _modelName)
     return nil
 }
 
 // ModelName Getter
 func (r AlibabaDtTmllcarPricevalidateRequest) GetModelName() string {
-    return r.modelName
+    return r._modelName
 }

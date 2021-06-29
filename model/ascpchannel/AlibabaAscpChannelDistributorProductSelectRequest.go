@@ -15,7 +15,7 @@ alibaba.ascp.channel.distributor.product.select
 type AlibabaAscpChannelDistributorProductSelectRequest struct {
     model.Params
     // 选品请求
-    selectProductRequest   *ProductLinkRequest
+    _selectProductRequest   *ProductLinkRequest
 }
 
 // 初始化AlibabaAscpChannelDistributorProductSelectRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelDistributorProductSelectRequest) GetApiParams() url.Va
 }
 // SelectProductRequest Setter
 // 选品请求
-func (r *AlibabaAscpChannelDistributorProductSelectRequest) SetSelectProductRequest(selectProductRequest *ProductLinkRequest) error {
-    r.selectProductRequest = selectProductRequest
-    r.Set("select_product_request", selectProductRequest)
+func (r *AlibabaAscpChannelDistributorProductSelectRequest) SetSelectProductRequest(_selectProductRequest *ProductLinkRequest) error {
+    r._selectProductRequest = _selectProductRequest
+    r.Set("select_product_request", _selectProductRequest)
     return nil
 }
 
 // SelectProductRequest Getter
 func (r AlibabaAscpChannelDistributorProductSelectRequest) GetSelectProductRequest() *ProductLinkRequest {
-    return r.selectProductRequest
+    return r._selectProductRequest
 }

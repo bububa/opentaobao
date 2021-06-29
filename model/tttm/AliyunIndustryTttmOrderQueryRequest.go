@@ -15,9 +15,9 @@ aliyun.industry.tttm.order.query
 type AliyunIndustryTttmOrderQueryRequest struct {
     model.Params
     // 订单号
-    orderId   string
+    _orderId   string
     // 外部采购单号
-    externalId   string
+    _externalId   string
 }
 
 // 初始化AliyunIndustryTttmOrderQueryRequest对象
@@ -42,25 +42,25 @@ func (r AliyunIndustryTttmOrderQueryRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单号
-func (r *AliyunIndustryTttmOrderQueryRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AliyunIndustryTttmOrderQueryRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AliyunIndustryTttmOrderQueryRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // ExternalId Setter
 // 外部采购单号
-func (r *AliyunIndustryTttmOrderQueryRequest) SetExternalId(externalId string) error {
-    r.externalId = externalId
-    r.Set("external_id", externalId)
+func (r *AliyunIndustryTttmOrderQueryRequest) SetExternalId(_externalId string) error {
+    r._externalId = _externalId
+    r.Set("external_id", _externalId)
     return nil
 }
 
 // ExternalId Getter
 func (r AliyunIndustryTttmOrderQueryRequest) GetExternalId() string {
-    return r.externalId
+    return r._externalId
 }

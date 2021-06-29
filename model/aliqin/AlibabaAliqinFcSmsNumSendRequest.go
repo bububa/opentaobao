@@ -16,17 +16,17 @@ alibaba.aliqin.fc.sms.num.send
 type AlibabaAliqinFcSmsNumSendRequest struct {
     model.Params
     // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
-    extend   string
+    _extend   string
     // 短信类型，传入值请填写normal
-    smsType   string
+    _smsType   string
     // 短信签名，传入的短信签名必须是在阿里大于“管理中心-验证码/短信通知/推广短信-配置短信签名”中的可用签名。如“阿里大于”已在短信签名管理中通过审核，则可传入”阿里大于“（传参时去掉引号）作为短信签名。短信效果示例：【阿里大于】欢迎使用阿里大于服务。
-    smsFreeSignName   string
+    _smsFreeSignName   string
     // 短信模板变量，传参规则{"key":"value"}，key的名字须和申请模板中的变量名一致，多个变量之间以逗号隔开。示例：针对模板“验证码${code}，您正在进行${product}身份验证，打死不要告诉别人哦！”，传参时需传入{"code":"1234","product":"alidayu"}
-    smsParam   string
+    _smsParam   string
     // 短信接收号码。支持单个或多个手机号码，传入号码为11位手机号码，不能加0或+86。群发短信需传入多个号码，以英文逗号分隔，一次调用最多传入200个号码。示例：18600000000,13911111111,13322222222
-    recNum   string
+    _recNum   string
     // 短信模板ID，传入的模板必须是在阿里大于“管理中心-短信模板管理”中的可用模板。示例：SMS_585014
-    smsTemplateCode   string
+    _smsTemplateCode   string
 }
 
 // 初始化AlibabaAliqinFcSmsNumSendRequest对象
@@ -51,73 +51,73 @@ func (r AlibabaAliqinFcSmsNumSendRequest) GetApiParams() url.Values {
 }
 // Extend Setter
 // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetExtend(extend string) error {
-    r.extend = extend
-    r.Set("extend", extend)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetExtend(_extend string) error {
+    r._extend = _extend
+    r.Set("extend", _extend)
     return nil
 }
 
 // Extend Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetExtend() string {
-    return r.extend
+    return r._extend
 }
 // SmsType Setter
 // 短信类型，传入值请填写normal
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsType(smsType string) error {
-    r.smsType = smsType
-    r.Set("sms_type", smsType)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsType(_smsType string) error {
+    r._smsType = _smsType
+    r.Set("sms_type", _smsType)
     return nil
 }
 
 // SmsType Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetSmsType() string {
-    return r.smsType
+    return r._smsType
 }
 // SmsFreeSignName Setter
 // 短信签名，传入的短信签名必须是在阿里大于“管理中心-验证码/短信通知/推广短信-配置短信签名”中的可用签名。如“阿里大于”已在短信签名管理中通过审核，则可传入”阿里大于“（传参时去掉引号）作为短信签名。短信效果示例：【阿里大于】欢迎使用阿里大于服务。
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsFreeSignName(smsFreeSignName string) error {
-    r.smsFreeSignName = smsFreeSignName
-    r.Set("sms_free_sign_name", smsFreeSignName)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsFreeSignName(_smsFreeSignName string) error {
+    r._smsFreeSignName = _smsFreeSignName
+    r.Set("sms_free_sign_name", _smsFreeSignName)
     return nil
 }
 
 // SmsFreeSignName Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetSmsFreeSignName() string {
-    return r.smsFreeSignName
+    return r._smsFreeSignName
 }
 // SmsParam Setter
 // 短信模板变量，传参规则{"key":"value"}，key的名字须和申请模板中的变量名一致，多个变量之间以逗号隔开。示例：针对模板“验证码${code}，您正在进行${product}身份验证，打死不要告诉别人哦！”，传参时需传入{"code":"1234","product":"alidayu"}
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsParam(smsParam string) error {
-    r.smsParam = smsParam
-    r.Set("sms_param", smsParam)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsParam(_smsParam string) error {
+    r._smsParam = _smsParam
+    r.Set("sms_param", _smsParam)
     return nil
 }
 
 // SmsParam Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetSmsParam() string {
-    return r.smsParam
+    return r._smsParam
 }
 // RecNum Setter
 // 短信接收号码。支持单个或多个手机号码，传入号码为11位手机号码，不能加0或+86。群发短信需传入多个号码，以英文逗号分隔，一次调用最多传入200个号码。示例：18600000000,13911111111,13322222222
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetRecNum(recNum string) error {
-    r.recNum = recNum
-    r.Set("rec_num", recNum)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetRecNum(_recNum string) error {
+    r._recNum = _recNum
+    r.Set("rec_num", _recNum)
     return nil
 }
 
 // RecNum Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetRecNum() string {
-    return r.recNum
+    return r._recNum
 }
 // SmsTemplateCode Setter
 // 短信模板ID，传入的模板必须是在阿里大于“管理中心-短信模板管理”中的可用模板。示例：SMS_585014
-func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsTemplateCode(smsTemplateCode string) error {
-    r.smsTemplateCode = smsTemplateCode
-    r.Set("sms_template_code", smsTemplateCode)
+func (r *AlibabaAliqinFcSmsNumSendRequest) SetSmsTemplateCode(_smsTemplateCode string) error {
+    r._smsTemplateCode = _smsTemplateCode
+    r.Set("sms_template_code", _smsTemplateCode)
     return nil
 }
 
 // SmsTemplateCode Getter
 func (r AlibabaAliqinFcSmsNumSendRequest) GetSmsTemplateCode() string {
-    return r.smsTemplateCode
+    return r._smsTemplateCode
 }

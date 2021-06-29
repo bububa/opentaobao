@@ -15,7 +15,7 @@ tmall.device.item.promotion.get
 type TmallDeviceItemPromotionGetRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TmallDeviceItemPromotionGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallDeviceItemPromotionGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallDeviceItemPromotionGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallDeviceItemPromotionGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallDeviceItemPromotionGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

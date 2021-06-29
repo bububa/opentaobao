@@ -16,7 +16,7 @@ tmall.service.settleadjustment.modify
 type TmallServiceSettleadjustmentModifyRequest struct {
     model.Params
     // 结算调整单父节点
-    paramSettleAdjustmentRequest   *SettleAdjustmentRequest
+    _paramSettleAdjustmentRequest   *SettleAdjustmentRequest
 }
 
 // 初始化TmallServiceSettleadjustmentModifyRequest对象
@@ -41,13 +41,13 @@ func (r TmallServiceSettleadjustmentModifyRequest) GetApiParams() url.Values {
 }
 // ParamSettleAdjustmentRequest Setter
 // 结算调整单父节点
-func (r *TmallServiceSettleadjustmentModifyRequest) SetParamSettleAdjustmentRequest(paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
-    r.paramSettleAdjustmentRequest = paramSettleAdjustmentRequest
-    r.Set("param_settle_adjustment_request", paramSettleAdjustmentRequest)
+func (r *TmallServiceSettleadjustmentModifyRequest) SetParamSettleAdjustmentRequest(_paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
+    r._paramSettleAdjustmentRequest = _paramSettleAdjustmentRequest
+    r.Set("param_settle_adjustment_request", _paramSettleAdjustmentRequest)
     return nil
 }
 
 // ParamSettleAdjustmentRequest Getter
 func (r TmallServiceSettleadjustmentModifyRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
-    return r.paramSettleAdjustmentRequest
+    return r._paramSettleAdjustmentRequest
 }

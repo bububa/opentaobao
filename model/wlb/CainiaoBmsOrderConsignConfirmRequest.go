@@ -15,7 +15,7 @@ BMS出库后，通知ISV
 type CainiaoBmsOrderConsignConfirmRequest struct {
     model.Params
     // 通知消息主体
-    content   *BmsConsignOrderConfirm
+    _content   *BmsConsignOrderConfirm
 }
 
 // 初始化CainiaoBmsOrderConsignConfirmRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoBmsOrderConsignConfirmRequest) GetApiParams() url.Values {
 }
 // Content Setter
 // 通知消息主体
-func (r *CainiaoBmsOrderConsignConfirmRequest) SetContent(content *BmsConsignOrderConfirm) error {
-    r.content = content
-    r.Set("content", content)
+func (r *CainiaoBmsOrderConsignConfirmRequest) SetContent(_content *BmsConsignOrderConfirm) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r CainiaoBmsOrderConsignConfirmRequest) GetContent() *BmsConsignOrderConfirm {
-    return r.content
+    return r._content
 }

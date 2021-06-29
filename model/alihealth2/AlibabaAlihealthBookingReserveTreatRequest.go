@@ -15,7 +15,7 @@ alibaba.alihealth.booking.reserve.treat
 type AlibabaAlihealthBookingReserveTreatRequest struct {
     model.Params
     // treat
-    treat   *IsvReserveRequest
+    _treat   *IsvReserveRequest
 }
 
 // 初始化AlibabaAlihealthBookingReserveTreatRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveTreatRequest) GetApiParams() url.Values {
 }
 // Treat Setter
 // treat
-func (r *AlibabaAlihealthBookingReserveTreatRequest) SetTreat(treat *IsvReserveRequest) error {
-    r.treat = treat
-    r.Set("treat", treat)
+func (r *AlibabaAlihealthBookingReserveTreatRequest) SetTreat(_treat *IsvReserveRequest) error {
+    r._treat = _treat
+    r.Set("treat", _treat)
     return nil
 }
 
 // Treat Getter
 func (r AlibabaAlihealthBookingReserveTreatRequest) GetTreat() *IsvReserveRequest {
-    return r.treat
+    return r._treat
 }

@@ -15,9 +15,9 @@ tmall.supplychain.channel.product.release
 type TmallSupplychainChannelProductReleaseRequest struct {
     model.Params
     // 产品数字ID
-    productId   int64
+    _productId   int64
     // 渠道ID
-    channelCode   int64
+    _channelCode   int64
 }
 
 // 初始化TmallSupplychainChannelProductReleaseRequest对象
@@ -42,25 +42,25 @@ func (r TmallSupplychainChannelProductReleaseRequest) GetApiParams() url.Values 
 }
 // ProductId Setter
 // 产品数字ID
-func (r *TmallSupplychainChannelProductReleaseRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductReleaseRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductReleaseRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // ChannelCode Setter
 // 渠道ID
-func (r *TmallSupplychainChannelProductReleaseRequest) SetChannelCode(channelCode int64) error {
-    r.channelCode = channelCode
-    r.Set("channel_code", channelCode)
+func (r *TmallSupplychainChannelProductReleaseRequest) SetChannelCode(_channelCode int64) error {
+    r._channelCode = _channelCode
+    r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
 func (r TmallSupplychainChannelProductReleaseRequest) GetChannelCode() int64 {
-    return r.channelCode
+    return r._channelCode
 }

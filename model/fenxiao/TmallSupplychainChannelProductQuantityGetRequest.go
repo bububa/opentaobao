@@ -15,9 +15,9 @@ tmall.supplychain.channel.product.quantity.get
 type TmallSupplychainChannelProductQuantityGetRequest struct {
     model.Params
     // 产品数字ID
-    productId   int64
+    _productId   int64
     // SKU ID
-    skuId   int64
+    _skuId   int64
 }
 
 // 初始化TmallSupplychainChannelProductQuantityGetRequest对象
@@ -42,25 +42,25 @@ func (r TmallSupplychainChannelProductQuantityGetRequest) GetApiParams() url.Val
 }
 // ProductId Setter
 // 产品数字ID
-func (r *TmallSupplychainChannelProductQuantityGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TmallSupplychainChannelProductQuantityGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TmallSupplychainChannelProductQuantityGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }
 // SkuId Setter
 // SKU ID
-func (r *TmallSupplychainChannelProductQuantityGetRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TmallSupplychainChannelProductQuantityGetRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TmallSupplychainChannelProductQuantityGetRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }

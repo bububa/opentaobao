@@ -15,7 +15,7 @@ yunos.tvpubadmin.device.apks
 type YunosTvpubadminDeviceApksRequest struct {
     model.Params
     // 牌照
-    license   int64
+    _license   int64
 }
 
 // 初始化YunosTvpubadminDeviceApksRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDeviceApksRequest) GetApiParams() url.Values {
 }
 // License Setter
 // 牌照
-func (r *YunosTvpubadminDeviceApksRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceApksRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceApksRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }

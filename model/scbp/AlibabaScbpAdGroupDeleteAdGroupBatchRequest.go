@@ -15,11 +15,11 @@ alibaba.scbp.ad.group.delete.ad.group.batch
 type AlibabaScbpAdGroupDeleteAdGroupBatchRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 请求参数
-    adGroupBatchOperation   *AdGroupBatchOperationDto
+    _adGroupBatchOperation   *AdGroupBatchOperationDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdGroupDeleteAdGroupBatchRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdGroupDeleteAdGroupBatchRequest) GetApiParams() url.Values {
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdGroupDeleteAdGroupBatchRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // AdGroupBatchOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetAdGroupBatchOperation(adGroupBatchOperation *AdGroupBatchOperationDto) error {
-    r.adGroupBatchOperation = adGroupBatchOperation
-    r.Set("ad_group_batch_operation", adGroupBatchOperation)
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDto) error {
+    r._adGroupBatchOperation = _adGroupBatchOperation
+    r.Set("ad_group_batch_operation", _adGroupBatchOperation)
     return nil
 }
 
 // AdGroupBatchOperation Getter
 func (r AlibabaScbpAdGroupDeleteAdGroupBatchRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
-    return r.adGroupBatchOperation
+    return r._adGroupBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdGroupDeleteAdGroupBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdGroupDeleteAdGroupBatchRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

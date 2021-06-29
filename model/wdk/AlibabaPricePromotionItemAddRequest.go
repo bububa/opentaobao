@@ -15,7 +15,7 @@ alibaba.price.promotion.item.add
 type AlibabaPricePromotionItemAddRequest struct {
     model.Params
     // 入参
-    promotionContent   *PromotionContent
+    _promotionContent   *PromotionContent
 }
 
 // 初始化AlibabaPricePromotionItemAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPricePromotionItemAddRequest) GetApiParams() url.Values {
 }
 // PromotionContent Setter
 // 入参
-func (r *AlibabaPricePromotionItemAddRequest) SetPromotionContent(promotionContent *PromotionContent) error {
-    r.promotionContent = promotionContent
-    r.Set("promotion_content", promotionContent)
+func (r *AlibabaPricePromotionItemAddRequest) SetPromotionContent(_promotionContent *PromotionContent) error {
+    r._promotionContent = _promotionContent
+    r.Set("promotion_content", _promotionContent)
     return nil
 }
 
 // PromotionContent Getter
 func (r AlibabaPricePromotionItemAddRequest) GetPromotionContent() *PromotionContent {
-    return r.promotionContent
+    return r._promotionContent
 }

@@ -15,11 +15,11 @@ alibaba.xiami.api.collect.detail.get
 type AlibabaXiamiApiCollectDetailGetRequest struct {
     model.Params
     // 精选集ID
-    id   int64
+    _id   int64
     // 是否获取完整描述
-    fullDes   bool
+    _fullDes   bool
     // 是否需要tag, show为需要, 其他为不需要
-    tag   string
+    _tag   string
 }
 
 // 初始化AlibabaXiamiApiCollectDetailGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaXiamiApiCollectDetailGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 精选集ID
-func (r *AlibabaXiamiApiCollectDetailGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaXiamiApiCollectDetailGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaXiamiApiCollectDetailGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // FullDes Setter
 // 是否获取完整描述
-func (r *AlibabaXiamiApiCollectDetailGetRequest) SetFullDes(fullDes bool) error {
-    r.fullDes = fullDes
-    r.Set("full_des", fullDes)
+func (r *AlibabaXiamiApiCollectDetailGetRequest) SetFullDes(_fullDes bool) error {
+    r._fullDes = _fullDes
+    r.Set("full_des", _fullDes)
     return nil
 }
 
 // FullDes Getter
 func (r AlibabaXiamiApiCollectDetailGetRequest) GetFullDes() bool {
-    return r.fullDes
+    return r._fullDes
 }
 // Tag Setter
 // 是否需要tag, show为需要, 其他为不需要
-func (r *AlibabaXiamiApiCollectDetailGetRequest) SetTag(tag string) error {
-    r.tag = tag
-    r.Set("tag", tag)
+func (r *AlibabaXiamiApiCollectDetailGetRequest) SetTag(_tag string) error {
+    r._tag = _tag
+    r.Set("tag", _tag)
     return nil
 }
 
 // Tag Getter
 func (r AlibabaXiamiApiCollectDetailGetRequest) GetTag() string {
-    return r.tag
+    return r._tag
 }

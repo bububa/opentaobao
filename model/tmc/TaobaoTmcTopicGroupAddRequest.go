@@ -16,9 +16,9 @@ taobao.tmc.topic.group.add
 type TaobaoTmcTopicGroupAddRequest struct {
     model.Params
     // 消息分组名，如果不存在，会自动创建
-    groupName   string
+    _groupName   string
     // 消息topic名称，多个以逗号(,)分割
-    topics   []string
+    _topics   []string
 }
 
 // 初始化TaobaoTmcTopicGroupAddRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoTmcTopicGroupAddRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 消息分组名，如果不存在，会自动创建
-func (r *TaobaoTmcTopicGroupAddRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcTopicGroupAddRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcTopicGroupAddRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }
 // Topics Setter
 // 消息topic名称，多个以逗号(,)分割
-func (r *TaobaoTmcTopicGroupAddRequest) SetTopics(topics []string) error {
-    r.topics = topics
-    r.Set("topics", topics)
+func (r *TaobaoTmcTopicGroupAddRequest) SetTopics(_topics []string) error {
+    r._topics = _topics
+    r.Set("topics", _topics)
     return nil
 }
 
 // Topics Getter
 func (r TaobaoTmcTopicGroupAddRequest) GetTopics() []string {
-    return r.topics
+    return r._topics
 }

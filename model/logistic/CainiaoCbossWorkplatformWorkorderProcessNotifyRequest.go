@@ -15,7 +15,7 @@ cainiao.cboss.workplatform.workorder.process.notify
 type CainiaoCbossWorkplatformWorkorderProcessNotifyRequest struct {
     model.Params
     // 服务入参
-    content   *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct
+    _content   *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct
 }
 
 // 初始化CainiaoCbossWorkplatformWorkorderProcessNotifyRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetApiParams() ur
 }
 // Content Setter
 // 服务入参
-func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) SetContent(content *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct) error {
-    r.content = content
-    r.Set("content", content)
+func (r *CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) SetContent(_content *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r CainiaoCbossWorkplatformWorkorderProcessNotifyRequest) GetContent() *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct {
-    return r.content
+    return r._content
 }

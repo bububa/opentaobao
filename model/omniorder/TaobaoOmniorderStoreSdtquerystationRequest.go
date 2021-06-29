@@ -15,7 +15,7 @@ taobao.omniorder.store.sdtquerystation
 type TaobaoOmniorderStoreSdtquerystationRequest struct {
     model.Params
     // 取号时返回的packageId
-    paramLong2   int64
+    _paramLong2   int64
 }
 
 // 初始化TaobaoOmniorderStoreSdtquerystationRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderStoreSdtquerystationRequest) GetApiParams() url.Values {
 }
 // ParamLong2 Setter
 // 取号时返回的packageId
-func (r *TaobaoOmniorderStoreSdtquerystationRequest) SetParamLong2(paramLong2 int64) error {
-    r.paramLong2 = paramLong2
-    r.Set("param_long2", paramLong2)
+func (r *TaobaoOmniorderStoreSdtquerystationRequest) SetParamLong2(_paramLong2 int64) error {
+    r._paramLong2 = _paramLong2
+    r.Set("param_long2", _paramLong2)
     return nil
 }
 
 // ParamLong2 Getter
 func (r TaobaoOmniorderStoreSdtquerystationRequest) GetParamLong2() int64 {
-    return r.paramLong2
+    return r._paramLong2
 }

@@ -15,7 +15,7 @@ taobao.de.activity.securitytoken.apply
 type TaobaoDeActivitySecuritytokenApplyRequest struct {
     model.Params
     // 运营和cp约定的事件唯一标示
-    eventKey   string
+    _eventKey   string
 }
 
 // 初始化TaobaoDeActivitySecuritytokenApplyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoDeActivitySecuritytokenApplyRequest) GetApiParams() url.Values {
 }
 // EventKey Setter
 // 运营和cp约定的事件唯一标示
-func (r *TaobaoDeActivitySecuritytokenApplyRequest) SetEventKey(eventKey string) error {
-    r.eventKey = eventKey
-    r.Set("event_key", eventKey)
+func (r *TaobaoDeActivitySecuritytokenApplyRequest) SetEventKey(_eventKey string) error {
+    r._eventKey = _eventKey
+    r.Set("event_key", _eventKey)
     return nil
 }
 
 // EventKey Getter
 func (r TaobaoDeActivitySecuritytokenApplyRequest) GetEventKey() string {
-    return r.eventKey
+    return r._eventKey
 }

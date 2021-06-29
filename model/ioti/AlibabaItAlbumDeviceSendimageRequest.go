@@ -15,7 +15,7 @@ alibaba.it.album.device.sendimage
 type AlibabaItAlbumDeviceSendimageRequest struct {
     model.Params
     // 下发图片mac地址
-    mac   string
+    _mac   string
 }
 
 // 初始化AlibabaItAlbumDeviceSendimageRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaItAlbumDeviceSendimageRequest) GetApiParams() url.Values {
 }
 // Mac Setter
 // 下发图片mac地址
-func (r *AlibabaItAlbumDeviceSendimageRequest) SetMac(mac string) error {
-    r.mac = mac
-    r.Set("mac", mac)
+func (r *AlibabaItAlbumDeviceSendimageRequest) SetMac(_mac string) error {
+    r._mac = _mac
+    r.Set("mac", _mac)
     return nil
 }
 
 // Mac Getter
 func (r AlibabaItAlbumDeviceSendimageRequest) GetMac() string {
-    return r.mac
+    return r._mac
 }

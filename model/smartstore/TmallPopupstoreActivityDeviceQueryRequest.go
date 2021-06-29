@@ -15,7 +15,7 @@ tmall.popupstore.activity.device.query
 type TmallPopupstoreActivityDeviceQueryRequest struct {
     model.Params
     // ISV的活动ID
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化TmallPopupstoreActivityDeviceQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallPopupstoreActivityDeviceQueryRequest) GetApiParams() url.Values {
 }
 // ActivityId Setter
 // ISV的活动ID
-func (r *TmallPopupstoreActivityDeviceQueryRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TmallPopupstoreActivityDeviceQueryRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TmallPopupstoreActivityDeviceQueryRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

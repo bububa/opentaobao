@@ -15,7 +15,7 @@ alibaba.security.jaq.app.shieldresult.get
 type AlibabaSecurityJaqAppShieldresultGetRequest struct {
     model.Params
     // 任务唯一标识
-    itemId   string
+    _itemId   string
 }
 
 // 初始化AlibabaSecurityJaqAppShieldresultGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppShieldresultGetRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 任务唯一标识
-func (r *AlibabaSecurityJaqAppShieldresultGetRequest) SetItemId(itemId string) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaSecurityJaqAppShieldresultGetRequest) SetItemId(_itemId string) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaSecurityJaqAppShieldresultGetRequest) GetItemId() string {
-    return r.itemId
+    return r._itemId
 }

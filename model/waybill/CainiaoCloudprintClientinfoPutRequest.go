@@ -15,7 +15,7 @@ cainiao.cloudprint.clientinfo.put
 type CainiaoCloudprintClientinfoPutRequest struct {
     model.Params
     // 客户端上传json数据
-    jsonData   string
+    _jsonData   string
 }
 
 // 初始化CainiaoCloudprintClientinfoPutRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintClientinfoPutRequest) GetApiParams() url.Values {
 }
 // JsonData Setter
 // 客户端上传json数据
-func (r *CainiaoCloudprintClientinfoPutRequest) SetJsonData(jsonData string) error {
-    r.jsonData = jsonData
-    r.Set("json_data", jsonData)
+func (r *CainiaoCloudprintClientinfoPutRequest) SetJsonData(_jsonData string) error {
+    r._jsonData = _jsonData
+    r.Set("json_data", _jsonData)
     return nil
 }
 
 // JsonData Getter
 func (r CainiaoCloudprintClientinfoPutRequest) GetJsonData() string {
-    return r.jsonData
+    return r._jsonData
 }

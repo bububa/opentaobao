@@ -15,17 +15,17 @@ taobao.subway.marsh.land.rpt.get
 type TaobaoSubwayMarshLandRptGetRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 2021-05-11
-    endDate   string
+    _endDate   string
     // 推广组id
-    adgroupIdEqual   string
+    _adgroupIdEqual   string
     // 词包类型（捡漏词包填19）
-    isAutoMatchEqual   string
+    _isAutoMatchEqual   string
     // 计划id
-    campaignIdEqual   string
+    _campaignIdEqual   string
     // 2021-05-05
-    startDate   string
+    _startDate   string
 }
 
 // 初始化TaobaoSubwayMarshLandRptGetRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoSubwayMarshLandRptGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // EndDate Setter
 // 2021-05-11
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // AdgroupIdEqual Setter
 // 推广组id
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetAdgroupIdEqual(adgroupIdEqual string) error {
-    r.adgroupIdEqual = adgroupIdEqual
-    r.Set("adgroup_id_equal", adgroupIdEqual)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetAdgroupIdEqual(_adgroupIdEqual string) error {
+    r._adgroupIdEqual = _adgroupIdEqual
+    r.Set("adgroup_id_equal", _adgroupIdEqual)
     return nil
 }
 
 // AdgroupIdEqual Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetAdgroupIdEqual() string {
-    return r.adgroupIdEqual
+    return r._adgroupIdEqual
 }
 // IsAutoMatchEqual Setter
 // 词包类型（捡漏词包填19）
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetIsAutoMatchEqual(isAutoMatchEqual string) error {
-    r.isAutoMatchEqual = isAutoMatchEqual
-    r.Set("is_auto_match_equal", isAutoMatchEqual)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetIsAutoMatchEqual(_isAutoMatchEqual string) error {
+    r._isAutoMatchEqual = _isAutoMatchEqual
+    r.Set("is_auto_match_equal", _isAutoMatchEqual)
     return nil
 }
 
 // IsAutoMatchEqual Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetIsAutoMatchEqual() string {
-    return r.isAutoMatchEqual
+    return r._isAutoMatchEqual
 }
 // CampaignIdEqual Setter
 // 计划id
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetCampaignIdEqual(campaignIdEqual string) error {
-    r.campaignIdEqual = campaignIdEqual
-    r.Set("campaign_id_equal", campaignIdEqual)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetCampaignIdEqual(_campaignIdEqual string) error {
+    r._campaignIdEqual = _campaignIdEqual
+    r.Set("campaign_id_equal", _campaignIdEqual)
     return nil
 }
 
 // CampaignIdEqual Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetCampaignIdEqual() string {
-    return r.campaignIdEqual
+    return r._campaignIdEqual
 }
 // StartDate Setter
 // 2021-05-05
-func (r *TaobaoSubwayMarshLandRptGetRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoSubwayMarshLandRptGetRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoSubwayMarshLandRptGetRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }

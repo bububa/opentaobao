@@ -15,9 +15,9 @@ alibaba.alihealth.tracecodeseller.milk.trace.tosource.add.data
 type AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest struct {
     model.Params
     // 奶粉品牌ID
-    entId   string
+    _entId   string
     // 奶粉数据
-    jsonStr   string
+    _jsonStr   string
 }
 
 // 初始化AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) GetApiPa
 }
 // EntId Setter
 // 奶粉品牌ID
-func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) SetEntId(entId string) error {
-    r.entId = entId
-    r.Set("ent_id", entId)
+func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) SetEntId(_entId string) error {
+    r._entId = _entId
+    r.Set("ent_id", _entId)
     return nil
 }
 
 // EntId Getter
 func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) GetEntId() string {
-    return r.entId
+    return r._entId
 }
 // JsonStr Setter
 // 奶粉数据
-func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) SetJsonStr(jsonStr string) error {
-    r.jsonStr = jsonStr
-    r.Set("json_str", jsonStr)
+func (r *AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) SetJsonStr(_jsonStr string) error {
+    r._jsonStr = _jsonStr
+    r.Set("json_str", _jsonStr)
     return nil
 }
 
 // JsonStr Getter
 func (r AlibabaAlihealthTracecodesellerMilkTraceTosourceAddDataRequest) GetJsonStr() string {
-    return r.jsonStr
+    return r._jsonStr
 }

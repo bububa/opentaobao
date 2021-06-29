@@ -15,7 +15,7 @@ alibaba.fpm.file.upload
 type AlibabaFpmFileUploadRequest struct {
     model.Params
     // 实体
-    bizDto   *FileUploadRequestDto
+    _bizDto   *FileUploadRequestDto
 }
 
 // 初始化AlibabaFpmFileUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaFpmFileUploadRequest) GetApiParams() url.Values {
 }
 // BizDto Setter
 // 实体
-func (r *AlibabaFpmFileUploadRequest) SetBizDto(bizDto *FileUploadRequestDto) error {
-    r.bizDto = bizDto
-    r.Set("biz_dto", bizDto)
+func (r *AlibabaFpmFileUploadRequest) SetBizDto(_bizDto *FileUploadRequestDto) error {
+    r._bizDto = _bizDto
+    r.Set("biz_dto", _bizDto)
     return nil
 }
 
 // BizDto Getter
 func (r AlibabaFpmFileUploadRequest) GetBizDto() *FileUploadRequestDto {
-    return r.bizDto
+    return r._bizDto
 }

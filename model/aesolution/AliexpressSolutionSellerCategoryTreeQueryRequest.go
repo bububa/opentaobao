@@ -15,9 +15,9 @@ API for seller to query the category tree. Support only displaying the categorie
 type AliexpressSolutionSellerCategoryTreeQueryRequest struct {
     model.Params
     // parent category ID. To obtain the root categories, setting the category_id = 0
-    categoryId   int64
+    _categoryId   int64
     // filter the categories which seller does not have permission
-    filterNoPermission   bool
+    _filterNoPermission   bool
 }
 
 // 初始化AliexpressSolutionSellerCategoryTreeQueryRequest对象
@@ -42,25 +42,25 @@ func (r AliexpressSolutionSellerCategoryTreeQueryRequest) GetApiParams() url.Val
 }
 // CategoryId Setter
 // parent category ID. To obtain the root categories, setting the category_id = 0
-func (r *AliexpressSolutionSellerCategoryTreeQueryRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *AliexpressSolutionSellerCategoryTreeQueryRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r AliexpressSolutionSellerCategoryTreeQueryRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }
 // FilterNoPermission Setter
 // filter the categories which seller does not have permission
-func (r *AliexpressSolutionSellerCategoryTreeQueryRequest) SetFilterNoPermission(filterNoPermission bool) error {
-    r.filterNoPermission = filterNoPermission
-    r.Set("filter_no_permission", filterNoPermission)
+func (r *AliexpressSolutionSellerCategoryTreeQueryRequest) SetFilterNoPermission(_filterNoPermission bool) error {
+    r._filterNoPermission = _filterNoPermission
+    r.Set("filter_no_permission", _filterNoPermission)
     return nil
 }
 
 // FilterNoPermission Getter
 func (r AliexpressSolutionSellerCategoryTreeQueryRequest) GetFilterNoPermission() bool {
-    return r.filterNoPermission
+    return r._filterNoPermission
 }

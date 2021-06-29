@@ -15,9 +15,9 @@ alibaba.aliqin.fc.iot.useroscontrol
 type AlibabaAliqinFcIotUseroscontrolRequest struct {
     model.Params
     // 物联卡的iccid
-    iccid   string
+    _iccid   string
     // 用户停开的操作类型：MANAGE_RESUME、MANAGE_STOP
-    action   string
+    _action   string
 }
 
 // 初始化AlibabaAliqinFcIotUseroscontrolRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliqinFcIotUseroscontrolRequest) GetApiParams() url.Values {
 }
 // Iccid Setter
 // 物联卡的iccid
-func (r *AlibabaAliqinFcIotUseroscontrolRequest) SetIccid(iccid string) error {
-    r.iccid = iccid
-    r.Set("iccid", iccid)
+func (r *AlibabaAliqinFcIotUseroscontrolRequest) SetIccid(_iccid string) error {
+    r._iccid = _iccid
+    r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
 func (r AlibabaAliqinFcIotUseroscontrolRequest) GetIccid() string {
-    return r.iccid
+    return r._iccid
 }
 // Action Setter
 // 用户停开的操作类型：MANAGE_RESUME、MANAGE_STOP
-func (r *AlibabaAliqinFcIotUseroscontrolRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *AlibabaAliqinFcIotUseroscontrolRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r AlibabaAliqinFcIotUseroscontrolRequest) GetAction() string {
-    return r.action
+    return r._action
 }

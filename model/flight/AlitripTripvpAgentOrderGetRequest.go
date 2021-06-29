@@ -15,9 +15,9 @@ alitrip.tripvp.agent.order.get
 type AlitripTripvpAgentOrderGetRequest struct {
     model.Params
     // 代理商ID
-    agentId   int64
+    _agentId   int64
     // 辅营的订单号
-    tradeOrderId   int64
+    _tradeOrderId   int64
 }
 
 // 初始化AlitripTripvpAgentOrderGetRequest对象
@@ -42,25 +42,25 @@ func (r AlitripTripvpAgentOrderGetRequest) GetApiParams() url.Values {
 }
 // AgentId Setter
 // 代理商ID
-func (r *AlitripTripvpAgentOrderGetRequest) SetAgentId(agentId int64) error {
-    r.agentId = agentId
-    r.Set("agent_id", agentId)
+func (r *AlitripTripvpAgentOrderGetRequest) SetAgentId(_agentId int64) error {
+    r._agentId = _agentId
+    r.Set("agent_id", _agentId)
     return nil
 }
 
 // AgentId Getter
 func (r AlitripTripvpAgentOrderGetRequest) GetAgentId() int64 {
-    return r.agentId
+    return r._agentId
 }
 // TradeOrderId Setter
 // 辅营的订单号
-func (r *AlitripTripvpAgentOrderGetRequest) SetTradeOrderId(tradeOrderId int64) error {
-    r.tradeOrderId = tradeOrderId
-    r.Set("trade_order_id", tradeOrderId)
+func (r *AlitripTripvpAgentOrderGetRequest) SetTradeOrderId(_tradeOrderId int64) error {
+    r._tradeOrderId = _tradeOrderId
+    r.Set("trade_order_id", _tradeOrderId)
     return nil
 }
 
 // TradeOrderId Getter
 func (r AlitripTripvpAgentOrderGetRequest) GetTradeOrderId() int64 {
-    return r.tradeOrderId
+    return r._tradeOrderId
 }

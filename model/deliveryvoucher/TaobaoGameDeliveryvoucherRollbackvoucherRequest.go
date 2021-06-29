@@ -15,7 +15,7 @@ taobao.game.deliveryvoucher.rollbackvoucher
 type TaobaoGameDeliveryvoucherRollbackvoucherRequest struct {
     model.Params
     // 发券参数
-    param0   *RollbackVoucherRequest
+    _param0   *RollbackVoucherRequest
 }
 
 // 初始化TaobaoGameDeliveryvoucherRollbackvoucherRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 发券参数
-func (r *TaobaoGameDeliveryvoucherRollbackvoucherRequest) SetParam0(param0 *RollbackVoucherRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoGameDeliveryvoucherRollbackvoucherRequest) SetParam0(_param0 *RollbackVoucherRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoGameDeliveryvoucherRollbackvoucherRequest) GetParam0() *RollbackVoucherRequest {
-    return r.param0
+    return r._param0
 }

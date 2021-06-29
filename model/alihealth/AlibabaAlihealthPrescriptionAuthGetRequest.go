@@ -15,7 +15,7 @@ alibaba.alihealth.prescription.auth.get
 type AlibabaAlihealthPrescriptionAuthGetRequest struct {
     model.Params
     // 请求入参
-    prescriptionRequest   *PrescriptionDoctorAuthRequest
+    _prescriptionRequest   *PrescriptionDoctorAuthRequest
 }
 
 // 初始化AlibabaAlihealthPrescriptionAuthGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetApiParams() url.Values {
 }
 // PrescriptionRequest Setter
 // 请求入参
-func (r *AlibabaAlihealthPrescriptionAuthGetRequest) SetPrescriptionRequest(prescriptionRequest *PrescriptionDoctorAuthRequest) error {
-    r.prescriptionRequest = prescriptionRequest
-    r.Set("prescription_request", prescriptionRequest)
+func (r *AlibabaAlihealthPrescriptionAuthGetRequest) SetPrescriptionRequest(_prescriptionRequest *PrescriptionDoctorAuthRequest) error {
+    r._prescriptionRequest = _prescriptionRequest
+    r.Set("prescription_request", _prescriptionRequest)
     return nil
 }
 
 // PrescriptionRequest Getter
 func (r AlibabaAlihealthPrescriptionAuthGetRequest) GetPrescriptionRequest() *PrescriptionDoctorAuthRequest {
-    return r.prescriptionRequest
+    return r._prescriptionRequest
 }

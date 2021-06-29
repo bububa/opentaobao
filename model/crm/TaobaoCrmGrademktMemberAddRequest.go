@@ -15,11 +15,11 @@ taobao.crm.grademkt.member.add
 type TaobaoCrmGrademktMemberAddRequest struct {
     model.Params
     // 会员属性-json format生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-    parameter   string
+    _parameter   string
     // 系统属性，json格式
-    feather   string
+    _feather   string
     // 会员nick
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TaobaoCrmGrademktMemberAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoCrmGrademktMemberAddRequest) GetApiParams() url.Values {
 }
 // Parameter Setter
 // 会员属性-json format生成方法见http://open.taobao.com/doc/detail.htm?id=101281
-func (r *TaobaoCrmGrademktMemberAddRequest) SetParameter(parameter string) error {
-    r.parameter = parameter
-    r.Set("parameter", parameter)
+func (r *TaobaoCrmGrademktMemberAddRequest) SetParameter(_parameter string) error {
+    r._parameter = _parameter
+    r.Set("parameter", _parameter)
     return nil
 }
 
 // Parameter Getter
 func (r TaobaoCrmGrademktMemberAddRequest) GetParameter() string {
-    return r.parameter
+    return r._parameter
 }
 // Feather Setter
 // 系统属性，json格式
-func (r *TaobaoCrmGrademktMemberAddRequest) SetFeather(feather string) error {
-    r.feather = feather
-    r.Set("feather", feather)
+func (r *TaobaoCrmGrademktMemberAddRequest) SetFeather(_feather string) error {
+    r._feather = _feather
+    r.Set("feather", _feather)
     return nil
 }
 
 // Feather Getter
 func (r TaobaoCrmGrademktMemberAddRequest) GetFeather() string {
-    return r.feather
+    return r._feather
 }
 // BuyerNick Setter
 // 会员nick
-func (r *TaobaoCrmGrademktMemberAddRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoCrmGrademktMemberAddRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoCrmGrademktMemberAddRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

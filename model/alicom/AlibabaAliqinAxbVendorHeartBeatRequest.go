@@ -15,9 +15,9 @@ alibaba.aliqin.axb.vendor.heart.beat
 type AlibabaAliqinAxbVendorHeartBeatRequest struct {
     model.Params
     // 可选的预留字段
-    status   string
+    _status   string
     // 供应商合作KEY
-    vendorKey   string
+    _vendorKey   string
 }
 
 // 初始化AlibabaAliqinAxbVendorHeartBeatRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAliqinAxbVendorHeartBeatRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 可选的预留字段
-func (r *AlibabaAliqinAxbVendorHeartBeatRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaAliqinAxbVendorHeartBeatRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaAliqinAxbVendorHeartBeatRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // VendorKey Setter
 // 供应商合作KEY
-func (r *AlibabaAliqinAxbVendorHeartBeatRequest) SetVendorKey(vendorKey string) error {
-    r.vendorKey = vendorKey
-    r.Set("vendor_key", vendorKey)
+func (r *AlibabaAliqinAxbVendorHeartBeatRequest) SetVendorKey(_vendorKey string) error {
+    r._vendorKey = _vendorKey
+    r.Set("vendor_key", _vendorKey)
     return nil
 }
 
 // VendorKey Getter
 func (r AlibabaAliqinAxbVendorHeartBeatRequest) GetVendorKey() string {
-    return r.vendorKey
+    return r._vendorKey
 }

@@ -15,7 +15,7 @@ yunos.tvpubadmin.adm.ott.query
 type YunosTvpubadminAdmOttQueryRequest struct {
     model.Params
     // 查询参数json格式
-    query   string
+    _query   string
 }
 
 // 初始化YunosTvpubadminAdmOttQueryRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminAdmOttQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询参数json格式
-func (r *YunosTvpubadminAdmOttQueryRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *YunosTvpubadminAdmOttQueryRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r YunosTvpubadminAdmOttQueryRequest) GetQuery() string {
-    return r.query
+    return r._query
 }

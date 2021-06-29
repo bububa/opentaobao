@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.pay.sign.check
 type TaobaoAlitripAxinTransPaySignCheckRequest struct {
     model.Params
     // 验签对象
-    axinPayCheckSignDto   *AxinPayCheckSignDto
+    _axinPayCheckSignDto   *AxinPayCheckSignDto
 }
 
 // 初始化TaobaoAlitripAxinTransPaySignCheckRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetApiParams() url.Values {
 }
 // AxinPayCheckSignDto Setter
 // 验签对象
-func (r *TaobaoAlitripAxinTransPaySignCheckRequest) SetAxinPayCheckSignDto(axinPayCheckSignDto *AxinPayCheckSignDto) error {
-    r.axinPayCheckSignDto = axinPayCheckSignDto
-    r.Set("axin_pay_check_sign_dto", axinPayCheckSignDto)
+func (r *TaobaoAlitripAxinTransPaySignCheckRequest) SetAxinPayCheckSignDto(_axinPayCheckSignDto *AxinPayCheckSignDto) error {
+    r._axinPayCheckSignDto = _axinPayCheckSignDto
+    r.Set("axin_pay_check_sign_dto", _axinPayCheckSignDto)
     return nil
 }
 
 // AxinPayCheckSignDto Getter
 func (r TaobaoAlitripAxinTransPaySignCheckRequest) GetAxinPayCheckSignDto() *AxinPayCheckSignDto {
-    return r.axinPayCheckSignDto
+    return r._axinPayCheckSignDto
 }

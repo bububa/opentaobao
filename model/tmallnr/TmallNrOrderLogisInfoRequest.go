@@ -15,11 +15,11 @@ tmall.nr.order.logis.info
 type TmallNrOrderLogisInfoRequest struct {
     model.Params
     // 卖家ID
-    sellerId   int64
+    _sellerId   int64
     // 主订单号
-    mainOrderIds   []int64
+    _mainOrderIds   []int64
     // 来源标识
-    channel   string
+    _channel   string
 }
 
 // 初始化TmallNrOrderLogisInfoRequest对象
@@ -44,37 +44,37 @@ func (r TmallNrOrderLogisInfoRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 卖家ID
-func (r *TmallNrOrderLogisInfoRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *TmallNrOrderLogisInfoRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r TmallNrOrderLogisInfoRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }
 // MainOrderIds Setter
 // 主订单号
-func (r *TmallNrOrderLogisInfoRequest) SetMainOrderIds(mainOrderIds []int64) error {
-    r.mainOrderIds = mainOrderIds
-    r.Set("main_order_ids", mainOrderIds)
+func (r *TmallNrOrderLogisInfoRequest) SetMainOrderIds(_mainOrderIds []int64) error {
+    r._mainOrderIds = _mainOrderIds
+    r.Set("main_order_ids", _mainOrderIds)
     return nil
 }
 
 // MainOrderIds Getter
 func (r TmallNrOrderLogisInfoRequest) GetMainOrderIds() []int64 {
-    return r.mainOrderIds
+    return r._mainOrderIds
 }
 // Channel Setter
 // 来源标识
-func (r *TmallNrOrderLogisInfoRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TmallNrOrderLogisInfoRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TmallNrOrderLogisInfoRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }

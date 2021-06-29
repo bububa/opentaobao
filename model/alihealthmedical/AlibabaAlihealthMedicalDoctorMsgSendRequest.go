@@ -15,7 +15,7 @@ alibaba.alihealth.medical.doctor.msg.send
 type AlibabaAlihealthMedicalDoctorMsgSendRequest struct {
     model.Params
     // request
-    inquiry   *OuterMsgPullRequest
+    _inquiry   *OuterMsgPullRequest
 }
 
 // 初始化AlibabaAlihealthMedicalDoctorMsgSendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalDoctorMsgSendRequest) GetApiParams() url.Values {
 }
 // Inquiry Setter
 // request
-func (r *AlibabaAlihealthMedicalDoctorMsgSendRequest) SetInquiry(inquiry *OuterMsgPullRequest) error {
-    r.inquiry = inquiry
-    r.Set("inquiry", inquiry)
+func (r *AlibabaAlihealthMedicalDoctorMsgSendRequest) SetInquiry(_inquiry *OuterMsgPullRequest) error {
+    r._inquiry = _inquiry
+    r.Set("inquiry", _inquiry)
     return nil
 }
 
 // Inquiry Getter
 func (r AlibabaAlihealthMedicalDoctorMsgSendRequest) GetInquiry() *OuterMsgPullRequest {
-    return r.inquiry
+    return r._inquiry
 }

@@ -15,11 +15,11 @@ alibaba.scbp.ad.campaign.delete.forbidden.keyword
 type AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 请求参数
-    forbiddenKeywordBatchOperation   *ForbiddenKeywordBatchOperationDto
+    _forbiddenKeywordBatchOperation   *ForbiddenKeywordBatchOperationDto
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) GetApiParams() url.V
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // ForbiddenKeywordBatchOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetForbiddenKeywordBatchOperation(forbiddenKeywordBatchOperation *ForbiddenKeywordBatchOperationDto) error {
-    r.forbiddenKeywordBatchOperation = forbiddenKeywordBatchOperation
-    r.Set("forbidden_keyword_batch_operation", forbiddenKeywordBatchOperation)
+func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetForbiddenKeywordBatchOperation(_forbiddenKeywordBatchOperation *ForbiddenKeywordBatchOperationDto) error {
+    r._forbiddenKeywordBatchOperation = _forbiddenKeywordBatchOperation
+    r.Set("forbidden_keyword_batch_operation", _forbiddenKeywordBatchOperation)
     return nil
 }
 
 // ForbiddenKeywordBatchOperation Getter
 func (r AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) GetForbiddenKeywordBatchOperation() *ForbiddenKeywordBatchOperationDto {
-    return r.forbiddenKeywordBatchOperation
+    return r._forbiddenKeywordBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdCampaignDeleteForbiddenKeywordRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

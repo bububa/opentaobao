@@ -15,9 +15,9 @@ alibaba.alihealth.tracecodesearch.getshowurl.vivo
 type AlibabaAlihealthTracecodesearchGetshowurlVivoRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
     // 来源
-    channel   string
+    _channel   string
 }
 
 // 初始化AlibabaAlihealthTracecodesearchGetshowurlVivoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetApiParams() url
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // Channel Setter
 // 来源
-func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaAlihealthTracecodesearchGetshowurlVivoRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }

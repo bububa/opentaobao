@@ -15,9 +15,9 @@ taobao.crm.group.update
 type TaobaoCrmGroupUpdateRequest struct {
     model.Params
     // 分组的id
-    groupId   int64
+    _groupId   int64
     // 新的分组名，分组名称不能包含|或者：
-    newGroupName   string
+    _newGroupName   string
 }
 
 // 初始化TaobaoCrmGroupUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCrmGroupUpdateRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 分组的id
-func (r *TaobaoCrmGroupUpdateRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *TaobaoCrmGroupUpdateRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r TaobaoCrmGroupUpdateRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }
 // NewGroupName Setter
 // 新的分组名，分组名称不能包含|或者：
-func (r *TaobaoCrmGroupUpdateRequest) SetNewGroupName(newGroupName string) error {
-    r.newGroupName = newGroupName
-    r.Set("new_group_name", newGroupName)
+func (r *TaobaoCrmGroupUpdateRequest) SetNewGroupName(_newGroupName string) error {
+    r._newGroupName = _newGroupName
+    r.Set("new_group_name", _newGroupName)
     return nil
 }
 
 // NewGroupName Getter
 func (r TaobaoCrmGroupUpdateRequest) GetNewGroupName() string {
-    return r.newGroupName
+    return r._newGroupName
 }

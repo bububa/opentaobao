@@ -15,11 +15,11 @@ tmall.promotion.coupon.user
 type TmallPromotionCouponUserRequest struct {
     model.Params
     // 例如：suning
-    bizType   string
+    _bizType   string
     // 会员付款码
-    payCode   string
+    _payCode   string
     // 扩展字段
-    extra   string
+    _extra   string
 }
 
 // 初始化TmallPromotionCouponUserRequest对象
@@ -44,37 +44,37 @@ func (r TmallPromotionCouponUserRequest) GetApiParams() url.Values {
 }
 // BizType Setter
 // 例如：suning
-func (r *TmallPromotionCouponUserRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallPromotionCouponUserRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallPromotionCouponUserRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }
 // PayCode Setter
 // 会员付款码
-func (r *TmallPromotionCouponUserRequest) SetPayCode(payCode string) error {
-    r.payCode = payCode
-    r.Set("pay_code", payCode)
+func (r *TmallPromotionCouponUserRequest) SetPayCode(_payCode string) error {
+    r._payCode = _payCode
+    r.Set("pay_code", _payCode)
     return nil
 }
 
 // PayCode Getter
 func (r TmallPromotionCouponUserRequest) GetPayCode() string {
-    return r.payCode
+    return r._payCode
 }
 // Extra Setter
 // 扩展字段
-func (r *TmallPromotionCouponUserRequest) SetExtra(extra string) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *TmallPromotionCouponUserRequest) SetExtra(_extra string) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r TmallPromotionCouponUserRequest) GetExtra() string {
-    return r.extra
+    return r._extra
 }

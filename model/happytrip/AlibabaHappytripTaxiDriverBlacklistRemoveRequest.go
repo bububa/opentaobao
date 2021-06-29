@@ -15,11 +15,11 @@ alibaba.happytrip.taxi.driver.blacklist.remove
 type AlibabaHappytripTaxiDriverBlacklistRemoveRequest struct {
     model.Params
     // 供应商单号
-    orderId   string
+    _orderId   string
     // 用户唯一标识
-    uid   string
+    _uid   string
     // 司机唯一标识
-    driverId   string
+    _driverId   string
 }
 
 // 初始化AlibabaHappytripTaxiDriverBlacklistRemoveRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaHappytripTaxiDriverBlacklistRemoveRequest) GetApiParams() url.Val
 }
 // OrderId Setter
 // 供应商单号
-func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaHappytripTaxiDriverBlacklistRemoveRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Uid Setter
 // 用户唯一标识
-func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetUid(uid string) error {
-    r.uid = uid
-    r.Set("uid", uid)
+func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetUid(_uid string) error {
+    r._uid = _uid
+    r.Set("uid", _uid)
     return nil
 }
 
 // Uid Getter
 func (r AlibabaHappytripTaxiDriverBlacklistRemoveRequest) GetUid() string {
-    return r.uid
+    return r._uid
 }
 // DriverId Setter
 // 司机唯一标识
-func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetDriverId(driverId string) error {
-    r.driverId = driverId
-    r.Set("driver_id", driverId)
+func (r *AlibabaHappytripTaxiDriverBlacklistRemoveRequest) SetDriverId(_driverId string) error {
+    r._driverId = _driverId
+    r.Set("driver_id", _driverId)
     return nil
 }
 
 // DriverId Getter
 func (r AlibabaHappytripTaxiDriverBlacklistRemoveRequest) GetDriverId() string {
-    return r.driverId
+    return r._driverId
 }

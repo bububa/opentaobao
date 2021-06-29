@@ -15,7 +15,7 @@ alibaba dropshipping 支付代扣
 type AlibabaDropshippingOrderPayRequest struct {
     model.Params
     // request model
-    paramOrderPayRequest   *OrderPayRequest
+    _paramOrderPayRequest   *OrderPayRequest
 }
 
 // 初始化AlibabaDropshippingOrderPayRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDropshippingOrderPayRequest) GetApiParams() url.Values {
 }
 // ParamOrderPayRequest Setter
 // request model
-func (r *AlibabaDropshippingOrderPayRequest) SetParamOrderPayRequest(paramOrderPayRequest *OrderPayRequest) error {
-    r.paramOrderPayRequest = paramOrderPayRequest
-    r.Set("param_order_pay_request", paramOrderPayRequest)
+func (r *AlibabaDropshippingOrderPayRequest) SetParamOrderPayRequest(_paramOrderPayRequest *OrderPayRequest) error {
+    r._paramOrderPayRequest = _paramOrderPayRequest
+    r.Set("param_order_pay_request", _paramOrderPayRequest)
     return nil
 }
 
 // ParamOrderPayRequest Getter
 func (r AlibabaDropshippingOrderPayRequest) GetParamOrderPayRequest() *OrderPayRequest {
-    return r.paramOrderPayRequest
+    return r._paramOrderPayRequest
 }

@@ -15,7 +15,7 @@ taobao.crm.group.delete
 type TaobaoCrmGroupDeleteRequest struct {
     model.Params
     // 要删除的分组id
-    groupId   int64
+    _groupId   int64
 }
 
 // 初始化TaobaoCrmGroupDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoCrmGroupDeleteRequest) GetApiParams() url.Values {
 }
 // GroupId Setter
 // 要删除的分组id
-func (r *TaobaoCrmGroupDeleteRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *TaobaoCrmGroupDeleteRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r TaobaoCrmGroupDeleteRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }

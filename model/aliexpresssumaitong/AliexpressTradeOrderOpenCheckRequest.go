@@ -15,9 +15,9 @@ Aliexpress开放平台下单前通过下单入参获取token
 type AliexpressTradeOrderOpenCheckRequest struct {
     model.Params
     // 预下单入参
-    paramPreCreateOrderRequest   *PreCreateOrderRequest
+    _paramPreCreateOrderRequest   *PreCreateOrderRequest
     // 客户端信息
-    paramClientInfo   *ClientInfo
+    _paramClientInfo   *ClientInfo
 }
 
 // 初始化AliexpressTradeOrderOpenCheckRequest对象
@@ -42,25 +42,25 @@ func (r AliexpressTradeOrderOpenCheckRequest) GetApiParams() url.Values {
 }
 // ParamPreCreateOrderRequest Setter
 // 预下单入参
-func (r *AliexpressTradeOrderOpenCheckRequest) SetParamPreCreateOrderRequest(paramPreCreateOrderRequest *PreCreateOrderRequest) error {
-    r.paramPreCreateOrderRequest = paramPreCreateOrderRequest
-    r.Set("param_pre_create_order_request", paramPreCreateOrderRequest)
+func (r *AliexpressTradeOrderOpenCheckRequest) SetParamPreCreateOrderRequest(_paramPreCreateOrderRequest *PreCreateOrderRequest) error {
+    r._paramPreCreateOrderRequest = _paramPreCreateOrderRequest
+    r.Set("param_pre_create_order_request", _paramPreCreateOrderRequest)
     return nil
 }
 
 // ParamPreCreateOrderRequest Getter
 func (r AliexpressTradeOrderOpenCheckRequest) GetParamPreCreateOrderRequest() *PreCreateOrderRequest {
-    return r.paramPreCreateOrderRequest
+    return r._paramPreCreateOrderRequest
 }
 // ParamClientInfo Setter
 // 客户端信息
-func (r *AliexpressTradeOrderOpenCheckRequest) SetParamClientInfo(paramClientInfo *ClientInfo) error {
-    r.paramClientInfo = paramClientInfo
-    r.Set("param_client_info", paramClientInfo)
+func (r *AliexpressTradeOrderOpenCheckRequest) SetParamClientInfo(_paramClientInfo *ClientInfo) error {
+    r._paramClientInfo = _paramClientInfo
+    r.Set("param_client_info", _paramClientInfo)
     return nil
 }
 
 // ParamClientInfo Getter
 func (r AliexpressTradeOrderOpenCheckRequest) GetParamClientInfo() *ClientInfo {
-    return r.paramClientInfo
+    return r._paramClientInfo
 }

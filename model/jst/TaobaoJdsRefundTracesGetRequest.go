@@ -15,7 +15,7 @@ taobao.jds.refund.traces.get
 type TaobaoJdsRefundTracesGetRequest struct {
     model.Params
     // 淘宝的退款编号
-    refundId   int64
+    _refundId   int64
 }
 
 // 初始化TaobaoJdsRefundTracesGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJdsRefundTracesGetRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 淘宝的退款编号
-func (r *TaobaoJdsRefundTracesGetRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoJdsRefundTracesGetRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoJdsRefundTracesGetRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }

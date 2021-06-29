@@ -15,9 +15,9 @@ taobao.rds.db.get
 type TaobaoRdsDbGetRequest struct {
     model.Params
     // rds的实例名
-    instanceName   string
+    _instanceName   string
     // 数据库状态，默认值1
-    dbStatus   int64
+    _dbStatus   int64
 }
 
 // 初始化TaobaoRdsDbGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoRdsDbGetRequest) GetApiParams() url.Values {
 }
 // InstanceName Setter
 // rds的实例名
-func (r *TaobaoRdsDbGetRequest) SetInstanceName(instanceName string) error {
-    r.instanceName = instanceName
-    r.Set("instance_name", instanceName)
+func (r *TaobaoRdsDbGetRequest) SetInstanceName(_instanceName string) error {
+    r._instanceName = _instanceName
+    r.Set("instance_name", _instanceName)
     return nil
 }
 
 // InstanceName Getter
 func (r TaobaoRdsDbGetRequest) GetInstanceName() string {
-    return r.instanceName
+    return r._instanceName
 }
 // DbStatus Setter
 // 数据库状态，默认值1
-func (r *TaobaoRdsDbGetRequest) SetDbStatus(dbStatus int64) error {
-    r.dbStatus = dbStatus
-    r.Set("db_status", dbStatus)
+func (r *TaobaoRdsDbGetRequest) SetDbStatus(_dbStatus int64) error {
+    r._dbStatus = _dbStatus
+    r.Set("db_status", _dbStatus)
     return nil
 }
 
 // DbStatus Getter
 func (r TaobaoRdsDbGetRequest) GetDbStatus() int64 {
-    return r.dbStatus
+    return r._dbStatus
 }

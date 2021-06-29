@@ -15,7 +15,7 @@ taobao.media.video.list
 type TaobaoMediaVideoListRequest struct {
     model.Params
     // 搜索条件
-    searchCondition   *VideoSearchCondition2
+    _searchCondition   *VideoSearchCondition2
 }
 
 // 初始化TaobaoMediaVideoListRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMediaVideoListRequest) GetApiParams() url.Values {
 }
 // SearchCondition Setter
 // 搜索条件
-func (r *TaobaoMediaVideoListRequest) SetSearchCondition(searchCondition *VideoSearchCondition2) error {
-    r.searchCondition = searchCondition
-    r.Set("search_condition", searchCondition)
+func (r *TaobaoMediaVideoListRequest) SetSearchCondition(_searchCondition *VideoSearchCondition2) error {
+    r._searchCondition = _searchCondition
+    r.Set("search_condition", _searchCondition)
     return nil
 }
 
 // SearchCondition Getter
 func (r TaobaoMediaVideoListRequest) GetSearchCondition() *VideoSearchCondition2 {
-    return r.searchCondition
+    return r._searchCondition
 }

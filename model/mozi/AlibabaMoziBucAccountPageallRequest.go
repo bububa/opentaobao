@@ -15,7 +15,7 @@ alibaba.mozi.buc.account.pageall
 type AlibabaMoziBucAccountPageallRequest struct {
     model.Params
     // 查询租户内所有人员和账号
-    pageAll   *PageAllAccountsRequest
+    _pageAll   *PageAllAccountsRequest
 }
 
 // 初始化AlibabaMoziBucAccountPageallRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziBucAccountPageallRequest) GetApiParams() url.Values {
 }
 // PageAll Setter
 // 查询租户内所有人员和账号
-func (r *AlibabaMoziBucAccountPageallRequest) SetPageAll(pageAll *PageAllAccountsRequest) error {
-    r.pageAll = pageAll
-    r.Set("page_all", pageAll)
+func (r *AlibabaMoziBucAccountPageallRequest) SetPageAll(_pageAll *PageAllAccountsRequest) error {
+    r._pageAll = _pageAll
+    r.Set("page_all", _pageAll)
     return nil
 }
 
 // PageAll Getter
 func (r AlibabaMoziBucAccountPageallRequest) GetPageAll() *PageAllAccountsRequest {
-    return r.pageAll
+    return r._pageAll
 }

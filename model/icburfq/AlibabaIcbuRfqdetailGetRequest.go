@@ -15,9 +15,9 @@ alibaba.icbu.rfqdetail.get
 type AlibabaIcbuRfqdetailGetRequest struct {
     model.Params
     // 验证
-    md5key   string
+    _md5key   string
     // 查询RFQ详情DTO
-    rfqQueryDto   *RfqDetailSearchQueryDto
+    _rfqQueryDto   *RfqDetailSearchQueryDto
 }
 
 // 初始化AlibabaIcbuRfqdetailGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIcbuRfqdetailGetRequest) GetApiParams() url.Values {
 }
 // Md5key Setter
 // 验证
-func (r *AlibabaIcbuRfqdetailGetRequest) SetMd5key(md5key string) error {
-    r.md5key = md5key
-    r.Set("md5key", md5key)
+func (r *AlibabaIcbuRfqdetailGetRequest) SetMd5key(_md5key string) error {
+    r._md5key = _md5key
+    r.Set("md5key", _md5key)
     return nil
 }
 
 // Md5key Getter
 func (r AlibabaIcbuRfqdetailGetRequest) GetMd5key() string {
-    return r.md5key
+    return r._md5key
 }
 // RfqQueryDto Setter
 // 查询RFQ详情DTO
-func (r *AlibabaIcbuRfqdetailGetRequest) SetRfqQueryDto(rfqQueryDto *RfqDetailSearchQueryDto) error {
-    r.rfqQueryDto = rfqQueryDto
-    r.Set("rfq_query_dto", rfqQueryDto)
+func (r *AlibabaIcbuRfqdetailGetRequest) SetRfqQueryDto(_rfqQueryDto *RfqDetailSearchQueryDto) error {
+    r._rfqQueryDto = _rfqQueryDto
+    r.Set("rfq_query_dto", _rfqQueryDto)
     return nil
 }
 
 // RfqQueryDto Getter
 func (r AlibabaIcbuRfqdetailGetRequest) GetRfqQueryDto() *RfqDetailSearchQueryDto {
-    return r.rfqQueryDto
+    return r._rfqQueryDto
 }

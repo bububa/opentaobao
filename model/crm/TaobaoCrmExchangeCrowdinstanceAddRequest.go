@@ -15,11 +15,11 @@ taobao.crm.exchange.crowdinstance.add
 type TaobaoCrmExchangeCrowdinstanceAddRequest struct {
     model.Params
     // 操作原因
-    reason   string
+    _reason   string
     // 人群实例ID
-    crowdInstanceId   int64
+    _crowdInstanceId   int64
     // 买家昵称
-    buyerNick   string
+    _buyerNick   string
 }
 
 // 初始化TaobaoCrmExchangeCrowdinstanceAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoCrmExchangeCrowdinstanceAddRequest) GetApiParams() url.Values {
 }
 // Reason Setter
 // 操作原因
-func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetReason(reason string) error {
-    r.reason = reason
-    r.Set("reason", reason)
+func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetReason(_reason string) error {
+    r._reason = _reason
+    r.Set("reason", _reason)
     return nil
 }
 
 // Reason Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddRequest) GetReason() string {
-    return r.reason
+    return r._reason
 }
 // CrowdInstanceId Setter
 // 人群实例ID
-func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetCrowdInstanceId(crowdInstanceId int64) error {
-    r.crowdInstanceId = crowdInstanceId
-    r.Set("crowd_instance_id", crowdInstanceId)
+func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetCrowdInstanceId(_crowdInstanceId int64) error {
+    r._crowdInstanceId = _crowdInstanceId
+    r.Set("crowd_instance_id", _crowdInstanceId)
     return nil
 }
 
 // CrowdInstanceId Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddRequest) GetCrowdInstanceId() int64 {
-    return r.crowdInstanceId
+    return r._crowdInstanceId
 }
 // BuyerNick Setter
 // 买家昵称
-func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TaobaoCrmExchangeCrowdinstanceAddRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TaobaoCrmExchangeCrowdinstanceAddRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }

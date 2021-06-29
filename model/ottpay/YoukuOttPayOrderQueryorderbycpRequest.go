@@ -15,7 +15,7 @@ youku.ott.pay.order.queryorderbycp
 type YoukuOttPayOrderQueryorderbycpRequest struct {
     model.Params
     // cp订单号
-    cpOrderNo   string
+    _cpOrderNo   string
 }
 
 // 初始化YoukuOttPayOrderQueryorderbycpRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryorderbycpRequest) GetApiParams() url.Values {
 }
 // CpOrderNo Setter
 // cp订单号
-func (r *YoukuOttPayOrderQueryorderbycpRequest) SetCpOrderNo(cpOrderNo string) error {
-    r.cpOrderNo = cpOrderNo
-    r.Set("cp_order_no", cpOrderNo)
+func (r *YoukuOttPayOrderQueryorderbycpRequest) SetCpOrderNo(_cpOrderNo string) error {
+    r._cpOrderNo = _cpOrderNo
+    r.Set("cp_order_no", _cpOrderNo)
     return nil
 }
 
 // CpOrderNo Getter
 func (r YoukuOttPayOrderQueryorderbycpRequest) GetCpOrderNo() string {
-    return r.cpOrderNo
+    return r._cpOrderNo
 }

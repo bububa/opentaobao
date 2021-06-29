@@ -15,17 +15,17 @@ taobao.film.koubei.cinema.getactivity
 type TaobaoFilmKoubeiCinemaGetactivityRequest struct {
     model.Params
     // 用户账号
-    userId   string
+    _userId   string
     // 账号类型
-    accountType   string
+    _accountType   string
     // 城市编码
-    cityCode   int64
+    _cityCode   int64
     // 平台
-    platform   int64
+    _platform   int64
     // 影院ID集合
-    cinemaIds   []int64
+    _cinemaIds   []int64
     // 附加参数
-    params   string
+    _params   string
 }
 
 // 初始化TaobaoFilmKoubeiCinemaGetactivityRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户账号
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // AccountType Setter
 // 账号类型
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetAccountType(accountType string) error {
-    r.accountType = accountType
-    r.Set("account_type", accountType)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetAccountType(_accountType string) error {
+    r._accountType = _accountType
+    r.Set("account_type", _accountType)
     return nil
 }
 
 // AccountType Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetAccountType() string {
-    return r.accountType
+    return r._accountType
 }
 // CityCode Setter
 // 城市编码
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCityCode(cityCode int64) error {
-    r.cityCode = cityCode
-    r.Set("city_code", cityCode)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCityCode(_cityCode int64) error {
+    r._cityCode = _cityCode
+    r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetCityCode() int64 {
-    return r.cityCode
+    return r._cityCode
 }
 // Platform Setter
 // 平台
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetPlatform(platform int64) error {
-    r.platform = platform
-    r.Set("platform", platform)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetPlatform(_platform int64) error {
+    r._platform = _platform
+    r.Set("platform", _platform)
     return nil
 }
 
 // Platform Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetPlatform() int64 {
-    return r.platform
+    return r._platform
 }
 // CinemaIds Setter
 // 影院ID集合
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCinemaIds(cinemaIds []int64) error {
-    r.cinemaIds = cinemaIds
-    r.Set("cinema_ids", cinemaIds)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCinemaIds(_cinemaIds []int64) error {
+    r._cinemaIds = _cinemaIds
+    r.Set("cinema_ids", _cinemaIds)
     return nil
 }
 
 // CinemaIds Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetCinemaIds() []int64 {
-    return r.cinemaIds
+    return r._cinemaIds
 }
 // Params Setter
 // 附加参数
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetParams() string {
-    return r.params
+    return r._params
 }

@@ -15,7 +15,7 @@ taobao.alitrip.travel.baseinfo.cruise.get
 type TaobaoAlitripTravelBaseinfoCruiseGetRequest struct {
     model.Params
     // true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
-    isOverseas   bool
+    _isOverseas   bool
 }
 
 // 初始化TaobaoAlitripTravelBaseinfoCruiseGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetApiParams() url.Values {
 }
 // IsOverseas Setter
 // true-获取国际邮轮类目扩展信息；false-获取国内邮轮类目扩展信息
-func (r *TaobaoAlitripTravelBaseinfoCruiseGetRequest) SetIsOverseas(isOverseas bool) error {
-    r.isOverseas = isOverseas
-    r.Set("is_overseas", isOverseas)
+func (r *TaobaoAlitripTravelBaseinfoCruiseGetRequest) SetIsOverseas(_isOverseas bool) error {
+    r._isOverseas = _isOverseas
+    r.Set("is_overseas", _isOverseas)
     return nil
 }
 
 // IsOverseas Getter
 func (r TaobaoAlitripTravelBaseinfoCruiseGetRequest) GetIsOverseas() bool {
-    return r.isOverseas
+    return r._isOverseas
 }

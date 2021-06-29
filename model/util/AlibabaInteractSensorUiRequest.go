@@ -15,7 +15,7 @@ Weex 基本UI操作
 type AlibabaInteractSensorUiRequest struct {
     model.Params
     // 仅作客户端鉴权使用，不会发送接收请求
-    unNamed   string
+    _unNamed   string
 }
 
 // 初始化AlibabaInteractSensorUiRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractSensorUiRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 仅作客户端鉴权使用，不会发送接收请求
-func (r *AlibabaInteractSensorUiRequest) SetUnNamed(unNamed string) error {
-    r.unNamed = unNamed
-    r.Set("un_named", unNamed)
+func (r *AlibabaInteractSensorUiRequest) SetUnNamed(_unNamed string) error {
+    r._unNamed = _unNamed
+    r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
 func (r AlibabaInteractSensorUiRequest) GetUnNamed() string {
-    return r.unNamed
+    return r._unNamed
 }

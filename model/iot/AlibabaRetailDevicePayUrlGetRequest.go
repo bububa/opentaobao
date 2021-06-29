@@ -15,15 +15,15 @@ alibaba.retail.device.payUrl.get
 type AlibabaRetailDevicePayUrlGetRequest struct {
     model.Params
     // 外部订单id
-    isvOrderId   string
+    _isvOrderId   string
     // 业务名称
-    bizName   string
+    _bizName   string
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 设备sn
-    deviceId   string
+    _deviceId   string
     // 1表示商品box，0或者为空表示普通商品
-    itemType   int64
+    _itemType   int64
 }
 
 // 初始化AlibabaRetailDevicePayUrlGetRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaRetailDevicePayUrlGetRequest) GetApiParams() url.Values {
 }
 // IsvOrderId Setter
 // 外部订单id
-func (r *AlibabaRetailDevicePayUrlGetRequest) SetIsvOrderId(isvOrderId string) error {
-    r.isvOrderId = isvOrderId
-    r.Set("isv_order_id", isvOrderId)
+func (r *AlibabaRetailDevicePayUrlGetRequest) SetIsvOrderId(_isvOrderId string) error {
+    r._isvOrderId = _isvOrderId
+    r.Set("isv_order_id", _isvOrderId)
     return nil
 }
 
 // IsvOrderId Getter
 func (r AlibabaRetailDevicePayUrlGetRequest) GetIsvOrderId() string {
-    return r.isvOrderId
+    return r._isvOrderId
 }
 // BizName Setter
 // 业务名称
-func (r *AlibabaRetailDevicePayUrlGetRequest) SetBizName(bizName string) error {
-    r.bizName = bizName
-    r.Set("biz_name", bizName)
+func (r *AlibabaRetailDevicePayUrlGetRequest) SetBizName(_bizName string) error {
+    r._bizName = _bizName
+    r.Set("biz_name", _bizName)
     return nil
 }
 
 // BizName Getter
 func (r AlibabaRetailDevicePayUrlGetRequest) GetBizName() string {
-    return r.bizName
+    return r._bizName
 }
 // ItemId Setter
 // 商品id
-func (r *AlibabaRetailDevicePayUrlGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaRetailDevicePayUrlGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaRetailDevicePayUrlGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // DeviceId Setter
 // 设备sn
-func (r *AlibabaRetailDevicePayUrlGetRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *AlibabaRetailDevicePayUrlGetRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r AlibabaRetailDevicePayUrlGetRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // ItemType Setter
 // 1表示商品box，0或者为空表示普通商品
-func (r *AlibabaRetailDevicePayUrlGetRequest) SetItemType(itemType int64) error {
-    r.itemType = itemType
-    r.Set("item_type", itemType)
+func (r *AlibabaRetailDevicePayUrlGetRequest) SetItemType(_itemType int64) error {
+    r._itemType = _itemType
+    r.Set("item_type", _itemType)
     return nil
 }
 
 // ItemType Getter
 func (r AlibabaRetailDevicePayUrlGetRequest) GetItemType() int64 {
-    return r.itemType
+    return r._itemType
 }

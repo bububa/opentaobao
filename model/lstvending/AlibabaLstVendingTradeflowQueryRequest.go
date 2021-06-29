@@ -15,7 +15,7 @@ alibaba.lst.vending.tradeflow.query
 type AlibabaLstVendingTradeflowQueryRequest struct {
     model.Params
     // 交易流水查询条件
-    openTradeFlowQuery   *OpenTradeFlowQuery
+    _openTradeFlowQuery   *OpenTradeFlowQuery
 }
 
 // 初始化AlibabaLstVendingTradeflowQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingTradeflowQueryRequest) GetApiParams() url.Values {
 }
 // OpenTradeFlowQuery Setter
 // 交易流水查询条件
-func (r *AlibabaLstVendingTradeflowQueryRequest) SetOpenTradeFlowQuery(openTradeFlowQuery *OpenTradeFlowQuery) error {
-    r.openTradeFlowQuery = openTradeFlowQuery
-    r.Set("open_trade_flow_query", openTradeFlowQuery)
+func (r *AlibabaLstVendingTradeflowQueryRequest) SetOpenTradeFlowQuery(_openTradeFlowQuery *OpenTradeFlowQuery) error {
+    r._openTradeFlowQuery = _openTradeFlowQuery
+    r.Set("open_trade_flow_query", _openTradeFlowQuery)
     return nil
 }
 
 // OpenTradeFlowQuery Getter
 func (r AlibabaLstVendingTradeflowQueryRequest) GetOpenTradeFlowQuery() *OpenTradeFlowQuery {
-    return r.openTradeFlowQuery
+    return r._openTradeFlowQuery
 }

@@ -15,7 +15,7 @@ alibaba.wdk.wholesale.order.commit
 type AlibabaWdkWholesaleOrderCommitRequest struct {
     model.Params
     // 采购单信息
-    orderCommitReq   *OrderCommitReq
+    _orderCommitReq   *OrderCommitReq
 }
 
 // 初始化AlibabaWdkWholesaleOrderCommitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkWholesaleOrderCommitRequest) GetApiParams() url.Values {
 }
 // OrderCommitReq Setter
 // 采购单信息
-func (r *AlibabaWdkWholesaleOrderCommitRequest) SetOrderCommitReq(orderCommitReq *OrderCommitReq) error {
-    r.orderCommitReq = orderCommitReq
-    r.Set("order_commit_req", orderCommitReq)
+func (r *AlibabaWdkWholesaleOrderCommitRequest) SetOrderCommitReq(_orderCommitReq *OrderCommitReq) error {
+    r._orderCommitReq = _orderCommitReq
+    r.Set("order_commit_req", _orderCommitReq)
     return nil
 }
 
 // OrderCommitReq Getter
 func (r AlibabaWdkWholesaleOrderCommitRequest) GetOrderCommitReq() *OrderCommitReq {
-    return r.orderCommitReq
+    return r._orderCommitReq
 }

@@ -15,7 +15,7 @@ taobao.baichuan.items.unsubscribe.by.condition
 type TaobaoBaichuanItemsUnsubscribeByConditionRequest struct {
     model.Params
     // 删除条件
-    condition   *Condition
+    _condition   *Condition
 }
 
 // 初始化TaobaoBaichuanItemsUnsubscribeByConditionRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetApiParams() url.Val
 }
 // Condition Setter
 // 删除条件
-func (r *TaobaoBaichuanItemsUnsubscribeByConditionRequest) SetCondition(condition *Condition) error {
-    r.condition = condition
-    r.Set("condition", condition)
+func (r *TaobaoBaichuanItemsUnsubscribeByConditionRequest) SetCondition(_condition *Condition) error {
+    r._condition = _condition
+    r.Set("condition", _condition)
     return nil
 }
 
 // Condition Getter
 func (r TaobaoBaichuanItemsUnsubscribeByConditionRequest) GetCondition() *Condition {
-    return r.condition
+    return r._condition
 }

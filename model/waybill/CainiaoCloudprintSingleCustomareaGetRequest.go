@@ -15,7 +15,7 @@ cainiao.cloudprint.single.customarea.get
 type CainiaoCloudprintSingleCustomareaGetRequest struct {
     model.Params
     // 这是商家用户id
-    sellerId   int64
+    _sellerId   int64
 }
 
 // 初始化CainiaoCloudprintSingleCustomareaGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintSingleCustomareaGetRequest) GetApiParams() url.Values {
 }
 // SellerId Setter
 // 这是商家用户id
-func (r *CainiaoCloudprintSingleCustomareaGetRequest) SetSellerId(sellerId int64) error {
-    r.sellerId = sellerId
-    r.Set("seller_id", sellerId)
+func (r *CainiaoCloudprintSingleCustomareaGetRequest) SetSellerId(_sellerId int64) error {
+    r._sellerId = _sellerId
+    r.Set("seller_id", _sellerId)
     return nil
 }
 
 // SellerId Getter
 func (r CainiaoCloudprintSingleCustomareaGetRequest) GetSellerId() int64 {
-    return r.sellerId
+    return r._sellerId
 }

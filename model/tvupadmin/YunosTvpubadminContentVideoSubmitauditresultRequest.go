@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.video.submitauditresult
 type YunosTvpubadminContentVideoSubmitauditresultRequest struct {
     model.Params
     // 审核结果，json格式
-    licenseAuditResult   string
+    _licenseAuditResult   string
 }
 
 // 初始化YunosTvpubadminContentVideoSubmitauditresultRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentVideoSubmitauditresultRequest) GetApiParams() url.
 }
 // LicenseAuditResult Setter
 // 审核结果，json格式
-func (r *YunosTvpubadminContentVideoSubmitauditresultRequest) SetLicenseAuditResult(licenseAuditResult string) error {
-    r.licenseAuditResult = licenseAuditResult
-    r.Set("license_audit_result", licenseAuditResult)
+func (r *YunosTvpubadminContentVideoSubmitauditresultRequest) SetLicenseAuditResult(_licenseAuditResult string) error {
+    r._licenseAuditResult = _licenseAuditResult
+    r.Set("license_audit_result", _licenseAuditResult)
     return nil
 }
 
 // LicenseAuditResult Getter
 func (r YunosTvpubadminContentVideoSubmitauditresultRequest) GetLicenseAuditResult() string {
-    return r.licenseAuditResult
+    return r._licenseAuditResult
 }

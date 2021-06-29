@@ -15,7 +15,7 @@ cainiao.waybill.ii.get
 type CainiaoWaybillIiGetRequest struct {
     model.Params
     // 入参信息
-    paramWaybillCloudPrintApplyNewRequest   *WaybillCloudPrintApplyNewRequest
+    _paramWaybillCloudPrintApplyNewRequest   *WaybillCloudPrintApplyNewRequest
 }
 
 // 初始化CainiaoWaybillIiGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoWaybillIiGetRequest) GetApiParams() url.Values {
 }
 // ParamWaybillCloudPrintApplyNewRequest Setter
 // 入参信息
-func (r *CainiaoWaybillIiGetRequest) SetParamWaybillCloudPrintApplyNewRequest(paramWaybillCloudPrintApplyNewRequest *WaybillCloudPrintApplyNewRequest) error {
-    r.paramWaybillCloudPrintApplyNewRequest = paramWaybillCloudPrintApplyNewRequest
-    r.Set("param_waybill_cloud_print_apply_new_request", paramWaybillCloudPrintApplyNewRequest)
+func (r *CainiaoWaybillIiGetRequest) SetParamWaybillCloudPrintApplyNewRequest(_paramWaybillCloudPrintApplyNewRequest *WaybillCloudPrintApplyNewRequest) error {
+    r._paramWaybillCloudPrintApplyNewRequest = _paramWaybillCloudPrintApplyNewRequest
+    r.Set("param_waybill_cloud_print_apply_new_request", _paramWaybillCloudPrintApplyNewRequest)
     return nil
 }
 
 // ParamWaybillCloudPrintApplyNewRequest Getter
 func (r CainiaoWaybillIiGetRequest) GetParamWaybillCloudPrintApplyNewRequest() *WaybillCloudPrintApplyNewRequest {
-    return r.paramWaybillCloudPrintApplyNewRequest
+    return r._paramWaybillCloudPrintApplyNewRequest
 }

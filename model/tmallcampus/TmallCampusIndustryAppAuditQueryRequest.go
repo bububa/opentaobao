@@ -15,7 +15,7 @@ tmall.campus.industry.app.audit.query
 type TmallCampusIndustryAppAuditQueryRequest struct {
     model.Params
     // 调用来源
-    source   string
+    _source   string
 }
 
 // 初始化TmallCampusIndustryAppAuditQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallCampusIndustryAppAuditQueryRequest) GetApiParams() url.Values {
 }
 // Source Setter
 // 调用来源
-func (r *TmallCampusIndustryAppAuditQueryRequest) SetSource(source string) error {
-    r.source = source
-    r.Set("source", source)
+func (r *TmallCampusIndustryAppAuditQueryRequest) SetSource(_source string) error {
+    r._source = _source
+    r.Set("source", _source)
     return nil
 }
 
 // Source Getter
 func (r TmallCampusIndustryAppAuditQueryRequest) GetSource() string {
-    return r.source
+    return r._source
 }

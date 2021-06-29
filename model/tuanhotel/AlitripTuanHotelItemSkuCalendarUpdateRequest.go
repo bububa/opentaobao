@@ -15,11 +15,11 @@ alitrip.tuan.hotel.item.sku.calendar.update
 type AlitripTuanHotelItemSkuCalendarUpdateRequest struct {
     model.Params
     // 宝贝ID
-    itemId   int64
+    _itemId   int64
     // 宝贝所属类目
-    catId   int64
+    _catId   int64
     // 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
-    itemSkuList   []TopTuanItemSkuVO
+    _itemSkuList   []TopTuanItemSkuVO
 }
 
 // 初始化AlitripTuanHotelItemSkuCalendarUpdateRequest对象
@@ -44,37 +44,37 @@ func (r AlitripTuanHotelItemSkuCalendarUpdateRequest) GetApiParams() url.Values 
 }
 // ItemId Setter
 // 宝贝ID
-func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // CatId Setter
 // 宝贝所属类目
-func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // ItemSkuList Setter
 // 暂不支持此接口对SKU的部分属性进行更新，包括以下属性： 套餐名称、价格、原价、库存、间夜、商家编码、人数、使用次数等
-func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetItemSkuList(itemSkuList []TopTuanItemSkuVO) error {
-    r.itemSkuList = itemSkuList
-    r.Set("item_sku_list", itemSkuList)
+func (r *AlitripTuanHotelItemSkuCalendarUpdateRequest) SetItemSkuList(_itemSkuList []TopTuanItemSkuVO) error {
+    r._itemSkuList = _itemSkuList
+    r.Set("item_sku_list", _itemSkuList)
     return nil
 }
 
 // ItemSkuList Getter
 func (r AlitripTuanHotelItemSkuCalendarUpdateRequest) GetItemSkuList() []TopTuanItemSkuVO {
-    return r.itemSkuList
+    return r._itemSkuList
 }

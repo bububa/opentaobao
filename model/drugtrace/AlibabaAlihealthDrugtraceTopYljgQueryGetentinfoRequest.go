@@ -15,7 +15,7 @@ alibaba.alihealth.drugtrace.top.yljg.query.getentinfo
 type AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest struct {
     model.Params
     // 公司名称(全称)
-    entName   string
+    _entName   string
 }
 
 // 初始化AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetApiParams() u
 }
 // EntName Setter
 // 公司名称(全称)
-func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) SetEntName(entName string) error {
-    r.entName = entName
-    r.Set("ent_name", entName)
+func (r *AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) SetEntName(_entName string) error {
+    r._entName = _entName
+    r.Set("ent_name", _entName)
     return nil
 }
 
 // EntName Getter
 func (r AlibabaAlihealthDrugtraceTopYljgQueryGetentinfoRequest) GetEntName() string {
-    return r.entName
+    return r._entName
 }

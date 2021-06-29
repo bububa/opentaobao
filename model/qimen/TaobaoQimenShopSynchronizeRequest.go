@@ -15,7 +15,7 @@ taobao.qimen.shop.synchronize
 type TaobaoQimenShopSynchronizeRequest struct {
     model.Params
     // 请求
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenShopSynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenShopSynchronizeRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 请求
-func (r *TaobaoQimenShopSynchronizeRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenShopSynchronizeRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenShopSynchronizeRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

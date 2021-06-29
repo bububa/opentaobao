@@ -15,9 +15,9 @@ yunos.tvpubadmin.device.stats
 type YunosTvpubadminDeviceStatsRequest struct {
     model.Params
     // 厂商名称
-    factoryName   string
+    _factoryName   string
     // 设备型号
-    deviceModel   string
+    _deviceModel   string
 }
 
 // 初始化YunosTvpubadminDeviceStatsRequest对象
@@ -42,25 +42,25 @@ func (r YunosTvpubadminDeviceStatsRequest) GetApiParams() url.Values {
 }
 // FactoryName Setter
 // 厂商名称
-func (r *YunosTvpubadminDeviceStatsRequest) SetFactoryName(factoryName string) error {
-    r.factoryName = factoryName
-    r.Set("factory_name", factoryName)
+func (r *YunosTvpubadminDeviceStatsRequest) SetFactoryName(_factoryName string) error {
+    r._factoryName = _factoryName
+    r.Set("factory_name", _factoryName)
     return nil
 }
 
 // FactoryName Getter
 func (r YunosTvpubadminDeviceStatsRequest) GetFactoryName() string {
-    return r.factoryName
+    return r._factoryName
 }
 // DeviceModel Setter
 // 设备型号
-func (r *YunosTvpubadminDeviceStatsRequest) SetDeviceModel(deviceModel string) error {
-    r.deviceModel = deviceModel
-    r.Set("device_model", deviceModel)
+func (r *YunosTvpubadminDeviceStatsRequest) SetDeviceModel(_deviceModel string) error {
+    r._deviceModel = _deviceModel
+    r.Set("device_model", _deviceModel)
     return nil
 }
 
 // DeviceModel Getter
 func (r YunosTvpubadminDeviceStatsRequest) GetDeviceModel() string {
-    return r.deviceModel
+    return r._deviceModel
 }

@@ -15,19 +15,19 @@ alibaba.idle.parttime.notify
 type AlibabaIdleParttimeNotifyRequest struct {
     model.Params
     // 实时同步类型, 0: 岗位状态, 1: 录取状态
-    type   int64
+    _type   int64
     // 岗位: 0关闭 ; 录取: 0不录取, 1录取
-    status   int64
+    _status   int64
     // 岗位id
-    jobId   int64
+    _jobId   int64
     // 用户id
-    userId   int64
+    _userId   int64
     // 同步时间
-    syncTime   int64
+    _syncTime   int64
     // 报名id
-    applyId   int64
+    _applyId   int64
     // 通知消息
-    message   string
+    _message   string
 }
 
 // 初始化AlibabaIdleParttimeNotifyRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaIdleParttimeNotifyRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 实时同步类型, 0: 岗位状态, 1: 录取状态
-func (r *AlibabaIdleParttimeNotifyRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaIdleParttimeNotifyRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // Status Setter
 // 岗位: 0关闭 ; 录取: 0不录取, 1录取
-func (r *AlibabaIdleParttimeNotifyRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaIdleParttimeNotifyRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // JobId Setter
 // 岗位id
-func (r *AlibabaIdleParttimeNotifyRequest) SetJobId(jobId int64) error {
-    r.jobId = jobId
-    r.Set("job_id", jobId)
+func (r *AlibabaIdleParttimeNotifyRequest) SetJobId(_jobId int64) error {
+    r._jobId = _jobId
+    r.Set("job_id", _jobId)
     return nil
 }
 
 // JobId Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetJobId() int64 {
-    return r.jobId
+    return r._jobId
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaIdleParttimeNotifyRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaIdleParttimeNotifyRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // SyncTime Setter
 // 同步时间
-func (r *AlibabaIdleParttimeNotifyRequest) SetSyncTime(syncTime int64) error {
-    r.syncTime = syncTime
-    r.Set("sync_time", syncTime)
+func (r *AlibabaIdleParttimeNotifyRequest) SetSyncTime(_syncTime int64) error {
+    r._syncTime = _syncTime
+    r.Set("sync_time", _syncTime)
     return nil
 }
 
 // SyncTime Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetSyncTime() int64 {
-    return r.syncTime
+    return r._syncTime
 }
 // ApplyId Setter
 // 报名id
-func (r *AlibabaIdleParttimeNotifyRequest) SetApplyId(applyId int64) error {
-    r.applyId = applyId
-    r.Set("apply_id", applyId)
+func (r *AlibabaIdleParttimeNotifyRequest) SetApplyId(_applyId int64) error {
+    r._applyId = _applyId
+    r.Set("apply_id", _applyId)
     return nil
 }
 
 // ApplyId Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetApplyId() int64 {
-    return r.applyId
+    return r._applyId
 }
 // Message Setter
 // 通知消息
-func (r *AlibabaIdleParttimeNotifyRequest) SetMessage(message string) error {
-    r.message = message
-    r.Set("message", message)
+func (r *AlibabaIdleParttimeNotifyRequest) SetMessage(_message string) error {
+    r._message = _message
+    r.Set("message", _message)
     return nil
 }
 
 // Message Getter
 func (r AlibabaIdleParttimeNotifyRequest) GetMessage() string {
-    return r.message
+    return r._message
 }

@@ -15,7 +15,7 @@ tmall.servicecenter.task.feedbacknoneedservice
 type TmallServicecenterTaskFeedbacknoneedserviceRequest struct {
     model.Params
     // 入参对象
-    param   *SuspendServiceDo
+    _param   *SuspendServiceDo
 }
 
 // 初始化TmallServicecenterTaskFeedbacknoneedserviceRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiParams() url.V
 }
 // Param Setter
 // 入参对象
-func (r *TmallServicecenterTaskFeedbacknoneedserviceRequest) SetParam(param *SuspendServiceDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TmallServicecenterTaskFeedbacknoneedserviceRequest) SetParam(_param *SuspendServiceDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetParam() *SuspendServiceDo {
-    return r.param
+    return r._param
 }

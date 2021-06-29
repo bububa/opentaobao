@@ -15,7 +15,7 @@ yunos.service.cmns.coa.message.get
 type YunosServiceCmnsCoaMessageGetRequest struct {
     model.Params
     // 消息id
-    mid   int64
+    _mid   int64
 }
 
 // 初始化YunosServiceCmnsCoaMessageGetRequest对象
@@ -40,13 +40,13 @@ func (r YunosServiceCmnsCoaMessageGetRequest) GetApiParams() url.Values {
 }
 // Mid Setter
 // 消息id
-func (r *YunosServiceCmnsCoaMessageGetRequest) SetMid(mid int64) error {
-    r.mid = mid
-    r.Set("mid", mid)
+func (r *YunosServiceCmnsCoaMessageGetRequest) SetMid(_mid int64) error {
+    r._mid = _mid
+    r.Set("mid", _mid)
     return nil
 }
 
 // Mid Getter
 func (r YunosServiceCmnsCoaMessageGetRequest) GetMid() int64 {
-    return r.mid
+    return r._mid
 }

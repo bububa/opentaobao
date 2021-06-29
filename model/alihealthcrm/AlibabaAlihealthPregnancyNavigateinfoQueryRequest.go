@@ -15,7 +15,7 @@ alibaba.alihealth.pregnancy.navigateinfo.query
 type AlibabaAlihealthPregnancyNavigateinfoQueryRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
 }
 
 // 初始化AlibabaAlihealthPregnancyNavigateinfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPregnancyNavigateinfoQueryRequest) GetApiParams() url.Va
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthPregnancyNavigateinfoQueryRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthPregnancyNavigateinfoQueryRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthPregnancyNavigateinfoQueryRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

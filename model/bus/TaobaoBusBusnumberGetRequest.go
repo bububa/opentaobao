@@ -15,7 +15,7 @@ taobao.bus.busnumber.get
 type TaobaoBusBusnumberGetRequest struct {
     model.Params
     // 车次查询入参
-    paramBusNumberSearchRQ   *BusNumberSearchRq
+    _paramBusNumberSearchRQ   *BusNumberSearchRq
 }
 
 // 初始化TaobaoBusBusnumberGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusBusnumberGetRequest) GetApiParams() url.Values {
 }
 // ParamBusNumberSearchRQ Setter
 // 车次查询入参
-func (r *TaobaoBusBusnumberGetRequest) SetParamBusNumberSearchRQ(paramBusNumberSearchRQ *BusNumberSearchRq) error {
-    r.paramBusNumberSearchRQ = paramBusNumberSearchRQ
-    r.Set("param_bus_number_search_r_q", paramBusNumberSearchRQ)
+func (r *TaobaoBusBusnumberGetRequest) SetParamBusNumberSearchRQ(_paramBusNumberSearchRQ *BusNumberSearchRq) error {
+    r._paramBusNumberSearchRQ = _paramBusNumberSearchRQ
+    r.Set("param_bus_number_search_r_q", _paramBusNumberSearchRQ)
     return nil
 }
 
 // ParamBusNumberSearchRQ Getter
 func (r TaobaoBusBusnumberGetRequest) GetParamBusNumberSearchRQ() *BusNumberSearchRq {
-    return r.paramBusNumberSearchRQ
+    return r._paramBusNumberSearchRQ
 }

@@ -15,13 +15,13 @@ taobao.simba.rtrpt.bidword.get
 type TaobaoSimbaRtrptBidwordGetRequest struct {
     model.Params
     // 用户名
-    nick   string
+    _nick   string
     // 推广计划id
-    campaignId   int64
+    _campaignId   int64
     // 推广组id
-    adgroupId   int64
+    _adgroupId   int64
     // 日期，格式yyyy-mm-dd
-    theDate   string
+    _theDate   string
 }
 
 // 初始化TaobaoSimbaRtrptBidwordGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaRtrptBidwordGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户名
-func (r *TaobaoSimbaRtrptBidwordGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaRtrptBidwordGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaRtrptBidwordGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CampaignId Setter
 // 推广计划id
-func (r *TaobaoSimbaRtrptBidwordGetRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaRtrptBidwordGetRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaRtrptBidwordGetRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSimbaRtrptBidwordGetRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaRtrptBidwordGetRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaRtrptBidwordGetRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // TheDate Setter
 // 日期，格式yyyy-mm-dd
-func (r *TaobaoSimbaRtrptBidwordGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaRtrptBidwordGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaRtrptBidwordGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }

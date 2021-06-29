@@ -15,9 +15,9 @@ alitrip.item.schema.update
 type AlitripItemSchemaUpdateRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 商品数据
-    schemaXmlFields   string
+    _schemaXmlFields   string
 }
 
 // 初始化AlitripItemSchemaUpdateRequest对象
@@ -42,25 +42,25 @@ func (r AlitripItemSchemaUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *AlitripItemSchemaUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlitripItemSchemaUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlitripItemSchemaUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SchemaXmlFields Setter
 // 商品数据
-func (r *AlitripItemSchemaUpdateRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *AlitripItemSchemaUpdateRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r AlitripItemSchemaUpdateRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }

@@ -15,11 +15,11 @@ taobao.tmc.messages.confirm
 type TaobaoTmcMessagesConfirmRequest struct {
     model.Params
     // 分组名称，不传代表默认分组
-    groupName   string
+    _groupName   string
     // 处理成功的消息ID列表 最大 200个ID
-    sMessageIds   []int64
+    _sMessageIds   []int64
     // 处理失败的消息ID列表--已废弃，无需传此字段
-    fMessageIds   []int64
+    _fMessageIds   []int64
 }
 
 // 初始化TaobaoTmcMessagesConfirmRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTmcMessagesConfirmRequest) GetApiParams() url.Values {
 }
 // GroupName Setter
 // 分组名称，不传代表默认分组
-func (r *TaobaoTmcMessagesConfirmRequest) SetGroupName(groupName string) error {
-    r.groupName = groupName
-    r.Set("group_name", groupName)
+func (r *TaobaoTmcMessagesConfirmRequest) SetGroupName(_groupName string) error {
+    r._groupName = _groupName
+    r.Set("group_name", _groupName)
     return nil
 }
 
 // GroupName Getter
 func (r TaobaoTmcMessagesConfirmRequest) GetGroupName() string {
-    return r.groupName
+    return r._groupName
 }
 // SMessageIds Setter
 // 处理成功的消息ID列表 最大 200个ID
-func (r *TaobaoTmcMessagesConfirmRequest) SetSMessageIds(sMessageIds []int64) error {
-    r.sMessageIds = sMessageIds
-    r.Set("s_message_ids", sMessageIds)
+func (r *TaobaoTmcMessagesConfirmRequest) SetSMessageIds(_sMessageIds []int64) error {
+    r._sMessageIds = _sMessageIds
+    r.Set("s_message_ids", _sMessageIds)
     return nil
 }
 
 // SMessageIds Getter
 func (r TaobaoTmcMessagesConfirmRequest) GetSMessageIds() []int64 {
-    return r.sMessageIds
+    return r._sMessageIds
 }
 // FMessageIds Setter
 // 处理失败的消息ID列表--已废弃，无需传此字段
-func (r *TaobaoTmcMessagesConfirmRequest) SetFMessageIds(fMessageIds []int64) error {
-    r.fMessageIds = fMessageIds
-    r.Set("f_message_ids", fMessageIds)
+func (r *TaobaoTmcMessagesConfirmRequest) SetFMessageIds(_fMessageIds []int64) error {
+    r._fMessageIds = _fMessageIds
+    r.Set("f_message_ids", _fMessageIds)
     return nil
 }
 
 // FMessageIds Getter
 func (r TaobaoTmcMessagesConfirmRequest) GetFMessageIds() []int64 {
-    return r.fMessageIds
+    return r._fMessageIds
 }

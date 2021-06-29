@@ -15,13 +15,13 @@ taobao.qimen.items.marking
 type TaobaoQimenItemsMarkingRequest struct {
     model.Params
     // 操作类型，string（50），ADD=打标，DELETE=去标，必填
-    actionType   string
+    _actionType   string
     // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-    tagType   string
+    _tagType   string
     // 线上商品ID，long，必填
-    itemIds   []int64
+    _itemIds   []int64
     // 备注，string（500）
-    remark   string
+    _remark   string
 }
 
 // 初始化TaobaoQimenItemsMarkingRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoQimenItemsMarkingRequest) GetApiParams() url.Values {
 }
 // ActionType Setter
 // 操作类型，string（50），ADD=打标，DELETE=去标，必填
-func (r *TaobaoQimenItemsMarkingRequest) SetActionType(actionType string) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *TaobaoQimenItemsMarkingRequest) SetActionType(_actionType string) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r TaobaoQimenItemsMarkingRequest) GetActionType() string {
-    return r.actionType
+    return r._actionType
 }
 // TagType Setter
 // 打标值，string（50），TBKU=同步库存标，MDZT=门店自提标，必填
-func (r *TaobaoQimenItemsMarkingRequest) SetTagType(tagType string) error {
-    r.tagType = tagType
-    r.Set("tag_type", tagType)
+func (r *TaobaoQimenItemsMarkingRequest) SetTagType(_tagType string) error {
+    r._tagType = _tagType
+    r.Set("tag_type", _tagType)
     return nil
 }
 
 // TagType Getter
 func (r TaobaoQimenItemsMarkingRequest) GetTagType() string {
-    return r.tagType
+    return r._tagType
 }
 // ItemIds Setter
 // 线上商品ID，long，必填
-func (r *TaobaoQimenItemsMarkingRequest) SetItemIds(itemIds []int64) error {
-    r.itemIds = itemIds
-    r.Set("item_ids", itemIds)
+func (r *TaobaoQimenItemsMarkingRequest) SetItemIds(_itemIds []int64) error {
+    r._itemIds = _itemIds
+    r.Set("item_ids", _itemIds)
     return nil
 }
 
 // ItemIds Getter
 func (r TaobaoQimenItemsMarkingRequest) GetItemIds() []int64 {
-    return r.itemIds
+    return r._itemIds
 }
 // Remark Setter
 // 备注，string（500）
-func (r *TaobaoQimenItemsMarkingRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoQimenItemsMarkingRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoQimenItemsMarkingRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

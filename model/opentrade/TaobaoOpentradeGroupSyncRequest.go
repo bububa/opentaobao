@@ -15,29 +15,29 @@ taobao.opentrade.group.sync
 type TaobaoOpentradeGroupSyncRequest struct {
     model.Params
     // 组团活动开始时间
-    startTime   string
+    _startTime   string
     // 组团活动结束时间
-    endTime   string
+    _endTime   string
     // 成团有效期，单位为妙
-    expiration   int64
+    _expiration   int64
     // 成团的目标人数
-    goal   int64
+    _goal   int64
     // 组团类型，0：拼团；1：团购
-    groupType   int64
+    _groupType   int64
     // 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
-    allowType   string
+    _allowType   string
     // 允许开团的淘宝账号列表
-    allowWhiteList   []string
+    _allowWhiteList   []string
     // 组团类型为团购，可限制团长针对一个商品的开团数量上限
-    openLimit   int64
+    _openLimit   int64
     // 未成团处理办法，close：系统关单；continue：订单继续下行
-    failProcess   string
+    _failProcess   string
     // 组团购买的折扣价，单位为分
-    discountPrice   int64
+    _discountPrice   int64
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 组团活动id
-    groupActivityId   int64
+    _groupActivityId   int64
 }
 
 // 初始化TaobaoOpentradeGroupSyncRequest对象
@@ -62,145 +62,145 @@ func (r TaobaoOpentradeGroupSyncRequest) GetApiParams() url.Values {
 }
 // StartTime Setter
 // 组团活动开始时间
-func (r *TaobaoOpentradeGroupSyncRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoOpentradeGroupSyncRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 组团活动结束时间
-func (r *TaobaoOpentradeGroupSyncRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoOpentradeGroupSyncRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // Expiration Setter
 // 成团有效期，单位为妙
-func (r *TaobaoOpentradeGroupSyncRequest) SetExpiration(expiration int64) error {
-    r.expiration = expiration
-    r.Set("expiration", expiration)
+func (r *TaobaoOpentradeGroupSyncRequest) SetExpiration(_expiration int64) error {
+    r._expiration = _expiration
+    r.Set("expiration", _expiration)
     return nil
 }
 
 // Expiration Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetExpiration() int64 {
-    return r.expiration
+    return r._expiration
 }
 // Goal Setter
 // 成团的目标人数
-func (r *TaobaoOpentradeGroupSyncRequest) SetGoal(goal int64) error {
-    r.goal = goal
-    r.Set("goal", goal)
+func (r *TaobaoOpentradeGroupSyncRequest) SetGoal(_goal int64) error {
+    r._goal = _goal
+    r.Set("goal", _goal)
     return nil
 }
 
 // Goal Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetGoal() int64 {
-    return r.goal
+    return r._goal
 }
 // GroupType Setter
 // 组团类型，0：拼团；1：团购
-func (r *TaobaoOpentradeGroupSyncRequest) SetGroupType(groupType int64) error {
-    r.groupType = groupType
-    r.Set("group_type", groupType)
+func (r *TaobaoOpentradeGroupSyncRequest) SetGroupType(_groupType int64) error {
+    r._groupType = _groupType
+    r.Set("group_type", _groupType)
     return nil
 }
 
 // GroupType Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetGroupType() int64 {
-    return r.groupType
+    return r._groupType
 }
 // AllowType Setter
 // 是否任何账号可开团。whitelist：仅白名单账号可开团  all：任何账号可开团
-func (r *TaobaoOpentradeGroupSyncRequest) SetAllowType(allowType string) error {
-    r.allowType = allowType
-    r.Set("allow_type", allowType)
+func (r *TaobaoOpentradeGroupSyncRequest) SetAllowType(_allowType string) error {
+    r._allowType = _allowType
+    r.Set("allow_type", _allowType)
     return nil
 }
 
 // AllowType Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetAllowType() string {
-    return r.allowType
+    return r._allowType
 }
 // AllowWhiteList Setter
 // 允许开团的淘宝账号列表
-func (r *TaobaoOpentradeGroupSyncRequest) SetAllowWhiteList(allowWhiteList []string) error {
-    r.allowWhiteList = allowWhiteList
-    r.Set("allow_white_list", allowWhiteList)
+func (r *TaobaoOpentradeGroupSyncRequest) SetAllowWhiteList(_allowWhiteList []string) error {
+    r._allowWhiteList = _allowWhiteList
+    r.Set("allow_white_list", _allowWhiteList)
     return nil
 }
 
 // AllowWhiteList Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetAllowWhiteList() []string {
-    return r.allowWhiteList
+    return r._allowWhiteList
 }
 // OpenLimit Setter
 // 组团类型为团购，可限制团长针对一个商品的开团数量上限
-func (r *TaobaoOpentradeGroupSyncRequest) SetOpenLimit(openLimit int64) error {
-    r.openLimit = openLimit
-    r.Set("open_limit", openLimit)
+func (r *TaobaoOpentradeGroupSyncRequest) SetOpenLimit(_openLimit int64) error {
+    r._openLimit = _openLimit
+    r.Set("open_limit", _openLimit)
     return nil
 }
 
 // OpenLimit Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetOpenLimit() int64 {
-    return r.openLimit
+    return r._openLimit
 }
 // FailProcess Setter
 // 未成团处理办法，close：系统关单；continue：订单继续下行
-func (r *TaobaoOpentradeGroupSyncRequest) SetFailProcess(failProcess string) error {
-    r.failProcess = failProcess
-    r.Set("fail_process", failProcess)
+func (r *TaobaoOpentradeGroupSyncRequest) SetFailProcess(_failProcess string) error {
+    r._failProcess = _failProcess
+    r.Set("fail_process", _failProcess)
     return nil
 }
 
 // FailProcess Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetFailProcess() string {
-    return r.failProcess
+    return r._failProcess
 }
 // DiscountPrice Setter
 // 组团购买的折扣价，单位为分
-func (r *TaobaoOpentradeGroupSyncRequest) SetDiscountPrice(discountPrice int64) error {
-    r.discountPrice = discountPrice
-    r.Set("discount_price", discountPrice)
+func (r *TaobaoOpentradeGroupSyncRequest) SetDiscountPrice(_discountPrice int64) error {
+    r._discountPrice = _discountPrice
+    r.Set("discount_price", _discountPrice)
     return nil
 }
 
 // DiscountPrice Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetDiscountPrice() int64 {
-    return r.discountPrice
+    return r._discountPrice
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoOpentradeGroupSyncRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOpentradeGroupSyncRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // GroupActivityId Setter
 // 组团活动id
-func (r *TaobaoOpentradeGroupSyncRequest) SetGroupActivityId(groupActivityId int64) error {
-    r.groupActivityId = groupActivityId
-    r.Set("group_activity_id", groupActivityId)
+func (r *TaobaoOpentradeGroupSyncRequest) SetGroupActivityId(_groupActivityId int64) error {
+    r._groupActivityId = _groupActivityId
+    r.Set("group_activity_id", _groupActivityId)
     return nil
 }
 
 // GroupActivityId Getter
 func (r TaobaoOpentradeGroupSyncRequest) GetGroupActivityId() int64 {
-    return r.groupActivityId
+    return r._groupActivityId
 }

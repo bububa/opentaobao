@@ -15,7 +15,7 @@ taobao.omniorder.store.sdtstatus
 type TaobaoOmniorderStoreSdtstatusRequest struct {
     model.Params
     // 菜鸟裹裹的包裹ID
-    packageId   int64
+    _packageId   int64
 }
 
 // 初始化TaobaoOmniorderStoreSdtstatusRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderStoreSdtstatusRequest) GetApiParams() url.Values {
 }
 // PackageId Setter
 // 菜鸟裹裹的包裹ID
-func (r *TaobaoOmniorderStoreSdtstatusRequest) SetPackageId(packageId int64) error {
-    r.packageId = packageId
-    r.Set("package_id", packageId)
+func (r *TaobaoOmniorderStoreSdtstatusRequest) SetPackageId(_packageId int64) error {
+    r._packageId = _packageId
+    r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
 func (r TaobaoOmniorderStoreSdtstatusRequest) GetPackageId() int64 {
-    return r.packageId
+    return r._packageId
 }

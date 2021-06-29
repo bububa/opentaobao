@@ -15,7 +15,7 @@ taobao.ump.detail.get
 type TaobaoUmpDetailGetRequest struct {
     model.Params
     // 活动详情的id
-    detailId   int64
+    _detailId   int64
 }
 
 // 初始化TaobaoUmpDetailGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpDetailGetRequest) GetApiParams() url.Values {
 }
 // DetailId Setter
 // 活动详情的id
-func (r *TaobaoUmpDetailGetRequest) SetDetailId(detailId int64) error {
-    r.detailId = detailId
-    r.Set("detail_id", detailId)
+func (r *TaobaoUmpDetailGetRequest) SetDetailId(_detailId int64) error {
+    r._detailId = _detailId
+    r.Set("detail_id", _detailId)
     return nil
 }
 
 // DetailId Getter
 func (r TaobaoUmpDetailGetRequest) GetDetailId() int64 {
-    return r.detailId
+    return r._detailId
 }

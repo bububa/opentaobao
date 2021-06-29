@@ -15,9 +15,9 @@ ERP调用奇门的接口，对门店的库存进行初始化
 type TaobaoJstAstrolabeStoreinventoryIteminitialRequest struct {
     model.Params
     // 门店列表
-    stores   []Store
+    _stores   []Store
     // 操作时间
-    operationTime   string
+    _operationTime   string
 }
 
 // 初始化TaobaoJstAstrolabeStoreinventoryIteminitialRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetApiParams() url.V
 }
 // Stores Setter
 // 门店列表
-func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetStores(stores []Store) error {
-    r.stores = stores
-    r.Set("stores", stores)
+func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetStores(_stores []Store) error {
+    r._stores = _stores
+    r.Set("stores", _stores)
     return nil
 }
 
 // Stores Getter
 func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetStores() []Store {
-    return r.stores
+    return r._stores
 }
 // OperationTime Setter
 // 操作时间
-func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetOperationTime(operationTime string) error {
-    r.operationTime = operationTime
-    r.Set("operation_time", operationTime)
+func (r *TaobaoJstAstrolabeStoreinventoryIteminitialRequest) SetOperationTime(_operationTime string) error {
+    r._operationTime = _operationTime
+    r.Set("operation_time", _operationTime)
     return nil
 }
 
 // OperationTime Getter
 func (r TaobaoJstAstrolabeStoreinventoryIteminitialRequest) GetOperationTime() string {
-    return r.operationTime
+    return r._operationTime
 }

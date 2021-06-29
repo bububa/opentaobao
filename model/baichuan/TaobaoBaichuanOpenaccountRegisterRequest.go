@@ -15,7 +15,7 @@ taobao.baichuan.openaccount.register
 type TaobaoBaichuanOpenaccountRegisterRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOpenaccountRegisterRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountRegisterRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountRegisterRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOpenaccountRegisterRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOpenaccountRegisterRequest) GetName() string {
-    return r.name
+    return r._name
 }

@@ -15,11 +15,11 @@ alibaba.zqs.fulfill.complete
 type AlibabaZqsFulfillCompleteRequest struct {
     model.Params
     // 第几期
-    sequenceNo   int64
+    _sequenceNo   int64
     // 交易单号
-    mainBizOrderId   int64
+    _mainBizOrderId   int64
     // 交易子单号
-    subBizOrderId   int64
+    _subBizOrderId   int64
 }
 
 // 初始化AlibabaZqsFulfillCompleteRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaZqsFulfillCompleteRequest) GetApiParams() url.Values {
 }
 // SequenceNo Setter
 // 第几期
-func (r *AlibabaZqsFulfillCompleteRequest) SetSequenceNo(sequenceNo int64) error {
-    r.sequenceNo = sequenceNo
-    r.Set("sequence_no", sequenceNo)
+func (r *AlibabaZqsFulfillCompleteRequest) SetSequenceNo(_sequenceNo int64) error {
+    r._sequenceNo = _sequenceNo
+    r.Set("sequence_no", _sequenceNo)
     return nil
 }
 
 // SequenceNo Getter
 func (r AlibabaZqsFulfillCompleteRequest) GetSequenceNo() int64 {
-    return r.sequenceNo
+    return r._sequenceNo
 }
 // MainBizOrderId Setter
 // 交易单号
-func (r *AlibabaZqsFulfillCompleteRequest) SetMainBizOrderId(mainBizOrderId int64) error {
-    r.mainBizOrderId = mainBizOrderId
-    r.Set("main_biz_order_id", mainBizOrderId)
+func (r *AlibabaZqsFulfillCompleteRequest) SetMainBizOrderId(_mainBizOrderId int64) error {
+    r._mainBizOrderId = _mainBizOrderId
+    r.Set("main_biz_order_id", _mainBizOrderId)
     return nil
 }
 
 // MainBizOrderId Getter
 func (r AlibabaZqsFulfillCompleteRequest) GetMainBizOrderId() int64 {
-    return r.mainBizOrderId
+    return r._mainBizOrderId
 }
 // SubBizOrderId Setter
 // 交易子单号
-func (r *AlibabaZqsFulfillCompleteRequest) SetSubBizOrderId(subBizOrderId int64) error {
-    r.subBizOrderId = subBizOrderId
-    r.Set("sub_biz_order_id", subBizOrderId)
+func (r *AlibabaZqsFulfillCompleteRequest) SetSubBizOrderId(_subBizOrderId int64) error {
+    r._subBizOrderId = _subBizOrderId
+    r.Set("sub_biz_order_id", _subBizOrderId)
     return nil
 }
 
 // SubBizOrderId Getter
 func (r AlibabaZqsFulfillCompleteRequest) GetSubBizOrderId() int64 {
-    return r.subBizOrderId
+    return r._subBizOrderId
 }

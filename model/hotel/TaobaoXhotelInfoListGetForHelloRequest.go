@@ -15,7 +15,7 @@ taobao.xhotel.info.list.get.for.hello
 type TaobaoXhotelInfoListGetForHelloRequest struct {
     model.Params
     // 参数封装模型
-    hotelInfoParam   *HotelInfoParam
+    _hotelInfoParam   *HotelInfoParam
 }
 
 // 初始化TaobaoXhotelInfoListGetForHelloRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelInfoListGetForHelloRequest) GetApiParams() url.Values {
 }
 // HotelInfoParam Setter
 // 参数封装模型
-func (r *TaobaoXhotelInfoListGetForHelloRequest) SetHotelInfoParam(hotelInfoParam *HotelInfoParam) error {
-    r.hotelInfoParam = hotelInfoParam
-    r.Set("hotel_info_param", hotelInfoParam)
+func (r *TaobaoXhotelInfoListGetForHelloRequest) SetHotelInfoParam(_hotelInfoParam *HotelInfoParam) error {
+    r._hotelInfoParam = _hotelInfoParam
+    r.Set("hotel_info_param", _hotelInfoParam)
     return nil
 }
 
 // HotelInfoParam Getter
 func (r TaobaoXhotelInfoListGetForHelloRequest) GetHotelInfoParam() *HotelInfoParam {
-    return r.hotelInfoParam
+    return r._hotelInfoParam
 }

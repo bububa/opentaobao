@@ -15,9 +15,9 @@ tmall.servicecenter.anomalyrecourse.remark.update
 type TmallServicecenterAnomalyrecourseRemarkUpdateRequest struct {
     model.Params
     // 需要更新的一键求助单id
-    id   int64
+    _id   int64
     // 需要更新的服务商备注
-    remark   string
+    _remark   string
 }
 
 // 初始化TmallServicecenterAnomalyrecourseRemarkUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TmallServicecenterAnomalyrecourseRemarkUpdateRequest) GetApiParams() url
 }
 // Id Setter
 // 需要更新的一键求助单id
-func (r *TmallServicecenterAnomalyrecourseRemarkUpdateRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TmallServicecenterAnomalyrecourseRemarkUpdateRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Remark Setter
 // 需要更新的服务商备注
-func (r *TmallServicecenterAnomalyrecourseRemarkUpdateRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TmallServicecenterAnomalyrecourseRemarkUpdateRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TmallServicecenterAnomalyrecourseRemarkUpdateRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

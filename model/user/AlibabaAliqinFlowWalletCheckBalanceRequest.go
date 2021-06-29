@@ -15,7 +15,7 @@ alibaba.aliqin.flow.wallet.check.balance
 type AlibabaAliqinFlowWalletCheckBalanceRequest struct {
     model.Params
     // 检查金额档位id
-    gradeId   string
+    _gradeId   string
 }
 
 // 初始化AlibabaAliqinFlowWalletCheckBalanceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetApiParams() url.Values {
 }
 // GradeId Setter
 // 检查金额档位id
-func (r *AlibabaAliqinFlowWalletCheckBalanceRequest) SetGradeId(gradeId string) error {
-    r.gradeId = gradeId
-    r.Set("grade_id", gradeId)
+func (r *AlibabaAliqinFlowWalletCheckBalanceRequest) SetGradeId(_gradeId string) error {
+    r._gradeId = _gradeId
+    r.Set("grade_id", _gradeId)
     return nil
 }
 
 // GradeId Getter
 func (r AlibabaAliqinFlowWalletCheckBalanceRequest) GetGradeId() string {
-    return r.gradeId
+    return r._gradeId
 }

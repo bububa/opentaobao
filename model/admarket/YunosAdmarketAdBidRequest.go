@@ -15,7 +15,7 @@ yunos.admarket.ad.bid
 type YunosAdmarketAdBidRequest struct {
     model.Params
     // 竞价请求
-    bidRequest   *BidRequest
+    _bidRequest   *BidRequest
 }
 
 // 初始化YunosAdmarketAdBidRequest对象
@@ -40,13 +40,13 @@ func (r YunosAdmarketAdBidRequest) GetApiParams() url.Values {
 }
 // BidRequest Setter
 // 竞价请求
-func (r *YunosAdmarketAdBidRequest) SetBidRequest(bidRequest *BidRequest) error {
-    r.bidRequest = bidRequest
-    r.Set("bid_request", bidRequest)
+func (r *YunosAdmarketAdBidRequest) SetBidRequest(_bidRequest *BidRequest) error {
+    r._bidRequest = _bidRequest
+    r.Set("bid_request", _bidRequest)
     return nil
 }
 
 // BidRequest Getter
 func (r YunosAdmarketAdBidRequest) GetBidRequest() *BidRequest {
-    return r.bidRequest
+    return r._bidRequest
 }

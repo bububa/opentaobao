@@ -15,7 +15,7 @@ CP清理内部离职的用户信息
 type CainiaoMemberCourierCpresignRequest struct {
     model.Params
     // 菜鸟用户id
-    accountId   int64
+    _accountId   int64
 }
 
 // 初始化CainiaoMemberCourierCpresignRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoMemberCourierCpresignRequest) GetApiParams() url.Values {
 }
 // AccountId Setter
 // 菜鸟用户id
-func (r *CainiaoMemberCourierCpresignRequest) SetAccountId(accountId int64) error {
-    r.accountId = accountId
-    r.Set("account_id", accountId)
+func (r *CainiaoMemberCourierCpresignRequest) SetAccountId(_accountId int64) error {
+    r._accountId = _accountId
+    r.Set("account_id", _accountId)
     return nil
 }
 
 // AccountId Getter
 func (r CainiaoMemberCourierCpresignRequest) GetAccountId() int64 {
-    return r.accountId
+    return r._accountId
 }

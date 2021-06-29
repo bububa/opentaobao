@@ -15,7 +15,7 @@ taobao.alitrip.buyer.get
 type TaobaoAlitripBuyerGetRequest struct {
     model.Params
     // 敏感信息查询请求参数
-    requestAxb   *RequestAxbDo
+    _requestAxb   *RequestAxbDo
 }
 
 // 初始化TaobaoAlitripBuyerGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
 }
 // RequestAxb Setter
 // 敏感信息查询请求参数
-func (r *TaobaoAlitripBuyerGetRequest) SetRequestAxb(requestAxb *RequestAxbDo) error {
-    r.requestAxb = requestAxb
-    r.Set("request_axb", requestAxb)
+func (r *TaobaoAlitripBuyerGetRequest) SetRequestAxb(_requestAxb *RequestAxbDo) error {
+    r._requestAxb = _requestAxb
+    r.Set("request_axb", _requestAxb)
     return nil
 }
 
 // RequestAxb Getter
 func (r TaobaoAlitripBuyerGetRequest) GetRequestAxb() *RequestAxbDo {
-    return r.requestAxb
+    return r._requestAxb
 }

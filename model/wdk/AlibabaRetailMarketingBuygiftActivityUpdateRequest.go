@@ -15,7 +15,7 @@ alibaba.retail.marketing.buygift.activity.update
 type AlibabaRetailMarketingBuygiftActivityUpdateRequest struct {
     model.Params
     // 更新单品买赠活动参数
-    param   *BuyGiftActivityOperateRequest
+    _param   *BuyGiftActivityOperateRequest
 }
 
 // 初始化AlibabaRetailMarketingBuygiftActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailMarketingBuygiftActivityUpdateRequest) GetApiParams() url.V
 }
 // Param Setter
 // 更新单品买赠活动参数
-func (r *AlibabaRetailMarketingBuygiftActivityUpdateRequest) SetParam(param *BuyGiftActivityOperateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaRetailMarketingBuygiftActivityUpdateRequest) SetParam(_param *BuyGiftActivityOperateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaRetailMarketingBuygiftActivityUpdateRequest) GetParam() *BuyGiftActivityOperateRequest {
-    return r.param
+    return r._param
 }

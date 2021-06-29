@@ -15,7 +15,7 @@ taobao.bus.agent.bookticket.confirm
 type TaobaoBusAgentBookticketConfirmRequest struct {
     model.Params
     // 请求对象
-    paramAgentConfirmBookRQ   *AgentConfirmBookRq
+    _paramAgentConfirmBookRQ   *AgentConfirmBookRq
 }
 
 // 初始化TaobaoBusAgentBookticketConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentBookticketConfirmRequest) GetApiParams() url.Values {
 }
 // ParamAgentConfirmBookRQ Setter
 // 请求对象
-func (r *TaobaoBusAgentBookticketConfirmRequest) SetParamAgentConfirmBookRQ(paramAgentConfirmBookRQ *AgentConfirmBookRq) error {
-    r.paramAgentConfirmBookRQ = paramAgentConfirmBookRQ
-    r.Set("param_agent_confirm_book_r_q", paramAgentConfirmBookRQ)
+func (r *TaobaoBusAgentBookticketConfirmRequest) SetParamAgentConfirmBookRQ(_paramAgentConfirmBookRQ *AgentConfirmBookRq) error {
+    r._paramAgentConfirmBookRQ = _paramAgentConfirmBookRQ
+    r.Set("param_agent_confirm_book_r_q", _paramAgentConfirmBookRQ)
     return nil
 }
 
 // ParamAgentConfirmBookRQ Getter
 func (r TaobaoBusAgentBookticketConfirmRequest) GetParamAgentConfirmBookRQ() *AgentConfirmBookRq {
-    return r.paramAgentConfirmBookRQ
+    return r._paramAgentConfirmBookRQ
 }

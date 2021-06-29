@@ -15,23 +15,23 @@ taobao.wlb.inventorylog.query
 type TaobaoWlbInventorylogQueryRequest struct {
     model.Params
     // 商品ID
-    itemId   int64
+    _itemId   int64
     // 仓库编码
-    storeCode   string
+    _storeCode   string
     // 单号
-    orderCode   string
+    _orderCode   string
     // 起始修改时间,大于等于该时间
-    gmtStart   string
+    _gmtStart   string
     // 结束修改时间,小于等于该时间
-    gmtEnd   string
+    _gmtEnd   string
     // 当前页
-    pageNo   int64
+    _pageNo   int64
     // 分页记录个数
-    pageSize   int64
+    _pageSize   int64
     // 可指定授权的用户来查询
-    opUserId   int64
+    _opUserId   int64
     // 库存操作作类型(可以为空) CHU_KU 1-出库 RU_KU 2-入库 FREEZE 3-冻结 THAW 4-解冻 CHECK_FREEZE 5-冻结确认 CHANGE_KU 6-库存类型变更 若值不在范围内，则按CHU_KU处理
-    opType   string
+    _opType   string
 }
 
 // 初始化TaobaoWlbInventorylogQueryRequest对象
@@ -56,109 +56,109 @@ func (r TaobaoWlbInventorylogQueryRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品ID
-func (r *TaobaoWlbInventorylogQueryRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoWlbInventorylogQueryRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // StoreCode Setter
 // 仓库编码
-func (r *TaobaoWlbInventorylogQueryRequest) SetStoreCode(storeCode string) error {
-    r.storeCode = storeCode
-    r.Set("store_code", storeCode)
+func (r *TaobaoWlbInventorylogQueryRequest) SetStoreCode(_storeCode string) error {
+    r._storeCode = _storeCode
+    r.Set("store_code", _storeCode)
     return nil
 }
 
 // StoreCode Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetStoreCode() string {
-    return r.storeCode
+    return r._storeCode
 }
 // OrderCode Setter
 // 单号
-func (r *TaobaoWlbInventorylogQueryRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbInventorylogQueryRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // GmtStart Setter
 // 起始修改时间,大于等于该时间
-func (r *TaobaoWlbInventorylogQueryRequest) SetGmtStart(gmtStart string) error {
-    r.gmtStart = gmtStart
-    r.Set("gmt_start", gmtStart)
+func (r *TaobaoWlbInventorylogQueryRequest) SetGmtStart(_gmtStart string) error {
+    r._gmtStart = _gmtStart
+    r.Set("gmt_start", _gmtStart)
     return nil
 }
 
 // GmtStart Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetGmtStart() string {
-    return r.gmtStart
+    return r._gmtStart
 }
 // GmtEnd Setter
 // 结束修改时间,小于等于该时间
-func (r *TaobaoWlbInventorylogQueryRequest) SetGmtEnd(gmtEnd string) error {
-    r.gmtEnd = gmtEnd
-    r.Set("gmt_end", gmtEnd)
+func (r *TaobaoWlbInventorylogQueryRequest) SetGmtEnd(_gmtEnd string) error {
+    r._gmtEnd = _gmtEnd
+    r.Set("gmt_end", _gmtEnd)
     return nil
 }
 
 // GmtEnd Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetGmtEnd() string {
-    return r.gmtEnd
+    return r._gmtEnd
 }
 // PageNo Setter
 // 当前页
-func (r *TaobaoWlbInventorylogQueryRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoWlbInventorylogQueryRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 分页记录个数
-func (r *TaobaoWlbInventorylogQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoWlbInventorylogQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // OpUserId Setter
 // 可指定授权的用户来查询
-func (r *TaobaoWlbInventorylogQueryRequest) SetOpUserId(opUserId int64) error {
-    r.opUserId = opUserId
-    r.Set("op_user_id", opUserId)
+func (r *TaobaoWlbInventorylogQueryRequest) SetOpUserId(_opUserId int64) error {
+    r._opUserId = _opUserId
+    r.Set("op_user_id", _opUserId)
     return nil
 }
 
 // OpUserId Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetOpUserId() int64 {
-    return r.opUserId
+    return r._opUserId
 }
 // OpType Setter
 // 库存操作作类型(可以为空) CHU_KU 1-出库 RU_KU 2-入库 FREEZE 3-冻结 THAW 4-解冻 CHECK_FREEZE 5-冻结确认 CHANGE_KU 6-库存类型变更 若值不在范围内，则按CHU_KU处理
-func (r *TaobaoWlbInventorylogQueryRequest) SetOpType(opType string) error {
-    r.opType = opType
-    r.Set("op_type", opType)
+func (r *TaobaoWlbInventorylogQueryRequest) SetOpType(_opType string) error {
+    r._opType = _opType
+    r.Set("op_type", _opType)
     return nil
 }
 
 // OpType Getter
 func (r TaobaoWlbInventorylogQueryRequest) GetOpType() string {
-    return r.opType
+    return r._opType
 }

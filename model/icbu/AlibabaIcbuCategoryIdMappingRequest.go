@@ -15,13 +15,13 @@ alibaba.icbu.category.id.mapping
 type AlibabaIcbuCategoryIdMappingRequest struct {
     model.Params
     // 发布类目id
-    catId   int64
+    _catId   int64
     // 属性值id
-    attributeValueId   int64
+    _attributeValueId   int64
     // 属性id
-    attributeId   int64
+    _attributeId   int64
     // 转化类型, 1 = 转化类目id 2= 转化属性id 3= 转化属性值id
-    convertType   int64
+    _convertType   int64
 }
 
 // 初始化AlibabaIcbuCategoryIdMappingRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaIcbuCategoryIdMappingRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 发布类目id
-func (r *AlibabaIcbuCategoryIdMappingRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlibabaIcbuCategoryIdMappingRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlibabaIcbuCategoryIdMappingRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // AttributeValueId Setter
 // 属性值id
-func (r *AlibabaIcbuCategoryIdMappingRequest) SetAttributeValueId(attributeValueId int64) error {
-    r.attributeValueId = attributeValueId
-    r.Set("attribute_value_id", attributeValueId)
+func (r *AlibabaIcbuCategoryIdMappingRequest) SetAttributeValueId(_attributeValueId int64) error {
+    r._attributeValueId = _attributeValueId
+    r.Set("attribute_value_id", _attributeValueId)
     return nil
 }
 
 // AttributeValueId Getter
 func (r AlibabaIcbuCategoryIdMappingRequest) GetAttributeValueId() int64 {
-    return r.attributeValueId
+    return r._attributeValueId
 }
 // AttributeId Setter
 // 属性id
-func (r *AlibabaIcbuCategoryIdMappingRequest) SetAttributeId(attributeId int64) error {
-    r.attributeId = attributeId
-    r.Set("attribute_id", attributeId)
+func (r *AlibabaIcbuCategoryIdMappingRequest) SetAttributeId(_attributeId int64) error {
+    r._attributeId = _attributeId
+    r.Set("attribute_id", _attributeId)
     return nil
 }
 
 // AttributeId Getter
 func (r AlibabaIcbuCategoryIdMappingRequest) GetAttributeId() int64 {
-    return r.attributeId
+    return r._attributeId
 }
 // ConvertType Setter
 // 转化类型, 1 = 转化类目id 2= 转化属性id 3= 转化属性值id
-func (r *AlibabaIcbuCategoryIdMappingRequest) SetConvertType(convertType int64) error {
-    r.convertType = convertType
-    r.Set("convert_type", convertType)
+func (r *AlibabaIcbuCategoryIdMappingRequest) SetConvertType(_convertType int64) error {
+    r._convertType = _convertType
+    r.Set("convert_type", _convertType)
     return nil
 }
 
 // ConvertType Getter
 func (r AlibabaIcbuCategoryIdMappingRequest) GetConvertType() int64 {
-    return r.convertType
+    return r._convertType
 }

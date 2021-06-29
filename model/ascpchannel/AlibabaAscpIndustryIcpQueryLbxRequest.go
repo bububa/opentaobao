@@ -15,7 +15,7 @@ alibaba.ascp.industry.icp.query.lbx
 type AlibabaAscpIndustryIcpQueryLbxRequest struct {
     model.Params
     // icps订单号
-    icpOrderCode   string
+    _icpOrderCode   string
 }
 
 // 初始化AlibabaAscpIndustryIcpQueryLbxRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpIndustryIcpQueryLbxRequest) GetApiParams() url.Values {
 }
 // IcpOrderCode Setter
 // icps订单号
-func (r *AlibabaAscpIndustryIcpQueryLbxRequest) SetIcpOrderCode(icpOrderCode string) error {
-    r.icpOrderCode = icpOrderCode
-    r.Set("icp_order_code", icpOrderCode)
+func (r *AlibabaAscpIndustryIcpQueryLbxRequest) SetIcpOrderCode(_icpOrderCode string) error {
+    r._icpOrderCode = _icpOrderCode
+    r.Set("icp_order_code", _icpOrderCode)
     return nil
 }
 
 // IcpOrderCode Getter
 func (r AlibabaAscpIndustryIcpQueryLbxRequest) GetIcpOrderCode() string {
-    return r.icpOrderCode
+    return r._icpOrderCode
 }

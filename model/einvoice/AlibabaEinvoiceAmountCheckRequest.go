@@ -15,11 +15,11 @@ alibaba.einvoice.amount.check
 type AlibabaEinvoiceAmountCheckRequest struct {
     model.Params
     // 税号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
     // 开票日期开始时间
-    startDate   string
+    _startDate   string
     // 开票日期结束时间
-    endDate   string
+    _endDate   string
 }
 
 // 初始化AlibabaEinvoiceAmountCheckRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaEinvoiceAmountCheckRequest) GetApiParams() url.Values {
 }
 // PayeeRegisterNo Setter
 // 税号
-func (r *AlibabaEinvoiceAmountCheckRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoiceAmountCheckRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoiceAmountCheckRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }
 // StartDate Setter
 // 开票日期开始时间
-func (r *AlibabaEinvoiceAmountCheckRequest) SetStartDate(startDate string) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *AlibabaEinvoiceAmountCheckRequest) SetStartDate(_startDate string) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r AlibabaEinvoiceAmountCheckRequest) GetStartDate() string {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // 开票日期结束时间
-func (r *AlibabaEinvoiceAmountCheckRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaEinvoiceAmountCheckRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaEinvoiceAmountCheckRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }

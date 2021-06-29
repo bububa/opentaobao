@@ -15,7 +15,7 @@ alibaba.scbp.showcase.deleteproduct
 type AlibabaScbpShowcaseDeleteproductRequest struct {
     model.Params
     // 橱窗idList
-    windowIdList   []int64
+    _windowIdList   []int64
 }
 
 // 初始化AlibabaScbpShowcaseDeleteproductRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpShowcaseDeleteproductRequest) GetApiParams() url.Values {
 }
 // WindowIdList Setter
 // 橱窗idList
-func (r *AlibabaScbpShowcaseDeleteproductRequest) SetWindowIdList(windowIdList []int64) error {
-    r.windowIdList = windowIdList
-    r.Set("window_id_list", windowIdList)
+func (r *AlibabaScbpShowcaseDeleteproductRequest) SetWindowIdList(_windowIdList []int64) error {
+    r._windowIdList = _windowIdList
+    r.Set("window_id_list", _windowIdList)
     return nil
 }
 
 // WindowIdList Getter
 func (r AlibabaScbpShowcaseDeleteproductRequest) GetWindowIdList() []int64 {
-    return r.windowIdList
+    return r._windowIdList
 }

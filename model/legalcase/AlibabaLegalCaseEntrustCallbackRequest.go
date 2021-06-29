@@ -15,9 +15,9 @@ alibaba.legal.case.entrust.callback
 type AlibabaLegalCaseEntrustCallbackRequest struct {
     model.Params
     // 委托id
-    entrustId   int64
+    _entrustId   int64
     // 案件id
-    caseId   int64
+    _caseId   int64
 }
 
 // 初始化AlibabaLegalCaseEntrustCallbackRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaLegalCaseEntrustCallbackRequest) GetApiParams() url.Values {
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseEntrustCallbackRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalCaseEntrustCallbackRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalCaseEntrustCallbackRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }
 // CaseId Setter
 // 案件id
-func (r *AlibabaLegalCaseEntrustCallbackRequest) SetCaseId(caseId int64) error {
-    r.caseId = caseId
-    r.Set("case_id", caseId)
+func (r *AlibabaLegalCaseEntrustCallbackRequest) SetCaseId(_caseId int64) error {
+    r._caseId = _caseId
+    r.Set("case_id", _caseId)
     return nil
 }
 
 // CaseId Getter
 func (r AlibabaLegalCaseEntrustCallbackRequest) GetCaseId() int64 {
-    return r.caseId
+    return r._caseId
 }

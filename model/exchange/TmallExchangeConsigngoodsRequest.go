@@ -15,15 +15,15 @@ tmall.exchange.consigngoods
 type TmallExchangeConsigngoodsRequest struct {
     model.Params
     // 换货单号ID
-    disputeId   int64
+    _disputeId   int64
     // 卖家发货的物流单号
-    logisticsNo   string
+    _logisticsNo   string
     // 卖家发货的物流类型，100表示平邮，200表示快递
-    logisticsType   int64
+    _logisticsType   int64
     // 卖家发货的快递公司
-    logisticsCompanyName   string
+    _logisticsCompanyName   string
     // 返回字段
-    fields   []string
+    _fields   []string
 }
 
 // 初始化TmallExchangeConsigngoodsRequest对象
@@ -48,61 +48,61 @@ func (r TmallExchangeConsigngoodsRequest) GetApiParams() url.Values {
 }
 // DisputeId Setter
 // 换货单号ID
-func (r *TmallExchangeConsigngoodsRequest) SetDisputeId(disputeId int64) error {
-    r.disputeId = disputeId
-    r.Set("dispute_id", disputeId)
+func (r *TmallExchangeConsigngoodsRequest) SetDisputeId(_disputeId int64) error {
+    r._disputeId = _disputeId
+    r.Set("dispute_id", _disputeId)
     return nil
 }
 
 // DisputeId Getter
 func (r TmallExchangeConsigngoodsRequest) GetDisputeId() int64 {
-    return r.disputeId
+    return r._disputeId
 }
 // LogisticsNo Setter
 // 卖家发货的物流单号
-func (r *TmallExchangeConsigngoodsRequest) SetLogisticsNo(logisticsNo string) error {
-    r.logisticsNo = logisticsNo
-    r.Set("logistics_no", logisticsNo)
+func (r *TmallExchangeConsigngoodsRequest) SetLogisticsNo(_logisticsNo string) error {
+    r._logisticsNo = _logisticsNo
+    r.Set("logistics_no", _logisticsNo)
     return nil
 }
 
 // LogisticsNo Getter
 func (r TmallExchangeConsigngoodsRequest) GetLogisticsNo() string {
-    return r.logisticsNo
+    return r._logisticsNo
 }
 // LogisticsType Setter
 // 卖家发货的物流类型，100表示平邮，200表示快递
-func (r *TmallExchangeConsigngoodsRequest) SetLogisticsType(logisticsType int64) error {
-    r.logisticsType = logisticsType
-    r.Set("logistics_type", logisticsType)
+func (r *TmallExchangeConsigngoodsRequest) SetLogisticsType(_logisticsType int64) error {
+    r._logisticsType = _logisticsType
+    r.Set("logistics_type", _logisticsType)
     return nil
 }
 
 // LogisticsType Getter
 func (r TmallExchangeConsigngoodsRequest) GetLogisticsType() int64 {
-    return r.logisticsType
+    return r._logisticsType
 }
 // LogisticsCompanyName Setter
 // 卖家发货的快递公司
-func (r *TmallExchangeConsigngoodsRequest) SetLogisticsCompanyName(logisticsCompanyName string) error {
-    r.logisticsCompanyName = logisticsCompanyName
-    r.Set("logistics_company_name", logisticsCompanyName)
+func (r *TmallExchangeConsigngoodsRequest) SetLogisticsCompanyName(_logisticsCompanyName string) error {
+    r._logisticsCompanyName = _logisticsCompanyName
+    r.Set("logistics_company_name", _logisticsCompanyName)
     return nil
 }
 
 // LogisticsCompanyName Getter
 func (r TmallExchangeConsigngoodsRequest) GetLogisticsCompanyName() string {
-    return r.logisticsCompanyName
+    return r._logisticsCompanyName
 }
 // Fields Setter
 // 返回字段
-func (r *TmallExchangeConsigngoodsRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TmallExchangeConsigngoodsRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TmallExchangeConsigngoodsRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }

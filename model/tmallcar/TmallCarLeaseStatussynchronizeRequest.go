@@ -15,15 +15,15 @@ tmall.car.lease.statussynchronize
 type TmallCarLeaseStatussynchronizeRequest struct {
     model.Params
     // 天猫开新车订单号
-    orderId   int64
+    _orderId   int64
     // 业务类型:0.退车,1.买断,2.分期，3.续租
-    bizType   int64
+    _bizType   int64
     // 1:过户,2:续租,3.额外费用审核，4.退车完成
-    actionType   int64
+    _actionType   int64
     // 1:通过，-1:拒绝
-    actionValue   int64
+    _actionValue   int64
     // 拒绝原因
-    refuseReason   string
+    _refuseReason   string
 }
 
 // 初始化TmallCarLeaseStatussynchronizeRequest对象
@@ -48,61 +48,61 @@ func (r TmallCarLeaseStatussynchronizeRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 天猫开新车订单号
-func (r *TmallCarLeaseStatussynchronizeRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallCarLeaseStatussynchronizeRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallCarLeaseStatussynchronizeRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // BizType Setter
 // 业务类型:0.退车,1.买断,2.分期，3.续租
-func (r *TmallCarLeaseStatussynchronizeRequest) SetBizType(bizType int64) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallCarLeaseStatussynchronizeRequest) SetBizType(_bizType int64) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallCarLeaseStatussynchronizeRequest) GetBizType() int64 {
-    return r.bizType
+    return r._bizType
 }
 // ActionType Setter
 // 1:过户,2:续租,3.额外费用审核，4.退车完成
-func (r *TmallCarLeaseStatussynchronizeRequest) SetActionType(actionType int64) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *TmallCarLeaseStatussynchronizeRequest) SetActionType(_actionType int64) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r TmallCarLeaseStatussynchronizeRequest) GetActionType() int64 {
-    return r.actionType
+    return r._actionType
 }
 // ActionValue Setter
 // 1:通过，-1:拒绝
-func (r *TmallCarLeaseStatussynchronizeRequest) SetActionValue(actionValue int64) error {
-    r.actionValue = actionValue
-    r.Set("action_value", actionValue)
+func (r *TmallCarLeaseStatussynchronizeRequest) SetActionValue(_actionValue int64) error {
+    r._actionValue = _actionValue
+    r.Set("action_value", _actionValue)
     return nil
 }
 
 // ActionValue Getter
 func (r TmallCarLeaseStatussynchronizeRequest) GetActionValue() int64 {
-    return r.actionValue
+    return r._actionValue
 }
 // RefuseReason Setter
 // 拒绝原因
-func (r *TmallCarLeaseStatussynchronizeRequest) SetRefuseReason(refuseReason string) error {
-    r.refuseReason = refuseReason
-    r.Set("refuse_reason", refuseReason)
+func (r *TmallCarLeaseStatussynchronizeRequest) SetRefuseReason(_refuseReason string) error {
+    r._refuseReason = _refuseReason
+    r.Set("refuse_reason", _refuseReason)
     return nil
 }
 
 // RefuseReason Getter
 func (r TmallCarLeaseStatussynchronizeRequest) GetRefuseReason() string {
-    return r.refuseReason
+    return r._refuseReason
 }

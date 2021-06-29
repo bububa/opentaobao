@@ -15,7 +15,7 @@ pushFace
 type AlibabaDamaiMevOpenPushfaceRequest struct {
     model.Params
     // 入参pushFaceParam
-    pushFaceParam   *ThirdTicketFacePushOpenParam
+    _pushFaceParam   *ThirdTicketFacePushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushfaceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushfaceRequest) GetApiParams() url.Values {
 }
 // PushFaceParam Setter
 // 入参pushFaceParam
-func (r *AlibabaDamaiMevOpenPushfaceRequest) SetPushFaceParam(pushFaceParam *ThirdTicketFacePushOpenParam) error {
-    r.pushFaceParam = pushFaceParam
-    r.Set("push_face_param", pushFaceParam)
+func (r *AlibabaDamaiMevOpenPushfaceRequest) SetPushFaceParam(_pushFaceParam *ThirdTicketFacePushOpenParam) error {
+    r._pushFaceParam = _pushFaceParam
+    r.Set("push_face_param", _pushFaceParam)
     return nil
 }
 
 // PushFaceParam Getter
 func (r AlibabaDamaiMevOpenPushfaceRequest) GetPushFaceParam() *ThirdTicketFacePushOpenParam {
-    return r.pushFaceParam
+    return r._pushFaceParam
 }

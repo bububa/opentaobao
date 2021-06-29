@@ -15,9 +15,9 @@ alibaba.idle.isv.spu.search
 type AlibabaIdleIsvSpuSearchRequest struct {
     model.Params
     // 闲鱼渠道类目的id
-    channelCatId   string
+    _channelCatId   string
     // 搜索的文本
-    searchText   string
+    _searchText   string
 }
 
 // 初始化AlibabaIdleIsvSpuSearchRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaIdleIsvSpuSearchRequest) GetApiParams() url.Values {
 }
 // ChannelCatId Setter
 // 闲鱼渠道类目的id
-func (r *AlibabaIdleIsvSpuSearchRequest) SetChannelCatId(channelCatId string) error {
-    r.channelCatId = channelCatId
-    r.Set("channel_cat_id", channelCatId)
+func (r *AlibabaIdleIsvSpuSearchRequest) SetChannelCatId(_channelCatId string) error {
+    r._channelCatId = _channelCatId
+    r.Set("channel_cat_id", _channelCatId)
     return nil
 }
 
 // ChannelCatId Getter
 func (r AlibabaIdleIsvSpuSearchRequest) GetChannelCatId() string {
-    return r.channelCatId
+    return r._channelCatId
 }
 // SearchText Setter
 // 搜索的文本
-func (r *AlibabaIdleIsvSpuSearchRequest) SetSearchText(searchText string) error {
-    r.searchText = searchText
-    r.Set("search_text", searchText)
+func (r *AlibabaIdleIsvSpuSearchRequest) SetSearchText(_searchText string) error {
+    r._searchText = _searchText
+    r.Set("search_text", _searchText)
     return nil
 }
 
 // SearchText Getter
 func (r AlibabaIdleIsvSpuSearchRequest) GetSearchText() string {
-    return r.searchText
+    return r._searchText
 }

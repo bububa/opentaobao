@@ -15,15 +15,15 @@ taobao.item.propimg.upload
 type TaobaoItemPropimgUploadRequest struct {
     model.Params
     // 商品数字ID，必选
-    numIid   int64
+    _numIid   int64
     // 属性列表。调用taobao.itemprops.get获取类目属性，属性必须是颜色属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid。
-    properties   string
+    _properties   string
     // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-    image   []*model.File
+    _image   []*model.File
     // 属性图片ID。如果是新增不需要填写
-    id   int64
+    _id   int64
     // 图片位置
-    position   int64
+    _position   int64
 }
 
 // 初始化TaobaoItemPropimgUploadRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoItemPropimgUploadRequest) GetApiParams() url.Values {
 }
 // NumIid Setter
 // 商品数字ID，必选
-func (r *TaobaoItemPropimgUploadRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemPropimgUploadRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemPropimgUploadRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }
 // Properties Setter
 // 属性列表。调用taobao.itemprops.get获取类目属性，属性必须是颜色属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid。
-func (r *TaobaoItemPropimgUploadRequest) SetProperties(properties string) error {
-    r.properties = properties
-    r.Set("properties", properties)
+func (r *TaobaoItemPropimgUploadRequest) SetProperties(_properties string) error {
+    r._properties = _properties
+    r.Set("properties", _properties)
     return nil
 }
 
 // Properties Getter
 func (r TaobaoItemPropimgUploadRequest) GetProperties() string {
-    return r.properties
+    return r._properties
 }
 // Image Setter
 // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-func (r *TaobaoItemPropimgUploadRequest) SetImage(image []*model.File) error {
-    r.image = image
-    r.Set("image", image)
+func (r *TaobaoItemPropimgUploadRequest) SetImage(_image []*model.File) error {
+    r._image = _image
+    r.Set("image", _image)
     return nil
 }
 
 // Image Getter
 func (r TaobaoItemPropimgUploadRequest) GetImage() []*model.File {
-    return r.image
+    return r._image
 }
 // Id Setter
 // 属性图片ID。如果是新增不需要填写
-func (r *TaobaoItemPropimgUploadRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoItemPropimgUploadRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoItemPropimgUploadRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Position Setter
 // 图片位置
-func (r *TaobaoItemPropimgUploadRequest) SetPosition(position int64) error {
-    r.position = position
-    r.Set("position", position)
+func (r *TaobaoItemPropimgUploadRequest) SetPosition(_position int64) error {
+    r._position = _position
+    r.Set("position", _position)
     return nil
 }
 
 // Position Getter
 func (r TaobaoItemPropimgUploadRequest) GetPosition() int64 {
-    return r.position
+    return r._position
 }

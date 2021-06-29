@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.fullupdate
 type TaobaoWlbWaybillIFullupdateRequest struct {
     model.Params
     // 更新面单信息请求
-    waybillApplyFullUpdateRequest   *WaybillApplyFullUpdateRequest
+    _waybillApplyFullUpdateRequest   *WaybillApplyFullUpdateRequest
 }
 
 // 初始化TaobaoWlbWaybillIFullupdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIFullupdateRequest) GetApiParams() url.Values {
 }
 // WaybillApplyFullUpdateRequest Setter
 // 更新面单信息请求
-func (r *TaobaoWlbWaybillIFullupdateRequest) SetWaybillApplyFullUpdateRequest(waybillApplyFullUpdateRequest *WaybillApplyFullUpdateRequest) error {
-    r.waybillApplyFullUpdateRequest = waybillApplyFullUpdateRequest
-    r.Set("waybill_apply_full_update_request", waybillApplyFullUpdateRequest)
+func (r *TaobaoWlbWaybillIFullupdateRequest) SetWaybillApplyFullUpdateRequest(_waybillApplyFullUpdateRequest *WaybillApplyFullUpdateRequest) error {
+    r._waybillApplyFullUpdateRequest = _waybillApplyFullUpdateRequest
+    r.Set("waybill_apply_full_update_request", _waybillApplyFullUpdateRequest)
     return nil
 }
 
 // WaybillApplyFullUpdateRequest Getter
 func (r TaobaoWlbWaybillIFullupdateRequest) GetWaybillApplyFullUpdateRequest() *WaybillApplyFullUpdateRequest {
-    return r.waybillApplyFullUpdateRequest
+    return r._waybillApplyFullUpdateRequest
 }

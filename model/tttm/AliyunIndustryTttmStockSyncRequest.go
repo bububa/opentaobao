@@ -15,7 +15,7 @@ aliyun.industry.tttm.stock.sync
 type AliyunIndustryTttmStockSyncRequest struct {
     model.Params
     // 库存
-    syncStock   *StockInfoDto
+    _syncStock   *StockInfoDto
 }
 
 // 初始化AliyunIndustryTttmStockSyncRequest对象
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmStockSyncRequest) GetApiParams() url.Values {
 }
 // SyncStock Setter
 // 库存
-func (r *AliyunIndustryTttmStockSyncRequest) SetSyncStock(syncStock *StockInfoDto) error {
-    r.syncStock = syncStock
-    r.Set("sync_stock", syncStock)
+func (r *AliyunIndustryTttmStockSyncRequest) SetSyncStock(_syncStock *StockInfoDto) error {
+    r._syncStock = _syncStock
+    r.Set("sync_stock", _syncStock)
     return nil
 }
 
 // SyncStock Getter
 func (r AliyunIndustryTttmStockSyncRequest) GetSyncStock() *StockInfoDto {
-    return r.syncStock
+    return r._syncStock
 }

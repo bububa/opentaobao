@@ -15,13 +15,13 @@ taobao.simba.adgroups.item.exist
 type TaobaoSimbaAdgroupsItemExistRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 商品Id
-    itemId   int64
+    _itemId   int64
     // 产品类型 101001005 代表普通推广，101001014代表销量明星
-    productId   int64
+    _productId   int64
 }
 
 // 初始化TaobaoSimbaAdgroupsItemExistRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSimbaAdgroupsItemExistRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaAdgroupsItemExistRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaAdgroupsItemExistRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaAdgroupsItemExistRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaAdgroupsItemExistRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaAdgroupsItemExistRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaAdgroupsItemExistRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // ItemId Setter
 // 商品Id
-func (r *TaobaoSimbaAdgroupsItemExistRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoSimbaAdgroupsItemExistRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoSimbaAdgroupsItemExistRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // ProductId Setter
 // 产品类型 101001005 代表普通推广，101001014代表销量明星
-func (r *TaobaoSimbaAdgroupsItemExistRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *TaobaoSimbaAdgroupsItemExistRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r TaobaoSimbaAdgroupsItemExistRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

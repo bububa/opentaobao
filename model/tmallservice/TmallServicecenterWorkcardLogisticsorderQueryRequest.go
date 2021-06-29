@@ -15,7 +15,7 @@ tmall.servicecenter.workcard.logisticsorder.query
 type TmallServicecenterWorkcardLogisticsorderQueryRequest struct {
     model.Params
     // 物流单号
-    logisticsOrderId   int64
+    _logisticsOrderId   int64
 }
 
 // 初始化TmallServicecenterWorkcardLogisticsorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkcardLogisticsorderQueryRequest) GetApiParams() url
 }
 // LogisticsOrderId Setter
 // 物流单号
-func (r *TmallServicecenterWorkcardLogisticsorderQueryRequest) SetLogisticsOrderId(logisticsOrderId int64) error {
-    r.logisticsOrderId = logisticsOrderId
-    r.Set("logistics_order_id", logisticsOrderId)
+func (r *TmallServicecenterWorkcardLogisticsorderQueryRequest) SetLogisticsOrderId(_logisticsOrderId int64) error {
+    r._logisticsOrderId = _logisticsOrderId
+    r.Set("logistics_order_id", _logisticsOrderId)
     return nil
 }
 
 // LogisticsOrderId Getter
 func (r TmallServicecenterWorkcardLogisticsorderQueryRequest) GetLogisticsOrderId() int64 {
-    return r.logisticsOrderId
+    return r._logisticsOrderId
 }

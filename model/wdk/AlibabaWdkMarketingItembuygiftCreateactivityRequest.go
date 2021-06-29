@@ -15,7 +15,7 @@ alibaba.wdk.marketing.itembuygift.createactivity
 type AlibabaWdkMarketingItembuygiftCreateactivityRequest struct {
     model.Params
     // 创建活动请求入参
-    param   *ItemBuyGiftActivity
+    _param   *ItemBuyGiftActivity
 }
 
 // 初始化AlibabaWdkMarketingItembuygiftCreateactivityRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingItembuygiftCreateactivityRequest) GetApiParams() url.
 }
 // Param Setter
 // 创建活动请求入参
-func (r *AlibabaWdkMarketingItembuygiftCreateactivityRequest) SetParam(param *ItemBuyGiftActivity) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkMarketingItembuygiftCreateactivityRequest) SetParam(_param *ItemBuyGiftActivity) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkMarketingItembuygiftCreateactivityRequest) GetParam() *ItemBuyGiftActivity {
-    return r.param
+    return r._param
 }

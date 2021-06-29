@@ -15,11 +15,11 @@ alitrip.btrip.invoice.search
 type AlitripBtripInvoiceSearchRequest struct {
     model.Params
     // 企业id
-    corpId   string
+    _corpId   string
     // 用户id
-    userId   string
+    _userId   string
     // 发票抬头
-    title   string
+    _title   string
 }
 
 // 初始化AlitripBtripInvoiceSearchRequest对象
@@ -44,37 +44,37 @@ func (r AlitripBtripInvoiceSearchRequest) GetApiParams() url.Values {
 }
 // CorpId Setter
 // 企业id
-func (r *AlitripBtripInvoiceSearchRequest) SetCorpId(corpId string) error {
-    r.corpId = corpId
-    r.Set("corp_id", corpId)
+func (r *AlitripBtripInvoiceSearchRequest) SetCorpId(_corpId string) error {
+    r._corpId = _corpId
+    r.Set("corp_id", _corpId)
     return nil
 }
 
 // CorpId Getter
 func (r AlitripBtripInvoiceSearchRequest) GetCorpId() string {
-    return r.corpId
+    return r._corpId
 }
 // UserId Setter
 // 用户id
-func (r *AlitripBtripInvoiceSearchRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlitripBtripInvoiceSearchRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlitripBtripInvoiceSearchRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }
 // Title Setter
 // 发票抬头
-func (r *AlitripBtripInvoiceSearchRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *AlitripBtripInvoiceSearchRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r AlitripBtripInvoiceSearchRequest) GetTitle() string {
-    return r.title
+    return r._title
 }

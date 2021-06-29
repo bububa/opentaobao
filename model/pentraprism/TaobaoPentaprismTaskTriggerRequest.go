@@ -15,7 +15,7 @@ taobao.pentaprism.task.trigger
 type TaobaoPentaprismTaskTriggerRequest struct {
     model.Params
     // TOP接口标准入参
-    openPo   *OpenTaskPo
+    _openPo   *OpenTaskPo
 }
 
 // 初始化TaobaoPentaprismTaskTriggerRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPentaprismTaskTriggerRequest) GetApiParams() url.Values {
 }
 // OpenPo Setter
 // TOP接口标准入参
-func (r *TaobaoPentaprismTaskTriggerRequest) SetOpenPo(openPo *OpenTaskPo) error {
-    r.openPo = openPo
-    r.Set("open_po", openPo)
+func (r *TaobaoPentaprismTaskTriggerRequest) SetOpenPo(_openPo *OpenTaskPo) error {
+    r._openPo = _openPo
+    r.Set("open_po", _openPo)
     return nil
 }
 
 // OpenPo Getter
 func (r TaobaoPentaprismTaskTriggerRequest) GetOpenPo() *OpenTaskPo {
-    return r.openPo
+    return r._openPo
 }

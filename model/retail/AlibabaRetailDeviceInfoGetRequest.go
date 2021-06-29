@@ -15,11 +15,11 @@ alibaba.retail.device.info.get
 type AlibabaRetailDeviceInfoGetRequest struct {
     model.Params
     // 外部设备ID
-    deviceUuid   string
+    _deviceUuid   string
     // 阿里设备编码
-    deviceCode   string
+    _deviceCode   string
     // 阿里设备物理ID（32位）
-    deviceSn   string
+    _deviceSn   string
 }
 
 // 初始化AlibabaRetailDeviceInfoGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaRetailDeviceInfoGetRequest) GetApiParams() url.Values {
 }
 // DeviceUuid Setter
 // 外部设备ID
-func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceUuid(deviceUuid string) error {
-    r.deviceUuid = deviceUuid
-    r.Set("device_uuid", deviceUuid)
+func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceUuid(_deviceUuid string) error {
+    r._deviceUuid = _deviceUuid
+    r.Set("device_uuid", _deviceUuid)
     return nil
 }
 
 // DeviceUuid Getter
 func (r AlibabaRetailDeviceInfoGetRequest) GetDeviceUuid() string {
-    return r.deviceUuid
+    return r._deviceUuid
 }
 // DeviceCode Setter
 // 阿里设备编码
-func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceCode(deviceCode string) error {
-    r.deviceCode = deviceCode
-    r.Set("device_code", deviceCode)
+func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceCode(_deviceCode string) error {
+    r._deviceCode = _deviceCode
+    r.Set("device_code", _deviceCode)
     return nil
 }
 
 // DeviceCode Getter
 func (r AlibabaRetailDeviceInfoGetRequest) GetDeviceCode() string {
-    return r.deviceCode
+    return r._deviceCode
 }
 // DeviceSn Setter
 // 阿里设备物理ID（32位）
-func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceSn(deviceSn string) error {
-    r.deviceSn = deviceSn
-    r.Set("device_sn", deviceSn)
+func (r *AlibabaRetailDeviceInfoGetRequest) SetDeviceSn(_deviceSn string) error {
+    r._deviceSn = _deviceSn
+    r.Set("device_sn", _deviceSn)
     return nil
 }
 
 // DeviceSn Getter
 func (r AlibabaRetailDeviceInfoGetRequest) GetDeviceSn() string {
-    return r.deviceSn
+    return r._deviceSn
 }

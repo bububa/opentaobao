@@ -15,7 +15,7 @@ alibaba.dropshipping.product.get
 type AlibabaDropshippingProductGetRequest struct {
     model.Params
     // {}
-    paramDistributionSaleProductRequest   *DistributionSaleProductRequest
+    _paramDistributionSaleProductRequest   *DistributionSaleProductRequest
 }
 
 // 初始化AlibabaDropshippingProductGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDropshippingProductGetRequest) GetApiParams() url.Values {
 }
 // ParamDistributionSaleProductRequest Setter
 // {}
-func (r *AlibabaDropshippingProductGetRequest) SetParamDistributionSaleProductRequest(paramDistributionSaleProductRequest *DistributionSaleProductRequest) error {
-    r.paramDistributionSaleProductRequest = paramDistributionSaleProductRequest
-    r.Set("param_distribution_sale_product_request", paramDistributionSaleProductRequest)
+func (r *AlibabaDropshippingProductGetRequest) SetParamDistributionSaleProductRequest(_paramDistributionSaleProductRequest *DistributionSaleProductRequest) error {
+    r._paramDistributionSaleProductRequest = _paramDistributionSaleProductRequest
+    r.Set("param_distribution_sale_product_request", _paramDistributionSaleProductRequest)
     return nil
 }
 
 // ParamDistributionSaleProductRequest Getter
 func (r AlibabaDropshippingProductGetRequest) GetParamDistributionSaleProductRequest() *DistributionSaleProductRequest {
-    return r.paramDistributionSaleProductRequest
+    return r._paramDistributionSaleProductRequest
 }

@@ -15,19 +15,19 @@ alitrip.travel.visa.applicant.import
 type AlitripTravelVisaApplicantImportRequest struct {
     model.Params
     // 国家id。目前支持越南(27027)
-    nationId   int64
+    _nationId   int64
     // 证件照文件字节流
-    photoFile   []*model.File
+    _photoFile   []*model.File
     // 外部商家申请人id
-    outerApplyId   string
+    _outerApplyId   string
     // 护照文件类型
-    passportFileType   string
+    _passportFileType   string
     // 护照文件字节流
-    passportFile   []*model.File
+    _passportFile   []*model.File
     // 证件照文件类型
-    photoFileType   string
+    _photoFileType   string
     // 申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大);3.daibanTypeId(代办类型):1(越南一个月单次入境),2(越南一个月多次入境),3(越南三个月单次入境),4(越南三个月多次入境)
-    formDataJson   string
+    _formDataJson   string
 }
 
 // 初始化AlitripTravelVisaApplicantImportRequest对象
@@ -52,85 +52,85 @@ func (r AlitripTravelVisaApplicantImportRequest) GetApiParams() url.Values {
 }
 // NationId Setter
 // 国家id。目前支持越南(27027)
-func (r *AlitripTravelVisaApplicantImportRequest) SetNationId(nationId int64) error {
-    r.nationId = nationId
-    r.Set("nation_id", nationId)
+func (r *AlitripTravelVisaApplicantImportRequest) SetNationId(_nationId int64) error {
+    r._nationId = _nationId
+    r.Set("nation_id", _nationId)
     return nil
 }
 
 // NationId Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetNationId() int64 {
-    return r.nationId
+    return r._nationId
 }
 // PhotoFile Setter
 // 证件照文件字节流
-func (r *AlitripTravelVisaApplicantImportRequest) SetPhotoFile(photoFile []*model.File) error {
-    r.photoFile = photoFile
-    r.Set("photo_file", photoFile)
+func (r *AlitripTravelVisaApplicantImportRequest) SetPhotoFile(_photoFile []*model.File) error {
+    r._photoFile = _photoFile
+    r.Set("photo_file", _photoFile)
     return nil
 }
 
 // PhotoFile Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetPhotoFile() []*model.File {
-    return r.photoFile
+    return r._photoFile
 }
 // OuterApplyId Setter
 // 外部商家申请人id
-func (r *AlitripTravelVisaApplicantImportRequest) SetOuterApplyId(outerApplyId string) error {
-    r.outerApplyId = outerApplyId
-    r.Set("outer_apply_id", outerApplyId)
+func (r *AlitripTravelVisaApplicantImportRequest) SetOuterApplyId(_outerApplyId string) error {
+    r._outerApplyId = _outerApplyId
+    r.Set("outer_apply_id", _outerApplyId)
     return nil
 }
 
 // OuterApplyId Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetOuterApplyId() string {
-    return r.outerApplyId
+    return r._outerApplyId
 }
 // PassportFileType Setter
 // 护照文件类型
-func (r *AlitripTravelVisaApplicantImportRequest) SetPassportFileType(passportFileType string) error {
-    r.passportFileType = passportFileType
-    r.Set("passport_file_type", passportFileType)
+func (r *AlitripTravelVisaApplicantImportRequest) SetPassportFileType(_passportFileType string) error {
+    r._passportFileType = _passportFileType
+    r.Set("passport_file_type", _passportFileType)
     return nil
 }
 
 // PassportFileType Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetPassportFileType() string {
-    return r.passportFileType
+    return r._passportFileType
 }
 // PassportFile Setter
 // 护照文件字节流
-func (r *AlitripTravelVisaApplicantImportRequest) SetPassportFile(passportFile []*model.File) error {
-    r.passportFile = passportFile
-    r.Set("passport_file", passportFile)
+func (r *AlitripTravelVisaApplicantImportRequest) SetPassportFile(_passportFile []*model.File) error {
+    r._passportFile = _passportFile
+    r.Set("passport_file", _passportFile)
     return nil
 }
 
 // PassportFile Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetPassportFile() []*model.File {
-    return r.passportFile
+    return r._passportFile
 }
 // PhotoFileType Setter
 // 证件照文件类型
-func (r *AlitripTravelVisaApplicantImportRequest) SetPhotoFileType(photoFileType string) error {
-    r.photoFileType = photoFileType
-    r.Set("photo_file_type", photoFileType)
+func (r *AlitripTravelVisaApplicantImportRequest) SetPhotoFileType(_photoFileType string) error {
+    r._photoFileType = _photoFileType
+    r.Set("photo_file_type", _photoFileType)
     return nil
 }
 
 // PhotoFileType Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetPhotoFileType() string {
-    return r.photoFileType
+    return r._photoFileType
 }
 // FormDataJson Setter
 // 申请人信息。字段注释：1.sex(性别),值:M/F;2.nationality(国籍),值:CHN(中国大陆),HKG(中国香港),MAC(中国澳门),USA(美国),CAN(加拿大);3.daibanTypeId(代办类型):1(越南一个月单次入境),2(越南一个月多次入境),3(越南三个月单次入境),4(越南三个月多次入境)
-func (r *AlitripTravelVisaApplicantImportRequest) SetFormDataJson(formDataJson string) error {
-    r.formDataJson = formDataJson
-    r.Set("form_data_json", formDataJson)
+func (r *AlitripTravelVisaApplicantImportRequest) SetFormDataJson(_formDataJson string) error {
+    r._formDataJson = _formDataJson
+    r.Set("form_data_json", _formDataJson)
     return nil
 }
 
 // FormDataJson Getter
 func (r AlitripTravelVisaApplicantImportRequest) GetFormDataJson() string {
-    return r.formDataJson
+    return r._formDataJson
 }

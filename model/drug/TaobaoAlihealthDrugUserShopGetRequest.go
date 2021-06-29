@@ -15,7 +15,7 @@ taobao.alihealth.drug.user.shop.get
 type TaobaoAlihealthDrugUserShopGetRequest struct {
     model.Params
     // 用户昵称
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoAlihealthDrugUserShopGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlihealthDrugUserShopGetRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 用户昵称
-func (r *TaobaoAlihealthDrugUserShopGetRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoAlihealthDrugUserShopGetRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoAlihealthDrugUserShopGetRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

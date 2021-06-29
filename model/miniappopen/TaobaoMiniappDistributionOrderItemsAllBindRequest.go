@@ -15,7 +15,7 @@ taobao.miniapp.distribution.order.items.all.bind
 type TaobaoMiniappDistributionOrderItemsAllBindRequest struct {
     model.Params
     // 绑定/解绑的入参信息
-    allItemBindRequest   *DistributionOrderBindTargetEntityOpenRequestV2
+    _allItemBindRequest   *DistributionOrderBindTargetEntityOpenRequestV2
 }
 
 // 初始化TaobaoMiniappDistributionOrderItemsAllBindRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMiniappDistributionOrderItemsAllBindRequest) GetApiParams() url.Va
 }
 // AllItemBindRequest Setter
 // 绑定/解绑的入参信息
-func (r *TaobaoMiniappDistributionOrderItemsAllBindRequest) SetAllItemBindRequest(allItemBindRequest *DistributionOrderBindTargetEntityOpenRequestV2) error {
-    r.allItemBindRequest = allItemBindRequest
-    r.Set("all_item_bind_request", allItemBindRequest)
+func (r *TaobaoMiniappDistributionOrderItemsAllBindRequest) SetAllItemBindRequest(_allItemBindRequest *DistributionOrderBindTargetEntityOpenRequestV2) error {
+    r._allItemBindRequest = _allItemBindRequest
+    r.Set("all_item_bind_request", _allItemBindRequest)
     return nil
 }
 
 // AllItemBindRequest Getter
 func (r TaobaoMiniappDistributionOrderItemsAllBindRequest) GetAllItemBindRequest() *DistributionOrderBindTargetEntityOpenRequestV2 {
-    return r.allItemBindRequest
+    return r._allItemBindRequest
 }

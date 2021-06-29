@@ -15,7 +15,7 @@ taobao.jipiao.agent.order.detail
 type TaobaoJipiaoAgentOrderDetailRequest struct {
     model.Params
     // 淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询
-    orderIds   []int64
+    _orderIds   []int64
 }
 
 // 初始化TaobaoJipiaoAgentOrderDetailRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJipiaoAgentOrderDetailRequest) GetApiParams() url.Values {
 }
 // OrderIds Setter
 // 淘宝订单id列表，当前支持列表长度为1，即当前只支持单个订单详情查询
-func (r *TaobaoJipiaoAgentOrderDetailRequest) SetOrderIds(orderIds []int64) error {
-    r.orderIds = orderIds
-    r.Set("order_ids", orderIds)
+func (r *TaobaoJipiaoAgentOrderDetailRequest) SetOrderIds(_orderIds []int64) error {
+    r._orderIds = _orderIds
+    r.Set("order_ids", _orderIds)
     return nil
 }
 
 // OrderIds Getter
 func (r TaobaoJipiaoAgentOrderDetailRequest) GetOrderIds() []int64 {
-    return r.orderIds
+    return r._orderIds
 }

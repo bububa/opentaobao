@@ -15,29 +15,29 @@ tmall.servicecenter.workcard.reserve
 type TmallServicecenterWorkcardReserveRequest struct {
     model.Params
     // 工单id
-    workcardId   int64
+    _workcardId   int64
     // 服务开始时间
-    reserveTimeStart   string
+    _reserveTimeStart   string
     // 服务结束时间
-    reserveTimeEnd   string
+    _reserveTimeEnd   string
     // 工人手机号
-    workerMobile   string
+    _workerMobile   string
     // 预约备注信息
-    reserveRemark   string
+    _reserveRemark   string
     // 工人姓名
-    workerName   string
+    _workerName   string
     // 扩展信息
-    attributes   string
+    _attributes   string
     // 存在多个不同预约节点时需要回传。用于区分具体是哪个预约节点，例如预约上门鉴定和预约上门取件
-    action   string
+    _action   string
     // 履约类型，上门或者到店
-    fulfilType   string
+    _fulfilType   string
     // 门店编码
-    serviceStoreCode   string
+    _serviceStoreCode   string
     // 门店名称
-    serviceStoreName   string
+    _serviceStoreName   string
     // 核销单id
-    fulfilTaskId   int64
+    _fulfilTaskId   int64
 }
 
 // 初始化TmallServicecenterWorkcardReserveRequest对象
@@ -62,145 +62,145 @@ func (r TmallServicecenterWorkcardReserveRequest) GetApiParams() url.Values {
 }
 // WorkcardId Setter
 // 工单id
-func (r *TmallServicecenterWorkcardReserveRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardReserveRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }
 // ReserveTimeStart Setter
 // 服务开始时间
-func (r *TmallServicecenterWorkcardReserveRequest) SetReserveTimeStart(reserveTimeStart string) error {
-    r.reserveTimeStart = reserveTimeStart
-    r.Set("reserve_time_start", reserveTimeStart)
+func (r *TmallServicecenterWorkcardReserveRequest) SetReserveTimeStart(_reserveTimeStart string) error {
+    r._reserveTimeStart = _reserveTimeStart
+    r.Set("reserve_time_start", _reserveTimeStart)
     return nil
 }
 
 // ReserveTimeStart Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetReserveTimeStart() string {
-    return r.reserveTimeStart
+    return r._reserveTimeStart
 }
 // ReserveTimeEnd Setter
 // 服务结束时间
-func (r *TmallServicecenterWorkcardReserveRequest) SetReserveTimeEnd(reserveTimeEnd string) error {
-    r.reserveTimeEnd = reserveTimeEnd
-    r.Set("reserve_time_end", reserveTimeEnd)
+func (r *TmallServicecenterWorkcardReserveRequest) SetReserveTimeEnd(_reserveTimeEnd string) error {
+    r._reserveTimeEnd = _reserveTimeEnd
+    r.Set("reserve_time_end", _reserveTimeEnd)
     return nil
 }
 
 // ReserveTimeEnd Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetReserveTimeEnd() string {
-    return r.reserveTimeEnd
+    return r._reserveTimeEnd
 }
 // WorkerMobile Setter
 // 工人手机号
-func (r *TmallServicecenterWorkcardReserveRequest) SetWorkerMobile(workerMobile string) error {
-    r.workerMobile = workerMobile
-    r.Set("worker_mobile", workerMobile)
+func (r *TmallServicecenterWorkcardReserveRequest) SetWorkerMobile(_workerMobile string) error {
+    r._workerMobile = _workerMobile
+    r.Set("worker_mobile", _workerMobile)
     return nil
 }
 
 // WorkerMobile Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetWorkerMobile() string {
-    return r.workerMobile
+    return r._workerMobile
 }
 // ReserveRemark Setter
 // 预约备注信息
-func (r *TmallServicecenterWorkcardReserveRequest) SetReserveRemark(reserveRemark string) error {
-    r.reserveRemark = reserveRemark
-    r.Set("reserve_remark", reserveRemark)
+func (r *TmallServicecenterWorkcardReserveRequest) SetReserveRemark(_reserveRemark string) error {
+    r._reserveRemark = _reserveRemark
+    r.Set("reserve_remark", _reserveRemark)
     return nil
 }
 
 // ReserveRemark Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetReserveRemark() string {
-    return r.reserveRemark
+    return r._reserveRemark
 }
 // WorkerName Setter
 // 工人姓名
-func (r *TmallServicecenterWorkcardReserveRequest) SetWorkerName(workerName string) error {
-    r.workerName = workerName
-    r.Set("worker_name", workerName)
+func (r *TmallServicecenterWorkcardReserveRequest) SetWorkerName(_workerName string) error {
+    r._workerName = _workerName
+    r.Set("worker_name", _workerName)
     return nil
 }
 
 // WorkerName Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetWorkerName() string {
-    return r.workerName
+    return r._workerName
 }
 // Attributes Setter
 // 扩展信息
-func (r *TmallServicecenterWorkcardReserveRequest) SetAttributes(attributes string) error {
-    r.attributes = attributes
-    r.Set("attributes", attributes)
+func (r *TmallServicecenterWorkcardReserveRequest) SetAttributes(_attributes string) error {
+    r._attributes = _attributes
+    r.Set("attributes", _attributes)
     return nil
 }
 
 // Attributes Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetAttributes() string {
-    return r.attributes
+    return r._attributes
 }
 // Action Setter
 // 存在多个不同预约节点时需要回传。用于区分具体是哪个预约节点，例如预约上门鉴定和预约上门取件
-func (r *TmallServicecenterWorkcardReserveRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *TmallServicecenterWorkcardReserveRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetAction() string {
-    return r.action
+    return r._action
 }
 // FulfilType Setter
 // 履约类型，上门或者到店
-func (r *TmallServicecenterWorkcardReserveRequest) SetFulfilType(fulfilType string) error {
-    r.fulfilType = fulfilType
-    r.Set("fulfil_type", fulfilType)
+func (r *TmallServicecenterWorkcardReserveRequest) SetFulfilType(_fulfilType string) error {
+    r._fulfilType = _fulfilType
+    r.Set("fulfil_type", _fulfilType)
     return nil
 }
 
 // FulfilType Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetFulfilType() string {
-    return r.fulfilType
+    return r._fulfilType
 }
 // ServiceStoreCode Setter
 // 门店编码
-func (r *TmallServicecenterWorkcardReserveRequest) SetServiceStoreCode(serviceStoreCode string) error {
-    r.serviceStoreCode = serviceStoreCode
-    r.Set("service_store_code", serviceStoreCode)
+func (r *TmallServicecenterWorkcardReserveRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+    r._serviceStoreCode = _serviceStoreCode
+    r.Set("service_store_code", _serviceStoreCode)
     return nil
 }
 
 // ServiceStoreCode Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetServiceStoreCode() string {
-    return r.serviceStoreCode
+    return r._serviceStoreCode
 }
 // ServiceStoreName Setter
 // 门店名称
-func (r *TmallServicecenterWorkcardReserveRequest) SetServiceStoreName(serviceStoreName string) error {
-    r.serviceStoreName = serviceStoreName
-    r.Set("service_store_name", serviceStoreName)
+func (r *TmallServicecenterWorkcardReserveRequest) SetServiceStoreName(_serviceStoreName string) error {
+    r._serviceStoreName = _serviceStoreName
+    r.Set("service_store_name", _serviceStoreName)
     return nil
 }
 
 // ServiceStoreName Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetServiceStoreName() string {
-    return r.serviceStoreName
+    return r._serviceStoreName
 }
 // FulfilTaskId Setter
 // 核销单id
-func (r *TmallServicecenterWorkcardReserveRequest) SetFulfilTaskId(fulfilTaskId int64) error {
-    r.fulfilTaskId = fulfilTaskId
-    r.Set("fulfil_task_id", fulfilTaskId)
+func (r *TmallServicecenterWorkcardReserveRequest) SetFulfilTaskId(_fulfilTaskId int64) error {
+    r._fulfilTaskId = _fulfilTaskId
+    r.Set("fulfil_task_id", _fulfilTaskId)
     return nil
 }
 
 // FulfilTaskId Getter
 func (r TmallServicecenterWorkcardReserveRequest) GetFulfilTaskId() int64 {
-    return r.fulfilTaskId
+    return r._fulfilTaskId
 }

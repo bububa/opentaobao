@@ -15,11 +15,11 @@ alibaba.alihealth.examination.goods.onoffline
 type AlibabaAlihealthExaminationGoodsOnofflineRequest struct {
     model.Params
     // 商品组code，机构保证唯一
-    groupId   string
+    _groupId   string
     // 操作类型: online=上线，offline=下线
-    type   string
+    _type   string
     // 门店code列表
-    hospitalCodes   string
+    _hospitalCodes   string
 }
 
 // 初始化AlibabaAlihealthExaminationGoodsOnofflineRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetApiParams() url.Val
 }
 // GroupId Setter
 // 商品组code，机构保证唯一
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetGroupId(groupId string) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetGroupId(_groupId string) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetGroupId() string {
-    return r.groupId
+    return r._groupId
 }
 // Type Setter
 // 操作类型: online=上线，offline=下线
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // HospitalCodes Setter
 // 门店code列表
-func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetHospitalCodes(hospitalCodes string) error {
-    r.hospitalCodes = hospitalCodes
-    r.Set("hospital_codes", hospitalCodes)
+func (r *AlibabaAlihealthExaminationGoodsOnofflineRequest) SetHospitalCodes(_hospitalCodes string) error {
+    r._hospitalCodes = _hospitalCodes
+    r.Set("hospital_codes", _hospitalCodes)
     return nil
 }
 
 // HospitalCodes Getter
 func (r AlibabaAlihealthExaminationGoodsOnofflineRequest) GetHospitalCodes() string {
-    return r.hospitalCodes
+    return r._hospitalCodes
 }

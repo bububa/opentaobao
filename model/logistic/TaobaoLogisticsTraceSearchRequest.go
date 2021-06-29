@@ -15,11 +15,11 @@ taobao.logistics.trace.search
 type TaobaoLogisticsTraceSearchRequest struct {
     model.Params
     // 淘宝交易号，请勿传非淘宝交易号
-    tid   int64
+    _tid   int64
     // 表明是否是拆单，默认值0，1表示拆单
-    isSplit   int64
+    _isSplit   int64
     // 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
-    subTid   []int64
+    _subTid   []int64
 }
 
 // 初始化TaobaoLogisticsTraceSearchRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoLogisticsTraceSearchRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 淘宝交易号，请勿传非淘宝交易号
-func (r *TaobaoLogisticsTraceSearchRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoLogisticsTraceSearchRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoLogisticsTraceSearchRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // IsSplit Setter
 // 表明是否是拆单，默认值0，1表示拆单
-func (r *TaobaoLogisticsTraceSearchRequest) SetIsSplit(isSplit int64) error {
-    r.isSplit = isSplit
-    r.Set("is_split", isSplit)
+func (r *TaobaoLogisticsTraceSearchRequest) SetIsSplit(_isSplit int64) error {
+    r._isSplit = _isSplit
+    r.Set("is_split", _isSplit)
     return nil
 }
 
 // IsSplit Getter
 func (r TaobaoLogisticsTraceSearchRequest) GetIsSplit() int64 {
-    return r.isSplit
+    return r._isSplit
 }
 // SubTid Setter
 // 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
-func (r *TaobaoLogisticsTraceSearchRequest) SetSubTid(subTid []int64) error {
-    r.subTid = subTid
-    r.Set("sub_tid", subTid)
+func (r *TaobaoLogisticsTraceSearchRequest) SetSubTid(_subTid []int64) error {
+    r._subTid = _subTid
+    r.Set("sub_tid", _subTid)
     return nil
 }
 
 // SubTid Getter
 func (r TaobaoLogisticsTraceSearchRequest) GetSubTid() []int64 {
-    return r.subTid
+    return r._subTid
 }

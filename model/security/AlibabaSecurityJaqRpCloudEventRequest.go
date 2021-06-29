@@ -15,11 +15,11 @@ alibaba.security.jaq.rp.cloud.event
 type AlibabaSecurityJaqRpCloudEventRequest struct {
     model.Params
     // 认证token
-    verifyToken   string
+    _verifyToken   string
     // 事件编码
-    eventCode   string
+    _eventCode   string
     // 事件信息
-    eventData   string
+    _eventData   string
 }
 
 // 初始化AlibabaSecurityJaqRpCloudEventRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaSecurityJaqRpCloudEventRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // 认证token
-func (r *AlibabaSecurityJaqRpCloudEventRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpCloudEventRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpCloudEventRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }
 // EventCode Setter
 // 事件编码
-func (r *AlibabaSecurityJaqRpCloudEventRequest) SetEventCode(eventCode string) error {
-    r.eventCode = eventCode
-    r.Set("event_code", eventCode)
+func (r *AlibabaSecurityJaqRpCloudEventRequest) SetEventCode(_eventCode string) error {
+    r._eventCode = _eventCode
+    r.Set("event_code", _eventCode)
     return nil
 }
 
 // EventCode Getter
 func (r AlibabaSecurityJaqRpCloudEventRequest) GetEventCode() string {
-    return r.eventCode
+    return r._eventCode
 }
 // EventData Setter
 // 事件信息
-func (r *AlibabaSecurityJaqRpCloudEventRequest) SetEventData(eventData string) error {
-    r.eventData = eventData
-    r.Set("event_data", eventData)
+func (r *AlibabaSecurityJaqRpCloudEventRequest) SetEventData(_eventData string) error {
+    r._eventData = _eventData
+    r.Set("event_data", _eventData)
     return nil
 }
 
 // EventData Getter
 func (r AlibabaSecurityJaqRpCloudEventRequest) GetEventData() string {
-    return r.eventData
+    return r._eventData
 }

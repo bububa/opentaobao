@@ -15,7 +15,7 @@ yunos.tvpubadmin.content.app.onoffappbylicense
 type YunosTvpubadminContentAppOnoffappbylicenseRequest struct {
     model.Params
     // com.ali.yunos.tvacs.domain.OnOffApp
-    onOffApp   string
+    _onOffApp   string
 }
 
 // 初始化YunosTvpubadminContentAppOnoffappbylicenseRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminContentAppOnoffappbylicenseRequest) GetApiParams() url.Va
 }
 // OnOffApp Setter
 // com.ali.yunos.tvacs.domain.OnOffApp
-func (r *YunosTvpubadminContentAppOnoffappbylicenseRequest) SetOnOffApp(onOffApp string) error {
-    r.onOffApp = onOffApp
-    r.Set("on_off_app", onOffApp)
+func (r *YunosTvpubadminContentAppOnoffappbylicenseRequest) SetOnOffApp(_onOffApp string) error {
+    r._onOffApp = _onOffApp
+    r.Set("on_off_app", _onOffApp)
     return nil
 }
 
 // OnOffApp Getter
 func (r YunosTvpubadminContentAppOnoffappbylicenseRequest) GetOnOffApp() string {
-    return r.onOffApp
+    return r._onOffApp
 }

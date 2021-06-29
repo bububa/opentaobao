@@ -15,7 +15,7 @@ alibaba.wdk.pos.trade.query
 type AlibabaWdkPosTradeQueryRequest struct {
     model.Params
     // 查询请求
-    queryRequest   *FastBuyPosQueryRequest
+    _queryRequest   *FastBuyPosQueryRequest
 }
 
 // 初始化AlibabaWdkPosTradeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPosTradeQueryRequest) GetApiParams() url.Values {
 }
 // QueryRequest Setter
 // 查询请求
-func (r *AlibabaWdkPosTradeQueryRequest) SetQueryRequest(queryRequest *FastBuyPosQueryRequest) error {
-    r.queryRequest = queryRequest
-    r.Set("query_request", queryRequest)
+func (r *AlibabaWdkPosTradeQueryRequest) SetQueryRequest(_queryRequest *FastBuyPosQueryRequest) error {
+    r._queryRequest = _queryRequest
+    r.Set("query_request", _queryRequest)
     return nil
 }
 
 // QueryRequest Getter
 func (r AlibabaWdkPosTradeQueryRequest) GetQueryRequest() *FastBuyPosQueryRequest {
-    return r.queryRequest
+    return r._queryRequest
 }

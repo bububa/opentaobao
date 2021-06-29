@@ -15,9 +15,9 @@ taobao.ump.activity.add
 type TaobaoUmpActivityAddRequest struct {
     model.Params
     // 工具id
-    toolId   int64
+    _toolId   int64
     // 活动内容，通过ump sdk里面的MarkeitngTool来生成，name必须属于“营销标签词库”——https://huodong.m.taobao.com/api/data/v2/5fe5e737d3314fa2973297f86f7bff3a.js?file=5fe5e737d3314fa2973297f86f7bff3a.js中的word值中的一种。
-    content   string
+    _content   string
 }
 
 // 初始化TaobaoUmpActivityAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoUmpActivityAddRequest) GetApiParams() url.Values {
 }
 // ToolId Setter
 // 工具id
-func (r *TaobaoUmpActivityAddRequest) SetToolId(toolId int64) error {
-    r.toolId = toolId
-    r.Set("tool_id", toolId)
+func (r *TaobaoUmpActivityAddRequest) SetToolId(_toolId int64) error {
+    r._toolId = _toolId
+    r.Set("tool_id", _toolId)
     return nil
 }
 
 // ToolId Getter
 func (r TaobaoUmpActivityAddRequest) GetToolId() int64 {
-    return r.toolId
+    return r._toolId
 }
 // Content Setter
 // 活动内容，通过ump sdk里面的MarkeitngTool来生成，name必须属于“营销标签词库”——https://huodong.m.taobao.com/api/data/v2/5fe5e737d3314fa2973297f86f7bff3a.js?file=5fe5e737d3314fa2973297f86f7bff3a.js中的word值中的一种。
-func (r *TaobaoUmpActivityAddRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *TaobaoUmpActivityAddRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r TaobaoUmpActivityAddRequest) GetContent() string {
-    return r.content
+    return r._content
 }

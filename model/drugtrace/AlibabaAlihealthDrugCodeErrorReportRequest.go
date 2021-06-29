@@ -15,21 +15,21 @@ alibaba.alihealth.drug.code.error.report
 type AlibabaAlihealthDrugCodeErrorReportRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
     // 有问题的字段名称
-    fieldName   string
+    _fieldName   string
     // 通过码获得的问题字段值
-    codeValue   string
+    _codeValue   string
     // 平台获得/期望的问题字段值
-    sourceValue   string
+    _sourceValue   string
     // 错误信息描述
-    errMsg   string
+    _errMsg   string
     // 上报人员
-    reporter   string
+    _reporter   string
     // 上报人员邮箱
-    reporterEmail   string
+    _reporterEmail   string
     // 上报人员手机号
-    reporterMobile   string
+    _reporterMobile   string
 }
 
 // 初始化AlibabaAlihealthDrugCodeErrorReportRequest对象
@@ -54,97 +54,97 @@ func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // FieldName Setter
 // 有问题的字段名称
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetFieldName(fieldName string) error {
-    r.fieldName = fieldName
-    r.Set("field_name", fieldName)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetFieldName(_fieldName string) error {
+    r._fieldName = _fieldName
+    r.Set("field_name", _fieldName)
     return nil
 }
 
 // FieldName Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetFieldName() string {
-    return r.fieldName
+    return r._fieldName
 }
 // CodeValue Setter
 // 通过码获得的问题字段值
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetCodeValue(codeValue string) error {
-    r.codeValue = codeValue
-    r.Set("code_value", codeValue)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetCodeValue(_codeValue string) error {
+    r._codeValue = _codeValue
+    r.Set("code_value", _codeValue)
     return nil
 }
 
 // CodeValue Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetCodeValue() string {
-    return r.codeValue
+    return r._codeValue
 }
 // SourceValue Setter
 // 平台获得/期望的问题字段值
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetSourceValue(sourceValue string) error {
-    r.sourceValue = sourceValue
-    r.Set("source_value", sourceValue)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetSourceValue(_sourceValue string) error {
+    r._sourceValue = _sourceValue
+    r.Set("source_value", _sourceValue)
     return nil
 }
 
 // SourceValue Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetSourceValue() string {
-    return r.sourceValue
+    return r._sourceValue
 }
 // ErrMsg Setter
 // 错误信息描述
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetErrMsg(errMsg string) error {
-    r.errMsg = errMsg
-    r.Set("err_msg", errMsg)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetErrMsg(_errMsg string) error {
+    r._errMsg = _errMsg
+    r.Set("err_msg", _errMsg)
     return nil
 }
 
 // ErrMsg Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetErrMsg() string {
-    return r.errMsg
+    return r._errMsg
 }
 // Reporter Setter
 // 上报人员
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporter(reporter string) error {
-    r.reporter = reporter
-    r.Set("reporter", reporter)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporter(_reporter string) error {
+    r._reporter = _reporter
+    r.Set("reporter", _reporter)
     return nil
 }
 
 // Reporter Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetReporter() string {
-    return r.reporter
+    return r._reporter
 }
 // ReporterEmail Setter
 // 上报人员邮箱
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporterEmail(reporterEmail string) error {
-    r.reporterEmail = reporterEmail
-    r.Set("reporter_email", reporterEmail)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporterEmail(_reporterEmail string) error {
+    r._reporterEmail = _reporterEmail
+    r.Set("reporter_email", _reporterEmail)
     return nil
 }
 
 // ReporterEmail Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetReporterEmail() string {
-    return r.reporterEmail
+    return r._reporterEmail
 }
 // ReporterMobile Setter
 // 上报人员手机号
-func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporterMobile(reporterMobile string) error {
-    r.reporterMobile = reporterMobile
-    r.Set("reporter_mobile", reporterMobile)
+func (r *AlibabaAlihealthDrugCodeErrorReportRequest) SetReporterMobile(_reporterMobile string) error {
+    r._reporterMobile = _reporterMobile
+    r.Set("reporter_mobile", _reporterMobile)
     return nil
 }
 
 // ReporterMobile Getter
 func (r AlibabaAlihealthDrugCodeErrorReportRequest) GetReporterMobile() string {
-    return r.reporterMobile
+    return r._reporterMobile
 }

@@ -15,11 +15,11 @@ taobao.xhotel.distribution.order.detail.search
 type TaobaoXhotelDistributionOrderDetailSearchRequest struct {
     model.Params
     // 外部分销渠道的订单号（与tid必填其一）
-    distributionOid   string
+    _distributionOid   string
     // 传入用户对应的openId
-    openId   string
+    _openId   string
     // 飞猪的订单号（与distribution_oid必填其一）
-    tid   int64
+    _tid   int64
 }
 
 // 初始化TaobaoXhotelDistributionOrderDetailSearchRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelDistributionOrderDetailSearchRequest) GetApiParams() url.Val
 }
 // DistributionOid Setter
 // 外部分销渠道的订单号（与tid必填其一）
-func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetDistributionOid(distributionOid string) error {
-    r.distributionOid = distributionOid
-    r.Set("distribution_oid", distributionOid)
+func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetDistributionOid(_distributionOid string) error {
+    r._distributionOid = _distributionOid
+    r.Set("distribution_oid", _distributionOid)
     return nil
 }
 
 // DistributionOid Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchRequest) GetDistributionOid() string {
-    return r.distributionOid
+    return r._distributionOid
 }
 // OpenId Setter
 // 传入用户对应的openId
-func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetOpenId(openId string) error {
-    r.openId = openId
-    r.Set("open_id", openId)
+func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetOpenId(_openId string) error {
+    r._openId = _openId
+    r.Set("open_id", _openId)
     return nil
 }
 
 // OpenId Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchRequest) GetOpenId() string {
-    return r.openId
+    return r._openId
 }
 // Tid Setter
 // 飞猪的订单号（与distribution_oid必填其一）
-func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoXhotelDistributionOrderDetailSearchRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoXhotelDistributionOrderDetailSearchRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }

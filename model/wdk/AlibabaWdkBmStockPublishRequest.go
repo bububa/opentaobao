@@ -15,7 +15,7 @@ alibaba.wdk.bm.stock.publish
 type AlibabaWdkBmStockPublishRequest struct {
     model.Params
     // 批量入参
-    skuStockPublishParamList   []SkuStockPublishParamDo
+    _skuStockPublishParamList   []SkuStockPublishParamDo
 }
 
 // 初始化AlibabaWdkBmStockPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkBmStockPublishRequest) GetApiParams() url.Values {
 }
 // SkuStockPublishParamList Setter
 // 批量入参
-func (r *AlibabaWdkBmStockPublishRequest) SetSkuStockPublishParamList(skuStockPublishParamList []SkuStockPublishParamDo) error {
-    r.skuStockPublishParamList = skuStockPublishParamList
-    r.Set("sku_stock_publish_param_list", skuStockPublishParamList)
+func (r *AlibabaWdkBmStockPublishRequest) SetSkuStockPublishParamList(_skuStockPublishParamList []SkuStockPublishParamDo) error {
+    r._skuStockPublishParamList = _skuStockPublishParamList
+    r.Set("sku_stock_publish_param_list", _skuStockPublishParamList)
     return nil
 }
 
 // SkuStockPublishParamList Getter
 func (r AlibabaWdkBmStockPublishRequest) GetSkuStockPublishParamList() []SkuStockPublishParamDo {
-    return r.skuStockPublishParamList
+    return r._skuStockPublishParamList
 }

@@ -15,9 +15,9 @@ taobao.feedflow.item.adgroup.adzone.unbind
 type TaobaoFeedflowItemAdgroupAdzoneUnbindRequest struct {
     model.Params
     // 广告位id
-    adzoneIdList   []int64
+    _adzoneIdList   []int64
     // 单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoFeedflowItemAdgroupAdzoneUnbindRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) GetApiParams() url.Values 
 }
 // AdzoneIdList Setter
 // 广告位id
-func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) SetAdzoneIdList(adzoneIdList []int64) error {
-    r.adzoneIdList = adzoneIdList
-    r.Set("adzone_id_list", adzoneIdList)
+func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) SetAdzoneIdList(_adzoneIdList []int64) error {
+    r._adzoneIdList = _adzoneIdList
+    r.Set("adzone_id_list", _adzoneIdList)
     return nil
 }
 
 // AdzoneIdList Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) GetAdzoneIdList() []int64 {
-    return r.adzoneIdList
+    return r._adzoneIdList
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoFeedflowItemAdgroupAdzoneUnbindRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.codetobill
 type AlibabaAlihealthDrugKytCodetobillRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 追溯码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaAlihealthDrugKytCodetobillRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytCodetobillRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytCodetobillRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytCodetobillRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytCodetobillRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugKytCodetobillRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugKytCodetobillRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugKytCodetobillRequest) GetCode() string {
-    return r.code
+    return r._code
 }

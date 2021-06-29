@@ -15,13 +15,13 @@ alitrip.ship.product.syncnunber
 type AlitripShipProductSyncnunberRequest struct {
     model.Params
     // 出发城市
-    cityName   string
+    _cityName   string
     // 出发城市code
-    cityCode   string
+    _cityCode   string
     // 出发港口
-    fromStationName   string
+    _fromStationName   string
     // 出发港口编号
-    fromStationCode   string
+    _fromStationCode   string
 }
 
 // 初始化AlitripShipProductSyncnunberRequest对象
@@ -46,49 +46,49 @@ func (r AlitripShipProductSyncnunberRequest) GetApiParams() url.Values {
 }
 // CityName Setter
 // 出发城市
-func (r *AlitripShipProductSyncnunberRequest) SetCityName(cityName string) error {
-    r.cityName = cityName
-    r.Set("city_name", cityName)
+func (r *AlitripShipProductSyncnunberRequest) SetCityName(_cityName string) error {
+    r._cityName = _cityName
+    r.Set("city_name", _cityName)
     return nil
 }
 
 // CityName Getter
 func (r AlitripShipProductSyncnunberRequest) GetCityName() string {
-    return r.cityName
+    return r._cityName
 }
 // CityCode Setter
 // 出发城市code
-func (r *AlitripShipProductSyncnunberRequest) SetCityCode(cityCode string) error {
-    r.cityCode = cityCode
-    r.Set("city_code", cityCode)
+func (r *AlitripShipProductSyncnunberRequest) SetCityCode(_cityCode string) error {
+    r._cityCode = _cityCode
+    r.Set("city_code", _cityCode)
     return nil
 }
 
 // CityCode Getter
 func (r AlitripShipProductSyncnunberRequest) GetCityCode() string {
-    return r.cityCode
+    return r._cityCode
 }
 // FromStationName Setter
 // 出发港口
-func (r *AlitripShipProductSyncnunberRequest) SetFromStationName(fromStationName string) error {
-    r.fromStationName = fromStationName
-    r.Set("from_station_name", fromStationName)
+func (r *AlitripShipProductSyncnunberRequest) SetFromStationName(_fromStationName string) error {
+    r._fromStationName = _fromStationName
+    r.Set("from_station_name", _fromStationName)
     return nil
 }
 
 // FromStationName Getter
 func (r AlitripShipProductSyncnunberRequest) GetFromStationName() string {
-    return r.fromStationName
+    return r._fromStationName
 }
 // FromStationCode Setter
 // 出发港口编号
-func (r *AlitripShipProductSyncnunberRequest) SetFromStationCode(fromStationCode string) error {
-    r.fromStationCode = fromStationCode
-    r.Set("from_station_code", fromStationCode)
+func (r *AlitripShipProductSyncnunberRequest) SetFromStationCode(_fromStationCode string) error {
+    r._fromStationCode = _fromStationCode
+    r.Set("from_station_code", _fromStationCode)
     return nil
 }
 
 // FromStationCode Getter
 func (r AlitripShipProductSyncnunberRequest) GetFromStationCode() string {
-    return r.fromStationCode
+    return r._fromStationCode
 }

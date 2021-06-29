@@ -15,7 +15,7 @@ alibaba.alifanyi.market.authenticate
 type AlibabaAlifanyiMarketAuthenticateRequest struct {
     model.Params
     // 有效时长
-    expireTime   int64
+    _expireTime   int64
 }
 
 // 初始化AlibabaAlifanyiMarketAuthenticateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlifanyiMarketAuthenticateRequest) GetApiParams() url.Values {
 }
 // ExpireTime Setter
 // 有效时长
-func (r *AlibabaAlifanyiMarketAuthenticateRequest) SetExpireTime(expireTime int64) error {
-    r.expireTime = expireTime
-    r.Set("expire_time", expireTime)
+func (r *AlibabaAlifanyiMarketAuthenticateRequest) SetExpireTime(_expireTime int64) error {
+    r._expireTime = _expireTime
+    r.Set("expire_time", _expireTime)
     return nil
 }
 
 // ExpireTime Getter
 func (r AlibabaAlifanyiMarketAuthenticateRequest) GetExpireTime() int64 {
-    return r.expireTime
+    return r._expireTime
 }

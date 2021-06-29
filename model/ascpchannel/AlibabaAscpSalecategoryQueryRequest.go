@@ -15,7 +15,7 @@ alibaba.ascp.salecategory.query
 type AlibabaAscpSalecategoryQueryRequest struct {
     model.Params
     // 货品ID
-    itemId   []int64
+    _itemId   []int64
 }
 
 // 初始化AlibabaAscpSalecategoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpSalecategoryQueryRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 货品ID
-func (r *AlibabaAscpSalecategoryQueryRequest) SetItemId(itemId []int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *AlibabaAscpSalecategoryQueryRequest) SetItemId(_itemId []int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r AlibabaAscpSalecategoryQueryRequest) GetItemId() []int64 {
-    return r.itemId
+    return r._itemId
 }

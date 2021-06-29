@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.feedback.raw.upload
 type AlibabaTmallgenieScpPlanFeedbackRawUploadRequest struct {
     model.Params
     // 扩展参数
-    requestExtendJson   string
+    _requestExtendJson   string
 }
 
 // 初始化AlibabaTmallgenieScpPlanFeedbackRawUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanFeedbackRawUploadRequest) GetApiParams() url.Val
 }
 // RequestExtendJson Setter
 // 扩展参数
-func (r *AlibabaTmallgenieScpPlanFeedbackRawUploadRequest) SetRequestExtendJson(requestExtendJson string) error {
-    r.requestExtendJson = requestExtendJson
-    r.Set("request_extend_json", requestExtendJson)
+func (r *AlibabaTmallgenieScpPlanFeedbackRawUploadRequest) SetRequestExtendJson(_requestExtendJson string) error {
+    r._requestExtendJson = _requestExtendJson
+    r.Set("request_extend_json", _requestExtendJson)
     return nil
 }
 
 // RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanFeedbackRawUploadRequest) GetRequestExtendJson() string {
-    return r.requestExtendJson
+    return r._requestExtendJson
 }

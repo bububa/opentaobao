@@ -15,7 +15,7 @@ taobao.train.agent.change.refuse.vtwo
 type TaobaoTrainAgentChangeRefuseVtwoRequest struct {
     model.Params
     // 代理商拒绝改签参数
-    param   *AgentRefuseChangeParam
+    _param   *AgentRefuseChangeParam
 }
 
 // 初始化TaobaoTrainAgentChangeRefuseVtwoRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 代理商拒绝改签参数
-func (r *TaobaoTrainAgentChangeRefuseVtwoRequest) SetParam(param *AgentRefuseChangeParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoTrainAgentChangeRefuseVtwoRequest) SetParam(_param *AgentRefuseChangeParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoTrainAgentChangeRefuseVtwoRequest) GetParam() *AgentRefuseChangeParam {
-    return r.param
+    return r._param
 }

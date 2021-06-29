@@ -15,7 +15,7 @@ alibaba.alsc.crm.rule.querydishrule
 type AlibabaAlscCrmRuleQuerydishruleRequest struct {
     model.Params
     // 系统自动生成
-    paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
+    _paramPlanRuleQueryOpenReq   *PlanRuleQueryOpenReq
 }
 
 // 初始化AlibabaAlscCrmRuleQuerydishruleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetApiParams() url.Values {
 }
 // ParamPlanRuleQueryOpenReq Setter
 // 系统自动生成
-func (r *AlibabaAlscCrmRuleQuerydishruleRequest) SetParamPlanRuleQueryOpenReq(paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
-    r.paramPlanRuleQueryOpenReq = paramPlanRuleQueryOpenReq
-    r.Set("param_plan_rule_query_open_req", paramPlanRuleQueryOpenReq)
+func (r *AlibabaAlscCrmRuleQuerydishruleRequest) SetParamPlanRuleQueryOpenReq(_paramPlanRuleQueryOpenReq *PlanRuleQueryOpenReq) error {
+    r._paramPlanRuleQueryOpenReq = _paramPlanRuleQueryOpenReq
+    r.Set("param_plan_rule_query_open_req", _paramPlanRuleQueryOpenReq)
     return nil
 }
 
 // ParamPlanRuleQueryOpenReq Getter
 func (r AlibabaAlscCrmRuleQuerydishruleRequest) GetParamPlanRuleQueryOpenReq() *PlanRuleQueryOpenReq {
-    return r.paramPlanRuleQueryOpenReq
+    return r._paramPlanRuleQueryOpenReq
 }

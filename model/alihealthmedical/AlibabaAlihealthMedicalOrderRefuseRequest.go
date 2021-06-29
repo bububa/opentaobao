@@ -15,7 +15,7 @@ alibaba.alihealth.medical.order.refuse
 type AlibabaAlihealthMedicalOrderRefuseRequest struct {
     model.Params
     // 请求入参
-    requestInfo   *RefuseOrderRequestDTO
+    _requestInfo   *RefuseOrderRequestDTO
 }
 
 // 初始化AlibabaAlihealthMedicalOrderRefuseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetApiParams() url.Values {
 }
 // RequestInfo Setter
 // 请求入参
-func (r *AlibabaAlihealthMedicalOrderRefuseRequest) SetRequestInfo(requestInfo *RefuseOrderRequestDTO) error {
-    r.requestInfo = requestInfo
-    r.Set("request_info", requestInfo)
+func (r *AlibabaAlihealthMedicalOrderRefuseRequest) SetRequestInfo(_requestInfo *RefuseOrderRequestDTO) error {
+    r._requestInfo = _requestInfo
+    r.Set("request_info", _requestInfo)
     return nil
 }
 
 // RequestInfo Getter
 func (r AlibabaAlihealthMedicalOrderRefuseRequest) GetRequestInfo() *RefuseOrderRequestDTO {
-    return r.requestInfo
+    return r._requestInfo
 }

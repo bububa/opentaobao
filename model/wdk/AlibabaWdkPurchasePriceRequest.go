@@ -15,7 +15,7 @@ alibaba.wdk.purchase.price
 type AlibabaWdkPurchasePriceRequest struct {
     model.Params
     // 入参
-    wdkOpenPurchasePrice   *WdkOpenPurchasePrice
+    _wdkOpenPurchasePrice   *WdkOpenPurchasePrice
 }
 
 // 初始化AlibabaWdkPurchasePriceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkPurchasePriceRequest) GetApiParams() url.Values {
 }
 // WdkOpenPurchasePrice Setter
 // 入参
-func (r *AlibabaWdkPurchasePriceRequest) SetWdkOpenPurchasePrice(wdkOpenPurchasePrice *WdkOpenPurchasePrice) error {
-    r.wdkOpenPurchasePrice = wdkOpenPurchasePrice
-    r.Set("wdk_open_purchase_price", wdkOpenPurchasePrice)
+func (r *AlibabaWdkPurchasePriceRequest) SetWdkOpenPurchasePrice(_wdkOpenPurchasePrice *WdkOpenPurchasePrice) error {
+    r._wdkOpenPurchasePrice = _wdkOpenPurchasePrice
+    r.Set("wdk_open_purchase_price", _wdkOpenPurchasePrice)
     return nil
 }
 
 // WdkOpenPurchasePrice Getter
 func (r AlibabaWdkPurchasePriceRequest) GetWdkOpenPurchasePrice() *WdkOpenPurchasePrice {
-    return r.wdkOpenPurchasePrice
+    return r._wdkOpenPurchasePrice
 }

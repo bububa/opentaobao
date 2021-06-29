@@ -15,11 +15,11 @@ yunos.dm.sys.get.domain
 type YunosDmSysGetDomainRequest struct {
     model.Params
     // 制造商
-    make   string
+    _make   string
     // 设备类型
-    model   string
+    _model   string
     // 序列号
-    sn   string
+    _sn   string
 }
 
 // 初始化YunosDmSysGetDomainRequest对象
@@ -44,37 +44,37 @@ func (r YunosDmSysGetDomainRequest) GetApiParams() url.Values {
 }
 // Make Setter
 // 制造商
-func (r *YunosDmSysGetDomainRequest) SetMake(make string) error {
-    r.make = make
-    r.Set("make", make)
+func (r *YunosDmSysGetDomainRequest) SetMake(_make string) error {
+    r._make = _make
+    r.Set("make", _make)
     return nil
 }
 
 // Make Getter
 func (r YunosDmSysGetDomainRequest) GetMake() string {
-    return r.make
+    return r._make
 }
 // Model Setter
 // 设备类型
-func (r *YunosDmSysGetDomainRequest) SetModel(model string) error {
-    r.model = model
-    r.Set("model", model)
+func (r *YunosDmSysGetDomainRequest) SetModel(_model string) error {
+    r._model = _model
+    r.Set("model", _model)
     return nil
 }
 
 // Model Getter
 func (r YunosDmSysGetDomainRequest) GetModel() string {
-    return r.model
+    return r._model
 }
 // Sn Setter
 // 序列号
-func (r *YunosDmSysGetDomainRequest) SetSn(sn string) error {
-    r.sn = sn
-    r.Set("sn", sn)
+func (r *YunosDmSysGetDomainRequest) SetSn(_sn string) error {
+    r._sn = _sn
+    r.Set("sn", _sn)
     return nil
 }
 
 // Sn Getter
 func (r YunosDmSysGetDomainRequest) GetSn() string {
-    return r.sn
+    return r._sn
 }

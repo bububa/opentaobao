@@ -15,7 +15,7 @@ alibaba.aliqin.fc.voice.record.geturl
 type AlibabaAliqinFcVoiceRecordGeturlRequest struct {
     model.Params
     // 一次通话的唯一标识id
-    callId   string
+    _callId   string
 }
 
 // 初始化AlibabaAliqinFcVoiceRecordGeturlRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFcVoiceRecordGeturlRequest) GetApiParams() url.Values {
 }
 // CallId Setter
 // 一次通话的唯一标识id
-func (r *AlibabaAliqinFcVoiceRecordGeturlRequest) SetCallId(callId string) error {
-    r.callId = callId
-    r.Set("call_id", callId)
+func (r *AlibabaAliqinFcVoiceRecordGeturlRequest) SetCallId(_callId string) error {
+    r._callId = _callId
+    r.Set("call_id", _callId)
     return nil
 }
 
 // CallId Getter
 func (r AlibabaAliqinFcVoiceRecordGeturlRequest) GetCallId() string {
-    return r.callId
+    return r._callId
 }

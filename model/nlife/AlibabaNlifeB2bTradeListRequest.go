@@ -15,15 +15,15 @@ alibaba.nlife.b2b.trade.list
 type AlibabaNlifeB2bTradeListRequest struct {
     model.Params
     // 采购单生效时间开始范围
-    startEffectiveDate   string
+    _startEffectiveDate   string
     // 采购单生效时间结束范围
-    endEffectiveDate   string
+    _endEffectiveDate   string
     // 查询的页码
-    pageNo   int64
+    _pageNo   int64
     // 每页的数量
-    pageSize   int64
+    _pageSize   int64
     // 企业ID
-    entId   int64
+    _entId   int64
 }
 
 // 初始化AlibabaNlifeB2bTradeListRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaNlifeB2bTradeListRequest) GetApiParams() url.Values {
 }
 // StartEffectiveDate Setter
 // 采购单生效时间开始范围
-func (r *AlibabaNlifeB2bTradeListRequest) SetStartEffectiveDate(startEffectiveDate string) error {
-    r.startEffectiveDate = startEffectiveDate
-    r.Set("start_effective_date", startEffectiveDate)
+func (r *AlibabaNlifeB2bTradeListRequest) SetStartEffectiveDate(_startEffectiveDate string) error {
+    r._startEffectiveDate = _startEffectiveDate
+    r.Set("start_effective_date", _startEffectiveDate)
     return nil
 }
 
 // StartEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeListRequest) GetStartEffectiveDate() string {
-    return r.startEffectiveDate
+    return r._startEffectiveDate
 }
 // EndEffectiveDate Setter
 // 采购单生效时间结束范围
-func (r *AlibabaNlifeB2bTradeListRequest) SetEndEffectiveDate(endEffectiveDate string) error {
-    r.endEffectiveDate = endEffectiveDate
-    r.Set("end_effective_date", endEffectiveDate)
+func (r *AlibabaNlifeB2bTradeListRequest) SetEndEffectiveDate(_endEffectiveDate string) error {
+    r._endEffectiveDate = _endEffectiveDate
+    r.Set("end_effective_date", _endEffectiveDate)
     return nil
 }
 
 // EndEffectiveDate Getter
 func (r AlibabaNlifeB2bTradeListRequest) GetEndEffectiveDate() string {
-    return r.endEffectiveDate
+    return r._endEffectiveDate
 }
 // PageNo Setter
 // 查询的页码
-func (r *AlibabaNlifeB2bTradeListRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AlibabaNlifeB2bTradeListRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AlibabaNlifeB2bTradeListRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页的数量
-func (r *AlibabaNlifeB2bTradeListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaNlifeB2bTradeListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaNlifeB2bTradeListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // EntId Setter
 // 企业ID
-func (r *AlibabaNlifeB2bTradeListRequest) SetEntId(entId int64) error {
-    r.entId = entId
-    r.Set("ent_id", entId)
+func (r *AlibabaNlifeB2bTradeListRequest) SetEntId(_entId int64) error {
+    r._entId = _entId
+    r.Set("ent_id", _entId)
     return nil
 }
 
 // EntId Getter
 func (r AlibabaNlifeB2bTradeListRequest) GetEntId() int64 {
-    return r.entId
+    return r._entId
 }

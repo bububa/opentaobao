@@ -15,7 +15,7 @@ taobao.alihealth.drug.store.get
 type TaobaoAlihealthDrugStoreGetRequest struct {
     model.Params
     // 店铺ID
-    shopId   int64
+    _shopId   int64
 }
 
 // 初始化TaobaoAlihealthDrugStoreGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlihealthDrugStoreGetRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // 店铺ID
-func (r *TaobaoAlihealthDrugStoreGetRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TaobaoAlihealthDrugStoreGetRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TaobaoAlihealthDrugStoreGetRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }

@@ -16,7 +16,7 @@ alibaba Create order scenario freight calculation
 type AlibabaOrderFreightCalculateRequest struct {
     model.Params
     // {}
-    paramMultiFreightTemplateRequest   *MultiFreightTemplateRequest
+    _paramMultiFreightTemplateRequest   *MultiFreightTemplateRequest
 }
 
 // 初始化AlibabaOrderFreightCalculateRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaOrderFreightCalculateRequest) GetApiParams() url.Values {
 }
 // ParamMultiFreightTemplateRequest Setter
 // {}
-func (r *AlibabaOrderFreightCalculateRequest) SetParamMultiFreightTemplateRequest(paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
-    r.paramMultiFreightTemplateRequest = paramMultiFreightTemplateRequest
-    r.Set("param_multi_freight_template_request", paramMultiFreightTemplateRequest)
+func (r *AlibabaOrderFreightCalculateRequest) SetParamMultiFreightTemplateRequest(_paramMultiFreightTemplateRequest *MultiFreightTemplateRequest) error {
+    r._paramMultiFreightTemplateRequest = _paramMultiFreightTemplateRequest
+    r.Set("param_multi_freight_template_request", _paramMultiFreightTemplateRequest)
     return nil
 }
 
 // ParamMultiFreightTemplateRequest Getter
 func (r AlibabaOrderFreightCalculateRequest) GetParamMultiFreightTemplateRequest() *MultiFreightTemplateRequest {
-    return r.paramMultiFreightTemplateRequest
+    return r._paramMultiFreightTemplateRequest
 }

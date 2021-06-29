@@ -15,7 +15,7 @@ alitrip.receipt.seller.invoice.red
 type AlitripReceiptSellerInvoiceRedRequest struct {
     model.Params
     // 入参对象
-    redReceiptParam   *RedReceiptParam
+    _redReceiptParam   *RedReceiptParam
 }
 
 // 初始化AlitripReceiptSellerInvoiceRedRequest对象
@@ -40,13 +40,13 @@ func (r AlitripReceiptSellerInvoiceRedRequest) GetApiParams() url.Values {
 }
 // RedReceiptParam Setter
 // 入参对象
-func (r *AlitripReceiptSellerInvoiceRedRequest) SetRedReceiptParam(redReceiptParam *RedReceiptParam) error {
-    r.redReceiptParam = redReceiptParam
-    r.Set("red_receipt_param", redReceiptParam)
+func (r *AlitripReceiptSellerInvoiceRedRequest) SetRedReceiptParam(_redReceiptParam *RedReceiptParam) error {
+    r._redReceiptParam = _redReceiptParam
+    r.Set("red_receipt_param", _redReceiptParam)
     return nil
 }
 
 // RedReceiptParam Getter
 func (r AlitripReceiptSellerInvoiceRedRequest) GetRedReceiptParam() *RedReceiptParam {
-    return r.redReceiptParam
+    return r._redReceiptParam
 }

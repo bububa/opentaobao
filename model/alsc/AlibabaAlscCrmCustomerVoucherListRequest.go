@@ -15,7 +15,7 @@ alibaba.alsc.crm.customer.voucher.list
 type AlibabaAlscCrmCustomerVoucherListRequest struct {
     model.Params
     // 获取顾客优惠券列表
-    customerVoucherFullOpenReq   *CustomerVoucherFullOpenReq
+    _customerVoucherFullOpenReq   *CustomerVoucherFullOpenReq
 }
 
 // 初始化AlibabaAlscCrmCustomerVoucherListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCustomerVoucherListRequest) GetApiParams() url.Values {
 }
 // CustomerVoucherFullOpenReq Setter
 // 获取顾客优惠券列表
-func (r *AlibabaAlscCrmCustomerVoucherListRequest) SetCustomerVoucherFullOpenReq(customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
-    r.customerVoucherFullOpenReq = customerVoucherFullOpenReq
-    r.Set("customer_voucher_full_open_req", customerVoucherFullOpenReq)
+func (r *AlibabaAlscCrmCustomerVoucherListRequest) SetCustomerVoucherFullOpenReq(_customerVoucherFullOpenReq *CustomerVoucherFullOpenReq) error {
+    r._customerVoucherFullOpenReq = _customerVoucherFullOpenReq
+    r.Set("customer_voucher_full_open_req", _customerVoucherFullOpenReq)
     return nil
 }
 
 // CustomerVoucherFullOpenReq Getter
 func (r AlibabaAlscCrmCustomerVoucherListRequest) GetCustomerVoucherFullOpenReq() *CustomerVoucherFullOpenReq {
-    return r.customerVoucherFullOpenReq
+    return r._customerVoucherFullOpenReq
 }

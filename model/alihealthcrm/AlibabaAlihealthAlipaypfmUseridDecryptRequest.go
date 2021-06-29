@@ -15,9 +15,9 @@ alibaba.alihealth.alipaypfm.userid.decrypt
 type AlibabaAlihealthAlipaypfmUseridDecryptRequest struct {
     model.Params
     // 小程序appid
-    appId   string
+    _appId   string
     // 加密后的userId
-    content   string
+    _content   string
 }
 
 // 初始化AlibabaAlihealthAlipaypfmUseridDecryptRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetApiParams() url.Values
 }
 // AppId Setter
 // 小程序appid
-func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }
 // Content Setter
 // 加密后的userId
-func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetContent(content string) error {
-    r.content = content
-    r.Set("content", content)
+func (r *AlibabaAlihealthAlipaypfmUseridDecryptRequest) SetContent(_content string) error {
+    r._content = _content
+    r.Set("content", _content)
     return nil
 }
 
 // Content Getter
 func (r AlibabaAlihealthAlipaypfmUseridDecryptRequest) GetContent() string {
-    return r.content
+    return r._content
 }

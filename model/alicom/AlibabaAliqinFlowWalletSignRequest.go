@@ -15,7 +15,7 @@ alibaba.aliqin.flow.wallet.sign
 type AlibabaAliqinFlowWalletSignRequest struct {
     model.Params
     // 用户昵称
-    userNick   string
+    _userNick   string
 }
 
 // 初始化AlibabaAliqinFlowWalletSignRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFlowWalletSignRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 用户昵称
-func (r *AlibabaAliqinFlowWalletSignRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *AlibabaAliqinFlowWalletSignRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r AlibabaAliqinFlowWalletSignRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

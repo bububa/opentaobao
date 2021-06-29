@@ -15,9 +15,9 @@ tmall.promotag.taguser.save
 type TmallPromotagTaguserSaveRequest struct {
     model.Params
     // 标签ID
-    tagId   int64
+    _tagId   int64
     // 买家昵称
-    nick   string
+    _nick   string
 }
 
 // 初始化TmallPromotagTaguserSaveRequest对象
@@ -42,25 +42,25 @@ func (r TmallPromotagTaguserSaveRequest) GetApiParams() url.Values {
 }
 // TagId Setter
 // 标签ID
-func (r *TmallPromotagTaguserSaveRequest) SetTagId(tagId int64) error {
-    r.tagId = tagId
-    r.Set("tag_id", tagId)
+func (r *TmallPromotagTaguserSaveRequest) SetTagId(_tagId int64) error {
+    r._tagId = _tagId
+    r.Set("tag_id", _tagId)
     return nil
 }
 
 // TagId Getter
 func (r TmallPromotagTaguserSaveRequest) GetTagId() int64 {
-    return r.tagId
+    return r._tagId
 }
 // Nick Setter
 // 买家昵称
-func (r *TmallPromotagTaguserSaveRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TmallPromotagTaguserSaveRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TmallPromotagTaguserSaveRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

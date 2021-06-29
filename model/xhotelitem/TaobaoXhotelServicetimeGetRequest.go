@@ -15,7 +15,7 @@ taobao.xhotel.servicetime.get
 type TaobaoXhotelServicetimeGetRequest struct {
     model.Params
     // 酒店id
-    hid   int64
+    _hid   int64
 }
 
 // 初始化TaobaoXhotelServicetimeGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelServicetimeGetRequest) GetApiParams() url.Values {
 }
 // Hid Setter
 // 酒店id
-func (r *TaobaoXhotelServicetimeGetRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *TaobaoXhotelServicetimeGetRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r TaobaoXhotelServicetimeGetRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }

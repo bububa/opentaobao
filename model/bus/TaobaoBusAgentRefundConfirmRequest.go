@@ -15,7 +15,7 @@ taobao.bus.agent.refund.confirm
 type TaobaoBusAgentRefundConfirmRequest struct {
     model.Params
     // 入参
-    paramAgentConfirmReturnAndRefundRQ   *AgentConfirmReturnAndRefundRq
+    _paramAgentConfirmReturnAndRefundRQ   *AgentConfirmReturnAndRefundRq
 }
 
 // 初始化TaobaoBusAgentRefundConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusAgentRefundConfirmRequest) GetApiParams() url.Values {
 }
 // ParamAgentConfirmReturnAndRefundRQ Setter
 // 入参
-func (r *TaobaoBusAgentRefundConfirmRequest) SetParamAgentConfirmReturnAndRefundRQ(paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq) error {
-    r.paramAgentConfirmReturnAndRefundRQ = paramAgentConfirmReturnAndRefundRQ
-    r.Set("param_agent_confirm_return_and_refund_r_q", paramAgentConfirmReturnAndRefundRQ)
+func (r *TaobaoBusAgentRefundConfirmRequest) SetParamAgentConfirmReturnAndRefundRQ(_paramAgentConfirmReturnAndRefundRQ *AgentConfirmReturnAndRefundRq) error {
+    r._paramAgentConfirmReturnAndRefundRQ = _paramAgentConfirmReturnAndRefundRQ
+    r.Set("param_agent_confirm_return_and_refund_r_q", _paramAgentConfirmReturnAndRefundRQ)
     return nil
 }
 
 // ParamAgentConfirmReturnAndRefundRQ Getter
 func (r TaobaoBusAgentRefundConfirmRequest) GetParamAgentConfirmReturnAndRefundRQ() *AgentConfirmReturnAndRefundRq {
-    return r.paramAgentConfirmReturnAndRefundRQ
+    return r._paramAgentConfirmReturnAndRefundRQ
 }

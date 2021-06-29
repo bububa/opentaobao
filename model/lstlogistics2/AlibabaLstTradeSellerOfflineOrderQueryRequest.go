@@ -15,7 +15,7 @@ alibaba.lst.trade.seller.offline.order.query
 type AlibabaLstTradeSellerOfflineOrderQueryRequest struct {
     model.Params
     // 入参
-    offlineOrderQueryParam   *LstOfflineOrderQueryParam
+    _offlineOrderQueryParam   *LstOfflineOrderQueryParam
 }
 
 // 初始化AlibabaLstTradeSellerOfflineOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerOfflineOrderQueryRequest) GetApiParams() url.Values
 }
 // OfflineOrderQueryParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerOfflineOrderQueryRequest) SetOfflineOrderQueryParam(offlineOrderQueryParam *LstOfflineOrderQueryParam) error {
-    r.offlineOrderQueryParam = offlineOrderQueryParam
-    r.Set("offline_order_query_param", offlineOrderQueryParam)
+func (r *AlibabaLstTradeSellerOfflineOrderQueryRequest) SetOfflineOrderQueryParam(_offlineOrderQueryParam *LstOfflineOrderQueryParam) error {
+    r._offlineOrderQueryParam = _offlineOrderQueryParam
+    r.Set("offline_order_query_param", _offlineOrderQueryParam)
     return nil
 }
 
 // OfflineOrderQueryParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderQueryRequest) GetOfflineOrderQueryParam() *LstOfflineOrderQueryParam {
-    return r.offlineOrderQueryParam
+    return r._offlineOrderQueryParam
 }

@@ -15,7 +15,7 @@ taobao.xhotel.price.get.for.hello
 type TaobaoXhotelPriceGetForHelloRequest struct {
     model.Params
     // 参数封装
-    hotelPriceParam   *HotelPriceParam
+    _hotelPriceParam   *HotelPriceParam
 }
 
 // 初始化TaobaoXhotelPriceGetForHelloRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelPriceGetForHelloRequest) GetApiParams() url.Values {
 }
 // HotelPriceParam Setter
 // 参数封装
-func (r *TaobaoXhotelPriceGetForHelloRequest) SetHotelPriceParam(hotelPriceParam *HotelPriceParam) error {
-    r.hotelPriceParam = hotelPriceParam
-    r.Set("hotel_price_param", hotelPriceParam)
+func (r *TaobaoXhotelPriceGetForHelloRequest) SetHotelPriceParam(_hotelPriceParam *HotelPriceParam) error {
+    r._hotelPriceParam = _hotelPriceParam
+    r.Set("hotel_price_param", _hotelPriceParam)
     return nil
 }
 
 // HotelPriceParam Getter
 func (r TaobaoXhotelPriceGetForHelloRequest) GetHotelPriceParam() *HotelPriceParam {
-    return r.hotelPriceParam
+    return r._hotelPriceParam
 }

@@ -16,9 +16,9 @@ tmall.service.settleadjustment.cancel
 type TmallServiceSettleadjustmentCancelRequest struct {
     model.Params
     // 结算调整单ID
-    id   int64
+    _id   int64
     // 取消原因说明
-    comments   string
+    _comments   string
 }
 
 // 初始化TmallServiceSettleadjustmentCancelRequest对象
@@ -43,25 +43,25 @@ func (r TmallServiceSettleadjustmentCancelRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 结算调整单ID
-func (r *TmallServiceSettleadjustmentCancelRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TmallServiceSettleadjustmentCancelRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TmallServiceSettleadjustmentCancelRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // Comments Setter
 // 取消原因说明
-func (r *TmallServiceSettleadjustmentCancelRequest) SetComments(comments string) error {
-    r.comments = comments
-    r.Set("comments", comments)
+func (r *TmallServiceSettleadjustmentCancelRequest) SetComments(_comments string) error {
+    r._comments = _comments
+    r.Set("comments", _comments)
     return nil
 }
 
 // Comments Getter
 func (r TmallServiceSettleadjustmentCancelRequest) GetComments() string {
-    return r.comments
+    return r._comments
 }

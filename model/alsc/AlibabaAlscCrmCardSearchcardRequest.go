@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.searchcard
 type AlibabaAlscCrmCardSearchcardRequest struct {
     model.Params
     // 请求对象
-    paramSearchCardOpenReq   *SearchCardOpenReq
+    _paramSearchCardOpenReq   *SearchCardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardSearchcardRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardSearchcardRequest) GetApiParams() url.Values {
 }
 // ParamSearchCardOpenReq Setter
 // 请求对象
-func (r *AlibabaAlscCrmCardSearchcardRequest) SetParamSearchCardOpenReq(paramSearchCardOpenReq *SearchCardOpenReq) error {
-    r.paramSearchCardOpenReq = paramSearchCardOpenReq
-    r.Set("param_search_card_open_req", paramSearchCardOpenReq)
+func (r *AlibabaAlscCrmCardSearchcardRequest) SetParamSearchCardOpenReq(_paramSearchCardOpenReq *SearchCardOpenReq) error {
+    r._paramSearchCardOpenReq = _paramSearchCardOpenReq
+    r.Set("param_search_card_open_req", _paramSearchCardOpenReq)
     return nil
 }
 
 // ParamSearchCardOpenReq Getter
 func (r AlibabaAlscCrmCardSearchcardRequest) GetParamSearchCardOpenReq() *SearchCardOpenReq {
-    return r.paramSearchCardOpenReq
+    return r._paramSearchCardOpenReq
 }

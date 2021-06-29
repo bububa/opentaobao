@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.rawpo.gap.return
 type AlibabaTmallgenieScpPlanRawpoGapReturnRequest struct {
     model.Params
     // 请求对象
-    rawPogapRequest   *RawPurchaseOrderGapRequest
+    _rawPogapRequest   *RawPurchaseOrderGapRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanRawpoGapReturnRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetApiParams() url.Values
 }
 // RawPogapRequest Setter
 // 请求对象
-func (r *AlibabaTmallgenieScpPlanRawpoGapReturnRequest) SetRawPogapRequest(rawPogapRequest *RawPurchaseOrderGapRequest) error {
-    r.rawPogapRequest = rawPogapRequest
-    r.Set("raw_pogap_request", rawPogapRequest)
+func (r *AlibabaTmallgenieScpPlanRawpoGapReturnRequest) SetRawPogapRequest(_rawPogapRequest *RawPurchaseOrderGapRequest) error {
+    r._rawPogapRequest = _rawPogapRequest
+    r.Set("raw_pogap_request", _rawPogapRequest)
     return nil
 }
 
 // RawPogapRequest Getter
 func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetRawPogapRequest() *RawPurchaseOrderGapRequest {
-    return r.rawPogapRequest
+    return r._rawPogapRequest
 }

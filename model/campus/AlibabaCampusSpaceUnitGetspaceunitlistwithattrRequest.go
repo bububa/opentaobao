@@ -15,9 +15,9 @@ alibaba.campus.space.unit.getspaceunitlistwithattr
 type AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest struct {
     model.Params
     // 操作用户上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 空间单元查询对象
-    unitQuery   *SpaceUnitQuery
+    _unitQuery   *SpaceUnitQuery
 }
 
 // 初始化AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) GetApiParams() ur
 }
 // Context Setter
 // 操作用户上下文
-func (r *AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // UnitQuery Setter
 // 空间单元查询对象
-func (r *AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) SetUnitQuery(unitQuery *SpaceUnitQuery) error {
-    r.unitQuery = unitQuery
-    r.Set("unit_query", unitQuery)
+func (r *AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) SetUnitQuery(_unitQuery *SpaceUnitQuery) error {
+    r._unitQuery = _unitQuery
+    r.Set("unit_query", _unitQuery)
     return nil
 }
 
 // UnitQuery Getter
 func (r AlibabaCampusSpaceUnitGetspaceunitlistwithattrRequest) GetUnitQuery() *SpaceUnitQuery {
-    return r.unitQuery
+    return r._unitQuery
 }

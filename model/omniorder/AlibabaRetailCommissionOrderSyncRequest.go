@@ -15,7 +15,7 @@ alibaba.retail.commission.order.sync
 type AlibabaRetailCommissionOrderSyncRequest struct {
     model.Params
     // 请求参数
-    param0   *UniverseOrderVo
+    _param0   *UniverseOrderVo
 }
 
 // 初始化AlibabaRetailCommissionOrderSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailCommissionOrderSyncRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求参数
-func (r *AlibabaRetailCommissionOrderSyncRequest) SetParam0(param0 *UniverseOrderVo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaRetailCommissionOrderSyncRequest) SetParam0(_param0 *UniverseOrderVo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaRetailCommissionOrderSyncRequest) GetParam0() *UniverseOrderVo {
-    return r.param0
+    return r._param0
 }

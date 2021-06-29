@@ -15,7 +15,7 @@ taobao.fenxiao.productcats.get
 type TaobaoFenxiaoProductcatsGetRequest struct {
     model.Params
     // 返回字段列表
-    fields   string
+    _fields   string
 }
 
 // 初始化TaobaoFenxiaoProductcatsGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoProductcatsGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 返回字段列表
-func (r *TaobaoFenxiaoProductcatsGetRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoFenxiaoProductcatsGetRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoFenxiaoProductcatsGetRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }

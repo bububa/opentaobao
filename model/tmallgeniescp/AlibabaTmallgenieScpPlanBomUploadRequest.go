@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.bom.upload
 type AlibabaTmallgenieScpPlanBomUploadRequest struct {
     model.Params
     // 对象
-    pbomRequest   *AbstractRequest
+    _pbomRequest   *AbstractRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanBomUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanBomUploadRequest) GetApiParams() url.Values {
 }
 // PbomRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanBomUploadRequest) SetPbomRequest(pbomRequest *AbstractRequest) error {
-    r.pbomRequest = pbomRequest
-    r.Set("pbom_request", pbomRequest)
+func (r *AlibabaTmallgenieScpPlanBomUploadRequest) SetPbomRequest(_pbomRequest *AbstractRequest) error {
+    r._pbomRequest = _pbomRequest
+    r.Set("pbom_request", _pbomRequest)
     return nil
 }
 
 // PbomRequest Getter
 func (r AlibabaTmallgenieScpPlanBomUploadRequest) GetPbomRequest() *AbstractRequest {
-    return r.pbomRequest
+    return r._pbomRequest
 }

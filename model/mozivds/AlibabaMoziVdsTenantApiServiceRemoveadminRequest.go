@@ -15,7 +15,7 @@ alibaba.mozi.vds.tenant.api.service.removeadmin
 type AlibabaMoziVdsTenantApiServiceRemoveadminRequest struct {
     model.Params
     // 请求入参
-    param   *RemoveTenantAdminsRequest
+    _param   *RemoveTenantAdminsRequest
 }
 
 // 初始化AlibabaMoziVdsTenantApiServiceRemoveadminRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetApiParams() url.Val
 }
 // Param Setter
 // 请求入参
-func (r *AlibabaMoziVdsTenantApiServiceRemoveadminRequest) SetParam(param *RemoveTenantAdminsRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaMoziVdsTenantApiServiceRemoveadminRequest) SetParam(_param *RemoveTenantAdminsRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaMoziVdsTenantApiServiceRemoveadminRequest) GetParam() *RemoveTenantAdminsRequest {
-    return r.param
+    return r._param
 }

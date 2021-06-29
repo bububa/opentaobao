@@ -16,9 +16,9 @@ taobao.item.skus.get
 type TaobaoItemSkusGetRequest struct {
     model.Params
     // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
-    fields   []string
+    _fields   []string
     // sku所属商品数字id，必选。num_iid个数不能超过40个
-    numIids   string
+    _numIids   string
 }
 
 // 初始化TaobaoItemSkusGetRequest对象
@@ -43,25 +43,25 @@ func (r TaobaoItemSkusGetRequest) GetApiParams() url.Values {
 }
 // Fields Setter
 // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
-func (r *TaobaoItemSkusGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TaobaoItemSkusGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TaobaoItemSkusGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }
 // NumIids Setter
 // sku所属商品数字id，必选。num_iid个数不能超过40个
-func (r *TaobaoItemSkusGetRequest) SetNumIids(numIids string) error {
-    r.numIids = numIids
-    r.Set("num_iids", numIids)
+func (r *TaobaoItemSkusGetRequest) SetNumIids(_numIids string) error {
+    r._numIids = _numIids
+    r.Set("num_iids", _numIids)
     return nil
 }
 
 // NumIids Getter
 func (r TaobaoItemSkusGetRequest) GetNumIids() string {
-    return r.numIids
+    return r._numIids
 }

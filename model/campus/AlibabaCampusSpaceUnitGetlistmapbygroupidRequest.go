@@ -17,9 +17,9 @@ HSF方法名称：	getListMapByGroupIds
 type AlibabaCampusSpaceUnitGetlistmapbygroupidRequest struct {
     model.Params
     // 用户环境
-    param0   *WorkBenchContext
+    _param0   *WorkBenchContext
     // 查询封装
-    param1   *SpaceUnitQuery
+    _param1   *SpaceUnitQuery
 }
 
 // 初始化AlibabaCampusSpaceUnitGetlistmapbygroupidRequest对象
@@ -44,25 +44,25 @@ func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetApiParams() url.Val
 }
 // Param0 Setter
 // 用户环境
-func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam0(param0 *WorkBenchContext) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam0(_param0 *WorkBenchContext) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetParam0() *WorkBenchContext {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 查询封装
-func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam1(param1 *SpaceUnitQuery) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) SetParam1(_param1 *SpaceUnitQuery) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r AlibabaCampusSpaceUnitGetlistmapbygroupidRequest) GetParam1() *SpaceUnitQuery {
-    return r.param1
+    return r._param1
 }

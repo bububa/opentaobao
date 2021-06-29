@@ -15,7 +15,7 @@ alibaba.wdk.marketing.coupon.sendma
 type AlibabaWdkMarketingCouponSendmaRequest struct {
     model.Params
     // 发放匿名码入参
-    param0   *CommonActivityParam
+    _param0   *CommonActivityParam
 }
 
 // 初始化AlibabaWdkMarketingCouponSendmaRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingCouponSendmaRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 发放匿名码入参
-func (r *AlibabaWdkMarketingCouponSendmaRequest) SetParam0(param0 *CommonActivityParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingCouponSendmaRequest) SetParam0(_param0 *CommonActivityParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingCouponSendmaRequest) GetParam0() *CommonActivityParam {
-    return r.param0
+    return r._param0
 }

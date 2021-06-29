@@ -15,7 +15,7 @@ taobao.qimen.inventoryreserve.cancel
 type TaobaoQimenInventoryreserveCancelRequest struct {
     model.Params
     // 
-    request   *Request
+    _request   *Request
 }
 
 // 初始化TaobaoQimenInventoryreserveCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenInventoryreserveCancelRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenInventoryreserveCancelRequest) SetRequest(request *Request) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenInventoryreserveCancelRequest) SetRequest(_request *Request) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenInventoryreserveCancelRequest) GetRequest() *Request {
-    return r.request
+    return r._request
 }

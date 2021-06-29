@@ -15,7 +15,7 @@ taobao.qimen.transferorder.query
 type TaobaoQimenTransferorderQueryRequest struct {
     model.Params
     // 
-    request   *TaobaoQimenTransferorderQueryStruct
+    _request   *TaobaoQimenTransferorderQueryStruct
 }
 
 // 初始化TaobaoQimenTransferorderQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenTransferorderQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenTransferorderQueryRequest) SetRequest(request *TaobaoQimenTransferorderQueryStruct) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenTransferorderQueryRequest) SetRequest(_request *TaobaoQimenTransferorderQueryStruct) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenTransferorderQueryRequest) GetRequest() *TaobaoQimenTransferorderQueryStruct {
-    return r.request
+    return r._request
 }

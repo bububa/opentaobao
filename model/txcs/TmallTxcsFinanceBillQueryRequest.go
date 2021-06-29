@@ -15,7 +15,7 @@ tmall.txcs.finance.bill.query
 type TmallTxcsFinanceBillQueryRequest struct {
     model.Params
     // 对账单号
-    statementBillQuery   *StatementBillQuery
+    _statementBillQuery   *StatementBillQuery
 }
 
 // 初始化TmallTxcsFinanceBillQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallTxcsFinanceBillQueryRequest) GetApiParams() url.Values {
 }
 // StatementBillQuery Setter
 // 对账单号
-func (r *TmallTxcsFinanceBillQueryRequest) SetStatementBillQuery(statementBillQuery *StatementBillQuery) error {
-    r.statementBillQuery = statementBillQuery
-    r.Set("statement_bill_query", statementBillQuery)
+func (r *TmallTxcsFinanceBillQueryRequest) SetStatementBillQuery(_statementBillQuery *StatementBillQuery) error {
+    r._statementBillQuery = _statementBillQuery
+    r.Set("statement_bill_query", _statementBillQuery)
     return nil
 }
 
 // StatementBillQuery Getter
 func (r TmallTxcsFinanceBillQueryRequest) GetStatementBillQuery() *StatementBillQuery {
-    return r.statementBillQuery
+    return r._statementBillQuery
 }

@@ -15,7 +15,7 @@ AE展示类目获取接口
 type AliexpressSocialDiscategoryGetRequest struct {
     model.Params
     // Locale值，格式为language+"_"+country
-    locale   string
+    _locale   string
 }
 
 // 初始化AliexpressSocialDiscategoryGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSocialDiscategoryGetRequest) GetApiParams() url.Values {
 }
 // Locale Setter
 // Locale值，格式为language+"_"+country
-func (r *AliexpressSocialDiscategoryGetRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *AliexpressSocialDiscategoryGetRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r AliexpressSocialDiscategoryGetRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }

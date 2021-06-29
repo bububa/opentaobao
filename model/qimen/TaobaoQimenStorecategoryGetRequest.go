@@ -15,7 +15,7 @@ taobao.qimen.storecategory.get
 type TaobaoQimenStorecategoryGetRequest struct {
     model.Params
     // 备注
-    remark   string
+    _remark   string
 }
 
 // 初始化TaobaoQimenStorecategoryGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStorecategoryGetRequest) GetApiParams() url.Values {
 }
 // Remark Setter
 // 备注
-func (r *TaobaoQimenStorecategoryGetRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoQimenStorecategoryGetRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoQimenStorecategoryGetRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }

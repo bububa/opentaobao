@@ -15,7 +15,7 @@ alibaba.alihealth.pw.applynode.update
 type AlibabaAlihealthPwApplynodeUpdateRequest struct {
     model.Params
     // 回调入参
-    body   *AuditRollbackRo
+    _body   *AuditRollbackRo
 }
 
 // 初始化AlibabaAlihealthPwApplynodeUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPwApplynodeUpdateRequest) GetApiParams() url.Values {
 }
 // Body Setter
 // 回调入参
-func (r *AlibabaAlihealthPwApplynodeUpdateRequest) SetBody(body *AuditRollbackRo) error {
-    r.body = body
-    r.Set("body", body)
+func (r *AlibabaAlihealthPwApplynodeUpdateRequest) SetBody(_body *AuditRollbackRo) error {
+    r._body = _body
+    r.Set("body", _body)
     return nil
 }
 
 // Body Getter
 func (r AlibabaAlihealthPwApplynodeUpdateRequest) GetBody() *AuditRollbackRo {
-    return r.body
+    return r._body
 }

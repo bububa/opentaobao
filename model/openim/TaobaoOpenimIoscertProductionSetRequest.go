@@ -15,9 +15,9 @@ taobao.openim.ioscert.production.set
 type TaobaoOpenimIoscertProductionSetRequest struct {
     model.Params
     // 证书密码
-    password   string
+    _password   string
     // 证书文件内容,base64编码
-    cert   string
+    _cert   string
 }
 
 // 初始化TaobaoOpenimIoscertProductionSetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenimIoscertProductionSetRequest) GetApiParams() url.Values {
 }
 // Password Setter
 // 证书密码
-func (r *TaobaoOpenimIoscertProductionSetRequest) SetPassword(password string) error {
-    r.password = password
-    r.Set("password", password)
+func (r *TaobaoOpenimIoscertProductionSetRequest) SetPassword(_password string) error {
+    r._password = _password
+    r.Set("password", _password)
     return nil
 }
 
 // Password Getter
 func (r TaobaoOpenimIoscertProductionSetRequest) GetPassword() string {
-    return r.password
+    return r._password
 }
 // Cert Setter
 // 证书文件内容,base64编码
-func (r *TaobaoOpenimIoscertProductionSetRequest) SetCert(cert string) error {
-    r.cert = cert
-    r.Set("cert", cert)
+func (r *TaobaoOpenimIoscertProductionSetRequest) SetCert(_cert string) error {
+    r._cert = _cert
+    r.Set("cert", _cert)
     return nil
 }
 
 // Cert Getter
 func (r TaobaoOpenimIoscertProductionSetRequest) GetCert() string {
-    return r.cert
+    return r._cert
 }

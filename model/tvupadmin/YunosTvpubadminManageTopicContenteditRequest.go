@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.topic.contentedit
 type YunosTvpubadminManageTopicContenteditRequest struct {
     model.Params
     // 入参，json格式
-    contentJson   string
+    _contentJson   string
 }
 
 // 初始化YunosTvpubadminManageTopicContenteditRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageTopicContenteditRequest) GetApiParams() url.Values 
 }
 // ContentJson Setter
 // 入参，json格式
-func (r *YunosTvpubadminManageTopicContenteditRequest) SetContentJson(contentJson string) error {
-    r.contentJson = contentJson
-    r.Set("content_json", contentJson)
+func (r *YunosTvpubadminManageTopicContenteditRequest) SetContentJson(_contentJson string) error {
+    r._contentJson = _contentJson
+    r.Set("content_json", _contentJson)
     return nil
 }
 
 // ContentJson Getter
 func (r YunosTvpubadminManageTopicContenteditRequest) GetContentJson() string {
-    return r.contentJson
+    return r._contentJson
 }

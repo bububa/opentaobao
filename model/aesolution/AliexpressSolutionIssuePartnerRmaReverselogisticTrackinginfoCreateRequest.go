@@ -15,7 +15,7 @@ Receives information about reverse logistics tracking info
 type AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest struct {
     model.Params
     // Logistic's order creation request
-    logisticsOrderCreationRequest   *LogisticOrderCreationForRmaRequest
+    _logisticsOrderCreationRequest   *LogisticOrderCreationForRmaRequest
 }
 
 // 初始化AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateReques
 }
 // LogisticsOrderCreationRequest Setter
 // Logistic's order creation request
-func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) SetLogisticsOrderCreationRequest(logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
-    r.logisticsOrderCreationRequest = logisticsOrderCreationRequest
-    r.Set("logistics_order_creation_request", logisticsOrderCreationRequest)
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) SetLogisticsOrderCreationRequest(_logisticsOrderCreationRequest *LogisticOrderCreationForRmaRequest) error {
+    r._logisticsOrderCreationRequest = _logisticsOrderCreationRequest
+    r.Set("logistics_order_creation_request", _logisticsOrderCreationRequest)
     return nil
 }
 
 // LogisticsOrderCreationRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticTrackinginfoCreateRequest) GetLogisticsOrderCreationRequest() *LogisticOrderCreationForRmaRequest {
-    return r.logisticsOrderCreationRequest
+    return r._logisticsOrderCreationRequest
 }

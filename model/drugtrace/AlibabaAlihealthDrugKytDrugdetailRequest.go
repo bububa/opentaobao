@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.drugdetail
 type AlibabaAlihealthDrugKytDrugdetailRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 药品ID
-    drugEntBaseInfoId   string
+    _drugEntBaseInfoId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrugdetailRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytDrugdetailRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytDrugdetailRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrugdetailRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrugdetailRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // DrugEntBaseInfoId Setter
 // 药品ID
-func (r *AlibabaAlihealthDrugKytDrugdetailRequest) SetDrugEntBaseInfoId(drugEntBaseInfoId string) error {
-    r.drugEntBaseInfoId = drugEntBaseInfoId
-    r.Set("drug_ent_base_info_id", drugEntBaseInfoId)
+func (r *AlibabaAlihealthDrugKytDrugdetailRequest) SetDrugEntBaseInfoId(_drugEntBaseInfoId string) error {
+    r._drugEntBaseInfoId = _drugEntBaseInfoId
+    r.Set("drug_ent_base_info_id", _drugEntBaseInfoId)
     return nil
 }
 
 // DrugEntBaseInfoId Getter
 func (r AlibabaAlihealthDrugKytDrugdetailRequest) GetDrugEntBaseInfoId() string {
-    return r.drugEntBaseInfoId
+    return r._drugEntBaseInfoId
 }

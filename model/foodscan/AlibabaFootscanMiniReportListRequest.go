@@ -15,9 +15,9 @@ alibaba.footscan.mini.report.list
 type AlibabaFootscanMiniReportListRequest struct {
     model.Params
     // 平台分配的token
-    token   string
+    _token   string
     // 请求数据
-    reqData   *TobFeetModelMobileReportRequest
+    _reqData   *TobFeetModelMobileReportRequest
 }
 
 // 初始化AlibabaFootscanMiniReportListRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniReportListRequest) GetApiParams() url.Values {
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniReportListRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaFootscanMiniReportListRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaFootscanMiniReportListRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ReqData Setter
 // 请求数据
-func (r *AlibabaFootscanMiniReportListRequest) SetReqData(reqData *TobFeetModelMobileReportRequest) error {
-    r.reqData = reqData
-    r.Set("req_data", reqData)
+func (r *AlibabaFootscanMiniReportListRequest) SetReqData(_reqData *TobFeetModelMobileReportRequest) error {
+    r._reqData = _reqData
+    r.Set("req_data", _reqData)
     return nil
 }
 
 // ReqData Getter
 func (r AlibabaFootscanMiniReportListRequest) GetReqData() *TobFeetModelMobileReportRequest {
-    return r.reqData
+    return r._reqData
 }

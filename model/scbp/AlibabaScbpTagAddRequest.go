@@ -15,7 +15,7 @@ alibaba.scbp.tag.add
 type AlibabaScbpTagAddRequest struct {
     model.Params
     // 分组名称，最多允许创建100个
-    tagName   string
+    _tagName   string
 }
 
 // 初始化AlibabaScbpTagAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTagAddRequest) GetApiParams() url.Values {
 }
 // TagName Setter
 // 分组名称，最多允许创建100个
-func (r *AlibabaScbpTagAddRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *AlibabaScbpTagAddRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r AlibabaScbpTagAddRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }

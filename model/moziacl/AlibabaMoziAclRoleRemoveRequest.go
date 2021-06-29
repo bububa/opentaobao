@@ -15,7 +15,7 @@ alibaba.mozi.acl.role.remove
 type AlibabaMoziAclRoleRemoveRequest struct {
     model.Params
     // 删除角色请求对象
-    deleteRolesRequest   *DeleteRolesRequest
+    _deleteRolesRequest   *DeleteRolesRequest
 }
 
 // 初始化AlibabaMoziAclRoleRemoveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclRoleRemoveRequest) GetApiParams() url.Values {
 }
 // DeleteRolesRequest Setter
 // 删除角色请求对象
-func (r *AlibabaMoziAclRoleRemoveRequest) SetDeleteRolesRequest(deleteRolesRequest *DeleteRolesRequest) error {
-    r.deleteRolesRequest = deleteRolesRequest
-    r.Set("delete_roles_request", deleteRolesRequest)
+func (r *AlibabaMoziAclRoleRemoveRequest) SetDeleteRolesRequest(_deleteRolesRequest *DeleteRolesRequest) error {
+    r._deleteRolesRequest = _deleteRolesRequest
+    r.Set("delete_roles_request", _deleteRolesRequest)
     return nil
 }
 
 // DeleteRolesRequest Getter
 func (r AlibabaMoziAclRoleRemoveRequest) GetDeleteRolesRequest() *DeleteRolesRequest {
-    return r.deleteRolesRequest
+    return r._deleteRolesRequest
 }

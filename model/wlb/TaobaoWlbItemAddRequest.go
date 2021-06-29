@@ -15,47 +15,47 @@ taobao.wlb.item.add
 type TaobaoWlbItemAddRequest struct {
     model.Params
     // 商品名称
-    name   string
+    _name   string
     // 商品标题
-    title   string
+    _title   string
     // 商品编码
-    itemCode   string
+    _itemCode   string
     // 商品备注
-    remark   string
+    _remark   string
     // NORMAL--普通商品<br/>COMBINE--组合商品<br/>DISTRIBUTION--分销
-    type   string
+    _type   string
     // 是否sku
-    isSku   string
+    _isSku   string
     // 属性名列表,目前支持的属性：<br/>毛重:GWeight	<br/>净重:Nweight<br/>皮重: Tweight<br/>自定义属性：<br/>paramkey1<br/>paramkey2<br/>paramkey3<br/>paramkey4
-    proNameList   string
+    _proNameList   string
     // 属性值列表：<br/>10,8
-    proValueList   string
+    _proValueList   string
     // 是否易碎品
-    isFriable   bool
+    _isFriable   bool
     // 是否危险品
-    isDangerous   bool
+    _isDangerous   bool
     // 商品颜色
-    color   string
+    _color   string
     // 商品重量，单位G
-    weight   int64
+    _weight   int64
     // 商品长度，单位毫米
-    length   int64
+    _length   int64
     // 商品宽度，单位毫米
-    width   int64
+    _width   int64
     // 商品高度，单位毫米
-    height   int64
+    _height   int64
     // 商品体积，单位立方厘米
-    volume   int64
+    _volume   int64
     // 货类
-    goodsCat   string
+    _goodsCat   string
     // 计价货类
-    pricingCat   string
+    _pricingCat   string
     // 商品包装材料类型
-    packageMaterial   string
+    _packageMaterial   string
     // 商品价格，单位：分
-    price   int64
+    _price   int64
     // 是否支持批次
-    supportBatch   bool
+    _supportBatch   bool
 }
 
 // 初始化TaobaoWlbItemAddRequest对象
@@ -80,253 +80,253 @@ func (r TaobaoWlbItemAddRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 商品名称
-func (r *TaobaoWlbItemAddRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoWlbItemAddRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoWlbItemAddRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Title Setter
 // 商品标题
-func (r *TaobaoWlbItemAddRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoWlbItemAddRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoWlbItemAddRequest) GetTitle() string {
-    return r.title
+    return r._title
 }
 // ItemCode Setter
 // 商品编码
-func (r *TaobaoWlbItemAddRequest) SetItemCode(itemCode string) error {
-    r.itemCode = itemCode
-    r.Set("item_code", itemCode)
+func (r *TaobaoWlbItemAddRequest) SetItemCode(_itemCode string) error {
+    r._itemCode = _itemCode
+    r.Set("item_code", _itemCode)
     return nil
 }
 
 // ItemCode Getter
 func (r TaobaoWlbItemAddRequest) GetItemCode() string {
-    return r.itemCode
+    return r._itemCode
 }
 // Remark Setter
 // 商品备注
-func (r *TaobaoWlbItemAddRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *TaobaoWlbItemAddRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r TaobaoWlbItemAddRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // Type Setter
 // NORMAL--普通商品<br/>COMBINE--组合商品<br/>DISTRIBUTION--分销
-func (r *TaobaoWlbItemAddRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoWlbItemAddRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoWlbItemAddRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // IsSku Setter
 // 是否sku
-func (r *TaobaoWlbItemAddRequest) SetIsSku(isSku string) error {
-    r.isSku = isSku
-    r.Set("is_sku", isSku)
+func (r *TaobaoWlbItemAddRequest) SetIsSku(_isSku string) error {
+    r._isSku = _isSku
+    r.Set("is_sku", _isSku)
     return nil
 }
 
 // IsSku Getter
 func (r TaobaoWlbItemAddRequest) GetIsSku() string {
-    return r.isSku
+    return r._isSku
 }
 // ProNameList Setter
 // 属性名列表,目前支持的属性：<br/>毛重:GWeight	<br/>净重:Nweight<br/>皮重: Tweight<br/>自定义属性：<br/>paramkey1<br/>paramkey2<br/>paramkey3<br/>paramkey4
-func (r *TaobaoWlbItemAddRequest) SetProNameList(proNameList string) error {
-    r.proNameList = proNameList
-    r.Set("pro_name_list", proNameList)
+func (r *TaobaoWlbItemAddRequest) SetProNameList(_proNameList string) error {
+    r._proNameList = _proNameList
+    r.Set("pro_name_list", _proNameList)
     return nil
 }
 
 // ProNameList Getter
 func (r TaobaoWlbItemAddRequest) GetProNameList() string {
-    return r.proNameList
+    return r._proNameList
 }
 // ProValueList Setter
 // 属性值列表：<br/>10,8
-func (r *TaobaoWlbItemAddRequest) SetProValueList(proValueList string) error {
-    r.proValueList = proValueList
-    r.Set("pro_value_list", proValueList)
+func (r *TaobaoWlbItemAddRequest) SetProValueList(_proValueList string) error {
+    r._proValueList = _proValueList
+    r.Set("pro_value_list", _proValueList)
     return nil
 }
 
 // ProValueList Getter
 func (r TaobaoWlbItemAddRequest) GetProValueList() string {
-    return r.proValueList
+    return r._proValueList
 }
 // IsFriable Setter
 // 是否易碎品
-func (r *TaobaoWlbItemAddRequest) SetIsFriable(isFriable bool) error {
-    r.isFriable = isFriable
-    r.Set("is_friable", isFriable)
+func (r *TaobaoWlbItemAddRequest) SetIsFriable(_isFriable bool) error {
+    r._isFriable = _isFriable
+    r.Set("is_friable", _isFriable)
     return nil
 }
 
 // IsFriable Getter
 func (r TaobaoWlbItemAddRequest) GetIsFriable() bool {
-    return r.isFriable
+    return r._isFriable
 }
 // IsDangerous Setter
 // 是否危险品
-func (r *TaobaoWlbItemAddRequest) SetIsDangerous(isDangerous bool) error {
-    r.isDangerous = isDangerous
-    r.Set("is_dangerous", isDangerous)
+func (r *TaobaoWlbItemAddRequest) SetIsDangerous(_isDangerous bool) error {
+    r._isDangerous = _isDangerous
+    r.Set("is_dangerous", _isDangerous)
     return nil
 }
 
 // IsDangerous Getter
 func (r TaobaoWlbItemAddRequest) GetIsDangerous() bool {
-    return r.isDangerous
+    return r._isDangerous
 }
 // Color Setter
 // 商品颜色
-func (r *TaobaoWlbItemAddRequest) SetColor(color string) error {
-    r.color = color
-    r.Set("color", color)
+func (r *TaobaoWlbItemAddRequest) SetColor(_color string) error {
+    r._color = _color
+    r.Set("color", _color)
     return nil
 }
 
 // Color Getter
 func (r TaobaoWlbItemAddRequest) GetColor() string {
-    return r.color
+    return r._color
 }
 // Weight Setter
 // 商品重量，单位G
-func (r *TaobaoWlbItemAddRequest) SetWeight(weight int64) error {
-    r.weight = weight
-    r.Set("weight", weight)
+func (r *TaobaoWlbItemAddRequest) SetWeight(_weight int64) error {
+    r._weight = _weight
+    r.Set("weight", _weight)
     return nil
 }
 
 // Weight Getter
 func (r TaobaoWlbItemAddRequest) GetWeight() int64 {
-    return r.weight
+    return r._weight
 }
 // Length Setter
 // 商品长度，单位毫米
-func (r *TaobaoWlbItemAddRequest) SetLength(length int64) error {
-    r.length = length
-    r.Set("length", length)
+func (r *TaobaoWlbItemAddRequest) SetLength(_length int64) error {
+    r._length = _length
+    r.Set("length", _length)
     return nil
 }
 
 // Length Getter
 func (r TaobaoWlbItemAddRequest) GetLength() int64 {
-    return r.length
+    return r._length
 }
 // Width Setter
 // 商品宽度，单位毫米
-func (r *TaobaoWlbItemAddRequest) SetWidth(width int64) error {
-    r.width = width
-    r.Set("width", width)
+func (r *TaobaoWlbItemAddRequest) SetWidth(_width int64) error {
+    r._width = _width
+    r.Set("width", _width)
     return nil
 }
 
 // Width Getter
 func (r TaobaoWlbItemAddRequest) GetWidth() int64 {
-    return r.width
+    return r._width
 }
 // Height Setter
 // 商品高度，单位毫米
-func (r *TaobaoWlbItemAddRequest) SetHeight(height int64) error {
-    r.height = height
-    r.Set("height", height)
+func (r *TaobaoWlbItemAddRequest) SetHeight(_height int64) error {
+    r._height = _height
+    r.Set("height", _height)
     return nil
 }
 
 // Height Getter
 func (r TaobaoWlbItemAddRequest) GetHeight() int64 {
-    return r.height
+    return r._height
 }
 // Volume Setter
 // 商品体积，单位立方厘米
-func (r *TaobaoWlbItemAddRequest) SetVolume(volume int64) error {
-    r.volume = volume
-    r.Set("volume", volume)
+func (r *TaobaoWlbItemAddRequest) SetVolume(_volume int64) error {
+    r._volume = _volume
+    r.Set("volume", _volume)
     return nil
 }
 
 // Volume Getter
 func (r TaobaoWlbItemAddRequest) GetVolume() int64 {
-    return r.volume
+    return r._volume
 }
 // GoodsCat Setter
 // 货类
-func (r *TaobaoWlbItemAddRequest) SetGoodsCat(goodsCat string) error {
-    r.goodsCat = goodsCat
-    r.Set("goods_cat", goodsCat)
+func (r *TaobaoWlbItemAddRequest) SetGoodsCat(_goodsCat string) error {
+    r._goodsCat = _goodsCat
+    r.Set("goods_cat", _goodsCat)
     return nil
 }
 
 // GoodsCat Getter
 func (r TaobaoWlbItemAddRequest) GetGoodsCat() string {
-    return r.goodsCat
+    return r._goodsCat
 }
 // PricingCat Setter
 // 计价货类
-func (r *TaobaoWlbItemAddRequest) SetPricingCat(pricingCat string) error {
-    r.pricingCat = pricingCat
-    r.Set("pricing_cat", pricingCat)
+func (r *TaobaoWlbItemAddRequest) SetPricingCat(_pricingCat string) error {
+    r._pricingCat = _pricingCat
+    r.Set("pricing_cat", _pricingCat)
     return nil
 }
 
 // PricingCat Getter
 func (r TaobaoWlbItemAddRequest) GetPricingCat() string {
-    return r.pricingCat
+    return r._pricingCat
 }
 // PackageMaterial Setter
 // 商品包装材料类型
-func (r *TaobaoWlbItemAddRequest) SetPackageMaterial(packageMaterial string) error {
-    r.packageMaterial = packageMaterial
-    r.Set("package_material", packageMaterial)
+func (r *TaobaoWlbItemAddRequest) SetPackageMaterial(_packageMaterial string) error {
+    r._packageMaterial = _packageMaterial
+    r.Set("package_material", _packageMaterial)
     return nil
 }
 
 // PackageMaterial Getter
 func (r TaobaoWlbItemAddRequest) GetPackageMaterial() string {
-    return r.packageMaterial
+    return r._packageMaterial
 }
 // Price Setter
 // 商品价格，单位：分
-func (r *TaobaoWlbItemAddRequest) SetPrice(price int64) error {
-    r.price = price
-    r.Set("price", price)
+func (r *TaobaoWlbItemAddRequest) SetPrice(_price int64) error {
+    r._price = _price
+    r.Set("price", _price)
     return nil
 }
 
 // Price Getter
 func (r TaobaoWlbItemAddRequest) GetPrice() int64 {
-    return r.price
+    return r._price
 }
 // SupportBatch Setter
 // 是否支持批次
-func (r *TaobaoWlbItemAddRequest) SetSupportBatch(supportBatch bool) error {
-    r.supportBatch = supportBatch
-    r.Set("support_batch", supportBatch)
+func (r *TaobaoWlbItemAddRequest) SetSupportBatch(_supportBatch bool) error {
+    r._supportBatch = _supportBatch
+    r.Set("support_batch", _supportBatch)
     return nil
 }
 
 // SupportBatch Getter
 func (r TaobaoWlbItemAddRequest) GetSupportBatch() bool {
-    return r.supportBatch
+    return r._supportBatch
 }

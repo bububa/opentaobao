@@ -15,7 +15,7 @@ taobao.omniorder.store.sdtcancel
 type TaobaoOmniorderStoreSdtcancelRequest struct {
     model.Params
     // 取号返回的packageId
-    packageId   int64
+    _packageId   int64
 }
 
 // 初始化TaobaoOmniorderStoreSdtcancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderStoreSdtcancelRequest) GetApiParams() url.Values {
 }
 // PackageId Setter
 // 取号返回的packageId
-func (r *TaobaoOmniorderStoreSdtcancelRequest) SetPackageId(packageId int64) error {
-    r.packageId = packageId
-    r.Set("package_id", packageId)
+func (r *TaobaoOmniorderStoreSdtcancelRequest) SetPackageId(_packageId int64) error {
+    r._packageId = _packageId
+    r.Set("package_id", _packageId)
     return nil
 }
 
 // PackageId Getter
 func (r TaobaoOmniorderStoreSdtcancelRequest) GetPackageId() int64 {
-    return r.packageId
+    return r._packageId
 }

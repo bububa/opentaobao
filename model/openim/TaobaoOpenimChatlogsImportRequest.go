@@ -15,7 +15,7 @@ taobao.openim.chatlogs.import
 type TaobaoOpenimChatlogsImportRequest struct {
     model.Params
     // 消息序列
-    messages   []TextMessage
+    _messages   []TextMessage
 }
 
 // 初始化TaobaoOpenimChatlogsImportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimChatlogsImportRequest) GetApiParams() url.Values {
 }
 // Messages Setter
 // 消息序列
-func (r *TaobaoOpenimChatlogsImportRequest) SetMessages(messages []TextMessage) error {
-    r.messages = messages
-    r.Set("messages", messages)
+func (r *TaobaoOpenimChatlogsImportRequest) SetMessages(_messages []TextMessage) error {
+    r._messages = _messages
+    r.Set("messages", _messages)
     return nil
 }
 
 // Messages Getter
 func (r TaobaoOpenimChatlogsImportRequest) GetMessages() []TextMessage {
-    return r.messages
+    return r._messages
 }

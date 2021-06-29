@@ -15,9 +15,9 @@ taobao.feedflow.item.crowd.delete
 type TaobaoFeedflowItemCrowdDeleteRequest struct {
     model.Params
     // 人群结构
-    crowds   []CrowdDto
+    _crowds   []CrowdDto
     // 单元id
-    adgroupId   int64
+    _adgroupId   int64
 }
 
 // 初始化TaobaoFeedflowItemCrowdDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFeedflowItemCrowdDeleteRequest) GetApiParams() url.Values {
 }
 // Crowds Setter
 // 人群结构
-func (r *TaobaoFeedflowItemCrowdDeleteRequest) SetCrowds(crowds []CrowdDto) error {
-    r.crowds = crowds
-    r.Set("crowds", crowds)
+func (r *TaobaoFeedflowItemCrowdDeleteRequest) SetCrowds(_crowds []CrowdDto) error {
+    r._crowds = _crowds
+    r.Set("crowds", _crowds)
     return nil
 }
 
 // Crowds Getter
 func (r TaobaoFeedflowItemCrowdDeleteRequest) GetCrowds() []CrowdDto {
-    return r.crowds
+    return r._crowds
 }
 // AdgroupId Setter
 // 单元id
-func (r *TaobaoFeedflowItemCrowdDeleteRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoFeedflowItemCrowdDeleteRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoFeedflowItemCrowdDeleteRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }

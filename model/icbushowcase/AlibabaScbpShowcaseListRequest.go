@@ -15,9 +15,9 @@ alibaba.scbp.showcase.list
 type AlibabaScbpShowcaseListRequest struct {
     model.Params
     // 每页展示个数
-    perPageSize   int64
+    _perPageSize   int64
     // 页码
-    toPage   int64
+    _toPage   int64
 }
 
 // 初始化AlibabaScbpShowcaseListRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpShowcaseListRequest) GetApiParams() url.Values {
 }
 // PerPageSize Setter
 // 每页展示个数
-func (r *AlibabaScbpShowcaseListRequest) SetPerPageSize(perPageSize int64) error {
-    r.perPageSize = perPageSize
-    r.Set("per_page_size", perPageSize)
+func (r *AlibabaScbpShowcaseListRequest) SetPerPageSize(_perPageSize int64) error {
+    r._perPageSize = _perPageSize
+    r.Set("per_page_size", _perPageSize)
     return nil
 }
 
 // PerPageSize Getter
 func (r AlibabaScbpShowcaseListRequest) GetPerPageSize() int64 {
-    return r.perPageSize
+    return r._perPageSize
 }
 // ToPage Setter
 // 页码
-func (r *AlibabaScbpShowcaseListRequest) SetToPage(toPage int64) error {
-    r.toPage = toPage
-    r.Set("to_page", toPage)
+func (r *AlibabaScbpShowcaseListRequest) SetToPage(_toPage int64) error {
+    r._toPage = _toPage
+    r.Set("to_page", _toPage)
     return nil
 }
 
 // ToPage Getter
 func (r AlibabaScbpShowcaseListRequest) GetToPage() int64 {
-    return r.toPage
+    return r._toPage
 }

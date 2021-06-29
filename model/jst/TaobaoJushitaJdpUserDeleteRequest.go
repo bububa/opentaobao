@@ -15,9 +15,9 @@ taobao.jushita.jdp.user.delete
 type TaobaoJushitaJdpUserDeleteRequest struct {
     model.Params
     // 要删除用户的昵称
-    nick   string
+    _nick   string
     // 需要删除的用户编号
-    userId   int64
+    _userId   int64
 }
 
 // 初始化TaobaoJushitaJdpUserDeleteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoJushitaJdpUserDeleteRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 要删除用户的昵称
-func (r *TaobaoJushitaJdpUserDeleteRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoJushitaJdpUserDeleteRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoJushitaJdpUserDeleteRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // UserId Setter
 // 需要删除的用户编号
-func (r *TaobaoJushitaJdpUserDeleteRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoJushitaJdpUserDeleteRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoJushitaJdpUserDeleteRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

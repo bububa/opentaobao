@@ -15,23 +15,23 @@ cainiao.global.handover.savedraft
 type CainiaoGlobalHandoverSavedraftRequest struct {
     model.Params
     // 用户信息
-    userInfo   *UserInfoDto
+    _userInfo   *UserInfoDto
     // 备注
-    remark   string
+    _remark   string
     // 大包重量
-    weight   int64
+    _weight   int64
     // 重量单位，克:g, 千克:kg，默认g
-    weightUnit   string
+    _weightUnit   string
     // 揽收信息
-    pickupInfo   *PickupDto
+    _pickupInfo   *PickupDto
     // 退件信息
-    returnInfo   *ReturnerDto
+    _returnInfo   *ReturnerDto
     // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-    client   string
+    _client   string
     // 需要组装大包的小包编码集合，最多限制200个小包
-    orderCodeList   []string
+    _orderCodeList   []string
     // 多语言
-    locale   string
+    _locale   string
 }
 
 // 初始化CainiaoGlobalHandoverSavedraftRequest对象
@@ -56,109 +56,109 @@ func (r CainiaoGlobalHandoverSavedraftRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetUserInfo(userInfo *UserInfoDto) error {
-    r.userInfo = userInfo
-    r.Set("user_info", userInfo)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+    r._userInfo = _userInfo
+    r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetUserInfo() *UserInfoDto {
-    return r.userInfo
+    return r._userInfo
 }
 // Remark Setter
 // 备注
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetRemark(remark string) error {
-    r.remark = remark
-    r.Set("remark", remark)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetRemark(_remark string) error {
+    r._remark = _remark
+    r.Set("remark", _remark)
     return nil
 }
 
 // Remark Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetRemark() string {
-    return r.remark
+    return r._remark
 }
 // Weight Setter
 // 大包重量
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetWeight(weight int64) error {
-    r.weight = weight
-    r.Set("weight", weight)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetWeight(_weight int64) error {
+    r._weight = _weight
+    r.Set("weight", _weight)
     return nil
 }
 
 // Weight Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetWeight() int64 {
-    return r.weight
+    return r._weight
 }
 // WeightUnit Setter
 // 重量单位，克:g, 千克:kg，默认g
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetWeightUnit(weightUnit string) error {
-    r.weightUnit = weightUnit
-    r.Set("weight_unit", weightUnit)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetWeightUnit(_weightUnit string) error {
+    r._weightUnit = _weightUnit
+    r.Set("weight_unit", _weightUnit)
     return nil
 }
 
 // WeightUnit Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetWeightUnit() string {
-    return r.weightUnit
+    return r._weightUnit
 }
 // PickupInfo Setter
 // 揽收信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetPickupInfo(pickupInfo *PickupDto) error {
-    r.pickupInfo = pickupInfo
-    r.Set("pickup_info", pickupInfo)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
+    r._pickupInfo = _pickupInfo
+    r.Set("pickup_info", _pickupInfo)
     return nil
 }
 
 // PickupInfo Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetPickupInfo() *PickupDto {
-    return r.pickupInfo
+    return r._pickupInfo
 }
 // ReturnInfo Setter
 // 退件信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetReturnInfo(returnInfo *ReturnerDto) error {
-    r.returnInfo = returnInfo
-    r.Set("return_info", returnInfo)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
+    r._returnInfo = _returnInfo
+    r.Set("return_info", _returnInfo)
     return nil
 }
 
 // ReturnInfo Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetReturnInfo() *ReturnerDto {
-    return r.returnInfo
+    return r._returnInfo
 }
 // Client Setter
 // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetClient(client string) error {
-    r.client = client
-    r.Set("client", client)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetClient(_client string) error {
+    r._client = _client
+    r.Set("client", _client)
     return nil
 }
 
 // Client Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetClient() string {
-    return r.client
+    return r._client
 }
 // OrderCodeList Setter
 // 需要组装大包的小包编码集合，最多限制200个小包
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetOrderCodeList(orderCodeList []string) error {
-    r.orderCodeList = orderCodeList
-    r.Set("order_code_list", orderCodeList)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetOrderCodeList(_orderCodeList []string) error {
+    r._orderCodeList = _orderCodeList
+    r.Set("order_code_list", _orderCodeList)
     return nil
 }
 
 // OrderCodeList Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetOrderCodeList() []string {
-    return r.orderCodeList
+    return r._orderCodeList
 }
 // Locale Setter
 // 多语言
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r CainiaoGlobalHandoverSavedraftRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }

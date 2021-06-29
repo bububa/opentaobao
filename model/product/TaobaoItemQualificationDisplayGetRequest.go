@@ -15,11 +15,11 @@ taobao.item.qualification.display.get
 type TaobaoItemQualificationDisplayGetRequest struct {
     model.Params
     // 参数列表，为key和value都是string的map的转化的json格式
-    param   string
+    _param   string
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 类目id
-    categoryId   int64
+    _categoryId   int64
 }
 
 // 初始化TaobaoItemQualificationDisplayGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoItemQualificationDisplayGetRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数列表，为key和value都是string的map的转化的json格式
-func (r *TaobaoItemQualificationDisplayGetRequest) SetParam(param string) error {
-    r.param = param
-    r.Set("param", param)
+func (r *TaobaoItemQualificationDisplayGetRequest) SetParam(_param string) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r TaobaoItemQualificationDisplayGetRequest) GetParam() string {
-    return r.param
+    return r._param
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoItemQualificationDisplayGetRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoItemQualificationDisplayGetRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoItemQualificationDisplayGetRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // CategoryId Setter
 // 类目id
-func (r *TaobaoItemQualificationDisplayGetRequest) SetCategoryId(categoryId int64) error {
-    r.categoryId = categoryId
-    r.Set("category_id", categoryId)
+func (r *TaobaoItemQualificationDisplayGetRequest) SetCategoryId(_categoryId int64) error {
+    r._categoryId = _categoryId
+    r.Set("category_id", _categoryId)
     return nil
 }
 
 // CategoryId Getter
 func (r TaobaoItemQualificationDisplayGetRequest) GetCategoryId() int64 {
-    return r.categoryId
+    return r._categoryId
 }

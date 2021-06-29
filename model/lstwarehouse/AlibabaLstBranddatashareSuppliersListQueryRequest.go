@@ -15,7 +15,7 @@ alibaba.lst.branddatashare.suppliers.list.query
 type AlibabaLstBranddatashareSuppliersListQueryRequest struct {
     model.Params
     // 入参
-    query   *LstBmSupplierQuery
+    _query   *LstBmSupplierQuery
 }
 
 // 初始化AlibabaLstBranddatashareSuppliersListQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetApiParams() url.Va
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstBranddatashareSuppliersListQueryRequest) SetQuery(query *LstBmSupplierQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstBranddatashareSuppliersListQueryRequest) SetQuery(_query *LstBmSupplierQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstBranddatashareSuppliersListQueryRequest) GetQuery() *LstBmSupplierQuery {
-    return r.query
+    return r._query
 }

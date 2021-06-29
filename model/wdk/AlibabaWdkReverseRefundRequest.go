@@ -15,7 +15,7 @@ alibaba.wdk.reverse.refund
 type AlibabaWdkReverseRefundRequest struct {
     model.Params
     // 退款打款请求
-    openRefundReqDTO   *OpenRefundReqDto
+    _openRefundReqDTO   *OpenRefundReqDto
 }
 
 // 初始化AlibabaWdkReverseRefundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkReverseRefundRequest) GetApiParams() url.Values {
 }
 // OpenRefundReqDTO Setter
 // 退款打款请求
-func (r *AlibabaWdkReverseRefundRequest) SetOpenRefundReqDTO(openRefundReqDTO *OpenRefundReqDto) error {
-    r.openRefundReqDTO = openRefundReqDTO
-    r.Set("open_refund_req_d_t_o", openRefundReqDTO)
+func (r *AlibabaWdkReverseRefundRequest) SetOpenRefundReqDTO(_openRefundReqDTO *OpenRefundReqDto) error {
+    r._openRefundReqDTO = _openRefundReqDTO
+    r.Set("open_refund_req_d_t_o", _openRefundReqDTO)
     return nil
 }
 
 // OpenRefundReqDTO Getter
 func (r AlibabaWdkReverseRefundRequest) GetOpenRefundReqDTO() *OpenRefundReqDto {
-    return r.openRefundReqDTO
+    return r._openRefundReqDTO
 }

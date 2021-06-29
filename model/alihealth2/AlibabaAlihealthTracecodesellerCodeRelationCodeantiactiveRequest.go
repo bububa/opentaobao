@@ -15,11 +15,11 @@ alibaba.alihealth.tracecodeseller.code.relation.codeantiactive
 type AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest struct {
     model.Params
     // 顶层码
-    topCode   string
+    _topCode   string
     // 淘宝名
-    tbUserId   string
+    _tbUserId   string
     // 企业id
-    entInfoId   int64
+    _entInfoId   int64
 }
 
 // 初始化AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) GetApi
 }
 // TopCode Setter
 // 顶层码
-func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetTopCode(topCode string) error {
-    r.topCode = topCode
-    r.Set("top_code", topCode)
+func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetTopCode(_topCode string) error {
+    r._topCode = _topCode
+    r.Set("top_code", _topCode)
     return nil
 }
 
 // TopCode Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) GetTopCode() string {
-    return r.topCode
+    return r._topCode
 }
 // TbUserId Setter
 // 淘宝名
-func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetTbUserId(tbUserId string) error {
-    r.tbUserId = tbUserId
-    r.Set("tb_user_id", tbUserId)
+func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetTbUserId(_tbUserId string) error {
+    r._tbUserId = _tbUserId
+    r.Set("tb_user_id", _tbUserId)
     return nil
 }
 
 // TbUserId Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) GetTbUserId() string {
-    return r.tbUserId
+    return r._tbUserId
 }
 // EntInfoId Setter
 // 企业id
-func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetEntInfoId(entInfoId int64) error {
-    r.entInfoId = entInfoId
-    r.Set("ent_info_id", entInfoId)
+func (r *AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) SetEntInfoId(_entInfoId int64) error {
+    r._entInfoId = _entInfoId
+    r.Set("ent_info_id", _entInfoId)
     return nil
 }
 
 // EntInfoId Getter
 func (r AlibabaAlihealthTracecodesellerCodeRelationCodeantiactiveRequest) GetEntInfoId() int64 {
-    return r.entInfoId
+    return r._entInfoId
 }

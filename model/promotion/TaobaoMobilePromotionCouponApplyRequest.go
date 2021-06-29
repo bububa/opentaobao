@@ -15,13 +15,13 @@ taobao.mobile.promotion.coupon.apply
 type TaobaoMobilePromotionCouponApplyRequest struct {
     model.Params
     // 请求唯一id，问题排查
-    traceId   string
+    _traceId   string
     // 传播id
-    spreadId   int64
+    _spreadId   int64
     // 广播id
-    feedId   string
+    _feedId   string
     // 三方活动id
-    bizId   string
+    _bizId   string
 }
 
 // 初始化TaobaoMobilePromotionCouponApplyRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoMobilePromotionCouponApplyRequest) GetApiParams() url.Values {
 }
 // TraceId Setter
 // 请求唯一id，问题排查
-func (r *TaobaoMobilePromotionCouponApplyRequest) SetTraceId(traceId string) error {
-    r.traceId = traceId
-    r.Set("trace_id", traceId)
+func (r *TaobaoMobilePromotionCouponApplyRequest) SetTraceId(_traceId string) error {
+    r._traceId = _traceId
+    r.Set("trace_id", _traceId)
     return nil
 }
 
 // TraceId Getter
 func (r TaobaoMobilePromotionCouponApplyRequest) GetTraceId() string {
-    return r.traceId
+    return r._traceId
 }
 // SpreadId Setter
 // 传播id
-func (r *TaobaoMobilePromotionCouponApplyRequest) SetSpreadId(spreadId int64) error {
-    r.spreadId = spreadId
-    r.Set("spread_id", spreadId)
+func (r *TaobaoMobilePromotionCouponApplyRequest) SetSpreadId(_spreadId int64) error {
+    r._spreadId = _spreadId
+    r.Set("spread_id", _spreadId)
     return nil
 }
 
 // SpreadId Getter
 func (r TaobaoMobilePromotionCouponApplyRequest) GetSpreadId() int64 {
-    return r.spreadId
+    return r._spreadId
 }
 // FeedId Setter
 // 广播id
-func (r *TaobaoMobilePromotionCouponApplyRequest) SetFeedId(feedId string) error {
-    r.feedId = feedId
-    r.Set("feed_id", feedId)
+func (r *TaobaoMobilePromotionCouponApplyRequest) SetFeedId(_feedId string) error {
+    r._feedId = _feedId
+    r.Set("feed_id", _feedId)
     return nil
 }
 
 // FeedId Getter
 func (r TaobaoMobilePromotionCouponApplyRequest) GetFeedId() string {
-    return r.feedId
+    return r._feedId
 }
 // BizId Setter
 // 三方活动id
-func (r *TaobaoMobilePromotionCouponApplyRequest) SetBizId(bizId string) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *TaobaoMobilePromotionCouponApplyRequest) SetBizId(_bizId string) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r TaobaoMobilePromotionCouponApplyRequest) GetBizId() string {
-    return r.bizId
+    return r._bizId
 }

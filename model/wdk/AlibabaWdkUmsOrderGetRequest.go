@@ -15,7 +15,7 @@ alibaba.wdk.ums.order.get
 type AlibabaWdkUmsOrderGetRequest struct {
     model.Params
     // 查询单据的dto
-    queryErpbillDto   *QueryErpBillDto
+    _queryErpbillDto   *QueryErpBillDto
 }
 
 // 初始化AlibabaWdkUmsOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsOrderGetRequest) GetApiParams() url.Values {
 }
 // QueryErpbillDto Setter
 // 查询单据的dto
-func (r *AlibabaWdkUmsOrderGetRequest) SetQueryErpbillDto(queryErpbillDto *QueryErpBillDto) error {
-    r.queryErpbillDto = queryErpbillDto
-    r.Set("query_erpbill_dto", queryErpbillDto)
+func (r *AlibabaWdkUmsOrderGetRequest) SetQueryErpbillDto(_queryErpbillDto *QueryErpBillDto) error {
+    r._queryErpbillDto = _queryErpbillDto
+    r.Set("query_erpbill_dto", _queryErpbillDto)
     return nil
 }
 
 // QueryErpbillDto Getter
 func (r AlibabaWdkUmsOrderGetRequest) GetQueryErpbillDto() *QueryErpBillDto {
-    return r.queryErpbillDto
+    return r._queryErpbillDto
 }

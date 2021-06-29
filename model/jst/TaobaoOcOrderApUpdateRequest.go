@@ -15,7 +15,7 @@ taobao.oc.order.ap.update
 type TaobaoOcOrderApUpdateRequest struct {
     model.Params
     // 调用创建OC订单接口生成的id
-    ocOrderId   int64
+    _ocOrderId   int64
 }
 
 // 初始化TaobaoOcOrderApUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOcOrderApUpdateRequest) GetApiParams() url.Values {
 }
 // OcOrderId Setter
 // 调用创建OC订单接口生成的id
-func (r *TaobaoOcOrderApUpdateRequest) SetOcOrderId(ocOrderId int64) error {
-    r.ocOrderId = ocOrderId
-    r.Set("oc_order_id", ocOrderId)
+func (r *TaobaoOcOrderApUpdateRequest) SetOcOrderId(_ocOrderId int64) error {
+    r._ocOrderId = _ocOrderId
+    r.Set("oc_order_id", _ocOrderId)
     return nil
 }
 
 // OcOrderId Getter
 func (r TaobaoOcOrderApUpdateRequest) GetOcOrderId() int64 {
-    return r.ocOrderId
+    return r._ocOrderId
 }

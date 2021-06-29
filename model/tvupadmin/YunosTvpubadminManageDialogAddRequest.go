@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.dialog.add
 type YunosTvpubadminManageDialogAddRequest struct {
     model.Params
     // 新增的全局弹窗json
-    dialogJson   string
+    _dialogJson   string
 }
 
 // 初始化YunosTvpubadminManageDialogAddRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogAddRequest) GetApiParams() url.Values {
 }
 // DialogJson Setter
 // 新增的全局弹窗json
-func (r *YunosTvpubadminManageDialogAddRequest) SetDialogJson(dialogJson string) error {
-    r.dialogJson = dialogJson
-    r.Set("dialog_json", dialogJson)
+func (r *YunosTvpubadminManageDialogAddRequest) SetDialogJson(_dialogJson string) error {
+    r._dialogJson = _dialogJson
+    r.Set("dialog_json", _dialogJson)
     return nil
 }
 
 // DialogJson Getter
 func (r YunosTvpubadminManageDialogAddRequest) GetDialogJson() string {
-    return r.dialogJson
+    return r._dialogJson
 }

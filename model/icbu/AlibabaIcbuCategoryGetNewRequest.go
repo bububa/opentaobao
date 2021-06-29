@@ -15,7 +15,7 @@ alibaba.icbu.category.get.new
 type AlibabaIcbuCategoryGetNewRequest struct {
     model.Params
     // 发布类目id,必须大于等于0， 如果为0，则查询所有一级类目
-    catId   int64
+    _catId   int64
 }
 
 // 初始化AlibabaIcbuCategoryGetNewRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuCategoryGetNewRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 发布类目id,必须大于等于0， 如果为0，则查询所有一级类目
-func (r *AlibabaIcbuCategoryGetNewRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlibabaIcbuCategoryGetNewRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlibabaIcbuCategoryGetNewRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }

@@ -15,11 +15,11 @@ taobao.xhotel.roomtype.get
 type TaobaoXhotelRoomtypeGetRequest struct {
     model.Params
     // 废弃，使用商家房型ID
-    rid   int64
+    _rid   int64
     // 商家房型ID
-    outerId   string
+    _outerId   string
     // 系统商，一般不填写，使用须申请
-    vendor   string
+    _vendor   string
 }
 
 // 初始化TaobaoXhotelRoomtypeGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoXhotelRoomtypeGetRequest) GetApiParams() url.Values {
 }
 // Rid Setter
 // 废弃，使用商家房型ID
-func (r *TaobaoXhotelRoomtypeGetRequest) SetRid(rid int64) error {
-    r.rid = rid
-    r.Set("rid", rid)
+func (r *TaobaoXhotelRoomtypeGetRequest) SetRid(_rid int64) error {
+    r._rid = _rid
+    r.Set("rid", _rid)
     return nil
 }
 
 // Rid Getter
 func (r TaobaoXhotelRoomtypeGetRequest) GetRid() int64 {
-    return r.rid
+    return r._rid
 }
 // OuterId Setter
 // 商家房型ID
-func (r *TaobaoXhotelRoomtypeGetRequest) SetOuterId(outerId string) error {
-    r.outerId = outerId
-    r.Set("outer_id", outerId)
+func (r *TaobaoXhotelRoomtypeGetRequest) SetOuterId(_outerId string) error {
+    r._outerId = _outerId
+    r.Set("outer_id", _outerId)
     return nil
 }
 
 // OuterId Getter
 func (r TaobaoXhotelRoomtypeGetRequest) GetOuterId() string {
-    return r.outerId
+    return r._outerId
 }
 // Vendor Setter
 // 系统商，一般不填写，使用须申请
-func (r *TaobaoXhotelRoomtypeGetRequest) SetVendor(vendor string) error {
-    r.vendor = vendor
-    r.Set("vendor", vendor)
+func (r *TaobaoXhotelRoomtypeGetRequest) SetVendor(_vendor string) error {
+    r._vendor = _vendor
+    r.Set("vendor", _vendor)
     return nil
 }
 
 // Vendor Getter
 func (r TaobaoXhotelRoomtypeGetRequest) GetVendor() string {
-    return r.vendor
+    return r._vendor
 }

@@ -15,11 +15,11 @@ alibaba.idle.isv.order.ship
 type AlibabaIdleIsvOrderShipRequest struct {
     model.Params
     // 订单号
-    bizOrderId   string
+    _bizOrderId   string
     // 物流公司
-    logisticsCompany   string
+    _logisticsCompany   string
     // 运单号
-    shipMailNo   string
+    _shipMailNo   string
 }
 
 // 初始化AlibabaIdleIsvOrderShipRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaIdleIsvOrderShipRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 订单号
-func (r *AlibabaIdleIsvOrderShipRequest) SetBizOrderId(bizOrderId string) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *AlibabaIdleIsvOrderShipRequest) SetBizOrderId(_bizOrderId string) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r AlibabaIdleIsvOrderShipRequest) GetBizOrderId() string {
-    return r.bizOrderId
+    return r._bizOrderId
 }
 // LogisticsCompany Setter
 // 物流公司
-func (r *AlibabaIdleIsvOrderShipRequest) SetLogisticsCompany(logisticsCompany string) error {
-    r.logisticsCompany = logisticsCompany
-    r.Set("logistics_company", logisticsCompany)
+func (r *AlibabaIdleIsvOrderShipRequest) SetLogisticsCompany(_logisticsCompany string) error {
+    r._logisticsCompany = _logisticsCompany
+    r.Set("logistics_company", _logisticsCompany)
     return nil
 }
 
 // LogisticsCompany Getter
 func (r AlibabaIdleIsvOrderShipRequest) GetLogisticsCompany() string {
-    return r.logisticsCompany
+    return r._logisticsCompany
 }
 // ShipMailNo Setter
 // 运单号
-func (r *AlibabaIdleIsvOrderShipRequest) SetShipMailNo(shipMailNo string) error {
-    r.shipMailNo = shipMailNo
-    r.Set("ship_mail_no", shipMailNo)
+func (r *AlibabaIdleIsvOrderShipRequest) SetShipMailNo(_shipMailNo string) error {
+    r._shipMailNo = _shipMailNo
+    r.Set("ship_mail_no", _shipMailNo)
     return nil
 }
 
 // ShipMailNo Getter
 func (r AlibabaIdleIsvOrderShipRequest) GetShipMailNo() string {
-    return r.shipMailNo
+    return r._shipMailNo
 }

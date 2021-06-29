@@ -15,13 +15,13 @@ tmall.promotag.tag.find
 type TmallPromotagTagFindRequest struct {
     model.Params
     // 当前页码
-    pageNo   int64
+    _pageNo   int64
     // 每页显示个数
-    pageSize   int64
+    _pageSize   int64
     // 标签名称，查询时可选项
-    tagName   string
+    _tagName   string
     // 标签ID
-    tagId   int64
+    _tagId   int64
 }
 
 // 初始化TmallPromotagTagFindRequest对象
@@ -46,49 +46,49 @@ func (r TmallPromotagTagFindRequest) GetApiParams() url.Values {
 }
 // PageNo Setter
 // 当前页码
-func (r *TmallPromotagTagFindRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TmallPromotagTagFindRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TmallPromotagTagFindRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页显示个数
-func (r *TmallPromotagTagFindRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TmallPromotagTagFindRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TmallPromotagTagFindRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // TagName Setter
 // 标签名称，查询时可选项
-func (r *TmallPromotagTagFindRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *TmallPromotagTagFindRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r TmallPromotagTagFindRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }
 // TagId Setter
 // 标签ID
-func (r *TmallPromotagTagFindRequest) SetTagId(tagId int64) error {
-    r.tagId = tagId
-    r.Set("tag_id", tagId)
+func (r *TmallPromotagTagFindRequest) SetTagId(_tagId int64) error {
+    r._tagId = _tagId
+    r.Set("tag_id", _tagId)
     return nil
 }
 
 // TagId Getter
 func (r TmallPromotagTagFindRequest) GetTagId() int64 {
-    return r.tagId
+    return r._tagId
 }

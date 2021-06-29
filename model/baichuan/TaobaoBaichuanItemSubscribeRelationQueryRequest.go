@@ -15,7 +15,7 @@ taobao.baichuan.item.subscribe.relation.query
 type TaobaoBaichuanItemSubscribeRelationQueryRequest struct {
     model.Params
     // 商品Id
-    itemId   int64
+    _itemId   int64
 }
 
 // 初始化TaobaoBaichuanItemSubscribeRelationQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetApiParams() url.Valu
 }
 // ItemId Setter
 // 商品Id
-func (r *TaobaoBaichuanItemSubscribeRelationQueryRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoBaichuanItemSubscribeRelationQueryRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoBaichuanItemSubscribeRelationQueryRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }

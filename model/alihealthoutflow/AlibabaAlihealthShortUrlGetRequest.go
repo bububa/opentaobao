@@ -15,9 +15,9 @@ alibaba.alihealth.short.url.get
 type AlibabaAlihealthShortUrlGetRequest struct {
     model.Params
     // 三方h5
-    url   string
+    _url   string
     // 参数替换列表
-    params   []string
+    _params   []string
 }
 
 // 初始化AlibabaAlihealthShortUrlGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthShortUrlGetRequest) GetApiParams() url.Values {
 }
 // Url Setter
 // 三方h5
-func (r *AlibabaAlihealthShortUrlGetRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *AlibabaAlihealthShortUrlGetRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r AlibabaAlihealthShortUrlGetRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // Params Setter
 // 参数替换列表
-func (r *AlibabaAlihealthShortUrlGetRequest) SetParams(params []string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaAlihealthShortUrlGetRequest) SetParams(_params []string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaAlihealthShortUrlGetRequest) GetParams() []string {
-    return r.params
+    return r._params
 }

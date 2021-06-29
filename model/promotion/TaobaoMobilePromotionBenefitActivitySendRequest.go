@@ -15,7 +15,7 @@ taobao.mobile.promotion.benefit.activity.send
 type TaobaoMobilePromotionBenefitActivitySendRequest struct {
     model.Params
     // 单用户权益发放请求
-    singleBenefitRequest   *SingleBenefitRequest
+    _singleBenefitRequest   *SingleBenefitRequest
 }
 
 // 初始化TaobaoMobilePromotionBenefitActivitySendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetApiParams() url.Valu
 }
 // SingleBenefitRequest Setter
 // 单用户权益发放请求
-func (r *TaobaoMobilePromotionBenefitActivitySendRequest) SetSingleBenefitRequest(singleBenefitRequest *SingleBenefitRequest) error {
-    r.singleBenefitRequest = singleBenefitRequest
-    r.Set("single_benefit_request", singleBenefitRequest)
+func (r *TaobaoMobilePromotionBenefitActivitySendRequest) SetSingleBenefitRequest(_singleBenefitRequest *SingleBenefitRequest) error {
+    r._singleBenefitRequest = _singleBenefitRequest
+    r.Set("single_benefit_request", _singleBenefitRequest)
     return nil
 }
 
 // SingleBenefitRequest Getter
 func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetSingleBenefitRequest() *SingleBenefitRequest {
-    return r.singleBenefitRequest
+    return r._singleBenefitRequest
 }

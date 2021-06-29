@@ -15,7 +15,7 @@ alibaba.newretail.purchase.price.delete
 type AlibabaNewretailPurchasePriceDeleteRequest struct {
     model.Params
     // 调用入参
-    deletePurchasePriceRequest   *DeletePurchasePriceRequest
+    _deletePurchasePriceRequest   *DeletePurchasePriceRequest
 }
 
 // 初始化AlibabaNewretailPurchasePriceDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNewretailPurchasePriceDeleteRequest) GetApiParams() url.Values {
 }
 // DeletePurchasePriceRequest Setter
 // 调用入参
-func (r *AlibabaNewretailPurchasePriceDeleteRequest) SetDeletePurchasePriceRequest(deletePurchasePriceRequest *DeletePurchasePriceRequest) error {
-    r.deletePurchasePriceRequest = deletePurchasePriceRequest
-    r.Set("delete_purchase_price_request", deletePurchasePriceRequest)
+func (r *AlibabaNewretailPurchasePriceDeleteRequest) SetDeletePurchasePriceRequest(_deletePurchasePriceRequest *DeletePurchasePriceRequest) error {
+    r._deletePurchasePriceRequest = _deletePurchasePriceRequest
+    r.Set("delete_purchase_price_request", _deletePurchasePriceRequest)
     return nil
 }
 
 // DeletePurchasePriceRequest Getter
 func (r AlibabaNewretailPurchasePriceDeleteRequest) GetDeletePurchasePriceRequest() *DeletePurchasePriceRequest {
-    return r.deletePurchasePriceRequest
+    return r._deletePurchasePriceRequest
 }

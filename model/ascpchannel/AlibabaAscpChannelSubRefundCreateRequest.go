@@ -15,7 +15,7 @@ alibaba.ascp.channel.sub.refund.create
 type AlibabaAscpChannelSubRefundCreateRequest struct {
     model.Params
     // 子单退款创建请求
-    subRefundCreateReq   *ExternalCreateRefundOrderDetailRequest
+    _subRefundCreateReq   *ExternalCreateRefundOrderDetailRequest
 }
 
 // 初始化AlibabaAscpChannelSubRefundCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelSubRefundCreateRequest) GetApiParams() url.Values {
 }
 // SubRefundCreateReq Setter
 // 子单退款创建请求
-func (r *AlibabaAscpChannelSubRefundCreateRequest) SetSubRefundCreateReq(subRefundCreateReq *ExternalCreateRefundOrderDetailRequest) error {
-    r.subRefundCreateReq = subRefundCreateReq
-    r.Set("sub_refund_create_req", subRefundCreateReq)
+func (r *AlibabaAscpChannelSubRefundCreateRequest) SetSubRefundCreateReq(_subRefundCreateReq *ExternalCreateRefundOrderDetailRequest) error {
+    r._subRefundCreateReq = _subRefundCreateReq
+    r.Set("sub_refund_create_req", _subRefundCreateReq)
     return nil
 }
 
 // SubRefundCreateReq Getter
 func (r AlibabaAscpChannelSubRefundCreateRequest) GetSubRefundCreateReq() *ExternalCreateRefundOrderDetailRequest {
-    return r.subRefundCreateReq
+    return r._subRefundCreateReq
 }

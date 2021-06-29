@@ -15,9 +15,9 @@ tmall.item.sizemapping.template.create
 type TmallItemSizemappingTemplateCreateRequest struct {
     model.Params
     // 尺码表模板名称
-    templateName   string
+    _templateName   string
     // 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
-    templateContent   string
+    _templateContent   string
 }
 
 // 初始化TmallItemSizemappingTemplateCreateRequest对象
@@ -42,25 +42,25 @@ func (r TmallItemSizemappingTemplateCreateRequest) GetApiParams() url.Values {
 }
 // TemplateName Setter
 // 尺码表模板名称
-func (r *TmallItemSizemappingTemplateCreateRequest) SetTemplateName(templateName string) error {
-    r.templateName = templateName
-    r.Set("template_name", templateName)
+func (r *TmallItemSizemappingTemplateCreateRequest) SetTemplateName(_templateName string) error {
+    r._templateName = _templateName
+    r.Set("template_name", _templateName)
     return nil
 }
 
 // TemplateName Getter
 func (r TmallItemSizemappingTemplateCreateRequest) GetTemplateName() string {
-    return r.templateName
+    return r._templateName
 }
 // TemplateContent Setter
 // 尺码表模板内容，格式为"尺码值:维度名称:数值,尺码值:维度名称:数值"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。尺码值，维度数据不能包含数字，特殊字符。数值为0-999.9的数字，且最多一位小数。
-func (r *TmallItemSizemappingTemplateCreateRequest) SetTemplateContent(templateContent string) error {
-    r.templateContent = templateContent
-    r.Set("template_content", templateContent)
+func (r *TmallItemSizemappingTemplateCreateRequest) SetTemplateContent(_templateContent string) error {
+    r._templateContent = _templateContent
+    r.Set("template_content", _templateContent)
     return nil
 }
 
 // TemplateContent Getter
 func (r TmallItemSizemappingTemplateCreateRequest) GetTemplateContent() string {
-    return r.templateContent
+    return r._templateContent
 }

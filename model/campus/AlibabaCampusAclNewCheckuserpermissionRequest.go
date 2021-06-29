@@ -15,9 +15,9 @@ alibaba.campus.acl.new.checkuserpermission
 type AlibabaCampusAclNewCheckuserpermissionRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 接口入参
-    checkUserPermissionParam   *CheckUserPermissionParam
+    _checkUserPermissionParam   *CheckUserPermissionParam
 }
 
 // 初始化AlibabaCampusAclNewCheckuserpermissionRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewCheckuserpermissionRequest) GetApiParams() url.Values
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewCheckuserpermissionRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewCheckuserpermissionRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewCheckuserpermissionRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // CheckUserPermissionParam Setter
 // 接口入参
-func (r *AlibabaCampusAclNewCheckuserpermissionRequest) SetCheckUserPermissionParam(checkUserPermissionParam *CheckUserPermissionParam) error {
-    r.checkUserPermissionParam = checkUserPermissionParam
-    r.Set("check_user_permission_param", checkUserPermissionParam)
+func (r *AlibabaCampusAclNewCheckuserpermissionRequest) SetCheckUserPermissionParam(_checkUserPermissionParam *CheckUserPermissionParam) error {
+    r._checkUserPermissionParam = _checkUserPermissionParam
+    r.Set("check_user_permission_param", _checkUserPermissionParam)
     return nil
 }
 
 // CheckUserPermissionParam Getter
 func (r AlibabaCampusAclNewCheckuserpermissionRequest) GetCheckUserPermissionParam() *CheckUserPermissionParam {
-    return r.checkUserPermissionParam
+    return r._checkUserPermissionParam
 }

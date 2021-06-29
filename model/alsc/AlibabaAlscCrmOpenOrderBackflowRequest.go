@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.order.backflow
 type AlibabaAlscCrmOpenOrderBackflowRequest struct {
     model.Params
     // 入参
-    paramOrderBackflowOpenReq   *OrderBackflowOpenReq
+    _paramOrderBackflowOpenReq   *OrderBackflowOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenOrderBackflowRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenOrderBackflowRequest) GetApiParams() url.Values {
 }
 // ParamOrderBackflowOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenOrderBackflowRequest) SetParamOrderBackflowOpenReq(paramOrderBackflowOpenReq *OrderBackflowOpenReq) error {
-    r.paramOrderBackflowOpenReq = paramOrderBackflowOpenReq
-    r.Set("param_order_backflow_open_req", paramOrderBackflowOpenReq)
+func (r *AlibabaAlscCrmOpenOrderBackflowRequest) SetParamOrderBackflowOpenReq(_paramOrderBackflowOpenReq *OrderBackflowOpenReq) error {
+    r._paramOrderBackflowOpenReq = _paramOrderBackflowOpenReq
+    r.Set("param_order_backflow_open_req", _paramOrderBackflowOpenReq)
     return nil
 }
 
 // ParamOrderBackflowOpenReq Getter
 func (r AlibabaAlscCrmOpenOrderBackflowRequest) GetParamOrderBackflowOpenReq() *OrderBackflowOpenReq {
-    return r.paramOrderBackflowOpenReq
+    return r._paramOrderBackflowOpenReq
 }

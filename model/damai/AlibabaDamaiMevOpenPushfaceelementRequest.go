@@ -15,7 +15,7 @@ pushFaceElement
 type AlibabaDamaiMevOpenPushfaceelementRequest struct {
     model.Params
     // 入参pushFaceElementParamList
-    pushFaceElementParamList   []ThirdFaceElementPushOpenParam
+    _pushFaceElementParamList   []ThirdFaceElementPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenPushfaceelementRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetApiParams() url.Values {
 }
 // PushFaceElementParamList Setter
 // 入参pushFaceElementParamList
-func (r *AlibabaDamaiMevOpenPushfaceelementRequest) SetPushFaceElementParamList(pushFaceElementParamList []ThirdFaceElementPushOpenParam) error {
-    r.pushFaceElementParamList = pushFaceElementParamList
-    r.Set("push_face_element_param_list", pushFaceElementParamList)
+func (r *AlibabaDamaiMevOpenPushfaceelementRequest) SetPushFaceElementParamList(_pushFaceElementParamList []ThirdFaceElementPushOpenParam) error {
+    r._pushFaceElementParamList = _pushFaceElementParamList
+    r.Set("push_face_element_param_list", _pushFaceElementParamList)
     return nil
 }
 
 // PushFaceElementParamList Getter
 func (r AlibabaDamaiMevOpenPushfaceelementRequest) GetPushFaceElementParamList() []ThirdFaceElementPushOpenParam {
-    return r.pushFaceElementParamList
+    return r._pushFaceElementParamList
 }

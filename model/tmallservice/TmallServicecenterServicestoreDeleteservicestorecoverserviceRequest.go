@@ -16,9 +16,9 @@ tmall.servicecenter.servicestore.deleteservicestorecoverservice
 type TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest struct {
     model.Params
     // 网点编码
-    serviceStoreCode   string
+    _serviceStoreCode   string
     // 业务类型
-    bizType   string
+    _bizType   string
 }
 
 // 初始化TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest对象
@@ -43,25 +43,25 @@ func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) Get
 }
 // ServiceStoreCode Setter
 // 网点编码
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetServiceStoreCode(serviceStoreCode string) error {
-    r.serviceStoreCode = serviceStoreCode
-    r.Set("service_store_code", serviceStoreCode)
+func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetServiceStoreCode(_serviceStoreCode string) error {
+    r._serviceStoreCode = _serviceStoreCode
+    r.Set("service_store_code", _serviceStoreCode)
     return nil
 }
 
 // ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetServiceStoreCode() string {
-    return r.serviceStoreCode
+    return r._serviceStoreCode
 }
 // BizType Setter
 // 业务类型
-func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetBizType(bizType string) error {
-    r.bizType = bizType
-    r.Set("biz_type", bizType)
+func (r *TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) SetBizType(_bizType string) error {
+    r._bizType = _bizType
+    r.Set("biz_type", _bizType)
     return nil
 }
 
 // BizType Getter
 func (r TmallServicecenterServicestoreDeleteservicestorecoverserviceRequest) GetBizType() string {
-    return r.bizType
+    return r._bizType
 }

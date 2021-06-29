@@ -15,13 +15,13 @@ alibaba.visitor.getidsbyqrcode
 type AlibabaVisitorGetidsbyqrcodeRequest struct {
     model.Params
     // 公司id
-    companyId   int64
+    _companyId   int64
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 来访时间
-    date   string
+    _date   string
     // 二维码字符串
-    qrCode   string
+    _qrCode   string
 }
 
 // 初始化AlibabaVisitorGetidsbyqrcodeRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaVisitorGetidsbyqrcodeRequest) GetApiParams() url.Values {
 }
 // CompanyId Setter
 // 公司id
-func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetCompanyId(companyId int64) error {
-    r.companyId = companyId
-    r.Set("company_id", companyId)
+func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetCompanyId(_companyId int64) error {
+    r._companyId = _companyId
+    r.Set("company_id", _companyId)
     return nil
 }
 
 // CompanyId Getter
 func (r AlibabaVisitorGetidsbyqrcodeRequest) GetCompanyId() int64 {
-    return r.companyId
+    return r._companyId
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaVisitorGetidsbyqrcodeRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // Date Setter
 // 来访时间
-func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r AlibabaVisitorGetidsbyqrcodeRequest) GetDate() string {
-    return r.date
+    return r._date
 }
 // QrCode Setter
 // 二维码字符串
-func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetQrCode(qrCode string) error {
-    r.qrCode = qrCode
-    r.Set("qr_code", qrCode)
+func (r *AlibabaVisitorGetidsbyqrcodeRequest) SetQrCode(_qrCode string) error {
+    r._qrCode = _qrCode
+    r.Set("qr_code", _qrCode)
     return nil
 }
 
 // QrCode Getter
 func (r AlibabaVisitorGetidsbyqrcodeRequest) GetQrCode() string {
-    return r.qrCode
+    return r._qrCode
 }

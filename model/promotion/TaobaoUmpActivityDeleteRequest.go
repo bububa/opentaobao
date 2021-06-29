@@ -15,7 +15,7 @@ taobao.ump.activity.delete
 type TaobaoUmpActivityDeleteRequest struct {
     model.Params
     // 活动id
-    actId   int64
+    _actId   int64
 }
 
 // 初始化TaobaoUmpActivityDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUmpActivityDeleteRequest) GetApiParams() url.Values {
 }
 // ActId Setter
 // 活动id
-func (r *TaobaoUmpActivityDeleteRequest) SetActId(actId int64) error {
-    r.actId = actId
-    r.Set("act_id", actId)
+func (r *TaobaoUmpActivityDeleteRequest) SetActId(_actId int64) error {
+    r._actId = _actId
+    r.Set("act_id", _actId)
     return nil
 }
 
 // ActId Getter
 func (r TaobaoUmpActivityDeleteRequest) GetActId() int64 {
-    return r.actId
+    return r._actId
 }

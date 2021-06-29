@@ -15,7 +15,7 @@ taobao.qimen.order.callback
 type TaobaoQimenOrderCallbackRequest struct {
     model.Params
     // 
-    request   *OrderCallbackRequestDO
+    _request   *OrderCallbackRequestDO
 }
 
 // 初始化TaobaoQimenOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenOrderCallbackRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenOrderCallbackRequest) SetRequest(request *OrderCallbackRequestDO) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenOrderCallbackRequest) SetRequest(_request *OrderCallbackRequestDO) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenOrderCallbackRequest) GetRequest() *OrderCallbackRequestDO {
-    return r.request
+    return r._request
 }

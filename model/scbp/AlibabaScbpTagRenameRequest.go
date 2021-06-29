@@ -15,9 +15,9 @@ alibaba.scbp.tag.rename
 type AlibabaScbpTagRenameRequest struct {
     model.Params
     // 需要重命名的关键词分组名
-    tagName   string
+    _tagName   string
     // 新分组名
-    newTagName   string
+    _newTagName   string
 }
 
 // 初始化AlibabaScbpTagRenameRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpTagRenameRequest) GetApiParams() url.Values {
 }
 // TagName Setter
 // 需要重命名的关键词分组名
-func (r *AlibabaScbpTagRenameRequest) SetTagName(tagName string) error {
-    r.tagName = tagName
-    r.Set("tag_name", tagName)
+func (r *AlibabaScbpTagRenameRequest) SetTagName(_tagName string) error {
+    r._tagName = _tagName
+    r.Set("tag_name", _tagName)
     return nil
 }
 
 // TagName Getter
 func (r AlibabaScbpTagRenameRequest) GetTagName() string {
-    return r.tagName
+    return r._tagName
 }
 // NewTagName Setter
 // 新分组名
-func (r *AlibabaScbpTagRenameRequest) SetNewTagName(newTagName string) error {
-    r.newTagName = newTagName
-    r.Set("new_tag_name", newTagName)
+func (r *AlibabaScbpTagRenameRequest) SetNewTagName(_newTagName string) error {
+    r._newTagName = _newTagName
+    r.Set("new_tag_name", _newTagName)
     return nil
 }
 
 // NewTagName Getter
 func (r AlibabaScbpTagRenameRequest) GetNewTagName() string {
-    return r.newTagName
+    return r._newTagName
 }

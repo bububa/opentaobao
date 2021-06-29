@@ -15,7 +15,7 @@ alibaba.wdk.marketing.expire.promotion.create
 type AlibabaWdkMarketingExpirePromotionCreateRequest struct {
     model.Params
     // 创建短保优惠
-    param0   *ExpirePromotionBo
+    _param0   *ExpirePromotionBo
 }
 
 // 初始化AlibabaWdkMarketingExpirePromotionCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetApiParams() url.Valu
 }
 // Param0 Setter
 // 创建短保优惠
-func (r *AlibabaWdkMarketingExpirePromotionCreateRequest) SetParam0(param0 *ExpirePromotionBo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *AlibabaWdkMarketingExpirePromotionCreateRequest) SetParam0(_param0 *ExpirePromotionBo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r AlibabaWdkMarketingExpirePromotionCreateRequest) GetParam0() *ExpirePromotionBo {
-    return r.param0
+    return r._param0
 }

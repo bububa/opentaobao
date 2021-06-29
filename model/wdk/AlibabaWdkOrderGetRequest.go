@@ -15,7 +15,7 @@ alibaba.wdk.order.get
 type AlibabaWdkOrderGetRequest struct {
     model.Params
     // 系统自动生成
-    idListQueryReq   *IdListQueryRequest
+    _idListQueryReq   *IdListQueryRequest
 }
 
 // 初始化AlibabaWdkOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkOrderGetRequest) GetApiParams() url.Values {
 }
 // IdListQueryReq Setter
 // 系统自动生成
-func (r *AlibabaWdkOrderGetRequest) SetIdListQueryReq(idListQueryReq *IdListQueryRequest) error {
-    r.idListQueryReq = idListQueryReq
-    r.Set("id_list_query_req", idListQueryReq)
+func (r *AlibabaWdkOrderGetRequest) SetIdListQueryReq(_idListQueryReq *IdListQueryRequest) error {
+    r._idListQueryReq = _idListQueryReq
+    r.Set("id_list_query_req", _idListQueryReq)
     return nil
 }
 
 // IdListQueryReq Getter
 func (r AlibabaWdkOrderGetRequest) GetIdListQueryReq() *IdListQueryRequest {
-    return r.idListQueryReq
+    return r._idListQueryReq
 }

@@ -15,7 +15,7 @@ alibaba.damai.maitix.project.distribution.querybypage
 type AlibabaDamaiMaitixProjectDistributionQuerybypageRequest struct {
     model.Params
     // 入参param
-    param   *ProjectPageParam
+    _param   *ProjectPageParam
 }
 
 // 初始化AlibabaDamaiMaitixProjectDistributionQuerybypageRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetApiParams() 
 }
 // Param Setter
 // 入参param
-func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) SetParam(param *ProjectPageParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) SetParam(_param *ProjectPageParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaDamaiMaitixProjectDistributionQuerybypageRequest) GetParam() *ProjectPageParam {
-    return r.param
+    return r._param
 }

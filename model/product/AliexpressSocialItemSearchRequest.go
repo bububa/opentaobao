@@ -15,41 +15,41 @@ AE社交选品,通过各种筛选条件对社交商品池进行筛选
 type AliexpressSocialItemSearchRequest struct {
     model.Params
     // 是否有视频
-    hasVideo   bool
+    _hasVideo   bool
     // order by properties
-    orderBy   string
+    _orderBy   string
     // 是否逆序
-    desc   bool
+    _desc   bool
     // page size
-    pageSize   int64
+    _pageSize   int64
     // 是否免邮
-    isShipFree   bool
+    _isShipFree   bool
     // 佣金最大值
-    commissionRateMax   string
+    _commissionRateMax   string
     // 佣金最小值
-    commissionRateMin   string
+    _commissionRateMin   string
     // 物流时效
-    logisticsTime   int64
+    _logisticsTime   int64
     // 是否联盟商品
-    allianceItem   bool
+    _allianceItem   bool
     // 类目ID
-    cateId   int64
+    _cateId   int64
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 最低价格
-    minPrice   string
+    _minPrice   string
     // 最高价格
-    maxPrice   string
+    _maxPrice   string
     // 搜索关键字
-    keyword   string
+    _keyword   string
     // shipTo国家
-    shipTo   string
+    _shipTo   string
     // 评价分数
-    commentScore   string
+    _commentScore   string
     // 币种
-    currency   string
+    _currency   string
     // locale,格式为language+"_"+country
-    locale   string
+    _locale   string
 }
 
 // 初始化AliexpressSocialItemSearchRequest对象
@@ -74,217 +74,217 @@ func (r AliexpressSocialItemSearchRequest) GetApiParams() url.Values {
 }
 // HasVideo Setter
 // 是否有视频
-func (r *AliexpressSocialItemSearchRequest) SetHasVideo(hasVideo bool) error {
-    r.hasVideo = hasVideo
-    r.Set("has_video", hasVideo)
+func (r *AliexpressSocialItemSearchRequest) SetHasVideo(_hasVideo bool) error {
+    r._hasVideo = _hasVideo
+    r.Set("has_video", _hasVideo)
     return nil
 }
 
 // HasVideo Getter
 func (r AliexpressSocialItemSearchRequest) GetHasVideo() bool {
-    return r.hasVideo
+    return r._hasVideo
 }
 // OrderBy Setter
 // order by properties
-func (r *AliexpressSocialItemSearchRequest) SetOrderBy(orderBy string) error {
-    r.orderBy = orderBy
-    r.Set("order_by", orderBy)
+func (r *AliexpressSocialItemSearchRequest) SetOrderBy(_orderBy string) error {
+    r._orderBy = _orderBy
+    r.Set("order_by", _orderBy)
     return nil
 }
 
 // OrderBy Getter
 func (r AliexpressSocialItemSearchRequest) GetOrderBy() string {
-    return r.orderBy
+    return r._orderBy
 }
 // Desc Setter
 // 是否逆序
-func (r *AliexpressSocialItemSearchRequest) SetDesc(desc bool) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *AliexpressSocialItemSearchRequest) SetDesc(_desc bool) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r AliexpressSocialItemSearchRequest) GetDesc() bool {
-    return r.desc
+    return r._desc
 }
 // PageSize Setter
 // page size
-func (r *AliexpressSocialItemSearchRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AliexpressSocialItemSearchRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AliexpressSocialItemSearchRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // IsShipFree Setter
 // 是否免邮
-func (r *AliexpressSocialItemSearchRequest) SetIsShipFree(isShipFree bool) error {
-    r.isShipFree = isShipFree
-    r.Set("is_ship_free", isShipFree)
+func (r *AliexpressSocialItemSearchRequest) SetIsShipFree(_isShipFree bool) error {
+    r._isShipFree = _isShipFree
+    r.Set("is_ship_free", _isShipFree)
     return nil
 }
 
 // IsShipFree Getter
 func (r AliexpressSocialItemSearchRequest) GetIsShipFree() bool {
-    return r.isShipFree
+    return r._isShipFree
 }
 // CommissionRateMax Setter
 // 佣金最大值
-func (r *AliexpressSocialItemSearchRequest) SetCommissionRateMax(commissionRateMax string) error {
-    r.commissionRateMax = commissionRateMax
-    r.Set("commission_rate_max", commissionRateMax)
+func (r *AliexpressSocialItemSearchRequest) SetCommissionRateMax(_commissionRateMax string) error {
+    r._commissionRateMax = _commissionRateMax
+    r.Set("commission_rate_max", _commissionRateMax)
     return nil
 }
 
 // CommissionRateMax Getter
 func (r AliexpressSocialItemSearchRequest) GetCommissionRateMax() string {
-    return r.commissionRateMax
+    return r._commissionRateMax
 }
 // CommissionRateMin Setter
 // 佣金最小值
-func (r *AliexpressSocialItemSearchRequest) SetCommissionRateMin(commissionRateMin string) error {
-    r.commissionRateMin = commissionRateMin
-    r.Set("commission_rate_min", commissionRateMin)
+func (r *AliexpressSocialItemSearchRequest) SetCommissionRateMin(_commissionRateMin string) error {
+    r._commissionRateMin = _commissionRateMin
+    r.Set("commission_rate_min", _commissionRateMin)
     return nil
 }
 
 // CommissionRateMin Getter
 func (r AliexpressSocialItemSearchRequest) GetCommissionRateMin() string {
-    return r.commissionRateMin
+    return r._commissionRateMin
 }
 // LogisticsTime Setter
 // 物流时效
-func (r *AliexpressSocialItemSearchRequest) SetLogisticsTime(logisticsTime int64) error {
-    r.logisticsTime = logisticsTime
-    r.Set("logistics_time", logisticsTime)
+func (r *AliexpressSocialItemSearchRequest) SetLogisticsTime(_logisticsTime int64) error {
+    r._logisticsTime = _logisticsTime
+    r.Set("logistics_time", _logisticsTime)
     return nil
 }
 
 // LogisticsTime Getter
 func (r AliexpressSocialItemSearchRequest) GetLogisticsTime() int64 {
-    return r.logisticsTime
+    return r._logisticsTime
 }
 // AllianceItem Setter
 // 是否联盟商品
-func (r *AliexpressSocialItemSearchRequest) SetAllianceItem(allianceItem bool) error {
-    r.allianceItem = allianceItem
-    r.Set("alliance_item", allianceItem)
+func (r *AliexpressSocialItemSearchRequest) SetAllianceItem(_allianceItem bool) error {
+    r._allianceItem = _allianceItem
+    r.Set("alliance_item", _allianceItem)
     return nil
 }
 
 // AllianceItem Getter
 func (r AliexpressSocialItemSearchRequest) GetAllianceItem() bool {
-    return r.allianceItem
+    return r._allianceItem
 }
 // CateId Setter
 // 类目ID
-func (r *AliexpressSocialItemSearchRequest) SetCateId(cateId int64) error {
-    r.cateId = cateId
-    r.Set("cate_id", cateId)
+func (r *AliexpressSocialItemSearchRequest) SetCateId(_cateId int64) error {
+    r._cateId = _cateId
+    r.Set("cate_id", _cateId)
     return nil
 }
 
 // CateId Getter
 func (r AliexpressSocialItemSearchRequest) GetCateId() int64 {
-    return r.cateId
+    return r._cateId
 }
 // PageNo Setter
 // 页码
-func (r *AliexpressSocialItemSearchRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AliexpressSocialItemSearchRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AliexpressSocialItemSearchRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // MinPrice Setter
 // 最低价格
-func (r *AliexpressSocialItemSearchRequest) SetMinPrice(minPrice string) error {
-    r.minPrice = minPrice
-    r.Set("min_price", minPrice)
+func (r *AliexpressSocialItemSearchRequest) SetMinPrice(_minPrice string) error {
+    r._minPrice = _minPrice
+    r.Set("min_price", _minPrice)
     return nil
 }
 
 // MinPrice Getter
 func (r AliexpressSocialItemSearchRequest) GetMinPrice() string {
-    return r.minPrice
+    return r._minPrice
 }
 // MaxPrice Setter
 // 最高价格
-func (r *AliexpressSocialItemSearchRequest) SetMaxPrice(maxPrice string) error {
-    r.maxPrice = maxPrice
-    r.Set("max_price", maxPrice)
+func (r *AliexpressSocialItemSearchRequest) SetMaxPrice(_maxPrice string) error {
+    r._maxPrice = _maxPrice
+    r.Set("max_price", _maxPrice)
     return nil
 }
 
 // MaxPrice Getter
 func (r AliexpressSocialItemSearchRequest) GetMaxPrice() string {
-    return r.maxPrice
+    return r._maxPrice
 }
 // Keyword Setter
 // 搜索关键字
-func (r *AliexpressSocialItemSearchRequest) SetKeyword(keyword string) error {
-    r.keyword = keyword
-    r.Set("keyword", keyword)
+func (r *AliexpressSocialItemSearchRequest) SetKeyword(_keyword string) error {
+    r._keyword = _keyword
+    r.Set("keyword", _keyword)
     return nil
 }
 
 // Keyword Getter
 func (r AliexpressSocialItemSearchRequest) GetKeyword() string {
-    return r.keyword
+    return r._keyword
 }
 // ShipTo Setter
 // shipTo国家
-func (r *AliexpressSocialItemSearchRequest) SetShipTo(shipTo string) error {
-    r.shipTo = shipTo
-    r.Set("ship_to", shipTo)
+func (r *AliexpressSocialItemSearchRequest) SetShipTo(_shipTo string) error {
+    r._shipTo = _shipTo
+    r.Set("ship_to", _shipTo)
     return nil
 }
 
 // ShipTo Getter
 func (r AliexpressSocialItemSearchRequest) GetShipTo() string {
-    return r.shipTo
+    return r._shipTo
 }
 // CommentScore Setter
 // 评价分数
-func (r *AliexpressSocialItemSearchRequest) SetCommentScore(commentScore string) error {
-    r.commentScore = commentScore
-    r.Set("comment_score", commentScore)
+func (r *AliexpressSocialItemSearchRequest) SetCommentScore(_commentScore string) error {
+    r._commentScore = _commentScore
+    r.Set("comment_score", _commentScore)
     return nil
 }
 
 // CommentScore Getter
 func (r AliexpressSocialItemSearchRequest) GetCommentScore() string {
-    return r.commentScore
+    return r._commentScore
 }
 // Currency Setter
 // 币种
-func (r *AliexpressSocialItemSearchRequest) SetCurrency(currency string) error {
-    r.currency = currency
-    r.Set("currency", currency)
+func (r *AliexpressSocialItemSearchRequest) SetCurrency(_currency string) error {
+    r._currency = _currency
+    r.Set("currency", _currency)
     return nil
 }
 
 // Currency Getter
 func (r AliexpressSocialItemSearchRequest) GetCurrency() string {
-    return r.currency
+    return r._currency
 }
 // Locale Setter
 // locale,格式为language+"_"+country
-func (r *AliexpressSocialItemSearchRequest) SetLocale(locale string) error {
-    r.locale = locale
-    r.Set("locale", locale)
+func (r *AliexpressSocialItemSearchRequest) SetLocale(_locale string) error {
+    r._locale = _locale
+    r.Set("locale", _locale)
     return nil
 }
 
 // Locale Getter
 func (r AliexpressSocialItemSearchRequest) GetLocale() string {
-    return r.locale
+    return r._locale
 }

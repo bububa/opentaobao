@@ -15,7 +15,7 @@ taobao.bus.order.get
 type TaobaoBusOrderGetRequest struct {
     model.Params
     // 订单查询对象
-    paramB2BOrderQueryRQ   *B2BOrderQueryRq
+    _paramB2BOrderQueryRQ   *B2BOrderQueryRq
 }
 
 // 初始化TaobaoBusOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusOrderGetRequest) GetApiParams() url.Values {
 }
 // ParamB2BOrderQueryRQ Setter
 // 订单查询对象
-func (r *TaobaoBusOrderGetRequest) SetParamB2BOrderQueryRQ(paramB2BOrderQueryRQ *B2BOrderQueryRq) error {
-    r.paramB2BOrderQueryRQ = paramB2BOrderQueryRQ
-    r.Set("param_b2_b_order_query_r_q", paramB2BOrderQueryRQ)
+func (r *TaobaoBusOrderGetRequest) SetParamB2BOrderQueryRQ(_paramB2BOrderQueryRQ *B2BOrderQueryRq) error {
+    r._paramB2BOrderQueryRQ = _paramB2BOrderQueryRQ
+    r.Set("param_b2_b_order_query_r_q", _paramB2BOrderQueryRQ)
     return nil
 }
 
 // ParamB2BOrderQueryRQ Getter
 func (r TaobaoBusOrderGetRequest) GetParamB2BOrderQueryRQ() *B2BOrderQueryRq {
-    return r.paramB2BOrderQueryRQ
+    return r._paramB2BOrderQueryRQ
 }

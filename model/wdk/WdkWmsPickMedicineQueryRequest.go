@@ -15,9 +15,9 @@ wdk.wms.pick.medicine.query
 type WdkWmsPickMedicineQueryRequest struct {
     model.Params
     // shopId
-    shopId   int64
+    _shopId   int64
     // uuid
-    uuid   string
+    _uuid   string
 }
 
 // 初始化WdkWmsPickMedicineQueryRequest对象
@@ -42,25 +42,25 @@ func (r WdkWmsPickMedicineQueryRequest) GetApiParams() url.Values {
 }
 // ShopId Setter
 // shopId
-func (r *WdkWmsPickMedicineQueryRequest) SetShopId(shopId int64) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *WdkWmsPickMedicineQueryRequest) SetShopId(_shopId int64) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r WdkWmsPickMedicineQueryRequest) GetShopId() int64 {
-    return r.shopId
+    return r._shopId
 }
 // Uuid Setter
 // uuid
-func (r *WdkWmsPickMedicineQueryRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *WdkWmsPickMedicineQueryRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r WdkWmsPickMedicineQueryRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

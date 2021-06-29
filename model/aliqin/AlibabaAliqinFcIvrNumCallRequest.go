@@ -15,27 +15,27 @@ ivr呼叫
 type AlibabaAliqinFcIvrNumCallRequest struct {
     model.Params
     // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
-    calledNumber   string
+    _calledNumber   string
     // 被叫号码侧的号码显示，传入的显示号码可以是阿里大鱼“管理中心-号码管理”中申请通过的号码。显示号码格式如下057188773344，4001112222，95500。显示号码也可以为主叫号码。
-    calledShowNumber   string
+    _calledShowNumber   string
     // 可选值：tts或voice。
-    useTts   string
+    _useTts   string
     // 当值为tts时，menu_codet填写tts模板；当值为voice时，menu_code填写语音模板编码
-    menuCode   string
+    _menuCode   string
     // 通话超时时长，如接通后到达120秒时，通话会因为超时自动挂断。若无需设置超时时长，可不传。
-    sessionTimeOut   string
+    _sessionTimeOut   string
     // 公共回传参数，在消息中带回
-    extend   string
+    _extend   string
     // 结束语编码，当use_tts=voice时，该字段填写语音文件编码，当use_tts=tts时，该字段填写tts模板编码
-    byeCode   string
+    _byeCode   string
     // 当use_tts=tts时，该字段可填写tts模板变量参数
-    menuArgs   string
+    _menuArgs   string
     // 播放次数
-    playTimes   int64
+    _playTimes   int64
     // 按键映射事件
-    params   string
+    _params   string
     // 人工服务号码
-    serviceNumber   string
+    _serviceNumber   string
 }
 
 // 初始化AlibabaAliqinFcIvrNumCallRequest对象
@@ -60,133 +60,133 @@ func (r AlibabaAliqinFcIvrNumCallRequest) GetApiParams() url.Values {
 }
 // CalledNumber Setter
 // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetCalledNumber(calledNumber string) error {
-    r.calledNumber = calledNumber
-    r.Set("called_number", calledNumber)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetCalledNumber(_calledNumber string) error {
+    r._calledNumber = _calledNumber
+    r.Set("called_number", _calledNumber)
     return nil
 }
 
 // CalledNumber Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetCalledNumber() string {
-    return r.calledNumber
+    return r._calledNumber
 }
 // CalledShowNumber Setter
 // 被叫号码侧的号码显示，传入的显示号码可以是阿里大鱼“管理中心-号码管理”中申请通过的号码。显示号码格式如下057188773344，4001112222，95500。显示号码也可以为主叫号码。
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetCalledShowNumber(calledShowNumber string) error {
-    r.calledShowNumber = calledShowNumber
-    r.Set("called_show_number", calledShowNumber)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetCalledShowNumber(_calledShowNumber string) error {
+    r._calledShowNumber = _calledShowNumber
+    r.Set("called_show_number", _calledShowNumber)
     return nil
 }
 
 // CalledShowNumber Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetCalledShowNumber() string {
-    return r.calledShowNumber
+    return r._calledShowNumber
 }
 // UseTts Setter
 // 可选值：tts或voice。
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetUseTts(useTts string) error {
-    r.useTts = useTts
-    r.Set("use_tts", useTts)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetUseTts(_useTts string) error {
+    r._useTts = _useTts
+    r.Set("use_tts", _useTts)
     return nil
 }
 
 // UseTts Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetUseTts() string {
-    return r.useTts
+    return r._useTts
 }
 // MenuCode Setter
 // 当值为tts时，menu_codet填写tts模板；当值为voice时，menu_code填写语音模板编码
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetMenuCode(menuCode string) error {
-    r.menuCode = menuCode
-    r.Set("menu_code", menuCode)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetMenuCode(_menuCode string) error {
+    r._menuCode = _menuCode
+    r.Set("menu_code", _menuCode)
     return nil
 }
 
 // MenuCode Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetMenuCode() string {
-    return r.menuCode
+    return r._menuCode
 }
 // SessionTimeOut Setter
 // 通话超时时长，如接通后到达120秒时，通话会因为超时自动挂断。若无需设置超时时长，可不传。
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetSessionTimeOut(sessionTimeOut string) error {
-    r.sessionTimeOut = sessionTimeOut
-    r.Set("session_time_out", sessionTimeOut)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetSessionTimeOut(_sessionTimeOut string) error {
+    r._sessionTimeOut = _sessionTimeOut
+    r.Set("session_time_out", _sessionTimeOut)
     return nil
 }
 
 // SessionTimeOut Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetSessionTimeOut() string {
-    return r.sessionTimeOut
+    return r._sessionTimeOut
 }
 // Extend Setter
 // 公共回传参数，在消息中带回
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetExtend(extend string) error {
-    r.extend = extend
-    r.Set("extend", extend)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetExtend(_extend string) error {
+    r._extend = _extend
+    r.Set("extend", _extend)
     return nil
 }
 
 // Extend Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetExtend() string {
-    return r.extend
+    return r._extend
 }
 // ByeCode Setter
 // 结束语编码，当use_tts=voice时，该字段填写语音文件编码，当use_tts=tts时，该字段填写tts模板编码
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetByeCode(byeCode string) error {
-    r.byeCode = byeCode
-    r.Set("bye_code", byeCode)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetByeCode(_byeCode string) error {
+    r._byeCode = _byeCode
+    r.Set("bye_code", _byeCode)
     return nil
 }
 
 // ByeCode Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetByeCode() string {
-    return r.byeCode
+    return r._byeCode
 }
 // MenuArgs Setter
 // 当use_tts=tts时，该字段可填写tts模板变量参数
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetMenuArgs(menuArgs string) error {
-    r.menuArgs = menuArgs
-    r.Set("menu_args", menuArgs)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetMenuArgs(_menuArgs string) error {
+    r._menuArgs = _menuArgs
+    r.Set("menu_args", _menuArgs)
     return nil
 }
 
 // MenuArgs Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetMenuArgs() string {
-    return r.menuArgs
+    return r._menuArgs
 }
 // PlayTimes Setter
 // 播放次数
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetPlayTimes(playTimes int64) error {
-    r.playTimes = playTimes
-    r.Set("play_times", playTimes)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetPlayTimes(_playTimes int64) error {
+    r._playTimes = _playTimes
+    r.Set("play_times", _playTimes)
     return nil
 }
 
 // PlayTimes Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetPlayTimes() int64 {
-    return r.playTimes
+    return r._playTimes
 }
 // Params Setter
 // 按键映射事件
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetParams(params string) error {
-    r.params = params
-    r.Set("params", params)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetParams(_params string) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetParams() string {
-    return r.params
+    return r._params
 }
 // ServiceNumber Setter
 // 人工服务号码
-func (r *AlibabaAliqinFcIvrNumCallRequest) SetServiceNumber(serviceNumber string) error {
-    r.serviceNumber = serviceNumber
-    r.Set("service_number", serviceNumber)
+func (r *AlibabaAliqinFcIvrNumCallRequest) SetServiceNumber(_serviceNumber string) error {
+    r._serviceNumber = _serviceNumber
+    r.Set("service_number", _serviceNumber)
     return nil
 }
 
 // ServiceNumber Getter
 func (r AlibabaAliqinFcIvrNumCallRequest) GetServiceNumber() string {
-    return r.serviceNumber
+    return r._serviceNumber
 }

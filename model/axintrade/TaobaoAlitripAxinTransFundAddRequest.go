@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.fund.add
 type TaobaoAlitripAxinTransFundAddRequest struct {
     model.Params
     // 创建资金单接口入参
-    axinFundCreateDTO   *AxinFundCreateDto
+    _axinFundCreateDTO   *AxinFundCreateDto
 }
 
 // 初始化TaobaoAlitripAxinTransFundAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransFundAddRequest) GetApiParams() url.Values {
 }
 // AxinFundCreateDTO Setter
 // 创建资金单接口入参
-func (r *TaobaoAlitripAxinTransFundAddRequest) SetAxinFundCreateDTO(axinFundCreateDTO *AxinFundCreateDto) error {
-    r.axinFundCreateDTO = axinFundCreateDTO
-    r.Set("axin_fund_create_d_t_o", axinFundCreateDTO)
+func (r *TaobaoAlitripAxinTransFundAddRequest) SetAxinFundCreateDTO(_axinFundCreateDTO *AxinFundCreateDto) error {
+    r._axinFundCreateDTO = _axinFundCreateDTO
+    r.Set("axin_fund_create_d_t_o", _axinFundCreateDTO)
     return nil
 }
 
 // AxinFundCreateDTO Getter
 func (r TaobaoAlitripAxinTransFundAddRequest) GetAxinFundCreateDTO() *AxinFundCreateDto {
-    return r.axinFundCreateDTO
+    return r._axinFundCreateDTO
 }

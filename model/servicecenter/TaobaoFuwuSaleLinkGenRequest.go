@@ -15,9 +15,9 @@ taobao.fuwu.sale.link.gen
 type TaobaoFuwuSaleLinkGenRequest struct {
     model.Params
     // 用户需要营销的目标人群中的用户nick
-    nick   string
+    _nick   string
     // 从服务商后台，营销链接功能中生成的参数串直接复制使用。不要修改，否则抛错。
-    paramStr   string
+    _paramStr   string
 }
 
 // 初始化TaobaoFuwuSaleLinkGenRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFuwuSaleLinkGenRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 用户需要营销的目标人群中的用户nick
-func (r *TaobaoFuwuSaleLinkGenRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoFuwuSaleLinkGenRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoFuwuSaleLinkGenRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // ParamStr Setter
 // 从服务商后台，营销链接功能中生成的参数串直接复制使用。不要修改，否则抛错。
-func (r *TaobaoFuwuSaleLinkGenRequest) SetParamStr(paramStr string) error {
-    r.paramStr = paramStr
-    r.Set("param_str", paramStr)
+func (r *TaobaoFuwuSaleLinkGenRequest) SetParamStr(_paramStr string) error {
+    r._paramStr = _paramStr
+    r.Set("param_str", _paramStr)
     return nil
 }
 
 // ParamStr Getter
 func (r TaobaoFuwuSaleLinkGenRequest) GetParamStr() string {
-    return r.paramStr
+    return r._paramStr
 }

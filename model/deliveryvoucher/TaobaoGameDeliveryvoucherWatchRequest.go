@@ -15,7 +15,7 @@ taobao.game.deliveryvoucher.watch
 type TaobaoGameDeliveryvoucherWatchRequest struct {
     model.Params
     // 入参
-    param0   *WatchAppointmentRequest
+    _param0   *WatchAppointmentRequest
 }
 
 // 初始化TaobaoGameDeliveryvoucherWatchRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoGameDeliveryvoucherWatchRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TaobaoGameDeliveryvoucherWatchRequest) SetParam0(param0 *WatchAppointmentRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoGameDeliveryvoucherWatchRequest) SetParam0(_param0 *WatchAppointmentRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoGameDeliveryvoucherWatchRequest) GetParam0() *WatchAppointmentRequest {
-    return r.param0
+    return r._param0
 }

@@ -15,11 +15,11 @@ taobao.store.followurl.get
 type TaobaoStoreFollowurlGetRequest struct {
     model.Params
     // 关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页
-    callbackUrl   string
+    _callbackUrl   string
     // 商家nick
-    userNick   string
+    _userNick   string
     // 商家ID
-    userId   int64
+    _userId   int64
 }
 
 // 初始化TaobaoStoreFollowurlGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoStoreFollowurlGetRequest) GetApiParams() url.Values {
 }
 // CallbackUrl Setter
 // 关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页
-func (r *TaobaoStoreFollowurlGetRequest) SetCallbackUrl(callbackUrl string) error {
-    r.callbackUrl = callbackUrl
-    r.Set("callback_url", callbackUrl)
+func (r *TaobaoStoreFollowurlGetRequest) SetCallbackUrl(_callbackUrl string) error {
+    r._callbackUrl = _callbackUrl
+    r.Set("callback_url", _callbackUrl)
     return nil
 }
 
 // CallbackUrl Getter
 func (r TaobaoStoreFollowurlGetRequest) GetCallbackUrl() string {
-    return r.callbackUrl
+    return r._callbackUrl
 }
 // UserNick Setter
 // 商家nick
-func (r *TaobaoStoreFollowurlGetRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoStoreFollowurlGetRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoStoreFollowurlGetRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }
 // UserId Setter
 // 商家ID
-func (r *TaobaoStoreFollowurlGetRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *TaobaoStoreFollowurlGetRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r TaobaoStoreFollowurlGetRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }

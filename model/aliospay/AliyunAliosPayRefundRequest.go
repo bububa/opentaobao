@@ -15,7 +15,7 @@ aliyun.alios.pay.refund
 type AliyunAliosPayRefundRequest struct {
     model.Params
     // 请求参数
-    refundRequest   *RefundRequest
+    _refundRequest   *RefundRequest
 }
 
 // 初始化AliyunAliosPayRefundRequest对象
@@ -40,13 +40,13 @@ func (r AliyunAliosPayRefundRequest) GetApiParams() url.Values {
 }
 // RefundRequest Setter
 // 请求参数
-func (r *AliyunAliosPayRefundRequest) SetRefundRequest(refundRequest *RefundRequest) error {
-    r.refundRequest = refundRequest
-    r.Set("refund_request", refundRequest)
+func (r *AliyunAliosPayRefundRequest) SetRefundRequest(_refundRequest *RefundRequest) error {
+    r._refundRequest = _refundRequest
+    r.Set("refund_request", _refundRequest)
     return nil
 }
 
 // RefundRequest Getter
 func (r AliyunAliosPayRefundRequest) GetRefundRequest() *RefundRequest {
-    return r.refundRequest
+    return r._refundRequest
 }

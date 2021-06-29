@@ -15,9 +15,9 @@ alibaba.wdk.item.storesku.query
 type AlibabaWdkItemStoreskuQueryRequest struct {
     model.Params
     // 商品编码
-    skuCode   string
+    _skuCode   string
     // 门店ID
-    storeId   string
+    _storeId   string
 }
 
 // 初始化AlibabaWdkItemStoreskuQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkItemStoreskuQueryRequest) GetApiParams() url.Values {
 }
 // SkuCode Setter
 // 商品编码
-func (r *AlibabaWdkItemStoreskuQueryRequest) SetSkuCode(skuCode string) error {
-    r.skuCode = skuCode
-    r.Set("sku_code", skuCode)
+func (r *AlibabaWdkItemStoreskuQueryRequest) SetSkuCode(_skuCode string) error {
+    r._skuCode = _skuCode
+    r.Set("sku_code", _skuCode)
     return nil
 }
 
 // SkuCode Getter
 func (r AlibabaWdkItemStoreskuQueryRequest) GetSkuCode() string {
-    return r.skuCode
+    return r._skuCode
 }
 // StoreId Setter
 // 门店ID
-func (r *AlibabaWdkItemStoreskuQueryRequest) SetStoreId(storeId string) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *AlibabaWdkItemStoreskuQueryRequest) SetStoreId(_storeId string) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r AlibabaWdkItemStoreskuQueryRequest) GetStoreId() string {
-    return r.storeId
+    return r._storeId
 }

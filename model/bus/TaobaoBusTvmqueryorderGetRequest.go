@@ -15,7 +15,7 @@ taobao.bus.tvmqueryorder.get
 type TaobaoBusTvmqueryorderGetRequest struct {
     model.Params
     // 阿里订单标编号
-    alitripOrderId   string
+    _alitripOrderId   string
 }
 
 // 初始化TaobaoBusTvmqueryorderGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusTvmqueryorderGetRequest) GetApiParams() url.Values {
 }
 // AlitripOrderId Setter
 // 阿里订单标编号
-func (r *TaobaoBusTvmqueryorderGetRequest) SetAlitripOrderId(alitripOrderId string) error {
-    r.alitripOrderId = alitripOrderId
-    r.Set("alitrip_order_id", alitripOrderId)
+func (r *TaobaoBusTvmqueryorderGetRequest) SetAlitripOrderId(_alitripOrderId string) error {
+    r._alitripOrderId = _alitripOrderId
+    r.Set("alitrip_order_id", _alitripOrderId)
     return nil
 }
 
 // AlitripOrderId Getter
 func (r TaobaoBusTvmqueryorderGetRequest) GetAlitripOrderId() string {
-    return r.alitripOrderId
+    return r._alitripOrderId
 }

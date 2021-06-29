@@ -15,7 +15,7 @@ taobao.bus.ticket.set
 type TaobaoBusTicketSetRequest struct {
     model.Params
     // 系统自动生成
-    ticketParams   *B2BBookOrderRq
+    _ticketParams   *B2BBookOrderRq
 }
 
 // 初始化TaobaoBusTicketSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusTicketSetRequest) GetApiParams() url.Values {
 }
 // TicketParams Setter
 // 系统自动生成
-func (r *TaobaoBusTicketSetRequest) SetTicketParams(ticketParams *B2BBookOrderRq) error {
-    r.ticketParams = ticketParams
-    r.Set("ticket_params", ticketParams)
+func (r *TaobaoBusTicketSetRequest) SetTicketParams(_ticketParams *B2BBookOrderRq) error {
+    r._ticketParams = _ticketParams
+    r.Set("ticket_params", _ticketParams)
     return nil
 }
 
 // TicketParams Getter
 func (r TaobaoBusTicketSetRequest) GetTicketParams() *B2BBookOrderRq {
-    return r.ticketParams
+    return r._ticketParams
 }

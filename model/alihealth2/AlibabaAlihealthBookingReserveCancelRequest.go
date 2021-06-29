@@ -15,7 +15,7 @@ alibaba.alihealth.booking.reserve.cancel
 type AlibabaAlihealthBookingReserveCancelRequest struct {
     model.Params
     // cancel
-    cancel   *IsvReserveRequest
+    _cancel   *IsvReserveRequest
 }
 
 // 初始化AlibabaAlihealthBookingReserveCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthBookingReserveCancelRequest) GetApiParams() url.Values {
 }
 // Cancel Setter
 // cancel
-func (r *AlibabaAlihealthBookingReserveCancelRequest) SetCancel(cancel *IsvReserveRequest) error {
-    r.cancel = cancel
-    r.Set("cancel", cancel)
+func (r *AlibabaAlihealthBookingReserveCancelRequest) SetCancel(_cancel *IsvReserveRequest) error {
+    r._cancel = _cancel
+    r.Set("cancel", _cancel)
     return nil
 }
 
 // Cancel Getter
 func (r AlibabaAlihealthBookingReserveCancelRequest) GetCancel() *IsvReserveRequest {
-    return r.cancel
+    return r._cancel
 }

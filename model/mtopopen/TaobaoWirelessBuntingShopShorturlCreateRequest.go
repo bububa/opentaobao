@@ -15,7 +15,7 @@ taobao.wireless.bunting.shop.shorturl.create
 type TaobaoWirelessBuntingShopShorturlCreateRequest struct {
     model.Params
     // 商店id
-    shopId   string
+    _shopId   string
 }
 
 // 初始化TaobaoWirelessBuntingShopShorturlCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetApiParams() url.Value
 }
 // ShopId Setter
 // 商店id
-func (r *TaobaoWirelessBuntingShopShorturlCreateRequest) SetShopId(shopId string) error {
-    r.shopId = shopId
-    r.Set("shop_id", shopId)
+func (r *TaobaoWirelessBuntingShopShorturlCreateRequest) SetShopId(_shopId string) error {
+    r._shopId = _shopId
+    r.Set("shop_id", _shopId)
     return nil
 }
 
 // ShopId Getter
 func (r TaobaoWirelessBuntingShopShorturlCreateRequest) GetShopId() string {
-    return r.shopId
+    return r._shopId
 }

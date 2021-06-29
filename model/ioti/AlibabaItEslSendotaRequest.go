@@ -15,9 +15,9 @@ alibaba.it.esl.sendota
 type AlibabaItEslSendotaRequest struct {
     model.Params
     // mac
-    macAp   string
+    _macAp   string
     // base64的ota包
-    otaDataBase64String   string
+    _otaDataBase64String   string
 }
 
 // 初始化AlibabaItEslSendotaRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaItEslSendotaRequest) GetApiParams() url.Values {
 }
 // MacAp Setter
 // mac
-func (r *AlibabaItEslSendotaRequest) SetMacAp(macAp string) error {
-    r.macAp = macAp
-    r.Set("mac_ap", macAp)
+func (r *AlibabaItEslSendotaRequest) SetMacAp(_macAp string) error {
+    r._macAp = _macAp
+    r.Set("mac_ap", _macAp)
     return nil
 }
 
 // MacAp Getter
 func (r AlibabaItEslSendotaRequest) GetMacAp() string {
-    return r.macAp
+    return r._macAp
 }
 // OtaDataBase64String Setter
 // base64的ota包
-func (r *AlibabaItEslSendotaRequest) SetOtaDataBase64String(otaDataBase64String string) error {
-    r.otaDataBase64String = otaDataBase64String
-    r.Set("ota_data_base64_string", otaDataBase64String)
+func (r *AlibabaItEslSendotaRequest) SetOtaDataBase64String(_otaDataBase64String string) error {
+    r._otaDataBase64String = _otaDataBase64String
+    r.Set("ota_data_base64_string", _otaDataBase64String)
     return nil
 }
 
 // OtaDataBase64String Getter
 func (r AlibabaItEslSendotaRequest) GetOtaDataBase64String() string {
-    return r.otaDataBase64String
+    return r._otaDataBase64String
 }

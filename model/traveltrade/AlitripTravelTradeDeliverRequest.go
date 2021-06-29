@@ -15,7 +15,7 @@ alitrip.travel.trade.deliver
 type AlitripTravelTradeDeliverRequest struct {
     model.Params
     // 子订单id
-    subOrderId   int64
+    _subOrderId   int64
 }
 
 // 初始化AlitripTravelTradeDeliverRequest对象
@@ -40,13 +40,13 @@ func (r AlitripTravelTradeDeliverRequest) GetApiParams() url.Values {
 }
 // SubOrderId Setter
 // 子订单id
-func (r *AlitripTravelTradeDeliverRequest) SetSubOrderId(subOrderId int64) error {
-    r.subOrderId = subOrderId
-    r.Set("sub_order_id", subOrderId)
+func (r *AlitripTravelTradeDeliverRequest) SetSubOrderId(_subOrderId int64) error {
+    r._subOrderId = _subOrderId
+    r.Set("sub_order_id", _subOrderId)
     return nil
 }
 
 // SubOrderId Getter
 func (r AlitripTravelTradeDeliverRequest) GetSubOrderId() int64 {
-    return r.subOrderId
+    return r._subOrderId
 }

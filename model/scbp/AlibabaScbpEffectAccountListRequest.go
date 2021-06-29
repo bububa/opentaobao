@@ -15,7 +15,7 @@ alibaba.scbp.effect.account.list
 type AlibabaScbpEffectAccountListRequest struct {
     model.Params
     // AccountQuery
-    p4pAccountReportQuery   *AccountQuery
+    _p4pAccountReportQuery   *AccountQuery
 }
 
 // 初始化AlibabaScbpEffectAccountListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpEffectAccountListRequest) GetApiParams() url.Values {
 }
 // P4pAccountReportQuery Setter
 // AccountQuery
-func (r *AlibabaScbpEffectAccountListRequest) SetP4pAccountReportQuery(p4pAccountReportQuery *AccountQuery) error {
-    r.p4pAccountReportQuery = p4pAccountReportQuery
-    r.Set("p4p_account_report_query", p4pAccountReportQuery)
+func (r *AlibabaScbpEffectAccountListRequest) SetP4pAccountReportQuery(_p4pAccountReportQuery *AccountQuery) error {
+    r._p4pAccountReportQuery = _p4pAccountReportQuery
+    r.Set("p4p_account_report_query", _p4pAccountReportQuery)
     return nil
 }
 
 // P4pAccountReportQuery Getter
 func (r AlibabaScbpEffectAccountListRequest) GetP4pAccountReportQuery() *AccountQuery {
-    return r.p4pAccountReportQuery
+    return r._p4pAccountReportQuery
 }

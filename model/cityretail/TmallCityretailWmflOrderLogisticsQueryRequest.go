@@ -15,7 +15,7 @@ tmall.cityretail.wmfl.order.logistics.query
 type TmallCityretailWmflOrderLogisticsQueryRequest struct {
     model.Params
     // 订单号
-    mainOrderId   string
+    _mainOrderId   string
 }
 
 // 初始化TmallCityretailWmflOrderLogisticsQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallCityretailWmflOrderLogisticsQueryRequest) GetApiParams() url.Values
 }
 // MainOrderId Setter
 // 订单号
-func (r *TmallCityretailWmflOrderLogisticsQueryRequest) SetMainOrderId(mainOrderId string) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *TmallCityretailWmflOrderLogisticsQueryRequest) SetMainOrderId(_mainOrderId string) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r TmallCityretailWmflOrderLogisticsQueryRequest) GetMainOrderId() string {
-    return r.mainOrderId
+    return r._mainOrderId
 }

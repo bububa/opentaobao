@@ -15,11 +15,11 @@ taobao.simba.keywordsvon.add
 type TaobaoSimbaKeywordsvonAddRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广组id
-    adgroupId   int64
+    _adgroupId   int64
     // 关键词、计算机出价、无线出价和匹配方式json字符串，word:词，不能有一些特殊字符。maxPrice：计算机出价，是整数，以“分”为单位，不能小于5，不能大于日限额, maxMobilePrice：代表无线出价，规则同maxPice 当matchscope只能是1,4（1代表精确匹配，4代表广泛匹配）。
-    keywordPrices   string
+    _keywordPrices   string
 }
 
 // 初始化TaobaoSimbaKeywordsvonAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaKeywordsvonAddRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSimbaKeywordsvonAddRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaKeywordsvonAddRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaKeywordsvonAddRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广组id
-func (r *TaobaoSimbaKeywordsvonAddRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSimbaKeywordsvonAddRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSimbaKeywordsvonAddRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // KeywordPrices Setter
 // 关键词、计算机出价、无线出价和匹配方式json字符串，word:词，不能有一些特殊字符。maxPrice：计算机出价，是整数，以“分”为单位，不能小于5，不能大于日限额, maxMobilePrice：代表无线出价，规则同maxPice 当matchscope只能是1,4（1代表精确匹配，4代表广泛匹配）。
-func (r *TaobaoSimbaKeywordsvonAddRequest) SetKeywordPrices(keywordPrices string) error {
-    r.keywordPrices = keywordPrices
-    r.Set("keyword_prices", keywordPrices)
+func (r *TaobaoSimbaKeywordsvonAddRequest) SetKeywordPrices(_keywordPrices string) error {
+    r._keywordPrices = _keywordPrices
+    r.Set("keyword_prices", _keywordPrices)
     return nil
 }
 
 // KeywordPrices Getter
 func (r TaobaoSimbaKeywordsvonAddRequest) GetKeywordPrices() string {
-    return r.keywordPrices
+    return r._keywordPrices
 }

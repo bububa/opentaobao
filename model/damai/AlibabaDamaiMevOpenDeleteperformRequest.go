@@ -15,7 +15,7 @@ deletePerform
 type AlibabaDamaiMevOpenDeleteperformRequest struct {
     model.Params
     // 入参deletePerformParam
-    deletePerformParam   *PerformIdOpenParam
+    _deletePerformParam   *PerformIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeleteperformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeleteperformRequest) GetApiParams() url.Values {
 }
 // DeletePerformParam Setter
 // 入参deletePerformParam
-func (r *AlibabaDamaiMevOpenDeleteperformRequest) SetDeletePerformParam(deletePerformParam *PerformIdOpenParam) error {
-    r.deletePerformParam = deletePerformParam
-    r.Set("delete_perform_param", deletePerformParam)
+func (r *AlibabaDamaiMevOpenDeleteperformRequest) SetDeletePerformParam(_deletePerformParam *PerformIdOpenParam) error {
+    r._deletePerformParam = _deletePerformParam
+    r.Set("delete_perform_param", _deletePerformParam)
     return nil
 }
 
 // DeletePerformParam Getter
 func (r AlibabaDamaiMevOpenDeleteperformRequest) GetDeletePerformParam() *PerformIdOpenParam {
-    return r.deletePerformParam
+    return r._deletePerformParam
 }

@@ -15,13 +15,13 @@ alibaba.aliqin.fc.voice.num.singlecall
 type AlibabaAliqinFcVoiceNumSinglecallRequest struct {
     model.Params
     // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
-    extend   string
+    _extend   string
     // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
-    calledNum   string
+    _calledNum   string
     // 被叫号显，传入的显示号码必须是阿里大于“管理中心-号码管理”中申请通过的号码
-    calledShowNum   string
+    _calledShowNum   string
     // 语音文件ID，传入的语音文件必须是在阿里大于“管理中心-语音文件管理”中的可用语音文件
-    voiceCode   string
+    _voiceCode   string
 }
 
 // 初始化AlibabaAliqinFcVoiceNumSinglecallRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAliqinFcVoiceNumSinglecallRequest) GetApiParams() url.Values {
 }
 // Extend Setter
 // 公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用
-func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetExtend(extend string) error {
-    r.extend = extend
-    r.Set("extend", extend)
+func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetExtend(_extend string) error {
+    r._extend = _extend
+    r.Set("extend", _extend)
     return nil
 }
 
 // Extend Getter
 func (r AlibabaAliqinFcVoiceNumSinglecallRequest) GetExtend() string {
-    return r.extend
+    return r._extend
 }
 // CalledNum Setter
 // 被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500
-func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetCalledNum(calledNum string) error {
-    r.calledNum = calledNum
-    r.Set("called_num", calledNum)
+func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetCalledNum(_calledNum string) error {
+    r._calledNum = _calledNum
+    r.Set("called_num", _calledNum)
     return nil
 }
 
 // CalledNum Getter
 func (r AlibabaAliqinFcVoiceNumSinglecallRequest) GetCalledNum() string {
-    return r.calledNum
+    return r._calledNum
 }
 // CalledShowNum Setter
 // 被叫号显，传入的显示号码必须是阿里大于“管理中心-号码管理”中申请通过的号码
-func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetCalledShowNum(calledShowNum string) error {
-    r.calledShowNum = calledShowNum
-    r.Set("called_show_num", calledShowNum)
+func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetCalledShowNum(_calledShowNum string) error {
+    r._calledShowNum = _calledShowNum
+    r.Set("called_show_num", _calledShowNum)
     return nil
 }
 
 // CalledShowNum Getter
 func (r AlibabaAliqinFcVoiceNumSinglecallRequest) GetCalledShowNum() string {
-    return r.calledShowNum
+    return r._calledShowNum
 }
 // VoiceCode Setter
 // 语音文件ID，传入的语音文件必须是在阿里大于“管理中心-语音文件管理”中的可用语音文件
-func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetVoiceCode(voiceCode string) error {
-    r.voiceCode = voiceCode
-    r.Set("voice_code", voiceCode)
+func (r *AlibabaAliqinFcVoiceNumSinglecallRequest) SetVoiceCode(_voiceCode string) error {
+    r._voiceCode = _voiceCode
+    r.Set("voice_code", _voiceCode)
     return nil
 }
 
 // VoiceCode Getter
 func (r AlibabaAliqinFcVoiceNumSinglecallRequest) GetVoiceCode() string {
-    return r.voiceCode
+    return r._voiceCode
 }

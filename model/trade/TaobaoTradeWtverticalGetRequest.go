@@ -15,7 +15,7 @@ taobao.trade.wtvertical.get
 type TaobaoTradeWtverticalGetRequest struct {
     model.Params
     // 主订单列表,用“，”分隔tid的字符串,最大列表长度为15
-    tids   []int64
+    _tids   []int64
 }
 
 // 初始化TaobaoTradeWtverticalGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTradeWtverticalGetRequest) GetApiParams() url.Values {
 }
 // Tids Setter
 // 主订单列表,用“，”分隔tid的字符串,最大列表长度为15
-func (r *TaobaoTradeWtverticalGetRequest) SetTids(tids []int64) error {
-    r.tids = tids
-    r.Set("tids", tids)
+func (r *TaobaoTradeWtverticalGetRequest) SetTids(_tids []int64) error {
+    r._tids = _tids
+    r.Set("tids", _tids)
     return nil
 }
 
 // Tids Getter
 func (r TaobaoTradeWtverticalGetRequest) GetTids() []int64 {
-    return r.tids
+    return r._tids
 }

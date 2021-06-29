@@ -15,13 +15,13 @@ tmall.servicecenter.workcard.updatelogistics
 type TmallServicecenterWorkcardUpdatelogisticsRequest struct {
     model.Params
     // 工单号
-    workcardId   int64
+    _workcardId   int64
     // 工单操作
-    action   string
+    _action   string
     // 快递公司
-    expressCompany   string
+    _expressCompany   string
     // 快递号
-    expressCode   string
+    _expressCode   string
 }
 
 // 初始化TmallServicecenterWorkcardUpdatelogisticsRequest对象
@@ -46,49 +46,49 @@ func (r TmallServicecenterWorkcardUpdatelogisticsRequest) GetApiParams() url.Val
 }
 // WorkcardId Setter
 // 工单号
-func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetWorkcardId(workcardId int64) error {
-    r.workcardId = workcardId
-    r.Set("workcard_id", workcardId)
+func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetWorkcardId(_workcardId int64) error {
+    r._workcardId = _workcardId
+    r.Set("workcard_id", _workcardId)
     return nil
 }
 
 // WorkcardId Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsRequest) GetWorkcardId() int64 {
-    return r.workcardId
+    return r._workcardId
 }
 // Action Setter
 // 工单操作
-func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetAction(action string) error {
-    r.action = action
-    r.Set("action", action)
+func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetAction(_action string) error {
+    r._action = _action
+    r.Set("action", _action)
     return nil
 }
 
 // Action Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsRequest) GetAction() string {
-    return r.action
+    return r._action
 }
 // ExpressCompany Setter
 // 快递公司
-func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetExpressCompany(expressCompany string) error {
-    r.expressCompany = expressCompany
-    r.Set("express_company", expressCompany)
+func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetExpressCompany(_expressCompany string) error {
+    r._expressCompany = _expressCompany
+    r.Set("express_company", _expressCompany)
     return nil
 }
 
 // ExpressCompany Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsRequest) GetExpressCompany() string {
-    return r.expressCompany
+    return r._expressCompany
 }
 // ExpressCode Setter
 // 快递号
-func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetExpressCode(expressCode string) error {
-    r.expressCode = expressCode
-    r.Set("express_code", expressCode)
+func (r *TmallServicecenterWorkcardUpdatelogisticsRequest) SetExpressCode(_expressCode string) error {
+    r._expressCode = _expressCode
+    r.Set("express_code", _expressCode)
     return nil
 }
 
 // ExpressCode Getter
 func (r TmallServicecenterWorkcardUpdatelogisticsRequest) GetExpressCode() string {
-    return r.expressCode
+    return r._expressCode
 }

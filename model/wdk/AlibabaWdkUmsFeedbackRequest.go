@@ -15,7 +15,7 @@ alibaba.wdk.ums.feedback
 type AlibabaWdkUmsFeedbackRequest struct {
     model.Params
     // 质量反馈请求dto
-    erpFeedbackdto   *ErpFeedbackDto
+    _erpFeedbackdto   *ErpFeedbackDto
 }
 
 // 初始化AlibabaWdkUmsFeedbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsFeedbackRequest) GetApiParams() url.Values {
 }
 // ErpFeedbackdto Setter
 // 质量反馈请求dto
-func (r *AlibabaWdkUmsFeedbackRequest) SetErpFeedbackdto(erpFeedbackdto *ErpFeedbackDto) error {
-    r.erpFeedbackdto = erpFeedbackdto
-    r.Set("erp_feedbackdto", erpFeedbackdto)
+func (r *AlibabaWdkUmsFeedbackRequest) SetErpFeedbackdto(_erpFeedbackdto *ErpFeedbackDto) error {
+    r._erpFeedbackdto = _erpFeedbackdto
+    r.Set("erp_feedbackdto", _erpFeedbackdto)
     return nil
 }
 
 // ErpFeedbackdto Getter
 func (r AlibabaWdkUmsFeedbackRequest) GetErpFeedbackdto() *ErpFeedbackDto {
-    return r.erpFeedbackdto
+    return r._erpFeedbackdto
 }

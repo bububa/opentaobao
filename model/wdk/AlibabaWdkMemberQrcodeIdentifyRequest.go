@@ -15,7 +15,7 @@ alibaba.wdk.member.qrcode.identify
 type AlibabaWdkMemberQrcodeIdentifyRequest struct {
     model.Params
     // 付款码
-    qrCode   string
+    _qrCode   string
 }
 
 // 初始化AlibabaWdkMemberQrcodeIdentifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetApiParams() url.Values {
 }
 // QrCode Setter
 // 付款码
-func (r *AlibabaWdkMemberQrcodeIdentifyRequest) SetQrCode(qrCode string) error {
-    r.qrCode = qrCode
-    r.Set("qr_code", qrCode)
+func (r *AlibabaWdkMemberQrcodeIdentifyRequest) SetQrCode(_qrCode string) error {
+    r._qrCode = _qrCode
+    r.Set("qr_code", _qrCode)
     return nil
 }
 
 // QrCode Getter
 func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetQrCode() string {
-    return r.qrCode
+    return r._qrCode
 }

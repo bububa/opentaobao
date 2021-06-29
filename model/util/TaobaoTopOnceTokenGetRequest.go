@@ -15,7 +15,7 @@ taobao.top.once.token.get
 type TaobaoTopOnceTokenGetRequest struct {
     model.Params
     // sec_token
-    secToken   string
+    _secToken   string
 }
 
 // 初始化TaobaoTopOnceTokenGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopOnceTokenGetRequest) GetApiParams() url.Values {
 }
 // SecToken Setter
 // sec_token
-func (r *TaobaoTopOnceTokenGetRequest) SetSecToken(secToken string) error {
-    r.secToken = secToken
-    r.Set("sec_token", secToken)
+func (r *TaobaoTopOnceTokenGetRequest) SetSecToken(_secToken string) error {
+    r._secToken = _secToken
+    r.Set("sec_token", _secToken)
     return nil
 }
 
 // SecToken Getter
 func (r TaobaoTopOnceTokenGetRequest) GetSecToken() string {
-    return r.secToken
+    return r._secToken
 }

@@ -15,7 +15,7 @@ iot渠道拉取有权限访问的影院
 type TaobaoLarkIotOrderGetcinemasRequest struct {
     model.Params
     // 渠道编码
-    channelCode   string
+    _channelCode   string
 }
 
 // 初始化TaobaoLarkIotOrderGetcinemasRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLarkIotOrderGetcinemasRequest) GetApiParams() url.Values {
 }
 // ChannelCode Setter
 // 渠道编码
-func (r *TaobaoLarkIotOrderGetcinemasRequest) SetChannelCode(channelCode string) error {
-    r.channelCode = channelCode
-    r.Set("channel_code", channelCode)
+func (r *TaobaoLarkIotOrderGetcinemasRequest) SetChannelCode(_channelCode string) error {
+    r._channelCode = _channelCode
+    r.Set("channel_code", _channelCode)
     return nil
 }
 
 // ChannelCode Getter
 func (r TaobaoLarkIotOrderGetcinemasRequest) GetChannelCode() string {
-    return r.channelCode
+    return r._channelCode
 }

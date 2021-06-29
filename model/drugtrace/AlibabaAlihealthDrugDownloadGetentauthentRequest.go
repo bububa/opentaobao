@@ -15,9 +15,9 @@ D2D数据落地获取授权企业列表
 type AlibabaAlihealthDrugDownloadGetentauthentRequest struct {
     model.Params
     // 授权开始时间
-    authBeginDate   string
+    _authBeginDate   string
     // 授权结束时间
-    authEndDate   string
+    _authEndDate   string
 }
 
 // 初始化AlibabaAlihealthDrugDownloadGetentauthentRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugDownloadGetentauthentRequest) GetApiParams() url.Val
 }
 // AuthBeginDate Setter
 // 授权开始时间
-func (r *AlibabaAlihealthDrugDownloadGetentauthentRequest) SetAuthBeginDate(authBeginDate string) error {
-    r.authBeginDate = authBeginDate
-    r.Set("auth_begin_date", authBeginDate)
+func (r *AlibabaAlihealthDrugDownloadGetentauthentRequest) SetAuthBeginDate(_authBeginDate string) error {
+    r._authBeginDate = _authBeginDate
+    r.Set("auth_begin_date", _authBeginDate)
     return nil
 }
 
 // AuthBeginDate Getter
 func (r AlibabaAlihealthDrugDownloadGetentauthentRequest) GetAuthBeginDate() string {
-    return r.authBeginDate
+    return r._authBeginDate
 }
 // AuthEndDate Setter
 // 授权结束时间
-func (r *AlibabaAlihealthDrugDownloadGetentauthentRequest) SetAuthEndDate(authEndDate string) error {
-    r.authEndDate = authEndDate
-    r.Set("auth_end_date", authEndDate)
+func (r *AlibabaAlihealthDrugDownloadGetentauthentRequest) SetAuthEndDate(_authEndDate string) error {
+    r._authEndDate = _authEndDate
+    r.Set("auth_end_date", _authEndDate)
     return nil
 }
 
 // AuthEndDate Getter
 func (r AlibabaAlihealthDrugDownloadGetentauthentRequest) GetAuthEndDate() string {
-    return r.authEndDate
+    return r._authEndDate
 }

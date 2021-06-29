@@ -15,13 +15,13 @@ alibaba.alihealth.alipaypfm.assess.result.sync
 type AlibabaAlihealthAlipaypfmAssessResultSyncRequest struct {
     model.Params
     // userId
-    userId   int64
+    _userId   int64
     // 测评类型
-    assessType   string
+    _assessType   string
     // 测评结果
-    assessResult   string
+    _assessResult   string
     // 测评结果冗余字段
-    refrenceResult   string
+    _refrenceResult   string
 }
 
 // 初始化AlibabaAlihealthAlipaypfmAssessResultSyncRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthAlipaypfmAssessResultSyncRequest) GetApiParams() url.Val
 }
 // UserId Setter
 // userId
-func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // AssessType Setter
 // 测评类型
-func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetAssessType(assessType string) error {
-    r.assessType = assessType
-    r.Set("assess_type", assessType)
+func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetAssessType(_assessType string) error {
+    r._assessType = _assessType
+    r.Set("assess_type", _assessType)
     return nil
 }
 
 // AssessType Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncRequest) GetAssessType() string {
-    return r.assessType
+    return r._assessType
 }
 // AssessResult Setter
 // 测评结果
-func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetAssessResult(assessResult string) error {
-    r.assessResult = assessResult
-    r.Set("assess_result", assessResult)
+func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetAssessResult(_assessResult string) error {
+    r._assessResult = _assessResult
+    r.Set("assess_result", _assessResult)
     return nil
 }
 
 // AssessResult Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncRequest) GetAssessResult() string {
-    return r.assessResult
+    return r._assessResult
 }
 // RefrenceResult Setter
 // 测评结果冗余字段
-func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetRefrenceResult(refrenceResult string) error {
-    r.refrenceResult = refrenceResult
-    r.Set("refrence_result", refrenceResult)
+func (r *AlibabaAlihealthAlipaypfmAssessResultSyncRequest) SetRefrenceResult(_refrenceResult string) error {
+    r._refrenceResult = _refrenceResult
+    r.Set("refrence_result", _refrenceResult)
     return nil
 }
 
 // RefrenceResult Getter
 func (r AlibabaAlihealthAlipaypfmAssessResultSyncRequest) GetRefrenceResult() string {
-    return r.refrenceResult
+    return r._refrenceResult
 }

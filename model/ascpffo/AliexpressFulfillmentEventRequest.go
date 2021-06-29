@@ -15,7 +15,7 @@ AE用 履约底层声明发货能力
 type AliexpressFulfillmentEventRequest struct {
     model.Params
     // 入参对象
-    param   *FulfillmentOrderStatusUpdateRequest
+    _param   *FulfillmentOrderStatusUpdateRequest
 }
 
 // 初始化AliexpressFulfillmentEventRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressFulfillmentEventRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参对象
-func (r *AliexpressFulfillmentEventRequest) SetParam(param *FulfillmentOrderStatusUpdateRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AliexpressFulfillmentEventRequest) SetParam(_param *FulfillmentOrderStatusUpdateRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AliexpressFulfillmentEventRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
-    return r.param
+    return r._param
 }

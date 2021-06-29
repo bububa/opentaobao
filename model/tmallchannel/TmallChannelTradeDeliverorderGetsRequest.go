@@ -15,19 +15,19 @@ tmall.channel.trade.deliverorder.gets
 type TmallChannelTradeDeliverorderGetsRequest struct {
     model.Params
     // 发货单单号
-    mainDeliverOrderNo   int64
+    _mainDeliverOrderNo   int64
     // 发货单状态列表
-    orderStatusList   []int64
+    _orderStatusList   []int64
     // 是否包括子发货单
-    isIncludeSubOrder   bool
+    _isIncludeSubOrder   bool
     // 每页显示数量
-    pageSize   int64
+    _pageSize   int64
     // 查询第几页
-    pageNumber   int64
+    _pageNumber   int64
     // 是否分页查询
-    needPagination   bool
+    _needPagination   bool
     // 渠道
-    channel   int64
+    _channel   int64
 }
 
 // 初始化TmallChannelTradeDeliverorderGetsRequest对象
@@ -52,85 +52,85 @@ func (r TmallChannelTradeDeliverorderGetsRequest) GetApiParams() url.Values {
 }
 // MainDeliverOrderNo Setter
 // 发货单单号
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetMainDeliverOrderNo(mainDeliverOrderNo int64) error {
-    r.mainDeliverOrderNo = mainDeliverOrderNo
-    r.Set("main_deliver_order_no", mainDeliverOrderNo)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetMainDeliverOrderNo(_mainDeliverOrderNo int64) error {
+    r._mainDeliverOrderNo = _mainDeliverOrderNo
+    r.Set("main_deliver_order_no", _mainDeliverOrderNo)
     return nil
 }
 
 // MainDeliverOrderNo Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetMainDeliverOrderNo() int64 {
-    return r.mainDeliverOrderNo
+    return r._mainDeliverOrderNo
 }
 // OrderStatusList Setter
 // 发货单状态列表
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetOrderStatusList(orderStatusList []int64) error {
-    r.orderStatusList = orderStatusList
-    r.Set("order_status_list", orderStatusList)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetOrderStatusList(_orderStatusList []int64) error {
+    r._orderStatusList = _orderStatusList
+    r.Set("order_status_list", _orderStatusList)
     return nil
 }
 
 // OrderStatusList Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetOrderStatusList() []int64 {
-    return r.orderStatusList
+    return r._orderStatusList
 }
 // IsIncludeSubOrder Setter
 // 是否包括子发货单
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetIsIncludeSubOrder(isIncludeSubOrder bool) error {
-    r.isIncludeSubOrder = isIncludeSubOrder
-    r.Set("is_include_sub_order", isIncludeSubOrder)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
+    r._isIncludeSubOrder = _isIncludeSubOrder
+    r.Set("is_include_sub_order", _isIncludeSubOrder)
     return nil
 }
 
 // IsIncludeSubOrder Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetIsIncludeSubOrder() bool {
-    return r.isIncludeSubOrder
+    return r._isIncludeSubOrder
 }
 // PageSize Setter
 // 每页显示数量
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNumber Setter
 // 查询第几页
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetPageNumber(pageNumber int64) error {
-    r.pageNumber = pageNumber
-    r.Set("page_number", pageNumber)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetPageNumber(_pageNumber int64) error {
+    r._pageNumber = _pageNumber
+    r.Set("page_number", _pageNumber)
     return nil
 }
 
 // PageNumber Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetPageNumber() int64 {
-    return r.pageNumber
+    return r._pageNumber
 }
 // NeedPagination Setter
 // 是否分页查询
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetNeedPagination(needPagination bool) error {
-    r.needPagination = needPagination
-    r.Set("need_pagination", needPagination)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetNeedPagination(_needPagination bool) error {
+    r._needPagination = _needPagination
+    r.Set("need_pagination", _needPagination)
     return nil
 }
 
 // NeedPagination Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetNeedPagination() bool {
-    return r.needPagination
+    return r._needPagination
 }
 // Channel Setter
 // 渠道
-func (r *TmallChannelTradeDeliverorderGetsRequest) SetChannel(channel int64) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *TmallChannelTradeDeliverorderGetsRequest) SetChannel(_channel int64) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r TmallChannelTradeDeliverorderGetsRequest) GetChannel() int64 {
-    return r.channel
+    return r._channel
 }

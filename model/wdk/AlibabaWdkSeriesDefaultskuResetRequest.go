@@ -15,7 +15,7 @@ alibaba.wdk.series.defaultsku.reset
 type AlibabaWdkSeriesDefaultskuResetRequest struct {
     model.Params
     // 系列品重置默认商品请求
-    seriesSku   *SeriesSkuRequest
+    _seriesSku   *SeriesSkuRequest
 }
 
 // 初始化AlibabaWdkSeriesDefaultskuResetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSeriesDefaultskuResetRequest) GetApiParams() url.Values {
 }
 // SeriesSku Setter
 // 系列品重置默认商品请求
-func (r *AlibabaWdkSeriesDefaultskuResetRequest) SetSeriesSku(seriesSku *SeriesSkuRequest) error {
-    r.seriesSku = seriesSku
-    r.Set("series_sku", seriesSku)
+func (r *AlibabaWdkSeriesDefaultskuResetRequest) SetSeriesSku(_seriesSku *SeriesSkuRequest) error {
+    r._seriesSku = _seriesSku
+    r.Set("series_sku", _seriesSku)
     return nil
 }
 
 // SeriesSku Getter
 func (r AlibabaWdkSeriesDefaultskuResetRequest) GetSeriesSku() *SeriesSkuRequest {
-    return r.seriesSku
+    return r._seriesSku
 }

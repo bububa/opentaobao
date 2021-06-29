@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.user.upload
 type AlibabaTclsAelophyMerchantUserUploadRequest struct {
     model.Params
     // 渠道用户信息
-    userInfoList   []MerchantUserInfo
+    _userInfoList   []MerchantUserInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantUserUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantUserUploadRequest) GetApiParams() url.Values {
 }
 // UserInfoList Setter
 // 渠道用户信息
-func (r *AlibabaTclsAelophyMerchantUserUploadRequest) SetUserInfoList(userInfoList []MerchantUserInfo) error {
-    r.userInfoList = userInfoList
-    r.Set("user_info_list", userInfoList)
+func (r *AlibabaTclsAelophyMerchantUserUploadRequest) SetUserInfoList(_userInfoList []MerchantUserInfo) error {
+    r._userInfoList = _userInfoList
+    r.Set("user_info_list", _userInfoList)
     return nil
 }
 
 // UserInfoList Getter
 func (r AlibabaTclsAelophyMerchantUserUploadRequest) GetUserInfoList() []MerchantUserInfo {
-    return r.userInfoList
+    return r._userInfoList
 }

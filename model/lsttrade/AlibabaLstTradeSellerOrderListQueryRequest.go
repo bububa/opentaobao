@@ -15,7 +15,7 @@ alibaba.lst.trade.seller.order.list.query
 type AlibabaLstTradeSellerOrderListQueryRequest struct {
     model.Params
     // 入参
-    param   *LstTradeGetSellerOrderListParam
+    _param   *LstTradeGetSellerOrderListParam
 }
 
 // 初始化AlibabaLstTradeSellerOrderListQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerOrderListQueryRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaLstTradeSellerOrderListQueryRequest) SetParam(param *LstTradeGetSellerOrderListParam) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaLstTradeSellerOrderListQueryRequest) SetParam(_param *LstTradeGetSellerOrderListParam) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaLstTradeSellerOrderListQueryRequest) GetParam() *LstTradeGetSellerOrderListParam {
-    return r.param
+    return r._param
 }

@@ -15,11 +15,11 @@ taobao.wlb.wms.sn.info.query
 type TaobaoWlbWmsSnInfoQueryRequest struct {
     model.Params
     // 订单编码
-    orderCode   string
+    _orderCode   string
     // 订单类型（1:仓配订单 10：配送扫码 20：增值扫码 40:ERP单号; 50：交易订单 ）
-    orderCodeType   int64
+    _orderCodeType   int64
     // 页数，默认每页50条
-    pageIndex   int64
+    _pageIndex   int64
 }
 
 // 初始化TaobaoWlbWmsSnInfoQueryRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoWlbWmsSnInfoQueryRequest) GetApiParams() url.Values {
 }
 // OrderCode Setter
 // 订单编码
-func (r *TaobaoWlbWmsSnInfoQueryRequest) SetOrderCode(orderCode string) error {
-    r.orderCode = orderCode
-    r.Set("order_code", orderCode)
+func (r *TaobaoWlbWmsSnInfoQueryRequest) SetOrderCode(_orderCode string) error {
+    r._orderCode = _orderCode
+    r.Set("order_code", _orderCode)
     return nil
 }
 
 // OrderCode Getter
 func (r TaobaoWlbWmsSnInfoQueryRequest) GetOrderCode() string {
-    return r.orderCode
+    return r._orderCode
 }
 // OrderCodeType Setter
 // 订单类型（1:仓配订单 10：配送扫码 20：增值扫码 40:ERP单号; 50：交易订单 ）
-func (r *TaobaoWlbWmsSnInfoQueryRequest) SetOrderCodeType(orderCodeType int64) error {
-    r.orderCodeType = orderCodeType
-    r.Set("order_code_type", orderCodeType)
+func (r *TaobaoWlbWmsSnInfoQueryRequest) SetOrderCodeType(_orderCodeType int64) error {
+    r._orderCodeType = _orderCodeType
+    r.Set("order_code_type", _orderCodeType)
     return nil
 }
 
 // OrderCodeType Getter
 func (r TaobaoWlbWmsSnInfoQueryRequest) GetOrderCodeType() int64 {
-    return r.orderCodeType
+    return r._orderCodeType
 }
 // PageIndex Setter
 // 页数，默认每页50条
-func (r *TaobaoWlbWmsSnInfoQueryRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoWlbWmsSnInfoQueryRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoWlbWmsSnInfoQueryRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }

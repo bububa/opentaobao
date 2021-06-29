@@ -15,7 +15,7 @@ taobao.jst.sms.message.send
 type TaobaoJstSmsMessageSendRequest struct {
     model.Params
     // 短信发送请求
-    sendMessageRequest   *SendMessageRequest
+    _sendMessageRequest   *SendMessageRequest
 }
 
 // 初始化TaobaoJstSmsMessageSendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsMessageSendRequest) GetApiParams() url.Values {
 }
 // SendMessageRequest Setter
 // 短信发送请求
-func (r *TaobaoJstSmsMessageSendRequest) SetSendMessageRequest(sendMessageRequest *SendMessageRequest) error {
-    r.sendMessageRequest = sendMessageRequest
-    r.Set("send_message_request", sendMessageRequest)
+func (r *TaobaoJstSmsMessageSendRequest) SetSendMessageRequest(_sendMessageRequest *SendMessageRequest) error {
+    r._sendMessageRequest = _sendMessageRequest
+    r.Set("send_message_request", _sendMessageRequest)
     return nil
 }
 
 // SendMessageRequest Getter
 func (r TaobaoJstSmsMessageSendRequest) GetSendMessageRequest() *SendMessageRequest {
-    return r.sendMessageRequest
+    return r._sendMessageRequest
 }

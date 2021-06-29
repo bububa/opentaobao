@@ -15,19 +15,19 @@ alibaba.aliqin.fc.iot.rechargeCard
 type AlibabaAliqinFcIotRechargeCardRequest struct {
     model.Params
     // 外部计费号类型：写‘ICCID’
-    billSource   string
+    _billSource   string
     // iccid的值
-    billReal   string
+    _billReal   string
     // 流量包offerId
-    offerId   string
+    _offerId   string
     // 外部id,用来做幂等
-    outRechargeId   string
+    _outRechargeId   string
     // ICCID
-    iccid   string
+    _iccid   string
     // 生效时间,1000,立即生效; AUTO_ORD,下周期自动续订
-    effCode   string
+    _effCode   string
     // yyyy-MM-dd HH:mm:ss
-    effTime   string
+    _effTime   string
 }
 
 // 初始化AlibabaAliqinFcIotRechargeCardRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaAliqinFcIotRechargeCardRequest) GetApiParams() url.Values {
 }
 // BillSource Setter
 // 外部计费号类型：写‘ICCID’
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetBillSource(billSource string) error {
-    r.billSource = billSource
-    r.Set("bill_source", billSource)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetBillSource(_billSource string) error {
+    r._billSource = _billSource
+    r.Set("bill_source", _billSource)
     return nil
 }
 
 // BillSource Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetBillSource() string {
-    return r.billSource
+    return r._billSource
 }
 // BillReal Setter
 // iccid的值
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetBillReal(billReal string) error {
-    r.billReal = billReal
-    r.Set("bill_real", billReal)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetBillReal(_billReal string) error {
+    r._billReal = _billReal
+    r.Set("bill_real", _billReal)
     return nil
 }
 
 // BillReal Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetBillReal() string {
-    return r.billReal
+    return r._billReal
 }
 // OfferId Setter
 // 流量包offerId
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetOfferId(offerId string) error {
-    r.offerId = offerId
-    r.Set("offer_id", offerId)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetOfferId(_offerId string) error {
+    r._offerId = _offerId
+    r.Set("offer_id", _offerId)
     return nil
 }
 
 // OfferId Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetOfferId() string {
-    return r.offerId
+    return r._offerId
 }
 // OutRechargeId Setter
 // 外部id,用来做幂等
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetOutRechargeId(outRechargeId string) error {
-    r.outRechargeId = outRechargeId
-    r.Set("out_recharge_id", outRechargeId)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetOutRechargeId(_outRechargeId string) error {
+    r._outRechargeId = _outRechargeId
+    r.Set("out_recharge_id", _outRechargeId)
     return nil
 }
 
 // OutRechargeId Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetOutRechargeId() string {
-    return r.outRechargeId
+    return r._outRechargeId
 }
 // Iccid Setter
 // ICCID
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetIccid(iccid string) error {
-    r.iccid = iccid
-    r.Set("iccid", iccid)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetIccid(_iccid string) error {
+    r._iccid = _iccid
+    r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetIccid() string {
-    return r.iccid
+    return r._iccid
 }
 // EffCode Setter
 // 生效时间,1000,立即生效; AUTO_ORD,下周期自动续订
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetEffCode(effCode string) error {
-    r.effCode = effCode
-    r.Set("eff_code", effCode)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetEffCode(_effCode string) error {
+    r._effCode = _effCode
+    r.Set("eff_code", _effCode)
     return nil
 }
 
 // EffCode Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetEffCode() string {
-    return r.effCode
+    return r._effCode
 }
 // EffTime Setter
 // yyyy-MM-dd HH:mm:ss
-func (r *AlibabaAliqinFcIotRechargeCardRequest) SetEffTime(effTime string) error {
-    r.effTime = effTime
-    r.Set("eff_time", effTime)
+func (r *AlibabaAliqinFcIotRechargeCardRequest) SetEffTime(_effTime string) error {
+    r._effTime = _effTime
+    r.Set("eff_time", _effTime)
     return nil
 }
 
 // EffTime Getter
 func (r AlibabaAliqinFcIotRechargeCardRequest) GetEffTime() string {
-    return r.effTime
+    return r._effTime
 }

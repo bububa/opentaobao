@@ -15,19 +15,19 @@ alibaba.westcrm.activity.list.get
 type AlibabaWestcrmActivityListGetRequest struct {
     model.Params
     // 活动状态
-    status   int64
+    _status   int64
     // 园区id
-    campusId   int64
+    _campusId   int64
     // 排序方向
-    sord   string
+    _sord   string
     // 页,默认第一页
-    page   int64
+    _page   int64
     // 排序字段
-    sidx   string
+    _sidx   string
     // 分页偏移量 eq . limit offset ,rows
-    offset   int64
+    _offset   int64
     // 页大小,默认每页查询10条数据
-    rows   int64
+    _rows   int64
 }
 
 // 初始化AlibabaWestcrmActivityListGetRequest对象
@@ -52,85 +52,85 @@ func (r AlibabaWestcrmActivityListGetRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 活动状态
-func (r *AlibabaWestcrmActivityListGetRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaWestcrmActivityListGetRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // CampusId Setter
 // 园区id
-func (r *AlibabaWestcrmActivityListGetRequest) SetCampusId(campusId int64) error {
-    r.campusId = campusId
-    r.Set("campus_id", campusId)
+func (r *AlibabaWestcrmActivityListGetRequest) SetCampusId(_campusId int64) error {
+    r._campusId = _campusId
+    r.Set("campus_id", _campusId)
     return nil
 }
 
 // CampusId Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetCampusId() int64 {
-    return r.campusId
+    return r._campusId
 }
 // Sord Setter
 // 排序方向
-func (r *AlibabaWestcrmActivityListGetRequest) SetSord(sord string) error {
-    r.sord = sord
-    r.Set("sord", sord)
+func (r *AlibabaWestcrmActivityListGetRequest) SetSord(_sord string) error {
+    r._sord = _sord
+    r.Set("sord", _sord)
     return nil
 }
 
 // Sord Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetSord() string {
-    return r.sord
+    return r._sord
 }
 // Page Setter
 // 页,默认第一页
-func (r *AlibabaWestcrmActivityListGetRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaWestcrmActivityListGetRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // Sidx Setter
 // 排序字段
-func (r *AlibabaWestcrmActivityListGetRequest) SetSidx(sidx string) error {
-    r.sidx = sidx
-    r.Set("sidx", sidx)
+func (r *AlibabaWestcrmActivityListGetRequest) SetSidx(_sidx string) error {
+    r._sidx = _sidx
+    r.Set("sidx", _sidx)
     return nil
 }
 
 // Sidx Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetSidx() string {
-    return r.sidx
+    return r._sidx
 }
 // Offset Setter
 // 分页偏移量 eq . limit offset ,rows
-func (r *AlibabaWestcrmActivityListGetRequest) SetOffset(offset int64) error {
-    r.offset = offset
-    r.Set("offset", offset)
+func (r *AlibabaWestcrmActivityListGetRequest) SetOffset(_offset int64) error {
+    r._offset = _offset
+    r.Set("offset", _offset)
     return nil
 }
 
 // Offset Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetOffset() int64 {
-    return r.offset
+    return r._offset
 }
 // Rows Setter
 // 页大小,默认每页查询10条数据
-func (r *AlibabaWestcrmActivityListGetRequest) SetRows(rows int64) error {
-    r.rows = rows
-    r.Set("rows", rows)
+func (r *AlibabaWestcrmActivityListGetRequest) SetRows(_rows int64) error {
+    r._rows = _rows
+    r.Set("rows", _rows)
     return nil
 }
 
 // Rows Getter
 func (r AlibabaWestcrmActivityListGetRequest) GetRows() int64 {
-    return r.rows
+    return r._rows
 }

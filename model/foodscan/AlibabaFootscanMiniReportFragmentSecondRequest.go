@@ -15,9 +15,9 @@ alibaba.footscan.mini.report.fragment.second
 type AlibabaFootscanMiniReportFragmentSecondRequest struct {
     model.Params
     // 平台分配的token
-    token   string
+    _token   string
     // 请求数据
-    reqData   *FilePackageBasicReq
+    _reqData   *FilePackageBasicReq
 }
 
 // 初始化AlibabaFootscanMiniReportFragmentSecondRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaFootscanMiniReportFragmentSecondRequest) GetApiParams() url.Value
 }
 // Token Setter
 // 平台分配的token
-func (r *AlibabaFootscanMiniReportFragmentSecondRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *AlibabaFootscanMiniReportFragmentSecondRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r AlibabaFootscanMiniReportFragmentSecondRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ReqData Setter
 // 请求数据
-func (r *AlibabaFootscanMiniReportFragmentSecondRequest) SetReqData(reqData *FilePackageBasicReq) error {
-    r.reqData = reqData
-    r.Set("req_data", reqData)
+func (r *AlibabaFootscanMiniReportFragmentSecondRequest) SetReqData(_reqData *FilePackageBasicReq) error {
+    r._reqData = _reqData
+    r.Set("req_data", _reqData)
     return nil
 }
 
 // ReqData Getter
 func (r AlibabaFootscanMiniReportFragmentSecondRequest) GetReqData() *FilePackageBasicReq {
-    return r.reqData
+    return r._reqData
 }

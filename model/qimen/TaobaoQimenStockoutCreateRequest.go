@@ -15,7 +15,7 @@ ERP调用奇门接口，创建出库单信息
 type TaobaoQimenStockoutCreateRequest struct {
     model.Params
     // 
-    request   *StockOutCreateRequest
+    _request   *StockOutCreateRequest
 }
 
 // 初始化TaobaoQimenStockoutCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenStockoutCreateRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenStockoutCreateRequest) SetRequest(request *StockOutCreateRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenStockoutCreateRequest) SetRequest(_request *StockOutCreateRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenStockoutCreateRequest) GetRequest() *StockOutCreateRequest {
-    return r.request
+    return r._request
 }

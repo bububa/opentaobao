@@ -15,7 +15,7 @@ alibaba.alsc.crm.card.active
 type AlibabaAlscCrmCardActiveRequest struct {
     model.Params
     // 请求参数
-    paramActiveCardOpenReq   *ActiveCardOpenReq
+    _paramActiveCardOpenReq   *ActiveCardOpenReq
 }
 
 // 初始化AlibabaAlscCrmCardActiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmCardActiveRequest) GetApiParams() url.Values {
 }
 // ParamActiveCardOpenReq Setter
 // 请求参数
-func (r *AlibabaAlscCrmCardActiveRequest) SetParamActiveCardOpenReq(paramActiveCardOpenReq *ActiveCardOpenReq) error {
-    r.paramActiveCardOpenReq = paramActiveCardOpenReq
-    r.Set("param_active_card_open_req", paramActiveCardOpenReq)
+func (r *AlibabaAlscCrmCardActiveRequest) SetParamActiveCardOpenReq(_paramActiveCardOpenReq *ActiveCardOpenReq) error {
+    r._paramActiveCardOpenReq = _paramActiveCardOpenReq
+    r.Set("param_active_card_open_req", _paramActiveCardOpenReq)
     return nil
 }
 
 // ParamActiveCardOpenReq Getter
 func (r AlibabaAlscCrmCardActiveRequest) GetParamActiveCardOpenReq() *ActiveCardOpenReq {
-    return r.paramActiveCardOpenReq
+    return r._paramActiveCardOpenReq
 }

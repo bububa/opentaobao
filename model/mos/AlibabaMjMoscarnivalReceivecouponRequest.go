@@ -15,9 +15,9 @@ alibaba.mj.moscarnival.receivecoupon
 type AlibabaMjMoscarnivalReceivecouponRequest struct {
     model.Params
     // 手机号码
-    mobile   string
+    _mobile   string
     // 活动id
-    activityId   int64
+    _activityId   int64
 }
 
 // 初始化AlibabaMjMoscarnivalReceivecouponRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMjMoscarnivalReceivecouponRequest) GetApiParams() url.Values {
 }
 // Mobile Setter
 // 手机号码
-func (r *AlibabaMjMoscarnivalReceivecouponRequest) SetMobile(mobile string) error {
-    r.mobile = mobile
-    r.Set("mobile", mobile)
+func (r *AlibabaMjMoscarnivalReceivecouponRequest) SetMobile(_mobile string) error {
+    r._mobile = _mobile
+    r.Set("mobile", _mobile)
     return nil
 }
 
 // Mobile Getter
 func (r AlibabaMjMoscarnivalReceivecouponRequest) GetMobile() string {
-    return r.mobile
+    return r._mobile
 }
 // ActivityId Setter
 // 活动id
-func (r *AlibabaMjMoscarnivalReceivecouponRequest) SetActivityId(activityId int64) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *AlibabaMjMoscarnivalReceivecouponRequest) SetActivityId(_activityId int64) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r AlibabaMjMoscarnivalReceivecouponRequest) GetActivityId() int64 {
-    return r.activityId
+    return r._activityId
 }

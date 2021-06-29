@@ -15,9 +15,9 @@ alibaba.wdk.logistics.pus.pickup.cararrived
 type AlibabaWdkLogisticsPusPickupCararrivedRequest struct {
     model.Params
     // 自提点
-    stationCode   string
+    _stationCode   string
     // 车牌号
-    carNum   string
+    _carNum   string
 }
 
 // 初始化AlibabaWdkLogisticsPusPickupCararrivedRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaWdkLogisticsPusPickupCararrivedRequest) GetApiParams() url.Values
 }
 // StationCode Setter
 // 自提点
-func (r *AlibabaWdkLogisticsPusPickupCararrivedRequest) SetStationCode(stationCode string) error {
-    r.stationCode = stationCode
-    r.Set("station_code", stationCode)
+func (r *AlibabaWdkLogisticsPusPickupCararrivedRequest) SetStationCode(_stationCode string) error {
+    r._stationCode = _stationCode
+    r.Set("station_code", _stationCode)
     return nil
 }
 
 // StationCode Getter
 func (r AlibabaWdkLogisticsPusPickupCararrivedRequest) GetStationCode() string {
-    return r.stationCode
+    return r._stationCode
 }
 // CarNum Setter
 // 车牌号
-func (r *AlibabaWdkLogisticsPusPickupCararrivedRequest) SetCarNum(carNum string) error {
-    r.carNum = carNum
-    r.Set("car_num", carNum)
+func (r *AlibabaWdkLogisticsPusPickupCararrivedRequest) SetCarNum(_carNum string) error {
+    r._carNum = _carNum
+    r.Set("car_num", _carNum)
     return nil
 }
 
 // CarNum Getter
 func (r AlibabaWdkLogisticsPusPickupCararrivedRequest) GetCarNum() string {
-    return r.carNum
+    return r._carNum
 }

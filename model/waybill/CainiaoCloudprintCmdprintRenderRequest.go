@@ -15,7 +15,7 @@ isv 进行无线打印，需要将渲染数据传给打印机，通过生成打�
 type CainiaoCloudprintCmdprintRenderRequest struct {
     model.Params
     // 参数对象
-    params   *CmdRenderParams
+    _params   *CmdRenderParams
 }
 
 // 初始化CainiaoCloudprintCmdprintRenderRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCloudprintCmdprintRenderRequest) GetApiParams() url.Values {
 }
 // Params Setter
 // 参数对象
-func (r *CainiaoCloudprintCmdprintRenderRequest) SetParams(params *CmdRenderParams) error {
-    r.params = params
-    r.Set("params", params)
+func (r *CainiaoCloudprintCmdprintRenderRequest) SetParams(_params *CmdRenderParams) error {
+    r._params = _params
+    r.Set("params", _params)
     return nil
 }
 
 // Params Getter
 func (r CainiaoCloudprintCmdprintRenderRequest) GetParams() *CmdRenderParams {
-    return r.params
+    return r._params
 }

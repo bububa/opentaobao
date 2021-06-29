@@ -15,7 +15,7 @@ alibaba.aliqin.fc.iot.cardInfo
 type AlibabaAliqinFcIotCardInfoRequest struct {
     model.Params
     // SIM卡号
-    iccid   string
+    _iccid   string
 }
 
 // 初始化AlibabaAliqinFcIotCardInfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinFcIotCardInfoRequest) GetApiParams() url.Values {
 }
 // Iccid Setter
 // SIM卡号
-func (r *AlibabaAliqinFcIotCardInfoRequest) SetIccid(iccid string) error {
-    r.iccid = iccid
-    r.Set("iccid", iccid)
+func (r *AlibabaAliqinFcIotCardInfoRequest) SetIccid(_iccid string) error {
+    r._iccid = _iccid
+    r.Set("iccid", _iccid)
     return nil
 }
 
 // Iccid Getter
 func (r AlibabaAliqinFcIotCardInfoRequest) GetIccid() string {
-    return r.iccid
+    return r._iccid
 }

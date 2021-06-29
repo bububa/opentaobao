@@ -15,11 +15,11 @@ alibaba.isv.digitalsms.createtemplate
 type AlibabaIsvDigitalsmsCreatetemplateRequest struct {
     model.Params
     // 模板名称
-    templateName   string
+    _templateName   string
     // 系统自动生成
-    templateContents   []DigitalSmsTemplateContentDto
+    _templateContents   []DigitalSmsTemplateContentDto
     // 申请说明
-    applyRemark   string
+    _applyRemark   string
 }
 
 // 初始化AlibabaIsvDigitalsmsCreatetemplateRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApiParams() url.Values {
 }
 // TemplateName Setter
 // 模板名称
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateName(templateName string) error {
-    r.templateName = templateName
-    r.Set("template_name", templateName)
+func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateName(_templateName string) error {
+    r._templateName = _templateName
+    r.Set("template_name", _templateName)
     return nil
 }
 
 // TemplateName Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateName() string {
-    return r.templateName
+    return r._templateName
 }
 // TemplateContents Setter
 // 系统自动生成
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateContents(templateContents []DigitalSmsTemplateContentDto) error {
-    r.templateContents = templateContents
-    r.Set("template_contents", templateContents)
+func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+    r._templateContents = _templateContents
+    r.Set("template_contents", _templateContents)
     return nil
 }
 
 // TemplateContents Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
-    return r.templateContents
+    return r._templateContents
 }
 // ApplyRemark Setter
 // 申请说明
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetApplyRemark(applyRemark string) error {
-    r.applyRemark = applyRemark
-    r.Set("apply_remark", applyRemark)
+func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetApplyRemark(_applyRemark string) error {
+    r._applyRemark = _applyRemark
+    r.Set("apply_remark", _applyRemark)
     return nil
 }
 
 // ApplyRemark Getter
 func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetApplyRemark() string {
-    return r.applyRemark
+    return r._applyRemark
 }

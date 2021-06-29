@@ -15,11 +15,11 @@ taobao.degoperation.get.by.eventkey
 type TaobaoDegoperationGetByEventkeyRequest struct {
     model.Params
     // 活动后台配置appkey
-    degAppKey   string
+    _degAppKey   string
     // 活动后台配置eventkey
-    eventKey   string
+    _eventKey   string
     // info
-    degAccessToken   string
+    _degAccessToken   string
 }
 
 // 初始化TaobaoDegoperationGetByEventkeyRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoDegoperationGetByEventkeyRequest) GetApiParams() url.Values {
 }
 // DegAppKey Setter
 // 活动后台配置appkey
-func (r *TaobaoDegoperationGetByEventkeyRequest) SetDegAppKey(degAppKey string) error {
-    r.degAppKey = degAppKey
-    r.Set("deg_app_key", degAppKey)
+func (r *TaobaoDegoperationGetByEventkeyRequest) SetDegAppKey(_degAppKey string) error {
+    r._degAppKey = _degAppKey
+    r.Set("deg_app_key", _degAppKey)
     return nil
 }
 
 // DegAppKey Getter
 func (r TaobaoDegoperationGetByEventkeyRequest) GetDegAppKey() string {
-    return r.degAppKey
+    return r._degAppKey
 }
 // EventKey Setter
 // 活动后台配置eventkey
-func (r *TaobaoDegoperationGetByEventkeyRequest) SetEventKey(eventKey string) error {
-    r.eventKey = eventKey
-    r.Set("event_key", eventKey)
+func (r *TaobaoDegoperationGetByEventkeyRequest) SetEventKey(_eventKey string) error {
+    r._eventKey = _eventKey
+    r.Set("event_key", _eventKey)
     return nil
 }
 
 // EventKey Getter
 func (r TaobaoDegoperationGetByEventkeyRequest) GetEventKey() string {
-    return r.eventKey
+    return r._eventKey
 }
 // DegAccessToken Setter
 // info
-func (r *TaobaoDegoperationGetByEventkeyRequest) SetDegAccessToken(degAccessToken string) error {
-    r.degAccessToken = degAccessToken
-    r.Set("deg_access_token", degAccessToken)
+func (r *TaobaoDegoperationGetByEventkeyRequest) SetDegAccessToken(_degAccessToken string) error {
+    r._degAccessToken = _degAccessToken
+    r.Set("deg_access_token", _degAccessToken)
     return nil
 }
 
 // DegAccessToken Getter
 func (r TaobaoDegoperationGetByEventkeyRequest) GetDegAccessToken() string {
-    return r.degAccessToken
+    return r._degAccessToken
 }

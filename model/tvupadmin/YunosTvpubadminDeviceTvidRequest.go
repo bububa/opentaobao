@@ -15,7 +15,7 @@ yunos.tvpubadmin.device.tvid
 type YunosTvpubadminDeviceTvidRequest struct {
     model.Params
     // 设备的UUID
-    uuid   string
+    _uuid   string
 }
 
 // 初始化YunosTvpubadminDeviceTvidRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminDeviceTvidRequest) GetApiParams() url.Values {
 }
 // Uuid Setter
 // 设备的UUID
-func (r *YunosTvpubadminDeviceTvidRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *YunosTvpubadminDeviceTvidRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r YunosTvpubadminDeviceTvidRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

@@ -15,19 +15,19 @@ taobao.weitao.feed.synchronize
 type TaobaoWeitaoFeedSynchronizeRequest struct {
     model.Params
     // 活动id
-    bizId   int64
+    _bizId   int64
     // feed封面图片url
-    coverPath   string
+    _coverPath   string
     // feed点击跳转的活动地址
-    detailUrl   string
+    _detailUrl   string
     // feed展示结束时间
-    endTime   int64
+    _endTime   int64
     // feed展示开始时间
-    startTime   int64
+    _startTime   int64
     // feed描述
-    summary   string
+    _summary   string
     // feed标题
-    title   string
+    _title   string
 }
 
 // 初始化TaobaoWeitaoFeedSynchronizeRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoWeitaoFeedSynchronizeRequest) GetApiParams() url.Values {
 }
 // BizId Setter
 // 活动id
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetBizId(bizId int64) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetBizId(_bizId int64) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetBizId() int64 {
-    return r.bizId
+    return r._bizId
 }
 // CoverPath Setter
 // feed封面图片url
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetCoverPath(coverPath string) error {
-    r.coverPath = coverPath
-    r.Set("cover_path", coverPath)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetCoverPath(_coverPath string) error {
+    r._coverPath = _coverPath
+    r.Set("cover_path", _coverPath)
     return nil
 }
 
 // CoverPath Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetCoverPath() string {
-    return r.coverPath
+    return r._coverPath
 }
 // DetailUrl Setter
 // feed点击跳转的活动地址
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetDetailUrl(detailUrl string) error {
-    r.detailUrl = detailUrl
-    r.Set("detail_url", detailUrl)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetDetailUrl(_detailUrl string) error {
+    r._detailUrl = _detailUrl
+    r.Set("detail_url", _detailUrl)
     return nil
 }
 
 // DetailUrl Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetDetailUrl() string {
-    return r.detailUrl
+    return r._detailUrl
 }
 // EndTime Setter
 // feed展示结束时间
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetEndTime(endTime int64) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetEndTime(_endTime int64) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetEndTime() int64 {
-    return r.endTime
+    return r._endTime
 }
 // StartTime Setter
 // feed展示开始时间
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetStartTime(startTime int64) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetStartTime(_startTime int64) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetStartTime() int64 {
-    return r.startTime
+    return r._startTime
 }
 // Summary Setter
 // feed描述
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetSummary(summary string) error {
-    r.summary = summary
-    r.Set("summary", summary)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetSummary(_summary string) error {
+    r._summary = _summary
+    r.Set("summary", _summary)
     return nil
 }
 
 // Summary Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetSummary() string {
-    return r.summary
+    return r._summary
 }
 // Title Setter
 // feed标题
-func (r *TaobaoWeitaoFeedSynchronizeRequest) SetTitle(title string) error {
-    r.title = title
-    r.Set("title", title)
+func (r *TaobaoWeitaoFeedSynchronizeRequest) SetTitle(_title string) error {
+    r._title = _title
+    r.Set("title", _title)
     return nil
 }
 
 // Title Getter
 func (r TaobaoWeitaoFeedSynchronizeRequest) GetTitle() string {
-    return r.title
+    return r._title
 }

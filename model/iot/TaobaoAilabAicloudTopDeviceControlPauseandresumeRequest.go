@@ -15,11 +15,11 @@ taobao.ailab.aicloud.top.device.control.pauseandresume
 type TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest struct {
     model.Params
     // 用户信息
-    param0   *OpenBaseInfo
+    _param0   *OpenBaseInfo
     // 设备id
-    param1   string
+    _param1   string
     // 是暂停还是继续
-    param2   bool
+    _param2   bool
 }
 
 // 初始化TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetApiParams() 
 }
 // Param0 Setter
 // 用户信息
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam0(param0 *OpenBaseInfo) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam0(_param0 *OpenBaseInfo) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam0() *OpenBaseInfo {
-    return r.param0
+    return r._param0
 }
 // Param1 Setter
 // 设备id
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam1(param1 string) error {
-    r.param1 = param1
-    r.Set("param1", param1)
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam1(_param1 string) error {
+    r._param1 = _param1
+    r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam1() string {
-    return r.param1
+    return r._param1
 }
 // Param2 Setter
 // 是暂停还是继续
-func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam2(param2 bool) error {
-    r.param2 = param2
-    r.Set("param2", param2)
+func (r *TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) SetParam2(_param2 bool) error {
+    r._param2 = _param2
+    r.Set("param2", _param2)
     return nil
 }
 
 // Param2 Getter
 func (r TaobaoAilabAicloudTopDeviceControlPauseandresumeRequest) GetParam2() bool {
-    return r.param2
+    return r._param2
 }

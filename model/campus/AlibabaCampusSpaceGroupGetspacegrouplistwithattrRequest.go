@@ -15,9 +15,9 @@ alibaba.campus.space.group.getspacegrouplistwithattr
 type AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest struct {
     model.Params
     // 操作用户上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 查询对象
-    groupQuery   *SpaceGroupQuery
+    _groupQuery   *SpaceGroupQuery
 }
 
 // 初始化AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) GetApiParams() 
 }
 // Context Setter
 // 操作用户上下文
-func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // GroupQuery Setter
 // 查询对象
-func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) SetGroupQuery(groupQuery *SpaceGroupQuery) error {
-    r.groupQuery = groupQuery
-    r.Set("group_query", groupQuery)
+func (r *AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) SetGroupQuery(_groupQuery *SpaceGroupQuery) error {
+    r._groupQuery = _groupQuery
+    r.Set("group_query", _groupQuery)
     return nil
 }
 
 // GroupQuery Getter
 func (r AlibabaCampusSpaceGroupGetspacegrouplistwithattrRequest) GetGroupQuery() *SpaceGroupQuery {
-    return r.groupQuery
+    return r._groupQuery
 }

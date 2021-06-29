@@ -15,17 +15,17 @@ taobao.item.joint.img
 type TaobaoItemJointImgRequest struct {
     model.Params
     // 商品图片id(如果是更新图片，则需要传该参数)
-    id   int64
+    _id   int64
     // 商品数字ID，必选
-    numIid   int64
+    _numIid   int64
     // 图片URL,图片空间图片的相对地址，支持的文件类型：jpg,jpeg,png
-    picPath   string
+    _picPath   string
     // 上传的图片是否关联为商品主图
-    isMajor   bool
+    _isMajor   bool
     // 图片序号
-    position   int64
+    _position   int64
     // 是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图
-    isRectangle   bool
+    _isRectangle   bool
 }
 
 // 初始化TaobaoItemJointImgRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoItemJointImgRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 商品图片id(如果是更新图片，则需要传该参数)
-func (r *TaobaoItemJointImgRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TaobaoItemJointImgRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TaobaoItemJointImgRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // NumIid Setter
 // 商品数字ID，必选
-func (r *TaobaoItemJointImgRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemJointImgRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemJointImgRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }
 // PicPath Setter
 // 图片URL,图片空间图片的相对地址，支持的文件类型：jpg,jpeg,png
-func (r *TaobaoItemJointImgRequest) SetPicPath(picPath string) error {
-    r.picPath = picPath
-    r.Set("pic_path", picPath)
+func (r *TaobaoItemJointImgRequest) SetPicPath(_picPath string) error {
+    r._picPath = _picPath
+    r.Set("pic_path", _picPath)
     return nil
 }
 
 // PicPath Getter
 func (r TaobaoItemJointImgRequest) GetPicPath() string {
-    return r.picPath
+    return r._picPath
 }
 // IsMajor Setter
 // 上传的图片是否关联为商品主图
-func (r *TaobaoItemJointImgRequest) SetIsMajor(isMajor bool) error {
-    r.isMajor = isMajor
-    r.Set("is_major", isMajor)
+func (r *TaobaoItemJointImgRequest) SetIsMajor(_isMajor bool) error {
+    r._isMajor = _isMajor
+    r.Set("is_major", _isMajor)
     return nil
 }
 
 // IsMajor Getter
 func (r TaobaoItemJointImgRequest) GetIsMajor() bool {
-    return r.isMajor
+    return r._isMajor
 }
 // Position Setter
 // 图片序号
-func (r *TaobaoItemJointImgRequest) SetPosition(position int64) error {
-    r.position = position
-    r.Set("position", position)
+func (r *TaobaoItemJointImgRequest) SetPosition(_position int64) error {
+    r._position = _position
+    r.Set("position", _position)
     return nil
 }
 
 // Position Getter
 func (r TaobaoItemJointImgRequest) GetPosition() int64 {
-    return r.position
+    return r._position
 }
 // IsRectangle Setter
 // 是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图
-func (r *TaobaoItemJointImgRequest) SetIsRectangle(isRectangle bool) error {
-    r.isRectangle = isRectangle
-    r.Set("is_rectangle", isRectangle)
+func (r *TaobaoItemJointImgRequest) SetIsRectangle(_isRectangle bool) error {
+    r._isRectangle = _isRectangle
+    r.Set("is_rectangle", _isRectangle)
     return nil
 }
 
 // IsRectangle Getter
 func (r TaobaoItemJointImgRequest) GetIsRectangle() bool {
-    return r.isRectangle
+    return r._isRectangle
 }

@@ -15,7 +15,7 @@ taobao.wlb.waybill.i.print
 type TaobaoWlbWaybillIPrintRequest struct {
     model.Params
     // 打印请求
-    waybillApplyPrintCheckRequest   *WaybillApplyPrintCheckRequest
+    _waybillApplyPrintCheckRequest   *WaybillApplyPrintCheckRequest
 }
 
 // 初始化TaobaoWlbWaybillIPrintRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWlbWaybillIPrintRequest) GetApiParams() url.Values {
 }
 // WaybillApplyPrintCheckRequest Setter
 // 打印请求
-func (r *TaobaoWlbWaybillIPrintRequest) SetWaybillApplyPrintCheckRequest(waybillApplyPrintCheckRequest *WaybillApplyPrintCheckRequest) error {
-    r.waybillApplyPrintCheckRequest = waybillApplyPrintCheckRequest
-    r.Set("waybill_apply_print_check_request", waybillApplyPrintCheckRequest)
+func (r *TaobaoWlbWaybillIPrintRequest) SetWaybillApplyPrintCheckRequest(_waybillApplyPrintCheckRequest *WaybillApplyPrintCheckRequest) error {
+    r._waybillApplyPrintCheckRequest = _waybillApplyPrintCheckRequest
+    r.Set("waybill_apply_print_check_request", _waybillApplyPrintCheckRequest)
     return nil
 }
 
 // WaybillApplyPrintCheckRequest Getter
 func (r TaobaoWlbWaybillIPrintRequest) GetWaybillApplyPrintCheckRequest() *WaybillApplyPrintCheckRequest {
-    return r.waybillApplyPrintCheckRequest
+    return r._waybillApplyPrintCheckRequest
 }

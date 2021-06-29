@@ -21,13 +21,13 @@ taobao.auction.gov.data.monthly.get
 type TaobaoAuctionGovDataMonthlyGetRequest struct {
     model.Params
     // 法院名称
-    courtName   string
+    _courtName   string
     // 统计数据是够包含下属法院
-    isIncludeSub   bool
+    _isIncludeSub   bool
     // 开始月份
-    startMonth   string
+    _startMonth   string
     // 截止月份(统计数据包含这个月)
-    endMonth   string
+    _endMonth   string
 }
 
 // 初始化TaobaoAuctionGovDataMonthlyGetRequest对象
@@ -52,49 +52,49 @@ func (r TaobaoAuctionGovDataMonthlyGetRequest) GetApiParams() url.Values {
 }
 // CourtName Setter
 // 法院名称
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetCourtName(courtName string) error {
-    r.courtName = courtName
-    r.Set("court_name", courtName)
+func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetCourtName(_courtName string) error {
+    r._courtName = _courtName
+    r.Set("court_name", _courtName)
     return nil
 }
 
 // CourtName Getter
 func (r TaobaoAuctionGovDataMonthlyGetRequest) GetCourtName() string {
-    return r.courtName
+    return r._courtName
 }
 // IsIncludeSub Setter
 // 统计数据是够包含下属法院
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetIsIncludeSub(isIncludeSub bool) error {
-    r.isIncludeSub = isIncludeSub
-    r.Set("is_include_sub", isIncludeSub)
+func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+    r._isIncludeSub = _isIncludeSub
+    r.Set("is_include_sub", _isIncludeSub)
     return nil
 }
 
 // IsIncludeSub Getter
 func (r TaobaoAuctionGovDataMonthlyGetRequest) GetIsIncludeSub() bool {
-    return r.isIncludeSub
+    return r._isIncludeSub
 }
 // StartMonth Setter
 // 开始月份
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetStartMonth(startMonth string) error {
-    r.startMonth = startMonth
-    r.Set("start_month", startMonth)
+func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetStartMonth(_startMonth string) error {
+    r._startMonth = _startMonth
+    r.Set("start_month", _startMonth)
     return nil
 }
 
 // StartMonth Getter
 func (r TaobaoAuctionGovDataMonthlyGetRequest) GetStartMonth() string {
-    return r.startMonth
+    return r._startMonth
 }
 // EndMonth Setter
 // 截止月份(统计数据包含这个月)
-func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetEndMonth(endMonth string) error {
-    r.endMonth = endMonth
-    r.Set("end_month", endMonth)
+func (r *TaobaoAuctionGovDataMonthlyGetRequest) SetEndMonth(_endMonth string) error {
+    r._endMonth = _endMonth
+    r.Set("end_month", _endMonth)
     return nil
 }
 
 // EndMonth Getter
 func (r TaobaoAuctionGovDataMonthlyGetRequest) GetEndMonth() string {
-    return r.endMonth
+    return r._endMonth
 }

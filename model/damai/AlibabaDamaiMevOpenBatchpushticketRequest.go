@@ -15,7 +15,7 @@ alibaba.damai.mev.open.batchpushticket
 type AlibabaDamaiMevOpenBatchpushticketRequest struct {
     model.Params
     // 入参thirdTicketSetOpenParamList
-    thirdTicketSetOpenParamList   []ThirdTicketPushOpenParam
+    _thirdTicketSetOpenParamList   []ThirdTicketPushOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenBatchpushticketRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetApiParams() url.Values {
 }
 // ThirdTicketSetOpenParamList Setter
 // 入参thirdTicketSetOpenParamList
-func (r *AlibabaDamaiMevOpenBatchpushticketRequest) SetThirdTicketSetOpenParamList(thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
-    r.thirdTicketSetOpenParamList = thirdTicketSetOpenParamList
-    r.Set("third_ticket_set_open_param_list", thirdTicketSetOpenParamList)
+func (r *AlibabaDamaiMevOpenBatchpushticketRequest) SetThirdTicketSetOpenParamList(_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
+    r._thirdTicketSetOpenParamList = _thirdTicketSetOpenParamList
+    r.Set("third_ticket_set_open_param_list", _thirdTicketSetOpenParamList)
     return nil
 }
 
 // ThirdTicketSetOpenParamList Getter
 func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetThirdTicketSetOpenParamList() []ThirdTicketPushOpenParam {
-    return r.thirdTicketSetOpenParamList
+    return r._thirdTicketSetOpenParamList
 }

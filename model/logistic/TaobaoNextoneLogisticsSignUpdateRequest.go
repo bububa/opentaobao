@@ -15,9 +15,9 @@ taobao.nextone.logistics.sign.update
 type TaobaoNextoneLogisticsSignUpdateRequest struct {
     model.Params
     // 退款编号
-    refundId   int64
+    _refundId   int64
     // 货物签收状态
-    signStatus   int64
+    _signStatus   int64
 }
 
 // 初始化TaobaoNextoneLogisticsSignUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoNextoneLogisticsSignUpdateRequest) GetApiParams() url.Values {
 }
 // RefundId Setter
 // 退款编号
-func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TaobaoNextoneLogisticsSignUpdateRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // SignStatus Setter
 // 货物签收状态
-func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetSignStatus(signStatus int64) error {
-    r.signStatus = signStatus
-    r.Set("sign_status", signStatus)
+func (r *TaobaoNextoneLogisticsSignUpdateRequest) SetSignStatus(_signStatus int64) error {
+    r._signStatus = _signStatus
+    r.Set("sign_status", _signStatus)
     return nil
 }
 
 // SignStatus Getter
 func (r TaobaoNextoneLogisticsSignUpdateRequest) GetSignStatus() int64 {
-    return r.signStatus
+    return r._signStatus
 }

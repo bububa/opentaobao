@@ -15,7 +15,7 @@ taobao.bus.refundticketprice.set
 type TaobaoBusRefundticketpriceSetRequest struct {
     model.Params
     // 退票申请入参
-    offlineRefundTicketRq   *OfflineRefundTicketPriceRq
+    _offlineRefundTicketRq   *OfflineRefundTicketPriceRq
 }
 
 // 初始化TaobaoBusRefundticketpriceSetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusRefundticketpriceSetRequest) GetApiParams() url.Values {
 }
 // OfflineRefundTicketRq Setter
 // 退票申请入参
-func (r *TaobaoBusRefundticketpriceSetRequest) SetOfflineRefundTicketRq(offlineRefundTicketRq *OfflineRefundTicketPriceRq) error {
-    r.offlineRefundTicketRq = offlineRefundTicketRq
-    r.Set("offline_refund_ticket_rq", offlineRefundTicketRq)
+func (r *TaobaoBusRefundticketpriceSetRequest) SetOfflineRefundTicketRq(_offlineRefundTicketRq *OfflineRefundTicketPriceRq) error {
+    r._offlineRefundTicketRq = _offlineRefundTicketRq
+    r.Set("offline_refund_ticket_rq", _offlineRefundTicketRq)
     return nil
 }
 
 // OfflineRefundTicketRq Getter
 func (r TaobaoBusRefundticketpriceSetRequest) GetOfflineRefundTicketRq() *OfflineRefundTicketPriceRq {
-    return r.offlineRefundTicketRq
+    return r._offlineRefundTicketRq
 }

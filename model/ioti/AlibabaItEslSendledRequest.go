@@ -15,9 +15,9 @@ alibaba.it.esl.sendled
 type AlibabaItEslSendledRequest struct {
     model.Params
     // mac
-    macAp   string
+    _macAp   string
     // 0、1、2、3：关蓝绿红
-    type   string
+    _type   string
 }
 
 // 初始化AlibabaItEslSendledRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaItEslSendledRequest) GetApiParams() url.Values {
 }
 // MacAp Setter
 // mac
-func (r *AlibabaItEslSendledRequest) SetMacAp(macAp string) error {
-    r.macAp = macAp
-    r.Set("mac_ap", macAp)
+func (r *AlibabaItEslSendledRequest) SetMacAp(_macAp string) error {
+    r._macAp = _macAp
+    r.Set("mac_ap", _macAp)
     return nil
 }
 
 // MacAp Getter
 func (r AlibabaItEslSendledRequest) GetMacAp() string {
-    return r.macAp
+    return r._macAp
 }
 // Type Setter
 // 0、1、2、3：关蓝绿红
-func (r *AlibabaItEslSendledRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *AlibabaItEslSendledRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r AlibabaItEslSendledRequest) GetType() string {
-    return r.type
+    return r._type
 }

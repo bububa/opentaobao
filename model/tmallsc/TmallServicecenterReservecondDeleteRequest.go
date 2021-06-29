@@ -15,7 +15,7 @@ tmall.servicecenter.reservecond.delete
 type TmallServicecenterReservecondDeleteRequest struct {
     model.Params
     // 主动预约条件删除
-    reserveOpenConditionDelDto   *ReserveOpenConditionDelDto
+    _reserveOpenConditionDelDto   *ReserveOpenConditionDelDto
 }
 
 // 初始化TmallServicecenterReservecondDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterReservecondDeleteRequest) GetApiParams() url.Values {
 }
 // ReserveOpenConditionDelDto Setter
 // 主动预约条件删除
-func (r *TmallServicecenterReservecondDeleteRequest) SetReserveOpenConditionDelDto(reserveOpenConditionDelDto *ReserveOpenConditionDelDto) error {
-    r.reserveOpenConditionDelDto = reserveOpenConditionDelDto
-    r.Set("reserve_open_condition_del_dto", reserveOpenConditionDelDto)
+func (r *TmallServicecenterReservecondDeleteRequest) SetReserveOpenConditionDelDto(_reserveOpenConditionDelDto *ReserveOpenConditionDelDto) error {
+    r._reserveOpenConditionDelDto = _reserveOpenConditionDelDto
+    r.Set("reserve_open_condition_del_dto", _reserveOpenConditionDelDto)
     return nil
 }
 
 // ReserveOpenConditionDelDto Getter
 func (r TmallServicecenterReservecondDeleteRequest) GetReserveOpenConditionDelDto() *ReserveOpenConditionDelDto {
-    return r.reserveOpenConditionDelDto
+    return r._reserveOpenConditionDelDto
 }

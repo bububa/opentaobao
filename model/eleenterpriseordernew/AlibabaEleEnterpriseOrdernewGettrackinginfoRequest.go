@@ -15,9 +15,9 @@ alibaba.ele.enterprise.ordernew.gettrackinginfo
 type AlibabaEleEnterpriseOrdernewGettrackinginfoRequest struct {
     model.Params
     // 饿了么订单ID
-    orderId   string
+    _orderId   string
     // 用户手机号
-    phone   string
+    _phone   string
 }
 
 // 初始化AlibabaEleEnterpriseOrdernewGettrackinginfoRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetApiParams() url.V
 }
 // OrderId Setter
 // 饿了么订单ID
-func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetOrderId(orderId string) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetOrderId() string {
-    return r.orderId
+    return r._orderId
 }
 // Phone Setter
 // 用户手机号
-func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseOrdernewGettrackinginfoRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }

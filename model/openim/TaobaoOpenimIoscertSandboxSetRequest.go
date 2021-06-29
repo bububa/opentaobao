@@ -15,9 +15,9 @@ taobao.openim.ioscert.sandbox.set
 type TaobaoOpenimIoscertSandboxSetRequest struct {
     model.Params
     // 证书内容,base64编码
-    cert   string
+    _cert   string
     // 系统自动生成
-    password   string
+    _password   string
 }
 
 // 初始化TaobaoOpenimIoscertSandboxSetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoOpenimIoscertSandboxSetRequest) GetApiParams() url.Values {
 }
 // Cert Setter
 // 证书内容,base64编码
-func (r *TaobaoOpenimIoscertSandboxSetRequest) SetCert(cert string) error {
-    r.cert = cert
-    r.Set("cert", cert)
+func (r *TaobaoOpenimIoscertSandboxSetRequest) SetCert(_cert string) error {
+    r._cert = _cert
+    r.Set("cert", _cert)
     return nil
 }
 
 // Cert Getter
 func (r TaobaoOpenimIoscertSandboxSetRequest) GetCert() string {
-    return r.cert
+    return r._cert
 }
 // Password Setter
 // 系统自动生成
-func (r *TaobaoOpenimIoscertSandboxSetRequest) SetPassword(password string) error {
-    r.password = password
-    r.Set("password", password)
+func (r *TaobaoOpenimIoscertSandboxSetRequest) SetPassword(_password string) error {
+    r._password = _password
+    r.Set("password", _password)
     return nil
 }
 
 // Password Getter
 func (r TaobaoOpenimIoscertSandboxSetRequest) GetPassword() string {
-    return r.password
+    return r._password
 }

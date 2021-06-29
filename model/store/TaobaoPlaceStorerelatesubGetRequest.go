@@ -15,13 +15,13 @@ taobao.place.storerelatesub.get
 type TaobaoPlaceStorerelatesubGetRequest struct {
     model.Params
     // 门店Id
-    storeId   int64
+    _storeId   int64
     // 查询语句
-    query   string
+    _query   string
     // 第几页
-    pageNo   int64
+    _pageNo   int64
     // 页大小
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化TaobaoPlaceStorerelatesubGetRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoPlaceStorerelatesubGetRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店Id
-func (r *TaobaoPlaceStorerelatesubGetRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStorerelatesubGetRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStorerelatesubGetRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // Query Setter
 // 查询语句
-func (r *TaobaoPlaceStorerelatesubGetRequest) SetQuery(query string) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TaobaoPlaceStorerelatesubGetRequest) SetQuery(_query string) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TaobaoPlaceStorerelatesubGetRequest) GetQuery() string {
-    return r.query
+    return r._query
 }
 // PageNo Setter
 // 第几页
-func (r *TaobaoPlaceStorerelatesubGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoPlaceStorerelatesubGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoPlaceStorerelatesubGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 页大小
-func (r *TaobaoPlaceStorerelatesubGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoPlaceStorerelatesubGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoPlaceStorerelatesubGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

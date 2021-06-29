@@ -15,7 +15,7 @@ alibaba.lst.trade.seller.offline.order.cancel
 type AlibabaLstTradeSellerOfflineOrderCancelRequest struct {
     model.Params
     // 入参
-    offlineOrderCancalParam   *LstOfflineOrderCancalParam
+    _offlineOrderCancalParam   *LstOfflineOrderCancalParam
 }
 
 // 初始化AlibabaLstTradeSellerOfflineOrderCancelRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstTradeSellerOfflineOrderCancelRequest) GetApiParams() url.Value
 }
 // OfflineOrderCancalParam Setter
 // 入参
-func (r *AlibabaLstTradeSellerOfflineOrderCancelRequest) SetOfflineOrderCancalParam(offlineOrderCancalParam *LstOfflineOrderCancalParam) error {
-    r.offlineOrderCancalParam = offlineOrderCancalParam
-    r.Set("offline_order_cancal_param", offlineOrderCancalParam)
+func (r *AlibabaLstTradeSellerOfflineOrderCancelRequest) SetOfflineOrderCancalParam(_offlineOrderCancalParam *LstOfflineOrderCancalParam) error {
+    r._offlineOrderCancalParam = _offlineOrderCancalParam
+    r.Set("offline_order_cancal_param", _offlineOrderCancalParam)
     return nil
 }
 
 // OfflineOrderCancalParam Getter
 func (r AlibabaLstTradeSellerOfflineOrderCancelRequest) GetOfflineOrderCancalParam() *LstOfflineOrderCancalParam {
-    return r.offlineOrderCancalParam
+    return r._offlineOrderCancalParam
 }

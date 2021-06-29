@@ -15,7 +15,7 @@ alibaba.legal.case.entrust.get
 type AlibabaLegalCaseEntrustGetRequest struct {
     model.Params
     // 委托id
-    entrustId   int64
+    _entrustId   int64
 }
 
 // 初始化AlibabaLegalCaseEntrustGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalCaseEntrustGetRequest) GetApiParams() url.Values {
 }
 // EntrustId Setter
 // 委托id
-func (r *AlibabaLegalCaseEntrustGetRequest) SetEntrustId(entrustId int64) error {
-    r.entrustId = entrustId
-    r.Set("entrust_id", entrustId)
+func (r *AlibabaLegalCaseEntrustGetRequest) SetEntrustId(_entrustId int64) error {
+    r._entrustId = _entrustId
+    r.Set("entrust_id", _entrustId)
     return nil
 }
 
 // EntrustId Getter
 func (r AlibabaLegalCaseEntrustGetRequest) GetEntrustId() int64 {
-    return r.entrustId
+    return r._entrustId
 }

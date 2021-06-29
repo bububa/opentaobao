@@ -15,7 +15,7 @@ alitrip.btrip.employee.query
 type AlitripBtripEmployeeQueryRequest struct {
     model.Params
     // 入参对象。
-    paramOpenEmployeeQueryRequest   *OpenEmployeeQueryRequest
+    _paramOpenEmployeeQueryRequest   *OpenEmployeeQueryRequest
 }
 
 // 初始化AlitripBtripEmployeeQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripEmployeeQueryRequest) GetApiParams() url.Values {
 }
 // ParamOpenEmployeeQueryRequest Setter
 // 入参对象。
-func (r *AlitripBtripEmployeeQueryRequest) SetParamOpenEmployeeQueryRequest(paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
-    r.paramOpenEmployeeQueryRequest = paramOpenEmployeeQueryRequest
-    r.Set("param_open_employee_query_request", paramOpenEmployeeQueryRequest)
+func (r *AlitripBtripEmployeeQueryRequest) SetParamOpenEmployeeQueryRequest(_paramOpenEmployeeQueryRequest *OpenEmployeeQueryRequest) error {
+    r._paramOpenEmployeeQueryRequest = _paramOpenEmployeeQueryRequest
+    r.Set("param_open_employee_query_request", _paramOpenEmployeeQueryRequest)
     return nil
 }
 
 // ParamOpenEmployeeQueryRequest Getter
 func (r AlitripBtripEmployeeQueryRequest) GetParamOpenEmployeeQueryRequest() *OpenEmployeeQueryRequest {
-    return r.paramOpenEmployeeQueryRequest
+    return r._paramOpenEmployeeQueryRequest
 }

@@ -15,7 +15,7 @@ alibaba.campus.device.openapi.gettemplatelist
 type AlibabaCampusDeviceOpenapiGettemplatelistRequest struct {
     model.Params
     // 设备模板查询对象
-    query   *TemplateApiQuery
+    _query   *TemplateApiQuery
 }
 
 // 初始化AlibabaCampusDeviceOpenapiGettemplatelistRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetApiParams() url.Val
 }
 // Query Setter
 // 设备模板查询对象
-func (r *AlibabaCampusDeviceOpenapiGettemplatelistRequest) SetQuery(query *TemplateApiQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaCampusDeviceOpenapiGettemplatelistRequest) SetQuery(_query *TemplateApiQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaCampusDeviceOpenapiGettemplatelistRequest) GetQuery() *TemplateApiQuery {
-    return r.query
+    return r._query
 }

@@ -15,7 +15,7 @@ tmall.nrt.newcoupon.send
 type TmallNrtNewcouponSendRequest struct {
     model.Params
     // 发券dto
-    nrtCouponSendDto   *NrtCouponSendDto
+    _nrtCouponSendDto   *NrtCouponSendDto
 }
 
 // 初始化TmallNrtNewcouponSendRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtNewcouponSendRequest) GetApiParams() url.Values {
 }
 // NrtCouponSendDto Setter
 // 发券dto
-func (r *TmallNrtNewcouponSendRequest) SetNrtCouponSendDto(nrtCouponSendDto *NrtCouponSendDto) error {
-    r.nrtCouponSendDto = nrtCouponSendDto
-    r.Set("nrt_coupon_send_dto", nrtCouponSendDto)
+func (r *TmallNrtNewcouponSendRequest) SetNrtCouponSendDto(_nrtCouponSendDto *NrtCouponSendDto) error {
+    r._nrtCouponSendDto = _nrtCouponSendDto
+    r.Set("nrt_coupon_send_dto", _nrtCouponSendDto)
     return nil
 }
 
 // NrtCouponSendDto Getter
 func (r TmallNrtNewcouponSendRequest) GetNrtCouponSendDto() *NrtCouponSendDto {
-    return r.nrtCouponSendDto
+    return r._nrtCouponSendDto
 }

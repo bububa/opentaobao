@@ -15,7 +15,7 @@ alibaba.mj.mos.fund.createbill
 type AlibabaMjMosFundCreatebillRequest struct {
     model.Params
     // 创建付款单入参
-    billDto   *CreateBillDto
+    _billDto   *CreateBillDto
 }
 
 // 初始化AlibabaMjMosFundCreatebillRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjMosFundCreatebillRequest) GetApiParams() url.Values {
 }
 // BillDto Setter
 // 创建付款单入参
-func (r *AlibabaMjMosFundCreatebillRequest) SetBillDto(billDto *CreateBillDto) error {
-    r.billDto = billDto
-    r.Set("bill_dto", billDto)
+func (r *AlibabaMjMosFundCreatebillRequest) SetBillDto(_billDto *CreateBillDto) error {
+    r._billDto = _billDto
+    r.Set("bill_dto", _billDto)
     return nil
 }
 
 // BillDto Getter
 func (r AlibabaMjMosFundCreatebillRequest) GetBillDto() *CreateBillDto {
-    return r.billDto
+    return r._billDto
 }

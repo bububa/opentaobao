@@ -15,7 +15,7 @@ alibaba.alihealth.mdeer.science.synarticle
 type AlibabaAlihealthMdeerScienceSynarticleRequest struct {
     model.Params
     // 同步文章对象
-    synArticleInfo   *SynArticleInfo
+    _synArticleInfo   *SynArticleInfo
 }
 
 // 初始化AlibabaAlihealthMdeerScienceSynarticleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMdeerScienceSynarticleRequest) GetApiParams() url.Values
 }
 // SynArticleInfo Setter
 // 同步文章对象
-func (r *AlibabaAlihealthMdeerScienceSynarticleRequest) SetSynArticleInfo(synArticleInfo *SynArticleInfo) error {
-    r.synArticleInfo = synArticleInfo
-    r.Set("syn_article_info", synArticleInfo)
+func (r *AlibabaAlihealthMdeerScienceSynarticleRequest) SetSynArticleInfo(_synArticleInfo *SynArticleInfo) error {
+    r._synArticleInfo = _synArticleInfo
+    r.Set("syn_article_info", _synArticleInfo)
     return nil
 }
 
 // SynArticleInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynarticleRequest) GetSynArticleInfo() *SynArticleInfo {
-    return r.synArticleInfo
+    return r._synArticleInfo
 }

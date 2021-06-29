@@ -15,9 +15,9 @@ taobao.item.update.listing
 type TaobaoItemUpdateListingRequest struct {
     model.Params
     // 商品数字ID，该参数必须
-    numIid   int64
+    _numIid   int64
     // 需要上架的商品的数量。取值范围:大于零的整数。如果商品有sku，则上架数量默认为所有sku数量总和，不可修改。否则商品数量根据设置数量调整为num
-    num   int64
+    _num   int64
 }
 
 // 初始化TaobaoItemUpdateListingRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoItemUpdateListingRequest) GetApiParams() url.Values {
 }
 // NumIid Setter
 // 商品数字ID，该参数必须
-func (r *TaobaoItemUpdateListingRequest) SetNumIid(numIid int64) error {
-    r.numIid = numIid
-    r.Set("num_iid", numIid)
+func (r *TaobaoItemUpdateListingRequest) SetNumIid(_numIid int64) error {
+    r._numIid = _numIid
+    r.Set("num_iid", _numIid)
     return nil
 }
 
 // NumIid Getter
 func (r TaobaoItemUpdateListingRequest) GetNumIid() int64 {
-    return r.numIid
+    return r._numIid
 }
 // Num Setter
 // 需要上架的商品的数量。取值范围:大于零的整数。如果商品有sku，则上架数量默认为所有sku数量总和，不可修改。否则商品数量根据设置数量调整为num
-func (r *TaobaoItemUpdateListingRequest) SetNum(num int64) error {
-    r.num = num
-    r.Set("num", num)
+func (r *TaobaoItemUpdateListingRequest) SetNum(_num int64) error {
+    r._num = _num
+    r.Set("num", _num)
     return nil
 }
 
 // Num Getter
 func (r TaobaoItemUpdateListingRequest) GetNum() int64 {
-    return r.num
+    return r._num
 }

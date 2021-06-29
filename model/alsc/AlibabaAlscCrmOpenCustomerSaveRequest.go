@@ -15,7 +15,7 @@ alibaba.alsc.crm.open.customer.save
 type AlibabaAlscCrmOpenCustomerSaveRequest struct {
     model.Params
     // 入参
-    paramCustomerSaveOpenReq   *CustomerSaveOpenReq
+    _paramCustomerSaveOpenReq   *CustomerSaveOpenReq
 }
 
 // 初始化AlibabaAlscCrmOpenCustomerSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmOpenCustomerSaveRequest) GetApiParams() url.Values {
 }
 // ParamCustomerSaveOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmOpenCustomerSaveRequest) SetParamCustomerSaveOpenReq(paramCustomerSaveOpenReq *CustomerSaveOpenReq) error {
-    r.paramCustomerSaveOpenReq = paramCustomerSaveOpenReq
-    r.Set("param_customer_save_open_req", paramCustomerSaveOpenReq)
+func (r *AlibabaAlscCrmOpenCustomerSaveRequest) SetParamCustomerSaveOpenReq(_paramCustomerSaveOpenReq *CustomerSaveOpenReq) error {
+    r._paramCustomerSaveOpenReq = _paramCustomerSaveOpenReq
+    r.Set("param_customer_save_open_req", _paramCustomerSaveOpenReq)
     return nil
 }
 
 // ParamCustomerSaveOpenReq Getter
 func (r AlibabaAlscCrmOpenCustomerSaveRequest) GetParamCustomerSaveOpenReq() *CustomerSaveOpenReq {
-    return r.paramCustomerSaveOpenReq
+    return r._paramCustomerSaveOpenReq
 }

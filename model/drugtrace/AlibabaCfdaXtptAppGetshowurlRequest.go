@@ -15,7 +15,7 @@ alibaba.cfda.xtpt.app.getshowurl
 type AlibabaCfdaXtptAppGetshowurlRequest struct {
     model.Params
     // 码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaCfdaXtptAppGetshowurlRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCfdaXtptAppGetshowurlRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 码
-func (r *AlibabaCfdaXtptAppGetshowurlRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaCfdaXtptAppGetshowurlRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaCfdaXtptAppGetshowurlRequest) GetCode() string {
-    return r.code
+    return r._code
 }

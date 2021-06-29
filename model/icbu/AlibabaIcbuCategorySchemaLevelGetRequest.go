@@ -15,11 +15,11 @@ alibaba.icbu.category.schema.level.get
 type AlibabaIcbuCategorySchemaLevelGetRequest struct {
     model.Params
     // 类目id
-    catId   int64
+    _catId   int64
     // 返回的文案的语种，可以输入en_US或者zh
-    language   string
+    _language   string
     // 层级属性的当前层级属性
-    xml   string
+    _xml   string
 }
 
 // 初始化AlibabaIcbuCategorySchemaLevelGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // Language Setter
 // 返回的文案的语种，可以输入en_US或者zh
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetLanguage(language string) error {
-    r.language = language
-    r.Set("language", language)
+func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetLanguage(_language string) error {
+    r._language = _language
+    r.Set("language", _language)
     return nil
 }
 
 // Language Getter
 func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetLanguage() string {
-    return r.language
+    return r._language
 }
 // Xml Setter
 // 层级属性的当前层级属性
-func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetXml(xml string) error {
-    r.xml = xml
-    r.Set("xml", xml)
+func (r *AlibabaIcbuCategorySchemaLevelGetRequest) SetXml(_xml string) error {
+    r._xml = _xml
+    r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
 func (r AlibabaIcbuCategorySchemaLevelGetRequest) GetXml() string {
-    return r.xml
+    return r._xml
 }

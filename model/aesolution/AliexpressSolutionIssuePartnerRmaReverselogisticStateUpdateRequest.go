@@ -15,7 +15,7 @@ Updates the reverse logistics state for after sales services
 type AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest struct {
     model.Params
     // Logistic order state update request
-    logisticOrderStateUpdateRequest   *LogisticOrderStateUpdateRequest
+    _logisticOrderStateUpdateRequest   *LogisticOrderStateUpdateRequest
 }
 
 // 初始化AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetA
 }
 // LogisticOrderStateUpdateRequest Setter
 // Logistic order state update request
-func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) SetLogisticOrderStateUpdateRequest(logisticOrderStateUpdateRequest *LogisticOrderStateUpdateRequest) error {
-    r.logisticOrderStateUpdateRequest = logisticOrderStateUpdateRequest
-    r.Set("logistic_order_state_update_request", logisticOrderStateUpdateRequest)
+func (r *AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) SetLogisticOrderStateUpdateRequest(_logisticOrderStateUpdateRequest *LogisticOrderStateUpdateRequest) error {
+    r._logisticOrderStateUpdateRequest = _logisticOrderStateUpdateRequest
+    r.Set("logistic_order_state_update_request", _logisticOrderStateUpdateRequest)
     return nil
 }
 
 // LogisticOrderStateUpdateRequest Getter
 func (r AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateRequest) GetLogisticOrderStateUpdateRequest() *LogisticOrderStateUpdateRequest {
-    return r.logisticOrderStateUpdateRequest
+    return r._logisticOrderStateUpdateRequest
 }

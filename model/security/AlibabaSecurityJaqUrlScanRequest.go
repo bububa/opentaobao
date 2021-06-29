@@ -15,7 +15,7 @@ url扫描接口
 type AlibabaSecurityJaqUrlScanRequest struct {
     model.Params
     // 扫描参数
-    paramUrlScanParamList   *UrlScanParamList
+    _paramUrlScanParamList   *UrlScanParamList
 }
 
 // 初始化AlibabaSecurityJaqUrlScanRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqUrlScanRequest) GetApiParams() url.Values {
 }
 // ParamUrlScanParamList Setter
 // 扫描参数
-func (r *AlibabaSecurityJaqUrlScanRequest) SetParamUrlScanParamList(paramUrlScanParamList *UrlScanParamList) error {
-    r.paramUrlScanParamList = paramUrlScanParamList
-    r.Set("param_url_scan_param_list", paramUrlScanParamList)
+func (r *AlibabaSecurityJaqUrlScanRequest) SetParamUrlScanParamList(_paramUrlScanParamList *UrlScanParamList) error {
+    r._paramUrlScanParamList = _paramUrlScanParamList
+    r.Set("param_url_scan_param_list", _paramUrlScanParamList)
     return nil
 }
 
 // ParamUrlScanParamList Getter
 func (r AlibabaSecurityJaqUrlScanRequest) GetParamUrlScanParamList() *UrlScanParamList {
-    return r.paramUrlScanParamList
+    return r._paramUrlScanParamList
 }

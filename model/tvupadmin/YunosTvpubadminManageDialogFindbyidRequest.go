@@ -15,7 +15,7 @@ yunos.tvpubadmin.manage.dialog.findbyid
 type YunosTvpubadminManageDialogFindbyidRequest struct {
     model.Params
     // 全局弹窗id
-    id   int64
+    _id   int64
 }
 
 // 初始化YunosTvpubadminManageDialogFindbyidRequest对象
@@ -40,13 +40,13 @@ func (r YunosTvpubadminManageDialogFindbyidRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 全局弹窗id
-func (r *YunosTvpubadminManageDialogFindbyidRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *YunosTvpubadminManageDialogFindbyidRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r YunosTvpubadminManageDialogFindbyidRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

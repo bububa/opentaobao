@@ -15,11 +15,11 @@ taobao.apple.newuser.sign.notify
 type TaobaoAppleNewuserSignNotifyRequest struct {
     model.Params
     // 结果code
-    resultCode   string
+    _resultCode   string
     // 结果信息说明
-    resultMsg   string
+    _resultMsg   string
     // 业务参数
-    mainData   *AppleTopNewSignNotifyDo
+    _mainData   *AppleTopNewSignNotifyDo
 }
 
 // 初始化TaobaoAppleNewuserSignNotifyRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAppleNewuserSignNotifyRequest) GetApiParams() url.Values {
 }
 // ResultCode Setter
 // 结果code
-func (r *TaobaoAppleNewuserSignNotifyRequest) SetResultCode(resultCode string) error {
-    r.resultCode = resultCode
-    r.Set("result_code", resultCode)
+func (r *TaobaoAppleNewuserSignNotifyRequest) SetResultCode(_resultCode string) error {
+    r._resultCode = _resultCode
+    r.Set("result_code", _resultCode)
     return nil
 }
 
 // ResultCode Getter
 func (r TaobaoAppleNewuserSignNotifyRequest) GetResultCode() string {
-    return r.resultCode
+    return r._resultCode
 }
 // ResultMsg Setter
 // 结果信息说明
-func (r *TaobaoAppleNewuserSignNotifyRequest) SetResultMsg(resultMsg string) error {
-    r.resultMsg = resultMsg
-    r.Set("result_msg", resultMsg)
+func (r *TaobaoAppleNewuserSignNotifyRequest) SetResultMsg(_resultMsg string) error {
+    r._resultMsg = _resultMsg
+    r.Set("result_msg", _resultMsg)
     return nil
 }
 
 // ResultMsg Getter
 func (r TaobaoAppleNewuserSignNotifyRequest) GetResultMsg() string {
-    return r.resultMsg
+    return r._resultMsg
 }
 // MainData Setter
 // 业务参数
-func (r *TaobaoAppleNewuserSignNotifyRequest) SetMainData(mainData *AppleTopNewSignNotifyDo) error {
-    r.mainData = mainData
-    r.Set("main_data", mainData)
+func (r *TaobaoAppleNewuserSignNotifyRequest) SetMainData(_mainData *AppleTopNewSignNotifyDo) error {
+    r._mainData = _mainData
+    r.Set("main_data", _mainData)
     return nil
 }
 
 // MainData Getter
 func (r TaobaoAppleNewuserSignNotifyRequest) GetMainData() *AppleTopNewSignNotifyDo {
-    return r.mainData
+    return r._mainData
 }

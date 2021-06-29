@@ -15,7 +15,7 @@ taobao.omni.dealer.oders.list
 type TaobaoOmniDealerOdersListRequest struct {
     model.Params
     // 参数对象
-    queryParam   *QueryOmniOrderRequest
+    _queryParam   *QueryOmniOrderRequest
 }
 
 // 初始化TaobaoOmniDealerOdersListRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniDealerOdersListRequest) GetApiParams() url.Values {
 }
 // QueryParam Setter
 // 参数对象
-func (r *TaobaoOmniDealerOdersListRequest) SetQueryParam(queryParam *QueryOmniOrderRequest) error {
-    r.queryParam = queryParam
-    r.Set("query_param", queryParam)
+func (r *TaobaoOmniDealerOdersListRequest) SetQueryParam(_queryParam *QueryOmniOrderRequest) error {
+    r._queryParam = _queryParam
+    r.Set("query_param", _queryParam)
     return nil
 }
 
 // QueryParam Getter
 func (r TaobaoOmniDealerOdersListRequest) GetQueryParam() *QueryOmniOrderRequest {
-    return r.queryParam
+    return r._queryParam
 }

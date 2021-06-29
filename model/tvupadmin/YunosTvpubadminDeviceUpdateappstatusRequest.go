@@ -15,13 +15,13 @@ yunos.tvpubadmin.device.updateappstatus
 type YunosTvpubadminDeviceUpdateappstatusRequest struct {
     model.Params
     // 应用ID
-    versionId   int64
+    _versionId   int64
     // 牌照方
-    license   int64
+    _license   int64
     // 审核状态
-    status   string
+    _status   string
     // 审核意见
-    auditComment   string
+    _auditComment   string
 }
 
 // 初始化YunosTvpubadminDeviceUpdateappstatusRequest对象
@@ -46,49 +46,49 @@ func (r YunosTvpubadminDeviceUpdateappstatusRequest) GetApiParams() url.Values {
 }
 // VersionId Setter
 // 应用ID
-func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetVersionId(versionId int64) error {
-    r.versionId = versionId
-    r.Set("version_id", versionId)
+func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetVersionId(_versionId int64) error {
+    r._versionId = _versionId
+    r.Set("version_id", _versionId)
     return nil
 }
 
 // VersionId Getter
 func (r YunosTvpubadminDeviceUpdateappstatusRequest) GetVersionId() int64 {
-    return r.versionId
+    return r._versionId
 }
 // License Setter
 // 牌照方
-func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetLicense(license int64) error {
-    r.license = license
-    r.Set("license", license)
+func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetLicense(_license int64) error {
+    r._license = _license
+    r.Set("license", _license)
     return nil
 }
 
 // License Getter
 func (r YunosTvpubadminDeviceUpdateappstatusRequest) GetLicense() int64 {
-    return r.license
+    return r._license
 }
 // Status Setter
 // 审核状态
-func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r YunosTvpubadminDeviceUpdateappstatusRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // AuditComment Setter
 // 审核意见
-func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetAuditComment(auditComment string) error {
-    r.auditComment = auditComment
-    r.Set("audit_comment", auditComment)
+func (r *YunosTvpubadminDeviceUpdateappstatusRequest) SetAuditComment(_auditComment string) error {
+    r._auditComment = _auditComment
+    r.Set("audit_comment", _auditComment)
     return nil
 }
 
 // AuditComment Getter
 func (r YunosTvpubadminDeviceUpdateappstatusRequest) GetAuditComment() string {
-    return r.auditComment
+    return r._auditComment
 }

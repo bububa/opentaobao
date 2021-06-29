@@ -15,9 +15,9 @@ taobao.fivee.innerproduct.publish
 type TaobaoFiveeInnerproductPublishRequest struct {
     model.Params
     // bu身份标识
-    paramBucode   string
+    _paramBucode   string
     // 国产商品
-    paramInnerProduct   *InnerProduct
+    _paramInnerProduct   *InnerProduct
 }
 
 // 初始化TaobaoFiveeInnerproductPublishRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoFiveeInnerproductPublishRequest) GetApiParams() url.Values {
 }
 // ParamBucode Setter
 // bu身份标识
-func (r *TaobaoFiveeInnerproductPublishRequest) SetParamBucode(paramBucode string) error {
-    r.paramBucode = paramBucode
-    r.Set("param_bucode", paramBucode)
+func (r *TaobaoFiveeInnerproductPublishRequest) SetParamBucode(_paramBucode string) error {
+    r._paramBucode = _paramBucode
+    r.Set("param_bucode", _paramBucode)
     return nil
 }
 
 // ParamBucode Getter
 func (r TaobaoFiveeInnerproductPublishRequest) GetParamBucode() string {
-    return r.paramBucode
+    return r._paramBucode
 }
 // ParamInnerProduct Setter
 // 国产商品
-func (r *TaobaoFiveeInnerproductPublishRequest) SetParamInnerProduct(paramInnerProduct *InnerProduct) error {
-    r.paramInnerProduct = paramInnerProduct
-    r.Set("param_inner_product", paramInnerProduct)
+func (r *TaobaoFiveeInnerproductPublishRequest) SetParamInnerProduct(_paramInnerProduct *InnerProduct) error {
+    r._paramInnerProduct = _paramInnerProduct
+    r.Set("param_inner_product", _paramInnerProduct)
     return nil
 }
 
 // ParamInnerProduct Getter
 func (r TaobaoFiveeInnerproductPublishRequest) GetParamInnerProduct() *InnerProduct {
-    return r.paramInnerProduct
+    return r._paramInnerProduct
 }

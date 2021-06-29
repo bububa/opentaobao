@@ -15,7 +15,7 @@ taobao.ju.items.search
 type TaobaoJuItemsSearchRequest struct {
     model.Params
     // query
-    paramTopItemQuery   *TopItemQuery
+    _paramTopItemQuery   *TopItemQuery
 }
 
 // 初始化TaobaoJuItemsSearchRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJuItemsSearchRequest) GetApiParams() url.Values {
 }
 // ParamTopItemQuery Setter
 // query
-func (r *TaobaoJuItemsSearchRequest) SetParamTopItemQuery(paramTopItemQuery *TopItemQuery) error {
-    r.paramTopItemQuery = paramTopItemQuery
-    r.Set("param_top_item_query", paramTopItemQuery)
+func (r *TaobaoJuItemsSearchRequest) SetParamTopItemQuery(_paramTopItemQuery *TopItemQuery) error {
+    r._paramTopItemQuery = _paramTopItemQuery
+    r.Set("param_top_item_query", _paramTopItemQuery)
     return nil
 }
 
 // ParamTopItemQuery Getter
 func (r TaobaoJuItemsSearchRequest) GetParamTopItemQuery() *TopItemQuery {
-    return r.paramTopItemQuery
+    return r._paramTopItemQuery
 }

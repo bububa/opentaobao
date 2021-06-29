@@ -15,11 +15,11 @@ alibaba.lst.trade.fastrefund.goodsstatus.sync
 type AlibabaLstTradeFastrefundGoodsstatusSyncRequest struct {
     model.Params
     // 主订单id
-    mainOrderId   int64
+    _mainOrderId   int64
     // 退款单id
-    refundId   string
+    _refundId   string
     // 未发货，枚举类型：UNSEND
-    status   string
+    _status   string
 }
 
 // 初始化AlibabaLstTradeFastrefundGoodsstatusSyncRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaLstTradeFastrefundGoodsstatusSyncRequest) GetApiParams() url.Valu
 }
 // MainOrderId Setter
 // 主订单id
-func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetMainOrderId(mainOrderId int64) error {
-    r.mainOrderId = mainOrderId
-    r.Set("main_order_id", mainOrderId)
+func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetMainOrderId(_mainOrderId int64) error {
+    r._mainOrderId = _mainOrderId
+    r.Set("main_order_id", _mainOrderId)
     return nil
 }
 
 // MainOrderId Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncRequest) GetMainOrderId() int64 {
-    return r.mainOrderId
+    return r._mainOrderId
 }
 // RefundId Setter
 // 退款单id
-func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetRefundId(refundId string) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetRefundId(_refundId string) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncRequest) GetRefundId() string {
-    return r.refundId
+    return r._refundId
 }
 // Status Setter
 // 未发货，枚举类型：UNSEND
-func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaLstTradeFastrefundGoodsstatusSyncRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaLstTradeFastrefundGoodsstatusSyncRequest) GetStatus() string {
-    return r.status
+    return r._status
 }

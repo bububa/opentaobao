@@ -15,7 +15,7 @@ taobao.wtt.trade.service.get
 type TaobaoWttTradeServiceGetRequest struct {
     model.Params
     // 订单ID
-    bizOrder   int64
+    _bizOrder   int64
 }
 
 // 初始化TaobaoWttTradeServiceGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWttTradeServiceGetRequest) GetApiParams() url.Values {
 }
 // BizOrder Setter
 // 订单ID
-func (r *TaobaoWttTradeServiceGetRequest) SetBizOrder(bizOrder int64) error {
-    r.bizOrder = bizOrder
-    r.Set("biz_order", bizOrder)
+func (r *TaobaoWttTradeServiceGetRequest) SetBizOrder(_bizOrder int64) error {
+    r._bizOrder = _bizOrder
+    r.Set("biz_order", _bizOrder)
     return nil
 }
 
 // BizOrder Getter
 func (r TaobaoWttTradeServiceGetRequest) GetBizOrder() int64 {
-    return r.bizOrder
+    return r._bizOrder
 }

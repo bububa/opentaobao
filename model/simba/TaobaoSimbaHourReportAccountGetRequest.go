@@ -15,11 +15,11 @@ taobao.simba.hour.report.account.get
 type TaobaoSimbaHourReportAccountGetRequest struct {
     model.Params
     // 昵称
-    nick   string
+    _nick   string
     // 时间
-    theDate   string
+    _theDate   string
     // 当前小时
-    hour   string
+    _hour   string
 }
 
 // 初始化TaobaoSimbaHourReportAccountGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSimbaHourReportAccountGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 昵称
-func (r *TaobaoSimbaHourReportAccountGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSimbaHourReportAccountGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSimbaHourReportAccountGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // TheDate Setter
 // 时间
-func (r *TaobaoSimbaHourReportAccountGetRequest) SetTheDate(theDate string) error {
-    r.theDate = theDate
-    r.Set("the_date", theDate)
+func (r *TaobaoSimbaHourReportAccountGetRequest) SetTheDate(_theDate string) error {
+    r._theDate = _theDate
+    r.Set("the_date", _theDate)
     return nil
 }
 
 // TheDate Getter
 func (r TaobaoSimbaHourReportAccountGetRequest) GetTheDate() string {
-    return r.theDate
+    return r._theDate
 }
 // Hour Setter
 // 当前小时
-func (r *TaobaoSimbaHourReportAccountGetRequest) SetHour(hour string) error {
-    r.hour = hour
-    r.Set("hour", hour)
+func (r *TaobaoSimbaHourReportAccountGetRequest) SetHour(_hour string) error {
+    r._hour = _hour
+    r.Set("hour", _hour)
     return nil
 }
 
 // Hour Getter
 func (r TaobaoSimbaHourReportAccountGetRequest) GetHour() string {
-    return r.hour
+    return r._hour
 }

@@ -15,7 +15,7 @@ tmall.car.lease.citysynchronize
 type TmallCarLeaseCitysynchronizeRequest struct {
     model.Params
     // 地址信息
-    paramAreaDto   *AreaDto
+    _paramAreaDto   *AreaDto
 }
 
 // 初始化TmallCarLeaseCitysynchronizeRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeaseCitysynchronizeRequest) GetApiParams() url.Values {
 }
 // ParamAreaDto Setter
 // 地址信息
-func (r *TmallCarLeaseCitysynchronizeRequest) SetParamAreaDto(paramAreaDto *AreaDto) error {
-    r.paramAreaDto = paramAreaDto
-    r.Set("param_area_dto", paramAreaDto)
+func (r *TmallCarLeaseCitysynchronizeRequest) SetParamAreaDto(_paramAreaDto *AreaDto) error {
+    r._paramAreaDto = _paramAreaDto
+    r.Set("param_area_dto", _paramAreaDto)
     return nil
 }
 
 // ParamAreaDto Getter
 func (r TmallCarLeaseCitysynchronizeRequest) GetParamAreaDto() *AreaDto {
-    return r.paramAreaDto
+    return r._paramAreaDto
 }

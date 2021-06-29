@@ -15,9 +15,9 @@ alibaba.alihealth.tracecodeplatform.code.entscan
 type AlibabaAlihealthTracecodeplatformCodeEntscanRequest struct {
     model.Params
     // 药监码
-    code   string
+    _code   string
     // 不同企业有不同的标识
-    serviceFlag   string
+    _serviceFlag   string
 }
 
 // 初始化AlibabaAlihealthTracecodeplatformCodeEntscanRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetApiParams() url.
 }
 // Code Setter
 // 药监码
-func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // ServiceFlag Setter
 // 不同企业有不同的标识
-func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetServiceFlag(serviceFlag string) error {
-    r.serviceFlag = serviceFlag
-    r.Set("service_flag", serviceFlag)
+func (r *AlibabaAlihealthTracecodeplatformCodeEntscanRequest) SetServiceFlag(_serviceFlag string) error {
+    r._serviceFlag = _serviceFlag
+    r.Set("service_flag", _serviceFlag)
     return nil
 }
 
 // ServiceFlag Getter
 func (r AlibabaAlihealthTracecodeplatformCodeEntscanRequest) GetServiceFlag() string {
-    return r.serviceFlag
+    return r._serviceFlag
 }

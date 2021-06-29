@@ -15,9 +15,9 @@ taobao.nrrs.acceptance.task.updateResult
 type TaobaoNrrsAcceptanceTaskUpdateResultRequest struct {
     model.Params
     // 任务ID
-    taskId   string
+    _taskId   string
     // 系统自动生成
-    alipayResultList   []AlipayCheckResult
+    _alipayResultList   []AlipayCheckResult
 }
 
 // 初始化TaobaoNrrsAcceptanceTaskUpdateResultRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoNrrsAcceptanceTaskUpdateResultRequest) GetApiParams() url.Values {
 }
 // TaskId Setter
 // 任务ID
-func (r *TaobaoNrrsAcceptanceTaskUpdateResultRequest) SetTaskId(taskId string) error {
-    r.taskId = taskId
-    r.Set("task_id", taskId)
+func (r *TaobaoNrrsAcceptanceTaskUpdateResultRequest) SetTaskId(_taskId string) error {
+    r._taskId = _taskId
+    r.Set("task_id", _taskId)
     return nil
 }
 
 // TaskId Getter
 func (r TaobaoNrrsAcceptanceTaskUpdateResultRequest) GetTaskId() string {
-    return r.taskId
+    return r._taskId
 }
 // AlipayResultList Setter
 // 系统自动生成
-func (r *TaobaoNrrsAcceptanceTaskUpdateResultRequest) SetAlipayResultList(alipayResultList []AlipayCheckResult) error {
-    r.alipayResultList = alipayResultList
-    r.Set("alipay_result_list", alipayResultList)
+func (r *TaobaoNrrsAcceptanceTaskUpdateResultRequest) SetAlipayResultList(_alipayResultList []AlipayCheckResult) error {
+    r._alipayResultList = _alipayResultList
+    r.Set("alipay_result_list", _alipayResultList)
     return nil
 }
 
 // AlipayResultList Getter
 func (r TaobaoNrrsAcceptanceTaskUpdateResultRequest) GetAlipayResultList() []AlipayCheckResult {
-    return r.alipayResultList
+    return r._alipayResultList
 }

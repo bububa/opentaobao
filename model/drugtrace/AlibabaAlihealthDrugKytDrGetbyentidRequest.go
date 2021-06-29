@@ -15,9 +15,9 @@ alibaba.alihealth.drug.kyt.dr.getbyentid
 type AlibabaAlihealthDrugKytDrGetbyentidRequest struct {
     model.Params
     // 接口调用企业的唯一标识（接口调用者）
-    refEntId   string
+    _refEntId   string
     // 准备要查询的企业ID（返回该企业ID的详细信息）
-    entId   string
+    _entId   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDrGetbyentidRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthDrugKytDrGetbyentidRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 接口调用企业的唯一标识（接口调用者）
-func (r *AlibabaAlihealthDrugKytDrGetbyentidRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDrGetbyentidRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDrGetbyentidRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // EntId Setter
 // 准备要查询的企业ID（返回该企业ID的详细信息）
-func (r *AlibabaAlihealthDrugKytDrGetbyentidRequest) SetEntId(entId string) error {
-    r.entId = entId
-    r.Set("ent_id", entId)
+func (r *AlibabaAlihealthDrugKytDrGetbyentidRequest) SetEntId(_entId string) error {
+    r._entId = _entId
+    r.Set("ent_id", _entId)
     return nil
 }
 
 // EntId Getter
 func (r AlibabaAlihealthDrugKytDrGetbyentidRequest) GetEntId() string {
-    return r.entId
+    return r._entId
 }

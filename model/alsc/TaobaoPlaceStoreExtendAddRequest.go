@@ -15,9 +15,9 @@ taobao.place.store.extend.add
 type TaobaoPlaceStoreExtendAddRequest struct {
     model.Params
     // 门店ID
-    storeId   int64
+    _storeId   int64
     // 扩展信息
-    etv   []ExtendTypeValueTopDto
+    _etv   []ExtendTypeValueTopDto
 }
 
 // 初始化TaobaoPlaceStoreExtendAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPlaceStoreExtendAddRequest) GetApiParams() url.Values {
 }
 // StoreId Setter
 // 门店ID
-func (r *TaobaoPlaceStoreExtendAddRequest) SetStoreId(storeId int64) error {
-    r.storeId = storeId
-    r.Set("store_id", storeId)
+func (r *TaobaoPlaceStoreExtendAddRequest) SetStoreId(_storeId int64) error {
+    r._storeId = _storeId
+    r.Set("store_id", _storeId)
     return nil
 }
 
 // StoreId Getter
 func (r TaobaoPlaceStoreExtendAddRequest) GetStoreId() int64 {
-    return r.storeId
+    return r._storeId
 }
 // Etv Setter
 // 扩展信息
-func (r *TaobaoPlaceStoreExtendAddRequest) SetEtv(etv []ExtendTypeValueTopDto) error {
-    r.etv = etv
-    r.Set("etv", etv)
+func (r *TaobaoPlaceStoreExtendAddRequest) SetEtv(_etv []ExtendTypeValueTopDto) error {
+    r._etv = _etv
+    r.Set("etv", _etv)
     return nil
 }
 
 // Etv Getter
 func (r TaobaoPlaceStoreExtendAddRequest) GetEtv() []ExtendTypeValueTopDto {
-    return r.etv
+    return r._etv
 }

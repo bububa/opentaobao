@@ -15,11 +15,11 @@ tmall.aliauto.wisdomdata.model.recive
 type TmallAliautoWisdomdataModelReciveRequest struct {
     model.Params
     // JSON格式车型完整数据
-    modelDetail   string
+    _modelDetail   string
     // 接入的第三方库中的车型唯一id
-    resourceId   string
+    _resourceId   string
     // 接入的第三方库的名称
-    fromSource   string
+    _fromSource   string
 }
 
 // 初始化TmallAliautoWisdomdataModelReciveRequest对象
@@ -44,37 +44,37 @@ func (r TmallAliautoWisdomdataModelReciveRequest) GetApiParams() url.Values {
 }
 // ModelDetail Setter
 // JSON格式车型完整数据
-func (r *TmallAliautoWisdomdataModelReciveRequest) SetModelDetail(modelDetail string) error {
-    r.modelDetail = modelDetail
-    r.Set("model_detail", modelDetail)
+func (r *TmallAliautoWisdomdataModelReciveRequest) SetModelDetail(_modelDetail string) error {
+    r._modelDetail = _modelDetail
+    r.Set("model_detail", _modelDetail)
     return nil
 }
 
 // ModelDetail Getter
 func (r TmallAliautoWisdomdataModelReciveRequest) GetModelDetail() string {
-    return r.modelDetail
+    return r._modelDetail
 }
 // ResourceId Setter
 // 接入的第三方库中的车型唯一id
-func (r *TmallAliautoWisdomdataModelReciveRequest) SetResourceId(resourceId string) error {
-    r.resourceId = resourceId
-    r.Set("resource_id", resourceId)
+func (r *TmallAliautoWisdomdataModelReciveRequest) SetResourceId(_resourceId string) error {
+    r._resourceId = _resourceId
+    r.Set("resource_id", _resourceId)
     return nil
 }
 
 // ResourceId Getter
 func (r TmallAliautoWisdomdataModelReciveRequest) GetResourceId() string {
-    return r.resourceId
+    return r._resourceId
 }
 // FromSource Setter
 // 接入的第三方库的名称
-func (r *TmallAliautoWisdomdataModelReciveRequest) SetFromSource(fromSource string) error {
-    r.fromSource = fromSource
-    r.Set("from_source", fromSource)
+func (r *TmallAliautoWisdomdataModelReciveRequest) SetFromSource(_fromSource string) error {
+    r._fromSource = _fromSource
+    r.Set("from_source", _fromSource)
     return nil
 }
 
 // FromSource Getter
 func (r TmallAliautoWisdomdataModelReciveRequest) GetFromSource() string {
-    return r.fromSource
+    return r._fromSource
 }

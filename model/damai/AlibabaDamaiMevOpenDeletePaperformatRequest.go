@@ -15,7 +15,7 @@ deletePaperFormat
 type AlibabaDamaiMevOpenDeletePaperformatRequest struct {
     model.Params
     // 入参deletePaperFormatParam
-    deletePaperFormatParam   *TicketPaperFormatIdOpenParam
+    _deletePaperFormatParam   *TicketPaperFormatIdOpenParam
 }
 
 // 初始化AlibabaDamaiMevOpenDeletePaperformatRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMevOpenDeletePaperformatRequest) GetApiParams() url.Values {
 }
 // DeletePaperFormatParam Setter
 // 入参deletePaperFormatParam
-func (r *AlibabaDamaiMevOpenDeletePaperformatRequest) SetDeletePaperFormatParam(deletePaperFormatParam *TicketPaperFormatIdOpenParam) error {
-    r.deletePaperFormatParam = deletePaperFormatParam
-    r.Set("delete_paper_format_param", deletePaperFormatParam)
+func (r *AlibabaDamaiMevOpenDeletePaperformatRequest) SetDeletePaperFormatParam(_deletePaperFormatParam *TicketPaperFormatIdOpenParam) error {
+    r._deletePaperFormatParam = _deletePaperFormatParam
+    r.Set("delete_paper_format_param", _deletePaperFormatParam)
     return nil
 }
 
 // DeletePaperFormatParam Getter
 func (r AlibabaDamaiMevOpenDeletePaperformatRequest) GetDeletePaperFormatParam() *TicketPaperFormatIdOpenParam {
-    return r.deletePaperFormatParam
+    return r._deletePaperFormatParam
 }

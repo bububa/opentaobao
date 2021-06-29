@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.extra.consume
 type AlibabaAlscCrmPointExtraConsumeRequest struct {
     model.Params
     // 入参
-    paramExtraConsumePointOpenReq   *ExtraConsumePointOpenReq
+    _paramExtraConsumePointOpenReq   *ExtraConsumePointOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointExtraConsumeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointExtraConsumeRequest) GetApiParams() url.Values {
 }
 // ParamExtraConsumePointOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointExtraConsumeRequest) SetParamExtraConsumePointOpenReq(paramExtraConsumePointOpenReq *ExtraConsumePointOpenReq) error {
-    r.paramExtraConsumePointOpenReq = paramExtraConsumePointOpenReq
-    r.Set("param_extra_consume_point_open_req", paramExtraConsumePointOpenReq)
+func (r *AlibabaAlscCrmPointExtraConsumeRequest) SetParamExtraConsumePointOpenReq(_paramExtraConsumePointOpenReq *ExtraConsumePointOpenReq) error {
+    r._paramExtraConsumePointOpenReq = _paramExtraConsumePointOpenReq
+    r.Set("param_extra_consume_point_open_req", _paramExtraConsumePointOpenReq)
     return nil
 }
 
 // ParamExtraConsumePointOpenReq Getter
 func (r AlibabaAlscCrmPointExtraConsumeRequest) GetParamExtraConsumePointOpenReq() *ExtraConsumePointOpenReq {
-    return r.paramExtraConsumePointOpenReq
+    return r._paramExtraConsumePointOpenReq
 }

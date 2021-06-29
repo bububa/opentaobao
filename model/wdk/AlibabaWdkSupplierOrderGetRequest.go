@@ -15,7 +15,7 @@ alibaba.wdk.supplier.order.get
 type AlibabaWdkSupplierOrderGetRequest struct {
     model.Params
     // 查询参数
-    supplierOrderQueryListRequest   *SupplierOrderQueryListRequest
+    _supplierOrderQueryListRequest   *SupplierOrderQueryListRequest
 }
 
 // 初始化AlibabaWdkSupplierOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSupplierOrderGetRequest) GetApiParams() url.Values {
 }
 // SupplierOrderQueryListRequest Setter
 // 查询参数
-func (r *AlibabaWdkSupplierOrderGetRequest) SetSupplierOrderQueryListRequest(supplierOrderQueryListRequest *SupplierOrderQueryListRequest) error {
-    r.supplierOrderQueryListRequest = supplierOrderQueryListRequest
-    r.Set("supplier_order_query_list_request", supplierOrderQueryListRequest)
+func (r *AlibabaWdkSupplierOrderGetRequest) SetSupplierOrderQueryListRequest(_supplierOrderQueryListRequest *SupplierOrderQueryListRequest) error {
+    r._supplierOrderQueryListRequest = _supplierOrderQueryListRequest
+    r.Set("supplier_order_query_list_request", _supplierOrderQueryListRequest)
     return nil
 }
 
 // SupplierOrderQueryListRequest Getter
 func (r AlibabaWdkSupplierOrderGetRequest) GetSupplierOrderQueryListRequest() *SupplierOrderQueryListRequest {
-    return r.supplierOrderQueryListRequest
+    return r._supplierOrderQueryListRequest
 }

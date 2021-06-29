@@ -15,7 +15,7 @@ C2M 共识需求回传接口
 type AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest struct {
     model.Params
     // 对象
-    c2MConsensusDemandRequest   *C2MConsensusDemandRequest
+    _c2MConsensusDemandRequest   *C2MConsensusDemandRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetApiParams()
 }
 // C2MConsensusDemandRequest Setter
 // 对象
-func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) SetC2MConsensusDemandRequest(c2MConsensusDemandRequest *C2MConsensusDemandRequest) error {
-    r.c2MConsensusDemandRequest = c2MConsensusDemandRequest
-    r.Set("c2_m_consensus_demand_request", c2MConsensusDemandRequest)
+func (r *AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) SetC2MConsensusDemandRequest(_c2MConsensusDemandRequest *C2MConsensusDemandRequest) error {
+    r._c2MConsensusDemandRequest = _c2MConsensusDemandRequest
+    r.Set("c2_m_consensus_demand_request", _c2MConsensusDemandRequest)
     return nil
 }
 
 // C2MConsensusDemandRequest Getter
 func (r AlibabaTmallgenieScpPlanCtomConsensusDemandUploadRequest) GetC2MConsensusDemandRequest() *C2MConsensusDemandRequest {
-    return r.c2MConsensusDemandRequest
+    return r._c2MConsensusDemandRequest
 }

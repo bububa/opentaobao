@@ -15,11 +15,11 @@ taobao.jushita.jms.group.get
 type TaobaoJushitaJmsGroupGetRequest struct {
     model.Params
     // 页码
-    pageNo   int64
+    _pageNo   int64
     // 每页返回多少个分组
-    pageSize   int64
+    _pageSize   int64
     // 要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。
-    groupNames   []string
+    _groupNames   []string
 }
 
 // 初始化TaobaoJushitaJmsGroupGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoJushitaJmsGroupGetRequest) GetApiParams() url.Values {
 }
 // PageNo Setter
 // 页码
-func (r *TaobaoJushitaJmsGroupGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TaobaoJushitaJmsGroupGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TaobaoJushitaJmsGroupGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页返回多少个分组
-func (r *TaobaoJushitaJmsGroupGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoJushitaJmsGroupGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoJushitaJmsGroupGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // GroupNames Setter
 // 要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。
-func (r *TaobaoJushitaJmsGroupGetRequest) SetGroupNames(groupNames []string) error {
-    r.groupNames = groupNames
-    r.Set("group_names", groupNames)
+func (r *TaobaoJushitaJmsGroupGetRequest) SetGroupNames(_groupNames []string) error {
+    r._groupNames = _groupNames
+    r.Set("group_names", _groupNames)
     return nil
 }
 
 // GroupNames Getter
 func (r TaobaoJushitaJmsGroupGetRequest) GetGroupNames() []string {
-    return r.groupNames
+    return r._groupNames
 }

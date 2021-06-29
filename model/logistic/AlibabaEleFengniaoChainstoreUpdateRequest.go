@@ -15,7 +15,7 @@ alibaba.ele.fengniao.chainstore.update
 type AlibabaEleFengniaoChainstoreUpdateRequest struct {
     model.Params
     // 入参
-    param   *Param
+    _param   *Param
 }
 
 // 初始化AlibabaEleFengniaoChainstoreUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlibabaEleFengniaoChainstoreUpdateRequest) SetParam(param *Param) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaEleFengniaoChainstoreUpdateRequest) SetParam(_param *Param) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaEleFengniaoChainstoreUpdateRequest) GetParam() *Param {
-    return r.param
+    return r._param
 }

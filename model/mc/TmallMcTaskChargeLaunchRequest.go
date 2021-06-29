@@ -15,15 +15,15 @@ tmall.mc.task.charge.launch
 type TmallMcTaskChargeLaunchRequest struct {
     model.Params
     // 外部设备编码
-    outerCode   string
+    _outerCode   string
     // 渠道ID
-    channelId   string
+    _channelId   string
     // 支付宝openID
-    alipayOpenId   string
+    _alipayOpenId   string
     // urlID
-    urlId   string
+    _urlId   string
     // 服务商附加url参数
-    extra   string
+    _extra   string
 }
 
 // 初始化TmallMcTaskChargeLaunchRequest对象
@@ -48,61 +48,61 @@ func (r TmallMcTaskChargeLaunchRequest) GetApiParams() url.Values {
 }
 // OuterCode Setter
 // 外部设备编码
-func (r *TmallMcTaskChargeLaunchRequest) SetOuterCode(outerCode string) error {
-    r.outerCode = outerCode
-    r.Set("outer_code", outerCode)
+func (r *TmallMcTaskChargeLaunchRequest) SetOuterCode(_outerCode string) error {
+    r._outerCode = _outerCode
+    r.Set("outer_code", _outerCode)
     return nil
 }
 
 // OuterCode Getter
 func (r TmallMcTaskChargeLaunchRequest) GetOuterCode() string {
-    return r.outerCode
+    return r._outerCode
 }
 // ChannelId Setter
 // 渠道ID
-func (r *TmallMcTaskChargeLaunchRequest) SetChannelId(channelId string) error {
-    r.channelId = channelId
-    r.Set("channel_id", channelId)
+func (r *TmallMcTaskChargeLaunchRequest) SetChannelId(_channelId string) error {
+    r._channelId = _channelId
+    r.Set("channel_id", _channelId)
     return nil
 }
 
 // ChannelId Getter
 func (r TmallMcTaskChargeLaunchRequest) GetChannelId() string {
-    return r.channelId
+    return r._channelId
 }
 // AlipayOpenId Setter
 // 支付宝openID
-func (r *TmallMcTaskChargeLaunchRequest) SetAlipayOpenId(alipayOpenId string) error {
-    r.alipayOpenId = alipayOpenId
-    r.Set("alipay_open_id", alipayOpenId)
+func (r *TmallMcTaskChargeLaunchRequest) SetAlipayOpenId(_alipayOpenId string) error {
+    r._alipayOpenId = _alipayOpenId
+    r.Set("alipay_open_id", _alipayOpenId)
     return nil
 }
 
 // AlipayOpenId Getter
 func (r TmallMcTaskChargeLaunchRequest) GetAlipayOpenId() string {
-    return r.alipayOpenId
+    return r._alipayOpenId
 }
 // UrlId Setter
 // urlID
-func (r *TmallMcTaskChargeLaunchRequest) SetUrlId(urlId string) error {
-    r.urlId = urlId
-    r.Set("url_id", urlId)
+func (r *TmallMcTaskChargeLaunchRequest) SetUrlId(_urlId string) error {
+    r._urlId = _urlId
+    r.Set("url_id", _urlId)
     return nil
 }
 
 // UrlId Getter
 func (r TmallMcTaskChargeLaunchRequest) GetUrlId() string {
-    return r.urlId
+    return r._urlId
 }
 // Extra Setter
 // 服务商附加url参数
-func (r *TmallMcTaskChargeLaunchRequest) SetExtra(extra string) error {
-    r.extra = extra
-    r.Set("extra", extra)
+func (r *TmallMcTaskChargeLaunchRequest) SetExtra(_extra string) error {
+    r._extra = _extra
+    r.Set("extra", _extra)
     return nil
 }
 
 // Extra Getter
 func (r TmallMcTaskChargeLaunchRequest) GetExtra() string {
-    return r.extra
+    return r._extra
 }

@@ -15,11 +15,11 @@ taobao.apple.newuser.activate.notify
 type TaobaoAppleNewuserActivateNotifyRequest struct {
     model.Params
     // 结果对应值，00位成功，其他为失败
-    resultCode   string
+    _resultCode   string
     // 处理结果中文描述
-    resultMsg   string
+    _resultMsg   string
     // 主业务参数
-    mainData   *AppleTopActivateNotifyDo
+    _mainData   *AppleTopActivateNotifyDo
 }
 
 // 初始化TaobaoAppleNewuserActivateNotifyRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoAppleNewuserActivateNotifyRequest) GetApiParams() url.Values {
 }
 // ResultCode Setter
 // 结果对应值，00位成功，其他为失败
-func (r *TaobaoAppleNewuserActivateNotifyRequest) SetResultCode(resultCode string) error {
-    r.resultCode = resultCode
-    r.Set("result_code", resultCode)
+func (r *TaobaoAppleNewuserActivateNotifyRequest) SetResultCode(_resultCode string) error {
+    r._resultCode = _resultCode
+    r.Set("result_code", _resultCode)
     return nil
 }
 
 // ResultCode Getter
 func (r TaobaoAppleNewuserActivateNotifyRequest) GetResultCode() string {
-    return r.resultCode
+    return r._resultCode
 }
 // ResultMsg Setter
 // 处理结果中文描述
-func (r *TaobaoAppleNewuserActivateNotifyRequest) SetResultMsg(resultMsg string) error {
-    r.resultMsg = resultMsg
-    r.Set("result_msg", resultMsg)
+func (r *TaobaoAppleNewuserActivateNotifyRequest) SetResultMsg(_resultMsg string) error {
+    r._resultMsg = _resultMsg
+    r.Set("result_msg", _resultMsg)
     return nil
 }
 
 // ResultMsg Getter
 func (r TaobaoAppleNewuserActivateNotifyRequest) GetResultMsg() string {
-    return r.resultMsg
+    return r._resultMsg
 }
 // MainData Setter
 // 主业务参数
-func (r *TaobaoAppleNewuserActivateNotifyRequest) SetMainData(mainData *AppleTopActivateNotifyDo) error {
-    r.mainData = mainData
-    r.Set("main_data", mainData)
+func (r *TaobaoAppleNewuserActivateNotifyRequest) SetMainData(_mainData *AppleTopActivateNotifyDo) error {
+    r._mainData = _mainData
+    r.Set("main_data", _mainData)
     return nil
 }
 
 // MainData Getter
 func (r TaobaoAppleNewuserActivateNotifyRequest) GetMainData() *AppleTopActivateNotifyDo {
-    return r.mainData
+    return r._mainData
 }

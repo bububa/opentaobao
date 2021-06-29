@@ -15,7 +15,7 @@ alibaba.mj.oc.online.ticketno.get
 type AlibabaMjOcOnlineTicketnoGetRequest struct {
     model.Params
     // 外部门店号
-    outStoreNo   string
+    _outStoreNo   string
 }
 
 // 初始化AlibabaMjOcOnlineTicketnoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcOnlineTicketnoGetRequest) GetApiParams() url.Values {
 }
 // OutStoreNo Setter
 // 外部门店号
-func (r *AlibabaMjOcOnlineTicketnoGetRequest) SetOutStoreNo(outStoreNo string) error {
-    r.outStoreNo = outStoreNo
-    r.Set("out_store_no", outStoreNo)
+func (r *AlibabaMjOcOnlineTicketnoGetRequest) SetOutStoreNo(_outStoreNo string) error {
+    r._outStoreNo = _outStoreNo
+    r.Set("out_store_no", _outStoreNo)
     return nil
 }
 
 // OutStoreNo Getter
 func (r AlibabaMjOcOnlineTicketnoGetRequest) GetOutStoreNo() string {
-    return r.outStoreNo
+    return r._outStoreNo
 }

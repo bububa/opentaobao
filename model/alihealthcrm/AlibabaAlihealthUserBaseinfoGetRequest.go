@@ -15,9 +15,9 @@ alibaba.alihealth.user.baseinfo.get
 type AlibabaAlihealthUserBaseinfoGetRequest struct {
     model.Params
     // 用户id
-    userId   int64
+    _userId   int64
     // 三方服务商
-    appName   string
+    _appName   string
 }
 
 // 初始化AlibabaAlihealthUserBaseinfoGetRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlihealthUserBaseinfoGetRequest) GetApiParams() url.Values {
 }
 // UserId Setter
 // 用户id
-func (r *AlibabaAlihealthUserBaseinfoGetRequest) SetUserId(userId int64) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaAlihealthUserBaseinfoGetRequest) SetUserId(_userId int64) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaAlihealthUserBaseinfoGetRequest) GetUserId() int64 {
-    return r.userId
+    return r._userId
 }
 // AppName Setter
 // 三方服务商
-func (r *AlibabaAlihealthUserBaseinfoGetRequest) SetAppName(appName string) error {
-    r.appName = appName
-    r.Set("app_name", appName)
+func (r *AlibabaAlihealthUserBaseinfoGetRequest) SetAppName(_appName string) error {
+    r._appName = _appName
+    r.Set("app_name", _appName)
     return nil
 }
 
 // AppName Getter
 func (r AlibabaAlihealthUserBaseinfoGetRequest) GetAppName() string {
-    return r.appName
+    return r._appName
 }

@@ -15,7 +15,7 @@ alibaba.idle.order.dummy.send
 type AlibabaIdleOrderDummySendRequest struct {
     model.Params
     // 请求
-    paramOrderDummySendRequest   *OrderDummySendRequest
+    _paramOrderDummySendRequest   *OrderDummySendRequest
 }
 
 // 初始化AlibabaIdleOrderDummySendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleOrderDummySendRequest) GetApiParams() url.Values {
 }
 // ParamOrderDummySendRequest Setter
 // 请求
-func (r *AlibabaIdleOrderDummySendRequest) SetParamOrderDummySendRequest(paramOrderDummySendRequest *OrderDummySendRequest) error {
-    r.paramOrderDummySendRequest = paramOrderDummySendRequest
-    r.Set("param_order_dummy_send_request", paramOrderDummySendRequest)
+func (r *AlibabaIdleOrderDummySendRequest) SetParamOrderDummySendRequest(_paramOrderDummySendRequest *OrderDummySendRequest) error {
+    r._paramOrderDummySendRequest = _paramOrderDummySendRequest
+    r.Set("param_order_dummy_send_request", _paramOrderDummySendRequest)
     return nil
 }
 
 // ParamOrderDummySendRequest Getter
 func (r AlibabaIdleOrderDummySendRequest) GetParamOrderDummySendRequest() *OrderDummySendRequest {
-    return r.paramOrderDummySendRequest
+    return r._paramOrderDummySendRequest
 }

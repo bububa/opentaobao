@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.prescription.update
 type AlibabaAlihealthOutflowPrescriptionUpdateRequest struct {
     model.Params
     // 入参对象
-    updateRequest   *PrescriptionOutflowUpdateRequest
+    _updateRequest   *PrescriptionOutflowUpdateRequest
 }
 
 // 初始化AlibabaAlihealthOutflowPrescriptionUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetApiParams() url.Val
 }
 // UpdateRequest Setter
 // 入参对象
-func (r *AlibabaAlihealthOutflowPrescriptionUpdateRequest) SetUpdateRequest(updateRequest *PrescriptionOutflowUpdateRequest) error {
-    r.updateRequest = updateRequest
-    r.Set("update_request", updateRequest)
+func (r *AlibabaAlihealthOutflowPrescriptionUpdateRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
+    r._updateRequest = _updateRequest
+    r.Set("update_request", _updateRequest)
     return nil
 }
 
 // UpdateRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionUpdateRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
-    return r.updateRequest
+    return r._updateRequest
 }

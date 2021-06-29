@@ -15,9 +15,9 @@ yunos.service.cmns.coa.device.get
 type YunosServiceCmnsCoaDeviceGetRequest struct {
     model.Params
     // 设备id类型,可以是uuid,imei,deviceToken,kp
-    type   string
+    _type   string
     // 设备id
-    value   string
+    _value   string
 }
 
 // 初始化YunosServiceCmnsCoaDeviceGetRequest对象
@@ -42,25 +42,25 @@ func (r YunosServiceCmnsCoaDeviceGetRequest) GetApiParams() url.Values {
 }
 // Type Setter
 // 设备id类型,可以是uuid,imei,deviceToken,kp
-func (r *YunosServiceCmnsCoaDeviceGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *YunosServiceCmnsCoaDeviceGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r YunosServiceCmnsCoaDeviceGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // Value Setter
 // 设备id
-func (r *YunosServiceCmnsCoaDeviceGetRequest) SetValue(value string) error {
-    r.value = value
-    r.Set("value", value)
+func (r *YunosServiceCmnsCoaDeviceGetRequest) SetValue(_value string) error {
+    r._value = _value
+    r.Set("value", _value)
     return nil
 }
 
 // Value Getter
 func (r YunosServiceCmnsCoaDeviceGetRequest) GetValue() string {
-    return r.value
+    return r._value
 }

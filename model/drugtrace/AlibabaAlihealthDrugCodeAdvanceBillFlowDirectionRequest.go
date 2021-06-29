@@ -15,7 +15,7 @@ alibaba.alihealth.drug.code.advance.bill.flow.direction
 type AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest struct {
     model.Params
     // 追溯码
-    code   string
+    _code   string
 }
 
 // 初始化AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetApiParams() 
 }
 // Code Setter
 // 追溯码
-func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaAlihealthDrugCodeAdvanceBillFlowDirectionRequest) GetCode() string {
-    return r.code
+    return r._code
 }

@@ -15,15 +15,15 @@ Aliexpress开放平台订单信息查询
 type AliexpressTradeOrderOpenQueryRequest struct {
     model.Params
     // 买家用户id
-    buyerId   int64
+    _buyerId   int64
     // 订单号
-    orderIds   []int64
+    _orderIds   []int64
     // 外部订单号
-    outIds   []string
+    _outIds   []string
     // 小程序appId
-    openAppKey   string
+    _openAppKey   string
     // 业务编码
-    bizCode   string
+    _bizCode   string
 }
 
 // 初始化AliexpressTradeOrderOpenQueryRequest对象
@@ -48,61 +48,61 @@ func (r AliexpressTradeOrderOpenQueryRequest) GetApiParams() url.Values {
 }
 // BuyerId Setter
 // 买家用户id
-func (r *AliexpressTradeOrderOpenQueryRequest) SetBuyerId(buyerId int64) error {
-    r.buyerId = buyerId
-    r.Set("buyer_id", buyerId)
+func (r *AliexpressTradeOrderOpenQueryRequest) SetBuyerId(_buyerId int64) error {
+    r._buyerId = _buyerId
+    r.Set("buyer_id", _buyerId)
     return nil
 }
 
 // BuyerId Getter
 func (r AliexpressTradeOrderOpenQueryRequest) GetBuyerId() int64 {
-    return r.buyerId
+    return r._buyerId
 }
 // OrderIds Setter
 // 订单号
-func (r *AliexpressTradeOrderOpenQueryRequest) SetOrderIds(orderIds []int64) error {
-    r.orderIds = orderIds
-    r.Set("order_ids", orderIds)
+func (r *AliexpressTradeOrderOpenQueryRequest) SetOrderIds(_orderIds []int64) error {
+    r._orderIds = _orderIds
+    r.Set("order_ids", _orderIds)
     return nil
 }
 
 // OrderIds Getter
 func (r AliexpressTradeOrderOpenQueryRequest) GetOrderIds() []int64 {
-    return r.orderIds
+    return r._orderIds
 }
 // OutIds Setter
 // 外部订单号
-func (r *AliexpressTradeOrderOpenQueryRequest) SetOutIds(outIds []string) error {
-    r.outIds = outIds
-    r.Set("out_ids", outIds)
+func (r *AliexpressTradeOrderOpenQueryRequest) SetOutIds(_outIds []string) error {
+    r._outIds = _outIds
+    r.Set("out_ids", _outIds)
     return nil
 }
 
 // OutIds Getter
 func (r AliexpressTradeOrderOpenQueryRequest) GetOutIds() []string {
-    return r.outIds
+    return r._outIds
 }
 // OpenAppKey Setter
 // 小程序appId
-func (r *AliexpressTradeOrderOpenQueryRequest) SetOpenAppKey(openAppKey string) error {
-    r.openAppKey = openAppKey
-    r.Set("open_app_key", openAppKey)
+func (r *AliexpressTradeOrderOpenQueryRequest) SetOpenAppKey(_openAppKey string) error {
+    r._openAppKey = _openAppKey
+    r.Set("open_app_key", _openAppKey)
     return nil
 }
 
 // OpenAppKey Getter
 func (r AliexpressTradeOrderOpenQueryRequest) GetOpenAppKey() string {
-    return r.openAppKey
+    return r._openAppKey
 }
 // BizCode Setter
 // 业务编码
-func (r *AliexpressTradeOrderOpenQueryRequest) SetBizCode(bizCode string) error {
-    r.bizCode = bizCode
-    r.Set("biz_code", bizCode)
+func (r *AliexpressTradeOrderOpenQueryRequest) SetBizCode(_bizCode string) error {
+    r._bizCode = _bizCode
+    r.Set("biz_code", _bizCode)
     return nil
 }
 
 // BizCode Getter
 func (r AliexpressTradeOrderOpenQueryRequest) GetBizCode() string {
-    return r.bizCode
+    return r._bizCode
 }

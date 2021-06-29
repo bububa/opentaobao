@@ -15,9 +15,9 @@ alibaba.mos.order.query
 type AlibabaMosOrderQueryRequest struct {
     model.Params
     // 订单查询
-    orderCriteria   *OrderCriteria
+    _orderCriteria   *OrderCriteria
     // 分页信息
-    paginator   *Paginator
+    _paginator   *Paginator
 }
 
 // 初始化AlibabaMosOrderQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaMosOrderQueryRequest) GetApiParams() url.Values {
 }
 // OrderCriteria Setter
 // 订单查询
-func (r *AlibabaMosOrderQueryRequest) SetOrderCriteria(orderCriteria *OrderCriteria) error {
-    r.orderCriteria = orderCriteria
-    r.Set("order_criteria", orderCriteria)
+func (r *AlibabaMosOrderQueryRequest) SetOrderCriteria(_orderCriteria *OrderCriteria) error {
+    r._orderCriteria = _orderCriteria
+    r.Set("order_criteria", _orderCriteria)
     return nil
 }
 
 // OrderCriteria Getter
 func (r AlibabaMosOrderQueryRequest) GetOrderCriteria() *OrderCriteria {
-    return r.orderCriteria
+    return r._orderCriteria
 }
 // Paginator Setter
 // 分页信息
-func (r *AlibabaMosOrderQueryRequest) SetPaginator(paginator *Paginator) error {
-    r.paginator = paginator
-    r.Set("paginator", paginator)
+func (r *AlibabaMosOrderQueryRequest) SetPaginator(_paginator *Paginator) error {
+    r._paginator = _paginator
+    r.Set("paginator", _paginator)
     return nil
 }
 
 // Paginator Getter
 func (r AlibabaMosOrderQueryRequest) GetPaginator() *Paginator {
-    return r.paginator
+    return r._paginator
 }

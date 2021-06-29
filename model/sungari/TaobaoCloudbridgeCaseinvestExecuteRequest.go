@@ -15,9 +15,9 @@ taobao.cloudbridge.caseinvest.execute
 type TaobaoCloudbridgeCaseinvestExecuteRequest struct {
     model.Params
     // 方法名称
-    apiName   string
+    _apiName   string
     // 方法参数
-    data   string
+    _data   string
 }
 
 // 初始化TaobaoCloudbridgeCaseinvestExecuteRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiParams() url.Values {
 }
 // ApiName Setter
 // 方法名称
-func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetApiName(apiName string) error {
-    r.apiName = apiName
-    r.Set("api_name", apiName)
+func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetApiName(_apiName string) error {
+    r._apiName = _apiName
+    r.Set("api_name", _apiName)
     return nil
 }
 
 // ApiName Getter
 func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetApiName() string {
-    return r.apiName
+    return r._apiName
 }
 // Data Setter
 // 方法参数
-func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *TaobaoCloudbridgeCaseinvestExecuteRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r TaobaoCloudbridgeCaseinvestExecuteRequest) GetData() string {
-    return r.data
+    return r._data
 }

@@ -15,7 +15,7 @@ tmall.nr.inventory.update
 type TmallNrInventoryUpdateRequest struct {
     model.Params
     // 入参
-    param0   *NrInventoryUpdateReqDto
+    _param0   *NrInventoryUpdateReqDto
 }
 
 // 初始化TmallNrInventoryUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrInventoryUpdateRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TmallNrInventoryUpdateRequest) SetParam0(param0 *NrInventoryUpdateReqDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallNrInventoryUpdateRequest) SetParam0(_param0 *NrInventoryUpdateReqDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallNrInventoryUpdateRequest) GetParam0() *NrInventoryUpdateReqDto {
-    return r.param0
+    return r._param0
 }

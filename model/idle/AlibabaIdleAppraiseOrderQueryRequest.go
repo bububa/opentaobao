@@ -15,7 +15,7 @@ alibaba.idle.appraise.order.query
 type AlibabaIdleAppraiseOrderQueryRequest struct {
     model.Params
     // orderId
-    bizOrderId   int64
+    _bizOrderId   int64
 }
 
 // 初始化AlibabaIdleAppraiseOrderQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleAppraiseOrderQueryRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // orderId
-func (r *AlibabaIdleAppraiseOrderQueryRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *AlibabaIdleAppraiseOrderQueryRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r AlibabaIdleAppraiseOrderQueryRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }

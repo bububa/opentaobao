@@ -15,7 +15,7 @@ IoT售后服务商工单备注
 type CainiaoIotTicketSpCommentRequest struct {
     model.Params
     // 请求参数
-    param   *CommentTicketTopRequest
+    _param   *CommentTicketTopRequest
 }
 
 // 初始化CainiaoIotTicketSpCommentRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoIotTicketSpCommentRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求参数
-func (r *CainiaoIotTicketSpCommentRequest) SetParam(param *CommentTicketTopRequest) error {
-    r.param = param
-    r.Set("param", param)
+func (r *CainiaoIotTicketSpCommentRequest) SetParam(_param *CommentTicketTopRequest) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r CainiaoIotTicketSpCommentRequest) GetParam() *CommentTicketTopRequest {
-    return r.param
+    return r._param
 }

@@ -15,7 +15,7 @@ alibaba.lst.logistics.sendinfo.query
 type AlibabaLstLogisticsSendinfoQueryRequest struct {
     model.Params
     // 入参
-    query   *LstLogisticsInfoQuery
+    _query   *LstLogisticsInfoQuery
 }
 
 // 初始化AlibabaLstLogisticsSendinfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstLogisticsSendinfoQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 入参
-func (r *AlibabaLstLogisticsSendinfoQueryRequest) SetQuery(query *LstLogisticsInfoQuery) error {
-    r.query = query
-    r.Set("query", query)
+func (r *AlibabaLstLogisticsSendinfoQueryRequest) SetQuery(_query *LstLogisticsInfoQuery) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r AlibabaLstLogisticsSendinfoQueryRequest) GetQuery() *LstLogisticsInfoQuery {
-    return r.query
+    return r._query
 }

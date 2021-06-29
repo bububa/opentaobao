@@ -15,9 +15,9 @@ alibaba.einvoice.tax.opt.salaryresult.query
 type AlibabaEinvoiceTaxOptSalaryresultQueryRequest struct {
     model.Params
     // 发薪流水号
-    detailIdList   []string
+    _detailIdList   []string
     // 业务方编码
-    employerCode   string
+    _employerCode   string
 }
 
 // 初始化AlibabaEinvoiceTaxOptSalaryresultQueryRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaEinvoiceTaxOptSalaryresultQueryRequest) GetApiParams() url.Values
 }
 // DetailIdList Setter
 // 发薪流水号
-func (r *AlibabaEinvoiceTaxOptSalaryresultQueryRequest) SetDetailIdList(detailIdList []string) error {
-    r.detailIdList = detailIdList
-    r.Set("detail_id_list", detailIdList)
+func (r *AlibabaEinvoiceTaxOptSalaryresultQueryRequest) SetDetailIdList(_detailIdList []string) error {
+    r._detailIdList = _detailIdList
+    r.Set("detail_id_list", _detailIdList)
     return nil
 }
 
 // DetailIdList Getter
 func (r AlibabaEinvoiceTaxOptSalaryresultQueryRequest) GetDetailIdList() []string {
-    return r.detailIdList
+    return r._detailIdList
 }
 // EmployerCode Setter
 // 业务方编码
-func (r *AlibabaEinvoiceTaxOptSalaryresultQueryRequest) SetEmployerCode(employerCode string) error {
-    r.employerCode = employerCode
-    r.Set("employer_code", employerCode)
+func (r *AlibabaEinvoiceTaxOptSalaryresultQueryRequest) SetEmployerCode(_employerCode string) error {
+    r._employerCode = _employerCode
+    r.Set("employer_code", _employerCode)
     return nil
 }
 
 // EmployerCode Getter
 func (r AlibabaEinvoiceTaxOptSalaryresultQueryRequest) GetEmployerCode() string {
-    return r.employerCode
+    return r._employerCode
 }

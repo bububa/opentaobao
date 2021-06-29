@@ -15,7 +15,7 @@ alibaba.scbp.target.ad.campaign.tag.effect
 type AlibabaScbpTargetAdCampaignTagEffectRequest struct {
     model.Params
     // 效果数据
-    topP4pQuickEffectQuery   *TopP4pQuickEffectQuery
+    _topP4pQuickEffectQuery   *TopP4pQuickEffectQuery
 }
 
 // 初始化AlibabaScbpTargetAdCampaignTagEffectRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdCampaignTagEffectRequest) GetApiParams() url.Values {
 }
 // TopP4pQuickEffectQuery Setter
 // 效果数据
-func (r *AlibabaScbpTargetAdCampaignTagEffectRequest) SetTopP4pQuickEffectQuery(topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
-    r.topP4pQuickEffectQuery = topP4pQuickEffectQuery
-    r.Set("top_p4p_quick_effect_query", topP4pQuickEffectQuery)
+func (r *AlibabaScbpTargetAdCampaignTagEffectRequest) SetTopP4pQuickEffectQuery(_topP4pQuickEffectQuery *TopP4pQuickEffectQuery) error {
+    r._topP4pQuickEffectQuery = _topP4pQuickEffectQuery
+    r.Set("top_p4p_quick_effect_query", _topP4pQuickEffectQuery)
     return nil
 }
 
 // TopP4pQuickEffectQuery Getter
 func (r AlibabaScbpTargetAdCampaignTagEffectRequest) GetTopP4pQuickEffectQuery() *TopP4pQuickEffectQuery {
-    return r.topP4pQuickEffectQuery
+    return r._topP4pQuickEffectQuery
 }

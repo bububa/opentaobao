@@ -15,7 +15,7 @@ tmall.car.lease.orderid.get
 type TmallCarLeaseOrderidGetRequest struct {
     model.Params
     // openid
-    openId   string
+    _openId   string
 }
 
 // 初始化TmallCarLeaseOrderidGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeaseOrderidGetRequest) GetApiParams() url.Values {
 }
 // OpenId Setter
 // openid
-func (r *TmallCarLeaseOrderidGetRequest) SetOpenId(openId string) error {
-    r.openId = openId
-    r.Set("open_id", openId)
+func (r *TmallCarLeaseOrderidGetRequest) SetOpenId(_openId string) error {
+    r._openId = _openId
+    r.Set("open_id", _openId)
     return nil
 }
 
 // OpenId Getter
 func (r TmallCarLeaseOrderidGetRequest) GetOpenId() string {
-    return r.openId
+    return r._openId
 }

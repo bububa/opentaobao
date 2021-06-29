@@ -15,7 +15,7 @@ taobao.xhotel.commoninvoice.update
 type TaobaoXhotelCommoninvoiceUpdateRequest struct {
     model.Params
     // 无
-    commonInvoiceInfoParam   *CommonInvoiceInfo
+    _commonInvoiceInfoParam   *CommonInvoiceInfo
 }
 
 // 初始化TaobaoXhotelCommoninvoiceUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelCommoninvoiceUpdateRequest) GetApiParams() url.Values {
 }
 // CommonInvoiceInfoParam Setter
 // 无
-func (r *TaobaoXhotelCommoninvoiceUpdateRequest) SetCommonInvoiceInfoParam(commonInvoiceInfoParam *CommonInvoiceInfo) error {
-    r.commonInvoiceInfoParam = commonInvoiceInfoParam
-    r.Set("common_invoice_info_param", commonInvoiceInfoParam)
+func (r *TaobaoXhotelCommoninvoiceUpdateRequest) SetCommonInvoiceInfoParam(_commonInvoiceInfoParam *CommonInvoiceInfo) error {
+    r._commonInvoiceInfoParam = _commonInvoiceInfoParam
+    r.Set("common_invoice_info_param", _commonInvoiceInfoParam)
     return nil
 }
 
 // CommonInvoiceInfoParam Getter
 func (r TaobaoXhotelCommoninvoiceUpdateRequest) GetCommonInvoiceInfoParam() *CommonInvoiceInfo {
-    return r.commonInvoiceInfoParam
+    return r._commonInvoiceInfoParam
 }

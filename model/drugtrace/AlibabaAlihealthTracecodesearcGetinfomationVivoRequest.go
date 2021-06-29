@@ -15,7 +15,7 @@ alibaba.alihealth.tracecodesearc.getinfomation.vivo
 type AlibabaAlihealthTracecodesearcGetinfomationVivoRequest struct {
     model.Params
     // 渠道
-    channel   string
+    _channel   string
 }
 
 // 初始化AlibabaAlihealthTracecodesearcGetinfomationVivoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthTracecodesearcGetinfomationVivoRequest) GetApiParams() u
 }
 // Channel Setter
 // 渠道
-func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoRequest) SetChannel(channel string) error {
-    r.channel = channel
-    r.Set("channel", channel)
+func (r *AlibabaAlihealthTracecodesearcGetinfomationVivoRequest) SetChannel(_channel string) error {
+    r._channel = _channel
+    r.Set("channel", _channel)
     return nil
 }
 
 // Channel Getter
 func (r AlibabaAlihealthTracecodesearcGetinfomationVivoRequest) GetChannel() string {
-    return r.channel
+    return r._channel
 }

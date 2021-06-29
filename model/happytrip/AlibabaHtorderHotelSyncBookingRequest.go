@@ -15,7 +15,7 @@ alibaba.htorder.hotel.sync.booking
 type AlibabaHtorderHotelSyncBookingRequest struct {
     model.Params
     // 预订信息数据
-    dataEntity   *SyncHotelBookingDataRequestDto
+    _dataEntity   *SyncHotelBookingDataRequestDto
 }
 
 // 初始化AlibabaHtorderHotelSyncBookingRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHtorderHotelSyncBookingRequest) GetApiParams() url.Values {
 }
 // DataEntity Setter
 // 预订信息数据
-func (r *AlibabaHtorderHotelSyncBookingRequest) SetDataEntity(dataEntity *SyncHotelBookingDataRequestDto) error {
-    r.dataEntity = dataEntity
-    r.Set("data_entity", dataEntity)
+func (r *AlibabaHtorderHotelSyncBookingRequest) SetDataEntity(_dataEntity *SyncHotelBookingDataRequestDto) error {
+    r._dataEntity = _dataEntity
+    r.Set("data_entity", _dataEntity)
     return nil
 }
 
 // DataEntity Getter
 func (r AlibabaHtorderHotelSyncBookingRequest) GetDataEntity() *SyncHotelBookingDataRequestDto {
-    return r.dataEntity
+    return r._dataEntity
 }

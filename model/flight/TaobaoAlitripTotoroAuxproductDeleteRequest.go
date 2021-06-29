@@ -15,7 +15,7 @@ taobao.alitrip.totoro.auxproduct.delete
 type TaobaoAlitripTotoroAuxproductDeleteRequest struct {
     model.Params
     // 廉航辅营产品删除请求
-    delAuxProductRq   *DelAuxProductRq
+    _delAuxProductRq   *DelAuxProductRq
 }
 
 // 初始化TaobaoAlitripTotoroAuxproductDeleteRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTotoroAuxproductDeleteRequest) GetApiParams() url.Values {
 }
 // DelAuxProductRq Setter
 // 廉航辅营产品删除请求
-func (r *TaobaoAlitripTotoroAuxproductDeleteRequest) SetDelAuxProductRq(delAuxProductRq *DelAuxProductRq) error {
-    r.delAuxProductRq = delAuxProductRq
-    r.Set("del_aux_product_rq", delAuxProductRq)
+func (r *TaobaoAlitripTotoroAuxproductDeleteRequest) SetDelAuxProductRq(_delAuxProductRq *DelAuxProductRq) error {
+    r._delAuxProductRq = _delAuxProductRq
+    r.Set("del_aux_product_rq", _delAuxProductRq)
     return nil
 }
 
 // DelAuxProductRq Getter
 func (r TaobaoAlitripTotoroAuxproductDeleteRequest) GetDelAuxProductRq() *DelAuxProductRq {
-    return r.delAuxProductRq
+    return r._delAuxProductRq
 }

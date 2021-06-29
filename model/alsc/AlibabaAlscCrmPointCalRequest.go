@@ -18,7 +18,7 @@ alibaba.alsc.crm.point.cal
 type AlibabaAlscCrmPointCalRequest struct {
     model.Params
     // 入参
-    paramCalculateDeductedMoneyOpenReq   *CalculateDeductedMoneyOpenReq
+    _paramCalculateDeductedMoneyOpenReq   *CalculateDeductedMoneyOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointCalRequest对象
@@ -43,13 +43,13 @@ func (r AlibabaAlscCrmPointCalRequest) GetApiParams() url.Values {
 }
 // ParamCalculateDeductedMoneyOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointCalRequest) SetParamCalculateDeductedMoneyOpenReq(paramCalculateDeductedMoneyOpenReq *CalculateDeductedMoneyOpenReq) error {
-    r.paramCalculateDeductedMoneyOpenReq = paramCalculateDeductedMoneyOpenReq
-    r.Set("param_calculate_deducted_money_open_req", paramCalculateDeductedMoneyOpenReq)
+func (r *AlibabaAlscCrmPointCalRequest) SetParamCalculateDeductedMoneyOpenReq(_paramCalculateDeductedMoneyOpenReq *CalculateDeductedMoneyOpenReq) error {
+    r._paramCalculateDeductedMoneyOpenReq = _paramCalculateDeductedMoneyOpenReq
+    r.Set("param_calculate_deducted_money_open_req", _paramCalculateDeductedMoneyOpenReq)
     return nil
 }
 
 // ParamCalculateDeductedMoneyOpenReq Getter
 func (r AlibabaAlscCrmPointCalRequest) GetParamCalculateDeductedMoneyOpenReq() *CalculateDeductedMoneyOpenReq {
-    return r.paramCalculateDeductedMoneyOpenReq
+    return r._paramCalculateDeductedMoneyOpenReq
 }

@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.merchant.channel.refund.apply
 type AlibabaTclsAelophyMerchantChannelRefundApplyRequest struct {
     model.Params
     // 请求对象
-    refundApplyInfo   *RefundApplyInfo
+    _refundApplyInfo   *RefundApplyInfo
 }
 
 // 初始化AlibabaTclsAelophyMerchantChannelRefundApplyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyMerchantChannelRefundApplyRequest) GetApiParams() url.
 }
 // RefundApplyInfo Setter
 // 请求对象
-func (r *AlibabaTclsAelophyMerchantChannelRefundApplyRequest) SetRefundApplyInfo(refundApplyInfo *RefundApplyInfo) error {
-    r.refundApplyInfo = refundApplyInfo
-    r.Set("refund_apply_info", refundApplyInfo)
+func (r *AlibabaTclsAelophyMerchantChannelRefundApplyRequest) SetRefundApplyInfo(_refundApplyInfo *RefundApplyInfo) error {
+    r._refundApplyInfo = _refundApplyInfo
+    r.Set("refund_apply_info", _refundApplyInfo)
     return nil
 }
 
 // RefundApplyInfo Getter
 func (r AlibabaTclsAelophyMerchantChannelRefundApplyRequest) GetRefundApplyInfo() *RefundApplyInfo {
-    return r.refundApplyInfo
+    return r._refundApplyInfo
 }

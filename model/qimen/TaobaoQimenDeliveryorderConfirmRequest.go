@@ -15,7 +15,7 @@ taobao.qimen.deliveryorder.confirm
 type TaobaoQimenDeliveryorderConfirmRequest struct {
     model.Params
     // 
-    request   *DeliveryOrderConfirmRequest
+    _request   *DeliveryOrderConfirmRequest
 }
 
 // 初始化TaobaoQimenDeliveryorderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenDeliveryorderConfirmRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenDeliveryorderConfirmRequest) SetRequest(request *DeliveryOrderConfirmRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenDeliveryorderConfirmRequest) SetRequest(_request *DeliveryOrderConfirmRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenDeliveryorderConfirmRequest) GetRequest() *DeliveryOrderConfirmRequest {
-    return r.request
+    return r._request
 }

@@ -15,13 +15,13 @@ aliyun.alink.opendata.url.query
 type AliyunAlinkOpendataUrlQueryRequest struct {
     model.Params
     // 授权key，厂家在物联平台申请的云端授权key
-    accessKey   string
+    _accessKey   string
     // 数据日期，格式：yyyyMMdd
-    bizDay   string
+    _bizDay   string
     // 数据时点，范围[0,23]
-    bizHour   int64
+    _bizHour   int64
     // 数据类型，1：设备数据，2：用户操作数据
-    dataType   int64
+    _dataType   int64
 }
 
 // 初始化AliyunAlinkOpendataUrlQueryRequest对象
@@ -46,49 +46,49 @@ func (r AliyunAlinkOpendataUrlQueryRequest) GetApiParams() url.Values {
 }
 // AccessKey Setter
 // 授权key，厂家在物联平台申请的云端授权key
-func (r *AliyunAlinkOpendataUrlQueryRequest) SetAccessKey(accessKey string) error {
-    r.accessKey = accessKey
-    r.Set("access_key", accessKey)
+func (r *AliyunAlinkOpendataUrlQueryRequest) SetAccessKey(_accessKey string) error {
+    r._accessKey = _accessKey
+    r.Set("access_key", _accessKey)
     return nil
 }
 
 // AccessKey Getter
 func (r AliyunAlinkOpendataUrlQueryRequest) GetAccessKey() string {
-    return r.accessKey
+    return r._accessKey
 }
 // BizDay Setter
 // 数据日期，格式：yyyyMMdd
-func (r *AliyunAlinkOpendataUrlQueryRequest) SetBizDay(bizDay string) error {
-    r.bizDay = bizDay
-    r.Set("biz_day", bizDay)
+func (r *AliyunAlinkOpendataUrlQueryRequest) SetBizDay(_bizDay string) error {
+    r._bizDay = _bizDay
+    r.Set("biz_day", _bizDay)
     return nil
 }
 
 // BizDay Getter
 func (r AliyunAlinkOpendataUrlQueryRequest) GetBizDay() string {
-    return r.bizDay
+    return r._bizDay
 }
 // BizHour Setter
 // 数据时点，范围[0,23]
-func (r *AliyunAlinkOpendataUrlQueryRequest) SetBizHour(bizHour int64) error {
-    r.bizHour = bizHour
-    r.Set("biz_hour", bizHour)
+func (r *AliyunAlinkOpendataUrlQueryRequest) SetBizHour(_bizHour int64) error {
+    r._bizHour = _bizHour
+    r.Set("biz_hour", _bizHour)
     return nil
 }
 
 // BizHour Getter
 func (r AliyunAlinkOpendataUrlQueryRequest) GetBizHour() int64 {
-    return r.bizHour
+    return r._bizHour
 }
 // DataType Setter
 // 数据类型，1：设备数据，2：用户操作数据
-func (r *AliyunAlinkOpendataUrlQueryRequest) SetDataType(dataType int64) error {
-    r.dataType = dataType
-    r.Set("data_type", dataType)
+func (r *AliyunAlinkOpendataUrlQueryRequest) SetDataType(_dataType int64) error {
+    r._dataType = _dataType
+    r.Set("data_type", _dataType)
     return nil
 }
 
 // DataType Getter
 func (r AliyunAlinkOpendataUrlQueryRequest) GetDataType() int64 {
-    return r.dataType
+    return r._dataType
 }

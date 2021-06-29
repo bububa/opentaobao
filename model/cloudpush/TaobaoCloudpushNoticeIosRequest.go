@@ -15,15 +15,15 @@ taobao.cloudpush.notice.ios
 type TaobaoCloudpushNoticeIosRequest struct {
     model.Params
     // 通知摘要
-    summary   string
+    _summary   string
     // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
-    target   string
+    _target   string
     // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
-    targetValue   string
+    _targetValue   string
     // iOS的通知是通过APNS中心来发送的，需要填写对应的环境信息.  DEV:表示开发环境, PRODUCT: 表示生产环境.
-    env   string
+    _env   string
     // 提供给IOS通知的扩展属性，如角标或者声音等,注意：参数值为json
-    ext   string
+    _ext   string
 }
 
 // 初始化TaobaoCloudpushNoticeIosRequest对象
@@ -48,61 +48,61 @@ func (r TaobaoCloudpushNoticeIosRequest) GetApiParams() url.Values {
 }
 // Summary Setter
 // 通知摘要
-func (r *TaobaoCloudpushNoticeIosRequest) SetSummary(summary string) error {
-    r.summary = summary
-    r.Set("summary", summary)
+func (r *TaobaoCloudpushNoticeIosRequest) SetSummary(_summary string) error {
+    r._summary = _summary
+    r.Set("summary", _summary)
     return nil
 }
 
 // Summary Getter
 func (r TaobaoCloudpushNoticeIosRequest) GetSummary() string {
-    return r.summary
+    return r._summary
 }
 // Target Setter
 // 推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部
-func (r *TaobaoCloudpushNoticeIosRequest) SetTarget(target string) error {
-    r.target = target
-    r.Set("target", target)
+func (r *TaobaoCloudpushNoticeIosRequest) SetTarget(_target string) error {
+    r._target = _target
+    r.Set("target", _target)
     return nil
 }
 
 // Target Getter
 func (r TaobaoCloudpushNoticeIosRequest) GetTarget() string {
-    return r.target
+    return r._target
 }
 // TargetValue Setter
 // 根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔
-func (r *TaobaoCloudpushNoticeIosRequest) SetTargetValue(targetValue string) error {
-    r.targetValue = targetValue
-    r.Set("target_value", targetValue)
+func (r *TaobaoCloudpushNoticeIosRequest) SetTargetValue(_targetValue string) error {
+    r._targetValue = _targetValue
+    r.Set("target_value", _targetValue)
     return nil
 }
 
 // TargetValue Getter
 func (r TaobaoCloudpushNoticeIosRequest) GetTargetValue() string {
-    return r.targetValue
+    return r._targetValue
 }
 // Env Setter
 // iOS的通知是通过APNS中心来发送的，需要填写对应的环境信息.  DEV:表示开发环境, PRODUCT: 表示生产环境.
-func (r *TaobaoCloudpushNoticeIosRequest) SetEnv(env string) error {
-    r.env = env
-    r.Set("env", env)
+func (r *TaobaoCloudpushNoticeIosRequest) SetEnv(_env string) error {
+    r._env = _env
+    r.Set("env", _env)
     return nil
 }
 
 // Env Getter
 func (r TaobaoCloudpushNoticeIosRequest) GetEnv() string {
-    return r.env
+    return r._env
 }
 // Ext Setter
 // 提供给IOS通知的扩展属性，如角标或者声音等,注意：参数值为json
-func (r *TaobaoCloudpushNoticeIosRequest) SetExt(ext string) error {
-    r.ext = ext
-    r.Set("ext", ext)
+func (r *TaobaoCloudpushNoticeIosRequest) SetExt(_ext string) error {
+    r._ext = _ext
+    r.Set("ext", _ext)
     return nil
 }
 
 // Ext Getter
 func (r TaobaoCloudpushNoticeIosRequest) GetExt() string {
-    return r.ext
+    return r._ext
 }

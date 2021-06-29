@@ -15,9 +15,9 @@ taobao.place.storegroup.create
 type TaobaoPlaceStoregroupCreateRequest struct {
     model.Params
     // 库名
-    name   string
+    _name   string
     // 备注
-    desc   string
+    _desc   string
 }
 
 // 初始化TaobaoPlaceStoregroupCreateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPlaceStoregroupCreateRequest) GetApiParams() url.Values {
 }
 // Name Setter
 // 库名
-func (r *TaobaoPlaceStoregroupCreateRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoPlaceStoregroupCreateRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoPlaceStoregroupCreateRequest) GetName() string {
-    return r.name
+    return r._name
 }
 // Desc Setter
 // 备注
-func (r *TaobaoPlaceStoregroupCreateRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TaobaoPlaceStoregroupCreateRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TaobaoPlaceStoregroupCreateRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }

@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.order.pay
 type AlitripBtripHotelDistributionOrderPayRequest struct {
     model.Params
     // 通知商旅支付成功接口参数
-    paramBtripHotelOrderOperateRq   *BtripHotelOrderOperateRq
+    _paramBtripHotelOrderOperateRq   *BtripHotelOrderOperateRq
 }
 
 // 初始化AlitripBtripHotelDistributionOrderPayRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionOrderPayRequest) GetApiParams() url.Values 
 }
 // ParamBtripHotelOrderOperateRq Setter
 // 通知商旅支付成功接口参数
-func (r *AlitripBtripHotelDistributionOrderPayRequest) SetParamBtripHotelOrderOperateRq(paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
-    r.paramBtripHotelOrderOperateRq = paramBtripHotelOrderOperateRq
-    r.Set("param_btrip_hotel_order_operate_rq", paramBtripHotelOrderOperateRq)
+func (r *AlitripBtripHotelDistributionOrderPayRequest) SetParamBtripHotelOrderOperateRq(_paramBtripHotelOrderOperateRq *BtripHotelOrderOperateRq) error {
+    r._paramBtripHotelOrderOperateRq = _paramBtripHotelOrderOperateRq
+    r.Set("param_btrip_hotel_order_operate_rq", _paramBtripHotelOrderOperateRq)
     return nil
 }
 
 // ParamBtripHotelOrderOperateRq Getter
 func (r AlitripBtripHotelDistributionOrderPayRequest) GetParamBtripHotelOrderOperateRq() *BtripHotelOrderOperateRq {
-    return r.paramBtripHotelOrderOperateRq
+    return r._paramBtripHotelOrderOperateRq
 }

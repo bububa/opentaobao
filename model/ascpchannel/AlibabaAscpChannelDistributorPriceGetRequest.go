@@ -15,7 +15,7 @@ alibaba.ascp.channel.distributor.price.get
 type AlibabaAscpChannelDistributorPriceGetRequest struct {
     model.Params
     // 价格入参
-    priceRequest   *Pricerequest
+    _priceRequest   *Pricerequest
 }
 
 // 初始化AlibabaAscpChannelDistributorPriceGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpChannelDistributorPriceGetRequest) GetApiParams() url.Values 
 }
 // PriceRequest Setter
 // 价格入参
-func (r *AlibabaAscpChannelDistributorPriceGetRequest) SetPriceRequest(priceRequest *Pricerequest) error {
-    r.priceRequest = priceRequest
-    r.Set("price_request", priceRequest)
+func (r *AlibabaAscpChannelDistributorPriceGetRequest) SetPriceRequest(_priceRequest *Pricerequest) error {
+    r._priceRequest = _priceRequest
+    r.Set("price_request", _priceRequest)
     return nil
 }
 
 // PriceRequest Getter
 func (r AlibabaAscpChannelDistributorPriceGetRequest) GetPriceRequest() *Pricerequest {
-    return r.priceRequest
+    return r._priceRequest
 }

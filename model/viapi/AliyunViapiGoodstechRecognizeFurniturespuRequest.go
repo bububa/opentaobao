@@ -15,13 +15,13 @@ aliyun.viapi.goodstech.recognize.furniturespu
 type AliyunViapiGoodstechRecognizeFurniturespuRequest struct {
     model.Params
     // 待检测图片链接
-    imageUrl   string
+    _imageUrl   string
     // 模型x方向的尺寸，单位cm，默认值100
-    xLength   string
+    _xLength   string
     // 模型y方向的尺寸，单位cm，默认值100
-    yLength   string
+    _yLength   string
     // 模型z方向的尺寸，单位cm，默认值100
-    zLength   string
+    _zLength   string
 }
 
 // 初始化AliyunViapiGoodstechRecognizeFurniturespuRequest对象
@@ -46,49 +46,49 @@ func (r AliyunViapiGoodstechRecognizeFurniturespuRequest) GetApiParams() url.Val
 }
 // ImageUrl Setter
 // 待检测图片链接
-func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }
 // XLength Setter
 // 模型x方向的尺寸，单位cm，默认值100
-func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetXLength(xLength string) error {
-    r.xLength = xLength
-    r.Set("x_length", xLength)
+func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetXLength(_xLength string) error {
+    r._xLength = _xLength
+    r.Set("x_length", _xLength)
     return nil
 }
 
 // XLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuRequest) GetXLength() string {
-    return r.xLength
+    return r._xLength
 }
 // YLength Setter
 // 模型y方向的尺寸，单位cm，默认值100
-func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetYLength(yLength string) error {
-    r.yLength = yLength
-    r.Set("y_length", yLength)
+func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetYLength(_yLength string) error {
+    r._yLength = _yLength
+    r.Set("y_length", _yLength)
     return nil
 }
 
 // YLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuRequest) GetYLength() string {
-    return r.yLength
+    return r._yLength
 }
 // ZLength Setter
 // 模型z方向的尺寸，单位cm，默认值100
-func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetZLength(zLength string) error {
-    r.zLength = zLength
-    r.Set("z_length", zLength)
+func (r *AliyunViapiGoodstechRecognizeFurniturespuRequest) SetZLength(_zLength string) error {
+    r._zLength = _zLength
+    r.Set("z_length", _zLength)
     return nil
 }
 
 // ZLength Getter
 func (r AliyunViapiGoodstechRecognizeFurniturespuRequest) GetZLength() string {
-    return r.zLength
+    return r._zLength
 }

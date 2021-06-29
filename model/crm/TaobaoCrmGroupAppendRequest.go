@@ -15,9 +15,9 @@ taobao.crm.group.append
 type TaobaoCrmGroupAppendRequest struct {
     model.Params
     // 添加的来源分组
-    fromGroupId   int64
+    _fromGroupId   int64
     // 添加的目标分组
-    toGroupId   int64
+    _toGroupId   int64
 }
 
 // 初始化TaobaoCrmGroupAppendRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoCrmGroupAppendRequest) GetApiParams() url.Values {
 }
 // FromGroupId Setter
 // 添加的来源分组
-func (r *TaobaoCrmGroupAppendRequest) SetFromGroupId(fromGroupId int64) error {
-    r.fromGroupId = fromGroupId
-    r.Set("from_group_id", fromGroupId)
+func (r *TaobaoCrmGroupAppendRequest) SetFromGroupId(_fromGroupId int64) error {
+    r._fromGroupId = _fromGroupId
+    r.Set("from_group_id", _fromGroupId)
     return nil
 }
 
 // FromGroupId Getter
 func (r TaobaoCrmGroupAppendRequest) GetFromGroupId() int64 {
-    return r.fromGroupId
+    return r._fromGroupId
 }
 // ToGroupId Setter
 // 添加的目标分组
-func (r *TaobaoCrmGroupAppendRequest) SetToGroupId(toGroupId int64) error {
-    r.toGroupId = toGroupId
-    r.Set("to_group_id", toGroupId)
+func (r *TaobaoCrmGroupAppendRequest) SetToGroupId(_toGroupId int64) error {
+    r._toGroupId = _toGroupId
+    r.Set("to_group_id", _toGroupId)
     return nil
 }
 
 // ToGroupId Getter
 func (r TaobaoCrmGroupAppendRequest) GetToGroupId() int64 {
-    return r.toGroupId
+    return r._toGroupId
 }

@@ -15,7 +15,7 @@ alibaba.tmallgenie.scp.plan.forecast.oem.upload
 type AlibabaTmallgenieScpPlanForecastOemUploadRequest struct {
     model.Params
     // 请求参数
-    supplierForecastRequest   *SupplierForecastRequest
+    _supplierForecastRequest   *SupplierForecastRequest
 }
 
 // 初始化AlibabaTmallgenieScpPlanForecastOemUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTmallgenieScpPlanForecastOemUploadRequest) GetApiParams() url.Val
 }
 // SupplierForecastRequest Setter
 // 请求参数
-func (r *AlibabaTmallgenieScpPlanForecastOemUploadRequest) SetSupplierForecastRequest(supplierForecastRequest *SupplierForecastRequest) error {
-    r.supplierForecastRequest = supplierForecastRequest
-    r.Set("supplier_forecast_request", supplierForecastRequest)
+func (r *AlibabaTmallgenieScpPlanForecastOemUploadRequest) SetSupplierForecastRequest(_supplierForecastRequest *SupplierForecastRequest) error {
+    r._supplierForecastRequest = _supplierForecastRequest
+    r.Set("supplier_forecast_request", _supplierForecastRequest)
     return nil
 }
 
 // SupplierForecastRequest Getter
 func (r AlibabaTmallgenieScpPlanForecastOemUploadRequest) GetSupplierForecastRequest() *SupplierForecastRequest {
-    return r.supplierForecastRequest
+    return r._supplierForecastRequest
 }

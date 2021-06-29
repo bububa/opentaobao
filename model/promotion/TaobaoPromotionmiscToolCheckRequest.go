@@ -15,9 +15,9 @@ UMP工具检测。ISV通过该接口检测（通过taobao.ump.tool.add）创建�
 type TaobaoPromotionmiscToolCheckRequest struct {
     model.Params
     // 工具ID, taobao.ump.tool.add成功后返回的id。
-    toolId   int64
+    _toolId   int64
     // 可使用的元数据。PRD审核后，会告诉isv可使用的元数据。
-    metaAllow   string
+    _metaAllow   string
 }
 
 // 初始化TaobaoPromotionmiscToolCheckRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPromotionmiscToolCheckRequest) GetApiParams() url.Values {
 }
 // ToolId Setter
 // 工具ID, taobao.ump.tool.add成功后返回的id。
-func (r *TaobaoPromotionmiscToolCheckRequest) SetToolId(toolId int64) error {
-    r.toolId = toolId
-    r.Set("tool_id", toolId)
+func (r *TaobaoPromotionmiscToolCheckRequest) SetToolId(_toolId int64) error {
+    r._toolId = _toolId
+    r.Set("tool_id", _toolId)
     return nil
 }
 
 // ToolId Getter
 func (r TaobaoPromotionmiscToolCheckRequest) GetToolId() int64 {
-    return r.toolId
+    return r._toolId
 }
 // MetaAllow Setter
 // 可使用的元数据。PRD审核后，会告诉isv可使用的元数据。
-func (r *TaobaoPromotionmiscToolCheckRequest) SetMetaAllow(metaAllow string) error {
-    r.metaAllow = metaAllow
-    r.Set("meta_allow", metaAllow)
+func (r *TaobaoPromotionmiscToolCheckRequest) SetMetaAllow(_metaAllow string) error {
+    r._metaAllow = _metaAllow
+    r.Set("meta_allow", _metaAllow)
     return nil
 }
 
 // MetaAllow Getter
 func (r TaobaoPromotionmiscToolCheckRequest) GetMetaAllow() string {
-    return r.metaAllow
+    return r._metaAllow
 }

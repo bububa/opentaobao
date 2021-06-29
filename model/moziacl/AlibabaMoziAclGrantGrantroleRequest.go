@@ -15,7 +15,7 @@ alibaba.mozi.acl.grant.grantrole
 type AlibabaMoziAclGrantGrantroleRequest struct {
     model.Params
     // 整体入参对象
-    grantRolesRequest   *GrantRolesRequest
+    _grantRolesRequest   *GrantRolesRequest
 }
 
 // 初始化AlibabaMoziAclGrantGrantroleRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclGrantGrantroleRequest) GetApiParams() url.Values {
 }
 // GrantRolesRequest Setter
 // 整体入参对象
-func (r *AlibabaMoziAclGrantGrantroleRequest) SetGrantRolesRequest(grantRolesRequest *GrantRolesRequest) error {
-    r.grantRolesRequest = grantRolesRequest
-    r.Set("grant_roles_request", grantRolesRequest)
+func (r *AlibabaMoziAclGrantGrantroleRequest) SetGrantRolesRequest(_grantRolesRequest *GrantRolesRequest) error {
+    r._grantRolesRequest = _grantRolesRequest
+    r.Set("grant_roles_request", _grantRolesRequest)
     return nil
 }
 
 // GrantRolesRequest Getter
 func (r AlibabaMoziAclGrantGrantroleRequest) GetGrantRolesRequest() *GrantRolesRequest {
-    return r.grantRolesRequest
+    return r._grantRolesRequest
 }

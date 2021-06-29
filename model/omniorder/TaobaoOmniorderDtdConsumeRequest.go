@@ -15,7 +15,7 @@ taobao.omniorder.dtd.consume
 type TaobaoOmniorderDtdConsumeRequest struct {
     model.Params
     // 核销信息
-    paramDoor2doorConsumeRequest   *Door2doorConsumeRequest
+    _paramDoor2doorConsumeRequest   *Door2doorConsumeRequest
 }
 
 // 初始化TaobaoOmniorderDtdConsumeRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOmniorderDtdConsumeRequest) GetApiParams() url.Values {
 }
 // ParamDoor2doorConsumeRequest Setter
 // 核销信息
-func (r *TaobaoOmniorderDtdConsumeRequest) SetParamDoor2doorConsumeRequest(paramDoor2doorConsumeRequest *Door2doorConsumeRequest) error {
-    r.paramDoor2doorConsumeRequest = paramDoor2doorConsumeRequest
-    r.Set("param_door2door_consume_request", paramDoor2doorConsumeRequest)
+func (r *TaobaoOmniorderDtdConsumeRequest) SetParamDoor2doorConsumeRequest(_paramDoor2doorConsumeRequest *Door2doorConsumeRequest) error {
+    r._paramDoor2doorConsumeRequest = _paramDoor2doorConsumeRequest
+    r.Set("param_door2door_consume_request", _paramDoor2doorConsumeRequest)
     return nil
 }
 
 // ParamDoor2doorConsumeRequest Getter
 func (r TaobaoOmniorderDtdConsumeRequest) GetParamDoor2doorConsumeRequest() *Door2doorConsumeRequest {
-    return r.paramDoor2doorConsumeRequest
+    return r._paramDoor2doorConsumeRequest
 }

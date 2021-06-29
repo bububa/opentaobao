@@ -15,7 +15,7 @@ alibaba.idle.user.permit
 type AlibabaIdleUserPermitRequest struct {
     model.Params
     // 授权请求
-    paramUserGrantRequest   *UserGrantRequest
+    _paramUserGrantRequest   *UserGrantRequest
 }
 
 // 初始化AlibabaIdleUserPermitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleUserPermitRequest) GetApiParams() url.Values {
 }
 // ParamUserGrantRequest Setter
 // 授权请求
-func (r *AlibabaIdleUserPermitRequest) SetParamUserGrantRequest(paramUserGrantRequest *UserGrantRequest) error {
-    r.paramUserGrantRequest = paramUserGrantRequest
-    r.Set("param_user_grant_request", paramUserGrantRequest)
+func (r *AlibabaIdleUserPermitRequest) SetParamUserGrantRequest(_paramUserGrantRequest *UserGrantRequest) error {
+    r._paramUserGrantRequest = _paramUserGrantRequest
+    r.Set("param_user_grant_request", _paramUserGrantRequest)
     return nil
 }
 
 // ParamUserGrantRequest Getter
 func (r AlibabaIdleUserPermitRequest) GetParamUserGrantRequest() *UserGrantRequest {
-    return r.paramUserGrantRequest
+    return r._paramUserGrantRequest
 }

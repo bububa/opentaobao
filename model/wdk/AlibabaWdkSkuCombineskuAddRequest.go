@@ -15,7 +15,7 @@ alibaba.wdk.sku.combinesku.add
 type AlibabaWdkSkuCombineskuAddRequest struct {
     model.Params
     // 请求参数
-    paramList   []SkuDo
+    _paramList   []SkuDo
 }
 
 // 初始化AlibabaWdkSkuCombineskuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCombineskuAddRequest) GetApiParams() url.Values {
 }
 // ParamList Setter
 // 请求参数
-func (r *AlibabaWdkSkuCombineskuAddRequest) SetParamList(paramList []SkuDo) error {
-    r.paramList = paramList
-    r.Set("param_list", paramList)
+func (r *AlibabaWdkSkuCombineskuAddRequest) SetParamList(_paramList []SkuDo) error {
+    r._paramList = _paramList
+    r.Set("param_list", _paramList)
     return nil
 }
 
 // ParamList Getter
 func (r AlibabaWdkSkuCombineskuAddRequest) GetParamList() []SkuDo {
-    return r.paramList
+    return r._paramList
 }

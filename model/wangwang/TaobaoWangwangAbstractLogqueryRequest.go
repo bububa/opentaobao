@@ -15,19 +15,19 @@ taobao.wangwang.abstract.logquery
 type TaobaoWangwangAbstractLogqueryRequest struct {
     model.Params
     // 买家id，有cntaobao前缀
-    toId   string
+    _toId   string
     // 卖家id，有cntaobao前缀
-    fromId   string
+    _fromId   string
     // 获取记录条数，默认值是1000
-    count   int64
+    _count   int64
     // 设置了这个值，那么聊天记录就从这个点开始查询
-    nextKey   string
+    _nextKey   string
     // 传入参数的字符集
-    charset   string
+    _charset   string
     // utc
-    startDate   int64
+    _startDate   int64
     // utc
-    endDate   int64
+    _endDate   int64
 }
 
 // 初始化TaobaoWangwangAbstractLogqueryRequest对象
@@ -52,85 +52,85 @@ func (r TaobaoWangwangAbstractLogqueryRequest) GetApiParams() url.Values {
 }
 // ToId Setter
 // 买家id，有cntaobao前缀
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetToId(toId string) error {
-    r.toId = toId
-    r.Set("to_id", toId)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetToId(_toId string) error {
+    r._toId = _toId
+    r.Set("to_id", _toId)
     return nil
 }
 
 // ToId Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetToId() string {
-    return r.toId
+    return r._toId
 }
 // FromId Setter
 // 卖家id，有cntaobao前缀
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetFromId(fromId string) error {
-    r.fromId = fromId
-    r.Set("from_id", fromId)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetFromId(_fromId string) error {
+    r._fromId = _fromId
+    r.Set("from_id", _fromId)
     return nil
 }
 
 // FromId Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetFromId() string {
-    return r.fromId
+    return r._fromId
 }
 // Count Setter
 // 获取记录条数，默认值是1000
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetCount(count int64) error {
-    r.count = count
-    r.Set("count", count)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetCount(_count int64) error {
+    r._count = _count
+    r.Set("count", _count)
     return nil
 }
 
 // Count Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetCount() int64 {
-    return r.count
+    return r._count
 }
 // NextKey Setter
 // 设置了这个值，那么聊天记录就从这个点开始查询
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetNextKey(nextKey string) error {
-    r.nextKey = nextKey
-    r.Set("next_key", nextKey)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetNextKey(_nextKey string) error {
+    r._nextKey = _nextKey
+    r.Set("next_key", _nextKey)
     return nil
 }
 
 // NextKey Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetNextKey() string {
-    return r.nextKey
+    return r._nextKey
 }
 // Charset Setter
 // 传入参数的字符集
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetCharset(charset string) error {
-    r.charset = charset
-    r.Set("charset", charset)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetCharset(_charset string) error {
+    r._charset = _charset
+    r.Set("charset", _charset)
     return nil
 }
 
 // Charset Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetCharset() string {
-    return r.charset
+    return r._charset
 }
 // StartDate Setter
 // utc
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetStartDate(startDate int64) error {
-    r.startDate = startDate
-    r.Set("start_date", startDate)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetStartDate(_startDate int64) error {
+    r._startDate = _startDate
+    r.Set("start_date", _startDate)
     return nil
 }
 
 // StartDate Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetStartDate() int64 {
-    return r.startDate
+    return r._startDate
 }
 // EndDate Setter
 // utc
-func (r *TaobaoWangwangAbstractLogqueryRequest) SetEndDate(endDate int64) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *TaobaoWangwangAbstractLogqueryRequest) SetEndDate(_endDate int64) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r TaobaoWangwangAbstractLogqueryRequest) GetEndDate() int64 {
-    return r.endDate
+    return r._endDate
 }

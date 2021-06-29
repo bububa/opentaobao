@@ -15,7 +15,7 @@ tmall.service.settleadjustment.get
 type TmallServiceSettleadjustmentGetRequest struct {
     model.Params
     // 结算调整单ID
-    id   int64
+    _id   int64
 }
 
 // 初始化TmallServiceSettleadjustmentGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallServiceSettleadjustmentGetRequest) GetApiParams() url.Values {
 }
 // Id Setter
 // 结算调整单ID
-func (r *TmallServiceSettleadjustmentGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *TmallServiceSettleadjustmentGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r TmallServiceSettleadjustmentGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

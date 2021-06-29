@@ -15,7 +15,7 @@ taobao.picture.isreferenced.get
 type TaobaoPictureIsreferencedGetRequest struct {
     model.Params
     // 图片id
-    pictureId   int64
+    _pictureId   int64
 }
 
 // 初始化TaobaoPictureIsreferencedGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPictureIsreferencedGetRequest) GetApiParams() url.Values {
 }
 // PictureId Setter
 // 图片id
-func (r *TaobaoPictureIsreferencedGetRequest) SetPictureId(pictureId int64) error {
-    r.pictureId = pictureId
-    r.Set("picture_id", pictureId)
+func (r *TaobaoPictureIsreferencedGetRequest) SetPictureId(_pictureId int64) error {
+    r._pictureId = _pictureId
+    r.Set("picture_id", _pictureId)
     return nil
 }
 
 // PictureId Getter
 func (r TaobaoPictureIsreferencedGetRequest) GetPictureId() int64 {
-    return r.pictureId
+    return r._pictureId
 }

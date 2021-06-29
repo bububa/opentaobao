@@ -15,7 +15,7 @@ alibaba.wdk.item.morebarcode.ops
 type AlibabaWdkItemMorebarcodeOpsRequest struct {
     model.Params
     // bean
-    updateMoreBarCodeRequestBean   *UpdateMoreBarCodeRequestBean
+    _updateMoreBarCodeRequestBean   *UpdateMoreBarCodeRequestBean
 }
 
 // 初始化AlibabaWdkItemMorebarcodeOpsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkItemMorebarcodeOpsRequest) GetApiParams() url.Values {
 }
 // UpdateMoreBarCodeRequestBean Setter
 // bean
-func (r *AlibabaWdkItemMorebarcodeOpsRequest) SetUpdateMoreBarCodeRequestBean(updateMoreBarCodeRequestBean *UpdateMoreBarCodeRequestBean) error {
-    r.updateMoreBarCodeRequestBean = updateMoreBarCodeRequestBean
-    r.Set("update_more_bar_code_request_bean", updateMoreBarCodeRequestBean)
+func (r *AlibabaWdkItemMorebarcodeOpsRequest) SetUpdateMoreBarCodeRequestBean(_updateMoreBarCodeRequestBean *UpdateMoreBarCodeRequestBean) error {
+    r._updateMoreBarCodeRequestBean = _updateMoreBarCodeRequestBean
+    r.Set("update_more_bar_code_request_bean", _updateMoreBarCodeRequestBean)
     return nil
 }
 
 // UpdateMoreBarCodeRequestBean Getter
 func (r AlibabaWdkItemMorebarcodeOpsRequest) GetUpdateMoreBarCodeRequestBean() *UpdateMoreBarCodeRequestBean {
-    return r.updateMoreBarCodeRequestBean
+    return r._updateMoreBarCodeRequestBean
 }

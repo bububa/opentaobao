@@ -15,7 +15,7 @@ alibaba.wdk.channel.user.sync
 type AlibabaWdkChannelUserSyncRequest struct {
     model.Params
     // 会员信息
-    userSyncInfo   *UserSyncInfo
+    _userSyncInfo   *UserSyncInfo
 }
 
 // 初始化AlibabaWdkChannelUserSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkChannelUserSyncRequest) GetApiParams() url.Values {
 }
 // UserSyncInfo Setter
 // 会员信息
-func (r *AlibabaWdkChannelUserSyncRequest) SetUserSyncInfo(userSyncInfo *UserSyncInfo) error {
-    r.userSyncInfo = userSyncInfo
-    r.Set("user_sync_info", userSyncInfo)
+func (r *AlibabaWdkChannelUserSyncRequest) SetUserSyncInfo(_userSyncInfo *UserSyncInfo) error {
+    r._userSyncInfo = _userSyncInfo
+    r.Set("user_sync_info", _userSyncInfo)
     return nil
 }
 
 // UserSyncInfo Getter
 func (r AlibabaWdkChannelUserSyncRequest) GetUserSyncInfo() *UserSyncInfo {
-    return r.userSyncInfo
+    return r._userSyncInfo
 }

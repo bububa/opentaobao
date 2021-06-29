@@ -15,15 +15,15 @@ cainiao.vms.service.vehicleinfo.upload
 type CainiaoVmsServiceVehicleinfoUploadRequest struct {
     model.Params
     // 设备号
-    deviceId   string
+    _deviceId   string
     // 厂家标识
-    providerName   string
+    _providerName   string
     // 数据源标识
-    dataSource   string
+    _dataSource   string
     // 协议版本标识
-    protocolVersion   string
+    _protocolVersion   string
     // 上传的信息
-    data   string
+    _data   string
 }
 
 // 初始化CainiaoVmsServiceVehicleinfoUploadRequest对象
@@ -48,61 +48,61 @@ func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetApiParams() url.Values {
 }
 // DeviceId Setter
 // 设备号
-func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetDeviceId(deviceId string) error {
-    r.deviceId = deviceId
-    r.Set("device_id", deviceId)
+func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetDeviceId(_deviceId string) error {
+    r._deviceId = _deviceId
+    r.Set("device_id", _deviceId)
     return nil
 }
 
 // DeviceId Getter
 func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetDeviceId() string {
-    return r.deviceId
+    return r._deviceId
 }
 // ProviderName Setter
 // 厂家标识
-func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetProviderName(providerName string) error {
-    r.providerName = providerName
-    r.Set("provider_name", providerName)
+func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetProviderName(_providerName string) error {
+    r._providerName = _providerName
+    r.Set("provider_name", _providerName)
     return nil
 }
 
 // ProviderName Getter
 func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetProviderName() string {
-    return r.providerName
+    return r._providerName
 }
 // DataSource Setter
 // 数据源标识
-func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetDataSource(dataSource string) error {
-    r.dataSource = dataSource
-    r.Set("data_source", dataSource)
+func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetDataSource(_dataSource string) error {
+    r._dataSource = _dataSource
+    r.Set("data_source", _dataSource)
     return nil
 }
 
 // DataSource Getter
 func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetDataSource() string {
-    return r.dataSource
+    return r._dataSource
 }
 // ProtocolVersion Setter
 // 协议版本标识
-func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetProtocolVersion(protocolVersion string) error {
-    r.protocolVersion = protocolVersion
-    r.Set("protocol_version", protocolVersion)
+func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetProtocolVersion(_protocolVersion string) error {
+    r._protocolVersion = _protocolVersion
+    r.Set("protocol_version", _protocolVersion)
     return nil
 }
 
 // ProtocolVersion Getter
 func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetProtocolVersion() string {
-    return r.protocolVersion
+    return r._protocolVersion
 }
 // Data Setter
 // 上传的信息
-func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetData(data string) error {
-    r.data = data
-    r.Set("data", data)
+func (r *CainiaoVmsServiceVehicleinfoUploadRequest) SetData(_data string) error {
+    r._data = _data
+    r.Set("data", _data)
     return nil
 }
 
 // Data Getter
 func (r CainiaoVmsServiceVehicleinfoUploadRequest) GetData() string {
-    return r.data
+    return r._data
 }

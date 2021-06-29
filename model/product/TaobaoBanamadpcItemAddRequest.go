@@ -15,9 +15,9 @@ taobao.banamadpc.item.add
 type TaobaoBanamadpcItemAddRequest struct {
     model.Params
     // 类目id
-    catId   int64
+    _catId   int64
     // 商品的schema xml
-    xml   string
+    _xml   string
 }
 
 // 初始化TaobaoBanamadpcItemAddRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoBanamadpcItemAddRequest) GetApiParams() url.Values {
 }
 // CatId Setter
 // 类目id
-func (r *TaobaoBanamadpcItemAddRequest) SetCatId(catId int64) error {
-    r.catId = catId
-    r.Set("cat_id", catId)
+func (r *TaobaoBanamadpcItemAddRequest) SetCatId(_catId int64) error {
+    r._catId = _catId
+    r.Set("cat_id", _catId)
     return nil
 }
 
 // CatId Getter
 func (r TaobaoBanamadpcItemAddRequest) GetCatId() int64 {
-    return r.catId
+    return r._catId
 }
 // Xml Setter
 // 商品的schema xml
-func (r *TaobaoBanamadpcItemAddRequest) SetXml(xml string) error {
-    r.xml = xml
-    r.Set("xml", xml)
+func (r *TaobaoBanamadpcItemAddRequest) SetXml(_xml string) error {
+    r._xml = _xml
+    r.Set("xml", _xml)
     return nil
 }
 
 // Xml Getter
 func (r TaobaoBanamadpcItemAddRequest) GetXml() string {
-    return r.xml
+    return r._xml
 }

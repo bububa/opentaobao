@@ -15,9 +15,9 @@ alibaba.alisports.efsp.usercancelorder
 type AlibabaAlisportsEfspUsercancelorderRequest struct {
     model.Params
     // 订单编号
-    orderNo   string
+    _orderNo   string
     // 用户支付宝ID
-    alipayId   string
+    _alipayId   string
 }
 
 // 初始化AlibabaAlisportsEfspUsercancelorderRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaAlisportsEfspUsercancelorderRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单编号
-func (r *AlibabaAlisportsEfspUsercancelorderRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *AlibabaAlisportsEfspUsercancelorderRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r AlibabaAlisportsEfspUsercancelorderRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }
 // AlipayId Setter
 // 用户支付宝ID
-func (r *AlibabaAlisportsEfspUsercancelorderRequest) SetAlipayId(alipayId string) error {
-    r.alipayId = alipayId
-    r.Set("alipay_id", alipayId)
+func (r *AlibabaAlisportsEfspUsercancelorderRequest) SetAlipayId(_alipayId string) error {
+    r._alipayId = _alipayId
+    r.Set("alipay_id", _alipayId)
     return nil
 }
 
 // AlipayId Getter
 func (r AlibabaAlisportsEfspUsercancelorderRequest) GetAlipayId() string {
-    return r.alipayId
+    return r._alipayId
 }

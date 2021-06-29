@@ -15,7 +15,7 @@ taobao.alitrip.travel.axin.poi.search
 type TaobaoAlitripTravelAxinPoiSearchRequest struct {
     model.Params
     // 搜索关键词
-    keyWord   string
+    _keyWord   string
 }
 
 // 初始化TaobaoAlitripTravelAxinPoiSearchRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetApiParams() url.Values {
 }
 // KeyWord Setter
 // 搜索关键词
-func (r *TaobaoAlitripTravelAxinPoiSearchRequest) SetKeyWord(keyWord string) error {
-    r.keyWord = keyWord
-    r.Set("key_word", keyWord)
+func (r *TaobaoAlitripTravelAxinPoiSearchRequest) SetKeyWord(_keyWord string) error {
+    r._keyWord = _keyWord
+    r.Set("key_word", _keyWord)
     return nil
 }
 
 // KeyWord Getter
 func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetKeyWord() string {
-    return r.keyWord
+    return r._keyWord
 }

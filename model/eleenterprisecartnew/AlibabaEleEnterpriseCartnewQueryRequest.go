@@ -15,13 +15,13 @@ alibaba.ele.enterprise.cartnew.query
 type AlibabaEleEnterpriseCartnewQueryRequest struct {
     model.Params
     // 1212
-    phone   string
+    _phone   string
     // 1212
-    latitude   string
+    _latitude   string
     // 1212
-    longitude   string
+    _longitude   string
     // 餐厅id
-    erestaurantId   string
+    _erestaurantId   string
 }
 
 // 初始化AlibabaEleEnterpriseCartnewQueryRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaEleEnterpriseCartnewQueryRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetPhone(phone string) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetPhone(_phone string) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaEleEnterpriseCartnewQueryRequest) GetPhone() string {
-    return r.phone
+    return r._phone
 }
 // Latitude Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLatitude(latitude string) error {
-    r.latitude = latitude
-    r.Set("latitude", latitude)
+func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLatitude(_latitude string) error {
+    r._latitude = _latitude
+    r.Set("latitude", _latitude)
     return nil
 }
 
 // Latitude Getter
 func (r AlibabaEleEnterpriseCartnewQueryRequest) GetLatitude() string {
-    return r.latitude
+    return r._latitude
 }
 // Longitude Setter
 // 1212
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLongitude(longitude string) error {
-    r.longitude = longitude
-    r.Set("longitude", longitude)
+func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetLongitude(_longitude string) error {
+    r._longitude = _longitude
+    r.Set("longitude", _longitude)
     return nil
 }
 
 // Longitude Getter
 func (r AlibabaEleEnterpriseCartnewQueryRequest) GetLongitude() string {
-    return r.longitude
+    return r._longitude
 }
 // ErestaurantId Setter
 // 餐厅id
-func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetErestaurantId(erestaurantId string) error {
-    r.erestaurantId = erestaurantId
-    r.Set("erestaurant_id", erestaurantId)
+func (r *AlibabaEleEnterpriseCartnewQueryRequest) SetErestaurantId(_erestaurantId string) error {
+    r._erestaurantId = _erestaurantId
+    r.Set("erestaurant_id", _erestaurantId)
     return nil
 }
 
 // ErestaurantId Getter
 func (r AlibabaEleEnterpriseCartnewQueryRequest) GetErestaurantId() string {
-    return r.erestaurantId
+    return r._erestaurantId
 }

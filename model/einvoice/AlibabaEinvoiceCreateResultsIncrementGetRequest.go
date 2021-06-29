@@ -15,17 +15,17 @@ alibaba.einvoice.create.results.increment.get
 type AlibabaEinvoiceCreateResultsIncrementGetRequest struct {
     model.Params
     // 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
-    status   string
+    _status   string
     // 起始查询时间
-    startModified   string
+    _startModified   string
     // 收款方税务登记证号
-    payeeRegisterNo   string
+    _payeeRegisterNo   string
     // 终止查询时间
-    endModified   string
+    _endModified   string
     // 页面大小(不能超过200)
-    pageSize   int64
+    _pageSize   int64
     // 显示的页码
-    pageNo   int64
+    _pageNo   int64
 }
 
 // 初始化AlibabaEinvoiceCreateResultsIncrementGetRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetApiParams() url.Valu
 }
 // Status Setter
 // 开票状态 (waiting = 开票中) 、(create_success = 开票成功)、(create_failed = 开票失败)
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // StartModified Setter
 // 起始查询时间
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetStartModified(startModified string) error {
-    r.startModified = startModified
-    r.Set("start_modified", startModified)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetStartModified(_startModified string) error {
+    r._startModified = _startModified
+    r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetStartModified() string {
-    return r.startModified
+    return r._startModified
 }
 // PayeeRegisterNo Setter
 // 收款方税务登记证号
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPayeeRegisterNo(payeeRegisterNo string) error {
-    r.payeeRegisterNo = payeeRegisterNo
-    r.Set("payee_register_no", payeeRegisterNo)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPayeeRegisterNo(_payeeRegisterNo string) error {
+    r._payeeRegisterNo = _payeeRegisterNo
+    r.Set("payee_register_no", _payeeRegisterNo)
     return nil
 }
 
 // PayeeRegisterNo Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetPayeeRegisterNo() string {
-    return r.payeeRegisterNo
+    return r._payeeRegisterNo
 }
 // EndModified Setter
 // 终止查询时间
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetEndModified(endModified string) error {
-    r.endModified = endModified
-    r.Set("end_modified", endModified)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetEndModified(_endModified string) error {
+    r._endModified = _endModified
+    r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetEndModified() string {
-    return r.endModified
+    return r._endModified
 }
 // PageSize Setter
 // 页面大小(不能超过200)
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageNo Setter
 // 显示的页码
-func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AlibabaEinvoiceCreateResultsIncrementGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AlibabaEinvoiceCreateResultsIncrementGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }

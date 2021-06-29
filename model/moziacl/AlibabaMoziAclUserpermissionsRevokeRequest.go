@@ -15,7 +15,7 @@ alibaba.mozi.acl.userpermissions.revoke
 type AlibabaMoziAclUserpermissionsRevokeRequest struct {
     model.Params
     // 回收权限入参对象
-    revokePermission   *RevokePermissionsRequest
+    _revokePermission   *RevokePermissionsRequest
 }
 
 // 初始化AlibabaMoziAclUserpermissionsRevokeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMoziAclUserpermissionsRevokeRequest) GetApiParams() url.Values {
 }
 // RevokePermission Setter
 // 回收权限入参对象
-func (r *AlibabaMoziAclUserpermissionsRevokeRequest) SetRevokePermission(revokePermission *RevokePermissionsRequest) error {
-    r.revokePermission = revokePermission
-    r.Set("revoke_permission", revokePermission)
+func (r *AlibabaMoziAclUserpermissionsRevokeRequest) SetRevokePermission(_revokePermission *RevokePermissionsRequest) error {
+    r._revokePermission = _revokePermission
+    r.Set("revoke_permission", _revokePermission)
     return nil
 }
 
 // RevokePermission Getter
 func (r AlibabaMoziAclUserpermissionsRevokeRequest) GetRevokePermission() *RevokePermissionsRequest {
-    return r.revokePermission
+    return r._revokePermission
 }

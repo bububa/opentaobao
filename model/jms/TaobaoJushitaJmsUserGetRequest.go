@@ -15,7 +15,7 @@ taobao.jushita.jms.user.get
 type TaobaoJushitaJmsUserGetRequest struct {
     model.Params
     // 需要查询的用户名
-    userNick   string
+    _userNick   string
 }
 
 // 初始化TaobaoJushitaJmsUserGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJushitaJmsUserGetRequest) GetApiParams() url.Values {
 }
 // UserNick Setter
 // 需要查询的用户名
-func (r *TaobaoJushitaJmsUserGetRequest) SetUserNick(userNick string) error {
-    r.userNick = userNick
-    r.Set("user_nick", userNick)
+func (r *TaobaoJushitaJmsUserGetRequest) SetUserNick(_userNick string) error {
+    r._userNick = _userNick
+    r.Set("user_nick", _userNick)
     return nil
 }
 
 // UserNick Getter
 func (r TaobaoJushitaJmsUserGetRequest) GetUserNick() string {
-    return r.userNick
+    return r._userNick
 }

@@ -15,7 +15,7 @@ alibaba.taobao.shop.cat.neo.get
 type AlibabaTaobaoShopCatNeoGetRequest struct {
     model.Params
     // 客户端鉴权虚拟api
-    unNamed   string
+    _unNamed   string
 }
 
 // 初始化AlibabaTaobaoShopCatNeoGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTaobaoShopCatNeoGetRequest) GetApiParams() url.Values {
 }
 // UnNamed Setter
 // 客户端鉴权虚拟api
-func (r *AlibabaTaobaoShopCatNeoGetRequest) SetUnNamed(unNamed string) error {
-    r.unNamed = unNamed
-    r.Set("un_named", unNamed)
+func (r *AlibabaTaobaoShopCatNeoGetRequest) SetUnNamed(_unNamed string) error {
+    r._unNamed = _unNamed
+    r.Set("un_named", _unNamed)
     return nil
 }
 
 // UnNamed Getter
 func (r AlibabaTaobaoShopCatNeoGetRequest) GetUnNamed() string {
-    return r.unNamed
+    return r._unNamed
 }

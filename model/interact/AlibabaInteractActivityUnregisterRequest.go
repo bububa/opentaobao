@@ -15,7 +15,7 @@ alibaba.interact.activity.unregister
 type AlibabaInteractActivityUnregisterRequest struct {
     model.Params
     // 互动活动ID
-    bizId   string
+    _bizId   string
 }
 
 // 初始化AlibabaInteractActivityUnregisterRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaInteractActivityUnregisterRequest) GetApiParams() url.Values {
 }
 // BizId Setter
 // 互动活动ID
-func (r *AlibabaInteractActivityUnregisterRequest) SetBizId(bizId string) error {
-    r.bizId = bizId
-    r.Set("biz_id", bizId)
+func (r *AlibabaInteractActivityUnregisterRequest) SetBizId(_bizId string) error {
+    r._bizId = _bizId
+    r.Set("biz_id", _bizId)
     return nil
 }
 
 // BizId Getter
 func (r AlibabaInteractActivityUnregisterRequest) GetBizId() string {
-    return r.bizId
+    return r._bizId
 }

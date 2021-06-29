@@ -15,9 +15,9 @@ alibaba.scbp.ad.group.find.forbidden.product
 type AlibabaScbpAdGroupFindForbiddenProductRequest struct {
     model.Params
     // 计划id
-    campaignId   int64
+    _campaignId   int64
     // 用户信息
-    topContext   *TopContextDto
+    _topContext   *TopContextDto
 }
 
 // 初始化AlibabaScbpAdGroupFindForbiddenProductRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdGroupFindForbiddenProductRequest) GetApiParams() url.Values
 }
 // CampaignId Setter
 // 计划id
-func (r *AlibabaScbpAdGroupFindForbiddenProductRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *AlibabaScbpAdGroupFindForbiddenProductRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r AlibabaScbpAdGroupFindForbiddenProductRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupFindForbiddenProductRequest) SetTopContext(topContext *TopContextDto) error {
-    r.topContext = topContext
-    r.Set("top_context", topContext)
+func (r *AlibabaScbpAdGroupFindForbiddenProductRequest) SetTopContext(_topContext *TopContextDto) error {
+    r._topContext = _topContext
+    r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
 func (r AlibabaScbpAdGroupFindForbiddenProductRequest) GetTopContext() *TopContextDto {
-    return r.topContext
+    return r._topContext
 }

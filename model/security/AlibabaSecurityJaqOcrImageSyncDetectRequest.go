@@ -15,7 +15,7 @@ alibaba.security.jaq.ocr.image.sync.detect
 type AlibabaSecurityJaqOcrImageSyncDetectRequest struct {
     model.Params
     // 待检测图像链接
-    imageUrl   string
+    _imageUrl   string
 }
 
 // 初始化AlibabaSecurityJaqOcrImageSyncDetectRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqOcrImageSyncDetectRequest) GetApiParams() url.Values {
 }
 // ImageUrl Setter
 // 待检测图像链接
-func (r *AlibabaSecurityJaqOcrImageSyncDetectRequest) SetImageUrl(imageUrl string) error {
-    r.imageUrl = imageUrl
-    r.Set("image_url", imageUrl)
+func (r *AlibabaSecurityJaqOcrImageSyncDetectRequest) SetImageUrl(_imageUrl string) error {
+    r._imageUrl = _imageUrl
+    r.Set("image_url", _imageUrl)
     return nil
 }
 
 // ImageUrl Getter
 func (r AlibabaSecurityJaqOcrImageSyncDetectRequest) GetImageUrl() string {
-    return r.imageUrl
+    return r._imageUrl
 }

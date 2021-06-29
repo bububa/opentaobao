@@ -15,7 +15,7 @@ alibaba.scbp.effect.product.report
 type AlibabaScbpEffectProductReportRequest struct {
     model.Params
     // ProductQuery
-    p4pProductReportQuery   *ProductQuery
+    _p4pProductReportQuery   *ProductQuery
 }
 
 // 初始化AlibabaScbpEffectProductReportRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpEffectProductReportRequest) GetApiParams() url.Values {
 }
 // P4pProductReportQuery Setter
 // ProductQuery
-func (r *AlibabaScbpEffectProductReportRequest) SetP4pProductReportQuery(p4pProductReportQuery *ProductQuery) error {
-    r.p4pProductReportQuery = p4pProductReportQuery
-    r.Set("p4p_product_report_query", p4pProductReportQuery)
+func (r *AlibabaScbpEffectProductReportRequest) SetP4pProductReportQuery(_p4pProductReportQuery *ProductQuery) error {
+    r._p4pProductReportQuery = _p4pProductReportQuery
+    r.Set("p4p_product_report_query", _p4pProductReportQuery)
     return nil
 }
 
 // P4pProductReportQuery Getter
 func (r AlibabaScbpEffectProductReportRequest) GetP4pProductReportQuery() *ProductQuery {
-    return r.p4pProductReportQuery
+    return r._p4pProductReportQuery
 }

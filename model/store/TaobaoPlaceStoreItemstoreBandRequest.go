@@ -15,11 +15,11 @@ taobao.place.store.itemstore.band
 type TaobaoPlaceStoreItemstoreBandRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 门店id
-    storeIds   []int64
+    _storeIds   []int64
     // 操作类型
-    actionType   string
+    _actionType   string
 }
 
 // 初始化TaobaoPlaceStoreItemstoreBandRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoPlaceStoreItemstoreBandRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TaobaoPlaceStoreItemstoreBandRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoPlaceStoreItemstoreBandRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoPlaceStoreItemstoreBandRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // StoreIds Setter
 // 门店id
-func (r *TaobaoPlaceStoreItemstoreBandRequest) SetStoreIds(storeIds []int64) error {
-    r.storeIds = storeIds
-    r.Set("store_ids", storeIds)
+func (r *TaobaoPlaceStoreItemstoreBandRequest) SetStoreIds(_storeIds []int64) error {
+    r._storeIds = _storeIds
+    r.Set("store_ids", _storeIds)
     return nil
 }
 
 // StoreIds Getter
 func (r TaobaoPlaceStoreItemstoreBandRequest) GetStoreIds() []int64 {
-    return r.storeIds
+    return r._storeIds
 }
 // ActionType Setter
 // 操作类型
-func (r *TaobaoPlaceStoreItemstoreBandRequest) SetActionType(actionType string) error {
-    r.actionType = actionType
-    r.Set("action_type", actionType)
+func (r *TaobaoPlaceStoreItemstoreBandRequest) SetActionType(_actionType string) error {
+    r._actionType = _actionType
+    r.Set("action_type", _actionType)
     return nil
 }
 
 // ActionType Getter
 func (r TaobaoPlaceStoreItemstoreBandRequest) GetActionType() string {
-    return r.actionType
+    return r._actionType
 }

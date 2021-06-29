@@ -15,7 +15,7 @@ taobao.openim.users.update
 type TaobaoOpenimUsersUpdateRequest struct {
     model.Params
     // 用户信息列表
-    userinfos   []Userinfos
+    _userinfos   []Userinfos
 }
 
 // 初始化TaobaoOpenimUsersUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenimUsersUpdateRequest) GetApiParams() url.Values {
 }
 // Userinfos Setter
 // 用户信息列表
-func (r *TaobaoOpenimUsersUpdateRequest) SetUserinfos(userinfos []Userinfos) error {
-    r.userinfos = userinfos
-    r.Set("userinfos", userinfos)
+func (r *TaobaoOpenimUsersUpdateRequest) SetUserinfos(_userinfos []Userinfos) error {
+    r._userinfos = _userinfos
+    r.Set("userinfos", _userinfos)
     return nil
 }
 
 // Userinfos Getter
 func (r TaobaoOpenimUsersUpdateRequest) GetUserinfos() []Userinfos {
-    return r.userinfos
+    return r._userinfos
 }

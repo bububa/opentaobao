@@ -15,7 +15,7 @@ alibaba.idle.consignmentii.order.get
 type AlibabaIdleConsignmentiiOrderGetRequest struct {
     model.Params
     // 闲鱼订单ID
-    bizOrderId   int64
+    _bizOrderId   int64
 }
 
 // 初始化AlibabaIdleConsignmentiiOrderGetRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentiiOrderGetRequest) GetApiParams() url.Values {
 }
 // BizOrderId Setter
 // 闲鱼订单ID
-func (r *AlibabaIdleConsignmentiiOrderGetRequest) SetBizOrderId(bizOrderId int64) error {
-    r.bizOrderId = bizOrderId
-    r.Set("biz_order_id", bizOrderId)
+func (r *AlibabaIdleConsignmentiiOrderGetRequest) SetBizOrderId(_bizOrderId int64) error {
+    r._bizOrderId = _bizOrderId
+    r.Set("biz_order_id", _bizOrderId)
     return nil
 }
 
 // BizOrderId Getter
 func (r AlibabaIdleConsignmentiiOrderGetRequest) GetBizOrderId() int64 {
-    return r.bizOrderId
+    return r._bizOrderId
 }

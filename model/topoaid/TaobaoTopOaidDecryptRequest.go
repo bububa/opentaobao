@@ -15,7 +15,7 @@ taobao.top.oaid.decrypt
 type TaobaoTopOaidDecryptRequest struct {
     model.Params
     // 解密请求列表，最多支持20个。
-    queryList   []ReceiverQuery
+    _queryList   []ReceiverQuery
 }
 
 // 初始化TaobaoTopOaidDecryptRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopOaidDecryptRequest) GetApiParams() url.Values {
 }
 // QueryList Setter
 // 解密请求列表，最多支持20个。
-func (r *TaobaoTopOaidDecryptRequest) SetQueryList(queryList []ReceiverQuery) error {
-    r.queryList = queryList
-    r.Set("query_list", queryList)
+func (r *TaobaoTopOaidDecryptRequest) SetQueryList(_queryList []ReceiverQuery) error {
+    r._queryList = _queryList
+    r.Set("query_list", _queryList)
     return nil
 }
 
 // QueryList Getter
 func (r TaobaoTopOaidDecryptRequest) GetQueryList() []ReceiverQuery {
-    return r.queryList
+    return r._queryList
 }

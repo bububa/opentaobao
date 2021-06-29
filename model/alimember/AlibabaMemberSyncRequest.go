@@ -15,7 +15,7 @@ alibaba.member.sync
 type AlibabaMemberSyncRequest struct {
     model.Params
     // 会员同步信息
-    syncMember   *SyncMemberDto
+    _syncMember   *SyncMemberDto
 }
 
 // 初始化AlibabaMemberSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMemberSyncRequest) GetApiParams() url.Values {
 }
 // SyncMember Setter
 // 会员同步信息
-func (r *AlibabaMemberSyncRequest) SetSyncMember(syncMember *SyncMemberDto) error {
-    r.syncMember = syncMember
-    r.Set("sync_member", syncMember)
+func (r *AlibabaMemberSyncRequest) SetSyncMember(_syncMember *SyncMemberDto) error {
+    r._syncMember = _syncMember
+    r.Set("sync_member", _syncMember)
     return nil
 }
 
 // SyncMember Getter
 func (r AlibabaMemberSyncRequest) GetSyncMember() *SyncMemberDto {
-    return r.syncMember
+    return r._syncMember
 }

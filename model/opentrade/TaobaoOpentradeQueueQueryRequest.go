@@ -15,17 +15,17 @@ taobao.opentrade.queue.query
 type TaobaoOpentradeQueueQueryRequest struct {
     model.Params
     // 排队用户状态，新用户为NEW
-    status   string
+    _status   string
     // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
-    activityId   string
+    _activityId   string
     // 排队商品SKU ID，不存在传0
-    skuId   int64
+    _skuId   int64
     // 排队商品ID
-    itemId   int64
+    _itemId   int64
     // 分页参数，每页大小
-    pageSize   int64
+    _pageSize   int64
     // 分页参数，当前页，以0开始
-    pageIndex   int64
+    _pageIndex   int64
 }
 
 // 初始化TaobaoOpentradeQueueQueryRequest对象
@@ -50,73 +50,73 @@ func (r TaobaoOpentradeQueueQueryRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 排队用户状态，新用户为NEW
-func (r *TaobaoOpentradeQueueQueryRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TaobaoOpentradeQueueQueryRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // ActivityId Setter
 // 排队活动ID，排队时如传入，这里需要填写；若未传，这里也可以不传
-func (r *TaobaoOpentradeQueueQueryRequest) SetActivityId(activityId string) error {
-    r.activityId = activityId
-    r.Set("activity_id", activityId)
+func (r *TaobaoOpentradeQueueQueryRequest) SetActivityId(_activityId string) error {
+    r._activityId = _activityId
+    r.Set("activity_id", _activityId)
     return nil
 }
 
 // ActivityId Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetActivityId() string {
-    return r.activityId
+    return r._activityId
 }
 // SkuId Setter
 // 排队商品SKU ID，不存在传0
-func (r *TaobaoOpentradeQueueQueryRequest) SetSkuId(skuId int64) error {
-    r.skuId = skuId
-    r.Set("sku_id", skuId)
+func (r *TaobaoOpentradeQueueQueryRequest) SetSkuId(_skuId int64) error {
+    r._skuId = _skuId
+    r.Set("sku_id", _skuId)
     return nil
 }
 
 // SkuId Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetSkuId() int64 {
-    return r.skuId
+    return r._skuId
 }
 // ItemId Setter
 // 排队商品ID
-func (r *TaobaoOpentradeQueueQueryRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TaobaoOpentradeQueueQueryRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // PageSize Setter
 // 分页参数，每页大小
-func (r *TaobaoOpentradeQueueQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TaobaoOpentradeQueueQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // PageIndex Setter
 // 分页参数，当前页，以0开始
-func (r *TaobaoOpentradeQueueQueryRequest) SetPageIndex(pageIndex int64) error {
-    r.pageIndex = pageIndex
-    r.Set("page_index", pageIndex)
+func (r *TaobaoOpentradeQueueQueryRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
     return nil
 }
 
 // PageIndex Getter
 func (r TaobaoOpentradeQueueQueryRequest) GetPageIndex() int64 {
-    return r.pageIndex
+    return r._pageIndex
 }

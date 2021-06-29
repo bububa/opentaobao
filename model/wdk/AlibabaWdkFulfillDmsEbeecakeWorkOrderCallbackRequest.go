@@ -15,7 +15,7 @@ alibaba.wdk.fulfill.dms.ebeecake.work.order.callback
 type AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest struct {
     model.Params
     // 作业单回传对象
-    callbackOrder   *EbeecakeO2OCallbackOrder
+    _callbackOrder   *EbeecakeO2OCallbackOrder
 }
 
 // 初始化AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetApiParams() url
 }
 // CallbackOrder Setter
 // 作业单回传对象
-func (r *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) SetCallbackOrder(callbackOrder *EbeecakeO2OCallbackOrder) error {
-    r.callbackOrder = callbackOrder
-    r.Set("callback_order", callbackOrder)
+func (r *AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) SetCallbackOrder(_callbackOrder *EbeecakeO2OCallbackOrder) error {
+    r._callbackOrder = _callbackOrder
+    r.Set("callback_order", _callbackOrder)
     return nil
 }
 
 // CallbackOrder Getter
 func (r AlibabaWdkFulfillDmsEbeecakeWorkOrderCallbackRequest) GetCallbackOrder() *EbeecakeO2OCallbackOrder {
-    return r.callbackOrder
+    return r._callbackOrder
 }

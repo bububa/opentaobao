@@ -15,7 +15,7 @@ alibaba.lsy.crm.update
 type AlibabaLsyCrmUpdateRequest struct {
     model.Params
     // 更新客资状态对象
-    nrtUpdateRecordStatusDto   *NrtUpdateRecordStatusDto
+    _nrtUpdateRecordStatusDto   *NrtUpdateRecordStatusDto
 }
 
 // 初始化AlibabaLsyCrmUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLsyCrmUpdateRequest) GetApiParams() url.Values {
 }
 // NrtUpdateRecordStatusDto Setter
 // 更新客资状态对象
-func (r *AlibabaLsyCrmUpdateRequest) SetNrtUpdateRecordStatusDto(nrtUpdateRecordStatusDto *NrtUpdateRecordStatusDto) error {
-    r.nrtUpdateRecordStatusDto = nrtUpdateRecordStatusDto
-    r.Set("nrt_update_record_status_dto", nrtUpdateRecordStatusDto)
+func (r *AlibabaLsyCrmUpdateRequest) SetNrtUpdateRecordStatusDto(_nrtUpdateRecordStatusDto *NrtUpdateRecordStatusDto) error {
+    r._nrtUpdateRecordStatusDto = _nrtUpdateRecordStatusDto
+    r.Set("nrt_update_record_status_dto", _nrtUpdateRecordStatusDto)
     return nil
 }
 
 // NrtUpdateRecordStatusDto Getter
 func (r AlibabaLsyCrmUpdateRequest) GetNrtUpdateRecordStatusDto() *NrtUpdateRecordStatusDto {
-    return r.nrtUpdateRecordStatusDto
+    return r._nrtUpdateRecordStatusDto
 }

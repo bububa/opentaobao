@@ -15,15 +15,15 @@ alibaba.alihealth.drug.kyt.destbill.list
 type AlibabaAlihealthDrugKytDestbillListRequest struct {
     model.Params
     // 企业ID
-    refEntId   string
+    _refEntId   string
     // 开始时间，格式yyyy-MM-dd
-    beginDate   string
+    _beginDate   string
     // 结束时间，格式yyyy-MM-dd
-    endDate   string
+    _endDate   string
     // 单据编号
-    billCode   string
+    _billCode   string
     // 审核状态，1：未审核；2：审核通过；3：审核失败
-    approvalStatus   string
+    _approvalStatus   string
 }
 
 // 初始化AlibabaAlihealthDrugKytDestbillListRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaAlihealthDrugKytDestbillListRequest) GetApiParams() url.Values {
 }
 // RefEntId Setter
 // 企业ID
-func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugKytDestbillListRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // BeginDate Setter
 // 开始时间，格式yyyy-MM-dd
-func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetBeginDate(beginDate string) error {
-    r.beginDate = beginDate
-    r.Set("begin_date", beginDate)
+func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetBeginDate(_beginDate string) error {
+    r._beginDate = _beginDate
+    r.Set("begin_date", _beginDate)
     return nil
 }
 
 // BeginDate Getter
 func (r AlibabaAlihealthDrugKytDestbillListRequest) GetBeginDate() string {
-    return r.beginDate
+    return r._beginDate
 }
 // EndDate Setter
 // 结束时间，格式yyyy-MM-dd
-func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetEndDate(endDate string) error {
-    r.endDate = endDate
-    r.Set("end_date", endDate)
+func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetEndDate(_endDate string) error {
+    r._endDate = _endDate
+    r.Set("end_date", _endDate)
     return nil
 }
 
 // EndDate Getter
 func (r AlibabaAlihealthDrugKytDestbillListRequest) GetEndDate() string {
-    return r.endDate
+    return r._endDate
 }
 // BillCode Setter
 // 单据编号
-func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetBillCode(billCode string) error {
-    r.billCode = billCode
-    r.Set("bill_code", billCode)
+func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetBillCode(_billCode string) error {
+    r._billCode = _billCode
+    r.Set("bill_code", _billCode)
     return nil
 }
 
 // BillCode Getter
 func (r AlibabaAlihealthDrugKytDestbillListRequest) GetBillCode() string {
-    return r.billCode
+    return r._billCode
 }
 // ApprovalStatus Setter
 // 审核状态，1：未审核；2：审核通过；3：审核失败
-func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetApprovalStatus(approvalStatus string) error {
-    r.approvalStatus = approvalStatus
-    r.Set("approval_status", approvalStatus)
+func (r *AlibabaAlihealthDrugKytDestbillListRequest) SetApprovalStatus(_approvalStatus string) error {
+    r._approvalStatus = _approvalStatus
+    r.Set("approval_status", _approvalStatus)
     return nil
 }
 
 // ApprovalStatus Getter
 func (r AlibabaAlihealthDrugKytDestbillListRequest) GetApprovalStatus() string {
-    return r.approvalStatus
+    return r._approvalStatus
 }

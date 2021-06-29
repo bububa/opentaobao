@@ -15,21 +15,21 @@ taobao.jst.sms.message.direct.batchsend
 type TaobaoJstSmsMessageDirectBatchsendRequest struct {
     model.Params
     // 短信签名
-    signName   string
+    _signName   string
     // 短信中带的短链，如果不传则没有短信效果数据
-    url   string
+    _url   string
     // 短信模版CODE，必须为全变量模板
-    smsTemplateCode   string
+    _smsTemplateCode   string
     // 短信接收号码，json格式，最多200个号码
-    recNum   string
+    _recNum   string
     // 短信内容，如果带${url}则会被入参url替换
-    smsContent   string
+    _smsContent   string
     // 短信扩展码（JSON字符串数组格式），拓展码个数需要和电话号码个数一致。
-    extendNum   string
+    _extendNum   string
     // 短信任务code，没有请先创建。
-    taskCode   string
+    _taskCode   string
     // 一个在taskcode下唯一的随机字符串，对于taskSign相同的请求平台认为是商家的同一次短信发送。
-    taskSign   string
+    _taskSign   string
 }
 
 // 初始化TaobaoJstSmsMessageDirectBatchsendRequest对象
@@ -54,97 +54,97 @@ func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetApiParams() url.Values {
 }
 // SignName Setter
 // 短信签名
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSignName(signName string) error {
-    r.signName = signName
-    r.Set("sign_name", signName)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSignName(_signName string) error {
+    r._signName = _signName
+    r.Set("sign_name", _signName)
     return nil
 }
 
 // SignName Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetSignName() string {
-    return r.signName
+    return r._signName
 }
 // Url Setter
 // 短信中带的短链，如果不传则没有短信效果数据
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetUrl() string {
-    return r.url
+    return r._url
 }
 // SmsTemplateCode Setter
 // 短信模版CODE，必须为全变量模板
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSmsTemplateCode(smsTemplateCode string) error {
-    r.smsTemplateCode = smsTemplateCode
-    r.Set("sms_template_code", smsTemplateCode)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSmsTemplateCode(_smsTemplateCode string) error {
+    r._smsTemplateCode = _smsTemplateCode
+    r.Set("sms_template_code", _smsTemplateCode)
     return nil
 }
 
 // SmsTemplateCode Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetSmsTemplateCode() string {
-    return r.smsTemplateCode
+    return r._smsTemplateCode
 }
 // RecNum Setter
 // 短信接收号码，json格式，最多200个号码
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetRecNum(recNum string) error {
-    r.recNum = recNum
-    r.Set("rec_num", recNum)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetRecNum(_recNum string) error {
+    r._recNum = _recNum
+    r.Set("rec_num", _recNum)
     return nil
 }
 
 // RecNum Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetRecNum() string {
-    return r.recNum
+    return r._recNum
 }
 // SmsContent Setter
 // 短信内容，如果带${url}则会被入参url替换
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSmsContent(smsContent string) error {
-    r.smsContent = smsContent
-    r.Set("sms_content", smsContent)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetSmsContent(_smsContent string) error {
+    r._smsContent = _smsContent
+    r.Set("sms_content", _smsContent)
     return nil
 }
 
 // SmsContent Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetSmsContent() string {
-    return r.smsContent
+    return r._smsContent
 }
 // ExtendNum Setter
 // 短信扩展码（JSON字符串数组格式），拓展码个数需要和电话号码个数一致。
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetExtendNum(extendNum string) error {
-    r.extendNum = extendNum
-    r.Set("extend_num", extendNum)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetExtendNum(_extendNum string) error {
+    r._extendNum = _extendNum
+    r.Set("extend_num", _extendNum)
     return nil
 }
 
 // ExtendNum Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetExtendNum() string {
-    return r.extendNum
+    return r._extendNum
 }
 // TaskCode Setter
 // 短信任务code，没有请先创建。
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetTaskCode(taskCode string) error {
-    r.taskCode = taskCode
-    r.Set("task_code", taskCode)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetTaskCode(_taskCode string) error {
+    r._taskCode = _taskCode
+    r.Set("task_code", _taskCode)
     return nil
 }
 
 // TaskCode Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetTaskCode() string {
-    return r.taskCode
+    return r._taskCode
 }
 // TaskSign Setter
 // 一个在taskcode下唯一的随机字符串，对于taskSign相同的请求平台认为是商家的同一次短信发送。
-func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetTaskSign(taskSign string) error {
-    r.taskSign = taskSign
-    r.Set("task_sign", taskSign)
+func (r *TaobaoJstSmsMessageDirectBatchsendRequest) SetTaskSign(_taskSign string) error {
+    r._taskSign = _taskSign
+    r.Set("task_sign", _taskSign)
     return nil
 }
 
 // TaskSign Getter
 func (r TaobaoJstSmsMessageDirectBatchsendRequest) GetTaskSign() string {
-    return r.taskSign
+    return r._taskSign
 }

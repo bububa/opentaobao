@@ -15,7 +15,7 @@ alitrip.btrip.monthbill.url.get
 type AlitripBtripMonthbillUrlGetRequest struct {
     model.Params
     // 请求对象
-    rq   *OpenAccountRq
+    _rq   *OpenAccountRq
 }
 
 // 初始化AlitripBtripMonthbillUrlGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripMonthbillUrlGetRequest) GetApiParams() url.Values {
 }
 // Rq Setter
 // 请求对象
-func (r *AlitripBtripMonthbillUrlGetRequest) SetRq(rq *OpenAccountRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripMonthbillUrlGetRequest) SetRq(_rq *OpenAccountRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripMonthbillUrlGetRequest) GetRq() *OpenAccountRq {
-    return r.rq
+    return r._rq
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.mdeer.science.synVideo
 type AlibabaAlihealthMdeerScienceSynVideoRequest struct {
     model.Params
     // 视频信息实体
-    synVideoInfo   *SynVideoInfo
+    _synVideoInfo   *SynVideoInfo
 }
 
 // 初始化AlibabaAlihealthMdeerScienceSynVideoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetApiParams() url.Values {
 }
 // SynVideoInfo Setter
 // 视频信息实体
-func (r *AlibabaAlihealthMdeerScienceSynVideoRequest) SetSynVideoInfo(synVideoInfo *SynVideoInfo) error {
-    r.synVideoInfo = synVideoInfo
-    r.Set("syn_video_info", synVideoInfo)
+func (r *AlibabaAlihealthMdeerScienceSynVideoRequest) SetSynVideoInfo(_synVideoInfo *SynVideoInfo) error {
+    r._synVideoInfo = _synVideoInfo
+    r.Set("syn_video_info", _synVideoInfo)
     return nil
 }
 
 // SynVideoInfo Getter
 func (r AlibabaAlihealthMdeerScienceSynVideoRequest) GetSynVideoInfo() *SynVideoInfo {
-    return r.synVideoInfo
+    return r._synVideoInfo
 }

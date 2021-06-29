@@ -15,7 +15,7 @@ taobao.baichuan.openaccount.registercode.send
 type TaobaoBaichuanOpenaccountRegistercodeSendRequest struct {
     model.Params
     // name
-    name   string
+    _name   string
 }
 
 // 初始化TaobaoBaichuanOpenaccountRegistercodeSendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBaichuanOpenaccountRegistercodeSendRequest) GetApiParams() url.Val
 }
 // Name Setter
 // name
-func (r *TaobaoBaichuanOpenaccountRegistercodeSendRequest) SetName(name string) error {
-    r.name = name
-    r.Set("name", name)
+func (r *TaobaoBaichuanOpenaccountRegistercodeSendRequest) SetName(_name string) error {
+    r._name = _name
+    r.Set("name", _name)
     return nil
 }
 
 // Name Getter
 func (r TaobaoBaichuanOpenaccountRegistercodeSendRequest) GetName() string {
-    return r.name
+    return r._name
 }

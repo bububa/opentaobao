@@ -15,7 +15,7 @@ taobao.rdc.aligenius.warehouse.reverse.uploading
 type TaobaoRdcAligeniusWarehouseReverseUploadingRequest struct {
     model.Params
     // 参数
-    param0   *WarehouseReverseUploadingDto
+    _param0   *WarehouseReverseUploadingDto
 }
 
 // 初始化TaobaoRdcAligeniusWarehouseReverseUploadingRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetApiParams() url.V
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseReverseUploadingRequest) SetParam0(param0 *WarehouseReverseUploadingDto) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoRdcAligeniusWarehouseReverseUploadingRequest) SetParam0(_param0 *WarehouseReverseUploadingDto) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoRdcAligeniusWarehouseReverseUploadingRequest) GetParam0() *WarehouseReverseUploadingDto {
-    return r.param0
+    return r._param0
 }

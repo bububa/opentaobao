@@ -15,11 +15,11 @@ alibaba.mj.oc.offline.maxticketno.get
 type AlibabaMjOcOfflineMaxticketnoGetRequest struct {
     model.Params
     // 收银机号
-    posNo   string
+    _posNo   string
     // 外部门店号
-    storeNo   string
+    _storeNo   string
     // 日期
-    datetime   string
+    _datetime   string
 }
 
 // 初始化AlibabaMjOcOfflineMaxticketnoGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMjOcOfflineMaxticketnoGetRequest) GetApiParams() url.Values {
 }
 // PosNo Setter
 // 收银机号
-func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetPosNo(posNo string) error {
-    r.posNo = posNo
-    r.Set("pos_no", posNo)
+func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetPosNo(_posNo string) error {
+    r._posNo = _posNo
+    r.Set("pos_no", _posNo)
     return nil
 }
 
 // PosNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetRequest) GetPosNo() string {
-    return r.posNo
+    return r._posNo
 }
 // StoreNo Setter
 // 外部门店号
-func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetStoreNo(storeNo string) error {
-    r.storeNo = storeNo
-    r.Set("store_no", storeNo)
+func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetStoreNo(_storeNo string) error {
+    r._storeNo = _storeNo
+    r.Set("store_no", _storeNo)
     return nil
 }
 
 // StoreNo Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetRequest) GetStoreNo() string {
-    return r.storeNo
+    return r._storeNo
 }
 // Datetime Setter
 // 日期
-func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetDatetime(datetime string) error {
-    r.datetime = datetime
-    r.Set("datetime", datetime)
+func (r *AlibabaMjOcOfflineMaxticketnoGetRequest) SetDatetime(_datetime string) error {
+    r._datetime = _datetime
+    r.Set("datetime", _datetime)
     return nil
 }
 
 // Datetime Getter
 func (r AlibabaMjOcOfflineMaxticketnoGetRequest) GetDatetime() string {
-    return r.datetime
+    return r._datetime
 }

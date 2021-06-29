@@ -15,9 +15,9 @@ alibaba.campus.space.unit.getlistwithattrbygroupid
 type AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest struct {
     model.Params
     // 操作用户上下文
-    context   *WorkBenchContext
+    _context   *WorkBenchContext
     // 分组id
-    groupId   int64
+    _groupId   int64
 }
 
 // 初始化AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) GetApiParams() ur
 }
 // Context Setter
 // 操作用户上下文
-func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) SetContext(context *WorkBenchContext) error {
-    r.context = context
-    r.Set("context", context)
+func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) SetContext(_context *WorkBenchContext) error {
+    r._context = _context
+    r.Set("context", _context)
     return nil
 }
 
 // Context Getter
 func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) GetContext() *WorkBenchContext {
-    return r.context
+    return r._context
 }
 // GroupId Setter
 // 分组id
-func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) SetGroupId(groupId int64) error {
-    r.groupId = groupId
-    r.Set("group_id", groupId)
+func (r *AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) SetGroupId(_groupId int64) error {
+    r._groupId = _groupId
+    r.Set("group_id", _groupId)
     return nil
 }
 
 // GroupId Getter
 func (r AlibabaCampusSpaceUnitGetlistwithattrbygroupidRequest) GetGroupId() int64 {
-    return r.groupId
+    return r._groupId
 }

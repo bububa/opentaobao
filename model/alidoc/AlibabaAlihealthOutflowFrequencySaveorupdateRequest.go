@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.frequency.saveorupdate
 type AlibabaAlihealthOutflowFrequencySaveorupdateRequest struct {
     model.Params
     // 系统自动生成
-    frequencyRequest   *FrequencyRequest
+    _frequencyRequest   *FrequencyRequest
 }
 
 // 初始化AlibabaAlihealthOutflowFrequencySaveorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowFrequencySaveorupdateRequest) GetApiParams() url.
 }
 // FrequencyRequest Setter
 // 系统自动生成
-func (r *AlibabaAlihealthOutflowFrequencySaveorupdateRequest) SetFrequencyRequest(frequencyRequest *FrequencyRequest) error {
-    r.frequencyRequest = frequencyRequest
-    r.Set("frequency_request", frequencyRequest)
+func (r *AlibabaAlihealthOutflowFrequencySaveorupdateRequest) SetFrequencyRequest(_frequencyRequest *FrequencyRequest) error {
+    r._frequencyRequest = _frequencyRequest
+    r.Set("frequency_request", _frequencyRequest)
     return nil
 }
 
 // FrequencyRequest Getter
 func (r AlibabaAlihealthOutflowFrequencySaveorupdateRequest) GetFrequencyRequest() *FrequencyRequest {
-    return r.frequencyRequest
+    return r._frequencyRequest
 }

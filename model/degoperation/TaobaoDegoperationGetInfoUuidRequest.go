@@ -15,11 +15,11 @@ taobao.degoperation.get.info.uuid
 type TaobaoDegoperationGetInfoUuidRequest struct {
     model.Params
     // 活动后台配置eventkey
-    degAppKey   string
+    _degAppKey   string
     // 活动后台配置appkey
-    degEventKey   string
+    _degEventKey   string
     // 设备id
-    uuid   string
+    _uuid   string
 }
 
 // 初始化TaobaoDegoperationGetInfoUuidRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoDegoperationGetInfoUuidRequest) GetApiParams() url.Values {
 }
 // DegAppKey Setter
 // 活动后台配置eventkey
-func (r *TaobaoDegoperationGetInfoUuidRequest) SetDegAppKey(degAppKey string) error {
-    r.degAppKey = degAppKey
-    r.Set("deg_app_key", degAppKey)
+func (r *TaobaoDegoperationGetInfoUuidRequest) SetDegAppKey(_degAppKey string) error {
+    r._degAppKey = _degAppKey
+    r.Set("deg_app_key", _degAppKey)
     return nil
 }
 
 // DegAppKey Getter
 func (r TaobaoDegoperationGetInfoUuidRequest) GetDegAppKey() string {
-    return r.degAppKey
+    return r._degAppKey
 }
 // DegEventKey Setter
 // 活动后台配置appkey
-func (r *TaobaoDegoperationGetInfoUuidRequest) SetDegEventKey(degEventKey string) error {
-    r.degEventKey = degEventKey
-    r.Set("deg_event_key", degEventKey)
+func (r *TaobaoDegoperationGetInfoUuidRequest) SetDegEventKey(_degEventKey string) error {
+    r._degEventKey = _degEventKey
+    r.Set("deg_event_key", _degEventKey)
     return nil
 }
 
 // DegEventKey Getter
 func (r TaobaoDegoperationGetInfoUuidRequest) GetDegEventKey() string {
-    return r.degEventKey
+    return r._degEventKey
 }
 // Uuid Setter
 // 设备id
-func (r *TaobaoDegoperationGetInfoUuidRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *TaobaoDegoperationGetInfoUuidRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r TaobaoDegoperationGetInfoUuidRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

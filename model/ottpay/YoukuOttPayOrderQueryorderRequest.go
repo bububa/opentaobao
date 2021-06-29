@@ -15,7 +15,7 @@ youku.ott.pay.order.queryorder
 type YoukuOttPayOrderQueryorderRequest struct {
     model.Params
     // 订单号
-    orderNo   string
+    _orderNo   string
 }
 
 // 初始化YoukuOttPayOrderQueryorderRequest对象
@@ -40,13 +40,13 @@ func (r YoukuOttPayOrderQueryorderRequest) GetApiParams() url.Values {
 }
 // OrderNo Setter
 // 订单号
-func (r *YoukuOttPayOrderQueryorderRequest) SetOrderNo(orderNo string) error {
-    r.orderNo = orderNo
-    r.Set("order_no", orderNo)
+func (r *YoukuOttPayOrderQueryorderRequest) SetOrderNo(_orderNo string) error {
+    r._orderNo = _orderNo
+    r.Set("order_no", _orderNo)
     return nil
 }
 
 // OrderNo Getter
 func (r YoukuOttPayOrderQueryorderRequest) GetOrderNo() string {
-    return r.orderNo
+    return r._orderNo
 }

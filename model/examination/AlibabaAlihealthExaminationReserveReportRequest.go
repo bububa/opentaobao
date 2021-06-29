@@ -15,17 +15,17 @@ alibaba.alihealth.examination.reserve.report
 type AlibabaAlihealthExaminationReserveReportRequest struct {
     model.Params
     // 商户唯一码
-    merchantCode   string
+    _merchantCode   string
     // 阿里健康预约唯一标识
-    reserveNumber   string
+    _reserveNumber   string
     // 到检唯一标识
-    checkNo   string
+    _checkNo   string
     // 体检机构预约唯一标识码
-    uniqReserveCode   string
+    _uniqReserveCode   string
     // 查询报告卡号
-    searchNo   string
+    _searchNo   string
     // 查询报告密码
-    searchPwd   string
+    _searchPwd   string
 }
 
 // 初始化AlibabaAlihealthExaminationReserveReportRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlihealthExaminationReserveReportRequest) GetApiParams() url.Valu
 }
 // MerchantCode Setter
 // 商户唯一码
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetMerchantCode(merchantCode string) error {
-    r.merchantCode = merchantCode
-    r.Set("merchant_code", merchantCode)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetMerchantCode(_merchantCode string) error {
+    r._merchantCode = _merchantCode
+    r.Set("merchant_code", _merchantCode)
     return nil
 }
 
 // MerchantCode Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetMerchantCode() string {
-    return r.merchantCode
+    return r._merchantCode
 }
 // ReserveNumber Setter
 // 阿里健康预约唯一标识
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetReserveNumber(reserveNumber string) error {
-    r.reserveNumber = reserveNumber
-    r.Set("reserve_number", reserveNumber)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetReserveNumber(_reserveNumber string) error {
+    r._reserveNumber = _reserveNumber
+    r.Set("reserve_number", _reserveNumber)
     return nil
 }
 
 // ReserveNumber Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetReserveNumber() string {
-    return r.reserveNumber
+    return r._reserveNumber
 }
 // CheckNo Setter
 // 到检唯一标识
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetCheckNo(checkNo string) error {
-    r.checkNo = checkNo
-    r.Set("check_no", checkNo)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetCheckNo(_checkNo string) error {
+    r._checkNo = _checkNo
+    r.Set("check_no", _checkNo)
     return nil
 }
 
 // CheckNo Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetCheckNo() string {
-    return r.checkNo
+    return r._checkNo
 }
 // UniqReserveCode Setter
 // 体检机构预约唯一标识码
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetUniqReserveCode(uniqReserveCode string) error {
-    r.uniqReserveCode = uniqReserveCode
-    r.Set("uniq_reserve_code", uniqReserveCode)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetUniqReserveCode(_uniqReserveCode string) error {
+    r._uniqReserveCode = _uniqReserveCode
+    r.Set("uniq_reserve_code", _uniqReserveCode)
     return nil
 }
 
 // UniqReserveCode Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetUniqReserveCode() string {
-    return r.uniqReserveCode
+    return r._uniqReserveCode
 }
 // SearchNo Setter
 // 查询报告卡号
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetSearchNo(searchNo string) error {
-    r.searchNo = searchNo
-    r.Set("search_no", searchNo)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetSearchNo(_searchNo string) error {
+    r._searchNo = _searchNo
+    r.Set("search_no", _searchNo)
     return nil
 }
 
 // SearchNo Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetSearchNo() string {
-    return r.searchNo
+    return r._searchNo
 }
 // SearchPwd Setter
 // 查询报告密码
-func (r *AlibabaAlihealthExaminationReserveReportRequest) SetSearchPwd(searchPwd string) error {
-    r.searchPwd = searchPwd
-    r.Set("search_pwd", searchPwd)
+func (r *AlibabaAlihealthExaminationReserveReportRequest) SetSearchPwd(_searchPwd string) error {
+    r._searchPwd = _searchPwd
+    r.Set("search_pwd", _searchPwd)
     return nil
 }
 
 // SearchPwd Getter
 func (r AlibabaAlihealthExaminationReserveReportRequest) GetSearchPwd() string {
-    return r.searchPwd
+    return r._searchPwd
 }

@@ -15,13 +15,13 @@ alibaba.lsy.miniapp.user.get
 type AlibabaLsyMiniappUserGetRequest struct {
     model.Params
     // 当前时间戳，毫秒
-    timeStamp   string
+    _timeStamp   string
     // 获取用户信息的授权码，在小程序中获取
-    code   string
+    _code   string
     // 请求参数签名，sha1(所有入参+appSecret，按字符串升序排列)
-    signature   string
+    _signature   string
     // 系统分配的小程序ID
-    appId   string
+    _appId   string
 }
 
 // 初始化AlibabaLsyMiniappUserGetRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaLsyMiniappUserGetRequest) GetApiParams() url.Values {
 }
 // TimeStamp Setter
 // 当前时间戳，毫秒
-func (r *AlibabaLsyMiniappUserGetRequest) SetTimeStamp(timeStamp string) error {
-    r.timeStamp = timeStamp
-    r.Set("time_stamp", timeStamp)
+func (r *AlibabaLsyMiniappUserGetRequest) SetTimeStamp(_timeStamp string) error {
+    r._timeStamp = _timeStamp
+    r.Set("time_stamp", _timeStamp)
     return nil
 }
 
 // TimeStamp Getter
 func (r AlibabaLsyMiniappUserGetRequest) GetTimeStamp() string {
-    return r.timeStamp
+    return r._timeStamp
 }
 // Code Setter
 // 获取用户信息的授权码，在小程序中获取
-func (r *AlibabaLsyMiniappUserGetRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *AlibabaLsyMiniappUserGetRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r AlibabaLsyMiniappUserGetRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // Signature Setter
 // 请求参数签名，sha1(所有入参+appSecret，按字符串升序排列)
-func (r *AlibabaLsyMiniappUserGetRequest) SetSignature(signature string) error {
-    r.signature = signature
-    r.Set("signature", signature)
+func (r *AlibabaLsyMiniappUserGetRequest) SetSignature(_signature string) error {
+    r._signature = _signature
+    r.Set("signature", _signature)
     return nil
 }
 
 // Signature Getter
 func (r AlibabaLsyMiniappUserGetRequest) GetSignature() string {
-    return r.signature
+    return r._signature
 }
 // AppId Setter
 // 系统分配的小程序ID
-func (r *AlibabaLsyMiniappUserGetRequest) SetAppId(appId string) error {
-    r.appId = appId
-    r.Set("app_id", appId)
+func (r *AlibabaLsyMiniappUserGetRequest) SetAppId(_appId string) error {
+    r._appId = _appId
+    r.Set("app_id", _appId)
     return nil
 }
 
 // AppId Getter
 func (r AlibabaLsyMiniappUserGetRequest) GetAppId() string {
-    return r.appId
+    return r._appId
 }

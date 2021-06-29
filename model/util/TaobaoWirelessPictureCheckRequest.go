@@ -16,7 +16,7 @@ taobao.wireless.picture.check
 type TaobaoWirelessPictureCheckRequest struct {
     model.Params
     // 图片的URL,URL必须为淘系安全域名地址。图片格式支持png,jpg,webp
-    url   string
+    _url   string
 }
 
 // 初始化TaobaoWirelessPictureCheckRequest对象
@@ -41,13 +41,13 @@ func (r TaobaoWirelessPictureCheckRequest) GetApiParams() url.Values {
 }
 // Url Setter
 // 图片的URL,URL必须为淘系安全域名地址。图片格式支持png,jpg,webp
-func (r *TaobaoWirelessPictureCheckRequest) SetUrl(url string) error {
-    r.url = url
-    r.Set("url", url)
+func (r *TaobaoWirelessPictureCheckRequest) SetUrl(_url string) error {
+    r._url = _url
+    r.Set("url", _url)
     return nil
 }
 
 // Url Getter
 func (r TaobaoWirelessPictureCheckRequest) GetUrl() string {
-    return r.url
+    return r._url
 }

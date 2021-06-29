@@ -15,13 +15,13 @@ tmall.car.lease.exceptionflowsynchronize
 type TmallCarLeaseExceptionflowsynchronizeRequest struct {
     model.Params
     // 天猫开新车订单id
-    orderId   int64
+    _orderId   int64
     // 1:开始切换为异常流，2:线下处理完成
-    status   int64
+    _status   int64
     // 异常流类型,0.退车,1.买断,2.分期，3.续租
-    flowType   int64
+    _flowType   int64
     // 切换原因描述
-    desc   string
+    _desc   string
 }
 
 // 初始化TmallCarLeaseExceptionflowsynchronizeRequest对象
@@ -46,49 +46,49 @@ func (r TmallCarLeaseExceptionflowsynchronizeRequest) GetApiParams() url.Values 
 }
 // OrderId Setter
 // 天猫开新车订单id
-func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TmallCarLeaseExceptionflowsynchronizeRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // Status Setter
 // 1:开始切换为异常流，2:线下处理完成
-func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetStatus(status int64) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetStatus(_status int64) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallCarLeaseExceptionflowsynchronizeRequest) GetStatus() int64 {
-    return r.status
+    return r._status
 }
 // FlowType Setter
 // 异常流类型,0.退车,1.买断,2.分期，3.续租
-func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetFlowType(flowType int64) error {
-    r.flowType = flowType
-    r.Set("flow_type", flowType)
+func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetFlowType(_flowType int64) error {
+    r._flowType = _flowType
+    r.Set("flow_type", _flowType)
     return nil
 }
 
 // FlowType Getter
 func (r TmallCarLeaseExceptionflowsynchronizeRequest) GetFlowType() int64 {
-    return r.flowType
+    return r._flowType
 }
 // Desc Setter
 // 切换原因描述
-func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetDesc(desc string) error {
-    r.desc = desc
-    r.Set("desc", desc)
+func (r *TmallCarLeaseExceptionflowsynchronizeRequest) SetDesc(_desc string) error {
+    r._desc = _desc
+    r.Set("desc", _desc)
     return nil
 }
 
 // Desc Getter
 func (r TmallCarLeaseExceptionflowsynchronizeRequest) GetDesc() string {
-    return r.desc
+    return r._desc
 }

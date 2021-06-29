@@ -15,7 +15,7 @@ taobao.alitrip.ie.agent.refund.new.getdetail
 type TaobaoAlitripIeAgentRefundNewGetdetailRequest struct {
     model.Params
     // 请求
-    paramRefundOrderQueryDetailRq   *RefundOrderQueryDetailRq
+    _paramRefundOrderQueryDetailRq   *RefundOrderQueryDetailRq
 }
 
 // 初始化TaobaoAlitripIeAgentRefundNewGetdetailRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetApiParams() url.Values
 }
 // ParamRefundOrderQueryDetailRq Setter
 // 请求
-func (r *TaobaoAlitripIeAgentRefundNewGetdetailRequest) SetParamRefundOrderQueryDetailRq(paramRefundOrderQueryDetailRq *RefundOrderQueryDetailRq) error {
-    r.paramRefundOrderQueryDetailRq = paramRefundOrderQueryDetailRq
-    r.Set("param_refund_order_query_detail_rq", paramRefundOrderQueryDetailRq)
+func (r *TaobaoAlitripIeAgentRefundNewGetdetailRequest) SetParamRefundOrderQueryDetailRq(_paramRefundOrderQueryDetailRq *RefundOrderQueryDetailRq) error {
+    r._paramRefundOrderQueryDetailRq = _paramRefundOrderQueryDetailRq
+    r.Set("param_refund_order_query_detail_rq", _paramRefundOrderQueryDetailRq)
     return nil
 }
 
 // ParamRefundOrderQueryDetailRq Getter
 func (r TaobaoAlitripIeAgentRefundNewGetdetailRequest) GetParamRefundOrderQueryDetailRq() *RefundOrderQueryDetailRq {
-    return r.paramRefundOrderQueryDetailRq
+    return r._paramRefundOrderQueryDetailRq
 }

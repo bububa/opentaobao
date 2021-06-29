@@ -15,7 +15,7 @@ alibaba.alihealth.drugcode.drugfactory.getencrptypk
 type AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest struct {
     model.Params
     // 企业Id
-    refEntId   string
+    _refEntId   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest) GetApiParams() u
 }
 // RefEntId Setter
 // 企业Id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryGetencrptypkRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }

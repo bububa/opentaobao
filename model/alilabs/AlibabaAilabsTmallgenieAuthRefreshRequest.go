@@ -15,7 +15,7 @@ alibaba.ailabs.tmallgenie.auth.refresh
 type AlibabaAilabsTmallgenieAuthRefreshRequest struct {
     model.Params
     // refresh_token_request
-    refreshTokenRequest   *TopRefreshReqDto
+    _refreshTokenRequest   *TopRefreshReqDto
 }
 
 // 初始化AlibabaAilabsTmallgenieAuthRefreshRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAilabsTmallgenieAuthRefreshRequest) GetApiParams() url.Values {
 }
 // RefreshTokenRequest Setter
 // refresh_token_request
-func (r *AlibabaAilabsTmallgenieAuthRefreshRequest) SetRefreshTokenRequest(refreshTokenRequest *TopRefreshReqDto) error {
-    r.refreshTokenRequest = refreshTokenRequest
-    r.Set("refresh_token_request", refreshTokenRequest)
+func (r *AlibabaAilabsTmallgenieAuthRefreshRequest) SetRefreshTokenRequest(_refreshTokenRequest *TopRefreshReqDto) error {
+    r._refreshTokenRequest = _refreshTokenRequest
+    r.Set("refresh_token_request", _refreshTokenRequest)
     return nil
 }
 
 // RefreshTokenRequest Getter
 func (r AlibabaAilabsTmallgenieAuthRefreshRequest) GetRefreshTokenRequest() *TopRefreshReqDto {
-    return r.refreshTokenRequest
+    return r._refreshTokenRequest
 }

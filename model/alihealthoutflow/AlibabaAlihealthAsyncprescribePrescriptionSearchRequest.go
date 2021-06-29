@@ -15,7 +15,7 @@ alibaba.alihealth.asyncprescribe.prescription.search
 type AlibabaAlihealthAsyncprescribePrescriptionSearchRequest struct {
     model.Params
     // 查询入参
-    searchRequest   *AsyncPrescribeSearchRequest
+    _searchRequest   *AsyncPrescribeSearchRequest
 }
 
 // 初始化AlibabaAlihealthAsyncprescribePrescriptionSearchRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetApiParams() 
 }
 // SearchRequest Setter
 // 查询入参
-func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) SetSearchRequest(searchRequest *AsyncPrescribeSearchRequest) error {
-    r.searchRequest = searchRequest
-    r.Set("search_request", searchRequest)
+func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) SetSearchRequest(_searchRequest *AsyncPrescribeSearchRequest) error {
+    r._searchRequest = _searchRequest
+    r.Set("search_request", _searchRequest)
     return nil
 }
 
 // SearchRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetSearchRequest() *AsyncPrescribeSearchRequest {
-    return r.searchRequest
+    return r._searchRequest
 }

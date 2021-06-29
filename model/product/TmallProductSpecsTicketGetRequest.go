@@ -15,7 +15,7 @@ tmall.product.specs.ticket.get
 type TmallProductSpecsTicketGetRequest struct {
     model.Params
     // 产品规格ID，多个用逗号分隔
-    specIds   string
+    _specIds   string
 }
 
 // 初始化TmallProductSpecsTicketGetRequest对象
@@ -40,13 +40,13 @@ func (r TmallProductSpecsTicketGetRequest) GetApiParams() url.Values {
 }
 // SpecIds Setter
 // 产品规格ID，多个用逗号分隔
-func (r *TmallProductSpecsTicketGetRequest) SetSpecIds(specIds string) error {
-    r.specIds = specIds
-    r.Set("spec_ids", specIds)
+func (r *TmallProductSpecsTicketGetRequest) SetSpecIds(_specIds string) error {
+    r._specIds = _specIds
+    r.Set("spec_ids", _specIds)
     return nil
 }
 
 // SpecIds Getter
 func (r TmallProductSpecsTicketGetRequest) GetSpecIds() string {
-    return r.specIds
+    return r._specIds
 }

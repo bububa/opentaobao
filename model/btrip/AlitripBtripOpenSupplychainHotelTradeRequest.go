@@ -15,7 +15,7 @@ alitrip.btrip.open.supplychain.hotel.trade
 type AlitripBtripOpenSupplychainHotelTradeRequest struct {
     model.Params
     // 入参
-    rq   *OpenApiZzdSearchRq
+    _rq   *OpenApiZzdSearchRq
 }
 
 // 初始化AlitripBtripOpenSupplychainHotelTradeRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetApiParams() url.Values 
 }
 // Rq Setter
 // 入参
-func (r *AlitripBtripOpenSupplychainHotelTradeRequest) SetRq(rq *OpenApiZzdSearchRq) error {
-    r.rq = rq
-    r.Set("rq", rq)
+func (r *AlitripBtripOpenSupplychainHotelTradeRequest) SetRq(_rq *OpenApiZzdSearchRq) error {
+    r._rq = _rq
+    r.Set("rq", _rq)
     return nil
 }
 
 // Rq Getter
 func (r AlitripBtripOpenSupplychainHotelTradeRequest) GetRq() *OpenApiZzdSearchRq {
-    return r.rq
+    return r._rq
 }

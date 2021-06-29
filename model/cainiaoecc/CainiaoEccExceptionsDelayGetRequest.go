@@ -15,7 +15,7 @@ cainiao.ecc.exceptions.delay.get
 type CainiaoEccExceptionsDelayGetRequest struct {
     model.Params
     // 运单号
-    mailNo   string
+    _mailNo   string
 }
 
 // 初始化CainiaoEccExceptionsDelayGetRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoEccExceptionsDelayGetRequest) GetApiParams() url.Values {
 }
 // MailNo Setter
 // 运单号
-func (r *CainiaoEccExceptionsDelayGetRequest) SetMailNo(mailNo string) error {
-    r.mailNo = mailNo
-    r.Set("mail_no", mailNo)
+func (r *CainiaoEccExceptionsDelayGetRequest) SetMailNo(_mailNo string) error {
+    r._mailNo = _mailNo
+    r.Set("mail_no", _mailNo)
     return nil
 }
 
 // MailNo Getter
 func (r CainiaoEccExceptionsDelayGetRequest) GetMailNo() string {
-    return r.mailNo
+    return r._mailNo
 }

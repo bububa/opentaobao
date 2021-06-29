@@ -15,7 +15,7 @@ alibaba.alsc.crm.rule.queryoptplan
 type AlibabaAlscCrmRuleQueryoptplanRequest struct {
     model.Params
     // 请求参数
-    planRuleQueryOpenRequest   *PlanRuleQueryOpenReq
+    _planRuleQueryOpenRequest   *PlanRuleQueryOpenReq
 }
 
 // 初始化AlibabaAlscCrmRuleQueryoptplanRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetApiParams() url.Values {
 }
 // PlanRuleQueryOpenRequest Setter
 // 请求参数
-func (r *AlibabaAlscCrmRuleQueryoptplanRequest) SetPlanRuleQueryOpenRequest(planRuleQueryOpenRequest *PlanRuleQueryOpenReq) error {
-    r.planRuleQueryOpenRequest = planRuleQueryOpenRequest
-    r.Set("plan_rule_query_open_request", planRuleQueryOpenRequest)
+func (r *AlibabaAlscCrmRuleQueryoptplanRequest) SetPlanRuleQueryOpenRequest(_planRuleQueryOpenRequest *PlanRuleQueryOpenReq) error {
+    r._planRuleQueryOpenRequest = _planRuleQueryOpenRequest
+    r.Set("plan_rule_query_open_request", _planRuleQueryOpenRequest)
     return nil
 }
 
 // PlanRuleQueryOpenRequest Getter
 func (r AlibabaAlscCrmRuleQueryoptplanRequest) GetPlanRuleQueryOpenRequest() *PlanRuleQueryOpenReq {
-    return r.planRuleQueryOpenRequest
+    return r._planRuleQueryOpenRequest
 }

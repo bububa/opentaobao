@@ -15,7 +15,7 @@ alibaba.security.jaq.app.official.verify
 type AlibabaSecurityJaqAppOfficialVerifyRequest struct {
     model.Params
     // 验证参数
-    officialAppVerifyRequest   *OfficialAppVerifyRequest
+    _officialAppVerifyRequest   *OfficialAppVerifyRequest
 }
 
 // 初始化AlibabaSecurityJaqAppOfficialVerifyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetApiParams() url.Values {
 }
 // OfficialAppVerifyRequest Setter
 // 验证参数
-func (r *AlibabaSecurityJaqAppOfficialVerifyRequest) SetOfficialAppVerifyRequest(officialAppVerifyRequest *OfficialAppVerifyRequest) error {
-    r.officialAppVerifyRequest = officialAppVerifyRequest
-    r.Set("official_app_verify_request", officialAppVerifyRequest)
+func (r *AlibabaSecurityJaqAppOfficialVerifyRequest) SetOfficialAppVerifyRequest(_officialAppVerifyRequest *OfficialAppVerifyRequest) error {
+    r._officialAppVerifyRequest = _officialAppVerifyRequest
+    r.Set("official_app_verify_request", _officialAppVerifyRequest)
     return nil
 }
 
 // OfficialAppVerifyRequest Getter
 func (r AlibabaSecurityJaqAppOfficialVerifyRequest) GetOfficialAppVerifyRequest() *OfficialAppVerifyRequest {
-    return r.officialAppVerifyRequest
+    return r._officialAppVerifyRequest
 }

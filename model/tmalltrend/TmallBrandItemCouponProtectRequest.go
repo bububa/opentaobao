@@ -15,11 +15,11 @@ tmall.brand.item.coupon.protect
 type TmallBrandItemCouponProtectRequest struct {
     model.Params
     // 天猫商品id
-    itemId   int64
+    _itemId   int64
     // 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
-    protectionPeriod   string
+    _protectionPeriod   string
     // 天猫品牌id
-    brandId   int64
+    _brandId   int64
 }
 
 // 初始化TmallBrandItemCouponProtectRequest对象
@@ -44,37 +44,37 @@ func (r TmallBrandItemCouponProtectRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 天猫商品id
-func (r *TmallBrandItemCouponProtectRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallBrandItemCouponProtectRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallBrandItemCouponProtectRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // ProtectionPeriod Setter
 // 店铺优惠券新品保护期档次:PERIOD_0D("0天"),     PERIOD_7D("7天"),     PERIOD_14D("14天"),     PERIOD_21D("21天")
-func (r *TmallBrandItemCouponProtectRequest) SetProtectionPeriod(protectionPeriod string) error {
-    r.protectionPeriod = protectionPeriod
-    r.Set("protection_period", protectionPeriod)
+func (r *TmallBrandItemCouponProtectRequest) SetProtectionPeriod(_protectionPeriod string) error {
+    r._protectionPeriod = _protectionPeriod
+    r.Set("protection_period", _protectionPeriod)
     return nil
 }
 
 // ProtectionPeriod Getter
 func (r TmallBrandItemCouponProtectRequest) GetProtectionPeriod() string {
-    return r.protectionPeriod
+    return r._protectionPeriod
 }
 // BrandId Setter
 // 天猫品牌id
-func (r *TmallBrandItemCouponProtectRequest) SetBrandId(brandId int64) error {
-    r.brandId = brandId
-    r.Set("brand_id", brandId)
+func (r *TmallBrandItemCouponProtectRequest) SetBrandId(_brandId int64) error {
+    r._brandId = _brandId
+    r.Set("brand_id", _brandId)
     return nil
 }
 
 // BrandId Getter
 func (r TmallBrandItemCouponProtectRequest) GetBrandId() int64 {
-    return r.brandId
+    return r._brandId
 }

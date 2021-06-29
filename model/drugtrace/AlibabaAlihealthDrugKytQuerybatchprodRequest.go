@@ -15,17 +15,17 @@ alibaba.alihealth.drug.kyt.querybatchprod
 type AlibabaAlihealthDrugKytQuerybatchprodRequest struct {
     model.Params
     // 生产企业名称；支持新老企业名称匹配
-    productEntName   string
+    _productEntName   string
     // 生产批号;支持大小写模糊匹配
-    productBatchNo   string
+    _productBatchNo   string
     // 社保局(所属地市名称)
-    bureauName   string
+    _bureauName   string
     // 请求终端名称
-    terminalName   string
+    _terminalName   string
     // 终端类型：1005100-零售，1005200-医疗
-    terminalType   string
+    _terminalType   string
     // 调用方式：formal-正式、test-测试
-    invocation   string
+    _invocation   string
 }
 
 // 初始化AlibabaAlihealthDrugKytQuerybatchprodRequest对象
@@ -50,73 +50,73 @@ func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetApiParams() url.Values 
 }
 // ProductEntName Setter
 // 生产企业名称；支持新老企业名称匹配
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetProductEntName(productEntName string) error {
-    r.productEntName = productEntName
-    r.Set("product_ent_name", productEntName)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetProductEntName(_productEntName string) error {
+    r._productEntName = _productEntName
+    r.Set("product_ent_name", _productEntName)
     return nil
 }
 
 // ProductEntName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetProductEntName() string {
-    return r.productEntName
+    return r._productEntName
 }
 // ProductBatchNo Setter
 // 生产批号;支持大小写模糊匹配
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetProductBatchNo(productBatchNo string) error {
-    r.productBatchNo = productBatchNo
-    r.Set("product_batch_no", productBatchNo)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetProductBatchNo(_productBatchNo string) error {
+    r._productBatchNo = _productBatchNo
+    r.Set("product_batch_no", _productBatchNo)
     return nil
 }
 
 // ProductBatchNo Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetProductBatchNo() string {
-    return r.productBatchNo
+    return r._productBatchNo
 }
 // BureauName Setter
 // 社保局(所属地市名称)
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetBureauName(bureauName string) error {
-    r.bureauName = bureauName
-    r.Set("bureau_name", bureauName)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetBureauName(_bureauName string) error {
+    r._bureauName = _bureauName
+    r.Set("bureau_name", _bureauName)
     return nil
 }
 
 // BureauName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetBureauName() string {
-    return r.bureauName
+    return r._bureauName
 }
 // TerminalName Setter
 // 请求终端名称
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetTerminalName(terminalName string) error {
-    r.terminalName = terminalName
-    r.Set("terminal_name", terminalName)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetTerminalName(_terminalName string) error {
+    r._terminalName = _terminalName
+    r.Set("terminal_name", _terminalName)
     return nil
 }
 
 // TerminalName Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetTerminalName() string {
-    return r.terminalName
+    return r._terminalName
 }
 // TerminalType Setter
 // 终端类型：1005100-零售，1005200-医疗
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetTerminalType(terminalType string) error {
-    r.terminalType = terminalType
-    r.Set("terminal_type", terminalType)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetTerminalType(_terminalType string) error {
+    r._terminalType = _terminalType
+    r.Set("terminal_type", _terminalType)
     return nil
 }
 
 // TerminalType Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetTerminalType() string {
-    return r.terminalType
+    return r._terminalType
 }
 // Invocation Setter
 // 调用方式：formal-正式、test-测试
-func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetInvocation(invocation string) error {
-    r.invocation = invocation
-    r.Set("invocation", invocation)
+func (r *AlibabaAlihealthDrugKytQuerybatchprodRequest) SetInvocation(_invocation string) error {
+    r._invocation = _invocation
+    r.Set("invocation", _invocation)
     return nil
 }
 
 // Invocation Getter
 func (r AlibabaAlihealthDrugKytQuerybatchprodRequest) GetInvocation() string {
-    return r.invocation
+    return r._invocation
 }

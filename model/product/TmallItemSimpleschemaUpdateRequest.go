@@ -15,9 +15,9 @@ tmall.item.simpleschema.update
 type TmallItemSimpleschemaUpdateRequest struct {
     model.Params
     // 商品id
-    itemId   int64
+    _itemId   int64
     // 编辑商品时提交的xml信息
-    schemaXmlFields   string
+    _schemaXmlFields   string
 }
 
 // 初始化TmallItemSimpleschemaUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TmallItemSimpleschemaUpdateRequest) GetApiParams() url.Values {
 }
 // ItemId Setter
 // 商品id
-func (r *TmallItemSimpleschemaUpdateRequest) SetItemId(itemId int64) error {
-    r.itemId = itemId
-    r.Set("item_id", itemId)
+func (r *TmallItemSimpleschemaUpdateRequest) SetItemId(_itemId int64) error {
+    r._itemId = _itemId
+    r.Set("item_id", _itemId)
     return nil
 }
 
 // ItemId Getter
 func (r TmallItemSimpleschemaUpdateRequest) GetItemId() int64 {
-    return r.itemId
+    return r._itemId
 }
 // SchemaXmlFields Setter
 // 编辑商品时提交的xml信息
-func (r *TmallItemSimpleschemaUpdateRequest) SetSchemaXmlFields(schemaXmlFields string) error {
-    r.schemaXmlFields = schemaXmlFields
-    r.Set("schema_xml_fields", schemaXmlFields)
+func (r *TmallItemSimpleschemaUpdateRequest) SetSchemaXmlFields(_schemaXmlFields string) error {
+    r._schemaXmlFields = _schemaXmlFields
+    r.Set("schema_xml_fields", _schemaXmlFields)
     return nil
 }
 
 // SchemaXmlFields Getter
 func (r TmallItemSimpleschemaUpdateRequest) GetSchemaXmlFields() string {
-    return r.schemaXmlFields
+    return r._schemaXmlFields
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.prescription.syncstatus
 type AlibabaAlihealthOutflowPrescriptionSyncstatusRequest struct {
     model.Params
     // 入参
-    syncStatusRequest   *SyncPrescriptionStatusRequest
+    _syncStatusRequest   *SyncPrescriptionStatusRequest
 }
 
 // 初始化AlibabaAlihealthOutflowPrescriptionSyncstatusRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiParams() url
 }
 // SyncStatusRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) SetSyncStatusRequest(syncStatusRequest *SyncPrescriptionStatusRequest) error {
-    r.syncStatusRequest = syncStatusRequest
-    r.Set("sync_status_request", syncStatusRequest)
+func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) SetSyncStatusRequest(_syncStatusRequest *SyncPrescriptionStatusRequest) error {
+    r._syncStatusRequest = _syncStatusRequest
+    r.Set("sync_status_request", _syncStatusRequest)
     return nil
 }
 
 // SyncStatusRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetSyncStatusRequest() *SyncPrescriptionStatusRequest {
-    return r.syncStatusRequest
+    return r._syncStatusRequest
 }

@@ -15,7 +15,7 @@ Get Single Product Info
 type AliexpressSolutionProductInfoGetRequest struct {
     model.Params
     // product ID
-    productId   int64
+    _productId   int64
 }
 
 // 初始化AliexpressSolutionProductInfoGetRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionProductInfoGetRequest) GetApiParams() url.Values {
 }
 // ProductId Setter
 // product ID
-func (r *AliexpressSolutionProductInfoGetRequest) SetProductId(productId int64) error {
-    r.productId = productId
-    r.Set("product_id", productId)
+func (r *AliexpressSolutionProductInfoGetRequest) SetProductId(_productId int64) error {
+    r._productId = _productId
+    r.Set("product_id", _productId)
     return nil
 }
 
 // ProductId Getter
 func (r AliexpressSolutionProductInfoGetRequest) GetProductId() int64 {
-    return r.productId
+    return r._productId
 }

@@ -15,9 +15,9 @@ taobao.top.auth.token.create
 type TaobaoTopAuthTokenCreateRequest struct {
     model.Params
     // 授权code，grantType==authorization_code 时需要
-    code   string
+    _code   string
     // 与生成code的uuid配对
-    uuid   string
+    _uuid   string
 }
 
 // 初始化TaobaoTopAuthTokenCreateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoTopAuthTokenCreateRequest) GetApiParams() url.Values {
 }
 // Code Setter
 // 授权code，grantType==authorization_code 时需要
-func (r *TaobaoTopAuthTokenCreateRequest) SetCode(code string) error {
-    r.code = code
-    r.Set("code", code)
+func (r *TaobaoTopAuthTokenCreateRequest) SetCode(_code string) error {
+    r._code = _code
+    r.Set("code", _code)
     return nil
 }
 
 // Code Getter
 func (r TaobaoTopAuthTokenCreateRequest) GetCode() string {
-    return r.code
+    return r._code
 }
 // Uuid Setter
 // 与生成code的uuid配对
-func (r *TaobaoTopAuthTokenCreateRequest) SetUuid(uuid string) error {
-    r.uuid = uuid
-    r.Set("uuid", uuid)
+func (r *TaobaoTopAuthTokenCreateRequest) SetUuid(_uuid string) error {
+    r._uuid = _uuid
+    r.Set("uuid", _uuid)
     return nil
 }
 
 // Uuid Getter
 func (r TaobaoTopAuthTokenCreateRequest) GetUuid() string {
-    return r.uuid
+    return r._uuid
 }

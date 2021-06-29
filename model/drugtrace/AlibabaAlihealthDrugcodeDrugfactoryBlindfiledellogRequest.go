@@ -15,13 +15,13 @@ alibaba.alihealth.drugcode.drugfactory.blindfiledellog
 type AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest struct {
     model.Params
     // 药厂企业id
-    refEntId   string
+    _refEntId   string
     // 操作人
-    operator   string
+    _operator   string
     // 盲底文件删除时间
-    blindFileDeleteTime   string
+    _blindFileDeleteTime   string
     // 盲底文件名称，多个盲底文件用,分隔
-    blindFileNames   string
+    _blindFileNames   string
 }
 
 // 初始化AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest对象
@@ -46,49 +46,49 @@ func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) GetApiParams(
 }
 // RefEntId Setter
 // 药厂企业id
-func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetRefEntId(refEntId string) error {
-    r.refEntId = refEntId
-    r.Set("ref_ent_id", refEntId)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetRefEntId(_refEntId string) error {
+    r._refEntId = _refEntId
+    r.Set("ref_ent_id", _refEntId)
     return nil
 }
 
 // RefEntId Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) GetRefEntId() string {
-    return r.refEntId
+    return r._refEntId
 }
 // Operator Setter
 // 操作人
-func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetOperator(operator string) error {
-    r.operator = operator
-    r.Set("operator", operator)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetOperator(_operator string) error {
+    r._operator = _operator
+    r.Set("operator", _operator)
     return nil
 }
 
 // Operator Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) GetOperator() string {
-    return r.operator
+    return r._operator
 }
 // BlindFileDeleteTime Setter
 // 盲底文件删除时间
-func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetBlindFileDeleteTime(blindFileDeleteTime string) error {
-    r.blindFileDeleteTime = blindFileDeleteTime
-    r.Set("blind_file_delete_time", blindFileDeleteTime)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetBlindFileDeleteTime(_blindFileDeleteTime string) error {
+    r._blindFileDeleteTime = _blindFileDeleteTime
+    r.Set("blind_file_delete_time", _blindFileDeleteTime)
     return nil
 }
 
 // BlindFileDeleteTime Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) GetBlindFileDeleteTime() string {
-    return r.blindFileDeleteTime
+    return r._blindFileDeleteTime
 }
 // BlindFileNames Setter
 // 盲底文件名称，多个盲底文件用,分隔
-func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetBlindFileNames(blindFileNames string) error {
-    r.blindFileNames = blindFileNames
-    r.Set("blind_file_names", blindFileNames)
+func (r *AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) SetBlindFileNames(_blindFileNames string) error {
+    r._blindFileNames = _blindFileNames
+    r.Set("blind_file_names", _blindFileNames)
     return nil
 }
 
 // BlindFileNames Getter
 func (r AlibabaAlihealthDrugcodeDrugfactoryBlindfiledellogRequest) GetBlindFileNames() string {
-    return r.blindFileNames
+    return r._blindFileNames
 }

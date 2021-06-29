@@ -15,7 +15,7 @@ tmall.servicecenter.worker.querycapacitytask
 type TmallServicecenterWorkerQuerycapacitytaskRequest struct {
     model.Params
     // 查询对象
-    query   *CapacityTaskQueryDto
+    _query   *CapacityTaskQueryDto
 }
 
 // 初始化TmallServicecenterWorkerQuerycapacitytaskRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetApiParams() url.Val
 }
 // Query Setter
 // 查询对象
-func (r *TmallServicecenterWorkerQuerycapacitytaskRequest) SetQuery(query *CapacityTaskQueryDto) error {
-    r.query = query
-    r.Set("query", query)
+func (r *TmallServicecenterWorkerQuerycapacitytaskRequest) SetQuery(_query *CapacityTaskQueryDto) error {
+    r._query = _query
+    r.Set("query", _query)
     return nil
 }
 
 // Query Getter
 func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetQuery() *CapacityTaskQueryDto {
-    return r.query
+    return r._query
 }

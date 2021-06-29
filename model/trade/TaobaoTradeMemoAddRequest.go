@@ -15,11 +15,11 @@ taobao.trade.memo.add
 type TaobaoTradeMemoAddRequest struct {
     model.Params
     // 交易编号
-    tid   int64
+    _tid   int64
     // 交易备注。最大长度: 1000个字节
-    memo   string
+    _memo   string
     // 交易备注旗帜，可选值为：0(灰色), 1(红色), 2(黄色), 3(绿色), 4(蓝色), 5(粉红色)，默认值为0
-    flag   int64
+    _flag   int64
 }
 
 // 初始化TaobaoTradeMemoAddRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoTradeMemoAddRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 交易编号
-func (r *TaobaoTradeMemoAddRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoTradeMemoAddRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoTradeMemoAddRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // Memo Setter
 // 交易备注。最大长度: 1000个字节
-func (r *TaobaoTradeMemoAddRequest) SetMemo(memo string) error {
-    r.memo = memo
-    r.Set("memo", memo)
+func (r *TaobaoTradeMemoAddRequest) SetMemo(_memo string) error {
+    r._memo = _memo
+    r.Set("memo", _memo)
     return nil
 }
 
 // Memo Getter
 func (r TaobaoTradeMemoAddRequest) GetMemo() string {
-    return r.memo
+    return r._memo
 }
 // Flag Setter
 // 交易备注旗帜，可选值为：0(灰色), 1(红色), 2(黄色), 3(绿色), 4(蓝色), 5(粉红色)，默认值为0
-func (r *TaobaoTradeMemoAddRequest) SetFlag(flag int64) error {
-    r.flag = flag
-    r.Set("flag", flag)
+func (r *TaobaoTradeMemoAddRequest) SetFlag(_flag int64) error {
+    r._flag = _flag
+    r.Set("flag", _flag)
     return nil
 }
 
 // Flag Getter
 func (r TaobaoTradeMemoAddRequest) GetFlag() int64 {
-    return r.flag
+    return r._flag
 }

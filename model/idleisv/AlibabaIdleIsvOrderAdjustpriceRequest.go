@@ -15,7 +15,7 @@ alibaba.idle.isv.order.adjustprice
 type AlibabaIdleIsvOrderAdjustpriceRequest struct {
     model.Params
     // 输入参数
-    paramAdjustOrderPrice   *IsvAdjustOrderPriceDto
+    _paramAdjustOrderPrice   *IsvAdjustOrderPriceDto
 }
 
 // 初始化AlibabaIdleIsvOrderAdjustpriceRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetApiParams() url.Values {
 }
 // ParamAdjustOrderPrice Setter
 // 输入参数
-func (r *AlibabaIdleIsvOrderAdjustpriceRequest) SetParamAdjustOrderPrice(paramAdjustOrderPrice *IsvAdjustOrderPriceDto) error {
-    r.paramAdjustOrderPrice = paramAdjustOrderPrice
-    r.Set("param_adjust_order_price", paramAdjustOrderPrice)
+func (r *AlibabaIdleIsvOrderAdjustpriceRequest) SetParamAdjustOrderPrice(_paramAdjustOrderPrice *IsvAdjustOrderPriceDto) error {
+    r._paramAdjustOrderPrice = _paramAdjustOrderPrice
+    r.Set("param_adjust_order_price", _paramAdjustOrderPrice)
     return nil
 }
 
 // ParamAdjustOrderPrice Getter
 func (r AlibabaIdleIsvOrderAdjustpriceRequest) GetParamAdjustOrderPrice() *IsvAdjustOrderPriceDto {
-    return r.paramAdjustOrderPrice
+    return r._paramAdjustOrderPrice
 }

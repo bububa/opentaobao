@@ -15,7 +15,7 @@ alitrip.btrip.hotel.distribution.search.static
 type AlitripBtripHotelDistributionSearchStaticRequest struct {
     model.Params
     // 基础信息入参
-    paramHotelInfoRQ   *HotelInfoRq
+    _paramHotelInfoRQ   *HotelInfoRq
 }
 
 // 初始化AlitripBtripHotelDistributionSearchStaticRequest对象
@@ -40,13 +40,13 @@ func (r AlitripBtripHotelDistributionSearchStaticRequest) GetApiParams() url.Val
 }
 // ParamHotelInfoRQ Setter
 // 基础信息入参
-func (r *AlitripBtripHotelDistributionSearchStaticRequest) SetParamHotelInfoRQ(paramHotelInfoRQ *HotelInfoRq) error {
-    r.paramHotelInfoRQ = paramHotelInfoRQ
-    r.Set("param_hotel_info_r_q", paramHotelInfoRQ)
+func (r *AlitripBtripHotelDistributionSearchStaticRequest) SetParamHotelInfoRQ(_paramHotelInfoRQ *HotelInfoRq) error {
+    r._paramHotelInfoRQ = _paramHotelInfoRQ
+    r.Set("param_hotel_info_r_q", _paramHotelInfoRQ)
     return nil
 }
 
 // ParamHotelInfoRQ Getter
 func (r AlitripBtripHotelDistributionSearchStaticRequest) GetParamHotelInfoRQ() *HotelInfoRq {
-    return r.paramHotelInfoRQ
+    return r._paramHotelInfoRQ
 }

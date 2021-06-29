@@ -15,7 +15,7 @@ alibaba.aliqin.axb.vendor.call.control
 type AlibabaAliqinAxbVendorCallControlRequest struct {
     model.Params
     // 转接控制接口request对象
-    startCallRequest   *StartCallRequest
+    _startCallRequest   *StartCallRequest
 }
 
 // 初始化AlibabaAliqinAxbVendorCallControlRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAliqinAxbVendorCallControlRequest) GetApiParams() url.Values {
 }
 // StartCallRequest Setter
 // 转接控制接口request对象
-func (r *AlibabaAliqinAxbVendorCallControlRequest) SetStartCallRequest(startCallRequest *StartCallRequest) error {
-    r.startCallRequest = startCallRequest
-    r.Set("start_call_request", startCallRequest)
+func (r *AlibabaAliqinAxbVendorCallControlRequest) SetStartCallRequest(_startCallRequest *StartCallRequest) error {
+    r._startCallRequest = _startCallRequest
+    r.Set("start_call_request", _startCallRequest)
     return nil
 }
 
 // StartCallRequest Getter
 func (r AlibabaAliqinAxbVendorCallControlRequest) GetStartCallRequest() *StartCallRequest {
-    return r.startCallRequest
+    return r._startCallRequest
 }

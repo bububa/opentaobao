@@ -15,7 +15,7 @@ Avatar用户body数据查询
 type AlibabaCgameAvatarUserbodyQueryRequest struct {
     model.Params
     // 查询数据所属用户的mixUserId
-    mixUserId   string
+    _mixUserId   string
 }
 
 // 初始化AlibabaCgameAvatarUserbodyQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaCgameAvatarUserbodyQueryRequest) GetApiParams() url.Values {
 }
 // MixUserId Setter
 // 查询数据所属用户的mixUserId
-func (r *AlibabaCgameAvatarUserbodyQueryRequest) SetMixUserId(mixUserId string) error {
-    r.mixUserId = mixUserId
-    r.Set("mix_user_id", mixUserId)
+func (r *AlibabaCgameAvatarUserbodyQueryRequest) SetMixUserId(_mixUserId string) error {
+    r._mixUserId = _mixUserId
+    r.Set("mix_user_id", _mixUserId)
     return nil
 }
 
 // MixUserId Getter
 func (r AlibabaCgameAvatarUserbodyQueryRequest) GetMixUserId() string {
-    return r.mixUserId
+    return r._mixUserId
 }

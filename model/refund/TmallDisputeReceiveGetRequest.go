@@ -15,25 +15,25 @@ tmall.dispute.receive.get
 type TmallDisputeReceiveGetRequest struct {
     model.Params
     // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意);WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货);WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货);CLOSED(退款关闭); SUCCESS(退款成功);SELLER_REFUSE_BUYER(卖家拒绝退款);WAIT_BUYER_CONFIRM_REDO_SEND_GOODS(等待买家确认重新邮寄的货物);WAIT_SELLER_CONFIRM_RETURN_ADDRESS(等待卖家确认退货地址);WAIT_SELLER_CONSIGN_GOOGDS(卖家确认收货,等待卖家发货);EXCHANGE_TRANSFORM_TO_REFUND(换货关闭,转退货退款);EXCHANGE_WAIT_BUYER_CONFIRM_GOODS(卖家已发货,等待买家确认收货);POST_FEE_DISPUTE_WAIT_ACTIVATE(邮费单已创建,待激活)
-    status   string
+    _status   string
     // 每页条数。取值范围:大于零的整数; 默认值:20;最大值:100
-    pageSize   int64
+    _pageSize   int64
     // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。
-    useHasNext   bool
+    _useHasNext   bool
     // 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，查看可选值
-    type   string
+    _type   string
     // 逆向纠纷单号id
-    refundId   int64
+    _refundId   int64
     // 页码。取值范围:大于零的整数; 默认值:1
-    pageNo   int64
+    _pageNo   int64
     // 买家昵称
-    buyerNick   string
+    _buyerNick   string
     // 查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss
-    startModified   string
+    _startModified   string
     // 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
-    endModified   string
+    _endModified   string
     // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, buyer_nick, seller_nick, status, created, modified, order_status, refund_fee, good_status, show_return_logistic(展现买家退货的物流信息), show_exchange_logistic(展现换货的物流信息), time_out, oid, refund_version, title, num, dispute_request, reason, desc
-    fields   []string
+    _fields   []string
 }
 
 // 初始化TmallDisputeReceiveGetRequest对象
@@ -58,121 +58,121 @@ func (r TmallDisputeReceiveGetRequest) GetApiParams() url.Values {
 }
 // Status Setter
 // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意);WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货);WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货);CLOSED(退款关闭); SUCCESS(退款成功);SELLER_REFUSE_BUYER(卖家拒绝退款);WAIT_BUYER_CONFIRM_REDO_SEND_GOODS(等待买家确认重新邮寄的货物);WAIT_SELLER_CONFIRM_RETURN_ADDRESS(等待卖家确认退货地址);WAIT_SELLER_CONSIGN_GOOGDS(卖家确认收货,等待卖家发货);EXCHANGE_TRANSFORM_TO_REFUND(换货关闭,转退货退款);EXCHANGE_WAIT_BUYER_CONFIRM_GOODS(卖家已发货,等待买家确认收货);POST_FEE_DISPUTE_WAIT_ACTIVATE(邮费单已创建,待激活)
-func (r *TmallDisputeReceiveGetRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *TmallDisputeReceiveGetRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r TmallDisputeReceiveGetRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // PageSize Setter
 // 每页条数。取值范围:大于零的整数; 默认值:20;最大值:100
-func (r *TmallDisputeReceiveGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *TmallDisputeReceiveGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r TmallDisputeReceiveGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // UseHasNext Setter
 // 是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。
-func (r *TmallDisputeReceiveGetRequest) SetUseHasNext(useHasNext bool) error {
-    r.useHasNext = useHasNext
-    r.Set("use_has_next", useHasNext)
+func (r *TmallDisputeReceiveGetRequest) SetUseHasNext(_useHasNext bool) error {
+    r._useHasNext = _useHasNext
+    r.Set("use_has_next", _useHasNext)
     return nil
 }
 
 // UseHasNext Getter
 func (r TmallDisputeReceiveGetRequest) GetUseHasNext() bool {
-    return r.useHasNext
+    return r._useHasNext
 }
 // Type Setter
 // 交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，查看可选值
-func (r *TmallDisputeReceiveGetRequest) SetType(type string) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TmallDisputeReceiveGetRequest) SetType(_type string) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TmallDisputeReceiveGetRequest) GetType() string {
-    return r.type
+    return r._type
 }
 // RefundId Setter
 // 逆向纠纷单号id
-func (r *TmallDisputeReceiveGetRequest) SetRefundId(refundId int64) error {
-    r.refundId = refundId
-    r.Set("refund_id", refundId)
+func (r *TmallDisputeReceiveGetRequest) SetRefundId(_refundId int64) error {
+    r._refundId = _refundId
+    r.Set("refund_id", _refundId)
     return nil
 }
 
 // RefundId Getter
 func (r TmallDisputeReceiveGetRequest) GetRefundId() int64 {
-    return r.refundId
+    return r._refundId
 }
 // PageNo Setter
 // 页码。取值范围:大于零的整数; 默认值:1
-func (r *TmallDisputeReceiveGetRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *TmallDisputeReceiveGetRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r TmallDisputeReceiveGetRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // BuyerNick Setter
 // 买家昵称
-func (r *TmallDisputeReceiveGetRequest) SetBuyerNick(buyerNick string) error {
-    r.buyerNick = buyerNick
-    r.Set("buyer_nick", buyerNick)
+func (r *TmallDisputeReceiveGetRequest) SetBuyerNick(_buyerNick string) error {
+    r._buyerNick = _buyerNick
+    r.Set("buyer_nick", _buyerNick)
     return nil
 }
 
 // BuyerNick Getter
 func (r TmallDisputeReceiveGetRequest) GetBuyerNick() string {
-    return r.buyerNick
+    return r._buyerNick
 }
 // StartModified Setter
 // 查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss
-func (r *TmallDisputeReceiveGetRequest) SetStartModified(startModified string) error {
-    r.startModified = startModified
-    r.Set("start_modified", startModified)
+func (r *TmallDisputeReceiveGetRequest) SetStartModified(_startModified string) error {
+    r._startModified = _startModified
+    r.Set("start_modified", _startModified)
     return nil
 }
 
 // StartModified Getter
 func (r TmallDisputeReceiveGetRequest) GetStartModified() string {
-    return r.startModified
+    return r._startModified
 }
 // EndModified Setter
 // 查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss
-func (r *TmallDisputeReceiveGetRequest) SetEndModified(endModified string) error {
-    r.endModified = endModified
-    r.Set("end_modified", endModified)
+func (r *TmallDisputeReceiveGetRequest) SetEndModified(_endModified string) error {
+    r._endModified = _endModified
+    r.Set("end_modified", _endModified)
     return nil
 }
 
 // EndModified Getter
 func (r TmallDisputeReceiveGetRequest) GetEndModified() string {
-    return r.endModified
+    return r._endModified
 }
 // Fields Setter
 // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, buyer_nick, seller_nick, status, created, modified, order_status, refund_fee, good_status, show_return_logistic(展现买家退货的物流信息), show_exchange_logistic(展现换货的物流信息), time_out, oid, refund_version, title, num, dispute_request, reason, desc
-func (r *TmallDisputeReceiveGetRequest) SetFields(fields []string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *TmallDisputeReceiveGetRequest) SetFields(_fields []string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r TmallDisputeReceiveGetRequest) GetFields() []string {
-    return r.fields
+    return r._fields
 }

@@ -15,9 +15,9 @@ alibaba.campus.acl.new.listusermenu
 type AlibabaCampusAclNewListusermenuRequest struct {
     model.Params
     // 系统入参
-    workbenchcontext   *WorkBenchContext
+    _workbenchcontext   *WorkBenchContext
     // 用户账号
-    userId   string
+    _userId   string
 }
 
 // 初始化AlibabaCampusAclNewListusermenuRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaCampusAclNewListusermenuRequest) GetApiParams() url.Values {
 }
 // Workbenchcontext Setter
 // 系统入参
-func (r *AlibabaCampusAclNewListusermenuRequest) SetWorkbenchcontext(workbenchcontext *WorkBenchContext) error {
-    r.workbenchcontext = workbenchcontext
-    r.Set("workbenchcontext", workbenchcontext)
+func (r *AlibabaCampusAclNewListusermenuRequest) SetWorkbenchcontext(_workbenchcontext *WorkBenchContext) error {
+    r._workbenchcontext = _workbenchcontext
+    r.Set("workbenchcontext", _workbenchcontext)
     return nil
 }
 
 // Workbenchcontext Getter
 func (r AlibabaCampusAclNewListusermenuRequest) GetWorkbenchcontext() *WorkBenchContext {
-    return r.workbenchcontext
+    return r._workbenchcontext
 }
 // UserId Setter
 // 用户账号
-func (r *AlibabaCampusAclNewListusermenuRequest) SetUserId(userId string) error {
-    r.userId = userId
-    r.Set("user_id", userId)
+func (r *AlibabaCampusAclNewListusermenuRequest) SetUserId(_userId string) error {
+    r._userId = _userId
+    r.Set("user_id", _userId)
     return nil
 }
 
 // UserId Getter
 func (r AlibabaCampusAclNewListusermenuRequest) GetUserId() string {
-    return r.userId
+    return r._userId
 }

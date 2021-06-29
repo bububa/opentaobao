@@ -15,9 +15,9 @@ taobao.simba.salestar.campaign.budget.update
 type TaobaoSimbaSalestarCampaignBudgetUpdateRequest struct {
     model.Params
     // 推广计划Id
-    campaignId   int64
+    _campaignId   int64
     // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
-    budget   int64
+    _budget   int64
 }
 
 // 初始化TaobaoSimbaSalestarCampaignBudgetUpdateRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoSimbaSalestarCampaignBudgetUpdateRequest) GetApiParams() url.Value
 }
 // CampaignId Setter
 // 推广计划Id
-func (r *TaobaoSimbaSalestarCampaignBudgetUpdateRequest) SetCampaignId(campaignId int64) error {
-    r.campaignId = campaignId
-    r.Set("campaign_id", campaignId)
+func (r *TaobaoSimbaSalestarCampaignBudgetUpdateRequest) SetCampaignId(_campaignId int64) error {
+    r._campaignId = _campaignId
+    r.Set("campaign_id", _campaignId)
     return nil
 }
 
 // CampaignId Getter
 func (r TaobaoSimbaSalestarCampaignBudgetUpdateRequest) GetCampaignId() int64 {
-    return r.campaignId
+    return r._campaignId
 }
 // Budget Setter
 // 如果为空则取消限额；否则必须为整数，单位是元，不得小于30；
-func (r *TaobaoSimbaSalestarCampaignBudgetUpdateRequest) SetBudget(budget int64) error {
-    r.budget = budget
-    r.Set("budget", budget)
+func (r *TaobaoSimbaSalestarCampaignBudgetUpdateRequest) SetBudget(_budget int64) error {
+    r._budget = _budget
+    r.Set("budget", _budget)
     return nil
 }
 
 // Budget Getter
 func (r TaobaoSimbaSalestarCampaignBudgetUpdateRequest) GetBudget() int64 {
-    return r.budget
+    return r._budget
 }

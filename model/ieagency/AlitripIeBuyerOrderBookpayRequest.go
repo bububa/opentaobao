@@ -15,7 +15,7 @@ alitrip.ie.buyer.order.bookpay
 type AlitripIeBuyerOrderBookpayRequest struct {
     model.Params
     // 生单支付请求参数
-    bookPayOrderParam   *BookPayOrderRq
+    _bookPayOrderParam   *BookPayOrderRq
 }
 
 // 初始化AlitripIeBuyerOrderBookpayRequest对象
@@ -40,13 +40,13 @@ func (r AlitripIeBuyerOrderBookpayRequest) GetApiParams() url.Values {
 }
 // BookPayOrderParam Setter
 // 生单支付请求参数
-func (r *AlitripIeBuyerOrderBookpayRequest) SetBookPayOrderParam(bookPayOrderParam *BookPayOrderRq) error {
-    r.bookPayOrderParam = bookPayOrderParam
-    r.Set("book_pay_order_param", bookPayOrderParam)
+func (r *AlitripIeBuyerOrderBookpayRequest) SetBookPayOrderParam(_bookPayOrderParam *BookPayOrderRq) error {
+    r._bookPayOrderParam = _bookPayOrderParam
+    r.Set("book_pay_order_param", _bookPayOrderParam)
     return nil
 }
 
 // BookPayOrderParam Getter
 func (r AlitripIeBuyerOrderBookpayRequest) GetBookPayOrderParam() *BookPayOrderRq {
-    return r.bookPayOrderParam
+    return r._bookPayOrderParam
 }

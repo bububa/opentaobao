@@ -15,7 +15,7 @@ alibaba.security.jaq.rp.query
 type AlibabaSecurityJaqRpQueryRequest struct {
     model.Params
     // token
-    verifyToken   string
+    _verifyToken   string
 }
 
 // 初始化AlibabaSecurityJaqRpQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSecurityJaqRpQueryRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpQueryRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpQueryRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpQueryRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }

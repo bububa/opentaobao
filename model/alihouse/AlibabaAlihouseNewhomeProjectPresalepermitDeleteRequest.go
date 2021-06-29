@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.presalepermit.delete
 type AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest struct {
     model.Params
     // 外部顾问ID
-    outerPermitId   string
+    _outerPermitId   string
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest) GetApiParams() 
 }
 // OuterPermitId Setter
 // 外部顾问ID
-func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest) SetOuterPermitId(outerPermitId string) error {
-    r.outerPermitId = outerPermitId
-    r.Set("outer_permit_id", outerPermitId)
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest) SetOuterPermitId(_outerPermitId string) error {
+    r._outerPermitId = _outerPermitId
+    r.Set("outer_permit_id", _outerPermitId)
     return nil
 }
 
 // OuterPermitId Getter
 func (r AlibabaAlihouseNewhomeProjectPresalepermitDeleteRequest) GetOuterPermitId() string {
-    return r.outerPermitId
+    return r._outerPermitId
 }

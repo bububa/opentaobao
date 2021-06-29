@@ -15,21 +15,21 @@ AE联盟推广者订单分页查询接口
 type AliexpressAffiliateOrderListRequest struct {
     model.Params
     // 开始时间
-    startTime   string
+    _startTime   string
     // 结束时间
-    endTime   string
+    _endTime   string
     // 订单状态:Payment Completed,Buyer Confirmed Receipt
-    status   string
+    _status   string
     // 站点信息：global、ru_site、es_site、it_site
-    localeSite   string
+    _localeSite   string
     // 页数
-    pageNo   int64
+    _pageNo   int64
     // 每页记录数
-    pageSize   int64
+    _pageSize   int64
     // 返回的字段信息
-    fields   string
+    _fields   string
     // 安全签名
-    appSignature   string
+    _appSignature   string
 }
 
 // 初始化AliexpressAffiliateOrderListRequest对象
@@ -54,97 +54,97 @@ func (r AliexpressAffiliateOrderListRequest) GetApiParams() url.Values {
 }
 // StartTime Setter
 // 开始时间
-func (r *AliexpressAffiliateOrderListRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *AliexpressAffiliateOrderListRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r AliexpressAffiliateOrderListRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }
 // EndTime Setter
 // 结束时间
-func (r *AliexpressAffiliateOrderListRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *AliexpressAffiliateOrderListRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r AliexpressAffiliateOrderListRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // Status Setter
 // 订单状态:Payment Completed,Buyer Confirmed Receipt
-func (r *AliexpressAffiliateOrderListRequest) SetStatus(status string) error {
-    r.status = status
-    r.Set("status", status)
+func (r *AliexpressAffiliateOrderListRequest) SetStatus(_status string) error {
+    r._status = _status
+    r.Set("status", _status)
     return nil
 }
 
 // Status Getter
 func (r AliexpressAffiliateOrderListRequest) GetStatus() string {
-    return r.status
+    return r._status
 }
 // LocaleSite Setter
 // 站点信息：global、ru_site、es_site、it_site
-func (r *AliexpressAffiliateOrderListRequest) SetLocaleSite(localeSite string) error {
-    r.localeSite = localeSite
-    r.Set("locale_site", localeSite)
+func (r *AliexpressAffiliateOrderListRequest) SetLocaleSite(_localeSite string) error {
+    r._localeSite = _localeSite
+    r.Set("locale_site", _localeSite)
     return nil
 }
 
 // LocaleSite Getter
 func (r AliexpressAffiliateOrderListRequest) GetLocaleSite() string {
-    return r.localeSite
+    return r._localeSite
 }
 // PageNo Setter
 // 页数
-func (r *AliexpressAffiliateOrderListRequest) SetPageNo(pageNo int64) error {
-    r.pageNo = pageNo
-    r.Set("page_no", pageNo)
+func (r *AliexpressAffiliateOrderListRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
     return nil
 }
 
 // PageNo Getter
 func (r AliexpressAffiliateOrderListRequest) GetPageNo() int64 {
-    return r.pageNo
+    return r._pageNo
 }
 // PageSize Setter
 // 每页记录数
-func (r *AliexpressAffiliateOrderListRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AliexpressAffiliateOrderListRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AliexpressAffiliateOrderListRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // Fields Setter
 // 返回的字段信息
-func (r *AliexpressAffiliateOrderListRequest) SetFields(fields string) error {
-    r.fields = fields
-    r.Set("fields", fields)
+func (r *AliexpressAffiliateOrderListRequest) SetFields(_fields string) error {
+    r._fields = _fields
+    r.Set("fields", _fields)
     return nil
 }
 
 // Fields Getter
 func (r AliexpressAffiliateOrderListRequest) GetFields() string {
-    return r.fields
+    return r._fields
 }
 // AppSignature Setter
 // 安全签名
-func (r *AliexpressAffiliateOrderListRequest) SetAppSignature(appSignature string) error {
-    r.appSignature = appSignature
-    r.Set("app_signature", appSignature)
+func (r *AliexpressAffiliateOrderListRequest) SetAppSignature(_appSignature string) error {
+    r._appSignature = _appSignature
+    r.Set("app_signature", _appSignature)
     return nil
 }
 
 // AppSignature Getter
 func (r AliexpressAffiliateOrderListRequest) GetAppSignature() string {
-    return r.appSignature
+    return r._appSignature
 }

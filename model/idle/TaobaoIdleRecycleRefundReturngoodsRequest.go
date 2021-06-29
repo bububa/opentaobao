@@ -15,7 +15,7 @@ taobao.idle.recycle.refund.returngoods
 type TaobaoIdleRecycleRefundReturngoodsRequest struct {
     model.Params
     // 退货
-    param0   *RecycleReturnGoodsRequest
+    _param0   *RecycleReturnGoodsRequest
 }
 
 // 初始化TaobaoIdleRecycleRefundReturngoodsRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 退货
-func (r *TaobaoIdleRecycleRefundReturngoodsRequest) SetParam0(param0 *RecycleReturnGoodsRequest) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TaobaoIdleRecycleRefundReturngoodsRequest) SetParam0(_param0 *RecycleReturnGoodsRequest) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TaobaoIdleRecycleRefundReturngoodsRequest) GetParam0() *RecycleReturnGoodsRequest {
-    return r.param0
+    return r._param0
 }

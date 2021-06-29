@@ -16,7 +16,7 @@ alibaba.taobao.wt.user.crowd
 type AlibabaTaobaoWtUserCrowdRequest struct {
     model.Params
     // 手机号
-    phone   int64
+    _phone   int64
 }
 
 // 初始化AlibabaTaobaoWtUserCrowdRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaTaobaoWtUserCrowdRequest) GetApiParams() url.Values {
 }
 // Phone Setter
 // 手机号
-func (r *AlibabaTaobaoWtUserCrowdRequest) SetPhone(phone int64) error {
-    r.phone = phone
-    r.Set("phone", phone)
+func (r *AlibabaTaobaoWtUserCrowdRequest) SetPhone(_phone int64) error {
+    r._phone = _phone
+    r.Set("phone", _phone)
     return nil
 }
 
 // Phone Getter
 func (r AlibabaTaobaoWtUserCrowdRequest) GetPhone() int64 {
-    return r.phone
+    return r._phone
 }

@@ -15,11 +15,11 @@ taobao.jst.secret.get
 type TaobaoJstSecretGetRequest struct {
     model.Params
     // 订单号
-    tid   int64
+    _tid   int64
     // 隐私号类型，1=手机号，2=分机号，默认为1；分机号使用时拨打手机号转分机号
-    type   int64
+    _type   int64
     // 隐私号码过期天数，默认30天，取值范围[1,30]
-    expireDays   int64
+    _expireDays   int64
 }
 
 // 初始化TaobaoJstSecretGetRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoJstSecretGetRequest) GetApiParams() url.Values {
 }
 // Tid Setter
 // 订单号
-func (r *TaobaoJstSecretGetRequest) SetTid(tid int64) error {
-    r.tid = tid
-    r.Set("tid", tid)
+func (r *TaobaoJstSecretGetRequest) SetTid(_tid int64) error {
+    r._tid = _tid
+    r.Set("tid", _tid)
     return nil
 }
 
 // Tid Getter
 func (r TaobaoJstSecretGetRequest) GetTid() int64 {
-    return r.tid
+    return r._tid
 }
 // Type Setter
 // 隐私号类型，1=手机号，2=分机号，默认为1；分机号使用时拨打手机号转分机号
-func (r *TaobaoJstSecretGetRequest) SetType(type int64) error {
-    r.type = type
-    r.Set("type", type)
+func (r *TaobaoJstSecretGetRequest) SetType(_type int64) error {
+    r._type = _type
+    r.Set("type", _type)
     return nil
 }
 
 // Type Getter
 func (r TaobaoJstSecretGetRequest) GetType() int64 {
-    return r.type
+    return r._type
 }
 // ExpireDays Setter
 // 隐私号码过期天数，默认30天，取值范围[1,30]
-func (r *TaobaoJstSecretGetRequest) SetExpireDays(expireDays int64) error {
-    r.expireDays = expireDays
-    r.Set("expire_days", expireDays)
+func (r *TaobaoJstSecretGetRequest) SetExpireDays(_expireDays int64) error {
+    r._expireDays = _expireDays
+    r.Set("expire_days", _expireDays)
     return nil
 }
 
 // ExpireDays Getter
 func (r TaobaoJstSecretGetRequest) GetExpireDays() int64 {
-    return r.expireDays
+    return r._expireDays
 }

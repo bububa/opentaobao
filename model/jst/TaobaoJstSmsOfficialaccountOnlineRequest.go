@@ -15,7 +15,7 @@ taobao.jst.sms.officialaccount.online
 type TaobaoJstSmsOfficialaccountOnlineRequest struct {
     model.Params
     // 公众号上线请求参数
-    officialAccountOnlineRequest   *JstBaseRequest
+    _officialAccountOnlineRequest   *JstBaseRequest
 }
 
 // 初始化TaobaoJstSmsOfficialaccountOnlineRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoJstSmsOfficialaccountOnlineRequest) GetApiParams() url.Values {
 }
 // OfficialAccountOnlineRequest Setter
 // 公众号上线请求参数
-func (r *TaobaoJstSmsOfficialaccountOnlineRequest) SetOfficialAccountOnlineRequest(officialAccountOnlineRequest *JstBaseRequest) error {
-    r.officialAccountOnlineRequest = officialAccountOnlineRequest
-    r.Set("official_account_online_request", officialAccountOnlineRequest)
+func (r *TaobaoJstSmsOfficialaccountOnlineRequest) SetOfficialAccountOnlineRequest(_officialAccountOnlineRequest *JstBaseRequest) error {
+    r._officialAccountOnlineRequest = _officialAccountOnlineRequest
+    r.Set("official_account_online_request", _officialAccountOnlineRequest)
     return nil
 }
 
 // OfficialAccountOnlineRequest Getter
 func (r TaobaoJstSmsOfficialaccountOnlineRequest) GetOfficialAccountOnlineRequest() *JstBaseRequest {
-    return r.officialAccountOnlineRequest
+    return r._officialAccountOnlineRequest
 }

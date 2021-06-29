@@ -15,7 +15,7 @@ taobao.xhotel.city.coordinates.batch.download
 type TaobaoXhotelCityCoordinatesBatchDownloadRequest struct {
     model.Params
     // 上传的经纬度批次号
-    batchId   int64
+    _batchId   int64
 }
 
 // 初始化TaobaoXhotelCityCoordinatesBatchDownloadRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelCityCoordinatesBatchDownloadRequest) GetApiParams() url.Valu
 }
 // BatchId Setter
 // 上传的经纬度批次号
-func (r *TaobaoXhotelCityCoordinatesBatchDownloadRequest) SetBatchId(batchId int64) error {
-    r.batchId = batchId
-    r.Set("batch_id", batchId)
+func (r *TaobaoXhotelCityCoordinatesBatchDownloadRequest) SetBatchId(_batchId int64) error {
+    r._batchId = _batchId
+    r.Set("batch_id", _batchId)
     return nil
 }
 
 // BatchId Getter
 func (r TaobaoXhotelCityCoordinatesBatchDownloadRequest) GetBatchId() int64 {
-    return r.batchId
+    return r._batchId
 }

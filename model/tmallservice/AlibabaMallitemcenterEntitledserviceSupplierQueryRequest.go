@@ -15,11 +15,11 @@ alibaba.mallitemcenter.entitledservice.supplier.query
 type AlibabaMallitemcenterEntitledserviceSupplierQueryRequest struct {
     model.Params
     // 天猫id
-    id   int64
+    _id   int64
     // 第几页
-    currentPage   int64
+    _currentPage   int64
     // 每页条数
-    pageSize   int64
+    _pageSize   int64
 }
 
 // 初始化AlibabaMallitemcenterEntitledserviceSupplierQueryRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) GetApiParams()
 }
 // Id Setter
 // 天猫id
-func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) GetId() int64 {
-    return r.id
+    return r._id
 }
 // CurrentPage Setter
 // 第几页
-func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // PageSize Setter
 // 每页条数
-func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaMallitemcenterEntitledserviceSupplierQueryRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }

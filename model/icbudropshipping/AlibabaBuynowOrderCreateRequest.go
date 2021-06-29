@@ -15,7 +15,7 @@ alibaba.buynow.order.create
 type AlibabaBuynowOrderCreateRequest struct {
     model.Params
     // Order creation parameter
-    paramOrderCreateRequest   *OrderCreateRequest
+    _paramOrderCreateRequest   *OrderCreateRequest
 }
 
 // 初始化AlibabaBuynowOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaBuynowOrderCreateRequest) GetApiParams() url.Values {
 }
 // ParamOrderCreateRequest Setter
 // Order creation parameter
-func (r *AlibabaBuynowOrderCreateRequest) SetParamOrderCreateRequest(paramOrderCreateRequest *OrderCreateRequest) error {
-    r.paramOrderCreateRequest = paramOrderCreateRequest
-    r.Set("param_order_create_request", paramOrderCreateRequest)
+func (r *AlibabaBuynowOrderCreateRequest) SetParamOrderCreateRequest(_paramOrderCreateRequest *OrderCreateRequest) error {
+    r._paramOrderCreateRequest = _paramOrderCreateRequest
+    r.Set("param_order_create_request", _paramOrderCreateRequest)
     return nil
 }
 
 // ParamOrderCreateRequest Getter
 func (r AlibabaBuynowOrderCreateRequest) GetParamOrderCreateRequest() *OrderCreateRequest {
-    return r.paramOrderCreateRequest
+    return r._paramOrderCreateRequest
 }

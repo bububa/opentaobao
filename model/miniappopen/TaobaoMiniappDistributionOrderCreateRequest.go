@@ -15,7 +15,7 @@ taobao.miniapp.distribution.order.create
 type TaobaoMiniappDistributionOrderCreateRequest struct {
     model.Params
     // 投放计划信息
-    orderRequest   *DistributionOrderSaveOpenRequest
+    _orderRequest   *DistributionOrderSaveOpenRequest
 }
 
 // 初始化TaobaoMiniappDistributionOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMiniappDistributionOrderCreateRequest) GetApiParams() url.Values {
 }
 // OrderRequest Setter
 // 投放计划信息
-func (r *TaobaoMiniappDistributionOrderCreateRequest) SetOrderRequest(orderRequest *DistributionOrderSaveOpenRequest) error {
-    r.orderRequest = orderRequest
-    r.Set("order_request", orderRequest)
+func (r *TaobaoMiniappDistributionOrderCreateRequest) SetOrderRequest(_orderRequest *DistributionOrderSaveOpenRequest) error {
+    r._orderRequest = _orderRequest
+    r.Set("order_request", _orderRequest)
     return nil
 }
 
 // OrderRequest Getter
 func (r TaobaoMiniappDistributionOrderCreateRequest) GetOrderRequest() *DistributionOrderSaveOpenRequest {
-    return r.orderRequest
+    return r._orderRequest
 }

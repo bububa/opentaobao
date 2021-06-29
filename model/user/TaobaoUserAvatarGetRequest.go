@@ -15,7 +15,7 @@ taobao.user.avatar.get
 type TaobaoUserAvatarGetRequest struct {
     model.Params
     // 混淆nick
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoUserAvatarGetRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoUserAvatarGetRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 混淆nick
-func (r *TaobaoUserAvatarGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoUserAvatarGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoUserAvatarGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

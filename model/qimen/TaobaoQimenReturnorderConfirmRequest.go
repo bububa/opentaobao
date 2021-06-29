@@ -15,7 +15,7 @@ taobao.qimen.returnorder.confirm
 type TaobaoQimenReturnorderConfirmRequest struct {
     model.Params
     // 
-    request   *ReturnOrderConfirmRequest
+    _request   *ReturnOrderConfirmRequest
 }
 
 // 初始化TaobaoQimenReturnorderConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenReturnorderConfirmRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenReturnorderConfirmRequest) SetRequest(request *ReturnOrderConfirmRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenReturnorderConfirmRequest) SetRequest(_request *ReturnOrderConfirmRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenReturnorderConfirmRequest) GetRequest() *ReturnOrderConfirmRequest {
-    return r.request
+    return r._request
 }

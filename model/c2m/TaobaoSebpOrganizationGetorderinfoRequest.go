@@ -15,13 +15,13 @@ taobao.sebp.organization.getorderinfo
 type TaobaoSebpOrganizationGetorderinfoRequest struct {
     model.Params
     // null-请求所有，20200616-请求2020年6月16号的变更信息
-    modifyDate   string
+    _modifyDate   string
     // 第几页
-    pageNum   int64
+    _pageNum   int64
     // 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
-    endTime   string
+    _endTime   string
     // 查询实时数据时，必传，开始时间不能早于2天前
-    startTime   string
+    _startTime   string
 }
 
 // 初始化TaobaoSebpOrganizationGetorderinfoRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoSebpOrganizationGetorderinfoRequest) GetApiParams() url.Values {
 }
 // ModifyDate Setter
 // null-请求所有，20200616-请求2020年6月16号的变更信息
-func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetModifyDate(modifyDate string) error {
-    r.modifyDate = modifyDate
-    r.Set("modify_date", modifyDate)
+func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetModifyDate(_modifyDate string) error {
+    r._modifyDate = _modifyDate
+    r.Set("modify_date", _modifyDate)
     return nil
 }
 
 // ModifyDate Getter
 func (r TaobaoSebpOrganizationGetorderinfoRequest) GetModifyDate() string {
-    return r.modifyDate
+    return r._modifyDate
 }
 // PageNum Setter
 // 第几页
-func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetPageNum(pageNum int64) error {
-    r.pageNum = pageNum
-    r.Set("page_num", pageNum)
+func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetPageNum(_pageNum int64) error {
+    r._pageNum = _pageNum
+    r.Set("page_num", _pageNum)
     return nil
 }
 
 // PageNum Getter
 func (r TaobaoSebpOrganizationGetorderinfoRequest) GetPageNum() int64 {
-    return r.pageNum
+    return r._pageNum
 }
 // EndTime Setter
 // 查询实时数据时，必传，开始时间结束时间间隔不能超过4个小时
-func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetEndTime(endTime string) error {
-    r.endTime = endTime
-    r.Set("end_time", endTime)
+func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetEndTime(_endTime string) error {
+    r._endTime = _endTime
+    r.Set("end_time", _endTime)
     return nil
 }
 
 // EndTime Getter
 func (r TaobaoSebpOrganizationGetorderinfoRequest) GetEndTime() string {
-    return r.endTime
+    return r._endTime
 }
 // StartTime Setter
 // 查询实时数据时，必传，开始时间不能早于2天前
-func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetStartTime(startTime string) error {
-    r.startTime = startTime
-    r.Set("start_time", startTime)
+func (r *TaobaoSebpOrganizationGetorderinfoRequest) SetStartTime(_startTime string) error {
+    r._startTime = _startTime
+    r.Set("start_time", _startTime)
     return nil
 }
 
 // StartTime Getter
 func (r TaobaoSebpOrganizationGetorderinfoRequest) GetStartTime() string {
-    return r.startTime
+    return r._startTime
 }

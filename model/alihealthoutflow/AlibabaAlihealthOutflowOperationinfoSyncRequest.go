@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.operationinfo.sync
 type AlibabaAlihealthOutflowOperationinfoSyncRequest struct {
     model.Params
     // 入参
-    syncOperationInfoRequest   *SyncOperationInfoRequest
+    _syncOperationInfoRequest   *SyncOperationInfoRequest
 }
 
 // 初始化AlibabaAlihealthOutflowOperationinfoSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetApiParams() url.Valu
 }
 // SyncOperationInfoRequest Setter
 // 入参
-func (r *AlibabaAlihealthOutflowOperationinfoSyncRequest) SetSyncOperationInfoRequest(syncOperationInfoRequest *SyncOperationInfoRequest) error {
-    r.syncOperationInfoRequest = syncOperationInfoRequest
-    r.Set("sync_operation_info_request", syncOperationInfoRequest)
+func (r *AlibabaAlihealthOutflowOperationinfoSyncRequest) SetSyncOperationInfoRequest(_syncOperationInfoRequest *SyncOperationInfoRequest) error {
+    r._syncOperationInfoRequest = _syncOperationInfoRequest
+    r.Set("sync_operation_info_request", _syncOperationInfoRequest)
     return nil
 }
 
 // SyncOperationInfoRequest Getter
 func (r AlibabaAlihealthOutflowOperationinfoSyncRequest) GetSyncOperationInfoRequest() *SyncOperationInfoRequest {
-    return r.syncOperationInfoRequest
+    return r._syncOperationInfoRequest
 }

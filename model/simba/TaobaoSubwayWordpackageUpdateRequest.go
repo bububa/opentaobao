@@ -15,11 +15,11 @@ taobao.subway.wordpackage.update
 type TaobaoSubwayWordpackageUpdateRequest struct {
     model.Params
     // 主人昵称
-    nick   string
+    _nick   string
     // 推广组Id
-    adgroupId   int64
+    _adgroupId   int64
     // 词包列表
-    wordPackageDTOS   []ItemWordPackageDto
+    _wordPackageDTOS   []ItemWordPackageDto
 }
 
 // 初始化TaobaoSubwayWordpackageUpdateRequest对象
@@ -44,37 +44,37 @@ func (r TaobaoSubwayWordpackageUpdateRequest) GetApiParams() url.Values {
 }
 // Nick Setter
 // 主人昵称
-func (r *TaobaoSubwayWordpackageUpdateRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoSubwayWordpackageUpdateRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoSubwayWordpackageUpdateRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }
 // AdgroupId Setter
 // 推广组Id
-func (r *TaobaoSubwayWordpackageUpdateRequest) SetAdgroupId(adgroupId int64) error {
-    r.adgroupId = adgroupId
-    r.Set("adgroup_id", adgroupId)
+func (r *TaobaoSubwayWordpackageUpdateRequest) SetAdgroupId(_adgroupId int64) error {
+    r._adgroupId = _adgroupId
+    r.Set("adgroup_id", _adgroupId)
     return nil
 }
 
 // AdgroupId Getter
 func (r TaobaoSubwayWordpackageUpdateRequest) GetAdgroupId() int64 {
-    return r.adgroupId
+    return r._adgroupId
 }
 // WordPackageDTOS Setter
 // 词包列表
-func (r *TaobaoSubwayWordpackageUpdateRequest) SetWordPackageDTOS(wordPackageDTOS []ItemWordPackageDto) error {
-    r.wordPackageDTOS = wordPackageDTOS
-    r.Set("word_package_d_t_o_s", wordPackageDTOS)
+func (r *TaobaoSubwayWordpackageUpdateRequest) SetWordPackageDTOS(_wordPackageDTOS []ItemWordPackageDto) error {
+    r._wordPackageDTOS = _wordPackageDTOS
+    r.Set("word_package_d_t_o_s", _wordPackageDTOS)
     return nil
 }
 
 // WordPackageDTOS Getter
 func (r TaobaoSubwayWordpackageUpdateRequest) GetWordPackageDTOS() []ItemWordPackageDto {
-    return r.wordPackageDTOS
+    return r._wordPackageDTOS
 }

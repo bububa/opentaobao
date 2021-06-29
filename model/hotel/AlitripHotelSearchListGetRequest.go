@@ -15,7 +15,7 @@ alitrip.hotel.search.list.get
 type AlitripHotelSearchListGetRequest struct {
     model.Params
     // 入参
-    paramTopHotelSearchListParam   *TopHotelSearchListParam
+    _paramTopHotelSearchListParam   *TopHotelSearchListParam
 }
 
 // 初始化AlitripHotelSearchListGetRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelSearchListGetRequest) GetApiParams() url.Values {
 }
 // ParamTopHotelSearchListParam Setter
 // 入参
-func (r *AlitripHotelSearchListGetRequest) SetParamTopHotelSearchListParam(paramTopHotelSearchListParam *TopHotelSearchListParam) error {
-    r.paramTopHotelSearchListParam = paramTopHotelSearchListParam
-    r.Set("param_top_hotel_search_list_param", paramTopHotelSearchListParam)
+func (r *AlitripHotelSearchListGetRequest) SetParamTopHotelSearchListParam(_paramTopHotelSearchListParam *TopHotelSearchListParam) error {
+    r._paramTopHotelSearchListParam = _paramTopHotelSearchListParam
+    r.Set("param_top_hotel_search_list_param", _paramTopHotelSearchListParam)
     return nil
 }
 
 // ParamTopHotelSearchListParam Getter
 func (r AlitripHotelSearchListGetRequest) GetParamTopHotelSearchListParam() *TopHotelSearchListParam {
-    return r.paramTopHotelSearchListParam
+    return r._paramTopHotelSearchListParam
 }

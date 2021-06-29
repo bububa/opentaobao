@@ -15,7 +15,7 @@ ISV推送管辖信息到诉讼平台
 type AlibabaLegalSuitDominationPushRequest struct {
     model.Params
     // 管辖信息
-    dominationDissentModel   *DominationDissentModel
+    _dominationDissentModel   *DominationDissentModel
 }
 
 // 初始化AlibabaLegalSuitDominationPushRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLegalSuitDominationPushRequest) GetApiParams() url.Values {
 }
 // DominationDissentModel Setter
 // 管辖信息
-func (r *AlibabaLegalSuitDominationPushRequest) SetDominationDissentModel(dominationDissentModel *DominationDissentModel) error {
-    r.dominationDissentModel = dominationDissentModel
-    r.Set("domination_dissent_model", dominationDissentModel)
+func (r *AlibabaLegalSuitDominationPushRequest) SetDominationDissentModel(_dominationDissentModel *DominationDissentModel) error {
+    r._dominationDissentModel = _dominationDissentModel
+    r.Set("domination_dissent_model", _dominationDissentModel)
     return nil
 }
 
 // DominationDissentModel Getter
 func (r AlibabaLegalSuitDominationPushRequest) GetDominationDissentModel() *DominationDissentModel {
-    return r.dominationDissentModel
+    return r._dominationDissentModel
 }

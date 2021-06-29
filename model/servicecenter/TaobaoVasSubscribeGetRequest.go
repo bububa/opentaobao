@@ -15,9 +15,9 @@ taobao.vas.subscribe.get
 type TaobaoVasSubscribeGetRequest struct {
     model.Params
     // 商品编码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的商品代码
-    articleCode   string
+    _articleCode   string
     // 淘宝会员名
-    nick   string
+    _nick   string
 }
 
 // 初始化TaobaoVasSubscribeGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoVasSubscribeGetRequest) GetApiParams() url.Values {
 }
 // ArticleCode Setter
 // 商品编码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的商品代码
-func (r *TaobaoVasSubscribeGetRequest) SetArticleCode(articleCode string) error {
-    r.articleCode = articleCode
-    r.Set("article_code", articleCode)
+func (r *TaobaoVasSubscribeGetRequest) SetArticleCode(_articleCode string) error {
+    r._articleCode = _articleCode
+    r.Set("article_code", _articleCode)
     return nil
 }
 
 // ArticleCode Getter
 func (r TaobaoVasSubscribeGetRequest) GetArticleCode() string {
-    return r.articleCode
+    return r._articleCode
 }
 // Nick Setter
 // 淘宝会员名
-func (r *TaobaoVasSubscribeGetRequest) SetNick(nick string) error {
-    r.nick = nick
-    r.Set("nick", nick)
+func (r *TaobaoVasSubscribeGetRequest) SetNick(_nick string) error {
+    r._nick = _nick
+    r.Set("nick", _nick)
     return nil
 }
 
 // Nick Getter
 func (r TaobaoVasSubscribeGetRequest) GetNick() string {
-    return r.nick
+    return r._nick
 }

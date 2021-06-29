@@ -15,9 +15,9 @@ taobao.picture.replace
 type TaobaoPictureReplaceRequest struct {
     model.Params
     // 要替换的图片的id，必须大于0
-    pictureId   int64
+    _pictureId   int64
     // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式
-    imageData   []*model.File
+    _imageData   []*model.File
 }
 
 // 初始化TaobaoPictureReplaceRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoPictureReplaceRequest) GetApiParams() url.Values {
 }
 // PictureId Setter
 // 要替换的图片的id，必须大于0
-func (r *TaobaoPictureReplaceRequest) SetPictureId(pictureId int64) error {
-    r.pictureId = pictureId
-    r.Set("picture_id", pictureId)
+func (r *TaobaoPictureReplaceRequest) SetPictureId(_pictureId int64) error {
+    r._pictureId = _pictureId
+    r.Set("picture_id", _pictureId)
     return nil
 }
 
 // PictureId Getter
 func (r TaobaoPictureReplaceRequest) GetPictureId() int64 {
-    return r.pictureId
+    return r._pictureId
 }
 // ImageData Setter
 // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式
-func (r *TaobaoPictureReplaceRequest) SetImageData(imageData []*model.File) error {
-    r.imageData = imageData
-    r.Set("image_data", imageData)
+func (r *TaobaoPictureReplaceRequest) SetImageData(_imageData []*model.File) error {
+    r._imageData = _imageData
+    r.Set("image_data", _imageData)
     return nil
 }
 
 // ImageData Getter
 func (r TaobaoPictureReplaceRequest) GetImageData() []*model.File {
-    return r.imageData
+    return r._imageData
 }

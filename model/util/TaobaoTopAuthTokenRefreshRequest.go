@@ -15,7 +15,7 @@ taobao.top.auth.token.refresh
 type TaobaoTopAuthTokenRefreshRequest struct {
     model.Params
     // grantType==refresh_token 时需要
-    refreshToken   string
+    _refreshToken   string
 }
 
 // 初始化TaobaoTopAuthTokenRefreshRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoTopAuthTokenRefreshRequest) GetApiParams() url.Values {
 }
 // RefreshToken Setter
 // grantType==refresh_token 时需要
-func (r *TaobaoTopAuthTokenRefreshRequest) SetRefreshToken(refreshToken string) error {
-    r.refreshToken = refreshToken
-    r.Set("refresh_token", refreshToken)
+func (r *TaobaoTopAuthTokenRefreshRequest) SetRefreshToken(_refreshToken string) error {
+    r._refreshToken = _refreshToken
+    r.Set("refresh_token", _refreshToken)
     return nil
 }
 
 // RefreshToken Getter
 func (r TaobaoTopAuthTokenRefreshRequest) GetRefreshToken() string {
-    return r.refreshToken
+    return r._refreshToken
 }

@@ -15,7 +15,7 @@ tmall.channel.trade.order.create
 type TmallChannelTradeOrderCreateRequest struct {
     model.Params
     // 入参
-    param0   *TopChannelPurchaseOrderCreateParam
+    _param0   *TopChannelPurchaseOrderCreateParam
 }
 
 // 初始化TmallChannelTradeOrderCreateRequest对象
@@ -40,13 +40,13 @@ func (r TmallChannelTradeOrderCreateRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参
-func (r *TmallChannelTradeOrderCreateRequest) SetParam0(param0 *TopChannelPurchaseOrderCreateParam) error {
-    r.param0 = param0
-    r.Set("param0", param0)
+func (r *TmallChannelTradeOrderCreateRequest) SetParam0(_param0 *TopChannelPurchaseOrderCreateParam) error {
+    r._param0 = _param0
+    r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
 func (r TmallChannelTradeOrderCreateRequest) GetParam0() *TopChannelPurchaseOrderCreateParam {
-    return r.param0
+    return r._param0
 }

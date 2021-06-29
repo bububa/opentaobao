@@ -15,7 +15,7 @@ WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP
 type TaobaoQimenSnReportRequest struct {
     model.Params
     // 
-    request   *SnReportRequest
+    _request   *SnReportRequest
 }
 
 // 初始化TaobaoQimenSnReportRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenSnReportRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenSnReportRequest) SetRequest(request *SnReportRequest) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenSnReportRequest) SetRequest(_request *SnReportRequest) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenSnReportRequest) GetRequest() *SnReportRequest {
-    return r.request
+    return r._request
 }

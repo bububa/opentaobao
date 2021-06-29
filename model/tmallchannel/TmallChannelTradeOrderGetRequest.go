@@ -15,13 +15,13 @@ tmall.channel.trade.order.get
 type TmallChannelTradeOrderGetRequest struct {
     model.Params
     // 主采购单ID
-    mainPurchaseOrderNo   int64
+    _mainPurchaseOrderNo   int64
     // 是否包含子采购单
-    isIncludeSubOrder   bool
+    _isIncludeSubOrder   bool
     // 是否包含主采购单（针对特殊业务）
-    isIncludeMainOrder   bool
+    _isIncludeMainOrder   bool
     // 是否包含物流信息
-    isIncludeLogistics   bool
+    _isIncludeLogistics   bool
 }
 
 // 初始化TmallChannelTradeOrderGetRequest对象
@@ -46,49 +46,49 @@ func (r TmallChannelTradeOrderGetRequest) GetApiParams() url.Values {
 }
 // MainPurchaseOrderNo Setter
 // 主采购单ID
-func (r *TmallChannelTradeOrderGetRequest) SetMainPurchaseOrderNo(mainPurchaseOrderNo int64) error {
-    r.mainPurchaseOrderNo = mainPurchaseOrderNo
-    r.Set("main_purchase_order_no", mainPurchaseOrderNo)
+func (r *TmallChannelTradeOrderGetRequest) SetMainPurchaseOrderNo(_mainPurchaseOrderNo int64) error {
+    r._mainPurchaseOrderNo = _mainPurchaseOrderNo
+    r.Set("main_purchase_order_no", _mainPurchaseOrderNo)
     return nil
 }
 
 // MainPurchaseOrderNo Getter
 func (r TmallChannelTradeOrderGetRequest) GetMainPurchaseOrderNo() int64 {
-    return r.mainPurchaseOrderNo
+    return r._mainPurchaseOrderNo
 }
 // IsIncludeSubOrder Setter
 // 是否包含子采购单
-func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeSubOrder(isIncludeSubOrder bool) error {
-    r.isIncludeSubOrder = isIncludeSubOrder
-    r.Set("is_include_sub_order", isIncludeSubOrder)
+func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeSubOrder(_isIncludeSubOrder bool) error {
+    r._isIncludeSubOrder = _isIncludeSubOrder
+    r.Set("is_include_sub_order", _isIncludeSubOrder)
     return nil
 }
 
 // IsIncludeSubOrder Getter
 func (r TmallChannelTradeOrderGetRequest) GetIsIncludeSubOrder() bool {
-    return r.isIncludeSubOrder
+    return r._isIncludeSubOrder
 }
 // IsIncludeMainOrder Setter
 // 是否包含主采购单（针对特殊业务）
-func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeMainOrder(isIncludeMainOrder bool) error {
-    r.isIncludeMainOrder = isIncludeMainOrder
-    r.Set("is_include_main_order", isIncludeMainOrder)
+func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeMainOrder(_isIncludeMainOrder bool) error {
+    r._isIncludeMainOrder = _isIncludeMainOrder
+    r.Set("is_include_main_order", _isIncludeMainOrder)
     return nil
 }
 
 // IsIncludeMainOrder Getter
 func (r TmallChannelTradeOrderGetRequest) GetIsIncludeMainOrder() bool {
-    return r.isIncludeMainOrder
+    return r._isIncludeMainOrder
 }
 // IsIncludeLogistics Setter
 // 是否包含物流信息
-func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeLogistics(isIncludeLogistics bool) error {
-    r.isIncludeLogistics = isIncludeLogistics
-    r.Set("is_include_logistics", isIncludeLogistics)
+func (r *TmallChannelTradeOrderGetRequest) SetIsIncludeLogistics(_isIncludeLogistics bool) error {
+    r._isIncludeLogistics = _isIncludeLogistics
+    r.Set("is_include_logistics", _isIncludeLogistics)
     return nil
 }
 
 // IsIncludeLogistics Getter
 func (r TmallChannelTradeOrderGetRequest) GetIsIncludeLogistics() bool {
-    return r.isIncludeLogistics
+    return r._isIncludeLogistics
 }

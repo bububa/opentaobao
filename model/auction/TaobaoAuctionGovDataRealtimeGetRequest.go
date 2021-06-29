@@ -15,9 +15,9 @@ taobao.auction.gov.data.realtime.get
 type TaobaoAuctionGovDataRealtimeGetRequest struct {
     model.Params
     // 法院名称
-    courtName   string
+    _courtName   string
     // 统计数据是否包含下级法院
-    isIncludeSub   bool
+    _isIncludeSub   bool
 }
 
 // 初始化TaobaoAuctionGovDataRealtimeGetRequest对象
@@ -42,25 +42,25 @@ func (r TaobaoAuctionGovDataRealtimeGetRequest) GetApiParams() url.Values {
 }
 // CourtName Setter
 // 法院名称
-func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetCourtName(courtName string) error {
-    r.courtName = courtName
-    r.Set("court_name", courtName)
+func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetCourtName(_courtName string) error {
+    r._courtName = _courtName
+    r.Set("court_name", _courtName)
     return nil
 }
 
 // CourtName Getter
 func (r TaobaoAuctionGovDataRealtimeGetRequest) GetCourtName() string {
-    return r.courtName
+    return r._courtName
 }
 // IsIncludeSub Setter
 // 统计数据是否包含下级法院
-func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetIsIncludeSub(isIncludeSub bool) error {
-    r.isIncludeSub = isIncludeSub
-    r.Set("is_include_sub", isIncludeSub)
+func (r *TaobaoAuctionGovDataRealtimeGetRequest) SetIsIncludeSub(_isIncludeSub bool) error {
+    r._isIncludeSub = _isIncludeSub
+    r.Set("is_include_sub", _isIncludeSub)
     return nil
 }
 
 // IsIncludeSub Getter
 func (r TaobaoAuctionGovDataRealtimeGetRequest) GetIsIncludeSub() bool {
-    return r.isIncludeSub
+    return r._isIncludeSub
 }

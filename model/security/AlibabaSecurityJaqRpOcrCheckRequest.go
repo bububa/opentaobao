@@ -15,9 +15,9 @@ alibaba.security.jaq.rp.ocr.check
 type AlibabaSecurityJaqRpOcrCheckRequest struct {
     model.Params
     // token
-    verifyToken   string
+    _verifyToken   string
     // 要识别的信息
-    imageUrls   string
+    _imageUrls   string
 }
 
 // 初始化AlibabaSecurityJaqRpOcrCheckRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaSecurityJaqRpOcrCheckRequest) GetApiParams() url.Values {
 }
 // VerifyToken Setter
 // token
-func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetVerifyToken(verifyToken string) error {
-    r.verifyToken = verifyToken
-    r.Set("verify_token", verifyToken)
+func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetVerifyToken(_verifyToken string) error {
+    r._verifyToken = _verifyToken
+    r.Set("verify_token", _verifyToken)
     return nil
 }
 
 // VerifyToken Getter
 func (r AlibabaSecurityJaqRpOcrCheckRequest) GetVerifyToken() string {
-    return r.verifyToken
+    return r._verifyToken
 }
 // ImageUrls Setter
 // 要识别的信息
-func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetImageUrls(imageUrls string) error {
-    r.imageUrls = imageUrls
-    r.Set("image_urls", imageUrls)
+func (r *AlibabaSecurityJaqRpOcrCheckRequest) SetImageUrls(_imageUrls string) error {
+    r._imageUrls = _imageUrls
+    r.Set("image_urls", _imageUrls)
     return nil
 }
 
 // ImageUrls Getter
 func (r AlibabaSecurityJaqRpOcrCheckRequest) GetImageUrls() string {
-    return r.imageUrls
+    return r._imageUrls
 }

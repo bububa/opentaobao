@@ -15,7 +15,7 @@ alibaba.wdk.sku.category.delete
 type AlibabaWdkSkuCategoryDeleteRequest struct {
     model.Params
     // 类目删除请求模型
-    param   *CategoryDo
+    _param   *CategoryDo
 }
 
 // 初始化AlibabaWdkSkuCategoryDeleteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCategoryDeleteRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 类目删除请求模型
-func (r *AlibabaWdkSkuCategoryDeleteRequest) SetParam(param *CategoryDo) error {
-    r.param = param
-    r.Set("param", param)
+func (r *AlibabaWdkSkuCategoryDeleteRequest) SetParam(_param *CategoryDo) error {
+    r._param = _param
+    r.Set("param", _param)
     return nil
 }
 
 // Param Getter
 func (r AlibabaWdkSkuCategoryDeleteRequest) GetParam() *CategoryDo {
-    return r.param
+    return r._param
 }

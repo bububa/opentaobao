@@ -15,7 +15,7 @@ alibaba.alsc.crm.point.querypointflow
 type AlibabaAlscCrmPointQuerypointflowRequest struct {
     model.Params
     // 入参
-    paramPageQueryPointFlowOpenReq   *PageQueryPointFlowOpenReq
+    _paramPageQueryPointFlowOpenReq   *PageQueryPointFlowOpenReq
 }
 
 // 初始化AlibabaAlscCrmPointQuerypointflowRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlscCrmPointQuerypointflowRequest) GetApiParams() url.Values {
 }
 // ParamPageQueryPointFlowOpenReq Setter
 // 入参
-func (r *AlibabaAlscCrmPointQuerypointflowRequest) SetParamPageQueryPointFlowOpenReq(paramPageQueryPointFlowOpenReq *PageQueryPointFlowOpenReq) error {
-    r.paramPageQueryPointFlowOpenReq = paramPageQueryPointFlowOpenReq
-    r.Set("param_page_query_point_flow_open_req", paramPageQueryPointFlowOpenReq)
+func (r *AlibabaAlscCrmPointQuerypointflowRequest) SetParamPageQueryPointFlowOpenReq(_paramPageQueryPointFlowOpenReq *PageQueryPointFlowOpenReq) error {
+    r._paramPageQueryPointFlowOpenReq = _paramPageQueryPointFlowOpenReq
+    r.Set("param_page_query_point_flow_open_req", _paramPageQueryPointFlowOpenReq)
     return nil
 }
 
 // ParamPageQueryPointFlowOpenReq Getter
 func (r AlibabaAlscCrmPointQuerypointflowRequest) GetParamPageQueryPointFlowOpenReq() *PageQueryPointFlowOpenReq {
-    return r.paramPageQueryPointFlowOpenReq
+    return r._paramPageQueryPointFlowOpenReq
 }

@@ -15,7 +15,7 @@ alitrip.hotel.hstdf.shotel.exnotmatchroom
 type AlitripHotelHstdfShotelExnotmatchroomRequest struct {
     model.Params
     // 卖家酒店hid
-    hid   int64
+    _hid   int64
 }
 
 // 初始化AlitripHotelHstdfShotelExnotmatchroomRequest对象
@@ -40,13 +40,13 @@ func (r AlitripHotelHstdfShotelExnotmatchroomRequest) GetApiParams() url.Values 
 }
 // Hid Setter
 // 卖家酒店hid
-func (r *AlitripHotelHstdfShotelExnotmatchroomRequest) SetHid(hid int64) error {
-    r.hid = hid
-    r.Set("hid", hid)
+func (r *AlitripHotelHstdfShotelExnotmatchroomRequest) SetHid(_hid int64) error {
+    r._hid = _hid
+    r.Set("hid", _hid)
     return nil
 }
 
 // Hid Getter
 func (r AlitripHotelHstdfShotelExnotmatchroomRequest) GetHid() int64 {
-    return r.hid
+    return r._hid
 }

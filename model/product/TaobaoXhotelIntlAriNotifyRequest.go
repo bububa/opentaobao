@@ -15,7 +15,7 @@ taobao.xhotel.intl.ari.notify
 type TaobaoXhotelIntlAriNotifyRequest struct {
     model.Params
     // 缓存变更
-    cacheChangeList   []CacheChangeInfo
+    _cacheChangeList   []CacheChangeInfo
 }
 
 // 初始化TaobaoXhotelIntlAriNotifyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoXhotelIntlAriNotifyRequest) GetApiParams() url.Values {
 }
 // CacheChangeList Setter
 // 缓存变更
-func (r *TaobaoXhotelIntlAriNotifyRequest) SetCacheChangeList(cacheChangeList []CacheChangeInfo) error {
-    r.cacheChangeList = cacheChangeList
-    r.Set("cache_change_list", cacheChangeList)
+func (r *TaobaoXhotelIntlAriNotifyRequest) SetCacheChangeList(_cacheChangeList []CacheChangeInfo) error {
+    r._cacheChangeList = _cacheChangeList
+    r.Set("cache_change_list", _cacheChangeList)
     return nil
 }
 
 // CacheChangeList Getter
 func (r TaobaoXhotelIntlAriNotifyRequest) GetCacheChangeList() []CacheChangeInfo {
-    return r.cacheChangeList
+    return r._cacheChangeList
 }

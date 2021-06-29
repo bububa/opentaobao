@@ -15,11 +15,11 @@ alibaba.einvoice.unitorder.check
 type AlibabaEinvoiceUnitorderCheckRequest struct {
     model.Params
     // 订购单列表
-    orders   []SimpleUnitOrder
+    _orders   []SimpleUnitOrder
     // 开始时间,来自于查询消息
-    begin   string
+    _begin   string
     // 结束时间,来自于查询消息
-    end   string
+    _end   string
 }
 
 // 初始化AlibabaEinvoiceUnitorderCheckRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaEinvoiceUnitorderCheckRequest) GetApiParams() url.Values {
 }
 // Orders Setter
 // 订购单列表
-func (r *AlibabaEinvoiceUnitorderCheckRequest) SetOrders(orders []SimpleUnitOrder) error {
-    r.orders = orders
-    r.Set("orders", orders)
+func (r *AlibabaEinvoiceUnitorderCheckRequest) SetOrders(_orders []SimpleUnitOrder) error {
+    r._orders = _orders
+    r.Set("orders", _orders)
     return nil
 }
 
 // Orders Getter
 func (r AlibabaEinvoiceUnitorderCheckRequest) GetOrders() []SimpleUnitOrder {
-    return r.orders
+    return r._orders
 }
 // Begin Setter
 // 开始时间,来自于查询消息
-func (r *AlibabaEinvoiceUnitorderCheckRequest) SetBegin(begin string) error {
-    r.begin = begin
-    r.Set("begin", begin)
+func (r *AlibabaEinvoiceUnitorderCheckRequest) SetBegin(_begin string) error {
+    r._begin = _begin
+    r.Set("begin", _begin)
     return nil
 }
 
 // Begin Getter
 func (r AlibabaEinvoiceUnitorderCheckRequest) GetBegin() string {
-    return r.begin
+    return r._begin
 }
 // End Setter
 // 结束时间,来自于查询消息
-func (r *AlibabaEinvoiceUnitorderCheckRequest) SetEnd(end string) error {
-    r.end = end
-    r.Set("end", end)
+func (r *AlibabaEinvoiceUnitorderCheckRequest) SetEnd(_end string) error {
+    r._end = _end
+    r.Set("end", _end)
     return nil
 }
 
 // End Getter
 func (r AlibabaEinvoiceUnitorderCheckRequest) GetEnd() string {
-    return r.end
+    return r._end
 }

@@ -15,7 +15,7 @@ alibaba.alihealth.pw.applynode.updatename
 type AlibabaAlihealthPwApplynodeUpdatenameRequest struct {
     model.Params
     // 回调入参
-    body   *ModifyNameRo
+    _body   *ModifyNameRo
 }
 
 // 初始化AlibabaAlihealthPwApplynodeUpdatenameRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthPwApplynodeUpdatenameRequest) GetApiParams() url.Values 
 }
 // Body Setter
 // 回调入参
-func (r *AlibabaAlihealthPwApplynodeUpdatenameRequest) SetBody(body *ModifyNameRo) error {
-    r.body = body
-    r.Set("body", body)
+func (r *AlibabaAlihealthPwApplynodeUpdatenameRequest) SetBody(_body *ModifyNameRo) error {
+    r._body = _body
+    r.Set("body", _body)
     return nil
 }
 
 // Body Getter
 func (r AlibabaAlihealthPwApplynodeUpdatenameRequest) GetBody() *ModifyNameRo {
-    return r.body
+    return r._body
 }

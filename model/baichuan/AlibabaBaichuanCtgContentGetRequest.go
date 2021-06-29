@@ -15,15 +15,15 @@ alibaba.baichuan.ctg.content.get
 type AlibabaBaichuanCtgContentGetRequest struct {
     model.Params
     // 投放位置
-    deliveryId   string
+    _deliveryId   string
     // 分页大小
-    pageSize   int64
+    _pageSize   int64
     // 当前页
-    currentPage   int64
+    _currentPage   int64
     // 资源位
-    resId   string
+    _resId   string
     // 日期
-    date   string
+    _date   string
 }
 
 // 初始化AlibabaBaichuanCtgContentGetRequest对象
@@ -48,61 +48,61 @@ func (r AlibabaBaichuanCtgContentGetRequest) GetApiParams() url.Values {
 }
 // DeliveryId Setter
 // 投放位置
-func (r *AlibabaBaichuanCtgContentGetRequest) SetDeliveryId(deliveryId string) error {
-    r.deliveryId = deliveryId
-    r.Set("delivery_id", deliveryId)
+func (r *AlibabaBaichuanCtgContentGetRequest) SetDeliveryId(_deliveryId string) error {
+    r._deliveryId = _deliveryId
+    r.Set("delivery_id", _deliveryId)
     return nil
 }
 
 // DeliveryId Getter
 func (r AlibabaBaichuanCtgContentGetRequest) GetDeliveryId() string {
-    return r.deliveryId
+    return r._deliveryId
 }
 // PageSize Setter
 // 分页大小
-func (r *AlibabaBaichuanCtgContentGetRequest) SetPageSize(pageSize int64) error {
-    r.pageSize = pageSize
-    r.Set("page_size", pageSize)
+func (r *AlibabaBaichuanCtgContentGetRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
     return nil
 }
 
 // PageSize Getter
 func (r AlibabaBaichuanCtgContentGetRequest) GetPageSize() int64 {
-    return r.pageSize
+    return r._pageSize
 }
 // CurrentPage Setter
 // 当前页
-func (r *AlibabaBaichuanCtgContentGetRequest) SetCurrentPage(currentPage int64) error {
-    r.currentPage = currentPage
-    r.Set("current_page", currentPage)
+func (r *AlibabaBaichuanCtgContentGetRequest) SetCurrentPage(_currentPage int64) error {
+    r._currentPage = _currentPage
+    r.Set("current_page", _currentPage)
     return nil
 }
 
 // CurrentPage Getter
 func (r AlibabaBaichuanCtgContentGetRequest) GetCurrentPage() int64 {
-    return r.currentPage
+    return r._currentPage
 }
 // ResId Setter
 // 资源位
-func (r *AlibabaBaichuanCtgContentGetRequest) SetResId(resId string) error {
-    r.resId = resId
-    r.Set("res_id", resId)
+func (r *AlibabaBaichuanCtgContentGetRequest) SetResId(_resId string) error {
+    r._resId = _resId
+    r.Set("res_id", _resId)
     return nil
 }
 
 // ResId Getter
 func (r AlibabaBaichuanCtgContentGetRequest) GetResId() string {
-    return r.resId
+    return r._resId
 }
 // Date Setter
 // 日期
-func (r *AlibabaBaichuanCtgContentGetRequest) SetDate(date string) error {
-    r.date = date
-    r.Set("date", date)
+func (r *AlibabaBaichuanCtgContentGetRequest) SetDate(_date string) error {
+    r._date = _date
+    r.Set("date", _date)
     return nil
 }
 
 // Date Getter
 func (r AlibabaBaichuanCtgContentGetRequest) GetDate() string {
-    return r.date
+    return r._date
 }

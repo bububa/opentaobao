@@ -15,11 +15,11 @@ alibaba.xiami.api.artist.albums.get
 type AlibabaXiamiApiArtistAlbumsGetRequest struct {
     model.Params
     // 歌曲数量
-    limit   int64
+    _limit   int64
     // 页码
-    page   int64
+    _page   int64
     // 艺人id
-    id   int64
+    _id   int64
 }
 
 // 初始化AlibabaXiamiApiArtistAlbumsGetRequest对象
@@ -44,37 +44,37 @@ func (r AlibabaXiamiApiArtistAlbumsGetRequest) GetApiParams() url.Values {
 }
 // Limit Setter
 // 歌曲数量
-func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetLimit(limit int64) error {
-    r.limit = limit
-    r.Set("limit", limit)
+func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetLimit(_limit int64) error {
+    r._limit = _limit
+    r.Set("limit", _limit)
     return nil
 }
 
 // Limit Getter
 func (r AlibabaXiamiApiArtistAlbumsGetRequest) GetLimit() int64 {
-    return r.limit
+    return r._limit
 }
 // Page Setter
 // 页码
-func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetPage(page int64) error {
-    r.page = page
-    r.Set("page", page)
+func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetPage(_page int64) error {
+    r._page = _page
+    r.Set("page", _page)
     return nil
 }
 
 // Page Getter
 func (r AlibabaXiamiApiArtistAlbumsGetRequest) GetPage() int64 {
-    return r.page
+    return r._page
 }
 // Id Setter
 // 艺人id
-func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetId(id int64) error {
-    r.id = id
-    r.Set("id", id)
+func (r *AlibabaXiamiApiArtistAlbumsGetRequest) SetId(_id int64) error {
+    r._id = _id
+    r.Set("id", _id)
     return nil
 }
 
 // Id Getter
 func (r AlibabaXiamiApiArtistAlbumsGetRequest) GetId() int64 {
-    return r.id
+    return r._id
 }

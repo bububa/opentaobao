@@ -15,7 +15,7 @@ taobao.qimen.channelinventory.query
 type TaobaoQimenChannelinventoryQueryRequest struct {
     model.Params
     // 
-    request   *RequestDO
+    _request   *RequestDO
 }
 
 // 初始化TaobaoQimenChannelinventoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoQimenChannelinventoryQueryRequest) GetApiParams() url.Values {
 }
 // Request Setter
 // 
-func (r *TaobaoQimenChannelinventoryQueryRequest) SetRequest(request *RequestDO) error {
-    r.request = request
-    r.Set("request", request)
+func (r *TaobaoQimenChannelinventoryQueryRequest) SetRequest(_request *RequestDO) error {
+    r._request = _request
+    r.Set("request", _request)
     return nil
 }
 
 // Request Getter
 func (r TaobaoQimenChannelinventoryQueryRequest) GetRequest() *RequestDO {
-    return r.request
+    return r._request
 }

@@ -16,7 +16,7 @@ alibaba.einvoice.prod.apply.get
 type AlibabaEinvoiceProdApplyGetRequest struct {
     model.Params
     // 查询申请请求
-    invoiceApplyQueryDto   *InvoiceApplyDtlQueryDto
+    _invoiceApplyQueryDto   *InvoiceApplyDtlQueryDto
 }
 
 // 初始化AlibabaEinvoiceProdApplyGetRequest对象
@@ -41,13 +41,13 @@ func (r AlibabaEinvoiceProdApplyGetRequest) GetApiParams() url.Values {
 }
 // InvoiceApplyQueryDto Setter
 // 查询申请请求
-func (r *AlibabaEinvoiceProdApplyGetRequest) SetInvoiceApplyQueryDto(invoiceApplyQueryDto *InvoiceApplyDtlQueryDto) error {
-    r.invoiceApplyQueryDto = invoiceApplyQueryDto
-    r.Set("invoice_apply_query_dto", invoiceApplyQueryDto)
+func (r *AlibabaEinvoiceProdApplyGetRequest) SetInvoiceApplyQueryDto(_invoiceApplyQueryDto *InvoiceApplyDtlQueryDto) error {
+    r._invoiceApplyQueryDto = _invoiceApplyQueryDto
+    r.Set("invoice_apply_query_dto", _invoiceApplyQueryDto)
     return nil
 }
 
 // InvoiceApplyQueryDto Getter
 func (r AlibabaEinvoiceProdApplyGetRequest) GetInvoiceApplyQueryDto() *InvoiceApplyDtlQueryDto {
-    return r.invoiceApplyQueryDto
+    return r._invoiceApplyQueryDto
 }

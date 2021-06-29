@@ -15,13 +15,13 @@ taobao.vmarket.eticket.failsend
 type TaobaoVmarketEticketFailsendRequest struct {
     model.Params
     // 订单号
-    orderId   int64
+    _orderId   int64
     // 发码通知时的token
-    token   string
+    _token   string
     // 错误码
-    errorCode   int64
+    _errorCode   int64
     // 错误信息
-    errorMsg   string
+    _errorMsg   string
 }
 
 // 初始化TaobaoVmarketEticketFailsendRequest对象
@@ -46,49 +46,49 @@ func (r TaobaoVmarketEticketFailsendRequest) GetApiParams() url.Values {
 }
 // OrderId Setter
 // 订单号
-func (r *TaobaoVmarketEticketFailsendRequest) SetOrderId(orderId int64) error {
-    r.orderId = orderId
-    r.Set("order_id", orderId)
+func (r *TaobaoVmarketEticketFailsendRequest) SetOrderId(_orderId int64) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
     return nil
 }
 
 // OrderId Getter
 func (r TaobaoVmarketEticketFailsendRequest) GetOrderId() int64 {
-    return r.orderId
+    return r._orderId
 }
 // Token Setter
 // 发码通知时的token
-func (r *TaobaoVmarketEticketFailsendRequest) SetToken(token string) error {
-    r.token = token
-    r.Set("token", token)
+func (r *TaobaoVmarketEticketFailsendRequest) SetToken(_token string) error {
+    r._token = _token
+    r.Set("token", _token)
     return nil
 }
 
 // Token Getter
 func (r TaobaoVmarketEticketFailsendRequest) GetToken() string {
-    return r.token
+    return r._token
 }
 // ErrorCode Setter
 // 错误码
-func (r *TaobaoVmarketEticketFailsendRequest) SetErrorCode(errorCode int64) error {
-    r.errorCode = errorCode
-    r.Set("error_code", errorCode)
+func (r *TaobaoVmarketEticketFailsendRequest) SetErrorCode(_errorCode int64) error {
+    r._errorCode = _errorCode
+    r.Set("error_code", _errorCode)
     return nil
 }
 
 // ErrorCode Getter
 func (r TaobaoVmarketEticketFailsendRequest) GetErrorCode() int64 {
-    return r.errorCode
+    return r._errorCode
 }
 // ErrorMsg Setter
 // 错误信息
-func (r *TaobaoVmarketEticketFailsendRequest) SetErrorMsg(errorMsg string) error {
-    r.errorMsg = errorMsg
-    r.Set("error_msg", errorMsg)
+func (r *TaobaoVmarketEticketFailsendRequest) SetErrorMsg(_errorMsg string) error {
+    r._errorMsg = _errorMsg
+    r.Set("error_msg", _errorMsg)
     return nil
 }
 
 // ErrorMsg Getter
 func (r TaobaoVmarketEticketFailsendRequest) GetErrorMsg() string {
-    return r.errorMsg
+    return r._errorMsg
 }
