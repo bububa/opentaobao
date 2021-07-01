@@ -1,0 +1,52 @@
+package tmallservice
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+查询工人列表 API请求
+tmall.servicecenter.worker.querypage
+
+服务商查询工人列表
+*/
+type TmallServicecenterWorkerQuerypageAPIRequest struct {
+    model.Params
+    // 页码
+    _pageIndex   int64
+}
+
+// 初始化TmallServicecenterWorkerQuerypageAPIRequest对象
+func NewTmallServicecenterWorkerQuerypageRequest() *TmallServicecenterWorkerQuerypageAPIRequest{
+    return &TmallServicecenterWorkerQuerypageAPIRequest{
+        Params: model.NewParams(),
+    }
+}
+
+// IRequest interface 方法, 获取Api method
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetApiMethodName() string {
+    return "tmall.servicecenter.worker.querypage"
+}
+
+// IRequest interface 方法, 获取API参数
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+// PageIndex Setter
+// 页码
+func (r *TmallServicecenterWorkerQuerypageAPIRequest) SetPageIndex(_pageIndex int64) error {
+    r._pageIndex = _pageIndex
+    r.Set("page_index", _pageIndex)
+    return nil
+}
+
+// PageIndex Getter
+func (r TmallServicecenterWorkerQuerypageAPIRequest) GetPageIndex() int64 {
+    return r._pageIndex
+}

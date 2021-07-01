@@ -1,0 +1,66 @@
+package promotion
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+查询无条件单品优惠活动列表 API请求
+taobao.promotionmisc.item.activity.list.get
+
+查询无条件单品优惠活动列表
+*/
+type TaobaoPromotionmiscItemActivityListGetAPIRequest struct {
+    model.Params
+    // 页码。
+    _pageNo   int64
+    // 每页记录数，最大支持50 。
+    _pageSize   int64
+}
+
+// 初始化TaobaoPromotionmiscItemActivityListGetAPIRequest对象
+func NewTaobaoPromotionmiscItemActivityListGetRequest() *TaobaoPromotionmiscItemActivityListGetAPIRequest{
+    return &TaobaoPromotionmiscItemActivityListGetAPIRequest{
+        Params: model.NewParams(),
+    }
+}
+
+// IRequest interface 方法, 获取Api method
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetApiMethodName() string {
+    return "taobao.promotionmisc.item.activity.list.get"
+}
+
+// IRequest interface 方法, 获取API参数
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+// PageNo Setter
+// 页码。
+func (r *TaobaoPromotionmiscItemActivityListGetAPIRequest) SetPageNo(_pageNo int64) error {
+    r._pageNo = _pageNo
+    r.Set("page_no", _pageNo)
+    return nil
+}
+
+// PageNo Getter
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetPageNo() int64 {
+    return r._pageNo
+}
+// PageSize Setter
+// 每页记录数，最大支持50 。
+func (r *TaobaoPromotionmiscItemActivityListGetAPIRequest) SetPageSize(_pageSize int64) error {
+    r._pageSize = _pageSize
+    r.Set("page_size", _pageSize)
+    return nil
+}
+
+// PageSize Getter
+func (r TaobaoPromotionmiscItemActivityListGetAPIRequest) GetPageSize() int64 {
+    return r._pageSize
+}

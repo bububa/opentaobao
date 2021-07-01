@@ -1,0 +1,52 @@
+package qimen
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+发货单确认接口 API请求
+taobao.qimen.deliveryorder.batchconfirm
+
+taobao.qimen.deliveryorder.batchconfirm
+*/
+type TaobaoQimenDeliveryorderBatchconfirmAPIRequest struct {
+    model.Params
+    // 
+    _request   *DeliveryOrderBatchConfirmRequest
+}
+
+// 初始化TaobaoQimenDeliveryorderBatchconfirmAPIRequest对象
+func NewTaobaoQimenDeliveryorderBatchconfirmRequest() *TaobaoQimenDeliveryorderBatchconfirmAPIRequest{
+    return &TaobaoQimenDeliveryorderBatchconfirmAPIRequest{
+        Params: model.NewParams(),
+    }
+}
+
+// IRequest interface 方法, 获取Api method
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetApiMethodName() string {
+    return "taobao.qimen.deliveryorder.batchconfirm"
+}
+
+// IRequest interface 方法, 获取API参数
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+// Request Setter
+// 
+func (r *TaobaoQimenDeliveryorderBatchconfirmAPIRequest) SetRequest(_request *DeliveryOrderBatchConfirmRequest) error {
+    r._request = _request
+    r.Set("request", _request)
+    return nil
+}
+
+// Request Getter
+func (r TaobaoQimenDeliveryorderBatchconfirmAPIRequest) GetRequest() *DeliveryOrderBatchConfirmRequest {
+    return r._request
+}

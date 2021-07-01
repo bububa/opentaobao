@@ -1,0 +1,52 @@
+package happytrip
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+订单详情 API请求
+alibaba.happytrip.taxi.order.get
+
+获取订单状态及详情
+*/
+type AlibabaHappytripTaxiOrderGetAPIRequest struct {
+    model.Params
+    // 订单id
+    _orderId   string
+}
+
+// 初始化AlibabaHappytripTaxiOrderGetAPIRequest对象
+func NewAlibabaHappytripTaxiOrderGetRequest() *AlibabaHappytripTaxiOrderGetAPIRequest{
+    return &AlibabaHappytripTaxiOrderGetAPIRequest{
+        Params: model.NewParams(),
+    }
+}
+
+// IRequest interface 方法, 获取Api method
+func (r AlibabaHappytripTaxiOrderGetAPIRequest) GetApiMethodName() string {
+    return "alibaba.happytrip.taxi.order.get"
+}
+
+// IRequest interface 方法, 获取API参数
+func (r AlibabaHappytripTaxiOrderGetAPIRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+// OrderId Setter
+// 订单id
+func (r *AlibabaHappytripTaxiOrderGetAPIRequest) SetOrderId(_orderId string) error {
+    r._orderId = _orderId
+    r.Set("order_id", _orderId)
+    return nil
+}
+
+// OrderId Getter
+func (r AlibabaHappytripTaxiOrderGetAPIRequest) GetOrderId() string {
+    return r._orderId
+}

@@ -21,7 +21,7 @@ type {{ .Name }}APIRequest struct {
 }
 
 // 初始化{{ .Name }}APIRequest对象
-func New{{ .Name }}APIRequest() *{{ .Name }}APIRequest{
+func New{{ .Name }}Request() *{{ .Name }}APIRequest{
     return &{{ .Name }}APIRequest{
         Params: model.NewParams(),
     }

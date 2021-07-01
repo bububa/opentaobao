@@ -1,0 +1,52 @@
+package tttm
+
+import (
+    "net/url"
+
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+天天特卖生产计划单同步 API请求
+aliyun.industry.tttm.plan.sync
+
+ERP系统向天天特卖同步生产计划单的数据
+*/
+type AliyunIndustryTttmPlanSyncAPIRequest struct {
+    model.Params
+    // 计划单
+    _syncPlan   *SyncPlanDto
+}
+
+// 初始化AliyunIndustryTttmPlanSyncAPIRequest对象
+func NewAliyunIndustryTttmPlanSyncRequest() *AliyunIndustryTttmPlanSyncAPIRequest{
+    return &AliyunIndustryTttmPlanSyncAPIRequest{
+        Params: model.NewParams(),
+    }
+}
+
+// IRequest interface 方法, 获取Api method
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetApiMethodName() string {
+    return "aliyun.industry.tttm.plan.sync"
+}
+
+// IRequest interface 方法, 获取API参数
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetApiParams() url.Values {
+    params := url.Values{}
+    for k, v := range r.GetRawParams() {
+        params.Set(k, v.String())
+    }
+    return params
+}
+// SyncPlan Setter
+// 计划单
+func (r *AliyunIndustryTttmPlanSyncAPIRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
+    r._syncPlan = _syncPlan
+    r.Set("sync_plan", _syncPlan)
+    return nil
+}
+
+// SyncPlan Getter
+func (r AliyunIndustryTttmPlanSyncAPIRequest) GetSyncPlan() *SyncPlanDto {
+    return r._syncPlan
+}
