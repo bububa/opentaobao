@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2021-07-01
+
+### Added
+
+- doc.go in each api/model
+- Add patch for model name is case insensitive bug.
+- Add test files.
+
+### Changed
+
+- Changed IResponse interface, Error() conflict with APIResponse struct member.
+- Replace struct Name which has suffix 'DO' to 'Do' , 'DTO' to 'Dto', 'DTo' to 'Dto', 'RS' to 'Rs'.
+- Changed Response filename from *Response.go to *APIResponse.go.
+- Changed *Response in *APIResponse to *APIResponseModel.
+
+### Deprecated
+
+### Removed
+
+- Removed examples
+
+### Fixed 
+
+- Fixed api description may break the go code in comment.
+- Fixed some struct member may duplicate in metadata.
+- Fixed missing import model package for struct has *model.File.
+- Fixed ApiTpl request/response params 初始化长度错误.
+
 ## [1.1.4] - 2021-06-29
 
 ### Added
