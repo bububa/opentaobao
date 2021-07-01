@@ -270,7 +270,7 @@ func genReponseModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 	if err != nil {
 		return err
 	}
-	targetFile := filepath.Join(modelPath, fmt.Sprintf("%sResponse.go", tpl.Name))
+	targetFile := filepath.Join(modelPath, fmt.Sprintf("%sAPIResponse.go", tpl.Name))
 	fd, err := os.Create(targetFile)
 	if err != nil {
 		return err
