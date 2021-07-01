@@ -14,11 +14,11 @@ import (
 */
 type {{ .Name }}APIResponse struct {
     model.CommonResponse
-    {{ .Name }}Response
+    {{ .Name }}APIResponseModel
 }
 
 // {{ .ChineseName }} 成功返回结果
-type {{ .Name }}Response struct {
+type {{ .Name }}APIResponseModel struct {
     XMLName xml.Name `xml:"{{ .ResponseKey }}"`
     {{- if eq .HasRequestId false }}
     // 平台颁发的每次请求访问的唯一标识
