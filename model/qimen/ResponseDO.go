@@ -1,7 +1,7 @@
 package qimen
 
-// ResponseDO 
-type ResponseDO struct {
+// ResponseDo 
+type ResponseDo struct {
     // 响应结果:success|failure,success,string(10),必填,
     Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
     // 响应码,0,string(50),,

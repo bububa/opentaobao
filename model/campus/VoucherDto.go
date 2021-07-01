@@ -1,7 +1,7 @@
 package campus
 
-// VoucherDTO 
-type VoucherDTO struct {
+// VoucherDto 
+type VoucherDto struct {
     // 凭证类型
     UserVoucherTypeEnum   string `json:"user_voucher_type_enum,omitempty" xml:"user_voucher_type_enum,omitempty"`
     // 卡号

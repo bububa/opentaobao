@@ -1,7 +1,7 @@
 package wlbimports
 
-// ReciverAddressDO 
-type ReciverAddressDO struct {
+// ReciverAddressDo 
+type ReciverAddressDo struct {
     // 详细地址
     DetailAddress   string `json:"detail_address,omitempty" xml:"detail_address,omitempty"`
     // 街道

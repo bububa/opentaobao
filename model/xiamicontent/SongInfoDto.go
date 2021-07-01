@@ -1,21 +1,21 @@
 package xiamicontent
 
-// SongInfoDTO 
-type SongInfoDTO struct {
+// SongInfoDto 
+type SongInfoDto struct {
     // 演唱者列表
-    Singers   []ArtistDTO `json:"singers,omitempty" xml:"singers>artist_dto,omitempty"`
+    Singers   []ArtistDto `json:"singers,omitempty" xml:"singers>artist_dto,omitempty"`
     // 歌曲名
     SongName   string `json:"song_name,omitempty" xml:"song_name,omitempty"`
     // 作曲人列表
-    Composers   []ArtistDTO `json:"composers,omitempty" xml:"composers>artist_dto,omitempty"`
+    Composers   []ArtistDto `json:"composers,omitempty" xml:"composers>artist_dto,omitempty"`
     // 专辑艺人
-    Artists   []ArtistDTO `json:"artists,omitempty" xml:"artists>artist_dto,omitempty"`
+    Artists   []ArtistDto `json:"artists,omitempty" xml:"artists>artist_dto,omitempty"`
     // 专辑信息
-    Album   *AlbumDTO `json:"album,omitempty" xml:"album,omitempty"`
+    Album   *AlbumDto `json:"album,omitempty" xml:"album,omitempty"`
     // 作词人列表
-    Songwriters   []ArtistDTO `json:"songwriters,omitempty" xml:"songwriters>artist_dto,omitempty"`
+    Songwriters   []ArtistDto `json:"songwriters,omitempty" xml:"songwriters>artist_dto,omitempty"`
     // 制作人列表
-    Producers   []ArtistDTO `json:"producers,omitempty" xml:"producers>artist_dto,omitempty"`
+    Producers   []ArtistDto `json:"producers,omitempty" xml:"producers>artist_dto,omitempty"`
     // 标签列表
     Tags   []TagLink `json:"tags,omitempty" xml:"tags>tag_link,omitempty"`
     // 歌曲时长（单位毫秒），没有对应的音频文件时为0
@@ -23,9 +23,9 @@ type SongInfoDTO struct {
     // 版权状态
     CopyrightStatus   int64 `json:"copyright_status,omitempty" xml:"copyright_status,omitempty"`
     // 编曲人列表
-    Arrangements   []ArtistDTO `json:"arrangements,omitempty" xml:"arrangements>artist_dto,omitempty"`
+    Arrangements   []ArtistDto `json:"arrangements,omitempty" xml:"arrangements>artist_dto,omitempty"`
     // 歌词列表
-    Lyrics   []LyricDTO `json:"lyrics,omitempty" xml:"lyrics>lyric_dto,omitempty"`
+    Lyrics   []LyricDto `json:"lyrics,omitempty" xml:"lyrics>lyric_dto,omitempty"`
     // 歌曲副标题
     SongSubName   string `json:"song_sub_name,omitempty" xml:"song_sub_name,omitempty"`
     // 歌曲id

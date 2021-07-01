@@ -1,7 +1,7 @@
 package idleisv
 
-// IsvAdjustOrderPriceDTO 
-type IsvAdjustOrderPriceDTO struct {
+// IsvAdjustOrderPriceDto 
+type IsvAdjustOrderPriceDto struct {
     // 最新价格，单位分；必选，金额>0
     NewPriceFee   int64 `json:"new_price_fee,omitempty" xml:"new_price_fee,omitempty"`
     // 最新邮费，单位分；必选，金额>=0

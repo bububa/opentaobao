@@ -27,7 +27,7 @@ type AlibabaEleEnterpriseCouponGetResponse struct {
     // 响应信息
     EnterpriseMsg   string `json:"enterprise_msg,omitempty" xml:"enterprise_msg,omitempty"`
     // 返回值信息
-    EnterpriseDatas   []MyCouponsResDTO `json:"enterprise_datas,omitempty" xml:"enterprise_datas>my_coupons_res_dto,omitempty"`
+    EnterpriseDatas   []MyCouponsResDto `json:"enterprise_datas,omitempty" xml:"enterprise_datas>my_coupons_res_dto,omitempty"`
     // 请求id
     EnterpriseRequestid   string `json:"enterprise_requestid,omitempty" xml:"enterprise_requestid,omitempty"`
 }

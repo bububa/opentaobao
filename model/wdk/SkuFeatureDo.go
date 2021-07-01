@@ -1,7 +1,7 @@
 package wdk
 
-// SkuFeatureDO 
-type SkuFeatureDO struct {
+// SkuFeatureDo 
+type SkuFeatureDo struct {
     // 商品编码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 门店编码，用来给特定门店商品标记

@@ -1,7 +1,7 @@
 package lstvending
 
-// VendingTradeFlowDTO 
-type VendingTradeFlowDTO struct {
+// VendingTradeFlowDto 
+type VendingTradeFlowDto struct {
     // 修改时间
     GmtModified   int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 交易类型：1购买，2退款
@@ -19,7 +19,7 @@ type VendingTradeFlowDTO struct {
     // 设备编码
     EquipmentCode   string `json:"equipment_code,omitempty" xml:"equipment_code,omitempty"`
     // 商品清单
-    GoodsDetailDTOList   []VendingTradeGoodsDetailDTO `json:"goods_detail_d_t_o_list,omitempty" xml:"goods_detail_d_t_o_list>vending_trade_goods_detail_dto,omitempty"`
+    GoodsDetailDTOList   []VendingTradeGoodsDetailDto `json:"goods_detail_d_t_o_list,omitempty" xml:"goods_detail_d_t_o_list>vending_trade_goods_detail_dto,omitempty"`
     // 交易总金额
     TotalAmount   int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
     // 设备ID
@@ -29,7 +29,7 @@ type VendingTradeFlowDTO struct {
     // 实际总金额
     ActualAmount   int64 `json:"actual_amount,omitempty" xml:"actual_amount,omitempty"`
     // 支付明细
-    PaymentDTOList   []VendingTradePaymentDTO `json:"payment_d_t_o_list,omitempty" xml:"payment_d_t_o_list>vending_trade_payment_dto,omitempty"`
+    PaymentDTOList   []VendingTradePaymentDto `json:"payment_d_t_o_list,omitempty" xml:"payment_d_t_o_list>vending_trade_payment_dto,omitempty"`
     // 扩展信息
     ExtFields   string `json:"ext_fields,omitempty" xml:"ext_fields,omitempty"`
 }

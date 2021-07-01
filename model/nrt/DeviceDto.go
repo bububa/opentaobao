@@ -1,7 +1,7 @@
 package nrt
 
-// DeviceDTO 
-type DeviceDTO struct {
+// DeviceDto 
+type DeviceDto struct {
     // 设备编码
     DeviceCode   string `json:"device_code,omitempty" xml:"device_code,omitempty"`
     // 设备外部编码

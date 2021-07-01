@@ -23,5 +23,5 @@ type TaobaoQimenSingleitemQueryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 
-    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+    Response   *ResponseDo `json:"response,omitempty" xml:"response,omitempty"`
 }

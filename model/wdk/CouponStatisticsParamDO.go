@@ -1,7 +1,7 @@
 package wdk
 
-// CouponStatisticsParamDO 
-type CouponStatisticsParamDO struct {
+// CouponStatisticsParamDo 
+type CouponStatisticsParamDo struct {
     // 页码，即当前第几页
     PageIndex   int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
     // 每页记录数，不能超过200

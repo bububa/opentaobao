@@ -1,7 +1,7 @@
 package wdk
 
-// SkuStockPublishParamDO 
-type SkuStockPublishParamDO struct {
+// SkuStockPublishParamDo 
+type SkuStockPublishParamDo struct {
     // 商家门店编码
     ShopCode   string `json:"shop_code,omitempty" xml:"shop_code,omitempty"`
     // 这笔单据发生的原因

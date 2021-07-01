@@ -1,7 +1,7 @@
 package feedflow
 
-// AdzoneBindDTO 
-type AdzoneBindDTO struct {
+// AdzoneBindDto 
+type AdzoneBindDto struct {
     // 资源位id
     AdzoneId   int64 `json:"adzone_id,omitempty" xml:"adzone_id,omitempty"`
     // 溢价

@@ -1,7 +1,7 @@
 package tmallservice
 
-// ReservationDTO 
-type ReservationDTO struct {
+// ReservationDto 
+type ReservationDto struct {
     // 内部订单号
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 天猫订单号列表

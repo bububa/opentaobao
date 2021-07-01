@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleNewPubValueDO 
-type IdleNewPubValueDO struct {
+// IdleNewPubValueDo 
+type IdleNewPubValueDo struct {
     // 属性id
     PropertyId   string `json:"property_id,omitempty" xml:"property_id,omitempty"`
     // 属性名称

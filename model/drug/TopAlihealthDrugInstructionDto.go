@@ -1,7 +1,7 @@
 package drug
 
-// TopAlihealthDrugInstructionDTO 
-type TopAlihealthDrugInstructionDTO struct {
+// TopAlihealthDrugInstructionDto 
+type TopAlihealthDrugInstructionDto struct {
     // 功能主治
     Purpose   string `json:"purpose,omitempty" xml:"purpose,omitempty"`
     // 禁忌

@@ -1,7 +1,7 @@
 package mos
 
-// PosOrderSaleItemDTO 
-type PosOrderSaleItemDTO struct {
+// PosOrderSaleItemDto 
+type PosOrderSaleItemDto struct {
     // 折扣金额
     DiscountAmount   int64 `json:"discount_amount,omitempty" xml:"discount_amount,omitempty"`
     // 扩展信息

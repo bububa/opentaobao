@@ -1,7 +1,7 @@
 package axintrade
 
-// BaseResultDTO 
-type BaseResultDTO struct {
+// BaseResultDto 
+type BaseResultDto struct {
     // 是否处理审核结果成功
     Data   bool `json:"data,omitempty" xml:"data,omitempty"`
     // 错误code

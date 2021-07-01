@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeActiveInfoDTO 
-type CodeActiveInfoDTO struct {
+// CodeActiveInfoDto 
+type CodeActiveInfoDto struct {
     // 处理标志
     ProcessFlag   string `json:"process_flag,omitempty" xml:"process_flag,omitempty"`
     // 状态

@@ -5,7 +5,7 @@ type OpenCostCenterAddEntityRq struct {
     // 第三方成本中心id
     ThirdpartId   string `json:"thirdpart_id,omitempty" xml:"thirdpart_id,omitempty"`
     // 人员信息列表
-    EntityList   []OpenOrgEntityDO `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
+    EntityList   []OpenOrgEntityDo `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
     // 企业id
     CorpId   string `json:"corp_id,omitempty" xml:"corp_id,omitempty"`
     // 商旅开放平台传2

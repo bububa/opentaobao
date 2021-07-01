@@ -1,7 +1,7 @@
 package servicecenter
 
-// OfnPreRedPacketFundRecordDTO 
-type OfnPreRedPacketFundRecordDTO struct {
+// OfnPreRedPacketFundRecordDto 
+type OfnPreRedPacketFundRecordDto struct {
     // 资产编号
     FundId   int64 `json:"fund_id,omitempty" xml:"fund_id,omitempty"`
     // 变化金额

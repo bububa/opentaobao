@@ -23,5 +23,5 @@ type TaobaoAlihealthDrugStoreGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // model
-    Model   *StoreDetailDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *StoreDetailDto `json:"model,omitempty" xml:"model,omitempty"`
 }

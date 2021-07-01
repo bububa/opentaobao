@@ -1,7 +1,7 @@
 package singletreasure
 
-// ActivityInfoCreateDTO 
-type ActivityInfoCreateDTO struct {
+// ActivityInfoCreateDto 
+type ActivityInfoCreateDto struct {
     // 开始时间：需要早于当天零点
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 优惠类型    促销价：1；打折：2；减钱：4

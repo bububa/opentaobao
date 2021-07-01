@@ -1,7 +1,7 @@
 package mos
 
-// SupplierBasisInfoDTO 
-type SupplierBasisInfoDTO struct {
+// SupplierBasisInfoDto 
+type SupplierBasisInfoDto struct {
     // 类型名
     AppName   string `json:"app_name,omitempty" xml:"app_name,omitempty"`
     // 状态

@@ -1,7 +1,7 @@
 package tmallhk
 
-// ClearancePayOrderDO 
-type ClearancePayOrderDO struct {
+// ClearancePayOrderDo 
+type ClearancePayOrderDo struct {
     // 支付宝买家ID
     AlipayBuyerId   string `json:"alipay_buyer_id,omitempty" xml:"alipay_buyer_id,omitempty"`
     // 支付单号

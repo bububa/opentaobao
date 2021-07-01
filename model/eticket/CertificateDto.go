@@ -1,7 +1,7 @@
 package eticket
 
-// CertificateDTO 
-type CertificateDTO struct {
+// CertificateDto 
+type CertificateDto struct {
     // attributes
     Attributes   *Attributes `json:"attributes,omitempty" xml:"attributes,omitempty"`
     // availableNum

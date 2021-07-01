@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-星河-酒店城市列表展示 API返回值 
-alitrip.merchant.galaxy.city.list
-
-雅高酒店城市列表展示，并且首字母列出酒店城市
-*/
-type AlitripMerchantGalaxyCityListAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyCityListResponse
-}
-
-// 星河-酒店城市列表展示 成功返回结果
+// AlitripMerchantGalaxyCityListResponse 
 type AlitripMerchantGalaxyCityListResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_city_list_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 是否成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误编码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 错误描述
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+    // 返回城市列表
+    Content   *AddressListSearchDto `json:"content,omitempty" xml:"content,omitempty"`
 }

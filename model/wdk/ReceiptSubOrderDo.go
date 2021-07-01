@@ -1,7 +1,7 @@
 package wdk
 
-// ReceiptSubOrderDO 
-type ReceiptSubOrderDO struct {
+// ReceiptSubOrderDo 
+type ReceiptSubOrderDo struct {
     // 成交金额
     DealAmt   int64 `json:"deal_amt,omitempty" xml:"deal_amt,omitempty"`
     // 成交单价

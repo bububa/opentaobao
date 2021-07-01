@@ -1,7 +1,7 @@
 package waybill
 
-// ServiceAttributeDTO 
-type ServiceAttributeDTO struct {
+// ServiceAttributeDto 
+type ServiceAttributeDto struct {
     // 属性的值，用户实际传入的值
     AttributeCode   string `json:"attribute_code,omitempty" xml:"attribute_code,omitempty"`
     // 属性的名称，可以用于前端的展示

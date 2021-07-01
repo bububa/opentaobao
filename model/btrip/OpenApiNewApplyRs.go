@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiNewApplyRS 
-type OpenApiNewApplyRS struct {
+// OpenApiNewApplyRs 
+type OpenApiNewApplyRs struct {
     // 用户传入审批单id
     ThirdpartApplyId   string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
     // 商旅审批单id

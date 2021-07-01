@@ -1,7 +1,7 @@
 package alihealth2
 
-// TopIsvStqtyLstDTO 
-type TopIsvStqtyLstDTO struct {
+// TopIsvStqtyLstDto 
+type TopIsvStqtyLstDto struct {
     // 门店编码
     DeptCode   string `json:"dept_code,omitempty" xml:"dept_code,omitempty"`
     // 商品编码

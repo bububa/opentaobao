@@ -3,7 +3,7 @@ package wdk
 // AlibabaWdkSkuQueryApiResult 
 type AlibabaWdkSkuQueryApiResult struct {
     // 单条查询结果
-    Model   *SkuDO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *SkuDo `json:"model,omitempty" xml:"model,omitempty"`
     // 请求参数不能为空
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 单条错误信息

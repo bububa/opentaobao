@@ -1,7 +1,7 @@
 package lstlogistics
 
-// LstThirdPartMainShipOrderCreateDTO 
-type LstThirdPartMainShipOrderCreateDTO struct {
+// LstThirdPartMainShipOrderCreateDto 
+type LstThirdPartMainShipOrderCreateDto struct {
     // 区
     ReceiverDistrict   string `json:"receiver_district,omitempty" xml:"receiver_district,omitempty"`
     // 收货人手机号
@@ -19,7 +19,7 @@ type LstThirdPartMainShipOrderCreateDTO struct {
     // 市
     ReceiverCity   string `json:"receiver_city,omitempty" xml:"receiver_city,omitempty"`
     // 货品明细
-    Details   []LstThirdPartDetailShipOrderCreateDTO `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_create_dto,omitempty"`
+    Details   []LstThirdPartDetailShipOrderCreateDto `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_create_dto,omitempty"`
     // 订单实付金额，单位为分
     PayFee   int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
     // 街道

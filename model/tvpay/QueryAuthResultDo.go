@@ -1,7 +1,7 @@
 package tvpay
 
-// QueryAuthResultDO 
-type QueryAuthResultDO struct {
+// QueryAuthResultDo 
+type QueryAuthResultDo struct {
     // 支付宝账号
     AlipayAccount   string `json:"alipay_account,omitempty" xml:"alipay_account,omitempty"`
     // 授权限额

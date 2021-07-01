@@ -31,5 +31,5 @@ type TaobaoUsergrowthOfflineConvertionSummaryOneGetResponse struct {
     // 1
     Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
     // 集合
-    List   []OfflineConvertionSummaryT1DTO `json:"list,omitempty" xml:"list>offline_convertion_summary_t1dto,omitempty"`
+    List   []OfflineConvertionSummaryT1Dto `json:"list,omitempty" xml:"list>offline_convertion_summary_t1dto,omitempty"`
 }

@@ -11,7 +11,7 @@ type VoucherEvaluateRequest struct {
     // 评价分数 1：失望；2：不满；3：一般；4：满意；5：惊喜
     EvaluateScore   int64 `json:"evaluate_score,omitempty" xml:"evaluate_score,omitempty"`
     // 券信息，券信息,最多20条券记录
-    VoucherInfos   []DeliveryVoucherInfoDTO `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
+    VoucherInfos   []DeliveryVoucherInfoDto `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
     // 可扩展字段
     Extend   string `json:"extend,omitempty" xml:"extend,omitempty"`
     // 操作时间

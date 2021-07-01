@@ -1,7 +1,7 @@
 package icbulogistics
 
-// DeliverWarehouseExpressDTO 
-type DeliverWarehouseExpressDTO struct {
+// DeliverWarehouseExpressDto 
+type DeliverWarehouseExpressDto struct {
     // 国内快递公司code
     LogisticsCompany   string `json:"logistics_company,omitempty" xml:"logistics_company,omitempty"`
     // 运单号

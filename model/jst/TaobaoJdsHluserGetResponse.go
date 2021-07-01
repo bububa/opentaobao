@@ -23,5 +23,5 @@ type TaobaoJdsHluserGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 回流用户信息
-    HlUser   *HlUserDO `json:"hl_user,omitempty" xml:"hl_user,omitempty"`
+    HlUser   *HlUserDo `json:"hl_user,omitempty" xml:"hl_user,omitempty"`
 }

@@ -1,27 +1,13 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-仓库同步接口 API返回值 
-taobao.qimen.warehouseinfo.synchronize
-
-仓库同步接口
-*/
-type TaobaoQimenWarehouseinfoSynchronizeAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenWarehouseinfoSynchronizeResponse
-}
-
-// 仓库同步接口 成功返回结果
+// TaobaoQimenWarehouseinfoSynchronizeResponse 
 type TaobaoQimenWarehouseinfoSynchronizeResponse struct {
-    XMLName xml.Name `xml:"qimen_warehouseinfo_synchronize_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 响应报文
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 仓库信息
+    WarehouseInfos   []WarehouseInfo `json:"warehouseInfos,omitempty" xml:"warehouseInfos>warehouse_info,omitempty"`
 }

@@ -1,7 +1,7 @@
 package campus
 
-// IdentifyAuthDTO 
-type IdentifyAuthDTO struct {
+// IdentifyAuthDto 
+type IdentifyAuthDto struct {
     // app_code
     AppCode   string `json:"app_code,omitempty" xml:"app_code,omitempty"`
     // device_id
@@ -13,5 +13,5 @@ type IdentifyAuthDTO struct {
     // 时间
     TimeStamp   int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
     // 凭证
-    VoucherDTOList   []VoucherDTO `json:"voucher_d_t_o_list,omitempty" xml:"voucher_d_t_o_list>voucher_dto,omitempty"`
+    VoucherDTOList   []VoucherDto `json:"voucher_d_t_o_list,omitempty" xml:"voucher_d_t_o_list>voucher_dto,omitempty"`
 }

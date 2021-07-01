@@ -1,7 +1,7 @@
 package icbuproduct
 
-// TopResultDO 
-type TopResultDO struct {
+// TopResultDo 
+type TopResultDo struct {
     // 调用是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 库存更新是否成功

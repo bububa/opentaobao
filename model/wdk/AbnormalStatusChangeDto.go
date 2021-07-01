@@ -1,7 +1,7 @@
 package wdk
 
-// AbnormalStatusChangeDTO 
-type AbnormalStatusChangeDTO struct {
+// AbnormalStatusChangeDto 
+type AbnormalStatusChangeDto struct {
     // 是否终态
     IsFinal   string `json:"is_final,omitempty" xml:"is_final,omitempty"`
     // 当前经纬度
@@ -23,7 +23,7 @@ type AbnormalStatusChangeDTO struct {
     // 状态变更类型
     StatusChangeType   string `json:"status_change_type,omitempty" xml:"status_change_type,omitempty"`
     // 参数
-    AbnormalContentDto   *AbnormalContentDTO `json:"abnormal_content_dto,omitempty" xml:"abnormal_content_dto,omitempty"`
+    AbnormalContentDto   *AbnormalContentDto `json:"abnormal_content_dto,omitempty" xml:"abnormal_content_dto,omitempty"`
     // 异常协同单ID
     AbnormalCoordinationId   string `json:"abnormal_coordination_id,omitempty" xml:"abnormal_coordination_id,omitempty"`
 }

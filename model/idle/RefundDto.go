@@ -1,7 +1,7 @@
 package idle
 
-// RefundDTO 
-type RefundDTO struct {
+// RefundDto 
+type RefundDto struct {
     // 申请退款金额
     ApplyRefundFee   int64 `json:"apply_refund_fee,omitempty" xml:"apply_refund_fee,omitempty"`
     // 订单Id

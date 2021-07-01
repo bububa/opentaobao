@@ -1,7 +1,7 @@
 package scbp
 
-// TopMatchedProductDTO 
-type TopMatchedProductDTO struct {
+// TopMatchedProductDto 
+type TopMatchedProductDto struct {
     // 是否设置优先推广
     IsPreferential   string `json:"is_preferential,omitempty" xml:"is_preferential,omitempty"`
     // 推广评分星级取值[0-5]

@@ -1,7 +1,7 @@
 package alicom
 
-// MtsInfoDO 
-type MtsInfoDO struct {
+// MtsInfoDo 
+type MtsInfoDo struct {
     // area_name
     AreaName   string `json:"area_name,omitempty" xml:"area_name,omitempty"`
     // cat_id

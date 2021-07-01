@@ -1,7 +1,7 @@
 package openmall
 
-// PostDO 
-type PostDO struct {
+// PostDo 
+type PostDo struct {
     // 运费金额，运费0为包邮
     Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     // 发货方式 快递，EMS等

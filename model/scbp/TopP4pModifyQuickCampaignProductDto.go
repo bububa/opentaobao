@@ -1,7 +1,7 @@
 package scbp
 
-// TopP4pModifyQuickCampaignProductDTO 
-type TopP4pModifyQuickCampaignProductDTO struct {
+// TopP4pModifyQuickCampaignProductDto 
+type TopP4pModifyQuickCampaignProductDto struct {
     // 操作类型，0=商品暂停，1=商品开启，2=新增商品，3=删除商品
     Action   int64 `json:"action,omitempty" xml:"action,omitempty"`
     // 计划ID

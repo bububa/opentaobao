@@ -1,7 +1,7 @@
 package einvoice
 
-// UserInvoiceItemDTO 
-type UserInvoiceItemDTO struct {
+// UserInvoiceItemDto 
+type UserInvoiceItemDto struct {
     // 商品名称
     ItemName   string `json:"item_name,omitempty" xml:"item_name,omitempty"`
     // 商品类型：1. 税控单元，2.开票日账单

@@ -1,7 +1,7 @@
 package ieagency
 
-// RefundOrderQueryDetailRS 
-type RefundOrderQueryDetailRS struct {
+// RefundOrderQueryDetailRs 
+type RefundOrderQueryDetailRs struct {
     // 错误码
     ApiErrorCode   int64 `json:"api_error_code,omitempty" xml:"api_error_code,omitempty"`
     // 错误描述

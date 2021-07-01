@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleItemBaseApiDO 
-type IdleItemBaseApiDO struct {
+// IdleItemBaseApiDo 
+type IdleItemBaseApiDo struct {
     // 商品Id（根据此数据进行相应商品下架）
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 是否需要sku信息(不需要的业务场景，不要设置为true，会增加查询耗时)

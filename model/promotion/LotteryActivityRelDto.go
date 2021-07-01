@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryActivityRelDTO 
-type LotteryActivityRelDTO struct {
+// LotteryActivityRelDto 
+type LotteryActivityRelDto struct {
     // 外部业务活动id
     RelationId   string `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
     // 抽奖活动id

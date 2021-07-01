@@ -1,7 +1,7 @@
 package ascpffo
 
-// ErpPurchaseOrderItemDTO 
-type ErpPurchaseOrderItemDTO struct {
+// ErpPurchaseOrderItemDto 
+type ErpPurchaseOrderItemDto struct {
     // 扩展字段
     ExtendFields   string `json:"extend_fields,omitempty" xml:"extend_fields,omitempty"`
     // 未税采购金额，单位元

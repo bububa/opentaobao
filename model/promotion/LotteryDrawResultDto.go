@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryDrawResultDTO 
-type LotteryDrawResultDTO struct {
+// LotteryDrawResultDto 
+type LotteryDrawResultDto struct {
     // resultType
     ResultType   int64 `json:"result_type,omitempty" xml:"result_type,omitempty"`
     // resultMsg
@@ -13,5 +13,5 @@ type LotteryDrawResultDTO struct {
     // template
     Template   string `json:"template,omitempty" xml:"template,omitempty"`
     // award
-    Award   *LotteryAwardDTO `json:"award,omitempty" xml:"award,omitempty"`
+    Award   *LotteryAwardDto `json:"award,omitempty" xml:"award,omitempty"`
 }

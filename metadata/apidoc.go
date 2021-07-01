@@ -141,10 +141,10 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	default:
 		paramType = strings.Title(paramType)
 		replaceMp := map[string]string{
-			"Dto": "DTO",
-			"DTo": "DTO",
-			"Do":  "DO",
-			"Rs":  "RS",
+			"DTO": "Dto",
+			"DTo": "Dto",
+			"DO":  "Do",
+			"RS":  "Rs",
 		}
 		for fromSuffix, toSuffix := range replaceMp {
 			if strings.HasSuffix(paramType, fromSuffix) {

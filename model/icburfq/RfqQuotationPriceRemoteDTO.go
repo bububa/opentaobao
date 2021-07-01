@@ -1,7 +1,7 @@
 package icburfq
 
-// RfqQuotationPriceRemoteDTO 
-type RfqQuotationPriceRemoteDTO struct {
+// RfqQuotationPriceRemoteDto 
+type RfqQuotationPriceRemoteDto struct {
     // 备注
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 预计时间

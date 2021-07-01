@@ -23,7 +23,7 @@ type TaobaoTaeAccountsGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回的科目信息
-    Accounts   []TopAccountDTO `json:"accounts,omitempty" xml:"accounts>top_account_dto,omitempty"`
+    Accounts   []TopAccountDto `json:"accounts,omitempty" xml:"accounts>top_account_dto,omitempty"`
     // 返回记录行数
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 }

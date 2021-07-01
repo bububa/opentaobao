@@ -1,7 +1,7 @@
 package tmallservice
 
-// SuspendServiceDO 
-type SuspendServiceDO struct {
+// SuspendServiceDo 
+type SuspendServiceDo struct {
     // api调用者
     Updater   string `json:"updater,omitempty" xml:"updater,omitempty"`
     // 扩展字段

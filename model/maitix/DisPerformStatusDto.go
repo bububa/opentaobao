@@ -1,7 +1,7 @@
 package maitix
 
-// DisPerformStatusDTO 
-type DisPerformStatusDTO struct {
+// DisPerformStatusDto 
+type DisPerformStatusDto struct {
     // 场次id
     PerformId   int64 `json:"perform_id,omitempty" xml:"perform_id,omitempty"`
     // 项目id

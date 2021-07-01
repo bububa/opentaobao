@@ -1,7 +1,7 @@
 package moscm
 
-// RmaItemDTO 
-type RmaItemDTO struct {
+// RmaItemDto 
+type RmaItemDto struct {
     // 商品类型,可选值：普通商品(NORMAL),赠品(GIFT)
     ProductType   string `json:"product_type,omitempty" xml:"product_type,omitempty"`
     // 退/换货原因详情

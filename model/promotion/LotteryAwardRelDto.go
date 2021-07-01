@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryAwardRelDTO 
-type LotteryAwardRelDTO struct {
+// LotteryAwardRelDto 
+type LotteryAwardRelDto struct {
     // 奖品id
     AwardId   int64 `json:"award_id,omitempty" xml:"award_id,omitempty"`
     // 中奖概率

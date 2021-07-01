@@ -1,7 +1,7 @@
 package aecreatives
 
-// ProductImgRegionDTO 
-type ProductImgRegionDTO struct {
+// ProductImgRegionDto 
+type ProductImgRegionDto struct {
     // 图片识别的坐标 pos_top_left_x
     PosTopLeftX   string `json:"pos_top_left_x,omitempty" xml:"pos_top_left_x,omitempty"`
     // 图片识别的坐标 pos_top_left_y

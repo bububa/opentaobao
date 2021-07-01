@@ -1,7 +1,7 @@
 package txcs
 
-// StatementBillDTO 
-type StatementBillDTO struct {
+// StatementBillDto 
+type StatementBillDto struct {
     // 结算主体编码
     SettlementCompanyCode   string `json:"settlement_company_code,omitempty" xml:"settlement_company_code,omitempty"`
     // 经营属性描述

@@ -29,5 +29,5 @@ type AlibabaLsyCrmCreateResponse struct {
     // 是否成功
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 返回的数据
-    Data   *NrtCreateRecordReturnDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *NrtCreateRecordReturnDto `json:"data,omitempty" xml:"data,omitempty"`
 }

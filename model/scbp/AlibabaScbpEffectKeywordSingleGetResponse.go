@@ -23,7 +23,7 @@ type AlibabaScbpEffectKeywordSingleGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 单个关键词报表
-    KeywordEffectList   []SingleAdKeywordEffectDTO `json:"keyword_effect_list,omitempty" xml:"keyword_effect_list>single_ad_keyword_effect_dto,omitempty"`
+    KeywordEffectList   []SingleAdKeywordEffectDto `json:"keyword_effect_list,omitempty" xml:"keyword_effect_list>single_ad_keyword_effect_dto,omitempty"`
     // 总个数
     TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
     // 总页数

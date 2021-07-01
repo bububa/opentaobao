@@ -1,7 +1,7 @@
 package alihealth2
 
-// TopWarOutDTO 
-type TopWarOutDTO struct {
+// TopWarOutDto 
+type TopWarOutDto struct {
     // 出库单号
     BillNo   string `json:"bill_no,omitempty" xml:"bill_no,omitempty"`
     // 单据日期
@@ -9,7 +9,7 @@ type TopWarOutDTO struct {
     // 孔雀翎O2O订单ID
     CepOrderId   int64 `json:"cep_order_id,omitempty" xml:"cep_order_id,omitempty"`
     // 商品
-    GoodsList   []TopGoodsDTO `json:"goods_list,omitempty" xml:"goods_list>top_goods_dto,omitempty"`
+    GoodsList   []TopGoodsDto `json:"goods_list,omitempty" xml:"goods_list>top_goods_dto,omitempty"`
     // 淘宝sellerId
     TbSellerId   int64 `json:"tb_seller_id,omitempty" xml:"tb_seller_id,omitempty"`
     // 魔方ID

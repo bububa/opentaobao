@@ -163,5 +163,5 @@ type TaobaoTbkDgMaterialOptionalMapData struct {
     // 是否是热门商品，0不是，1是
     HotFlag   string `json:"hot_flag,omitempty" xml:"hot_flag,omitempty"`
     // 前N件佣金信息-前N件佣金生效或预热时透出以下字段
-    TopnInfo   *TopNInfoDTO `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
+    TopnInfo   *TopNInfoDto `json:"topn_info,omitempty" xml:"topn_info,omitempty"`
 }

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// FacilityDTO 
-type FacilityDTO struct {
+// FacilityDto 
+type FacilityDto struct {
     // 设施图片
     Icon   string `json:"icon,omitempty" xml:"icon,omitempty"`
     // 设施名字

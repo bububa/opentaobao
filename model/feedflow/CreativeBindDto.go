@@ -1,7 +1,7 @@
 package feedflow
 
-// CreativeBindDTO 
-type CreativeBindDTO struct {
+// CreativeBindDto 
+type CreativeBindDto struct {
     // 创意图片地址
     ImgUrl   string `json:"img_url,omitempty" xml:"img_url,omitempty"`
     // 创意名称，同时会展现给客户

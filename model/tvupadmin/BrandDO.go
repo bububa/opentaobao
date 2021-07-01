@@ -1,7 +1,7 @@
 package tvupadmin
 
-// BrandDO 
-type BrandDO struct {
+// BrandDo 
+type BrandDo struct {
     // brandId
     BrandId   int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
     // brandName

@@ -1,7 +1,7 @@
 package omniorder
 
-// ItemLightPublishSalePropDTO 
-type ItemLightPublishSalePropDTO struct {
+// ItemLightPublishSalePropDto 
+type ItemLightPublishSalePropDto struct {
     // pid
     Pid   int64 `json:"pid,omitempty" xml:"pid,omitempty"`
     // value

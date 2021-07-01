@@ -1,7 +1,7 @@
 package alsc
 
-// StoreAdressDTO 
-type StoreAdressDTO struct {
+// StoreAdressDto 
+type StoreAdressDto struct {
     // 省份
     Province   string `json:"province,omitempty" xml:"province,omitempty"`
     // 城市

@@ -15,5 +15,5 @@ type TopWcsResult struct {
     // success
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // list
-    List   []WcsContainerAssignedToConveyorDTO `json:"list,omitempty" xml:"list>wcs_container_assigned_to_conveyor_dto,omitempty"`
+    List   []WcsContainerAssignedToConveyorDto `json:"list,omitempty" xml:"list>wcs_container_assigned_to_conveyor_dto,omitempty"`
 }

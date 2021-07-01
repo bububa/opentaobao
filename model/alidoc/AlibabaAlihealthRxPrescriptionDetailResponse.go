@@ -23,5 +23,5 @@ type AlibabaAlihealthRxPrescriptionDetailResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 数据集
-    DataList   []RxPrescriptionTopDTO `json:"data_list,omitempty" xml:"data_list>rx_prescription_top_dto,omitempty"`
+    DataList   []RxPrescriptionTopDto `json:"data_list,omitempty" xml:"data_list>rx_prescription_top_dto,omitempty"`
 }

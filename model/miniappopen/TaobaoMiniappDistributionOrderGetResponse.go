@@ -23,5 +23,5 @@ type TaobaoMiniappDistributionOrderGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 投放计划列表的详细信息
-    Model   []DistributionOrderOpenBizDTO `json:"model,omitempty" xml:"model>distribution_order_open_biz_dto,omitempty"`
+    Model   []DistributionOrderOpenBizDto `json:"model,omitempty" xml:"model>distribution_order_open_biz_dto,omitempty"`
 }

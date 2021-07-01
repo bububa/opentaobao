@@ -1,7 +1,7 @@
 package wdk
 
-// OutputItemInfoDTO 
-type OutputItemInfoDTO struct {
+// OutputItemInfoDto 
+type OutputItemInfoDto struct {
     // 数量
     Count   string `json:"count,omitempty" xml:"count,omitempty"`
     // 部门code，该商品所属的部门编码

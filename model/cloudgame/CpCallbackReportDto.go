@@ -1,7 +1,7 @@
 package cloudgame
 
-// CpCallbackReportDTO 
-type CpCallbackReportDTO struct {
+// CpCallbackReportDto 
+type CpCallbackReportDto struct {
     // 云游戏业务类型, 不同业务类型对应bizData格式不同
     BizType   string `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 启动游戏票据,可以用来换取gameSessionId

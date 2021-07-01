@@ -1,7 +1,7 @@
 package wdk
 
-// LimitDTO 
-type LimitDTO struct {
+// LimitDto 
+type LimitDto struct {
     // 赠品总限量/店
     TotalLimitCnt   int64 `json:"total_limit_cnt,omitempty" xml:"total_limit_cnt,omitempty"`
     // 赠品每日总限量/店

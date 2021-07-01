@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectItemTradeInfoDTO 
-type PerfectItemTradeInfoDTO struct {
+// PerfectItemTradeInfoDto 
+type PerfectItemTradeInfoDto struct {
     // 是否提供发票
     HasInvoice   bool `json:"has_invoice,omitempty" xml:"has_invoice,omitempty"`
     // 是否支持退换货承诺

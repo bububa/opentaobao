@@ -1,7 +1,7 @@
 package wdk
 
-// PdStockDetailDTO 
-type PdStockDetailDTO struct {
+// PdStockDetailDto 
+type PdStockDetailDto struct {
     // 备注
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 盘点时间，盘点结果提交的时间

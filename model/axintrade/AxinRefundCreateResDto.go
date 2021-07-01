@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinRefundCreateResDTO 
-type AxinRefundCreateResDTO struct {
+// AxinRefundCreateResDto 
+type AxinRefundCreateResDto struct {
     // 实退金额
     ActualFee   int64 `json:"actual_fee,omitempty" xml:"actual_fee,omitempty"`
     // 退款金额

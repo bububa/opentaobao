@@ -25,5 +25,5 @@ type TaobaoFenxiaoOrdersGetResponse struct {
     // 搜索到的采购单记录总数
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
     // 采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。
-    PurchaseOrders   []TopDpOrderDO `json:"purchase_orders,omitempty" xml:"purchase_orders>top_dp_order_do,omitempty"`
+    PurchaseOrders   []TopDpOrderDo `json:"purchase_orders,omitempty" xml:"purchase_orders>top_dp_order_do,omitempty"`
 }

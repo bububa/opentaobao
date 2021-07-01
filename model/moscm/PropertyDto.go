@@ -1,7 +1,7 @@
 package moscm
 
-// PropertyDTO 
-type PropertyDTO struct {
+// PropertyDto 
+type PropertyDto struct {
     // 属性别名
     PAlias   string `json:"p_alias,omitempty" xml:"p_alias,omitempty"`
     // 自定义属性名称

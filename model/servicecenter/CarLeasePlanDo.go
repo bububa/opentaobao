@@ -1,7 +1,7 @@
 package servicecenter
 
-// CarLeasePlanDO 
-type CarLeasePlanDO struct {
+// CarLeasePlanDo 
+type CarLeasePlanDo struct {
     // 发布商品时选的汽车品牌
     Brand   string `json:"brand,omitempty" xml:"brand,omitempty"`
     // 租赁公司名字

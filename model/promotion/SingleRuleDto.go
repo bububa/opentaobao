@@ -1,7 +1,7 @@
 package promotion
 
-// SingleRuleDTO 
-type SingleRuleDTO struct {
+// SingleRuleDto 
+type SingleRuleDto struct {
     // 规则CODE
     RuleCode   string `json:"rule_code,omitempty" xml:"rule_code,omitempty"`
     // 规则参数

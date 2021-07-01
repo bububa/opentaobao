@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinFundCreateDTO 
-type AxinFundCreateDTO struct {
+// AxinFundCreateDto 
+type AxinFundCreateDto struct {
     // 支付方支付宝账号id
     PayerAlipayId   string `json:"payer_alipay_id,omitempty" xml:"payer_alipay_id,omitempty"`
     // 支付方账号
@@ -37,7 +37,7 @@ type AxinFundCreateDTO struct {
     // 支付宝回调地址
     NotifyUrl   string `json:"notify_url,omitempty" xml:"notify_url,omitempty"`
     // 买家实名信息
-    ExtUserInfo   *ExtUserInfoDTO `json:"ext_user_info,omitempty" xml:"ext_user_info,omitempty"`
+    ExtUserInfo   *ExtUserInfoDto `json:"ext_user_info,omitempty" xml:"ext_user_info,omitempty"`
     // 商品标题、交易标题、订单关键字等
     Subject   string `json:"subject,omitempty" xml:"subject,omitempty"`
     // 交易渠道,1-借记,2-贷记

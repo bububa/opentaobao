@@ -1,7 +1,7 @@
 package drugtrace
 
-// HaoxinqingDataDTO 
-type HaoxinqingDataDTO struct {
+// HaoxinqingDataDto 
+type HaoxinqingDataDto struct {
     // 数量
     Number   int64 `json:"number,omitempty" xml:"number,omitempty"`
     // 业务类型， 1。咨询类  、2。购药类

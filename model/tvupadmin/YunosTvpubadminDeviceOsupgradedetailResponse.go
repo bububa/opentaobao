@@ -23,5 +23,5 @@ type YunosTvpubadminDeviceOsupgradedetailResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 具体的数据对象
-    Object   *OsVersionAuditDO `json:"object,omitempty" xml:"object,omitempty"`
+    Object   *OsVersionAuditDo `json:"object,omitempty" xml:"object,omitempty"`
 }

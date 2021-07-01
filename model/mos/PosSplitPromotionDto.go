@@ -1,7 +1,7 @@
 package mos
 
-// PosSplitPromotionDTO 
-type PosSplitPromotionDTO struct {
+// PosSplitPromotionDto 
+type PosSplitPromotionDto struct {
     // 券码
     CouponCode   string `json:"coupon_code,omitempty" xml:"coupon_code,omitempty"`
     // 商品行号，必须

@@ -1,7 +1,7 @@
 package servicecenter
 
-// TailPaymentDTO 
-type TailPaymentDTO struct {
+// TailPaymentDto 
+type TailPaymentDto struct {
     // 买家id，不需要传入
     BuyerId   int64 `json:"buyer_id,omitempty" xml:"buyer_id,omitempty"`
     // 月供，单位分，如果是购买车辆，分期付尾款，则必须

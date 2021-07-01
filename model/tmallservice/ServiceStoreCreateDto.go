@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceStoreCreateDTO 
-type ServiceStoreCreateDTO struct {
+// ServiceStoreCreateDto 
+type ServiceStoreCreateDto struct {
     // 网点id
     ServiceStoreId   int64 `json:"service_store_id,omitempty" xml:"service_store_id,omitempty"`
     // 秘钥--内嵌核销页面使用

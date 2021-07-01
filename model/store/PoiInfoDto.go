@@ -1,7 +1,7 @@
 package store
 
-// PoiInfoDTO 
-type PoiInfoDTO struct {
+// PoiInfoDto 
+type PoiInfoDto struct {
     // 地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 地址别名

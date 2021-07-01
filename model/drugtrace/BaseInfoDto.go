@@ -1,7 +1,7 @@
 package drugtrace
 
-// BaseInfoDTO 
-type BaseInfoDTO struct {
+// BaseInfoDto 
+type BaseInfoDto struct {
     // 药品信息
     PhysicInfo   string `json:"physic_info,omitempty" xml:"physic_info,omitempty"`
     // 企业id

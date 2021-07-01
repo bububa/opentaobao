@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// EbbasItemDTO 
-type EbbasItemDTO struct {
+// EbbasItemDto 
+type EbbasItemDto struct {
     // 商品id
     ItemId   string `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 楼盘上下架状态

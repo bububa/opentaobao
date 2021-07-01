@@ -1,7 +1,7 @@
 package moscm
 
-// ShipItemDTO 
-type ShipItemDTO struct {
+// ShipItemDto 
+type ShipItemDto struct {
     // 数量
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 商品sku

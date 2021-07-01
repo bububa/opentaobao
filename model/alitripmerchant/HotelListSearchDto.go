@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// HotelListSearchDTO 
-type HotelListSearchDTO struct {
+// HotelListSearchDto 
+type HotelListSearchDto struct {
     // 品牌名字
     BrandName   string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
     // 地址详情
@@ -37,7 +37,7 @@ type HotelListSearchDTO struct {
     // 酒店id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 设施icon
-    FacilityList   []FacilityDTO `json:"facility_list,omitempty" xml:"facility_list>facility_dto,omitempty"`
+    FacilityList   []FacilityDto `json:"facility_list,omitempty" xml:"facility_list>facility_dto,omitempty"`
     // 国家中文名
     CountryCn   string `json:"country_cn,omitempty" xml:"country_cn,omitempty"`
     // 最低价格房型名

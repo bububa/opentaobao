@@ -1,7 +1,7 @@
 package wdk
 
-// AbnormalContentDTO 
-type AbnormalContentDTO struct {
+// AbnormalContentDto 
+type AbnormalContentDto struct {
     // 操作描述
     OperateDesc   string `json:"operate_desc,omitempty" xml:"operate_desc,omitempty"`
     // 处理结果

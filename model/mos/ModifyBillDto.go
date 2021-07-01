@@ -1,7 +1,7 @@
 package mos
 
-// ModifyBillDTO 
-type ModifyBillDTO struct {
+// ModifyBillDto 
+type ModifyBillDto struct {
     // 收款方开户支行code
     BankBranchCode   string `json:"bank_branch_code,omitempty" xml:"bank_branch_code,omitempty"`
     // 供应商名称（可空）

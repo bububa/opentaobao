@@ -1,9 +1,9 @@
 package inventory
 
-// PlanTopDTO 
-type PlanTopDTO struct {
+// PlanTopDto 
+type PlanTopDto struct {
     // 计划详情
-    PlanInstanceList   []PlanInstanceTopDTO `json:"plan_instance_list,omitempty" xml:"plan_instance_list>plan_instance_top_dto,omitempty"`
+    PlanInstanceList   []PlanInstanceTopDto `json:"plan_instance_list,omitempty" xml:"plan_instance_list>plan_instance_top_dto,omitempty"`
     // 品id，前端宝贝id，或者后端货品id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 品的类型，1-前端宝贝，2-后端货品

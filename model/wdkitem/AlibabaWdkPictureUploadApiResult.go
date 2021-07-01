@@ -5,7 +5,7 @@ type AlibabaWdkPictureUploadApiResult struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // model
-    Model   *PictureDO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *PictureDo `json:"model,omitempty" xml:"model,omitempty"`
     // 错误code
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误原因

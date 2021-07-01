@@ -1,7 +1,7 @@
 package maitix
 
-// OpenCombinePriceDTO 
-type OpenCombinePriceDTO struct {
+// OpenCombinePriceDto 
+type OpenCombinePriceDto struct {
     // 子票品ID
     PriceId   int64 `json:"price_id,omitempty" xml:"price_id,omitempty"`
     // 子票品名称

@@ -3,7 +3,7 @@ package wdk
 // TaobaoWdkIotConveyorConveyorconfigGetHMResult 
 type TaobaoWdkIotConveyorConveyorconfigGetHMResult struct {
     // 配置信息列表
-    Model   *ConveyorBasicConfigDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *ConveyorBasicConfigDto `json:"model,omitempty" xml:"model,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

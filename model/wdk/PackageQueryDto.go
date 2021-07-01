@@ -1,7 +1,7 @@
 package wdk
 
-// PackageQueryDTO 
-type PackageQueryDTO struct {
+// PackageQueryDto 
+type PackageQueryDto struct {
     // 同城令牌号
     TokenCode   string `json:"token_code,omitempty" xml:"token_code,omitempty"`
     // 仓Code

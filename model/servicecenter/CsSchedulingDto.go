@@ -1,7 +1,7 @@
 package servicecenter
 
-// CsSchedulingDTO 
-type CsSchedulingDTO struct {
+// CsSchedulingDto 
+type CsSchedulingDto struct {
     // 排班起始时间
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 排班结束时间

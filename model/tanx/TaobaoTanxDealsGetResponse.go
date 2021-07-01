@@ -29,5 +29,5 @@ type TaobaoTanxDealsGetResponse struct {
     // 查询结果信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 查询结果
-    Deals   []DealInfoDTO `json:"deals,omitempty" xml:"deals>deal_info_dto,omitempty"`
+    Deals   []DealInfoDto `json:"deals,omitempty" xml:"deals>deal_info_dto,omitempty"`
 }

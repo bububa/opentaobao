@@ -1,7 +1,7 @@
 package scbp
 
-// AccountReportOperationDTO 
-type AccountReportOperationDTO struct {
+// AccountReportOperationDto 
+type AccountReportOperationDto struct {
     // 计划id集合
     CampaignIds   []int64 `json:"campaign_ids,omitempty" xml:"campaign_ids>int64,omitempty"`
     // 开始时间(yyyy-MM-dd)

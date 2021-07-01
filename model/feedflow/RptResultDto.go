@@ -1,7 +1,7 @@
 package feedflow
 
-// RptResultDTO 
-type RptResultDTO struct {
+// RptResultDto 
+type RptResultDto struct {
     // 消耗
     Charge   string `json:"charge,omitempty" xml:"charge,omitempty"`
     // 有效展现

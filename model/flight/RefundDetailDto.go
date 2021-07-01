@@ -1,7 +1,7 @@
 package flight
 
-// RefundDetailDTO 
-type RefundDetailDTO struct {
+// RefundDetailDto 
+type RefundDetailDto struct {
     // 申请单号
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 申请原因类型

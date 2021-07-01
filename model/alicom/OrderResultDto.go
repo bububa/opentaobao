@@ -1,7 +1,7 @@
 package alicom
 
-// OrderResultDTO 
-type OrderResultDTO struct {
+// OrderResultDto 
+type OrderResultDto struct {
     // 结果描述
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 天猫交易订单号

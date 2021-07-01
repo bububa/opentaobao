@@ -1,7 +1,7 @@
 package tmallcarenter
 
-// ChasisVehicleInfoOriginalDTO 
-type ChasisVehicleInfoOriginalDTO struct {
+// ChasisVehicleInfoOriginalDto 
+type ChasisVehicleInfoOriginalDto struct {
     // 换代
     Replacement   string `json:"replacement,omitempty" xml:"replacement,omitempty"`
     // 停产年份

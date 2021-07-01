@@ -1,27 +1,15 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-商品单仓批次库存查询接口 API返回值 
-taobao.qimen.inventorybatch.query
-
-ERP 通过该接口查询指定商品的单仓批次库存
-*/
-type TaobaoQimenInventorybatchQueryAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenInventorybatchQueryResponse
-}
-
-// 商品单仓批次库存查询接口 成功返回结果
+// TaobaoQimenInventorybatchQueryResponse 
 type TaobaoQimenInventorybatchQueryResponse struct {
-    XMLName xml.Name `xml:"qimen_inventorybatch_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 响应
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 总行数，必填
+    TotalCount   int64 `json:"totalCount,omitempty" xml:"totalCount,omitempty"`
+    // 明细列表
+    Items   *Items `json:"items,omitempty" xml:"items,omitempty"`
 }

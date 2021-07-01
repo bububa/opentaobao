@@ -1,7 +1,7 @@
 package simba
 
-// SiriusItemWordPackageDTO 
-type SiriusItemWordPackageDTO struct {
+// SiriusItemWordPackageDto 
+type SiriusItemWordPackageDto struct {
     // 修改时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 词包id

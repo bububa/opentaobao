@@ -1,7 +1,7 @@
 package nlife
 
-// RetailSkuTopDO 
-type RetailSkuTopDO struct {
+// RetailSkuTopDo 
+type RetailSkuTopDo struct {
     // 上次修改时间
     Modified   string `json:"modified,omitempty" xml:"modified,omitempty"`
     // created

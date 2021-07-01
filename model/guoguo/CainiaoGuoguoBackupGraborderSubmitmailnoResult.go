@@ -3,7 +3,7 @@ package guoguo
 // CainiaoGuoguoBackupGraborderSubmitmailnoResult 
 type CainiaoGuoguoBackupGraborderSubmitmailnoResult struct {
     // 数据对象
-    Data   *BackupOrderDO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *BackupOrderDo `json:"data,omitempty" xml:"data,omitempty"`
     // 1
     StatusCode   string `json:"status_code,omitempty" xml:"status_code,omitempty"`
     // 返回的状态描述

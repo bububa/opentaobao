@@ -1,7 +1,7 @@
 package idle
 
-// IdleItemApiDO 
-type IdleItemApiDO struct {
+// IdleItemApiDo 
+type IdleItemApiDo struct {
     // 商品ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 商品标题

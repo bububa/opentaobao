@@ -1,7 +1,7 @@
 package happytrip
 
-// ResourceHotelDTO 
-type ResourceHotelDTO struct {
+// ResourceHotelDto 
+type ResourceHotelDto struct {
     // 入住时间
     CheckIn   string `json:"check_in,omitempty" xml:"check_in,omitempty"`
     // 离开时间

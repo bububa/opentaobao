@@ -1,7 +1,7 @@
 package lsttrade
 
-// TopOrderChange2BrandownerDTO 
-type TopOrderChange2BrandownerDTO struct {
+// TopOrderChange2BrandownerDto 
+type TopOrderChange2BrandownerDto struct {
     // 退款单id
     RefundId   int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
     // 是否新建，包括订单新建和退款单新建

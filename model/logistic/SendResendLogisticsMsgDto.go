@@ -1,7 +1,7 @@
 package logistic
 
-// SendResendLogisticsMsgDTO 
-type SendResendLogisticsMsgDTO struct {
+// SendResendLogisticsMsgDto 
+type SendResendLogisticsMsgDto struct {
     // 运单号
     MailNo   string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
     // 该运单所包含的货品列表

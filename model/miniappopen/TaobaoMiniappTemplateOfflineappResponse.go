@@ -23,7 +23,7 @@ type TaobaoMiniappTemplateOfflineappResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 各端的下线结果
-    OfflineResults   []MiniappInstanceAppOfflineDTO `json:"offline_results,omitempty" xml:"offline_results>miniapp_instance_app_offline_dto,omitempty"`
+    OfflineResults   []MiniappInstanceAppOfflineDto `json:"offline_results,omitempty" xml:"offline_results>miniapp_instance_app_offline_dto,omitempty"`
     // 下线的appId
     AppId   string `json:"app_id,omitempty" xml:"app_id,omitempty"`
 }

@@ -9,7 +9,7 @@ type AlibabaSellerVendorOrderListResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 分页对象
-    PageDto   *PageDTO `json:"page_dto,omitempty" xml:"page_dto,omitempty"`
+    PageDto   *PageDto `json:"page_dto,omitempty" xml:"page_dto,omitempty"`
     // 返回对象集合
-    Dtos   []DTO `json:"dtos,omitempty" xml:"dtos>dto,omitempty"`
+    Dtos   []Dto `json:"dtos,omitempty" xml:"dtos>dto,omitempty"`
 }

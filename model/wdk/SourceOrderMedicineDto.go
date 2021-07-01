@@ -1,9 +1,9 @@
 package wdk
 
-// SourceOrderMedicineDTO 
-type SourceOrderMedicineDTO struct {
+// SourceOrderMedicineDto 
+type SourceOrderMedicineDto struct {
     // 药品明细list
-    MedicineItemDOS   []MedicineItemDO `json:"medicine_item_d_o_s,omitempty" xml:"medicine_item_d_o_s>medicine_item_do,omitempty"`
+    MedicineItemDOS   []MedicineItemDo `json:"medicine_item_d_o_s,omitempty" xml:"medicine_item_d_o_s>medicine_item_do,omitempty"`
     // 盒马履约单号
     SourceOrderCode   string `json:"source_order_code,omitempty" xml:"source_order_code,omitempty"`
     // 外部单号(比如饿了么)

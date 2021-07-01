@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillUpstreamDTO 
-type BillUpstreamDTO struct {
+// BillUpstreamDto 
+type BillUpstreamDto struct {
     // 发货企业名称
     FromUserName   string `json:"from_user_name,omitempty" xml:"from_user_name,omitempty"`
     // 单据时间

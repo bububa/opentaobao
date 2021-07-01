@@ -1,7 +1,7 @@
 package tvpay
 
-// PartnerPayResultDO 
-type PartnerPayResultDO struct {
+// PartnerPayResultDo 
+type PartnerPayResultDo struct {
     // 金额
     FundMoney   string `json:"fund_money,omitempty" xml:"fund_money,omitempty"`
     // 金额构成

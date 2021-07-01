@@ -23,5 +23,5 @@ type AlibabaNlifeStoreDeliversGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 查询结果数据
-    Data   *DeliverResponseDO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *DeliverResponseDo `json:"data,omitempty" xml:"data,omitempty"`
 }

@@ -1,7 +1,7 @@
 package ott
 
-// MetaChartDO 
-type MetaChartDO struct {
+// MetaChartDo 
+type MetaChartDo struct {
     // 排行标题
     Titles   []string `json:"titles,omitempty" xml:"titles>string,omitempty"`
     // 排行类型

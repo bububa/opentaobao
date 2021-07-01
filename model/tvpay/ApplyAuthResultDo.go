@@ -1,7 +1,7 @@
 package tvpay
 
-// ApplyAuthResultDO 
-type ApplyAuthResultDO struct {
+// ApplyAuthResultDo 
+type ApplyAuthResultDo struct {
     // 授权方式
     AuthMode   string `json:"auth_mode,omitempty" xml:"auth_mode,omitempty"`
     // 手机号

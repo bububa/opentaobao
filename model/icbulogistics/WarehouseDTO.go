@@ -1,7 +1,7 @@
 package icbulogistics
 
-// WarehouseDTO 
-type WarehouseDTO struct {
+// WarehouseDto 
+type WarehouseDto struct {
     // 仓库地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 仓库名称

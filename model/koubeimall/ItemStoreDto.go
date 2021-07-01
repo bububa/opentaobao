@@ -1,7 +1,7 @@
 package koubeimall
 
-// ItemStoreDTO 
-type ItemStoreDTO struct {
+// ItemStoreDto 
+type ItemStoreDto struct {
     // 门店LOGO
     StoreLogo   string `json:"store_logo,omitempty" xml:"store_logo,omitempty"`
     // 门店名称

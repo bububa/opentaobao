@@ -1,7 +1,7 @@
 package idle
 
-// RecycleRefundDetailDTO 
-type RecycleRefundDetailDTO struct {
+// RecycleRefundDetailDto 
+type RecycleRefundDetailDto struct {
     // 毫秒，操作超时时间，截止时间
     OpTimeout   string `json:"op_timeout,omitempty" xml:"op_timeout,omitempty"`
     // 订单号
@@ -29,5 +29,5 @@ type RecycleRefundDetailDTO struct {
     // 卖家同意退货说明
     SellerAgreeMsg   string `json:"seller_agree_msg,omitempty" xml:"seller_agree_msg,omitempty"`
     // 追缴单
-    RecoverOrderInfo   *AlipayOrderDTO `json:"recover_order_info,omitempty" xml:"recover_order_info,omitempty"`
+    RecoverOrderInfo   *AlipayOrderDto `json:"recover_order_info,omitempty" xml:"recover_order_info,omitempty"`
 }

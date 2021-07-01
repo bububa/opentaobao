@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationEmployeeAssetUpdateResultDTO 
-type TaxOptimizationEmployeeAssetUpdateResultDTO struct {
+// TaxOptimizationEmployeeAssetUpdateResultDto 
+type TaxOptimizationEmployeeAssetUpdateResultDto struct {
     // 承包商编码
     ContractorCode   string `json:"contractor_code,omitempty" xml:"contractor_code,omitempty"`
     // 需要更新的资产账号

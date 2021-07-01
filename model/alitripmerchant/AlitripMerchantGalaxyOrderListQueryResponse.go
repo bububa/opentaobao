@@ -1,27 +1,25 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-星河-订单列表查询 API返回值 
-alitrip.merchant.galaxy.order.list.query
-
-为C端用户提供酒店预订订单列表查询服务，包括订单支付状态、订单日期
-*/
-type AlitripMerchantGalaxyOrderListQueryAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyOrderListQueryResponse
-}
-
-// 星河-订单列表查询 成功返回结果
+// AlitripMerchantGalaxyOrderListQueryResponse 
 type AlitripMerchantGalaxyOrderListQueryResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_order_list_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 查询结果
+    OrderDtos   []OrderDto `json:"order_dtos,omitempty" xml:"order_dtos>order_dto,omitempty"`
+    // 错误信息
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+    // 每页的数量
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+    // 当前页的数量
+    Size   int64 `json:"size,omitempty" xml:"size,omitempty"`
+    // 当前页
+    PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
+    // 是否有下一页
+    HasNextPage   bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
+    // 总页数
+    TotalPageNum   int64 `json:"total_page_num,omitempty" xml:"total_page_num,omitempty"`
+    // 结果总数
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

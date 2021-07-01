@@ -1,7 +1,7 @@
 package tmallcar
 
-// LoanReceiveDTO 
-type LoanReceiveDTO struct {
+// LoanReceiveDto 
+type LoanReceiveDto struct {
     // 放贷类型
     LoanType   string `json:"loan_type,omitempty" xml:"loan_type,omitempty"`
     // 金融服务商名称

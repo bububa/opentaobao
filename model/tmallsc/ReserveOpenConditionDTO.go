@@ -1,7 +1,7 @@
 package tmallsc
 
-// ReserveOpenConditionDTO 
-type ReserveOpenConditionDTO struct {
+// ReserveOpenConditionDto 
+type ReserveOpenConditionDto struct {
     // 类目id
     CategoryId   int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
     // 品牌id

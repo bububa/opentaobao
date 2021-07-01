@@ -1,7 +1,7 @@
 package tmallgenie
 
-// ScheduleDTO 
-type ScheduleDTO struct {
+// ScheduleDto 
+type ScheduleDto struct {
     // 一次性
     Once   *OnceSchedule `json:"once,omitempty" xml:"once,omitempty"`
     // 法定工作日

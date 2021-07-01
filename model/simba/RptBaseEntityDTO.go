@@ -1,7 +1,7 @@
 package simba
 
-// RptBaseEntityDTO 
-type RptBaseEntityDTO struct {
+// RptBaseEntityDto 
+type RptBaseEntityDto struct {
     // 日期
     Thedate   string `json:"thedate,omitempty" xml:"thedate,omitempty"`
     // 计划id

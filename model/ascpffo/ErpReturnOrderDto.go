@@ -1,7 +1,7 @@
 package ascpffo
 
-// ErpReturnOrderDTO 
-type ErpReturnOrderDTO struct {
+// ErpReturnOrderDto 
+type ErpReturnOrderDto struct {
     // 单据创建人
     Creator   string `json:"creator,omitempty" xml:"creator,omitempty"`
     // 扩展字段

@@ -23,5 +23,5 @@ type TmallNrtItemMainSynchronizeResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    TmallNrtItemMainSynchronize   *ResultDO `json:"tmall_nrt_item_main_synchronize,omitempty" xml:"tmall_nrt_item_main_synchronize,omitempty"`
+    TmallNrtItemMainSynchronize   *TmallNrtItemMainSynchronizeResultDo `json:"tmall_nrt_item_main_synchronize,omitempty" xml:"tmall_nrt_item_main_synchronize,omitempty"`
 }

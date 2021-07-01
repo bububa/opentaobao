@@ -25,5 +25,5 @@ type AlibabaScbpAdCampaignFindCampaignPageResponse struct {
     // 总数量
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // 返回数据
-    ResultList   []CampaignDTO `json:"result_list,omitempty" xml:"result_list>campaign_dto,omitempty"`
+    ResultList   []CampaignDto `json:"result_list,omitempty" xml:"result_list>campaign_dto,omitempty"`
 }

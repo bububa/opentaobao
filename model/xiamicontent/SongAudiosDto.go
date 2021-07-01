@@ -1,11 +1,11 @@
 package xiamicontent
 
-// SongAudiosDTO 
-type SongAudiosDTO struct {
+// SongAudiosDto 
+type SongAudiosDto struct {
     // 歌曲ID
     SongId   int64 `json:"song_id,omitempty" xml:"song_id,omitempty"`
     // 音频信息
-    Audios   []AudioDTO `json:"audios,omitempty" xml:"audios>audio_dto,omitempty"`
+    Audios   []AudioDto `json:"audios,omitempty" xml:"audios>audio_dto,omitempty"`
     // 副歌片段结束时间（单位:毫秒）
     RefrainEndTime   int64 `json:"refrain_end_time,omitempty" xml:"refrain_end_time,omitempty"`
     // 副歌片段开始时间（单位:毫秒）

@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// C2MConsensusDemandParamDTO 
-type C2MConsensusDemandParamDTO struct {
+// C2MConsensusDemandParamDto 
+type C2MConsensusDemandParamDto struct {
     // 关键日期值
     KeyFigureDate   string `json:"key_figure_date,omitempty" xml:"key_figure_date,omitempty"`
     // c2m需求数量

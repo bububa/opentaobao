@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// PriceInfoDTO 
-type PriceInfoDTO struct {
+// PriceInfoDto 
+type PriceInfoDto struct {
     // 是否担保商品
     IsGuarantee   int64 `json:"is_guarantee,omitempty" xml:"is_guarantee,omitempty"`
     // 库存剩余数量
@@ -59,7 +59,7 @@ type PriceInfoDTO struct {
     // 是否售空
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 详情页会员权益标签
-    HotelDinamicLabels   []HotelDinamicLabelDTO `json:"hotel_dinamic_labels,omitempty" xml:"hotel_dinamic_labels>hotel_dinamic_label_dto,omitempty"`
+    HotelDinamicLabels   []HotelDinamicLabelDto `json:"hotel_dinamic_labels,omitempty" xml:"hotel_dinamic_labels>hotel_dinamic_label_dto,omitempty"`
     // 库存数量
     StockNumberDes   string `json:"stock_number_des,omitempty" xml:"stock_number_des,omitempty"`
     // 是否是会员房

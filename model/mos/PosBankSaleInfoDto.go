@@ -1,7 +1,7 @@
 package mos
 
-// PosBankSaleInfoDTO 
-type PosBankSaleInfoDTO struct {
+// PosBankSaleInfoDto 
+type PosBankSaleInfoDto struct {
     // 订单号，唯一幂等字段
     OrderId   string `json:"order_id,omitempty" xml:"order_id,omitempty"`
     // 原订单号

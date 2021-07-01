@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinPayRegisterAuditDTO 
-type AxinPayRegisterAuditDTO struct {
+// AxinPayRegisterAuditDto 
+type AxinPayRegisterAuditDto struct {
     // 审核结果
     AuditResult   bool `json:"audit_result,omitempty" xml:"audit_result,omitempty"`
     // 商户code

@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpRefundInfoDTO 
-type GlobalAeopTpRefundInfoDTO struct {
+// GlobalAeopTpRefundInfoDto 
+type GlobalAeopTpRefundInfoDto struct {
     // refund reason
     RefundReason   string `json:"refund_reason,omitempty" xml:"refund_reason,omitempty"`
     // refund status: wait_refund, refund_ok, refund_cancel,  close,  refund_frozen

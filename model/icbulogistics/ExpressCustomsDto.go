@@ -1,7 +1,7 @@
 package icbulogistics
 
-// ExpressCustomsDTO 
-type ExpressCustomsDTO struct {
+// ExpressCustomsDto 
+type ExpressCustomsDto struct {
     // 申报金额
     DeclarationAmount   string `json:"declaration_amount,omitempty" xml:"declaration_amount,omitempty"`
     // 是否正式报关

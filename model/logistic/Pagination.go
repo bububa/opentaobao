@@ -3,7 +3,7 @@ package logistic
 // Pagination 
 type Pagination struct {
     // 数据列表
-    Results   []ResourceGroupDTO `json:"results,omitempty" xml:"results>resource_group_dto,omitempty"`
+    Results   []ResourceGroupDto `json:"results,omitempty" xml:"results>resource_group_dto,omitempty"`
     // 总数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // from外部资源编码

@@ -1,7 +1,7 @@
 package vaccin
 
-// AlipayVaccineUserBindDTO 
-type AlipayVaccineUserBindDTO struct {
+// AlipayVaccineUserBindDto 
+type AlipayVaccineUserBindDto struct {
     // 预约日期：2019-02-08 严格按照
     ReserveDate   string `json:"reserve_date,omitempty" xml:"reserve_date,omitempty"`
     // 年龄类型(1-宝宝2-成人)

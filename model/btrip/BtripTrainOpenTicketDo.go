@@ -1,7 +1,7 @@
 package btrip
 
-// BtripTrainOpenTicketDO 
-type BtripTrainOpenTicketDO struct {
+// BtripTrainOpenTicketDo 
+type BtripTrainOpenTicketDo struct {
     // 车次号
     TrainNo   string `json:"train_no,omitempty" xml:"train_no,omitempty"`
     // 是否退改

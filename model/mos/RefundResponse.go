@@ -15,7 +15,7 @@ type RefundResponse struct {
     // 总退款金额。单位为人民币（分）
     RefundAmount   int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
     // 退款资金渠道列表
-    FundBillList   []FundBillDO `json:"fund_bill_list,omitempty" xml:"fund_bill_list>fund_bill_do,omitempty"`
+    FundBillList   []FundBillDo `json:"fund_bill_list,omitempty" xml:"fund_bill_list>fund_bill_do,omitempty"`
     // 授权码来源。MJ：喵街，M_TAO：手淘，ALIPAY：支付宝
     AuthCodeSource   string `json:"auth_code_source,omitempty" xml:"auth_code_source,omitempty"`
     // 消费者喵街昵称

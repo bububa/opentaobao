@@ -1,7 +1,7 @@
 package qimen
 
-// OrderCallbackRequestDO 
-type OrderCallbackRequestDO struct {
+// OrderCallbackRequestDo 
+type OrderCallbackRequestDo struct {
     // 奇门仓储字段,C123,string(50),,
     WarehouseCode   string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
     // 奇门仓储字段,C123,string(50),,

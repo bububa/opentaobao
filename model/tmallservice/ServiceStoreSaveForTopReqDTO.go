@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceStoreSaveForTopReqDTO 
-type ServiceStoreSaveForTopReqDTO struct {
+// ServiceStoreSaveForTopReqDto 
+type ServiceStoreSaveForTopReqDto struct {
     // 支付宝账号
     AlipayAccountIdNumber   string `json:"alipay_account_id_number,omitempty" xml:"alipay_account_id_number,omitempty"`
     // 法人身份证反面l-使用阿里图片服务

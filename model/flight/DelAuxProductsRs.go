@@ -1,7 +1,7 @@
 package flight
 
-// DelAuxProductsRS 
-type DelAuxProductsRS struct {
+// DelAuxProductsRs 
+type DelAuxProductsRs struct {
     // 操作日志id，商家可通过该id在后台查看本次操作的具体结果
     TracerId   string `json:"tracer_id,omitempty" xml:"tracer_id,omitempty"`
     // 备注

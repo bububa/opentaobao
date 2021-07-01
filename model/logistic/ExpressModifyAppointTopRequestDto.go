@@ -1,7 +1,7 @@
 package logistic
 
-// ExpressModifyAppointTopRequestDTO 
-type ExpressModifyAppointTopRequestDTO struct {
+// ExpressModifyAppointTopRequestDto 
+type ExpressModifyAppointTopRequestDto struct {
     // 应到达日期
     ScDate   string `json:"sc_date,omitempty" xml:"sc_date,omitempty"`
     // 子交易单号

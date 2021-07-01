@@ -1,27 +1,11 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-发货单创建结果通知接口(批量) API返回值 
-taobao.qimen.deliveryorder.batchcreate.answer
-
-WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）
-*/
-type TaobaoQimenDeliveryorderBatchcreateAnswerAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenDeliveryorderBatchcreateAnswerResponse
-}
-
-// 发货单创建结果通知接口(批量) 成功返回结果
+// TaobaoQimenDeliveryorderBatchcreateAnswerResponse 
 type TaobaoQimenDeliveryorderBatchcreateAnswerResponse struct {
-    XMLName xml.Name `xml:"qimen_deliveryorder_batchcreate_answer_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // 响应结果:success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 }

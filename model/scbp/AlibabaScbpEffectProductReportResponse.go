@@ -27,5 +27,5 @@ type AlibabaScbpEffectProductReportResponse struct {
     // 总页数
     TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     // 产品效果数据列表
-    ProductEffectList   []ProductEffectDTO `json:"product_effect_list,omitempty" xml:"product_effect_list>product_effect_dto,omitempty"`
+    ProductEffectList   []ProductEffectDto `json:"product_effect_list,omitempty" xml:"product_effect_list>product_effect_dto,omitempty"`
 }

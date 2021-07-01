@@ -1,7 +1,7 @@
 package alihealth2
 
-// DrugInfoDTO 
-type DrugInfoDTO struct {
+// DrugInfoDto 
+type DrugInfoDto struct {
     // 药品过期日期
     ExpiryDate   string `json:"expiry_date,omitempty" xml:"expiry_date,omitempty"`
     // 药品通用名

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// AppVersionAuditDO 
-type AppVersionAuditDO struct {
+// AppVersionAuditDo 
+type AppVersionAuditDo struct {
     // 主键ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 应用名

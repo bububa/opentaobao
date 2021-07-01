@@ -23,7 +23,7 @@ type AlibabaNlifeStoreItemdetailsGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品详情列表
-    ItemList   []RetailItemTopDO `json:"item_list,omitempty" xml:"item_list>retail_item_top_do,omitempty"`
+    ItemList   []RetailItemTopDo `json:"item_list,omitempty" xml:"item_list>retail_item_top_do,omitempty"`
     // true-查询成功;false-查询失败
     Succes   bool `json:"succes,omitempty" xml:"succes,omitempty"`
     // 总数

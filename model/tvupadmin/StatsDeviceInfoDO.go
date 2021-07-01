@@ -1,7 +1,7 @@
 package tvupadmin
 
-// StatsDeviceInfoDO 
-type StatsDeviceInfoDO struct {
+// StatsDeviceInfoDo 
+type StatsDeviceInfoDo struct {
     // id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // factoryName

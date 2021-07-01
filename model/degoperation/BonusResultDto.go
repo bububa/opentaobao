@@ -1,7 +1,7 @@
 package degoperation
 
-// BonusResultDTO 
-type BonusResultDTO struct {
+// BonusResultDto 
+type BonusResultDto struct {
     // updateAddress=是否填写了收货地址
     Data   string `json:"data,omitempty" xml:"data,omitempty"`
     // error

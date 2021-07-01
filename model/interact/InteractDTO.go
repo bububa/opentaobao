@@ -1,7 +1,7 @@
 package interact
 
-// InteractDTO 
-type InteractDTO struct {
+// InteractDto 
+type InteractDto struct {
     // 互动开始时间
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 互动游戏app name

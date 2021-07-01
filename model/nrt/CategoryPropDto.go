@@ -1,7 +1,7 @@
 package nrt
 
-// CategoryPropDTO 
-type CategoryPropDTO struct {
+// CategoryPropDto 
+type CategoryPropDto struct {
     // 属性ID
     PropertyId   int64 `json:"property_id,omitempty" xml:"property_id,omitempty"`
     // 属性名

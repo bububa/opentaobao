@@ -1,7 +1,7 @@
 package lstvending
 
-// VendingTradePaymentDTO 
-type VendingTradePaymentDTO struct {
+// VendingTradePaymentDto 
+type VendingTradePaymentDto struct {
     // 支付金额
     PayAmount   int64 `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
     // 修改时间

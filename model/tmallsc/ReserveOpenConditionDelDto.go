@@ -1,7 +1,7 @@
 package tmallsc
 
-// ReserveOpenConditionDelDTO 
-type ReserveOpenConditionDelDTO struct {
+// ReserveOpenConditionDelDto 
+type ReserveOpenConditionDelDto struct {
     // 城市id
     CityId   int64 `json:"city_id,omitempty" xml:"city_id,omitempty"`
     // 类目id

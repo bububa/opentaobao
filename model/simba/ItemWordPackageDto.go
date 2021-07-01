@@ -1,7 +1,7 @@
 package simba
 
-// ItemWordPackageDTO 
-type ItemWordPackageDTO struct {
+// ItemWordPackageDto 
+type ItemWordPackageDto struct {
     // 词包id（1-流量智选，2-捡漏词包）
     WordPackageId   int64 `json:"word_package_id,omitempty" xml:"word_package_id,omitempty"`
     // 开/关词包（0-关闭，1-开启）

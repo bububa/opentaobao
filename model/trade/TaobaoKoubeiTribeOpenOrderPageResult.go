@@ -3,7 +3,7 @@ package trade
 // TaobaoKoubeiTribeOpenOrderPageResult 
 type TaobaoKoubeiTribeOpenOrderPageResult struct {
     // 订单信息结果
-    Data   *OrderInfoResultDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *OrderInfoResultDto `json:"data,omitempty" xml:"data,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误提示

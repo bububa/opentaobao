@@ -41,7 +41,7 @@ type PrescriptionDetailVo struct {
     // 病历号
     DiseaseRecordId   string `json:"disease_record_id,omitempty" xml:"disease_record_id,omitempty"`
     // 药品
-    DrugList   []DrugDTO `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
+    DrugList   []DrugDto `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
     // 过敏
     GuoMinDetail   string `json:"guo_min_detail,omitempty" xml:"guo_min_detail,omitempty"`
     // 开始接诊时间

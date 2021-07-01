@@ -1,7 +1,7 @@
 package aesolution
 
-// SynchronizeSkuRequestDTO 
-type SynchronizeSkuRequestDTO struct {
+// SynchronizeSkuRequestDto 
+type SynchronizeSkuRequestDto struct {
     // sku code
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // inventory

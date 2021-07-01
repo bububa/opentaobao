@@ -17,7 +17,7 @@ type FulfilplatformResult struct {
     // 错误名称
     ErrorName   string `json:"error_name,omitempty" xml:"error_name,omitempty"`
     // 服务单列表数据
-    ResultList   []SpServiceOrderDTO `json:"result_list,omitempty" xml:"result_list>sp_service_order_dto,omitempty"`
+    ResultList   []SpServiceOrderDto `json:"result_list,omitempty" xml:"result_list>sp_service_order_dto,omitempty"`
     // 错误类型
     ErrorType   string `json:"error_type,omitempty" xml:"error_type,omitempty"`
     // 物流类型 消费者--> 商家 STAGE1；商家--->消费者  STAGE2

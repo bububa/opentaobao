@@ -23,5 +23,5 @@ type TaobaoJymMemberRealnameVerifyWithoutuidResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 实名认证结果
-    Result   *ResultDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *TaobaoJymMemberRealnameVerifyWithoutuidResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

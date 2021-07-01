@@ -23,5 +23,5 @@ type YunosTvpubadminDeviceAppupgradequeryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 具体的数据结构
-    ObjectList   *PaginationDO `json:"object_list,omitempty" xml:"object_list,omitempty"`
+    ObjectList   *PaginationDo `json:"object_list,omitempty" xml:"object_list,omitempty"`
 }

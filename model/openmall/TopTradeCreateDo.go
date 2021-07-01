@@ -1,7 +1,7 @@
 package openmall
 
-// TopTradeCreateDO 
-type TopTradeCreateDO struct {
+// TopTradeCreateDo 
+type TopTradeCreateDo struct {
     // 收货地址的收件人地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 买家来源渠道，可选值 WeiXin（微信渠道），DouYin（抖音）， KuaiShou （快手），Other（其他）

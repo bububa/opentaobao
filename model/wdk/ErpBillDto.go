@@ -1,7 +1,7 @@
 package wdk
 
-// ErpBillDTO 
-type ErpBillDTO struct {
+// ErpBillDto 
+type ErpBillDto struct {
     // orderCode
     OrderCode   string `json:"order_code,omitempty" xml:"order_code,omitempty"`
     // status

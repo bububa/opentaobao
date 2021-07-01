@@ -1,7 +1,7 @@
 package singletreasure
 
-// PageResultDTO 
-type PageResultDTO struct {
+// PageResultDto 
+type PageResultDto struct {
     // 系统信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 总数

@@ -1,7 +1,7 @@
 package wdk
 
-// MemberInfoDO 
-type MemberInfoDO struct {
+// MemberInfoDo 
+type MemberInfoDo struct {
     // 会员卡等级
     CardLevel   int64 `json:"card_level,omitempty" xml:"card_level,omitempty"`
     // 会员卡号

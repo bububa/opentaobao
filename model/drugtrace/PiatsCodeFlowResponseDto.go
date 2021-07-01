@@ -1,7 +1,7 @@
 package drugtrace
 
-// PiatsCodeFlowResponseDTO 
-type PiatsCodeFlowResponseDTO struct {
+// PiatsCodeFlowResponseDto 
+type PiatsCodeFlowResponseDto struct {
     // 头部结构
     Header   *Header `json:"header,omitempty" xml:"header,omitempty"`
     // 内容体

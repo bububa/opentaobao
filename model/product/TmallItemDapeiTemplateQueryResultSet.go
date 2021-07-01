@@ -3,7 +3,7 @@ package product
 // TmallItemDapeiTemplateQueryResultSet 
 type TmallItemDapeiTemplateQueryResultSet struct {
     // firstResult
-    Results   []DapeiDO `json:"results,omitempty" xml:"results>dapei_do,omitempty"`
+    Results   []DapeiDo `json:"results,omitempty" xml:"results>dapei_do,omitempty"`
     // error
     Error   bool `json:"error,omitempty" xml:"error,omitempty"`
     // errorMsg

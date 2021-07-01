@@ -1,7 +1,7 @@
 package mos
 
-// PosSaleOrderDTO 
-type PosSaleOrderDTO struct {
+// PosSaleOrderDto 
+type PosSaleOrderDto struct {
     // 扩展信息
     ExtendParams   string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
     // 会员卡号
@@ -11,7 +11,7 @@ type PosSaleOrderDTO struct {
     // 操作员
     Operator   string `json:"operator,omitempty" xml:"operator,omitempty"`
     // 商品列表
-    SaleItems   []PosOrderSaleItemDTO `json:"sale_items,omitempty" xml:"sale_items>pos_order_sale_item_dto,omitempty"`
+    SaleItems   []PosOrderSaleItemDto `json:"sale_items,omitempty" xml:"sale_items>pos_order_sale_item_dto,omitempty"`
     // 开票单号
     SaleTicketNo   string `json:"sale_ticket_no,omitempty" xml:"sale_ticket_no,omitempty"`
 }

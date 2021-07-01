@@ -1,7 +1,7 @@
 package koubeimall
 
-// ItemDTO 
-type ItemDTO struct {
+// ItemDto 
+type ItemDto struct {
     // 商品类型，包含：TICKET_VOUCHER（购买类卡券类商品），DISH（菜品），BOOK_ITEM（预定类型）
     ItemType   string `json:"item_type,omitempty" xml:"item_type,omitempty"`
     // 商品子类型，包含：TRADE_VOUCHER（套餐购买类商品），VOUCHER_BUY（购买代金券），VOUCHER_PACKAGE（劵包）
@@ -41,5 +41,5 @@ type ItemDTO struct {
     // 商品可售库存
     SellableQuantity   string `json:"sellable_quantity,omitempty" xml:"sellable_quantity,omitempty"`
     // 商品所属门店信息模型
-    ItemStore   *ItemStoreDTO `json:"item_store,omitempty" xml:"item_store,omitempty"`
+    ItemStore   *ItemStoreDto `json:"item_store,omitempty" xml:"item_store,omitempty"`
 }

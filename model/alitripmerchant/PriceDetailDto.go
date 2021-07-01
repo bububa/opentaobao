@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// PriceDetailDTO 
-type PriceDetailDTO struct {
+// PriceDetailDto 
+type PriceDetailDto struct {
     // 总价格
     TotalPrice   string `json:"total_price,omitempty" xml:"total_price,omitempty"`
     // 总税费

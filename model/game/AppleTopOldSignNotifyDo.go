@@ -1,7 +1,7 @@
 package game
 
-// AppleTopOldSignNotifyDO 
-type AppleTopOldSignNotifyDO struct {
+// AppleTopOldSignNotifyDo 
+type AppleTopOldSignNotifyDo struct {
     // 电子卡卡号
     CardNo   string `json:"card_no,omitempty" xml:"card_no,omitempty"`
     // 商品编号

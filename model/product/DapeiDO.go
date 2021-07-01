@@ -1,7 +1,7 @@
 package product
 
-// DapeiDO 
-type DapeiDO struct {
+// DapeiDo 
+type DapeiDo struct {
     // id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // title

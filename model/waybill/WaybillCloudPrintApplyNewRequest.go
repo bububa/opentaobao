@@ -7,9 +7,9 @@ type WaybillCloudPrintApplyNewRequest struct {
     // 目前已经不推荐使用此字段，请不要使用
     ProductCode   string `json:"product_code,omitempty" xml:"product_code,omitempty"`
     // 发货人信息
-    Sender   *UserInfoDTO `json:"sender,omitempty" xml:"sender,omitempty"`
+    Sender   *UserInfoDto `json:"sender,omitempty" xml:"sender,omitempty"`
     // 请求面单信息，数量限制为10
-    TradeOrderInfoDtos   []TradeOrderInfoDTO `json:"trade_order_info_dtos,omitempty" xml:"trade_order_info_dtos>trade_order_info_dto,omitempty"`
+    TradeOrderInfoDtos   []TradeOrderInfoDto `json:"trade_order_info_dtos,omitempty" xml:"trade_order_info_dtos>trade_order_info_dto,omitempty"`
     // 仓code， 仓库WMS系统对接落地配业务，其它场景请不要使用
     StoreCode   string `json:"store_code,omitempty" xml:"store_code,omitempty"`
     // 配送资源code， 仓库WMS系统对接落地配业务，其它场景请不要使用

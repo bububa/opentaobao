@@ -1,7 +1,7 @@
 package inventory
 
-// PlanInvAdjustTopDetailDTO 
-type PlanInvAdjustTopDetailDTO struct {
+// PlanInvAdjustTopDetailDto 
+type PlanInvAdjustTopDetailDto struct {
     // 操作码，用于幂等验证
     OperateCode   string `json:"operate_code,omitempty" xml:"operate_code,omitempty"`
     // 外部商家系统单据号，用于定位计划库存的业务来源

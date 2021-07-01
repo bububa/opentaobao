@@ -1,7 +1,7 @@
 package btrip
 
-// OpenCostCenterQueryRS 
-type OpenCostCenterQueryRS struct {
+// OpenCostCenterQueryRs 
+type OpenCostCenterQueryRs struct {
     // 商旅成本中心id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 企业id
@@ -15,7 +15,7 @@ type OpenCostCenterQueryRS struct {
     // 适用范围: 1全员，2部分员工
     Scope   int64 `json:"scope,omitempty" xml:"scope,omitempty"`
     // 绑定人员信息
-    EntityList   []OpenOrgEntityDO `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
+    EntityList   []OpenOrgEntityDo `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
     // 绑定支付宝账号
     AlipayNo   string `json:"alipay_no,omitempty" xml:"alipay_no,omitempty"`
 }

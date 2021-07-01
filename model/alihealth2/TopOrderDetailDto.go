@@ -1,7 +1,7 @@
 package alihealth2
 
-// TopOrderDetailDTO 
-type TopOrderDetailDTO struct {
+// TopOrderDetailDto 
+type TopOrderDetailDto struct {
     // 孔雀翎订单号
     CepOrderId   int64 `json:"cep_order_id,omitempty" xml:"cep_order_id,omitempty"`
     // 孔雀翎店铺编码
@@ -37,7 +37,7 @@ type TopOrderDetailDTO struct {
     // 物流编码
     ExpressCode   string `json:"express_code,omitempty" xml:"express_code,omitempty"`
     // 商品集合
-    Items   []TopOrderGoodsDTO `json:"items,omitempty" xml:"items>top_order_goods_dto,omitempty"`
+    Items   []TopOrderGoodsDto `json:"items,omitempty" xml:"items>top_order_goods_dto,omitempty"`
     // o2o订单号
     O2oOrderNo   string `json:"o2o_order_no,omitempty" xml:"o2o_order_no,omitempty"`
 }

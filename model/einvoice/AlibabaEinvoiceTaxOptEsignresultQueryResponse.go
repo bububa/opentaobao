@@ -23,5 +23,5 @@ type AlibabaEinvoiceTaxOptEsignresultQueryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 查询结果
-    Results   []AgreementInfoDTO `json:"results,omitempty" xml:"results>agreement_info_dto,omitempty"`
+    Results   []AgreementInfoDto `json:"results,omitempty" xml:"results>agreement_info_dto,omitempty"`
 }

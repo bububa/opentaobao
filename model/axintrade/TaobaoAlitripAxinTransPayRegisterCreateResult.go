@@ -13,5 +13,5 @@ type TaobaoAlitripAxinTransPayRegisterCreateResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回素材id
-    Data   *AxinPayRegisterCreateResDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinPayRegisterCreateResDto `json:"data,omitempty" xml:"data,omitempty"`
 }

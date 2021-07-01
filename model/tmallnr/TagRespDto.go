@@ -1,7 +1,7 @@
 package tmallnr
 
-// TagRespDTO 
-type TagRespDTO struct {
+// TagRespDto 
+type TagRespDto struct {
     // 失败商品编码
     FailIds   []int64 `json:"fail_ids,omitempty" xml:"fail_ids>int64,omitempty"`
     // 失败描述

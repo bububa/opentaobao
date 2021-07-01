@@ -29,5 +29,5 @@ type YunosAdAuditCreativeGetlistResponse struct {
     // isOk
     IsOk   string `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
     // result
-    Results   []CreativeAuditDTO `json:"results,omitempty" xml:"results>creative_audit_dto,omitempty"`
+    Results   []CreativeAuditDto `json:"results,omitempty" xml:"results>creative_audit_dto,omitempty"`
 }

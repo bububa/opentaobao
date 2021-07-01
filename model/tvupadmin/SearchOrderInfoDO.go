@@ -1,7 +1,7 @@
 package tvupadmin
 
-// SearchOrderInfoDO 
-type SearchOrderInfoDO struct {
+// SearchOrderInfoDo 
+type SearchOrderInfoDo struct {
     // 创建时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 用户ID

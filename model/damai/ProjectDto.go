@@ -1,7 +1,7 @@
 package damai
 
-// ProjectDTO 
-type ProjectDTO struct {
+// ProjectDto 
+type ProjectDto struct {
     // 演出城市
     CityName   string `json:"city_name,omitempty" xml:"city_name,omitempty"`
     // 演出时间

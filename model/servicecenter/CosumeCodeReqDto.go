@@ -1,7 +1,7 @@
 package servicecenter
 
-// CosumeCodeReqDTO 
-type CosumeCodeReqDTO struct {
+// CosumeCodeReqDto 
+type CosumeCodeReqDto struct {
     // 业务id
     BizId   string `json:"biz_id,omitempty" xml:"biz_id,omitempty"`
     // 业务类型,整车租赁传入：car_lease

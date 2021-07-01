@@ -1,7 +1,7 @@
 package ottpay
 
-// TvOrderResultDTO 
-type TvOrderResultDTO struct {
+// TvOrderResultDto 
+type TvOrderResultDto struct {
     // qcodeUrl
     QcodeUrl   string `json:"qcode_url,omitempty" xml:"qcode_url,omitempty"`
     // 版本号

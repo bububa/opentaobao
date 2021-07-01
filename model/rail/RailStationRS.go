@@ -1,7 +1,7 @@
 package rail
 
-// RailStationRS 
-type RailStationRS struct {
+// RailStationRs 
+type RailStationRs struct {
     // 车站图片url，多个;号分隔
     Image   string `json:"image,omitempty" xml:"image,omitempty"`
     // 车站信息，多行;号分隔

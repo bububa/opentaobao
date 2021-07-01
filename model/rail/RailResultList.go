@@ -9,5 +9,5 @@ type RailResultList struct {
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 城市列表
-    ModuleList   []RailDivisionRS `json:"module_list,omitempty" xml:"module_list>rail_division_rs,omitempty"`
+    ModuleList   []RailDivisionRs `json:"module_list,omitempty" xml:"module_list>rail_division_rs,omitempty"`
 }

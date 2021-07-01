@@ -1,7 +1,7 @@
 package simba
 
-// InsightCategoryInfoDTO 
-type InsightCategoryInfoDTO struct {
+// InsightCategoryInfoDto 
+type InsightCategoryInfoDto struct {
     // 类目Id
     CatId   int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
     // 类目名称

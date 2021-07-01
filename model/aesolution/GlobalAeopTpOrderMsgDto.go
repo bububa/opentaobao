@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpOrderMsgDTO 
-type GlobalAeopTpOrderMsgDTO struct {
+// GlobalAeopTpOrderMsgDto 
+type GlobalAeopTpOrderMsgDto struct {
     // order id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // order creation time

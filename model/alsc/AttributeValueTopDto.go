@@ -1,7 +1,7 @@
 package alsc
 
-// AttributeValueTopDTO 
-type AttributeValueTopDTO struct {
+// AttributeValueTopDto 
+type AttributeValueTopDto struct {
     // 属性Value
     Value   string `json:"value,omitempty" xml:"value,omitempty"`
     // 属性KEY

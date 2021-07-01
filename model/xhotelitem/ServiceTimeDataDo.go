@@ -1,7 +1,7 @@
 package xhotelitem
 
-// ServiceTimeDataDO 
-type ServiceTimeDataDO struct {
+// ServiceTimeDataDo 
+type ServiceTimeDataDo struct {
     // supplier
     Supplier   string `json:"supplier,omitempty" xml:"supplier,omitempty"`
     // 卖家nick

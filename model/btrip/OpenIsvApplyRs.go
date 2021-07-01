@@ -1,7 +1,7 @@
 package btrip
 
-// OpenIsvApplyRS 
-type OpenIsvApplyRS struct {
+// OpenIsvApplyRs 
+type OpenIsvApplyRs struct {
     // 商旅审批展示id
     ApplyShowId   string `json:"apply_show_id,omitempty" xml:"apply_show_id,omitempty"`
     // 审批人列表

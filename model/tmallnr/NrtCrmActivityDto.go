@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrtCrmActivityDTO 
-type NrtCrmActivityDTO struct {
+// NrtCrmActivityDto 
+type NrtCrmActivityDto struct {
     // 头图
     BannerUrl   string `json:"banner_url,omitempty" xml:"banner_url,omitempty"`
     // 同城站ID
@@ -25,7 +25,7 @@ type NrtCrmActivityDTO struct {
     // 活动规则
     Rule   string `json:"rule,omitempty" xml:"rule,omitempty"`
     // 有价券DTO
-    SceneActivityList   []NrtCrmSceneActivityDTO `json:"scene_activity_list,omitempty" xml:"scene_activity_list>nrt_crm_scene_activity_dto,omitempty"`
+    SceneActivityList   []NrtCrmSceneActivityDto `json:"scene_activity_list,omitempty" xml:"scene_activity_list>nrt_crm_scene_activity_dto,omitempty"`
     // 站外页面ID
     PageId   int64 `json:"page_id,omitempty" xml:"page_id,omitempty"`
 }

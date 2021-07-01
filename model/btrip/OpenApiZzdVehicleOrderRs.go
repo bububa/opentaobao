@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdVehicleOrderRS 
-type OpenApiZzdVehicleOrderRS struct {
+// OpenApiZzdVehicleOrderRs 
+type OpenApiZzdVehicleOrderRs struct {
     // 第三方交易ID
     TradeId   string `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
     // 1. 用车支付 2. 服务费 3. 用车取消后收费 101. 用车退款 102. 用车赔付
@@ -63,9 +63,9 @@ type OpenApiZzdVehicleOrderRS struct {
     // 发票抬头
     InvoiceTitle   string `json:"invoice_title,omitempty" xml:"invoice_title,omitempty"`
     // 成本中心信息
-    CostCenterList   []CostCenterDO `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
+    CostCenterList   []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
     // 用户信息
-    ClientInfoDos   []ClientInfoDO `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
+    ClientInfoDos   []ClientInfoDo `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
     // 项目编号
     ProjectCode   string `json:"project_code,omitempty" xml:"project_code,omitempty"`
     // 项目名称
@@ -83,5 +83,5 @@ type OpenApiZzdVehicleOrderRS struct {
     // v_sp_t_1:用车里程，v_sp_t_2:实际下车点，v_sp_t_3:用车金额，v_sp_t_4:用车次数，v_sp_t_5:跨城订单
     SpecialTypes   string `json:"special_types,omitempty" xml:"special_types,omitempty"`
     // 用车信息
-    CarInfoDoList   []CarInfoDO `json:"car_info_do_list,omitempty" xml:"car_info_do_list>car_info_do,omitempty"`
+    CarInfoDoList   []CarInfoDo `json:"car_info_do_list,omitempty" xml:"car_info_do_list>car_info_do,omitempty"`
 }

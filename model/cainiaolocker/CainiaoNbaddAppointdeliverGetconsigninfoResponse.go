@@ -29,5 +29,5 @@ type CainiaoNbaddAppointdeliverGetconsigninfoResponse struct {
     // 错误描述
     ResultDesc   string `json:"result_desc,omitempty" xml:"result_desc,omitempty"`
     // 发货信息
-    Result   *ConsignSupportInfoDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *ConsignSupportInfoDto `json:"result,omitempty" xml:"result,omitempty"`
 }

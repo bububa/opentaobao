@@ -15,7 +15,7 @@ type TvAppVersion struct {
     // 发布说明
     ReleaseNote   string `json:"release_note,omitempty" xml:"release_note,omitempty"`
     // 应用信息
-    App   *AppDTO `json:"app,omitempty" xml:"app,omitempty"`
+    App   *AppDto `json:"app,omitempty" xml:"app,omitempty"`
     // 状态
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 升级包类型

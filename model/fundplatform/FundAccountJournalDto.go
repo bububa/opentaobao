@@ -1,7 +1,7 @@
 package fundplatform
 
-// FundAccountJournalDTO 
-type FundAccountJournalDTO struct {
+// FundAccountJournalDto 
+type FundAccountJournalDto struct {
     // 账户ID
     AccountId   int64 `json:"account_id,omitempty" xml:"account_id,omitempty"`
     // 操作金额

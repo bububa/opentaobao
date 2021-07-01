@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectReviewDraftDTO 
-type ProjectReviewDraftDTO struct {
+// ProjectReviewDraftDto 
+type ProjectReviewDraftDto struct {
     // 楼盘id
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 外部测评id

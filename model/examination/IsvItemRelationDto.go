@@ -1,7 +1,7 @@
 package examination
 
-// IsvItemRelationDTO 
-type IsvItemRelationDTO struct {
+// IsvItemRelationDto 
+type IsvItemRelationDto struct {
     // 单项id
     IsvItemId   string `json:"isv_item_id,omitempty" xml:"isv_item_id,omitempty"`
     // 关联单项id

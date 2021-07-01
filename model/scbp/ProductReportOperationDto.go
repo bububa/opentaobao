@@ -1,7 +1,7 @@
 package scbp
 
-// ProductReportOperationDTO 
-type ProductReportOperationDTO struct {
+// ProductReportOperationDto 
+type ProductReportOperationDto struct {
     // 产品名称或产品ID(模糊搜索)
     Key   string `json:"key,omitempty" xml:"key,omitempty"`
     // 获取明细数据（"true"/"false"）,如果为"true"则为明细数据

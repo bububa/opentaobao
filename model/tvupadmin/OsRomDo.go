@@ -1,7 +1,7 @@
 package tvupadmin
 
-// OsRomDO 
-type OsRomDO struct {
+// OsRomDo 
+type OsRomDo struct {
     // 主键
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 关联的版本ID

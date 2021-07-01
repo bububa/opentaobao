@@ -1,7 +1,7 @@
 package aliexpresssumaitong
 
-// HjTaxCalculateResultDTO 
-type HjTaxCalculateResultDTO struct {
+// HjTaxCalculateResultDto 
+type HjTaxCalculateResultDto struct {
     // 交易行计税结果
     Lines   []Lines `json:"lines,omitempty" xml:"lines>lines,omitempty"`
     // 交易币种

@@ -1,7 +1,7 @@
 package tvpay
 
-// SdkGlobalConfigDO 
-type SdkGlobalConfigDO struct {
+// SdkGlobalConfigDo 
+type SdkGlobalConfigDo struct {
     // 是否询问用户要自动登录
     AskBeforeAutoLogin   bool `json:"ask_before_auto_login,omitempty" xml:"ask_before_auto_login,omitempty"`
     // 如果询问，是否默认选中自动登录

@@ -1,7 +1,7 @@
 package miniappopen
 
-// DistributionOrderBindBaseDTO 
-type DistributionOrderBindBaseDTO struct {
+// DistributionOrderBindBaseDto 
+type DistributionOrderBindBaseDto struct {
     // 商品id
     TargetEntityId   string `json:"target_entity_id,omitempty" xml:"target_entity_id,omitempty"`
     // 失败的原因

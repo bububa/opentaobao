@@ -1,7 +1,7 @@
 package alihealthmedical
 
-// OrderDetailDTO 
-type OrderDetailDTO struct {
+// OrderDetailDto 
+type OrderDetailDto struct {
     // 商品类型
     ItemType   string `json:"item_type,omitempty" xml:"item_type,omitempty"`
     // 结算日期，格式必须为：20200711
@@ -19,7 +19,7 @@ type OrderDetailDTO struct {
     // 订单状态：WAIT_DIAGNOSE，  DIAGNOSING，  REFUNDED，  DIAGNOSED，  THIRD_SELLER_PAID
     OrderStatus   string `json:"order_status,omitempty" xml:"order_status,omitempty"`
     // 就诊人信息串
-    MedicalInfo   *MedicalInfoDTO `json:"medical_info,omitempty" xml:"medical_info,omitempty"`
+    MedicalInfo   *MedicalInfoDto `json:"medical_info,omitempty" xml:"medical_info,omitempty"`
     // 评价综合得分：取值 1 - 5
     Score   int64 `json:"score,omitempty" xml:"score,omitempty"`
     // 商品id

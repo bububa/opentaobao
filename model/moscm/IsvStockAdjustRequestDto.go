@@ -1,13 +1,13 @@
 package moscm
 
-// IsvStockAdjustRequestDTO 
-type IsvStockAdjustRequestDTO struct {
+// IsvStockAdjustRequestDto 
+type IsvStockAdjustRequestDto struct {
     // 入库项（最大列表长度：20）
-    InboundItems   []IsvInboundRequestItemDTO `json:"inbound_items,omitempty" xml:"inbound_items>isv_inbound_request_item_dto,omitempty"`
+    InboundItems   []IsvInboundRequestItemDto `json:"inbound_items,omitempty" xml:"inbound_items>isv_inbound_request_item_dto,omitempty"`
     // 外部单号
     OutId   string `json:"out_id,omitempty" xml:"out_id,omitempty"`
     // 出库项（最大列表长度：20）
-    OutboundItems   []IsvOutboundRequestItemDTO `json:"outbound_items,omitempty" xml:"outbound_items>isv_outbound_request_item_dto,omitempty"`
+    OutboundItems   []IsvOutboundRequestItemDto `json:"outbound_items,omitempty" xml:"outbound_items>isv_outbound_request_item_dto,omitempty"`
     // 备注
     Remarks   string `json:"remarks,omitempty" xml:"remarks,omitempty"`
     // 专柜Id

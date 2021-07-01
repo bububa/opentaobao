@@ -1,7 +1,7 @@
 package alicom
 
-// CommonRtnDO 
-type CommonRtnDO struct {
+// CommonRtnDo 
+type CommonRtnDo struct {
     // message
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // data

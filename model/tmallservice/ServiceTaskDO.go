@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceTaskDO 
-type ServiceTaskDO struct {
+// ServiceTaskDo 
+type ServiceTaskDo struct {
     // 交易实付金额
     ActualTotalFee   int64 `json:"actual_total_fee,omitempty" xml:"actual_total_fee,omitempty"`
     // 合同id

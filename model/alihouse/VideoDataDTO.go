@@ -1,7 +1,7 @@
 package alihouse
 
-// VideoDataDTO 
-type VideoDataDTO struct {
+// VideoDataDto 
+type VideoDataDto struct {
     // 视频下载链接
     VideoUrl   string `json:"video_url,omitempty" xml:"video_url,omitempty"`
     // 视频封面

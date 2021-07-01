@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryAwardDTO 
-type LotteryAwardDTO struct {
+// LotteryAwardDto 
+type LotteryAwardDto struct {
     // totalResCount
     TotalResCount   int64 `json:"total_res_count,omitempty" xml:"total_res_count,omitempty"`
     // awardDetailUrl

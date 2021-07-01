@@ -1,7 +1,7 @@
 package maitix
 
-// PerformSettingDTO 
-type PerformSettingDTO struct {
+// PerformSettingDto 
+type PerformSettingDto struct {
     // 证件类型("身份证"-"id_card","护照"-"passport","港澳居民来往内地通行证"-"hk_macao_pass","台湾居民来往大陆通行证"-"taiwan_compatriot_card","士兵／军官"-"soldier_officer_card")
     CardType   string `json:"card_type,omitempty" xml:"card_type,omitempty"`
     // 一单一证 0：不是，1：是

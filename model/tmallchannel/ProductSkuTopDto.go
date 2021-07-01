@@ -1,7 +1,7 @@
 package tmallchannel
 
-// ProductSkuTopDTO 
-type ProductSkuTopDTO struct {
+// ProductSkuTopDto 
+type ProductSkuTopDto struct {
     // skuId
     SkuId   int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
     // sku商家编码

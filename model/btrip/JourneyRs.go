@@ -1,7 +1,7 @@
 package btrip
 
-// JourneyRS 
-type JourneyRS struct {
+// JourneyRs 
+type JourneyRs struct {
     // 到达城市
     ArrCity   string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
     // 到达时间
@@ -13,7 +13,7 @@ type JourneyRS struct {
     // 总时长
     Duration   int64 `json:"duration,omitempty" xml:"duration,omitempty"`
     // 组成当前行程的航段列表
-    SegmentList   []FlightSegmentRS `json:"segment_list,omitempty" xml:"segment_list>flight_segment_rs,omitempty"`
+    SegmentList   []FlightSegmentRs `json:"segment_list,omitempty" xml:"segment_list>flight_segment_rs,omitempty"`
     // 航程序号，从0开始
     SeqId   int64 `json:"seq_id,omitempty" xml:"seq_id,omitempty"`
     // 是否换机场

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiZzdHotelOrderRS 
-type OpenApiZzdHotelOrderRS struct {
+// OpenApiZzdHotelOrderRs 
+type OpenApiZzdHotelOrderRs struct {
     // 订单状态：1, "等待确认";2, "等待付款"; 3, "预订成功";4, "申请退款";5, "退款成功";6, "已关闭";0,"点击详情查看状态";7, "结账成功"; 8, "支付成功";
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 服务费（分）
@@ -69,9 +69,9 @@ type OpenApiZzdHotelOrderRS struct {
     // 商旅行程单号
     ItineraryNo   string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
     // 成本中心信息
-    CostCenterList   []CostCenterDO `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
+    CostCenterList   []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
     // 用户信息
-    ClientInfoDos   []ClientInfoDO `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
+    ClientInfoDos   []ClientInfoDo `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
     // 订单类型：1：全额支付、5：到店支付、6：信用住',
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 入住时间
@@ -79,7 +79,7 @@ type OpenApiZzdHotelOrderRS struct {
     // 离店时间
     CheckOutDate   string `json:"check_out_date,omitempty" xml:"check_out_date,omitempty"`
     // 酒店信息
-    HotelInfoDo   *HotelInfoDO `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
+    HotelInfoDo   *HotelInfoDo `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
     // 房间信息
-    RoomInfoDo   *RoomInfoDO `json:"room_info_do,omitempty" xml:"room_info_do,omitempty"`
+    RoomInfoDo   *RoomInfoDo `json:"room_info_do,omitempty" xml:"room_info_do,omitempty"`
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// PromotionPriceDO 
-type PromotionPriceDO struct {
+// PromotionPriceDo 
+type PromotionPriceDo struct {
     // 促销说明
     PromotionReason   string `json:"promotion_reason,omitempty" xml:"promotion_reason,omitempty"`
     // 记录标识

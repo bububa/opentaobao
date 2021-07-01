@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelRefundDTO 
-type TopChannelRefundDTO struct {
+// TopChannelRefundDto 
+type TopChannelRefundDto struct {
     // 退款单号
     RefundId   int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
     // 分销商昵称

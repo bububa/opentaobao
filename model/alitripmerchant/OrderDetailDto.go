@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// OrderDetailDTO 
-type OrderDetailDTO struct {
+// OrderDetailDto 
+type OrderDetailDto struct {
     // 酒店电话
     HotelPhone   string `json:"hotel_phone,omitempty" xml:"hotel_phone,omitempty"`
     // 入住人数
@@ -47,7 +47,7 @@ type OrderDetailDTO struct {
     // 酒店名称
     HotelName   string `json:"hotel_name,omitempty" xml:"hotel_name,omitempty"`
     // 费用明细对象
-    PriceDetailDto   *PriceDetailDTO `json:"price_detail_dto,omitempty" xml:"price_detail_dto,omitempty"`
+    PriceDetailDto   *PriceDetailDto `json:"price_detail_dto,omitempty" xml:"price_detail_dto,omitempty"`
     // 货币
     Currency   string `json:"currency,omitempty" xml:"currency,omitempty"`
     // 总价格
@@ -63,7 +63,7 @@ type OrderDetailDTO struct {
     // 订单状态
     OrderStatus   string `json:"order_status,omitempty" xml:"order_status,omitempty"`
     // 酒店房型信息
-    RoomDetailDto   *RoomDetailDTO `json:"room_detail_dto,omitempty" xml:"room_detail_dto,omitempty"`
+    RoomDetailDto   *RoomDetailDto `json:"room_detail_dto,omitempty" xml:"room_detail_dto,omitempty"`
     // 卖家房型id
     OuterRoomId   string `json:"outer_room_id,omitempty" xml:"outer_room_id,omitempty"`
     // 租户酒店id
@@ -79,7 +79,7 @@ type OrderDetailDTO struct {
     // 儿童总数
     ChildrenNumber   int64 `json:"children_number,omitempty" xml:"children_number,omitempty"`
     // 每个房间入住人信息
-    GuestByRoomDtos   []GuestByRoomDTO `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
+    GuestByRoomDtos   []GuestByRoomDto `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
     // 订单状态描述
     OrderStatusDesc   string `json:"order_status_desc,omitempty" xml:"order_status_desc,omitempty"`
     // 支付渠道

@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceDefinitionDTO 
-type ServiceDefinitionDTO struct {
+// ServiceDefinitionDto 
+type ServiceDefinitionDto struct {
     // 服务编码
     ServiceCode   string `json:"service_code,omitempty" xml:"service_code,omitempty"`
     // 服务名称

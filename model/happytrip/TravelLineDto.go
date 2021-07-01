@@ -1,7 +1,7 @@
 package happytrip
 
-// TravelLineDTO 
-type TravelLineDTO struct {
+// TravelLineDto 
+type TravelLineDto struct {
     // 开始时间
     BeginDate   string `json:"begin_date,omitempty" xml:"begin_date,omitempty"`
     // 结束时间

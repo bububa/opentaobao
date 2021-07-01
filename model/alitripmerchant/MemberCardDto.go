@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// MemberCardDTO 
-type MemberCardDTO struct {
+// MemberCardDto 
+type MemberCardDto struct {
     // 会员权益
     MemberRights   []MemberRights `json:"member_rights,omitempty" xml:"member_rights>member_rights,omitempty"`
     // 会员卡ID

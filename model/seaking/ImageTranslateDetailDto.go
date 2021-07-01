@@ -1,7 +1,7 @@
 package seaking
 
-// ImageTranslateDetailDTO 
-type ImageTranslateDetailDTO struct {
+// ImageTranslateDetailDto 
+type ImageTranslateDetailDto struct {
     // 目标语种
     TargetLang   string `json:"target_lang,omitempty" xml:"target_lang,omitempty"`
     // 源语种

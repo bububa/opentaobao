@@ -23,5 +23,5 @@ type YunosTvpubadminDeviceBrandsResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // object
-    List   []BrandDO `json:"list,omitempty" xml:"list>brand_do,omitempty"`
+    List   []BrandDo `json:"list,omitempty" xml:"list>brand_do,omitempty"`
 }

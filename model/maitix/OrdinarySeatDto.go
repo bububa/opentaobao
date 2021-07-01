@@ -1,7 +1,7 @@
 package maitix
 
-// OrdinarySeatDTO 
-type OrdinarySeatDTO struct {
+// OrdinarySeatDto 
+type OrdinarySeatDto struct {
     // 座位号
     SeatNo   string `json:"seat_no,omitempty" xml:"seat_no,omitempty"`
     // 排号

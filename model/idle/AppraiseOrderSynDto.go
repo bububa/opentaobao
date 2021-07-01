@@ -1,7 +1,7 @@
 package idle
 
-// AppraiseOrderSynDTO 
-type AppraiseOrderSynDTO struct {
+// AppraiseOrderSynDto 
+type AppraiseOrderSynDto struct {
     // biz_order_id
     BizOrderId   string `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
     // (主状态,子状态,状态说明)示例如下： ("1", "1", "买家拍下未付款") ("2", "1", "买家拍下已付款") ("3", "1", "卖家已发货") 等，详情参考对接文档

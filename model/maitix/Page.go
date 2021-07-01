@@ -5,7 +5,7 @@ type Page struct {
     // 当前页码
     CurrentPage   int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
     // 数据对象
-    DataArrList   []ProjectDTO `json:"data_arr_list,omitempty" xml:"data_arr_list>project_dto,omitempty"`
+    DataArrList   []ProjectDto `json:"data_arr_list,omitempty" xml:"data_arr_list>project_dto,omitempty"`
     // 总页数
     PageCount   int64 `json:"page_count,omitempty" xml:"page_count,omitempty"`
     // 每页大小

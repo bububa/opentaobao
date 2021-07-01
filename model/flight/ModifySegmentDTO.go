@@ -1,7 +1,7 @@
 package flight
 
-// ModifySegmentDTO 
-type ModifySegmentDTO struct {
+// ModifySegmentDto 
+type ModifySegmentDto struct {
     // 舱等
     CabinClass   string `json:"cabin_class,omitempty" xml:"cabin_class,omitempty"`
     // 航班号

@@ -1,7 +1,7 @@
 package tmallservice
 
-// MasterTradeOrderDTO 
-type MasterTradeOrderDTO struct {
+// MasterTradeOrderDto 
+type MasterTradeOrderDto struct {
     // 卖家名称
     SellerNick   string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
     // 实物子订单id

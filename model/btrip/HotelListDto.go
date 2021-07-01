@@ -1,7 +1,7 @@
 package btrip
 
-// HotelListDTO 
-type HotelListDTO struct {
+// HotelListDto 
+type HotelListDto struct {
     // 最低价，单位分
     LowPrice   int64 `json:"low_price,omitempty" xml:"low_price,omitempty"`
     // 酒店名称

@@ -7,7 +7,7 @@ type TaobaoSimbaSerchcrowdGetResult struct {
     // 返回的溢价比例,乘的关系,discount=121,代表溢价21%
     Discount   int64 `json:"discount,omitempty" xml:"discount,omitempty"`
     // 人群信息
-    Crowd   *CrowdDTO `json:"crowd,omitempty" xml:"crowd,omitempty"`
+    Crowd   *CrowdDto `json:"crowd,omitempty" xml:"crowd,omitempty"`
     // 定向id,出价删除 改价,修改状态时用
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 人群是否溢价1:不溢价;0:溢价

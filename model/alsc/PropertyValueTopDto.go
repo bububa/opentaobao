@@ -1,7 +1,7 @@
 package alsc
 
-// PropertyValueTopDTO 
-type PropertyValueTopDTO struct {
+// PropertyValueTopDto 
+type PropertyValueTopDto struct {
     // 属性值
     Value   string `json:"value,omitempty" xml:"value,omitempty"`
     // 属性ID

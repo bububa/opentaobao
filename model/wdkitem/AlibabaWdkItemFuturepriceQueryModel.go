@@ -11,7 +11,7 @@ type AlibabaWdkItemFuturepriceQueryModel struct {
     // 经营店Code
     StoreId   string `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 买赠活动信息
-    MzPromotionDTO   *MzPromotionDTO `json:"mz_promotion_d_t_o,omitempty" xml:"mz_promotion_d_t_o,omitempty"`
+    MzPromotionDTO   *MzPromotionDto `json:"mz_promotion_d_t_o,omitempty" xml:"mz_promotion_d_t_o,omitempty"`
     // 条码
     BarCode   string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
     // 会员促销执行价，单位为分。
@@ -19,7 +19,7 @@ type AlibabaWdkItemFuturepriceQueryModel struct {
     // IC的商品ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 单品促销，finalPrice对应的促销活动
-    ItemPromotionList   []PromotionInfoDTO `json:"item_promotion_list,omitempty" xml:"item_promotion_list>promotion_info_dto,omitempty"`
+    ItemPromotionList   []PromotionInfoDto `json:"item_promotion_list,omitempty" xml:"item_promotion_list>promotion_info_dto,omitempty"`
     // 商品名称
     ItemName   string `json:"item_name,omitempty" xml:"item_name,omitempty"`
     // 基础售价,单位为分
@@ -27,9 +27,9 @@ type AlibabaWdkItemFuturepriceQueryModel struct {
     // 渠道店ID
     ShopId   int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
     // 商品池促销
-    ShopPromotionList   []PromotionInfoDTO `json:"shop_promotion_list,omitempty" xml:"shop_promotion_list>promotion_info_dto,omitempty"`
+    ShopPromotionList   []PromotionInfoDto `json:"shop_promotion_list,omitempty" xml:"shop_promotion_list>promotion_info_dto,omitempty"`
     // 会员单品促销活动，memberFinalPrice对应的促销活动
-    MemberItemPromotionList   []PromotionInfoDTO `json:"member_item_promotion_list,omitempty" xml:"member_item_promotion_list>promotion_info_dto,omitempty"`
+    MemberItemPromotionList   []PromotionInfoDto `json:"member_item_promotion_list,omitempty" xml:"member_item_promotion_list>promotion_info_dto,omitempty"`
     // 商品编码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 渠道，APP／POS

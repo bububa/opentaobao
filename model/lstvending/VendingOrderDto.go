@@ -1,7 +1,7 @@
 package lstvending
 
-// VendingOrderDTO 
-type VendingOrderDTO struct {
+// VendingOrderDto 
+type VendingOrderDto struct {
     // 修改时间
     GmtModified   int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 快递单号
@@ -13,7 +13,7 @@ type VendingOrderDTO struct {
     // 零售通订单号
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 发货清单
-    ShippedEquipmentList   []VendingShippedEquipmentDTO `json:"shipped_equipment_list,omitempty" xml:"shipped_equipment_list>vending_shipped_equipment_dto,omitempty"`
+    ShippedEquipmentList   []VendingShippedEquipmentDto `json:"shipped_equipment_list,omitempty" xml:"shipped_equipment_list>vending_shipped_equipment_dto,omitempty"`
     // 创建时间
     GmtCreate   int64 `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // 发货时间

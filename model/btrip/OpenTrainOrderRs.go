@@ -1,7 +1,7 @@
 package btrip
 
-// OpenTrainOrderRS 
-type OpenTrainOrderRS struct {
+// OpenTrainOrderRs 
+type OpenTrainOrderRs struct {
     // 订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间
@@ -57,11 +57,11 @@ type OpenTrainOrderRS struct {
     // 订单状态：0待支付,1出票中,2已关闭(未支付，已经关闭),3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已经邮寄了,9出票失败,10改签失败,11退票失败
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 成本中心对象
-    CostCenter   *OpenCostCenterDO `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+    CostCenter   *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
     // 发票信息对象
-    Invoice   *OpenInvoiceDO `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 第三方行程id
     ThirdpartItineraryId   string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
     // 出行人列表
-    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 }

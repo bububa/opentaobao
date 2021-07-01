@@ -15,5 +15,5 @@ type TopResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 资源列表
-    Resources   []ThreePlConsignResourceDTO `json:"resources,omitempty" xml:"resources>three_pl_consign_resource_dto,omitempty"`
+    Resources   []ThreePlConsignResourceDto `json:"resources,omitempty" xml:"resources>three_pl_consign_resource_dto,omitempty"`
 }

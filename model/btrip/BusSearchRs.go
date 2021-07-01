@@ -1,7 +1,7 @@
 package btrip
 
-// BusSearchRS 
-type BusSearchRS struct {
+// BusSearchRs 
+type BusSearchRs struct {
     // 到达城市
     ArrCity   string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
     // 查询结果

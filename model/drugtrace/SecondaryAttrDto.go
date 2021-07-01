@@ -1,7 +1,7 @@
 package drugtrace
 
-// SecondaryAttrDTO 
-type SecondaryAttrDTO struct {
+// SecondaryAttrDto 
+type SecondaryAttrDto struct {
     // 二级药物属性名称
     SecondaryAttributeName   string `json:"secondary_attribute_name,omitempty" xml:"secondary_attribute_name,omitempty"`
     // 二级药物属性编号

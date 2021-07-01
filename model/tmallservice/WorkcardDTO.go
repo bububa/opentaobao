@@ -1,7 +1,7 @@
 package tmallservice
 
-// WorkcardDTO 
-type WorkcardDTO struct {
+// WorkcardDto 
+type WorkcardDto struct {
     // 额外属性
     Attributes   string `json:"attributes,omitempty" xml:"attributes,omitempty"`
     // 签到时间

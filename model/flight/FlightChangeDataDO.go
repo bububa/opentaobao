@@ -1,7 +1,7 @@
 package flight
 
-// FlightChangeDataDO 
-type FlightChangeDataDO struct {
+// FlightChangeDataDo 
+type FlightChangeDataDo struct {
     // 原到达机场三字代码, 字符长度3
     OldArrAirport   string `json:"old_arr_airport,omitempty" xml:"old_arr_airport,omitempty"`
     // 原航变日期 ,格式:yyyy-MM-dd

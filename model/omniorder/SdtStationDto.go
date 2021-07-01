@@ -1,7 +1,7 @@
 package omniorder
 
-// SdtStationDTO 
-type SdtStationDTO struct {
+// SdtStationDto 
+type SdtStationDto struct {
     // 站点操作时间
     ActionTime   string `json:"action_time,omitempty" xml:"action_time,omitempty"`
     // 快递公司cpcode

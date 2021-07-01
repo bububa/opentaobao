@@ -3,7 +3,7 @@ package servicecenter
 // ResultBase 
 type ResultBase struct {
     // value
-    Value   *TpFundsRecoverResultDO `json:"value,omitempty" xml:"value,omitempty"`
+    Value   *TpFundsRecoverResultDo `json:"value,omitempty" xml:"value,omitempty"`
     // 查询接口是否OK
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // errorMsg

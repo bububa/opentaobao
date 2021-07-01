@@ -1,7 +1,7 @@
 package miniappopen
 
-// MiniAppEntityDTO 
-type MiniAppEntityDTO struct {
+// MiniAppEntityDto 
+type MiniAppEntityDto struct {
     // appkey
     Appkey   string `json:"appkey,omitempty" xml:"appkey,omitempty"`
     // 小程序appId

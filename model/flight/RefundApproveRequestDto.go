@@ -1,7 +1,7 @@
 package flight
 
-// RefundApproveRequestDTO 
-type RefundApproveRequestDTO struct {
+// RefundApproveRequestDto 
+type RefundApproveRequestDto struct {
     // 申请单号
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 国内国际标识

@@ -1,7 +1,7 @@
 package kclub
 
-// KcQaReadDTO 
-type KcQaReadDTO struct {
+// KcQaReadDto 
+type KcQaReadDto struct {
     // 类目路径
     CatPath   string `json:"cat_path,omitempty" xml:"cat_path,omitempty"`
     // 类目id
@@ -19,9 +19,9 @@ type KcQaReadDTO struct {
     // 问题id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 子知识
-    ChildQas   []KcQaReadDTO `json:"child_qas,omitempty" xml:"child_qas>kc_qa_read_dto,omitempty"`
+    ChildQas   []KcQaReadDto `json:"child_qas,omitempty" xml:"child_qas>kc_qa_read_dto,omitempty"`
     // 问题答案
-    Solutions   []KcQaSolutionDTO `json:"solutions,omitempty" xml:"solutions>kc_qa_solution_dto,omitempty"`
+    Solutions   []KcQaSolutionDto `json:"solutions,omitempty" xml:"solutions>kc_qa_solution_dto,omitempty"`
     // 问题类型(原kbs context)
     Context   int64 `json:"context,omitempty" xml:"context,omitempty"`
     // 问题类型
@@ -31,5 +31,5 @@ type KcQaReadDTO struct {
     // 父类目id
     ParentCats   []int64 `json:"parent_cats,omitempty" xml:"parent_cats>int64,omitempty"`
     // qa的访问量
-    QaPv   *QaPvDTO `json:"qa_pv,omitempty" xml:"qa_pv,omitempty"`
+    QaPv   *QaPvDto `json:"qa_pv,omitempty" xml:"qa_pv,omitempty"`
 }

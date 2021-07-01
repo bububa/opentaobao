@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceTradeOrderDTO 
-type ServiceTradeOrderDTO struct {
+// ServiceTradeOrderDto 
+type ServiceTradeOrderDto struct {
     // 卖家名称
     SellerNick   string `json:"seller_nick,omitempty" xml:"seller_nick,omitempty"`
     // 商品id

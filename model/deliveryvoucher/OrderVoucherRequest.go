@@ -13,7 +13,7 @@ type OrderVoucherRequest struct {
     // 主订单id
     OrderId   int64 `json:"order_id,omitempty" xml:"order_id,omitempty"`
     // 券信息,券信息,最多100条券记录
-    VoucherInfos   []DeliveryVoucherInfoDTO `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
+    VoucherInfos   []DeliveryVoucherInfoDto `json:"voucher_infos,omitempty" xml:"voucher_infos>delivery_voucher_info_dto,omitempty"`
     // 预约时间
     AppointmentTime   string `json:"appointment_time,omitempty" xml:"appointment_time,omitempty"`
     // 外部订单号

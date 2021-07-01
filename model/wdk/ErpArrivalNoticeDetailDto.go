@@ -1,7 +1,7 @@
 package wdk
 
-// ErpArrivalNoticeDetailDTO 
-type ErpArrivalNoticeDetailDTO struct {
+// ErpArrivalNoticeDetailDto 
+type ErpArrivalNoticeDetailDto struct {
     // 采购单位
     Unit   string `json:"unit,omitempty" xml:"unit,omitempty"`
     // 库存单位

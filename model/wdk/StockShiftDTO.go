@@ -1,9 +1,9 @@
 package wdk
 
-// StockShiftDTO 
-type StockShiftDTO struct {
+// StockShiftDto 
+type StockShiftDto struct {
     // itemList
-    ItemList   []StockShiftDetailDTO `json:"item_list,omitempty" xml:"item_list>stock_shift_detail_dto,omitempty"`
+    ItemList   []StockShiftDetailDto `json:"item_list,omitempty" xml:"item_list>stock_shift_detail_dto,omitempty"`
     // remark
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // occurrenceDate

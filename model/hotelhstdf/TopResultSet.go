@@ -7,7 +7,7 @@ type TopResultSet struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 结果集合
-    ModuleList   []HotelRoomStaticDO `json:"module_list,omitempty" xml:"module_list>hotel_room_static_do,omitempty"`
+    ModuleList   []HotelRoomStaticDo `json:"module_list,omitempty" xml:"module_list>hotel_room_static_do,omitempty"`
     // 暂不使用
     ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 请求失败时返回的错误信息，一般success=false时有值

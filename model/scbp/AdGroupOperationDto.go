@@ -1,7 +1,7 @@
 package scbp
 
-// AdGroupOperationDTO 
-type AdGroupOperationDTO struct {
+// AdGroupOperationDto 
+type AdGroupOperationDto struct {
     // 产品id
     ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 线上状态

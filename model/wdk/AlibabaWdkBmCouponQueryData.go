@@ -23,5 +23,5 @@ type AlibabaWdkBmCouponQueryData struct {
     // 补差比例
     PaymentRate   string `json:"payment_rate,omitempty" xml:"payment_rate,omitempty"`
     // 补差商品列表
-    PaymentItemDOList   []PaymentItemDO `json:"payment_item_d_o_list,omitempty" xml:"payment_item_d_o_list>payment_item_do,omitempty"`
+    PaymentItemDOList   []PaymentItemDo `json:"payment_item_d_o_list,omitempty" xml:"payment_item_d_o_list>payment_item_do,omitempty"`
 }

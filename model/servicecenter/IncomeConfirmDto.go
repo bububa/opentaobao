@@ -1,7 +1,7 @@
 package servicecenter
 
-// IncomeConfirmDTO 
-type IncomeConfirmDTO struct {
+// IncomeConfirmDto 
+type IncomeConfirmDto struct {
     // 确认金额（单位：分）
     Fee   int64 `json:"fee,omitempty" xml:"fee,omitempty"`
     // 卖家nick

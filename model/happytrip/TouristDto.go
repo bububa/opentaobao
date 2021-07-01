@@ -1,7 +1,7 @@
 package happytrip
 
-// TouristDTO 
-type TouristDTO struct {
+// TouristDto 
+type TouristDto struct {
     // 证件签发国
     CertNation   string `json:"cert_nation,omitempty" xml:"cert_nation,omitempty"`
     // 姓

@@ -1,7 +1,7 @@
 package drugtrace
 
-// RichTextDTO 
-type RichTextDTO struct {
+// RichTextDto 
+type RichTextDto struct {
     // 图片
     Pictures   []string `json:"pictures,omitempty" xml:"pictures>string,omitempty"`
     // 文字

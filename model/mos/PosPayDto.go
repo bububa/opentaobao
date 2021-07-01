@@ -1,7 +1,7 @@
 package mos
 
-// PosPayDTO 
-type PosPayDTO struct {
+// PosPayDto 
+type PosPayDto struct {
     // 订单号
     TradeNo   string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
     // 第三方订单号（如支付宝）

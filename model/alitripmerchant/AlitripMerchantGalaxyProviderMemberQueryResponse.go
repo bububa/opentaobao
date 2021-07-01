@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-提供会员查询接口 API返回值 
-alitrip.merchant.galaxy.provider.member.query
-
-星河产品=提供会查询服务
-*/
-type AlitripMerchantGalaxyProviderMemberQueryAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyProviderMemberQueryResponse
-}
-
-// 提供会员查询接口 成功返回结果
+// AlitripMerchantGalaxyProviderMemberQueryResponse 
 type AlitripMerchantGalaxyProviderMemberQueryResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_provider_member_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 错误信息
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+    // 返回结果
+    ProviderMemberVo   *ProviderMemberVo `json:"provider_member_vo,omitempty" xml:"provider_member_vo,omitempty"`
+    // 错误码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 是否成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

@@ -1,7 +1,7 @@
 package ma
 
-// QrcodeDO 
-type QrcodeDO struct {
+// QrcodeDo 
+type QrcodeDo struct {
     // 二维码id
     QrcodeId   int64 `json:"qrcode_id,omitempty" xml:"qrcode_id,omitempty"`
     // 二维码图片链接

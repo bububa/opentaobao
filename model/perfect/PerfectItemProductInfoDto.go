@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectItemProductInfoDTO 
-type PerfectItemProductInfoDTO struct {
+// PerfectItemProductInfoDto 
+type PerfectItemProductInfoDto struct {
     // 品牌ID
     BrandCode   string `json:"brand_code,omitempty" xml:"brand_code,omitempty"`
     // 叶子类目ID

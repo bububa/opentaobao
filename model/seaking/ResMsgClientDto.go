@@ -1,7 +1,7 @@
 package seaking
 
-// ResMsgClientDTO 
-type ResMsgClientDTO struct {
+// ResMsgClientDto 
+type ResMsgClientDto struct {
     // 考试结果
     List   []AlibabaAlifanyiMarketExamData `json:"list,omitempty" xml:"list>alibaba_alifanyi_market_exam_data,omitempty"`
     // 错误信息

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DeviceInfoDO 
-type DeviceInfoDO struct {
+// DeviceInfoDo 
+type DeviceInfoDo struct {
     // uuid
     Uuid   string `json:"uuid,omitempty" xml:"uuid,omitempty"`
     // tvid

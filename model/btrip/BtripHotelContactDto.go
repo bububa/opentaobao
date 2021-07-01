@@ -1,7 +1,7 @@
 package btrip
 
-// BtripHotelContactDTO 
-type BtripHotelContactDTO struct {
+// BtripHotelContactDto 
+type BtripHotelContactDto struct {
     // 邮箱
     Email   string `json:"email,omitempty" xml:"email,omitempty"`
     // 入住人姓名

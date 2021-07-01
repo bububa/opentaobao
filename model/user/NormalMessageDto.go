@@ -1,7 +1,7 @@
 package user
 
-// NormalMessageDTO 
-type NormalMessageDTO struct {
+// NormalMessageDto 
+type NormalMessageDto struct {
     // 内容
     Content   string `json:"content,omitempty" xml:"content,omitempty"`
     // 时间戳

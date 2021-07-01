@@ -1,7 +1,7 @@
 package drugtrace
 
-// DataEntTaskDTO 
-type DataEntTaskDTO struct {
+// DataEntTaskDto 
+type DataEntTaskDto struct {
     // fileInfoList
     FileInfoList   []string `json:"file_info_list,omitempty" xml:"file_info_list>string,omitempty"`
     // fileNum

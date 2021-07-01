@@ -1,7 +1,7 @@
 package wdk
 
-// ConveyorBasicConfigDTO 
-type ConveyorBasicConfigDTO struct {
+// ConveyorBasicConfigDto 
+type ConveyorBasicConfigDto struct {
     // 滑道数目
     SlidewayCount   int64 `json:"slideway_count,omitempty" xml:"slideway_count,omitempty"`
     // 异常滑道ID

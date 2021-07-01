@@ -1,7 +1,7 @@
 package wdk
 
-// ChannelSkuDO 
-type ChannelSkuDO struct {
+// ChannelSkuDo 
+type ChannelSkuDo struct {
     // 状态（用来判断是否可售；1-正常）
     LifeStatus   string `json:"life_status,omitempty" xml:"life_status,omitempty"`
     // 商品编码

@@ -1,7 +1,7 @@
 package cainiaocntec
 
-// ActivityStatisticsDTO 
-type ActivityStatisticsDTO struct {
+// ActivityStatisticsDto 
+type ActivityStatisticsDto struct {
     // 箱规
     InventoryCoefficient   string `json:"inventory_coefficient,omitempty" xml:"inventory_coefficient,omitempty"`
     // 总价

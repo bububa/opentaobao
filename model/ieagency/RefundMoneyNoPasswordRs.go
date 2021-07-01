@@ -1,7 +1,7 @@
 package ieagency
 
-// RefundMoneyNoPasswordRS 
-type RefundMoneyNoPasswordRS struct {
+// RefundMoneyNoPasswordRs 
+type RefundMoneyNoPasswordRs struct {
     // apiErrorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // apiErrorCode

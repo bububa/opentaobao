@@ -49,7 +49,7 @@ type CreateOrderParam struct {
     // 价格名称
     RpName   string `json:"rp_name,omitempty" xml:"rp_name,omitempty"`
     // 多房间参数
-    GuestByRoomDtos   []GuestByRoomDTO `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
+    GuestByRoomDtos   []GuestByRoomDto `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
     // 活动标识字段
     OfferSourceChannel   string `json:"offer_source_channel,omitempty" xml:"offer_source_channel,omitempty"`
 }

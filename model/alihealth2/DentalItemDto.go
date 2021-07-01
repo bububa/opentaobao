@@ -1,7 +1,7 @@
 package alihealth2
 
-// DentalItemDTO 
-type DentalItemDTO struct {
+// DentalItemDto 
+type DentalItemDto struct {
     // itemName
     ItemName   string `json:"item_name,omitempty" xml:"item_name,omitempty"`
     // itemId

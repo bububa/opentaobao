@@ -1,7 +1,7 @@
 package xhotelitem
 
-// RoomTypeCheckResultDO 
-type RoomTypeCheckResultDO struct {
+// RoomTypeCheckResultDo 
+type RoomTypeCheckResultDo struct {
     // 床型数据检查结果，false代表有冲突
     Bedtypecheckresult   string `json:"bedtypecheckresult,omitempty" xml:"bedtypecheckresult,omitempty"`
     // 结构化床型

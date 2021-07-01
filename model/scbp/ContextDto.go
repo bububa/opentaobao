@@ -1,7 +1,7 @@
 package scbp
 
-// ContextDTO 
-type ContextDTO struct {
+// ContextDto 
+type ContextDto struct {
     // login_id
     LoginId   string `json:"login_id,omitempty" xml:"login_id,omitempty"`
     // is_admin

@@ -1,7 +1,7 @@
 package alilabs
 
-// TopRefreshReqDTO 
-type TopRefreshReqDTO struct {
+// TopRefreshReqDto 
+type TopRefreshReqDto struct {
     // clientId
     ClientId   string `json:"client_id,omitempty" xml:"client_id,omitempty"`
     // 只支持“basic”

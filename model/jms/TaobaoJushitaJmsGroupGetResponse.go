@@ -25,5 +25,5 @@ type TaobaoJushitaJmsGroupGetResponse struct {
     // 返回的总数
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
     // 分组信息
-    Groups   []MsgGroupDO `json:"groups,omitempty" xml:"groups>msg_group_do,omitempty"`
+    Groups   []MsgGroupDo `json:"groups,omitempty" xml:"groups>msg_group_do,omitempty"`
 }

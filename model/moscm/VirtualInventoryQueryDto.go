@@ -1,7 +1,7 @@
 package moscm
 
-// VirtualInventoryQueryDTO 
-type VirtualInventoryQueryDTO struct {
+// VirtualInventoryQueryDto 
+type VirtualInventoryQueryDto struct {
     // 银泰专柜号
     CounterId   string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`
     // 外部专柜号（在供应商系统中的专柜号，两个专柜号必须至少传一个，如果都传一counter_id为准）

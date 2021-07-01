@@ -1,7 +1,7 @@
 package tmallnr
 
-// SyncServiceRangeRequestDTO 
-type SyncServiceRangeRequestDTO struct {
+// SyncServiceRangeRequestDto 
+type SyncServiceRangeRequestDto struct {
     // 围栏信息
     Points   []Point `json:"points,omitempty" xml:"points>point,omitempty"`
     // 扩展字段

@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugKytUploadrelationResultModel 
 type AlibabaAlihealthDrugKytUploadrelationResultModel struct {
     // model
-    Model   *SaveCodeRelationResultDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *SaveCodeRelationResultDto `json:"model,omitempty" xml:"model,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

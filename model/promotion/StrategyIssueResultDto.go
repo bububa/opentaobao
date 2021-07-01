@@ -1,7 +1,7 @@
 package promotion
 
-// StrategyIssueResultDTO 
-type StrategyIssueResultDTO struct {
+// StrategyIssueResultDto 
+type StrategyIssueResultDto struct {
     // 展示面额单位
     DisplayAmountUnit   string `json:"display_amount_unit,omitempty" xml:"display_amount_unit,omitempty"`
     // 扩展字段

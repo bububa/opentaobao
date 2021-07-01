@@ -1,7 +1,7 @@
 package category
 
-// TopPVPairDO 
-type TopPVPairDO struct {
+// TopPVPairDo 
+type TopPVPairDo struct {
     // 属性值ID
     ValueId   int64 `json:"value_id,omitempty" xml:"value_id,omitempty"`
     // 属性项名称

@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-星河-支付参数查询接口 API返回值 
-alitrip.merchant.galaxy.payment.param.query
-
-获取微信小程序的支付参数，供微信小程序调起支付请求。参数都为校验字段，不涉及用户隐私数据
-*/
-type AlitripMerchantGalaxyPaymentParamQueryAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyPaymentParamQueryResponse
-}
-
-// 星河-支付参数查询接口 成功返回结果
+// AlitripMerchantGalaxyPaymentParamQueryResponse 
 type AlitripMerchantGalaxyPaymentParamQueryResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_payment_param_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 支付参数
+    Content   *OrderPayDto `json:"content,omitempty" xml:"content,omitempty"`
+    // 错误描述
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

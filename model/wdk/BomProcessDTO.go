@@ -1,7 +1,7 @@
 package wdk
 
-// BomProcessDTO 
-type BomProcessDTO struct {
+// BomProcessDto 
+type BomProcessDto struct {
     // 加工日期
     OccurrenceDate   string `json:"occurrence_date,omitempty" xml:"occurrence_date,omitempty"`
     // 店仓code，指的是库调对象，对应一个物理店或仓编码

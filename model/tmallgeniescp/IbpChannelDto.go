@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// IbpChannelDTO 
-type IbpChannelDTO struct {
+// IbpChannelDto 
+type IbpChannelDto struct {
     // 租户
     Tenant   string `json:"tenant,omitempty" xml:"tenant,omitempty"`
     // 渠道名称

@@ -1,7 +1,7 @@
 package jipiao
 
-// ReturnTicketDO 
-type ReturnTicketDO struct {
+// ReturnTicketDo 
+type ReturnTicketDo struct {
     // 申请单ID
     ApplyId   int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 申请时间

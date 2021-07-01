@@ -31,11 +31,11 @@ type EnterpriseData struct {
     // 订单状态码
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 配送员信息
-    DeliverymanInfo   *DeliverymanInfoDTO `json:"deliveryman_info,omitempty" xml:"deliveryman_info,omitempty"`
+    DeliverymanInfo   *DeliverymanInfoDto `json:"deliveryman_info,omitempty" xml:"deliveryman_info,omitempty"`
     // 状态
     StateCode   string `json:"state_code,omitempty" xml:"state_code,omitempty"`
     // 最近更新时间
     LastUpdatedAt   string `json:"last_updated_at,omitempty" xml:"last_updated_at,omitempty"`
     // 地址信息
-    TrackingInfo   *TrackingInfoDTO `json:"tracking_info,omitempty" xml:"tracking_info,omitempty"`
+    TrackingInfo   *TrackingInfoDto `json:"tracking_info,omitempty" xml:"tracking_info,omitempty"`
 }

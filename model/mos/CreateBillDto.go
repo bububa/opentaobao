@@ -1,9 +1,9 @@
 package mos
 
-// CreateBillDTO 
-type CreateBillDTO struct {
+// CreateBillDto 
+type CreateBillDto struct {
     // 结算单列表
-    SettlementDTOList   []BillSettlementDTO `json:"settlement_d_t_o_list,omitempty" xml:"settlement_d_t_o_list>bill_settlement_dto,omitempty"`
+    SettlementDTOList   []BillSettlementDto `json:"settlement_d_t_o_list,omitempty" xml:"settlement_d_t_o_list>bill_settlement_dto,omitempty"`
     // 收款方国家，国际标准的2位简码
     PayeeCountry   string `json:"payee_country,omitempty" xml:"payee_country,omitempty"`
     // 支付币种，国际标准的3位简码

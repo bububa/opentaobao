@@ -1,7 +1,7 @@
 package logistic
 
-// ReverseEventInfoDTO 
-type ReverseEventInfoDTO struct {
+// ReverseEventInfoDto 
+type ReverseEventInfoDto struct {
     // 销退单ID
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 备注

@@ -1,7 +1,7 @@
 package feedflow
 
-// TimeSpanDTO 
-type TimeSpanDTO struct {
+// TimeSpanDto 
+type TimeSpanDto struct {
     // 折扣率
     Discount   int64 `json:"discount,omitempty" xml:"discount,omitempty"`
     // 时间

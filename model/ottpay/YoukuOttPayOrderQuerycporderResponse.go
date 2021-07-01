@@ -23,5 +23,5 @@ type YoukuOttPayOrderQuerycporderResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // data
-    Data   *TvOrderResultDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *TvOrderResultDto `json:"data,omitempty" xml:"data,omitempty"`
 }

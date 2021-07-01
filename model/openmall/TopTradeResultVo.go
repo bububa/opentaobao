@@ -11,5 +11,5 @@ type TopTradeResultVo struct {
     // 发货地址
     Location   string `json:"location,omitempty" xml:"location,omitempty"`
     // 运费列表
-    Posts   []PostDO `json:"posts,omitempty" xml:"posts>post_do,omitempty"`
+    Posts   []PostDo `json:"posts,omitempty" xml:"posts>post_do,omitempty"`
 }

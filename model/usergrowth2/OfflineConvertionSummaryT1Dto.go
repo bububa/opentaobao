@@ -1,7 +1,7 @@
 package usergrowth2
 
-// OfflineConvertionSummaryT1DTO 
-type OfflineConvertionSummaryT1DTO struct {
+// OfflineConvertionSummaryT1Dto 
+type OfflineConvertionSummaryT1Dto struct {
     // 结算新登数
     RegisterUserCntT1   int64 `json:"register_user_cnt_t1,omitempty" xml:"register_user_cnt_t1,omitempty"`
     // 购买首购数

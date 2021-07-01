@@ -1,7 +1,7 @@
 package nlife
 
-// DeliverResponseDO 
-type DeliverResponseDO struct {
+// DeliverResponseDo 
+type DeliverResponseDo struct {
     // 零售商的门店id
     StoreId   int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 关联的门店采购订单号

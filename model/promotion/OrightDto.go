@@ -1,7 +1,7 @@
 package promotion
 
-// OrightDTO 
-type OrightDTO struct {
+// OrightDto 
+type OrightDto struct {
     // 奖品id
     PrizeId   int64 `json:"prize_id,omitempty" xml:"prize_id,omitempty"`
     // 模板名称

@@ -1,7 +1,7 @@
 package logistic
 
-// JzTopDTO 
-type JzTopDTO struct {
+// JzTopDto 
+type JzTopDto struct {
     // 快递公司列表
     Expresses   []Expresses `json:"expresses,omitempty" xml:"expresses>expresses,omitempty"`
     // 物流公司列表

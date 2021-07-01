@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// VendingGoodsDTO 
-type VendingGoodsDTO struct {
+// VendingGoodsDto 
+type VendingGoodsDto struct {
     // 修改时间
     GmtModified   int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 创建时间

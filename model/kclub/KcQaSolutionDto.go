@@ -1,7 +1,7 @@
 package kclub
 
-// KcQaSolutionDTO 
-type KcQaSolutionDTO struct {
+// KcQaSolutionDto 
+type KcQaSolutionDto struct {
     // 子知识问题id
     QuestionId   int64 `json:"question_id,omitempty" xml:"question_id,omitempty"`
     // 子知识编辑时间

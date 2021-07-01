@@ -1,7 +1,7 @@
 package mos
 
-// PosPaymentDTO 
-type PosPaymentDTO struct {
+// PosPaymentDto 
+type PosPaymentDto struct {
     // 支付行号
     PaymentLineNo   int64 `json:"payment_line_no,omitempty" xml:"payment_line_no,omitempty"`
     // 支付流水号

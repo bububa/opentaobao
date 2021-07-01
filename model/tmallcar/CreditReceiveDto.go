@@ -1,7 +1,7 @@
 package tmallcar
 
-// CreditReceiveDTO 
-type CreditReceiveDTO struct {
+// CreditReceiveDto 
+type CreditReceiveDto struct {
     // 扩展字段2
     ExtensionField02   string `json:"extension_field02,omitempty" xml:"extension_field02,omitempty"`
     // 扩展字段1

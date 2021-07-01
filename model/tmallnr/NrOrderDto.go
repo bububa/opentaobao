@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrOrderDTO 
-type NrOrderDTO struct {
+// NrOrderDto 
+type NrOrderDto struct {
     // 创建时间
     CreateTime   string `json:"create_time,omitempty" xml:"create_time,omitempty"`
     // 买家昵称
@@ -31,7 +31,7 @@ type NrOrderDTO struct {
     // outIdItemCode
     OutIdItemCode   string `json:"out_id_item_code,omitempty" xml:"out_id_item_code,omitempty"`
     // 配送计划的详情，仅做周期送业务需要
-    NrZqsPlanRespDTO   *NrZqsPlanRespDTO `json:"nr_zqs_plan_resp_d_t_o,omitempty" xml:"nr_zqs_plan_resp_d_t_o,omitempty"`
+    NrZqsPlanRespDTO   *NrZqsPlanRespDto `json:"nr_zqs_plan_resp_d_t_o,omitempty" xml:"nr_zqs_plan_resp_d_t_o,omitempty"`
     // 商家sku的外部编码
     OuterIdSku   string `json:"outer_id_sku,omitempty" xml:"outer_id_sku,omitempty"`
 }

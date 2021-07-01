@@ -1,9 +1,9 @@
 package ascpchannel
 
-// ProductDetailDTO 
-type ProductDetailDTO struct {
+// ProductDetailDto 
+type ProductDetailDto struct {
     // sku 列表
-    ProductSkuDetail   []ProductSkuDetailDTO `json:"product_sku_detail,omitempty" xml:"product_sku_detail>product_sku_detail_dto,omitempty"`
+    ProductSkuDetail   []ProductSkuDetailDto `json:"product_sku_detail,omitempty" xml:"product_sku_detail>product_sku_detail_dto,omitempty"`
     // 透明白底图
     WhiteBgPicture   string `json:"white_bg_picture,omitempty" xml:"white_bg_picture,omitempty"`
     // 产品 id

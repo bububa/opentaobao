@@ -1,7 +1,7 @@
 package cityretail
 
-// OrderLogisticsResponseDTO 
-type OrderLogisticsResponseDTO struct {
+// OrderLogisticsResponseDto 
+type OrderLogisticsResponseDto struct {
     // 快递员姓名
     DelivererName   string `json:"deliverer_name,omitempty" xml:"deliverer_name,omitempty"`
     // 快递员电话

@@ -1,7 +1,7 @@
 package scbp
 
-// CampaignDTO 
-type CampaignDTO struct {
+// CampaignDto 
+type CampaignDto struct {
     // 计划标题
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 计划开始时间

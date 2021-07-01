@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// GuestByRoomDTO 
-type GuestByRoomDTO struct {
+// GuestByRoomDto 
+type GuestByRoomDto struct {
     // 入住人名
     ContactFirstName   string `json:"contact_first_name,omitempty" xml:"contact_first_name,omitempty"`
     // 入住人姓

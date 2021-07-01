@@ -1,7 +1,7 @@
 package icburfq
 
-// RfqRequestSearchCondDTO 
-type RfqRequestSearchCondDTO struct {
+// RfqRequestSearchCondDto 
+type RfqRequestSearchCondDto struct {
     // 关键词
     SearchText   string `json:"search_text,omitempty" xml:"search_text,omitempty"`
     // 每页显示个数

@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrZqsPlanRespDTO 
-type NrZqsPlanRespDTO struct {
+// NrZqsPlanRespDto 
+type NrZqsPlanRespDto struct {
     // 每次配送件数
     NumPerCycle   int64 `json:"num_per_cycle,omitempty" xml:"num_per_cycle,omitempty"`
     // 暂停/退款提前告知的天数
@@ -17,9 +17,9 @@ type NrZqsPlanRespDTO struct {
     // 退款开始时间，注意，这个时间当天如果有配送还是会配送的，第二天开始之后的配送会取消
     StartRefundDate   string `json:"start_refund_date,omitempty" xml:"start_refund_date,omitempty"`
     // 已生成的配送计划序号及配送日期
-    PlanList   []NrZqsPlanDetailInfoDTO `json:"plan_list,omitempty" xml:"plan_list>nr_zqs_plan_detail_info_dto,omitempty"`
+    PlanList   []NrZqsPlanDetailInfoDto `json:"plan_list,omitempty" xml:"plan_list>nr_zqs_plan_detail_info_dto,omitempty"`
     // pauseInfos
-    PauseInfos   []NrZqsPauseInfoDTO `json:"pause_infos,omitempty" xml:"pause_infos>nr_zqs_pause_info_dto,omitempty"`
+    PauseInfos   []NrZqsPauseInfoDto `json:"pause_infos,omitempty" xml:"pause_infos>nr_zqs_pause_info_dto,omitempty"`
     // 每周几送，在cycle_type=4时生效，其它时候为空， 1表示周日，2表示周一...7表示周六（以周日为每周的第一天）
     WeekDay   int64 `json:"week_day,omitempty" xml:"week_day,omitempty"`
 }

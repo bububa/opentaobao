@@ -1,7 +1,7 @@
 package eleenterpriseordernew
 
-// TrackingInfoDTO 
-type TrackingInfoDTO struct {
+// TrackingInfoDto 
+type TrackingInfoDto struct {
     // 纬度
     Latitude   string `json:"latitude,omitempty" xml:"latitude,omitempty"`
     // 经度

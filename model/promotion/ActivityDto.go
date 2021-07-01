@@ -1,9 +1,9 @@
 package promotion
 
-// ActivityDTO 
-type ActivityDTO struct {
+// ActivityDto 
+type ActivityDto struct {
     // 权益列表
-    Benefits   []BenefitDTO `json:"benefits,omitempty" xml:"benefits>benefit_dto,omitempty"`
+    Benefits   []BenefitDto `json:"benefits,omitempty" xml:"benefits>benefit_dto,omitempty"`
     // 活动来源
     Source   string `json:"source,omitempty" xml:"source,omitempty"`
     // 活动来源记录id

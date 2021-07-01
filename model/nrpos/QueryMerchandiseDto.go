@@ -1,7 +1,7 @@
 package nrpos
 
-// QueryMerchandiseDTO 
-type QueryMerchandiseDTO struct {
+// QueryMerchandiseDto 
+type QueryMerchandiseDto struct {
     // 门店号
     Storeno   string `json:"storeno,omitempty" xml:"storeno,omitempty"`
     // 商品编码

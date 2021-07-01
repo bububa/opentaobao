@@ -1,7 +1,7 @@
 package ieagency
 
-// IeRefundReasonDO 
-type IeRefundReasonDO struct {
+// IeRefundReasonDo 
+type IeRefundReasonDo struct {
     // 原因描述
     Reason   string `json:"reason,omitempty" xml:"reason,omitempty"`
     // 原因类型

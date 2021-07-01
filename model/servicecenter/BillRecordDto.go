@@ -1,7 +1,7 @@
 package servicecenter
 
-// BillRecordDTO 
-type BillRecordDTO struct {
+// BillRecordDto 
+type BillRecordDto struct {
     // 记录产生时间
     StartDate   string `json:"start_date,omitempty" xml:"start_date,omitempty"`
     // 状态：1成功、2失败

@@ -1,7 +1,7 @@
 package nrt
 
-// ExternalMemberDTO 
-type ExternalMemberDTO struct {
+// ExternalMemberDto 
+type ExternalMemberDto struct {
     // 业态编号
     BusiTypeId   string `json:"busi_type_id,omitempty" xml:"busi_type_id,omitempty"`
     // 淘宝昵称 关注过品牌号的会员，有淘宝昵称

@@ -1,7 +1,7 @@
 package scbp
 
-// SingleAdKeywordEffectDTO 
-type SingleAdKeywordEffectDTO struct {
+// SingleAdKeywordEffectDto 
+type SingleAdKeywordEffectDto struct {
     // 关键词
     Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     // 曝光

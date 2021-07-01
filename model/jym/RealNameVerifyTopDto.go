@@ -1,7 +1,7 @@
 package jym
 
-// RealNameVerifyTopDTO 
-type RealNameVerifyTopDTO struct {
+// RealNameVerifyTopDto 
+type RealNameVerifyTopDto struct {
     // 实名校验结果信息
     VerifyMsg   string `json:"verify_msg,omitempty" xml:"verify_msg,omitempty"`
     // 实名校验结果信息

@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectItemDescribeInfoDTO 
-type PerfectItemDescribeInfoDTO struct {
+// PerfectItemDescribeInfoDto 
+type PerfectItemDescribeInfoDto struct {
     // 详情描述
     Description   string `json:"description,omitempty" xml:"description,omitempty"`
     // 商品图片

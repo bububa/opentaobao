@@ -15,7 +15,7 @@ type TmallCarLeaseItemcarinfoResult struct {
     // 错误提示
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 返回的对象
-    Object   *CarItemInfoDTO `json:"object,omitempty" xml:"object,omitempty"`
+    Object   *CarItemInfoDto `json:"object,omitempty" xml:"object,omitempty"`
     // 成功与否
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

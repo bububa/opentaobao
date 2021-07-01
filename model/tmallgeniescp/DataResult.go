@@ -9,7 +9,7 @@ type DataResult struct {
     // 结果code
     ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 数据对象列表
-    DataList   []IbpChannelDTO `json:"data_list,omitempty" xml:"data_list>ibp_channel_dto,omitempty"`
+    DataList   []IbpChannelDto `json:"data_list,omitempty" xml:"data_list>ibp_channel_dto,omitempty"`
     // 参数msg
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 参数code

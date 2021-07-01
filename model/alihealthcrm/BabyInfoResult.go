@@ -7,5 +7,5 @@ type BabyInfoResult struct {
     // 操作说明
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 宝宝基本信息
-    Model   *BabyBaseInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *BabyBaseInfoDto `json:"model,omitempty" xml:"model,omitempty"`
 }

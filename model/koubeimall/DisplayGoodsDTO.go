@@ -1,7 +1,7 @@
 package koubeimall
 
-// DisplayGoodsDTO 
-type DisplayGoodsDTO struct {
+// DisplayGoodsDto 
+type DisplayGoodsDto struct {
     // 是否有图模式。true：有图，false：无图
     HasPicture   bool `json:"has_picture,omitempty" xml:"has_picture,omitempty"`
     // 推荐菜数量

@@ -1,7 +1,7 @@
 package aedropshiper
 
-// PlaceOrderRes4OpenApiDTO 
-type PlaceOrderRes4OpenApiDTO struct {
+// PlaceOrderRes4OpenApiDto 
+type PlaceOrderRes4OpenApiDto struct {
     // errorCode
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // errorMsg

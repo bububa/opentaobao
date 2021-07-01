@@ -1,7 +1,7 @@
 package scbp
 
-// TopP4pModifyQuickCampaignTagDTO 
-type TopP4pModifyQuickCampaignTagDTO struct {
+// TopP4pModifyQuickCampaignTagDto 
+type TopP4pModifyQuickCampaignTagDto struct {
     // 操作类型，1=修改定向溢价，2=创建定向标签，3=删除定向标签
     Action   int64 `json:"action,omitempty" xml:"action,omitempty"`
     // 定向溢价比例，(100,400]，新增/修改有效

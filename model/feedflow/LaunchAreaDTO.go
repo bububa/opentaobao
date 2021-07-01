@@ -1,7 +1,7 @@
 package feedflow
 
-// LaunchAreaDTO 
-type LaunchAreaDTO struct {
+// LaunchAreaDto 
+type LaunchAreaDto struct {
     // 地址code
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // 地址名称

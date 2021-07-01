@@ -1,7 +1,7 @@
 package alitripreceipt
 
-// ReceiptDO 
-type ReceiptDO struct {
+// ReceiptDo 
+type ReceiptDo struct {
     // 发票金额，单位分
     ReceiptAmount   int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
     // 错误码

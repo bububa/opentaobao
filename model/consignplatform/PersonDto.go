@@ -1,7 +1,7 @@
 package consignplatform
 
-// PersonDTO 
-type PersonDTO struct {
+// PersonDto 
+type PersonDto struct {
     // 收件固定电话
     Phone   string `json:"phone,omitempty" xml:"phone,omitempty"`
     // 收件电话

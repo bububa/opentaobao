@@ -13,5 +13,5 @@ type TaobaoAlitripAxinTransPayImgUploadResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回素材id
-    Data   *AxinPayImgUploadResDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinPayImgUploadResDto `json:"data,omitempty" xml:"data,omitempty"`
 }

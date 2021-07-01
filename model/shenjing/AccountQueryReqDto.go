@@ -1,7 +1,7 @@
 package shenjing
 
-// AccountQueryReqDTO 
-type AccountQueryReqDTO struct {
+// AccountQueryReqDto 
+type AccountQueryReqDto struct {
     // 当前页码
     PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
     // 每一页的条数

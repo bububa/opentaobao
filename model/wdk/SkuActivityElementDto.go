@@ -1,11 +1,11 @@
 package wdk
 
-// SkuActivityElementDTO 
-type SkuActivityElementDTO struct {
+// SkuActivityElementDto 
+type SkuActivityElementDto struct {
     // 商品编码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 限购配置信息
-    Limit   *LimitDTO `json:"limit,omitempty" xml:"limit,omitempty"`
+    Limit   *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
     // 赠品编码，不填默认赠品为商品本身
     GiftSkuCode   string `json:"gift_sku_code,omitempty" xml:"gift_sku_code,omitempty"`
     // 买N赠M的M参数，赠多少件赠品（目前仅支持买N赠1，giftNum默认为1）

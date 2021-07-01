@@ -24,7 +24,7 @@ type RoomTypeInfo struct {
     // 全景房
     Panoramas   []Panorama `json:"panoramas,omitempty" xml:"panoramas>panorama,omitempty"`
     // 图片信息
-    PicUrls   *PicStringArrayDO `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
+    PicUrls   *PicStringArrayDo `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
     // 最低价
     Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
     // 房型设施

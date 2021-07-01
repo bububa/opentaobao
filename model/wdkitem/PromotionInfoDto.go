@@ -1,7 +1,7 @@
 package wdkitem
 
-// PromotionInfoDTO 
-type PromotionInfoDTO struct {
+// PromotionInfoDto 
+type PromotionInfoDto struct {
     // 展示文案
     DisplayText   string `json:"display_text,omitempty" xml:"display_text,omitempty"`
     // 优惠类型, 0:减钱,1:打折,2:一口价,3:组合优惠

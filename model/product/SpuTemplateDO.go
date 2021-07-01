@@ -1,7 +1,7 @@
 package product
 
-// SpuTemplateDO 
-type SpuTemplateDO struct {
+// SpuTemplateDo 
+type SpuTemplateDo struct {
     // 产品关键属性，内容为属性ID(PID)的列表，注意关键属性可以在类目上不存在。不存在的PID，默认为输入，没有子属性。属性名称在prop_name_str中取
     KeyProperties   []int64 `json:"key_properties,omitempty" xml:"key_properties>int64,omitempty"`
     // 产品绑定属性，内容为属性ID(PID)的列表,绑定属性肯定在类目上有，对应属性的类目特征，子属性请根据PID到类目上去取

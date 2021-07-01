@@ -1,7 +1,7 @@
 package xhotelitem
 
-// BnbLocationDTO 
-type BnbLocationDTO struct {
+// BnbLocationDto 
+type BnbLocationDto struct {
     // 时区0到+11或者0到-11
     Timezone   string `json:"timezone,omitempty" xml:"timezone,omitempty"`
     // 国别 0:国内;1:国外。默认是国内

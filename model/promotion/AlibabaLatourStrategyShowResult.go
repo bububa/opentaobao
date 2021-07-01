@@ -5,7 +5,7 @@ type AlibabaLatourStrategyShowResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回结果
-    Data   *StrategyShowResultDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *StrategyShowResultDto `json:"data,omitempty" xml:"data,omitempty"`
     // 错误描述
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 错误码

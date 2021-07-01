@@ -23,5 +23,5 @@ type AlibabaScbpAdKeywordStatusBatchupdateResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 修改失败关键词列表
-    KeywordErrorResultList   []KeywordErrorResultDTO `json:"keyword_error_result_list,omitempty" xml:"keyword_error_result_list>keyword_error_result_dto,omitempty"`
+    KeywordErrorResultList   []KeywordErrorResultDto `json:"keyword_error_result_list,omitempty" xml:"keyword_error_result_list>keyword_error_result_dto,omitempty"`
 }

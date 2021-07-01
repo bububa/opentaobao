@@ -1,7 +1,7 @@
 package util
 
-// RefundCheckDTO 
-type RefundCheckDTO struct {
+// RefundCheckDto 
+type RefundCheckDto struct {
     // 退款单ID
     RefundId   int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
     // 主订单ID

@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// IbpMaterielDTO 
-type IbpMaterielDTO struct {
+// IbpMaterielDto 
+type IbpMaterielDto struct {
     // 层级的code
     Level6   string `json:"level6,omitempty" xml:"level6,omitempty"`
     // 层级的code

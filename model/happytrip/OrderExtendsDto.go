@@ -1,7 +1,7 @@
 package happytrip
 
-// OrderExtendsDTO 
-type OrderExtendsDTO struct {
+// OrderExtendsDto 
+type OrderExtendsDto struct {
     // 供应商拒绝原因
     AgentFail   string `json:"agent_fail,omitempty" xml:"agent_fail,omitempty"`
     // 买家拒绝原因

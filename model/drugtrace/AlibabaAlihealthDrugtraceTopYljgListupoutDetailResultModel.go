@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel 
 type AlibabaAlihealthDrugtraceTopYljgListupoutDetailResultModel struct {
     // 最外层对象
-    Model   *BillUpOutDetailDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *BillUpOutDetailDto `json:"model,omitempty" xml:"model,omitempty"`
     // 提示信息编码
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 提示信息内容

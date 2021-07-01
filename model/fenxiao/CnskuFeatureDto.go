@@ -1,7 +1,7 @@
 package fenxiao
 
-// CnskuFeatureDTO 
-type CnskuFeatureDTO struct {
+// CnskuFeatureDto 
+type CnskuFeatureDto struct {
     // 是否启用序列号（sn）管理
     IsSnMgt   bool `json:"is_sn_mgt,omitempty" xml:"is_sn_mgt,omitempty"`
     // SN管理模式

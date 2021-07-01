@@ -1,7 +1,7 @@
 package omniorder
 
-// ReceiverDTO 
-type ReceiverDTO struct {
+// ReceiverDto 
+type ReceiverDto struct {
     // 收件人详细地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 城市

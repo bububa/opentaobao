@@ -1,7 +1,7 @@
 package aliexpresssumaitong
 
-// PlatformParameterDTO 
-type PlatformParameterDTO struct {
+// PlatformParameterDto 
+type PlatformParameterDto struct {
     // 发货人/平台公司名称
     CompanyName   string `json:"company_name,omitempty" xml:"company_name,omitempty"`
     // 发货人/平台联系人姓名

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenCostCenterSetEntityRS 
-type OpenCostCenterSetEntityRS struct {
+// OpenCostCenterSetEntityRs 
+type OpenCostCenterSetEntityRs struct {
     // 增加的人员信息条数
     AddNum   int64 `json:"add_num,omitempty" xml:"add_num,omitempty"`
     // 删除的人员信息条数

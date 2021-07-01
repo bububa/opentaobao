@@ -1,7 +1,7 @@
 package lstpos
 
-// CashierPayDetailDTO 
-type CashierPayDetailDTO struct {
+// CashierPayDetailDto 
+type CashierPayDetailDto struct {
     // 备注信息
     DescInfo   string `json:"desc_info,omitempty" xml:"desc_info,omitempty"`
     // 买家支付/退款账号Id 若payType=alipay ,需要传递 买家的支付宝用户id；其它支付方式可不传

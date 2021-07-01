@@ -1,7 +1,7 @@
 package fenxiao
 
-// FeatureDO 
-type FeatureDO struct {
+// FeatureDo 
+type FeatureDo struct {
     // 属性键
     AttrKey   string `json:"attr_key,omitempty" xml:"attr_key,omitempty"`
     // 属性值

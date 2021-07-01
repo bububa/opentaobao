@@ -1,7 +1,7 @@
 package nazca
 
-// AuthApplyDoneCallBackDO 
-type AuthApplyDoneCallBackDO struct {
+// AuthApplyDoneCallBackDo 
+type AuthApplyDoneCallBackDo struct {
     // 身份证
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 支付宝账号

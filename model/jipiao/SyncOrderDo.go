@@ -1,7 +1,7 @@
 package jipiao
 
-// SyncOrderDO 
-type SyncOrderDO struct {
+// SyncOrderDo 
+type SyncOrderDo struct {
     // 申请单id
     ApplyId   int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 改签后的舱位

@@ -1,7 +1,7 @@
 package cainiaoecc
 
-// DelayExceptionCountDTO 
-type DelayExceptionCountDTO struct {
+// DelayExceptionCountDto 
+type DelayExceptionCountDto struct {
     // 异常总数
     ExceptionNum   int64 `json:"exception_num,omitempty" xml:"exception_num,omitempty"`
     // 商家Id

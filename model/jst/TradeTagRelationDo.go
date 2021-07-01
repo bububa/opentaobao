@@ -1,7 +1,7 @@
 package jst
 
-// TradeTagRelationDO 
-type TradeTagRelationDO struct {
+// TradeTagRelationDo 
+type TradeTagRelationDo struct {
     // 记录的最新修改时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 标签类型       1：官方标签      2：自定义标签     3：主站只读标签
@@ -17,5 +17,5 @@ type TradeTagRelationDO struct {
     // 该标签在消费者端是否显示,0:不显示,1：显示
     Visible   int64 `json:"visible,omitempty" xml:"visible,omitempty"`
     // 该标签操作的历史记录
-    HistoryTradeTagRelations   []HistoryTradeRelationDO `json:"history_trade_tag_relations,omitempty" xml:"history_trade_tag_relations>history_trade_relation_do,omitempty"`
+    HistoryTradeTagRelations   []HistoryTradeRelationDo `json:"history_trade_tag_relations,omitempty" xml:"history_trade_tag_relations>history_trade_relation_do,omitempty"`
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// ChannelSkuQueryDO 
-type ChannelSkuQueryDO struct {
+// ChannelSkuQueryDo 
+type ChannelSkuQueryDo struct {
     // skucode集合
     SkuCodes   []string `json:"sku_codes,omitempty" xml:"sku_codes>string,omitempty"`
     // 门店或DC编码

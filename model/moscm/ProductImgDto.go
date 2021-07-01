@@ -1,7 +1,7 @@
 package moscm
 
-// ProductImgDTO 
-type ProductImgDTO struct {
+// ProductImgDto 
+type ProductImgDto struct {
     // 图片ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 排序

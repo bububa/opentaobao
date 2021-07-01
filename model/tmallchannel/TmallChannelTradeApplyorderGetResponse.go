@@ -43,5 +43,5 @@ type TmallChannelTradeApplyorderGetResponse struct {
     // 解析详情
     Schema   string `json:"schema,omitempty" xml:"schema,omitempty"`
     // 申请单详情
-    ApplyOrderDetail   *TopChannelApplyOrderDetailDTO `json:"apply_order_detail,omitempty" xml:"apply_order_detail,omitempty"`
+    ApplyOrderDetail   *TopChannelApplyOrderDetailDto `json:"apply_order_detail,omitempty" xml:"apply_order_detail,omitempty"`
 }

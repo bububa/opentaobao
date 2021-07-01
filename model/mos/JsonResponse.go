@@ -3,7 +3,7 @@ package mos
 // JsonResponse 
 type JsonResponse struct {
     // 返回dto
-    Data   *SupplierBasisInfoDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *SupplierBasisInfoDto `json:"data,omitempty" xml:"data,omitempty"`
     // 报错code
     ErrCode   int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 报错信息

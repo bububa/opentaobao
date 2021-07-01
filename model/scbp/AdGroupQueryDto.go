@@ -1,7 +1,7 @@
 package scbp
 
-// AdGroupQueryDTO 
-type AdGroupQueryDTO struct {
+// AdGroupQueryDto 
+type AdGroupQueryDto struct {
     // adgroup上下线状态
     AdgroupOnlineStatus   int64 `json:"adgroup_online_status,omitempty" xml:"adgroup_online_status,omitempty"`
     // FEED上下线状态

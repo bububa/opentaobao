@@ -1,7 +1,7 @@
 package btrip
 
-// RoomTypeDTO 
-type RoomTypeDTO struct {
+// RoomTypeDto 
+type RoomTypeDto struct {
     // 面积
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 床型

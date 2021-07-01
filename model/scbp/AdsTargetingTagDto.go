@@ -1,7 +1,7 @@
 package scbp
 
-// AdsTargetingTagDTO 
-type AdsTargetingTagDTO struct {
+// AdsTargetingTagDto 
+type AdsTargetingTagDto struct {
     // 定向标签id
     TagId   int64 `json:"tag_id,omitempty" xml:"tag_id,omitempty"`
     // 计划id
@@ -13,7 +13,7 @@ type AdsTargetingTagDTO struct {
     // 人群名称
     CrowdName   string `json:"crowd_name,omitempty" xml:"crowd_name,omitempty"`
     // 效果数据
-    Effect   *AdsEffectDTO `json:"effect,omitempty" xml:"effect,omitempty"`
+    Effect   *AdsEffectDto `json:"effect,omitempty" xml:"effect,omitempty"`
     // 出价类型：0=出价, 1=溢价，2=过滤, 3=召回
     PriceMode   int64 `json:"price_mode,omitempty" xml:"price_mode,omitempty"`
     // 产品线id

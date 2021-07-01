@@ -1,7 +1,7 @@
 package mos
 
-// BunkSimpleDTO 
-type BunkSimpleDTO struct {
+// BunkSimpleDto 
+type BunkSimpleDto struct {
     // 门店号
     StoreNo   string `json:"store_no,omitempty" xml:"store_no,omitempty"`
     // 铺位面积

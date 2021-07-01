@@ -1,7 +1,7 @@
 package feedflow
 
-// CrowdDTO 
-type CrowdDTO struct {
+// CrowdDto 
+type CrowdDto struct {
     // 人群描述
     CrowdDesc   string `json:"crowd_desc,omitempty" xml:"crowd_desc,omitempty"`
     // 人群名称
@@ -9,7 +9,7 @@ type CrowdDTO struct {
     // 人群出价，单位：分
     Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
     // 定向
-    TargetLabel   *LabelDTO `json:"target_label,omitempty" xml:"target_label,omitempty"`
+    TargetLabel   *LabelDto `json:"target_label,omitempty" xml:"target_label,omitempty"`
     // 人群平均出价，单位：分
     AveragePrice   int64 `json:"average_price,omitempty" xml:"average_price,omitempty"`
     // 人群建议出价，单位：分

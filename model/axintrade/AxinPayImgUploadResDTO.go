@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinPayImgUploadResDTO 
-type AxinPayImgUploadResDTO struct {
+// AxinPayImgUploadResDto 
+type AxinPayImgUploadResDto struct {
     // 图片id
     ImgId   string `json:"img_id,omitempty" xml:"img_id,omitempty"`
 }

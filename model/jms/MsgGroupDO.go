@@ -1,7 +1,7 @@
 package jms
 
-// MsgGroupDO 
-type MsgGroupDO struct {
+// MsgGroupDo 
+type MsgGroupDo struct {
     // 123
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
 }

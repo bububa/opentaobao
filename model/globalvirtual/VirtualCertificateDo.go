@@ -1,7 +1,7 @@
 package globalvirtual
 
-// VirtualCertificateDO 
-type VirtualCertificateDO struct {
+// VirtualCertificateDo 
+type VirtualCertificateDo struct {
     // modified time
     GmtModified   int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // provide download file

@@ -9,7 +9,7 @@ type PrescriptionMoreDataResponse struct {
     // 费用类别
     FeeType   string `json:"fee_type,omitempty" xml:"fee_type,omitempty"`
     // 药品列表
-    DrugList   []DrugDTO `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
+    DrugList   []DrugDto `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
     // 创建时间
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // 处方类型

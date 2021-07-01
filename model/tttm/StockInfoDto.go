@@ -1,9 +1,9 @@
 package tttm
 
-// StockInfoDTO 
-type StockInfoDTO struct {
+// StockInfoDto 
+type StockInfoDto struct {
     // 工厂仓
-    FactoryDepot   []ProductInfoDTO `json:"factory_depot,omitempty" xml:"factory_depot>product_info_dto,omitempty"`
+    FactoryDepot   []ProductInfoDto `json:"factory_depot,omitempty" xml:"factory_depot>product_info_dto,omitempty"`
     // 电商仓
-    ShopDepot   []ProductInfoDTO `json:"shop_depot,omitempty" xml:"shop_depot>product_info_dto,omitempty"`
+    ShopDepot   []ProductInfoDto `json:"shop_depot,omitempty" xml:"shop_depot>product_info_dto,omitempty"`
 }

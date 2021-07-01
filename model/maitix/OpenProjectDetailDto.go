@@ -1,7 +1,7 @@
 package maitix
 
-// OpenProjectDetailDTO 
-type OpenProjectDetailDTO struct {
+// OpenProjectDetailDto 
+type OpenProjectDetailDto struct {
     // 项目id
     ProjectId   int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
     // 项目名称

@@ -1,27 +1,15 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-出库单创建接口 API返回值 
-taobao.qimen.stockout.create
-
-ERP调用奇门接口，创建出库单信息
-*/
-type TaobaoQimenStockoutCreateAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenStockoutCreateResponse
-}
-
-// 出库单创建接口 成功返回结果
+// TaobaoQimenStockoutCreateResponse 
 type TaobaoQimenStockoutCreateResponse struct {
-    XMLName xml.Name `xml:"qimen_stockout_create_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // 响应结果:success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 订单创建时间(YYYY-MM-DD HH:MM:SS)
+    CreateTime   string `json:"createTime,omitempty" xml:"createTime,omitempty"`
+    // 出库单仓储系统编码
+    DeliveryOrderId   string `json:"deliveryOrderId,omitempty" xml:"deliveryOrderId,omitempty"`
 }

@@ -7,7 +7,7 @@ type TaobaoWdkEquipmentConveyorConveyorinfoGetResult struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // model
-    Model   *WcsConveyorInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *WcsConveyorInfoDto `json:"model,omitempty" xml:"model,omitempty"`
     // errorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

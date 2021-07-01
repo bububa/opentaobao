@@ -1,7 +1,7 @@
 package crm
 
-// ExchangeActivityCreateDTO 
-type ExchangeActivityCreateDTO struct {
+// ExchangeActivityCreateDto 
+type ExchangeActivityCreateDto struct {
     // 不包邮地区
     ExcludeArea   string `json:"exclude_area,omitempty" xml:"exclude_area,omitempty"`
     // 活动结束时间

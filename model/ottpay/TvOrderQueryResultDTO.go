@@ -1,7 +1,7 @@
 package ottpay
 
-// TvOrderQueryResultDTO 
-type TvOrderQueryResultDTO struct {
+// TvOrderQueryResultDto 
+type TvOrderQueryResultDto struct {
     // cpOrderNo
     CpOrderNo   string `json:"cp_order_no,omitempty" xml:"cp_order_no,omitempty"`
     // orderNo

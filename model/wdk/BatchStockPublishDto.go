@@ -1,7 +1,7 @@
 package wdk
 
-// BatchStockPublishDTO 
-type BatchStockPublishDTO struct {
+// BatchStockPublishDto 
+type BatchStockPublishDto struct {
     // 更新类型，全量1，增量2
     UpdateType   int64 `json:"update_type,omitempty" xml:"update_type,omitempty"`
     // 外部单据号(幂等)，理解为一次请求提交
@@ -21,7 +21,7 @@ type BatchStockPublishDTO struct {
     // 渠道店类型（废弃）
     ChannelSourceType   int64 `json:"channel_source_type,omitempty" xml:"channel_source_type,omitempty"`
     // 子参数列表
-    StockPublishDtos   []StockPublishDTO `json:"stock_publish_dtos,omitempty" xml:"stock_publish_dtos>stock_publish_dto,omitempty"`
+    StockPublishDtos   []StockPublishDto `json:"stock_publish_dtos,omitempty" xml:"stock_publish_dtos>stock_publish_dto,omitempty"`
     // 是否已扣除未批次数，用于全量发布
     UnBatchedOrderStockSubtracted   bool `json:"un_batched_order_stock_subtracted,omitempty" xml:"un_batched_order_stock_subtracted,omitempty"`
 }

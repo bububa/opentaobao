@@ -1,7 +1,7 @@
 package tbk
 
-// TopNInfoDTO 
-type TopNInfoDTO struct {
+// TopNInfoDto 
+type TopNInfoDto struct {
     // 前N件剩余库存
     TopnQuantity   int64 `json:"topn_quantity,omitempty" xml:"topn_quantity,omitempty"`
     // 前N件初始总库存

@@ -1,27 +1,13 @@
 package aecreatives
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-图搜 API返回值 
-aliexpress.affiliate.image.search
-
-图片搜索接口
-*/
-type AliexpressAffiliateImageSearchAPIResponse struct {
-    model.CommonResponse
-    AliexpressAffiliateImageSearchResponse
-}
-
-// 图搜 成功返回结果
+// AliexpressAffiliateImageSearchResponse 
 type AliexpressAffiliateImageSearchResponse struct {
-    XMLName xml.Name `xml:"aliexpress_affiliate_image_search_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
+    // 返回结果状态码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 图搜结果
+    Data   *TrafficImageSearchResultDto `json:"data,omitempty" xml:"data,omitempty"`
     // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 是否成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

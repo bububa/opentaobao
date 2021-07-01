@@ -1,9 +1,9 @@
 package homeai
 
-// FeatureWallDTO 
-type FeatureWallDTO struct {
+// FeatureWallDto 
+type FeatureWallDto struct {
     // 包围盒
-    BoundingBox   *BoundingBoxDTO `json:"bounding_box,omitempty" xml:"bounding_box,omitempty"`
+    BoundingBox   *BoundingBoxDto `json:"bounding_box,omitempty" xml:"bounding_box,omitempty"`
     // 方向四元数
     Fronts   []string `json:"fronts,omitempty" xml:"fronts>string,omitempty"`
     // 坐标

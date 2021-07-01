@@ -1,7 +1,7 @@
 package icburfq
 
-// BuyRequestSearchDetailRemoteDTO 
-type BuyRequestSearchDetailRemoteDTO struct {
+// BuyRequestSearchDetailRemoteDto 
+type BuyRequestSearchDetailRemoteDto struct {
     // 语种
     LangSrc   string `json:"lang_src,omitempty" xml:"lang_src,omitempty"`
     // 供应商国家

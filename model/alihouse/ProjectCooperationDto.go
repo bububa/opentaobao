@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectCooperationDTO 
-type ProjectCooperationDTO struct {
+// ProjectCooperationDto 
+type ProjectCooperationDto struct {
     // 合作开始时间
     CooperationEndTime   string `json:"cooperation_end_time,omitempty" xml:"cooperation_end_time,omitempty"`
     // 合作结束时间

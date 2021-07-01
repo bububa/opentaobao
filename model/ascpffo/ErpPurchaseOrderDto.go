@@ -1,7 +1,7 @@
 package ascpffo
 
-// ErpPurchaseOrderDTO 
-type ErpPurchaseOrderDTO struct {
+// ErpPurchaseOrderDto 
+type ErpPurchaseOrderDto struct {
     // 入库完结时间
     ActualInboundTime   int64 `json:"actual_inbound_time,omitempty" xml:"actual_inbound_time,omitempty"`
     // 预约单号

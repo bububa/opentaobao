@@ -1,7 +1,7 @@
 package tvpay
 
-// GetLoginInfoByOrderResultDO 
-type GetLoginInfoByOrderResultDO struct {
+// GetLoginInfoByOrderResultDo 
+type GetLoginInfoByOrderResultDo struct {
     // 登陆信息，json
     AccessData   string `json:"access_data,omitempty" xml:"access_data,omitempty"`
     // 是否有登陆信息

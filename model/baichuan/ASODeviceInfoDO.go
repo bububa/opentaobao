@@ -1,7 +1,7 @@
 package baichuan
 
-// AsoDeviceInfoDO 
-type AsoDeviceInfoDO struct {
+// AsoDeviceInfoDo 
+type AsoDeviceInfoDo struct {
     // imei
     Imei   string `json:"imei,omitempty" xml:"imei,omitempty"`
     // imsi

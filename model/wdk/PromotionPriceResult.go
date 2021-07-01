@@ -11,7 +11,7 @@ type PromotionPriceResult struct {
     // 总数量
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 促销信息记录
-    ItemList   []PromotionPriceDO `json:"item_list,omitempty" xml:"item_list>promotion_price_do,omitempty"`
+    ItemList   []PromotionPriceDo `json:"item_list,omitempty" xml:"item_list>promotion_price_do,omitempty"`
     // 错误编码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误信息

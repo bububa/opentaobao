@@ -1,7 +1,7 @@
 package alilabs
 
-// DeviceStatusDTO 
-type DeviceStatusDTO struct {
+// DeviceStatusDto 
+type DeviceStatusDto struct {
     // payload
     Payload   *Payload `json:"payload,omitempty" xml:"payload,omitempty"`
     // header

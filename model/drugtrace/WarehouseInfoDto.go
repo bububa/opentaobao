@@ -1,7 +1,7 @@
 package drugtrace
 
-// WarehouseInfoDTO 
-type WarehouseInfoDTO struct {
+// WarehouseInfoDto 
+type WarehouseInfoDto struct {
     // 仓库位置
     WarehouseLocation   string `json:"warehouse_location,omitempty" xml:"warehouse_location,omitempty"`
     // 入库日期yyyy-MM-dd

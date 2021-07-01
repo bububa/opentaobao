@@ -1,7 +1,7 @@
 package drug
 
-// StoreDTO 
-type StoreDTO struct {
+// StoreDto 
+type StoreDto struct {
     // shopId
     ShopId   string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
     // storeId

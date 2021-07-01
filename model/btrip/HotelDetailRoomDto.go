@@ -1,7 +1,7 @@
 package btrip
 
-// HotelDetailRoomDTO 
-type HotelDetailRoomDTO struct {
+// HotelDetailRoomDto 
+type HotelDetailRoomDto struct {
     // 面积
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 床型
@@ -19,7 +19,7 @@ type HotelDetailRoomDTO struct {
     // 图片
     Pics   string `json:"pics,omitempty" xml:"pics,omitempty"`
     // 详情报价列表
-    Rates   []HotelDetailRateDTO `json:"rates,omitempty" xml:"rates>hotel_detail_rate_dto,omitempty"`
+    Rates   []HotelDetailRateDto `json:"rates,omitempty" xml:"rates>hotel_detail_rate_dto,omitempty"`
     // 房型ID
     Srid   int64 `json:"srid,omitempty" xml:"srid,omitempty"`
     // 状态，状态0:正常;-1:删除

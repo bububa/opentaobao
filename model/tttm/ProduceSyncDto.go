@@ -1,7 +1,7 @@
 package tttm
 
-// ProduceSyncDTO 
-type ProduceSyncDTO struct {
+// ProduceSyncDto 
+type ProduceSyncDto struct {
     // 顺序
     LinkSort   int64 `json:"link_sort,omitempty" xml:"link_sort,omitempty"`
     // 生产节点

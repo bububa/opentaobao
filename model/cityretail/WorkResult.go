@@ -5,7 +5,7 @@ type WorkResult struct {
     // 错误码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 请求结果数据
-    Data   *ChangeOrderResponseDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *ChangeOrderResponseDto `json:"data,omitempty" xml:"data,omitempty"`
     // 标示服务成功/失败
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误信息
@@ -13,7 +13,7 @@ type WorkResult struct {
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 返回数据对象
-    ResultData   *OrderLogisticsResponseDTO `json:"result_data,omitempty" xml:"result_data,omitempty"`
+    ResultData   *OrderLogisticsResponseDto `json:"result_data,omitempty" xml:"result_data,omitempty"`
     // 是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 错误信息

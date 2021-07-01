@@ -23,7 +23,7 @@ type TaobaoTbkScPublisherInfoGetMapData struct {
     // 共享字段 - 渠道/会员原始身份信息
     Rtag   string `json:"rtag,omitempty" xml:"rtag,omitempty"`
     // 线下备案专属信息
-    OfflineInfo   *RegisterInfoDTO `json:"offline_info,omitempty" xml:"offline_info,omitempty"`
+    OfflineInfo   *RegisterInfoDto `json:"offline_info,omitempty" xml:"offline_info,omitempty"`
     // 会员独有 - 会员运营ID
     SpecialId   int64 `json:"special_id,omitempty" xml:"special_id,omitempty"`
     // 渠道独有 - 处罚状态

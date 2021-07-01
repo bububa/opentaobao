@@ -1,7 +1,7 @@
 package feedflow
 
-// LaunchTimeDTO 
-type LaunchTimeDTO struct {
+// LaunchTimeDto 
+type LaunchTimeDto struct {
     // 是否永远生效
     LaunchForever   bool `json:"launch_forever,omitempty" xml:"launch_forever,omitempty"`
     // 开始时间

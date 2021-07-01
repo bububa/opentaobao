@@ -1,9 +1,9 @@
 package aliexpresssumaitong
 
-// ResponseDTO 
-type ResponseDTO struct {
+// ResponseDto 
+type ResponseDto struct {
     // 数据
-    Data   *HjTaxCalculateResultDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *HjTaxCalculateResultDto `json:"data,omitempty" xml:"data,omitempty"`
     // 错误编码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 成功标记

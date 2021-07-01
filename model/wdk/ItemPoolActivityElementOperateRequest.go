@@ -3,7 +3,7 @@ package wdk
 // ItemPoolActivityElementOperateRequest 
 type ItemPoolActivityElementOperateRequest struct {
     // 商品元素列表
-    SkuElements   []ItemPoolSkuActivityElementDTO `json:"sku_elements,omitempty" xml:"sku_elements>item_pool_sku_activity_element_dto,omitempty"`
+    SkuElements   []ItemPoolSkuActivityElementDto `json:"sku_elements,omitempty" xml:"sku_elements>item_pool_sku_activity_element_dto,omitempty"`
     // 同城零售活动id
     ActId   int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
     // 操作人id

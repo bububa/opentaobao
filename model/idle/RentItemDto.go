@@ -1,9 +1,9 @@
 package idle
 
-// RentItemDTO 
-type RentItemDTO struct {
+// RentItemDto 
+type RentItemDto struct {
     // 地址信息
-    Address   *AddressDTO `json:"address,omitempty" xml:"address,omitempty"`
+    Address   *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
     // 类目id
     CatId   int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
     // 至少5个字符
@@ -11,17 +11,17 @@ type RentItemDTO struct {
     // 标签
     FeaturedTags   []string `json:"featured_tags,omitempty" xml:"featured_tags>string,omitempty"`
     // sku
-    ItemSkuList   []ItemSkuDTO `json:"item_sku_list,omitempty" xml:"item_sku_list>item_sku_dto,omitempty"`
+    ItemSkuList   []ItemSkuDto `json:"item_sku_list,omitempty" xml:"item_sku_list>item_sku_dto,omitempty"`
     // 商品图片
-    Media   *MediaDTO `json:"media,omitempty" xml:"media,omitempty"`
+    Media   *MediaDto `json:"media,omitempty" xml:"media,omitempty"`
     // 价格信息
-    PriceInfo   *PriceDTO `json:"price_info,omitempty" xml:"price_info,omitempty"`
+    PriceInfo   *PriceDto `json:"price_info,omitempty" xml:"price_info,omitempty"`
     // 类目属性对
-    PropPairs   []ItemPvPairDTO `json:"prop_pairs,omitempty" xml:"prop_pairs>item_pv_pair_dto,omitempty"`
+    PropPairs   []ItemPvPairDto `json:"prop_pairs,omitempty" xml:"prop_pairs>item_pv_pair_dto,omitempty"`
     // 库存，无sku信息时必选
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 标配信息
-    StandardEquipments   []EquipmentDTO `json:"standard_equipments,omitempty" xml:"standard_equipments>equipment_dto,omitempty"`
+    StandardEquipments   []EquipmentDto `json:"standard_equipments,omitempty" xml:"standard_equipments>equipment_dto,omitempty"`
     // 标题，最少一个5个字符
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 新旧程度，10表示全新，9表示九成新

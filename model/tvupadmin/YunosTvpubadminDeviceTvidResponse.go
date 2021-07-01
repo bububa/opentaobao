@@ -23,5 +23,5 @@ type YunosTvpubadminDeviceTvidResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // object
-    Object   *DeviceInfoDO `json:"object,omitempty" xml:"object,omitempty"`
+    Object   *DeviceInfoDo `json:"object,omitempty" xml:"object,omitempty"`
 }

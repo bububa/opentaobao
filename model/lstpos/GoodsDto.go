@@ -1,7 +1,7 @@
 package lstpos
 
-// GoodsDTO 
-type GoodsDTO struct {
+// GoodsDto 
+type GoodsDto struct {
     // 规格
     Spec   string `json:"spec,omitempty" xml:"spec,omitempty"`
     // 简称

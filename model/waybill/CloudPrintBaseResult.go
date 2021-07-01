@@ -13,5 +13,5 @@ type CloudPrintBaseResult struct {
     // 数据
     Datas   []CustomAreaResult `json:"datas,omitempty" xml:"datas>custom_area_result,omitempty"`
     // data
-    ResourceList   []IsvResourceDO `json:"resource_list,omitempty" xml:"resource_list>isv_resource_do,omitempty"`
+    ResourceList   []IsvResourceDo `json:"resource_list,omitempty" xml:"resource_list>isv_resource_do,omitempty"`
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// CouponQrcodeParamDO 
-type CouponQrcodeParamDO struct {
+// CouponQrcodeParamDo 
+type CouponQrcodeParamDo struct {
     // 导购员ID，需要保证唯一性
     GuideId   string `json:"guide_id,omitempty" xml:"guide_id,omitempty"`
     // 品牌名称

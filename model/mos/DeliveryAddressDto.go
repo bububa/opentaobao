@@ -1,7 +1,7 @@
 package mos
 
-// DeliveryAddressDTO 
-type DeliveryAddressDTO struct {
+// DeliveryAddressDto 
+type DeliveryAddressDto struct {
     // 省
     Province   string `json:"province,omitempty" xml:"province,omitempty"`
     // 市

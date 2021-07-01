@@ -1,7 +1,7 @@
 package aecreatives
 
-// TrafficProductResultDTO 
-type TrafficProductResultDTO struct {
+// TrafficProductResultDto 
+type TrafficProductResultDto struct {
     // 当前返回页数
     CurrentPageNo   int64 `json:"current_page_no,omitempty" xml:"current_page_no,omitempty"`
     // 当前返回数量

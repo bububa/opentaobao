@@ -17,7 +17,7 @@ type PrescriptionVerifyRequest struct {
     // 结算id（必选）
     OutSettlement   string `json:"out_settlement,omitempty" xml:"out_settlement,omitempty"`
     // 药品信息（必选）
-    DrugList   []DrugDTO `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
+    DrugList   []DrugDto `json:"drug_list,omitempty" xml:"drug_list>drug_dto,omitempty"`
     // 核销金额（必选）
     VerificationAmount   string `json:"verification_amount,omitempty" xml:"verification_amount,omitempty"`
 }

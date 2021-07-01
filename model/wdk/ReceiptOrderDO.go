@@ -1,7 +1,7 @@
 package wdk
 
-// ReceiptOrderDO 
-type ReceiptOrderDO struct {
+// ReceiptOrderDo 
+type ReceiptOrderDo struct {
     // 实收金额，单位分
     ActualAmt   int64 `json:"actual_amt,omitempty" xml:"actual_amt,omitempty"`
     // 应收金额
@@ -27,7 +27,7 @@ type ReceiptOrderDO struct {
     // 损溢金额
     OverflowAmt   int64 `json:"overflow_amt,omitempty" xml:"overflow_amt,omitempty"`
     // 支付渠道
-    PayChannels   []ReceiptPayChannelDO `json:"pay_channels,omitempty" xml:"pay_channels>receipt_pay_channel_do,omitempty"`
+    PayChannels   []ReceiptPayChannelDo `json:"pay_channels,omitempty" xml:"pay_channels>receipt_pay_channel_do,omitempty"`
     // 款机号
     PosNo   string `json:"pos_no,omitempty" xml:"pos_no,omitempty"`
     // 流水号
@@ -35,7 +35,7 @@ type ReceiptOrderDO struct {
     // 门店号
     StoreId   string `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 子订单信息
-    SubOrders   []ReceiptSubOrderDO `json:"sub_orders,omitempty" xml:"sub_orders>receipt_sub_order_do,omitempty"`
+    SubOrders   []ReceiptSubOrderDo `json:"sub_orders,omitempty" xml:"sub_orders>receipt_sub_order_do,omitempty"`
     // 成交时间
     TrdTime   string `json:"trd_time,omitempty" xml:"trd_time,omitempty"`
     // 交易类型

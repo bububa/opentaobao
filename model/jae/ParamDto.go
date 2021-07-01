@@ -1,7 +1,7 @@
 package jae
 
-// ParamDTO 
-type ParamDTO struct {
+// ParamDto 
+type ParamDto struct {
     // 业务参数，json格式字符串
     BizParam   string `json:"biz_param,omitempty" xml:"biz_param,omitempty"`
     // 扩展参数

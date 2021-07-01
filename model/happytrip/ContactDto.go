@@ -1,7 +1,7 @@
 package happytrip
 
-// ContactDTO 
-type ContactDTO struct {
+// ContactDto 
+type ContactDto struct {
     // 联系人国家码
     CountryCode   string `json:"country_code,omitempty" xml:"country_code,omitempty"`
     // 是否默认联系人0不是，1是

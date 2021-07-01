@@ -1,7 +1,7 @@
 package wlb
 
-// SingleResultDTO 
-type SingleResultDTO struct {
+// SingleResultDto 
+type SingleResultDto struct {
     // errorCode
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // errorMessage

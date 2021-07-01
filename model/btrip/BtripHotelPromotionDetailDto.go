@@ -1,7 +1,7 @@
 package btrip
 
-// BtripHotelPromotionDetailDTO 
-type BtripHotelPromotionDetailDTO struct {
+// BtripHotelPromotionDetailDto 
+type BtripHotelPromotionDetailDto struct {
     // 优惠项名称
     PromotionName   string `json:"promotion_name,omitempty" xml:"promotion_name,omitempty"`
     // 优惠金额

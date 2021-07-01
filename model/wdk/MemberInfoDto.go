@@ -1,7 +1,7 @@
 package wdk
 
-// MemberInfoDTO 
-type MemberInfoDTO struct {
+// MemberInfoDto 
+type MemberInfoDto struct {
     // 淘宝用户昵称
     Nick   string `json:"nick,omitempty" xml:"nick,omitempty"`
     // 对应淘宝账号的OpenUID

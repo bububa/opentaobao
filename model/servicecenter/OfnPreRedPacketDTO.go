@@ -1,9 +1,9 @@
 package servicecenter
 
-// OfnPreRedPacketDTO 
-type OfnPreRedPacketDTO struct {
+// OfnPreRedPacketDto 
+type OfnPreRedPacketDto struct {
     // 操作列表
-    ActionList   []OfnPreRedPacketActionDTO `json:"action_list,omitempty" xml:"action_list>ofn_pre_red_packet_action_dto,omitempty"`
+    ActionList   []OfnPreRedPacketActionDto `json:"action_list,omitempty" xml:"action_list>ofn_pre_red_packet_action_dto,omitempty"`
     // 活动id
     ActivityId   int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 是否信用单

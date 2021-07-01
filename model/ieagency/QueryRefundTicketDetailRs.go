@@ -1,7 +1,7 @@
 package ieagency
 
-// QueryRefundTicketDetailRS 
-type QueryRefundTicketDetailRS struct {
+// QueryRefundTicketDetailRs 
+type QueryRefundTicketDetailRs struct {
     // ieRefundTicketVO
     RefundTicket   *IeRefundTicketVo `json:"refund_ticket,omitempty" xml:"refund_ticket,omitempty"`
     // apiErrorMsg

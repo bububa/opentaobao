@@ -1,7 +1,7 @@
 package bill
 
-// TopAccountDTO 
-type TopAccountDTO struct {
+// TopAccountDto 
+type TopAccountDto struct {
     // 是否订单相关:0-订单无关 1-订单相关
     RelatedOrder   int64 `json:"related_order,omitempty" xml:"related_order,omitempty"`
     // 创建时间

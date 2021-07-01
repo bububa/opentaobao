@@ -1,7 +1,7 @@
 package retail
 
-// ElectronicCertificateDTO 
-type ElectronicCertificateDTO struct {
+// ElectronicCertificateDto 
+type ElectronicCertificateDto struct {
     // itemId
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 }

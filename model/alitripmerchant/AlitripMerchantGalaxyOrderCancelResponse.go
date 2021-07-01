@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-星河-取消预订 API返回值 
-alitrip.merchant.galaxy.order.cancel
-
-雅高酒店用户使用该接口，取消酒店预订
-*/
-type AlitripMerchantGalaxyOrderCancelAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyOrderCancelResponse
-}
-
-// 星河-取消预订 成功返回结果
+// AlitripMerchantGalaxyOrderCancelResponse 
 type AlitripMerchantGalaxyOrderCancelResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_order_cancel_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 结果成功判断
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误代码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 结果描述
+    Content   string `json:"content,omitempty" xml:"content,omitempty"`
+    // 错误信息
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

@@ -1,7 +1,7 @@
 package pur
 
-// AccessProductDTO 
-type AccessProductDTO struct {
+// AccessProductDto 
+type AccessProductDto struct {
     // 分类名称
     SourceCategoryName   string `json:"source_category_name,omitempty" xml:"source_category_name,omitempty"`
     // 租户
@@ -45,7 +45,7 @@ type AccessProductDTO struct {
     // 外部分类
     SourceCategoryId   int64 `json:"source_category_id,omitempty" xml:"source_category_id,omitempty"`
     // 产品属性
-    ProductAttrValueList   []AccessProductAttrValueDTO `json:"product_attr_value_list,omitempty" xml:"product_attr_value_list>access_product_attr_value_dto,omitempty"`
+    ProductAttrValueList   []AccessProductAttrValueDto `json:"product_attr_value_list,omitempty" xml:"product_attr_value_list>access_product_attr_value_dto,omitempty"`
     // 前台类目
     FrontCategoryId   int64 `json:"front_category_id,omitempty" xml:"front_category_id,omitempty"`
     // 产品名称

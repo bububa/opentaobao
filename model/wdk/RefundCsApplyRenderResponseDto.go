@@ -1,7 +1,7 @@
 package wdk
 
-// RefundCsApplyRenderResponseDTO 
-type RefundCsApplyRenderResponseDTO struct {
+// RefundCsApplyRenderResponseDto 
+type RefundCsApplyRenderResponseDto struct {
     // 商家经营店ID
     StoreId   string `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 渠道主订单ID

@@ -1,7 +1,7 @@
 package mos
 
-// CancelBillDTO 
-type CancelBillDTO struct {
+// CancelBillDto 
+type CancelBillDto struct {
     // 取消备注
     CancelComments   string `json:"cancel_comments,omitempty" xml:"cancel_comments,omitempty"`
     // 结算行集合

@@ -23,5 +23,5 @@ type TmallMcDeviceCircleCheckResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 设备相关投放计划
-    Results   []TaskDTO `json:"results,omitempty" xml:"results>task_dto,omitempty"`
+    Results   []TaskDto `json:"results,omitempty" xml:"results>task_dto,omitempty"`
 }

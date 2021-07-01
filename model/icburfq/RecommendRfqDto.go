@@ -1,7 +1,7 @@
 package icburfq
 
-// RecommendRfqDTO 
-type RecommendRfqDTO struct {
+// RecommendRfqDto 
+type RecommendRfqDto struct {
     // 国家全称
     Country   string `json:"country,omitempty" xml:"country,omitempty"`
     // 国家简称

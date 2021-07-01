@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// LTMopMqpDTO 
-type LTMopMqpDTO struct {
+// LTMopMqpDto 
+type LTMopMqpDto struct {
     // 物料编码
     MaterielCode   string `json:"materiel_code,omitempty" xml:"materiel_code,omitempty"`
     // 扩展字段

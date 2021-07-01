@@ -1,7 +1,7 @@
 package alihouse
 
-// BaseLoopLineDTO 
-type BaseLoopLineDTO struct {
+// BaseLoopLineDto 
+type BaseLoopLineDto struct {
     // 环线名称
     LoopLineName   string `json:"loop_line_name,omitempty" xml:"loop_line_name,omitempty"`
     // 环线电子围栏

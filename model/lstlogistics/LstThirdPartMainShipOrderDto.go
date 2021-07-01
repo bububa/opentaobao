@@ -1,9 +1,9 @@
 package lstlogistics
 
-// LstThirdPartMainShipOrderDTO 
-type LstThirdPartMainShipOrderDTO struct {
+// LstThirdPartMainShipOrderDto 
+type LstThirdPartMainShipOrderDto struct {
     // 货品列表
-    Details   []LstThirdPartDetailShipOrderDTO `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_dto,omitempty"`
+    Details   []LstThirdPartDetailShipOrderDto `json:"details,omitempty" xml:"details>lst_third_part_detail_ship_order_dto,omitempty"`
     // 签收时间
     SignTime   string `json:"sign_time,omitempty" xml:"sign_time,omitempty"`
     // 订单

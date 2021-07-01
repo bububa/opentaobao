@@ -1,7 +1,7 @@
 package icburfq
 
-// EquityPackageDTO 
-type EquityPackageDTO struct {
+// EquityPackageDto 
+type EquityPackageDto struct {
     // 剩余权益
     EquityCount   int64 `json:"equity_count,omitempty" xml:"equity_count,omitempty"`
     // 过期时间

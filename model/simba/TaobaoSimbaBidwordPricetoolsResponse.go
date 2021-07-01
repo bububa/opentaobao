@@ -23,5 +23,5 @@ type TaobaoSimbaBidwordPricetoolsResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // true 表示符合准入，false不符合
-    ResultList   *PriceSuggestionDTO `json:"result_list,omitempty" xml:"result_list,omitempty"`
+    ResultList   *PriceSuggestionDto `json:"result_list,omitempty" xml:"result_list,omitempty"`
 }

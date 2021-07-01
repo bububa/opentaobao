@@ -1,7 +1,7 @@
 package flight
 
-// RefundListRequestDTO 
-type RefundListRequestDTO struct {
+// RefundListRequestDto 
+type RefundListRequestDto struct {
     // 退票申请起始时间
     EndApplyTime   string `json:"end_apply_time,omitempty" xml:"end_apply_time,omitempty"`
     // 退票申请结束时间

@@ -29,5 +29,5 @@ type TaobaoTanxDealGetResponse struct {
     // 查询结果
     Sucess   bool `json:"sucess,omitempty" xml:"sucess,omitempty"`
     // 查询结果
-    Result   *DealInfoDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *DealInfoDto `json:"result,omitempty" xml:"result,omitempty"`
 }

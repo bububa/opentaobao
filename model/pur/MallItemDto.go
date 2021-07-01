@@ -1,7 +1,7 @@
 package pur
 
-// MallItemDTO 
-type MallItemDTO struct {
+// MallItemDto 
+type MallItemDto struct {
     // 币种
     CurrencyCode   string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
     // 商品预览图

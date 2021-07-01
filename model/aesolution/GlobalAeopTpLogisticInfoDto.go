@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpLogisticInfoDTO 
-type GlobalAeopTpLogisticInfoDTO struct {
+// GlobalAeopTpLogisticInfoDto 
+type GlobalAeopTpLogisticInfoDto struct {
     // logistics tracking number
     LogisticsNo   string `json:"logistics_no,omitempty" xml:"logistics_no,omitempty"`
     // to get logistics tracking information

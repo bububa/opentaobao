@@ -1,7 +1,7 @@
 package aedropshiper
 
-// AeopFindProductResultDTO 
-type AeopFindProductResultDTO struct {
+// AeopFindProductResultDto 
+type AeopFindProductResultDto struct {
     // 商品的SKU信息
     AeopAeProductSKUs   []AeopAeProductSku `json:"aeop_ae_product_s_k_us,omitempty" xml:"aeop_ae_product_s_k_us>aeop_ae_product_sku,omitempty"`
     // 商品详描

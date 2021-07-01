@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordRankPriceDTO 
-type KeywordRankPriceDTO struct {
+// KeywordRankPriceDto 
+type KeywordRankPriceDto struct {
     // 关键词的id
     Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     // 公司ID

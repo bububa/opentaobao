@@ -1,7 +1,7 @@
 package idle
 
-// SubPayBillDTO 
-type SubPayBillDTO struct {
+// SubPayBillDto 
+type SubPayBillDto struct {
     // 金额
     Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     // 创建时间

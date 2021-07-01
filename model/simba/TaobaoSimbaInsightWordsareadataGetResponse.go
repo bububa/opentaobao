@@ -23,5 +23,5 @@ type TaobaoSimbaInsightWordsareadataGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 地域细分数据
-    WordAreadataList   []InsightWordsAreaDistributeDataDTO `json:"word_areadata_list,omitempty" xml:"word_areadata_list>insight_words_area_distribute_data_dto,omitempty"`
+    WordAreadataList   []InsightWordsAreaDistributeDataDto `json:"word_areadata_list,omitempty" xml:"word_areadata_list>insight_words_area_distribute_data_dto,omitempty"`
 }

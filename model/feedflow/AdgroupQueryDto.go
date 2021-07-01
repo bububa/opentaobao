@@ -1,7 +1,7 @@
 package feedflow
 
-// AdgroupQueryDTO 
-type AdgroupQueryDTO struct {
+// AdgroupQueryDto 
+type AdgroupQueryDto struct {
     // 单元id列表
     AdgroupIdList   []int64 `json:"adgroup_id_list,omitempty" xml:"adgroup_id_list>int64,omitempty"`
     // 计划id列表

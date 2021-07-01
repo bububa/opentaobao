@@ -1,7 +1,7 @@
 package tanx
 
-// QualificationDTO 
-type QualificationDTO struct {
+// QualificationDto 
+type QualificationDto struct {
     // 通过的url
     Urls   []string `json:"urls,omitempty" xml:"urls>string,omitempty"`
     // 通过的行业

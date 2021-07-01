@@ -1,7 +1,7 @@
 package nrt
 
-// NrtStoreDTO 
-type NrtStoreDTO struct {
+// NrtStoreDto 
+type NrtStoreDto struct {
     // 摊位编号
     StallCode   string `json:"stall_code,omitempty" xml:"stall_code,omitempty"`
     // 区编码

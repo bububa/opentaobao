@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryAwardExtendDTO 
-type LotteryAwardExtendDTO struct {
+// LotteryAwardExtendDto 
+type LotteryAwardExtendDto struct {
     // 奖品id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 奖品类型
@@ -43,5 +43,5 @@ type LotteryAwardExtendDTO struct {
     // 奖品详情url
     AwardDetailUrl   string `json:"award_detail_url,omitempty" xml:"award_detail_url,omitempty"`
     // 奖品关联的规则
-    RuleList   []ExpressionRuleDTO `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
+    RuleList   []ExpressionRuleDto `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
 }

@@ -1,11 +1,11 @@
 package moscm
 
-// SalesOrderDTO 
-type SalesOrderDTO struct {
+// SalesOrderDto 
+type SalesOrderDto struct {
     // 订单商品明细
-    OrderItems   []SalesOrderItemDTO `json:"order_items,omitempty" xml:"order_items>sales_order_item_dto,omitempty"`
+    OrderItems   []SalesOrderItemDto `json:"order_items,omitempty" xml:"order_items>sales_order_item_dto,omitempty"`
     // 发票信息（已废弃）
-    Invoice   *InvoiceDTO `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *InvoiceDto `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 门店名称
     StoreName   string `json:"store_name,omitempty" xml:"store_name,omitempty"`
     // 销售类型：STORE（门店销售)、ONLINE(线上销售)

@@ -1,7 +1,7 @@
 package store
 
-// TopBatchResultDO 
-type TopBatchResultDO struct {
+// TopBatchResultDo 
+type TopBatchResultDo struct {
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 错误信息

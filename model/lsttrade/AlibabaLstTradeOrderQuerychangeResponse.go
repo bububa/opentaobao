@@ -23,5 +23,5 @@ type AlibabaLstTradeOrderQuerychangeResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统自动生成
-    Result   *PagedResultDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *PagedResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -1,7 +1,7 @@
 package scbp
 
-// TopProductGroupDTO 
-type TopProductGroupDTO struct {
+// TopProductGroupDto 
+type TopProductGroupDto struct {
     // 产品分组标识
     GroupId   string `json:"group_id,omitempty" xml:"group_id,omitempty"`
     // 产品分组名称

@@ -1,7 +1,7 @@
 package fenxiao
 
-// TopQueryProductDO 
-type TopQueryProductDO struct {
+// TopQueryProductDo 
+type TopQueryProductDo struct {
     // 要查询的产品id 列表
     Ids   []int64 `json:"ids,omitempty" xml:"ids>int64,omitempty"`
     // 分页大小

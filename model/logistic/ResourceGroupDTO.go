@@ -1,7 +1,7 @@
 package logistic
 
-// ResourceGroupDTO 
-type ResourceGroupDTO struct {
+// ResourceGroupDto 
+type ResourceGroupDto struct {
     // 区块编码
     AreaCode   string `json:"area_code,omitempty" xml:"area_code,omitempty"`
     // 区块名称

@@ -7,7 +7,7 @@ type PaginationResult struct {
     // total count(SC order is not include the result）
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // target list
-    TargetList   []OrderDTO `json:"target_list,omitempty" xml:"target_list>order_dto,omitempty"`
+    TargetList   []OrderDto `json:"target_list,omitempty" xml:"target_list>order_dto,omitempty"`
     // the number of each page
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // error code

@@ -1,7 +1,7 @@
 package idleitem
 
-// EasyResultDTO 
-type EasyResultDTO struct {
+// EasyResultDto 
+type EasyResultDto struct {
     // 错误编码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 上传成功的文件id

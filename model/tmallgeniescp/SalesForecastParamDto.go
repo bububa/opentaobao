@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// SalesForecastParamDTO 
-type SalesForecastParamDTO struct {
+// SalesForecastParamDto 
+type SalesForecastParamDto struct {
     // 扩展参数
     ExtendJson   string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
     // 租户

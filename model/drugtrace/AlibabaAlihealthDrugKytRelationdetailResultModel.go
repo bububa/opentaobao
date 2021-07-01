@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugKytRelationdetailResultModel 
 type AlibabaAlihealthDrugKytRelationdetailResultModel struct {
     // model
-    Model   *CodeRelationDetailDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *CodeRelationDetailDto `json:"model,omitempty" xml:"model,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

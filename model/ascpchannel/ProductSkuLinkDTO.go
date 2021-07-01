@@ -1,7 +1,7 @@
 package ascpchannel
 
-// ProductSkuLinkDTO 
-type ProductSkuLinkDTO struct {
+// ProductSkuLinkDto 
+type ProductSkuLinkDto struct {
     // 分销商商品 skuid
     OutSkuId   string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
     // 供应商产品 skuId

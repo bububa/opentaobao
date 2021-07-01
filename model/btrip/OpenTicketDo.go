@@ -1,7 +1,7 @@
 package btrip
 
-// OpenTicketDO 
-type OpenTicketDO struct {
+// OpenTicketDo 
+type OpenTicketDo struct {
     // 机票号
     TicketNo   string `json:"ticket_no,omitempty" xml:"ticket_no,omitempty"`
     // 是否改签票（true：是；false：否）

@@ -1,13 +1,13 @@
 package aesolution
 
-// GlobalAeopTpOrderDetailDTO 
-type GlobalAeopTpOrderDetailDTO struct {
+// GlobalAeopTpOrderDetailDto 
+type GlobalAeopTpOrderDetailDto struct {
     // buyer info
-    BuyerInfo   *GlobalAeopTpPersonDTO `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
+    BuyerInfo   *GlobalAeopTpPersonDto `json:"buyer_info,omitempty" xml:"buyer_info,omitempty"`
     // modified time, it's US pacific time
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // receipt address
-    ReceiptAddress   *GlobalAeopTpAddressDTO `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`
+    ReceiptAddress   *GlobalAeopTpAddressDto `json:"receipt_address,omitempty" xml:"receipt_address,omitempty"`
     // Order end time
     GmtTradeEnd   string `json:"gmt_trade_end,omitempty" xml:"gmt_trade_end,omitempty"`
     // phone order or not
@@ -21,17 +21,17 @@ type GlobalAeopTpOrderDetailDTO struct {
     // logisitcs escrow fee rate(Deprecated)
     LogisitcsEscrowFeeRate   string `json:"logisitcs_escrow_fee_rate,omitempty" xml:"logisitcs_escrow_fee_rate,omitempty"`
     // Order Message list(deprecated)
-    OrderMsgList   []GlobalAeopTpOrderMsgDTO `json:"order_msg_list,omitempty" xml:"order_msg_list>global_aeop_tp_order_msg_dto,omitempty"`
+    OrderMsgList   []GlobalAeopTpOrderMsgDto `json:"order_msg_list,omitempty" xml:"order_msg_list>global_aeop_tp_order_msg_dto,omitempty"`
     // child order ext info list
-    ChildOrderExtInfoList   []GlobalAeopTpOrderProductInfoDTO `json:"child_order_ext_info_list,omitempty" xml:"child_order_ext_info_list>global_aeop_tp_order_product_info_dto,omitempty"`
+    ChildOrderExtInfoList   []GlobalAeopTpOrderProductInfoDto `json:"child_order_ext_info_list,omitempty" xml:"child_order_ext_info_list>global_aeop_tp_order_product_info_dto,omitempty"`
     // issue info
-    IssueInfo   *GlobalAeopTpIssueInfoDTO `json:"issue_info,omitempty" xml:"issue_info,omitempty"`
+    IssueInfo   *GlobalAeopTpIssueInfoDto `json:"issue_info,omitempty" xml:"issue_info,omitempty"`
     // refund info
-    RefundInfo   *GlobalAeopTpRefundInfoDTO `json:"refund_info,omitempty" xml:"refund_info,omitempty"`
+    RefundInfo   *GlobalAeopTpRefundInfoDto `json:"refund_info,omitempty" xml:"refund_info,omitempty"`
     // Payment settlement currency
     SettlementCurrency   string `json:"settlement_currency,omitempty" xml:"settlement_currency,omitempty"`
     // logistics info
-    LogisticInfoList   []GlobalAeopTpLogisticInfoDTO `json:"logistic_info_list,omitempty" xml:"logistic_info_list>global_aeop_tp_logistic_info_dto,omitempty"`
+    LogisticInfoList   []GlobalAeopTpLogisticInfoDto `json:"logistic_info_list,omitempty" xml:"logistic_info_list>global_aeop_tp_logistic_info_dto,omitempty"`
     // order pay amount(settlemet currency)
     PayAmountBySettlementCur   string `json:"pay_amount_by_settlement_cur,omitempty" xml:"pay_amount_by_settlement_cur,omitempty"`
     // order ID
@@ -53,9 +53,9 @@ type GlobalAeopTpOrderDetailDTO struct {
     // order amount
     InitOderAmount   *GlobalMoneyStr `json:"init_oder_amount,omitempty" xml:"init_oder_amount,omitempty"`
     // operation details list
-    OprLogDtoList   []GlobalAeopTpOperationLogDTO `json:"opr_log_dto_list,omitempty" xml:"opr_log_dto_list>global_aeop_tp_operation_log_dto,omitempty"`
+    OprLogDtoList   []GlobalAeopTpOperationLogDto `json:"opr_log_dto_list,omitempty" xml:"opr_log_dto_list>global_aeop_tp_operation_log_dto,omitempty"`
     // child order list
-    ChildOrderList   []GlobalAeopTpChildOrderDTO `json:"child_order_list,omitempty" xml:"child_order_list>global_aeop_tp_child_order_dto,omitempty"`
+    ChildOrderList   []GlobalAeopTpChildOrderDto `json:"child_order_list,omitempty" xml:"child_order_list>global_aeop_tp_child_order_dto,omitempty"`
     // order creation time
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // seller operator login ID
@@ -63,7 +63,7 @@ type GlobalAeopTpOrderDetailDTO struct {
     // payment type
     PaymentType   string `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
     // loan info
-    LoanInfo   *GlobalAeopTpLoanInfoDTO `json:"loan_info,omitempty" xml:"loan_info,omitempty"`
+    LoanInfo   *GlobalAeopTpLoanInfoDto `json:"loan_info,omitempty" xml:"loan_info,omitempty"`
     // Order Status：PLACE_ORDER_SUCCESS;  IN_CANCEL;  WAIT_SELLER_SEND_GOODS;  SELLER_PART_SEND_GOODS;  WAIT_BUYER_ACCEPT_GOODS;  FUND_PROCESSING; IN_ISSUE;  IN_FROZEN;  WAIT_SELLER_EXAMINE_MONEY;  RISK_CONTROL.
     OrderStatus   string `json:"order_status,omitempty" xml:"order_status,omitempty"`
     // buyer full name

@@ -1,7 +1,7 @@
 package ascpchannel
 
-// ChannelInventoryDTO 
-type ChannelInventoryDTO struct {
+// ChannelInventoryDto 
+type ChannelInventoryDto struct {
     // 库存数量
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 产品ID

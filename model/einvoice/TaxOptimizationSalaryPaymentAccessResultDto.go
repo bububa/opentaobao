@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationSalaryPaymentAccessResultDTO 
-type TaxOptimizationSalaryPaymentAccessResultDTO struct {
+// TaxOptimizationSalaryPaymentAccessResultDto 
+type TaxOptimizationSalaryPaymentAccessResultDto struct {
     // 失败的个数
     FailCount   int64 `json:"fail_count,omitempty" xml:"fail_count,omitempty"`
     // 正在处理的个数

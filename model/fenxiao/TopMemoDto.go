@@ -1,7 +1,7 @@
 package fenxiao
 
-// TopMemoDTO 
-type TopMemoDTO struct {
+// TopMemoDto 
+type TopMemoDto struct {
     // remark
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // operateUserNick

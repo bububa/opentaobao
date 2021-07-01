@@ -27,7 +27,7 @@ type TmallChannelTradeOrderGetsResponse struct {
     // 查询第几页
     PageNumber   int64 `json:"page_number,omitempty" xml:"page_number,omitempty"`
     // 此页中包含的元素
-    PageElements   []TopChannelPurchaseOrderDTO `json:"page_elements,omitempty" xml:"page_elements>top_channel_purchase_order_dto,omitempty"`
+    PageElements   []TopChannelPurchaseOrderDto `json:"page_elements,omitempty" xml:"page_elements>top_channel_purchase_order_dto,omitempty"`
     // 所有元素个数
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

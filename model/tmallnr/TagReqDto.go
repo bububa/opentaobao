@@ -1,7 +1,7 @@
 package tmallnr
 
-// TagReqDTO 
-type TagReqDTO struct {
+// TagReqDto 
+type TagReqDto struct {
     // 商品标操作类型，1:打标，2:去标
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 商家编码

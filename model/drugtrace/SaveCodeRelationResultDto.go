@@ -1,7 +1,7 @@
 package drugtrace
 
-// SaveCodeRelationResultDTO 
-type SaveCodeRelationResultDTO struct {
+// SaveCodeRelationResultDto 
+type SaveCodeRelationResultDto struct {
     // 结果信息
     ResponseMessage   string `json:"response_message,omitempty" xml:"response_message,omitempty"`
     // 结果标记

@@ -1,7 +1,7 @@
 package tmallcar
 
-// FullInfoCarModelDTO 
-type FullInfoCarModelDTO struct {
+// FullInfoCarModelDto 
+type FullInfoCarModelDto struct {
     // ABS防抱死
     Abs   string `json:"abs,omitempty" xml:"abs,omitempty"`
     // 空调

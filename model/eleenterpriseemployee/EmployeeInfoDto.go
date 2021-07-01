@@ -1,7 +1,7 @@
 package eleenterpriseemployee
 
-// EmployeeInfoDTO 
-type EmployeeInfoDTO struct {
+// EmployeeInfoDto 
+type EmployeeInfoDto struct {
     // 部门
     DeptName   string `json:"dept_name,omitempty" xml:"dept_name,omitempty"`
     // 手机号

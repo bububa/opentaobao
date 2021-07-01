@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// NetDemandRawDTO 
-type NetDemandRawDTO struct {
+// NetDemandRawDto 
+type NetDemandRawDto struct {
     // 扩展参数
     ExtendJson   string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
     // 租户

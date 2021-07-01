@@ -1,7 +1,7 @@
 package maitix
 
-// AddressDTO 
-type AddressDTO struct {
+// AddressDto 
+type AddressDto struct {
     // 区域国标ID-可以不填
     AreaId   int64 `json:"area_id,omitempty" xml:"area_id,omitempty"`
     // 城市国标ID-必填

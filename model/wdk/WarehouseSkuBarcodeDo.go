@@ -1,7 +1,7 @@
 package wdk
 
-// WarehouseSkuBarcodeDO 
-type WarehouseSkuBarcodeDO struct {
+// WarehouseSkuBarcodeDo 
+type WarehouseSkuBarcodeDo struct {
     // 条码
     Barcode   string `json:"barcode,omitempty" xml:"barcode,omitempty"`
     // 高

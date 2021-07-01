@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApiVehicleOrderRS 
-type OpenApiVehicleOrderRS struct {
+// OpenApiVehicleOrderRs 
+type OpenApiVehicleOrderRs struct {
     // 订单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 订单创建时间
@@ -85,7 +85,7 @@ type OpenApiVehicleOrderRS struct {
     // 第三方行程id
     ThirdpartItineraryId   string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
     // 出行人列表
-    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
     // 用户确认状态：0未确认；1已确认；2有异议；3系统检查不合理
     UserConfirm   int64 `json:"user_confirm,omitempty" xml:"user_confirm,omitempty"`
     // 服务商：2滴滴；3:曹操；4:首汽；5:阳光。可能会有其他服务商的增加。

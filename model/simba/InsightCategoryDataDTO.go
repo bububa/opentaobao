@@ -1,7 +1,7 @@
 package simba
 
-// InsightCategoryDataDTO 
-type InsightCategoryDataDTO struct {
+// InsightCategoryDataDto 
+type InsightCategoryDataDto struct {
     // 展现量
     Impression   int64 `json:"impression,omitempty" xml:"impression,omitempty"`
     // 点击量

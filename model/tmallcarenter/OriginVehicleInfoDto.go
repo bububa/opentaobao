@@ -1,7 +1,7 @@
 package tmallcarenter
 
-// OriginVehicleInfoDTO 
-type OriginVehicleInfoDTO struct {
+// OriginVehicleInfoDto 
+type OriginVehicleInfoDto struct {
     // 销售名称
     SalesName   string `json:"sales_name,omitempty" xml:"sales_name,omitempty"`
     // 生产年份

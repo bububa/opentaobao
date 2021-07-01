@@ -23,5 +23,5 @@ type TaobaoMiniappDistributionOrderItemsBindResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 绑定的结果
-    Model   *DistributionOrderBindTargetEntityOpenResultDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *DistributionOrderBindTargetEntityOpenResultDto `json:"model,omitempty" xml:"model,omitempty"`
 }

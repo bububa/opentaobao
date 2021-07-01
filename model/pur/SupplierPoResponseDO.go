@@ -1,7 +1,7 @@
 package pur
 
-// SupplierPoResponseDO 
-type SupplierPoResponseDO struct {
+// SupplierPoResponseDo 
+type SupplierPoResponseDo struct {
     // 备注
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 反馈状态

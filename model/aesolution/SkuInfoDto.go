@@ -1,9 +1,9 @@
 package aesolution
 
-// SkuInfoDTO 
-type SkuInfoDTO struct {
+// SkuInfoDto 
+type SkuInfoDto struct {
     // sku attribute list. Some categories don't have sku attributes, then sku_attributes_list should be empty.
-    SkuAttributesList   []SkuAttributeDTO `json:"sku_attributes_list,omitempty" xml:"sku_attributes_list>sku_attribute_dto,omitempty"`
+    SkuAttributesList   []SkuAttributeDto `json:"sku_attributes_list,omitempty" xml:"sku_attributes_list>sku_attribute_dto,omitempty"`
     // extra params. Configured some special products
     ExtraParams   string `json:"extra_params,omitempty" xml:"extra_params,omitempty"`
     // stock. Maximum:999999, minumum:1

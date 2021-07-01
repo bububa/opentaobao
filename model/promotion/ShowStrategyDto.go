@@ -1,7 +1,7 @@
 package promotion
 
-// ShowStrategyDTO 
-type ShowStrategyDTO struct {
+// ShowStrategyDto 
+type ShowStrategyDto struct {
     // 投放模式
     Mode   string `json:"mode,omitempty" xml:"mode,omitempty"`
     // 投放计划code
@@ -13,5 +13,5 @@ type ShowStrategyDTO struct {
     // 算法容灾结果
     AlgorithmFailover   bool `json:"algorithm_failover,omitempty" xml:"algorithm_failover,omitempty"`
     // 投放计划规则
-    ShowRules   []ShowRuleDTO `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
+    ShowRules   []ShowRuleDto `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
 }

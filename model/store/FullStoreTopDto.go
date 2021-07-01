@@ -1,7 +1,7 @@
 package store
 
-// FullStoreTopDTO 
-type FullStoreTopDTO struct {
+// FullStoreTopDto 
+type FullStoreTopDto struct {
     // 业务身份
     BizCode   string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
     // 门店名字
@@ -31,7 +31,7 @@ type FullStoreTopDTO struct {
     // 门店外部编码
     OuterCode   string `json:"outer_code,omitempty" xml:"outer_code,omitempty"`
     // 位置地址信息
-    PoiInfo   *PoiInfoDTO `json:"poi_info,omitempty" xml:"poi_info,omitempty"`
+    PoiInfo   *PoiInfoDto `json:"poi_info,omitempty" xml:"poi_info,omitempty"`
     // 店铺id
     ShopId   int64 `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
     // 标准类目ID

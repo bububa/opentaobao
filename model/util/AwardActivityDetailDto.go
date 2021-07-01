@@ -1,7 +1,7 @@
 package util
 
-// AwardActivityDetailDTO 
-type AwardActivityDetailDTO struct {
+// AwardActivityDetailDto 
+type AwardActivityDetailDto struct {
     // 返回资源id
     AwardResouceId   string `json:"award_resouce_id,omitempty" xml:"award_resouce_id,omitempty"`
     // 扩展字段，目前无值

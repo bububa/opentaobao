@@ -1,7 +1,7 @@
 package alihealthmedical
 
-// MedicalInfoDTO 
-type MedicalInfoDTO struct {
+// MedicalInfoDto 
+type MedicalInfoDto struct {
     // 既往史详情
     PastHistoryDetails   []string `json:"past_history_details,omitempty" xml:"past_history_details>string,omitempty"`
     // 城市

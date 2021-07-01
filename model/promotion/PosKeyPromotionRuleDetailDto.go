@@ -1,7 +1,7 @@
 package promotion
 
-// PosKeyPromotionRuleDetailDTO 
-type PosKeyPromotionRuleDetailDTO struct {
+// PosKeyPromotionRuleDetailDto 
+type PosKeyPromotionRuleDetailDto struct {
     // 扩展属性
     ExtMap   string `json:"ext_map,omitempty" xml:"ext_map,omitempty"`
     // 数量

@@ -21,7 +21,7 @@ type Serializable struct {
     // 状态描述
     PayStatusDesc   string `json:"pay_status_desc,omitempty" xml:"pay_status_desc,omitempty"`
     // 明细
-    PayDetails   []SubPayBillDTO `json:"pay_details,omitempty" xml:"pay_details>sub_pay_bill_dto,omitempty"`
+    PayDetails   []SubPayBillDto `json:"pay_details,omitempty" xml:"pay_details>sub_pay_bill_dto,omitempty"`
     // 代扣计划列表
     PlanIds   []string `json:"plan_ids,omitempty" xml:"plan_ids>string,omitempty"`
     // 回收商appkey

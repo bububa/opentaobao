@@ -1,7 +1,7 @@
 package idleisv
 
-// AppraiseIsvLogisticsDTO 
-type AppraiseIsvLogisticsDTO struct {
+// AppraiseIsvLogisticsDto 
+type AppraiseIsvLogisticsDto struct {
     // 快递单号
     ExpressNo   string `json:"express_no,omitempty" xml:"express_no,omitempty"`
     // 快递公司名称

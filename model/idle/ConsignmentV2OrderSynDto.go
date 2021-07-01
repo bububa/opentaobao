@@ -1,7 +1,7 @@
 package idle
 
-// ConsignmentV2OrderSynDTO 
-type ConsignmentV2OrderSynDTO struct {
+// ConsignmentV2OrderSynDto 
+type ConsignmentV2OrderSynDto struct {
     // 不同的状态传递不同参数
     Attribute   *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
     // 订单子状态

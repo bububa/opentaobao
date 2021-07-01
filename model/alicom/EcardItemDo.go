@@ -1,7 +1,7 @@
 package alicom
 
-// EcardItemDO 
-type EcardItemDO struct {
+// EcardItemDo 
+type EcardItemDo struct {
     // begin_of_validity
     BeginOfValidity   string `json:"begin_of_validity,omitempty" xml:"begin_of_validity,omitempty"`
     // cz_activity_desc

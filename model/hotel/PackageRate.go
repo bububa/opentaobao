@@ -59,7 +59,7 @@ type PackageRate struct {
     // 支付类型。编码取值：1:全额支付;5:前台面付;
     PaymentType   int64 `json:"payment_type,omitempty" xml:"payment_type,omitempty"`
     // 房型图片名称
-    PicUrls   *PicStringArrayDO `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
+    PicUrls   *PicStringArrayDo `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
     // rate上的价格描述文案
     PriceDesc   string `json:"price_desc,omitempty" xml:"price_desc,omitempty"`
     // rateId

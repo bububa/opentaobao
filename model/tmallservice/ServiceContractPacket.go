@@ -7,5 +7,5 @@ type ServiceContractPacket struct {
     // 描述
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 合同类服务列表
-    ServiceList   []ServiceContractDO `json:"service_list,omitempty" xml:"service_list>service_contract_do,omitempty"`
+    ServiceList   []ServiceContractDo `json:"service_list,omitempty" xml:"service_list>service_contract_do,omitempty"`
 }

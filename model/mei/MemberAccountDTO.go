@@ -1,7 +1,7 @@
 package mei
 
-// MemberAccountDTO 
-type MemberAccountDTO struct {
+// MemberAccountDto 
+type MemberAccountDto struct {
     // mixMobile，只有有权限的才有值
     MixMobile   string `json:"mix_mobile,omitempty" xml:"mix_mobile,omitempty"`
     // buyerNick，只有有权限的才有值

@@ -3,7 +3,7 @@ package homeai
 // TaobaoHomeaiAlgPredictResult 
 type TaobaoHomeaiAlgPredictResult struct {
     // data
-    Data   *FeatureWallSuggestionDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *FeatureWallSuggestionDto `json:"data,omitempty" xml:"data,omitempty"`
     // code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // errormsg

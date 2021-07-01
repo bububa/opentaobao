@@ -1,7 +1,7 @@
 package alihouse
 
-// BaseMetroLineDTO 
-type BaseMetroLineDTO struct {
+// BaseMetroLineDto 
+type BaseMetroLineDto struct {
     // 所属商圈
     BusinessDistrict   string `json:"business_district,omitempty" xml:"business_district,omitempty"`
     // 站点编号

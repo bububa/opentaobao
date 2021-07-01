@@ -15,7 +15,7 @@ type PojoResult struct {
     // requestId
     RequestId   string `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 内容
-    Contents   []CompanyDTO `json:"contents,omitempty" xml:"contents>company_dto,omitempty"`
+    Contents   []CompanyDto `json:"contents,omitempty" xml:"contents>company_dto,omitempty"`
     // 错误详细信息
     ErrorExtInfo   string `json:"error_ext_info,omitempty" xml:"error_ext_info,omitempty"`
 }

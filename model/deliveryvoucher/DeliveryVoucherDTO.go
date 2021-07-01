@@ -1,7 +1,7 @@
 package deliveryvoucher
 
-// DeliveryVoucherDTO 
-type DeliveryVoucherDTO struct {
+// DeliveryVoucherDto 
+type DeliveryVoucherDto struct {
     // 券ID
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 券号

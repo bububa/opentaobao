@@ -1,7 +1,7 @@
 package tmallhk
 
-// ClearanceOrderLineDO 
-type ClearanceOrderLineDO struct {
+// ClearanceOrderLineDo 
+type ClearanceOrderLineDo struct {
     // 货款
     ActualValue   int64 `json:"actual_value,omitempty" xml:"actual_value,omitempty"`
     // 商品单价
@@ -37,9 +37,9 @@ type ClearanceOrderLineDO struct {
     // 子订单id
     SubOrderId   int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
     // 税费封装
-    TaxDO   *ClearanceTaxDO `json:"tax_d_o,omitempty" xml:"tax_d_o,omitempty"`
+    TaxDO   *ClearanceTaxDo `json:"tax_d_o,omitempty" xml:"tax_d_o,omitempty"`
     // 计量单位封装
-    UnitDO   *ClearanceUnitDO `json:"unit_d_o,omitempty" xml:"unit_d_o,omitempty"`
+    UnitDO   *ClearanceUnitDo `json:"unit_d_o,omitempty" xml:"unit_d_o,omitempty"`
     // 镜像商品ID
     VirtualItemId   string `json:"virtual_item_id,omitempty" xml:"virtual_item_id,omitempty"`
 }

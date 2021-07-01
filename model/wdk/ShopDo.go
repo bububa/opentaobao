@@ -1,7 +1,7 @@
 package wdk
 
-// ShopDO 
-type ShopDO struct {
+// ShopDo 
+type ShopDo struct {
     // 门店编码(所属的OU的编码)
     ShopName   string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
     // 状态（默认、营业中、待维护、停用）

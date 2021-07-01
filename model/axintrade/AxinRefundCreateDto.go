@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinRefundCreateDTO 
-type AxinRefundCreateDTO struct {
+// AxinRefundCreateDto 
+type AxinRefundCreateDto struct {
     // 扩展字段(k:v结构)
     Attributes   string `json:"attributes,omitempty" xml:"attributes,omitempty"`
     // 退款说明

@@ -1,7 +1,7 @@
 package train
 
-// TrainPassengerInfoDTO 
-type TrainPassengerInfoDTO struct {
+// TrainPassengerInfoDto 
+type TrainPassengerInfoDto struct {
     // 实际出票价格（单位分）
     PayPrice   int64 `json:"pay_price,omitempty" xml:"pay_price,omitempty"`
     // 子订单号

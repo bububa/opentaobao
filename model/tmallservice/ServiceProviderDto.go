@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceProviderDTO 
-type ServiceProviderDTO struct {
+// ServiceProviderDto 
+type ServiceProviderDto struct {
     // 服务商nick
     TpNick   string `json:"tp_nick,omitempty" xml:"tp_nick,omitempty"`
     // 服务商id

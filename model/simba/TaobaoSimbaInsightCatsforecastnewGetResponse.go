@@ -23,5 +23,5 @@ type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 词的相关类目列表
-    CategoryForecastList   []InsightCategoryForcastDTO `json:"category_forecast_list,omitempty" xml:"category_forecast_list>insight_category_forcast_dto,omitempty"`
+    CategoryForecastList   []InsightCategoryForcastDto `json:"category_forecast_list,omitempty" xml:"category_forecast_list>insight_category_forcast_dto,omitempty"`
 }

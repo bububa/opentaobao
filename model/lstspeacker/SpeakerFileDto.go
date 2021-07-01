@@ -1,7 +1,7 @@
 package lstspeacker
 
-// SpeakerFileDTO 
-type SpeakerFileDTO struct {
+// SpeakerFileDto 
+type SpeakerFileDto struct {
     // md5
     Md5   string `json:"md5,omitempty" xml:"md5,omitempty"`
     // url

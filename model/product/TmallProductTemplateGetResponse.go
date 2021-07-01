@@ -23,5 +23,5 @@ type TmallProductTemplateGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 见SpuTemplateDO说明
-    Template   *SpuTemplateDO `json:"template,omitempty" xml:"template,omitempty"`
+    Template   *SpuTemplateDo `json:"template,omitempty" xml:"template,omitempty"`
 }

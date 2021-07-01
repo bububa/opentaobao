@@ -1,7 +1,7 @@
 package lstvending
 
-// VendingShippedEquipmentDTO 
-type VendingShippedEquipmentDTO struct {
+// VendingShippedEquipmentDto 
+type VendingShippedEquipmentDto struct {
     // 设备型号清单ID
     OrderItemId   int64 `json:"order_item_id,omitempty" xml:"order_item_id,omitempty"`
     // 供应商设备唯一编码

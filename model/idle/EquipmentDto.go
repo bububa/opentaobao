@@ -1,7 +1,7 @@
 package idle
 
-// EquipmentDTO 
-type EquipmentDTO struct {
+// EquipmentDto 
+type EquipmentDto struct {
     // 标配名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 标配值，多为数量

@@ -1,9 +1,9 @@
 package wdk
 
-// WarehouseSkuDO 
-type WarehouseSkuDO struct {
+// WarehouseSkuDo 
+type WarehouseSkuDo struct {
     // 商品条码
-    Barcodes   []WarehouseSkuBarcodeDO `json:"barcodes,omitempty" xml:"barcodes>warehouse_sku_barcode_do,omitempty"`
+    Barcodes   []WarehouseSkuBarcodeDo `json:"barcodes,omitempty" xml:"barcodes>warehouse_sku_barcode_do,omitempty"`
     // 品牌名称
     BrandName   string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
     // 含量

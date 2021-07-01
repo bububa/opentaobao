@@ -1,7 +1,7 @@
 package koubeimall
 
-// MallDTO 
-type MallDTO struct {
+// MallDto 
+type MallDto struct {
     // 商圈LOGO
     MallLogo   string `json:"mall_logo,omitempty" xml:"mall_logo,omitempty"`
     // 商圈名称

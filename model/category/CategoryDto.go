@@ -1,9 +1,9 @@
 package category
 
-// CategoryDTO 
-type CategoryDTO struct {
+// CategoryDto 
+type CategoryDto struct {
     // 子节点
-    Childrens   []CategoryDTO `json:"childrens,omitempty" xml:"childrens>category_dto,omitempty"`
+    Childrens   []CategoryDto `json:"childrens,omitempty" xml:"childrens>category_dto,omitempty"`
     // 类目名称
     CategoryName   string `json:"category_name,omitempty" xml:"category_name,omitempty"`
     // 类目ID

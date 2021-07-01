@@ -1,13 +1,13 @@
 package wdk
 
-// WdkErpArrivalNoticeDTO 
-type WdkErpArrivalNoticeDTO struct {
+// WdkErpArrivalNoticeDto 
+type WdkErpArrivalNoticeDto struct {
     // 如部分商品不存在，是否允许其他商品入库(1：允许，其他：不允许)
     Bypass   int64 `json:"bypass,omitempty" xml:"bypass,omitempty"`
     // 入库时间，商家系统中记录的本批次商品的实际入库时间
     ArrivalDate   string `json:"arrival_date,omitempty" xml:"arrival_date,omitempty"`
     // 1
-    ItemList   []ErpArrivalNoticeDetailDTO `json:"item_list,omitempty" xml:"item_list>erp_arrival_notice_detail_dto,omitempty"`
+    ItemList   []ErpArrivalNoticeDetailDto `json:"item_list,omitempty" xml:"item_list>erp_arrival_notice_detail_dto,omitempty"`
     // 联系方式，门店联系电话，可以是移动电话
     ContactInfo   string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
     // 店仓code，指的是入库对象，对应一个物理店或仓编码

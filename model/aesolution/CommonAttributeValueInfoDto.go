@@ -1,7 +1,7 @@
 package aesolution
 
-// CommonAttributeValueInfoDTO 
-type CommonAttributeValueInfoDTO struct {
+// CommonAttributeValueInfoDto 
+type CommonAttributeValueInfoDto struct {
     // aliexpress common attribute value id
     AliexpressCommonAttributeValueId   int64 `json:"aliexpress_common_attribute_value_id,omitempty" xml:"aliexpress_common_attribute_value_id,omitempty"`
     // aliexpress common attribute value

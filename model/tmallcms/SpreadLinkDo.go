@@ -1,7 +1,7 @@
 package tmallcms
 
-// SpreadLinkDO 
-type SpreadLinkDO struct {
+// SpreadLinkDo 
+type SpreadLinkDo struct {
     // ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 修改时间

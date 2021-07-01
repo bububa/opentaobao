@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleItemApiPvPairDO 
-type IdleItemApiPvPairDO struct {
+// IdleItemApiPvPairDo 
+type IdleItemApiPvPairDo struct {
     // 属性名文本
     PropertyText   string `json:"property_text,omitempty" xml:"property_text,omitempty"`
     // 属性值文本

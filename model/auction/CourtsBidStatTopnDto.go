@@ -1,7 +1,7 @@
 package auction
 
-// CourtsBidStatTopnDTO 
-type CourtsBidStatTopnDTO struct {
+// CourtsBidStatTopnDto 
+type CourtsBidStatTopnDto struct {
     // 排名
     Rank   int64 `json:"rank,omitempty" xml:"rank,omitempty"`
     // 法院名称

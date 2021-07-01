@@ -1,7 +1,7 @@
 package drugtrace
 
-// DrugInfosDTO 
-type DrugInfosDTO struct {
+// DrugInfosDto 
+type DrugInfosDto struct {
     // 生产日期
     ProduceDate   string `json:"produce_date,omitempty" xml:"produce_date,omitempty"`
     // 生产企业名称
@@ -27,5 +27,5 @@ type DrugInfosDTO struct {
     // 按最小制剂单位统计数量
     LeastPrepnAmount   string `json:"least_prepn_amount,omitempty" xml:"least_prepn_amount,omitempty"`
     // 码信息
-    CodeInfoListDtoList   []CodeInfoListDTO `json:"code_info_list_dto_list,omitempty" xml:"code_info_list_dto_list>code_info_list_dto,omitempty"`
+    CodeInfoListDtoList   []CodeInfoListDto `json:"code_info_list_dto_list,omitempty" xml:"code_info_list_dto_list>code_info_list_dto,omitempty"`
 }

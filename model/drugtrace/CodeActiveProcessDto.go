@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeActiveProcessDTO 
-type CodeActiveProcessDTO struct {
+// CodeActiveProcessDto 
+type CodeActiveProcessDto struct {
     // 错误码信息
     NoteInfo   string `json:"note_info,omitempty" xml:"note_info,omitempty"`
     // 删除原因

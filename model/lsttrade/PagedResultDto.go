@@ -1,9 +1,9 @@
 package lsttrade
 
-// PagedResultDTO 
-type PagedResultDTO struct {
+// PagedResultDto 
+type PagedResultDto struct {
     // 返回实体包装类
-    ContentList   []TopOrderChange2BrandownerDTO `json:"content_list,omitempty" xml:"content_list>top_order_change2brandowner_dto,omitempty"`
+    ContentList   []TopOrderChange2BrandownerDto `json:"content_list,omitempty" xml:"content_list>top_order_change2brandowner_dto,omitempty"`
     // 总记录条数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 错误描述

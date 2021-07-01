@@ -1,7 +1,7 @@
 package drugtrace
 
-// PiecesDetectionDTO 
-type PiecesDetectionDTO struct {
+// PiecesDetectionDto 
+type PiecesDetectionDto struct {
     // 农药残留检测
     PesticidesDetection   string `json:"pesticides_detection,omitempty" xml:"pesticides_detection,omitempty"`
     // 重金属及有害元素检测

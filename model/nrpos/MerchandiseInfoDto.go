@@ -1,7 +1,7 @@
 package nrpos
 
-// MerchandiseInfoDTO 
-type MerchandiseInfoDTO struct {
+// MerchandiseInfoDto 
+type MerchandiseInfoDto struct {
     // 门店号
     Storeno   string `json:"storeno,omitempty" xml:"storeno,omitempty"`
     // VIP活动折扣规则

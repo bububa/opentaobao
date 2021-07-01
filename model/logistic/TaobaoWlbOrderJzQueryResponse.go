@@ -27,7 +27,7 @@ type TaobaoWlbOrderJzQueryResponse struct {
     // 错误信息
     ResultErrorMsg   string `json:"result_error_msg,omitempty" xml:"result_error_msg,omitempty"`
     // 结果信息
-    Result   *JzTopDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *JzTopDto `json:"result,omitempty" xml:"result,omitempty"`
     // 是否成功
     ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 }

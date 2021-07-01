@@ -1,7 +1,7 @@
 package inventory
 
-// LocationRelationDTO 
-type LocationRelationDTO struct {
+// LocationRelationDto 
+type LocationRelationDto struct {
     // 状态  0 正常  -1 删除
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 实体类型 2：仓库 6：门店

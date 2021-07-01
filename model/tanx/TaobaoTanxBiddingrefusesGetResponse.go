@@ -25,5 +25,5 @@ type TaobaoTanxBiddingrefusesGetResponse struct {
     // 返回是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 返回竞价失败对象信息
-    BiddingRefuseList   []BiddingRefuseDTO `json:"bidding_refuse_list,omitempty" xml:"bidding_refuse_list>bidding_refuse_dto,omitempty"`
+    BiddingRefuseList   []BiddingRefuseDto `json:"bidding_refuse_list,omitempty" xml:"bidding_refuse_list>bidding_refuse_dto,omitempty"`
 }

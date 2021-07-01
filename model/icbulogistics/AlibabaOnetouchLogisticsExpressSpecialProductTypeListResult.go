@@ -9,5 +9,5 @@ type AlibabaOnetouchLogisticsExpressSpecialProductTypeListResult struct {
     // 返回结果编码
     ErrorCode   int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 列表对象
-    Values   []SpecialProductTypeDTO `json:"values,omitempty" xml:"values>special_product_type_dto,omitempty"`
+    Values   []SpecialProductTypeDto `json:"values,omitempty" xml:"values>special_product_type_dto,omitempty"`
 }

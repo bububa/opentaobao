@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// RoomDetailDTO 
-type RoomDetailDTO struct {
+// RoomDetailDto 
+type RoomDetailDto struct {
     // 面积
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 最低价单位分
@@ -9,13 +9,13 @@ type RoomDetailDTO struct {
     // 最低价单位元
     LowestPriceToString   string `json:"lowest_price_to_string,omitempty" xml:"lowest_price_to_string,omitempty"`
     // 床型详情
-    RoomTypeBedInfo   *RoomTypeBedInfoDTO `json:"room_type_bed_info,omitempty" xml:"room_type_bed_info,omitempty"`
+    RoomTypeBedInfo   *RoomTypeBedInfoDto `json:"room_type_bed_info,omitempty" xml:"room_type_bed_info,omitempty"`
     // 入住人数图标
     MaxOccupancyIcon   string `json:"max_occupancy_icon,omitempty" xml:"max_occupancy_icon,omitempty"`
     // 货币类型
     PriceType   string `json:"price_type,omitempty" xml:"price_type,omitempty"`
     // 价格信息
-    PriceInfos   []PriceInfoDTO `json:"price_infos,omitempty" xml:"price_infos>price_info_dto,omitempty"`
+    PriceInfos   []PriceInfoDto `json:"price_infos,omitempty" xml:"price_infos>price_info_dto,omitempty"`
     // 面积图标
     AreaIcon   string `json:"area_icon,omitempty" xml:"area_icon,omitempty"`
     // 房型名称
@@ -33,7 +33,7 @@ type RoomDetailDTO struct {
     // 房型图片
     Pics   []string `json:"pics,omitempty" xml:"pics>string,omitempty"`
     // 房型设施
-    Facilitys   []RoomPropertiesDTO `json:"facilitys,omitempty" xml:"facilitys>room_properties_dto,omitempty"`
+    Facilitys   []RoomPropertiesDto `json:"facilitys,omitempty" xml:"facilitys>room_properties_dto,omitempty"`
     // 是否满房
     Full   bool `json:"full,omitempty" xml:"full,omitempty"`
     // 楼层
@@ -41,7 +41,7 @@ type RoomDetailDTO struct {
     // 窗型
     WindowType   string `json:"window_type,omitempty" xml:"window_type,omitempty"`
     // 酒店设施
-    RoomFacilities   []RoomPropertiesDTO `json:"room_facilities,omitempty" xml:"room_facilities>room_properties_dto,omitempty"`
+    RoomFacilities   []RoomPropertiesDto `json:"room_facilities,omitempty" xml:"room_facilities>room_properties_dto,omitempty"`
     // 最大人数
     MaxCheckInNumber   int64 `json:"max_check_in_number,omitempty" xml:"max_check_in_number,omitempty"`
     // 床型描述

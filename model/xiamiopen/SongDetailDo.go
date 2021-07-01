@@ -1,11 +1,11 @@
 package xiamiopen
 
-// SongDetailDO 
-type SongDetailDO struct {
+// SongDetailDo 
+type SongDetailDo struct {
     // mvId
     MvId   string `json:"mv_id,omitempty" xml:"mv_id,omitempty"`
     // 专辑信息
-    Album   *AlbumDO `json:"album,omitempty" xml:"album,omitempty"`
+    Album   *AlbumDo `json:"album,omitempty" xml:"album,omitempty"`
     // 专辑id
     AlbumId   int64 `json:"album_id,omitempty" xml:"album_id,omitempty"`
     // 专辑logo
@@ -13,7 +13,7 @@ type SongDetailDO struct {
     // 编曲
     Arrangement   string `json:"arrangement,omitempty" xml:"arrangement,omitempty"`
     // artistDO
-    Artist   *ArtistDO `json:"artist,omitempty" xml:"artist,omitempty"`
+    Artist   *ArtistDo `json:"artist,omitempty" xml:"artist,omitempty"`
     // 艺人id
     ArtistId   int64 `json:"artist_id,omitempty" xml:"artist_id,omitempty"`
     // cd序号
@@ -21,7 +21,7 @@ type SongDetailDO struct {
     // 作词
     Composer   string `json:"composer,omitempty" xml:"composer,omitempty"`
     // 演唱者
-    Singers   []ArtistDO `json:"singers,omitempty" xml:"singers>artist_do,omitempty"`
+    Singers   []ArtistDo `json:"singers,omitempty" xml:"singers>artist_do,omitempty"`
     // 歌曲id
     SongId   int64 `json:"song_id,omitempty" xml:"song_id,omitempty"`
     // 歌曲名

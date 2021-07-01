@@ -1,27 +1,17 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-OAID 收件人信息解密接口 API返回值 
-taobao.qimen.receiverinfo.query
-
-WMS 调用该接口，通过 OAID 查询解密后的收件人信息
-*/
-type TaobaoQimenReceiverinfoQueryAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenReceiverinfoQueryResponse
-}
-
-// OAID 收件人信息解密接口 成功返回结果
+// TaobaoQimenReceiverinfoQueryResponse 
 type TaobaoQimenReceiverinfoQueryResponse struct {
-    XMLName xml.Name `xml:"qimen_receiverinfo_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // success|failure，必填
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 订单收件人 ID, string (50)
+    Oaid   string `json:"oaid,omitempty" xml:"oaid,omitempty"`
+    // 出库单号, string (50) , 必填
+    DeliveryOrderCode   string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
+    // 收货人信息
+    ReceiverInfo   *ReceiverInfo `json:"receiverInfo,omitempty" xml:"receiverInfo,omitempty"`
 }

@@ -1,7 +1,7 @@
 package omniorder
 
-// JzTopArgsDTO 
-type JzTopArgsDTO struct {
+// JzTopArgsDto 
+type JzTopArgsDto struct {
     // 运单号,用快递或商家自有发货时,必填
     MailNo   string `json:"mail_no,omitempty" xml:"mail_no,omitempty"`
     // 包裹体积

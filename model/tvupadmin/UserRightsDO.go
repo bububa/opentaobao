@@ -1,7 +1,7 @@
 package tvupadmin
 
-// UserRightsDO 
-type UserRightsDO struct {
+// UserRightsDo 
+type UserRightsDo struct {
     // 更新时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 用户ID

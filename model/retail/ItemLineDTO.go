@@ -1,7 +1,7 @@
 package retail
 
-// ItemLineDTO 
-type ItemLineDTO struct {
+// ItemLineDto 
+type ItemLineDto struct {
     // 百安居id
     OutLineId   string `json:"out_line_id,omitempty" xml:"out_line_id,omitempty"`
     // 门店商品行id
@@ -19,5 +19,5 @@ type ItemLineDTO struct {
     // 外部skuId
     OutSkuId   string `json:"out_sku_id,omitempty" xml:"out_sku_id,omitempty"`
     // 服务子订单
-    ServiceList   []ServiceItemLineDTO `json:"service_list,omitempty" xml:"service_list>service_item_line_dto,omitempty"`
+    ServiceList   []ServiceItemLineDto `json:"service_list,omitempty" xml:"service_list>service_item_line_dto,omitempty"`
 }

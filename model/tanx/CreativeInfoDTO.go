@@ -1,7 +1,7 @@
 package tanx
 
-// CreativeInfoDTO 
-type CreativeInfoDTO struct {
+// CreativeInfoDto 
+type CreativeInfoDto struct {
     // dsp系统中的创意id
     CreativeId   string `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
     // 创意尺寸，长高中间用小写英文x

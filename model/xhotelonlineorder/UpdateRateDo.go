@@ -1,9 +1,9 @@
 package xhotelonlineorder
 
-// UpdateRateDO 
-type UpdateRateDO struct {
+// UpdateRateDo 
+type UpdateRateDo struct {
     // 入离日期
-    CheckDateDOList   []CheckDateDO `json:"check_date_d_o_list,omitempty" xml:"check_date_d_o_list>check_date_do,omitempty"`
+    CheckDateDOList   []CheckDateDo `json:"check_date_d_o_list,omitempty" xml:"check_date_d_o_list>check_date_do,omitempty"`
     // 酒店id
     OutHid   string `json:"out_hid,omitempty" xml:"out_hid,omitempty"`
     // 成人数

@@ -1,7 +1,7 @@
 package aedropshiper
 
-// MaillingAddressRequestDTO 
-type MaillingAddressRequestDTO struct {
+// MaillingAddressRequestDto 
+type MaillingAddressRequestDto struct {
     // 地址信息
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 地址扩展信息

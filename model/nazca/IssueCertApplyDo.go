@@ -1,7 +1,7 @@
 package nazca
 
-// IssueCertApplyDO 
-type IssueCertApplyDO struct {
+// IssueCertApplyDo 
+type IssueCertApplyDo struct {
     // 合同编号
     ContractNum   string `json:"contract_num,omitempty" xml:"contract_num,omitempty"`
     // pageNum

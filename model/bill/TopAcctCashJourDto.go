@@ -1,7 +1,7 @@
 package bill
 
-// TopAcctCashJourDTO 
-type TopAcctCashJourDTO struct {
+// TopAcctCashJourDto 
+type TopAcctCashJourDto struct {
     // 操作金额
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 记账时间

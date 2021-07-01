@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceFlowRefundDTO 
-type InvoiceFlowRefundDTO struct {
+// InvoiceFlowRefundDto 
+type InvoiceFlowRefundDto struct {
     // 退款备注信息
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 工单id(入驻、续约、加盘)

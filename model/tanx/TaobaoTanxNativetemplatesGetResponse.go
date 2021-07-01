@@ -25,5 +25,5 @@ type TaobaoTanxNativetemplatesGetResponse struct {
     // 是否成功
     IsOk   bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
     // 本地模板列表
-    NativeTemplateList   []NativeTemplateDTO `json:"native_template_list,omitempty" xml:"native_template_list>native_template_dto,omitempty"`
+    NativeTemplateList   []NativeTemplateDto `json:"native_template_list,omitempty" xml:"native_template_list>native_template_dto,omitempty"`
 }

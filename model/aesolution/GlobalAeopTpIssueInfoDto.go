@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpIssueInfoDTO 
-type GlobalAeopTpIssueInfoDTO struct {
+// GlobalAeopTpIssueInfoDto 
+type GlobalAeopTpIssueInfoDto struct {
     // Issue model
     IssueModel   string `json:"issue_model,omitempty" xml:"issue_model,omitempty"`
     // Issue status

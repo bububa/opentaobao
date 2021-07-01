@@ -1,7 +1,7 @@
 package wlbimports
 
-// IdentityItemDTO 
-type IdentityItemDTO struct {
+// IdentityItemDto 
+type IdentityItemDto struct {
     // 鉴定次数
     IdentityCnt   int64 `json:"identity_cnt,omitempty" xml:"identity_cnt,omitempty"`
     // 防伪扣编码

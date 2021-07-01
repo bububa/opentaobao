@@ -1,9 +1,9 @@
 package vaccin
 
-// DivisionDTO 
-type DivisionDTO struct {
+// DivisionDto 
+type DivisionDto struct {
     // childDivision
-    ChildDivisionList   []DivisionDTO `json:"child_division_list,omitempty" xml:"child_division_list>division_dto,omitempty"`
+    ChildDivisionList   []DivisionDto `json:"child_division_list,omitempty" xml:"child_division_list>division_dto,omitempty"`
     // divisionId
     DivisionId   int64 `json:"division_id,omitempty" xml:"division_id,omitempty"`
     // divisionName

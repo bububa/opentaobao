@@ -1,7 +1,7 @@
 package dmp
 
-// DmpSelectTagOptionDTO 
-type DmpSelectTagOptionDTO struct {
+// DmpSelectTagOptionDto 
+type DmpSelectTagOptionDto struct {
     // 标签选项的提交值
     Values   string `json:"values,omitempty" xml:"values,omitempty"`
     // 分组id,在标签获取的接口中会返回

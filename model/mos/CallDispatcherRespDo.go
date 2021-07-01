@@ -1,7 +1,7 @@
 package mos
 
-// CallDispatcherRespDO 
-type CallDispatcherRespDO struct {
+// CallDispatcherRespDo 
+type CallDispatcherRespDo struct {
     // shortId
     ShortId   string `json:"short_id,omitempty" xml:"short_id,omitempty"`
     // gotCode

@@ -23,5 +23,5 @@ type TaobaoDegUserGamegiftQueryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 礼包信息
-    Records   []GameGiftRecordDTO `json:"records,omitempty" xml:"records>game_gift_record_dto,omitempty"`
+    Records   []GameGiftRecordDto `json:"records,omitempty" xml:"records>game_gift_record_dto,omitempty"`
 }

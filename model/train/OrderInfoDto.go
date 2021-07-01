@@ -1,9 +1,9 @@
 package train
 
-// OrderInfoDTO 
-type OrderInfoDTO struct {
+// OrderInfoDto 
+type OrderInfoDto struct {
     // 乘车人信息
-    PassengerList   []TrainPassengerInfoDTO `json:"passenger_list,omitempty" xml:"passenger_list>train_passenger_info_dto,omitempty"`
+    PassengerList   []TrainPassengerInfoDto `json:"passenger_list,omitempty" xml:"passenger_list>train_passenger_info_dto,omitempty"`
     // 是否联程
     IsMultiTrip   bool `json:"is_multi_trip,omitempty" xml:"is_multi_trip,omitempty"`
     // 是否可以退改
@@ -19,5 +19,5 @@ type OrderInfoDTO struct {
     // 支付url
     PayUrl   string `json:"pay_url,omitempty" xml:"pay_url,omitempty"`
     // 车次信息
-    BaseDo   *TrainBaseDTO `json:"base_do,omitempty" xml:"base_do,omitempty"`
+    BaseDo   *TrainBaseDto `json:"base_do,omitempty" xml:"base_do,omitempty"`
 }

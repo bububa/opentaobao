@@ -1,7 +1,7 @@
 package trade
 
-// WtverticalDTO 
-type WtverticalDTO struct {
+// WtverticalDto 
+type WtverticalDto struct {
     // 手机号码
     PhoneNo   string `json:"phone_no,omitempty" xml:"phone_no,omitempty"`
     // 订单号

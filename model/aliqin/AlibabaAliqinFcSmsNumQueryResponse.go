@@ -31,5 +31,5 @@ type AlibabaAliqinFcSmsNumQueryResponse struct {
     // 总页数
     TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     // 1
-    Values   []FcPartnerSmsDetailDTO `json:"values,omitempty" xml:"values>fc_partner_sms_detail_dto,omitempty"`
+    Values   []FcPartnerSmsDetailDto `json:"values,omitempty" xml:"values>fc_partner_sms_detail_dto,omitempty"`
 }

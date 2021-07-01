@@ -17,7 +17,7 @@ type BtripHotelCreateOrderRq struct {
     // 最早到店时间
     EarliestArrivalTime   string `json:"earliest_arrival_time,omitempty" xml:"earliest_arrival_time,omitempty"`
     // 订单联系人信息
-    HotelContact   *BtripHotelContactDTO `json:"hotel_contact,omitempty" xml:"hotel_contact,omitempty"`
+    HotelContact   *BtripHotelContactDto `json:"hotel_contact,omitempty" xml:"hotel_contact,omitempty"`
     // 商旅商品唯一标识
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 最晚到店时间

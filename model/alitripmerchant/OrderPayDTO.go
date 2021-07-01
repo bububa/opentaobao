@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// OrderPayDTO 
-type OrderPayDTO struct {
+// OrderPayDto 
+type OrderPayDto struct {
     // 签名
     PaySign   string `json:"pay_sign,omitempty" xml:"pay_sign,omitempty"`
     // 签名类型

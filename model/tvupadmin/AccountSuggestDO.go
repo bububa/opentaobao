@@ -1,7 +1,7 @@
 package tvupadmin
 
-// AccountSuggestDO 
-type AccountSuggestDO struct {
+// AccountSuggestDo 
+type AccountSuggestDo struct {
     // 用户ID
     Uid   int64 `json:"uid,omitempty" xml:"uid,omitempty"`
     // 优酷账号ID

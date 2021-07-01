@@ -1,7 +1,7 @@
 package campus
 
-// IdentifyAuthResultDTO 
-type IdentifyAuthResultDTO struct {
+// IdentifyAuthResultDto 
+type IdentifyAuthResultDto struct {
     // 业务id
     BizCode   string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
     // 鉴权结果码

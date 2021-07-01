@@ -9,5 +9,5 @@ type AlibabaWdkMemberCardGetApiResult struct {
     // 错误结果码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 会员信息模型
-    Model   *MemberInfoDO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *MemberInfoDo `json:"model,omitempty" xml:"model,omitempty"`
 }

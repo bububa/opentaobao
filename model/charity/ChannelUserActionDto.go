@@ -1,7 +1,7 @@
 package charity
 
-// ChannelUserActionDTO 
-type ChannelUserActionDTO struct {
+// ChannelUserActionDto 
+type ChannelUserActionDto struct {
     // 活动ID
     ActivityId   int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 唯一的动作ID,渠道范围内唯一，幂等控制

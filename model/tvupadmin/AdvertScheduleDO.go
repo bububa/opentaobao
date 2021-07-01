@@ -1,7 +1,7 @@
 package tvupadmin
 
-// AdvertScheduleDO 
-type AdvertScheduleDO struct {
+// AdvertScheduleDo 
+type AdvertScheduleDo struct {
     // 查询类型
     Range   int64 `json:"range,omitempty" xml:"range,omitempty"`
     // 播控ID

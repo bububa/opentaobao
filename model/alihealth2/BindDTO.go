@@ -1,7 +1,7 @@
 package alihealth2
 
-// BindDTO 
-type BindDTO struct {
+// BindDto 
+type BindDto struct {
     // sp(服务商)门店ID
     SpStoreId   string `json:"sp_store_id,omitempty" xml:"sp_store_id,omitempty"`
     // 天猫门店ID

@@ -1,7 +1,7 @@
 package examination
 
-// IsvItemPackDTO 
-type IsvItemPackDTO struct {
+// IsvItemPackDto 
+type IsvItemPackDto struct {
     // 加项包id
     IsvPackId   string `json:"isv_pack_id,omitempty" xml:"isv_pack_id,omitempty"`
     // 加项包名称

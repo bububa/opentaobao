@@ -1,7 +1,7 @@
 package mirage
 
-// PermissionResponseDTO 
-type PermissionResponseDTO struct {
+// PermissionResponseDto 
+type PermissionResponseDto struct {
     // 成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误内容

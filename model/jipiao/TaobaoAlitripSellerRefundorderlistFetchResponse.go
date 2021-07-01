@@ -23,5 +23,5 @@ type TaobaoAlitripSellerRefundorderlistFetchResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 退票订单列表
-    ResultList   []ReturnApplyDO `json:"result_list,omitempty" xml:"result_list>return_apply_do,omitempty"`
+    ResultList   []ReturnApplyDo `json:"result_list,omitempty" xml:"result_list>return_apply_do,omitempty"`
 }

@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TopOverseasPriceInfoDO 
-type TopOverseasPriceInfoDO struct {
+// TopOverseasPriceInfoDo 
+type TopOverseasPriceInfoDo struct {
     // 币种
     CurrencyCode   string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
     // 产品售价,单位(元*100),包含税服务费等
@@ -35,11 +35,11 @@ type TopOverseasPriceInfoDO struct {
     // 服务费,单位(元*100)
     ServicePrice   int64 `json:"service_price,omitempty" xml:"service_price,omitempty"`
     // 日历价格
-    CreateOrderDailyPrice   *HbsDailyPriceDO `json:"create_order_daily_price,omitempty" xml:"create_order_daily_price,omitempty"`
+    CreateOrderDailyPrice   *HbsDailyPriceDo `json:"create_order_daily_price,omitempty" xml:"create_order_daily_price,omitempty"`
     // bookingRoomsPrice
     BookingRoomsPrice   int64 `json:"booking_rooms_price,omitempty" xml:"booking_rooms_price,omitempty"`
     // settleOrderDailyPrice
-    SettleOrderDailyPrice   *HbsDailyPriceDO `json:"settle_order_daily_price,omitempty" xml:"settle_order_daily_price,omitempty"`
+    SettleOrderDailyPrice   *HbsDailyPriceDo `json:"settle_order_daily_price,omitempty" xml:"settle_order_daily_price,omitempty"`
     // 房费
     RoomsPrice   int64 `json:"rooms_price,omitempty" xml:"rooms_price,omitempty"`
     // 底价房费

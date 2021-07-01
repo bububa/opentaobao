@@ -25,7 +25,7 @@ type TaobaoXhotelOrderHotelsignQueryResponse struct {
     // outUuid
     OutUuid   string `json:"out_uuid,omitempty" xml:"out_uuid,omitempty"`
     // hotelSignInfo，当入参中包含hotelcode和vendor的时候，返回该对象
-    HotelSignInfo   *DchotelSignDO `json:"hotel_sign_info,omitempty" xml:"hotel_sign_info,omitempty"`
+    HotelSignInfo   *DchotelSignDo `json:"hotel_sign_info,omitempty" xml:"hotel_sign_info,omitempty"`
     // dsNhotelInfoDOList，当入参不包含hotelcode的时候，只有vendor的时候返回该对象
-    DsNhotelInfoDOList   []DsNhotelInfoDO `json:"ds_nhotel_info_d_o_list,omitempty" xml:"ds_nhotel_info_d_o_list>ds_nhotel_info_do,omitempty"`
+    DsNhotelInfoDOList   []DsNhotelInfoDo `json:"ds_nhotel_info_d_o_list,omitempty" xml:"ds_nhotel_info_d_o_list>ds_nhotel_info_do,omitempty"`
 }

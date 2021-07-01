@@ -13,5 +13,5 @@ type WdkOpenOrderFinanceBillQueryResult struct {
     // 成功或失败，调用方需要根据该状态判断是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 账单列表
-    Bills   []WdkOpenOrderFinanceBillDO `json:"bills,omitempty" xml:"bills>wdk_open_order_finance_bill_do,omitempty"`
+    Bills   []WdkOpenOrderFinanceBillDo `json:"bills,omitempty" xml:"bills>wdk_open_order_finance_bill_do,omitempty"`
 }

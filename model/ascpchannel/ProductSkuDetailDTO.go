@@ -1,7 +1,7 @@
 package ascpchannel
 
-// ProductSkuDetailDTO 
-type ProductSkuDetailDTO struct {
+// ProductSkuDetailDto 
+type ProductSkuDetailDto struct {
     // sku 销售属性
     Properties   []string `json:"properties,omitempty" xml:"properties>string,omitempty"`
     // skuId

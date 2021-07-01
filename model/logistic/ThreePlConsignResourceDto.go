@@ -1,7 +1,7 @@
 package logistic
 
-// ThreePlConsignResourceDTO 
-type ThreePlConsignResourceDTO struct {
+// ThreePlConsignResourceDto 
+type ThreePlConsignResourceDto struct {
     // 破损赔付
     BrokenCompensatePrice   int64 `json:"broken_compensate_price,omitempty" xml:"broken_compensate_price,omitempty"`
     // 首重价格

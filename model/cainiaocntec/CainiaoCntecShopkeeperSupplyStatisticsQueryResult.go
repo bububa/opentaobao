@@ -9,7 +9,7 @@ type CainiaoCntecShopkeeperSupplyStatisticsQueryResult struct {
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 门店统计结果
-    ModelList   []ActivityStatisticsDTO `json:"model_list,omitempty" xml:"model_list>activity_statistics_dto,omitempty"`
+    ModelList   []ActivityStatisticsDto `json:"model_list,omitempty" xml:"model_list>activity_statistics_dto,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // 总数量

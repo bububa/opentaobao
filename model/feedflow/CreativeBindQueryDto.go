@@ -1,7 +1,7 @@
 package feedflow
 
-// CreativeBindQueryDTO 
-type CreativeBindQueryDTO struct {
+// CreativeBindQueryDto 
+type CreativeBindQueryDto struct {
     // 单元id
     AdgroupId   int64 `json:"adgroup_id,omitempty" xml:"adgroup_id,omitempty"`
     // 分页页码

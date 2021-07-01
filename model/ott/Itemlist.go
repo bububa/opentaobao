@@ -11,7 +11,7 @@ type Itemlist struct {
     // 摘要看点
     Summary   string `json:"summary,omitempty" xml:"summary,omitempty"`
     // 角标图
-    PicCorner   *PicCornerDO `json:"pic_corner,omitempty" xml:"pic_corner,omitempty"`
+    PicCorner   *PicCornerDo `json:"pic_corner,omitempty" xml:"pic_corner,omitempty"`
     // 背景图标
     PicUrl   string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
     // 动画图标
@@ -27,9 +27,9 @@ type Itemlist struct {
     // 动画类型
     AnimeType   string `json:"anime_type,omitempty" xml:"anime_type,omitempty"`
     // 功能入口
-    Entry   *ItemEntryDO `json:"entry,omitempty" xml:"entry,omitempty"`
+    Entry   *ItemEntryDo `json:"entry,omitempty" xml:"entry,omitempty"`
     // 排行榜
-    Chart   *MetaChartDO `json:"chart,omitempty" xml:"chart,omitempty"`
+    Chart   *MetaChartDo `json:"chart,omitempty" xml:"chart,omitempty"`
     // 类目入口
     EntryList   []Entrylist `json:"entry_list,omitempty" xml:"entry_list>entrylist,omitempty"`
     // 行为扩展

@@ -1,7 +1,7 @@
 package hotel
 
-// HotelLabelDTO 
-type HotelLabelDTO struct {
+// HotelLabelDto 
+type HotelLabelDto struct {
     // 颜色
     Color   string `json:"color,omitempty" xml:"color,omitempty"`
     // 描述

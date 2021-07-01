@@ -3,7 +3,7 @@ package ascpffo
 // AliexpressAscpRoQueryResult 
 type AliexpressAscpRoQueryResult struct {
     // DTO
-    Data   *ErpReturnOrderDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *ErpReturnOrderDto `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 错误信息

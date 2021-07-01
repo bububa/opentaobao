@@ -1,7 +1,7 @@
 package flight
 
-// ModifyBeforeSegmentDTO 
-type ModifyBeforeSegmentDTO struct {
+// ModifyBeforeSegmentDto 
+type ModifyBeforeSegmentDto struct {
     // 到达城市
     ArrCity   string `json:"arr_city,omitempty" xml:"arr_city,omitempty"`
     // 起飞城市

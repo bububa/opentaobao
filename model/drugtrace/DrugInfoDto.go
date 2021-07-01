@@ -1,7 +1,7 @@
 package drugtrace
 
-// DrugInfoDTO 
-type DrugInfoDTO struct {
+// DrugInfoDto 
+type DrugInfoDto struct {
     // 20位码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 药品通用名

@@ -1,7 +1,7 @@
 package opentrade
 
-// McSceneActivityDTO 
-type McSceneActivityDTO struct {
+// McSceneActivityDto 
+type McSceneActivityDto struct {
     // 活动开始时间
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 活动关联的商品列表，使用逗号(,)分割

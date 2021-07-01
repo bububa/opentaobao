@@ -1,7 +1,7 @@
 package icbu
 
-// ProductInventoryDTO 
-type ProductInventoryDTO struct {
+// ProductInventoryDto 
+type ProductInventoryDto struct {
     // 库存编码，为空时表示默认国内仓
     StoreCode   string `json:"store_code,omitempty" xml:"store_code,omitempty"`
     // 库存值

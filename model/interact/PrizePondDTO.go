@@ -1,7 +1,7 @@
 package interact
 
-// PrizePondDTO 
-type PrizePondDTO struct {
+// PrizePondDto 
+type PrizePondDto struct {
     // 奖品列表
     AwardBeans   []AwardBean `json:"award_beans,omitempty" xml:"award_beans>award_bean,omitempty"`
     // 奖池开始时间

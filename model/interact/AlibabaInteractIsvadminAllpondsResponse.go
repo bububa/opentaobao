@@ -29,5 +29,5 @@ type AlibabaInteractIsvadminAllpondsResponse struct {
     // 错误描述
     InteractErrorMsg   string `json:"interact_error_msg,omitempty" xml:"interact_error_msg,omitempty"`
     // 奖池列表
-    Allponds   []PrizePondDTO `json:"allponds,omitempty" xml:"allponds>prize_pond_dto,omitempty"`
+    Allponds   []PrizePondDto `json:"allponds,omitempty" xml:"allponds>prize_pond_dto,omitempty"`
 }

@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-对外提供会员注册服务 API返回值 
-alitrip.merchant.galaxy.member.provider.register
-
-星河产品=对外提供注册雅高会员服务
-*/
-type AlitripMerchantGalaxyMemberProviderRegisterAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyMemberProviderRegisterResponse
-}
-
-// 对外提供会员注册服务 成功返回结果
+// AlitripMerchantGalaxyMemberProviderRegisterResponse 
 type AlitripMerchantGalaxyMemberProviderRegisterResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_member_provider_register_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 错误信息
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+    // 是否注册成功
+    Content   bool `json:"content,omitempty" xml:"content,omitempty"`
+    // 错误代码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 是否成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

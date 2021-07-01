@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeRelationDetailListDO 
-type CodeRelationDetailListDO struct {
+// CodeRelationDetailListDo 
+type CodeRelationDetailListDo struct {
     // 包装规格= 数量+ 制剂单位/包装单位
     PkgSpec   string `json:"pkg_spec,omitempty" xml:"pkg_spec,omitempty"`
     // 制剂数量

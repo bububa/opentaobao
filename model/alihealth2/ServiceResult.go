@@ -21,5 +21,5 @@ type ServiceResult struct {
     // 结果集
     Datas   []BaseRule `json:"datas,omitempty" xml:"datas>base_rule,omitempty"`
     // data
-    DivisionList   []DivisionDTO `json:"division_list,omitempty" xml:"division_list>division_dto,omitempty"`
+    DivisionList   []DivisionDto `json:"division_list,omitempty" xml:"division_list>division_dto,omitempty"`
 }

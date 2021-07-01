@@ -1,7 +1,7 @@
 package util
 
-// CurrencyDTO 
-type CurrencyDTO struct {
+// CurrencyDto 
+type CurrencyDto struct {
     // 货币编码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 货币显示标示

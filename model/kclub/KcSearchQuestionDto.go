@@ -1,7 +1,7 @@
 package kclub
 
-// KcSearchQuestionDTO 
-type KcSearchQuestionDTO struct {
+// KcSearchQuestionDto 
+type KcSearchQuestionDto struct {
     // 生效时间
     StartDate   string `json:"start_date,omitempty" xml:"start_date,omitempty"`
     // 类目id

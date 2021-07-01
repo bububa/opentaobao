@@ -1,7 +1,7 @@
 package txcs
 
-// VerificationBillDTO 
-type VerificationBillDTO struct {
+// VerificationBillDto 
+type VerificationBillDto struct {
     // 结算公司
     SettlementCompanyCode   string `json:"settlement_company_code,omitempty" xml:"settlement_company_code,omitempty"`
     // 备注
@@ -11,7 +11,7 @@ type VerificationBillDTO struct {
     // 幂等ID
     RequestId   string `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 发票信息列表
-    InvoiceInfoDTOs   []InvoiceInfoDTO `json:"invoice_info_d_t_os,omitempty" xml:"invoice_info_d_t_os>invoice_info_dto,omitempty"`
+    InvoiceInfoDTOs   []InvoiceInfoDto `json:"invoice_info_d_t_os,omitempty" xml:"invoice_info_d_t_os>invoice_info_dto,omitempty"`
     // 核销单类型
     VerificationType   string `json:"verification_type,omitempty" xml:"verification_type,omitempty"`
     // 币种

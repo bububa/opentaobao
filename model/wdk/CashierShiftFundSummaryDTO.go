@@ -1,7 +1,7 @@
 package wdk
 
-// CashierShiftFundSummaryDTO 
-type CashierShiftFundSummaryDTO struct {
+// CashierShiftFundSummaryDto 
+type CashierShiftFundSummaryDto struct {
     // 商户编号
     MerchantCode   string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
     // 门店编号

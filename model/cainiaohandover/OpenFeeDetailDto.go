@@ -1,7 +1,7 @@
 package cainiaohandover
 
-// OpenFeeDetailDTO 
-type OpenFeeDetailDTO struct {
+// OpenFeeDetailDto 
+type OpenFeeDetailDto struct {
     // 已支付费用
     PaidFee   int64 `json:"paid_fee,omitempty" xml:"paid_fee,omitempty"`
     // 已支付费用币种

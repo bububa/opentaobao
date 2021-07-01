@@ -3,7 +3,7 @@ package wdk
 // PosOrderCreateRequest 
 type PosOrderCreateRequest struct {
     // 子订单列表
-    SubOrderDOList   []PosSubOrderDO `json:"sub_order_d_o_list,omitempty" xml:"sub_order_d_o_list>pos_sub_order_do,omitempty"`
+    SubOrderDOList   []PosSubOrderDo `json:"sub_order_d_o_list,omitempty" xml:"sub_order_d_o_list>pos_sub_order_do,omitempty"`
     // 支付时间，必填
     PayTime   string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
     // 外部主订单号，必填

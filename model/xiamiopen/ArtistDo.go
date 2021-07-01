@@ -1,7 +1,7 @@
 package xiamiopen
 
-// ArtistDO 
-type ArtistDO struct {
+// ArtistDo 
+type ArtistDo struct {
     // 艺人别名
     Alias   string `json:"alias,omitempty" xml:"alias,omitempty"`
     // 艺人logo

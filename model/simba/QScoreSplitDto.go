@@ -1,7 +1,7 @@
 package simba
 
-// QScoreSplitDTO 
-type QScoreSplitDTO struct {
+// QScoreSplitDto 
+type QScoreSplitDto struct {
     // 类目质量得分
     CatMatchScore   string `json:"cat_match_score,omitempty" xml:"cat_match_score,omitempty"`
     // 推广组id

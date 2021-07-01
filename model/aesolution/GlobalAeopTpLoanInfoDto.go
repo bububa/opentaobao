@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpLoanInfoDTO 
-type GlobalAeopTpLoanInfoDTO struct {
+// GlobalAeopTpLoanInfoDto 
+type GlobalAeopTpLoanInfoDto struct {
     // loan amount
     LoanAmount   *GlobalMoneyStr `json:"loan_amount,omitempty" xml:"loan_amount,omitempty"`
     // loan time

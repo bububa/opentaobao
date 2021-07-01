@@ -1,7 +1,7 @@
 package simba
 
-// RtRptResultEntityDTO 
-type RtRptResultEntityDTO struct {
+// RtRptResultEntityDto 
+type RtRptResultEntityDto struct {
     // 日期
     Thedate   string `json:"thedate,omitempty" xml:"thedate,omitempty"`
     // 直接成交金额

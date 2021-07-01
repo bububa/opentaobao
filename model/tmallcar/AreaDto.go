@@ -1,7 +1,7 @@
 package tmallcar
 
-// AreaDTO 
-type AreaDTO struct {
+// AreaDto 
+type AreaDto struct {
     // 公司详细地址
     CompanyAdress   string `json:"company_adress,omitempty" xml:"company_adress,omitempty"`
     // 公司email

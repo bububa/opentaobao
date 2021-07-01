@@ -1,7 +1,7 @@
 package media
 
-// VideoItemDO 
-type VideoItemDO struct {
+// VideoItemDo 
+type VideoItemDo struct {
     // 视频封面
     CoverUrl   string `json:"cover_url,omitempty" xml:"cover_url,omitempty"`
     // 视频时长

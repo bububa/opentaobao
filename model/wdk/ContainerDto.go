@@ -1,7 +1,7 @@
 package wdk
 
-// ContainerDTO 
-type ContainerDTO struct {
+// ContainerDto 
+type ContainerDto struct {
     // 容器code
     ContainerCode   string `json:"container_code,omitempty" xml:"container_code,omitempty"`
     // 容器类型

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DeviceEntryDTO 
-type DeviceEntryDTO struct {
+// DeviceEntryDto 
+type DeviceEntryDto struct {
     // id
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // name

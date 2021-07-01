@@ -23,7 +23,7 @@ type TaobaoTaeBookBillsGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 虚拟账户账单列表
-    Bills   []TopAcctCashJourDTO `json:"bills,omitempty" xml:"bills>top_acct_cash_jour_dto,omitempty"`
+    Bills   []TopAcctCashJourDto `json:"bills,omitempty" xml:"bills>top_acct_cash_jour_dto,omitempty"`
     // 是否有下一页
     HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
     // 当前查询的结果数,非总数

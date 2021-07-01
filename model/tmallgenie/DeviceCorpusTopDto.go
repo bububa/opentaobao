@@ -1,7 +1,7 @@
 package tmallgenie
 
-// DeviceCorpusTopDTO 
-type DeviceCorpusTopDTO struct {
+// DeviceCorpusTopDto 
+type DeviceCorpusTopDto struct {
     // 操作语料
     CorpusList   []string `json:"corpus_list,omitempty" xml:"corpus_list>string,omitempty"`
     // 支持的操作类型

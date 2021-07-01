@@ -1,9 +1,9 @@
 package promotion
 
-// LotterySchemaCreateDTO 
-type LotterySchemaCreateDTO struct {
+// LotterySchemaCreateDto 
+type LotterySchemaCreateDto struct {
     // 关联的奖品
-    AwardList   []LotteryAwardRelDTO `json:"award_list,omitempty" xml:"award_list>lottery_award_rel_dto,omitempty"`
+    AwardList   []LotteryAwardRelDto `json:"award_list,omitempty" xml:"award_list>lottery_award_rel_dto,omitempty"`
     // 方案名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 方案中奖概率

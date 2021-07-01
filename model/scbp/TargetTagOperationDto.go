@@ -1,7 +1,7 @@
 package scbp
 
-// TargetTagOperationDTO 
-type TargetTagOperationDTO struct {
+// TargetTagOperationDto 
+type TargetTagOperationDto struct {
     // crowd or region
     Scope   []string `json:"scope,omitempty" xml:"scope>string,omitempty"`
     // 出价类型：0=出价, 1=溢价，2=过滤, 3=召回

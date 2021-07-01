@@ -1,7 +1,7 @@
 package logistic
 
-// UpdateResendStatusDTO 
-type UpdateResendStatusDTO struct {
+// UpdateResendStatusDto 
+type UpdateResendStatusDto struct {
     // 补发单状态（-1=关闭，1=补发成功，2=部分成功）
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 主订单

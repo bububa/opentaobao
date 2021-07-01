@@ -1,7 +1,7 @@
 package game
 
-// AppleCardCancelDTO 
-type AppleCardCancelDTO struct {
+// AppleCardCancelDto 
+type AppleCardCancelDto struct {
     // 单卡取消激活结果描述
     StatusDesc   string `json:"status_desc,omitempty" xml:"status_desc,omitempty"`
     // 单卡取消激活结果码

@@ -1,7 +1,7 @@
 package drugtrace
 
-// StoreTerraceBillDTO 
-type StoreTerraceBillDTO struct {
+// StoreTerraceBillDto 
+type StoreTerraceBillDto struct {
     // 单据ID
     BillId   string `json:"bill_id,omitempty" xml:"bill_id,omitempty"`
     // 单据编码

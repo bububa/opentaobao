@@ -23,5 +23,5 @@ type TaobaoTaeBillGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 账单明细
-    Bill   *BillDTO `json:"bill,omitempty" xml:"bill,omitempty"`
+    Bill   *BillDto `json:"bill,omitempty" xml:"bill,omitempty"`
 }

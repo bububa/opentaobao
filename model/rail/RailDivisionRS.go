@@ -1,7 +1,7 @@
 package rail
 
-// RailDivisionRS 
-type RailDivisionRS struct {
+// RailDivisionRs 
+type RailDivisionRs struct {
     // 省份城市
     ProvName   string `json:"prov_name,omitempty" xml:"prov_name,omitempty"`
     // 省份城市英文

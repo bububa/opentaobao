@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// HotelDinamicLabelDTO 
-type HotelDinamicLabelDTO struct {
+// HotelDinamicLabelDto 
+type HotelDinamicLabelDto struct {
     // 权益名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 权益类型

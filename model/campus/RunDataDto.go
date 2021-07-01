@@ -1,7 +1,7 @@
 package campus
 
-// RunDataDTO 
-type RunDataDTO struct {
+// RunDataDto 
+type RunDataDto struct {
     // 参数code
     PropertyCode   string `json:"property_code,omitempty" xml:"property_code,omitempty"`
     // 参数名称

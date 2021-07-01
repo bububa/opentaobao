@@ -1,7 +1,7 @@
 package baodian
 
-// GameGiftRecordDTO 
-type GameGiftRecordDTO struct {
+// GameGiftRecordDto 
+type GameGiftRecordDto struct {
     // 记录id
     RecordId   int64 `json:"record_id,omitempty" xml:"record_id,omitempty"`
     // 记录状态

@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillDealStatusSearchDO 
-type BillDealStatusSearchDO struct {
+// BillDealStatusSearchDo 
+type BillDealStatusSearchDo struct {
     // 出入库号
     StoreInoutSeqNo   string `json:"store_inout_seq_no,omitempty" xml:"store_inout_seq_no,omitempty"`
     // 文件名

@@ -1,7 +1,7 @@
 package servicecenter
 
-// OrderConfirmQueryDTO 
-type OrderConfirmQueryDTO struct {
+// OrderConfirmQueryDto 
+type OrderConfirmQueryDto struct {
     // APPKEY，必填
     AppKey   string `json:"app_key,omitempty" xml:"app_key,omitempty"`
     // 内购服务的规格CODE，必填

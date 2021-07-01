@@ -1,7 +1,7 @@
 package mos
 
-// FundBillDO 
-type FundBillDO struct {
+// FundBillDo 
+type FundBillDo struct {
     // 金额。单位为人民币（分）。必然返回
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 业务扩展参数，json格式

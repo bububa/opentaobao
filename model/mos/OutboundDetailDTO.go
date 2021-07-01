@@ -1,7 +1,7 @@
 package mos
 
-// OutboundDetailDTO 
-type OutboundDetailDTO struct {
+// OutboundDetailDto 
+type OutboundDetailDto struct {
     // 数量
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // skuId

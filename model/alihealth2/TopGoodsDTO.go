@@ -1,7 +1,7 @@
 package alihealth2
 
-// TopGoodsDTO 
-type TopGoodsDTO struct {
+// TopGoodsDto 
+type TopGoodsDto struct {
     // 商品名
     GoodsName   string `json:"goods_name,omitempty" xml:"goods_name,omitempty"`
     // 商品编码

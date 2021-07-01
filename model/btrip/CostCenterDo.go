@@ -1,7 +1,7 @@
 package btrip
 
-// CostCenterDO 
-type CostCenterDO struct {
+// CostCenterDo 
+type CostCenterDo struct {
     // 成本中心ID
     CostCenterId   int64 `json:"cost_center_id,omitempty" xml:"cost_center_id,omitempty"`
     // 成本中心名称

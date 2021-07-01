@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// AddressSearchDTO 
-type AddressSearchDTO struct {
+// AddressSearchDto 
+type AddressSearchDto struct {
     // 0国内1国外
     Domestic   int64 `json:"domestic,omitempty" xml:"domestic,omitempty"`
     // 城市图片url

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DeviceExtendDO 
-type DeviceExtendDO struct {
+// DeviceExtendDo 
+type DeviceExtendDo struct {
     // 牌照方
     Bcp   int64 `json:"bcp,omitempty" xml:"bcp,omitempty"`
     // 设备型号

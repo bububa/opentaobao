@@ -1,7 +1,7 @@
 package maitix
 
-// LockTicketSubOrderDTO 
-type LockTicketSubOrderDTO struct {
+// LockTicketSubOrderDto 
+type LockTicketSubOrderDto struct {
     // 外部子订单号，透传返回
     ExternalSubOrderNo   string `json:"external_sub_order_no,omitempty" xml:"external_sub_order_no,omitempty"`
     // 商品原价，单位分
@@ -11,7 +11,7 @@ type LockTicketSubOrderDTO struct {
     // 大麦子订单号
     SubOrderId   int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
     // 子订单座位信息
-    SubOrderSeatDto   *LockTicketSubOrderSeatDTO `json:"sub_order_seat_dto,omitempty" xml:"sub_order_seat_dto,omitempty"`
+    SubOrderSeatDto   *LockTicketSubOrderSeatDto `json:"sub_order_seat_dto,omitempty" xml:"sub_order_seat_dto,omitempty"`
     // 票单ID
     VoucherId   int64 `json:"voucher_id,omitempty" xml:"voucher_id,omitempty"`
 }

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// HotelPictureDTO 
-type HotelPictureDTO struct {
+// HotelPictureDto 
+type HotelPictureDto struct {
     // 类型名称
     TypeName   string `json:"type_name,omitempty" xml:"type_name,omitempty"`
     // 类型编码

@@ -1,7 +1,7 @@
 package fenxiao
 
-// InventorySubDetailDTO 
-type InventorySubDetailDTO struct {
+// InventorySubDetailDto 
+type InventorySubDetailDto struct {
     // 预扣库存数
     ReserveQuantity   int64 `json:"reserve_quantity,omitempty" xml:"reserve_quantity,omitempty"`
     // 仓库物理库存数

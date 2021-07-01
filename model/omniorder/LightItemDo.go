@@ -1,7 +1,7 @@
 package omniorder
 
-// LightItemDO 
-type LightItemDO struct {
+// LightItemDo 
+type LightItemDo struct {
     // 商品所属商家id
     UserId   int64 `json:"user_id,omitempty" xml:"user_id,omitempty"`
     // 商品淘系id
@@ -21,7 +21,7 @@ type LightItemDO struct {
     // 商品描述
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // sku信息列表
-    Skus   []ItemLightPublishSkuDTO `json:"skus,omitempty" xml:"skus>item_light_publish_sku_dto,omitempty"`
+    Skus   []ItemLightPublishSkuDto `json:"skus,omitempty" xml:"skus>item_light_publish_sku_dto,omitempty"`
     // 销售价
     Pretium   string `json:"pretium,omitempty" xml:"pretium,omitempty"`
     // 商家编码
@@ -29,7 +29,7 @@ type LightItemDO struct {
     // 商品条形码
     Barcode   string `json:"barcode,omitempty" xml:"barcode,omitempty"`
     // 商品图片，最少1张，最多5张
-    Images   []ItemLightPublishImageDTO `json:"images,omitempty" xml:"images>item_light_publish_image_dto,omitempty"`
+    Images   []ItemLightPublishImageDto `json:"images,omitempty" xml:"images>item_light_publish_image_dto,omitempty"`
     // 扩展字段
     ExtendAttr   string `json:"extend_attr,omitempty" xml:"extend_attr,omitempty"`
 }

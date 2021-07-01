@@ -1,7 +1,7 @@
 package servicecenter
 
-// OfnPreRedPacketActionDTO 
-type OfnPreRedPacketActionDTO struct {
+// OfnPreRedPacketActionDto 
+type OfnPreRedPacketActionDto struct {
     // 主键
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间
@@ -13,5 +13,5 @@ type OfnPreRedPacketActionDTO struct {
     // 状态。初始化=1，重试中=2，失败=3，成功=4
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 资金池的记录
-    AfterFundRecordList   []OfnPreRedPacketFundRecordDTO `json:"after_fund_record_list,omitempty" xml:"after_fund_record_list>ofn_pre_red_packet_fund_record_dto,omitempty"`
+    AfterFundRecordList   []OfnPreRedPacketFundRecordDto `json:"after_fund_record_list,omitempty" xml:"after_fund_record_list>ofn_pre_red_packet_fund_record_dto,omitempty"`
 }

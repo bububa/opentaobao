@@ -23,5 +23,5 @@ type CainiaoSmartdeliveryStrategyWarehouseIUpdateResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 仓信息
-    WarehouseInfo   *WarehouseDTO `json:"warehouse_info,omitempty" xml:"warehouse_info,omitempty"`
+    WarehouseInfo   *WarehouseDto `json:"warehouse_info,omitempty" xml:"warehouse_info,omitempty"`
 }

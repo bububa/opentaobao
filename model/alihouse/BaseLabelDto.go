@@ -1,7 +1,7 @@
 package alihouse
 
-// BaseLabelDTO 
-type BaseLabelDTO struct {
+// BaseLabelDto 
+type BaseLabelDto struct {
     // 父级业务
     ParentBusiness   string `json:"parent_business,omitempty" xml:"parent_business,omitempty"`
     // 业务

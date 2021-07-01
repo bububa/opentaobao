@@ -1,27 +1,13 @@
 package aliexpress
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-同步帖子 API返回值 
-aliexpress.feed.post.publish
-
-站外平台同步帖子至AE FEED域
-*/
-type AliexpressFeedPostPublishAPIResponse struct {
-    model.CommonResponse
-    AliexpressFeedPostPublishResponse
-}
-
-// 同步帖子 成功返回结果
+// AliexpressFeedPostPublishResponse 
 type AliexpressFeedPostPublishResponse struct {
-    XMLName xml.Name `xml:"aliexpress_feed_post_publish_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回结果
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 错误码
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
+    // 成功返回结果，json字符串
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+    // 是否请求成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 }

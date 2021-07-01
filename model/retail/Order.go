@@ -13,9 +13,9 @@ type Order struct {
     // 原价
     OriginPrice   int64 `json:"origin_price,omitempty" xml:"origin_price,omitempty"`
     // 商品信息
-    ItemList   []ItemLineDTO `json:"item_list,omitempty" xml:"item_list>item_line_dto,omitempty"`
+    ItemList   []ItemLineDto `json:"item_list,omitempty" xml:"item_list>item_line_dto,omitempty"`
     // 地址信息
-    DeliveryAddress   *DeliveryAddressDTO `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
+    DeliveryAddress   *DeliveryAddressDto `json:"delivery_address,omitempty" xml:"delivery_address,omitempty"`
     // 订单实付价格
     PayFee   int64 `json:"pay_fee,omitempty" xml:"pay_fee,omitempty"`
     // 提货类型

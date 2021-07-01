@@ -1,7 +1,7 @@
 package campus
 
-// DeviceStandardApiDTO 
-type DeviceStandardApiDTO struct {
+// DeviceStandardApiDto 
+type DeviceStandardApiDto struct {
     // 设备code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 园区名称
@@ -41,13 +41,13 @@ type DeviceStandardApiDTO struct {
     // 模板名称
     TemplateName   string `json:"template_name,omitempty" xml:"template_name,omitempty"`
     // 设备参数信息
-    MetaPointDatas   []MeatDataApiDTO `json:"meta_point_datas,omitempty" xml:"meta_point_datas>meat_data_api_dto,omitempty"`
+    MetaPointDatas   []MeatDataApiDto `json:"meta_point_datas,omitempty" xml:"meta_point_datas>meat_data_api_dto,omitempty"`
     // campusId
     CampusId   int64 `json:"campus_id,omitempty" xml:"campus_id,omitempty"`
     // 设备别名
     Nickname   string `json:"nickname,omitempty" xml:"nickname,omitempty"`
     // 设备标签列表
-    TagInfoList   []TagInfoApiDTO `json:"tag_info_list,omitempty" xml:"tag_info_list>tag_info_api_dto,omitempty"`
+    TagInfoList   []TagInfoApiDto `json:"tag_info_list,omitempty" xml:"tag_info_list>tag_info_api_dto,omitempty"`
     // 设备运行状态。0->在线 1->离线 2->故障
     RunStatus   int64 `json:"run_status,omitempty" xml:"run_status,omitempty"`
     // 设备运行状态展示字段

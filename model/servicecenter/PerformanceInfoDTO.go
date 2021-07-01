@@ -1,7 +1,7 @@
 package servicecenter
 
-// PerformanceInfoDTO 
-type PerformanceInfoDTO struct {
+// PerformanceInfoDto 
+type PerformanceInfoDto struct {
     // 首次相应时间
     FirstResponseTime   string `json:"first_response_time,omitempty" xml:"first_response_time,omitempty"`
     // 平均最后在线时间

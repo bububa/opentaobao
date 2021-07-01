@@ -1,7 +1,7 @@
 package iot
 
-// TradeItemDO 
-type TradeItemDO struct {
+// TradeItemDo 
+type TradeItemDo struct {
     // 购买件数，默认为1
     BuyAmount   int64 `json:"buy_amount,omitempty" xml:"buy_amount,omitempty"`
     // 商品SKU ID

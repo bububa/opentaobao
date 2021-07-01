@@ -1,7 +1,7 @@
 package alihouse
 
-// RichContentDraftDTO 
-type RichContentDraftDTO struct {
+// RichContentDraftDto 
+type RichContentDraftDto struct {
     // 外部富文本id
     OuterRichContentId   string `json:"outer_rich_content_id,omitempty" xml:"outer_rich_content_id,omitempty"`
     // 菜鸟城市id
@@ -31,9 +31,9 @@ type RichContentDraftDTO struct {
     // 富文本内容
     SourceRichContent   string `json:"source_rich_content,omitempty" xml:"source_rich_content,omitempty"`
     // 楼盘卡片映射
-    ProjectCards   []ProjectCardDataDTO `json:"project_cards,omitempty" xml:"project_cards>project_card_data_dto,omitempty"`
+    ProjectCards   []ProjectCardDataDto `json:"project_cards,omitempty" xml:"project_cards>project_card_data_dto,omitempty"`
     // 视频映射
-    VideoMappings   []VideoDataDTO `json:"video_mappings,omitempty" xml:"video_mappings>video_data_dto,omitempty"`
+    VideoMappings   []VideoDataDto `json:"video_mappings,omitempty" xml:"video_mappings>video_data_dto,omitempty"`
     // 1 测试数据 0 正常数据
     IsTest   int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 }

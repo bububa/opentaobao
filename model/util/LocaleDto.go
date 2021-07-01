@@ -1,7 +1,7 @@
 package util
 
-// LocaleDTO 
-type LocaleDTO struct {
+// LocaleDto 
+type LocaleDto struct {
     // Locale编码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // Locale名称

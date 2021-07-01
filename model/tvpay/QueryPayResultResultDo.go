@@ -1,7 +1,7 @@
 package tvpay
 
-// QueryPayResultResultDO 
-type QueryPayResultResultDO struct {
+// QueryPayResultResultDo 
+type QueryPayResultResultDo struct {
     // 支付资金组成情况
     FundMoney   string `json:"fund_money,omitempty" xml:"fund_money,omitempty"`
     // 支付资金组成情况

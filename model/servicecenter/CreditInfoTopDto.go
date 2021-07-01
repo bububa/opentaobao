@@ -1,7 +1,7 @@
 package servicecenter
 
-// CreditInfoTopDTO 
-type CreditInfoTopDTO struct {
+// CreditInfoTopDto 
+type CreditInfoTopDto struct {
     // 身份证
     IdentityNo   string `json:"identity_no,omitempty" xml:"identity_no,omitempty"`
     // 手机号

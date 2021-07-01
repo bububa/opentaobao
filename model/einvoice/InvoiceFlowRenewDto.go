@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceFlowRenewDTO 
-type InvoiceFlowRenewDTO struct {
+// InvoiceFlowRenewDto 
+type InvoiceFlowRenewDto struct {
     // 外部幂等ID
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 被续约工单ID

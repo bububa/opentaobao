@@ -1,7 +1,7 @@
 package scbp
 
-// TargetEffectDTO 
-type TargetEffectDTO struct {
+// TargetEffectDto 
+type TargetEffectDto struct {
     // 标题
     Subject   string `json:"subject,omitempty" xml:"subject,omitempty"`
     // 选项值

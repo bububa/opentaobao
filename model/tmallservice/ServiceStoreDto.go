@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceStoreDTO 
-type ServiceStoreDTO struct {
+// ServiceStoreDto 
+type ServiceStoreDto struct {
     // 城市
     AddressCity   string `json:"address_city,omitempty" xml:"address_city,omitempty"`
     // 标准地址编码

@@ -1,7 +1,7 @@
 package hotelhstdf
 
-// HotelRoomStaticDO 
-type HotelRoomStaticDO struct {
+// HotelRoomStaticDo 
+type HotelRoomStaticDo struct {
     // 字典code,收费停车场
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 数据银行id，酒店集团字典才有值

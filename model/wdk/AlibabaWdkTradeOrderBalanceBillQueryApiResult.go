@@ -3,7 +3,7 @@ package wdk
 // AlibabaWdkTradeOrderBalanceBillQueryApiResult 
 type AlibabaWdkTradeOrderBalanceBillQueryApiResult struct {
     // model
-    Model   *OrderBalanceBillResponseDO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *OrderBalanceBillResponseDo `json:"model,omitempty" xml:"model,omitempty"`
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误信息

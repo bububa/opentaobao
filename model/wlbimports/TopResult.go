@@ -7,7 +7,7 @@ type TopResult struct {
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // 面单信息
-    Result   *WayBillDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *WayBillDto `json:"result,omitempty" xml:"result,omitempty"`
     // 子错误信息
     SubErrorCode   string `json:"sub_error_code,omitempty" xml:"sub_error_code,omitempty"`
     // 子错误码

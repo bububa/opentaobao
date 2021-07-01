@@ -1,7 +1,7 @@
 package wdk
 
-// ItemPoolSkuActivityElementDTO 
-type ItemPoolSkuActivityElementDTO struct {
+// ItemPoolSkuActivityElementDto 
+type ItemPoolSkuActivityElementDto struct {
     // 商品编码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 换购价（单位分）

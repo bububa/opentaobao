@@ -1,15 +1,15 @@
 package maitix
 
-// ProjectDTO 
-type ProjectDTO struct {
+// ProjectDto 
+type ProjectDto struct {
     // 城市信息
-    City   *IdNameDTO `json:"city,omitempty" xml:"city,omitempty"`
+    City   *IdNameDto `json:"city,omitempty" xml:"city,omitempty"`
     // 项目大类编码-废弃,使用项目详情结果的内容
     ClassifyCode   string `json:"classify_code,omitempty" xml:"classify_code,omitempty"`
     // 项目大类名称-废弃,使用项目详情结果的内容
     ClassifyName   string `json:"classify_name,omitempty" xml:"classify_name,omitempty"`
     // 国家
-    Country   *IdNameDTO `json:"country,omitempty" xml:"country,omitempty"`
+    Country   *IdNameDto `json:"country,omitempty" xml:"country,omitempty"`
     // 项目介绍，目前该字段废弃
     Introduce   string `json:"introduce,omitempty" xml:"introduce,omitempty"`
     // 是否有座： 0=无座 1=有座
@@ -25,7 +25,7 @@ type ProjectDTO struct {
     // 项目类型 0:普通项目-废弃
     ProjectType   int64 `json:"project_type,omitempty" xml:"project_type,omitempty"`
     // 省
-    Province   *IdNameDTO `json:"province,omitempty" xml:"province,omitempty"`
+    Province   *IdNameDto `json:"province,omitempty" xml:"province,omitempty"`
     // 备注-废弃
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 项目子类编码-废弃,使用项目详情结果的内容
@@ -41,7 +41,7 @@ type ProjectDTO struct {
     // 主办方名称
     TraderNamesArrList   []string `json:"trader_names_arr_list,omitempty" xml:"trader_names_arr_list>string,omitempty"`
     // 场馆
-    Venue   *VenueDTO `json:"venue,omitempty" xml:"venue,omitempty"`
+    Venue   *VenueDto `json:"venue,omitempty" xml:"venue,omitempty"`
     // 是否测试项目 0-正式项目 1-测试项目
     IsTest   int64 `json:"is_test,omitempty" xml:"is_test,omitempty"`
 }

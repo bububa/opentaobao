@@ -7,5 +7,5 @@ type TaobaoAilabAicloudTopDeviceDeviceidConvertResult struct {
     // 描述
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 结果详情
-    Result   *TopDeviceBaseInfoDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *TopDeviceBaseInfoDto `json:"result,omitempty" xml:"result,omitempty"`
 }

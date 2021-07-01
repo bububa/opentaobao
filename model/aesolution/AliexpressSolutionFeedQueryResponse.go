@@ -27,7 +27,7 @@ type AliexpressSolutionFeedQueryResponse struct {
     // Count of successful items after executed under this job
     SuccessItemCount   int64 `json:"success_item_count,omitempty" xml:"success_item_count,omitempty"`
     // Result list after all the item_content,which were previously submitted through API:aliexpress.solution.feed.submit, have been executed , including both successful and unsuccessful items.
-    ResultList   []SingleItemResponseDTO `json:"result_list,omitempty" xml:"result_list>single_item_response_dto,omitempty"`
+    ResultList   []SingleItemResponseDto `json:"result_list,omitempty" xml:"result_list>single_item_response_dto,omitempty"`
     // Count of total items under this job
     TotalItemCount   int64 `json:"total_item_count,omitempty" xml:"total_item_count,omitempty"`
 }

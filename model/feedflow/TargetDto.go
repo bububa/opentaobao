@@ -1,7 +1,7 @@
 package feedflow
 
-// TargetDTO 
-type TargetDTO struct {
+// TargetDto 
+type TargetDto struct {
     // 定向id
     TargetId   int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
     // 定向名称

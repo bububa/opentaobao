@@ -1,7 +1,7 @@
 package feedflow
 
-// LabelQueryDTO 
-type LabelQueryDTO struct {
+// LabelQueryDto 
+type LabelQueryDto struct {
     // 选项值
     OptionName   string `json:"option_name,omitempty" xml:"option_name,omitempty"`
     // 分页条件

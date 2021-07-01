@@ -41,7 +41,7 @@ type ItemProp struct {
     // 是否度量衡属性项
     IsTaosir   bool `json:"is_taosir,omitempty" xml:"is_taosir,omitempty"`
     // 度量衡相关信息
-    TaosirDo   *ItemTaosirDO `json:"taosir_do,omitempty" xml:"taosir_do,omitempty"`
+    TaosirDo   *ItemTaosirDo `json:"taosir_do,omitempty" xml:"taosir_do,omitempty"`
     // 是否是材质 属性项
     IsMaterial   bool `json:"is_material,omitempty" xml:"is_material,omitempty"`
     // 材质属性信息

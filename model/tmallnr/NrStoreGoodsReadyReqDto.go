@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrStoreGoodsReadyReqDTO 
-type NrStoreGoodsReadyReqDTO struct {
+// NrStoreGoodsReadyReqDto 
+type NrStoreGoodsReadyReqDto struct {
     // 配送人员的姓名
     PerformerName   string `json:"performer_name,omitempty" xml:"performer_name,omitempty"`
     // 配送人员的电话

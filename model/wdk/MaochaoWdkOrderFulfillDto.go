@@ -1,7 +1,7 @@
 package wdk
 
-// MaochaoWdkOrderFulfillDTO 
-type MaochaoWdkOrderFulfillDTO struct {
+// MaochaoWdkOrderFulfillDto 
+type MaochaoWdkOrderFulfillDto struct {
     // 主站子订单ID
     TbSubOrderId   int64 `json:"tb_sub_order_id,omitempty" xml:"tb_sub_order_id,omitempty"`
     // 五道口订单ID

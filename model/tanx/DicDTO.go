@@ -1,7 +1,7 @@
 package tanx
 
-// DicDTO 
-type DicDTO struct {
+// DicDto 
+type DicDto struct {
     // 数据项ID
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // 数据项值

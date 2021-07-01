@@ -1,7 +1,7 @@
 package wdk
 
-// CouponStatisticsResultDO 
-type CouponStatisticsResultDO struct {
+// CouponStatisticsResultDo 
+type CouponStatisticsResultDo struct {
     // 核券量
     UseCouponCount   int64 `json:"use_coupon_count,omitempty" xml:"use_coupon_count,omitempty"`
     // 发券量

@@ -25,7 +25,7 @@ type AlibabaNlifeStoreItemsGetResponse struct {
     // 搜索到符合条件的结果总数
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
     // 具体的商品信息列表
-    ItemList   []RetailItemTopDO `json:"item_list,omitempty" xml:"item_list>retail_item_top_do,omitempty"`
+    ItemList   []RetailItemTopDo `json:"item_list,omitempty" xml:"item_list>retail_item_top_do,omitempty"`
     // true-查询成功;false-查询失败
     Succes   bool `json:"succes,omitempty" xml:"succes,omitempty"`
 }

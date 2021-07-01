@@ -1,7 +1,7 @@
 package txcs
 
-// InvoiceInputDTO 
-type InvoiceInputDTO struct {
+// InvoiceInputDto 
+type InvoiceInputDto struct {
     // 结算公司
     SettlementCompanyCode   string `json:"settlement_company_code,omitempty" xml:"settlement_company_code,omitempty"`
     // 发票日期

@@ -1,7 +1,7 @@
 package icbuseller
 
-// OpenTradeDetailDTO 
-type OpenTradeDetailDTO struct {
+// OpenTradeDetailDto 
+type OpenTradeDetailDto struct {
     // 阿里id
     BuyerAliId   int64 `json:"buyer_ali_id,omitempty" xml:"buyer_ali_id,omitempty"`
     // 购买人

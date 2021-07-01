@@ -23,7 +23,7 @@ type AlibabaEinvoiceInvoiceapplyGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 开票申请查询结果
-    Result   *UserInvoiceApplyDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *UserInvoiceApplyDto `json:"result,omitempty" xml:"result,omitempty"`
     // totalCount
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 }

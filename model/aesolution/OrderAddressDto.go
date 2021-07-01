@@ -1,7 +1,7 @@
 package aesolution
 
-// OrderAddressDTO 
-type OrderAddressDTO struct {
+// OrderAddressDto 
+type OrderAddressDto struct {
     // English country/region name
     CountryName   string `json:"country_name,omitempty" xml:"country_name,omitempty"`
     // mobile number

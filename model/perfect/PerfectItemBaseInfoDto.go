@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectItemBaseInfoDTO 
-type PerfectItemBaseInfoDTO struct {
+// PerfectItemBaseInfoDto 
+type PerfectItemBaseInfoDto struct {
     // 商品条码
     ItemBarcode   string `json:"item_barcode,omitempty" xml:"item_barcode,omitempty"`
     // 商品外部编码

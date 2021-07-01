@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeResultModel 
 type AlibabaAlihealthDrugKytQueryDruginfoFromBillcodeResultModel struct {
     // 模型
-    Model   *BillInOutDetailDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *BillInOutDetailDto `json:"model,omitempty" xml:"model,omitempty"`
     // 消息编码
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 消息内容

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// CardBaseInfoDTO 
-type CardBaseInfoDTO struct {
+// CardBaseInfoDto 
+type CardBaseInfoDto struct {
     // 会员等级
     CardTier   string `json:"card_tier,omitempty" xml:"card_tier,omitempty"`
     // 会员卡号

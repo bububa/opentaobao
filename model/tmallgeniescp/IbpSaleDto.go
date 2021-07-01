@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// IbpSaleDTO 
-type IbpSaleDTO struct {
+// IbpSaleDto 
+type IbpSaleDto struct {
     // 激活数量
     ActivationQuantity   int64 `json:"activation_quantity,omitempty" xml:"activation_quantity,omitempty"`
     // 实际进货数量

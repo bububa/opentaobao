@@ -1,7 +1,7 @@
 package inventory
 
-// PlanPromiseTopDTO 
-type PlanPromiseTopDTO struct {
+// PlanPromiseTopDto 
+type PlanPromiseTopDto struct {
     // 仓code
     PerformStore   string `json:"perform_store,omitempty" xml:"perform_store,omitempty"`
     // 履约时间，如绝对时间 2021-03-11 ，或者相对时间 2

@@ -1,7 +1,7 @@
 package mos
 
-// DeliveryCustomDTO 
-type DeliveryCustomDTO struct {
+// DeliveryCustomDto 
+type DeliveryCustomDto struct {
     // 名
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 头像
@@ -11,5 +11,5 @@ type DeliveryCustomDTO struct {
     // 电话
     Telphone   string `json:"telphone,omitempty" xml:"telphone,omitempty"`
     // 详细信息
-    AddressInfo   *DeliveryAddressDTO `json:"address_info,omitempty" xml:"address_info,omitempty"`
+    AddressInfo   *DeliveryAddressDto `json:"address_info,omitempty" xml:"address_info,omitempty"`
 }

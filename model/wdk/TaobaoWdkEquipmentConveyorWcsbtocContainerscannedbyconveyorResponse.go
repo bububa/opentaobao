@@ -27,7 +27,7 @@ type TaobaoWdkEquipmentConveyorWcsbtocContainerscannedbyconveyorResponse struct 
     // errorMsg
     ServiceErrorMsg   string `json:"service_error_msg,omitempty" xml:"service_error_msg,omitempty"`
     // list
-    List   []WcsContainerScannedByConveyorDTO `json:"list,omitempty" xml:"list>wcs_container_scanned_by_conveyor_dto,omitempty"`
+    List   []WcsContainerScannedByConveyorDto `json:"list,omitempty" xml:"list>wcs_container_scanned_by_conveyor_dto,omitempty"`
     // success
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

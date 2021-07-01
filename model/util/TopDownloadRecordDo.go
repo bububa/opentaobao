@@ -1,7 +1,7 @@
 package util
 
-// TopDownloadRecordDO 
-type TopDownloadRecordDO struct {
+// TopDownloadRecordDo 
+type TopDownloadRecordDo struct {
     // 下载链接
     Url   string `json:"url,omitempty" xml:"url,omitempty"`
     // 文件创建时间

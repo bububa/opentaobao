@@ -1,7 +1,7 @@
 package idle
 
-// RecycleOrderSynDTO 
-type RecycleOrderSynDTO struct {
+// RecycleOrderSynDto 
+type RecycleOrderSynDto struct {
     // 属性入参
     Attribute   *Attribute `json:"attribute,omitempty" xml:"attribute,omitempty"`
     // 订单号

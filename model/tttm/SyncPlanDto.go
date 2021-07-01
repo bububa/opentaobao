@@ -1,9 +1,9 @@
 package tttm
 
-// SyncPlanDTO 
-type SyncPlanDTO struct {
+// SyncPlanDto 
+type SyncPlanDto struct {
     // 工单
-    SyncWorkDTOs   []WorkSyncDTO `json:"sync_work_d_t_os,omitempty" xml:"sync_work_d_t_os>work_sync_dto,omitempty"`
+    SyncWorkDTOs   []WorkSyncDto `json:"sync_work_d_t_os,omitempty" xml:"sync_work_d_t_os>work_sync_dto,omitempty"`
     // 计划完成
     FinishTime   string `json:"finish_time,omitempty" xml:"finish_time,omitempty"`
     // 订单

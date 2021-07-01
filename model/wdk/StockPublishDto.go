@@ -1,7 +1,7 @@
 package wdk
 
-// StockPublishDTO 
-type StockPublishDTO struct {
+// StockPublishDto 
+type StockPublishDto struct {
     // 商品编码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 更新数量，矢量

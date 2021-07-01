@@ -1,7 +1,7 @@
 package yunosad
 
-// CreativeParamDTO 
-type CreativeParamDTO struct {
+// CreativeParamDto 
+type CreativeParamDto struct {
     // 外部创意id
     CreativeId   string `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
     // 外部创意名称

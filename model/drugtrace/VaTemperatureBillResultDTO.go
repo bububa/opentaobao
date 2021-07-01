@@ -1,7 +1,7 @@
 package drugtrace
 
-// VaTemperatureBillResultDTO 
-type VaTemperatureBillResultDTO struct {
+// VaTemperatureBillResultDto 
+type VaTemperatureBillResultDto struct {
     // 最小温度值
     MinValue   string `json:"min_value,omitempty" xml:"min_value,omitempty"`
     // 设备编号

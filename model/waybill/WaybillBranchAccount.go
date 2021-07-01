@@ -17,9 +17,9 @@ type WaybillBranchAccount struct {
     // 电子面单余额数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 当前网点下的发货地址
-    ShippAddressCols   []AddressDTO `json:"shipp_address_cols,omitempty" xml:"shipp_address_cols>address_dto,omitempty"`
+    ShippAddressCols   []AddressDto `json:"shipp_address_cols,omitempty" xml:"shipp_address_cols>address_dto,omitempty"`
     // 可用的服务信息列表
-    ServiceInfoCols   []ServiceInfoDTO `json:"service_info_cols,omitempty" xml:"service_info_cols>service_info_dto,omitempty"`
+    ServiceInfoCols   []ServiceInfoDto `json:"service_info_cols,omitempty" xml:"service_info_cols>service_info_dto,omitempty"`
     // 号段信息
     SegmentCode   string `json:"segment_code,omitempty" xml:"segment_code,omitempty"`
     // 商家ID

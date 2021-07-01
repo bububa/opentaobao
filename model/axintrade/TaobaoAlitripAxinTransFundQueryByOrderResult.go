@@ -13,5 +13,5 @@ type TaobaoAlitripAxinTransFundQueryByOrderResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 出参
-    Data   *AxinFundDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinFundDto `json:"data,omitempty" xml:"data,omitempty"`
 }

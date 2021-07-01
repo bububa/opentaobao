@@ -1,27 +1,11 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-供应商同步接口 API返回值 
-taobao.qimen.supplier.synchronize
-
-这个接口用来同步供应商信息
-*/
-type TaobaoQimenSupplierSynchronizeAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenSupplierSynchronizeResponse
-}
-
-// 供应商同步接口 成功返回结果
+// TaobaoQimenSupplierSynchronizeResponse 
 type TaobaoQimenSupplierSynchronizeResponse struct {
-    XMLName xml.Name `xml:"qimen_supplier_synchronize_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 }

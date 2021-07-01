@@ -25,5 +25,5 @@ type TaobaoOpentradeQueueQueryResponse struct {
     // 总记录数
     TotalCount   string `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // 返回的排队用户数据
-    Results   []McUserDTO `json:"results,omitempty" xml:"results>mc_user_dto,omitempty"`
+    Results   []McUserDto `json:"results,omitempty" xml:"results>mc_user_dto,omitempty"`
 }

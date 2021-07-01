@@ -1,7 +1,7 @@
 package medicalbase
 
-// OrderlSyncDTO 
-type OrderlSyncDTO struct {
+// OrderlSyncDto 
+type OrderlSyncDto struct {
     // 登录用户支付宝ID
     AlipayId   string `json:"alipay_id,omitempty" xml:"alipay_id,omitempty"`
     // 医院唯一标识

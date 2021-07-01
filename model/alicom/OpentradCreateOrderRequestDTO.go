@@ -1,7 +1,7 @@
 package alicom
 
-// OpentradCreateOrderRequestDTO 
-type OpentradCreateOrderRequestDTO struct {
+// OpentradCreateOrderRequestDto 
+type OpentradCreateOrderRequestDto struct {
     // 活动ID
     ActivityId   int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 交易请求流水号

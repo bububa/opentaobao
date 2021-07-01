@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceFlowRenewResultDTO 
-type InvoiceFlowRenewResultDTO struct {
+// InvoiceFlowRenewResultDto 
+type InvoiceFlowRenewResultDto struct {
     // 续约工单ID
     FlowId   string `json:"flow_id,omitempty" xml:"flow_id,omitempty"`
     // 续约单结束时间

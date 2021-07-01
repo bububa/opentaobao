@@ -21,7 +21,7 @@ type Cspudto struct {
     // 外部商品Id
     OutId   string `json:"out_id,omitempty" xml:"out_id,omitempty"`
     // 商品属性
-    Properties   []PropertyDTO `json:"properties,omitempty" xml:"properties>property_dto,omitempty"`
+    Properties   []PropertyDto `json:"properties,omitempty" xml:"properties>property_dto,omitempty"`
     // spu
     Spu   *Spudto `json:"spu,omitempty" xml:"spu,omitempty"`
     // 是否标准产品

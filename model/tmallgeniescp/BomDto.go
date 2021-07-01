@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// BomDTO 
-type BomDTO struct {
+// BomDto 
+type BomDto struct {
     // 地点编码(成品供应商code)
     LocationCode   string `json:"location_code,omitempty" xml:"location_code,omitempty"`
     // 扩展参数

@@ -1,7 +1,7 @@
 package scbp
 
-// ForbiddenProductDTO 
-type ForbiddenProductDTO struct {
+// ForbiddenProductDto 
+type ForbiddenProductDto struct {
     // 产品id
     ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 状态

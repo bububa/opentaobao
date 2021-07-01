@@ -1,7 +1,7 @@
 package aesolution
 
-// ItemListResultDTO 
-type ItemListResultDTO struct {
+// ItemListResultDto 
+type ItemListResultDto struct {
     // error message
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // error code
@@ -17,5 +17,5 @@ type ItemListResultDTO struct {
     // current page
     CurrentPage   int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
     // product list
-    AeopAEProductDisplayDTOList   []ItemDisplayDTO `json:"aeop_a_e_product_display_d_t_o_list,omitempty" xml:"aeop_a_e_product_display_d_t_o_list>item_display_dto,omitempty"`
+    AeopAEProductDisplayDTOList   []ItemDisplayDto `json:"aeop_a_e_product_display_d_t_o_list,omitempty" xml:"aeop_a_e_product_display_d_t_o_list>item_display_dto,omitempty"`
 }

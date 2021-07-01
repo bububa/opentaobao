@@ -1,5 +1,5 @@
 package btrip
 
-// SegmentPositionRS 
-type SegmentPositionRS struct {
+// SegmentPositionRs 
+type SegmentPositionRs struct {
 }

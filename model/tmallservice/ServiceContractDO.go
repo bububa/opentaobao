@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceContractDO 
-type ServiceContractDO struct {
+// ServiceContractDo 
+type ServiceContractDo struct {
     // 合同类型
     ContractType   int64 `json:"contract_type,omitempty" xml:"contract_type,omitempty"`
     // 合同id

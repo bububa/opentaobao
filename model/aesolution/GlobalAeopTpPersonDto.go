@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpPersonDTO 
-type GlobalAeopTpPersonDTO struct {
+// GlobalAeopTpPersonDto 
+type GlobalAeopTpPersonDto struct {
     // login ID
     LoginId   string `json:"login_id,omitempty" xml:"login_id,omitempty"`
     // last name

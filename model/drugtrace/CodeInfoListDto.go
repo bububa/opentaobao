@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeInfoListDTO 
-type CodeInfoListDTO struct {
+// CodeInfoListDto 
+type CodeInfoListDto struct {
     // 制剂规格
     PrepnSpec   string `json:"prepn_spec,omitempty" xml:"prepn_spec,omitempty"`
     // 最小制剂数量

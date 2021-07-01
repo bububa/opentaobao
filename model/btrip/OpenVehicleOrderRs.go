@@ -1,7 +1,7 @@
 package btrip
 
-// OpenVehicleOrderRS 
-type OpenVehicleOrderRS struct {
+// OpenVehicleOrderRs 
+type OpenVehicleOrderRs struct {
     // 用车原因：TRAVEL: 差旅, TRAFFIC: 市内交通, WORK: 加班, OTHER: 其它
     BusinessCategory   string `json:"business_category,omitempty" xml:"business_category,omitempty"`
     // 车牌号
@@ -85,5 +85,5 @@ type OpenVehicleOrderRS struct {
     // 第三方行程id
     ThirdpartItineraryId   string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
     // 出行人信息
-    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 }

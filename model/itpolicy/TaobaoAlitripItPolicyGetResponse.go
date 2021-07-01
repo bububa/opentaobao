@@ -29,5 +29,5 @@ type TaobaoAlitripItPolicyGetResponse struct {
     // 扩展字段
     ExtendAttributes   string `json:"extend_attributes,omitempty" xml:"extend_attributes,omitempty"`
     // 政策信息
-    PolicyDo   *TopPolicyDO `json:"policy_do,omitempty" xml:"policy_do,omitempty"`
+    PolicyDo   *TopPolicyDo `json:"policy_do,omitempty" xml:"policy_do,omitempty"`
 }

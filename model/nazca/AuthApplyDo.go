@@ -1,7 +1,7 @@
 package nazca
 
-// AuthApplyDO 
-type AuthApplyDO struct {
+// AuthApplyDo 
+type AuthApplyDo struct {
     // 是否认证
     Autherized   bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
     // 企业名称

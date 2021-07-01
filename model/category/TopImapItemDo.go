@@ -1,7 +1,7 @@
 package category
 
-// TopImapItemDO 
-type TopImapItemDO struct {
+// TopImapItemDo 
+type TopImapItemDo struct {
     // 商品ID
     ItemId   string `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 【必填】目标渠道ID
@@ -13,7 +13,7 @@ type TopImapItemDO struct {
     // 【必填】源渠道ID
     SrcChannelId   int64 `json:"src_channel_id,omitempty" xml:"src_channel_id,omitempty"`
     // 【非必填，能填则填】商品相关pv信息
-    PvPairDoList   []TopPVPairDO `json:"pv_pair_do_list,omitempty" xml:"pv_pair_do_list>top_pv_pair_do,omitempty"`
+    PvPairDoList   []TopPVPairDo `json:"pv_pair_do_list,omitempty" xml:"pv_pair_do_list>top_pv_pair_do,omitempty"`
     // 【必填】商品标题
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 【非必填】

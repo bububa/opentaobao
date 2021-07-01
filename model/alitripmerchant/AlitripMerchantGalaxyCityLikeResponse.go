@@ -1,27 +1,13 @@
 package alitripmerchant
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-星河-酒店城市模糊查询 API返回值 
-alitrip.merchant.galaxy.city.like
-
-根据城市模糊查询，雅高酒店所在城市的城市信息
-*/
-type AlitripMerchantGalaxyCityLikeAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyCityLikeResponse
-}
-
-// 星河-酒店城市模糊查询 成功返回结果
+// AlitripMerchantGalaxyCityLikeResponse 
 type AlitripMerchantGalaxyCityLikeResponse struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_city_like_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 默认描述
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 是否成功
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+    // 错误编码
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+    // 返回结果
+    Contents   []AddressSearchDto `json:"contents,omitempty" xml:"contents>address_search_dto,omitempty"`
+    // 错误信息
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

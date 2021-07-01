@@ -1,7 +1,7 @@
 package wdk
 
-// MaochaoWdkOrderDTO 
-type MaochaoWdkOrderDTO struct {
+// MaochaoWdkOrderDto 
+type MaochaoWdkOrderDto struct {
     // 订单状态
     OrderStatus   string `json:"order_status,omitempty" xml:"order_status,omitempty"`
     // 库存单位购买数量

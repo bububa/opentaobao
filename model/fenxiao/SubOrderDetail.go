@@ -57,13 +57,13 @@ type SubOrderDetail struct {
     // 优惠活动类型0=无优惠1=限时折
     PromotionType   string `json:"promotion_type,omitempty" xml:"promotion_type,omitempty"`
     // Feature对象列表目前已有的属性：attr_key为 www，attr_value为1 表示是www子订单；attr_key为 wwwStoreCode，attr_value是www子订单发货的仓库编码；attr_key为 isWt，attr_value为1 表示是网厅子订单；attr_key为wtInfo,attr_value为网厅相关合约信息；attr_key为shipper,attr_value为cn表示菜鸟发货；attr_key为 storeCode，attr_value为仓库信息； attr_key为 erpHold，attr_value为1表示强管控中， attr_value为2表示分单完成；
-    Features   []FeatureDO `json:"features,omitempty" xml:"features>feature_do,omitempty"`
+    Features   []FeatureDo `json:"features,omitempty" xml:"features>feature_do,omitempty"`
     // 前台商品SKU ID，不存在时为0。2015年3月15日之前创建的采购单该字段都是0。
     AuctionSkuId   int64 `json:"auction_sku_id,omitempty" xml:"auction_sku_id,omitempty"`
     // 前台分销商品的宝贝ID，不存在时为0。2015年4月15日之前创建的采购单该字段都是0。
     AuctionId   int64 `json:"auction_id,omitempty" xml:"auction_id,omitempty"`
     // topMemoDTO
-    TopMemo   *TopMemoDTO `json:"top_memo,omitempty" xml:"top_memo,omitempty"`
+    TopMemo   *TopMemoDto `json:"top_memo,omitempty" xml:"top_memo,omitempty"`
     // 老的SKU属性值。如: 颜色:红色:别名;尺码:L:别名
     OldSkuProperties   string `json:"old_sku_properties,omitempty" xml:"old_sku_properties,omitempty"`
 }

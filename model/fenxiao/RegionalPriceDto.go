@@ -1,7 +1,7 @@
 package fenxiao
 
-// RegionalPriceDTO 
-type RegionalPriceDTO struct {
+// RegionalPriceDto 
+type RegionalPriceDto struct {
     // 市
     City   string `json:"city,omitempty" xml:"city,omitempty"`
     // 金额（分）

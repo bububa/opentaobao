@@ -1,7 +1,7 @@
 package koubeimall
 
-// StoreDTO 
-type StoreDTO struct {
+// StoreDto 
+type StoreDto struct {
     // 门店品牌名称
     BrandName   string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
     // 门店联系方式，多个电话用英文","分隔符（包含手机、座机电话）

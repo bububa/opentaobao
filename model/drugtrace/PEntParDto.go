@@ -1,7 +1,7 @@
 package drugtrace
 
-// PEntParDTO 
-type PEntParDTO struct {
+// PEntParDto 
+type PEntParDto struct {
     // 往来单位名称
     PartnerName   string `json:"partner_name,omitempty" xml:"partner_name,omitempty"`
     // 往来单位ID

@@ -1,7 +1,7 @@
 package retail
 
-// VendingBizOrderDTO 
-type VendingBizOrderDTO struct {
+// VendingBizOrderDto 
+type VendingBizOrderDto struct {
     // 创单时间
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // 订单修改时间

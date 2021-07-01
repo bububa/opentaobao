@@ -1,7 +1,7 @@
 package retail
 
-// DeliveryAddressDTO 
-type DeliveryAddressDTO struct {
+// DeliveryAddressDto 
+type DeliveryAddressDto struct {
     // 收货人姓名
     FullName   string `json:"full_name,omitempty" xml:"full_name,omitempty"`
     // 详细地址

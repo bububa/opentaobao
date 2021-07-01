@@ -1,7 +1,7 @@
 package iot
 
-// ContentTagDTO 
-type ContentTagDTO struct {
+// ContentTagDto 
+type ContentTagDto struct {
     // 标签id
     TagId   int64 `json:"tag_id,omitempty" xml:"tag_id,omitempty"`
     // 标签名称

@@ -1,27 +1,17 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-库存预占取消接口 API返回值 
-taobao.qimen.inventoryreserve.cancel
-
-库存预占取消
-*/
-type TaobaoQimenInventoryreserveCancelAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenInventoryreserveCancelResponse
-}
-
-// 库存预占取消接口 成功返回结果
+// TaobaoQimenInventoryreserveCancelResponse 
 type TaobaoQimenInventoryreserveCancelResponse struct {
-    XMLName xml.Name `xml:"qimen_inventoryreserve_cancel_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // 响应结果:success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 奇门仓储字段
+    OrderCode   string `json:"orderCode,omitempty" xml:"orderCode,omitempty"`
+    // 奇门仓储字段
+    IsRetry   string `json:"isRetry,omitempty" xml:"isRetry,omitempty"`
+    // 奇门仓储字段
+    ItemInventories   []ItemInventory `json:"itemInventories,omitempty" xml:"itemInventories>item_inventory,omitempty"`
 }

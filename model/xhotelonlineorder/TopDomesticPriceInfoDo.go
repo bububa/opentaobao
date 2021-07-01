@@ -1,9 +1,9 @@
 package xhotelonlineorder
 
-// TopDomesticPriceInfoDO 
-type TopDomesticPriceInfoDO struct {
+// TopDomesticPriceInfoDo 
+type TopDomesticPriceInfoDo struct {
     // createOrderDailyPrice
-    CreateOrderDailyPrice   *HbsDailyPriceDO `json:"create_order_daily_price,omitempty" xml:"create_order_daily_price,omitempty"`
+    CreateOrderDailyPrice   *HbsDailyPriceDo `json:"create_order_daily_price,omitempty" xml:"create_order_daily_price,omitempty"`
     // taxPrice
     TaxPrice   int64 `json:"tax_price,omitempty" xml:"tax_price,omitempty"`
     // roomsPrice
@@ -19,7 +19,7 @@ type TopDomesticPriceInfoDO struct {
     // bookingServicePrice
     BookingServicePrice   int64 `json:"booking_service_price,omitempty" xml:"booking_service_price,omitempty"`
     // settleOrderDailyPrice
-    SettleOrderDailyPrice   *HbsDailyPriceDO `json:"settle_order_daily_price,omitempty" xml:"settle_order_daily_price,omitempty"`
+    SettleOrderDailyPrice   *HbsDailyPriceDo `json:"settle_order_daily_price,omitempty" xml:"settle_order_daily_price,omitempty"`
     // basePrice
     BasePrice   int64 `json:"base_price,omitempty" xml:"base_price,omitempty"`
     // bookingBasePrice

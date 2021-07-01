@@ -1,7 +1,7 @@
 package wdk
 
-// ContainerDO 
-type ContainerDO struct {
+// ContainerDo 
+type ContainerDo struct {
     // 数量
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 容器编码

@@ -1,7 +1,7 @@
 package lstvending
 
-// OpenEquipmentDTO 
-type OpenEquipmentDTO struct {
+// OpenEquipmentDto 
+type OpenEquipmentDto struct {
     // 省份代码
     ProvinceCode   string `json:"province_code,omitempty" xml:"province_code,omitempty"`
     // 省份

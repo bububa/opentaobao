@@ -1,7 +1,7 @@
 package store
 
-// UpdateResultDO 
-type UpdateResultDO struct {
+// UpdateResultDo 
+type UpdateResultDo struct {
     // 成功数量
     Count   int64 `json:"count,omitempty" xml:"count,omitempty"`
     // 错误信息

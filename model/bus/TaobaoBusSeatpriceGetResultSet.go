@@ -7,7 +7,7 @@ type TaobaoBusSeatpriceGetResultSet struct {
     // 错误描述
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 余票对象
-    Module   *B2BBusSeatPriceDTO `json:"module,omitempty" xml:"module,omitempty"`
+    Module   *B2BBusSeatPriceDto `json:"module,omitempty" xml:"module,omitempty"`
     // serverIP
     ServerIP   string `json:"server_i_p,omitempty" xml:"server_i_p,omitempty"`
     // 是否查询成功

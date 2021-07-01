@@ -1,7 +1,7 @@
 package game
 
-// AppleCardDTO 
-type AppleCardDTO struct {
+// AppleCardDto 
+type AppleCardDto struct {
     // 面值
     FacePrice   string `json:"face_price,omitempty" xml:"face_price,omitempty"`
     // 有效期

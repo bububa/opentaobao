@@ -1,7 +1,7 @@
 package trade
 
-// ItemDigestDTO 
-type ItemDigestDTO struct {
+// ItemDigestDto 
+type ItemDigestDto struct {
     // 图片url
     ImgUrl   string `json:"img_url,omitempty" xml:"img_url,omitempty"`
     // 商品名称

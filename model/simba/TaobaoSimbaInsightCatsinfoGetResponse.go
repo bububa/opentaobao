@@ -23,5 +23,5 @@ type TaobaoSimbaInsightCatsinfoGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 类目详细信息
-    CategoryInfoList   []InsightCategoryInfoDTO `json:"category_info_list,omitempty" xml:"category_info_list>insight_category_info_dto,omitempty"`
+    CategoryInfoList   []InsightCategoryInfoDto `json:"category_info_list,omitempty" xml:"category_info_list>insight_category_info_dto,omitempty"`
 }

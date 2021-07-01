@@ -1,7 +1,7 @@
 package ascpffo
 
-// PurchaseOrderQueryDTO 
-type PurchaseOrderQueryDTO struct {
+// PurchaseOrderQueryDto 
+type PurchaseOrderQueryDto struct {
     // 行业账套编码
     BizType   int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 采购单号

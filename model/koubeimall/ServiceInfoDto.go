@@ -1,7 +1,7 @@
 package koubeimall
 
-// ServiceInfoDTO 
-type ServiceInfoDTO struct {
+// ServiceInfoDto 
+type ServiceInfoDto struct {
     // 服务说明
     ServiceDesc   string `json:"service_desc,omitempty" xml:"service_desc,omitempty"`
     // 门店服务tag

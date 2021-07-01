@@ -1,9 +1,9 @@
 package alitripmerchant
 
-// MemberDTO 
-type MemberDTO struct {
+// MemberDto 
+type MemberDto struct {
     // 用户基本信息
-    MemberBaseInfo   *MemberBaseInfoDTO `json:"member_base_info,omitempty" xml:"member_base_info,omitempty"`
+    MemberBaseInfo   *MemberBaseInfoDto `json:"member_base_info,omitempty" xml:"member_base_info,omitempty"`
     // 手机号
     PhoneNum   string `json:"phone_num,omitempty" xml:"phone_num,omitempty"`
     // 微信头像
@@ -15,7 +15,7 @@ type MemberDTO struct {
     // 手机前缀
     PhonePri   string `json:"phone_pri,omitempty" xml:"phone_pri,omitempty"`
     // 会员卡信息
-    CardBaseInfo   *CardBaseInfoDTO `json:"card_base_info,omitempty" xml:"card_base_info,omitempty"`
+    CardBaseInfo   *CardBaseInfoDto `json:"card_base_info,omitempty" xml:"card_base_info,omitempty"`
     // 邮箱
     Email   string `json:"email,omitempty" xml:"email,omitempty"`
     // token

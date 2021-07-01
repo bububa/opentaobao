@@ -1,7 +1,7 @@
 package simba
 
-// InsightWordPriceDistributeDataDTO 
-type InsightWordPriceDistributeDataDTO struct {
+// InsightWordPriceDistributeDataDto 
+type InsightWordPriceDistributeDataDto struct {
     // 展现量
     Impression   int64 `json:"impression,omitempty" xml:"impression,omitempty"`
     // 点击量

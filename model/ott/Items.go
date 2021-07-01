@@ -19,7 +19,7 @@ type Items struct {
     // 背景图标
     PicUrl   string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
     // 角标图
-    PicCorner   *PicCornerDO `json:"pic_corner,omitempty" xml:"pic_corner,omitempty"`
+    PicCorner   *PicCornerDo `json:"pic_corner,omitempty" xml:"pic_corner,omitempty"`
     // 摘要看点
     Summary   string `json:"summary,omitempty" xml:"summary,omitempty"`
     // 坑位类型
@@ -39,11 +39,11 @@ type Items struct {
     // 桌面坑位ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 功能入口
-    Entry   *ItemEntryDO `json:"entry,omitempty" xml:"entry,omitempty"`
+    Entry   *ItemEntryDo `json:"entry,omitempty" xml:"entry,omitempty"`
     // 标题图
     PicTitle   string `json:"pic_title,omitempty" xml:"pic_title,omitempty"`
     // 排行榜
-    Chart   *MetaChartDO `json:"chart,omitempty" xml:"chart,omitempty"`
+    Chart   *MetaChartDo `json:"chart,omitempty" xml:"chart,omitempty"`
     // 类目入口
     EntryList   []Entrylist `json:"entry_list,omitempty" xml:"entry_list>entrylist,omitempty"`
     // 行为扩展

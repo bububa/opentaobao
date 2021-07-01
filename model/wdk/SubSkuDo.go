@@ -1,7 +1,7 @@
 package wdk
 
-// SubSkuDO 
-type SubSkuDO struct {
+// SubSkuDo 
+type SubSkuDo struct {
     // 子商品编码（需要先有子商品）
     SubSkuCode   string `json:"sub_sku_code,omitempty" xml:"sub_sku_code,omitempty"`
     // 子商品数量

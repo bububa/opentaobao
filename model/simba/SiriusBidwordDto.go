@@ -1,7 +1,7 @@
 package simba
 
-// SiriusBidwordDTO 
-type SiriusBidwordDTO struct {
+// SiriusBidwordDto 
+type SiriusBidwordDto struct {
     // 关键词无线渠道出价
     MobileBidPrice   int64 `json:"mobile_bid_price,omitempty" xml:"mobile_bid_price,omitempty"`
     // 关键词id

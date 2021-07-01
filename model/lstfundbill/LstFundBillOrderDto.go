@@ -1,7 +1,7 @@
 package lstfundbill
 
-// LstFundBillOrderDTO 
-type LstFundBillOrderDTO struct {
+// LstFundBillOrderDto 
+type LstFundBillOrderDto struct {
     // 主订单id
     MainOrderId   string `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
     // 结算总金额(含佣)

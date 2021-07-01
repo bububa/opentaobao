@@ -1,7 +1,7 @@
 package omniorder
 
-// CommissionResultDTO 
-type CommissionResultDTO struct {
+// CommissionResultDto 
+type CommissionResultDto struct {
     // 分佣id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 订单类型

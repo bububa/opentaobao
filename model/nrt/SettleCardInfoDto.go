@@ -1,7 +1,7 @@
 package nrt
 
-// SettleCardInfoDTO 
-type SettleCardInfoDTO struct {
+// SettleCardInfoDto 
+type SettleCardInfoDto struct {
     // 开户支行名
     AccountBranchName   string `json:"account_branch_name,omitempty" xml:"account_branch_name,omitempty"`
     // 银行卡号

@@ -11,5 +11,5 @@ type AlibabaPosFundCashierShiftSummaryResult struct {
     // 扩展字段
     BizExtMap   string `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
     // 模型
-    Model   []CashierShiftFundSummaryDTO `json:"model,omitempty" xml:"model>cashier_shift_fund_summary_dto,omitempty"`
+    Model   []CashierShiftFundSummaryDto `json:"model,omitempty" xml:"model>cashier_shift_fund_summary_dto,omitempty"`
 }

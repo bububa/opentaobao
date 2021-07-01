@@ -1,7 +1,7 @@
 package lsticitem
 
-// TopLstItemDTO 
-type TopLstItemDTO struct {
+// TopLstItemDto 
+type TopLstItemDto struct {
     // 商品类型（售卖属性） normal：通常品 gift：赠品（比如买a送a，买a送b，送的商品就是赠品
     ItemType   string `json:"item_type,omitempty" xml:"item_type,omitempty"`
     // 品牌名

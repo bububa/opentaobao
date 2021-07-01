@@ -1,7 +1,7 @@
 package tanx
 
-// NativeTemplateCreativeDTO 
-type NativeTemplateCreativeDTO struct {
+// NativeTemplateCreativeDto 
+type NativeTemplateCreativeDto struct {
     // 多选一的属性集合，这些属性至少有一个不为空，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载
     MutlichoiceFields   []int64 `json:"mutlichoice_fields,omitempty" xml:"mutlichoice_fields>int64,omitempty"`
     // 必须属性集合，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载

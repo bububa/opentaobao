@@ -1,7 +1,7 @@
 package alihealthmedical
 
-// RefuseOrderRequestDTO 
-type RefuseOrderRequestDTO struct {
+// RefuseOrderRequestDto 
+type RefuseOrderRequestDto struct {
     // 订单ID
     OrderId   string `json:"order_id,omitempty" xml:"order_id,omitempty"`
     // 拒绝原因

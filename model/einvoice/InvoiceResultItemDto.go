@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceResultItemDTO 
-type InvoiceResultItemDTO struct {
+// InvoiceResultItemDto 
+type InvoiceResultItemDto struct {
     // 发票行性质。0表示正常行，1表示折扣行，2表示被折扣行。  比如充电器单价100元，折扣10元，则明细为2行，充电器行性质为2，折扣行性质为1。如果充电器没有折扣，则值应为0
     RowType   int64 `json:"row_type,omitempty" xml:"row_type,omitempty"`
     // 税率。格式为2位小数，如：0.00, 0.03, 0.13等等

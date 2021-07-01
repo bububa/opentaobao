@@ -3,7 +3,7 @@ package user
 // TaobaoMiniappUserInfoGetResult 
 type TaobaoMiniappUserInfoGetResult struct {
     // model
-    Model   *OpenUserInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *OpenUserInfoDto `json:"model,omitempty" xml:"model,omitempty"`
     // 错误信息
     ErrMessage   string `json:"err_message,omitempty" xml:"err_message,omitempty"`
     // 错误码

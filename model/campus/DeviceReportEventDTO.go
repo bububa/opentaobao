@@ -1,7 +1,7 @@
 package campus
 
-// DeviceReportEventDTO 
-type DeviceReportEventDTO struct {
+// DeviceReportEventDto 
+type DeviceReportEventDto struct {
     // 0:设备中心UUID ，1：外部id
     IdType   int64 `json:"id_type,omitempty" xml:"id_type,omitempty"`
     // 数据

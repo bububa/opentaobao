@@ -1,7 +1,7 @@
 package drugtrace
 
-// AddEntReqDTO 
-type AddEntReqDTO struct {
+// AddEntReqDto 
+type AddEntReqDto struct {
     // 企业详细注册地址
     DictRegionDetail   string `json:"dict_region_detail,omitempty" xml:"dict_region_detail,omitempty"`
     // 新增企业名称

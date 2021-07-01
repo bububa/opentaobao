@@ -29,5 +29,5 @@ type YunosAdAuditCreativeGetResponse struct {
     // 是否成功
     IsOk   bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
     // 审核结果
-    Result   *CreativeAuditDTO `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *CreativeAuditDto `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -23,5 +23,5 @@ type AlibabaScbpAdGroupFindAdGroupResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回数据
-    ResultList   []AdProductDTO `json:"result_list,omitempty" xml:"result_list>ad_product_dto,omitempty"`
+    ResultList   []AdProductDto `json:"result_list,omitempty" xml:"result_list>ad_product_dto,omitempty"`
 }

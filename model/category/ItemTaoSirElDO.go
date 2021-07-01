@@ -1,7 +1,7 @@
 package category
 
-// ItemTaoSirElDO 
-type ItemTaoSirElDO struct {
+// ItemTaoSirElDo 
+type ItemTaoSirElDo struct {
     // 0 - 类型为label元素，只用于展示，不用于组装value_name；<br/>1 - 类型为label元素，用于展示，用于组装value_name；<br/>2 - 类型为输入狂元素，主要用于卖家输入数据. 卖家填写完后需要重新设置该元素的文本数据；
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 显示文本

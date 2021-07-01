@@ -29,5 +29,5 @@ type CainiaoNbaddAppointdeliverFeedbackcodesResponse struct {
     // 接口调用是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 返回的具体数据
-    ResultList   []FeedbackCodeDTO `json:"result_list,omitempty" xml:"result_list>feedback_code_dto,omitempty"`
+    ResultList   []FeedbackCodeDto `json:"result_list,omitempty" xml:"result_list>feedback_code_dto,omitempty"`
 }

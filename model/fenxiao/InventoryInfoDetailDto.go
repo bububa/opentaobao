@@ -1,7 +1,7 @@
 package fenxiao
 
-// InventoryInfoDetailDTO 
-type InventoryInfoDetailDTO struct {
+// InventoryInfoDetailDto 
+type InventoryInfoDetailDto struct {
     // 占用库存数
     OccupyQuantity   int64 `json:"occupy_quantity,omitempty" xml:"occupy_quantity,omitempty"`
     // 仓库物理库存数
@@ -17,7 +17,7 @@ type InventoryInfoDetailDTO struct {
     // distType
     InvStoreType   int64 `json:"inv_store_type,omitempty" xml:"inv_store_type,omitempty"`
     // subList
-    SubList   []InventorySubDetailDTO `json:"sub_list,omitempty" xml:"sub_list>inventory_sub_detail_dto,omitempty"`
+    SubList   []InventorySubDetailDto `json:"sub_list,omitempty" xml:"sub_list>inventory_sub_detail_dto,omitempty"`
     // skuId
     SkuId   int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
     // 1前端商品 2供应链货品

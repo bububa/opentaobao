@@ -1,7 +1,7 @@
 package user
 
-// DownNormalMessageDTO 
-type DownNormalMessageDTO struct {
+// DownNormalMessageDto 
+type DownNormalMessageDto struct {
     // 消息内容
     Content   string `json:"content,omitempty" xml:"content,omitempty"`
     // 消息创建时间

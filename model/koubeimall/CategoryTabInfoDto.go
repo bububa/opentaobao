@@ -1,7 +1,7 @@
 package koubeimall
 
-// CategoryTabInfoDTO 
-type CategoryTabInfoDTO struct {
+// CategoryTabInfoDto 
+type CategoryTabInfoDto struct {
     // 前台类目ids
     CategoryIdList   []string `json:"category_id_list,omitempty" xml:"category_id_list>string,omitempty"`
     // 前台类目名称

@@ -1,7 +1,7 @@
 package util
 
-// AssetQrCodeDTO 
-type AssetQrCodeDTO struct {
+// AssetQrCodeDto 
+type AssetQrCodeDto struct {
     // 资产类型
     AssetType   string `json:"asset_type,omitempty" xml:"asset_type,omitempty"`
     // 实物来源

@@ -1,7 +1,7 @@
 package einvoice
 
-// UserInvoiceApplyDTO 
-type UserInvoiceApplyDTO struct {
+// UserInvoiceApplyDto 
+type UserInvoiceApplyDto struct {
     // 开票申请id
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 开票金额
@@ -33,7 +33,7 @@ type UserInvoiceApplyDTO struct {
     // 发票类型：1:增值税普通发票，2:增值税专用发票
     InvoiceType   int64 `json:"invoice_type,omitempty" xml:"invoice_type,omitempty"`
     // 开票明细列表
-    InvoiceItemList   []UserInvoiceItemDTO `json:"invoice_item_list,omitempty" xml:"invoice_item_list>user_invoice_item_dto,omitempty"`
+    InvoiceItemList   []UserInvoiceItemDto `json:"invoice_item_list,omitempty" xml:"invoice_item_list>user_invoice_item_dto,omitempty"`
     // 购方票面税号
     InvoicePayeeRegisterNo   string `json:"invoice_payee_register_no,omitempty" xml:"invoice_payee_register_no,omitempty"`
     // 购方票面地址

@@ -1,7 +1,7 @@
 package idle
 
-// PriceDTO 
-type PriceDTO struct {
+// PriceDto 
+type PriceDto struct {
     // 押金，单位分
     Deposit   int64 `json:"deposit,omitempty" xml:"deposit,omitempty"`
     // 市场价，单位分

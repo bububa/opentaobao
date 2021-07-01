@@ -1,7 +1,7 @@
 package wdk
 
-// CategoryDO 
-type CategoryDO struct {
+// CategoryDo 
+type CategoryDo struct {
     // 类目编码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 类目名称

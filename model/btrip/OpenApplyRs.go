@@ -1,7 +1,7 @@
 package btrip
 
-// OpenApplyRS 
-type OpenApplyRS struct {
+// OpenApplyRs 
+type OpenApplyRs struct {
     // 审批单状态：0申请 1同意 2拒绝 3转交 4取消 5修改已同意 6撤销已同意 7修改审批中 8已同意(修改被拒绝) 9撤销审批中 10已同意(撤销被拒绝) 11已同意(修改被取消) 12已同意(撤销被取消)
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 出差标题

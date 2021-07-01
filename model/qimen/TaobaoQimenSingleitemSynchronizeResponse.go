@@ -1,27 +1,13 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-商品同步接口 API返回值 
-taobao.qimen.singleitem.synchronize
-
-ERP调用奇门的接口,同步商品信息给WMS
-*/
-type TaobaoQimenSingleitemSynchronizeAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenSingleitemSynchronizeResponse
-}
-
-// 商品同步接口 成功返回结果
+// TaobaoQimenSingleitemSynchronizeResponse 
 type TaobaoQimenSingleitemSynchronizeResponse struct {
-    XMLName xml.Name `xml:"qimen_singleitem_synchronize_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // 响应结果:success|failure
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 仓储系统商品Id(当这个字段不为空的时候;所有erp传输的时候都碰到itemid必传)
+    ItemId   string `json:"itemId,omitempty" xml:"itemId,omitempty"`
 }

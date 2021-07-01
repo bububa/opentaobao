@@ -1,7 +1,7 @@
 package icbu
 
-// TopResultDO 
-type TopResultDO struct {
+// TopResultDo 
+type TopResultDo struct {
     // 层级属性的下一级属性结构
     Data   string `json:"data,omitempty" xml:"data,omitempty"`
     // 错误信息

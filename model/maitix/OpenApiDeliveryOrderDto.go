@@ -1,7 +1,7 @@
 package maitix
 
-// OpenApiDeliveryOrderDTO 
-type OpenApiDeliveryOrderDTO struct {
+// OpenApiDeliveryOrderDto 
+type OpenApiDeliveryOrderDto struct {
     // 快递公司ID
     DeliveryCompanyId   int64 `json:"delivery_company_id,omitempty" xml:"delivery_company_id,omitempty"`
     // 快递公司名称

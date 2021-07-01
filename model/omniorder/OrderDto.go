@@ -1,7 +1,7 @@
 package omniorder
 
-// OrderDTO 
-type OrderDTO struct {
+// OrderDto 
+type OrderDto struct {
     // 订单id
     BizOrderId   int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
     // 1-父订单，0-子订单

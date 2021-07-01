@@ -1,27 +1,11 @@
 package alicom
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-供应商推送通话结束事件 API返回值 
-alibaba.aliqin.axb.vendor.push.call.release
-
-通话结束挂断的时候，供应商推送通话结束事件给阿里侧
-*/
-type AlibabaAliqinAxbVendorPushCallReleaseAPIResponse struct {
-    model.CommonResponse
-    AlibabaAliqinAxbVendorPushCallReleaseResponse
-}
-
-// 供应商推送通话结束事件 成功返回结果
+// AlibabaAliqinAxbVendorPushCallReleaseResponse 
 type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_push_call_release_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 错误信息
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // module，此接口此字段可以不用判断，以外层CODE是否为OK来判断是否调用成
+    Module   bool `json:"module,omitempty" xml:"module,omitempty"`
+    // 业务响应码code为OK时代表请求成功,其他CODE建议做重试机制
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
 }

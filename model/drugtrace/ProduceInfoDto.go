@@ -1,7 +1,7 @@
 package drugtrace
 
-// ProduceInfoDTO 
-type ProduceInfoDTO struct {
+// ProduceInfoDto 
+type ProduceInfoDto struct {
     // 批次号
     BatchNo   string `json:"batch_no,omitempty" xml:"batch_no,omitempty"`
     // 生产日期

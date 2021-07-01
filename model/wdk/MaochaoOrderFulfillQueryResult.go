@@ -9,5 +9,5 @@ type MaochaoOrderFulfillQueryResult struct {
     // 返回码说明
     ReturnMsg   string `json:"return_msg,omitempty" xml:"return_msg,omitempty"`
     // 履约单列表
-    FulfillOrderList   []MaochaoWdkOrderFulfillDTO `json:"fulfill_order_list,omitempty" xml:"fulfill_order_list>maochao_wdk_order_fulfill_dto,omitempty"`
+    FulfillOrderList   []MaochaoWdkOrderFulfillDto `json:"fulfill_order_list,omitempty" xml:"fulfill_order_list>maochao_wdk_order_fulfill_dto,omitempty"`
 }

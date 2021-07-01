@@ -1,7 +1,7 @@
 package simba
 
-// PriceSuggestionDTO 
-type PriceSuggestionDTO struct {
+// PriceSuggestionDto 
+type PriceSuggestionDto struct {
     // 关键词id
     Bidwordid   string `json:"bidwordid,omitempty" xml:"bidwordid,omitempty"`
     // 关键词原词

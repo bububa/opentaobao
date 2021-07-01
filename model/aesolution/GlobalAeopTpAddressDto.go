@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpAddressDTO 
-type GlobalAeopTpAddressDTO struct {
+// GlobalAeopTpAddressDto 
+type GlobalAeopTpAddressDto struct {
     // Fax area code
     FaxArea   string `json:"fax_area,omitempty" xml:"fax_area,omitempty"`
     // Postal code

@@ -1,7 +1,7 @@
 package wdk
 
-// MqttDeviceInfoDTO 
-type MqttDeviceInfoDTO struct {
+// MqttDeviceInfoDto 
+type MqttDeviceInfoDto struct {
     // mqtt设备名
     DeviceName   string `json:"device_name,omitempty" xml:"device_name,omitempty"`
     // mqtt设备秘钥

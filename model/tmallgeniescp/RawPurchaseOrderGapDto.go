@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// RawPurchaseOrderGapDTO 
-type RawPurchaseOrderGapDTO struct {
+// RawPurchaseOrderGapDto 
+type RawPurchaseOrderGapDto struct {
     // 扩展参数
     ExtendJson   string `json:"extend_json,omitempty" xml:"extend_json,omitempty"`
     // 租户

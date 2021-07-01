@@ -1,7 +1,7 @@
 package tbk
 
-// TljInstanceReportDTO 
-type TljInstanceReportDTO struct {
+// TljInstanceReportDto 
+type TljInstanceReportDto struct {
     // 解冻金额
     UnfreezeAmount   string `json:"unfreeze_amount,omitempty" xml:"unfreeze_amount,omitempty"`
     // 解冻红包个数

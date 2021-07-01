@@ -1,7 +1,7 @@
 package xhotel
 
-// DchotelSignDO 
-type DchotelSignDO struct {
+// DchotelSignDo 
+type DchotelSignDo struct {
     // hid
     Hid   int64 `json:"hid,omitempty" xml:"hid,omitempty"`
     // pid

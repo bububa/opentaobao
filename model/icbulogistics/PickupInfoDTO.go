@@ -1,7 +1,7 @@
 package icbulogistics
 
-// PickupInfoDTO 
-type PickupInfoDTO struct {
+// PickupInfoDto 
+type PickupInfoDto struct {
     // 备用字段（上门揽收服务商），目前为空
     ServiceProvider   string `json:"service_provider,omitempty" xml:"service_provider,omitempty"`
     // 上门揽收类型，warehouse_free_pickup：仓库免费上门揽收，warehouse_paid_pickup：仓库收费上门揽收，provider_paid_pickup：服务商收费上门揽收

@@ -3,7 +3,7 @@ package ottpay
 // CommonResult 
 type CommonResult struct {
     // data
-    Data   *TvOrderResultDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *TvOrderResultDto `json:"data,omitempty" xml:"data,omitempty"`
     // 返回码
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // 错误信息

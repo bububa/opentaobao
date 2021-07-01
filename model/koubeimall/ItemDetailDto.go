@@ -1,7 +1,7 @@
 package koubeimall
 
-// ItemDetailDTO 
-type ItemDetailDTO struct {
+// ItemDetailDto 
+type ItemDetailDto struct {
     // 商品使用规则
     ItemRule   *ItemRule `json:"item_rule,omitempty" xml:"item_rule,omitempty"`
     // 购买须知

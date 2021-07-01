@@ -3,7 +3,7 @@ package idleisv
 // AlibabaIdleIsvSpuSearchResult 
 type AlibabaIdleIsvSpuSearchResult struct {
     // 候选的品牌型号列表
-    SpuList   []SpuPVDO `json:"spu_list,omitempty" xml:"spu_list>spu_pvdo,omitempty"`
+    SpuList   []SpuPVDo `json:"spu_list,omitempty" xml:"spu_list>spu_pv_do,omitempty"`
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 是否成功

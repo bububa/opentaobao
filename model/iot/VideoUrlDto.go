@@ -1,9 +1,9 @@
 package iot
 
-// VideoUrlDTO 
-type VideoUrlDTO struct {
+// VideoUrlDto 
+type VideoUrlDto struct {
     // 视频封面图
-    Cover   *ImageUrlDTO `json:"cover,omitempty" xml:"cover,omitempty"`
+    Cover   *ImageUrlDto `json:"cover,omitempty" xml:"cover,omitempty"`
     // 默认播放链接
     DefaultUrl   string `json:"default_url,omitempty" xml:"default_url,omitempty"`
     // 视频高度

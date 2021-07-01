@@ -1,7 +1,7 @@
 package simba
 
-// CrowdDTO 
-type CrowdDTO struct {
+// CrowdDto 
+type CrowdDto struct {
     // 业务类型
     BizType   int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 用户在直通车的ID

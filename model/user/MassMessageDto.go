@@ -1,7 +1,7 @@
 package user
 
-// MassMessageDTO 
-type MassMessageDTO struct {
+// MassMessageDto 
+type MassMessageDto struct {
     // 创建时间
     CreateTime   int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
     // 内容

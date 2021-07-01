@@ -9,5 +9,5 @@ type BaseRep struct {
     // 返回结果
     Data   bool `json:"data,omitempty" xml:"data,omitempty"`
     // 内层大对象
-    Datas   []AssetQrCodeDTO `json:"datas,omitempty" xml:"datas>asset_qr_code_dto,omitempty"`
+    Datas   []AssetQrCodeDto `json:"datas,omitempty" xml:"datas>asset_qr_code_dto,omitempty"`
 }

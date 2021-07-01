@@ -1,7 +1,7 @@
 package aesolution
 
-// ItemDisplayDTO 
-type ItemDisplayDTO struct {
+// ItemDisplayDto 
+type ItemDisplayDto struct {
     // product offline time
     WsOfflineDate   string `json:"ws_offline_date,omitempty" xml:"ws_offline_date,omitempty"`
     // product offline reason

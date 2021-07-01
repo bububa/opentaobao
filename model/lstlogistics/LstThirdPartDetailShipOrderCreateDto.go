@@ -1,7 +1,7 @@
 package lstlogistics
 
-// LstThirdPartDetailShipOrderCreateDTO 
-type LstThirdPartDetailShipOrderCreateDTO struct {
+// LstThirdPartDetailShipOrderCreateDto 
+type LstThirdPartDetailShipOrderCreateDto struct {
     // 购买数量
     SaleQuantity   int64 `json:"sale_quantity,omitempty" xml:"sale_quantity,omitempty"`
     // 单价，单位为分

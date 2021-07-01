@@ -1,7 +1,7 @@
 package fenxiao
 
-// TopProductDO 
-type TopProductDO struct {
+// TopProductDo 
+type TopProductDo struct {
     // 所在地：市
     City   string `json:"city,omitempty" xml:"city,omitempty"`
     // 代销采购价格，单位：元。
@@ -47,7 +47,7 @@ type TopProductDO struct {
     // scItemId
     ScItemId   int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
     // 分销产品SKU列表
-    Skus   []ProductSkuDO `json:"skus,omitempty" xml:"skus>product_sku_do,omitempty"`
+    Skus   []ProductSkuDo `json:"skus,omitempty" xml:"skus>product_sku_do,omitempty"`
     // spuId
     SpuId   int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
     // 市场价：单位元

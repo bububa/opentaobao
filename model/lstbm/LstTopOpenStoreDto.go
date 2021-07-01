@@ -1,7 +1,7 @@
 package lstbm
 
-// LstTopOpenStoreDTO 
-type LstTopOpenStoreDTO struct {
+// LstTopOpenStoreDto 
+type LstTopOpenStoreDto struct {
     // 店主的手机号
     Phone   string `json:"phone,omitempty" xml:"phone,omitempty"`
     // 门店名称，最大长度512字符

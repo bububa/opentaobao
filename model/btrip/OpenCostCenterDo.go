@@ -1,7 +1,7 @@
 package btrip
 
-// OpenCostCenterDO 
-type OpenCostCenterDO struct {
+// OpenCostCenterDo 
+type OpenCostCenterDo struct {
     // 成本中心编号
     Number   string `json:"number,omitempty" xml:"number,omitempty"`
     // 成本中心名称

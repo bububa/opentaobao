@@ -1,7 +1,7 @@
 package alihealthcrm
 
-// BabyBaseInfoDTO 
-type BabyBaseInfoDTO struct {
+// BabyBaseInfoDto 
+type BabyBaseInfoDto struct {
     // 宝宝id
     BabyId   int64 `json:"baby_id,omitempty" xml:"baby_id,omitempty"`
     // 所属用户id

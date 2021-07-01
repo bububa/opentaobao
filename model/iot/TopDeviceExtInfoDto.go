@@ -1,7 +1,7 @@
 package iot
 
-// TopDeviceExtInfoDTO 
-type TopDeviceExtInfoDTO struct {
+// TopDeviceExtInfoDto 
+type TopDeviceExtInfoDto struct {
     // 设备id
     DeviceId   string `json:"device_id,omitempty" xml:"device_id,omitempty"`
     // 三方设备id

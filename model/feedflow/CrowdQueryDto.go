@@ -1,7 +1,7 @@
 package feedflow
 
-// CrowdQueryDTO 
-type CrowdQueryDTO struct {
+// CrowdQueryDto 
+type CrowdQueryDto struct {
     // 定向类型
     TargetTypeList   []string `json:"target_type_list,omitempty" xml:"target_type_list>string,omitempty"`
     // 单元id

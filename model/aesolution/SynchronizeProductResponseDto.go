@@ -1,7 +1,7 @@
 package aesolution
 
-// SynchronizeProductResponseDTO 
-type SynchronizeProductResponseDTO struct {
+// SynchronizeProductResponseDto 
+type SynchronizeProductResponseDto struct {
     // error code
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // error message

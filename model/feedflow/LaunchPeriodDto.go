@@ -1,7 +1,7 @@
 package feedflow
 
-// LaunchPeriodDTO 
-type LaunchPeriodDTO struct {
+// LaunchPeriodDto 
+type LaunchPeriodDto struct {
     // 时间
-    TimeSpanList   []TimeSpanDTO `json:"time_span_list,omitempty" xml:"time_span_list>time_span_dto,omitempty"`
+    TimeSpanList   []TimeSpanDto `json:"time_span_list,omitempty" xml:"time_span_list>time_span_dto,omitempty"`
 }

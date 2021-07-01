@@ -1,7 +1,7 @@
 package product
 
-// SizeMappingTemplateDO 
-type SizeMappingTemplateDO struct {
+// SizeMappingTemplateDo 
+type SizeMappingTemplateDo struct {
     // 尺码表模板ID
     TemplateId   int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
     // 尺码表模板名称

@@ -1,7 +1,7 @@
 package aesolution
 
-// SingleSkuPriceByCountryDTO 
-type SingleSkuPriceByCountryDTO struct {
+// SingleSkuPriceByCountryDto 
+type SingleSkuPriceByCountryDto struct {
     // sku_code, must existed in  multiple_sku_update_list
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // Value of price configuration. If the price of a specific country is set, it must be greater than or equal to 70% of the original sku price in multiple_sku_update_list

@@ -23,7 +23,7 @@ type TaobaoMaQrcodeCommonCreateResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 二维码对像
-    Modules   []QrcodeDO `json:"modules,omitempty" xml:"modules>qrcode_do,omitempty"`
+    Modules   []QrcodeDo `json:"modules,omitempty" xml:"modules>qrcode_do,omitempty"`
     // 执行是否成功
     Suc   bool `json:"suc,omitempty" xml:"suc,omitempty"`
 }

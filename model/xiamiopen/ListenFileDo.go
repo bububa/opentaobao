@@ -1,7 +1,7 @@
 package xiamiopen
 
-// ListenFileDO 
-type ListenFileDO struct {
+// ListenFileDo 
+type ListenFileDo struct {
     // 超时时间
     Expire   int64 `json:"expire,omitempty" xml:"expire,omitempty"`
     // 试听文件地址

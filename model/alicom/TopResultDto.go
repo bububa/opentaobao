@@ -1,11 +1,11 @@
 package alicom
 
-// TopResultDTO 
-type TopResultDTO struct {
+// TopResultDto 
+type TopResultDto struct {
     // 错误信息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // data
-    Data   *ProductActivityInfoResponseDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *ProductActivityInfoResponseDto `json:"data,omitempty" xml:"data,omitempty"`
     // errorCode
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // success

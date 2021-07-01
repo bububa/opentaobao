@@ -1,7 +1,7 @@
 package fenxiao
 
-// TopReceiverDO 
-type TopReceiverDO struct {
+// TopReceiverDo 
+type TopReceiverDo struct {
     // 收货人全名
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 固定电话

@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordResultDTO 
-type KeywordResultDTO struct {
+// KeywordResultDto 
+type KeywordResultDto struct {
     // 底价，单位元，保留一位小数, 例如3.5表示3.5元
     BasePrice   string `json:"base_price,omitempty" xml:"base_price,omitempty"`
     // 出价，单位元，保留一位小数, 例如3.5表示3.5元

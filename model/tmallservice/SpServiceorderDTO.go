@@ -1,15 +1,15 @@
 package tmallservice
 
-// SpServiceOrderDTO 
-type SpServiceOrderDTO struct {
+// SpServiceOrderDto 
+type SpServiceOrderDto struct {
     // 取消的份数
     RefundServiceCount   int64 `json:"refund_service_count,omitempty" xml:"refund_service_count,omitempty"`
     // 实物子订单信息
-    MasterTradeOrder   *MasterTradeOrderDTO `json:"master_trade_order,omitempty" xml:"master_trade_order,omitempty"`
+    MasterTradeOrder   *MasterTradeOrderDto `json:"master_trade_order,omitempty" xml:"master_trade_order,omitempty"`
     // 服务定义
-    ServiceDefinition   *ServiceDefinitionDTO `json:"service_definition,omitempty" xml:"service_definition,omitempty"`
+    ServiceDefinition   *ServiceDefinitionDto `json:"service_definition,omitempty" xml:"service_definition,omitempty"`
     // 买家信息
-    Buyer   *BuyerDTO `json:"buyer,omitempty" xml:"buyer,omitempty"`
+    Buyer   *BuyerDto `json:"buyer,omitempty" xml:"buyer,omitempty"`
     // 已使用份数
     UsedServiceCount   int64 `json:"used_service_count,omitempty" xml:"used_service_count,omitempty"`
     // 费用信息
@@ -17,7 +17,7 @@ type SpServiceOrderDTO struct {
     // 剩余的份数
     LeftServiceCount   int64 `json:"left_service_count,omitempty" xml:"left_service_count,omitempty"`
     // 服务子订单信息
-    ServiceTradeOrder   *ServiceTradeOrderDTO `json:"service_trade_order,omitempty" xml:"service_trade_order,omitempty"`
+    ServiceTradeOrder   *ServiceTradeOrderDto `json:"service_trade_order,omitempty" xml:"service_trade_order,omitempty"`
     // 服务的总份数
     ServiceCount   int64 `json:"service_count,omitempty" xml:"service_count,omitempty"`
     // 服务过期时间
@@ -35,15 +35,15 @@ type SpServiceOrderDTO struct {
     // 状态编码：create(创建)、effect(生效)、closed(关闭)、finish(完成)
     StatusCode   string `json:"status_code,omitempty" xml:"status_code,omitempty"`
     // 服务定义
-    ServiceDefinitionDTO   *ServiceDefinitionDTO `json:"service_definition_d_t_o,omitempty" xml:"service_definition_d_t_o,omitempty"`
+    ServiceDefinitionDTO   *ServiceDefinitionDto `json:"service_definition_d_t_o,omitempty" xml:"service_definition_d_t_o,omitempty"`
     // 服务单id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 服务交易订单
-    ServiceTradeOrderDTO   *ServiceTradeOrderDTO `json:"service_trade_order_d_t_o,omitempty" xml:"service_trade_order_d_t_o,omitempty"`
+    ServiceTradeOrderDTO   *ServiceTradeOrderDto `json:"service_trade_order_d_t_o,omitempty" xml:"service_trade_order_d_t_o,omitempty"`
     // 服务单申请工单的幂等键
     ServiceSequence   int64 `json:"service_sequence,omitempty" xml:"service_sequence,omitempty"`
     // 履约类型:1, "到店"2, "到家"3, "寄送"
     FulfilTypeCode   string `json:"fulfil_type_code,omitempty" xml:"fulfil_type_code,omitempty"`
     // 服务提供者
-    ServiceProviderDTO   *ServiceProviderDTO `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
+    ServiceProviderDTO   *ServiceProviderDto `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
 }

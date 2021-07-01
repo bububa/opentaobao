@@ -23,5 +23,5 @@ type TaobaoSimbaInsightCatstopwordnewGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 类目下热门词详细数据
-    TopwordDataList   []InsightWordDataUnderCatDTO `json:"topword_data_list,omitempty" xml:"topword_data_list>insight_word_data_under_cat_dto,omitempty"`
+    TopwordDataList   []InsightWordDataUnderCatDto `json:"topword_data_list,omitempty" xml:"topword_data_list>insight_word_data_under_cat_dto,omitempty"`
 }

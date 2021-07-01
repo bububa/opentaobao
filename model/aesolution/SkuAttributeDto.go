@@ -1,7 +1,7 @@
 package aesolution
 
-// SkuAttributeDTO 
-type SkuAttributeDTO struct {
+// SkuAttributeDto 
+type SkuAttributeDto struct {
     // Deprecated, please use sku_attribute_name_id. To obtain the available sku attribute names under a specific category, please check API: aliexpress.solution.sku.attribute.query
     SkuAttributeName   string `json:"sku_attribute_name,omitempty" xml:"sku_attribute_name,omitempty"`
     // Customized sku attribute value by sellers, do not include these 4 symbols #:=,

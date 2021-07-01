@@ -1,7 +1,7 @@
 package media
 
-// VideoItemExtDO 
-type VideoItemExtDO struct {
+// VideoItemExtDo 
+type VideoItemExtDo struct {
     // 视频播放地址
     PlayUrl   string `json:"play_url,omitempty" xml:"play_url,omitempty"`
     // 视频封面-主图
@@ -11,5 +11,5 @@ type VideoItemExtDO struct {
     // 是否能在移动端播放
     CanPlayInPhone   bool `json:"can_play_in_phone,omitempty" xml:"can_play_in_phone,omitempty"`
     // 视频基本信息
-    VideoInfo   *VideoItemDO `json:"video_info,omitempty" xml:"video_info,omitempty"`
+    VideoInfo   *VideoItemDo `json:"video_info,omitempty" xml:"video_info,omitempty"`
 }

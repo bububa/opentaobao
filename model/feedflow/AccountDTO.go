@@ -1,7 +1,7 @@
 package feedflow
 
-// AccountDTO 
-type AccountDTO struct {
+// AccountDto 
+type AccountDto struct {
     // 账户余额，单位：元
     Balance   string `json:"balance,omitempty" xml:"balance,omitempty"`
     // 现金余额，单位：元

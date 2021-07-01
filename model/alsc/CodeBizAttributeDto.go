@@ -1,7 +1,7 @@
 package alsc
 
-// CodeBizAttributeDTO 
-type CodeBizAttributeDTO struct {
+// CodeBizAttributeDto 
+type CodeBizAttributeDto struct {
     // 码值
     CodeValue   string `json:"code_value,omitempty" xml:"code_value,omitempty"`
     // 码值绑定业务主体类型

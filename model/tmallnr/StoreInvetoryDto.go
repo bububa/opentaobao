@@ -1,7 +1,7 @@
 package tmallnr
 
-// StoreInvetoryDTO 
-type StoreInvetoryDTO struct {
+// StoreInvetoryDto 
+type StoreInvetoryDto struct {
     // 商家的外部商品编码，写入值。
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // sku号

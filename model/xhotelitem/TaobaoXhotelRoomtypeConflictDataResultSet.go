@@ -11,7 +11,7 @@ type TaobaoXhotelRoomtypeConflictDataResultSet struct {
     // 是否还有下一页
     HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
     // 结果集
-    Results   []RoomTypeCheckResultDO `json:"results,omitempty" xml:"results>room_type_check_result_do,omitempty"`
+    Results   []RoomTypeCheckResultDo `json:"results,omitempty" xml:"results>room_type_check_result_do,omitempty"`
     // errorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

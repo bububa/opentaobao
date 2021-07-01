@@ -1,7 +1,7 @@
 package tmallchannel
 
-// ProductTopDTO 
-type ProductTopDTO struct {
+// ProductTopDto 
+type ProductTopDto struct {
     // 产品线ID
     ProductLineId   int64 `json:"product_line_id,omitempty" xml:"product_line_id,omitempty"`
     // 产品编码
@@ -23,5 +23,5 @@ type ProductTopDTO struct {
     // 类目Id
     CategoryId   int64 `json:"category_id,omitempty" xml:"category_id,omitempty"`
     // sku列表
-    SkuList   []ProductSkuTopDTO `json:"sku_list,omitempty" xml:"sku_list>product_sku_top_dto,omitempty"`
+    SkuList   []ProductSkuTopDto `json:"sku_list,omitempty" xml:"sku_list>product_sku_top_dto,omitempty"`
 }

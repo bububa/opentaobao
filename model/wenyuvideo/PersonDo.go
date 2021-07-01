@@ -1,7 +1,7 @@
 package wenyuvideo
 
-// PersonDO 
-type PersonDO struct {
+// PersonDo 
+type PersonDo struct {
     // 人物ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 人物名字

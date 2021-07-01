@@ -1,7 +1,7 @@
 package maitix
 
-// VenueDTO 
-type VenueDTO struct {
+// VenueDto 
+type VenueDto struct {
     // 场馆id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 场馆名称

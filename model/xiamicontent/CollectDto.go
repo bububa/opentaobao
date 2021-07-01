@@ -1,7 +1,7 @@
 package xiamicontent
 
-// CollectDTO 
-type CollectDTO struct {
+// CollectDto 
+type CollectDto struct {
     // 歌单id
     CollectId   int64 `json:"collect_id,omitempty" xml:"collect_id,omitempty"`
     // 歌单名

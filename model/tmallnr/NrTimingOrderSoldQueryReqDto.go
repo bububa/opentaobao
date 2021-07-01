@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrTimingOrderSoldQueryReqDTO 
-type NrTimingOrderSoldQueryReqDTO struct {
+// NrTimingOrderSoldQueryReqDto 
+type NrTimingOrderSoldQueryReqDto struct {
     // 要查询的订单创建结束时间，开始时间和结束时间之间最多相隔72小时
     EndCreated   string `json:"end_created,omitempty" xml:"end_created,omitempty"`
     // 要查询的订单创建开始时间

@@ -1,7 +1,7 @@
 package wdk
 
-// WdkOpenOrderFinanceBillDO 
-type WdkOpenOrderFinanceBillDO struct {
+// WdkOpenOrderFinanceBillDo 
+type WdkOpenOrderFinanceBillDo struct {
     // alipay：支付宝
     PayChannel   string `json:"pay_channel,omitempty" xml:"pay_channel,omitempty"`
     // 盒马订单号

@@ -9,5 +9,5 @@ type DataResult struct {
     // 是否正常
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // obj
-    Obj   *CCICCheckCodeDO `json:"obj,omitempty" xml:"obj,omitempty"`
+    Obj   *CCICCheckCodeDo `json:"obj,omitempty" xml:"obj,omitempty"`
 }

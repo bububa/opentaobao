@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DicControlTaskDO 
-type DicControlTaskDO struct {
+// DicControlTaskDo 
+type DicControlTaskDo struct {
     // 任务类型
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 操作者

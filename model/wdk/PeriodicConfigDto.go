@@ -1,7 +1,7 @@
 package wdk
 
-// PeriodicConfigDTO 
-type PeriodicConfigDTO struct {
+// PeriodicConfigDto 
+type PeriodicConfigDto struct {
     // 每天的什么时间阶段搞活动,精确到秒单位 例如:03:00:00_05:00:00
     EveryDayPeriods   []string `json:"every_day_periods,omitempty" xml:"every_day_periods>string,omitempty"`
     // 周期配置是否生效

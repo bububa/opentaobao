@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrtStoreDTO 
-type NrtStoreDTO struct {
+// NrtStoreDto 
+type NrtStoreDto struct {
     // 门店ID
     StoreId   int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 门店名称

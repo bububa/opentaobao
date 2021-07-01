@@ -1,7 +1,7 @@
 package logistic
 
-// WarehouseDeliveryRelationDTO 
-type WarehouseDeliveryRelationDTO struct {
+// WarehouseDeliveryRelationDto 
+type WarehouseDeliveryRelationDto struct {
     // 数据版本号
     DataVersion   int64 `json:"data_version,omitempty" xml:"data_version,omitempty"`
     // 网格仓外部编码

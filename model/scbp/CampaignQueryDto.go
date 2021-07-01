@@ -1,7 +1,7 @@
 package scbp
 
-// CampaignQueryDTO 
-type CampaignQueryDTO struct {
+// CampaignQueryDto 
+type CampaignQueryDto struct {
     // 计划标题，配合exactMatch使用
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 子类型

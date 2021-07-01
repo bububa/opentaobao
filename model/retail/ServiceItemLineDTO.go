@@ -1,7 +1,7 @@
 package retail
 
-// ServiceItemLineDTO 
-type ServiceItemLineDTO struct {
+// ServiceItemLineDto 
+type ServiceItemLineDto struct {
     // 服务子订单id
     ServiceId   int64 `json:"service_id,omitempty" xml:"service_id,omitempty"`
     // 购买数量

@@ -1,7 +1,7 @@
 package btrip
 
-// RoomInfoDO 
-type RoomInfoDO struct {
+// RoomInfoDo 
+type RoomInfoDo struct {
     // 房间名称
     RoomName   string `json:"room_name,omitempty" xml:"room_name,omitempty"`
     // 房间价格（分）

@@ -1,7 +1,7 @@
 package c2m
 
-// ItemTopDTO 
-type ItemTopDTO struct {
+// ItemTopDto 
+type ItemTopDto struct {
     // 商品id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 主图信息

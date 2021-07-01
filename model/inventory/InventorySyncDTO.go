@@ -1,7 +1,7 @@
 package inventory
 
-// InventorySyncDTO 
-type InventorySyncDTO struct {
+// InventorySyncDto 
+type InventorySyncDto struct {
     // 商品ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 库存数量

@@ -7,7 +7,7 @@ type AlibabaOnetouchLogisticsExpressOrderDetailGetResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 结果数据
-    Data   *OrderDetailDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *OrderDetailDto `json:"data,omitempty" xml:"data,omitempty"`
     // 返回结果描述
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 }

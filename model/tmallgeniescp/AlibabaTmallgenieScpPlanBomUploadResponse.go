@@ -29,5 +29,5 @@ type AlibabaTmallgenieScpPlanBomUploadResponse struct {
     // 返回码
     ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 对象列表
-    DataList   []BomDTO `json:"data_list,omitempty" xml:"data_list>bom_dto,omitempty"`
+    DataList   []BomDto `json:"data_list,omitempty" xml:"data_list>bom_dto,omitempty"`
 }

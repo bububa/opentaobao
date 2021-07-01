@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinFundListQueryDTO 
-type AxinFundListQueryDTO struct {
+// AxinFundListQueryDto 
+type AxinFundListQueryDto struct {
     // 资金单类型
     FundStatus   []int64 `json:"fund_status,omitempty" xml:"fund_status>int64,omitempty"`
     // 外部订单号

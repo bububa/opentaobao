@@ -25,5 +25,5 @@ type TaobaoSimbaSerchcrowdStateBatchUpdateResponse struct {
     // 部分失败时返回错误List
     ErrorList   []string `json:"error_list,omitempty" xml:"error_list>string,omitempty"`
     // result
-    Adgrouptargetingtags   []AdgroupTargetingTagDTO `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
+    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
 }

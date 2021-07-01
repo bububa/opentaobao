@@ -3,7 +3,7 @@ package util
 // AlibabaCuntaoInteractRequisitionGetResult 
 type AlibabaCuntaoInteractRequisitionGetResult struct {
     // model
-    Model   *ListDTO `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *ListDto `json:"model,omitempty" xml:"model,omitempty"`
     // 异常时返回的code
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 异常时返回的描述

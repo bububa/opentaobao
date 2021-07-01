@@ -1,7 +1,7 @@
 package nrt
 
-// NrtCouponSendDTO 
-type NrtCouponSendDTO struct {
+// NrtCouponSendDto 
+type NrtCouponSendDto struct {
     // 业务code
     BizCode   string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
     // 加密后淘系ID

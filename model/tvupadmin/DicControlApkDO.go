@@ -1,5 +1,5 @@
 package tvupadmin
 
-// DicControlApkDO 
-type DicControlApkDO struct {
+// DicControlApkDo 
+type DicControlApkDo struct {
 }

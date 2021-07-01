@@ -1,7 +1,7 @@
 package cainiaohandover
 
-// SolutionServiceResDTO 
-type SolutionServiceResDTO struct {
+// SolutionServiceResDto 
+type SolutionServiceResDto struct {
     // 解决方案编码
     SolutionCode   string `json:"solution_code,omitempty" xml:"solution_code,omitempty"`
     // 扩展字段

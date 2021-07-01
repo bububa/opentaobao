@@ -1,7 +1,7 @@
 package wdk
 
-// SubOrderSyncDTO 
-type SubOrderSyncDTO struct {
+// SubOrderSyncDto 
+type SubOrderSyncDto struct {
     // 会员优惠金额
     MemberDiscountAmt   int64 `json:"member_discount_amt,omitempty" xml:"member_discount_amt,omitempty"`
     // 优惠金额

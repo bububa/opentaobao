@@ -15,5 +15,5 @@ type OutboundItemInfo struct {
     // 外部单号，如采购单号
     ExternalOrderNo   string `json:"external_order_no,omitempty" xml:"external_order_no,omitempty"`
     // 容器信息
-    Containers   []ContainerDO `json:"containers,omitempty" xml:"containers>container_do,omitempty"`
+    Containers   []ContainerDo `json:"containers,omitempty" xml:"containers>container_do,omitempty"`
 }

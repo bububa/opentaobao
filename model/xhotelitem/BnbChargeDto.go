@@ -1,7 +1,7 @@
 package xhotelitem
 
-// BnbChargeDTO 
-type BnbChargeDTO struct {
+// BnbChargeDto 
+type BnbChargeDto struct {
     // 是否允许加人 0不允许 1允许
     AddPeople   int64 `json:"add_people,omitempty" xml:"add_people,omitempty"`
     // 允许加人数

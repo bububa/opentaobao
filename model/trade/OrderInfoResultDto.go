@@ -1,7 +1,7 @@
 package trade
 
-// OrderInfoResultDTO 
-type OrderInfoResultDTO struct {
+// OrderInfoResultDto 
+type OrderInfoResultDto struct {
     // 当前页
     CurPageNo   int64 `json:"cur_page_no,omitempty" xml:"cur_page_no,omitempty"`
     // 是否下一页
@@ -9,5 +9,5 @@ type OrderInfoResultDTO struct {
     // 每页大小
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // 订单信息list
-    OrderInfoList   []OrderInfoDTO `json:"order_info_list,omitempty" xml:"order_info_list>order_info_dto,omitempty"`
+    OrderInfoList   []OrderInfoDto `json:"order_info_list,omitempty" xml:"order_info_list>order_info_dto,omitempty"`
 }

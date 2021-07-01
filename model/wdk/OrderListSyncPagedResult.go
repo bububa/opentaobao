@@ -9,7 +9,7 @@ type OrderListSyncPagedResult struct {
     // 返回订单总数量
     TotalNumber   int64 `json:"total_number,omitempty" xml:"total_number,omitempty"`
     // orders
-    Orders   []OrderSyncDTO `json:"orders,omitempty" xml:"orders>order_sync_dto,omitempty"`
+    Orders   []OrderSyncDto `json:"orders,omitempty" xml:"orders>order_sync_dto,omitempty"`
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回下一查询页的序号。如果返回值是-1，则无下一页。数据拉取完成。

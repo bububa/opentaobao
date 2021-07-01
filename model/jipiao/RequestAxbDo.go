@@ -1,7 +1,7 @@
 package jipiao
 
-// RequestAxbDO 
-type RequestAxbDO struct {
+// RequestAxbDo 
+type RequestAxbDo struct {
     // 请求内容：0手机号
     ReqContent   int64 `json:"req_content,omitempty" xml:"req_content,omitempty"`
     // 业务类型：0国内机票,1国际机票

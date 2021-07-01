@@ -1,7 +1,7 @@
 package tmallchannel
 
-// ResultTopDO 
-type ResultTopDO struct {
+// ResultTopDo 
+type ResultTopDo struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

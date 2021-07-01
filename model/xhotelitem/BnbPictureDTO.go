@@ -1,7 +1,7 @@
 package xhotelitem
 
-// BnbPictureDTO 
-type BnbPictureDTO struct {
+// BnbPictureDto 
+type BnbPictureDto struct {
     // 图片地址
     Url   string `json:"url,omitempty" xml:"url,omitempty"`
     // type表示图片类型，取值范围只能是：[周边, 外观, 商务中心, 健身房, 其他, 会议室, 餐厅, 浴室, 客房, 公共区域, 娱乐设施, 大堂, 泳池]

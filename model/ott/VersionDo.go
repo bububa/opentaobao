@@ -1,7 +1,7 @@
 package ott
 
-// VersionDO 
-type VersionDO struct {
+// VersionDo 
+type VersionDo struct {
     // 图标规格
     EntrySize   int64 `json:"entry_size,omitempty" xml:"entry_size,omitempty"`
     // 桌面标识

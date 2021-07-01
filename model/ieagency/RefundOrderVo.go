@@ -23,7 +23,7 @@ type RefundOrderVo struct {
     // 支付状态(INIT(1, "初始化"),     REFUND_FAIL(2, "退款失败"),     REFUND_SUCCESS(3, "退款成功")
     RefundPayStatus   int64 `json:"refund_pay_status,omitempty" xml:"refund_pay_status,omitempty"`
     // 原因
-    RefundReasonDo   *IeRefundReasonDO `json:"refund_reason_do,omitempty" xml:"refund_reason_do,omitempty"`
+    RefundReasonDo   *IeRefundReasonDo `json:"refund_reason_do,omitempty" xml:"refund_reason_do,omitempty"`
     // 总退给买家金额(单位:分)
     TotalRefundToBuyerMoney   int64 `json:"total_refund_to_buyer_money,omitempty" xml:"total_refund_to_buyer_money,omitempty"`
     // 总活动收回金额(单位:分)

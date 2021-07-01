@@ -1,7 +1,7 @@
 package feedflow
 
-// CampaignQueryDTO 
-type CampaignQueryDTO struct {
+// CampaignQueryDto 
+type CampaignQueryDto struct {
     // 计划id
     CampaignId   int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
     // 计划名称

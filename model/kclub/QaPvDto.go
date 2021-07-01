@@ -1,7 +1,7 @@
 package kclub
 
-// QaPvDTO 
-type QaPvDTO struct {
+// QaPvDto 
+type QaPvDto struct {
     // 十天访问量
     TenDayPv   int64 `json:"ten_day_pv,omitempty" xml:"ten_day_pv,omitempty"`
     // 7天访问量

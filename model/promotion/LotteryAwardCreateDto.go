@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryAwardCreateDTO 
-type LotteryAwardCreateDTO struct {
+// LotteryAwardCreateDto 
+type LotteryAwardCreateDto struct {
     // 奖品类型
     AwardType   int64 `json:"award_type,omitempty" xml:"award_type,omitempty"`
     // 奖品实例ID

@@ -27,5 +27,5 @@ type AlibabaRetailDeviceOrderQueryResponse struct {
     // 系统自动生成
     Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
     // 是否成功
-    Data   *PaginationDO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *PaginationDo `json:"data,omitempty" xml:"data,omitempty"`
 }

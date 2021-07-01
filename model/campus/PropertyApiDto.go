@@ -1,7 +1,7 @@
 package campus
 
-// PropertyApiDTO 
-type PropertyApiDTO struct {
+// PropertyApiDto 
+type PropertyApiDto struct {
     // 参数点id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 参数点名称

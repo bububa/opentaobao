@@ -9,5 +9,5 @@ type CommonResult struct {
     // 错误描述
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 创建的互动实例
-    Data   *InteractDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *InteractDto `json:"data,omitempty" xml:"data,omitempty"`
 }

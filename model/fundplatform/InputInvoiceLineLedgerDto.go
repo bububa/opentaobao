@@ -1,7 +1,7 @@
 package fundplatform
 
-// InputInvoiceLineLedgerDTO 
-type InputInvoiceLineLedgerDTO struct {
+// InputInvoiceLineLedgerDto 
+type InputInvoiceLineLedgerDto struct {
     // 总金额
     Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     // 不含税金额

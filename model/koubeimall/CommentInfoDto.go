@@ -1,7 +1,7 @@
 package koubeimall
 
-// CommentInfoDTO 
-type CommentInfoDTO struct {
+// CommentInfoDto 
+type CommentInfoDto struct {
     // 带图的评论数
     ImageCount   int64 `json:"image_count,omitempty" xml:"image_count,omitempty"`
     // 总评论数

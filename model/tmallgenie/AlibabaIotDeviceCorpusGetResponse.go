@@ -23,5 +23,5 @@ type AlibabaIotDeviceCorpusGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结构体
-    RetValues   []DeviceCorpusTopDTO `json:"ret_values,omitempty" xml:"ret_values>device_corpus_top_dto,omitempty"`
+    RetValues   []DeviceCorpusTopDto `json:"ret_values,omitempty" xml:"ret_values>device_corpus_top_dto,omitempty"`
 }

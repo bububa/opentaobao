@@ -1,7 +1,7 @@
 package einvoice
 
-// BillItemDO 
-type BillItemDO struct {
+// BillItemDo 
+type BillItemDo struct {
     // 价税合计
     Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     // 商品名称

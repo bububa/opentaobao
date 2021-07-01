@@ -23,5 +23,5 @@ type YunosOsupdateDeviceserviceSearchmodelsResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // data
-    ModelList   []DeviceEntryDTO `json:"model_list,omitempty" xml:"model_list>device_entry_dto,omitempty"`
+    ModelList   []DeviceEntryDto `json:"model_list,omitempty" xml:"model_list>device_entry_dto,omitempty"`
 }

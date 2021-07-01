@@ -1,7 +1,7 @@
 package idleisv
 
-// IsvRefundTimeoutDTO 
-type IsvRefundTimeoutDTO struct {
+// IsvRefundTimeoutDto 
+type IsvRefundTimeoutDto struct {
     // 退款超时创建时间，时间戳，毫秒
     Create   int64 `json:"create,omitempty" xml:"create,omitempty"`
     // 退款超时修改时间，时间戳，毫秒

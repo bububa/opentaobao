@@ -1,7 +1,7 @@
 package alihealthoutflow
 
-// DrugDTO 
-type DrugDTO struct {
+// DrugDto 
+type DrugDto struct {
     // 规格
     Spec   string `json:"spec,omitempty" xml:"spec,omitempty"`
     // 总量

@@ -1,7 +1,7 @@
 package omniorder
 
-// ItemLightPublishDTO 
-type ItemLightPublishDTO struct {
+// ItemLightPublishDto 
+type ItemLightPublishDto struct {
     // 商品条形码
     Barcode   string `json:"barcode,omitempty" xml:"barcode,omitempty"`
     // 叶子类目ID
@@ -9,7 +9,7 @@ type ItemLightPublishDTO struct {
     // extendAttr
     ExtendAttr   string `json:"extend_attr,omitempty" xml:"extend_attr,omitempty"`
     // images
-    Images   []ItemLightPublishImageDTO `json:"images,omitempty" xml:"images>item_light_publish_image_dto,omitempty"`
+    Images   []ItemLightPublishImageDto `json:"images,omitempty" xml:"images>item_light_publish_image_dto,omitempty"`
     // itemId
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // outerId
@@ -19,7 +19,7 @@ type ItemLightPublishDTO struct {
     // 吊牌价
     Price   string `json:"price,omitempty" xml:"price,omitempty"`
     // skus
-    Skus   []ItemLightPublishSkuDTO `json:"skus,omitempty" xml:"skus>item_light_publish_sku_dto,omitempty"`
+    Skus   []ItemLightPublishSkuDto `json:"skus,omitempty" xml:"skus>item_light_publish_sku_dto,omitempty"`
     // 副标题
     Subtitle   string `json:"subtitle,omitempty" xml:"subtitle,omitempty"`
     // 标题

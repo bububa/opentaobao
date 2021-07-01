@@ -29,5 +29,5 @@ type AlibabaInteractIsvadminGetinteractbysellernickResponse struct {
     // 错误信息
     Msginfo   string `json:"msginfo,omitempty" xml:"msginfo,omitempty"`
     // 返回业务数据
-    Interactdtos   []InteractDTO `json:"interactdtos,omitempty" xml:"interactdtos>interact_dto,omitempty"`
+    Interactdtos   []InteractDto `json:"interactdtos,omitempty" xml:"interactdtos>interact_dto,omitempty"`
 }

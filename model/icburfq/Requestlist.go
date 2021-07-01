@@ -31,7 +31,7 @@ type Requestlist struct {
     // 供应商国家
     SupplierCountrys   string `json:"supplier_countrys,omitempty" xml:"supplier_countrys,omitempty"`
     // 附件
-    AnnexFiles   []RfqAnnexFileRemoteDTO `json:"annex_files,omitempty" xml:"annex_files>rfq_annex_file_remote_dto,omitempty"`
+    AnnexFiles   []RfqAnnexFileRemoteDto `json:"annex_files,omitempty" xml:"annex_files>rfq_annex_file_remote_dto,omitempty"`
     // 唯一加密RFQID
     UniqueRfqId   string `json:"unique_rfq_id,omitempty" xml:"unique_rfq_id,omitempty"`
 }

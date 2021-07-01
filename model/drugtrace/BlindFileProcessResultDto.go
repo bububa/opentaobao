@@ -1,7 +1,7 @@
 package drugtrace
 
-// BlindFileProcessResultDTO 
-type BlindFileProcessResultDTO struct {
+// BlindFileProcessResultDto 
+type BlindFileProcessResultDto struct {
     // 企业名称
     RefEntId   string `json:"ref_ent_id,omitempty" xml:"ref_ent_id,omitempty"`
     // 文件名称

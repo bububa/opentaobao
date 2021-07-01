@@ -1,9 +1,9 @@
 package waybill
 
-// RecipientInfoDTO 
-type RecipientInfoDTO struct {
+// RecipientInfoDto 
+type RecipientInfoDto struct {
     // 地址
-    Address   *AddressDTO `json:"address,omitempty" xml:"address,omitempty"`
+    Address   *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
     // 手机号码
     Mobile   string `json:"mobile,omitempty" xml:"mobile,omitempty"`
     // 姓名

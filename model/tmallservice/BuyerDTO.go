@@ -1,7 +1,7 @@
 package tmallservice
 
-// BuyerDTO 
-type BuyerDTO struct {
+// BuyerDto 
+type BuyerDto struct {
     // 省
     AddressProvince   string `json:"address_province,omitempty" xml:"address_province,omitempty"`
     // 详细地址

@@ -5,7 +5,7 @@ type UtmsPageResult struct {
     // code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // list
-    List   []ErpBillDTO `json:"list,omitempty" xml:"list>erp_bill_dto,omitempty"`
+    List   []ErpBillDto `json:"list,omitempty" xml:"list>erp_bill_dto,omitempty"`
     // msg
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // success

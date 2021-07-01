@@ -11,5 +11,5 @@ type UtmsResult struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // list
-    List   []BomProcessDTO `json:"list,omitempty" xml:"list>bom_process_dto,omitempty"`
+    List   []BomProcessDto `json:"list,omitempty" xml:"list>bom_process_dto,omitempty"`
 }

@@ -1,27 +1,11 @@
 package alicom
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-中心化供应商异常号码状态同步接口 API返回值 
-alibaba.aliqin.axb.vendor.exception.no.sync
-
-用于中心化供应商同步异常号码
-*/
-type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse struct {
-    model.CommonResponse
-    AlibabaAliqinAxbVendorExceptionNoSyncResponse
-}
-
-// 中心化供应商异常号码状态同步接口 成功返回结果
+// AlibabaAliqinAxbVendorExceptionNoSyncResponse 
 type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_exception_no_sync_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+    // 错误信息,OK代表受理成功
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // module
+    Module   bool `json:"module,omitempty" xml:"module,omitempty"`
+    // 错误码,OK代表受理成功
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
 }

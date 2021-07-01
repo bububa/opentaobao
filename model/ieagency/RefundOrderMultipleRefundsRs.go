@@ -1,7 +1,7 @@
 package ieagency
 
-// RefundOrderMultipleRefundsRS 
-type RefundOrderMultipleRefundsRS struct {
+// RefundOrderMultipleRefundsRs 
+type RefundOrderMultipleRefundsRs struct {
     // 错误码
     ApiErrorCode   int64 `json:"api_error_code,omitempty" xml:"api_error_code,omitempty"`
     // 错误文案

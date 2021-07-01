@@ -1,9 +1,9 @@
 package tanx
 
-// DealInfoDTO 
-type DealInfoDTO struct {
+// DealInfoDto 
+type DealInfoDto struct {
     // 11
-    Addresses   []DicDTO `json:"addresses,omitempty" xml:"addresses>dic_dto,omitempty"`
+    Addresses   []DicDto `json:"addresses,omitempty" xml:"addresses>dic_dto,omitempty"`
     // 100
     DealId   int64 `json:"deal_id,omitempty" xml:"deal_id,omitempty"`
     // 100

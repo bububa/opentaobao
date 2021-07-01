@@ -1,7 +1,7 @@
 package campus
 
-// TagInfoApiDTO 
-type TagInfoApiDTO struct {
+// TagInfoApiDto 
+type TagInfoApiDto struct {
     // 标签名称
     TagName   string `json:"tag_name,omitempty" xml:"tag_name,omitempty"`
     // 是否系统标签

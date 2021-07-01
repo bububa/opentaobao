@@ -1,7 +1,7 @@
 package tmallservice
 
-// StoreOfferPriceDTO 
-type StoreOfferPriceDTO struct {
+// StoreOfferPriceDto 
+type StoreOfferPriceDto struct {
     // price
     Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
     // 服务code

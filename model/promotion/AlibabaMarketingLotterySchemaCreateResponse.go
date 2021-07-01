@@ -23,7 +23,7 @@ type AlibabaMarketingLotterySchemaCreateResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 抽奖方案对象
-    LotterySchema   *LotterySchemaDTO `json:"lottery_schema,omitempty" xml:"lottery_schema,omitempty"`
+    LotterySchema   *LotterySchemaDto `json:"lottery_schema,omitempty" xml:"lottery_schema,omitempty"`
     // code
     MsgCode   int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // success

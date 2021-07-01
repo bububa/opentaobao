@@ -1,27 +1,13 @@
 package qimen
 
-import (
-    "encoding/xml"
-
-    "github.com/bububa/opentaobao/model"
-)
-
-/* 
-前后端商品映射查询接口 API返回值 
-taobao.qimen.itemmapping.query
-
-前后端商品映射查询接口
-*/
-type TaobaoQimenItemmappingQueryAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenItemmappingQueryResponse
-}
-
-// 前后端商品映射查询接口 成功返回结果
+// TaobaoQimenItemmappingQueryResponse 
 type TaobaoQimenItemmappingQueryResponse struct {
-    XMLName xml.Name `xml:"qimen_itemmapping_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+    // 响应结果:success|failure,success,string(10),必填
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+    // 响应码,0,string(50),
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+    // 响应信息,invalid appkey,string(100),
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+    // 商品映射关系
+    ItemMappings   []ItemMapping `json:"itemMappings,omitempty" xml:"itemMappings>item_mapping,omitempty"`
 }

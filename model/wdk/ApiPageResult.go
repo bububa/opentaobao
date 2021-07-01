@@ -11,7 +11,7 @@ type ApiPageResult struct {
     // 错误编码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 返回内容
-    Models   []CouponStatisticsResultDO `json:"models,omitempty" xml:"models>coupon_statistics_result_do,omitempty"`
+    Models   []CouponStatisticsResultDo `json:"models,omitempty" xml:"models>coupon_statistics_result_do,omitempty"`
     // 错误信息
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 是否成功

@@ -29,7 +29,7 @@ type AliexpressSolutionBatchProductInventoryUpdateResponse struct {
     // Indicates the update result is successful or not. Only all the products in mutiple_product_update_list have been updated successfully will make the success to be true, otherwise false.
     UpdateSuccess   bool `json:"update_success,omitempty" xml:"update_success,omitempty"`
     // update failed list
-    UpdateFailedList   []SynchronizeProductResponseDTO `json:"update_failed_list,omitempty" xml:"update_failed_list>synchronize_product_response_dto,omitempty"`
+    UpdateFailedList   []SynchronizeProductResponseDto `json:"update_failed_list,omitempty" xml:"update_failed_list>synchronize_product_response_dto,omitempty"`
     // update succesful list
-    UpdateSuccessfulList   []SynchronizeProductResponseDTO `json:"update_successful_list,omitempty" xml:"update_successful_list>synchronize_product_response_dto,omitempty"`
+    UpdateSuccessfulList   []SynchronizeProductResponseDto `json:"update_successful_list,omitempty" xml:"update_successful_list>synchronize_product_response_dto,omitempty"`
 }

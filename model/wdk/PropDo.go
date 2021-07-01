@@ -1,7 +1,7 @@
 package wdk
 
-// PropDO 
-type PropDO struct {
+// PropDo 
+type PropDo struct {
     // 行业属性
     Key   string `json:"key,omitempty" xml:"key,omitempty"`
     // 类目属性值

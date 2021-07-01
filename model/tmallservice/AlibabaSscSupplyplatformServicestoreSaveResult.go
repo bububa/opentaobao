@@ -9,7 +9,7 @@ type AlibabaSscSupplyplatformServicestoreSaveResult struct {
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 返回对象
-    Value   *ServiceStoreCreateDTO `json:"value,omitempty" xml:"value,omitempty"`
+    Value   *ServiceStoreCreateDto `json:"value,omitempty" xml:"value,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

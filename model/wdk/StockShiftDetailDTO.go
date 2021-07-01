@@ -1,7 +1,7 @@
 package wdk
 
-// StockShiftDetailDTO 
-type StockShiftDetailDTO struct {
+// StockShiftDetailDto 
+type StockShiftDetailDto struct {
     // batchInfo
     BatchInfo   string `json:"batch_info,omitempty" xml:"batch_info,omitempty"`
     // outDeptCode

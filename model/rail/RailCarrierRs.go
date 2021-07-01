@@ -1,7 +1,7 @@
 package rail
 
-// RailCarrierRS 
-type RailCarrierRS struct {
+// RailCarrierRs 
+type RailCarrierRs struct {
     // 是否成功
     Success   string `json:"success,omitempty" xml:"success,omitempty"`
     // 错误描述
@@ -9,7 +9,7 @@ type RailCarrierRS struct {
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 铁路运营公司列表
-    ModuleList   []RailCarrierRS `json:"module_list,omitempty" xml:"module_list>rail_carrier_rs,omitempty"`
+    ModuleList   []RailCarrierRs `json:"module_list,omitempty" xml:"module_list>rail_carrier_rs,omitempty"`
     // 铁路运营公司Code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 铁路运营公司Logo

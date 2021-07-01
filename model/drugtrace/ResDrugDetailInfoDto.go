@@ -1,7 +1,7 @@
 package drugtrace
 
-// ResDrugDetailInfoDTO 
-type ResDrugDetailInfoDTO struct {
+// ResDrugDetailInfoDto 
+type ResDrugDetailInfoDto struct {
     // 包装单位描述
     PkgUnitDesc   string `json:"pkg_unit_desc,omitempty" xml:"pkg_unit_desc,omitempty"`
     // 批准文号有效期至

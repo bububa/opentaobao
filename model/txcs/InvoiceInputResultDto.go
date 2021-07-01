@@ -1,7 +1,7 @@
 package txcs
 
-// InvoiceInputResultDTO 
-type InvoiceInputResultDTO struct {
+// InvoiceInputResultDto 
+type InvoiceInputResultDto struct {
     // 失败原因
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 发票代码

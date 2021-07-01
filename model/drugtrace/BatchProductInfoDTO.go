@@ -1,7 +1,7 @@
 package drugtrace
 
-// BatchProductInfoDTO 
-type BatchProductInfoDTO struct {
+// BatchProductInfoDto 
+type BatchProductInfoDto struct {
     // 生产企业名称
     EntName   string `json:"ent_name,omitempty" xml:"ent_name,omitempty"`
     // 包装规格

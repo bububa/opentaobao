@@ -9,5 +9,5 @@ type MiniAppResult struct {
     // 是否成功
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 用户数据
-    Data   *UserInfoDTO `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *UserInfoDto `json:"data,omitempty" xml:"data,omitempty"`
 }

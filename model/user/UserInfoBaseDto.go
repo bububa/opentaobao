@@ -1,7 +1,7 @@
 package user
 
-// UserInfoBaseDTO 
-type UserInfoBaseDTO struct {
+// UserInfoBaseDto 
+type UserInfoBaseDto struct {
     // 同一个开放平台帐号下，用户的 UnionID 是唯一的
     UnionId   string `json:"union_id,omitempty" xml:"union_id,omitempty"`
     // 小程序用户唯一识别

@@ -23,5 +23,5 @@ type TaobaoSimbaInsightWordsdataGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 关键词大盘数据列表
-    WordDataList   []InsightWordDataDTO `json:"word_data_list,omitempty" xml:"word_data_list>insight_word_data_dto,omitempty"`
+    WordDataList   []InsightWordDataDto `json:"word_data_list,omitempty" xml:"word_data_list>insight_word_data_dto,omitempty"`
 }

@@ -1,9 +1,9 @@
 package alidoc
 
-// RxPatientDiagnosticTopDTO 
-type RxPatientDiagnosticTopDTO struct {
+// RxPatientDiagnosticTopDto 
+type RxPatientDiagnosticTopDto struct {
     // 诊断list
-    DiagnoseList   []RxDiagnoseTopDTO `json:"diagnose_list,omitempty" xml:"diagnose_list>rx_diagnose_top_dto,omitempty"`
+    DiagnoseList   []RxDiagnoseTopDto `json:"diagnose_list,omitempty" xml:"diagnose_list>rx_diagnose_top_dto,omitempty"`
     // 过敏史
     AllergyHistory   string `json:"allergy_history,omitempty" xml:"allergy_history,omitempty"`
     // 妊娠哺乳

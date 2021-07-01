@@ -1,7 +1,7 @@
 package nrt
 
-// NrtMemberDTO 
-type NrtMemberDTO struct {
+// NrtMemberDto 
+type NrtMemberDto struct {
     // 手机号
     Phone   string `json:"phone,omitempty" xml:"phone,omitempty"`
     // 外部会员ID

@@ -1,7 +1,7 @@
 package baoxian
 
-// InsFacilitatorSurveyConclusionDTO 
-type InsFacilitatorSurveyConclusionDTO struct {
+// InsFacilitatorSurveyConclusionDto 
+type InsFacilitatorSurveyConclusionDto struct {
     // 业务单号
     BizNo   string `json:"biz_no,omitempty" xml:"biz_no,omitempty"`
     // 物流单号

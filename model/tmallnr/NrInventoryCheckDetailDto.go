@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrInventoryCheckDetailDTO 
-type NrInventoryCheckDetailDTO struct {
+// NrInventoryCheckDetailDto 
+type NrInventoryCheckDetailDto struct {
     // 数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 商家的商品编码

@@ -1,7 +1,7 @@
 package btrip
 
-// FlightSegmentRS 
-type FlightSegmentRS struct {
+// FlightSegmentRs 
+type FlightSegmentRs struct {
     // 航班到达机场三字码
     ArrAirport   string `json:"arr_airport,omitempty" xml:"arr_airport,omitempty"`
     // 到达城市三字码
@@ -43,7 +43,7 @@ type FlightSegmentRS struct {
     // 里程
     Miles   int64 `json:"miles,omitempty" xml:"miles,omitempty"`
     // 航段展示信息
-    SegmentShowInfo   *SegmentShowInfoRS `json:"segment_show_info,omitempty" xml:"segment_show_info,omitempty"`
+    SegmentShowInfo   *SegmentShowInfoRs `json:"segment_show_info,omitempty" xml:"segment_show_info,omitempty"`
     // 航段序号，从0开始
     SeqId   int64 `json:"seq_id,omitempty" xml:"seq_id,omitempty"`
     // 经停城市，多个值使用","分隔

@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// RoomTypeBedInfoDTO 
-type RoomTypeBedInfoDTO struct {
+// RoomTypeBedInfoDto 
+type RoomTypeBedInfoDto struct {
     // 简短描述，用于详情页报价前面的床型展示。
     BriefDesc   string `json:"brief_desc,omitempty" xml:"brief_desc,omitempty"`
     // 模糊描述，最精简的描述信息，大床/双床/单人床/多床/床位

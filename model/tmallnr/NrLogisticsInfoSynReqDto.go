@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrLogisticsInfoSynReqDTO 
-type NrLogisticsInfoSynReqDTO struct {
+// NrLogisticsInfoSynReqDto 
+type NrLogisticsInfoSynReqDto struct {
     // 运力类型，0: 第三方快递员,  1:商家自动
     DeliveryUserType   int64 `json:"delivery_user_type,omitempty" xml:"delivery_user_type,omitempty"`
     // 站点名称

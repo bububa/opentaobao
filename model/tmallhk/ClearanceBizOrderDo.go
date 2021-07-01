@@ -1,7 +1,7 @@
 package tmallhk
 
-// ClearanceBizOrderDO 
-type ClearanceBizOrderDO struct {
+// ClearanceBizOrderDo 
+type ClearanceBizOrderDo struct {
     // 淘系订单id
     BizOrderId   int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
     // 淘系买家id
@@ -9,7 +9,7 @@ type ClearanceBizOrderDO struct {
     // 创建时间
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // 子订单列表封装
-    OrderLineList   []ClearanceOrderLineDO `json:"order_line_list,omitempty" xml:"order_line_list>clearance_order_line_do,omitempty"`
+    OrderLineList   []ClearanceOrderLineDo `json:"order_line_list,omitempty" xml:"order_line_list>clearance_order_line_do,omitempty"`
     // 付款状态
     PayStatus   int64 `json:"pay_status,omitempty" xml:"pay_status,omitempty"`
     // 邮费
@@ -23,7 +23,7 @@ type ClearanceBizOrderDO struct {
     // 卖家旺旺
     SellerWangWangId   string `json:"seller_wang_wang_id,omitempty" xml:"seller_wang_wang_id,omitempty"`
     // 税费封装
-    TaxDO   *ClearanceTaxDO `json:"tax_d_o,omitempty" xml:"tax_d_o,omitempty"`
+    TaxDO   *ClearanceTaxDo `json:"tax_d_o,omitempty" xml:"tax_d_o,omitempty"`
     // 买家实付款
     Tf   int64 `json:"tf,omitempty" xml:"tf,omitempty"`
 }
