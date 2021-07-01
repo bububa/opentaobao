@@ -22,4 +22,7 @@ jobs:
       run: go build -v ./...
 
     - name: Test
+      env:
+        APPKEY: ${{ secrets.APPKEY }}
+        SECRET: ${{ secrets.APP_SERCET }}
       run: go test -v ./...
