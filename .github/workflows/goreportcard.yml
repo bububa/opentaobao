@@ -5,10 +5,5 @@ jobs:
     name: GoReportCard
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 0
     - name: GoReportCard
       uses: creekorful/goreportcard-action@v1.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
