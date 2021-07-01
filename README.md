@@ -1,5 +1,9 @@
 # 淘宝开放平台 golang SDK
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/bububa/opentaobao.svg)](https://pkg.go.dev/github.com/bububa/opentaobao)
+[![Go](https://github.com/bububa/opentaobao/actions/workflows/go.yml/badge.svg)](https://github.com/bububa/opentaobao/actions/workflows/go.yml)
+[![goreleaser](https://github.com/bububa/opentaobao/actions/workflows/goreleaser.yml/badge.svg)](https://github.com/bububa/opentaobao/actions/workflows/goreleaser.yml)
+
 
 ## 编译工具链
 ```sh
