@@ -1,21 +1,20 @@
 package jst
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/jst"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/jst"
 )
 
-/* 
-小程序活动创建 
+/* TaobaoJstMiniappCrowdCreate
+小程序活动创建
 taobao.jst.miniapp.crowd.create
 
-小程序活动创建
-*/
+小程序活动创建 */
 func TaobaoJstMiniappCrowdCreate(clt *core.SDKClient, req *jst.TaobaoJstMiniappCrowdCreateAPIRequest, session string) (*jst.TaobaoJstMiniappCrowdCreateAPIResponse, error) {
-    var resp jst.TaobaoJstMiniappCrowdCreateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp jst.TaobaoJstMiniappCrowdCreateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,27 +1,26 @@
 package omniorder
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-查询门店自提配置内容 API返回值 
+/* TaobaoOmniorderStoreCollectconfigGetAPIResponse
+查询门店自提配置内容 API返回值
 taobao.omniorder.store.collectconfig.get
 
-查询门店自提配置内容
-*/
+查询门店自提配置内容 */
 type TaobaoOmniorderStoreCollectconfigGetAPIResponse struct {
-    model.CommonResponse
-    TaobaoOmniorderStoreCollectconfigGetAPIResponseModel
+	model.CommonResponse
+	TaobaoOmniorderStoreCollectconfigGetAPIResponseModel
 }
 
-// 查询门店自提配置内容 成功返回结果
+// TaobaoOmniorderStoreCollectconfigGetAPIResponseModel is 查询门店自提配置内容 成功返回结果
 type TaobaoOmniorderStoreCollectconfigGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"omniorder_store_collectconfig_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *TaobaoOmniorderStoreCollectconfigGetResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"omniorder_store_collectconfig_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *TaobaoOmniorderStoreCollectconfigGetResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -1,21 +1,20 @@
 package simba
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/simba"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* 
-删除一个推广组 
+/* TaobaoSimbaAdgroupDelete
+删除一个推广组
 taobao.simba.adgroup.delete
 
-删除一个推广组
-*/
+删除一个推广组 */
 func TaobaoSimbaAdgroupDelete(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupDeleteAPIRequest, session string) (*simba.TaobaoSimbaAdgroupDeleteAPIResponse, error) {
-    var resp simba.TaobaoSimbaAdgroupDeleteAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp simba.TaobaoSimbaAdgroupDeleteAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

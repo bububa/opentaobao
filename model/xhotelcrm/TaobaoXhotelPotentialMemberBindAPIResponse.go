@@ -1,27 +1,26 @@
 package xhotelcrm
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-飞猪酒店商家会员绑定 API返回值 
+/* TaobaoXhotelPotentialMemberBindAPIResponse
+飞猪酒店商家会员绑定 API返回值
 taobao.xhotel.potential.member.bind
 
-支持互通商家发起会员绑定
-*/
+支持互通商家发起会员绑定 */
 type TaobaoXhotelPotentialMemberBindAPIResponse struct {
-    model.CommonResponse
-    TaobaoXhotelPotentialMemberBindAPIResponseModel
+	model.CommonResponse
+	TaobaoXhotelPotentialMemberBindAPIResponseModel
 }
 
-// 飞猪酒店商家会员绑定 成功返回结果
+// TaobaoXhotelPotentialMemberBindAPIResponseModel is 飞猪酒店商家会员绑定 成功返回结果
 type TaobaoXhotelPotentialMemberBindAPIResponseModel struct {
-    XMLName xml.Name `xml:"xhotel_potential_member_bind_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 添加操作是否成功
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	XMLName xml.Name `xml:"xhotel_potential_member_bind_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 添加操作是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

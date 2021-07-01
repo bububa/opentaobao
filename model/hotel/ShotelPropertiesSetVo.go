@@ -1,17 +1,17 @@
 package hotel
 
-// ShotelPropertiesSetVo 
+// ShotelPropertiesSetVo 结构体
 type ShotelPropertiesSetVo struct {
-    // 预订须知
-    ShotelBookingNotics   []ShotelPropertiesVo `json:"shotel_booking_notics,omitempty" xml:"shotel_booking_notics>shotel_properties_vo,omitempty"`
-    // 娱乐设施
-    ShotelFunFacilities   []ShotelPropertiesVo `json:"shotel_fun_facilities,omitempty" xml:"shotel_fun_facilities>shotel_properties_vo,omitempty"`
-    // 酒店设施
-    ShotelHotelFacilities   []ShotelPropertiesVo `json:"shotel_hotel_facilities,omitempty" xml:"shotel_hotel_facilities>shotel_properties_vo,omitempty"`
-    // 酒店服务
-    ShotelHotelServices   []ShotelPropertiesVo `json:"shotel_hotel_services,omitempty" xml:"shotel_hotel_services>shotel_properties_vo,omitempty"`
-    // 酒店普通图
-    ShotelNomalPictures   []ShotelPropertiesVo `json:"shotel_nomal_pictures,omitempty" xml:"shotel_nomal_pictures>shotel_properties_vo,omitempty"`
-    // 酒店维度的房间设施
-    ShotelRoomFacilities   []ShotelPropertiesVo `json:"shotel_room_facilities,omitempty" xml:"shotel_room_facilities>shotel_properties_vo,omitempty"`
+	// 预订须知
+	ShotelBookingNotics []ShotelPropertiesVo `json:"shotel_booking_notics,omitempty" xml:"shotel_booking_notics>shotel_properties_vo,omitempty"`
+	// 娱乐设施
+	ShotelFunFacilities []ShotelPropertiesVo `json:"shotel_fun_facilities,omitempty" xml:"shotel_fun_facilities>shotel_properties_vo,omitempty"`
+	// 酒店设施
+	ShotelHotelFacilities []ShotelPropertiesVo `json:"shotel_hotel_facilities,omitempty" xml:"shotel_hotel_facilities>shotel_properties_vo,omitempty"`
+	// 酒店服务
+	ShotelHotelServices []ShotelPropertiesVo `json:"shotel_hotel_services,omitempty" xml:"shotel_hotel_services>shotel_properties_vo,omitempty"`
+	// 酒店普通图
+	ShotelNomalPictures []ShotelPropertiesVo `json:"shotel_nomal_pictures,omitempty" xml:"shotel_nomal_pictures>shotel_properties_vo,omitempty"`
+	// 酒店维度的房间设施
+	ShotelRoomFacilities []ShotelPropertiesVo `json:"shotel_room_facilities,omitempty" xml:"shotel_room_facilities>shotel_properties_vo,omitempty"`
 }

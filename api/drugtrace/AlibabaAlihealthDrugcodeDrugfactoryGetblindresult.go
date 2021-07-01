@@ -1,21 +1,20 @@
 package drugtrace
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/drugtrace"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/drugtrace"
 )
 
-/* 
-获取盲底文件处理结果 
+/* AlibabaAlihealthDrugcodeDrugfactoryGetblindresult
+获取盲底文件处理结果
 alibaba.alihealth.drugcode.drugfactory.getblindresult
 
-获取盲底文件处理结果
-*/
+获取盲底文件处理结果 */
 func AlibabaAlihealthDrugcodeDrugfactoryGetblindresult(clt *core.SDKClient, req *drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIRequest, session string) (*drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse, error) {
-    var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp drugtrace.AlibabaAlihealthDrugcodeDrugfactoryGetblindresultAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

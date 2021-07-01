@@ -1,7 +1,7 @@
 package inventory
 
-// InventorySyncOption 
+// InventorySyncOption 结构体
 type InventorySyncOption struct {
-    // 业务
-    BizName   string `json:"biz_name,omitempty" xml:"biz_name,omitempty"`
+	// 业务
+	BizName string `json:"biz_name,omitempty" xml:"biz_name,omitempty"`
 }

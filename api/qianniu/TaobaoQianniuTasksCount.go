@@ -1,21 +1,20 @@
 package qianniu
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/qianniu"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/qianniu"
 )
 
-/* 
-任务查询条数接口 
+/* TaobaoQianniuTasksCount
+任务查询条数接口
 taobao.qianniu.tasks.count
 
-任务查询条数接口
-*/
+任务查询条数接口 */
 func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountAPIRequest, session string) (*qianniu.TaobaoQianniuTasksCountAPIResponse, error) {
-    var resp qianniu.TaobaoQianniuTasksCountAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp qianniu.TaobaoQianniuTasksCountAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

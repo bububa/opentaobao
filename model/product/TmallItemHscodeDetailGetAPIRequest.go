@@ -1,52 +1,20 @@
 package product
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TmallItemHscodeDetailGetAPIRequest
 通过hscode获取计量单位 API请求
 tmall.item.hscode.detail.get
 
-通过hscode获取计量单位和销售单位
-*/
+通过hscode获取计量单位和销售单位 */
 type TmallItemHscodeDetailGetAPIRequest struct {
-    model.Params
-    // hscode
-    _hscode   string
+	model.Params
+	// hscode
+	_hscode string
 }
 
-// 初始化TmallItemHscodeDetailGetAPIRequest对象
-func NewTmallItemHscodeDetailGetRequest() *TmallItemHscodeDetailGetAPIRequest{
-    return &TmallItemHscodeDetailGetAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TmallItemHscodeDetailGetAPIRequest) GetApiMethodName() string {
-    return "tmall.item.hscode.detail.get"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TmallItemHscodeDetailGetAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Hscode Setter
-// hscode
-func (r *TmallItemHscodeDetailGetAPIRequest) SetHscode(_hscode string) error {
-    r._hscode = _hscode
-    r.Set("hscode", _hscode)
-    return nil
-}
-
-// Hscode Getter
-func (r TmallItemHscodeDetailGetAPIRequest) GetHscode() string {
-    return r._hscode
-}
+// New

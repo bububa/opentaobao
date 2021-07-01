@@ -1,29 +1,28 @@
 package omniorder
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-门店自送对码进行核销 API返回值 
+/* TaobaoOmniorderDtdConsumeAPIResponse
+门店自送对码进行核销 API返回值
 taobao.omniorder.dtd.consume
 
-该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。
-*/
+该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。 */
 type TaobaoOmniorderDtdConsumeAPIResponse struct {
-    model.CommonResponse
-    TaobaoOmniorderDtdConsumeAPIResponseModel
+	model.CommonResponse
+	TaobaoOmniorderDtdConsumeAPIResponseModel
 }
 
-// 门店自送对码进行核销 成功返回结果
+// TaobaoOmniorderDtdConsumeAPIResponseModel is 门店自送对码进行核销 成功返回结果
 type TaobaoOmniorderDtdConsumeAPIResponseModel struct {
-    XMLName xml.Name `xml:"omniorder_dtd_consume_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 错误码，为0表示成功，非0表示失败
-    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-    // 错误西溪
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+	XMLName xml.Name `xml:"omniorder_dtd_consume_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 错误码，为0表示成功，非0表示失败
+	ResultCode string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+	// 错误西溪
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 }

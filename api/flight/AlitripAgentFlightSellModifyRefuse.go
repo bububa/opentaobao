@@ -1,21 +1,20 @@
 package flight
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/flight"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/flight"
 )
 
-/* 
-销售改签拒绝 
+/* AlitripAgentFlightSellModifyRefuse
+销售改签拒绝
 alitrip.agent.flight.sell.modify.refuse
 
-销售改签拒绝
-*/
+销售改签拒绝 */
 func AlitripAgentFlightSellModifyRefuse(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyRefuseAPIRequest, session string) (*flight.AlitripAgentFlightSellModifyRefuseAPIResponse, error) {
-    var resp flight.AlitripAgentFlightSellModifyRefuseAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp flight.AlitripAgentFlightSellModifyRefuseAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

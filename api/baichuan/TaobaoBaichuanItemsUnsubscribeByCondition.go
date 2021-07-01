@@ -1,21 +1,20 @@
 package baichuan
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/baichuan"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* 
-根据条件删除订阅关系 
+/* TaobaoBaichuanItemsUnsubscribeByCondition
+根据条件删除订阅关系
 taobao.baichuan.items.unsubscribe.by.condition
 
-根据条件删除订阅关系
-*/
+根据条件删除订阅关系 */
 func TaobaoBaichuanItemsUnsubscribeByCondition(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse, error) {
-    var resp baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp baichuan.TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

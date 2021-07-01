@@ -1,9 +1,9 @@
 package traveltrade
 
-// MemoCreate 
+// MemoCreate 结构体
 type MemoCreate struct {
-    // 备注添加时间
-    Created   string `json:"created,omitempty" xml:"created,omitempty"`
-    // 交易ID
-    Tid   int64 `json:"tid,omitempty" xml:"tid,omitempty"`
+	// 备注添加时间
+	Created string `json:"created,omitempty" xml:"created,omitempty"`
+	// 交易ID
+	Tid int64 `json:"tid,omitempty" xml:"tid,omitempty"`
 }

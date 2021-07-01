@@ -1,27 +1,26 @@
 package tmallnr
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-定时送和极速达配送物流信息查询 API返回值 
+/* TmallNrFulfillLogisticsQueryAPIResponse
+定时送和极速达配送物流信息查询 API返回值
 tmall.nr.fulfill.logistics.query
 
-发布定时送&极速达物流信息查询服务
-*/
+发布定时送&极速达物流信息查询服务 */
 type TmallNrFulfillLogisticsQueryAPIResponse struct {
-    model.CommonResponse
-    TmallNrFulfillLogisticsQueryAPIResponseModel
+	model.CommonResponse
+	TmallNrFulfillLogisticsQueryAPIResponseModel
 }
 
-// 定时送和极速达配送物流信息查询 成功返回结果
+// TmallNrFulfillLogisticsQueryAPIResponseModel is 定时送和极速达配送物流信息查询 成功返回结果
 type TmallNrFulfillLogisticsQueryAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_nr_fulfill_logistics_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回对象
-    Result   *NrResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_nr_fulfill_logistics_query_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回对象
+	Result *NrResult `json:"result,omitempty" xml:"result,omitempty"`
 }

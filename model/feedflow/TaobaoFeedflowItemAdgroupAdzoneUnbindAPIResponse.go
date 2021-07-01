@@ -1,27 +1,26 @@
 package feedflow
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-信息流单元内解绑资源位 API返回值 
+/* TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse
+信息流单元内解绑资源位 API返回值
 taobao.feedflow.item.adgroup.adzone.unbind
 
-信息流单元内解绑资源位
-*/
+信息流单元内解绑资源位 */
 type TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponse struct {
-    model.CommonResponse
-    TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponseModel
+	model.CommonResponse
+	TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponseModel
 }
 
-// 信息流单元内解绑资源位 成功返回结果
+// TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponseModel is 信息流单元内解绑资源位 成功返回结果
 type TaobaoFeedflowItemAdgroupAdzoneUnbindAPIResponseModel struct {
-    XMLName xml.Name `xml:"feedflow_item_adgroup_adzone_unbind_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回结果对象
-    Result   *TaobaoFeedflowItemAdgroupAdzoneUnbindResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"feedflow_item_adgroup_adzone_unbind_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回结果对象
+	Result *TaobaoFeedflowItemAdgroupAdzoneUnbindResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

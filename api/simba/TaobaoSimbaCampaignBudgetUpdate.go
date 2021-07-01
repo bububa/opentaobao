@@ -1,21 +1,20 @@
 package simba
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/simba"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* 
-更新一个推广计划的日限额 
+/* TaobaoSimbaCampaignBudgetUpdate
+更新一个推广计划的日限额
 taobao.simba.campaign.budget.update
 
-更新一个推广计划的日限额
-*/
+更新一个推广计划的日限额 */
 func TaobaoSimbaCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCampaignBudgetUpdateAPIRequest, session string) (*simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse, error) {
-    var resp simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp simba.TaobaoSimbaCampaignBudgetUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

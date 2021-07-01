@@ -1,21 +1,20 @@
 package promotion
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/promotion"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* 
-修改活动详情 
+/* TaobaoUmpDetailUpdate
+修改活动详情
 taobao.ump.detail.update
 
-更新活动详情
-*/
+更新活动详情 */
 func TaobaoUmpDetailUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpDetailUpdateAPIRequest, session string) (*promotion.TaobaoUmpDetailUpdateAPIResponse, error) {
-    var resp promotion.TaobaoUmpDetailUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp promotion.TaobaoUmpDetailUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,52 +1,20 @@
 package alicom
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest
 履约结果查询 API请求
 alibaba.alicom.order.preauthorize.query.fulfillment
 
-预授权-履约结果查询
-*/
+预授权-履约结果查询 */
 type AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest struct {
-    model.Params
-    // 入参
-    _preAuthorizeModel   *PreAuthorizeModel
+	model.Params
+	// 入参
+	_preAuthorizeModel *PreAuthorizeModel
 }
 
-// 初始化AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest对象
-func NewAlibabaAlicomOrderPreauthorizeQueryFulfillmentRequest() *AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest{
-    return &AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest) GetApiMethodName() string {
-    return "alibaba.alicom.order.preauthorize.query.fulfillment"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// PreAuthorizeModel Setter
-// 入参
-func (r *AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest) SetPreAuthorizeModel(_preAuthorizeModel *PreAuthorizeModel) error {
-    r._preAuthorizeModel = _preAuthorizeModel
-    r.Set("pre_authorize_model", _preAuthorizeModel)
-    return nil
-}
-
-// PreAuthorizeModel Getter
-func (r AlibabaAlicomOrderPreauthorizeQueryFulfillmentAPIRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
-    return r._preAuthorizeModel
-}
+// New

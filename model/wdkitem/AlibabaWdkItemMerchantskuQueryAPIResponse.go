@@ -1,27 +1,26 @@
 package wdkitem
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-商家商品信息查询 API返回值 
+/* AlibabaWdkItemMerchantskuQueryAPIResponse
+商家商品信息查询 API返回值
 alibaba.wdk.item.merchantsku.query
 
-商家商品信息查询
-*/
+商家商品信息查询 */
 type AlibabaWdkItemMerchantskuQueryAPIResponse struct {
-    model.CommonResponse
-    AlibabaWdkItemMerchantskuQueryAPIResponseModel
+	model.CommonResponse
+	AlibabaWdkItemMerchantskuQueryAPIResponseModel
 }
 
-// 商家商品信息查询 成功返回结果
+// AlibabaWdkItemMerchantskuQueryAPIResponseModel is 商家商品信息查询 成功返回结果
 type AlibabaWdkItemMerchantskuQueryAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_wdk_item_merchantsku_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *AlibabaWdkItemMerchantskuQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_wdk_item_merchantsku_query_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *AlibabaWdkItemMerchantskuQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

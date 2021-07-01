@@ -1,21 +1,20 @@
 package fenxiao
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/fenxiao"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-/* 
-批量查询采购退款 
+/* TaobaoFenxiaoRefundQuery
+批量查询采购退款
 taobao.fenxiao.refund.query
 
-供应商按查询条件批量查询代销采购退款
-*/
+供应商按查询条件批量查询代销采购退款 */
 func TaobaoFenxiaoRefundQuery(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRefundQueryAPIRequest, session string) (*fenxiao.TaobaoFenxiaoRefundQueryAPIResponse, error) {
-    var resp fenxiao.TaobaoFenxiaoRefundQueryAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp fenxiao.TaobaoFenxiaoRefundQueryAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

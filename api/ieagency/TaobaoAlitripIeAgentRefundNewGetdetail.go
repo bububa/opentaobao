@@ -1,21 +1,20 @@
 package ieagency
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/ieagency"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/ieagency"
 )
 
-/* 
-查询申请单详情(新版) 
+/* TaobaoAlitripIeAgentRefundNewGetdetail
+查询申请单详情(新版)
 taobao.alitrip.ie.agent.refund.new.getdetail
 
-查询申请单详情
-*/
+查询申请单详情 */
 func TaobaoAlitripIeAgentRefundNewGetdetail(clt *core.SDKClient, req *ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIRequest, session string) (*ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse, error) {
-    var resp ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp ieagency.TaobaoAlitripIeAgentRefundNewGetdetailAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

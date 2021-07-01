@@ -1,5 +1,5 @@
 package tmallgenie
 
-// OpsRequestUserInfoContext 
+// OpsRequestUserInfoContext 结构体
 type OpsRequestUserInfoContext struct {
 }

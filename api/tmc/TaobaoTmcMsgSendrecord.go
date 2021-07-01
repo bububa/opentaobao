@@ -1,21 +1,20 @@
 package tmc
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tmc"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tmc"
 )
 
-/* 
-消息发送记录查询 
+/* TaobaoTmcMsgSendrecord
+消息发送记录查询
 taobao.tmc.msg.sendrecord
 
-查询单条消息发送记录，只返回返回条数和时间。
-*/
+查询单条消息发送记录，只返回返回条数和时间。 */
 func TaobaoTmcMsgSendrecord(clt *core.SDKClient, req *tmc.TaobaoTmcMsgSendrecordAPIRequest, session string) (*tmc.TaobaoTmcMsgSendrecordAPIResponse, error) {
-    var resp tmc.TaobaoTmcMsgSendrecordAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tmc.TaobaoTmcMsgSendrecordAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

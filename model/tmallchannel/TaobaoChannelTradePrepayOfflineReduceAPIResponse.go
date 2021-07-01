@@ -1,27 +1,26 @@
 package tmallchannel
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-渠道分销供应商上传线下流水预存款（减少） API返回值 
+/* TaobaoChannelTradePrepayOfflineReduceAPIResponse
+渠道分销供应商上传线下流水预存款（减少） API返回值
 taobao.channel.trade.prepay.offline.reduce
 
-渠道分销供应商上传线下流水预存款（减少）
-*/
+渠道分销供应商上传线下流水预存款（减少） */
 type TaobaoChannelTradePrepayOfflineReduceAPIResponse struct {
-    model.CommonResponse
-    TaobaoChannelTradePrepayOfflineReduceAPIResponseModel
+	model.CommonResponse
+	TaobaoChannelTradePrepayOfflineReduceAPIResponseModel
 }
 
-// 渠道分销供应商上传线下流水预存款（减少） 成功返回结果
+// TaobaoChannelTradePrepayOfflineReduceAPIResponseModel is 渠道分销供应商上传线下流水预存款（减少） 成功返回结果
 type TaobaoChannelTradePrepayOfflineReduceAPIResponseModel struct {
-    XMLName xml.Name `xml:"channel_trade_prepay_offline_reduce_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *ResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"channel_trade_prepay_offline_reduce_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *ResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
 }

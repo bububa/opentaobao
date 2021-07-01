@@ -1,27 +1,26 @@
 package wdk
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-全场活动删除购品 API返回值 
+/* AlibabaWdkMarketingFullrangeRemoveitemAPIResponse
+全场活动删除购品 API返回值
 alibaba.wdk.marketing.fullrange.removeitem
 
-删除换购商品
-*/
+删除换购商品 */
 type AlibabaWdkMarketingFullrangeRemoveitemAPIResponse struct {
-    model.CommonResponse
-    AlibabaWdkMarketingFullrangeRemoveitemAPIResponseModel
+	model.CommonResponse
+	AlibabaWdkMarketingFullrangeRemoveitemAPIResponseModel
 }
 
-// 全场活动删除购品 成功返回结果
+// AlibabaWdkMarketingFullrangeRemoveitemAPIResponseModel is 全场活动删除购品 成功返回结果
 type AlibabaWdkMarketingFullrangeRemoveitemAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_wdk_marketing_fullrange_removeitem_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_wdk_marketing_fullrange_removeitem_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
 }

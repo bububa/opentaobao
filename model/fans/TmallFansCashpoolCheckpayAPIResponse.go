@@ -1,27 +1,26 @@
 package fans
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-检查资金池付款状态 API返回值 
+/* TmallFansCashpoolCheckpayAPIResponse
+检查资金池付款状态 API返回值
 tmall.fans.cashpool.checkpay
 
-检查资金池付款状态
-*/
+检查资金池付款状态 */
 type TmallFansCashpoolCheckpayAPIResponse struct {
-    model.CommonResponse
-    TmallFansCashpoolCheckpayAPIResponseModel
+	model.CommonResponse
+	TmallFansCashpoolCheckpayAPIResponseModel
 }
 
-// 检查资金池付款状态 成功返回结果
+// TmallFansCashpoolCheckpayAPIResponseModel is 检查资金池付款状态 成功返回结果
 type TmallFansCashpoolCheckpayAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_fans_cashpool_checkpay_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回值
-    FansResult   *FansResult `json:"fans_result,omitempty" xml:"fans_result,omitempty"`
+	XMLName xml.Name `xml:"tmall_fans_cashpool_checkpay_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回值
+	FansResult *FansResult `json:"fans_result,omitempty" xml:"fans_result,omitempty"`
 }

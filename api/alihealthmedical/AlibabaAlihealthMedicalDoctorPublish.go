@@ -1,21 +1,20 @@
 package alihealthmedical
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/alihealthmedical"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/alihealthmedical"
 )
 
-/* 
-三方机构医生信息上传 
+/* AlibabaAlihealthMedicalDoctorPublish
+三方机构医生信息上传
 alibaba.alihealth.medical.doctor.publish
 
-三方机构上传医生信息
-*/
+三方机构上传医生信息 */
 func AlibabaAlihealthMedicalDoctorPublish(clt *core.SDKClient, req *alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIRequest, session string) (*alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse, error) {
-    var resp alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp alihealthmedical.AlibabaAlihealthMedicalDoctorPublishAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

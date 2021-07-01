@@ -1,108 +1,28 @@
 package cainiaohandover
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* CainiaoGlobalHandoverPdfGetAPIRequest
 获取面单PDF文件数据 API请求
 cainiao.global.handover.pdf.get
 
-返回指定大包面单的PDF文件数据
-*/
+返回指定大包面单的PDF文件数据 */
 type CainiaoGlobalHandoverPdfGetAPIRequest struct {
-    model.Params
-    // 用户信息
-    _userInfo   *UserInfoDto
-    // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-    _client   string
-    // 多语言
-    _locale   string
-    // 大包编号id
-    _handoverContentId   int64
-    // 打印数据类型，1：面单、4：发货标签、512：交接清单
-    _type   int64
+	model.Params
+	// 用户信息
+	_userInfo *UserInfoDto
+	// 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
+	_client string
+	// 多语言
+	_locale string
+	// 大包编号id
+	_handoverContentId int64
+	// 打印数据类型，1：面单、4：发货标签、512：交接清单
+	_type int64
 }
 
-// 初始化CainiaoGlobalHandoverPdfGetAPIRequest对象
-func NewCainiaoGlobalHandoverPdfGetRequest() *CainiaoGlobalHandoverPdfGetAPIRequest{
-    return &CainiaoGlobalHandoverPdfGetAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetApiMethodName() string {
-    return "cainiao.global.handover.pdf.get"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// UserInfo Setter
-// 用户信息
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetUserInfo(_userInfo *UserInfoDto) error {
-    r._userInfo = _userInfo
-    r.Set("user_info", _userInfo)
-    return nil
-}
-
-// UserInfo Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetUserInfo() *UserInfoDto {
-    return r._userInfo
-}
-// Client Setter
-// 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetClient(_client string) error {
-    r._client = _client
-    r.Set("client", _client)
-    return nil
-}
-
-// Client Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetClient() string {
-    return r._client
-}
-// Locale Setter
-// 多语言
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetLocale(_locale string) error {
-    r._locale = _locale
-    r.Set("locale", _locale)
-    return nil
-}
-
-// Locale Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetLocale() string {
-    return r._locale
-}
-// HandoverContentId Setter
-// 大包编号id
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetHandoverContentId(_handoverContentId int64) error {
-    r._handoverContentId = _handoverContentId
-    r.Set("handover_content_id", _handoverContentId)
-    return nil
-}
-
-// HandoverContentId Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetHandoverContentId() int64 {
-    return r._handoverContentId
-}
-// Type Setter
-// 打印数据类型，1：面单、4：发货标签、512：交接清单
-func (r *CainiaoGlobalHandoverPdfGetAPIRequest) SetType(_type int64) error {
-    r._type = _type
-    r.Set("type", _type)
-    return nil
-}
-
-// Type Getter
-func (r CainiaoGlobalHandoverPdfGetAPIRequest) GetType() int64 {
-    return r._type
-}
+// New

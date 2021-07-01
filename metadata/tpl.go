@@ -4,37 +4,37 @@ import (
 	"strings"
 )
 
-// SDK API模版结构体
+// ApiTpl SDK API模版结构体
 type ApiTpl struct {
-	Pkg            string
-	ApiName        string
-	Name           string
-	ResponseKey    string
-	SnakeName      string
-	ChineseName    string
-	Desc           string
-	IsMultipart    bool
-	RequestParams  []TplParam
-	ResponseParams []TplParam
-	HasRequestId   bool
+	Pkg            string     // 包名
+	ApiName        string     // Api方法名
+	Name           string     // Api结构体名
+	ResponseKey    string     // ***_response
+	SnakeName      string     // snake 化方法名
+	ChineseName    string     // 中文名
+	Desc           string     // 描述
+	IsMultipart    bool       // 是否使用multipart/form
+	RequestParams  []TplParam // 请求参数
+	ResponseParams []TplParam // 返回参数
+	HasRequestId   bool       // 返回参数中是否已包含RequestId
 }
 
-// SDK API模版字段参数结构体
+// TplParam SDK API模版字段参数结构体
 type TplParam struct {
-	Name      string
-	Label     string
-	ParamKey  string
-	Type      string
-	ObjType   string
-	SnakeType string
-	Desc      string
-	IsObject  bool
-	IsList    bool
-	Required  bool
-	Obj       []TplParam
+	Name      string     // 结构体成员名
+	Label     string     // 第一个字母小写的
+	ParamKey  string     // api 参数的key(json/xml)
+	Type      string     // 参数类型
+	ObjType   string     // 对象类型的对象名
+	SnakeType string     // 对象类型名snake化
+	Desc      string     // 描述
+	IsObject  bool       // 是否是对象
+	IsList    bool       // 是否是数组
+	Required  bool       // 是否必须
+	Obj       []TplParam // 对象类型结构体参数
 }
 
-// SDK API是否需要使用form/multipart post
+// IsMultipart 判断SDK API是否需要使用multipart/form post
 func (p TplParam) IsMultipart() bool {
 	if strings.HasSuffix(p.Type, "model.File") {
 		return true
@@ -47,15 +47,15 @@ func (p TplParam) IsMultipart() bool {
 	return false
 }
 
-// SDK model模版结构体
+// TplModel SDK model模版结构体
 type TplModel struct {
-	Pkg         string
-	Name        string
-	Params      []TplParam
-	ImportModel bool
+	Pkg         string     // 包名
+	Name        string     // struct 名
+	Params      []TplParam // struct 成员
+	ImportModel bool       // 是否import github.com/bububa/opentaobao/model
 }
 
-// SDK model模版是否需要引用github.com/bububa/opentaobao/model包
+// NeedImportModel 判断SDK model模版是否需要引用github.com/bububa/opentaobao/model包
 func (t TplModel) NeedImportModel() bool {
 	for _, p := range t.Params {
 		if strings.HasSuffix(p.Type, "model.File") {
@@ -65,7 +65,7 @@ func (t TplModel) NeedImportModel() bool {
 	return false
 }
 
-// SDK 提取包内包含的结构体
+// ExtractModels 提取包内包含的结构体
 func ExtractModels(params []TplParam) []TplModel {
 	var models []TplModel
 	for _, p := range params {
@@ -85,7 +85,7 @@ func ExtractModels(params []TplParam) []TplModel {
 	return models
 }
 
-// SDK 合并包内命名相同结构体
+// MergeModels 合并包内命名相同结构体
 func MergeModels(models []TplModel) []TplModel {
 	mp := make(map[string]*TplModel, len(models))
 	for _, model := range models {

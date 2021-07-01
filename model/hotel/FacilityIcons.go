@@ -1,9 +1,9 @@
 package hotel
 
-// FacilityIcons 
+// FacilityIcons 结构体
 type FacilityIcons struct {
-    // facilityKey
-    FacilityKey   string `json:"facility_key,omitempty" xml:"facility_key,omitempty"`
-    // facilityValue
-    FacilityValue   string `json:"facility_value,omitempty" xml:"facility_value,omitempty"`
+	// facilityKey
+	FacilityKey string `json:"facility_key,omitempty" xml:"facility_key,omitempty"`
+	// facilityValue
+	FacilityValue string `json:"facility_value,omitempty" xml:"facility_value,omitempty"`
 }

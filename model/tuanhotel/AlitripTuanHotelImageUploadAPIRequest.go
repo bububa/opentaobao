@@ -1,52 +1,20 @@
 package tuanhotel
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlitripTuanHotelImageUploadAPIRequest
 图片上传接口 API请求
 alitrip.tuan.hotel.image.upload
 
-用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址
-*/
+用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址 */
 type AlitripTuanHotelImageUploadAPIRequest struct {
-    model.Params
-    // 上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M
-    _imageInfoList   []ImageInfoVOList
+	model.Params
+	// 上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M
+	_imageInfoList []ImageInfoVOList
 }
 
-// 初始化AlitripTuanHotelImageUploadAPIRequest对象
-func NewAlitripTuanHotelImageUploadRequest() *AlitripTuanHotelImageUploadAPIRequest{
-    return &AlitripTuanHotelImageUploadAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlitripTuanHotelImageUploadAPIRequest) GetApiMethodName() string {
-    return "alitrip.tuan.hotel.image.upload"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlitripTuanHotelImageUploadAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ImageInfoList Setter
-// 上传图片信息列表，最多一次支持5张图片上传。单张图片大小限制为1M
-func (r *AlitripTuanHotelImageUploadAPIRequest) SetImageInfoList(_imageInfoList []ImageInfoVOList) error {
-    r._imageInfoList = _imageInfoList
-    r.Set("image_info_list", _imageInfoList)
-    return nil
-}
-
-// ImageInfoList Getter
-func (r AlitripTuanHotelImageUploadAPIRequest) GetImageInfoList() []ImageInfoVOList {
-    return r._imageInfoList
-}
+// New

@@ -1,12 +1,12 @@
 package promotion
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/promotion"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/promotion"
 )
 
-/* 
-抽奖接口 
+/* AlibabaBenefitDraw
+抽奖接口
 alibaba.benefit.draw
 
 功能：抽奖功能，供小程序抽奖调用
@@ -15,13 +15,12 @@ alibaba.benefit.draw
 安全保障：为保证数据不会越权，需要买家授，并且验证系统参数appKey。只有通过授权的，并且
 appkey验证通过的，才会进入抽奖流程，否则直接失败。
 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
-是否一致，所以可以保证参数appName的合法性，没有越权。
-*/
+是否一致，所以可以保证参数appName的合法性，没有越权。 */
 func AlibabaBenefitDraw(clt *core.SDKClient, req *promotion.AlibabaBenefitDrawAPIRequest, session string) (*promotion.AlibabaBenefitDrawAPIResponse, error) {
-    var resp promotion.AlibabaBenefitDrawAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp promotion.AlibabaBenefitDrawAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

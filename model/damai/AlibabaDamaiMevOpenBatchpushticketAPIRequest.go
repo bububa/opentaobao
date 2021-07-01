@@ -1,52 +1,20 @@
 package damai
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaDamaiMevOpenBatchpushticketAPIRequest
 大麦换验平台-第三方对外开放-票单接口batchPushTicket API请求
 alibaba.damai.mev.open.batchpushticket
 
-批量推送票单
-*/
+批量推送票单 */
 type AlibabaDamaiMevOpenBatchpushticketAPIRequest struct {
-    model.Params
-    // 入参thirdTicketSetOpenParamList
-    _thirdTicketSetOpenParamList   []ThirdTicketPushOpenParam
+	model.Params
+	// 入参thirdTicketSetOpenParamList
+	_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenBatchpushticketAPIRequest对象
-func NewAlibabaDamaiMevOpenBatchpushticketRequest() *AlibabaDamaiMevOpenBatchpushticketAPIRequest{
-    return &AlibabaDamaiMevOpenBatchpushticketAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetApiMethodName() string {
-    return "alibaba.damai.mev.open.batchpushticket"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ThirdTicketSetOpenParamList Setter
-// 入参thirdTicketSetOpenParamList
-func (r *AlibabaDamaiMevOpenBatchpushticketAPIRequest) SetThirdTicketSetOpenParamList(_thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
-    r._thirdTicketSetOpenParamList = _thirdTicketSetOpenParamList
-    r.Set("third_ticket_set_open_param_list", _thirdTicketSetOpenParamList)
-    return nil
-}
-
-// ThirdTicketSetOpenParamList Getter
-func (r AlibabaDamaiMevOpenBatchpushticketAPIRequest) GetThirdTicketSetOpenParamList() []ThirdTicketPushOpenParam {
-    return r._thirdTicketSetOpenParamList
-}
+// New

@@ -1,52 +1,20 @@
 package damai
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaDamaiMevOpenDeletestandAPIRequest
 大麦换验平台-第三方对外开放-看台接口deleteStand API请求
 alibaba.damai.mev.open.deletestand
 
-deleteStand
-*/
+deleteStand */
 type AlibabaDamaiMevOpenDeletestandAPIRequest struct {
-    model.Params
-    // 入参deleteStandParam
-    _deleteStandParam   *StandIdOpenParam
+	model.Params
+	// 入参deleteStandParam
+	_deleteStandParam *StandIdOpenParam
 }
 
-// 初始化AlibabaDamaiMevOpenDeletestandAPIRequest对象
-func NewAlibabaDamaiMevOpenDeletestandRequest() *AlibabaDamaiMevOpenDeletestandAPIRequest{
-    return &AlibabaDamaiMevOpenDeletestandAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetApiMethodName() string {
-    return "alibaba.damai.mev.open.deletestand"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// DeleteStandParam Setter
-// 入参deleteStandParam
-func (r *AlibabaDamaiMevOpenDeletestandAPIRequest) SetDeleteStandParam(_deleteStandParam *StandIdOpenParam) error {
-    r._deleteStandParam = _deleteStandParam
-    r.Set("delete_stand_param", _deleteStandParam)
-    return nil
-}
-
-// DeleteStandParam Getter
-func (r AlibabaDamaiMevOpenDeletestandAPIRequest) GetDeleteStandParam() *StandIdOpenParam {
-    return r._deleteStandParam
-}
+// New

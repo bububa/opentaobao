@@ -1,12 +1,12 @@
 package product
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/product"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/product"
 )
 
-/* 
-更新商品发货时间 
+/* TmallItemShiptimeUpdate
+更新商品发货时间
 tmall.item.shiptime.update
 
 增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)
@@ -39,13 +39,12 @@ tmall.item.shiptime.update
         "shipTimeType": 0, -- 删除发货时间
         "updateType": 1 --更新商品
     },
-    删除商品级的发货时间
-*/
+    删除商品级的发货时间 */
 func TmallItemShiptimeUpdate(clt *core.SDKClient, req *product.TmallItemShiptimeUpdateAPIRequest, session string) (*product.TmallItemShiptimeUpdateAPIResponse, error) {
-    var resp product.TmallItemShiptimeUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp product.TmallItemShiptimeUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,12 +1,12 @@
 package tmallservice
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tmallservice"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* 
-删除网点 
+/* TmallServicecenterServicestoreDeleteservicestore
+删除网点
 tmall.servicecenter.servicestore.deleteservicestore
 
 删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。
@@ -22,13 +22,12 @@ tmall.servicecenter.servicestore.deleteservicestore
 9, 缺少网点电话
 10, 网点已存在
 11, 网点不存在
-12, 系统错误
-*/
+12, 系统错误 */
 func TmallServicecenterServicestoreDeleteservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse, error) {
-    var resp tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

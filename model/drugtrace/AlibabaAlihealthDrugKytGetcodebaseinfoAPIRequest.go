@@ -1,66 +1,22 @@
 package drugtrace
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest
 码的药品信息查询 API请求
 alibaba.alihealth.drug.kyt.getcodebaseinfo
 
-提供根据码查询码基本信息接口
-*/
+提供根据码查询码基本信息接口 */
 type AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest struct {
-    model.Params
-    // 码
-    _code   string
-    // 企业唯一标识
-    _refEntId   string
+	model.Params
+	// 码
+	_code string
+	// 企业唯一标识
+	_refEntId string
 }
 
-// 初始化AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest对象
-func NewAlibabaAlihealthDrugKytGetcodebaseinfoRequest() *AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest{
-    return &AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) GetApiMethodName() string {
-    return "alibaba.alihealth.drug.kyt.getcodebaseinfo"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Code Setter
-// 码
-func (r *AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) SetCode(_code string) error {
-    r._code = _code
-    r.Set("code", _code)
-    return nil
-}
-
-// Code Getter
-func (r AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) GetCode() string {
-    return r._code
-}
-// RefEntId Setter
-// 企业唯一标识
-func (r *AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) SetRefEntId(_refEntId string) error {
-    r._refEntId = _refEntId
-    r.Set("ref_ent_id", _refEntId)
-    return nil
-}
-
-// RefEntId Getter
-func (r AlibabaAlihealthDrugKytGetcodebaseinfoAPIRequest) GetRefEntId() string {
-    return r._refEntId
-}
+// New

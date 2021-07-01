@@ -1,5 +1,5 @@
 package cainiaohandover
 
-// SellerParam 
+// SellerParam 结构体
 type SellerParam struct {
 }

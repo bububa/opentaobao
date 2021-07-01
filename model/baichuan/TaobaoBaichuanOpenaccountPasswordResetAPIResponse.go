@@ -1,27 +1,26 @@
 package baichuan
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-百川找回密码 API返回值 
+/* TaobaoBaichuanOpenaccountPasswordResetAPIResponse
+百川找回密码 API返回值
 taobao.baichuan.openaccount.password.reset
 
-百川找回密码
-*/
+百川找回密码 */
 type TaobaoBaichuanOpenaccountPasswordResetAPIResponse struct {
-    model.CommonResponse
-    TaobaoBaichuanOpenaccountPasswordResetAPIResponseModel
+	model.CommonResponse
+	TaobaoBaichuanOpenaccountPasswordResetAPIResponseModel
 }
 
-// 百川找回密码 成功返回结果
+// TaobaoBaichuanOpenaccountPasswordResetAPIResponseModel is 百川找回密码 成功返回结果
 type TaobaoBaichuanOpenaccountPasswordResetAPIResponseModel struct {
-    XMLName xml.Name `xml:"baichuan_openaccount_password_reset_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // name
-    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+	XMLName xml.Name `xml:"baichuan_openaccount_password_reset_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// name
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
 }

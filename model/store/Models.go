@@ -1,7 +1,7 @@
 package store
 
-// Models 
+// Models 结构体
 type Models struct {
-    // 是否为空
-    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
+	// 是否为空
+	Empty bool `json:"empty,omitempty" xml:"empty,omitempty"`
 }

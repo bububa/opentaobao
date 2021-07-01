@@ -1,21 +1,20 @@
 package nazca
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/nazca"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/nazca"
 )
 
-/* 
-根据token获取变更认证申请信息 
+/* AlibabaNazcaTokenChangeauthapplyGet
+根据token获取变更认证申请信息
 alibaba.nazca.token.changeauthapply.get
 
-根据token获取变更认证申请信息
-*/
+根据token获取变更认证申请信息 */
 func AlibabaNazcaTokenChangeauthapplyGet(clt *core.SDKClient, req *nazca.AlibabaNazcaTokenChangeauthapplyGetAPIRequest, session string) (*nazca.AlibabaNazcaTokenChangeauthapplyGetAPIResponse, error) {
-    var resp nazca.AlibabaNazcaTokenChangeauthapplyGetAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp nazca.AlibabaNazcaTokenChangeauthapplyGetAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

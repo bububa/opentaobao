@@ -1,27 +1,26 @@
 package util
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-退款信息审核 API返回值 
+/* TaobaoRdcAligeniusRefundsCheckAPIResponse
+退款信息审核 API返回值
 taobao.rdc.aligenius.refunds.check
 
-根据退款信息，对退款单进行审核
-*/
+根据退款信息，对退款单进行审核 */
 type TaobaoRdcAligeniusRefundsCheckAPIResponse struct {
-    model.CommonResponse
-    TaobaoRdcAligeniusRefundsCheckAPIResponseModel
+	model.CommonResponse
+	TaobaoRdcAligeniusRefundsCheckAPIResponseModel
 }
 
-// 退款信息审核 成功返回结果
+// TaobaoRdcAligeniusRefundsCheckAPIResponseModel is 退款信息审核 成功返回结果
 type TaobaoRdcAligeniusRefundsCheckAPIResponseModel struct {
-    XMLName xml.Name `xml:"rdc_aligenius_refunds_check_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *TaobaoRdcAligeniusRefundsCheckResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"rdc_aligenius_refunds_check_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *TaobaoRdcAligeniusRefundsCheckResult `json:"result,omitempty" xml:"result,omitempty"`
 }

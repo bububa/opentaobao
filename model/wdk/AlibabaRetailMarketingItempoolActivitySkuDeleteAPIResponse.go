@@ -1,27 +1,26 @@
 package wdk
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-删除商品池活动商品【同城零售】 API返回值 
+/* AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse
+删除商品池活动商品【同城零售】 API返回值
 alibaba.retail.marketing.itempool.activity.sku.delete
 
-删除商品池活动商品信息【同城零售】
-*/
+删除商品池活动商品信息【同城零售】 */
 type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponse struct {
-    model.CommonResponse
-    AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel
+	model.CommonResponse
+	AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel
 }
 
-// 删除商品池活动商品【同城零售】 成功返回结果
+// AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel is 删除商品池活动商品【同城零售】 成功返回结果
 type AlibabaRetailMarketingItempoolActivitySkuDeleteAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_activity_sku_delete_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 出参
-    Result   *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_activity_sku_delete_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 出参
+	Result *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
 }

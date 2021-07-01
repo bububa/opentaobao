@@ -1,21 +1,20 @@
 package alsc
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/alsc"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/alsc"
 )
 
-/* 
-查询会员等级规则 
+/* AlibabaAlscCrmRuleLevelQuerylevelrule
+查询会员等级规则
 alibaba.alsc.crm.rule.level.querylevelrule
 
-查询会员等级规则
-*/
+查询会员等级规则 */
 func AlibabaAlscCrmRuleLevelQuerylevelrule(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIRequest, session string) (*alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse, error) {
-    var resp alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp alsc.AlibabaAlscCrmRuleLevelQuerylevelruleAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

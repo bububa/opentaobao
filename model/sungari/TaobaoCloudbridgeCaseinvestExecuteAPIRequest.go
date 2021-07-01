@@ -1,66 +1,22 @@
 package sungari
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TaobaoCloudbridgeCaseinvestExecuteAPIRequest
 红盾云桥案件协查服务 API请求
 taobao.cloudbridge.caseinvest.execute
 
-通过API接口直接提供政府部门录入及查询函件服务
-*/
+通过API接口直接提供政府部门录入及查询函件服务 */
 type TaobaoCloudbridgeCaseinvestExecuteAPIRequest struct {
-    model.Params
-    // 方法名称
-    _apiName   string
-    // 方法参数
-    _data   string
+	model.Params
+	// 方法名称
+	_apiName string
+	// 方法参数
+	_data string
 }
 
-// 初始化TaobaoCloudbridgeCaseinvestExecuteAPIRequest对象
-func NewTaobaoCloudbridgeCaseinvestExecuteRequest() *TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
-    return &TaobaoCloudbridgeCaseinvestExecuteAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiMethodName() string {
-    return "taobao.cloudbridge.caseinvest.execute"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ApiName Setter
-// 方法名称
-func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetApiName(_apiName string) error {
-    r._apiName = _apiName
-    r.Set("api_name", _apiName)
-    return nil
-}
-
-// ApiName Getter
-func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetApiName() string {
-    return r._apiName
-}
-// Data Setter
-// 方法参数
-func (r *TaobaoCloudbridgeCaseinvestExecuteAPIRequest) SetData(_data string) error {
-    r._data = _data
-    r.Set("data", _data)
-    return nil
-}
-
-// Data Getter
-func (r TaobaoCloudbridgeCaseinvestExecuteAPIRequest) GetData() string {
-    return r._data
-}
+// New

@@ -1,27 +1,26 @@
 package tmallservice
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-根据时间段查询服务商的服务预警消息列表(15分钟内) API返回值 
+/* TmallServicecenterServicemonitormessageSearchAPIResponse
+根据时间段查询服务商的服务预警消息列表(15分钟内) API返回值
 tmall.servicecenter.servicemonitormessage.search
 
-根据时间段查询服务商的服务预警消息列表(15分钟内)
-*/
+根据时间段查询服务商的服务预警消息列表(15分钟内) */
 type TmallServicecenterServicemonitormessageSearchAPIResponse struct {
-    model.CommonResponse
-    TmallServicecenterServicemonitormessageSearchAPIResponseModel
+	model.CommonResponse
+	TmallServicecenterServicemonitormessageSearchAPIResponseModel
 }
 
-// 根据时间段查询服务商的服务预警消息列表(15分钟内) 成功返回结果
+// TmallServicecenterServicemonitormessageSearchAPIResponseModel is 根据时间段查询服务商的服务预警消息列表(15分钟内) 成功返回结果
 type TmallServicecenterServicemonitormessageSearchAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_servicemonitormessage_search_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_servicecenter_servicemonitormessage_search_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
 }

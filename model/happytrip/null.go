@@ -1,5 +1,5 @@
 package happytrip
 
-// Null 
+// Null 结构体
 type Null struct {
 }

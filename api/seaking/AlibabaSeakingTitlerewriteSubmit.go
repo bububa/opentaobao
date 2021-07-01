@@ -1,21 +1,20 @@
 package seaking
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/seaking"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/seaking"
 )
 
-/* 
-提交标题改写任务 
+/* AlibabaSeakingTitlerewriteSubmit
+提交标题改写任务
 alibaba.seaking.titlerewrite.submit
 
-提交标题改写任务
-*/
+提交标题改写任务 */
 func AlibabaSeakingTitlerewriteSubmit(clt *core.SDKClient, req *seaking.AlibabaSeakingTitlerewriteSubmitAPIRequest, session string) (*seaking.AlibabaSeakingTitlerewriteSubmitAPIResponse, error) {
-    var resp seaking.AlibabaSeakingTitlerewriteSubmitAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp seaking.AlibabaSeakingTitlerewriteSubmitAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

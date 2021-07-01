@@ -1,27 +1,26 @@
 package wdk
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-商户回传餐饮加工单状态 API返回值 
+/* AlibabaWdkopenCateorderPullAPIResponse
+商户回传餐饮加工单状态 API返回值
 alibaba.wdkopen.cateorder.pull
 
-商户回传餐饮加工单状态
-*/
+商户回传餐饮加工单状态 */
 type AlibabaWdkopenCateorderPullAPIResponse struct {
-    model.CommonResponse
-    AlibabaWdkopenCateorderPullAPIResponseModel
+	model.CommonResponse
+	AlibabaWdkopenCateorderPullAPIResponseModel
 }
 
-// 商户回传餐饮加工单状态 成功返回结果
+// AlibabaWdkopenCateorderPullAPIResponseModel is 商户回传餐饮加工单状态 成功返回结果
 type AlibabaWdkopenCateorderPullAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_wdkopen_cateorder_pull_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 调用返回
-    TopBaseResult   *TopBaseResult `json:"top_base_result,omitempty" xml:"top_base_result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_wdkopen_cateorder_pull_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 调用返回
+	TopBaseResult *TopBaseResult `json:"top_base_result,omitempty" xml:"top_base_result,omitempty"`
 }

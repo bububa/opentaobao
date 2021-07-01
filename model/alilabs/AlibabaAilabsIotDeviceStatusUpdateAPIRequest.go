@@ -1,52 +1,20 @@
 package alilabs
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAilabsIotDeviceStatusUpdateAPIRequest
 ailabs iot 设备状态更新 API请求
 alibaba.ailabs.iot.device.status.update
 
-用于人工智能实验室IoT合作厂商上报三方接入IoT设备状态更新时的设备状态上报
-*/
+用于人工智能实验室IoT合作厂商上报三方接入IoT设备状态更新时的设备状态上报 */
 type AlibabaAilabsIotDeviceStatusUpdateAPIRequest struct {
-    model.Params
-    // 入参设备信息
-    _deviceStatusDTO   *DeviceStatusDto
+	model.Params
+	// 入参设备信息
+	_deviceStatusDTO *DeviceStatusDto
 }
 
-// 初始化AlibabaAilabsIotDeviceStatusUpdateAPIRequest对象
-func NewAlibabaAilabsIotDeviceStatusUpdateRequest() *AlibabaAilabsIotDeviceStatusUpdateAPIRequest{
-    return &AlibabaAilabsIotDeviceStatusUpdateAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetApiMethodName() string {
-    return "alibaba.ailabs.iot.device.status.update"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// DeviceStatusDTO Setter
-// 入参设备信息
-func (r *AlibabaAilabsIotDeviceStatusUpdateAPIRequest) SetDeviceStatusDTO(_deviceStatusDTO *DeviceStatusDto) error {
-    r._deviceStatusDTO = _deviceStatusDTO
-    r.Set("device_status_d_t_o", _deviceStatusDTO)
-    return nil
-}
-
-// DeviceStatusDTO Getter
-func (r AlibabaAilabsIotDeviceStatusUpdateAPIRequest) GetDeviceStatusDTO() *DeviceStatusDto {
-    return r._deviceStatusDTO
-}
+// New

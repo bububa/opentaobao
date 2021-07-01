@@ -1,7 +1,7 @@
 package fenxiao
 
-// AddCnskuOption 
+// AddCnskuOption 结构体
 type AddCnskuOption struct {
-    // 是否同步到wms, 为空时默认下发
-    SyncWms   bool `json:"sync_wms,omitempty" xml:"sync_wms,omitempty"`
+	// 是否同步到wms, 为空时默认下发
+	SyncWms bool `json:"sync_wms,omitempty" xml:"sync_wms,omitempty"`
 }

@@ -1,9 +1,9 @@
 package taotv
 
-// CarouselCurrentPlayRbo 
+// CarouselCurrentPlayRbo 结构体
 type CarouselCurrentPlayRbo struct {
-    // 当前轮播视频信息
-    Video   *CarouselPlaylistVideoRbo `json:"video,omitempty" xml:"video,omitempty"`
-    // 当前视频正在播放的时间点（单位秒）
-    Point   int64 `json:"point,omitempty" xml:"point,omitempty"`
+	// 当前轮播视频信息
+	Video *CarouselPlaylistVideoRbo `json:"video,omitempty" xml:"video,omitempty"`
+	// 当前视频正在播放的时间点（单位秒）
+	Point int64 `json:"point,omitempty" xml:"point,omitempty"`
 }

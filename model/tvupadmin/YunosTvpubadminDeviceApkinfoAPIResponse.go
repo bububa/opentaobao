@@ -1,27 +1,26 @@
 package tvupadmin
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-获取停开服apk信息 API返回值 
+/* YunosTvpubadminDeviceApkinfoAPIResponse
+获取停开服apk信息 API返回值
 yunos.tvpubadmin.device.apkinfo
 
-获取停开服apk信息
-*/
+获取停开服apk信息 */
 type YunosTvpubadminDeviceApkinfoAPIResponse struct {
-    model.CommonResponse
-    YunosTvpubadminDeviceApkinfoAPIResponseModel
+	model.CommonResponse
+	YunosTvpubadminDeviceApkinfoAPIResponseModel
 }
 
-// 获取停开服apk信息 成功返回结果
+// YunosTvpubadminDeviceApkinfoAPIResponseModel is 获取停开服apk信息 成功返回结果
 type YunosTvpubadminDeviceApkinfoAPIResponseModel struct {
-    XMLName xml.Name `xml:"yunos_tvpubadmin_device_apkinfo_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // object
-    Object   *DicControlApkDo `json:"object,omitempty" xml:"object,omitempty"`
+	XMLName xml.Name `xml:"yunos_tvpubadmin_device_apkinfo_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// object
+	Object *DicControlApkDo `json:"object,omitempty" xml:"object,omitempty"`
 }

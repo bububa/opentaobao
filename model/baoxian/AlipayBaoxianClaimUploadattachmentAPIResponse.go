@@ -1,27 +1,26 @@
 package baoxian
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-资料上传接口 API返回值 
+/* AlipayBaoxianClaimUploadattachmentAPIResponse
+资料上传接口 API返回值
 alipay.baoxian.claim.uploadattachment
 
-给合作伙伴上传申请理赔材料
-*/
+给合作伙伴上传申请理赔材料 */
 type AlipayBaoxianClaimUploadattachmentAPIResponse struct {
-    model.CommonResponse
-    AlipayBaoxianClaimUploadattachmentAPIResponseModel
+	model.CommonResponse
+	AlipayBaoxianClaimUploadattachmentAPIResponseModel
 }
 
-// 资料上传接口 成功返回结果
+// AlipayBaoxianClaimUploadattachmentAPIResponseModel is 资料上传接口 成功返回结果
 type AlipayBaoxianClaimUploadattachmentAPIResponseModel struct {
-    XMLName xml.Name `xml:"alipay_baoxian_claim_uploadattachment_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    UploadResult   *UploadResult `json:"upload_result,omitempty" xml:"upload_result,omitempty"`
+	XMLName xml.Name `xml:"alipay_baoxian_claim_uploadattachment_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	UploadResult *UploadResult `json:"upload_result,omitempty" xml:"upload_result,omitempty"`
 }

@@ -1,13 +1,13 @@
 package tmallservice
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-服务网点创建 API返回值 
+/* TmallServicecenterServicestoreCreateservicestoreAPIResponse
+服务网点创建 API返回值
 tmall.servicecenter.servicestore.createservicestore
 
 创建网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点不存在才能创建。地址信息：中文和编码二选一，都填则以编码address_code为准。
@@ -23,18 +23,17 @@ tmall.servicecenter.servicestore.createservicestore
 9, 缺少网点电话
 10, 网点已存在
 11, 网点不存在
-12, 系统错误
-*/
+12, 系统错误 */
 type TmallServicecenterServicestoreCreateservicestoreAPIResponse struct {
-    model.CommonResponse
-    TmallServicecenterServicestoreCreateservicestoreAPIResponseModel
+	model.CommonResponse
+	TmallServicecenterServicestoreCreateservicestoreAPIResponseModel
 }
 
-// 服务网点创建 成功返回结果
+// TmallServicecenterServicestoreCreateservicestoreAPIResponseModel is 服务网点创建 成功返回结果
 type TmallServicecenterServicestoreCreateservicestoreAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_servicestore_createservicestore_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_servicecenter_servicestore_createservicestore_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
 }

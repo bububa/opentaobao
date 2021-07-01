@@ -1,52 +1,20 @@
 package ascpchannel
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAscpUopSupplierReverseorderCreateAPIRequest
 商家ERP发起创建销退单服务 API请求
 alibaba.ascp.uop.supplier.reverseorder.create
 
-商家在收到消费者实物退货后，在ERP发起创建销退单服务
-*/
+商家在收到消费者实物退货后，在ERP发起创建销退单服务 */
 type AlibabaAscpUopSupplierReverseorderCreateAPIRequest struct {
-    model.Params
-    // 逆向销退单创建请求
-    _reverseCreateRequest   *ReverseCreateRequest
+	model.Params
+	// 逆向销退单创建请求
+	_reverseCreateRequest *ReverseCreateRequest
 }
 
-// 初始化AlibabaAscpUopSupplierReverseorderCreateAPIRequest对象
-func NewAlibabaAscpUopSupplierReverseorderCreateRequest() *AlibabaAscpUopSupplierReverseorderCreateAPIRequest{
-    return &AlibabaAscpUopSupplierReverseorderCreateAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetApiMethodName() string {
-    return "alibaba.ascp.uop.supplier.reverseorder.create"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ReverseCreateRequest Setter
-// 逆向销退单创建请求
-func (r *AlibabaAscpUopSupplierReverseorderCreateAPIRequest) SetReverseCreateRequest(_reverseCreateRequest *ReverseCreateRequest) error {
-    r._reverseCreateRequest = _reverseCreateRequest
-    r.Set("reverse_create_request", _reverseCreateRequest)
-    return nil
-}
-
-// ReverseCreateRequest Getter
-func (r AlibabaAscpUopSupplierReverseorderCreateAPIRequest) GetReverseCreateRequest() *ReverseCreateRequest {
-    return r._reverseCreateRequest
-}
+// New

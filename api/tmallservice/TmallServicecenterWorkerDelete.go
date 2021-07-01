@@ -1,12 +1,12 @@
 package tmallservice
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tmallservice"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* 
-删除工人 
+/* TmallServicecenterWorkerDelete
+删除工人
 tmall.servicecenter.worker.delete
 
 删除工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以删除。
@@ -24,13 +24,12 @@ tmall.servicecenter.worker.delete
 10010, 网点不存在
 11000, category_id 无效
 11001, biz_type 无效
-20001,已查询到最后一页
-*/
+20001,已查询到最后一页 */
 func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteAPIRequest, session string) (*tmallservice.TmallServicecenterWorkerDeleteAPIResponse, error) {
-    var resp tmallservice.TmallServicecenterWorkerDeleteAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tmallservice.TmallServicecenterWorkerDeleteAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

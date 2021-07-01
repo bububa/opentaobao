@@ -1,21 +1,20 @@
 package fenxiao
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/fenxiao"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-/* 
-产品sku编辑接口 
+/* TaobaoFenxiaoProductSkuUpdate
+产品sku编辑接口
 taobao.fenxiao.product.sku.update
 
-产品SKU信息更新
-*/
+产品SKU信息更新 */
 func TaobaoFenxiaoProductSkuUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuUpdateAPIRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuUpdateAPIResponse, error) {
-    var resp fenxiao.TaobaoFenxiaoProductSkuUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp fenxiao.TaobaoFenxiaoProductSkuUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

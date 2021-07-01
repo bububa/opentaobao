@@ -1,27 +1,26 @@
 package alitripmerchant
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-星河-酒店列表页搜索 API返回值 
+/* AlitripMerchantGalaxyHotelListSearchAPIResponse
+星河-酒店列表页搜索 API返回值
 alitrip.merchant.galaxy.hotel.list.search
 
-星河产品=酒店列表页搜索
-*/
+星河产品=酒店列表页搜索 */
 type AlitripMerchantGalaxyHotelListSearchAPIResponse struct {
-    model.CommonResponse
-    AlitripMerchantGalaxyHotelListSearchAPIResponseModel
+	model.CommonResponse
+	AlitripMerchantGalaxyHotelListSearchAPIResponseModel
 }
 
-// 星河-酒店列表页搜索 成功返回结果
+// AlitripMerchantGalaxyHotelListSearchAPIResponseModel is 星河-酒店列表页搜索 成功返回结果
 type AlitripMerchantGalaxyHotelListSearchAPIResponseModel struct {
-    XMLName xml.Name `xml:"alitrip_merchant_galaxy_hotel_list_search_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回结果
-    Result   *PageableResponse `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alitrip_merchant_galaxy_hotel_list_search_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回结果
+	Result *PageableResponse `json:"result,omitempty" xml:"result,omitempty"`
 }

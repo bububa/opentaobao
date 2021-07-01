@@ -1,7 +1,7 @@
 package wms
 
-// SubItemList 
+// SubItemList 结构体
 type SubItemList struct {
-    // 子货品
-    SubItem   *SubItem `json:"sub_item,omitempty" xml:"sub_item,omitempty"`
+	// 子货品
+	SubItem *SubItem `json:"sub_item,omitempty" xml:"sub_item,omitempty"`
 }

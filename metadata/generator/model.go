@@ -2,13 +2,13 @@ package main
 
 import "github.com/bububa/opentaobao/metadata"
 
-// SDK 包配置结构体，用于生成README中包列表
+// ApiPkg 包配置结构体，用于生成README中包列表
 type ApiPkg struct {
 	metadata.PkgConfig
-	Link string
+	Link string // API文档链接
 }
 
-// SDK 包配置结构体按类目ID排序
+// ApiPkgSlice 包配置结构体按类目ID排序
 type ApiPkgSlice []ApiPkg
 
 func (p ApiPkgSlice) Len() int           { return len(p) }

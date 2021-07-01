@@ -1,5 +1,5 @@
 package lstlogistics
 
-// LstLogisticsCompanyQuery 
+// LstLogisticsCompanyQuery 结构体
 type LstLogisticsCompanyQuery struct {
 }

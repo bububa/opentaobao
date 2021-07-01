@@ -1,27 +1,26 @@
 package icbu
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-产品质量分查询 API返回值 
+/* AlibabaIcbuProductScoreGetAPIResponse
+产品质量分查询 API返回值
 alibaba.icbu.product.score.get
 
-产品质量分查询
-*/
+产品质量分查询 */
 type AlibabaIcbuProductScoreGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaIcbuProductScoreGetAPIResponseModel
+	model.CommonResponse
+	AlibabaIcbuProductScoreGetAPIResponseModel
 }
 
-// 产品质量分查询 成功返回结果
+// AlibabaIcbuProductScoreGetAPIResponseModel is 产品质量分查询 成功返回结果
 type AlibabaIcbuProductScoreGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_icbu_product_score_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 系统自动生成
-    Result   *ProductScoreInfoResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_icbu_product_score_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 系统自动生成
+	Result *ProductScoreInfoResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -1,52 +1,20 @@
 package tmallcar
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TaobaoCarVehicleinfoRegisterAPIRequest
 全量车型导入 API请求
 taobao.car.vehicleinfo.register
 
-全量车型导入
-*/
+全量车型导入 */
 type TaobaoCarVehicleinfoRegisterAPIRequest struct {
-    model.Params
-    // 参数集合
-    _paramList   []FullInfoCarModelDto
+	model.Params
+	// 参数集合
+	_paramList []FullInfoCarModelDto
 }
 
-// 初始化TaobaoCarVehicleinfoRegisterAPIRequest对象
-func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterAPIRequest{
-    return &TaobaoCarVehicleinfoRegisterAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiMethodName() string {
-    return "taobao.car.vehicleinfo.register"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ParamList Setter
-// 参数集合
-func (r *TaobaoCarVehicleinfoRegisterAPIRequest) SetParamList(_paramList []FullInfoCarModelDto) error {
-    r._paramList = _paramList
-    r.Set("param_list", _paramList)
-    return nil
-}
-
-// ParamList Getter
-func (r TaobaoCarVehicleinfoRegisterAPIRequest) GetParamList() []FullInfoCarModelDto {
-    return r._paramList
-}
+// New

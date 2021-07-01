@@ -1,27 +1,26 @@
 package alsc
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-搜索卡实例列表(支持号段查询) API返回值 
+/* AlibabaAlscCrmCardSearchcardAPIResponse
+搜索卡实例列表(支持号段查询) API返回值
 alibaba.alsc.crm.card.searchcard
 
-搜索卡实例列表(支持号段查询)
-*/
+搜索卡实例列表(支持号段查询) */
 type AlibabaAlscCrmCardSearchcardAPIResponse struct {
-    model.CommonResponse
-    AlibabaAlscCrmCardSearchcardAPIResponseModel
+	model.CommonResponse
+	AlibabaAlscCrmCardSearchcardAPIResponseModel
 }
 
-// 搜索卡实例列表(支持号段查询) 成功返回结果
+// AlibabaAlscCrmCardSearchcardAPIResponseModel is 搜索卡实例列表(支持号段查询) 成功返回结果
 type AlibabaAlscCrmCardSearchcardAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_alsc_crm_card_searchcard_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 分页返回模型
-    Result   *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_alsc_crm_card_searchcard_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 分页返回模型
+	Result *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -1,27 +1,26 @@
 package ascpchannel
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-ascp采购价写入接口 API返回值 
+/* AlibabaAscpPurchasePriceCreateAPIResponse
+ascp采购价写入接口 API返回值
 alibaba.ascp.purchase.price.create
 
-供应链平台采购价创建或修改接口
-*/
+供应链平台采购价创建或修改接口 */
 type AlibabaAscpPurchasePriceCreateAPIResponse struct {
-    model.CommonResponse
-    AlibabaAscpPurchasePriceCreateAPIResponseModel
+	model.CommonResponse
+	AlibabaAscpPurchasePriceCreateAPIResponseModel
 }
 
-// ascp采购价写入接口 成功返回结果
+// AlibabaAscpPurchasePriceCreateAPIResponseModel is ascp采购价写入接口 成功返回结果
 type AlibabaAscpPurchasePriceCreateAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_ascp_purchase_price_create_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 接口返回model
-    Result   *ResultWrapper `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_ascp_purchase_price_create_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 接口返回model
+	Result *ResultWrapper `json:"result,omitempty" xml:"result,omitempty"`
 }

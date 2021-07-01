@@ -1,27 +1,26 @@
 package inventory
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-货品库存商家端调整 API返回值 
+/* TaobaoInventoryMerchantAdjustAPIResponse
+货品库存商家端调整 API返回值
 taobao.inventory.merchant.adjust
 
-货品库存商家端调整 ，入库，出库，盘点
-*/
+货品库存商家端调整 ，入库，出库，盘点 */
 type TaobaoInventoryMerchantAdjustAPIResponse struct {
-    model.CommonResponse
-    TaobaoInventoryMerchantAdjustAPIResponseModel
+	model.CommonResponse
+	TaobaoInventoryMerchantAdjustAPIResponseModel
 }
 
-// 货品库存商家端调整 成功返回结果
+// TaobaoInventoryMerchantAdjustAPIResponseModel is 货品库存商家端调整 成功返回结果
 type TaobaoInventoryMerchantAdjustAPIResponseModel struct {
-    XMLName xml.Name `xml:"inventory_merchant_adjust_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *SingleResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"inventory_merchant_adjust_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *SingleResult `json:"result,omitempty" xml:"result,omitempty"`
 }

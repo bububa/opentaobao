@@ -6,12 +6,11 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* {{ .Name }}APIRequest
 {{ .ChineseName }} API请求
 {{ .ApiName }}
 
-{{ .Desc }}
-*/
+{{ .Desc }} */
 type {{ .Name }}APIRequest struct {
     model.Params
 {{- range $v := .RequestParams }}
@@ -20,19 +19,19 @@ type {{ .Name }}APIRequest struct {
 {{- end }}
 }
 
-// 初始化{{ .Name }}APIRequest对象
+// New{{ .NameRequest }} 初始化{{ .Name }}APIRequest对象
 func New{{ .Name }}Request() *{{ .Name }}APIRequest{
     return &{{ .Name }}APIRequest{
         Params: model.NewParams(),
     }
 }
 
-// IRequest interface 方法, 获取Api method
+// GetApiMethodName IRequest interface 方法, 获取Api method
 func (r {{ .Name }}APIRequest) GetApiMethodName() string {
     return "{{ .ApiName }}"
 }
 
-// IRequest interface 方法, 获取API参数
+// GetApiParams IRequest interface 方法, 获取API参数
 func (r {{ .Name }}APIRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -42,7 +41,7 @@ func (r {{ .Name }}APIRequest) GetApiParams() url.Values {
 }
 
 {{- range $v := .RequestParams }}
-// {{ $v.Name }} Setter
+// Set is {{ $v.Name }} Setter
 // {{ $v.Desc }}
 func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }}) error {
     r._{{ $v.Label }} = _{{ $v.Label }}
@@ -50,7 +49,7 @@ func (r *{{ $.Name }}APIRequest) Set{{ $v.Name }}(_{{ $v.Label }} {{ $v.Type }})
     return nil
 }
 
-// {{ $v.Name }} Getter
+// Get {{ $v.Name }} Getter
 func (r {{ $.Name }}APIRequest) Get{{ $v.Name }}() {{ $v.Type }} {
     return r._{{ $v.Label }}
 }

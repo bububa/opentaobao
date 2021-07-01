@@ -1,21 +1,20 @@
 package baichuan
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/baichuan"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* 
-百川TOKEN 登录 
+/* TaobaoBaichuanOpenaccountLoginbytoken
+百川TOKEN 登录
 taobao.baichuan.openaccount.loginbytoken
 
-百川TOKEN 登录
-*/
+百川TOKEN 登录 */
 func TaobaoBaichuanOpenaccountLoginbytoken(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse, error) {
-    var resp baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

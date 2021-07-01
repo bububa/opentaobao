@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenInventoryQueryMap 
+// TaobaoQimenInventoryQueryMap 结构体
 type TaobaoQimenInventoryQueryMap struct {
 }

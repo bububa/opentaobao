@@ -1,52 +1,20 @@
 package tvupadmin
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* YunosTvpubadminContentChildRootnodeGetAPIRequest
 获取少儿大厅根类目接口 API请求
 yunos.tvpubadmin.content.child.rootnode.get
 
-通过此接口可获取少儿大厅根类目列表
-*/
+通过此接口可获取少儿大厅根类目列表 */
 type YunosTvpubadminContentChildRootnodeGetAPIRequest struct {
-    model.Params
-    // 是否需要首页目录
-    _needHomePage   bool
+	model.Params
+	// 是否需要首页目录
+	_needHomePage bool
 }
 
-// 初始化YunosTvpubadminContentChildRootnodeGetAPIRequest对象
-func NewYunosTvpubadminContentChildRootnodeGetRequest() *YunosTvpubadminContentChildRootnodeGetAPIRequest{
-    return &YunosTvpubadminContentChildRootnodeGetAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r YunosTvpubadminContentChildRootnodeGetAPIRequest) GetApiMethodName() string {
-    return "yunos.tvpubadmin.content.child.rootnode.get"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r YunosTvpubadminContentChildRootnodeGetAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// NeedHomePage Setter
-// 是否需要首页目录
-func (r *YunosTvpubadminContentChildRootnodeGetAPIRequest) SetNeedHomePage(_needHomePage bool) error {
-    r._needHomePage = _needHomePage
-    r.Set("need_home_page", _needHomePage)
-    return nil
-}
-
-// NeedHomePage Getter
-func (r YunosTvpubadminContentChildRootnodeGetAPIRequest) GetNeedHomePage() bool {
-    return r._needHomePage
-}
+// New

@@ -1,27 +1,26 @@
 package security
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-实人认证云开始认证 API返回值 
+/* AlibabaSecurityJaqRpCloudStartAPIResponse
+实人认证云开始认证 API返回值
 alibaba.security.jaq.rp.cloud.start
 
-聚安全实人认证开始
-*/
+聚安全实人认证开始 */
 type AlibabaSecurityJaqRpCloudStartAPIResponse struct {
-    model.CommonResponse
-    AlibabaSecurityJaqRpCloudStartAPIResponseModel
+	model.CommonResponse
+	AlibabaSecurityJaqRpCloudStartAPIResponseModel
 }
 
-// 实人认证云开始认证 成功返回结果
+// AlibabaSecurityJaqRpCloudStartAPIResponseModel is 实人认证云开始认证 成功返回结果
 type AlibabaSecurityJaqRpCloudStartAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_start_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Data   *RpStartResult `json:"data,omitempty" xml:"data,omitempty"`
+	XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_start_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Data *RpStartResult `json:"data,omitempty" xml:"data,omitempty"`
 }

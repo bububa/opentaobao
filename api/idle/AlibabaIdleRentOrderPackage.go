@@ -1,21 +1,20 @@
 package idle
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/idle"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/idle"
 )
 
-/* 
-确认揽收商品 
+/* AlibabaIdleRentOrderPackage
+确认揽收商品
 alibaba.idle.rent.order.package
 
-确认揽收
-*/
+确认揽收 */
 func AlibabaIdleRentOrderPackage(clt *core.SDKClient, req *idle.AlibabaIdleRentOrderPackageAPIRequest, session string) (*idle.AlibabaIdleRentOrderPackageAPIResponse, error) {
-    var resp idle.AlibabaIdleRentOrderPackageAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp idle.AlibabaIdleRentOrderPackageAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

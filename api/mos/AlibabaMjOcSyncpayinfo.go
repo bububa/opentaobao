@@ -1,21 +1,20 @@
 package mos
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/mos"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* 
-支付参考号回传 
+/* AlibabaMjOcSyncpayinfo
+支付参考号回传
 alibaba.mj.oc.syncpayinfo
 
-支付参考号同步到oc
-*/
+支付参考号同步到oc */
 func AlibabaMjOcSyncpayinfo(clt *core.SDKClient, req *mos.AlibabaMjOcSyncpayinfoAPIRequest, session string) (*mos.AlibabaMjOcSyncpayinfoAPIResponse, error) {
-    var resp mos.AlibabaMjOcSyncpayinfoAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp mos.AlibabaMjOcSyncpayinfoAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

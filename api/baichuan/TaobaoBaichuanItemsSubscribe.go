@@ -1,21 +1,20 @@
 package baichuan
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/baichuan"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/baichuan"
 )
 
-/* 
-百川批量商品订阅 
+/* TaobaoBaichuanItemsSubscribe
+百川批量商品订阅
 taobao.baichuan.items.subscribe
 
-百川批量添加订阅的商品
-*/
+百川批量添加订阅的商品 */
 func TaobaoBaichuanItemsSubscribe(clt *core.SDKClient, req *baichuan.TaobaoBaichuanItemsSubscribeAPIRequest, session string) (*baichuan.TaobaoBaichuanItemsSubscribeAPIResponse, error) {
-    var resp baichuan.TaobaoBaichuanItemsSubscribeAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp baichuan.TaobaoBaichuanItemsSubscribeAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

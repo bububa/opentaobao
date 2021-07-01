@@ -1,12 +1,12 @@
 package jst
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaModifyaddressIsvBindsellerCheckAPIRequest
 查询服务商下的商家是否开通了改地址 API请求
 alibaba.modifyaddress.isv.bindseller.check
 
@@ -14,29 +14,9 @@ alibaba.modifyaddress.isv.bindseller.check
 1. 没有授权
 2. 已与当前appkey签约
 3. 没有签约
-4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。
-*/
+4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。 */
 type AlibabaModifyaddressIsvBindsellerCheckAPIRequest struct {
-    model.Params
+	model.Params
 }
 
-// 初始化AlibabaModifyaddressIsvBindsellerCheckAPIRequest对象
-func NewAlibabaModifyaddressIsvBindsellerCheckRequest() *AlibabaModifyaddressIsvBindsellerCheckAPIRequest{
-    return &AlibabaModifyaddressIsvBindsellerCheckAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiMethodName() string {
-    return "alibaba.modifyaddress.isv.bindseller.check"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaModifyaddressIsvBindsellerCheckAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
+// New

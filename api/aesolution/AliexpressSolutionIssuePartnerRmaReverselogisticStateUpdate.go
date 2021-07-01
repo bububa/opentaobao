@@ -1,21 +1,20 @@
 package aesolution
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/aesolution"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/aesolution"
 )
 
-/* 
-aliexpress.solution.issue.partner.rma.reverselogistic.state.update 
+/* AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdate
+aliexpress.solution.issue.partner.rma.reverselogistic.state.update
 aliexpress.solution.issue.partner.rma.reverselogistic.state.update
 
-Updates the reverse logistics state for after sales services
-*/
+Updates the reverse logistics state for after sales services */
 func AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdate(clt *core.SDKClient, req *aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIRequest, session string) (*aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse, error) {
-    var resp aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp aesolution.AliexpressSolutionIssuePartnerRmaReverselogisticStateUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

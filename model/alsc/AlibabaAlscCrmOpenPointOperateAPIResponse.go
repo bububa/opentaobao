@@ -1,27 +1,26 @@
 package alsc
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-积分操作接口 API返回值 
+/* AlibabaAlscCrmOpenPointOperateAPIResponse
+积分操作接口 API返回值
 alibaba.alsc.crm.open.point.operate
 
-同步积分接口
-*/
+同步积分接口 */
 type AlibabaAlscCrmOpenPointOperateAPIResponse struct {
-    model.CommonResponse
-    AlibabaAlscCrmOpenPointOperateAPIResponseModel
+	model.CommonResponse
+	AlibabaAlscCrmOpenPointOperateAPIResponseModel
 }
 
-// 积分操作接口 成功返回结果
+// AlibabaAlscCrmOpenPointOperateAPIResponseModel is 积分操作接口 成功返回结果
 type AlibabaAlscCrmOpenPointOperateAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_alsc_crm_open_point_operate_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_alsc_crm_open_point_operate_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 接口结果
+	Result *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
 }

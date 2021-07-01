@@ -1,9 +1,9 @@
 package legalcase
 
-// Children 
+// Children 结构体
 type Children struct {
-    // 文本值
-    Text   string `json:"text,omitempty" xml:"text,omitempty"`
-    // code值
-    Value   string `json:"value,omitempty" xml:"value,omitempty"`
+	// 文本值
+	Text string `json:"text,omitempty" xml:"text,omitempty"`
+	// code值
+	Value string `json:"value,omitempty" xml:"value,omitempty"`
 }

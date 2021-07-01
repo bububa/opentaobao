@@ -1,27 +1,26 @@
 package promotion
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-删除标签定义 API返回值 
+/* TmallPromotagTagRemovetagAPIResponse
+删除标签定义 API返回值
 tmall.promotag.tag.removetag
 
-用于删除标签定义，但是要确保目前该标签没有人群在使用。
-*/
+用于删除标签定义，但是要确保目前该标签没有人群在使用。 */
 type TmallPromotagTagRemovetagAPIResponse struct {
-    model.CommonResponse
-    TmallPromotagTagRemovetagAPIResponseModel
+	model.CommonResponse
+	TmallPromotagTagRemovetagAPIResponseModel
 }
 
-// 删除标签定义 成功返回结果
+// TmallPromotagTagRemovetagAPIResponseModel is 删除标签定义 成功返回结果
 type TmallPromotagTagRemovetagAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_promotag_tag_removetag_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 删除操作是否成功
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	XMLName xml.Name `xml:"tmall_promotag_tag_removetag_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 删除操作是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

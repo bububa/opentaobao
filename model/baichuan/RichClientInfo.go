@@ -1,5 +1,5 @@
 package baichuan
 
-// RichClientInfo 
+// RichClientInfo 结构体
 type RichClientInfo struct {
 }

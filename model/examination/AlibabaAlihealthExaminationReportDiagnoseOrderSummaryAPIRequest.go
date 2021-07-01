@@ -1,52 +1,20 @@
 package examination
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest
 体检报告人工解读总结回传 API请求
 alibaba.alihealth.examination.report.diagnose.order.summary
 
-记录体检报告人工解读总结
-*/
+记录体检报告人工解读总结 */
 type AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest struct {
-    model.Params
-    // 入参对象
-    _reportOrderSummaryRequest   *ReportOrderSummaryRequest
+	model.Params
+	// 入参对象
+	_reportOrderSummaryRequest *ReportOrderSummaryRequest
 }
 
-// 初始化AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest对象
-func NewAlibabaAlihealthExaminationReportDiagnoseOrderSummaryRequest() *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest{
-    return &AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiMethodName() string {
-    return "alibaba.alihealth.examination.report.diagnose.order.summary"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ReportOrderSummaryRequest Setter
-// 入参对象
-func (r *AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) SetReportOrderSummaryRequest(_reportOrderSummaryRequest *ReportOrderSummaryRequest) error {
-    r._reportOrderSummaryRequest = _reportOrderSummaryRequest
-    r.Set("report_order_summary_request", _reportOrderSummaryRequest)
-    return nil
-}
-
-// ReportOrderSummaryRequest Getter
-func (r AlibabaAlihealthExaminationReportDiagnoseOrderSummaryAPIRequest) GetReportOrderSummaryRequest() *ReportOrderSummaryRequest {
-    return r._reportOrderSummaryRequest
-}
+// New

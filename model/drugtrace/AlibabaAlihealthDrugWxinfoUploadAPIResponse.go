@@ -1,31 +1,30 @@
 package drugtrace
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-小程序数据回传 API返回值 
+/* AlibabaAlihealthDrugWxinfoUploadAPIResponse
+小程序数据回传 API返回值
 alibaba.alihealth.drug.wxinfo.upload
 
-小程序数据回传
-*/
+小程序数据回传 */
 type AlibabaAlihealthDrugWxinfoUploadAPIResponse struct {
-    model.CommonResponse
-    AlibabaAlihealthDrugWxinfoUploadAPIResponseModel
+	model.CommonResponse
+	AlibabaAlihealthDrugWxinfoUploadAPIResponseModel
 }
 
-// 小程序数据回传 成功返回结果
+// AlibabaAlihealthDrugWxinfoUploadAPIResponseModel is 小程序数据回传 成功返回结果
 type AlibabaAlihealthDrugWxinfoUploadAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_alihealth_drug_wxinfo_upload_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // model
-    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+	XMLName xml.Name `xml:"alibaba_alihealth_drug_wxinfo_upload_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// model
+	Model bool `json:"model,omitempty" xml:"model,omitempty"`
+	// msgInfo
+	MsgInfo string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+	// msgCode
+	MsgCode string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 }

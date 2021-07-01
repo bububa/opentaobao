@@ -1,13 +1,13 @@
 package product
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-更新商品发货时间 API返回值 
+/* TmallItemShiptimeUpdateAPIResponse
+更新商品发货时间 API返回值
 tmall.item.shiptime.update
 
 增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)
@@ -40,18 +40,17 @@ tmall.item.shiptime.update
         "shipTimeType": 0, -- 删除发货时间
         "updateType": 1 --更新商品
     },
-    删除商品级的发货时间
-*/
+    删除商品级的发货时间 */
 type TmallItemShiptimeUpdateAPIResponse struct {
-    model.CommonResponse
-    TmallItemShiptimeUpdateAPIResponseModel
+	model.CommonResponse
+	TmallItemShiptimeUpdateAPIResponseModel
 }
 
-// 更新商品发货时间 成功返回结果
+// TmallItemShiptimeUpdateAPIResponseModel is 更新商品发货时间 成功返回结果
 type TmallItemShiptimeUpdateAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_item_shiptime_update_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 被修改的商品ID
-    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_item_shiptime_update_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 被修改的商品ID
+	Result string `json:"result,omitempty" xml:"result,omitempty"`
 }

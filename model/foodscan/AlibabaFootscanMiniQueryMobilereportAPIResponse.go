@@ -1,27 +1,26 @@
 package foodscan
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-根据scanId查询报告 API返回值 
+/* AlibabaFootscanMiniQueryMobilereportAPIResponse
+根据scanId查询报告 API返回值
 alibaba.footscan.mini.query.mobilereport
 
-根据scanId查询报告
-*/
+根据scanId查询报告 */
 type AlibabaFootscanMiniQueryMobilereportAPIResponse struct {
-    model.CommonResponse
-    AlibabaFootscanMiniQueryMobilereportAPIResponseModel
+	model.CommonResponse
+	AlibabaFootscanMiniQueryMobilereportAPIResponseModel
 }
 
-// 根据scanId查询报告 成功返回结果
+// AlibabaFootscanMiniQueryMobilereportAPIResponseModel is 根据scanId查询报告 成功返回结果
 type AlibabaFootscanMiniQueryMobilereportAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_footscan_mini_query_mobilereport_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 服务出参
-    Result   *AlibabaFootscanMiniQueryMobilereportMtopResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_footscan_mini_query_mobilereport_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 服务出参
+	Result *AlibabaFootscanMiniQueryMobilereportMtopResult `json:"result,omitempty" xml:"result,omitempty"`
 }

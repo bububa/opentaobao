@@ -1,27 +1,26 @@
 package util
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-注册加密账号 API返回值 
+/* TaobaoTopSecretRegisterAPIResponse
+注册加密账号 API返回值
 taobao.top.secret.register
 
-提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
-*/
+提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密 */
 type TaobaoTopSecretRegisterAPIResponse struct {
-    model.CommonResponse
-    TaobaoTopSecretRegisterAPIResponseModel
+	model.CommonResponse
+	TaobaoTopSecretRegisterAPIResponseModel
 }
 
-// 注册加密账号 成功返回结果
+// TaobaoTopSecretRegisterAPIResponseModel is 注册加密账号 成功返回结果
 type TaobaoTopSecretRegisterAPIResponseModel struct {
-    XMLName xml.Name `xml:"top_secret_register_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回操作是否成功
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"top_secret_register_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回操作是否成功
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

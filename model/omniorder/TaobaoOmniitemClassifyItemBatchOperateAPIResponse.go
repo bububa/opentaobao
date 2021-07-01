@@ -1,27 +1,26 @@
 package omniorder
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-批量添加/删除商品和分类的关联关系 API返回值 
+/* TaobaoOmniitemClassifyItemBatchOperateAPIResponse
+批量添加/删除商品和分类的关联关系 API返回值
 taobao.omniitem.classify.item.batch.operate
 
-批量添加/删除商品和分类的关联关系
-*/
+批量添加/删除商品和分类的关联关系 */
 type TaobaoOmniitemClassifyItemBatchOperateAPIResponse struct {
-    model.CommonResponse
-    TaobaoOmniitemClassifyItemBatchOperateAPIResponseModel
+	model.CommonResponse
+	TaobaoOmniitemClassifyItemBatchOperateAPIResponseModel
 }
 
-// 批量添加/删除商品和分类的关联关系 成功返回结果
+// TaobaoOmniitemClassifyItemBatchOperateAPIResponseModel is 批量添加/删除商品和分类的关联关系 成功返回结果
 type TaobaoOmniitemClassifyItemBatchOperateAPIResponseModel struct {
-    XMLName xml.Name `xml:"omniitem_classify_item_batch_operate_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *TaobaoOmniitemClassifyItemBatchOperateResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"omniitem_classify_item_batch_operate_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *TaobaoOmniitemClassifyItemBatchOperateResult `json:"result,omitempty" xml:"result,omitempty"`
 }

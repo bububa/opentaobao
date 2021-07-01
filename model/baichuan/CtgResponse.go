@@ -1,11 +1,11 @@
 package baichuan
 
-// CtgResponse 
+// CtgResponse 结构体
 type CtgResponse struct {
-    // errorMessage
-    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
-    // success
-    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
+	// errorMessage
+	ErrorMessage string `json:"error_message,omitempty" xml:"error_message,omitempty"`
+	// errorCode
+	ErrorCode string `json:"error_code,omitempty" xml:"error_code,omitempty"`
+	// success
+	Success bool `json:"success,omitempty" xml:"success,omitempty"`
 }

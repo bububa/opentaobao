@@ -1,7 +1,7 @@
 package scbp
 
-// CampaignBatchOperationDto 
+// CampaignBatchOperationDto 结构体
 type CampaignBatchOperationDto struct {
-    // 具体操作实例
-    CampaignOperationList   []Campaignoperationlist `json:"campaign_operation_list,omitempty" xml:"campaign_operation_list>campaignoperationlist,omitempty"`
+	// 具体操作实例
+	CampaignOperationList []Campaignoperationlist `json:"campaign_operation_list,omitempty" xml:"campaign_operation_list>campaignoperationlist,omitempty"`
 }

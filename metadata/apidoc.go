@@ -9,7 +9,7 @@ import (
 	"github.com/bububa/opentaobao/metadata/util"
 )
 
-// 淘宝API文档 字段类型
+// ApiParamType 淘宝API文档字段类型
 type ApiParamType = string
 
 const (
@@ -26,45 +26,46 @@ const (
 	UNKNOWN_PARAM_TYPE    ApiParamType = ""
 )
 
-// 下载淘宝API文档返回结果
+// ApiDocResponse 下载淘宝API文档返回结果
 type ApiDocResponse struct {
-	Success bool   `json:"success,omitempty"`
-	Code    string `json:"code,omitempty"`
-	ErrMsg  string `json:"errMsg,omitempty"`
-	Data    ApiDoc `json:"data,omitempty"`
+	Success bool   `json:"success,omitempty"` // 是否成功
+	Code    string `json:"code,omitempty"`    // 错误代码
+	ErrMsg  string `json:"errMsg,omitempty"`  // 错误信息
+	Data    ApiDoc `json:"data,omitempty"`    // 成功数据
 }
 
+// IsError 判断是否为error
 func (res ApiDocResponse) IsError() bool {
 	return !res.Success
 }
 
-// implement Error interface
+// Error implement Error interface
 func (res ApiDocResponse) Error() string {
 	return res.ErrMsg
 }
 
-// 淘宝API文档结构体
+// ApiDoc 淘宝API文档结构体
 type ApiDoc struct {
-	Id             int64      `json:"id,omitempty"`
-	Name           string     `json:"name,omitempty"`
-	ChineseName    string     `json:"apiChineseName,omitempty"`
-	Description    string     `json:"description,omitempty"`
-	RequestParams  []ApiParam `json:"requestParams,omitempty"`
-	ResponseParams []ApiParam `json:"responseParams,omitempty"`
+	Id             int64      `json:"id,omitempty"`             // API ID
+	Name           string     `json:"name,omitempty"`           // API 方法名
+	ChineseName    string     `json:"apiChineseName,omitempty"` // API 中文名
+	Description    string     `json:"description,omitempty"`    // API 描述
+	RequestParams  []ApiParam `json:"requestParams,omitempty"`  // 请求参数
+	ResponseParams []ApiParam `json:"responseParams,omitempty"` // 返回参数
 }
 
-// 淘宝API文档保存文件名
+// Filename 获取淘宝API文档保存文件名
 func (d ApiDoc) Filename() string {
 	return strings.TrimSpace(strings.ReplaceAll(d.Name, ".", "_"))
 }
 
-// 淘宝API文档对应golang API名
+// Title 获取淘宝API文档对应golang API名
 func (d ApiDoc) Title() string {
 	name := strings.Title(strings.ReplaceAll(d.Name, "-", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 
-// 淘宝API文档转golang API 模版结构体
+// ApiTpl 淘宝API文档转golang API 模版结构体
 func (d ApiDoc) ApiTpl() ApiTpl {
 	snakeName := strings.ReplaceAll(d.Name, ".", "_")
 	tpl := ApiTpl{
@@ -104,20 +105,21 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 	return tpl
 }
 
-// 淘宝API文档字段结构体
+// ApiParam is 淘宝API文档字段结构体
 type ApiParam struct {
-	Name        string       `json:"name,omitempty"`
-	Type        ApiParamType `json:"type,omitempty"`
-	Description string       `json:"description,omitempty"`
-	Required    bool         `json:"required,omitempty"`
-	MaxLength   json.Number  `json:"maxLength,omitempty"`
-	MaxListSize json.Number  `json:"maxListSize,omitempty"`
-	MaxValue    json.Number  `json:"maxValue,omitempty"`
-	MinValue    json.Number  `json:"minValue,omitempty"`
-	SubParams   []ApiParam   `json:"subParams,omitempty"`
-	UsePointer  bool         `json:"use_pointer,omitempty"`
+	Name        string       `json:"name,omitempty"`        // 参数名
+	Type        ApiParamType `json:"type,omitempty"`        // 参数类型
+	Description string       `json:"description,omitempty"` // 描述
+	Required    bool         `json:"required,omitempty"`    // 是否必须
+	MaxLength   json.Number  `json:"maxLength,omitempty"`   // 最大长度
+	MaxListSize json.Number  `json:"maxListSize,omitempty"` // 列表最大数量
+	MaxValue    json.Number  `json:"maxValue,omitempty"`    // 最大值
+	MinValue    json.Number  `json:"minValue,omitempty"`    // 最小值
+	SubParams   []ApiParam   `json:"subParams,omitempty"`   // 对象包含参数
+	UsePointer  bool         `json:"use_pointer,omitempty"` // 生成SDK是否使用指针
 }
 
+// TplParam 转化为API模版参数结构体
 func (p ApiParam) TplParam(apiName string) TplParam {
 	name := strings.ReplaceAll(strings.Title(strings.ReplaceAll(p.Name, "_", ".")), ".", "")
 	param := TplParam{
@@ -195,7 +197,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	return param
 }
 
-// 处理冲突结构体名(conflict_models.json内设置)
+// convertConflictModelName 理冲突结构体名(conflict_models.json内设置)
 func convertConflictModelName(apiName string, name string) string {
 	for _, n := range ConflictModels {
 		if name == n {
@@ -205,7 +207,7 @@ func convertConflictModelName(apiName string, name string) string {
 	return name
 }
 
-// 处理描述字段以匹配golang结构体注释
+// clearDesc 处理描述字段以匹配golang结构体注释
 func clearDesc(desc string, inline bool) string {
 	desc = strings.ReplaceAll(desc, "/*", "")
 	desc = strings.ReplaceAll(desc, "*/", "")

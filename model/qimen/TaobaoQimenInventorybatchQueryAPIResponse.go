@@ -1,27 +1,26 @@
 package qimen
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-商品单仓批次库存查询接口 API返回值 
+/* TaobaoQimenInventorybatchQueryAPIResponse
+商品单仓批次库存查询接口 API返回值
 taobao.qimen.inventorybatch.query
 
-ERP 通过该接口查询指定商品的单仓批次库存
-*/
+ERP 通过该接口查询指定商品的单仓批次库存 */
 type TaobaoQimenInventorybatchQueryAPIResponse struct {
-    model.CommonResponse
-    TaobaoQimenInventorybatchQueryAPIResponseModel
+	model.CommonResponse
+	TaobaoQimenInventorybatchQueryAPIResponseModel
 }
 
-// 商品单仓批次库存查询接口 成功返回结果
+// TaobaoQimenInventorybatchQueryAPIResponseModel is 商品单仓批次库存查询接口 成功返回结果
 type TaobaoQimenInventorybatchQueryAPIResponseModel struct {
-    XMLName xml.Name `xml:"qimen_inventorybatch_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 响应
-    Response   *TaobaoQimenInventorybatchQueryResponse `json:"response,omitempty" xml:"response,omitempty"`
+	XMLName xml.Name `xml:"qimen_inventorybatch_query_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 响应
+	Response *TaobaoQimenInventorybatchQueryResponse `json:"response,omitempty" xml:"response,omitempty"`
 }

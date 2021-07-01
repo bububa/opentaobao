@@ -1,27 +1,26 @@
 package moscm
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-批量查询交易退货信息 API返回值 
+/* AlibabaMosOrderRefundListGetAPIResponse
+批量查询交易退货信息 API返回值
 alibaba.mos.order.refund.list.get
 
-批量查询多个退货单的退货明细
-*/
+批量查询多个退货单的退货明细 */
 type AlibabaMosOrderRefundListGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaMosOrderRefundListGetAPIResponseModel
+	model.CommonResponse
+	AlibabaMosOrderRefundListGetAPIResponseModel
 }
 
-// 批量查询交易退货信息 成功返回结果
+// AlibabaMosOrderRefundListGetAPIResponseModel is 批量查询交易退货信息 成功返回结果
 type AlibabaMosOrderRefundListGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_mos_order_refund_list_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 结果
-    Result   *AlibabaMosOrderRefundListGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_mos_order_refund_list_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 结果
+	Result *AlibabaMosOrderRefundListGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
 }

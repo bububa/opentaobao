@@ -1,7 +1,7 @@
 package promotion
 
-// UserInfoDo 
+// UserInfoDo 结构体
 type UserInfoDo struct {
-    // userNick
-    UserNick   string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
+	// userNick
+	UserNick string `json:"user_nick,omitempty" xml:"user_nick,omitempty"`
 }

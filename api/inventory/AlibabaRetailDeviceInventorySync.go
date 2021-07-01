@@ -1,21 +1,20 @@
 package inventory
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/inventory"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/inventory"
 )
 
-/* 
-库存同步接口 
+/* AlibabaRetailDeviceInventorySync
+库存同步接口
 alibaba.retail.device.inventory.sync
 
-商库存同步接口
-*/
+商库存同步接口 */
 func AlibabaRetailDeviceInventorySync(clt *core.SDKClient, req *inventory.AlibabaRetailDeviceInventorySyncAPIRequest, session string) (*inventory.AlibabaRetailDeviceInventorySyncAPIResponse, error) {
-    var resp inventory.AlibabaRetailDeviceInventorySyncAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp inventory.AlibabaRetailDeviceInventorySyncAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,52 +1,20 @@
 package alicom
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest
 存送业务查询奖品信息 API请求
 alibaba.alicom.wtt.opentrade.getgiftdetails
 
-话费宝充值送查询奖品信息
-*/
+话费宝充值送查询奖品信息 */
 type AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest struct {
-    model.Params
-    // 活动ID
-    _activityId   string
+	model.Params
+	// 活动ID
+	_activityId string
 }
 
-// 初始化AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest对象
-func NewAlibabaAlicomWttOpentradeGetgiftdetailsRequest() *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest{
-    return &AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetApiMethodName() string {
-    return "alibaba.alicom.wtt.opentrade.getgiftdetails"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ActivityId Setter
-// 活动ID
-func (r *AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) SetActivityId(_activityId string) error {
-    r._activityId = _activityId
-    r.Set("activity_id", _activityId)
-    return nil
-}
-
-// ActivityId Getter
-func (r AlibabaAlicomWttOpentradeGetgiftdetailsAPIRequest) GetActivityId() string {
-    return r._activityId
-}
+// New

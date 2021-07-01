@@ -1,12 +1,12 @@
 package tmallservice
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tmallservice"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* 
-修改网点信息 
+/* TmallServicecenterServicestoreUpdateservicestore
+修改网点信息
 tmall.servicecenter.servicestore.updateservicestore
 
 修改网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点存在才能修改。
@@ -22,13 +22,12 @@ tmall.servicecenter.servicestore.updateservicestore
 9, 缺少网点电话
 10, 网点已存在
 11, 网点不存在
-12, 系统错误
-*/
+12, 系统错误 */
 func TmallServicecenterServicestoreUpdateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse, error) {
-    var resp tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

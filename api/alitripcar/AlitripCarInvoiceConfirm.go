@@ -1,21 +1,20 @@
 package alitripcar
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/alitripcar"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/alitripcar"
 )
 
-/* 
-发票确认接口 
+/* AlitripCarInvoiceConfirm
+发票确认接口
 alitrip.car.invoice.confirm
 
-飞猪发票回调接口
-*/
+飞猪发票回调接口 */
 func AlitripCarInvoiceConfirm(clt *core.SDKClient, req *alitripcar.AlitripCarInvoiceConfirmAPIRequest, session string) (*alitripcar.AlitripCarInvoiceConfirmAPIResponse, error) {
-    var resp alitripcar.AlitripCarInvoiceConfirmAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp alitripcar.AlitripCarInvoiceConfirmAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,31 +1,30 @@
 package guoguo
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-小件员信息变更 API返回值 
+/* CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse
+小件员信息变更 API返回值
 cainiao.guoguo.cp.nborderfrontr.updateuser
 
-小件员信息变更
-*/
+小件员信息变更 */
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse struct {
-    model.CommonResponse
-    CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel
+	model.CommonResponse
+	CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel
 }
 
-// 小件员信息变更 成功返回结果
+// CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel is 小件员信息变更 成功返回结果
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponseModel struct {
-    XMLName xml.Name `xml:"cainiao_guoguo_cp_nborderfrontr_updateuser_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 错误信息
-    StatusMessage   string `json:"status_message,omitempty" xml:"status_message,omitempty"`
-    // errorCode
-    StatusCode   string `json:"status_code,omitempty" xml:"status_code,omitempty"`
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	XMLName xml.Name `xml:"cainiao_guoguo_cp_nborderfrontr_updateuser_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 错误信息
+	StatusMessage string `json:"status_message,omitempty" xml:"status_message,omitempty"`
+	// errorCode
+	StatusCode string `json:"status_code,omitempty" xml:"status_code,omitempty"`
+	// 是否成功
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

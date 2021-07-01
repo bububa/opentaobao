@@ -1,5 +1,5 @@
 package lstwarehouse
 
-// LstBmSupplierQuery 
+// LstBmSupplierQuery 结构体
 type LstBmSupplierQuery struct {
 }

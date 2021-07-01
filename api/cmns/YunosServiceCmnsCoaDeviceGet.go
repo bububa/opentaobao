@@ -1,21 +1,20 @@
 package cmns
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/cmns"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/cmns"
 )
 
-/* 
-设备详情查询 
+/* YunosServiceCmnsCoaDeviceGet
+设备详情查询
 yunos.service.cmns.coa.device.get
 
-第三方应用开发者调用此接口查询设备详情
-*/
+第三方应用开发者调用此接口查询设备详情 */
 func YunosServiceCmnsCoaDeviceGet(clt *core.SDKClient, req *cmns.YunosServiceCmnsCoaDeviceGetAPIRequest, session string) (*cmns.YunosServiceCmnsCoaDeviceGetAPIResponse, error) {
-    var resp cmns.YunosServiceCmnsCoaDeviceGetAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp cmns.YunosServiceCmnsCoaDeviceGetAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

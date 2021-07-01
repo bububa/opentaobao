@@ -1,27 +1,26 @@
 package logistic
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-修改门店信息接口 API返回值 
+/* AlibabaEleFengniaoChainstoreUpdateAPIResponse
+修改门店信息接口 API返回值
 alibaba.ele.fengniao.chainstore.update
 
-修改门店的经纬度，文本地址，电话，门店名
-*/
+修改门店的经纬度，文本地址，电话，门店名 */
 type AlibabaEleFengniaoChainstoreUpdateAPIResponse struct {
-    model.CommonResponse
-    AlibabaEleFengniaoChainstoreUpdateAPIResponseModel
+	model.CommonResponse
+	AlibabaEleFengniaoChainstoreUpdateAPIResponseModel
 }
 
-// 修改门店信息接口 成功返回结果
+// AlibabaEleFengniaoChainstoreUpdateAPIResponseModel is 修改门店信息接口 成功返回结果
 type AlibabaEleFengniaoChainstoreUpdateAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_update_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 出参
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+	XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_update_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 出参
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 }

@@ -1,27 +1,26 @@
 package simba
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-增加创意 API返回值 
+/* TaobaoSimbaCreativeAddAPIResponse
+增加创意 API返回值
 taobao.simba.creative.add
 
-创建一个创意
-*/
+创建一个创意 */
 type TaobaoSimbaCreativeAddAPIResponse struct {
-    model.CommonResponse
-    TaobaoSimbaCreativeAddAPIResponseModel
+	model.CommonResponse
+	TaobaoSimbaCreativeAddAPIResponseModel
 }
 
-// 增加创意 成功返回结果
+// TaobaoSimbaCreativeAddAPIResponseModel is 增加创意 成功返回结果
 type TaobaoSimbaCreativeAddAPIResponseModel struct {
-    XMLName xml.Name `xml:"simba_creative_add_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 新增加的创意对象
-    Creative   *Creative `json:"creative,omitempty" xml:"creative,omitempty"`
+	XMLName xml.Name `xml:"simba_creative_add_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 新增加的创意对象
+	Creative *Creative `json:"creative,omitempty" xml:"creative,omitempty"`
 }

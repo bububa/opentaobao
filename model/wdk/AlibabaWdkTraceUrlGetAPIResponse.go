@@ -1,33 +1,32 @@
 package wdk
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-溯源url透出 API返回值 
+/* AlibabaWdkTraceUrlGetAPIResponse
+溯源url透出 API返回值
 alibaba.wdk.trace.url.get
 
-根据shopId和skuCode返回商品溯源url
-*/
+根据shopId和skuCode返回商品溯源url */
 type AlibabaWdkTraceUrlGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaWdkTraceUrlGetAPIResponseModel
+	model.CommonResponse
+	AlibabaWdkTraceUrlGetAPIResponseModel
 }
 
-// 溯源url透出 成功返回结果
+// AlibabaWdkTraceUrlGetAPIResponseModel is 溯源url透出 成功返回结果
 type AlibabaWdkTraceUrlGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_wdk_trace_url_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // message
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-    // data
-    Data   string `json:"data,omitempty" xml:"data,omitempty"`
-    // code
-    ReturnCode   string `json:"return_code,omitempty" xml:"return_code,omitempty"`
-    // success
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	XMLName xml.Name `xml:"alibaba_wdk_trace_url_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// message
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// data
+	Data string `json:"data,omitempty" xml:"data,omitempty"`
+	// code
+	ReturnCode string `json:"return_code,omitempty" xml:"return_code,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

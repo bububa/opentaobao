@@ -1,9 +1,9 @@
 package alsc
 
-// RechargeAccountPropertyOpenInfo 
+// RechargeAccountPropertyOpenInfo 结构体
 type RechargeAccountPropertyOpenInfo struct {
-    // 账户类型
-    Type   string `json:"type,omitempty" xml:"type,omitempty"`
-    // 账户值
-    Value   int64 `json:"value,omitempty" xml:"value,omitempty"`
+	// 账户类型
+	Type string `json:"type,omitempty" xml:"type,omitempty"`
+	// 账户值
+	Value int64 `json:"value,omitempty" xml:"value,omitempty"`
 }

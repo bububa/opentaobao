@@ -1,66 +1,22 @@
 package xhotelitem
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TaobaoXhotelRateRelationshipwithroomGetAPIRequest
 查询rpId API请求
 taobao.xhotel.rate.relationshipwithroom.get
 
-某个卖家根据rpId查询所有的gid，可分页，不填分页信息则默认显示第一页。
-*/
+某个卖家根据rpId查询所有的gid，可分页，不填分页信息则默认显示第一页。 */
 type TaobaoXhotelRateRelationshipwithroomGetAPIRequest struct {
-    model.Params
-    // rpId
-    _rpId   int64
-    // 页数
-    _pageNo   int64
+	model.Params
+	// rpId
+	_rpId int64
+	// 页数
+	_pageNo int64
 }
 
-// 初始化TaobaoXhotelRateRelationshipwithroomGetAPIRequest对象
-func NewTaobaoXhotelRateRelationshipwithroomGetRequest() *TaobaoXhotelRateRelationshipwithroomGetAPIRequest{
-    return &TaobaoXhotelRateRelationshipwithroomGetAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetApiMethodName() string {
-    return "taobao.xhotel.rate.relationshipwithroom.get"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// RpId Setter
-// rpId
-func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetRpId(_rpId int64) error {
-    r._rpId = _rpId
-    r.Set("rp_id", _rpId)
-    return nil
-}
-
-// RpId Getter
-func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetRpId() int64 {
-    return r._rpId
-}
-// PageNo Setter
-// 页数
-func (r *TaobaoXhotelRateRelationshipwithroomGetAPIRequest) SetPageNo(_pageNo int64) error {
-    r._pageNo = _pageNo
-    r.Set("page_no", _pageNo)
-    return nil
-}
-
-// PageNo Getter
-func (r TaobaoXhotelRateRelationshipwithroomGetAPIRequest) GetPageNo() int64 {
-    return r._pageNo
-}
+// New

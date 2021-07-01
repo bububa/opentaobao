@@ -1,27 +1,26 @@
 package einvoice
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-开票商回传开票结果 API返回值 
+/* AlibabaEinvoicePartnerReturnAPIResponse
+开票商回传开票结果 API返回值
 alibaba.einvoice.partner.return
 
-开票商返回开票结果数据
-*/
+开票商返回开票结果数据 */
 type AlibabaEinvoicePartnerReturnAPIResponse struct {
-    model.CommonResponse
-    AlibabaEinvoicePartnerReturnAPIResponseModel
+	model.CommonResponse
+	AlibabaEinvoicePartnerReturnAPIResponseModel
 }
 
-// 开票商回传开票结果 成功返回结果
+// AlibabaEinvoicePartnerReturnAPIResponseModel is 开票商回传开票结果 成功返回结果
 type AlibabaEinvoicePartnerReturnAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_einvoice_partner_return_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 服务端接收开票回传数据的结果
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_einvoice_partner_return_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 服务端接收开票回传数据的结果
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

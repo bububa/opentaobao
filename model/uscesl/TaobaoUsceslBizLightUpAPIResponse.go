@@ -1,27 +1,26 @@
 package uscesl
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-价签LED等点亮 API返回值 
+/* TaobaoUsceslBizLightUpAPIResponse
+价签LED等点亮 API返回值
 taobao.uscesl.biz.light.up
 
-价签LED等点亮
-*/
+价签LED等点亮 */
 type TaobaoUsceslBizLightUpAPIResponse struct {
-    model.CommonResponse
-    TaobaoUsceslBizLightUpAPIResponseModel
+	model.CommonResponse
+	TaobaoUsceslBizLightUpAPIResponseModel
 }
 
-// 价签LED等点亮 成功返回结果
+// TaobaoUsceslBizLightUpAPIResponseModel is 价签LED等点亮 成功返回结果
 type TaobaoUsceslBizLightUpAPIResponseModel struct {
-    XMLName xml.Name `xml:"uscesl_biz_light_up_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 接口返回model
-    Result   *TaobaoUsceslBizLightUpResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"uscesl_biz_light_up_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 接口返回model
+	Result *TaobaoUsceslBizLightUpResult `json:"result,omitempty" xml:"result,omitempty"`
 }

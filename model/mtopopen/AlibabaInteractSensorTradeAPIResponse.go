@@ -1,27 +1,26 @@
 package mtopopen
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-交易组件 API返回值 
+/* AlibabaInteractSensorTradeAPIResponse
+交易组件 API返回值
 alibaba.interact.sensor.trade
 
-交易流程
-*/
+交易流程 */
 type AlibabaInteractSensorTradeAPIResponse struct {
-    model.CommonResponse
-    AlibabaInteractSensorTradeAPIResponseModel
+	model.CommonResponse
+	AlibabaInteractSensorTradeAPIResponseModel
 }
 
-// 交易组件 成功返回结果
+// AlibabaInteractSensorTradeAPIResponseModel is 交易组件 成功返回结果
 type AlibabaInteractSensorTradeAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_interact_sensor_trade_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result=1
-    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_interact_sensor_trade_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result=1
+	Result string `json:"result,omitempty" xml:"result,omitempty"`
 }

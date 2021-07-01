@@ -1,27 +1,26 @@
 package scbp
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-查询关键词推广账户是否欠款 API返回值 
+/* AlibabaScbpAccountIsarrearsGetAPIResponse
+查询关键词推广账户是否欠款 API返回值
 alibaba.scbp.account.isarrears.get
 
-查询关键词推广账户是否欠款
-*/
+查询关键词推广账户是否欠款 */
 type AlibabaScbpAccountIsarrearsGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaScbpAccountIsarrearsGetAPIResponseModel
+	model.CommonResponse
+	AlibabaScbpAccountIsarrearsGetAPIResponseModel
 }
 
-// 查询关键词推广账户是否欠款 成功返回结果
+// AlibabaScbpAccountIsarrearsGetAPIResponseModel is 查询关键词推广账户是否欠款 成功返回结果
 type AlibabaScbpAccountIsarrearsGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_scbp_account_isarrears_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 客户的关键词推广账户是否欠款
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_scbp_account_isarrears_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 客户的关键词推广账户是否欠款
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

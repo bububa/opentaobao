@@ -6,18 +6,17 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* {{ .Name }}APIResponse
 {{ .ChineseName }} API返回值 
 {{ .ApiName }}
 
-{{ .Desc }}
-*/
+{{ .Desc }} */
 type {{ .Name }}APIResponse struct {
     model.CommonResponse
     {{ .Name }}APIResponseModel
 }
 
-// {{ .ChineseName }} 成功返回结果
+// {{ .Name }}APIResponseModel is {{ .ChineseName }} 成功返回结果
 type {{ .Name }}APIResponseModel struct {
     XMLName xml.Name `xml:"{{ .ResponseKey }}"`
     {{- if eq .HasRequestId false }}

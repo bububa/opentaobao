@@ -1,21 +1,20 @@
 package tmallservice
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tmallservice"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tmallservice"
 )
 
-/* 
-服务商更新预警消息状态 
+/* TmallServicecenterServicemonitormessageUpdate
+服务商更新预警消息状态
 tmall.servicecenter.servicemonitormessage.update
 
-服务商收到预警后，需要进行回复已读状态，并可填写备注
-*/
+服务商收到预警后，需要进行回复已读状态，并可填写备注 */
 func TmallServicecenterServicemonitormessageUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageUpdateAPIRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse, error) {
-    var resp tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

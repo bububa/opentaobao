@@ -28,7 +28,7 @@ type SDKClient struct {
 	sandbox    bool             // 是否沙箱环境
 }
 
-// 新建SDKClient
+// NewSDKClient 新建SDKClient
 func NewSDKClient(appKey string, secret string) *SDKClient {
 	return &SDKClient{
 		appKey:     appKey,
@@ -38,42 +38,42 @@ func NewSDKClient(appKey string, secret string) *SDKClient {
 	}
 }
 
-// 设置debug
+// SetDebug 设置debug
 func (c *SDKClient) SetDebug(debug bool) {
 	c.debug = debug
 }
 
-// 是否debug
+// IsDebug 判断是否debug
 func (c SDKClient) IsDebug() bool {
 	return c.debug
 }
 
-// 使用沙箱环境
+// UseSandBox 使用沙箱环境
 func (c *SDKClient) UseSandbox() {
 	c.sandbox = true
 }
 
-// 禁用沙箱环境
+// DisableSandbox 禁用沙箱环境
 func (c *SDKClient) DisableSandbox() {
 	c.sandbox = false
 }
 
-// 是否沙箱环境
+// IsSandbox 判断是否沙箱环境
 func (c SDKClient) IsSandbox() bool {
 	return c.sandbox
 }
 
-// 设置API响应格式
+// SetAPIFormat 设置API响应格式
 func (c *SDKClient) SetAPIFormat(format model.APIFormat) {
 	c.apiFormat = format
 }
 
-// 设置API签名方法
+// SetSignMethod 设置API签名方法
 func (c *SDKClient) SetSignMethod(method model.SignMethod) {
 	c.signMethod = method
 }
 
-// API Post请求
+// Post 发起请求
 func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session string) error {
 	// 新建API请求通用参数
 	commonReq := model.NewCommonRequest(req.GetApiMethodName(), c.appKey)
@@ -124,7 +124,7 @@ func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
-// post multipart form
+// postMultipart post multipart/form
 func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp model.IResponse) error {
 	var buf bytes.Buffer
 	mw := multipart.NewWriter(&buf)
@@ -215,7 +215,7 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 	return resp.B043C16EB094F65A787F22E6AE0A10BCB7ABDE6D()
 }
 
-// 生成签名
+// sign 生成签名
 // 支持md5, hmac
 func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url.Values {
 	ret := url.Values{}

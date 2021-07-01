@@ -1,9 +1,9 @@
 package wdk
 
-// InboundItemInfo 
+// InboundItemInfo 结构体
 type InboundItemInfo struct {
-    // 收货数量
-    InboundQuantity   string `json:"inbound_quantity,omitempty" xml:"inbound_quantity,omitempty"`
-    // 商品编码
-    SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
+	// 收货数量
+	InboundQuantity string `json:"inbound_quantity,omitempty" xml:"inbound_quantity,omitempty"`
+	// 商品编码
+	SkuCode string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
 }

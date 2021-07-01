@@ -1,27 +1,26 @@
 package seaking
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-获取海王用户权限包 API返回值 
+/* AlibabaSeakingServicepackAPIResponse
+获取海王用户权限包 API返回值
 alibaba.seaking.servicepack
 
-获取海王用户权限包
-*/
+获取海王用户权限包 */
 type AlibabaSeakingServicepackAPIResponse struct {
-    model.CommonResponse
-    AlibabaSeakingServicepackAPIResponseModel
+	model.CommonResponse
+	AlibabaSeakingServicepackAPIResponseModel
 }
 
-// 获取海王用户权限包 成功返回结果
+// AlibabaSeakingServicepackAPIResponseModel is 获取海王用户权限包 成功返回结果
 type AlibabaSeakingServicepackAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_seaking_servicepack_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 权限包列表
-    ServicePackList   []AlibabaSeakingServicepackResult `json:"service_pack_list,omitempty" xml:"service_pack_list>alibaba_seaking_servicepack_result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_seaking_servicepack_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 权限包列表
+	ServicePackList []AlibabaSeakingServicepackResult `json:"service_pack_list,omitempty" xml:"service_pack_list>alibaba_seaking_servicepack_result,omitempty"`
 }

@@ -1,21 +1,20 @@
 package fenxiao
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/fenxiao"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-/* 
-根据商品ID或商家编码修改后端商品 
+/* TaobaoScitemUpdate
+根据商品ID或商家编码修改后端商品
 taobao.scitem.update
 
-根据商品ID或商家编码修改后端商品
-*/
+根据商品ID或商家编码修改后端商品 */
 func TaobaoScitemUpdate(clt *core.SDKClient, req *fenxiao.TaobaoScitemUpdateAPIRequest, session string) (*fenxiao.TaobaoScitemUpdateAPIResponse, error) {
-    var resp fenxiao.TaobaoScitemUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp fenxiao.TaobaoScitemUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

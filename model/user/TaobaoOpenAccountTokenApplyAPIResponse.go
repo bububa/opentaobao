@@ -1,27 +1,26 @@
 package user
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-申请免登Open Account Token API返回值 
+/* TaobaoOpenAccountTokenApplyAPIResponse
+申请免登Open Account Token API返回值
 taobao.open.account.token.apply
 
-申请免登Open Account Token
-*/
+申请免登Open Account Token */
 type TaobaoOpenAccountTokenApplyAPIResponse struct {
-    model.CommonResponse
-    TaobaoOpenAccountTokenApplyAPIResponseModel
+	model.CommonResponse
+	TaobaoOpenAccountTokenApplyAPIResponseModel
 }
 
-// 申请免登Open Account Token 成功返回结果
+// TaobaoOpenAccountTokenApplyAPIResponseModel is 申请免登Open Account Token 成功返回结果
 type TaobaoOpenAccountTokenApplyAPIResponseModel struct {
-    XMLName xml.Name `xml:"open_account_token_apply_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回的token结果
-    Data   *OpenAccountTokenApplyResult `json:"data,omitempty" xml:"data,omitempty"`
+	XMLName xml.Name `xml:"open_account_token_apply_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回的token结果
+	Data *OpenAccountTokenApplyResult `json:"data,omitempty" xml:"data,omitempty"`
 }

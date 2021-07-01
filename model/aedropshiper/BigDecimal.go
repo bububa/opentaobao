@@ -1,5 +1,5 @@
 package aedropshiper
 
-// BigDecimal 
+// BigDecimal 结构体
 type BigDecimal struct {
 }

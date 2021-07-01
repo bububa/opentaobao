@@ -1,13 +1,13 @@
 package wdk
 
-// Pagination 
+// Pagination 结构体
 type Pagination struct {
-    // 总页数
-    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
-    // 总记录数
-    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-    // 页容量
-    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-    // 当前页码
-    CurrentPage   int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
+	// 总页数
+	TotalPage int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+	// 总记录数
+	TotalCount int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+	// 页容量
+	PageSize int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+	// 当前页码
+	CurrentPage int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 }

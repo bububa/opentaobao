@@ -15,7 +15,7 @@ import (
 	"github.com/bububa/opentaobao/metadata"
 )
 
-// 下载淘宝API文档metadata
+// Download 下载淘宝API文档metadata
 // dir: 文件保存路径
 // specificPkg: 指定API类目对应包名，参考package.json
 func Download(dir string, specificPkg string) error {
@@ -86,7 +86,7 @@ func Download(dir string, specificPkg string) error {
 	return nil
 }
 
-// 获取_tb_token_ cookie
+// getTbToken 获取_tb_token_ cookie
 func getTbToken(clt *http.Client) (string, error) {
 	resp, err := clt.Get(metadata.DOC_CENTER_URL)
 	if err != nil {
@@ -102,7 +102,7 @@ func getTbToken(clt *http.Client) (string, error) {
 	return "", errors.New("not found _tb_token_")
 }
 
-// 获取文档目录树
+// getApiCatelogs 获取文档目录树
 func getApiCatelogs(clt *http.Client, tbToken string) ([]metadata.ApiCatelogTree, error) {
 	resp, err := clt.Get(fmt.Sprintf(metadata.API_CATELOG_URL, url.QueryEscape(tbToken)))
 	if err != nil {
@@ -123,7 +123,7 @@ func getApiCatelogs(clt *http.Client, tbToken string) ([]metadata.ApiCatelogTree
 	return ret.Data.TreeCategories[0].CatelogTrees, nil
 }
 
-// 获取API文档
+// getDoc 获取API文档
 func getDoc(clt *http.Client, tbToken string, catelog metadata.ApiCatelog) (metadata.ApiDoc, error) {
 	resp, err := clt.Get(fmt.Sprintf(metadata.DOC_URL, catelog.Id, url.QueryEscape(tbToken)))
 	if err != nil {
@@ -141,7 +141,7 @@ func getDoc(clt *http.Client, tbToken string, catelog metadata.ApiCatelog) (meta
 	return ret.Data, nil
 }
 
-// 保存单类目文档文件
+// saveCatelog 保存单类目文档文件
 func saveCatelog(cfg metadata.PkgConfig, dir string) (string, error) {
 	catelogPath := filepath.Join(dir, cfg.Pkg)
 	log.Println(catelogPath)
@@ -160,7 +160,7 @@ func saveCatelog(cfg metadata.PkgConfig, dir string) (string, error) {
 	return catelogPath, nil
 }
 
-// 保存API文档文件
+// saveDoc 保存API文档文件
 func saveDoc(doc metadata.ApiDoc, catelogPath string) error {
 	buf, err := json.MarshalIndent(doc, "", "\t")
 	if err != nil {

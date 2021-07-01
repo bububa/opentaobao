@@ -1,27 +1,26 @@
 package retail
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-查询货架和位置数据 API返回值 
+/* AlibabaInteractRetailQueryshelflocationAPIResponse
+查询货架和位置数据 API返回值
 alibaba.interact.retail.queryshelflocation
 
-查询货架和位置数据
-*/
+查询货架和位置数据 */
 type AlibabaInteractRetailQueryshelflocationAPIResponse struct {
-    model.CommonResponse
-    AlibabaInteractRetailQueryshelflocationAPIResponseModel
+	model.CommonResponse
+	AlibabaInteractRetailQueryshelflocationAPIResponseModel
 }
 
-// 查询货架和位置数据 成功返回结果
+// AlibabaInteractRetailQueryshelflocationAPIResponseModel is 查询货架和位置数据 成功返回结果
 type AlibabaInteractRetailQueryshelflocationAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_interact_retail_queryshelflocation_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *AlibabaInteractRetailQueryshelflocationResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_interact_retail_queryshelflocation_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *AlibabaInteractRetailQueryshelflocationResult `json:"result,omitempty" xml:"result,omitempty"`
 }

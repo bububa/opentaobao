@@ -1,21 +1,20 @@
 package damai
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/damai"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/damai"
 )
 
-/* 
-大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat 
+/* AlibabaDamaiMevOpenPushPaperformat
+大麦换验平台-第三方对外开放-票纸版式接口pushPaperFormat
 alibaba.damai.mev.open.push.paperformat
 
-pushPaperFormat
-*/
+pushPaperFormat */
 func AlibabaDamaiMevOpenPushPaperformat(clt *core.SDKClient, req *damai.AlibabaDamaiMevOpenPushPaperformatAPIRequest, session string) (*damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse, error) {
-    var resp damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp damai.AlibabaDamaiMevOpenPushPaperformatAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

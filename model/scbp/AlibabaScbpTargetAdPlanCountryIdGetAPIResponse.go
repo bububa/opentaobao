@@ -1,27 +1,26 @@
 package scbp
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-定向推广-国家标签ID获取 API返回值 
+/* AlibabaScbpTargetAdPlanCountryIdGetAPIResponse
+定向推广-国家标签ID获取 API返回值
 alibaba.scbp.target.ad.plan.country.id.get
 
-定向推广-国家标签ID获取
-*/
+定向推广-国家标签ID获取 */
 type AlibabaScbpTargetAdPlanCountryIdGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaScbpTargetAdPlanCountryIdGetAPIResponseModel
+	model.CommonResponse
+	AlibabaScbpTargetAdPlanCountryIdGetAPIResponseModel
 }
 
-// 定向推广-国家标签ID获取 成功返回结果
+// AlibabaScbpTargetAdPlanCountryIdGetAPIResponseModel is 定向推广-国家标签ID获取 成功返回结果
 type AlibabaScbpTargetAdPlanCountryIdGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_country_id_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 地区列表
-    RegionList   []RegionView `json:"region_list,omitempty" xml:"region_list>region_view,omitempty"`
+	XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_country_id_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 地区列表
+	RegionList []RegionView `json:"region_list,omitempty" xml:"region_list>region_view,omitempty"`
 }

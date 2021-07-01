@@ -6,7 +6,7 @@ import (
 )
 {{- end }}
 
-// {{ .Name }} 
+// {{ .Name }} 结构体
 type {{ .Name }} struct {
 {{- range $v := .Params }}
     // {{ $v.Desc }}

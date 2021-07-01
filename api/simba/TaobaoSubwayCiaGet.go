@@ -1,21 +1,20 @@
 package simba
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/simba"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/simba"
 )
 
-/* 
-查询单元智能出价信息 
+/* TaobaoSubwayCiaGet
+查询单元智能出价信息
 taobao.subway.cia.get
 
-查询单元智能出价信息
-*/
+查询单元智能出价信息 */
 func TaobaoSubwayCiaGet(clt *core.SDKClient, req *simba.TaobaoSubwayCiaGetAPIRequest, session string) (*simba.TaobaoSubwayCiaGetAPIResponse, error) {
-    var resp simba.TaobaoSubwayCiaGetAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp simba.TaobaoSubwayCiaGetAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

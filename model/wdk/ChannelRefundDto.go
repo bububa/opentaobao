@@ -1,9 +1,9 @@
 package wdk
 
-// ChannelRefundDto 
+// ChannelRefundDto 结构体
 type ChannelRefundDto struct {
-    // 退款渠道编码
-    ChannelCode   string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
-    // 渠道对应的退款金额(单位分)
-    RefundAmount   int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
+	// 退款渠道编码
+	ChannelCode string `json:"channel_code,omitempty" xml:"channel_code,omitempty"`
+	// 渠道对应的退款金额(单位分)
+	RefundAmount int64 `json:"refund_amount,omitempty" xml:"refund_amount,omitempty"`
 }

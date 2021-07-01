@@ -1,7 +1,7 @@
 package hotel
 
-// Bizextmap 
+// Bizextmap 结构体
 type Bizextmap struct {
-    // empty
-    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
+	// empty
+	Empty bool `json:"empty,omitempty" xml:"empty,omitempty"`
 }

@@ -1,7 +1,7 @@
 package qimen
 
-// SnList 
+// SnList 结构体
 type SnList struct {
-    // sn
-    Sn   []string `json:"sn,omitempty" xml:"sn>string,omitempty"`
+	// sn
+	Sn []string `json:"sn,omitempty" xml:"sn>string,omitempty"`
 }

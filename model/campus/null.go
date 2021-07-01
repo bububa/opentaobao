@@ -1,5 +1,5 @@
 package campus
 
-// Null 
+// Null 结构体
 type Null struct {
 }

@@ -1,12 +1,12 @@
 package tmallservice
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TmallServicecenterWorkerUpdateAPIRequest
 修改工人信息 API请求
 tmall.servicecenter.worker.update
 
@@ -25,43 +25,11 @@ tmall.servicecenter.worker.update
 10010, 网点不存在
 11000, category_id 无效
 11001, biz_type 无效
-20001,已查询到最后一页
-*/
+20001,已查询到最后一页 */
 type TmallServicecenterWorkerUpdateAPIRequest struct {
-    model.Params
-    // 工人信息
-    _worker   *WorkerDto
+	model.Params
+	// 工人信息
+	_worker *WorkerDto
 }
 
-// 初始化TmallServicecenterWorkerUpdateAPIRequest对象
-func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateAPIRequest{
-    return &TmallServicecenterWorkerUpdateAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiMethodName() string {
-    return "tmall.servicecenter.worker.update"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Worker Setter
-// 工人信息
-func (r *TmallServicecenterWorkerUpdateAPIRequest) SetWorker(_worker *WorkerDto) error {
-    r._worker = _worker
-    r.Set("worker", _worker)
-    return nil
-}
-
-// Worker Getter
-func (r TmallServicecenterWorkerUpdateAPIRequest) GetWorker() *WorkerDto {
-    return r._worker
-}
+// New

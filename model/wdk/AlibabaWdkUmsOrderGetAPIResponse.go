@@ -1,27 +1,26 @@
 package wdk
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-查询店仓作业单据清单 （库存对账辅助）-回流单 API返回值 
+/* AlibabaWdkUmsOrderGetAPIResponse
+查询店仓作业单据清单 （库存对账辅助）-回流单 API返回值
 alibaba.wdk.ums.order.get
 
-查询店仓作业单据清单 （库存对账辅助）-回流单
-*/
+查询店仓作业单据清单 （库存对账辅助）-回流单 */
 type AlibabaWdkUmsOrderGetAPIResponse struct {
-    model.CommonResponse
-    AlibabaWdkUmsOrderGetAPIResponseModel
+	model.CommonResponse
+	AlibabaWdkUmsOrderGetAPIResponseModel
 }
 
-// 查询店仓作业单据清单 （库存对账辅助）-回流单 成功返回结果
+// AlibabaWdkUmsOrderGetAPIResponseModel is 查询店仓作业单据清单 （库存对账辅助）-回流单 成功返回结果
 type AlibabaWdkUmsOrderGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_wdk_ums_order_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *UtmsPageResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_wdk_ums_order_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *UtmsPageResult `json:"result,omitempty" xml:"result,omitempty"`
 }

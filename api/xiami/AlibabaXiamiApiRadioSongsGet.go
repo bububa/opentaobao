@@ -1,21 +1,20 @@
 package xiami
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/xiami"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/xiami"
 )
 
-/* 
-获取电台歌曲 
+/* AlibabaXiamiApiRadioSongsGet
+获取电台歌曲
 alibaba.xiami.api.radio.songs.get
 
-获取电台songs
-*/
+获取电台songs */
 func AlibabaXiamiApiRadioSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioSongsGetAPIRequest, session string) (*xiami.AlibabaXiamiApiRadioSongsGetAPIResponse, error) {
-    var resp xiami.AlibabaXiamiApiRadioSongsGetAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp xiami.AlibabaXiamiApiRadioSongsGetAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

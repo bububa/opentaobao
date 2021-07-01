@@ -1,52 +1,20 @@
 package user
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAilabsUserSpeechGuideAPIRequest
 引导语推荐接口 API请求
 alibaba.ailabs.user.speech.guide
 
-根据用户的语音query，返回相应的引导语推荐
-*/
+根据用户的语音query，返回相应的引导语推荐 */
 type AlibabaAilabsUserSpeechGuideAPIRequest struct {
-    model.Params
-    // 用户query
-    _query   string
+	model.Params
+	// 用户query
+	_query string
 }
 
-// 初始化AlibabaAilabsUserSpeechGuideAPIRequest对象
-func NewAlibabaAilabsUserSpeechGuideRequest() *AlibabaAilabsUserSpeechGuideAPIRequest{
-    return &AlibabaAilabsUserSpeechGuideAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiMethodName() string {
-    return "alibaba.ailabs.user.speech.guide"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Query Setter
-// 用户query
-func (r *AlibabaAilabsUserSpeechGuideAPIRequest) SetQuery(_query string) error {
-    r._query = _query
-    r.Set("query", _query)
-    return nil
-}
-
-// Query Getter
-func (r AlibabaAilabsUserSpeechGuideAPIRequest) GetQuery() string {
-    return r._query
-}
+// New

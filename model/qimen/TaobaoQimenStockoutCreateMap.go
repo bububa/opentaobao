@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenStockoutCreateMap 
+// TaobaoQimenStockoutCreateMap 结构体
 type TaobaoQimenStockoutCreateMap struct {
 }

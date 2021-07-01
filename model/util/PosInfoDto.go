@@ -1,11 +1,11 @@
 package util
 
-// PosInfoDto 
+// PosInfoDto 结构体
 type PosInfoDto struct {
-    // 是否支持小数
-    Support4Decimal   string `json:"support4_decimal,omitempty" xml:"support4_decimal,omitempty"`
-    // 专柜号
-    CounterNo   string `json:"counter_no,omitempty" xml:"counter_no,omitempty"`
-    // 门店号
-    StoreNo   string `json:"store_no,omitempty" xml:"store_no,omitempty"`
+	// 是否支持小数
+	Support4Decimal string `json:"support4_decimal,omitempty" xml:"support4_decimal,omitempty"`
+	// 专柜号
+	CounterNo string `json:"counter_no,omitempty" xml:"counter_no,omitempty"`
+	// 门店号
+	StoreNo string `json:"store_no,omitempty" xml:"store_no,omitempty"`
 }

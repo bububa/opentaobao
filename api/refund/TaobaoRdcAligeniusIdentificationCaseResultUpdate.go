@@ -1,21 +1,20 @@
 package refund
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/refund"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/refund"
 )
 
-/* 
-鉴定工单结果同步 
+/* TaobaoRdcAligeniusIdentificationCaseResultUpdate
+鉴定工单结果同步
 taobao.rdc.aligenius.identification.case.result.update
 
-同步鉴定工单结果信息
-*/
+同步鉴定工单结果信息 */
 func TaobaoRdcAligeniusIdentificationCaseResultUpdate(clt *core.SDKClient, req *refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIRequest, session string) (*refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse, error) {
-    var resp refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp refund.TaobaoRdcAligeniusIdentificationCaseResultUpdateAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

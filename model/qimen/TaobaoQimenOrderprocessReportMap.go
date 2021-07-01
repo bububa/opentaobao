@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenOrderprocessReportMap 
+// TaobaoQimenOrderprocessReportMap 结构体
 type TaobaoQimenOrderprocessReportMap struct {
 }

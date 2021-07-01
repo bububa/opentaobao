@@ -1,7 +1,7 @@
 package film
 
-// FCodeMerchantSendCodeRp 
+// FCodeMerchantSendCodeRp 结构体
 type FCodeMerchantSendCodeRp struct {
-    // 码对外信息描述列表
-    FCodeMerchantInfoList   []FCodeMerchantVo `json:"f_code_merchant_info_list,omitempty" xml:"f_code_merchant_info_list>f_code_merchant_vo,omitempty"`
+	// 码对外信息描述列表
+	FCodeMerchantInfoList []FCodeMerchantVo `json:"f_code_merchant_info_list,omitempty" xml:"f_code_merchant_info_list>f_code_merchant_vo,omitempty"`
 }

@@ -1,21 +1,20 @@
 package scbp
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/scbp"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/scbp"
 )
 
-/* 
-推荐词-词推词 
+/* AlibabaScbpReckeywordSearch
+推荐词-词推词
 alibaba.scbp.reckeyword.search
 
-推荐词-词推词
-*/
+推荐词-词推词 */
 func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchAPIRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
-    var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

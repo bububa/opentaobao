@@ -1,21 +1,20 @@
 package fenxiao
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/fenxiao"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/fenxiao"
 )
 
-/* 
-查询后端商品 
+/* TaobaoScitemQuery
+查询后端商品
 taobao.scitem.query
 
-查询后端商品
-*/
+查询后端商品 */
 func TaobaoScitemQuery(clt *core.SDKClient, req *fenxiao.TaobaoScitemQueryAPIRequest, session string) (*fenxiao.TaobaoScitemQueryAPIResponse, error) {
-    var resp fenxiao.TaobaoScitemQueryAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp fenxiao.TaobaoScitemQueryAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

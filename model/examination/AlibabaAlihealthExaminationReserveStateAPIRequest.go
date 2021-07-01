@@ -1,80 +1,24 @@
 package examination
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlihealthExaminationReserveStateAPIRequest
 体检机构对接_体检状态查询 API请求
 alibaba.alihealth.examination.reserve.state
 
-体检机构对接_体检状态查询
-*/
+体检机构对接_体检状态查询 */
 type AlibabaAlihealthExaminationReserveStateAPIRequest struct {
-    model.Params
-    // 商户唯一码
-    _merchantCode   string
-    // 阿里健康预约唯一标识
-    _reserveNumber   string
-    // 体检机构预约唯一标识码
-    _uniqReserveCode   string
+	model.Params
+	// 商户唯一码
+	_merchantCode string
+	// 阿里健康预约唯一标识
+	_reserveNumber string
+	// 体检机构预约唯一标识码
+	_uniqReserveCode string
 }
 
-// 初始化AlibabaAlihealthExaminationReserveStateAPIRequest对象
-func NewAlibabaAlihealthExaminationReserveStateRequest() *AlibabaAlihealthExaminationReserveStateAPIRequest{
-    return &AlibabaAlihealthExaminationReserveStateAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetApiMethodName() string {
-    return "alibaba.alihealth.examination.reserve.state"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// MerchantCode Setter
-// 商户唯一码
-func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetMerchantCode(_merchantCode string) error {
-    r._merchantCode = _merchantCode
-    r.Set("merchant_code", _merchantCode)
-    return nil
-}
-
-// MerchantCode Getter
-func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetMerchantCode() string {
-    return r._merchantCode
-}
-// ReserveNumber Setter
-// 阿里健康预约唯一标识
-func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetReserveNumber(_reserveNumber string) error {
-    r._reserveNumber = _reserveNumber
-    r.Set("reserve_number", _reserveNumber)
-    return nil
-}
-
-// ReserveNumber Getter
-func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetReserveNumber() string {
-    return r._reserveNumber
-}
-// UniqReserveCode Setter
-// 体检机构预约唯一标识码
-func (r *AlibabaAlihealthExaminationReserveStateAPIRequest) SetUniqReserveCode(_uniqReserveCode string) error {
-    r._uniqReserveCode = _uniqReserveCode
-    r.Set("uniq_reserve_code", _uniqReserveCode)
-    return nil
-}
-
-// UniqReserveCode Getter
-func (r AlibabaAlihealthExaminationReserveStateAPIRequest) GetUniqReserveCode() string {
-    return r._uniqReserveCode
-}
+// New

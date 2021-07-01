@@ -1,52 +1,20 @@
 package qimen
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TaobaoQimenTransferorderQueryAPIRequest
 调拨单查询 API请求
 taobao.qimen.transferorder.query
 
-调拨单查询
-*/
+调拨单查询 */
 type TaobaoQimenTransferorderQueryAPIRequest struct {
-    model.Params
-    // 
-    _request   *TaobaoQimenTransferorderQueryStruct
+	model.Params
+	//
+	_request *TaobaoQimenTransferorderQueryStruct
 }
 
-// 初始化TaobaoQimenTransferorderQueryAPIRequest对象
-func NewTaobaoQimenTransferorderQueryRequest() *TaobaoQimenTransferorderQueryAPIRequest{
-    return &TaobaoQimenTransferorderQueryAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TaobaoQimenTransferorderQueryAPIRequest) GetApiMethodName() string {
-    return "taobao.qimen.transferorder.query"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TaobaoQimenTransferorderQueryAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// Request Setter
-// 
-func (r *TaobaoQimenTransferorderQueryAPIRequest) SetRequest(_request *TaobaoQimenTransferorderQueryStruct) error {
-    r._request = _request
-    r.Set("request", _request)
-    return nil
-}
-
-// Request Getter
-func (r TaobaoQimenTransferorderQueryAPIRequest) GetRequest() *TaobaoQimenTransferorderQueryStruct {
-    return r._request
-}
+// New

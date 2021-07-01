@@ -1,5 +1,5 @@
 package yunos
 
-// RdamContext 
+// RdamContext 结构体
 type RdamContext struct {
 }

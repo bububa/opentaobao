@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"sort"
 	"text/template"
@@ -14,7 +15,7 @@ import (
 	"github.com/bububa/opentaobao/metadata"
 )
 
-// 生成SDK入口
+// Gen 生成SDK入口
 //
 // metaPath: metadata 保存路径
 // patchPath: patch 文件路径
@@ -56,7 +57,7 @@ func Gen(metaPath string, patchPath string, pkg string) error {
 	return nil
 }
 
-// 生成API类目对应的api 和 model文件
+// catelogHandler 生成API类目对应的api 和 model文件
 func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	// 获取类目包配置
 	pkgCfg, err := getPkgConfig(catelogPath)
@@ -193,7 +194,7 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	return apiPkg
 }
 
-// 获取API类目对应包设置
+// getPkgConfig 获取API类目对应包设置
 func getPkgConfig(catelogPath string) (metadata.PkgConfig, error) {
 	var cfg metadata.PkgConfig
 	fPath := filepath.Join(catelogPath, "catelog.json")
@@ -211,7 +212,7 @@ func getPkgConfig(catelogPath string) (metadata.PkgConfig, error) {
 	return cfg, nil
 }
 
-// 获取API文档
+// getDoc 获取API文档
 func getDoc(catelogPath string, catelogPatchPath string, filename string) (metadata.ApiDoc, error) {
 	var doc metadata.ApiDoc
 
@@ -236,7 +237,7 @@ func getDoc(catelogPath string, catelogPatchPath string, filename string) (metad
 	return doc, nil
 }
 
-// 生成api doc.go
+// genPkgApiDoc 生成api doc.go
 func genPkgApiDoc(templatePath string, apiPath string, pkg ApiPkg) error {
 	filePath := filepath.Join(templatePath, "pkg_api_doc.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -250,10 +251,10 @@ func genPkgApiDoc(templatePath string, apiPath string, pkg ApiPkg) error {
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, pkg)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成model doc.go
+// genPkgModelDoc 生成model doc.go
 func genPkgModelDoc(templatePath string, modelPath string, pkg ApiPkg) error {
 	filePath := filepath.Join(templatePath, "pkg_model_doc.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -267,10 +268,10 @@ func genPkgModelDoc(templatePath string, modelPath string, pkg ApiPkg) error {
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, pkg)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成api文件
+// genApi 生成api文件
 func genApi(templatePath string, apiPath string, tpl metadata.ApiTpl) error {
 	filePath := filepath.Join(templatePath, "api.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -284,10 +285,10 @@ func genApi(templatePath string, apiPath string, tpl metadata.ApiTpl) error {
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, tpl)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成model文件
+// genApiModel 生成model文件
 // 返回 API 包含的对象结构体
 func genApiModel(templatePath string, modelPath string, tpl metadata.ApiTpl) ([]metadata.TplModel, error) {
 	// 生成APIRequest文件
@@ -303,7 +304,7 @@ func genApiModel(templatePath string, modelPath string, tpl metadata.ApiTpl) ([]
 	return metadata.MergeModels(append(reqModels, respModels...)), nil
 }
 
-// 生成APIRequest文件
+// genRequestModel 生成APIRequest文件
 func genRequestModel(templatePath string, modelPath string, tpl metadata.ApiTpl) error {
 	filePath := filepath.Join(templatePath, "request.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -317,10 +318,10 @@ func genRequestModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, tpl)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成APIResponse文件
+// genResponseModel 生成APIResponse文件
 func genReponseModel(templatePath string, modelPath string, tpl metadata.ApiTpl) error {
 	filePath := filepath.Join(templatePath, "response.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -334,10 +335,10 @@ func genReponseModel(templatePath string, modelPath string, tpl metadata.ApiTpl)
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, tpl)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成对象结构体文件
+// genModel 生成对象结构体文件
 func genModel(templatePath string, modelPath string, tpl metadata.TplModel) error {
 	filePath := filepath.Join(templatePath, "model.tpl")
 	tmpl, err := template.ParseFiles(filePath)
@@ -352,10 +353,10 @@ func genModel(templatePath string, modelPath string, tpl metadata.TplModel) erro
 	}
 	defer fd.Close()
 	tmpl.Execute(fd, tpl)
-	return nil
+	return gofmt(targetFile)
 }
 
-// 生成README
+// genReadme 生成README
 func genReadme(pkgs []ApiPkg) error {
 	wd, err := os.Getwd()
 	if err != nil {
@@ -378,4 +379,10 @@ func genReadme(pkgs []ApiPkg) error {
 		"Pkgs": slice,
 	})
 	return nil
+}
+
+// gofmt 格式化go代码
+func gofmt(target string) error {
+	cmd := exec.Command("gofmt", "-s", "-w", target)
+	return cmd.Run()
 }

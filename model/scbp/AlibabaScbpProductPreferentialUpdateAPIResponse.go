@@ -1,27 +1,26 @@
 package scbp
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-设置P4P产品优先推广状态 API返回值 
+/* AlibabaScbpProductPreferentialUpdateAPIResponse
+设置P4P产品优先推广状态 API返回值
 alibaba.scbp.product.preferential.update
 
-设置P4P产品优先推广状态
-*/
+设置P4P产品优先推广状态 */
 type AlibabaScbpProductPreferentialUpdateAPIResponse struct {
-    model.CommonResponse
-    AlibabaScbpProductPreferentialUpdateAPIResponseModel
+	model.CommonResponse
+	AlibabaScbpProductPreferentialUpdateAPIResponseModel
 }
 
-// 设置P4P产品优先推广状态 成功返回结果
+// AlibabaScbpProductPreferentialUpdateAPIResponseModel is 设置P4P产品优先推广状态 成功返回结果
 type AlibabaScbpProductPreferentialUpdateAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_scbp_product_preferential_update_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 设置成功
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_scbp_product_preferential_update_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 设置成功
+	Result bool `json:"result,omitempty" xml:"result,omitempty"`
 }

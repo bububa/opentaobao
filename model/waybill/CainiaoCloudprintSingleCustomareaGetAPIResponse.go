@@ -1,27 +1,26 @@
 package waybill
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-获取商家单一自定义区 API返回值 
+/* CainiaoCloudprintSingleCustomareaGetAPIResponse
+获取商家单一自定义区 API返回值
 cainiao.cloudprint.single.customarea.get
 
-商家所有快递公司模板只有一个自定义区
-*/
+商家所有快递公司模板只有一个自定义区 */
 type CainiaoCloudprintSingleCustomareaGetAPIResponse struct {
-    model.CommonResponse
-    CainiaoCloudprintSingleCustomareaGetAPIResponseModel
+	model.CommonResponse
+	CainiaoCloudprintSingleCustomareaGetAPIResponseModel
 }
 
-// 获取商家单一自定义区 成功返回结果
+// CainiaoCloudprintSingleCustomareaGetAPIResponseModel is 获取商家单一自定义区 成功返回结果
 type CainiaoCloudprintSingleCustomareaGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"cainiao_cloudprint_single_customarea_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"cainiao_cloudprint_single_customarea_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
 }

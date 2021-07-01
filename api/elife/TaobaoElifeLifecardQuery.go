@@ -1,21 +1,20 @@
 package elife
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/elife"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/elife"
 )
 
-/* 
-查询交易结果 
+/* TaobaoElifeLifecardQuery
+查询交易结果
 taobao.elife.lifecard.query
 
-卖家在交易状态不明的情况下, 查询交易结果.
-*/
+卖家在交易状态不明的情况下, 查询交易结果. */
 func TaobaoElifeLifecardQuery(clt *core.SDKClient, req *elife.TaobaoElifeLifecardQueryAPIRequest, session string) (*elife.TaobaoElifeLifecardQueryAPIResponse, error) {
-    var resp elife.TaobaoElifeLifecardQueryAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp elife.TaobaoElifeLifecardQueryAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

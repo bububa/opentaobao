@@ -39,7 +39,7 @@ func main() {
 	}
 }
 
-// 生成根目录doc.go
+// genGoDoc 生成根目录doc.go
 func genGoDoc() error {
 	wd, err := os.Getwd()
 	if err != nil {

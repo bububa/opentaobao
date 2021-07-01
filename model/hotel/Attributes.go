@@ -1,7 +1,7 @@
 package hotel
 
-// Attributes 
+// Attributes 结构体
 type Attributes struct {
-    // key
-    Key   string `json:"key,omitempty" xml:"key,omitempty"`
+	// key
+	Key string `json:"key,omitempty" xml:"key,omitempty"`
 }

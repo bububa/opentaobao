@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenOrderexceptionReportMap 
+// TaobaoQimenOrderexceptionReportMap 结构体
 type TaobaoQimenOrderexceptionReportMap struct {
 }

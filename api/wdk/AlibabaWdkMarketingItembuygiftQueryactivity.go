@@ -1,21 +1,20 @@
 package wdk
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/wdk"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/wdk"
 )
 
-/* 
-查询买赠活动 
+/* AlibabaWdkMarketingItembuygiftQueryactivity
+查询买赠活动
 alibaba.wdk.marketing.itembuygift.queryactivity
 
-查询买赠活动
-*/
+查询买赠活动 */
 func AlibabaWdkMarketingItembuygiftQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse, error) {
-    var resp wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp wdk.AlibabaWdkMarketingItembuygiftQueryactivityAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

@@ -1,21 +1,20 @@
 package axindata
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/axindata"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/axindata"
 )
 
-/* 
-景点poi详情查询-阿信 
+/* TaobaoAlitripTravelAxinPoiDetailQuery
+景点poi详情查询-阿信
 taobao.alitrip.travel.axin.poi.detail.query
 
-景点poi详情查询-阿信
-*/
+景点poi详情查询-阿信 */
 func TaobaoAlitripTravelAxinPoiDetailQuery(clt *core.SDKClient, req *axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIRequest, session string) (*axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse, error) {
-    var resp axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp axindata.TaobaoAlitripTravelAxinPoiDetailQueryAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

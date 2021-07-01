@@ -1,21 +1,20 @@
 package tuike
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/tuike"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/tuike"
 )
 
-/* 
-生成阿里口令 
+/* AlibabaTuikeOfferZhitoken
+生成阿里口令
 alibaba.tuike.offer.zhitoken
 
-推荐链接生产吱口令
-*/
+推荐链接生产吱口令 */
 func AlibabaTuikeOfferZhitoken(clt *core.SDKClient, req *tuike.AlibabaTuikeOfferZhitokenAPIRequest, session string) (*tuike.AlibabaTuikeOfferZhitokenAPIResponse, error) {
-    var resp tuike.AlibabaTuikeOfferZhitokenAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp tuike.AlibabaTuikeOfferZhitokenAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

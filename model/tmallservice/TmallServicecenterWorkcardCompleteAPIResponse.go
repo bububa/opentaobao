@@ -1,27 +1,26 @@
 package tmallservice
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-工单完结 API返回值 
+/* TmallServicecenterWorkcardCompleteAPIResponse
+工单完结 API返回值
 tmall.servicecenter.workcard.complete
 
-工单完结
-*/
+工单完结 */
 type TmallServicecenterWorkcardCompleteAPIResponse struct {
-    model.CommonResponse
-    TmallServicecenterWorkcardCompleteAPIResponseModel
+	model.CommonResponse
+	TmallServicecenterWorkcardCompleteAPIResponseModel
 }
 
-// 工单完结 成功返回结果
+// TmallServicecenterWorkcardCompleteAPIResponseModel is 工单完结 成功返回结果
 type TmallServicecenterWorkcardCompleteAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_workcard_complete_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 响应结果
-    Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_servicecenter_workcard_complete_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 响应结果
+	Result *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
 }

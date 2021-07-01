@@ -1,29 +1,28 @@
 package youkuott
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-dvb ca卡替换 API返回值 
+/* YoukuOttDvbCardChangeAPIResponse
+dvb ca卡替换 API返回值
 youku.ott.dvb.card.change
 
-dvb 更换ca卡
-*/
+dvb 更换ca卡 */
 type YoukuOttDvbCardChangeAPIResponse struct {
-    model.CommonResponse
-    YoukuOttDvbCardChangeAPIResponseModel
+	model.CommonResponse
+	YoukuOttDvbCardChangeAPIResponseModel
 }
 
-// dvb ca卡替换 成功返回结果
+// YoukuOttDvbCardChangeAPIResponseModel is dvb ca卡替换 成功返回结果
 type YoukuOttDvbCardChangeAPIResponseModel struct {
-    XMLName xml.Name `xml:"youku_ott_dvb_card_change_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 是否成功 true:成功 false:失败
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-    // 错误消息
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+	XMLName xml.Name `xml:"youku_ott_dvb_card_change_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 是否成功 true:成功 false:失败
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	// 错误消息
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
 }

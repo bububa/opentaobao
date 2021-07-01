@@ -1,21 +1,20 @@
 package mos
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/mos"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/mos"
 )
 
-/* 
-退款查询 
+/* AlibabaMosOnsiteTradeQueryrefund
+退款查询
 alibaba.mos.onsite.trade.queryrefund
 
-商户可使用该接口查询退款请求是否执行成功。
-*/
+商户可使用该接口查询退款请求是否执行成功。 */
 func AlibabaMosOnsiteTradeQueryrefund(clt *core.SDKClient, req *mos.AlibabaMosOnsiteTradeQueryrefundAPIRequest, session string) (*mos.AlibabaMosOnsiteTradeQueryrefundAPIResponse, error) {
-    var resp mos.AlibabaMosOnsiteTradeQueryrefundAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp mos.AlibabaMosOnsiteTradeQueryrefundAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

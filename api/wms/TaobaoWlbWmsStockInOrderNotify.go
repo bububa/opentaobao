@@ -1,21 +1,20 @@
 package wms
 
 import (
-    "github.com/bububa/opentaobao/core"
-    "github.com/bububa/opentaobao/model/wms"
+	"github.com/bububa/opentaobao/core"
+	"github.com/bububa/opentaobao/model/wms"
 )
 
-/* 
-入库通知单 
+/* TaobaoWlbWmsStockInOrderNotify
+入库通知单
 taobao.wlb.wms.stock.in.order.notify
 
-入库通知单
-*/
+入库通知单 */
 func TaobaoWlbWmsStockInOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockInOrderNotifyAPIRequest, session string) (*wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse, error) {
-    var resp wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse
-    err := clt.Post(req, &resp, session)
-    if err != nil {
-        return nil, err
-    }
-    return &resp, nil
+	var resp wms.TaobaoWlbWmsStockInOrderNotifyAPIResponse
+	err := clt.Post(req, &resp, session)
+	if err != nil {
+		return nil, err
+	}
+	return &resp, nil
 }

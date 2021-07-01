@@ -1,27 +1,26 @@
 package tmallgenie
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-对外音乐搜索服务 API返回值 
+/* TaobaoAilabAicloudTopMusicSearchAPIResponse
+对外音乐搜索服务 API返回值
 taobao.ailab.aicloud.top.music.search
 
-供厂商获取音乐列表
-*/
+供厂商获取音乐列表 */
 type TaobaoAilabAicloudTopMusicSearchAPIResponse struct {
-    model.CommonResponse
-    TaobaoAilabAicloudTopMusicSearchAPIResponseModel
+	model.CommonResponse
+	TaobaoAilabAicloudTopMusicSearchAPIResponseModel
 }
 
-// 对外音乐搜索服务 成功返回结果
+// TaobaoAilabAicloudTopMusicSearchAPIResponseModel is 对外音乐搜索服务 成功返回结果
 type TaobaoAilabAicloudTopMusicSearchAPIResponseModel struct {
-    XMLName xml.Name `xml:"ailab_aicloud_top_music_search_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 返回结果
-    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"ailab_aicloud_top_music_search_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 返回结果
+	Result *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
 }

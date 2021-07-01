@@ -1,13 +1,13 @@
 package promotion
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-奖池奖品查询列表 API返回值 
+/* AlibabaBenefitQueryAPIResponse
+奖池奖品查询列表 API返回值
 alibaba.benefit.query
 
 功能：奖池奖品查询列表
@@ -16,18 +16,17 @@ alibaba.benefit.query
 安全保障：为保证数据不会越权，需要卖家授，并且验证系统参数appKey。只有通过授权的，并且
 appkey验证通过的，才会查数据 并透出，否则直接失败。
 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
-是否一致，所以可以保证参数appName的合法性，没有越权。
-*/
+是否一致，所以可以保证参数appName的合法性，没有越权。 */
 type AlibabaBenefitQueryAPIResponse struct {
-    model.CommonResponse
-    AlibabaBenefitQueryAPIResponseModel
+	model.CommonResponse
+	AlibabaBenefitQueryAPIResponseModel
 }
 
-// 奖池奖品查询列表 成功返回结果
+// AlibabaBenefitQueryAPIResponseModel is 奖池奖品查询列表 成功返回结果
 type AlibabaBenefitQueryAPIResponseModel struct {
-    XMLName xml.Name `xml:"alibaba_benefit_query_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 接口返回model
-    Result   *AlibabaBenefitQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"alibaba_benefit_query_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 接口返回model
+	Result *AlibabaBenefitQueryResult `json:"result,omitempty" xml:"result,omitempty"`
 }

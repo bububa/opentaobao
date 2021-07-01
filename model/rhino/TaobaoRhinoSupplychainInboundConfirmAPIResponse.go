@@ -1,31 +1,30 @@
 package rhino
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-WMS003成衣入库确认 API返回值 
+/* TaobaoRhinoSupplychainInboundConfirmAPIResponse
+WMS003成衣入库确认 API返回值
 taobao.rhino.supplychain.inbound.confirm
 
-【WMS003】【同步成衣入库完成信息】
-*/
+【WMS003】【同步成衣入库完成信息】 */
 type TaobaoRhinoSupplychainInboundConfirmAPIResponse struct {
-    model.CommonResponse
-    TaobaoRhinoSupplychainInboundConfirmAPIResponseModel
+	model.CommonResponse
+	TaobaoRhinoSupplychainInboundConfirmAPIResponseModel
 }
 
-// WMS003成衣入库确认 成功返回结果
+// TaobaoRhinoSupplychainInboundConfirmAPIResponseModel is WMS003成衣入库确认 成功返回结果
 type TaobaoRhinoSupplychainInboundConfirmAPIResponseModel struct {
-    XMLName xml.Name `xml:"rhino_supplychain_inbound_confirm_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // message
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-    // code
-    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
-    // success
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+	XMLName xml.Name `xml:"rhino_supplychain_inbound_confirm_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// message
+	Message string `json:"message,omitempty" xml:"message,omitempty"`
+	// code
+	RetCode int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+	// success
+	IsSuccess bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 }

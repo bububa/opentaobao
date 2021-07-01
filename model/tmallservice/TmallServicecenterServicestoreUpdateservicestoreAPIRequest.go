@@ -1,12 +1,12 @@
 package tmallservice
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* TmallServicecenterServicestoreUpdateservicestoreAPIRequest
 修改网点信息 API请求
 tmall.servicecenter.servicestore.updateservicestore
 
@@ -23,43 +23,11 @@ tmall.servicecenter.servicestore.updateservicestore
 9, 缺少网点电话
 10, 网点已存在
 11, 网点不存在
-12, 系统错误
-*/
+12, 系统错误 */
 type TmallServicecenterServicestoreUpdateservicestoreAPIRequest struct {
-    model.Params
-    // 网点
-    _serviceStore   *ServiceStoreDto
+	model.Params
+	// 网点
+	_serviceStore *ServiceStoreDto
 }
 
-// 初始化TmallServicecenterServicestoreUpdateservicestoreAPIRequest对象
-func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
-    return &TmallServicecenterServicestoreUpdateservicestoreAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiMethodName() string {
-    return "tmall.servicecenter.servicestore.updateservicestore"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// ServiceStore Setter
-// 网点
-func (r *TmallServicecenterServicestoreUpdateservicestoreAPIRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
-    r._serviceStore = _serviceStore
-    r.Set("service_store", _serviceStore)
-    return nil
-}
-
-// ServiceStore Getter
-func (r TmallServicecenterServicestoreUpdateservicestoreAPIRequest) GetServiceStore() *ServiceStoreDto {
-    return r._serviceStore
-}
+// New

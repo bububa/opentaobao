@@ -1,13 +1,13 @@
 package tmallservice
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-修改工人信息 API返回值 
+/* TmallServicecenterWorkerUpdateAPIResponse
+修改工人信息 API返回值
 tmall.servicecenter.worker.update
 
 修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。
@@ -25,18 +25,17 @@ tmall.servicecenter.worker.update
 10010, 网点不存在
 11000, category_id 无效
 11001, biz_type 无效
-20001,已查询到最后一页
-*/
+20001,已查询到最后一页 */
 type TmallServicecenterWorkerUpdateAPIResponse struct {
-    model.CommonResponse
-    TmallServicecenterWorkerUpdateAPIResponseModel
+	model.CommonResponse
+	TmallServicecenterWorkerUpdateAPIResponseModel
 }
 
-// 修改工人信息 成功返回结果
+// TmallServicecenterWorkerUpdateAPIResponseModel is 修改工人信息 成功返回结果
 type TmallServicecenterWorkerUpdateAPIResponseModel struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_worker_update_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // result
-    Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+	XMLName xml.Name `xml:"tmall_servicecenter_worker_update_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// result
+	Result *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
 }

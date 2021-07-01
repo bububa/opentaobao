@@ -1,52 +1,20 @@
 package alihealthoutflow
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest
 处方外流-修改处方 API请求
 alibaba.alihealth.outflow.prescription.update
 
-阿里健康-处方外流-对外提供处方修改功能
-*/
+阿里健康-处方外流-对外提供处方修改功能 */
 type AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest struct {
-    model.Params
-    // 入参对象
-    _updateRequest   *PrescriptionOutflowUpdateRequest
+	model.Params
+	// 入参对象
+	_updateRequest *PrescriptionOutflowUpdateRequest
 }
 
-// 初始化AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest对象
-func NewAlibabaAlihealthOutflowPrescriptionUpdateRequest() *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest{
-    return &AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetApiMethodName() string {
-    return "alibaba.alihealth.outflow.prescription.update"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
-// UpdateRequest Setter
-// 入参对象
-func (r *AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) SetUpdateRequest(_updateRequest *PrescriptionOutflowUpdateRequest) error {
-    r._updateRequest = _updateRequest
-    r.Set("update_request", _updateRequest)
-    return nil
-}
-
-// UpdateRequest Getter
-func (r AlibabaAlihealthOutflowPrescriptionUpdateAPIRequest) GetUpdateRequest() *PrescriptionOutflowUpdateRequest {
-    return r._updateRequest
-}
+// New

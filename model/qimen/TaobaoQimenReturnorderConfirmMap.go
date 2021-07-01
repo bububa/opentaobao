@@ -1,5 +1,5 @@
 package qimen
 
-// TaobaoQimenReturnorderConfirmMap 
+// TaobaoQimenReturnorderConfirmMap 结构体
 type TaobaoQimenReturnorderConfirmMap struct {
 }

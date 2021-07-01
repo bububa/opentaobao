@@ -1,38 +1,18 @@
 package waybill
 
 import (
-    "net/url"
+	"net/url"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
+/* CainiaoWaybillPrivacySellerOrderGetAPIRequest
 隐私面单商家订单查询 API请求
 cainiao.waybill.privacy.seller.order.get
 
-商家查询最近100天隐私面单记录
-*/
+商家查询最近100天隐私面单记录 */
 type CainiaoWaybillPrivacySellerOrderGetAPIRequest struct {
-    model.Params
+	model.Params
 }
 
-// 初始化CainiaoWaybillPrivacySellerOrderGetAPIRequest对象
-func NewCainiaoWaybillPrivacySellerOrderGetRequest() *CainiaoWaybillPrivacySellerOrderGetAPIRequest{
-    return &CainiaoWaybillPrivacySellerOrderGetAPIRequest{
-        Params: model.NewParams(),
-    }
-}
-
-// IRequest interface 方法, 获取Api method
-func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetApiMethodName() string {
-    return "cainiao.waybill.privacy.seller.order.get"
-}
-
-// IRequest interface 方法, 获取API参数
-func (r CainiaoWaybillPrivacySellerOrderGetAPIRequest) GetApiParams() url.Values {
-    params := url.Values{}
-    for k, v := range r.GetRawParams() {
-        params.Set(k, v.String())
-    }
-    return params
-}
+// New

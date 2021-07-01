@@ -1,27 +1,26 @@
 package promotion
 
 import (
-    "encoding/xml"
+	"encoding/xml"
 
-    "github.com/bububa/opentaobao/model"
+	"github.com/bububa/opentaobao/model"
 )
 
-/* 
-营销活动列表查询 API返回值 
+/* TaobaoUmpActivitiesListGetAPIResponse
+营销活动列表查询 API返回值
 taobao.ump.activities.list.get
 
-按照营销活动id的列表ids，查询对应的营销活动列表。
-*/
+按照营销活动id的列表ids，查询对应的营销活动列表。 */
 type TaobaoUmpActivitiesListGetAPIResponse struct {
-    model.CommonResponse
-    TaobaoUmpActivitiesListGetAPIResponseModel
+	model.CommonResponse
+	TaobaoUmpActivitiesListGetAPIResponseModel
 }
 
-// 营销活动列表查询 成功返回结果
+// TaobaoUmpActivitiesListGetAPIResponseModel is 营销活动列表查询 成功返回结果
 type TaobaoUmpActivitiesListGetAPIResponseModel struct {
-    XMLName xml.Name `xml:"ump_activities_list_get_response"`
-    // 平台颁发的每次请求访问的唯一标识
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
-    // 营销活动列表！
-    Activities   []string `json:"activities,omitempty" xml:"activities>string,omitempty"`
+	XMLName xml.Name `xml:"ump_activities_list_get_response"`
+	// 平台颁发的每次请求访问的唯一标识
+	RequestId string `json:"request_id,omitempty" xml:"request_id,omitempty"`
+	// 营销活动列表！
+	Activities []string `json:"activities,omitempty" xml:"activities>string,omitempty"`
 }

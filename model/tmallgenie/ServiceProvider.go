@@ -1,9 +1,9 @@
 package tmallgenie
 
-// ServiceProvider 
+// ServiceProvider 结构体
 type ServiceProvider struct {
-    // 提供商
-    Name   string `json:"name,omitempty" xml:"name,omitempty"`
-    // 图片地址
-    Icon   string `json:"icon,omitempty" xml:"icon,omitempty"`
+	// 提供商
+	Name string `json:"name,omitempty" xml:"name,omitempty"`
+	// 图片地址
+	Icon string `json:"icon,omitempty" xml:"icon,omitempty"`
 }
