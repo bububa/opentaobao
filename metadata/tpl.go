@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// SDK API模版结构体
 type ApiTpl struct {
 	Pkg            string
 	ApiName        string
@@ -18,6 +19,7 @@ type ApiTpl struct {
 	HasRequestId   bool
 }
 
+// SDK API模版字段参数结构体
 type TplParam struct {
 	Name      string
 	Label     string
@@ -32,9 +34,10 @@ type TplParam struct {
 	Obj       []TplParam
 }
 
+// SDK API是否需要使用form/multipart post
 func (p TplParam) IsMultipart() bool {
-	if len(p.Obj) == 0 {
-		return p.Type == "[]byte"
+	if strings.HasSuffix(p.Type, "model.File") {
+		return true
 	}
 	for _, obj := range p.Obj {
 		if obj.IsMultipart() {
@@ -44,6 +47,7 @@ func (p TplParam) IsMultipart() bool {
 	return false
 }
 
+// SDK model模版结构体
 type TplModel struct {
 	Pkg         string
 	Name        string
@@ -51,6 +55,7 @@ type TplModel struct {
 	ImportModel bool
 }
 
+// SDK model模版是否需要引用github.com/bububa/opentaobao/model包
 func (t TplModel) NeedImportModel() bool {
 	for _, p := range t.Params {
 		if strings.HasSuffix(p.Type, "model.File") {
@@ -60,6 +65,7 @@ func (t TplModel) NeedImportModel() bool {
 	return false
 }
 
+// SDK 提取包内包含的结构体
 func ExtractModels(params []TplParam) []TplModel {
 	var models []TplModel
 	for _, p := range params {
@@ -79,6 +85,7 @@ func ExtractModels(params []TplParam) []TplModel {
 	return models
 }
 
+// SDK 合并包内命名相同结构体
 func MergeModels(models []TplModel) []TplModel {
 	mp := make(map[string]*TplModel, len(models))
 	for _, model := range models {

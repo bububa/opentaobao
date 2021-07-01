@@ -7,8 +7,8 @@ import (
 
 func main() {
 	var (
-		meta string
-		pkg  string
+		meta string // 下载metadata缓存路径
+		pkg  string // 下载指定API类目metadata
 	)
 	flag.StringVar(&meta, "meta", "", "metadata dir")
 	flag.StringVar(&pkg, "pkg", "", "specific pkg")

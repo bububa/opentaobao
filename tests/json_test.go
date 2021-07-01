@@ -23,6 +23,7 @@ func TestJSONFormatHmac(t *testing.T) {
 	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("RESP: %+v\n", *resp.Data)
 }
@@ -40,6 +41,7 @@ func TestJSONFormatMd5(t *testing.T) {
 	resp, err := tbkApi.TaobaoTbkTpwdCreate(clt, req, "")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("RESP: %+v\n", *resp.Data)
 }

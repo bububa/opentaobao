@@ -9,6 +9,7 @@ import (
 	"github.com/bububa/opentaobao/metadata/util"
 )
 
+// 淘宝API文档 字段类型
 type ApiParamType = string
 
 const (
@@ -25,6 +26,7 @@ const (
 	UNKNOWN_PARAM_TYPE    ApiParamType = ""
 )
 
+// 下载淘宝API文档返回结果
 type ApiDocResponse struct {
 	Success bool   `json:"success,omitempty"`
 	Code    string `json:"code,omitempty"`
@@ -36,10 +38,12 @@ func (res ApiDocResponse) IsError() bool {
 	return !res.Success
 }
 
+// implement Error interface
 func (res ApiDocResponse) Error() string {
 	return res.ErrMsg
 }
 
+// 淘宝API文档结构体
 type ApiDoc struct {
 	Id             int64      `json:"id,omitempty"`
 	Name           string     `json:"name,omitempty"`
@@ -49,15 +53,18 @@ type ApiDoc struct {
 	ResponseParams []ApiParam `json:"responseParams,omitempty"`
 }
 
+// 淘宝API文档保存文件名
 func (d ApiDoc) Filename() string {
 	return strings.TrimSpace(strings.ReplaceAll(d.Name, ".", "_"))
 }
 
+// 淘宝API文档对应golang API名
 func (d ApiDoc) Title() string {
 	name := strings.Title(strings.ReplaceAll(d.Name, "-", "_"))
 	return strings.TrimSpace(strings.ReplaceAll(name, ".", ""))
 }
 
+// 淘宝API文档转golang API 模版结构体
 func (d ApiDoc) ApiTpl() ApiTpl {
 	snakeName := strings.ReplaceAll(d.Name, ".", "_")
 	tpl := ApiTpl{
@@ -97,6 +104,7 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 	return tpl
 }
 
+// 淘宝API文档字段结构体
 type ApiParam struct {
 	Name        string       `json:"name,omitempty"`
 	Type        ApiParamType `json:"type,omitempty"`
@@ -187,6 +195,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	return param
 }
 
+// 处理冲突结构体名(conflict_models.json内设置)
 func convertConflictModelName(apiName string, name string) string {
 	for _, n := range ConflictModels {
 		if name == n {
@@ -196,6 +205,7 @@ func convertConflictModelName(apiName string, name string) string {
 	return name
 }
 
+// 处理描述字段以匹配golang结构体注释
 func clearDesc(desc string, inline bool) string {
 	desc = strings.ReplaceAll(desc, "/*", "")
 	desc = strings.ReplaceAll(desc, "*/", "")

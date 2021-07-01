@@ -23,6 +23,7 @@ func TestXMLFormatHmac(t *testing.T) {
 	resp, err := tbkApi.TaobaoTbkItemInfoGet(clt, req, "")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("RESP: %+v\n", *resp)
 }
@@ -40,6 +41,7 @@ func TestXMLFormatMd5(t *testing.T) {
 	resp, err := tbkApi.TaobaoTbkItemInfoGet(clt, req, "")
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("RESP: %+v\n", *resp)
 }

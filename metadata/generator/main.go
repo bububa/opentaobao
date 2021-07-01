@@ -20,9 +20,9 @@ var (
 
 func main() {
 	var (
-		meta  string
-		patch string
-		pkg   string
+		meta  string // API文档metadata保存路径
+		patch string // patch文件保存路径
+		pkg   string // 生成指定API类目包
 	)
 	flag.StringVar(&meta, "meta", "", "metadata dir")
 	flag.StringVar(&patch, "patch", "", "metadata patch dir")
@@ -39,6 +39,7 @@ func main() {
 	}
 }
 
+// 生成根目录doc.go
 func genGoDoc() error {
 	wd, err := os.Getwd()
 	if err != nil {

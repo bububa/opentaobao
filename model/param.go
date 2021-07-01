@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+// 用于上传文件，对应淘宝API中byte[]类型
 type File struct {
 	io.Reader
 	Name string
@@ -16,63 +17,69 @@ func (f File) MultipartFileName() string {
 	return fmt.Sprintf("@%s", f.Name)
 }
 
-type Param struct {
+// APIRequest中的参数值
+type ParamValue struct {
 	str string
 	fd  *File
 }
 
-func NewStringParam(str string) *Param {
-	return &Param{
+// string类型值
+func NewStringParamValue(str string) *ParamValue {
+	return &ParamValue{
 		str: str,
 	}
 }
 
-func NewFileParam(fd *File) *Param {
-	return &Param{
+// file类型值
+func NewFileParamValue(fd *File) *ParamValue {
+	return &ParamValue{
 		fd: fd,
 	}
 }
 
-func (p Param) IsFile() bool {
+func (p ParamValue) IsFile() bool {
 	return p.fd != nil
 }
 
-func (p Param) File() *File {
+func (p ParamValue) File() *File {
 	return p.fd
 }
 
-func (p Param) String() string {
+func (p ParamValue) String() string {
 	if p.IsFile() {
 		return p.File().MultipartFileName()
 	}
 	return p.str
 }
 
-type Params map[string]*Param
+// APIRequest中的参数列表
+type Params map[string]*ParamValue
 
 func NewParams() Params {
 	p := make(Params)
 	return p
 }
 
+// APIRequest设置参数
 func (p Params) Set(key string, value interface{}) error {
 	switch value.(type) {
 	case *File:
-		p[key] = NewFileParam(value.(*File))
+		p[key] = NewFileParamValue(value.(*File))
 	default:
 		str, err := AnyToString(value)
 		if err != nil {
 			return err
 		}
-		p[key] = NewStringParam(str)
+		p[key] = NewStringParamValue(str)
 	}
 	return nil
 }
 
-func (p Params) GetRawParams() map[string]*Param {
+func (p Params) GetRawParams() map[string]*ParamValue {
 	return p
 }
 
+// 是否需要使用form/multipart post
 func (p Params) NeedMultipart() bool {
 	for _, v := range p {
 		if v.IsFile() {
@@ -82,6 +89,7 @@ func (p Params) NeedMultipart() bool {
 	return false
 }
 
+// 转换任意类型参数值为string
 func AnyToString(val interface{}) (string, error) {
 	var str string
 	switch val.(type) {

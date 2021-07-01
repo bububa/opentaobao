@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// API请求及返回格式
 type APIFormat = string
 
 const (
@@ -12,6 +13,7 @@ const (
 	XML  APIFormat = "xml"
 )
 
+// API签名方法
 type SignMethod = string
 
 const (
@@ -25,6 +27,7 @@ const (
 	DEFAULT_API_FORMAT  = JSON
 )
 
+// API请求通用参数
 type CommonRequest struct {
 	Method       string    `json:"method,omitempty"`         // API接口名称
 	AppKey       string    `json:"app_key,omitempty"`        // TOP分配给应用的AppKey
@@ -38,6 +41,7 @@ type CommonRequest struct {
 	Simplify     bool      `json:"simplify,omitempty"`       // 是否采用精简JSON返回格式，仅当format=json时有效，默认值为：false
 }
 
+// 新建API请求通用参数
 func NewCommonRequest(method string, appKey string) *CommonRequest {
 	return &CommonRequest{
 		Method:     method,
@@ -49,18 +53,22 @@ func NewCommonRequest(method string, appKey string) *CommonRequest {
 	}
 }
 
+// 设置access_session
 func (c *CommonRequest) SetSession(session string) {
 	c.Session = session
 }
 
+// 设置API格式
 func (c *CommonRequest) SetAPIFormat(format APIFormat) {
 	c.Format = format
 }
 
+// 设置签名方法
 func (c *CommonRequest) SetSignMethod(method SignMethod) {
 	c.SignMethod = method
 }
 
+// 转换通用请求参数为map[string]string
 func (c CommonRequest) GetParams() map[string]string {
 	params := map[string]string{
 		"method":      c.Method,
@@ -86,9 +94,10 @@ func (c CommonRequest) GetParams() map[string]string {
 	return params
 }
 
+// API Request interace
 type IRequest interface {
 	GetApiMethodName() string
 	GetApiParams() url.Values
 	NeedMultipart() bool
-	GetRawParams() map[string]*Param
+	GetRawParams() map[string]*ParamValue
 }
